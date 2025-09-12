@@ -18,7 +18,7 @@ if(MSVC)
     set(USEENV_LIBRARY   userenv)
     set(PSAPI_LIBRARY    psapi)
 
-    # For the color Managament
+    # For the color Management
 
     set(MSCMS_LIBRARY     mscms)
 

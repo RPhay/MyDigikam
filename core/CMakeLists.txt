@@ -78,11 +78,11 @@ if(HEIF_FOUND)
 
 endif()
 
-# -- Exiv2 checks and adjustements ---------------------------------------------
+# -- Exiv2 checks and adjustments ----------------------------------------------
 
 include(RulesLibExiv2)
 
-# -- OpenCV checks and adjustements --------------------------------------------
+# -- OpenCV checks and adjustments ---------------------------------------------
 
 include(RulesLibOpenCV)
 
@@ -110,11 +110,11 @@ find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
 find_package(Eigen3)                               # For Refocus tool.
 
-# -- ImageMagick checks and adjustements --------------------------------------
+# -- ImageMagick checks and adjustments ---------------------------------------
 
 include(RulesLibMagick)
 
-# -- X11 checks and adjustements ----------------------------------------------
+# -- X11 checks and adjustments -----------------------------------------------
 
 include(RulesX11)
 
@@ -122,7 +122,7 @@ include(RulesX11)
 
 include(RulesLibOpenGL)
 
-# -- Media player dependencies checks and adjustments---------------------------
+# -- Media player dependencies checks and adjustments -------------------------
 
 include(RulesFFmpeg)
 include(RulesMediaPlayer)
@@ -131,11 +131,11 @@ include(RulesMediaPlayer)
 
 include(RulesInstallPaths)
 
-# -- Windows compilation and linking adjustements -----------------------------
+# -- Windows compilation and linking adjustments ------------------------------
 
 include(RulesWindows)
 
-# -- MacOS compilation and linking adjustements -----------------------------
+# -- MacOS compilation and linking adjustments --------------------------------
 
 include(RulesMacOS)
 
@@ -360,7 +360,7 @@ if(Boost_FOUND                          AND
 
 else()
 
-    message(FATAL_ERROR " digiKam will be compiled.................. NO  (Check dependencies from the developper documentation https://files.kde.org/digikam/api/)")
+    message(FATAL_ERROR " digiKam will be compiled.................. NO  (Check dependencies from the developer documentation https://files.kde.org/digikam/api/)")
     set(DIGIKAM_CAN_BE_COMPILED false)
 
 endif()
