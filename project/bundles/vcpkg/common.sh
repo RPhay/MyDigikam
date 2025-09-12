@@ -151,7 +151,7 @@ export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
 UploadWithRetry()
 {
 
-# Disable errors expection handling
+# Disable errors exception handling
 set +e
 
 MAX_RETRIES=10

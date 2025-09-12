@@ -145,7 +145,7 @@ else
 
     cp -r /usr/share/knotifications6                      ./usr/share
 
-    # Not avaialble with KF6
+    # Not avaialable with KF6
 
     cp -r /usr/share/kservices6                           ./usr/share  || true
     cp -r /usr/share/kservicetypes6                       ./usr/share  || true
@@ -348,7 +348,7 @@ sed -i "/Exec=/c\Exec=digikam-camera downloadFromUdi %i" ./usr/share/solid/actio
 
 #################################################################################################
 
-echo -e "------------- Scan dependencies recurssively\n"
+echo -e "------------- Scan dependencies recursively\n"
 
 CopyReccursiveDependencies /usr/bin/digikam                  ./usr/lib
 CopyReccursiveDependencies /usr/bin/showfoto                 ./usr/lib

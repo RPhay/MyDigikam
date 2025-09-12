@@ -128,13 +128,13 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 
         if [ -z $MP_LASTEST_VER ] ; then
 
-            echo "---------- Cannot check the lastest Macports verion from $MP_URL"
+            echo "---------- Cannot check the latest Macports version from $MP_URL"
             echo "---------- Aborting..."
             exit;
 
         fi
 
-        echo "---------- Detected lastest Macports version : $MP_LASTEST_VER"
+        echo "---------- Detected latest Macports version : $MP_LASTEST_VER"
 
         MP_VERSION=$MP_LASTEST_VER
 
@@ -198,7 +198,7 @@ EOF
 
     if [[ $HOST_ARCH = "arm64" && $MP_UNIVERSAL == 1 ]] ; then
 
-        # Build with both architectures embeded (x86 and ARM) for Apple Silicon target
+        # Build with both architectures embedded (x86 and ARM) for Apple Silicon target
 
         cat << EOF >> "$INSTALL_PREFIX/etc/macports/variants.conf"
 +universal

@@ -9,7 +9,7 @@ Architecture and configuration to setup a continuous deployment computer.
 - Host system Linux Mageia 7.1
 - VirtualBox version 6.x:
 
-  * Host must define a private local network configurated with default settings:
+  * Host must define a private local network configured with default settings:
            network 192.168.56.1/25
            DHCP server 192.168.56.100/24 @[101-254]
 

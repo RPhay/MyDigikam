@@ -27,7 +27,7 @@
 
     Function ${un}EnumProcesses
 
-        ; Is this really necesssary for $Rx?
+        ; Is this really necessary for $Rx?
         Push $R1
         Push $R0
         Push $R2

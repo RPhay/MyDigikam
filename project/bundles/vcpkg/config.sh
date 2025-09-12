@@ -7,7 +7,7 @@
 
 ########################################################################
 
-# About short pathes to use with VCPKG, see https://github.com/microsoft/vcpkg/issues/24751
+# About short paths to use with VCPKG, see https://github.com/microsoft/vcpkg/issues/24751
 # /c/ is C:/ drive
 # /e/ is E:/ drive
 
