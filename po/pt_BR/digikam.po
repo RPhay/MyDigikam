@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-09-10 13:14-0300\n"
+"PO-Revision-Date: 2025-09-11 16:31-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -26800,7 +26800,7 @@ msgstr "Decodificação RAW"
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:44
 #, kde-format
 msgid "Import Raw Using Libraw"
-msgstr "Importar Raw usando o Libraw"
+msgstr "Importar RAW usando o Libraw"
 
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:59
 #, kde-format
@@ -39108,7 +39108,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider"
 msgid "Pass:"
-msgstr "Passo:"
+msgstr "Passagens:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:298
 #, kde-kuit-format
@@ -48392,7 +48392,7 @@ msgstr "Usar uma definição estruturada da matéria do assunto:"
 #, kde-format
 msgctxt "@label: subject widget"
 msgid "Use standard"
-msgstr "Usar o padrão"
+msgstr "Usar o"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:127
 #, kde-format
@@ -50321,7 +50321,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr "Definir a etiqueta de orientação para normal após rotacionar."
+msgstr "Definir a etiqueta de orientação para normal após rotacionar/inverter."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
@@ -63600,7 +63600,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:151
 #, kde-format
 msgid "Show digiKam &captions"
-msgstr "Mostra&r legendas do digiKam"
+msgstr "Mostra&r descrição do digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
@@ -65158,7 +65158,7 @@ msgstr "Controle de versões"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Save Settings"
-msgstr "Salvar configurações"
+msgstr "Configurações de salvamento"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
@@ -65251,7 +65251,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:164
 #, kde-format
 msgid "Indicate exposure as pure color"
-msgstr "Indicar a exposição como cores puras"
+msgstr "Indicar a exposição como cor pura"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:165
 #, kde-format
@@ -65375,7 +65375,7 @@ msgstr "Configurações padrão do RAW"
 #, kde-format
 msgctxt "@title"
 msgid "Enable Non-Destructive Editing and Versioning"
-msgstr "Habilitar a edição e controle de versões não-destrutiva"
+msgstr "Habilitar a edição e controle de versões não destrutivo"
 
 #: core/utilities/setup/editor/setupversioning.cpp:98
 #, kde-format
@@ -65541,7 +65541,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "In main view"
-msgstr "Na janela principal"
+msgstr "Na vista principal"
 
 #: core/utilities/setup/editor/setupversioning.cpp:301
 #, kde-format
@@ -65722,7 +65722,7 @@ msgstr "Unificar leitura e gravação"
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:409
 #, kde-format
 msgid "Read all metadata for tags"
-msgstr "Ler todos os metadados das etiquetas"
+msgstr "Ler todos os metadados para etiquetas"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -66528,7 +66528,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr "Definir a etiqueta de orientação para normal após rotacionar."
+msgstr "Definir a etiqueta de orientação para normal após rotacionar/inverter."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:120
 #, kde-format
@@ -66557,7 +66557,7 @@ msgstr "Lendo e gravando os arquivos auxiliares"
 #, kde-format
 msgctxt "@option:check"
 msgid "Read from sidecar files"
-msgstr "Ler a partir de arquivos auxiliares"
+msgstr "Ler a partir dos arquivos auxiliares"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:38
 #, kde-format
@@ -66597,7 +66597,7 @@ msgstr "Gravar apenas em arquivos XMP"
 #, kde-format
 msgctxt "@item"
 msgid "Write to item and XMP Sidecar"
-msgstr "Gravar no item e nos arquivos XMP"
+msgstr "Gravar no item e no arquivo XMP"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:51
 #, kde-format
@@ -66676,7 +66676,7 @@ msgstr "Digite as extensões de arquivo auxiliares adicionais."
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
-msgstr "Extensões de arquivo &auxiliar adicionais"
+msgstr "Extensões adicionais de arquivo &auxiliar"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
@@ -68350,7 +68350,7 @@ msgstr "Selecione esta opção para exibir o codec do vídeo."
 #: core/utilities/setup/setuptooltip.cpp:295
 #, kde-format
 msgid "Show album items' tool-tips"
-msgstr "Mostrar dicas nos itens do álbum"
+msgstr "Mostrar dicas nos itens de álbum"
 
 #: core/utilities/setup/setuptooltip.cpp:296
 #, kde-format
