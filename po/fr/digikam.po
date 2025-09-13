@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-08-28 16:44+0200\n"
+"PO-Revision-Date: 2025-09-09 11:54+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -8836,30 +8836,23 @@ msgstr ""
 "provenant d’une lentille."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Informations sur l'objet"
+msgstr "Segmentation de l'objet :"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Cette valeur contrôle le nombre d'itérations à utiliser avec les effets "
-"« Néon » et « Détecter les contours »"
+"Définir cette valeur pour contrôler le nombre d'itérations à utiliser avec "
+"le processus de segmentation pour isoler plus ou moins l'objet."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subjects"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Sujets"
+msgstr "Masque d'objet :"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8869,20 +8862,21 @@ msgid ""
 "see if the subject have been isolated properly by the segmentation process. "
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
+"Cette vue montre la segmentation du sujet déterminée à partir de la "
+"sélection. Le masque vert résultant est superposé à l'image d'origine pour "
+"voir si le sujet a été correctement isolé par le processus de segmentation. "
+"La zone verte est l'objet où l'effet de floutage ne sera pas appliqué."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Traitement de l'aperçu du panorama en cours…"
+msgstr "Traitement de l'aperçu du masque en cours…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Erreur lors du traitement du fichier « XML »"
+msgstr "Erreur lors du traitement de l'image..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -53788,12 +53782,10 @@ msgstr ""
 "l'album de l'image de référence."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "Mettre à jour les empreintes"
+msgstr "Mettre à jour toutes les empreintes numériques"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
