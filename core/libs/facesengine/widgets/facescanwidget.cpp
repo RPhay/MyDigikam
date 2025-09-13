@@ -98,7 +98,7 @@ void FaceScanWidget::setupUi()
 
     d->workflowWidget                   = new DHBox(d->settingsTab);
 
-    QLabel* const workflowLabel         = new QLabel(i18nc("@label short translated text about the Face Worflow.",
+    QLabel* const workflowLabel         = new QLabel(i18nc("@label short translated text about the Face Workflow.",
                                                            "Workflow:"), d->workflowWidget);
     workflowLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 

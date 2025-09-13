@@ -474,7 +474,7 @@ int FaceClassifier::predict(const cv::Mat& target, const QList<int>& exclusionLa
 
     if (d->useFullSearch)
     {
-        // we don't have enough identites and samples yet to use the knn and svm classifiers
+        // we don't have enough identities and samples yet to use the knn and svm classifiers
         // so we perform a full brute-force search on all the known faces
 
         label = predictFullSearch(target, exclusionLabelList);

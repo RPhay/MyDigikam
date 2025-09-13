@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-10-09
- * Description : Face scan settings contaner.
+ * Description : Face scan settings container.
  *
  * SPDX-FileCopyrightText: 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>

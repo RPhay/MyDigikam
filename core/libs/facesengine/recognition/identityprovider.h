@@ -117,7 +117,7 @@ public:
     bool clearTraining(const QString& hash);
 
     /**
-     * @brief Clears all identites and face training
+     * @brief Clears all identities and face training
      * from the recognition DB
      */
     void clearAllTraining();

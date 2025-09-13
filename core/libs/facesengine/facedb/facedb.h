@@ -121,7 +121,7 @@ public:
     void clearDNNTraining(const QList<int>& identities);
 
     /**
-     * @brief get the digiKam version and extactor model the DB was trained with.
+     * @brief get the digiKam version and extractor model the DB was trained with.
      */
     void getTrainingVersionInfo(QString& version, QString& model)                      const;
 
