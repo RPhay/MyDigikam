@@ -19,7 +19,7 @@ Bundles component versions:
 
 Windows:         Support for long file paths in Windows 10/11 when enabled.
 RawEngine:       Update internal Libraw to last 20250727 upstream.
-Video:           Update internal QtAVPlayer to last 20250727 upstream (Qt5 only).
+Video:           Update internal QtAVPlayer to last 20250913 upstream (Qt5 only).
 Plugins:         G'MIC-Qt updated to last v3.6.0.
 TagsManager:     Add options to import or export tag-hierarchies to text files.
                  Controlled Vocabulary Keyword Catalogue format is supported (https://www.controlledvocabulary.com/products/index.html).
