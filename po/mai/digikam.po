@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"POT-Creation-Date: 2025-09-14 01:57+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -33669,7 +33669,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Options"
-msgctxt "@label short translated text about the Face Worflow."
+msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "विकल्प"
 

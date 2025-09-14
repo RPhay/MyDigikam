@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"POT-Creation-Date: 2025-09-14 01:57+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -35243,7 +35243,7 @@ msgstr "ស្វែងរក​"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
 #, fuzzy, kde-format
-msgctxt "@label short translated text about the Face Worflow."
+msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "លុប​ការ​ស្វែងរក​ឬ ?"
 

@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"POT-Creation-Date: 2025-09-14 01:57+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -35160,7 +35160,7 @@ msgstr "Cuardaigh i:"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Editor Window"
-msgctxt "@label short translated text about the Face Worflow."
+msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Fuinneog Eagarthóireachta"
 

@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-09-11 16:31-0300\n"
+"POT-Creation-Date: 2025-09-14 01:57+0000\n"
+"PO-Revision-Date: 2025-09-13 15:42-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -510,7 +510,7 @@ msgstr "Este item tem informação de geolocalização."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
-msgstr "Mostra em tela inteira"
+msgstr "Mostra em tela cheia"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
 #: core/app/views/preview/itempreviewview.cpp:167
@@ -2846,7 +2846,7 @@ msgstr "Mostrar pontos de foco"
 #: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
 msgid "Show Fullscreen"
-msgstr "Mostrar em tela inteira"
+msgstr "Mostrar em tela cheia"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -19702,7 +19702,7 @@ msgstr "Página %1 salva como %2"
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:44
 #, kde-format
 msgid "Print Creator"
-msgstr "Criador de Impressões"
+msgstr "Criador de impressões"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
@@ -20196,7 +20196,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
-msgstr "Criador de Impressões"
+msgstr "Criador de impressões"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:72
 #, kde-format
@@ -20206,7 +20206,7 @@ msgid ""
 "Photo Album, Photo Collage, or Framed Photo.</p><p>An adaptive photo "
 "collection page layout can be also used, based on Atkins algorithm.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bem-vindo ao Criador de Impressões</b></h1></p><p>Este "
+"<qt><p><h1><b>Bem-vindo ao Criador de impressões</b></h1></p><p>Este "
 "assistente irá guiá-lo com a montagem das imagens a serem impressas de "
 "acordo com modelos específicos, como Álbuns de Fotos, Colagens de Fotos ou "
 "Fotos com Molduras.</p><p>Também poderá usar um formato de página adaptativo "
@@ -20304,7 +20304,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Welcome to Print Creator"
-msgstr "Bem-vindo ao Criador de Impressões"
+msgstr "Bem-vindo ao Criador de impressões"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
@@ -21686,7 +21686,7 @@ msgstr "Efeitos do OpenGL"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:82
 #, kde-format
 msgid "Use full screen resolution (slower)"
-msgstr "Usar resolução em tela inteira (mais lento)"
+msgstr "Usar resolução em tela cheia (mais lento)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:98
@@ -35049,8 +35049,10 @@ msgid "Search in"
 msgstr "Pesquisar em"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, kde-format
-msgctxt "@label short translated text about the Face Worflow."
+#, fuzzy, kde-format
+#| msgctxt "@label short translated text about the Face Worflow."
+#| msgid "Workflow:"
+msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Fluxo de trabalho:"
 
@@ -43039,7 +43041,7 @@ msgstr "%1 (%2)"
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:252
 #, kde-format
 msgid "Perceptual"
-msgstr "Perceptivo"
+msgstr "Perceptiva"
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:253
 #, kde-format
@@ -43423,7 +43425,7 @@ msgstr "Desconhecido"
 #, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Perceptual"
-msgstr "Perceptivo"
+msgstr "Perceptiva"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:530
 #, kde-format
@@ -43949,7 +43951,7 @@ msgstr "Tamanho: %1"
 #: core/libs/widgets/mainview/fullscreensettings.cpp:53
 #, kde-format
 msgid "Full-screen Options"
-msgstr "Opções da tela inteira"
+msgstr "Opções da tela cheia"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:61
 #, kde-format
@@ -43960,7 +43962,7 @@ msgstr "&Ocultar barras de ferramentas"
 #, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
 msgstr ""
-"Oculta todas as barras de ferramentas ao mudar para o modo de tela inteira."
+"Oculta todas as barras de ferramentas ao mudar para o modo de tela cheia."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:64
 #, kde-format
@@ -43970,7 +43972,7 @@ msgstr "Ocultar barra de minia&turas"
 #: core/libs/widgets/mainview/fullscreensettings.cpp:65
 #, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
-msgstr "Oculta a barra de miniaturas ao mudar para o modo de tela inteira."
+msgstr "Oculta a barra de miniaturas ao mudar para o modo de tela cheia."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
@@ -43980,7 +43982,7 @@ msgstr "Ocultar barra&s laterais"
 #: core/libs/widgets/mainview/fullscreensettings.cpp:68
 #, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
-msgstr "Oculta todas as barras laterais ao mudar para o modo de tela inteira."
+msgstr "Oculta todas as barras laterais ao mudar para o modo de tela cheia."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, kde-format
@@ -43990,7 +43992,7 @@ msgstr "Ocultar barra de &status"
 #: core/libs/widgets/mainview/fullscreensettings.cpp:71
 #, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
-msgstr "Oculta a barras de status ao mudar para o modo de tela inteira."
+msgstr "Oculta a barras de status ao mudar para o modo de tela cheia."
 
 #: core/libs/widgets/mainview/thememanager_p.cpp:1323
 #, kde-format
@@ -50456,7 +50458,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:82
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
-msgstr "Colocar o item atual no centro da barra de miniaturas"
+msgstr "Rolar o item atual para o centro da barra de miniaturas"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:154
 #, kde-format
@@ -50558,19 +50560,19 @@ msgstr "Usar as caixas de diálogo de arquivos nativas do sistema"
 #: core/utilities/setup/misc/setupmisc.cpp:219
 #, kde-format
 msgid "Sidebar tab title:"
-msgstr "Nome da aba na barra lateral:"
+msgstr "Título da aba na barra lateral:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
 #: core/utilities/setup/misc/setupmisc.cpp:221
 #, kde-format
 msgid "Only For Active Tab"
-msgstr "Somente na aba ativa"
+msgstr "Somente para a aba ativa"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:227
 #: core/utilities/setup/misc/setupmisc.cpp:222
 #, kde-format
 msgid "For All Tabs"
-msgstr "Em todas as abas"
+msgstr "Para todas as abas"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:228
 #, kde-format
@@ -50691,7 +50693,7 @@ msgstr "Verificação ortográfica"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
-msgstr "Localizar"
+msgstr "Localização"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
 #: core/utilities/setup/misc/setupmisc.cpp:390
@@ -63680,7 +63682,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
 msgid "Show fullscreen overlay button"
-msgstr "Mostrar botão de tela inteira sobreposto"
+msgstr "Mostrar botão de tela cheia sobreposto"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
@@ -63689,7 +63691,7 @@ msgid ""
 "it in fullscreen mode."
 msgstr ""
 "Habilite esta opção para mostrar um botão sobre a miniatura da imagem para "
-"abri-la em tela inteira."
+"abri-la em tela cheia."
 
 #: core/utilities/setup/album/setupalbumview.cpp:179
 #: core/utilities/setup/camera/setupcamera.cpp:448
@@ -63950,7 +63952,7 @@ msgstr "Visualização"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
-msgstr "Tela inteira"
+msgstr "Tela cheia"
 
 #: core/utilities/setup/album/setupalbumview.cpp:344
 #, kde-format
@@ -67178,7 +67180,7 @@ msgstr "Usar as caixas de diálogo de arquivos nativas do sistema"
 #: core/utilities/setup/misc/setupmisc.cpp:216
 #, kde-format
 msgid "Draw frames around grouped items"
-msgstr "Desenhar quadros ao redor de itens agrupados"
+msgstr "Desenhar molduras ao redor de itens agrupados"
 
 #: core/utilities/setup/misc/setupmisc.cpp:223
 #, kde-format
@@ -67246,12 +67248,12 @@ msgstr "Usar pixmaps com alta resolução de DPI"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Use software OpenGL for rendering"
-msgstr "Use o software OpenGL para renderização"
+msgstr "Usar a renderização por software do OpenGL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
-msgstr "Usar aceleração de hardware OpenCL"
+msgstr "Usar a aceleração por hardware do OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
@@ -67742,7 +67744,8 @@ msgstr "Assumir que está usando o espaço de cor de trabalho"
 #: core/utilities/setup/setupicc.cpp:252
 #, kde-format
 msgid "Convert it from default input color space to working space"
-msgstr "Convertê-la do espaço de cor de entrada para o espaço de trabalho"
+msgstr ""
+"Convertê-la do espaço de cor de entrada padrão para o espaço de trabalho"
 
 #: core/utilities/setup/setupicc.cpp:271
 #, kde-format
@@ -67759,7 +67762,7 @@ msgstr "Perguntar pelo perfil de entrada"
 #: core/utilities/setup/setupicc.cpp:284
 #, kde-format
 msgid "Automatic color correction"
-msgstr "Correção de cor automática"
+msgstr "Correção automática de cor "
 
 #. i18n("<p></p>"));
 #.

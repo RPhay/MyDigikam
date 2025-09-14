@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"POT-Creation-Date: 2025-09-14 01:57+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -35217,7 +35217,7 @@ msgstr "ค้นหาใน:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
 #, fuzzy, kde-format
-msgctxt "@label short translated text about the Face Worflow."
+msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "พอดีกับหน้าต่าง"
 

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"POT-Creation-Date: 2025-09-14 01:57+0000\n"
 "PO-Revision-Date: 2025-09-09 10:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -34704,8 +34704,10 @@ msgid "Search in"
 msgstr "Leita í"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, kde-format
-msgctxt "@label short translated text about the Face Worflow."
+#, fuzzy, kde-format
+#| msgctxt "@label short translated text about the Face Worflow."
+#| msgid "Workflow:"
+msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Vinnuferli:"
 
