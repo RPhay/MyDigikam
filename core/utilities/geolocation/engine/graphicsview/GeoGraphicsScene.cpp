@@ -79,7 +79,7 @@ public:
 GeoDataStyle::Ptr GeoGraphicsScenePrivate::highlightStyle(const GeoDataDocument* document,
                                                           const GeoDataStyleMap& styleMap)
 {
-    // @todo Consider QUrl parsing when external styles are suppported
+    // @todo Consider QUrl parsing when external styles are supported
     QString highlightStyleId = styleMap.value(QStringLiteral("highlight"));
     highlightStyleId.remove(QLatin1Char('#'));
 

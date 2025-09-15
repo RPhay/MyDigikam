@@ -186,7 +186,7 @@ bool FacePipelineRetrain::writer()
     FaceUtils utils;
     IdentityProvider* const idProvider = IdentityProvider::instance();
 
-    // clear all identites and training from recognition DB before
+    // clear all identities and training from recognition DB before
     // we start looping through the results from the pipeline
 
     idProvider->clearAllTraining();

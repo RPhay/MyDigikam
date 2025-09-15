@@ -788,7 +788,7 @@ void gpyr(const Mat3& m1, double& p, double& y, double& r)
 
 void vcpy(Vec3& v, double& p, double& y)
 {
-    // Convert direction given by cartesion vector v into a corresponding
+    // Convert direction given by cartesian vector v into a corresponding
     // pitch (p) / yaw (y) sequence. The angles are in radians.
 
     p = atan20(-v[2], v[0]);

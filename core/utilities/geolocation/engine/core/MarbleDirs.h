@@ -36,11 +36,11 @@ namespace Marble
  * Given that the MarbleWidget is a Qt6-only library and given that it
  * comes with its own model and data we need this class.
  *
- * The class needs to respect the requirements of the different plattforms,
- * so to avoid very different implementations for each plattform we
- * specify how data should get looked up:
+ * The class needs to respect the requirements of the different platforms,
+ * so to avoid very different implementations for each platform we specify
+ * how data should get looked up:
  *
- * Generally there are two places of which Marble will draw it's data from:
+ * Generally there are two places of which Marble will draw its data from:
  *
  * "localPath" and "systemPath".
  *
@@ -50,12 +50,12 @@ namespace Marble
  *
  * localPath:
  * The place for localPath should match space that is fully accessible to
- * the user. On Unix-like plattforms this matches
+ * the user. On Unix-like platforms this matches
  * QDir::homePath() + "/.marble/data"
  *
  * systemPath:
  * Ideally the systemPath should match the place where cmake installed the
- * data for marble. However this doesn't work for all plattforms:
+ * data for marble. However this doesn't work for all platforms:
  *
  * - For Linux and Mac non-bundle deployment the location can be
  *   chosen using the cmake MARBLE_DATA_PATH option at compile time.

@@ -104,7 +104,7 @@ Q_SIGNALS:
      * their styleUrl set to id of the style map which specifies
      * a highlight styleId. Such placemarks will be filtered out
      * in GeoGraphicsScene which will query for placemark->styleUrl()
-     * to decide whether the placemark should be highlighted ot not.
+     * to decide whether the placemark should be highlighted or not.
      */
     void highlightedPlacemarksChanged(const QVector<GeoDataPlacemark*>& clickedPlacemarks);
 

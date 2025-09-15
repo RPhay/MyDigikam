@@ -134,7 +134,7 @@ public:
     virtual bool contains(const GeoDataCoordinates& coordinates) const;
 
     /*!
-     * @brief Returns whether the orientaion of ring is coloskwise or not
+     * @brief Returns whether the orientation of ring is clockwise or not
      * \return Return value is true if ring is clockwise orientated
      */
     virtual bool isClockwise() const;

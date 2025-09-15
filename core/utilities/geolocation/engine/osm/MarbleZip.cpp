@@ -986,7 +986,7 @@ MarbleZipReader::MarbleZipReader(QIODevice* device)
 }
 
 /*!
-    Desctructor
+    Destructor
 */
 MarbleZipReader::~MarbleZipReader()
 {

@@ -158,7 +158,7 @@ public:
 
     LightTableThumbBar*       thumbView                     = nullptr;     ///< Top level view to host thumbar.
 
-    LightTableView*           previewView                   = nullptr;     ///< Central view including left and right pannels.
+    LightTableView*           previewView                   = nullptr;     ///< Central view including left and right panels.
 
     DZoomBar*                 leftZoomBar                   = nullptr;     ///< Zoom bar to control the left preview and show on status bar.
     DZoomBar*                 rightZoomBar                  = nullptr;     ///< Zoom bar to control the right preview and show on status bar.

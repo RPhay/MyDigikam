@@ -52,4 +52,4 @@ public:
     RadioButtonHBox(QWidget* const left, QWidget* const right, Qt::LayoutDirection dir);
 };
 
-} // namepace Digikam
+} // namespace Digikam

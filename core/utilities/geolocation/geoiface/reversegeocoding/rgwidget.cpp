@@ -864,7 +864,7 @@ void RGWidget::slotRegenerateNewTags()
 }
 
 /**
- * @brief Adds all address elements below the selected tag. The address ellements are order by area size.
+ * @brief Adds all address elements below the selected tag. The address elements are ordered by area size.
  * For example: country > state > state district > city ...
  */
 void RGWidget::slotAddAllAddressElementsToTag()

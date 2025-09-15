@@ -990,10 +990,10 @@ void EclSolar::setPenumbraAngle(double pa, int mode)
        (pa < 1.0). Set pa = 1 for the normal penumbra boundaries
 
        if mode == 1 the angle will be set such that the penumbra line
-       markes magnitude pa. pa == 0 will mark normal penumbra boundaries
+       marks magnitude pa. pa == 0 will mark normal penumbra boundaries
 
        if mode == 2 the angle will be set such that the penumbra line
-       markes the obscuration pa. pa == 0.5 will mean that 50% of the Sun's
+       marks the obscuration pa. pa == 0.5 will mean that 50% of the Sun's
        disk is covered by the Moon etc.
     */
 
@@ -2434,7 +2434,7 @@ int EclSolar::GNSBound(bool firstc, bool north, double& lat, double& lng)
         r0 = 0;    // distance center of Earth - shadow axis
     }
 
-    // calculate the coordinates if there is an intersecton
+    // calculate the coordinates if there is an intersection
     if (r0 < 1.0)  // there should be an intersection
     {
         if (dlt > 0)
@@ -2734,7 +2734,7 @@ int EclSolar::GRSBound(bool firstc, double& lat1, double& lng1, double& lat2, do
         };
     };
 
-    // calculate the coordinates if there is an intersecton
+    // calculate the coordinates if there is an intersection
     if (lat1 < 100.0)  // there should be an intersection
     {
         vrx[2] = 0;
@@ -3733,7 +3733,7 @@ void EclSolar::getShadowCone(double mjd, bool umbra, int numpts, double* lat, do
             r0 = 0;    // distance center of Earth - shadow axis
         }
 
-        // calculate the coordinates if there is an intersecton
+        // calculate the coordinates if there is an intersection
         if (r0 < 1.0)  // there should be an intersection
         {
             if (dlt > 0)
@@ -3858,7 +3858,7 @@ void EclSolar::getShadowCone(double mjd, bool umbra, int numpts, double* lat, do
             r0 = 0;    // distance center of Earth - shadow axis
         }
 
-        // calculate the coordinates if there is an intersecton
+        // calculate the coordinates if there is an intersection
         if (r0 < 1.0)  // there should be an intersection
         {
             if (dlt > 0)
@@ -3938,7 +3938,7 @@ void EclSolar::getShadowCone(double mjd, bool umbra, int numpts, double* lat, do
             r0 = 0;    // distance center of Earth - shadow axis
         }
 
-        // calculate the coordinates if there is an intersecton
+        // calculate the coordinates if there is an intersection
         if (r0 < 1.0)  // there should be an intersection
         {
             if (dlt > 0)

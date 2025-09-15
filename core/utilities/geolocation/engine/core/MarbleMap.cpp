@@ -595,7 +595,7 @@ void MarbleMap::downloadRegion(QVector<TileCoordsPyramid> const& pyramid)
     t.start();
 
     // When downloading a region (the author of these lines thinks) most users probably expect
-    // the download to begin with the low resolution tiles and then procede level-wise to
+    // the download to begin with the low resolution tiles and then proceed level-wise to
     // higher resolution tiles. In order to achieve this, we start requesting downloads of
     // high resolution tiles and request the low resolution tiles at the end because
     // DownloadQueueSet (silly name) is implemented as stack.

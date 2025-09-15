@@ -2709,7 +2709,7 @@ void ImportUI::slotCollectionLocationStatusChanged(const CollectionLocation&, in
 
 void ImportUI::slotToggleShowBar()
 {
-    // Method called in contructor: use dynamic binding
+    // Method called in constructor: use dynamic binding
 
     this->showThumbBar(d->showBarAction->isChecked());
 }

@@ -208,7 +208,7 @@ public:
     GeoDataCoordinates focusPoint() const;
 
     /**
-      * @brief Change the point of focus, overridding any previously set focus point.
+      * @brief Change the point of focus, overriding any previously set focus point.
       * @param focusPoint New focus point
       * @see focusPoint resetFocusPoint
       */

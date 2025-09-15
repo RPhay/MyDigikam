@@ -33,7 +33,7 @@ namespace gpx
 
 GPX_DEFINE_TAG_HANDLER_11(link)
 
-// Gpx link provides a linke related to the object, and is inserted into the
+// Gpx link provides a link related to the object, and is inserted into the
 // waypoint description as this seems to be the simplest means to make it
 // available to the user.
 // In addition, link properties are saved to extendedData.

@@ -77,7 +77,7 @@ WelcomePage::WelcomePage(QWizard* const dlg)
                      "%1 (old %2). "
                      "There are unresolved problems reported when re-using old "
                      "configuration files, so it is not recommended to do it "
-                     "for the moment, and at your own risk.</p>"
+                     "for the moment, and therefore use at your own risk.</p>"
                      "</qt>",
                      newPlace,
                      oldPlace));

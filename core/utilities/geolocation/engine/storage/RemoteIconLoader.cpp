@@ -152,7 +152,7 @@ QImage RemoteIconLoader::load(const QUrl& url)
     /*
      * All the downloaded images are saved on disk
      * at location cache/icons/ ( relative location ).
-     * If the rquested icon is present at this location then
+     * If the requested icon is present at this location then
      * return it.
      */
     else if (d->loadFromDiskCache(url))

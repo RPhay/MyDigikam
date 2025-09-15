@@ -145,7 +145,7 @@ bool FacePipelineReset::writer()
     IdentityProvider* const idProvider = IdentityProvider::instance();
     QIcon icon                         = QIcon::fromTheme(QLatin1String("person"));
 
-    // clear all identites and training from recognition DB before
+    // clear all identities and training from recognition DB before
     // we start looping through the results from the pipeline
 
     idProvider->clearAllTraining();
@@ -219,6 +219,6 @@ void FacePipelineReset::addMoreWorkers()
     // reset pipeline is always single thread per stage
 }
 
-} // namepsace Digikam
+} // namespace Digikam
 
 #include "moc_facepipelinereset.cpp"

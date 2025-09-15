@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-05-15
- * Description : Managemenet dialogs for bookmarks
+ * Description : Management dialogs for bookmarks
  *
  * SPDX-FileCopyrightText: 2017-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

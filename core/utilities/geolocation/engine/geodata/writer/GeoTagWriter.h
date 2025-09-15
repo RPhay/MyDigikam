@@ -47,7 +47,7 @@ public:
      * @brief Object Name and Namespace Pair
      * This type is intended to be used in a similar way to @see GeoParser::QualifiedName
      * but in practice will act differently. The Namespace will not be an XML
-     * namespace directly but instead it will refere to a Document Type so that
+     * namespace directly but instead it will refer to a Document Type so that
      * the GeoWriter will be able to identify what GeoTagWriter to use even in
      * absence of an XML namespace. This also allows for the case where data
      * using an internal representation of the KML classes can be outputted in

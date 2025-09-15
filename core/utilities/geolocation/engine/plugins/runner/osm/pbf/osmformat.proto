@@ -33,7 +33,7 @@ are measured in units <granularity> nanodegrees. The default of
 granularity of 100 nanodegrees corresponds to about 1cm on the ground,
 and a full lat or lon fits into 32 bits.
 
-Converting an integer to a lattitude or longitude uses the formula:
+Converting an integer to a latitude or longitude uses the formula:
 $OUT = IN * granularity / 10**9$. Many encoding schemes use delta
 coding when representing nodes and relations.
 
@@ -191,7 +191,7 @@ message Node {
    required sint64 lon = 9;
 }
 
-/* Used to densly represent a sequence of nodes that do not have any tags.
+/* Used to densely represent a sequence of nodes that do not have any tags.
 
 We represent these nodes columnwise as five columns: ID's, lats, and
 lons, all delta coded. When metadata is not omitted, 

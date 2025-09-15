@@ -101,7 +101,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add JPEG-XL, WEBP, and AVIF export settings everywhere.");
     newFeatures << i18n("Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.");
     newFeatures << i18n("Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.");
-    newFeatures << i18n("Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versionned images in editor.");
+    newFeatures << i18n("Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versionned images in editor.");
     newFeatures << i18n("Usability: add hamburger menu to tool-bar if main menu is hidden.");
     newFeatures << i18n("Metadata: add new option to write metadata to files with ExifTool backend.");
     newFeatures << i18n("Metadata: optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.");

@@ -214,4 +214,4 @@ bool GeoDataRelation::containsAnyOf(const QSet<qint64>& memberIds) const
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(GeoDataRelation::RelationTypes)
 
-} // namesapce Marble
+} // namespace Marble

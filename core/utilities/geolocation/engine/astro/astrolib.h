@@ -167,7 +167,7 @@ private:
     Vec3     rint;              // intersection shadow axis - Earth surface
 
     double   t          = 0.0;  // time in Julian Centuries
-    double   ep2        = 0.0;  // correction for Apparent Sideral Time
+    double   ep2        = 0.0;  // correction for Apparent Sidereal Time
     double   d_umbra    = 0.0;  // diameter of umbra in Earth Radii
     double   d_penumbra = 0.0;  // diameter of penumbra in Earth Radii
 
