@@ -104,7 +104,7 @@
     !include "reboot_required.nsh"
     !include "readme_page.nsh"
     !include "events_functions.nsh"
-    !include "snorenotify.nsh"
+    ;!include "snorenotify.nsh"
 
 ;-------------------------------------------------------------------------------
 ;Interface Configuration
@@ -128,7 +128,7 @@
 ;-------------------------------------------------------------------------------
 ;SnoreToast Configuration
 
-    !define SnoreToastExe "$INSTDIR\SnoreToast.exe"
+    ;!define SnoreToastExe "$INSTDIR\SnoreToast.exe"
 
 ;-------------------------------------------------------------------------------
 ;Page Definitions
