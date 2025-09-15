@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-14 01:57+0000\n"
-"PO-Revision-Date: 2025-09-13 15:42-0300\n"
+"PO-Revision-Date: 2025-09-14 15:37-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -1164,7 +1164,7 @@ msgstr "Flash:"
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
-msgstr "Balanceamento de branco:"
+msgstr "Balanço de branco:"
 
 #: core/app/items/utils/tooltipfiller.cpp:319
 #: core/utilities/searchwindow/searchgroup.cpp:113
@@ -4259,7 +4259,7 @@ msgstr "Flash"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "White balance"
-msgstr "Balanceamento de branco"
+msgstr "Balanço de branco"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:234
 #, kde-format
@@ -4682,26 +4682,26 @@ msgstr ""
 #: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid "Color Balance"
-msgstr "Balanceamento de cor"
+msgstr "Balanço de cor"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
 #, kde-format
 msgid "Adjust color balance."
-msgstr "Ajustar o balanceamento de cores."
+msgstr "Ajustar o balanço de cor."
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:42
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Color Balance"
-msgstr "Balanceamento de cor"
+msgstr "Balanço de cor"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:57
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color balance"
-msgstr "Uma ferramenta para ajustar o balanceamento de cores"
+msgstr "Uma ferramenta para ajustar o balanço de cor"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:62
 #, kde-kuit-format
@@ -4923,14 +4923,14 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "White Balance"
-msgstr "Balanceamento de branco"
+msgstr "Balanço de branco"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:57
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust white balance"
-msgstr "Uma ferramenta para ajustar o balanceamento de branco"
+msgstr "Uma ferramenta para ajustar o balanço de branco"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
 #, kde-kuit-format
@@ -8107,7 +8107,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Color Balance..."
-msgstr "Balanceamento de cor..."
+msgstr "Balanço de cor..."
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:41
 #, kde-format
@@ -8192,8 +8192,8 @@ msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
 "you want to apply color balance yourself."
 msgstr ""
-"Assinale para aplicar o balanceamento de cores incorporado do perfil de "
-"filme. Desmarque se deseja aplicar você mesmo o balanceamento de cores."
+"Assinale para aplicar o balanço de cor embutido do perfil de filme. "
+"Desmarque se deseja aplicar você mesmo o balanço de cor."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
@@ -8398,7 +8398,7 @@ msgstr "O gerenciamento de cor está desabilitado..."
 #: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "White Balance"
-msgstr "Balanceamento de branco"
+msgstr "Balanço de branco"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:60
 #, kde-format
@@ -8412,7 +8412,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "White Balance..."
-msgstr "Balanceamento de branco..."
+msgstr "Balanço de branco..."
 
 #: core/dplugins/editor/decorate/border/bordertool.cpp:60
 #: core/dplugins/editor/decorate/border/bordertool.cpp:156
@@ -13920,7 +13920,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:184
 #, kde-format
 msgid "White balance:"
-msgstr "Balanceamento de branco:"
+msgstr "Balanço de branco:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:186
 #, kde-format
@@ -13941,8 +13941,8 @@ msgid ""
 "Select here the white balance mode set by the camera when the picture was "
 "taken."
 msgstr ""
-"Selecione aqui o modo de balanceamento de branco usado pela câmera quando a "
-"foto foi tirada."
+"Selecione aqui o modo de balanço de branco usado pela câmera quando a foto "
+"foi tirada."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:71
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:69
@@ -31290,7 +31290,7 @@ msgstr "Filtros de tonalidade"
 #: core/libs/dimg/filters/cb/cbfilter.cpp:92
 #, kde-format
 msgid "Color Balance Tool"
-msgstr "Ferramenta de balanceamento de cores"
+msgstr "Ferramenta de balanço de cor"
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:67
 #, kde-format
@@ -33749,7 +33749,7 @@ msgstr ""
 #: core/libs/dimg/filters/wb/wbfilter.cpp:89
 #, kde-format
 msgid "White Balance Tool"
-msgstr "Filtro de balanceamento de branco"
+msgstr "Filtro de balanço de branco"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:148
 #, kde-format
@@ -33767,7 +33767,7 @@ msgstr "Ajuste:"
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the white balance color temperature in Kelvin."
-msgstr "Defina aqui a temperatura de balanceamento de branco em Kelvin."
+msgstr "Defina aqui a temperatura de balanço de branco em Kelvin."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:158
 #, kde-format
@@ -33863,7 +33863,7 @@ msgstr "Nenhuma"
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Select the white balance color temperature preset to use."
-msgstr "Selecione a temperatura de balanceamento de cor a ser usada."
+msgstr "Selecione a temperatura de balanço de cor a ser usada."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:177
 #, kde-format
@@ -33965,8 +33965,7 @@ msgid ""
 "the white color balance temperature and green component."
 msgstr ""
 "Com este botão, você pode selecionar a cor a partir da imagem original, "
-"usada para definir a temperatura e o componente verde do balanceamento do "
-"branco."
+"usada para definir a temperatura e o componente verde do balanço do branco."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:206
 #, kde-format
@@ -34085,37 +34084,36 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
-msgstr "Arquivo de configurações de balanceamento de branco a carregar"
+msgstr "Arquivo de configurações de balanço de branco a carregar"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:505
 #, kde-format
 msgctxt "@info"
 msgid "\"%1\" is not a White Color Balance settings text file."
 msgstr ""
-"\"%1\" não é um arquivo de texto das configurações de balanceamento de "
-"branco."
+"\"%1\" não é um arquivo de texto das configurações de balanço de branco."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:526
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the White Color Balance text file."
 msgstr ""
-"Não foi possível carregar as configurações do arquivo de texto do "
-"balanceamento de branco."
+"Não foi possível carregar as configurações do arquivo de texto do balanço de "
+"branco."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:534
 #, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
-msgstr "Arquivo de configurações de balanceamento de branco a salvar"
+msgstr "Arquivo de configurações de balanço de branco a salvar"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:561
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the White Color Balance text file."
 msgstr ""
-"Não foi possível salvar as configurações no arquivo de texto do "
-"balanceamento de branco."
+"Não foi possível salvar as configurações no arquivo de texto do balanço de "
+"branco."
 
 #: core/libs/dngwriter/dngsettings.cpp:74
 #, kde-format
@@ -35049,9 +35047,7 @@ msgid "Search in"
 msgstr "Pesquisar em"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label short translated text about the Face Worflow."
-#| msgid "Workflow:"
+#, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Fluxo de trabalho:"
@@ -39206,16 +39202,15 @@ msgid ""
 "strong='true'>Manual</emphasis>: Set a custom temperature and green level "
 "values.</item></list></para>"
 msgstr ""
-"<title>Balanceamento de branco</title><para>Configure o balanceamento de "
-"branco puro:</para><para><list><item><emphasis strong='true'>D65 padrão</"
-"emphasis>: Usar um balanceamento de branco padrão da luz do dia D65.</"
-"item><item><emphasis strong='true'>Câmera</emphasis>: Usa o balanceamento de "
-"branco especificado pela câmera. Se não estiver disponível, reverte para o "
-"balanceamento de branco neutro padrão.</item><item><emphasis "
-"strong='true'>Automático</emphasis>: Calcula um balanceamento de branco "
-"automático que faz a média da imagem inteira.</item><item><emphasis "
-"strong='true'>Manual</emphasis>: Define uma temperatura e valores dos níveis "
-"de verde personalizados.</item></list></para>"
+"<title>Balanço de branco</title><para>Configura o balanço de branco puro:</"
+"para><para><list><item><emphasis strong='true'>D65 padrão</emphasis>: Usar "
+"um balanço de branco padrão da luz do dia D65.</item><item><emphasis "
+"strong='true'>Câmera</emphasis>: Usa o balanço de branco especificado pela "
+"câmera. Se não estiver disponível, reverte para o balanço de branco neutro "
+"padrão.</item><item><emphasis strong='true'>Automático</emphasis>: Calcula "
+"um balanço de branco automático que faz a média da imagem inteira.</"
+"item><item><emphasis strong='true'>Manual</emphasis>: Define uma temperatura "
+"e valores dos níveis de verde personalizados.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:354
 #, kde-format
@@ -39475,7 +39470,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "White Balance"
-msgstr "Balanceamento de branco"
+msgstr "Balanço de branco"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:504
 #, kde-format
@@ -43089,14 +43084,14 @@ msgid ""
 msgstr ""
 "<ul><li><p>A <b>tentativa de percepção</b> faz com que todo o espectro da "
 "imagem seja comprimido ou expandido para preencher o espectro de cores do "
-"dispositivo de destino, para que o balanceamento de tons de cinza seja "
-"preservado mas a correção colorimétrica possa não vir a ser.</p><p>Em outras "
-"palavras, se certas cores de uma imagem saírem fora do intervalo de cores "
-"que o dispositivo consiga representar, a intenção de imagem fará com que "
-"todas as cores da imagem sejam ajustadas, para que cada cor da imagem entre "
-"no intervalo que pode ser renderizado e, deste modo, a relação entre as "
-"cores seja preservada ao máximo.</p><p>Esta tentativa é mais adequada para "
-"exibir as fotografias e imagens e é a tentativa padrão.</p></li><li><p>A "
+"dispositivo de destino, para que o balanço de tons de cinza seja preservado "
+"mas a correção colorimétrica possa não vir a ser.</p><p>Em outras palavras, "
+"se certas cores de uma imagem saírem fora do intervalo de cores que o "
+"dispositivo consiga representar, a intenção de imagem fará com que todas as "
+"cores da imagem sejam ajustadas, para que cada cor da imagem entre no "
+"intervalo que pode ser renderizado e, deste modo, a relação entre as cores "
+"seja preservada ao máximo.</p><p>Esta tentativa é mais adequada para exibir "
+"as fotografias e imagens e é a tentativa padrão.</p></li><li><p>A "
 "<b>tentativa colorimétrica absoluta</b> faz com que todas as cores, que "
 "saiam do intervalo que o dispositivo de saída consegue desenhar, possam ser "
 "ajustadas para a cor mais próxima que pode ser processada, enquanto todas as "
@@ -50912,7 +50907,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetuptooltip.cpp:149
 #, kde-format
 msgid "Show camera white balance settings"
-msgstr "Mostrar configurações de balanceamento de branco da câmera"
+msgstr "Mostrar configurações de balanço de branco da câmera"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
 #: core/utilities/setup/setuptooltip.cpp:209
@@ -50922,8 +50917,8 @@ msgid ""
 "Set this option to display the camera white balance settings used to take "
 "the image."
 msgstr ""
-"Selecione esta opção para exibir as configurações de balanceamento de "
-"branco, usadas para tirar a foto."
+"Selecione esta opção para exibir as configurações de balanço de branco, "
+"usadas para tirar a foto."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:117
 #, kde-format
@@ -52042,12 +52037,12 @@ msgstr "Modo do flash"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:579
 #, kde-format
 msgid "White balance"
-msgstr "Balanceamento de branco"
+msgstr "Balanço de branco"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:74
 #, kde-format
 msgid "White balance (color temperature)"
-msgstr "Balanceamento de branco (temperatura da cor)"
+msgstr "Balanço de branco (temperatura da cor)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
 #, kde-format
@@ -57386,7 +57381,7 @@ msgid ""
 "camera clock or different time zone."
 msgstr ""
 "Define o desvio entre as horas das imagens e as horas da trilha. Por "
-"exemplo, para corrigir um relógio com hora incorreta da câmara ou um fuso-"
+"exemplo, para corrigir um relógio com hora incorreta da câmera ou um fuso-"
 "horário diferente."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:170
@@ -62903,12 +62898,12 @@ msgstr "Modo do flash"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "Automatic or manual white balance"
-msgstr "Balanceamento de branco automático ou manual"
+msgstr "Balanço de branco automático ou manual"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:579
 #, kde-format
 msgid "Color temperature used for white balance"
-msgstr "Temperatura de cor usada para balanceamento de branco"
+msgstr "Temperatura de cor usada para balanço de branco"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:580
 #, kde-format
@@ -68238,7 +68233,7 @@ msgstr "Configurações do flash da câmera"
 #: core/utilities/setup/setuptooltip.cpp:381
 #, kde-format
 msgid "Camera white balance settings"
-msgstr "Configurações de balanceamento de branco da câmera"
+msgstr "Configurações de balanço de branco da câmera"
 
 #: core/utilities/setup/setuptooltip.cpp:225
 #, kde-format
