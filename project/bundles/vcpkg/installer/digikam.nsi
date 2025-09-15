@@ -104,7 +104,7 @@
     !include "reboot_required.nsh"
     !include "readme_page.nsh"
     !include "events_functions.nsh"
-    ;!include "snorenotify.nsh"
+    !include "snorenotify.nsh"
 
 ;-------------------------------------------------------------------------------
 ;Interface Configuration
@@ -128,7 +128,7 @@
 ;-------------------------------------------------------------------------------
 ;SnoreToast Configuration
 
-    ;!define SnoreToastExe "$INSTDIR\SnoreToast.exe"
+    !define SnoreToastExe "$INSTDIR\SnoreToast.exe"
 
 ;-------------------------------------------------------------------------------
 ;Page Definitions
@@ -313,12 +313,12 @@
         ;Create shortcuts
 
         SetOutPath "$INSTDIR"
-        CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
+        ;CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
+        ;CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
+        ;CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
 
-        ;!insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe" "digikam"
-        ;!insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe" "showfoto"
+        !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe" "digikam"
+        !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe" "showfoto"
 
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "URL" "${PRODUCT_HOMEPAGE}"
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "IconIndex" "12"
