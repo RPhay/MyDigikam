@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-14 01:57+0000\n"
+"POT-Creation-Date: 2025-09-16 02:04+0000\n"
 "PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3248,7 +3248,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid ""
-"Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 
@@ -8022,7 +8022,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Subject Information"
-msgid "Subject segmentation:"
+msgid "Subject Segmentation:"
 msgstr "სათაურის ინფორმაცია"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
@@ -49736,8 +49736,8 @@ msgid ""
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
 "%2). There are unresolved problems reported when re-using old configuration "
-"files, so it is not recommended to do it for the moment, and at your own "
-"risk.</p></qt>"
+"files, so it is not recommended to do it for the moment, and therefore use "
+"at your own risk.</p></qt>"
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
@@ -61459,7 +61459,7 @@ msgstr "JPEG"
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<title>Default File Format for Saving Versionned Images</title><para>Select "
+"<title>Default File Format for Saving Versioned Images</title><para>Select "
 "the file format in which edited images are saved automatically. Format-"
 "specific options, like compression settings, can be configured on the "
 "<interface>Format Options</interface> tab.</para>"

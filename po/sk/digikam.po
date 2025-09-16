@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-14 01:57+0000\n"
+"POT-Creation-Date: 2025-09-16 02:04+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -3375,7 +3375,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid ""
-"Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 
@@ -8566,7 +8566,7 @@ msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-msgid "Subject segmentation:"
+msgid "Subject Segmentation:"
 msgstr "Informácie o module"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
@@ -54283,8 +54283,8 @@ msgid ""
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
 "%2). There are unresolved problems reported when re-using old configuration "
-"files, so it is not recommended to do it for the moment, and at your own "
-"risk.</p></qt>"
+"files, so it is not recommended to do it for the moment, and therefore use "
+"at your own risk.</p></qt>"
 msgstr ""
 "<qt><br/><p>Ak používate digiKam prvýkrát, môžete zvyšok textu preskočiť:</"
 "p><p><b> Migrácia z digiKamu 4</b></p><p>Súbory s konfiguráciou digiKamu 4 "
@@ -67213,7 +67213,7 @@ msgstr "JPEG"
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<title>Default File Format for Saving Versionned Images</title><para>Select "
+"<title>Default File Format for Saving Versioned Images</title><para>Select "
 "the file format in which edited images are saved automatically. Format-"
 "specific options, like compression settings, can be configured on the "
 "<interface>Format Options</interface> tab.</para>"

@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-14 01:57+0000\n"
-"PO-Revision-Date: 2025-09-14 15:37-0300\n"
+"POT-Creation-Date: 2025-09-16 02:04+0000\n"
+"PO-Revision-Date: 2025-09-15 18:17-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3335,9 +3335,12 @@ msgstr ""
 "lote."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
+#| "image format to store versionned images in editor."
 msgid ""
-"Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 "Controle de versão: adiciona suporte a JPEG-XL, HEIF, WEBP e AVIF como "
@@ -8682,8 +8685,9 @@ msgstr ""
 "objeto. Isso permite simular a profundidade de campo de uma lente."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, kde-format
-msgid "Subject segmentation:"
+#, fuzzy, kde-format
+#| msgid "Subject segmentation:"
+msgid "Subject Segmentation:"
 msgstr "Segmentação do assunto:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
@@ -11667,7 +11671,7 @@ msgstr "Correlacionador de GPS"
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
-msgstr "Desfazer/refazer"
+msgstr "Desfazer/Refazer"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
@@ -43684,7 +43688,7 @@ msgstr "Migração do modelo/vista da tela do editor de imagem"
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Scanner"
-msgstr "Analisador da qualidade da imagem"
+msgstr "Analisador de qualidade da imagem"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:231
 #, kde-format
@@ -52991,7 +52995,17 @@ msgstr ""
 "primeira execução, para que você possa usar o digiKam rapidamente.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
+#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
+#| "from digiKam 4 are not migrated. The old database can still be used, you "
+#| "just need to choose the same locations for collections and database in "
+#| "the following dialogs. It is recommended to create a backup of your "
+#| "database before proceeding.</p><p>The new location for configuration "
+#| "files is %1 (old %2). There are unresolved problems reported when re-"
+#| "using old configuration files, so it is not recommended to do it for the "
+#| "moment, and at your own risk.</p></qt>"
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53000,8 +53014,8 @@ msgid ""
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
 "%2). There are unresolved problems reported when re-using old configuration "
-"files, so it is not recommended to do it for the moment, and at your own "
-"risk.</p></qt>"
+"files, so it is not recommended to do it for the moment, and therefore use "
+"at your own risk.</p></qt>"
 msgstr ""
 "<qt><br><p>Você pode ignorar o seguinte se usar o digiKam pela primeira vez:"
 "</p><p><b>Transição do digiKam 4</b></p><p>Os arquivos de configuração do "
@@ -53156,7 +53170,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
-msgstr "Faixa de semelhança:"
+msgstr "Intervalo de semelhança:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:232
 #, kde-format
@@ -53295,7 +53309,7 @@ msgstr "Pesquisar nos álbuns:"
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:56
 #, kde-format
 msgid "Similarity range:"
-msgstr "Faixa de semelhança:"
+msgstr "Intervalo de semelhança:"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:72
 #, kde-format
@@ -56045,7 +56059,7 @@ msgstr "Adicionar ponto de &medida"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:735
 #, kde-format
 msgid "Remove &Last Measure Point"
-msgstr "Remover o ú&ltimo ponto de medida"
+msgstr "Remover ú&ltimo ponto de medida"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:737
 #, kde-format
@@ -57119,7 +57133,7 @@ msgstr "Exportar como..."
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
 #, kde-format
 msgid "Bookmark folder"
-msgstr "Favoritar pasta"
+msgstr "Pasta de favoritos"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:189
 #, kde-format
@@ -57372,7 +57386,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
-msgstr "Desvio das imagens (hh:mm:ss):"
+msgstr "Deslocamento das fotos (hh:mm:ss):"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
 #, kde-format
@@ -57629,7 +57643,7 @@ msgstr "Remover velocidade"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:95
 #, kde-format
 msgid "Look up missing altitude values"
-msgstr "Procurar valores de altitude faltando"
+msgstr "Consultar valores de altitude faltando"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
 #, kde-format
@@ -58026,12 +58040,12 @@ msgstr "Mostrar números"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:513
 #, kde-format
 msgid "Increase the thumbnail size on the map"
-msgstr "Aumenta o tamanho da miniatura no mapa"
+msgstr "Aumentar o tamanho da miniatura no mapa"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:516
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
-msgstr "Diminui o tamanho da miniatura no mapa"
+msgstr "Diminuir o tamanho da miniatura no mapa"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:523
 #, kde-format
@@ -58046,7 +58060,7 @@ msgstr "Selecionar imagens desenhando um retângulo"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:536
 #, kde-format
 msgid "Pan mode"
-msgstr "Modo de deslocamento"
+msgstr "Modo panorâmico"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:543
 #, kde-format
@@ -65419,10 +65433,16 @@ msgid "JPEG"
 msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "<title>Default File Format for Saving Versionned Images</"
+#| "title><para>Select the file format in which edited images are saved "
+#| "automatically. Format-specific options, like compression settings, can be "
+#| "configured on the <interface>Format Options</interface> tab.</para>"
 msgctxt "@info:whatsthis"
 msgid ""
-"<title>Default File Format for Saving Versionned Images</title><para>Select "
+"<title>Default File Format for Saving Versioned Images</title><para>Select "
 "the file format in which edited images are saved automatically. Format-"
 "specific options, like compression settings, can be configured on the "
 "<interface>Format Options</interface> tab.</para>"
