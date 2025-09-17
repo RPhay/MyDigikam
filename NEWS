@@ -26,7 +26,7 @@ TagsManager:     Add options to import or export tag-hierarchies to text files.
 Preview:         Add support to the FujiFilm camera focus points.
 ColorManagement: Use monitor color profile set under Windows, macOS, and Wayland.
 ProgressManager: Use native desktop notifier under Linux, macOS, and Windows.
-Editor:          New enhance tool to blur progressively the background of a subject from a photo 
+Editor:          New enhance tool to blur progressively the background of a subject from a photo.
 Documentation:   Add Brazilian translations.
 
 *****************************************************************************************************
