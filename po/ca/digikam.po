@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 02:04+0000\n"
-"PO-Revision-Date: 2025-09-14 15:08+0200\n"
+"POT-Creation-Date: 2025-09-17 01:56+0000\n"
+"PO-Revision-Date: 2025-09-16 11:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2660,7 +2660,7 @@ msgstr "A&juda"
 msgid "Main Toolbar"
 msgstr "Barra d'eines principal"
 
-#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2670,34 +2670,34 @@ msgstr "Barra d'eines principal"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
+#: core/app/main/main.cpp:246 core/showfoto/main/main.cpp:221
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer, Joan Maspons Ventura"
 
-#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
+#: core/app/main/main.cpp:247 core/showfoto/main/main.cpp:222
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com, joanmaspons@gmail.com"
 
-#: core/app/main/main.cpp:249
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Obre el diàleg de la càmera al «camí»"
 
-#: core/app/main/main.cpp:252
+#: core/app/main/main.cpp:258
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Obre el diàleg de càmera per al dispositiu amb UDI del Solid «udi»"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detecta i obre automàticament una càmera gphoto2 connectada"
 
-#: core/app/main/main.cpp:257
+#: core/app/main/main.cpp:263
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2705,12 +2705,12 @@ msgstr ""
 "Inicia el digiKam amb el fitxer de base de dades SQLite trobat al directori "
 "«dir»"
 
-#: core/app/main/main.cpp:260
+#: core/app/main/main.cpp:266
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Inicia el digiKam amb el fitxer de configuració «config»"
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:299
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2721,7 +2721,7 @@ msgstr ""
 "no està disponible. Si us plau, instal·leu-lo.\n"
 "No hi ha cap connector de base de dades instal·lat a l'ordinador."
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:308
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2733,7 +2733,7 @@ msgstr ""
 "Els connectors de base de dades instal·lats al vostre ordinador es llisten a "
 "continuació."
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:352
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3344,10 +3344,7 @@ msgstr ""
 "Afegir els convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
@@ -8706,8 +8703,7 @@ msgstr ""
 "motiu. Això permet simular una profunditat de camp d'una lent."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgid "Subject segmentation:"
+#, kde-format
 msgid "Subject Segmentation:"
 msgstr "Segmentació del motiu:"
 
@@ -50217,13 +50213,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Carpetes"
 
-#: core/showfoto/main/main.cpp:206
+#: core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:224
+#: core/showfoto/main/main.cpp:230
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -53212,17 +53208,7 @@ msgstr ""
 "configuració inicial per a poder usar ràpidament el digiKam.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53242,7 +53228,7 @@ msgstr ""
 "de la base de dades abans de continuar.</p><p>La nova ubicació per als "
 "fitxers de configuració és %1 (l'antiga %2). Hi ha problemes no resolts que "
 "informen quan es reutilitzen els fitxers de configuració antics, i per això "
-"de moment no es recomana que ho feu, d'altra manera serà sota el vostre "
+"de moment no es recomana que ho feu, d'altra manera useu-ho sota el vostre "
 "propi risc.</p></qt>"
 
 # skip-rule: punctuation-period-no
@@ -65682,13 +65668,7 @@ msgid "JPEG"
 msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving Versionned Images</"
-#| "title><para>Select the file format in which edited images are saved "
-#| "automatically. Format-specific options, like compression settings, can be "
-#| "configured on the <interface>Format Options</interface> tab.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Default File Format for Saving Versioned Images</title><para>Select "

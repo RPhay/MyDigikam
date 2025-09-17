@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 02:04+0000\n"
-"PO-Revision-Date: 2025-09-15 18:17-0300\n"
+"POT-Creation-Date: 2025-09-17 01:56+0000\n"
+"PO-Revision-Date: 2025-09-16 18:39-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -423,7 +423,7 @@ msgstr "Filtro de etiquetas de rosto"
 #: core/app/filters/filtersidebarwidget.cpp:236
 #, kde-format
 msgid "Labels Filter"
-msgstr "Filtro de legendas"
+msgstr "Filtro de rótulos"
 
 #: core/app/filters/tagfilterview.cpp:62
 #, kde-format
@@ -819,7 +819,7 @@ msgstr "Remover todas as etiquetas"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
-msgstr "Atribuir &legendas"
+msgstr "Atribuir &rótulos"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, kde-format
@@ -1229,7 +1229,7 @@ msgstr "Título:"
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
-msgstr "Descrição:"
+msgstr "Legenda:"
 
 #: core/app/items/utils/tooltipfiller.cpp:505
 #, kde-format
@@ -1239,7 +1239,7 @@ msgstr "Etiquetas:"
 #: core/app/items/utils/tooltipfiller.cpp:554
 #, kde-format
 msgid "Labels:"
-msgstr "Legendas:"
+msgstr "Rótulos:"
 
 #: core/app/items/utils/tooltipfiller.cpp:583
 #, kde-format
@@ -1273,7 +1273,7 @@ msgstr "Categoria:"
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
-msgstr "Descrição:"
+msgstr "Legenda:"
 
 #: core/app/items/utils/tooltipfiller.cpp:639
 #, kde-format
@@ -2654,7 +2654,7 @@ msgstr "Aj&uda"
 msgid "Main Toolbar"
 msgstr "Barra de ferramentas principal"
 
-#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2664,34 +2664,34 @@ msgstr "Barra de ferramentas principal"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
+#: core/app/main/main.cpp:246 core/showfoto/main/main.cpp:221
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "André Marcelo Alvarenga, Marcus Gama"
 
-#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
+#: core/app/main/main.cpp:247 core/showfoto/main/main.cpp:222
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alvarenga@kde.org, marcus.gama@gmail.com"
 
-#: core/app/main/main.cpp:249
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Abrir o diálogo da câmera em \"caminho\""
 
-#: core/app/main/main.cpp:252
+#: core/app/main/main.cpp:258
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Abrir o diálogo da câmera para o dispositivo com UDI do Solid \"udi\""
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detectar e abrir uma câmera conectada do gphoto2 automaticamente"
 
-#: core/app/main/main.cpp:257
+#: core/app/main/main.cpp:263
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2699,12 +2699,12 @@ msgstr ""
 "Iniciar o digiKam com o arquivo de banco de dados SQLite encontrado na pasta "
 "\"pasta\""
 
-#: core/app/main/main.cpp:260
+#: core/app/main/main.cpp:266
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Iniciar o digiKam com o arquivo de configuração \"config\""
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:299
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2715,7 +2715,7 @@ msgstr ""
 "Por favor, instale um deles.\n"
 "Não existe um plugin de bancos de dados instalado em seu computador."
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:308
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2726,7 +2726,7 @@ msgstr ""
 "Por favor, instale um deles.\n"
 "Os plugins instalados no seu computador são os listados abaixo:"
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:352
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2913,7 +2913,7 @@ msgstr "Ajuda"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Labels"
-msgstr "Legendas"
+msgstr "Rótulos"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
@@ -3335,10 +3335,7 @@ msgstr ""
 "lote."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
@@ -3442,7 +3439,7 @@ msgid ""
 "Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
-"Adiciona o suporte à verificação ortográfica no widget de texto da descrição "
+"Adiciona o suporte à verificação ortográfica no widget de texto da legenda "
 "usando o componente Sonnet do framework KDE."
 
 #: core/app/views/stack/welcomepageview.cpp:118
@@ -3527,7 +3524,7 @@ msgid ""
 "image quality."
 msgstr ""
 "Gerenciador de processamento em lote: adicione uma nova ferramenta para "
-"atribuir legendas de seleção automaticamente, analisando a qualidade da "
+"atribuir rótulos de seleção automaticamente, analisando a qualidade da "
 "imagem."
 
 #: core/app/views/stack/welcomepageview.cpp:128
@@ -3537,14 +3534,14 @@ msgid ""
 "batch."
 msgstr ""
 "Gerenciador de processos: adiciona uma nova ferramenta para atribuir "
-"classificações, seleções e legendas de cores em lote."
+"classificações, rótulos de seleção e de cores em lote."
 
 #: core/app/views/stack/welcomepageview.cpp:129
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
 "Gerenciador de processamento: adiciona uma nova ferramenta para atribuir "
-"títulos e descrições em lote."
+"títulos e legendas em lote."
 
 #: core/app/views/stack/welcomepageview.cpp:130
 #, kde-format
@@ -3866,13 +3863,13 @@ msgstr "Classificação"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
-msgstr "Legenda de seleção"
+msgstr "Rótulo de seleção"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:69
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
-msgstr "Legenda de cor"
+msgstr "Rótulo de cor"
 
 # A TRADUÇÃO COMO "TÍTULO" NÃO FICA ADEQUADA NO CONTEXTO.
 #: core/app/views/tableview/tableview_column_digikam.cpp:73
@@ -3885,7 +3882,7 @@ msgstr "Título"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Caption"
-msgstr "Descrição"
+msgstr "Legenda"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, kde-format
@@ -3903,13 +3900,13 @@ msgstr "Classificação"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
-msgstr "Legenda de seleção"
+msgstr "Rótulo de seleção"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:100
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
-msgstr "Legenda de cor"
+msgstr "Rótulo de cor"
 
 # A TRADUÇÃO COMO "TÍTULO" NÃO FICA ADEQUADA NO CONTEXTO.
 #: core/app/views/tableview/tableview_column_digikam.cpp:105
@@ -3922,7 +3919,7 @@ msgstr "Título"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
-msgstr "Descrição"
+msgstr "Legenda"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:115
 #, kde-format
@@ -6236,14 +6233,14 @@ msgstr "Digite aqui o texto do título."
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #, kde-format
 msgid "Captions:"
-msgstr "Descrições:"
+msgstr "Legendas:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
-msgstr "Digite aqui o texto da descrição."
+msgstr "Digite aqui o texto da legenda."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
 #, kde-format
@@ -6258,21 +6255,21 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
-"Se você ativar esta opção, os títulos e descrições serão limpos e "
-"substituídos pelos novos valores;\n"
+"Se você ativar esta opção, os títulos e legendas serão limpos e substituídos "
+"pelos novos valores;\n"
 "caso contrário, os valores antigos serão mesclados com os novos."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Assign Captions"
-msgstr "Atribuir descrições"
+msgstr "Atribuir legendas"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
-msgstr "Uma ferramenta para atribuir metadados de descrições a imagens"
+msgstr "Uma ferramenta para atribuir metadados de legendas a imagens"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:62
 #, kde-kuit-format
@@ -6282,17 +6279,17 @@ msgid ""
 "metadata alternative values to images.</para>"
 msgstr ""
 "<para>Esta ferramenta do Gerenciador de processamento em lote atribuirá "
-"valores alternativos de metadados de título e descrição às imagens.</para>"
+"valores alternativos de metadados de título e legenda às imagens.</para>"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:89
 #, kde-format
 msgid "Pick Label:"
-msgstr "Legenda de seleção:"
+msgstr "Rótulo de seleção:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:94
 #, kde-format
 msgid "Color Label:"
-msgstr "Legenda de cor:"
+msgstr "Rótulo de cor:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:99
 #, kde-format
@@ -6303,13 +6300,13 @@ msgstr "Classificação:"
 #, kde-format
 msgctxt "@title"
 msgid "Assign Labels"
-msgstr "Atribuir legendas"
+msgstr "Atribuir rótulos"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign labels metadata to images"
-msgstr "Uma ferramenta para atribuir metadados de legendas a imagens"
+msgstr "Uma ferramenta para atribuir metadados de rótulos a imagens"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:62
 #, kde-kuit-format
@@ -6319,7 +6316,7 @@ msgid ""
 "label metadata values to images.</para>"
 msgstr ""
 "<para>Esta ferramenta do Gerenciador de processamento em lote atribuirá "
-"valores de metadados para as legendas de classificação, cor ou seleção às "
+"valores de metadados para a classificação, rótulos de cor ou de seleção às "
 "imagens.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
@@ -6378,7 +6375,7 @@ msgstr "Analisar qualidade da imagem"
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
 msgstr ""
-"Uma ferramenta para atribuir metadados de legendas de seleção por qualidade "
+"Uma ferramenta para atribuir metadados de rótulos de seleção por qualidade "
 "de imagem"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:62
@@ -6389,7 +6386,7 @@ msgid ""
 "by parsing image and estimate the quality.</para>"
 msgstr ""
 "<para>Esta ferramenta do Gerenciador de processamento em lote atribuirá um "
-"valor de metadados à legenda de seleção analisando a imagem e estimando a "
+"valor de metadados ao rótulo de seleção analisando a imagem e estimando a "
 "qualidade.</para>"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
@@ -6450,7 +6447,7 @@ msgstr "Data"
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
-msgstr "Descrição"
+msgstr "Legenda"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
@@ -6517,7 +6514,7 @@ msgstr "Vídeo"
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
-msgstr "Título, comentário e descrição"
+msgstr "Legenda, comentário e descrição"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:217
 #, kde-format
@@ -6579,7 +6576,7 @@ msgstr "Título"
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
-msgstr "Descrição"
+msgstr "Legenda"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:97
 #, kde-format
@@ -8685,8 +8682,7 @@ msgstr ""
 "objeto. Isso permite simular a profundidade de campo de uma lente."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgid "Subject segmentation:"
+#, kde-format
 msgid "Subject Segmentation:"
 msgstr "Segmentação do assunto:"
 
@@ -12910,12 +12906,12 @@ msgstr ""
 #, kde-format
 msgctxt "image caption"
 msgid "Caption:"
-msgstr "Descrição:"
+msgstr "Legenda:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
 msgid "Set here the image's caption."
-msgstr "Defina aqui o descrição da imagem."
+msgstr "Defina aqui o legenda da imagem."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
 #, kde-format
@@ -12923,7 +12919,7 @@ msgid ""
 "Enter the image's caption. This field is not limited. UTF8 encoding will be "
 "used to save the text."
 msgstr ""
-"Digite a descrição da imagem. Este campo não tem limite e será usada a "
+"Digite a legenda da imagem. Este campo não tem limite e será usada a "
 "codificação UTF8 para salvar o texto."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:125
@@ -12936,13 +12932,13 @@ msgstr "Sincronizar com a seção de comentário do JFIF"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
 msgid "Sync XMP caption"
-msgstr "Sincronizar com a descrição do XMP"
+msgstr "Sincronizar com a legenda do XMP"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:127
 #, kde-format
 msgid "Sync IPTC caption (warning: limited to 2000 characters)"
 msgstr ""
-"Sincronizar com a descrição do IPTC (atenção: limitado a 2000 caracteres)"
+"Sincronizar com a legenda do IPTC (atenção: limitado a 2000 caracteres)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:134
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:290
@@ -12964,7 +12960,7 @@ msgstr "Data e hora de criação"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:91
 #, kde-format
 msgid "Creation sub-second"
-msgstr "Subsegundos da criação"
+msgstr "Subsegundo da criação"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
 #, kde-format
@@ -13007,7 +13003,7 @@ msgstr "Data e hora do original"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:124
 #, kde-format
 msgid "Original sub-second"
-msgstr "Subsegundos do original"
+msgstr "Subsegundo do original"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:137
 #, kde-format
@@ -13041,7 +13037,7 @@ msgstr "Data e hora da digitalização"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:150
 #, kde-format
 msgid "Digitization sub-second"
-msgstr "Subsegundos da digitalização"
+msgstr "Subsegundo da digitalização"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:163
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:117
@@ -13249,7 +13245,7 @@ msgstr "Manual"
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto bracket"
-msgstr "Delimitação automática"
+msgstr "Bracketing automático"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:176
 #, kde-format
@@ -13297,7 +13293,7 @@ msgstr "Média"
 #, kde-format
 msgctxt "metering mode"
 msgid "Center weighted average"
-msgstr "Média ponderada ao centro"
+msgstr "Média ponderada central"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
 #, kde-format
@@ -13351,7 +13347,7 @@ msgstr "Selecione aqui a velocidade ISO da câmera que tirou a foto."
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:254
 #, kde-format
 msgid "Sensing method:"
-msgstr "Método de sensibilidade:"
+msgstr "Método de detecção:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:256
 #, kde-format
@@ -13476,7 +13472,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
-msgstr "Descrição"
+msgstr "Legenda"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:87
 #, kde-format
@@ -13512,7 +13508,7 @@ msgstr "Ajustes"
 #, kde-format
 msgctxt "@title"
 msgid "Caption Information"
-msgstr "Informações da descrição"
+msgstr "Informações da legenda"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, kde-format
@@ -14059,7 +14055,7 @@ msgstr ""
 #, kde-format
 msgctxt "content description"
 msgid "Caption:"
-msgstr "Descrição:"
+msgstr "Legenda:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:86
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:83
@@ -14083,12 +14079,12 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:92
 #, kde-format
 msgid "Caption Writer:"
-msgstr "Escritor da descrição:"
+msgstr "Autor da legenda:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
 #, kde-format
 msgid "Enter the name of the caption author."
-msgstr "Digite o nome do autor da descrição."
+msgstr "Digite o nome do autor da legenda."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:68
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:98
@@ -14567,7 +14563,7 @@ msgstr "Digite o destino do envelope. Este campo é limitado a 1024 caracteres."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:162
 #, kde-format
 msgid "U.N.O ID:"
-msgstr "ID do U.N.O:"
+msgstr "ID do N.U.O:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:166
 #, kde-format
@@ -15267,7 +15263,7 @@ msgstr "Defina aqui a sinopse do conteúdo"
 #, kde-format
 msgctxt "content description"
 msgid "Captions:"
-msgstr "Descrição:"
+msgstr "Legendas:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:77
 #, kde-format
@@ -15277,12 +15273,12 @@ msgstr "Digite aqui a descrição do conteúdo"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:79
 #, kde-format
 msgid "Default Language Caption Options"
-msgstr "Opções padrão de idioma de legendas"
+msgstr "Opções padrão de idioma de legenda"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, kde-format
 msgid "Set here the name of the caption author."
-msgstr "Digite aqui o nome do autor da descrição."
+msgstr "Digite aqui o nome do autor da legenda."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:99
 #, kde-format
@@ -19753,7 +19749,7 @@ msgstr "O Programa de Manipulação de Imagens da GNU (GIMP)."
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:57
 #, kde-format
 msgid "Caption Type:"
-msgstr "Tipo de descrição:"
+msgstr "Tipo de legenda:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:86
@@ -20326,7 +20322,7 @@ msgstr "Selecionar o layout da página"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Caption Settings"
-msgstr "Configurações das legendas"
+msgstr "Configurações de legenda"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, kde-format
@@ -20412,7 +20408,7 @@ msgstr "Construir o arquivo de propriedades das imagens"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:279
 #, kde-format
 msgid "no caption"
-msgstr "sem legendas"
+msgstr "sem legenda"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:284
 #, kde-format
@@ -22344,7 +22340,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgid "Show image labels"
-msgstr "Mostrar legendas da imagem"
+msgstr "Mostrar rótulos da imagem"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, kde-format
@@ -22352,8 +22348,8 @@ msgid ""
 "Show the digiKam image color label and pick label at the bottom of the "
 "screen."
 msgstr ""
-"Mostra as legendas de cor e de seleção da imagem do digiKam na parte "
-"inferior da tela."
+"Mostra os rótulos de cor e de seleção da imagem do digiKam na parte inferior "
+"da tela."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
 #, kde-format
@@ -22471,15 +22467,15 @@ msgstr ""
 "espaço</i></td></tr><tr><td>Avançar vídeo:</td><td><i>Ctrl+Tecla para a "
 "direita</i></td></tr><tr><td>Retroceder vídeo:</td><td><i>Ctrl+Tecla para a "
 "esquerda</i></td></tr><tr><td>Configurações da apresentação de slides:</"
-"td><td><i>Tecla Alt+P</i></td></tr><tr><td>Ocultar/Mostrar Sobreposições:</"
+"td><td><i>Tecla Alt+P</i></td></tr><tr><td>Ocultar/Mostrar sobreposições:</"
 "td><td><i>Tecla Alt+Y</i></td></tr><tr><td>Sair:</td><td><i>Tecla Esc</i></"
 "td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Propriedades do Item</"
 "h1></b></center></nobr></td></tr><tr><td>Alterar Etiquetas:</td><td>Usa os "
 "atalhos de teclado para Etiquetas</td></tr><tr><td>Alterar Classificação:</"
 "td><td>Usa os atalhos de teclado para Classificação</td></tr><tr><td>Alterar "
-"Legenda de Cor:</td><td>Usa os atalhos de teclado para Legenda de Cor</td></"
-"tr><tr><td>Alterar Legenda de Seleção:</td><td>Usa os atalhos de teclado "
-"para Legenda de Seleção</td></tr><tr><td colspan="
+"rótulo de cor:</td><td>Usa os atalhos de teclado para rótulo de cor</td></"
+"tr><tr><td>Alterar rótulo de seleção:</td><td>Usa os atalhos de teclado para "
+"rótulo de seleção</td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Outros</h1></b></center></nobr></td></"
 "tr><tr><td>Mostrar esta ajuda:</td><td><i>tecla F1</i></td></tr></table>"
 
@@ -27761,13 +27757,13 @@ msgstr "Aceita"
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
-msgstr "Legendas exportadas"
+msgstr "Rótulos exportados"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:488
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
-msgstr "Álbum das legendas"
+msgstr "Rótulos do álbum"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
@@ -27830,7 +27826,7 @@ msgstr "Os sub-álbuns também devem ser analisados?"
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
-msgstr "Legendas"
+msgstr "Rótulos"
 
 #: core/libs/album/treeview/labelstreeview.cpp:403
 #, kde-format
@@ -27990,13 +27986,13 @@ msgstr "F&ilho de:"
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
-msgstr "&Descrição:"
+msgstr "Le&genda:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:162
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
-msgstr "Digite aqui a descrição do álbum..."
+msgstr "Digite aqui a legenda do álbum..."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:165
 #, kde-format
@@ -35278,12 +35274,12 @@ msgstr "Removendo as etiquetas das imagens"
 #: core/libs/fileactionmanager/fileactionmngr.cpp:179
 #, kde-format
 msgid "Assigning image pick label"
-msgstr "Atribuindo legenda de seleção às imagens"
+msgstr "Atribuindo rótulo de seleção às imagens"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:186
 #, kde-format
 msgid "Assigning image color label"
-msgstr "Atribuindo legenda de cores às imagens"
+msgstr "Atribuindo rótulo de cor às imagens"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:198
 #, kde-format
@@ -35426,12 +35422,12 @@ msgstr "<br><nobr><i>Classificação</i></nobr>"
 #: core/libs/filters/filterstatusbar.cpp:141
 #, kde-format
 msgid "<br><nobr><i>Pick Labels</i></nobr>"
-msgstr "<br><nobr><i>Legendas de seleção</i></nobr>"
+msgstr "<br><nobr><i>Rótulos de seleção</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:146
 #, kde-format
 msgid "<br><nobr><i>Color Labels</i></nobr>"
-msgstr "<br><nobr><i>Legendas de cor</i></nobr>"
+msgstr "<br><nobr><i>Rótulos de cor</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:151
 #, kde-format
@@ -35732,7 +35728,7 @@ msgid ""
 "doesn’t require adjusting the settings, and makes this feature easier to use."
 msgstr ""
 "Essas configurações determinam a qualidade de uma imagem e a convertem em "
-"uma pontuação armazenada no banco de dados como propriedade da legenda de "
+"uma pontuação armazenada no banco de dados como propriedade do rótulo de "
 "seleção. Essas informações podem ser avaliadas de duas maneiras: usando "
 "quatro fatores básicos para classificar a imagem (desfoque, ruído, exposição "
 "e compressão) ou usando um mecanismo de rede neural de aprendizado profundo. "
@@ -35775,7 +35771,7 @@ msgid ""
 "b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
 "<p><b>Todos</b>: analisa novamente a qualidade de todos os itens.</"
-"p><p><b>Somente os não atribuídos</b>: analisa apenas os itens sem legendas "
+"p><p><b>Somente os não atribuídos</b>: analisa apenas os itens sem rótulos "
 "de seleção automática atribuídas.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
@@ -35792,7 +35788,7 @@ msgid ""
 "rejected pick label (red flag)."
 msgstr ""
 "As imagens de baixa qualidade detectadas pelo mecanismo de "
-"qualidade<br>serão atribuídas à legenda de seleção rejeitada (bandeira "
+"qualidade<br>serão atribuídas ao rótulo de seleção rejeitada (bandeira "
 "vermelha)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
@@ -35809,7 +35805,7 @@ msgid ""
 "the pending pick label (yellow flag)."
 msgstr ""
 "As imagens de qualidade média detectadas pelo mecanismo de "
-"qualidade<br>serão atribuídas à legenda de seleção pendente (bandeira "
+"qualidade<br>serão atribuídas ao rótulo de seleção pendente (bandeira "
 "amarela)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
@@ -35826,7 +35822,7 @@ msgid ""
 "the accepted pick label (green flag)."
 msgstr ""
 "As imagens de alta qualidade detectadas pelo mecanismo de qualidade<br>serão "
-"atribuídas à legenda de seleção aceita (bandeira verde)."
+"atribuídas ao rótulo de seleção aceita (bandeira verde)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
 #, kde-format
@@ -35891,7 +35887,7 @@ msgstr "Rejeitada:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
-msgstr "O limite abaixo do qual todas as imagens terão a legenda 'Rejeitada'"
+msgstr "O limite abaixo do qual todas as imagens terão o rótulo 'Rejeitada'"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
@@ -35903,7 +35899,7 @@ msgstr "Pendente:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
-msgstr "O limite abaixo do qual todas as imagens terão a legenda 'Pendente'"
+msgstr "O limite abaixo do qual todas as imagens terão o rótulo 'Pendente'"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, kde-format
@@ -35915,7 +35911,7 @@ msgstr "Aceita:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
-msgstr "O limite acima do qual todas as imagens terão a legenda 'Aceita'"
+msgstr "O limite acima do qual todas as imagens terão o rótulo 'Aceita'"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
@@ -37226,19 +37222,19 @@ msgstr "Classificação"
 #, kde-format
 msgctxt "@title: xmp namespace for comment container"
 msgid "Caption"
-msgstr "Descrição"
+msgstr "Legenda"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:68
 #, kde-format
 msgctxt "@title: xmp namespace for pick-label container"
 msgid "Pick label"
-msgstr "Legenda de seleção"
+msgstr "Rótulo de seleção"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:72
 #, kde-format
 msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
-msgstr "Legenda de cor"
+msgstr "Rótulo de cor"
 
 #: core/libs/metadataengine/engine/metaengine_exif.cpp:1591
 #, kde-format
@@ -37766,20 +37762,20 @@ msgstr "Mostrar a janela de progresso detalhada"
 #: core/libs/properties/captions/captionedit.cpp:50
 #, kde-format
 msgid "Captions: "
-msgstr "Descrição: "
+msgstr "Legendas: "
 
 #: core/libs/properties/captions/captionedit.cpp:54
 #, kde-format
 msgid "Enter caption author name here."
-msgstr "Digite aqui o nome do autor do título."
+msgstr "Digite aqui o nome do autor da legenda."
 
 #: core/libs/properties/captions/itemdescedittab.cpp:275
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the image caption. "
 msgid_plural "You have edited the captions of %1 images. "
-msgstr[0] "Você editou a descrição da imagem. "
-msgstr[1] "Você editou a descrição de %1 imagens. "
+msgstr[0] "Você editou a legenda da imagem. "
+msgstr[1] "Você editou a legenda de %1 imagens. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:281
 #, kde-format
@@ -37802,16 +37798,16 @@ msgstr[1] "Você editou a data de %1 imagens. "
 msgctxt "@info"
 msgid "You have edited the pick label of the image. "
 msgid_plural "You have edited the pick label of %1 images. "
-msgstr[0] "Você editou a legenda de seleção da imagem. "
-msgstr[1] "Você editou a legenda de seleção de %1 imagens. "
+msgstr[0] "Você editou o rótulo de seleção da imagem. "
+msgstr[1] "Você editou o rótulo de seleção de %1 imagens. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the color label of the image. "
 msgid_plural "You have edited the color label of %1 images. "
-msgstr[0] "Você editou a legenda de cor da imagem. "
-msgstr[1] "Você editou a legenda de cor de %1 imagens. "
+msgstr[0] "Você editou o rótulo de cor da imagem. "
+msgstr[1] "Você editou o rótulo de cor de %1 imagens. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:305
 #, kde-format
@@ -37853,7 +37849,7 @@ msgstr "<li>título</li>"
 #, kde-format
 msgctxt "@info"
 msgid "<li>caption</li>"
-msgstr "<li>descrição</li>"
+msgstr "<li>legenda</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:338
 #, kde-format
@@ -37865,13 +37861,13 @@ msgstr "<li>data</li>"
 #, kde-format
 msgctxt "@info"
 msgid "<li>pick label</li>"
-msgstr "<li>legenda de seleção</li>"
+msgstr "<li>rótulo de seleção</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:348
 #, kde-format
 msgctxt "@info"
 msgid "<li>color label</li>"
-msgstr "<li>legenda de cor</li>"
+msgstr "<li>rótulo de cor</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:353
 #, kde-format
@@ -37962,13 +37958,13 @@ msgstr "Data:"
 #, kde-format
 msgctxt "@label"
 msgid "Pick Label:"
-msgstr "Legenda de seleção:"
+msgstr "Rótulo de seleção:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:52
 #, kde-format
 msgctxt "@label"
 msgid "Color Label:"
-msgstr "Legenda de cor:"
+msgstr "Rótulo de cor:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:57
 #, kde-format
@@ -38716,7 +38712,7 @@ msgstr "ISO %1"
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
-msgstr "Descrição"
+msgstr "Legendas"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:88
 #, kde-format
@@ -38806,19 +38802,19 @@ msgstr "Título: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
-msgstr "Descrição: "
+msgstr "Legenda: "
 
 #: core/libs/properties/itempropertiestab.cpp:240
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
-msgstr "Legenda de seleção: "
+msgstr "Rótulo de seleção: "
 
 #: core/libs/properties/itempropertiestab.cpp:241
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
-msgstr "Legenda de cor: "
+msgstr "Rótulo de cor: "
 
 #: core/libs/properties/itempropertiestab.cpp:242
 #, kde-format
@@ -39912,7 +39908,7 @@ msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
-"Operações relacionadas aos metadados, legendas, avaliações, etiquetas, geo-"
+"Operações relacionadas aos metadados, rótulos, avaliações, etiquetas, geo-"
 "localização e rotação"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:485
@@ -40312,12 +40308,12 @@ msgstr "Atribuir a classificação de \"%1 estrela(s)\" (sem alternância)"
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
-msgstr "Atribuir legenda de seleção \"%1\""
+msgstr "Atribuir rótulo de seleção \"%1\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, kde-format
 msgid "Assign Color Label \"%1\""
-msgstr "Atribuir legenda de cor \"%1\""
+msgstr "Atribuir rótulo de cor \"%1\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, kde-format
@@ -45036,7 +45032,7 @@ msgstr "Nenhuma"
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
-msgstr "Legenda de cor: %1"
+msgstr "Rótulo de cor: %1"
 
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
 #, kde-format
@@ -45054,7 +45050,7 @@ msgstr "Nenhuma"
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
-msgstr "Legenda de seleção: %1"
+msgstr "Rótulo de seleção: %1"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, kde-format
@@ -49409,7 +49405,7 @@ msgid ""
 msgstr ""
 "<para>O mecanismo de tradução é um serviço web online usado para traduzir "
 "textos de um idioma para outro. Este recurso está disponível nas opções dos "
-"metadados onde idiomas alternativos são suportados, como Título, Descrição, "
+"metadados onde idiomas alternativos são suportados, como Título, Legenda, "
 "etc. O processo de tradução é totalmente automatizado, mas requer uma "
 "conexão com a Internet para funcionar.</para><para>O usuário pode selecionar "
 "o mecanismo de tradução mais apropriado dependendo do idioma de destino "
@@ -49483,7 +49479,7 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 "<para>Ative esta opção para ativar o recurso de verificação ortográfica em "
-"segundo plano em descrições, títulos e outros widgets de edição de texto. A "
+"segundo plano em legendas, títulos e outros widgets de edição de texto. A "
 "verificação ortográfica detecta automaticamente o idioma atual usado no "
 "texto e propõe alternativas em palavras com erros ortográficos.</"
 "para><para>Com entradas onde o idioma alternativo pode ser especificado, o "
@@ -50015,13 +50011,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Pastas"
 
-#: core/showfoto/main/main.cpp:206
+#: core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:224
+#: core/showfoto/main/main.cpp:230
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -52995,17 +52991,7 @@ msgstr ""
 "primeira execução, para que você possa usar o digiKam rapidamente.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53024,8 +53010,8 @@ msgstr ""
 "caixas de diálogo a seguir. É recomendável criar um backup do seu banco de "
 "dados antes de prosseguir.</p><p>O novo local para os arquivos de "
 "configuração é %1 (antigo %2). Há problemas não resolvidos relatados ao "
-"reutilizar arquivos de configuração antigos, portanto, não é recomendável "
-"fazê-lo no momento, e por sua conta e risco.</p></qt>"
+"reutilizar arquivos de configuração antigos, portanto não é recomendável "
+"fazê-lo no momento. Caso o fizer, será por sua conta e risco.</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
@@ -55742,25 +55728,25 @@ msgstr "Cor do equador."
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1398
 #, kde-format
 msgid "&Named Labels"
-msgstr "&Legendas com nome"
+msgstr "&Rótulos com nome"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1408
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
-msgstr "Mostrar legendas para Meridiano principal, Equador e Trópicos."
+msgstr "Mostrar rótulos para Meridiano principal, Equador e Trópicos."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1415
 #, kde-format
 msgid "&Numerical Labels"
-msgstr "Legendas &numéricas"
+msgstr "Rótulos &numéricos"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1425
 #, kde-format
 msgid "Show numerical Labels."
-msgstr "Mostra legendas numéricas."
+msgstr "Mostra rótulos numéricos."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:85
 #, kde-format
@@ -59284,7 +59270,7 @@ msgstr "Remover etiqueta"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:254
 #, kde-format
 msgid "Assign Labels"
-msgstr "Atribuir legendas"
+msgstr "Atribuir rótulos"
 
 #: core/utilities/imageeditor/widgets/canvas.cpp:165
 #, kde-format
@@ -60841,7 +60827,7 @@ msgstr "Necessário:"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
-msgstr "Atribuir legendas"
+msgstr "Atribuir rótulos"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:123
 #, kde-format
@@ -61684,7 +61670,7 @@ msgstr "Qualidade da imagem: %1\n"
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #, kde-format
 msgid "Pick Label: %1"
-msgstr "Legenda de seleção: %1"
+msgstr "Rótulo de seleção: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
 #, kde-format
@@ -62650,7 +62636,7 @@ msgstr "Retornar itens de um mês ou de um dia do mês"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Return items with labels"
-msgstr "Retornar itens com as legendas"
+msgstr "Retornar itens com os rótulos"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -63034,7 +63020,7 @@ msgstr "Retornar itens criados por"
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
-msgstr "Descrição"
+msgstr "Legenda"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
@@ -63093,7 +63079,7 @@ msgstr "Criador"
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
-msgstr "Descrição"
+msgstr "Legenda"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:782
 #, kde-format
@@ -63611,7 +63597,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:151
 #, kde-format
 msgid "Show digiKam &captions"
-msgstr "Mostra&r descrição do digiKam"
+msgstr "Mostra&r legendas do digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
@@ -63649,20 +63635,20 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:163
 #, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Mostrar legenda de &seleção do digiKam"
+msgstr "Mostrar rótulo de &seleção do digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Habilite esta opção para mostrar a legenda de seleção do digiKam abaixo da "
+"Habilite esta opção para mostrar o rótulo de seleção do digiKam abaixo da "
 "miniatura da imagem."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
 msgid "Show digiKam color &label"
-msgstr "Mostrar legenda de &cor do digiKam"
+msgstr "Mostrar rótulo de &cor do digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
@@ -63670,7 +63656,7 @@ msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Habilite esta opção para mostrar a legenda de cor do digiKam abaixo da "
+"Habilite esta opção para mostrar o rótulo de cor do digiKam abaixo da "
 "miniatura da imagem."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
@@ -65433,13 +65419,7 @@ msgid "JPEG"
 msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving Versionned Images</"
-#| "title><para>Select the file format in which edited images are saved "
-#| "automatically. Format-specific options, like compression settings, can be "
-#| "configured on the <interface>Format Options</interface> tab.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Default File Format for Saving Versioned Images</title><para>Select "
@@ -66108,7 +66088,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
-msgstr "Título e descrição"
+msgstr "Legendas e título"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
@@ -66140,28 +66120,28 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
-msgstr "Legenda de seleção"
+msgstr "Rótulo de seleção"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
 msgstr ""
-"Habilite esta opção para armazenar as legendas de seleção do item nas "
+"Habilite esta opção para armazenar os rótulos de seleção do item nas "
 "etiquetas XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:70
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
-msgstr "Legenda de cor"
+msgstr "Rótulo de cor"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
 msgstr ""
-"Habilite esta opção para armazenar as legendas de cor do item nas etiquetas "
+"Habilite esta opção para armazenar os rótulos de cor do item nas etiquetas "
 "XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:75
@@ -68285,7 +68265,7 @@ msgstr "Selecione esta opção para exibir o título da imagem."
 #: core/utilities/setup/setuptooltip.cpp:234
 #, kde-format
 msgid "Image caption"
-msgstr "Descrição da imagem"
+msgstr "Legenda da imagem"
 
 #: core/utilities/setup/setuptooltip.cpp:235
 #, kde-format
@@ -68305,14 +68285,14 @@ msgstr "Selecione esta opção para exibir as etiquetas da imagem."
 #: core/utilities/setup/setuptooltip.cpp:240
 #, kde-format
 msgid "Image labels"
-msgstr "Legendas de imagem"
+msgstr "Rótulos de imagem"
 
 #: core/utilities/setup/setuptooltip.cpp:241
 #, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
 msgstr ""
-"Selecione esta opção para exibir as legendas de seleção, as legendas de "
-"cores e a avaliação da imagem."
+"Selecione esta opção para exibir os rótulos de seleção, de cor e a "
+"classificação da imagem."
 
 #: core/utilities/setup/setuptooltip.cpp:253
 #, kde-format
@@ -68418,7 +68398,7 @@ msgstr "Selecione esta opção para exibir a categoria do álbum."
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Album caption"
-msgstr "Descrição do álbum"
+msgstr "Legenda do álbum"
 
 #: core/utilities/setup/setuptooltip.cpp:314
 #, kde-format
