@@ -109,8 +109,8 @@ BUGFIXES:
 075 ==> 506495 - OpenCL not recognized even if installed (Kubuntu 25.04, Nvidia, AppImage).
 076 ==> 508681 - Does not start in Windows.
 077 ==> 508768 - digiKam crashes on launch.
-078 ==> 
-079 ==> 
+078 ==> 509059 - Rebuild all training data results in crash.
+079 ==> 509583 - digiKam icon is displayed twice in the taskbar.
 080 ==> 
 081 ==> 
 082 ==> 

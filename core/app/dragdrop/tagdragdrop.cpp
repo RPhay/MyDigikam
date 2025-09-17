@@ -93,7 +93,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        QAction* const choice      = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+        popMenu.popup(view->mapToGlobal(e->position().toPoint()));
+        QAction* const choice      = popMenu.exec();
 
 #else
 
@@ -266,7 +267,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                        QAction* const choice = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+                        popMenu.popup(view->mapToGlobal(e->position().toPoint()));
+                        QAction* const choice = popMenu.exec();
 
 #else
 
@@ -333,7 +335,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                        QAction* const choice       = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+                        popMenu.popup(view->mapToGlobal(e->position().toPoint()));
+                        QAction* const choice       = popMenu.exec();
 
 #else
 
@@ -459,7 +462,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            QAction* const choice = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+            popMenu.popup(view->mapToGlobal(e->position().toPoint()));
+            QAction* const choice = popMenu.exec();
 
 #else
 

@@ -237,6 +237,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "llvm"                               # For static analysis
                    "libomp-dev"                         # For static analysis
                    "libclang-dev"                       # For static analysis
+                   "codespell"                          # For static analysis
                    "doxygen"                            # For API doc
                    "graphviz"                           # For API doc
                    "texlive-full"                       # For API doc
