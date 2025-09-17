@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-14 01:57+0000\n"
+"POT-Creation-Date: 2025-09-17 01:56+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2656,7 +2656,7 @@ msgstr "Nápo&věda"
 msgid "Main Toolbar"
 msgstr "Hlavní panel nástrojů"
 
-#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2666,46 +2666,46 @@ msgstr "Hlavní panel nástrojů"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
+#: core/app/main/main.cpp:246 core/showfoto/main/main.cpp:221
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Vít Pelčák"
 
-#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
+#: core/app/main/main.cpp:247 core/showfoto/main/main.cpp:222
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: core/app/main/main.cpp:249
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Otevřít dialog fotoaparátu v \"path\""
 
-#: core/app/main/main.cpp:252
+#: core/app/main/main.cpp:258
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Otevřít dialog fotoaparátu pro přístroj se Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automaticky detekovat a otevřít připojený fotoaparát gphoto2"
 
-#: core/app/main/main.cpp:257
+#: core/app/main/main.cpp:263
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Spustit digiKam se souborem databáze SQLite nalezeným v adresáři \"dir\""
 
-#: core/app/main/main.cpp:260
+#: core/app/main/main.cpp:266
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Spustit digiKam s konfiguračním souborem \"config\""
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:299
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2713,7 +2713,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:308
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2724,7 +2724,7 @@ msgstr ""
 "nainstalujte je.\n"
 "Moduly databází nainstalované na vašem počítači jsou vypsány níže."
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:352
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3313,7 +3313,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid ""
-"Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 
@@ -8184,7 +8184,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Subject Information"
-msgid "Subject segmentation:"
+msgid "Subject Segmentation:"
 msgstr "Informace o subjektu"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
@@ -48149,13 +48149,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Složky"
 
-#: core/showfoto/main/main.cpp:206
+#: core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:224
+#: core/showfoto/main/main.cpp:230
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -51029,8 +51029,8 @@ msgid ""
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
 "%2). There are unresolved problems reported when re-using old configuration "
-"files, so it is not recommended to do it for the moment, and at your own "
-"risk.</p></qt>"
+"files, so it is not recommended to do it for the moment, and therefore use "
+"at your own risk.</p></qt>"
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
@@ -63091,7 +63091,7 @@ msgstr "JPEG"
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<title>Default File Format for Saving Versionned Images</title><para>Select "
+"<title>Default File Format for Saving Versioned Images</title><para>Select "
 "the file format in which edited images are saved automatically. Format-"
 "specific options, like compression settings, can be configured on the "
 "<interface>Format Options</interface> tab.</para>"

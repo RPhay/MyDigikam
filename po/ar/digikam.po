@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-14 01:57+0000\n"
-"PO-Revision-Date: 2025-08-10 22:30+0400\n"
+"POT-Creation-Date: 2025-09-17 01:56+0000\n"
+"PO-Revision-Date: 2025-09-16 20:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2760,7 +2760,7 @@ msgstr "مساع&دة"
 msgid "Main Toolbar"
 msgstr "شريط الأدوات الرّئيسيّ"
 
-#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2770,45 +2770,45 @@ msgstr "شريط الأدوات الرّئيسيّ"
 msgid "digiKam"
 msgstr "دِجي‌كام"
 
-#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
+#: core/app/main/main.cpp:246 core/showfoto/main/main.cpp:221
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "صفا الفليج,زايد السعيدي"
 
-#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
+#: core/app/main/main.cpp:247 core/showfoto/main/main.cpp:222
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "safa1996alfulaij@gmail.com,zayed.alsaidi@gmail.com"
 
-#: core/app/main/main.cpp:249
+#: core/app/main/main.cpp:255
 #, fuzzy, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "افتح حواريّ التّصوير عند <path>"
 
-#: core/app/main/main.cpp:252
+#: core/app/main/main.cpp:258
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "اكتشف آليًّا كمرة gphoto2 الموصولة وافتحها"
 
-#: core/app/main/main.cpp:257
+#: core/app/main/main.cpp:263
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "ابدأ «دِجي‌كام» بملفّ قاعدة بيانات SQLite الذي عُثر عليه في الدّليل <dir>"
 
-#: core/app/main/main.cpp:260
+#: core/app/main/main.cpp:266
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "ابدأ «دِجي‌كام» بملفّ قاعدة بيانات SQLite الذي عُثر عليه في الدّليل <dir>"
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:299
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2816,7 +2816,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:308
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2824,7 +2824,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:352
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3434,7 +3434,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid ""
-"Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 
@@ -3687,10 +3687,9 @@ msgid "...and much more."
 msgstr "... وغيرها الكثير."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgid "<li>%1</li>\n"
+#, kde-format
 msgid "<li>%1</li><br>"
-msgstr "<li>%1</li>\n"
+msgstr "<li>%1</li><br>"
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -8498,7 +8497,7 @@ msgstr ""
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
-msgid "Subject segmentation:"
+msgid "Subject Segmentation:"
 msgstr "معلومات البيانات الوصفيّة"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
@@ -29872,17 +29871,13 @@ msgid "Build Environment"
 msgstr "إصدارة اللاحة"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "مجهول"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
 msgstr "مجهول"
@@ -29906,9 +29901,7 @@ msgid "Libraries"
 msgstr "المكتبات"
 
 #: core/libs/dialogs/libsinfodlg_libraries.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: libx265 version"
 msgid "Unknown"
 msgstr "مجهول"
@@ -34746,28 +34739,24 @@ msgid "Open filter settings panel"
 msgstr "افتح لوحة إعدادات التّرشيح"
 
 #: core/libs/filters/filterstatusbar.cpp:121
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Text</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Text</i></nobr>"
-msgstr "<br/><nobr><i>النّصّ</i></nobr>"
+msgstr "<br><nobr><i>النص</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:126
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Mime Type</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Mime Type</i></nobr>"
-msgstr "<br/><nobr><i>نوع Mime</i></nobr>"
+msgstr "<br><nobr><i>نوع Mime</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:131
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Geolocation</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Geolocation</i></nobr>"
-msgstr "<br/><nobr><i>الموقع الجغرافيّ</i></nobr>"
+msgstr "<br><nobr><i>الموقع الجغرافيّ</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:136
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Rating</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Rating</i></nobr>"
-msgstr "<br/><nobr><i>التّقييم</i></nobr>"
+msgstr "<br><nobr><i>التّقييم</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:141
 #, fuzzy, kde-format
@@ -34780,10 +34769,9 @@ msgid "<br><nobr><i>Color Labels</i></nobr>"
 msgstr "<nobr><b>الاسم الجديد</b></nobr>:"
 
 #: core/libs/filters/filterstatusbar.cpp:151
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Tags</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Tags</i></nobr>"
-msgstr "<br/><nobr><i>الوسوم</i></nobr>"
+msgstr "<br><nobr><i>الوسوم</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:156
 #, kde-format
@@ -35207,12 +35195,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected:"
-msgstr "رفض"
+msgstr "مرفوضة:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -35221,12 +35207,10 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Pending"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending:"
-msgstr "ينتظر"
+msgstr "تنتظر:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -35235,12 +35219,10 @@ msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Accepted"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted:"
-msgstr "قُبلت"
+msgstr "قُبلت:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -35249,12 +35231,10 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Blur"
-msgstr "غشاوة"
+msgstr "الغشاوة"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -35277,11 +35257,10 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgid "Noise:"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Noise"
-msgstr "الضّجيج:"
+msgstr "الضجيج"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -35297,12 +35276,10 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check with a short translated text"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Compression"
-msgstr "اكتشف الضغط"
+msgstr "الضغط"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
 #, kde-format
@@ -35317,8 +35294,7 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgid "Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Exposure"
 msgstr "التّعريض"
@@ -39762,9 +39738,9 @@ msgid "Tags Manager"
 msgstr "مدير الوسوم"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
+#, kde-format
 msgid "Search for tags..."
-msgstr "امسح لـ جديد صور"
+msgstr "ابحث عن الوسوم…"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, fuzzy, kde-format
@@ -39824,10 +39800,9 @@ msgstr "استورد من ماسحة ضوئيّة..."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:190
 #: core/libs/tags/manager/tagsmanager_io.cpp:308
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "مرشّح النّصوص"
+msgstr "ملف نصي (‎*.txt)"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:288
 #, fuzzy, kde-format
@@ -39859,19 +39834,16 @@ msgstr[4] "أمتأكّد من إزالة الوسوم المحدّدة من ك�
 msgstr[5] "أمتأكّد من إزالة الوسوم المحدّدة من كلّ الصّور؟"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Add Tag"
-msgstr "أضف وسمًا جديدًا"
+msgstr "أضف وسمًا"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:93
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Remove Tag"
-msgstr "أزل العلامة"
+msgstr "أزل الوسم"
 
 # عنوان زر نقره يفتح قائمة منسدلة
 #: core/libs/tags/manager/tagsmanager_p.cpp:98
@@ -40093,9 +40065,9 @@ msgid "<b>Create New Tag</b>"
 msgstr "<b>أنشئ وسمًا جديدًا</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:339
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
-msgstr "<b>أنشئ وسمًا جديدًا في<br/>“%1”</b>"
+msgstr "<b>أنشئ وسمًا جديدًا في <br>\"%1\"</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:345
 #, fuzzy, kde-format
@@ -49209,13 +49181,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "المجلّدات"
 
-#: core/showfoto/main/main.cpp:206
+#: core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "شوفوتو"
 
-#: core/showfoto/main/main.cpp:224
+#: core/showfoto/main/main.cpp:230
 #, fuzzy, kde-format
 #| msgid "Select folder to parse"
 msgctxt "command line option"
@@ -49384,13 +49356,10 @@ msgid "Editor Window"
 msgstr "نافذة المحرّر"
 
 #: core/showfoto/setup/showfotosetup.cpp:106
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></"
-#| "qt>"
+#, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
-msgstr "<qt>إعدادات نافذة المحرّر<br/><i>خصّص سلوك نافذة المحرّر</i></qt>"
+msgstr "<qt>إعدادات نافذة المحرّر<br><i>خصّص سلوك نافذة المحرّر</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:112
 #, fuzzy, kde-format
@@ -49432,14 +49401,11 @@ msgid ""
 msgstr "<qt>إعدادات نافذة المحرّر<br/><i>خصّص سلوك نافذة المحرّر</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Color Management<br/><i>Customize color management "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Color Management<br><i>Customize color management settings</"
 "i></qt>"
-msgstr "<qt>إعدادات إدارة الألوان<br/><i>خصّص إعدادات إدارة الألوان</i></qt>"
+msgstr "<qt>إعدادات إدارة الألوان<br><i>خصّص إعدادات إدارة الألوان</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
@@ -49447,15 +49413,12 @@ msgid "Save Images"
 msgstr "حفظ الصّور"
 
 #: core/showfoto/setup/showfotosetup.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
-#| "to save images</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
-"<qt>إعدادات حفظ ملفّات الصّور<br/><i>اضبط الضّبط الافتراضيّ المستخدم لحفظ الصّور</"
+"<qt>إعدادات حفظ ملفّات الصّور<br><i>اضبط الضّبط المبدئي المستخدم لحفظ الصّور</"
 "i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
@@ -49495,14 +49458,11 @@ msgid "Miscellaneous"
 msgstr "متنوّع"
 
 #: core/showfoto/setup/showfotosetup.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of Showfoto</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
-msgstr "<qt>إعدادات متنوّعة<br/><i>خصّص سلوك أجزاء Showfoto الأخرى</i></qt>"
+msgstr "<qt>إعدادات متنوّعة<br><i>خصّص سلوك أجزاء Showfoto الأخرى</i></qt>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
@@ -51802,18 +51762,14 @@ msgid "/Pictures"
 msgstr "/الصور"
 
 #: core/utilities/firstrun/collectionpage.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Please enter a location where you keep your images.</p> <p>You can "
-#| "choose any local folder, even one that already contains images.<br/> More "
-#| "folders can be added later under the <i>Settings</i> menu. </p> "
+#, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
 "any local folder, even one that already contains images.<br> More folders "
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
 "<p>رجاء أدخل المكان الذي تبقي فيه صورك.</p> <p>يمكنك اختيار أيّ مجلّد محلّيّ، "
-"حتّى ولو كان يحتوي صورًا بالفعل.<br/> يمكن لاحقًا إضافة مجلّدات أخرى من قائمة "
+"حتّى ولو كان يحتوي صورًا فعلًا.<br> يمكن لاحقًا إضافة مجلّدات أخرى من قائمة "
 "<i>إعدادات</i>. </p> "
 
 #: core/utilities/firstrun/collectionpage.cpp:85
@@ -51857,16 +51813,13 @@ msgid "Create Root Album Folder Failed"
 msgstr "فشل إنشاء مجلّد الألبوم الجذر"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam could not create the folder to use as the root album.\n"
-#| "Please select a different location.</p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>digiKam could not create the folder to use as the root album.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>تعذّر على «دِجي‌كام» إنشاء مجلّد لاستخدامه على أنّه الألبوم الجذر\n"
-"رجاء اختر مكانًا مختلفًا.</p><p><b>%1</b></p>"
+"<p>تعذّر على «دِجي‌كام» إنشاء مجلّد لاستخدامه على أنّه الألبوم الجذر<br>الرجاء "
+"اختر مكانًا مختلفًا.</p><p><b>%1</b></p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:215
 #, kde-format
@@ -52198,8 +52151,8 @@ msgid ""
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
 "%2). There are unresolved problems reported when re-using old configuration "
-"files, so it is not recommended to do it for the moment, and at your own "
-"risk.</p></qt>"
+"files, so it is not recommended to do it for the moment, and therefore use "
+"at your own risk.</p></qt>"
 msgstr ""
 "<br/><b>يمكنك تجاهل الآتي إن كان هذا أوّل استخدام لك ل‍«دِجي‌كام»:</"
 "p><p><b>الانتقال من «دِجي‌كام 4»</b></p><p>لم تُرحّل ملفّات الضّبط من «دِجي‌كام 4». "
@@ -52393,11 +52346,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "حدّث البصمات"
+msgstr "حدّث كل البصمات"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, fuzzy, kde-format
@@ -55224,10 +55176,9 @@ msgstr "نصف القطر:"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
-#, fuzzy, kde-format
-#| msgid "Area: %1<br/>\n"
+#, kde-format
 msgid "Area: %1<br>\n"
-msgstr "المساحة: %1<br/>\n"
+msgstr "المساحة: %1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
 #, fuzzy, kde-format
@@ -55243,10 +55194,9 @@ msgid "Radius: %1<br>\n"
 msgstr "نصف القطر:"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
-#, fuzzy, kde-format
-#| msgid "Circumference"
+#, kde-format
 msgid "Circumference: %1<br>\n"
-msgstr "محيط منحنى مغلق"
+msgstr "محيط منحنى مغلق:%1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, fuzzy, kde-format
@@ -62622,9 +62572,7 @@ msgid "File, Album, Tags"
 msgstr "الملفّ، والألبوم والوسوم"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@title: item properties"
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Properties"
 msgstr "خصائص العنصر"
 
@@ -63371,39 +63319,30 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupmime.cpp:302
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as images and included "
-#| "into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
 "into the database:<br> <code>%1</code></p>"
 msgstr ""
-"<p>الملفّات ذات هذه الامتدادات ستُعتبر صورًا وتُضمّن في قاعدة البيانات:<br/> "
-"<code>%1</code></p>"
+"<p>الملفّات ذات هذه الامتدادات ستُعتبر صورًا وتُضمّن في قاعدة البيانات:<br> <code>"
+"%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:312
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as movie files and "
-#| "included into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as video files and "
 "included into the database:<br> <code>%1</code></p>"
 msgstr ""
-"<p>الملفّات ذات هذه الامتدادات ستُعتبر ملفّات فيديو وتُضمّن في قاعدة البيانات:<br/"
-"> <code>%1</code></p>"
+"<p>الملفّات ذات هذه الامتدادات ستُعتبر ملفّات فيديو وتُضمّن في قاعدة البيانات:"
+"<br> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as audio files and "
-#| "included into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
 "included into the database:<br> <code>%1</code></p>"
 msgstr ""
-"<p>الملفّات ذات هذه الامتدادات ستُعتبر ملفّات صوت وتُضمّن في قاعدة البيانات:<br/> "
+"<p>الملفّات ذات هذه الامتدادات ستُعتبر ملفّات صوت وتُضمّن في قاعدة البيانات:<br> "
 "<code>%1</code></p>"
 
 #: core/utilities/setup/camera/cameralist.cpp:288
@@ -64552,7 +64491,7 @@ msgstr "JPEG"
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<title>Default File Format for Saving Versionned Images</title><para>Select "
+"<title>Default File Format for Saving Versioned Images</title><para>Select "
 "the file format in which edited images are saved automatically. Format-"
 "specific options, like compression settings, can be configured on the "
 "<interface>Format Options</interface> tab.</para>"
@@ -66230,10 +66169,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Use OpenCL hardware acceleration for AI models"
+#, kde-format
 msgid "Use OpenCL acceleration for AI models"
-msgstr "استخدم تسريع الأجهزة «أوبن سي‌إل» لنماذج الذكاء الاصطناعي"
+msgstr "استخدم تسريع «أوبن سي‌إل» لنماذج الذكاء الاصطناعي"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format

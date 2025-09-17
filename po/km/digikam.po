@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-14 01:57+0000\n"
+"POT-Creation-Date: 2025-09-17 01:56+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -2906,7 +2906,7 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr "កំពុង​ផ្ទុក​ឧបករណ៍..."
 
-#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2916,13 +2916,13 @@ msgstr "កំពុង​ផ្ទុក​ឧបករណ៍..."
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
+#: core/app/main/main.cpp:246 core/showfoto/main/main.cpp:221
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា, អេង វណ្ណៈ, អោក ពិសិដ្ឋ"
 
-#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
+#: core/app/main/main.cpp:247 core/showfoto/main/main.cpp:222
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2930,24 +2930,24 @@ msgstr ""
 "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info, \n"
 "evannak@khmeros.info,piseth_dv@khmeros.info"
 
-#: core/app/main/main.cpp:249
+#: core/app/main/main.cpp:255
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "បើក​ប្រអប់​ម៉ាស៊ីន​ថតរូប​នៅ <path>"
 
-#: core/app/main/main.cpp:252
+#: core/app/main/main.cpp:258
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "បើក​ប្រអប់​ម៉ាស៊ីន​ថត​រូប​សម្រាប់​ឧបករណ៍​ដែល​មាន UDI តាន់ <udi>"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "រក​ឃើញ​ដោយ​ស្វ័យ​ប្រវត្តិ ហើយ​បើក​ម៉ាស៊ីន​ថត​រូប gphoto2 ដែល​បាន​តភ្ជាប់"
 
-#: core/app/main/main.cpp:257
+#: core/app/main/main.cpp:263
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2955,14 +2955,14 @@ msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "ចាប់ផ្ដើម digikam ជាមួយ​​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ SQLite ដែល​រក​ឃើញ​នៅ​ក្នុង​ថត​នេះ <dir>"
 
-#: core/app/main/main.cpp:260
+#: core/app/main/main.cpp:266
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
 msgid "Start digikam with the configuration file \"config\""
 msgstr "ចាប់ផ្ដើម digikam ជាមួយ​​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ SQLite ដែល​រក​ឃើញ​នៅ​ក្នុង​ថត​នេះ <dir>"
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:299
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2972,7 +2972,7 @@ msgstr ""
 "ពេល​ដំណើរការ​កម្មវិធី​​ជំនួយ MySQL  ឬ​ Qt4 SQLite ​មិន​អាច​រក​បាន សូម​ដំឡើង​វា ។\n"
 "គ្មាន​កម្មវិធី​ជំនួយ​មូលដ្ឋាន​ទិន្នន័យ​ដែល​បាន​ដំឡើង​នៅ​លើ​កុំព្យូទ័រ​របស់​អ្នក​ឡើយ ។"
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:308
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2982,7 +2982,7 @@ msgstr ""
 "ពេល​ដំណើរការ​កម្មវិធី​ជំនួយ​មូលដ្ឋាន​ទិន្នន័យ MySQL ឬ  Qt4 SQLite មិន​អាច​រក​បាន សូម​ដំឡើង​វា ។\n"
 "កម្មវិធី​មូលដ្ឋាន​ទិន្នន័យ​ដែល​បាន​ដំឡើង​​នៅ​លើ​កុំព្យូទ័រ​របស់​ត្រូវ​បាន​រាយ​ខាងក្រោម ៖"
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:352
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3581,7 +3581,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid ""
-"Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 
@@ -8673,7 +8673,7 @@ msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-msgid "Subject segmentation:"
+msgid "Subject Segmentation:"
 msgstr "ព័ត៌មាន​អំពី​ការ​ច្រឹប"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
@@ -51106,13 +51106,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "តាម​ថត"
 
-#: core/showfoto/main/main.cpp:206
+#: core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:224
+#: core/showfoto/main/main.cpp:230
 #, fuzzy, kde-format
 #| msgid "Select folder to parse"
 msgctxt "command line option"
@@ -54015,8 +54015,8 @@ msgid ""
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
 "%2). There are unresolved problems reported when re-using old configuration "
-"files, so it is not recommended to do it for the moment, and at your own "
-"risk.</p></qt>"
+"files, so it is not recommended to do it for the moment, and therefore use "
+"at your own risk.</p></qt>"
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
@@ -66346,7 +66346,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<title>Default File Format for Saving Versionned Images</title><para>Select "
+"<title>Default File Format for Saving Versioned Images</title><para>Select "
 "the file format in which edited images are saved automatically. Format-"
 "specific options, like compression settings, can be configured on the "
 "<interface>Format Options</interface> tab.</para>"

@@ -192,6 +192,12 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     QApplication app(argc, argv);
 
+#ifdef Q_OS_WIN
+
+    QDir::setCurrent(qApp->applicationDirPath());
+
+#endif
+
     delayForRemoteDebuging();
 
     system.applyProxySettings();

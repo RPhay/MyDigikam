@@ -51,3 +51,5 @@ FunctionEnd
     ${EndIf}
 
 !macroend
+
+!endif ;SNORE_NOTIFY_INCLUDED
