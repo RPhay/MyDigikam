@@ -69,6 +69,7 @@ public:
 Q_SIGNALS:
 
     void signalButtonClicked();
+    void signalSelectionChanged(const QRectF&);
 
 public Q_SLOTS:
 

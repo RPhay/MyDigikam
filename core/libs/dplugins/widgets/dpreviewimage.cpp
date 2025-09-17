@@ -904,6 +904,8 @@ void DPreviewImage::mouseReleaseEvent(QMouseEvent* e)
     d->mouseDragAction = Private::NONE;
     updateHighlight();
 
+    Q_EMIT signalSelectionChanged(getSelectionArea());
+
     QGraphicsView::mouseReleaseEvent(e);
 }
 

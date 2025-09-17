@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool            busy            = false;
 
     QLabel*         textLabel       = nullptr;
@@ -124,6 +126,11 @@ DPreviewManager::DPreviewManager(QWidget* const parent)
     insertWidget(PreviewMode, d->preview);
 
     d->progressTimer           = new QTimer(this);
+
+    // ---
+
+    connect(d->preview, &DPreviewImage::signalSelectionChanged,
+            this, &DPreviewManager::signalSelectionChanged);
 
     connect(d->progressTimer, &QTimer::timeout,
             this, &DPreviewManager::slotProgressTimerDone);

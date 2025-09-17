@@ -115,6 +115,10 @@ public:
     void   setSelectionArea(const QRectF& rectangle);
     QRectF getSelectionArea()           const;
 
+Q_SIGNALS:
+
+    void signalSelectionChanged(const QRectF&);
+
 public Q_SLOTS:
 
     void slotZoomIn();
