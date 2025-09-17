@@ -169,7 +169,8 @@ static DropAction copyOrMove(const QDropEvent* const e,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    QAction* const choice  = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+    popMenu.popup(view->mapToGlobal(e->position().toPoint()));
+    QAction* const choice  = popMenu.exec();
 
 #else
 
@@ -218,7 +219,8 @@ static DropAction tagAction(const QDropEvent* const e, QWidget* const view, bool
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    QAction* const choice    = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+    popMenu.popup(view->mapToGlobal(e->position().toPoint()));
+    QAction* const choice    = popMenu.exec();
 
 #else
 
@@ -266,7 +268,8 @@ static DropAction s_groupAction(const QDropEvent* const e, QWidget* const view)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    QAction* const choice      = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+    popMenu.popup(view->mapToGlobal(e->position().toPoint()));
+    QAction* const choice      = popMenu.exec();
 
 #else
 
@@ -752,7 +755,8 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        QAction* const choice = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+        popMenu.popup(view->mapToGlobal(e->position().toPoint()));
+        QAction* const choice = popMenu.exec();
 
 #else
 
@@ -813,7 +817,8 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        QAction* const choice        = popMenu.exec(iconView->mapToGlobal(e->position().toPoint()));
+        popMenu.popup(iconView->mapToGlobal(e->position().toPoint()));
+        QAction* const choice        = popMenu.exec();
 
 #else
 
