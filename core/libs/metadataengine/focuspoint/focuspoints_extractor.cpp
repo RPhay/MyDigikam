@@ -188,6 +188,13 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
             return getAFPoints_nikon();
         }
 
+        if (d->make.contains(QLatin1String("OLYMPUS")))
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Olympus makernotes";
+
+            return getAFPoints_olympus();
+        }
+
         if (d->make.contains(QLatin1String("PANASONIC")))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Panasonic makernotes";
