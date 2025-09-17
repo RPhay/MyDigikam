@@ -34,7 +34,7 @@ FocusPoint create_af_point(float imageWidth,
                            float af_y_position)
 {
     float maxSize       = imageWidth + imageHeight;
-    float af_point_size = maxSize * 5.5F / 100.0F;
+    float af_point_size = maxSize * 4.5F / 100.0F;
 
     return FocusPoint(af_x_position,
                       af_y_position,
@@ -47,7 +47,6 @@ FocusPoint create_af_point(float imageWidth,
 
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_olympus() const
 {
-/*
     QString TagNameRoot  = QLatin1String("MakerNotes.Olympus.Camera");
 
     // Get size image
@@ -66,39 +65,43 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_olympus() c
 
     // Get af point
 
-    QStringList af_position = findValue(TagNameRoot, QLatin1String("AFPointPosition")).toString().split(QLatin1String(","));
+    QString af_string = findValue(TagNameRoot, QLatin1String("AFPointSelected")).toString();
 
-    if (af_position.size() == 2)
-    {
-        af_position = af_position.at(0).split(QLatin1String(" "));
-    }
-    else
-    {
-        af_position = findValue(TagNameRoot, QLatin1String("AFPointPosition")).toString().split(QLatin1String(" "));
-    }
-
-    if (af_position.isEmpty() || (af_position.size() == 1))
+    if (af_string.isEmpty())
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Olympus makernotes.";
 
         return getAFPoints_exif();
     }
 
+    af_string.replace(QLatin1Char(' '), QLatin1Char(','));
+    af_string.remove(QLatin1Char('('));
+    af_string.remove(QLatin1Char(')'));
+    af_string.remove(QLatin1Char('%'));
+
+    QStringList af_position = af_string.split(QLatin1String(","));
+
+    if (af_position.size() != 4)
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Olympus makernotes.";
+
+        return getAFPoints_exif();
+    }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Olympus Makernotes Focus Location:" << af_position;
 
-    float af_x_position = af_position[0].toFloat();
-    float af_y_position = af_position[1].toFloat();
+    float af_x_position = af_position[0].toFloat() / 100.0F;
+    float af_y_position = af_position[1].toFloat() / 100.0F;
 
     // Add point
 
     ListAFPoints points;
     FocusPoint afpoint  = OlympusInternal::create_af_point(
-                                                             imageWidth.toFloat(),
-                                                             imageHeight.toFloat(),
-                                                             af_x_position,
-                                                             af_y_position
-                                                            );
+                                                           imageWidth.toFloat(),
+                                                           imageHeight.toFloat(),
+                                                           af_x_position,
+                                                           af_y_position
+                                                          );
 
     if (afpoint.getRect().isValid())
     {
@@ -106,9 +109,6 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_olympus() c
     }
 
     return points;
-*/
-
-    return ListAFPoints();
 }
 
 } // namespace Digikam
