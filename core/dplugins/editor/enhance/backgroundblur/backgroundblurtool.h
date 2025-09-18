@@ -36,6 +36,7 @@ private Q_SLOTS:
 
     void slotResetSettings()    override;
     void slotPreviewMask(const QImage& mask);
+    void slotSelectionChanged(const QRectF&);
 
 private:
 

@@ -108,7 +108,7 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
     QLabel* const maskLbl   = new QLabel(i18n("Subject Mask:"));
     d->maskPreview          = new DPreviewManager(d->gboxSettings);
     d->maskPreview->setButtonVisible(false);
-    d->maskPreview->setSelectionAreaPossible(false);
+    d->maskPreview->setSelectionAreaPossible(true);
     d->maskPreview->setWhatsThis(i18n("This view show the segmentation of the subject determined from the "
                                       "selection. The resulting green mask is superposed to the original image to "
                                       "see if the subject have been isolated properly by the segmentation process. "
@@ -146,6 +146,9 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     connect(d->iterationsInput, SIGNAL(valueChanged(int)),
             this, SLOT(slotTimer()));
+
+    connect(d->maskPreview, SIGNAL(signalSelectionChanged(QRectF)),
+            this, SLOT(slotSelectionChanged(QRectF)));
 }
 
 BackgroundBlurTool::~BackgroundBlurTool()
@@ -185,6 +188,26 @@ void BackgroundBlurTool::slotResetSettings()
     d->iterationsInput->blockSignals(false);
 }
 
+void BackgroundBlurTool::slotSelectionChanged(const QRectF& previewSel)
+{
+    ImageIface* const iface  = d->previewWidget->imageIface();
+
+    // Compute the scale factor between mask preview and original canvas sizes.
+    // Readjust the selection in editor canvas.
+
+    float scaleFactor = static_cast<float>(iface->originalSize().width() / iface->previewSize().width());
+
+    QRect canvasSel;
+    canvasSel.setTopLeft(QPoint(previewSel.topLeft().x() * scaleFactor,
+                                previewSel.topLeft().y() * scaleFactor));
+    canvasSel.setBottomRight(QPoint(previewSel.bottomRight().x() * scaleFactor,
+                                    previewSel.bottomRight().y() * scaleFactor));
+
+    iface->setSelectedRect(canvasSel);
+
+    slotTimer();
+}
+
 void BackgroundBlurTool::preparePreview()
 {
     d->maskPreview->setBusy(true, i18nc("@info", "Processing mask preview..."));
@@ -193,19 +216,21 @@ void BackgroundBlurTool::preparePreview()
     DImg preview             = iface->preview();
     QRect orgSelection       = iface->selectionRect();
 
-    // Compute the scale factor between original and preview sizes.
+    // Compute the scale factor between original canvas and mask preview sizes.
+    // Readjust the selection in the mask preview.
 
-    float scaleFactor = static_cast<float>(iface->originalSize().width()) / iface->previewSize().width();
+    float scaleFactor = static_cast<float>(iface->originalSize().width() / iface->previewSize().width());
 
-    QRect selection;
-    selection.setTopLeft(QPoint(orgSelection.topLeft().x() / scaleFactor,
-                                orgSelection.topLeft().y() / scaleFactor));
-    selection.setBottomRight(QPoint(orgSelection.bottomRight().x() / scaleFactor,
-                                    orgSelection.bottomRight().y() / scaleFactor));
+    QRect previewSel;
+    previewSel.setTopLeft(QPoint(orgSelection.topLeft().x() / scaleFactor,
+                                 orgSelection.topLeft().y() / scaleFactor));
+    previewSel.setBottomRight(QPoint(orgSelection.bottomRight().x() / scaleFactor,
+                                     orgSelection.bottomRight().y() / scaleFactor));
 
+    d->maskPreview->setSelectionArea(previewSel);
 
     BackgroundBlurFilter* const filter = new BackgroundBlurFilter(&preview,
-                                                                  selection,
+                                                                  previewSel,
                                                                   d->radiusInput->value() / scaleFactor,
                                                                   d->transitionInput->value(),
                                                                   d->iterationsInput->value(),
