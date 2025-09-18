@@ -267,6 +267,32 @@ int dialogExec(QDialog* const dlg)
     return QDialog::Rejected;
 }
 
+QAction* menuPopup(QMenu* const menu, const QPoint& pos)
+{
+    QEventLoop loop;
+    QAction* mac = nullptr;
+
+    QObject::connect(menu, &QMenu::aboutToHide,
+                     menu, [&loop]()
+                     {
+                         loop.quit();
+                     }
+    );
+
+    QObject::connect(menu, &QMenu::triggered,
+                     menu, [&loop, &mac](QAction* action)
+        {
+            mac = action;
+            loop.quit();
+        }
+    );
+
+    menu->popup(pos);
+    loop.exec();
+
+    return mac;
+}
+
 QDateTime startOfDay(const QDate& date)
 {
     return date.startOfDay();

@@ -27,9 +27,12 @@
 #include "digikam_export.h"
 
 class QDate;
+class QMenu;
+class QPoint;
 class QWidget;
 class QObject;
 class QDialog;
+class QAction;
 class QShortcut;
 class QKeySequence;
 class QApplication;
@@ -231,6 +234,11 @@ DIGIKAM_EXPORT int layoutMargin();
  * Show a QDialog with show() and wait for the result.
  */
 DIGIKAM_EXPORT int dialogExec(QDialog* const dlg);
+
+/**
+ * Show a QMenu with popup() and wait for the result.
+ */
+DIGIKAM_EXPORT QAction* menuPopup(QMenu* const menu, const QPoint& pos);
 
 // --- Static functions for the bundles ---
 
