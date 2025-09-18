@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-17 01:56+0000\n"
-"PO-Revision-Date: 2025-09-14 09:08+0200\n"
+"POT-Creation-Date: 2025-09-18 02:01+0000\n"
+"PO-Revision-Date: 2025-09-17 21:57+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -214,8 +214,8 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:255
-#: core/app/dragdrop/albumdragdrop.cpp:402
+#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:406
 #: core/app/dragdrop/importdragdrop.cpp:121
 #: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
 #, kde-format
@@ -223,8 +223,8 @@ msgid "&Move Here"
 msgstr "&Flytta hit"
 
 #: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:256
-#: core/app/dragdrop/albumdragdrop.cpp:403
+#: core/app/dragdrop/albumdragdrop.cpp:258
+#: core/app/dragdrop/albumdragdrop.cpp:407
 #: core/app/dragdrop/importdragdrop.cpp:124
 #: core/app/dragdrop/itemdragdrop.cpp:152
 #, kde-format
@@ -232,33 +232,33 @@ msgid "&Copy Here"
 msgstr "&Kopiera hit"
 
 #: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:265
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/albumdragdrop.cpp:405
+#: core/app/dragdrop/albumdragdrop.cpp:190
+#: core/app/dragdrop/albumdragdrop.cpp:267
+#: core/app/dragdrop/albumdragdrop.cpp:333
+#: core/app/dragdrop/albumdragdrop.cpp:409
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
+#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:814
+#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:263
+#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:458
 #, kde-format
 msgid "C&ancel"
 msgstr "&Avbryt"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:261
+#: core/app/dragdrop/albumdragdrop.cpp:186
+#: core/app/dragdrop/albumdragdrop.cpp:263
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Använd som miniatyrbild för album"
 
-#: core/app/dragdrop/albumdragdrop.cpp:327
-#: core/app/dragdrop/itemdragdrop.cpp:806
+#: core/app/dragdrop/albumdragdrop.cpp:330
+#: core/app/dragdrop/itemdragdrop.cpp:810
 #, kde-format
 msgid "Download From Camera"
 msgstr "Ladda ner från kameran"
 
-#: core/app/dragdrop/albumdragdrop.cpp:328
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/albumdragdrop.cpp:331
+#: core/app/dragdrop/itemdragdrop.cpp:812
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Ladda ner och ta bort från kameran"
@@ -298,45 +298,45 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Gruppera här och flytta till album"
 
-#: core/app/dragdrop/itemdragdrop.cpp:204
+#: core/app/dragdrop/itemdragdrop.cpp:205
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Tilldela etiketter till släppta objekt"
 
-#: core/app/dragdrop/itemdragdrop.cpp:686
+#: core/app/dragdrop/itemdragdrop.cpp:689
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Visa ansiktsetiketter"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:693
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Ändra ansiktsetiketter"
 
-#: core/app/dragdrop/itemdragdrop.cpp:694
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:697
+#: core/app/dragdrop/itemdragdrop.cpp:751
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Avbryt"
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:736
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Tilldela etiketter till &markerade objekt"
 
-#: core/app/dragdrop/itemdragdrop.cpp:741
+#: core/app/dragdrop/itemdragdrop.cpp:744
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Tilldela etiketter till &detta objekt"
 
-#: core/app/dragdrop/itemdragdrop.cpp:745
+#: core/app/dragdrop/itemdragdrop.cpp:748
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Tilldela etiketter till &alla objekt"
 
-#: core/app/dragdrop/itemdragdrop.cpp:804
+#: core/app/dragdrop/itemdragdrop.cpp:808
 #, kde-format
 msgid "Importing"
 msgstr "Importerar"
@@ -346,26 +346,26 @@ msgstr "Importerar"
 msgid "M&erge Here"
 msgstr "Samman&foga här"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:252
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Bekräfta ansiktsnamn '%2' för objektet"
 msgstr[1] "Bekräfta ansiktsnamn '%2' för objekten"
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
+#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:454
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Använd som miniatyrbild för etikett"
 
-#: core/app/dragdrop/tagdragdrop.cpp:323
+#: core/app/dragdrop/tagdragdrop.cpp:325
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Ändra ansiktsnamn från '%2' till '%3'"
 msgstr[1] "Ändra ansiktsnamn från '%2' till '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:446
+#: core/app/dragdrop/tagdragdrop.cpp:449
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Tilldela etikett(er) '%1' till objekt"
@@ -3351,10 +3351,7 @@ msgstr ""
 "bakgrundsbehandling."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
@@ -8626,8 +8623,7 @@ msgstr ""
 "motivet. Det gör det möjligt att simulera skärpedjupet från ett objektiv."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgid "Subject segmentation:"
+#, kde-format
 msgid "Subject Segmentation:"
 msgstr "Motivsegmentering:"
 
@@ -34677,8 +34673,8 @@ msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "Anpassa"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:158
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
@@ -52622,17 +52618,7 @@ msgstr ""
 "Digikam, för att snabbt kunna börja använda det.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -52652,7 +52638,7 @@ msgstr ""
 "fortsätter. </p><p>Den nya platsen för inställningsfiler är %1 (den gamla "
 "%2). Olösta problem har rapporterats när gamla inställningsfiler "
 "återanvänds, alltså rekommenderas du att inte att göra det för närvarande, "
-"och du gör så på egen risk.</p></qt>"
+"och använd därför på egen risk.</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
@@ -64967,13 +64953,7 @@ msgid "JPEG"
 msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving Versionned Images</"
-#| "title><para>Select the file format in which edited images are saved "
-#| "automatically. Format-specific options, like compression settings, can be "
-#| "configured on the <interface>Format Options</interface> tab.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Default File Format for Saving Versioned Images</title><para>Select "

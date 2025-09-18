@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-17 01:56+0000\n"
-"PO-Revision-Date: 2025-09-16 18:39-0300\n"
+"POT-Creation-Date: 2025-09-18 02:01+0000\n"
+"PO-Revision-Date: 2025-09-17 18:26-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -187,8 +187,8 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:255
-#: core/app/dragdrop/albumdragdrop.cpp:402
+#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:406
 #: core/app/dragdrop/importdragdrop.cpp:121
 #: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
 #, kde-format
@@ -196,8 +196,8 @@ msgid "&Move Here"
 msgstr "&Mover aqui"
 
 #: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:256
-#: core/app/dragdrop/albumdragdrop.cpp:403
+#: core/app/dragdrop/albumdragdrop.cpp:258
+#: core/app/dragdrop/albumdragdrop.cpp:407
 #: core/app/dragdrop/importdragdrop.cpp:124
 #: core/app/dragdrop/itemdragdrop.cpp:152
 #, kde-format
@@ -205,33 +205,33 @@ msgid "&Copy Here"
 msgstr "&Copiar aqui"
 
 #: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:265
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/albumdragdrop.cpp:405
+#: core/app/dragdrop/albumdragdrop.cpp:190
+#: core/app/dragdrop/albumdragdrop.cpp:267
+#: core/app/dragdrop/albumdragdrop.cpp:333
+#: core/app/dragdrop/albumdragdrop.cpp:409
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
+#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:814
+#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:263
+#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:458
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancelar"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:261
+#: core/app/dragdrop/albumdragdrop.cpp:186
+#: core/app/dragdrop/albumdragdrop.cpp:263
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Definir como miniatura do álbum"
 
-#: core/app/dragdrop/albumdragdrop.cpp:327
-#: core/app/dragdrop/itemdragdrop.cpp:806
+#: core/app/dragdrop/albumdragdrop.cpp:330
+#: core/app/dragdrop/itemdragdrop.cpp:810
 #, kde-format
 msgid "Download From Camera"
 msgstr "Baixar da câmera"
 
-#: core/app/dragdrop/albumdragdrop.cpp:328
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/albumdragdrop.cpp:331
+#: core/app/dragdrop/itemdragdrop.cpp:812
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Baixar e excluir da câmera"
@@ -271,45 +271,45 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Agrupar aqui e mover para o álbum"
 
-#: core/app/dragdrop/itemdragdrop.cpp:204
+#: core/app/dragdrop/itemdragdrop.cpp:205
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Atribuir etiquetas aos itens largados"
 
-#: core/app/dragdrop/itemdragdrop.cpp:686
+#: core/app/dragdrop/itemdragdrop.cpp:689
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Alterar etiquetas de rosto"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:693
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Alterar etiqueta de rosto"
 
-#: core/app/dragdrop/itemdragdrop.cpp:694
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:697
+#: core/app/dragdrop/itemdragdrop.cpp:751
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:736
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Atribuir etiquetas aos itens &selecionados"
 
-#: core/app/dragdrop/itemdragdrop.cpp:741
+#: core/app/dragdrop/itemdragdrop.cpp:744
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "A&tribuir etiquetas a este item"
 
-#: core/app/dragdrop/itemdragdrop.cpp:745
+#: core/app/dragdrop/itemdragdrop.cpp:748
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "&Atribuir etiquetas a todos os itens"
 
-#: core/app/dragdrop/itemdragdrop.cpp:804
+#: core/app/dragdrop/itemdragdrop.cpp:808
 #, kde-format
 msgid "Importing"
 msgstr "Importando"
@@ -319,26 +319,26 @@ msgstr "Importando"
 msgid "M&erge Here"
 msgstr "M&esclar aqui"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:252
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Confirmar nome de rosto '%2' para o item"
 msgstr[1] "Confirmar nome de rosto '%2' para os itens"
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
+#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:454
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Definir como miniatura da etiqueta"
 
-#: core/app/dragdrop/tagdragdrop.cpp:323
+#: core/app/dragdrop/tagdragdrop.cpp:325
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Alterar nome de rosto '%2' para '%3'"
 msgstr[1] "Alterar nomes de rosto '%2' para '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:446
+#: core/app/dragdrop/tagdragdrop.cpp:449
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Atribuir a(s) etiqueta(s) '%1' aos itens"
@@ -12891,7 +12891,7 @@ msgstr "Direitos autorais (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
 #, kde-format
 msgid "Set here the copyright owner."
-msgstr "Defina aqui o proprietário dos direitos autorais."
+msgstr "Digite aqui o proprietário dos direitos autorais."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
 #, kde-format
@@ -12911,7 +12911,7 @@ msgstr "Legenda:"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
 msgid "Set here the image's caption."
-msgstr "Defina aqui o legenda da imagem."
+msgstr "Digite aqui a legenda da imagem."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
 #, kde-format
@@ -13954,7 +13954,7 @@ msgstr "Identificar o assunto do conteúdo (máximo 3 caracteres):"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:73
 #, kde-format
 msgid "Set here the category ID"
-msgstr "Defina aqui a ID da categoria"
+msgstr "Digite aqui a ID da categoria"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:76
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:74
@@ -13962,7 +13962,7 @@ msgstr "Defina aqui a ID da categoria"
 msgid ""
 "Set here the category of content. This field is limited to 3 characters."
 msgstr ""
-"Defina aqui a categoria do conteúdo. Este campo está limitado a 3 caracteres."
+"Digite aqui a categoria do conteúdo. Este campo está limitado a 3 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:79
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:77
@@ -13974,7 +13974,7 @@ msgstr "Categorias suplementares:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:81
 #, kde-format
 msgid "Set here the extra category"
-msgstr "Defina aqui a categoria suplementar"
+msgstr "Digite aqui a categoria suplementar"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:85
 #, kde-format
@@ -14142,13 +14142,13 @@ msgstr "Créditos:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:167
 #, kde-format
 msgid "Set here the content provider."
-msgstr "Defina aqui o fornecedor de conteúdo."
+msgstr "Digite aqui o fornecedor de conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:93
 #, kde-format
 msgid "Set here the content provider. This field is limited to 32 characters."
 msgstr ""
-"Defina aqui o fornecedor do conteúdo. Este campo é limitado a 32 caracteres."
+"Digite aqui o fornecedor do conteúdo. Este campo é limitado a 32 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:98
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:171
@@ -14160,7 +14160,7 @@ msgstr "Origem:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:101
 #, kde-format
 msgid "Set here the content owner."
-msgstr "Defina aqui o dono do conteúdo."
+msgstr "Digite aqui o dono do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:102
 #, kde-format
@@ -14168,7 +14168,7 @@ msgid ""
 "Set here the original owner of content. This field is limited to 32 "
 "characters."
 msgstr ""
-"Defina aqui o proprietário original do conteúdo. Este campo é limitado a 32 "
+"Digite aqui o proprietário original do conteúdo. Este campo é limitado a 32 "
 "caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:107
@@ -14179,7 +14179,7 @@ msgstr "Contato:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:108
 #, kde-format
 msgid "Set here the person or organization to contact."
-msgstr "Defina aqui a pessoa ou organização para contato."
+msgstr "Digite aqui a pessoa ou organização para contato."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:92
 #, kde-format
@@ -14552,7 +14552,7 @@ msgstr "Destino:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:156
 #, kde-format
 msgid "Set here the envelope destination"
-msgstr "Defina aqui o destino do envelope"
+msgstr "Digite aqui o destino do envelope"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:157
 #, kde-format
@@ -14568,7 +14568,7 @@ msgstr "ID do N.U.O:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:166
 #, kde-format
 msgid "Set here the Unique Name of Object identifier"
-msgstr "Digite aqui o identificador de Nome Único de Objeto"
+msgstr "Digite aqui o identificador de Nome Único de Objeto (N.U.O.)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:167
 #, kde-format
@@ -14576,8 +14576,8 @@ msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
 "characters."
 msgstr ""
-"Digite aqui o identificador de Nome Único de Objeto (Unique Name of Object, "
-"em inglês). Este campo é limitado a 80 caracteres."
+"Digite aqui o identificador de Nome Único de Objeto (N.U.O.). Este campo é "
+"limitado a 80 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:172
 #, kde-format
@@ -14800,7 +14800,7 @@ msgstr "Defina aqui o fuso horário do conteúdo intelectual."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:158
 #, kde-format
 msgid "Set here the full country name referenced by the content."
-msgstr "Defina aqui o nome completo do país referenciado pelo conteúdo."
+msgstr "Digite aqui o nome completo do país referenciado pelo conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:162
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:125
@@ -14823,7 +14823,7 @@ msgstr "Selecione aqui a cidade do conteúdo"
 msgid ""
 "Set here the city of content origin. This field is limited to 32 characters."
 msgstr ""
-"Defina aqui a cidade de origem do conteúdo. Este campo é limitado a 32 "
+"Digite aqui a cidade de origem do conteúdo. Este campo é limitado a 32 "
 "caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:172
@@ -14869,7 +14869,7 @@ msgid ""
 "Set here the Province or State of content origin. This field is limited to "
 "32 characters."
 msgstr ""
-"Defina aqui o Estado ou a Província de origem do conteúdo. Este campo é "
+"Digite aqui o Estado ou a Província de origem do conteúdo. Este campo é "
 "limitado a 32 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:192
@@ -15257,7 +15257,7 @@ msgstr "Digite aqui uma nova categoria suplementar para o conteúdo."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:72
 #, kde-format
 msgid "Set here the content synopsis."
-msgstr "Defina aqui a sinopse do conteúdo"
+msgstr "Digite aqui a sinopse do conteúdo"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:76
 #, kde-format
@@ -15268,7 +15268,7 @@ msgstr "Legendas:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:77
 #, kde-format
 msgid "Set here the content descriptions."
-msgstr "Digite aqui a descrição do conteúdo"
+msgstr "Digite aqui as descrições do conteúdo"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:79
 #, kde-format
@@ -15283,7 +15283,7 @@ msgstr "Digite aqui o nome do autor da legenda."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:99
 #, kde-format
 msgid "Set here the necessary copyright notice."
-msgstr "Defina aqui a nota de direitos autorais necessária."
+msgstr "Digite aqui a nota de direitos autorais necessária."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:101
 #, kde-format
@@ -15312,7 +15312,7 @@ msgstr "Criador:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:87
 #, kde-format
 msgid "Sync Exif Artist"
-msgstr "Sincronizar o artista do Exif"
+msgstr "Sincronizar com o artista do Exif"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:91
 #, kde-format
@@ -15335,7 +15335,7 @@ msgstr "E-mail:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:103
 #, kde-format
 msgid "Set here the contact e-mail."
-msgstr "Defina aqui o e-mail de contato."
+msgstr "Digite aqui o e-mail de contato."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:105
 #: core/libs/template/templatepanel.cpp:351
@@ -15347,7 +15347,7 @@ msgstr "URL:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:108
 #, kde-format
 msgid "Set here the contact URL."
-msgstr "Defina aqui a URL de contato."
+msgstr "Digite aqui a URL de contato."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:110
 #: core/libs/template/templatepanel.cpp:341
@@ -15359,7 +15359,7 @@ msgstr "Telefone:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
 #, kde-format
 msgid "Set here the contact phone number."
-msgstr "Defina aqui o número do telefone de contato."
+msgstr "Digite aqui o número do telefone de contato."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:115
 #, kde-format
@@ -15370,7 +15370,7 @@ msgstr "Endereço:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:118
 #, kde-format
 msgid "Set here the contact address."
-msgstr "Defina aqui o endereço de contato."
+msgstr "Digite aqui o endereço de contato."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:120
 #, kde-format
@@ -15380,27 +15380,27 @@ msgstr "CEP:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:123
 #, kde-format
 msgid "Set here the contact postal code."
-msgstr "Defina aqui o código postal de contato."
+msgstr "Digite aqui o código postal de contato."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:128
 #, kde-format
 msgid "Set here the contact city."
-msgstr "Defina aqui a cidade de contato."
+msgstr "Digite aqui a cidade de contato."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:133
 #, kde-format
 msgid "Set here the contact state/province."
-msgstr "Defina aqui o Estado/Província do contato."
+msgstr "Digite aqui o Estado/Província do contato."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:138
 #, kde-format
 msgid "Set here the contact country."
-msgstr "Defina aqui o país de contato."
+msgstr "Digite aqui o país de contato."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:173
 #, kde-format
 msgid "Set here the original owner of content."
-msgstr "Defina aqui o proprietário original do conteúdo."
+msgstr "Digite aqui o proprietário original do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:93
 #, kde-format
@@ -15454,7 +15454,7 @@ msgstr "Propriedades"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:70
 #, kde-format
 msgid "Set here a new keyword"
-msgstr "Defina aqui uma nova palavra-chave"
+msgstr "Digite aqui uma nova palavra-chave"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:145
 #, kde-format
@@ -15474,7 +15474,7 @@ msgstr "Defina aqui a data do conteúdo intelectual do vídeo."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:167
 #, kde-format
 msgid "Set here the content's city of origin."
-msgstr "Defina aqui a cidade da origem do conteúdo."
+msgstr "Digite aqui a cidade da origem do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:174
 #, kde-format
@@ -15484,7 +15484,7 @@ msgstr "Defina aqui a localização do conteúdo na cidade."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:181
 #, kde-format
 msgid "Set here the content's Province or State of origin."
-msgstr "Defina aqui o Estado ou a Província da origem do conteúdo."
+msgstr "Digite aqui o Estado ou a Província da origem do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:52
 #, kde-format
@@ -15980,7 +15980,7 @@ msgstr "Apelido:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
 #, kde-format
 msgid "Set here a short informal name"
-msgstr "Defina aqui um nome informal curto"
+msgstr "Digite aqui um nome informal curto"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:74
 #, kde-format
@@ -16073,7 +16073,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
-msgstr "Ajustar hora e data"
+msgstr "Ajustar data e hora"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
 #, kde-format
@@ -16092,7 +16092,7 @@ msgstr "Escreva a data e hora corrigidas para cada imagem"
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
-msgstr "Ajustar hora e data"
+msgstr "Ajustar data e hora"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
@@ -16127,13 +16127,13 @@ msgstr "Fechar janela"
 #: core/libs/timeadjust/timeadjustsettings.cpp:284
 #, kde-format
 msgid "Timestamp Used"
-msgstr "Data e hora usado"
+msgstr "Data e hora usados"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
 #: core/libs/timeadjust/timeadjustsettings.cpp:286
 #, kde-format
 msgid "Timestamp Updated"
-msgstr "Data e hora atualizado"
+msgstr "Data e hora atualizada"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
@@ -16201,7 +16201,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
-msgstr "Ajustar hora e data..."
+msgstr "Ajustar data e hora..."
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:44
 #, kde-format
@@ -16419,7 +16419,7 @@ msgstr "Desenhar linhas no calendário"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:162
 #, kde-format
 msgid "Image to text ratio:"
-msgstr "Relação imagem para texto:"
+msgstr "Proporção entre a imagem e o texto:"
 
 #. i18n: ectx: property (text), widget (QLabel, fontLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:192
@@ -16456,7 +16456,7 @@ msgid ""
 "you to create and print a calendar with a selection of images taken from "
 "your collection.</p>"
 msgstr ""
-"<p><h1><b>Bem-vindo à Ferramenta de Calendário</b></h1></p><p>Este "
+"<p><h1><b>Bem-vindo à ferramenta de calendário</b></h1></p><p>Este "
 "assistente o guiará para criar e imprimir um calendário com uma seleção de "
 "imagens tiradas de sua coleção.</p>"
 
@@ -17744,7 +17744,7 @@ msgstr "Abrindo a galeria com o navegador Web interno..."
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
 #, kde-format
 msgid "Full Image Properties:"
-msgstr "Propriedades da imagem completa:"
+msgstr "Propriedades da imagem:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
 #, kde-format
@@ -17771,7 +17771,7 @@ msgstr "Tamanho máximo:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
 #, kde-format
 msgid "Include full-size original images for download"
-msgstr "Incluir as imagens com tamanho original para download"
+msgstr "Incluir as imagens originais para download"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
 #, kde-format
@@ -17797,12 +17797,12 @@ msgid ""
 "en.wikipedia.org/wiki/HTML'>HTML and CSS standards</a></p><p>and the output "
 "can be customized with a nice theme.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bem-vindo à ferramenta Galeria em HTML</b></h1></p><p>Este "
-"assistente irá guiá-lo pela exportação rápida</p><p></p><p>de suas imagens "
+"<qt><p><h1><b>Bem-vindo à ferramenta de Galeria em HTML</b></h1></p><p>Este "
+"assistente irá guiá-lo pela exportação rápida de suas</p><p></p><p>imagens "
 "como uma pequena galeria fotográfica estática em HTML.</p><p>Esta ferramenta "
 "é totalmente compatível com os <a href='https://pt.wikipedia.org/wiki/"
 "HTML'>padrões HTML e CSS</a></p><p>e o resultado pode ser personalizado com "
-"um tema bonito.</p></qt>"
+"um bonito tema.</p></qt>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
@@ -17908,7 +17908,7 @@ msgstr "Criar galeria HTML"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
-msgstr "Bem-vindo à ferramenta Galeria em HTML"
+msgstr "Bem-vindo à ferramenta de Galeria em HTML"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
@@ -19375,13 +19375,13 @@ msgstr "Panorâmica entrelaçada concluída"
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
-msgstr "Parabéns. Suas imagens estão unidas em um panorama."
+msgstr "Parabéns. Suas imagens estão unidas em um panorâmica."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, kde-format
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
-msgstr "Seu panorama será criado na pasta:"
+msgstr "Sua panorâmica será criada na pasta:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
 #, kde-format
@@ -19702,7 +19702,7 @@ msgstr "Página %1 salva como %2"
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:44
 #, kde-format
 msgid "Print Creator"
-msgstr "Criador de impressões"
+msgstr "Criador de impressão"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
@@ -19738,7 +19738,7 @@ msgstr "Colaborador"
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
-msgstr "Criador de impressões..."
+msgstr "Criador de impressão..."
 
 #: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
@@ -20196,7 +20196,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
-msgstr "Criador de impressões"
+msgstr "Criador de impressão"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:72
 #, kde-format
@@ -20206,10 +20206,10 @@ msgid ""
 "Photo Album, Photo Collage, or Framed Photo.</p><p>An adaptive photo "
 "collection page layout can be also used, based on Atkins algorithm.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bem-vindo ao Criador de impressões</b></h1></p><p>Este "
+"<qt><p><h1><b>Bem-vindo ao criador de impressão</b></h1></p><p>Este "
 "assistente irá guiá-lo com a montagem das imagens a serem impressas de "
-"acordo com modelos específicos, como Álbuns de Fotos, Colagens de Fotos ou "
-"Fotos com Molduras.</p><p>Também poderá usar um formato de página adaptativo "
+"acordo com modelos específicos, como álbuns de fotos, colagens de fotos ou "
+"fotos com molduras.</p><p>Também poderá usar um formato de página adaptativo "
 "de coleções fotográficas, com base no algoritmo de Atkins.</p></qt>"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:95
@@ -20304,7 +20304,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Welcome to Print Creator"
-msgstr "Bem-vindo ao Criador de impressões"
+msgstr "Bem-vindo ao criador de impressão"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
@@ -20651,9 +20651,9 @@ msgid ""
 "export contents, you will be able to adjust attachments properties "
 "accordingly with your mail service capabilities.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bem-vindo à ferramenta E-mail</b></h1></p><p>Este assistente "
-"irá guiá-lo no envio dos seus itens com um aplicativo cliente de e-mail.</"
-"p><p>Antes de exportar os conteúdos, você será capaz de ajustar as "
+"<qt><p><h1><b>Bem-vindo à ferramenta de e-mail</b></h1></p><p>Este "
+"assistente irá guiá-lo no envio dos seus itens com um aplicativo cliente de "
+"e-mail.</p><p>Antes de exportar os conteúdos, você será capaz de ajustar as "
 "propriedades dos anexos de acordo com as capacidades do seu serviço de e-"
 "mail.</p></qt>"
 
@@ -20802,7 +20802,7 @@ msgstr "Enviar por e-mail"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #, kde-format
 msgid "Welcome to Email Tool"
-msgstr "Bem-vindo à ferramenta E-mail"
+msgstr "Bem-vindo à ferramenta de e-mail"
 
 # Trata-se do título da área que apresenta todas as ações realizadas na imagem selecionada. (Alvarenga)
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
@@ -34951,8 +34951,8 @@ msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "Zoom para ajustar"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:158
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
@@ -39899,7 +39899,7 @@ msgstr "Ferramentas de importação/exportação"
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
-"Ferramentas (editor, panorama, mistura em pilha, calendário, programa "
+"Ferramentas (editor, panorâmica, mistura em pilha, calendário, programa "
 "externo)"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:480
@@ -39942,8 +39942,8 @@ msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
-"Diversas ferramentas que incluem o editor, o modo de panorama, a mistura em "
-"pilha, o calendário, a galeria em HTML e a abertura com programas externos"
+"Diversas ferramentas que incluem o editor, o modo de panorâmica, a mistura "
+"em pilha, o calendário, a galeria em HTML e a abertura com programas externos"
 
 #: core/libs/settings/applicationsettings_p.cpp:49
 #, kde-format
@@ -41465,7 +41465,7 @@ msgstr "Mensagem de erro: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
-msgstr "Determinar a diferença de horas com a foto"
+msgstr "Determinar a diferença em relação à data/hora da foto"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:85
 #, kde-format
@@ -41509,12 +41509,12 @@ msgstr "Showfoto"
 #: core/libs/timeadjust/timeadjustsettings.cpp:141
 #, kde-format
 msgid "%1 timestamp"
-msgstr "Data e hora %1"
+msgstr "Data e hora do %1"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:146
 #, kde-format
 msgid "File name timestamp"
-msgstr "Data e hora no nome do arquivo"
+msgstr "Data e hora do nome do arquivo"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:150
 #: core/libs/timeadjust/timeadjustsettings.cpp:246
@@ -41609,15 +41609,15 @@ msgstr "dias"
 #: core/libs/timeadjust/timeadjustsettings.cpp:224
 #, kde-format
 msgid "Determine difference from clock photo"
-msgstr "Determinar a diferença de horas com a fotografia"
+msgstr "Determinar a diferença em relação à data/hora da foto"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:225
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
-"Clique ou arraste e solte uma foto no botão para selecionar uma foto de "
-"relógio"
+"Clique ou arraste e solte uma foto no botão para selecionar uma data/hora de "
+"foto a ser comparada"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:243
 #, kde-format
@@ -48413,7 +48413,7 @@ msgstr "Digite aqui a referência do fornecedor das informações"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Reference Number"
-msgstr "Defina aqui o número de referência do assunto"
+msgstr "Digite aqui o número de referência do assunto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:175
 #, kde-format
@@ -48425,7 +48425,7 @@ msgstr "Digite aqui o nome do assunto"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Matter Name"
-msgstr "Defina aqui o nome da matéria do assunto"
+msgstr "Digite aqui o nome da matéria do assunto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:197
 #, kde-format
@@ -49549,7 +49549,7 @@ msgstr "Palavras ignoradas"
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
-"Defina aqui uma nova palavra para ignorar durante a verificação ortográfica"
+"Digite aqui uma nova palavra para ignorar durante a verificação ortográfica"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format

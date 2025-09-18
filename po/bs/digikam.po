@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-17 01:56+0000\n"
+"POT-Creation-Date: 2025-09-18 02:01+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -248,8 +248,8 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:255
-#: core/app/dragdrop/albumdragdrop.cpp:402
+#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:406
 #: core/app/dragdrop/importdragdrop.cpp:121
 #: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
 #, kde-format
@@ -257,8 +257,8 @@ msgid "&Move Here"
 msgstr "Po&mjeri ovdje"
 
 #: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:256
-#: core/app/dragdrop/albumdragdrop.cpp:403
+#: core/app/dragdrop/albumdragdrop.cpp:258
+#: core/app/dragdrop/albumdragdrop.cpp:407
 #: core/app/dragdrop/importdragdrop.cpp:124
 #: core/app/dragdrop/itemdragdrop.cpp:152
 #, kde-format
@@ -266,33 +266,33 @@ msgid "&Copy Here"
 msgstr "&Kopiraj ovdje"
 
 #: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:265
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/albumdragdrop.cpp:405
+#: core/app/dragdrop/albumdragdrop.cpp:190
+#: core/app/dragdrop/albumdragdrop.cpp:267
+#: core/app/dragdrop/albumdragdrop.cpp:333
+#: core/app/dragdrop/albumdragdrop.cpp:409
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
+#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:814
+#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:263
+#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:458
 #, kde-format
 msgid "C&ancel"
 msgstr "Otk&aži"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:261
+#: core/app/dragdrop/albumdragdrop.cpp:186
+#: core/app/dragdrop/albumdragdrop.cpp:263
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Postavi kao umanjeni prikaz albuma"
 
-#: core/app/dragdrop/albumdragdrop.cpp:327
-#: core/app/dragdrop/itemdragdrop.cpp:806
+#: core/app/dragdrop/albumdragdrop.cpp:330
+#: core/app/dragdrop/itemdragdrop.cpp:810
 #, kde-format
 msgid "Download From Camera"
 msgstr "Preuzmi s fotoaparata"
 
-#: core/app/dragdrop/albumdragdrop.cpp:328
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/albumdragdrop.cpp:331
+#: core/app/dragdrop/itemdragdrop.cpp:812
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Preuzmi i obriši s fotoaparata"
@@ -335,47 +335,47 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:204
+#: core/app/dragdrop/itemdragdrop.cpp:205
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Dodijeli oznaku  za bačene stavke"
 
-#: core/app/dragdrop/itemdragdrop.cpp:686
+#: core/app/dragdrop/itemdragdrop.cpp:689
 #, fuzzy, kde-format
 #| msgid "Show Face Tags"
 msgid "Change Face Tags"
 msgstr "Prikaži oznake lica"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:693
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgid "Change Face Tag"
 msgstr "Promjena u velika/mala slova"
 
-#: core/app/dragdrop/itemdragdrop.cpp:694
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:697
+#: core/app/dragdrop/itemdragdrop.cpp:751
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Odustani"
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:736
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Dodjeli oznake &izabranim stavkama"
 
-#: core/app/dragdrop/itemdragdrop.cpp:741
+#: core/app/dragdrop/itemdragdrop.cpp:744
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Dodjeli oznake &ovoj stavki"
 
-#: core/app/dragdrop/itemdragdrop.cpp:745
+#: core/app/dragdrop/itemdragdrop.cpp:748
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Dodjeli oznake &svim stavkama"
 
-#: core/app/dragdrop/itemdragdrop.cpp:804
+#: core/app/dragdrop/itemdragdrop.cpp:808
 #, kde-format
 msgid "Importing"
 msgstr "Uvozim"
@@ -386,7 +386,7 @@ msgstr "Uvozim"
 msgid "M&erge Here"
 msgstr "Po&mjeri ovdje"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:252
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
@@ -394,12 +394,12 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
+#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:454
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Postavi za umanjeni prikaz oznake"
 
-#: core/app/dragdrop/tagdragdrop.cpp:323
+#: core/app/dragdrop/tagdragdrop.cpp:325
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
@@ -407,7 +407,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:446
+#: core/app/dragdrop/tagdragdrop.cpp:449
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Dodijeli oznaku(e) za '%1' stavku(e)"
@@ -37153,8 +37153,8 @@ msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "Umanji"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:158
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:176
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@info"
