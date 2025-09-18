@@ -24,6 +24,7 @@ Plugins:         G'MIC-Qt updated to last v3.6.0.
 TagsManager:     Add options to import or export tag-hierarchies to text files.
                  Controlled Vocabulary Keyword Catalogue format is supported (https://www.controlledvocabulary.com/products/index.html).
 Preview:         Add support to the FujiFilm camera focus points.
+Preview:         Add support to the Olympus/OM Systems camera focus points.
 ColorManagement: Use monitor color profile set under Windows, macOS, and Wayland.
 ProgressManager: Use native desktop notifier under Linux, macOS, and Windows.
 Editor:          New enhance tool to blur progressively the background of a subject from a photo.
