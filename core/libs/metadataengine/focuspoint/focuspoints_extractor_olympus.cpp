@@ -34,7 +34,7 @@ FocusPoint create_af_point(float imageWidth,
                            float af_y_position)
 {
     float maxSize       = imageWidth + imageHeight;
-    float af_point_size = maxSize * 4.5F / 100.0F;
+    float af_point_size = maxSize * 2.5F / 100.0F;
 
     return FocusPoint(af_x_position,
                       af_y_position,
@@ -56,7 +56,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_olympus() c
 
     if (imageWidth.isNull() || imageHeight.isNull())
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Olympus image sizes.";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Olympus/OMDS image sizes.";
 
         return getAFPoints_exif();
     }
@@ -69,7 +69,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_olympus() c
 
     if (af_string.isEmpty())
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Olympus makernotes.";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Olympus/OMDS makernotes.";
 
         return getAFPoints_exif();
     }
@@ -83,12 +83,12 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_olympus() c
 
     if (af_position.size() != 4)
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Olympus makernotes.";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Olympus/OMDS makernotes.";
 
         return getAFPoints_exif();
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Olympus Makernotes Focus Location:" << af_position;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Olympus/OMDS Makernotes Focus Location:" << af_position;
 
     float af_x_position = af_position[0].toFloat() / 100.0F;
     float af_y_position = af_position[1].toFloat() / 100.0F;
