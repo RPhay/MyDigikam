@@ -13,7 +13,6 @@
  *
  * ============================================================ */
 
-#include "editorcore.h"
 #include "editorcore_p.h"
 
 // C++ includes
@@ -237,7 +236,7 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
     }
 
     // RAW tool active? Discard previous loaded image
-    // Special case for Jenkins, no Editor window also no EditorToolIface
+    // Special case for the Gitlab-CI, no Editor window also no EditorToolIface
 /*
     if (EditorToolIface::editorToolIface())
     {
