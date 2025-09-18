@@ -34,7 +34,7 @@ FocusPoint create_af_point(float imageWidth,
                            float af_y_position)
 {
     float maxSize       = imageWidth + imageHeight;
-    float af_point_size = maxSize * 2.5F / 100.0F;
+    float af_point_size = maxSize * 2.0F / 100.0F;
 
     return FocusPoint(af_x_position,
                       af_y_position,
