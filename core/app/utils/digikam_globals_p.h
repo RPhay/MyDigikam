@@ -24,7 +24,6 @@
 #include <QList>
 #include <QStyle>
 #include <QDialog>
-#include <QAction>
 #include <QTimeZone>
 #include <QImageReader>
 #include <QImageWriter>
@@ -43,7 +42,6 @@
 #include <QElapsedTimer>
 #include <QCoreApplication>
 #include <QTime>
-#include <QMenu>
 
 // KDE includes
 

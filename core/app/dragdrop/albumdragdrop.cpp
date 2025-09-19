@@ -33,7 +33,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "albummanager.h"
 #include "albumpointer.h"
 #include "importui.h"
@@ -104,7 +103,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        QAction* const choice     = menuPopup(&popMenu, view->mapToGlobal(e->position().toPoint()));
+        QAction* const choice     = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
 
 #else
 
@@ -193,7 +192,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                QAction* const choice = menuPopup(&popMenu, view->mapToGlobal(e->position().toPoint()));
+                QAction* const choice = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
 
 #else
 
@@ -269,7 +268,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            QAction* const choice     = menuPopup(&popMenu, view->mapToGlobal(e->position().toPoint()));
+            QAction* const choice     = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
 
 #else
 
@@ -334,7 +333,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            QAction* const choice        = menuPopup(&popMenu, view->mapToGlobal(e->position().toPoint()));
+            QAction* const choice        = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
 
 #else
 
@@ -409,7 +408,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            QAction* const choice     = menuPopup(&popMenu, view->mapToGlobal(e->position().toPoint()));
+            QAction* const choice     = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
 
 #else
 
