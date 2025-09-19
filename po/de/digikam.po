@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-18 02:01+0000\n"
+"POT-Creation-Date: 2025-09-19 02:02+0000\n"
 "PO-Revision-Date: 2025-07-21 23:21+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -185,52 +185,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:257
-#: core/app/dragdrop/albumdragdrop.cpp:406
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:256
+#: core/app/dragdrop/albumdragdrop.cpp:403
 #: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/itemdragdrop.cpp:150 core/app/dragdrop/tagdragdrop.cpp:88
 #, kde-format
 msgid "&Move Here"
 msgstr "Hierhin &verschieben"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:258
-#: core/app/dragdrop/albumdragdrop.cpp:407
+#: core/app/dragdrop/albumdragdrop.cpp:99
+#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:404
 #: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/itemdragdrop.cpp:153
 #, kde-format
 msgid "&Copy Here"
 msgstr "Hierher &kopieren"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
+#: core/app/dragdrop/albumdragdrop.cpp:101
 #: core/app/dragdrop/albumdragdrop.cpp:190
-#: core/app/dragdrop/albumdragdrop.cpp:267
-#: core/app/dragdrop/albumdragdrop.cpp:333
-#: core/app/dragdrop/albumdragdrop.cpp:409
+#: core/app/dragdrop/albumdragdrop.cpp:266
+#: core/app/dragdrop/albumdragdrop.cpp:331
+#: core/app/dragdrop/albumdragdrop.cpp:406
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:263
-#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:458
+#: core/app/dragdrop/itemdragdrop.cpp:86 core/app/dragdrop/itemdragdrop.cpp:811
+#: core/app/dragdrop/tagdragdrop.cpp:91 core/app/dragdrop/tagdragdrop.cpp:263
+#: core/app/dragdrop/tagdragdrop.cpp:330 core/app/dragdrop/tagdragdrop.cpp:456
 #, kde-format
 msgid "C&ancel"
 msgstr "&Abbrechen"
 
 #: core/app/dragdrop/albumdragdrop.cpp:186
-#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:262
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Als Albumvorschau einstellen"
 
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/itemdragdrop.cpp:810
+#: core/app/dragdrop/albumdragdrop.cpp:328
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #, kde-format
 msgid "Download From Camera"
 msgstr "Von der Kamera herunterladen"
 
-#: core/app/dragdrop/albumdragdrop.cpp:331
-#: core/app/dragdrop/itemdragdrop.cpp:812
+#: core/app/dragdrop/albumdragdrop.cpp:329
+#: core/app/dragdrop/itemdragdrop.cpp:809
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Von der Kamera herunterladen && Originaldateien löschen"
@@ -252,19 +252,19 @@ msgstr "Export läuft"
 msgid "Upload to Camera"
 msgstr "Auf die Kamera hochladen"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:67
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "Hier gruppieren"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:74
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "Einträge hier einfügen"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:81
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
@@ -275,45 +275,45 @@ msgstr "Hier gruppieren und in Album verschieben"
 msgid "Assign Tag to Dropped Items"
 msgstr "Stichwörter den hinzugefügten Einträgen zuordnen"
 
-#: core/app/dragdrop/itemdragdrop.cpp:689
+#: core/app/dragdrop/itemdragdrop.cpp:687
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Gesichtsmarkierungen ändern"
 
-#: core/app/dragdrop/itemdragdrop.cpp:693
+#: core/app/dragdrop/itemdragdrop.cpp:691
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Gesichtsmarkierung ändern"
 
-#: core/app/dragdrop/itemdragdrop.cpp:697
-#: core/app/dragdrop/itemdragdrop.cpp:751
+#: core/app/dragdrop/itemdragdrop.cpp:695
+#: core/app/dragdrop/itemdragdrop.cpp:749
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Abbrechen"
 
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:734
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Stichwörter den &ausgewählten Einträgen zuordnen"
 
-#: core/app/dragdrop/itemdragdrop.cpp:744
+#: core/app/dragdrop/itemdragdrop.cpp:742
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Stichwörter &diesem Eintrag zuordnen"
 
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:746
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Stichwörter &allen Einträgen zuordnen"
 
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/itemdragdrop.cpp:805
 #, kde-format
 msgid "Importing"
 msgstr "Import läuft"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:89
 #, kde-format
 msgid "M&erge Here"
 msgstr "Hier &zusammenführen"
@@ -325,19 +325,19 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Gesichtsnamen „%2“ in Eintrag bestätigen"
 msgstr[1] "Gesichtsnamen „%2“ in Einträgen bestätigen"
 
-#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:454
+#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:452
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Als Stichwort-Vorschau festlegen"
 
-#: core/app/dragdrop/tagdragdrop.cpp:325
+#: core/app/dragdrop/tagdragdrop.cpp:324
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Gesichtsname von „%2“ in „%3“ ändern"
 msgstr[1] "Gesichtsnamen von „%2“ in „%3“ ändern"
 
-#: core/app/dragdrop/tagdragdrop.cpp:449
+#: core/app/dragdrop/tagdragdrop.cpp:447
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Stichwort(e) „%1“ den Einträgen zuordnen"
@@ -8777,21 +8777,21 @@ msgid ""
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
 #, fuzzy, kde-format
 #| msgid "Processing Panorama Preview..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Vorbereitung der Panoramavorschau läuft ..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:248
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Error processing XML file"
 msgid "Error while processing image..."
 msgstr "Fehler beim Verarbeiten der XML-Datei"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:282
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

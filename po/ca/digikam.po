@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-18 02:01+0000\n"
+"POT-Creation-Date: 2025-09-19 02:02+0000\n"
 "PO-Revision-Date: 2025-09-16 11:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -183,52 +183,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:257
-#: core/app/dragdrop/albumdragdrop.cpp:406
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:256
+#: core/app/dragdrop/albumdragdrop.cpp:403
 #: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/itemdragdrop.cpp:150 core/app/dragdrop/tagdragdrop.cpp:88
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mou aquí"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:258
-#: core/app/dragdrop/albumdragdrop.cpp:407
+#: core/app/dragdrop/albumdragdrop.cpp:99
+#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:404
 #: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/itemdragdrop.cpp:153
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copia aquí"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
+#: core/app/dragdrop/albumdragdrop.cpp:101
 #: core/app/dragdrop/albumdragdrop.cpp:190
-#: core/app/dragdrop/albumdragdrop.cpp:267
-#: core/app/dragdrop/albumdragdrop.cpp:333
-#: core/app/dragdrop/albumdragdrop.cpp:409
+#: core/app/dragdrop/albumdragdrop.cpp:266
+#: core/app/dragdrop/albumdragdrop.cpp:331
+#: core/app/dragdrop/albumdragdrop.cpp:406
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:263
-#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:458
+#: core/app/dragdrop/itemdragdrop.cpp:86 core/app/dragdrop/itemdragdrop.cpp:811
+#: core/app/dragdrop/tagdragdrop.cpp:91 core/app/dragdrop/tagdragdrop.cpp:263
+#: core/app/dragdrop/tagdragdrop.cpp:330 core/app/dragdrop/tagdragdrop.cpp:456
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancel·la"
 
 #: core/app/dragdrop/albumdragdrop.cpp:186
-#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:262
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Estableix com a miniatura de l'àlbum"
 
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/itemdragdrop.cpp:810
+#: core/app/dragdrop/albumdragdrop.cpp:328
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #, kde-format
 msgid "Download From Camera"
 msgstr "Descàrrega des de la càmera"
 
-#: core/app/dragdrop/albumdragdrop.cpp:331
-#: core/app/dragdrop/itemdragdrop.cpp:812
+#: core/app/dragdrop/albumdragdrop.cpp:329
+#: core/app/dragdrop/itemdragdrop.cpp:809
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Descàrrega i supressió des de la càmera"
@@ -250,19 +250,19 @@ msgstr "Exportació"
 msgid "Upload to Camera"
 msgstr "Carrega a la càmera"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:67
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "Agrupa aquí"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:74
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "Insereix aquí els elements"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:81
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
@@ -273,45 +273,45 @@ msgstr "Agrupa aquí i mou a l'àlbum"
 msgid "Assign Tag to Dropped Items"
 msgstr "Assigna una etiqueta als elements deixats anar"
 
-#: core/app/dragdrop/itemdragdrop.cpp:689
+#: core/app/dragdrop/itemdragdrop.cpp:687
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Canvia les etiquetes de les cares"
 
-#: core/app/dragdrop/itemdragdrop.cpp:693
+#: core/app/dragdrop/itemdragdrop.cpp:691
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Canvia l'etiqueta de la cara"
 
-#: core/app/dragdrop/itemdragdrop.cpp:697
-#: core/app/dragdrop/itemdragdrop.cpp:751
+#: core/app/dragdrop/itemdragdrop.cpp:695
+#: core/app/dragdrop/itemdragdrop.cpp:749
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancel·la"
 
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:734
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Assigna les etiquetes als elements &seleccionats"
 
-#: core/app/dragdrop/itemdragdrop.cpp:744
+#: core/app/dragdrop/itemdragdrop.cpp:742
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Assigna les etiquetes a aques&t element"
 
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:746
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Assigna les etiquetes &a tots els elements"
 
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/itemdragdrop.cpp:805
 #, kde-format
 msgid "Importing"
 msgstr "Importació"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:89
 #, kde-format
 msgid "M&erge Here"
 msgstr "&Fusiona aquí"
@@ -323,19 +323,19 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Confirma el nom de la cara «%2» a l'element"
 msgstr[1] "Confirma el nom de la cara «%2» als elements"
 
-#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:454
+#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:452
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Estableix com a miniatura de l'etiqueta"
 
-#: core/app/dragdrop/tagdragdrop.cpp:325
+#: core/app/dragdrop/tagdragdrop.cpp:324
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Canvia el nom de la cara des de «%2» a «%3»"
 msgstr[1] "Canvia els noms de les cares des de «%2» a «%3»"
 
-#: core/app/dragdrop/tagdragdrop.cpp:449
+#: core/app/dragdrop/tagdragdrop.cpp:447
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Assigna l'/es etiqueta/es «%1» als elements"
@@ -8734,18 +8734,18 @@ msgstr ""
 "veure si el procés de segmentació ha aïllat adequadament el motiu. L'àrea "
 "verda és el motiu a on no s'aplicarà l'efecte difuminat."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "S'està processant la vista prèvia de la màscara..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:248
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Error en processar una imatge..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:282
 #, kde-format
 msgid "Background Blur"
 msgstr "Difuminat del fons"

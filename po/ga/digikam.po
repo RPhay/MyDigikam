@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-18 02:01+0000\n"
+"POT-Creation-Date: 2025-09-19 02:02+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -232,52 +232,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:257
-#: core/app/dragdrop/albumdragdrop.cpp:406
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:256
+#: core/app/dragdrop/albumdragdrop.cpp:403
 #: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/itemdragdrop.cpp:150 core/app/dragdrop/tagdragdrop.cpp:88
 #, kde-format
 msgid "&Move Here"
 msgstr "&Bog Anseo"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:258
-#: core/app/dragdrop/albumdragdrop.cpp:407
+#: core/app/dragdrop/albumdragdrop.cpp:99
+#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:404
 #: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/itemdragdrop.cpp:153
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Cóipeáil Anseo"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
+#: core/app/dragdrop/albumdragdrop.cpp:101
 #: core/app/dragdrop/albumdragdrop.cpp:190
-#: core/app/dragdrop/albumdragdrop.cpp:267
-#: core/app/dragdrop/albumdragdrop.cpp:333
-#: core/app/dragdrop/albumdragdrop.cpp:409
+#: core/app/dragdrop/albumdragdrop.cpp:266
+#: core/app/dragdrop/albumdragdrop.cpp:331
+#: core/app/dragdrop/albumdragdrop.cpp:406
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:263
-#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:458
+#: core/app/dragdrop/itemdragdrop.cpp:86 core/app/dragdrop/itemdragdrop.cpp:811
+#: core/app/dragdrop/tagdragdrop.cpp:91 core/app/dragdrop/tagdragdrop.cpp:263
+#: core/app/dragdrop/tagdragdrop.cpp:330 core/app/dragdrop/tagdragdrop.cpp:456
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ealaigh"
 
 #: core/app/dragdrop/albumdragdrop.cpp:186
-#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:262
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Socraigh mar Mhionsamhail an Albaim"
 
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/itemdragdrop.cpp:810
+#: core/app/dragdrop/albumdragdrop.cpp:328
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #, kde-format
 msgid "Download From Camera"
 msgstr "Íosluchtaigh ón Cheamara"
 
-#: core/app/dragdrop/albumdragdrop.cpp:331
-#: core/app/dragdrop/itemdragdrop.cpp:812
+#: core/app/dragdrop/albumdragdrop.cpp:329
+#: core/app/dragdrop/itemdragdrop.cpp:809
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Íosluchtaigh agus Scrios ón Cheamara"
@@ -299,7 +299,7 @@ msgstr "Easpórtáil"
 msgid "Upload to Camera"
 msgstr "Uasluchtaigh go dtí an gceamara"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Group images with this image"
 #| msgid "Group here"
@@ -307,14 +307,14 @@ msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "Grúpáil anseo"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:74
 #, fuzzy, kde-format
 #| msgid "Invert image colors."
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "Inbhéartaigh dathanna na híomhá."
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:81
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
@@ -325,47 +325,47 @@ msgstr ""
 msgid "Assign Tag to Dropped Items"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:689
+#: core/app/dragdrop/itemdragdrop.cpp:687
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Change Face Tags"
 msgstr "Bain Clib"
 
-#: core/app/dragdrop/itemdragdrop.cpp:693
+#: core/app/dragdrop/itemdragdrop.cpp:691
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgid "Change Face Tag"
 msgstr "Athraigh an Cás"
 
-#: core/app/dragdrop/itemdragdrop.cpp:697
-#: core/app/dragdrop/itemdragdrop.cpp:751
+#: core/app/dragdrop/itemdragdrop.cpp:695
+#: core/app/dragdrop/itemdragdrop.cpp:749
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cealaigh"
 
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:734
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Cuir Clibeanna ar na Míreanna &Roghnaithe"
 
-#: core/app/dragdrop/itemdragdrop.cpp:744
+#: core/app/dragdrop/itemdragdrop.cpp:742
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Cuir Clibeanna ar an Mír &Seo"
 
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:746
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Cuir Clibeanna le &Gach Mír"
 
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/itemdragdrop.cpp:805
 #, kde-format
 msgid "Importing"
 msgstr "Iompórtáil"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:89
 #, fuzzy, kde-format
 #| msgid "&Move Here"
 msgid "M&erge Here"
@@ -381,12 +381,12 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:454
+#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:452
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Socraigh mar Mhionsamhail na Clibe"
 
-#: core/app/dragdrop/tagdragdrop.cpp:325
+#: core/app/dragdrop/tagdragdrop.cpp:324
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
@@ -396,7 +396,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:449
+#: core/app/dragdrop/tagdragdrop.cpp:447
 #, fuzzy, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Cuir '%1' ar &Gach Mír"
@@ -8774,21 +8774,21 @@ msgid ""
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Á Phróiseáil..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:248
 #, fuzzy, kde-format
 #| msgid "Error loading GPX file"
 #| msgid_plural "Error loading GPX files"
 msgid "Error while processing image..."
 msgstr "Earráid agus comhad GPX á luchtú"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:282
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
