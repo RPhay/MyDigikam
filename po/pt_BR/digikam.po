@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-18 02:01+0000\n"
-"PO-Revision-Date: 2025-09-17 18:26-0300\n"
+"POT-Creation-Date: 2025-09-19 02:02+0000\n"
+"PO-Revision-Date: 2025-09-18 10:28-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -186,52 +186,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:257
-#: core/app/dragdrop/albumdragdrop.cpp:406
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:256
+#: core/app/dragdrop/albumdragdrop.cpp:403
 #: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/itemdragdrop.cpp:150 core/app/dragdrop/tagdragdrop.cpp:88
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mover aqui"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:258
-#: core/app/dragdrop/albumdragdrop.cpp:407
+#: core/app/dragdrop/albumdragdrop.cpp:99
+#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:404
 #: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/itemdragdrop.cpp:153
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copiar aqui"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
+#: core/app/dragdrop/albumdragdrop.cpp:101
 #: core/app/dragdrop/albumdragdrop.cpp:190
-#: core/app/dragdrop/albumdragdrop.cpp:267
-#: core/app/dragdrop/albumdragdrop.cpp:333
-#: core/app/dragdrop/albumdragdrop.cpp:409
+#: core/app/dragdrop/albumdragdrop.cpp:266
+#: core/app/dragdrop/albumdragdrop.cpp:331
+#: core/app/dragdrop/albumdragdrop.cpp:406
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:263
-#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:458
+#: core/app/dragdrop/itemdragdrop.cpp:86 core/app/dragdrop/itemdragdrop.cpp:811
+#: core/app/dragdrop/tagdragdrop.cpp:91 core/app/dragdrop/tagdragdrop.cpp:263
+#: core/app/dragdrop/tagdragdrop.cpp:330 core/app/dragdrop/tagdragdrop.cpp:456
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancelar"
 
 #: core/app/dragdrop/albumdragdrop.cpp:186
-#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:262
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Definir como miniatura do álbum"
 
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/itemdragdrop.cpp:810
+#: core/app/dragdrop/albumdragdrop.cpp:328
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #, kde-format
 msgid "Download From Camera"
 msgstr "Baixar da câmera"
 
-#: core/app/dragdrop/albumdragdrop.cpp:331
-#: core/app/dragdrop/itemdragdrop.cpp:812
+#: core/app/dragdrop/albumdragdrop.cpp:329
+#: core/app/dragdrop/itemdragdrop.cpp:809
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Baixar e excluir da câmera"
@@ -253,19 +253,19 @@ msgstr "Exportando"
 msgid "Upload to Camera"
 msgstr "Enviar para a câmera"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:67
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "Agrupar aqui"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:74
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "Inserir itens aqui"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:81
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
@@ -276,45 +276,45 @@ msgstr "Agrupar aqui e mover para o álbum"
 msgid "Assign Tag to Dropped Items"
 msgstr "Atribuir etiquetas aos itens largados"
 
-#: core/app/dragdrop/itemdragdrop.cpp:689
+#: core/app/dragdrop/itemdragdrop.cpp:687
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Alterar etiquetas de rosto"
 
-#: core/app/dragdrop/itemdragdrop.cpp:693
+#: core/app/dragdrop/itemdragdrop.cpp:691
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Alterar etiqueta de rosto"
 
-#: core/app/dragdrop/itemdragdrop.cpp:697
-#: core/app/dragdrop/itemdragdrop.cpp:751
+#: core/app/dragdrop/itemdragdrop.cpp:695
+#: core/app/dragdrop/itemdragdrop.cpp:749
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:734
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Atribuir etiquetas aos itens &selecionados"
 
-#: core/app/dragdrop/itemdragdrop.cpp:744
+#: core/app/dragdrop/itemdragdrop.cpp:742
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "A&tribuir etiquetas a este item"
 
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:746
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "&Atribuir etiquetas a todos os itens"
 
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/itemdragdrop.cpp:805
 #, kde-format
 msgid "Importing"
 msgstr "Importando"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:89
 #, kde-format
 msgid "M&erge Here"
 msgstr "M&esclar aqui"
@@ -326,19 +326,19 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Confirmar nome de rosto '%2' para o item"
 msgstr[1] "Confirmar nome de rosto '%2' para os itens"
 
-#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:454
+#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:452
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Definir como miniatura da etiqueta"
 
-#: core/app/dragdrop/tagdragdrop.cpp:325
+#: core/app/dragdrop/tagdragdrop.cpp:324
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Alterar nome de rosto '%2' para '%3'"
 msgstr[1] "Alterar nomes de rosto '%2' para '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:449
+#: core/app/dragdrop/tagdragdrop.cpp:447
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Atribuir a(s) etiqueta(s) '%1' aos itens"
@@ -8714,18 +8714,18 @@ msgstr ""
 "segmentação. A área verde representa o assunto onde o efeito de desfoque não "
 "será aplicado."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Processando a visualização da máscara..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:248
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Erro ao processar imagem..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:282
 #, kde-format
 msgid "Background Blur"
 msgstr "Desfoque do plano de fundo"
@@ -16934,7 +16934,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Color Appearance Model (CIECAM02)"
-msgstr "Usar o modelo da aparência de cores (CIECAM02)"
+msgstr "Usar o modelo da aparência de cor (CIECAM02)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:172
 #, kde-format
@@ -16956,7 +16956,7 @@ msgid ""
 "and default color blending algorithm is very slight, and will be most "
 "noticeable when you need to blend areas of different primary colors together."
 msgstr ""
-"Usa a Modelação da Aparência de Cores (CIECAM02) para representar as cores "
+"Usa o modelo da aparência de cor (CIECAM02) para representar as cores "
 "detalhadas. Os seus arquivos de entrada deverão ter perfis de ICC embutidos. "
 "Se não estiver presente nenhum perfil de ICC, será assumido o espaço de cor "
 "sRGB. A diferença entre o uso desta opção e o algoritmo de fusão de cores "
@@ -17050,7 +17050,7 @@ msgstr "Detalhes..."
 #, kde-format
 msgctxt "@title"
 msgid "Enfuse Settings"
-msgstr "Configuração da fusão"
+msgstr "Configuração da mesclagem"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:174
 #, kde-format
@@ -17068,7 +17068,7 @@ msgstr "Modelo de nome de arquivo: "
 #, kde-format
 msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
-msgstr "Mensagens de processamento da fusão"
+msgstr "Mensagens de processamento da mesclagem"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:495
 #, kde-format
@@ -17114,7 +17114,7 @@ msgstr "Mistura da exposição"
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:62
 #, kde-format
 msgid "A tool to blend bracketed images"
-msgstr "Uma ferramenta para fundir imagens empilhadas"
+msgstr "Uma ferramenta para mesclar imagens empilhadas"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:67
 #, kde-format
@@ -17148,7 +17148,7 @@ msgstr "Autor e Mantenedor"
 #, kde-format
 msgctxt "@action"
 msgid "Blend Stacked Images..."
-msgstr "Fundir imagens empilhadas..."
+msgstr "Mesclar imagens empilhadas..."
 
 #: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
 #, kde-format
@@ -17171,13 +17171,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
-msgstr "Bem-vindo à ferramenta Imagens Empilhadas"
+msgstr "Bem-vindo à ferramenta de imagens empilhadas"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
-msgstr "Bem-vindo à ferramenta Imagens Empilhadas"
+msgstr "Bem-vindo à ferramenta de imagens empilhadas"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
@@ -17186,7 +17186,7 @@ msgid ""
 "This tool fuses bracketed images with different exposure to make pseudo HDR "
 "Image"
 msgstr ""
-"Esta ferramenta funde imagens empilhadas com exposições diferentes para "
+"Esta ferramenta mescla imagens empilhadas com exposições diferentes para "
 "criar uma imagem que simula HDR"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
@@ -17308,8 +17308,8 @@ msgstr "Para realizar esta operação, será utilizado o programa Enblend."
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr ""
-"Pressione o botão \"Concluir\" para fundir seus itens e criar uma imagem que "
-"simula HDR."
+"Pressione o botão \"Concluir\" para mesclar seus itens e criar uma imagem "
+"que simula HDR."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:73
 #, kde-format
@@ -17398,7 +17398,7 @@ msgstr "Veja as mensagens de processamento abaixo."
 #, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
-msgstr "Ferramenta Imagens Empilhadas"
+msgstr "Ferramenta de imagens empilhadas"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
@@ -18379,7 +18379,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "JPEG Size:"
-msgstr "Tamanho do JPEG:"
+msgstr "Tamanho JPEG:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:154
 #, kde-format
@@ -20907,7 +20907,7 @@ msgid ""
 "also create a video presentation with transition</p><p>effects and audio "
 "tracks to show on a TV screen.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bem-vindo à ferramenta Apresentação em Vídeo</b></h1></"
+"<qt><p><h1><b>Bem-vindo à ferramenta de apresentação em vídeo</b></h1></"
 "p><p>Este assistente irá guiá-lo pela exportação rápida</p><p></p><p>das "
 "suas imagens para uma transmissão de vídeo.</p><p>Você poderá gerar "
 "rapidamente um vídeo <a href='https://pt.wikipedia.org/wiki/Time-"
@@ -20926,7 +20926,7 @@ msgstr "Binário do FFmpeg"
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:114
 #, kde-format
 msgid "Media Container Format:"
-msgstr "Formato do contêiner multimídia:"
+msgstr "Formato do contêiner de mídia:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
 #, kde-format
@@ -21121,7 +21121,7 @@ msgstr "Criar uma apresentação em vídeo"
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
-msgstr "Bem-vindo à ferramenta Apresentação em Vídeo"
+msgstr "Bem-vindo à ferramenta de apresentação em vídeo"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
@@ -21259,7 +21259,7 @@ msgstr "Ajustado"
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
 msgid "Adjusted with Aspect ratio"
-msgstr "Ajustado com a proporção da tela"
+msgstr "Ajustado mantendo proporção"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:78
 #, kde-format
