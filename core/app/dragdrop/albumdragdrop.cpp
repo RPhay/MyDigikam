@@ -98,8 +98,6 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-        popMenu.setMouseTracking(true);
-        qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -187,8 +185,6 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
                 popMenu.addSeparator();
                 popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-                popMenu.setMouseTracking(true);
-                qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -263,8 +259,6 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-            popMenu.setMouseTracking(true);
-            qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -328,8 +322,6 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download && Delete From Camera"));
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-            popMenu.setMouseTracking(true);
-            qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -403,8 +395,6 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-            popMenu.setMouseTracking(true);
-            qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
