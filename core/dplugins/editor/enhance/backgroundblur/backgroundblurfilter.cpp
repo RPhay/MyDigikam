@@ -150,6 +150,11 @@ void BackgroundBlurFilter::filterImage()
         cv::Mat output;
         postProgress(10);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Convert image to CV_8UC3 (BGR) if necessary.
 
         cv::Mat inputBGR;
@@ -179,6 +184,11 @@ void BackgroundBlurFilter::filterImage()
 
         postProgress(20);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Init the mask for GrabCut.
 
         cv::Rect roi(d->selection.x(), d->selection.y(), d->selection.width(), d->selection.height());
@@ -186,34 +196,69 @@ void BackgroundBlurFilter::filterImage()
         mask(roi) = cv::GC_PR_FGD;
         postProgress(30);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Apply GrabCut with more iterations for better accuracy.
 
         cv::Mat bgModel, fgModel;
         cv::grabCut(inputBGR, mask, roi, bgModel, fgModel, d->iterations, cv::GC_INIT_WITH_RECT);
+
+        if (!runningFlag())
+        {
+            return;
+        }
 
         // Refine the mask: GC_PR_FGD and GC_FGD are considered foreground.
 
         cv::compare(mask, cv::GC_PR_FGD, mask, cv::CMP_GE);
         postProgress(40);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Smooth the mask edges.
 
         cv::Mat kernelClose = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(3, 3));
         cv::morphologyEx(mask, mask, cv::MORPH_CLOSE, kernelClose);
+
+        if (!runningFlag())
+        {
+            return;
+        }
 
         // Dilate the mask slightly to include more pixels near the subject.
 
         cv::Mat kernelDilate = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(2, 2));
         cv::dilate(mask, mask, kernelDilate);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Convert the mask to BGR to be suitable for the preview.
 
         cv::Mat maskDisplay;
         mask.convertTo(maskDisplay, CV_8U, 255);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Create a copy of original for preview.
 
         cv::Mat overlay = inputBGR.clone();
+
+        if (!runningFlag())
+        {
+            return;
+        }
 
         // Create an image from the mask using semi-transparent green.
 
@@ -221,16 +266,26 @@ void BackgroundBlurFilter::filterImage()
         cv::cvtColor(maskDisplay, coloredMask, cv::COLOR_GRAY2BGR);
         coloredMask.setTo(cv::Scalar(0, 255, 0), maskDisplay);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Apply a transparency to the mask.
 
         cv::Mat alphaMask;
         maskDisplay.convertTo(alphaMask, CV_32F, 1.0/255.0);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Merge the semi-transparent mask over original image.
 
-        for (int y = 0 ; y < inputBGR.rows ; y++)
+        for (int y = 0 ; runningFlag() && (y < inputBGR.rows) ; y++)
         {
-            for (int x = 0 ; x < inputBGR.cols ; x++)
+            for (int x = 0 ; runningFlag() && (x < inputBGR.cols) ; x++)
             {
                 float alpha                = alphaMask.at<float>(y, x);
                 cv::Vec3b& pixel           = overlay.at<cv::Vec3b>(y, x);
@@ -250,11 +305,21 @@ void BackgroundBlurFilter::filterImage()
 
         postProgress(50);
 
+        if (!runningFlag())
+        {
+            return;
+        }
+
         // Blur the background.
 
         cv::Mat blurred;
         cv::GaussianBlur(inputBGR, blurred, cv::Size(0, 0), d->radius);
         postProgress(60);
+
+        if (!runningFlag())
+        {
+            return;
+        }
 
         if (d->transition == 0)
         {
@@ -277,9 +342,9 @@ void BackgroundBlurFilter::filterImage()
 
             // Apply a non-linear transformation to the distance map based on transition parameter.
 
-            for (int y = 0 ; y < distanceMap.rows ; y++)
+            for (int y = 0 ; runningFlag() && (y < distanceMap.rows) ; y++)
             {
-                for (int x = 0 ; x < distanceMap.cols ; x++)
+                for (int x = 0 ; runningFlag() && (x < distanceMap.cols) ; x++)
                 {
                     float dist = distanceMap.at<float>(y, x);
                     distanceMap.at<float>(y, x) = std::pow(dist, 1.0F / transition);
@@ -291,9 +356,9 @@ void BackgroundBlurFilter::filterImage()
             output = inputBGR.clone();
             postProgress(70);
 
-            for (int y = 0 ; y < inputBGR.rows ; y++)
+            for (int y = 0 ; runningFlag() && (y < inputBGR.rows) ; y++)
             {
-                for (int x = 0 ; x < inputBGR.cols ; x++)
+                for (int x = 0 ; runningFlag() && (x < inputBGR.cols) ; x++)
                 {
                     float alpha                = distanceMap.at<float>(y, x);
                     output.at<cv::Vec3b>(y, x) = alpha * blurred.at<cv::Vec3b>(y, x) +
@@ -303,6 +368,11 @@ void BackgroundBlurFilter::filterImage()
         }
 
         postProgress(80);
+
+        if (!runningFlag())
+        {
+            return;
+        }
 
         // Convert back to the original format if necessary.
 
@@ -323,6 +393,11 @@ void BackgroundBlurFilter::filterImage()
         }
 
         postProgress(90);
+
+        if (!runningFlag())
+        {
+            return;
+        }
     }
     catch (cv::Exception& e)
     {
