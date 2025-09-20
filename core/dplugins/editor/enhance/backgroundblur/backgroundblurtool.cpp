@@ -127,7 +127,6 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
     grid->addWidget(d->iterationsInput, 5, 0, 1, 1);
     grid->addWidget(maskLbl,            6, 0, 1, 1);
     grid->addWidget(d->maskPreview,     7, 0, 1, 1);
-    grid->setRowStretch(8, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
     d->gboxSettings->plainPage()->setLayout(grid);
