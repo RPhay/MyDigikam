@@ -47,7 +47,7 @@ bool do_online_translation(const QString& text,
     trengine->translate(text,       // String to translate
                         engine,     // Web service
                         trLang,     // Target language
-                        srcLang,    // Source langage
+                        srcLang,    // Source language
                         DOnlineTranslator::Auto);
 
     bool b = spy.wait(5000);

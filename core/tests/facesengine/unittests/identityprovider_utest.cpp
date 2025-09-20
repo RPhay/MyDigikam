@@ -177,7 +177,7 @@ void IdentityProviderTest::testIdentity()
     Identity identity = idProvider->addIdentity(attributes);
 
     QVERIFY2(!idProvider->identity(identity.id()).isNull(),
-             "retrive identity by id failed");
+             "retrieve identity by id failed");
 
 }
 

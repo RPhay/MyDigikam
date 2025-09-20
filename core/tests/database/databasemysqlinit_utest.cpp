@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-06-21
- * Description : unit test program for digiKam Mysql databse init
+ * Description : unit test program for digiKam Mysql database init
  *
  * SPDX-FileCopyrightText: 2013 by Michael G. Hansen <mike at mghansen dot de>
  *

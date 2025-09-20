@@ -480,10 +480,10 @@ void HaarIfaceTest::testPreferFolderWhole()
 /*!
  * @brief HaarIfaceTest::testReferenceFolderNotSelected
  * The reference folder is not in the search folders.
- * But neverthless the folder shall be checked, otherwise
- * the duplicates get not found. The Duplicatesfinder will merge interally the
+ * But nevertheless the folder shall be checked, otherwise
+ * the duplicates aren't found. The Duplicatesfinder will merge internally the
  * two album lists
- * The oposite that the folder is in both lists will be tested above, so
+ * The opposite that the folder is in both lists will be tested above, so
  * no extra test is needed.
  */
 void HaarIfaceTest::testReferenceFolderNotSelected()

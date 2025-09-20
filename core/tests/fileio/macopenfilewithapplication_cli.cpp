@@ -5,7 +5,7 @@
  *
  * Date        : 2021-02-04
  * Description : a command line tool to open file with the default
- *               MacOS apllication bundle.
+ *               MacOS application bundle.
  *
  * SPDX-FileCopyrightText: 2021-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

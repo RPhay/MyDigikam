@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
         args << QLatin1String("--psm") << psm;
     }
 
-    // OCR enginge mode
+    // OCR engine mode
 
     if (!oem.isEmpty())
     {
