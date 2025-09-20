@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-19 02:02+0000\n"
+"POT-Creation-Date: 2025-09-20 02:02+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -559,52 +559,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 بیت در تصویردانه"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:256
-#: core/app/dragdrop/albumdragdrop.cpp:403
+#: core/app/dragdrop/albumdragdrop.cpp:97
+#: core/app/dragdrop/albumdragdrop.cpp:251
+#: core/app/dragdrop/albumdragdrop.cpp:394
 #: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:150 core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/itemdragdrop.cpp:148 core/app/dragdrop/tagdragdrop.cpp:87
 #, kde-format
 msgid "&Move Here"
 msgstr "به اینجا &حرکت داده شود‌"
 
-#: core/app/dragdrop/albumdragdrop.cpp:99
-#: core/app/dragdrop/albumdragdrop.cpp:257
-#: core/app/dragdrop/albumdragdrop.cpp:404
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:252
+#: core/app/dragdrop/albumdragdrop.cpp:395
 #: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:153
+#: core/app/dragdrop/itemdragdrop.cpp:151
 #, kde-format
 msgid "&Copy Here"
 msgstr "&رونوشت به اینجا‌"
 
-#: core/app/dragdrop/albumdragdrop.cpp:101
-#: core/app/dragdrop/albumdragdrop.cpp:190
-#: core/app/dragdrop/albumdragdrop.cpp:266
-#: core/app/dragdrop/albumdragdrop.cpp:331
-#: core/app/dragdrop/albumdragdrop.cpp:406
+#: core/app/dragdrop/albumdragdrop.cpp:100
+#: core/app/dragdrop/albumdragdrop.cpp:187
+#: core/app/dragdrop/albumdragdrop.cpp:261
+#: core/app/dragdrop/albumdragdrop.cpp:324
+#: core/app/dragdrop/albumdragdrop.cpp:397
 #: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:86 core/app/dragdrop/itemdragdrop.cpp:811
-#: core/app/dragdrop/tagdragdrop.cpp:91 core/app/dragdrop/tagdragdrop.cpp:263
-#: core/app/dragdrop/tagdragdrop.cpp:330 core/app/dragdrop/tagdragdrop.cpp:456
+#: core/app/dragdrop/importdragdrop.cpp:193
+#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:795
+#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:260
+#: core/app/dragdrop/tagdragdrop.cpp:324 core/app/dragdrop/tagdragdrop.cpp:447
 #, kde-format
 msgid "C&ancel"
 msgstr "&لغو‌"
 
-#: core/app/dragdrop/albumdragdrop.cpp:186
-#: core/app/dragdrop/albumdragdrop.cpp:262
+#: core/app/dragdrop/albumdragdrop.cpp:183
+#: core/app/dragdrop/albumdragdrop.cpp:257
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "تنظیم به عنوان ریزنقش آلبوم"
 
-#: core/app/dragdrop/albumdragdrop.cpp:328
-#: core/app/dragdrop/itemdragdrop.cpp:807
+#: core/app/dragdrop/albumdragdrop.cpp:321
+#: core/app/dragdrop/itemdragdrop.cpp:791
 #, fuzzy, kde-format
 msgid "Download From Camera"
 msgstr "&بارگذاری در دوربین‌"
 
-#: core/app/dragdrop/albumdragdrop.cpp:329
-#: core/app/dragdrop/itemdragdrop.cpp:809
+#: core/app/dragdrop/albumdragdrop.cpp:322
+#: core/app/dragdrop/itemdragdrop.cpp:793
 #, fuzzy, kde-format
 msgid "Download && Delete From Camera"
 msgstr "بارگیری برگزیده"
@@ -616,104 +616,104 @@ msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
 msgstr "پالایه نوفه:"
 
-#: core/app/dragdrop/importdragdrop.cpp:192
+#: core/app/dragdrop/importdragdrop.cpp:189
 #, fuzzy, kde-format
 msgid "Exporting"
 msgstr "صادرات"
 
-#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/importdragdrop.cpp:191
 #, fuzzy, kde-format
 msgid "Upload to Camera"
 msgstr "&بارگذاری در دوربین‌"
 
-#: core/app/dragdrop/itemdragdrop.cpp:67
+#: core/app/dragdrop/itemdragdrop.cpp:66
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "پالایه نوفه:"
 
-#: core/app/dragdrop/itemdragdrop.cpp:74
+#: core/app/dragdrop/itemdragdrop.cpp:73
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "فاصله رنگ"
 
-#: core/app/dragdrop/itemdragdrop.cpp:81
+#: core/app/dragdrop/itemdragdrop.cpp:80
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:205
+#: core/app/dragdrop/itemdragdrop.cpp:200
 #, fuzzy, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "انتساب برچسبها به فقره‌های &برگزیده‌"
 
-#: core/app/dragdrop/itemdragdrop.cpp:687
+#: core/app/dragdrop/itemdragdrop.cpp:676
 #, fuzzy, kde-format
 msgid "Change Face Tags"
 msgstr "نمایش نوع تصویر"
 
-#: core/app/dragdrop/itemdragdrop.cpp:691
+#: core/app/dragdrop/itemdragdrop.cpp:680
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgid "Change Face Tag"
 msgstr "تغيير حالت"
 
-#: core/app/dragdrop/itemdragdrop.cpp:695
-#: core/app/dragdrop/itemdragdrop.cpp:749
+#: core/app/dragdrop/itemdragdrop.cpp:684
+#: core/app/dragdrop/itemdragdrop.cpp:736
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&لغو‌"
 
-#: core/app/dragdrop/itemdragdrop.cpp:734
+#: core/app/dragdrop/itemdragdrop.cpp:721
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "انتساب برچسبها به فقره‌های &برگزیده‌"
 
-#: core/app/dragdrop/itemdragdrop.cpp:742
+#: core/app/dragdrop/itemdragdrop.cpp:729
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "انتساب برچسبها به &این فقره‌"
 
-#: core/app/dragdrop/itemdragdrop.cpp:746
+#: core/app/dragdrop/itemdragdrop.cpp:733
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "انتساب برچسبها به &همه فقره‌ها‌"
 
-#: core/app/dragdrop/itemdragdrop.cpp:805
+#: core/app/dragdrop/itemdragdrop.cpp:789
 #, fuzzy, kde-format
 msgid "Importing"
 msgstr "واردات"
 
-#: core/app/dragdrop/tagdragdrop.cpp:89
+#: core/app/dragdrop/tagdragdrop.cpp:88
 #, fuzzy, kde-format
 #| msgid "&Move Here"
 msgid "M&erge Here"
 msgstr "به اینجا &حرکت داده شود‌"
 
-#: core/app/dragdrop/tagdragdrop.cpp:252
+#: core/app/dragdrop/tagdragdrop.cpp:249
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:259 core/app/dragdrop/tagdragdrop.cpp:452
+#: core/app/dragdrop/tagdragdrop.cpp:256 core/app/dragdrop/tagdragdrop.cpp:443
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "تنظیم به عنوان ریزنقش برچسب"
 
-#: core/app/dragdrop/tagdragdrop.cpp:324
+#: core/app/dragdrop/tagdragdrop.cpp:318
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:447
+#: core/app/dragdrop/tagdragdrop.cpp:438
 #, fuzzy, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "انتساب برچسب »%1« به فقره‌ها"
