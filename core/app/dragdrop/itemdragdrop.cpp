@@ -90,6 +90,7 @@ static DropAction copyOrMove(const QDropEvent* const e,
                              bool allowMove = true,
                              bool askForGrouping = false)
 {
+    qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -302,6 +303,8 @@ void ItemDragDropHandler::setReadOnlyDrop(bool readOnly)
 bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDropEvent* e, const QModelIndex& droppedOn)
 {
     Album* album = nullptr;
+
+    qApp->restoreOverrideCursor();
 
     // Note that the drop event does not have to be in an ItemCategorizedView.
     // It can also be a TableViewTreeView.

@@ -58,6 +58,8 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
                                      const QDropEvent* e,
                                      const QModelIndex& droppedOn)
 {
+    qApp->restoreOverrideCursor();
+
     if (accepts(e, droppedOn) == Qt::IgnoreAction)
     {
         return false;
