@@ -112,7 +112,8 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
     d->maskPreview->setWhatsThis(i18n("This view show the segmentation of the subject determined from the "
                                       "selection. The resulting green mask is superposed to the original image to "
                                       "see if the subject have been isolated properly by the segmentation process. "
-                                      "The green area is the subject where the blur effect will not applied."));
+                                      "The green area is the subject where the blur effect will not applied. "
+                                      "You can re-adjust in this view the rectangle including the subject."));
 
     // --------------------------------------------------------
 
