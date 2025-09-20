@@ -37,20 +37,20 @@ class DIGIKAM_EXPORT AltLangStrEdit : public QWidget
 public:
 
     /**
-     * Default contructor. Use lines to use a specific number of lines with text editor.
+     * Default constructor. Use lines to use a specific number of lines with text editor.
      */
     explicit AltLangStrEdit(QWidget* const parent, unsigned int lines = 3);
     ~AltLangStrEdit()                               override;
 
     /**
      * Create a title widget with a QLabel and relevant text.
-     * If a title widget already exists, it's remplaced.
+     * If a title widget already exists, it's replaced.
      */
     void setTitle(const QString& title);
 
     /**
      * Create a title with a specific widget instance (aka a QCheckBox for ex).
-     * If a title widget already exists, it's remplaced.
+     * If a title widget already exists, it's replaced.
      */
     void setTitleWidget(QWidget* const twdg);
 
@@ -68,7 +68,7 @@ public:
     QString languageCode(int index)          const;
 
     /**
-     * Fix lines visibile in text editor to lines. If zero, do not fix layout to number of lines visible.
+     * Fix lines visible in text editor to lines. If zero, do not fix layout to number of lines visible.
      */
     void setLinesVisible(uint lines);
     uint linesVisible()                      const;

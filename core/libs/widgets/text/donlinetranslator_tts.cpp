@@ -64,13 +64,13 @@ void DOnlineTts::generateUrls(const QString& text,
                 return;
             }
 
-            // Google has a limit of characters per tts request. If the query is larger, then it should be splited into several
+            // Google has a limit of characters per tts request. If the query is larger, then it should be split into several
 
             while (!unparsedText.isEmpty())
             {
                 const int splitIndex = DOnlineTranslator::getSplitIndex(unparsedText, d->s_googleTtsLimit); // Split the part by special symbol
 
-                // Generate URL API for add it to the playlist
+                // Generate URL API for adding it to the playlist
 
                 QUrl apiUrl(QStringLiteral("https://translate.googleapis.com/translate_tts"));
                 const QString query = QStringLiteral("ie=UTF-8&client=gtx&tl=%1&q=%2")
@@ -118,13 +118,13 @@ void DOnlineTts::generateUrls(const QString& text,
                 return;
             }
 
-            // Yandex has a limit of characters per tts request. If the query is larger, then it should be splited into several
+            // Yandex has a limit of characters per tts request. If the query is larger, then it should be split into several
 
             while (!unparsedText.isEmpty())
             {
                 const int splitIndex = DOnlineTranslator::getSplitIndex(unparsedText, d->s_yandexTtsLimit); // Split the part by special symbol
 
-                // Generate URL API for add it to the playlist
+                // Generate URL API for adding to the playlist
                 QUrl apiUrl(QStringLiteral("https://tts.voicetech.yandex.net/tts"));
                 const QString query = QStringLiteral("text=%1&lang=%2&speaker=%3&emotion=%4&format=mp3")
                                         .arg(QString::fromUtf8(QUrl::toPercentEncoding(unparsedText.left(splitIndex))), langString, voiceString, emotionString);

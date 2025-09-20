@@ -387,7 +387,7 @@ void AltLangStrEdit::slotTranslate(const QString& lang)
     d->trengine->translate(text,                                                            // String to translate
                            LocalizeSettings::instance()->settings().translatorEngine,       // Web service
                            trLang,                                                          // Target language
-                           srcLang,                                                         // Source langage
+                           srcLang,                                                         // Source language
                            DOnlineTranslator::Auto);
 }
 

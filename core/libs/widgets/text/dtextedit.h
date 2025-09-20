@@ -97,32 +97,32 @@ public:
     void setAcceptedCharacters(const QString& mask);
 
     /**
-     * This property holds whether the edit widget handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 1 to apply a size constraint.
+     * This property holds whether the edit widget handles visible lines used by the widget to show text.
+     * Lines must be superior or equal to 1 to apply a size constraint.
      * Notes: if a single visible line is used, the widget will emulate QLineEdit.
-     *        a null value do not apply a size constraint.
+     *        a null value does not apply a size constraint.
      */
     void setLinesVisible(unsigned int lines);
     unsigned int linesVisible() const;
 
     /**
-     * This property holds whether the edit widget handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
+     * This property holds whether the edit widget handles a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
      * To reset this setting, pass a empty string as language.
-     * If Sonnet depedencies is not resolved, these method do nothing.
+     * If Sonnet dependencies is not resolved, this method does nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
 
     /**
-     * This property holds whether the edit widget handle the Spellcheck settings.
+     * This property holds whether the edit widget handles the Spellcheck settings.
      * See LocalizeContainer class for details.
      */
     LocalizeContainer spellCheckSettings() const;
     void setLocalizeSettings(const LocalizeContainer& settings);
 
     /**
-     * This property holds whether the edit widget handle the maximum of characters
+     * This property holds whether the edit widget handles the maximum of characters
      * that user can enter in editor.
      * By default no limit is set.
      * A zero length reset a limit.
@@ -138,7 +138,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * Emmited only when mimic QLineEdit mode is enabled. See setLinesVisible() for details.
+     * Emitted only when mimic QLineEdit mode is enabled. See setLinesVisible() for details.
      */
     void returnPressed();
     void textEdited(const QString&);
@@ -218,7 +218,7 @@ public:
     void  setClearButtonEnabled(bool enable);
 
     /**
-     * This property holds whether the edit widget handle the mask of ignored characters in text editor.
+     * This property holds whether the edit widget handles the mask of ignored characters in text editor.
      * The mask of characters is passed as string (ex: "+/!()").
      * By default the mask is empty.
      */
@@ -226,7 +226,7 @@ public:
     void setIgnoredCharacters(const QString& mask);
 
     /**
-     * This property holds whether the edit widget handle the mask of accepted characters in text editor.
+     * This property holds whether the edit widget handles the mask of accepted characters in text editor.
      * The mask of characters is passed as string (ex: "abcABC").
      * By default the mask is empty.
      */
@@ -234,8 +234,8 @@ public:
     void setAcceptedCharacters(const QString& mask);
 
     /**
-     * This property holds whether the edit widget handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 1 to apply a size constraint.
+     * This property holds whether the edit widget handles visible lines used by the widget to show text.
+     * Lines must be superior or equal to 1 to apply a size constraint.
      * Notes: if a single visible line is used, the widget emulate QLineEdit.
      *        a null value do not apply a size constraint.
      */
@@ -243,23 +243,23 @@ public:
     unsigned int linesVisible() const;
 
     /**
-     * This property holds whether the edit widget handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
+     * This property holds whether the edit widget handles a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
      * To reset this setting, pass a empty string as language.
-     * If Sonnet depedencies is not resolved, these method do nothing.
+     * If Sonnet dependencies is not resolved, thi method does nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
 
     /**
-     * This property holds whether the edit widget handle the Spellcheck settings.
+     * This property holds whether the edit widget handles the Spellcheck settings.
      * See LocalizeContainer class for details.
      */
     LocalizeContainer spellCheckSettings() const;
     void setLocalizeSettings(const LocalizeContainer& settings);
 
     /**
-     * This property holds whether the edit widget handle the maximum of characters
+     * This property holds whether the edit widget handles the maximum of characters
      * that user can enter in editor.
      * By default no limit is set.
      * A zero length reset a limit.
@@ -275,7 +275,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * Emmited only when mimic QLineEdit mode is enabled. See setLinesVisible() for details.
+     * Emitted only when mimic QLineEdit mode is enabled. See setLinesVisible() for details.
      */
     void returnPressed();
     void textEdited(const QString&);

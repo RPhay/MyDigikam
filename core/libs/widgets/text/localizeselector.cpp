@@ -312,7 +312,7 @@ bool s_inlineTranslateString(const QString& text, const QString& trCode, QString
     trengine->translate(text,                                                            // String to translate
                         LocalizeSettings::instance()->settings().translatorEngine,       // Web service
                         trLang,                                                          // Target language
-                        srcLang,                                                         // Source langage
+                        srcLang,                                                         // Source language
                         DOnlineTranslator::Auto);
 
     waitingLoop->exec(QEventLoop::ExcludeUserInputEvents);
