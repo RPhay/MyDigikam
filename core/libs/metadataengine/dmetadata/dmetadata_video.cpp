@@ -1723,7 +1723,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         }
 
         QString coord;
-        double lattitude = 0.0;
+        double latitude = 0.0;
         double longitude = 0.0;
         double altitude  = 0.0;
         bool b1          = false;
@@ -1733,7 +1733,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         if (digits.size() > 1)
         {
             coord     = data.mid(digits[0], digits[1] - digits[0]);
-            lattitude = coord.toDouble(&b1);
+            latitude = coord.toDouble(&b1);
         }
 
         if (digits.size() > 2)
@@ -1754,7 +1754,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             {
                 // All GPS values are available.
 
-                setGPSInfo(altitude, lattitude, longitude);
+                setGPSInfo(altitude, latitude, longitude);
 
                 setXmpTagString("Xmp.video.GPSAltitude",
                                 getXmpTagString("Xmp.exif.GPSAltitude"));
@@ -1766,7 +1766,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 // No altitude available.
 
                 double* alt = nullptr;
-                setGPSInfo(alt, lattitude, longitude);
+                setGPSInfo(alt, latitude, longitude);
             }
 
             setXmpTagString("Xmp.video.GPSLatitude",
