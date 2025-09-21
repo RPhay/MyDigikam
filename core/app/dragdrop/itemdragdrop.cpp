@@ -156,6 +156,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e
 
     m_droppedOn = droppedOn;
     m_source    = e->source();
+    m_proposed  = e->proposedAction();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 

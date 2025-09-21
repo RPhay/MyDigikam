@@ -50,25 +50,16 @@ public:
     QStringList    mimeTypes() const                            override;
     QMimeData*     createMimeData(const QList<QModelIndex>&)    override;
 
-private:
+private Q_SLOTS:
 
-    enum DropAction
-    {
-        NoAction,
-        CopyAction,
-        MoveAction,
-        GroupAction,
-        AssignTagAction
-    };
+    void slotUploadCamItems();
 
 private:
 
-    QAction*   addGroupAction(QMenu* const menu);
-    QAction*   addCancelAction(QMenu* const menu);
-    DropAction copyOrMove(const QDropEvent* e,
-                          QWidget* const view,
-                          bool allowMove = true,
-                          bool askForGrouping = false);
+    QAbstractItemView*    m_view       = nullptr;
+
+    Qt::KeyboardModifiers m_modifiers;
+    QPoint                m_position;
 };
 
 } // namespace Digikam

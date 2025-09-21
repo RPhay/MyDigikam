@@ -78,6 +78,8 @@ private:
         AssignTagAction
     };
 
+private:
+
     DropAction copyOrMove(bool allowMove = true,
                           bool askForGrouping = false) const;
     DropAction tagAction(bool askForGrouping)          const;
