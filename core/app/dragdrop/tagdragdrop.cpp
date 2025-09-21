@@ -134,9 +134,11 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         }
 
         QTimer::singleShot(0, this, &TagDragDropHandler::slotAssignTagItem);
+
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelIndex& dropIndex)

@@ -43,6 +43,26 @@ public:
 
     QStringList mimeTypes() const override;
     QMimeData* createMimeData(const QList<Album*>&)      override;
+
+private Q_SLOTS:
+
+    void slotMoveCopyAlbum();
+    void slotMoveCopyItems();
+    void slotCopyFromCamera();
+    void slotMoveCopyExtern();
+
+private:
+
+    QAbstractItemView*    m_view         = nullptr;
+    QObject*              m_source       = nullptr;
+    PAlbum*               m_destAlbum    = nullptr;
+    PAlbum*               m_droppedAlbum = nullptr;
+
+    Qt::KeyboardModifiers m_modifiers;
+    QPoint                m_position;
+
+    QList<QUrl>           m_srcURLs;
+    QList<qlonglong>      m_imageIDs;
 };
 
 } // namespace Digikam
