@@ -112,15 +112,20 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        QTimer::singleShot(0, this, &AlbumDragDropHandler::slotMoveCopyAlbum);
+        QTimer::singleShot(0, this, [this]()
+            {
+                slotMoveCopyAlbum();
+                model()->setDropIndex(QModelIndex());
+            }
+        );
 
         return true;
     }
     else if (DItemDrag::canDecode(e->mimeData()))
     {
 
-        QList<QUrl>      urls;
-        QList<int>       albumIDs;
+        QList<QUrl>  urls;
+        QList<int>   albumIDs;
 
         if (!DItemDrag::decode(e->mimeData(), urls, albumIDs, m_imageIDs))
         {
@@ -132,7 +137,12 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        QTimer::singleShot(0, this, &AlbumDragDropHandler::slotMoveCopyItems);
+        QTimer::singleShot(0, this, [this]()
+            {
+                slotMoveCopyItems();
+                model()->setDropIndex(QModelIndex());
+            }
+        );
 
         return true;
     }
@@ -141,7 +151,12 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
     else if (DCameraItemListDrag::canDecode(e->mimeData()))
     {
-        QTimer::singleShot(0, this, &AlbumDragDropHandler::slotCopyFromCamera);
+        QTimer::singleShot(0, this, [this]()
+            {
+                slotCopyFromCamera();
+                model()->setDropIndex(QModelIndex());
+            }
+        );
 
         return true;
     }
@@ -152,7 +167,12 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
     {
         m_srcURLs = e->mimeData()->urls();
 
-        QTimer::singleShot(0, this, &AlbumDragDropHandler::slotMoveCopyExtern);
+        QTimer::singleShot(0, this, [this]()
+            {
+                slotMoveCopyExtern();
+                model()->setDropIndex(QModelIndex());
+            }
+        );
 
         return true;
     }

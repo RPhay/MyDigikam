@@ -629,9 +629,11 @@ void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
         {
             e->accept();
         }
+        else
+        {
+            m_albumModel->setDropIndex(QModelIndex());
+        }
     }
-
-    m_albumModel->setDropIndex(QModelIndex());
 }
 
 bool AbstractAlbumTreeView::viewportEvent(QEvent* event)

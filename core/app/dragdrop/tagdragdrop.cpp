@@ -100,7 +100,12 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        QTimer::singleShot(0, this, &TagDragDropHandler::slotMoveMergeTags);
+        QTimer::singleShot(0, this, [this]()
+            {
+                slotMoveMergeTags();
+                model()->setDropIndex(QModelIndex());
+            }
+        );
 
         return true;
     }
@@ -128,12 +133,22 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
         if (m_destAlbum->hasProperty(TagPropertyName::person()))
         {
-            QTimer::singleShot(0, this, &TagDragDropHandler::slotConfirmPerson);
+            QTimer::singleShot(0, this, [this]()
+                {
+                    slotConfirmPerson();
+                    model()->setDropIndex(QModelIndex());
+                }
+            );
 
             return true;
         }
 
-        QTimer::singleShot(0, this, &TagDragDropHandler::slotAssignTagItem);
+        QTimer::singleShot(0, this, [this]()
+            {
+                slotAssignTagItem();
+                model()->setDropIndex(QModelIndex());
+            }
+        );
 
         return true;
     }
