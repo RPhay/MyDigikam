@@ -36,12 +36,13 @@
 
 // Local includes
 
+#include "digikam_debug.h"
+#include "digikam_config.h"
+#include "digikam_globals.h"
 #include "dexpanderbox.h"
 #include "dfiledialog.h"
 #include "dlayoutbox.h"
 #include "dnuminput.h"
-#include "digikam_debug.h"
-#include "digikam_config.h"
 #include "dcombobox.h"
 
 #ifdef HAVE_EIGEN3
