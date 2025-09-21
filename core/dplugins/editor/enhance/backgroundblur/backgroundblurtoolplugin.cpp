@@ -114,7 +114,7 @@ void BackgroundBlurToolPlugin::slotBackgroundBlur()
         {
             QMessageBox::warning(qApp->activeWindow(), i18n("Background Blur Tool"),
                                  i18n("You must select before a rectangular area including the subject.<br>"
-                                      "Note: you can reajust the zone later in the tool."));
+                                      "Note: you can readjust the zone later in the tool."));
 
             return;
         }
