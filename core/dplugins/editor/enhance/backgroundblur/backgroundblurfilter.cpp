@@ -36,10 +36,10 @@ public:
 
 public:
 
-    int                   radius     = 3;   ///< Blur effect radius.
-    int                   transition = 0;   ///< Number of blur transitions.
-    int                   iterations = 10;  ///< GrabCut iterations to isolate more and less the subject.
-    QRect                 selection;        ///< suject area previously selected by the user.
+    int    radius     = 3;   ///< Blur effect radius.
+    int    transition = 0;   ///< Number of blur transitions.
+    int    iterations = 10;  ///< GrabCut iterations to isolate more and less the subject.
+    QRectF selection;        ///< suject area previously selected by the user.
 };
 
 BackgroundBlurFilter::BackgroundBlurFilter(QObject* const parent)
@@ -50,7 +50,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(QObject* const parent)
 }
 
 BackgroundBlurFilter::BackgroundBlurFilter(DImg* const orgImage,
-                                           const QRect& selection,
+                                           const QRectF& selection,
                                            int radius,
                                            int transition,
                                            int iterations,
@@ -69,7 +69,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImg* const orgImage,
 BackgroundBlurFilter::BackgroundBlurFilter(DImgThreadedFilter* const parentFilter,
                                            const DImg& orgImage,
                                            const DImg& destImage,
-                                           const QRect& selection,
+                                           const QRectF& selection,
                                            int radius,
                                            int transition,
                                            int iterations,
@@ -402,11 +402,17 @@ void BackgroundBlurFilter::filterImage()
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::filterImage: cv::Exception:" << e.what();
+
+        Q_EMIT signalSegmentedMask(QImage());
+
         m_destImage = m_orgImage;
     }
     catch (...)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::filterImage: Default exception from OpenCV";
+
+        Q_EMIT signalSegmentedMask(QImage());
+
         m_destImage = m_orgImage;
     }
 }
