@@ -200,10 +200,37 @@ void BackgroundBlurTool::slotSelectionChanged(const QRectF& previewSel)
 
     float scaleFactor = static_cast<float>(iface->originalSize().width() / iface->previewSize().width());
 
-    d->orgSelection.setTopLeft(QPoint(previewSel.topLeft().x() * scaleFactor,
-                                previewSel.topLeft().y() * scaleFactor));
-    d->orgSelection.setBottomRight(QPoint(previewSel.bottomRight().x() * scaleFactor,
-                                    previewSel.bottomRight().y() * scaleFactor));
+    float top    = previewSel.topLeft().x() * scaleFactor;
+
+    if (top < 0)
+    {
+        top = 0;
+    }
+
+    float left   = previewSel.topLeft().y() * scaleFactor;
+
+    if (left < 0)
+    {
+        left = 0;
+    }
+
+    d->orgSelection.setTopLeft(QPointF(top, left));
+
+    float bottom = previewSel.bottomRight().x() * scaleFactor;
+
+    if (bottom > iface->originalSize().width())
+    {
+        bottom = iface->originalSize().width();
+    }
+
+    float right  = previewSel.bottomRight().y() * scaleFactor;
+
+    if (right > iface->originalSize().height())
+    {
+        right = iface->originalSize().height();
+    }
+
+    d->orgSelection.setBottomRight(QPointF(bottom, right));
 
     slotTimer();
 }
@@ -221,10 +248,40 @@ void BackgroundBlurTool::preparePreview()
     float scaleFactor = static_cast<float>(iface->originalSize().width() / iface->previewSize().width());
 
     QRectF previewSel;
-    previewSel.setTopLeft(QPoint(d->orgSelection.topLeft().x() / scaleFactor,
-                                 d->orgSelection.topLeft().y() / scaleFactor));
-    previewSel.setBottomRight(QPoint(d->orgSelection.bottomRight().x() / scaleFactor,
-                                     d->orgSelection.bottomRight().y() / scaleFactor));
+
+    // Normalize.
+
+    float top    = d->orgSelection.topLeft().x() / scaleFactor;
+
+    if (top < 0)
+    {
+        top = 0;
+    }
+
+    float left   = d->orgSelection.topLeft().y() / scaleFactor;
+
+    if (left < 0)
+    {
+        left = 0;
+    }
+
+    previewSel.setTopLeft(QPointF(top, left));
+
+    float bottom = d->orgSelection.bottomRight().x() / scaleFactor;
+
+    if (bottom > preview.width())
+    {
+        bottom = preview.width();
+    }
+
+    float right  = d->orgSelection.bottomRight().y() / scaleFactor;
+
+    if (right > preview.height())
+    {
+        right = preview.height();
+    }
+
+    previewSel.setBottomRight(QPointF(bottom, right));
 
     d->maskPreview->setSelectionArea(previewSel);
 
