@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 02:02+0000\n"
+"POT-Creation-Date: 2025-09-21 02:03+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -230,52 +230,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:251
-#: core/app/dragdrop/albumdragdrop.cpp:394
-#: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:148 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/albumdragdrop.cpp:99
+#: core/app/dragdrop/albumdragdrop.cpp:253
+#: core/app/dragdrop/albumdragdrop.cpp:396
+#: core/app/dragdrop/importdragdrop.cpp:122
+#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:89
 #, kde-format
 msgid "&Move Here"
 msgstr "بۇ جايغا يۆتكە(&M)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:252
-#: core/app/dragdrop/albumdragdrop.cpp:395
-#: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:151
+#: core/app/dragdrop/albumdragdrop.cpp:100
+#: core/app/dragdrop/albumdragdrop.cpp:254
+#: core/app/dragdrop/albumdragdrop.cpp:397
+#: core/app/dragdrop/importdragdrop.cpp:125
+#: core/app/dragdrop/itemdragdrop.cpp:152
 #, kde-format
 msgid "&Copy Here"
 msgstr "بۇ جايغا كۆچۈر(&C)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:187
-#: core/app/dragdrop/albumdragdrop.cpp:261
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/albumdragdrop.cpp:397
+#: core/app/dragdrop/albumdragdrop.cpp:102
+#: core/app/dragdrop/albumdragdrop.cpp:189
+#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/albumdragdrop.cpp:399
 #: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:193
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:795
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:260
-#: core/app/dragdrop/tagdragdrop.cpp:324 core/app/dragdrop/tagdragdrop.cpp:447
+#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:798
+#: core/app/dragdrop/tagdragdrop.cpp:92 core/app/dragdrop/tagdragdrop.cpp:262
+#: core/app/dragdrop/tagdragdrop.cpp:326 core/app/dragdrop/tagdragdrop.cpp:449
 #, kde-format
 msgid "C&ancel"
 msgstr "ۋاز كەچ(&A)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:183
-#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:185
+#: core/app/dragdrop/albumdragdrop.cpp:259
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr ""
 
-#: core/app/dragdrop/albumdragdrop.cpp:321
-#: core/app/dragdrop/itemdragdrop.cpp:791
+#: core/app/dragdrop/albumdragdrop.cpp:323
+#: core/app/dragdrop/itemdragdrop.cpp:794
 #, kde-format
 msgid "Download From Camera"
 msgstr ""
 
-#: core/app/dragdrop/albumdragdrop.cpp:322
-#: core/app/dragdrop/itemdragdrop.cpp:793
+#: core/app/dragdrop/albumdragdrop.cpp:324
+#: core/app/dragdrop/itemdragdrop.cpp:796
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr ""
@@ -287,12 +287,12 @@ msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
 msgstr ""
 
-#: core/app/dragdrop/importdragdrop.cpp:189
+#: core/app/dragdrop/importdragdrop.cpp:190
 #, kde-format
 msgid "Exporting"
 msgstr "ئېكسپورت قىلىش"
 
-#: core/app/dragdrop/importdragdrop.cpp:191
+#: core/app/dragdrop/importdragdrop.cpp:192
 #, kde-format
 msgid "Upload to Camera"
 msgstr ""
@@ -317,75 +317,75 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:200
+#: core/app/dragdrop/itemdragdrop.cpp:201
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:676
+#: core/app/dragdrop/itemdragdrop.cpp:679
 #, fuzzy, kde-format
 #| msgid "Recent Tags"
 msgid "Change Face Tags"
 msgstr "يېقىنقى بەتكۈچ"
 
-#: core/app/dragdrop/itemdragdrop.cpp:680
+#: core/app/dragdrop/itemdragdrop.cpp:683
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgid "Change Face Tag"
 msgstr "چوڭ كىچىك يېزىلىش ئۆزگەرتىش"
 
-#: core/app/dragdrop/itemdragdrop.cpp:684
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:687
+#: core/app/dragdrop/itemdragdrop.cpp:739
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "ۋاز كەچ(&C)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:721
+#: core/app/dragdrop/itemdragdrop.cpp:724
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:729
+#: core/app/dragdrop/itemdragdrop.cpp:732
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:736
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:789
+#: core/app/dragdrop/itemdragdrop.cpp:792
 #, kde-format
 msgid "Importing"
 msgstr "ئەكىرىۋاتىدۇ"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:90
 #, fuzzy, kde-format
 #| msgid "&Move Here"
 msgid "M&erge Here"
 msgstr "بۇ جايغا يۆتكە(&M)"
 
-#: core/app/dragdrop/tagdragdrop.cpp:249
+#: core/app/dragdrop/tagdragdrop.cpp:251
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:256 core/app/dragdrop/tagdragdrop.cpp:443
+#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:445
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:318
+#: core/app/dragdrop/tagdragdrop.cpp:320
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:438
+#: core/app/dragdrop/tagdragdrop.cpp:440
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr ""
@@ -8528,7 +8528,8 @@ msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
 "see if the subject have been isolated properly by the segmentation process. "
-"The green area is the subject where the blur effect will not applied."
+"The green area is the subject where the blur effect will not applied. You "
+"can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
@@ -8587,7 +8588,9 @@ msgstr "تەگلىك رەڭگى:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
-msgid "You must select before a rectangular area including the subject..."
+msgid ""
+"You must select before a rectangular area including the subject.<br>Note: "
+"you can reajust the zone later in the tool."
 msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
@@ -44011,10 +44014,11 @@ msgid "None"
 msgstr "يوق"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, kde-format
-msgctxt "@info: pick lablel selector"
+#, fuzzy, kde-format
+#| msgid "Color mode: "
+msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
-msgstr ""
+msgstr "رەڭگى: "
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, kde-format

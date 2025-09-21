@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 02:02+0000\n"
+"POT-Creation-Date: 2025-09-21 02:03+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -180,52 +180,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1%2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:251
-#: core/app/dragdrop/albumdragdrop.cpp:394
-#: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:148 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/albumdragdrop.cpp:99
+#: core/app/dragdrop/albumdragdrop.cpp:253
+#: core/app/dragdrop/albumdragdrop.cpp:396
+#: core/app/dragdrop/importdragdrop.cpp:122
+#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:89
 #, kde-format
 msgid "&Move Here"
 msgstr "&Перамясціць сюды"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:252
-#: core/app/dragdrop/albumdragdrop.cpp:395
-#: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:151
+#: core/app/dragdrop/albumdragdrop.cpp:100
+#: core/app/dragdrop/albumdragdrop.cpp:254
+#: core/app/dragdrop/albumdragdrop.cpp:397
+#: core/app/dragdrop/importdragdrop.cpp:125
+#: core/app/dragdrop/itemdragdrop.cpp:152
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Скапіяваць сюды"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:187
-#: core/app/dragdrop/albumdragdrop.cpp:261
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/albumdragdrop.cpp:397
+#: core/app/dragdrop/albumdragdrop.cpp:102
+#: core/app/dragdrop/albumdragdrop.cpp:189
+#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/albumdragdrop.cpp:399
 #: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:193
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:795
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:260
-#: core/app/dragdrop/tagdragdrop.cpp:324 core/app/dragdrop/tagdragdrop.cpp:447
+#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:798
+#: core/app/dragdrop/tagdragdrop.cpp:92 core/app/dragdrop/tagdragdrop.cpp:262
+#: core/app/dragdrop/tagdragdrop.cpp:326 core/app/dragdrop/tagdragdrop.cpp:449
 #, kde-format
 msgid "C&ancel"
 msgstr "&Скасаваць"
 
-#: core/app/dragdrop/albumdragdrop.cpp:183
-#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:185
+#: core/app/dragdrop/albumdragdrop.cpp:259
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Зрабіць мініяцюрай альбома"
 
-#: core/app/dragdrop/albumdragdrop.cpp:321
-#: core/app/dragdrop/itemdragdrop.cpp:791
+#: core/app/dragdrop/albumdragdrop.cpp:323
+#: core/app/dragdrop/itemdragdrop.cpp:794
 #, kde-format
 msgid "Download From Camera"
 msgstr "Спампаваць з камеры"
 
-#: core/app/dragdrop/albumdragdrop.cpp:322
-#: core/app/dragdrop/itemdragdrop.cpp:793
+#: core/app/dragdrop/albumdragdrop.cpp:324
+#: core/app/dragdrop/itemdragdrop.cpp:796
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Спампаваць &і выдаліць з камеры"
@@ -237,12 +237,12 @@ msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
 msgstr "Згрупаваць з гэтым"
 
-#: core/app/dragdrop/importdragdrop.cpp:189
+#: core/app/dragdrop/importdragdrop.cpp:190
 #, kde-format
 msgid "Exporting"
 msgstr "Экспарт"
 
-#: core/app/dragdrop/importdragdrop.cpp:191
+#: core/app/dragdrop/importdragdrop.cpp:192
 #, kde-format
 msgid "Upload to Camera"
 msgstr "Запампаваць на камеру"
@@ -265,55 +265,55 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Групаваць тут і перамясціць у альбом"
 
-#: core/app/dragdrop/itemdragdrop.cpp:200
+#: core/app/dragdrop/itemdragdrop.cpp:201
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Прызначыць тэг перацягнутым элементам"
 
-#: core/app/dragdrop/itemdragdrop.cpp:676
+#: core/app/dragdrop/itemdragdrop.cpp:679
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Змяніць тэгі твараў"
 
-#: core/app/dragdrop/itemdragdrop.cpp:680
+#: core/app/dragdrop/itemdragdrop.cpp:683
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Змяніць тэг твару"
 
-#: core/app/dragdrop/itemdragdrop.cpp:684
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:687
+#: core/app/dragdrop/itemdragdrop.cpp:739
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Скасаваць"
 
-#: core/app/dragdrop/itemdragdrop.cpp:721
+#: core/app/dragdrop/itemdragdrop.cpp:724
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Прызначыць тэгі &абраным элементам"
 
-#: core/app/dragdrop/itemdragdrop.cpp:729
+#: core/app/dragdrop/itemdragdrop.cpp:732
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Прызначыць тэгі &гэтаму элементу"
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:736
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Прызначыць тэгі &ўсім элементам"
 
-#: core/app/dragdrop/itemdragdrop.cpp:789
+#: core/app/dragdrop/itemdragdrop.cpp:792
 #, kde-format
 msgid "Importing"
 msgstr "Імпарт"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:90
 #, kde-format
 msgid "M&erge Here"
 msgstr "&Аб’яднаць з гэтым"
 
-#: core/app/dragdrop/tagdragdrop.cpp:249
+#: core/app/dragdrop/tagdragdrop.cpp:251
 #, fuzzy, kde-format
 #| msgid "Change face name from '%2' to '%3'"
 #| msgid_plural "Change face names from '%2' to '%3'"
@@ -324,12 +324,12 @@ msgstr[1] "Змяніць назвы тэгаў твараў з \"%2\" на \"%3
 msgstr[2] "Змяніць назвы тэгаў твараў з \"%2\" на \"%3\""
 msgstr[3] "Змяніць назвы тэгаў твараў з \"%2\" на \"%3\""
 
-#: core/app/dragdrop/tagdragdrop.cpp:256 core/app/dragdrop/tagdragdrop.cpp:443
+#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:445
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Зрабіць мініяцюрай тэга"
 
-#: core/app/dragdrop/tagdragdrop.cpp:318
+#: core/app/dragdrop/tagdragdrop.cpp:320
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
@@ -338,7 +338,7 @@ msgstr[1] "Змяніць назвы тэгаў твараў з \"%2\" на \"%3
 msgstr[2] "Змяніць назвы тэгаў твараў з \"%2\" на \"%3\""
 msgstr[3] "Змяніць назвы тэгаў твараў з \"%2\" на \"%3\""
 
-#: core/app/dragdrop/tagdragdrop.cpp:438
+#: core/app/dragdrop/tagdragdrop.cpp:440
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Прызначыць тэг(і) \"%1\"элементам"
@@ -8381,7 +8381,8 @@ msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
 "see if the subject have been isolated properly by the segmentation process. "
-"The green area is the subject where the blur effect will not applied."
+"The green area is the subject where the blur effect will not applied. You "
+"can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
@@ -8442,7 +8443,9 @@ msgstr "Колер фону: "
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
-msgid "You must select before a rectangular area including the subject..."
+msgid ""
+"You must select before a rectangular area including the subject.<br>Note: "
+"you can reajust the zone later in the tool."
 msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
@@ -42691,8 +42694,10 @@ msgid "None"
 msgstr "Няма"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, kde-format
-msgctxt "@info: pick lablel selector"
+#, fuzzy, kde-format
+#| msgctxt "@info: pick lablel selector"
+#| msgid "Pick Label: %1"
+msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "Выбар адмеціны: %1"
 
@@ -64894,6 +64899,10 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпарт"
+
+#~ msgctxt "@info: pick lablel selector"
+#~ msgid "Pick Label: %1"
+#~ msgstr "Выбар адмеціны: %1"
 
 #, fuzzy
 #~| msgid "Iterations:"

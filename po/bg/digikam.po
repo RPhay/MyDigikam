@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 02:02+0000\n"
+"POT-Creation-Date: 2025-09-21 02:03+0000\n"
 "PO-Revision-Date: 2025-09-14 15:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -203,52 +203,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:251
-#: core/app/dragdrop/albumdragdrop.cpp:394
-#: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:148 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/albumdragdrop.cpp:99
+#: core/app/dragdrop/albumdragdrop.cpp:253
+#: core/app/dragdrop/albumdragdrop.cpp:396
+#: core/app/dragdrop/importdragdrop.cpp:122
+#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:89
 #, kde-format
 msgid "&Move Here"
 msgstr "Пре&местване тук"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:252
-#: core/app/dragdrop/albumdragdrop.cpp:395
-#: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:151
+#: core/app/dragdrop/albumdragdrop.cpp:100
+#: core/app/dragdrop/albumdragdrop.cpp:254
+#: core/app/dragdrop/albumdragdrop.cpp:397
+#: core/app/dragdrop/importdragdrop.cpp:125
+#: core/app/dragdrop/itemdragdrop.cpp:152
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Копиране тук"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:187
-#: core/app/dragdrop/albumdragdrop.cpp:261
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/albumdragdrop.cpp:397
+#: core/app/dragdrop/albumdragdrop.cpp:102
+#: core/app/dragdrop/albumdragdrop.cpp:189
+#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/albumdragdrop.cpp:399
 #: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:193
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:795
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:260
-#: core/app/dragdrop/tagdragdrop.cpp:324 core/app/dragdrop/tagdragdrop.cpp:447
+#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:798
+#: core/app/dragdrop/tagdragdrop.cpp:92 core/app/dragdrop/tagdragdrop.cpp:262
+#: core/app/dragdrop/tagdragdrop.cpp:326 core/app/dragdrop/tagdragdrop.cpp:449
 #, kde-format
 msgid "C&ancel"
 msgstr "&Отказ"
 
-#: core/app/dragdrop/albumdragdrop.cpp:183
-#: core/app/dragdrop/albumdragdrop.cpp:257
+#: core/app/dragdrop/albumdragdrop.cpp:185
+#: core/app/dragdrop/albumdragdrop.cpp:259
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Задаване като корица на албума"
 
-#: core/app/dragdrop/albumdragdrop.cpp:321
-#: core/app/dragdrop/itemdragdrop.cpp:791
+#: core/app/dragdrop/albumdragdrop.cpp:323
+#: core/app/dragdrop/itemdragdrop.cpp:794
 #, kde-format
 msgid "Download From Camera"
 msgstr "Сваляне от камера"
 
-#: core/app/dragdrop/albumdragdrop.cpp:322
-#: core/app/dragdrop/itemdragdrop.cpp:793
+#: core/app/dragdrop/albumdragdrop.cpp:324
+#: core/app/dragdrop/itemdragdrop.cpp:796
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Сваляне и изтриване от камерата"
@@ -260,12 +260,12 @@ msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
 msgstr "Групиране тук"
 
-#: core/app/dragdrop/importdragdrop.cpp:189
+#: core/app/dragdrop/importdragdrop.cpp:190
 #, kde-format
 msgid "Exporting"
 msgstr "Експортиране"
 
-#: core/app/dragdrop/importdragdrop.cpp:191
+#: core/app/dragdrop/importdragdrop.cpp:192
 #, kde-format
 msgid "Upload to Camera"
 msgstr "Качване в камерата"
@@ -288,74 +288,74 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Групиране тук и преместване в албума"
 
-#: core/app/dragdrop/itemdragdrop.cpp:200
+#: core/app/dragdrop/itemdragdrop.cpp:201
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Добавяне на таг за отпадналите записи"
 
-#: core/app/dragdrop/itemdragdrop.cpp:676
+#: core/app/dragdrop/itemdragdrop.cpp:679
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Промяна на таговете на лицата"
 
-#: core/app/dragdrop/itemdragdrop.cpp:680
+#: core/app/dragdrop/itemdragdrop.cpp:683
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Промяна на тага на лицето"
 
-#: core/app/dragdrop/itemdragdrop.cpp:684
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:687
+#: core/app/dragdrop/itemdragdrop.cpp:739
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Отказ"
 
-#: core/app/dragdrop/itemdragdrop.cpp:721
+#: core/app/dragdrop/itemdragdrop.cpp:724
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "&Поставяне тагове на избраните записи"
 
-#: core/app/dragdrop/itemdragdrop.cpp:729
+#: core/app/dragdrop/itemdragdrop.cpp:732
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Поставяне тагове на &този запис"
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:736
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Поставяне тагове на &всички записи"
 
-#: core/app/dragdrop/itemdragdrop.cpp:789
+#: core/app/dragdrop/itemdragdrop.cpp:792
 #, kde-format
 msgid "Importing"
 msgstr "Импортиране"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:90
 #, kde-format
 msgid "M&erge Here"
 msgstr "Сли&ване тук"
 
-#: core/app/dragdrop/tagdragdrop.cpp:249
+#: core/app/dragdrop/tagdragdrop.cpp:251
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Потвърждаване на името на лицето „%2“ за елемента"
 msgstr[1] "Потвърждаване на името на лицето „%2“ за елементите"
 
-#: core/app/dragdrop/tagdragdrop.cpp:256 core/app/dragdrop/tagdragdrop.cpp:443
+#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:445
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Задаване като  таг миниатюра"
 
-#: core/app/dragdrop/tagdragdrop.cpp:318
+#: core/app/dragdrop/tagdragdrop.cpp:320
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Промяна на името на лицето от \"%2\" на \"%3\""
 msgstr[1] "Промяна на имената на лицата от \"%2\" на \"%3\""
 
-#: core/app/dragdrop/tagdragdrop.cpp:438
+#: core/app/dragdrop/tagdragdrop.cpp:440
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Присвояване на таг(ове) \"%1\" на елементи"
@@ -8740,12 +8740,19 @@ msgid "Subject Mask:"
 msgstr "Маска на обекта:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This view show the segmentation of the subject determined from the "
+#| "selection. The resulting green mask is superposed to the original image "
+#| "to see if the subject have been isolated properly by the segmentation "
+#| "process. The green area is the subject where the blur effect will not "
+#| "applied."
 msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
 "see if the subject have been isolated properly by the segmentation process. "
-"The green area is the subject where the blur effect will not applied."
+"The green area is the subject where the blur effect will not applied. You "
+"can re-adjust in this view the rectangle including the subject."
 msgstr ""
 "Този изглед показва сегментирането на обекта, определено от селекцията. "
 "Получената зелена маска се наслагва върху оригиналното изображение, за да се "
@@ -8802,8 +8809,11 @@ msgid "Background Blur Tool"
 msgstr "Инструмент за размазване на фона"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
-#, kde-format
-msgid "You must select before a rectangular area including the subject..."
+#, fuzzy, kde-format
+#| msgid "You must select before a rectangular area including the subject..."
+msgid ""
+"You must select before a rectangular area including the subject.<br>Note: "
+"you can reajust the zone later in the tool."
 msgstr "Трябва да изберете преди правоъгълна област, включваща обекта..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
@@ -45200,10 +45210,11 @@ msgid "None"
 msgstr "Без"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, kde-format
-msgctxt "@info: pick lablel selector"
+#, fuzzy, kde-format
+#| msgid "Pick Label: %1"
+msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
-msgstr "Избран етикет: %1"
+msgstr "Избране на етикет: %1"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, kde-format
@@ -68730,6 +68741,10 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgctxt "@info: pick lablel selector"
+#~ msgid "Pick Label: %1"
+#~ msgstr "Избран етикет: %1"
 
 #~ msgid "<p>Select the color profile for your monitor here.</p>"
 #~ msgstr "<p> Тук изберете цветовия профил за  монитора.</p>"
