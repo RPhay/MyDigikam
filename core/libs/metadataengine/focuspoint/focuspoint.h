@@ -46,8 +46,8 @@ public:
 public:
 
     /**
-     * Focus point container contructors. Position and size are in float and a relative to the original image size.
-     * Typically, the area is define as percents of values depending of image size used to extract information from metadata.
+     * Focus point container constructors. Position and size are in float and are relative to the original image size.
+     * Typically, the area is defined as percents of values depending of image size used to extract information from metadata.
      * Like this, focus area can be drawn easily over a resized version of image.
      */
     FocusPoint(float x_position, float y_position, float width, float height, TypePoint type);
@@ -58,7 +58,7 @@ public:
     ~FocusPoint();
 
     /**
-     * Equivalent to the copy constructor
+     * Equivalent to the copy constructor.
      */
     FocusPoint& operator=(const FocusPoint& other);
 
@@ -80,7 +80,7 @@ public:
     QRectF  getRect()                                       const;
 
     /**
-     * Return the real aera properties in image coordinates depending of the size.
+     * Return the real area properties in image coordinates depending of the size.
      */
     QRect   getRectBySize(const QSize& size)                const;
 

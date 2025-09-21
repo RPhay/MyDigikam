@@ -29,7 +29,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command for action"
                                     << d->actionString(result.cmdAction)
-                                    << "with elasped time (ms):"
+                                    << "with elapsed time (ms):"
                                     << result.elapsed;
 
     ExifToolData exifToolData;

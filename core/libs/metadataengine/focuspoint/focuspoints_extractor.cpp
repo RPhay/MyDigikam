@@ -57,7 +57,7 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
     d->model             = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString().toUpper();
 
     // NOTE: init image size properties with generic values taken from file by default,
-    //       this will be overwrited by delegate with findADPoints().
+    //       this will be overwritten by delegate with findADPoints().
 
     QVariant imageWidth  = findValue(QLatin1String("File.File.Image.ImageWidth"));
     QVariant imageHeight = findValue(QLatin1String("File.File.Image.ImageHeight"));

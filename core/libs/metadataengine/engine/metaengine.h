@@ -1018,7 +1018,7 @@ public:
      * 'xmpKeysFilter' is a QStringList of Xmp keys.
      * For example, if you use the string list given below:
      *
-     * "dc"           // Dubling Core schema.
+     * "dc"           // Dublin Core schema.
      * "xmp"          // Standard Xmp schema.
      *
      * List can be empty to not filter output.

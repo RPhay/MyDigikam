@@ -176,4 +176,4 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
     return points;
 }
 
-} // namspace Digikam
+} // namespace Digikam
