@@ -283,7 +283,8 @@ void AlbumDragDropHandler::slotMoveCopyItems()
 
     ItemInfoList extImgInfList;
 
-    for (QList<qlonglong>::const_iterator it = m_imageIDs.constBegin(); it != m_imageIDs.constEnd(); ++it)
+    for (QList<qlonglong>::const_iterator it = m_imageIDs.constBegin() ;
+         it != m_imageIDs.constEnd(); ++it)
     {
         ItemInfo info(*it);
 

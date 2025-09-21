@@ -106,8 +106,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
     }
     else if (DItemDrag::canDecode(e->mimeData()))
     {
-        QList<QUrl>      urls;
-        QList<int>       albumIDs;
+        QList<QUrl> urls;
+        QList<int>  albumIDs;
 
         if (!DItemDrag::decode(e->mimeData(), urls, albumIDs, m_imageIDs))
         {
