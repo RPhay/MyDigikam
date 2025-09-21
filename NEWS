@@ -113,10 +113,10 @@ BUGFIXES:
 078 ==> 509059 - Rebuild all training data results in crash.
 079 ==> 509583 - digiKam icon is displayed twice in the taskbar.
 080 ==> 509573 - Add support of OM System OM-5 Mark II focus point.
-081 ==> 
-082 ==> 
-083 ==> 
-084 ==> 
+081 ==> 505103 - digiKam git freeze when trying to drag and drop/copy files/images inside albums (Wayland/Hyprland).
+082 ==> 501862 - Dragging tags to new location no longer has option to merge tags.
+083 ==> 503054 - A merge of tags sometimes does not get triggered.
+084 ==> 504238 - Add support of keywords merge using Drag and Drop.
 085 ==> 
 086 ==> 
 087 ==> 
