@@ -75,12 +75,12 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    m_position  = view->mapToGlobal(e->position().toPoint());
+    m_position  = m_view->mapToGlobal(e->position().toPoint());
     m_modifiers = e->modifiers();
 
 #else
 
-    m_position  = view->mapToGlobal(e->pos());
+    m_position  = m_view->mapToGlobal(e->pos());
     m_modifiers = e->keyboardModifiers();
 
 #endif
