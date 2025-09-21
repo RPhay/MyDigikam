@@ -60,7 +60,8 @@ QString BackgroundBlurToolPlugin::description() const
 
 QString BackgroundBlurToolPlugin::details() const
 {
-    return i18nc("@info", "This Image Editor tool can blur the background of the subject from an image.");
+    return i18nc("@info", "This Image Editor tool can blur the background of the subject "
+                          "from an image to reproduce the depth-of-field effect from a lens.");
 }
 
 QString BackgroundBlurToolPlugin::handbookSection() const

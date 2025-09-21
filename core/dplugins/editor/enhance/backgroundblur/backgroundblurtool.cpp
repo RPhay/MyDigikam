@@ -97,7 +97,7 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label3 = new QLabel(i18n("Subject Segmentation:"));
+    QLabel* const label3 = new QLabel(i18n("Subject Isolation:"));
     d->iterationsInput   = new DIntNumInput();
     d->iterationsInput->setRange(1, 20, 1);
     d->iterationsInput->setDefaultValue(10);
