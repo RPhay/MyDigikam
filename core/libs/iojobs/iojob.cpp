@@ -149,6 +149,14 @@ void CopyOrMoveJob::run()
 
                 if (!srcDir.rename(srcDir.path(), destenation))
                 {
+                    if (destenation.startsWith(srcDir.path() + QLatin1Char('/')))
+                    {
+                        Q_EMIT signalError(i18n("Recursive folder %1 move detected to album %2",
+                                                srcName, QDir::toNativeSeparators(dstDir.path())));
+
+                        continue;
+                    }
+
                     // If QDir::rename fails, try copy and remove.
 
                     if      (!DFileOperations::copyFolderRecursively(srcDir.path(), destenation,
@@ -199,6 +207,14 @@ void CopyOrMoveJob::run()
             if (srcInfo.isDir())
             {
                 QDir srcDir(srcInfo.filePath());
+
+                if (destenation.startsWith(srcDir.path() + QLatin1Char('/')))
+                {
+                    Q_EMIT signalError(i18n("Recursive folder %1 copy detected to album %2",
+                                            srcName, QDir::toNativeSeparators(dstDir.path())));
+
+                    continue;
+                }
 
                 if (!DFileOperations::copyFolderRecursively(srcDir.path(), destenation,
                                                             m_data->getProgressId(),
