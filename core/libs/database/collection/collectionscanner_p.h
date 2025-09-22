@@ -116,7 +116,7 @@ public:
     void recordHints(const QList<ItemChangeHint>& hints)    override;
     void recordHint(const ItemMetadataAdjustmentHint& hint) override;
 
-    void clear() override;
+    void clear()                                            override;
 
     bool hasAnyNormalHint(qlonglong id);
     bool hasAlbumHints();
