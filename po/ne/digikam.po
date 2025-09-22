@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 02:03+0000\n"
+"POT-Creation-Date: 2025-09-22 01:58+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -186,160 +186,150 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 (%2)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:99
-#: core/app/dragdrop/albumdragdrop.cpp:253
-#: core/app/dragdrop/albumdragdrop.cpp:396
-#: core/app/dragdrop/importdragdrop.cpp:122
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:89
+#: core/app/dragdrop/albumdragdrop.cpp:282
+#: core/app/dragdrop/albumdragdrop.cpp:376
+#: core/app/dragdrop/albumdragdrop.cpp:477
+#: core/app/dragdrop/itemdragdrop.cpp:412 core/app/dragdrop/tagdragdrop.cpp:265
 #, kde-format
 msgid "&Move Here"
 msgstr "यहाँ सार्नुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:254
-#: core/app/dragdrop/albumdragdrop.cpp:397
-#: core/app/dragdrop/importdragdrop.cpp:125
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/albumdragdrop.cpp:283
+#: core/app/dragdrop/albumdragdrop.cpp:377
+#: core/app/dragdrop/albumdragdrop.cpp:478
+#: core/app/dragdrop/itemdragdrop.cpp:416
 #, kde-format
 msgid "&Copy Here"
 msgstr "यहाँ प्रतिलिपि बनाउनुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:102
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:263
-#: core/app/dragdrop/albumdragdrop.cpp:326
-#: core/app/dragdrop/albumdragdrop.cpp:399
-#: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:194
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:798
-#: core/app/dragdrop/tagdragdrop.cpp:92 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:326 core/app/dragdrop/tagdragdrop.cpp:449
+#: core/app/dragdrop/albumdragdrop.cpp:285
+#: core/app/dragdrop/albumdragdrop.cpp:340
+#: core/app/dragdrop/albumdragdrop.cpp:386
+#: core/app/dragdrop/albumdragdrop.cpp:437
+#: core/app/dragdrop/albumdragdrop.cpp:480
+#: core/app/dragdrop/importdragdrop.cpp:184
+#: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
+#: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
 #, kde-format
 msgid "C&ancel"
 msgstr "रद्द गर्नुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:259
+#: core/app/dragdrop/albumdragdrop.cpp:336
+#: core/app/dragdrop/albumdragdrop.cpp:382
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "एल्बम थम्बनेलको रूपमा सेट गर्नुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:323
-#: core/app/dragdrop/itemdragdrop.cpp:794
+#: core/app/dragdrop/albumdragdrop.cpp:434
+#: core/app/dragdrop/itemdragdrop.cpp:855
 #, fuzzy, kde-format
 msgid "Download From Camera"
 msgstr "क्यामेरामा अपलोड गर्नुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/itemdragdrop.cpp:796
+#: core/app/dragdrop/albumdragdrop.cpp:435
+#: core/app/dragdrop/itemdragdrop.cpp:857
 #, fuzzy, kde-format
 msgid "Download && Delete From Camera"
 msgstr "चयन गरेको डाउनलोड गर्नुहोस्"
 
-#: core/app/dragdrop/importdragdrop.cpp:52
-#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
-#, fuzzy, kde-format
-msgctxt "@action:inmenu Group images with this image"
-msgid "Group here"
-msgstr "टोन फिल्टर होइन"
-
-#: core/app/dragdrop/importdragdrop.cpp:190
+#: core/app/dragdrop/importdragdrop.cpp:180
 #, fuzzy, kde-format
 msgid "Exporting"
 msgstr "निर्यात"
 
-#: core/app/dragdrop/importdragdrop.cpp:192
+#: core/app/dragdrop/importdragdrop.cpp:182
 #, fuzzy, kde-format
 msgid "Upload to Camera"
 msgstr "क्यामेरामा अपलोड गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:56
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "टोन फिल्टर होइन"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:63
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "कलरस्पेस"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:70
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:201
+#: core/app/dragdrop/itemdragdrop.cpp:457
 #, fuzzy, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:679
+#: core/app/dragdrop/itemdragdrop.cpp:755
 #, fuzzy, kde-format
 msgid "Change Face Tags"
 msgstr "छवि प्रकार देखाउनुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:683
+#: core/app/dragdrop/itemdragdrop.cpp:759
 #, fuzzy, kde-format
 msgid "Change Face Tag"
 msgstr "केस परिवर्तन गर्नुहोस्:"
 
-#: core/app/dragdrop/itemdragdrop.cpp:687
-#: core/app/dragdrop/itemdragdrop.cpp:739
+#: core/app/dragdrop/itemdragdrop.cpp:763
+#: core/app/dragdrop/itemdragdrop.cpp:814
 #: core/app/views/preview/itempreviewview.cpp:704
 #, fuzzy, kde-format
 msgid "&Cancel"
 msgstr "रद्द गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:724
+#: core/app/dragdrop/itemdragdrop.cpp:799
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:732
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #: core/app/views/preview/itempreviewview.cpp:702
 #, fuzzy, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "सबै वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:811
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "सबै वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:792
+#: core/app/dragdrop/itemdragdrop.cpp:853
 #, fuzzy, kde-format
 msgid "Importing"
 msgstr "आयात"
 
-#: core/app/dragdrop/tagdragdrop.cpp:90
+#: core/app/dragdrop/tagdragdrop.cpp:266
 #, fuzzy, kde-format
 #| msgid "&Move Here"
 msgid "M&erge Here"
 msgstr "यहाँ सार्नुहोस्"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:390
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:445
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "ट्याग थम्बनेलको रूपमा सेट गर्नुहोस्"
 
-#: core/app/dragdrop/tagdragdrop.cpp:320
+#: core/app/dragdrop/tagdragdrop.cpp:439
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:440
+#: core/app/dragdrop/tagdragdrop.cpp:538
 #, fuzzy, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "वस्तुमा '%1' ट्याग मानाङ्कन गर्नुहोस्"
@@ -5639,7 +5629,7 @@ msgid ""
 msgstr "कलरस्पेस"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8302,7 +8292,7 @@ msgstr "रातो आँखा सुधार"
 msgid "Background Blur Filter"
 msgstr "पृष्ठभूमि रङ:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
 #, fuzzy, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8311,36 +8301,36 @@ msgstr ""
 "<p>० महिनपनको कुनै प्रभाव हुँदैन, १ र माथिले छवि कति अस्पष्ट गर्ने गाउस्सियन अस्पष्ट "
 "म्याट्रिक्स रेडियस निर्धारण गर्दछ ।"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
 #, fuzzy, kde-format
 msgid "Progressive Transition:"
 msgstr "फोटोग्राफर सूचना"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
 #, fuzzy, kde-format
-msgid "Subject Segmentation:"
+msgid "Subject Isolation:"
 msgstr "टोन फिल्टर होइन"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, fuzzy, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr "यो विकल्पले हालै चयन गरेको वस्तुसँग सम्पादक खोल्न तपाईँलाई अनुमति दिन्छ ।"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
 #, fuzzy, kde-format
 msgid "Subject Mask:"
 msgstr "सेतो सन्तुलन:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8350,18 +8340,18 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "फाइल गुण"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:248
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
 #, fuzzy, kde-format
 msgid "Error while processing image..."
 msgstr "फाइल बचत गर्दा त्रुटि"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:282
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
 #, fuzzy, kde-format
 msgid "Background Blur"
 msgstr "पृष्ठभूमि रङ:"
@@ -8383,27 +8373,28 @@ msgstr "कलरस्पेस"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This Image Editor tool can blur the background of the subject from an image."
+"This Image Editor tool can blur the background of the subject from an image "
+"to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "यो विकल्प छवि काँटछाँट गर्न प्रयोग गरिन्छ । यो कार्यलाई सक्षम पार्न छविको क्षेत्र चयन "
 "गर्नुहोस् ।"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
 msgstr "पृष्ठभूमि रङ:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, fuzzy, kde-format
 msgid "Background Blur Tool"
 msgstr "पृष्ठभूमि रङ:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
 #, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
-"you can reajust the zone later in the tool."
+"you can readjust the zone later in the tool."
 msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
@@ -8869,7 +8860,7 @@ msgstr ""
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:117
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, fuzzy, kde-format
 msgid "Refocus"
 msgstr "पुनरावृत्ती"
@@ -12215,7 +12206,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:114
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:139
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
 #, kde-format
 msgid "Sharpness:"
 msgstr "तिखोपन:"
@@ -26490,7 +26481,7 @@ msgstr "यो सञ्चालन सुचारू गर्दा छव�
 msgid "Context menu"
 msgstr ""
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
 #: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
@@ -31318,7 +31309,7 @@ msgid ""
 msgstr "<p>तपाईँले यहाँ ह्यु र स्याचुरेसन समायोजनको रङ पूर्वावलोकन हेर्न सक्नुहुन्छ ।"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:97
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:168
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:169
 #, fuzzy, kde-format
 msgid "Amount:"
 msgstr "गणना:"
@@ -31858,7 +31849,7 @@ msgstr ""
 #: core/libs/dimg/filters/nr/nrsettings.cpp:107
 #: core/libs/dimg/filters/nr/nrsettings.cpp:134
 #: core/libs/dimg/filters/nr/nrsettings.cpp:161
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:176
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:177
 #, kde-format
 msgid "Threshold:"
 msgstr ""
@@ -31933,27 +31924,27 @@ msgstr "तह:"
 msgid "Set here the reducing level of red to the average of blue and green."
 msgstr "<p>यहाँ छविको प्रकाश समायोजन सेट गर्नुहोस् ।"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:110
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:111
 #, fuzzy, kde-format
 msgid "Method:"
 msgstr "नमुना:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:112
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
 #, kde-format
 msgid "Simple sharp"
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:114
 #, kde-format
 msgid "Unsharp mask"
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:122
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, fuzzy, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:143
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:144
 #, fuzzy, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -31962,12 +31953,12 @@ msgstr ""
 "<p>० तिखोपनले कुनै प्रभाव पार्दैन, १ र माथिले छवि कति तिखो पार्ने भनी निर्धारण गर्ने "
 "तिखोपन म्याक्ट्रिक्स रेडियस निर्धारण गर्दछ ।"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:160
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:161
 #, kde-format
 msgid "Radius:"
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:165
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:166
 #, fuzzy, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
@@ -31976,38 +31967,38 @@ msgstr ""
 "<p>० महिनपनको कुनै प्रभाव हुँदैन, १ र माथिले छवि कति अस्पष्ट गर्ने गाउस्सियन अस्पष्ट "
 "म्याट्रिक्स रेडियस निर्धारण गर्दछ ।"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:174
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
 "added back into the original."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:182
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
 "apply the difference amount."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:185
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid "Suppress color noise."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:187
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
 "noise amplification."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:210
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:211
 #, fuzzy, kde-format
 msgid "Circular sharpness:"
 msgstr "तिखोपन:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:216
 #, kde-format
 msgid ""
 "This is the radius of the circular convolution. It is the most important "
@@ -32016,12 +32007,12 @@ msgid ""
 "blurred."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:219
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:220
 #, fuzzy, kde-format
 msgid "Correlation:"
 msgstr "सङ्कलन:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:224
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:225
 #, kde-format
 msgid ""
 "Increasing the correlation may help to reduce artifacts. The correlation can "
@@ -32030,12 +32021,12 @@ msgid ""
 "effect of the tool."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:229
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:230
 #, fuzzy, kde-format
 msgid "Noise filter:"
 msgstr "टोन फिल्टर होइन"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:234
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:235
 #, kde-format
 msgid ""
 "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -32045,12 +32036,12 @@ msgid ""
 "filter will reduce the sharpening effect of the tool."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:240
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:241
 #, fuzzy, kde-format
 msgid "Gaussian sharpness:"
 msgstr "गाउस्सियन अस्पष्ट"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:245
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:246
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -32060,12 +32051,12 @@ msgid ""
 "filter parameters."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:250
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:251
 #, kde-format
 msgid "Matrix size:"
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:254
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:255
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -32073,29 +32064,29 @@ msgid ""
 "large values for circular or Gaussian sharpness."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:487
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:488
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "लोड गर्ने रङ व्यवस्थापन सेटिङ फाइल"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:505
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:506
 #, fuzzy, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr "\"%1\" रङ व्यवस्थापन सेटिङ पाठ फाइल होइन ।"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:528
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:529
 #, fuzzy, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr "रङ व्यवस्थापन पाठ फाइलबाट सेटिङ लोड गर्न सकिदैन ।"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:536
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:537
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "बचत गर्ने रङ व्यवस्थापन सेटिङ फाइल"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:566
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:567
 #, fuzzy, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "रङ व्यवस्थापन पाठ फाइलमा सेटिङ बचत गर्न सकिदैन ।"
@@ -34352,57 +34343,67 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "सो नामको अर्को फाइल वा फोल्डर अवस्थित छ"
 
-#: core/libs/iojobs/iojob.cpp:165
+#: core/libs/iojobs/iojob.cpp:154
+#, kde-format
+msgid "Recursive folder %1 move detected to album %2"
+msgstr ""
+
+#: core/libs/iojobs/iojob.cpp:173
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:172
+#: core/libs/iojobs/iojob.cpp:180
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:184
+#: core/libs/iojobs/iojob.cpp:192
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
 
-#: core/libs/iojobs/iojob.cpp:190
+#: core/libs/iojobs/iojob.cpp:198
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:214
+#: core/libs/iojobs/iojob.cpp:213
+#, kde-format
+msgid "Recursive folder %1 copy detected to album %2"
+msgstr ""
+
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:226
+#: core/libs/iojobs/iojob.cpp:242
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
 
-#: core/libs/iojobs/iojob.cpp:234
+#: core/libs/iojobs/iojob.cpp:250
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgid "Could not copy file %1 to folder %2"
 msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
 
-#: core/libs/iojobs/iojob.cpp:239
+#: core/libs/iojobs/iojob.cpp:255
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:286
+#: core/libs/iojobs/iojob.cpp:302
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "फाइल अवस्थित छैन"
 
-#: core/libs/iojobs/iojob.cpp:298
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34410,7 +34411,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:310
+#: core/libs/iojobs/iojob.cpp:326
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34418,34 +34419,34 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:327
+#: core/libs/iojobs/iojob.cpp:343
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "एल्बमको नाम खाली हुनसक्दैन ।"
 
-#: core/libs/iojobs/iojob.cpp:339
+#: core/libs/iojobs/iojob.cpp:355
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:388
+#: core/libs/iojobs/iojob.cpp:404
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/libs/iojobs/iojob.cpp:400
+#: core/libs/iojobs/iojob.cpp:416
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "सोहि नामको अर्को एल्बम अवस्थित छ \n"
 "कृपया अर्को नाम छनोट गर्नुहोस्"
 
-#: core/libs/iojobs/iojob.cpp:418
+#: core/libs/iojobs/iojob.cpp:434
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:500
+#: core/libs/iojobs/iojob.cpp:516
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgid "Could not restore file %1 from trash"
@@ -49632,6 +49633,12 @@ msgstr "ट्याग हटाउनुहोस्"
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
 msgstr ""
+
+#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
+#, fuzzy, kde-format
+msgctxt "@action:inmenu Group images with this image"
+msgid "Group here"
+msgstr "टोन फिल्टर होइन"
 
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
 #, fuzzy, kde-format
@@ -65863,6 +65870,10 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
+
+#, fuzzy
+#~ msgid "Subject Segmentation:"
+#~ msgstr "टोन फिल्टर होइन"
 
 #, fuzzy
 #~ msgctxt "@info: pick lablel selector"

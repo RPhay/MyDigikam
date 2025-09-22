@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 02:03+0000\n"
+"POT-Creation-Date: 2025-09-22 01:58+0000\n"
 "PO-Revision-Date: 2025-08-31 00:14+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -194,159 +194,149 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:99
-#: core/app/dragdrop/albumdragdrop.cpp:253
-#: core/app/dragdrop/albumdragdrop.cpp:396
-#: core/app/dragdrop/importdragdrop.cpp:122
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:89
+#: core/app/dragdrop/albumdragdrop.cpp:282
+#: core/app/dragdrop/albumdragdrop.cpp:376
+#: core/app/dragdrop/albumdragdrop.cpp:477
+#: core/app/dragdrop/itemdragdrop.cpp:412 core/app/dragdrop/tagdragdrop.cpp:265
 #, kde-format
 msgid "&Move Here"
 msgstr "&Sposta qui"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:254
-#: core/app/dragdrop/albumdragdrop.cpp:397
-#: core/app/dragdrop/importdragdrop.cpp:125
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/albumdragdrop.cpp:283
+#: core/app/dragdrop/albumdragdrop.cpp:377
+#: core/app/dragdrop/albumdragdrop.cpp:478
+#: core/app/dragdrop/itemdragdrop.cpp:416
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copia qui"
 
-#: core/app/dragdrop/albumdragdrop.cpp:102
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:263
-#: core/app/dragdrop/albumdragdrop.cpp:326
-#: core/app/dragdrop/albumdragdrop.cpp:399
-#: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:194
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:798
-#: core/app/dragdrop/tagdragdrop.cpp:92 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:326 core/app/dragdrop/tagdragdrop.cpp:449
+#: core/app/dragdrop/albumdragdrop.cpp:285
+#: core/app/dragdrop/albumdragdrop.cpp:340
+#: core/app/dragdrop/albumdragdrop.cpp:386
+#: core/app/dragdrop/albumdragdrop.cpp:437
+#: core/app/dragdrop/albumdragdrop.cpp:480
+#: core/app/dragdrop/importdragdrop.cpp:184
+#: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
+#: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
 #, kde-format
 msgid "C&ancel"
 msgstr "Annull&a"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:259
+#: core/app/dragdrop/albumdragdrop.cpp:336
+#: core/app/dragdrop/albumdragdrop.cpp:382
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Imposta come miniatura dell'album"
 
-#: core/app/dragdrop/albumdragdrop.cpp:323
-#: core/app/dragdrop/itemdragdrop.cpp:794
+#: core/app/dragdrop/albumdragdrop.cpp:434
+#: core/app/dragdrop/itemdragdrop.cpp:855
 #, kde-format
 msgid "Download From Camera"
 msgstr "Scarica dalla fotocamera"
 
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/itemdragdrop.cpp:796
+#: core/app/dragdrop/albumdragdrop.cpp:435
+#: core/app/dragdrop/itemdragdrop.cpp:857
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Scarica &ed elimina dalla fotocamera"
 
-#: core/app/dragdrop/importdragdrop.cpp:52
-#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
-#, kde-format
-msgctxt "@action:inmenu Group images with this image"
-msgid "Group here"
-msgstr "Raggruppa qui"
-
-#: core/app/dragdrop/importdragdrop.cpp:190
+#: core/app/dragdrop/importdragdrop.cpp:180
 #, kde-format
 msgid "Exporting"
 msgstr "Esportazione"
 
-#: core/app/dragdrop/importdragdrop.cpp:192
+#: core/app/dragdrop/importdragdrop.cpp:182
 #, kde-format
 msgid "Upload to Camera"
 msgstr "Carica sulla fotocamera"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:56
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "Raggruppa qui"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:63
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "Inserisci gli elementi qui"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:70
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Raggruppa qui e sposta nell'album"
 
-#: core/app/dragdrop/itemdragdrop.cpp:201
+#: core/app/dragdrop/itemdragdrop.cpp:457
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Assegna i tag agli elementi tralasciati"
 
-#: core/app/dragdrop/itemdragdrop.cpp:679
+#: core/app/dragdrop/itemdragdrop.cpp:755
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Cambia i tag volto"
 
-#: core/app/dragdrop/itemdragdrop.cpp:683
+#: core/app/dragdrop/itemdragdrop.cpp:759
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Cambia il tag volto"
 
-#: core/app/dragdrop/itemdragdrop.cpp:687
-#: core/app/dragdrop/itemdragdrop.cpp:739
+#: core/app/dragdrop/itemdragdrop.cpp:763
+#: core/app/dragdrop/itemdragdrop.cpp:814
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Annulla"
 
-#: core/app/dragdrop/itemdragdrop.cpp:724
+#: core/app/dragdrop/itemdragdrop.cpp:799
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Assegna i tag agli elementi &selezionati"
 
-#: core/app/dragdrop/itemdragdrop.cpp:732
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Assegna i tag a questo elemen&to"
 
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:811
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "&Assegna i tag a tutti gli elementi"
 
-#: core/app/dragdrop/itemdragdrop.cpp:792
+#: core/app/dragdrop/itemdragdrop.cpp:853
 #, kde-format
 msgid "Importing"
 msgstr "Importazione"
 
-#: core/app/dragdrop/tagdragdrop.cpp:90
+#: core/app/dragdrop/tagdragdrop.cpp:266
 #, kde-format
 msgid "M&erge Here"
 msgstr "&Unisci qui"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:390
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Conferma nome del volto «%2» all'elemento"
 msgstr[1] "Conferma nome del volto «%2» agli elementi"
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:445
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Imposta come miniatura del tag"
 
-#: core/app/dragdrop/tagdragdrop.cpp:320
+#: core/app/dragdrop/tagdragdrop.cpp:439
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Cambia nome del volto da '%2' a '%3'"
 msgstr[1] "Cambia nomi del volto da '%2' a '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:440
+#: core/app/dragdrop/tagdragdrop.cpp:538
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Assegna il (i) tag «%1» agli elementi"
@@ -5884,7 +5874,7 @@ msgstr ""
 "rimuovere le vignettature alle immagini.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8719,7 +8709,7 @@ msgstr "Correzione della vignettatura..."
 msgid "Background Blur Filter"
 msgstr "Filtro sfocatura sfondo"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8728,12 +8718,12 @@ msgstr ""
 "Imposta questo valore per determinare il raggio della matrice di sfocatura "
 "dello sfondo attorno al soggetto."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Transizione progressiva:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8743,14 +8733,14 @@ msgstr ""
 "partendo dal soggetto. Permette di simulare una profondità di campo da un "
 "obbiettivo."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Subject Information"
-msgid "Subject Segmentation:"
+msgid "Subject Isolation:"
 msgstr "Informazioni sui soggetti"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -8763,13 +8753,13 @@ msgstr ""
 "Questo valore controlla il numero di iterazioni da usare per gli effetti "
 "Neon e Trova i bordi."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgid "Subject Mask:"
 msgstr "Soggetti"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8779,21 +8769,21 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, fuzzy, kde-format
 #| msgid "Processing Panorama Preview..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Elaborazione in corso dell'anteprima del panorama..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:248
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Error processing XML file"
 msgid "Error while processing image..."
 msgstr "Errore nell'elaborazione del file XML"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:282
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
 #, kde-format
 msgid "Background Blur"
 msgstr "Sfocatura sfondo"
@@ -8811,31 +8801,36 @@ msgid "A tool to blur the background of an image"
 msgstr "Strumento per sfocare lo sfondo di un'immagine"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This Image Editor tool can blur the background of the subject from an "
+#| "image."
 msgctxt "@info"
 msgid ""
-"This Image Editor tool can blur the background of the subject from an image."
+"This Image Editor tool can blur the background of the subject from an image "
+"to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "Questo strumento dell'editor delle immagini può sfocare lo sfondo del "
 "soggetto da un'immagine."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
 msgstr "Sfocatura sfondo..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "Background Blur Tool"
 msgstr "Strumento Sfocatura sfondo"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
 #, fuzzy, kde-format
 #| msgid "You must select before a rectangular area including the subject..."
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
-"you can reajust the zone later in the tool."
+"you can readjust the zone later in the tool."
 msgstr "Devi prima selezionare un'area rettangolare che includa il soggetto..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
@@ -9351,7 +9346,7 @@ msgstr "Maschera di contrasto"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:117
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
 msgstr "Rimessa a fuoco"
@@ -12869,7 +12864,7 @@ msgstr ""
 "macchina fotografica per scattare la foto."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:114
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:139
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
 #, kde-format
 msgid "Sharpness:"
 msgstr "Nitidezza:"
@@ -27774,7 +27769,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Menu contestuale"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
 #: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
@@ -32983,7 +32978,7 @@ msgstr ""
 "vignettatura applicata all'immagine."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:97
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:168
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:169
 #, kde-format
 msgid "Amount:"
 msgstr "Quantità:"
@@ -33560,7 +33555,7 @@ msgstr ""
 #: core/libs/dimg/filters/nr/nrsettings.cpp:107
 #: core/libs/dimg/filters/nr/nrsettings.cpp:134
 #: core/libs/dimg/filters/nr/nrsettings.cpp:161
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:176
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:177
 #, kde-format
 msgid "Threshold:"
 msgstr "Soglia:"
@@ -33643,28 +33638,28 @@ msgid "Set here the reducing level of red to the average of blue and green."
 msgstr ""
 "Imposta qui il livello di riduzione del rosso alla media del blu e verde."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:110
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:111
 #, kde-format
 msgid "Method:"
 msgstr "Metodo:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:112
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
 #, kde-format
 msgid "Simple sharp"
 msgstr "Aumento della nitidezza semplice"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:114
 #, kde-format
 msgid "Unsharp mask"
 msgstr "Maschera di contrasto"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:122
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr ""
 "Seleziona qui il metodo di aumento della nitidezza da applicare all'immagine."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:143
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:144
 #, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -33674,12 +33669,12 @@ msgstr ""
 "matrice di aumento della nitidezza che determina di quanto aumentare la "
 "nitidezza dell'immagine."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:160
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:161
 #, kde-format
 msgid "Radius:"
 msgstr "Raggio:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:165
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:166
 #, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
@@ -33688,7 +33683,7 @@ msgstr ""
 "Il valore del raggio è quello della matrice di sfocatura gaussiana usato per "
 "determinare di quanto sfocare l'immagine."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:174
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
@@ -33697,7 +33692,7 @@ msgstr ""
 "Il valore della differenza tra l'originale e l'immagine sfocata da "
 "aggiungere nell'originale."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:182
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
@@ -33706,12 +33701,12 @@ msgstr ""
 "La soglia, come frazione del massimo valore di luminosità, necessaria per "
 "applicare la quantità di differenza."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:185
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid "Suppress color noise."
 msgstr "Sopprimi il rumore del colore."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:187
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
@@ -33720,12 +33715,12 @@ msgstr ""
 "Un'opzione per applicare un filtro sul canale della luminosità utilizzato "
 "solo per sopprimere l'amplificazione del rumore cromatico."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:210
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:211
 #, kde-format
 msgid "Circular sharpness:"
 msgstr "Nitidezza circolare:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:216
 #, kde-format
 msgid ""
 "This is the radius of the circular convolution. It is the most important "
@@ -33738,12 +33733,12 @@ msgstr ""
 "il valore predefinito di 1,0 dovrebbe dare buoni risultati. Seleziona un "
 "valore più alto quando la tua immagine è molto sfocata."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:219
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:220
 #, kde-format
 msgid "Correlation:"
 msgstr "Correlazione:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:224
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:225
 #, kde-format
 msgid ""
 "Increasing the correlation may help to reduce artifacts. The correlation can "
@@ -33756,13 +33751,13 @@ msgstr ""
 "a 1, per esempio 0,95 e 0,99. Usare un valore di correlazione alto ridurrà "
 "l'effetto di aumento della nitidezza dello strumento."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:229
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:230
 #, kde-format
 msgid "Noise filter:"
 msgstr "Filtro Rumore:"
 
 # sharpening=nitidezza? Di solito si traduce come affilatura.
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:234
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:235
 #, kde-format
 msgid ""
 "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -33778,13 +33773,13 @@ msgstr ""
 "valore utile è 0,01. Usare un valore elevato per il filtro del rumore "
 "ridurrà l'effetto di aumento della nitidezza dello strumento."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:240
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:241
 #, kde-format
 msgid "Gaussian sharpness:"
 msgstr "Nitidezza gaussiana:"
 
 # sharpening=nitidezza? Di solito si traduce come affilatura.
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:245
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:246
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -33799,12 +33794,12 @@ msgstr ""
 "Quando usi valori diversi da zero, dovrai probabilmente aumentare anche i "
 "parametri della correlazione o del filtro del rumore."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:250
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:251
 #, kde-format
 msgid "Matrix size:"
 msgstr "Dimensione della matrice:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:254
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:255
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -33816,33 +33811,33 @@ msgstr ""
 "specialmente quando hai scelto valori elevati per la nitidezza circolare o "
 "gaussiana."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:487
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:488
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr ""
 "File delle impostazioni di rimessa a fuoco delle fotografie da caricare"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:505
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:506
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr ""
 "«%1» non è un file di impostazioni per la rimessa a fuoco delle fotografie."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:528
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:529
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
 "Impossibile caricare le impostazioni dal file di testo di rimessa a fuoco "
 "delle fotografie."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:536
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:537
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "File delle impostazioni di rimessa a fuoco delle fotografie da salvare"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:566
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:567
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
@@ -36224,12 +36219,18 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Esiste già un file o una cartella chiamata %1 in %2"
 
-#: core/libs/iojobs/iojob.cpp:165
+#: core/libs/iojobs/iojob.cpp:154
+#, fuzzy, kde-format
+#| msgid "Could not move folder %1 to album %2"
+msgid "Recursive folder %1 move detected to album %2"
+msgstr "Impossibile spostare la cartella %1 nell'album %2"
+
+#: core/libs/iojobs/iojob.cpp:173
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Impossibile spostare la cartella %1 nell'album %2"
 
-#: core/libs/iojobs/iojob.cpp:172
+#: core/libs/iojobs/iojob.cpp:180
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -36238,42 +36239,48 @@ msgstr ""
 "Impossibile spostare la cartella %1 nell'album %2. La cartella %1 è stata "
 "comunque copiata nell'album %2"
 
-#: core/libs/iojobs/iojob.cpp:184
+#: core/libs/iojobs/iojob.cpp:192
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Impossibile spostare il sidecar dal file %1 nell'album %2"
 
-#: core/libs/iojobs/iojob.cpp:190
+#: core/libs/iojobs/iojob.cpp:198
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Impossibile spostare il file %1 nell'album %2"
 
-#: core/libs/iojobs/iojob.cpp:214
+#: core/libs/iojobs/iojob.cpp:213
+#, fuzzy, kde-format
+#| msgid "Could not move folder %1 to album %2"
+msgid "Recursive folder %1 copy detected to album %2"
+msgstr "Impossibile spostare la cartella %1 nell'album %2"
+
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Impossibile copiare la cartella %1 nell'album %2"
 
-#: core/libs/iojobs/iojob.cpp:226
+#: core/libs/iojobs/iojob.cpp:242
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Impossibile copiare il sidecar dal file %1 nella cartella %2"
 
-#: core/libs/iojobs/iojob.cpp:234
+#: core/libs/iojobs/iojob.cpp:250
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Impossibile copiare il file %1 nella cartella %2"
 
-#: core/libs/iojobs/iojob.cpp:239
+#: core/libs/iojobs/iojob.cpp:255
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Impossibile copiare il file %1 nell'album %2"
 
-#: core/libs/iojobs/iojob.cpp:286
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Il file/la cartella %1 non esiste"
 
-#: core/libs/iojobs/iojob.cpp:298
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36284,7 +36291,7 @@ msgstr ""
 "Controlla i permessi sui file nella cartella «.dtrash» del cestino nella "
 "raccolta delle immagini."
 
-#: core/libs/iojobs/iojob.cpp:310
+#: core/libs/iojobs/iojob.cpp:326
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36295,32 +36302,32 @@ msgstr ""
 "Controlla i permessi sui file nella cartella «.dtrash» del cestino nella "
 "raccolta delle immagini."
 
-#: core/libs/iojobs/iojob.cpp:327
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Impossibile rimuovere l'album %1"
 
-#: core/libs/iojobs/iojob.cpp:339
+#: core/libs/iojobs/iojob.cpp:355
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Impossibile rimuovere l'immagine %1"
 
-#: core/libs/iojobs/iojob.cpp:388
+#: core/libs/iojobs/iojob.cpp:404
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Impossibile spostare l'immagine %1 nel cestino"
 
-#: core/libs/iojobs/iojob.cpp:400
+#: core/libs/iojobs/iojob.cpp:416
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Esiste già un'altra immagine con lo stesso nome %1 in quella posizione"
 
-#: core/libs/iojobs/iojob.cpp:418
+#: core/libs/iojobs/iojob.cpp:434
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Impossibile rinominare l'immagine %1"
 
-#: core/libs/iojobs/iojob.cpp:500
+#: core/libs/iojobs/iojob.cpp:516
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Impossibile ripristinare il file %1 dal cestino"
@@ -51620,6 +51627,12 @@ msgstr "Rimuovi elementi"
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
 msgstr "Pila"
+
+#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
+#, kde-format
+msgctxt "@action:inmenu Group images with this image"
+msgid "Group here"
+msgstr "Raggruppa qui"
 
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
 #, kde-format
@@ -68777,6 +68790,12 @@ msgstr "Elementi album"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementi importati"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Subject Information"
+#~ msgid "Subject Segmentation:"
+#~ msgstr "Informazioni sui soggetti"
 
 #~ msgctxt "@info: pick lablel selector"
 #~ msgid "Pick Label: %1"

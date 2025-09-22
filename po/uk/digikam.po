@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 02:03+0000\n"
-"PO-Revision-Date: 2025-09-16 09:57+0300\n"
+"POT-Creation-Date: 2025-09-22 01:58+0000\n"
+"PO-Revision-Date: 2025-09-21 10:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -181,140 +181,130 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:99
-#: core/app/dragdrop/albumdragdrop.cpp:253
-#: core/app/dragdrop/albumdragdrop.cpp:396
-#: core/app/dragdrop/importdragdrop.cpp:122
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:89
+#: core/app/dragdrop/albumdragdrop.cpp:282
+#: core/app/dragdrop/albumdragdrop.cpp:376
+#: core/app/dragdrop/albumdragdrop.cpp:477
+#: core/app/dragdrop/itemdragdrop.cpp:412 core/app/dragdrop/tagdragdrop.cpp:265
 #, kde-format
 msgid "&Move Here"
 msgstr "Пере&сунути сюди"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:254
-#: core/app/dragdrop/albumdragdrop.cpp:397
-#: core/app/dragdrop/importdragdrop.cpp:125
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/albumdragdrop.cpp:283
+#: core/app/dragdrop/albumdragdrop.cpp:377
+#: core/app/dragdrop/albumdragdrop.cpp:478
+#: core/app/dragdrop/itemdragdrop.cpp:416
 #, kde-format
 msgid "&Copy Here"
 msgstr "С&копіювати сюди"
 
-#: core/app/dragdrop/albumdragdrop.cpp:102
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:263
-#: core/app/dragdrop/albumdragdrop.cpp:326
-#: core/app/dragdrop/albumdragdrop.cpp:399
-#: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:194
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:798
-#: core/app/dragdrop/tagdragdrop.cpp:92 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:326 core/app/dragdrop/tagdragdrop.cpp:449
+#: core/app/dragdrop/albumdragdrop.cpp:285
+#: core/app/dragdrop/albumdragdrop.cpp:340
+#: core/app/dragdrop/albumdragdrop.cpp:386
+#: core/app/dragdrop/albumdragdrop.cpp:437
+#: core/app/dragdrop/albumdragdrop.cpp:480
+#: core/app/dragdrop/importdragdrop.cpp:184
+#: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
+#: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
 #, kde-format
 msgid "C&ancel"
 msgstr "&Скасувати"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:259
+#: core/app/dragdrop/albumdragdrop.cpp:336
+#: core/app/dragdrop/albumdragdrop.cpp:382
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Встановити як мініатюру альбому"
 
-#: core/app/dragdrop/albumdragdrop.cpp:323
-#: core/app/dragdrop/itemdragdrop.cpp:794
+#: core/app/dragdrop/albumdragdrop.cpp:434
+#: core/app/dragdrop/itemdragdrop.cpp:855
 #, kde-format
 msgid "Download From Camera"
 msgstr "Отримати з фотоапарата"
 
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/itemdragdrop.cpp:796
+#: core/app/dragdrop/albumdragdrop.cpp:435
+#: core/app/dragdrop/itemdragdrop.cpp:857
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Отримати і вилучити з фотоапарата"
 
-#: core/app/dragdrop/importdragdrop.cpp:52
-#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
-#, kde-format
-msgctxt "@action:inmenu Group images with this image"
-msgid "Group here"
-msgstr "Групувати з цим"
-
-#: core/app/dragdrop/importdragdrop.cpp:190
+#: core/app/dragdrop/importdragdrop.cpp:180
 #, kde-format
 msgid "Exporting"
 msgstr "Експортування"
 
-#: core/app/dragdrop/importdragdrop.cpp:192
+#: core/app/dragdrop/importdragdrop.cpp:182
 #, kde-format
 msgid "Upload to Camera"
 msgstr "Вивантажити на фотоапарат"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:56
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "Групувати з цим"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:63
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "Вставити зображення тут"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:70
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Згрупувати з цим і пересунути до альбому"
 
-#: core/app/dragdrop/itemdragdrop.cpp:201
+#: core/app/dragdrop/itemdragdrop.cpp:457
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Призначення мітки скинутим записам"
 
-#: core/app/dragdrop/itemdragdrop.cpp:679
+#: core/app/dragdrop/itemdragdrop.cpp:755
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Змінити мітки облич"
 
-#: core/app/dragdrop/itemdragdrop.cpp:683
+#: core/app/dragdrop/itemdragdrop.cpp:759
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Змінити мітку обличчя"
 
-#: core/app/dragdrop/itemdragdrop.cpp:687
-#: core/app/dragdrop/itemdragdrop.cpp:739
+#: core/app/dragdrop/itemdragdrop.cpp:763
+#: core/app/dragdrop/itemdragdrop.cpp:814
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Скасувати"
 
-#: core/app/dragdrop/itemdragdrop.cpp:724
+#: core/app/dragdrop/itemdragdrop.cpp:799
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Призначити мітки виб&раним зображенням"
 
-#: core/app/dragdrop/itemdragdrop.cpp:732
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Призначити мітки &цьому запису"
 
-#: core/app/dragdrop/itemdragdrop.cpp:736
+#: core/app/dragdrop/itemdragdrop.cpp:811
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Призначити мітки всі&м зображенням"
 
-#: core/app/dragdrop/itemdragdrop.cpp:792
+#: core/app/dragdrop/itemdragdrop.cpp:853
 #, kde-format
 msgid "Importing"
 msgstr "Імпортування"
 
-#: core/app/dragdrop/tagdragdrop.cpp:90
+#: core/app/dragdrop/tagdragdrop.cpp:266
 #, kde-format
 msgid "M&erge Here"
 msgstr "О&б'єднати сюди"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:390
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
@@ -323,12 +313,12 @@ msgstr[1] "Підтвердження імені обличчя «%2» для з
 msgstr[2] "Підтвердження імені обличчя «%2» для записів"
 msgstr[3] "Підтвердження імені обличчя «%2» для запису"
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:445
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Зробити мініатюрою мітки"
 
-#: core/app/dragdrop/tagdragdrop.cpp:320
+#: core/app/dragdrop/tagdragdrop.cpp:439
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
@@ -337,7 +327,7 @@ msgstr[1] "Змінити ім'я для облич з «%2» на «%3»"
 msgstr[2] "Змінити ім'я для облич з «%2» на «%3»"
 msgstr[3] "Змінити ім'я для обличчя з «%2» на «%3»"
 
-#: core/app/dragdrop/tagdragdrop.cpp:440
+#: core/app/dragdrop/tagdragdrop.cpp:538
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Призначити записам мітки «%1»"
@@ -5896,7 +5886,7 @@ msgstr ""
 "вилучати з зображень віньєтування або додавати його.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8748,7 +8738,7 @@ msgstr "Виправлення віньєтування…"
 msgid "Background Blur Filter"
 msgstr "Фільтр розмивання тла"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8757,12 +8747,12 @@ msgstr ""
 "Встановіть це значення для визначення радіуса матриці Гаусового розмивання, "
 "що визначає наскільки значним є розмивання тла навколо об'єкта."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Прогресивний перехід:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8772,12 +8762,14 @@ msgstr ""
 "далеких від об'єкта ділянок. Це надає змогу імітувати глибину поля від "
 "об'єктива."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, kde-format
-msgid "Subject Segmentation:"
-msgstr "Сегментація об'єкта:"
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Subject Information"
+msgid "Subject Isolation:"
+msgstr "Відомості щодо призначення"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8786,19 +8778,13 @@ msgstr ""
 "Встановіть значення, яке буде використано як кількість ітерацій у процесі "
 "поділу, для ізоляції більшої або меншої частини об'єкта."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
 #, kde-format
 msgid "Subject Mask:"
 msgstr "Маска об'єкта:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "This view show the segmentation of the subject determined from the "
-#| "selection. The resulting green mask is superposed to the original image "
-#| "to see if the subject have been isolated properly by the segmentation "
-#| "process. The green area is the subject where the blur effect will not "
-#| "applied."
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
+#, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
@@ -8809,20 +8795,22 @@ msgstr ""
 "На цій панелі перегляду показано поділ об'єкта на основі позначеного. "
 "Отриману зелену маску буде накладено на початкове зображення, щоб ви могли "
 "переконатися, що об'єкт було належним чином ізольовано у процесі поділу. "
-"Зелена область позначає об'єкт, до якого буде застосовано ефект розмивання."
+"Зелена область позначає об'єкт, до якого буде застосовано ефект розмивання. "
+"Ви можете коригувати область на цій панелі перегляду за допомогою "
+"прямокутника, що містить об'єкт."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:213
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Обробка попереднього перегляду маски…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:248
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Помилка під час обробки зображення…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:282
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
 #, kde-format
 msgid "Background Blur"
 msgstr "Розмивання тла"
@@ -8840,32 +8828,41 @@ msgid "A tool to blur the background of an image"
 msgstr "Інструмент для розмивання тла зображення"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This Image Editor tool can blur the background of the subject from an "
+#| "image."
 msgctxt "@info"
 msgid ""
-"This Image Editor tool can blur the background of the subject from an image."
+"This Image Editor tool can blur the background of the subject from an image "
+"to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "За допомогою цього інструмента редактора зображень можна розмити тло об'єкта "
 "на зображенні."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
 msgstr "Розмивання тла…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "Background Blur Tool"
 msgstr "Інструмент розмивання тла"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
 #, fuzzy, kde-format
-#| msgid "You must select before a rectangular area including the subject..."
+#| msgid ""
+#| "You must select before a rectangular area including the subject.<br>Note: "
+#| "you can reajust the zone later in the tool."
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
-"you can reajust the zone later in the tool."
-msgstr "Спочатку вам слід вибрати прямокутну область із об'єктом…"
+"you can readjust the zone later in the tool."
+msgstr ""
+"Спочатку вам слід вибрати прямокутну область із об'єктом.<br>Зауваження: "
+"згодом ви зможете скоригувати область."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -9382,7 +9379,7 @@ msgstr "Маска зменшення різкості"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:117
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
 msgstr "Зміна фокуса"
@@ -12914,7 +12911,7 @@ msgstr ""
 "фотоапаратом під час знімання."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:114
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:139
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
 #, kde-format
 msgid "Sharpness:"
 msgstr "Різкість:"
@@ -27869,7 +27866,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Контекстне меню"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
 #: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
@@ -33094,7 +33091,7 @@ msgstr ""
 "віньєтуванню, яку буде застосовано до зображення."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:97
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:168
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:169
 #, kde-format
 msgid "Amount:"
 msgstr "Потужність:"
@@ -33669,7 +33666,7 @@ msgstr ""
 #: core/libs/dimg/filters/nr/nrsettings.cpp:107
 #: core/libs/dimg/filters/nr/nrsettings.cpp:134
 #: core/libs/dimg/filters/nr/nrsettings.cpp:161
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:176
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:177
 #, kde-format
 msgid "Threshold:"
 msgstr "Поріг:"
@@ -33748,29 +33745,29 @@ msgstr ""
 "Тут ви можете рівень притлумлення червоного відносно середнього рівня "
 "синього та зеленого кольорів."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:110
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:111
 #, kde-format
 msgid "Method:"
 msgstr "Метод:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:112
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
 #, kde-format
 msgid "Simple sharp"
 msgstr "Просте збільшення різкості"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:114
 #, kde-format
 msgid "Unsharp mask"
 msgstr "Маска зменшення різкості"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:122
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr ""
 "Тут ви можете вибрати метод зміни різкості, який слід застосувати до "
 "зображення."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:143
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:144
 #, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -33779,12 +33776,12 @@ msgstr ""
 "Різкість у 0 нічого не змінить, 1 і вище визначає радіус матриці різкості, "
 "що, відповідно, визначає, наскільки слід збільшити різкість зображення."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:160
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:161
 #, kde-format
 msgid "Radius:"
 msgstr "Радіус:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:165
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:166
 #, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
@@ -33793,7 +33790,7 @@ msgstr ""
 "Значення радіуса є значенням радіуса матриці гаусового розмивання, що "
 "визначає, наскільки слід розмити зображення."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:174
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
@@ -33802,7 +33799,7 @@ msgstr ""
 "Значення різниці між початковим і розмитим зображенням, яку додають назад до "
 "початкового зображення."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:182
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
@@ -33811,12 +33808,12 @@ msgstr ""
 "Поріг, як дробова частина значення максимальної яскравості світла, потрібної "
 "для застосування величини різниці."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:185
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid "Suppress color noise."
 msgstr "Придушити кольоровий шум."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:187
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
@@ -33825,12 +33822,12 @@ msgstr ""
 "Пункт для застосування фільтрування до каналу освітленості, використовується "
 "лише для придушення шумів у палітрі кольорів."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:210
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:211
 #, kde-format
 msgid "Circular sharpness:"
 msgstr "Кругова різкість:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:216
 #, kde-format
 msgid ""
 "This is the radius of the circular convolution. It is the most important "
@@ -33842,12 +33839,12 @@ msgstr ""
 "використання засобу. Для більшості зображень типове значення у 1.0 має дати "
 "добрі результати. Виберіть вище значення, якщо ваше зображення дуже розмите."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:219
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:220
 #, kde-format
 msgid "Correlation:"
 msgstr "Кореляція:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:224
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:225
 #, kde-format
 msgid ""
 "Increasing the correlation may help to reduce artifacts. The correlation can "
@@ -33860,12 +33857,12 @@ msgstr ""
 "значень близьких до 1, наприклад 0.95 і 0.99. Використання вищих значень "
 "кореляції зменшить ефект збільшення різкості засобу."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:229
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:230
 #, kde-format
 msgid "Noise filter:"
 msgstr "Фільтр шуму:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:234
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:235
 #, kde-format
 msgid ""
 "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -33880,12 +33877,12 @@ msgstr ""
 "буде дуже поганою. Корисним значенням є 0.01. Використання вищих значень для "
 "фільтра шуму зменшить результат збільшення різкості у засобі."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:240
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:241
 #, kde-format
 msgid "Gaussian sharpness:"
 msgstr "Гаусова різкість:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:245
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:246
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -33900,12 +33897,12 @@ msgstr ""
 "спричинює значне викривлення. Якщо ви використовуєте ненульові значення, "
 "вам, скоріше за все, слід збільшити параметри кореляції і/або фільтра шуму."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:250
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:251
 #, kde-format
 msgid "Matrix size:"
 msgstr "Розмір матриці:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:254
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:255
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -33916,30 +33913,30 @@ msgstr ""
 "може дати кращі результати, особливо, якщо ви вибрали більші значення для "
 "кругової і гаусової різкості."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:487
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:488
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "Файл параметрів зміни фокуса фотографії, який слід завантажити"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:505
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:506
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr "«%1» не є текстовим файлом параметрів зміни фокуса фотографій."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:528
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:529
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
 "Неможливо завантажити параметри з текстового файла зміни фокуса фотографій."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:536
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:537
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "Файл параметрів зміни фокуса фотографій, який слід зберегти"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:566
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:567
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "Не вдалося зберегти текстовий файл параметрів зміни фокуса фотографії."
@@ -36314,12 +36311,18 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "У %2 вже є файл або тека з назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:165
+#: core/libs/iojobs/iojob.cpp:154
+#, fuzzy, kde-format
+#| msgid "Could not move folder %1 to album %2"
+msgid "Recursive folder %1 move detected to album %2"
+msgstr "Не вдалося пересунути теку %1 до альбому %2"
+
+#: core/libs/iojobs/iojob.cpp:173
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Не вдалося пересунути теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:172
+#: core/libs/iojobs/iojob.cpp:180
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -36328,43 +36331,49 @@ msgstr ""
 "Не вдалося пересунути теку %1 до альбому %2. Теку %1 також було скопійовано "
 "до альбому %2."
 
-#: core/libs/iojobs/iojob.cpp:184
+#: core/libs/iojobs/iojob.cpp:192
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Не вдалося пересунути додатковий файл для файла %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:190
+#: core/libs/iojobs/iojob.cpp:198
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Не вдалося пересунути файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:214
+#: core/libs/iojobs/iojob.cpp:213
+#, fuzzy, kde-format
+#| msgid "Could not move folder %1 to album %2"
+msgid "Recursive folder %1 copy detected to album %2"
+msgstr "Не вдалося пересунути теку %1 до альбому %2"
+
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Не вдалося скопіювати теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:226
+#: core/libs/iojobs/iojob.cpp:242
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr ""
 "Не вдалося виконати копіювання додаткового файла для файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:234
+#: core/libs/iojobs/iojob.cpp:250
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Не вдалося виконати копіювання файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:239
+#: core/libs/iojobs/iojob.cpp:255
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Не вдалося скопіювати файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:286
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Файла або теки %1 не існує"
 
-#: core/libs/iojobs/iojob.cpp:298
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36374,7 +36383,7 @@ msgstr ""
 "Не вдалося пересунути теку %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:310
+#: core/libs/iojobs/iojob.cpp:326
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36384,32 +36393,32 @@ msgstr ""
 "Не вдалося пересунути зображення %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:327
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Не вдалося вилучити альбом %1"
 
-#: core/libs/iojobs/iojob.cpp:339
+#: core/libs/iojobs/iojob.cpp:355
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Не вдалося вилучити зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:388
+#: core/libs/iojobs/iojob.cpp:404
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Не вдалося пересунути зображення %1 до смітника збірки"
 
-#: core/libs/iojobs/iojob.cpp:400
+#: core/libs/iojobs/iojob.cpp:416
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Там уже є зображення із назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:418
+#: core/libs/iojobs/iojob.cpp:434
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Не вдалося перейменувати зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:500
+#: core/libs/iojobs/iojob.cpp:516
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Не вдалося відновити файл %1 зі смітника"
@@ -45401,8 +45410,7 @@ msgid "None"
 msgstr "Жодного"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-#| msgid "Pick Label: %1"
+#, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "Впорядкувальна позначка: %1"
@@ -51759,6 +51767,12 @@ msgstr "Вилучити записи"
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
 msgstr "Стос"
+
+#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
+#, kde-format
+msgctxt "@action:inmenu Group images with this image"
+msgid "Group here"
+msgstr "Групувати з цим"
 
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
 #, kde-format
@@ -68972,6 +68986,9 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgid "Subject Segmentation:"
+#~ msgstr "Сегментація об'єкта:"
 
 #~ msgctxt "@info: pick lablel selector"
 #~ msgid "Pick Label: %1"
