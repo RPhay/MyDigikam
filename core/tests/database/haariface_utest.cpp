@@ -173,7 +173,7 @@ void HaarIfaceTest::startSqlite(const QDir& dbDir)
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 

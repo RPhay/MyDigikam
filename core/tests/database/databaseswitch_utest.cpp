@@ -95,7 +95,7 @@ void DatabaseSwitchTest::startStopSqlite(const QDir& dbDir)
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 
@@ -133,7 +133,7 @@ void DatabaseSwitchTest::startStopMysql(const QDir& dbDir)
 
     if (!mysqlUpgradeBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Upgrade binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Upgrade binary program. Test is aborted...");
         return;
     }
 
@@ -142,7 +142,7 @@ void DatabaseSwitchTest::startStopMysql(const QDir& dbDir)
 
     if (!mysqlServerBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Server binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Server binary program. Test is aborted...");
         return;
     }
 
@@ -150,7 +150,7 @@ void DatabaseSwitchTest::startStopMysql(const QDir& dbDir)
 
     if (!mysqlAdminBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Admin binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Admin binary program. Test is aborted...");
         return;
     }
 
@@ -158,13 +158,13 @@ void DatabaseSwitchTest::startStopMysql(const QDir& dbDir)
 
     if (!mysqlInitBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Init binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Init binary program. Test is aborted...");
         return;
     }
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::MySQLDatabaseType()))
     {
-        QWARN("Qt MySQL plugin is missing.");
+        qWarning() << QLatin1String("Qt MySQL plugin is missing.");
         return;
     }
 

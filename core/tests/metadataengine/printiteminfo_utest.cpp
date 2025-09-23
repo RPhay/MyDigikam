@@ -175,7 +175,7 @@ void PrintItemInfoTest::printXmpKeywords(const DMetadata& meta, bool expected)
     }
     else
     {
-        QWARN("Exiv2 has no XMP support...");
+        qWarning() << QLatin1String("Exiv2 has no XMP support...");
     }
 }
 
@@ -192,7 +192,7 @@ void PrintItemInfoTest::printXmpSubjects(const DMetadata& meta, bool expected)
     }
     else
     {
-        QWARN("Exiv2 has no XMP support...");
+        qWarning() << QLatin1String("Exiv2 has no XMP support...");
     }
 }
 
@@ -209,7 +209,7 @@ void PrintItemInfoTest::printXmpSubCategories(const DMetadata& meta, bool expect
     }
     else
     {
-        QWARN("Exiv2 has no XMP support...");
+        qWarning() << QLatin1String("Exiv2 has no XMP support...");
     }
 }
 

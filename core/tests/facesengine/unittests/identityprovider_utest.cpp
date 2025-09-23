@@ -73,7 +73,7 @@ void IdentityProviderTest::testInit()
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 
@@ -91,7 +91,7 @@ void IdentityProviderTest::testAddIdentity()
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 
@@ -115,7 +115,7 @@ void IdentityProviderTest::testFindIdentity()
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 
@@ -138,7 +138,7 @@ void IdentityProviderTest::testDeleteIdentity()
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 
@@ -163,7 +163,7 @@ void IdentityProviderTest::testIdentity()
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 
@@ -187,7 +187,7 @@ void IdentityProviderTest::testAddTraining()
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 
@@ -211,7 +211,7 @@ void IdentityProviderTest::testClearTraining()
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
     {
-        QWARN("Qt SQlite plugin is missing.");
+        qWarning() << QLatin1String("Qt SQlite plugin is missing.");
         return;
     }
 

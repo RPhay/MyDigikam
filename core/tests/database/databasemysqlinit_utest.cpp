@@ -86,7 +86,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     if (!mysqlUpgradeBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Upgrade binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Upgrade binary program. Test is aborted...");
         return;
     }
 
@@ -95,7 +95,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     if (!mysqlServerBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Server binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Server binary program. Test is aborted...");
         return;
     }
 
@@ -103,7 +103,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     if (!mysqlAdminBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Admin binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Admin binary program. Test is aborted...");
         return;
     }
 
@@ -111,13 +111,13 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     if (!mysqlInitBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Init binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Init binary program. Test is aborted...");
         return;
     }
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::MySQLDatabaseType()))
     {
-        QWARN("Qt MySQL plugin is missing.");
+        qWarning() << QLatin1String("Qt MySQL plugin is missing.");
         return;
     }
 
