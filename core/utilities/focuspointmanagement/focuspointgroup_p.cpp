@@ -45,11 +45,17 @@ FocusPointItem* FocusPointGroup::Private::createItem(const FocusPoint& point) co
     FocusPointItem* const item = new FocusPointItem(view->previewItem());
     item->setPoint(point);
 
+    int orientation            = info.orientation();
     QSize size                 = info.dimensions();
 
     if  (size.width() < size.height())
     {
         size.transpose();
+
+        if (orientation == (int)MetaEngine::ImageOrientation::ORIENTATION_NORMAL)
+        {
+            orientation = (int)MetaEngine::ImageOrientation::ORIENTATION_ROT_270;
+        }
     }
 
     QRect pointRect            = point.getRectBySize(size);
@@ -57,7 +63,7 @@ FocusPointItem* FocusPointGroup::Private::createItem(const FocusPoint& point) co
     if (exifRotate)
     {
         TagRegion::adjustToOrientation(pointRect,
-                                       info.orientation(),
+                                       orientation,
                                        size);
     }
 

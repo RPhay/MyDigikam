@@ -65,12 +65,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
                                      QStringList()
                                      << QLatin1String("MakerNotes.Nikon.Camera.AFImageWidth")
                                      << QLatin1String("EXIF.ExifIFD.Image.ExifImageWidth")
+                                     << QLatin1String("File.File.Image.ImageWidth")
                                     );
 
     imageHeight = findValueFirstMatch(
                                       QStringList()
                                       << QLatin1String("MakerNotes.Nikon.Camera.AFImageHeight")
                                       << QLatin1String("EXIF.ExifIFD.Image.ExifImageHeight")
+                                      << QLatin1String("File.File.Image.ImageHeight")
                                      );
 
     if (imageWidth.isNull() || imageHeight.isNull())
@@ -78,6 +80,11 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Nikon image sizes.";
 
         return getAFPoints_exif();
+    }
+
+    if (imageWidth.toInt() < imageHeight.toInt())
+    {
+        imageWidth.swap(imageHeight);
     }
 
     setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
