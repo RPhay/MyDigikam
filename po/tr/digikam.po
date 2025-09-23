@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-09-21 19:02+0300\n"
+"PO-Revision-Date: 2025-09-22 16:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -8636,11 +8636,9 @@ msgstr ""
 "tanır."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Konu Bilgisi"
+msgstr "Konu izolasyonu:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8700,18 +8698,14 @@ msgid "A tool to blur the background of an image"
 msgstr "Görselin arka planını bulanıklaştırmak için bir araç"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
 msgstr ""
-"Bu görsel düzenleyicisi aracı, görseldeki bir öznenin arka planını "
-"bulanıklaştırabilir."
+"Bu görsel düzenleyicisi aracı, mercekten kaynaklı derinlik alanı efektini "
+"yeniden üretmek için görseldeki bir öznenin arka planını bulanıklaştırabilir."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8725,10 +8719,7 @@ msgid "Background Blur Tool"
 msgstr "Arka Plan Bulanıklığı Aracı"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "You must select before a rectangular area including the subject.<br>Note: "
-#| "you can reajust the zone later in the tool."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
@@ -35786,10 +35777,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "%2 içinde %1 adlı bir dosya veya klasör halihazırda var"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "%1 klasörü %2 albümüne taşınamadı"
+msgstr "%2 albümüne %1 özyineli klasör taşıması algılandı"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -35815,10 +35805,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "%1 dosyası %2 albümüne taşınamadı"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "%1 klasörü %2 albümüne taşınamadı"
+msgstr "%2 albümüne %1 özyineli klasör kopyalaması algılandı"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format

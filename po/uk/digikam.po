@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-09-21 10:45+0300\n"
+"PO-Revision-Date: 2025-09-22 16:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -8763,11 +8763,9 @@ msgstr ""
 "об'єктива."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Відомості щодо призначення"
+msgstr "Ізоляція об'єкта:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8828,18 +8826,14 @@ msgid "A tool to blur the background of an image"
 msgstr "Інструмент для розмивання тла зображення"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "За допомогою цього інструмента редактора зображень можна розмити тло об'єкта "
-"на зображенні."
+"на зображенні для відтворення ефект глибини поля від об'єктива."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8853,10 +8847,7 @@ msgid "Background Blur Tool"
 msgstr "Інструмент розмивання тла"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "You must select before a rectangular area including the subject.<br>Note: "
-#| "you can reajust the zone later in the tool."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
@@ -36312,10 +36303,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "У %2 вже є файл або тека з назвою %1"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "Не вдалося пересунути теку %1 до альбому %2"
+msgstr "Виявлено рекурсивне пересування теки %1 до альбому %2"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -36342,10 +36332,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "Не вдалося пересунути файл %1 до альбому %2"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "Не вдалося пересунути теку %1 до альбому %2"
+msgstr "Виявлено рекурсивне копіювання теки %1 до альбому %2"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-09-21 10:11+0200\n"
+"PO-Revision-Date: 2025-09-22 12:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -8693,11 +8693,9 @@ msgstr ""
 "motiu. Això permet simular una profunditat de camp d'una lent."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Informació del motiu"
+msgstr "Aïllament del motiu:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8757,18 +8755,14 @@ msgid "A tool to blur the background of an image"
 msgstr "Una eina per a difuminar el fons d'una imatge"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "Aquesta eina de l'editor d'imatges pot difuminar el fons del motiu d'una "
-"imatge."
+"imatge per a reproduir l'efecte de profunditat de camp d'una lent."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8782,10 +8776,7 @@ msgid "Background Blur Tool"
 msgstr "Eina de difuminat del fons"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "You must select before a rectangular area including the subject.<br>Note: "
-#| "you can reajust the zone later in the tool."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
@@ -36183,10 +36174,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "Ja existeix un fitxer o una carpeta anomenats %1 a %2"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "No s'ha pogut moure la carpeta %1 a l'àlbum %2"
+msgstr "Moviment recursiu de la carpeta %1 detectat a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -36213,10 +36203,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "No s'ha pogut moure el fitxer %1 a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "No s'ha pogut moure la carpeta %1 a l'àlbum %2"
+msgstr "Copia recursiva de la carpeta %1 detectada a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format

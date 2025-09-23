@@ -8262,11 +8262,9 @@ msgid ""
 msgstr "此值控制主体周围由近到远的可变模糊，可用于模拟镜头的景深效果。"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "主题信息"
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8289,6 +8287,9 @@ msgid ""
 "The green area is the subject where the blur effect will not applied. You "
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
+"此视图显示了根据所选内容确定的主体细分情况。生成的绿色蒙版叠加在原始图像之"
+"上，以便查看主体是否已在细分处理中被正确分离。绿色区域即是主体，该区域不会应"
+"用模糊效果。您可以在此视图中重新调整包含主体的矩形区域。"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, kde-format
@@ -8319,16 +8320,12 @@ msgid "A tool to blur the background of an image"
 msgstr "模糊图像背景"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
-msgstr "用于模糊图像中主体周围背景的图像编辑器工具。"
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -34543,10 +34540,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "名为 %1 的文件或文件夹已存在于 %2 中"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "无法移动文件夹 %1 到相册 %2"
+msgstr ""
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -34571,10 +34567,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "无法移动文件 %1 到相册 %2"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "无法移动文件夹 %1 到相册 %2"
+msgstr ""
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format
@@ -43320,7 +43315,7 @@ msgstr "无"
 #, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
-msgstr ""
+msgstr "挑选标记：%1"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, kde-format
@@ -65973,6 +65968,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Subject Segmentation:"
-#~ msgstr "主体细分："

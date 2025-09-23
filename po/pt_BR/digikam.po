@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-09-21 07:35-0300\n"
+"PO-Revision-Date: 2025-09-22 06:50-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -8672,11 +8672,9 @@ msgstr ""
 "objeto. Isso permite simular a profundidade de campo de uma lente."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Informações do assunto"
+msgstr "Isolamento do assunto:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8737,18 +8735,14 @@ msgid "A tool to blur the background of an image"
 msgstr "Uma ferramenta para desfocar o plano de fundo de uma imagem"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "Esta ferramenta do Editor de Imagem pode desfocar o fundo do assunto de uma "
-"imagem."
+"imagem para reproduzir o efeito de profundidade de campo de uma lente."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8762,10 +8756,7 @@ msgid "Background Blur Tool"
 msgstr "Ferramenta de desfoque do plano de fundo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "You must select before a rectangular area including the subject.<br>Note: "
-#| "you can reajust the zone later in the tool."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
@@ -36030,10 +36021,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "Um arquivo ou pasta chamado %1 já existe em %2"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "Não foi possível mover a pasta %1 para o álbum %2"
+msgstr "Movimento recursivo da pasta %1 detectado para o álbum %2"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -36061,10 +36051,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "Não foi possível mover o arquivo %1 para o álbum %2"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "Não foi possível mover a pasta %1 para o álbum %2"
+msgstr "Cópia recursiva da pasta %1 detectada para o álbum %2"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format

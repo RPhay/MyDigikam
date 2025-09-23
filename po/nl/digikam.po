@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-09-21 15:52+0200\n"
+"PO-Revision-Date: 2025-09-22 14:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -8722,11 +8722,9 @@ msgstr ""
 "onderwerp toe te passen. Dit biedt het simuleren van diepte met een lens."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Onderwerpinformatie"
+msgstr "Onderwerpisolatie"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8787,18 +8785,14 @@ msgid "A tool to blur the background of an image"
 msgstr "Een hulpmiddel om de achtergrond van een afbeelding te vervagen"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "Dit hulpmiddel Afbeeldingsbewerker kan de achtergrond van het onderwerp uit "
-"een afbeeldingen vervagen."
+"een afbeeldingen vervagen om het effect diepte-van-veld van een lens."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8812,10 +8806,7 @@ msgid "Background Blur Tool"
 msgstr "Hulpmiddel voor achtergrondvervaging"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "You must select before a rectangular area including the subject.<br>Note: "
-#| "you can reajust the zone later in the tool."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
@@ -36153,10 +36144,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "Een bestand of map met de naam %1 bestaat al in %2"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "Kon map %1 niet verplaatsen naar album %2"
+msgstr "Recursieve map %1 gedetecteerd verplaatsen naar album %2"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -36183,10 +36173,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "Kon bestand %1 niet verplaatsen naar album %2"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "Kon map %1 niet verplaatsen naar album %2"
+msgstr "Recursieve map %1 kopie gedetecteerd naar album %2"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format
