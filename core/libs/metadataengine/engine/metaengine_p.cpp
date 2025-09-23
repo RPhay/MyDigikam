@@ -411,7 +411,6 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
 
             if (image->imageType() == Exiv2::ImageType::xmp)
             {
-
                 // See Bug 509796, darktable ignores the sidecar
                 // if this structured metadata is present.
 
