@@ -411,6 +411,18 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
 
             if (image->imageType() == Exiv2::ImageType::xmp)
             {
+
+                // See Bug 509796, darktable ignores the sidecar
+                // if this structured metadata is present.
+
+                Exiv2::XmpKey xmpMMDF("Xmp.xmpMM.DerivedFrom");
+                Exiv2::XmpData::iterator it3 = image->xmpData().findKey(xmpMMDF);
+
+                if (it3 != image->xmpData().end())
+                {
+                    image->xmpData().eraseFamily(it3);
+                }
+
                 QList<QPair<QString, QString> > pairedTags;
                 typedef QPair<QString, QString> StringPair;
 

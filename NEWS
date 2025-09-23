@@ -117,7 +117,7 @@ BUGFIXES:
 082 ==> 501862 - Dragging tags to new location no longer has option to merge tags.
 083 ==> 503054 - A merge of tags sometimes does not get triggered.
 084 ==> 504238 - Add support of keywords merge using Drag and Drop.
-085 ==> 
+085 ==> 509796 - digiKam generated XMP sidecars not updated by darktable.
 086 ==> 
 087 ==> 
 088 ==> 
