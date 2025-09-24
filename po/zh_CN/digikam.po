@@ -8264,7 +8264,7 @@ msgstr "此值控制主体周围由近到远的可变模糊，可用于模拟镜
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
 #, kde-format
 msgid "Subject Isolation:"
-msgstr ""
+msgstr "主体分离："
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8325,7 +8325,7 @@ msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
-msgstr ""
+msgstr "用于模糊图像中主体的背景以营造镜头的景深效果。"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8344,6 +8344,8 @@ msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
 msgstr ""
+"您必须先选择一个包含主体的矩形区域。<br>提示：您稍后可以在工具中重新调整此区"
+"域。"
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -34542,7 +34544,7 @@ msgstr "名为 %1 的文件或文件夹已存在于 %2 中"
 #: core/libs/iojobs/iojob.cpp:154
 #, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr ""
+msgstr "检测到将文件夹 %1 递归移动到相册 %2 的操作。"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -34569,7 +34571,7 @@ msgstr "无法移动文件 %1 到相册 %2"
 #: core/libs/iojobs/iojob.cpp:213
 #, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr ""
+msgstr "检测到将文件夹 %1 递归复制到相册 %2 的操作。"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format
