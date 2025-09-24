@@ -118,7 +118,7 @@ BUGFIXES:
 083 ==> 503054 - A merge of tags sometimes does not get triggered.
 084 ==> 504238 - Add support of keywords merge using Drag and Drop.
 085 ==> 509796 - digiKam generated XMP sidecars not updated by darktable.
-086 ==> 
+086 ==> 509844 - digiKam closed unexpectedly (Qt5 based).
 087 ==> 
 088 ==> 
 089 ==> 
