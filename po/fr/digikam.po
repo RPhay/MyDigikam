@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-09-17 15:02+0200\n"
+"PO-Revision-Date: 2025-09-23 13:54+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -8826,11 +8826,9 @@ msgstr ""
 "provenant d’une lentille."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Informations sur l'objet"
+msgstr "Isolation de l'objet :"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8847,13 +8845,7 @@ msgid "Subject Mask:"
 msgstr "Masque d'objet :"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "This view show the segmentation of the subject determined from the "
-#| "selection. The resulting green mask is superposed to the original image "
-#| "to see if the subject have been isolated properly by the segmentation "
-#| "process. The green area is the subject where the blur effect will not "
-#| "applied."
+#, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
@@ -8861,10 +8853,11 @@ msgid ""
 "The green area is the subject where the blur effect will not applied. You "
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
-"Cette vue montre la segmentation du sujet déterminée à partir de la "
+"Cette vue affiche la segmentation d'un sujet déterminé à partir de la "
 "sélection. Le masque vert résultant est superposé à l'image d'origine pour "
 "voir si le sujet a été correctement isolé par le processus de segmentation. "
-"La zone verte est l'objet où l'effet de floutage ne sera pas appliqué."
+"La zone verte est l'objet où l'effet de floutage ne sera pas appliqué. Vous "
+"pouvez réajuster dans cette vue le rectangle en incluant le sujet."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, kde-format
@@ -8895,18 +8888,14 @@ msgid "A tool to blur the background of an image"
 msgstr "Un outil pour flouter  l'arrière-plan d'une image"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "Cet outil d'édition d'image peut flouter l'arrière-plan d'un sujet d'une "
-"image."
+"image pour reproduire l’effet de profondeur de champ à partir d’un objectif."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8920,14 +8909,13 @@ msgid "Background Blur Tool"
 msgstr "Outil de floutage de l'arrière-plan"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "You must select before a rectangular area including the subject..."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
 msgstr ""
-"Vous devez faire une sélection avant de le faire pour une zone rectangulaire "
-"incluant le sujet..."
+"Vous devez sélectionner préalablement une zone rectangulaire incluant le "
+"sujet. <br>Remarque : vous pouvez réajuster la zone plus tard dans l’outil."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -36472,10 +36460,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "Un fichier ou dossier nommé « %1 » existe déjà dans « %2 »"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "Impossible de déplacer le dossier « %1 » dans l'album « %2 »"
+msgstr "Détection du déplacement récursif du dossier %1 vers l'album %2"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -36504,10 +36491,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "Impossible de déplacer le fichier « %1 » dans l'album « %2 »"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "Impossible de déplacer le dossier « %1 » dans l'album « %2 »"
+msgstr "Détection de la copie récursive du dossier %1 vers l'album %2"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format
@@ -45594,8 +45580,7 @@ msgid "None"
 msgstr "Aucun"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-#| msgid "Pick Label: %1"
+#, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "Étiquette de sélection : %1"

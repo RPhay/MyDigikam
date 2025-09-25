@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-08-31 00:14+0200\n"
+"PO-Revision-Date: 2025-09-23 22:33+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3348,10 +3348,7 @@ msgstr ""
 "serie."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
@@ -8734,30 +8731,23 @@ msgstr ""
 "obbiettivo."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Informazioni sui soggetti"
+msgstr "Isolamento soggetto:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Questo valore controlla il numero di iterazioni da usare per gli effetti "
-"Neon e Trova i bordi."
+"Imposta il numero di iterazioni da usare nel processo di segmentazione per "
+"l'isolamento progressivo del soggetto."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
-#, fuzzy, kde-format
-#| msgid "Subjects"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Soggetti"
+msgstr "Maschera soggetto:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
 #, kde-format
@@ -8768,20 +8758,23 @@ msgid ""
 "The green area is the subject where the blur effect will not applied. You "
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
+"Questa vista mostra la segmentazione del soggetto determinata dalla "
+"selezione. La maschera verde risultante viene sovrapposta all'immagine "
+"originale in modo da verificare se il soggetto è stato isolato correttamente "
+"dal processo di segmentazione. L'area verde rappresenta il soggetto in cui "
+"non si applica l'effetto di sfocatura. In questa vista puoi regolare di "
+"nuovo il rettangolo che include il soggetto."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Elaborazione in corso dell'anteprima del panorama..."
+msgstr "Elaborazione in corso dell'anteprima della maschera..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Errore nell'elaborazione del file XML"
+msgstr "Errore durante l'elaborazione dell'immagine..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
 #, kde-format
@@ -8801,18 +8794,15 @@ msgid "A tool to blur the background of an image"
 msgstr "Strumento per sfocare lo sfondo di un'immagine"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "Questo strumento dell'editor delle immagini può sfocare lo sfondo del "
-"soggetto da un'immagine."
+"soggetto da un'immagine per riprodurre l'effetto profondità di campo da un "
+"obiettivo."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8826,12 +8816,13 @@ msgid "Background Blur Tool"
 msgstr "Strumento Sfocatura sfondo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "You must select before a rectangular area including the subject..."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
-msgstr "Devi prima selezionare un'area rettangolare che includa il soggetto..."
+msgstr ""
+"Devi prima selezionare un'area rettangolare che includa il soggetto."
+"<br>Nota: puoi regolare la zona nello strumento successivamente."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -35230,9 +35221,7 @@ msgid "Search in"
 msgstr "Ricerca in"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label short translated text about the Face Worflow."
-#| msgid "Workflow:"
+#, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Flusso di lavoro:"
@@ -36220,10 +36209,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "Esiste già un file o una cartella chiamata %1 in %2"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "Impossibile spostare la cartella %1 nell'album %2"
+msgstr "Spostamento di cartella ricorsiva %1 rilevato nell'album %2"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -36250,10 +36238,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "Impossibile spostare il file %1 nell'album %2"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "Impossibile spostare la cartella %1 nell'album %2"
+msgstr "Copia di cartella ricorsiva %1 rilevata nell'album %2"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format
@@ -45260,8 +45247,7 @@ msgid "None"
 msgstr "Nessuna"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-#| msgid "Pick Label: %1"
+#, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "Etichetta di scelta: %1"
@@ -53227,17 +53213,7 @@ msgstr ""
 "primo avvio per essere in grado di usare digiKam velocemente.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53258,7 +53234,7 @@ msgstr ""
 "posizione per i file di configurazione è %1 (la vecchia è %2). Sono "
 "segnalati problemi non risolti durante il riuso dei vecchi file di "
 "configurazione, non è dunque consigliato eseguire questa operazione per il "
-"momento, e il rischio è tutto a tuo carico.</p></qt>"
+"momento, dunque il suo uso è a tuo rischio.</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
@@ -53443,12 +53419,10 @@ msgstr ""
 "riferimento della ricerca."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "Aggiorna codici di controllo"
+msgstr "Aggiorna tutti i codici di controllo"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
@@ -65678,13 +65652,7 @@ msgid "JPEG"
 msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving Versionned Images</"
-#| "title><para>Select the file format in which edited images are saved "
-#| "automatically. Format-specific options, like compression settings, can be "
-#| "configured on the <interface>Format Options</interface> tab.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Default File Format for Saving Versioned Images</title><para>Select "
