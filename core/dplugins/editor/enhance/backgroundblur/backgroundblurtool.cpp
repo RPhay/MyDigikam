@@ -60,6 +60,7 @@ public:
     ImageGuideWidget*    previewWidget            = nullptr;
     EditorToolSettings*  gboxSettings             = nullptr;
     DPreviewManager*     maskPreview              = nullptr;
+    QSize                orgSize;
     QRectF               orgSelection;
 };
 
@@ -115,8 +116,9 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
                                       "see if the subject have been isolated properly by the segmentation process. "
                                       "The green area is the subject where the blur effect will not applied. "
                                       "You can re-adjust in this view the rectangle including the subject."));
-
-    d->orgSelection         = d->previewWidget->imageIface()->selectionRect();
+    ImageIface iface;
+    d->orgSelection         = iface.selectionRect();
+    d->orgSize              = iface.originalSize();
 
     // --------------------------------------------------------
 
@@ -193,12 +195,12 @@ void BackgroundBlurTool::slotResetSettings()
 
 void BackgroundBlurTool::slotSelectionChanged(const QRectF& previewSel)
 {
-    ImageIface* const iface  = d->previewWidget->imageIface();
+    ImageIface* const iface = d->previewWidget->imageIface();
 
     // Compute the scale factor between mask preview and original canvas sizes.
     // Readjust the selection in editor canvas.
 
-    float scaleFactor = static_cast<float>(iface->originalSize().width() / iface->previewSize().width());
+    float scaleFactor       = static_cast<float>(d->orgSize.width() / iface->preview().width());
 
     float top    = previewSel.topLeft().x() * scaleFactor;
 
@@ -245,49 +247,43 @@ void BackgroundBlurTool::preparePreview()
     // Compute the scale factor between original canvas and mask preview sizes.
     // Readjust the selection in the mask preview.
 
-    float scaleFactor = static_cast<float>(iface->originalSize().width() / iface->previewSize().width());
-
-    QRectF previewSel;
-
     // Normalize.
 
-    float top    = d->orgSelection.topLeft().x() / scaleFactor;
+    double left   = (double)(d->orgSelection.left() / d->orgSize.width()  * preview.width());
 
-    if (top < 0)
+    if (left < 0.0)
     {
-        top = 0;
+        left = 0.0;
     }
 
-    float left   = d->orgSelection.topLeft().y() / scaleFactor;
+    double top    = (double)(d->orgSelection.top() / d->orgSize.height() * preview.height());
 
-    if (left < 0)
+    if (top < 0.0)
     {
-        left = 0;
+        top = 0.0;
     }
 
-    previewSel.setTopLeft(QPointF(top, left));
+    double width  = (double)(d->orgSelection.width() / d->orgSize.width() * preview.width());
 
-    float bottom = d->orgSelection.bottomRight().x() / scaleFactor;
-
-    if (bottom > preview.width())
+    if (width > preview.width())
     {
-        bottom = preview.width();
+        width = preview.width();
     }
 
-    float right  = d->orgSelection.bottomRight().y() / scaleFactor;
+    double height = (double)(d->orgSelection.height() / d->orgSize.height() * preview.height());
 
-    if (right > preview.height())
+    if (height > preview.height())
     {
-        right = preview.height();
+        height = preview.height();
     }
 
-    previewSel.setBottomRight(QPointF(bottom, right));
+    QRectF previewSel = QRectF(left, top, width, height);
 
     d->maskPreview->setSelectionArea(previewSel);
 
     BackgroundBlurFilter* const filter = new BackgroundBlurFilter(&preview,
                                                                   previewSel,
-                                                                  d->radiusInput->value() / scaleFactor,
+                                                                  d->radiusInput->value() / (static_cast<float>(d->orgSize.width() / iface->preview().width())),
                                                                   d->transitionInput->value(),
                                                                   d->iterationsInput->value(),
                                                                   this);
