@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-09-14 15:08+0200\n"
+"PO-Revision-Date: 2025-09-22 12:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3334,10 +3334,7 @@ msgstr ""
 "Afegir els convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
@@ -8685,11 +8682,9 @@ msgstr ""
 "motiu. Açò permet simular una profunditat de camp d'una lent."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Informació del motiu"
+msgstr "Aïllament del motiu:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
 #, kde-format
@@ -8706,13 +8701,7 @@ msgid "Subject Mask:"
 msgstr "Màscara del motiu:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "This view show the segmentation of the subject determined from the "
-#| "selection. The resulting green mask is superposed to the original image "
-#| "to see if the subject have been isolated properly by the segmentation "
-#| "process. The green area is the subject where the blur effect will not "
-#| "applied."
+#, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
@@ -8723,7 +8712,8 @@ msgstr ""
 "Esta vista mostra la segmentació del motiu determinat a partir de la "
 "selecció. La màscara verda resultant se superposa a la imatge original per a "
 "veure si el procés de segmentació ha aïllat adequadament el motiu. L'àrea "
-"verda és el motiu a on no s'aplicarà l'efecte difuminat."
+"verda és el motiu a on no s'aplicarà l'efecte difuminat. En esta vista podeu "
+"reajustar el rectangle incloent el motiu."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, kde-format
@@ -8754,17 +8744,14 @@ msgid "A tool to blur the background of an image"
 msgstr "Una eina per a difuminar el fons d'una imatge"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
 msgstr ""
-"Esta eina de l'editor d'imatges pot difuminar el fons del motiu d'una imatge."
+"Esta eina de l'editor d'imatges pot difuminar el fons del motiu d'una imatge "
+"per a reproduir l'efecte de profunditat de camp d'una lent."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8778,12 +8765,13 @@ msgid "Background Blur Tool"
 msgstr "Eina de difuminat del fons"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "You must select before a rectangular area including the subject..."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
-msgstr "Cal seleccionar abans una àrea rectangular que incloga el motiu…"
+msgstr ""
+"Cal seleccionar abans una àrea rectangular que incloga el motiu.<br>Nota: "
+"podreu reajustar la zona més tard a l'eina."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -36167,10 +36155,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "Ja existix un fitxer o una carpeta anomenats %1 a %2"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "No s'ha pogut moure la carpeta %1 cap a l'àlbum %2"
+msgstr "Moviment recursiu de la carpeta %1 detectat a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -36197,10 +36184,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "No s'ha pogut moure el fitxer %1 a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "No s'ha pogut moure la carpeta %1 cap a l'àlbum %2"
+msgstr "Copia recursiva de la carpeta %1 detectada a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format
@@ -45248,8 +45234,7 @@ msgid "None"
 msgstr "Cap"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-#| msgid "Pick Label: %1"
+#, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "Rètol de selecció: %1"
@@ -53231,17 +53216,7 @@ msgstr ""
 "inicial per a poder utilitzar ràpidament digiKam.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53261,8 +53236,8 @@ msgstr ""
 "còpia de seguretat de la base de dades abans de continuar.</p><p>La ubicació "
 "nova per als fitxers de configuració és %1 (l'antiga %2). Hi ha problemes no "
 "resolts que informen quan es reutilitzen els fitxers de configuració antics, "
-"i per açò de moment no es recomana que ho feu, d'altra manera serà davall el "
-"vostre propi risc.</p></qt>"
+"i per açò de moment no es recomana que ho feu, d'altra manera utilitzeu-ho "
+"davall el vostre propi risc.</p></qt>"
 
 # skip-rule: punctuation-period-no
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
@@ -65696,13 +65671,7 @@ msgid "JPEG"
 msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving Versionned Images</"
-#| "title><para>Select the file format in which edited images are saved "
-#| "automatically. Format-specific options, like compression settings, can be "
-#| "configured on the <interface>Format Options</interface> tab.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Default File Format for Saving Versioned Images</title><para>Select "
@@ -68788,12 +68757,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#, fuzzy
-#~| msgid "Subject segmentation:"
-#~ msgid "Subject Segmentation:"
-#~ msgstr "Segmentació del motiu:"
-
-#~ msgctxt "@info: pick lablel selector"
-#~ msgid "Pick Label: %1"
-#~ msgstr "Rètol de selecció: %1"
