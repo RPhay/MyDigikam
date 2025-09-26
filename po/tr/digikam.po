@@ -56008,9 +56008,9 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
-"<p><b>Güney Açısal Eşit Uzaklıklı İzdüşüm</b> (“Balıkgözü”)</"
-"p><p>Uygulamalar: Sismik ve radyo verilerinin görüntülenmesi ve sayısal "
-"gezegenevlerinde kullanım için.</p>"
+"<p><b>Yancasal Eşit Uzaklıklı İzdüşüm</b> (“Balıkgözü”)</p><p>Uygulamalar: "
+"Sismik ve radyo verilerinin görüntülenmesi ve sayısal gezegenevlerinde "
+"kullanım için.</p>"
 
 #: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
 #, kde-format

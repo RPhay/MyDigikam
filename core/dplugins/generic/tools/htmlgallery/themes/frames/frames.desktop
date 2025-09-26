@@ -37,6 +37,7 @@ Name[uk]=Рамки
 Name[zh_CN]=Frames 相框
 Name[zh_TW]=Frames
 Comment=A frame theme
+Comment[ar]=نسق إطارات
 Comment[be]=Тэма з рамкамі
 Comment[bg]=Тема с рамка
 Comment[ca]=Un tema de marcs
@@ -73,6 +74,7 @@ Comment[zh_TW]=一個框架主題
 
 [X-HTMLGallery Author]
 Name=Ruediger Bente
+Name[ar]=روديجر بنت
 Name[be]=Ruediger Bente
 Name[bg]=Ruediger Bente
 Name[ca]=Ruediger Bente

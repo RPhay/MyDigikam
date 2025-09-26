@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=Blue Frames
+Name[ar]=إطارات زرقاء
 Name[be]=Сінія рамкі
 Name[bg]=Сини рамки
 Name[ca]=Marcs blaus
@@ -35,6 +36,7 @@ Name[uk]=Сині рамки
 Name[zh_CN]=蓝色型 Frames
 Name[zh_TW]=藍色框架
 Comment=A theme variation based Frames theme
+Comment[ar]=نسق مختلف يعتمد على نسق إطارات
 Comment[be]=Тэма на аснове аздаблення з сінімі рамкамі
 Comment[bg]=Вариация на темата, базирана на темата "Рамки"
 Comment[ca]=Una variació del tema basat en el tema Marcs
@@ -68,6 +70,7 @@ Comment[zh_TW]=一個基於 Frames 主題的變種
 
 [X-HTMLGallery Author]
 Name=Elizabeth Marmorstein
+Name[ar]=إليزابيث مارمورستين
 Name[be]=Elizabeth Marmorstein
 Name[bg]=Elizabeth Marmorstein
 Name[ca]=Elizabeth Marmorstein
@@ -107,6 +110,7 @@ Url=mailto:purplegamba@cox.net
 
 [X-HTMLGallery Preview]
 Name=Blue Frames
+Name[ar]=إطارات زرقاء
 Name[be]=Сінія рамкі
 Name[bg]=Сини рамки
 Name[ca]=Marcs blaus

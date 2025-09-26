@@ -37,6 +37,7 @@ Name[uk]=Сніг
 Name[zh_CN]=冰雪
 Name[zh_TW]=雪花
 Comment=A perfect match for your mountain holidays
+Comment[ar]=تطابق مثالي لعطلاتك الجبلية
 Comment[be]=Вельмі пасуе для горнага адпачынку
 Comment[bg]=Перфектно съчетание за вашата почивка в планината
 Comment[ca]=Una coincidència perfecta per a les vostres vacances de muntanya
@@ -74,6 +75,7 @@ Comment[zh_TW]=非常適合假日上山的照片
 
 [X-HTMLGallery Author]
 Name=Aurélien Gâteau
+Name[ar]=أورليان جاتو
 Name[be]=Aurélien Gâteau
 Name[bg]=Aurélien Gâteau
 Name[ca]=Aurélien Gâteau
