@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2014-10-17
- * Description : test for implementation of ditemslist api
+ * Description : test for implementation of DItemsList api
  *
  * SPDX-FileCopyrightText: 2011-2012 by A Janardhan Reddy <annapareddyjanardhanreddy at gmail dot com>
  * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -58,7 +58,9 @@ protected:
         QImage dst;
 
         if (m_cancel)
+        {
             return;
+        }
 
         Q_EMIT signalProgress(20);
 
@@ -69,7 +71,9 @@ protected:
         }
 
         if (m_cancel)
+        {
             return;
+        }
 
         Q_EMIT signalProgress(40);
 
@@ -77,14 +81,18 @@ protected:
         transform.rotate(90);
 
         if (m_cancel)
+        {
             return;
+        }
 
         Q_EMIT signalProgress(60);
 
         dst = src.transformed(transform);
 
         if (m_cancel)
+        {
             return;
+        }
 
         Q_EMIT signalProgress(80);
 
@@ -139,7 +147,11 @@ void ActionThread::rotate(const QList<QUrl>& list)
 void ActionThread::slotJobDone()
 {
     Task* const task = dynamic_cast<Task*>(sender());
-    if (!task) return;
+
+    if (!task)
+    {
+            return;
+    }
 
     if (task->errString.isEmpty())
     {
@@ -154,7 +166,11 @@ void ActionThread::slotJobDone()
 void ActionThread::slotJobProgress(int p)
 {
     Task* const task = dynamic_cast<Task*>(sender());
-    if (!task) return;
+
+    if (!task)
+    {
+        return;
+    }
 
     Q_EMIT signalProgress(task->fileUrl, p);
 }
@@ -162,7 +178,11 @@ void ActionThread::slotJobProgress(int p)
 void ActionThread::slotJobStarted()
 {
     Task* const task = dynamic_cast<Task*>(sender());
-    if (!task) return;
+
+    if (!task)
+    {
+        return;
+    }
 
     Q_EMIT signalStarting(task->fileUrl);
 }
@@ -173,27 +193,19 @@ class Q_DECL_HIDDEN DItemsListTest::Private
 {
 public:
 
-    explicit Private()
-    {
-        page        = nullptr;
-        buttons     = nullptr;
-        progressBar = nullptr;
-        applyBtn    = nullptr;
-        listView    = nullptr;
-        thread      = nullptr;
-    }
+    Private() = default;
 
 public:
 
-    QWidget*          page;
+    QWidget*          page          = nullptr;
 
-    QDialogButtonBox* buttons;
-    QProgressBar*     progressBar;
-    QPushButton*      applyBtn;
+    QDialogButtonBox* buttons       = nullptr;
+    QProgressBar*     progressBar   = nullptr;
+    QPushButton*      applyBtn      = nullptr;
 
-    DItemsList*      listView;
+    DItemsList*       listView      = nullptr;
 
-    ActionThread*     thread;
+    ActionThread*     thread        = nullptr;
 };
 
 DItemsListTest::DItemsListTest(QWidget* const parent)
