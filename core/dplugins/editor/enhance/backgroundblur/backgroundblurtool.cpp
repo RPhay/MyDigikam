@@ -196,43 +196,40 @@ void BackgroundBlurTool::slotResetSettings()
 void BackgroundBlurTool::slotSelectionChanged(const QRectF& previewSel)
 {
     ImageIface* const iface = d->previewWidget->imageIface();
+    DImg preview            = iface->preview();
 
     // Compute the scale factor between mask preview and original canvas sizes.
-    // Readjust the selection in editor canvas.
+    // Readjust the selection in editor canvas and normaize.
 
-    float scaleFactor       = static_cast<float>(d->orgSize.width() / iface->preview().width());
-
-    float top    = previewSel.topLeft().x() * scaleFactor;
-
-    if (top < 0)
-    {
-        top = 0;
-    }
-
-    float left   = previewSel.topLeft().y() * scaleFactor;
+    double left   = (double)(previewSel.left() * d->orgSize.width()  / preview.width());
 
     if (left < 0)
     {
         left = 0;
     }
 
-    d->orgSelection.setTopLeft(QPointF(top, left));
+    double top    = (double)(previewSel.top() * d->orgSize.height() / preview.height());
 
-    float bottom = previewSel.bottomRight().x() * scaleFactor;
-
-    if (bottom > iface->originalSize().width())
+    if (top < 0)
     {
-        bottom = iface->originalSize().width();
+        top = 0;
     }
 
-    float right  = previewSel.bottomRight().y() * scaleFactor;
+    double width  = (double)(previewSel.width() * d->orgSize.width() / preview.width());
 
-    if (right > iface->originalSize().height())
+    if (width > iface->originalSize().width())
     {
-        right = iface->originalSize().height();
+        width = iface->originalSize().width();
     }
 
-    d->orgSelection.setBottomRight(QPointF(bottom, right));
+    double height = (double)(previewSel.height() * d->orgSize.height() / preview.height());
+
+    if (height > iface->originalSize().height())
+    {
+        height = iface->originalSize().height();
+    }
+
+    d->orgSelection = QRectF(left, top, width, height);
 
     slotTimer();
 }
@@ -241,13 +238,11 @@ void BackgroundBlurTool::preparePreview()
 {
     d->maskPreview->setBusy(true, i18nc("@info", "Processing mask preview..."));
 
-    ImageIface* const iface  = d->previewWidget->imageIface();
-    DImg preview             = iface->preview();
+    ImageIface* const iface = d->previewWidget->imageIface();
+    DImg preview            = iface->preview();
 
     // Compute the scale factor between original canvas and mask preview sizes.
-    // Readjust the selection in the mask preview.
-
-    // Normalize.
+    // Readjust the selection in the mask preview and normalize.
 
     double left   = (double)(d->orgSelection.left() / d->orgSize.width()  * preview.width());
 
