@@ -21,6 +21,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QIcon>
+#include <QTimer>
 
 // KDE includes
 
@@ -231,7 +232,7 @@ void BackgroundBlurTool::slotSelectionChanged(const QRectF& previewSel)
 
     d->orgSelection = QRectF(left, top, width, height);
 
-    slotTimer();
+    QTimer::singleShot(500, this, SLOT(slotTimer()));
 }
 
 void BackgroundBlurTool::preparePreview()
