@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-22 01:58+0000\n"
+"POT-Creation-Date: 2025-09-27 02:01+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -5972,7 +5972,7 @@ msgid ""
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8641,32 +8641,32 @@ msgstr "ការ​កែ​រូបភាព​តូច..."
 msgid "Background Blur Filter"
 msgstr "ពណ៌​ផ្ទៃ​ខាង​ក្រោយ ៖"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Progressive Transition:"
 msgstr "ព័ត៌មាន​វឌ្ឍនភាព"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
 #, fuzzy, kde-format
 msgid "Subject Isolation:"
 msgstr "ព័ត៌មាន​អំពី​ការ​ច្រឹប"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
 #, fuzzy, kde-format
 #| msgid ""
 #| "This value controls the number of iterations to use with the Neon and "
@@ -8676,13 +8676,13 @@ msgid ""
 "process to isolate more and less the subject."
 msgstr "ពិនិត្យ​មើល​​​ចំនួន​តម្លៃ​​​សម្រាប់​ការ​ធ្វើ​ជា​ថ្មី ដើម្បី​ប្រើ​ជា​មួយ​ Neon និង​រក​បែបផែន​គែម ។"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgid "Subject Mask:"
 msgstr "ប្រធានបទ​"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8692,21 +8692,21 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
 #, fuzzy, kde-format
 #| msgid "Processing Panorama Preview..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "កំពុង​ដំណើរការ​ការ​មើល​ទស្សនីយភាព​ជា​មុន..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
 #, fuzzy, kde-format
 #| msgid "Error loading GPX file"
 #| msgid_plural "Error loading GPX files"
 msgid "Error while processing image..."
 msgstr "កំហុស​ផ្ទុក​ឯកសារ​រូបភាព GPX"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

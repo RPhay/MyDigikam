@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-22 01:58+0000\n"
+"POT-Creation-Date: 2025-09-27 02:01+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -5902,7 +5902,7 @@ msgstr ""
 "viñetas ás imaxes.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8773,7 +8773,7 @@ msgstr "Corrección de viñetado…"
 msgid "Background Blur Filter"
 msgstr "Cor de fondo: "
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
 #, fuzzy, kde-format
 #| msgid ""
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
@@ -8785,27 +8785,27 @@ msgstr ""
 "Unha suavidade de 0 non ten efecto ningún, 1 e superiores determinan o raio "
 "da matriz de borrón gaussiano que estabelece cando desenfocar a imaxe."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Progressive Transition:"
 msgstr "Información sobre a evolución"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Subject Information"
 msgid "Subject Isolation:"
 msgstr "Información sobre o asunto"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -8818,13 +8818,13 @@ msgstr ""
 "Este valor controla o número de iteracións usadas nos efectos «Neon» e "
 "«Atopar as arestas»."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgid "Subject Mask:"
 msgstr "Asuntos"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8834,21 +8834,21 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
 #, fuzzy, kde-format
 #| msgid "Processing Panorama Preview..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Procesando a vista previa do panorama…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Error processing XML file"
 msgid "Error while processing image..."
 msgstr "Produciuse un erro ao procesar o ficheiro XML"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

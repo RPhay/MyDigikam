@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-22 01:58+0000\n"
-"PO-Revision-Date: 2025-09-17 10:06+0000\n"
+"POT-Creation-Date: 2025-09-27 02:01+0000\n"
+"PO-Revision-Date: 2025-09-26 13:10+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -5798,7 +5798,7 @@ msgstr ""
 "hornskyggingu (vignetting) í myndum.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8553,7 +8553,7 @@ msgstr "Laga linsuskyggingu í hornum..."
 msgid "Background Blur Filter"
 msgstr "Sía fyrir móðun bakgrunns"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8562,12 +8562,12 @@ msgstr ""
 "Stilltu þetta gildi til að ákveða fylkisradíusinn sem aftur hefur áhrif á "
 "hve mikið bakgrunnur myndar er mýktur í kringum viðfangsefnið."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Vaxandi (progressive) stöðuskipti:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8576,14 +8576,12 @@ msgstr ""
 "Stilltu þetta gildi til að setja breytilega móðun milli nær og fjær miðað "
 "við viðfangsefnið. Þetta hermir eftir dýptasviði linsu."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Upplýsingar um viðfangsefni"
+msgstr "Afmörkun viðfangsefnis:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8592,19 +8590,13 @@ msgstr ""
 "Stilltu þetta gildi til að stýra fjölda ítrekana við upphlutun myndefnisins "
 "og þannig einangra viðfangsefnið meira eða minna."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
 #, kde-format
 msgid "Subject Mask:"
 msgstr "Maski viðfangsefnis:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "This view show the segmentation of the subject determined from the "
-#| "selection. The resulting green mask is superposed to the original image "
-#| "to see if the subject have been isolated properly by the segmentation "
-#| "process. The green area is the subject where the blur effect will not "
-#| "applied."
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
+#, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
@@ -8615,20 +8607,22 @@ msgstr ""
 "Þessi sýn birtir uppskiptingu viðfangsefnisins sem ákvarðað var með valinu. "
 "Útkoman er grænn maski sem lagður er yfir upprunalegu myndina til að geta "
 "skoðað hvort uppskiptingin hafi náð að einangra viðfangsefnið svo viðunandi "
-"sé. Græna svæðið táknar viðfangsefnið og þá það svæði sem ekki verður móskað."
+"sé. Græna svæðið táknar viðfangsefnið og þá það svæði sem ekki verður "
+"móskað. Þú getur aðlagað ferhyrninginn sem inniheldur viðfangsefnið í "
+"þessari sýn."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Vinn forskoðun maska..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Villa við vinnslu myndar..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
 #, kde-format
 msgid "Background Blur"
 msgstr "Móðun bakgrunns"
@@ -8646,16 +8640,14 @@ msgid "A tool to blur the background of an image"
 msgstr "Verkfæri til að móða bakgrunn myndar"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Image Editor tool can blur the background of the subject from an "
-#| "image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
-msgstr "Þetta myndvinnsluverkfæri getur bakgrunn viðfangsefnis í myndum."
+msgstr ""
+"Þetta myndvinnsluverkfæri getur móskað bakgrunn viðfangsefnis í myndum til "
+"að líkja eftir dýptarskerpingu linsu."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
@@ -8669,12 +8661,13 @@ msgid "Background Blur Tool"
 msgstr "Verkfæri fyrir móðun bakgrunns"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "You must select before a rectangular area including the subject..."
+#, kde-format
 msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
-msgstr "Áður verður þú að velja ferhyrnt svæði sem innifelur viðfangsefnið..."
+msgstr ""
+"Áður verður þú að velja ferhyrnt svæði sem innifelur viðfangsefnið."
+"<br>Athugaðu: þú getur aðlagað svæðið betur síðar í verkferlinu."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -35683,10 +35676,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "Nú þegar er til skrá eða mappa sem heitir %1 í %2"
 
 #: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "Gat ekki fært möppuna %1 í albúmið %2"
+msgstr "Greindi færslu undirmöppunnar %1 í albúmið %2"
 
 #: core/libs/iojobs/iojob.cpp:173
 #, kde-format
@@ -35713,10 +35705,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "Gat ekki fært skrána %1 í albúmið %2"
 
 #: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "Gat ekki fært möppuna %1 í albúmið %2"
+msgstr "Greindi afritun undirmöppunnar %1 í albúmið %2"
 
 #: core/libs/iojobs/iojob.cpp:230
 #, kde-format
@@ -44678,8 +44669,7 @@ msgid "None"
 msgstr "Ekkert"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-#| msgid "Pick Label: %1"
+#, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "Sérmerking: %1"

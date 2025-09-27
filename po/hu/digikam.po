@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-22 01:58+0000\n"
+"POT-Creation-Date: 2025-09-27 02:01+0000\n"
 "PO-Revision-Date: 2025-08-12 22:09+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -5821,7 +5821,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8505,7 +8505,7 @@ msgstr "Vignettálás korrekció ..."
 msgid "Background Blur Filter"
 msgstr "Háttérszín:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
 #, fuzzy, kde-format
 #| msgid ""
 #| "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -8517,40 +8517,40 @@ msgstr ""
 "A nulla értéknek nincs eredménye, az 1 és nagyobb értékek meghatározzák az "
 "élesítési mátrix sugarát."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Progressive Transition:"
 msgstr "Folyamat információ"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Device Information"
 msgid "Subject Isolation:"
 msgstr "Eszközinformációk"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgid "Subject Mask:"
 msgstr "Témák"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8560,21 +8560,21 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
 #, fuzzy, kde-format
 #| msgid "Getting preview..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Előnézet elkészítése..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Error processing XML file"
 msgid "Error while processing image..."
 msgstr "Hiba az XML fájl feldolgozása során"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

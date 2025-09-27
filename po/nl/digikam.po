@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-22 01:58+0000\n"
+"POT-Creation-Date: 2025-09-27 02:01+0000\n"
 "PO-Revision-Date: 2025-09-22 14:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -5884,7 +5884,7 @@ msgstr ""
 "vignetteringen van afbeeldingen.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8698,7 +8698,7 @@ msgstr "Vignettering correctie..."
 msgid "Background Blur Filter"
 msgstr "Achtergrond vervaagfilter: "
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8707,12 +8707,12 @@ msgstr ""
 "Zet deze waarde om te se matrixstraal te bepalen die bepaalt hoeveel te "
 "vervagen in de achtergrond rond het onderwerp."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Progressieve overgang:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8721,12 +8721,12 @@ msgstr ""
 "Zet deze waarde om een variabele vervaging dichtbij tot ver van het "
 "onderwerp toe te passen. Dit biedt het simuleren van diepte met een lens."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
 #, kde-format
 msgid "Subject Isolation:"
 msgstr "Onderwerpisolatie"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8735,12 +8735,12 @@ msgstr ""
 "Zet deze waarde om een aantal iteraties te gebruiken gebruikt door het "
 "segmentatieproces om meer en minder onderwerpen te isoleren."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
 #, kde-format
 msgid "Subject Mask:"
 msgstr "Onderwerpmasker:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8756,18 +8756,18 @@ msgstr ""
 "vervagingseffect niet wordt toegepast. U kunt de rechthoek in deze weergave "
 "met het onderwerp opnieuw aanpassen."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Voorbeeld van bewerkingsmasker..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Fout bij verwerken van afbeelding..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
 #, kde-format
 msgid "Background Blur"
 msgstr "Achtergrondvervaging"

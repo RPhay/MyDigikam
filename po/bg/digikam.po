@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-22 01:58+0000\n"
+"POT-Creation-Date: 2025-09-27 02:01+0000\n"
 "PO-Revision-Date: 2025-09-14 15:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -5851,7 +5851,7 @@ msgstr ""
 "винетен ефект към изображенията.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8685,7 +8685,7 @@ msgstr "Корекция на винетирането..."
 msgid "Background Blur Filter"
 msgstr "Филтър за размазване на фона"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8694,12 +8694,12 @@ msgstr ""
 "Задайте тази стойност, за да определите радиуса на матрицата, който определя "
 "колко да се размаже фонът около обекта."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Прогресивен преход:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8709,14 +8709,14 @@ msgstr ""
 "далеч от обекта. Това позволява симулиране на дълбочина на рязкост от "
 "обектив."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Subject Information"
 msgid "Subject Isolation:"
 msgstr "Информация за темата"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8725,12 +8725,12 @@ msgstr ""
 "Задайте тази стойност, за да използвате определен брой итерации, използвани "
 "от процеса на сегментиране, за да изолирате повече или по-малко обекта."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
 #, kde-format
 msgid "Subject Mask:"
 msgstr "Маска на обекта:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "This view show the segmentation of the subject determined from the "
@@ -8751,18 +8751,18 @@ msgstr ""
 "Зелената област е обектът, върху който ефектът на размазване няма да бъде "
 "приложен."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Обработва се визуализация на маската..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Грешка при обработката на изображението..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
 #, kde-format
 msgid "Background Blur"
 msgstr "Размазване на фона"

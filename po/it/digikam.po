@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-22 01:58+0000\n"
+"POT-Creation-Date: 2025-09-27 02:01+0000\n"
 "PO-Revision-Date: 2025-09-23 22:33+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -5871,7 +5871,7 @@ msgstr ""
 "rimuovere le vignettature alle immagini.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:82
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8706,7 +8706,7 @@ msgstr "Correzione della vignettatura..."
 msgid "Background Blur Filter"
 msgstr "Filtro sfocatura sfondo"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:86
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8715,12 +8715,12 @@ msgstr ""
 "Imposta questo valore per determinare il raggio della matrice di sfocatura "
 "dello sfondo attorno al soggetto."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:91
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Transizione progressiva:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:95
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8730,12 +8730,12 @@ msgstr ""
 "partendo dal soggetto. Permette di simulare una profondità di campo da un "
 "obbiettivo."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:100
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
 #, kde-format
 msgid "Subject Isolation:"
 msgstr "Isolamento soggetto:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:104
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8744,12 +8744,12 @@ msgstr ""
 "Imposta il numero di iterazioni da usare nel processo di segmentazione per "
 "l'isolamento progressivo del soggetto."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:109
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
 #, kde-format
 msgid "Subject Mask:"
 msgstr "Maschera soggetto:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:113
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8765,18 +8765,18 @@ msgstr ""
 "non si applica l'effetto di sfocatura. In questa vista puoi regolare di "
 "nuovo il rettangolo che include il soggetto."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Elaborazione in corso dell'anteprima della maschera..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:304
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Errore durante l'elaborazione dell'immagine..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:337
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
 #, kde-format
 msgid "Background Blur"
 msgstr "Sfocatura sfondo"
