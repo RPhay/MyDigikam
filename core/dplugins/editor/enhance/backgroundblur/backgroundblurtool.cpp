@@ -83,8 +83,8 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     QLabel* const label = new QLabel(i18n("Smoothness:"));
     d->radiusInput      = new DIntNumInput();
-    d->radiusInput->setRange(0, 100, 1);
-    d->radiusInput->setDefaultValue(0);
+    d->radiusInput->setRange(1, 100, 1);
+    d->radiusInput->setDefaultValue(1);
     d->radiusInput->setWhatsThis(i18n("Set this value to determine the matrix radius that "
                                       "determines how much to blur the background around the subject."));
 
@@ -277,9 +277,14 @@ void BackgroundBlurTool::preparePreview()
 
     d->maskPreview->setSelectionArea(previewSel);
 
+    float oWidth                       = d->orgSize.width();
+    float pWidth                       = iface->preview().width();
+
+    int radius                         = qRound(d->radiusInput->value() / (oWidth / pWidth));
+
     BackgroundBlurFilter* const filter = new BackgroundBlurFilter(&preview,
                                                                   previewSel,
-                                                                  d->radiusInput->value() / (static_cast<float>(d->orgSize.width() / iface->preview().width())),
+                                                                  qMax(radius, 1),
                                                                   d->transitionInput->value(),
                                                                   d->iterationsInput->value(),
                                                                   this);
