@@ -230,6 +230,9 @@ void BackgroundBlurTool::slotSelectionChanged(const QRectF& previewSel)
         height = iface->originalSize().height();
     }
 
+    width           = qMax(width, 1.0);
+    height          = qMax(height, 1.0);
+
     d->orgSelection = QRectF(left, top, width, height);
 
     QTimer::singleShot(500, this, SLOT(slotTimer()));
@@ -272,6 +275,9 @@ void BackgroundBlurTool::preparePreview()
     {
         height = preview.height();
     }
+
+    width             = qMax(width, 1.0);
+    height            = qMax(height, 1.0);
 
     QRectF previewSel = QRectF(left, top, width, height);
 
