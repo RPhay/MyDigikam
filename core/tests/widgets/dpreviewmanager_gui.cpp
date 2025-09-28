@@ -57,7 +57,7 @@ DPreviewManagerTest::DPreviewManagerTest(QWidget* const parent)
     : QDialog(parent),
       d      (new Private)
 {
-    setWindowTitle(QString::fromUtf8("Rotate Images to 180 Degrees"));
+    setWindowTitle(QString::fromUtf8("Select an Area Over the Image"));
 
     d->buttons               = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Close, this);
     d->loadBtn = d->buttons->button(QDialogButtonBox::Apply);
