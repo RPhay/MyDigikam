@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-27 02:01+0000\n"
+"POT-Creation-Date: 2025-09-28 02:10+0000\n"
 "PO-Revision-Date: 2025-09-25 11:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -5838,7 +5838,7 @@ msgstr ""
 "<para>تستطيع أداة مدير قائمة المعالجة أن تزيل أو تضيف تظليلًا للصور.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8561,7 +8561,7 @@ msgstr "تصحيح التظليل..."
 msgid "Background Blur Filter"
 msgstr "مرشح تمويه الخلفية"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8570,12 +8570,12 @@ msgstr ""
 "اضبط هذه القيمة لتحديد نصف قطر المصفوفة الذي يحدد مقدار تمويه الخلفية حول "
 "الموضوع."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "انتقال تدريجي:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:97
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8584,12 +8584,12 @@ msgstr ""
 "اضبط هذه القيمة لتطبيق تمويه متغير من القريب إلى البعيد للموضوع. هذا يسمح "
 "بمحاكاة عمق المجال من العدسة."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
 #, kde-format
 msgid "Subject Isolation:"
 msgstr "عزل الموضوع:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:106
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8598,12 +8598,12 @@ msgstr ""
 "اضبط هذه القيمة لاستخدام عدد من التكرارات المستخدمة بواسطة عملية التجزئة "
 "لعزل الموضوع بشكل أكبر وأقل."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
 #, kde-format
 msgid "Subject Mask:"
 msgstr "قناع الموضوع:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:115
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8617,18 +8617,18 @@ msgstr ""
 "المنطقة الخضراء هي الموضوع حيث لن يُطبق تأثير التمويه. يمكنك إعادة ضبط "
 "المستطيل الذي يشمل الموضوع في هذا العرض."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "يعالج معاينة القناع..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:296
 #, kde-format
 msgid "Error while processing image..."
 msgstr "خطأ أثناء معالجة الصورة..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:329
 #, kde-format
 msgid "Background Blur"
 msgstr "تمويه الخلفيّة"

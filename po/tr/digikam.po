@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-27 02:01+0000\n"
+"POT-Creation-Date: 2025-09-28 02:10+0000\n"
 "PO-Revision-Date: 2025-09-22 16:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -5820,7 +5820,7 @@ msgstr ""
 "kaldırır.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8611,7 +8611,7 @@ msgstr "Vinyet Düzeltmesi…"
 msgid "Background Blur Filter"
 msgstr "Arka Plan Bulanıklığı Süzgeci"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8620,12 +8620,12 @@ msgstr ""
 "Öznenin çevresindeki arka planın ne kadar bulanıklaştırılacağını belirleyen "
 "matris yarıçapını belirlemek için bu değeri ayarlayın."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "İlerlemeli geçiş:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:97
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8635,12 +8635,12 @@ msgstr ""
 "değeri ayarlayın. Bu, bir mercekten olan alan derinliğini benzetmeye olanak "
 "tanır."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
 #, kde-format
 msgid "Subject Isolation:"
 msgstr "Konu izolasyonu:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:106
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8649,12 +8649,12 @@ msgstr ""
 "Öznenin daha azını veya daha fazlasını yalıtmak için bölütlendirme işlemi "
 "tarafından kullanılan yineleme değerini burada ayarlayın."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
 #, kde-format
 msgid "Subject Mask:"
 msgstr "Konu maskesi:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:115
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8669,18 +8669,18 @@ msgstr ""
 "alan, öznede bulanıklaştırma efektinin uygulanmayacağı kısımdır. Bu "
 "görünümde, özneyi de içeren dörtgeni yeniden ayarlayabilirsiniz."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Maske önizlemesi işleniyor…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:296
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Görsel işlenirken hata oluştu."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:329
 #, kde-format
 msgid "Background Blur"
 msgstr "Arka plan bulanıklığı"

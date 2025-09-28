@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-27 02:01+0000\n"
+"POT-Creation-Date: 2025-09-28 02:10+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -5739,7 +5739,7 @@ msgid ""
 msgstr "imatges"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:83
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8347,45 +8347,45 @@ msgstr ""
 msgid "Background Blur Filter"
 msgstr "Color de fons :"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:87
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:92
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgid "Progressive Transition:"
 msgstr "እንደገና አስጀምሩ"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:96
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:97
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:101
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Subject Isolation:"
 msgstr "imatges"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:105
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:106
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
 #, kde-format
 msgid "Subject Mask:"
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:115
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8395,20 +8395,20 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:242
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Diaporama"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:300
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:296
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Error while processing image..."
 msgstr "imatges"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:333
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:329
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
