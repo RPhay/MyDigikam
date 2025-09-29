@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 02:10+0000\n"
+"POT-Creation-Date: 2025-09-29 02:01+0000\n"
 "PO-Revision-Date: 2025-09-26 18:02-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -8706,18 +8706,18 @@ msgstr ""
 "será aplicado. Você pode reajustar nesta visualização o retângulo que inclui "
 "o assunto."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Processando a visualização da máscara..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:296
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Erro ao processar imagem..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:329
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, kde-format
 msgid "Background Blur"
 msgstr "Desfoque do plano de fundo"

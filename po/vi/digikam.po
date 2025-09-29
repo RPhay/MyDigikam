@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 02:10+0000\n"
+"POT-Creation-Date: 2025-09-29 02:01+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -8371,18 +8371,18 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Thuộc tính"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:296
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, fuzzy, kde-format
 msgid "Error while processing image..."
 msgstr "Gặp lỗi khi lưu tệp"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:329
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, fuzzy, kde-format
 msgid "Background Blur"
 msgstr "Màu &nền:"

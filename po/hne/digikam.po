@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 02:10+0000\n"
+"POT-Creation-Date: 2025-09-29 02:01+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -8370,19 +8370,19 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "प्रोसेसिंग..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:296
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, fuzzy, kde-format
 msgid "Error while processing image..."
 msgstr "फोटू '%1' ल लोड करे मं गलती होइस"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:329
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, fuzzy, kde-format
 msgid "Background Blur"
 msgstr "पिछोत अंगना के रंगः (&B)"

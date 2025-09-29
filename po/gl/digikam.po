@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 02:10+0000\n"
+"POT-Creation-Date: 2025-09-29 02:01+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -8834,21 +8834,21 @@ msgid ""
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
 #, fuzzy, kde-format
 #| msgid "Processing Panorama Preview..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Procesando a vista previa do panorama…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:296
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Error processing XML file"
 msgid "Error while processing image..."
 msgstr "Produciuse un erro ao procesar o ficheiro XML"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:329
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

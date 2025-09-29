@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 02:10+0000\n"
+"POT-Creation-Date: 2025-09-29 02:01+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -8291,18 +8291,18 @@ msgstr ""
 "上，以便查看主体是否已在细分处理中被正确分离。绿色区域即是主体，该区域不会应"
 "用模糊效果。您可以在此视图中重新调整包含主体的矩形区域。"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:240
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "正在处理蒙版预览..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:296
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, kde-format
 msgid "Error while processing image..."
 msgstr "处理图像时发生错误..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:329
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, kde-format
 msgid "Background Blur"
 msgstr "背景模糊"
