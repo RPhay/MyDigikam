@@ -33,7 +33,7 @@ if(OpenGL_FOUND AND OPENGL_GLU_FOUND AND OpenGL_GLX_FOUND AND Qt${QT_VERSION_MAJ
 
     set(HAVE_OPENGL TRUE)
 
-elseif()
+else()
 
     set(HAVE_OPENGL FALSE)
 
@@ -43,7 +43,7 @@ if(Qt6_FOUND AND Qt${QT_VERSION_MAJOR}OpenGLWidgets_FOUND)
 
     set(HAVE_OPENGL TRUE)
 
-elseif()
+else()
 
     set(HAVE_OPENGL FALSE)
 
