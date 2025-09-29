@@ -49,6 +49,7 @@ public:
 
     Qt::SortOrder        sortOrder          = Qt::DescendingOrder;
     bool                 sortEnabled        = true;
+    bool                 suspendThumbs      = true;
 
     QWidget*             displayWidget      = nullptr;
 
@@ -232,11 +233,15 @@ void DTrashItemModel::sort(int column, Qt::SortOrder order)
 
 bool DTrashItemModel::pixmapForItem(const QString& path, QPixmap& pix) const
 {
-    double ratio  = d->displayWidget->devicePixelRatio();
-    int thumbSize = qMin(qRound((double)d->thumbSize * ratio), (int)ThumbnailSize::HD);
+    bool ret = false;
 
-    bool ret      = d->thumbnailThread->find(ThumbnailIdentifier(path), pix, thumbSize);
-    pix.setDevicePixelRatio(ratio);
+    if (!d->suspendThumbs)
+    {
+        double ratio  = d->displayWidget->devicePixelRatio();
+        int thumbSize = qMin(qRound((double)d->thumbSize * ratio), (int)ThumbnailSize::HD);
+        ret           = d->thumbnailThread->find(ThumbnailIdentifier(path), pix, thumbSize);
+        pix.setDevicePixelRatio(ratio);
+    }
 
     return ret;
 }
@@ -318,6 +323,8 @@ void DTrashItemModel::removeItems(const QModelIndexList& indexes)
         endRemoveRows();
     }
 
+    d->suspendThumbs = false;
+
     Q_EMIT layoutChanged();
     Q_EMIT dataChange();
 }
@@ -357,6 +364,7 @@ void DTrashItemModel::refreshThumbnails(const LoadingDescription& desc, const QP
 void DTrashItemModel::clearCurrentData()
 {
     d->failedThumbnails.clear();
+    d->suspendThumbs = false;
     beginResetModel();
     d->data.clear();
     endResetModel();
@@ -371,6 +379,7 @@ void DTrashItemModel::loadItemsForCollection(const QString& colPath)
     Q_EMIT signalLoadingStarted();
 
     d->sortEnabled    = false;
+    d->suspendThumbs  = false;
     d->trashAlbumPath = colPath;
 
     clearCurrentData();
@@ -456,6 +465,14 @@ void DTrashItemModel::stopLoadingTrash()
         d->itemsLoadingJob->cancel();
         d->itemsLoadingJob = nullptr;
     }
+
+    d->thumbnailThread->stopAllTasks();
+    d->thumbnailThread->wait();
+}
+
+void DTrashItemModel::suspendLoadingTrashThumbs()
+{
+    d->suspendThumbs = true;
 
     d->thumbnailThread->stopAllTasks();
     d->thumbnailThread->wait();

@@ -101,6 +101,11 @@ public:
      */
     void stopLoadingTrash();
 
+    /**
+     * @brief Stop loading of trash thumbnails
+     */
+    void suspendLoadingTrashThumbs();
+
 /// QAbstractItemModel interface
 public:
 

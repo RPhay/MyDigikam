@@ -282,6 +282,8 @@ void TrashView::slotUndoLastDeletedItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items to Restore:\n " << items;
 
+    d->model->suspendLoadingTrashThumbs();
+
     DIO::restoreTrash(items);
 
     connect(DIO::instance(), SIGNAL(signalTrashFinished()),
@@ -306,6 +308,8 @@ void TrashView::slotRestoreSelectedItems()
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items to Restore:\n " << items;
+
+    d->model->suspendLoadingTrashThumbs();
 
     DIO::restoreTrash(items);
 
@@ -338,6 +342,8 @@ void TrashView::slotDeleteSelectedItems()
     DTrashItemInfoList items = d->model->itemsForIndexes(d->selectedIndexesToRemove);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items count: " << items.count();
+
+    d->model->suspendLoadingTrashThumbs();
 
     DIO::emptyTrash(items);
 
@@ -384,6 +390,8 @@ void TrashView::slotDeleteAllItems()
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Removing all item from trash permanently";
+
+    d->model->suspendLoadingTrashThumbs();
 
     DIO::emptyTrash(d->model->allItems());
 
