@@ -119,7 +119,7 @@ BUGFIXES:
 084 ==> 504238 - Add support of keywords merge using Drag and Drop.
 085 ==> 509796 - digiKam generated XMP sidecars not updated by darktable.
 086 ==> 509844 - digiKam closed unexpectedly (Qt5 based).
-087 ==> 
+087 ==> 509976 - PNG and HEIF not rotated correctly.
 088 ==> 
 089 ==> 
 090 ==> 
