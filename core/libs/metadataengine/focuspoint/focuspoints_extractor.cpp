@@ -57,7 +57,7 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
     d->model             = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString().toUpper();
 
     // NOTE: init image size properties with generic values taken from file by default,
-    //       this will be overwrited by delegate with findADPoints().
+    //       this will be overwritten by delegate with findADPoints().
 
     QVariant imageWidth  = findValue(QLatin1String("File.File.Image.ImageWidth"));
     QVariant imageHeight = findValue(QLatin1String("File.File.Image.ImageHeight"));
@@ -186,6 +186,16 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Nikon makernotes";
 
             return getAFPoints_nikon();
+        }
+
+        if (
+            d->make.contains(QLatin1String("OLYMPUS"))           ||
+            d->make.contains(QLatin1String("OM DIGITAL SOLUTIONS"))
+           )
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Olympus/OMDS makernotes";
+
+            return getAFPoints_olympus();
         }
 
         if (d->make.contains(QLatin1String("PANASONIC")))

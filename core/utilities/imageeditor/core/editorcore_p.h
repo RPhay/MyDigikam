@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include "editorcore.h"
+
 // Local includes
 
 #include "digikam_config.h"

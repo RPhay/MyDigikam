@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2014-10-17
- * Description : test for implementation of ditemslist api
+ * Description : test for implementation of DItemsList api
  *
  * SPDX-FileCopyrightText: 2011-2012 by A Janardhan Reddy <annapareddyjanardhanreddy at gmail dot com>
  * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>

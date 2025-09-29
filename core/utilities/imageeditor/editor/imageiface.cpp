@@ -296,6 +296,11 @@ QRect ImageIface::selectionRect() const
     return (d->core->getSelectedArea());
 }
 
+void ImageIface::setSelectedRect(const QRect& rect)
+{
+    d->core->setSelectedArea(rect);
+}
+
 void ImageIface::convertOriginalColorDepth(int depth)
 {
     d->core->convertDepth(depth);

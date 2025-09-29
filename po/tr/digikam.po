@@ -51,16 +51,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-17 01:56+0000\n"
-"PO-Revision-Date: 2025-09-16 06:17+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2025-09-29 02:01+0000\n"
+"PO-Revision-Date: 2025-09-22 16:32+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -221,159 +221,149 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:255
-#: core/app/dragdrop/albumdragdrop.cpp:402
-#: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/albumdragdrop.cpp:282
+#: core/app/dragdrop/albumdragdrop.cpp:376
+#: core/app/dragdrop/albumdragdrop.cpp:477
+#: core/app/dragdrop/itemdragdrop.cpp:412 core/app/dragdrop/tagdragdrop.cpp:265
 #, kde-format
 msgid "&Move Here"
 msgstr "Buraya &Taşı"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:256
-#: core/app/dragdrop/albumdragdrop.cpp:403
-#: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/albumdragdrop.cpp:283
+#: core/app/dragdrop/albumdragdrop.cpp:377
+#: core/app/dragdrop/albumdragdrop.cpp:478
+#: core/app/dragdrop/itemdragdrop.cpp:416
 #, kde-format
 msgid "&Copy Here"
 msgstr "Buraya &Kopyala"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:265
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/albumdragdrop.cpp:405
-#: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
+#: core/app/dragdrop/albumdragdrop.cpp:285
+#: core/app/dragdrop/albumdragdrop.cpp:340
+#: core/app/dragdrop/albumdragdrop.cpp:386
+#: core/app/dragdrop/albumdragdrop.cpp:437
+#: core/app/dragdrop/albumdragdrop.cpp:480
+#: core/app/dragdrop/importdragdrop.cpp:184
+#: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
+#: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
 #, kde-format
 msgid "C&ancel"
 msgstr "İ&ptal"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:261
+#: core/app/dragdrop/albumdragdrop.cpp:336
+#: core/app/dragdrop/albumdragdrop.cpp:382
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Albüm Küçük Görseli Olarak Ayarla"
 
-#: core/app/dragdrop/albumdragdrop.cpp:327
-#: core/app/dragdrop/itemdragdrop.cpp:806
+#: core/app/dragdrop/albumdragdrop.cpp:434
+#: core/app/dragdrop/itemdragdrop.cpp:855
 #, kde-format
 msgid "Download From Camera"
 msgstr "Kameradan İndir"
 
-#: core/app/dragdrop/albumdragdrop.cpp:328
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/albumdragdrop.cpp:435
+#: core/app/dragdrop/itemdragdrop.cpp:857
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Kameradan İndir ve Sil"
 
-#: core/app/dragdrop/importdragdrop.cpp:52
-#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
-#, kde-format
-msgctxt "@action:inmenu Group images with this image"
-msgid "Group here"
-msgstr "Buraya Grupla"
-
-#: core/app/dragdrop/importdragdrop.cpp:192
+#: core/app/dragdrop/importdragdrop.cpp:180
 #, kde-format
 msgid "Exporting"
 msgstr "Dışa aktarılıyor"
 
-#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/importdragdrop.cpp:182
 #, kde-format
 msgid "Upload to Camera"
 msgstr "Kameraya Yükle"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:56
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "Buraya Grupla"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:63
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "Buraya Ögeleri Ekle"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:70
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Buraya Grupla ve Albüme Taşı"
 
-#: core/app/dragdrop/itemdragdrop.cpp:204
+#: core/app/dragdrop/itemdragdrop.cpp:457
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Bırakılan Ögelere Künye Ata"
 
-#: core/app/dragdrop/itemdragdrop.cpp:686
+#: core/app/dragdrop/itemdragdrop.cpp:755
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Yüz Künyelerini Değiştir"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:759
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Yüz Künyesini Değiştir"
 
-#: core/app/dragdrop/itemdragdrop.cpp:694
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:763
+#: core/app/dragdrop/itemdragdrop.cpp:814
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "İ&ptal"
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:799
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "&Seçili Ögelere Künyeler Ata"
 
-#: core/app/dragdrop/itemdragdrop.cpp:741
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Bu Ögeye &Künyeler Ata"
 
-#: core/app/dragdrop/itemdragdrop.cpp:745
+#: core/app/dragdrop/itemdragdrop.cpp:811
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "&Tüm Ögelere Künyeler Ata"
 
-#: core/app/dragdrop/itemdragdrop.cpp:804
+#: core/app/dragdrop/itemdragdrop.cpp:853
 #, kde-format
 msgid "Importing"
 msgstr "İçe aktarılıyor"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:266
 #, kde-format
 msgid "M&erge Here"
 msgstr "Buraya &Birleştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:390
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "“%2” olan yüz adını Öge olarak onayla"
 msgstr[1] "“%2” olan yüz adlarını Ögeler olarak onayla"
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Künye Küçük Görseli Olarak Ayarla"
 
-#: core/app/dragdrop/tagdragdrop.cpp:323
+#: core/app/dragdrop/tagdragdrop.cpp:439
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "“%2” olan yüz adını “%3” olarak değiştir"
 msgstr[1] "“%2” olan yüz adlarını “%3” olarak değiştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:446
+#: core/app/dragdrop/tagdragdrop.cpp:538
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Ögelere “%1” Künyelerini Ata"
@@ -5830,7 +5820,7 @@ msgstr ""
 "kaldırır.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8621,7 +8611,7 @@ msgstr "Vinyet Düzeltmesi…"
 msgid "Background Blur Filter"
 msgstr "Arka Plan Bulanıklığı Süzgeci"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8630,12 +8620,12 @@ msgstr ""
 "Öznenin çevresindeki arka planın ne kadar bulanıklaştırılacağını belirleyen "
 "matris yarıçapını belirlemek için bu değeri ayarlayın."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "İlerlemeli geçiş:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:97
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8645,12 +8635,12 @@ msgstr ""
 "değeri ayarlayın. Bu, bir mercekten olan alan derinliğini benzetmeye olanak "
 "tanır."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
 #, kde-format
-msgid "Subject Segmentation:"
-msgstr "Konu bölütlemesi:"
+msgid "Subject Isolation:"
+msgstr "Konu izolasyonu:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:106
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8659,36 +8649,38 @@ msgstr ""
 "Öznenin daha azını veya daha fazlasını yalıtmak için bölütlendirme işlemi "
 "tarafından kullanılan yineleme değerini burada ayarlayın."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
 #, kde-format
 msgid "Subject Mask:"
 msgstr "Konu maskesi:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:115
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
 "see if the subject have been isolated properly by the segmentation process. "
-"The green area is the subject where the blur effect will not applied."
+"The green area is the subject where the blur effect will not applied. You "
+"can re-adjust in this view the rectangle including the subject."
 msgstr ""
 "Bu görünüm, öznenin seçimden algılanan bölütlendirmesini gösterir. Ortaya "
 "çıkan yeşil maske, özgün görselin üzerine uygulanarak öznenin bölütlendirme "
 "işlemiyle düzgünce yalıtılıp yalıtılmadığını görmek için kullanılır. Yeşil "
-"alan, öznede bulanıklaştırma efektinin uygulanmayacağı kısımdır."
+"alan, öznede bulanıklaştırma efektinin uygulanmayacağı kısımdır. Bu "
+"görünümde, özneyi de içeren dörtgeni yeniden ayarlayabilirsiniz."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Maske önizlemesi işleniyor…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, kde-format
 msgid "Error while processing image..."
 msgstr "Görsel işlenirken hata oluştu."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, kde-format
 msgid "Background Blur"
 msgstr "Arka plan bulanıklığı"
@@ -8709,26 +8701,31 @@ msgstr "Görselin arka planını bulanıklaştırmak için bir araç"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"This Image Editor tool can blur the background of the subject from an image."
+"This Image Editor tool can blur the background of the subject from an image "
+"to reproduce the depth-of-field effect from a lens."
 msgstr ""
-"Bu görsel düzenleyicisi aracı, görseldeki bir öznenin arka planını "
-"bulanıklaştırabilir."
+"Bu görsel düzenleyicisi aracı, mercekten kaynaklı derinlik alanı efektini "
+"yeniden üretmek için görseldeki bir öznenin arka planını bulanıklaştırabilir."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
 msgstr "Arka Plan Bulanıklığı…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "Background Blur Tool"
 msgstr "Arka Plan Bulanıklığı Aracı"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
 #, kde-format
-msgid "You must select before a rectangular area including the subject..."
-msgstr "Öncesinde özneyi içeren bir dörtgen alan seçmelisiniz…"
+msgid ""
+"You must select before a rectangular area including the subject.<br>Note: "
+"you can readjust the zone later in the tool."
+msgstr ""
+"Öncesinde özneyi içeren bir dörtgen alan seçmelisiniz.<br>Not: Bölgeyi daha "
+"sonra aracın içinde yeniden ayarlayabilirsiniz."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -9230,7 +9227,7 @@ msgstr "Yumuşatma Maskesi"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:117
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
 msgstr "Yeniden Odaklan"
@@ -12704,7 +12701,7 @@ msgstr ""
 "buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:114
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:139
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
 #, kde-format
 msgid "Sharpness:"
 msgstr "Keskinlik:"
@@ -27486,7 +27483,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Bağlam menüsü"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
 #: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
@@ -32603,7 +32600,7 @@ msgstr ""
 "önizlemesini görebilirsiniz."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:97
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:168
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:169
 #, kde-format
 msgid "Amount:"
 msgstr "Miktar:"
@@ -33169,7 +33166,7 @@ msgstr ""
 #: core/libs/dimg/filters/nr/nrsettings.cpp:107
 #: core/libs/dimg/filters/nr/nrsettings.cpp:134
 #: core/libs/dimg/filters/nr/nrsettings.cpp:161
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:176
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:177
 #, kde-format
 msgid "Threshold:"
 msgstr "Eşik:"
@@ -33244,27 +33241,27 @@ msgid "Set here the reducing level of red to the average of blue and green."
 msgstr ""
 "Burada kırmızının azalan düzeyini mavi ve yeşilin ortalamasına ayarlayın."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:110
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:111
 #, kde-format
 msgid "Method:"
 msgstr "Yöntem:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:112
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
 #, kde-format
 msgid "Simple sharp"
 msgstr "Basit keskinlik"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:114
 #, kde-format
 msgid "Unsharp mask"
 msgstr "Yumuşatma maskesi"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:122
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr "Görsele uygulanacak keskinlik yöntemini seçin."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:143
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:144
 #, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -33273,12 +33270,12 @@ msgstr ""
 "0 keskinliğinin hiçbir etkisi yoktur; 1 ve üzeri, görselin ne kadar "
 "keskinleştirileceğini belirleyen keskinleştirme matrisi yarıçapını belirler."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:160
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:161
 #, kde-format
 msgid "Radius:"
 msgstr "Yarıçap:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:165
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:166
 #, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
@@ -33287,7 +33284,7 @@ msgstr ""
 "Yarıçap değeri, görselin ne kadar bulanıklaştırılacağını belirlemek için "
 "kullanılan Gauss bulanıklık matrisi yarıçap değeridir."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:174
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
@@ -33295,7 +33292,7 @@ msgid ""
 msgstr ""
 "Özgün ile özgüne yeniden eklenen bulanık görsel arasındaki farkın değeri."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:182
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
@@ -33304,12 +33301,12 @@ msgstr ""
 "En yüksek parlaklık değerinin bir kesri olarak eşik, fark miktarının "
 "uygulanması için gerekliydi."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:185
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid "Suppress color noise."
 msgstr "Renk gürültüsünü bastırın."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:187
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
@@ -33318,12 +33315,12 @@ msgstr ""
 "Yalnızca kroma gürültü genleştirmesini bastırmak için kullanılan parlaklık "
 "kanalına süzgeç uygulama seçeneği."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:210
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:211
 #, kde-format
 msgid "Circular sharpness:"
 msgstr "Çembersel keskinlik:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:216
 #, kde-format
 msgid ""
 "This is the radius of the circular convolution. It is the most important "
@@ -33335,12 +33332,12 @@ msgstr ""
 "parametredir. Çoğu görsel için öntanımlı 1,0 değeri iyi sonuçlar vermelidir. "
 "Görseliniz çok bulanıksa daha yüksek bir değer seçin."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:219
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:220
 #, kde-format
 msgid "Correlation:"
 msgstr "Karşılıklı ilişki:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:224
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:225
 #, kde-format
 msgid ""
 "Increasing the correlation may help to reduce artifacts. The correlation can "
@@ -33353,12 +33350,12 @@ msgstr ""
 "ve 1’e yakın değerlerdir; 0,95 ve 0,99 gibi. Karşılıklı ilişki için yüksek "
 "bir değer kullanılması aracın keskinleştirme etkisini azaltacaktır."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:229
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:230
 #, kde-format
 msgid "Noise filter:"
 msgstr "Gürültü süzgeci:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:234
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:235
 #, kde-format
 msgid ""
 "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -33374,12 +33371,12 @@ msgstr ""
 "değer 0,01’dir. Gürültü süzgeci için yüksek bir değer kullanılması aracın "
 "keskinleştirme etkisini azaltacaktır."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:240
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:241
 #, kde-format
 msgid "Gaussian sharpness:"
 msgstr "Gauss keskinliği:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:245
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:246
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -33394,12 +33391,12 @@ msgstr ""
 "değerler kullandığınızda büyük olasılıkla karşılıklı ilişki ve/veya gürültü "
 "süzgeci parametrelerini de artırmanız gerekecektir."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:250
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:251
 #, kde-format
 msgid "Matrix size:"
 msgstr "Matris boyutu:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:254
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:255
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -33410,29 +33407,29 @@ msgstr ""
 "artırmak, özellikle dairesel veya Gauss keskinliği için büyük değerler "
 "seçtiğinizde daha iyi sonuçlar verebilir."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:487
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:488
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "Yüklenecek Yeniden Odaklama Ayarları Dosyası"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:505
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:506
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr "“%1” bir fotoğrafa yeniden odaklanma ayarları metin dosyası değil."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:528
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:529
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr "Fotoğrafa yeniden odaklanma ayarları metin dosyasından yüklenemiyor."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:536
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:537
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "Kaydedilecek Yeniden Odaklama Ayarları Dosyası"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:566
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:567
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "Ayarlar fotoğrafa yeniden odaklanma metin dosyasına kaydedilemiyor."
@@ -34710,8 +34707,8 @@ msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "Ekrana Sığdır"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:158
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
@@ -35779,12 +35776,17 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "%2 içinde %1 adlı bir dosya veya klasör halihazırda var"
 
-#: core/libs/iojobs/iojob.cpp:165
+#: core/libs/iojobs/iojob.cpp:154
+#, kde-format
+msgid "Recursive folder %1 move detected to album %2"
+msgstr "%2 albümüne %1 özyineli klasör taşıması algılandı"
+
+#: core/libs/iojobs/iojob.cpp:173
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "%1 klasörü %2 albümüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:172
+#: core/libs/iojobs/iojob.cpp:180
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35792,42 +35794,47 @@ msgid ""
 msgstr ""
 "%1 klasörü %2 albümüne taşınamadı. %1 klasörü de %2 albümüne kopyalanmış"
 
-#: core/libs/iojobs/iojob.cpp:184
+#: core/libs/iojobs/iojob.cpp:192
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Sepet %1 dosyasından %2 albümüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:190
+#: core/libs/iojobs/iojob.cpp:198
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "%1 dosyası %2 albümüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:214
+#: core/libs/iojobs/iojob.cpp:213
+#, kde-format
+msgid "Recursive folder %1 copy detected to album %2"
+msgstr "%2 albümüne %1 özyineli klasör kopyalaması algılandı"
+
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "%1 klasörü %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:226
+#: core/libs/iojobs/iojob.cpp:242
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Sepet %1 dosyasından %2 klasörüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:234
+#: core/libs/iojobs/iojob.cpp:250
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "%1 dosyası %2 klasörüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:239
+#: core/libs/iojobs/iojob.cpp:255
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "%1 dosyası %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:286
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "%1 dosyası/klasörü yok"
 
-#: core/libs/iojobs/iojob.cpp:298
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35838,7 +35845,7 @@ msgstr ""
 "Görsel koleksiyonundaki “.dtrash” çöp kutusu klasörünün dosya izinlerini "
 "denetleyin."
 
-#: core/libs/iojobs/iojob.cpp:310
+#: core/libs/iojobs/iojob.cpp:326
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35849,32 +35856,32 @@ msgstr ""
 "Görsel koleksiyonundaki “.dtrash” çöp kutusu klasörünün dosya izinlerini "
 "denetleyin."
 
-#: core/libs/iojobs/iojob.cpp:327
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "%1 albümü kaldırılamadı"
 
-#: core/libs/iojobs/iojob.cpp:339
+#: core/libs/iojobs/iojob.cpp:355
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "%1 görseli kaldırılamadı"
 
-#: core/libs/iojobs/iojob.cpp:388
+#: core/libs/iojobs/iojob.cpp:404
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "%1 görseli çöp kutusuna taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:400
+#: core/libs/iojobs/iojob.cpp:416
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Aynı adlı %1 görseli halihazırda var"
 
-#: core/libs/iojobs/iojob.cpp:418
+#: core/libs/iojobs/iojob.cpp:434
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "%1 görseli yeniden adlandırılamadı"
 
-#: core/libs/iojobs/iojob.cpp:500
+#: core/libs/iojobs/iojob.cpp:516
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "%1 dosyası çöp kutusundan geri yüklenemedi"
@@ -44748,9 +44755,9 @@ msgstr "Yok"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
 #, kde-format
-msgctxt "@info: pick lablel selector"
+msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
-msgstr "Seçim etiketi: %1"
+msgstr "Etiket seç: %1"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, kde-format
@@ -51085,6 +51092,12 @@ msgctxt "@title: stack-view list on items"
 msgid "Stack"
 msgstr "Yığın"
 
+#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
+#, kde-format
+msgctxt "@action:inmenu Group images with this image"
+msgid "Group here"
+msgstr "Buraya Grupla"
+
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
 #, kde-format
 msgctxt "@action"
@@ -55995,9 +56008,9 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
-"<p><b>Güney Açısal Eşit Uzaklıklı İzdüşüm</b> (“Balıkgözü”)</"
-"p><p>Uygulamalar: Sismik ve radyo verilerinin görüntülenmesi ve sayısal "
-"gezegenevlerinde kullanım için.</p>"
+"<p><b>Yancasal Eşit Uzaklıklı İzdüşüm</b> (“Balıkgözü”)</p><p>Uygulamalar: "
+"Sismik ve radyo verilerinin görüntülenmesi ve sayısal gezegenevlerinde "
+"kullanım için.</p>"
 
 #: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
 #, kde-format
@@ -67806,7 +67819,7 @@ msgstr "Kamera beyaz dengesi ayarları"
 #: core/utilities/setup/setuptooltip.cpp:225
 #, kde-format
 msgid "digiKam Information"
-msgstr "Digikam Bilgisi"
+msgstr "digiKam Bilgisi"
 
 #: core/utilities/setup/setuptooltip.cpp:228
 #: core/utilities/setup/setuptooltip.cpp:301
@@ -68066,147 +68079,3 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
-
-#~| msgctxt "@label"
-#~| msgid "Segmentation mode:"
-#~ msgid "Segmentation Iterations:"
-#~ msgstr "Bölütlendirme sayısı:"
-
-#~ msgid "<p>Select the color profile for your monitor here.</p>"
-#~ msgstr "<p>Monitörünüz için olan renk profilini burada seçin.</p>"
-
-#~ msgid "Build Date: "
-#~ msgstr "Yapı tarihi: "
-
-#~ msgid "Build Target: "
-#~ msgstr "Yapı hedefi: "
-
-#~ msgid "Build Architecture: "
-#~ msgstr "Yapı mimarisi: "
-
-#~ msgid "Git Revision: "
-#~ msgstr "Git revizyonu: "
-
-#~ msgid "Git Branch: "
-#~ msgstr "Git dalı: "
-
-#~ msgctxt "@info: version"
-#~ msgid "Unknown"
-#~ msgstr "Bilinmiyor"
-
-#~ msgctxt "Error message for image file number %1 out of %2"
-#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-#~ msgstr "<p><b>%1/%2 dosya işleniyor: </b></p><p>%3</p>"
-
-#~ msgctxt "Success for image file number %1 out of %2"
-#~ msgid "Processing file %1 / %2"
-#~ msgstr "%1/%2 dosya işleniyor"
-
-#~ msgctxt "Compilation started for image file number %1 out of %2"
-#~ msgid "Processing file %1 / %2"
-#~ msgstr "%1/%2 dosya işleniyor"
-
-#~ msgctxt "@option"
-#~ msgid "Recursive selection"
-#~ msgstr "Özyineli seçim"
-
-#~ msgctxt "@title:window"
-#~ msgid "Choose Export Tag File"
-#~ msgstr "Künye Dışa Aktarma Dosyası Seç"
-
-#~ msgctxt "@title:window"
-#~ msgid "Choose Import Tag File"
-#~ msgstr "Künye İçe Aktarma Dosyası Seç"
-
-#~ msgid "Export all tags to a file"
-#~ msgstr "Dosyaya tüm künyeleri dışa aktar"
-
-#~ msgid "Import all tags from a file"
-#~ msgstr "Dosyadan künyeler içe aktar"
-
-#~ msgctxt "@action:button"
-#~ msgid "Start"
-#~ msgstr "Başlat"
-
-#~ msgctxt "Here a makefile is a script for GNU Make"
-#~ msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
-#~ msgstr "<p><b>Bir Makefile oluşturulamıyor: </b></p><p>%1</p>"
-
-#~ msgctxt "@title"
-#~ msgid "Build Tools"
-#~ msgstr "Yapı Araçları"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Behaviour"
-#~ msgstr "Davranış"
-
-#~ msgid "Scan collection for faces"
-#~ msgstr "Yüzler için Koleksiyonu Tara"
-
-#~ msgid "Face Detection Settings"
-#~ msgstr "Yüz Algılama Ayarları"
-
-#~ msgid "Face Recognition Settings"
-#~ msgstr "Yüz Tanıma Ayarları"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Assign Low Quality to Rejected Label"
-#~ msgstr "Reddedilen etiketine düşük kalite ata"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Assign Medium Quality to Pending Label"
-#~ msgstr "Bekleyen etiketine orta kalite ata"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Assign High Quality to Accepted Label"
-#~ msgstr "Kabul edilen etiketine yüksek kalite ata"
-
-#~ msgctxt "@option:radio with a short translated text"
-#~ msgid "Detect by Basic Factors"
-#~ msgstr "Temel çarpanlarla algıla"
-
-#~ msgctxt "@label with a short translated text"
-#~ msgid "Rejected threshold:"
-#~ msgstr "Reddedilme eşiği:"
-
-#~ msgctxt "@label with a short translated text"
-#~ msgid "Pending threshold:"
-#~ msgstr "Beklemede eşiği:"
-
-#~ msgctxt "@label with a short translated text"
-#~ msgid "Accepted threshold:"
-#~ msgstr "Kabul edildi eşiği:"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Detect Blur"
-#~ msgstr "Bulanıklaşmayı algıla"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Detect Noise"
-#~ msgstr "Gürültüyü algıla"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Detect Under and Over Exposure"
-#~ msgstr "Düşük ve aşırı pozlamayı algıla"
-
-#~ msgctxt ""
-#~ "@label with a short translated text about deep learning model used to "
-#~ "detect objects to auto-tag"
-#~ msgid "Detection Model:"
-#~ msgstr "Algılama modeli:"
-
-#~ msgctxt "@label with a short translated text"
-#~ msgid "Detection Accuracy:"
-#~ msgstr "Nesne algılama doğruluğu:"
-
-#~ msgid "Picture Properties"
-#~ msgstr "Resim Özellikleri"
-
-#~ msgid "Avg. similarity"
-#~ msgstr "Ort. Benzerlik"
-
-#~ msgid "&Scan for new items at startup (makes startup slower)"
-#~ msgstr "Başlangıçta yeni ögeleri &tara (başlangıcı daha yavaş yapar)"
-
-#~ msgid "Detect and recognize Faces"
-#~ msgstr "Yüzleri algıla ve tanı"

@@ -27,7 +27,7 @@ namespace Digikam
 {
 
 /**
- * A widget to chosse a color from a palette.
+ * A widget to choose a color from a palette.
  */
 class DIGIKAM_EXPORT DColorSelector : public QPushButton
 {

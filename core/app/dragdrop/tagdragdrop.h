@@ -47,6 +47,24 @@ public:
 Q_SIGNALS:
 
     void assignTags(const QList<qlonglong>& imageIDs, const QList<int>& tagIDs);
+
+private Q_SLOTS:
+
+    void slotMoveMergeTags();
+    void slotConfirmPerson();
+    void slotAssignTagItem();
+
+private:
+
+    QAbstractItemView*    m_view      = nullptr;
+    QObject*              m_source    = nullptr;
+    TAlbum*               m_destAlbum = nullptr;
+
+    Qt::KeyboardModifiers m_modifiers;
+    QPoint                m_position;
+
+    QList<int>            m_tagIDs;
+    QList<qlonglong>      m_imageIDs;
 };
 
 } // namespace Digikam

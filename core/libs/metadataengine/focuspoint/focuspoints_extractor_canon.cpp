@@ -144,6 +144,11 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
         return getAFPoints_exif();
     }
 
+    if (imageWidth.toInt() < imageHeight.toInt())
+    {
+        imageWidth.swap(imageHeight);
+    }
+
     setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
 
     // Get size of af points

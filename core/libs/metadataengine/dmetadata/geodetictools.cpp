@@ -6,7 +6,7 @@
  * Date        : 2008-05-05
  * Description : Geodetic tools based from an implementation written by
  *               Daniele Franzoni and Martin Desruisseaux from
- *               GeoTools Project Managment Committee (PMC), https://geotools.org
+ *               GeoTools Project Management Committee (PMC), https://geotools.org
  *
  * SPDX-FileCopyrightText: 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>

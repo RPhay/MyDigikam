@@ -60,6 +60,11 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
         return getAFPoints_exif();
     }
 
+    if (imageWidth.toInt() < imageHeight.toInt())
+    {
+        imageWidth.swap(imageHeight);
+    }
+
     setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
 
     // Get af point

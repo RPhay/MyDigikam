@@ -45,7 +45,7 @@ void LoadSaveThreadTest::testLoadSaveThread()
 
     if (DPluginLoader::instance()->allPlugins().isEmpty())
     {
-        QWARN("Not able to found digiKam plugin in standard paths. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found digiKam plugin in standard paths. Test is aborted...");
         return;
     }
 

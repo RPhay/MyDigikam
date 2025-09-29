@@ -300,7 +300,7 @@ private Q_SLOTS:
                 << QStringLiteral("<api><error code=\"rvrevids\" info=\"\"/></api>")
                 << int(QueryRevision::WrongRevisionId);
 
-        QTest::newRow("Multilple pages")
+        QTest::newRow("Multiple pages")
                 << QStringLiteral("<api><error code=\"rvmultpages\" info=\"\"/></api>")
                 << int(QueryRevision::MultiPagesNotAllowed);
 

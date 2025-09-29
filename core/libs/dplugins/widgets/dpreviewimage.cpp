@@ -552,6 +552,12 @@ bool DPreviewImage::setImage(const QImage& img) const
         d->pixmapItem->setShapeMode(QGraphicsPixmapItem::BoundingRectShape);
         d->scene->setSceneRect(0, 0, img.width(), img.height());
 
+        if (d->enableSelection)
+        {
+            d->selection->setMaxRight(d->scene->width());
+            d->selection->setMaxBottom(d->scene->height());
+        }
+
         return true;
     }
 
@@ -586,8 +592,6 @@ bool DPreviewImage::load(const QUrl& file) const
     if (ret && d->enableSelection)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << d->scene->height() << " " << d->scene->width();
-        d->selection->setMaxRight(d->scene->width());
-        d->selection->setMaxBottom(d->scene->height());
         d->selection->setRect(d->scene->sceneRect());
     }
 

@@ -35,3 +35,14 @@ target_link_libraries(ditemslist_gui
 
                       ${COMMON_TEST_LINK}
 )
+
+##################################################################
+
+add_executable(dpreviewmanager_gui ${CMAKE_CURRENT_SOURCE_DIR}/dpreviewmanager_gui.cpp)
+
+target_link_libraries(dpreviewmanager_gui
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)

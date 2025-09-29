@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-06-21
- * Description : unit test program for digiKam Mysql databse init
+ * Description : unit test program for digiKam Mysql database init
  *
  * SPDX-FileCopyrightText: 2013 by Michael G. Hansen <mike at mghansen dot de>
  *
@@ -86,7 +86,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     if (!mysqlUpgradeBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Upgrade binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Upgrade binary program. Test is aborted...");
         return;
     }
 
@@ -95,7 +95,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     if (!mysqlServerBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Server binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Server binary program. Test is aborted...");
         return;
     }
 
@@ -103,7 +103,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     if (!mysqlAdminBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Admin binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Admin binary program. Test is aborted...");
         return;
     }
 
@@ -111,13 +111,13 @@ void DatabaseMysqlInitTest::testMysqlInit()
 
     if (!mysqlInitBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Init binary program. Test is aborted...");
+        qWarning() << QLatin1String("Not able to found the Mysql Init binary program. Test is aborted...");
         return;
     }
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::MySQLDatabaseType()))
     {
-        QWARN("Qt MySQL plugin is missing.");
+        qWarning() << QLatin1String("Qt MySQL plugin is missing.");
         return;
     }
 

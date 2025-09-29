@@ -20,6 +20,7 @@
 
 #include <QDropEvent>
 #include <QIcon>
+#include <QTimer>
 #include <QApplication>
 
 // KDE includes
@@ -34,7 +35,6 @@
 #include "ddragobjects.h"
 #include "importcategorizedview.h"
 #include "camiteminfo.h"
-#include "albummanager.h"
 #include "digikamapp.h"
 #include "itemiconview.h"
 
@@ -46,138 +46,33 @@ ImportDragDropHandler::ImportDragDropHandler(ImportItemModel* const model)
 {
 }
 
-QAction* ImportDragDropHandler::addGroupAction(QMenu* const menu)
+ImportItemModel* ImportDragDropHandler::model() const
 {
-    return menu->addAction(QIcon::fromTheme(QLatin1String("go-bottom")),
-                           i18nc("@action:inmenu Group images with this image", "Group here"));
+    return static_cast<ImportItemModel*>(m_model);
 }
 
-QAction* ImportDragDropHandler::addCancelAction(QMenu* const menu)
-{
-    return menu->addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-}
-
-ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropEvent* e,
-                                                                    QWidget* const view,
-                                                                    bool allowMove,
-                                                                    bool askForGrouping)
-{
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    if      (e->modifiers() & Qt::ControlModifier)
-
-#else
-
-    if      (e->keyboardModifiers() & Qt::ControlModifier)
-
-#endif
-
-    {
-        return CopyAction;
-    }
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    else if (e->modifiers() & Qt::ShiftModifier)
-
-#else
-
-    else if (e->keyboardModifiers() & Qt::ShiftModifier)
-
-#endif
-
-    {
-        return MoveAction;
-    }
-
-    if (!allowMove && !askForGrouping)
-    {
-        switch (e->proposedAction())
-        {
-            case Qt::CopyAction:
-            {
-                return CopyAction;
-            }
-
-            case Qt::MoveAction:
-            {
-                return MoveAction;
-            }
-
-            default:
-            {
-                return NoAction;
-            }
-        }
-    }
-
-    QMenu popMenu(view);
-
-    QAction* moveAction       = nullptr;
-
-    if (allowMove)
-    {
-        moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
-    }
-
-    QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
-    popMenu.addSeparator();
-
-    QAction* groupAction      = nullptr;
-
-    if (askForGrouping)
-    {
-        groupAction = addGroupAction(&popMenu);
-        popMenu.addSeparator();
-    }
-
-    addCancelAction(&popMenu);
-
-    popMenu.setMouseTracking(true);
-    qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    QAction* const choice     = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-    QAction* const choice     = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-    if      (moveAction && (choice == moveAction))
-    {
-        return MoveAction;
-    }
-    else if (choice == copyAction)
-    {
-        return CopyAction;
-    }
-    else if (groupAction && (choice == groupAction))
-    {
-        return GroupAction;
-    }
-
-    return NoAction;
-}
-
-/*
-static DropAction tagAction(const QDropEvent*, QWidget* view, bool askForGrouping)
-{
-}
-
-static DropAction groupAction(const QDropEvent*, QWidget* view)
-{
-}
-*/
-
-bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview,
+bool ImportDragDropHandler::dropEvent(QAbstractItemView* view,
                                       const QDropEvent* e,
                                       const QModelIndex& droppedOn)
 {
-    ImportCategorizedView* const view = static_cast<ImportCategorizedView*>(abstractview);
+    m_view = view;
+
+    if (!m_view)
+    {
+        return false;
+    }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    m_position  = m_view->mapToGlobal(e->position().toPoint());
+    m_modifiers = e->modifiers();
+
+#else
+
+    m_position  = m_view->mapToGlobal(e->pos());
+    m_modifiers = e->keyboardModifiers();
+
+#endif
 
     if (accepts(e, droppedOn) == Qt::IgnoreAction)
     {
@@ -186,34 +81,7 @@ bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview,
 
     if (DItemDrag::canDecode(e->mimeData()))
     {
-        QList<QUrl> lst         = DigikamApp::instance()->view()->selectedUrls();
-
-        QMenu popMenu(view);
-        popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Exporting"));
-        QAction* const upAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("media-flash-sd-mmc")),
-                                                    i18n("Upload to Camera"));
-        popMenu.addSeparator();
-        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-        popMenu.setMouseTracking(true);
-        qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-        QAction* const choice   = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-        QAction* const choice   = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-        if (choice)
-        {
-            if (choice == upAction)
-            {
-                ImportUI::instance()->slotUploadItems(lst);
-            }
-        }
+        QTimer::singleShot(0, this, &ImportDragDropHandler::slotUploadCamItems);
 
         return true;
     }
@@ -261,9 +129,11 @@ Qt::DropAction ImportDragDropHandler::accepts(const QDropEvent* e, const QModelI
         return Qt::MoveAction;
     }
 
-    if (DTagListDrag::canDecode(e->mimeData())        ||
+    if (
+        DTagListDrag::canDecode(e->mimeData())        ||
         DCameraItemListDrag::canDecode(e->mimeData()) ||
-        DCameraDragObject::canDecode(e->mimeData()))
+        DCameraDragObject::canDecode(e->mimeData())
+       )
     {
         return Qt::MoveAction;
     }
@@ -302,9 +172,26 @@ QMimeData* ImportDragDropHandler::createMimeData(const QList<QModelIndex>& index
     return (new DCameraItemListDrag(lst));
 }
 
-ImportItemModel* ImportDragDropHandler::model() const
+void ImportDragDropHandler::slotUploadCamItems()
 {
-    return static_cast<ImportItemModel*>(m_model);
+    QList<QUrl> lst         = DigikamApp::instance()->view()->selectedUrls();
+
+    QMenu popMenu(m_view);
+    popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Exporting"));
+    QAction* const upAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("media-flash-sd-mmc")),
+                                                i18n("Upload to Camera"));
+    popMenu.addSeparator();
+    popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
+
+    QAction* const choice   = popMenu.exec(m_position);
+
+    if (choice)
+    {
+        if (choice == upAction)
+        {
+            ImportUI::instance()->slotUploadItems(lst);
+        }
+    }
 }
 
 } // namespace Digikam

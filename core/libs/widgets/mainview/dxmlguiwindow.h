@@ -197,7 +197,7 @@ protected:
     /**
      * Call this method from your main window to show keyboard shortcut config dialog
      * with an extra action collection to configure. This method is called by slotEditKeys()
-     * which can be re-implement in child class for cutomization.
+     * which can be reimplemented in child class for customization.
      */
     void editKeyboardShortcuts(KActionCollection* const extraac = nullptr, const QString& actitle = QString());
 
@@ -206,25 +206,25 @@ protected:
     bool eventFilter(QObject* obj, QEvent* ev) override;
 
     /**
-     * Re-implement this method if you want to manage sidebars visibility in full-screen mode.
+     * Reimplement this method if you want to manage sidebars visibility in full-screen mode.
      * By default this method do nothing.
      */
     virtual void showSideBars(bool visible);
 
     /**
-     * Re-implement this method if you want to manage thumbbar visibility in full-screen mode.
+     * Reimplement this method if you want to manage thumbbar visibility in full-screen mode.
      * By default this method do nothing.
      */
     virtual void showThumbBar(bool visible);
 
     /**
-     * Re-implement this method if you want to manage customized view visibility in full-screen mode.
+     * Reimplement this method if you want to manage customized view visibility in full-screen mode.
      * This method is called by switchWindowToFullScreen(). By default this method do nothing.
      */
     virtual void customizedFullScreenMode(bool set);
 
     /**
-     * Re-implement this method if managed window has a thumbbar. This must return visibility state of it.
+     * Reimplement this method if managed window has a thumbbar. This must return visibility state of it.
      */
     virtual bool thumbbarVisibility() const;
 

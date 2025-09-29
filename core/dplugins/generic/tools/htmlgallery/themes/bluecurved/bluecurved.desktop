@@ -38,6 +38,7 @@ Name[uk]=Сині криві
 Name[zh_CN]=蓝色曲线
 Name[zh_TW]=藍色曲線
 Comment=A stylised theme
+Comment[ar]=نسق منمّق
 Comment[be]=Стылізаваная тэма
 Comment[bg]=Стилизирана тема
 Comment[ca]=Un tema estilitzat
@@ -116,6 +117,7 @@ Url=preview.png
 
 [X-HTMLGallery Author]
 Name=Vincent Deroo Blanquart
+Name[ar]=فينسنت ديرو بلانكارت
 Name[be]=Vincent Deroo Blanquart
 Name[bg]=Vincent Deroo Blanquart
 Name[ca]=Vincent Deroo Blanquart
@@ -154,6 +156,7 @@ Url=mailto:vincent.deroo@free.fr
 
 [X-HTMLGallery Parameter TitleOfPage]
 Name=Gallery Introduction
+Name[ar]=مقدمة المعرض
 Name[be]=Уводзіны ў галерэю
 Name[bg]=Въведение в галерията
 Name[ca]=Introducció a galeries
@@ -195,6 +198,7 @@ Default=Title of my web gallery
 
 [X-HTMLGallery Parameter thumbnailPerRow]
 Name=Thumbnails per row
+Name[ar]=المصغّرات لكل صف
 Name[be]=Мініяцюр у радку
 Name[bg]=Миниатюри на ред
 Name[ca]=Miniatures per fila

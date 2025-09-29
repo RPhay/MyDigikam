@@ -33,7 +33,7 @@ public:
 
     explicit BackgroundBlurFilter(QObject* const parent = nullptr);
     explicit BackgroundBlurFilter(DImg* const orgImage,
-                                  const QRect& selection,
+                                  const QRectF& selection,
                                   int radius = 3,
                                   int transition = 0,
                                   int iterations = 10,
@@ -45,7 +45,7 @@ public:
     explicit BackgroundBlurFilter(DImgThreadedFilter* const parentFilter,
                                   const DImg& orgImage,
                                   const DImg& destImage,
-                                  const QRect& selection,
+                                  const QRectF& selection,
                                   int radius = 3,
                                   int transition = 0,
                                   int iterations = 10,

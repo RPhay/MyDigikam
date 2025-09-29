@@ -244,10 +244,10 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
             QString key;
             QString val;
 
-            for (const QString& tupple : EXIV2_AS_CONST(lines))
+            for (const QString& tuple : EXIV2_AS_CONST(lines))
             {
-                key = tupple.section(QLatin1Char('='), 0, 0);
-                val = tupple.section(QLatin1Char('='), 1, 1);
+                key = tuple.section(QLatin1Char('='), 0, 0);
+                val = tuple.section(QLatin1Char('='), 1, 1);
 
                 if (val.startsWith(QLatin1Char('\'')))
                 {

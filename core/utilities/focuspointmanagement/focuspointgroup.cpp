@@ -119,16 +119,16 @@ void FocusPointGroup::setVisibleItem(RegionFrameItem* const item)
 
 void FocusPointGroup::setInfo(const ItemInfo& info)
 {
-    if ((d->info == info) && (d->state != NoPoints))
+    if (d->info != info)
     {
-        return;
+        clear();
     }
 
-    clear();
     d->info = info;
 
     if (d->visibilityController->shallBeShown())
     {
+        clear();
         load();
     }
 }

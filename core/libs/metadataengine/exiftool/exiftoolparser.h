@@ -57,7 +57,7 @@ public:
      * value = the Exiv2 metadata container  (QByteArray).
      *
      * With applyChanges() method, the container is used as argument to
-     * store tupple of ExifTool tag name as key and tag value:
+     * store tuple of ExifTool tag name as key and tag value:
      * key   = ExifTool tag name             (QString).
      * value = ExifTool Tag value            (QString).
      *
@@ -78,7 +78,7 @@ public:
      *         (aka fr, en, de, es, etc.)    (QStringList).
      *
      * With tagsDatabase() method, the container is used as argument to
-     * store tupple of ExifTool tag name as key and tag description:
+     * store tuple of ExifTool tag name as key and tag description:
      * key    = ExifTool tag name            (QString).
      * values = ExifTool Tag description     (QString).
      *          ExifTool Tag type            (QString).

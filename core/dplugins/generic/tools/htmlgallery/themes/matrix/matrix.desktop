@@ -36,6 +36,7 @@ Name[tr]=Matrix
 Name[uk]=Матриця
 Name[zh_CN]=黑客帝国
 Comment=Show your photos with Matrix style
+Comment[ar]=أظهر صورك بنسق المصفوفة
 Comment[be]=Паказ фотаздымкаў у стылі матрыцы
 Comment[bg]=Показвайте снимките си със стил Matrix
 Comment[ca]=Visualitza les fotografies a l'estil de Matrix
@@ -71,6 +72,7 @@ Comment[zh_CN]=用黑客帝国的风格展示照片
 
 [X-HTMLGallery Author]
 Name=Aurélien Gâteau
+Name[ar]=أورليان جاتو
 Name[be]=Aurélien Gâteau
 Name[bg]=Aurélien Gâteau
 Name[ca]=Aurélien Gâteau

@@ -34,6 +34,7 @@ Name[uk]=Ванілла
 Name[zh_CN]=普通
 Type=Theme
 Comment=This theme is based on the look of Adobe Lightroom's HTML export. It has a simple but usable grid layout and comes with various color presets.
+Comment[ar]=يعتمد هذا النسق على مظهر تصدير HTML لأدوبي لايت روم. لديه تصميم شبكة بسيط ولكنه قابل للاستخدام ويأتي مع إعدادات مسبقة للألوان المتنوعة.
 Comment[be]=Тэма на аснове HTML, падрыхтаваных для экспарту ў Adobe Lightroom. Простая, але са зручным выкладам і некалькімі колеравымі схемамі.
 Comment[bg]=Темата е базирана на външния вид на HTML експорта на Adobe Lightroom. Тя има просто, но използваемо оформление на решетката и се предлага с различни цветови настройки.
 Comment[ca]=Aquest tema està basat en l'aspecte de l'exportació HTML del Lightroom de l'Adobe. Té una disposició de quadrícula senzilla però útil i es distribueix amb diverses predefinicions de colors.
@@ -66,6 +67,7 @@ Comment[zh_CN]=此主题基于 Adobe Lightroom 的 HTML 导出外观设计。它
 
 [X-HTMLGallery Author]
 Name=Wojciech Jarosz
+Name[ar]=فوجتش ياروش
 Name[be]=Wojciech Jarosz
 Name[bg]=Wojciech Jarosz
 Name[ca]=Wojciech Jarosz
@@ -180,6 +182,7 @@ Default=
 
 [X-HTMLGallery Parameter numRows]
 Name=Rows per page
+Name[ar]=الصفوف لكل صفحة
 Name[be]=Радкоў на старонцы
 Name[bg]=Брой редове на страница
 Name[ca]=Files per pàgina
@@ -217,6 +220,7 @@ Default=3
 
 [X-HTMLGallery Parameter numCols]
 Name=Columns per page
+Name[ar]=الأعمدة لكل صفحة
 Name[be]=Слупкоў на старонцы
 Name[bg]=Брой колони на страница
 Name[ca]=Columnes per pàgina
@@ -313,6 +317,7 @@ Caption-7=White on Black
 
 [X-HTMLGallery Parameter displayNumbers]
 Name=Show image numbers
+Name[ar]=أظهر أرقام الصور
 Name[be]=Нумараваць выявы
 Name[bg]=Показване на номерата на изображенията
 Name[ca]=Mostra els números de les imatges
@@ -354,6 +359,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter dropShadow]
 Name=Add drop shadow
+Name[ar]=أضف ظلًا ساقطًا
 Name[be]=Дадаць цень
 Name[bg]=Добавяне на падаща сянка
 Name[ca]=Afegeix una ombra difusa
@@ -428,6 +434,7 @@ Default=25
 
 [X-HTMLGallery Parameter useLyteBox]
 Name=Use LyteBox
+Name[ar]=استخدم لايت بوكس
 Name[be]=Выкарыстоўваць LyteBox
 Name[bg]=Използвайте LyteBox
 Name[ca]=Usa el LyteBox
@@ -468,6 +475,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter slideInterval]
 Name=LyteBox Slideshow Interval
+Name[ar]=فترة عرض شرائح لايت بوكس
 Name[be]=Інтэрвал слайд-шоу LyteBox
 Name[bg]=LyteBox Slideshow Interval
 Name[ca]=Interval entre diapositives del LyteBox

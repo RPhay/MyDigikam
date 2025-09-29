@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-17 01:56+0000\n"
+"POT-Creation-Date: 2025-09-29 02:01+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -177,157 +177,147 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%2 年 %1 月"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:255
-#: core/app/dragdrop/albumdragdrop.cpp:402
-#: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/albumdragdrop.cpp:282
+#: core/app/dragdrop/albumdragdrop.cpp:376
+#: core/app/dragdrop/albumdragdrop.cpp:477
+#: core/app/dragdrop/itemdragdrop.cpp:412 core/app/dragdrop/tagdragdrop.cpp:265
 #, kde-format
 msgid "&Move Here"
 msgstr "移动到此位置(&M)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:256
-#: core/app/dragdrop/albumdragdrop.cpp:403
-#: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/albumdragdrop.cpp:283
+#: core/app/dragdrop/albumdragdrop.cpp:377
+#: core/app/dragdrop/albumdragdrop.cpp:478
+#: core/app/dragdrop/itemdragdrop.cpp:416
 #, kde-format
 msgid "&Copy Here"
 msgstr "复制到此位置(&C)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:265
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/albumdragdrop.cpp:405
-#: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
+#: core/app/dragdrop/albumdragdrop.cpp:285
+#: core/app/dragdrop/albumdragdrop.cpp:340
+#: core/app/dragdrop/albumdragdrop.cpp:386
+#: core/app/dragdrop/albumdragdrop.cpp:437
+#: core/app/dragdrop/albumdragdrop.cpp:480
+#: core/app/dragdrop/importdragdrop.cpp:184
+#: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
+#: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
 #, kde-format
 msgid "C&ancel"
 msgstr "取消(&A)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:261
+#: core/app/dragdrop/albumdragdrop.cpp:336
+#: core/app/dragdrop/albumdragdrop.cpp:382
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "设为相册缩略图"
 
-#: core/app/dragdrop/albumdragdrop.cpp:327
-#: core/app/dragdrop/itemdragdrop.cpp:806
+#: core/app/dragdrop/albumdragdrop.cpp:434
+#: core/app/dragdrop/itemdragdrop.cpp:855
 #, kde-format
 msgid "Download From Camera"
 msgstr "从相机下载"
 
-#: core/app/dragdrop/albumdragdrop.cpp:328
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/albumdragdrop.cpp:435
+#: core/app/dragdrop/itemdragdrop.cpp:857
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "从相机下载并删除"
 
-#: core/app/dragdrop/importdragdrop.cpp:52
-#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
-#, kde-format
-msgctxt "@action:inmenu Group images with this image"
-msgid "Group here"
-msgstr "在此建立分组"
-
-#: core/app/dragdrop/importdragdrop.cpp:192
+#: core/app/dragdrop/importdragdrop.cpp:180
 #, kde-format
 msgid "Exporting"
 msgstr "导出"
 
-#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/importdragdrop.cpp:182
 #, kde-format
 msgid "Upload to Camera"
 msgstr "上传到相机"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:56
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "在此建立分组"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:63
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "插入图像到此位置"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:70
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "在此建立分组并移动到相册"
 
-#: core/app/dragdrop/itemdragdrop.cpp:204
+#: core/app/dragdrop/itemdragdrop.cpp:457
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "指定标签到拖放项"
 
-#: core/app/dragdrop/itemdragdrop.cpp:686
+#: core/app/dragdrop/itemdragdrop.cpp:755
 #, kde-format
 msgid "Change Face Tags"
 msgstr "更改人脸标签"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:759
 #, kde-format
 msgid "Change Face Tag"
 msgstr "更改人脸标签"
 
-#: core/app/dragdrop/itemdragdrop.cpp:694
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:763
+#: core/app/dragdrop/itemdragdrop.cpp:814
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "取消(&C)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:799
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "指定标签到所选项(&S)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:741
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "指定标签到此项(&T)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:745
+#: core/app/dragdrop/itemdragdrop.cpp:811
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "指定标签到所有项(&A)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:804
+#: core/app/dragdrop/itemdragdrop.cpp:853
 #, kde-format
 msgid "Importing"
 msgstr "正在导入"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:266
 #, kde-format
 msgid "M&erge Here"
 msgstr "合并标签(&E)"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:390
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "确认分配人脸名称“%2”到项目"
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "设为标签缩略图"
 
-#: core/app/dragdrop/tagdragdrop.cpp:323
+#: core/app/dragdrop/tagdragdrop.cpp:439
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "更改人脸名称，从“%2”到“%3”"
 
-#: core/app/dragdrop/tagdragdrop.cpp:446
+#: core/app/dragdrop/tagdragdrop.cpp:538
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "指定标签“%1”到图像"
@@ -3257,10 +3247,7 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "在批处理管理器中添加 JPEG-XL、WebP、AVIF 转换插件。"
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
@@ -5628,7 +5615,7 @@ msgid ""
 msgstr "<para>用于去除或者添加暗角到图像的批处理工具。</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8255,67 +8242,67 @@ msgstr "暗角调整..."
 msgid "Background Blur Filter"
 msgstr "背景模糊过滤器"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr "此值控制主体周围背景的模糊程度的矩阵半径。"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "渐进式过渡："
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:97
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr "此值控制主体周围由近到远的可变模糊，可用于模拟镜头的景深效果。"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgid "Subject segmentation:"
-msgid "Subject Segmentation:"
-msgstr "主体细分："
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#, kde-format
+msgid "Subject Isolation:"
+msgstr "主体分离："
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:106
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr "此值设置细分处理的迭代次数，以控制程序更精细或更粗略地分离主体。"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
 #, kde-format
 msgid "Subject Mask:"
 msgstr "主体蒙版："
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:115
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
 "see if the subject have been isolated properly by the segmentation process. "
-"The green area is the subject where the blur effect will not applied."
+"The green area is the subject where the blur effect will not applied. You "
+"can re-adjust in this view the rectangle including the subject."
 msgstr ""
 "此视图显示了根据所选内容确定的主体细分情况。生成的绿色蒙版叠加在原始图像之"
 "上，以便查看主体是否已在细分处理中被正确分离。绿色区域即是主体，该区域不会应"
-"用模糊效果。"
+"用模糊效果。您可以在此视图中重新调整包含主体的矩形区域。"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "正在处理蒙版预览..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, kde-format
 msgid "Error while processing image..."
 msgstr "处理图像时发生错误..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, kde-format
 msgid "Background Blur"
 msgstr "背景模糊"
@@ -8336,24 +8323,29 @@ msgstr "模糊图像背景"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"This Image Editor tool can blur the background of the subject from an image."
-msgstr "用于模糊图像中主体周围背景的图像编辑器工具。"
+"This Image Editor tool can blur the background of the subject from an image "
+"to reproduce the depth-of-field effect from a lens."
+msgstr "用于模糊图像中主体的背景以营造镜头的景深效果。"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
 msgstr "背景模糊..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "Background Blur Tool"
 msgstr "背景模糊工具"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
 #, kde-format
-msgid "You must select before a rectangular area including the subject..."
-msgstr "您必须先选择一个包含主体的矩形区域。"
+msgid ""
+"You must select before a rectangular area including the subject.<br>Note: "
+"you can readjust the zone later in the tool."
+msgstr ""
+"您必须先选择一个包含主体的矩形区域。<br>提示：您稍后可以在工具中重新调整此区"
+"域。"
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -8825,7 +8817,7 @@ msgstr "USM 锐化"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:117
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
 msgstr "重新对焦"
@@ -12176,7 +12168,7 @@ msgid ""
 msgstr "设置相机拍摄时所用的饱和度处理方式。"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:114
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:139
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
 #, kde-format
 msgid "Sharpness:"
 msgstr "清晰度："
@@ -26542,7 +26534,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "右键菜单"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
 #: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
@@ -31478,7 +31470,7 @@ msgid ""
 msgstr "此处显示了暗角调整蒙版应用到图像后的预览效果。"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:97
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:168
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:169
 #, kde-format
 msgid "Amount:"
 msgstr "数量："
@@ -32025,7 +32017,7 @@ msgstr "解析图像的噪点情况并自动设置所有降噪选项。"
 #: core/libs/dimg/filters/nr/nrsettings.cpp:107
 #: core/libs/dimg/filters/nr/nrsettings.cpp:134
 #: core/libs/dimg/filters/nr/nrsettings.cpp:161
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:176
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:177
 #, kde-format
 msgid "Threshold:"
 msgstr "阈值："
@@ -32099,27 +32091,27 @@ msgstr "红色水平："
 msgid "Set here the reducing level of red to the average of blue and green."
 msgstr "在此设置相对于蓝色和绿色平均水平的红色减少水平。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:110
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:111
 #, kde-format
 msgid "Method:"
 msgstr "方式："
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:112
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
 #, kde-format
 msgid "Simple sharp"
 msgstr "简单锐化"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:114
 #, kde-format
 msgid "Unsharp mask"
 msgstr "USM 锐化"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:122
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr "选择要对图像应用的锐化方式。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:143
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:144
 #, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -32128,19 +32120,19 @@ msgstr ""
 "锐化程度为 0 时不起效果。锐化程度为 1 及以上时该数值用于控制锐化算法的矩阵半"
 "径，数值越大，锐化效果越强烈。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:160
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:161
 #, kde-format
 msgid "Radius:"
 msgstr "半径："
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:165
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:166
 #, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
 "much to blur the image."
 msgstr "半径数值数值用于控制高斯模糊的矩阵半径，数值越大，模糊效果越强烈。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:174
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
@@ -32149,7 +32141,7 @@ msgstr ""
 "被重新添加回原始图像的亮度数值，它是原始图像与模糊图像的亮度 (HSY' 光度) 的差"
 "值。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:182
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
@@ -32158,12 +32150,12 @@ msgstr ""
 "阈值是最大亮度 (HSY' 光度) 的百分数，它是需要应用的原始图像与模糊图像的亮度差"
 "值。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:185
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid "Suppress color noise."
 msgstr "减少杂色"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:187
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
@@ -32172,12 +32164,12 @@ msgstr ""
 "勾选此项后，将在亮度 (HSY' 光度) 通道应用一个滤镜，用于抑制色品噪点在处理中被"
 "放大。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:210
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:211
 #, kde-format
 msgid "Circular sharpness:"
 msgstr "循环卷积锐化程度："
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:216
 #, kde-format
 msgid ""
 "This is the radius of the circular convolution. It is the most important "
@@ -32188,12 +32180,12 @@ msgstr ""
 "设置循环卷积算法的半径，这也是此模式最重要的参数。默认值 1.0 可以较好地处理绝"
 "大多数图像。如果图像非常模糊，请选择一个更大的数值。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:219
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:220
 #, kde-format
 msgid "Correlation:"
 msgstr "相关度："
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:224
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:225
 #, kde-format
 msgid ""
 "Increasing the correlation may help to reduce artifacts. The correlation can "
@@ -32204,12 +32196,12 @@ msgstr ""
 "提高相关度可以降低处理的杂色。相关度的范围为 0-1。比较常用的数值为 0.5 或接"
 "近 1 的数值，例如 0.95 或 0.99 等。相关度数值较高时，锐化效果将下降。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:229
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:230
 #, kde-format
 msgid "Noise filter:"
 msgstr "噪音过滤："
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:234
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:235
 #, kde-format
 msgid ""
 "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -32222,12 +32214,12 @@ msgstr ""
 "果噪音过滤数值太低，如 0.0，生成的画质将会非常差。常用数值为 0.01，噪音过滤数"
 "值较高时，锐化效果将下降。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:240
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:241
 #, kde-format
 msgid "Gaussian sharpness:"
 msgstr "高斯锐化程度："
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:245
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:246
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -32240,12 +32232,12 @@ msgstr ""
 "理。在绝大多数情况下应将此参数设为 0，否则会造成难看的杂色。如果您将它设为非 "
 "0 的数值，最好同时提高相关度和噪点过滤参数。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:250
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:251
 #, kde-format
 msgid "Matrix size:"
 msgstr "矩阵大小："
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:254
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:255
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -32255,29 +32247,29 @@ msgstr ""
 "设置变形矩阵的大小。提高变形矩阵宽度将产生更好的效果，特别是当您选择了较高的"
 "循环卷积和高斯卷积程度时。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:487
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:488
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "要加载的照片重新对焦设置文件"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:505
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:506
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr "“%1”不是一个照片重新对焦设置文本文件。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:528
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:529
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr "无法加载照片重新对焦设置文本文件。"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:536
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:537
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "要保存的照片重新对焦设置文件"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:566
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:567
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "无法保存照片重新对焦设置文本文件。"
@@ -33528,8 +33520,8 @@ msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "缩放至适合大小"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:158
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
@@ -33620,7 +33612,7 @@ msgstr "扫描范围"
 #, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
-msgstr ""
+msgstr "工作流程："
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #, kde-format
@@ -34549,54 +34541,64 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "名为 %1 的文件或文件夹已存在于 %2 中"
 
-#: core/libs/iojobs/iojob.cpp:165
+#: core/libs/iojobs/iojob.cpp:154
+#, kde-format
+msgid "Recursive folder %1 move detected to album %2"
+msgstr "检测到将文件夹 %1 递归移动到相册 %2 的操作。"
+
+#: core/libs/iojobs/iojob.cpp:173
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "无法移动文件夹 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:172
+#: core/libs/iojobs/iojob.cpp:180
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "无法移动文件夹 %1 到相册 %2。文件夹 %1 已被复制到相册 %2。"
 
-#: core/libs/iojobs/iojob.cpp:184
+#: core/libs/iojobs/iojob.cpp:192
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "无法将文件 %1 的附带文件移动到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:190
+#: core/libs/iojobs/iojob.cpp:198
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "无法移动文件 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:214
+#: core/libs/iojobs/iojob.cpp:213
+#, kde-format
+msgid "Recursive folder %1 copy detected to album %2"
+msgstr "检测到将文件夹 %1 递归复制到相册 %2 的操作。"
+
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "无法复制文件夹 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:226
+#: core/libs/iojobs/iojob.cpp:242
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "无法将文件 %1 的附带文件复制到文件夹 %2"
 
-#: core/libs/iojobs/iojob.cpp:234
+#: core/libs/iojobs/iojob.cpp:250
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "无法复制文件 %1 到文件夹 %2"
 
-#: core/libs/iojobs/iojob.cpp:239
+#: core/libs/iojobs/iojob.cpp:255
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "无法复制文件 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:286
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "文件/文件夹 %1 不存在"
 
-#: core/libs/iojobs/iojob.cpp:298
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34606,7 +34608,7 @@ msgstr ""
 "无法移动文件夹 %1 到图像集合回收站。\n"
 "请检查图像集合的回收站文件夹“.dtrash”的文件权限。"
 
-#: core/libs/iojobs/iojob.cpp:310
+#: core/libs/iojobs/iojob.cpp:326
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34616,32 +34618,32 @@ msgstr ""
 "无法移动图像 %1 到图像集合回收站。\n"
 "请检查图像集合的回收站文件夹“.dtrash”的文件权限。"
 
-#: core/libs/iojobs/iojob.cpp:327
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "相册 %1 无法移除"
 
-#: core/libs/iojobs/iojob.cpp:339
+#: core/libs/iojobs/iojob.cpp:355
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "图像 %1 无法移除"
 
-#: core/libs/iojobs/iojob.cpp:388
+#: core/libs/iojobs/iojob.cpp:404
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "无法移动图像 %1 到相册集合回收站"
 
-#: core/libs/iojobs/iojob.cpp:400
+#: core/libs/iojobs/iojob.cpp:416
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "该位置已存在同名图像 %1"
 
-#: core/libs/iojobs/iojob.cpp:418
+#: core/libs/iojobs/iojob.cpp:434
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "图像 %1 无法重命名"
 
-#: core/libs/iojobs/iojob.cpp:500
+#: core/libs/iojobs/iojob.cpp:516
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "无法从回收站还原文件 %1"
@@ -43313,7 +43315,7 @@ msgstr "无"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
 #, kde-format
-msgctxt "@info: pick lablel selector"
+msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "挑选标记：%1"
 
@@ -49569,6 +49571,12 @@ msgctxt "@title: stack-view list on items"
 msgid "Stack"
 msgstr "图集"
 
+#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
+#, kde-format
+msgctxt "@action:inmenu Group images with this image"
+msgid "Group here"
+msgstr "在此建立分组"
+
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
 #, kde-format
 msgctxt "@action"
@@ -51096,17 +51104,7 @@ msgstr ""
 "照片管理程序。</p><p>请点击“下一步”，对 digiKam 进行初始设置。</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -51122,8 +51120,8 @@ msgstr ""
 "升级迁移</b></p><p>digiKam 4 的旧版配置文件尚未迁移。新版 digiKam 仍然可以继"
 "续使用旧版数据库，只需在接下来的对话框中为相册集合和数据库选择与旧版相同的位"
 "置即可。建议在继续操作之前备份您的数据库。</p><p>新版配置文件的位置在 %1 (旧"
-"版配置文件在 %2)。继续使用旧版配置文件将会遇到许多问题，因此不建议使用旧版配"
-"置文件，否则风险自负。</p></qt>"
+"版配置文件在 %2)。重新使用旧版配置文件存在未解决的问题，因此目前不建议这样"
+"做，使用时请自行承担风险。</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
@@ -63093,13 +63091,7 @@ msgid "JPEG"
 msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving Versionned Images</"
-#| "title><para>Select the file format in which edited images are saved "
-#| "automatically. Format-specific options, like compression settings, can be "
-#| "configured on the <interface>Format Options</interface> tab.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Default File Format for Saving Versioned Images</title><para>Select "

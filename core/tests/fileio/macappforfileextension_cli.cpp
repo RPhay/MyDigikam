@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-02-04
- * Description : a command line tool to list MacOS apllication bundle
+ * Description : a command line tool to list MacOS application bundle
  *               suitable to open a type mime..
  *
  * SPDX-FileCopyrightText: 2021-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>

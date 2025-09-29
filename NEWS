@@ -24,6 +24,7 @@ Plugins:         G'MIC-Qt updated to last v3.6.0.
 TagsManager:     Add options to import or export tag-hierarchies to text files.
                  Controlled Vocabulary Keyword Catalogue format is supported (https://www.controlledvocabulary.com/products/index.html).
 Preview:         Add support to the FujiFilm camera focus points.
+Preview:         Add support to the Olympus/OM Systems camera focus points.
 ColorManagement: Use monitor color profile set under Windows, macOS, and Wayland.
 ProgressManager: Use native desktop notifier under Linux, macOS, and Windows.
 Editor:          New enhance tool to blur progressively the background of a subject from a photo.
@@ -110,14 +111,14 @@ BUGFIXES:
 076 ==> 508681 - Does not start in Windows.
 077 ==> 508768 - digiKam crashes on launch.
 078 ==> 509059 - Rebuild all training data results in crash.
-079 ==> 
-080 ==> 
-081 ==> 
-082 ==> 
-083 ==> 
-084 ==> 
-085 ==> 
-086 ==> 
+079 ==> 509583 - digiKam icon is displayed twice in the taskbar.
+080 ==> 509573 - Add support of OM System OM-5 Mark II focus point.
+081 ==> 505103 - digiKam git freeze when trying to drag and drop/copy files/images inside albums (Wayland/Hyprland).
+082 ==> 501862 - Dragging tags to new location no longer has option to merge tags.
+083 ==> 503054 - A merge of tags sometimes does not get triggered.
+084 ==> 504238 - Add support of keywords merge using Drag and Drop.
+085 ==> 509796 - digiKam generated XMP sidecars not updated by darktable.
+086 ==> 509844 - digiKam closed unexpectedly (Qt5 based).
 087 ==> 
 088 ==> 
 089 ==> 

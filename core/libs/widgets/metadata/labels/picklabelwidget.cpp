@@ -398,7 +398,7 @@ void PickLabelSelector::slotPickLabelChanged(int id)
 {
     setText(QString());
     setIcon(d->plw->buildIcon((PickLabel)id));
-    setToolTip(i18nc("@info: pick lablel selector", "Pick Label: %1", d->plw->labelPickName((PickLabel)id)));
+    setToolTip(i18nc("@info: pick label selector", "Pick Label: %1", d->plw->labelPickName((PickLabel)id)));
     menu()->close();
 
     Q_EMIT signalPickLabelChanged(id);

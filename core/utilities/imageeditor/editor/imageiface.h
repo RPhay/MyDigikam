@@ -87,6 +87,7 @@ public:
      * Return current image selection position and size into original image coordinates.
      */
     QRect selectionRect()                                   const;
+    void  setSelectedRect(const QRect& rect);
 
     /**
      * Return a DImg object representing the current original image selection.

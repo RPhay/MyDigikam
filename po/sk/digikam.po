@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-17 01:56+0000\n"
+"POT-Creation-Date: 2025-09-29 02:01+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -194,140 +194,130 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:97
-#: core/app/dragdrop/albumdragdrop.cpp:255
-#: core/app/dragdrop/albumdragdrop.cpp:402
-#: core/app/dragdrop/importdragdrop.cpp:121
-#: core/app/dragdrop/itemdragdrop.cpp:149 core/app/dragdrop/tagdragdrop.cpp:87
+#: core/app/dragdrop/albumdragdrop.cpp:282
+#: core/app/dragdrop/albumdragdrop.cpp:376
+#: core/app/dragdrop/albumdragdrop.cpp:477
+#: core/app/dragdrop/itemdragdrop.cpp:412 core/app/dragdrop/tagdragdrop.cpp:265
 #, kde-format
 msgid "&Move Here"
 msgstr "&Presunúť sem"
 
-#: core/app/dragdrop/albumdragdrop.cpp:98
-#: core/app/dragdrop/albumdragdrop.cpp:256
-#: core/app/dragdrop/albumdragdrop.cpp:403
-#: core/app/dragdrop/importdragdrop.cpp:124
-#: core/app/dragdrop/itemdragdrop.cpp:152
+#: core/app/dragdrop/albumdragdrop.cpp:283
+#: core/app/dragdrop/albumdragdrop.cpp:377
+#: core/app/dragdrop/albumdragdrop.cpp:478
+#: core/app/dragdrop/itemdragdrop.cpp:416
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopírovať sem"
 
-#: core/app/dragdrop/albumdragdrop.cpp:100
-#: core/app/dragdrop/albumdragdrop.cpp:189
-#: core/app/dragdrop/albumdragdrop.cpp:265
-#: core/app/dragdrop/albumdragdrop.cpp:330
-#: core/app/dragdrop/albumdragdrop.cpp:405
-#: core/app/dragdrop/importdragdrop.cpp:57
-#: core/app/dragdrop/importdragdrop.cpp:196
-#: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
+#: core/app/dragdrop/albumdragdrop.cpp:285
+#: core/app/dragdrop/albumdragdrop.cpp:340
+#: core/app/dragdrop/albumdragdrop.cpp:386
+#: core/app/dragdrop/albumdragdrop.cpp:437
+#: core/app/dragdrop/albumdragdrop.cpp:480
+#: core/app/dragdrop/importdragdrop.cpp:184
+#: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
+#: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
 #, kde-format
 msgid "C&ancel"
 msgstr "&Zrušiť"
 
-#: core/app/dragdrop/albumdragdrop.cpp:185
-#: core/app/dragdrop/albumdragdrop.cpp:261
+#: core/app/dragdrop/albumdragdrop.cpp:336
+#: core/app/dragdrop/albumdragdrop.cpp:382
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Nastaviť ako náhľad albumu"
 
-#: core/app/dragdrop/albumdragdrop.cpp:327
-#: core/app/dragdrop/itemdragdrop.cpp:806
+#: core/app/dragdrop/albumdragdrop.cpp:434
+#: core/app/dragdrop/itemdragdrop.cpp:855
 #, kde-format
 msgid "Download From Camera"
 msgstr "Stiahnuť z fotoaparátu"
 
-#: core/app/dragdrop/albumdragdrop.cpp:328
-#: core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/albumdragdrop.cpp:435
+#: core/app/dragdrop/itemdragdrop.cpp:857
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Stiahnuť a zmazať z fotoaparátu"
 
-#: core/app/dragdrop/importdragdrop.cpp:52
-#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
-#, kde-format
-msgctxt "@action:inmenu Group images with this image"
-msgid "Group here"
-msgstr "Tu zoskupiť"
-
-#: core/app/dragdrop/importdragdrop.cpp:192
+#: core/app/dragdrop/importdragdrop.cpp:180
 #, kde-format
 msgid "Exporting"
 msgstr "Exportujem"
 
-#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/importdragdrop.cpp:182
 #, kde-format
 msgid "Upload to Camera"
 msgstr "Odoslať do fotoaparátu"
 
-#: core/app/dragdrop/itemdragdrop.cpp:66
+#: core/app/dragdrop/itemdragdrop.cpp:56
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
 msgstr "Tu zoskupiť"
 
-#: core/app/dragdrop/itemdragdrop.cpp:73
+#: core/app/dragdrop/itemdragdrop.cpp:63
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
 msgstr "Sem vložte položky"
 
-#: core/app/dragdrop/itemdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:70
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Tu zoskupiť a presunúť do albumu"
 
-#: core/app/dragdrop/itemdragdrop.cpp:204
+#: core/app/dragdrop/itemdragdrop.cpp:457
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Priradiť štítky zahodeným položkám"
 
-#: core/app/dragdrop/itemdragdrop.cpp:686
+#: core/app/dragdrop/itemdragdrop.cpp:755
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Zmeniť tvárové štítky"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:759
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Zmeniť tvárový štítok"
 
-#: core/app/dragdrop/itemdragdrop.cpp:694
-#: core/app/dragdrop/itemdragdrop.cpp:748
+#: core/app/dragdrop/itemdragdrop.cpp:763
+#: core/app/dragdrop/itemdragdrop.cpp:814
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Zrušiť"
 
-#: core/app/dragdrop/itemdragdrop.cpp:733
+#: core/app/dragdrop/itemdragdrop.cpp:799
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Prir&adiť štítky vybraným položkám"
 
-#: core/app/dragdrop/itemdragdrop.cpp:741
+#: core/app/dragdrop/itemdragdrop.cpp:807
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Priradiť štítky &tejto položke"
 
-#: core/app/dragdrop/itemdragdrop.cpp:745
+#: core/app/dragdrop/itemdragdrop.cpp:811
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Priradiť štítky vš&etkým položkám"
 
-#: core/app/dragdrop/itemdragdrop.cpp:804
+#: core/app/dragdrop/itemdragdrop.cpp:853
 #, kde-format
 msgid "Importing"
 msgstr "Importuje sa"
 
-#: core/app/dragdrop/tagdragdrop.cpp:88
+#: core/app/dragdrop/tagdragdrop.cpp:266
 #, kde-format
 msgid "M&erge Here"
 msgstr "&Zlúčiť sem"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:390
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
@@ -335,12 +325,12 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Nastaviť ako štítok náhľadu"
 
-#: core/app/dragdrop/tagdragdrop.cpp:323
+#: core/app/dragdrop/tagdragdrop.cpp:439
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
@@ -348,7 +338,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:446
+#: core/app/dragdrop/tagdragdrop.cpp:538
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Priradiť položkám štítok(y) „%1“"
@@ -5755,7 +5745,7 @@ msgid ""
 msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8539,7 +8529,7 @@ msgstr "Oprava expozície"
 msgid "Background Blur Filter"
 msgstr "Farba pozadia:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, fuzzy, kde-format
 #| msgid ""
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
@@ -8551,25 +8541,25 @@ msgstr ""
 "Vyhladzovanie 0 nemá žiaden efekt, 1 a vyššie určujú polomer Gaussovej "
 "rozmazávacej matice, ktorá definuje stupeň rozmazania obrázka."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Progressive Transition:"
 msgstr "Informácie o priebehu"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:97
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
 #, fuzzy, kde-format
-msgid "Subject Segmentation:"
+msgid "Subject Isolation:"
 msgstr "Informácie o module"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -8581,36 +8571,37 @@ msgid ""
 msgstr ""
 "Táto hodnota určuje počet opakovaní použitia efektov Neón a Nájsť hrany."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgid "Subject Mask:"
 msgstr "Témy"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:115
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
 "selection. The resulting green mask is superposed to the original image to "
 "see if the subject have been isolated properly by the segmentation process. "
-"The green area is the subject where the blur effect will not applied."
+"The green area is the subject where the blur effect will not applied. You "
+"can re-adjust in this view the rectangle including the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
 #, fuzzy, kde-format
 #| msgid "Processing Panorama Preview..."
 msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Prebieha spracovanie panorámy..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, fuzzy, kde-format
 msgid "Error while processing image..."
 msgstr ""
 "Chyba pri načítavaní súboru\n"
 "%1"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
@@ -8634,26 +8625,29 @@ msgstr "Nepodarilo sa načítať obrázok"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This Image Editor tool can blur the background of the subject from an image."
+"This Image Editor tool can blur the background of the subject from an image "
+"to reproduce the depth-of-field effect from a lens."
 msgstr ""
 "Túto voľbu môžete použiť na zmenu mierky obrázka na aktuálnu oblasť výberu."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgctxt "@action"
 msgid "Background Blur..."
 msgstr "Farba pozadia:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur Tool"
 msgstr "Farba pozadia:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
 #, kde-format
-msgid "You must select before a rectangular area including the subject..."
+msgid ""
+"You must select before a rectangular area including the subject.<br>Note: "
+"you can readjust the zone later in the tool."
 msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
@@ -9129,7 +9123,7 @@ msgstr "Maskovanie neostrosti"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:117
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
 msgstr "Preostriť"
@@ -12594,7 +12588,7 @@ msgstr ""
 "Zadajte smer spracovania sýtosti použitý fotoaparátom pri vytvorení snímky."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:114
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:139
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
 #, kde-format
 msgid "Sharpness:"
 msgstr "Zaostrenie:"
@@ -27503,7 +27497,7 @@ msgstr ""
 msgid "Context menu"
 msgstr "Kontextová ponuka"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
 #: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
@@ -32742,7 +32736,7 @@ msgid ""
 msgstr "<p>Tu môžete vidieť farebný náhľad nastavení odtieňa a sýtosti."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:97
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:168
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:169
 #, kde-format
 msgid "Amount:"
 msgstr "Množstvo:"
@@ -33309,7 +33303,7 @@ msgstr ""
 #: core/libs/dimg/filters/nr/nrsettings.cpp:107
 #: core/libs/dimg/filters/nr/nrsettings.cpp:134
 #: core/libs/dimg/filters/nr/nrsettings.cpp:161
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:176
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:177
 #, kde-format
 msgid "Threshold:"
 msgstr "Prah:"
@@ -33389,27 +33383,27 @@ msgstr ""
 "Tu môžete nastaviť zosilnenie reliéfu, ktoré sa použije na zlúčenie textúry "
 "a obrázka."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:110
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:111
 #, kde-format
 msgid "Method:"
 msgstr "Metóda:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:112
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
 #, kde-format
 msgid "Simple sharp"
 msgstr "Jednoduché zaostrenie"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:114
 #, kde-format
 msgid "Unsharp mask"
 msgstr "Maska rozostrenia"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:122
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr "Tu môžetezmeniť metódu zaostrenia, ktorá sa použije na obrázok."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:143
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:144
 #, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -33418,12 +33412,12 @@ msgstr ""
 "Zaostrenie 0 nemá žiadny efekt, 1 a vyššie stanovujú rádius zaostrovacej "
 "matice, ktorá určuje, ako má byť obrázok ostrý."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:160
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:161
 #, kde-format
 msgid "Radius:"
 msgstr "Polomer:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:165
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:166
 #, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
@@ -33432,7 +33426,7 @@ msgstr ""
 "Vyhladzovanie 0 nemá žiaden efekt, 1 a vyššie určujú polomer Gaussovej "
 "rozmazávacej matrice, ktorá definuje stupeň rozmazania obrázka."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:174
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
@@ -33441,7 +33435,7 @@ msgstr ""
 "Hodnota rozdielu medzi originálom a rozostreným obrazom, ktorá sa pridá späť "
 "do originálu."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:182
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
@@ -33450,24 +33444,24 @@ msgstr ""
 "Prah ako zlomok maximálnej hodnoty jasu, potrebný na aplikáciu hodnoty "
 "rozdielu."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:185
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid "Suppress color noise."
 msgstr "Potlačiť farebný šum."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:187
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
 "noise amplification."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:210
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:211
 #, kde-format
 msgid "Circular sharpness:"
 msgstr "Kruhová ostrosť:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:216
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the radius of the circular convolution. It is the most important "
@@ -33484,12 +33478,12 @@ msgstr ""
 "modulu. Pre väčšinu obrázkov by mala predvolená hodnota 1.0 dať dobré "
 "výsledky. Vyberte vyššiu hodnotu ak je obrázok príliš rozmazaný."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:219
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:220
 #, kde-format
 msgid "Correlation:"
 msgstr "Korelácia:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:224
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:225
 #, fuzzy, kde-format
 #| msgid ""
 #| "Increasing the correlation may help to reduce artifacts. The correlation "
@@ -33507,12 +33501,12 @@ msgstr ""
 "napr. 0.95 a 0.99. Použitie vysokej hodnoty korelácie redukuje zaostrovací "
 "efekt tohto modulu."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:229
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:230
 #, kde-format
 msgid "Noise filter:"
 msgstr "Filter zrnenia:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:234
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:235
 #, fuzzy, kde-format
 #| msgid ""
 #| "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -33533,12 +33527,12 @@ msgstr ""
 "obrázka bude veľmi zlá. Užitočnou hodnotou je 0,01. Použitie vysokej hodnoty "
 "Šumového filtra zmenšuje zaostrovací efekt modulu."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:240
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:241
 #, kde-format
 msgid "Gaussian sharpness:"
 msgstr "Gaussová ostrosť:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:245
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:246
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -33553,12 +33547,12 @@ msgstr ""
 "použijete nenulové hodnoty, budete pravdepodobne musieť zvýšiť tiež hodnoty "
 "Korelácia a/alebo Šumový filter."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:250
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:251
 #, kde-format
 msgid "Matrix size:"
 msgstr "Veľkosť matice:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:254
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:255
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -33569,30 +33563,30 @@ msgstr ""
 "môže zlepšiť výsledky, ak ste zvolili vysoké hodnoty pre Kruhovú alebo "
 "Gaussovú ostrosť."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:487
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:488
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "Načítať tento súbor Reštaurovania fotografie"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:505
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:506
 #, fuzzy, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr "„%1“ nie je textový súbor s nastavením Reštaurovania fotografie."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:528
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:529
 #, fuzzy, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
 "Nie je možné načítať nastavenia z textového súboru Reštaurovania fotografie"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:536
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:537
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "Uložiť tento súbor nastavení Reštaurovania fotografie"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:566
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:567
 #, fuzzy, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
@@ -34902,8 +34896,8 @@ msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "Prispôsobiť veľkosti"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:158
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
@@ -35997,55 +35991,67 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Súbor alebo priečinok s názvom %1 už existuje v %2"
 
-#: core/libs/iojobs/iojob.cpp:165
+#: core/libs/iojobs/iojob.cpp:154
+#, fuzzy, kde-format
+#| msgid "Could not move folder %1 to album %2"
+msgid "Recursive folder %1 move detected to album %2"
+msgstr "Nedá sa presunúť priečinok %1 do albumu %2"
+
+#: core/libs/iojobs/iojob.cpp:173
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Nedá sa presunúť priečinok %1 do albumu %2"
 
-#: core/libs/iojobs/iojob.cpp:172
+#: core/libs/iojobs/iojob.cpp:180
 #, fuzzy, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "Nemôžem otvoriť: %1"
 
-#: core/libs/iojobs/iojob.cpp:184
+#: core/libs/iojobs/iojob.cpp:192
 #, fuzzy, kde-format
 #| msgid "Could not move file %1 to album %2"
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Nedá sa presunúť súbor %1 do albumu %2"
 
-#: core/libs/iojobs/iojob.cpp:190
+#: core/libs/iojobs/iojob.cpp:198
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Nedá sa presunúť súbor %1 do albumu %2"
 
-#: core/libs/iojobs/iojob.cpp:214
+#: core/libs/iojobs/iojob.cpp:213
+#, fuzzy, kde-format
+#| msgid "Could not move folder %1 to album %2"
+msgid "Recursive folder %1 copy detected to album %2"
+msgstr "Nedá sa presunúť priečinok %1 do albumu %2"
+
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Nedá sa skopírovať priečinok %1 do albumu %2"
 
-#: core/libs/iojobs/iojob.cpp:226
+#: core/libs/iojobs/iojob.cpp:242
 #, fuzzy, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Nemôžem otvoriť: %1"
 
-#: core/libs/iojobs/iojob.cpp:234
+#: core/libs/iojobs/iojob.cpp:250
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Nemôžem otvoriť: %1"
 
-#: core/libs/iojobs/iojob.cpp:239
+#: core/libs/iojobs/iojob.cpp:255
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Nemôžem otvoriť: %1"
 
-#: core/libs/iojobs/iojob.cpp:286
+#: core/libs/iojobs/iojob.cpp:302
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Súbor neexistuje"
 
-#: core/libs/iojobs/iojob.cpp:298
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36053,7 +36059,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:310
+#: core/libs/iojobs/iojob.cpp:326
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36061,17 +36067,17 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:327
+#: core/libs/iojobs/iojob.cpp:343
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Meno albumu nemôže byť prázdne."
 
-#: core/libs/iojobs/iojob.cpp:339
+#: core/libs/iojobs/iojob.cpp:355
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Obrázok %1 sa nedá odstrániť"
 
-#: core/libs/iojobs/iojob.cpp:388
+#: core/libs/iojobs/iojob.cpp:404
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
@@ -36080,19 +36086,19 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/libs/iojobs/iojob.cpp:400
+#: core/libs/iojobs/iojob.cpp:416
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "Už existuje album s rovnakým menom.\n"
 "Prosím vyberte iné meno."
 
-#: core/libs/iojobs/iojob.cpp:418
+#: core/libs/iojobs/iojob.cpp:434
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Obrázok %1 sa nedá premenovať"
 
-#: core/libs/iojobs/iojob.cpp:500
+#: core/libs/iojobs/iojob.cpp:516
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Nemôžem obnoviť súbor %1 z koša"
@@ -45414,8 +45420,10 @@ msgid "None"
 msgstr "Žiadny"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, kde-format
-msgctxt "@info: pick lablel selector"
+#, fuzzy, kde-format
+#| msgctxt "@info: pick lablel selector"
+#| msgid "Pick Label: %1"
+msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "Menovka výberu: %1"
 
@@ -52643,6 +52651,12 @@ msgstr "Odstrániť položky"
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
 msgstr ""
+
+#: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
+#, kde-format
+msgctxt "@action:inmenu Group images with this image"
+msgid "Group here"
+msgstr "Tu zoskupiť"
 
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
 #, kde-format
@@ -70332,6 +70346,14 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#, fuzzy
+#~ msgid "Subject Segmentation:"
+#~ msgstr "Informácie o module"
+
+#~ msgctxt "@info: pick lablel selector"
+#~ msgid "Pick Label: %1"
+#~ msgstr "Menovka výberu: %1"
 
 #, fuzzy
 #~| msgctxt "@label"

@@ -24,6 +24,7 @@
 #include <QDropEvent>
 #include <QMenu>
 #include <QIcon>
+#include <QTimer>
 #include <QApplication>
 
 // KDE includes
@@ -47,17 +48,6 @@
 
 namespace Digikam
 {
-
-enum DropAction
-{
-    NoAction,
-    CopyAction,
-    MoveAction,
-    GroupAction,
-    SortAction,
-    GroupAndMoveAction,
-    AssignTagAction
-};
 
 static QAction* addGroupAction(QMenu* const menu)
 {
@@ -85,208 +75,6 @@ static QAction* addCancelAction(QMenu* const menu)
     return menu->addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 }
 
-static DropAction copyOrMove(const QDropEvent* const e,
-                             QWidget* const view,
-                             bool allowMove = true,
-                             bool askForGrouping = false)
-{
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    if      (e->modifiers() & Qt::ControlModifier)
-
-#else
-
-    if      (e->keyboardModifiers() & Qt::ControlModifier)
-
-#endif
-
-    {
-        return CopyAction;
-    }
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    else if (e->modifiers() & Qt::ShiftModifier)
-
-#else
-
-    else if (e->keyboardModifiers() & Qt::ShiftModifier)
-
-#endif
-
-    {
-        return MoveAction;
-    }
-
-    if (!allowMove && !askForGrouping)
-    {
-        switch (e->proposedAction())
-        {
-            case Qt::CopyAction:
-            {
-                return CopyAction;
-            }
-
-            case Qt::MoveAction:
-            {
-                return MoveAction;
-            }
-
-            default:
-            {
-                return NoAction;
-            }
-        }
-    }
-
-    QMenu popMenu(view);
-
-    QAction* moveAction         = nullptr;
-
-    if (allowMove)
-    {
-        moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
-    }
-
-    QAction* const copyAction   = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
-    popMenu.addSeparator();
-
-    QAction* groupAction        = nullptr;
-    QAction* groupAndMoveAction = nullptr;
-
-    if (askForGrouping)
-    {
-        groupAction        = addGroupAction(&popMenu);
-        groupAndMoveAction = addGroupAndMoveAction(&popMenu);
-        popMenu.addSeparator();
-    }
-
-    addCancelAction(&popMenu);
-
-    popMenu.setMouseTracking(true);
-    qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    QAction* const choice  = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-    QAction* const choice  = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-    if      (moveAction && (choice == moveAction))
-    {
-        return MoveAction;
-    }
-    else if (choice == copyAction)
-    {
-        return CopyAction;
-    }
-    else if (groupAction && (choice == groupAction))
-    {
-        return GroupAction;
-    }
-    else if (groupAndMoveAction && (choice == groupAndMoveAction))
-    {
-        return GroupAndMoveAction;
-    }
-
-    return NoAction;
-}
-
-static DropAction tagAction(const QDropEvent* const e, QWidget* const view, bool askForGrouping)
-{
-    QMenu popMenu(view);
-    QAction* const tagAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                 i18n("Assign Tag to Dropped Items"));
-    QAction* groupAction     = nullptr;
-
-    if (askForGrouping)
-    {
-        popMenu.addSeparator();
-        groupAction = addGroupAction(&popMenu);
-    }
-
-    popMenu.addSeparator();
-    addCancelAction(&popMenu);
-
-    popMenu.setMouseTracking(true);
-    qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    QAction* const choice    = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-    QAction* const choice    = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-    if      (groupAction && (choice == groupAction))
-    {
-        return GroupAction;
-    }
-    else if (tagAction && (choice == tagAction))
-    {
-        return AssignTagAction;
-    }
-
-    return NoAction;
-}
-
-static DropAction s_groupAction(const QDropEvent* const e, QWidget* const view)
-{
-    ItemCategorizedView* const imgView = dynamic_cast<ItemCategorizedView*>(view);
-    int sortOrder                      = ApplicationSettings::instance()->getImageSortOrder();
-
-    QMenu popMenu(view);
-    QAction* sortAction                = nullptr;
-
-    if (imgView &&
-        (
-         (sortOrder == ItemSortSettings::SortByManualOrderAndName) ||
-         (sortOrder == ItemSortSettings::SortByManualOrderAndDate)
-        )
-       )
-    {
-        sortAction = addSortAction(&popMenu);
-        popMenu.addSeparator();
-    }
-
-    QAction* const groupAction = addGroupAction(&popMenu);
-    popMenu.addSeparator();
-    addCancelAction(&popMenu);
-
-    popMenu.setMouseTracking(true);
-    qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-    QAction* const choice      = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-    QAction* const choice      = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-    if (groupAction && (choice == groupAction))
-    {
-        return GroupAction;
-    }
-
-    if (sortAction && (choice == sortAction))
-    {
-        return SortAction;
-    }
-
-    return NoAction;
-}
-
 // -------------------------------------------------------------------------------------
 
 ItemDragDropHandler::ItemDragDropHandler(ItemModel* const model)
@@ -309,43 +97,50 @@ void ItemDragDropHandler::setReadOnlyDrop(bool readOnly)
     m_readOnly = readOnly;
 }
 
-bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDropEvent* e, const QModelIndex& droppedOn)
+bool ItemDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn)
 {
+    m_view = view;
+
+    if (!m_view)
+    {
+        return false;
+    }
+
     Album* album = nullptr;
 
     // Note that the drop event does not have to be in an ItemCategorizedView.
     // It can also be a TableViewTreeView.
 
-    ItemCategorizedView* const view = qobject_cast<ItemCategorizedView*>(abstractview);
+    ItemCategorizedView* const itemView = qobject_cast<ItemCategorizedView*>(m_view);
 
-    if (view)
+    if (itemView)
     {
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        album = view->albumAt(e->position().toPoint());
+        album = itemView->albumAt(e->position().toPoint());
 
 #else
 
-        album = view->albumAt(e->pos());
+        album = itemView->albumAt(e->pos());
 
 #endif
 
     }
     else
     {
-        TableViewTreeView* const tableViewTreeView = qobject_cast<TableViewTreeView*>(abstractview);
+        TableViewTreeView* const tableView = qobject_cast<TableViewTreeView*>(m_view);
 
-        if (tableViewTreeView)
+        if (tableView)
         {
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-            album = tableViewTreeView->albumAt(e->position().toPoint());
+            album = tableView->albumAt(e->position().toPoint());
 
 #else
 
-            album = tableViewTreeView->albumAt(e->pos());
+            album = tableView->albumAt(e->pos());
 
 #endif
 
@@ -359,8 +154,28 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         return false;
     }
 
-    PAlbum* palbum = nullptr;
-    TAlbum* talbum = nullptr;
+    m_droppedOn = droppedOn;
+    m_source    = e->source();
+    m_proposed  = e->proposedAction();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    m_position  = m_view->mapToGlobal(e->position().toPoint());
+    m_modifiers = e->modifiers();
+
+#else
+
+    m_position  = m_view->mapToGlobal(e->pos());
+    m_modifiers = e->keyboardModifiers();
+
+#endif
+
+    m_tagIDs.clear();
+    m_srcURLs.clear();
+    m_imageIDs.clear();
+
+    m_destPAlbum = nullptr;
+    m_destTAlbum = nullptr;
 
     if (album)
     {
@@ -373,20 +188,20 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if      (album->type() == Album::PHYSICAL)
         {
-            palbum = static_cast<PAlbum*>(album);
+            m_destPAlbum = static_cast<PAlbum*>(album);
         }
         else if (currentAlbum && (currentAlbum->type() == Album::PHYSICAL))
         {
-            palbum = static_cast<PAlbum*>(currentAlbum);
+            m_destPAlbum = static_cast<PAlbum*>(currentAlbum);
         }
 
         if      (album->type() == Album::TAG)
         {
-            talbum = static_cast<TAlbum*>(album);
+            m_destTAlbum = static_cast<TAlbum*>(album);
         }
         else if (currentAlbum && (currentAlbum->type() == Album::TAG))
         {
-            talbum = static_cast<TAlbum*>(currentAlbum);
+            m_destTAlbum = static_cast<TAlbum*>(currentAlbum);
         }
     }
 
@@ -394,255 +209,47 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
     {
         // Drag & drop inside of digiKam
 
-        QList<QUrl>      urls;
-        QList<int>       albumIDs;
-        QList<qlonglong> imageIDs;
+        QList<QUrl> urls;
+        QList<int>  albumIDs;
 
-        if (!DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
+        if (!DItemDrag::decode(e->mimeData(), urls, albumIDs, m_imageIDs))
         {
             return false;
         }
 
-        if (urls.isEmpty() || albumIDs.isEmpty() || imageIDs.isEmpty())
+        if (urls.isEmpty() || albumIDs.isEmpty() || m_imageIDs.isEmpty())
         {
             return false;
         }
 
-        DropAction action = NoAction;
+        QTimer::singleShot(0, this, &ItemDragDropHandler::slotMoveCopyInternal);
 
-        ItemInfo droppedOnInfo;
-
-        if (droppedOn.isValid())
-        {
-            ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(abstractview);
-
-            if (thumbBar)
-            {
-                droppedOnInfo = model()->imageInfo(thumbBar->itemFilterModel()->mapToSourceItemModel(droppedOn));
-            }
-            else
-            {
-                droppedOnInfo = model()->imageInfo(droppedOn);
-            }
-        }
-
-        if      (m_readOnly)
-        {
-            Q_EMIT itemInfosDropped(ItemInfoList(imageIDs));
-
-            return true;
-        }
-        else if (palbum)
-        {
-            // Check if items dropped come from outside current album.
-
-            QList<ItemInfo> extImages, intImages;
-
-            for (QList<qlonglong>::const_iterator it = imageIDs.constBegin() ;
-                 it != imageIDs.constEnd() ; ++it)
-            {
-                ItemInfo info(*it);
-
-                if (info.albumId() != album->id())
-                {
-                    extImages << info;
-                }
-                else
-                {
-                    intImages << info;
-                }
-            }
-
-            bool onlyExternal = (intImages.isEmpty() && !extImages.isEmpty());
-            bool onlyInternal = (!intImages.isEmpty() && extImages.isEmpty());
-            bool mixed        = (!intImages.isEmpty() && !extImages.isEmpty());
-
-            // Check for drop of image on itself
-
-            if (
-                (intImages.size()  == 1) &&
-                (intImages.first() == droppedOnInfo)
-               )
-            {
-                return false;
-            }
-
-            if (
-                onlyInternal        &&
-                droppedOn.isValid() &&
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-                (e->modifiers() == Qt::NoModifier)
-
-#else
-
-                (e->keyboardModifiers() == Qt::NoModifier)
-
-#endif
-               )
-
-            {
-                action = s_groupAction(e, view);
-            }
-            else
-            {
-                // Determine action. Show Menu only if there are any album-external items.
-                // Ask for grouping if dropped-on is valid (gives LinkAction)
-
-                action = copyOrMove(e, view, mixed || onlyExternal, !droppedOnInfo.isNull());
-            }
-
-            if      (onlyExternal)
-            {
-                // Only external items: copy or move as requested
-
-                if      (action == MoveAction)
-                {
-                    DIO::move(extImages, palbum);
-                    return true;
-                }
-                else if (action == CopyAction)
-                {
-                    DIO::copy(extImages, palbum);
-                    return true;
-                }
-            }
-            else if (onlyInternal)
-            {
-                // Only items from the current album:
-                // Move is a no-op. Do not show menu to ask for copy or move.
-                // If the user indicates a copy operation (holding Ctrl), copy.
-
-                if      (action == CopyAction)
-                {
-                    DIO::copy(intImages, palbum);
-                    return true;
-                }
-                else if (action == MoveAction)
-                {
-                    return false;
-                }
-            }
-            else if (mixed)
-            {
-                // Mixed items.
-                // For move operations, ignore items from current album.
-                // If user requests copy, copy.
-
-                if      (action == MoveAction)
-                {
-                    DIO::move(extImages, palbum);
-                    return true;
-                }
-                else if (action == CopyAction)
-                {
-                    DIO::copy(extImages + intImages, palbum);
-                    return true;
-                }
-            }
-        }
-        else if (talbum)
-        {
-            if (talbum->hasProperty(TagPropertyName::person()))
-            {
-                return false;
-            }
-
-            action = tagAction(e, view, droppedOn.isValid());
-
-            if (action == AssignTagAction)
-            {
-                Q_EMIT assignTags(ItemInfoList(imageIDs), QList<int>() << talbum->id());
-
-                return true;
-            }
-        }
-        else
-        {
-            if (droppedOn.isValid())
-            {
-                // Ask if the user wants to group
-
-                action = s_groupAction(e, view);
-            }
-        }
-
-        if (action == GroupAction)
-        {
-            if (droppedOnInfo.isNull())
-            {
-                return false;
-            }
-
-            Q_EMIT addToGroup(droppedOnInfo, ItemInfoList(imageIDs));
-
-            return true;
-        }
-
-        if (action == SortAction)
-        {
-            if (droppedOnInfo.isNull())
-            {
-                return false;
-            }
-
-            Q_EMIT dragDropSort(droppedOnInfo, ItemInfoList(imageIDs));
-
-            return true;
-        }
-
-        if (action == GroupAndMoveAction)
-        {
-            if (droppedOnInfo.isNull())
-            {
-                return false;
-            }
-
-            Q_EMIT addToGroup(droppedOnInfo, ItemInfoList(imageIDs));
-
-            DIO::move(ItemInfoList(imageIDs), palbum);
-
-            return true;
-        }
-
-        return false;
     }
     else if (e->mimeData()->hasUrls())
     {
-        if (!palbum && !m_readOnly)
+        if (!m_destPAlbum && !m_readOnly)
         {
             return false;
         }
 
         // Drag & drop outside of digiKam
 
-        QList<QUrl> srcURLs = e->mimeData()->urls();
+        m_srcURLs = e->mimeData()->urls();
 
         if (m_readOnly)
         {
-            Q_EMIT urlsDropped(srcURLs);
+            Q_EMIT urlsDropped(m_srcURLs);
 
             return true;
         }
 
-        DropAction action = copyOrMove(e, view);
-
-        if      (action == MoveAction)
-        {
-            DIO::move(srcURLs, palbum);
-        }
-        else if (action == CopyAction)
-        {
-            DIO::copy(srcURLs, palbum);
-        }
+        QTimer::singleShot(0, this, &ItemDragDropHandler::slotMoveCopyExternal);
 
         return true;
     }
     else if (DTagListDrag::canDecode(e->mimeData()))
     {
-        QList<int> tagIDs;
-        bool isDecoded = DTagListDrag::decode(e->mimeData(), tagIDs);
+        bool isDecoded = DTagListDrag::decode(e->mimeData(), m_tagIDs);
 
         if (!isDecoded)
         {
@@ -650,188 +257,24 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             return false;
         }
 
-        if (!view)
+        if (!itemView)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Error: View is null!";
             return false;
         }
 
-        // Face tags
-
-        if (talbum && talbum->hasProperty(TagPropertyName::person()))
-        {
-            if (
-                (tagIDs.first() == FaceTags::unconfirmedPersonTagId()) ||
-                (tagIDs.first() == FaceTags::unknownPersonTagId())     ||
-                !FaceTags::isPerson(tagIDs.first())
-               )
-            {
-                return false;
-            }
-
-            DigikamItemView* const dview = qobject_cast<DigikamItemView*>(abstractview);
-
-            if ((dview == nullptr) || !droppedOn.isValid())
-            {
-                return false;
-            }
-
-            QMenu popFaceTagMenu(dview);
-
-            QAction* assignFace  = nullptr;
-            QAction* assignFaces = nullptr;
-
-            if (dview->selectionModel()->selectedIndexes().size() > 1)
-            {
-                assignFaces = popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("tag")), i18n("Change Face Tags"));
-            }
-            else
-            {
-                assignFace = popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("tag")), i18n("Change Face Tag"));
-            }
-
-            popFaceTagMenu.addSeparator();
-            popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
-            popFaceTagMenu.setMouseTracking(true);
-            qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-            QAction* const res = popFaceTagMenu.exec(dview->mapToGlobal(e->position().toPoint()));
-
-#else
-
-            QAction* const res = popFaceTagMenu.exec(dview->mapToGlobal(e->pos()));
-
-#endif
-
-            if (res)
-            {
-                if      (res == assignFace)
-                {
-                    dview->confirmFaces({droppedOn}, tagIDs.first());
-                }
-                else if (res == assignFaces)
-                {
-                    dview->confirmFaces(dview->selectionModel()->selectedIndexes(), tagIDs.first());
-                }
-            }
-
-            return true;
-        }
-
-        // Standard tags
-
-        QMenu popMenu(view);
-
-        QList<ItemInfo> selectedInfos   = view->selectedItemInfosCurrentFirst();
-        QAction* assignToSelectedAction = nullptr;
-
-        if (selectedInfos.count() > 1)
-        {
-            assignToSelectedAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                       i18n("Assign Tags to &Selected Items"));
-        }
-
-        QAction* assignToThisAction = nullptr;
-
-        if (droppedOn.isValid())
-        {
-            assignToThisAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                   i18n("Assign Tags to &This Item"));
-        }
-
-        QAction* const assignToAllAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                             i18n("Assign Tags to &All Items"));
-
-        popMenu.addSeparator();
-        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
-
-        popMenu.setMouseTracking(true);
-        qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-        QAction* const choice = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-        QAction* const choice = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-        if (choice)
-        {
-            if      (choice == assignToSelectedAction)    // Selected Items
-            {
-                Q_EMIT assignTags(selectedInfos, tagIDs);
-            }
-            else if (choice == assignToAllAction)    // All Items
-            {
-                Q_EMIT assignTags(view->allItemInfos(), tagIDs);
-            }
-            else if (choice == assignToThisAction)    // Dropped item only.
-            {
-                QModelIndex dropIndex            = droppedOn;
-                ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(abstractview);
-
-                if (thumbBar)
-                {
-                    dropIndex = thumbBar->itemFilterModel()->mapToSourceItemModel(droppedOn);
-                }
-
-                Q_EMIT assignTags(QList<ItemInfo>() << model()->imageInfo(dropIndex), tagIDs);
-            }
-        }
+        QTimer::singleShot(0, this, &ItemDragDropHandler::slotMoveCopyItemTags);
 
         return true;
     }
     else if (DCameraItemListDrag::canDecode(e->mimeData()))
     {
-        if (!palbum)
+        if (!m_destPAlbum)
         {
             return false;
         }
 
-        ImportIconView* const iconView = dynamic_cast<ImportIconView*>(e->source());
-
-        if (!iconView)
-        {
-            return false;
-        }
-
-        QMenu popMenu(iconView);
-        popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Importing"));
-        QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("get-hot-new-stuff")),
-                                                         i18n("Download From Camera"));
-        QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("get-hot-new-stuff")),
-                                                         i18n("Download && Delete From Camera"));
-        popMenu.addSeparator();
-        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-        popMenu.setMouseTracking(true);
-        qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-        QAction* const choice        = popMenu.exec(iconView->mapToGlobal(e->position().toPoint()));
-
-#else
-
-        QAction* const choice        = popMenu.exec(iconView->mapToGlobal(e->pos()));
-
-#endif
-
-        if (choice)
-        {
-            if      (choice == downAction)
-            {
-                ImportUI::instance()->slotDownload(true, false, palbum);
-            }
-            else if (choice == downDelAction)
-            {
-                ImportUI::instance()->slotDownload(true, true, palbum);
-            }
-        }
+        QTimer::singleShot(0, this, &ItemDragDropHandler::slotDownloadCamItems);
 
         return true;
     }
@@ -926,6 +369,508 @@ QMimeData* ItemDragDropHandler::createMimeData(const QList<QModelIndex>& indexes
     }
 
     return new DItemDrag(urls, albumIDs, imageIDs);
+}
+
+ItemDragDropHandler::DropAction ItemDragDropHandler::copyOrMove(bool allowMove, bool askForGrouping) const
+{
+    if      (m_modifiers & Qt::ControlModifier)
+    {
+        return CopyAction;
+    }
+    else if (m_modifiers & Qt::ShiftModifier)
+    {
+        return MoveAction;
+    }
+
+    if (!allowMove && !askForGrouping)
+    {
+        switch (m_proposed)
+        {
+            case Qt::CopyAction:
+            {
+                return CopyAction;
+            }
+
+            case Qt::MoveAction:
+            {
+                return MoveAction;
+            }
+
+            default:
+            {
+                return NoAction;
+            }
+        }
+    }
+
+    QMenu popMenu(m_view);
+    QAction* moveAction         = nullptr;
+
+    if (allowMove)
+    {
+        moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),
+                                       i18n("&Move Here"));
+    }
+
+    QAction* const copyAction   = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")),
+                                                    i18n("&Copy Here"));
+    popMenu.addSeparator();
+
+    QAction* groupAction        = nullptr;
+    QAction* groupAndMoveAction = nullptr;
+
+    if (askForGrouping)
+    {
+        groupAction        = addGroupAction(&popMenu);
+        groupAndMoveAction = addGroupAndMoveAction(&popMenu);
+        popMenu.addSeparator();
+    }
+
+    addCancelAction(&popMenu);
+
+    QAction* const choice       = popMenu.exec(m_position);
+
+    if      (moveAction && (choice == moveAction))
+    {
+        return MoveAction;
+    }
+    else if (choice == copyAction)
+    {
+        return CopyAction;
+    }
+    else if (groupAction && (choice == groupAction))
+    {
+        return GroupAction;
+    }
+    else if (groupAndMoveAction && (choice == groupAndMoveAction))
+    {
+        return GroupAndMoveAction;
+    }
+
+    return NoAction;
+}
+
+ItemDragDropHandler::DropAction ItemDragDropHandler::tagAction(bool askForGrouping) const
+{
+    QMenu popMenu(m_view);
+    QAction* const tagAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                 i18n("Assign Tag to Dropped Items"));
+    QAction* groupAction     = nullptr;
+
+    if (askForGrouping)
+    {
+        popMenu.addSeparator();
+        groupAction = addGroupAction(&popMenu);
+    }
+
+    popMenu.addSeparator();
+    addCancelAction(&popMenu);
+
+    QAction* const choice    = popMenu.exec(m_position);
+
+    if      (groupAction && (choice == groupAction))
+    {
+        return GroupAction;
+    }
+    else if (tagAction && (choice == tagAction))
+    {
+        return AssignTagAction;
+    }
+
+    return NoAction;
+}
+
+ItemDragDropHandler::DropAction ItemDragDropHandler::groupAction() const
+{
+    ItemCategorizedView* const imgView = dynamic_cast<ItemCategorizedView*>(m_view);
+    int sortOrder                      = ApplicationSettings::instance()->getImageSortOrder();
+
+    QMenu popMenu(m_view);
+    QAction* sortAction                = nullptr;
+
+    if (imgView &&
+        (
+            (sortOrder == ItemSortSettings::SortByManualOrderAndName) ||
+            (sortOrder == ItemSortSettings::SortByManualOrderAndDate)
+        )
+       )
+    {
+        sortAction = addSortAction(&popMenu);
+        popMenu.addSeparator();
+    }
+
+    QAction* const groupAction = addGroupAction(&popMenu);
+    popMenu.addSeparator();
+    addCancelAction(&popMenu);
+
+    QAction* const choice      = popMenu.exec(m_position);
+
+    if (groupAction && (choice == groupAction))
+    {
+        return GroupAction;
+    }
+
+    if (sortAction && (choice == sortAction))
+    {
+        return SortAction;
+    }
+
+    return NoAction;
+}
+
+void ItemDragDropHandler::slotMoveCopyInternal()
+{
+    DropAction action = NoAction;
+
+    ItemInfo droppedOnInfo;
+
+    if (m_droppedOn.isValid())
+    {
+        ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(m_view);
+
+        if (thumbBar)
+        {
+            droppedOnInfo = model()->imageInfo(thumbBar->itemFilterModel()->mapToSourceItemModel(m_droppedOn));
+        }
+        else
+        {
+            droppedOnInfo = model()->imageInfo(m_droppedOn);
+        }
+    }
+
+    if      (m_readOnly)
+    {
+        Q_EMIT itemInfosDropped(ItemInfoList(m_imageIDs));
+
+        return;
+    }
+    else if (m_destPAlbum)
+    {
+        // Check if items dropped come from outside current album.
+
+        QList<ItemInfo> extImages, intImages;
+
+        for (QList<qlonglong>::const_iterator it = m_imageIDs.constBegin() ;
+             it != m_imageIDs.constEnd() ; ++it)
+        {
+            ItemInfo info(*it);
+
+            if (info.albumId() != m_destPAlbum->id())
+            {
+                extImages << info;
+            }
+            else
+            {
+                intImages << info;
+            }
+        }
+
+        bool onlyExternal = (intImages.isEmpty() && !extImages.isEmpty());
+        bool onlyInternal = (!intImages.isEmpty() && extImages.isEmpty());
+        bool mixed        = (!intImages.isEmpty() && !extImages.isEmpty());
+
+        // Check for drop of image on itself
+
+        if (
+            (intImages.size()  == 1) &&
+            (intImages.first() == droppedOnInfo)
+           )
+        {
+            return;
+        }
+
+        if (
+            onlyInternal                 &&
+            m_droppedOn.isValid()        &&
+            (m_modifiers == Qt::NoModifier)
+           )
+        {
+            action = groupAction();
+        }
+        else
+        {
+            // Determine action. Show Menu only if there are any album-external items.
+            // Ask for grouping if dropped-on is valid (gives LinkAction)
+
+            action = copyOrMove(mixed || onlyExternal, !droppedOnInfo.isNull());
+        }
+
+        if      (onlyExternal)
+        {
+            // Only external items: copy or move as requested
+
+            if      (action == MoveAction)
+            {
+                DIO::move(extImages, m_destPAlbum);
+                return;
+            }
+            else if (action == CopyAction)
+            {
+                DIO::copy(extImages, m_destPAlbum);
+                return;
+            }
+        }
+        else if (onlyInternal)
+        {
+            // Only items from the current album:
+            // Move is a no-op. Do not show menu to ask for copy or move.
+            // If the user indicates a copy operation (holding Ctrl), copy.
+
+            if      (action == CopyAction)
+            {
+                DIO::copy(intImages, m_destPAlbum);
+                return;
+            }
+            else if (action == MoveAction)
+            {
+                return;
+            }
+        }
+        else if (mixed)
+        {
+            // Mixed items.
+            // For move operations, ignore items from current album.
+            // If user requests copy, copy.
+
+            if      (action == MoveAction)
+            {
+                DIO::move(extImages, m_destPAlbum);
+                return;
+            }
+            else if (action == CopyAction)
+            {
+                DIO::copy(extImages + intImages, m_destPAlbum);
+                return;
+            }
+        }
+    }
+    else if (m_destTAlbum)
+    {
+        if (m_destTAlbum->hasProperty(TagPropertyName::person()))
+        {
+            return;
+        }
+
+        action = tagAction(m_droppedOn.isValid());
+
+        if (action == AssignTagAction)
+        {
+            Q_EMIT assignTags(ItemInfoList(m_imageIDs), QList<int>() << m_destTAlbum->id());
+
+            return;
+        }
+    }
+    else
+    {
+        if (m_droppedOn.isValid())
+        {
+            // Ask if the user wants to group
+
+            action = groupAction();
+        }
+    }
+
+    if (action == GroupAction)
+    {
+        if (droppedOnInfo.isNull())
+        {
+            return;
+        }
+
+        Q_EMIT addToGroup(droppedOnInfo, ItemInfoList(m_imageIDs));
+
+        return;
+    }
+
+    if (action == SortAction)
+    {
+        if (droppedOnInfo.isNull())
+        {
+            return;
+        }
+
+        Q_EMIT dragDropSort(droppedOnInfo, ItemInfoList(m_imageIDs));
+
+        return;
+    }
+
+    if (action == GroupAndMoveAction)
+    {
+        if (droppedOnInfo.isNull())
+        {
+            return;
+        }
+
+        Q_EMIT addToGroup(droppedOnInfo, ItemInfoList(m_imageIDs));
+
+        DIO::move(ItemInfoList(m_imageIDs), m_destPAlbum);
+
+        return;
+    }
+}
+
+void ItemDragDropHandler::slotMoveCopyExternal()
+{
+    DropAction action = copyOrMove();
+
+    if      (action == MoveAction)
+    {
+        DIO::move(m_srcURLs, m_destPAlbum);
+    }
+    else if (action == CopyAction)
+    {
+        DIO::copy(m_srcURLs, m_destPAlbum);
+    }
+}
+
+void ItemDragDropHandler::slotMoveCopyItemTags()
+{
+    // Face tags
+
+    if (m_destTAlbum && m_destTAlbum->hasProperty(TagPropertyName::person()))
+    {
+        if (
+            (m_tagIDs.first() == FaceTags::unconfirmedPersonTagId()) ||
+            (m_tagIDs.first() == FaceTags::unknownPersonTagId())     ||
+            !FaceTags::isPerson(m_tagIDs.first())
+           )
+        {
+            return;
+        }
+
+        DigikamItemView* const dview = qobject_cast<DigikamItemView*>(m_view);
+
+        if (!dview || !m_droppedOn.isValid())
+        {
+            return;
+        }
+
+        QMenu popFaceTagMenu(m_view);
+
+        QAction* assignFace  = nullptr;
+        QAction* assignFaces = nullptr;
+
+        if (dview->selectionModel()->selectedIndexes().size() > 1)
+        {
+            assignFaces = popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("tag")), i18n("Change Face Tags"));
+        }
+        else
+        {
+            assignFace = popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("tag")), i18n("Change Face Tag"));
+        }
+
+        popFaceTagMenu.addSeparator();
+        popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
+
+        QAction* const res = popFaceTagMenu.exec(m_position);
+
+        if (res)
+        {
+            if      (res == assignFace)
+            {
+                dview->confirmFaces({m_droppedOn}, m_tagIDs.first());
+            }
+            else if (res == assignFaces)
+            {
+                dview->confirmFaces(dview->selectionModel()->selectedIndexes(), m_tagIDs.first());
+            }
+        }
+
+        return;
+    }
+
+    // Standard tags
+
+    ItemCategorizedView* const itemView = qobject_cast<ItemCategorizedView*>(m_view);
+
+    if (!itemView)
+    {
+        return;
+    }
+
+    QMenu popMenu(m_view);
+
+    QList<ItemInfo> selectedInfos   = itemView->selectedItemInfosCurrentFirst();
+    QAction* assignToSelectedAction = nullptr;
+
+    if (selectedInfos.count() > 1)
+    {
+        assignToSelectedAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                   i18n("Assign Tags to &Selected Items"));
+    }
+
+    QAction* assignToThisAction = nullptr;
+
+    if (m_droppedOn.isValid())
+    {
+        assignToThisAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                               i18n("Assign Tags to &This Item"));
+    }
+
+    QAction* const assignToAllAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                         i18n("Assign Tags to &All Items"));
+
+    popMenu.addSeparator();
+    popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
+
+    QAction* const choice = popMenu.exec(m_position);
+
+    if (choice)
+    {
+        if      (choice == assignToSelectedAction)    // Selected Items
+        {
+            Q_EMIT assignTags(selectedInfos, m_tagIDs);
+        }
+        else if (choice == assignToAllAction)    // All Items
+        {
+            Q_EMIT assignTags(itemView->allItemInfos(), m_tagIDs);
+        }
+        else if (choice == assignToThisAction)    // Dropped item only.
+        {
+            QModelIndex dropIndex            = m_droppedOn;
+            ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(m_view);
+
+            if (thumbBar)
+            {
+                dropIndex = thumbBar->itemFilterModel()->mapToSourceItemModel(m_droppedOn);
+            }
+
+            Q_EMIT assignTags(QList<ItemInfo>() << model()->imageInfo(dropIndex), m_tagIDs);
+        }
+    }
+}
+
+void ItemDragDropHandler::slotDownloadCamItems()
+{
+    ImportIconView* const iconView = dynamic_cast<ImportIconView*>(m_source);
+
+    if (!iconView)
+    {
+        return;
+    }
+
+    QMenu popMenu(m_view);
+    popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Importing"));
+    QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("get-hot-new-stuff")),
+                                                     i18n("Download From Camera"));
+    QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("get-hot-new-stuff")),
+                                                     i18n("Download && Delete From Camera"));
+    popMenu.addSeparator();
+    popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
+
+    QAction* const choice        = popMenu.exec(m_position);
+
+    if (choice)
+    {
+        if      (choice == downAction)
+        {
+            ImportUI::instance()->slotDownload(true, false, m_destPAlbum);
+        }
+        else if (choice == downDelAction)
+        {
+            ImportUI::instance()->slotDownload(true, true, m_destPAlbum);
+        }
+    }
 }
 
 } // namespace Digikam

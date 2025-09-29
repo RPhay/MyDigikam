@@ -60,7 +60,8 @@ QString BackgroundBlurToolPlugin::description() const
 
 QString BackgroundBlurToolPlugin::details() const
 {
-    return i18nc("@info", "This Image Editor tool can blur the background of the subject from an image.");
+    return i18nc("@info", "This Image Editor tool can blur the background of the subject "
+                          "from an image to reproduce the depth-of-field effect from a lens.");
 }
 
 QString BackgroundBlurToolPlugin::handbookSection() const
@@ -112,7 +113,8 @@ void BackgroundBlurToolPlugin::slotBackgroundBlur()
         if (iface.selectionRect().isEmpty())
         {
             QMessageBox::warning(qApp->activeWindow(), i18n("Background Blur Tool"),
-                                 i18n("You must select before a rectangular area including the subject..."));
+                                 i18n("You must select before a rectangular area including the subject.<br>"
+                                      "Note: you can readjust the zone later in the tool."));
 
             return;
         }

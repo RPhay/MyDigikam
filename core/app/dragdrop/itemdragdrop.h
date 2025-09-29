@@ -65,9 +65,52 @@ Q_SIGNALS:
     void addToGroup(const ItemInfo& pick, const QList<ItemInfo>& infos);
     void dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& infos);
 
+private:
+
+    enum DropAction
+    {
+        NoAction,
+        CopyAction,
+        MoveAction,
+        GroupAction,
+        SortAction,
+        GroupAndMoveAction,
+        AssignTagAction
+    };
+
+private:
+
+    DropAction copyOrMove(bool allowMove = true,
+                          bool askForGrouping = false) const;
+    DropAction tagAction(bool askForGrouping)          const;
+    DropAction groupAction()                           const;
+
+private Q_SLOTS:
+
+    void slotMoveCopyInternal();
+    void slotMoveCopyExternal();
+    void slotMoveCopyItemTags();
+    void slotDownloadCamItems();
+
+private:
+
+    QAbstractItemView*    m_view       = nullptr;
+    QObject*              m_source     = nullptr;
+    PAlbum*               m_destPAlbum = nullptr;
+    TAlbum*               m_destTAlbum = nullptr;
+
+    Qt::KeyboardModifiers m_modifiers;
+    Qt::DropAction        m_proposed   = Qt::IgnoreAction;
+    QModelIndex           m_droppedOn;
+    QPoint                m_position;
+
+    QList<int>            m_tagIDs;
+    QList<QUrl>           m_srcURLs;
+    QList<qlonglong>      m_imageIDs;
+
 protected:
 
-    bool m_readOnly = false;
+    bool                  m_readOnly   = false;
 };
 
 } // namespace Digikam

@@ -113,7 +113,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
             af_x_position = af_info[0].toFloat();
             af_y_position = af_info[1].toFloat();
 
-            // Get size of af area.
+            // Get size of AF area.
 
             afPointWidth  = af_info[2].toFloat();
             afPointHeight = af_info[3].toFloat();
@@ -128,7 +128,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
             af_x_position = af_info[0].toFloat();
             af_y_position = af_info[1].toFloat();
 
-            // Get size of af area (typically a circle transformed as rectangle).
+            // Get size of AF area (typically a circle transformed as rectangle).
 
             afPointWidth  = af_info[3].toFloat();
             afPointHeight = af_info[3].toFloat();
@@ -143,7 +143,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
             af_x_position = af_info[0].toFloat();
             af_y_position = af_info[1].toFloat();
 
-            // Get size of af area (typically a point transformed an arbritary square of size 120 pixels).
+            // Get size of AF area (typically a point transformed an arbitrary square of size 120 pixels).
 
             afPointWidth  = 120.0F;
             afPointHeight = 120.0F;

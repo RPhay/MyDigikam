@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=Date Frames
+Name[ar]=إطارات التاريخ
 Name[be]=Рамкі даты
 Name[bg]=Рамки за дата
 Name[ca]=Marcs de la data
@@ -35,6 +36,7 @@ Name[uk]=Рамки дат
 Name[zh_CN]=日期型 Frames
 Name[zh_TW]=日期框架
 Comment=A frame theme based on Ruediger Bente's frame theme
+Comment[ar]=نسق إطارات يعتمد على نسق إطارات روديجر بنت
 Comment[be]=Тэма на аснове тэмы ад Ruediger Bente
 Comment[bg]=Тема за рамки, базирана на темата за рамки на Рюдигер Бенте
 Comment[ca]=Un tema de marcs basat en el tema de marcs del Ruediger Bente
@@ -70,6 +72,7 @@ Comment[zh_CN]=基于 Ruediger Bente 的 Frames 主题的相框主题
 
 [X-HTMLGallery Author]
 Name=Elizabeth Marmorstein
+Name[ar]=إليزابيث مارمورستين
 Name[be]=Elizabeth Marmorstein
 Name[bg]=Elizabeth Marmorstein
 Name[ca]=Elizabeth Marmorstein
@@ -109,6 +112,7 @@ Url=mailto:purplegamba@cox.net
 
 [X-HTMLGallery Preview]
 Name=Date Frames
+Name[ar]=إطارات التاريخ
 Name[be]=Рамкі даты
 Name[bg]=Рамки за дата
 Name[ca]=Marcs de la data
@@ -146,6 +150,7 @@ Url=preview.png
 
 [X-HTMLGallery Parameter color1]
 Name=Thumbnail Background
+Name[ar]=خلفية المصغرة
 Name[be]=Фон мініяцюр
 Name[bg]=Фон на миниатюра
 Name[ca]=Fons de les miniatures
@@ -186,6 +191,7 @@ Default=#FFFFFF
 
 [X-HTMLGallery Parameter color2]
 Name=Image Background (contrasting)
+Name[ar]=خلفية الصورة (متضاد)
 Name[be]=Фон выяў (кантрасны)
 Name[bg]=Фон на изображение (контрастен)
 Name[ca]=Fons de les imatges (amb contrast)
@@ -224,6 +230,7 @@ Default=#000055
 
 [X-HTMLGallery Parameter color3]
 Name=Nav Bar Background (dark)
+Name[ar]=خلفية شريط التنقل (داكنة)
 Name[be]=Фон панэлі навігацыі (цёмны)
 Name[bg]=Фон на лентата за навигация (тъмен)
 Name[ca]=Fons de la barra de navegació (fosc)
@@ -261,6 +268,7 @@ Default=#000011
 
 [X-HTMLGallery Parameter intro]
 Name=Gallery Introduction
+Name[ar]=مقدمة المعرض
 Name[be]=Уводзіны ў галерэю
 Name[bg]=Въведение в галерията
 Name[ca]=Introducció a galeries
@@ -301,6 +309,7 @@ Default=Welcome to my web gallery!
 
 [X-HTMLGallery Parameter longformat]
 Name=Caption Date Format (see xsltsl.sourceforge.net/date-time.html)
+Name[ar]=صيغة تاريخ الشرح (انظر xsltsl.sourceforge.net/date-time.html)
 Name[be]=Фармат даты ў подпісах (глядзіце xsltsl.sourceforge.net/date-time.html)
 Name[bg]=Формат на датата на заглавието (вж. xsltsl.sourceforge.net/date-time.html)
 Name[ca]=Format de la data de la llegenda (vegeu xsltsl.sourceforge.net/date-time.html)
@@ -332,6 +341,7 @@ Name[zh_CN]=标题日期格式 (参见 xsltsl.sourceforge.net/date-time.html)
 Type=string
 Default=%A, %b %e, %Y   %i:%M%P
 Comment=XSL Date Format String: Use the syntax given at xsltsl.sourceforge.net/date-time.html
+Comment[ar]=سلسلة صيغة تاريخ إكس إس إل: استخدم الصيغة المذكورة في xsltsl.sourceforge.net/date-time.html
 Comment[be]=Фармат даты радкоў XSL: выкарыстоўвайце сінтаксіс, апісанне якога можна знайсці па адрасе xsltsl.sourceforge.net/date-time.html
 Comment[bg]=Редица за формат на датата XSL: Използвайте синтаксиса, даден в xsltsl.sourceforge.net/date-time.html
 Comment[ca]=Cadena de format per a les dates en XSL: empreu la sintaxi indicada a xsltsl.sourceforge.net/date-time.html
@@ -363,6 +373,7 @@ Comment[zh_CN]=XSL 日期格式字符串：请使用 xsltsl.sourceforge.net/date
 
 [X-HTMLGallery Parameter shortformat]
 Name=Image List Date Format
+Name[ar]=صيغة تاريخ قائمة الصور
 Name[be]=Фармат даты ў спісе выяў
 Name[bg]=Формат на датата на списъка с изображения
 Name[ca]=Format de la data per a la llista d'imatges
@@ -398,6 +409,7 @@ Name[zh_CN]=图像列表日期格式
 Type=string
 Default=%m-%d-%Y
 Comment=XSL Date Format String: Use the syntax given at xsltsl.sourceforge.net/date-time.html
+Comment[ar]=سلسلة صيغة تاريخ إكس إس إل: استخدم الصيغة المذكورة في xsltsl.sourceforge.net/date-time.html
 Comment[be]=Фармат даты радкоў XSL: выкарыстоўвайце сінтаксіс, апісанне якога можна знайсці па адрасе xsltsl.sourceforge.net/date-time.html
 Comment[bg]=Редица за формат на датата XSL: Използвайте синтаксиса, даден в xsltsl.sourceforge.net/date-time.html
 Comment[ca]=Cadena de format per a les dates en XSL: empreu la sintaxi indicada a xsltsl.sourceforge.net/date-time.html

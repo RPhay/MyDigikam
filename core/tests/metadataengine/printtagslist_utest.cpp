@@ -110,7 +110,7 @@ void PrintTagsListTest::testPrintAllAvailableXmpTags()
     }
     else
     {
-        QWARN("Exiv2 has no XMP support...");
+        qWarning() << QLatin1String("Exiv2 has no XMP support...");
     }
 }
 

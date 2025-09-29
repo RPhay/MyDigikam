@@ -24,6 +24,7 @@
 #include <QDropEvent>
 #include <QMenu>
 #include <QIcon>
+#include <QTimer>
 #include <QApplication>
 
 // KDE includes
@@ -69,9 +70,27 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         return false;
     }
 
-    AlbumPointer<PAlbum> destAlbum = model()->palbumForIndex(droppedOn);
+    m_view      = view;
+    m_source    = e->source();
 
-    if (!destAlbum)
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    m_position  = m_view->mapToGlobal(e->position().toPoint());
+    m_modifiers = e->modifiers();
+
+#else
+
+    m_position  = m_view->mapToGlobal(e->pos());
+    m_modifiers = e->keyboardModifiers();
+
+#endif
+
+    m_destAlbum = model()->palbumForIndex(droppedOn);
+
+    m_imageIDs.clear();
+    m_srcURLs.clear();
+
+    if (!m_destAlbum)
     {
         return false;
     }
@@ -86,231 +105,44 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        AlbumPointer<PAlbum> droppedAlbum = AlbumManager::instance()->findPAlbum(albumId);
+        m_droppedAlbum = AlbumManager::instance()->findPAlbum(albumId);
 
-        if (!droppedAlbum)
+        if (!m_droppedAlbum)
         {
             return false;
         }
 
-        QMenu popMenu(view);
-        QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
-        QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
-        popMenu.addSeparator();
-        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-        popMenu.setMouseTracking(true);
-        qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-        QAction* const choice     = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-        QAction* const choice     = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-        if      (choice == moveAction)
-        {
-            DIO::move(droppedAlbum, destAlbum);
-        }
-        else if (choice == copyAction)
-        {
-            DIO::copy(droppedAlbum, destAlbum);
-        }
+        QTimer::singleShot(0, this, [this]()
+            {
+                slotMoveCopyAlbum();
+                model()->setDropIndex(QModelIndex());
+            }
+        );
 
         return true;
     }
     else if (DItemDrag::canDecode(e->mimeData()))
     {
 
-        QList<QUrl>      urls;
-        QList<int>       albumIDs;
-        QList<qlonglong> imageIDs;
+        QList<QUrl>  urls;
+        QList<int>   albumIDs;
 
-        if (!DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
+        if (!DItemDrag::decode(e->mimeData(), urls, albumIDs, m_imageIDs))
         {
             return false;
         }
 
-        if (urls.isEmpty() || albumIDs.isEmpty() || imageIDs.isEmpty())
+        if (urls.isEmpty() || albumIDs.isEmpty() || m_imageIDs.isEmpty())
         {
             return false;
         }
 
-        // Check if items dropped come from outside current album.
-        // This can be the case with recursive content album mode.
-
-        ItemInfoList extImgInfList;
-
-        for (QList<qlonglong>::const_iterator it = imageIDs.constBegin(); it != imageIDs.constEnd(); ++it)
-        {
-            ItemInfo info(*it);
-
-            if (info.albumId() != destAlbum->id())
+        QTimer::singleShot(0, this, [this]()
             {
-                extImgInfList << info;
+                slotMoveCopyItems();
+                model()->setDropIndex(QModelIndex());
             }
-        }
-
-        if (extImgInfList.isEmpty())
-        {
-            // Setting the dropped image as the album thumbnail
-            // If the ctrl key is pressed, when dropping the image, the
-            // thumbnail is set without a popup menu
-
-            bool set = false;
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-            if (e->modifiers() == Qt::ControlModifier)
-
-#else
-
-            if (e->keyboardModifiers() == Qt::ControlModifier)
-
-#endif
-
-            {
-                set = true;
-            }
-            else
-            {
-                QMenu popMenu(view);
-                QAction* setAction    = nullptr;
-
-                if (imageIDs.count() == 1)
-                {
-                    setAction = popMenu.addAction(i18n("Set as Album Thumbnail"));
-                }
-
-                popMenu.addSeparator();
-                popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-                popMenu.setMouseTracking(true);
-                qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-                QAction* const choice = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-                QAction* const choice = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-                set                   = (setAction == choice);
-            }
-
-            if (set && destAlbum)
-            {
-                QString errMsg;
-                AlbumManager::instance()->updatePAlbumIcon(destAlbum, imageIDs.first(), errMsg);
-            }
-
-            return true;
-        }
-
-        bool ddMove       = false;
-        bool ddCopy       = false;
-        bool setThumbnail = false;
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-        if      (e->modifiers() == Qt::ShiftModifier)
-
-#else
-
-        if      (e->keyboardModifiers() == Qt::ShiftModifier)
-
-#endif
-
-        {
-            // If shift key is pressed while dragging, move the drag object without
-            // displaying popup menu -> move
-
-            ddMove = true;
-        }
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-        else if (e->modifiers() == Qt::ControlModifier)
-
-#else
-
-        else if (e->keyboardModifiers() == Qt::ControlModifier)
-
-#endif
-
-        {
-            // If ctrl key is pressed while dragging, copy the drag object without
-            // displaying popup menu -> copy
-
-            ddCopy = true;
-        }
-        else
-        {
-            QMenu popMenu(view);
-            QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
-            QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
-            QAction* thumbnailAction  = nullptr;
-
-            if (imageIDs.count() == 1)
-            {
-                thumbnailAction = popMenu.addAction(i18n("Set as Album Thumbnail"));
-            }
-
-            popMenu.addSeparator();
-            popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-            popMenu.setMouseTracking(true);
-            qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-            QAction* const choice     = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-            QAction* const choice     = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-            if (choice)
-            {
-                if      (choice == moveAction)
-                {
-                    ddMove = true;
-                }
-                else if (choice == copyAction)
-                {
-                    ddCopy = true;
-                }
-                else if (choice == thumbnailAction)
-                {
-                    setThumbnail = true;
-                }
-            }
-        }
-
-        if (!destAlbum)
-        {
-            return false;
-        }
-
-        if      (ddMove)
-        {
-            DIO::move(extImgInfList, destAlbum);
-        }
-        else if (ddCopy)
-        {
-            DIO::copy(extImgInfList, destAlbum);
-        }
-        else if (setThumbnail)
-        {
-            QString errMsg;
-            AlbumManager::instance()->updatePAlbumIcon(destAlbum, extImgInfList.first().id(), errMsg);
-        }
+        );
 
         return true;
     }
@@ -319,121 +151,28 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
     else if (DCameraItemListDrag::canDecode(e->mimeData()))
     {
-        ImportUI* const ui = dynamic_cast<ImportUI*>(e->source());
-
-        if (ui)
-        {
-            QMenu popMenu(view);
-            QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download From Camera"));
-            QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download && Delete From Camera"));
-            popMenu.addSeparator();
-            popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-            popMenu.setMouseTracking(true);
-            qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-            QAction* const choice        = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-            QAction* const choice        = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-            if (choice)
+        QTimer::singleShot(0, this, [this]()
             {
-                if      (choice == downAction)
-                {
-                    ui->slotDownload(true, false, destAlbum);
-                }
-                else if (choice == downDelAction)
-                {
-                    ui->slotDownload(true, true, destAlbum);
-                }
+                slotCopyFromCamera();
+                model()->setDropIndex(QModelIndex());
             }
-        }
+        );
+
+        return true;
     }
 
     // -- DnD from an external source ---------------------
 
     else if (e->mimeData()->hasUrls())
     {
-        QList<QUrl> srcURLs = e->mimeData()->urls();
-        bool ddMove         = false;
-        bool ddCopy         = false;
+        m_srcURLs = e->mimeData()->urls();
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-        if      (e->modifiers() == Qt::ShiftModifier)
-
-#else
-
-        if      (e->keyboardModifiers() == Qt::ShiftModifier)
-
-#endif
-
-        {
-            // If shift key is pressed while dropping, move the drag object without
-            // displaying popup menu -> move
-
-            ddMove = true;
-        }
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-        else if (e->modifiers() == Qt::ControlModifier)
-
-#else
-
-        else if (e->keyboardModifiers() == Qt::ControlModifier)
-
-#endif
-
-        {
-            // If ctrl key is pressed while dropping, copy the drag object without
-            // displaying popup menu -> copy
-
-            ddCopy = true;
-        }
-        else
-        {
-            QMenu popMenu(view);
-            QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
-            QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
-            popMenu.addSeparator();
-            popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-            popMenu.setMouseTracking(true);
-            qApp->restoreOverrideCursor();
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-            QAction* const choice     = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
-
-#else
-
-            QAction* const choice     = popMenu.exec(view->mapToGlobal(e->pos()));
-
-#endif
-
-            if      (choice == copyAction)
+        QTimer::singleShot(0, this, [this]()
             {
-                ddCopy = true;
+                slotMoveCopyExtern();
+                model()->setDropIndex(QModelIndex());
             }
-            else if (choice == moveAction)
-            {
-                ddMove = true;
-            }
-        }
-
-        if      (ddMove)
-        {
-            DIO::move(srcURLs, destAlbum);
-        }
-        else if (ddCopy)
-        {
-            DIO::copy(srcURLs, destAlbum);
-        }
+        );
 
         return true;
     }
@@ -535,6 +274,231 @@ QMimeData* AlbumDragDropHandler::createMimeData(const QList<Album*>& albums)
     }
 
     return (new DAlbumDrag(albums.first()->databaseUrl(), albums.first()->id(), palbum->fileUrl()));
+}
+
+void AlbumDragDropHandler::slotMoveCopyAlbum()
+{
+    QMenu popMenu(m_view);
+    QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
+    QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
+    popMenu.addSeparator();
+    popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
+
+    QAction* const choice     = popMenu.exec(m_position);
+
+    if      (choice == moveAction)
+    {
+        DIO::move(m_droppedAlbum, m_destAlbum);
+    }
+    else if (choice == copyAction)
+    {
+        DIO::copy(m_droppedAlbum, m_destAlbum);
+    }
+}
+
+void AlbumDragDropHandler::slotMoveCopyItems()
+{
+    // Check if items dropped come from outside current album.
+    // This can be the case with recursive content album mode.
+
+    ItemInfoList extImgInfList;
+
+    for (QList<qlonglong>::const_iterator it = m_imageIDs.constBegin() ;
+         it != m_imageIDs.constEnd(); ++it)
+    {
+        ItemInfo info(*it);
+
+        if (info.albumId() != m_destAlbum->id())
+        {
+            extImgInfList << info;
+        }
+    }
+
+    if (extImgInfList.isEmpty())
+    {
+        // Setting the dropped image as the album thumbnail
+        // If the ctrl key is pressed, when dropping the image, the
+        // thumbnail is set without a popup menu
+
+        bool set = false;
+
+        if (m_modifiers == Qt::ControlModifier)
+        {
+            set = true;
+        }
+        else
+        {
+            QMenu popMenu(m_view);
+            QAction* setAction    = nullptr;
+
+            if (m_imageIDs.count() == 1)
+            {
+                setAction = popMenu.addAction(i18n("Set as Album Thumbnail"));
+            }
+
+            popMenu.addSeparator();
+            popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
+
+            QAction* const choice = popMenu.exec(m_position);
+            set                   = (setAction == choice);
+        }
+
+        if (set && m_destAlbum)
+        {
+            QString errMsg;
+            AlbumManager::instance()->updatePAlbumIcon(m_destAlbum, m_imageIDs.first(), errMsg);
+        }
+
+        return;
+    }
+
+    bool ddMove       = false;
+    bool ddCopy       = false;
+    bool setThumbnail = false;
+
+    if      (m_modifiers == Qt::ShiftModifier)
+    {
+        // If shift key is pressed while dragging, move the drag object without
+        // displaying popup menu -> move
+
+        ddMove = true;
+    }
+    else if (m_modifiers == Qt::ControlModifier)
+    {
+        // If ctrl key is pressed while dragging, copy the drag object without
+        // displaying popup menu -> copy
+
+        ddCopy = true;
+    }
+    else
+    {
+        QMenu popMenu(m_view);
+        QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
+        QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
+        QAction* thumbnailAction  = nullptr;
+
+        if (m_imageIDs.count() == 1)
+        {
+            thumbnailAction = popMenu.addAction(i18n("Set as Album Thumbnail"));
+        }
+
+        popMenu.addSeparator();
+        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
+
+        QAction* const choice     = popMenu.exec(m_position);
+
+        if (choice)
+        {
+            if      (choice == moveAction)
+            {
+                ddMove = true;
+            }
+            else if (choice == copyAction)
+            {
+                ddCopy = true;
+            }
+            else if (choice == thumbnailAction)
+            {
+                setThumbnail = true;
+            }
+        }
+    }
+
+    if (!m_destAlbum)
+    {
+        return;
+    }
+
+    if      (ddMove)
+    {
+        DIO::move(extImgInfList, m_destAlbum);
+    }
+    else if (ddCopy)
+    {
+        DIO::copy(extImgInfList, m_destAlbum);
+    }
+    else if (setThumbnail)
+    {
+        QString errMsg;
+        AlbumManager::instance()->updatePAlbumIcon(m_destAlbum, extImgInfList.first().id(), errMsg);
+    }
+}
+
+void AlbumDragDropHandler::slotCopyFromCamera()
+{
+    ImportUI* const ui = dynamic_cast<ImportUI*>(m_source);
+
+    if (ui)
+    {
+        QMenu popMenu(m_view);
+        QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download From Camera"));
+        QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download && Delete From Camera"));
+        popMenu.addSeparator();
+        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
+
+        QAction* const choice        = popMenu.exec(m_position);
+
+        if (choice)
+        {
+            if      (choice == downAction)
+            {
+                ui->slotDownload(true, false, m_destAlbum);
+            }
+            else if (choice == downDelAction)
+            {
+                ui->slotDownload(true, true, m_destAlbum);
+            }
+        }
+    }
+}
+
+void AlbumDragDropHandler::slotMoveCopyExtern()
+{
+    bool ddMove = false;
+    bool ddCopy = false;
+
+    if      (m_modifiers == Qt::ShiftModifier)
+    {
+        // If shift key is pressed while dropping, move the drag object without
+        // displaying popup menu -> move
+
+        ddMove = true;
+    }
+    else if (m_modifiers == Qt::ControlModifier)
+    {
+        // If ctrl key is pressed while dropping, copy the drag object without
+        // displaying popup menu -> copy
+
+        ddCopy = true;
+    }
+    else
+    {
+        QMenu popMenu(m_view);
+        QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
+        QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
+        popMenu.addSeparator();
+        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
+
+        QAction* const choice     = popMenu.exec(m_position);
+
+        if      (choice == copyAction)
+        {
+            ddCopy = true;
+        }
+        else if (choice == moveAction)
+        {
+            ddMove = true;
+        }
+    }
+
+    if      (ddMove)
+    {
+        DIO::move(m_srcURLs, m_destAlbum);
+    }
+    else if (ddCopy)
+    {
+        DIO::copy(m_srcURLs, m_destAlbum);
+    }
 }
 
 } // namespace Digikam

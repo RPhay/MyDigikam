@@ -132,7 +132,7 @@ void PrintMetadataTest::loadXmp(const DMetadata& meta, bool expected)
     }
     else
     {
-        QWARN("Exiv2 has no XMP support...");
+        qWarning() << QLatin1String("Exiv2 has no XMP support...");
     }
 }
 

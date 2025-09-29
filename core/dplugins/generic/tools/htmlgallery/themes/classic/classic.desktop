@@ -38,6 +38,7 @@ Name[uk]=Класична
 Name[zh_CN]=经典
 Name[zh_TW]=經典
 Comment=A port of the old HTML Export plugin theme
+Comment[ar]=نسق من نقل النسق القديم لملحقة تصدير HTML
 Comment[be]=Порт старой тэмы для экспарту ў HTML
 Comment[bg]=Пренасяне на старата тема на плъгина за износ на HTML
 Comment[ca]=Una adaptació de l'antic tema del connector d'exportació a HTML
@@ -114,6 +115,7 @@ Url=preview.png
 
 [X-HTMLGallery Author]
 Name=Aurélien Gâteau
+Name[ar]=أورليان جاتو
 Name[be]=Aurélien Gâteau
 Name[bg]=Aurélien Gâteau
 Name[ca]=Aurélien Gâteau
@@ -153,6 +155,7 @@ Url=mailto:aurelien.gateau@free.fr
 
 [X-HTMLGallery Parameter thumbnailPerRow]
 Name=Thumbnails per row
+Name[ar]=المصغّرات لكل صف
 Name[be]=Мініяцюр у радку
 Name[bg]=Миниатюри на ред
 Name[ca]=Miniatures per fila
@@ -457,6 +460,7 @@ Default=#b3b3b3
 
 [X-HTMLGallery Parameter visitedLinkColor]
 Name=Visited Link Color
+Name[ar]=لون الروابط التي زُورت
 Name[be]=Колер наведанай спасылкі
 Name[bg]=Цвят на посетената връзка
 Name[ca]=Color de l'enllaç visitat
