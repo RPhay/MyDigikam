@@ -120,7 +120,7 @@ BUGFIXES:
 085 ==> 509796 - digiKam generated XMP sidecars not updated by darktable.
 086 ==> 509844 - digiKam closed unexpectedly (Qt5 based).
 087 ==> 509976 - PNG and HEIF not rotated correctly.
-088 ==> 
+088 ==> 510040 - Slow first startup after installation.
 089 ==> 
 090 ==> 
 091 ==> 
