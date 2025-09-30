@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-29 02:01+0000\n"
+"POT-Creation-Date: 2025-09-30 02:11+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -1392,7 +1392,7 @@ msgstr ""
 "няправільна. Перайдзіце ў налады digiKam і праверце ў раздзеле метаданых "
 "наяўнасць бінарнага файла ExifTool."
 
-#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:517
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3284,7 +3284,7 @@ msgid "Confirm Undo"
 msgstr "Пацвердзіць адрабленне"
 
 #: core/app/views/stack/trashview.cpp:274
-#: core/app/views/stack/trashview.cpp:299
+#: core/app/views/stack/trashview.cpp:301
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
@@ -3293,18 +3293,18 @@ msgstr[1] "Сапраўды хочаце аднавіць %1 элементы?"
 msgstr[2] "Сапраўды хочаце аднавіць %1 элементаў?"
 msgstr[3] "Сапраўды хочаце аднавіць %1 элементы?"
 
-#: core/app/views/stack/trashview.cpp:298
+#: core/app/views/stack/trashview.cpp:300
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Пацвердзіць аднаўленне"
 
-#: core/app/views/stack/trashview.cpp:327
-#: core/app/views/stack/trashview.cpp:377
+#: core/app/views/stack/trashview.cpp:331
+#: core/app/views/stack/trashview.cpp:383
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Пацвердзіць выдаленне"
 
-#: core/app/views/stack/trashview.cpp:328
+#: core/app/views/stack/trashview.cpp:332
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -3313,26 +3313,26 @@ msgstr[1] "Сапраўды выдаліць назаўсёды %1 элемен�
 msgstr[2] "Сапраўды выдаліць назаўсёды %1 элементаў?"
 msgstr[3] "Сапраўды выдаліць назаўсёды %1 элементы?"
 
-#: core/app/views/stack/trashview.cpp:378
+#: core/app/views/stack/trashview.cpp:384
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Сапраўды выдаліць назаўсёды ўсе элементы?"
 
-#: core/app/views/stack/trashview.cpp:447
+#: core/app/views/stack/trashview.cpp:455
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Вылучэнне"
 
-#: core/app/views/stack/trashview.cpp:449
+#: core/app/views/stack/trashview.cpp:457
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Выдаліць"
 
-#: core/app/views/stack/trashview.cpp:516
+#: core/app/views/stack/trashview.cpp:524
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "Абрана %1/%2 элементаў"
@@ -4365,7 +4365,7 @@ msgstr "Адзінка"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:260
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
@@ -33141,12 +33141,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Даведка"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, kde-format
 msgid "Relative Path"
 msgstr "Адносны шлях"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:275
 #, kde-format
 msgid "Deletion Time"
 msgstr "Час выдалення"

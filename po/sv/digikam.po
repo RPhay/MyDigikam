@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-29 02:01+0000\n"
+"POT-Creation-Date: 2025-09-30 02:11+0000\n"
 "PO-Revision-Date: 2025-09-26 14:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1395,7 +1395,7 @@ msgstr ""
 "tillgängligheten för ExifTool binärfil i metadatasektionen.\n"
 "Felmeddelande: %1"
 
-#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:517
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3252,49 +3252,49 @@ msgid "Confirm Undo"
 msgstr "Bekräfta ångra"
 
 #: core/app/views/stack/trashview.cpp:274
-#: core/app/views/stack/trashview.cpp:299
+#: core/app/views/stack/trashview.cpp:301
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Är du säker på att du vill återställa %1 objekt?"
 msgstr[1] "Är du säker på att du vill återställa %1 objekt?"
 
-#: core/app/views/stack/trashview.cpp:298
+#: core/app/views/stack/trashview.cpp:300
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Bekräfta återställ"
 
-#: core/app/views/stack/trashview.cpp:327
-#: core/app/views/stack/trashview.cpp:377
+#: core/app/views/stack/trashview.cpp:331
+#: core/app/views/stack/trashview.cpp:383
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Bekräfta borttagning"
 
-#: core/app/views/stack/trashview.cpp:328
+#: core/app/views/stack/trashview.cpp:332
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Är du säker på att du vill ta bort %1 objekt permanent?"
 msgstr[1] "Är du säker på att du vill ta bort %1 objekt permanent?"
 
-#: core/app/views/stack/trashview.cpp:378
+#: core/app/views/stack/trashview.cpp:384
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Är du säker på att du vill ta bort ALLA objekten permanent?"
 
-#: core/app/views/stack/trashview.cpp:447
+#: core/app/views/stack/trashview.cpp:455
 #, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Markering"
 
-#: core/app/views/stack/trashview.cpp:449
+#: core/app/views/stack/trashview.cpp:457
 #, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: core/app/views/stack/trashview.cpp:516
+#: core/app/views/stack/trashview.cpp:524
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 objekt markerade"
@@ -4338,7 +4338,7 @@ msgstr "Enhet"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:260
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
@@ -34713,12 +34713,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Hjälp"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, kde-format
 msgid "Relative Path"
 msgstr "Relativ sökväg"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:275
 #, kde-format
 msgid "Deletion Time"
 msgstr "Borttagningstid"

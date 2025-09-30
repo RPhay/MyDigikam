@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-29 02:01+0000\n"
+"POT-Creation-Date: 2025-09-30 02:11+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1426,7 +1426,7 @@ msgstr ""
 "metadanych.\n"
 "Opis błędu: %1"
 
-#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:517
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3322,7 +3322,7 @@ msgid "Confirm Undo"
 msgstr "Potwierdzenie cofnięcia"
 
 #: core/app/views/stack/trashview.cpp:274
-#: core/app/views/stack/trashview.cpp:299
+#: core/app/views/stack/trashview.cpp:301
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
@@ -3330,18 +3330,18 @@ msgstr[0] "Czy na pewno chcesz przywrócić %1 rzecz?"
 msgstr[1] "Czy na pewno chcesz przywrócić %1 rzeczy?"
 msgstr[2] "Czy na pewno chcesz przywrócić %1 rzeczy?"
 
-#: core/app/views/stack/trashview.cpp:298
+#: core/app/views/stack/trashview.cpp:300
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Potwierdź przywrócenia"
 
-#: core/app/views/stack/trashview.cpp:327
-#: core/app/views/stack/trashview.cpp:377
+#: core/app/views/stack/trashview.cpp:331
+#: core/app/views/stack/trashview.cpp:383
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Potwierdź usunięcie"
 
-#: core/app/views/stack/trashview.cpp:328
+#: core/app/views/stack/trashview.cpp:332
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -3349,26 +3349,26 @@ msgstr[0] "Czy na pewno chcesz trwale usunąć %1 rzecz?"
 msgstr[1] "Czy na pewno chcesz trwale usunąć %1 rzeczy?"
 msgstr[2] "Czy na pewno chcesz trwale usunąć %1 rzeczy?"
 
-#: core/app/views/stack/trashview.cpp:378
+#: core/app/views/stack/trashview.cpp:384
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Czy na pewno chcesz trwale usunąć WSZYSTKIE rzeczy?"
 
-#: core/app/views/stack/trashview.cpp:447
+#: core/app/views/stack/trashview.cpp:455
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Zaznaczenie"
 
-#: core/app/views/stack/trashview.cpp:449
+#: core/app/views/stack/trashview.cpp:457
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Usuń"
 
-#: core/app/views/stack/trashview.cpp:516
+#: core/app/views/stack/trashview.cpp:524
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "Wybrano %1/%2 rzeczy"
@@ -4421,7 +4421,7 @@ msgstr "Jednostka"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:260
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
@@ -35440,12 +35440,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Pomoc"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, kde-format
 msgid "Relative Path"
 msgstr "Ścieżka względna"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:275
 #, kde-format
 msgid "Deletion Time"
 msgstr "Czas usunięcia"
