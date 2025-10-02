@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-30 02:11+0000\n"
-"PO-Revision-Date: 2025-07-03 23:34+0900\n"
+"PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -44986,17 +44986,17 @@ msgstr "德語 (盧森堡)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:99
 msgctxt "@info: country code"
 msgid "Greek (Cyprus)"
-msgstr "希臘語 (賽普勒斯)"
+msgstr "希臘語（賽普勒斯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:100
 msgctxt "@info: country code"
 msgid "Greek (Greece)"
-msgstr "希臘語 (希臘)"
+msgstr "希臘語（希臘）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:101
 msgctxt "@info: country code"
 msgid "English (Antigua and Barbuda)"
-msgstr "英語 (安地卡及巴布達)"
+msgstr "英語（安地卡及巴布達）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:102
 msgctxt "@info: country code"
@@ -45116,7 +45116,7 @@ msgstr "英語（直布羅陀）"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:125
 msgctxt "@info: country code"
 msgid "English (Gambia)"
-msgstr "英語 (甘比亞)"
+msgstr "英語（甘比亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:126
 msgctxt "@info: country code"
@@ -45126,7 +45126,7 @@ msgstr "英語（關島）"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:127
 msgctxt "@info: country code"
 msgid "English (Guyana)"
-msgstr "英語 (蓋亞那)"
+msgstr "英語（蓋亞那）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:128
 msgctxt "@info: country code"
@@ -45184,11 +45184,9 @@ msgid "English (Liberia)"
 msgstr "英語（賴比瑞亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:139
-#, fuzzy
-#| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Lesotho)"
-msgstr "英語 (澳大利亞)"
+msgstr "英語（賴索托）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:140
 msgctxt "@info: country code"
@@ -45223,11 +45221,9 @@ msgid "English (Malaysia)"
 msgstr "英語（馬來西亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:146
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Namibia)"
-msgstr "英語 (牙買加)"
+msgstr "英語（納米比亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:147
 msgctxt "@info: country code"
@@ -45245,11 +45241,9 @@ msgid "English (Nauru)"
 msgstr "英語（諾魯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:150
-#, fuzzy
-#| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Niue)"
-msgstr "英語 (貝里斯)"
+msgstr "英語（紐埃）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:151
 msgctxt "@info: country code"
@@ -45289,11 +45283,9 @@ msgid "English (Palau)"
 msgstr "英語（帛琉）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:158
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Rwanda)"
-msgstr "英語 (加拿大)"
+msgstr "英語（盧安達）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:159
 msgctxt "@info: country code"
