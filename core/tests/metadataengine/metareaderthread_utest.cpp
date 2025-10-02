@@ -38,6 +38,8 @@ Mytask::Mytask(QObject* const parent)
 
 void Mytask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     qCDebug(DIGIKAM_TESTS_LOG) << "Processing:" << url.path();
     bool processed = false;
 

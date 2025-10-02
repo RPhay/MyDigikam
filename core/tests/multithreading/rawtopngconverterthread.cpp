@@ -47,6 +47,8 @@ protected:
 
     void run() override
     {
+        ActionJob::run();       // To customize thread name
+
         Q_EMIT signalStarted();
 
         QImage image;
