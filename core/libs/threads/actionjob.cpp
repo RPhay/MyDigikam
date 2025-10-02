@@ -40,6 +40,11 @@ void ActionJob::cancel()
     m_cancel = true;
 }
 
+void ActionJob::run()
+{
+    ActionThreadBase::setCurrentThreadName(objectName());
+}
+
 } // namespace Digikam
 
 #include "moc_actionjob.cpp"

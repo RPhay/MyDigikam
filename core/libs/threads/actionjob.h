@@ -80,6 +80,14 @@ public:
 protected:
 
     /**
+     * @brief Reimplemented from QRunnable to customize the thread name based on the object name.
+     * Call it on the top of your derived implementation to take effect.
+     */
+    virtual void run() override;
+
+protected:
+
+    /**
      * @brief You can use this boolean in your implementation to know if job must be canceled.
      */
     bool m_cancel = false;

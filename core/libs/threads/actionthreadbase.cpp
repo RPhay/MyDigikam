@@ -16,6 +16,20 @@
 
 #include "actionthreadbase.h"
 
+// C includes
+
+#if defined(Q_OS_UNIX)
+#   include <sys/time.h>
+#   include <unistd.h>
+#   if defined(Q_OS_LINUX)
+#       include <sys/prctl.h>
+#   endif
+#elif defined(Q_OS_MACOS)
+#   include <windows.h>
+#elif defined(Q_OS_WIN)
+#   include <pthread.h>
+#endif
+
 // Qt includes
 
 #include <QMutexLocker>
@@ -216,6 +230,29 @@ void ActionThreadBase::run()
             d->condVarJobs.wait(&d->mutex);
         }
     }
+}
+
+void ActionThreadBase::setCurrentThreadName(const QString& name)
+{
+
+#if defined(Q_OS_LINUX)
+
+    prctl(PR_SET_NAME, (unsigned long)name.toLatin1().constData(), 0, 0, 0);
+
+#elif defined(Q_OS_MACOS)
+
+    pthread_setname_np(name.toLatin1().constData());
+
+#elif defined(Q_OS_WIN)
+
+    SetThreadDescription(GetCurrentThread(), reinterpret_cast<const wchar_t *>(name.utf16()));
+
+#else
+
+    qCWarning(DIGIKAM_GENERAL_LOG) << "Unsupported plateform to customize the current thread name.";
+
+#endif
+
 }
 
 } // namespace Digikam

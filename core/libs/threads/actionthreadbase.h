@@ -59,6 +59,11 @@ public:
      */
     void cancel(bool isCancel = true);
 
+    /**
+     * @brief Call this method to customize a thread name visible in process manager as htop under Linux.
+     */
+    static void setCurrentThreadName(const QString& name);
+
 protected:
 
     /**
