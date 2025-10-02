@@ -19,82 +19,15 @@
 // Qt includes
 
 #include <QHash>
-#include <QObject>
 #include <QThread>
-#include <QRunnable>
-#include <QElapsedTimer>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "actionjob.h"
 
 namespace Digikam
 {
-
-class DIGIKAM_EXPORT ActionJob : public QObject,
-                                 public QRunnable
-{
-    Q_OBJECT
-
-public:
-
-    /**
-     * @brief Constructor which delegate deletion of QRunnable instance to ActionThreadBase, not QThreadPool.
-     */
-    explicit ActionJob(QObject* const parent = nullptr);
-
-    /**
-     * @brief Re-implement destructor in you implementation. Don't forget to cancel job.
-     */
-    ~ActionJob() override;
-
-Q_SIGNALS:
-
-    /**
-     * @brief Use this signal in your implementation to inform ActionThreadBase manager that job is started
-     */
-    void signalStarted();
-
-    /**
-     * @brief Use this signal in your implementation to inform ActionThreadBase manager the job progress
-     */
-    void signalProgress(int);
-
-    /**
-     * @brief Use this signal in your implementation to inform ActionThreadBase manager the job is done.
-     */
-    void signalDone();
-
-public Q_SLOTS:
-
-    /**
-     * @brief Call this method to cancel job.
-     */
-    void cancel();
-
-public:
-
-    /**
-     * @brief Timer to determine the running time of the job.
-     */
-    QElapsedTimer m_timer;
-
-protected:
-
-    /**
-     * @brief You can use this boolean in your implementation to know if job must be canceled.
-     */
-    bool m_cancel = false;
-};
-
-/**
- * @brief Define a QHash of job/priority to process by ActionThreadBase manager.
- *        Priority value can be used to control the run queue's order of execution.
- *        Zero priority want mean to process job with higher priority.
- */
-typedef QHash<ActionJob*, int> ActionJobCollection;
-
-// -------------------------------------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT ActionThreadBase : public QThread
 {

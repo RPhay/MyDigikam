@@ -30,25 +30,6 @@
 namespace Digikam
 {
 
-ActionJob::ActionJob(QObject* const parent)
-    : QObject  (parent),
-      QRunnable()
-{
-    setAutoDelete(false);
-}
-
-ActionJob::~ActionJob()
-{
-    cancel();
-}
-
-void ActionJob::cancel()
-{
-    m_cancel = true;
-}
-
-// -----------------------------------------------------------------
-
 class Q_DECL_HIDDEN ActionThreadBase::Private
 {
 public:
