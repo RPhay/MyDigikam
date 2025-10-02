@@ -90,6 +90,8 @@ void DNGConverterTask::setPreviewMode(int mode)
 
 void DNGConverterTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (d->cancel)
     {
         return;

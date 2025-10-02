@@ -75,6 +75,8 @@ OcrOptions TextConverterTask::ocrOptions() const
 
 void TextConverterTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (m_cancel)
     {
         return;

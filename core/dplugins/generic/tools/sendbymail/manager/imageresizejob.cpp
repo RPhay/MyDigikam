@@ -43,6 +43,8 @@ ImageResizeJob::ImageResizeJob(int* count)
 
 void ImageResizeJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     Q_EMIT signalStarted();
 
     QString errString;

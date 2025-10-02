@@ -71,6 +71,8 @@ void TimeAdjustTask::setSettings(const TimeAdjustContainer& settings)
 
 void TimeAdjustTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (m_cancel)
     {
         return;
@@ -309,6 +311,8 @@ void TimePreviewTask::setSettings(const TimeAdjustContainer& settings)
 
 void TimePreviewTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (m_cancel)
     {
         return;

@@ -88,6 +88,8 @@ void DatabaseTask::setMaintenanceData(MaintenanceData* const data)
 
 void DatabaseTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (m_cancel)
     {
         return;

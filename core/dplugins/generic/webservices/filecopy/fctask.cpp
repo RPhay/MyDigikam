@@ -66,6 +66,8 @@ FCTask::~FCTask()
 
 void FCTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (m_cancel)
     {
         return;

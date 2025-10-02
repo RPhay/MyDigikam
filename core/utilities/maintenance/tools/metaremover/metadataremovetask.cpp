@@ -69,6 +69,8 @@ void MetadataRemoveTask::setMaintenanceData(MaintenanceData* const data)
 
 void MetadataRemoveTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     // While we have data (using this as check for non-null).
 
     while (d->data)

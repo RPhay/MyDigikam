@@ -62,6 +62,8 @@ VidSlideTask::~VidSlideTask()
 
 void VidSlideTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     FrameOsd osd;
 
     int frameId           = 1;

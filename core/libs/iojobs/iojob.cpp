@@ -46,6 +46,8 @@ CopyOrMoveJob::CopyOrMoveJob(IOJobData* const data)
 
 void CopyOrMoveJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     while (m_data && !m_cancel)
     {
         QUrl srcUrl = m_data->getNextUrl();
@@ -281,6 +283,8 @@ DeleteJob::DeleteJob(IOJobData* const data)
 
 void DeleteJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     while (m_data && !m_cancel)
     {
         QUrl deleteUrl = m_data->getNextUrl();
@@ -375,6 +379,8 @@ RenameFileJob::RenameFileJob(IOJobData* const data)
 
 void RenameFileJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     while (m_data && !m_cancel)
     {
         QUrl renameUrl = m_data->getNextUrl();
@@ -454,6 +460,8 @@ DTrashItemsListingJob::DTrashItemsListingJob(const QString& collectionPath)
 
 void DTrashItemsListingJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     DTrashItemInfo itemInfo;
 
     QString collectionTrashFilesPath = m_collectionPath     + QLatin1Char('/') +
@@ -492,6 +500,8 @@ RestoreDTrashItemsJob::RestoreDTrashItemsJob(IOJobData* const data)
 
 void RestoreDTrashItemsJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (!m_data)
     {
         return;
@@ -536,6 +546,8 @@ EmptyDTrashItemsJob::EmptyDTrashItemsJob(IOJobData* const data)
 
 void EmptyDTrashItemsJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (!m_data)
     {
         return;
@@ -574,6 +586,8 @@ BuildTrashCountersJob::BuildTrashCountersJob()
 
 void BuildTrashCountersJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     QMap<QString, int> trashCountersMap;
     QList<CollectionLocation> allLocations = CollectionManager::instance()->allAvailableLocations();
 

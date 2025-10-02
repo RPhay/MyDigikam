@@ -115,6 +115,8 @@ QImage MjpegFrameTask::loadImageFromPreviewCache(const QString& path) const
 
 void MjpegFrameTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     QImage qiimg;   // Current image in stream.
     QImage qtimg;   // Current transition image.
     QImage qoimg;   // Next image in stream.

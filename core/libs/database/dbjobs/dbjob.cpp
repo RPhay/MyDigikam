@@ -43,6 +43,8 @@ AlbumsJob::AlbumsJob(const AlbumsDBJobInfo& jobInfo)
 
 void AlbumsJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (m_jobInfo.isFoldersJob())
     {
         const QHash<int, int>& albumNumberHash = CoreDbAccess().db()->getNumberOfImagesInAlbums();
@@ -75,6 +77,8 @@ DatesJob::DatesJob(const DatesDBJobInfo& jobInfo)
 
 void DatesJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (m_jobInfo.isFoldersJob())
     {
         const QVariantList& values = CoreDbAccess().db()->getAllCreationDates();
@@ -136,6 +140,8 @@ GPSJob::GPSJob(const GPSDBJobInfo& jobInfo)
 
 void GPSJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (m_jobInfo.isDirectQuery())
     {
         QList<QVariant> imagesInfoFromArea =
@@ -179,6 +185,8 @@ TagsJob::TagsJob(const TagsDBJobInfo& jobInfo)
 
 void TagsJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if      (m_jobInfo.isFoldersJob())
     {
         const QHash<int, int>& tagNumberHash = CoreDbAccess().db()->getNumberOfImagesInTags();
@@ -282,6 +290,8 @@ SearchesJob::SearchesJob(const SearchesDBJobInfo& jobInfo,
 
 void SearchesJob::run()
 {
+    ActionJob::run();       // To customize thread name
+
     m_jobInfo.isDuplicatesJob() ? runFindDuplicates() : runSearches();
 }
 

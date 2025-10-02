@@ -118,6 +118,8 @@ void ActionTask::emitActionData(ActionData::ActionStatus st,
 
 void ActionTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     if (d->cancel)
     {
         return;

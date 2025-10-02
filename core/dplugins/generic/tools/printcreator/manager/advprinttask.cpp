@@ -82,6 +82,8 @@ AdvPrintTask::~AdvPrintTask()
 
 void AdvPrintTask::run()
 {
+    ActionJob::run();       // To customize thread name
+
     switch (d->mode)
     {
         case PREPAREPRINT:
