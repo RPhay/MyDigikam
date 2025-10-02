@@ -30,6 +30,7 @@
 #include "dimg.h"
 #include "dcolor.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -257,6 +258,8 @@ void NRFilter::filterImage()
 
 void NRFilter::calculteStdevMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     for (uint i = prm.start ; runningFlag() && (i < prm.stop) ; ++i)
     {
         prm.fimg[*prm.hpass][i] -= prm.fimg[*prm.lpass][i];
@@ -294,6 +297,8 @@ void NRFilter::calculteStdevMultithreaded(const Args& prm)
 
 void NRFilter::thresholdingMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     for (uint i = prm.start ; runningFlag() && (i < prm.stop) ; ++i)
     {
         if      (prm.fimg[*prm.lpass][i] > 0.8)

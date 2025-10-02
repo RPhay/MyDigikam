@@ -33,6 +33,7 @@
 
 #include "dimg.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -90,6 +91,8 @@ QString OilPaintFilter::DisplayableName()
  */
 void OilPaintFilter::oilPaintImageMultithreaded(uint start, uint stop)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     QScopedArrayPointer<uchar> intensityCount(new uchar[d->smoothness + 1]);
     QScopedArrayPointer<uint>  averageColorR(new  uint[d->smoothness + 1]);
     QScopedArrayPointer<uint>  averageColorG(new  uint[d->smoothness + 1]);

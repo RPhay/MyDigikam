@@ -35,6 +35,7 @@
 #include "blurfilter.h"
 #include "randomnumbergenerator.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -153,6 +154,8 @@ void BlurFXFilter::filterImage()
 
 void BlurFXFilter::zoomBlurMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int nh, nw;
     int sumR, sumG, sumB, nCount=0;
     double lfRadius, lfNewRadius, lfAngle;
@@ -328,6 +331,8 @@ void BlurFXFilter::zoomBlur(DImg* const orgImage, DImg* const destImage, int X, 
 
 void BlurFXFilter::radialBlurMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     int Height      = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();
@@ -573,6 +578,8 @@ void BlurFXFilter::farBlur(DImg* const orgImage, DImg* const destImage, int Dist
 
 void BlurFXFilter::motionBlurMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     int Height      = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();
@@ -737,6 +744,8 @@ void BlurFXFilter::motionBlur(DImg* const orgImage, DImg* const destImage, int D
 
 void BlurFXFilter::softenerBlurMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     int Height      = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();
@@ -895,6 +904,8 @@ void BlurFXFilter::softenerBlur(DImg* const orgImage, DImg* const destImage)
 
 void BlurFXFilter::shakeBlurStage1Multithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     uint Width      = prm.orgImage->width();
     uint Height     = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();
@@ -933,6 +944,8 @@ void BlurFXFilter::shakeBlurStage1Multithreaded(const Args& prm)
 
 void BlurFXFilter::shakeBlurStage2Multithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     uchar* data     = prm.orgImage->bits();
     bool sixteenBit = prm.orgImage->sixteenBit();
@@ -1086,6 +1099,8 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
 
 void BlurFXFilter::focusBlurMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int    nBlendFactor;
     double lfRadius;
     int    offset;
@@ -1303,6 +1318,8 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
 
 void BlurFXFilter::smartBlurStage1Multithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     int Height      = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();
@@ -1383,6 +1400,8 @@ void BlurFXFilter::smartBlurStage1Multithreaded(const Args& prm)
 
 void BlurFXFilter::smartBlurStage2Multithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     int Height      = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();
@@ -1675,6 +1694,8 @@ void BlurFXFilter::frostGlass(DImg* const orgImage, DImg* const destImage, int F
 
 void BlurFXFilter::mosaicMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     int Height      = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();
@@ -1924,6 +1945,8 @@ DColor BlurFXFilter::RandomColor(uchar* const Bits, int Width, int Height, bool 
 
 void BlurFXFilter::MakeConvolutionStage1Multithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     int Height      = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();
@@ -2003,6 +2026,8 @@ void BlurFXFilter::MakeConvolutionStage1Multithreaded(const Args& prm)
 
 void BlurFXFilter::MakeConvolutionStage2Multithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width       = prm.orgImage->width();
     int Height      = prm.orgImage->height();
     uchar* data     = prm.orgImage->bits();

@@ -33,6 +33,7 @@
 
 #include "dimg.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -70,6 +71,8 @@ QString EmbossFilter::DisplayableName()
  */
 void EmbossFilter::embossMultithreaded(uint start, uint stop, uint h, double Depth)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int Width         = m_orgImage.width();
     int Height        = m_orgImage.height();
     bool sixteenBit   = m_orgImage.sixteenBit();

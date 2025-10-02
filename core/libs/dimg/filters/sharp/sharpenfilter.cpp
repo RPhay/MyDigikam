@@ -29,6 +29,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -145,6 +146,8 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
 
 void SharpenFilter::convolveImageMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     double  maxClamp = m_destImage.sixteenBit() ? 16777215.0 : 65535.0;
     double* k        = nullptr;
     double  red, green, blue, alpha;

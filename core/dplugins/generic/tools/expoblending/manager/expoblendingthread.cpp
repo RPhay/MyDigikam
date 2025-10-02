@@ -62,6 +62,7 @@
 #include "dimgloaderobserver.h"
 #include "drawdecoderwidget.h"
 #include "drawdecoding.h"
+#include "actionthreadbase.h"
 
 namespace DigikamGenericExpoBlendingPlugin
 {
@@ -522,6 +523,8 @@ void ExpoBlendingThread::run()
 
 bool ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     bool error  = false;
 
     // check if we have RAW or HEIF file -> use preview image then

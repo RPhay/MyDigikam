@@ -26,6 +26,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -89,6 +90,8 @@ QString BlurFilter::DisplayableName()
 
 void BlurFilter::blurMultithreaded(uint start, uint stop)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     bool sixteenBit  = m_orgImage.sixteenBit();
     int  height      = m_orgImage.height();
     int  width       = m_orgImage.width();

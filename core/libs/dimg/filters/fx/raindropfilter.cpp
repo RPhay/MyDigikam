@@ -34,6 +34,7 @@
 
 #include "dimg.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -139,6 +140,8 @@ void RainDropFilter::filterImage()
 
 void RainDropFilter::rainDropsImageMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     int  nRandSize;
     int  nRandX, nRandY;
     bool bResp      = false;

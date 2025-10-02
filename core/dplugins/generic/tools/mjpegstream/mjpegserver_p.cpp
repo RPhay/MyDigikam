@@ -41,6 +41,8 @@
 
 #include "actionthreadbase.h"
 
+using namespace Digikam;
+
 namespace DigikamGenericMjpegStreamPlugin
 {
 
@@ -276,6 +278,8 @@ void MjpegServer::Private::writerThread()
 
 void MjpegServer::Private::clientWriteMultithreaded(int client, const QByteArray& data)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     QString head;
     head.append(QLatin1String("--mjpegstream\r\n"
                               "Content-type: image/jpeg\r\n"

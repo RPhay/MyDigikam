@@ -31,6 +31,7 @@
 #include "dimg.h"
 #include "randomnumbergenerator.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -108,6 +109,8 @@ QString FilmGrainFilter::DisplayableName()
 
 void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     // To emulate grain size we use a matrix [grainSize x grainSize].
     // We will parse whole image using grainSize step. Color from a reference point located
     // on the top left corner of matrix will be used to apply noise on whole matrix.

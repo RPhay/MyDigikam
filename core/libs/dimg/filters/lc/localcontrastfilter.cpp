@@ -28,6 +28,7 @@
 #include "digikam_debug.h"
 #include "randomnumbergenerator.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -268,6 +269,8 @@ float LocalContrastFilter::func(float x1, float x2)
 
 void LocalContrastFilter::blurMultithreaded(uint start, uint stop, float* const img, float* const blurimage)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     uint pos = start * 3;
 
     for (uint i = start ; runningFlag() && (i < stop) ; ++i)
@@ -292,6 +295,8 @@ void LocalContrastFilter::blurMultithreaded(uint start, uint stop, float* const 
 
 void LocalContrastFilter::saturationMultithreaded(uint start, uint stop, float* const img, float* const srcimg)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     float src_h,  src_s,  src_v;
     float dest_h, dest_s, dest_v;
     float destSaturation, s1;
@@ -441,6 +446,8 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
 
 void LocalContrastFilter::inplaceBlurYMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     for (uint y = prm.start ; runningFlag() && (y < prm.stop) ; ++y)
     {
         uint pos  = y * prm.sizex;
@@ -467,6 +474,8 @@ void LocalContrastFilter::inplaceBlurYMultithreaded(const Args& prm)
 
 void LocalContrastFilter::inplaceBlurXMultithreaded(const Args& prm)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     for (uint x = prm.start ; runningFlag() && (x < prm.stop) ; ++x)
     {
         uint pos  = x;

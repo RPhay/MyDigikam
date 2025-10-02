@@ -26,6 +26,7 @@
 #include "lensfuniface.h"
 #include "dmetadata.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 // Disable deprecated API from older Lensfun.
 
@@ -139,6 +140,8 @@ QString LensFunFilter::DisplayableName()
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     QScopedArrayPointer<float> pos(new float[m_orgImage.width() * 2 * 3] { 0.0F });
 
     for (unsigned int y = start ; runningFlag() && (y < stop) ; ++y)
@@ -164,6 +167,8 @@ void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
 
 void LensFunFilter::filterVIGMultithreaded(uint start, uint stop)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     uchar* data = m_destImage.bits();
     data       += m_destImage.width() * m_destImage.bytesDepth() * start;
 
@@ -184,6 +189,8 @@ void LensFunFilter::filterVIGMultithreaded(uint start, uint stop)
 
 void LensFunFilter::filterDSTMultithreaded(uint start, uint stop)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     QScopedArrayPointer<float> pos(new float[m_orgImage.width() * 2 * 3] { 0.0F });
 
     for (unsigned int y = start ; runningFlag() && (y < stop) ; ++y)

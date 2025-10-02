@@ -29,6 +29,7 @@
 #include "itemviewutilities.h"
 #include "itemsortcollator.h"
 #include "dio.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -205,6 +206,8 @@ bool FindDuplicatesAlbumItem::operator<(const QTreeWidgetItem& other) const
 
 void FindDuplicatesAlbumItem::calculateInfosMultithreaded(const QList<qlonglong>& deletedImages)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     if (!d->album)
     {
         return;

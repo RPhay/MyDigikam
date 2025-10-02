@@ -33,6 +33,7 @@
 #include "dcolor.h"
 #include "blurfilter.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -70,6 +71,8 @@ QString UnsharpMaskFilter::DisplayableName()
 
 void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     long int zero  = 0;
     double   value = 0.0;
     DColor   p;
