@@ -42,6 +42,7 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "digikam_globals.h"
+#include "actionthreadbase.h"
 #include "template.h"
 #include "templatemanager.h"
 #include "gpcamera.h"
@@ -362,6 +363,8 @@ void CameraController::slotCancel()
 
 void CameraController::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("CameraController"));       // To customize thread name
+
     while (d->running)
     {
         CameraCommand* command = nullptr;

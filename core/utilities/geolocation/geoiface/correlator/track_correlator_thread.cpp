@@ -19,6 +19,10 @@
 
 #include <QTimeZone>
 
+// Local includes
+
+#include "actionthreadbase.h"
+
 namespace Digikam
 {
 
@@ -34,6 +38,8 @@ TrackCorrelatorThread::TrackCorrelatorThread(QObject* const parent)
 
 void TrackCorrelatorThread::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("TrackCorrelatorThread"));       // To customize thread name
+
     // sort the items to correlate by time:
 
     std::sort(itemsToCorrelate.begin(), itemsToCorrelate.end(), TrackCorrelationLessThan);

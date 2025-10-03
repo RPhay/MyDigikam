@@ -88,6 +88,8 @@ void CameraHistoryUpdater::slotCancel()
 
 void CameraHistoryUpdater::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("CameraHistoryUpdater"));       // To customize thread name
+
     while (d->running)
     {
         CHUpdateItem item;

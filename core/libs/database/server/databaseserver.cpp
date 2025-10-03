@@ -40,6 +40,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -113,6 +114,8 @@ DatabaseServer::~DatabaseServer()
 
 void DatabaseServer::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("DatabaseServer"));       // To customize thread name
+
     quint64 runningTime = 0;
     int debugTime       = 0;
     int waitTime        = 1;

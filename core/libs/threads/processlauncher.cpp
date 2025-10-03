@@ -26,6 +26,7 @@
 
 #include "digikam_globals.h"
 #include "digikam_debug.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -118,6 +119,8 @@ void ProcessLauncher::startProcess()
 
 void ProcessLauncher::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("ProcessLauncher"));       // To customize thread name
+
     d->process.reset(new QProcess());
     d->process->setProcessChannelMode(QProcess::MergedChannels);
     d->process->setWorkingDirectory(d->dir);

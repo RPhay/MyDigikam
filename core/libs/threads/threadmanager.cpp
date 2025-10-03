@@ -29,6 +29,7 @@
 #include "digikam_debug.h"
 #include "dynamicthread.h"
 #include "workerobject.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -96,6 +97,8 @@ public:
 
     void run() override
     {
+        ActionThreadBase::setCurrentThreadName(QLatin1String("ParkingThread"));       // To customize thread name
+
         /**
          * The quirk here is that this thread never runs an event loop.
          * That means events queued for parked object are only emitted when
@@ -169,6 +172,8 @@ WorkerObjectRunnable::WorkerObjectRunnable(WorkerObject* const object, ParkingTh
 
 void WorkerObjectRunnable::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("WorkerObjectRunnable"));       // To customize thread name
+
     if (!object)
     {
         return;

@@ -15,6 +15,10 @@
 
 #include "imagequalitythread.h"
 
+// Local includes
+
+#include "actionthreadbase.h"
+
 namespace Digikam
 {
 
@@ -33,6 +37,8 @@ ImageQualityThread::ImageQualityThread(QObject* const parent,
 
 void ImageQualityThread::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("ImageQualityThread"));       // To customize thread name
+
     float damageLevel = m_detector->detect(m_image);
     m_calculator->addDetectionResult(QString(), damageLevel, m_weight);
 }

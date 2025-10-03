@@ -44,6 +44,8 @@ public:
 
     Private() = default;
 
+public:
+
     DBusyThread* thread = nullptr;
 };
 

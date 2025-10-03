@@ -19,6 +19,7 @@
 
 #include "digikam_debug.h"
 #include "exiftoolprocess.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -40,6 +41,8 @@ ExifToolThread::ExifToolThread(QObject* const parent)
 
 void ExifToolThread::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("ExifToolThread"));       // To customize thread name
+
     ExifToolProcess* const proc = ExifToolProcess::instance();
     proc->moveToThread(this);
     proc->initExifTool();

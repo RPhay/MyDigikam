@@ -23,6 +23,7 @@
 
 #include "digikam_debug.h"
 #include "threadmanager.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -162,6 +163,8 @@ void DynamicThread::Private::transitionToInactive()
 
 void DynamicThread::Private::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("DynamicThread"));       // To customize thread name
+
     if (emitSignals)
     {
         Q_EMIT q->starting();

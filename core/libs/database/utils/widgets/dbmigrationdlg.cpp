@@ -43,6 +43,7 @@
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
 #include "coredbschemaupdater.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -70,6 +71,8 @@ DatabaseCopyThread::~DatabaseCopyThread()
 
 void DatabaseCopyThread::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("DatabaseCopyThread"));       // To customize thread name
+
     m_copyManager.copyDatabases(d->fromDbEngineParameters, d->toDbEngineParameters);
 }
 
