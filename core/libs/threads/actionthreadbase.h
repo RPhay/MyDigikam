@@ -60,7 +60,9 @@ public:
     void cancel(bool isCancel = true);
 
     /**
-     * @brief Call this method to customize a thread name visible in process viewer:
+     * @brief Call this method to customize a thread name visible in a process viewer.
+     * This will replace the default "Thread (pooled)" string set by Qt for QRunable and QtConcurrent.
+     * To show the thread names you can use:
      *    Linux:   htop or ps -T.
      *    macOS:   htop or ps -T.
      *    Windows: tasks manager.
