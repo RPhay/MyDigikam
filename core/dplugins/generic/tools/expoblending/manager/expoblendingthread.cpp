@@ -290,6 +290,8 @@ void ExpoBlendingThread::cancel()
 
 void ExpoBlendingThread::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("ExpoBlendingThread"));       // To customize thread name
+
     d->cancel = false;
 
     while (!d->cancel)

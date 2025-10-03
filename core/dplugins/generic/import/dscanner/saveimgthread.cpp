@@ -28,6 +28,7 @@
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dmetadata.h"
+#include "actionthreadbase.h"
 
 using namespace Digikam;
 using namespace KSaneIface;
@@ -126,6 +127,8 @@ void SaveImgThread::setScannerModel(const QString& make, const QString& model)
 
 void SaveImgThread::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("SaveImgThread"));       // To customize thread name
+
     Q_EMIT signalProgress(d->newUrl, 10);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))

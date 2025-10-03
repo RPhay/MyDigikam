@@ -29,6 +29,7 @@
 #include "dimg.h"
 #include "iccmanager.h"
 #include "iccsettings.h"
+#include "actionthreadbase.h"
 #include "digikam_debug.h"
 #include "previewloadthread.h"
 #include "iccsettingscontainer.h"
@@ -68,6 +69,8 @@ protected:
 
     void run() override
     {
+        ActionThreadBase::setCurrentThreadName(QLatin1String("LoadThread"));       // To customize thread name
+
         QImage newImage;
 
         ICCSettingsContainer settings = IccSettings::instance()->settings();

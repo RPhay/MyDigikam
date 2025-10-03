@@ -26,6 +26,12 @@
 #include <QFile>
 #include <QRegularExpression>
 
+// Local includes
+
+#include "actionthreadbase.h"
+
+using namespace Digikam;
+
 FakeServer::FakeServer(QObject* const parent)
     :  QThread       (parent),
        m_tcpServer   (nullptr),
@@ -105,6 +111,8 @@ void FakeServer::dataAvailable()
 
 void FakeServer::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("FakeServer"));       // To customize thread name
+
     m_tcpServer = new QTcpServer();
 
     if (!m_tcpServer->listen(QHostAddress(QHostAddress::LocalHost), 12566))

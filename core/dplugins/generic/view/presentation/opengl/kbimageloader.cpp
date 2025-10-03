@@ -25,6 +25,7 @@
 // Local includes
 
 #include "dimg.h"
+#include "actionthreadbase.h"
 #include "iccmanager.h"
 #include "iccsettings.h"
 #include "digikam_debug.h"
@@ -44,6 +45,8 @@ class Q_DECL_HIDDEN KBImageLoader::Private
 public:
 
     Private() = default;
+
+public:
 
     PresentationContainer* sharedData       = nullptr;
     int                    fileIndex        = 0;
@@ -108,6 +111,8 @@ void KBImageLoader::requestNewImage()
 
 void KBImageLoader::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("KBImageLoader"));       // To customize thread name
+
     QMutexLocker locker(&d->condLock);
 
     // we enter the loop with d->needImage==true, so we will immediately
