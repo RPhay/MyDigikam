@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 02:11+0000\n"
+"POT-Creation-Date: 2025-10-03 02:03+0000\n"
 "PO-Revision-Date: 2025-09-22 12:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -9283,7 +9283,7 @@ msgid "Restoration..."
 msgstr "Restauració..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:82
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:83
 #, kde-format
 msgid "Sharpen"
 msgstr "Aguditza"
@@ -9294,7 +9294,7 @@ msgid "Unsharp Mask"
 msgstr "Màscara de desenfocament"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:94
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
@@ -16757,7 +16757,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "Convertidor DNG..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:107
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "No es pot identificar la imatge RAW"
@@ -17208,13 +17208,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Fusiona les imatges apilades..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "desconegut"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:952
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -19731,25 +19731,25 @@ msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "Format personalitzat"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:184
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:231
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:321
 #, kde-format
 msgid "Printing canceled"
 msgstr "S'ha cancel·lat la impressió"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:210
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:292
 #, kde-format
 msgid "Processing page %1"
 msgstr "S'està processant la pàgina %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:304
 #, kde-format
 msgid "Could not save file %1"
 msgstr "No s'ha pogut desar el fitxer %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:312
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "Pàgina %1 desada com a %2"
@@ -20407,27 +20407,27 @@ msgstr "Fotografia %1 de %2"
 msgid "Page %1 of %2"
 msgstr "Pàgina %1 de %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:95
 #, kde-format
 msgid "Error opening input file"
 msgstr "Error en obrir el fitxer d'entrada"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:106
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "Error en obrir la carpeta temporal"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:129
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "No s'ha pogut redimensionar la imatge. S'interromp."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:142
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "No s'ha pogut desar la imatge redimensionada (JPEG). S'interromp."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:150
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "No s'ha pogut desar la imatge redimensionada (PNG). S'interromp."
@@ -32003,17 +32003,17 @@ msgstr "No es permet la transformació integrada"
 msgid "Filter identifier or version is not supported"
 msgstr "L'identificador de filtre o versió no està admès"
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:87
+#: core/libs/dimg/filters/fx/blurfilter.cpp:88
 #, kde-format
 msgid "Blur Filter"
 msgstr "Filtre de difuminat"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:83
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Filtre d'efectes especials de difuminat"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:87
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Efecte de carbonet"
@@ -32188,17 +32188,17 @@ msgctxt "@info: effect type"
 msgid "X Process"
 msgstr "Procés X"
 
-#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:95
+#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:96
 #, kde-format
 msgid "Distortion Effect"
 msgstr "Efecte de distorsió"
 
-#: core/libs/dimg/filters/fx/embossfilter.cpp:60
+#: core/libs/dimg/filters/fx/embossfilter.cpp:61
 #, kde-format
 msgid "Emboss Effect"
 msgstr "Efecte de relleu"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:107
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Efecte de gra de pel·lícula"
@@ -32324,12 +32324,12 @@ msgstr "Soroll vermell de crominància"
 msgid "Invert Effect"
 msgstr "Efecte d'inversió"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:82
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "Efecte de pintura a l'oli"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:91
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "Efecte de gotes de pluja"
@@ -32735,7 +32735,7 @@ msgstr "El perfil de color «%1» d'entrada no està disponible"
 msgid "Output color profile \"%1\" not available"
 msgstr "El perfil de color «%1» de sortida no està disponible"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Filtre de contrast local"
@@ -33121,86 +33121,86 @@ msgstr "(coincidència parcial)"
 msgid "(exact match found)"
 msgstr "(coincidència exacta)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Eina per a la correcció automàtica de la lent"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Càmera: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Lent: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:489
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Distància del motiu: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Obertura: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Distància focal: <numid>%1</numid>"
 
 # Segons la viquipèdia, «Crop factor» és el «Factor de distància focal»
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:495
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Factor de l'escapçat: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "Activat"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "Correcció CCA: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:498
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:501
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:504
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:507
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "Desactivat"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "Correcció VIG: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "Correcció DST: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -33471,7 +33471,7 @@ msgstr "Percentatge:"
 msgid "Levels Adjust Tool"
 msgstr "Eina per a l'ajust dels nivells"
 
-#: core/libs/dimg/filters/nr/nrfilter.cpp:126
+#: core/libs/dimg/filters/nr/nrfilter.cpp:127
 #, kde-format
 msgid "Noise Reduction Filter"
 msgstr "Eina de reducció del soroll"
@@ -33803,7 +33803,7 @@ msgstr ""
 "No s'ha pogut desar la configuració al fitxer de text per al reenfocament de "
 "la fotografia."
 
-#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
+#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:69
 #, kde-format
 msgid "Unsharp Mask Tool"
 msgstr "Eina per a la màscara de desenfocament"
@@ -36143,22 +36143,22 @@ msgctxt "@title:tab"
 msgid "Basic Factors"
 msgstr "Factors bàsics"
 
-#: core/libs/iojobs/iojob.cpp:64
+#: core/libs/iojobs/iojob.cpp:66
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "El fitxer o carpeta %1 ja no existeix"
 
-#: core/libs/iojobs/iojob.cpp:71
+#: core/libs/iojobs/iojob.cpp:73
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "L'àlbum %1 ja no existeix"
 
-#: core/libs/iojobs/iojob.cpp:99
+#: core/libs/iojobs/iojob.cpp:101
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr "No s'ha pogut sobreescriure la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:107
+#: core/libs/iojobs/iojob.cpp:109
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36168,22 +36168,22 @@ msgstr ""
 "Verifiqueu els permisos del fitxer a la carpeta de paperera «%2» a la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:135
+#: core/libs/iojobs/iojob.cpp:137
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Ja existeix un fitxer o una carpeta anomenats %1 a %2"
 
-#: core/libs/iojobs/iojob.cpp:154
+#: core/libs/iojobs/iojob.cpp:156
 #, kde-format
 msgid "Recursive folder %1 move detected to album %2"
 msgstr "Moviment recursiu de la carpeta %1 detectat a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:173
+#: core/libs/iojobs/iojob.cpp:175
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "No s'ha pogut moure la carpeta %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:180
+#: core/libs/iojobs/iojob.cpp:182
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -36192,47 +36192,47 @@ msgstr ""
 "No s'ha pogut moure la carpeta %1 a l'àlbum %2. La carpeta %1 també s'ha "
 "copiat a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:192
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "No s'ha pogut moure el lateral des del fitxer %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:198
+#: core/libs/iojobs/iojob.cpp:200
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "No s'ha pogut moure el fitxer %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:213
+#: core/libs/iojobs/iojob.cpp:215
 #, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
 msgstr "Copia recursiva de la carpeta %1 detectada a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:232
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "No s'ha pogut copiar la carpeta %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:242
+#: core/libs/iojobs/iojob.cpp:244
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "No s'ha pogut copiar el lateral des del fitxer %1 a la carpeta %2"
 
-#: core/libs/iojobs/iojob.cpp:250
+#: core/libs/iojobs/iojob.cpp:252
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "No s'ha pogut copiar el fitxer %1 a la carpeta %2"
 
-#: core/libs/iojobs/iojob.cpp:255
+#: core/libs/iojobs/iojob.cpp:257
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "No s'ha pogut copiar el fitxer %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:306
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "El fitxer o carpeta %1 no existeix"
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:318
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36243,7 +36243,7 @@ msgstr ""
 "Verifiqueu els permisos del fitxer a la carpeta de paperera «.dtrash» a la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:326
+#: core/libs/iojobs/iojob.cpp:330
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36254,32 +36254,32 @@ msgstr ""
 "Verifiqueu els permisos del fitxer a la carpeta de paperera «.dtrash» a la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:347
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "No s'ha pogut eliminar l'àlbum %1"
 
-#: core/libs/iojobs/iojob.cpp:355
+#: core/libs/iojobs/iojob.cpp:359
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "No s'ha pogut eliminar la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:404
+#: core/libs/iojobs/iojob.cpp:410
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "No s'ha pogut moure la imatge %1 a la paperera de col·leccions"
 
-#: core/libs/iojobs/iojob.cpp:416
+#: core/libs/iojobs/iojob.cpp:422
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Ja hi ha una imatge amb el mateix nom %1"
 
-#: core/libs/iojobs/iojob.cpp:434
+#: core/libs/iojobs/iojob.cpp:440
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "No s'ha pogut reanomenar la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:516
+#: core/libs/iojobs/iojob.cpp:526
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "No s'ha pogut restaurar el fitxer %1 des de la paperera"
@@ -42547,7 +42547,7 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Predeterminat de l'escriptori"
 
-#: core/libs/video/manager/vidslidetask.cpp:194
+#: core/libs/video/manager/vidslidetask.cpp:196
 #, kde-format
 msgid "Generating frames from %1 Done"
 msgstr "S'ha fet la generació dels fotogrames a partir de %1"
@@ -62264,38 +62264,38 @@ msgstr "S'han completat totes les cues de lots"
 msgid "&Queues"
 msgstr "&Cues"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#: core/utilities/queuemanager/manager/actiontask.cpp:155
 #, kde-format
 msgid "Failed to find tool..."
 msgstr "Ha fallat en trobar una eina..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#: core/utilities/queuemanager/manager/actiontask.cpp:257
 #, kde-format
 msgid "(overwritten)"
 msgstr "(sobreescrit)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#: core/utilities/queuemanager/manager/actiontask.cpp:262
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(reanomenat a %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#: core/utilities/queuemanager/manager/actiontask.cpp:267
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "L'element existeix i s'ha omès"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#: core/utilities/queuemanager/manager/actiontask.cpp:292
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Ha fallat en crear el fitxer lateral..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:301
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Element processat amb èxit %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:304
-#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#: core/utilities/queuemanager/manager/actiontask.cpp:306
+#: core/utilities/queuemanager/manager/actiontask.cpp:311
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Ha fallat en crear el fitxer..."

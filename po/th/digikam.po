@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 02:11+0000\n"
+"POT-Creation-Date: 2025-10-03 02:03+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -9221,7 +9221,7 @@ msgid "Restoration..."
 msgstr "ซ่อมแซมภาพถ่าย..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:82
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:83
 #, kde-format
 msgid "Sharpen"
 msgstr "ปรับความคม"
@@ -9232,7 +9232,7 @@ msgid "Unsharp Mask"
 msgstr ""
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:94
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
@@ -16856,7 +16856,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "การแปลงขอบเขตสี"
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:107
 #, fuzzy, kde-format
 msgid "Cannot identify Raw image"
 msgstr ""
@@ -17293,14 +17293,14 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "จับภาพ..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
 #, fuzzy, kde-format
 #| msgid "unknown"
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "ไม่ทราบ"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:952
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -19774,27 +19774,27 @@ msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "สัดส่วนกำหนดเอง:"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:184
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:231
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:321
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Printing canceled"
 msgstr "การประมวลผลถูกยกเลิก..."
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:210
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:292
 #, fuzzy, kde-format
 msgid "Processing page %1"
 msgstr "แฟ้มภาพยนตร์"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:304
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Could not save file %1"
 msgstr "ลัมเหลวในการบันทึกแฟ้ม: %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:312
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid "Page %1 saved as %2"
@@ -20457,28 +20457,28 @@ msgstr " (ภาพที่ %1 จาก %2 ภาพ)"
 msgid "Page %1 of %2"
 msgstr " (ภาพที่ %1 จาก %2 ภาพ)"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:95
 #, fuzzy, kde-format
 msgid "Error opening input file"
 msgstr "เกิดข้อผิดพลาดระหว่างเรียกภาพ '%1'"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:106
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgid "Error opening temporary folder"
 msgstr "ไม่สามารถเปิดแฟ้มชั่วคราวในโฟลเดอร์ \"%1\" ได้: %2 (%3)"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:129
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:142
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:150
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr ""
@@ -32004,17 +32004,17 @@ msgstr ""
 msgid "Filter identifier or version is not supported"
 msgstr "ยังไม่รองรับกล้องที่ระบุ (\"%1\")"
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:87
+#: core/libs/dimg/filters/fx/blurfilter.cpp:88
 #, fuzzy, kde-format
 msgid "Blur Filter"
 msgstr "ฟิลเตอร์สีน้ำเงิน"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:83
 #, fuzzy, kde-format
 msgid "Blur FX Filter"
 msgstr "ฟิลเตอร์สีน้ำเงิน"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:87
 #, fuzzy, kde-format
 msgid "Charcoal Effect"
 msgstr "ลูกเล่นของสี"
@@ -32207,17 +32207,17 @@ msgctxt "@info: effect type"
 msgid "X Process"
 msgstr "ประมวลผลกลุ่มภาพ"
 
-#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:95
+#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:96
 #, fuzzy, kde-format
 msgid "Distortion Effect"
 msgstr "บิดเบือนภาพ"
 
-#: core/libs/dimg/filters/fx/embossfilter.cpp:60
+#: core/libs/dimg/filters/fx/embossfilter.cpp:61
 #, fuzzy, kde-format
 msgid "Emboss Effect"
 msgstr "ทำภาพสลักลายนูน"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:107
 #, fuzzy, kde-format
 msgid "Film Grain Effect"
 msgstr "เกรนของฟิล์ม"
@@ -32340,12 +32340,12 @@ msgstr "จุดรบกวนแบบโครมาแนนซ์"
 msgid "Invert Effect"
 msgstr "กลับค่าการเลือก"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:82
 #, fuzzy, kde-format
 msgid "Oil Painter Effect"
 msgstr "ปรับใช้ลูกเล่นวาดภาพด้วยสีน้ำมัน"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:91
 #, fuzzy, kde-format
 msgid "Rain Drops Effect"
 msgstr "หยดน้ำฝน"
@@ -32737,7 +32737,7 @@ msgstr "ไม่มีโพรไฟล์สำหรับนำเข้า
 msgid "Output color profile \"%1\" not available"
 msgstr "ไม่มีโพรไฟล์สำหรับการส่งข้อมูลออกให้เลือกใช้"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
 #, fuzzy, kde-format
 msgid "Local Contrast Filter"
 msgstr "ความเปรียบต่างภายใน"
@@ -33090,86 +33090,86 @@ msgstr ""
 msgid "(exact match found)"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:126
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "แก้ความบิดเบือนจากเลนส์โดยอัตโนมัติ"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "กล้อง \"%1\""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "เลนส์: "
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:489
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "ระยะห่างจากตัวแบบ:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "ขนาดรูรับแสง: "
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "ทางยาวโฟกัส:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:495
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "ความเปรียบต่าง:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "เปิดใช้งาน"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "ปรับแก้ค่าสี BCG ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:498
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:501
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:504
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:507
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "เปิดใช้งาน"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "ปรับแก้ค่าสี BCG ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "ปรับแก้ค่าสี HSL ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -33438,7 +33438,7 @@ msgstr "ร้อยละ: "
 msgid "Levels Adjust Tool"
 msgstr "ปรับแก้ค่าแนวระดับต่าง ๆ..."
 
-#: core/libs/dimg/filters/nr/nrfilter.cpp:126
+#: core/libs/dimg/filters/nr/nrfilter.cpp:127
 #, fuzzy, kde-format
 msgid "Noise Reduction Filter"
 msgstr "ลดจุดรบกวนบนภาพ"
@@ -33723,7 +33723,7 @@ msgstr "แฟ้มการตั้งค่าการปรับโฟก
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "ไม่สามารถบันทึกการตั้งค่าไปยังแฟ้มการตั้งค่าการปรับโฟกัสของภาพถ่ายใหม่ได้"
 
-#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
+#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:69
 #, kde-format
 msgid "Unsharp Mask Tool"
 msgstr ""
@@ -36110,91 +36110,91 @@ msgctxt "@title:tab"
 msgid "Basic Factors"
 msgstr "ตัวแยกคำค้น:"
 
-#: core/libs/iojobs/iojob.cpp:64
+#: core/libs/iojobs/iojob.cpp:66
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "ยังไม่มีแฟ้มอยู่"
 
-#: core/libs/iojobs/iojob.cpp:71
+#: core/libs/iojobs/iojob.cpp:73
 #, fuzzy, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "ยังไม่มีแฟ้มอยู่"
 
-#: core/libs/iojobs/iojob.cpp:99
+#: core/libs/iojobs/iojob.cpp:101
 #, fuzzy, kde-format
 msgid "Could not overwrite image %1"
 msgstr "ไม่สามารถสร้าง '%1 ได้"
 
-#: core/libs/iojobs/iojob.cpp:107
+#: core/libs/iojobs/iojob.cpp:109
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:135
+#: core/libs/iojobs/iojob.cpp:137
 #, fuzzy, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "มีแฟ้มหรือโฟลเดอร์อื่นที่มีชื่อเดียวกันนี้อยู่แล้ว"
 
-#: core/libs/iojobs/iojob.cpp:154
+#: core/libs/iojobs/iojob.cpp:156
 #, fuzzy, kde-format
 msgid "Recursive folder %1 move detected to album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:173
+#: core/libs/iojobs/iojob.cpp:175
 #, fuzzy, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:180
+#: core/libs/iojobs/iojob.cpp:182
 #, fuzzy, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:192
+#: core/libs/iojobs/iojob.cpp:194
 #, fuzzy, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:198
+#: core/libs/iojobs/iojob.cpp:200
 #, fuzzy, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:213
+#: core/libs/iojobs/iojob.cpp:215
 #, fuzzy, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:232
 #, fuzzy, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "ไม่สามารถบันทึกไอคอนสำหรับภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:242
+#: core/libs/iojobs/iojob.cpp:244
 #, fuzzy, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "ไม่สามารถบันทึกไอคอนสำหรับภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:250
+#: core/libs/iojobs/iojob.cpp:252
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "ไม่สามารถบันทึกไอคอนสำหรับภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:255
+#: core/libs/iojobs/iojob.cpp:257
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "ไม่สามารถบันทึกไอคอนสำหรับภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:306
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "ยังไม่มีแฟ้มอยู่"
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:318
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36202,7 +36202,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:326
+#: core/libs/iojobs/iojob.cpp:330
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36210,34 +36210,34 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:347
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "ชื่อของอัลบั้มไม่สามารถว่างไว้ได้"
 
-#: core/libs/iojobs/iojob.cpp:355
+#: core/libs/iojobs/iojob.cpp:359
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:404
+#: core/libs/iojobs/iojob.cpp:410
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:416
+#: core/libs/iojobs/iojob.cpp:422
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "มีอัลบั้มอื่นที่มีชื่อเดียวกันนี้อยู่ก่อนแล้ว\n"
 "โปรดตั้งชื่ออัลบั้มเป็นชื่ออื่น"
 
-#: core/libs/iojobs/iojob.cpp:434
+#: core/libs/iojobs/iojob.cpp:440
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:516
+#: core/libs/iojobs/iojob.cpp:526
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgid "Could not restore file %1 from trash"
@@ -42389,7 +42389,7 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:194
+#: core/libs/video/manager/vidslidetask.cpp:196
 #, fuzzy, kde-format
 #| msgid "Deleting file %1..."
 msgid "Generating frames from %1 Done"
@@ -63369,38 +63369,38 @@ msgstr "คิวประมวลผลกลุ่มภาพเสร็จ
 msgid "&Queues"
 msgstr "คิ&ว"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#: core/utilities/queuemanager/manager/actiontask.cpp:155
 #, fuzzy, kde-format
 msgid "Failed to find tool..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#: core/utilities/queuemanager/manager/actiontask.cpp:257
 #, fuzzy, kde-format
 msgid "(overwritten)"
 msgstr "เขียนทับ"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#: core/utilities/queuemanager/manager/actiontask.cpp:262
 #, fuzzy, kde-format
 msgid "(renamed to %1)"
 msgstr "รายการถูกเปลี่ยนชื่อเป็น %1..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#: core/utilities/queuemanager/manager/actiontask.cpp:267
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#: core/utilities/queuemanager/manager/actiontask.cpp:292
 #, fuzzy, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:301
 #, fuzzy, kde-format
 msgid "Item processed successfully %1"
 msgstr "รายการถูกประมวลผลเสร็จเรียบร้อยแล้ว..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:304
-#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#: core/utilities/queuemanager/manager/actiontask.cpp:306
+#: core/utilities/queuemanager/manager/actiontask.cpp:311
 #, fuzzy, kde-format
 msgid "Failed to create file..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."

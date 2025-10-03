@@ -123,7 +123,7 @@ BUGFIXES:
 088 ==> 510040 - Slow first startup after installation.
 089 ==> 507615 - Failure at initial launch of version 8.7.
 090 ==> 510129 - digiKam stays as a background process after closing or quitting.
-091 ==> 
+091 ==> 510179 - A DK background process remains after closing DK.
 092 ==> 
 093 ==> 
 094 ==> 
