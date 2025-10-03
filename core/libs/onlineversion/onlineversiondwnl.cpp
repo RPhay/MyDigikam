@@ -40,6 +40,7 @@
 
 #include "digikam_debug.h"
 #include "onlineversionchecker.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -294,6 +295,8 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
 
     fwatcher.setFuture(QtConcurrent::run([&hash, &data]()
         {
+            ActionThreadBase::setCurrentThreadName(QLatin1String("VersionComputeHash"));       // To customize thread name
+
             QCryptographicHash sha256(QCryptographicHash::Sha256);
             sha256.addData(data);
             hash = QString::fromLatin1(sha256.result().toHex());

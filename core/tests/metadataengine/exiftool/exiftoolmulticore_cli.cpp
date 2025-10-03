@@ -29,11 +29,14 @@
 
 #include "digikam_debug.h"
 #include "exiftoolparser.h"
+#include "actionthreadbase.h"
 
 using namespace Digikam;
 
 bool s_exifToolParseThreaded(const QString& file)
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
     // Read metadata from the file. Start ExifToolParser

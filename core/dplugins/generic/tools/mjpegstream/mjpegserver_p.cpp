@@ -236,6 +236,8 @@ void MjpegServer::Private::slotClientDisconnected()
 
 void MjpegServer::Private::writerThread()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     while (isOpened())
     {
         QList <QFuture<void> > sockTasks;
@@ -278,8 +280,6 @@ void MjpegServer::Private::writerThread()
 
 void MjpegServer::Private::clientWriteMultithreaded(int client, const QByteArray& data)
 {
-    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
-
     QString head;
     head.append(QLatin1String("--mjpegstream\r\n"
                               "Content-type: image/jpeg\r\n"

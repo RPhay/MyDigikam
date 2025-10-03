@@ -71,6 +71,8 @@ bool FacePipelineReset::start()
 
 bool FacePipelineReset::finder()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceReset").arg(__FUNCTION__));       // To customize thread name
+
     MLPIPELINE_FINDER_START(settings.workerThreadPriority, MLPipelineStage::Writer);
 
     /* =========================================================================================
@@ -129,6 +131,8 @@ bool FacePipelineReset::finder()
 
 bool FacePipelineReset::writer()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceReset").arg(__FUNCTION__));       // To customize thread name
+
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;
 

@@ -85,6 +85,8 @@ bool FacePipelineRetrain::start()
 
 bool FacePipelineRetrain::finder()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain").arg(__FUNCTION__));       // To customize thread name
+
     MLPIPELINE_FINDER_START(settings.workerThreadPriority, MLPipelineStage::Loader);
 
     /* =========================================================================================
@@ -150,6 +152,8 @@ bool FacePipelineRetrain::finder()
 
 bool FacePipelineRetrain::loader()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain").arg(__FUNCTION__));       // To customize thread name
+
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRetrain"),
                                      QThread::LowPriority,
                                      MLPipelineStage::Loader,
@@ -158,6 +162,8 @@ bool FacePipelineRetrain::loader()
 
 bool FacePipelineRetrain::extractor()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain").arg(__FUNCTION__));       // To customize thread name
+
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRetrain"),
                                         QThread::LowPriority,
                                         MLPipelineStage::Extractor,
@@ -165,13 +171,10 @@ bool FacePipelineRetrain::extractor()
                                         true);
 }
 
-bool FacePipelineRetrain::classifier()
-{
-    return false;
-}
-
 bool FacePipelineRetrain::writer()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain").arg(__FUNCTION__));       // To customize thread name
+
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package   = nullptr;
 

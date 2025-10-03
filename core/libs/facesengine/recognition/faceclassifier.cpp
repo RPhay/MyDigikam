@@ -39,6 +39,7 @@
 #include "dnnmodelmanager.h"
 #include "facebackgroundrecognition.h"
 #include "systemsettings.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -276,7 +277,10 @@ bool FaceClassifier::retrain()
 
 bool FaceClassifier::loadTrainingData()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     // Training thread to load the training data and should have a higher priority.
+
     QMutexLocker threadLock(&d->trainingThreadMutex);
     d->trainingThread = QThread::currentThread();
     d->trainingThread->setPriority(QThread::Priority::HighPriority);

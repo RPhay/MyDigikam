@@ -50,6 +50,7 @@
 #include "dnnmodelmanager.h"
 #include "dnnmodelsface.h"
 #include "dnnmodelyunet.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -242,6 +243,8 @@ void OpenCVOpenCLDNNTestDlg::slotNotification(const QString& message)
 
 bool OpenCVOpenCLDNNTestDlg::runTest()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("OpenCLDNN").arg(__FUNCTION__));       // To customize thread name
+
     bool result = false;
 
     try

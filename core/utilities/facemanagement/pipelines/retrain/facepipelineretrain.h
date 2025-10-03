@@ -39,7 +39,10 @@ protected:
     bool finder()                                               override;
     bool loader()                                               override;
     bool extractor()                                            override;
-    bool classifier()                                           override;
+    bool classifier()                                           override
+    {
+        return false;
+    }
 
     bool trainer()                                              override
     {

@@ -34,6 +34,7 @@
 #include "mlpipelinepackagefoundation.h"
 #include "sharedqueue.h"
 #include "mlpipelinemacros.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {

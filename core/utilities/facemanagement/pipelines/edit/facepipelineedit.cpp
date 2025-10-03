@@ -310,6 +310,8 @@ bool FacePipelineEdit::start()
 
 bool FacePipelineEdit::loader()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit").arg(__FUNCTION__));       // To customize thread name
+
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineEdit"),
                                      QThread::NormalPriority,
                                      MLPipelineStage::Loader,
@@ -318,6 +320,8 @@ bool FacePipelineEdit::loader()
 
 bool FacePipelineEdit::extractor()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit").arg(__FUNCTION__));       // To customize thread name
+
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineEdit"),
                                         QThread::NormalPriority,
                                         MLPipelineStage::Extractor,
@@ -327,6 +331,8 @@ bool FacePipelineEdit::extractor()
 
 bool FacePipelineEdit::writer()
 {
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit").arg(__FUNCTION__));       // To customize thread name
+
     MLPIPELINE_STAGE_START(QThread::NormalPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;
 

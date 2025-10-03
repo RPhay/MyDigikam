@@ -37,6 +37,7 @@
 #include "facescansettings.h"
 #include "faceclassifier.h"
 #include "recognitiontrainingupdatequeue.h"
+#include "actionthreadbase.h"
 
 namespace Digikam
 {
@@ -699,6 +700,8 @@ Identity IdentityProvider::findByAttributes(const QString& attribute,
 
 bool IdentityProvider::trainingRemoveConcurrent()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
     QString hash;
 
     while (true && d->removeQueue)
