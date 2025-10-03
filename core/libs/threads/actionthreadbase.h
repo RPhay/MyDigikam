@@ -60,7 +60,14 @@ public:
     void cancel(bool isCancel = true);
 
     /**
-     * @brief Call this method to customize a thread name visible in process manager as htop under Linux.
+     * @brief Call this method to customize a thread name visible in process viewer:
+     *    Linux:   htop or ps -T.
+     *    macOS:   htop or ps -T.
+     *    Windows: tasks manager.
+     * String limitation:
+     *    Linux:   15 characters max (UTF8).
+     *    macOS:   64 characters max (UTF8).
+     *    Windows: 260 characters max (UTF16).
      */
     static void setCurrentThreadName(const QString& name);
 
