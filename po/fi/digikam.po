@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 02:11+0000\n"
+"POT-Creation-Date: 2025-10-03 02:03+0000\n"
 "PO-Revision-Date: 2025-05-29 15:07+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -9582,7 +9582,7 @@ msgid "Restoration..."
 msgstr "Palauta…"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:82
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:83
 #, kde-format
 msgid "Sharpen"
 msgstr "Terävöitä"
@@ -9593,7 +9593,7 @@ msgid "Unsharp Mask"
 msgstr "Epäterävyysmaski:"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:94
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
@@ -17127,7 +17127,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "DNG-muunnin…"
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:107
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "RAW-kuvaa ei voitu tunnistaa"
@@ -17550,13 +17550,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Luo skeema…"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "tuntematon"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:952
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -20118,25 +20118,25 @@ msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "Oma muoto"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:184
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:231
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:321
 #, kde-format
 msgid "Printing canceled"
 msgstr "Tulostaminen peruttu"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:210
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:292
 #, kde-format
 msgid "Processing page %1"
 msgstr "Käsitellään sivua %1…"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:304
 #, kde-format
 msgid "Could not save file %1"
 msgstr "Tiedostoa %1 ei voitu tallentaa"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:312
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "Sivu %1 tallennettu nimellä %2"
@@ -20797,27 +20797,27 @@ msgstr "Kuva %1 / %2"
 msgid "Page %1 of %2"
 msgstr "Sivu %1 / %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:95
 #, kde-format
 msgid "Error opening input file"
 msgstr "Virhe avattaessa syötetiedostoa"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:106
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "Virhe avattaessa väliaikaiskansiota"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:129
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "Kuvakokoa ei voi muuttaa. Keskeytetään."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:142
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "Muutetun koon kuvaa (JPEG) ei voida tallentaa. Keskeytetään."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:150
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "Muutetun koon kuvaa (PNG) ei voida tallentaa. Keskeytetään."
@@ -32403,17 +32403,17 @@ msgstr ""
 msgid "Filter identifier or version is not supported"
 msgstr "Kamera ”%1” ei ole tuettu."
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:87
+#: core/libs/dimg/filters/fx/blurfilter.cpp:88
 #, kde-format
 msgid "Blur Filter"
 msgstr "Sumennussuodatin"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:83
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Sumennustehostesuodatin"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:87
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Hiilipiirustustehoste"
@@ -32584,17 +32584,17 @@ msgctxt "@info: effect type"
 msgid "X Process"
 msgstr "Eräajo"
 
-#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:95
+#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:96
 #, kde-format
 msgid "Distortion Effect"
 msgstr "Vääristymätehoste"
 
-#: core/libs/dimg/filters/fx/embossfilter.cpp:60
+#: core/libs/dimg/filters/fx/embossfilter.cpp:61
 #, kde-format
 msgid "Emboss Effect"
 msgstr "Kohokuvatehoste"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:107
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Filmirakeisuustehoste"
@@ -32711,12 +32711,12 @@ msgstr ""
 msgid "Invert Effect"
 msgstr "Käänteistehoste"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:82
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "Öljyvärimaalaustehoste"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:91
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "Sadepisaratehoste"
@@ -33094,7 +33094,7 @@ msgstr "Syöteväriprofiili ”%1” ei käytettävissä"
 msgid "Output color profile \"%1\" not available"
 msgstr "Tulosväriprofiili ”%1” ei käytettävissä"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Paikalliskontrastisuodin"
@@ -33441,86 +33441,86 @@ msgstr "(löytyi osittainen osuma)"
 msgid "(exact match found)"
 msgstr "(löytyi tarkka osuma)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:126
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction Tool"
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Automaattinen linssivääristymän korjaustyökalu"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Kamera: %1–%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Linssi: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:489
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Kohteen etäisyys: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Aukko: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Polttoväli: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:495
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Rajaustekijä: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "käytössä"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "CCA-korjaus: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:498
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:501
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:504
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:507
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "ei käytössä"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "VIG-korjaus: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "DST-korjaus: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -33783,7 +33783,7 @@ msgstr "Prosenttia:"
 msgid "Levels Adjust Tool"
 msgstr "Tasonsäätötyökalu"
 
-#: core/libs/dimg/filters/nr/nrfilter.cpp:126
+#: core/libs/dimg/filters/nr/nrfilter.cpp:127
 #, kde-format
 msgid "Noise Reduction Filter"
 msgstr "Kohinan vähennyssuodatin"
@@ -34063,7 +34063,7 @@ msgstr "Tallennettava valokuvan koonmuuttamisasetusten tiedosto"
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
+#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:69
 #, kde-format
 msgid "Unsharp Mask Tool"
 msgstr "Epäterävyysmaskityökalu"
@@ -36425,23 +36425,23 @@ msgctxt "@title:tab"
 msgid "Basic Factors"
 msgstr "Harvuuskerroin:"
 
-#: core/libs/iojobs/iojob.cpp:64
+#: core/libs/iojobs/iojob.cpp:66
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "Tiedostoa tai kansiota %1 ei ole enää olemassa"
 
-#: core/libs/iojobs/iojob.cpp:71
+#: core/libs/iojobs/iojob.cpp:73
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "Albumia %1 ei ole enää olemassa"
 
-#: core/libs/iojobs/iojob.cpp:99
+#: core/libs/iojobs/iojob.cpp:101
 #, fuzzy, kde-format
 #| msgid "Could not read image '%1'"
 msgid "Could not overwrite image %1"
 msgstr "Kuvaa ”%1” ei voitu lukea"
 
-#: core/libs/iojobs/iojob.cpp:107
+#: core/libs/iojobs/iojob.cpp:109
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36450,23 +36450,23 @@ msgstr ""
 "Kuvaa %1 ei voitu siirtää kokoelman roskakoriin.\n"
 "Tarkista kuvakokoelman roskakorikansion ”%2” käyttöoikeudet."
 
-#: core/libs/iojobs/iojob.cpp:135
+#: core/libs/iojobs/iojob.cpp:137
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Tiedosto tai kansio nimeltä %1 on jo olemassa kohteessa %2"
 
-#: core/libs/iojobs/iojob.cpp:154
+#: core/libs/iojobs/iojob.cpp:156
 #, fuzzy, kde-format
 #| msgid "Could not move folder %1 to album %2"
 msgid "Recursive folder %1 move detected to album %2"
 msgstr "Kansiota %1 ei voitu siirtää albumiin %2"
 
-#: core/libs/iojobs/iojob.cpp:173
+#: core/libs/iojobs/iojob.cpp:175
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Kansiota %1 ei voitu siirtää albumiin %2"
 
-#: core/libs/iojobs/iojob.cpp:180
+#: core/libs/iojobs/iojob.cpp:182
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -36474,48 +36474,48 @@ msgid ""
 msgstr ""
 "Kansiota %1 ei voitu siirtää albumiin %2. Kansio %1 kopioitiin albumiin %2"
 
-#: core/libs/iojobs/iojob.cpp:192
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Tiedoston %1 oheistiedostoa ei voitu siirtää albumiin %2"
 
-#: core/libs/iojobs/iojob.cpp:198
+#: core/libs/iojobs/iojob.cpp:200
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Tiedostoa %1 ei voitu siirtää albumiin %2"
 
-#: core/libs/iojobs/iojob.cpp:213
+#: core/libs/iojobs/iojob.cpp:215
 #, fuzzy, kde-format
 #| msgid "Could not move folder %1 to album %2"
 msgid "Recursive folder %1 copy detected to album %2"
 msgstr "Kansiota %1 ei voitu siirtää albumiin %2"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:232
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Kansiota %1 ei voitu kopioida albumiin %2"
 
-#: core/libs/iojobs/iojob.cpp:242
+#: core/libs/iojobs/iojob.cpp:244
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Tiedoston %1 oheistiedostoa ei voitu kopioida kansioon %2"
 
-#: core/libs/iojobs/iojob.cpp:250
+#: core/libs/iojobs/iojob.cpp:252
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Tiedostoa %1 ei voitu kopioida kansioon %2"
 
-#: core/libs/iojobs/iojob.cpp:255
+#: core/libs/iojobs/iojob.cpp:257
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Tiedostoa %1 ei voitu kopioida albumiin %2"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:306
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Tiedostoa tai kansiota %1 ei ole olemassa"
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:318
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36525,7 +36525,7 @@ msgstr ""
 "Kansiota %1 ei voitu siirtää kokoelman roskakoriin.\n"
 "Tarkista kuvakokoelman roskakorikansion ”.dtrash” käyttöoikeudet."
 
-#: core/libs/iojobs/iojob.cpp:326
+#: core/libs/iojobs/iojob.cpp:330
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36535,32 +36535,32 @@ msgstr ""
 "Kuvaa %1 ei voitu siirtää kokoelman roskakoriin.\n"
 "Tarkista kuvakokoelman roskakorikansion ”.dtrash” käyttöoikeudet."
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:347
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Albumia %1 ei voitu poistaa"
 
-#: core/libs/iojobs/iojob.cpp:355
+#: core/libs/iojobs/iojob.cpp:359
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Kuvaa %1 ei voitu poistaa"
 
-#: core/libs/iojobs/iojob.cpp:404
+#: core/libs/iojobs/iojob.cpp:410
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Kuvaa %1 ei voitu siirtää kokoelman roskakoriin"
 
-#: core/libs/iojobs/iojob.cpp:416
+#: core/libs/iojobs/iojob.cpp:422
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Sisältää jo kuvan, jolla on sama nimi %1"
 
-#: core/libs/iojobs/iojob.cpp:434
+#: core/libs/iojobs/iojob.cpp:440
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Kuvan %1 nimeä ei voitu muuttaa"
 
-#: core/libs/iojobs/iojob.cpp:516
+#: core/libs/iojobs/iojob.cpp:526
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Tiedostoa %1 ei voitu palauttaa roskakorista"
@@ -42781,7 +42781,7 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Työpöydän oletus"
 
-#: core/libs/video/manager/vidslidetask.cpp:194
+#: core/libs/video/manager/vidslidetask.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Generating files for \"%1\""
@@ -62518,38 +62518,38 @@ msgstr "Kaikki eräajot on tehty"
 msgid "&Queues"
 msgstr "&Jonot"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#: core/utilities/queuemanager/manager/actiontask.cpp:155
 #, kde-format
 msgid "Failed to find tool..."
 msgstr "Työkalua ei löytynyt…"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#: core/utilities/queuemanager/manager/actiontask.cpp:257
 #, kde-format
 msgid "(overwritten)"
 msgstr "(korvattu)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#: core/utilities/queuemanager/manager/actiontask.cpp:262
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(uusi nimi %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#: core/utilities/queuemanager/manager/actiontask.cpp:267
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Kohde on olemassa ja ohitettiin"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#: core/utilities/queuemanager/manager/actiontask.cpp:292
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Oheistiedoston luominen epäonnistui…"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:301
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Kohteen käsittely onnistui %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:304
-#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#: core/utilities/queuemanager/manager/actiontask.cpp:306
+#: core/utilities/queuemanager/manager/actiontask.cpp:311
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Tiedoston luonti epäonnistui…"

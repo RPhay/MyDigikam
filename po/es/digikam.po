@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 02:11+0000\n"
+"POT-Creation-Date: 2025-10-03 02:03+0000\n"
 "PO-Revision-Date: 2025-09-22 16:39+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -9295,7 +9295,7 @@ msgid "Restoration..."
 msgstr "Restauración…"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:82
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:83
 #, kde-format
 msgid "Sharpen"
 msgstr "Enfocar"
@@ -9306,7 +9306,7 @@ msgid "Unsharp Mask"
 msgstr "Máscara de desenfoque"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:94
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
@@ -16759,7 +16759,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "Conversor DNG…"
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:107
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "No se puede identificar la imagen RAW"
@@ -17213,13 +17213,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Mezclar imágenes apiladas…"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "desconocida"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:952
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -19743,25 +19743,25 @@ msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "Formato personalizado"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:184
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:231
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:321
 #, kde-format
 msgid "Printing canceled"
 msgstr "Impresión cancelada"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:210
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:292
 #, kde-format
 msgid "Processing page %1"
 msgstr "Procesando la página %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:304
 #, kde-format
 msgid "Could not save file %1"
 msgstr "No se ha podido guardar el archivo %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:312
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "Página %1 guardada como %2"
@@ -20419,29 +20419,29 @@ msgstr "Foto %1 de %2"
 msgid "Page %1 of %2"
 msgstr "Página %1 de %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:95
 #, kde-format
 msgid "Error opening input file"
 msgstr "Ha ocurrido un error al abrir el archivo de entrada"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:106
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "Ha ocurrido un error al abrir una carpeta temporal"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:129
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "No se puede cambiar el tamaño de la imagen. Se interrumpe."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:142
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr ""
 "No se puede guardar la imagen (JPEG) cuyo tamaño se ha cambiado. Se "
 "interrumpe."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:150
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr ""
@@ -31993,17 +31993,17 @@ msgstr "Transformación integrada no permitida"
 msgid "Filter identifier or version is not supported"
 msgstr "El identificador del filtro o la versión no está implementado"
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:87
+#: core/libs/dimg/filters/fx/blurfilter.cpp:88
 #, kde-format
 msgid "Blur Filter"
 msgstr "Filtro de desenfoque"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:83
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Filtro de efectos especiales de desenfoque"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:87
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Efecto de carbón"
@@ -32177,17 +32177,17 @@ msgctxt "@info: effect type"
 msgid "X Process"
 msgstr "Proceso cruzado"
 
-#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:95
+#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:96
 #, kde-format
 msgid "Distortion Effect"
 msgstr "Efecto de distorsión"
 
-#: core/libs/dimg/filters/fx/embossfilter.cpp:60
+#: core/libs/dimg/filters/fx/embossfilter.cpp:61
 #, kde-format
 msgid "Emboss Effect"
 msgstr "Efecto de repujado"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:107
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Efecto de grano de película"
@@ -32313,12 +32313,12 @@ msgstr "Ruido rojo de crominancia"
 msgid "Invert Effect"
 msgstr "Efecto invertir"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:82
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "Efecto de pintura al óleo"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:91
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "Efecto de gotas de lluvia"
@@ -32729,7 +32729,7 @@ msgstr "Perfil de color «%1» no disponible "
 msgid "Output color profile \"%1\" not available"
 msgstr "Resultado de perfil de color «%1» no disponible"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Filtro de contraste local"
@@ -33115,85 +33115,85 @@ msgstr "(hay coincidencia parcial)"
 msgid "(exact match found)"
 msgstr "(hay coincidencia)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Herramienta de autocorrección de lentes"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Cámara: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Objetivo: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:489
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Distancia al sujeto: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Apertura: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Distancia focal: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:495
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Factor de recorte: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "activada"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "Corrección CCA: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:498
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:501
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:504
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:507
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "desactivada"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "Corrección VIG: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "Corrección DST: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -33467,7 +33467,7 @@ msgstr "Porcentaje:"
 msgid "Levels Adjust Tool"
 msgstr "Herramienta de ajuste de niveles"
 
-#: core/libs/dimg/filters/nr/nrfilter.cpp:126
+#: core/libs/dimg/filters/nr/nrfilter.cpp:127
 #, kde-format
 msgid "Noise Reduction Filter"
 msgstr "Filtro de reducción de ruido"
@@ -33794,7 +33794,7 @@ msgstr ""
 "No se pueden guardar las preferencias en el archivo de texto de reenfoque de "
 "fotografías."
 
-#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
+#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:69
 #, kde-format
 msgid "Unsharp Mask Tool"
 msgstr "Herramienta de máscara de desenfoque"
@@ -36126,22 +36126,22 @@ msgctxt "@title:tab"
 msgid "Basic Factors"
 msgstr "Factores básicos"
 
-#: core/libs/iojobs/iojob.cpp:64
+#: core/libs/iojobs/iojob.cpp:66
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "El archivo o carpeta %1 ya no existe"
 
-#: core/libs/iojobs/iojob.cpp:71
+#: core/libs/iojobs/iojob.cpp:73
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "El álbum %1 ya no existe"
 
-#: core/libs/iojobs/iojob.cpp:99
+#: core/libs/iojobs/iojob.cpp:101
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr "No se ha podido sobrescribir la imagen %1"
 
-#: core/libs/iojobs/iojob.cpp:107
+#: core/libs/iojobs/iojob.cpp:109
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36151,22 +36151,22 @@ msgstr ""
 "Compruebe los permisos de archivos en la carpeta de papelera «%2» en la "
 "colección de imágenes."
 
-#: core/libs/iojobs/iojob.cpp:135
+#: core/libs/iojobs/iojob.cpp:137
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Ya existe un archivo o carpeta con el nombre %1 en %2"
 
-#: core/libs/iojobs/iojob.cpp:154
+#: core/libs/iojobs/iojob.cpp:156
 #, kde-format
 msgid "Recursive folder %1 move detected to album %2"
 msgstr "Se ha detectado un movimiento recursivo de la carpeta %1 al álbum %2"
 
-#: core/libs/iojobs/iojob.cpp:173
+#: core/libs/iojobs/iojob.cpp:175
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "No se ha podido mover la carpeta %1 al álbum %2"
 
-#: core/libs/iojobs/iojob.cpp:180
+#: core/libs/iojobs/iojob.cpp:182
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -36175,48 +36175,48 @@ msgstr ""
 "No se ha podido mover la carpeta %1 al álbum %2. Se ha copiado la carpeta %1 "
 "en el álbum %2."
 
-#: core/libs/iojobs/iojob.cpp:192
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "No se ha podido mover el archivo anexo del archivo %1 al álbum %2"
 
-#: core/libs/iojobs/iojob.cpp:198
+#: core/libs/iojobs/iojob.cpp:200
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "No se ha podido mover el archivo %1 al álbum %2"
 
-#: core/libs/iojobs/iojob.cpp:213
+#: core/libs/iojobs/iojob.cpp:215
 #, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
 msgstr "Se ha detectado una copia recursiva de la carpeta %1 al álbum %2"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:232
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "No se ha podido copiar la carpeta %1 en el álbum %2"
 
-#: core/libs/iojobs/iojob.cpp:242
+#: core/libs/iojobs/iojob.cpp:244
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr ""
 "No se ha podido copiar el archivo anexo del archivo %1 en la carpeta %2"
 
-#: core/libs/iojobs/iojob.cpp:250
+#: core/libs/iojobs/iojob.cpp:252
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "No se ha podido copiar el archivo %1 en la carpeta %2"
 
-#: core/libs/iojobs/iojob.cpp:255
+#: core/libs/iojobs/iojob.cpp:257
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "No se ha podido copiar el archivo %1 en el álbum %2"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:306
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "El archivo o carpeta %1 no existe"
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:318
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36227,7 +36227,7 @@ msgstr ""
 "Compruebe los permisos de archivos en la carpeta de papelera «.dtrash» en la "
 "colección de imágenes."
 
-#: core/libs/iojobs/iojob.cpp:326
+#: core/libs/iojobs/iojob.cpp:330
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36238,32 +36238,32 @@ msgstr ""
 "Compruebe los permisos de archivos en la carpeta de papelera «.dtrash» en la "
 "colección de imágenes."
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:347
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "No se ha podido eliminar el álbum %1"
 
-#: core/libs/iojobs/iojob.cpp:355
+#: core/libs/iojobs/iojob.cpp:359
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "No se ha podido eliminar la imagen %1"
 
-#: core/libs/iojobs/iojob.cpp:404
+#: core/libs/iojobs/iojob.cpp:410
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "No se ha podido mover la imagen %1 a la papelera de la colección"
 
-#: core/libs/iojobs/iojob.cpp:416
+#: core/libs/iojobs/iojob.cpp:422
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Ya existe allí una imagen con el mismo nombre %1"
 
-#: core/libs/iojobs/iojob.cpp:434
+#: core/libs/iojobs/iojob.cpp:440
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "No se ha podido cambiar el nombre de la imagen %1"
 
-#: core/libs/iojobs/iojob.cpp:516
+#: core/libs/iojobs/iojob.cpp:526
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "No se ha podido restaurar el archivo «%1» de la papelera"
@@ -42537,7 +42537,7 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Por omisión del escritorio"
 
-#: core/libs/video/manager/vidslidetask.cpp:194
+#: core/libs/video/manager/vidslidetask.cpp:196
 #, kde-format
 msgid "Generating frames from %1 Done"
 msgstr "Terminada la generación de fotogramas de %1"
@@ -62234,38 +62234,38 @@ msgstr "Todas las colas de trabajos por lotes han finalizado"
 msgid "&Queues"
 msgstr "&Colas"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#: core/utilities/queuemanager/manager/actiontask.cpp:155
 #, kde-format
 msgid "Failed to find tool..."
 msgstr "No se ha podido encontrar la herramienta…"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#: core/utilities/queuemanager/manager/actiontask.cpp:257
 #, kde-format
 msgid "(overwritten)"
 msgstr "(sobrescrito)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#: core/utilities/queuemanager/manager/actiontask.cpp:262
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(nombre cambiado a %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#: core/utilities/queuemanager/manager/actiontask.cpp:267
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "El elemento existe y se ha omitido"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#: core/utilities/queuemanager/manager/actiontask.cpp:292
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "No se ha podido crear el archivo anexo…"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:301
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Elemento procesado con éxito %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:304
-#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#: core/utilities/queuemanager/manager/actiontask.cpp:306
+#: core/utilities/queuemanager/manager/actiontask.cpp:311
 #, kde-format
 msgid "Failed to create file..."
 msgstr "No se ha podido crear el archivo…"

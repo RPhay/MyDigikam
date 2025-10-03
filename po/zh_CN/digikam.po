@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 02:11+0000\n"
+"POT-Creation-Date: 2025-10-03 02:03+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -8805,7 +8805,7 @@ msgid "Restoration..."
 msgstr "照片修复..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:82
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:83
 #, kde-format
 msgid "Sharpen"
 msgstr "锐化"
@@ -8816,7 +8816,7 @@ msgid "Unsharp Mask"
 msgstr "USM 锐化"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:94
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
@@ -15965,7 +15965,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "DNG 转换..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:107
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "无法识别 RAW 图像"
@@ -16393,13 +16393,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "混合多张图像..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "未知"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:952
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -18799,25 +18799,25 @@ msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "自定义格式"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:184
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:231
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:321
 #, kde-format
 msgid "Printing canceled"
 msgstr "打印已取消"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:210
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:292
 #, kde-format
 msgid "Processing page %1"
 msgstr "正在处理页面 %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:304
 #, kde-format
 msgid "Could not save file %1"
 msgstr "无法保存文件 %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:312
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "页面 %1 已保存为 %2"
@@ -19457,27 +19457,27 @@ msgstr "第 %1 张，共 %2 张"
 msgid "Page %1 of %2"
 msgstr "第 %1 页，共 %2 页"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:95
 #, kde-format
 msgid "Error opening input file"
 msgstr "打开输入文件出错"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:106
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "打开临时文件夹出错"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:129
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "无法调整图像尺寸。正在中止操作。"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:142
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "无法保存调整尺寸后的图像 (JPEG)。正在中止操作。"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:150
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "无法保存调整尺寸后的图像 (PNG)。正在中止操作。"
@@ -30577,17 +30577,17 @@ msgstr "内建变形功能不支持"
 msgid "Filter identifier or version is not supported"
 msgstr "滤镜标识符或版本不支持"
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:87
+#: core/libs/dimg/filters/fx/blurfilter.cpp:88
 #, kde-format
 msgid "Blur Filter"
 msgstr "模糊滤镜"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:83
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "模糊特效滤镜"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:87
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "炭笔画特效"
@@ -30757,17 +30757,17 @@ msgctxt "@info: effect type"
 msgid "X Process"
 msgstr "交叉冲印"
 
-#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:95
+#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:96
 #, kde-format
 msgid "Distortion Effect"
 msgstr "畸变特效"
 
-#: core/libs/dimg/filters/fx/embossfilter.cpp:60
+#: core/libs/dimg/filters/fx/embossfilter.cpp:61
 #, kde-format
 msgid "Emboss Effect"
 msgstr "浮雕特效"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:107
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "胶片颗粒特效"
@@ -30886,12 +30886,12 @@ msgstr "红色品噪点"
 msgid "Invert Effect"
 msgstr "反相特效"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:82
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "油画特效"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:91
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "水滴特效"
@@ -31278,7 +31278,7 @@ msgstr "输入色彩特性文件“%1”不可用"
 msgid "Output color profile \"%1\" not available"
 msgstr "输出色彩特性文件“%1”不可用"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "局部对比度滤镜"
@@ -31638,85 +31638,85 @@ msgstr "(已找到部分匹配的设备)"
 msgid "(exact match found)"
 msgstr "(已找到完全匹配的设备)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "镜头畸变校正工具"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "相机：%1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "镜头：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:489
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "主体距离：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "光圈：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "焦距：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:495
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "焦距转换率：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "启用"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "色差校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:498
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:501
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:504
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:507
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "禁用"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "暗角校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "畸变校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -31979,7 +31979,7 @@ msgstr "百分比："
 msgid "Levels Adjust Tool"
 msgstr "色阶调整工具"
 
-#: core/libs/dimg/filters/nr/nrfilter.cpp:126
+#: core/libs/dimg/filters/nr/nrfilter.cpp:127
 #, kde-format
 msgid "Noise Reduction Filter"
 msgstr "降噪滤镜"
@@ -32274,7 +32274,7 @@ msgstr "要保存的照片重新对焦设置文件"
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "无法保存照片重新对焦设置文本文件。"
 
-#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
+#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:69
 #, kde-format
 msgid "Unsharp Mask Tool"
 msgstr "USM 锐化"
@@ -34512,22 +34512,22 @@ msgctxt "@title:tab"
 msgid "Basic Factors"
 msgstr "主要劣化因素 "
 
-#: core/libs/iojobs/iojob.cpp:64
+#: core/libs/iojobs/iojob.cpp:66
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "文件/文件夹 %1 不存在"
 
-#: core/libs/iojobs/iojob.cpp:71
+#: core/libs/iojobs/iojob.cpp:73
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "相册 %1 不存在"
 
-#: core/libs/iojobs/iojob.cpp:99
+#: core/libs/iojobs/iojob.cpp:101
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr "无法覆盖图像 %1"
 
-#: core/libs/iojobs/iojob.cpp:107
+#: core/libs/iojobs/iojob.cpp:109
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34536,69 +34536,69 @@ msgstr ""
 "无法移动图像 %1 到图像集合回收站。\n"
 "请检查图像集合的回收站文件夹“%2”的文件权限。"
 
-#: core/libs/iojobs/iojob.cpp:135
+#: core/libs/iojobs/iojob.cpp:137
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "名为 %1 的文件或文件夹已存在于 %2 中"
 
-#: core/libs/iojobs/iojob.cpp:154
+#: core/libs/iojobs/iojob.cpp:156
 #, kde-format
 msgid "Recursive folder %1 move detected to album %2"
 msgstr "检测到将文件夹 %1 递归移动到相册 %2 的操作。"
 
-#: core/libs/iojobs/iojob.cpp:173
+#: core/libs/iojobs/iojob.cpp:175
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "无法移动文件夹 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:180
+#: core/libs/iojobs/iojob.cpp:182
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "无法移动文件夹 %1 到相册 %2。文件夹 %1 已被复制到相册 %2。"
 
-#: core/libs/iojobs/iojob.cpp:192
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "无法将文件 %1 的附带文件移动到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:198
+#: core/libs/iojobs/iojob.cpp:200
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "无法移动文件 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:213
+#: core/libs/iojobs/iojob.cpp:215
 #, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
 msgstr "检测到将文件夹 %1 递归复制到相册 %2 的操作。"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:232
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "无法复制文件夹 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:242
+#: core/libs/iojobs/iojob.cpp:244
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "无法将文件 %1 的附带文件复制到文件夹 %2"
 
-#: core/libs/iojobs/iojob.cpp:250
+#: core/libs/iojobs/iojob.cpp:252
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "无法复制文件 %1 到文件夹 %2"
 
-#: core/libs/iojobs/iojob.cpp:255
+#: core/libs/iojobs/iojob.cpp:257
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "无法复制文件 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:306
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "文件/文件夹 %1 不存在"
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:318
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34608,7 +34608,7 @@ msgstr ""
 "无法移动文件夹 %1 到图像集合回收站。\n"
 "请检查图像集合的回收站文件夹“.dtrash”的文件权限。"
 
-#: core/libs/iojobs/iojob.cpp:326
+#: core/libs/iojobs/iojob.cpp:330
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34618,32 +34618,32 @@ msgstr ""
 "无法移动图像 %1 到图像集合回收站。\n"
 "请检查图像集合的回收站文件夹“.dtrash”的文件权限。"
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:347
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "相册 %1 无法移除"
 
-#: core/libs/iojobs/iojob.cpp:355
+#: core/libs/iojobs/iojob.cpp:359
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "图像 %1 无法移除"
 
-#: core/libs/iojobs/iojob.cpp:404
+#: core/libs/iojobs/iojob.cpp:410
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "无法移动图像 %1 到相册集合回收站"
 
-#: core/libs/iojobs/iojob.cpp:416
+#: core/libs/iojobs/iojob.cpp:422
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "该位置已存在同名图像 %1"
 
-#: core/libs/iojobs/iojob.cpp:434
+#: core/libs/iojobs/iojob.cpp:440
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "图像 %1 无法重命名"
 
-#: core/libs/iojobs/iojob.cpp:516
+#: core/libs/iojobs/iojob.cpp:526
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "无法从回收站还原文件 %1"
@@ -40682,7 +40682,7 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "桌面默认值"
 
-#: core/libs/video/manager/vidslidetask.cpp:194
+#: core/libs/video/manager/vidslidetask.cpp:196
 #, kde-format
 msgid "Generating frames from %1 Done"
 msgstr "从 %1 生成帧已完成"
@@ -59875,38 +59875,38 @@ msgstr "所有批处理队列已完成"
 msgid "&Queues"
 msgstr "队列(&Q)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#: core/utilities/queuemanager/manager/actiontask.cpp:155
 #, kde-format
 msgid "Failed to find tool..."
 msgstr "无法找到工具..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#: core/utilities/queuemanager/manager/actiontask.cpp:257
 #, kde-format
 msgid "(overwritten)"
 msgstr "(已覆盖)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#: core/utilities/queuemanager/manager/actiontask.cpp:262
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(重命名为 %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#: core/utilities/queuemanager/manager/actiontask.cpp:267
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "项目已存在，已跳过"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#: core/utilities/queuemanager/manager/actiontask.cpp:292
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "无法创建附带文件..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:301
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "项目已完成处理 %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:304
-#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#: core/utilities/queuemanager/manager/actiontask.cpp:306
+#: core/utilities/queuemanager/manager/actiontask.cpp:311
 #, kde-format
 msgid "Failed to create file..."
 msgstr "无法创建文件..."

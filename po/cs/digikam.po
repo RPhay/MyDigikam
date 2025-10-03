@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 02:11+0000\n"
+"POT-Creation-Date: 2025-10-03 02:03+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -8171,30 +8171,21 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Informace o subjektu"
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Tato hodnota určuje počet iterací, které se použijí u filtrů Neon a Najít "
-"okraje."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
-#, fuzzy, kde-format
-#| msgid "Subjects"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Témata"
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:115
 #, kde-format
@@ -8207,18 +8198,15 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Zpracování náhledu panoramatu..."
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Chyba při zpracování XML souboru"
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, kde-format
@@ -8697,7 +8685,7 @@ msgid "Restoration..."
 msgstr "Obnovení..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:82
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:83
 #, kde-format
 msgid "Sharpen"
 msgstr "Zaostření"
@@ -8708,7 +8696,7 @@ msgid "Unsharp Mask"
 msgstr "Maskování neostrosti"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:94
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:118
 #, kde-format
 msgid "Refocus"
@@ -15938,7 +15926,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:105
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:107
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "Obrázek Raw nelze identifikovat"
@@ -16358,13 +16346,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "neznámý"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:952
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -18734,25 +18722,25 @@ msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "Vlastní formát"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:184
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:231
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:321
 #, kde-format
 msgid "Printing canceled"
 msgstr "Tisk zrušen"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:210
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:292
 #, kde-format
 msgid "Processing page %1"
 msgstr "Zpracování stránky %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:304
 #, kde-format
 msgid "Could not save file %1"
 msgstr "Není možné uložit soubor %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:312
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "Stránka %1 uložena jako %2"
@@ -19374,27 +19362,27 @@ msgstr "Fotografie %1 z %2"
 msgid "Page %1 of %2"
 msgstr "Strana %1 z %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:95
 #, kde-format
 msgid "Error opening input file"
 msgstr "Chyba při otevírání vstupního souboru"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:106
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "Nelze otevřít dočasnou složku"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:129
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "Nelze změnit velikost obrázku. Přerušeno."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:142
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "Obrázek (JPEG) se změněnou velikostí nelze uložit. Přerušeno."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:150
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "Obrázek (PNG) se změněnou velikostí nelze uložit. Přerušeno."
@@ -30472,17 +30460,17 @@ msgstr "Vestavěná transformace není podporována"
 msgid "Filter identifier or version is not supported"
 msgstr "Identifikátor nebo verze filtru není podporována"
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:87
+#: core/libs/dimg/filters/fx/blurfilter.cpp:88
 #, kde-format
 msgid "Blur Filter"
 msgstr "Filtr rozostření"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:83
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Filtr rozostření FX"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:87
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Efekt kresby uhlem"
@@ -30655,17 +30643,17 @@ msgctxt "@info: effect type"
 msgid "X Process"
 msgstr "Proces X"
 
-#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:95
+#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:96
 #, kde-format
 msgid "Distortion Effect"
 msgstr "Efekt deformace"
 
-#: core/libs/dimg/filters/fx/embossfilter.cpp:60
+#: core/libs/dimg/filters/fx/embossfilter.cpp:61
 #, kde-format
 msgid "Emboss Effect"
 msgstr "Efekt reliéf"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:107
 #, kde-format
 msgid "Film Grain Effect"
 msgstr "Efekt filmového zrna"
@@ -30787,12 +30775,12 @@ msgstr "Červený šum"
 msgid "Invert Effect"
 msgstr "Invertovat efekt"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:82
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "Efekt olejomalba"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:91
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "Efekt dešťové kapky"
@@ -31178,7 +31166,7 @@ msgstr "Vstupní profil barev \"%1\" není dostupný"
 msgid "Output color profile \"%1\" not available"
 msgstr "Výstupní profil barev \"%1\" není dostupný"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:76
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Místní filtr kontrastu"
@@ -31551,85 +31539,85 @@ msgstr "(nalezena částečná shoda)"
 msgid "(exact match found)"
 msgstr "(nalezena přesná shoda)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Nástroj pro automatickou korekci objektivu"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Fotoaparát: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:480
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Objektiv: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:482
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:489
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Vzdálenost subjektu: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Clona: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:486
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Ohnisková vzdálenost: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:495
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Koeficient ořezu: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "povoleno"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "Korekce CCA: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:498
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:501
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:504
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:507
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "zakázáno"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "Korekce VIG: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "Korekce DST: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:499
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -31895,7 +31883,7 @@ msgstr "Procenta:"
 msgid "Levels Adjust Tool"
 msgstr "Nástroj pro přizpůsobení úrovní"
 
-#: core/libs/dimg/filters/nr/nrfilter.cpp:126
+#: core/libs/dimg/filters/nr/nrfilter.cpp:127
 #, kde-format
 msgid "Noise Reduction Filter"
 msgstr "Filtr odstranění šumu"
@@ -32202,7 +32190,7 @@ msgstr "Soubor, do nějž se má uložit nastavení doostření fotografie"
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "Nelze uložit nastavení doostření fotografie do souboru."
 
-#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
+#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:69
 #, kde-format
 msgid "Unsharp Mask Tool"
 msgstr "Nástroj pro maskování neostrosti"
@@ -33556,11 +33544,10 @@ msgid "Search in"
 msgstr "Hledat v"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
-msgstr "Proces"
+msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #, kde-format
@@ -34443,45 +34430,44 @@ msgctxt "@title:tab"
 msgid "Basic Factors"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:64
+#: core/libs/iojobs/iojob.cpp:66
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "Soubor nebo složka %1 již neexistuje"
 
-#: core/libs/iojobs/iojob.cpp:71
+#: core/libs/iojobs/iojob.cpp:73
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "Album %1 již neexistuje"
 
-#: core/libs/iojobs/iojob.cpp:99
+#: core/libs/iojobs/iojob.cpp:101
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:107
+#: core/libs/iojobs/iojob.cpp:109
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:135
+#: core/libs/iojobs/iojob.cpp:137
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Složka nebo soubor pojmenovaný %1 již existuje v %2 "
 
-#: core/libs/iojobs/iojob.cpp:154
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#: core/libs/iojobs/iojob.cpp:156
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "Nelze přesunout složku %1 do alba %2"
+msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:173
+#: core/libs/iojobs/iojob.cpp:175
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Nelze přesunout složku %1 do alba %2"
 
-#: core/libs/iojobs/iojob.cpp:180
+#: core/libs/iojobs/iojob.cpp:182
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -34490,48 +34476,47 @@ msgstr ""
 "Nelze přesunout složku %1 do alba %2. Složka %1 byla také zkopírována do "
 "alba %2"
 
-#: core/libs/iojobs/iojob.cpp:192
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:198
+#: core/libs/iojobs/iojob.cpp:200
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Nelze přesunout soubor %1 do alba %2"
 
-#: core/libs/iojobs/iojob.cpp:213
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#: core/libs/iojobs/iojob.cpp:215
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "Nelze přesunout složku %1 do alba %2"
+msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:232
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Nelze zkopírovat složku %1 do alba %2"
 
-#: core/libs/iojobs/iojob.cpp:242
+#: core/libs/iojobs/iojob.cpp:244
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:250
+#: core/libs/iojobs/iojob.cpp:252
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:255
+#: core/libs/iojobs/iojob.cpp:257
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Nelze zkopírovat soubor %1 do alba %2"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:306
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Soubor nebo složka %1 neexistuje"
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:318
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34539,7 +34524,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:326
+#: core/libs/iojobs/iojob.cpp:330
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34547,32 +34532,32 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:347
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Album %1 nelze odstranit"
 
-#: core/libs/iojobs/iojob.cpp:355
+#: core/libs/iojobs/iojob.cpp:359
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Obrázek %1 nelze odstranit"
 
-#: core/libs/iojobs/iojob.cpp:404
+#: core/libs/iojobs/iojob.cpp:410
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Nelze přesunout obrázek %1 do koše sbírky"
 
-#: core/libs/iojobs/iojob.cpp:416
+#: core/libs/iojobs/iojob.cpp:422
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Obrázek se stejným názvem %1 zde již existuje"
 
-#: core/libs/iojobs/iojob.cpp:434
+#: core/libs/iojobs/iojob.cpp:440
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Obrázek %1 nelze přejmenovat"
 
-#: core/libs/iojobs/iojob.cpp:516
+#: core/libs/iojobs/iojob.cpp:526
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Soubor %1 nelze obnovit z koše"
@@ -40603,7 +40588,7 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Výchozí z pracovního prostředí"
 
-#: core/libs/video/manager/vidslidetask.cpp:194
+#: core/libs/video/manager/vidslidetask.cpp:196
 #, kde-format
 msgid "Generating frames from %1 Done"
 msgstr ""
@@ -43216,11 +43201,10 @@ msgid "None"
 msgstr "Žádný"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-#| msgid "Pick Label: %1"
+#, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
-msgstr "Štítek výběru: %1"
+msgstr ""
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, kde-format
@@ -51215,12 +51199,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "Znovu vytvořit otisky"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
@@ -59809,38 +59791,38 @@ msgstr "Zpracování všech dávek dokončeno"
 msgid "&Queues"
 msgstr "&Fronty"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#: core/utilities/queuemanager/manager/actiontask.cpp:155
 #, kde-format
 msgid "Failed to find tool..."
 msgstr "Nástroj nebyl nalezen..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#: core/utilities/queuemanager/manager/actiontask.cpp:257
 #, kde-format
 msgid "(overwritten)"
 msgstr "(přepsáno)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#: core/utilities/queuemanager/manager/actiontask.cpp:262
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(přejmenováno na %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#: core/utilities/queuemanager/manager/actiontask.cpp:267
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#: core/utilities/queuemanager/manager/actiontask.cpp:292
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Vytvoření souboru Sidecar se nezdařilo..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:301
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Položka úspěšně zpracována %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:304
-#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#: core/utilities/queuemanager/manager/actiontask.cpp:306
+#: core/utilities/queuemanager/manager/actiontask.cpp:311
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Nelze vytvořit soubor..."
@@ -65978,18 +65960,3 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Subject Information"
-#~ msgid "Subject Segmentation:"
-#~ msgstr "Informace o subjektu"
-
-#~ msgctxt "@info: pick lablel selector"
-#~ msgid "Pick Label: %1"
-#~ msgstr "Popisek výběru: %1"
-
-#, fuzzy
-#~| msgid "Iterations:"
-#~ msgid "Segmentation Iterations:"
-#~ msgstr "Opakování:"
