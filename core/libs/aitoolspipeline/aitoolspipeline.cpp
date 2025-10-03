@@ -238,7 +238,7 @@ bool AIToolsPipeline::process(const DImg& image,
 
 bool AIToolsPipeline::loader()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("AITools%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("AITools%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Loader, MLPipelineStage::Classifier);
     AIToolsPipelinePackage* package = nullptr;
@@ -303,7 +303,7 @@ bool AIToolsPipeline::loader()
 
 bool AIToolsPipeline::classifier()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("AITools%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("AITools%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer);
     AIToolsPipelinePackage* package = nullptr;
@@ -373,7 +373,7 @@ bool AIToolsPipeline::classifier()
 
 bool AIToolsPipeline::writer()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("AITools%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("AITools%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     AIToolsPipelinePackage* package = nullptr;

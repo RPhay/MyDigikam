@@ -243,7 +243,7 @@ void OpenCVOpenCLDNNTestDlg::slotNotification(const QString& message)
 
 bool OpenCVOpenCLDNNTestDlg::runTest()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("OpenCLDNN").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("OpenCLDNN").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     bool result = false;
 

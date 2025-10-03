@@ -310,7 +310,7 @@ bool FacePipelineEdit::start()
 
 bool FacePipelineEdit::loader()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineEdit"),
                                      QThread::NormalPriority,
@@ -320,7 +320,7 @@ bool FacePipelineEdit::loader()
 
 bool FacePipelineEdit::extractor()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineEdit"),
                                         QThread::NormalPriority,
@@ -331,7 +331,7 @@ bool FacePipelineEdit::extractor()
 
 bool FacePipelineEdit::writer()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceEdit%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::NormalPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;

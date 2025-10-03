@@ -160,7 +160,7 @@ bool AutotagsPipelineObject::start()
 
 bool AutotagsPipelineObject::finder()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     if (settings.bqmMode)
     {
@@ -239,7 +239,7 @@ bool AutotagsPipelineObject::finder()
 
 bool AutotagsPipelineObject::loader()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Loader, MLPipelineStage::Extractor);
     AutotagsPipelinePackageBase* package = nullptr;
@@ -327,7 +327,7 @@ bool AutotagsPipelineObject::loader()
 
 bool AutotagsPipelineObject::extractor()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::NormalPriority, MLPipelineStage::Extractor, MLPipelineStage::Classifier);
     AutotagsPipelinePackageBase* package = nullptr;
@@ -462,7 +462,7 @@ bool AutotagsPipelineObject::extractor()
 
 bool AutotagsPipelineObject::classifier()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer);
     AutotagsPipelinePackageBase* package = nullptr;
@@ -513,7 +513,7 @@ bool AutotagsPipelineObject::classifier()
 
 bool AutotagsPipelineObject::writer()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("Autotags%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     AutotagsPipelinePackageBase* package = nullptr;

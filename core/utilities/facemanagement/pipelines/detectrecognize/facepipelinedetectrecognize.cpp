@@ -128,7 +128,7 @@ bool FacePipelineDetectRecognize::start()
 
 bool FacePipelineDetectRecognize::finder()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_FINDER_START(settings.workerThreadPriority, MLPipelineStage::Loader);
 
@@ -221,7 +221,7 @@ bool FacePipelineDetectRecognize::finder()
 
 bool FacePipelineDetectRecognize::loader()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Loader, MLPipelineStage::Extractor);
     FacePipelinePackageBase* package = nullptr;
@@ -324,7 +324,7 @@ bool FacePipelineDetectRecognize::loader()
 
 bool FacePipelineDetectRecognize::extractor()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Extractor, MLPipelineStage::Classifier);
     FacePipelinePackageBase* package = nullptr;
@@ -559,7 +559,7 @@ bool FacePipelineDetectRecognize::extractor()
 
 bool FacePipelineDetectRecognize::classifier()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer);
     FacePipelinePackageBase* package = nullptr;
@@ -639,7 +639,7 @@ bool FacePipelineDetectRecognize::classifier()
 
 bool FacePipelineDetectRecognize::writer()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceDetReco%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;

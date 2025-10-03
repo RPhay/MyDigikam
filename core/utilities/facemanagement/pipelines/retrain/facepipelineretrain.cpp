@@ -85,7 +85,7 @@ bool FacePipelineRetrain::start()
 
 bool FacePipelineRetrain::finder()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_FINDER_START(settings.workerThreadPriority, MLPipelineStage::Loader);
 
@@ -152,7 +152,7 @@ bool FacePipelineRetrain::finder()
 
 bool FacePipelineRetrain::loader()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRetrain"),
                                      QThread::LowPriority,
@@ -162,7 +162,7 @@ bool FacePipelineRetrain::loader()
 
 bool FacePipelineRetrain::extractor()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRetrain"),
                                         QThread::LowPriority,
@@ -173,7 +173,7 @@ bool FacePipelineRetrain::extractor()
 
 bool FacePipelineRetrain::writer()
 {
-    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain%1").arg(__FUNCTION__));       // To customize thread name
+    ActionThreadBase::setCurrentThreadName(QString::fromLatin1("FaceRetrain%1").arg(QLatin1String(__FUNCTION__)));       // To customize thread name
 
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package   = nullptr;
