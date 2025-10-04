@@ -224,6 +224,12 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                         break;
                     }
 
+                    case DImg::RAW:
+                    {
+                        rotateLossy = false;
+                        break;
+                    }
+
                     default:
                     {
                         // QImage and ImageMagick codecs support
