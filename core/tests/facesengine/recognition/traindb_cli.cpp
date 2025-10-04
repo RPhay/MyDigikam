@@ -26,6 +26,7 @@
 #include "facialrecognition_wrapper.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
+#include "actionthreadbase.h"
 
 using namespace Digikam;
 
@@ -46,6 +47,8 @@ public:
 
     void run() override
     {
+        ActionThreadBase::setCurrentThreadName(QLatin1String("TrainDbCliThread"));       // To customize thread name
+
         QImage* const image = new QImage(256, 256, QImage::Format_ARGB32);
         image->fill(Qt::red);
 
