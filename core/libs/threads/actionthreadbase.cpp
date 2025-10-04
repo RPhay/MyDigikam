@@ -24,9 +24,10 @@
 #   if defined(Q_OS_LINUX)
 #       include <sys/prctl.h>
 #   endif
-#elif defined(Q_OS_MACOS)
-#   include <windows.h>
 #elif defined(Q_OS_WIN)
+#   include <windows.h>
+#   include <processthreadsapi.h>
+#elif defined(Q_OS_MACOS)
 #   include <pthread.h>
 #endif
 
