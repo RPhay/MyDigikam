@@ -63,8 +63,8 @@ public:
      * @brief Call this method to customize a thread name visible in a process viewer.
      * This will replace the default "Thread (pooled)" string set by Qt for QRunable and QtConcurrent.
      * To show the thread names you can use:
-     *    Linux:   htop or ps -T.
-     *    macOS:   htop or ps -T.
+     *    Linux:   htop or sudo lldb -p PID -o "thread list" -o "quit".
+     *    macOS:   sudo lldb -p PID -o "thread list" -o "quit".
      *    Windows: tasks manager.
      * String limitation:
      *    Linux:   15 characters max (UTF8).
