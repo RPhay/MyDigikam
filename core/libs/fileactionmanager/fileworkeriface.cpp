@@ -212,42 +212,28 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                     rotateAsJpeg = true;
                 }
 
-                if (behavior & MetaEngineSettingsContainer::RotateByLossyRotation)
-                {
-                    DImg::FORMAT frmt = DImg::fileFormat(filePath);
+                rotateLossy       = (behavior & MetaEngineSettingsContainer::RotateByLossyRotation);
+                DImg::FORMAT frmt = DImg::fileFormat(filePath);
 
-                    switch (frmt)
+                switch (frmt)
+                {
+                    case DImg::PNG:
+                    case DImg::TIFF:
                     {
-                        case DImg::JPEG:
-                        case DImg::PNG:
-                        case DImg::TIFF:
-                        case DImg::JP2K:
-                        case DImg::PGF:
-                        case DImg::HEIF:
+                        rotateLossy = true;
+                        break;
+                    }
+
+                    default:
+                    {
+                        // QImage and ImageMagick codecs support
+
+                        if (format == QLatin1String("BMP"))
                         {
                             rotateLossy = true;
-                            break;
                         }
 
-                        default:
-                        {
-                            // QImage and ImageMagick codecs support
-
-                            if      (format == QLatin1String("JXL"))
-                            {
-                                rotateLossy = true;
-                            }
-                            else if (format == QLatin1String("AVIF"))
-                            {
-                                rotateLossy = true;
-                            }
-                            else if (format == QLatin1String("WEBP"))
-                            {
-                                rotateLossy = true;
-                            }
-
-                            break;
-                        }
+                        break;
                     }
                 }
             }
