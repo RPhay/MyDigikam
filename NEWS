@@ -125,7 +125,7 @@ BUGFIXES:
 090 ==> 510129 - digiKam stays as a background process after closing or quitting.
 091 ==> 510179 - A DK background process remains after closing DK.
 092 ==> 510191 - gui_digikamautotagassignment_obj.dir/all] Error 2 Build Error.
-093 ==> 
+093 ==> 510276 - Moving folder causes recursive copy.
 094 ==> 
 095 ==> 
 096 ==> 
