@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 02:03+0000\n"
+"POT-Creation-Date: 2025-10-05 01:52+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -16754,14 +16754,14 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "يىلنامە"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:337
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "نامەلۇم"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:957
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -26538,25 +26538,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:346
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:351
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:472
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgid "AI Tools Processing"
 msgstr "بىر تەرەپ قىلىۋاتىدۇ…"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Auto-rotating: %1\n"
 msgstr "باھالاش: "
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26569,13 +26569,13 @@ msgstr "باھالاش: "
 msgid "Album: %1\n"
 msgstr "ئالبوم «%1»"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:516
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "چۆرگىلىتىش:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:538
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -28278,40 +28278,40 @@ msgstr ""
 msgid "This is the original image"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:152
+#: core/libs/database/server/databaseserver.cpp:155
 #, kde-format
 msgid "Database type is not supported."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:293
+#: core/libs/database/server/databaseserver.cpp:296
 #, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:302
+#: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:311
+#: core/libs/database/server/databaseserver.cpp:314
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:320
+#: core/libs/database/server/databaseserver.cpp:323
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:330
-#: core/libs/database/server/databaseserver.cpp:340
-#: core/libs/database/server/databaseserver.cpp:350
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Cannot create directory %1"
 msgstr "%1 ئۈچۈن كىچىك سۈرەت قۇرغىلى بولمىدى"
 
-#: core/libs/database/server/databaseserver.cpp:434
+#: core/libs/database/server/databaseserver.cpp:437
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28319,61 +28319,61 @@ msgid ""
 "file</p><p>%2</p><p>could not be written.</p>"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:456
+#: core/libs/database/server/databaseserver.cpp:459
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:503
+#: core/libs/database/server/databaseserver.cpp:506
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "بىر تەرەپ قىلىۋاتىدۇ…"
 
-#: core/libs/database/server/databaseserver.cpp:551
+#: core/libs/database/server/databaseserver.cpp:554
 #, kde-format
 msgid "Could not start database initializer."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:614
+#: core/libs/database/server/databaseserver.cpp:617
 #, kde-format
 msgid "Could not start database server."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:656
+#: core/libs/database/server/databaseserver.cpp:659
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:686
+#: core/libs/database/server/databaseserver.cpp:689
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:692
+#: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:725
+#: core/libs/database/server/databaseserver.cpp:728
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:749
+#: core/libs/database/server/databaseserver.cpp:752
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "بىر تەرەپ قىلىۋاتىدۇ…"
 
-#: core/libs/database/server/databaseserver.cpp:793
+#: core/libs/database/server/databaseserver.cpp:796
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Could not upgrade database."
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/libs/database/server/databaseserver.cpp:829
+#: core/libs/database/server/databaseserver.cpp:832
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -28581,12 +28581,12 @@ msgstr ""
 msgid "Scanning images in individual albums..."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:127
 #, kde-format
 msgid "Migrate ->"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
@@ -28594,47 +28594,47 @@ msgstr ""
 msgid "Cancel"
 msgstr "ئەمەلدىن قالدۇر"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:131
 #, kde-format
 msgid "Progress Information"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Step Progress"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #, kde-format
 msgid "Overall Progress"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:212
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:219
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:276
 #, kde-format
 msgid "Database copied successfully."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:283
 #, kde-format
 msgid "Database conversion canceled."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:293
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr ""
@@ -34440,7 +34440,7 @@ msgstr ""
 msgid "Failed to revise Exif orientation these files:"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:378
+#: core/libs/fileactionmanager/fileworkeriface.cpp:370
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr ""
@@ -36534,7 +36534,7 @@ msgid "No data returned from the remote connection."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:209
-#: core/libs/onlineversion/onlineversiondwnl.cpp:146
+#: core/libs/onlineversion/onlineversiondwnl.cpp:147
 #, fuzzy, kde-format
 #| msgid "Pixel Size"
 msgid "Unsupported Architecture: %1"
@@ -36806,29 +36806,29 @@ msgid ""
 "%1"
 msgstr "قىسقۇچ ئاچ"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:242
+#: core/libs/onlineversion/onlineversiondwnl.cpp:243
 #, fuzzy, kde-format
 #| msgid "Downloaded: "
 msgid "Checksum file is empty."
 msgstr "چۈشۈرگىنى: "
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:254
+#: core/libs/onlineversion/onlineversiondwnl.cpp:255
 #, kde-format
 msgid "Checksum is invalid."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:276
+#: core/libs/onlineversion/onlineversiondwnl.cpp:277
 #, fuzzy, kde-format
 #| msgid "Downloaded: "
 msgid "Downloaded file is empty."
 msgstr "چۈشۈرگىنى: "
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:309
+#: core/libs/onlineversion/onlineversiondwnl.cpp:312
 #, kde-format
 msgid "Checksums error."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:337
+#: core/libs/onlineversion/onlineversiondwnl.cpp:340
 #, fuzzy, kde-format
 msgid "Cannot open target file."
 msgstr "قىسقۇچ ئاچ"
@@ -59295,144 +59295,144 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "ئالدىن كۆزەت"
 
-#: core/utilities/import/backend/cameracontroller.cpp:416
+#: core/utilities/import/backend/cameracontroller.cpp:419
 #, kde-format
 msgid "Connecting to camera..."
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:425
+#: core/utilities/import/backend/cameracontroller.cpp:428
 #, kde-format
 msgid "Connection established."
 msgstr "باغلىنىش تۇرغۇزۇلدى."
 
-#: core/utilities/import/backend/cameracontroller.cpp:429
+#: core/utilities/import/backend/cameracontroller.cpp:432
 #, kde-format
 msgid "Connection failed."
 msgstr "باغلىنالمىدى."
 
-#: core/utilities/import/backend/cameracontroller.cpp:455
+#: core/utilities/import/backend/cameracontroller.cpp:458
 #, kde-format
 msgid "Failed to get free space from camera"
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:470
+#: core/utilities/import/backend/cameracontroller.cpp:473
 #, kde-format
 msgid "Failed to get preview from camera"
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:485
+#: core/utilities/import/backend/cameracontroller.cpp:488
 #, kde-format
 msgid "Failed to process capture from camera"
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:500
+#: core/utilities/import/backend/cameracontroller.cpp:503
 #, fuzzy, kde-kuit-format
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:516
+#: core/utilities/import/backend/cameracontroller.cpp:519
 #, fuzzy, kde-kuit-format
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:569
+#: core/utilities/import/backend/cameracontroller.cpp:572
 #, fuzzy, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:587
+#: core/utilities/import/backend/cameracontroller.cpp:590
 #, fuzzy, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:642
-#: core/utilities/import/backend/cameracontroller.cpp:1013
+#: core/utilities/import/backend/cameracontroller.cpp:645
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #: core/utilities/import/main/importui.cpp:2498
 #, fuzzy, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:740
+#: core/utilities/import/backend/cameracontroller.cpp:743
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:791
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:805
+#: core/utilities/import/backend/cameracontroller.cpp:808
 #, fuzzy, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:825
+#: core/utilities/import/backend/cameracontroller.cpp:828
 #, fuzzy, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:899
+#: core/utilities/import/backend/cameracontroller.cpp:902
 #, fuzzy, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:906
+#: core/utilities/import/backend/cameracontroller.cpp:909
 #, fuzzy, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1021
+#: core/utilities/import/backend/cameracontroller.cpp:1024
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1025
+#: core/utilities/import/backend/cameracontroller.cpp:1028
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1042
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, fuzzy, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1050
+#: core/utilities/import/backend/cameracontroller.cpp:1053
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1054
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1070
+#: core/utilities/import/backend/cameracontroller.cpp:1073
 #, fuzzy, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1081
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1082
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1098
+#: core/utilities/import/backend/cameracontroller.cpp:1101
 #, fuzzy, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1106
+#: core/utilities/import/backend/cameracontroller.cpp:1109
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1110
+#: core/utilities/import/backend/cameracontroller.cpp:1113
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
@@ -66115,13 +66115,13 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66132,7 +66132,7 @@ msgid ""
 "Do you want to test your system now?"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
@@ -66140,154 +66140,154 @@ msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "باشلاش:"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "ئۇچۇر"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "تەڭشەكلەر…"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:221
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgctxt "@action:button start the AI GUP test"
 msgid "Close"
 msgstr "ياپ(&C)"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
 #, kde-format
 msgid "OpenCL is available on this system."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, fuzzy, kde-format
 #| msgid "No description available"
 msgid "OpenCL acceleration device is available."
 msgstr "چۈشەندۈرۈشى يوق"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
 #, fuzzy, kde-format
 #| msgid "Input device"
 msgid "Using device: %1"
 msgstr "كىرگۈزۈش ئۈسكۈنىسى"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
 #, kde-format
 msgid "OpenCL acceleration device is not available."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
 #, kde-format
 msgid "OpenCL is not available on this system."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, fuzzy, kde-format
 #| msgid "Loading image..."
 msgid "Loading test image..."
 msgstr "سۈرەت ئوقۇش…"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, fuzzy, kde-format
 #| msgid "Eritrea"
 msgid "Test image not found."
 msgstr "ئېرىترېيە"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Failed to load test image from %1"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "Preparing the image for processing..."
 msgstr "ئىختىيارىچە بىر تەرەپ قىلىش"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, fuzzy, kde-format
 #| msgid "Initializing..."
 msgid "Initializing face detection model..."
 msgstr "دەسلەپلەشتۈرۈۋاتىدۇ…"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Running face detection..."
 msgstr "تاللانمىدى"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
 #, fuzzy, kde-format
 #| msgid "Initializing..."
 msgid "Initializing feature extraction model..."
 msgstr "دەسلەپلەشتۈرۈۋاتىدۇ…"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
 #, kde-format
 msgid "Preparing face for feature extraction..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Failed to extract face features."
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, kde-format
 msgid "All tests completed successfully!"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "OpenCV error: %1"
 msgstr "ئېكسپورت قىل"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"

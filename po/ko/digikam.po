@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 02:03+0000\n"
+"POT-Creation-Date: 2025-10-05 01:52+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17450,13 +17450,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "스택된 이미지 혼합..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:337
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "알 수 없음"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:957
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -27588,25 +27588,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Raw 변환"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:346
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:351
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "이미지를 불러올 수 없음"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:472
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "후처리"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "측광 모드:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27619,13 +27619,13 @@ msgstr "측광 모드:"
 msgid "Album: %1\n"
 msgstr "\"%1\" 앨범"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:516
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "회전:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:538
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skipped"
@@ -29319,43 +29319,43 @@ msgstr "선택한 그림 없음"
 msgid "This is the original image"
 msgstr "메타데이터"
 
-#: core/libs/database/server/databaseserver.cpp:152
+#: core/libs/database/server/databaseserver.cpp:155
 #, kde-format
 msgid "Database type is not supported."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:293
+#: core/libs/database/server/databaseserver.cpp:296
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "설정 파일에 mysql 서버 명령을 지정하지 않았습니다!"
 
-#: core/libs/database/server/databaseserver.cpp:302
+#: core/libs/database/server/databaseserver.cpp:305
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql server command set in configuration file."
 msgstr "설정 파일에 mysql 서버 명령을 지정하지 않았습니다!"
 
-#: core/libs/database/server/databaseserver.cpp:311
+#: core/libs/database/server/databaseserver.cpp:314
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "설정 파일에 mysql 초기화 명령을 지정하지 않았습니다!"
 
-#: core/libs/database/server/databaseserver.cpp:320
+#: core/libs/database/server/databaseserver.cpp:323
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "설정 파일에 mysql 초기화 명령을 지정하지 않았습니다!"
 
-#: core/libs/database/server/databaseserver.cpp:330
-#: core/libs/database/server/databaseserver.cpp:340
-#: core/libs/database/server/databaseserver.cpp:350
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "%1 디렉터리를 만들 수 없음"
 
-#: core/libs/database/server/databaseserver.cpp:434
+#: core/libs/database/server/databaseserver.cpp:437
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -29365,59 +29365,59 @@ msgstr ""
 "MySQL 서버 설정 파일을 만들 수 없습니다.<p> 기본 설정 파일</p><p>%1</p><p>에"
 "서읽을 수 없거나 대상 파일</p><p>%2</p><p>에 쓸 수 없었습니다.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:456
+#: core/libs/database/server/databaseserver.cpp:459
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "MySQL 서버 기본 설정(mysql-global.conf)을 찾을 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:503
+#: core/libs/database/server/databaseserver.cpp:506
 #, fuzzy, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/database/server/databaseserver.cpp:551
+#: core/libs/database/server/databaseserver.cpp:554
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "데이터베이스 초기화 프로그램을 시작할 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:614
+#: core/libs/database/server/databaseserver.cpp:617
 #, kde-format
 msgid "Could not start database server."
 msgstr "데이터베이스 서버를 시작할 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:656
+#: core/libs/database/server/databaseserver.cpp:659
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "데이터베이스 서버 시작 중 잘못된 데이터베이스 객체"
 
-#: core/libs/database/server/databaseserver.cpp:686
+#: core/libs/database/server/databaseserver.cpp:689
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:692
+#: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:725
+#: core/libs/database/server/databaseserver.cpp:728
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:749
+#: core/libs/database/server/databaseserver.cpp:752
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/database/server/databaseserver.cpp:793
+#: core/libs/database/server/databaseserver.cpp:796
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "데이터베이스 서버를 시작할 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:829
+#: core/libs/database/server/databaseserver.cpp:832
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29617,12 +29617,12 @@ msgstr "RAW 그림"
 msgid "Scanning images in individual albums..."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:127
 #, kde-format
 msgid "Migrate ->"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
@@ -29630,47 +29630,47 @@ msgstr ""
 msgid "Cancel"
 msgstr "취소"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:131
 #, fuzzy, kde-format
 msgid "Progress Information"
 msgstr "속성"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Step Progress"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #, kde-format
 msgid "Overall Progress"
 msgstr "전체 진행 상황"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:212
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:219
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:276
 #, kde-format
 msgid "Database copied successfully."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:283
 #, kde-format
 msgid "Database conversion canceled."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:293
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr ""
@@ -35482,7 +35482,7 @@ msgstr "최근 태그"
 msgid "Failed to revise Exif orientation these files:"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:378
+#: core/libs/fileactionmanager/fileworkeriface.cpp:370
 #, fuzzy, kde-format
 msgid "Failed to transform these files:"
 msgstr ""
@@ -37774,7 +37774,7 @@ msgid "No data returned from the remote connection."
 msgstr "원격 Piwigo에서 잘못된 응답을 받음"
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:209
-#: core/libs/onlineversion/onlineversiondwnl.cpp:146
+#: core/libs/onlineversion/onlineversiondwnl.cpp:147
 #, fuzzy, kde-format
 #| msgid "Unsupported Format"
 msgid "Unsupported Architecture: %1"
@@ -38061,30 +38061,30 @@ msgid ""
 "%1"
 msgstr "파일을 열 수 없음"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:242
+#: core/libs/onlineversion/onlineversiondwnl.cpp:243
 #, fuzzy, kde-format
 #| msgid "File is empty."
 msgid "Checksum file is empty."
 msgstr "파일이 비어 있습니다."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:254
+#: core/libs/onlineversion/onlineversiondwnl.cpp:255
 #, kde-format
 msgid "Checksum is invalid."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:276
+#: core/libs/onlineversion/onlineversiondwnl.cpp:277
 #, fuzzy, kde-format
 #| msgid "File is empty."
 msgid "Downloaded file is empty."
 msgstr "파일이 비어 있습니다."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:309
+#: core/libs/onlineversion/onlineversiondwnl.cpp:312
 #, fuzzy, kde-format
 #| msgid "Session error"
 msgid "Checksums error."
 msgstr "세션 오류"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:337
+#: core/libs/onlineversion/onlineversiondwnl.cpp:340
 #, fuzzy, kde-format
 #| msgid "Cannot open file"
 msgid "Cannot open target file."
@@ -60829,145 +60829,145 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "미리 보기 모드"
 
-#: core/utilities/import/backend/cameracontroller.cpp:416
+#: core/utilities/import/backend/cameracontroller.cpp:419
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "카메라에 연결 중..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:425
+#: core/utilities/import/backend/cameracontroller.cpp:428
 #, kde-format
 msgid "Connection established."
 msgstr "연결이 수립되었습니다."
 
-#: core/utilities/import/backend/cameracontroller.cpp:429
+#: core/utilities/import/backend/cameracontroller.cpp:432
 #, kde-format
 msgid "Connection failed."
 msgstr "연결이 실패했습니다."
 
-#: core/utilities/import/backend/cameracontroller.cpp:455
+#: core/utilities/import/backend/cameracontroller.cpp:458
 #, kde-format
 msgid "Failed to get free space from camera"
 msgstr "카메라에서 여유 공간을 확보하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:470
+#: core/utilities/import/backend/cameracontroller.cpp:473
 #, kde-format
 msgid "Failed to get preview from camera"
 msgstr "카메라에서 미리 보기를 받지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:485
+#: core/utilities/import/backend/cameracontroller.cpp:488
 #, kde-format
 msgid "Failed to process capture from camera"
 msgstr "카메라에서 캡처를 처리하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:500
+#: core/utilities/import/backend/cameracontroller.cpp:503
 #, kde-kuit-format
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "<filename>%1</filename> 폴더의 항목을 가져오지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:516
+#: core/utilities/import/backend/cameracontroller.cpp:519
 #, kde-kuit-format
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 있는 파일 목록을 가져오지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:569
+#: core/utilities/import/backend/cameracontroller.cpp:572
 #, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 섬네일을 가져오지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:587
+#: core/utilities/import/backend/cameracontroller.cpp:590
 #, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 메타데이터를 가져오지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:642
-#: core/utilities/import/backend/cameracontroller.cpp:1013
+#: core/utilities/import/backend/cameracontroller.cpp:645
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #: core/utilities/import/main/importui.cpp:2498
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "<filename>%1</filename>을(를) 다운로드하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:740
+#: core/utilities/import/backend/cameracontroller.cpp:743
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "<filename>%1</filename> 파일을 JPEG로 변환하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:791
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "<filename>%1</filename> 파일을 DNG로 변환하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:805
+#: core/utilities/import/backend/cameracontroller.cpp:808
 #, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "<filename>%1</filename> 파일을 DNG로 변환하기 위해 건너뛰었습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:825
+#: core/utilities/import/backend/cameracontroller.cpp:828
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to run script for <filename>%1</filename>"
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 스크립트를 실행하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:899
+#: core/utilities/import/backend/cameracontroller.cpp:902
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "<filename>%1</filename>의 스크립트에서 시간이 초과되었습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:906
+#: core/utilities/import/backend/cameracontroller.cpp:909
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 스크립트를 실행하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1021
+#: core/utilities/import/backend/cameracontroller.cpp:1024
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "<b>%1</b> 파일을 다운로드하지 못했습니다."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1025
+#: core/utilities/import/backend/cameracontroller.cpp:1028
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "<b>%1</b> 파일을 다운로드하지 못했습니다. 계속 진행하시겠습니까?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1042
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "<filename>%1</filename>을(를) 업로드하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1050
+#: core/utilities/import/backend/cameracontroller.cpp:1053
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "<b>%1</b> 파일을 업로드하지 못했습니다."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1054
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "<b>%1</b> 파일을 업로드하지 못했습니다. 계속 진행하시겠습니까?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1070
+#: core/utilities/import/backend/cameracontroller.cpp:1073
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "<filename>%1</filename>을(를) 삭제하지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1081
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "<b>%1</b> 파일을 삭제하지 못했습니다."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1082
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "<b>%1</b> 파일을 삭제하지 못했습니다. 계속 진행하시겠습니까?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1098
+#: core/utilities/import/backend/cameracontroller.cpp:1101
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "<filename>%1</filename>을(를) 잠그지 못했습니다"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1106
+#: core/utilities/import/backend/cameracontroller.cpp:1109
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "<b>%1</b> 잠금 파일을 전환하지 못했습니다."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1110
+#: core/utilities/import/backend/cameracontroller.cpp:1113
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "<b>%1</b> 잠금 파일을 전환하지 못했습니다. 계속 진행하시겠습니까?"
@@ -67719,13 +67719,13 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67736,165 +67736,165 @@ msgid ""
 "Do you want to test your system now?"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "시작"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, fuzzy, kde-format
 #| msgid "Beta tester"
 msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "베타 테스터"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "설정..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:221
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@action:button start the AI GUP test"
 msgid "Close"
 msgstr "닫기"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
 #, fuzzy, kde-format
 msgid "OpenCL is available on this system."
 msgstr "시스템에서 OpenGL 지원을 사용할 수 없습니다."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, fuzzy, kde-format
 #| msgid "No options available"
 msgid "OpenCL acceleration device is available."
 msgstr "사용 가능한 옵션 없음"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
 #, fuzzy, kde-format
 #| msgid "Link device"
 msgid "Using device: %1"
 msgstr "링크 장치"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
 #, fuzzy, kde-format
 #| msgid "The service is not available at this time."
 msgid "OpenCL acceleration device is not available."
 msgstr "현재 서비스를 사용할 수 없습니다."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
 #, fuzzy, kde-format
 msgid "OpenCL is not available on this system."
 msgstr "시스템에서 OpenGL 지원을 사용할 수 없습니다."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, fuzzy, kde-format
 msgid "Loading test image..."
 msgstr "RAW 그림"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, fuzzy, kde-format
 #| msgid "Binary not found."
 msgid "Test image not found."
 msgstr "실행 파일을 찾을 수 없습니다."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save image to %1"
 msgid "Failed to load test image from %1"
 msgstr "사진을 %1(으)로 저장할 수 없음"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, fuzzy, kde-format
 #| msgid "%1 input images to process"
 msgid "Preparing the image for processing..."
 msgstr "처리할 입력 이미지 %1개"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "주 보기 초기화하는 중..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Running face detection..."
 msgstr "얼굴 감지"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "주 보기 초기화하는 중..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
 #, fuzzy, kde-format
 msgid "Preparing face for feature extraction..."
 msgstr "선택 반전"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, fuzzy, kde-format
 #| msgid "Failed to create folder"
 msgid "Failed to extract face features."
 msgstr "폴더를 만들 수 없음"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, fuzzy, kde-format
 #| msgid "%1 resized successfully"
 msgid "All tests completed successfully!"
 msgstr "%1 크기 조정 완료"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "OpenGL error"
 msgid "OpenCV error: %1"
 msgstr "OpenGL 오류"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"

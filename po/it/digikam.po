@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 02:03+0000\n"
+"POT-Creation-Date: 2025-10-05 01:52+0000\n"
 "PO-Revision-Date: 2025-09-23 22:33+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -17268,13 +17268,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Unisci immagini sovrapposte..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:337
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "sconosciuto"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:957
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -27130,22 +27130,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversione RAW UFRaw"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:346
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:351
 #, kde-format
 msgid "Unable to load image"
 msgstr "Impossibile caricare l'immagine"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:472
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Elaborazione strumenti IA"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Rotazione automatica: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27157,12 +27157,12 @@ msgstr "Rotazione automatica: %1\n"
 msgid "Album: %1\n"
 msgstr "Album: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:516
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Rotazione: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:538
 #, kde-format
 msgid "Skipped"
 msgstr "Saltato"
@@ -28996,19 +28996,19 @@ msgstr "Nessuna immagine selezionata"
 msgid "This is the original image"
 msgstr "Questa è l'immagine originale"
 
-#: core/libs/database/server/databaseserver.cpp:152
+#: core/libs/database/server/databaseserver.cpp:155
 #, kde-format
 msgid "Database type is not supported."
 msgstr "Il tipo di banca dati non è supportata."
 
-#: core/libs/database/server/databaseserver.cpp:293
+#: core/libs/database/server/databaseserver.cpp:296
 #, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
 "Nessun percorso impostato ai comandi di aggiornamento di mysql nel file di "
 "configurazione."
 
-#: core/libs/database/server/databaseserver.cpp:302
+#: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
@@ -29016,28 +29016,28 @@ msgstr ""
 "configurazione."
 
 # VM: nel sorgente c'è un punto finale in più.
-#: core/libs/database/server/databaseserver.cpp:311
+#: core/libs/database/server/databaseserver.cpp:314
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "Nessun percorso impostato ai comandi di amministrazione mysql nel file di "
 "configurazione."
 
-#: core/libs/database/server/databaseserver.cpp:320
+#: core/libs/database/server/databaseserver.cpp:323
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "Nessun percorso impostato ai comandi di inizializzazione mysql nel file di "
 "configurazione."
 
-#: core/libs/database/server/databaseserver.cpp:330
-#: core/libs/database/server/databaseserver.cpp:340
-#: core/libs/database/server/databaseserver.cpp:350
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Impossibile creare la cartella %1"
 
-#: core/libs/database/server/databaseserver.cpp:434
+#: core/libs/database/server/databaseserver.cpp:437
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -29049,50 +29049,50 @@ msgstr ""
 "leggibile, o che il file di destinazione</p><p>%2</p><p>non può essere "
 "scritto.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:456
+#: core/libs/database/server/databaseserver.cpp:459
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Impossibile trovare la configurazione predefinita del server MySQL (mysql-"
 "global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:503
+#: core/libs/database/server/databaseserver.cpp:506
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Si sta inizializzando la banca dati MySQL interna, attendi..."
 
-#: core/libs/database/server/databaseserver.cpp:551
+#: core/libs/database/server/databaseserver.cpp:554
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Impossibile avviare l'inizializzatore della banca dati."
 
-#: core/libs/database/server/databaseserver.cpp:614
+#: core/libs/database/server/databaseserver.cpp:617
 #, kde-format
 msgid "Could not start database server."
 msgstr "Impossibile avviare il server della banca dati."
 
-#: core/libs/database/server/databaseserver.cpp:656
+#: core/libs/database/server/databaseserver.cpp:659
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 "Oggetto della banca dati non valido durante l'avvio del server della banca "
 "dati"
 
-#: core/libs/database/server/databaseserver.cpp:686
+#: core/libs/database/server/databaseserver.cpp:689
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "L'elaborazione della banca dati è uscita inaspettatamente durante la "
 "connessione iniziale."
 
-#: core/libs/database/server/databaseserver.cpp:692
+#: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "Dopo aver provato per 60 secondi, non è stato possibile collegarsi alla "
 "banca dati."
 
-#: core/libs/database/server/databaseserver.cpp:725
+#: core/libs/database/server/databaseserver.cpp:728
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -29100,17 +29100,17 @@ msgstr ""
 "Creazione della banca dati non riuscita<p>Errore interrogazione: %1</"
 "p><p>Errore della banca dati: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:749
+#: core/libs/database/server/databaseserver.cpp:752
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "È in corso un aggiornamento della banca dati MySQL, attendi..."
 
-#: core/libs/database/server/databaseserver.cpp:793
+#: core/libs/database/server/databaseserver.cpp:796
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Impossibile aggiornare la banca dati."
 
-#: core/libs/database/server/databaseserver.cpp:829
+#: core/libs/database/server/databaseserver.cpp:832
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29328,12 +29328,12 @@ msgstr "Analisi degli album rimossi..."
 msgid "Scanning images in individual albums..."
 msgstr "Analisi delle immagini nei singoli album..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:127
 #, kde-format
 msgid "Migrate ->"
 msgstr "Migra ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
@@ -29341,47 +29341,47 @@ msgstr "Migra ->"
 msgid "Cancel"
 msgstr "Annulla"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:131
 #, kde-format
 msgid "Progress Information"
 msgstr "Informazioni dell'avanzamento"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Step Progress"
 msgstr "Passo dell'avanzamento"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #, kde-format
 msgid "Overall Progress"
 msgstr "Avanzamento complessivo"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:212
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "Il tipo di banca dati o la posizione devono essere diversi."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:219
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "Il server interno può essere usato solo una volta."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "Il server interno non è utilizzato e non è attivo."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:276
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Banca dati copiata correttamente."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:283
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Conversione della banca dati annullata."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:293
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Passo dell'avanzamento (%1)"
@@ -35497,7 +35497,7 @@ msgstr "Elabora gli oggetti"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Revisione dell'orientamento Exif non riuscita per questi file:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:378
+#: core/libs/fileactionmanager/fileworkeriface.cpp:370
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Trasformazione non riuscita per questi file:"
@@ -37550,7 +37550,7 @@ msgid "No data returned from the remote connection."
 msgstr "Non è stato restituito alcun dato dal collegamento remoto."
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:209
-#: core/libs/onlineversion/onlineversiondwnl.cpp:146
+#: core/libs/onlineversion/onlineversiondwnl.cpp:147
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Architettura non supportata: %1"
@@ -37895,27 +37895,27 @@ msgstr ""
 "Impossibile avviare l'installatore:\n"
 "%1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:242
+#: core/libs/onlineversion/onlineversiondwnl.cpp:243
 #, kde-format
 msgid "Checksum file is empty."
 msgstr "Il file del codice di controllo è vuoto."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:254
+#: core/libs/onlineversion/onlineversiondwnl.cpp:255
 #, kde-format
 msgid "Checksum is invalid."
 msgstr "Il codice di controllo non è valido."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:276
+#: core/libs/onlineversion/onlineversiondwnl.cpp:277
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr "Il file scaricato è vuoto."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:309
+#: core/libs/onlineversion/onlineversiondwnl.cpp:312
 #, kde-format
 msgid "Checksums error."
 msgstr "Errore del codice di controllo."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:337
+#: core/libs/onlineversion/onlineversiondwnl.cpp:340
 #, kde-format
 msgid "Cannot open target file."
 msgstr "Impossibile aprire il file di destinazione."
@@ -59650,144 +59650,144 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Modalità anteprima"
 
-#: core/utilities/import/backend/cameracontroller.cpp:416
+#: core/utilities/import/backend/cameracontroller.cpp:419
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Connessione alla fotocamera..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:425
+#: core/utilities/import/backend/cameracontroller.cpp:428
 #, kde-format
 msgid "Connection established."
 msgstr "Connessione stabilita"
 
-#: core/utilities/import/backend/cameracontroller.cpp:429
+#: core/utilities/import/backend/cameracontroller.cpp:432
 #, kde-format
 msgid "Connection failed."
 msgstr "Connessione non riuscita"
 
-#: core/utilities/import/backend/cameracontroller.cpp:455
+#: core/utilities/import/backend/cameracontroller.cpp:458
 #, kde-format
 msgid "Failed to get free space from camera"
 msgstr "Impossibile ottenere spazio libero dalla fotocamera"
 
-#: core/utilities/import/backend/cameracontroller.cpp:470
+#: core/utilities/import/backend/cameracontroller.cpp:473
 #, kde-format
 msgid "Failed to get preview from camera"
 msgstr "Impossibile ottenere l'anteprima dalla fotocamera"
 
-#: core/utilities/import/backend/cameracontroller.cpp:485
+#: core/utilities/import/backend/cameracontroller.cpp:488
 #, kde-format
 msgid "Failed to process capture from camera"
 msgstr "Impossibile elaborare la cattura dalla fotocamera"
 
-#: core/utilities/import/backend/cameracontroller.cpp:500
+#: core/utilities/import/backend/cameracontroller.cpp:503
 #, kde-kuit-format
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "Impossibile elencare la cartella <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:516
+#: core/utilities/import/backend/cameracontroller.cpp:519
 #, kde-kuit-format
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Impossibile elencare i file in <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:569
+#: core/utilities/import/backend/cameracontroller.cpp:572
 #, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Impossibile recuperare le miniature per <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:587
+#: core/utilities/import/backend/cameracontroller.cpp:590
 #, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Impossibile ottenere i metadati per <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:642
-#: core/utilities/import/backend/cameracontroller.cpp:1013
+#: core/utilities/import/backend/cameracontroller.cpp:645
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #: core/utilities/import/main/importui.cpp:2498
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Impossibile scaricare il file <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:740
+#: core/utilities/import/backend/cameracontroller.cpp:743
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Impossibile convertire il file <filename>%1</filename> in JPEG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:791
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Impossibile convertire il file <filename>%1</filename> in DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:805
+#: core/utilities/import/backend/cameracontroller.cpp:808
 #, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Conversione del file <filename>%1</filename> in DNG saltata"
 
-#: core/utilities/import/backend/cameracontroller.cpp:825
+#: core/utilities/import/backend/cameracontroller.cpp:828
 #, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Impossibile aprire lo script per <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:899
+#: core/utilities/import/backend/cameracontroller.cpp:902
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Timeout dallo script per <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:906
+#: core/utilities/import/backend/cameracontroller.cpp:909
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Impossibile avviare lo script per <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1021
+#: core/utilities/import/backend/cameracontroller.cpp:1024
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Impossibile scaricare il file <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1025
+#: core/utilities/import/backend/cameracontroller.cpp:1028
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Impossibile scaricare il file <b>%1</b>. Vuoi continuare?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1042
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Impossibile caricare il file <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1050
+#: core/utilities/import/backend/cameracontroller.cpp:1053
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Impossibile caricare il file <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1054
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Impossibile caricare il file <b>%1</b>. Vuoi continuare?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1070
+#: core/utilities/import/backend/cameracontroller.cpp:1073
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Impossibile eliminare il file <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1081
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Impossibile eliminare il file <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1082
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Impossibile eliminare il file <b>%1</b>. Vuoi continuare?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1098
+#: core/utilities/import/backend/cameracontroller.cpp:1101
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Impossibile bloccare <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1106
+#: core/utilities/import/backend/cameracontroller.cpp:1109
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Impossibile commutare il blocco del file <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1110
+#: core/utilities/import/backend/cameracontroller.cpp:1113
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Impossibile commutare il blocco del file <b>%1</b>. Vuoi continuare?"
@@ -66922,13 +66922,13 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr "Sidecar"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
 msgstr "Test sulla GPU per IA"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66945,30 +66945,30 @@ msgstr ""
 "\n"
 "Vuoi eseguire il test del sistema adesso?"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
 #, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Avvia"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Inizia test"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Test in esecuzione..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr "Avvio del test OpenCV OpenCL DNN..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
@@ -66977,7 +66977,7 @@ msgstr ""
 "Test completato correttamente! Il tuo sistema può utilizzare l'accelerazione "
 "GPU per i modelli di intelligenza artificiale."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:221
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
@@ -66986,111 +66986,111 @@ msgstr ""
 "Test non riuscito. Il tuo sistema potrebbe non essere in grado di utilizzare "
 "l'accelerazione GPU per i modelli di intelligenza artificiale."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Close"
 msgstr "Chiudi"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr "Chiudi la finestra del test"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 "Controllo di compatibilità dell'accelerazione GPU OpenCL con i modelli di "
 "IA..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
 #, kde-format
 msgid "OpenCL is available on this system."
 msgstr "OpenCL è disponibile su questo sistema."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, kde-format
 msgid "OpenCL acceleration device is available."
 msgstr "Il dispositivo per l'accelerazione OpenCL è disponibile."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
 #, kde-format
 msgid "Using device: %1"
 msgstr "Uso del dispositivo: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
 #, kde-format
 msgid "OpenCL acceleration device is not available."
 msgstr "Il dispositivo per l'accelerazione OpenCL non è disponibile."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
 #, kde-format
 msgid "OpenCL is not available on this system."
 msgstr "OpenCL non è disponibile su questo sistema."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, kde-format
 msgid "Loading test image..."
 msgstr "Caricamento dell'immagine di prova..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, kde-format
 msgid "Test image not found."
 msgstr "Immagine di prova non trovata."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, kde-format
 msgid "Failed to load test image from %1"
 msgstr "Caricamento dell'immagine di prova da %1 non riuscito"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, kde-format
 msgid "Preparing the image for processing..."
 msgstr "Preparazione dell'immagine per l'elaborazione..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
 msgid "Initializing face detection model..."
 msgstr "Inizializzazione del modello di rilevamento facciale..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
 #, kde-format
 msgid "Running face detection..."
 msgstr "Avvio del rilevamento facciale..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
 #, kde-format
 msgid "Initializing feature extraction model..."
 msgstr "Inizializzazione del modello di estrazione delle caratteristiche..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
 #, kde-format
 msgid "Preparing face for feature extraction..."
 msgstr "Preparazione del viso per l'estrazione delle caratteristiche..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, kde-format
 msgid "Extracting face features..."
 msgstr "Estrazione delle caratteristiche facciali..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, kde-format
 msgid "Failed to extract face features."
 msgstr "Estrazione delle caratteristiche facciali non riuscita."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, kde-format
 msgid "All tests completed successfully!"
 msgstr "Tutti i test sono stati completati correttamente."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
 #, kde-format
 msgid "OpenCV error: %1"
 msgstr "Errore OpenCV: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
 #, kde-format
 msgid "Error: %1"
 msgstr "Errore: %1"

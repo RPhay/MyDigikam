@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 02:03+0000\n"
+"POT-Creation-Date: 2025-10-05 01:52+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -17418,14 +17418,14 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "បង្កើត​​គំនូរ​បំព្រួញ..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:335
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:337
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "មិន​ស្គាល់​"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:955
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:957
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -27305,24 +27305,24 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:346
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:351
 #, fuzzy, kde-format
 msgid "Unable to load image"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:472
 #, fuzzy, kde-format
 #| msgid "Panorama Stitching"
 msgid "AI Tools Processing"
 msgstr "ថ្នេរ Panorama"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "របៀប​វាស់​ស្ទង់ ៖"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27335,13 +27335,13 @@ msgstr "របៀប​វាស់​ស្ទង់ ៖"
 msgid "Album: %1\n"
 msgstr "អាល់ប៊ុម \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:516
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "ការ​បង្វិល ៖"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:538
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -29229,43 +29229,43 @@ msgstr ""
 msgid "This is the original image"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:152
+#: core/libs/database/server/databaseserver.cpp:155
 #, kde-format
 msgid "Database type is not supported."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:293
+#: core/libs/database/server/databaseserver.cpp:296
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:302
+#: core/libs/database/server/databaseserver.cpp:305
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql server command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:311
+#: core/libs/database/server/databaseserver.cpp:314
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:320
+#: core/libs/database/server/databaseserver.cpp:323
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:330
-#: core/libs/database/server/databaseserver.cpp:340
-#: core/libs/database/server/databaseserver.cpp:350
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, fuzzy, kde-format
 msgid "Cannot create directory %1"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
-#: core/libs/database/server/databaseserver.cpp:434
+#: core/libs/database/server/databaseserver.cpp:437
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to create MySQL server configuration file.\n"
@@ -29281,34 +29281,34 @@ msgstr ""
 "មាន​ន័យ​ថា​ឯកសារ​ការ​កំណត់​រចនាសម្ព័ន្ធ​លំនាំដើម (mysql-global.conf) មិន​អាច​អាន​បាន​ទេ\n"
 "ឬ​ឯកសារ​គោលដៅ (mysql.conf) មិន​អាច​សរសេរ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:456
+#: core/libs/database/server/databaseserver.cpp:459
 #, fuzzy, kde-format
 #| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "កុំ​រក​​ការ​កំណត់​រចនាសម្ព័ន្ធ​លំនាំដើម​ម៉ាស៊ីន​បម្រើ MySQL  (mysql-global.conf) ។"
 
-#: core/libs/database/server/databaseserver.cpp:503
+#: core/libs/database/server/databaseserver.cpp:506
 #, fuzzy, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "<b>កំពុង​វិភាគ​រក​សម្រាំង សូម​រង់ចាំ...</b>"
 
-#: core/libs/database/server/databaseserver.cpp:551
+#: core/libs/database/server/databaseserver.cpp:554
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not start database initializer."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:614
+#: core/libs/database/server/databaseserver.cpp:617
 #, kde-format
 msgid "Could not start database server."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:656
+#: core/libs/database/server/databaseserver.cpp:659
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:686
+#: core/libs/database/server/databaseserver.cpp:689
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -29318,30 +29318,30 @@ msgstr ""
 "ដំណើរការ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ចេញ​ដោយ​មិន​រំពឹង អំឡុង​ពេល​ការ​តភ្ជាប់​ដំបូង ។<p>ឯកសារ​ប្រតិបត្តិ ៖ %1</"
 "p>”<p>កំហុស​ក្នុង​ការ​ដំណើរការ ៖ %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:692
+#: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:725
+#: core/libs/database/server/databaseserver.cpp:728
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​មូលដ្ឋាន​ទិន្នន័យ<p>កំហុស​សំណួរ ៖ %1</p><p>កំហុស​មូលដ្ឋាន​ទិន្នន័យ ៖ %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:749
+#: core/libs/database/server/databaseserver.cpp:752
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "<b>កំពុង​វិភាគ​រក​សម្រាំង សូម​រង់ចាំ...</b>"
 
-#: core/libs/database/server/databaseserver.cpp:793
+#: core/libs/database/server/databaseserver.cpp:796
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:829
+#: core/libs/database/server/databaseserver.cpp:832
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -29571,12 +29571,12 @@ msgstr "កំពុង​វិភាគ​រក​អាល់ប៊ុម​
 msgid "Scanning images in individual albums..."
 msgstr "កំពុង​វិភាគ​រក​រូបភាព​នៅ​ក្នុង​អាល់ប៊ុម​នីមួយៗ..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:127
 #, kde-format
 msgid "Migrate ->"
 msgstr "ផ្លាស់ទី ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
@@ -29584,47 +29584,47 @@ msgstr "ផ្លាស់ទី ->"
 msgid "Cancel"
 msgstr "បោះបង់"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:131
 #, kde-format
 msgid "Progress Information"
 msgstr "ព័ត៌មាន​វឌ្ឍនភាព"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Step Progress"
 msgstr "វឌ្ឍនភាព​​ការ​ផ្លាស់ទី"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #, kde-format
 msgid "Overall Progress"
 msgstr "វឌ្ឍនភាព​ទាំងស្រុង"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:212
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:219
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:276
 #, kde-format
 msgid "Database copied successfully."
 msgstr "បាន​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​ដោយ​ជោគជ័យ ។"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:283
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "បាន​បោះបង់​ការ​បម្លែង​មូលដ្ឋាន​ទិន្នន័យ ។"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:293
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "វឌ្ឍនភាព​ការ​ផ្លាស់ទី (%1)"
@@ -35494,7 +35494,7 @@ msgstr "ដំណើរការ​ធាតុ"
 msgid "Failed to revise Exif orientation these files:"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:378
+#: core/libs/fileactionmanager/fileworkeriface.cpp:370
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr ""
@@ -37591,7 +37591,7 @@ msgid "No data returned from the remote connection."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:209
-#: core/libs/onlineversion/onlineversiondwnl.cpp:146
+#: core/libs/onlineversion/onlineversiondwnl.cpp:147
 #, fuzzy, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "មិន​ស្គាល់"
@@ -37862,30 +37862,30 @@ msgid ""
 "%1"
 msgstr "មិន​អាច​រក្សា​ទុក​ឯកសារ \"%1\""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:242
+#: core/libs/onlineversion/onlineversiondwnl.cpp:243
 #, fuzzy, kde-format
 #| msgid "File is empty."
 msgid "Checksum file is empty."
 msgstr "ឯកសារ​​ទទេ ។​"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:254
+#: core/libs/onlineversion/onlineversiondwnl.cpp:255
 #, kde-format
 msgid "Checksum is invalid."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:276
+#: core/libs/onlineversion/onlineversiondwnl.cpp:277
 #, fuzzy, kde-format
 #| msgid "File is empty."
 msgid "Downloaded file is empty."
 msgstr "ឯកសារ​​ទទេ ។​"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:309
+#: core/libs/onlineversion/onlineversiondwnl.cpp:312
 #, fuzzy, kde-format
 #| msgid "Parsing error: %1"
 msgid "Checksums error."
 msgstr "កំហុស​​ដែល​ញែក ៖ %1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:337
+#: core/libs/onlineversion/onlineversiondwnl.cpp:340
 #, fuzzy, kde-format
 msgid "Cannot open target file."
 msgstr "មិន​អាច​រក្សា​ទុក​ឯកសារ \"%1\""
@@ -60613,158 +60613,158 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "ចេញ​របៀប​មើល​ជា​មុន"
 
-#: core/utilities/import/backend/cameracontroller.cpp:416
+#: core/utilities/import/backend/cameracontroller.cpp:419
 #, kde-format
 msgid "Connecting to camera..."
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:425
+#: core/utilities/import/backend/cameracontroller.cpp:428
 #, kde-format
 msgid "Connection established."
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:429
+#: core/utilities/import/backend/cameracontroller.cpp:432
 #, kde-format
 msgid "Connection failed."
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:455
+#: core/utilities/import/backend/cameracontroller.cpp:458
 #, kde-format
 msgid "Failed to get free space from camera"
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:470
+#: core/utilities/import/backend/cameracontroller.cpp:473
 #, kde-format
 msgid "Failed to get preview from camera"
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:485
+#: core/utilities/import/backend/cameracontroller.cpp:488
 #, kde-format
 msgid "Failed to process capture from camera"
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:500
+#: core/utilities/import/backend/cameracontroller.cpp:503
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:516
+#: core/utilities/import/backend/cameracontroller.cpp:519
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:569
+#: core/utilities/import/backend/cameracontroller.cpp:572
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:587
+#: core/utilities/import/backend/cameracontroller.cpp:590
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:642
-#: core/utilities/import/backend/cameracontroller.cpp:1013
+#: core/utilities/import/backend/cameracontroller.cpp:645
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #: core/utilities/import/main/importui.cpp:2498
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to download <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:740
+#: core/utilities/import/backend/cameracontroller.cpp:743
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:791
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:805
+#: core/utilities/import/backend/cameracontroller.cpp:808
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:825
+#: core/utilities/import/backend/cameracontroller.cpp:828
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:899
+#: core/utilities/import/backend/cameracontroller.cpp:902
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:906
+#: core/utilities/import/backend/cameracontroller.cpp:909
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1021
+#: core/utilities/import/backend/cameracontroller.cpp:1024
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1025
+#: core/utilities/import/backend/cameracontroller.cpp:1028
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1042
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1050
+#: core/utilities/import/backend/cameracontroller.cpp:1053
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1054
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1070
+#: core/utilities/import/backend/cameracontroller.cpp:1073
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1081
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1082
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1098
+#: core/utilities/import/backend/cameracontroller.cpp:1101
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1106
+#: core/utilities/import/backend/cameracontroller.cpp:1109
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1110
+#: core/utilities/import/backend/cameracontroller.cpp:1113
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
@@ -67415,13 +67415,13 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67432,163 +67432,163 @@ msgid ""
 "Do you want to test your system now?"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
 #, fuzzy, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "ជ្រើស​រូបភាព"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, fuzzy, kde-format
 #| msgid "Beta tester"
 msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Beta tester"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "More Tags..."
 msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "ស្លាក​ច្រើន..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:221
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Close-up"
 msgctxt "@action:button start the AI GUP test"
 msgid "Close"
 msgstr "បិទ​"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "មិនមានការ​គាំទ្រ OpenGL នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក​ទេ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgid "OpenCL acceleration device is available."
 msgstr "ដែល​មិន​អាច​រក​បាន​"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
 #, fuzzy, kde-format
 #| msgid "Parsing error: %1"
 msgid "Using device: %1"
 msgstr "កំហុស​​ដែល​ញែក ៖ %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL acceleration device is not available."
 msgstr "មិនមានការ​គាំទ្រ OpenGL នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក​ទេ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "មិនមានការ​គាំទ្រ OpenGL នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក​ទេ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgid "Loading test image..."
 msgstr "ស្កេន​រូបភាព"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgid "Test image not found."
 msgstr "រក​មិន​ឃើញ​សម្រាំង​ឡើយ"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Failed to load test image from %1"
 msgstr "បាន​បរាជ័យ​ដើម្បី​រក្សាទុក​ស្លាក​ទៅកាន់​ឯកសារ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "Preparing the image for processing..."
 msgstr "ដំណើរការ​ផ្ទាល់ខ្លួន​"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, fuzzy, kde-format
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "កំពុង​រៀបចំ​ទិដ្ឋភាព​ចម្បង..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
 #, fuzzy, kde-format
 msgid "Running face detection..."
 msgstr "គាំទ្រ​ការ​រក​ឃើញ​មុខ"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
 #, fuzzy, kde-format
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "កំពុង​រៀបចំ​ទិដ្ឋភាព​ចម្បង..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
 #, fuzzy, kde-format
 #| msgid "Preparing collection scan..."
 msgid "Preparing face for feature extraction..."
 msgstr "កំពុង​រៀបចំ​វិភាគ​រក​សម្រាំង..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, fuzzy, kde-format
 msgid "Failed to extract face features."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "បាន​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​ដោយ​ជោគជ័យ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "OpenCV error: %1"
 msgstr "នាំចេញ"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"
