@@ -39,6 +39,16 @@ public:
     ~ActionThreadBase() override;
 
     /**
+     * @brief Adjust the thread expiry timeout value in milliseconds.
+     */
+    void setExpiryTimeout(int timeout);
+
+    /**
+     * @return the thread expiry timeout value in milliseconds.
+     */
+    int expiryTimeout()             const;
+
+    /**
      * @brief Adjust maximum number of threads used to parallelize collection of job processing.
      */
     void setMaximumNumberOfThreads(int n);

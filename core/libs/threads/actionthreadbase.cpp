@@ -100,11 +100,23 @@ ActionThreadBase::~ActionThreadBase()
     delete d;
 }
 
+void ActionThreadBase::setExpiryTimeout(int timeout)
+{
+    d->pool->setExpiryTimeout(timeout)
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Threads Pool" << objectName() << "will use expiry time-out of" << timeout << "ms";
+}
+
+int ActionThreadBase::expiryTimeout() const
+{
+    return d->pool->expiryTimeout();
+}
+
 void ActionThreadBase::setMaximumNumberOfThreads(int n)
 {
     d->pool->setMaxThreadCount(n);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Using " << n << " CPU core to run threads";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Threads Pool" << objectName() << "will use" << n << "threads";
 }
 
 int ActionThreadBase::maximumNumberOfThreads() const
