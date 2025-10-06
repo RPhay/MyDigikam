@@ -535,7 +535,9 @@ void TagDragDropHandler::slotAssignTagItem()
         QMenu popMenu(m_view);
         QAction* setAction          = nullptr;
         QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                        i18n("Assign Tag(s) '%1' to Items",
+                                                        i18np("Assign Tag '%1' to Items",
+                                                              "Assign Tag(s) '%1' to Items",
+                                                             tagNames.count(),
                                                              tagNames.join(QLatin1String(", "))));
 
         if (hasSameTopId)
