@@ -23,6 +23,9 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "actionthreadbase.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
@@ -82,6 +85,8 @@ void AbstractWorkerThread::ensureRunning()
 
 void AbstractWorkerThread::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("MarbleWorkerThread"));       // To customize thread name
+
     int waitAttempts = WAIT_ATTEMPTS;
 
     while (!d->m_end)

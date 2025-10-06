@@ -45,6 +45,9 @@
 #include "MarbleModel.h"
 #include "ParsingRunnerManager.h"
 #include "digikam_debug.h"
+#include "actionthreadbase.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
@@ -151,6 +154,8 @@ QString FileLoader::error() const
 
 void FileLoader::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("MarbleFileLoader"));       // To customize thread name
+
     if (d->m_contents.isEmpty())
     {
         QString defaultSourceName;

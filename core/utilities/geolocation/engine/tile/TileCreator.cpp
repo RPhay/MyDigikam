@@ -36,6 +36,9 @@
 #include "MarbleDirs.h"
 #include "TileLoaderHelper.h"
 #include "digikam_debug.h"
+#include "actionthreadbase.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
@@ -45,7 +48,8 @@ class Q_DECL_HIDDEN TileCreatorPrivate
 public:
 
     TileCreatorPrivate(TileCreatorSource* source,
-                       const QString& dem, const QString& targetDir = QString())
+                       const QString& dem,
+                       const QString& targetDir = QString())
         : m_dem(dem),
           m_targetDir(targetDir),
           m_cancelled(false),
@@ -142,17 +146,13 @@ public:
 
         if (m_cachedRowNum == n)
         {
-
             row = m_rowCache;
-
         }
-
         else
         {
 
             QRect   sourceRowRect(0, (int)((qreal)(n * imageHeight) / (qreal)(nmax)),
                                   imageWidth, (int)((qreal)(imageHeight) / (qreal)(nmax)));
-
 
             row = m_sourceImage.copy(sourceRowRect);
 
@@ -244,6 +244,8 @@ void TileCreator::cancelTileCreation()
 
 void TileCreator::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("MarbleTileCreator"));       // To customize thread name
+
     if (d->m_resume && d->m_tileFormat == QLatin1String("jpg") && d->m_tileQuality != 100)
     {
         qCWarning(DIGIKAM_GEOENGINE_LOG) << "Resuming jpegs is only supported with tileQuality 100";
@@ -265,10 +267,11 @@ void TileCreator::run()
     }
 
     QSize fullImageSize = d->m_source->fullImageSize();
-    int  imageWidth  = fullImageSize.width();
-    int  imageHeight = fullImageSize.height();
+    int  imageWidth     = fullImageSize.width();
+    int  imageHeight    = fullImageSize.height();
 
-    qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("TileCreator::createTiles() image dimensions %1 x %2").arg(imageWidth).arg(imageHeight);
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("TileCreator::createTiles() image dimensions %1 x %2")
+                                      .arg(imageWidth).arg(imageHeight);
 
     if (imageWidth < 1 || imageHeight < 1)
     {
@@ -277,6 +280,7 @@ void TileCreator::run()
     }
 
     // Calculating Maximum Tile Level
+
     float approxMaxTileLevel = std::log(imageWidth / (2.0 * c_defaultTileSize)) / std::log(2.0);
 
     int  maxTileLevel = 0;
@@ -295,7 +299,7 @@ void TileCreator::run()
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG)
                 << QString::fromUtf8("TileCreator::createTiles(): Invalid Maximum Tile Level: %1")
-                .arg(maxTileLevel);
+                   .arg(maxTileLevel);
     }
 
     qCDebug(DIGIKAM_GEOENGINE_LOG) << "Maximum Tile Level: " << maxTileLevel;
@@ -330,6 +334,7 @@ void TileCreator::run()
     QString  tileName;
 
     // Creating directory structure for the highest level
+
     QString  dirName(d->m_targetDir
                      + QString::fromUtf8("%1").arg(maxTileLevel));
 
@@ -370,9 +375,7 @@ void TileCreator::run()
 
             if (QFile::exists(tileName) && d->m_resume)
             {
-
                 //qCDebug(DIGIKAM_GEOENGINE_LOG) << tileName << "exists already";
-
             }
             else
             {
@@ -432,6 +435,7 @@ void TileCreator::run()
             createdTilesCount++;
 
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "percentCompleted" << percentCompleted;
+
             Q_EMIT progress(percentCompleted);
         }
     }
@@ -457,6 +461,7 @@ void TileCreator::run()
                              .arg(n, tileDigits, 10, QLatin1Char('0')));
 
             // qCDebug(DIGIKAM_GEOENGINE_LOG) << "dirName: " << dirName;
+
             if (!QDir(dirName).exists())
             {
                 (QDir::root()).mkpath(dirName);
@@ -520,7 +525,9 @@ void TileCreator::run()
                         img_bottomright.size() != expectedSize)
                     {
                         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Tile write failure. Missing write permissions?";
+
                         Q_EMIT progress(100);
+
                         return;
                     }
 
@@ -576,10 +583,8 @@ void TileCreator::run()
                             }
                         }
                     }
-
                     else
                     {
-
                         // tile.depth() != 8
 
                         img_topleft = img_topleft.convertToFormat(QImage::Format_ARGB32);
@@ -639,6 +644,7 @@ void TileCreator::run()
 
                     // Saving at 100% JPEG quality to have a high-quality
                     // version to create the remaining needed tiles from.
+
                     bool  ok = tile.save(newTileName, d->m_tileFormat.toLatin1().data(), d->m_tileFormat == QLatin1String("jpg") ? 100 : d->m_tileQuality);
 
                     if (! ok)
@@ -652,6 +658,7 @@ void TileCreator::run()
                 createdTilesCount++;
 
                 Q_EMIT progress(percentCompleted);
+
                 qCDebug(DIGIKAM_GEOENGINE_LOG) << "percentCompleted" << percentCompleted;
             }
         }
@@ -665,6 +672,7 @@ void TileCreator::run()
     {
 
         // Applying correct lower JPEG compression now that we created all tiles
+
         int savedTilesCount = 0;
 
         tileLevel = 0;
@@ -704,10 +712,13 @@ void TileCreator::run()
                     }
 
                     // Don't exceed 99% as this would cancel the thread unexpectedly
+
                     percentCompleted = 90 + (int)(9 * (qreal)(savedTilesCount)
                                                   / (qreal)(totalTileCount));
                     Q_EMIT progress(percentCompleted);
+
                     qCDebug(DIGIKAM_GEOENGINE_LOG) << "percentCompleted" << percentCompleted;
+
                     //qCDebug(DIGIKAM_GEOENGINE_LOG) << "Saving Tile #" << savedTilesCount
                     //         << " of " << totalTileCount
                     //         << " Percent: " << percentCompleted;
@@ -719,6 +730,7 @@ void TileCreator::run()
     }
 
     percentCompleted = 100;
+
     Q_EMIT progress(percentCompleted);
 
     qCDebug(DIGIKAM_GEOENGINE_LOG) << "percentCompleted: " << percentCompleted;

@@ -33,6 +33,9 @@
 #include "MathHelper.h"
 #include "AbstractProjection.h"
 #include "digikam_debug.h"
+#include "actionthreadbase.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
@@ -41,7 +44,13 @@ class Q_DECL_HIDDEN GenericScanlineTextureMapper::RenderJob : public QRunnable
 {
 public:
 
-    RenderJob(StackedTileLoader* tileLoader, int tileLevel, QImage* canvasImage, const ViewportParams* viewport, MapQuality mapQuality, int yTop, int yBottom);
+    RenderJob(StackedTileLoader* tileLoader,
+              int tileLevel,
+              QImage* canvasImage,
+              const ViewportParams* viewport,
+              MapQuality mapQuality,
+              int yTop,
+              int yBottom);
 
     void run() override;
 
@@ -56,7 +65,13 @@ private:
     const int m_yBottom;
 };
 
-GenericScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoader, int tileLevel, QImage* canvasImage, const ViewportParams* viewport, MapQuality mapQuality, int yTop, int yBottom)
+GenericScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoader,
+                                                   int tileLevel,
+                                                   QImage* canvasImage,
+                                                   const ViewportParams* viewport,
+                                                   MapQuality mapQuality,
+                                                   int yTop,
+                                                   int yBottom)
     : m_tileLoader(tileLoader),
       m_tileLevel(tileLevel),
       m_canvasImage(canvasImage),
@@ -66,7 +81,6 @@ GenericScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoader
       m_yBottom(yBottom)
 {
 }
-
 
 GenericScanlineTextureMapper::GenericScanlineTextureMapper(StackedTileLoader* tileLoader)
     : TextureMapperInterface()
@@ -154,6 +168,8 @@ void GenericScanlineTextureMapper::mapTexture(const ViewportParams* viewport, in
 
 void GenericScanlineTextureMapper::RenderJob::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("MarbleGenericRenderJob"));       // To customize thread name
+
     const int imageWidth  = m_canvasImage->width();
     const int imageHeight  = m_canvasImage->height();
     const qint64  radius  = m_viewport->radius();

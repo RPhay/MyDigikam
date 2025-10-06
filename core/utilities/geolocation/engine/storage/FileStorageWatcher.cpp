@@ -28,6 +28,9 @@
 #include "MarbleGlobal.h"
 #include "MarbleDirs.h"
 #include "digikam_debug.h"
+#include "actionthreadbase.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
@@ -311,6 +314,8 @@ void FileStorageWatcher::resetCurrentSize()
 
 void FileStorageWatcher::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("MarbleFileStorage"));       // To customize thread name
+
     m_thread = new FileStorageWatcherThread(m_dataDirectory);
 
     if (!m_quitting)

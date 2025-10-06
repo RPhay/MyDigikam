@@ -33,6 +33,9 @@
 #include "ViewportParams.h"
 #include "AbstractProjection.h"
 #include "digikam_debug.h"
+#include "actionthreadbase.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
@@ -41,7 +44,13 @@ class Q_DECL_HIDDEN EquirectScanlineTextureMapper::RenderJob : public QRunnable
 {
 public:
 
-    RenderJob(StackedTileLoader* tileLoader, int tileLevel, QImage* canvasImage, const ViewportParams* viewportParams, MapQuality mapQuality, int yTop, int yBottom);
+    RenderJob(StackedTileLoader* tileLoader,
+              int tileLevel,
+              QImage* canvasImage,
+              const ViewportParams* viewportParams,
+              MapQuality mapQuality,
+              int yTop,
+              int yBottom);
 
     void run() override;
 
@@ -56,7 +65,13 @@ private:
     const int m_yPaintedBottom;
 };
 
-EquirectScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoader, int tileLevel, QImage* canvasImage, const ViewportParams* viewport, MapQuality mapQuality, int yTop, int yBottom)
+EquirectScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoader,
+                                                    int tileLevel,
+                                                    QImage* canvasImage,
+                                                    const ViewportParams* viewport,
+                                                    MapQuality mapQuality,
+                                                    int yTop,
+                                                    int yBottom)
     : m_tileLoader(tileLoader),
       m_tileLevel(tileLevel),
       m_canvasImage(canvasImage),
@@ -171,6 +186,8 @@ void EquirectScanlineTextureMapper::mapTexture(const ViewportParams* viewport, i
 
 void EquirectScanlineTextureMapper::RenderJob::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("MarbleEquirectRenderJob"));       // To customize thread name
+
     // Scanline based algorithm to do texture mapping
 
     const int imageHeight = m_canvasImage->height();

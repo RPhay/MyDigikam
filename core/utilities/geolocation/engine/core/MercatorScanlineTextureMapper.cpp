@@ -14,7 +14,7 @@
  *
  * ============================================================ */
 
-#include"MercatorScanlineTextureMapper.h"
+#include "MercatorScanlineTextureMapper.h"
 
 // C++ includes
 
@@ -34,6 +34,9 @@
 #include "MathHelper.h"
 #include "AbstractProjection.h"
 #include "digikam_debug.h"
+#include "actionthreadbase.h"
+
+using namespace Digikam;
 
 namespace Marble
 {
@@ -42,7 +45,13 @@ class Q_DECL_HIDDEN MercatorScanlineTextureMapper::RenderJob : public QRunnable
 {
 public:
 
-    RenderJob(StackedTileLoader* tileLoader, int tileLevel, QImage* canvasImage, const ViewportParams* viewport, MapQuality mapQuality, int yTop, int yBottom);
+    RenderJob(StackedTileLoader* tileLoader,
+              int tileLevel,
+              QImage* canvasImage,
+              const ViewportParams* viewport,
+              MapQuality mapQuality,
+              int yTop,
+              int yBottom);
 
     void run() override;
 
@@ -57,7 +66,13 @@ private:
     const int                   m_yPaintedBottom;
 };
 
-MercatorScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoader, int tileLevel, QImage* canvasImage, const ViewportParams* viewport, MapQuality mapQuality, int yTop, int yBottom)
+MercatorScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoader,
+                                                    int tileLevel,
+                                                    QImage* canvasImage,
+                                                    const ViewportParams* viewport,
+                                                    MapQuality mapQuality,
+                                                    int yTop,
+                                                    int yBottom)
     : m_tileLoader(tileLoader),
       m_tileLevel(tileLevel),
       m_canvasImage(canvasImage),
@@ -173,6 +188,8 @@ void MercatorScanlineTextureMapper::mapTexture(const ViewportParams* viewport, i
 
 void MercatorScanlineTextureMapper::RenderJob::run()
 {
+    ActionThreadBase::setCurrentThreadName(QLatin1String("MarbleMercatorRenderJob"));       // To customize thread name
+
     // Scanline based algorithm to do texture mapping
 
     const int imageHeight = m_canvasImage->height();
