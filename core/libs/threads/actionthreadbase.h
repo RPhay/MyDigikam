@@ -66,7 +66,7 @@ public:
      *    Linux:   htop --filter=PNAME --tree"
      *             sudo gdb -p PID -batch -ex "info threads" -ex "quit"
      *    macOS:   sudo lldb -p PID -o "thread list" -o "quit"
-     *    Windows: tasks manager
+     *    Windows: Microsoft Process Explorer https://learn.microsoft.com/fr-fr/sysinternals/downloads/process-explorer
      * String limitation:
      *    Linux:   15 characters max (UTF8).
      *    macOS:   64 characters max (UTF8).
