@@ -102,7 +102,7 @@ ActionThreadBase::~ActionThreadBase()
 
 void ActionThreadBase::setExpiryTimeout(int timeout)
 {
-    d->pool->setExpiryTimeout(timeout)
+    d->pool->setExpiryTimeout(timeout);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Threads Pool" << objectName() << "will use expiry time-out of" << timeout << "ms";
 }
