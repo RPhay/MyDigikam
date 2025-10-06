@@ -74,7 +74,7 @@ QString FTPlugin::handbookSection() const
 
 QString FTPlugin::handbookChapter() const
 {
-    return QLatin1String("file_transfert");
+    return QLatin1String("file_transfer");
 }
 
 QList<DPluginAuthor> FTPlugin::authors() const

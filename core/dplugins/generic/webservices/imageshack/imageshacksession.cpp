@@ -24,7 +24,7 @@
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
-// Locla includes
+// Local includes
 
 #include "digikam_debug.h"
 

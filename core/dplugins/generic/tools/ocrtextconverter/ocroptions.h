@@ -44,7 +44,7 @@ public:
         DEFAULT = 0,
 
         /**
-         * Orientation and Script Detection mode remplace Default mode for hieroglyphs languages.
+         * Orientation and Script Detection mode replace Default mode for hieroglyphs languages.
          * See comment on https://invent.kde.org/graphics/digikam/-/merge_requests/177#note_522008
          */
         OSD

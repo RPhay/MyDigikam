@@ -209,7 +209,7 @@ generates all detail pages for the current collection.
 
 <!-- ##################### COLLECTION PAGE GENERATION ##################### -->
 <!--
-A page of thumbnails for a sigle collection.
+A page of thumbnails for a single collection.
 If there are too many thumbnails to fit on one page then the content is split
 up into multiple pages.
 -->

@@ -6,7 +6,7 @@ TODO:
 * GSoC 2018 export tools:
  ++ Port to O2:
     - Remove totally email, password field
-    - Remove totally categories related methodes (now still let in comments)
+    - Remove totally categories related methods (now still let in comments)
     - Codes for anonymous login (enable/disable some functionalities)
     - When finishing uploading an image, remove it from transferQueue
  ++ Factorization: 

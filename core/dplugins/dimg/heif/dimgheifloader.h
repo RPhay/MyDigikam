@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2019-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * Other HEIF loader implementions:
+ * Other HEIF loader implementations:
  *     https://github.com/KDE/krita/tree/master/plugins/impex/heif
  *     https://github.com/jakar/qt-heif-image-plugin
  *     https://github.com/ImageMagick/ImageMagick/blob/master/coders/heic.c

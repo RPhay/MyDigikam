@@ -235,7 +235,7 @@ void ODWindow::slotStartTransfer()
 
     if (d->widget->imagesList()->imageUrls().isEmpty())
     {
-        QMessageBox::critical(this, i18nc("@title: window start transfert", "Error"),
+        QMessageBox::critical(this, i18nc("@title: window start transfer", "Error"),
                               i18nc("@info", "No image selected. Please select which images should be uploaded."));
         return;
     }
@@ -243,12 +243,12 @@ void ODWindow::slotStartTransfer()
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18nc("@title: window start transfert", "Warning"),
+                         i18nc("@title: window start transfer", "Warning"),
                          i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                          QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button start transfert", "Continue"));
-        (warn->button(QMessageBox::No))->setText(i18nc("@action: button start transfert", "Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button start transfer", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action: button start transfer", "Cancel"));
 
         if (warn->exec() == QMessageBox::Yes)
         {

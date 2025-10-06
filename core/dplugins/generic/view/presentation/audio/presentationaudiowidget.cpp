@@ -372,7 +372,7 @@ void PresentationAudioWidget::slotStop()
         return;
     }
 
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Stoping:" << d->urlList[d->currIndex];
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Stopping:" << d->urlList[d->currIndex];
     d->playingNext = false;
     d->mediaObject->stop();
     d->currIndex   = 0;

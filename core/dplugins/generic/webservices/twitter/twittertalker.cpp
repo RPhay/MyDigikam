@@ -796,7 +796,7 @@ void TwTalker::parseResponseAddPhotoAppend(const QByteArray& /*data*/, int segme
     /* (Fev. 2019)
      * Currently, we don't parse data of response from addPhotoAppend, since the response is with HTTP 204
      * This is indeed an expected response code, because the response should be with an empty body.
-     * However, in order to keep a compatible prototype of parseResponse methodes and reserve for future change,
+     * However, in order to keep a compatible prototype of parseResponse methods and reserve for future change,
      * we should keep argument const QByteArray& data.
      */
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseAddPhotoAppend: ";

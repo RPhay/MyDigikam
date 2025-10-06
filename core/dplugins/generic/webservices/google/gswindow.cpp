@@ -494,7 +494,7 @@ void GSWindow::slotStartTransfer()
         {
             if (d->widget->imagesList()->imageUrls().isEmpty())
             {
-                QMessageBox::critical(this, i18nc("@title: window start transfert", "Error"),
+                QMessageBox::critical(this, i18nc("@title: window start transfer", "Error"),
                                       i18nc("@info", "No image selected. Please select which images should be uploaded."));
                 return;
             }
@@ -515,12 +515,12 @@ void GSWindow::slotStartTransfer()
             if (!(d->talker->authenticated()))
             {
                 QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                 i18nc("@title: window start transfert", "Warning"),
+                                 i18nc("@title: window start transfer", "Warning"),
                                  i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                                  QMessageBox::Yes | QMessageBox::No);
 
-                (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button start transfert", "Continue"));
-                (warn->button(QMessageBox::No))->setText(i18nc("@action: button start transfert", "Cancel"));
+                (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button start transfer", "Continue"));
+                (warn->button(QMessageBox::No))->setText(i18nc("@action: button start transfer", "Cancel"));
 
                 if (warn->exec() == QMessageBox::Yes)
                 {
@@ -545,12 +545,12 @@ void GSWindow::slotStartTransfer()
             if (!(d->gphotoTalker->authenticated()))
             {
                 QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                 i18nc("@title: window start transfert", "Warning"),
+                                 i18nc("@title: window start transfer", "Warning"),
                                  i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                                  QMessageBox::Yes | QMessageBox::No);
 
-                (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button start transfert", "Continue"));
-                (warn->button(QMessageBox::No))->setText(i18nc("@action: button start transfert", "Cancel"));
+                (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button start transfer", "Continue"));
+                (warn->button(QMessageBox::No))->setText(i18nc("@action: button start transfer", "Cancel"));
 
                 if (warn->exec() == QMessageBox::Yes)
                 {
@@ -631,7 +631,7 @@ void GSWindow::slotStartTransfer()
     d->imagesTotal    = d->transferQueue.count();
     d->imagesCount    = 0;
 
-    d->widget->progressBar()->setFormat(i18nc("@info: progress bar start transfert", "%v / %m"));
+    d->widget->progressBar()->setFormat(i18nc("@info: progress bar start transfer", "%v / %m"));
     d->widget->progressBar()->setMaximum(d->imagesTotal);
     d->widget->progressBar()->setValue(0);
     d->widget->progressBar()->show();
@@ -640,7 +640,7 @@ void GSWindow::slotStartTransfer()
     {
         case GoogleService::GDrive:
         {
-            d->widget->progressBar()->progressScheduled(i18nc("@info: start transfert", "Google Drive export"), true, true);
+            d->widget->progressBar()->progressScheduled(i18nc("@info: start transfer", "Google Drive export"), true, true);
             d->widget->progressBar()->progressThumbnailChanged(
                 QIcon::fromTheme(QLatin1String("dk-googledrive")).pixmap(22, 22));
             break;
@@ -648,7 +648,7 @@ void GSWindow::slotStartTransfer()
 
         default:
         {
-            d->widget->progressBar()->progressScheduled(i18nc("@info: start transfert", "Google Photos export"), true, true);
+            d->widget->progressBar()->progressScheduled(i18nc("@info: start transfer", "Google Photos export"), true, true);
             d->widget->progressBar()->progressThumbnailChanged(
                 QIcon::fromTheme((QLatin1String("dk-googlephoto"))).pixmap(22, 22));
             break;

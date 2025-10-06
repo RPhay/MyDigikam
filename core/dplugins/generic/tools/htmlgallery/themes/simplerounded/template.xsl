@@ -490,7 +490,7 @@ listBackground - The Color of the Thumb list.
 			</xsl:if>
 	</xsl:template>
 	
-	<!-- The thumnails for each single collection. -->
+	<!-- The thumnbails for each single collection. -->
 	<xsl:template name="collectionListItem">
 		<xsl:param name="iterator" />
 		<xsl:param name="offset" /><!-- The number of thumbnails that has already been worked on. -->

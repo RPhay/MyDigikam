@@ -55,7 +55,7 @@ bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
      *
      * FillMode can take these values:
      *    0 = Adjusted
-     *    1 = Adjusted with apect ratio
+     *    1 = Adjusted with aspect ratio
      *    2 = Adjusted and cropped      (Stretch)
      *    3 = Mosaic                    (Tile)
      *    4 = ???

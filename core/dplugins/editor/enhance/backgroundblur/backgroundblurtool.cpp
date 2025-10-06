@@ -200,7 +200,7 @@ void BackgroundBlurTool::slotSelectionChanged(const QRectF& previewSel)
     DImg preview            = iface->preview();
 
     // Compute the scale factor between mask preview and original canvas sizes.
-    // Readjust the selection in editor canvas and normaize.
+    // Readjust the selection in editor canvas and normalize.
 
     double left   = (double)(previewSel.left() * d->orgSize.width()  / preview.width());
 

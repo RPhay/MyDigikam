@@ -134,7 +134,7 @@ int OcrTesseractEngine::runOcrProcess()
         args << QLatin1String("--psm") << val;
     }
 
-    // OCR enginge mode
+    // OCR engine mode
 
     val = d->opt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->opt.oem));
 

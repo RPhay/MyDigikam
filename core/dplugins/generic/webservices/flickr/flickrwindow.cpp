@@ -465,7 +465,7 @@ void FlickrWindow::slotRemoveAccount()
 
 /**
  * Try to guess a sensible set name from the urls given.
- * Currently, it extracs the last path name component, and returns the most
+ * Currently, it extracts the last path name component, and returns the most
  * frequently seen. The function could be expanded to, for example, only
  * accept the path if it occurs at least 50% of the time. It could also look
  * further up in the path name.
