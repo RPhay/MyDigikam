@@ -246,7 +246,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         }
 
         QTextStream in(&data);
-        QString line    = in.readLine();  // first line and section 0 constains the checksum.
+        QString line    = in.readLine();  // first line and section 0 contains the checksum.
         QString sums    = line.section(QLatin1Char(' '), 0, 0);
 
         if (sums.isEmpty())

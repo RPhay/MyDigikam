@@ -34,7 +34,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!bus.isConnected())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: cannot open a connexion to D-Bus system.";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: cannot open a connection to D-Bus system.";
 
         return false;
     }

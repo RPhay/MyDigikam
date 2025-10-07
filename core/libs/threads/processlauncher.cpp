@@ -158,7 +158,7 @@ void ProcessLauncher::run()
 
         qCInfo(DIGIKAM_GENERAL_LOG) << "=== Process execution is complete!";
         qCInfo(DIGIKAM_GENERAL_LOG) << "> Process exit code        :" << d->exitCode;
-        qCInfo(DIGIKAM_GENERAL_LOG) << "> Process elasped time (ms):" << d->elapsed;
+        qCInfo(DIGIKAM_GENERAL_LOG) << "> Process elapsed time (ms):" << d->elapsed;
     }
     else
     {

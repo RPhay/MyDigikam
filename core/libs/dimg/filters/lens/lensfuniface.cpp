@@ -558,7 +558,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
 
                 if (similar)
                 {
-                    qCDebug(DIGIKAM_DIMG_LOG) << "found similary match from" << lensMatches.count()
+                    qCDebug(DIGIKAM_DIMG_LOG) << "found similar match from" << lensMatches.count()
                                               << "possibilities:" << similar->Model
                                               << "similarity:" << percent;
                     setUsedLens(similar);

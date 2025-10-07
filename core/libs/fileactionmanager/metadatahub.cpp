@@ -217,7 +217,7 @@ bool MetadataHub::writeToMetadata(const ItemInfo& info,
 {
     applyChangeNotifications();
 
-    // if no metadata constainer is needed at all, don't construct one -
+    // if no metadata container is needed at all, don't construct one -
     // important optimization if writing to file is turned off in setup!
 
     if (!willWriteMetadata(writeMode, settings))

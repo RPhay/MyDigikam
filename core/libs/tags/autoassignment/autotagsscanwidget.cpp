@@ -117,8 +117,8 @@ void AutotagsScanWidget::setupUi()
                                                "Tagging Mode:"), d->settingsTab);
 
     d->tagMode              = new SqueezedComboBox(d->settingsTab);
-    d->tagMode->addSqueezedItem(i18nc("@item: remplace existing autotags entries in database", "Replace Existing"), AutotagsScanSettings::TagMode::Replace);
-    d->tagMode->addSqueezedItem(i18nc("@item: update the autotags entries in database",        "Update"),           AutotagsScanSettings::TagMode::Update);
+    d->tagMode->addSqueezedItem(i18nc("@item: replace existing autotags entries in database", "Replace Existing"), AutotagsScanSettings::TagMode::Replace);
+    d->tagMode->addSqueezedItem(i18nc("@item: update the autotags entries in database",       "Update"),           AutotagsScanSettings::TagMode::Update);
     d->tagMode->setToolTip(i18nc("@info:tooltip",
                                  "<p><b>Replace Existing</b>: clear existing auto-tags and replace with the results of the scan.</p>"
                                  "<p><b>Update</b>: add any new auto-tags found to the existing auto-tags.</p>"));

@@ -617,7 +617,7 @@ QImage QtOpenCVImg::mat2Image(const cv::Mat& mat, MatColorOrder order, QImage::F
 
             }
 
-            // Channel order requried by the target QImage
+            // Channel order required by the target QImage
 
             MatColorOrder requiredOrder = getColorOrderOfRGB32Format();
 

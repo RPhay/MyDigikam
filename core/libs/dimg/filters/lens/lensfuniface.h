@@ -18,7 +18,7 @@
  * Pragma directives to reduce warnings from Lensfun header files.
  *
  * TODO: lensfun version > 0.3.2 introduce deprecated methods for the future.
- * digiKam Code need to be ported to new API when Lensfun 0.4.0 will be releaed.
+ * digiKam Code need to be ported to new API when Lensfun 0.4.0 will be related.
  *
  */
 #if defined(Q_CC_GNU)

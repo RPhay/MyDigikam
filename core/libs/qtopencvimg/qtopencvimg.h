@@ -99,7 +99,7 @@ public:
      *   endian system or (A R G B) in big endian system.
      *
      * - User must make sure that the color channels order is the same as
-     *   the color channels order requried by QImage.
+     *   the color channels order required by QImage.
      */
     static cv::Mat image2Mat_shared(const QImage& img,
                                     MatColorOrder* const order = nullptr);

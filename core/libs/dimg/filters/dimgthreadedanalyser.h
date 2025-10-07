@@ -41,7 +41,7 @@ public:
     explicit DImgThreadedAnalyser(QObject* const parent = nullptr, const QString& name = QString());
 
     /**
-     * @brief Constructs an image ananlyser with all arguments (ready to use).
+     * @brief Constructs an image analyser with all arguments (ready to use).
      * The given original image will be copied.
      * You need to call startFilter() to start the threaded computation.
      * To run analyser without to use multithreading, call startFilterDirectly().

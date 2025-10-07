@@ -62,12 +62,12 @@ public:
     qint64 elapsedTime()    const;
 
     /**
-     * Return the process outout as string.
+     * Return the process output as string.
      */
     QString output()        const;
 
     /**
-     * Return true if the process is startd and completed without error.
+     * Return true if the process is started and completed without error.
      */
     bool success()          const;
 

@@ -112,7 +112,7 @@ private Q_SLOTS:
      */
     void slotMarkNotAssignedTags();
 
-    // --- Inpout / Output slots.
+    // --- Input / Output slots.
 
     /**
      * @brief connected to wrDbImg action and will write all metadata from database to images.

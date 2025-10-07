@@ -248,7 +248,7 @@ void TagToggleMenuWidget::initMenuStyleOption(QStyleOptionMenuItem* option) cons
 */
 
     // We have a special case here: menu items which are checked are not selectable,
-    // it is an "Assign Tags" menu. To signal this, we change the pallette.
+    // it is an "Assign Tags" menu. To signal this, we change the palette.
     // But only if there is no submenu...
 
     if (m_action->isChecked() && !m_action->menu())

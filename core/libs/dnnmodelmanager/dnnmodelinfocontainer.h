@@ -83,7 +83,7 @@ public:
     int                defaultThreshold    = 0;                         ///< Threshold used for models that aren't configured by the UI.
     int                minUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing.
     int                maxUsableThreshold  = 0;                         ///< Used to convert UI 1-10 slider to float for processing.
-    DNNLoaderType      loaderType          = DNNLoaderNet;              ///< Model loder type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow.
+    DNNLoaderType      loaderType          = DNNLoaderNet;              ///< Model loader type custom (YuNet/SFace), Caffe, Darknet, Torch, Tensorflow.
     cv::Scalar         meanValToSubtract   = cv::Scalar(0.0, 0.0, 0.0);
     int                imageSize           = 0;                         ///< Max dimension of a side of an image.
 };

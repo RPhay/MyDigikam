@@ -194,7 +194,7 @@ std::vector<cv::Mat> AutotagsAssign::prepareForDetection(const QList<DImg>& inpu
             result.push_back(prepareForDetection(img));
         }
 
-        // Add black images to fullfill the batch size.
+        // Add black images to fulfill the batch size.
 
         cv::Size inputSize = m_inferenceEngine->getinputImageSize();
 
@@ -227,7 +227,7 @@ std::vector<cv::Mat> AutotagsAssign::prepareForDetection(const QList<QString>& i
             result.push_back(prepareForDetection(imgPath));
         }
 
-        // Add black images to fullfill the batch size.
+        // Add black images to fulfill the batch size.
 
         cv::Size inputSize = m_inferenceEngine->getinputImageSize();
 

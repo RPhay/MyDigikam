@@ -516,7 +516,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
         }
 
 /*
-        // Any other egdes off the main path?
+        // Any other edges off the main path?
 
         QList<HistoryGraph::Vertex> branches = graph().adjacentVertices(v, HistoryGraph::EdgesToLeaf);
         QList<HistoryGraph::Vertex> subgraph;

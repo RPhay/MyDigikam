@@ -75,4 +75,4 @@ MLPipelinePackageNotify& MLPipelinePackageNotify::operator=(const MLPipelinePack
     return *this;
 }
 
-} // namesapce Digikam
+} // namespace Digikam

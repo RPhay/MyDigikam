@@ -65,7 +65,7 @@ public:
     int parentTagId() const;
 
     /**
-     * Allows to filter the scope of suggested tags. Pass an implementation of ConstraintInterface (reamins in your ownership).
+     * Allows to filter the scope of suggested tags. Pass an implementation of ConstraintInterface (remains in your ownership).
      * actions() will then only suggest to assign tags for which matches() is true
      */
     void setConstraintInterface(ConstraintInterface* const iface);

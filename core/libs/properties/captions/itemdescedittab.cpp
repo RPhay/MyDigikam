@@ -55,7 +55,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
     updateRecentTags();
 
-    // Setup signals/slots connctions -------------------------------
+    // Setup signals/slots connections -----------------------------
 
     d->setupConnections();
 }

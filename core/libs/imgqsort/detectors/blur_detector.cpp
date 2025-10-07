@@ -241,7 +241,7 @@ bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
         std::vector<cv::Vec4i> lines;
         HoughLinesP(tmp, lines, 1, d->theta_resolution, d->threshold_hough, d->min_line_length, 10);
 
-        // Detect if region is motion blurred by number of paralle lines
+        // Detect if region is motion blurred by number of parallel lines
 
         if (static_cast<int>(lines.size()) > d->min_nb_lines)
         {

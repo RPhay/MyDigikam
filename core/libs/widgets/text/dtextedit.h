@@ -246,7 +246,7 @@ public:
      * This property holds whether the edit widget handles a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
      * To reset this setting, pass a empty string as language.
-     * If Sonnet dependencies is not resolved, thi method does nothing.
+     * If Sonnet dependencies is not resolved, this method does nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;

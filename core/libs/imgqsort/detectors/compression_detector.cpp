@@ -176,6 +176,6 @@ float CompressionDetector::normalize(const float number)
     return (1.0F / (1.0F + qExp(-(number - d->alpha) / d->beta)));
 }
 
-} // namspace Digikam
+} // namespace Digikam
 
 #include "moc_compression_detector.cpp"

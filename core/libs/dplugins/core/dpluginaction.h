@@ -49,7 +49,7 @@ public:
         GenericExport = 0,      ///< Generic export action.
         GenericImport,          ///< Generic import action.
         GenericTool,            ///< Generic processing action.
-        GenericMetadata,        ///< Generic Metadata adjustement action.
+        GenericMetadata,        ///< Generic Metadata adjustment action.
         GenericView,            ///< Generic View action (as Slideshow).
 
         EditorFile,             ///< Image Editor file action.

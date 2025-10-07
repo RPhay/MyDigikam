@@ -14,7 +14,7 @@
 
 #include "tagsedit.h"
 
-// Qt incudes
+// Qt includes
 
 #include <QToolButton>
 #include <QPushButton>

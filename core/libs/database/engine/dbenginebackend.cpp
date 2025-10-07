@@ -308,7 +308,7 @@ bool BdEngineBackendPrivate::isSQLiteLockTransactionError(const QSqlError& lastE
             (lastError.databaseText() == QLatin1String("database is locked"))
            );
 
-    // wouldnt it be great if they gave us the database error number...
+    // wouldn't it be great if they gave us the database error number...
 }
 
 bool BdEngineBackendPrivate::isConnectionError(const QSqlQuery& query) const

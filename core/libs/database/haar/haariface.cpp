@@ -972,7 +972,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                             {
                                 const QString path = info.filePath();
                                 const QString name = info.name();
-                                DEBUG_DUPLICATES("\t\tUse as eference image: " << name << "Path: " << path << ", Id: " << info.id() << "Pixelsize: " << infoPixelSize << ", File size: " << refFileSize << ", Datetime: " << refDateTime);
+                                DEBUG_DUPLICATES("\t\tUse as reference image: " << name << "Path: " << path << ", Id: " << info.id() << "Pixelsize: " << infoPixelSize << ", File size: " << refFileSize << ", Datetime: " << refDateTime);
                             }
 
 #endif

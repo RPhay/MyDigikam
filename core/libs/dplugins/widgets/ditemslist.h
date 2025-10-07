@@ -41,7 +41,7 @@ class DItemsList;
 class DItemsListView;
 
 /**
- * Type of static fonction used to customize sort items in list.
+ * Type of static function used to customize sort items in list.
  * Sort items call this method in DItemsListViewItem::operator<.
  * To setup this method, uses DItemList::setIsLessThanHandler().
  */
@@ -251,7 +251,7 @@ public:
     QBoxLayout*         setControlButtonsPlacement(ControlButtonPlacement placement);
 
    /**
-    * Append a extra widget to the end of Control Button layout (as a progress bar for exemple).
+    * Append a extra widget to the end of Control Button layout (as a progress bar for example).
     * This method must be call before setControlButtonsPlacement().
     * Ownership of the widget is not transferred to the DItemList.
     */
