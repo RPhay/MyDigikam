@@ -77,6 +77,7 @@
 #include "dxmlguiwindow.h"
 #include "gpsbookmarkowner.h"
 #include "gpsbookmarkmodelhelper.h"
+#include "actionthreadbase.h"
 
 #ifdef GPSSYNC_MODELTEST
 #   include <modeltest.h>
@@ -98,6 +99,8 @@ public:
 
     QPair<QUrl, QString> operator()(const QPersistentModelIndex& itemIndex)
     {
+        ActionThreadBase::setCurrentThreadName(QLatin1String("SaveChangedImagesHelper"));       // To customize thread name
+
         GPSItemContainer* const item = imageModel->itemFromIndex(itemIndex);
 
         if (!item)
@@ -127,6 +130,8 @@ public:
 
     QPair<QUrl, QString> operator()(const QPersistentModelIndex& itemIndex)
     {
+        ActionThreadBase::setCurrentThreadName(QLatin1String("LoadFileMetadataHelper"));       // To customize thread name
+
         GPSItemContainer* const item = imageModel->itemFromIndex(itemIndex);
 
         if (!item)

@@ -152,17 +152,17 @@ void OpenCVOpenCLDNNTestDlg::slotStart()
     // run the test in a separate thread
 
     d->testingWatcher.setFuture(QtConcurrent::run(
-                               QThreadPool::globalInstance(),
+                                QThreadPool::globalInstance(),
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                               &OpenCVOpenCLDNNTestDlg::runTest,
-                               this
+                                &OpenCVOpenCLDNNTestDlg::runTest,
+                                this
 
 #else
 
-                               this,
-                               &OpenCVOpenCLDNNTestDlg::runTest
+                                this,
+                                &OpenCVOpenCLDNNTestDlg::runTest
 
 #endif
 
