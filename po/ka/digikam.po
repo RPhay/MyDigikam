@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 01:52+0000\n"
+"POT-Creation-Date: 2025-10-07 02:02+0000\n"
 "PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -201,7 +201,7 @@ msgstr "აქ ჩაკოპირება"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
 #: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
-#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:549
 #, kde-format
 msgid "C&ancel"
 msgstr "გაუქმება"
@@ -307,7 +307,7 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "დაადასტურეთ სახის სახელი '%2' ელემენტისთვის"
 msgstr[1] "დაადასტურეთ სახის სახელი '%2' ელემენტისთვის"
 
-#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:545
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "ჭდის მინიატურად დაყენება"
@@ -320,9 +320,12 @@ msgstr[0] "სახის ჭდის '%2'-დან '%3'-ზე შეცვ�
 msgstr[1] "სახის ჭდის '%2'-დან '%3'-ზე შეცვლა"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag(s) '%1' to Items"
-msgstr "ობიექტებისთვის ჭდის '%1' მინიჭება"
+#, fuzzy, kde-format
+#| msgid "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%1' to Items"
+msgid_plural "Assign Tag(s) '%1' to Items"
+msgstr[0] "ობიექტებისთვის ჭდის '%1' მინიჭება"
+msgstr[1] "ობიექტებისთვის ჭდის '%1' მინიჭება"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -21032,8 +21035,10 @@ msgstr "სურათი მონიშნული არაა. ასა�
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, kde-format
-msgctxt "@title: window start transfert"
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "გაფრთხილება"
 
@@ -21052,8 +21057,9 @@ msgstr "ავთენტიკაციის შეცდომა. თავ
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, kde-format
-msgctxt "@action: button start transfert"
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "გაგრძელება"
 
@@ -21063,8 +21069,9 @@ msgstr "გაგრძელება"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, kde-format
-msgctxt "@action: button start transfert"
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "გაუქმება"
 
@@ -22438,20 +22445,24 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, kde-format
-msgctxt "@title: window start transfert"
+#, fuzzy, kde-format
+#| msgid "Error"
+msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "შეცდომა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, kde-format
-msgctxt "@info: progress bar start transfert"
+#, fuzzy, kde-format
+#| msgid "%v / %m"
+msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, kde-format
-msgctxt "@info: start transfert"
+#, fuzzy, kde-format
+#| msgctxt "@info: start transfert"
+#| msgid "Google Drive export"
+msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "Google Drive -ზე გატანა"
 
@@ -22459,7 +22470,7 @@ msgstr "Google Drive -ზე გატანა"
 #, fuzzy, kde-format
 #| msgctxt "@info: start transfert"
 #| msgid "Google Photo export"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "Google Photo-ზე გატანა"
 
@@ -64155,6 +64166,26 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Warning"
+#~ msgstr "გაფრთხილება"
+
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Continue"
+#~ msgstr "გაგრძელება"
+
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Cancel"
+#~ msgstr "გაუქმება"
+
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Error"
+#~ msgstr "შეცდომა"
+
+#~ msgctxt "@info: progress bar start transfert"
+#~ msgid "%v / %m"
+#~ msgstr "%v / %m"
 
 #, fuzzy
 #~| msgctxt "@title"

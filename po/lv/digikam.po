@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 01:52+0000\n"
+"POT-Creation-Date: 2025-10-07 02:02+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -230,7 +230,7 @@ msgstr "&Kopēt šeit"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
 #: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
-#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:549
 #, kde-format
 msgid "C&ancel"
 msgstr "&Atcelt"
@@ -338,7 +338,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:545
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Noteikt par taga sīktēlu"
@@ -352,9 +352,13 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag(s) '%1' to Items"
-msgstr "Piešķirt šiem attēliem tagus '%1'"
+#, fuzzy, kde-format
+#| msgid "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%1' to Items"
+msgid_plural "Assign Tag(s) '%1' to Items"
+msgstr[0] "Piešķirt šiem attēliem tagus '%1'"
+msgstr[1] "Piešķirt šiem attēliem tagus '%1'"
+msgstr[2] "Piešķirt šiem attēliem tagus '%1'"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -22100,7 +22104,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "Brīdinājums"
 
@@ -22121,7 +22125,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
 #, fuzzy, kde-format
 #| msgid "Continue"
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "Turpināt"
 
@@ -22133,7 +22137,7 @@ msgstr "Turpināt"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
 #, fuzzy, kde-format
 #| msgid "Cancel"
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "Atcelt"
 
@@ -23543,13 +23547,13 @@ msgstr "Augstums"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
 #, fuzzy, kde-format
 #| msgid "Error"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "Kļūda"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
 #, kde-format
-msgctxt "@info: progress bar start transfert"
+msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr ""
 
@@ -23557,7 +23561,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Google Drive export"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "Eksports uz Google disku"
 
@@ -23565,7 +23569,7 @@ msgstr "Eksports uz Google disku"
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Google Photo export"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "Eksports uz Google fotoattēliem"
 
@@ -68655,6 +68659,31 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#, fuzzy
+#~| msgctxt "@title: dialog"
+#~| msgid "Warning"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Warning"
+#~ msgstr "Brīdinājums"
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Continue"
+#~ msgstr "Turpināt"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Cancel"
+#~ msgstr "Atcelt"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Error"
+#~ msgstr "Kļūda"
 
 #, fuzzy
 #~ msgid "Subject Segmentation:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 01:52+0000\n"
+"POT-Creation-Date: 2025-10-07 02:02+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -198,7 +198,7 @@ msgstr "&Salin Sini"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
 #: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
-#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:549
 #, kde-format
 msgid "C&ancel"
 msgstr "&Batal"
@@ -304,7 +304,7 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:545
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Tetapkan sebagai Thumbnail Tag"
@@ -317,9 +317,12 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag(s) '%1' to Items"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Assign Tag to Dropped Items"
+msgid "Assign Tag '%1' to Items"
+msgid_plural "Assign Tag(s) '%1' to Items"
+msgstr[0] "Menetapkan Tag untuk Item Yg Dijatuhkan"
+msgstr[1] "Menetapkan Tag untuk Item Yg Dijatuhkan"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -22104,7 +22107,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
 #, fuzzy, kde-format
 #| msgid "Morning"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "Pagi"
 
@@ -22125,7 +22128,7 @@ msgstr "Autentikasi gagal. Klik \"Lanjutkan\" untuk mengautentik."
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
 #, fuzzy, kde-format
 #| msgid "Contribute..."
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "Kontribusikan..."
 
@@ -22137,7 +22140,7 @@ msgstr "Kontribusikan..."
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
 #, fuzzy, kde-format
 #| msgid "Cancel"
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "Batal"
 
@@ -23596,14 +23599,14 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
 #, fuzzy, kde-format
 #| msgid "Error"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "Error"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
 #, fuzzy, kde-format
 #| msgid "%v / %m"
-msgctxt "@info: progress bar start transfert"
+msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr "%v / %m"
 
@@ -23611,14 +23614,14 @@ msgstr "%v / %m"
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Google Drive export"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "Ekspor Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
 #, fuzzy, kde-format
 #| msgid "Google Drive export"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "Ekspor Google Drive"
 
@@ -67849,6 +67852,30 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Morning"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Warning"
+#~ msgstr "Pagi"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Cancel"
+#~ msgstr "Batal"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#, fuzzy
+#~| msgid "%v / %m"
+#~ msgctxt "@info: progress bar start transfert"
+#~ msgid "%v / %m"
+#~ msgstr "%v / %m"
 
 #, fuzzy
 #~| msgctxt "@title"

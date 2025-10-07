@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 01:52+0000\n"
+"POT-Creation-Date: 2025-10-07 02:02+0000\n"
 "PO-Revision-Date: 2025-09-06 10:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -211,7 +211,7 @@ msgstr "העת&קה לכאן"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
 #: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
-#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:549
 #, kde-format
 msgid "C&ancel"
 msgstr "&ביטול"
@@ -318,7 +318,7 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:545
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "הגדרת תווית תצוגה מקדימה"
@@ -332,8 +332,10 @@ msgstr[1] ""
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
 #, fuzzy, kde-format
-msgid "Assign Tag(s) '%1' to Items"
-msgstr "קביעת תווית '%1' לפריטים"
+msgid "Assign Tag '%1' to Items"
+msgid_plural "Assign Tag(s) '%1' to Items"
+msgstr[0] "קביעת תווית '%1' לפריטים"
+msgstr[1] "קביעת תווית '%1' לפריטים"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, fuzzy, kde-format
@@ -21361,7 +21363,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
 #, fuzzy, kde-format
 #| msgid "Warning"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "אזהרה"
 
@@ -21381,7 +21383,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
 #, fuzzy, kde-format
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "מכיל"
 
@@ -21393,7 +21395,7 @@ msgstr "מכיל"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
 #, fuzzy, kde-format
 #| msgid "Cancel"
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "ביטול"
 
@@ -22742,27 +22744,27 @@ msgstr "כל הקבצים"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
 #, fuzzy, kde-format
 #| msgid "Error"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "שגיאה"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
 #, kde-format
-msgctxt "@info: progress bar start transfert"
+msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
 #, fuzzy, kde-format
 #| msgid "Toggle Auto"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "שינוי מצב אוטומטי"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
 #, fuzzy, kde-format
 #| msgid "Toggle Auto"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "שינוי מצב אוטומטי"
 
@@ -65520,6 +65522,29 @@ msgstr "פריטי אלבום"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "סידור תמונות"
+
+#, fuzzy
+#~| msgid "Warning"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Warning"
+#~ msgstr "אזהרה"
+
+#, fuzzy
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Continue"
+#~ msgstr "מכיל"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Cancel"
+#~ msgstr "ביטול"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Error"
+#~ msgstr "שגיאה"
 
 #, fuzzy
 #~ msgid "Subject Segmentation:"

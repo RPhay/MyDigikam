@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 01:52+0000\n"
+"POT-Creation-Date: 2025-10-07 02:02+0000\n"
 "PO-Revision-Date: 2025-09-23 13:54+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -265,7 +265,7 @@ msgstr "&Copier ici"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
 #: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
-#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:549
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annuler"
@@ -371,7 +371,7 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Confirmer le nom du visage de « %2 » vers l'élément."
 msgstr[1] "Modifier les noms des visages de « %2 » vers les éléments."
 
-#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:545
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Définir comme vignette d'étiquette"
@@ -384,9 +384,12 @@ msgstr[0] "Modifier le nom du visage de « %2 » vers « %3 »"
 msgstr[1] "Modifier les noms des visages de « %2 » vers « %3 »"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag(s) '%1' to Items"
-msgstr "Attribuer l(es) étiquette(s) « %1 » à des éléments"
+#, fuzzy, kde-format
+#| msgid "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%1' to Items"
+msgid_plural "Assign Tag(s) '%1' to Items"
+msgstr[0] "Attribuer l(es) étiquette(s) « %1 » à des éléments"
+msgstr[1] "Attribuer l(es) étiquette(s) « %1 » à des éléments"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -22900,8 +22903,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, kde-format
-msgctxt "@title: window start transfert"
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "Avertissement"
 
@@ -22922,8 +22927,9 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, kde-format
-msgctxt "@action: button start transfert"
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "Continuer"
 
@@ -22933,8 +22939,9 @@ msgstr "Continuer"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, kde-format
-msgctxt "@action: button start transfert"
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -24351,26 +24358,32 @@ msgstr "L'appel à Google Drive a échoué : %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, kde-format
-msgctxt "@title: window start transfert"
+#, fuzzy, kde-format
+#| msgid "Error"
+msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "Erreur"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, kde-format
-msgctxt "@info: progress bar start transfert"
+#, fuzzy, kde-format
+#| msgid "%v / %m"
+msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, kde-format
-msgctxt "@info: start transfert"
+#, fuzzy, kde-format
+#| msgctxt "@info: start transfert"
+#| msgid "Google Drive export"
+msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "Exportation vers Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, kde-format
-msgctxt "@info: start transfert"
+#, fuzzy, kde-format
+#| msgctxt "@info: start transfert"
+#| msgid "Google Photos export"
+msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "Exportation vers Google Photo"
 
@@ -69280,6 +69293,26 @@ msgstr "Éléments de l'album"
 #, kde-format
 msgid "Import Items"
 msgstr "Importer des éléments"
+
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Warning"
+#~ msgstr "Avertissement"
+
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Continue"
+#~ msgstr "Continuer"
+
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
+
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Error"
+#~ msgstr "Erreur"
+
+#~ msgctxt "@info: progress bar start transfert"
+#~ msgid "%v / %m"
+#~ msgstr "%v / %m"
 
 #~ msgid "Subject Segmentation:"
 #~ msgstr "Segmentation de l'objet :"

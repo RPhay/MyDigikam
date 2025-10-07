@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 01:52+0000\n"
+"POT-Creation-Date: 2025-10-07 02:02+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -217,7 +217,7 @@ msgstr "यहाँ नक़ल करें (&C)"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
 #: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
-#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:549
 #, kde-format
 msgid "C&ancel"
 msgstr "रद्द करें (&a)"
@@ -324,7 +324,7 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:545
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "टैग लघुछवि के रूप में सेट करें"
@@ -338,8 +338,10 @@ msgstr[1] ""
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
 #, fuzzy, kde-format
-msgid "Assign Tag(s) '%1' to Items"
-msgstr "टैग '%1' इन वस्तुओं पर आबंटित करें"
+msgid "Assign Tag '%1' to Items"
+msgid_plural "Assign Tag(s) '%1' to Items"
+msgstr[0] "टैग '%1' इन वस्तुओं पर आबंटित करें"
+msgstr[1] "टैग '%1' इन वस्तुओं पर आबंटित करें"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, fuzzy, kde-format
@@ -21672,7 +21674,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
 #, fuzzy, kde-format
 #| msgid "Warning"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "चेतावनी"
 
@@ -21693,7 +21695,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
 #, fuzzy, kde-format
 #| msgid "Contains"
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "रखे हुए है"
 
@@ -21705,7 +21707,7 @@ msgstr "रखे हुए है"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
 #, fuzzy, kde-format
 #| msgid "Cancel"
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "रद्द करें"
 
@@ -23079,27 +23081,27 @@ msgstr "उन्नतांश"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
 #, fuzzy, kde-format
 #| msgid "Error"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "त्रुटि"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
 #, kde-format
-msgctxt "@info: progress bar start transfert"
+msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
 #, fuzzy, kde-format
 #| msgid "Toggle Auto"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "स्वचालित टॉगल करें"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
 #, fuzzy, kde-format
 #| msgid "Toggle Auto"
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "स्वचालित टॉगल करें"
 
@@ -66561,6 +66563,24 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवियाँ छांटें (&S)"
+
+#, fuzzy
+#~| msgid "Warning"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Warning"
+#~ msgstr "चेतावनी"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Cancel"
+#~ msgstr "रद्द करें"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Error"
+#~ msgstr "त्रुटि"
 
 #, fuzzy
 #~ msgid "Subject Segmentation:"

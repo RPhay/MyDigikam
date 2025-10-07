@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 01:52+0000\n"
+"POT-Creation-Date: 2025-10-07 02:02+0000\n"
 "PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -232,7 +232,7 @@ msgstr "&Kopiatu hemen"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
 #: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
-#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:549
 #, kde-format
 msgid "C&ancel"
 msgstr "&Utzi"
@@ -338,7 +338,7 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Berretsi '%2' aurpegi-izena elementuari"
 msgstr[1] "Berretsi '%2' aurpegi-izena elementuei"
 
-#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:545
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Ezarri etiketaren koadro txiki gisa"
@@ -351,9 +351,12 @@ msgstr[0] "Aldatu aurpegiaren izena '%2'(e)tik '%3'(e)ra"
 msgstr[1] "Aldatu aurpegiaren izenak '%2'(e)tik '%3'(e)ra"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag(s) '%1' to Items"
-msgstr "Esleitu '%1' etiketa elementuei"
+#, fuzzy, kde-format
+#| msgid "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%1' to Items"
+msgid_plural "Assign Tag(s) '%1' to Items"
+msgstr[0] "Esleitu '%1' etiketa elementuei"
+msgstr[1] "Esleitu '%1' etiketa elementuei"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -22600,7 +22603,7 @@ msgstr "Ez da irudirik hautatu. Mesedez, hautatu zama-igo beharreko irudiak."
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
 #, fuzzy, kde-format
 #| msgid "Warning"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "Abisua"
 
@@ -22622,7 +22625,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
 #, fuzzy, kde-format
 #| msgid "Continue"
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "Jarraitu"
 
@@ -22634,7 +22637,7 @@ msgstr "Jarraitu"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
 #, fuzzy, kde-format
 #| msgid "Cancel"
-msgctxt "@action: button start transfert"
+msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "Utzi"
 
@@ -24132,25 +24135,25 @@ msgstr "Google Drive deitzea huts egin du: %1\n"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
 #, fuzzy, kde-format
 #| msgid "Error"
-msgctxt "@title: window start transfert"
+msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "Errorea"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
 #, fuzzy, kde-format
-msgctxt "@info: progress bar start transfert"
+msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
 #, fuzzy, kde-format
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "Google Drive esportatu"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
 #, fuzzy, kde-format
-msgctxt "@info: start transfert"
+msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "Google Maps API V2"
 
@@ -69922,6 +69925,35 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#, fuzzy
+#~| msgid "Warning"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Warning"
+#~ msgstr "Abisua"
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Continue"
+#~ msgstr "Jarraitu"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Cancel"
+#~ msgstr "Utzi"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Error"
+#~ msgstr "Errorea"
+
+#, fuzzy
+#~ msgctxt "@info: progress bar start transfert"
+#~ msgid "%v / %m"
+#~ msgstr "%v / %m"
 
 #, fuzzy
 #~| msgctxt "@title"

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 01:52+0000\n"
-"PO-Revision-Date: 2025-09-25 11:49+0400\n"
+"POT-Creation-Date: 2025-10-07 02:02+0000\n"
+"PO-Revision-Date: 2025-10-06 12:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -208,7 +208,7 @@ msgstr "ان&سخ هنا"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:75 core/app/dragdrop/itemdragdrop.cpp:859
 #: core/app/dragdrop/tagdragdrop.cpp:268 core/app/dragdrop/tagdragdrop.cpp:401
-#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:547
+#: core/app/dragdrop/tagdragdrop.cpp:445 core/app/dragdrop/tagdragdrop.cpp:549
 #, kde-format
 msgid "C&ancel"
 msgstr "أ&لغِ"
@@ -318,7 +318,7 @@ msgstr[3] "أكد اسم الوجه '%2' للعناصر"
 msgstr[4] "أكد اسم الوجه '%2' للعناصر"
 msgstr[5] "أكد اسم الوجه '%2' للعناصر"
 
-#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:543
+#: core/app/dragdrop/tagdragdrop.cpp:397 core/app/dragdrop/tagdragdrop.cpp:545
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "اضبط كمصغّرة للوسم"
@@ -335,9 +335,16 @@ msgstr[4] "غير أسماء الوجه من '%2' إلى '%3'"
 msgstr[5] "غير أسماء الوجه من '%2' إلى '%3'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag(s) '%1' to Items"
-msgstr "أسند الوسوم الآتية ’%1‘ إلى العناصر"
+#, fuzzy, kde-format
+#| msgid "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%1' to Items"
+msgid_plural "Assign Tag(s) '%1' to Items"
+msgstr[0] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
+msgstr[1] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
+msgstr[2] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
+msgstr[3] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
+msgstr[4] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
+msgstr[5] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -22196,8 +22203,10 @@ msgstr "لا صور محدّدة. فضلًا اختر أيّ الصّور الت
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, kde-format
-msgctxt "@title: window start transfert"
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "تحذير"
 
@@ -22216,8 +22225,9 @@ msgstr "فشل الاستيثاق. انقر \"تابع\" للاستيثاق."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, kde-format
-msgctxt "@action: button start transfert"
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "تابع"
 
@@ -22227,8 +22237,9 @@ msgstr "تابع"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, kde-format
-msgctxt "@action: button start transfert"
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "ألغِ"
 
@@ -23613,26 +23624,32 @@ msgstr "فشل استدعاء غوغل درايف: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, kde-format
-msgctxt "@title: window start transfert"
+#, fuzzy, kde-format
+#| msgid "Error"
+msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "خطأ"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, kde-format
-msgctxt "@info: progress bar start transfert"
+#, fuzzy, kde-format
+#| msgid "%v / %m"
+msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, kde-format
-msgctxt "@info: start transfert"
+#, fuzzy, kde-format
+#| msgctxt "@info: start transfert"
+#| msgid "Google Drive export"
+msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "تصدير «غوغل درايف»"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, kde-format
-msgctxt "@info: start transfert"
+#, fuzzy, kde-format
+#| msgctxt "@info: start transfert"
+#| msgid "Google Photos export"
+msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "تصدير صور غوغل"
 
@@ -66470,7 +66487,7 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"عملية تحديث تجزئات الملف تستغرق بضع دقائق أو ساعات.\n"
+"عملية تحديث تلبيدات الملف تستغرق بضع دقائق أو ساعات.\n"
 "يرجى التأكد من أن أي مجموعات مهمة على الوسائط القابلة للإزالة متصلة.\n"
 "بعد الترقية لا يمكنك استخدام قاعدة بياناتك مع إصدار دجيكام قبل 8.5.0.\n"
 "هل تريد بدء التحديث؟"
@@ -66485,7 +66502,7 @@ msgstr "التّحديثات"
 #, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
-msgstr "حدث تجزئات الملف"
+msgstr "حدّث تلبيدات الملف"
 
 #: core/utilities/setup/setupdatabase.cpp:190
 #, kde-format
@@ -66498,7 +66515,7 @@ msgid ""
 "After the upgrade you cannot use your database with a digiKam version prior "
 "to 8.5.0."
 msgstr ""
-"تستخدم تجزئات الملفات للتعرف على الملفات المتطابقة ولعرض المصغرات. خوارزمية "
+"تستخدم تلبيدات الملفات للتعرف على الملفات المتطابقة ولعرض المصغرات. خوارزمية "
 "جديدة محسنة لإنشاء التجزئة تستخدم الآن. الخوارزمية القديمة، مع ذلك، لا تزال "
 "تعمل بشكل جيد جدًا، لذا يوصى بتنفيذ هذه الترقية، ولكنه ليس مطلوبًا.\n"
 "بعد الترقية لا يمكنك استخدام قاعدة بياناتك مع إصدار دجيكام قبل 8.5.0."
@@ -66507,7 +66524,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
-msgstr "احصل على معلومات حول <b>تحديث تجزئات الملف</b>"
+msgstr "احصل على معلومات حول <b>حدّث تلبيدات الملف</b>"
 
 #: core/utilities/setup/setupgeolocation.cpp:106
 #, kde-format
@@ -67395,6 +67412,26 @@ msgstr "عناصر الألبوم"
 #, kde-format
 msgid "Import Items"
 msgstr "استورد عناصر"
+
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Warning"
+#~ msgstr "تحذير"
+
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Continue"
+#~ msgstr "تابع"
+
+#~ msgctxt "@action: button start transfert"
+#~ msgid "Cancel"
+#~ msgstr "ألغِ"
+
+#~ msgctxt "@title: window start transfert"
+#~ msgid "Error"
+#~ msgstr "خطأ"
+
+#~ msgctxt "@info: progress bar start transfert"
+#~ msgid "%v / %m"
+#~ msgstr "%v / %m"
 
 #, fuzzy
 #~| msgid "Metadata Information"
