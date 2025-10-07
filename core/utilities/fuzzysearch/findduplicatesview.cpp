@@ -210,7 +210,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     // ---
 
-    d->similarityLabel         = new QLabel(i18nc("@label", "Similarity range:"));
+    d->similarityLabel       = new QLabel(i18nc("@label", "Similarity range:"));
     d->similarityLabel->setBuddy(d->similarityRange);
 
     d->similarityRange       = new DIntRangeBox();
@@ -539,10 +539,10 @@ void FindDuplicatesView::enableControlWidgets(bool val)
     d->removeDuplicatesBtn->setEnabled(val);
     d->updateFingerPrtBtn->setEnabled(val);
     d->findDuplicatesBtn->setEnabled(val);
+    d->refImageSelMethod->setEnabled(val);
     d->albumTagRelation->setEnabled(val);
     d->similarityRange->setEnabled(val);
     d->albumSelectors->setEnabled(val);
-    d->refImageSelMethod->setEnabled(val);
 
     d->albumTagRelationLabel->setEnabled(val);
     d->restrictResultsLabel->setEnabled(val);
@@ -551,13 +551,13 @@ void FindDuplicatesView::enableControlWidgets(bool val)
 
 void FindDuplicatesView::slotFindDuplicates()
 {
-    d->albumSelectors->saveState();
     d->refImageAlbumSelector->saveState();
+    d->albumSelectors->saveState();
     enableControlWidgets(false);
     slotClear();
 
-    AlbumList albums;
     AlbumList tags;
+    AlbumList albums;
     AlbumList referenceImageSelector;
 
     if (d->albumTagRelation->itemData(d->albumTagRelation->currentIndex()).toInt() == HaarIface::AlbumTagRelation::NoMix)
@@ -577,7 +577,8 @@ void FindDuplicatesView::slotFindDuplicates()
         tags   = d->albumSelectors->selectedTags();
     }
 
-    const auto referenceImageSelectionMethod = (HaarIface::RefImageSelMethod)d->refImageSelMethod->itemData(d->refImageSelMethod->currentIndex()).toInt();
+    const auto referenceImageSelectionMethod = (HaarIface::RefImageSelMethod)d->refImageSelMethod->
+                                                itemData(d->refImageSelMethod->currentIndex()).toInt();
 
     if (referenceImageSelectionMethod != HaarIface::RefImageSelMethod::OlderOrLarger)
     {
@@ -597,14 +598,14 @@ void FindDuplicatesView::slotFindDuplicates()
             this, SIGNAL(signalScanNotification(QString,int)));
 
     connect(finder, &DuplicatesFinder::signalComplete,
-            this, [this]
+            this, [this]()
        {
             QTimer::singleShot(0, this, SLOT(slotComplete()));
        }
     );
 
     connect(finder, &DuplicatesFinder::signalCanceled,
-            this, [this]
+            this, [this]()
        {
             d->removeDuplicatesBtn->setEnabled(false);
        }
