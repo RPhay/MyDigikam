@@ -81,7 +81,7 @@ void TestGPXParsing::testCorrelator1()
     TrackCorrelator::Correlation::List itemsToCorrelate;
     {
         TrackCorrelator::Correlation myItem;
-        myItem.dateTime = TrackReader::ParseTime(QLatin1String("2009-07-26T18:00:00Z"));
+        myItem.dateTime = TrackReader::parseTime(QLatin1String("2009-07-26T18:00:00Z"));
         itemsToCorrelate << myItem;
     }
 
@@ -143,7 +143,7 @@ void TestGPXParsing::testInterpolation()
     TrackCorrelator::Correlation::List itemsToCorrelate;
     {
         TrackCorrelator::Correlation myItem;
-        myItem.dateTime = TrackReader::ParseTime(QLatin1String("2009-11-29T17:00:30Z"));
+        myItem.dateTime = TrackReader::parseTime(QLatin1String("2009-11-29T17:00:30Z"));
         itemsToCorrelate << myItem;
     }
 

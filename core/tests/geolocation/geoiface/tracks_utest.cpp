@@ -91,7 +91,7 @@ void TestTracks::testCustomDateTimeParsing()
 {
     {
         // this should work as usual:
-        const QDateTime time1 = TrackReader::ParseTime(QString::fromLatin1("2009-03-11T13:39:55.622Z"));
+        const QDateTime time1 = TrackReader::parseTime(QString::fromLatin1("2009-03-11T13:39:55.622Z"));
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QCOMPARE(time1.date(), QDate(2009, 03, 11));
         QCOMPARE(time1.time(), QTime(13, 39, 55, 622));
@@ -99,7 +99,7 @@ void TestTracks::testCustomDateTimeParsing()
 
     {
         // eCoach in N900: 2010-01-14T09:26:02.287+02:00
-        const QDateTime time1 = TrackReader::ParseTime(QString::fromLatin1("2010-01-14T09:26:02.287+02:00"));
+        const QDateTime time1 = TrackReader::parseTime(QString::fromLatin1("2010-01-14T09:26:02.287+02:00"));
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QCOMPARE(time1.date(), QDate(2010, 01, 14));
         QCOMPARE(time1.time(), QTime(7, 26, 02, 287));
@@ -107,7 +107,7 @@ void TestTracks::testCustomDateTimeParsing()
 
     {
         // test negative time zone offset: 2010-01-14T09:26:02.287+02:00
-        const QDateTime time1 = TrackReader::ParseTime(QString::fromLatin1("2010-01-14T09:26:02.287-02:00"));
+        const QDateTime time1 = TrackReader::parseTime(QString::fromLatin1("2010-01-14T09:26:02.287-02:00"));
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QCOMPARE(time1.date(), QDate(2010, 01, 14));
         QCOMPARE(time1.time(), QTime(11, 26, 02, 287));
@@ -115,7 +115,7 @@ void TestTracks::testCustomDateTimeParsing()
 
     {
         // test negative time zone offset with minutes: 2010-01-14T09:26:02.287+03:15
-        const QDateTime time1 = TrackReader::ParseTime(QString::fromLatin1("2010-01-14T09:26:02.287-03:15"));
+        const QDateTime time1 = TrackReader::parseTime(QString::fromLatin1("2010-01-14T09:26:02.287-03:15"));
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QCOMPARE(time1.date(), QDate(2010, 01, 14));
         QCOMPARE(time1.time(), QTime(12, 41, 02, 287));
