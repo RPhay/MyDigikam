@@ -593,16 +593,13 @@ void FindDuplicatesView::slotFindDuplicates()
                                                           d->searchResultRestriction->itemData(d->searchResultRestriction->currentIndex()).toInt(),
                                                           referenceImageSelectionMethod, referenceImageSelector);
 
-    connect(finder, SIGNAL(signalComplete()),
-            this, SLOT(slotComplete()));
-
     connect(finder, SIGNAL(signalScanNotification(QString,int)),
             this, SIGNAL(signalScanNotification(QString,int)));
 
     connect(finder, &DuplicatesFinder::signalComplete,
             this, [this]
        {
-            d->removeDuplicatesBtn->setEnabled(true);
+            QTimer::singleShot(0, this, SLOT(slotComplete()));
        }
     );
 
