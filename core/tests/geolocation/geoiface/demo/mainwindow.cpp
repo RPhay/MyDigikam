@@ -43,7 +43,7 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-// geoiface includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "dmetadata.h"
@@ -52,13 +52,11 @@
 #include "mapwidget.h"
 #include "itemmarkertiler.h"
 #include "geoifacecommon.h"
-
-// Local includes
-
 #include "mydragdrophandler.h"
 #include "mytreewidget.h"
 #include "myimageitem.h"
 #include "dfiledialog.h"
+#include "actionthreadbase.h"
 
 using namespace Digikam;
 
@@ -172,6 +170,30 @@ void MyTrackModelHelper::slotTrackModelChanged()
 TrackManager::Track::List MyTrackModelHelper::getTracks() const
 {
     return m_tracks;
+}
+
+// ----------------------------------------------------------------------
+
+MyImageData s_loadImageData(const QUrl& urlToLoad)
+{
+    ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
+
+    MyImageData imageData;
+    imageData.url = urlToLoad;
+
+    // TODO: error handling!
+
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load(urlToLoad.toLocalFile());
+    double lat = 0.0, lon = 0.0, alt = 0.0;
+
+    if (meta->getGPSInfo(alt, lat, lon))
+    {
+        imageData.coordinates.setLatLon(lat, lon);
+        imageData.coordinates.setAlt(alt);
+    }
+
+    return imageData;
 }
 
 // ----------------------------------------------------------------------
@@ -379,24 +401,6 @@ void MainWindow::closeEvent(QCloseEvent* e)
     e->accept();
 }
 
-MyImageData LoadImageData(const QUrl& urlToLoad)
-{
-    MyImageData imageData;
-    imageData.url = urlToLoad;
-
-    // TODO: error handling!
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->load(urlToLoad.toLocalFile());
-    double lat, lon, alt;
-
-    if (meta->getGPSInfo(alt, lat, lon))
-    {
-        imageData.coordinates.setLatLon(lat, lon);
-        imageData.coordinates.setAlt(alt);
-    }
-
-    return imageData;
-}
 
 void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
 {
@@ -485,7 +489,7 @@ void MainWindow::slotScheduleImagesForLoading(const QList<QUrl>& imagesToSchedul
     connect(watcher, SIGNAL(resultsReadyAt(int,int)),
             this, SLOT(slotFutureResultsReadyAt(int,int)));
 
-    QFuture<MyImageData> future = QtConcurrent::mapped(imagesToSchedule, LoadImageData);
+    QFuture<MyImageData> future = QtConcurrent::mapped(imagesToSchedule, s_loadImageData);
     watcher->setFuture(future);
 
     d->imageLoadingRunningFutures << future;

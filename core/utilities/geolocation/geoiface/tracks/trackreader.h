@@ -41,6 +41,8 @@ public:
 
         TrackReadResult() = default;
 
+    public:
+
         TrackManager::Track            track;
         bool                           isValid = false;
         QString                        loadError;
@@ -54,7 +56,7 @@ public:
     ~TrackReader()                                          override;
 
     static TrackReadResult loadTrackFile(const QUrl& url);
-    static QDateTime ParseTime(const QString& tstring);
+    static QDateTime parseTime(const QString& tstring);
 
 private:
 
