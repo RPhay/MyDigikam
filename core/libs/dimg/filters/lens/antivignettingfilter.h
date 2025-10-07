@@ -87,7 +87,7 @@ private:
 
     void           filterImage()                           override;
 
-    double         hypothenuse(double x, double y);
+    double         hypotenuse(double x, double y);
     uchar          clamp8bits(double x);
     unsigned short clamp16bits(double x);
     double         attenuation(double r1, double r2, double distcenter);

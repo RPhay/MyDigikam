@@ -86,13 +86,13 @@ void AntiVignettingFilter::filterImage()
 
     xsize    = (Height + 1) / 2;
     ysize    = (Width  + 1) / 2;
-    erad     = qRound(hypothenuse(xsize, ysize) * m_settings.outerradius);
-    irad     = qRound(hypothenuse(xsize, ysize) * m_settings.outerradius * m_settings.innerradius);
+    erad     = qRound(hypotenuse(xsize, ysize) * m_settings.outerradius);
+    irad     = qRound(hypotenuse(xsize, ysize) * m_settings.outerradius * m_settings.innerradius);
 /*
     xsize    = qRound(Width  / 2.0 + fabs(m_settings.xshift));
     ysize    = qRound(Height / 2.0 + fabs(m_settings.yshift));
 
-    diagonal = qRound(hypothenuse(xsize, ysize)) +  1;
+    diagonal = qRound(hypotenuse(xsize, ysize)) +  1;
 */
     xctr     = qRound(Width  / 2.0 + m_settings.xshift);
     yctr     = qRound(Height / 2.0 + m_settings.yshift);
@@ -106,7 +106,7 @@ void AntiVignettingFilter::filterImage()
         {
             p  = (col * Width + row) * 4;
             xd = abs(yctr - col);
-            td = qRound(hypothenuse(xd, yd));
+            td = qRound(hypotenuse(xd, yd));
 
             if (!m_orgImage.sixteenBit())       // 8 bits image
             {
@@ -135,7 +135,7 @@ void AntiVignettingFilter::filterImage()
     }
 }
 
-inline double AntiVignettingFilter::hypothenuse(double x, double y)
+inline double AntiVignettingFilter::hypotenuse(double x, double y)
 {
     return (sqrt(x * x + y * y));
 }
