@@ -471,6 +471,13 @@ void FacesEngine::slotImagesSkipped(const MLPipelinePackageNotify::Ptr& package)
 
 void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& package)
 {
+    uint adv = 0;
+
+    if ((adv = checkProgressNeeded()) == 0)
+    {
+        return;
+    }
+
     setThumbnail(package->thumbnail);
 
     QString lbl = i18n("Face Scanning: %1\n", package->name);
@@ -502,7 +509,7 @@ void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& packag
     d->totalFacesFound += package->processed;
 
     setLabel(lbl);
-    advance(1);
+    advance(adv);
 }
 
 QString FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource source)

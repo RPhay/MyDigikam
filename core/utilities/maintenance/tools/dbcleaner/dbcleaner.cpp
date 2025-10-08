@@ -386,7 +386,14 @@ void DbCleaner::slotShrinkDatabases()
 
 void DbCleaner::slotAdvance()
 {
-    advance(1);
+    uint adv = 0;
+
+    if ((adv = checkProgressNeeded()) == 0)
+    {
+        return;
+    }
+
+    advance(adv);
 }
 
 void DbCleaner::slotShrinkNextDBInfo(bool done, bool passed)

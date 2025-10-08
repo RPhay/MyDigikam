@@ -231,12 +231,19 @@ void MetadataRemover::parseList()
 
 void MetadataRemover::slotAdvance(const ItemInfo& inf)
 {
+    uint adv = 0;
+
+    if ((adv = checkProgressNeeded()) == 0)
+    {
+        return;
+    }
+
     QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
 
     QString lbl = i18n("Clear Metadata: %1\n", inf.name());
     lbl.append(i18n("Album: %1\n", album + inf.relativePath()));
     setLabel(lbl);
-    advance(1);
+    advance(adv);
 }
 
 void MetadataRemover::slotDone()

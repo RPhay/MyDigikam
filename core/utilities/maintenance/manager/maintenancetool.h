@@ -47,6 +47,12 @@ public:
      */
     virtual void setUseMultiCoreCPU(bool) {};
 
+    /**
+     * Return progress advance value if the 50ms for the next progress
+     * update is completed, otherwise return 0.
+     */
+    uint checkProgressNeeded() const;
+
 Q_SIGNALS:
 
     /**

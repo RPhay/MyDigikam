@@ -153,13 +153,20 @@ void FingerPrintsGenerator::slotStart()
 
 void FingerPrintsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
+    uint adv = 0;
+
+    if ((adv = checkProgressNeeded()) == 0)
+    {
+        return;
+    }
+
     QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
 
     QString lbl = i18n("Rebuild Fingerprint: %1\n", inf.name());
     lbl.append(i18n("Album: %1", album + inf.relativePath()));
     setLabel(lbl);
     setThumbnail(QIcon(QPixmap::fromImage(img)));
-    advance(1);
+    advance(adv);
 }
 
 void FingerPrintsGenerator::slotDone()

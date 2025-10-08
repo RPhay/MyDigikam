@@ -44,6 +44,9 @@ public:
 public:
 
     bool          notification = true;
+    uint          advanceSteps = 1;
+    qint64	      progressTime = 0;
+
     QElapsedTimer duration;
 };
 
@@ -75,6 +78,25 @@ MaintenanceTool::~MaintenanceTool()
 void MaintenanceTool::setNotificationEnabled(bool b)
 {
     d->notification = b;
+}
+
+uint MaintenanceTool::checkProgressNeeded() const
+{
+    if (
+        (d->progressTime == 0)                        ||
+        (d->duration.elapsed() > (d->progressTime + 50))
+       )
+    {
+        d->progressTime = d->duration.elapsed();
+        uint adv        = d->advanceSteps;
+        d->advanceSteps = 1;
+
+        return adv;
+    }
+
+    d->advanceSteps++;
+
+    return 0;
 }
 
 void MaintenanceTool::start()

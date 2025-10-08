@@ -167,6 +167,13 @@ void ImageQualitySorter::slotStart()
 
 void ImageQualitySorter::slotAdvance(const ItemInfo& inf, const QImage& img, int pick)
 {
+    uint adv = 0;
+
+    if ((adv = checkProgressNeeded()) == 0)
+    {
+        return;
+    }
+
     QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
 
     QString lbl = i18n("Image Quality: %1\n", inf.name());
@@ -175,7 +182,7 @@ void ImageQualitySorter::slotAdvance(const ItemInfo& inf, const QImage& img, int
     setLabel(lbl);
 
     setThumbnail(QIcon(QPixmap::fromImage(img)));
-    advance(1);
+    advance(adv);
 }
 
 void ImageQualitySorter::slotDone()
