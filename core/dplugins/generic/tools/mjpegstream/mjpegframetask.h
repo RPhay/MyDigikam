@@ -44,7 +44,7 @@ public:
      * Standard constructor using MJPEG stream settings.
      */
     explicit MjpegFrameTask(const MjpegStreamSettings& settings);
-    ~MjpegFrameTask() override;
+    ~MjpegFrameTask()   override;
 
 Q_SIGNALS:
 
@@ -70,7 +70,7 @@ private:
      * This include transition between images and effect to render items.
      * Results are sent by signalFrameChanged().
      */
-    void run();
+    void run()          override;
 
     MjpegFrameTask(QObject*);
 

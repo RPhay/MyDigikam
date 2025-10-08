@@ -56,7 +56,7 @@ public Q_SLOTS:
 
 protected:
 
-    void run();
+    void run()          override;
 
 private:
 
