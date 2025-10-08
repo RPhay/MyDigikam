@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 02:02+0000\n"
+"POT-Creation-Date: 2025-10-08 01:59+0000\n"
 "PO-Revision-Date: 2025-09-14 15:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -11654,7 +11654,7 @@ msgstr "Файлът не е записан"
 msgid "Cannot save \"%1\" file"
 msgstr "Файлът \"%1\" не може да се запише"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:223
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -11663,38 +11663,38 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Редактор на геолокация"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:256
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Показване на позициите с отметки върху картата."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:274
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Подредба:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:281
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "Една карта"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:282
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Две карти - в ляво и дясно"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:283
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Две карти - отгоре и отдолу"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:302
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
@@ -11705,67 +11705,67 @@ msgstr "Две карти - отгоре и отдолу"
 msgid "OK"
 msgstr "Добре"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:326
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Подреждане"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:328
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Първо най-старите"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:332
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:337
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Първо най-младите"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Детайли"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS корелатор"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:379
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Отмяна/Повторение"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:380
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Обратно геокодиране"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:381
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Търсене"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:382
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Експортиране в KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:595
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:600
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Зареждане на метаданни -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:788
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:793
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11773,25 +11773,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Имате 1 модифицирано изображение."
 msgstr[1] "Имате %1 модифицирани изображения."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:800
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Незапазени промени"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:801
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Искате ли да запазите промените, които сте направили в тях?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:916
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Запазване на промените -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -11828,13 +11828,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Грешка"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:976
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Част от информацията не можа да се запази:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1014
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -40266,8 +40266,10 @@ msgid "Tagging Mode:"
 msgstr "Режим на маркиране:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, kde-format
-msgctxt "@item: remplace existing autotags entries in database"
+#, fuzzy, kde-format
+#| msgctxt "@item: remplace existing autotags entries in database"
+#| msgid "Replace Existing"
+msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Замяна на съществуващото"
 
@@ -58180,22 +58182,22 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Да се прекъсне ли обратното геокодиране?"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:242
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:248
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Грешка при отваряне: %1"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:249
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:255
 #, kde-format
 msgid "File is empty."
 msgstr "Файлът е празен."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:281
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:287
 #, kde-format
 msgid "Probably not a GPX file."
 msgstr "Вероятно не е GPX файл."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:293
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:299
 #, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."

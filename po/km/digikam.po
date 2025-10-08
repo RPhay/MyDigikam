@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 02:02+0000\n"
+"POT-Creation-Date: 2025-10-08 01:59+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -11488,7 +11488,7 @@ msgstr "ឈ្មោះ​ឯកសារ​"
 msgid "Cannot save \"%1\" file"
 msgstr "មិន​អាច​រក្សា​ទុក​ឯកសារ \"%1\""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:223
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -11497,35 +11497,35 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "តម្រង​ភូមិសាស្ត្រ"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:256
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:261
 #, fuzzy, kde-format
 #| msgid "Display bookmarked positions on the map."
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "បង្ហាញ​ទីតាំង​ដែល​ចំណាំ​លើ​ផែន​ទី ។"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:274
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
 #, fuzzy, kde-format
 #| msgid "Layout:"
 msgctxt "@label"
 msgid "Layout:"
 msgstr "ប្លង់ ៖"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:281
 #, fuzzy, kde-format
 #| msgid "One map"
 msgctxt "@item"
 msgid "One map"
 msgstr "ផែន​ទី​​មួយ​"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:282
 #, fuzzy, kde-format
 #| msgid "Two maps - vertical"
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "ផែន​ទី​ពីរ​ - បញ្ឈរ​​"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:283
 #, fuzzy, kde-format
 #| msgid "Two maps - horizontal"
 msgctxt "@item"
@@ -11533,7 +11533,7 @@ msgid "Two maps - top and bottom"
 msgstr "ផែន​ទី​ពីរ​ - ផ្ដេក​​"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:302
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
@@ -11544,77 +11544,77 @@ msgstr "ផែន​ទី​ពីរ​ - ផ្ដេក​​"
 msgid "OK"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:326
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "តម្រៀប​"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:328
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "ដំបូង​បង្ហាញ​ចាស់​បំផុត"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:332
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:337
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "ដំបូង​បង្ហាញ​​ថ្មី​​បំផុត"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "សេចក្ដី​លម្អិត​"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
 #, fuzzy, kde-format
 #| msgid "GPS Correlator"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "កម្មវិធី​តភ្ជាប់ GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:379
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "មិន​ធ្វើ​វិញ​​/​ធ្វើវិញ​"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:380
 #, fuzzy, kde-format
 #| msgid "Reverse Geocoding"
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "ដាក់ Geocoding បញ្ច្រាស​"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:381
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "ស្វែងរក​"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:382
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "នាំចេញ"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:595
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:600
 #, fuzzy, kde-format
 #| msgid "Loading metadata - %p%"
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "ទិន្នន័យ​មេតា​ដែល​ផ្ទុក - %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:788
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:793
 #, fuzzy, kde-format
 #| msgid "You have 1 modified image."
 #| msgid_plural "You have %1 modified images."
@@ -11623,28 +11623,28 @@ msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] "អ្នក​​បាន​កែប្រែ​រូបភាព %1 ។"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:800
 #, fuzzy, kde-format
 #| msgid "Unsaved changes"
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "មិន​បាន​រក្សាទុក​ការផ្លាស់ប្ដូរ​ឡើយ​"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:801
 #, fuzzy, kde-format
 #| msgid "%1 Would you like to save the changes you made to them?"
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 តើ​អ្នក​ចង់​រក្សាទុក​ការ​ផ្លាស់ប្ដូរ​ដែល​អ្នក​បាន​ធ្វើ​ទៅកាន់​វា​ដែល​ឬ​ទេ ?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:916
 #, fuzzy, kde-format
 #| msgid "Saving changes - %p%"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "រក្សាទុក​ការ​ផ្លាស់ប្ដូរ​ %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -11682,14 +11682,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "កំហុស"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:976
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "បាន​បរាជ័យ​ដើម្បី​រក្សាទុក​ព័ត៌មាន​មួយ​ចំនួន ៖"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1014
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -40227,7 +40227,7 @@ msgstr "របៀប​វាស់​ស្ទង់ ៖"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
-msgctxt "@item: remplace existing autotags entries in database"
+msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "ធ្វើ​បច្ចុប្បន្នភាព​​"
 
@@ -59170,23 +59170,23 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "បោះបង់​ geocoding បញ្ច្រាស​ឬ​ ?"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:242
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:248
 #, kde-format
 msgid "Could not open: %1"
 msgstr "មិន​អាច​បង្កើត​​ '%1' បាន​ឡើយ​​"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:249
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:255
 #, kde-format
 msgid "File is empty."
 msgstr "ឯកសារ​​ទទេ ។​"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:281
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:287
 #, fuzzy, kde-format
 #| msgid "No GPX element found - probably not a GPX file."
 msgid "Probably not a GPX file."
 msgstr "រក​មិន​ឃើញ​ធាតុ  GPX ឡើយ - ប្រហែល​ជា​គ្មាន​​ឯកសារ​ GPX ទេ ។"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:293
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:299
 #, fuzzy, kde-format
 #| msgid "File is a GPX file, but no datapoints were found."
 msgid ""

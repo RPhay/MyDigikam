@@ -40,8 +40,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 02:02+0000\n"
-"PO-Revision-Date: 2025-10-06 20:49+0200\n"
+"POT-Creation-Date: 2025-10-08 01:59+0000\n"
+"PO-Revision-Date: 2025-10-07 20:58+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -354,11 +354,11 @@ msgstr[1] "Arcnevek módosítása: „%2” → „%3”"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
 #, fuzzy, kde-format
-#| msgid "Assign '%1' to &All Items"
+#| msgid "Assign Tag(s) '%1' to Items"
 msgid "Assign Tag '%1' to Items"
 msgid_plural "Assign Tag(s) '%1' to Items"
-msgstr[0] "„%1” hozzárendelése &az összes elemhez"
-msgstr[1] "„%1” hozzárendelése &az összes elemhez"
+msgstr[0] "A(z) „%1” címke hozzárendelése az elemekhez"
+msgstr[1] "A(z) „%1” címke hozzárendelése az elemekhez"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -373,7 +373,7 @@ msgstr "MIME-típus szűrő"
 #: core/app/filters/filtersidebarwidget.cpp:124
 #, kde-format
 msgid "Geolocation Filter"
-msgstr "Helymeghatározás szűrő"
+msgstr "Földrajzi helyzet szűrő"
 
 #: core/app/filters/filtersidebarwidget.cpp:141
 #, kde-format
@@ -398,7 +398,7 @@ msgid ""
 "This also includes the '%1' check box."
 msgstr ""
 "Megadja a képek szűréséhez használt címkék kombinálásának módját. "
-"Tartalmazza a(z) '%1' jelölőnégyzetet."
+"Tartalmazza a(z) „%1” jelölőnégyzetet."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
@@ -420,27 +420,27 @@ msgstr "Címkeszűrők"
 #: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Face tags"
-msgstr ""
+msgstr "Képek arccímkék nélkül"
 
 #: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a face tag."
-msgstr ""
+msgstr "Arccímke nélküli képek megjelenítése."
 
 #: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Face tags Matching Condition"
-msgstr ""
+msgstr "Arccímkék illeszkedési feltétele"
 
 #: core/app/filters/filtersidebarwidget.cpp:218
 #, kde-format
 msgid "Face Tags Filter"
-msgstr ""
+msgstr "Arccímkeszűrő"
 
 #: core/app/filters/filtersidebarwidget.cpp:236
 #, kde-format
 msgid "Labels Filter"
-msgstr "Címkeszűrő"
+msgstr "Jelölőszűrő"
 
 #: core/app/filters/tagfilterview.cpp:62
 #, kde-format
@@ -470,7 +470,7 @@ msgstr "Címkeszűrő mód"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
-msgstr "Címke figyelemen kívül hagyása"
+msgstr "Címke figyelmen kívül hagyása"
 
 #: core/app/filters/tagfilterview.cpp:68
 #, kde-format
@@ -487,21 +487,21 @@ msgstr "Ez a címke nem szükséges"
 #: core/app/items/delegate/itemdelegate.cpp:387
 #, kde-format
 msgid "Reference Image"
-msgstr ""
+msgstr "Referenciakép"
 
 #: core/app/items/overlays/facerejectionoverlay.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "If this is not a face, click to delete it."
-msgstr ""
+msgstr "Ha ez nem egy arc, kattintson a törléshez."
 
 #: core/app/items/overlays/groupindicatoroverlay.cpp:117
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "1 grouped item.\n"
 msgid_plural "%1 grouped items.\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 csoportosított elem.\n"
+msgstr[1] "%1 csoportosított elem.\n"
 
 #: core/app/items/overlays/groupindicatoroverlay.cpp:123
 #, kde-format
@@ -513,7 +513,7 @@ msgstr "A csoport nyitva."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group is closed."
-msgstr "A csoport zárva van."
+msgstr "A csoport zárva."
 
 #: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
@@ -521,7 +521,7 @@ msgstr "A csoport zárva van."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has geolocation information."
-msgstr "Ez az elem geolokációs információkat tartalmaz."
+msgstr "Ez az elem földrajzi információkat tartalmaz."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
 #, kde-format
@@ -578,19 +578,18 @@ msgstr[0] "Áthelyezés a Kukába"
 msgstr[1] "%1 fájl áthelyezése a Kukába"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Sorter"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "Képminőség rendező"
-msgstr[1] "Képminőség rendező"
+msgstr[0] "Képminőség-ellenőrzés"
+msgstr[1] "Képminőség-ellenőrzés"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Reset Album Icon"
-msgstr "Album ikon visszaállítása"
+msgstr "Albumikon visszaállítása"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:86
 #, kde-format
@@ -615,7 +614,7 @@ msgstr "Kiválasztás"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Children"
-msgstr "Gyermek"
+msgstr "Gyermekek"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:106
 #: core/app/items/utils/contextmenuhelper_albums.cpp:116
@@ -628,7 +627,7 @@ msgstr "Szülők"
 #, kde-format
 msgctxt "@action: deselect tags menu"
 msgid "Deselect"
-msgstr "Kijelölés megszűntetése"
+msgstr "Kijelölés megszüntetése"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:120
 #, kde-format
@@ -640,7 +639,7 @@ msgstr "Kijelölés megfordítása"
 #, kde-format
 msgctxt "@action: group items"
 msgid "Group"
-msgstr "Csoport"
+msgstr "Csoportosítás"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:74
 #, kde-format
@@ -684,7 +683,7 @@ msgstr "Eltávolítás a csoportból"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected Here"
-msgstr "Kijelöltek csoportosítása ide"
+msgstr "Kijelöltek csoportosítása itt"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:141
 #, kde-format
@@ -696,13 +695,13 @@ msgstr "Kijelöltek csoportosítása idő szerint"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Filename"
-msgstr "A kiválasztottak fájlnév szerinti csoportosítása"
+msgstr "Kijelöltek csoportosítása fájlnév szerint"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:151
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
-msgstr "A kiválasztottak idővonal / sorozat szerinti csoportosítása"
+msgstr "Kijelöltek csoportosítása idővonal / sorozat szerint"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:177
 #, kde-format
@@ -725,7 +724,7 @@ msgstr "Kijelöltek csoportosításának megszüntetése"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
-msgstr "Megnyitás ezzel..."
+msgstr "Megnyitás ezzel"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
@@ -734,7 +733,7 @@ msgstr "Megnyitás ezzel..."
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
-msgstr "Egyéb..."
+msgstr "Egyéb…"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
@@ -749,7 +748,7 @@ msgstr "Megnyitás ezzel…"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "New Tag..."
-msgstr "Új címke..."
+msgstr "Új címke…"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:35
 #, kde-format
@@ -779,13 +778,13 @@ msgstr "Megjelölés arccímkékként"
 #, kde-format
 msgctxt "@action: edit tag properties"
 msgid "Properties..."
-msgstr "Tulajdonságok ..."
+msgstr "Tulajdonságok…"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:94
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tag As Face"
-msgstr ""
+msgstr "Címke jelölésének megszüntetése arcként"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:95
 #, kde-format
@@ -795,13 +794,13 @@ msgid ""
 "contained images. Can also untag the images if wished."
 msgstr ""
 "Eltávolítja az arc tulajdonságot a kijelölt címkéből és az arc régiót a "
-"benne lévő képekből. Ezen felül megszüntetheti a képek címkéit is."
+"benne lévő képekből. Ezen felül eltávolíthatja a képek címkéit is."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:108
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tags As Face"
-msgstr ""
+msgstr "Címkék jelölésének megszüntetése arcként"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:109
 #, kde-format
@@ -810,33 +809,32 @@ msgid ""
 "Removes the face property from the selected tags and the face region from "
 "the contained images. Can also untag the images if wished."
 msgstr ""
-"Eltávolítja az arc tulajdonságot a kijelölt címkéből és az arc régiót a "
-"benne lévő képekből. Ezen felül megszüntetheti a képek címkéit is."
+"Eltávolítja az arc tulajdonságot a kijelölt címkékből és az arc régiót a "
+"benne lévő képekből. Ezen felül eltávolíthatja a képek címkéit is."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
 #, kde-format
 msgctxt "@action: context menu"
 msgid "A&ssign Tag"
-msgstr "Címke hozzárendelése"
+msgstr "Címke hozzárendelé&se"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:140
 #, kde-format
 msgctxt "@action: context menu"
 msgid "R&emove Tag"
-msgstr "Címke eltávolítása"
+msgstr "Címke &eltávolítása"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Címke eltávolítása"
+msgstr "Összes címke eltávolítása"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
-msgstr "Címke hozzárendelése"
+msgstr "Je&lölők hozzárendelése"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, kde-format
@@ -854,7 +852,7 @@ msgstr "Dátum"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
-msgstr "Jelöl"
+msgstr "Címke"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, kde-format
@@ -866,7 +864,7 @@ msgstr "Ugrás"
 #, kde-format
 msgctxt "@action: file open dialog"
 msgid "Open..."
-msgstr "Megnyitás ..."
+msgstr "Megnyitás…"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
@@ -876,7 +874,7 @@ msgstr "Megnyitás ..."
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
-msgstr "Megnyitás Fájlkezelőben"
+msgstr "Megnyitás fájlkezelőben"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:73
 #, kde-format
@@ -900,7 +898,7 @@ msgstr "Exportálás"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
-msgstr "Nem áll rendelkezésre exportáló eszköz"
+msgstr "Nem érhető el exportáló eszköz"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
@@ -11257,7 +11255,7 @@ msgstr "A fájl nincs elmentve"
 msgid "Cannot save \"%1\" file"
 msgstr "A(z) „%1” fájlt nem sikerült elmenteni"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:223
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -11267,25 +11265,25 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Helymeghatározás szerkesztő"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:256
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Könyvjelzővel ellátott pozíciók megjelenítése a térképen."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:274
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Elrendezés:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:281
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "Egy térkép"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:282
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Two maps - vertical"
@@ -11293,7 +11291,7 @@ msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Két térkép - függőleges"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Two maps - horizontal"
@@ -11302,7 +11300,7 @@ msgid "Two maps - top and bottom"
 msgstr "Két térkép - vízszintes"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:302
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
@@ -11313,67 +11311,67 @@ msgstr "Két térkép - vízszintes"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:326
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Rendezés"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:328
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Először a legrégebbi megjelenítése"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:332
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:337
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Mutassa először a legfiatalabbakat"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Részletek"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS korrelátor"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:379
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Visszavonás / Újra"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:380
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Fordított geokódolás"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:381
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Keresés"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:382
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML exportálás"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:595
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:600
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Metaadatok betöltése -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:788
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:793
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11381,7 +11379,7 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "1 módosított képed van."
 msgstr[1] "%1 módosított képed van."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:800
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Unsaved changes"
@@ -11389,19 +11387,19 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Mentetlen változtatások"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:801
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Szeretné menteni a rajtuk végzett módosításokat?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:916
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Változások mentése -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -11438,13 +11436,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Hiba"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:976
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Nem sikerült elmenteni néhány információt:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1014
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -38887,7 +38885,7 @@ msgstr "Mérési mód:"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
-msgctxt "@item: remplace existing autotags entries in database"
+msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Adatbázis frissítése"
 
@@ -57566,23 +57564,23 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Fordított geokódolás"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:242
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:248
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Nem sikerült megnyitni: %1"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:249
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:255
 #, kde-format
 msgid "File is empty."
 msgstr "A fájl üres."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:281
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:287
 #, fuzzy, kde-format
 #| msgid "No GPX element found - probably not a GPX file."
 msgid "Probably not a GPX file."
 msgstr "Nem található GPX elem - valószínűleg nem GPX fájl."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:293
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:299
 #, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
@@ -74349,6 +74347,9 @@ msgstr "Elemek importálása"
 
 #~ msgid "Assign '%1' to &This Item"
 #~ msgstr "„%1” hozzárendelése &ehhez az elemhez"
+
+#~ msgid "Assign '%1' to &All Items"
+#~ msgstr "„%1” hozzárendelése &az összes elemhez"
 
 #~ msgid "Select all albums that should be included in the search."
 #~ msgstr ""
