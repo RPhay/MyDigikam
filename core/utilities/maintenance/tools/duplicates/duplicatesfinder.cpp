@@ -174,6 +174,11 @@ void DuplicatesFinder::slotStart()
 void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& inf,
                                               const QImage& /*img*/, int duplicates)
 {
+    if ((percentage % 2) != 0)
+    {
+        return;
+    }
+
     setThumbnail(QIcon::fromTheme(QLatin1String("search")));
 
     QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
