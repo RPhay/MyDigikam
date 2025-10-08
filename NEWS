@@ -129,7 +129,7 @@ BUGFIXES:
 094 ==> 510094 - DK crashes with Face Training.
 095 ==> 510334 - Build failled with : correlator_utest.cpp.o.
 096 ==> 472438 - Failed to update the database schema from version 15 to version 16.
-097 ==> 
+097 ==> 508733 - Duplicates found on Similarity Search but not displayed for review (no thumbnails).
 098 ==> 
 099 ==> 
 100 ==> 

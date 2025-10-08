@@ -347,15 +347,16 @@ FindDuplicatesView::~FindDuplicatesView()
 
 void FindDuplicatesView::initAlbumUpdateConnections()
 {
+/*
     connect(AlbumManager::instance(), SIGNAL(signalAlbumAdded(Album*)),
             this, SLOT(slotAlbumAdded(Album*)));
-
+*/
     connect(AlbumManager::instance(), SIGNAL(signalAlbumDeleted(Album*)),
             this, SLOT(slotAlbumDeleted(Album*)));
-
+/*
     connect(AlbumManager::instance(), SIGNAL(signalSearchUpdated(SAlbum*)),
             this, SLOT(slotSearchUpdated(SAlbum*)));
-
+*/
     connect(AlbumManager::instance(), SIGNAL(signalAlbumsCleared()),
             this, SLOT(slotClear()));
 
@@ -594,22 +595,18 @@ void FindDuplicatesView::slotFindDuplicates()
                                                           d->searchResultRestriction->itemData(d->searchResultRestriction->currentIndex()).toInt(),
                                                           referenceImageSelectionMethod, referenceImageSelector);
 
-    connect(finder, SIGNAL(signalScanNotification(QString,int)),
-            this, SIGNAL(signalScanNotification(QString,int)));
-
-    connect(finder, &DuplicatesFinder::signalComplete,
-            this, [this]()
-       {
-            QTimer::singleShot(0, this, SLOT(slotComplete()));
-       }
-    );
+    connect(finder, SIGNAL(signalComplete()),
+            this, SLOT(slotComplete()));
 
     connect(finder, &DuplicatesFinder::signalCanceled,
             this, [this]()
-       {
-            d->removeDuplicatesBtn->setEnabled(false);
-       }
+            {
+                d->removeDuplicatesBtn->setEnabled(false);
+            }
     );
+
+    connect(finder, SIGNAL(signalScanNotification(QString,int)),
+            this, SIGNAL(signalScanNotification(QString,int)));
 
     finder->start();
 }
