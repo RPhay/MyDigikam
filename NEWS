@@ -131,7 +131,7 @@ BUGFIXES:
 096 ==> 472438 - Failed to update the database schema from version 15 to version 16.
 097 ==> 508733 - Duplicates found on Similarity Search but not displayed for review (no thumbnails).
 098 ==> 493294 - Extremely slow duplicate search. It takes literally days.
-099 ==> 
+099 ==> 510406 - Integrated browser not working well to show image on map.
 100 ==> 
 101 ==> 
 102 ==> 

@@ -73,7 +73,7 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
     d->home    = url;
 
     d->browser = new QWebEngineView(this);
-    d->browser->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
+    d->browser->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, true);
     d->browser->settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
     d->browser->page()->profile()->cookieStore()->deleteAllCookies();
 
