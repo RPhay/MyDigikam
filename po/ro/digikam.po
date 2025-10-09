@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 01:59+0000\n"
+"POT-Creation-Date: 2025-10-09 02:06+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -26972,12 +26972,12 @@ msgstr "Evaluare:"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1\n"
@@ -62004,7 +62004,7 @@ msgstr "Baza de date cu miniaturi a fost actualizată."
 msgid "digiKam Maintenance"
 msgstr "Unghiul principal:"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:109
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -62131,19 +62131,19 @@ msgstr "Caută în:"
 msgid "Find duplicates items"
 msgstr "Găsește duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "Finding Duplicates: %1\n"
 msgstr "Găsește duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "No duplicate item"
 msgstr "Găsește duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "1 duplicate item"
@@ -62152,27 +62152,27 @@ msgstr[0] "Găsește duplicate"
 msgstr[1] "Găsește duplicate"
 msgstr[2] "Găsește duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicates found: %1"
 msgstr "Duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicate found: %1"
@@ -62249,24 +62249,24 @@ msgstr "Imagini găsite în %1"
 msgid "Face found: %1"
 msgstr "Imagini găsite în %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Face Scanning: %1\n"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, fuzzy, kde-format
 msgid "Found %1 face."
 msgstr "Bliț: "
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, fuzzy, kde-format
 #| msgid "Grain Size:"
 msgid "Recognized: %1"
@@ -62277,49 +62277,49 @@ msgstr "Mărimea granulației: "
 msgid "Finger-prints"
 msgstr "Fără amprente"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
 #, fuzzy, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Reconstruire amprente..."
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1"
 msgstr "Album \"%1\""
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for fingerprint: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned for fingerprint: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
 #, fuzzy, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Editor de imagini"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #, fuzzy, kde-format
 msgid "Pick Label: %1"
 msgstr "Pixeli: "
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for quality: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -62350,34 +62350,34 @@ msgid ""
 "Do you want to continue?"
 msgstr "Eticheta „%2” este atribuită unui element. Doriți să continuați?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
 #, fuzzy, kde-format
 #| msgid "Getting thumbnails for %1..."
 msgid "Clear Metadata: %1\n"
 msgstr "Obținere miniaturi pentru %1..."
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned to remove faces: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned to remove faces: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned to remove tags: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -62394,30 +62394,30 @@ msgstr "Se sincronizează metadatele imaginii cu baza de date. Așteptați..."
 msgid "Updating database from image metadata"
 msgstr "Se actualizează baza de date din metadatele imaginii. Așteptați..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
 #, fuzzy, kde-format
 #| msgid "Getting thumbnails for %1..."
 msgid "Metadata Sync: %1\n"
 msgstr "Obținere miniaturi pentru %1..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
 #, fuzzy, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "Se sincronizează metadatele imaginii cu baza de date. Așteptați..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
 #, fuzzy, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "Se sincronizează metadatele imaginii cu baza de date. Așteptați..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned to update database with metadata: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -62430,19 +62430,19 @@ msgstr "Caută în:"
 msgid "Generate Thumbnails"
 msgstr "Miniaturi"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
 #, fuzzy, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "Proprietăți"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for thumbnails: %1"
 msgstr "Caută în:"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"

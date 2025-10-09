@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 01:59+0000\n"
+"POT-Creation-Date: 2025-10-09 02:06+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -25966,12 +25966,12 @@ msgstr "自动旋转：%1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
 #, kde-format
 msgid "Album: %1\n"
 msgstr "相册：%1\n"
@@ -59291,7 +59291,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "digiKam 系统维护"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:109
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -59412,38 +59412,38 @@ msgstr "已扫描编目的项目：%1"
 msgid "Find duplicates items"
 msgstr "查找重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "正在查找重复项：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #, kde-format
 msgid "No duplicate item"
 msgstr "没有重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "%1 个重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "已扫描重复项的项目：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "已扫描重复项的项目：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "已找到重复项：%1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "已找到重复项：%1"
@@ -59509,22 +59509,22 @@ msgstr "已找到人脸：%1"
 msgid "Face found: %1"
 msgstr "已找到人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "正在扫描人脸：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, kde-format
 msgid "Found %1 face."
 msgstr "找到 %1 张人脸。"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
 #, kde-format
 msgid "Found %1 faces."
 msgstr "找到 %1 人脸。"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Recognized: %1"
 msgstr "已识别：%1"
@@ -59534,42 +59534,42 @@ msgstr "已识别：%1"
 msgid "Finger-prints"
 msgstr "图像指纹"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "重建文件指纹：%1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
 #, kde-format
 msgid "Album: %1"
 msgstr "相册：%1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "已扫描指纹的项目：%1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "已扫描指纹的项目：%1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "图像品质：%1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "挑选标记：%1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "已扫描品质的项目：%1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "已扫描品质的项目：%1"
@@ -59602,27 +59602,27 @@ msgstr ""
 "将要移除 %1 张图像中的所有标签。\n"
 "您想要继续吗？"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
 #, kde-format
 msgid "Clear Metadata: %1\n"
 msgstr "清除元数据：%1\n"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
 #, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "已扫描以移除人脸的项目：%1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
 #, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "已扫描以移除人脸的项目：%1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "已扫描以移除标签的项目：%1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
 #, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "已扫描以移除标签的项目：%1"
@@ -59637,27 +59637,27 @@ msgstr "正在同步图像和数据库的元数据"
 msgid "Updating database from image metadata"
 msgstr "正在从图像更新数据库元数据"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
 #, kde-format
 msgid "Metadata Sync: %1\n"
 msgstr "元数据同步：%1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
 #, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "已扫描以与数据库同步元数据的项目：%1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "已扫描以与数据库同步元数据的项目：%1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
 #, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "已扫描以更新数据库元数据的项目：%1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
 #, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "已扫描以更新数据库元数据的项目：%1"
@@ -59667,17 +59667,17 @@ msgstr "已扫描以更新数据库元数据的项目：%1"
 msgid "Generate Thumbnails"
 msgstr "生成缩略图"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "缩略图：%1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "已扫描缩略图的项目：%1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "已扫描缩略图的项目：%1"

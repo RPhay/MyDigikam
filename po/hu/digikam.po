@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 01:59+0000\n"
+"POT-Creation-Date: 2025-10-09 02:06+0000\n"
 "PO-Revision-Date: 2025-10-07 20:58+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -26243,12 +26243,12 @@ msgstr "Mérési mód:"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1\n"
@@ -60828,7 +60828,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "Digikam karbantartás"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:109
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -60949,21 +60949,21 @@ msgstr "Arcok keresése"
 msgid "Find duplicates items"
 msgstr "Duplikátumok keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "Finding Duplicates: %1\n"
 msgstr "Ismétlődések keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "No duplicate item"
 msgstr "Ismétlődések keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
@@ -60972,25 +60972,25 @@ msgid_plural "%1 duplicate items"
 msgstr[0] "Ismétlődések keresése"
 msgstr[1] "Ismétlődések keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicates found: %1"
 msgstr "Kettőzések"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicate found: %1"
@@ -61065,24 +61065,24 @@ msgstr "Képeket találtam itt: %1"
 msgid "Face found: %1"
 msgstr "Képeket találtam itt: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Face Scanning: %1\n"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, fuzzy, kde-format
 #| msgid "Libface"
 msgid "Found %1 face."
 msgstr "Libface"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgid "Recognized: %1"
@@ -61093,49 +61093,49 @@ msgstr "Ikon mérete:"
 msgid "Finger-prints"
 msgstr "Ujjlenyomatok"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
 #, fuzzy, kde-format
 #| msgid "Rebuild Finger-prints"
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Ujjlenyomatok újragenerálása"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1"
 msgstr "„%1” album"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned for fingerprint: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned for fingerprint: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgid "Image Quality: %1\n"
 msgstr "Képminőség rendező"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgid "Pick Label: %1"
 msgstr "Címke választása: "
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned for quality: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned for quality: %1"
@@ -61175,31 +61175,31 @@ msgstr ""
 "A(z) „%1” címkék hozzá vannak rendelve egy vagy több elemhez. Szeretné "
 "folytatni?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
 #, fuzzy, kde-format
 #| msgid "Getting Metadata for %1..."
 msgid "Clear Metadata: %1\n"
 msgstr "%1 metaadatainak beolvasása..."
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned to remove faces: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned to remove faces: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned to remove tags: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned to remove tags: %1"
@@ -61215,30 +61215,30 @@ msgstr ""
 msgid "Updating database from image metadata"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
 #, fuzzy, kde-format
 #| msgid "Getting Metadata for %1..."
 msgid "Metadata Sync: %1\n"
 msgstr "%1 metaadatainak beolvasása..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned to update database with metadata: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned to update database with metadata: %1"
@@ -61250,19 +61250,19 @@ msgstr "Arcok keresése"
 msgid "Generate Thumbnails"
 msgstr "Bélyegképek"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgid "Thumbnail: %1\n"
 msgstr "Miniatűr"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned for thumbnails: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned for thumbnails: %1"

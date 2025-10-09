@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 01:59+0000\n"
+"POT-Creation-Date: 2025-10-09 02:06+0000\n"
 "PO-Revision-Date: 2025-09-23 22:33+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -27160,12 +27160,12 @@ msgstr "Rotazione automatica: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
 #, kde-format
 msgid "Album: %1\n"
 msgstr "Album: %1\n"
@@ -61634,7 +61634,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "Manutenzione di digiKam"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:109
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -61758,39 +61758,39 @@ msgstr "Elemento analizzato per la catalogazione: %1"
 msgid "Find duplicates items"
 msgstr "Trova elementi duplicati"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "Ricerca duplicati in corso: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #, kde-format
 msgid "No duplicate item"
 msgstr "Nessun elemento duplicato"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "Un elemento duplicato"
 msgstr[1] "%1 elementi duplicati"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Elementi analizzati per i duplicati: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Elemento analizzato per i duplicati: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "Trovati duplicati: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "Trovato duplicato: %1"
@@ -61856,22 +61856,22 @@ msgstr "Volti trovati: %1"
 msgid "Face found: %1"
 msgstr "Volto trovato: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Analisi dei volti in corso: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, kde-format
 msgid "Found %1 face."
 msgstr "Trovato %1 volto."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
 #, kde-format
 msgid "Found %1 faces."
 msgstr "Trovati %1 volti."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Riconosciuti: %1"
@@ -61881,42 +61881,42 @@ msgstr "Riconosciuti: %1"
 msgid "Finger-prints"
 msgstr "Codici di controllo"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Ricalcola il codice di controllo: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
 #, kde-format
 msgid "Album: %1"
 msgstr "Album: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Elementi analizzati per il codice di controllo: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Elemento analizzato per il codice di controllo: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Qualità immagine: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Etichetta di scelta: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Elementi analizzati per la qualità: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Elemento analizzato per la qualità: %1"
@@ -61949,27 +61949,27 @@ msgstr ""
 "Sono stati rimossi tutti i tag dalle %1 immagini selezionate.\n"
 "Vuoi continuare?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
 #, kde-format
 msgid "Clear Metadata: %1\n"
 msgstr "Pulisci metadati: %1\n"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
 #, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "Elementi analizzati per la rimozione di volti: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
 #, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "Elemento analizzato per la rimozione di volti: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "Elementi analizzati per la rimozione di tag: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
 #, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "Elemento analizzato per la rimozione di tag: %1"
@@ -61984,27 +61984,27 @@ msgstr "Sincronizzazione dei metadati delle immagini con la banca dati."
 msgid "Updating database from image metadata"
 msgstr "Aggiornamento della banca dati dai metadati delle immagini"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
 #, kde-format
 msgid "Metadata Sync: %1\n"
 msgstr "Sincronizzazione metadati: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
 #, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "Elementi analizzati per sincronizzare i metadati con la banca dati: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "Elemento analizzato per sincronizzare i metadati con la banca dati: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
 #, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "Elementi analizzati per aggiornare la banca dati con i metadati: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
 #, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "Elemento analizzato per aggiornare la banca dati con i metadati: %1"
@@ -62014,17 +62014,17 @@ msgstr "Elemento analizzato per aggiornare la banca dati con i metadati: %1"
 msgid "Generate Thumbnails"
 msgstr "Genera miniature"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "Miniatura: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Elementi analizzati per le miniature: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Elemento analizzato per le miniature: %1"

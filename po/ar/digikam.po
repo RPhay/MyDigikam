@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 01:59+0000\n"
-"PO-Revision-Date: 2025-10-06 12:49+0400\n"
+"POT-Creation-Date: 2025-10-09 02:06+0000\n"
+"PO-Revision-Date: 2025-10-08 21:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -335,16 +335,15 @@ msgstr[4] "غير أسماء الوجه من '%2' إلى '%3'"
 msgstr[5] "غير أسماء الوجه من '%2' إلى '%3'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%1' to Items"
 msgid_plural "Assign Tag(s) '%1' to Items"
 msgstr[0] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
-msgstr[1] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
-msgstr[2] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
-msgstr[3] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
-msgstr[4] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
-msgstr[5] "أسند الوسوم الآتية ’%1‘ إلى العناصر"
+msgstr[1] "أسند وسم واحد إلى العناصر"
+msgstr[2] "أسند وسمين إلى العناصر"
+msgstr[3] "أسند ’%1‘ وسوم إلى العناصر"
+msgstr[4] "أسند ’%1‘ وسمًا إلى العناصر"
+msgstr[5] "أسند ’%1‘ وسم إلى العناصر"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -22203,9 +22202,7 @@ msgstr "لا صور محدّدة. فضلًا اختر أيّ الصّور الت
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "تحذير"
@@ -22225,8 +22222,7 @@ msgstr "فشل الاستيثاق. انقر \"تابع\" للاستيثاق."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "تابع"
@@ -22237,8 +22233,7 @@ msgstr "تابع"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "ألغِ"
@@ -23624,31 +23619,25 @@ msgstr "فشل استدعاء غوغل درايف: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "خطأ"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "تصدير «غوغل درايف»"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Photos export"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "تصدير صور غوغل"
@@ -26544,12 +26533,12 @@ msgstr "تدوير آليّ: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
 #, kde-format
 msgid "Album: %1\n"
 msgstr "ألبوم: %1\n"
@@ -39436,9 +39425,7 @@ msgid "Tagging Mode:"
 msgstr "وضع الوسم:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@item: remplace existing autotags entries in database"
-#| msgid "Replace Existing"
+#, kde-format
 msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "استبدال الموجود"
@@ -60556,7 +60543,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "صيانة «دِجي‌كام»"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:109
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -60678,17 +60665,17 @@ msgstr "العنصر الذي فُحص للتصنيف: %1"
 msgid "Find duplicates items"
 msgstr "اعثر على العناصر المكررة"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "ابحث عن المتكرّر: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #, kde-format
 msgid "No duplicate item"
 msgstr "لا يوجد عنصر مكرر"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
@@ -60699,22 +60686,22 @@ msgstr[3] "%1 عنصرًا مكررًا"
 msgstr[4] "%1 عنصرًا مكررًا"
 msgstr[5] "%1 عنصرًا مكررًا"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "العناصر التي فُحصت للتكرار: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "العنصر الذي فُحص للتكرار: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "النسخ المكررة التي عُثر عليها: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "النسخة المكررة التي عُثر عليها: %1"
@@ -60780,22 +60767,22 @@ msgstr "الوجوه التي عُثر عليها: %1"
 msgid "Face found: %1"
 msgstr "الوجه الذي عُثر عليه: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "فحص الوجه: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, kde-format
 msgid "Found %1 face."
 msgstr "عثر على %1 وجه"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
 #, kde-format
 msgid "Found %1 faces."
 msgstr "عُثر على %1 وجهًا."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Recognized: %1"
 msgstr "المعروفة: %1"
@@ -60805,42 +60792,42 @@ msgstr "المعروفة: %1"
 msgid "Finger-prints"
 msgstr "البصمات"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "أعد بناء البصمة: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
 #, kde-format
 msgid "Album: %1"
 msgstr "الألبوم: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "العناصر التي فُحصت للبصمة: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "العنصر الذي فُحص للبصمة: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "جودة الصورة: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "اختر لصيقة: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "العناصر التي فُحصت للجودة: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "العنصر الذي فُحص للجودة: %1"
@@ -60873,27 +60860,27 @@ msgstr ""
 "جميع اللصائق أُزيلت من %1 من الصور المختارة.\n"
 "هل تريد المتابعة؟"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
 #, kde-format
 msgid "Clear Metadata: %1\n"
 msgstr "امحُ البيانات الوصفيّة: %1\n"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
 #, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "العناصر التي فُحصت لإزالة الوجوه: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
 #, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "العنصر الذي فُحص لإزالة الوجوه: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "العناصر التي فُحصت لإزالة اللصائق: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
 #, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "العنصر الذي فُحص لإزالة اللصائق: %1"
@@ -60908,27 +60895,27 @@ msgstr "زامن بيانات الصورة الوصفية مع قاعدة الب
 msgid "Updating database from image metadata"
 msgstr "حدث قاعدة البيانات من بيانات الصورة الوصفية"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
 #, kde-format
 msgid "Metadata Sync: %1\n"
 msgstr "البيانات الوصفيّة: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
 #, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "العناصر التي فُحصت لمزامنة البيانات الوصفية مع قاعدة البيانات: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "العنصر الذي فُحص لمزامنة البيانات الوصفية مع قاعدة البيانات: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
 #, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "العناصر التي فُحصت لتحديث قاعدة البيانات بالبيانات الوصفية: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
 #, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "العنصر الذي فُحص لتحديث قاعدة البيانات بالبيانات الوصفية: %1"
@@ -60938,17 +60925,17 @@ msgstr "العنصر الذي فُحص لتحديث قاعدة البيانات 
 msgid "Generate Thumbnails"
 msgstr "ولّد مصغرات"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "المصغّرة: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "العناصر التي فُحصت للصور المصغرة: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "العنصر الذي فُحص للصور المصغرة: %1"

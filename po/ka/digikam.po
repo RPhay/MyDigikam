@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 01:59+0000\n"
+"POT-Creation-Date: 2025-10-09 02:06+0000\n"
 "PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -25310,12 +25310,12 @@ msgstr "ავტომატური ჭდეების რეჟიმი:
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
 #, kde-format
 msgid "Album: %1\n"
 msgstr "ალბომი %1\n"
@@ -57762,7 +57762,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr ""
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:109
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -57878,39 +57878,39 @@ msgstr "კატალოგებისთვის დასკანირ�
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "დუბლიკატების ძებნა: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #, kde-format
 msgid "No duplicate item"
 msgstr "დუბლირებული ელემენტების გარეშე"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "1 გამეორებული ელემენტი"
 msgstr[1] "%1 გამეორებული ელემენტი"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "გამეორებების მოსაძებნად დასკანირებულია ელემენტი: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "გამეორებების მოსაძებნად დასკანირებულია ელემენტი: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "აღმოჩენილი დუბლიკატები: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "აღმოჩენილი დუბლიკატები: %1"
@@ -57974,22 +57974,22 @@ msgstr "ნაპოვნი სახეები: %1"
 msgid "Face found: %1"
 msgstr "ნაპოვნია სახე: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "სახის სკანირება: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, kde-format
 msgid "Found %1 face."
 msgstr "აღმოჩენილია %1 სახე."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Recognized: %1"
 msgstr "ამოცნობილია: %1"
@@ -57999,42 +57999,42 @@ msgstr "ამოცნობილია: %1"
 msgid "Finger-prints"
 msgstr ""
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "ანაბეჭდის თავიდან აშენება: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
 #, kde-format
 msgid "Album: %1"
 msgstr "ალბომი: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "ანაბეჭდებისთვის სკანირებულია ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "ანაბეჭდებისთვის სკანირებულია ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "გამოსახულების ხარისხის: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "აირჩიეთ ჭდე: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "ხარისხისთვის სკანირებულია ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "ხარისხისთვის სკანირებულია ელემენტი: %1"
@@ -58067,27 +58067,27 @@ msgstr ""
 "%1 მონიშნული გამოსახულებიდან ყველა ჭდე წაიშლება.\n"
 "გნებავთ, გააგრძელოთ?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
 #, kde-format
 msgid "Clear Metadata: %1\n"
 msgstr "მეტამონაცემების გასუფთავება: %1\n"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
 #, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "სახის წასაშლელად სკანირებულია ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
 #, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "სახის წასაშლელად სკანირებულია ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "ჭდეების წასაშლელად სკანირებულია ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
 #, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "ჭდეების წასაშლელად სკანირებულია ელემენტი: %1"
@@ -58102,30 +58102,30 @@ msgstr ""
 msgid "Updating database from image metadata"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
 #, kde-format
 msgid "Metadata Sync: %1\n"
 msgstr "მეტამონაცემების სინქრონიზაცია: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
 #, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr ""
 "მეტამონაცემების მონაცემთა ბაზასთან სინქრონიზაციისთვის დასკანირებულია "
 "ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
 #, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr ""
 "მეტამონაცემების მონაცემთა ბაზის განახლებისთვის დასკანირებულია ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
 #, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr ""
@@ -58136,17 +58136,17 @@ msgstr ""
 msgid "Generate Thumbnails"
 msgstr "მინიატურების შექმნა"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "მინიატურა: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "მინიატურებისთვის სკანირებულია ელემენტი: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "მინიატურებისთვის სკანირებულია ელემენტი: %1"
