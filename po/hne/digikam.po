@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 02:06+0000\n"
+"POT-Creation-Date: 2025-10-10 11:02+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -22203,7 +22203,7 @@ msgid "Facebook Call Failed: %1"
 msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:72
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
 #, fuzzy, kde-format
 #| msgid "Show image caption"
 msgid "Target location: "
@@ -22337,38 +22337,38 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "निर्यात"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:73
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, fuzzy, kde-format
 msgid "Select export location..."
 msgstr "सीर्सक संपादित करव..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:89
 #, fuzzy, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "ये चीज मन के सूची हे जऊन ल मेटाय जाही."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:158
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "कुछ नइ चुनव"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:157
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:159
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
 msgstr "सब्बो फाइल मन ल"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:181
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:183
 #, fuzzy, kde-format
 #| msgid "%1 Tags selected"
 msgid "<i>not selected</i>"
@@ -43207,42 +43207,42 @@ msgid "Loading in progress"
 msgstr "बैच प्रोसेस"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:135
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:110
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
 msgstr "फिल्टर रेट करव"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:138
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:113
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:115
 #, fuzzy, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
 msgstr "मेटाडाटा सहेजव"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:143
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:118
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:120
 #, fuzzy, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
 msgstr "नाइस फिल्टर:"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:146
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:121
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:123
 #, fuzzy, kde-format
 msgctxt "@action: metadata view"
 msgid "Photograph"
 msgstr "फोटो फ्लैस"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:149
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:124
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:126
 #, fuzzy, kde-format
 msgctxt "@action: metadata view"
 msgid "Custom"
 msgstr "मनमाफिक"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action: metadata view"
@@ -43250,35 +43250,35 @@ msgid "Settings"
 msgstr "सेटिंग"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:167
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:137
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
 #, fuzzy, kde-format
 msgctxt "@info: metadata view"
 msgid "Tools"
 msgstr "औजार (&T)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:170
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:140
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:142
 #, fuzzy, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
 msgstr "रंग जगह"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:173
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
 msgstr "मूवी फाइल मन ल"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:174
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:144
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:146
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Print"
 msgstr "फोटू छापव..."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:175
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:147
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy to Clipboard"
@@ -43536,7 +43536,7 @@ msgstr "फ्लैस चलाय गे हे"
 msgid "Image Magick Properties"
 msgstr "गुन"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:337
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:339
 #, fuzzy, kde-format
 #| msgid "File name: %1 (%2)"
 msgctxt "@info: metadata clipboard"

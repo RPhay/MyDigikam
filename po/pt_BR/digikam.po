@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 02:06+0000\n"
+"POT-Creation-Date: 2025-10-10 11:02+0000\n"
 "PO-Revision-Date: 2025-10-08 17:55-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -23019,7 +23019,7 @@ msgid "Facebook Call Failed: %1"
 msgstr "Falha na chamada ao Facebook: %1"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:72
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
 #, kde-format
 msgid "Target location: "
 msgstr "Localização de destino: "
@@ -23154,7 +23154,7 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Exportar para armazenamento local..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:73
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
@@ -23164,29 +23164,29 @@ msgstr ""
 "endereço como usados no Dolphin ou Konqueror, por ex.: ftp://meu.servidor."
 "org/subpasta."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, kde-format
 msgid "Select export location..."
 msgstr "Selecionar local para exportação..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:89
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "Esta é a lista de imagens a enviar para o destino indicado."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:158
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "Selecionar o destino..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:157
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:159
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos os arquivos (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:181
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:183
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>não selecionado</i>"
@@ -44683,77 +44683,77 @@ msgid "Loading in progress"
 msgstr "Carregamento em progresso"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:135
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:110
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:112
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
 msgstr "Opções do filtro de etiquetas"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:138
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:113
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:115
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
 msgstr "Aplica o filtro de etiquetas sobre os metadados."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:143
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:118
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:120
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
 msgstr "Sem filtro"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:146
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:121
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:123
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Photograph"
 msgstr "Fotografia"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:149
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:124
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:126
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Custom"
 msgstr "Personalizado"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:130
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Settings"
 msgstr "Configurações"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:167
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:137
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tools"
 msgstr "Ferramentas"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:170
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:140
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:142
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
 msgstr "Executa a ferramenta sobre as etiquetas dos metadados."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:173
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
 msgstr "Salvar no arquivo"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:174
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:144
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:146
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print"
 msgstr "Imprimir"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:175
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:147
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy to Clipboard"
@@ -45010,7 +45010,7 @@ msgstr "Atributos Magick da imagem"
 msgid "Image Magick Properties"
 msgstr "Propriedades Magick da imagem"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:337
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:339
 #, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"

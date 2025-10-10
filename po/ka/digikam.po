@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 02:06+0000\n"
+"POT-Creation-Date: 2025-10-10 11:02+0000\n"
 "PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -21411,7 +21411,7 @@ msgid "Facebook Call Failed: %1"
 msgstr "Facebook ის ფუნქციის შეცდომა: %1"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:72
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
 #, kde-format
 msgid "Target location: "
 msgstr "სამიზნე მდებარეობა: "
@@ -21545,7 +21545,7 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:73
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
@@ -21555,29 +21555,29 @@ msgstr ""
 "რომელიც Dophin-ში ან Konqueror-ში შეგიძლიათ, გამიყენოთ. მაგ: ftp://my.server."
 "org/sub/folder."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, kde-format
 msgid "Select export location..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:89
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "ეს სურათების სიაა, რომელიც მითითებულ ადგილას აიტვირთება."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:158
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "აირჩიეთ სამიზნე..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:157
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:159
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
 #, kde-format
 msgid "All Files (*)"
 msgstr "ყველა ფაილი (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:181
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:183
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>მონიშნული არაა</i>"
@@ -41697,77 +41697,77 @@ msgid "Loading in progress"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:135
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:110
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:112
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:138
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:113
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:115
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:143
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:118
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:120
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
 msgstr "ფილტრის გარეშე"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:146
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:121
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:123
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Photograph"
 msgstr "ფოტო"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:149
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:124
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:126
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Custom"
 msgstr "ხელით"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:130
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Settings"
 msgstr "მორგება"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:167
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:137
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:170
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:140
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:142
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:173
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
 msgstr "ფაილში შენახვა"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:174
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:144
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:146
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print"
 msgstr "ბეჭდვა"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:175
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:147
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy to Clipboard"
@@ -42019,7 +42019,7 @@ msgstr ""
 msgid "Image Magick Properties"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:337
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:339
 #, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"

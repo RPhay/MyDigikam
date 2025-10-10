@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 02:06+0000\n"
+"POT-Creation-Date: 2025-10-10 11:02+0000\n"
 "PO-Revision-Date: 2025-10-08 11:02+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -23108,7 +23108,7 @@ msgid "Facebook Call Failed: %1"
 msgstr "La crida al Facebook ha fallat: %1"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:72
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
 #, kde-format
 msgid "Target location: "
 msgstr "Ubicació de la destinació: "
@@ -23242,7 +23242,7 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Exporta a un emmagatzematge local..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:73
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
@@ -23252,30 +23252,30 @@ msgstr ""
 "adreça emprada en el Dolphin o el Konqueror, p. ex. ftp://elmeu.servidor.org/"
 "sub/carpeta."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, kde-format
 msgid "Select export location..."
 msgstr "Seleccioneu la ubicació d'exportació..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:89
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr ""
 "Aquesta és la llista de les imatges a pujar a la destinació especificada."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:158
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "Selecció de la destinació..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:157
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:159
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:181
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:183
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>no seleccionada</i>"
@@ -44881,77 +44881,77 @@ msgid "Loading in progress"
 msgstr "La càrrega està en curs"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:135
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:110
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:112
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
 msgstr "Opcions del filtre d'etiquetes"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:138
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:113
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:115
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
 msgstr "Aplica el filtre d'etiquetes a les metadades."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:143
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:118
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:120
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
 msgstr "Cap filtre"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:146
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:121
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:123
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Photograph"
 msgstr "Fotògraf"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:149
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:124
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:126
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Custom"
 msgstr "Personalitzat"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:130
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Settings"
 msgstr "Configuració"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:167
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:137
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tools"
 msgstr "Eines"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:170
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:140
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:142
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
 msgstr "Executa l'eina sobre les etiquetes de metadades."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:173
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
 msgstr "Desa en un fitxer"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:174
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:144
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:146
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print"
 msgstr "Imprimeix"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:175
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:147
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy to Clipboard"
@@ -45208,7 +45208,7 @@ msgstr "Atributs de l'ImageMagick"
 msgid "Image Magick Properties"
 msgstr "Propietats de l'ImageMagick"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:337
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:339
 #, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"

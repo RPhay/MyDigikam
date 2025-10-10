@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 02:06+0000\n"
+"POT-Creation-Date: 2025-10-10 11:02+0000\n"
 "PO-Revision-Date: 2025-09-14 15:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -23135,7 +23135,7 @@ msgid "Facebook Call Failed: %1"
 msgstr "Неуспешно повикване на Facebook: %1"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:72
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
 #, kde-format
 msgid "Target location: "
 msgstr "Целево местоположение: "
@@ -23270,7 +23270,7 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Експортиране в локално хранилище..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:73
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
@@ -23280,29 +23280,29 @@ msgstr ""
 "всеки адрес, използван в Dolphin или Konqueror, например ftp://my.server.org/"
 "sub/folder."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, kde-format
 msgid "Select export location..."
 msgstr "Избиране на местоположението за експортиране..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:89
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "Това е списъкът с изображения, които да се качат в посочената цел."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:156
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:158
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "Избиране на цел..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:157
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:159
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
 #, kde-format
 msgid "All Files (*)"
 msgstr "Всички файлове (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:181
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:183
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>не маркираните</i>"
@@ -44860,77 +44860,77 @@ msgid "Loading in progress"
 msgstr "Извършва се зареждане"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:135
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:110
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:112
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
 msgstr "Опции за филтриране на тагове"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:138
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:113
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:115
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
 msgstr "Прилагане на филтър за тагове върху метаданни."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:143
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:118
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:120
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
 msgstr "Без филтър"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:146
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:121
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:123
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Photograph"
 msgstr "Фотограф"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:149
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:124
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:126
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Custom"
 msgstr "Потребителска"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:130
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Settings"
 msgstr "Настройки"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:167
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:137
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tools"
 msgstr "Инструменти"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:170
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:140
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:142
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
 msgstr "Изпълнение на инструмент върху тагове на метаданни."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:173
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
 msgstr "Запазване във файл"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:174
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:144
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:146
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print"
 msgstr "Отпечатване"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:175
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:145
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:147
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy to Clipboard"
@@ -45187,7 +45187,7 @@ msgstr "Атрибути на Image Magick"
 msgid "Image Magick Properties"
 msgstr "Свойства на Image Magick"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:337
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:339
 #, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"
