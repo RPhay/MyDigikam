@@ -142,9 +142,10 @@ void ActionTask::run()
 
     // ItemInfo must be tread-safe.
 
-    ItemInfo source      = ItemInfo::fromUrl(d->tools.m_itemUrl);
-    bool noWriteMetadata = false;
-    bool timeAdjust      = false;
+    ItemInfo source           = ItemInfo::fromUrl(d->tools.m_itemUrl);
+    bool resetExifOrientation = false;
+    bool noWriteMetadata      = false;
+    bool timeAdjust           = false;
 
     for (const BatchToolSet& set : std::as_const(d->tools.m_toolsList))
     {
@@ -164,6 +165,12 @@ void ActionTask::run()
         d->tool->setToolIcon(tool->toolIcon());
         d->tool->setToolTitle(tool->toolTitle());
         d->tool->setToolDescription(tool->toolDescription());
+
+        // If a tool resets the Exif orientation, it must be
+        // copy to all tools so that the last tool applies it.
+
+        resetExifOrientation |= tool->getNeedResetExifOrientation();
+        d->tool->setNeedResetExifOrientation(resetExifOrientation);
 
         // Only true if it is also the last tool
 
