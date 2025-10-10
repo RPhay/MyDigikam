@@ -114,7 +114,7 @@ void MapBackend::slotExportScreenshot()
         return;
     }
 
-    QUrl newURL                  = imageFileSaveDialog->selectedUrls().first();
+    QUrl newURL                  = imageFileSaveDialog->selectedUrls().constFirst();
     QFileInfo fi(newURL.toLocalFile());
 
     // Parse name filter and extract file extension

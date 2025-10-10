@@ -183,7 +183,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e
 
         if (albumModel() && !(albumModel()->currentAlbums().isEmpty()))
         {
-            currentAlbum = albumModel()->currentAlbums().first();
+            currentAlbum = albumModel()->currentAlbums().constFirst();
         }
 
         if      (album->type() == Album::PHYSICAL)

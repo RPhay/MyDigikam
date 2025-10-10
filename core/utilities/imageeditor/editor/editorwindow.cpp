@@ -1912,7 +1912,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
         return false;
     }
 
-    newURL = imageFileSaveDialog->selectedUrls().first();
+    newURL = imageFileSaveDialog->selectedUrls().constFirst();
     newURL.setPath(QDir::cleanPath(newURL.path()));
 
     QFileInfo fi(newURL.fileName());

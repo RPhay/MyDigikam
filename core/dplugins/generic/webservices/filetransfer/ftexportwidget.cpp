@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     KUrlComboRequester* targetLabel         = nullptr;
     QPushButton*        targetSearchButton  = nullptr;
     QUrl                targetUrl;
@@ -162,7 +164,7 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
 
     if (targetDialog->hasAcceptedUrls())
     {
-        d->targetUrl = targetDialog->selectedUrls().first();
+        d->targetUrl = targetDialog->selectedUrls().constFirst();
         updateTargetLabel();
 
         Q_EMIT signalTargetUrlChanged(d->targetUrl);

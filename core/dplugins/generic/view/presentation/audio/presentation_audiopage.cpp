@@ -488,7 +488,7 @@ void PresentationAudioPage::slotSoundFilesButtonLoad()
         return;
     }
 
-    QString filename = dlg->selectedFiles().first();
+    QString filename = dlg->selectedFiles().constFirst();
 
     if (!filename.isEmpty())
     {
@@ -547,7 +547,7 @@ void PresentationAudioPage::slotSoundFilesButtonSave()
         return;
     }
 
-    QString filename = dlg->selectedFiles().first();
+    QString filename = dlg->selectedFiles().constFirst();
 
     if (!filename.isEmpty())
     {

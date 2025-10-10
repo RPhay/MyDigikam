@@ -186,7 +186,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
         return;
     }
 
-    QUrl newURL                  = imageFileSaveDialog->selectedUrls().first();
+    QUrl newURL                  = imageFileSaveDialog->selectedUrls().constFirst();
     QFileInfo fi(newURL.toLocalFile());
 
     // Parse name filter and extract file extension

@@ -226,11 +226,11 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
     // FIXME This is wrong if the widget is not using the global!
     // See if cell day is normally a working day
 
-    if (locale().weekdays().first() <= locale().weekdays().last())
+    if (locale().weekdays().constFirst() <= locale().weekdays().constLast())
     {
         if (
-            (cellWeekDay >= locale().weekdays().first()) &&
-            (cellWeekDay <= locale().weekdays().last())
+            (cellWeekDay >= locale().weekdays().constFirst()) &&
+            (cellWeekDay <= locale().weekdays().constLast())
            )
         {
             workingDay = true;
@@ -239,8 +239,8 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
     else
     {
         if (
-            (cellWeekDay >= locale().weekdays().first()) ||
-            (cellWeekDay <= locale().weekdays().last())
+            (cellWeekDay >= locale().weekdays().constFirst()) ||
+            (cellWeekDay <= locale().weekdays().constLast())
            )
         {
             workingDay = true;

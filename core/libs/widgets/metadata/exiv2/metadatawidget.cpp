@@ -66,6 +66,8 @@ public:
 
     Private() = default;
 
+public:
+
     QAction*               noneAction       = nullptr;
     QAction*               photoAction      = nullptr;
     QAction*               customAction     = nullptr;
@@ -428,7 +430,7 @@ QUrl MetadataWidget::saveMetadataToFile(const QString& caption, const QString& f
         return QUrl();
     }
 
-    QUrl url = fileSaveDialog->selectedUrls().first();
+    QUrl url = fileSaveDialog->selectedUrls().constFirst();
     delete fileSaveDialog;
 
     return url;

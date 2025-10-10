@@ -320,7 +320,7 @@ void BookmarksMenu::slotActivated(const QModelIndex& index)
 bool BookmarksMenu::prePopulated()
 {
     setModel(d->manager->bookmarksModel());
-    setRootIndex(d->manager->bookmarksModel()->index(d->manager->bookmarks()->children().first()));
+    setRootIndex(d->manager->bookmarksModel()->index(d->manager->bookmarks()->children().constFirst()));
 
     // initial actions
 

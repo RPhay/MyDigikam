@@ -397,7 +397,7 @@ void ExifToolWidget::slotSaveMetadataToFile()
         return;
     }
 
-    QUrl url = fileSaveDialog->selectedUrls().first();
+    QUrl url = fileSaveDialog->selectedUrls().constFirst();
     delete fileSaveDialog;
 
     QFile file(url.toLocalFile());
