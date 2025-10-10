@@ -249,34 +249,46 @@ bool GPSItemListContextMenu::getCurrentItemPositionAndUrl(GPSDataContainer* cons
 {
     // NOTE: currentIndex does not seem to work any more since we use KLinkItemSelectionModel.
 
-    GPSItemModel* const imageModel           = d->imagesList->getModel();
+    GPSItemModel* const imageModel            = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
 
-    if (selectedIndices.count() != 1)
+    if (selectedIndices.size() == 0)
     {
         return false;
     }
 
-    const QModelIndex currentIndex = selectedIndices.first();
+    const QModelIndex firstIndex      = selectedIndices.first();
+    GPSItemContainer* const firstItem = imageModel->itemFromIndex(firstIndex);
 
-    if (!currentIndex.isValid())
+    if (firstItem)
     {
-        return false;
-    }
+        for (int i = 1 ; i < selectedIndices.size() ; ++i)
+        {
+            if (selectedIndices.at(i).isValid())
+            {
+                GPSItemContainer* const gpsItem = imageModel->itemFromIndex(selectedIndices.at(i));
 
-    GPSItemContainer* const gpsItem = imageModel->itemFromIndex(currentIndex);
+                if (!gpsItem || (firstItem->gpsData() != gpsItem->gpsData()))
+                {
+                    if (itemUrl)
+                    {
+                        *itemUrl = QUrl(i18n("Items have different coordinates."));
+                    }
 
-    if (gpsItem)
-    {
+                    return false;
+                }
+            }
+        }
+
         if (gpsInfo)
         {
-            *gpsInfo = gpsItem->gpsData();
+            *gpsInfo = firstItem->gpsData();
         }
 
         if (itemUrl)
         {
-            *itemUrl = gpsItem->url();
+            *itemUrl = firstItem->url();
         }
 
         return true;

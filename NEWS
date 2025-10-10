@@ -132,7 +132,7 @@ BUGFIXES:
 097 ==> 508733 - Duplicates found on Similarity Search but not displayed for review (no thumbnails).
 098 ==> 493294 - Extremely slow duplicate search. It takes literally days.
 099 ==> 510406 - Integrated browser not working well to show image on map.
-100 ==> 
+100 ==> 510460 - Bookmark without location saved when selecting multiple images (right click Bookmarks - Add Bookmark).
 101 ==> 
 102 ==> 
 103 ==> 
