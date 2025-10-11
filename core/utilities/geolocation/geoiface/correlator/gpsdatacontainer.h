@@ -105,6 +105,56 @@ public:
         return true;
     }
 
+    bool operator!=(const GPSDataContainer& b) const
+    {
+        if (m_hasFlags == b.m_hasFlags)
+        {
+            return false;
+        }
+
+        if (m_hasFlags.testFlag(HasCoordinates))
+        {
+            if (m_coordinates == b.m_coordinates)
+            {
+                return false;
+            }
+        }
+
+        if (hasNSatellites())
+        {
+            if (m_nSatellites == b.m_nSatellites)
+            {
+                return false;
+            }
+        }
+
+        if (hasDop())
+        {
+            if (m_dop == b.m_dop)
+            {
+                return false;
+            }
+        }
+
+        if (hasFixType())
+        {
+            if (m_fixType == b.m_fixType)
+            {
+                return false;
+            }
+        }
+
+        if (hasSpeed())
+        {
+            if (m_speed == b.m_speed)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     inline HasFlags flags() const
     {
         return m_hasFlags;
