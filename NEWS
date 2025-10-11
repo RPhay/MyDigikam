@@ -133,7 +133,7 @@ BUGFIXES:
 098 ==> 493294 - Extremely slow duplicate search. It takes literally days.
 099 ==> 510406 - Integrated browser not working well to show image on map.
 100 ==> 510460 - Bookmark without location saved when selecting multiple images (right click Bookmarks - Add Bookmark).
-101 ==> 
+101 ==> 510481 - Build failed on Qt5 with : gpsitemlistcontextmenu.cpp.o.
 102 ==> 
 103 ==> 
 104 ==> 
