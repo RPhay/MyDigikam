@@ -32,14 +32,6 @@
 #include <QMutex>
 #include <QMutexLocker>
 
-#ifdef HAVE_X11
-#   if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0) && QT_VERSION < QT_VERSION_CHECK(6, 10, 0)
-#       include <private/qtx11extras_p.h>
-#   elif QT_VERSION < QT_VERSION_CHECK(5, 99, 0)
-#       include <QX11Info>
-#   endif
-#endif
-
 #ifdef HAVE_DBUS
 #   include <QDBusConnection>
 #   include <QDBusConnectionInterface>

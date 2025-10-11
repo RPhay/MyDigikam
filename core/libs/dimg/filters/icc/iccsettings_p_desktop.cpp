@@ -68,7 +68,7 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
 
 #if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
 
-    if      ((qApp->platformName() != QLatin1String("wayland")) && QX11Info::isPlatformX11())
+    if      (qApp->platformName() != QLatin1String("wayland"))
     {
 
 #   ifdef HAVE_X11
