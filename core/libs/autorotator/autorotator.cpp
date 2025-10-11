@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QException>
+#include <QElapsedTimer>
 
 // digiKam includes
 
