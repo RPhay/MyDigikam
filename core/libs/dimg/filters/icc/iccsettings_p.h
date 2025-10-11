@@ -22,6 +22,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QGuiApplication>
 #include <QScreen>
 #include <QPointer>
 #include <QWidget>

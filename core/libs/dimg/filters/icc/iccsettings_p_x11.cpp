@@ -40,6 +40,79 @@
 namespace Digikam
 {
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+
+/**
+ * NOTE: code to emulate deprecated Qt6::QX11Info API inspired from
+ * https://code.qt.io/cgit/qt/qtbase.git/tree/src/gui/platform/unix/qtx11extras.cpp?h=6.10.0
+ */
+namespace QX11Info
+{
+
+Display* display()
+{
+    if (!qApp)
+    {
+        return nullptr;
+    }
+
+    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
+
+    if (!native)
+    {
+        return nullptr;
+    }
+
+    void* const display = native->nativeResourceForIntegration(QByteArray("display"));
+
+    return reinterpret_cast<Display*>(display);
+}
+
+quint32 appRootWindow(int screen)
+{
+    if (!qApp)
+    {
+        return 0;
+    }
+
+    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
+
+    if (!native)
+    {
+        return 0;
+    }
+
+    QScreen* const scr = (screen == -1) ?  QGuiApplication::primaryScreen() : findScreenForVirtualDesktop(screen);
+
+    if (!scr)
+    {
+        return 0;
+    }
+
+    return static_cast<xcb_window_t>(reinterpret_cast<quintptr>(native->nativeResourceForScreen(QByteArrayLiteral("rootwindow"), scr)));
+}
+
+int appScreen()
+{
+    if (!qApp)
+    {
+        return 0;
+    }
+
+    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
+
+    if (!native)
+    {
+        return 0;
+    }
+
+    return reinterpret_cast<qintptr>(native->nativeResourceForIntegration(QByteArrayLiteral("x11screen")));
+}
+
+} // namespace QX11Info
+
+#endif
+
 bool IccSettings::Private::profileFromX11(QScreen* const screen,
                                           int screenNumber,
                                           IccProfile& profile)
