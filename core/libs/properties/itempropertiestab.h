@@ -77,7 +77,7 @@ public:
     void setImageColorMode(const QString& str);
     void setHasSidecar(const QString& str);
     void setHasGPSInfo(const QString& str);
-    void setVersionnedInfo(const QString& str);
+    void setVersionedInfo(const QString& str);
     void setGroupedInfo(const QString& str);
 
     void setPhotoMake(const QString& str);

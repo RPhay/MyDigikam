@@ -171,9 +171,9 @@ void ItemPropertiesTab::setHasGPSInfo(const QString& str)
     d->labelHasGPSInfo->setAdjustedText(str);
 }
 
-void ItemPropertiesTab::setVersionnedInfo(const QString& str)
+void ItemPropertiesTab::setVersionedInfo(const QString& str)
 {
-    d->labelVersionnedInfo->setAdjustedText(str);
+    d->labelVersionedInfo->setAdjustedText(str);
 }
 
 void ItemPropertiesTab::setGroupedInfo(const QString& str)

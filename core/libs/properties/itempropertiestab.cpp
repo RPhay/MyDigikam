@@ -240,7 +240,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->pickLabel             = new DTextLabelName(i18nc("@label: item properties", "Pick label: "),  w5);
     d->colorLabel            = new DTextLabelName(i18nc("@label: item properties", "Color label: "), w5);
     d->rating                = new DTextLabelName(i18nc("@label: item properties", "Rating: "),      w5);
-    d->versionned            = new DTextLabelName(i18nc("@label: item properties", "Versionned: "),  w5);
+    d->versioned             = new DTextLabelName(i18nc("@label: item properties", "Versioned: "),  w5);
     d->grouped               = new DTextLabelName(i18nc("@label: item properties", "Grouped: "),     w5);
 
     d->labelTitle            = new QLabel(QString(), w5);
@@ -251,24 +251,23 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelPickLabel        = new DTextLabelValue(QString(), w5);
     d->labelColorLabel       = new DTextLabelValue(QString(), w5);
     d->labelRating           = new DTextLabelValue(QString(), w5);
-    d->labelVersionnedInfo   = new DTextLabelValue(QString(), w5);
+    d->labelVersionedInfo    = new DTextLabelValue(QString(), w5);
     d->labelGroupedInfo      = new DTextLabelValue(QString(), w5);
-
-    glay5->addWidget(d->labelPhotoDateTime,  0, 0, 1, 2);
-    glay5->addWidget(d->title,               1, 0, 1, 1);
-    glay5->addWidget(d->labelTitle,          1, 1, 1, 1);
-    glay5->addWidget(d->caption,             2, 0, 1, 1);
-    glay5->addWidget(d->labelCaption,        2, 1, 1, 1);
-    glay5->addWidget(d->pickLabel,           3, 0, 1, 1);
-    glay5->addWidget(d->labelPickLabel,      3, 1, 1, 1);
-    glay5->addWidget(d->colorLabel,          4, 0, 1, 1);
-    glay5->addWidget(d->labelColorLabel,     4, 1, 1, 1);
-    glay5->addWidget(d->rating,              5, 0, 1, 1);
-    glay5->addWidget(d->labelRating,         5, 1, 1, 1);
-    glay5->addWidget(d->versionned,          6, 0, 1, 1);
-    glay5->addWidget(d->labelVersionnedInfo, 6, 1, 1, 1);
-    glay5->addWidget(d->grouped,             7, 0, 1, 1);
-    glay5->addWidget(d->labelGroupedInfo,    7, 1, 1, 1);
+    glay5->addWidget(d->labelPhotoDateTime, 0, 0, 1, 2);
+    glay5->addWidget(d->title,              1, 0, 1, 1);
+    glay5->addWidget(d->labelTitle,         1, 1, 1, 1);
+    glay5->addWidget(d->caption,            2, 0, 1, 1);
+    glay5->addWidget(d->labelCaption,       2, 1, 1, 1);
+    glay5->addWidget(d->pickLabel,          3, 0, 1, 1);
+    glay5->addWidget(d->labelPickLabel,     3, 1, 1, 1);
+    glay5->addWidget(d->colorLabel,         4, 0, 1, 1);
+    glay5->addWidget(d->labelColorLabel,    4, 1, 1, 1);
+    glay5->addWidget(d->rating,             5, 0, 1, 1);
+    glay5->addWidget(d->labelRating,        5, 1, 1, 1);
+    glay5->addWidget(d->versioned,          6, 0, 1, 1);
+    glay5->addWidget(d->labelVersionedInfo, 6, 1, 1, 1);
+    glay5->addWidget(d->grouped,            7, 0, 1, 1);
+    glay5->addWidget(d->labelGroupedInfo,   7, 1, 1, 1);
     glay5->setContentsMargins(spacing, spacing, spacing, spacing);
     glay5->setColumnStretch(0, 10);
     glay5->setColumnStretch(1, 25);
@@ -361,7 +360,7 @@ void ItemPropertiesTab::showOrHideCachedProperties()
     bool hasColorLabel = !d->labelColorLabel->adjustedText().isEmpty();
     bool hasRating     = !d->labelRating->adjustedText().isEmpty();
     bool hasDate       = !d->labelPhotoDateTime->adjustedText().isEmpty();
-    bool hasVersionned = !d->labelVersionnedInfo->adjustedText().isEmpty();
+    bool hasVersioned  = !d->labelVersionedInfo->adjustedText().isEmpty();
     bool hasGrouped    = !d->labelGroupedInfo->adjustedText().isEmpty();
 
     d->labelPhotoDateTime->setVisible(hasDate);
@@ -376,8 +375,8 @@ void ItemPropertiesTab::showOrHideCachedProperties()
     d->labelColorLabel->setVisible(hasColorLabel);
     d->rating->setVisible(hasRating);
     d->labelRating->setVisible(hasRating);
-    d->versionned->setVisible(hasVersionned);
-    d->labelVersionnedInfo->setVisible(hasVersionned);
+    d->versioned->setVisible(hasVersioned);
+    d->labelVersionedInfo->setVisible(hasVersioned);
     d->grouped->setVisible(hasGrouped);
     d->labelGroupedInfo->setVisible(hasGrouped);
 
@@ -387,7 +386,7 @@ void ItemPropertiesTab::showOrHideCachedProperties()
                                                              hasPickLabel  ||
                                                              hasDate       ||
                                                              hasColorLabel ||
-                                                             hasVersionned ||
+                                                             hasVersioned  ||
                                                              hasGrouped);
 
     bool hasTags       = !d->labelTags->text().isEmpty();

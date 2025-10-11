@@ -60,7 +60,7 @@ public:
     DTextLabelName*    rating                       = nullptr;
     DTextLabelName*    tags                         = nullptr;
     DTextLabelName*    peoples                      = nullptr;
-    DTextLabelName*    versionned                   = nullptr;
+    DTextLabelName*    versioned                    = nullptr;
     DTextLabelName*    grouped                      = nullptr;
 
     DTextLabelValue*   labelFile                    = nullptr;
@@ -78,7 +78,7 @@ public:
     DTextLabelValue*   labelImageColorMode          = nullptr;
     DTextLabelValue*   labelHasSidecar              = nullptr;
     DTextLabelValue*   labelHasGPSInfo              = nullptr;
-    DTextLabelValue*   labelVersionnedInfo          = nullptr;
+    DTextLabelValue*   labelVersionedInfo           = nullptr;
     DTextLabelValue*   labelGroupedInfo             = nullptr;
 
     DTextLabelValue*   labelPhotoMake               = nullptr;

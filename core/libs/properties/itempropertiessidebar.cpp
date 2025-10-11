@@ -378,7 +378,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     m_propertiesTab->setTags(tagPaths);
 
     // Not supported
-    m_propertiesTab->setVersionnedInfo(QString());
+    m_propertiesTab->setVersionedInfo(QString());
     m_propertiesTab->setGroupedInfo(QString());
 
     m_propertiesTab->showOrHideCachedProperties();
