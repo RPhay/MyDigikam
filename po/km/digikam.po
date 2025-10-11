@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 11:02+0000\n"
+"POT-Creation-Date: 2025-10-11 10:56+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -11489,9 +11489,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "មិន​អាច​រក្សា​ទុក​ឯកសារ \"%1\""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:433
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:534
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:813
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -58812,7 +58812,7 @@ msgid "Remove uncertainty"
 msgstr "យក​ភាព​មិន​ពិត​ប្រាកដ​ចេញ​​"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:693
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:705
 #, kde-format
 msgid "Remove speed"
 msgstr "យក​ល្បឿន​ចេញ​"
@@ -58822,49 +58822,55 @@ msgstr "យក​ល្បឿន​ចេញ​"
 msgid "Look up missing altitude values"
 msgstr "រកមើល​តម្លៃ​រយៈកម្ពស់​ដែល​បាត់​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
+#, fuzzy, kde-format
+#| msgid "Images with coordinates"
+msgid "Items have different coordinates."
+msgstr "រូបភាព​ដែល​មាន​កូអរដោនេ"
+
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr "បាន​រក​ឃើញ​ចំណុច​ច្រើនជាង​មួយ​លើ​ក្ដារ​តម្បៀត​ខ្ទាស់​​ - អាច​​​​កំណត់​បាន​តែ​មួយ​ចំណុច​ប៉ុណ្ណោះ​​នៅ​ពេល​តែមួយ​ ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:523
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:535
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "មិន​អាច​រក​កូអរដោនេ​​មួយ​ចំនួន​​លើ​ក្ដារ​​តម្បៀត​ខ្ទាស់​បាន​ឡើយ​ ។​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:527
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "​បាន​បិទភ្ជាប់​កូអរដោនេ​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:560
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:572
 #, kde-format
 msgid "Bookmark selected"
 msgstr "បាន​ជ្រើស​ចំណាំ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:672
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:684
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "យក​​ព័ត៌មាន​អំពី​កូអរដោនេ​​ចេញ​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:689
 #, kde-format
 msgid "Remove altitude information"
 msgstr "យក​ព័ត៌មាន​អំពី​រយៈកម្ពស់​ចេញ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:695
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "យក​ព័ត៌មាន​អំពី​ភាព​មិន​ពិត​ប្រាកដ​ចេញ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:749
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:761
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "ស្វែងរក​រយៈ​កម្ពស់​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:800
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:812
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -58873,7 +58879,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​ស្វែង​រក​រយៈ​កម្ពស់ ៖\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:808
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:820
 #, kde-format
 msgid "Altitude looked up"
 msgstr "រយៈ​កម្ពស់​ស្វែងរក​"
@@ -63131,38 +63137,38 @@ msgstr "កម្មវិធី​គ្រប់គ្រង​ជួរ​ក
 msgid "&Queues"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:155
+#: core/utilities/queuemanager/manager/actiontask.cpp:156
 #, fuzzy, kde-format
 msgid "Failed to find tool..."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:257
+#: core/utilities/queuemanager/manager/actiontask.cpp:264
 #, kde-format
 msgid "(overwritten)"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:262
+#: core/utilities/queuemanager/manager/actiontask.cpp:269
 #, fuzzy, kde-format
 msgid "(renamed to %1)"
 msgstr "ប្ដូរ​ឈ្មោះ​អាល់ប៊ុម (%1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:267
+#: core/utilities/queuemanager/manager/actiontask.cpp:274
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:292
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
 #, fuzzy, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:301
+#: core/utilities/queuemanager/manager/actiontask.cpp:308
 #, fuzzy, kde-format
 msgid "Item processed successfully %1"
 msgstr "បាន​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​ដោយ​ជោគជ័យ ។"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:306
-#: core/utilities/queuemanager/manager/actiontask.cpp:311
+#: core/utilities/queuemanager/manager/actiontask.cpp:313
+#: core/utilities/queuemanager/manager/actiontask.cpp:318
 #, fuzzy, kde-format
 msgid "Failed to create file..."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
