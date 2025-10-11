@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 11:02+0000\n"
+"POT-Creation-Date: 2025-10-11 10:56+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -11384,9 +11384,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Súbor \"%1\" sa nedá uložiť"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:433
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:534
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:813
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -59246,7 +59246,7 @@ msgid "Remove uncertainty"
 msgstr "Odstrániť neurčitosť"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:693
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:705
 #, kde-format
 msgid "Remove speed"
 msgstr "Odstrániť rýchlosť"
@@ -59256,7 +59256,13 @@ msgstr "Odstrániť rýchlosť"
 msgid "Look up missing altitude values"
 msgstr "Vyhľadať chýbajúce hodnoty nadmorskej výšky"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
+#, fuzzy, kde-format
+#| msgid "Images with coordinates"
+msgid "Items have different coordinates."
+msgstr "Obrázky so súradnicami"
+
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
@@ -59265,49 +59271,49 @@ msgstr ""
 "V schránke sa nachádza viacero bodov - nie je možné priradiť naraz viac ako "
 "jeden bod."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:523
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:535
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "V schránke sa nenachádzajú žiadne súradnice."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:527
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "Súradnice vložené zo schránky"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:560
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:572
 #, fuzzy, kde-format
 msgid "Bookmark selected"
 msgstr "Povolí premenovanie vybranej záložky."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:672
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:684
 #, fuzzy, kde-format
 msgid "Remove coordinates information"
 msgstr "Odstrániť osobné informácie: autor, poloha..."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:689
 #, fuzzy, kde-format
 msgid "Remove altitude information"
 msgstr "Odstrániť osobné informácie: autor, poloha..."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:695
 #, fuzzy, kde-format
 msgid "Remove uncertainty information"
 msgstr "Odstrániť osobné informácie: autor, poloha..."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:749
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:761
 #, fuzzy, kde-format
 msgid "Looking up altitudes"
 msgstr "Hľadanie sekcie"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:800
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:812
 #, fuzzy, kde-format
 msgid ""
 "Altitude lookup failed:\n"
 "%1"
 msgstr "vyhľadanie názvu zlyhalo"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:808
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:820
 #, fuzzy, kde-format
 msgid "Altitude looked up"
 msgstr "Presunúť uzol nahor"
@@ -63779,28 +63785,28 @@ msgstr "Front dávky je dokončený..."
 msgid "&Queues"
 msgstr "&Rady"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:155
+#: core/utilities/queuemanager/manager/actiontask.cpp:156
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to find tool..."
 msgstr "Zlyhalo vytvorenie súboru..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:257
+#: core/utilities/queuemanager/manager/actiontask.cpp:264
 #, fuzzy, kde-format
 msgid "(overwritten)"
 msgstr "Prepísať"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:262
+#: core/utilities/queuemanager/manager/actiontask.cpp:269
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(premenované na %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:267
+#: core/utilities/queuemanager/manager/actiontask.cpp:274
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:292
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
 #, fuzzy, kde-format
 msgid "Failed to create sidecar file..."
 msgstr ""
@@ -63809,13 +63815,13 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:301
+#: core/utilities/queuemanager/manager/actiontask.cpp:308
 #, fuzzy, kde-format
 msgid "Item processed successfully %1"
 msgstr "Proces skončil úspešne"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:306
-#: core/utilities/queuemanager/manager/actiontask.cpp:311
+#: core/utilities/queuemanager/manager/actiontask.cpp:313
+#: core/utilities/queuemanager/manager/actiontask.cpp:318
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Zlyhalo vytvorenie súboru..."

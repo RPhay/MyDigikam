@@ -43,15 +43,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 11:02+0000\n"
-"PO-Revision-Date: 2025-09-26 14:07+0200\n"
+"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"PO-Revision-Date: 2025-10-10 21:46+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -356,12 +356,11 @@ msgstr[0] "Ändra ansiktsnamn från '%2' till '%3'"
 msgstr[1] "Ändra ansiktsnamn från '%2' till '%3'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%1' to Items"
 msgid_plural "Assign Tag(s) '%1' to Items"
-msgstr[0] "Tilldela etikett(er) '%1' till objekt"
-msgstr[1] "Tilldela etikett(er) '%1' till objekt"
+msgstr[0] "Tilldela etikett '%1' till objekt"
+msgstr[1] "Tilldela etiketter '%1' till objekt"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -11488,9 +11487,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Kan inte spara filen \"%1\""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:433
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:534
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:813
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -22447,9 +22446,7 @@ msgstr "Ingen bild markerad. Markera vilka bilder som ska laddas upp."
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "Varning"
@@ -22471,8 +22468,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "Fortsätt"
@@ -22483,8 +22479,7 @@ msgstr "Fortsätt"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "Avbryt"
@@ -23885,31 +23880,25 @@ msgstr "Anrop till Google Drive misslyckades: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "Fel"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "Export till Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Photos export"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "Export till Google Foto"
@@ -39816,9 +39805,7 @@ msgid "Tagging Mode:"
 msgstr "Etiketteringsläge:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@item: remplace existing autotags entries in database"
-#| msgid "Replace Existing"
+#, kde-format
 msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Ersätt befintliga"
@@ -57262,7 +57249,7 @@ msgid "Remove uncertainty"
 msgstr "Ta bort osäkerhet"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:693
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:705
 #, kde-format
 msgid "Remove speed"
 msgstr "Ta bort hastighet"
@@ -57272,7 +57259,13 @@ msgstr "Ta bort hastighet"
 msgid "Look up missing altitude values"
 msgstr "Slå upp saknade höjdvärden"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
+#, fuzzy, kde-format
+#| msgid "Images with coordinates"
+msgid "Items have different coordinates."
+msgstr "Bilder med koordinater"
+
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
@@ -57280,42 +57273,42 @@ msgid ""
 msgstr ""
 "Hittade mer än en punkt på klippbordet. Kan bara tilldela en punkt åt gången."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:523
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:535
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "Kunde inte hitta några koordinater på klippbordet."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:527
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "Koordinater inklistrade"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:560
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:572
 #, kde-format
 msgid "Bookmark selected"
 msgstr "Bokmärke valt"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:672
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:684
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "Ta bort koordinatinformation"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:689
 #, kde-format
 msgid "Remove altitude information"
 msgstr "Ta bort höjdinformation"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:695
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "Ta bort osäkerhetsinformation"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:749
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:761
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "Slår upp höjd"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:800
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:812
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -57324,7 +57317,7 @@ msgstr ""
 "Höjduppslagning misslyckades:\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:808
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:820
 #, kde-format
 msgid "Altitude looked up"
 msgstr "Höjduppslagning slutförd"
@@ -61614,38 +61607,38 @@ msgstr "Alla bakgrundsköer klara"
 msgid "&Queues"
 msgstr "&Köer"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:155
+#: core/utilities/queuemanager/manager/actiontask.cpp:156
 #, kde-format
 msgid "Failed to find tool..."
 msgstr "Misslyckades hitta verktyg ..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:257
+#: core/utilities/queuemanager/manager/actiontask.cpp:264
 #, kde-format
 msgid "(overwritten)"
 msgstr "(överskrivet)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:262
+#: core/utilities/queuemanager/manager/actiontask.cpp:269
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(namn ändat till %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:267
+#: core/utilities/queuemanager/manager/actiontask.cpp:274
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Objektet finns och hoppades över"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:292
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Misslyckades skapa associerad fil..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:301
+#: core/utilities/queuemanager/manager/actiontask.cpp:308
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Objekt behandlat med lyckat resultat %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:306
-#: core/utilities/queuemanager/manager/actiontask.cpp:311
+#: core/utilities/queuemanager/manager/actiontask.cpp:313
+#: core/utilities/queuemanager/manager/actiontask.cpp:318
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Misslyckades skapa fil..."

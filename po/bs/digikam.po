@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 11:02+0000\n"
+"POT-Creation-Date: 2025-10-11 10:56+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -12172,9 +12172,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Ne mogu da sačuvam \"%1\" datoteku"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:433
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:534
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:813
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -61959,7 +61959,7 @@ msgid "Remove uncertainty"
 msgstr "Ukloni nesigurnost"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:693
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:705
 #, kde-format
 msgid "Remove speed"
 msgstr "Ukloni brzinu"
@@ -61969,7 +61969,13 @@ msgstr "Ukloni brzinu"
 msgid "Look up missing altitude values"
 msgstr "Pogledaj nedostajuće vrijednosti visine"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
+#, fuzzy, kde-format
+#| msgid "Images with coordinates"
+msgid "Items have different coordinates."
+msgstr "Slike sa koordinatama"
+
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
@@ -61978,42 +61984,42 @@ msgstr ""
 "Pronađeno više od jedne tačke na klipbordu - može se samo dodijeliti jedna "
 "tačka na vrijeme."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:523
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:535
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "Ne mogu naći nijednu koordinatu na klipbordu."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:527
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "Koordinate zalijepljene"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:560
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:572
 #, kde-format
 msgid "Bookmark selected"
 msgstr "Zabilješke odabrane"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:672
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:684
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "Ukloni informacije o koordinatama"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:689
 #, kde-format
 msgid "Remove altitude information"
 msgstr "Ukloni informacije o uzvišenjima"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:695
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "Ukloni nesigurne informacije"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:749
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:761
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "Pregledaj uzvišenja"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:800
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:812
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -62022,7 +62028,7 @@ msgstr ""
 "Pregled uzvišenja propao:\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:808
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:820
 #, kde-format
 msgid "Altitude looked up"
 msgstr "Uzvišenja su pregledana"
@@ -66723,39 +66729,39 @@ msgstr "Red čekanja završen"
 msgid "&Queues"
 msgstr "&Redovi čekanja"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:155
+#: core/utilities/queuemanager/manager/actiontask.cpp:156
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to find tool..."
 msgstr "Neuspjelo kreiranje datoteke..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:257
+#: core/utilities/queuemanager/manager/actiontask.cpp:264
 #, kde-format
 msgid "(overwritten)"
 msgstr "(prebrisano)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:262
+#: core/utilities/queuemanager/manager/actiontask.cpp:269
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(preimenovana u %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:267
+#: core/utilities/queuemanager/manager/actiontask.cpp:274
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:292
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Kreiranje sidecar datoteke nije uspjelo..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:301
+#: core/utilities/queuemanager/manager/actiontask.cpp:308
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Stavka je uspješno obrađena %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:306
-#: core/utilities/queuemanager/manager/actiontask.cpp:311
+#: core/utilities/queuemanager/manager/actiontask.cpp:313
+#: core/utilities/queuemanager/manager/actiontask.cpp:318
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Neuspjelo kreiranje datoteke..."

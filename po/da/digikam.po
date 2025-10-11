@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 11:02+0000\n"
+"POT-Creation-Date: 2025-10-11 10:56+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -12065,9 +12065,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Kan ikke gemme \"%1\"-filen"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:433
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:534
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:813
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -61678,7 +61678,7 @@ msgid "Remove uncertainty"
 msgstr "Fjern usikkerhed"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:693
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:705
 #, kde-format
 msgid "Remove speed"
 msgstr "Fjern hastighed"
@@ -61688,7 +61688,13 @@ msgstr "Fjern hastighed"
 msgid "Look up missing altitude values"
 msgstr "Slå manglende højdeværdier op"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
+#, fuzzy, kde-format
+#| msgid "Images with coordinates"
+msgid "Items have different coordinates."
+msgstr "Billeder med koordinater"
+
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
@@ -61697,42 +61703,42 @@ msgstr ""
 "Fandt mere end ét punkt i udklipsholderen - kan kun tildele ét punkt ad "
 "gangen."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:523
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:535
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "Kunne ikke finde nogen koordinater i udklipsholderen."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:527
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "Koordinater indsat"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:560
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:572
 #, kde-format
 msgid "Bookmark selected"
 msgstr "Bogmærke valgt"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:672
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:684
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "Fjern koordinatinformation"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:689
 #, kde-format
 msgid "Remove altitude information"
 msgstr "Fjern højdeinformation"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:695
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "Fjern usikkerhedsinformation"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:749
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:761
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "Slår højder op"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:800
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:812
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -61741,7 +61747,7 @@ msgstr ""
 "Opslag af højde mislykkedes:\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:808
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:820
 #, kde-format
 msgid "Altitude looked up"
 msgstr "Opslag af højde gennemført"
@@ -66447,39 +66453,39 @@ msgstr "Batch-kø gennemført"
 msgid "&Queues"
 msgstr "&Køer"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:155
+#: core/utilities/queuemanager/manager/actiontask.cpp:156
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to find tool..."
 msgstr "Kunne ikke oprette fil..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:257
+#: core/utilities/queuemanager/manager/actiontask.cpp:264
 #, kde-format
 msgid "(overwritten)"
 msgstr "(overskrevet)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:262
+#: core/utilities/queuemanager/manager/actiontask.cpp:269
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(omdøbt til %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:267
+#: core/utilities/queuemanager/manager/actiontask.cpp:274
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:292
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Kunne ikke oprette sidevognsfil..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:301
+#: core/utilities/queuemanager/manager/actiontask.cpp:308
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Behandling af element gennemført %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:306
-#: core/utilities/queuemanager/manager/actiontask.cpp:311
+#: core/utilities/queuemanager/manager/actiontask.cpp:313
+#: core/utilities/queuemanager/manager/actiontask.cpp:318
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Kunne ikke oprette fil..."

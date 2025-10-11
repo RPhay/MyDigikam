@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 11:02+0000\n"
-"PO-Revision-Date: 2025-10-07 05:36+0300\n"
+"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"PO-Revision-Date: 2025-10-10 23:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -11518,9 +11518,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "“%1” dosyası kaydedilemiyor"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:228
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:433
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:534
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:813
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -39845,9 +39845,7 @@ msgid "Tagging Mode:"
 msgstr "Künyeleme kipi:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@item: remplace existing autotags entries in database"
-#| msgid "Replace Existing"
+#, kde-format
 msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Var olanı değiştir"
@@ -57289,7 +57287,7 @@ msgid "Remove uncertainty"
 msgstr "Belirsizliği Kaldır"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:693
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:705
 #, kde-format
 msgid "Remove speed"
 msgstr "Hızı Kaldır"
@@ -57299,7 +57297,13 @@ msgstr "Hızı Kaldır"
 msgid "Look up missing altitude values"
 msgstr "Eksik Rakım Değerlerine Bak"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
+#, fuzzy, kde-format
+#| msgid "Images with coordinates"
+msgid "Items have different coordinates."
+msgstr "Koordinatlı görseller"
+
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
@@ -57307,42 +57311,42 @@ msgid ""
 msgstr ""
 "Panoda birden fazla nokta bulundu — bir kerede yalnızca bir nokta atanabilir."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:523
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:535
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "Panoda hiçbir koordinat bulunamadı."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:527
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "Yapıştırılan koordinatlar"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:560
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:572
 #, kde-format
 msgid "Bookmark selected"
 msgstr "Seçili yer imi"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:672
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:684
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "Koordinat Bilgisini Kaldır"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:689
 #, kde-format
 msgid "Remove altitude information"
 msgstr "Rakım Bilgisini Kaldır"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:695
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "Belirsizlik Bilgisini Kaldır"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:749
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:761
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "Rakıma bakılıyor"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:800
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:812
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -57351,7 +57355,7 @@ msgstr ""
 "Rakım arama başarısız:\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:808
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:820
 #, kde-format
 msgid "Altitude looked up"
 msgstr "Rakım arandı"
@@ -61650,38 +61654,38 @@ msgstr "Tüm toplu iş kuyrukları bitti"
 msgid "&Queues"
 msgstr "&Kuyruklar"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:155
+#: core/utilities/queuemanager/manager/actiontask.cpp:156
 #, kde-format
 msgid "Failed to find tool..."
 msgstr "Araç bulunamadı…"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:257
+#: core/utilities/queuemanager/manager/actiontask.cpp:264
 #, kde-format
 msgid "(overwritten)"
 msgstr "(üstüne yazıldı)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:262
+#: core/utilities/queuemanager/manager/actiontask.cpp:269
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(%1 olarak yeniden adlandırıldı)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:267
+#: core/utilities/queuemanager/manager/actiontask.cpp:274
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Öge var olduğundan atlandı"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:292
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Sepet dosyası oluşturulamadı…"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:301
+#: core/utilities/queuemanager/manager/actiontask.cpp:308
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Öge başarıyla işlendi %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:306
-#: core/utilities/queuemanager/manager/actiontask.cpp:311
+#: core/utilities/queuemanager/manager/actiontask.cpp:313
+#: core/utilities/queuemanager/manager/actiontask.cpp:318
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Dosya oluşturulamadı…"
