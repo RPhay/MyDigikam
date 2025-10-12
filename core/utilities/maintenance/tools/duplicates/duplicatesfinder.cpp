@@ -60,6 +60,7 @@ public:
     QList<int>                   referenceAlbumsList;
     SearchesDBJobsThread*        job                        = nullptr;
     int                          duplicatesFound            = 0;
+    int                          totalItems                 = 0;
 };
 
 DuplicatesFinder::DuplicatesFinder(const AlbumList& albums,
@@ -174,6 +175,7 @@ void DuplicatesFinder::slotStart()
 void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& inf,
                                               const QImage& /*img*/, int duplicates)
 {
+    d->totalItems++;
     d->duplicatesFound += duplicates;
 
     if (checkProgressNeeded() == 0)
@@ -218,13 +220,13 @@ void DuplicatesFinder::slotDone()
 
     QString lbl;
 
-    if (totalItems() > 1)
+    if (d->totalItems > 1)
     {
-        lbl.append(i18n("Items scanned for duplicates: %1\n", totalItems()));
+        lbl.append(i18n("Items scanned for duplicates: %1\n", d->totalItems));
     }
     else
     {
-        lbl.append(i18n("Item scanned for duplicates: %1\n", totalItems()));
+        lbl.append(i18n("Item scanned for duplicates: %1\n", d->totalItems));
     }
 
     if (d->duplicatesFound > 1)
