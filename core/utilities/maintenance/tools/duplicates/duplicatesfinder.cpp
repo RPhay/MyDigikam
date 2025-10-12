@@ -174,6 +174,8 @@ void DuplicatesFinder::slotStart()
 void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& inf,
                                               const QImage& /*img*/, int duplicates)
 {
+    d->duplicatesFound += duplicates;
+
     if (checkProgressNeeded() == 0)
     {
         return;
@@ -196,8 +198,6 @@ void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& in
     }
 
     setLabel(lbl);
-
-    d->duplicatesFound += duplicates;
 
     setProgress(percentage);
 }
