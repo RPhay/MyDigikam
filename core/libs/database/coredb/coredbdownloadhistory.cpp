@@ -29,9 +29,9 @@ CamItemInfo::DownloadStatus CoreDbDownloadHistory::status(const QString& identif
     QList<qint64> seconds;
     seconds << 0 << 3600 << -3600;
 
-    for (const qint64 secound : std::as_const(seconds))
+    for (const qint64 second : std::as_const(seconds))
     {
-        QDateTime dt = date.addSecs(secound);
+        QDateTime dt = date.addSecs(second);
 
         if (CoreDbAccess().db()->findInDownloadHistory(identifier, name, fileSize, dt) != -1)
         {

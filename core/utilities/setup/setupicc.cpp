@@ -448,13 +448,13 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
                                        "black levels of digital files and the black capabilities of various "
                                        "digital devices.</p>"));
 
-    QLabel* const lablel            = new QLabel(d->advancedSettingsGB);
-    lablel->setText(i18n("Rendering Intents:"));
+    QLabel* const label            = new QLabel(d->advancedSettingsGB);
+    label->setText(i18n("Rendering Intents:"));
 
     d->renderingIntentKC            = new IccRenderingIntentComboBox(d->advancedSettingsGB);
 
     gridAdvanced->addWidget(d->bpcAlgorithm,      0, 0, 1, 2);
-    gridAdvanced->addWidget(lablel,               1, 0, 1, 1);
+    gridAdvanced->addWidget(label,                1, 0, 1, 1);
     gridAdvanced->addWidget(d->renderingIntentKC, 1, 1, 1, 1);
     gridAdvanced->setContentsMargins(spacing, spacing, spacing, spacing);
     gridAdvanced->setSpacing(0);

@@ -86,4 +86,4 @@ FocusPointItem* FocusPointGroup::Private::addItem(const FocusPoint& point)
     return item;
 }
 
-} // namspace Digikam
+} // namespace Digikam

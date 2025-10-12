@@ -240,7 +240,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->pickLabel             = new DTextLabelName(i18nc("@label: item properties", "Pick label: "),  w5);
     d->colorLabel            = new DTextLabelName(i18nc("@label: item properties", "Color label: "), w5);
     d->rating                = new DTextLabelName(i18nc("@label: item properties", "Rating: "),      w5);
-    d->versioned             = new DTextLabelName(i18nc("@label: item properties", "Versioned: "),  w5);
+    d->versioned             = new DTextLabelName(i18nc("@label: item properties", "Versioned: "),   w5);
     d->grouped               = new DTextLabelName(i18nc("@label: item properties", "Grouped: "),     w5);
 
     d->labelTitle            = new QLabel(QString(), w5);

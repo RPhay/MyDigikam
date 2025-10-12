@@ -4,7 +4,7 @@ Multilines text to search and replace is hosted in a text file (aka GPL2_1.txt)
 
 Multilines text use to replace inline source is hosted in a text file (aka SDPX-GPL2.txt)
 
-Copy this folder in root of source code hiearchy. Files will be scanned reccursively from root dir.
+Copy this folder in root of source code hierarchy. Files will be scanned recursively from root dir.
 
 Script is configured to search in .cpp and .h, this can be customized.
 

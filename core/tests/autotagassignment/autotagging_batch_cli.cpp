@@ -80,7 +80,7 @@ int main(int argc, char** argv)
     int batch_size = 1;
     int sizeData   = 54;
 
-    // 54 eles 0...53
+    // 54 else 0...53
     // i = 0, 0...9 || i = 40, 40...49 || i = 50, 50...53
 
     for (int i = 0 ; i <= (sizeData - sizeData % batch_size - batch_size) ; i += batch_size)

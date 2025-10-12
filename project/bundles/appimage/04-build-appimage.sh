@@ -145,7 +145,7 @@ else
 
     cp -r /usr/share/knotifications6                      ./usr/share
 
-    # Not avaialable with KF6
+    # Not available with KF6
 
     cp -r /usr/share/kservices6                           ./usr/share  || true
     cp -r /usr/share/kservicetypes6                       ./usr/share  || true

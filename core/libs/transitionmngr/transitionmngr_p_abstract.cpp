@@ -84,7 +84,7 @@ int TransitionMngr::Private::transitionMosaic(bool aInit)
 
     if (aInit)
     {
-        eff_i           = 30; // giri totaly
+        eff_i           = 30; // giri totally
         eff_pixelMatrix = new bool*[eff_outSize.width()];
 
         for (int x = 0 ; x < eff_outSize.width() ; ++x)

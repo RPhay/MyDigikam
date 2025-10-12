@@ -1280,7 +1280,7 @@ int PresentationWidget::effectMosaic(bool aInit)
 
     if (aInit)
     {
-        d->i           = 30; // giri totaly
+        d->i           = 30; // giri totally
         d->pixelMatrix = new bool*[width()];
 
         for (int x = 0 ; x < width() ; ++x)

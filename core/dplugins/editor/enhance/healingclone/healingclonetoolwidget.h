@@ -61,7 +61,7 @@ public:
 
     bool checkPointOutsideScene(const QPoint& point)                          const;
     void updateSourceCursor(const QPointF& pos = QPoint(),
-                            int diamter = 10);
+                            int diameter = 10);
 
     QPoint mapToImageCoordinates(const QPoint& point)                         const;
     QPoint mapFromImageCoordinates(const QPoint& point)                       const;

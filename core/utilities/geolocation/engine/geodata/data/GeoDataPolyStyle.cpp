@@ -48,7 +48,7 @@ public:
     bool            m_outline;
     Qt::BrushStyle  m_brushStyle;
 
-    /// The value of colorIndex will be maped to a color for brush
+    /// The value of colorIndex will be mapped to a color for brush
     quint8          m_colorIndex;
     QString         m_texturePath;
     QImage          m_textureImage;

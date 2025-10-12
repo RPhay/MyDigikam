@@ -80,7 +80,7 @@ required_packages=("cmake"                   # To Compile Source Code
                    "libqt5svg5"              # Qt 5 Svg module
                    "libqt5webengine5"        # Qt 5 webengine module
                    "qtwebengine5-dev"        # Qt 5 webengine module
-                   "libqt5networkauth5-dev"  # Qt 5 network authentification.
+                   "libqt5networkauth5-dev"  # Qt 5 network authentication.
                    "qtmultimedia5-dev"       # QT 5 Multimedia module
 
                    "libkf5config-dev"        # Configuration settings framework for Qt
@@ -172,7 +172,7 @@ done
 optional_packages=("ruby"                               # For i18n extraction
                    "subversion"                         # For i18n extraction
                    "hunspell"                           # For check spelling
-                   "valgrind"                           # For debuging
+                   "valgrind"                           # For debugging
                    "keychain"                           # For git-ssh
                    "ssh-askpass"                        # For git-ssh
                    "lzip"                               # For CI/CD
@@ -221,7 +221,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "xz-utils"                           # For MXE build
                    "python3-pygments"                   # For Cppcheck static analysis
                    "python3-bs4"                        # For Clazy static analysis
-                   "python3-soupsieve"                  # For Clazy static analisys
+                   "python3-soupsieve"                  # For Clazy static analysis
                    "cppcheck"                           # For static analysis
                    "clang"                              # For static analysis
                    "clang-tidy"                         # For static analysis
@@ -241,8 +241,8 @@ optional_packages=("ruby"                               # For i18n extraction
                    "doxygen"                            # For API doc
                    "graphviz"                           # For API doc
                    "texlive-full"                       # For API doc
-                   "kate"                               # For debuging
-                   "ktexteditor-katepart"               # For debuging
+                   "kate"                               # For debugging
+                   "ktexteditor-katepart"               # For debugging
                    "ccache"                             # For compiling
                    "hugin"                              # For run-time processing
                    "exiftool"                           # For metadata processing
