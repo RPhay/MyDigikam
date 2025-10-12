@@ -135,7 +135,7 @@ BUGFIXES:
 100 ==> 510460 - Bookmark without location saved when selecting multiple images (right click Bookmarks - Add Bookmark).
 101 ==> 510481 - Build failed on Qt5 with : gpsitemlistcontextmenu.cpp.o.
 102 ==> 510403 - Writing something in Captions/Description --> Captions works incorrectly.
-103 ==> 
+103 ==> 510515 - QMYSQL driver cannot be used.
 104 ==> 
 105 ==> 
 106 ==> 
