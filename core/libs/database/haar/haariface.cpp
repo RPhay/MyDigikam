@@ -776,7 +776,6 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
     QPair<double, QMap<qlonglong, double> > bestMatches;
     QList<qlonglong>                        duplicates;
     QSet<qlonglong>                         resultsCandidates;
-    bool                                    useDuplicate = false;
     const bool                              singleThread = ((rangeBegin == images2Scan.constBegin()) &&
                                                             (rangeEnd   == images2Scan.constEnd()));
 
@@ -823,12 +822,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
             // the list will usually contain one image: the original. Filter out.
 
-            useDuplicate = (
-                            (duplicates.size() > 1)                   &&
-                            (duplicates.first() == *images2ScanIterator)
-                           );
-
-            if (useDuplicate)
+            if ((duplicates.size() > 1) && duplicates.contains(*images2ScanIterator))
             {
                 DEBUG_DUPLICATES("\tHas duplicates");
 
@@ -1009,7 +1003,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
             observer->imageProcessed(
                                      info,
                                      QImage(),              // See bug 496691: performance issue - do not forward a loaded preview.
-                                     useDuplicate ? duplicates.size() : 0
+                                     (duplicates.size() > 1) ? duplicates.size() : 0
                                     );
         }
     }
