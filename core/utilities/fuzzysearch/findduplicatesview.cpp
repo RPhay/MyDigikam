@@ -347,16 +347,16 @@ FindDuplicatesView::~FindDuplicatesView()
 
 void FindDuplicatesView::initAlbumUpdateConnections()
 {
-/*
+
     connect(AlbumManager::instance(), SIGNAL(signalAlbumAdded(Album*)),
             this, SLOT(slotAlbumAdded(Album*)));
-*/
+
     connect(AlbumManager::instance(), SIGNAL(signalAlbumDeleted(Album*)),
             this, SLOT(slotAlbumDeleted(Album*)));
-/*
+
     connect(AlbumManager::instance(), SIGNAL(signalSearchUpdated(SAlbum*)),
             this, SLOT(slotSearchUpdated(SAlbum*)));
-*/
+
     connect(AlbumManager::instance(), SIGNAL(signalAlbumsCleared()),
             this, SLOT(slotClear()));
 
@@ -408,8 +408,6 @@ void FindDuplicatesView::populateTreeView()
     }
 
     d->listView->setSortingEnabled(true);
-    d->listView->resizeColumnToContents(0);
-    d->listView->sortByColumn(1, Qt::DescendingOrder);
 
     d->albumSelectors->loadState();
     d->refImageAlbumSelector->loadState();
@@ -418,6 +416,8 @@ void FindDuplicatesView::populateTreeView()
     {
         QApplication::restoreOverrideCursor();
     }
+
+    QTimer::singleShot(250, this, SLOT(slotSelectItemsTimer()));
 }
 
 QList<SAlbum*> FindDuplicatesView::currentFindDuplicatesAlbums() const
@@ -474,8 +474,6 @@ void FindDuplicatesView::slotAlbumAdded(Album* a)
         FindDuplicatesAlbumItem* const item = new FindDuplicatesAlbumItem(d->listView, salbum);
         salbum->setExtraData(this, item);
     }
-
-    updateSimilarityRangeInterval();
 }
 
 void FindDuplicatesView::slotAlbumDeleted(Album* a)
@@ -494,8 +492,6 @@ void FindDuplicatesView::slotAlbumDeleted(Album* a)
         a->removeExtraData(this);
         delete item;
     }
-
-    updateSimilarityRangeInterval();
 }
 
 void FindDuplicatesView::slotSearchUpdated(SAlbum* a)
@@ -511,6 +507,9 @@ void FindDuplicatesView::slotSearchUpdated(SAlbum* a)
 
 void FindDuplicatesView::slotSelectItemsTimer()
 {
+    d->listView->resizeColumnToContents(0);
+    d->listView->sortByColumn(1, Qt::DescendingOrder);
+
     if (d->listView->selectedItems().isEmpty())
     {
         d->listView->selectFirstItem();
@@ -521,6 +520,7 @@ void FindDuplicatesView::slotSelectItemsTimer()
 
 void FindDuplicatesView::slotClear()
 {
+/*
     for (QTreeWidgetItemIterator it(d->listView) ; *it ; ++it)
     {
         SAlbum* const salbum = static_cast<FindDuplicatesAlbumItem*>(*it)->album();
@@ -532,6 +532,19 @@ void FindDuplicatesView::slotClear()
     }
 
     d->listView->clear();
+*/
+    AlbumList::const_iterator it;
+    const AlbumList& aList = AlbumManager::instance()->allSAlbums();
+
+    for (it = aList.constBegin() ; it != aList.constEnd() ; ++it)
+    {
+        SAlbum* const salbum = dynamic_cast<SAlbum*>(*it);
+
+        if (salbum && salbum->isDuplicatesSearch())
+        {
+            AlbumManager::instance()->deleteSAlbum(salbum);
+        }
+    }
 }
 
 void FindDuplicatesView::enableControlWidgets(bool val)
@@ -636,7 +649,6 @@ void FindDuplicatesView::slotComplete()
 {
     enableControlWidgets(true);
     slotCheckForValidSettings();
-    populateTreeView();
 
     QTimer::singleShot(250, this, SLOT(slotSelectItemsTimer()));
 }
