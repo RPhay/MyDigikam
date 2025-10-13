@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -3605,7 +3605,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:105
@@ -27376,7 +27376,7 @@ msgstr "Mód méadraithe:"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -39150,7 +39150,7 @@ msgstr "Rátáil: "
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "Leaganacha"
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -39160,21 +39160,21 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "Grúpa"
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "Airíonna digiKam"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Lorgfhocail"
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
@@ -39182,21 +39182,21 @@ msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Daoine"
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Clibeanna"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Suíomh"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, fuzzy, kde-format
 #| msgid "Rights"
 msgctxt "@title: item properties"
@@ -63417,24 +63417,24 @@ msgstr "Cuardaigh i:"
 msgid "Item scanned for cataloging: %1"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Finding Duplicates: %1\n"
 msgstr "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "No duplicate item"
 msgstr "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "1 duplicate item"
@@ -63445,27 +63445,27 @@ msgstr[2] "Amhráin Dúbailte"
 msgstr[3] "Amhráin Dúbailte"
 msgstr[4] "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicates found: %1"
 msgstr "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicate found: %1"

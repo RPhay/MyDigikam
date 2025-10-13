@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2025-10-08 21:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3403,10 +3403,13 @@ msgstr ""
 "أضف محولات JPEG-XL وWEBP وAVIF في مدير قائمة الانتظار للعمليات المتعددة."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
+#| "image format to store versionned images in editor."
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 "إدارة الإصدارات: أضف دعمًا لـ JPEG-XL وHEIF وWEBP وAVIF كتنسيقات صور بدون "
 "فقدان لتخزين الصور ذات الإصدارات في المحرر."
@@ -26533,7 +26536,7 @@ msgstr "تدوير آليّ: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -38187,9 +38190,11 @@ msgid "Rating: "
 msgstr "التّقييم: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Versionned: "
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "مُصَدَر:"
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -38198,37 +38203,37 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "مجمعة: "
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "خصائص «دِجي‌كام»"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "الكلمات المفتاحيّة: "
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "الأشخاص: "
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "الوسوم"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "المكان"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
@@ -60666,22 +60671,22 @@ msgstr "العناصر التي فُحصت للتصنيف: %1"
 msgid "Item scanned for cataloging: %1"
 msgstr "العنصر الذي فُحص للتصنيف: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr "اعثر على العناصر المكررة"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "ابحث عن المتكرّر: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "No duplicate item"
 msgstr "لا يوجد عنصر مكرر"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
@@ -60692,22 +60697,22 @@ msgstr[3] "%1 عنصرًا مكررًا"
 msgstr[4] "%1 عنصرًا مكررًا"
 msgstr[5] "%1 عنصرًا مكررًا"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "العناصر التي فُحصت للتكرار: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "العنصر الذي فُحص للتكرار: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "النسخ المكررة التي عُثر عليها: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "النسخة المكررة التي عُثر عليها: %1"

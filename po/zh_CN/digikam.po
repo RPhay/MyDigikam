@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -318,11 +318,10 @@ msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "更改人脸名称，从“%2”到“%3”"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%1' to Items"
 msgid_plural "Assign Tag(s) '%1' to Items"
-msgstr[0] "指定标签“%1”到图像"
+msgstr[0] ""
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -3249,10 +3248,13 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "在批处理管理器中添加 JPEG-XL、WebP、AVIF 转换插件。"
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
+#| "image format to store versionned images in editor."
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 "版本管理功能：新增支持 JPEG-XL、HEIF、WebP、AVIF 作为无损图像格式来存储多版本"
 "图像。"
@@ -21651,12 +21653,10 @@ msgstr "未选择图像。请选择要上传的图像。"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:248
 #: core/dplugins/generic/webservices/google/gswindow.cpp:519
@@ -21673,11 +21673,10 @@ msgstr "身份验证失败。点击“继续”进行身份验证。"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Continue"
-msgstr "继续"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/google/gswindow.cpp:523
@@ -21685,11 +21684,10 @@ msgstr "继续"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:280
 #: core/dplugins/generic/webservices/google/gswindow.cpp:380
@@ -23057,34 +23055,28 @@ msgstr "Google Drive 调用失败： %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Error"
-msgstr "错误"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
-msgstr "%v / %m"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Drive export"
-msgstr "Google Drive 导出"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Photos export"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Photos export"
-msgstr "Google Photos 导出"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
@@ -25966,7 +25958,7 @@ msgstr "自动旋转：%1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -37335,9 +37327,11 @@ msgid "Rating: "
 msgstr "评分："
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Versionned: "
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "已版本管理："
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -37346,37 +37340,37 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "已分组："
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKam 属性"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "关键词："
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "人物："
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "标签"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "位置"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
@@ -38546,12 +38540,10 @@ msgid "Tagging Mode:"
 msgstr "标签模式："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@item: remplace existing autotags entries in database"
-#| msgid "Replace Existing"
+#, kde-format
 msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "替换"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
@@ -55659,10 +55651,9 @@ msgid "Look up missing altitude values"
 msgstr "查找缺失海拔"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
-#, fuzzy, kde-format
-#| msgid "Images with coordinates"
+#, kde-format
 msgid "Items have different coordinates."
-msgstr "有地理坐标图像"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
@@ -59413,43 +59404,43 @@ msgstr "已扫描编目的项目：%1"
 msgid "Item scanned for cataloging: %1"
 msgstr "已扫描编目的项目：%1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr "查找重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "正在查找重复项：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "No duplicate item"
 msgstr "没有重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "%1 个重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "已扫描重复项的项目：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "已扫描重复项的项目：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "已找到重复项：%1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "已找到重复项：%1"
@@ -65990,23 +65981,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@title: window start transfert"
-#~ msgid "Warning"
-#~ msgstr "警告"
-
-#~ msgctxt "@action: button start transfert"
-#~ msgid "Continue"
-#~ msgstr "继续"
-
-#~ msgctxt "@action: button start transfert"
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgctxt "@title: window start transfert"
-#~ msgid "Error"
-#~ msgstr "错误"
-
-#~ msgctxt "@info: progress bar start transfert"
-#~ msgid "%v / %m"
-#~ msgstr "%v / %m"

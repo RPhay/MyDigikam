@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2025-10-10 21:46+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -3343,10 +3343,13 @@ msgstr ""
 "bakgrundsbehandling."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
+#| "image format to store versionned images in editor."
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 "Versionshantering: Lägg till stöd för JPEG-XL, HEIF, WEBP och AVIF som "
 "förlustfria bildformat för att lagra versionshanterade bilder i editorn."
@@ -26829,7 +26832,7 @@ msgstr "Rotera automatiskt: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -38542,9 +38545,11 @@ msgid "Rating: "
 msgstr "Betyg: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Versionned: "
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "Versionshanterad: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -38553,37 +38558,37 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "Grupperad: "
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "Digikams egenskaper"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Nyckelord: "
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Personer: "
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Etiketter"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Plats"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
@@ -61117,44 +61122,44 @@ msgstr "Objekt genomsökta för katalogisering: %1"
 msgid "Item scanned for cataloging: %1"
 msgstr "Objekt genomsökt för katalogisering: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Sök efter duplicerade objekt"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "Söker efter dubbletter: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "No duplicate item"
 msgstr "Inget duplicerat objekt"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "1 duplicerat objekt"
 msgstr[1] "%1 duplicerade objekt"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Objekt genomsökta efter dubbletter: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Objekt genomsökt efter dubbletter: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "Funna dubbletter: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "Funnen dubblett: %1"

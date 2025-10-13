@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2025-10-11 16:14+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -3380,10 +3380,13 @@ msgstr ""
 "обробкою."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
+#| "image format to store versionned images in editor."
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 "Робота з версіями: реалізовано підтримку JPEG-XL, HEIF, WEBP і AVIF як "
 "формат зберігання зображень без втрат для зберігання версій зображень у "
@@ -27253,7 +27256,7 @@ msgstr "Автообертання: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -39139,9 +39142,11 @@ msgid "Rating: "
 msgstr "Оцінка: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Versionned: "
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "Версія:"
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -39150,37 +39155,37 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "Згруповано:"
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "Властивості digiKam"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Ключові слова: "
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Люди: "
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Мітки"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Місце"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
@@ -61955,22 +61960,22 @@ msgstr "Записи у каталогізаційному пошуку: %1"
 msgid "Item scanned for cataloging: %1"
 msgstr "Запис у каталогізаційному пошуку: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Знайти дублікати"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "Пошук дублікатів: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "No duplicate item"
 msgstr "Немає дублікатів"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
@@ -61979,22 +61984,22 @@ msgstr[1] "%1 дублікати"
 msgstr[2] "%1 дублікатів"
 msgstr[3] "1 дублікат"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Записи у пошуку дублікатів: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Запис у пошуку дублікатів: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "Знайдено дублікатів: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "Знайдено дублікат: %1"

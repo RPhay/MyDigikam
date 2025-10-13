@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
-"PO-Revision-Date: 2025-10-08 06:54+0200\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
+"PO-Revision-Date: 2025-10-12 08:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3385,10 +3385,13 @@ msgstr ""
 "Dodani prevajalniki za JPEG-XL, WEBP in AVIF v upravljalniku paketnih vrst."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
+#| "image format to store versionned images in editor."
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 "Podpora inačic: dodana podpora za JPEG-XL, HEIF, WEBP in AVIF kot format "
 "slike brez izgub za shranjevanje inačic slik v urejevalniku."
@@ -26858,7 +26861,7 @@ msgstr "Samodejno vrtenje: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -38636,9 +38639,11 @@ msgid "Rating: "
 msgstr "Ocena: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Versionned: "
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "Z inačicami: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -38647,37 +38652,37 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "Združena: "
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "lastnosti digiKama"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Ključne besede: "
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Ljudje: "
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Značke"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Kraj"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
@@ -57404,10 +57409,9 @@ msgid "Look up missing altitude values"
 msgstr "Poišči manjkajoče vrednosti za višino"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
-#, fuzzy, kde-format
-#| msgid "Images with coordinates"
+#, kde-format
 msgid "Items have different coordinates."
-msgstr "Slike s koordinatami"
+msgstr "Postavke imajo različne koordinate"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
@@ -61284,22 +61288,22 @@ msgstr "Postavk preiskanih za katalog: %1"
 msgid "Item scanned for cataloging: %1"
 msgstr "Postavka preiskana za katalog: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Najdi podvojene predmete"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "Iskanje dvojnikov: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, kde-format
 msgid "No duplicate item"
 msgstr "Ni dvojnikov"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
@@ -61308,22 +61312,22 @@ msgstr[1] "%1 dvojnik"
 msgstr[2] "%1 dvojnika"
 msgstr[3] "%1 dvojniki"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Postavk preiskanih za dvojnike: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Postavka preiskana za dvojnike: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "Najdenih dvojnikov: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "Najden dvojnik: %1"

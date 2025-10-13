@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3304,7 +3304,7 @@ msgstr "新增 JPEG-XL、WEBP 與 AVIF 轉換器到批次佇列管理器中。"
 #, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:105
@@ -26769,7 +26769,7 @@ msgstr "自動標籤模式："
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -38560,7 +38560,7 @@ msgstr "評分："
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "版本"
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -38570,21 +38570,21 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "群組"
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKam 屬性"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "關鍵字"
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
@@ -38592,20 +38592,20 @@ msgctxt "@label: item properties"
 msgid "People: "
 msgstr "人物"
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "標籤"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "位置"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, fuzzy, kde-format
 #| msgid "Rights"
 msgctxt "@title: item properties"
@@ -61198,26 +61198,26 @@ msgstr "在相簿 %1 裡掃描臉孔"
 msgid "Item scanned for cataloging: %1"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr "尋找重複項目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "Finding Duplicates: %1\n"
 msgstr "尋找重複項目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "No duplicate item"
 msgstr "尋找重複項目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
@@ -61225,26 +61225,26 @@ msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "尋找重複項目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, fuzzy, kde-format
 #| msgctxt "Find Duplicates Tab"
 #| msgid "Duplicates"
 msgid "Duplicates found: %1"
 msgstr "重複項目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, fuzzy, kde-format
 #| msgctxt "Find Duplicates Tab"
 #| msgid "Duplicates"

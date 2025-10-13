@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -3384,7 +3384,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:105
@@ -25950,7 +25950,7 @@ msgstr "गुणवत्ताश्रेणी: "
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -37179,7 +37179,7 @@ msgstr "गुणवत्ताश्रेणी: "
 #: core/libs/properties/itempropertiestab.cpp:243
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "विस्तारण:"
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -37189,38 +37189,38 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "समूह"
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "परवलीचे शब्द"
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "उदाहरण"
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "टॅग्स"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "स्थान"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
@@ -60089,24 +60089,24 @@ msgstr "यामध्ये शोधा '%1'..."
 msgid "Item scanned for cataloging: %1"
 msgstr "यामध्ये शोधा '%1'..."
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Finding Duplicates: %1\n"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "No duplicate item"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "1 duplicate item"
@@ -60114,23 +60114,23 @@ msgid_plural "%1 duplicate items"
 msgstr[0] "घटक काढून टाका"
 msgstr[1] "घटक काढून टाका"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, fuzzy, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "यामध्ये शोधा '%1'..."
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, fuzzy, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "यामध्ये शोधा '%1'..."
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Duplicates found: %1"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Duplicate found: %1"

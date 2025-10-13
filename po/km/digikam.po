@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3573,7 +3573,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:105
@@ -27325,7 +27325,7 @@ msgstr "របៀប​វាស់​ស្ទង់ ៖"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -39072,7 +39072,7 @@ msgstr "តិត្ថិភាព​ ៖​"
 #, fuzzy, kde-format
 #| msgid "Images on %1"
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "រូបភាព​នៅ​លើ %1"
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -39082,21 +39082,21 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "ក្រុម"
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "លក្ខណ​សម្បត្តិ digiKam"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "ពាក្យគន្លឹះ​"
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
@@ -39104,21 +39104,21 @@ msgctxt "@label: item properties"
 msgid "People: "
 msgstr "មនុស្ស"
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "ស្លាក"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "ទីតាំង"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "rotate image right"
 #| msgid "Right"
@@ -62621,49 +62621,49 @@ msgstr "បង្កើត​អាល់ប៊ុម​ថ្មី"
 msgid "Item scanned for cataloging: %1"
 msgstr "បង្កើត​អាល់ប៊ុម​ថ្មី"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, fuzzy, kde-format
 #| msgid "Find Duplicates..."
 msgid "Finding Duplicates: %1\n"
 msgstr "រក​ច្បាប់​ចម្លង..."
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, fuzzy, kde-format
 #| msgid "Find Duplicates..."
 msgid "No duplicate item"
 msgstr "រក​ច្បាប់​ចម្លង..."
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, fuzzy, kde-format
 #| msgid "Find Duplicates..."
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "រក​ច្បាប់​ចម្លង..."
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, fuzzy, kde-format
 #| msgid "Create new album"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "បង្កើត​អាល់ប៊ុម​ថ្មី"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, fuzzy, kde-format
 #| msgid "Create new album"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "បង្កើត​អាល់ប៊ុម​ថ្មី"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, fuzzy, kde-format
 #| msgid "Remove altitude"
 msgid "Duplicates found: %1"
 msgstr "យក​រយៈកំពស់​ចេញ​​​"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, fuzzy, kde-format
 #| msgid "Remove altitude"
 msgid "Duplicate found: %1"

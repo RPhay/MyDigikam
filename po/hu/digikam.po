@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 10:56+0000\n"
+"POT-Creation-Date: 2025-10-13 01:59+0000\n"
 "PO-Revision-Date: 2025-10-07 20:58+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3338,7 +3338,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versionned images in editor."
+"format to store versioned images in editor."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:105
@@ -26243,7 +26243,7 @@ msgstr "Mérési mód:"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:187
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
@@ -37751,7 +37751,7 @@ msgstr "Értékelés:"
 #| msgctxt "@label"
 #| msgid "Version"
 msgctxt "@label: item properties"
-msgid "Versionned: "
+msgid "Versioned: "
 msgstr "Verzió"
 
 #: core/libs/properties/itempropertiestab.cpp:244
@@ -37762,13 +37762,13 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "Csoport"
 
-#: core/libs/properties/itempropertiestab.cpp:279
+#: core/libs/properties/itempropertiestab.cpp:278
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKam tulajdonságok"
 
-#: core/libs/properties/itempropertiestab.cpp:286
+#: core/libs/properties/itempropertiestab.cpp:285
 #, fuzzy, kde-format
 #| msgctxt "@item: iptc"
 #| msgid "Keywords"
@@ -37776,7 +37776,7 @@ msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Kulcsszavak"
 
-#: core/libs/properties/itempropertiestab.cpp:290
+#: core/libs/properties/itempropertiestab.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
@@ -37784,21 +37784,21 @@ msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Emberek"
 
-#: core/libs/properties/itempropertiestab.cpp:305
+#: core/libs/properties/itempropertiestab.cpp:304
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Címkék"
 
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:322
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Hely"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:343
 #, fuzzy, kde-format
 #| msgid "Rights"
 msgctxt "@title: item properties"
@@ -60950,26 +60950,26 @@ msgstr "Arcok keresése"
 msgid "Item scanned for cataloging: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Duplikátumok keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "Finding Duplicates: %1\n"
 msgstr "Ismétlődések keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "No duplicate item"
 msgstr "Ismétlődések keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
@@ -60978,25 +60978,25 @@ msgid_plural "%1 duplicate items"
 msgstr[0] "Ismétlődések keresése"
 msgstr[1] "Ismétlődések keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicates found: %1"
 msgstr "Kettőzések"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicate found: %1"
