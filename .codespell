@@ -33,7 +33,10 @@ IGNORE_DIRS+="../../po/*,"
 IGNORE_DIRS+="../../test-data/*,"
 IGNORE_DIRS+="../../LICENSES/*,"
 IGNORE_DIRS+="*.appdata.xml,"
+IGNORE_DIRS+="*.notifyrc,"
 IGNORE_DIRS+="*.desktop,"
+IGNORE_DIRS+="*NEWS,"
+IGNORE_DIRS+="*AUTHORS,"
 IGNORE_DIRS+="*.js,"
 IGNORE_DIRS+="*.xml,"
 IGNORE_DIRS+="*.svg,"
@@ -41,4 +44,4 @@ IGNORE_DIRS+="*.o5m,"
 
 # --- Defines to use with static analysis.
 
-CODESPELL_IGNORE_WORDS="afile,ahd,asign,caf,childs,claus,cyphertext,defaut,destroi,fle,fo,foto,hist,indx,indexin,inout,ist,iten,lod,mata,mye,nam,nd,ned,oly,optio,parm,previousy,requestor,sav,shft,siz,smal,spred,tage,tempdate,tesselate,thet,toolsbox,tru,visiblestage,visibles,uptodate,wheight"
+CODESPELL_IGNORE_WORDS="afile,ahd,asign,caf,childs,claus,cyphertext,defaut,destroi,fle,fo,foto,hist,indx,indexin,inout,ist,iten,lod,mata,mye,nam,nd,ned,oly,optio,parm,previousy,requestor,sav,shft,siz,smal,spred,tage,tempdate,tesselate,thet,toolsbox,tru,visiblestage,visibles,uptodate,wheight,manuel,bLoaded"
