@@ -113,7 +113,7 @@ public:
                            int w)                                             const;
 
     // Utilities
-    void getSIFTdescripter(std::vector<float>& descripter,
+    void getSIFTdescriptor(std::vector<float>& descriptor,
                            const std::vector<std::vector<float> >& m,
                            const std::vector<std::vector<float> >& theta,
                            int x, int y, int windowSize, int histDim, int bucketsDim,
@@ -407,7 +407,7 @@ void FunnelReal::Private::computeOriginalFeatures(std::vector<std::vector<std::v
     {
         for (int k = 0 ; k < width ; ++k)
         {
-            getSIFTdescripter(SiftDesc,
+            getSIFTdescriptor(SiftDesc,
                               m,
                               theta,
                               j + windowSize,
@@ -564,7 +564,7 @@ cv::Mat FunnelReal::Private::applyTransform(const cv::Mat& image,
     return dst;
 }
 
-void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
+void FunnelReal::Private::getSIFTdescriptor(std::vector<float>& descriptor,
                                             const std::vector<std::vector<float> >& m,
                                             const std::vector<std::vector<float> >& theta,
                                             int x,
@@ -574,9 +574,9 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
                                             int bucketsDim,
                                             const std::vector<std::vector<float> >& Gaussian) const
 {
-    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
+    for (int i = 0 ; i < (signed)descriptor.size() ; ++i)
     {
-        descripter[i] = 0;
+        descriptor[i] = 0;
     }
 
     int histDimWidth = 2 * windowSize / histDim;
@@ -597,7 +597,7 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
         }
     }
 
-    // calculate descripter
+    // calculate descriptor
     // using trilinear interpolation
 
     int histBin[2], histX[2], histY[2];
@@ -660,7 +660,7 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
                     {
                         int histNum                           = histX[histXIndex] * histDimWidth + histY[histYIndex];
                         int bin                               = histBin[histBinIndex];
-                        descripter[histNum * bucketsDim + bin] += (mtimesG[i][j] * dX[histXIndex] * dY[histYIndex] * dBin[histBinIndex]);
+                        descriptor[histNum * bucketsDim + bin] += (mtimesG[i][j] * dX[histXIndex] * dY[histYIndex] * dBin[histBinIndex]);
                     }
                 }
             }
@@ -672,44 +672,44 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
 
     float sum = 0.0f;
 
-    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
+    for (int i = 0 ; i < (signed)descriptor.size() ; ++i)
     {
-        sum += descripter[i];
+        sum += descriptor[i];
     }
 
     if (sum < .0000001f)
     {
         /*
-                float dn = 1.0f / (signed)descripter.size(); // is unused, don't know
+                float dn = 1.0f / (signed)descriptor.size(); // is unused, don't know
         */
-        for (int i = 0 ; i < (signed)descripter.size() ; ++i)
+        for (int i = 0 ; i < (signed)descriptor.size() ; ++i)
         {
-            descripter[i] = 0;
+            descriptor[i] = 0;
         }
 
         return;
     }
 
-    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
+    for (int i = 0 ; i < (signed)descriptor.size() ; ++i)
     {
-        descripter[i] /= sum;
+        descriptor[i] /= sum;
 
-        if (descripter[i] > .2f)
+        if (descriptor[i] > .2f)
         {
-            descripter[i] = .2f;
+            descriptor[i] = .2f;
         }
     }
 
     sum = 0.0f;
 
-    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
+    for (int i = 0 ; i < (signed)descriptor.size() ; ++i)
     {
-        sum += descripter[i];
+        sum += descriptor[i];
     }
 
-    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
+    for (int i = 0 ; i < (signed)descriptor.size() ; ++i)
     {
-        descripter[i] /= sum;
+        descriptor[i] /= sum;
     }
 }
 
