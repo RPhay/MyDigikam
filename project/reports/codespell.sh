@@ -64,7 +64,7 @@ codespell \
 
 if [[ -f ./codespell-trace.txt ]] ; then
 
-    ISSUES=$(grep -c '^> ' $1/codespell-trace.txt)
+    ISSUES=$(grep -c '^> ' ./codespell-trace.txt)
     mv ./codespell-trace.txt $REPORT_DIR
 
     # Create an HTML report
