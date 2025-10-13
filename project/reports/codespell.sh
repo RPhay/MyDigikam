@@ -11,10 +11,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-# Halt and catch errors
-set -eE
-trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
-trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
+# No halt and catch errors in this script, codespell do not like it
 
 . ./common.sh
 
@@ -45,6 +42,7 @@ TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "CodeSpell Static Analyzer task name: $TITLE"
 
 rm -fr $ORIG_WD/$REPORT_DIR
+mkdir -p "$ORIG_WD/$REPORT_DIR"
 
 # Print the skipped directories taken from the config file.
 
@@ -158,7 +156,7 @@ EOF
 EOF
 
     sed -i "s|__TITLE__|$TITLE|g" $HTML_FILE
-    mv $1/$HTML_FILE $REPORT_DIR
+    mv ./$HTML_FILE $REPORT_DIR
 
     if [[ $1 != "--nowebupdate" ]] ; then
 
