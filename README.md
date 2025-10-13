@@ -100,7 +100,7 @@ Extra Bugzilla servers for shared libs used by digiKam :
 
 # Compilation and Installation
 
-From the **developper documentation** [available at this url](https://files.kde.org/digikam/api/), see the sections:
+From the **developer documentation** [available at this url](https://files.kde.org/digikam/api/), see the sections:
 
 - **External Dependencies**
 - **Get Source Code**

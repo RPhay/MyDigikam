@@ -20,7 +20,7 @@ For the todo list, see bugzilla for details which is the complete story of the p
 
 # CODING STYLE
 
-See the coding style detailed on **developper documentation** [available at this url](https://files.kde.org/digikam/api/)
+See the coding style detailed on **developer documentation** [available at this url](https://files.kde.org/digikam/api/)
 
 # DOCUMENTATION
 
