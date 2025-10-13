@@ -66,11 +66,11 @@ private Q_SLOTS:
     void loginTestConnectTrue()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>");
-        m_server->addScenario(senario, cookie);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>");
+        m_server->addScenario(scenario, cookie);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -90,11 +90,11 @@ private Q_SLOTS:
     void loginTestAttribute()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /></api>");
-        m_server->addScenario(senario, cookie);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /></api>");
+        m_server->addScenario(scenario, cookie);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));         // krazy:exclude=insecurenet
@@ -115,11 +115,11 @@ private Q_SLOTS:
     void loginTestConnectTrueWithoutCookie()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario);
-        senario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /></api>");
-        m_server->addScenario(senario, cookie);
+        m_server->setScenario(scenario);
+        scenario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /></api>");
+        m_server->addScenario(scenario, cookie);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -136,11 +136,11 @@ private Q_SLOTS:
     void loginTestFalseXMLLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /></api>");
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /></api>");
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -160,8 +160,8 @@ private Q_SLOTS:
     void loginTestNoNameLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NoName\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"NoName\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -182,8 +182,8 @@ private Q_SLOTS:
     void loginTestIllegalLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"Illegal\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"Illegal\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -204,8 +204,8 @@ private Q_SLOTS:
     void loginTestNotExistsLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NotExists\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"NotExists\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -226,8 +226,8 @@ private Q_SLOTS:
     void loginTestEmptyPassLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"EmptyPass\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"EmptyPass\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -248,8 +248,8 @@ private Q_SLOTS:
     void loginTestWrongPassLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"WrongPass\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"WrongPass\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -270,8 +270,8 @@ private Q_SLOTS:
     void loginTestWrongPluginPassLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"WrongPluginPass\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"WrongPluginPass\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -292,8 +292,8 @@ private Q_SLOTS:
     void loginTestCreateBlockedLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"CreateBlocked\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"CreateBlocked\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -314,8 +314,8 @@ private Q_SLOTS:
     void loginTestThrottledLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"Throttled\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"Throttled\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -336,8 +336,8 @@ private Q_SLOTS:
     void loginTestBlockedLogin()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"Blocked\" info=\"\" /> </api>") );
-        m_server->setScenario(senario);
+        QString scenario(QStringLiteral("<api><login result=\"Blocked\" info=\"\" /> </api>") );
+        m_server->setScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -358,11 +358,11 @@ private Q_SLOTS:
     void loginTestFalseXMLToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\"</api>");
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"Success\" lguserid=\"12345\" lgusername=\"MyUsername\" lgtoken=\"b5780b6e2f27e20b450921d9461010b4\" cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\"</api>");
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -382,11 +382,11 @@ private Q_SLOTS:
     void loginTestNoNameToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"NoName\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"NoName\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -407,11 +407,11 @@ private Q_SLOTS:
     void loginTestIllegalToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"Illegal\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"Illegal\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -432,11 +432,11 @@ private Q_SLOTS:
     void loginTestNotExistsToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"NotExists\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"NotExists\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -457,11 +457,11 @@ private Q_SLOTS:
     void loginTestEmptyPassToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"EmptyPass\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"EmptyPass\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -482,11 +482,11 @@ private Q_SLOTS:
     void loginTestWrongPassToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"WrongPass\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"WrongPass\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -507,11 +507,11 @@ private Q_SLOTS:
     void loginTestWrongPluginPassToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"WrongPluginPass\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"WrongPluginPass\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -532,11 +532,11 @@ private Q_SLOTS:
     void loginTestCreateBlockedToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"CreateBlocked\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"CreateBlocked\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -557,11 +557,11 @@ private Q_SLOTS:
     void loginTestThrottledToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"Throttled\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"Throttled\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet
@@ -582,11 +582,11 @@ private Q_SLOTS:
     void loginTestBlockedToken()
     {
         loginCount = 0;
-        QString senario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
+        QString scenario(QStringLiteral("<api><login result=\"NeedToken\" token=\"b5780b6e2f27e20b450921d9461010b4\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" /> </api>") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\""));
-        m_server->setScenario(senario, cookie);
-        senario = QStringLiteral("<api><login result=\"Blocked\" info=\"\" /> </api>") ;
-        m_server->addScenario(senario);
+        m_server->setScenario(scenario, cookie);
+        scenario = QStringLiteral("<api><login result=\"Blocked\" info=\"\" /> </api>") ;
+        m_server->addScenario(scenario);
         m_server->startAndWait();
 
         Iface site(QUrl(QStringLiteral("http://127.0.0.1:12566")));     // krazy:exclude=insecurenet

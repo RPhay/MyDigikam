@@ -80,13 +80,13 @@ private Q_SLOTS:
     void editSetters()
     {
         QFETCH(QString, request);
-        QFETCH(QString, senario);
+        QFETCH(QString, scenario);
         QFETCH(Edit*, job);
 
         editCount = 0;
         FakeServer fakeserver;
         fakeserver.setScenario(m_infoScenario);
-        fakeserver.addScenario(senario);
+        fakeserver.addScenario(scenario);
         fakeserver.startAndWait();
 
         connect(job, SIGNAL(result(KJob*)),
@@ -103,7 +103,7 @@ private Q_SLOTS:
     void editSetters_data()
     {
         QTest::addColumn<QString>("request");
-        QTest::addColumn<QString>("senario");
+        QTest::addColumn<QString>("scenario");
         QTest::addColumn<Edit*>("job");
 
         Edit* const e1 = new Edit( *m_mediaWiki, nullptr);
@@ -395,12 +395,12 @@ private Q_SLOTS:
         FakeServer fakeserver;
 
         this->request = QStringLiteral("/?format=xml&action=edit&basetimestamp=2008-03-20T17:26:39Z&md5=4d184ec6e8fe61abccb8ff62c4583cd0&section=new&starttimestamp=2008-03-27T21:15:39Z&summary=Hello%20World&text=Hello%20everyone!&title=Talk:Main%20Page&token=cecded1f35005d22904a35cc7b736e18+%5C");
-        QString senario(QStringLiteral("<api><edit result=\"Failure\"><captcha type=\"math\" mime=\"text/tex\" id=\"509895952\" question=\"36 + 4 = \" /></edit></api>"));
+        QString scenario(QStringLiteral("<api><edit result=\"Failure\"><captcha type=\"math\" mime=\"text/tex\" id=\"509895952\" question=\"36 + 4 = \" /></edit></api>"));
 
         fakeserver.setScenario(m_infoScenario);
-        fakeserver.addScenario(senario);
-        senario = QStringLiteral("<api><edit result=\"Success\" pageid=\"12\" title=\"Talk:Main Page\" oldrevid=\"465\" newrevid=\"471\" /></api>");
-        fakeserver.addScenario(senario);
+        fakeserver.addScenario(scenario);
+        scenario = QStringLiteral("<api><edit result=\"Success\" pageid=\"12\" title=\"Talk:Main Page\" oldrevid=\"465\" newrevid=\"471\" /></api>");
+        fakeserver.addScenario(scenario);
         fakeserver.startAndWait();
 
         Edit edit( *m_mediaWiki, nullptr);

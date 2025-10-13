@@ -69,8 +69,8 @@ private Q_SLOTS:
         FakeServer server;
 
         generalCount = 0;
-        QString senario(QStringLiteral("<api><query><general mainpage=\"Main Page\" base=\"https://en.wikipedia.org/wiki/Main_Page\" sitename=\"Wikipedia\" generator=\"Iface 1.16wmf4\" phpversion=\"5.2.4-2ubuntu5.12wm1\" phpsapi=\"apache2handler\" dbtype=\"mysql\" dbversion=\"5.1.46-facebook-r3489-log\" rev=\"75268\" case=\"first-letter\" rights=\"Creative Commons Attribution-Share Alike 3.0 Unported\" lang=\"en\" fallback8bitEncoding=\"windows-1252\" writeapi=\"\" timezone=\"UTC\" timeoffset=\"0\" articlepath=\"/wiki/$1\" scriptpath=\"/w\" script=\"/w/index.php\" variantarticlepath=\"\" server=\"https://en.wikipedia.org\" wikiid=\"enwiki\" time=\"2010-10-24T19:53:13Z\"/></query></api>"));
-        server.addScenario(senario);
+        QString scenario(QStringLiteral("<api><query><general mainpage=\"Main Page\" base=\"https://en.wikipedia.org/wiki/Main_Page\" sitename=\"Wikipedia\" generator=\"Iface 1.16wmf4\" phpversion=\"5.2.4-2ubuntu5.12wm1\" phpsapi=\"apache2handler\" dbtype=\"mysql\" dbversion=\"5.1.46-facebook-r3489-log\" rev=\"75268\" case=\"first-letter\" rights=\"Creative Commons Attribution-Share Alike 3.0 Unported\" lang=\"en\" fallback8bitEncoding=\"windows-1252\" writeapi=\"\" timezone=\"UTC\" timeoffset=\"0\" articlepath=\"/wiki/$1\" scriptpath=\"/w\" script=\"/w/index.php\" variantarticlepath=\"\" server=\"https://en.wikipedia.org\" wikiid=\"enwiki\" time=\"2010-10-24T19:53:13Z\"/></query></api>"));
+        server.addScenario(scenario);
         server.startAndWait();
 
         QuerySiteInfoGeneral* const general = new QuerySiteInfoGeneral(mediaWiki);
@@ -92,8 +92,8 @@ private Q_SLOTS:
         FakeServer server;
 
         generalCount = 0;
-        QString senario(QStringLiteral("<api><query><general mainpage=\"Main Page\" base=\"https://en.wikipedia.org/wiki/Main_Page\" sitename=\"Wikipedia\" generator=\"Iface 1.16wmf4\" phpversion=\"5.2.4-2ubuntu5.12wm1\" phpsapi=\"apache2handler\" dbtype=\"mysql\" dbversion=\"5.1.46-facebook-r3489-log\" rev=\"75268\" case=\"first-letter\" rights=\"Creative Commons Attribution-Share Alike 3.0 Unported\" lang=\"en\" fallback8bitEncoding=\"windows-1252\" writeapi=\"\" timezone=\"UTC\" timeoffset=\"0\" articlepath=\"/wiki/$1\" scriptpath=\"/w\" script=\"/w/index.php\" variantarticlepath=\"\" server=\"https://en.wikipedia.org\" wikiid=\"enwiki\" time=\"2010-10-24T19:53:13Z\"/></query></api>"));
-        server.addScenario(senario);
+        QString scenario(QStringLiteral("<api><query><general mainpage=\"Main Page\" base=\"https://en.wikipedia.org/wiki/Main_Page\" sitename=\"Wikipedia\" generator=\"Iface 1.16wmf4\" phpversion=\"5.2.4-2ubuntu5.12wm1\" phpsapi=\"apache2handler\" dbtype=\"mysql\" dbversion=\"5.1.46-facebook-r3489-log\" rev=\"75268\" case=\"first-letter\" rights=\"Creative Commons Attribution-Share Alike 3.0 Unported\" lang=\"en\" fallback8bitEncoding=\"windows-1252\" writeapi=\"\" timezone=\"UTC\" timeoffset=\"0\" articlepath=\"/wiki/$1\" scriptpath=\"/w\" script=\"/w/index.php\" variantarticlepath=\"\" server=\"https://en.wikipedia.org\" wikiid=\"enwiki\" time=\"2010-10-24T19:53:13Z\"/></query></api>"));
+        server.addScenario(scenario);
         server.startAndWait();
 
         QuerySiteInfoGeneral* const general = new QuerySiteInfoGeneral(mediaWiki);
@@ -140,8 +140,8 @@ private Q_SLOTS:
         FakeServer server;
 
         generalCount = 0;
-        QString senario(QStringLiteral("<api><query<general mainpage=\"Main Page\" base=\"https://en.wikipedia.org/wiki/Main_Page\" sitename=\"Wikipedia\" generator=\"Iface 1.16wmf4\" phpversion=\"5.2.4-2ubuntu5.12wm1\" phpsapi=\"apache2handler\" dbtype=\"mysql\" dbversion=\"5.1.46-facebook-r3489-log\" rev=\"75268\" case=\"first-letter\" rights=\"Creative Commons Attribution-Share Alike 3.0 Unported\" lang=\"en\" fallback8bitEncoding=\"windows-1252\" writeapi=\"\" timezone=\"UTC\" timeoffset=\"0\" articlepath=\"/wiki/$1\" scriptpath=\"/w\" script=\"/w/index.php\" variantarticlepath=\"\" server=\"https://en.wikipedia.org\" wikiid=\"enwiki\" time=\"2010-10-24T19:53:13Z\"/>"));
-        server.addScenario(senario);
+        QString scenario(QStringLiteral("<api><query<general mainpage=\"Main Page\" base=\"https://en.wikipedia.org/wiki/Main_Page\" sitename=\"Wikipedia\" generator=\"Iface 1.16wmf4\" phpversion=\"5.2.4-2ubuntu5.12wm1\" phpsapi=\"apache2handler\" dbtype=\"mysql\" dbversion=\"5.1.46-facebook-r3489-log\" rev=\"75268\" case=\"first-letter\" rights=\"Creative Commons Attribution-Share Alike 3.0 Unported\" lang=\"en\" fallback8bitEncoding=\"windows-1252\" writeapi=\"\" timezone=\"UTC\" timeoffset=\"0\" articlepath=\"/wiki/$1\" scriptpath=\"/w\" script=\"/w/index.php\" variantarticlepath=\"\" server=\"https://en.wikipedia.org\" wikiid=\"enwiki\" time=\"2010-10-24T19:53:13Z\"/>"));
+        server.addScenario(scenario);
         server.startAndWait();
 
         QuerySiteInfoGeneral* const general = new QuerySiteInfoGeneral(mediaWiki);
@@ -163,8 +163,8 @@ private Q_SLOTS:
         FakeServer server;
 
         generalCount = 0;
-        QString senario(QStringLiteral("<api><error code=\"includeAllDenied\" info=\"\"/></api>"));
-        server.addScenario(senario);
+        QString scenario(QStringLiteral("<api><error code=\"includeAllDenied\" info=\"\"/></api>"));
+        server.addScenario(scenario);
         server.startAndWait();
 
         QuerySiteInfoGeneral* const general = new QuerySiteInfoGeneral(mediaWiki);

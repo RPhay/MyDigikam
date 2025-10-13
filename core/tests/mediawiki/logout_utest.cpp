@@ -67,9 +67,9 @@ private Q_SLOTS:
 
     void logoutTestConnectTrue()
     {
-        QString senario(QStringLiteral("<api />") );
+        QString scenario(QStringLiteral("<api />") );
         QString cookie( QStringLiteral("cookieprefix=\"enwiki\" sessionid=\"17ab96bd8ffbe8ca58a78657a918558e\" expires=\"Sat, 12-Feb-2011 21:39:30 GMT\""));
-        m_server->setScenario(senario, cookie);
+        m_server->setScenario(scenario, cookie);
         m_server->startAndWait();
 
         logoutCount = 0;
