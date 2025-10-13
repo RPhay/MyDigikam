@@ -1,0 +1,44 @@
+#!/bin/bash
+
+################################################################################
+#
+# CodeSpell static analyzer configuration used by project/reports/codespell.sh
+#
+# 2013-2025 - Gilles Caulier <gilles.caulier@cea.fr>
+#
+# Licensed Material - Program Property of CEA
+# (c) CEA Cadarache - DER/CAD/SPESI/LP2E
+#
+################################################################################
+
+# --- Directories and files to exclude from CodeSpell static analysis.
+
+IGNORE_DIRS="../../core/libs/dimg/filters/transform/lqr/*,"
+IGNORE_DIRS+="../../core/libs/pgfutils/libpgf/*,"
+IGNORE_DIRS+="../../core/libs/dimg/filters/greycstoration/*,"
+IGNORE_DIRS+="../../core/libs/jpegutils/libjpeg/*,"
+IGNORE_DIRS+="../../core/libs/rawengine/libraw/*,"
+IGNORE_DIRS+="../../core/libs/dngwriter/extra/*,"
+IGNORE_DIRS+="../../core/libs/dplugins/webservices/o2/*,"
+IGNORE_DIRS+="../../core/dplugins/generic/tools/mediaserver/upnpsdk/*,"
+IGNORE_DIRS+="../../core/dplugins/generic/webservices/unified/*,"
+IGNORE_DIRS+="../../core/dplugins/generic/webservices/rajce/*,"
+IGNORE_DIRS+="../../core/dplugins/generic/webservices/ipfs/*,"
+IGNORE_DIRS+="../../core/dplugins/generic/webservices/facebook/*,"
+IGNORE_DIRS+="../../core/libs/video/QtAVPlayer/*,"
+IGNORE_DIRS+="../../core/utilities/geolocation/engine/*,"
+IGNORE_DIRS+="../../build*,"
+IGNORE_DIRS+="../../project/*,"
+IGNORE_DIRS+="../../po/*,"
+IGNORE_DIRS+="../../test-data/*,"
+IGNORE_DIRS+="../../LICENSES/*,"
+IGNORE_DIRS+="*.appdata.xml,"
+IGNORE_DIRS+="*.desktop,"
+IGNORE_DIRS+="*.js,"
+IGNORE_DIRS+="*.xml,"
+IGNORE_DIRS+="*.svg,"
+IGNORE_DIRS+="*.o5m,"
+
+# --- Defines to use with static analysis.
+
+CODESPELL_IGNORE_WORDS="afile,ahd,asign,caf,childs,claus,cyphertext,defaut,destroi,fle,fo,foto,hist,indx,indexin,inout,ist,iten,lod,mata,mye,nam,nd,ned,oly,optio,parm,previousy,requestor,sav,shft,siz,smal,spred,tage,tempdate,tesselate,thet,toolsbox,tru,visiblestage,visibles,uptodate,wheight"
