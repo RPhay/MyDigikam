@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 01:59+0000\n"
-"PO-Revision-Date: 2025-10-11 16:14+0300\n"
+"PO-Revision-Date: 2025-10-13 16:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3380,10 +3380,7 @@ msgstr ""
 "обробкою."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
@@ -39142,12 +39139,10 @@ msgid "Rating: "
 msgstr "Оцінка: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
-msgstr "Версія:"
+msgstr "Версія: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
 #, kde-format

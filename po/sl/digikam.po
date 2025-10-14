@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 01:59+0000\n"
-"PO-Revision-Date: 2025-10-12 08:22+0200\n"
+"PO-Revision-Date: 2025-10-13 07:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3385,16 +3385,13 @@ msgstr ""
 "Dodani prevajalniki za JPEG-XL, WEBP in AVIF v upravljalniku paketnih vrst."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
 msgstr ""
-"Podpora inačic: dodana podpora za JPEG-XL, HEIF, WEBP in AVIF kot format "
-"slike brez izgub za shranjevanje inačic slik v urejevalniku."
+"Podpora različic: dodana podpora za JPEG-XL, HEIF, WEBP in AVIF kot format "
+"slike brez izgub za shranjevanje različic slik v urejevalniku."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
@@ -38639,12 +38636,10 @@ msgid "Rating: "
 msgstr "Ocena: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
-msgstr "Z inačicami: "
+msgstr "Z različicami: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
 #, kde-format

@@ -255,7 +255,7 @@ msgstr "在此建立分组并移动到相册"
 #: core/app/dragdrop/itemdragdrop.cpp:457
 #, kde-format
 msgid "Assign Tag to Dropped Items"
-msgstr "指定标签到拖放项"
+msgstr "分配标签到拖放项目"
 
 #: core/app/dragdrop/itemdragdrop.cpp:755
 #, kde-format
@@ -277,18 +277,18 @@ msgstr "取消(&C)"
 #: core/app/dragdrop/itemdragdrop.cpp:799
 #, kde-format
 msgid "Assign Tags to &Selected Items"
-msgstr "指定标签到所选项(&S)"
+msgstr "分配标签到所选项目(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
-msgstr "指定标签到此项(&T)"
+msgstr "分配标签到此项目(&T)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:811
 #, kde-format
 msgid "Assign Tags to &All Items"
-msgstr "指定标签到所有项(&A)"
+msgstr "分配标签到所有项目(&A)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:853
 #, kde-format
@@ -321,7 +321,7 @@ msgstr[0] "更改人脸名称，从“%2”到“%3”"
 #, kde-format
 msgid "Assign Tag '%1' to Items"
 msgid_plural "Assign Tag(s) '%1' to Items"
-msgstr[0] ""
+msgstr[0] "分配标签“%1”到项目"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -792,7 +792,7 @@ msgstr "移除所有标签"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
-msgstr "指定标记(&L)"
+msgstr "分配标记(&L)"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, kde-format
@@ -1672,7 +1672,7 @@ msgstr "删除"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
-msgstr "指定标签"
+msgstr "分配标签"
 
 #: core/app/main/digikamapp_setup.cpp:330
 #, kde-format
@@ -2267,7 +2267,7 @@ msgstr "编辑注释"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
-msgstr "显示已指定标签"
+msgstr "显示已分配标签"
 
 #: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
@@ -3248,16 +3248,11 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "在批处理管理器中添加 JPEG-XL、WebP、AVIF 转换插件。"
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
 msgstr ""
-"版本管理功能：新增支持 JPEG-XL、HEIF、WebP、AVIF 作为无损图像格式来存储多版本"
-"图像。"
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
@@ -21656,7 +21651,7 @@ msgstr "未选择图像。请选择要上传的图像。"
 #, kde-format
 msgctxt "@title: window start transfer"
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:248
 #: core/dplugins/generic/webservices/google/gswindow.cpp:519
@@ -21676,7 +21671,7 @@ msgstr "身份验证失败。点击“继续”进行身份验证。"
 #, kde-format
 msgctxt "@action: button start transfer"
 msgid "Continue"
-msgstr ""
+msgstr "继续"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/google/gswindow.cpp:523
@@ -21687,7 +21682,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: button start transfer"
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:280
 #: core/dplugins/generic/webservices/google/gswindow.cpp:380
@@ -23058,25 +23053,25 @@ msgstr "Google Drive 调用失败： %1\n"
 #, kde-format
 msgctxt "@title: window start transfer"
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
 #, kde-format
 msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
-msgstr ""
+msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
 #, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Drive export"
-msgstr ""
+msgstr "Google Drive 导出"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
 #, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Photos export"
-msgstr ""
+msgstr "Google Photos 导出"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
@@ -33817,7 +33812,7 @@ msgstr "正在完成任务"
 #: core/libs/fileactionmanager/fileactionmngr.cpp:140
 #, kde-format
 msgid "Assigning image tags"
-msgstr "正在指定图像标签"
+msgstr "正在分配图像标签"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:162
 #, kde-format
@@ -33827,17 +33822,17 @@ msgstr "正在移除图像标签"
 #: core/libs/fileactionmanager/fileactionmngr.cpp:179
 #, kde-format
 msgid "Assigning image pick label"
-msgstr "正在指定图像挑选标记"
+msgstr "正在分配图像挑选标记"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:186
 #, kde-format
 msgid "Assigning image color label"
-msgstr "正在指定图像颜色标记"
+msgstr "正在分配图像颜色标记"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:198
 #, kde-format
 msgid "Assigning image ratings"
-msgstr "正在指定图像评分"
+msgstr "正在分配图像评分"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:205
 #: core/libs/fileactionmanager/fileactionmngr.cpp:217
@@ -34410,7 +34405,7 @@ msgstr "否决："
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
-msgstr "低于此阈值的所有图像将被指定“否决”标记。"
+msgstr "低于此阈值的所有图像将被分配“否决”标记。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
@@ -34422,7 +34417,7 @@ msgstr "待定："
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
-msgstr "低于此阈值的所有图像将被指定“待定”标记。"
+msgstr "低于此阈值的所有图像将被分配“待定”标记。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, kde-format
@@ -34434,7 +34429,7 @@ msgstr "接受："
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
-msgstr "高于此阈值的所有图像将被指定“接受”标记。"
+msgstr "高于此阈值的所有图像将被分配“接受”标记。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
@@ -36566,7 +36561,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
-msgstr "已指定标签"
+msgstr "标签已被分配"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
 #: core/libs/properties/captions/tagsedit.cpp:122
@@ -36580,7 +36575,7 @@ msgstr "最近标签"
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
-msgstr "无最近指定标签"
+msgstr "没有最近分配的标签"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:126
 #, kde-format
@@ -37327,12 +37322,10 @@ msgid "Rating: "
 msgstr "评分："
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
-msgstr "已版本管理："
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:244
 #, kde-format
@@ -38543,7 +38536,7 @@ msgstr "标签模式："
 #, kde-format
 msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr ""
+msgstr "替换已有自动标签"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
@@ -38648,7 +38641,7 @@ msgstr[0] ""
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
-msgstr[0] "标签“%2”已被指定到 %1 个项目。您想要继续吗？"
+msgstr[0] "标签“%2”已被分配到 %1 个项目。您想要继续吗？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
@@ -38675,7 +38668,7 @@ msgstr ""
 #: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
-msgstr "标签“%1”已被指定到一个或多个项目。您想要继续吗？"
+msgstr "标签“%1”已被分配到一个或多个项目。您想要继续吗？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, kde-format
@@ -38702,7 +38695,7 @@ msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
 msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
-msgstr[0] "人脸标签“%2”已被指定到一个或多个项目。您想要继续吗？"
+msgstr[0] "人脸标签“%2”已被分配到一个或多个项目。您想要继续吗？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, kde-format
@@ -38720,27 +38713,27 @@ msgstr[0] "要从图像中移除对应此人脸标签的 %1 个标签吗？"
 #: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
-msgstr "指定评分“%1 星”"
+msgstr "分配评分“%1 星”"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "指定评分“%1 星” (不切换)"
+msgstr "分配评分“%1 星” (不切换)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
 msgid "Assign Pick Label \"%1\""
-msgstr "指定挑选标记“%1”"
+msgstr "分配挑选标记“%1”"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:277
 #, kde-format
 msgid "Assign Color Label \"%1\""
-msgstr "指定颜色标记“%1”"
+msgstr "分配颜色标记“%1”"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:326
 #, kde-format
 msgid "Assign Tag \"%1\""
-msgstr "指定标签“%1”"
+msgstr "分配标签“%1”"
 
 #: core/libs/tags/manager/models/tagmngrlistitem.cpp:158
 #, kde-format
@@ -38859,7 +38852,7 @@ msgstr "提示"
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
-msgstr "此快捷键用于对项目指定或取消标签。"
+msgstr "此快捷键可用于为项目分配或取消分配标签。"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:168
 #, kde-format
@@ -38897,7 +38890,7 @@ msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
 msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
-msgstr[0] "标签 %2 已被指定到一个或多个项目。您想要继续吗？"
+msgstr[0] "标签 %2 已被分配到一个或多个项目。您想要继续吗？"
 
 #: core/libs/tags/manager/tagsmanager_actions.cpp:172
 #, kde-format
@@ -39027,7 +39020,7 @@ msgstr "同步导出(&E)"
 #: core/libs/tags/manager/tagsmanager_p.cpp:131
 #, kde-format
 msgid "Mark Unassigned Tags"
-msgstr "标记未指定标签"
+msgstr "标记未分配的标签"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:151
 #, kde-format
@@ -39215,7 +39208,7 @@ msgstr "快捷键(&S)："
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
 "</p>"
-msgstr "<p><b>提示</b>：此快捷键用于指定或者取消指定标签到项目。</p>"
+msgstr "<p><b>提示</b>：此快捷键可用于为项目分配或取消分配标签。</p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:335
 #, kde-format
@@ -39266,12 +39259,12 @@ msgstr "递归展开所选项"
 #: core/libs/tags/widgets/tagspopupmenu.cpp:544
 #, kde-format
 msgid "No Recently Assigned Tags"
-msgstr "无最近指定标签"
+msgstr "没有最近分配的标签"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, kde-format
 msgid "Recently Assigned Tags"
-msgstr "最近指定标签"
+msgstr "最近分配的标签"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:605
 #: core/libs/tags/widgets/tagspopupmenu.cpp:745
@@ -39287,7 +39280,7 @@ msgstr "更多标签..."
 #: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, kde-format
 msgid "Assign this Tag"
-msgstr "指定此标签"
+msgstr "分配此标签"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, kde-format
@@ -39741,8 +39734,8 @@ msgid ""
 "well.</p>"
 msgstr ""
 "<p>选择要使用元数据模板进行的操作。</p><p><b>移除</b>：删除已指定的模板。</"
-"p><p><b>不更改</b>：不更改模板信息。</p><p>所有其他的数值都是 digiKam 管理的"
-"模板标题，选取其一时将会同时指定其信息。</p>"
+"p><p><b>不更改</b>：不更改模板信息。</p><p>所有其他值均为 digiKam 管理的模板"
+"标题，选择其一时将同时分配其信息。</p>"
 
 #: core/libs/template/templateselector.cpp:103
 #, kde-format
@@ -41915,7 +41908,7 @@ msgid ""
 msgstr ""
 "MJPEGStream 插件、\n"
 "OCR 文本转换插件、\n"
-"自动标签作业引擎"
+"自动标签分配引擎"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:181
 #, kde-format
@@ -49256,7 +49249,7 @@ msgstr "创建日期(&C)："
 msgctxt "@info"
 msgid ""
 "Select favorite item date. By default, day of item creation is assigned."
-msgstr "选择收藏图集的项目日期。默认指定项目的创建日期。"
+msgstr "选择收藏图集的项目日期。默认分配项目的创建日期。"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
@@ -49641,7 +49634,7 @@ msgid ""
 "because the name has already been assigned to another item."
 msgstr ""
 "此表显示了原始文件名和重命名后的新文件名。红色项目表示它的文件名存在冲突，原"
-"因要么是新文件名和某个已有文件重名，要么该文件名已指定到了另一个项目。"
+"因要么是新文件名和某个已有文件重名，要么该文件名已分配给了另一个项目。"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:313
 #, kde-format
@@ -49736,8 +49729,8 @@ msgid ""
 "<p>Add a modifier to a renaming option. To activate this button, place the "
 "cursor behind a renaming option or an already assigned modifier.</p>"
 msgstr ""
-"<p>添加参数到重命名选项。要激活此按钮，请将光标点击到某个重命名选项或已指定参"
-"数。</p>"
+"<p>添加参数到重命名选项。要激活此按钮，请将光标移动到某个重命名选项或已分配参"
+"数的后方。</p>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:358
 #, kde-format
@@ -49765,7 +49758,7 @@ msgstr "参数可被应用到每个重命名选项。"
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
 "in the order you assign them."
-msgstr "可以指定多个参数到一个重命名选项，它们将按照您指定时的顺序进行排序。"
+msgstr "可以分配多个参数到一个重命名选项，它们将按照您分配时的顺序进行排序。"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, kde-format
@@ -50868,8 +50861,8 @@ msgid ""
 "digiKam in the files' metadata, to improve interoperability with other photo "
 "management programs:</p></qt>"
 msgstr ""
-"<qt><p>请设置是否将 digiKam 中添加的元数据信息存储到文件本身的元数据中。这可"
-"以改善与其他照片管理软件的互通性：</p></qt>"
+"<qt><p>请设置是否将 digiKam 中分配给项目的元数据信息存储到文件本身的元数据"
+"中。这可以改善与其他照片管理软件的互操作性：</p></qt>"
 
 #: core/utilities/firstrun/metadatapage.cpp:69
 #, kde-format
@@ -55653,7 +55646,7 @@ msgstr "查找缺失海拔"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
 #, kde-format
 msgid "Items have different coordinates."
-msgstr ""
+msgstr "项目具有不同的坐标。"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
@@ -56304,7 +56297,7 @@ msgstr "转换为工作色彩空间"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:366
 #, kde-format
 msgid "Ignore embedded profile, assign this profile:"
-msgstr "忽略内嵌的特性文件，指定此特性文件："
+msgstr "忽略内嵌的特性文件，分配此特性文件："
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:369
 #, kde-format
@@ -56321,12 +56314,12 @@ msgstr "没有可用的特性文件"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:410
 #, kde-format
 msgid "Assign profile and convert to working color space"
-msgstr "指定特性文件并转换到工作色彩空间"
+msgstr "分配特性文件并转换到工作色彩空间"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:411
 #, kde-format
 msgid "Assign and keep color profile"
-msgstr "指定并保留色彩特性文件"
+msgstr "分配并保留色彩特性文件"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:412
 #, kde-format
@@ -56369,7 +56362,7 @@ msgstr "没有可用的输入特性文件"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:612
 #, kde-format
 msgid "Assigned Color Profile:"
-msgstr "指定的色彩特性文件："
+msgstr "分配的色彩特性文件："
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:626
 #, kde-format
@@ -57234,12 +57227,12 @@ msgstr "编辑注释"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
 #, kde-format
 msgid "Show Assigned Tags"
-msgstr "显示已指定标签"
+msgstr "显示已分配的标签"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:228
 #, kde-format
 msgid "Assign Tag"
-msgstr "指定标签"
+msgstr "分配标签"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
 #, kde-format
@@ -57249,7 +57242,7 @@ msgstr "移除标签"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:254
 #, kde-format
 msgid "Assign Labels"
-msgstr "是定标记"
+msgstr "分派标记"
 
 #: core/utilities/imageeditor/widgets/canvas.cpp:165
 #, kde-format
@@ -58738,7 +58731,7 @@ msgstr "需要："
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
-msgstr "指定标记"
+msgstr "分派标记"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:123
 #, kde-format
@@ -59697,7 +59690,7 @@ msgstr "控制面板"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:155
 #, kde-format
 msgid "Assigned Tools"
-msgstr "已指定工具"
+msgstr "已分配的工具"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:164
 #, kde-format
@@ -59826,7 +59819,7 @@ msgstr "当前队列的自定义重命名规则无效 (%1)。请修改规则。"
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
-msgstr "当前队列的已指定工具为空 (%1)。请指定工具。"
+msgstr "当前队列的已分配工具为空 (%1)。请分配工具。"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:692
 #, kde-format
@@ -59991,7 +59984,7 @@ msgstr "没有可用的设置"
 #: core/utilities/queuemanager/views/assignedlist.cpp:106
 #, kde-format
 msgid "This is the list of batch tools assigned."
-msgstr "已指定的批处理工具列表。"
+msgstr "已分配的批处理工具列表。"
 
 #: core/utilities/queuemanager/views/queuelist.cpp:292
 #, kde-format
@@ -60040,7 +60033,7 @@ msgstr "下列队列的自定义重命名规则无效。请修改规则。"
 msgid ""
 "Assigned batch tools list is empty for Queues listed below. Please assign "
 "tools."
-msgstr "以下队列的已指定工具列表为空。请指定工具。"
+msgstr "以下队列的已分配工具列表为空。请分配工具。"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:130
 #, kde-format
@@ -60181,7 +60174,7 @@ msgstr "自定义工具"
 #, kde-format
 msgctxt "@action"
 msgid "Assign tools"
-msgstr "指定工具"
+msgstr "分配工具"
 
 #: core/utilities/queuemanager/views/toolsview.cpp:58
 #, kde-format
@@ -60287,7 +60280,7 @@ msgstr "某些工作流程无法从配置文件加载，因为工具版本不兼
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
-msgstr "指定工作流程到当前队列"
+msgstr "分配工作流程到当前队列"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, kde-format
@@ -60332,7 +60325,7 @@ msgstr "(未选中数值)"
 #: core/utilities/searchwindow/ratingsearchutilities.cpp:206
 #, kde-format
 msgid "No Rating assigned"
-msgstr "未指定评分"
+msgstr "未分配评分"
 
 #: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
@@ -65200,7 +65193,7 @@ msgid ""
 "one.</p>"
 msgstr ""
 "<p>如果图像嵌入的色彩特性文件与工作空间特性文件不匹配，digiKam 将询问是否将它"
-"转换为工作空间、保留还是丢弃嵌入的特性文件并指定另一个特性文件。</p>"
+"转换为工作空间、保留还是丢弃嵌入的特性文件并分配另一个特性文件。</p>"
 
 #: core/utilities/setup/setupicc.cpp:198
 #, kde-format

@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 01:59+0000\n"
-"PO-Revision-Date: 2025-10-12 07:44-0300\n"
+"PO-Revision-Date: 2025-10-13 11:54-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3327,10 +3327,7 @@ msgstr ""
 "lote."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
@@ -38835,9 +38832,7 @@ msgid "Rating: "
 msgstr "Classificação: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
 msgstr "Versionada: "

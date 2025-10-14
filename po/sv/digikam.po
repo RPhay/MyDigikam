@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-13 01:59+0000\n"
-"PO-Revision-Date: 2025-10-10 21:46+0200\n"
+"PO-Revision-Date: 2025-10-13 22:37+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -3343,10 +3343,7 @@ msgstr ""
 "bakgrundsbehandling."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
@@ -38545,9 +38542,7 @@ msgid "Rating: "
 msgstr "Betyg: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
 msgstr "Versionshanterad: "
@@ -57265,10 +57260,9 @@ msgid "Look up missing altitude values"
 msgstr "Slå upp saknade höjdvärden"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
-#, fuzzy, kde-format
-#| msgid "Images with coordinates"
+#, kde-format
 msgid "Items have different coordinates."
-msgstr "Bilder med koordinater"
+msgstr "Objekten har olika koordinater."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
