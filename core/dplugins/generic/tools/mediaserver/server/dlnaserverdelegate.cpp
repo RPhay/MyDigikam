@@ -731,7 +731,7 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
     }
 
     // This code is basically the same than PLT_HttpServer::ServeFile() excepted the
-    // image trancoding pass served as byte stream.
+    // image transcoding pass served as byte stream.
 
     NPT_InputStreamReference stream;
     NPT_File                 file(file_path);
@@ -783,7 +783,7 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
         }
     }
 
-    // Trancoding image as preview.
+    // Transcoding image as preview.
 
     QImage preview = dimg.copyQImage();
     QByteArray ba;

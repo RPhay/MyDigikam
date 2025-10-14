@@ -12,7 +12,7 @@ Since upload media by chunks has been prepared, other types of media (video, gif
 		-> add get status to handle upload properly before creating associate tweet -> RESOLVED
  ---------------------------------------------------------------------------------------
 
-- Now, each media is uploaded to twitter in single tweet, with empty "message" (i.e. caption). However, twitter supports the possibility of up to 4 medias in a tweet, and of course with message.
+- Now, each media is uploaded to twitter in single tweet, with empty "message" (i.e. caption). However, twitter supports the possibility of up to 4 media in a tweet, and of course with message.
 	+ Add possibility to choose which images (gifs) in a tweet (up to maximum 4)
 	+ Add possibility to write message for that tweet.
 

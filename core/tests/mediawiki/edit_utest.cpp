@@ -327,22 +327,22 @@ private Q_SLOTS:
         QTest::newRow("No text")
                 << QStringLiteral("<api><error code=\"notext\" info=\"\" /> </api>")
                 << int(Edit::TextMissing);
-        QTest::newRow("Invalide section")
+        QTest::newRow("Invalid section")
                 << QStringLiteral("<api><error code=\"invalidsection\" info=\"\" /> </api>")
                 << int(Edit::InvalidSection);
-        QTest::newRow("Invalide section")
+        QTest::newRow("Invalid section")
                 << QStringLiteral("<api><error code=\"invalidsection\" info=\"\" /> </api>")
                 << int(Edit::InvalidSection);
         QTest::newRow("Protected Title")
                 << QStringLiteral("<api><error code=\"protectedtitle\" info=\"\" /> </api>")
                 << int(Edit::TitleProtected);
-        QTest::newRow("Cant Create")
+        QTest::newRow("Cannot Create")
                 << QStringLiteral("<api><error code=\"cantcreate\" info=\"\" /> </api>")
                 << int(Edit::CreatePagePermissionMissing);
-        QTest::newRow("Cant Create Anonymous")
+        QTest::newRow("Cannot Create Anonymous")
                 << QStringLiteral("<api><error code=\"cantcreate-anon\" info=\"\" /> </api>")
                 << int(Edit::AnonymousCreatePagePermissionMissing);
-        QTest::newRow("Cant Create Anonymous")
+        QTest::newRow("Cannot Create Anonymous")
                 << QStringLiteral("<api><error code=\"cantcreate-anon\" info=\"\" /> </api>")
                 << int(Edit::AnonymousCreatePagePermissionMissing);
         QTest::newRow("Article Duplication")

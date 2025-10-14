@@ -172,7 +172,7 @@ void CalTemplate::yearChanged(int year)
 
         int inRow = (months / 2) + ((months % 2) != 0);
 
-        // remove all the monthWidgets, then readd the needed ones
+        // remove all the monthWidgets, then re-add the needed ones
 
         for (i = 0 ; i < CalSystem().monthsInYear(oldD) ; ++i)
         {

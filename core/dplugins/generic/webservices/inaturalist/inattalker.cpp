@@ -1442,17 +1442,17 @@ void INatTalker::verifyCreateObservation(const QByteArray& parameters,
 
     if (json.contains(OBSERVATION))
     {
-        QJsonObject parms = json[OBSERVATION].toObject();
+        QJsonObject params = json[OBSERVATION].toObject();
 
-        if (parms.contains(OBSERVED_ON_STRING))
+        if (params.contains(OBSERVED_ON_STRING))
         {
-            observed_on = parms[OBSERVED_ON_STRING].toString();
+            observed_on = params[OBSERVED_ON_STRING].toString();
             query.addQueryItem(OBSERVED_ON, observed_on.left(10));
         }
 
-        if (parms.contains(TAXON_ID))
+        if (params.contains(TAXON_ID))
         {
-            taxon_id = parms[TAXON_ID].toInt();
+            taxon_id = params[TAXON_ID].toInt();
             query.addQueryItem(TAXON_ID, QString::number(taxon_id));
         }
     }
