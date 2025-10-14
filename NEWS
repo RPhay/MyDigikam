@@ -139,8 +139,8 @@ BUGFIXES:
 102 ==> 510403 - Writing something in Captions/Description --> Captions works incorrectly.
 103 ==> 510515 - QMYSQL driver cannot be used.
 104 ==> 510458 - Right click on map copy coordinates does not allow pasting in filelist.
-105 ==> 
-106 ==> 
+105 ==> 508199 - Miscellaneous Settings > System > Use OpenCL Hardware Acceleration Issues.
+106 ==> 506535 - OpenCL isn't working - despite OpenCL driver is loaded on GPU.
 107 ==> 
 108 ==> 
 109 ==> 
