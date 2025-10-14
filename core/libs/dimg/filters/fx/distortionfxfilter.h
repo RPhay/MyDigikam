@@ -136,9 +136,9 @@ private:
     void twirl(DImg* orgImage, DImg* destImage, int dist, bool AntiAlias = true);
     void twirlMultithreaded(const Args& prm);
 
-    void cilindrical(DImg* orgImage, DImg* destImage, double Coeff,
+    void cylindrical(DImg* orgImage, DImg* destImage, double Coeff,
                      bool Horizontal, bool Vertical, bool AntiAlias = true);
-    void cilindricalMultithreaded(const Args& prm);
+    void cylindricalMultithreaded(const Args& prm);
 
     void multipleCorners(DImg* orgImage, DImg* destImage, int Factor, bool AntiAlias = true);
     void multipleCornersMultithreaded(const Args& prm);

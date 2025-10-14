@@ -119,19 +119,19 @@ void DistortionFXFilter::filterImage()
 
         case CilindricalHor:
         {
-            cilindrical(&m_orgImage, &m_destImage, (double)l, true, false, d->antiAlias);
+            cylindrical(&m_orgImage, &m_destImage, (double)l, true, false, d->antiAlias);
             break;
         }
 
         case CilindricalVert:
         {
-            cilindrical(&m_orgImage, &m_destImage, (double)l, false, true, d->antiAlias);
+            cylindrical(&m_orgImage, &m_destImage, (double)l, false, true, d->antiAlias);
             break;
         }
 
         case CilindricalHV:
         {
-            cilindrical(&m_orgImage, &m_destImage, (double)l, true, true, d->antiAlias);
+            cylindrical(&m_orgImage, &m_destImage, (double)l, true, true, d->antiAlias);
             break;
         }
 
@@ -503,7 +503,7 @@ void DistortionFXFilter::twirl(DImg* orgImage, DImg* destImage, int dist, bool A
     }
 }
 
-void DistortionFXFilter::cilindricalMultithreaded(const Args& prm)
+void DistortionFXFilter::cylindricalMultithreaded(const Args& prm)
 {
     ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
 
@@ -586,7 +586,7 @@ void DistortionFXFilter::cilindricalMultithreaded(const Args& prm)
  *                     Spherize use the same function but in a rectangular
  *                     environment.
  */
-void DistortionFXFilter::cilindrical(DImg* orgImage, DImg* destImage, double Coeff,
+void DistortionFXFilter::cylindrical(DImg* orgImage, DImg* destImage, double Coeff,
                                      bool Horizontal, bool Vertical, bool AntiAlias)
 
 {
@@ -625,11 +625,11 @@ void DistortionFXFilter::cilindrical(DImg* orgImage, DImg* destImage, double Coe
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                                           &DistortionFXFilter::cilindricalMultithreaded, this,
+                                           &DistortionFXFilter::cylindricalMultithreaded, this,
 
 #else
 
-                                           this, &DistortionFXFilter::cilindricalMultithreaded,
+                                           this, &DistortionFXFilter::cylindricalMultithreaded,
 
 #endif
 
