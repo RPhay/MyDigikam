@@ -1488,7 +1488,7 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                                                          << size
                                                          << " page size "
                                                          << pageSize;
-                    // skipping layout it can't fit
+                    // skipping layout it cannot fit
 
                     n = n.nextSibling();
                     continue;

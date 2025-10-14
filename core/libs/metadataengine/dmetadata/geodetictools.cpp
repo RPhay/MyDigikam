@@ -827,7 +827,7 @@ double Ellipsoid::orthodromicDistance(double x1, double y1, double x2, double y2
             if (false)
             {
                 // 'faz' and 'baz' are forward azimuths at both points.
-                // Since the current API can't returns this result, it
+                // Since the current API cannot returns this result, it
                 // doesn't worth to compute it at this time.
 
                 faz = atan2(tu1, tu2);

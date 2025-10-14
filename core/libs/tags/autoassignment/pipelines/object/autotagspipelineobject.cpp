@@ -273,7 +273,7 @@ bool AutotagsPipelineObject::loader()
 
             package->image = PreviewLoadThread::loadFastSynchronously(package->info.filePath(), model->info.imageSize);
 
-            // check for corrupted images that can't be loaded
+            // check for corrupted images that cannot be loaded
 
             if (!package->image.isNull())
             {

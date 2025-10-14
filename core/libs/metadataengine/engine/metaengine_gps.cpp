@@ -611,7 +611,7 @@ void MetaEngine::convertToRational(const double number, long int* const numerato
 
     while (1)
     {
-        // Jump out if we can't integer divide one.
+        // Jump out if we cannot integer divide one.
 
         if ((numTemp / 2) != trunc(numTemp / 2)) break;
         if ((denTemp / 2) != trunc(denTemp / 2)) break;

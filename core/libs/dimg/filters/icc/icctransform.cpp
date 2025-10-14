@@ -82,7 +82,7 @@ public:
     Private& operator=(const Private& other)
     {
         // Attention: This is sensitive. Add any new members here.
-        // We can't use the default operator= because of handle.
+        // We cannot use the default operator= because of handle.
 
         intent             = other.intent;
         proofIntent        = other.proofIntent;

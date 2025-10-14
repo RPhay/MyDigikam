@@ -123,7 +123,7 @@ public:
     float            zoomfactor_mousemove   = 1.03F;
     float            zoomfactor_keyboard    = 1.05F;
 
-    /// get path of nullImage in case QImage can't load the image
+    /// get path of nullImage in case QImage cannot load the image
     QPixmap          nullImage              = QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256);
     QSize            screenSize;
 

@@ -173,7 +173,7 @@ int SunLightBlending::maxDivisor(int maximum, int fullLength)
     for (int it = 1; it <= maximum; ++it)
     {
         // The optimum is the interval which results in the least amount
-        // supporting points taking into account the rest which can't
+        // supporting points taking into account the rest which cannot
         // get used for interpolation.
         int nEval = fullLength / it + fullLength % it;
 

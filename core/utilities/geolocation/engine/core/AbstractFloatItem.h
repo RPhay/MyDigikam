@@ -131,7 +131,7 @@ public:
      * @brief Check is position locked
      *
      * Float Item position can be locked. If it is,
-     * the item can't be moved with the cursor (in the UI)
+     * the item cannot be moved with the cursor (in the UI)
      *
      * To set it use @see setPositionLocked
      *
@@ -146,7 +146,7 @@ public Q_SLOTS:
      * @param lock is locked?
      *
      * Float Item position can be locked. If it is,
-     * item can't be moved with cursor (in UI)
+     * item cannot be moved with cursor (in UI)
      *
      * To check it use @see positionLocked
      *

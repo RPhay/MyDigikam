@@ -65,7 +65,7 @@ bool MarbleGraphicsItem::paintEvent(QPainter* painter, const ViewportParams* vie
         return true;
     }
 
-    // At the moment, as GraphicsItems can't be zoomed or rotated ItemCoordinateCache
+    // At the moment, as GraphicsItems cannot be zoomed or rotated ItemCoordinateCache
     // and DeviceCoordianteCache is exactly the same
     if (ItemCoordinateCache == cacheMode()
         || DeviceCoordinateCache == cacheMode())

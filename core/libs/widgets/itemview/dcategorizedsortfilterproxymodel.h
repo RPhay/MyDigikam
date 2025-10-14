@@ -161,7 +161,7 @@ protected:
      * @warning Please note that data() method of the model should return always
      *          information of the same type. If you return a QString for an index,
      *          you should return always QStrings for all indexes for role CategorySortRole
-     *          in order to correctly sort categories. You can't mix by returning
+     *          in order to correctly sort categories. You cannot mix by returning
      *          a QString for one index, and a qlonglong for other.
      *
      * @note If you need a more complex layout, you will have to reimplement this

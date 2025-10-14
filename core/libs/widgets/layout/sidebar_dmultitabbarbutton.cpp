@@ -30,7 +30,7 @@ DMultiTabBarButton::DMultiTabBarButton(const QIcon& pic, const QString& text,
     connect(this, &QPushButton::clicked,
             this, &DMultiTabBarButton::slotClicked);
 
-    // we can't see the focus, so don't take focus. #45557
+    // we cannot see the focus, so don't take focus. #45557
     // If keyboard navigation is wanted, then only the bar should take focus,
     // and arrows could change the focused button; but generally, tabbars don't take focus anyway.
 

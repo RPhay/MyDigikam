@@ -64,7 +64,7 @@ public:
         InvalidSessionKey,
 
         /**
-         * @brief The current user can't upload.
+         * @brief The current user cannot upload.
          */
         BadAccess,
 

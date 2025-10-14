@@ -139,7 +139,7 @@ bool DiscCache::find(const QString& key, QByteArray& data)
 
 bool DiscCache::insert(const QString& key, const QByteArray& data)
 {
-    // If we can't open/create a file for this entry signal an error
+    // If we cannot open/create a file for this entry signal an error
     QFile file(keyToFileName(key));
 
     if (!file.open(QIODevice::WriteOnly))
@@ -175,7 +175,7 @@ void DiscCache::remove(const QString& key)
         return;
     }
 
-    // If we can't remove the file we don't remove
+    // If we cannot remove the file we don't remove
     // the entry to prevent inconsistency
     if (!QFile::remove(keyToFileName(key)))
     {

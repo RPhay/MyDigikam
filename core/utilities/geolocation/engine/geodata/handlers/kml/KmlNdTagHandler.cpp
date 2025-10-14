@@ -56,7 +56,7 @@ GeoNode* KmlndTagHandler::parse(GeoParser& parser) const
 
         if (auto lineString = geodata_cast<GeoDataLineString>(placemark->geometry()))
         {
-            // Using GeoDataPoint because GeoDataCoordinates is not a GeoNode, so it can't be returned.
+            // Using GeoDataPoint because GeoDataCoordinates is not a GeoNode, so it cannot be returned.
             GeoDataPoint* point = new GeoDataPoint(lineString->at(ndIndex));
             return point;
         }
@@ -79,7 +79,7 @@ GeoNode* KmlndTagHandler::parse(GeoParser& parser) const
     {
         GeoDataLinearRing* linearRing = parser.parentElement(1).nodeAs<GeoDataLinearRing>();
 
-        // Using GeoDataPoint because GeoDataCoordinates is not a GeoNode, so it can't be returned.
+        // Using GeoDataPoint because GeoDataCoordinates is not a GeoNode, so it cannot be returned.
         GeoDataPoint* point = new GeoDataPoint(linearRing->at(ndIndex));
         return point;
     }

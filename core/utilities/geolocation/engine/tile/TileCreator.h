@@ -37,7 +37,7 @@ class TileCreatorPrivate;
  * Base Class for custom tile source
  *
  * Implement this class to have more control over the tile creating process. This
- * is needed when creating with a high tileLevel where the whole source image can't
+ * is needed when creating with a high tileLevel where the whole source image cannot
  * be loaded at once.
  **/
 class DIGIKAM_EXPORT TileCreatorSource

@@ -174,7 +174,7 @@ GeoDataDocument* Pn2Runner::parseFile(const QString& fileName, DocumentRole role
 
         default:
         {
-            qCDebug(DIGIKAM_GEOENGINE_LOG) << "File can't be parsed. We don't have parser for file header version:" << m_fileHeaderVersion;
+            qCDebug(DIGIKAM_GEOENGINE_LOG) << "File cannot be parsed. We don't have parser for file header version:" << m_fileHeaderVersion;
             break;
         }
     }

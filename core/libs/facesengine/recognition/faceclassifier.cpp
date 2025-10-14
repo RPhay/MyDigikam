@@ -159,7 +159,7 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
 {
     d->recognizeModel = parameters.recognizeModel;
 
-    // set the threshold for the model in case we can't get it from the model
+    // set the threshold for the model in case we cannot get it from the model
 
     threshold         = 0.5F;
 
@@ -427,7 +427,7 @@ bool FaceClassifier::loadTrainingData()
             }
             else
             {
-                // no training data, so we can't train the classifiers
+                // no training data, so we cannot train the classifiers
 
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: no training data available";
             }

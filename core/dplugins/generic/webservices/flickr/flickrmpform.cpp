@@ -88,7 +88,7 @@ bool FlickrMPForm::addFile(const QString& name, const QString& path)
 
     if (mime.isEmpty())
     {
-        // if we ourselves can't determine the mime of the local file,
+        // if we ourselves cannot determine the mime of the local file,
         // very unlikely the remote site will be able to identify it
         return false;
     }

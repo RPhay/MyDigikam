@@ -335,7 +335,7 @@ public:
 
     /**
      * Returns the index for a given @see DConfigDlgWdgItem. The index is invalid if the
-     * item can't be found in the model.
+     * item cannot be found in the model.
      */
     QModelIndex index(const DConfigDlgWdgItem* item) const;
 

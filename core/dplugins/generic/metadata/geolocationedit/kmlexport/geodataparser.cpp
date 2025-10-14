@@ -103,7 +103,7 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
         return true;
     }
 
-    // If we can't find it, we will trying to interpolate the GPS point.
+    // If we cannot find it, we will trying to interpolate the GPS point.
 
     if (interpolate)
     {

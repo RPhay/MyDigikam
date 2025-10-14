@@ -52,7 +52,7 @@ enum RajceErrorCode
     InvalidAlbumId,                 ///<  6 Invalid album ID.
     AlbumDoesntExistOrNoPrivileges, ///<  7 The album doesn't exist or is not owned by the logged in user.
     InvalidAlbumToken,              ///<  8 Invalid album token.
-    AlbumNameEmpty,                 ///<  9 Album can't have an empty name.
+    AlbumNameEmpty,                 ///<  9 Album cannot have an empty name.
     FailedToCreateAlbum,            ///< 10 Failed to create an album (probably a serverside error).
     AlbumDoesntExist,               ///< 11 Album doesn't exist.
     UnknownApplication,             ///< 12 Nonexistent application.
