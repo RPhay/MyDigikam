@@ -268,9 +268,9 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     themeWhiteList.insert(QLatin1String("humanity"),        i18nc("icon theme", "Humanity"));
     themeWhiteList.insert(QLatin1String("oxygen"),          i18nc("icon theme", "Oxygen"));
 
-    const auto pathes = QIcon::themeSearchPaths();
+    const auto paths = QIcon::themeSearchPaths();
 
-    for (const QString& path : pathes)
+    for (const QString& path : paths)
     {
         QDirIterator it(path, QDir::Dirs       |
                               QDir::NoSymLinks |

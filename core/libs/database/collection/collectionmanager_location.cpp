@@ -818,9 +818,9 @@ void CollectionManager::updateLocations()
 
         if (location->type() == CollectionLocation::Network)
         {
-            const auto pathes = d->networkShareMountPathsFromIdentifier(location);
+            const auto paths = d->networkShareMountPathsFromIdentifier(location);
 
-            for (const QString& path : pathes)
+            for (const QString& path : paths)
             {
                 QUrl url(location->identifier);
                 QString uuidValue = d->getCollectionUUID(path);

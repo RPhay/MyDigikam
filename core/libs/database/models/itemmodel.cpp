@@ -749,7 +749,7 @@ void ItemModel::appendInfos(const QList<ItemInfo>& infos, const QList<QVariant>&
 void ItemModel::appendInfosChecked(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues)
 {
     // This method does deduplication. It is private because in context of
-    // readding or refreshing it is of no use.
+    // re-adding or refreshing it is of no use.
 
     if (extraValues.isEmpty())
     {

@@ -408,7 +408,7 @@ varsinput: varinput
 vars: var
     | vars PT_TOKEN_SEP var
 
-/* a variable can be a cropping one (with 4 parms), a one-parm one, a reference to another variable,
+/* a variable can be a cropping one (with 4 params), a one-param one, a reference to another variable,
  * or finally, a name only */
 varinput: varcropping
     | varreference

@@ -467,9 +467,9 @@ void SetupCollectionModel::loadCollections()
             if (url.scheme() == QLatin1String("networkshareid"))
             {
                 QUrlQuery q(url);
-                const auto pathes = q.allQueryItemValues(QLatin1String("mountpath"));
+                const auto paths = q.allQueryItemValues(QLatin1String("mountpath"));
 
-                for (const QString& path : pathes)
+                for (const QString& path : paths)
                 {
                     if (location.albumRootPath() != path)
                     {

@@ -138,9 +138,9 @@ void ThumbsGenerator::slotStart()
 
         if      ((*it)->type() == Album::PHYSICAL)
         {
-            const auto pathes = CoreDbAccess().db()->getItemURLsInAlbum((*it)->id());
+            const auto paths = CoreDbAccess().db()->getItemURLsInAlbum((*it)->id());
 
-            for (const QString& path : pathes)
+            for (const QString& path : paths)
             {
                 if (!d->allPicturesPath.contains(path))
                 {
@@ -150,9 +150,9 @@ void ThumbsGenerator::slotStart()
         }
         else if ((*it)->type() == Album::TAG)
         {
-            const auto pathes = CoreDbAccess().db()->getItemURLsInTag((*it)->id());
+            const auto paths = CoreDbAccess().db()->getItemURLsInTag((*it)->id());
 
-            for (const QString& path : pathes)
+            for (const QString& path : paths)
             {
                 if (!d->allPicturesPath.contains(path))
                 {

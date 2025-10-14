@@ -102,9 +102,9 @@ VidSlideIntroPage::VidSlideIntroPage(QWizard* const dialog, const QString& title
     binaryBox->setTitle(i18nc("@title:group", "FFmpeg Binary"));
     d->binSearch = new DBinarySearch(binaryBox);
     d->binSearch->addBinary(d->ffmpegBin);
-    const auto pathes = d->wizard->settings()->defaultFFmpegSearchPaths();
+    const auto paths = d->wizard->settings()->defaultFFmpegSearchPaths();
 
-    for (const QString& path : pathes)
+    for (const QString& path : paths)
     {
         d->binSearch->addDirectory(path);
     }
