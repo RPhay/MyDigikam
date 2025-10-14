@@ -262,7 +262,7 @@ QColor tint(const QColor& base, const QColor& color, qreal amount = 0.3)
  * first using the specified composition mode.
  *
  * @param base the base color (alpha channel is ignored).
- * @param paint the color to be overlayed onto the base color.
+ * @param paint the color to be overlaid onto the base color.
  * @param comp the CompositionMode used to do the blending.
  */
 QColor overlayColors(const QColor& base, const QColor& paint,

@@ -80,7 +80,7 @@ protected:
 
     /**
      * @brief For the context that an overlay can affect multiple items:
-     * Assuming the currently overlayed index is given.
+     * Assuming the currently overlaid index is given.
      * Will an operation affect only the single item, or multiple?
      * If multiple, retrieve the affected selection.
      */

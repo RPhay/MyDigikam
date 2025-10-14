@@ -230,7 +230,7 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     d->translatorLabel      = new QLabel(xi18nc("@info", "<para>The translator engine is an online Web-service used to translate "
                                                          "text from one language to another one. This feature is available on "
                                                          "metadata option where alternative language is supported, as Title, "
-                                                         "Caption, etc. The translation process is fully automatized but it requires "
+                                                         "Caption, etc. The translation process is fully automated but it requires "
                                                          "an Internet connection to work.</para>"
                                                          "<para>User can select the more appropriate translator engine depending of "
                                                          "desired target language, as not all world-wide languages are supported "
