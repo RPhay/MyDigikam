@@ -160,7 +160,7 @@ void DPluginSetup::updateInfo()
             d->pluginsNumber->setText(i18nc("@info", "No plugin installed"));
         }
 
-        int act = d->pluginsList->actived();
+        int act = d->pluginsList->activated();
 
         if (act > 0)
         {

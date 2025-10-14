@@ -213,19 +213,19 @@ int DPluginConfView::count() const
     return d->plugBoxes.count();
 }
 
-int DPluginConfView::actived() const
+int DPluginConfView::activated() const
 {
-    int actived = 0;
+    int activated = 0;
 
     for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
         if (item->checkState(0) == Qt::Checked)
         {
-            ++actived; // cppcheck-suppress useStlAlgorithm
+            ++activated; // cppcheck-suppress useStlAlgorithm
         }
     }
 
-    return actived;
+    return activated;
 }
 
 int DPluginConfView::itemsVisible() const

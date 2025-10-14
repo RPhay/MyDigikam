@@ -49,7 +49,7 @@ public:
     /**
      * Return the number of plugins active in the list.
      */
-    int actived()                                const;
+    int activated()                              const;
 
     /**
      * Return the total number of plugins in the list.
