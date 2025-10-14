@@ -549,7 +549,7 @@ void BWSepiaSettings::loadSettings()
         d->curvesBox->curves()->setCurveType(d->curvesBox->channel(), ImageCurves::CURVE_SMOOTH);
         d->curvesBox->reset();
 
-        // TODO: cant we use the kconfig mechanisms provided by CurveWidget here?
+        // TODO: cannot we use the kconfig mechanisms provided by CurveWidget here?
 
         QPoint disable = ImageCurves::getDisabledValue();
         QPoint p;
@@ -603,7 +603,7 @@ void BWSepiaSettings::saveAsSettings()
         stream << d->bwTone->currentId() << "\n";
         stream << d->cInput->value() << "\n";
 
-        // TODO: cant we use the kconfig mechanisms provided by CurveWidget here?
+        // TODO: cannot we use the kconfig mechanisms provided by CurveWidget here?
 
         for (int j = 0 ; j < ImageCurves::NUMBER_OF_POINTS ; ++j)
         {

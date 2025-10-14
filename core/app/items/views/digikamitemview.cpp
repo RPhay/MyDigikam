@@ -131,7 +131,7 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     addOverlay(ratingOverlay);
 
     // face overlays
-    // NOTE: order to plug this overlay is important, else rejection cant be suitable (see bug #324759).
+    // NOTE: order to plug this overlay is important, else rejection cannot be suitable (see bug #324759).
 
     addAssignNameOverlay(d->faceDelegate);
     addRejectionOverlay(d->faceDelegate);
