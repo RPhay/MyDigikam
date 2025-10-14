@@ -141,7 +141,7 @@ BUGFIXES:
 104 ==> 510458 - Right click on map copy coordinates does not allow pasting in filelist.
 105 ==> 508199 - Miscellaneous Settings > System > Use OpenCL Hardware Acceleration Issues.
 106 ==> 506535 - OpenCL isn't working - despite OpenCL driver is loaded on GPU.
-107 ==> 
+107 ==> 510610 - Thumbnail for .mov not showing properly.
 108 ==> 
 109 ==> 
 110 ==> 

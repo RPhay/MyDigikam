@@ -187,8 +187,7 @@ void VideoThumbDecoder::seek(int timeInSeconds)
         timestamp = 0;
     }
 
-    int ret = av_seek_frame(d->pFormatContext, -1, timestamp,
-                            AVSEEK_FLAG_FRAME | AVSEEK_FLAG_BACKWARD);
+    int ret = av_seek_frame(d->pFormatContext, -1, timestamp, AVSEEK_FLAG_FRAME);
 
     if (ret >= 0)
     {
