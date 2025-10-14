@@ -119,7 +119,7 @@ void ModelCompleter::setItemModel(QAbstractItemModel* const model, int uniqueIdR
         connect(d->model, SIGNAL(modelReset()),
                 this, SLOT(slotModelReset()));
 
-        // Do an initial sync wit the new model.
+        // Do an initial sync with the new model.
 
         sync(d->model);
     }

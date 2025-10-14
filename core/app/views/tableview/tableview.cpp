@@ -493,7 +493,7 @@ void TableView::slotAwayFromSelection()
     if      (selection.contains(firstIndex) && selection.contains(lastIndex))
     {
         // both the first and the last index are selected, we have to
-        // select an index inbetween
+        // select an index in-between
 
         const int nextFreeDeepRow = s->tableViewModel->firstDeepRowNotInList(selection);
 

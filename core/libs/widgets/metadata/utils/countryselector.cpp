@@ -326,7 +326,7 @@ CountrySelector::~CountrySelector()
 
 void CountrySelector::setCountry(const QString& countryCode)
 {
-    // NOTE: if countryCode is empty or do not matches code map, unknow is selected from the list.
+    // NOTE: if countryCode is empty or do not matches code map, unknown is selected from the list.
 
     int id = count() - 1;
 
@@ -347,7 +347,7 @@ void CountrySelector::setCountry(const QString& countryCode)
 
 bool CountrySelector::country(QString& countryCode, QString& countryName) const
 {
-    // Unknow is selected ?
+    // Unknown is selected ?
 
     if (currentIndex() == count()-1)
     {

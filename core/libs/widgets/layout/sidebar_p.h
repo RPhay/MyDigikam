@@ -118,7 +118,7 @@ public:
     bool                          minimized                 = false;
 
     /**
-     * Backup of shrinked status before backup(), restored by restore()
+     * Backup of shrink status before backup(), restored by restore()
      * @note when sidebar is hidden, only icon bar is affected. If sidebar view is
      * visible, this one must be shrink and restored accordingly.
      */

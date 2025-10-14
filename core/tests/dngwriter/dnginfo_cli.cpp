@@ -294,7 +294,7 @@ int main(int argc, char** argv)
 
     catch (...)
     {
-        qCCritical(DIGIKAM_TESTS_LOG) << "DNGWriter: DNG SDK exception code unknow";
+        qCCritical(DIGIKAM_TESTS_LOG) << "DNGWriter: DNG SDK exception code unknown";
 
         return (-1);
     }

@@ -41,6 +41,7 @@ IGNORE_DIRS+="*.js,"
 IGNORE_DIRS+="*.xml,"
 IGNORE_DIRS+="*.svg,"
 IGNORE_DIRS+="*.o5m,"
+IGNORE_DIRS+="*.rc,"
 
 # --- Defines to use with static analysis.
 

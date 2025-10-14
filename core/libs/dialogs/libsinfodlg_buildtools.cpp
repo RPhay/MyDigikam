@@ -67,9 +67,9 @@ void LibsInfoDlg::populateBuildTools()
     if (
         !gitRev.isEmpty()                           &&
         !gitBra.isEmpty()                           &&
-        !gitRev.startsWith(QLatin1String("unknow")) &&
+        !gitRev.startsWith(QLatin1String("unknown")) &&
         !gitRev.startsWith(QLatin1String("export")) &&
-        !gitBra.startsWith(QLatin1String("unknow"))
+        !gitBra.startsWith(QLatin1String("unknown"))
        )
     {
         const int maxStringLength         = 10;

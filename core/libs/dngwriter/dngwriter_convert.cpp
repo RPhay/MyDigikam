@@ -167,7 +167,7 @@ int DNGWriter::convert()
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknow";
+        qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknown";
 
         return DNG_SDK_INTERNAL_ERROR;
     }

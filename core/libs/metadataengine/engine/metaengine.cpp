@@ -72,7 +72,7 @@ MetaEngine& MetaEngine::operator=(const MetaEngine& metadata)
     return *this;
 }
 
-//-- Statics methods ----------------------------------------------
+//-- Static methods ----------------------------------------------
 
 bool MetaEngine::initializeExiv2()
 {
