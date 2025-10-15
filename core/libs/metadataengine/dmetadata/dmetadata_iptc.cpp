@@ -442,7 +442,7 @@ DMetadata::CountryCodeMap DMetadata::countryCodeMap()
     countryCodeMap.insert( QLatin1String("SV"), i18nc("@info: country code", "Swedish") );
     countryCodeMap.insert( QLatin1String("SW"), i18nc("@info: country code", "Swahili") );
     countryCodeMap.insert( QLatin1String("TA"), i18nc("@info: country code", "Tamil") );
-    countryCodeMap.insert( QLatin1String("TE"), i18nc("@info: country code", "Telugu") );
+    countryCodeMap.insert( QLatin1String("TE"), i18nc("@info: country code", "Telugu") );           // codespell:ignore te
     countryCodeMap.insert( QLatin1String("TG"), i18nc("@info: country code", "Tajik") );
     countryCodeMap.insert( QLatin1String("TH"), i18nc("@info: country code", "Thai") );
     countryCodeMap.insert( QLatin1String("TI"), i18nc("@info: country code", "Tigrinya") );
@@ -581,7 +581,7 @@ DMetadata::CountryCodeMap DMetadata::countryCodeMap2()
     countryCodeMap.insert( QLatin1String("slv"), i18nc("@info: country code", "Slovenian") );
     countryCodeMap.insert( QLatin1String("smo"), i18nc("@info: country code", "Samoan") );
     countryCodeMap.insert( QLatin1String("sna"), i18nc("@info: country code", "Shona") );
-    countryCodeMap.insert( QLatin1String("som"), i18nc("@info: country code", "Somali") );
+    countryCodeMap.insert( QLatin1String("som"), i18nc("@info: country code", "Somali") );          // codespell:ignore som
     countryCodeMap.insert( QLatin1String("sqi"), i18nc("@info: country code", "Albanian") );
     countryCodeMap.insert( QLatin1String("srp"), i18nc("@info: country code", "Serbian") );
     countryCodeMap.insert( QLatin1String("ssw"), i18nc("@info: country code", "Siswati") );
@@ -592,7 +592,7 @@ DMetadata::CountryCodeMap DMetadata::countryCodeMap2()
     countryCodeMap.insert( QLatin1String("tam"), i18nc("@info: country code", "Tamil") );
     countryCodeMap.insert( QLatin1String("tel"), i18nc("@info: country code", "Telugu") );
     countryCodeMap.insert( QLatin1String("tgk"), i18nc("@info: country code", "Tajik") );
-    countryCodeMap.insert( QLatin1String("tha"), i18nc("@info: country code", "Thai") );
+    countryCodeMap.insert( QLatin1String("tha"), i18nc("@info: country code", "Thai") );            // codespell:ignore tha
     countryCodeMap.insert( QLatin1String("tir"), i18nc("@info: country code", "Tigrinya") );
     countryCodeMap.insert( QLatin1String("tuk"), i18nc("@info: country code", "Turkmen") );
     countryCodeMap.insert( QLatin1String("tgl"), i18nc("@info: country code", "Tagalog") );
@@ -606,7 +606,7 @@ DMetadata::CountryCodeMap DMetadata::countryCodeMap2()
     countryCodeMap.insert( QLatin1String("ukr"), i18nc("@info: country code", "Ukrainian") );
     countryCodeMap.insert( QLatin1String("urd"), i18nc("@info: country code", "Urdu") );
     countryCodeMap.insert( QLatin1String("uzb"), i18nc("@info: country code", "Uzbek") );
-    countryCodeMap.insert( QLatin1String("vie"), i18nc("@info: country code", "Vietnamese") );
+    countryCodeMap.insert( QLatin1String("vie"), i18nc("@info: country code", "Vietnamese") );      // codespell:ignore vie
     countryCodeMap.insert( QLatin1String("vol"), i18nc("@info: country code", "Volapuk") );
     countryCodeMap.insert( QLatin1String("wol"), i18nc("@info: country code", "Wolof") );
     countryCodeMap.insert( QLatin1String("xho"), i18nc("@info: country code", "Xhosa") );

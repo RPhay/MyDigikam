@@ -128,7 +128,7 @@ const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::Private::s_g
     { DOnlineTranslator::Tajik,                QStringLiteral("tg")            },
     { DOnlineTranslator::Tamil,                QStringLiteral("ta")            },
     { DOnlineTranslator::Tatar,                QStringLiteral("tt")            },
-    { DOnlineTranslator::Telugu,               QStringLiteral("te")            },
+    { DOnlineTranslator::Telugu,               QStringLiteral("te")            },       // codespell:ignore te
     { DOnlineTranslator::Thai,                 QStringLiteral("th")            },
     { DOnlineTranslator::Tongan,               QStringLiteral("to")            },
     { DOnlineTranslator::TraditionalChinese,   QStringLiteral("zh-TW")         },
@@ -496,7 +496,7 @@ const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesG
     { QLatin1String("sw-TZ"),  QLatin1String("sw")       },
     { QLatin1String("ta-IN"),  QLatin1String("ta")       },
     { QLatin1String("ta-SG"),  QLatin1String("ta")       },
-    { QLatin1String("te-IN"),  QLatin1String("te")       },
+    { QLatin1String("te-IN"),  QLatin1String("te")       },         // codespell:ignore te
     { QLatin1String("tg-TJ"),  QLatin1String("tg")       },
     { QLatin1String("th-TH"),  QLatin1String("th")       },
     { QLatin1String("tk-TM"),  QLatin1String("tk")       },

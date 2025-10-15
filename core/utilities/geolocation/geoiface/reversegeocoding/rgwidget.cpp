@@ -1091,7 +1091,7 @@ void RGWidget::createCountryCodeMap()
     d->countryCode.insert(QLatin1String("SZ"), QLatin1String("SWZ"));
     d->countryCode.insert(QLatin1String("ET"), QLatin1String("ETH"));
     d->countryCode.insert(QLatin1String("FK"), QLatin1String("FLK"));
-    d->countryCode.insert(QLatin1String("FO"), QLatin1String("FRO"));
+    d->countryCode.insert(QLatin1String("FO"), QLatin1String("FRO"));       // codespell:ignore fro
     d->countryCode.insert(QLatin1String("FJ"), QLatin1String("FJI"));
     d->countryCode.insert(QLatin1String("FI"), QLatin1String("FIN"));
     d->countryCode.insert(QLatin1String("FR"), QLatin1String("FRA"));
@@ -1223,7 +1223,7 @@ void RGWidget::createCountryCodeMap()
     d->countryCode.insert(QLatin1String("SK"), QLatin1String("SVK"));
     d->countryCode.insert(QLatin1String("SI"), QLatin1String("SVN"));
     d->countryCode.insert(QLatin1String("SB"), QLatin1String("SLB"));
-    d->countryCode.insert(QLatin1String("SO"), QLatin1String("SOM"));
+    d->countryCode.insert(QLatin1String("SO"), QLatin1String("SOM"));       // codespell:ignore som
     d->countryCode.insert(QLatin1String("ZA"), QLatin1String("ZAF"));
     d->countryCode.insert(QLatin1String("GS"), QLatin1String("SGS"));
     d->countryCode.insert(QLatin1String("SS"), QLatin1String("SSD"));
@@ -1238,7 +1238,7 @@ void RGWidget::createCountryCodeMap()
     d->countryCode.insert(QLatin1String("TW"), QLatin1String("TWN"));
     d->countryCode.insert(QLatin1String("TJ"), QLatin1String("TJK"));
     d->countryCode.insert(QLatin1String("TZ"), QLatin1String("TZA"));
-    d->countryCode.insert(QLatin1String("TH"), QLatin1String("THA"));
+    d->countryCode.insert(QLatin1String("TH"), QLatin1String("THA"));       // codespell:ignore tha
     d->countryCode.insert(QLatin1String("TL"), QLatin1String("TLS"));
     d->countryCode.insert(QLatin1String("TG"), QLatin1String("TGO"));
     d->countryCode.insert(QLatin1String("TK"), QLatin1String("TKL"));

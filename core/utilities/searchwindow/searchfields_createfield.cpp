@@ -1007,7 +1007,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         type << QLatin1String("mp3")                << QLatin1String("MP3 (MPEG audio layer 3)");
         type << QLatin1String("mp3adu")             << QLatin1String("ADU (Application Data Unit) MP3 (MPEG audio layer 3)");
         type << QLatin1String("mp3on4")             << QLatin1String("MP3 on MP4");
-        type << QLatin1String("mp4als")             << QLatin1String("MPEG-4 Audio Lossless Coding (ALS)");
+        type << QLatin1String("mp4als")             << QLatin1String("MPEG-4 Audio Lossless Coding (ALS)");     // codespell:ignore als
         type << QLatin1String("musepack7")          << QLatin1String("Musepack SV7");
         type << QLatin1String("musepack8")          << QLatin1String("Musepack SV8");
         type << QLatin1String("nellymoser")         << QLatin1String("Nellymoser Asao");
