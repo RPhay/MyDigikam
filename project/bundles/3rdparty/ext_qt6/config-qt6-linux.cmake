@@ -82,9 +82,9 @@ LIST(APPEND QT_CONFIG
             -skip qtserialbus
             -skip qtvirtualkeyboard
             -skip qtwinextras                 # For Windows devices only
-            -skip qtandroidextras             # For embeded devices only
+            -skip qtandroidextras             # For embedded devices only
             -skip qtmacextras                 # For MacOS devices only
-            -skip qtwebglplugin               # No need browser OpenGL extention support
+            -skip qtwebglplugin               # No need browser OpenGL extension support
 )
 
 MESSAGE(STATUS "Use Linux configuration:")

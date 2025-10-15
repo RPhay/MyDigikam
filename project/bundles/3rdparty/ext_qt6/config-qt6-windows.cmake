@@ -73,8 +73,8 @@ LIST(APPEND QT_CONFIG
             -skip qtremoteobjects
             -skip qtrepotools
             -skip qtvirtualkeyboard
-            -skip qtnetworkauth               # No need network authentification support.
-            -skip qtandroidextras             # For embeded devices only
+            -skip qtnetworkauth               # No need network authentication support.
+            -skip qtandroidextras             # For embedded devices only
             -skip qtmacextras                 # For MacOS devices only
             -skip qtwebglplugin
             -skip qtwebview

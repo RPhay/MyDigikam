@@ -140,7 +140,7 @@ Optional Packages:
   --with-utilities	enable building command-line utilities (default yes)
   --with-quantum-depth=DEPTH
                           number of bits in a pixel quantum (default 16)
-  --with-cache=THRESHOLD  set pixel cache threshhold in MB (default available
+  --with-cache=THRESHOLD  set pixel cache threshold in MB (default available
                           memory)
   --with-frozenpaths      freeze delegate paths
   --without-magick-plus-plus
