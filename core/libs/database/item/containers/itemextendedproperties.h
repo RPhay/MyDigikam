@@ -70,7 +70,7 @@ public:
 
     /**
      * Returns the Scene.
-     * &ldquo; Describes the scene of a photo content. Specifies one ore more terms from the
+     * &ldquo; Describes the scene of a photo content. Specifies one more terms from the
      *   IPTC &lsquo;Scene-NewsCodes&rsquo;. Each Scene is represented as a string of 6 digits in an unordered list.&rdquo;
      */
     QStringList scene();

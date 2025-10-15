@@ -197,20 +197,20 @@ void PanoActionThread::optimizeProject(const QUrl& ptoUrl,
 {
     QSharedPointer<Sequence> jobs(new Sequence());
 
-    QObjectDecorator* const ot = new QObjectDecorator(new OptimisationTask(d->preprocessingTmpPath,
-                                                      ptoUrl,
-                                                      optimizePtoUrl,
-                                                      levelHorizon,
-                                                      buildGPano,
-                                                      autooptimiserPath));
+    QObjectDecorator* const opt = new QObjectDecorator(new OptimisationTask(d->preprocessingTmpPath,
+                                                       ptoUrl,
+                                                       optimizePtoUrl,
+                                                       levelHorizon,
+                                                       buildGPano,
+                                                       autooptimiserPath));
 
-    connect(ot, SIGNAL(started(ThreadWeaver::JobPointer)),
+    connect(opt, SIGNAL(started(ThreadWeaver::JobPointer)),
             this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
 
-    connect(ot, SIGNAL(done(ThreadWeaver::JobPointer)),
+    connect(opt, SIGNAL(done(ThreadWeaver::JobPointer)),
             this, SLOT(slotStepDone(ThreadWeaver::JobPointer)));
 
-    (*jobs) << ot;
+    (*jobs) << opt;
 
     QObjectDecorator* const act = new QObjectDecorator(new AutoCropTask(d->preprocessingTmpPath,
                                                        optimizePtoUrl,

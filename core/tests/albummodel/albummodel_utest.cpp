@@ -476,11 +476,11 @@ void AlbumModelTest::testDisablePAlbumCount()
     QRegularExpression countRegEx(QRegularExpression::anchoredPattern(QLatin1String(".+ \\(\\d+\\)")));
     countRegEx.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     QVERIFY(countRegEx.match(QLatin1String("test (10)")).hasMatch());
-    QVERIFY(countRegEx.match(QLatin1String("te st (10)")).hasMatch());
-    QVERIFY(countRegEx.match(QLatin1String("te st (0)")).hasMatch());
-    QVERIFY(!countRegEx.match(QLatin1String("te st ()")).hasMatch());
-    QVERIFY(!countRegEx.match(QLatin1String("te st")).hasMatch());
-    QVERIFY(!countRegEx.match(QLatin1String("te st (10) bla")).hasMatch());
+    QVERIFY(countRegEx.match(QLatin1String("te st (10)")).hasMatch());          // codespell:ignore te
+    QVERIFY(countRegEx.match(QLatin1String("te st (0)")).hasMatch());           // codespell:ignore te
+    QVERIFY(!countRegEx.match(QLatin1String("te st ()")).hasMatch());           // codespell:ignore te
+    QVERIFY(!countRegEx.match(QLatin1String("te st")).hasMatch());              // codespell:ignore te
+    QVERIFY(!countRegEx.match(QLatin1String("te st (10) bla")).hasMatch());     // codespell:ignore te
 
     // ensure that all albums except the root album have a count attached
 

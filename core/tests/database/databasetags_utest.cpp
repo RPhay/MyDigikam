@@ -469,11 +469,11 @@ void DatabaseTagsTest::testDisablePAlbumCount()
     QRegExp countRegEx(QLatin1String(".+ \\(\\d+\\)"));
     countRegEx.setMinimal(true);
     QVERIFY(countRegEx.exactMatch(QLatin1String("test (10)")));
-    QVERIFY(countRegEx.exactMatch(QLatin1String("te st (10)")));
-    QVERIFY(countRegEx.exactMatch(QLatin1String("te st (0)")));
-    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st ()")));
-    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st")));
-    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st (10) bla")));
+    QVERIFY(countRegEx.exactMatch(QLatin1String("te st (10)")));            // codespell:ignore te
+    QVERIFY(countRegEx.exactMatch(QLatin1String("te st (0)")));             // codespell:ignore te
+    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st ()")));             // codespell:ignore te
+    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st")));                // codespell:ignore te
+    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st (10) bla")));       // codespell:ignore te
 
     // ensure that all albums except the root album have a count attached
 

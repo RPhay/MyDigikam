@@ -429,7 +429,7 @@ void ColorFXFilter::loadLut3D(const QString& path)
 
         if (img.width() == img.height())
         {
-            // HALD LUT (Like imagemagick creates)
+            // HALD LUT (Like imagemagick creates)          // codespell:ignore hald
 
             int w          = img.width();
 

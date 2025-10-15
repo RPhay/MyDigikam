@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 {
     QCoreApplication app(argc, argv);
 
-    do_online_translation(QString::fromUtf8("Ma grande maison rouge au bord de la plage"),
+    do_online_translation(QString::fromUtf8("Ma grande maison rouge au bord de la plage"),          // codespell:ignore
                           DOnlineTranslator::Google,
                           DOnlineTranslator::English,
                           DOnlineTranslator::Auto);
@@ -82,12 +82,12 @@ int main(int argc, char* argv[])
                           DOnlineTranslator::French,
                           DOnlineTranslator::Auto);
 
-    do_online_translation(QString::fromUtf8("Bienvenidos a mi casa, les presento a mi familia"),
+    do_online_translation(QString::fromUtf8("Bienvenidos a mi casa, les presento a mi familia"),    // codespell:ignore
                           DOnlineTranslator::Google,
                           DOnlineTranslator::German,
                           DOnlineTranslator::Spanish);
 
-    do_online_translation(QString::fromUtf8("Non parlo italiano molto bene"),
+    do_online_translation(QString::fromUtf8("Non parlo italiano molto bene"),                       // codespell:ignore
                           DOnlineTranslator::Google,
                           DOnlineTranslator::TraditionalChinese,
                           DOnlineTranslator::Italian);
@@ -97,17 +97,17 @@ int main(int argc, char* argv[])
                           DOnlineTranslator::French,
                           DOnlineTranslator::English);
 /*
-    do_online_translation(QString::fromUtf8("Mon vélo a crevé ce matin sur la route du travail"),
+    do_online_translation(QString::fromUtf8("Mon vélo a crevé ce matin sur la route du travail"),   // codespell:ignore
                           DOnlineTranslator::LibreTranslate,
                           DOnlineTranslator::German,
                           DOnlineTranslator::French);
 */
-    do_online_translation(QString::fromUtf8("Hier mon réveil a sonné à 5h00 du matin"),
+    do_online_translation(QString::fromUtf8("Hier mon réveil a sonné à 5h00 du matin"),             // codespell:ignore
                           DOnlineTranslator::Lingva,
                           DOnlineTranslator::English,
                           DOnlineTranslator::French);
 
-    do_online_translation(QString::fromUtf8("Les pates c'est bon avec de la sauce tomate"),
+    do_online_translation(QString::fromUtf8("Les pates c'est bon avec de la sauce tomate"),         // codespell:ignore
                           DOnlineTranslator::Yandex,
                           DOnlineTranslator::Russian,
                           DOnlineTranslator::French);
