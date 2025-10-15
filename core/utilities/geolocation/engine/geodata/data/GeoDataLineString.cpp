@@ -645,7 +645,7 @@ void GeoDataLineString::setTessellate(bool tessellate)
     detach();
 
     Q_D(GeoDataLineString);
-    // According to the KML reference the tesselation of line strings in Google Earth
+    // According to the KML reference the tessellation of line strings in Google Earth
     // is generally done along great circles. However for subsequent points that share
     // the same latitude the latitude circles are followed. Our Tesselate and RespectLatitude
     // Flags provide this behaviour. For true polygons the latitude circles don't get considered.

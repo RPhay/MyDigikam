@@ -54,4 +54,4 @@ IGNORE_DIRS+="*.pkgproj,"
 # --- Defines to use with static analysis.
 
 # NOTE: words must be lower-case
-CODESPELL_IGNORE_WORDS="afile,ahd,asign,caf,childs,claus,cyphertext,defaut,destroi,fle,fo,foto,hist,indx,indexin,inout,ist,iten,lod,mata,mye,nam,nd,ned,oly,optio,parm,previousy,requestor,sav,shft,siz,smal,spred,tage,tempdate,tesselate,thet,toolsbox,tru,visiblestage,visibles,uptodate,wheight,manuel,readding,bloaded,wont,alllocations,abitrate,goup,alledges,allright,readded,pixelx,targetin,anwer,tung,fillin"
+CODESPELL_IGNORE_WORDS="afile,ahd,asign,caf,childs,claus,cyphertext,defaut,destroi,fle,fo,foto,hist,indx,indexin,inout,ist,iten,lod,mata,mye,nam,nd,ned,oly,optio,parm,previousy,requestor,sav,shft,siz,smal,spred,tage,tempdate,tesselate,thet,toolsbox,tru,visiblestage,visibles,uptodate,wheight,manuel,readding,bloaded,wont,alllocations,abitrate,goup,alledges,allright,readded,pixelx,targetin,anwer,tung,fillin,lamda,optin"

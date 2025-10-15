@@ -390,7 +390,7 @@ bool CylindricalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& 
 
             else
             {
-                // special case for polys which cross dateline but have no Tesselation Flag
+                // special case for polys which cross dateline but have no Tessellation Flag
                 // the expected rendering is a screen coordinates straight line between
                 // points, but in projections with repeatX things are not smooth
                 mirrorCount = crossDateLine(*itPreviousCoords, *itCoords, x, y, polygons, mirrorCount, distance);
