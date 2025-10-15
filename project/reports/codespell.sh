@@ -107,44 +107,53 @@ if [[ -f ./codespell-trace.txt ]] ; then
                 <tbody>
 EOF
 
-    # Read trace file and generate the spreadsheet HTML
+# Read trace file and generate the spreadsheet HTML
 
-    total_errors=0
+total_errors=0
 
-    while IFS= read -r line ; do
+while IFS= read -r line ; do
 
-        # Ignore lines without "==>"
+    # Ignore lines without "==>"
 
-        if [[ "$line" == *"==>"* ]] ; then
+    if [[ "$line" == *"==>"* ]] ; then
 
-            total_errors=$((total_errors+1))
+        total_errors=$((total_errors+1))
 
-            # Uses awk to extract all info
+        # Uses awk to extract all info
 
-            file=$(echo "$line" | awk -F':' '{print $1}')
-            line_num=$(echo "$line" | awk -F':' '{print $2}' | awk '{print $1}')
-            error=$(echo "$line" | awk -F'==' '{print $1}' | awk '{print $NF}')
-            suggestion=$(echo "$line" | awk -F'==' '{print $2}' | awk '{print $2}')
+        file=$(echo "$line" | awk -F':' '{print $1}')
+        line_num=$(echo "$line" | awk -F':' '{print $2}' | awk '{print $1}')
+        error=$(echo "$line" | awk -F'==' '{print $1}' | awk '{print $NF}')
+        suggestion=$(echo "$line" | awk -F'==' '{print $2}' | awk '{print $2}')
 
-            # ESC special char for the HTML code
+        # Nettoyer le chemin du fichier en supprimant les segments ../../
 
-            file_escaped=$(echo "$file" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'\''/\&#39;/g;')
-            error_escaped=$(echo "$error" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'\''/\&#39;/g;')
-            suggestion_escaped=$(echo "$suggestion" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'\''/\&#39;/g;')
+        clean_file=$(echo "$file" | sed 's|^\.\./\.\./||')
 
-            # Append a line to the spreadsheet
+        # ESC special char for the HTML code
 
-            cat >> "$HTML_FILE" << EOF
-                <tr>
-                    <td class="file">$file_escaped</td>
-                    <td class="line">$line_num</td>
-                    <td class="error">$error_escaped</td>
-                    <td>$suggestion_escaped</td>
-                </tr>
+        file_escaped=$(echo "$clean_file" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'\''/\&#39;/g;')
+        error_escaped=$(echo "$error" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'\''/\&#39;/g;')
+        suggestion_escaped=$(echo "$suggestion" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'\''/\&#39;/g;')
+
+        # Generate the URL for the Git repository
+
+        git_url="https://invent.kde.org/graphics/digikam/-/tree/master/$clean_file?ref_type=heads#L$line_num"
+
+        # Append a line to the spreadsheet
+
+        cat >> "$HTML_FILE" << EOF
+            <tr>
+                <td class="file">$file_escaped</td>
+                <td class="line"><a href="$git_url" target="_blank">$line_num</a></td>
+                <td class="error">$error_escaped</td>
+                <td>$suggestion_escaped</td>
+            </tr>
 EOF
-        fi
 
-    done < "$TRACE_FILE"
+    fi
+
+done < "$TRACE_FILE"
 
     date=$(date +"%Y-%m-%d")
 
