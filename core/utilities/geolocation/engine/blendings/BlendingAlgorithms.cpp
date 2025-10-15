@@ -275,7 +275,7 @@ qreal SubtractiveBlending::blendChannel(qreal const bottomColorIntensity,
 }
 
 
-// Lightening blendings
+// Lightning blendings
 
 qreal AdditiveBlending::blendChannel(qreal const bottomColorIntensity,
                                      qreal const topColorIntensity) const

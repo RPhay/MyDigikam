@@ -367,7 +367,7 @@ void O5mWriter::writeStringPair(const StringPair& pair, StringTable& stringTable
 
         if (!tooLong && !tableFull)
         {
-            /* When the table is full, old values could be re-used.
+            /* When the table is full, old values could be reused.
              * See o5m spec. This is only relevant for large files and would
              * need some kind of string popularity to be effective though. */
             stringTable.insert(pair, stringTable.size());

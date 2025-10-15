@@ -73,7 +73,7 @@ BlendingFactory::BlendingFactory(const SunLocator* sunLocator)
     m_blendings.insert(QString::fromUtf8("MultiplyBlending"), new MultiplyBlending);
     m_blendings.insert(QString::fromUtf8("SubtractiveBlending"), new SubtractiveBlending);
 
-    // Lightening blendings
+    // Lightning blendings
     m_blendings.insert(QString::fromUtf8("AdditiveBlending"), new AdditiveBlending);
     m_blendings.insert(QString::fromUtf8("ColorDodgeBlending"), new ColorDodgeBlending);
     m_blendings.insert(QString::fromUtf8("GammaLightBlending"), new GammaLightBlending);

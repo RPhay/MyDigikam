@@ -863,7 +863,7 @@ QRectF PlacemarkLayout::roomForLabel(const GeoDataStyle::ConstPtr& style,
 
         for (int i = 0 ; i < 7 ; ++i)
         {
-            const qreal increase   = (i / 2) * (textHeight + 1); //intentional integer arithmetics
+            const qreal increase   = (i / 2) * (textHeight + 1);        // intentional integer arithmetic
             const qreal direction  = (i % 2 == 0 ? 1 : -1);
             const qreal yPos       = startY + increase * direction;
             const QRectF labelRect = QRectF(xPos, yPos, textWidth, textHeight);

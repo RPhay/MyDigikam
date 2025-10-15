@@ -148,7 +148,7 @@ class SubtractiveBlending: public IndependentChannelBlending
                        qreal const topColorIntensity) const override;
 };
 
-// Lightening blendings
+// Lightning blendings
 
 class AdditiveBlending: public IndependentChannelBlending
 {
