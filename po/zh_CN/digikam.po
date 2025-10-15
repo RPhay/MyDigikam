@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 01:59+0000\n"
+"POT-Creation-Date: 2025-10-15 01:58+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3253,6 +3253,8 @@ msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
 msgstr ""
+"版本管理功能：新增支持 JPEG-XL、HEIF、WebP、AVIF 作为无损图像格式来存储多版本"
+"图像。"
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
@@ -37325,7 +37327,7 @@ msgstr "评分："
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
-msgstr ""
+msgstr "已版本管理："
 
 #: core/libs/properties/itempropertiestab.cpp:244
 #, kde-format
@@ -47654,13 +47656,23 @@ msgid "Select here the online engine to translate text"
 msgstr "在此选择用于翻译文本的在线服务"
 
 #: core/libs/widgets/text/localizeconfig.cpp:230
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>The translator engine is an online Web-service used to translate "
+#| "text from one language to another one. This feature is available on "
+#| "metadata option where alternative language is supported, as Title, "
+#| "Caption, etc. The translation process is fully automatized but it "
+#| "requires an Internet connection to work.</para><para>User can select the "
+#| "more appropriate translator engine depending of desired target language, "
+#| "as not all world-wide languages are supported by online Web-services.</"
+#| "para>"
 msgctxt "@info"
 msgid ""
 "<para>The translator engine is an online Web-service used to translate text "
 "from one language to another one. This feature is available on metadata "
 "option where alternative language is supported, as Title, Caption, etc. The "
-"translation process is fully automatized but it requires an Internet "
+"translation process is fully automated but it requires an Internet "
 "connection to work.</para><para>User can select the more appropriate "
 "translator engine depending of desired target language, as not all world-"
 "wide languages are supported by online Web-services.</para>"
