@@ -57,7 +57,7 @@ void FileSaveOptionsBoxTest::testDiscoverFormat_data()
 
     QTest::newRow("pgf") << "PGF" << (int) FileSaveOptionsBox::PGF;
 
-    QTest::newRow("unknwon") << "i.dont.know" << (int) FileSaveOptionsBox::NONE; // krazy:exclude=spelling
+    QTest::newRow("unknwon") << "i.dont.know" << (int) FileSaveOptionsBox::NONE; // krazy:exclude=spelling // codespell:ignore unknwon
 }
 
 void FileSaveOptionsBoxTest::testDiscoverFormat()

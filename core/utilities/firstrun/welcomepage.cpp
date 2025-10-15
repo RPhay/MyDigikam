@@ -75,7 +75,7 @@ WelcomePage::WelcomePage(QWizard* const dlg)
                      "before proceeding.</p>"
                      "<p>The new location for configuration files is "
                      "%1 (old %2). "
-                     "There are unresolved problems reported when re-using old "
+                     "There are unresolved problems reported when reusing old "
                      "configuration files, so it is not recommended to do it "
                      "for the moment, and therefore use at your own risk.</p>"
                      "</qt>",
