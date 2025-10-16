@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-15 01:58+0000\n"
-"PO-Revision-Date: 2025-10-13 16:06+0300\n"
+"POT-Creation-Date: 2025-10-16 02:01+0000\n"
+"PO-Revision-Date: 2025-10-15 19:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -49746,17 +49746,7 @@ msgid "Select here the online engine to translate text"
 msgstr "Тут ви можете вибрати рушій для перекладу тексту"
 
 #: core/libs/widgets/text/localizeconfig.cpp:230
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>The translator engine is an online Web-service used to translate "
-#| "text from one language to another one. This feature is available on "
-#| "metadata option where alternative language is supported, as Title, "
-#| "Caption, etc. The translation process is fully automatized but it "
-#| "requires an Internet connection to work.</para><para>User can select the "
-#| "more appropriate translator engine depending of desired target language, "
-#| "as not all world-wide languages are supported by online Web-services.</"
-#| "para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>The translator engine is an online Web-service used to translate text "
@@ -53390,7 +53380,17 @@ msgstr ""
 "qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
+#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
+#| "from digiKam 4 are not migrated. The old database can still be used, you "
+#| "just need to choose the same locations for collections and database in "
+#| "the following dialogs. It is recommended to create a backup of your "
+#| "database before proceeding.</p><p>The new location for configuration "
+#| "files is %1 (old %2). There are unresolved problems reported when re-"
+#| "using old configuration files, so it is not recommended to do it for the "
+#| "moment, and therefore use at your own risk.</p></qt>"
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53398,7 +53398,7 @@ msgid ""
 "need to choose the same locations for collections and database in the "
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
-"%2). There are unresolved problems reported when re-using old configuration "
+"%2). There are unresolved problems reported when reusing old configuration "
 "files, so it is not recommended to do it for the moment, and therefore use "
 "at your own risk.</p></qt>"
 msgstr ""
@@ -53933,8 +53933,9 @@ msgid "m"
 msgstr "м"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, kde-format
-msgctxt "means milimeters"
+#, fuzzy, kde-format
+#| msgid "mm"
+msgctxt "means millimeters"
 msgid "mm"
 msgstr "мм"
 
@@ -68994,6 +68995,10 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgctxt "means milimeters"
+#~ msgid "mm"
+#~ msgstr "мм"
 
 #~ msgctxt "@title: window start transfert"
 #~ msgid "Warning"

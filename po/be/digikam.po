@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-15 01:58+0000\n"
+"POT-Creation-Date: 2025-10-16 02:01+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -50425,7 +50425,7 @@ msgid ""
 "need to choose the same locations for collections and database in the "
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
-"%2). There are unresolved problems reported when re-using old configuration "
+"%2). There are unresolved problems reported when reusing old configuration "
 "files, so it is not recommended to do it for the moment, and therefore use "
 "at your own risk.</p></qt>"
 msgstr ""
@@ -50909,8 +50909,9 @@ msgid "m"
 msgstr "м"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, kde-format
-msgctxt "means milimeters"
+#, fuzzy, kde-format
+#| msgid "mm"
+msgctxt "means millimeters"
 msgid "mm"
 msgstr "мм"
 
@@ -64918,6 +64919,10 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпарт"
+
+#~ msgctxt "means milimeters"
+#~ msgid "mm"
+#~ msgstr "мм"
 
 #, fuzzy
 #~| msgctxt "@title: dialog"

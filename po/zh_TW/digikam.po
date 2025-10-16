@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-15 01:58+0000\n"
+"POT-Creation-Date: 2025-10-16 02:01+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -52709,7 +52709,7 @@ msgid ""
 "need to choose the same locations for collections and database in the "
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
-"%2). There are unresolved problems reported when re-using old configuration "
+"%2). There are unresolved problems reported when reusing old configuration "
 "files, so it is not recommended to do it for the moment, and therefore use "
 "at your own risk.</p></qt>"
 msgstr ""
@@ -53218,10 +53218,11 @@ msgid "m"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, kde-format
-msgctxt "means milimeters"
+#, fuzzy, kde-format
+#| msgid "mm"
+msgctxt "means millimeters"
 msgid "mm"
-msgstr ""
+msgstr "毫米"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:166
 #, kde-format

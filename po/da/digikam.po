@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-15 01:58+0000\n"
+"POT-Creation-Date: 2025-10-16 02:01+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -56711,7 +56711,7 @@ msgid ""
 "need to choose the same locations for collections and database in the "
 "following dialogs. It is recommended to create a backup of your database "
 "before proceeding.</p><p>The new location for configuration files is %1 (old "
-"%2). There are unresolved problems reported when re-using old configuration "
+"%2). There are unresolved problems reported when reusing old configuration "
 "files, so it is not recommended to do it for the moment, and therefore use "
 "at your own risk.</p></qt>"
 msgstr ""
@@ -57274,7 +57274,7 @@ msgstr "cm"
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
 #, fuzzy, kde-format
 #| msgid "mm"
-msgctxt "means milimeters"
+msgctxt "means millimeters"
 msgid "mm"
 msgstr "mm"
 
@@ -73305,6 +73305,12 @@ msgstr "Album-elementer"
 #, kde-format
 msgid "Import Items"
 msgstr "Importér elementer"
+
+#, fuzzy
+#~| msgid "mm"
+#~ msgctxt "means milimeters"
+#~ msgid "mm"
+#~ msgstr "mm"
 
 #, fuzzy
 #~| msgid "Warning"
