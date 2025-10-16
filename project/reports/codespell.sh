@@ -52,14 +52,14 @@ mkdir -p "$ORIG_WD/$REPORT_DIR"
 
 # Print the skipped directories taken from the config file.
 
-echo "CodeSpell skipped dir : $IGNORE_DIRS"
-echo "CodeSpell ignore words: $CODESPELL_IGNORE_WORDS"
+echo "CodeSpell ignore pattern: $CODESPELL_IGNORE_PATTERN"
+echo "CodeSpell ignore words  : $CODESPELL_IGNORE_WORDS"
 
 # Generate TXT report
 
 codespell \
          -C 1 \
-         -S "$IGNORE_DIRS" \
+         -S "$CODESPELL_IGNORE_PATTERN" \
          -L $CODESPELL_IGNORE_WORDS \
          ../../ \
          1> ./codespell-trace.txt
