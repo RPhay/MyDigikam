@@ -53,7 +53,7 @@ public:
     {
         Meter = 0,
         Kilometer,
-        Milimeter,
+        Millimeter,
         Centimeter,
 
         Foot,

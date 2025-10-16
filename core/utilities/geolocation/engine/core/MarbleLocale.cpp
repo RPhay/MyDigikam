@@ -99,7 +99,7 @@ void MarbleLocale::meterToTargetUnit(qreal meters, MeasurementSystem targetSyste
             if (targetValue < 0.01)
             {
                 targetValue *= M2MM;
-                targetUnit = Milimeter;
+                targetUnit = Millimeter;
                 break;
             }
 
@@ -159,8 +159,8 @@ QString MarbleLocale::unitAbbreviation(MeasureUnit unit)
         case Meter:
             return i18nc("means meter", "m");
 
-        case Milimeter:
-            return i18nc("means milimeters", "mm");
+        case Millimeter:
+            return i18nc("means millimeters", "mm");
 
         case Kilometer:
             return i18nc("means kilometers", "km");

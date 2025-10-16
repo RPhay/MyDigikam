@@ -27,7 +27,7 @@ IGNORE_DIRS+="../../core/dplugins/generic/webservices/ipfs/*,"
 IGNORE_DIRS+="../../core/dplugins/generic/webservices/facebook/*,"
 IGNORE_DIRS+="../../core/libs/video/QtAVPlayer/*,"
 IGNORE_DIRS+="../../core/tests/metadataengine/exiftool/data/*,"
-IGNORE_DIRS+="../../project/reports/*,"
+IGNORE_DIRS+="../../project/reports/report.*,"
 IGNORE_DIRS+="../../build*,"
 IGNORE_DIRS+="../../po/*,"
 IGNORE_DIRS+="../../test-data/*,"
@@ -50,6 +50,7 @@ IGNORE_DIRS+="*.webp,"
 IGNORE_DIRS+="*.o5m,"
 IGNORE_DIRS+="*.rc,"
 IGNORE_DIRS+="*.pkgproj,"
+IGNORE_DIRS+="*-trace.txt,"
 
 # --- Defines to use with static analysis.
 

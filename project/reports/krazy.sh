@@ -64,14 +64,13 @@ ORIG_WD="`pwd`"
 REPORT_DIR="report.krazy"
 
 # Get active git branches to create report description string
+
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "Krazy Static Analyzer task name: $TITLE"
 
 rm -fr $ORIG_WD/$REPORT_DIR
 
 # Compute static analyzer output as XML
-TITLE_EXT=$TITLE+"
-This is the static analyzis processed with Krazy."
 
 krazy2all --export xml \
           --title $TITLE \

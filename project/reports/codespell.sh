@@ -43,6 +43,7 @@ ORIG_WD="`pwd`"
 REPORT_DIR="report.codespell"
 
 # Get active git branches to create report description string
+
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "CodeSpell Static Analyzer task name: $TITLE"
 
@@ -63,7 +64,7 @@ codespell \
          ../../ \
          1> ./codespell-trace.txt
 
-# NOTE: return value is not documented and not suitable.
+# NOTE: codespell return value is not documented and not suitable.
 
 if [[ -f ./codespell-trace.txt ]] ; then
 
@@ -130,7 +131,7 @@ while IFS= read -r line ; do
         error=$(echo "$line" | awk -F'==' '{print $1}' | awk '{print $NF}')
         suggestion=$(echo "$line" | awk -F'==' '{print $2}' | awk '{print $2}')
 
-        # Clenup file path to remove ../../
+        # Cleanup file path to remove ../../
 
         clean_file=$(echo "$file" | sed 's|^\.\./\.\./||')
 

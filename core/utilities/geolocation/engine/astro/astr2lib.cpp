@@ -2004,7 +2004,7 @@ void SatRhea(double t, Vec3& rs, Vec3& vs)
     const double ax = 0.003524;
     const double sg0 = 5.7682811893E-3;  // sin(0.3305)
 
-    double d, td, tt, pp, ot, nt;
+    double d, td, tt, pp, ot, nt;                                           // codespell:ignore
     double lam, ii, omg, omb, ee;
     Mat3 mt1;
 
@@ -2016,12 +2016,12 @@ void SatRhea(double t, Vec3& rs, Vec3& vs)
 
     // Titan perturbations
     pp = pi2 * frac((305.0 + 10.2077 * tt) / 360.0);
-    ot = pi2 * frac((276.49 + td) / 360.0);
+    ot = pi2 * frac((276.49 + td) / 360.0);                                 // codespell:ignore
     nt = pi2 * frac((44.5 - td) / 360.0);
 
     // osculating orbit elements
-    ee = 0.00021 * sin(pp) + 0.001 * sin(ot);
-    omg = 0.00021 * cos(pp) + 0.001 * cos(ot);
+    ee = 0.00021 * sin(pp) + 0.001 * sin(ot);                               // codespell:ignore
+    omg = 0.00021 * cos(pp) + 0.001 * cos(ot);                              // codespell:ignore
     omb = atan2(ee, omg);
     ii = sin(omb);
 
@@ -2036,13 +2036,13 @@ void SatRhea(double t, Vec3& rs, Vec3& vs)
     }
 
     pp = pi2 * frac((356.87 - 10.2077 * tt) / 360.0);
-    ot = sin(pp);
+    ot = sin(pp);                                                           // codespell:ignore
     lam = pi2 * frac((359.4727 + 79.69004007 * d) / 360.0);
-    lam = lam + kap * sg0 * tan(0.5 * ie) * ot;
+    lam = lam + kap * sg0 * tan(0.5 * ie) * ot;                             // codespell:ignore
     ii = ie - 7.9412480966E-4 + kap * sg0 * cos(pp)
          + 3.5081117965E-4 * cos(nt);
     omg = oe - 1.3613568166E-4
-          + (kap * sg0 * ot + 3.5081117965E-4 * sin(nt)) / sin(ie);
+          + (kap * sg0 * ot + 3.5081117965E-4 * sin(nt)) / sin(ie);         // codespell:ignore
 
     // in-orbit-plane position vector
     pp = lam - omb; // mean anomaly
