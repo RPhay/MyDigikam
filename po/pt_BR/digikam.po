@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-16 02:01+0000\n"
-"PO-Revision-Date: 2025-10-15 09:40-0300\n"
+"PO-Revision-Date: 2025-10-16 06:07-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -53006,17 +53006,7 @@ msgstr ""
 "primeira execução, para que você possa usar o digiKam rapidamente.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and therefore use at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53545,8 +53535,7 @@ msgid "m"
 msgstr "m"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
 msgstr "mm"

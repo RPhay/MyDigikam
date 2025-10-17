@@ -47667,6 +47667,10 @@ msgid ""
 "translator engine depending of desired target language, as not all world-"
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
+"<para>翻译引擎是一种用于将文字从一种语言翻译为另一种语言的在线网络服务。此功"
+"能在元数据选项中可用，该选项支持备选语言，例如标题、说明文字等。翻译流程是全"
+"自动的，需要使用互联网连接。</para><para>由于并非每种在线翻译服务都能支持所有"
+"语言，用户应按照目标语言选择适合自己的翻译引擎。</para>"
 
 #: core/libs/widgets/text/localizeconfig.cpp:320
 #, kde-format
@@ -51101,17 +51105,7 @@ msgstr ""
 "照片管理程序。</p><p>请点击“下一步”，对 digiKam 进行初始设置。</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and therefore use at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -51123,12 +51117,6 @@ msgid ""
 "files, so it is not recommended to do it for the moment, and therefore use "
 "at your own risk.</p></qt>"
 msgstr ""
-"<qt><br><p>如果这是您第一次使用 digiKam，请忽略下述内容：</p><p><b>digiKam 4 "
-"升级迁移</b></p><p>digiKam 4 的旧版配置文件尚未迁移。新版 digiKam 仍然可以继"
-"续使用旧版数据库，只需在接下来的对话框中为相册集合和数据库选择与旧版相同的位"
-"置即可。建议在继续操作之前备份您的数据库。</p><p>新版配置文件的位置在 %1 (旧"
-"版配置文件在 %2)。重新使用旧版配置文件存在未解决的问题，因此目前不建议这样"
-"做，使用时请自行承担风险。</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
@@ -51616,11 +51604,10 @@ msgid "m"
 msgstr "米"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
-msgstr "毫米"
+msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:166
 #, kde-format
@@ -65983,7 +65970,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "means milimeters"
-#~ msgid "mm"
-#~ msgstr "毫米"

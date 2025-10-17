@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the digikam package.
 #
 # SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Antoni Bella Pérez <antonibella5@yahoo.com>
-# Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2006.
-# Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
-# Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
-# Orestes Mas <orestes@tsc.upc.edu>, 2014.
+# SPDX-FileCopyrightText: 2004, 2005, 2006 Albert Astals Cid <aacid@kde.org>
+# SPDX-FileCopyrightText: 2005, 2006 Joan Sanz i Rabadan <joansanzrab@gmail.com>
+# SPDX-FileCopyrightText: 2009, 2010 Joan Maspons <joanmaspons@gmail.com>
+# SPDX-FileCopyrightText: 2014 Orestes Mas <orestes@tsc.upc.edu>
 # SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-16 02:01+0000\n"
-"PO-Revision-Date: 2025-10-15 09:32+0200\n"
+"PO-Revision-Date: 2025-10-16 09:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -53218,17 +53218,7 @@ msgstr ""
 "inicial per a poder utilitzar ràpidament digiKam.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and therefore use at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53764,8 +53754,7 @@ msgid "m"
 msgstr "m"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
 msgstr "mm"
@@ -68775,7 +68764,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "means milimeters"
-#~ msgid "mm"
-#~ msgstr "mm"
