@@ -26,6 +26,7 @@ GalleryElement::GalleryElement(const DInfoInterface::DInfoMap& info)
 {
     DItemInfo item(info);
     m_title       = item.name();
+    m_imageTitle  = item.title();
     m_description = item.comment();
     m_orientation = (MetaEngine::ImageOrientation)(item.orientation());
     m_time        = item.dateTime();
@@ -40,6 +41,7 @@ void GalleryElement::appendToXML(XMLWriter& xmlWriter, bool copyOriginalImage) c
 
     XMLElement imageX(xmlWriter, QLatin1String("image"));
     xmlWriter.writeElement("title",       m_title);
+    xmlWriter.writeElement("imagetitle",  m_imageTitle);
     xmlWriter.writeElement("description", m_description);
     xmlWriter.writeElement("date",        m_time.toString(QLatin1String("yyyy-MM-ddThh:mm:ss")));
     appendImageElementToXML(xmlWriter, QLatin1String("full"),      m_fullFileName, m_fullSize);

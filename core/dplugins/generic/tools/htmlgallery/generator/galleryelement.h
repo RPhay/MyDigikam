@@ -53,6 +53,7 @@ public:
 
     bool                         m_valid        = false;
     QString                      m_title;
+    QString                      m_imageTitle;
     QString                      m_description;
     DMetadata::ImageOrientation  m_orientation  = MetaEngine::ORIENTATION_UNSPECIFIED;
     QDateTime                    m_time;
