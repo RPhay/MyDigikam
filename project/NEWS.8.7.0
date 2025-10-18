@@ -145,7 +145,7 @@ BUGFIXES:
 115 --> 502397 - Not possible to reduce the width of the label field in digiKam.
 116 --> 502404 - File creation and modification dates.
 117 --> 502515 - Cannot enter Proxy authentication data.
-118 --> 502524 - Assign a suggested face by dragging to the same face.
+118 --> 502524 - Assign a suggested face by draggingg to the same face.
 119 --> 502636 - Intel 620 gpu opencl support disabled on windows 11.
 120 --> 437389 - Add option to refresh all faces from all albuns.
 121 --> 426000 - Please allow Unicode-Strings in EXIF metadata.

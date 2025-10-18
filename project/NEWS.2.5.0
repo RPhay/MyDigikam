@@ -27,7 +27,7 @@ BUGFIXES:
 016 --> 219198 - Support for second screen.
 017 --> 258119 - Pathname in file properties.
 018 --> 237785 - digiKam can't copy images to mounted Samba/CIFS share.
-019 --> 262011 - Don't drag the window when dragging on metadata sidebars.
+019 --> 262011 - Don't drag the window when draggingg on metadata sidebars.
 020 --> 274484 - Build failure - linking kstat.
 021 --> 187652 - Main window doesn't show photos.
 022 --> 145231 - Auto hide side bar.

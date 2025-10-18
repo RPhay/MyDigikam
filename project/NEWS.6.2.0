@@ -15,7 +15,7 @@ General  : All bundles compiled with last Exiv2 0.27.2, QtAv 1.13, and KF5 5.59.
 BUGFIXES:
 
 001 --> 279216 - "Resize image" feature is missing some useful options [patch].
-002 --> 406581 - "No such album" when dragging duplicated Tag to merge them.
+002 --> 406581 - "No such album" when draggingg duplicated Tag to merge them.
 003 --> 406585 - Feature request: clean or hide empty Tags.
 004 --> 389657 - QFile::rename: Empty or null file name.
 005 --> 406610 - Hit enter when renaming, sometime don't rename correctly.
@@ -148,7 +148,7 @@ BUGFIXES:
 132 --> 409839 - Google Photos import does not download videos correctly.
 133 --> 409952 - "Image" menu is missing.
 134 --> 410085 - Can't import from Google Photos.
-135 --> 401970 - digikam break icc profile in png when modifiying metadata.
+135 --> 401970 - digikam break icc profile in png when modifying metadata.
 136 --> 399305 - When browsing images in preview mode, videos are often not shown (black preview area), only sound is heard.
 137 --> 406428 - Video preview - no sound.
 138 --> 395200 - ALSA Sound Broken in 5.9.0.

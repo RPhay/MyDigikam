@@ -83,7 +83,7 @@ BUGFIXES:
 009 --> 169830 - digiKam crashed when navigating large images.
 010 --> 173533 - Crash when deselecting a single photo with CTRL+left mouse click.
 011 --> 169764 - RAW file import lacks I18N support, no decoding.
-012 --> 168918 - Rectangular selection tool often looses selection when dragging vertices.
+012 --> 168918 - Rectangular selection tool often looses selection when draggingg vertices.
 013 --> 176654 - Buttons for setting album date in album properties not working.
 014 --> 173746 - Embed view does not work; I can not see an image.
 015 --> 172164 - Crash when downloading photos from Canon Powershot A95.
@@ -112,7 +112,7 @@ BUGFIXES:
 038 --> 133878 - Filter which files to import.
 039 --> 167874 - Item count in tag and album view is not updated.
 040 --> 176972 - Using create "Date-based  sub-albums"  makes import fail.
-041 --> 131447 - Problem dragging folders from digiKam to other places, like the desktop
+041 --> 131447 - Problem draggingg folders from digiKam to other places, like the desktop
 042 --> 156847 - Missing thumbnails in album overview.
 043 --> 146714 - IE, showFoto, album view rotation: rotated TIFs are losing metadata about picture.
 044 --> 147961 - Search / Order by color.
@@ -243,7 +243,7 @@ BUGFIXES:
 169 --> 181698 - Cannot delete fuzzy searches.
 170 --> 181720 - Can't rename fuzzy searches.
 171 --> 181889 - Resize image (tool): click and drag the size slider does not work properly.
-172 --> 181893 - Blur: dragging the preview image removes the target frame and leaves only the source frame.
+172 --> 181893 - Blur: draggingg the preview image removes the target frame and leaves only the source frame.
 173 --> 181913 - digiKam 0.10.0 RC1 unbootable.
 174 --> 181930 - Slider for resizing does not work, i.e.shows either 1 or some extremely high number.
 175 --> 181940 - Image editor tools does not remember preview mode.

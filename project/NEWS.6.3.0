@@ -108,7 +108,7 @@ BUGFIXES:
 096 --> 096279 - Cannot drag photos out of "My albums" into a specific album.
 097 --> 102413 - Album drag and drop multiple folders.
 098 --> 125789 - Move pictures per drag & drop in calendar view between albums.
-099 --> 134485 - Writing keywords to files doesn't work when dragging and dropping the keywords.
+099 --> 134485 - Writing keywords to files doesn't work when draggingg and dropping the keywords.
 100 --> 136582 - Moving pictures by Drag'n'Drop, Destination-Album still empty although files have been moved to new destination folder.
 101 --> 146761 - Improve keyword-assignment through enhanced drag and drop.
 102 --> 161467 - Light table has confusing drag-drop-click behaviour.
@@ -122,7 +122,7 @@ BUGFIXES:
 110 --> 306635 - Drag and drop of pictures into chrome doesn't work.
 111 --> 313173 - Drag and drop DELETES files from library (MOVES).
 112 --> 333623 - Allow to drag photo over the Map to correct their coordinates.
-113 --> 333787 - Crash while dragging image to People tag.
+113 --> 333787 - Crash while draggingg image to People tag.
 114 --> 358832 - Crash when drag and drop a tag under another tag.
 115 --> 328732 - Crash with lots of memory usage while rebuilding thumbnails.
 116 --> 330904 - digiKam crash during maintenance.

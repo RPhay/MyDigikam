@@ -91,7 +91,7 @@ BUGFIXES:
 043 --> 191203 - digiKam crashed on first load, after being installed on Ubuntu 9.04.
 044 --> 151321 - Remaining space incorrectly calculated when using symlinks (import from camera).
 045 --> 189742 - Thumbnails not saved between sessions.
-046 --> 180507 - Crash when dragging picture to another app with kwin_composite enabled.
+046 --> 180507 - Crash when draggingg picture to another app with kwin_composite enabled.
 047 --> 190296 - Can not save images on Windows.
 048 --> 141240 - Camera download: file rename with regexps.
 049 --> 181951 - digiKam crashes (SIGABRT) during the importing of pictures from Kodak V530 camera.
@@ -127,7 +127,7 @@ BUGFIXES:
 079 --> 193894 - Pop up "Copy Finished!" dialogue when done downloading from camera.
 080 --> 193870 - digiKam freezes after second exif rotation on same file.
 081 --> 194342 - What is the right rename pattern to get names like 2009.02.18_09h56m30s?
-082 --> 194177 - digiKam crashes always on startup and causes signal 11 (SIGSEGSV) - app not useable.
+082 --> 194177 - digiKam crashes always on startup and causes signal 11 (SIGSEGSV) - app not usable.
 083 --> 169213 - digiKam should not enter new album after creating it.
 084 --> 191634 - Statistics of the database, and all pictures?
 085 --> 193228 - Experimental option "write metadata to RAW files" corrupts Nikon NEFs.
@@ -294,7 +294,7 @@ BUGFIXES:
 246 --> 197198 - Libpng not detected during configure.
 247 --> 152199 - Deleting tags can leave orphaned IPTC keywords inside files.
 248 --> 197285 - Understand keyword hierarchies with different delimiters.
-249 --> 197640 - Add the "New folder" Option while dragging items to folders.
+249 --> 197640 - Add the "New folder" Option while draggingg items to folders.
 250 --> 197744 - Lists of languages miss en-US.
 251 --> 197622 - digiKam crashes on exit.
 252 --> 197808 - Bad images sort order when starting digiKam.
@@ -332,7 +332,7 @@ BUGFIXES:
 284 --> 216502 - Import errors are not reported.
 285 --> 205001 - MapSearch: Merge overlapping markers to clusters.
 286 --> 216652 - Wrong max calculation in histogram view.
-287 --> 197896 - When importing photos from a camera they are not diplayed in alphabetical order.
+287 --> 197896 - When importing photos from a camera they are not displayed in alphabetical order.
 288 --> 200187 - Save and restore selected filter tags.
 289 --> 196999 - Calendar is ignoring selection of date/week but respecting month.
 290 --> 190795 - USB PTP Class does not work anymore with the newer version.
@@ -422,7 +422,7 @@ BUGFIXES:
 374 --> 195121 - digiKam crashes on view image (exiv2).
 375 --> 142566 - Update metadata doesn't work correctly for creation date.
 376 --> 199251 - digiKam crashes when setting exif orientation tag.
-377 --> 199482 - Caption can't be canged.
+377 --> 199482 - Caption can't be changed.
 378 --> 174586 - Loading video from camera consumes ll memory.
 379 --> 199667 - Make writing of metadata to picture enabled by default.
 380 --> 199981 - XMP synchronization of digiKam namespace occurs for second tag.
@@ -446,7 +446,7 @@ BUGFIXES:
 398 --> 172196 - Color managed view is inaccurate.
 399 --> 197537 - Program crashes when starting import from usb camera (canon 450d).
 400 --> 194950 - digiKam endlessly spewing text to stderr.
-401 --> 216791 - Select next instead of privious picture when deleting a picture.
+401 --> 216791 - Select next instead of previous picture when deleting a picture.
 402 --> 216726 - Turn off ratings on thumbnails in view mode.
 403 --> 207083 - Image Editor shows full-sized file properties after saving.
 404 --> 208227 - ImagePosition does not always reflect contents of GPS Exif-Tags.
@@ -505,7 +505,7 @@ BUGFIXES:
 457 --> 197508 - Geo-localisation integration missing, but marble is installed.
 458 --> 201640 - Opportunity to compile digiKam without Nepomuk service.
 459 --> 201692 - No thumbnails in album view.
-460 --> 185098 - digiKam craches sometimes on raw files selection.
+460 --> 185098 - digiKam crashes sometimes on raw files selection.
 461 --> 201624 - Showfoto => color-management => input-profile => search => crash.
 462 --> 151712 - Adjust Exif orientation tag - wrong permission interpretation.
 463 --> 171983 - Enable display of Openstreetmap maps in the Map Widget.
@@ -523,7 +523,7 @@ BUGFIXES:
 475 --> 203589 - Crash in the noise reduction tool when 'Threshold' equals zero.
 476 --> 198006 - digiKam crash after assistant finished.
 477 --> 203083 - Crash starting digiKam (after upgrade).
-478 --> 202954 - digiKam crashes on start while scaning picture directory.
+478 --> 202954 - digiKam crashes on start while scanning picture directory.
 479 --> 203031 - Album list doesn't show pictures even after tons of new pictures were imported.
 480 --> 201810 - Segfault moving files to trash.
 481 --> 193763 - digiKam doesn'd display any photos.

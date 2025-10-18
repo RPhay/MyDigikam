@@ -140,7 +140,7 @@ BUGFIXES:
 118 --> 330118 - Downloading back the same image with "download and deleted", import tool says "image already exists".
 119 --> 308836 - Add keyboard shortcuts to toggle display of left and right sidebar.
 120 --> 144651 - Add Keyboard shortcuts to navigate between tabs from left and right sidebar.*
-121 --> 286263 - digiKam automatically expands albums tree-view item while dragging over
+121 --> 286263 - digiKam automatically expands albums tree-view item while draggingg over
 122 --> 307231 - Moving a tag from "my tag" collapse the tag under.
 123 --> 240231 - Add an option to context menu to restore menu visibility when it have been hidden.
 124 --> 201592 - Sorting images in queue from Batch Queue Manager.

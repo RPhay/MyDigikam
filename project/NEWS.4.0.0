@@ -169,7 +169,7 @@ BUGFIXES:
 131 --> 129941 - Editor Canvas : Ability to Drag and Drop an image.
 132 --> 224246 - Editor Canvas : displays useless scroll bars.
 133 --> 233773 - Editor Canvas : ctrl + shift + e doesn't enable scrolling.
-134 --> 170364 - Editor Canvas : Expand selection rectangle by dragging sides in image editor [patch].
+134 --> 170364 - Editor Canvas : Expand selection rectangle by draggingg sides in image editor [patch].
 135 --> 288761 - Cached image corrupted after modifying metadata.
 136 --> 326018 - Freezes when I attempt to use the sharpen/refocus tool.
 137 --> 330947 - Icons for protected/unprotected pictures too similar on import.

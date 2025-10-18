@@ -331,7 +331,7 @@ BUGFIXES:
 284 --> 223018 - Lost Tags when replace foto's.
 285 --> 261826 - Crash in Album menu.
 286 --> 267686 - digiKam crashed while moving pictures.
-287 --> 216437 - Segmentation fault occured when viewing a folder.
+287 --> 216437 - Segmentation fault occurred when viewing a folder.
 288 --> 268099 - Batch process crash.
 289 --> 218402 - Crash when clicking properties.
 290 --> 203212 - Crash while moving albums and opening one of them.

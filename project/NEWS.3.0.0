@@ -85,7 +85,7 @@ BUGFIXES:
 037 --> 241637 - No intuitive way to cancel full screen view of image editor.
 038 --> 303850 - Won't start on MS Windows if USB drive is mounted.
 039 --> 308066 - MySQL: How to delete data finally.
-040 --> 308412 - Ligth Table: if opening with only 2 selected images, pre-load them on the table.
+040 --> 308412 - Light Table: if opening with only 2 selected images, pre-load them on the table.
 041 --> 308344 - Display custom tags icons like in the album folder view.
 042 --> 304052 - Failed to start service digikamnepomukservice.
 043 --> 282918 - digiKam tags list is swarmed with Nepomuk resource tags if Nepomuk is not running.

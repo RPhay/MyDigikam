@@ -269,7 +269,7 @@ BUGFIXES:
 179 --> 135307 - After deleting a file, user comments entered for pictures apply to the wrong picture.
 180 --> 135145 - Raw image converter fails on my raw files (cr2, crw, dng).
 181 --> 125727 - digiKam open with of raw file only shows application for octet-stream.
-182 --> 135430 - Typo automaticaly should be automatically in raw image converter.
+182 --> 135430 - Typo automatically should be automatically in raw image converter.
 183 --> 135060 - Folders without pictures in it cannot be assigned icons.
 184 --> 103255 - Add (not edit) EXIF headers like date, comment etc.
 185 --> 091812 - Viewer/editor for IPTC meta data.
@@ -286,12 +286,12 @@ BUGFIXES:
 196 --> 137063 - Keyboard shortcut for 'paste' action not working.
 197 --> 137461 - Typo croping must be cropping.
 198 --> 137282 - Comments are lost when copying or moving an image to another album.
-199 --> 132805 - Crash when assingning keywords.
+199 --> 132805 - Crash when assigning keywords.
 200 --> 137204 - Crash when applying IPTC data.
 201 --> 135407 - Reproducible crash selecting photos from collection.
 202 --> 136086 - Crash when saving any type of files.
 203 --> 137612 - Showfoto doesn't refresh the photo preview when deleting an image.
-204 --> 115125 - White Balance tool: remaining endianess issue on PowerPC.
+204 --> 115125 - White Balance tool: remaining endianness issue on PowerPC.
 205 --> 137495 - showfoto crashes when doing any modification to a loaded directory.
 206 --> 137845 - Album Header cut off (squeezed) when entering two or more lines in Album comment.
 207 --> 137886 - When a tag is moved in the left panel it's position is not updated in the right panel.

@@ -30,8 +30,8 @@ BUGFIXES:
 013 --> 220131 - Ctrl + Scroll Wheel triggers two different actions.
 014 --> 198697 - Images are not sorted in the Import window.
 015 --> 220398 - Downloaded/deleted all from SD card, went to other digiKam window, browsed two folders, closed windows, crashed.
-016 --> 215473 - Remember openend albums after closing digikam.
-017 --> 220423 - Ctrl + scrool doesn't work in editor when some tool open [patch].
+016 --> 215473 - Remember opened albums after closing digikam.
+017 --> 220423 - Ctrl + scroll doesn't work in editor when some tool open [patch].
 018 --> 220399 - Crash in color space conversion.
 019 --> 192461 - 16-bit TIFF render as 3x3 black & white mosaic [patch].
 020 --> 217442 - Crash add tag to photo.
@@ -61,7 +61,7 @@ BUGFIXES:
 044 --> 221605 - digiKam crashed on startup, while scanning albuns [__libc_message, malloc_printerr, qFree].
 045 --> 201654 - digiKam 1.0 crashes immediately on application start.
 046 --> 190982 - Crashes when selecting album-- every time.
-047 --> 194047 - digiKam crashes while atempting.
+047 --> 194047 - digiKam crashes while attempting.
 048 --> 191414 - Selecting "synchronize images with database" in album drop-down menu causes signal 6 (sigabrt).
 049 --> 221440 - Crashes when adding album.
 050 --> 214913 - digiKam crash scanning photos.

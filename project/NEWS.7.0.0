@@ -156,7 +156,7 @@ BUGFIXES:
 113 --> 280521 - digiKam crashes when deselecting two pictures in in quick succession from the face view.
 114 --> 303304 - Crash during face detection.
 115 --> 329596 - digiKam crashes during face recognition.
-116 --> 298599 - digiKam crashed while scaning for faces in the background.
+116 --> 298599 - digiKam crashed while scanning for faces in the background.
 117 --> 304360 - Crash during face tagging.
 118 --> 280620 - digiKam crashes when tagging multiple non-faces.
 119 --> 302437 - Crash when re-searching for faces.
@@ -174,7 +174,7 @@ BUGFIXES:
 131 --> 312442 - digiKam crashed when editing face tags.
 132 --> 275827 - digiKam crash whilst scanning for faces, starting to enter tag.
 133 --> 330828 - Crash while detecting faces.
-134 --> 324711 - Crash when scaning faces.
+134 --> 324711 - Crash when scanning faces.
 135 --> 323654 - digiKam crashed while i was tagging faces.
 136 --> 283540 - digiKam crashes on entering people tages (face recognition).
 137 --> 277099 - digiKam crash when adding a tag to a face.
@@ -779,7 +779,7 @@ BUGFIXES:
 736 --> 403847 - Crash on pict rotation.
 737 --> 414927 - digiKam is no longer working.
 738 --> 422502 - Core dumped (Assert failed QList index out of range).
-739 --> 422530 - Lockups make digikam unuseable (Windows PC/NAS).
+739 --> 422530 - Lockups make digikam unusable (Windows PC/NAS).
 740 --> 373266 - Albums disappears from view.
 741 --> 372680 - Cannot delete files from NAS.
 742 --> 379959 - Could not start database initializer.
