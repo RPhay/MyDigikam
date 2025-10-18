@@ -169,7 +169,7 @@ BUGFIXES:
 153 --> 154262 - Unable to load tiff file.
 154 --> 091830 - TIFF images not drawn in digiKam.
 155 --> 385820 - digiKam crashes when enfuse writes TIFFs.
-156 --> 182223 - After modifiyng an image, saving to another format crashes digiKam.
+156 --> 182223 - After modifying an image, saving to another format crashes digiKam.
 157 --> 177422 - Crash after trying to overwrite image.
 158 --> 140033 - digiKam and two release of libpng --- linker issue?
 159 --> 120832 - Don´t can save images as jpg in picture editor.
@@ -214,7 +214,7 @@ BUGFIXES:
 198 --> 088170 - Correct exif orientation tag only work on 1st image of selection.
 199 --> 301487 - Tool to remove orphaned xmp sidecar files.
 200 --> 203732 - Image captions changed (from first image) when applying metadata template to group of photos.
-201 --> 337692 - Template editor with author/rights is extremly slow.
+201 --> 337692 - Template editor with author/rights is extremely slow.
 202 --> 117262 - Possibility of text in border.
 203 --> 094376 - Batch process dont work (SEGFAULT) with images under tag area.
 204 --> 196630 - Easyer colorspace handling in digiKam.
@@ -317,7 +317,7 @@ BUGFIXES:
 301 --> 104031 - Selected item should stay centered in thumbnail bar.
 302 --> 104980 - After discarding changes of a photo, Showfoto ask if (not yet done) changes of the next photo should be save/discard too.
 303 --> 127244 - Stubborn Save bug in Showfoto (and associated crash).
-304 --> 158144 - Showfoto crashs In settings window.
+304 --> 158144 - Showfoto crashes In settings window.
 305 --> 269993 - Subdirectories in separated + independant databases.
 306 --> 154478 - Showfoto does not sort pictures by name.
 307 --> 147136 - When selecting pictures from folder Showfoto got closed.
@@ -596,7 +596,7 @@ BUGFIXES:
 580 --> 310655 - Completion of the program.
 581 --> 246864 - DigiKam crash.
 582 --> 292953 - digiKam and executables conflicts with standalone versions.
-583 --> 219106 - digiKam crashs on photos download.
+583 --> 219106 - digiKam crashes on photos download.
 584 --> 131416 - digiKam segfaults on start.
 585 --> 144691 - Crash while browsing and editing photos.
 586 --> 237864 - digiKam crashes on exit.
@@ -708,7 +708,7 @@ BUGFIXES:
 692 --> 445216 - Cannot use Darktable for raw image import on Mac.
 693 --> 307253 - Rename images according to Exif date instead of file date [patch].
 694 --> 123019 - digiKam: no support for SANYO Dsc 90, and no support foe Aosta DA 3094.
-695 --> 178881 - Identifying already copied pictures right from the transfert window.
+695 --> 178881 - Identifying already copied pictures right from the transfer window.
 696 --> 108824 - Option to automagically lowercase downloaded filenames.
 697 --> 091611 - Bad repainting of thumbnails from camera view.
 698 --> 092977 - Wish: camera view - missing indication and selection for not already downloaded images.

@@ -430,7 +430,7 @@ BUGFIXES:
 382 --> 200190 - Tag filters: unlike older versions AND-condition doesn't match anymore.
 383 --> 193616 - Location not shown digiKam right sidebar after geolocating in external program.
 384 --> 189156 - digiKam crashes on importing directories with some (cyrillic?) file names.
-385 --> 191963 - Calender sort by wrong dates on images without properties.
+385 --> 191963 - Calendar sort by wrong dates on images without properties.
 386 --> 189072 - Right click popup menu.
 387 --> 200223 - Default language of spellchecker is ignored.
 388 --> 126086 - Besides the basic and full exif info I would like a page with selectable fields.

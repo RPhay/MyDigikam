@@ -220,7 +220,7 @@ BUGFIXES:
 196 --> 141980 - digiKam crash when rescan certain files exiv2.
 197 --> 167913 - Segmentation fault upon start.
 198 --> 144439 - digiKam fails to load.
-199 --> 344704 - My application crashs when I include this library.
+199 --> 344704 - My application crashes when I include this library.
 200 --> 128104 - digiKam crash when browsing photos in Image Editor.
 201 --> 144098 - Aborted execution on startup.
 202 --> 146728 - Crash in loading and start digiKam.
@@ -294,7 +294,7 @@ BUGFIXES:
 270 --> 149063 - Open tool menu crash.
 271 --> 219512 - Segfault (SIGSEGV) when using any non-color changing tool.
 272 --> 383855 - digiKam crash when stacking 5 images.
-273 --> 266660 - Crashed after successfully converting png image to jpg.
+273 --> 266660 - Crashed after successfuly converting png image to jpg.
 274 --> 435411 - Wrong language setup.
 275 --> 435893 - There is only the default theme available.
 276 --> 411780 - Rename with date while Importing CR2 from Camera produces wrong time.
@@ -331,7 +331,7 @@ BUGFIXES:
 307 --> 436979 - Empty regions.
 308 --> 435085 - Some DNG files created with Adobe DNG Converter cause program to abort - Update to DNG SDK 1.5.
 309 --> 437038 - Unmark this face as Ignored - pressing will cause the ignored picture frame to disappear.
-310 --> 436795 - Database from uninstalled version of digiKam is unhelpfully persistant.
+310 --> 436795 - Database from uninstalled version of digiKam is unhelpfully persistent.
 311 --> 424679 - Windows installer erroneously requires accepting the GPL.
 312 --> 436532 - digiKam translation of "Behavior" not possible.
 313 --> 403267 - digiKam is not reading tags from DNG images when sidecars are present.

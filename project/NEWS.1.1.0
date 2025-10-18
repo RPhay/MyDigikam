@@ -68,7 +68,7 @@ BUGFIXES:
 051 --> 221938 - Crash while clicked on lens->distortion
 052 --> 221113 - RW2 images are not rotated anymore.
 053 --> 216874 - File renaming in the queue settings don't manage tokens [date] and [cam].
-054 --> 220292 - Red eyes tool crashs digikam with memory error.
+054 --> 220292 - Red eyes tool crashes digikam with memory error.
 055 --> 218873 - digiKam crashes while starting up [mem2chunk_check, free_check, Marble::GeoDataObject::~GeoDataObject].
 056 --> 222490 - digiKam: fails to build with gcc-4.5.
 057 --> 219776 - Crash after AutoContrast in Image Editor.

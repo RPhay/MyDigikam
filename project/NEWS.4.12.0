@@ -101,7 +101,7 @@ BUGFIXES:
 091 --> 291822 - Saving a versioned image puts it last.
 092 --> 331989 - digiKam crashes when playing AVI-file.
 093 --> 350239 - Unmounted network shares, external hard drives show up in the album view.
-094 --> 338200 - Cancelling tags assigment in file metadata does not work [patch].
+094 --> 338200 - Cancelling tags assignment in file metadata does not work [patch].
 095 --> 239896 - digiKam hangs and/or crashes after adding tags.
 096 --> 321680 - Crash / segmentation fault when trying to recognize faces.
 097 --> 321446 - Export to Imgur just hang on 'loading' animation eternally.
@@ -123,7 +123,7 @@ BUGFIXES:
 113 --> 304763 - Export of Picasaweb crashes.
 114 --> 306165 - Crash while starting photo upload to picasa.
 115 --> 308701 - digikam crash while export again the same image to picasaweb.
-116 --> 321251 - Application crashs if close it while sending images to picasa.
+116 --> 321251 - Application crashes if close it while sending images to picasa.
 117 --> 172427 - digiKam crashed.
 118 --> 164908 - Private albums are not listed (and then not usable) with picasa export tool.
 119 --> 200091 - "remove EXIF data" crashes digiKam.

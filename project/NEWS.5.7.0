@@ -269,7 +269,7 @@ BUGFIXES:
 240 --> 267359 - Crash after unmount hdd drive during process running.
 241 --> 231866 - Crash when assigning score.
 242 --> 235249 - I was looking through images one by one in the viewing pane.
-243 --> 226888 - digiKam crashs after edit a few images.
+243 --> 226888 - digiKam crashes after edit a few images.
 244 --> 228109 - digiKam close when I rate my picture and changing photos with backspace.
 245 --> 104008 - Name of the album not refreshed when changed.
 246 --> 269925 - Crash on library creation from usb drive.
@@ -425,7 +425,7 @@ BUGFIXES:
 397 --> 225180 - Crash saving Exif on NEF raw file.
 398 --> 246963 - digiKam crash when saving file.
 399 --> 227513 - digiKam crashes when trying to edit (and save) photos.
-400 --> 182488 - digiKam crashes while changing file extention filter for saving.
+400 --> 182488 - digiKam crashes while changing file extension filter for saving.
 401 --> 179035 - Crash using save as and selecting JPEG.
 402 --> 181871 - ShowFoto crashes while trying to save as jpg.
 403 --> 227001 - digiKam crashes after editor save.
@@ -506,7 +506,7 @@ BUGFIXES:
 478 --> 234144 - Crash while renaming album.
 479 --> 234042 - Crash when rating a Image.
 480 --> 224588 - Applying tags crashes digiKam.
-481 --> 226418 - digiKam consistantly crashes upon while I add tags and ratings.
+481 --> 226418 - digiKam consistently crashes upon while I add tags and ratings.
 482 --> 227957 - Crash when deleting picture in lighttable.
 483 --> 246478 - digiKam crashes when a metadata comment is applied to multiple pictures.
 484 --> 224994 - Segmentation fault when saving edited photo with ctrl-s shortcut.

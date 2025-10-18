@@ -20,7 +20,7 @@ BUGFIXES:
 012 --> 333540 - Random crashes on OpenSUSE 13.1.
 013 --> 345387 - Lens auto-correction tools shows "partial mathc" for canon 700d 18-135 is stm.
 014 --> 345367 - The sideview containing the thumbnails is not updated after deleting a photo.
-015 --> 345187 - When naming unkown faces digikam only remembers typed characters and not the selected name for the next face [patch].
+015 --> 345187 - When naming unknown faces digikam only remembers typed characters and not the selected name for the next face [patch].
 016 --> 326208 - When doing a face learning (erase data and rebuild), Database is not erased and grow.
 017 --> 323888 - Face recognition makes digikam fill all the available memory (Qt SQlite tool relevant).
 018 --> 338176 - Face Recognition memory allocation crash application.

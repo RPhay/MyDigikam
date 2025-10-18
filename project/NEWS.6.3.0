@@ -164,7 +164,7 @@ BUGFIXES:
 152 --> 396862 - digiKam crashed while closing.
 153 --> 397129 - Dates panel, thumb generation crash (core dump).
 154 --> 401164 - Crash on close from preview mode.
-155 --> 401546 - digiKam crashs upon quit (Files -> Quit).
+155 --> 401546 - digiKam crashes upon quit (Files -> Quit).
 156 --> 402122 - Crashed while scrolling images.
 157 --> 410912 - Improve "Move to album" for keyboard use.
 158 --> 411011 - Digikam does not display a PNG photo.

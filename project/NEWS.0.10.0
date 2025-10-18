@@ -24,7 +24,7 @@ General        : Raw metadata can be edited, changed, added to TIFF/EP like RAW 
                  Currently DNG, NEF, and PEF raw files are supported. More will be added in the future.
 General        : New option in Help menu to list all main components/libraries used by digiKam.
 General        : Ported to CMake/Qt4.
-General        : Thumbs KIO-Slave removed. digiKam now use multi-threading to generate thumnails.
+General        : Thumbs KIO-Slave removed. digiKam now use multi-threading to generate thumbnails.
 General        : Removed all X11 library dependencies. Code is now portable under MACOS-X and Win32.
 General        : Support of XMP metadata (require >= Exiv2 0.16).
 General        : Hardware handling using Solid interface.
@@ -57,7 +57,7 @@ AlbumGUI       : Add Tool tips to display Physical albums properties.
 AlbumGUI       : Icon view item can be rated on the fly.
 
 ImageEditor    : Added Thumbbar to easy navigate between pictures.
-ImageEditor    : New tool based on LensFun library (http://lensfun.berlios.de) to correct automaticaly lens aberrations.
+ImageEditor    : New tool based on LensFun library (http://lensfun.berlios.de) to correct automatically lens aberrations.
 ImageEditor    : LensDistortion and AntiVignetting are now merged with LensFun tool 
 ImageEditor    : All image tool tool settings provide default buttons to reset values.
 ImageEditor    : New Raw import tool to handle Raw pictures with customized decoding settings.
@@ -172,7 +172,7 @@ BUGFIXES:
 098 --> 177422 - Crash after trying to overwrite image.
 099 --> 175322 - Import from camera: unable to create new folders.
 100 --> 177250 - Crash when importing pictures from Nikon D200 PTP.
-101 --> 161304 - Status bar info cleared after rating assigment.
+101 --> 161304 - Status bar info cleared after rating assignment.
 102 --> 149875 - Support interlaced PNG images.
 103 --> 177457 - digiKam crash when tagging files.
 104 --> 177608 - Wrong button text to save image tags and caption.
@@ -193,7 +193,7 @@ BUGFIXES:
 119 --> 177242 - mtime ctime rename exif import.
 120 --> 151275 - Camera tool: date & time should be taken from exif not file modified date.
 121 --> 146764 - Media viewer sort images by date and try to fill videos without exiv in the correct order (by filename).
-122 --> 175898 - Selecting in the import dialog is extremly slow.
+122 --> 175898 - Selecting in the import dialog is extremely slow.
 123 --> 182334 - digiKam always crash when I try to move the Toolbar.
 124 --> 182412 - Raw files get modified in spite of inverse setting.
 125 --> 180065 - digiKam image download from memorycard problems.
@@ -251,7 +251,7 @@ BUGFIXES:
 177 --> 181705 - Rating filter in status bar not changeable, if rating is not shown in album view.
 178 --> 182096 - Download photos from memory card / camera to new album downloads photos to parent album.
 179 --> 177241 - Buttons not aligned after adding of new collection.
-180 --> 182223 - After modifiyng an image, saving to another format crashes digiKam.
+180 --> 182223 - After modifying an image, saving to another format crashes digiKam.
 181 --> 181792 - Folders appear empty on first run after older -> newer import.
 182 --> 175746 - digiKam doesn't remove IPTC data.
 183 --> 176140 - Redeye tool is not working fine.
@@ -276,7 +276,7 @@ BUGFIXES:
 202 --> 157636 - Problem when creating album.
 203 --> 127753 - Persistent selection / image tray.
 204 --> 138927 - wish:  modeless "Rebuild All Thumbnails" dialg box.
-205 --> 178061 - Scancontroller missing dependecy to CacheLock.
+205 --> 178061 - Scancontroller missing dependency to CacheLock.
 206 --> 178051 - digiKam loses rating video from 0.9 to 0.10.
 207 --> 178403 - Single image view is blank.
 208 --> 178223 - Crash on external deletion of image.
@@ -304,7 +304,7 @@ BUGFIXES:
 230 --> 156836 - Preview zoom to 100 percent is not 100 percent viewing Canon RAW/CR2.
 231 --> 178346 - Contextual menu is empty.
 232 --> 175844 - digiKam crashes at startup loading tools.
-233 --> 178881 - Identifying already copied pictures right from the transfert window.
+233 --> 178881 - Identifying already copied pictures right from the transfer window.
 234 --> 175630 - Setting panels of image editor effects should be fully visible.
 235 --> 178583 - digiKam displays no images in album view.
 236 --> 178190 - Sidepane's width not remembered.
@@ -372,7 +372,7 @@ BUGFIXES:
 298 --> 166484 - digiKam crashes when changing some settings and using "find similar" after the changes made.
 299 --> 167124 - Timeline view not updated when changing selected time range.
 300 --> 166564 - Display of *already* *created* thumbnails is slow.
-301 --> 179712 - Open image in embeded editor lead to digiKam crash.
+301 --> 179712 - Open image in embedded editor lead to digiKam crash.
 302 --> 179031 - Exposure times shown for Panasonic RAW pictures do not make sense.
 303 --> 179745 - Rating information in right sidebar is not updated.
 304 --> 179650 - Crash when clearing album quick search if album UI empty.
@@ -449,7 +449,7 @@ BUGFIXES:
 375 --> 182212 - Zoom to fit in image editor is not always sticky.
 376 --> 185232 - Images can not be removed from within the light table.
 377 --> 184469 - Red eyes doesn't work here.
-378 --> 184473 - Reproducable Crash in Albumview.
+378 --> 184473 - Reproducible Crash in Albumview.
 379 --> 182611 - Segfault with Samsung S85 RAW images.
 380 --> 184954 - Unable to delete items from camera - canon sx10is.
 381 --> 175077 - digiKam does not print.
@@ -490,7 +490,7 @@ BUGFIXES:
 416 --> 147426 - Search for non-voted pics
 417 --> 149555 - Always present search box instead of search by right-clicking and selecting simple or advanced search.
 418 --> 139283 - IPTC Caption comment in search function.
-419 --> 150265 - Avanced search filter is missing search in comment / description.
+419 --> 150265 - Advanced search filter is missing search in comment / description.
 420 --> 155735 - Make it possible to search on IPTC-text.
 421 --> 147636 - GUI error in advanced searches: lots of free space.
 422 --> 158866 - Advanced Search on Tags a mess.
@@ -513,7 +513,7 @@ BUGFIXES:
 439 --> 165341 - Crash when changing histogram channel when welcome page is shown.
 440 --> 165318 - digiKam doesn't start because of SQL.
 441 --> 165342 - Crash when changing album sort modus.
-442 --> 165338 - Right sidebar initally too big.
+442 --> 165338 - Right sidebar initially too big.
 443 --> 165280 - Sqlite2 component build failure.
 444 --> 165769 - adjustcurves.cpp - can't find version.h
 445 --> 172650 - No external modules available.

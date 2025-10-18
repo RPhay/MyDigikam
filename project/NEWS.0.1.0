@@ -18,16 +18,16 @@ MetadataEdit   : New tool to edit EXIF and IPTC pictures metadata.
 
 IpodExport     : New tool to export pictures to an ipod device.
 
-JPEGEngine     : Removed libmagic++ depency.
-JPEGEngine     : Removed libkexif depency. Using Exiv2 instead.
+JPEGEngine     : Removed libmagic++ dependency.
+JPEGEngine     : Removed libkexif dependency. Using Exiv2 instead.
 JPEGEngine     : Rotate or flip your images lossless, while preserving  the timestamp.
 
 RAWEngine      : Port tool to RawEngine shared library.
 RAWEngine      : Supports of dcraw>=6.x.
 RAWEngine      : New core to be compatible with recent dcraw release. A lot of RAW decoding settings have been added.
-RAWEngine      : Embedding ouput color space in target image (JPEG/PNG/TIFF).
+RAWEngine      : Embedding output color space in target image (JPEG/PNG/TIFF).
 RAWEngine      : Metadata preservation in target image during Raw conversion (JPEG/PNG).
-RAWEngine      : Removing external dcraw depency. Now tool include a full supported version of dcraw program in core.
+RAWEngine      : Removing external dcraw dependency. Now tool include a full supported version of dcraw program in core.
 RAWEngine      : updated dcraw.c implementation to version 8.41.
 
 Calendar       : The weekdays are now localized.
@@ -38,7 +38,7 @@ Calendar       : Fixed recurring events not showing (only first date was showed)
 SendByMail     : Added image size limit x mail.
 SendByMail     : Support for Thunderbird and GmailAgent.
 
-TimeAdjust     : Removed libkexif depency. Using Exiv2 instead.
+TimeAdjust     : Removed libkexif dependency. Using Exiv2 instead.
 TimeAdjust     : New option to customize Date and Time to a specific timestamp.
 TimeAdjust     : New options sync EXIF/IPTC Creation Date with timestamp.
 
@@ -123,7 +123,7 @@ BUGFIXES:
 026 --> 150393 - XML file is corrupted if exif comment contains a "<".
 027 --> 134774 - Exported simpleviewer gallery fails to load images due to wrong xml file name.
 028 --> 144070 - Typing coordinates doesn't update the map.
-029 --> 152526 - Remember last display options like zoom and map/sattelite/hybrid view.
+029 --> 152526 - Remember last display options like zoom and map/satellite/hybrid view.
 030 --> 151578 - Popup window says "Cannot run properly 'convert' program from 'ImageMagick' package" but it seems fine.
 031 --> 155084 - Printing comments and EXIF tags.
 032 --> 155371 - Add search feature to the embedded GPS Sync Google Maps based editor.
@@ -156,7 +156,7 @@ BUGFIXES:
 059 --> 138880 - digiKam setting file date to exif doesn't work.
 060 --> 137582 - Add preliminary support for Gallery 2.2 security features
 061 --> 139264 - Prefer Exif DateTimeOriginal for image date/time (DateTimeDigitized and DateTime only used as fallback)
-062 --> 139074 - Format missmatch at sendimages.cpp ('int' vs. 'size_t').
+062 --> 139074 - Format mismatch at sendimages.cpp ('int' vs. 'size_t').
 063 --> 140132 - Comments should sync to IPTC Caption First.
 066 --> 138241 - A patch that adds support for the Claws Mail MUA.
 067 --> 140865 - tool does not work (image can not be converted).
@@ -168,7 +168,7 @@ BUGFIXES:
 073 --> 132220 - Solved problems with filenames and commandline with thunderbird and mozilla
 074 --> 139793 - KML google export import.
 075 --> 142259 - Export to Gallery 2.2-RC-1 fails.
-076 --> 135945 - Tags with spaces are exported as multible tags.
+076 --> 135945 - Tags with spaces are exported as multiple tags.
 077 --> 146084 - Slide show interface suggestions.
 078 --> 145771 - Gnome Desktop crashes and restarts when select Cancel option for Mpeg Slideshow tool.
 079 --> 138410 - Requires latest shared libs.
@@ -177,7 +177,7 @@ BUGFIXES:
 082 --> 108147 - Interval below 1 second.
 083 --> 127101 - expand sequence number start value in batch rename images.
 084 --> 094494 - support for multiple galleries.
-085 --> 128394 - convertion of RAW files fails with dcraw 8.21
+085 --> 128394 - conversion of RAW files fails with dcraw 8.21
 086 --> 132659 - "Missing signature" - Flickr API changed and upload of images is no longer possible.
 087 --> 107905 - copy exif data from raw to converted images.
 088 --> 119537 - Exif width and height are not corrected after lossless rotation.
@@ -187,8 +187,8 @@ BUGFIXES:
 092 --> 134747 - not optimal correlation.
 093 --> 135157 - warning about changes not applied always appear even when already applied.
 094 --> 135237 - filenames with multiple periods in them do not show up in the file listing (incorrect extension identification).
-095 --> 135484 - thumbnail generation for multible images can cause severe overload.
-096 --> 135353 - the name of the tool is missleading.
+095 --> 135484 - thumbnail generation for multiple images can cause severe overload.
+096 --> 135353 - the name of the tool is misleading.
 097 --> 136257 - Editing the EXIF-data overwrites all the data for selected files.
 098 --> 128341 - html export should not resize images if "resize target images" is not checked.
 099 --> 127476 - Printing as very very slow (added a workaround running kjobviewer)
@@ -200,7 +200,7 @@ BUGFIXES:
 105 --> 096352 - Can not login into Gallery2.
 106 --> 123141 - Gallery Export - manage several cookies.
 107 --> 088887 - No Exif-rotation in HTML export.
-108 --> 115474 - Web export creats duplicate extensions.
+108 --> 115474 - Web export creates duplicate extensions.
 109 --> 120739 - Wrong thumbnail for album.
 110 --> 089068 - Improvement for the HTML export tool.
 111 --> 090943 - Add CSS functionality.
@@ -229,7 +229,7 @@ BUGFIXES:
 134 --> 119933 - Image gallery has problems with german umlauts in file-/directorynames.
 135 --> 099418 - Help menu in progress dialog refers to batch process tool about instead of image gallery tools.
 136 --> 103449 - Title and name of album are together and album with accents do not function.
-137 --> 110596 - Apos entitity is not correct for HTML (it is XML entity).
+137 --> 110596 - Apos entity is not correct for HTML (it is XML entity).
 138 --> 116605 - Crash when exporting to an existing dir an choosing no to overwrite.
 139 --> 123499 - RAW images are rotated wrong.
 140 --> 099157 - Some kameraklient source files miss copyright and license info.
@@ -239,7 +239,7 @@ BUGFIXES:
 144 --> 108945 - Batch image filtering overwrite mode: always overwrite doesn't work.
 145 --> 117397 - batchtools 'start' not disabled when target folder is not writeable orwith no image in list.
 146 --> 114512 - The checkbox "Remove original" is left disabled after a preview.
-147 --> 120868 - Failed to create PDF callendar
+147 --> 120868 - Failed to create PDF calendar
 148 --> 118936 - calendar wizard should default to next year.
 149 --> 109739 - yuvscaler error in digikam.
 150 --> 114514 - Do not delete the temporary folder "~/tmp/.../-mpegencodertool-PID/" after each encoding process.

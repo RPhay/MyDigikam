@@ -16,7 +16,7 @@ BUGFIXES:
 003 --> 111509 - Subalbums not supported by HTML export.
 004 --> 205833 - Batch raw converter uses first dot in filename to determine file ending.
 005 --> 199181 - Gps sync unable to use search field.
-006 --> 197377 - Batch -> Image Filtering -> Unsharp Mask: Wrong Thresold.
+006 --> 197377 - Batch -> Image Filtering -> Unsharp Mask: Wrong Threshold.
 007 --> 204437 - DNGWriter turns olympus ORF unusable.
 008 --> 206714 - Can not select multiple images in list.
 009 --> 188933 - Lossless rotate does not work for this image. Image does not rotate.

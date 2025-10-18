@@ -172,7 +172,7 @@ BUGFIXES:
 141 --> 442713 - Shortcut key conflict (Ctrl+Alt+I).
 142 --> 440773 - Check for overlapping face regions.
 143 --> 441378 - Prevent face bounding box overlap when same person.
-144 --> 442189 - HEIC photos with GPS coordinates embeded in metadata are not used in digikam database for geolocation.
+144 --> 442189 - HEIC photos with GPS coordinates embedded in metadata are not used in digikam database for geolocation.
 145 --> 395748 - Problem with printig.
 146 --> 442589 - digiKam does not start after upgrade, can not update Sqlite DB schema.
 147 --> 443030 - Tag subtree shown, even if deselected.

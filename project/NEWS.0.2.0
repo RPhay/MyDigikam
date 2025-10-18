@@ -111,7 +111,7 @@ BUGFIXES:
 046 --> 172910 - Gallery crash (letting crash digiKam) with valid data and url.
 047 --> 172283 - SlideShow crashes host application
 048 --> 172337 - Slideshow enhancements by ken-burns effects.
-049 --> 173276 - digikam crashs after closing.
+049 --> 173276 - digikam crashes after closing.
 050 --> 150076 - Playing music during a slideshow
 051 --> 135451 - Improve the gui of the gpssync tool.
 052 --> 135386 - Show track on the google map.

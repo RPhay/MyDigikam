@@ -47,7 +47,7 @@ BUGFIXES:
 009 --> 326953 - Add loadEmbeddedPreview reading from QBuffer.
 010 --> 309061 - digiKam crash when moving tag.
 011 --> 327124 - Add loadHalfPreview reading from QBuffer.
-012 --> 326959 - digiKam crash while scanning pictures for thumnails maintenance.
+012 --> 326959 - digiKam crash while scanning pictures for thumbnails maintenance.
 013 --> 318873 - digiKam crashes when clicking on image in thumbnails [patch].
 014 --> 263299 - Need a Tags Manager.
 015 --> 312373 - Deleting all the tags known to digiKam at once.

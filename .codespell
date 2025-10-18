@@ -36,7 +36,6 @@ CODESPELL_IGNORE_PATTERN+="../../core/utilities/geolocation/engine/data/*.txt,"
 CODESPELL_IGNORE_PATTERN+="*.appdata.xml,"
 CODESPELL_IGNORE_PATTERN+="*.notifyrc,"
 CODESPELL_IGNORE_PATTERN+="*.desktop,"
-CODESPELL_IGNORE_PATTERN+="*NEWS*,"
 CODESPELL_IGNORE_PATTERN+="*AUTHORS,"
 CODESPELL_IGNORE_PATTERN+="*.js,"
 CODESPELL_IGNORE_PATTERN+="*.patch,"
@@ -55,4 +54,4 @@ CODESPELL_IGNORE_PATTERN+="*-trace.txt,"
 # --- Defines to use with static analysis.
 
 # NOTE: words must be lower-case
-CODESPELL_IGNORE_WORDS="afile,ahd,asign,caf,childs,claus,cyphertext,defaut,destroi,fle,fo,foto,hist,indx,indexin,inout,ist,iten,lod,mata,mye,nam,nd,ned,oly,optio,parm,previousy,requestor,sav,shft,siz,smal,spred,tage,tempdate,tesselate,thet,toolsbox,tru,visiblestage,visibles,uptodate,wheight,manuel,readding,bloaded,wont,alllocations,abitrate,goup,alledges,allright,readded,pixelx,targetin,anwer,tung,fillin,lamda,optin,filessystem"
+CODESPELL_IGNORE_WORDS="afile,ahd,asign,caf,childs,claus,cyphertext,defaut,destroi,fle,fo,foto,hist,indx,indexin,inout,ist,iten,lod,mata,mye,nam,nd,ned,oly,optio,parm,previousy,requestor,sav,shft,siz,smal,spred,tage,tempdate,tesselate,thet,toolsbox,tru,visiblestage,visibles,uptodate,wheight,manuel,readding,bloaded,wont,alllocations,abitrate,goup,alledges,allright,readded,pixelx,targetin,anwer,tung,fillin,lamda,optin,filessystem,clens"
