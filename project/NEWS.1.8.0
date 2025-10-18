@@ -44,7 +44,7 @@ BUGFIXES:
 034 --> 261275 - Fails to build [patch].
 035 --> 253257 - Program uploads only part of file or smaller version of file and match error occurs.
 036 --> 257514 - Scaling of Pictures for print.
-036 --> 196855 - Remember last postition, remember last view mode, cache the last view.
+036 --> 196855 - Remember last position, remember last view mode, cache the last view.
 038 --> 262125 - DNG Conversion can't be inverted. Embedded file is corrupted.
 039 --> 245956 - Upload video from digiKam to Picasa.
 040 --> 262642 - Better looking of "captions" during slideshow [patch].

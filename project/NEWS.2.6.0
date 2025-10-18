@@ -85,7 +85,7 @@ BUGFIXES:
 043 --> 278909 - Create fingerprints during thumbnail generation.
 044 --> 228314 - Timeline view in digiKam scroll's left but not right.
 045 --> 293563 - digikam-2.6.0-beta1 build failed.
-046 --> 293897 - Sony A350 (alpha 350) camera detected, but no import posible.
+046 --> 293897 - Sony A350 (alpha 350) camera detected, but no import possible.
 047 --> 237552 - Thumbnails generation process for selected images only.
 048 --> 231777 - Scrolling in Albumview should be smoothed.
 049 --> 282907 - No items are displayed when I enable 'Include Album Sub-Tree' in a folder containing one image and many folders.
@@ -137,7 +137,7 @@ BUGFIXES:
 095 --> 158766 - Using keyboard with timeline view.
 096 --> 298491 - Typos in templatemanager.cpp.
 097 --> 297490 - Copy tags when creating a new version.
-098 --> 297804 - Saving an image loses portait orientation.
+098 --> 297804 - Saving an image loses portrait orientation.
 099 --> 298380 - Versioning settings active after digikam start even if versioning is switched off.
 100 --> 288494 - Raw Images disappear after a batch conversion to Jpeg.
 101 --> 274775 - "Find similar search" results are displayed when digiKam starts, although another album is selected.
@@ -179,10 +179,10 @@ BUGFIXES:
 147 --> 294460 - Std namespace issue [patch].
 148 --> 294461 - Build failure in picasawebexport - QString ambiguity [patch].
 149 --> 294547 - The url in 'about' menu doesn't work.
-150 --> 294751 - Unlisted dependancy (hugin).
+150 --> 294751 - Unlisted dependency (hugin).
 151 --> 206842 - New tool to export to Wikimedia Commons.
 152 --> 286018 - Pano Tool and ExpoBlend tool do not work on OS X [patch].
-153 --> 286633 - Unable to find cpfind executable, but cpfind is installed and availabe within the path.
+153 --> 286633 - Unable to find cpfind executable, but cpfind is installed and available within the path.
 154 --> 286382 - Panorama stitcher doesn't run and asks for autooptimizer despite hugin is installed.
 155 --> 296579 - Adjust Date & Time: Wrong date format shown
 156 --> 193874 - When changing dates, change date-based filename as well.
@@ -200,7 +200,7 @@ BUGFIXES:
 168 --> 298118 - Crash when open Geo-location dialog.
 169 --> 163991 - Import images from Picasa WebAlbum.
 170 --> 285070 - Change Date and Time dialog should warn when no tag to change is selected.
-171 --> 143886 - Replace add and substract in "adjust time and date" menu with positive/negative times.
+171 --> 143886 - Replace add and subtract in "adjust time and date" menu with positive/negative times.
 172 --> 296776 - Crash while trying to send pictures via default email software ().
 173 --> 299071 - digiKam crashed on export of one image to picasaweb.
 174 --> 288462 - Issues building with highgui [patch].

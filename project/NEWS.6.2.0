@@ -34,7 +34,7 @@ BUGFIXES:
 018 --> 407233 - Pictures distribution on Light Table.
 019 --> 403197 - Thumbnails in icon and preview views are not HiDPI (macOS).
 020 --> 370705 - Current Album is deselected when clearing search bar.
-021 --> 407232 - Swith from list to display with enter.
+021 --> 407232 - Switch from list to display with enter.
 022 --> 407262 - Face tagging doesn't work with rotation.
 023 --> 407345 - Verbose debug messages.
 024 --> 407334 - Accented characters not taken into account google photos.
@@ -58,7 +58,7 @@ BUGFIXES:
 042 --> 397599 - Usability deteriorated.
 043 --> 388359 - Icons on the toolbar are not visible when background is dark.
 044 --> 408147 - From LightTable, "Open" picture does not open the right one.
-045 --> 408157 - "Tone Color Picker" cursor is not correctly positionned vs Mouse.
+045 --> 408157 - "Tone Color Picker" cursor is not correctly positioned vs Mouse.
 046 --> 408095 - Sort items by manual.
 047 --> 378364 - Sequence number options need date-aware modifier.
 048 --> 408213 - '+' symbol is a legitimate win10 file character but unable to enter it into digiKam via Rename.
@@ -80,7 +80,7 @@ BUGFIXES:
 064 --> 408667 - In reverse geocoding, whow which address element correspond to each name.
 065 --> 408666 - Reverse geocoding tool, confusing dialog question phrasing.
 066 --> 406937 - Cannot change icon theme in Appimage.
-067 --> 408687 - "Failed to update file timestamp" despite date being changed successfuly in Adjust Date and Time tool.
+067 --> 408687 - "Failed to update file timestamp" despite date being changed successfully in Adjust Date and Time tool.
 068 --> 408804 - Deleted file in Digikam can't be found in Windows trash bin.
 069 --> 408803 - Placement bug in Thumbnail view when using arrow keys.
 070 --> 408819 - Displayed number of entries.
@@ -192,7 +192,7 @@ BUGFIXES:
 186 --> 134039 - Support for Google photo upload.
 187 --> 139984 - Ability to export to Google photo.
 188 --> 143337 - Function to export to Google photo.
-189 --> 280970 - Cannot share an image by email if not stored localy.
+189 --> 280970 - Cannot share an image by email if not stored locally.
 190 --> 130899 - ImageShack integration or support.
 191 --> 256715 - Add export to imgur.com.
 192 --> 290934 - Export to imgur.
@@ -242,7 +242,7 @@ BUGFIXES:
 236 --> 317990 - Crash after deleting an image in image editor.
 237 --> 319415 - digiKam crash.
 238 --> 328784 - After adding a pics path, digiKam keeps on crashing at startup.
-239 --> 338586 - digiKam crashes regularily.
+239 --> 338586 - digiKam crashes regularly.
 240 --> 340559 - digiKam crashed at start.
 241 --> 403217 - Show progress bar when moving photos to another album.
 242 --> 197353 - Colormanagement is somehow broken.
@@ -263,7 +263,7 @@ BUGFIXES:
 257 --> 327257 - Stitching with enfuse is broken.
 258 --> 357838 - digiKam crashed when performing HDR reconstruction.
 259 --> 361312 - digiKam crashes when using enfuse.
-260 --> 361802 - digiKam crash when tyring to fuse 3 pics.
+260 --> 361802 - digiKam crash when trying to fuse 3 pics.
 261 --> 118201 - Correcting verticals and horizontals.
 262 --> 148538 - Tool for contrast masking of images.
 263 --> 150671 - New way for resizing images - Seam Carving.
@@ -285,7 +285,7 @@ BUGFIXES:
 279 --> 284652 - Add option to view the new image 'Title' tag in slide shows.
 280 --> 340792 - digiKam crashes when running slideshow with more than 5 pictures.
 281 --> 133638 - Image backup with thumbs and metadata database for fast searching.
-282 --> 147459 - Wish: Export to plugable media.
+282 --> 147459 - Wish: Export to pluggable media.
 283 --> 162113 - "set as background" export tool.
 284 --> 325273 - digitaglinktree : CLI tool doesn't work with MySQL.
 285 --> 338281 - Add Sync to export.

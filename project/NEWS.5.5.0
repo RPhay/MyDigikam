@@ -98,7 +98,7 @@ BUGFIXES:
 064 --> 376650 - Write Meta Data hangs if album is empty.
 065 --> 375199 - Metadata Synchronizer Tool is not working for subfolders.
 066 --> 375796 - Barel Effect Apperaing on Images RAW RW2 Panasonic Format.
-067 --> 376331 - Path when saving/opening presentation files should be remebered.
+067 --> 376331 - Path when saving/opening presentation files should be remembered.
 068 --> 375416 - Frequent crashes when applying faces.
 069 --> 301048 - BQM Watermark tool : more super-impose visible watermark options [patch].
 070 --> 123097 - SCAN : ignore some directories in digiKam [patch].
@@ -122,7 +122,7 @@ BUGFIXES:
 088 --> 202030 - Search duplicate images filtered by file type mime.
 089 --> 365331 - digiKam not loading because rpath information missing from libQt5Qml, libQt5Script and libQt5Quick.
 090 --> 377039 - Network Collections cause hang on "Reading Database".
-091 --> 218819 - Implement albums tree-view colapse/expand history.
+091 --> 218819 - Implement albums tree-view collapse/expand history.
 092 --> 377292 - Improve GPS Correlator UI
 093 --> 377240 - Deleting an image (DEL key) within LightTable resets zoom factor for following image.
 094 --> 377206 - Sort templates and camera filter ins configuration

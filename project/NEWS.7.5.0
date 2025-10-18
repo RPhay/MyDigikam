@@ -32,7 +32,7 @@ BUGFIXES:
 018 --> 444903 - digiKam not updating image metadata
 019 --> 446815 - People section written 1 new.
 020 --> 446816 - Writing people section.
-021 --> 446818 - Face writting stage.
+021 --> 446818 - Face writing stage.
 022 --> 442400 - Ambiguous Shortcuts on Ctrl+Alt+I.
 023 --> 443544 - Two actions want to use the same shortcut: Open Command Bar and Add Images.
 024 --> 426662 - File naming - extension aware does not work?
@@ -71,7 +71,7 @@ BUGFIXES:
 057 --> 335055 - Crashed on picture export.
 058 --> 335059 - Crash when starting to export pictures via Facebook export.
 059 --> 335136 - digiKam did not enlarge a photo in album.
-060 --> 335226 - Ramdom crashes of digiKam.
+060 --> 335226 - Random crashes of digiKam.
 061 --> 335234 - Crashed when switching from one album to another.
 062 --> 335260 - digiKam random.
 063 --> 335297 - Random crash of digiKam.
@@ -417,7 +417,7 @@ BUGFIXES:
 402 --> 114069 - digiKam save-as empty filename field.
 403 --> 154526 - Big screen size lead to small picture in main window and editor.
 404 --> 097777 - Images pixelated after edit and save.
-405 --> 126165 - Meta-bug for digikam editor tool release (digikam devels only).
+405 --> 126165 - Meta-bug for digikam editor tool release (digikam delves only).
 406 --> 168461 - Info in Properties panel not updated after moving to other image.
 407 --> 181930 - Slider for resizing does not work, i.e.shows either 1 or some extremely high number.
 408 --> 155407 - "Save as" diaglog is quite small in the image editor.
@@ -467,7 +467,7 @@ BUGFIXES:
 452 --> 097730 - EXIF Information unavailable in Camera preview window.
 453 --> 210226 - Adding Geolocation to image causes Flickr to not recognize EXIF data.
 454 --> 188062 - Synchronize Images with Database does not save Copyright, Credit, Source, By-line, By-line Title in IPTC.
-455 --> 170711 - Write single Keywords instead of Hierachy into IPTC.
+455 --> 170711 - Write single Keywords instead of Hierarchy into IPTC.
 456 --> 148182 - Iptc.Application2.Keywords appends always the 0-byte.
 457 --> 311973 - Extra commas in IPTC keywords should be trimmed, otherwise messes up naming.
 458 --> 200427 - digiKam ,iptc, tags, hierarchy disappears.
@@ -681,7 +681,7 @@ BUGFIXES:
 666 --> 448432 - Importing images to be folderized by date causes them to be folderized by import date, not the date the picture was taken.
 667 --> 285237 - Image conversion in batch manager as _exclusive_ task does _not_ work.
 668 --> 282673 - Album view-> multiple selection-> rightclick-> add to batchqueue.
-669 --> 296190 - Wish: Assing tools per photo in batch queue manager.
+669 --> 296190 - Wish: Assign tools per photo in batch queue manager.
 670 --> 093787 - Raw converter : png output.
 671 --> 160273 - Raw images converter - save at 16 bits per pixel 16bit 16bpp.
 672 --> 207058 - Renaming in BQM should be a tool.
@@ -740,7 +740,7 @@ BUGFIXES:
 725 --> 107054 - After I crop I always get the error saving <image-name> to <foldername> failed.
 726 --> 437162 - Ship or allow support for better colour correction.
 727 --> 376963 - Printout like a poststamp.
-728 --> 373023 - Settings button for "Use Color Managment for printing" is not working at PrintImage dialog.
+728 --> 373023 - Settings button for "Use Color Management for printing" is not working at PrintImage dialog.
 729 --> 401386 - Cannot save rotated image.
 730 --> 394346 - Add new tool to Stamp an image.
 731 --> 154376 - Add new tool a remove contamination of camera sensor.

@@ -59,7 +59,7 @@ BUGFIXES:
 021 --> 327242 - EXIF tags sorted in the reverse order (not alphabetically).
 022 --> 199975 - Issues in Album view on Windows.
 023 --> 327143 - TableView: Crash on image metadata change.
-024 --> 326525 - Severe memory leak during maintainance scan for rebuild thumbnails.
+024 --> 326525 - Severe memory leak during maintenance scan for rebuild thumbnails.
 025 --> 321403 - digiKam Crashes When Trying to Start.
 026 --> 327707 - Custom list of metadata cannot be customized.
 027 --> 180322 - Compute 35mm equivalent focal length.
@@ -107,7 +107,7 @@ BUGFIXES:
 069 --> 186672 - Zoom slider should change amount of pictures, not picture size directly.
 070 --> 305104 - digiKam does not show some jpg images in files.
 071 --> 317669 - Two alert windows on overwrite alert.
-072 --> 320249 - Table view crashes when adressing tags.
+072 --> 320249 - Table view crashes when addressing tags.
 073 --> 309578 - crash importing images from an android usb storage.
 074 --> 322360 - Camera found as PTP Device, but if importing Images abort with "connection error".
 075 --> 328362 - Crash on start (macports install on OSX 10.9) - Exception Type: EXC_GUARD.
@@ -141,7 +141,7 @@ BUGFIXES:
 103 --> 299755 - After latest X upgrades the Level Tools upgrade is a solid color (black, white, gray).
 104 --> 328835 - Crash when opening "Configure digiKam" settings.
 105 --> 329127 - Remove Tag menu entry is enabled if a picture has no Tags.
-106 --> 297804 - Saving an image loses portait orientation.
+106 --> 297804 - Saving an image loses portrait orientation.
 107 --> 279996 - Crash while running face detection.
 108 --> 278049 - Crash during tagging while scanning run in background (digiKam::ImageModel::removeRowPairs).
 109 --> 262596 - Crash when finding faces (digiKam::ImageModel::removeRowPairs).
@@ -158,7 +158,7 @@ BUGFIXES:
 120 --> 329608 - Thumbnail of picture in dolphin never updated after picture manipulation.
 121 --> 307844 - digiKam import, ignore the user selection, replaces it by "all selected".
 122 --> 292318 - digiKam marble maps does not work.
-123 --> 198406 - Xmp not synchronized, uncomplete.
+123 --> 198406 - Xmp not synchronized, incomplete.
 124 --> 147921 - Gps widget in French please.
 125 --> 330230 - Memory leak in Image Quality Sorter.
 126 --> 227530 - Album-sorting gone from menus [patch].
@@ -219,6 +219,6 @@ BUGFIXES:
 181 --> 304809 - Crash when attempting to download Facebook photos.
 182 --> 299038 - Crashes when Starting Geo-Tagging.
 183 --> 290797 - Crash when exporting images to flickr.
-184 --> 183014 - Png converter compressor unconsistent.
+184 --> 183014 - Png converter compressor inconsistent.
 185 --> 305137 - Wish for integrated(?) clip-generator.
 186 --> 332838 - String problems: word puzzle, exclamation marks.

@@ -55,7 +55,7 @@ BUGFIXES:
 033 --> 262170 - The remove button for faces should be more explicit.
 034 --> 286770 - Unknown face tag no longer shows any items, even though there are unlabelled face tags in images.
 035 --> 263397 - Usability enhancement on changing confirmed faces.
-036 --> 308642 - Faces assignement : user interface improvements.
+036 --> 308642 - Faces assignment : user interface improvements.
 037 --> 279199 - Several UI suggestions for face-detection.
 038 --> 271841 - SCAN : KDirwatch and database : digikam very slow when editing iptc data.
 039 --> 290421 - digiKam should inform users when kio-slave fail to load.
@@ -71,7 +71,7 @@ BUGFIXES:
 049 --> 188925 - Write image metadata in background with user feedback.
 050 --> 126821 - Handle existing read-only photo trees without copying (i.e. virtual albums).
 051 --> 335256 - Add option to view custom GPS EXIF tags (IPTC).
-052 --> 213745 - Create date change when we modefy xmp metadata.
+052 --> 213745 - Create date change when we modify xmp metadata.
 053 --> 275351 - User Icons won't show on digikam restart.
 054 --> 278110 - Fuji X100 RAF RAW files doesn't show right under image editor.
 055 --> 308821 - GoogleMaps : Impossible to open map view.
@@ -111,7 +111,7 @@ BUGFIXES:
 089 --> 300020 - Picture not showing in the thumbnails after edition.
 090 --> 329524 - Moving versioned pictures to a different album ungroups them.
 091 --> 305359 - Advanced rename of lots of images is slow.
-092 --> 333356 - Crash on attemp to change modified date to created date.
+092 --> 333356 - Crash on attempt to change modified date to created date.
 093 --> 134164 - Be able to use the settings from inside the .NEF file itself.
 094 --> 338081 - Support HDR DNG images from HDRMerge.
 095 --> 327628 - Add keyboard shortcut to rename album.

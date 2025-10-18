@@ -7,12 +7,12 @@ General        : Port code to Qt6 framework (code still compatible with Qt5 API)
 General        : Add JPEG-XL, WEBP, and AVIF export settings everywhere.
                  Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.
                  Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.
-Versioning     : Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versionned images in editor.
+Versioning     : Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versioned images in editor.
 Usability      : Add hamburger menu to tool-bar if main menu is hidden.
 Metadata       : Add new option to write metadata to files with ExifTool backend.
 Metadata       : Optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.
 Metadata       : Optimize layout of Metadata Edit plugin for a better usability.
-Metadata       : Add new options to save and load configuration profiles in Advanced Metadata Settings Pannel.
+Metadata       : Add new options to save and load configuration profiles in Advanced Metadata Settings Panel.
 Advanced Rename: Add increment file counter to sequence numbering with option [c] or [c,step].
 Advanced Rename: Add random text sequence numbering with option [r].
 Advanced Rename: Add configurable first character for the unique modifier with {unique:n,c}.
@@ -24,7 +24,7 @@ General        : Add spell-checking support in caption text widget using KF5::So
                  Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto.
 General        : Add online translations support to Alternative Language text editor widget.
                  Add Localize config panel in Setup/Misc for digiKam and Showfoto.
-General        : Add settings to list prefered alternative/translated languages in text edit widget.
+General        : Add settings to list preferred alternative/translated languages in text edit widget.
 General        : Allows to use Global or Customized Image Quality Sorting settings everywhere.
 General        : Add new tool to perform OCR over scanned text.
                  https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran
@@ -111,7 +111,7 @@ BUGFIXES:
 063 --> 386072 - Can't access EXIF data on some (very few!) pictures from import camera window - works fine after that.
 064 --> 381214 - Import may mix up picture content and metadata of different pictures.
 065 --> 454739 - Find New Items is stuck at 0%.
-066 --> 440156 - Cant get Google Import/export to authenticate with Google on Mint 20.2 Cinnamon.
+066 --> 440156 - Can't get Google Import/export to authenticate with Google on Mint 20.2 Cinnamon.
 067 --> 435384 - Export crash to google photos.
 068 --> 455893 - Build error with Qt5.
 069 --> 455876 - Handling of image orientation in modern image formats using ExifTool.
@@ -202,7 +202,7 @@ BUGFIXES:
 154 --> 461799 - No progress is shown for second face recognition process.
 155 --> 461888 - Writing metadata to file fails while database sync process is running.
 156 --> 461853 - MS People Tags with no face region are not read when image contains face rectangles with no names associated.
-157 --> 446458 - Tags end up appearing withing another hierarchy where they don't belong.
+157 --> 446458 - Tags end up appearing within another hierarchy where they don't belong.
 158 --> 460463 - Scroll position in Faces view keeps jumping back & forth during face recognition/detection.
 159 --> 440909 - Import's "Auto-creation of Albums" using file modified date rather than date taken.
 160 --> 402322 - During face detection, the "People" / "Unconfirmed" (or "Unknown") tab content keeps jumping around.
@@ -249,7 +249,7 @@ BUGFIXES:
 201 --> 450522 - No option to read/write XPTitle and XPComment metadata fields.
 202 --> 374783 - Window location is not restored correctly after restart.
 203 --> 435863 - digiKam "looses" manually tagged faces.
-204 --> 463502 - Tags in captions sidebar are not sorted on image change when "Tags already asigned" option is enabled.
+204 --> 463502 - Tags in captions sidebar are not sorted on image change when "Tags already assigned" option is enabled.
 205 --> 430405 - Print and Print Assistant Missing From Item Menu.
 206 --> 238802 - Port documentation from DocBook to modern Sphinx/RestructuredText framework and improve contents.
 207 --> 426513 - Add "By Manual and Name" and "By Manual and Date" sort options for items in "Main Window Menu Descriptions" section.
@@ -275,7 +275,7 @@ BUGFIXES:
 227 --> 465015 - Moving a video with a colour tag to a directory containing a video with the same name removes tag during rename.
 228 --> 380967 - Add option to synchronize same description in images.
 229 --> 465286 - Add ART (another raw therapee) to list to Raw Import tools.
-230 --> 465462 - Writing Metadata changes immediatly to files.
+230 --> 465462 - Writing Metadata changes immediately to files.
 231 --> 465679 - Wrong field label in advanced search screen (geographic position part).
 232 --> 242630 - Write online documentation sections based on Sphinx/ReStructuredText for more Post-Processing tools, as Panorama, Calendar, OCRTextConverter, etc.
 233 --> 465832 - Recognize faces don't run because "there are no identities to recognize".
@@ -338,7 +338,7 @@ BUGFIXES:
 290 --> 467680 - Add a Collections Dialogue Behavior.
 291 --> 422996 - digiKam Crash with GMicQt plugin on Mac Mojave.
 292 --> 467215 - macOS 11.74 Big Sur: digiKam crashes unexpectedly after launching G'MIC (theme settings relevant).
-293 --> 467643 - Ambigous text in UI - Setup/Misc.
+293 --> 467643 - Ambiguous text in UI - Setup/Misc.
 294 --> 467736 - Image Quality Sort ignores disabled "Assign Pick Labels".
 295 --> 467090 - Maps Window with Google Maps only empty.
 296 --> 400579 - Add new option to preserve gps data with minor geolocation modification.
@@ -456,7 +456,7 @@ BUGFIXES:
 408 --> 096941 - Add images without an album - images don't show in digiKam.
 409 --> 091829 - Sub albums not supported.
 410 --> 091424 - Crashing if out of diskspace.
-411 --> 091290 - Database is not excaping ' in names of albums.
+411 --> 091290 - Database is not escaping ' in names of albums.
 412 --> 089798 - Can't copy/move files to an album name that contains an apostrophe.
 413 --> 460270 - New Install, with appimage, "connecting to database hangs forever.
 414 --> 445307 - Unable to recover digiKam data on ubuntu 20.04 with Mysql server 8.0.27.

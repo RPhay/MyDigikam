@@ -70,14 +70,14 @@ BUGFIXES:
 037 --> 439395 - Conflicting shortcuts on fresh install.
 039 --> 440588 - Metadata is not saved in 7.3.0.
 040 --> 440590 - digiKam 7.3.0 fails to start: cannot process schema initialization.
-041 --> 440955 - Entering tag and chosing second selects first tag instead.
+041 --> 440955 - Entering tag and choosing second selects first tag instead.
 042 --> 439490 - Ambiguous Shortcuts -- There are two actions (Open Command Bar, Add Images ...) that want to use the same shortcut (Ctrl+Alt+I).
 043 --> 439495 - Launch digiKam and message dialogue appears "Ambiguou... digiKam".
 044 --> 440229 - Ambiguous Shortcuts warning popups.
 045 --> 441231 - There are two actions (Open Command Bar, Add Images...) that want to use the same shortcut (Ctrl+Alt+I).
 046 --> 439527 - digiKam crash when inventory psd 16 bit file.
 047 --> 440132 - digiKam crashes scanning for new items.
-048 --> 347018 - Add collapsable albums to the tag view.
+048 --> 347018 - Add collapsible albums to the tag view.
 049 --> 438794 - Feature request: collapse all.
 050 --> 268059 - Showfoto is unable to display TIF file in non RGB color space.
 051 --> 295334 - Add some way to tag a face result as "ignore this one" in database for future scans.
@@ -120,7 +120,7 @@ BUGFIXES:
 088 --> 308507 - digiKam crashes when browsing images.
 089 --> 338056 - Autocrop RAW Image crashes.
 090 --> 326357 - digiKam crashes at start up.
-091 --> 314152 - Crash after deleting unassinged tag.
+091 --> 314152 - Crash after deleting unassigned tag.
 092 --> 310950 - digiKam Crashed when deleting tag.
 093 --> 317545 - digiKam se cierra al editar tags.
 094 --> 312372 - Crash while deleting all tags known to digiKam.
@@ -139,7 +139,7 @@ BUGFIXES:
 108 --> 329135 - digiKam crashes while editing tag information.
 109 --> 315497 - digiKam crashes when inserting tags.
 110 --> 439207 - FR: Make Background of transparent png configurable.
-111 --> 398252 - Langage configuration should be in settings not in help.
+111 --> 398252 - Language configuration should be in settings not in help.
 112 --> 343263 - While attempting a Galley Export to Smug Mug error: Smug Mug call failed: invalid method.
 113 --> 342489 - digiKam crashes when tagging photos
 114 --> 342426 - Lookup of missing altitude values fails.

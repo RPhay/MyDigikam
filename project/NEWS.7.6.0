@@ -24,7 +24,7 @@ BUGFIXES:
 009 --> 161885 - Support of mouse clicks in slideshow.
 010 --> 097069 - E-mail contains comments file even if there are no comments.
 011 --> 161114 - Resizing and emailing from digiKam results in no-more readable.
-012 --> 155023 - Crashs when trying to send images via digiKam.
+012 --> 155023 - Crashes when trying to send images via digiKam.
 013 --> 105704 - Send image should use the mail client defined in KControl.
 014 --> 150453 - Emailing a raw image creates an incorrect filename.
 015 --> 131343 - Sending images from digiKam fails if directory name contains.
@@ -54,7 +54,7 @@ BUGFIXES:
 039 --> 141188 - Slideshow does sort images correctly.
 040 --> 088600 - Advancedslideshow tool: better support for navigation prev/next/stop and resume.
 041 --> 320154 - digiKam crashed at the end of the diaporama..
-042 --> 130786 - Saving slideshow and use a differnet effect for every picture.
+042 --> 130786 - Saving slideshow and use a different effect for every picture.
 043 --> 143246 - Slideshow not sorting images by date.
 044 --> 172738 - Crash on Quit after quickly changing between albums.
 045 --> 173694 - Reproduceable Crash after closing the digiKam application.
@@ -82,7 +82,7 @@ BUGFIXES:
 067 --> 088870 - Host application name invisible in generated page.
 068 --> 098882 - Add a new property to digiKam's images which allows include/exclude from generated html gallery.
 069 --> 319882 - Crash when stitching a panorama.
-070 --> 332918 - Jpeg files created with the panorama tool are correctly read and displayed by digiKam but are wrong and are not readable by other softwares.
+070 --> 332918 - Jpeg files created with the panorama tool are correctly read and displayed by digiKam but are wrong and are not readable by other software.
 071 --> 361316 - Fails to build with flex-2.6.0.
 072 --> 289902 - Freezing system after updating digiKam
 073 --> 286057 - Panorama: Error: can not read project file.
@@ -151,10 +151,10 @@ BUGFIXES:
 135 --> 347301 - Lense Correction - missing Camera and Lense.
 136 --> 098651 - Image editor tool filter based on clens.
 137 --> 254083 - Lens auto correction fails producing result using D700 and Zenitar 16/2.8.
-138 --> 169214 - Lens auto correction tool should try to determinee correct lens from metadata.
+138 --> 169214 - Lens auto correction tool should try to determine correct lens from metadata.
 139 --> 250484 - WISH: Black Border removal.
 140 --> 266913 - ShowFoto crashes when loading Lens autocorrection.
-141 --> 162212 - WISH: Possiblity to set the alpha channel value in the insert text option.
+141 --> 162212 - WISH: Possibility to set the alpha channel value in the insert text option.
 142 --> 115849 - AdjustLevels: the "Load" button opens the "Save As..." dialog box and vice-versa.
 143 --> 096658 - Tool suggestion: vector-based manipulation.
 144 --> 100990 - digiKam: loading curves does not update preview.
@@ -188,7 +188,7 @@ BUGFIXES:
 172 --> 200159 - digiKam almost always crash on my system.
 173 --> 100835 - Auto-rotate image error dialog blocks rotate cancel button.
 174 --> 143448 - "auto rotate/flip using exif tags" rotates 90 degrees to much.
-175 --> 134451 - Rotation modul cuts away boarder.
+175 --> 134451 - Rotation module cuts away boarder.
 176 --> 106936 - Rotate image does not work correctly.
 177 --> 111026 - Rotating images 90 degrees crash.
 178 --> 135512 - Rotate dialog does not close after completion.
@@ -217,13 +217,13 @@ BUGFIXES:
 201 --> 337692 - Template editor with author/rights is extremely slow.
 202 --> 117262 - Possibility of text in border.
 203 --> 094376 - Batch process dont work (SEGFAULT) with images under tag area.
-204 --> 196630 - Easyer colorspace handling in digiKam.
+204 --> 196630 - Easier colorspace handling in digiKam.
 205 --> 241725 - Add color space conversion to batch queue manager.
 206 --> 117074 - Convert to djvu in the batch conversion dialog.
 207 --> 284785 - Crash while batch converting running and using main window.
 208 --> 153133 - Crop images based on defined moveable area.
 209 --> 100787 - Need to crop photographs for printing.
-210 --> 183014 - Png converter compressor unconsistent.
+210 --> 183014 - Png converter compressor inconsistent.
 211 --> 301585 - Easy way to convert images.
 212 --> 099020 - Conversion of images to EPS format to use them with tex/latex documents.
 213 --> 089720 - Batch convert from tif to jpg creates thumbnail and main jpeg with wrong names.
@@ -266,7 +266,7 @@ BUGFIXES:
 250 --> 430817 - Include AppImage application stream metadata.
 251 --> 086994 - Add 'forward' and 'backbard' buttons to info dialogs for images/collections.
 252 --> 098305 - Don't display digiKam splash screen on sessin restore.
-253 --> 139151 - Fix menu dialog target and icons blinking witout any user intervention picture original and target, icons for preview mode, zoom, Abort, Ok buttons.
+253 --> 139151 - Fix menu dialog target and icons blinking without any user intervention picture original and target, icons for preview mode, zoom, Abort, Ok buttons.
 254 --> 091005 - Wish: save width of left pane on exit.
 255 --> 146463 - HIG CL3: Warning messages from light table.
 256 --> 182755 - Configure digiKam window too big.
@@ -309,7 +309,7 @@ BUGFIXES:
 293 --> 283009 - Showfoto crashes when opening a directory.
 294 --> 300066 - ShowFoto crash when exiting.
 295 --> 111875 - Crash (signal 11) when configuring ShowFoto toolbars.
-296 --> 091850 - Make it possible to laucnh the image editor module apart from the full program (whishlist).
+296 --> 091850 - Make it possible to laucnh the image editor module apart from the full program (wishlist).
 297 --> 111873 - Modifying and then navigating in the thumbbar does not update photo thumbnail.
 298 --> 163403 - Image zoom changes when choosing a new thumbnail.
 299 --> 155178 - Following update, Showfoto crashes on sgnal 11 on selecting "Insert Text" from "Decorate" menu.
@@ -318,7 +318,7 @@ BUGFIXES:
 302 --> 104980 - After discarding changes of a photo, Showfoto ask if (not yet done) changes of the next photo should be save/discard too.
 303 --> 127244 - Stubborn Save bug in Showfoto (and associated crash).
 304 --> 158144 - Showfoto crashes In settings window.
-305 --> 269993 - Subdirectories in separated + independant databases.
+305 --> 269993 - Subdirectories in separated + independent databases.
 306 --> 154478 - Showfoto does not sort pictures by name.
 307 --> 147136 - When selecting pictures from folder Showfoto got closed.
 308 --> 179531 - Showfoto crash on saveas jpegs.
@@ -326,7 +326,7 @@ BUGFIXES:
 310 --> 127242 - Flashing 'histogram calculation in progress' is a bit annoying.
 311 --> 098466 - Freedesktop.org desktop entry compliant Showfoto .desktop files.
 312 --> 154753 - Add support for JPEG data precision 12.
-313 --> 109271 - Cant "Save As" picture opened from http url in Konqueror.
+313 --> 109271 - Can't "Save As" picture opened from http url in Konqueror.
 314 --> 099495 - Menu items active without an image loaded.
 315 --> 256240 - Metadata RAW files IPTC->Keywords not correct to view.
 316 --> 312549 - Showfoto does not correctly rotate images in the main view.
@@ -463,7 +463,7 @@ BUGFIXES:
 447 --> 301488 - Tool to remove empty image labels (tags).
 448 --> 418408 - For multiple selected images Tag Manager doesn't differentiate a tag if only on some of the images.
 449 --> 242174 - Assigning keywords to more than one photo.
-450 --> 268329 - Labels (rating, color, pick) in slideshow not alway shown correctly/sometimes forgotten.
+450 --> 268329 - Labels (rating, color, pick) in slideshow not always shown correctly/sometimes forgotten.
 451 --> 358609 - ‘Labels’ easily confused with ‘tags’ – new name?
 452 --> 145465 - Modifying UI for removing labels.
 453 --> 303392 - digiKam crashed if applicate Color/star or flag.
@@ -515,7 +515,7 @@ BUGFIXES:
 499 --> 133944 - digiKam crashes when choosing an icon for a tag.
 500 --> 150792 - Sigsegv when applying tags.
 501 --> 167874 - Item count in tag and album view is not updated.
-502 --> 099560 - Wish for ability to move album directories from disk to disk without loosing all tags.
+502 --> 099560 - Wish for ability to move album directories from disk to disk without losing all tags.
 503 --> 117242 - Tag hierarchy should be managed automatically.
 504 --> 119086 - Folders (categories) for image tags.
 505 --> 122192 - WISH: The capability to re-organise the tree of the tags.
@@ -523,7 +523,7 @@ BUGFIXES:
 507 --> 158777 - Show count of photos with assigned tag.
 508 --> 347737 - Tagged RAW files do not show tags after round trip to RawTherapee.
 509 --> 303714 - Tag checkboxes state changes on mouse release only.
-510 --> 223219 - digiKam crashed when specifying/deleteing tags from within gnome.
+510 --> 223219 - digiKam crashed when specifying/deleting tags from within gnome.
 511 --> 226157 - digiKam crashes when applying keyword changes.
 512 --> 142984 - SIGSEGV setting icon for new tag.
 513 --> 193531 - Crash when changing tags for image.
@@ -536,19 +536,19 @@ BUGFIXES:
 520 --> 267901 - My Tags Crash.
 521 --> 279495 - digiKam crashes while doing mass add of tags to photos.
 522 --> 295041 - Assigned Tags to Photos then change tag search text.
-523 --> 300330 - Crash while appying tags.
+523 --> 300330 - Crash while applying tags.
 524 --> 309560 - Crash when editing tags.
 525 --> 313501 - digiKam crashes, when contributing tags (very slow tag storage).
 526 --> 117403 - digiKam: d&d a tags on an thumbnail not currently in an existing selection of images assigns tag to all of them.
-527 --> 137207 - Inconsitent tagging of multiple photos.
+527 --> 137207 - Inconsistent tagging of multiple photos.
 528 --> 140675 - Tag filters can not select the "group" tag.
 529 --> 164187 - Screen full of keywords - scroll missing.
 530 --> 195817 - No progress information is shown when applying tag changes to a _single_ image.
 531 --> 305446 - digiKam crashes after editing and tagging an image, then saving the changed image.
-532 --> 196925 - "Tags aleady assigned" does not show tags already assigned.
+532 --> 196925 - "Tags already assigned" does not show tags already assigned.
 533 --> 235671 - All tags no longer shown when the "Tags already assigned" button is clicked.
 534 --> 359899 - Tags Filter panel too wide.
-535 --> 093419 - Unecessary confirmation when setting tag.
+535 --> 093419 - Unnecessary confirmation when setting tag.
 536 --> 111600 - Link between addressbook contacts and people tags.
 537 --> 116606 - Wish: I want to see again all my pictures having a tag in a flat view, not separated by albums.
 539 --> 122194 - WISH: The ability to add descriptions and other meta information to a tag.
@@ -692,7 +692,7 @@ BUGFIXES:
 676 --> 254434 - Application fail to build without handbook ("wrong doc dir specified" error).
 677 --> 359960 - digiKam product category lacks recent versions.
 678 --> 134307 - Remember the type of preview.
-679 --> 160649 - Switch "Save" button to "Save as..." before there is versionning image editing.
+679 --> 160649 - Switch "Save" button to "Save as..." before there is versioning image editing.
 680 --> 178673 - Zoom combo box shows wrong value instead of 100%.
 681 --> 088112 - digiKam image editor used exif orientatin in opposite direction than thumbnail view of albums.
 682 --> 092104 - Image Editor tools' handbook should not have '.
@@ -727,7 +727,7 @@ BUGFIXES:
 711 --> 146618 - Media viewer does not sort correctly.
 712 --> 088783 - Allow use of a batch file to download images to provide naming flexibility.
 713 --> 108692 - Casio Exilim Ex P600, is this camera supported by digiKam?
-714 --> 099544 - Add camera provided date and time is writting a bad time (one hour minus).
+714 --> 099544 - Add camera provided date and time is writing a bad time (one hour minus).
 715 --> 131641 - CR2 thumbnails not shown in camera GUI, no exif information available.
 716 --> 139507 - Integrate jpegoptim software during copy transfer.
 717 --> 106928 - digiKam custom filename format from date and time.

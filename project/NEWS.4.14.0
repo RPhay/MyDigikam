@@ -6,7 +6,7 @@ NEW FEATURES:
 General : Add support of OpenCV 3.x.
 General : Overlay icons are resized accordingly with thumbnails sizes.
 General : New Overlay icon to quickly show an image in full-screen.
-General : Exiv2 mininum version bumped to 0.25 to prevent crash with video files.
+General : Exiv2 minimum version bumped to 0.25 to prevent crash with video files.
 
 *****************************************************************************************************
 BUGFIXES:

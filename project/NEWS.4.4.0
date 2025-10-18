@@ -4,7 +4,7 @@ digiKam 4.4.0 - Release date: 2014-10-12
 NEW FEATURES:
 
 General     : Navigate between pictures using PageUp/PageDown is now possible while editing properties through captions/tags sidebar.
-General     : New keyboard shortcuts to improve usability while photo review (as to switch focus on text edit widget, or to toogle tags view).
+General     : New keyboard shortcuts to improve usability while photo review (as to switch focus on text edit widget, or to toggle tags view).
 General     : New keyboard shortcut to switch on/off color managed view for thumbnails and preview.
 
 AlbumGUI    : Album preview can be displayed in tooltip.
@@ -37,7 +37,7 @@ BUGFIXES:
 017 --> 338485 - Crash during Face recognition and detection about FaceEngine::Identity::isNull().
 018 --> 275381 - GROUP : rating widget overlaps the grouping indicator over thumbnail.
 019 --> 144168 - ICONVIEW : show only modification date if modification date is different than creation date.
-020 --> 268284 - ZoomSlider from statubar tooltip looks inconsistent.
+020 --> 268284 - ZoomSlider from statusbar tooltip looks inconsistent.
 021 --> 152948 - Confirmation dialog is not needed if Captions/Tags take focus and no changes is performed.
 022 --> 313947 - Add new toolbar button to change Labels, at new digiKam session button do not appear until make another change in toolbar.
 023 --> 282506 - Keyboard shortcut tagging functionality is lost.
@@ -48,7 +48,7 @@ BUGFIXES:
 028 --> 206546 - Save or print mosaic from light table.
 029 --> 339074 - CORE : warning from Qt when in database connection checker [patch].
 030 --> 324287 - SCAN : frequent image scans slow.
-031 --> 313857 - Add keyboard shorcut to apply Labels while Slideshow.
+031 --> 313857 - Add keyboard shortcut to apply Labels while Slideshow.
 032 --> 312043 - Show image Title in Slideshow.
 033 --> 242119 - Interactive Slideshow (presentation mode).
 034 --> 339051 - Allow the usage of arrows to move in the photo sequence when in slideshow [patch].

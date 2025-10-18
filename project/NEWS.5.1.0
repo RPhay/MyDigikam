@@ -47,7 +47,7 @@ BUGFIXES:
 019 --> 215854 - Download pictures to hd in digiKam.
 020 --> 217532 - Crash while using Download Photos with digiKam link from Device Notifier.
 021 --> 362108 - Crash when moving images to newly created album.
-022 --> 354074 - Can't load most of pictures without further error messages or additional informations.
+022 --> 354074 - Can't load most of pictures without further error messages or additional information.
 023 --> 361317 - digiKam crash when using face recognition.
 024 --> 343015 - When crop an raw image there appears a black bam on the right.
 025 --> 352955 - digiKam crashes when I start the geolocation.
@@ -72,7 +72,7 @@ BUGFIXES:
 044 --> 224583 - MetadataEdit writes invalid EXIF data to image.
 045 --> 201960 - Slideshow will not play mp3.
 046 --> 269339 - Advanced Slideshow greyed out.
-047 --> 170141 - Printer can't print when six collumns in the calendar.
+047 --> 170141 - Printer can't print when six columns in the calendar.
 048 --> 140982 - Slideshow is blurry/pixelated if opengl transitions are enabled.
 049 --> 238598 - Advanced Slideshow Dialog too big for screen.
 050 --> 299356 - Some pictures not editable in Image Editor as menu bar is not showing.
@@ -98,7 +98,7 @@ BUGFIXES:
 070 --> 234746 - digiKam crashes while looking a film in HD format .avi.
 071 --> 333508 - Crash in digiKam::digiKamApp::slotRebuildAlbumThumbnails.
 072 --> 328239 - Image scanning.
-073 --> 329507 - Rename attemps leads digiKam to crash.
+073 --> 329507 - Rename attempts leads digiKam to crash.
 074 --> 282188 - Crash digiKam when I crop image and "save as"...
 075 --> 297835 - digiKam crashes when starting.
 076 --> 324956 - Opening digiKam on Ubuntu 13.04 system.
@@ -258,7 +258,7 @@ BUGFIXES:
 230 --> 116904 - Connection to camera lost after download + delete of pictures.
 231 --> 162592 - Communication error with digital camera.
 232 --> 167284 - Auto rotate causes zero file sizes when using network shares (CIFS).
-233 --> 152417 - digiKam recognise Rollei dr5 automatically but does't connect it.
+233 --> 152417 - digiKam recognise Rollei dr5 automatically but doesn't connect it.
 234 --> 219655 - Can't import photos from memory cards.
 235 --> 155825 - Failed to connect Kodak C340.
 236 --> 155602 - I have to re detect each time my canon S3IS.
@@ -283,7 +283,7 @@ BUGFIXES:
 255 --> 332375 - Duplicates search.
 256 --> 322828 - digiKam stop to work.
 257 --> 327354 - Crashes when rebuilding Finger-Prints.
-258 --> 190114 - Usability sort images using exif informations (e.g. focal).
+258 --> 190114 - Usability sort images using exif information (e.g. focal).
 259 --> 182128 - Duplicates search results don't refresh unless search re-run.
 260 --> 161922 - Calendar view/digikam date does not update when exif dates changed externally.
 261 --> 190044 - Calendar uses (sometimes ?) 'last access' date instead of exif date.
@@ -317,7 +317,7 @@ BUGFIXES:
 289 --> 260653 - Toggle "Tags already assigned" makes digikam crash.
 290 --> 246743 - digiKam hate my image (file truncated to 0 byte after tagging).
 291 --> 357810 - digiKam suddenly stops when searching in tags-search mode.
-292 --> 144176 - In right-click popup, large amounts of tags run off the screen and cannot be accesed.
+292 --> 144176 - In right-click popup, large amounts of tags run off the screen and cannot be accessed.
 293 --> 249300 - Loss of IPTC tag "Country Name" importing pictures.
 294 --> 159855 - BUG - while appling tag changes.
 295 --> 270158 - Tag assigned to wrong photo.
@@ -370,5 +370,5 @@ BUGFIXES:
 342 --> 365676 - Improper handling of temporary directory.
 343 --> 308783 - No photo attachments when items are shared by e-mail.
 344 --> 365571 - Flickr export tool not freeing tmp space.
-345 --> 360404 - Imgur autorization not work : Integrate Oauth2 library in core [patch].
+345 --> 360404 - Imgur authorization not work : Integrate Oauth2 library in core [patch].
 346 --> 306207 - Application does not pass .desktop validation.

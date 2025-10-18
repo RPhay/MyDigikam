@@ -5,7 +5,7 @@ NEW FEATURES:
 
 Editor : Several fixes to complete image editor canvas port to Qt4 model/view.
 
-General: Better support of removable media and unvavailable items.
+General: Better support of removable media and unavailable items.
 
 Import : Allow sub-subfolders auto creation while importing.
 

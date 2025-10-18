@@ -23,7 +23,7 @@ BUGFIXES:
 015 --> 264830 - Raw importer broken. Not possible to revert changes.
 016 --> 103371 - Only one digikam instance should run on the same image library path.
 017 --> 265445 - digikam-1.8.0 fails to build against gcc-4.6.
-018 --> 264631 - Deleteing last TAG on a picture does actually not remove the tag within the exif metadata.
+018 --> 264631 - Deleting last TAG on a picture does actually not remove the tag within the exif metadata.
 019 --> 195648 - Quickfilter by tags: Exclude tags.
 020 --> 265641 - digiKam crash at startup.
 021 --> 264184 - png-1.5 compatibility fix.

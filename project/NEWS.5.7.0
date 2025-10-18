@@ -3,7 +3,7 @@ digiKam 5.7.0 - Release date: 2017-08-27
 *****************************************************************************************************
 NEW FEATURES:
 
-General     : Add online handbook reader not dependant of desktop.
+General     : Add online handbook reader not dependent of desktop.
 General     : New tool to export albums by email.
 General     : New tool to create advance print layout.
 General     : Send by Mail tool can remove all metadata to attached items.
@@ -52,7 +52,7 @@ BUGFIXES:
 021 --> 104918 - digiKam crashes while converting for email purposes.
 022 --> 096507 - Bug in email client selection.
 023 --> 280923 - The command Email messages does not attach the images to the email.
-024 --> 228609 - Sending images with thunderbird from albums with spaces in the name failes.
+024 --> 228609 - Sending images with thunderbird from albums with spaces in the name fails.
 025 --> 158585 - digiKam crashes after attempt to email pictures.
 026 --> 126493 - Mozilla does not start when sending emailed images.
 027 --> 139646 - "send by email" function does not work with Thunderbird 1.5.0.9 (it use to work before).
@@ -104,7 +104,7 @@ BUGFIXES:
 073 --> 112558 - Mpeg tool framerate adjustment.
 074 --> 091547 - focus stealing when 'mpeg slideshow' is selected, but mp2enc is missing.
 075 --> 131606 - Images 2 mpg with SVCD changes the proportion of the pictures.
-076 --> 168266 - digiKam mpeg enconding failure.
+076 --> 168266 - digiKam mpeg encoding failure.
 077 --> 116040 - Merging MPEG flux. Unable to open file for reading.
 078 --> 114515 - Verify the existence of the MPEG output file path and the existence of the audio input file before launching the encoding process.
 079 --> 101110 - Cannot create MPEG from photos using transitions.
@@ -117,7 +117,7 @@ BUGFIXES:
 086 --> 153962 - Dependency Error the package doesn't check for the presence of mpg123.
 087 --> 138916 - Creating MPEG slideshow fails if previously attempted - background file not found.
 088 --> 140507 - Create MPEG diagshow in HDV formats (720i/p, 1080i/p).
-089 --> 162240 - The encoder start and finish imediately and there isn't any mpeg file.
+089 --> 162240 - The encoder start and finish immediately and there isn't any mpeg file.
 090 --> 143979 - Create an mpeg slideshow fails after the encoding.
 091 --> 121045 - Images 2 mpg.
 092 --> 114514 - Do not delete the temporary folder after each encoding process.
@@ -135,7 +135,7 @@ BUGFIXES:
 104 --> 379884 - Item Metadata Editor doesn't save changes.
 105 --> 381380 - Item Edit / Metadata doesn't work.
 106 --> 381639 - Map filter (left side bar) doesn't show images anymore.
-107 --> 149970 - MPEG slideshow : incorrect warrning about missing runtime files.
+107 --> 149970 - MPEG slideshow : incorrect warning about missing runtime files.
 108 --> 381916 - digiKam crash when add person names.
 109 --> 328848 - Print Assistant window not resizable nor scrollable.
 110 --> 100311 - digikam crashes when using print wizard.
@@ -241,7 +241,7 @@ BUGFIXES:
 212 --> 170758 - High load when tagging.
 213 --> 111591 - Tag images browser doesn't show any images.
 214 --> 168267 - digiKam mpeg encoding failure.
-215 --> 115705 - ERROR: [yuvscaler] Could'nt read YUV4MPEG header.
+215 --> 115705 - ERROR: [yuvscaler] Couldn't read YUV4MPEG header.
 216 --> 331989 - digiKam crashes when playing AVI-file.
 217 --> 233693 - digiKam crash when clicking on .MOV file in album.
 218 --> 324611 - Deleting picture not possible.
@@ -255,7 +255,7 @@ BUGFIXES:
 226 --> 320292 - Crash while entering person names.
 227 --> 197562 - digiKam crash on deleting and moving a few pictures.
 228 --> 323993 - Crash while naming multiple people at the same time in one picture.
-229 --> 203146 - digiKam crashed wile moving files in the background.
+229 --> 203146 - digiKam crashed while moving files in the background.
 230 --> 107717 - Add trash to album treeview.
 231 --> 093246 - PrintCreator tool is missing.
 232 --> 176367 - Crop stage does not allow rotation or selection.
@@ -320,7 +320,7 @@ BUGFIXES:
 292 --> 318991 - digiKam crash at startup.
 293 --> 319166 - digiKam crashes on 64bit version.
 294 --> 318861 - digiKam crashes on startup.
-295 --> 318744 - digiKam stop immediatly when I try to open it.
+295 --> 318744 - digiKam stop immediately when I try to open it.
 296 --> 319674 - digiKam crashed.
 297 --> 318848 - Crash on startup the application.
 298 --> 320357 - Crash de digiKam.
@@ -372,7 +372,7 @@ BUGFIXES:
 344 --> 342557 - No rule to make target in recent git distribution.
 345 --> 267789 - Make face detection  and geo tagging optional features.
 346 --> 171778 - digiKam does not load photos in its database.
-347 --> 196545 - Images on digikam are not dispayed / visualized.
+347 --> 196545 - Images on digikam are not displayed / visualized.
 348 --> 198067 - digiKam does not show any pictures.
 349 --> 253815 - Allow directories/images to be excluded by default.
 350 --> 253062 - Database of 80,000+ images wiped out.
@@ -484,7 +484,7 @@ BUGFIXES:
 456 --> 212806 - digiKam crashes at program shutdown.
 457 --> 213707 - Crash right after quitting digiKam.
 458 --> 217810 - digiKam crash upon closure.
-459 --> 213843 - Everytime I close digiKam I get this crash however so far everything is working fine with the program.
+459 --> 213843 - Every time I close digiKam I get this crash however so far everything is working fine with the program.
 460 --> 210350 - Crash when editing geolocation.
 461 --> 211623 - Crash: update gps data.
 462 --> 210512 - This crash report was generated after normal closing digiKam.

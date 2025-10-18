@@ -33,7 +33,7 @@ BUGFIXES:
 007 --> 462913 - Import Cancel button doesn't cancel during "Import > Add images...".
 008 --> 463026 - Unable to reset custom collection collection icon.
 009 --> 463120 - Crashes on startup.
-010 --> 463350 - Red eyes correction on windows 10 not functionning.
+010 --> 463350 - Red eyes correction on windows 10 not functioning.
 011 --> 463726 - Cannot find folders with photos.
 012 --> 461205 - HEIF images are not rotated properly.
 013 --> 464003 - digiKam fills "ASCII" as photo caption from no apparent sources.

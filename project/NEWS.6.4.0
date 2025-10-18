@@ -36,7 +36,7 @@ BUGFIXES:
 017 --> 316865 - SCAN : Add new option to don't scan file bigger than n Mb or stop scan if longer than n seconds.
 018 --> 370019 - Sidecar metadata not loading sporadically.
 019 --> 329353 - Make slow processing better.
-020 --> 392090 - While scanning collection the progess bar shows 0%.
+020 --> 392090 - While scanning collection the progress bar shows 0%.
 021 --> 411929 - Can not move or delete videos that were not played till the end.
 022 --> 392727 - Images are missing (Windows).
 023 --> 396559 - "digikam.dbengine: Database is locked." when scanning for new items.

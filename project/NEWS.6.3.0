@@ -10,7 +10,7 @@ ImageEditor: new external plugin based on GMicQt included in all bundles (https:
 *****************************************************************************************************
 BUGFIXES:
 
-001 --> 410501 - Dark Themes show white frames with light grey text in menu etc. - not readible.
+001 --> 410501 - Dark Themes show white frames with light grey text in menu etc. - not readable.
 002 --> 382646 - XMP sidecar file doesn't contain GPS tags.
 003 --> 393635 - Segfault when saving TIFF after modifying RAW.
 004 --> 410634 - The xmp tag data is not handled correctly for raw images with sidecar files.
@@ -44,7 +44,7 @@ BUGFIXES:
 032 --> 188029 - Aggressive preloading of thumbnail previews.
 033 --> 207006 - Browsing, rating, mouse, stars.
 034 --> 228056 - digiKam doesn't autorotate images anymore.
-035 --> 259880 - When creating new pic-versions in different formats, a _different_(!!) preview apears and seems to be stored.
+035 --> 259880 - When creating new pic-versions in different formats, a _different_(!!) preview appears and seems to be stored.
 036 --> 297546 - digiKam scan thumbnails with duplicate filenames in different directories.
 037 --> 307940 - Crash of digiKam.
 038 --> 327033 - Memory leak when re-creating all thumbnails.
@@ -62,7 +62,7 @@ BUGFIXES:
 050 --> 246666 - digiKam crashes at launch.
 051 --> 251403 - Crash after trying to check the setup.
 052 --> 253200 - digiKam Crashes As Soon As I Hit the Icon to Load.
-053 --> 256391 - Aplication crashes on startup.
+053 --> 256391 - Application crashes on startup.
 054 --> 260864 - digiKam fails to start.
 055 --> 267742 - digiKam crashes during startup.
 056 --> 410862 - Crash when starting appimage build 6.3.0-git-20190812T053738-x86-64.
@@ -100,7 +100,7 @@ BUGFIXES:
 088 --> 114540 - Versioning of images in digiKam.
 089 --> 127039 - digiKam needs to integrate a revision control system.
 090 --> 145057 - Non Destructive Image Editing.
-091 --> 202814 - Automaticaly manage original and versioned edited photos.
+091 --> 202814 - Automatically manage original and versioned edited photos.
 092 --> 218027 - Wish stacks in digiKam to organize originals and versions.
 093 --> 277183 - Renaming multiple files.
 094 --> 277585 - When using "Save as new version", the new file is added at the end of the thumbbar.

@@ -11,14 +11,14 @@ BUGFIXES:
 003 --> 338753 - Exif ImageDescription field is being used incorrectly.
 004 --> 330224 - Add collection from network share is silently ignored [patch].
 005 --> 344699 - Maintenance is using the wrong face data management [patch].
-006 --> 342931 - Wrong apect ratio in item properties and in item view.
+006 --> 342931 - Wrong aspect ratio in item properties and in item view.
 007 --> 344793 - Thumbnail-preview broken for tags and timeline.
 008 --> 345025 - Wrong sql statement updating thumbnail modification date.
 009 --> 327009 - Tags auto-completion suggestions list is cut off at the right side.
 010 --> 345168 - Crash when applying auto lens correction (chromatic aberration) [patch].
 011 --> 319383 - Crash while applying lensfun distortion correction.
 012 --> 333540 - Random crashes on OpenSUSE 13.1.
-013 --> 345387 - Lens auto-correction tools shows "partial mathc" for canon 700d 18-135 is stm.
+013 --> 345387 - Lens auto-correction tools shows "partial match" for canon 700d 18-135 is stm.
 014 --> 345367 - The sideview containing the thumbnails is not updated after deleting a photo.
 015 --> 345187 - When naming unknown faces digikam only remembers typed characters and not the selected name for the next face [patch].
 016 --> 326208 - When doing a face learning (erase data and rebuild), Database is not erased and grow.

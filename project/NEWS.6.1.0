@@ -6,7 +6,7 @@ NEW FEATURES:
 General     : New plugins interface for digiKam and Showfoto named dplugins.
 General     : All export tools become generic plugins and are shared with Showfoto.
 General     : Update internal libpgf to last 07193.
-General     : Add compatiblity with OpenCV version 4.
+General     : Add compatibility with OpenCV version 4.
 General     : MacOS and AppImage bundles are now published with Qt 5.11.3.
 General     : Add new optional configuration option to compile with Faces Engine Neural Network.
 General     : Add optional support to ImageMagick codecs to support extra image formats as XCF, FITS, HEIC, etc.
@@ -38,7 +38,7 @@ BUGFIXES:
 016 --> 316687 - ImageMagick-6.8.3.9 could not be found.
 017 --> 305137 - wish for integrated(?) clip-generator.
 018 --> 404821 - Presentation offset from full screen when OpenGL transitions selected.
-019 --> 404894 - 6.0.0 x86-64 appimage startup complains about mssing ']' (startup bash script being called).
+019 --> 404894 - 6.0.0 x86-64 appimage startup complains about missing ']' (startup bash script being called).
 020 --> 368262 - Google services tool does not use kaccounts.
 021 --> 376913 - Can't create a new album in picasa/googlephoto.
 022 --> 404896 - Vertical video are displayed horizontally.
@@ -102,7 +102,7 @@ BUGFIXES:
 080 --> 405233 - digikam: symbol lookup error: /tmp/.mount_digika5N9rGH/usr/lib/libQt5XcbQpa.so.5: undefined symbol: FT_Property_Set.
 081 --> 404853 - digikam-6.0.0 faces engine fails to compile on PowerPC.
 082 --> 405625 - digiKam 6.0.0 faces engine fails to compile on PowerPC with AltiVec enabled.
-083 --> 372340 - Tagged face areas on portait (vertical) oriented images are mispositioned.
+083 --> 372340 - Tagged face areas on portrait (vertical) oriented images are mispositioned.
 084 --> 405743 - Customise Tool tab in editor.
 085 --> 376014 - Moving grouped photos from one folder to another breaks the group.
 086 --> 377782 - Group is lost when moved to another album.

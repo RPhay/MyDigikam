@@ -3,7 +3,7 @@ digiKam 3.0.0 - Release date: 2013-01-27
 *****************************************************************************************************
 NEW FEATURES:
 
-General           : All tool actions can be pluged to tools bar.
+General           : All tool actions can be plugged to tools bar.
                     Usability improvements in tools configuration dialog.
 
 RawEngine         : Update internal Libraw version 0.15.0 to support new RAW cameras :
@@ -150,7 +150,7 @@ BUGFIXES:
 102 --> 312892 - digiKam crashed while scanning big collection on external UAB HDD.
 103 --> 308948 - Pictures belonging to a group can't be displayed in the light table window.
 104 --> 307223 - Group selected by time not grouping one pair per album.
-105 --> 309254 - Contact informations from template aren't written to xmp-tags of jpg-files.
+105 --> 309254 - Contact information from template aren't written to xmp-tags of jpg-files.
 106 --> 309558 - Bad inheritance of keyboard shortcut when creating sub-tag.
 107 --> 307053 - Images sorted incorrectly.
 108 --> 313849 - Crash on clicking in BQM "Workflow" tab.

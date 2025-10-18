@@ -3,7 +3,7 @@ digiKam 3.3.0 - Release date: 2013-08-04
 *****************************************************************************************************
 NEW FEATURES:
 
-Faces Managament : Better management of Picasa Face Tags import/export through metadata
+Faces Management : Better management of Picasa Face Tags import/export through metadata
 Faces Management : New Face Recognition engine based on OpenTLD.
 
 *****************************************************************************************************
@@ -28,7 +28,7 @@ BUGFIXES:
 017 --> 192258 - Starting takes long time.
 018 --> 285821 - Once installed, DK does not start.
 019 --> 319267 - RawEngine contains invalid icc profiles, applications fail to save png file with libpng-1.6.x.
-020 --> 314033 - Crashed when attempting to vie images in folders.
+020 --> 314033 - Crashed when attempting to via images in folders.
 021 --> 320763 - Build failed.
 022 --> 204138 - Possibility to extract JPEG previews from RAW files during camera import.
 023 --> 261907 - digiKam empty context menus (relevant of default widget style for Windows set to CDE instead Oxygen).
@@ -45,9 +45,9 @@ BUGFIXES:
 034 --> 295255 - Running maintenance twice results in error.
 035 --> 320121 - if running maintenance, "rebuild thumbnails", digiKam hangs endlessly.
 036 --> 306282 - Improvements for maintenance tool.
-037 --> 306246 - Add new maintainance option to update DB using image metadata.
+037 --> 306246 - Add new maintenance option to update DB using image metadata.
 038 --> 321274 - Geolocation edit bookmarks.....NOTHING happens.
 039 --> 230360 - Not possible to add non-ascii characters in Byline-field.
 040 --> 322071 - Installs wrong file into share/config.kcfg.
-041 --> 322636 - GeoTag for MOV files canot be saved in the file.
+041 --> 322636 - GeoTag for MOV files cannot be saved in the file.
 042 --> 318307 - Detects enfuse and enblend versions wrong.

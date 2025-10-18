@@ -32,7 +32,7 @@ BUGFIXES:
 017 --> 398386 - Allow video frame to be saved as picture.
 018 --> 459969 - Unconfirmed Faces are not grouped correctly when re-running recognition.
 019 --> 460091 - Original batch still present after modification.
-020 --> 460124 - Unable to acces existing collections.
+020 --> 460124 - Unable to access existing collections.
 021 --> 460132 - Impossible to drag suggested face tag to other face tag in sidebar (for reassignment).
 022 --> 460153 - Deleting an album takes many seconds.
 023 --> 429709 - Date view suddenly switches to month view.

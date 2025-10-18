@@ -8,7 +8,7 @@ General        : My Tags section from Captions/Tags sidebar have been moved to a
 
 FlashExport    : New interface for tool: now a wizard will guide you through exporting process.
                : All tools are stored locally, user will need to download once
-               : Posibility to always return and select a different tool on first page(previous version requested restarting tool)
+               : Possibility to always return and select a different tool on first page(previous version requested restarting tool)
                : Different options and exporting settings for every tool
 
 *****************************************************************************************************

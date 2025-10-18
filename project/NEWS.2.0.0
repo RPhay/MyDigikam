@@ -7,7 +7,7 @@ General        : XMP metadata sidecar support.
 General        : Reverse geo-coding support.
 General        : Face detection and recognition support.
 General        : Tag keyboard shortcuts support.
-General        : Color Labels support to improve photograph workfow.
+General        : Color Labels support to improve photograph workflow.
 General        : Pick Labels support to improve photograph selection.
 General        : Color Theme engine is now ported to desktop color theme manager.
 General        : MySQl support improvements. Dependency is now optional.
@@ -18,7 +18,7 @@ AlbumGUI       : Re-designed Filters view on right sidebar to perform icon-view 
 AlbumGUI       : Add options to group/ungroup items from icon-view.
 AlbumGUI       : Add options to show file format over icon-view items.
 
-ImageEditor    : Image versionning support.
+ImageEditor    : Image versioning support.
 ImageEditor    : Foveon sensor based camera.
 ImageEditor    : New advanced RAW decoding settings backported from RawTherapee project.
 
@@ -42,7 +42,7 @@ BUGFIXES:
 003 --> 258082 - FacesEngine doesn't increment ids' while saving hash database.
 004 --> 259146 - FaceEngines doesn't learn new faces (patch).
 005 --> 146288 - Face detection / recognition for digiKam.
-006 --> 252964 - Please remove libs to be more independant.
+006 --> 252964 - Please remove libs to be more independent.
 007 --> 260619 - digiKam crash when raw format is being converted.
 008 --> 261140 - Find cmake script is installed both time.
 009 --> 261946 - Unable to compile beta1 of digikam.
@@ -100,7 +100,7 @@ BUGFIXES:
 061 --> 262574 - Add a face tag does not do anything.
 062 --> 266126 - Renaming single file needs to be confirmed twice.
 063 --> 264976 - Face detection: "Clear results and rescan" doesn't clear results.
-064 --> 213624 - Editor: picture too "big" when comming to editor after digikam start.
+064 --> 213624 - Editor: picture too "big" when coming to editor after digikam start.
 065 --> 192425 - Star rating setting under thumbnails is a nuisance.
 066 --> 219202 - digiKam database on multiple hosts.
 067 --> 216894 - Slow quadratic runtime generating fingerprints or thumbnails in beta6 during a big import.
@@ -170,7 +170,7 @@ BUGFIXES:
 131 --> 266264 - Localized version of batch raw converter not fit to window.
 132 --> 273369 - digikam does not get UUID for disk devices inside LVM.
 133 --> 271591 - Startup may take a very long time.
-134 --> 202202 - Loosing tags from database.
+134 --> 202202 - Losing tags from database.
 135 --> 194950 - digiKam endlessly spewing text to stderr.
 136 --> 273716 - transupp.cpp failing at make (2.0.0 Beta 5 under Fedora 14).
 137 --> 272586 - Crash when playing with databasebackend.
@@ -207,7 +207,7 @@ BUGFIXES:
 168 --> 203196 - Multiple Albums for 1 Folder.
 169 --> 229234 - Thumbnail mismatch for images with same name.
 170 --> 267802 - Database connections not closed on exit.
-171 --> 195006 - National charaters not accepted in database file path.
+171 --> 195006 - National characters not accepted in database file path.
 172 --> 145743 - Only include displayable files in database.
 173 --> 163763 - digiKam hangs during operation and startup.
 174 --> 276795 - Showfoto crashes when open a pic.
@@ -235,7 +235,7 @@ BUGFIXES:
 196 --> 272175 - Picture orientation is "forgotten" in viewer and light table when using xmp sidecar [patch].
 197 --> 275311 - XMP sidecars are not written for symbolic links [patch].
 198 --> 276712 - Ignore certain file types.
-199 --> 141730 - Page down/up goes to next/previous picture istead of scolling a page.
+199 --> 141730 - Page down/up goes to next/previous picture instead of scrolling a page.
 200 --> 229795 - Position in album lost when switching album forth and back.
 201 --> 208506 - Switching between view does not hold the current image.
 202 --> 252134 - When selecting multiple images, some controls should be disabled.

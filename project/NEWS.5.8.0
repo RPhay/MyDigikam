@@ -103,7 +103,7 @@ BUGFIXES:
 089 --> 385297 - Search results are case sensitive on MySQL remote database.
 090 --> 373605 - Failed to update database schema from version 7 to version 8.
 091 --> 286492 - MIGRATION : two SQLITE triggers applied for the same table is not supported by MySQL database.
-092 --> 316690 - MIGRATION : Database conversion by default successfuly erases all data.
+092 --> 316690 - MIGRATION : Database conversion by default successfully erases all data.
 093 --> 387326 - Send by Mail has no "Close" button, only "Finish" (disabled) and "Back".
 094 --> 385426 - digiKam does not see external(USB) hard drives for adding to collections.
 095 --> 387373 - digiKam does either show no photo in album or all photos of complete database (since Qt 5.9.3).
@@ -172,7 +172,7 @@ BUGFIXES:
 158 --> 183753 - digiKam crashes while detecting my camera.
 159 --> 229793 - Drop image file in digiKam.
 160 --> 187204 - Keeps crashing 6 (SIGABRT) import from camera.
-161 --> 271473 - digiKam crashes reproducably when scanning collection afte re-organising underlying picture folders.
+161 --> 271473 - digiKam crashes reproducibly when scanning collection after re-organising underlying picture folders.
 162 --> 192426 - Tried to open a picture in Gimp. The Picture opens in Gimp and digiKam crashes.
 163 --> 241585 - digiKam hangs at 0% in editor when calling "Save as".
 164 --> 191414 - Selecting "synchronize images with database" in album drop-down menu causes signal 6 (sigabrt).
@@ -181,7 +181,7 @@ BUGFIXES:
 167 --> 156599 - Bad date in header.
 168 --> 242623 - The default product for Report Bug about metadata editor does not exist.
 169 --> 094362 - Change permissions while importing images.
-170 --> 152313 - I can't configurate Intel Pocket Camera cs630. I can't get the photos.
+170 --> 152313 - I can't configure Intel Pocket Camera cs630. I can't get the photos.
 171 --> 361982 - Browse tag clicking on a tag crashes digiKam.
 172 --> 252200 - digiKam fails to compile.
 173 --> 277046 - digiKam doesn't build with libpgf-6.11.24.
@@ -192,10 +192,10 @@ BUGFIXES:
 178 --> 291541 - digiKam seems to be rewriting Metadata even if no change is made.
 179 --> 296078 - Changes in the organization of tags are not saved when quitting digiKam.
 180 --> 271021 - Result: stability improved.
-181 --> 387958 - Core database: cannot process schema initialization (uprade from 5.7).
+181 --> 387958 - Core database: cannot process schema initialization (upgrade from 5.7).
 182 --> 387960 - Failed build Calendar tool with kcalcore 17.12.
 183 --> 387957 - Image Editor Launches without Image.
-184 --> 387975 - Just after ugrade to 5.7.0 version, none pictures are shown.
+184 --> 387975 - Just after upgrade to 5.7.0 version, none pictures are shown.
 185 --> 387976 - Remember aspect ratio.
 186 --> 375317 - MYSQL: digikam crashes during face recognition.
 187 --> 310050 - MYSQL : Slow database performance after canceling a large duplicate image search.

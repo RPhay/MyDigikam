@@ -28,7 +28,7 @@ BUGFIXES:
 016 --> 282319 - Empty Unremovable Keyword.
 017 --> 282194 - digikam 2.1.1 crashes when displaying thumbnails in import screen.
 018 --> 255520 - digiKam crashed while assigning tags to pictures.
-019 --> 271473 - digiKam crashes reproducably when scanning collection after re-organising underlying picture folders.
+019 --> 271473 - digiKam crashes reproducibly when scanning collection after re-organising underlying picture folders.
 020 --> 265893 - Seg. Fault. when importing PNG files with .JPG extension.
 021 --> 242171 - digiKam hangs at 0% in editor when using the "Sharpen" tool.
 022 --> 241585 - digiKam hangs at 0% in editor when calling "Save as".
@@ -43,7 +43,7 @@ BUGFIXES:
 031 --> 282568 - Group By Time feature [patch].
 032 --> 237357 - Thumbnail's album can't be displayed.
 033 --> 282869 - List of cmake configuration options.
-034 --> 282925 - Not able to write Matadata to pictures.
+034 --> 282925 - Not able to write Metadata to pictures.
 035 --> 282948 - Face recognition crashes digiKam (again).
 036 --> 283052 - Light table always displays reduced size preview.
 037 --> 199317 - Support title/description as Facebook Photo Caption [patch].
@@ -57,5 +57,5 @@ BUGFIXES:
 045 --> 282101 - Converting Canon CR2 images result in empty images.
 046 --> 267309 - Translation of Add in timeadjust does not come from tool.
 047 --> 282588 - Center portrait images [patch].
-048 --> 240916 - Question for web authentification: Better button names [patch].
+048 --> 240916 - Question for web authentication: Better button names [patch].
 049 --> 282829 - Gettext should use standard plurals coding for strings 95 & 96.

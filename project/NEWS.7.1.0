@@ -103,7 +103,7 @@ BUGFIXES:
 091 --> 351400 - digiKam crash when tagging.
 092 --> 352174 - Crash when choosing an icon for a new tag.
 093 --> 352313 - digiKam crashes when using page up or page down to switch between pictures every third to Fifth time.
-094 --> 353131 - HUGIN error "pto2mk" mising with digiKam 13.0 AND "component information" lacks information of HUGIN's components.
+094 --> 353131 - HUGIN error "pto2mk" missing with digiKam 13.0 AND "component information" lacks information of HUGIN's components.
 095 --> 353236 - digiKam dies after tagging multiple files.
 096 --> 353456 - Picture taken with camera with GPS off -> appears as geolocalised.
 097 --> 353457 - Panorama tool does not work anymore after updating Hugin to Hugin 2015.
@@ -216,7 +216,7 @@ BUGFIXES:
 204 --> 424786 - Scroll Bars cover up sort icons.
 205 --> 159477 - "Robust metadata support", "Exception resistance", "Versioning", "Outside Program Interference".
 206 --> 425193 - panorama tool seems to miss components to run.
-207 --> 375560 - interruptable BQM.
+207 --> 375560 - interruptible BQM.
 208 --> 425237 - No way to show back the hidden menu bar.
 209 --> 425220 - LightTable "put into bin" function deletes pictures unrecoverable.
 210 --> 374379 - After drag-n-dropping photos the view shifts to far down.
@@ -227,7 +227,7 @@ BUGFIXES:
 215 --> 425329 - Tags in Tags tab, and keywords in Metadata, don't match.
 216 --> 418829 - Thumbnails of moved images not visible.
 217 --> 425423 - White screen at beginning of Presentation should be avoided.
-218 --> 425424 - Allow seting max resolution for export to filesystems.
+218 --> 425424 - Allow setting max resolution for export to filesystems.
 219 --> 425448 - Cannot switch input text in different languages.
 220 --> 425432 - Year separated with dot in title over icons when month selected.
 221 --> 425425 - No shortcuts available for Slideshow entries anymore in Configure Keyboard Shortcuts.
@@ -318,7 +318,7 @@ BUGFIXES:
 306 --> 130728 - Wrong exif and properties data, and broken thumbnail when saving an image.
 307 --> 309529 - Thumbnails are rotated according to exif tag, images not.
 308 --> 130943 - Application should display the default EXIF rotation currently used.
-309 --> 133291 - Upload drops exif informations when asked to resize images.
+309 --> 133291 - Upload drops exif information when asked to resize images.
 310 --> 289845 - digiKam does not rename .xmp files together with the image files.
 311 --> 417121 - Crash when switching to google maps in "Edit Geolocation" with v7.0.0-beta-2, beta 1 is ok.
 312 --> 424618 - When clicking on maps digiKam crash.

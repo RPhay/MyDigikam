@@ -41,11 +41,11 @@ BUGFIXES:
 013 --> 376621 - Cannot Enter Data In Geolocation Editor Details Tab.
 014 --> 376049 - Any album appears empty on startup until I select another album to view.
 015 --> 378836 - digiKam Crash when start searching for persons.
-016 --> 378804 - lensfun uses only one core, pls. parallize [patch].
+016 --> 378804 - lensfun uses only one core, pls. parallelize [patch].
 017 --> 378703 - Download page : add link to pre-version bundle repository from GDrive.
 018 --> 379038 - Camera date Tool-Tip Option Appears Ineffective.
 019 --> 378625 - Very slow start.
-020 --> 379152 - Presentation mode cannot be exited/quitted.
+020 --> 379152 - Presentation mode cannot be exited/quit.
 021 --> 374838 - Advanced Search not finding "Not Tagged" images.
 022 --> 379326 - Import-Tool doesn't rename properly.
 023 --> 379442 - AppImage package does not find the files needed for panorama.

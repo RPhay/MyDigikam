@@ -58,7 +58,7 @@ BUGFIXES:
 029 --> 408586 - digiKam search, thumbnails don't refresh correctly.
 030 --> 457422 - Cannot select items in table view.
 031 --> 457421 - digiKam treats .MOV files differently from .JPG files by creation timestamp in metadata to match local time.
-032 --> 457580 - Not possible to view HEIC files with Swedish charaters in path.
+032 --> 457580 - Not possible to view HEIC files with Swedish characters in path.
 033 --> 457479 - digiKam does not help the user to enter dates quickly.
 034 --> 457662 - digiKam implodes when run by root because QtWebEngine exits.
 035 --> 457693 - digiKam crashes if trying to delete selection of multiple files.
@@ -68,7 +68,7 @@ BUGFIXES:
 039 --> 457896 - In People view, the viewport doesn't scroll to the selected face photo thumbnail when arrow keys or PgUp/PgDn are used.
 040 --> 457972 - digiKam Crash when select multiple files and add to cue to batch process.
 041 --> 458023 - Print Creator: Impossible to include Gimp binaries.
-042 --> 458029 - Duplicate tags keep reappering at their old places in hierarchy.
+042 --> 458029 - Duplicate tags keep reappearing at their old places in hierarchy.
 043 --> 384285 - Text unclear in documentation.
 044 --> 458108 - Thumbnail disappears when image is renamed, reappears only on selection or mouseover.
 045 --> 458145 - Geolocation editor works properly when opened from ShowFoto but not when opened from digiKam.

@@ -31,7 +31,7 @@ General       : Internal libraw updated to 0.20-RC2 (https://www.libraw.org/news
                     Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III,
                     Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95,
                     PhaseOne IQ4 150MP,
-                    Rapsberry Pi RAW+JPEG format,
+                    Raspberry Pi RAW+JPEG format,
                     Ricoh GR III,
                     Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII,
                     Zenit M,
@@ -280,7 +280,7 @@ BUGFIXES:
 237 --> 316161 - Reuse face tags from another picture.
 238 --> 412999 - Some photos downloaded in previous version of digikam no more recognized as already downloaded.
 239 --> 334215 - Cannot open RAW files from Sony A7R.
-240 --> 340595 - Convertion Sony A7 raw file turns to red the result.
+240 --> 340595 - Conversion Sony A7 raw file turns to red the result.
 241 --> 307313 - digiKam uses wrong darkness/saturation values.
 242 --> 315156 - CR2 files from Canon PowerShot G1 X the colours are messed up.
 243 --> 332126 - LibRaw_r_LIBRARIES CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
@@ -600,7 +600,7 @@ BUGFIXES:
 557 --> 409906 - Crash at Startup in geolocation about QtWebEngine.
 558 --> 416371 - 7.0.0-beta bug in Album tree view sorting order.
 559 --> 404901 - Google auth dialog => firefox google auth window not closed.
-560 --> 372340 - Tagged face areas on portait (vertical) oriented images are mispositioned.
+560 --> 372340 - Tagged face areas on portrait (vertical) oriented images are mispositioned.
 561 --> 415941 - Face identification in wrong place.
 562 --> 415550 - Faces setup by Picasa are not displayed correctly on rotated/portrait pictures.
 563 --> 413926 - Incompatibility between software, for face regions on auto-rotated portrait position photos.
@@ -618,7 +618,7 @@ BUGFIXES:
 575 --> 398869 - Tabs text gone when digiKam window active.
 576 --> 204479 - Unable to use digiKam on Windows.
 577 --> 414176 - Recognition of people.
-578 --> 415521 - digiKam is crashing very oftenly while loading preview of an image on Windows 10.
+578 --> 415521 - digiKam is crashing very often while loading preview of an image on Windows 10.
 579 --> 412453 - Crash after adding a new album-network drive.
 580 --> 412950 - While processing new collection, any (mouse) action will result in crash of digiKam.
 581 --> 398674 - digiKam duplicates an album when the folder name has been renamed to lowercase or uppercase.

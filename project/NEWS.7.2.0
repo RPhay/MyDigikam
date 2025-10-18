@@ -116,7 +116,7 @@ BUGFIXES:
 073 --> 132631 - digiKam does not restore main window size.
 074 --> 425238 - Abnormally large icons.
 075 --> 292902 - After choosing a dark theme the album view still with a white background and unreadable yellow or white font.
-076 --> 229043 - digiKam dark designs are not redable.
+076 --> 229043 - digiKam dark designs are not readable.
 077 --> 426575 - The album shows the contents of sub folders before the main folders.
 078 --> 426635 - Healing Clone Tool missing from (Image Editor) Enhance Menu.
 079 --> 087106 - Advancedslideshow : option to pause, go back or forward, and quit/resume.
@@ -250,7 +250,7 @@ BUGFIXES:
 207 --> 430427 - PSD files cannot be viewed. Thumbnails are OK.
 208 --> 430566 - Make DK_PLUGIN_PATH allow multiple paths.
 209 --> 429103 - digiKam 7.1.0 does not start up, when using macos big sur.
-210 --> 372487 - BQM says there are unprocessed items even though it completed successfuly and all images were processed.
+210 --> 372487 - BQM says there are unprocessed items even though it completed successfully and all images were processed.
 211 --> 430664 - How to access a database and files from another computer in LAN.
 212 --> 430684 - Renaming mp4 files - metadata fields have no values.
 213 --> 430589 - Want to disable face detection extra download on Mac version.
@@ -358,7 +358,7 @@ BUGFIXES:
 315 --> 401941 - Beta3 / beta2 launches but hangs... Now fear for DB!
 316 --> 400941 - Crash with segmentation fault when writing a large amount of metadata to images.
 317 --> 341510 - Imported GPX Files generate an error when GPX-File contains 'unusual' tags.
-318 --> 432789 - Imported Pictures (RAW, CR3, Canon M6 Mark II) doesn´t have the rigth Rotation.
+318 --> 432789 - Imported Pictures (RAW, CR3, Canon M6 Mark II) doesn´t have the right Rotation.
 319 --> 432957 - Some tags appear beneath "People" parent tag in People view/panel.
 320 --> 430761 - Windows digikam.exe application icon missing.
 321 --> 433060 - Inconsistency between metadata displayed and metadata taken in account to rename.

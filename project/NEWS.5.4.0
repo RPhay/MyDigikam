@@ -4,7 +4,7 @@ digiKam 5.4.0 - Release date: 2017-01-08
 NEW FEATURES:
 
 Searches     : Improvements of duplicate searches to introduce a range of similarity of items.
-Searches     : Improvements of duplicate searches to be able to sort search albums list view by similary level.
+Searches     : Improvements of duplicate searches to be able to sort search albums list view by similarly level.
 Searches     : Improvements of duplicate searches to permit multiple selection in search albums list view.
 Searches     : Improvements of fuzzy searches to permit fuzzy search on local images not present in the database via drag & drop.
 Searches     : Improvements of duplicate/fuzzy/sketch searches to permit sorting the resulting images in image view by similarity level.
@@ -132,7 +132,7 @@ BUGFIXES:
 079 --> 301029 - Meaningless video preview.
 080 --> 242799 - digiKam segfaults when opening video.
 081 --> 260594 - digiKam crashed when starting video playback.
-082 --> 230985 - digiKam veiwing album click on video file program crashed.
+082 --> 230985 - digiKam viewing album click on video file program crashed.
 083 --> 151539 - Usability - scrolling into video takes long time without visual indication to user.
 084 --> 332074 - Crash while playing video and adding a color-tag.
 085 --> 336309 - digiKam crashes when opening video.
@@ -203,7 +203,7 @@ BUGFIXES:
 150 --> 366234 - Import from card readers starts automatically when digikam is started.
 151 --> 374185 - Tagging problem when two names like 'Name%'.
 152 --> 372481 - Face tag assignment with copy/paste.
-153 --> 284780 - Face assignement need to use both mouse and keyboard to name persons.
+153 --> 284780 - Face assignment need to use both mouse and keyboard to name persons.
 154 --> 368124 - Face tag inside album view is case sensitive.
 155 --> 360155 - Tag list is not filtered during face tag naming.
 156 --> 374354 - Installer adds "Uninstall" item to Start menu.

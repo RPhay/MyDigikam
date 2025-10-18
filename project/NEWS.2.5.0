@@ -16,7 +16,7 @@ BUGFIXES:
 005 --> 265197 - Please specify dependencies of digikam-2.0, and make digikam-2.0/core also build with stock desktop.
 006 --> 188709 - Tag hierarchy not properly restored from files (IPTC).
 007 --> 271707 - Crash when starting after sleeping mode - previous task: rebuild all fingerprints.
-008 --> 269989 - Several crashes, unclear backround ( picsize "15GB"?, thumbnails-digikam.db 3, 5GB, memory 4GB? ).
+008 --> 269989 - Several crashes, unclear background ( picsize "15GB"?, thumbnails-digikam.db 3, 5GB, memory 4GB? ).
 009 --> 279954 - Thumbnails are not properly displayed, while they are OK in "view image" mode.
 010 --> 284909 - Manually built 2.2.0 digikam crashes in first time settings selection.
 011 --> 166027 - More efficient way of selecting tags.
@@ -118,7 +118,7 @@ BUGFIXES:
 107 --> 259370 - Crash when making a slideshow.
 108 --> 235112 - Application crashed trying to save scan as TIFF.
 109 --> 288674 - digiKam crashes when i close the export window (export to yandex-fotki).
-110 --> 288465 - Spelling-error-in-binary flashexport Unkown Unknown.
+110 --> 288465 - Spelling-error-in-binary flashexport Unknown Unknown.
 111 --> 203603 - Country names in digikam should come from iso_3166 GNU package.
 112 --> 268760 - Facebook uploader crashed.
 113 --> 171303 - Auto-rotate on advanced slideshow doesn't work.

@@ -57,7 +57,7 @@ BUGFIXES:
 010 --> 278577 - Display album thumbnails in welcome page.
 011 --> 138200 - Display all pictures when root album (as "My Albums" and "My Tags") is selected instead of welcome page.
 012 --> 348173 - digiKam crash during i was browsing photo in a directory.
-013 --> 349925 - Fail cmake chek if -DENABLE_KFILEMETADATASUPPORT=ON is not set.
+013 --> 349925 - Fail cmake check if -DENABLE_KFILEMETADATASUPPORT=ON is not set.
 014 --> 333377 - Show warning messagebox when non-RAW file is added to DNGWriter instead of none.
 015 --> 122653 - File-dialogue claims that pictures are not on the local-storage, yet they are
 016 --> 348347 - Can't create albums - menu is greyed out.
@@ -96,7 +96,7 @@ BUGFIXES:
 049 --> 355552 - Use the 1st item in "Open with..." if digiKam does not have embedded support for "preview".
 050 --> 356080 - digiKam does not open preview for LZW non-stripped TIFFs created by ScanTailor.
 051 --> 354887 - ISO speed rating missing after DNG conversion.
-052 --> 331628 - MYSQL : digiKam talk's uncompatible SQL with TokuDB database engine.
+052 --> 331628 - MYSQL : digiKam talk's incompatible SQL with TokuDB database engine.
 053 --> 281838 - THUMBDB : thumbnail tables are always created in images database.
 054 --> 323507 - digitaglinktree : usage with mysql instead of sqlite [patch].
 055 --> 287405 - BQM AdjustCurves tool : Load curves settings file.
@@ -127,7 +127,7 @@ BUGFIXES:
 080 --> 359097 - Crash after processing a batch queue.
 081 --> 359098 - Edited images are sorted before originals.
 082 --> 359088 - With "Show a count of items in Tree Views" Trash always shows count of 0 [patch].
-083 --> 358913 - Using Versionning, after returning from edit mode wrong image is selected, image itself is not updated [patch].
+083 --> 358913 - Using Versioning, after returning from edit mode wrong image is selected, image itself is not updated [patch].
 084 --> 358144 - Moving images with special characters in the file name does not work.
 085 --> 359196 - digiKam segfaults when tagging a face.
 086 --> 358081 - Tags Manager - selecting tags from tree-view do not focus tags title field in right sidebar.
@@ -300,7 +300,7 @@ BUGFIXES:
 253 --> 316237 - Only one thumbnail shown in calendar month/year view.
 254 --> 317114 - digikam searching files in wrong folder.
 255 --> 242816 - digikam gets stuck when moving and renaming a lot of albums.
-256 --> 331629 - No clear error messages while intsalling.
+256 --> 331629 - No clear error messages while installing.
 257 --> 285994 - digikam fails to open database at startup.
 258 --> 317247 - No picture is found after update to ver 3.0.0.
 259 --> 296767 - pick labels lost somewhere during digikam update.
@@ -338,7 +338,7 @@ BUGFIXES:
 291 --> 205250 - digiKam unknown crash without backtrace.
 292 --> 210775 - Crash core dump showfoto.
 293 --> 206803 - Opening jpg with Showfoto causes crash.
-294 --> 232852 - The aplication digikam closed.
+294 --> 232852 - The application digikam closed.
 295 --> 241422 - digiKam crashed while viewing pictures.
 296 --> 250248 - Regenerating all thumbnails crashes digikam.
 297 --> 241775 - Crash when editing tags from left hand column filter by tag.

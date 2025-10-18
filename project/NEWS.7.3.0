@@ -5,7 +5,7 @@ NEW FEATURES:
 
 General : Add new metadata viewer based on ExifTool.
 General : Better support of astrophoto FITS image format (Flexible Image Transport System) including metadata extraction support to populate the database.
-General : Better support of MPO image format (Multiple Picture Object) inluding metadata extraction support to populate the database.
+General : Better support of MPO image format (Multiple Picture Object) including metadata extraction support to populate the database.
 General : Digital Scanner plugin is now available under Windows.
 General : Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).
 General : Use last KF5 framework 5.80 in all bundles.
@@ -45,7 +45,7 @@ BUGFIXES:
 021 --> 435250 - No Photograph Properties for DNG files.
 022 --> 435239 - Malfunctioning group.
 023 --> 435267 - Hierarchical Keywords.
-024 --> 435272 - No entries in recogition databases.
+024 --> 435272 - No entries in recognition databases.
 025 --> 435275 - Themes Management.
 026 --> 435277 - Translation bug: german translation.
 027 --> 435314 - digiKam 7.3.0 doesn't respect the MySQL (MariaDB) database folder stipulated on settings, after migration from SQLITE.
@@ -77,7 +77,7 @@ BUGFIXES:
 053 --> 335630 - digiKam crashes when clicking image editor.
 054 --> 335667 - digiKam crash on tag delete.
 055 --> 336259 - digiKam crashed during opening the edit action (F4) to open picture for edit.
-056 --> 395037 - Altitude is not setted on CR2 files.
+056 --> 395037 - Altitude is not set on CR2 files.
 057 --> 307408 - Not possible to deselect ZoomR and 23 HQ export module but keep flickr.
 058 --> 421903 - Add IPTC/XMP location metadata to advanced search.
 059 --> 343066 - Downloading pictures from iPhone.
@@ -108,7 +108,7 @@ BUGFIXES:
 084 --> 338358 - Segmentation fault in libthread_db.so.1 saving jpeg in new version after editing.
 085 --> 338600 - digiKam crashes in sqlite with segfault when importing.
 086 --> 342750 - Crash while try to export.
-087 --> 338025 - Geolocation doens't show map.
+087 --> 338025 - Geolocation doesn't show map.
 088 --> 338007 - Lookup missing altitude values is broken.
 089 --> 337689 - Color profile settings is lost at next BQM session.
 090 --> 435345 - Olympus *.ori images.
@@ -198,7 +198,7 @@ BUGFIXES:
 174 --> 366034 - Crash at edit metadata for jpgs made by a Casio EX-Z500.
 175 --> 365691 - digiKam freezes when using «tool» «slideshow»«presentation» and trying to add an image.
 176 --> 359412 - digiKam Crash when trying to set an Label (write to file).
-177 =+> 355126 - Crashed when tumbnails or pictures turned right.
+177 =+> 355126 - Crashed when thumbnails or pictures turned right.
 178 --> 353865 - Sluggish write of metadata.
 179 --> 350423 - digiKam crashes while uploading from a corrupt EyeFi SD card.
 180 --> 350367 - digiKam crash when saving edited picture.
@@ -261,7 +261,7 @@ BUGFIXES:
 237 --> 284889 - ShowPhoto crash at start.
 238 --> 426327 - Overriding Default Media Player Does Not Work.
 239 --> 193238 - Advanced search in origin fields (Location, City, Country etc.).
-240 --> 435987 - digiKam Not Reponding in Table view.
+240 --> 435987 - digiKam Not Responding in Table view.
 241 --> 329834 - Crash during miniature update.
 242 --> 212740 - Group images by aspect ratio.
 243 --> 152715 - Album independent search needed.
@@ -273,9 +273,9 @@ BUGFIXES:
 249 --> 224789 - Handle RAW and jpegs as one virtual image.
 250 --> 188968 - JPEG+RAW joint renaming feature.
 251 --> 164756 - Working with JPEGs instead of RAWs.
-252 --> 151228 - Whish: Skip / ingore RAW when corresponding JPG exists.
+252 --> 151228 - Whish: Skip / ignore RAW when corresponding JPG exists.
 253 --> 147933 - WISH: link the keywords of images with same name but different extension img1245.jpg liked to img1245.dng.
-254 --> 147886 - Managment of raw files (as duplicate of jpg files).
+254 --> 147886 - Management of raw files (as duplicate of jpg files).
 255 --> 147427 - Make digiKam know JPG file is from RAW.
 256 --> 212108 - Double click and highlighting.
 257 --> 273642 - Dates of selected images not used in new album when importing.
@@ -294,7 +294,7 @@ BUGFIXES:
 270 --> 149063 - Open tool menu crash.
 271 --> 219512 - Segfault (SIGSEGV) when using any non-color changing tool.
 272 --> 383855 - digiKam crash when stacking 5 images.
-273 --> 266660 - Crashed after successfuly converting png image to jpg.
+273 --> 266660 - Crashed after successfully converting png image to jpg.
 274 --> 435411 - Wrong language setup.
 275 --> 435893 - There is only the default theme available.
 276 --> 411780 - Rename with date while Importing CR2 from Camera produces wrong time.
@@ -302,7 +302,7 @@ BUGFIXES:
 278 --> 336514 - Crashed while clicking on a folder.
 279 --> 336869 - digiKam segfaults in inverse perspective adjustment.
 280 --> 341424 - digiKam crashes when cancelling export.
-281 --> 341529 - Crash Everytime on "advance slideshow" after a few seconds.
+281 --> 341529 - Crash Every time on "advance slideshow" after a few seconds.
 282 --> 342802 - Crashes in editor.
 283 --> 343243 - Crashed while selecting 'Print Assistant'.
 284 --> 344587 - digiKam crash while downloading photos from SDcard.
