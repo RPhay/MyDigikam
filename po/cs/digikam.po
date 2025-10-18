@@ -324,13 +324,12 @@ msgstr[1] "Změnit jména tváří z '%2' na '%3'"
 msgstr[2] "Změnit jména tváří z '%2' na '%3'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%1' to Items"
 msgid_plural "Assign Tag(s) '%1' to Items"
-msgstr[0] "Přiřadit značku(y) '%1' položkám"
-msgstr[1] "Přiřadit značku(y) '%1' položkám"
-msgstr[2] "Přiřadit značku(y) '%1' položkám"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -21495,12 +21494,10 @@ msgstr "Nebyl vybrán žádný obrázek. Prosím vyberte obrázky pro odeslání
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Warning"
-msgstr "Varování"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:248
 #: core/dplugins/generic/webservices/google/gswindow.cpp:519
@@ -21517,11 +21514,10 @@ msgstr "Ověření totožnosti selhalo. Klikněte na \"Pokračovat\" pro ověře
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Continue"
-msgstr "Pokračovat"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/google/gswindow.cpp:523
@@ -21529,11 +21525,10 @@ msgstr "Pokračovat"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:280
 #: core/dplugins/generic/webservices/google/gswindow.cpp:380
@@ -22901,34 +22896,28 @@ msgstr "Volání Google Drive selhalo: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Error"
-msgstr "Chyba"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
-msgstr "%v / %m"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "Web Service: GDRIVE"
-#| msgid "Google Drive"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Drive export"
-msgstr "Google Drive"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "Web Service: GPHOTO"
-#| msgid "Google Photo"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Photos export"
-msgstr "Google Photo"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
@@ -37211,12 +37200,10 @@ msgid "Rating: "
 msgstr "Hodnocení: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
-msgstr "Verzováno: "
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:244
 #, kde-format
@@ -38396,11 +38383,10 @@ msgid "Tagging Mode:"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Nahradit"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
@@ -51534,11 +51520,10 @@ msgid "m"
 msgstr "m"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
-msgstr "mm"
+msgstr ""
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:166
 #, kde-format
@@ -55537,10 +55522,9 @@ msgid "Look up missing altitude values"
 msgstr "Vyhledat chybějící hodnoty nadmořské výšky"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
-#, fuzzy, kde-format
-#| msgid "Images with coordinates"
+#, kde-format
 msgid "Items have different coordinates."
-msgstr "Obrázky se souřadnicemi"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
@@ -65984,7 +65968,3 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
-
-#~ msgctxt "means milimeters"
-#~ msgid "mm"
-#~ msgstr "mm"
