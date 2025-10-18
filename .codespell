@@ -1,15 +1,10 @@
 #!/bin/bash
 
-################################################################################
+# SPDX-FileCopyrightText: 2008-2025 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
 #
 # CodeSpell static analyzer configuration used by project/reports/codespell.sh
-#
-# 2013-2025 - Gilles Caulier <gilles.caulier@cea.fr>
-#
-# Licensed Material - Program Property of CEA
-# (c) CEA Cadarache - DER/CAD/SPESI/LP2E
-#
-################################################################################
 
 # --- Directories and files to exclude from CodeSpell static analysis.
 
