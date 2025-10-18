@@ -205,7 +205,7 @@ BUGFIXES:
 158 --> 240212 - Problem changing toolbar icons.
 159 --> 326106 - Crash on startup.
 160 --> 192257 - directory with new photo's not shown.
-161 --> 338561 - "Add Image" crashes everytime.
+161 --> 338561 - "Add Image" crashes every time.
 162 --> 333575 - Crash on complete maintenance.
 163 --> 327781 - App crashed after first use.
 164 --> 327169 - digiKam crash during load database.
@@ -380,7 +380,7 @@ BUGFIXES:
 333 --> 203379 - Error while converting RAW images to JPEG.
 334 --> 161347 - Application doesn't clean properly ~/tmp.
 335 --> 177175 - Resize image prepare to print 9x13 results in wrong.
-336 --> 213172 - Convert images: png conversion not deterministic.
+336 --> 213172 - Convert images: png conversion not determineistic.
 337 --> 289181 - Raw processor rotates images without Orientation EXIF tag.
 338 --> 211524 - Raw batch converter can't get rid of scroll bar.
 339 --> 215037 - Batch RAW converter crashed after open with NEF file.
@@ -397,7 +397,7 @@ BUGFIXES:
 350 --> 358759 - Unable to import/export from google photos.
 351 --> 363925 - Export Menu - Export to Smugmug not working.
 352 --> 361323 - Application "Send To..." button crash.
-353 --> 309613 - Crash on exit after unsucessful photo time adjustment.
+353 --> 309613 - Crash on exit after unsuccessful photo time adjustment.
 354 --> 303878 - digiKam crashed after clicking "Photo -> Adjust Date and Time".
 355 --> 150191 - Embedded thumbnail date is used for sorting.
 356 --> 296113 - Regression: Can't transfer EXIF creation date to file date.

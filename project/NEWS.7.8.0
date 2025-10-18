@@ -72,7 +72,7 @@ BUGFIXES:
 043 --> 384285 - Text unclear in documentation.
 044 --> 458108 - Thumbnail disappears when image is renamed, reappears only on selection or mouseover.
 045 --> 458145 - Geolocation editor works properly when opened from ShowFoto but not when opened from digiKam.
-046 --> 458228 - Hugin doesnt work in Wayland.
+046 --> 458228 - Hugin doesn't work in Wayland.
 047 --> 458260 - How can i switch to full Russian version of digiKam.
 048 --> 458314 - digiKam crashes while editing picture.
 049 --> 457871 - digiKam packages for a while not building.

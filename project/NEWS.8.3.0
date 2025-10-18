@@ -8,7 +8,7 @@ Maintenance    : Add new tool to assign tag automatically to images using deep l
                  https://community.kde.org/GSoc/2023/StatusReports/QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam
 QueueManager   : New tool to assign tag automatically to images using deep learning neural network engine.
 QueueManager   : New tool to apply metadata from an image or JSON file to images.
-General        : Add Generic Network Proxy Settings to acess on Internet ressources.
+General        : Add Generic Network Proxy Settings to access on Internet resources.
 Bundles        : AppImage uses frameworks Qt 5.15.12 and KDE 5.115.
 Bundles        : Windows installer use frameworks Qt 6.6.1 and KDE snapshot 30122023.
 General        : Update internal Libraw to snapshoot 2024-02-02.
@@ -147,7 +147,7 @@ BUGFIXES:
 124 --> 479578 - Import errors claiming imported path is already part of album path.
 125 --> 479602 - Image editor: slider input not usable.
 126 --> 479613 - digiKam crashes when I want to add a tag for a new face.
-127 --> 131239 - Adjust lenght of audio before video slide.
+127 --> 131239 - Adjust length of audio before video slide.
 128 --> 479585 - Can't open and read HEIF file from Fujifilm XT-5.
 129 --> 471992 - digiKam 8.0.0 crashes when downloading face files.
 130 --> 479635 - Metadata fields can no longer be accessed using the Tab key.
@@ -185,7 +185,7 @@ BUGFIXES:
 162 --> 480288 - Allow manual date entry in Adjust Time and Date.
 163 --> 480277 - Missing XMP Subject field in image metadata.
 164 --> 479833 - Some .xmp files are not taken in account during a maintenance metadata check run.
-165 --> 480324 - The Programm crash when I type in the name for a person in the box that is shown when I hover over the face.
+165 --> 480324 - The Program crash when I type in the name for a person in the box that is shown when I hover over the face.
 166 --> 480334 - digiKam crash on name input (face recognition).
 167 --> 468572 - Webm vp9 video not playing.
 168 --> 382582 - Video stutters when played with MP3 audio track.

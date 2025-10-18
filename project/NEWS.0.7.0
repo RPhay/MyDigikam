@@ -14,7 +14,7 @@ BUGFIXES:
 001 --> 205603 - Crash on finishing Batch Unsharp mask.
 002 --> 199533 - Enable dateframes theme in -tools [patch].
 003 --> 111509 - Subalbums not supported by HTML export.
-004 --> 205833 - Batch raw converter uses first dot in filename to determine file ending.
+004 --> 205833 - Batch raw converter uses first dot in filename to determinee file ending.
 005 --> 199181 - Gps sync unable to use search field.
 006 --> 197377 - Batch -> Image Filtering -> Unsharp Mask: Wrong Threshold.
 007 --> 204437 - DNGWriter turns olympus ORF unusable.

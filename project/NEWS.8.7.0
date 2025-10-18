@@ -22,7 +22,7 @@ OpenCV/OpenCL    The user can now turn off OpenCL for the AI models preventing c
                  See Settings->Miscellaneous->System.
 Plugins:         New G'MIC Generic plugin working as layer mode from the stack of images (icon-view, Editor stack,
                  Showfoto Stack, Light Table stack). This allow to assemble photos together,
-                 for exemple using the Montage G'MIC filter.
+                 for example using the Montage G'MIC filter.
                  G'MIC-Qt updated to last v3.5.0.
 
 *****************************************************************************************************
@@ -105,10 +105,10 @@ BUGFIXES:
 075 --> 229749 - digiKam downloading from Olympus as USB.
 076 --> 228793 - digiKam import from directory.
 077 --> 228489 - digiKam cannot autodetect camera when gvfs-gdu-volume-monitor is running.
-078 --> 225538 - While transfering images from canon camera to the hard drive digiKam crash.
+078 --> 225538 - While transferring images from canon camera to the hard drive digiKam crash.
 079 --> 221656 - I was downloading photos to an album in digiKam.
 080 --> 221391 - Crash while uploading from SD Card reader.
-081 --> 221205 - digiKam crashes when transfering photos from Canon IXUS digital camera.
+081 --> 221205 - digiKam crashes when transferring photos from Canon IXUS digital camera.
 082 --> 221173 - Crashed when importing selected pictures.
 083 --> 221163 - Can not download picture files from camera.
 084 --> 221160 - Download new files from Canon PowerShot A40.
@@ -121,7 +121,7 @@ BUGFIXES:
 091 --> 220174 - Picture Download from Camera / Panasonic DMC-FX 100.
 092 --> 220002 - digiKam import from Camera.
 093 --> 219628 - Sony import crash.
-094 --> 219584 - Crash of digiKam everytime trying load the photos from the camera Canon A570 IS.
+094 --> 219584 - Crash of digiKam every time trying load the photos from the camera Canon A570 IS.
 095 --> 210518 - Add Option to disable the DSplitterButton.
 096 --> 100770 - wish: create album from selected pictures.
 097 --> 088805 - digiKam: wish: popup image information only when over the thumbnail.
@@ -131,7 +131,7 @@ BUGFIXES:
 101 --> 501925 - OpenCV dlls not recognised; OpenCV not running; face detection detects no face at all; face detection failure.
 102 --> 501978 - No Database created at startup
 103 --> 502003 - digiKam exits abruptly when attempting to open help.
-104 --> 502051 - Tag tree in right window pane (under the Tag tab) doesnt work consistently as regards nested item memberships.
+104 --> 502051 - Tag tree in right window pane (under the Tag tab) doesn't work consistently as regards nested item memberships.
 105 --> 502048 - Save tiff to tiff make corrupt output file.
 106 --> 501298 - Crash after creating an sub album in a sub window.
 107 --> 502173 - digiKam - white screen.
@@ -170,7 +170,7 @@ BUGFIXES:
 140 --> 499580 - Variable RAW conversion via different tools?
 141 --> 498145 - Appimage for 8.5.0 will not run.
 142 --> 393068 - digikam.coredb: Core database: Album library path from config file is empty. Aborting update.
-143 --> 498392 - Creating new print wizzard templates.
+143 --> 498392 - Creating new print wizard templates.
 144 --> 485333 - Print creator - how to change a template.xml.
 145 --> 476424 - Files can't be imported to album on SMB share.
 146 --> 468646 - I can not import news albums.
@@ -227,7 +227,7 @@ BUGFIXES:
 197 --> 504045 - Misleading Link on Support Page.
 198 --> 504044 - Duplicate Result Table does not properly resize.
 199 --> 497588 - digiKam crashes when adjusting date and time for multiple photos consecutively without restarting the application.
-200 --> 504056 - View on small images doesnt scale above 100% automatically.
+200 --> 504056 - View on small images doesn't scale above 100% automatically.
 201 --> 504048 - Duplicate Result Table uses different Units than Search Dialogue.
 202 --> 503731 - On launching Digikam-8.6.0-Qt6-Win64 follows msg '..large binary files not found' and Download results in error.
 203 --> 503885 - Fails to write to sidecar file, leaving it corrupt.
@@ -265,6 +265,6 @@ BUGFIXES:
 235 --> 504699 - digiKam: Welcome screen inviting to initial setup while it was already done.
 236 --> 504210 - Trying to re-learn face recognition model prior downloading the CV model.
 237 --> 504135 - Fail to create sidecar file (Exiv2) for certain XMP block in metadata.
-238 --> 506037 - Adding directory #recycle to ignore makes most directories dissappear from album collection.
+238 --> 506037 - Adding directory #recycle to ignore makes most directories disappear from album collection.
 239 --> 249932 - Add OpenGL image effects when loading next image.
 240 --> 166614 - Animations on UI changes.

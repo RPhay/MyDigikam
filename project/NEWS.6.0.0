@@ -104,7 +104,7 @@ BUGFIXES:
 034 --> 313577 - Crashes when pressing the "send to" button.
 035 --> 313890 - Crash when clicking "Send to...".
 036 --> 315033 - Crashes on pressing Send To... button.
-037 --> 315914 - The facebook tool crashes everytime on initialization.
+037 --> 315914 - The facebook tool crashes every time on initialization.
 038 --> 326556 - Export tools are not loaded when starting host application for second time.
 039 --> 095175 - crash on loading, signal 11 SIGSEGV.
 040 --> 175844 - Crashes at startup loading Export tools.
@@ -414,7 +414,7 @@ BUGFIXES:
 344 --> 254878 - digiKam error segmentation fault when open it.
 345 --> 255759 - digikam crash when open it kunbuntu lucid.
 346 --> 249009 - digiKam crashes at initialisation.
-347 --> 236647 - After upgrading to Ubuntu 10.04 digiKam crashes everytime it is launched.
+347 --> 236647 - After upgrading to Ubuntu 10.04 digiKam crashes every time it is launched.
 348 --> 235905 - digiKam crash after upgrade.
 349 --> 185265 - digiKam constantly using some CPU in a poll loop due a timeout
 350 --> 250364 - digiKam crashes at start-up in xubuntu 10.04.
@@ -660,7 +660,7 @@ BUGFIXES:
 590 --> 215486 - Collection not found in location on disk with UUID (LVM volume).
 591 --> 401834 - The "Scanning Faces" dialog box is too large and can't be resized in french language.
 592 --> 401664 - Trash shows list view only no thumbnails.
-593 --> 402029 - Find New Items process takes significantly longer to finish on 6.0.0.
+593 --> 402029 - Find New Items process takes significannotly longer to finish on 6.0.0.
 594 --> 402286 - Metadata settings don't display the combo value options.
 595 --> 402288 - The default Xmp.lr.hierarchicalSubject setting does not read darktable tags.
 596 --> 402300 - Template string in Help > About.

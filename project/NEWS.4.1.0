@@ -10,7 +10,7 @@ AlbumGUI : Thumbnails from icon-view now support large resolution monitor (WQHD 
 *****************************************************************************************************
 BUGFIXES:
 
-001 --> 334633 - Album metadata sorted in non-deterministic way in some cases.
+001 --> 334633 - Album metadata sorted in non-determineistic way in some cases.
 002 --> 334631 - After editing album metadata album list is not re-sorted.
 003 --> 330598 - Using full screen mode and then quitting leads to a digikamrc which causes digiKam to hang when attempting to view an album.
 004 --> 311280 - digiKam crash on exit.

@@ -44,7 +44,7 @@ BUGFIXES:
 011 --> 484400 - digiKam doesn't find DB anymore after change of settings.
 012 --> 484398 - GPS Coordinates for JPEG files are not saved (needs two iterations).
 013 --> 484482 - Dragging an image on a tag does not assign this tag to the image.
-014 --> 484107 - After sucessful (?) installation on Win 10, digiKam app does not show any window.
+014 --> 484107 - After successful (?) installation on Win 10, digiKam app does not show any window.
 015 --> 484456 - C:\program is not recognized as an internal or external command.
 016 --> 484373 - Wrong time/timezone data.
 017 --> 484610 - Advanced search fails to find photos from Ricoh GR II when searching by 'Make'.
@@ -116,7 +116,7 @@ BUGFIXES:
 083 --> 481011 - The metadata tabs disappear from the right sidebar.
 084 --> 484371 - Disapearring sub tabs in Right Sidebar.
 085 --> 325844 - Add access to watermark tool in Image editor.
-086 --> 227946 - Adding frame in excentric position.
+086 --> 227946 - Adding frame in eccentric position.
 087 --> 342513 - Add support for fractional radius in blur and unsharp mask filters.
 088 --> 378392 - Implement custom LUT3D tables.
 089 --> 406484 - Possibility to use *.cube 3D LUT.
@@ -186,7 +186,7 @@ BUGFIXES:
 153 --> 277237 - Nikon coolpix s9100 support.
 154 --> 250055 - Was trying to import 2 of many pictures from my Canon.
 155 --> 249043 - Export as symbolic link to file system.
-156 --> 487920 - Adjust DateTime is unnecesarily slow - it re-reads all the images all the time.
+156 --> 487920 - Adjust DateTime is unnecessarily slow - it re-reads all the images all the time.
 157 --> 487925 - "Open in File Manager" just opens Windows Explorer and not the folder.
 158 --> 488384 - Video Slideshow fails to encode.
 159 --> 488385 - Video Slideshow fails to encode.

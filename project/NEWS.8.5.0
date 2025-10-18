@@ -109,7 +109,7 @@ BUGFIXES:
 084 --> 486632 - Camera is never detected using bundled gphoto2 libraries.
 085 --> 465652 - Rescan activated for all collection when adding new collection.
 086 --> 491040 - Unable to use Darktable for demosaicing on MacOS ARM.
-087 --> 448045 - Reduce intensity of Colour Labels Displayed in Album/Thumbnail View or Replace with Discreet Colour Label.
+087 --> 448045 - Reduce intensity of Colour Labels Displayed in Album/Thumbnail View or Replace with Discrete Colour Label.
 088 --> 487799 - Geolocalization icon always black in thumbnail view.
 089 --> 486341 - Edit Bookmarks menu item does nothing.
 090 --> 426968 - Album title bar in icon view should be a selection switch.
@@ -144,7 +144,7 @@ BUGFIXES:
 119 --> 494585 - XMP-dc:Subject tags not imported to the database with HEIF file.
 120 --> 494618 - Non-functioning shortcut ALT + Return in the right sidebar.
 121 --> 494623 - Arrow keys navigation leaves the focus from album tree-view to icon-view.
-122 --> 489625 - Most recent weekly doesnt start under windows (ucrtbase.dll error).
+122 --> 489625 - Most recent weekly doesn't start under windows (ucrtbase.dll error).
 123 --> 494528 - Thumbnails disappear with WAL option ON (pCloud lock).
 124 --> 494729 - Cannot Choose Customized Raw Import Tools on Mac.
 125 --> 494816 - Fails build on; coredburl.cpp:251:19: error: 'operator==' is not a member of 'QUrl'.
@@ -162,7 +162,7 @@ BUGFIXES:
 137 --> 401458 - Rename file name with recognized faces-tags.
 138 --> 495006 - digiKam crashes when trying to run yunet face detection.
 139 --> 495199 - digiKam-8.4.0-Qt6-x86-64.AppImage does not start on Tumbleweed.
-140 --> 494284 - Facedetecting - recommented name often not the detected name.
+140 --> 494284 - Facedetecting - recommended name often not the detected name.
 141 --> 495185 - Decimal separators need to be locale-aware.
 142 --> 485992 - Face recognition, small part or half face.
 143 --> 495269 - MXF files not displayed on digiKam.

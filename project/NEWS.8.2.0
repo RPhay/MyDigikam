@@ -98,7 +98,7 @@ BUGFIXES:
 083 --> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
 084 --> 396671 - Google photo: Cannot download more than 1000 photos at once.
 085 --> 472846 - digiKam doesn't write metadata to files/sidecars under unclear circumstances.
-086 --> 331878 - GROUP : the «grouped images icon» disapears when working on the main (front) image.
+086 --> 331878 - GROUP : the «grouped images icon» disappears when working on the main (front) image.
 087 --> 475428 - "Open With" Dialog is empty.
 088 --> 473376 - digiKam does not use date/time from metadata.
 089 --> 471200 - Windows 10 DigiKam Crash at Launch After Updating to 8.0.0.
@@ -178,7 +178,7 @@ BUGFIXES:
 163 --> 291304 - Single left click on album expands subtree.
 164 --> 289038 - Compile error in debian: setAboutData.
 165 --> 287787 - Can't build on Ubuntu x86-64.
-166 --> 283373 - digiKam shows splashscreen, but won't start - no crash report genereted.
+166 --> 283373 - digiKam shows splashscreen, but won't start - no crash report generated.
 167 --> 329390 - Auto-rotate Using Exif information: rotates wrong picture.
 168 --> 467226 - Allow albums/tags to exclude in duplicate finder workflow.
 169 --> 476073 - Assign Captions behavior in Batch Queue Manager.
@@ -228,7 +228,7 @@ BUGFIXES:
 213 --> 473436 - digiKam Sometimes hangs when the editor saves.
 214 --> 473961 - The program get close when i am trying to qualify several images automatically at once.
 215 --> 456849 - Malfunctions increase with more folders.
-216 --> 438429 - digiKam freeze whenever I confirm People Tags using a multiple selection with many faces (aprox 20).
+216 --> 438429 - digiKam freeze whenever I confirm People Tags using a multiple selection with many faces (approx 20).
 217 --> 474762 - New album (on external HDD) scan crashes at startup.
 218 --> 437658 - Crash on windows without OpenGL.
 219 --> 458143 - Opening a picture using OpenGL viewer generates an OpenGL error then digikam crashes.
@@ -259,7 +259,7 @@ BUGFIXES:
 244 --> 477650 - digiKam crash when there is a avif file.
 245 --> 477632 - Preview disappears after Image Editor.
 246 --> 145482 - Compile fails under Windows.
-247 --> 139154 - Can't compilate from source.
+247 --> 139154 - Can't compile from source.
 248 --> 104345 - Camera hang up during download.
 249 --> 147458 - Crash when reading EXIF from USB PtP camera or newly imported album.
 250 --> 169814 - Compilation error: no exp2().

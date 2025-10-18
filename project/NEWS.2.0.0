@@ -192,7 +192,7 @@ BUGFIXES:
 153 --> 248494 - Deleted pictures still shown: Have to rescan collection always.
 154 --> 275660 - Remove tag non-working when using face view.
 155 --> 274940 - digiKam freezes when using "sharpen: refocus" (cpu 100%).
-156 --> 268549 - digiKam crashes everytime i try to start.
+156 --> 268549 - digiKam crashes every time i try to start.
 157 --> 272031 - BQM wastes a lot of memory when adding over 3000 files.
 158 --> 275813 - digiKam hangs on startup (splash screen: reading database).
 159 --> 274729 - lighttable: the thumbnail slider does not work at all.

@@ -16,7 +16,7 @@ Bundles:         G'Mic-Qt BQM and Image Editor updated to last version 3.4.2.
 Setup:           Add new GPU hardware support options for decoding video with FFmpeg backend (Qt6 only).
 
 FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implementations.
-                 There are significant improvements coming in 8.6.0. The pipelines have
+                 There are significannot improvements coming in 8.6.0. The pipelines have
                  been completely rewritten and are 25%-50% faster when using full CPU. The face
                  detector has also been improved to reduce false positives. There is a
                  completely new face classifier using cross-validating KNN and SVM internal
@@ -55,7 +55,7 @@ BUGFIXES:
 
 001 --> 389046 - Face suggestions disappair each time i confirm one.
 002 --> 496379 - No longer possible to have RAW files as sidecars.
-003 --> 496389 - Tool to determin time difference from clock photo show diffent timestamp.
+003 --> 496389 - Tool to determine time difference from clock photo show different timestamp.
 004 --> 496381 - Possibility to compile MacOS-x86_64 against Qt6?
 005 --> 496395 - Check for New Version.
 006 --> 496378 - No Scanning of Collections/Albums Happen.
@@ -65,7 +65,7 @@ BUGFIXES:
 010 --> 496474 - digiKam 8.5 under macOS (Apple Silicon) - problem displaying HEIC of iPhone 16 pro.
 011 --> 496570 - {unique} does not take file extension into account.
 012 --> 496711 - Link to documentation in People View broken.
-013 --> 495722 - Assigning rating via keyboard shortcut doesnt work as expected (toggling vs assigning rating).
+013 --> 495722 - Assigning rating via keyboard shortcut doesn't work as expected (toggling vs assigning rating).
 014 --> 496619 - Fedora 41 appimage: symbol lookup error: /usr/lib64/libgnutls.so.30.
 015 --> 496771 - It is no longer possible to convert RAW images to DNG images.
 016 --> 496785 - digiKam appimage does not start with symbol lookup error: undefined symbol: nettle_rsa_oaep_sha384_decrypt.
@@ -126,7 +126,7 @@ BUGFIXES:
 071 --> 498406 - Double click behavior.
 072 --> 498391 - Hierarchical tags disappear.
 073 --> 498514 - Trash a image in macOS will not shown in Trash.
-074 --> 498519 - Build failled with mlpipelinemacros.h:53:68: error.
+074 --> 498519 - Build failed with mlpipelinemacros.h:53:68: error.
 075 --> 498603 - Face detection feature stopped working.
 076 --> 497832 - digiKam 8.5.0-Qt6 Win64 crashes on startup.
 077 --> 498650 - Avif file fails to load, but loads after renaming the same file to `.heif`.

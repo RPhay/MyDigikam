@@ -145,7 +145,7 @@ BUGFIXES:
 123 --> 240231 - Add an option to context menu to restore menu visibility when it have been hidden.
 124 --> 201592 - Sorting images in queue from Batch Queue Manager.
 125 --> 265231 - Tooltip do not show whole camera information.
-126 --> 309471 - EXIF orientation is not determined for some JPEG files.
+126 --> 309471 - EXIF orientation is not determineed for some JPEG files.
 127 --> 307357 - Metadata from DNG files generated Lightroom 3 and 4 are not displayed in Image Editor right side-bar tab.
 128 --> 324759 - When digiKam searches faces, it sets frames automatically. I can _NOT_ erase the "frames" any more.
 129 --> 193485 - Sort images by Caption, Headline, Comments, etc.

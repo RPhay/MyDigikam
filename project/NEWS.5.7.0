@@ -475,7 +475,7 @@ BUGFIXES:
 447 --> 210378 - When closing digikam by clicking the "x" in the window topbar, digikam crashes.
 448 --> 207638 - digiKam crashes when i close it.
 449 --> 211174 - SEGV Crash using Geolocation editor.
-450 --> 217362 - digiKam create crashreport everytime I close it.
+450 --> 217362 - digiKam create crashreport every time I close it.
 451 --> 212294 - digiKam crash on quit.
 452 --> 211027 - digiKam crash chiusura applicazione.
 453 --> 217506 - digiKam crash when editing coordinates.

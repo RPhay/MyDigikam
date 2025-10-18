@@ -53,7 +53,7 @@ BUGFIXES:
 015 --> 312373 - Deleting all the tags known to digiKam at once.
 016 --> 326542 - Tagging some face then go to tag manager and test tag manager UI.
 017 --> 158791 - Multi-select tags (i.e. to delete more than one at a time).
-018 --> 256252 - Assign Tag with Drag and Drop doesnt work since Version 1.2.0.
+018 --> 256252 - Assign Tag with Drag and Drop doesn't work since Version 1.2.0.
 019 --> 196927 - No easy way to expand or collapse deep tag hierarchies [patch].
 020 --> 317943 - Auto-rotate/flip using EXIF Information destroys pictures.
 021 --> 327242 - EXIF tags sorted in the reverse order (not alphabetically).

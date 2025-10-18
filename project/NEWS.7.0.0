@@ -578,7 +578,7 @@ BUGFIXES:
 535 --> 414115 - G'mic plugin not available on Mac.
 536 --> 416018 - Face detection: specified list of albums not taken into account.
 537 --> 416028 - "Search in Tags" selection for Face detection/recognition unduly changes.
-538 --> 416120 - Error transfering.
+538 --> 416120 - Error transferring.
 539 --> 392304 - digiKam crash on exit (accessing stale QScreen instance during global destruction).
 540 --> 397694 - Missing text on selected tabs from QTabWidget.
 541 --> 380969 - Copy and paste text to comment field.

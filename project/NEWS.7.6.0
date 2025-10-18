@@ -151,7 +151,7 @@ BUGFIXES:
 135 --> 347301 - Lense Correction - missing Camera and Lense.
 136 --> 098651 - Image editor tool filter based on clens.
 137 --> 254083 - Lens auto correction fails producing result using D700 and Zenitar 16/2.8.
-138 --> 169214 - Lens auto correction tool should try to determine correct lens from metadata.
+138 --> 169214 - Lens auto correction tool should try to determinee correct lens from metadata.
 139 --> 250484 - WISH: Black Border removal.
 140 --> 266913 - ShowFoto crashes when loading Lens autocorrection.
 141 --> 162212 - WISH: Possiblity to set the alpha channel value in the insert text option.
@@ -406,7 +406,7 @@ BUGFIXES:
 390 --> 251249 - No images visible in album view. OpenGL image viewer works though.
 391 --> 246846 - digiKam crash while rating.
 392 --> 253431 - digiKam dies after normal startup.
-393 --> 253824 - When closing digiKam the process doesnt close.
+393 --> 253824 - When closing digiKam the process doesn't close.
 394 --> 255840 - digiKam refused to open.
 395 --> 256932 - Crash when browsing.
 396 --> 257848 - digiKam crash when selecting source library at initially start.
@@ -475,7 +475,7 @@ BUGFIXES:
 459 --> 133488 - make it possible to enlarge image in the 'comments and tags' dialog.
 460 --> 177608 - Wrong button text to save image tags and caption.
 461 --> 300304 - Legends do not appear in editor.
-462 --> 382231 - First Run wizzard path.
+462 --> 382231 - First Run wizard path.
 463 --> 141624 - digiKam crash when assigning a new tag to a large number of photos.
 464 --> 143135 - Many many crashes due to broken tags.
 465 --> 149367 - Crash after clicking an existing tag while viewing an image.

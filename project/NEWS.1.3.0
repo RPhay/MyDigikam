@@ -102,7 +102,7 @@ BUGFIXES:
 076 --> 240048 - Open images with double instead of single click.
 077 --> 218633 - "Write Metadata to Selected Images" Very Slow for Large Number of Images.
 078 --> 237565 - digiKam crash when unchecking external modules.
-079 --> 225153 - digiKam advanced slide show crashes everytimes.
+079 --> 225153 - digiKam advanced slide show crashes every times.
 080 --> 234021 - digikam crash on loading.
 081 --> 234073 - digiKam gpssync no altitude.
 082 --> 233725 - digiKam gpssync unable to geolocalize a picture or movie.

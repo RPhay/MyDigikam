@@ -178,7 +178,7 @@ BUGFIXES:
 146 --> 233926 - New tool to export to Imageshack.
 147 --> 294460 - Std namespace issue [patch].
 148 --> 294461 - Build failure in picasawebexport - QString ambiguity [patch].
-149 --> 294547 - The url in 'about' menu doesnt work.
+149 --> 294547 - The url in 'about' menu doesn't work.
 150 --> 294751 - Unlisted dependancy (hugin).
 151 --> 206842 - New tool to export to Wikimedia Commons.
 152 --> 286018 - Pano Tool and ExpoBlend tool do not work on OS X [patch].

@@ -61,7 +61,7 @@ BUGFIXES:
 024 --> 446729 - Crashes with error: The Wayland connection broken. Did the Wayland compositor die?
 025 --> 507417 - Binary data seems gobbled by captions parsing.
 026 --> 503251 - Faces recognition stopped working.
-027 --> 507449 - Do not allow running multple instances.
+027 --> 507449 - Do not allow running multiple instances.
 028 --> 507467 - Switching from lazy synchronization mode aborts remaining lazy sync.
 029 --> 507356 - Deleted 'Behaviour' term causes problem in language translation.
 030 --> 507485 - Editing Advanced Search doesn't work.
@@ -72,7 +72,7 @@ BUGFIXES:
 035 --> 507355 - Suggestion for improvement re positioning of small icons in Preview window.
 036 --> 455226 - Panorama Tool needs the Hugin pto2mk software.
 037 --> 507647 - Language cannot be chosen - only US_English available.
-038 --> 507657 - app/utils/digikam_globals_bundles.cpp build failled with error.
+038 --> 507657 - app/utils/digikam_globals_bundles.cpp build failed with error.
 039 --> 507668 - Prioritize user-added metadata over the ones in MakerNotes.
 040 --> 507713 - Incorrect sorting of picture names.
 041 --> 507661 - Portrait videos are displayed horizontally in presentation mode.
@@ -100,7 +100,7 @@ BUGFIXES:
 063 --> 508121 - Face Recognition does not produce any results.
 064 --> 508464 - Album marked as not available although it is available.
 065 --> 508500 - Wipe all tags from Database only results in "Cannot delete required face tag" message.
-066 --> 508633 - Duplicates freezes, cant sort by Similarity, or resize.
+066 --> 508633 - Duplicates freezes, cannot sort by Similarity, or resize.
 067 --> 508645 - Segments of digikam window are repeated on screen.
 068 --> 501767 - Right-Click & 'Open With...' shows apps multiple times.
 069 --> 509074 - HEIF/HEIC files not being displayed in Thumbnails.
@@ -129,7 +129,7 @@ BUGFIXES:
 092 --> 510191 - gui_digikamautotagassignment_obj.dir/all] Error 2 Build Error.
 093 --> 510276 - Moving folder causes recursive copy.
 094 --> 510094 - DK crashes with Face Training.
-095 --> 510334 - Build failled with : correlator_utest.cpp.o.
+095 --> 510334 - Build failed with : correlator_utest.cpp.o.
 096 --> 472438 - Failed to update the database schema from version 15 to version 16.
 097 --> 508733 - Duplicates found on Similarity Search but not displayed for review (no thumbnails).
 098 --> 493294 - Extremely slow duplicate search. It takes literally days.
