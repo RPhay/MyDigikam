@@ -10,7 +10,7 @@ BUGFIXES:
 001 --> 510699 - Exported XML File does not contain Image Title.
 002 --> 510715 - digiKam downloads AI files to user specific storage.
 003 --> 497470 - XMP-mwg-rs Info not read & written to JPG exif info.
-004 -->
+004 --> 510771 - Trying to open .cr2 file with DarkTable throws exception.
 005 -->
 006 -->
 007 -->
