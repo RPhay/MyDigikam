@@ -379,7 +379,7 @@ void ImportFilterModel::setFilter(Digikam::Filter* filter)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
 
-endFilterChange(QSortFilterProxyModel::Direction::Rows);
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
 
 #else
 
