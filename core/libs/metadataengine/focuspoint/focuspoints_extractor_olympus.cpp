@@ -51,8 +51,15 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_olympus() c
 
     // Get size image
 
-    QVariant imageWidth  = findValue(QLatin1String("File.File.Image.ImageWidth"));
-    QVariant imageHeight = findValue(QLatin1String("File.File.Image.ImageHeight"));
+    QVariant imageWidth  = findValueFirstMatch(QStringList()
+                                               << QLatin1String("File.File.Image.ImageWidth")
+                                               << QLatin1String("EXIF.IFD0.Image.ImageWidth")
+    );
+
+    QVariant imageHeight = findValueFirstMatch(QStringList()
+                                               << QLatin1String("File.File.Image.ImageHeight")
+                                               << QLatin1String("EXIF.IFD0.Image.ImageHeight")
+    );
 
     if (imageWidth.isNull() || imageHeight.isNull())
     {
