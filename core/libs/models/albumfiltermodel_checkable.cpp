@@ -41,16 +41,48 @@ AbstractCheckableAlbumModel* CheckableAlbumFilterModel::sourceCheckableAlbumMode
 
 void CheckableAlbumFilterModel::setFilterChecked(bool filter)
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_filterChecked = filter;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }
 
 void CheckableAlbumFilterModel::setFilterPartiallyChecked(bool filter)
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_filterPartiallyChecked = filter;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }

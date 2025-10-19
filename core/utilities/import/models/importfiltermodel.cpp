@@ -369,8 +369,24 @@ void ImportFilterModel::setFilter(Digikam::Filter* filter)
 {
     Q_D(ImportFilterModel);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     d->filter = filter;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
+
 }
 
 void ImportFilterModel::setCameraThumbsController(CameraThumbsCtrl* const thumbsCtrl)

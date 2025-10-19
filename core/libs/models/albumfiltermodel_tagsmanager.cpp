@@ -26,6 +26,13 @@ TagsManagerFilterModel::TagsManagerFilterModel(QObject* const parent)
 
 void TagsManagerFilterModel::setQuickListTags(const QList<int>& tags)
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_keywords.clear();
 
     for (int tag : std::as_const(tags))
@@ -33,7 +40,15 @@ void TagsManagerFilterModel::setQuickListTags(const QList<int>& tags)
         m_keywords << tag;
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }

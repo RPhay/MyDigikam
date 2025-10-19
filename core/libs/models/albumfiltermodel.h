@@ -128,7 +128,7 @@ public:
     virtual bool isFiltering()                                              const;
 
     /**
-     * Force invalidateFilter() externally.
+     * Force filter update externally.
      */
     void updateFilter();
 

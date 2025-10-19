@@ -43,8 +43,23 @@ void TagPropertiesFilterModel::listOnlyTagsWithProperty(const QString& property)
         return;
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_propertiesWhiteList << property;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }
@@ -56,8 +71,23 @@ void TagPropertiesFilterModel::removeListOnlyProperty(const QString& property)
         return;
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_propertiesWhiteList.remove(property);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }
@@ -69,8 +99,23 @@ void TagPropertiesFilterModel::doNotListTagsWithProperty(const QString& property
         return;
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_propertiesBlackList << property;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }
@@ -82,8 +127,23 @@ void TagPropertiesFilterModel::removeDoNotListProperty(const QString& property)
         return;
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_propertiesBlackList.remove(property);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }
@@ -99,7 +159,17 @@ void TagPropertiesFilterModel::tagPropertiesChanged(TAlbum*)
 
     if (this->isFiltering())
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+        beginFilterChange();
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
         invalidateFilter();
+
+#endif
 
         // Sort new when tag properties change.
 

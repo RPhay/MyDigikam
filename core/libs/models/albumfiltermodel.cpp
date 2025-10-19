@@ -52,8 +52,24 @@ void AlbumFilterModel::setFilterBehavior(FilterBehavior behavior)
         return;
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_filterBehavior = behavior;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
+
 }
 
 void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
@@ -70,8 +86,23 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
 
     Q_EMIT searchTextSettingsAboutToChange(wasSearching, willSearch);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_settings = settings;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 
@@ -128,7 +159,18 @@ void AlbumFilterModel::updateFilter()
 {
     if (isFiltering())
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+        beginFilterChange();
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
         invalidateFilter();
+
+#endif
+
     }
 }
 

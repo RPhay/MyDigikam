@@ -71,16 +71,48 @@ void SearchFilterModel::listDuplicatesSearches()
 
 void SearchFilterModel::setTypeFilter(int type)
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_searchType = type;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }
 
 void SearchFilterModel::setListTemporarySearches(bool list)
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    beginFilterChange();
+
+#endif
+
     m_listTemporary = list;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+
+#else
+
     invalidateFilter();
+
+#endif
 
     Q_EMIT signalFilterChanged();
 }
