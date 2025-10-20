@@ -187,6 +187,7 @@ public:
         countryCodeMap.insert(QLatin1String("MDA"), i18nc("@info: country code", "Moldova"));
         countryCodeMap.insert(QLatin1String("MCO"), i18nc("@info: country code", "Monaco"));
         countryCodeMap.insert(QLatin1String("MNG"), i18nc("@info: country code", "Mongolia"));
+        countryCodeMap.insert(QLatin1String("MNE"), i18nc("@info: country code", "Montenegro"));
         countryCodeMap.insert(QLatin1String("MSR"), i18nc("@info: country code", "Montserrat"));
         countryCodeMap.insert(QLatin1String("MAR"), i18nc("@info: country code", "Morocco"));
         countryCodeMap.insert(QLatin1String("MOZ"), i18nc("@info: country code", "Mozambique"));
@@ -233,7 +234,7 @@ public:
         countryCodeMap.insert(QLatin1String("STP"), i18nc("@info: country code", "Sao Tome and Principe"));
         countryCodeMap.insert(QLatin1String("SAU"), i18nc("@info: country code", "Saudi Arabia"));
         countryCodeMap.insert(QLatin1String("SEN"), i18nc("@info: country code", "Senegal"));
-        countryCodeMap.insert(QLatin1String("SCG"), i18nc("@info: country code", "Serbia"));
+        countryCodeMap.insert(QLatin1String("SRB"), i18nc("@info: country code", "Serbia"));
         countryCodeMap.insert(QLatin1String("SYC"), i18nc("@info: country code", "Seychelles"));
         countryCodeMap.insert(QLatin1String("SLE"), i18nc("@info: country code", "Sierra Leone"));
         countryCodeMap.insert(QLatin1String("SGP"), i18nc("@info: country code", "Singapore"));

@@ -12,7 +12,7 @@ BUGFIXES:
 003 --> 497470 - XMP-mwg-rs Info not read & written to JPG exif info.
 004 --> 510771 - Trying to open .cr2 file with DarkTable throws exception.
 005 --> 510808 - In Export to Local Storage, if a Target Location does not exist, a confusing error message is shown.
-006 -->
+006 --> 510824 - Missing Montenegro country in Metadata template editor (and outdated country code for Serbia).
 007 -->
 008 -->
 009 -->
