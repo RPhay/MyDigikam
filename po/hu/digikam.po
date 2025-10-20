@@ -41,7 +41,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-16 02:01+0000\n"
-"PO-Revision-Date: 2025-10-07 20:58+0200\n"
+"PO-Revision-Date: 2025-10-19 21:02+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -49,7 +49,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -353,12 +353,11 @@ msgstr[0] "Arcnév módosítása: „%2” → „%3”"
 msgstr[1] "Arcnevek módosítása: „%2” → „%3”"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%1' to Items"
 msgid_plural "Assign Tag(s) '%1' to Items"
 msgstr[0] "A(z) „%1” címke hozzárendelése az elemekhez"
-msgstr[1] "A(z) „%1” címke hozzárendelése az elemekhez"
+msgstr[1] "A(z) „%1” címkék hozzárendelése az elemekhez"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -929,11 +928,9 @@ msgstr[1] "%1 elem"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:297
 #: core/app/items/utils/itemcategorydrawer.cpp:306
-#, fuzzy, kde-format
-#| msgctxt "@action: dplugin"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid date"
-msgstr "Érvénytelen"
+msgstr "Érvénytelen dátum"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:337
 #, kde-format
