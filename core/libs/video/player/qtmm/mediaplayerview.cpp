@@ -814,7 +814,6 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 {
     d->prevAction->setEnabled(hasPrevious);
     d->nextAction->setEnabled(hasNext);
-    d->adjustVideoSize();
 
     if (url.isEmpty())
     {
