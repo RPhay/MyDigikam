@@ -18,6 +18,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QCloseEvent>
 #include <QMessageBox>
 
@@ -165,6 +166,44 @@ void FCExportWindow::saveSettings()
 void FCExportWindow::slotCopy()
 {
     saveSettings();
+
+    int loopCheck      = 0;
+    QString targetPath = d->exportWidget->getSettings().destUrl.toLocalFile();
+
+    while (!QFile::exists(targetPath))
+    {
+        ++loopCheck;
+
+        if (loopCheck == 1)
+        {
+            if (
+                QMessageBox::question(this, i18nc("@title:window", "Target Location Error"),
+                                      i18n("The target folder does not exist. "
+                                           "Should it be created?"))
+                == QMessageBox::Yes
+               )
+            {
+                QDir().mkpath(targetPath);
+            }
+            else
+            {
+                ++loopCheck;
+                break;
+            }
+        }
+        else
+        {
+            QMessageBox::information(this, i18nc("@title:window", "Target Location Error"),
+                                     i18n("The target folder could not be "
+                                          "created and does not exist."));
+            break;
+        }
+    }
+
+    if (loopCheck > 1)
+    {
+        return;
+    }
 
     // start copying and react on signals
 
