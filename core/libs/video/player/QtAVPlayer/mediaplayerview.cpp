@@ -613,7 +613,18 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->videoWidget->player()->setSource(d->currentItem.toLocalFile());
     setPreviewMode(Private::PlayerView);
-    d->videoWidget->player()->play();
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Album Settings"));
+
+    if (group.readEntry("Preview Auto Play", true))
+    {
+        d->videoWidget->player()->play();
+    }
+    else
+    {
+        d->videoWidget->player()->pause();
+    }
 }
 
 void MediaPlayerView::slotPositionChanged(qint64 position)

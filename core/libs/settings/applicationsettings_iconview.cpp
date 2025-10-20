@@ -271,6 +271,16 @@ bool ApplicationSettings::getPreviewShowIcons() const
     return d->previewShowIcons;
 }
 
+void ApplicationSettings::setPreviewAutoPlay(bool val)
+{
+    d->previewAutoPlay = val;
+}
+
+bool ApplicationSettings::getPreviewAutoPlay() const
+{
+    return d->previewAutoPlay;
+}
+
 void ApplicationSettings::setScaleFitToWindow(bool val)
 {
     d->scaleFitToWindow = val;

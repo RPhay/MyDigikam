@@ -85,6 +85,7 @@ public:
     QCheckBox*          previewScaleFitToWindow         = nullptr;
     QCheckBox*          previewSmoothScaled             = nullptr;
     QCheckBox*          previewShowIcons                = nullptr;
+    QCheckBox*          previewAutoPlay                 = nullptr;
     QCheckBox*          showFolderTreeViewItemsCount    = nullptr;
     QCheckBox*          largeThumbsBox                  = nullptr;
 
@@ -305,6 +306,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
     d->previewShowIcons->setWhatsThis(i18n("Uncheck this if you do not want to see icons and text in the image preview."));
 
+    d->previewAutoPlay           = new QCheckBox(i18n("Play videos or animations automatically"), pwpanel);
+    d->previewAutoPlay->setWhatsThis(i18n("Uncheck this if you do not want to play videos or animations automatically."));
+
     grid3->setContentsMargins(spacing, spacing, spacing, spacing);
     grid3->setSpacing(spacing);
     grid3->addWidget(d->previewFastPreview,       0, 0, 1, 2);
@@ -315,7 +319,8 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     grid3->addWidget(d->previewScaleFitToWindow,  4, 0, 1, 2);
     grid3->addWidget(d->previewSmoothScaled,      5, 0, 1, 2);
     grid3->addWidget(d->previewShowIcons,         6, 0, 1, 2);
-    grid3->setRowStretch(7, 10);
+    grid3->addWidget(d->previewAutoPlay,          7, 0, 1, 2);
+    grid3->setRowStretch(8, 10);
 
     d->previewFastPreview->setChecked(true);
     d->previewRawMode->setCurrentIndex(0);
@@ -414,6 +419,7 @@ void SetupAlbumView::applySettings()
     previewSettings.convertToEightBit = d->previewConvertToEightBit->isChecked();
     settings->setPreviewSettings(previewSettings);
 
+    settings->setPreviewAutoPlay(d->previewAutoPlay->isChecked());
     settings->setPreviewShowIcons(d->previewShowIcons->isChecked());
     settings->setPreviewSmoothScaled(d->previewSmoothScaled->isChecked());
     settings->setScaleFitToWindow(d->previewScaleFitToWindow->isChecked());
@@ -481,6 +487,7 @@ void SetupAlbumView::readSettings()
 
     d->previewRawMode->setCurrentIndex(d->previewRawMode->findData(previewSettings.rawLoading));
 
+    d->previewAutoPlay->setChecked(settings->getPreviewAutoPlay());
     d->previewShowIcons->setChecked(settings->getPreviewShowIcons());
     d->previewSmoothScaled->setChecked(settings->getPreviewSmoothScaled());
     d->previewScaleFitToWindow->setChecked(settings->getScaleFitToWindow());

@@ -259,6 +259,9 @@ public:
     void setPreviewShowIcons(bool val);
     bool getPreviewShowIcons() const;
 
+    void setPreviewAutoPlay(bool val);
+    bool getPreviewAutoPlay() const;
+
     void setScaleFitToWindow(bool val);
     bool getScaleFitToWindow() const;
 

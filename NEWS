@@ -14,7 +14,7 @@ BUGFIXES:
 005 --> 510808 - In Export to Local Storage, if a Target Location does not exist, a confusing error message is shown.
 006 --> 510824 - Missing Montenegro country in Metadata template editor (and outdated country code for Serbia).
 007 --> 510837 - Thumbnail view shows only file name, although other items selected, e.g. digiKam Tags.
-008 -->
+008 --> 510764 - Disable video autoplay.
 009 -->
 010 -->
 011 -->

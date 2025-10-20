@@ -200,6 +200,7 @@ void ApplicationSettings::readSettings()
 
     d->scaleFitToWindow                  = group.readEntry(d->configPreviewScaleFitToWindowEntry,      false);
     d->previewShowIcons                  = group.readEntry(d->configPreviewShowIconsEntry,             true);
+    d->previewAutoPlay                   = group.readEntry(d->configPreviewAutoPlayEntry,              true);
     d->showThumbbar                      = group.readEntry(d->configShowThumbbarEntry,                 true);
 
     d->showFolderTreeViewItemsCount      = group.readEntry(d->configShowFolderTreeViewItemsCountEntry, false);
@@ -417,6 +418,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configPreviewImageSmoothScaledEntry,            d->imageSmoothScaled);
     group.writeEntry(d->configPreviewScaleFitToWindowEntry,             d->scaleFitToWindow);
     group.writeEntry(d->configPreviewShowIconsEntry,                    d->previewShowIcons);
+    group.writeEntry(d->configPreviewAutoPlayEntry,                     d->previewAutoPlay);
     group.writeEntry(d->configShowThumbbarEntry,                        d->showThumbbar);
     group.writeEntry(d->configShowFolderTreeViewItemsCountEntry,        d->showFolderTreeViewItemsCount);
 

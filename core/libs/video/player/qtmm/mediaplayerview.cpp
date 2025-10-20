@@ -877,7 +877,18 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->player->setSource(d->currentItem);
     setPreviewMode(Private::PlayerView);
-    d->player->play();
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Album Settings"));
+
+    if (group.readEntry("Preview Auto Play", true))
+    {
+        d->player->play();
+    }
+    else
+    {
+        d->player->pause();
+    }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Play video with QtMultimedia started:" << d->player->source();
 }
