@@ -193,9 +193,9 @@ void FCExportWindow::slotCopy()
         }
         else
         {
-            QMessageBox::information(this, i18nc("@title:window", "Target Location Error"),
-                                     i18n("The target folder could not be "
-                                          "created and does not exist."));
+            QMessageBox::warning(this, i18nc("@title:window", "Target Location Error"),
+                                 i18n("The target folder could not be "
+                                      "created and does not exist."));
             break;
         }
     }
