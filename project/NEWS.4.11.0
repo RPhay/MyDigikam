@@ -76,7 +76,7 @@ BUGFIXES:
 068 --> 193890 - Allow to update "Modified" date from image.
 069 --> 318661 - Export tool does not convert to sRGB and strips existing ICC profile.
 070 --> 233675 - Shared binary programs dngconverter and scangui do not provide man pages.
-071 --> 316310 - Tools - resize images doesn' work.
+071 --> 316310 - Tools - resize images doesn't work.
 072 --> 300458 - Imgur export is unusable.
 073 --> 339572 - Too much required information.
 074 --> 264351 - Global shortcuts do not work when using Advanced Slideshow.
