@@ -186,7 +186,7 @@ BUGFIXES:
 174 --> 238605 - Crash when moving the mouse over the album view, or list.
 175 --> 247413 - digiKam crashes randomly.
 176 --> 237104 - Very slow commit after tag change only in digiKam image editor.
-177 --> 358590 - digiKam crashes after appling color label.
+177 --> 358590 - digiKam crashes after applying color label.
 178 --> 402922 - Spell check.
 179 --> 384059 - Album > Reread metadata from images does not work correctly.
 180 --> 146934 - Too many steps for continuous commenting.

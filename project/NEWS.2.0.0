@@ -158,7 +158,7 @@ BUGFIXES:
 119 --> 258409 - Tags and TagsTree table is empty after DB migration from sqlite to mysql.
 120 --> 257183 - Failed to add tag to database.
 121 --> 262231 - Missing records after migration from SQLite to digiKam.
-122 --> 267733 - Automatical initialisation of Internal MySQL database doesn't work after digikam start.
+122 --> 267733 - Automatically initialisation of Internal MySQL database doesn't work after digikam start.
 123 --> 254533 - Make MySQL support as optional dependency [patch].
 124 --> 271598 - digiKam crashes while downloading photos.
 125 --> 269375 - Face tags count error.

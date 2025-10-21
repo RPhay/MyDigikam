@@ -93,7 +93,7 @@ BUGFIXES:
 081 --> 375910 - Crash when Opening Geolocation Editor.
 082 --> 377248 - Wrong space reported in tooltip during import.
 083 --> 378116 - Themes icon washout.
-084 --> 378724 - digiKam - Direct crash when rotate left is choosed.
+084 --> 378724 - digiKam - Direct crash when rotate left is chosen.
 085 --> 379511 - Introduce additional sidecar types and fix bug in mime setup [patch].
 086 --> 380261 - digiKam crash when click on button "add a collection".
 087 --> 380395 - digiKam crask after startup.

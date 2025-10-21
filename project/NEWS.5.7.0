@@ -9,7 +9,7 @@ General     : New tool to create advance print layout.
 General     : Send by Mail tool can remove all metadata to attached items.
 General     : Replaced the minimum and maximum similarity selection boxes in fuzzy
               search, duplicates search and maintenance by a new, generic DIntRangeBox
-              which makes the look, feel and behavious consistent in all places.
+              which makes the look, feel and behaviour consistent in all places.
               Also, this makes redundant code obsolete and reduces the probability of bugs.
 
 PrintCreator: Add option to create printing from albums or images selection.

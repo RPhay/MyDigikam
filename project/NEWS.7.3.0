@@ -84,7 +84,7 @@ BUGFIXES:
 060 --> 343053 - File's timestamp of imported pictures not preserved.
 061 --> 346012 - Long freezes of interface when performing BQM color autocorrection.
 062 --> 340965 - Watermark placement and offset in saved workflow not saved.
-063 --> 128472 - Aspect ratio tool enchancements - auto orientation, new selection.
+063 --> 128472 - Aspect ratio tool enhancements - auto orientation, new selection.
 064 --> 345427 - digiKam crashed when generating panorama pic.
 065 --> 343298 - digiKam crash when selecting multiple photos in order to tag them.
 066 --> 344216 - digiKam crashed while creating tag.
@@ -191,7 +191,7 @@ BUGFIXES:
 167 --> 377434 - Crash on deleting items from Trash.
 168 --> 377418 - Crash on saving metadata. Latest AppImage 5.5
 169 --> 376951 - Unexpected crash on rescan - Latest 5.5. AppImage.
-170 --> 376256 - Crach when trying to go to "Metadata" tab in the image editor.
+170 --> 376256 - Crash when trying to go to "Metadata" tab in the image editor.
 171 --> 375815 - digiKam crash.
 172 --> 371906 - crash when opening download window, download of previews.
 173 --> 368246 - digiKam crashes by modifying picture.
@@ -273,7 +273,7 @@ BUGFIXES:
 249 --> 224789 - Handle RAW and jpegs as one virtual image.
 250 --> 188968 - JPEG+RAW joint renaming feature.
 251 --> 164756 - Working with JPEGs instead of RAWs.
-252 --> 151228 - Whish: Skip / ignore RAW when corresponding JPG exists.
+252 --> 151228 - Wish: Skip / ignore RAW when corresponding JPG exists.
 253 --> 147933 - WISH: link the keywords of images with same name but different extension img1245.jpg liked to img1245.dng.
 254 --> 147886 - Management of raw files (as duplicate of jpg files).
 255 --> 147427 - Make digiKam know JPG file is from RAW.

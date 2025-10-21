@@ -319,7 +319,7 @@ BUGFIXES:
 291 --> 357810 - digiKam suddenly stops when searching in tags-search mode.
 292 --> 144176 - In right-click popup, large amounts of tags run off the screen and cannot be accessed.
 293 --> 249300 - Loss of IPTC tag "Country Name" importing pictures.
-294 --> 159855 - BUG - while appling tag changes.
+294 --> 159855 - BUG - while applying tag changes.
 295 --> 270158 - Tag assigned to wrong photo.
 296 --> 158865 - Adding tags: redundant menu opening necessary.
 297 --> 149554 - Incorrect sorting among tags for non-english characters.

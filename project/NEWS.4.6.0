@@ -43,6 +43,6 @@ BUGFIXES:
 027 --> 341825 - Rounding down zoom for fit to windows size and it will never scroll bars be displayed [patch].
 028 --> 326796 - When returning from edit mode to preview mode, next image not always loaded.
 029 --> 341868 - View->Fit to Selection no centering the new selection [patch].
-030 --> 191494 - Support search in offline collections (e.g. removable medias).
+030 --> 191494 - Support search in offline collections (e.g. removable media).
 031 --> 302306 - HTML export crashes digiKam with floating cards theme.
 032 --> 341379 - Advanced slideshow crashes if it runs manually backwards [patch].

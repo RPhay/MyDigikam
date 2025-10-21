@@ -78,7 +78,7 @@ BUGFIXES:
 068 --> 233612 - The DocumentName tag is not added when importing [patch].
 069 --> 349903 - Crash importing images on OSX.
 070 --> 233222 - Thumbnails displayed are from incorrect images.
-071 --> 264999 - Exif-dates not recognices OK.
+071 --> 264999 - Exif-dates not recognizes OK.
 072 --> 212848 - Crashed in slideshow while viewing.
 073 --> 194047 - digiKam crashes while attempting to index photos.
 074 --> 190982 - Crashes when selecting album every time.

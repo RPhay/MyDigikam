@@ -47,7 +47,7 @@ BUGFIXES:
 033 --> 332100 - Crash while browsing album.
 034 --> 333243 - digiKam crashed while editing photos.
 035 --> 333389 - Crash on trying to print.
-036 --> 333642 - Crahs of digiKam when editing pics.
+036 --> 333642 - Crash of digiKam when editing pics.
 037 --> 333660 - Crashed when clicking Image editor.
 038 --> 333700 - Digicam crashed when adding multiple tags.
 039 --> 333741 - digiKam repeatedly crashes.
@@ -390,7 +390,7 @@ BUGFIXES:
 375 --> 278976 - Right-click geolocation context menu not available when using Google Maps.
 376 --> 221563 - Using geotagging tool bannes me for 24 hours from google maps.
 377 --> 094618 - PNM images are not displayed by default.
-378 --> 140617 - Usage of 16bit color depth on raws, darkens them extrem.
+378 --> 140617 - Usage of 16bit color depth on raws, darkens them extreme.
 379 --> 210779 - digikam: jpc_dec.c:1077: jpc_dec_tiledecode: Zusicherung »dec->numcomps == 3« nicht erfüllt.
 380 --> 155124 - No Simple Way to Rotate Left/Right by 90 Degrees.
 381 --> 336960 - digiKam crashed sitting idle in background.
@@ -565,7 +565,7 @@ BUGFIXES:
 550 --> 323499 - If digiKam is in Full Screen Mode, maximized Image Editor does not cover panel areas.
 551 --> 241729 - Provide way to fade out UI for judging image with less distracting surroundings.
 552 --> 262702 - digiKam Causes User to Suddenly Log out in Settings Configure digikam when you choose Colours and move the Side Bar.
-553 --> 264879 - Working with pics (f4), automatical sizing to windows doesn´t work (Strg-Alt-S).
+553 --> 264879 - Working with pics (f4), automatically sizing to windows doesn´t work (Strg-Alt-S).
 554 --> 232627 - digiKam crashed while I was draggingg an image to kmail across multiple desktops.
 555 --> 225442 - Save dialog default settings as user wants.
 556 --> 434102 - Do not move files on the hard disk, just remove from album.
@@ -639,7 +639,7 @@ BUGFIXES:
 624 --> 103311 - Mouse wheel support for viewing images.
 625 --> 173533 - Crash when deselecting a single photo with Ctrl+left mouse click.
 626 --> 387325 - Add option to quickly view photo in full screen.
-627 --> 088809 - digiKam & imageeditor: full scren buglets.
+627 --> 088809 - digiKam & imageeditor: full screen buglets.
 628 --> 089588 - No Picture in Fullscreen.
 629 --> 181184 - In fullscreen, thumbnails rating stars follow bottom scrollbar.
 630 --> 091550 - Hide cursor in fullscreen mode.

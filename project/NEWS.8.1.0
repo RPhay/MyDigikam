@@ -188,7 +188,7 @@ BUGFIXES:
 171 --> 223879 - Picture downloading from camera, crashed.
 172 --> 218518 - Crashed when downloading from camera.
 173 --> 212203 - digiKam crashes when importing pictures. No pictures are imported.
-174 --> 215100 - Crash while importin pictures in digiKam.
+174 --> 215100 - Crash while importing pictures in digiKam.
 175 --> 216373 - digiKam crashed when importing files from digital camera.
 176 --> 216996 - Crash when importing pictures.
 177 --> 210522 - digiKam crashed while importing photos.
@@ -350,7 +350,7 @@ BUGFIXES:
 333 --> 380378 - Option to automatically group photos.
 334 --> 460904 - Several Images can´t be imported from the network and files are not marked as downloaded.
 335 --> 435011 - Adding facetag on grouped pictures only applies to a single picture.
-336 --> 469740 - SVG lable icons are not displayed anymore.
+336 --> 469740 - SVG label icons are not displayed anymore.
 337 --> 132353 - Support to import albums from iPhoto.
 338 --> 149541 - Support to import albums from KPhotoAlbum.
 339 --> 217991 - Support to import albums from Picasa.
@@ -434,7 +434,7 @@ BUGFIXES:
 417 --> 470066 - Dark themes make it impossible to see if a photograph is geo‐located.
 418 --> 413748 - Broken theme on Windows 10 after Digikam update.
 419 --> 413879 - Buttons without theme colors.
-420 --> 406408 - Check boxs and radio buttons in dark themes is not visible.
+420 --> 406408 - Check boxes and radio buttons in dark themes is not visible.
 421 --> 410501 - Dark Themes show white frames with light grey text in menu etc. - not readable.
 422 --> 376453 - Labels, Comments and dates disappear when folder is not readable.
 423 --> 470145 - Keyboard shortcut for assigning ratings (stars) is not persistent.

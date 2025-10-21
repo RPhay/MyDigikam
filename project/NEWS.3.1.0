@@ -18,7 +18,7 @@ BUGFIXES:
 008 --> 315376 - digiKam Crash on Startup with active X11 color profile.
 009 --> 303217 - Cannot preview TIFF files on Mac OS due to "not enough memory" exceptions.
 010 --> 315494 - Error on startup: Failed to update the database schema from version 6 to version 7.
-011 --> 237037 - SQLITE : convience copy in digiKam core [patch].
+011 --> 237037 - SQLITE : convenience copy in digiKam core [patch].
 012 --> 257773 - Switch to full screen mode crash under MACOSX.
 013 --> 315284 - digiKam crashes when quitting the program.
 014 --> 314260 - Large .tif files are not loaded.

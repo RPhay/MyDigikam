@@ -171,7 +171,7 @@ BUGFIXES:
 101 --> 364639 - digiKam crashed while opening database.
 102 --> 341504 - Crash while using application.
 103 --> 367691 - Searching for pictures crashes at 30% every time.
-104 --> 334604 - Crash after changing disk partions.
+104 --> 334604 - Crash after changing disk partitions.
 105 --> 351689 - Crash on opening digiKam.
 106 --> 149267 - digiKam crashes after finding avi and so on.
 107 --> 170387 - Add movies management.
@@ -386,7 +386,7 @@ BUGFIXES:
 316 --> 309316 - Html gallery export crash and other bugs.
 317 --> 314248 - digiKam crashing when exporting pictures to html.
 318 --> 225725 - Crash using HTML export.
-319 --> 396092 - Don't init search till user press a buttom specifically for this task.
+319 --> 396092 - Don't init search till user press a button specifically for this task.
 320 --> 397376 - Search in Geolocation doesn't work for Streets / location, only for City.
 321 --> 393259 - Configuration conflicts.
 322 --> 391329 - Two actions that wants to use same shortcut (Ctrl+Shift+,).

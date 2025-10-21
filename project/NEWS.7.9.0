@@ -91,7 +91,7 @@ BUGFIXES:
 075 --> 229436 - digiKam crashed when try to transfer pictures (click on transfer button).
 076 --> 228744 - digiKam crashed during image download.
 077 --> 227102 - Crash while attempting to copy selected images from card reader.
-078 --> 227013 - The crash appen when i try to download images from my canon cameras.
+078 --> 227013 - The crash happen when i try to download images from my canon cameras.
 079 --> 225919 - digiKam crash when try to download picture from device.
 080 --> 225401 - Cannot export to Flash.
 081 --> 225197 - digiKam crashes each time I try to import new Pics from my Camera (seen as a USB disk).

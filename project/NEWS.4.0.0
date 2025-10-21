@@ -206,7 +206,7 @@ BUGFIXES:
 168 --> 324044 - MediaWiki: Fix bug, add feature, improve usability
 169 --> 307689 - digiKam crashes during Export to Rajce service [patch].
 170 --> 323118 - SmugMug API access fails after SmugMug relaunch [patch].
-171 --> 324646 - digiKam hangs when producting "Video Slide Show" [patch].
+171 --> 324646 - digiKam hangs when producing "Video Slide Show" [patch].
 172 --> 319611 - Invalid placement of TimeStamp element in kml export [patch].
 173 --> 319612 - Update kml export to use KML 2.2 schema [patch].
 174 --> 199978 - Can not email images on Windows [patch].

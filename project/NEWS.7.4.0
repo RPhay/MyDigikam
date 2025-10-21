@@ -99,7 +99,7 @@ BUGFIXES:
 067 --> 319690 - digiKam crashes at startup after configuration.
 068 --> 319745 - digiKam crashes after using the space bar in image editor to jump to next image.
 069 --> 335293 - digiKam crashed on initial startup.
-070 --> 328827 - digiKam keeps on crashin at start-up.
+070 --> 328827 - digiKam keeps on crashing at start-up.
 071 --> 319762 - Starting up crashes.
 072 --> 325609 - Crashes on Startup - prev. crash while creating DB.
 073 --> 329829 - digiKam crashes on first run.
