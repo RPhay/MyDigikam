@@ -524,6 +524,19 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo,
         return false;
     }
 
+    if (writeRawFiles                  &&
+        (
+         (ext == QLatin1String("orf")) ||
+         (ext == QLatin1String("ori"))
+        )
+       )
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
+                                        << "is a ORF/ORI file, "
+                                        << "writing to such a file is disabled.";
+        return false;
+    }
+
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
     if (!parser->exifToolAvailable())
