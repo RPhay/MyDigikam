@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-16 02:01+0000\n"
+"POT-Creation-Date: 2025-10-21 01:57+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -22107,33 +22107,52 @@ msgstr ""
 msgid "This is the list of items to copy to the specified target."
 msgstr "要上传到指定目标位置的图像列表。"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:75
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "导出到本地存储"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:78
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:79
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "开始导出"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:79
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:80
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:68
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "开始导出到指定目标位置"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:235
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
+#, fuzzy, kde-format
+#| msgid "Target location: "
+msgctxt "@title:window"
+msgid "Target Location Error"
+msgstr "目标位置："
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
+#, fuzzy, kde-format
+#| msgid "The selected folder does not exist or is not readable"
+msgid "The target folder does not exist. Should it be created?"
+msgstr "所选文件夹不存在或不可读"
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
+#, kde-format
+msgid "The target folder could not be created and does not exist."
+msgstr ""
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "复制未完成"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:236
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:275
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -35309,7 +35328,7 @@ msgstr "缅甸语"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:411
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:559
-#: core/libs/widgets/metadata/utils/countryselector.cpp:195
+#: core/libs/widgets/metadata/utils/countryselector.cpp:196
 #, kde-format
 msgctxt "@info: country code"
 msgid "Nauru"
@@ -35597,7 +35616,7 @@ msgstr "塞茨瓦纳语"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:452
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:600
-#: core/libs/widgets/metadata/utils/countryselector.cpp:262
+#: core/libs/widgets/metadata/utils/countryselector.cpp:263
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tonga"
@@ -46005,642 +46024,650 @@ msgid "Mongolia"
 msgstr "蒙古"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Montserrat"
 msgctxt "@info: country code"
-msgid "Montserrat"
+msgid "Montenegro"
 msgstr "蒙特塞拉特岛"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
 msgctxt "@info: country code"
+msgid "Montserrat"
+msgstr "蒙特塞拉特岛"
+
+#: core/libs/widgets/metadata/utils/countryselector.cpp:192
+#, kde-format
+msgctxt "@info: country code"
 msgid "Morocco"
 msgstr "摩洛哥"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:192
+#: core/libs/widgets/metadata/utils/countryselector.cpp:193
 #, kde-format
 msgctxt "@info: country code"
 msgid "Mozambique"
 msgstr "莫桑比克"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:193
+#: core/libs/widgets/metadata/utils/countryselector.cpp:194
 #, kde-format
 msgctxt "@info: country code"
 msgid "Myanmar"
 msgstr "缅甸"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:194
+#: core/libs/widgets/metadata/utils/countryselector.cpp:195
 #, kde-format
 msgctxt "@info: country code"
 msgid "Namibia"
 msgstr "纳米比亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:196
+#: core/libs/widgets/metadata/utils/countryselector.cpp:197
 #, kde-format
 msgctxt "@info: country code"
 msgid "Nepal"
 msgstr "尼泊尔"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:197
+#: core/libs/widgets/metadata/utils/countryselector.cpp:198
 #, kde-format
 msgctxt "@info: country code"
 msgid "Netherlands Antilles"
 msgstr "荷属安的列斯"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:198
+#: core/libs/widgets/metadata/utils/countryselector.cpp:199
 #, kde-format
 msgctxt "@info: country code"
 msgid "Netherlands"
 msgstr "荷兰"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:199
+#: core/libs/widgets/metadata/utils/countryselector.cpp:200
 #, kde-format
 msgctxt "@info: country code"
 msgid "New Caledonia"
 msgstr "新喀里多尼亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:200
+#: core/libs/widgets/metadata/utils/countryselector.cpp:201
 #, kde-format
 msgctxt "@info: country code"
 msgid "New Zealand"
 msgstr "新西兰"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:201
+#: core/libs/widgets/metadata/utils/countryselector.cpp:202
 #, kde-format
 msgctxt "@info: country code"
 msgid "Nicaragua"
 msgstr "尼加拉瓜"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:202
+#: core/libs/widgets/metadata/utils/countryselector.cpp:203
 #, kde-format
 msgctxt "@info: country code"
 msgid "Niger"
 msgstr "尼日尔"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:203
+#: core/libs/widgets/metadata/utils/countryselector.cpp:204
 #, kde-format
 msgctxt "@info: country code"
 msgid "Nigeria"
 msgstr "尼日利亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:204
+#: core/libs/widgets/metadata/utils/countryselector.cpp:205
 #, kde-format
 msgctxt "@info: country code"
 msgid "Niue"
 msgstr "纽埃岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:205
+#: core/libs/widgets/metadata/utils/countryselector.cpp:206
 #, kde-format
 msgctxt "@info: country code"
 msgid "Norfolk Island"
 msgstr "诺福克岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:206
+#: core/libs/widgets/metadata/utils/countryselector.cpp:207
 #, kde-format
 msgctxt "@info: country code"
 msgid "Northern Mariana Islands"
 msgstr "北马里亚纳群岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:207
+#: core/libs/widgets/metadata/utils/countryselector.cpp:208
 #, kde-format
 msgctxt "@info: country code"
 msgid "Norway"
 msgstr "挪威"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:208
+#: core/libs/widgets/metadata/utils/countryselector.cpp:209
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oman"
 msgstr "阿曼"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:209
+#: core/libs/widgets/metadata/utils/countryselector.cpp:210
 #, kde-format
 msgctxt "@info: country code"
 msgid "Pakistan"
 msgstr "巴基斯坦"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:210
+#: core/libs/widgets/metadata/utils/countryselector.cpp:211
 #, kde-format
 msgctxt "@info: country code"
 msgid "Palau"
 msgstr "帕劳"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:211
+#: core/libs/widgets/metadata/utils/countryselector.cpp:212
 #, kde-format
 msgctxt "@info: country code"
 msgid "Palestinian Territory"
 msgstr "巴勒斯坦地区"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:212
+#: core/libs/widgets/metadata/utils/countryselector.cpp:213
 #, kde-format
 msgctxt "@info: country code"
 msgid "Panama"
 msgstr "巴拿马"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:213
+#: core/libs/widgets/metadata/utils/countryselector.cpp:214
 #, kde-format
 msgctxt "@info: country code"
 msgid "Papua New Guinea"
 msgstr "巴布亚新几内亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:214
+#: core/libs/widgets/metadata/utils/countryselector.cpp:215
 #, kde-format
 msgctxt "@info: country code"
 msgid "Paraguay"
 msgstr "巴拉圭"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:215
+#: core/libs/widgets/metadata/utils/countryselector.cpp:216
 #, kde-format
 msgctxt "@info: country code"
 msgid "Peru"
 msgstr "秘鲁"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:216
+#: core/libs/widgets/metadata/utils/countryselector.cpp:217
 #, kde-format
 msgctxt "@info: country code"
 msgid "Philippines"
 msgstr "菲律宾"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:217
+#: core/libs/widgets/metadata/utils/countryselector.cpp:218
 #, kde-format
 msgctxt "@info: country code"
 msgid "Pitcairn Island"
 msgstr "皮特克恩岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:218
+#: core/libs/widgets/metadata/utils/countryselector.cpp:219
 #, kde-format
 msgctxt "@info: country code"
 msgid "Poland"
 msgstr "波兰"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:219
+#: core/libs/widgets/metadata/utils/countryselector.cpp:220
 #, kde-format
 msgctxt "@info: country code"
 msgid "Portugal"
 msgstr "葡萄牙"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:220
+#: core/libs/widgets/metadata/utils/countryselector.cpp:221
 #, kde-format
 msgctxt "@info: country code"
 msgid "Puerto Rico"
 msgstr "波多黎各"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:221
+#: core/libs/widgets/metadata/utils/countryselector.cpp:222
 #, kde-format
 msgctxt "@info: country code"
 msgid "Qatar"
 msgstr "卡塔尔"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:222
+#: core/libs/widgets/metadata/utils/countryselector.cpp:223
 #, kde-format
 msgctxt "@info: country code"
 msgid "Reunion"
 msgstr "留尼汪岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:223
+#: core/libs/widgets/metadata/utils/countryselector.cpp:224
 #, kde-format
 msgctxt "@info: country code"
 msgid "Romania"
 msgstr "罗马尼亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:224
+#: core/libs/widgets/metadata/utils/countryselector.cpp:225
 #, kde-format
 msgctxt "@info: country code"
 msgid "Russian Federation"
 msgstr "俄罗斯联邦"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:225
+#: core/libs/widgets/metadata/utils/countryselector.cpp:226
 #, kde-format
 msgctxt "@info: country code"
 msgid "Rwanda"
 msgstr "卢旺达"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:226
+#: core/libs/widgets/metadata/utils/countryselector.cpp:227
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Helena"
 msgstr "圣赫勒拿"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:227
+#: core/libs/widgets/metadata/utils/countryselector.cpp:228
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Kitts and Nevis"
 msgstr "圣基茨和尼维斯"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:228
+#: core/libs/widgets/metadata/utils/countryselector.cpp:229
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Lucia"
 msgstr "圣卢西亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:229
+#: core/libs/widgets/metadata/utils/countryselector.cpp:230
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Pierre and Miquelon"
 msgstr "圣皮埃尔和密克隆"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:230
+#: core/libs/widgets/metadata/utils/countryselector.cpp:231
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Vincent and the Grenadines"
 msgstr "圣文森特和格林纳丁斯"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:231
+#: core/libs/widgets/metadata/utils/countryselector.cpp:232
 #, kde-format
 msgctxt "@info: country code"
 msgid "Samoa"
 msgstr "萨摩亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:232
+#: core/libs/widgets/metadata/utils/countryselector.cpp:233
 #, kde-format
 msgctxt "@info: country code"
 msgid "San Marino"
 msgstr "圣马力诺"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:233
+#: core/libs/widgets/metadata/utils/countryselector.cpp:234
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sao Tome and Principe"
 msgstr "圣多美和普林西比"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:234
+#: core/libs/widgets/metadata/utils/countryselector.cpp:235
 #, kde-format
 msgctxt "@info: country code"
 msgid "Saudi Arabia"
 msgstr "沙特阿拉伯"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:235
+#: core/libs/widgets/metadata/utils/countryselector.cpp:236
 #, kde-format
 msgctxt "@info: country code"
 msgid "Senegal"
 msgstr "塞内加尔"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:236
+#: core/libs/widgets/metadata/utils/countryselector.cpp:237
 #, kde-format
 msgctxt "@info: country code"
 msgid "Serbia"
 msgstr "塞尔维亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:237
+#: core/libs/widgets/metadata/utils/countryselector.cpp:238
 #, kde-format
 msgctxt "@info: country code"
 msgid "Seychelles"
 msgstr "塞舌尔"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:238
+#: core/libs/widgets/metadata/utils/countryselector.cpp:239
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sierra Leone"
 msgstr "塞拉利昂"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:239
+#: core/libs/widgets/metadata/utils/countryselector.cpp:240
 #, kde-format
 msgctxt "@info: country code"
 msgid "Singapore"
 msgstr "新加坡"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:240
+#: core/libs/widgets/metadata/utils/countryselector.cpp:241
 #, kde-format
 msgctxt "@info: country code"
 msgid "Slovakia"
 msgstr "斯洛伐克"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:241
+#: core/libs/widgets/metadata/utils/countryselector.cpp:242
 #, kde-format
 msgctxt "@info: country code"
 msgid "Slovenia"
 msgstr "斯洛文尼亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:242
+#: core/libs/widgets/metadata/utils/countryselector.cpp:243
 #, kde-format
 msgctxt "@info: country code"
 msgid "Solomon Islands"
 msgstr "所罗门群岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:243
+#: core/libs/widgets/metadata/utils/countryselector.cpp:244
 #, kde-format
 msgctxt "@info: country code"
 msgid "Somalia"
 msgstr "索马里"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:244
+#: core/libs/widgets/metadata/utils/countryselector.cpp:245
 #, kde-format
 msgctxt "@info: country code"
 msgid "South Africa"
 msgstr "南非"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:245
+#: core/libs/widgets/metadata/utils/countryselector.cpp:246
 #, kde-format
 msgctxt "@info: country code"
 msgid "South Georgia and the South Sandwich Islands"
 msgstr "南乔治亚岛和南桑威奇群岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:246
+#: core/libs/widgets/metadata/utils/countryselector.cpp:247
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spain"
 msgstr "西班牙"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:247
+#: core/libs/widgets/metadata/utils/countryselector.cpp:248
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sri Lanka"
 msgstr "斯里兰卡"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:248
+#: core/libs/widgets/metadata/utils/countryselector.cpp:249
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sudan"
 msgstr "苏丹"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:249
+#: core/libs/widgets/metadata/utils/countryselector.cpp:250
 #, kde-format
 msgctxt "@info: country code"
 msgid "Suriname"
 msgstr "苏里南"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:250
+#: core/libs/widgets/metadata/utils/countryselector.cpp:251
 #, kde-format
 msgctxt "@info: country code"
 msgid "Svalbard & Jan Mayen Islands"
 msgstr "斯瓦尔巴特和扬马延群岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:251
+#: core/libs/widgets/metadata/utils/countryselector.cpp:252
 #, kde-format
 msgctxt "@info: country code"
 msgid "Swaziland"
 msgstr "斯威士兰"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:252
+#: core/libs/widgets/metadata/utils/countryselector.cpp:253
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sweden"
 msgstr "瑞典"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:253
+#: core/libs/widgets/metadata/utils/countryselector.cpp:254
 #, kde-format
 msgctxt "@info: country code"
 msgid "Switzerland"
 msgstr "瑞士"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:254
+#: core/libs/widgets/metadata/utils/countryselector.cpp:255
 #, kde-format
 msgctxt "@info: country code"
 msgid "Syrian Arab Republic"
 msgstr "叙利亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:255
+#: core/libs/widgets/metadata/utils/countryselector.cpp:256
 #, kde-format
 msgctxt "@info: country code"
 msgid "Taiwan"
 msgstr "中国台湾"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:256
+#: core/libs/widgets/metadata/utils/countryselector.cpp:257
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tajikistan"
 msgstr "塔吉克斯坦"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:257
+#: core/libs/widgets/metadata/utils/countryselector.cpp:258
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tanzania"
 msgstr "坦桑尼亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:258
+#: core/libs/widgets/metadata/utils/countryselector.cpp:259
 #, kde-format
 msgctxt "@info: country code"
 msgid "Thailand"
 msgstr "泰国"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:259
+#: core/libs/widgets/metadata/utils/countryselector.cpp:260
 #, kde-format
 msgctxt "@info: country code"
 msgid "Timor-Leste"
 msgstr "东帝汶"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:260
+#: core/libs/widgets/metadata/utils/countryselector.cpp:261
 #, kde-format
 msgctxt "@info: country code"
 msgid "Togo"
 msgstr "多哥"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:261
+#: core/libs/widgets/metadata/utils/countryselector.cpp:262
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tokelau Islands"
 msgstr "托克劳群岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:263
+#: core/libs/widgets/metadata/utils/countryselector.cpp:264
 #, kde-format
 msgctxt "@info: country code"
 msgid "Trinidad and Tobago"
 msgstr "特立尼达和多巴哥"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:264
+#: core/libs/widgets/metadata/utils/countryselector.cpp:265
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tunisia"
 msgstr "突尼斯"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:265
+#: core/libs/widgets/metadata/utils/countryselector.cpp:266
 #, kde-format
 msgctxt "@info: country code"
 msgid "Turkey"
 msgstr "土耳其"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:266
+#: core/libs/widgets/metadata/utils/countryselector.cpp:267
 #, kde-format
 msgctxt "@info: country code"
 msgid "Turkmenistan"
 msgstr "土库曼斯坦"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:267
+#: core/libs/widgets/metadata/utils/countryselector.cpp:268
 #, kde-format
 msgctxt "@info: country code"
 msgid "Turks and Caicos Islands"
 msgstr "特克斯和凯科斯群岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:268
+#: core/libs/widgets/metadata/utils/countryselector.cpp:269
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tuvalu"
 msgstr "图瓦卢"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:269
+#: core/libs/widgets/metadata/utils/countryselector.cpp:270
 #, kde-format
 msgctxt "@info: country code"
 msgid "US Virgin Islands"
 msgstr "美属维尔京群岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:270
+#: core/libs/widgets/metadata/utils/countryselector.cpp:271
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uganda"
 msgstr "乌干达"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:271
+#: core/libs/widgets/metadata/utils/countryselector.cpp:272
 #, kde-format
 msgctxt "@info: country code"
 msgid "Ukraine"
 msgstr "乌克兰"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:272
+#: core/libs/widgets/metadata/utils/countryselector.cpp:273
 #, kde-format
 msgctxt "@info: country code"
 msgid "United Arab Emirates"
 msgstr "阿拉伯联合酋长国"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:273
+#: core/libs/widgets/metadata/utils/countryselector.cpp:274
 #, kde-format
 msgctxt "@info: country code"
 msgid "United Kingdom"
 msgstr "英国"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:274
+#: core/libs/widgets/metadata/utils/countryselector.cpp:275
 #, kde-format
 msgctxt "@info: country code"
 msgid "United States Minor Outlying Islands"
 msgstr "美国本土外小岛屿"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:275
+#: core/libs/widgets/metadata/utils/countryselector.cpp:276
 #, kde-format
 msgctxt "@info: country code"
 msgid "United States of America"
 msgstr "美国"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:276
+#: core/libs/widgets/metadata/utils/countryselector.cpp:277
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uruguay, Eastern Republic of"
 msgstr "乌拉圭"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:277
+#: core/libs/widgets/metadata/utils/countryselector.cpp:278
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uzbekistan"
 msgstr "乌兹别克斯坦"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:278
+#: core/libs/widgets/metadata/utils/countryselector.cpp:279
 #, kde-format
 msgctxt "@info: country code"
 msgid "Vanuatu"
 msgstr "瓦努阿图"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:279
+#: core/libs/widgets/metadata/utils/countryselector.cpp:280
 #, kde-format
 msgctxt "@info: country code"
 msgid "Venezuela"
 msgstr "委内瑞拉"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:280
+#: core/libs/widgets/metadata/utils/countryselector.cpp:281
 #, kde-format
 msgctxt "@info: country code"
 msgid "Viet Nam"
 msgstr "越南"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:281
+#: core/libs/widgets/metadata/utils/countryselector.cpp:282
 #, kde-format
 msgctxt "@info: country code"
 msgid "Wallis and Futuna Islands "
 msgstr "瓦利斯和富图纳群岛"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:282
+#: core/libs/widgets/metadata/utils/countryselector.cpp:283
 #, kde-format
 msgctxt "@info: country code"
 msgid "Western Sahara"
 msgstr "西撒哈拉"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:283
+#: core/libs/widgets/metadata/utils/countryselector.cpp:284
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yemen"
 msgstr "也门"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:284
+#: core/libs/widgets/metadata/utils/countryselector.cpp:285
 #, kde-format
 msgctxt "@info: country code"
 msgid "Zambia"
 msgstr "赞比亚"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:285
+#: core/libs/widgets/metadata/utils/countryselector.cpp:286
 #, kde-format
 msgctxt "@info: country code"
 msgid "Zimbabwe"
 msgstr "津巴布韦"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:287
+#: core/libs/widgets/metadata/utils/countryselector.cpp:288
 #, kde-format
 msgctxt "@info: country code"
 msgid "United Nations"
 msgstr "联合国"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:288
+#: core/libs/widgets/metadata/utils/countryselector.cpp:289
 #, kde-format
 msgctxt "@info: country code"
 msgid "European Union"
 msgstr "欧盟"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:289
+#: core/libs/widgets/metadata/utils/countryselector.cpp:290
 #, kde-format
 msgctxt "@info: country code"
 msgid "Space"
 msgstr "太空"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:290
+#: core/libs/widgets/metadata/utils/countryselector.cpp:291
 #, kde-format
 msgctxt "@info: country code"
 msgid "At Sea"
 msgstr "海上"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:291
+#: core/libs/widgets/metadata/utils/countryselector.cpp:292
 #, kde-format
 msgctxt "@info: country code"
 msgid "In Flight"
 msgstr "空中"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:292
+#: core/libs/widgets/metadata/utils/countryselector.cpp:293
 #, kde-format
 msgctxt "@info: country code"
 msgid "England"
 msgstr "英格兰"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:293
+#: core/libs/widgets/metadata/utils/countryselector.cpp:294
 #, kde-format
 msgctxt "@info: country code"
 msgid "Scotland"
 msgstr "苏格兰"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:294
+#: core/libs/widgets/metadata/utils/countryselector.cpp:295
 #, kde-format
 msgctxt "@info: country code"
 msgid "Northern Ireland"
 msgstr "北爱尔兰"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:295
+#: core/libs/widgets/metadata/utils/countryselector.cpp:296
 #, kde-format
 msgctxt "@info: country code"
 msgid "Wales"
 msgstr "威尔士"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:296
+#: core/libs/widgets/metadata/utils/countryselector.cpp:297
 #, kde-format
 msgctxt "@info: country code"
 msgid "Palestine"
 msgstr "巴勒斯坦"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:297
+#: core/libs/widgets/metadata/utils/countryselector.cpp:298
 #, kde-format
 msgctxt "@info: country code"
 msgid "Gaza"
 msgstr "加沙"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:298
+#: core/libs/widgets/metadata/utils/countryselector.cpp:299
 #, kde-format
 msgctxt "@info: country code"
 msgid "Jericho"
 msgstr "耶利哥"
 
-#: core/libs/widgets/metadata/utils/countryselector.cpp:319
+#: core/libs/widgets/metadata/utils/countryselector.cpp:320
 #, kde-format
 msgctxt "@item: unknown country"
 msgid "Unknown"
@@ -61337,49 +61364,49 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "高级搜索"
 
-#: core/utilities/setup/album/setupalbumview.cpp:121
+#: core/utilities/setup/album/setupalbumview.cpp:122
 #: core/utilities/setup/camera/setupcamera.cpp:429
 #, kde-format
 msgid "Show file&name"
 msgstr "显示文件名(&N)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:122
+#: core/utilities/setup/album/setupalbumview.cpp:123
 #: core/utilities/setup/camera/setupcamera.cpp:430
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示文件名。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:124
+#: core/utilities/setup/album/setupalbumview.cpp:125
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "显示文件体积(&Z)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:125
+#: core/utilities/setup/album/setupalbumview.cpp:126
 #: core/utilities/setup/camera/setupcamera.cpp:433
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示文件体积。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:127
+#: core/utilities/setup/album/setupalbumview.cpp:128
 #: core/utilities/setup/camera/setupcamera.cpp:435
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "显示相机拍摄日期(&D)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:128
+#: core/utilities/setup/album/setupalbumview.cpp:129
 #: core/utilities/setup/camera/setupcamera.cpp:436
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像的相机拍摄日期。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:131
+#: core/utilities/setup/album/setupalbumview.cpp:132
 #, kde-format
 msgid "Show file &modification date"
 msgstr "显示文件修改日期"
 
-#: core/utilities/setup/album/setupalbumview.cpp:132
+#: core/utilities/setup/album/setupalbumview.cpp:133
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -61389,135 +61416,135 @@ msgstr ""
 "勾选此项以在图像缩略图下方显示文件修改日期。这对于快速判断哪些图像曾在相机外"
 "被修改过很有用。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:136
+#: core/utilities/setup/album/setupalbumview.cpp:137
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "显示图像尺寸(&G)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:137
+#: core/utilities/setup/album/setupalbumview.cpp:138
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像尺寸，单位为像素。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:140
+#: core/utilities/setup/album/setupalbumview.cpp:141
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr "显示图像宽高比"
 
-#: core/utilities/setup/album/setupalbumview.cpp:141
+#: core/utilities/setup/album/setupalbumview.cpp:142
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像的宽高比。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:144
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, kde-format
 msgid "Show image format"
 msgstr "显示图像格式"
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:146
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像的 MIME 类型。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:147
+#: core/utilities/setup/album/setupalbumview.cpp:148
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "显示 digiKam 标题(&L)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:148
+#: core/utilities/setup/album/setupalbumview.cpp:149
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 标题。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:151
+#: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "显示 digiKam 说明(&C)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:152
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 说明。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:155
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "显示 digiKam 标签(&T)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 标签列表。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:159
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "显示 digiKam 评分(&R)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 评分。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:163
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #, kde-format
 msgid "Show digiKam &pick label"
 msgstr "显示 digiKam 挑选标记 (&P)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 挑选标记。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:167
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid "Show digiKam color &label"
 msgstr "显示 digiKam 颜色标记 (&L)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr "勾选此项以在图像缩略图边框显示图像的 digiKam 颜色标记。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:171
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "显示悬停旋转按钮"
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
 "to process left or right image rotation."
 msgstr "勾选此项以在图像缩略图上方显示用于旋转图像的悬停按钮。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:175
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "显示悬停全屏按钮"
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
 "it in fullscreen mode."
 msgstr "勾选此项以在图像缩略图上方显示用于切换全屏模式的悬停按钮。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/album/setupalbumview.cpp:180
 #: core/utilities/setup/camera/setupcamera.cpp:448
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "显示地理位置指示图标"
 
-#: core/utilities/setup/album/setupalbumview.cpp:180
+#: core/utilities/setup/album/setupalbumview.cpp:181
 #, kde-format
 msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
@@ -61526,55 +61553,55 @@ msgstr ""
 "勾选此项以在图像缩略图上方显示地理位置信息指示图标 (图像含有地理位置信息时显"
 "示)。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "缩略图点击操作："
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Show Preview"
 msgstr "显示预览"
 
-#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid "Start Image Editor"
 msgstr "启动图像编辑器"
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
 msgid "Show on Light Table"
 msgstr "显示到多图对比"
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:188
 #, kde-format
 msgid "Open with Default Application"
 msgstr "使用默认应用程序打开"
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:189
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "选择点击缩略图时进行的操作。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "图标视图字体："
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:192
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr "选择图标视图的文字信息使用的字体。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:193
+#: core/utilities/setup/album/setupalbumview.cpp:194
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "使用高分辨率缩略图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:194
+#: core/utilities/setup/album/setupalbumview.cpp:195
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -61592,175 +61619,190 @@ msgstr ""
 "勾选此项后缩略图数据库将存储更多数据，内存使用也会相应增加。修改此选项后需要"
 "重新启动 digiKam，并在工具菜单的系统维护对话框重建缩略图。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:229
+#: core/utilities/setup/album/setupalbumview.cpp:230
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "图标视图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:236
+#: core/utilities/setup/album/setupalbumview.cpp:237
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "树形视图图标大小："
 
-#: core/utilities/setup/album/setupalbumview.cpp:243
+#: core/utilities/setup/album/setupalbumview.cpp:244
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's sidebars."
 msgstr "选择 digiKam 侧栏树形视图的图标大小。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:246
+#: core/utilities/setup/album/setupalbumview.cpp:247
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "人物树形视图图标大小："
 
-#: core/utilities/setup/album/setupalbumview.cpp:254
+#: core/utilities/setup/album/setupalbumview.cpp:255
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr "选择 digiKam 侧栏人物标签页树形视图的图标大小。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:257
+#: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
 msgid "Tree View font:"
 msgstr "树形视图字体："
 
-#: core/utilities/setup/album/setupalbumview.cpp:258
+#: core/utilities/setup/album/setupalbumview.cpp:259
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "选择树形视图的文字信息使用的字体。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:260
+#: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "树形视图显示所含项目数量"
 
-#: core/utilities/setup/album/setupalbumview.cpp:261
+#: core/utilities/setup/album/setupalbumview.cpp:262
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
 "items inside."
 msgstr "勾选此项以在树形视图的名称后面显示包含的项目数量。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:273
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "树形视图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:281
+#: core/utilities/setup/album/setupalbumview.cpp:282
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "预览时显示图像内嵌的预览图 (如果可用/更快)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:283
+#: core/utilities/setup/album/setupalbumview.cpp:284
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "预览时显示完整图像"
 
-#: core/utilities/setup/album/setupalbumview.cpp:285
+#: core/utilities/setup/album/setupalbumview.cpp:286
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "RAW 图像预览方式："
 
-#: core/utilities/setup/album/setupalbumview.cpp:288
+#: core/utilities/setup/album/setupalbumview.cpp:289
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "自动"
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:291
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "使用 RAW 图像内嵌预览图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:292
+#: core/utilities/setup/album/setupalbumview.cpp:293
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "使用 RAW 图像数据的一半大小"
 
-#: core/utilities/setup/album/setupalbumview.cpp:294
+#: core/utilities/setup/album/setupalbumview.cpp:295
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "完整大小的 RAW 数据 (高画质)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:296
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "预览时将图像转换为 8 位以提高打开速度"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:298
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
 msgstr "如果您不想将 16 位的预览图像转换为 8 位，请不要勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:300
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "预览图像总是缩放至适合窗口"
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:301
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr "如果您不想缩放较小图像以适合窗口，请取消勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:302
+#: core/utilities/setup/album/setupalbumview.cpp:303
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr "预览图像使用抗锯齿插值放大"
 
-#: core/utilities/setup/album/setupalbumview.cpp:303
+#: core/utilities/setup/album/setupalbumview.cpp:304
 #, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr "如果您不想使用抗锯齿插值来放大图像，请不要勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:306
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "预览视图显示悬浮图标和文字"
 
-#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/album/setupalbumview.cpp:307
 #: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr "如果您不想在图像预览视图中看到悬浮的图标和文字，请不要勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:324
+#: core/utilities/setup/album/setupalbumview.cpp:309
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Save changes automatically"
+msgid "Play videos or animations automatically"
+msgstr "自动保存更改"
+
+#: core/utilities/setup/album/setupalbumview.cpp:310
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to scale small images to fit to window."
+msgid ""
+"Uncheck this if you do not want to play videos or animations automatically."
+msgstr "如果您不想缩放较小图像以适合窗口，请取消勾选此项。"
+
+#: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "预览视图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:339
+#: core/utilities/setup/album/setupalbumview.cpp:344
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "全屏视图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:344
+#: core/utilities/setup/album/setupalbumview.cpp:349
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "MIME 类型"
 
-#: core/utilities/setup/album/setupalbumview.cpp:347
+#: core/utilities/setup/album/setupalbumview.cpp:352
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "相册分类"
 
-#: core/utilities/setup/album/setupalbumview.cpp:515
+#: core/utilities/setup/album/setupalbumview.cpp:522
 #, kde-format
 msgctxt "@info"
 msgid ""
