@@ -306,8 +306,8 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
     d->previewShowIcons->setWhatsThis(i18n("Uncheck this if you do not want to see icons and text in the image preview."));
 
-    d->previewAutoPlay           = new QCheckBox(i18n("Play videos or animations automatically"), pwpanel);
-    d->previewAutoPlay->setWhatsThis(i18n("Uncheck this if you do not want to play videos or animations automatically."));
+    d->previewAutoPlay           = new QCheckBox(i18n("Auto play of videos or animations"), pwpanel);
+    d->previewAutoPlay->setWhatsThis(i18n("Uncheck this if you do not want to auto play of videos or animations."));
 
     grid3->setContentsMargins(spacing, spacing, spacing, spacing);
     grid3->setSpacing(spacing);
