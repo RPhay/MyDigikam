@@ -69,7 +69,7 @@ public:
     QThread*                                trainingThread           = nullptr;
     QMutex                                  trainingThreadMutex;
     QMutex                                  trainingMutex;
-    QMap<int, QList<cv::Mat> >              identityFeatures;
+    QHash<int, QList<cv::Mat> >             identityFeatures;
 
     /// OpenCV variables
 
@@ -308,7 +308,7 @@ bool FaceClassifier::loadTrainingData()
         {
             // create new KNN and SVM classifiers.  We'll swap them in at the end
 
-            QMap<int, QList<cv::Mat> > identityFeatures;
+            QHash<int, QList<cv::Mat> > identityFeatures;
 
             // get the training data from the identity provider
 
@@ -629,7 +629,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target, const QList<int>& e
                                       knn_neighbors,
                                       knn_distances);
 
-        QMap<int, QList<cv::Mat> > featureSet;
+        QHash<int, QList<cv::Mat> > featureSet;
 
         if ((svm_result != badLabel1) && (svm_result != badLabel2) && idProvider->isValidId(svm_result))
         {
@@ -674,14 +674,14 @@ bool FaceClassifier::validateKNNSVMResult(const cv::Mat& target, int label) cons
 }
 
 int FaceClassifier::listSearch(const cv::Mat& target,
-                               const QMap<int, QList<cv::Mat> >& identityFeatures,
+                               const QHash<int, QList<cv::Mat> >& identityFeatures,
                                const QList<int>& exclusionLabelList) const
 {
     VotingGroups votes;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    for (auto [key, value] : identityFeatures.asKeyValueRange())
+    for (const auto& [key, value] : identityFeatures.asKeyValueRange())
     {
 
 #else

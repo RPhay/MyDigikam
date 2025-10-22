@@ -83,7 +83,7 @@ private:
     int                       predictFullSearch(const cv::Mat& target, const QList<int>& exclusionLabelList)        const;
     int                       predictClassifier(const cv::Mat& target, const QList<int>& exclusionLabelList)        const;
     int                       listSearch(const cv::Mat& target,
-                                         const QMap<int, QList<cv::Mat> >& identityFeatures,
+                                         const QHash<int, QList<cv::Mat> >& identityFeatures,
                                          const QList<int>& exclusionLabelList)                                      const;
 
     bool                      validateKNNSVMResult(const cv::Mat& target, int label)                                const;
