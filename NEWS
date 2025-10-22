@@ -15,7 +15,7 @@ BUGFIXES:
 006 --> 510824 - Missing Montenegro country in Metadata template editor (and outdated country code for Serbia).
 007 --> 510837 - Thumbnail view shows only file name, although other items selected, e.g. digiKam Tags.
 008 --> 510764 - Disable video autoplay.
-009 -->
+009 --> 510878 - Image Quality scan - Preview images are blurred.
 010 -->
 011 -->
 012 -->

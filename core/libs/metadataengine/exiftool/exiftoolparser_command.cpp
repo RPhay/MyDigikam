@@ -188,8 +188,13 @@ bool ExifToolParser::applyChanges(const QString& path,
 
     if (hasExif)
     {
-        cmdArgs << QByteArray("-ifd0:all=");
+        cmdArgs << QByteArray("--makernotes");
+
         cmdArgs << QByteArray("-gps:all=");
+        cmdArgs << QByteArray("-ifd0:xptitle=");
+        cmdArgs << QByteArray("-ifd0:xpcomment=");
+        cmdArgs << QByteArray("-ifd0:xpkeywords=");
+        cmdArgs << QByteArray("-exififd:usercomment=");
     }
     else
     {
@@ -223,6 +228,7 @@ bool ExifToolParser::applyChanges(const QString& path,
 
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
+
     cmdArgs << QByteArray("-all:all");
     cmdArgs << QByteArray("-icc_profile");
 
@@ -238,13 +244,6 @@ bool ExifToolParser::applyChanges(const QString& path,
     if (hasCSet)
     {
         cmdArgs << QByteArray("-codedcharacterset=UTF8");
-    }
-
-    if (hasExif)
-    {
-        cmdArgs << QByteArray("-TagsFromFile");
-        cmdArgs << QByteArray("@");
-        cmdArgs << QByteArray("-makernotes");
     }
 
     cmdArgs << QByteArray("-overwrite_original");
