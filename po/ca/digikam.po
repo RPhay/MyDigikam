@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
-"PO-Revision-Date: 2025-10-16 09:59+0200\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
+"PO-Revision-Date: 2025-10-21 08:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -23204,22 +23204,20 @@ msgstr "Inicia l'exportació a la destinació especificada"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "Ubicació de la destinació: "
+msgstr "Error d'ubicació de la destinació"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "La carpeta seleccionada no existeix o no es pot llegir"
+msgstr "La carpeta de destinació no existeix. S'hauria de crear?"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "La carpeta de destinació no s'ha pogut crear o no existeix."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
 #, kde-format
@@ -47964,12 +47962,10 @@ msgid "Mongolia"
 msgstr "Mongòlia"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "Montserrat"
+msgstr "Montenegro"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -64236,20 +64232,19 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
 #, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
-msgstr "Desa els canvis automàticament"
+#| msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
+msgstr "Reprodueix automàticament els vídeos o les animacions"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, fuzzy, kde-format
 #| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+#| "Uncheck this if you do not want to play videos or animations "
+#| "automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Desmarqueu això si no voleu canviar l'escala de les imatges petites per a "
-"ajustar-les a la finestra."
+"Desmarqueu això si no voleu reproduir automàticament els vídeos o les "
+"animacions."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format

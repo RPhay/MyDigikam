@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
-"PO-Revision-Date: 2025-10-16 08:53+0300\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
+"PO-Revision-Date: 2025-10-21 09:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -23312,22 +23312,20 @@ msgstr "Почати експортування за вказаною адрес
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "Адреса призначення:"
+msgstr "Помилка розташування цілі"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "Вибраної теки не існує або ця тека непридатна для читання"
+msgstr "Теки призначення не існує. Створити цю теку?"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "Не вдалося створити теку призначення, і цієї теки не існує."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
 #, kde-format
@@ -48112,12 +48110,10 @@ msgid "Mongolia"
 msgstr "Монголія"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "Монтсеррат"
+msgstr "Чорногорія"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -64423,20 +64419,19 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
 #, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
-msgstr "Зберігати зміни автоматично"
+#| msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
+msgstr "Відтворювати відео або анімацію автоматично"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, fuzzy, kde-format
 #| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+#| "Uncheck this if you do not want to play videos or animations "
+#| "automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма "
-"масштабувала малі зображення так, щоб вони заповнювали вікно."
+"Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма автоматично "
+"відтворювала відео або анімації."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format

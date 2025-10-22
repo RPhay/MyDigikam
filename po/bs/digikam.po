@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -68864,7 +68864,7 @@ msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
 msgstr "Automatsko spremanje promjena"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
@@ -68872,8 +68872,7 @@ msgstr "Automatsko spremanje promjena"
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
 #| "preview."
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329

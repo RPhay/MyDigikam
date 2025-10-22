@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -63667,13 +63667,12 @@ msgstr "若取消勾選此選項，在影像預覽時您看不到圖示與文字
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
 msgstr "自動儲存變更"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, fuzzy, kde-format
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr "若取消勾選此選項，在影像預覽時您看不到圖示與文字。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:329

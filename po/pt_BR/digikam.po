@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
-"PO-Revision-Date: 2025-10-16 06:07-0300\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
+"PO-Revision-Date: 2025-10-21 07:50-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -23115,22 +23115,20 @@ msgstr "Inicia a exportação para o destino especificado"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "Localização de destino: "
+msgstr "Erro de localização de destino"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "A pasta selecionada não existe ou não está legível"
+msgstr "A pasta de destino não existe. Ela deve ser criada?"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "A pasta de destino não pôde ser criada e não existe."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
 #, kde-format
@@ -47766,12 +47764,10 @@ msgid "Mongolia"
 msgstr "Mongólia"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "Montserrat"
+msgstr "Montenegro"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -63986,20 +63982,19 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
 #, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
-msgstr "Salvar as alterações automaticamente"
+#| msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
+msgstr "Reproduzir vídeos ou animações automaticamente"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, fuzzy, kde-format
 #| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+#| "Uncheck this if you do not want to play videos or animations "
+#| "automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Desmarque esta opção se não quiser dimensionar imagens pequenas para caber "
-"na janela."
+"Desmarque esta opção se não quiser reproduzir vídeos ou animações "
+"automaticamente."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format

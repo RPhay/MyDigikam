@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -62511,13 +62511,12 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
 #, kde-format
-msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:329

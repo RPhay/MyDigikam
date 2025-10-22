@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -63015,13 +63015,12 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
 #, fuzzy, kde-format
-msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
 msgstr "फाइल ल मेटाय के लिखव?"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:329

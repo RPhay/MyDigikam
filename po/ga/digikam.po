@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -66009,13 +66009,12 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
 msgstr "Sábháil athruithe go huathoibríoch"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:329

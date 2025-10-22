@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
 "PO-Revision-Date: 2025-10-19 21:02+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -63428,13 +63428,12 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
 msgstr "Változások automatikus mentése"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:329

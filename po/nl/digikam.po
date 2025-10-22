@@ -62,15 +62,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
-"PO-Revision-Date: 2025-10-16 10:23+0200\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
+"PO-Revision-Date: 2025-10-22 00:46+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -23214,22 +23214,20 @@ msgstr "Exporteren naar het gespecificeerde doel starten"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "Doellocatie: "
+msgstr "Doellocatiefout"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "De geselecteerde map bestaat niet of is onleesbaar"
+msgstr "De doelmap bestaat niet. Moet deze aangemaakt worden?"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "De doelmap kon niet aangemaakt worden en bestaat niet."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
 #, kde-format
@@ -47881,12 +47879,10 @@ msgid "Mongolia"
 msgstr "Mongolië"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "Montserrat"
+msgstr "Montenegro"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -64111,20 +64107,18 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
 #, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
-msgstr "Automatisch wijzigingen opslaan"
+#| msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
+msgstr "Automatisch video's of animaties afspelen"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, fuzzy, kde-format
 #| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+#| "Uncheck this if you do not want to play videos or animations "
+#| "automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Dit deactiveren als u kleine afbeeldingen niet wilt schalen om in het "
-"venster te passen."
+"Deactiveer dit als u geen video's of animaties automatisch wilt afspelen."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format

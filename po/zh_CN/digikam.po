@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -22129,17 +22129,15 @@ msgstr "开始导出到指定目标位置"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "目标位置："
+msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "所选文件夹不存在或不可读"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
@@ -46024,12 +46022,10 @@ msgid "Mongolia"
 msgstr "蒙古"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "蒙特塞拉特岛"
+msgstr ""
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -61764,18 +61760,15 @@ msgid ""
 msgstr "如果您不想在图像预览视图中看到悬浮的图标和文字，请不要勾选此项。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
-msgid "Play videos or animations automatically"
-msgstr "自动保存更改"
+#, kde-format
+msgid "Auto play of videos or animations"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to scale small images to fit to window."
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr "如果您不想缩放较小图像以适合窗口，请取消勾选此项。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:329

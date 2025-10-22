@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 01:57+0000\n"
+"POT-Creation-Date: 2025-10-22 01:59+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -63773,13 +63773,12 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:309
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
-msgid "Play videos or animations automatically"
+msgid "Auto play of videos or animations"
 msgstr "Timpa secara otomatis"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to play videos or animations automatically."
+msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
