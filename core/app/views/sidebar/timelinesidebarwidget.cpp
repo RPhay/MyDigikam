@@ -386,8 +386,15 @@ const QString TimelineSideBarWidget::getCaption()
 void TimelineSideBarWidget::slotRefDateTimeChanged()
 {
     d->scrollBar->blockSignals(true);
-    d->scrollBar->setMaximum(d->timeLineWidget->totalIndex()-1);
-    d->scrollBar->setValue(d->timeLineWidget->indexForRefDateTime()-1);
+
+    int totalIndex = d->timeLineWidget->totalIndex()-1;
+
+    if ((totalIndex >= 0) && (d->scrollBar->maximum() != totalIndex))
+    {
+        d->scrollBar->setMaximum(totalIndex);
+        d->scrollBar->setValue(d->timeLineWidget->indexForRefDateTime()-1);
+    }
+
     d->scrollBar->blockSignals(false);
 }
 
