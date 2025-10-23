@@ -3,6 +3,19 @@ digiKam 8.9.0 - Release date: 2026-03-xx
 *****************************************************************************************************
 NEW FEATURES:
 
+Bundles component versions:
+
+(*): Updated compared to previous digiKam release.
+
+| Bundles       | Qt version | KDE version | OpenCV version | FFmpeg version | Heif version | ExifTool version | Exiv2 version |
+|---------------|------------|-------------|----------------|----------------|--------------|------------------|---------------|
+| Windows Qt5   | 5.17       | 5.116       | 4.11           | 7.1.1          | 1.20.2       | 13.39 (*)        | 0.25.5        |
+| Windows Qt6   | 6.9.1      | 6.17.0      | 4.11           | 7.1.1          | 1.20.2       | 13.39 (*)        | 0.25.5        |
+| AppImage Qt5  | 5.17       | 5.116       | 4.12           | 7.1.1          | 1.20.1       | 13.39 (*)        | 0.25.5        |
+| AppImage Qt6  | 6.9.1      | 6.17.0      | 4.12           | 7.1.1          | 1.20.1       | 13.39 (*)        | 0.25.5        |
+| macOS Qt5     | 5.15       | 5.116       | 4.12           | 7.1.1          | 1.19.8       | 13.39 (*)        | 0.25.5        |
+| macOS Qt6     | 6.9.1      | 6.17.0      | 4.12           | 7.1.1          | 1.19.8       | 13.39 (*)        | 0.25.5        |
+
 
 *****************************************************************************************************
 BUGFIXES:
@@ -16,7 +29,7 @@ BUGFIXES:
 007 --> 510837 - Thumbnail view shows only file name, although other items selected, e.g. digiKam Tags.
 008 --> 510764 - Disable video autoplay.
 009 --> 510878 - Image Quality scan - Preview images are blurred.
-010 -->
+010 --> 510791 - Library scan stuck with JPG files.
 011 -->
 012 -->
 013 -->
