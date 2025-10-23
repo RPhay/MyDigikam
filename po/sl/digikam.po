@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-22 01:59+0000\n"
-"PO-Revision-Date: 2025-10-21 06:30+0200\n"
+"PO-Revision-Date: 2025-10-22 07:09+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -63706,19 +63706,15 @@ msgstr ""
 "Odstranite oznako, če ne želite videti ikon in besedila v predogledu slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
-#| msgid "Play videos or animations automatically"
+#, kde-format
 msgid "Auto play of videos or animations"
 msgstr "Samodejno predvajaj video posnetke ali animacije"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to play videos or animations "
-#| "automatically."
+#, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Odstranite potrditev, če ne želite samodejno predvajati video posnetkov ali "
+"Odstranite to, če ne želite samodejno predvajati video posnetkov ali "
 "animacij."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329

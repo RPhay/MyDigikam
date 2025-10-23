@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-22 01:59+0000\n"
-"PO-Revision-Date: 2025-10-08 09:15+0000\n"
+"PO-Revision-Date: 2025-10-22 18:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3327,16 +3327,14 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "Bætt við JPEG-XL; WEBP og AVIF umbreytum í Magnvinnslustjóra."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
 msgstr ""
-"Útgáfustýring: Stuðningur við JPEG-XL, HEIF, WEBP og AVIF sem taplaus "
-"myndsnið til að geyma myndir í mörgum útgáfum í myndvinnsluforritinu."
+"Útgáfustýring: bætt við stuðningi við JPEG-XL, HEIF, WEBP og AVIF sem "
+"taplausum myndsniðum til að geyma myndir í mörgum útgáfum í "
+"myndvinnsluforritinu."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
@@ -22885,22 +22883,20 @@ msgstr "Hefja útflutning á tilgreint úttak"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "Úttaksstaðsetning: "
+msgstr "Villa í úttaksstaðsetningu"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "Valin mappa er ekki til eða er ekki lesanleg"
+msgstr "Valin mappa er ekki til. Ætti að búa hana til?"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "Ekki tókst að búa til úttaksmöppuna og er hún því ekki til."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
 #, kde-format
@@ -38500,9 +38496,7 @@ msgid "Rating: "
 msgstr "Einkunn: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
 msgstr "Útgáfustýrt: "
@@ -47385,12 +47379,10 @@ msgid "Mongolia"
 msgstr "Mongólía"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "Montserrat"
+msgstr "Montenegró"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -49047,17 +49039,7 @@ msgid "Select here the online engine to translate text"
 msgstr "Veldu hér vefþjónustu til að þýða texta"
 
 #: core/libs/widgets/text/localizeconfig.cpp:230
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>The translator engine is an online Web-service used to translate "
-#| "text from one language to another one. This feature is available on "
-#| "metadata option where alternative language is supported, as Title, "
-#| "Caption, etc. The translation process is fully automatized but it "
-#| "requires an Internet connection to work.</para><para>User can select the "
-#| "more appropriate translator engine depending of desired target language, "
-#| "as not all world-wide languages are supported by online Web-services.</"
-#| "para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>The translator engine is an online Web-service used to translate text "
@@ -52631,17 +52613,7 @@ msgstr ""
 "að nota digiKam fljótt og vel.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and therefore use at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53162,8 +53134,7 @@ msgid "m"
 msgstr "m"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
 msgstr "mm"
@@ -57249,10 +57220,9 @@ msgid "Look up missing altitude values"
 msgstr "Fletta upp hæðarupplýsingum sem vantar"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
-#, fuzzy, kde-format
-#| msgid "Images with coordinates"
+#, kde-format
 msgid "Items have different coordinates."
-msgstr "Myndir með hnitum"
+msgstr "Atriði eru með öðrum hnitum."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
@@ -63505,20 +63475,16 @@ msgstr ""
 "mynda."
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
+#, kde-format
 msgid "Auto play of videos or animations"
-msgstr "Vista breytingar sjálfkrafa"
+msgstr "Sjálfvirk spilun myndskeiða eða hreyfimynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki kvarða litlar myndir svo þær passi í "
-"gluggann."
+"Taktu merkið úr hér ef þú vilt ekki spila sjálfvirkt myndskeið eða "
+"hreyfimyndir."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format

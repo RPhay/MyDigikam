@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-22 01:59+0000\n"
-"PO-Revision-Date: 2025-10-21 07:50-0300\n"
+"PO-Revision-Date: 2025-10-22 08:54-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -63981,20 +63981,16 @@ msgstr ""
 "imagem."
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
-#| msgid "Play videos or animations automatically"
+#, kde-format
 msgid "Auto play of videos or animations"
-msgstr "Reproduzir vídeos ou animações automaticamente"
+msgstr "Reprodução automática de vídeos ou animações"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to play videos or animations "
-#| "automatically."
+#, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Desmarque esta opção se não quiser reproduzir vídeos ou animações "
-"automaticamente."
+"Desmarque esta opção se não quiser a reprodução automática de vídeos ou "
+"animações."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format

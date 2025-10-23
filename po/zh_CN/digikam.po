@@ -22132,17 +22132,17 @@ msgstr "开始导出到指定目标位置"
 #, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr ""
+msgstr "目标位置错误"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
 #, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr ""
+msgstr "目标目录不存在，是否创建？"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "目标文件夹无法创建且不存在。"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
 #, kde-format
@@ -46025,7 +46025,7 @@ msgstr "蒙古"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr ""
+msgstr "黑山"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -61765,11 +61765,9 @@ msgid "Auto play of videos or animations"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
-msgstr "如果您不想缩放较小图像以适合窗口，请取消勾选此项。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format

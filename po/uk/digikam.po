@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-22 01:59+0000\n"
-"PO-Revision-Date: 2025-10-21 09:56+0300\n"
+"PO-Revision-Date: 2025-10-22 09:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -64418,16 +64418,12 @@ msgstr ""
 "на панелі попереднього перегляду зображення."
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
-#| msgid "Play videos or animations automatically"
+#, kde-format
 msgid "Auto play of videos or animations"
 msgstr "Відтворювати відео або анімацію автоматично"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to play videos or animations "
-#| "automatically."
+#, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма автоматично "
