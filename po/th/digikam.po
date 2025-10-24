@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-22 01:59+0000\n"
+"POT-Creation-Date: 2025-10-24 01:58+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -3261,12 +3261,12 @@ msgstr ""
 msgid "Timeline"
 msgstr "เส้นเวลา"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:414
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:421
 #, fuzzy, kde-format
 msgid "no item"
 msgstr "ไม่มีรายการใด ๆ"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:415
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:422
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format

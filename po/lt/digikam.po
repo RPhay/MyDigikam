@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-22 01:59+0000\n"
+"POT-Creation-Date: 2025-10-24 01:58+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3372,12 +3372,12 @@ msgstr ""
 msgid "Timeline"
 msgstr "Laiko juosta"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:414
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:421
 #, fuzzy, kde-format
 msgid "no item"
 msgstr "Nėra elementų"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:415
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:422
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format

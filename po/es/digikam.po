@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-22 01:59+0000\n"
+"POT-Creation-Date: 2025-10-24 01:58+0000\n"
 "PO-Revision-Date: 2025-10-23 00:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3127,12 +3127,12 @@ msgstr ""
 msgid "Timeline"
 msgstr "Línea de tiempo"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:414
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:421
 #, kde-format
 msgid "no item"
 msgstr "ningún elemento"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:415
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:422
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format

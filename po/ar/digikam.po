@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-22 01:59+0000\n"
-"PO-Revision-Date: 2025-10-15 20:58+0400\n"
+"POT-Creation-Date: 2025-10-24 01:58+0000\n"
+"PO-Revision-Date: 2025-10-23 13:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3172,12 +3172,12 @@ msgstr ""
 msgid "Timeline"
 msgstr "الخطّ الزّمنيّ"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:414
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:421
 #, kde-format
 msgid "no item"
 msgstr "لا عناصر"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:415
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:422
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format
@@ -21273,25 +21273,25 @@ msgstr "استخدم ميز ملء الشّاشة (أبطأ)"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:98
 #, kde-format
 msgid "&Ken Burns effect"
-msgstr "تأثير Ken Burns&"
+msgstr "تأثير ال&ذكريات"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_kbDisableFadeCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:110
 #, kde-format
 msgid "Disable &fade-in / fade-out"
-msgstr "عطّل التلاشي للداخل/الخارج&"
+msgstr "عطّل ال&تلاشي للداخل/الخارج"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_kbDisableCrossfadeCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:123
 #, kde-format
 msgid "Disable &cross-fade"
-msgstr "عطّل التلاشي المتداخل&"
+msgstr "عطّل التلاشي ال&متداخل"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_enableKenBurnsSameSpeed)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:130
 #, kde-format
 msgid "Use &same speed for visual effects"
-msgstr "استخدم نفس& السرعة للتأثيرات البصرية"
+msgstr "استخدم &نفس السرعة للتأثيرات البصرية"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.cpp:38
 #, kde-format
@@ -21378,7 +21378,7 @@ msgstr "صورة #%1"
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, kde-format
 msgid "Ken Burns"
-msgstr "كين بيرنز"
+msgstr "الذكريات"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:476
 #, kde-format
@@ -21432,7 +21432,7 @@ msgstr "اطبع اسم &الملف"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:141
 #, kde-format
 msgid "Pr&int captions "
-msgstr "اطبع التعليقات&"
+msgstr "اطبع الو&صف"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:148
@@ -21630,7 +21630,7 @@ msgid ""
 "presentation."
 msgstr ""
 "هذه الأداة تقدم سلسلة من العناصر كعرض شرائح متقدم.<br><br>الكثير من تأثيرات "
-"الانتقال متاحة، منها ما هو قائم على OpenGL وتأثير Ken Burns الشهير."
+"الانتقال متاحة، منها ما هو قائم على OpenGL وتأثير الذكريات الشهير."
 "<br><br>تستطيع إضافة مسار صوتي في الخلفية أثناء عرضك."
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
@@ -22023,30 +22023,31 @@ msgid ""
 "b></center></nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</"
 "td></tr></table>"
 msgstr ""
-"<p>تعرض هذه الأداة سلسلة من العناصر كعرض شرائح بسيط.</p><p>يمكن عرض العديد "
-"من خصائص العناصر كتراكب أثناء التشغيل.</p><p>تستطيع هذه الأداة تشغيل محتويات "
-"الألبومات بشكل متكرر، مع ألبومات فرعية إن وجدت.</p><p><u>الاستخدام:</u></"
-"p><table><tr><td colspan=\"2\"><nobr><center><b><h1>الوصول إلى العناصر</h1></"
-"b></center></nobr></td></tr><tr><td>العنصر السابق:</td><td><i>مفتاح لأعلى</"
-"i></tr><tr><td></td><td><i>مفتاح لأعلى</i></tr><tr><td></td><td><i>يسار</i> "
-"مفتاح</td></tr><tr><td></td><td>عجلة الفأرة لأعلى</td></tr><tr><td></"
-"td><td>زر الفأرة الأيسر</td></tr><tr><td>العنصر التالي:</td><td><i>مفتاح "
-"لأسفل</i></tr><tr><td></td><td><i>مفتاح لأسفل</i></tr><tr><td></"
-"td><td><i>مفتاح يمين</i></tr><tr><td></td><td>عجلة الفأرة لأسفل</td></"
-"tr><tr><td></td><td>زر الفأرة الأيمن </td></tr><tr><td>ابدأ/ألبث:</"
-"td><td><i>مفتاح المسافة</i></tr><tr><td>تقديم الفيديو:</td><td><i>Ctrl+مفتاح "
-"اليمين</i></tr><tr><td>تقديم الفيديو:</td><td><i>Ctrl+مفتاح اليسار</i></"
-"tr><tr><td>إعدادات عرض الشرائح:</td><td><i>مفتاح Alt+P</i></tr><tr><td>إخفاء/"
-"إظهار التراكبات:</td><td><i>مفتاح Alt+Y</i></tr><tr><td>إنهاء:</"
-"td><td><i>Esc</i> مفتاح</td></tr><tr><td colspan="
+"<p>تقوم هذه الأداة بعرض سلسلة من العناصر كعرض شرائح بسيط.</p><p>يمكن عرض "
+"الكثير من خصائص العناصر كطبقة علوية أثناء التشغيل.</p><p>يمكن لهذه الأداة "
+"تشغيل محتويات الألبوم في وضع تكراري مع الألبومات الفرعيةإذا وجدت.</"
+"p><p><u>الاستخدام:</u></p><table><tr><td colspan="
+"\"2\"><nobr><center><b><h1>الوصول للعنصر</h1></b></center></nobr></td></"
+"tr><tr><td>العنصر السابق:</td><td>مفتاح <i>Up</i></td></tr><tr><td></"
+"td><td>مفتاح <i>PgUp</i></td></tr><tr><td></td><td>مفتاح <i>Left</i></td></"
+"tr><tr><td></td><td>عجلة الفأرة للأعلى</td></tr><tr><td></td><td>زر الفأرة "
+"الأيسر</td></tr><tr><td>العنصر التالي:</td><td>مفتاح <i>Down</i></td></"
+"tr><tr><td></td><td>مفتاح <i>PgDown</i></td></tr><tr><td></td><td>مفتاح "
+"<i>Right</i></td></tr><tr><td></td><td>عجلة الفأرة للأسفل</td></tr><tr><td></"
+"td><td>زر الفأرة الأيمن</td></tr><tr><td>إيقاف مؤقت/بدء:</td><td>مفتاح "
+"<i>Space</i></td></tr><tr><td>تقديم الفيديو:</td><td>مفتاح <i>Ctrl+Right</"
+"i></td></tr><tr><td>إرجاع الفيديو:</td><td>مفتاح <i>Ctrl+Left</i></td></"
+"tr><tr><td>إعدادات عرض الشرائح:</td><td>مفتاح <i>Alt+P</i></td></"
+"tr><tr><td>إخفاء/إظهار الطبقات العلوية:</td><td>مفتاح <i>Alt+Y</i></td></"
+"tr><tr><td>إنهاء:</td><td>مفتاح <i>Esc</i></td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>خصائص العنصر</h1></b></center></nobr></td></"
-"tr><tr><td>تغيير الوسوم:</td><td>استخدام اختصارات لوحة مفاتيح الوسوم</td></"
-"tr><tr><td>تغيير التقييم:</td><td>استخدام اختصارات لوحة مفاتيح التقييم</td></"
-"tr><tr><td>تغيير لون التسمية:</td><td>استخدام اختصارات لوحة مفاتيح لون "
-"التسمية</td></tr><tr><td>تغيير اختيار التسمية:</td><td>استخدام اختصارات لوحة "
-"مفاتيح اختيار التسمية</td></tr><tr><td colspan="
+"tr><tr><td>تغيير الوسوم:</td><td>استخدم اختصارات لوحة المفاتيح للوسوم</td></"
+"tr><tr><td>تغيير التقييم:</td><td>استخدم اختصارات لوحة المفاتيح للتقييم</"
+"td></tr><tr><td>تغيير تسمية اللون:</td><td>استخدم اختصارات لوحة المفاتيح "
+"لتسمية اللون</td></tr><tr><td>تغيير تسمية الاختيار:</td><td>استخدم اختصارات "
+"لوحة المفاتيح لتسمية الاختيار</td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>أخرى</h1></b></center></nobr></td></"
-"tr><tr><td>عرض هذه المساعدة:</td><td><i>مفتاح F1</i></tr></table>"
+"tr><tr><td>إظهار هذه المساعدة:</td><td>مفتاح <i>F1</i></td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
 #, kde-format
@@ -22681,22 +22682,20 @@ msgstr "ابدأ التصدير إلى الهدف المحدد"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "المكان الهدف: "
+msgstr "خطأ في المكان الهدف"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "المجلد المختار غير موجود أو غير قابل للقراءة"
+msgstr "المجلد الهدف غير موجود. هل تود إنشاؤه؟"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "تعذر إنشاء المجلد الهدف وهو غير موجود."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
 #, kde-format
@@ -35127,7 +35126,7 @@ msgid ""
 "b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
 "<p><b>الكل</b>: إعادة فحص جميع العناصر للتأكد من جودتها.<p><b>غير المخصصة "
-"فقط</b>: فحص العناصر التي لا تحتوي على ملصقات اختيار تلقائي مخصصة فقط."
+"فقط</b>: فحص العناصر التي لا تحتوي على ملصقات اختيار تلقائي مخصصة فقط.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
@@ -41017,37 +41016,37 @@ msgstr "بلا"
 #, kde-format
 msgctxt "Effect: KenBurnsZoomIn"
 msgid "Ken Burns - Camera Zoom In"
-msgstr "كين برنز - تقريب الكاميرا"
+msgstr "الذكريات - تقريب الكاميرا"
 
 #: core/libs/transitionmngr/effectmngr.cpp:101
 #, kde-format
 msgctxt "Effect: KenBurnsZoomOut"
 msgid "Ken Burns - Camera Zoom Out"
-msgstr "كين برنز - إبعاد الكاميرا"
+msgstr "الذكريات - إبعاد الكاميرا"
 
 #: core/libs/transitionmngr/effectmngr.cpp:102
 #, kde-format
 msgctxt "Effect: KenBurnsPanLR"
 msgid "Ken Burns - Camera Pan Left to Right"
-msgstr "كين برنز - مسح الكاميرا من اليسار إلى اليمين"
+msgstr "الذكريات - حركة الكاميرا من اليسار إلى اليمين"
 
 #: core/libs/transitionmngr/effectmngr.cpp:103
 #, kde-format
 msgctxt "Effect: KenBurnsPanRL"
 msgid "Ken Burns - Camera Pan Right to Left"
-msgstr "كين برنز - مسح الكاميرا من اليمين إلى اليسار"
+msgstr "الذكريات - حركة الكاميرا من اليمين إلى اليسار"
 
 #: core/libs/transitionmngr/effectmngr.cpp:104
 #, kde-format
 msgctxt "Effect: KenBurnsPanTB"
 msgid "Ken Burns - Camera Pan Top to Bottom"
-msgstr "كين برنز - مسح الكاميرا من الأعلى إلى الأسفل"
+msgstr "الذكريات - حركة الكاميرا من الأعلى إلى الأسفل"
 
 #: core/libs/transitionmngr/effectmngr.cpp:105
 #, kde-format
 msgctxt "Effect: KenBurnsPanBT"
 msgid "Ken Burns - Camera Pan Bottom to Top"
-msgstr "كين برنز - مسح الكاميرا من الأسفل إلى الأعلى"
+msgstr "الذكريات - حركة الكاميرا من الأسفل إلى الأعلى"
 
 #: core/libs/transitionmngr/effectmngr.cpp:106
 #, kde-format
@@ -47072,12 +47071,10 @@ msgid "Mongolia"
 msgstr "منغوليا"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "مونتسرات"
+msgstr "الجبل الأسود"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -52253,17 +52250,7 @@ msgstr ""
 "المرشد لضبط إعدادات التّشغيل الأوّل ل‍«دِجي‌كام» لتستخدمه بسرعة.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and therefore use at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -52778,8 +52765,7 @@ msgid "m"
 msgstr "م"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
 msgstr "مم"
@@ -63083,18 +63069,16 @@ msgid ""
 msgstr "ألغِ تحديد هذا إن لم تكن تريد رؤية الأيقونات والنص في معاينة الصورة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
+#, kde-format
 msgid "Auto play of videos or animations"
-msgstr "احفظ التّغييرات آليًّا"
+msgstr "تشغيل آلي لمقاطع الفيديو أو الرسوم المتحركة"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
-msgstr "ألغِ تحديد هذا إن لم تكن تريد توسيع الصور الصغيرة لتناسب النافذة."
+msgstr ""
+"ألغِ تحديد هذا الخيار إذا كنت لا ترغب في التشغيل التلقائي لمقاطع الفيديو أو "
+"الرسوم المتحركة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format
@@ -65681,7 +65665,7 @@ msgstr "أدخل امتدادات ملفات جانبية إضافية."
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
-msgstr "امتدادات ملفات جانبية إضافية&"
+msgstr "امتدادات &ملفات جانبية إضافية"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format

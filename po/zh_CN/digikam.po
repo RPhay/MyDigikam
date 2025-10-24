@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-22 01:59+0000\n"
+"POT-Creation-Date: 2025-10-24 01:58+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3041,12 +3041,12 @@ msgstr ""
 msgid "Timeline"
 msgstr "时间轴"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:414
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:421
 #, kde-format
 msgid "no item"
 msgstr "无项目"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:415
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:422
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format
@@ -61762,12 +61762,12 @@ msgstr "如果您不想在图像预览视图中看到悬浮的图标和文字，
 #: core/utilities/setup/album/setupalbumview.cpp:309
 #, kde-format
 msgid "Auto play of videos or animations"
-msgstr ""
+msgstr "自动播放视频或动画"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
-msgstr ""
+msgstr "如果您不想自动播放视频或动画，请取消选中此项。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format
