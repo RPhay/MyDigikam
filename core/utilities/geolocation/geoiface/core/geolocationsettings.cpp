@@ -194,7 +194,8 @@ void GeolocationSettings::applySettingsToWidgets(const GeolocationSettingsContai
 
 MarbleWidget* GeolocationSettings::mainMarbleWidget() const
 {
-    qDebug() << "Registered Marble Widget:" << d->widgets;
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << "Registered Marble Widget:" << d->widgets;
+
     for (MapWidget* const w : std::as_const(d->widgets))
     {
         if (w)
