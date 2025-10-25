@@ -31,7 +31,7 @@ BUGFIXES:
 009 --> 510878 - Image Quality scan - Preview images are blurred.
 010 --> 510791 - Library scan stuck with JPG files.
 011 --> 510951 - Timeline arrows don't work correctly.
-012 -->
+012 --> 511092 - System display color profile is not used correctly.
 013 -->
 014 -->
 015 -->
