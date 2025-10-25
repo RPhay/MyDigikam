@@ -114,7 +114,7 @@ bool IccSettings::Private::profileFromX11(QScreen* const screen,
         return false;
     }
 
-    QByteArray bytes = QByteArray(reinterpret_cast<char*>(str), nitems);
+    QByteArray bytes(reinterpret_cast<char*>(str), nitems);
 
     if (!bytes.isEmpty())
     {
