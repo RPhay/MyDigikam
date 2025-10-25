@@ -61,7 +61,7 @@ QString ConvertToJp2Plugin::details() const
 {
     return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 format.</para>"
                   "<para>This is an image compression standard and coding system. It was created by the Joint Photographic Experts Group committee in 2000 with the intention of superseding their original discrete cosine transform-based JPEG standard (created in 1992) with a newly designed, wavelet-based method.</para>"
-                  "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>");
+                  "<para>See details about this format from <link url='https://en.wikipedia.org/wiki/JPEG_2000'>this page</link>.</para>");
 }
 
 QString ConvertToJp2Plugin::handbookSection() const

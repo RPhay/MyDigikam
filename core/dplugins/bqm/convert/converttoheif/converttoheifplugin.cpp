@@ -66,8 +66,8 @@ QString ConvertToHeifPlugin::details() const
                   "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
                   "HEIF also supports animation, and is capable of storing more information than an animated GIF "
                   "at a small fraction of the size.</para>"
-                  "<para>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
-                  "High Efficiency Image File Format</a> for details.</para>");
+                  "<para>See <link url='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
+                  "High Efficiency Image File Format</link> for details.</para>");
 }
 
 QString ConvertToHeifPlugin::handbookSection() const

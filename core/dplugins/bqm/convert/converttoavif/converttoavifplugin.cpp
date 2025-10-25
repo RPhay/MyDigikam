@@ -62,7 +62,7 @@ QString ConvertToAvifPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images data to AVIF format.</para>"
                   "<para>AV1 Image File Format is an image file format specification for storing images or image sequences compressed with AV1 "
                   "in the ISOBMFF container format.</para>"
-                  "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>");
+                  "<para>See details about this format from <link url='https://en.wikipedia.org/wiki/AVIF'>this page</link>.</para>");
 }
 
 QString ConvertToAvifPlugin::handbookSection() const

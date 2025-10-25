@@ -61,7 +61,7 @@ QString ConvertToJxlPlugin::details() const
 {
     return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images data to JPEG-XL format.</para>"
                   "<para>JPEG-XL is a royalty-free raster-graphics file format that supports both lossy and lossless compression. It is designed to outperform existing raster formats and thus to become their universal replacement.</para>"
-                  "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>");
+                  "<para>See details about this format from <link url='https://en.wikipedia.org/wiki/JPEG_XL'>this page</link>.</para>");
 }
 
 QString ConvertToJxlPlugin::handbookSection() const
