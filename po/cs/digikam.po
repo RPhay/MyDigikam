@@ -21963,17 +21963,15 @@ msgstr "Spustit export do zadaného cíle"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "Umístění cíle:"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "Zvolená složka neexistuje nebo je nečitelná"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
 #, kde-format
@@ -45914,12 +45912,10 @@ msgid "Mongolia"
 msgstr "Mongolsko"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "Montserrat"
+msgstr ""
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -61721,21 +61717,14 @@ msgstr ""
 "této volby."
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
+#, kde-format
 msgid "Auto play of videos or animations"
-msgstr "Automaticky ukládat změny"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
-"této volby."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format
