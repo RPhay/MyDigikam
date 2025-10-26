@@ -92,6 +92,9 @@ AdvancedRenameProcessDialog::AdvancedRenameProcessDialog(const NewNamesList& lis
 
 AdvancedRenameProcessDialog::~AdvancedRenameProcessDialog()
 {
+    d->thumbLoadThread->stopAllTasks();
+    d->thumbLoadThread->wait();
+
     delete d->thumbLoadThread;
     delete d;
 }
