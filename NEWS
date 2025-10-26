@@ -44,7 +44,7 @@ BUGFIXES:
 019 --> 505484 - Exiftool not used - not recognized.
 020 --> 496913 - ExifTool does not exists or exec permission is missing.
 021 --> 407013 - Incorrectly parses GPS.
-022 -->
+022 --> 490821 - digiKam fails to write tags/ratings to image files.
 023 -->
 024 -->
 025 -->
