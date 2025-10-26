@@ -39,7 +39,7 @@ BUGFIXES:
 014 --> 510990 - iPhone 17 Pro Max Image won't Rotate.
 015 --> 510364 - Batch renaming - Same date format in the file name for all images.
 016 --> 511159 - Rejecting or ignoring faces writes to image metadata, causing unwanted file modifications.
-017 -->
+017 --> 467560 - Keywords assigned by Synology Photos is written in XMP metadata but not recognized by digiKam.
 018 -->
 019 -->
 020 -->
