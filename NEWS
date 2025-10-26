@@ -42,7 +42,7 @@ BUGFIXES:
 017 --> 467560 - Keywords assigned by Synology Photos is written in XMP metadata but not recognized by digiKam.
 018 --> 509374 - Rating is not stored to all filetypes.
 019 --> 505484 - Exiftool not used - not recognized.
-020 -->
+020 --> 496913 - ExifTool does not exists or exec permission is missing.
 021 -->
 022 -->
 023 -->
