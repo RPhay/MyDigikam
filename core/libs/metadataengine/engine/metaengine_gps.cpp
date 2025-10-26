@@ -76,7 +76,7 @@ bool MetaEngine::getGPSLatitudeNumber(double* const latitude) const
 
     if (!latRef.isEmpty() && d->decodeGPSCoordinate("Exif.GPSInfo.GPSLatitude", latitude))
     {
-        if (latRef[0] == 'S')
+        if ((latRef[0] == 'S') && (*latitude > 0.0))
         {
             *latitude *= -1.0;
         }
@@ -109,7 +109,7 @@ bool MetaEngine::getGPSLongitudeNumber(double* const longitude) const
 
     if (!lngRef.isEmpty() && d->decodeGPSCoordinate("Exif.GPSInfo.GPSLongitude", longitude))
     {
-        if (lngRef[0] == 'W')
+        if ((lngRef[0] == 'W') && (*longitude > 0.0))
         {
             *longitude *= -1.0;
         }

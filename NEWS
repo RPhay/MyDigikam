@@ -43,7 +43,7 @@ BUGFIXES:
 018 --> 509374 - Rating is not stored to all filetypes.
 019 --> 505484 - Exiftool not used - not recognized.
 020 --> 496913 - ExifTool does not exists or exec permission is missing.
-021 -->
+021 --> 407013 - Incorrectly parses GPS.
 022 -->
 023 -->
 024 -->
