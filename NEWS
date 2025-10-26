@@ -40,7 +40,7 @@ BUGFIXES:
 015 --> 510364 - Batch renaming - Same date format in the file name for all images.
 016 --> 511159 - Rejecting or ignoring faces writes to image metadata, causing unwanted file modifications.
 017 --> 467560 - Keywords assigned by Synology Photos is written in XMP metadata but not recognized by digiKam.
-018 -->
+018 --> 509374 - Rating is not stored to all filetypes.
 019 -->
 020 -->
 021 -->
