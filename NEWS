@@ -45,7 +45,7 @@ BUGFIXES:
 020 --> 496913 - ExifTool does not exists or exec permission is missing.
 021 --> 407013 - Incorrectly parses GPS.
 022 --> 490821 - digiKam fails to write tags/ratings to image files.
-023 -->
+023 --> 485833 - Metadata is ignored while importing in 8.3.
 024 -->
 025 -->
 026 -->
