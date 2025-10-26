@@ -253,8 +253,8 @@ bool VideoThumbDecoder::decodeVideoFrame() const
 }
 
 void VideoThumbDecoder::getScaledVideoFrame(int scaledSize,
-                                       bool maintainAspectRatio,
-                                       VideoFrame& videoFrame)
+                                            bool maintainAspectRatio,
+                                            VideoFrame& videoFrame)
 {
 
 #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(58, 7, 100)
