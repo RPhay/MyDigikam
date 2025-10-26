@@ -17,7 +17,7 @@ Bundles component versions:
 | macOS Qt6     | 6.9.1 (*)  | 6.17.0 (*)  | 4.12 (*)       | 7.1.1 (*)      | 1.19.8 (*)   | 13.36 (*)        | 0.25.5        |
 
 
-General:         Coode ported to last Qt 6.10.0.
+General:         Code ported to last Qt 6.10.0.
 General:         English string review with codespell static analyzer.
 Windows:         Support for long file paths in Windows 10/11 when enabled.
 RawEngine:       Update internal Libraw to last 20250727 upstream.
