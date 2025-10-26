@@ -29,6 +29,7 @@ set(libadvancedrename_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/parser/importrenameparser.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/casemodifier.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/dateformatmodifier.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/defaultvaluemodifier.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/rangemodifier.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/removedoublesmodifier.cpp

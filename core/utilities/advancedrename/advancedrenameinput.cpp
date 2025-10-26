@@ -404,7 +404,9 @@ QString AdvancedRenameInput::text() const
 
 void AdvancedRenameInput::slotAddToken(const QString& token)
 {
-    d->lineEdit->insertPlainText(token);
+    QString tokenStr = token;
+    tokenStr.remove(QLatin1String("||"));
+    d->lineEdit->insertPlainText(tokenStr);
     slotSetFocus();
 }
 

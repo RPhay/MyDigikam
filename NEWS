@@ -36,7 +36,7 @@ BUGFIXES:
 012 --> 511092 - System display color profile is not used correctly.
 013 --> 509534 - Monitor profile not settable when using appimage.
 014 --> 510990 - iPhone 17 Pro Max Image won't Rotate.
-015 -->
+015 --> 510364 - Batch renaming - Same date format in the file name for all images.
 016 -->
 017 -->
 018 -->

@@ -30,20 +30,11 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "dateformatmodifier.h"
 #include "ui_dateoptiondialogwidget.h"
 
 namespace Digikam
 {
-
-static QString getDateFormatLinkText()
-{
-    const QString dateFormatLink      = QString::fromUtf8("<a href='https://doc.qt.io/qt-5.15/qdatetime.html#toString'>%1</a>");
-    const QString dateFormatLinkDescr = i18nc("@info: date format settings", "format settings");
-
-    return dateFormatLink.arg(dateFormatLinkDescr);
-}
-
-// --------------------------------------------------------
 
 DateFormat::DateFormat()
 {
@@ -139,7 +130,7 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
 
     ui->dateFormatLink->setOpenExternalLinks(true);
     ui->dateFormatLink->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
-    ui->dateFormatLink->setText(getDateFormatLinkText());
+    ui->dateFormatLink->setText(DateFormatModifier::getDateFormatLinkText());
 
     QRegularExpression validRegExp(QLatin1String("[^/]+"));
     QValidator* const validator = new QRegularExpressionValidator(validRegExp, this);
@@ -263,8 +254,10 @@ DateOption::DateOption()
              QLatin1String("view-calendar"))
 {
     addToken(QLatin1String("[date]"),            i18nc("@item", "Date and time (standard format)"));
-    addToken(QLatin1String("[date:||key||]"),    i18nc("@item", "Date and time") + QLatin1String(" (||key|| = Standard|ISO|UnixTimeStamp|Text)"));
-    addToken(QLatin1String("[date:||format||]"), i18nc("@item", "Date and time") + QLatin1String(" (") + getDateFormatLinkText() + QLatin1Char(')'));
+    addToken(QLatin1String("[date:||key||]"),    i18nc("@item", "Date and time") +
+                                                                 QLatin1String(" (||key|| = Standard|ISO|UnixTimeStamp|Text)"));
+    addToken(QLatin1String("[date:||format||]"), i18nc("@item", "Date and time") + QLatin1String(" (") +
+                                                                 DateFormatModifier::getDateFormatLinkText() + QLatin1Char(')'));
 
     QRegularExpression reg(QLatin1String("\\[date(:(.*))?\\]"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);

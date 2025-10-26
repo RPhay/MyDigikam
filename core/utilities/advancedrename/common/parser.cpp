@@ -29,6 +29,7 @@
 #include "metadataoption.h"
 #include "sequencenumberoption.h"
 #include "casemodifier.h"
+#include "dateformatmodifier.h"
 #include "defaultvaluemodifier.h"
 #include "rangemodifier.h"
 #include "removedoublesmodifier.h"
@@ -67,6 +68,7 @@ Parser::Parser()
     // --------------------------------------------------------
 
     registerModifier(new CaseModifier());
+    registerModifier(new DateFormatModifier());
     registerModifier(new TrimmedModifier());
     registerModifier(new UniqueModifier());
     registerModifier(new RemoveDoublesModifier());
