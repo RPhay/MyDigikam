@@ -242,7 +242,7 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
 QList<FaceTagsIface> FacePipelineEdit::deleteRejectedFaceTagLists(const ItemInfo& info)
 {
     QList<FaceTagsIface> result;
-    QList<FaceTagsIface> faces             = utils.databaseFaces(info.id());
+    QList<FaceTagsIface> faces = FaceUtils().databaseFaces(info.id());
 
     for (const FaceTagsIface& face : std::as_const(faces))
     {
@@ -363,6 +363,8 @@ bool FacePipelineEdit::writer()
      */
 
     {
+        FaceUtils utils;
+
         switch (package->action)
         {
             case FacePipelinePackageBase::EditPipelineAction::Confirm:
@@ -538,7 +540,7 @@ FaceTagsIface FacePipelineEdit::getRejectedFaceTagList(const FaceTagsIface& face
 
     FaceTagsIface newFace(face);
 
-    QList<FaceTagsIface> faces = utils.databaseFaces(face.imageId());
+    QList<FaceTagsIface> faces = FaceUtils().databaseFaces(face.imageId());
 
     for (const FaceTagsIface& f : std::as_const(faces))
     {

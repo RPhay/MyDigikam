@@ -115,8 +115,6 @@ private:
     // TODO: Remove DEBUG timer
     QElapsedTimer   debugConfirmTimer;
 
-    FaceUtils       utils;
-
 private:
 
     // Disable
