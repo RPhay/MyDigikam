@@ -249,8 +249,14 @@ void AdvancedRenameProcessDialog::getNextThumbnail()
 {
     if (!d->newNameList.isEmpty())
     {
+        QPixmap pix;
         QString path = d->newNameList.first().first.toLocalFile();
-        d->thumbLoadThread->find(ThumbnailIdentifier(path));
+
+        if (d->thumbLoadThread->find(ThumbnailIdentifier(path), pix, 256, true))
+        {
+            d->thumbPixmap = pix;
+            d->thumbPath   = path;
+        }
     }
 }
 
