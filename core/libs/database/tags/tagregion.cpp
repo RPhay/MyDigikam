@@ -224,6 +224,11 @@ QRect TagRegion::mapToOriginalSize(const QSize& fullImageSize,
     double ratioWidth  = double(fullImageSize.width())  / double(reducedImageSize.width());
     double ratioHeight = double(fullImageSize.height()) / double(reducedImageSize.height());
 
+    if (qIsInf(ratioWidth) || qIsInf(ratioHeight))
+    {
+        return reducedSizeDetail;
+    }
+
     return QRectF(
                   reducedSizeDetail.x()      * ratioWidth,
                   reducedSizeDetail.y()      * ratioHeight,
@@ -241,6 +246,11 @@ QRect TagRegion::mapFromOriginalSize(const QSize& fullImageSize, const QSize& re
 
     double ratioWidth  = double(reducedImageSize.width())  / double(fullImageSize.width());
     double ratioHeight = double(reducedImageSize.height()) / double(fullImageSize.height());
+
+    if (qIsInf(ratioWidth) || qIsInf(ratioHeight))
+    {
+        return fullSizeDetail;
+    }
 
     return QRectF(
                   fullSizeDetail.x()      * ratioWidth,
