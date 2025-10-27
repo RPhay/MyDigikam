@@ -46,7 +46,7 @@ BUGFIXES:
 021 --> 407013 - Incorrectly parses GPS.
 022 --> 490821 - digiKam fails to write tags/ratings to image files.
 023 --> 485833 - Metadata is ignored while importing in 8.3.
-024 -->
+024 --> 511221 - Failed to load image (tif +750MB).
 025 -->
 026 -->
 027 -->

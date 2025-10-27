@@ -326,10 +326,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 if (bytesRead == -1)
                 {
                     qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read strip";
-                    TIFFClose(tif);
-                    loadingFailed();
-
-                    return false;
+                    break;
                 }
 
                 if ((num_of_strips != 0) && (samples_per_pixel != 0))
@@ -626,10 +623,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 if (bytesRead == -1)
                 {
                     qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read strip";
-                    TIFFClose(tif);
-                    loadingFailed();
-
-                    return false;
+                    break;
                 }
 
                 float* stripPtr = reinterpret_cast<float*>(strip.data());
@@ -670,9 +664,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 if (bytesRead == -1)
                 {
                     qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read strip";
-                    TIFFClose(tif);
-                    loadingFailed();
-                    return false;
+                    break;
                 }
 
 
@@ -913,10 +905,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 if (TIFFRGBAImageGet(&img, reinterpret_cast<uint32*>(strip.data()), img.width, rows_to_read) == -1)
                 {
                     qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read image data";
-                    TIFFClose(tif);
-                    loadingFailed();
-
-                    return false;
+                    break;
                 }
 
                 pixelsRead      = (qint64)rows_to_read * (qint64)img.width;
