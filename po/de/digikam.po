@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 01:58+0000\n"
+"POT-Creation-Date: 2025-10-27 02:00+0000\n"
 "PO-Revision-Date: 2025-07-21 23:21+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -52428,13 +52428,13 @@ msgid "Processing..."
 msgstr "Verarbeitung läuft ..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Bilder werden umbenannt"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -52446,19 +52446,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Erneut umbenennen"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Überschreiben"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Bilder werden umbenannt. Fehler: %1</b>"
@@ -52591,6 +52591,32 @@ msgstr "Den ersten Buchstaben jedes Wortes in Großbuchstaben umwandeln"
 #, kde-format
 msgid "First Letter of Each Word Uppercase"
 msgstr "Ersten Buchstaben jedes Wortes groß schreiben"
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Date format:"
+msgid "Date Format"
+msgstr "Datumsformat:"
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Recognize faces"
+msgid "Recognize and format a date"
+msgstr "Gesichter erkennen"
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
+#, kde-format
+msgid "Recognize and format a date to string"
+msgstr ""
+
+# Einstellungen ist das falsche Wort hier...
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
+#, kde-format
+msgctxt "@info: date format settings"
+msgid "format settings"
+msgstr "Datumsformat"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, kde-format
@@ -53112,44 +53138,37 @@ msgstr "Neigung"
 msgid "Accuracy"
 msgstr "Genauigkeit"
 
-# Einstellungen ist das falsche Wort hier...
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:41
-#, kde-format
-msgctxt "@info: date format settings"
-msgid "format settings"
-msgstr "Datumsformat"
-
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:50
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Standard"
 msgstr "Standard"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:51
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:42
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "ISO"
 msgstr "ISO"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:52
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:43
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Text"
 msgstr "Text"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:53
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
 msgstr "Unix-Datumsformat"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:54
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:45
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:116
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:107
 #, kde-format
 msgctxt "@item: Get date information from the image"
 msgid "Image"
@@ -53158,44 +53177,44 @@ msgstr "Bild"
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
 #.
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:122
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:113
 #, kde-format
 msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
 msgstr "Festgelegtes Datum"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:147
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:138
 #, kde-format
 msgctxt "@info"
 msgid "Enter custom format"
 msgstr "Benutzerdefiniertes Format eingeben"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:254
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "example: "
 msgstr "Beispiel: "
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Date && Time..."
 msgstr "Datum && Zeit ..."
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:262
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:253
 #, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
 msgstr "Datum- und Zeitinformation hinzufügen"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:265
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:256
 #, kde-format
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "Datum und Zeit (Standardformat)"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:266
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:267
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:257
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:259
 #, kde-format
 msgctxt "@item"
 msgid "Date and time"
@@ -74099,12 +74118,6 @@ msgstr "Einträge importieren "
 #~ msgctxt "@info:tooltip"
 #~ msgid "English mode"
 #~ msgstr "Belichtungsmodus:"
-
-#, fuzzy
-#~| msgctxt "@option:radio"
-#~| msgid "Recognize faces"
-#~ msgid "Recognized Words"
-#~ msgstr "Gesichter erkennen"
 
 #, fuzzy
 #~| msgid "XMP"

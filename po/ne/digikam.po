@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 01:58+0000\n"
+"POT-Creation-Date: 2025-10-27 02:00+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -49756,13 +49756,13 @@ msgid "Processing..."
 msgstr "फाइल गुण"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "फाइल पुन: नामकरण विकल्प"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -49774,20 +49774,20 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "फाइल पुन: नामकरण विकल्प"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "फाइल अधिलेखन गर्नुहुन्छ ?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
 #, fuzzy, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "तस्विरबाट ट्याग हटाउनुहोस् । कृपया प्रतिक्षा गर्नुहोस्..."
@@ -49906,6 +49906,27 @@ msgstr ""
 #, kde-format
 msgid "First Letter of Each Word Uppercase"
 msgstr ""
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
+#, fuzzy, kde-format
+msgid "Date Format"
+msgstr "मिति ढाँचा:"
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
+#, kde-format
+msgid "Recognize and format a date"
+msgstr ""
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
+#, kde-format
+msgid "Recognize and format a date to string"
+msgstr ""
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
+#, fuzzy, kde-format
+msgctxt "@info: date format settings"
+msgid "format settings"
+msgstr "सेटिङ"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, fuzzy, kde-format
@@ -50407,41 +50428,35 @@ msgstr "स्वत: परिक्रमण पृष्ठ"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:41
 #, fuzzy, kde-format
-msgctxt "@info: date format settings"
-msgid "format settings"
-msgstr "सेटिङ"
-
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:50
-#, fuzzy, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Standard"
 msgstr "मानक"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:51
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:42
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "ISO"
 msgstr "ISO"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:52
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:43
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Text"
 msgstr "प्रकृति"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:53
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:54
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:45
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Custom"
 msgstr "अनुकूल"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:116
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:107
 #, fuzzy, kde-format
 msgctxt "@item: Get date information from the image"
 msgid "Image"
@@ -50450,45 +50465,45 @@ msgstr "छवि"
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
 #.
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:122
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:113
 #, fuzzy, kde-format
 msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
 msgstr "छवि मिति"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:147
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:138
 #, fuzzy, kde-format
 #| msgid "Custom ratio:"
 msgctxt "@info"
 msgid "Enter custom format"
 msgstr "अनुकूल अनुपात:"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:254
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:245
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "example: "
 msgstr "नाम:"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:252
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Date && Time..."
 msgstr "मिति र समय थप्नुहोस्"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:262
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:253
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
 msgstr "टोन फिल्टर होइन"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:265
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:256
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "टोन फिल्टर होइन"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:266
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:267
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:257
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:259
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Date and time"

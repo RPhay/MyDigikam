@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 01:58+0000\n"
+"POT-Creation-Date: 2025-10-27 02:00+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -4468,7 +4468,7 @@ msgstr "BCG 调整"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Brightness / Contrast / Gamma"
-msgstr "调整亮度 / 对比度 / 伽玛值"
+msgstr "调整亮度 / 对比度 / 伽马"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:62
 #, kde-kuit-format
@@ -4476,7 +4476,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
 "from images.</para>"
-msgstr "<para>用于自动调整图像亮度 / 对比度 / 伽玛值的批处理工具。</para>"
+msgstr "<para>用于自动调整图像亮度 / 对比度 / 伽马的批处理工具。</para>"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:42
 #, kde-format
@@ -4783,15 +4783,7 @@ msgid "A tool to convert images to AVIF format"
 msgstr "转换图像为 AVIF 格式"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to AVIF "
-#| "format.</para><para>AV1 Image File Format is an image file format "
-#| "specification for storing images or image sequences compressed with AV1 "
-#| "in the ISOBMFF container format.</para><para>See details about this "
-#| "format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</"
-#| "para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to AVIF format.</"
@@ -4800,10 +4792,6 @@ msgid ""
 "container format.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/AVIF'>this page</link>.</para>"
 msgstr ""
-"<para>用于转换图像数据为 AVIF 格式的批处理工具。</para><para>AV1 是一种用于存"
-"储使用 ISOBMFF 容器格式的 AV1 编码压缩后的图像或图像序列的图像文件格式。</"
-"para><para>如需了解详情，请访问：<a href='https://en.wikipedia.org/wiki/"
-"AVIF'>AVIF 格式介绍页面</a>。</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
@@ -4818,13 +4806,7 @@ msgid "A tool to convert RAW images to DNG container"
 msgstr "转换 RAW 图像为 DNG 格式"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Generic tool can convert RAW images data to DNG format.</"
-#| "para><para>The Digital Negative is a lossless RAW image format created by "
-#| "Adobe.</para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Generic tool can convert RAW images data to DNG format.</"
@@ -4832,10 +4814,6 @@ msgid ""
 "Adobe.</para><para>See details about this format from <link url='https://en."
 "wikipedia.org/wiki/Digital_Negative'>this page</link>.</para>"
 msgstr ""
-"<para>用于转换 RAW 图像数据为 DNG 格式的通用工具。</para><para>Digital "
-"Negative (数字负片) 是由 Adobe 公司开发的一种无损 RAW 图像格式。</para><para>"
-"如需了解详情，请访问：<a href='https://en.wikipedia.org/wiki/"
-"Digital_Negative'>DNG 格式介绍页面</a>。</para>"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, kde-format
@@ -4850,20 +4828,7 @@ msgid "A tool to convert images to HEIF format"
 msgstr "转换图像为 HEIF 格式"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to HEIF "
-#| "format.</para><para>High Efficiency Image File Format (HEIF), also known "
-#| "as High Efficiency Image Coding (HEIC), is a file format for individual "
-#| "images and image sequences. It was developed by the Moving Picture "
-#| "Experts Group (MPEG) and it claims that twice as much information can be "
-#| "stored in a HEIF image as in a JPEG image of the same size, resulting in "
-#| "a better quality image. HEIF also supports animation, and is capable of "
-#| "storing more information than an animated GIF at a small fraction of the "
-#| "size.</para><para>See <a href='https://en.wikipedia.org/wiki/"
-#| "High_Efficiency_Image_File_Format'>High Efficiency Image File Format</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to HEIF format.</"
@@ -4877,14 +4842,6 @@ msgid ""
 "url='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</link> for details.</para>"
 msgstr ""
-"<para>用于转换图像数据为 HEIF 格式的批处理工具。</para><para>高效率图像文件格"
-"式 (High Efficiency Image File Format, HEIF)， 又称高效率图像编码 (High "
-"Efficiency Image Coding, HEIC)，是一种用于单张图像和图像序列的文件格式。开发"
-"了此格式的运动图像专家组 (Moving Picture Experts Group, MPEG) 宣称 HEIF 格式"
-"可在相同的文件体积下保存 2 倍于 JPEG 格式的图像信息，从而实现更好的图像品质。"
-"HEIF 也支持动画，并且能够以比 GIF 格式小得多的文件体积保存更多图像信息。</"
-"para><para>如需了解详情，请访问：<a href='https://en.wikipedia.org/wiki/"
-"High_Efficiency_Image_File_Format'>HEIF 格式介绍页面</a>。</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
@@ -4899,16 +4856,7 @@ msgid "A tool to convert images to JPEG-2000 format"
 msgstr "转换图像为 JPEG-2000 格式"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
-#| "format.</para><para>This is an image compression standard and coding "
-#| "system. It was created by the Joint Photographic Experts Group committee "
-#| "in 2000 with the intention of superseding their original discrete cosine "
-#| "transform-based JPEG standard (created in 1992) with a newly designed, "
-#| "wavelet-based method.</para><para>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
@@ -4919,12 +4867,6 @@ msgid ""
 "method.</para><para>See details about this format from <link url='https://en."
 "wikipedia.org/wiki/JPEG_2000'>this page</link>.</para>"
 msgstr ""
-"<para>用于转换图像数据为 JPEG-2000 格式的批处理工具。</para><para>JPEG-2000 "
-"是联合图像专家组 (Joint Photographic Experts Group, JPEG) 于 2000 年发布的一"
-"套图像压缩标准和图像编码系统。它用一种基于小波变换的算法取代了 1992 年原始版"
-"本中基于离散余弦变换的算法。</para><para>如需了解详情，请访问：<a "
-"href='https://en.wikipedia.org/wiki/JPEG_2000'>JPEG-2000 格式介绍页面</a>。</"
-"para>"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
@@ -4939,15 +4881,7 @@ msgid "A tool to convert images to JPEG format"
 msgstr "转换图像为 JPEG 格式"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG "
-#| "format.</para><para>The Joint Photographic Experts Group format is a "
-#| "commonly used method of lossy compression for digital images, "
-#| "particularly for those images produced by digital photography.</"
-#| "para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/JPEG'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG format.</"
@@ -4957,11 +4891,6 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/JPEG'>this page</link>."
 "</para>"
 msgstr ""
-"<para>用于转换图像数据为 JPEG 格式的批处理工具。</para><para>JPEG 格式是一套"
-"由联合图像专家组 (Joint Photographic Experts Group, JPEG) 研发的有损图像压缩"
-"方式。该格式运用广泛，在数字摄影图像中尤为常见。</para><para>如需了解详情，请"
-"访问：<a href='https://en.wikipedia.org/wiki/JPEG'>JPEG 格式介绍页面</a>。</"
-"para>"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
@@ -4976,15 +4905,7 @@ msgid "A tool to convert images to JXL format"
 msgstr "转换图像为 JXL 格式"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
-#| "format.</para><para>JPEG-XL is a royalty-free raster-graphics file format "
-#| "that supports both lossy and lossless compression. It is designed to "
-#| "outperform existing raster formats and thus to become their universal "
-#| "replacement.</para><para>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
@@ -4994,11 +4915,6 @@ msgid ""
 "replacement.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/JPEG_XL'>this page</link>.</para>"
 msgstr ""
-"<para>用于转换图像数据为 JPEG-XL 格式的批处理工具。</para><para>JPEG-XL 是一"
-"种无版权使用费的栅格图像格式，它同时支持有损和无损压缩。它的设计理念是提供优"
-"于现有栅格图像格式的表现，从而成为它们的通用替代格式。</para><para>如需了解详"
-"情，请访问：<a href='https://en.wikipedia.org/wiki/JPEG_XL'>JPEG-XL 格式介绍"
-"页面</a>。</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
@@ -5013,14 +4929,7 @@ msgid "A tool to convert images to PGF format"
 msgstr "转换图像为 PGF 格式"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to PGF format."
-#| "</para><para>The Progressive Graphics File is a wavelet-based bitmapped "
-#| "image format that employs lossless and lossy data compression.</"
-#| "para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Progressive_Graphics_File'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PGF format.</"
@@ -5029,11 +4938,6 @@ msgid ""
 "details about this format from <link url='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>this page</link>.</para>"
 msgstr ""
-"<para>用于转换图像数据为 PGF 格式的批处理工具。</para><para>渐进式图像文件 "
-"(Progressive Graphics File, PGF) 是一种基于小波变换的光栅图像格式，它同时使用"
-"无损和有损方式对图像进行压缩。</para><para>如需了解详情，请访问：<a "
-"href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>PGF 格式介绍页"
-"面</a>。</para>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
@@ -5058,14 +4962,7 @@ msgid "A tool to convert images to PNG format"
 msgstr "转换图像为 PNG 格式"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to PNG format."
-#| "</para><para>The Portable Network Graphics is a raster-graphics file-"
-#| "format that supports lossless data compression.</para><para>See details "
-#| "about this format from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PNG format.</"
@@ -5074,10 +4971,6 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/"
 "Portable_Network_Graphics'>this page</link>.</para>"
 msgstr ""
-"<para>用于转换图像数据为 PNG 格式的批处理工具。</para><para>可移植网络图形 "
-"(Portable Network Graphics, PNG) 是一种支持无损压缩的光栅图像文件格式。</"
-"para><para>如需了解详情，请访问：<a href='https://en.wikipedia.org/wiki/"
-"Portable_Network_Graphics'>PNG 格式介绍页面</a>。</para>"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
@@ -5092,15 +4985,7 @@ msgid "A tool to convert images to TIFF format"
 msgstr "转换图像为 TIFF 格式"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to TIFF "
-#| "format.</para><para>The Tagged Image File Format is a computer file "
-#| "format for storing raster graphics images, popular among graphic artists, "
-#| "the publishing industry, and photographers.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to TIFF format.</"
@@ -5110,10 +4995,6 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/TIFF'>this page</link>."
 "</para>"
 msgstr ""
-"<para>用于转换图像数据为 TIFF 格式的批处理工具。</para><para>标签图像文件格"
-"式 (Tagged Image File Format, TIFF) 是一种用于保存光栅图像的文件格式，常见于"
-"插画、出版和摄影行业。</para><para>如需了解详情，请访问：<a href='https://en."
-"wikipedia.org/wiki/TIFF'>TIFF 格式介绍页面</a>。</para>"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, kde-format
@@ -5128,17 +5009,7 @@ msgid "A tool to convert images to WEBP format"
 msgstr "转换图像为 WEBP 格式"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to WEBP "
-#| "format.</para><para>WEBP is an image file format that Google has "
-#| "developed as a replacement for JPEG, PNG, and GIF file formats. WEBP "
-#| "yields files that are smaller for the same quality, or of higher quality "
-#| "for the same size. It supports both lossy and lossless compression, as "
-#| "well as animation and alpha transparency.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to WEBP format.</"
@@ -5149,11 +5020,6 @@ msgid ""
 "transparency.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/WebP'>this page</link>.</para>"
 msgstr ""
-"<para>用于转换图像数据为 WEBP 格式的批处理工具。</para><para>WEBP 是 Google "
-"为取代 JPEG、PNG 和 GIF 等格式而开发的图像文件格式。在相同画质下，WEBP 格式的"
-"文件要小于传统格式；在文件大小相同时，WEBP 的画质要好于传统格式。它同时支持有"
-"损和无损压缩模式，还支持动图和透明度通道。</para><para>详情请见 <a "
-"href='https://en.wikipedia.org/wiki/WebP'>WebP 格式介绍页面</a>。</para>"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
@@ -7496,12 +7362,12 @@ msgstr "最小输入亮度 (HSI 强度)"
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
-msgstr "输入伽玛值"
+msgstr "输入伽马值"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #, kde-format
 msgid "Select the gamma input value here."
-msgstr "选择输入伽玛值。"
+msgstr "选择输入伽马值。"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
 #, kde-format
@@ -7738,20 +7604,20 @@ msgstr "色彩自动调整..."
 #: core/dplugins/editor/colors/bcg/bcgtool.cpp:161
 #, kde-format
 msgid "Brightness / Contrast / Gamma"
-msgstr "亮度 / 对比度 / 伽玛值"
+msgstr "亮度 / 对比度 / 伽马"
 
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid ""
 "This Image Editor tool can adjust Brightness / Contrast / Gamma from image."
-msgstr "用于调整亮度 / 对比度 / 伽玛值的图像编辑器工具。"
+msgstr "用于调整亮度 / 对比度 / 伽马的图像编辑器工具。"
 
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
-msgstr "亮度/对比度/伽玛值..."
+msgstr "亮度/对比度/伽马..."
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:179
 #, kde-format
@@ -7946,7 +7812,7 @@ msgstr ""
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
 "Standard values are 1.8 or 2.2."
-msgstr "线性光的原始扫描负片需要应用伽玛曲线。标准值为1.8 或 2.2。"
+msgstr "线性光的原始扫描负片需要应用伽马曲线。标准值为1.8 或 2.2。"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
@@ -16665,7 +16531,7 @@ msgid ""
 "Pre-processing operations include Raw demosaicing. Raw images will be "
 "converted to 16-bit sRGB images with auto-gamma."
 msgstr ""
-"预处理过程包括 RAW 图像去马赛克。RAW 图像将按照自动伽玛值转换为 16 位 sRGB 图"
+"预处理过程包括 RAW 图像去马赛克。RAW 图像将按照自动伽马转换为 16 位 sRGB 图"
 "像。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:136
@@ -25925,12 +25791,12 @@ msgstr "调整图像的对比度数值。"
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #, kde-format
 msgid "Gamma:"
-msgstr "伽玛值："
+msgstr "伽马："
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:183
 #, kde-format
 msgid "Set here the gamma adjustment of the image"
-msgstr "在此设置图像的伽玛调整数值"
+msgstr "在此设置图像的伽马调整数值"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:190
 #, kde-format
@@ -29454,12 +29320,12 @@ msgstr "自动归一化"
 #: core/libs/dimg/filters/bcg/bcgfilter.cpp:85
 #, kde-format
 msgid "Brightness / Contrast / Gamma Filter"
-msgstr "亮度 / 对比度 / 伽玛值滤镜"
+msgstr "亮度 / 对比度 / 伽马滤镜"
 
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:85
 #, kde-format
 msgid "Set here the gamma adjustment of the image."
-msgstr "调整图像的伽玛值。"
+msgstr "调整图像的伽马。"
 
 #: core/libs/dimg/filters/bw/bwsepiafilter.cpp:75
 #, kde-format
@@ -32702,13 +32568,13 @@ msgstr "在此设置饱和度数值。"
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Gamma:"
-msgstr "伽玛值："
+msgstr "伽马："
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:232
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the gamma correction value."
-msgstr "在此设置伽玛调整数值。"
+msgstr "在此设置伽马调整数值。"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:234
 #, kde-format
@@ -37532,9 +37398,9 @@ msgid ""
 "and a 99th-percentile white point. This mode is faster than 16-bit decoding."
 "</para>"
 msgstr ""
-"<para>如果勾选此项，所有的 RAW 文件将会使用线性伽玛曲线在 16 位色彩深度下进行"
+"<para>如果勾选此项，所有的 RAW 文件将会使用线性伽马曲线在 16 位色彩深度下进行"
 "解码。为了避免图像在编辑器中显得过暗，建议在使用此模式时启用色彩管理功能。</"
-"para><para>如果不勾选此项，所有的 RAW 文件将会使用 BT.709 伽玛曲线和 99% 白点"
+"para><para>如果不勾选此项，所有的 RAW 文件将会使用 BT.709 伽马曲线和 99% 白点"
 "数值在 8 位色彩深度下进行解码。此模式的速度要快于 16 位解码模式。</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:199
@@ -49774,13 +49640,13 @@ msgid "Processing..."
 msgstr "正在处理..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "重命名图像"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -49793,19 +49659,19 @@ msgstr[0] ""
 "重命名 %1 张图像时出错。\n"
 "您想要重新调整这些图像的重命名模式，还是覆盖已有文件完成重命名？"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "再次重命名"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "覆盖"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>重命名图像。错误：%1</b>"
@@ -49928,6 +49794,29 @@ msgstr "转换单词首字母为大写"
 #, kde-format
 msgid "First Letter of Each Word Uppercase"
 msgstr "各单词首字母大写"
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Date format:"
+msgid "Date Format"
+msgstr "日期格式："
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
+#, kde-format
+msgid "Recognize and format a date"
+msgstr ""
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
+#, kde-format
+msgid "Recognize and format a date to string"
+msgstr ""
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
+#, kde-format
+msgctxt "@info: date format settings"
+msgid "format settings"
+msgstr "格式设置"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, kde-format
@@ -50433,41 +50322,35 @@ msgstr "精度"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:41
 #, kde-format
-msgctxt "@info: date format settings"
-msgid "format settings"
-msgstr "格式设置"
-
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:50
-#, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Standard"
 msgstr "标准"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:51
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:42
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "ISO"
 msgstr "ISO"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:52
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:43
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Text"
 msgstr "文字"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:53
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
 msgstr "Unix 时间戳"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:54
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:45
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Custom"
 msgstr "自定义"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:116
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:107
 #, kde-format
 msgctxt "@item: Get date information from the image"
 msgid "Image"
@@ -50476,44 +50359,44 @@ msgstr "图像"
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
 #.
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:122
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:113
 #, kde-format
 msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
 msgstr "固定日期"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:147
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:138
 #, kde-format
 msgctxt "@info"
 msgid "Enter custom format"
 msgstr "输入自定义格式"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:254
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "example: "
 msgstr "示例："
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Date && Time..."
 msgstr "日期和时间..."
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:262
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:253
 #, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
 msgstr "添加日期和时间信息"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:265
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:256
 #, kde-format
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "日期和时间 (标准格式)"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:266
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:267
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:257
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:259
 #, kde-format
 msgctxt "@item"
 msgid "Date and time"

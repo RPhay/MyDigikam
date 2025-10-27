@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-26 01:58+0000\n"
-"PO-Revision-Date: 2025-10-23 00:21+0200\n"
+"POT-Creation-Date: 2025-10-27 02:00+0000\n"
+"PO-Revision-Date: 2025-10-26 14:22+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -5001,15 +5001,7 @@ msgid "A tool to convert images to AVIF format"
 msgstr "Een hulpmiddel om afbeeldingen naar AVIF-formaat te converteren"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to AVIF "
-#| "format.</para><para>AV1 Image File Format is an image file format "
-#| "specification for storing images or image sequences compressed with AV1 "
-#| "in the ISOBMFF container format.</para><para>See details about this "
-#| "format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</"
-#| "para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to AVIF format.</"
@@ -5022,8 +5014,8 @@ msgstr ""
 "formaat converteren.</para><para>AV1 afbeeldingsormaat is een "
 "bestandsformaatspecificatie voor opslaan van afbeeldingen of reeksen "
 "afbeeldingen gecomprimeerd met AV1 in het ISOBMFF-containerformaat.</"
-"para><para>Zie details over dit formaat op <a href='https://en.wikipedia.org/"
-"wiki/AVIF'>deze pagina</a>.</para>"
+"para><para>Zie details over dit formaat op <link url='https://en.wikipedia."
+"org/wiki/AVIF'>deze pagina</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
@@ -5038,13 +5030,7 @@ msgid "A tool to convert RAW images to DNG container"
 msgstr "Een hulpmiddel om RAW-afbeeldingen naar DNG-container te converteren."
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Generic tool can convert RAW images data to DNG format.</"
-#| "para><para>The Digital Negative is a lossless RAW image format created by "
-#| "Adobe.</para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Generic tool can convert RAW images data to DNG format.</"
@@ -5055,8 +5041,8 @@ msgstr ""
 "<para>Dit algemene hulpmiddel kan RAW-afbeeldingsgegevens naar DNG-formaat "
 "converteren.</para><para>Het Digital Negative is een RAW-afbeeldingsformaat "
 "zonder verlies gecreëerd door Adobe.</para><para>Zie details over dit "
-"formaat uit <a href='https://en.wikipedia.org/wiki/Digital_Negative'>deze "
-"pagina</a>.</para>"
+"formaat uit <link url='https://en.wikipedia.org/wiki/Digital_Negative'>deze "
+"pagina</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, kde-format
@@ -5071,20 +5057,7 @@ msgid "A tool to convert images to HEIF format"
 msgstr "Een hulpmiddel om afbeeldingen naar HEIF-formaat te converteren"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to HEIF "
-#| "format.</para><para>High Efficiency Image File Format (HEIF), also known "
-#| "as High Efficiency Image Coding (HEIC), is a file format for individual "
-#| "images and image sequences. It was developed by the Moving Picture "
-#| "Experts Group (MPEG) and it claims that twice as much information can be "
-#| "stored in a HEIF image as in a JPEG image of the same size, resulting in "
-#| "a better quality image. HEIF also supports animation, and is capable of "
-#| "storing more information than an animated GIF at a small fraction of the "
-#| "size.</para><para>See <a href='https://en.wikipedia.org/wiki/"
-#| "High_Efficiency_Image_File_Format'>High Efficiency Image File Format</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to HEIF format.</"
@@ -5107,9 +5080,9 @@ msgstr ""
 "dezelfde grootte, wat resulteert in een betere kwaliteit van de afbeelding. "
 "HEIF ondersteunt ook animatie en kan meer informatie opslaan dan een "
 "geanimeerde GIF in een klein gedeelte van de grootte.</para><para>Zie voor "
-"details <a href='https://en.wikipedia.org/wiki/"
-"High_Efficiency_Image_File_Format'>High Efficiency Image bestandsformaat</a>."
-"</para>"
+"details <link url='https://en.wikipedia.org/wiki/"
+"High_Efficiency_Image_File_Format'>High Efficiency Image bestandsformaat</"
+"link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
@@ -5124,16 +5097,7 @@ msgid "A tool to convert images to JPEG-2000 format"
 msgstr "Een hulpmiddel om afbeeldingen naar JPEG-2000 te converteren."
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
-#| "format.</para><para>This is an image compression standard and coding "
-#| "system. It was created by the Joint Photographic Experts Group committee "
-#| "in 2000 with the intention of superseding their original discrete cosine "
-#| "transform-based JPEG standard (created in 1992) with a newly designed, "
-#| "wavelet-based method.</para><para>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
@@ -5150,8 +5114,8 @@ msgstr ""
 "het comité Joint Photographic Experts Group in 2000 met de intentie van hun "
 "originele op JPEG gebaseerde discrete cosinus transformatiestandaard "
 "(gecreëerd in 1992) met een nieuw ontworpen, op wavelet gebaseerde methode.</"
-"para><para>Zie details over dit formaat in <a href='https://en.wikipedia.org/"
-"wiki/JPEG_2000'>deze pagina</a>.</para>"
+"para><para>Zie details over dit formaat in <link url='https://en.wikipedia."
+"org/wiki/JPEG_2000'>deze pagina</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
@@ -5166,15 +5130,7 @@ msgid "A tool to convert images to JPEG format"
 msgstr "Een hulpmiddel om afbeeldingen naar het JPEG-formaat te converteren."
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG "
-#| "format.</para><para>The Joint Photographic Experts Group format is a "
-#| "commonly used method of lossy compression for digital images, "
-#| "particularly for those images produced by digital photography.</"
-#| "para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/JPEG'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG format.</"
@@ -5188,8 +5144,8 @@ msgstr ""
 "formaat converteren.</para><para>Het formaat van Joint Photographic Experts "
 "Group is een algemeen gebruikte methode voor compressie met verlies voor "
 "digitale afbeeldingen, speciaal voor die afbeeldingen geproduceerd door "
-"digitale fotografie.</para><para>Zie details over dit formaat in <a "
-"href='https://nl.wikipedia.org/wiki/JPEG'>deze pagina</a>.</para>"
+"digitale fotografie.</para><para>Zie details over dit formaat in <link "
+"url='https://nl.wikipedia.org/wiki/JPEG'>deze pagina</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
@@ -5204,15 +5160,7 @@ msgid "A tool to convert images to JXL format"
 msgstr "Een hulpmiddel om afbeeldingen naar het JXL-formaat te converteren."
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
-#| "format.</para><para>JPEG-XL is a royalty-free raster-graphics file format "
-#| "that supports both lossy and lossless compression. It is designed to "
-#| "outperform existing raster formats and thus to become their universal "
-#| "replacement.</para><para>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
@@ -5225,8 +5173,8 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingsgegevens naar JPEG-"
 "XL-formaat converteren.</para><para>JPEG-XL is een vrij van kosten raster-"
 "grafisch bestandsformaat dat compressie met en zonder verlies ondersteunt.</"
-"para><para>Zie details over dit formaat op <a href='https://en.wikipedia.org/"
-"wiki/JPEG_XL'>deze pagina</a>.</para>"
+"para><para>Zie details over dit formaat op <link url='https://en.wikipedia."
+"org/wiki/JPEG_XL'>deze pagina</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
@@ -5241,14 +5189,7 @@ msgid "A tool to convert images to PGF format"
 msgstr "Een hulpmiddel om afbeeldingen naar het PGF-formaat te converteren"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to PGF format."
-#| "</para><para>The Progressive Graphics File is a wavelet-based bitmapped "
-#| "image format that employs lossless and lossy data compression.</"
-#| "para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Progressive_Graphics_File'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PGF format.</"
@@ -5258,11 +5199,11 @@ msgid ""
 "Progressive_Graphics_File'>this page</link>.</para>"
 msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingsgegevens naar PGF-"
-"formaat converteren.</para><para>Het Progressive Graphics File is een  op "
+"formaat converteren.</para><para>Het Progressive Graphics File is een op "
 "wavelet gebaseerd bitmapped afbeeldingsformaat dat compressie gebruikt met "
-"en zonder verlies.</para><para>Zie details over dit formaat op <a "
-"href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>deze pagina</"
-"a>.</para>"
+"en zonder verlies.</para><para>Zie details over dit formaat op <link "
+"url='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>deze pagina</"
+"link>.</para>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
@@ -5288,14 +5229,7 @@ msgid "A tool to convert images to PNG format"
 msgstr "Een hulpmiddel om afbeeldingen naar het PNG-formaat te converteren"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to PNG format."
-#| "</para><para>The Portable Network Graphics is a raster-graphics file-"
-#| "format that supports lossless data compression.</para><para>See details "
-#| "about this format from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PNG format.</"
@@ -5307,8 +5241,8 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingsgegevens naar PNG-"
 "formaat converteren.</para><para>Het Portable Network Graphics is een raster-"
 "grafisch bestandsformaat dat compressie zonder verlies ondersteunt.</"
-"para><para>Zie details over dit formaat op <a href='https://en.wikipedia.org/"
-"wiki/Portable_Network_Graphics'>deze pagina</a>.</para>"
+"para><para>Zie details over dit formaat op <link url='https://en.wikipedia."
+"org/wiki/Portable_Network_Graphics'>deze pagina</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
@@ -5323,15 +5257,7 @@ msgid "A tool to convert images to TIFF format"
 msgstr "Een hulpmiddel om afbeeldingen naar TIFF-formaat te converteren"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to TIFF "
-#| "format.</para><para>The Tagged Image File Format is a computer file "
-#| "format for storing raster graphics images, popular among graphic artists, "
-#| "the publishing industry, and photographers.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to TIFF format.</"
@@ -5343,9 +5269,9 @@ msgid ""
 msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingsgegevens naar TIFF-"
 "formaat converteren.</para><para>Het Tagged Image File Format is een raster-"
-"grafisch bestandsformaat, populair onder grafische artiesten, de publicatie "
-"industrie en fotografen.</para><para>Zie details over dit formaat op <a "
-"href='https://en.wikipedia.org/wiki/TIFF'>deze pagina</a>.</para>"
+"grafisch bestandsformaat, populair onder grafische artiesten, de publicatie-"
+"industrie en fotografen.</para><para>Zie details over dit formaat op <link "
+"url='https://en.wikipedia.org/wiki/TIFF'>deze pagina</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, kde-format
@@ -5360,17 +5286,7 @@ msgid "A tool to convert images to WEBP format"
 msgstr "Een hulpmiddel om afbeeldingen naar het WEBP-formaat te converteren"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to WEBP "
-#| "format.</para><para>WEBP is an image file format that Google has "
-#| "developed as a replacement for JPEG, PNG, and GIF file formats. WEBP "
-#| "yields files that are smaller for the same quality, or of higher quality "
-#| "for the same size. It supports both lossy and lossless compression, as "
-#| "well as animation and alpha transparency.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to WEBP format.</"
@@ -5383,12 +5299,12 @@ msgid ""
 msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingsgegevens naar WEBP-"
 "formaat converteren.</para><para>WEBP is een afbeeldingsbestandsformaat dat "
-"door Google is ontwikkeld als een vervanging voor JPEG, PNG,en GIF "
+"door Google is ontwikkeld als een vervanging voor JPEG, PNG en GIF "
 "bestandsformaten, WEBP heeft bestanden die kleiner zijn met dezelfde "
 "kwaliteit of van een hogere kwaliteit voor dezelfde grootte. Het ondersteunt "
 "zowel compressie met als zonder verlies en evenals animatie en alfa-"
-"transparantie.</para><para>Zie details over dit formaat op <a href='https://"
-"en.wikipedia.org/iki/WebP'>deze pagina</a>.</para>"
+"transparantie.</para><para>Zie details over dit formaat op <link "
+"url='https://en.wikipedia.org/iki/WebP'>deze pagina</link>.</para>"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
@@ -51726,13 +51642,13 @@ msgid "Processing..."
 msgstr "Bezig met verwerken..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:159
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Afbeeldingen hernoemen"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -51750,19 +51666,19 @@ msgstr[1] ""
 "Wilt u deze afbeeldingen opnieuw hernoemen of deze afbeelding hernoemen door "
 "te overschrijven?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Opnieuw hernoemen"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:171
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Overschrijven"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Afbeeldingen hernoemen. Fouten: %1</b>"
@@ -51894,6 +51810,30 @@ msgstr "Eerste letter van elk woord naar een hoofdletter converteren"
 #, kde-format
 msgid "First Letter of Each Word Uppercase"
 msgstr "Eerste letter van elk woord een hoofdletter"
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Date format:"
+msgid "Date Format"
+msgstr "Datumopmaak:"
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
+#, fuzzy, kde-format
+#| msgid "Recognized Words"
+msgid "Recognize and format a date"
+msgstr "Herkende woorden"
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
+#, kde-format
+msgid "Recognize and format a date to string"
+msgstr ""
+
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
+#, kde-format
+msgctxt "@info: date format settings"
+msgid "format settings"
+msgstr "opmaakinstellingen"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, kde-format
@@ -52409,41 +52349,35 @@ msgstr "Nauwkeurigheid"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:41
 #, kde-format
-msgctxt "@info: date format settings"
-msgid "format settings"
-msgstr "opmaakinstellingen"
-
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:50
-#, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Standard"
 msgstr "Standaard"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:51
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:42
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "ISO"
 msgstr "ISO"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:52
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:43
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Text"
 msgstr "Tekst"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:53
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
 msgstr "Tijdstempel van Unix"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:54
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:45
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Custom"
 msgstr "Aangepast"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:116
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:107
 #, kde-format
 msgctxt "@item: Get date information from the image"
 msgid "Image"
@@ -52452,44 +52386,44 @@ msgstr "Afbeelding"
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
 #.
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:122
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:113
 #, kde-format
 msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
 msgstr "Vaste datum"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:147
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:138
 #, kde-format
 msgctxt "@info"
 msgid "Enter custom format"
 msgstr "Voer de aangepaste opmaak in"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:254
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "example: "
 msgstr "voorbeeld: "
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Date && Time..."
 msgstr "Datum && tijd..."
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:262
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:253
 #, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
 msgstr "Datum- en tijdinformatie toevoegen"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:265
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:256
 #, kde-format
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "Datum en tijd (standaard opmaak)"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:266
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:267
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:257
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:259
 #, kde-format
 msgctxt "@item"
 msgid "Date and time"
@@ -73151,9 +73085,6 @@ msgstr "Items importeren"
 #~ msgctxt "@info:tooltip"
 #~ msgid "English mode"
 #~ msgstr "Modus Engels"
-
-#~ msgid "Recognized Words"
-#~ msgstr "Herkende woorden"
 
 #~ msgctxt "@option:check"
 #~ msgid "XMP"
