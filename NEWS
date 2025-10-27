@@ -47,7 +47,7 @@ BUGFIXES:
 022 --> 490821 - digiKam fails to write tags/ratings to image files.
 023 --> 485833 - Metadata is ignored while importing in 8.3.
 024 --> 511221 - Failed to load image (tif +750MB).
-025 -->
+025 --> 511184 - Crash when confirming a face suggestion when Exiv2 reads 0x0 image size.
 026 -->
 027 -->
 028 -->
