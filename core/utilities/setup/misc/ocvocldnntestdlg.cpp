@@ -101,9 +101,9 @@ OpenCVOpenCLDNNTestDlg::OpenCVOpenCLDNNTestDlg(QWidget* const parent)
     d->progressText->setVisible(false);  // Initially hidden until test starts
 
     d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GUP test", "Start"));
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GPU test", "Start"));
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button start the AI GUP test", "Begin test"));
+    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button start the AI GPU test", "Begin test"));
 
     d->layoutGrid->addWidget(d->icon,          0, 0, 1, 1);
     d->layoutGrid->addWidget(d->message,       0, 1, 1, 3);
@@ -139,7 +139,7 @@ OpenCVOpenCLDNNTestDlg::~OpenCVOpenCLDNNTestDlg()
 void OpenCVOpenCLDNNTestDlg::slotStart()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GUP test", "Testing..."));
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GPU test", "Testing..."));
     d->buttons->button(QDialogButtonBox::Cancel)->setEnabled(false);
 
     // Clear and show the progress text area
@@ -223,8 +223,8 @@ void OpenCVOpenCLDNNTestDlg::slotTestFinished(bool result)
 
     d->progressText->append(QLatin1String("\n") + resultMessage);
 
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GUP test", "Close"));
-    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button start the AI GUP test", "Close the test dialog"));
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GPU test", "Close"));
+    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button start the AI GPU test", "Close the test dialog"));
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(true);
 }
 
@@ -284,7 +284,7 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
 
         // load the test file as QImage
 
-        Q_EMIT signalNotification(i18n("Loading test image..."));
+        Q_EMIT signalNotification(i18n("Loading DNN Model test image..."));
 
         DNNModelBase* const testImage = DNNModelManager::instance()->getModel(
                                                                               QLatin1String("DNNTestImage"),
@@ -293,18 +293,18 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
 
         if (!QFileInfo::exists(testImage->getModelPath()))
         {
-            throw std::runtime_error(i18n("Test image not found.").toStdString());
+            throw std::runtime_error(i18n("DNN model test image not found.").toStdString());
         }
 
         QImage inputImage(testImage->getModelPath());
 
         if (inputImage.isNull())
         {
-            throw std::runtime_error(i18n("Failed to load test image from %1",
+            throw std::runtime_error(i18n("Failed to load DNN model test image from %1",
                                      testImage->getModelPath()).toStdString());
         }
 
-        Q_EMIT signalNotification(i18n("Preparing the image for processing..."));
+        Q_EMIT signalNotification(i18n("Preparing the DNN Model image for processing..."));
 
         if (inputImage.format() != QImage::Format_BGR888)
         {
