@@ -49744,11 +49744,9 @@ msgid "First Letter of Each Word Uppercase"
 msgstr "První písmeno každého slova velké"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
+#, kde-format
 msgid "Date Format"
-msgstr "Formát data:"
+msgstr ""
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
 #, kde-format

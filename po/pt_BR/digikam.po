@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-27 02:00+0000\n"
-"PO-Revision-Date: 2025-10-26 07:07-0300\n"
+"PO-Revision-Date: 2025-10-27 06:22-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -51689,23 +51689,19 @@ msgid "First Letter of Each Word Uppercase"
 msgstr "Primeira letra de cada palavra em maiúsculo"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
+#, kde-format
 msgid "Date Format"
-msgstr "Formato de data:"
+msgstr "Formato de data"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces (experimental)"
+#, kde-format
 msgid "Recognize and format a date"
-msgstr "Reconhecer rostos (experimental)"
+msgstr "Reconhecer e formatar uma data"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
 #, kde-format
 msgid "Recognize and format a date to string"
-msgstr ""
+msgstr "Reconhecer e formatar uma data para string"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
 #, kde-format
