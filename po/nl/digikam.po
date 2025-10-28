@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-27 02:00+0000\n"
-"PO-Revision-Date: 2025-10-26 14:22+0100\n"
+"PO-Revision-Date: 2025-10-27 10:50+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -51812,22 +51812,19 @@ msgid "First Letter of Each Word Uppercase"
 msgstr "Eerste letter van elk woord een hoofdletter"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
+#, kde-format
 msgid "Date Format"
-msgstr "Datumopmaak:"
+msgstr "Datumopmaak"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
-#, fuzzy, kde-format
-#| msgid "Recognized Words"
+#, kde-format
 msgid "Recognize and format a date"
-msgstr "Herkende woorden"
+msgstr "Herkend en maak een datum op"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
 #, kde-format
 msgid "Recognize and format a date to string"
-msgstr ""
+msgstr "Herkend en maak een datum op naar een tekenreeks"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
 #, kde-format

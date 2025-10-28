@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-27 02:00+0000\n"
-"PO-Revision-Date: 2025-10-26 15:52+0200\n"
+"PO-Revision-Date: 2025-10-27 16:08+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -52064,22 +52064,19 @@ msgid "First Letter of Each Word Uppercase"
 msgstr "Верхній Регістр Першої Літери Кожного Слова"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
+#, kde-format
 msgid "Date Format"
-msgstr "Формат дати:"
+msgstr "Формат дати"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
-#, fuzzy, kde-format
-#| msgid "Recognized Words"
+#, kde-format
 msgid "Recognize and format a date"
-msgstr "Розпізнані слова"
+msgstr "Розпізнати і форматувати дату"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
 #, kde-format
 msgid "Recognize and format a date to string"
-msgstr ""
+msgstr "Розпізнавати і форматувати дату у рядок"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
 #, kde-format
