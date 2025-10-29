@@ -43,7 +43,7 @@ message(STATUS "Host used to compile: ${CMAKE_HOST_PRETTY_NAME}")
 
 # digiKam version
 set(DIGIKAM_MAJOR_VERSION "8")
-set(DIGIKAM_MINOR_VERSION "8")
+set(DIGIKAM_MINOR_VERSION "9")
 set(DIGIKAM_PATCH_VERSION "0")
 
 # Suffix to add at end of version string. Usual values are:
