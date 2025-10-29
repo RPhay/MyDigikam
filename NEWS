@@ -50,7 +50,7 @@ BUGFIXES:
 025 --> 511184 - Crash when confirming a face suggestion when Exiv2 reads 0x0 image size.
 026 --> 501834 - Scanning a Directory also reads top tree.
 027 --> 511261 - HTML Gallery: Album Export Wizard does not refine the album selction with tags, labels and searches.
-028 -->
+028 --> 511294 - digiKam 8.8 crashes with a segmentation fault on startup on a system running Cinnamon X11
 029 -->
 030 -->
 031 -->
