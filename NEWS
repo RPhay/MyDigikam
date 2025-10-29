@@ -49,7 +49,7 @@ BUGFIXES:
 024 --> 511221 - Failed to load image (tif +750MB).
 025 --> 511184 - Crash when confirming a face suggestion when Exiv2 reads 0x0 image size.
 026 --> 501834 - Scanning a Directory also reads top tree.
-027 -->
+027 --> 511261 - HTML Gallery: Album Export Wizard does not refine the album selction with tags, labels and searches.
 028 -->
 029 -->
 030 -->
