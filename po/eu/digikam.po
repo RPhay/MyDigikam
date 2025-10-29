@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-27 02:00+0000\n"
+"POT-Creation-Date: 2025-10-29 02:01+0000\n"
 "PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -68205,21 +68205,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "Start"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Hasi"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "Beta-probatzailea"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Ezarpenak..."
 
@@ -68245,14 +68245,14 @@ msgstr ""
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "&Close"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Itxi"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "Itxi gaiaren diseinatzailea"
 
@@ -68295,25 +68295,25 @@ msgstr "OpenGL euskarria ez dago erabilgarri sisteman."
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, fuzzy, kde-format
 #| msgid "Loading image..."
-msgid "Loading test image..."
+msgid "Loading DNN Model test image..."
 msgstr "Irudia kargatzen..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, fuzzy, kde-format
 #| msgid "Binary not found."
-msgid "Test image not found."
+msgid "DNN model test image not found."
 msgstr "Bitarra ez da aurkitu."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
-msgid "Failed to load test image from %1"
+msgid "Failed to load DNN model test image from %1"
 msgstr "Huts egin du irudia %1(e)n gordetzea"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
-msgid "Preparing the image for processing..."
+msgid "Preparing the DNN Model image for processing..."
 msgstr "Jarri irudia panoramikoki eskualde batean"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
@@ -69987,6 +69987,19 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#, fuzzy
+#~| msgctxt "@action: button"
+#~| msgid "Start"
+#~ msgctxt "@action:button start the AI GUP test"
+#~ msgid "Start"
+#~ msgstr "Hasi"
+
+#, fuzzy
+#~| msgid "&Close"
+#~ msgctxt "@action:button start the AI GUP test"
+#~ msgid "Close"
+#~ msgstr "Itxi"
 
 #~ msgctxt "means milimeters"
 #~ msgid "mm"

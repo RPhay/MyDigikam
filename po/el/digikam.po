@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-27 02:00+0000\n"
+"POT-Creation-Date: 2025-10-29 02:01+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -71538,21 +71538,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Αρχικό:"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "Δοκιμαστής beta"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Ρυθμίσεις..."
 
@@ -71578,13 +71578,13 @@ msgstr ""
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "&Close"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "&Κλείσιμο"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -71626,25 +71626,25 @@ msgstr "Το OpenGL δεν υποστηρίζεται στο σύστημά σα
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, fuzzy, kde-format
 #| msgid "Loading image..."
-msgid "Loading test image..."
+msgid "Loading DNN Model test image..."
 msgstr "Φόρτωση εικόνας..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, fuzzy, kde-format
 #| msgid "Binary not found."
-msgid "Test image not found."
+msgid "DNN model test image not found."
 msgstr "Το εκτελέσιμο δεν βρέθηκε."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
-msgid "Failed to load test image from %1"
+msgid "Failed to load DNN model test image from %1"
 msgstr "Αποτυχία αποθήκευσης ετικετών στο αρχείο."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
-msgid "Preparing the image for processing..."
+msgid "Preparing the DNN Model image for processing..."
 msgstr "Πανοραμική κίνηση εικόνας σε μια περιοχή"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
@@ -73411,6 +73411,19 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#, fuzzy
+#~| msgctxt "Start index for custom range"
+#~| msgid "Start:"
+#~ msgctxt "@action:button start the AI GUP test"
+#~ msgid "Start"
+#~ msgstr "Αρχικό:"
+
+#, fuzzy
+#~| msgid "&Close"
+#~ msgctxt "@action:button start the AI GUP test"
+#~ msgid "Close"
+#~ msgstr "&Κλείσιμο"
 
 #, fuzzy
 #~| msgid "Warning"

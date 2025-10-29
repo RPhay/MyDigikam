@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-27 02:00+0000\n"
+"POT-Creation-Date: 2025-10-29 02:01+0000\n"
 "PO-Revision-Date: 2025-10-27 06:22-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -66774,20 +66774,26 @@ msgstr ""
 "Deseja testar seu sistema agora?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "Start"
+msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Iniciar"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgctxt "@action:button start the AI GUP test"
+#| msgid "Begin test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "Iniciar o teste"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgctxt "@action:button start the AI GUP test"
+#| msgid "Testing..."
+msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Testando..."
 
@@ -66815,14 +66821,17 @@ msgstr ""
 "os modelos de IA."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Fechar"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgctxt "@action:button start the AI GUP test"
+#| msgid "Close the test dialog"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "Fechar o diálogo de teste"
 
@@ -66859,23 +66868,27 @@ msgid "OpenCL is not available on this system."
 msgstr "O OpenCL não está disponível neste sistema."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, kde-format
-msgid "Loading test image..."
+#, fuzzy, kde-format
+#| msgid "Loading test image..."
+msgid "Loading DNN Model test image..."
 msgstr "Carregando imagem de teste..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
-#, kde-format
-msgid "Test image not found."
+#, fuzzy, kde-format
+#| msgid "Test image not found."
+msgid "DNN model test image not found."
 msgstr "Imagem de teste não encontrada."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, kde-format
-msgid "Failed to load test image from %1"
+#, fuzzy, kde-format
+#| msgid "Failed to load test image from %1"
+msgid "Failed to load DNN model test image from %1"
 msgstr "Falha ao carregar a imagem de teste de %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
-#, kde-format
-msgid "Preparing the image for processing..."
+#, fuzzy, kde-format
+#| msgid "Preparing the image for processing..."
+msgid "Preparing the DNN Model image for processing..."
 msgstr "Preparando a imagem para processamento..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
@@ -68569,6 +68582,14 @@ msgstr "Álbuns"
 #, kde-format
 msgid "Import Items"
 msgstr "Itens importados"
+
+#~ msgctxt "@action:button start the AI GUP test"
+#~ msgid "Start"
+#~ msgstr "Iniciar"
+
+#~ msgctxt "@action:button start the AI GUP test"
+#~ msgid "Close"
+#~ msgstr "Fechar"
 
 #~ msgctxt "means milimeters"
 #~ msgid "mm"

@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-27 02:00+0000\n"
+"POT-Creation-Date: 2025-10-29 02:01+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -67300,21 +67300,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "Start"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Start"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "Beta tester"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Settings..."
 
@@ -67340,14 +67340,14 @@ msgstr ""
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Close"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Close"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "Close the theme designer"
 
@@ -67390,26 +67390,26 @@ msgstr "OpenGL support is not available on your system."
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, fuzzy, kde-format
 #| msgid "Loading image..."
-msgid "Loading test image..."
+msgid "Loading DNN Model test image..."
 msgstr "Loading image..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, fuzzy, kde-format
 #| msgid "Binary not found."
-msgid "Test image not found."
+msgid "DNN model test image not found."
 msgstr "Binary not found."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save image to %1"
-msgid "Failed to load test image from %1"
+msgid "Failed to load DNN model test image from %1"
 msgstr "Failed to save image to %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
-msgid "Preparing the image for processing..."
+msgid "Preparing the DNN Model image for processing..."
 msgstr "Pan the image to a region"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
@@ -69112,6 +69112,19 @@ msgstr "Album Items"
 #, kde-format
 msgid "Import Items"
 msgstr "Import Items"
+
+#, fuzzy
+#~| msgctxt "@action: button"
+#~| msgid "Start"
+#~ msgctxt "@action:button start the AI GUP test"
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#, fuzzy
+#~| msgid "Close"
+#~ msgctxt "@action:button start the AI GUP test"
+#~ msgid "Close"
+#~ msgstr "Close"
 
 #~ msgctxt "means milimeters"
 #~ msgid "mm"

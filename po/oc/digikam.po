@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-27 02:00+0000\n"
+"POT-Creation-Date: 2025-10-29 02:01+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -64228,21 +64228,21 @@ msgstr ""
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
 #, fuzzy, kde-format
 #| msgid "images"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "imatges"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, fuzzy, kde-format
 #| msgid "images"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "imatges"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "Slideshow"
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Diaporamà"
 
@@ -64267,13 +64267,13 @@ msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -64310,24 +64310,24 @@ msgstr ""
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, fuzzy, kde-format
 #| msgid "images"
-msgid "Loading test image..."
+msgid "Loading DNN Model test image..."
 msgstr "imatges"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, fuzzy, kde-format
 #| msgid "Slide"
-msgid "Test image not found."
+msgid "DNN model test image not found."
 msgstr "Diàpo"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, fuzzy, kde-format
 #| msgid "&Delete"
-msgid "Failed to load test image from %1"
+msgid "Failed to load DNN model test image from %1"
 msgstr "&Suprimir"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, kde-format
-msgid "Preparing the image for processing..."
+msgid "Preparing the DNN Model image for processing..."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336

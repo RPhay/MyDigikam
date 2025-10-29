@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-27 02:00+0000\n"
+"POT-Creation-Date: 2025-10-29 02:01+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -64284,22 +64284,26 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "Start"
+msgctxt "@action:button start the AI GPU test"
 msgid "Start"
-msgstr ""
+msgstr "Spustit"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgid "Beta tester"
+msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
-msgstr ""
+msgstr "Beta tester"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgid "Settings..."
+msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
-msgstr ""
+msgstr "Nastavení..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
@@ -64321,14 +64325,15 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, kde-format
-msgctxt "@action:button start the AI GUP test"
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
-msgctxt "@action:button start the AI GUP test"
+msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -64363,23 +64368,26 @@ msgid "OpenCL is not available on this system."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, kde-format
-msgid "Loading test image..."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Loading image..."
+msgid "Loading DNN Model test image..."
+msgstr "Načítání obrázku..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, kde-format
-msgid "Test image not found."
+msgid "DNN model test image not found."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, kde-format
-msgid "Failed to load test image from %1"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save image to %1"
+msgid "Failed to load DNN model test image from %1"
+msgstr "Chyba při ukládání obrázku do %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, kde-format
-msgid "Preparing the image for processing..."
+msgid "Preparing the DNN Model image for processing..."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
