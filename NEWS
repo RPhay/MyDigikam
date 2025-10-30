@@ -51,7 +51,7 @@ BUGFIXES:
 026 --> 501834 - Scanning a Directory also reads top tree.
 027 --> 511261 - HTML Gallery: Album Export Wizard does not refine the album selction with tags, labels and searches.
 028 --> 511294 - digiKam 8.8 crashes with a segmentation fault on startup on a system running Cinnamon X11
-029 -->
+029 --> 511398 - Incorrect name for MKD - North Macedonia.
 030 -->
 031 -->
 032 -->
