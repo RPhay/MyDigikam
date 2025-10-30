@@ -170,7 +170,7 @@ public:
         countryCodeMap.insert(QLatin1String("LTU"), i18nc("@info: country code", "Lithuania"));
         countryCodeMap.insert(QLatin1String("LUX"), i18nc("@info: country code", "Luxembourg"));
         countryCodeMap.insert(QLatin1String("MAC"), i18nc("@info: country code", "Macao"));
-        countryCodeMap.insert(QLatin1String("MKD"), i18nc("@info: country code", "Macedonia"));
+        countryCodeMap.insert(QLatin1String("MKD"), i18nc("@info: country code", "North Macedonia"));
         countryCodeMap.insert(QLatin1String("MDG"), i18nc("@info: country code", "Madagascar"));
         countryCodeMap.insert(QLatin1String("MWI"), i18nc("@info: country code", "Malawi"));
         countryCodeMap.insert(QLatin1String("MYS"), i18nc("@info: country code", "Malaysia"));
