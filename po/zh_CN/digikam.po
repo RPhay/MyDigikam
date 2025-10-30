@@ -49848,17 +49848,17 @@ msgstr "各单词首字母大写"
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
 #, kde-format
 msgid "Date Format"
-msgstr ""
+msgstr "日期格式"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
 #, kde-format
 msgid "Recognize and format a date"
-msgstr ""
+msgstr "识别并格式化一个日期"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
 #, kde-format
 msgid "Recognize and format a date to string"
-msgstr ""
+msgstr "识别并格式化一个日期到字符串"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
 #, kde-format
@@ -64341,28 +64341,22 @@ msgstr ""
 "您想要立即测试您的系统吗？"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
-msgstr "启动"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Begin test"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
-msgstr "开始测试"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Testing..."
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
-msgstr "正在测试..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
@@ -64384,19 +64378,16 @@ msgid ""
 msgstr "测试失败。您的系统可能无法使用 GPU 加速 AI 模型。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
-msgstr "关闭"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Close the test dialog"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
-msgstr "关闭测试对话框"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
@@ -64429,28 +64420,24 @@ msgid "OpenCL is not available on this system."
 msgstr "OpenCL 在本机系统中不可用。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, fuzzy, kde-format
-#| msgid "Loading test image..."
+#, kde-format
 msgid "Loading DNN Model test image..."
-msgstr "正在加载测试图像..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
-#, fuzzy, kde-format
-#| msgid "Test image not found."
+#, kde-format
 msgid "DNN model test image not found."
-msgstr "没有找到测试图像。"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, fuzzy, kde-format
-#| msgid "Failed to load test image from %1"
+#, kde-format
 msgid "Failed to load DNN model test image from %1"
-msgstr "无法从 %1 加载测试图像"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
-#, fuzzy, kde-format
-#| msgid "Preparing the image for processing..."
+#, kde-format
 msgid "Preparing the DNN Model image for processing..."
-msgstr "正在准备图像以进行处理..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
@@ -66037,11 +66024,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@action:button start the AI GUP test"
-#~ msgid "Start"
-#~ msgstr "开始"
-
-#~ msgctxt "@action:button start the AI GUP test"
-#~ msgid "Close"
-#~ msgstr "关闭"
