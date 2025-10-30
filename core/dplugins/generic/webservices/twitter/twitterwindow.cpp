@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2018-06-29
- * Description : a tool to export images to Twitter social network
+ * Description : a tool to export images to Twitter (x.com) social network
  *
  * SPDX-FileCopyrightText: 2018 by Tarek Talaat <tarektalaat93 at gmail dot com>
  *
@@ -72,7 +72,7 @@ TwWindow::TwWindow(DInfoInterface* const iface,
 
     setMainWidget(d->widget);
     setModal(false);
-    setWindowTitle(i18nc("@title:window", "Export to Twitter"));
+    setWindowTitle(i18nc("@title:window", "Export to x.com (aka Twitter)"));
 
     startButton()->setText(i18nc("@action:button", "Start Upload"));
     startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to Twitter"));

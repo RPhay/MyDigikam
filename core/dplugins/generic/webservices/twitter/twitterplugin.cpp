@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2018-07-30
- * Description : a plugin to export to Twitter web-service.
+ * Description : a plugin to export to Twitter (x.com) web-service.
  *
  * SPDX-FileCopyrightText: 2018-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -41,7 +41,7 @@ void TwitterPlugin::cleanUp()
 
 QString TwitterPlugin::name() const
 {
-    return i18nc("@title", "Twitter");
+    return i18nc("@title", "xdotcom");
 }
 
 QString TwitterPlugin::iid() const
@@ -56,14 +56,14 @@ QIcon TwitterPlugin::icon() const
 
 QString TwitterPlugin::description() const
 {
-    return i18nc("@info", "A tool to export to Twitter web-service");
+    return i18nc("@info", "A tool to export to x.com (aka Twitter) web-service");
 }
 
 QString TwitterPlugin::details() const
 {
-    return i18nc("@info", "This tool allows users to export items to Twitter web-service.<br><br>"
+    return i18nc("@info", "This tool allows users to export items to x.com (aka Twitter) web-service.<br><br>"
                  "See Twitter web site for details: %1",
-                 QLatin1String("<a href='https://twitter.com/'>https://twitter.com/</a>"));
+                 QLatin1String("<a href='https://x.com/'>https://x.com/</a>"));
 }
 
 QString TwitterPlugin::handbookSection() const
@@ -92,7 +92,7 @@ void TwitterPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Export to &Twitter..."));
+    ac->setText(i18nc("@action", "Export to x.com (aka &Twitter)..."));
     ac->setObjectName(QLatin1String("export_twitter"));
     ac->setActionCategory(DPluginAction::GenericExport);
 

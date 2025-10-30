@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2018-07-30
- * Description : a plugin to export to Twitter web-service.
+ * Description : a plugin to export to Twitter (x.com) web-service.
  *
  * SPDX-FileCopyrightText: 2018-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

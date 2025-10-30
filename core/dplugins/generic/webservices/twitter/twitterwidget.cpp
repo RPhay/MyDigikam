@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2018-06-29
- * Description : a tool to export images to Twitter social network
+ * Description : a tool to export images to Twitter (x.com) social network
  *
  * SPDX-FileCopyrightText: 2018 by Tarek Talaat <tarektalaat93 at gmail dot com>
  *
@@ -40,7 +40,7 @@ TwWidget::TwWidget(QWidget* const parent,
 
 void TwWidget::updateLabels(const QString& name, const QString& url)
 {
-    QString web(QLatin1String("https://www.twitter.com/"));
+    QString web(QLatin1String("https://x.com/"));
 
     if (!url.isEmpty())
     {
@@ -49,7 +49,7 @@ void TwWidget::updateLabels(const QString& name, const QString& url)
 
     getHeaderLbl()->setText(QString::fromLatin1(
         "<b><h2><a href='%1'>"
-        "<font color=\"#9ACD32\">Twitter</font>"
+        "<font color=\"#9ACD32\">x.com (aka Twitter)</font>"
         "</a></h2></b>").arg(web));
 
     if (name.isEmpty())

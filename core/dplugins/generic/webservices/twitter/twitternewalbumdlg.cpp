@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2018-06-29
- * Description : a tool to export images to Twitter social network
+ * Description : a tool to export images to Twitter (x.com) social network
  *
  * SPDX-FileCopyrightText: 2018 by Tarek Talaat <tarektalaat93 at gmail dot com>
  *
