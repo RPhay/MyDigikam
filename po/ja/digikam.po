@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -26970,16 +26970,16 @@ msgstr ""
 "ファイル <filename>%1</filename> のダウンロードに失敗しました。続けますか？"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "開始値:"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Sort by rating"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "評価でソート"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
@@ -26987,14 +26987,14 @@ msgstr "評価でソート"
 #| msgid "Sort by rating"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "評価でソート"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "エクスポート"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -27026,7 +27026,7 @@ msgstr "ファイルの作成に失敗しました..."
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "エクスポート"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -49246,7 +49246,7 @@ msgstr "マカオ"
 #, fuzzy, kde-format
 #| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "マケドニア"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -70577,6 +70577,11 @@ msgstr "アルバムアイテム"
 #, kde-format
 msgid "Import Items"
 msgstr "インポートされたアイテム"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "開始値:"
 
 #, fuzzy
 #~ msgctxt "@action:button start the AI GUP test"

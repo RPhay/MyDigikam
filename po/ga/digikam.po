@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -26887,31 +26887,30 @@ msgstr ""
 "freisin. An bhfuil fonn ort dul ar aghaidh mar sin féin?"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Start Index:"
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Innéacs Tosaithe:"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Easpórtáil"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "Easpórtáil"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Uirlis Easpórtála"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -26952,7 +26951,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Uirlis Easpórtála"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -48868,7 +48867,7 @@ msgstr "Macao"
 #, fuzzy, kde-format
 #| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "An Mhacadóin"
 
 # #-#-#-#-#  kspread.po (koffice/kspread.po)  #-#-#-#-#
@@ -70171,6 +70170,12 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~| msgid "Start Index:"
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Innéacs Tosaithe:"
 
 #, fuzzy
 #~| msgctxt "Start index for custom range"

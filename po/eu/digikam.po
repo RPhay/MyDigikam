@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -26715,16 +26715,17 @@ msgstr ""
 "Jarraitu nahi duzu?"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Start Color: "
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Twitter"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to export to Twitter web-service"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Twitter web-zerbitzura esportatzeko tresna bat"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
@@ -26736,8 +26737,8 @@ msgstr "Twitter web-zerbitzura esportatzeko tresna bat"
 #| "See Twitter web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr ""
 "Trena honek erabiltzaileei elementuak Twitter web-zerbitzura esportatzeko "
 "aukera ematen die.\n"
@@ -26745,9 +26746,11 @@ msgstr ""
 "Ikusi Twitter-ren webgunea xehetasunetarako: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export to &Twitter..."
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Esportatu &Twitter-rera..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -26778,9 +26781,11 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Zama-igotako argazkiarentzako txioa sortzea huts egin du"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Twitter"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Esportatu Twitter-rera"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -48611,9 +48616,11 @@ msgid "Macao"
 msgstr "Macao"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Mazedonia"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -69987,6 +69994,12 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#, fuzzy
+#~| msgid "Start Color: "
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
 
 #, fuzzy
 #~| msgctxt "@action: button"

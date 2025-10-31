@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -27928,17 +27928,16 @@ msgid ""
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Start Index:"
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Δείκτης αρχής:"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Sort by rating"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Ταξινόμηση με αξιολόγηση"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
@@ -27946,15 +27945,15 @@ msgstr "Ταξινόμηση με αξιολόγηση"
 #| msgid "Sort by rating"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "Ταξινόμηση με αξιολόγηση"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Εργαλεία εξαγωγής"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -27993,7 +27992,7 @@ msgstr "Αποτυχία δημιουργίας αρχείου..."
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Εργαλεία εξαγωγής"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -51054,7 +51053,7 @@ msgstr "Μακάο"
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
 #, fuzzy, kde-format
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Διάμεσος:"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -73411,6 +73410,12 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#, fuzzy
+#~| msgid "Start Index:"
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Δείκτης αρχής:"
 
 #, fuzzy
 #~| msgctxt "Start index for custom range"

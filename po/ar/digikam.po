@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
-"PO-Revision-Date: 2025-10-23 13:13+0400\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
+"PO-Revision-Date: 2025-10-30 12:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -4990,15 +4990,7 @@ msgid "A tool to convert images to AVIF format"
 msgstr "أداة لتحويل الصور إلى تنسيق AVIF"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to AVIF "
-#| "format.</para><para>AV1 Image File Format is an image file format "
-#| "specification for storing images or image sequences compressed with AV1 "
-#| "in the ISOBMFF container format.</para><para>See details about this "
-#| "format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</"
-#| "para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to AVIF format.</"
@@ -5010,8 +5002,8 @@ msgstr ""
 "<para>هذه الأداة في مدير قائمة الانتظار للعمليات المتعددة يمكنها تحويل "
 "بيانات الصور إلى تنسيق AVIF.</para> <para>تنسيق ملف صورة AV1 هو مواصفات "
 "تنسيق ملف صورة لتخزين الصور أو تسلسلات الصور المضغوطة بـ AV1 في تنسيق حاوية "
-"ISOBMFF. </para> <para>انظر التفاصيل حول هذا التنسيق من <a href='https://en."
-"wikipedia.org/wiki/AVIF'>هذه الصفحة</a>.</para>"
+"ISOBMFF. </para> <para>انظر التفاصيل حول هذا التنسيق من <link url='https://"
+"en.wikipedia.org/wiki/AVIF'>هذه الصفحة</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
@@ -5026,13 +5018,7 @@ msgid "A tool to convert RAW images to DNG container"
 msgstr "أداة لتحويل صور RAW إلى حاوية DNG"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Generic tool can convert RAW images data to DNG format.</"
-#| "para><para>The Digital Negative is a lossless RAW image format created by "
-#| "Adobe.</para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Generic tool can convert RAW images data to DNG format.</"
@@ -5042,8 +5028,8 @@ msgid ""
 msgstr ""
 "<para>هذه الأداة العامة يمكنها تحويل بيانات صور RAW إلى تنسيق DNG.</"
 "para><para>السلبي الرقمي هو تنسيق صورة RAW بدون فقدان أنشأته Adobe.</"
-"para><para>انظر التفاصيل حول هذا التنسيق من <a href='https://en.wikipedia."
-"org/wiki/Digital_Negative'>هذه الصفحة</a>.</para>"
+"para><para>انظر التفاصيل حول هذا التنسيق من <link url='https://en.wikipedia."
+"org/wiki/Digital_Negative'>هذه الصفحة</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, kde-format
@@ -5058,20 +5044,7 @@ msgid "A tool to convert images to HEIF format"
 msgstr "أداة لتحويل الصور إلى تنسيق HEIF"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to HEIF "
-#| "format.</para><para>High Efficiency Image File Format (HEIF), also known "
-#| "as High Efficiency Image Coding (HEIC), is a file format for individual "
-#| "images and image sequences. It was developed by the Moving Picture "
-#| "Experts Group (MPEG) and it claims that twice as much information can be "
-#| "stored in a HEIF image as in a JPEG image of the same size, resulting in "
-#| "a better quality image. HEIF also supports animation, and is capable of "
-#| "storing more information than an animated GIF at a small fraction of the "
-#| "size.</para><para>See <a href='https://en.wikipedia.org/wiki/"
-#| "High_Efficiency_Image_File_Format'>High Efficiency Image File Format</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to HEIF format.</"
@@ -5092,8 +5065,8 @@ msgstr ""
 "ويزعم أنه يمكن تخزين معلومات ضعف ما تخزنه صورة JPEG من نفس الحجم في صورة "
 "HEIF، مما يؤدي إلى صورة بجودة أفضل. HEIF يدعم أيضًا الرسوم المتحركة، وهو قادر "
 "على تخزين معلومات أكثر من ملف GIF متحرك بجزء صغير من الحجم.</para> "
-"<para>انظر <a href='https://en.wikipedia.org/wiki/"
-"High_Efficiency_Image_File_Format'>تنسيق ملف الصورة عالي الكفاءة</a> "
+"<para>انظر <link url='https://en.wikipedia.org/wiki/"
+"High_Efficiency_Image_File_Format'>تنسيق ملف الصورة عالي الكفاءة</link> "
 "للتفاصيل.</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
@@ -5109,16 +5082,7 @@ msgid "A tool to convert images to JPEG-2000 format"
 msgstr "أداة لتحويل الصور إلى تنسيق JPEG-2000"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
-#| "format.</para><para>This is an image compression standard and coding "
-#| "system. It was created by the Joint Photographic Experts Group committee "
-#| "in 2000 with the intention of superseding their original discrete cosine "
-#| "transform-based JPEG standard (created in 1992) with a newly designed, "
-#| "wavelet-based method.</para><para>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
@@ -5134,8 +5098,8 @@ msgstr ""
 "ترميز. أنشأته لجنة مجموعة خبراء التصوير المشتركة في عام 2000 بهدف استبدال "
 "معيار JPEG الأصلي القائم على تحويل جيب التمام المنفصل (الذي أنشئ في عام "
 "1992) بطريقة جديدة قائمة على الموجات.</para> <para>انظر التفاصيل حول هذا "
-"التنسيق من <a href='https://en.wikipedia.org/wiki/JPEG_2000'>هذه الصفحة</a>."
-"</para>"
+"التنسيق من <link url='https://en.wikipedia.org/wiki/JPEG_2000'>هذه الصفحة</"
+"link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
@@ -5150,15 +5114,7 @@ msgid "A tool to convert images to JPEG format"
 msgstr "أداة لتحويل الصور إلى تنسيق JPEG"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG "
-#| "format.</para><para>The Joint Photographic Experts Group format is a "
-#| "commonly used method of lossy compression for digital images, "
-#| "particularly for those images produced by digital photography.</"
-#| "para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/JPEG'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG format.</"
@@ -5171,8 +5127,8 @@ msgstr ""
 "<para>هذه الأداة في مدير قائمة الانتظار للعمليات المتعددة يمكنها تحويل "
 "بيانات الصور إلى تنسيق JPEG.</para><para>تنسيق مجموعة خبراء التصوير المشتركة "
 "هو طريقة شائعة الاستخدام للضغط مع فقدان للصور الرقمية، خاصة للصور التي "
-"تنتجها الكاميرات الرقمية.</para> <para>انظر التفاصيل حول هذا التنسيق من <a "
-"href='https://en.wikipedia.org/wiki/JPEG'>هذه الصفحة</a>.</para>"
+"تنتجها الكاميرات الرقمية.</para> <para>انظر التفاصيل حول هذا التنسيق من "
+"<link url='https://en.wikipedia.org/wiki/JPEG'>هذه الصفحة</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
@@ -5187,15 +5143,7 @@ msgid "A tool to convert images to JXL format"
 msgstr "أداة لتحويل الصور إلى تنسيق JXL"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
-#| "format.</para><para>JPEG-XL is a royalty-free raster-graphics file format "
-#| "that supports both lossy and lossless compression. It is designed to "
-#| "outperform existing raster formats and thus to become their universal "
-#| "replacement.</para><para>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
@@ -5209,8 +5157,8 @@ msgstr ""
 "تنسيق JPEG-XL.</para><para>JPEG-XL هو تنسيق ملفات رسومات نقطية خالٍ من حقوق "
 "الملكية الفكرية يتيح الضغط مع فقدان البيانات والضغط دون فقدان البيانات. وقد "
 "صُمم ليتفوق على تنسيقات الرسومات النقطية الحالية ويصبح بديلاً عالمياً لها.</"
-"para><para>انظر تفاصيل حول هذا التنسيق من <a href='https://en.wikipedia.org/"
-"wiki/JPEG_XL'>هذه الصفحة</a>.</para>"
+"para><para>انظر تفاصيل حول هذا التنسيق من <link url='https://en.wikipedia."
+"org/wiki/JPEG_XL'>هذه الصفحة</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
@@ -5225,14 +5173,7 @@ msgid "A tool to convert images to PGF format"
 msgstr "أداة لتحويل الصور إلى تنسيق PGF"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to PGF format."
-#| "</para><para>The Progressive Graphics File is a wavelet-based bitmapped "
-#| "image format that employs lossless and lossy data compression.</"
-#| "para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Progressive_Graphics_File'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PGF format.</"
@@ -5244,8 +5185,8 @@ msgstr ""
 "<para>هذه الأداة في مدير قائمة الانتظار للعمليات المتعددة يمكنها تحويل "
 "بيانات الصور إلى تنسيق PGF.</para><para>ملف الرسوم التدريجي هو تنسيق صورة "
 "نقطية قائمة على الموجات تستخدم ضغط البيانات مع فقدان وبدون فقدان.</para> "
-"<para>انظر التفاصيل حول هذا التنسيق من <a href='https://en.wikipedia.org/"
-"wiki/Progressive_Graphics_File'>هذه الصفحة</a>.</para>"
+"<para>انظر التفاصيل حول هذا التنسيق من <link url='https://en.wikipedia.org/"
+"wiki/Progressive_Graphics_File'>هذه الصفحة</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
@@ -5270,14 +5211,7 @@ msgid "A tool to convert images to PNG format"
 msgstr "أداة لتحويل الصور إلى تنسيق PNG"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to PNG format."
-#| "</para><para>The Portable Network Graphics is a raster-graphics file-"
-#| "format that supports lossless data compression.</para><para>See details "
-#| "about this format from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PNG format.</"
@@ -5289,8 +5223,8 @@ msgstr ""
 "<para>هذه الأداة في مدير قائمة الانتظار للعمليات المتعددة يمكنها تحويل "
 "بيانات الصور إلى تنسيق PNG.</para><para>رسوم الشبكة المحمولة هو تنسيق ملف "
 "رسوم نقطية يدعم ضغط البيانات بدون فقدان.</para> <para>انظر التفاصيل حول هذا "
-"التنسيق من <a href='https://en.wikipedia.org/wiki/"
-"Portable_Network_Graphics'>هذه الصفحة</a>.</para>"
+"التنسيق من <link url='https://en.wikipedia.org/wiki/"
+"Portable_Network_Graphics'>هذه الصفحة</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
@@ -5305,15 +5239,7 @@ msgid "A tool to convert images to TIFF format"
 msgstr "أداة لتحويل الصور إلى تنسيق TIFF"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to TIFF "
-#| "format.</para><para>The Tagged Image File Format is a computer file "
-#| "format for storing raster graphics images, popular among graphic artists, "
-#| "the publishing industry, and photographers.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to TIFF format.</"
@@ -5326,8 +5252,8 @@ msgstr ""
 "<para>هذه الأداة في مدير قائمة الانتظار للعمليات المتعددة يمكنها تحويل "
 "بيانات الصور إلى تنسيق TIFF.</para><para>تنسيق ملف الصورة الموسومة هو تنسيق "
 "ملف حاسوب لتخزين صور الرسوم النقطية، شائع بين فناني الرسوم، وصناعة النشر، "
-"والمصورين.</para> <para>انظر التفاصيل حول هذا التنسيق من <a href='https://en."
-"wikipedia.org/wiki/TIFF'>هذه الصفحة</a>.</para>"
+"والمصورين.</para> <para>انظر التفاصيل حول هذا التنسيق من <link url='https://"
+"en.wikipedia.org/wiki/TIFF'>هذه الصفحة</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, kde-format
@@ -5342,17 +5268,7 @@ msgid "A tool to convert images to WEBP format"
 msgstr "أداة لتحويل الصور إلى تنسيق WEBP"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to WEBP "
-#| "format.</para><para>WEBP is an image file format that Google has "
-#| "developed as a replacement for JPEG, PNG, and GIF file formats. WEBP "
-#| "yields files that are smaller for the same quality, or of higher quality "
-#| "for the same size. It supports both lossy and lossless compression, as "
-#| "well as animation and alpha transparency.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to WEBP format.</"
@@ -5368,7 +5284,7 @@ msgstr ""
 "كبديل لتنسيقات ملفات JPEG وPNG وGIF. WEBP ينتج ملفات أصغر بنفس الجودة، أو "
 "بجودة أعلى بنفس الحجم. يدعم كلًا من الضغط مع فقدان وبدون فقدان، بالإضافة إلى "
 "الرسوم المتحركة وشفافية ألفا.</para> <para>انظر التفاصيل حول هذا التنسيق من "
-"<a href='https://en.wikipedia.org/wiki/WebP'>هذه الصفحة</a>.</para>"
+"<link url='https://en.wikipedia.org/wiki/WebP'>هذه الصفحة</link>.</para>"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
@@ -26129,29 +26045,37 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "تويتر"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to export to Twitter web-service"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "أداة للتصدير إلى خدمة الويب Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to Twitter web-service.<br><br>See "
+#| "Twitter web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr ""
 "تسمح هذه الأداة للمستخدمين بتصدير العناصر إلى خدمة الوب Twitter.<br><br>اطلع "
 "على موقع Twitter لمزيد من التفاصيل: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export to &Twitter..."
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "صدّر إلى &Twitter..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -26181,9 +26105,11 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "فشل في إنشاء تغريدة للصورة التي رُفعت"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Twitter"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "صدّر إلى Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -47053,9 +46979,11 @@ msgid "Macao"
 msgstr "ماكاو"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "مقدونيا"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -51034,21 +50962,19 @@ msgid "First Letter of Each Word Uppercase"
 msgstr "أوّل حرف من كلّ كلمة يكون حرفًا كبيرًا"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
+#, kde-format
 msgid "Date Format"
-msgstr "تنسيق التّاريخ:"
+msgstr "نسق التّاريخ"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
-#, fuzzy, kde-format
+#, kde-format
 msgid "Recognize and format a date"
-msgstr "زامن معاينة"
+msgstr "التعرف ونسق التاريخ"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
 #, kde-format
 msgid "Recognize and format a date to string"
-msgstr ""
+msgstr "تعرّف ونسّق التاريخ إلى سلسلة"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
 #, kde-format
@@ -65797,25 +65723,19 @@ msgstr ""
 "هل تريد اختبار حاسوبك الآن؟"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "ابدأ"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Begin test"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "ابدأ الاختبار"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Testing..."
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "يختبر..."
@@ -65843,16 +65763,13 @@ msgstr ""
 "الاصطناعي."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "أغلق"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Close the test dialog"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "أغلق حوار الاختبار"
@@ -65888,28 +65805,24 @@ msgid "OpenCL is not available on this system."
 msgstr "لا يوجد دعم «أوبن سي‌إل» في النّظام."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, fuzzy, kde-format
-#| msgid "Loading test image..."
+#, kde-format
 msgid "Loading DNN Model test image..."
-msgstr "يحمّل صورة الاختبار..."
+msgstr "يحمّل صورة اختبار نموذج DNN..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
-#, fuzzy, kde-format
-#| msgid "Test image not found."
+#, kde-format
 msgid "DNN model test image not found."
-msgstr "لم يُعثر على صورة الاختبار."
+msgstr "لم يُعثر على صورة الاختبار نموذج DNN."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, fuzzy, kde-format
-#| msgid "Failed to load test image from %1"
+#, kde-format
 msgid "Failed to load DNN model test image from %1"
-msgstr "فشل تحميل صورة الاختبار من %1"
+msgstr "فشل تحميل صورة الاختبار نموذج DNN من %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
-#, fuzzy, kde-format
-#| msgid "Preparing the image for processing..."
+#, kde-format
 msgid "Preparing the DNN Model image for processing..."
-msgstr "تجهيز الصورة للمعالجة..."
+msgstr "تجهيز صورة نموذج DNN للمعالجة..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
@@ -67556,6 +67469,10 @@ msgstr "عناصر الألبوم"
 #, kde-format
 msgid "Import Items"
 msgstr "استورد عناصر"
+
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "تويتر"
 
 #~ msgctxt "@action:button start the AI GUP test"
 #~ msgid "Start"

@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -24886,27 +24886,27 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
-msgid "Twitter"
+msgid "xdotcom"
 msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Datoteka: "
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "Datoteka: "
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Postavke"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -24938,7 +24938,7 @@ msgstr "Ne mogu spremiti sliku '%1' u '%2'"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Postavke"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -45550,7 +45550,7 @@ msgstr "Makao"
 #, fuzzy, kde-format
 #| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Makedonija"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -25675,30 +25675,29 @@ msgstr ""
 "muốn tiếp tục không?"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Start Index:"
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Chỉ mục bắt đầu :"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Lần lặp lại:"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "Lần lặp lại:"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Xuất"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -25728,7 +25727,7 @@ msgstr "Lỗi nạp ảnh « %1 »"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Xuất"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -46406,7 +46405,7 @@ msgstr ""
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
 #, fuzzy, kde-format
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Trung vị:"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -66478,6 +66477,12 @@ msgstr "Tập"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Sắp xếp ảnh"
+
+#, fuzzy
+#~| msgid "Start Index:"
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Chỉ mục bắt đầu :"
 
 #, fuzzy
 #~ msgctxt "@action:button start the AI GUP test"

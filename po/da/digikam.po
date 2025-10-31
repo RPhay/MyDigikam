@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -27932,17 +27932,16 @@ msgstr ""
 "Vil du fortsætte?"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Twitter"
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Twitter"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Sort by rating"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Sortér efter karakter"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
@@ -27950,15 +27949,15 @@ msgstr "Sortér efter karakter"
 #| msgid "Sort by rating"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "Sortér efter karakter"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Eksportværktøjer"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -27997,7 +27996,7 @@ msgstr "Kunne ikke oprette fil..."
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Eksportværktøjer"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -50876,7 +50875,7 @@ msgstr "Macao"
 #, fuzzy, kde-format
 #| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Makedonien"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -73366,6 +73365,12 @@ msgstr "Album-elementer"
 #, kde-format
 msgid "Import Items"
 msgstr "Importér elementer"
+
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
 
 #, fuzzy
 #~| msgid "Start"

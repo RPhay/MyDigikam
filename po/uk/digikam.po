@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
-"PO-Revision-Date: 2025-10-27 16:08+0200\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
+"PO-Revision-Date: 2025-10-30 14:53+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -26747,29 +26747,37 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Twitter"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to export to Twitter web-service"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Інструмент для експортування до Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to Twitter web-service.<br><br>See "
+#| "Twitter web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr ""
 "За допомогою цього інструмента можна експортувати зображення до вебслужби "
 "Twitter.<br><br>Докладніше про службу на сайті Twitter: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export to &Twitter..."
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Е&кспортувати до Twitter…"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -26799,9 +26807,11 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Не вдалося створити твіт для вивантаженої фотографії"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Twitter"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Експорт до Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -48008,9 +48018,11 @@ msgid "Macao"
 msgstr "Макао"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Македонія"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -67217,25 +67229,19 @@ msgstr ""
 "Хочете виконати перевірку системи негайно?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Пуск"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Begin test"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "Почати перевірку"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Testing..."
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Перевірка…"
@@ -67264,16 +67270,13 @@ msgstr ""
 "графічний процесор для прискорення роботи із моделями ШІ."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Закрити"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Close the test dialog"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "Закрити вікно перевірки"
@@ -67311,28 +67314,24 @@ msgid "OpenCL is not available on this system."
 msgstr "У цій системі OpenCL не є доступною."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, fuzzy, kde-format
-#| msgid "Loading test image..."
+#, kde-format
 msgid "Loading DNN Model test image..."
-msgstr "Завантаження тестового зображення…"
+msgstr "Завантаження тестового зображення моделі DNN…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
-#, fuzzy, kde-format
-#| msgid "Test image not found."
+#, kde-format
 msgid "DNN model test image not found."
-msgstr "Не знайдено тестового зображення."
+msgstr "Не знайдено тестового зображення моделі DNN."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, fuzzy, kde-format
-#| msgid "Failed to load test image from %1"
+#, kde-format
 msgid "Failed to load DNN model test image from %1"
-msgstr "Не вдалося завантажити тестове зображення з %1"
+msgstr "Не вдалося завантажити тестове зображення моделі DNN з %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
-#, fuzzy, kde-format
-#| msgid "Preparing the image for processing..."
+#, kde-format
 msgid "Preparing the DNN Model image for processing..."
-msgstr "Готуємо зображення для обробки…"
+msgstr "Готуємо зображення моделі DNN для обробки…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
@@ -69047,6 +69046,10 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
 
 #~ msgctxt "@action:button start the AI GUP test"
 #~ msgid "Start"

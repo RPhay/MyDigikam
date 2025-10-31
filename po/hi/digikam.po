@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -25535,30 +25535,29 @@ msgid ""
 msgstr "क्या आप जारी रखना चाहते हैं?"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Color:"
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "रंगः"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "दरजा आयातित"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "दरजा आयातित"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "निर्यात"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -25588,7 +25587,7 @@ msgstr "%1 में फ़ाइल सूची बनाना असफल"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "निर्यात"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -46578,7 +46577,7 @@ msgstr "मकाओ"
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
 #, fuzzy, kde-format
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "मेडियन:"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -66617,6 +66616,12 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवियाँ छांटें (&S)"
+
+#, fuzzy
+#~| msgid "Color:"
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "रंगः"
 
 #, fuzzy
 #~ msgctxt "@action:button start the AI GUP test"

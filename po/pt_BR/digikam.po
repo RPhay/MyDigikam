@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
-"PO-Revision-Date: 2025-10-29 08:23-0300\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
+"PO-Revision-Date: 2025-10-30 09:53-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -26511,29 +26511,37 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Twitter"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to export to Twitter web-service"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Uma ferramenta para exportar para o serviço web do Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to Twitter web-service.<br><br>See "
+#| "Twitter web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr ""
 "Esta ferramenta permite que os usuários exportem itens para o serviço web do "
 "Twitter.<br><br>Consulte o site do Twitter para mais detalhes: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export to &Twitter..."
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Exportar para o &Twitter..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -26563,9 +26571,11 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Falha ao criar tweet para foto enviada"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Twitter"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Exportar para o Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -47662,9 +47672,11 @@ msgid "Macao"
 msgstr "Macau"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Macedônia"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -62528,7 +62540,7 @@ msgstr "(Nenhum valor selecionado)"
 #: core/utilities/searchwindow/ratingsearchutilities.cpp:206
 #, kde-format
 msgid "No Rating assigned"
-msgstr "Nenhuma avaliação atribuída"
+msgstr "Nenhuma classificação atribuída"
 
 #: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
@@ -63497,7 +63509,7 @@ msgstr "Editar pesquisa atual..."
 #: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
 msgid "Save Current Search"
-msgstr "Salvar a pesquisa atual"
+msgstr "Salvar pesquisa atual"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:268
 #, kde-format
@@ -63508,7 +63520,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchtabheader.cpp:273
 #, kde-format
 msgid "Save current search to a new virtual Album"
-msgstr "Salvar a pesquisa atual para o novo álbum virtual"
+msgstr "Salvar a pesquisa atual para um novo álbum virtual"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:274
 #, kde-format
@@ -63523,7 +63535,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchtabheader.cpp:316
 #, kde-format
 msgid "Edit Stored Search"
-msgstr "Editar a pesquisa armazenada"
+msgstr "Editar pesquisa armazenada"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:331
 #, kde-format
@@ -68569,6 +68581,10 @@ msgstr "Álbuns"
 #, kde-format
 msgid "Import Items"
 msgstr "Itens importados"
+
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
 
 #~ msgctxt "@action:button start the AI GUP test"
 #~ msgid "Start"

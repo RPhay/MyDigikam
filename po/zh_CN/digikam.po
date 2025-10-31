@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -25469,29 +25469,37 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Twitter"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to export to Twitter web-service"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "导出项目到 Twitter 在线服务"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to Twitter web-service.<br><br>See "
+#| "Twitter web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr ""
 "用于导出项目到 Twitter 在线服务的工具。<br><br>请访问 Twitter 网站了解详情："
 "%1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export to &Twitter..."
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "导出到 Twitter(&T)..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -25521,9 +25529,11 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "无法为上传的照片创建推文"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Twitter"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "导出到 Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -45920,9 +45930,11 @@ msgid "Macao"
 msgstr "中国澳门"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "马其顿"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -64344,19 +64356,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
-msgstr ""
+msgstr "开始"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
-msgstr ""
+msgstr "开始测试"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
-msgstr ""
+msgstr "正在测试..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
@@ -64381,13 +64393,13 @@ msgstr "测试失败。您的系统可能无法使用 GPU 加速 AI 模型。"
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
-msgstr ""
+msgstr "关闭测试对话框"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
@@ -64422,22 +64434,22 @@ msgstr "OpenCL 在本机系统中不可用。"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, kde-format
 msgid "Loading DNN Model test image..."
-msgstr ""
+msgstr "正在加载 DNN 模型测试图像..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, kde-format
 msgid "DNN model test image not found."
-msgstr ""
+msgstr "找不到 DNN 模型测试图像。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
 #, kde-format
 msgid "Failed to load DNN model test image from %1"
-msgstr ""
+msgstr "无法从 %1 加载 DNN 模型测试图像"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, kde-format
 msgid "Preparing the DNN Model image for processing..."
-msgstr ""
+msgstr "正在准备 DNN 模型图像以进行处理..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
@@ -66024,3 +66036,7 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Twitter"

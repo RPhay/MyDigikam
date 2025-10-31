@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -27210,30 +27210,29 @@ msgstr ""
 "Dat Slötelwoort \"%2\" is een Indrag towiest. Wullt Du redig wiedermaken?"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Start Index:"
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Eerst Nummer:"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Beweerten importeert"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "Beweerten importeert"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Exporteren"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -27263,7 +27262,7 @@ msgstr "Indrag lett sik nich sekern..."
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Exporteren"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -49453,7 +49452,7 @@ msgstr "Makao"
 #, fuzzy, kde-format
 #| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Makedonien"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -70803,6 +70802,12 @@ msgstr "Albenindrääg"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "Biller &sorteren"
+
+#, fuzzy
+#~| msgid "Start Index:"
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Eerst Nummer:"
 
 #, fuzzy
 #~| msgctxt "Start index for custom range"

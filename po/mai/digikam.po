@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -25730,14 +25730,14 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
-msgid "Twitter"
+msgid "xdotcom"
 msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Preview..."
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "पूर्वावलोकन..."
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
@@ -25745,8 +25745,8 @@ msgstr "पूर्वावलोकन..."
 #| msgid "Preview..."
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr "पूर्वावलोकन..."
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
@@ -25754,7 +25754,7 @@ msgstr "पूर्वावलोकन..."
 #| msgctxt "enfuse settings"
 #| msgid "Exposure:"
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "उद्भासन:"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -25786,7 +25786,7 @@ msgstr ""
 #| msgctxt "enfuse settings"
 #| msgid "Exposure:"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "उद्भासन:"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -45966,7 +45966,7 @@ msgstr ""
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
 #, kde-format
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174

@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 02:01+0000\n"
+"POT-Creation-Date: 2025-10-31 01:59+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -28340,17 +28340,16 @@ msgstr ""
 "Kas jätkata?"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Twitter"
+#, kde-format
 msgctxt "@title"
-msgid "Twitter"
-msgstr "Twitter"
+msgid "xdotcom"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "A tool to export to Twitter web-service"
 msgctxt "@info"
-msgid "A tool to export to Twitter web-service"
+msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "Tööriist eksportimiseks Twitteri veebiteenusse"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
@@ -28361,17 +28360,19 @@ msgstr "Tööriist eksportimiseks Twitteri veebiteenusse"
 #| "twitter.com/</a></p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.<br><br>See "
-"Twitter web site for details: %1"
+"This tool allows users to export items to x.com (aka Twitter) web-service."
+"<br><br>See Twitter web site for details: %1"
 msgstr ""
 "<p>See tööriist võimaldab eksportida elemente Twitteri veebiteenusse.</"
 "p><p>Täpsemalt kõneleb sellest Twitteri veebileht: <a href='https://twitter."
 "com/'>https://twitter.com/</a></p>"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export to &Twitter..."
 msgctxt "@action"
-msgid "Export to &Twitter..."
+msgid "Export to x.com (aka &Twitter)..."
 msgstr "Ekspordi &Twitterisse ..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
@@ -28404,7 +28405,7 @@ msgstr "Säutsu loomine foto üleslaadimise puhul nurjus"
 #, fuzzy, kde-format
 #| msgid "Export to Twitter"
 msgctxt "@title:window"
-msgid "Export to Twitter"
+msgid "Export to x.com (aka Twitter)"
 msgstr "Eksport Twitterisse"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
@@ -51303,7 +51304,7 @@ msgstr "Macau"
 #, fuzzy, kde-format
 #| msgid "Macedonia"
 msgctxt "@info: country code"
-msgid "Macedonia"
+msgid "North Macedonia"
 msgstr "Makedoonia"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
@@ -73516,6 +73517,12 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgctxt "@title"
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
 
 #, fuzzy
 #~| msgid "Start"
