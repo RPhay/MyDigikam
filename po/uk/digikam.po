@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-31 01:59+0000\n"
-"PO-Revision-Date: 2025-10-30 14:53+0200\n"
+"PO-Revision-Date: 2025-10-31 11:33+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -26748,37 +26748,29 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "xdotcom"
-msgstr ""
+msgstr "xdotcom"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to export to Twitter web-service"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to x.com (aka Twitter) web-service"
-msgstr "Інструмент для експортування до Twitter"
+msgstr "Інструмент для експортування до x.com (або Twitter)"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Twitter web-service.<br><br>See "
-#| "Twitter web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to x.com (aka Twitter) web-service."
 "<br><br>See Twitter web site for details: %1"
 msgstr ""
-"За допомогою цього інструмента можна експортувати зображення до вебслужби "
-"Twitter.<br><br>Докладніше про службу на сайті Twitter: %1"
+"За допомогою цього інструмента можна експортувати зображення до вебслужби x."
+"com (або Twitter).<br><br>Докладніше про службу на сайті Twitter: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Twitter..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to x.com (aka &Twitter)..."
-msgstr "Е&кспортувати до Twitter…"
+msgstr "Е&кспортувати до Tx.com (або Twitter)…"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
@@ -26807,12 +26799,10 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Не вдалося створити твіт для вивантаженої фотографії"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to x.com (aka Twitter)"
-msgstr "Експорт до Twitter"
+msgstr "Експорт до x.com (або Twitter)"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
 #, kde-format
@@ -48018,12 +48008,10 @@ msgid "Macao"
 msgstr "Макао"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Macedonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "North Macedonia"
-msgstr "Македонія"
+msgstr "Північна Македонія"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
 #, kde-format
