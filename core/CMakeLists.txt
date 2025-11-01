@@ -19,10 +19,10 @@ message(STATUS "")
 set(KF${QT_VERSION_MAJOR}_MIN_VERSION       "5.95.0")
 set(EXIV2_MIN_VERSION                       "0.27.1")
 set(OPENCV_MIN_VERSION                      "4.8.0")
-set(LENSFUN_MIN_VERSION                     "0.2.6.0")      # For Lens auto-correction plugin
+set(LENSFUN_MIN_VERSION                     "0.2.8.0")      # For Lens auto-correction plugin
 set(KSANE_MIN_VERSION                       "21.12.0")      # For digital scanner support.
-set(CALENDAR_MIN_VERSION                    "5.89.0")       # Calendar Core dependency for plugin.
-set(AKONADI_MIN_VERSION                     "5.19.0")       # Akonadi Contact dependency.
+set(CALENDAR_MIN_VERSION                    "5.95.0")       # Calendar Core dependency for plugin.
+set(AKONADI_MIN_VERSION                     "5.95.0")       # Akonadi Contact dependency.
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
@@ -45,7 +45,7 @@ include(RulesKDEFramework)
 include(ECMDeprecationSettings)
 
 ecm_set_disabled_deprecation_versions(
-# FIXME: some Qt6 API will be remove in Qt7 eg. QSqlQuery copy constructor.
+# FIXME: some Qt6 API will be removed in Qt7 eg. QSqlQuery copy constructor.
 #    QT 6.9.1
     KF 6.17.0
 )
