@@ -266,6 +266,8 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
     QMutexLocker lock(&s_metaEngineMutex);
 
+    s_metaEngineWarnOrError = false;
+
     try
     {
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(
@@ -310,14 +312,29 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-        d->iccProfileBuf() = image->iccProfile();
+            d->iccProfileBuf() = image->iccProfile();
 
 #else
 
-        d->iccProfileBuf() = *(image->iccProfile());
+            d->iccProfileBuf() = *(image->iccProfile());
 
 #endif
 
+        }
+
+        if (s_metaEngineWarnOrError)
+        {
+            d->itemComments().clear();
+            d->exifMetadata().clear();
+            d->iptcMetadata().clear();
+
+#ifdef _XMP_SUPPORT_
+
+            d->xmpMetadata().clear();
+
+#endif // _XMP_SUPPORT_
+
+            return false;
         }
 
         return true;

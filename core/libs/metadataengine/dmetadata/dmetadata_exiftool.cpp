@@ -46,37 +46,52 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll)
         return false;
     }
 
-    if (!parser->loadChunk(filePath, (videoAll || isFITS)))
+    int loop = 0;
+
+    while (loop < 2)
     {
-        qCCritical(DIGIKAM_METAENGINE_LOG) << "Load metadata using ExifTool failed...";
+        if (loop == 1)
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loading now without MakerNotes";
+        }
 
-        return false;
+        if (!parser->loadChunk(filePath, (videoAll || isFITS), (loop == 1)))
+        {
+            qCCritical(DIGIKAM_METAENGINE_LOG) << "Load metadata using ExifTool failed...";
+
+            return false;
+        }
+
+        ExifToolParser::ExifToolData chunk = parser->currentData();
+
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool";
+
+        ExifToolParser::ExifToolData::iterator it = chunk.find(QLatin1String("EXV"));
+
+        if (it == chunk.end())
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool is empty";
+
+            return false;
+        }
+
+        QVariantList varLst = it.value();
+        QByteArray exv      = varLst[0].toByteArray();
+
+        if (exv.isEmpty())
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool has no data";
+
+            return false;
+        }
+
+        ++loop;
+
+        if (loadFromData(exv))
+        {
+            break;
+        }
     }
-
-    ExifToolParser::ExifToolData chunk = parser->currentData();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool";
-
-    ExifToolParser::ExifToolData::iterator it = chunk.find(QLatin1String("EXV"));
-
-    if (it == chunk.end())
-    {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool is empty";
-
-        return false;
-    }
-
-    QVariantList varLst = it.value();
-    QByteArray exv      = varLst[0].toByteArray();
-
-    if (exv.isEmpty())
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool has no data";
-
-        return false;
-    }
-
-    loadFromData(exv);
 
     // Restore file path.
 

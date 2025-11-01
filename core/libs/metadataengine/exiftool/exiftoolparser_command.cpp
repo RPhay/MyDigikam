@@ -67,7 +67,7 @@ bool ExifToolParser::load(const QString& path)
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));
 }
 
-bool ExifToolParser::loadChunk(const QString& path, bool copyToAll)
+bool ExifToolParser::loadChunk(const QString& path, bool copyToAll, bool dropMakernotes)
 {
     QFileInfo fileInfo(path);
 
@@ -94,6 +94,11 @@ bool ExifToolParser::loadChunk(const QString& path, bool copyToAll)
 
     cmdArgs << cpyOpt;
     cmdArgs << QByteArray("-icc_profile");
+
+    if (dropMakernotes)
+    {
+        cmdArgs << QByteArray("--makernotes");
+    }
 
     if (copyToAll)
     {
