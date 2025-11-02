@@ -78,29 +78,6 @@ int CollectionScanner::checkAlbum(const CollectionLocation& location, const QStr
     {
         QFileInfo fi(location.albumRootPath() + album);
         albumID = CoreDbAccess().db()->addAlbum(location.id(), album, QString(), fi.lastModified().date(), QString());
-
-        // Have album this one was copied from?
-
-        if (d->hints)
-        {
-            CollectionScannerHints::Album src;
-            {
-                QReadLocker locker(&d->hints->lock);
-                src = d->hints->albumHints.value(CollectionScannerHints::DstPath(location.id(), album));
-            }
-
-            if (!src.isNull())
-            {
-/*
-                qCDebug(DIGIKAM_DATABASE_LOG) << "Identified album"
-                                              << src.albumId
-                                              << "as source of new album"
-                                              << fi.filePath();
-*/
-                CoreDbAccess().db()->copyAlbumProperties(src.albumId, albumID);
-                d->establishedSourceAlbums[albumID] = src.albumId;
-            }
-        }
     }
 
     return albumID;

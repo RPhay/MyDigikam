@@ -73,55 +73,15 @@ bool s_modificationDateEquals(const QDateTime& a, const QDateTime& b);
 
 // --------------------------------------------------------------------
 
-class Q_DECL_HIDDEN NewlyAppearedFile
-{
-
-public:
-
-    NewlyAppearedFile() = default;
-    NewlyAppearedFile(int albumId, const QString& fileName);
-
-    bool operator==(const NewlyAppearedFile& other) const;
-
-public:
-
-    int     albumId = 0;
-    QString fileName;
-};
-
-// --------------------------------------------------------------------
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-inline size_t qHash(const NewlyAppearedFile& file)
-
-#else
-
-inline uint qHash(const NewlyAppearedFile& file)
-
-#endif
-
-{
-    return (::qHash(file.albumId) ^ ::qHash(file.fileName));
-}
-
-// --------------------------------------------------------------------
-
 class Q_DECL_HIDDEN CollectionScannerHintContainerImplementation : public CollectionScannerHintContainer
 {
 public:
 
-    void recordHints(const QList<AlbumCopyMoveHint>& hints) override;
-    void recordHints(const QList<ItemCopyMoveHint>& hints)  override;
-    void recordHints(const QList<ItemChangeHint>& hints)    override;
     void recordHint(const ItemMetadataAdjustmentHint& hint) override;
 
     void clear()                                            override;
 
-    bool hasAnyNormalHint(qlonglong id);
-    bool hasAlbumHints();
-    bool hasModificationHint(qlonglong id);
-    bool hasRescanHint(qlonglong id);
+    bool hasMetadataHint(qlonglong id);
     bool hasMetadataAboutToAdjustHint(qlonglong id);
     bool hasMetadataAdjustedHint(qlonglong id);
 
@@ -129,10 +89,6 @@ public:
 
     QReadWriteLock                                                        lock;
 
-    QHash<CollectionScannerHints::DstPath, CollectionScannerHints::Album> albumHints;
-    QHash<NewlyAppearedFile, qlonglong>                                   itemHints;
-    QSet<qlonglong>                                                       modifiedItemHints;
-    QSet<qlonglong>                                                       rescanItemHints;
     QHash<qlonglong, QDateTime>                                           metadataAboutToAdjustHints;
     QHash<qlonglong, QDateTime>                                           metadataAdjustedHints;
 };

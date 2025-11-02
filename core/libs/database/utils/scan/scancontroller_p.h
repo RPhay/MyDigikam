@@ -108,8 +108,6 @@ public:
     QPixmap errorPixmap();
     QPixmap restartPixmap();
 
-    void garbageCollectHints(bool setAccessTime);
-
 public:
 
     bool                            running                 = false;
@@ -147,8 +145,6 @@ public:
     QPixmap                         errorPix;
 
     CollectionScannerHintContainer* hints                   = CollectionScanner::createHintContainer();
-
-    QDateTime                       lastHintAdded;
 
     DProgressDlg*                   progressDialog          = nullptr;
 

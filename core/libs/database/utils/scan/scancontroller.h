@@ -245,42 +245,6 @@ private:
 
 public:
 
-    /**
-     * Hint at the imminent copy, move or rename of an album, so that the
-     * collection scanner is informed about this.
-     * If the album is renamed, give the new name in newAlbumName.
-     * DstAlbum is the new parent album /
-     * dstPath is the new parent directory of the album, so
-     * do not include the album name to dstPath.
-     */
-    void hintAtMoveOrCopyOfAlbum(const PAlbum* const album,
-                                 const PAlbum* const dstAlbum,
-                                 const QString& newAlbumName = QString());
-    void hintAtMoveOrCopyOfAlbum(const PAlbum* const album,
-                                 const QString& dstPath,
-                                 const QString& newAlbumName = QString());
-
-    /**
-     * Hint at the imminent copy, move or rename of items, so that the
-     * collection scanner is informed about this.
-     * Give the list of existing items, specify the destination with dstAlbum,
-     * and give the names at destination in itemNames (Unless for rename, names wont usually change.
-     * Give them nevertheless.)
-     */
-    void hintAtMoveOrCopyOfItems(const QList<qlonglong>& ids,
-                                 const PAlbum* const dstAlbum,
-                                 const QStringList& itemNames);
-    void hintAtMoveOrCopyOfItem(qlonglong id,
-                                const PAlbum* const dstAlbum,
-                                const QString& itemName);
-
-    /**
-     * Hint at the fact that an item may have changed, although its modification date may not have changed.
-     * Note that a scan of the containing directory will need to be triggered nonetheless for the hints to take effect.
-     */
-    void hintAtModificationOfItems(const QList<qlonglong>& ids);
-    void hintAtModificationOfItem(qlonglong id);
-
 Q_SIGNALS:
 
     void totalFilesToScan(int);
@@ -306,15 +270,6 @@ private:
     void schemaUpdateProgress(const QString& message, int numberOfSteps) override;
     void error(const QString& errorMessage) override;
 
-    AlbumCopyMoveHint hintForAlbum(const PAlbum* const album,
-                                   int dstAlbumRootId,
-                                   const QString& relativeDstPath,
-                                   const QString& albumName);
-
-    QList<AlbumCopyMoveHint> hintsForAlbum(const PAlbum* const album,
-                                           int dstAlbumRootId,
-                                           const QString& relativeDstPath,
-                                           const QString& albumName);
     //@}
 
     // -----------------------------------------------------------------------------

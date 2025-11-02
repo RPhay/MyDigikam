@@ -44,53 +44,14 @@ bool s_modificationDateEquals(const QDateTime& a, const QDateTime& b)
 
 // --------------------------------------------------------------------
 
-NewlyAppearedFile::NewlyAppearedFile(int albumId, const QString& fileName)
-    : albumId (albumId),
-      fileName(fileName)
-{
-}
-
-bool NewlyAppearedFile::operator==(const NewlyAppearedFile& other) const
-{
-    return (
-            (albumId  == other.albumId ) &&
-            (fileName == other.fileName)
-           );
-}
-
-// --------------------------------------------------------------------
-
-bool CollectionScannerHintContainerImplementation::hasAnyNormalHint(qlonglong id)
+bool CollectionScannerHintContainerImplementation::hasMetadataHint(qlonglong id)
 {
     QReadLocker locker(&lock);
 
     return (
-            modifiedItemHints.contains(id)          ||
-            rescanItemHints.contains(id)            ||
             metadataAboutToAdjustHints.contains(id) ||
             metadataAdjustedHints.contains(id)
            );
-}
-
-bool CollectionScannerHintContainerImplementation::hasAlbumHints()
-{
-    QReadLocker locker(&lock);
-
-    return !albumHints.isEmpty();
-}
-
-bool CollectionScannerHintContainerImplementation::hasModificationHint(qlonglong id)
-{
-    QReadLocker locker(&lock);
-
-    return modifiedItemHints.contains(id);
-}
-
-bool CollectionScannerHintContainerImplementation::hasRescanHint(qlonglong id)
-{
-    QReadLocker locker(&lock);
-
-    return rescanItemHints.contains(id);
 }
 
 bool CollectionScannerHintContainerImplementation::hasMetadataAboutToAdjustHint(qlonglong id)
@@ -105,56 +66,6 @@ bool CollectionScannerHintContainerImplementation::hasMetadataAdjustedHint(qlong
     QReadLocker locker(&lock);
 
     return metadataAdjustedHints.contains(id);
-}
-
-void CollectionScannerHintContainerImplementation::recordHints(const QList<AlbumCopyMoveHint>& hints)
-{
-    QWriteLocker locker(&lock);
-
-    for (const AlbumCopyMoveHint& hint : std::as_const(hints))
-    {
-        // auto-magic casting to src and dst
-
-        albumHints[hint] = hint;
-    }
-}
-
-void CollectionScannerHintContainerImplementation::recordHints(const QList<ItemCopyMoveHint>& hints)
-{
-    QWriteLocker locker(&lock);
-
-    for (const ItemCopyMoveHint& hint : std::as_const(hints))
-    {
-        QList<qlonglong> ids = hint.srcIds();
-        QStringList dstNames = hint.dstNames();
-
-        for (int i = 0 ; i < ids.size() ; ++i)
-        {
-            itemHints[NewlyAppearedFile(hint.albumIdDst(), dstNames.at(i))] = ids.at(i);
-        }
-    }
-}
-
-void CollectionScannerHintContainerImplementation::recordHints(const QList<ItemChangeHint>& hints)
-{
-    QWriteLocker locker(&lock);
-
-    for (const ItemChangeHint& hint : std::as_const(hints))
-    {
-        const QList<qlonglong>& ids = hint.ids();
-
-        for (int i = 0 ; i < ids.size() ; ++i)
-        {
-            if (hint.isModified())
-            {
-                modifiedItemHints << ids.at(i);
-            }
-            else
-            {
-                rescanItemHints << ids.at(i);
-            }
-        }
-    }
 }
 
 void CollectionScannerHintContainerImplementation::recordHint(const ItemMetadataAdjustmentHint& hint)
@@ -204,12 +115,8 @@ void CollectionScannerHintContainerImplementation::clear()
 {
     QWriteLocker locker(&lock);
 
-    albumHints.clear();
-    itemHints.clear();
-    modifiedItemHints.clear();
-    rescanItemHints.clear();
-    metadataAboutToAdjustHints.clear();
     metadataAdjustedHints.clear();
+    metadataAboutToAdjustHints.clear();
 }
 
 // --------------------------------------------------------------------

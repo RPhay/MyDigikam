@@ -82,25 +82,6 @@ QPixmap ScanController::Private::restartPixmap()
     return errorPix;
 }
 
-void ScanController::Private::garbageCollectHints(bool setAccessTime)
-{
-    QDateTime current = QDateTime::currentDateTime();
-
-    if (
-        idle                    &&
-        lastHintAdded.isValid() &&
-        (lastHintAdded.secsTo(current) > (5 * 60))
-       )
-    {
-        hints->clear();
-    }
-
-    if (setAccessTime)
-    {
-        lastHintAdded = current;
-    }
-}
-
 // --------------------------------------------------------------------------------------------
 
 ScanControllerLoadingCacheFileWatch::ScanControllerLoadingCacheFileWatch()

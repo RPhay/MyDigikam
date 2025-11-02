@@ -20,8 +20,6 @@
 // Qt includes
 
 #include <QDateTime>
-#include <QList>
-#include <QStringList>
 
 #ifdef HAVE_DBUS
 #   include <QDBusArgument>
@@ -36,12 +34,9 @@
 namespace Digikam
 {
 
-class AlbumCopyMoveHint;
+class ItemInfo;
 class CollectionLocation;
 class CollectionScannerObserver;
-class ItemInfo;
-class ItemCopyMoveHint;
-class ItemChangeHint;
 class ItemMetadataAdjustmentHint;
 
 class CollectionScannerHintContainer
@@ -53,9 +48,6 @@ public:
     CollectionScannerHintContainer()                                 = default;
     virtual ~CollectionScannerHintContainer()                        = default;
 
-    virtual void recordHints(const QList<AlbumCopyMoveHint>& hints)  = 0;
-    virtual void recordHints(const QList<ItemCopyMoveHint>& hints)   = 0;
-    virtual void recordHints(const QList<ItemChangeHint>& hints)     = 0;
     virtual void recordHint(const ItemMetadataAdjustmentHint& hints) = 0;
 
     virtual void clear()                                             = 0;
@@ -64,260 +56,6 @@ private:
 
     Q_DISABLE_COPY(CollectionScannerHintContainer)
 };
-
-// ------------------------------------------------------------------------------
-
-namespace CollectionScannerHints
-{
-
-class DIGIKAM_DATABASE_EXPORT Album
-{
-public:
-
-    Album() = default;
-    Album(int albumRootId, int albumId);
-
-    bool isNull()                       const;
-    QT_HASH_TYPE qHash()                const;
-    bool operator==(const Album& other) const;
-
-public:
-
-    int albumRootId = 0;
-    int albumId     = 0;
-};
-
-// ---------------------------------------------------------------------------
-
-class DIGIKAM_DATABASE_EXPORT DstPath
-{
-public:
-
-    DstPath() = default;
-    DstPath(int albumRootId, const QString& relativePath);
-
-    bool isNull()                         const;
-    QT_HASH_TYPE qHash()                  const;
-    bool operator==(const DstPath& other) const;
-
-public:
-
-    int     albumRootId = 0;
-    QString relativePath;
-};
-
-// ---------------------------------------------------------------------------
-
-class DIGIKAM_DATABASE_EXPORT Item
-{
-public:
-
-    Item() = default;
-    explicit Item(qlonglong id);
-
-    bool isNull()                      const;
-    QT_HASH_TYPE qHash()               const;
-    bool operator==(const Item& other) const;
-
-public:
-
-    qlonglong id = 0;
-};
-
-// ---------------------------------------------------------------------------
-
-inline QT_HASH_TYPE qHash(const Album& src)
-{
-    return src.qHash();
-}
-
-inline QT_HASH_TYPE qHash(const DstPath& dst)
-{
-    return dst.qHash();
-}
-
-inline QT_HASH_TYPE qHash(const Item& item)
-{
-    return item.qHash();
-}
-
-} // namespace CollectionScannerHints
-
-// ---------------------------------------------------------------------------
-
-class DIGIKAM_DATABASE_EXPORT AlbumCopyMoveHint
-{
-public:
-
-    /**
-     * An AlbumCopyMoveHint describes an existing album
-     * and a destination to which this album is expected to be
-     * copied, moved or renamed.
-     */
-    AlbumCopyMoveHint() = default;
-    AlbumCopyMoveHint(int srcAlbumRootId, int srcAlbum,
-                      int dstAlbumRootId, const QString& dstRelativePath);
-
-    int albumRootIdSrc()                                          const;
-    int albumIdSrc()                                              const;
-    bool isSrcAlbum(int albumRootId, int albumId)                 const;
-
-    CollectionScannerHints::Album src()                           const
-    {
-        return m_src;
-    }
-
-    int albumRootIdDst()                                          const;
-    QString relativePathDst()                                     const;
-    bool isDstAlbum(int albumRootId, const QString& relativePath) const;
-
-    CollectionScannerHints::DstPath dst()                         const
-    {
-        return m_dst;
-    }
-
-    QT_HASH_TYPE qHash()                                          const;
-
-    bool operator==(const CollectionScannerHints::Album& src)     const
-    {
-        return (src == m_src);
-    }
-
-    bool operator==(const CollectionScannerHints::DstPath& dst)   const
-    {
-        return (dst == m_dst);
-    }
-
-#ifdef HAVE_DBUS
-
-    AlbumCopyMoveHint& operator<<(const QDBusArgument& argument);
-    const AlbumCopyMoveHint& operator>>(QDBusArgument& argument)  const;
-
-#endif
-
-    operator const CollectionScannerHints::Album& ()              const
-    {
-        return m_src;
-    }
-
-    operator const CollectionScannerHints::DstPath& ()            const
-    {
-        return m_dst;
-    }
-
-protected:
-
-    CollectionScannerHints::Album   m_src;
-    CollectionScannerHints::DstPath m_dst;
-};
-
-// ---------------------------------------------------------------------------
-
-class DIGIKAM_DATABASE_EXPORT ItemCopyMoveHint
-{
-public:
-
-    /**
-     * An ItemCopyMoveHint describes a list of existing items that will
-     * be copied, moved or renamed to an album given by album root id and album id.
-     * In the new album, the items will have the filenames given in dstNames.
-     */
-
-    ItemCopyMoveHint() = default;
-    ItemCopyMoveHint(const QList<qlonglong>& srcIds,
-                     int dstAlbumRootId,
-                     int albumId,
-                     const QStringList& dstNames);
-
-    QList<qlonglong> srcIds()                                   const;
-    bool isSrcId(qlonglong id)                                  const;
-    int albumRootIdDst()                                        const;
-    int albumIdDst()                                            const;
-    bool isDstAlbum(int albumRootId, int albumId)               const;
-
-    CollectionScannerHints::Album dst()                         const
-    {
-        return m_dst;
-    }
-
-    QStringList dstNames()                                      const;
-    QString dstName(qlonglong id)                               const;
-
-    bool operator==(const CollectionScannerHints::Album& dst)   const
-    {
-        return (dst == m_dst);
-    }
-
-#ifdef HAVE_DBUS
-
-    ItemCopyMoveHint& operator<<(const QDBusArgument& argument);
-    const ItemCopyMoveHint& operator>>(QDBusArgument& argument) const;
-
-#endif
-
-    operator const CollectionScannerHints::Album& ()            const
-    {
-        return m_dst;
-    }
-
-protected:
-
-    QList<qlonglong>              m_srcIds;
-    CollectionScannerHints::Album m_dst;
-    QStringList                   m_dstNames;
-};
-
-// ---------------------------------------------------------------------------
-
-class DIGIKAM_DATABASE_EXPORT ItemChangeHint
-{
-public:
-
-    /**
-     * An ItemCopyMoveHint describes a list of existing items that
-     * should be updated although the modification date may not have changed.
-     */
-
-    enum ChangeType
-    {
-        ItemModified, ///< treat as if modification date changed
-        ItemRescan    ///< reread metadata
-    };
-
-public:
-
-    ItemChangeHint() = default;
-    explicit ItemChangeHint(const QList<qlonglong>& srcIds,
-                            ChangeType type = ItemModified);
-
-    QList<qlonglong> ids()                                      const;
-    bool isId(qlonglong id)                                     const;
-    ChangeType changeType()                                     const;
-
-    bool isModified()                                           const
-    {
-        return (changeType() == ItemModified);
-    }
-
-    bool needsRescan()                                          const
-    {
-        return (changeType() == ItemRescan);
-    }
-
-#ifdef HAVE_DBUS
-
-    ItemChangeHint& operator<<(const QDBusArgument& argument);
-    const ItemChangeHint& operator>>(QDBusArgument& argument)   const;
-
-#endif
-
-protected:
-
-    QList<qlonglong>  m_ids;
-    ChangeType        m_type = ItemModified;
-};
-
-// ---------------------------------------------------------------------------
 
 class DIGIKAM_DATABASE_EXPORT ItemMetadataAdjustmentHint
 {
@@ -380,17 +118,4 @@ protected:
     qlonglong         m_fileSize            = 0;
 };
 
-inline QT_HASH_TYPE qHash(const Digikam::AlbumCopyMoveHint& hint)
-{
-    return hint.qHash();
-}
-
 } // namespace Digikam
-
-#ifdef HAVE_DBUS
-
-DECLARE_METATYPE_FOR_DBUS(Digikam::AlbumCopyMoveHint)
-DECLARE_METATYPE_FOR_DBUS(Digikam::ItemCopyMoveHint)
-DECLARE_METATYPE_FOR_DBUS(Digikam::ItemChangeHint)
-
-#endif
