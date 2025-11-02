@@ -253,78 +253,10 @@
 
 \section externaldeps External Dependencies
 
-Before compiling digiKam, you need to install all required tools and libraries. The full list of mandatory (X) and optional external dependencies required to compile and link digiKam source code is listed below. Qt:: is for the Qt framework modules and KF:: for the KDE framework modules.
 
-| Dependency                                                                     | Requirement | Qt5 Version   | Qt6 Version   | Remarks                                                                                                                                        |
-|--------------------------------------------------------------------------------|-------------|---------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Git               ](http://git-scm.com)                                       |      X      | >= 2.x        |               | Note: to checkout all source code from the git repositories.                                                                                   |
-| [CMake             ](https://www.cmake.org)                                    |      X      | >= 3.16.0     | >= 3.22.0     |                                                                                                                                                |
-| [ECM               ](https://invent.kde.org/frameworks/extra-cmake-modules)    |      X      | >= 5.55.0     | >= 5.240.0    | Note: Qt6 support implemented in KDE framework >= 5.91.0                                                                                       |
-| [CCache            ](https://ccache.dev/)                                      |   optional  | >= 4.x        |               | Note: to speed-up compilation. Cmake option BUILD_WITH_CCACHE=ON                                                                               |
-| [GetText           ](https://www.gnu.org/software/gettext)                     |   optional  | >= 0.20       |               | Note: including Msgfmt to compile po files to mo files. Cmake option DIGIKAMSC_COMPILE_PO=ON                                                   |
-| [ASAN              ](https://clang.llvm.org/docs/AddressSanitizer.html)        |   optional  | >= 19         |               | Note: to build with ASAN and UBSAN sanitizers. Require Clang compiler instead G++. Cmake option ENABLE_SANITIZERS=ON                           |
-| [Qt::Core          ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::Gui           ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::Widgets       ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::Network       ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::NetworkAuth   ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::Sql           ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        | Note: including Qt::Sqlite and Qt::Mysql plugins                                                                                               |
-| [Qt::Xml           ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::Concurrent    ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::PrintSupport  ](https://code.qt.io/cgit/qt/qtbase.git/)                   |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::Svg           ](https://code.qt.io/cgit/qt/qtsvg.git/)                    |      X      | >= 5.14       | >= 6.4        |                                                                                                                                                |
-| [Qt::WebEngine     ](https://code.qt.io/cgit/qt/qtwebengine.git/)              |      X      | >= 5.14       | >= 6.4        | For web contents rendering                                                                                                                     |
-| [Qt::XmlPatterns   ](https://code.qt.io/cgit/qt/qtxmlpatterns.git/)            |   optional  | >= 5.14       | ---           | For parsing and validate Xml. Used by Qt5 version of Rajce tool. Module removed with Qt6                                                       |
-| [Qt::X11Extras     ](https://code.qt.io/cgit/qt/qtx11extras.git/)              |   optional  | >= 5.14       | ---           | For color management support under Linux. Used by Qt5 version only. Module removed with Qt6                                                    |
-| [Qt::DBus          ](https://code.qt.io/cgit/qt/qtbase.git/)                   |   optional  | >= 5.14       | >= 6.4        | For Linux Desktop only. Cmake option ENABLE_DBUS=ON                                                                                            |
-| [Qt::OpenGL        ](https://code.qt.io/cgit/qt/qtbase.git/)                   |   optional  | >= 5.14       | >= 6.4        | For Presentation tool                                                                                                                          |
-| [Qt::OpenGLWidgets ](https://code.qt.io/cgit/qt/qtbase.git/)                   |   optional  | ---           | >= 6.4        | For Presentation tool. With Qt6, OpenGL is separated in 2 modules: core and widgets                                                            |
-| [Qt::Multimedia    ](https://code.qt.io/cgit/qt/qtbase.git/)                   |   optional  | ---           | >= 6.4        | For Presentation tool. With Qt6, OpenGL is separated in 2 modules: core and widgets                                                            |
-| [Qt::Test          ](https://code.qt.io/cgit/qt/qtbase.git/)                   |   optional  | >= 5.14       | >= 6.4        | For test codes. Cmake option BUILD_TESTING=ON                                                                                                  |
-| [Qt::Qml           ](https://code.qt.io/cgit/qt/qtdeclarative.git/)            |   optional  | >= 5.14       | >= 6.4        | For O2 test codes. Cmake option BUILD_TESTING=ON                                                                                               |
-| [Qt::WebView       ](https://code.qt.io/cgit/qt/qtwebview.git/)                |   optional  | >= 5.14       | >= 6.4        | For O2 test codes. Cmake option BUILD_TESTING=ON                                                                                               |
-| [KF::Config        ](https://invent.kde.org/frameworks/kconfig)                |      X      | >= 5.95.0     | >= 5.240.0    |                                                                                                                                                |
-| [KF::XmlGui        ](https://invent.kde.org/frameworks/kxmlgui)                |      X      | >= 5.95.0     | >= 5.240.0    |                                                                                                                                                |
-| [KF::I18n          ](https://invent.kde.org/frameworks/ki18n)                  |      X      | >= 5.95.0     | >= 5.240.0    |                                                                                                                                                |
-| [KF::WindowSystem  ](https://invent.kde.org/frameworks/kwindowsystem)          |      X      | >= 5.95.0     | >= 5.240.0    |                                                                                                                                                |
-| [KF::Service       ](https://invent.kde.org/frameworks/kservice)               |      X      | >= 5.95.0     | >= 5.240.0    |                                                                                                                                                |
-| [KF::Solid         ](https://invent.kde.org/frameworks/solid)                  |      X      | >= 5.95.0     | >= 5.240.0    |                                                                                                                                                |
-| [KF::CoreAddons    ](https://invent.kde.org/frameworks/kcoreaddons)            |      X      | >= 5.95.0     | >= 5.240.0    | For KAboutData and KMemoryInfo                                                                                                                 |
-| [KF::NotifyConfig  ](https://invent.kde.org/frameworks/knotifyconfig)          |   optional  | >= 5.95.0     | >= 5.240.0    | For Linux desktop application notify configuration                                                                                             |
-| [KF::Notifications ](https://invent.kde.org/frameworks/knotifications)         |   optional  | >= 5.95.0     | >= 5.240.0    | For Linux desktop notifications integrations                                                                                                   |
-| [KF::ThreadWeaver  ](https://invent.kde.org/frameworks/threadweaver)           |   optional  | >= 5.95.0     | >= 5.240.0    | For panorama tool                                                                                                                              |
-| [KF::IconThemes    ](https://invent.kde.org/frameworks/kiconthemes)            |   optional  | >= 5.95.0     | >= 5.240.0    | For Linux Desktop only (KIconDialog)                                                                                                           |
-| [KF::FileMetaData  ](https://invent.kde.org/frameworks/kfilemetadata)          |   optional  | >= 5.95.0     | >= 5.240.0    | For Plasma desktop files indexer support. Cmake option ENABLE_KFILEMETADATASUPPORT=ON Disabled by default                                      |
-| [KF::CalendarCore  ](https://invent.kde.org/frameworks/kcalendarcore)          |   optional  | >= 5.95.0     | >= 5.240.0    | For calendar tool to setup ical special events                                                                                                 |
-| [KF::KIO           ](https://invent.kde.org/frameworks/kio)                    |   optional  | >= 5.95.0     | >= 5.240.0    | For Linux Desktop only. Cmake option ENABLE_KIO=ON                                                                                             |
-| [KF::Sonnet        ](https://invent.kde.org/frameworks/sonnet)                 |   optional  | >= 5.95.0     | >= 5.240.0    | For spell-cheking in text widget (eg. caption)                                                                                                 |
-| [KF::AkonadiContact](https://invent.kde.org/pim/akonadi-contacts)              |   optional  | >= 5.95.0     | >= 5.240.0    | For Plasma desktop addess-book support. Cmake option ENABLE_AKONADICONTACTSUPPORT=ON Disabled by default                                       |
-| [libopencv         ](https://github.com/opencv/opencv)                         |      X      | >= 4.8        |               | Note: DNN module required for face management                                                                                                  |
-| [libtiff           ](https://gitlab.com/libtiff/libtiff)                       |      X      | >= 4.0        |               | For DImg TIFF image loader                                                                                                                     |
-| [libpng            ](https://libpng.sourceforge.io/)                           |      X      | >= 1.6        |               | For DImg PNG image loader                                                                                                                      |
-| [libjpeg           ](https://github.com/libjpeg-turbo/libjpeg-turbo)           |      X      | >= 8          |               | For DNG support in RawEngine: jpeglib >= 8.0                                                                                                   |
-| [libboost          ](https://github.com/boostorg/boost)                        |      X      | >= 1.55.0     |               | For Versioning support                                                                                                                         |
-| [liblcms           ](https://github.com/mm2/Little-CMS)                        |      X      | >= 2.x        |               | For Color Management support                                                                                                                   |
-| [libexpat          ](https://libexpat.github.io/)                              |      X      | >= 2.1.0      |               | For RAW to DNG converter                                                                                                                       |
-| [libexiv2          ](https://github.com/Exiv2/exiv2)                           |      X      | >= 0.27.1     |               | For Metadata low level management                                                                                                              |
-| [libjpegxl         ](https://github.com/libjxl/libjxl)                         |   optional  | >= 0.7        |               | For DNGWriter and RawEngine. To decode and encode DNG files                                                                                    |
-| [libheif           ](https://github.com/strukturag/libheif)                    |   optional  | >= 1.6.0      |               | For HEIF file format support. Library must be compiled with libde265 (read) and optionally with libx265 (write)                                |
-| [libx265           ](https://github.com/videolan/x265.git)                     |   optional  | >= 2.2        |               | For HEIC encoding support                                                                                                                      |
-| [libxml2           ](https://gitlab.gnome.org/GNOME/libxml2/)                  |   optional  | >= 2.7.0      |               | For HtmlGallery tool                                                                                                                           |
-| [libxslt           ](https://gitlab.gnome.org/GNOME/libxslt)                   |   optional  | >= 1.1.0      |               | For HtmlGallery tool                                                                                                                           |
-| [Flex              ](https://github.com/westes/flex)                           |   optional  | >= 2.5.0      |               | For Panorama tool                                                                                                                              |
-| [Bison             ](https://www.gnu.org/software/bison/bison.html)            |   optional  | >= 2.5.0      |               | For Panorama tool                                                                                                                              |
-| [libmesa           ](https://gitlab.freedesktop.org/mesa/mesa/)                |   optional  | >= 11.0       |               | For Presentation tools (Linux only)                                                                                                            |
-| [libksane          ](https://invent.kde.org/graphics/libksane)                 |   optional  | >= 21.12.0    | 22.04.2       | For Digital scanner support                                                                                                                    |
-| [libjpasper        ](https://github.com/jasper-software/jasper)                |   optional  | >= 1.900.1    |               | For JPEG-2000 support                                                                                                                          |
-| [libeigen3         ](https://github.com/eigenteam/eigen-git-mirror)            |   optional  | >= 3.2        |               | For Refocus tool                                                                                                                               |
-| [liblensfun        ](https://github.com/lensfun/lensfun)                       |   optional  | >= 0.2.8      |               | For LensCorrection tool                                                                                                                        |
-| [libglib2          ](https://developer.gnome.org/glib/)                        |   optional  | >= 2.0.0      |               | For Liquid rescale tool                                                                                                                        |
-| [libgphoto2        ](https://github.com/gphoto/libgphoto2)                     |   optional  | >= 2.5        |               | For Digital camera drivers support. Need libusb-1 at run-time                                                                                  |
-| [libgomp           ](https://gcc.gnu.org/onlinedocs/libgomp)                   |   optional  | >= 5.0        |               | For OpenMP support in RawEngine                                                                                                                |
-| [libimagemagick    ](https://github.com/ImageMagick/ImageMagick.git)           |   optional  | >= 6.7.0      |               | For ImageMagick codecs support in DImg image loader. Version >= 7.0 recommended                                                                |
-| [libffmpeg         ](https://git.ffmpeg.org/ffmpeg.git)                        |   optional  | >= 5.x        |               | For video/audio support (Cmake option ENABLE_MEDIAPLAYER=ON). libavformat, libavutil, libavcodec used to extract video metadata and QtAVPlayer |
-| [libvaapi          ](https://github.com/01org/intel-vaapi-driver)              |   optional  | >= 2.4        |               | For video/audio support (Cmake option ENABLE_MEDIAPLAYER=ON). Intel Video support in QtAVPlayer                                                |
+Before compiling digiKam, you need to install all required tools and libraries. See the intructions here:
+
+https://www.digikam.org/download/git/#install-external-dependencies
 
 \section getsourcecode Get Source Code
 
@@ -408,48 +340,9 @@ See below an example of \b .gitconfig file working with a developer account:
 \section cmakeoptions Cmake Configuration Options
 
 To configure the project with CMake, use dedicated "bootstrap" script for your platform where all available configuration
-options are present with default values.
+options are present with default values. See the instructions here:
 
-There are two configuration sections : the top level and the core.
-
-\subsection topleveloptions Top Level Configuration
-
- - Packaging options:
-
-  - \b DIGIKAMSC_COMPILE_DIGIKAM             : Build digiKam core (default=ON).
-  - \b DIGIKAMSC_COMPILE_PO                  : Build application translations files. (default=OFF).
-
- - Developers only options:
-
-  - \b BUILD_TESTING=ON                      : Build tests code (default=ON).
-  - \b BUILD_WITH_QT6=ON                     : Build with Qt6 framework, else Qt5 (default=OFF).
-
-\subsection coreoptions Core Configuration
-
- - Extra feature support options:
-
-  - \b ENABLE_KFILEMETADATASUPPORT           : Build digiKam with KDE files indexer support (default=OFF).
-  - \b ENABLE_AKONADICONTACTSUPPORT          : Build digiKam with KDE Mail Contacts support (default=OFF).
-  - \b ENABLE_GEOLOCATION                    : Build digiKam with Geolocation support (default=ON).
-  - \b ENABLE_MEDIAPLAYER                    : Build digiKam with Media Player support (default=ON).
-  - \b ENABLE_DBUS                           : Build digiKam with DBUS support (default=ON).
-  - \b ENABLE_APPSTYLES                      : Build digiKam with support for changing the widget application style (default=OFF).
-  - \b ENABLE_KIO                            : Build digiKam with KIO support (default=ON).
-
- - Database options
-
-  - \b ENABLE_MYSQLSUPPORT                   : Build digiKam with MySQL dabatase support (default=ON).
-  - \b ENABLE_INTERNALMYSQL                  : Build digiKam with internal MySQL server executable (default=ON).
-
- - Showfoto application options
-
-  - \b ENABLE_SHOWFOTO                       : Build Showfoto stand-alone image editor application (default=ON).
-
- - Developers only options:
-
-  - \b ENABLE_DIGIKAM_MODELTEST              : Enable ModelTest on some models for debugging (default=OFF).
-  - \b ENABLE_SANITIZERS                     : Enable ASAN and UBSAN sanitizers when available (default=OFF).
-  - \b BUILD_WITH_CCACHE                     : Use ccache to speed up compilations (default=OFF)
+https://www.digikam.org/download/git/#configure-with-cmake
 
 \section setuplocaldev Setup Local Compilation and Run-Time
 
