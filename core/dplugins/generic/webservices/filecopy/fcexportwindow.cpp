@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString TARGET_URL_PROPERTY           = QLatin1String("targetUrl");
     const QString TARGET_SIDECARS               = QLatin1String("sidecars");
     const QString TARGET_WRITE_METADATA_TO_FILE = QLatin1String("writeMetadataToFile");
