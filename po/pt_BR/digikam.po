@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-31 01:59+0000\n"
-"PO-Revision-Date: 2025-10-31 07:23-0300\n"
+"PO-Revision-Date: 2025-11-01 16:22-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -53115,19 +53115,19 @@ msgstr "Preferir álbum selecionado como referência"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
-msgstr "Preferir outro álbum diferente do selecionado como referência"
+msgstr "Preferir álbum diferente do selecionado como referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:134
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Prefira data de criação mais recente"
+msgstr "Preferir data de criação mais recente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Prefira data de modificação mais recente"
+msgstr "Preferir data de modificação mais recente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, kde-format
@@ -53151,7 +53151,7 @@ msgstr "Referência"
 #, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Restringir a pesquisa a:"
+msgstr "Restringir pesquisa a:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:178
 #, kde-format
@@ -53217,7 +53217,7 @@ msgstr "Intervalo de semelhança:"
 #, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Limitar pesquisa a:"
+msgstr "Limite da pesquisa:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, kde-format
@@ -53229,7 +53229,7 @@ msgstr "Nenhuma"
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "Album de referência somente"
+msgstr "Restringir ao álbum de referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
 #, kde-format
@@ -56095,17 +56095,17 @@ msgstr "Circunferência: %1<br>\n"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, kde-format
 msgid "Add &Measure Point"
-msgstr "Adicionar ponto de &medida"
+msgstr "Adicionar ponto para &medição"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:735
 #, kde-format
 msgid "Remove &Last Measure Point"
-msgstr "Remover ú&ltimo ponto de medida"
+msgstr "Remover ú&ltimo ponto para medição"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:737
 #, kde-format
 msgid "&Remove Measure Points"
-msgstr "&Remover pontos de medida"
+msgstr "&Remover pontos para medição"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/engine/plugins/render/navigation/navigation.ui:14
@@ -58116,7 +58116,7 @@ msgstr "Ampliar um grupo"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:549
 #, kde-format
 msgid "Create a region selection from a thumbnail"
-msgstr "Criar uma seleção da região a partir de uma miniatura"
+msgstr "Criar uma seleção de região a partir de uma miniatura"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:555
 #, kde-format

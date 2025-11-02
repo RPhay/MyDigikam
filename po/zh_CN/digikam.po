@@ -25470,13 +25470,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "xdotcom"
-msgstr ""
+msgstr "X/推特"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to x.com (aka Twitter) web-service"
-msgstr ""
+msgstr "导出项目到 X (推特) 在线服务"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
 #, kde-format
@@ -25485,12 +25485,13 @@ msgid ""
 "This tool allows users to export items to x.com (aka Twitter) web-service."
 "<br><br>See Twitter web site for details: %1"
 msgstr ""
+"用于导出项目到 X (推特) 在线服务的工具。<br><br>请访问 X 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Export to x.com (aka &Twitter)..."
-msgstr ""
+msgstr "导出到 X (推特)(&T)..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
@@ -25522,7 +25523,7 @@ msgstr "无法为上传的照片创建推文"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to x.com (aka Twitter)"
-msgstr ""
+msgstr "导出到 X (推特)"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
 #, kde-format
@@ -41361,17 +41362,17 @@ msgstr "%1 (%2)"
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:252
 #, kde-format
 msgid "Perceptual"
-msgstr "可感知"
+msgstr "感知"
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:253
 #, kde-format
 msgid "Relative Colorimetric"
-msgstr "相对比色"
+msgstr "相对色度"
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:254
 #, kde-format
 msgid "Absolute Colorimetric"
-msgstr "绝对比色"
+msgstr "绝对色度"
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:255
 #, kde-format
@@ -41407,15 +41408,15 @@ msgid ""
 "colors be vivid and contrast well with each other rather than a specific "
 "color.</p></li></ul>"
 msgstr ""
-"<ul><li><p><b>可感知模式</b>会对图像的整个色域进行压缩或者拉伸以适应目标设备"
-"的色域，它能保证图像的灰度关系不变，但可能无法保证色度的精确性。</p><p>换句话"
+"<ul><li><p><b>感知模式</b>会对图像的整个色域进行压缩或者拉伸以适应目标设备的"
+"色域，它能保证图像的灰度关系不变，但可能无法保证色度的精确性。</p><p>换句话"
 "说，如果某些颜色在输出设备色域之外，在把它们等比挤压进去色域内时，整张图像所"
 "有的颜色都会发生偏移，但颜色之间的关系依然能得到最大程度的保留。</p><p>此模式"
-"最适合用于显示照片和图像，因此也是默认模式。</p></li><li><p><b>绝对比色模式</"
+"最适合用于显示照片和图像，因此也是默认模式。</p></li><li><p><b>绝对色度模式</"
 "b>会把输出设备色域外的颜色调整到最为接近该颜色的色域内颜色，等于色域之外的颜"
 "色延展被裁切掉了，但所有其他在色域内的颜色都能保持不变。</p><p>由于此模式能保"
 "持白点不变，它是最适合用于专色的 (Pantone, TruMatch, 标志色等)</p></"
-"li><li><p><b>相对比色模式</b>和绝对比色类似，但在裁切色域前它会先对准两个色域"
+"li><li><p><b>相对色度模式</b>和绝对色度类似，但在裁切色域前它会先对准两个色域"
 "的白点和黑点，因此在进行色彩校样时不能保持白点不变。</p></li><li><p><b>饱和度"
 "模式</b>会牺牲色相和亮度的准确性来保持颜色的饱和度。</p><p>此模式的实现方式一"
 "直问题不断，ICC 至今还在研究达成此模式目标效果的可靠方式。</p><p>此模式最适合"
@@ -41546,13 +41547,13 @@ msgstr "ICC 色彩特性文件设备类"
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Rendering Intent"
-msgstr "再现意图"
+msgstr "渲染意图"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:144
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile rendering intent"
-msgstr "ICC 色彩特性文件再现意图"
+msgstr "ICC 色彩特性文件渲染意图"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
 #, kde-format
@@ -41725,13 +41726,13 @@ msgstr "未知"
 #, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Perceptual"
-msgstr "可感知"
+msgstr "感知"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:530
 #, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Relative Colorimetric"
-msgstr "相对比色"
+msgstr "相对色度"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:536
 #, kde-format
@@ -41743,7 +41744,7 @@ msgstr "饱和度"
 #, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Absolute Colorimetric"
-msgstr "绝对比色"
+msgstr "绝对色度"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:548
 #, kde-format
@@ -45921,7 +45922,7 @@ msgstr "中国澳门"
 #, kde-format
 msgctxt "@info: country code"
 msgid "North Macedonia"
-msgstr ""
+msgstr "北马其顿"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
 #, kde-format
@@ -56464,7 +56465,7 @@ msgstr "<p>点击此按钮可查看所选色彩校样特性文件的详细信息
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:117
 #, kde-format
 msgid "Rendering intent:"
-msgstr "再现意图："
+msgstr "渲染意图："
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:122
 #, kde-format
@@ -65462,7 +65463,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:452
 #, kde-format
 msgid "Rendering Intents:"
-msgstr "再现意图："
+msgstr "渲染意图："
 
 #: core/utilities/setup/setupicc.cpp:467
 #, kde-format
