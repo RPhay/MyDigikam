@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2006-2009 by Johannes Wienke <languitar at semipol dot de>
  * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2025 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -21,7 +21,7 @@
 #include <QApplication>
 #include <QRadioButton>
 #include <QButtonGroup>
-#include <QVBoxLayout>
+#include <QGridLayout>
 #include <QCheckBox>
 #include <QGroupBox>
 #include <QComboBox>
@@ -49,6 +49,8 @@ class Q_DECL_HIDDEN FCExportWidget::Private
 public:
 
     Private() = default;
+
+public:
 
     DInfoInterface* iface                   = nullptr;
     DFileSelector*  selector                = nullptr;
@@ -102,19 +104,16 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->relativeButton           = new QRadioButton(i18n("Create relative symlinks"), this);
 
     d->sidecars                 = new QCheckBox(i18n("Include the sidecar of the items"), this);
-    d->writeMetadataToFile      = new QCheckBox(i18n("Write sidecar metadata to the items"), this);
     d->overwrite                = new QCheckBox(i18n("Overwrite existing items in the target"), this);
+    d->writeMetadataToFile      = new QCheckBox(i18n("Write sidecar metadata to the items"), this);
     d->albumPath                = new QCheckBox(i18n("Use the album path of the items in the target"), this);
 
-    if (!d->iface->supportAlbums())
-    {
-        d->albumPath->hide();
-    }
+    d->albumPath->setDisabled(!d->iface->supportAlbums());
 
-    if (MetaEngineSettings::instance()->settings().metadataWritingMode != MetaEngine::WRITE_TO_SIDECAR_ONLY)
-    {
-        d->writeMetadataToFile->hide();
-    }
+    d->writeMetadataToFile->setDisabled
+    (
+        MetaEngineSettings::instance()->settings().metadataWritingMode != MetaEngine::WRITE_TO_SIDECAR_ONLY
+    );
 
     d->targetButtonGroup->addButton(d->fileCopyButton, FCContainer::CopyFile);
     d->targetButtonGroup->addButton(d->symLinkButton,  FCContainer::FullSymLink);
@@ -218,22 +217,22 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     // layout dialog
 
-    QVBoxLayout* const layout = new QVBoxLayout(this);
+    QGridLayout* const grid = new QGridLayout(this);
 
-    layout->addWidget(hbox);
-    layout->addWidget(targetLabel);
-    layout->addWidget(d->fileCopyButton);
-    layout->addWidget(d->symLinkButton);
-    layout->addWidget(d->relativeButton);
-    layout->addWidget(d->sidecars);
-    layout->addWidget(d->writeMetadataToFile);
-    layout->addWidget(d->overwrite);
-    layout->addWidget(d->albumPath);
-    layout->addWidget(d->imageList);
-    layout->addWidget(d->changeImagesProp);
-    layout->addWidget(d->imageChangeGroupBox);
-    layout->setSpacing(spacing);
-    layout->setContentsMargins(QMargins());
+    grid->addWidget(hbox,                   0, 0, 1, 2);
+    grid->addWidget(targetLabel,            1, 0, 1, 1);
+    grid->addWidget(d->fileCopyButton,      2, 0, 1, 1);
+    grid->addWidget(d->symLinkButton,       3, 0, 1, 1);
+    grid->addWidget(d->relativeButton,      4, 0, 1, 1);
+    grid->addWidget(d->sidecars,            2, 1, 1, 1);
+    grid->addWidget(d->overwrite,           3, 1, 1, 1);
+    grid->addWidget(d->writeMetadataToFile, 4, 1, 1, 1);
+    grid->addWidget(d->albumPath,           5, 1, 1, 1);
+    grid->addWidget(d->imageList,           6, 0, 1, 2);
+    grid->addWidget(d->changeImagesProp,    7, 0, 1, 2);
+    grid->addWidget(d->imageChangeGroupBox, 8, 0, 1, 2);
+    grid->setSpacing(spacing);
+    grid->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------
 
@@ -248,7 +247,6 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     connect(d->changeImagesProp, SIGNAL(toggled(bool)),
             d->imageChangeGroupBox, SLOT(setEnabled(bool)));
-
 }
 
 FCExportWidget::~FCExportWidget()
