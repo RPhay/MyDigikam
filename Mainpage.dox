@@ -253,8 +253,7 @@
 
 \section externaldeps External Dependencies
 
-
-Before compiling digiKam, you need to install all required tools and libraries. See the intructions here:
+Before compiling digiKam, you need to install all required tools and libraries. See the instructions here:
 
 https://www.digikam.org/download/git/#install-external-dependencies
 
