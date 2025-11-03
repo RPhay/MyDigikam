@@ -136,26 +136,6 @@ void ItemScanner::cleanScan()
     scanFile(CleanScan);
 }
 
-void ItemScanner::copiedFrom(int albumId, qlonglong srcId)
-{
-    loadFromDisk();
-    prepareAddImage(albumId);
-
-    // first use source, if it exists
-
-    if (!copyFromSource(srcId))
-    {
-        // check if we can establish identity
-
-        if (!scanFromIdenticalFile())
-        {
-            // scan newly
-
-            scanFile(NewScan);
-        }
-    }
-}
-
 void ItemScanner::commitCopyImageAttributes()
 {
     CoreDbAccess().db()->copyImageAttributes(d->commit.copyImageAttributesId, d->scanInfo.id);
@@ -168,28 +148,6 @@ void ItemScanner::commitCopyImageAttributes()
 
     CoreDbAccess().db()->removeAllImageRelationsFrom(d->scanInfo.id, DatabaseRelation::Grouped);
     CoreDbAccess().db()->removeAllImageRelationsTo(d->scanInfo.id, DatabaseRelation::Grouped);
-}
-
-bool ItemScanner::copyFromSource(qlonglong srcId)
-{
-    // some basic validity checking
-
-    if (srcId == d->scanInfo.id)
-    {
-        return false;
-    }
-
-    ItemScanInfo info = CoreDbAccess().db()->getItemScanInfo(srcId);
-
-    if (!info.id)
-    {
-        return false;
-    }
-
-    qCDebug(DIGIKAM_DATABASE_LOG) << "Recognized" << d->fileInfo.filePath() << "as copied from" << srcId;
-    d->commit.copyImageAttributesId = srcId;
-
-    return true;
 }
 
 void ItemScanner::prepareAddImage(int albumId)

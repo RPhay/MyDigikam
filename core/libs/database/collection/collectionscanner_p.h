@@ -128,7 +128,6 @@ public:
     QDateTime                                     removedItemsTime;
 
     CollectionScannerHintContainerImplementation* hints                     = nullptr;
-    QHash<int, int>                               establishedSourceAlbums;
     bool                                          updatingHashHint          = false;
 
     bool                                          recordHistoryIds          = false;

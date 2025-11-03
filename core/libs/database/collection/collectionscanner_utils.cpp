@@ -70,8 +70,6 @@ int CollectionScanner::checkAlbum(const CollectionLocation& location, const QStr
 
     int albumID = CoreDbAccess().db()->getAlbumForPath(location.id(), album, false);
 
-    d->establishedSourceAlbums.remove(albumID);
-
     // Create if necessary
 
     if (albumID == -1)

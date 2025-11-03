@@ -949,31 +949,9 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
     ItemScanner scanner(info);
     scanner.setCategory(category(info));
 
-    qlonglong srcId = 0;
-
-    // Check copy/move hints for whole albums
-
-    int srcAlbum = d->establishedSourceAlbums.value(albumId);
-
-    if (srcAlbum)
-    {
-        // if we have one source album, find out if there is a file with the same name
-
-        srcId = CoreDbAccess().db()->getImageId(srcAlbum, info.fileName());
-    }
-
-    if (srcId > 0)
-    {
-        scanner.copiedFrom(albumId, srcId);
-    }
-    else
-    {
-        // Establishing identity with the unique hash
-
-        scanner.newFile(albumId);
-    }
-
+    scanner.newFile(albumId);
     d->finishScanner(scanner);
+
     d->newIdsList << scanner.id();
 
     return scanner.id();
@@ -988,6 +966,7 @@ qlonglong CollectionScanner::scanNewFileFullScan(const QFileInfo& info, int albu
 
     ItemScanner scanner(info);
     scanner.setCategory(category(info));
+
     scanner.newFileFullScan(albumId);
     d->finishScanner(scanner);
 
@@ -1003,6 +982,7 @@ void CollectionScanner::scanModifiedFile(const QFileInfo& info, const ItemScanIn
 
     ItemScanner scanner(info, scanInfo);
     scanner.setCategory(category(info));
+
     scanner.fileModified();
     d->finishScanner(scanner);
 }
@@ -1017,6 +997,7 @@ void CollectionScanner::scanFileUpdateHashReuseThumbnail(const QFileInfo& info, 
 
     ItemScanner scanner(info, scanInfo);
     scanner.setCategory(category(info));
+
     scanner.fileModified();
 
     QString newHash   = scanner.itemScanInfo().uniqueHash;
@@ -1058,6 +1039,7 @@ void CollectionScanner::cleanScanFile(const QFileInfo& info, const ItemScanInfo&
 
     ItemScanner scanner(info, scanInfo);
     scanner.setCategory(category(info));
+
     scanner.cleanScan();
     d->finishScanner(scanner);
 }

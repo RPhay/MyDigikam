@@ -147,15 +147,6 @@ public:
     qlonglong id() const;
 
     /**
-     * Similar to newFile.
-     * Call this when you want ItemScanner to add a new file to the database
-     * which is a copy of another file, copying attributes from the src
-     * and rescanning other attributes as appropriate.
-     * Give the id of the album of the new file, and the id of the src file.
-     */
-    void copiedFrom(int albumId, qlonglong srcId);
-
-    /**
      * Sort a list of infos by proximity to the given subject.
      * Infos are near if they are e.g. in the same album.
      * They are not near if they are e.g. in different collections.
@@ -164,7 +155,6 @@ public:
 
 protected:
 
-    bool copyFromSource(qlonglong src);
     void commitCopyImageAttributes();
     void cleanDatabaseMetadata();
 
