@@ -35,6 +35,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dfileselector.h"
 #include "wstoolutils.h"
 #include "dlayoutbox.h"
@@ -54,7 +55,6 @@ public:
 
     DInfoInterface* iface                   = nullptr;
     DFileSelector*  selector                = nullptr;
-    DItemsList*     imageList               = nullptr;
 
     QCheckBox*      sidecars                = nullptr;
     QCheckBox*      writeMetadataToFile     = nullptr;
@@ -191,40 +191,21 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     //---------------------------------------------
 
-    // setup image list
-
-    d->imageList = new DItemsList(this);
-    d->imageList->setObjectName(QLatin1String("FCExport ImagesList"));
-    d->imageList->listView()->setWhatsThis(i18n("This is the list of items to copy "
-                                                "to the specified target."));
-    d->imageList->setAllowRAW(true);
-    d->imageList->setIface(d->iface);
-
-    if (d->iface->forceAlbumSelection)
-    {
-        d->iface->forceAlbumSelection = false;
-        d->imageList->loadImagesFromCurrentAlbum();
-    }
-    else
-    {
-        d->imageList->loadImagesFromCurrentSelection();
-    }
-
-    // layout dialog
+    // Layout Widget
 
     QGridLayout* const grid = new QGridLayout(this);
 
-    grid->addWidget(hbox,                   0, 0, 1, 2);
+    grid->addWidget(hbox,                   0, 0, 1, 1);
     grid->addWidget(targetLabel,            1, 0, 1, 1);
     grid->addWidget(d->fileCopyButton,      2, 0, 1, 1);
     grid->addWidget(d->symLinkButton,       3, 0, 1, 1);
     grid->addWidget(d->relativeButton,      4, 0, 1, 1);
-    grid->addWidget(d->sidecars,            2, 1, 1, 1);
-    grid->addWidget(d->overwrite,           3, 1, 1, 1);
-    grid->addWidget(d->writeMetadataToFile, 4, 1, 1, 1);
-    grid->addWidget(d->albumPath,           5, 1, 1, 1);
-    grid->addWidget(d->imageList,           6, 0, 1, 2);
-    grid->addWidget(d->imageChangeGroupBox, 7, 0, 1, 2);
+    grid->addWidget(d->sidecars,            5, 0, 1, 1);
+    grid->addWidget(d->overwrite,           6, 0, 1, 1);
+    grid->addWidget(d->writeMetadataToFile, 7, 0, 1, 1);
+    grid->addWidget(d->albumPath,           8, 0, 1, 1);
+    grid->addWidget(d->imageChangeGroupBox, 9, 0, 1, 1);
+    grid->setRowStretch(10, 10);
     grid->setSpacing(spacing);
     grid->setContentsMargins(QMargins());
 
@@ -243,11 +224,6 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 FCExportWidget::~FCExportWidget()
 {
     delete d;
-}
-
-DItemsList* FCExportWidget::imagesList() const
-{
-    return d->imageList;
 }
 
 QUrl FCExportWidget::targetUrl() const

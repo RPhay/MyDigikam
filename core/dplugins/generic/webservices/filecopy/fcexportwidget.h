@@ -25,7 +25,6 @@
 
 #include "dinfointerface.h"
 #include "fccontainer.h"
-#include "ditemslist.h"
 
 using namespace Digikam;
 
@@ -48,22 +47,17 @@ public:
     /**
      * Destructor.
      */
-    ~FCExportWidget() override;
-
-    /**
-     * Returns a pointer to the imagelist that is displayed.
-     */
-    DItemsList* imagesList() const;
+    ~FCExportWidget()                 override;
 
     /**
      * Returns the currently selected target url. Maybe invalid.
      */
-    QUrl targetUrl() const;
+    QUrl targetUrl()            const;
 
     /**
      * Returns settings container.
      */
-    FCContainer getSettings() const;
+    FCContainer getSettings()   const;
 
     /**
      * Set widget from settings container.
@@ -73,7 +67,6 @@ public:
 private Q_SLOTS:
 
     void slotLabelUrlChanged();
-
     void slotFileCopyButtonChanged(bool enabled);
 
 Q_SIGNALS:

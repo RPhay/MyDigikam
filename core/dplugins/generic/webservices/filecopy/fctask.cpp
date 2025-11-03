@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     QUrl        srcUrl;
     FCContainer settings;
 };
