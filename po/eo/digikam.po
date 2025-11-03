@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-31 01:59+0000\n"
+"POT-Creation-Date: 2025-11-03 01:57+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -10560,7 +10560,7 @@ msgstr "Nova larĝo:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
@@ -20372,7 +20372,7 @@ msgstr "Laŭvola Gimp Binaroj"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:147
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid "Image Format:"
@@ -20700,7 +20700,7 @@ msgid "Thunderbird"
 msgstr "Tondrobirdo"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:158
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20708,7 +20708,7 @@ msgid "Jpeg"
 msgstr "Jpeg"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:159
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20848,14 +20848,13 @@ msgid "Maximum email size limit:"
 msgstr "Maksimuma retpoŝta grandeco limo:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:87
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Alĝustigi bildotrajtojn"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, kde-format
 msgid ""
@@ -20866,14 +20865,13 @@ msgstr ""
 "aligrandigitaj kaj rekunpremitaj."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:93
 #, kde-format
 msgid "Image Properties"
 msgstr "Bildaj Propraĵoj"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
@@ -20883,14 +20881,14 @@ msgstr ""
 "Elektu la longecon de la sendotaj bildoj. La proporcio estas konservita."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, kde-format
 msgid "Image Length:"
 msgstr "Longo de bildo:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -20919,21 +20917,21 @@ msgstr ""
 "b>: neniu kunpremo</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, kde-format
 msgid "Image quality:"
 msgstr "Bilda kvalito:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Forigi ĉiujn metadatumojn"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, kde-format
 msgid ""
@@ -23212,20 +23210,26 @@ msgstr "Inkluzivi la kromĉaron de la eroj"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
 #, kde-format
-msgid "Write sidecar metadata to the items"
-msgstr "Skribi kromĉarajn metadatenojn al la eroj"
+msgid "Overwrite existing items in the target"
+msgstr "Anstataŭigi ekzistantajn erojn en la celo"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
 #, kde-format
-msgid "Overwrite existing items in the target"
-msgstr "Anstataŭigi ekzistantajn erojn en la celo"
+msgid "Write sidecar metadata to the items"
+msgstr "Skribi kromĉarajn metadatenojn al la eroj"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "Uzi la albuman vojon de la eroj en la celo"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#, fuzzy, kde-format
+#| msgid "Adjust image properties"
+msgid "Adjust Image Properties"
+msgstr "Alĝustigi bildotrajtojn"
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: "
@@ -23243,57 +23247,57 @@ msgstr ""
 "><b>75</b>: malalta kunpremo (defaŭlta valoro)<br/><b>100</b>: neniu "
 "kunpremo</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:198
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Ĉi tio estas la listo de eroj por kopii al la specifita celo."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:76
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Eksporti al Loka konservejo"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:79
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:81
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Komenci Eksporton"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:80
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:82
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:68
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Komenci eksporton al la specifita celo"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:182
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:198
 #, fuzzy, kde-format
 #| msgid "Target location: "
 msgctxt "@title:window"
 msgid "Target Location Error"
 msgstr "Cela loko:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:183
 #, fuzzy, kde-format
 #| msgid "The selected folder does not exist or is not readable"
 msgid "The target folder does not exist. Should it be created?"
 msgstr "La elektita dosierujo ne ekzistas aŭ ne estas legebla"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:199
 #, kde-format
 msgid "The target folder could not be created and does not exist."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:276
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Kopio ne Kompletita"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:275
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:277
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "

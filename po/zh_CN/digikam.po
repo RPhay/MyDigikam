@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-31 01:59+0000\n"
+"POT-Creation-Date: 2025-11-03 01:57+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -9982,7 +9982,7 @@ msgstr "新图像宽度："
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
@@ -19332,7 +19332,7 @@ msgstr "可选的 GIMP 可执行程序"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:147
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid "Image Format:"
@@ -19655,7 +19655,7 @@ msgid "Thunderbird"
 msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:158
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -19663,7 +19663,7 @@ msgid "Jpeg"
 msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:159
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
 msgctxt "Image format: PNG"
@@ -19799,14 +19799,13 @@ msgid "Maximum email size limit:"
 msgstr "电子邮件体积限制："
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:87
 #, kde-format
 msgid "Adjust image properties"
 msgstr "调整图像属性"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, kde-format
 msgid ""
@@ -19815,14 +19814,13 @@ msgid ""
 msgstr "勾选此项后，可以对所有发送的图像进行尺寸调整和重新压缩。"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:93
 #, kde-format
 msgid "Image Properties"
 msgstr "图像属性"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
@@ -19831,14 +19829,14 @@ msgid ""
 msgstr "设置要发送图像的边长上限，调整时将保持宽高比。"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, kde-format
 msgid "Image Length:"
 msgstr "图像边长："
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -19862,21 +19860,21 @@ msgstr ""
 "<br><b>75</b>：较低压缩率 (默认值)<br><b>100</b>：无压缩</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, kde-format
 msgid "Image quality:"
 msgstr "图像画质："
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, kde-format
 msgid "Remove all metadata"
 msgstr "移除所有元数据"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, kde-format
 msgid ""
@@ -22076,20 +22074,26 @@ msgstr "包含项目的附带文件"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
 #, kde-format
-msgid "Write sidecar metadata to the items"
-msgstr "写入附带文件的元数据到项目"
+msgid "Overwrite existing items in the target"
+msgstr "覆盖目标位置的已有项目"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
 #, kde-format
-msgid "Overwrite existing items in the target"
-msgstr "覆盖目标位置的已有项目"
+msgid "Write sidecar metadata to the items"
+msgstr "写入附带文件的元数据到项目"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "使用目标项目的相册路径"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#, fuzzy, kde-format
+#| msgid "Adjust image properties"
+msgid "Adjust Image Properties"
+msgstr "调整图像属性"
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:162
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -22102,55 +22106,55 @@ msgstr ""
 "<br><b>75</b>：较低压缩率，较好画质 (默认值)<br><b>100</b>：最低压缩率，最好"
 "画质</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:198
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "要上传到指定目标位置的图像列表。"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:76
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "导出到本地存储"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:79
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:81
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "开始导出"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:80
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:82
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:68
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "开始导出到指定目标位置"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:182
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:198
 #, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
 msgstr "目标位置错误"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:183
 #, kde-format
 msgid "The target folder does not exist. Should it be created?"
 msgstr "目标目录不存在，是否创建？"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:199
 #, kde-format
 msgid "The target folder could not be created and does not exist."
 msgstr "目标文件夹无法创建且不存在。"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:276
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "复制未完成"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:275
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:277
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "

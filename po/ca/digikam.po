@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-31 01:59+0000\n"
+"POT-Creation-Date: 2025-11-03 01:57+0000\n"
 "PO-Revision-Date: 2025-10-31 10:25+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -10544,7 +10544,7 @@ msgstr "Amplada nova:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
@@ -20279,7 +20279,7 @@ msgstr "Executables opcionals del Gimp"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:147
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid "Image Format:"
@@ -20608,7 +20608,7 @@ msgid "Thunderbird"
 msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:158
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20616,7 +20616,7 @@ msgid "Jpeg"
 msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:159
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20758,14 +20758,13 @@ msgid "Maximum email size limit:"
 msgstr "Límit de la mida màxima del correu electrònic:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:87
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Ajusta les propietats de les imatges"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, kde-format
 msgid ""
@@ -20776,14 +20775,13 @@ msgstr ""
 "i tornar a comprimir."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:93
 #, kde-format
 msgid "Image Properties"
 msgstr "Propietats de la imatge"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
@@ -20794,14 +20792,14 @@ msgstr ""
 "d'aspecte."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, kde-format
 msgid "Image Length:"
 msgstr "Grandària de la imatge:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -20826,21 +20824,21 @@ msgstr ""
 "<br><b>100</b>: sense compressió</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, kde-format
 msgid "Image quality:"
 msgstr "Qualitat de la imatge:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Elimina totes les metadades"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, kde-format
 msgid ""
@@ -23151,20 +23149,26 @@ msgstr "Inclou el lateral dels elements"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
 #, kde-format
-msgid "Write sidecar metadata to the items"
-msgstr "Escriu les metadades del lateral als elements"
+msgid "Overwrite existing items in the target"
+msgstr "Sobreescriu els elements existents a la destinació"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
 #, kde-format
-msgid "Overwrite existing items in the target"
-msgstr "Sobreescriu els elements existents a la destinació"
+msgid "Write sidecar metadata to the items"
+msgstr "Escriu les metadades del lateral als elements"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "Usa el camí d'àlbum dels elements a la destinació"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#, fuzzy, kde-format
+#| msgid "Adjust image properties"
+msgid "Adjust Image Properties"
+msgstr "Ajusta les propietats de les imatges"
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:162
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -23177,55 +23181,55 @@ msgstr ""
 "b>: compressió mitjana<br><b>75</b>: compressió baixa (valor predeterminat) "
 "<br><b>100</b>: sense compressió</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:198
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Aquesta és la llista d'elements a copiar a la destinació especificada."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:76
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Exportació a un emmagatzematge local"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:79
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:81
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Inicia l'exportació"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:80
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:82
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:68
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Inicia l'exportació a la destinació especificada"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:180
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:196
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:182
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:198
 #, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
 msgstr "Error d'ubicació de la destinació"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:181
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:183
 #, kde-format
 msgid "The target folder does not exist. Should it be created?"
 msgstr "La carpeta de destinació no existeix. S'hauria de crear?"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:197
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:199
 #, kde-format
 msgid "The target folder could not be created and does not exist."
 msgstr "La carpeta de destinació no s'ha pogut crear o no existeix."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:274
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:276
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "No s'ha completat la còpia"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:275
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:277
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
