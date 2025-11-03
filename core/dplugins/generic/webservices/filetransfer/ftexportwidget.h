@@ -25,7 +25,6 @@
 // Local includes
 
 #include "dinfointerface.h"
-#include "ditemslist.h"
 
 using namespace Digikam;
 
@@ -49,11 +48,6 @@ public:
      * Destructor.
      */
     ~FTExportWidget()               override;
-
-    /**
-     * Returns a pointer to the imagelist that is displayed.
-     */
-    DItemsList* imagesList() const;
 
     /**
      * Returns the currently selected target url. Maybe invalid.

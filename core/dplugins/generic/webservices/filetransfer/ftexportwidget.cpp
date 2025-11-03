@@ -33,6 +33,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dfiledialog.h"
 #include "wstoolutils.h"
 #include "dlayoutbox.h"
@@ -51,18 +52,18 @@ public:
     KUrlComboRequester* targetLabel         = nullptr;
     QPushButton*        targetSearchButton  = nullptr;
     QUrl                targetUrl;
-    DItemsList*         imageList           = nullptr;
 };
 
 FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
+    Q_UNUSED(iface);
+
     // setup remote target selection
 
-    DHBox* const hbox   = new DHBox(this);
-    QLabel* const label = new QLabel(hbox);
-    d->targetLabel      = new KUrlComboRequester(hbox);
+    QLabel* const label       = new QLabel(this);
+    d->targetLabel            = new KUrlComboRequester(this);
 
     if (d->targetLabel->button())
     {
@@ -76,28 +77,18 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
                                       "This can be any address as used in Dolphin or Konqueror, "
                                       "e.g. ftp://my.server.org/sub/folder."));
 
-    d->targetSearchButton = new QPushButton(i18n("Select export location..."), this);
+    d->targetSearchButton     = new QPushButton(i18n("Select export location..."), this);
     d->targetSearchButton->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
 
-    // setup image list
-
-    d->imageList = new DItemsList(this);
-    d->imageList->setObjectName(QLatin1String("FTExport ImagesList"));
-    d->imageList->setIface(iface);
-    d->imageList->loadImagesFromCurrentSelection();
-    d->imageList->setAllowRAW(true);
-    d->imageList->listView()->setWhatsThis(i18n("This is the list of images to upload "
-                                                "to the specified target."));
-
-    // layout dialog
+    // Layout Settings Widget
 
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
-    layout->addWidget(hbox);
+    layout->addWidget(label);
+    layout->addWidget(d->targetLabel);
     layout->addWidget(d->targetSearchButton);
-    layout->addWidget(d->imageList);
+    layout->addStretch();
     layout->setSpacing(layoutSpacing());
-
     layout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------
@@ -187,11 +178,6 @@ void FTExportWidget::updateTargetLabel()
         urlString = d->targetUrl.toDisplayString();
         d->targetLabel->setUrl(QUrl(urlString));
     }
-}
-
-DItemsList* FTExportWidget::imagesList() const
-{
-    return d->imageList;
 }
 
 void FTExportWidget::slotLabelUrlChanged()

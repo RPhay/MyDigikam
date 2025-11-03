@@ -20,6 +20,7 @@
 
 #include <QCloseEvent>
 #include <QMessageBox>
+#include <QHBoxLayout>
 
 // KDE includes
 
@@ -45,10 +46,13 @@ public:
 
     Private() = default;
 
+public:
+
     const QString TARGET_URL_PROPERTY   = QLatin1String("targetUrl");
     const QString HISTORY_URL_PROPERTY  = QLatin1String("historyUrls");
     const QString CONFIG_GROUP          = QLatin1String("KioExport");
 
+    DItemsList*     imagesList          = nullptr;
     FTExportWidget* exportWidget        = nullptr;
 };
 
@@ -56,8 +60,28 @@ FTExportWindow::FTExportWindow(DInfoInterface* const iface, QWidget* const /*par
     : WSToolDialog(nullptr, QLatin1String("Kio Export Dialog")),
       d           (new Private)
 {
-    d->exportWidget = new FTExportWidget(iface, this);
-    setMainWidget(d->exportWidget);
+    QWidget* const page     = new QWidget(this);
+
+    // Setup image list
+
+    d->imagesList           = new DItemsList(page);
+    d->imagesList->setObjectName(QLatin1String("FTExport ImagesList"));
+    d->imagesList->setIface(iface);
+    d->imagesList->loadImagesFromCurrentSelection();
+    d->imagesList->setAllowRAW(true);
+    d->imagesList->listView()->setWhatsThis(i18n("This is the list of images to upload "
+                                                "to the specified target."));
+
+    d->exportWidget         = new FTExportWidget(iface, page);
+
+    QHBoxLayout* const hlay = new QHBoxLayout(page);
+    hlay->addWidget(d->imagesList);
+    hlay->addWidget(d->exportWidget);
+    hlay->setContentsMargins(QMargins(0, 0, 0, 0));
+    hlay->setStretchFactor(d->imagesList,   6);
+    hlay->setStretchFactor(d->exportWidget, 4);
+
+    setMainWidget(page);
 
     // -- Window setup ------------------------------------------------------
 
@@ -73,7 +97,7 @@ FTExportWindow::FTExportWindow(DInfoInterface* const iface, QWidget* const /*par
     connect(this, SIGNAL(finished(int)),
             this, SLOT(slotFinished()));
 
-    connect(d->exportWidget->imagesList(), SIGNAL(signalImageListChanged()),
+    connect(d->imagesList, SIGNAL(signalImageListChanged()),
             this, SLOT(slotImageListChanged()));
 
     connect(d->exportWidget, SIGNAL(signalTargetUrlChanged(QUrl)),
@@ -93,7 +117,7 @@ FTExportWindow::~FTExportWindow()
 void FTExportWindow::slotFinished()
 {
     saveSettings();
-    d->exportWidget->imagesList()->listView()->clear();
+    d->imagesList->listView()->clear();
 }
 
 void FTExportWindow::closeEvent(QCloseEvent* e)
@@ -109,7 +133,7 @@ void FTExportWindow::closeEvent(QCloseEvent* e)
 
 void FTExportWindow::reactivate()
 {
-    d->exportWidget->imagesList()->loadImagesFromCurrentSelection();
+    d->imagesList->loadImagesFromCurrentSelection();
     show();
 }
 
@@ -143,7 +167,7 @@ void FTExportWindow::slotTargetUrlChanged(const QUrl& target)
 
 void FTExportWindow::updateUploadButton()
 {
-    bool listNotEmpty = !d->exportWidget->imagesList()->imageUrls().isEmpty();
+    bool listNotEmpty = !d->imagesList->imageUrls().isEmpty();
     startButton()->setEnabled(listNotEmpty && d->exportWidget->targetUrl().isValid());
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Updated upload button with listNotEmpty = "
@@ -166,7 +190,7 @@ void FTExportWindow::slotCopyingDone(KIO::Job* job,
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "copied " << to.toDisplayString();
 
-    d->exportWidget->imagesList()->removeItemByUrl(from);
+    d->imagesList->removeItemByUrl(from);
 }
 
 void FTExportWindow::slotCopyingFinished(KJob* job)
@@ -175,7 +199,7 @@ void FTExportWindow::slotCopyingFinished(KJob* job)
 
     setEnabled(true);
 
-    if (!d->exportWidget->imagesList()->imageUrls().isEmpty())
+    if (!d->imagesList->imageUrls().isEmpty())
     {
         QMessageBox::information(this, i18nc("@title:window", "Upload not Completed"),
                                  i18n("Some of the images have not been transferred "
@@ -191,7 +215,7 @@ void FTExportWindow::slotUpload()
     // start copying and react on signals
 
     setEnabled(false);
-    KIO::CopyJob* const copyJob = KIO::copy(d->exportWidget->imagesList()->imageUrls(),
+    KIO::CopyJob* const copyJob = KIO::copy(d->imagesList->imageUrls(),
                                             d->exportWidget->targetUrl());
 
     connect(copyJob, SIGNAL(copyingDone(KIO::Job*,QUrl,QUrl,QDateTime,bool,bool)),
