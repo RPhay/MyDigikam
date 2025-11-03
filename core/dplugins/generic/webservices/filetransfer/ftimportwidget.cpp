@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 04-10-2009
- * Description : main widget of the import dialog
+ * Description : a tool to import items from a KIO accessible location
  *
  * SPDX-FileCopyrightText: 2009      by Johannes Wienke <languitar at semipol dot de>
  * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
