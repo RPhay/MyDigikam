@@ -86,10 +86,9 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     const int spacing           = layoutSpacing();
 
-    DHBox* const hbox           = new DHBox(this);
-    QLabel* const locationLabel = new QLabel(hbox);
+    QLabel* const locationLabel = new QLabel(this);
     locationLabel->setText(i18n("Target location: "));
-    d->selector                 = new DFileSelector(hbox);
+    d->selector                 = new DFileSelector(this);
     d->selector->setFileDlgMode(QFileDialog::Directory);
     d->selector->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     d->selector->setFileDlgTitle(i18nc("@title:window", "Target Folder"));
@@ -195,17 +194,18 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     QGridLayout* const grid = new QGridLayout(this);
 
-    grid->addWidget(hbox,                   0, 0, 1, 1);
-    grid->addWidget(targetLabel,            1, 0, 1, 1);
-    grid->addWidget(d->fileCopyButton,      2, 0, 1, 1);
-    grid->addWidget(d->symLinkButton,       3, 0, 1, 1);
-    grid->addWidget(d->relativeButton,      4, 0, 1, 1);
-    grid->addWidget(d->sidecars,            5, 0, 1, 1);
-    grid->addWidget(d->overwrite,           6, 0, 1, 1);
-    grid->addWidget(d->writeMetadataToFile, 7, 0, 1, 1);
-    grid->addWidget(d->albumPath,           8, 0, 1, 1);
-    grid->addWidget(d->imageChangeGroupBox, 9, 0, 1, 1);
-    grid->setRowStretch(10, 10);
+    grid->addWidget(locationLabel,           0, 0, 1, 1);
+    grid->addWidget(d->selector,             1, 0, 1, 1);
+    grid->addWidget(targetLabel,             2, 0, 1, 1);
+    grid->addWidget(d->fileCopyButton,       3, 0, 1, 1);
+    grid->addWidget(d->symLinkButton,        4, 0, 1, 1);
+    grid->addWidget(d->relativeButton,       5, 0, 1, 1);
+    grid->addWidget(d->sidecars,             6, 0, 1, 1);
+    grid->addWidget(d->overwrite,            7, 0, 1, 1);
+    grid->addWidget(d->writeMetadataToFile,  8, 0, 1, 1);
+    grid->addWidget(d->albumPath,            9, 0, 1, 1);
+    grid->addWidget(d->imageChangeGroupBox, 10, 0, 1, 1);
+    grid->setRowStretch(11, 10);
     grid->setSpacing(spacing);
     grid->setContentsMargins(QMargins());
 
