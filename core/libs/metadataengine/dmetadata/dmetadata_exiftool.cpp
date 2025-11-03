@@ -35,7 +35,10 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll)
 {
     QFileInfo info(filePath);
 
-    const bool isFITS = (info.suffix().toUpper() == QLatin1String("FITS"));
+    const bool metaAll = (
+                          (info.suffix().toUpper() == QLatin1String("EXR")) ||
+                          (info.suffix().toUpper() == QLatin1String("FITS"))
+                         );
 
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
@@ -55,7 +58,7 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll)
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loading now without MakerNotes";
         }
 
-        if (!parser->loadChunk(filePath, (videoAll || isFITS), (loop == 1)))
+        if (!parser->loadChunk(filePath, (videoAll || metaAll), (loop == 1)))
         {
             qCCritical(DIGIKAM_METAENGINE_LOG) << "Load metadata using ExifTool failed...";
 
