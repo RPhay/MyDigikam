@@ -71,12 +71,12 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     d->targetLabel->comboBox()->setEditable(true);
 
-    label->setText(i18n("Target location: "));
+    label->setText(i18n("Target Location: "));
     d->targetLabel->setWhatsThis(i18n("Sets the target address to upload the images to. "
                                       "This can be any address as used in Dolphin or Konqueror, "
                                       "e.g. ftp://my.server.org/sub/folder."));
 
-    d->targetSearchButton     = new QPushButton(i18n("Select export location..."), this);
+    d->targetSearchButton     = new QPushButton(i18n("Select export\nlocation..."), this);
     d->targetSearchButton->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
 
     // Layout Settings Widget

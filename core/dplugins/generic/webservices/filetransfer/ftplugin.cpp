@@ -96,7 +96,7 @@ void FTPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Export to remote storage..."));
+    ac->setText(i18nc("@action", "Export to Remote Storage..."));
     ac->setObjectName(QLatin1String("export_filetransfer"));
     ac->setActionCategory(DPluginAction::GenericExport);
     ac->setShortcut(Qt::CTRL | Qt::ALT | Qt::SHIFT | Qt::Key_K);
@@ -108,7 +108,7 @@ void FTPlugin::setup(QObject* const parent)
 
     DPluginAction* const ac2 = new DPluginAction(parent);
     ac2->setIcon(icon());
-    ac2->setText(i18nc("@action", "Import from remote storage..."));
+    ac2->setText(i18nc("@action", "Import from Remote Storage..."));
     ac2->setObjectName(QLatin1String("import_filetransfer"));
     ac2->setActionCategory(DPluginAction::GenericImport);
     ac2->setShortcut(Qt::ALT | Qt::SHIFT | Qt::Key_K);
