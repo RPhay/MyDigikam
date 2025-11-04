@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-03 01:57+0000\n"
+"POT-Creation-Date: 2025-11-04 02:14+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -11043,7 +11043,7 @@ msgstr "Nova širina:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
@@ -21486,7 +21486,7 @@ msgstr "Panoramski pogled"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:147
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, fuzzy, kde-format
 #| msgid "Show image Format"
@@ -21840,7 +21840,7 @@ msgid "Thunderbird"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -21848,7 +21848,7 @@ msgid "Jpeg"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, fuzzy, kde-format
 #| msgid "Posing"
@@ -21991,7 +21991,7 @@ msgid "Adjust image properties"
 msgstr "Dodaj osobine datoteke"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:126
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, kde-format
 msgid ""
@@ -22007,7 +22007,7 @@ msgid "Image Properties"
 msgstr "Svojstva oznake"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
@@ -22016,7 +22016,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:139
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@title"
@@ -22025,7 +22025,7 @@ msgid "Image Length:"
 msgstr "Historija slike"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:150
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, fuzzy, kde-format
 #| msgid "Select the profile of the color space to convert to."
@@ -22059,7 +22059,7 @@ msgstr ""
 "gubitaka na slici.</b></p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
@@ -22067,7 +22067,7 @@ msgid "Image quality:"
 msgstr "Razvrstavač slika po kvaliteti"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:173
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, fuzzy, kde-format
 #| msgid "Remove Metadata"
@@ -22075,7 +22075,7 @@ msgid "Remove all metadata"
 msgstr "Uklonite metapodatke"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, kde-format
 msgid ""
@@ -24420,80 +24420,79 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Show image caption"
 msgid "Target location: "
 msgstr "Prikaži komentar slike"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:95
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:94
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Po direktoriju"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:96
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:95
 #, fuzzy, kde-format
 #| msgid "Set this option to display the item date."
 msgid "Sets the target address to copy the items to."
 msgstr "Postavite ovu opciju za prikaz datuma predmeta."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:98
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:97
 #, fuzzy, kde-format
 #| msgid "If Target File Exists:"
 msgid "Target file behavior:"
 msgstr "Ako odredišna datoteka postoji:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:100
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:99
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgid "Copy files"
 msgstr "nema postavljene vrijednosti"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:101
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Created tables"
 msgid "Create symlinks"
 msgstr "Stvorene tablice"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:102
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:101
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
 msgid "Create relative symlinks"
 msgstr "Zanemari grupiranje"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:104
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:103
 #, kde-format
 msgid "Include the sidecar of the items"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:104
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgid "Write sidecar metadata to the items"
 msgstr "Upiši metapodatke u svaku datoteku"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Go to the album of this image"
 msgid "Use the album path of the items in the target"
 msgstr "Idite na albume ove slike"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgid "Adjust Image Properties"
 msgstr "Dodaj osobine datoteke"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:162
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
@@ -24513,62 +24512,62 @@ msgstr ""
 "trajanje kompresije)</p><p><b>Napomena: PNG je uvijek format kompresije bez "
 "gubitaka na slici.</b></p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:198
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:85
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgid "This is the list of items to copy to the specified target."
 msgstr "Ovo je lista slika za grupnu obradu."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:78
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:113
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Unesi sa skenera..."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:81
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:67
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
 #, fuzzy, kde-format
 #| msgid "Start: "
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Početak: "
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:82
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:68
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
 #, fuzzy, kde-format
 #| msgid "Align text to the left"
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Poravnavanje teksta lijevo..."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:182
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:198
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:233
 #, fuzzy, kde-format
 #| msgid "Show image caption"
 msgctxt "@title:window"
 msgid "Target Location Error"
 msgstr "Prikaži komentar slike"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:183
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
 #, fuzzy, kde-format
 #| msgid "The selected folder does not exist or is not readable"
 msgid "The target folder does not exist. Should it be created?"
 msgstr "Selektovani folder ne postoji ili se ne može učitati."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:199
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:234
 #, kde-format
 msgid "The target folder could not be created and does not exist."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:276
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:312
 #, fuzzy, kde-format
 #| msgid "Slideshow Usage"
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Iskoristivost projekcije slajdova"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:277
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:313
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -24603,6 +24602,12 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Unesi sa skenera..."
 
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "Show image caption"
+msgid "Target Location: "
+msgstr "Prikaži komentar slike"
+
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid ""
@@ -24612,50 +24617,52 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, fuzzy, kde-format
-msgid "Select export location..."
+msgid ""
+"Select export\n"
+"location..."
 msgstr "Geolokacija"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is the list of images to batch process."
-msgid "This is the list of images to upload to the specified target."
-msgstr "Ovo je lista slika za grupnu obradu."
-
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:158
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "Bez izbora"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:159
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
 msgstr "Sve datoteke"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:183
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
 #, fuzzy, kde-format
 #| msgid "No script selected"
 msgid "<i>not selected</i>"
 msgstr "Nije odabrana skripta"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#, fuzzy, kde-format
+#| msgid "This is the list of images to batch process."
+msgid "This is the list of images to upload to the specified target."
+msgstr "Ovo je lista slika za grupnu obradu."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Unesi sa skenera..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:180
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
 #, fuzzy, kde-format
 #| msgid "Slideshow Usage"
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Iskoristivost projekcije slajdova"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:181
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -24741,14 +24748,14 @@ msgstr "Filtrirano po geolokaciji"
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@action"
-msgid "Export to remote storage..."
+msgid "Export to Remote Storage..."
 msgstr "Unesi sa skenera..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@action"
-msgid "Import from remote storage..."
+msgid "Import from Remote Storage..."
 msgstr "Unesi sa skenera..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
@@ -73682,6 +73689,18 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgid "Import from Scanner..."
+#~ msgctxt "@action"
+#~ msgid "Export to remote storage..."
+#~ msgstr "Unesi sa skenera..."
+
+#, fuzzy
+#~| msgid "Import from Scanner..."
+#~ msgctxt "@action"
+#~ msgid "Import from remote storage..."
+#~ msgstr "Unesi sa skenera..."
 
 #, fuzzy
 #~| msgid "Start: "

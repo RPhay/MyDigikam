@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-03 01:57+0000\n"
-"PO-Revision-Date: 2025-10-31 11:33+0200\n"
+"POT-Creation-Date: 2025-11-04 02:14+0000\n"
+"PO-Revision-Date: 2025-11-03 08:36+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -10630,7 +10630,7 @@ msgstr "Нова ширина:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
@@ -20400,7 +20400,7 @@ msgstr "Додаткові виконувані файли GIMP"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:147
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid "Image Format:"
@@ -20734,7 +20734,7 @@ msgid "Thunderbird"
 msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20742,7 +20742,7 @@ msgid "Jpeg"
 msgstr "Jpeg"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20892,7 +20892,7 @@ msgid "Adjust image properties"
 msgstr "Налаштувати властивості зображення"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:126
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, kde-format
 msgid ""
@@ -20909,7 +20909,7 @@ msgid "Image Properties"
 msgstr "Властивості зображення"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
@@ -20920,14 +20920,14 @@ msgstr ""
 "співвідношення розмірів зображення."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:139
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, kde-format
 msgid "Image Length:"
 msgstr "Довжина зображення:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:150
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -20953,21 +20953,21 @@ msgstr ""
 "рівень стиснення (типове значення)<br><b>100</b>: без стиснення</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, kde-format
 msgid "Image quality:"
 msgstr "Якість зображення:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:173
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Вилучити усі метадані"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, kde-format
 msgid ""
@@ -23213,70 +23213,68 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr "Спроба виклику Facebook завершилася невдало: %1"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:90
 #, kde-format
 msgid "Target location: "
 msgstr "Адреса призначення:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:95
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Тека призначення"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:96
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:95
 #, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr "Встановлює адресу призначення для копіювання записів."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:98
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:97
 #, kde-format
 msgid "Target file behavior:"
 msgstr "Обробка файлів призначення:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:100
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:99
 #, kde-format
 msgid "Copy files"
 msgstr "Копіювати файли"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:101
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:100
 #, kde-format
 msgid "Create symlinks"
 msgstr "Створити символічні посилання"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:102
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:101
 #, kde-format
 msgid "Create relative symlinks"
 msgstr "Створити відносні символічні посилання"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:104
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:103
 #, kde-format
 msgid "Include the sidecar of the items"
 msgstr "Включати додаткові файли записів"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:104
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr "Перезаписувати наявні запис у теці призначення"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
 #, kde-format
 msgid "Write sidecar metadata to the items"
 msgstr "Записати метадані додаткових файлів до записів"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "Скористатися шляхом до альбому записів призначення"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
+#, kde-format
 msgid "Adjust Image Properties"
-msgstr "Налаштувати властивості зображення"
+msgstr "Скоригувати властивості зображення"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:162
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -23289,55 +23287,55 @@ msgstr ""
 "рівень стиснення<br><b>50</b>: середній рівень стиснення<br><b>75</b>: "
 "невисокий рівень стиснення (типове значення)<br><b>100</b>: без стиснення</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:198
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:85
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Це список записів, які буде скопійовано за вказаною адресою."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:78
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:113
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Експорт до локального сховища"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:81
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:67
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Почати експортування"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:82
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:68
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Почати експортування за вказаною адресою"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:182
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:198
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:233
 #, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
 msgstr "Помилка розташування цілі"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:183
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
 #, kde-format
 msgid "The target folder does not exist. Should it be created?"
 msgstr "Теки призначення не існує. Створити цю теку?"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:199
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:234
 #, kde-format
 msgid "The target folder could not be created and does not exist."
 msgstr "Не вдалося створити теку призначення, і цієї теки не існує."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:276
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:312
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Копіювання не завершено"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:277
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:313
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -23373,6 +23371,12 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Експортувати до локального сховища…"
 
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "Target location: "
+msgid "Target Location: "
+msgstr "Адреса призначення:"
+
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid ""
@@ -23384,45 +23388,48 @@ msgstr ""
 "тека."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
-#, kde-format
-msgid "Select export location..."
+#, fuzzy, kde-format
+#| msgid "Select export location..."
+msgid ""
+"Select export\n"
+"location..."
 msgstr "Вибрати місце експортування…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:89
-#, kde-format
-msgid "This is the list of images to upload to the specified target."
-msgstr "Це список зображень, які буде вивантажено за вказаною адресою."
-
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:158
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "Виберіть призначення…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:159
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
 #, kde-format
 msgid "All Files (*)"
 msgstr "усі файли (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:183
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>не позначено</i>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#, kde-format
+msgid "This is the list of images to upload to the specified target."
+msgstr "Це список зображень, які буде вивантажено за вказаною адресою."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Експорт до віддаленого сховища"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:180
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Вивантаження не завершено"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:181
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -23509,16 +23516,20 @@ msgstr ""
 "протоколів передавання даних, зокрема FTP, SFTP, SAMBA тощо."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Remote Storage"
 msgctxt "@action"
-msgid "Export to remote storage..."
-msgstr "Експортувати до віддаленого сховища…"
+msgid "Export to Remote Storage..."
+msgstr "Експорт до віддаленого сховища"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Import from Remote Storage"
 msgctxt "@action"
-msgid "Import from remote storage..."
-msgstr "Імпортувати з віддаленого сховища…"
+msgid "Import from Remote Storage..."
+msgstr "Імпорт з віддаленого сховища"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -69038,6 +69049,14 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgctxt "@action"
+#~ msgid "Export to remote storage..."
+#~ msgstr "Експортувати до віддаленого сховища…"
+
+#~ msgctxt "@action"
+#~ msgid "Import from remote storage..."
+#~ msgstr "Імпортувати з віддаленого сховища…"
 
 #~ msgctxt "@title"
 #~ msgid "Twitter"

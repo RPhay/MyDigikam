@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-03 01:57+0000\n"
+"POT-Creation-Date: 2025-11-04 02:14+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -10611,7 +10611,7 @@ msgstr "عرض جدید:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
@@ -20020,7 +20020,7 @@ msgstr "تنظیمات..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:147
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, fuzzy, kde-format
 msgid "Image Format:"
@@ -20356,7 +20356,7 @@ msgid "Thunderbird"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20364,7 +20364,7 @@ msgid "Jpeg"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, fuzzy, kde-format
 msgctxt "Image format: PNG"
@@ -20502,7 +20502,7 @@ msgid "Adjust image properties"
 msgstr "ویژگیهای پرونده"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:126
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:89
 #, fuzzy, kde-format
 #| msgid "<p>If you enable this option, you will see the target image."
@@ -20518,7 +20518,7 @@ msgid "Image Properties"
 msgstr "ویژگیها"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid ""
@@ -20527,14 +20527,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:139
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, fuzzy, kde-format
 msgid "Image Length:"
 msgstr "ویرایشگر تصویر"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:151
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:150
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, fuzzy, kde-format
 msgid "Select your preferred format to convert image."
@@ -20560,21 +20560,21 @@ msgstr ""
 "فشرده سازی( <p><b>نکته: PNG همیشه یک قالب فشرده‌سازی بدون تلفات تصویر است.</b>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, fuzzy, kde-format
 msgid "Image quality:"
 msgstr "ویرایشگر تصویر"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:173
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, fuzzy, kde-format
 msgid "Remove all metadata"
 msgstr "فراداده"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:151
 #, fuzzy, kde-format
 #| msgid "<p>If you enable this option, you will see the target image."
@@ -22698,73 +22698,72 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:91
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Image Caption"
 msgid "Target location: "
 msgstr "عنوان تصویر"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:95
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:94
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "بر اساس پوشه"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:96
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:95
 #, fuzzy, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr "<p>برای نمایش نام آلبوم، این گزینه را تنظیم کنید."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:98
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:97
 #, fuzzy, kde-format
 msgid "Target file behavior:"
 msgstr "پرونده تصاویر"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:100
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:99
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy files"
 msgstr "&رونوشت به اینجا‌"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:101
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:100
 #, fuzzy, kde-format
 msgid "Create symlinks"
 msgstr "خرابی در ایجاد پوشه"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:102
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:101
 #, fuzzy, kde-format
 msgid "Create relative symlinks"
 msgstr "انتساب این برچسب"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:104
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:103
 #, kde-format
 msgid "Include the sidecar of the items"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:104
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgid "Write sidecar metadata to the items"
 msgstr "نوشتن فراداده در هر پرونده"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:107
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
 #, fuzzy, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "رفتن به اولین فقره"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:124
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, fuzzy, kde-format
 msgid "Adjust Image Properties"
 msgstr "ویژگیهای پرونده"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:162
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #, fuzzy, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -22777,59 +22776,59 @@ msgstr ""
 "<p><b>۹</b>: فشرده‌سازی زیاد )اندازه پرونده کوچک اما دارای پیش‌فرض دوام زیاد "
 "فشرده سازی( <p><b>نکته: PNG همیشه یک قالب فشرده‌سازی بدون تلفات تصویر است.</b>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:198
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:85
 #, fuzzy, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "این فهرست فقره‌هایی است که در شرف حذف هستند."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:78
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:113
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "توضیحات:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:81
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:67
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
 #, fuzzy, kde-format
 #| msgid "Start Index:"
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "نمایه آغاز:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:82
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:68
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
 #, fuzzy, kde-format
 #| msgid "Align text to the left"
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "هم‌تراز کردن متن به چپ"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:182
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:198
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:233
 #, fuzzy, kde-format
 #| msgid "Image Caption"
 msgctxt "@title:window"
 msgid "Target Location Error"
 msgstr "عنوان تصویر"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:183
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
 #, kde-format
 msgid "The target folder does not exist. Should it be created?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:199
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:234
 #, kde-format
 msgid "The target folder could not be created and does not exist."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:276
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:312
 #, fuzzy, kde-format
 #| msgid "Download Selected"
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "بارگیری برگزیده"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:277
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:313
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -22861,6 +22860,12 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "توضیحات:"
 
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "Image Caption"
+msgid "Target Location: "
+msgstr "عنوان تصویر"
+
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid ""
@@ -22870,48 +22875,50 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, fuzzy, kde-format
-msgid "Select export location..."
+msgid ""
+"Select export\n"
+"location..."
 msgstr "گزینش"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:89
-#, fuzzy, kde-format
-msgid "This is the list of images to upload to the specified target."
-msgstr "این فهرست فقره‌هایی است که در شرف حذف هستند."
-
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:158
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "برگزیدن هیچ‌کدام"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:159
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
 msgstr "همه پرونده‌ها"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:183
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
 #, fuzzy, kde-format
 #| msgid "%1 items selected"
 msgid "<i>not selected</i>"
 msgstr "%1 فقره برگزیده شد"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#, fuzzy, kde-format
+msgid "This is the list of images to upload to the specified target."
+msgstr "این فهرست فقره‌هایی است که در شرف حذف هستند."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "توضیحات:"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:180
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
 #, fuzzy, kde-format
 #| msgid "Download Selected"
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "بارگیری برگزیده"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:181
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -22992,13 +22999,13 @@ msgstr "افزودن دانه فیلم"
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
 #, fuzzy, kde-format
 msgctxt "@action"
-msgid "Export to remote storage..."
+msgid "Export to Remote Storage..."
 msgstr "توضیحات:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
 #, fuzzy, kde-format
 msgctxt "@action"
-msgid "Import from remote storage..."
+msgid "Import from Remote Storage..."
 msgstr "توضیحات:"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
@@ -67344,6 +67351,16 @@ msgstr "آلبومها"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&مرتب‌سازی تصاویر‌"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Export to remote storage..."
+#~ msgstr "توضیحات:"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Import from remote storage..."
+#~ msgstr "توضیحات:"
 
 #, fuzzy
 #~| msgid "Start Index:"
