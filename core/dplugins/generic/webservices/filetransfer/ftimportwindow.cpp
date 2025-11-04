@@ -42,6 +42,8 @@ public:
 
     Private() = default;
 
+public:
+
     FTImportWidget* importWidget    = nullptr;
     DInfoInterface* iface           = nullptr;
 };

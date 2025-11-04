@@ -19,8 +19,9 @@
 
 #include <QApplication>
 #include <QPushButton>
-#include <QBoxLayout>
+#include <QGridLayout>
 #include <QPointer>
+#include <QLabel>
 
 // KDE includes
 
@@ -29,6 +30,7 @@
 // Local includes
 
 #include "dfiledialog.h"
+#include "dexpanderbox.h"
 
 namespace DigikamGenericFileTransferPlugin
 {
@@ -39,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     DItemsList*  imageList          = nullptr;
     QWidget*     uploadWidget       = nullptr;
     QPushButton* importSearchBtn    = nullptr;
@@ -48,10 +52,12 @@ FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const ifac
     : QWidget(parent),
       d      (new Private)
 {
-    d->importSearchBtn = new QPushButton(i18n("Select import location..."), this);
+    // Setup Source Selection
+
+    d->importSearchBtn = new QPushButton(i18n("Select Source Location..."), this);
     d->importSearchBtn->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
 
-    // setup image list
+    // Setup image list
 
     d->imageList = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FTImport ImagesList"));
@@ -59,22 +65,37 @@ FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const ifac
     d->imageList->setIface(iface);
     d->imageList->listView()->setColumnEnabled(DItemsListView::Thumbnail, false);
     d->imageList->setControlButtons(DItemsList::Remove | DItemsList::MoveUp | DItemsList::MoveDown | DItemsList::Clear);
-    d->imageList->listView()->setWhatsThis(i18n("This is the list of images to import "
-                                                "into the current album."));
+    d->imageList->listView()->setWhatsThis(i18n("This is the list of source items to import "
+                                                "into the selected destination."));
 
-    // setup upload widget
+    // Separator and Arrow
 
-    d->uploadWidget = iface->uploadWidget(this);
+    DLineWidget* const vline1 = new DLineWidget(Qt::Vertical, this);
+    QLabel* const arrow       = new QLabel(QChar(0x21D2));
+    arrow->setAlignment(Qt::AlignCenter);
+    DLineWidget* const vline2 = new DLineWidget(Qt::Vertical, this);
 
-    // layout dialog
+    // Setup Destination Selection
 
-    QVBoxLayout* const layout = new QVBoxLayout(this);
-    layout->addWidget(d->importSearchBtn);
-    layout->addWidget(d->imageList);
-    layout->addWidget(d->uploadWidget);
-    layout->setContentsMargins(QMargins());
-    layout->setSpacing(layoutSpacing());
+    QLabel* const uploadLabel = new QLabel(i18n("Select Destination Location:"), this);
+    d->uploadWidget           = iface->uploadWidget(this);
 
+    // Layout Widget
+
+    QGridLayout* const grid = new QGridLayout(this);
+    grid->addWidget(d->importSearchBtn, 0, 0, 1, 1);
+    grid->addWidget(d->imageList,       1, 0, 3, 1);
+    grid->addWidget(vline1,             0, 1, 2, 1);
+    grid->addWidget(arrow,              2, 1, 1, 1);
+    grid->addWidget(vline2,             3, 1, 1, 1);
+    grid->addWidget(uploadLabel,        0, 2, 1, 1);
+    grid->addWidget(d->uploadWidget,    1, 2, 3, 1);
+    grid->setSpacing(layoutSpacing());
+    grid->setContentsMargins(QMargins(0, 0, 0, 0));
+    grid->setRowStretch(1, 10);
+    grid->setRowStretch(3, 10);
+    grid->setColumnStretch(0, 10);
+    grid->setColumnStretch(2, 10);
 
     connect(d->importSearchBtn, SIGNAL(clicked(bool)),
             this, SLOT(slotShowImportDialogClicked(bool)));
