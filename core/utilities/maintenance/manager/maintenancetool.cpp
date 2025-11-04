@@ -45,8 +45,8 @@ public:
 
     bool          notification = true;
     uint          advanceSteps = 1;
-    qint64	      progressTime = 0;
 
+    QTimer        progressTimer;
     QElapsedTimer duration;
 };
 
@@ -68,6 +68,7 @@ MaintenanceTool::MaintenanceTool(const QString& id, ProgressItem* const parent)
 
 #endif
 
+    d->progressTimer.setSingleShot(true);
 }
 
 MaintenanceTool::~MaintenanceTool()
@@ -82,13 +83,10 @@ void MaintenanceTool::setNotificationEnabled(bool b)
 
 uint MaintenanceTool::checkProgressNeeded() const
 {
-    if (
-        (d->progressTime == 0)                        ||
-        (d->duration.elapsed() > (d->progressTime + 50))
-       )
+    if (!d->progressTimer.isActive())
     {
-        d->progressTime = d->duration.elapsed();
         uint adv        = d->advanceSteps;
+        d->progressTimer.start(50);
         d->advanceSteps = 1;
 
         return adv;
