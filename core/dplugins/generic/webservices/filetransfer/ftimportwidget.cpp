@@ -52,7 +52,7 @@ FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const ifac
     : QWidget(parent),
       d      (new Private)
 {
-    // Setup Source Selection
+    // Setup Source Selector
 
     d->importSearchBtn = new QPushButton(i18n("Select Source Location..."), this);
     d->importSearchBtn->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
@@ -75,7 +75,7 @@ FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const ifac
     arrow->setAlignment(Qt::AlignCenter);
     DLineWidget* const vline2 = new DLineWidget(Qt::Vertical, this);
 
-    // Setup Destination Selection
+    // Setup Destination Selector
 
     QLabel* const uploadLabel = new QLabel(i18n("Select Destination Location:"), this);
     d->uploadWidget           = iface->uploadWidget(this);
