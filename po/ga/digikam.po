@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -23408,7 +23408,7 @@ msgid "Select Target..."
 msgstr "Ná Roghnaigh"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
@@ -23446,52 +23446,65 @@ msgid ""
 "can retry to export these images now."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
 #, fuzzy, kde-format
-msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "Cuir Fotheidil in Eagar..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "No script selected"
+msgid "no source selected"
+msgstr "Níl aon script roghnaithe"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
 #, fuzzy, kde-format
 #| msgid "This is the list of items that are about to be deleted."
-msgid "This is the list of images to import into the current album."
+msgid ""
+"This is the list of source items to import into the selected destination."
 msgstr "Seo é an liosta míreanna atá tú ar tí a scriosadh."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Select Destination Location:"
+msgstr "Ceann Scríbe:"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Roghnaigh Cineálacha MIME"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Iompórtáil ó Scanóir..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, fuzzy, kde-format
 #| msgid "Start Color: "
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Dath Tosaigh: "
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "Athraigh ainm comhaid na míre atá roghnaithe faoi láthair."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, fuzzy, kde-format
 #| msgid "Imported comments"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Iompórtáladh nótaí"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -63343,7 +63356,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr ""
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -70181,6 +70194,11 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~| msgid "This is the list of items that are about to be deleted."
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr "Seo é an liosta míreanna atá tú ar tí a scriosadh."
 
 #, fuzzy
 #~| msgid "Import from Scanner..."

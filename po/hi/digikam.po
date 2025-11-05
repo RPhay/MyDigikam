@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -22224,7 +22224,7 @@ msgid "Select Target..."
 msgstr "कुछ नहीं चुनें"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, fuzzy, kde-format
 msgid "All Files (*)"
 msgstr "सभी फ़ाइलें"
@@ -22260,49 +22260,61 @@ msgid ""
 "can retry to export these images now."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
 #, fuzzy, kde-format
-msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "शीर्षक संपादित करें..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
 #, fuzzy, kde-format
-msgid "This is the list of images to import into the current album."
+msgid "no source selected"
+msgstr "%1/%2 वस्तुएँ चयनित"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#, fuzzy, kde-format
+msgid ""
+"This is the list of source items to import into the selected destination."
 msgstr "यह वस्तुओं की सूची है जिसे मिटाया जाने वाला है."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Select Destination Location:"
+msgstr "गंतव्य:"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "छवियाँ सहेजें"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "दरजा आयातित"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, fuzzy, kde-format
 #| msgid "Color:"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "रंगः"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, fuzzy, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "मौज़ूदा चयनित वस्तु का फ़ाइल नाम बदलें."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, fuzzy, kde-format
 #| msgid "Imported comments"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "टिप्पणियाँ आयातित"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -60156,7 +60168,7 @@ msgstr "फ़ाइल %1 के लिए एक्ज़इफ ओरिए�
 msgid "digiKam Maintenance"
 msgstr "मुख्य कोण:"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -66625,6 +66637,10 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवियाँ छांटें (&S)"
+
+#, fuzzy
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr "यह वस्तुओं की सूची है जिसे मिटाया जाने वाला है."
 
 #, fuzzy
 #~ msgctxt "@action"

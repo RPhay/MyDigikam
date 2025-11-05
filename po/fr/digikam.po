@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
-"PO-Revision-Date: 2025-11-01 13:20+0100\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"PO-Revision-Date: 2025-11-04 08:59+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -23354,10 +23354,9 @@ msgid "Use the album path of the items in the target"
 msgstr "Utilisez l'emplacement de l'album des éléments dans la cible."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
-msgstr "Ajuster les paramètres d'images"
+msgstr "Ajuster les propriétés d'image"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #, kde-format
@@ -23487,7 +23486,7 @@ msgid "Select Target..."
 msgstr "Sélectionner une cible…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tous les fichiers (*)"
@@ -23523,35 +23522,50 @@ msgstr ""
 "Certaines images n'ont pas été transférées et sont toujours dans la liste. "
 "Vous pouvez ré-essayer d'exporter ces images maintenant."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
-#, kde-format
-msgid "Select import location..."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "Sélectionnez l'emplacement cible…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
-#, kde-format
-msgid "This is the list of images to import into the current album."
-msgstr "Ceci est la liste des images à importer dans l'album courant."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "No script selected"
+msgid "no source selected"
+msgstr "Pas de script sélectionné"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "This is the list of items to copy to the specified target."
+msgid ""
+"This is the list of source items to import into the selected destination."
+msgstr "Ceci est la liste des éléments à copier vers la cible spécifiée."
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination Path:"
+msgid "Select Destination Location:"
+msgstr "Emplacement de destination :"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Sélectionnez les éléments à importer…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Importer depuis un périphérique d'enregistrement distant…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Démarrer l'importation"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
@@ -23559,13 +23573,13 @@ msgstr ""
 "Démarrer l'importation des images spécifiées dans l'album actuellement "
 "sélectionné."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Importation non terminée"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -62129,7 +62143,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "Maintenance de digiKam"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -69361,6 +69375,9 @@ msgstr "Éléments de l'album"
 #, kde-format
 msgid "Import Items"
 msgstr "Importer des éléments"
+
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr "Ceci est la liste des images à importer dans l'album courant."
 
 #~ msgctxt "@action"
 #~ msgid "Export to remote storage..."

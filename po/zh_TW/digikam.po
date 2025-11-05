@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -22923,7 +22923,7 @@ msgid "Select Target..."
 msgstr "全部不選"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "所有檔案 (*)"
@@ -22960,50 +22960,63 @@ msgid ""
 "can retry to export these images now."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
 #, fuzzy, kde-format
-msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "編輯標題..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "No script selected"
+msgid "no source selected"
+msgstr "沒有選擇任何文稿"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
-msgid "This is the list of images to import into the current album."
+msgid ""
+"This is the list of source items to import into the selected destination."
 msgstr "這是要批次處理的影像清單。"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination Path:"
+msgid "Select Destination Location:"
+msgstr "目的地路徑："
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "選擇要匯入的項目..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "從遠端儲存匯入"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "啟動影像編輯器"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "變更目前選擇項目的檔案名稱。"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "匯入未完成"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -61242,7 +61255,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "digiKam 維護"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -68178,6 +68191,11 @@ msgstr "相簿項目"
 #, kde-format
 msgid "Import Items"
 msgstr "匯入項目"
+
+#, fuzzy
+#~| msgid "This is the list of images to batch process."
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr "這是要批次處理的影像清單。"
 
 #~ msgctxt "@action"
 #~ msgid "Export to remote storage..."

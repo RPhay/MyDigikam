@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
-"PO-Revision-Date: 2025-10-31 12:48+0100\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"PO-Revision-Date: 2025-11-05 00:00+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23163,8 +23163,7 @@ msgid "Use the album path of the items in the target"
 msgstr "Usar la ruta del álbum de los elementos de destino"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
 msgstr "Ajustar las propiedades de la imagen"
 
@@ -23266,8 +23265,7 @@ msgid "Export to local storage..."
 msgstr "Exportar a almacenamiento local…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Target Location: "
 msgstr "Ubicación de destino: "
 
@@ -23282,12 +23280,13 @@ msgstr ""
 "servidor.org/sub/carpeta)."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Select export location..."
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "Seleccionar la ubicación de exportación…"
+msgstr ""
+"Seleccionar ubicación\n"
+"de exportación…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, kde-format
@@ -23296,7 +23295,7 @@ msgid "Select Target..."
 msgstr "Seleccionar destino…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos los archivos (*)"
@@ -23333,48 +23332,63 @@ msgstr ""
 "Algunas de las imágenes no se han transferido y todavía están en la lista. "
 "Puede volver a intentar la exportación de estas imágenes ahora."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
-#, kde-format
-msgid "Select import location..."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "Seleccionar la ubicación de importación…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
-#, kde-format
-msgid "This is the list of images to import into the current album."
-msgstr "Esta es la lista de imágenes a importar en el álbum actual."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "No script selected"
+msgid "no source selected"
+msgstr "Ningún programa seleccionado"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "This is the list of items to copy to the specified target."
+msgid ""
+"This is the list of source items to import into the selected destination."
+msgstr "Esta es la lista de elementos a copiar al destino indicado."
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination Path:"
+msgid "Select Destination Location:"
+msgstr "Ruta de destino:"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Seleccione los elementos a importar…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Importar de almacenamiento remoto"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Empezar importación"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr ""
 "Iniciar la importación de las imágenes indicadas en el álbum seleccionado."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Importación no completada"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -23408,20 +23422,16 @@ msgstr ""
 "SAMBA, etc."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "Exportar a almacenamiento remoto"
+msgstr "Exportar a almacenamiento remoto…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "Importar de almacenamiento remoto"
+msgstr "Importar de almacenamiento remoto…"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -61681,7 +61691,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "Mantenimiento de digiKam"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -68811,10 +68821,5 @@ msgstr "Elementos del álbum"
 msgid "Import Items"
 msgstr "Elementos importados"
 
-#~ msgctxt "@action"
-#~ msgid "Export to remote storage..."
-#~ msgstr "Exportar a almacenamiento remoto…"
-
-#~ msgctxt "@action"
-#~ msgid "Import from remote storage..."
-#~ msgstr "Importar de almacenamiento remoto…"
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr "Esta es la lista de imágenes a importar en el álbum actual."

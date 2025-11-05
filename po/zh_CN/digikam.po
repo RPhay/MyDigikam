@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -22087,10 +22087,9 @@ msgid "Use the album path of the items in the target"
 msgstr "使用目标项目的相册路径"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
-msgstr "调整图像属性"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #, kde-format
@@ -22185,10 +22184,9 @@ msgid "Export to local storage..."
 msgstr "导出到本地存储..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Target Location: "
-msgstr "目标位置："
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
@@ -22200,12 +22198,11 @@ msgstr ""
 "址，例如 ftp://my.server.org/sub/folder。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Select export location..."
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "选择导出位置..."
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, kde-format
@@ -22214,7 +22211,7 @@ msgid "Select Target..."
 msgstr "选择目标..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "所有文件 (*)"
@@ -22248,47 +22245,62 @@ msgid ""
 "can retry to export these images now."
 msgstr "部分图像未能传输。它们仍在列表中，您可以马上重新尝试导出这些图像。"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
-#, kde-format
-msgid "Select import location..."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "选择导入位置..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
-#, kde-format
-msgid "This is the list of images to import into the current album."
-msgstr "要导入至当前相册的图像列表。"
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "No script selected"
+msgid "no source selected"
+msgstr "未选择脚本"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "This is the list of items to copy to the specified target."
+msgid ""
+"This is the list of source items to import into the selected destination."
+msgstr "要上传到指定目标位置的图像列表。"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination Path:"
+msgid "Select Destination Location:"
+msgstr "目标路径："
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "选择要导入的项目..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "从远程存储中导入"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "开始导入"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "开始将指定的图像导入到当前所选的相册。"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "导入未完成"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -22318,20 +22330,16 @@ msgstr ""
 "SFTP、SAMBA 等。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "导出到远程存储"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "从远程存储中导入"
+msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -59336,7 +59344,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "digiKam 系统维护"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -66040,10 +66048,5 @@ msgstr "相册视图项目"
 msgid "Import Items"
 msgstr "导入视图项目"
 
-#~ msgctxt "@action"
-#~ msgid "Export to remote storage..."
-#~ msgstr "导出到远程存储..."
-
-#~ msgctxt "@action"
-#~ msgid "Import from remote storage..."
-#~ msgstr "从远程存储导入..."
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr "要导入至当前相册的图像列表。"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -22706,7 +22706,7 @@ msgid "Select Target..."
 msgstr "Pilih sasaran..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr ""
@@ -22745,38 +22745,54 @@ msgstr ""
 "Beberapa citra tidak tertransfer dan masih berada di dalam daftar. Anda bisa "
 "mencoba kembali untuk mengekspor citra tersebut sekarang."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
-#, kde-format
-msgid "Select import location..."
-msgstr ""
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#, fuzzy, kde-format
+#| msgid "Select Font..."
+msgid "Select Source Location..."
+msgstr "Pilih Font..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
-#, kde-format
-msgid "This is the list of images to import into the current album."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Download Selected"
+msgid "no source selected"
+msgstr "Unduh Yang Dipilih"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "This is the list of images to import into the current album."
+msgid ""
+"This is the list of source items to import into the selected destination."
 msgstr "Ini adalah daftar citra untuk mengimpor ke dalam album saat ini."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination Path:"
+msgid "Select Destination Location:"
+msgstr "Alur Tujuan:"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Select target..."
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Pilih sasaran..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, fuzzy, kde-format
 #| msgid "Import from Remote Storage"
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Impor dari Penyimpanan Jarak Jauh"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, fuzzy, kde-format
 #| msgid "Start import"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Mulai impor"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start importing the specified images into the currently selected album."
@@ -22785,14 +22801,14 @@ msgid "Start importing the specified images into the currently selected album."
 msgstr ""
 "Mulai mengimpor citra yang ditentukan ke dalam album yang dipilih saat ini."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, fuzzy, kde-format
 #| msgid "Import not completed"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Pengimporan tidak lengkap"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -61244,7 +61260,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr ""
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"

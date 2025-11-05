@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -24388,7 +24388,7 @@ msgid "Select Target..."
 msgstr "Χωρίς επιλογή"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
@@ -24427,38 +24427,51 @@ msgid ""
 "can retry to export these images now."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
 #, fuzzy, kde-format
-msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "Επεξεργασία τίτλων..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "No script selected"
+msgid "no source selected"
+msgstr "Δεν επιλέχθηκε σενάριο"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
-msgid "This is the list of images to import into the current album."
+msgid ""
+"This is the list of source items to import into the selected destination."
 msgstr "Αυτή είναι η λίστα εικόνων για επεξεργασία δέσμης."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Select Destination Location:"
+msgstr "Προορισμός:"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Επιλογή τύπων mime"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Εισαγωγή από σαρωτή..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Εκκίνηση επεξεργαστή εικόνας"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info:tooltip, button"
@@ -24466,14 +24479,14 @@ msgid "Start importing the specified images into the currently selected album."
 msgstr ""
 "Τροποποίηση ονόματος του αρχείου του τρέχοντος επιλεγμένου αντικειμένου."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, fuzzy, kde-format
 #| msgid "Imported comments"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Εισηγμένα σχόλια"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -65863,7 +65876,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "Συντήρηση digiKam"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -73421,6 +73434,11 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#, fuzzy
+#~| msgid "This is the list of images to batch process."
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr "Αυτή είναι η λίστα εικόνων για επεξεργασία δέσμης."
 
 #, fuzzy
 #~| msgid "Import from Scanner..."

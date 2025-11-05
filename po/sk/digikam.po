@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -23007,7 +23007,7 @@ msgid "Select Target..."
 msgstr "Vyberte cieľ..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "Všetky súbory (*)"
@@ -23045,38 +23045,52 @@ msgstr ""
 "Niektoré obrázky neboli prenesené a stále sa nachádzajú na zozname. Teraz sa "
 "môžete pokúsiť tieto obrázky znova exportovať."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
-#, kde-format
-msgid "Select import location..."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "Vyberte umiestnenie, z ktorého sa bude importovať..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
-#, kde-format
-msgid "This is the list of images to import into the current album."
-msgstr "Toto je zoznam položiek, ktoré budú importované do aktuálneho albumu."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "No script selected"
+msgid "no source selected"
+msgstr "Nie je vybraný skript"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#, fuzzy, kde-format
+msgid ""
+"This is the list of source items to import into the selected destination."
+msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination Path:"
+msgid "Select Destination Location:"
+msgstr "Cieľová cesta:"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Select items to import..."
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Vyberte položky, ktoré budú importované..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, fuzzy, kde-format
 #| msgid "Import from Remote Storage"
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Importovať zo vzdialeného úložiska"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, fuzzy, kde-format
 #| msgid "Start import"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Spustiť import"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info:tooltip, button"
@@ -23085,14 +23099,14 @@ msgstr ""
 "Táto voľba vám umožní premenovať premenovať názov súboru momentálne vybranej "
 "položky."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, fuzzy, kde-format
 #| msgid "Import not completed"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Import nebol dokončený"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -63163,7 +63177,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "Údržba digiKam"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -70439,6 +70453,10 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr ""
+#~ "Toto je zoznam položiek, ktoré budú importované do aktuálneho albumu."
 
 #~ msgctxt "@action"
 #~ msgid "Export to remote storage..."

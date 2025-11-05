@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 02:14+0000\n"
-"PO-Revision-Date: 2025-10-31 10:25+0100\n"
+"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"PO-Revision-Date: 2025-11-04 13:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -23134,8 +23134,7 @@ msgid "Use the album path of the items in the target"
 msgstr "Utilitza el camí d'àlbum dels elements en la destinació"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
 msgstr "Ajusta les propietats de les imatges"
 
@@ -23236,8 +23235,7 @@ msgid "Export to local storage..."
 msgstr "Exporta cap a un emmagatzematge local…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Target Location: "
 msgstr "Ubicació de la destinació: "
 
@@ -23252,12 +23250,13 @@ msgstr ""
 "sub/carpeta."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Select export location..."
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "Trieu la ubicació d'exportació…"
+msgstr ""
+"Trieu la ubicació\n"
+"de l'exportació…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, kde-format
@@ -23266,7 +23265,7 @@ msgid "Select Target..."
 msgstr "Trieu la destinació…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:96
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
@@ -23303,37 +23302,51 @@ msgstr ""
 "Algunes de les imatges no s'han transferit i encara es troben en la llista. "
 "Ara podeu tornar a intentar exportar-les."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
-#, kde-format
-msgid "Select import location..."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgid "Select Source Location..."
 msgstr "Trieu la ubicació d'importació…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
-#, kde-format
-msgid "This is the list of images to import into the current album."
-msgstr ""
-"Esta és la llista de les imatges que s'importaran cap a dins de l'àlbum "
-"actual."
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "No script selected"
+msgid "no source selected"
+msgstr "No hi ha cap script seleccionat"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:94
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#, fuzzy, kde-format
+#| msgid "This is the list of items to copy to the specified target."
+msgid ""
+"This is the list of source items to import into the selected destination."
+msgstr ""
+"Esta és la llista d'elements que es copiarà a la destinació especificada."
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Destination Path:"
+msgid "Select Destination Location:"
+msgstr "Camí cap a la destinació:"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Trieu els elements que s'han d'importar…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:59
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Importació des d'un emmagatzematge remot"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Inicia la importació"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:64
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
@@ -23341,13 +23354,13 @@ msgstr ""
 "Inicia la importació de les imatges especificades en l'àlbum actualment "
 "seleccionat."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:134
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "No s'ha completat la importació"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:135
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -23379,20 +23392,16 @@ msgstr ""
 "remota.<br><br>Es poden utilitzar molts protocols, com FTP, SFTP, SAMBA, etc."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "Exporteu cap a un emmagatzematge remot"
+msgstr "Exporta cap a un emmagatzematge remot…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "Importació des d'un emmagatzematge remot"
+msgstr "Importa des d'un emmagatzematge remot…"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -61693,7 +61702,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "Manteniment de digiKam"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:131
+#: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -68831,10 +68840,7 @@ msgstr "Elements d'àlbum"
 msgid "Import Items"
 msgstr "Importa els elements"
 
-#~ msgctxt "@action"
-#~ msgid "Export to remote storage..."
-#~ msgstr "Exporta cap a un emmagatzematge remot…"
-
-#~ msgctxt "@action"
-#~ msgid "Import from remote storage..."
-#~ msgstr "Importa des d'un emmagatzematge remot…"
+#~ msgid "This is the list of images to import into the current album."
+#~ msgstr ""
+#~ "Esta és la llista de les imatges que s'importaran cap a dins de l'àlbum "
+#~ "actual."
