@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 02:10+0000\n"
-"PO-Revision-Date: 2025-11-04 09:08+0200\n"
+"PO-Revision-Date: 2025-11-05 08:02+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -23440,29 +23440,25 @@ msgstr ""
 "експортування."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Вибрати місце імпортування…"
+msgstr "Вибрати розташування джерела…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No script selected"
+#, kde-format
 msgid "no source selected"
-msgstr "Не вибрано жодного скрипту"
+msgstr "джерело не вибрано"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "Це список записів, які буде скопійовано за вказаною адресою."
+msgstr "Це список записів джерел для імпортування до вибраного призначення."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Шлях призначення:"
+msgstr "Виберіть розташування призначення:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format

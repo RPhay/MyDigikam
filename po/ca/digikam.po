@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 02:10+0000\n"
-"PO-Revision-Date: 2025-11-04 13:40+0100\n"
+"PO-Revision-Date: 2025-11-05 10:17+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -23330,29 +23330,27 @@ msgstr ""
 "podeu tornar a intentar exportar-les."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Seleccioneu la ubicació d'importació..."
+msgstr "Seleccioneu la ubicació d'origen..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No script selected"
+#, kde-format
 msgid "no source selected"
-msgstr "No hi ha cap script seleccionat"
+msgstr "no s'ha seleccionat cap origen"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "Aquesta és la llista d'elements a copiar a la destinació especificada."
+msgstr ""
+"Aquesta és la llista d'elements de l'origen a importar a la destinació "
+"especificada."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Camí a la destinació:"
+msgstr "Seleccioneu la ubicació de destinació:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format

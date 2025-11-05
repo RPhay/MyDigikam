@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 02:10+0000\n"
-"PO-Revision-Date: 2025-11-04 06:52+0100\n"
+"PO-Revision-Date: 2025-11-05 05:55+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -23103,29 +23103,25 @@ msgstr ""
 "ponovno poskusite izvoziti."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Izberi mesto uvoza..."
+msgstr "Izberi mesto vira..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No script selected"
+#, kde-format
 msgid "no source selected"
-msgstr "Ni izbranega skripta"
+msgstr "ni izbranega vira"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "To je seznam predmetov za kopiranje na določen cilj."
+msgstr "To je seznam izvornih elementov za uvoz v izbrani cilj."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Ciljna pot:"
+msgstr "Izberite lokacijo cilja:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format

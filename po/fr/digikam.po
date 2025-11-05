@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 02:10+0000\n"
-"PO-Revision-Date: 2025-11-04 08:59+0100\n"
+"PO-Revision-Date: 2025-11-04 13:45+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -23456,10 +23456,9 @@ msgid "Export to local storage..."
 msgstr "Exporter vers un périphérique de stockage local…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Target Location: "
-msgstr "Emplacement cible : "
+msgstr "Emplacement cible : "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
@@ -23472,12 +23471,13 @@ msgstr ""
 "exemple, « ftp://mon.serveur.org/sous/dossier »"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Select export location..."
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "Sélectionner l'emplacement cible…"
+msgstr ""
+"Sélectionnez l'emplacement\n"
+"pour exportation…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, kde-format
@@ -23614,20 +23614,16 @@ msgstr ""
 "utilisés comme FTP, SFTP, SAMBA, etc."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "Exporter vers un périphérique d'enregistrement distant"
+msgstr "Exporter vers un média d'enregistrement distant..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "Importer depuis un périphérique d'enregistrement distant…"
+msgstr "Importer depuis un média d'enregistrement distant…"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format

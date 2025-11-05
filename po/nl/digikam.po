@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 02:10+0000\n"
-"PO-Revision-Date: 2025-11-04 12:17+0100\n"
+"PO-Revision-Date: 2025-11-05 10:32+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -23341,30 +23341,25 @@ msgstr ""
 "lijst. U kunt nu proberen deze alsnog over te brengen."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Importlocatie selecteren..."
+msgstr "Bronlocatie selecteren..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No script selected"
+#, kde-format
 msgid "no source selected"
-msgstr "Geen script geselecteerd"
+msgstr "geen bron geselecteerd"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr ""
-"Dit is de lijst met te kopiëren items naar de gespecificeerde doellocatie."
+msgstr "Dit is de lijst met te kopiëren bronitems naar het geselecteerde doel."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Bestemmingspad:"
+msgstr "Bestemmingslocatie selecteren:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format
