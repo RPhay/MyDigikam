@@ -51,6 +51,8 @@ public:
     const QString HISTORY_URL_PROPERTY  = QLatin1String("historyUrls");
     const QString CONFIG_GROUP          = QLatin1String("KioExport");
 
+public:
+
     DItemsList*     imagesList          = nullptr;
     FTExportWidget* exportWidget        = nullptr;
 };

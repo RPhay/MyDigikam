@@ -59,7 +59,7 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
 {
     Q_UNUSED(iface);
 
-    // setup remote target selection
+    // Setup remote target selection
 
     QLabel* const label       = new QLabel(this);
     d->targetLabel            = new KUrlComboRequester(this);
@@ -73,7 +73,7 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     label->setText(i18n("Target Location: "));
     d->targetLabel->setWhatsThis(i18n("Sets the target address to upload the images to. "
-                                      "This can be any address as used in Dolphin or Konqueror, "
+                                      "This can be any address as used in your file-manager, "
                                       "e.g. ftp://my.server.org/sub/folder."));
 
     d->targetSearchButton     = new QPushButton(i18n("Select export\nlocation..."), this);
@@ -145,7 +145,7 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
 {
     Q_UNUSED(checked);
 
-    QPointer<DFileDialog> targetDialog = new DFileDialog(this, i18nc("@title:window", "Select Target..."),
+    QPointer<DFileDialog> targetDialog = new DFileDialog(this, i18nc("@title:window", "Select Target Location..."),
                                                          d->targetUrl.toString(), i18n("All Files (*)"));
     targetDialog->setAcceptMode(QFileDialog::AcceptSave);
     targetDialog->setFileMode(QFileDialog::Directory);
