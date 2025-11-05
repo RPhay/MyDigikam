@@ -54,7 +54,7 @@ BUGFIXES:
 029 --> 511398 - Incorrect name for MKD - North Macedonia.
 030 --> 511467 - Cannot see GPS metadata in HEIC photos.
 031 --> 511565 - Segfault during startup scanning.
-032 -->
+032 --> 511622 - Display focus rectangle for Nikon Z 5 ii pictures.
 033 -->
 034 -->
 035 -->

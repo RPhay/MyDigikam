@@ -89,7 +89,19 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
 
-    if (model().compare(QLatin1String("NIKON Z 5")) == 0)
+    const QStringList modelList({
+                                 QLatin1String("NIKON Z 5"),
+                                 QLatin1String("NIKON Z5_2")
+                                });
+
+    const QList<float> posList({
+                                11.5F, 11.5F, -6.5F, -6.5F,   // Z5
+                                15.5F,  9.3F,  4.8F,  7.0F    // Z5 II
+                               });
+
+    int camIdx = modelList.indexOf(model());
+
+    if (camIdx != -1)
     {
         QStringList afPointUsed = findValueFirstMatch(
                                                       QStringList()
@@ -99,13 +111,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
         if (!afPointUsed.isEmpty())
         {
+            camIdx *= 4;
             ListAFPoints points;
 
-            float xOffset = imageWidth.toInt()  / 11.5F;
-            float yOffset = imageHeight.toInt() / 11.0F;
+            float xOffset = imageWidth.toInt()  / posList.at(camIdx + 0);
+            float yOffset = imageHeight.toInt() / posList.at(camIdx + 1);
 
-            float xShift  = imageWidth.toInt()  / 6.5F;
-            float yShift  = imageHeight.toInt() / 7.0F;
+            float xShift  = imageWidth.toInt()  / posList.at(camIdx + 2);
+            float yShift  = imageHeight.toInt() / posList.at(camIdx + 3);
 
             for (const QString& np : EXIV2_AS_CONST(afPointUsed))
             {
@@ -114,14 +127,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
                     continue;
                 }
 
-                float xPosition = (np.mid(1).toInt() - 1)    * xOffset + xShift;
-                float yPosition = (np[0].unicode()   - 0x41) * yOffset + yShift;
+                float xPosition = (np.mid(1).toInt() - 1)    * xOffset - xShift;
+                float yPosition = (np[0].unicode()   - 0x41) * yOffset - yShift;
 
                 FocusPoint afpoint = NikonInternal::create_af_point(
                                                                     imageWidth.toFloat(),
                                                                     imageHeight.toFloat(),
-                                                                    xOffset - 40.0F,
-                                                                    yOffset - 40.0F,
+                                                                    xOffset - 30.0F,
+                                                                    yOffset - 30.0F,
                                                                     xPosition,
                                                                     yPosition
                                                                    );
