@@ -84,6 +84,23 @@ private Q_SLOTS:
 
 private:
 
+    /**
+     * Handle Close event from dialog title bar.
+     */
+    void closeEvent(QCloseEvent* e) override;
+
+    /**
+     * Restores settings.
+     */
+    void restoreSettings();
+
+    /**
+     * Saves settings.
+     */
+    void saveSettings();
+
+private:
+
     class Private;
     Private* const d = nullptr;
 };

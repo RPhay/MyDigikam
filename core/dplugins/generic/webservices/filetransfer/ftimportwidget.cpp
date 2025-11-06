@@ -26,9 +26,12 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kcombobox.h>
+#include <kurlrequester.h>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dfiledialog.h"
 #include "dexpanderbox.h"
 
@@ -43,25 +46,37 @@ public:
 
 public:
 
-    QPushButton*      importBtn    = nullptr;
-    DAdjustableLabel* srcLabel     = nullptr;
-    DItemsList*       imageList    = nullptr;
-    QWidget*          uploadWidget = nullptr;
+    KUrlComboRequester* sourceCombo  = nullptr;
+    QPushButton*        importBtn    = nullptr;
+    DItemsList*         imageList    = nullptr;
+    QWidget*            uploadWidget = nullptr;
+    QUrl                sourceUrl;
 };
 
 FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const iface)
     : QWidget(parent),
       d      (new Private)
 {
-    // Setup Source Selector
+    // Setup remote source selection
+
+    QLabel* const label       = new QLabel(this);
+    d->sourceCombo            = new KUrlComboRequester(this);
+
+    if (d->sourceCombo->button())
+    {
+        d->sourceCombo->button()->hide();
+    }
+
+    d->sourceCombo->comboBox()->setEditable(true);
+
+    label->setText(i18n("Source Location: "));
+    d->sourceCombo->setWhatsThis(i18n("Sets the source address to download the images to. "
+                                      "This can be any address as used in your file-manager, e.g:<br>"
+                                      "<i>ftp://my.server.org/sub/folder</i><br>"
+                                      "<i>fish://username@my.server.org/sub/folder</i>"));
 
     d->importBtn = new QPushButton(i18n("Select Source Location..."), this);
     d->importBtn->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
-    d->srcLabel  = new DAdjustableLabel(this);
-    d->srcLabel->setAdjustedText(i18n("no source selected"));
-    QFont fnt;
-    fnt.setItalic(true);
-    d->srcLabel->setFont(fnt);
 
     // Setup image list
 
@@ -90,26 +105,30 @@ FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const ifac
 
     QGridLayout* const grid = new QGridLayout(this);
 
-    grid->addWidget(d->importBtn,       0, 0, 1, 1);
-    grid->addWidget(d->srcLabel,        1, 0, 1, 1);
-    grid->addWidget(d->imageList,       2, 0, 4, 1);
+    grid->addWidget(label,              0, 0, 1, 1);
+    grid->addWidget(d->sourceCombo,     1, 0, 1, 1);
+    grid->addWidget(d->importBtn,       2, 0, 1, 1);
+    grid->addWidget(d->imageList,       3, 0, 4, 1);
 
-    grid->addWidget(vline1,             0, 1, 3, 1);
-    grid->addWidget(arrow,              3, 1, 1, 1);
-    grid->addWidget(vline2,             4, 1, 2, 1);
+    grid->addWidget(vline1,             0, 1, 4, 1);
+    grid->addWidget(arrow,              4, 1, 1, 1);
+    grid->addWidget(vline2,             5, 1, 2, 1);
 
     grid->addWidget(uploadLabel,        0, 2, 1, 1);
-    grid->addWidget(d->uploadWidget,    1, 2, 5, 1);
+    grid->addWidget(d->uploadWidget,    1, 2, 6, 1);
 
     grid->setSpacing(layoutSpacing());
     grid->setContentsMargins(QMargins(0, 0, 0, 0));
-    grid->setRowStretch(2, 10);
-    grid->setRowStretch(4, 10);
+    grid->setRowStretch(3, 10);
+    grid->setRowStretch(5, 10);
     grid->setColumnStretch(0, 10);
     grid->setColumnStretch(2, 10);
 
     connect(d->importBtn, SIGNAL(clicked(bool)),
             this, SLOT(slotShowImportDialogClicked(bool)));
+
+    connect(d->sourceCombo, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLabelUrlChanged()));
 }
 
 FTImportWidget::~FTImportWidget()
@@ -117,30 +136,78 @@ FTImportWidget::~FTImportWidget()
     delete d;
 }
 
+QUrl FTImportWidget::sourceUrl() const
+{
+    return d->sourceUrl;
+}
+
+QList<QUrl> FTImportWidget::history() const
+{
+    QList<QUrl> urls;
+
+    for (int i = 0 ; i <= d->sourceCombo->comboBox()->count() ; ++i)
+    {
+        urls << QUrl(d->sourceCombo->comboBox()->itemText(i));
+    }
+
+    return urls;
+}
+
+void FTImportWidget::setHistory(const QList<QUrl>& urls)
+{
+    d->sourceCombo->comboBox()->clear();
+
+    for (const QUrl& url : std::as_const(urls))
+    {
+        d->sourceCombo->comboBox()->addUrl(url);
+    }
+}
+
+void FTImportWidget::setSourceUrl(const QUrl& url)
+{
+    d->sourceUrl = url;
+    updateSourceLabel();
+}
+
 void FTImportWidget::slotShowImportDialogClicked(bool checked)
 {
     Q_UNUSED(checked);
 
-    // TODO : store and restore previous session url from rc file
+    QPointer<DFileDialog> sourceDialog = new DFileDialog(this, i18nc("@title:window", "Select Source Location..."),
+                                                         d->sourceUrl.toString(), i18n("All Files (*)"));
+    sourceDialog->setAcceptMode(QFileDialog::AcceptSave);
+    sourceDialog->setFileMode(QFileDialog::Directory);
+    sourceDialog->setOptions(QFileDialog::ShowDirsOnly);
+    sourceDialog->exec();
 
-    QPointer<DFileDialog> importDlg = new DFileDialog(this, i18nc("@title:window", "Select Items to Import..."),
-                                                      QString(),
-                                                      i18n("All Files (*)"));
-    importDlg->setAcceptMode(QFileDialog::AcceptOpen);
-    importDlg->setFileMode(QFileDialog::ExistingFiles);
-    importDlg->exec();
-
-    if (importDlg->hasAcceptedUrls())
+    if (sourceDialog->hasAcceptedUrls())
     {
-        d->imageList->slotAddImages(importDlg->selectedUrls());
-        d->srcLabel->setAdjustedText(importDlg->selectedUrls().first().adjusted(QUrl::RemoveFilename        |
-                                                                                QUrl::NormalizePathSegments |
-                                                                                QUrl::RemoveFragment        |
-                                                                                QUrl::RemoveUserInfo
-                                                                               ).toString());
+        d->sourceUrl = sourceDialog->selectedUrls().constFirst();
+        updateSourceLabel();
     }
 
-    delete importDlg;
+    delete sourceDialog;
+}
+
+void FTImportWidget::updateSourceLabel()
+{
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Call for url "
+                                     << d->sourceUrl.toDisplayString()
+                                     << ", valid = "
+                                     << d->sourceUrl.isValid();
+
+    QString urlString = i18n("<i>not selected</i>");
+
+    if (d->sourceUrl.isValid())
+    {
+        urlString = d->sourceUrl.toDisplayString();
+        d->sourceCombo->setUrl(QUrl(urlString));
+    }
+}
+
+void FTImportWidget::slotLabelUrlChanged()
+{
+    d->sourceUrl = d->sourceCombo->url();
 }
 
 DItemsList* FTImportWidget::imagesList() const

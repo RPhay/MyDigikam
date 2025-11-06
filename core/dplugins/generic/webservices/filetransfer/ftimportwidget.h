@@ -53,6 +53,19 @@ public:
     ~FTImportWidget() override;
 
     /**
+     * Returns the currently selected source url. Maybe invalid.
+     */
+    QUrl sourceUrl()         const;
+
+    /**
+     * Sets the source url this widget should point at.
+     */
+    void setSourceUrl(const QUrl& url);
+
+    QList<QUrl> history()    const;
+    void setHistory(const QList<QUrl>& urls);
+
+    /**
      * Returns the current list of source urls to import contained in the
      * image list.
      *
@@ -76,7 +89,12 @@ public:
 
 private Q_SLOTS:
 
+    void slotLabelUrlChanged();
     void slotShowImportDialogClicked(bool);
+
+private:
+
+    void updateSourceLabel();
 
 private:
 

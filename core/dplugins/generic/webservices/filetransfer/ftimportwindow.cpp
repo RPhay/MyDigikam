@@ -20,9 +20,12 @@
 #include <QAction>
 #include <QMenu>
 #include <QMessageBox>
+#include <QCloseEvent>
 
 // KDE includes
 
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 #include <kio/job.h>
 #include <kio/copyjob.h>
 #include <klocalizedstring.h>
@@ -41,6 +44,12 @@ class Q_DECL_HIDDEN FTImportWindow::Private
 public:
 
     Private() = default;
+
+public:
+
+    const QString SOURCE_URL_PROPERTY   = QLatin1String("sourceUrl");
+    const QString HISTORY_URL_PROPERTY  = QLatin1String("historyUrls");
+    const QString CONFIG_GROUP          = QLatin1String("KioImport");
 
 public:
 
@@ -77,12 +86,27 @@ FTImportWindow::FTImportWindow(DInfoInterface* const iface, QWidget* const /*par
     connect(d->iface, SIGNAL(signalUploadUrlChanged()),
             this, SLOT(slotSourceAndTargetUpdated()));
 
+    // -- initial sync ------------------------------------------------------
+
+    restoreSettings();
+
     slotSourceAndTargetUpdated();
 }
 
 FTImportWindow::~FTImportWindow()
 {
     delete d;
+}
+
+void FTImportWindow::closeEvent(QCloseEvent* e)
+{
+    if (!e)
+    {
+        return;
+    }
+
+    saveSettings();
+    e->accept();
 }
 
 void FTImportWindow::slotImport()
@@ -138,6 +162,8 @@ void FTImportWindow::slotCopyingFinished(KJob* job)
                                       "and are still in the list. "
                                       "You can retry to import these images now."));
     }
+
+    saveSettings();
 }
 
 void FTImportWindow::slotSourceAndTargetUpdated()
@@ -149,6 +175,22 @@ void FTImportWindow::slotSourceAndTargetUpdated()
                                      << hasUrlToImport << ", hasTarget = " << hasTarget;
 
     startButton()->setEnabled(hasUrlToImport && hasTarget);
+}
+
+void FTImportWindow::restoreSettings()
+{
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(d->CONFIG_GROUP);
+    d->importWidget->setHistory(group.readEntry(d->HISTORY_URL_PROPERTY, QList<QUrl>()));
+    d->importWidget->setSourceUrl(group.readEntry(d->SOURCE_URL_PROPERTY, QUrl()));
+}
+
+void FTImportWindow::saveSettings()
+{
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(d->CONFIG_GROUP);
+    group.writeEntry(d->HISTORY_URL_PROPERTY, d->importWidget->history());
+    group.writeEntry(d->SOURCE_URL_PROPERTY,  d->importWidget->sourceUrl().url());
 }
 
 } // namespace DigikamGenericFileTransferPlugin

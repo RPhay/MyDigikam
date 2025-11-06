@@ -97,7 +97,7 @@ private Q_SLOTS:
 
     void slotFinished();
 
-protected:
+private:
 
     /**
      * Handle Close event from dialog title bar.
