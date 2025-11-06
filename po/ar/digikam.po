@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 02:10+0000\n"
-"PO-Revision-Date: 2025-10-30 12:02+0400\n"
+"PO-Revision-Date: 2025-11-05 18:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -22641,8 +22641,7 @@ msgid "Use the album path of the items in the target"
 msgstr "استخدم مسار الألبوم للعناصر في الهدف"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
 msgstr "اضبط خصائص الصورة"
 
@@ -22740,8 +22739,7 @@ msgid "Export to local storage..."
 msgstr "صدّر إلى التخزين المحلي..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Target Location: "
 msgstr "المكان الهدف: "
 
@@ -22755,12 +22753,13 @@ msgstr ""
 "«دولفين» أو «كنكر»، مثل ftp://my.server.org/sub/folder."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Select export location..."
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "اختر موقع التصدير..."
+msgstr ""
+"اختر موقع \n"
+"التصدير..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, kde-format
@@ -22892,20 +22891,16 @@ msgstr ""
 "<br><br>يمكن استخدام العديد من البروتوكولات، مثل FTP، SFTP، SAMBA، إلخ."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "صدّر إلى تخزين خارجيّ"
+msgstr "صدّر إلى تخزين خارجيّ..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "استورد من تخزين خارجيّ"
+msgstr "استورد من تخزين خارجيّ..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -26077,37 +26072,29 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "xdotcom"
-msgstr ""
+msgstr "xdotcom"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to export to Twitter web-service"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to x.com (aka Twitter) web-service"
-msgstr "أداة للتصدير إلى خدمة الويب Twitter"
+msgstr "أداة للتصدير إلى خدمة الويب x.com (المعروفة بتويتر سابقًا)"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Twitter web-service.<br><br>See "
-#| "Twitter web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to x.com (aka Twitter) web-service."
 "<br><br>See Twitter web site for details: %1"
 msgstr ""
-"تسمح هذه الأداة للمستخدمين بتصدير العناصر إلى خدمة الوب Twitter.<br><br>اطلع "
-"على موقع Twitter لمزيد من التفاصيل: %1"
+"تسمح هذه الأداة للمستخدمين بتصدير العناصر إلى خدمة الوب x.com (المعروفة "
+"بتويتر سابقًا).<br><br>اطلع على موقع Twitter لمزيد من التفاصيل: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Twitter..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to x.com (aka &Twitter)..."
-msgstr "صدّر إلى &Twitter..."
+msgstr "&صدّر إلى x.com (المعروفة بتويتر سابقًا)..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
@@ -26136,12 +26123,10 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "فشل في إنشاء تغريدة للصورة التي رُفعت"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to x.com (aka Twitter)"
-msgstr "صدّر إلى Twitter"
+msgstr "صدّر إلى  x.com (المعروفة بتويتر سابقًا)"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
 #, kde-format
@@ -47010,12 +46995,10 @@ msgid "Macao"
 msgstr "ماكاو"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Macedonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "North Macedonia"
-msgstr "مقدونيا"
+msgstr "مقدونيا الشمالية"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
 #, kde-format

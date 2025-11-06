@@ -22089,7 +22089,7 @@ msgstr "使用目标项目的相册路径"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
 msgid "Adjust Image Properties"
-msgstr ""
+msgstr "调整图像属性"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #, kde-format
@@ -22186,7 +22186,7 @@ msgstr "导出到本地存储..."
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
 #, kde-format
 msgid "Target Location: "
-msgstr ""
+msgstr "目标位置："
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
@@ -22202,7 +22202,7 @@ msgstr ""
 msgid ""
 "Select export\n"
 "location..."
-msgstr ""
+msgstr "选择导出位置..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
 #, kde-format
@@ -22246,29 +22246,25 @@ msgid ""
 msgstr "部分图像未能传输。它们仍在列表中，您可以马上重新尝试导出这些图像。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "选择导入位置..."
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No script selected"
+#, kde-format
 msgid "no source selected"
-msgstr "未选择脚本"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "要上传到指定目标位置的图像列表。"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "目标路径："
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format
@@ -22333,13 +22329,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr ""
+msgstr "导出到远程存储..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr ""
+msgstr "从远程存储中导入..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -66047,6 +66043,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "This is the list of images to import into the current album."
-#~ msgstr "要导入至当前相册的图像列表。"
