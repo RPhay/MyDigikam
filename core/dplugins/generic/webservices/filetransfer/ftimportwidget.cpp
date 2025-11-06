@@ -173,20 +173,19 @@ void FTImportWidget::slotShowImportDialogClicked(bool checked)
 {
     Q_UNUSED(checked);
 
-    QPointer<DFileDialog> sourceDialog = new DFileDialog(this, i18nc("@title:window", "Select Source Location..."),
-                                                         d->sourceUrl.toString(), i18n("All Files (*)"));
-    sourceDialog->setAcceptMode(QFileDialog::AcceptSave);
-    sourceDialog->setFileMode(QFileDialog::Directory);
-    sourceDialog->setOptions(QFileDialog::ShowDirsOnly);
-    sourceDialog->exec();
+    QPointer<DFileDialog> importDlg = new DFileDialog(this, i18nc("@title:window", "Select Items to Import..."),
+                                                      QString(),
+                                                      i18n("All Files (*)"));
+    importDlg->setAcceptMode(QFileDialog::AcceptOpen);
+    importDlg->setFileMode(QFileDialog::ExistingFiles);
+    importDlg->exec();
 
-    if (sourceDialog->hasAcceptedUrls())
+    if (importDlg->hasAcceptedUrls())
     {
-        d->sourceUrl = sourceDialog->selectedUrls().constFirst();
-        updateSourceLabel();
+        d->imageList->slotAddImages(importDlg->selectedUrls());
     }
 
-    delete sourceDialog;
+    delete importDlg;
 }
 
 void FTImportWidget::updateSourceLabel()
