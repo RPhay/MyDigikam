@@ -62,11 +62,13 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
     QVariant imageWidth  = findValueFirstMatch(QStringList()
                                                << QLatin1String("File.File.Image.ImageWidth")
                                                << QLatin1String("EXIF.IFD0.Image.ImageWidth")
+                                               << QLatin1String("EXIF.SubIFD1.Image.ImageWidth")
     );
 
     QVariant imageHeight = findValueFirstMatch(QStringList()
                                                << QLatin1String("File.File.Image.ImageHeight")
                                                << QLatin1String("EXIF.IFD0.Image.ImageHeight")
+                                               << QLatin1String("EXIF.SubIFD1.Image.ImageHeight")
     );
 
     setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));

@@ -65,6 +65,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
                                      QStringList()
                                      << QLatin1String("MakerNotes.Nikon.Camera.AFImageWidth")
                                      << QLatin1String("EXIF.ExifIFD.Image.ExifImageWidth")
+                                     << QLatin1String("EXIF.SubIFD1.Image.ImageWidth")
                                      << QLatin1String("File.File.Image.ImageWidth")
                                     );
 
@@ -72,6 +73,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
                                       QStringList()
                                       << QLatin1String("MakerNotes.Nikon.Camera.AFImageHeight")
                                       << QLatin1String("EXIF.ExifIFD.Image.ExifImageHeight")
+                                      << QLatin1String("EXIF.SubIFD1.Image.ImageHeight")
                                       << QLatin1String("File.File.Image.ImageHeight")
                                      );
 
