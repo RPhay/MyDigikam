@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -24526,7 +24526,7 @@ msgid "Export to Local Storage"
 msgstr "Unesi sa skenera..."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, fuzzy, kde-format
 #| msgid "Start: "
 msgctxt "@action:button"
@@ -24534,7 +24534,7 @@ msgid "Start Export"
 msgstr "Početak: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, fuzzy, kde-format
 #| msgid "Align text to the left"
 msgctxt "@info:tooltip, button"
@@ -24612,57 +24612,57 @@ msgstr "Prikaži komentar slike"
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, fuzzy, kde-format
 msgid ""
 "Select export\n"
 "location..."
 msgstr "Geolokacija"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Select None"
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "Bez izbora"
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "Geolokacija"
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
 msgstr "Sve datoteke"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "No script selected"
 msgid "<i>not selected</i>"
 msgstr "Nije odabrana skripta"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgid "This is the list of images to upload to the specified target."
 msgstr "Ovo je lista slika za grupnu obradu."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Unesi sa skenera..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, fuzzy, kde-format
 #| msgid "Slideshow Usage"
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Iskoristivost projekcije slajdova"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -73702,6 +73702,12 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgid "Select None"
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "Bez izbora"
 
 #, fuzzy
 #~| msgid "This is the list of images to batch process."

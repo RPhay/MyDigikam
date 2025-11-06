@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -22272,7 +22272,7 @@ msgid "Export to Local Storage"
 msgstr "पूर्वावलोकन..."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "enfuse settings"
 #| msgid "Exposure:"
@@ -22281,7 +22281,7 @@ msgid "Start Export"
 msgstr "उद्भासन:"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@info:tooltip, button"
@@ -22358,10 +22358,11 @@ msgstr "अनुशीर्षक"
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid ""
@@ -22369,44 +22370,44 @@ msgid ""
 "location..."
 msgstr "रँग"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Settings"
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "जमावट"
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "रँग"
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, fuzzy, kde-format
 #| msgid "Preview..."
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "पूर्वावलोकन..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "कैलेंडर"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -66127,6 +66128,12 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "जमावट"
 
 #, fuzzy
 #~| msgid "Preview..."

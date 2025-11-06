@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -23499,7 +23499,7 @@ msgid "Export to Local Storage"
 msgstr "로컬 저장소로 내보내기"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, fuzzy, kde-format
 #| msgid "Start export"
 msgctxt "@action:button"
@@ -23507,7 +23507,7 @@ msgid "Start Export"
 msgstr "내보내기 시작"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, fuzzy, kde-format
 #| msgid "Start export to the specified target"
 msgctxt "@info:tooltip, button"
@@ -23581,15 +23581,19 @@ msgid "Target Location: "
 msgstr "대상 위치: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "이미지를 업로드할 대상 주소를 설정합니다. Dolphin이나 Konqueror에서 사용할 "
 "수 있는 주소를 입력할 수 있습니다. 예: ftp://my.server.org/sub/folder"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Select export location..."
 msgid ""
@@ -23597,45 +23601,45 @@ msgid ""
 "location..."
 msgstr "내보낼 위치 선택..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Select target..."
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "대상 선택..."
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "가져올 위치 선택..."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "모든 파일 (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "<not selected>"
 msgid "<i>not selected</i>"
 msgstr "<선택하지 않음>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "지정한 대상 위치로 업로드할 사진 목록입니다."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, fuzzy, kde-format
 #| msgid "Export to Remote Storage"
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "원격 저장소로 내보내기"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, fuzzy, kde-format
 #| msgid "Upload not completed"
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "업로드 완료되지 않음"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -69532,6 +69536,12 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "최근 태그"
+
+#, fuzzy
+#~| msgid "Select target..."
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "대상 선택..."
 
 #~ msgid "This is the list of images to import into the current album."
 #~ msgstr "현재 앨범으로 가져올 수 있는 이미지 목록입니다."

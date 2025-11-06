@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -22899,7 +22899,7 @@ msgid "Export to Local Storage"
 msgstr "Exportovať do miestneho úložiska"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, fuzzy, kde-format
 #| msgid "Start export"
 msgctxt "@action:button"
@@ -22907,7 +22907,7 @@ msgid "Start Export"
 msgstr "Spustiť export"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, fuzzy, kde-format
 #| msgid "Start export to the specified target"
 msgctxt "@info:tooltip, button"
@@ -22982,16 +22982,20 @@ msgid "Target Location: "
 msgstr "Cieľové umiestnenie: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Nastavuje cieľovú adresu pre odosielané obrázky. Môže to byť adresa aká sa "
 "používa v Dolphine alebo Konquerori, napr. ftp://moj.server.org/pod/"
 "priecinok."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Select export location..."
 msgid ""
@@ -22999,44 +23003,44 @@ msgid ""
 "location..."
 msgstr "Vyberte umiestnenie, kam sa bude exportovať..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Select target..."
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "Vyberte cieľ..."
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "Vyberte umiestnenie, z ktorého sa bude importovať..."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "Všetky súbory (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>nevybraný</i>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, fuzzy, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, fuzzy, kde-format
 #| msgid "Export to Remote Storage"
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Exportovať do vzdialeného úložiska"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, fuzzy, kde-format
 #| msgid "Upload not completed"
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Odosielanie nebolo dokončené"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -70453,6 +70457,12 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#, fuzzy
+#~| msgid "Select target..."
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "Vyberte cieľ..."
 
 #~ msgid "This is the list of images to import into the current album."
 #~ msgstr ""

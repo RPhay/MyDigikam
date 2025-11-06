@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -21498,14 +21498,14 @@ msgid "Export to Local Storage"
 msgstr "ლოკალურ საცავზე გატანა"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "გატანის დაწყება"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
@@ -21573,16 +21573,20 @@ msgid "Target Location: "
 msgstr "სამიზნე მდებარეობა: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "დააყენეთ სურათების ასატვირთი მდებარეობა. შეიძლება იყოს ნებისმიერი მისამართი, "
 "რომელიც Dophin-ში ან Konqueror-ში შეგიძლიათ, გამიყენოთ. მაგ: ftp://my.server."
 "org/sub/folder."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Select import location..."
 msgid ""
@@ -21590,41 +21594,42 @@ msgid ""
 "location..."
 msgstr "აირჩიეთ შემოტანის მდებარეობა..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "აირჩიეთ სამიზნე..."
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "აირჩიეთ შემოტანის მდებარეობა..."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "ყველა ფაილი (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>მონიშნული არაა</i>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "ეს სურათების სიაა, რომელიც მითითებულ ადგილას აიტვირთება."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "დაშორებულ საცავზე გატანა"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "ატვირთვა არ დასრულებულა"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -64268,6 +64273,10 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "აირჩიეთ სამიზნე..."
 
 #~ msgctxt "@action"
 #~ msgid "Export to remote storage..."

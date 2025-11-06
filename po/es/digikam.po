@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
-"PO-Revision-Date: 2025-11-05 00:00+0100\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"PO-Revision-Date: 2025-11-06 02:01+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23192,14 +23192,14 @@ msgid "Export to Local Storage"
 msgstr "Exportar a almacenamiento local"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Empezar exportación"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
@@ -23270,16 +23270,20 @@ msgid "Target Location: "
 msgstr "Ubicación de destino: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Define la dirección de destino a la que enviar imágenes. Puede ser cualquier "
 "dirección como las que usan Dolphin o Konqueror (por ejemplo, ftp://mi."
 "servidor.org/sub/carpeta)."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
 msgid ""
 "Select export\n"
@@ -23288,42 +23292,43 @@ msgstr ""
 "Seleccionar ubicación\n"
 "de exportación…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "Seleccionar destino…"
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+#| msgid "Select Source Location..."
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "Seleccionar la ubicación de la fuente…"
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos los archivos (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>no seleccionado</i>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "Esta es la lista de imágenes a enviar al destino indicado."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Exportar a almacenamiento remoto"
 
 # TODO - Una mejor de tooltip
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Envío no completado"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -23333,29 +23338,26 @@ msgstr ""
 "Puede volver a intentar la exportación de estas imágenes ahora."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Seleccionar la ubicación de importación…"
+msgstr "Seleccionar la ubicación de la fuente…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No script selected"
+#, kde-format
 msgid "no source selected"
-msgstr "Ningún programa seleccionado"
+msgstr "no se ha seleccionado ninguna fuente"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "Esta es la lista de elementos a copiar al destino indicado."
+msgstr ""
+"Esta es la lista de elementos fuente para importar en el destino indicado."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Ruta de destino:"
+msgstr "Seleccionar ubicación de destino:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
 #, kde-format
@@ -68821,5 +68823,6 @@ msgstr "Elementos del álbum"
 msgid "Import Items"
 msgstr "Elementos importados"
 
-#~ msgid "This is the list of images to import into the current album."
-#~ msgstr "Esta es la lista de imágenes a importar en el álbum actual."
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "Seleccionar destino…"

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -23258,14 +23258,14 @@ msgid "Export to Local Storage"
 msgstr "Eksporti al Loka konservejo"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Komenci Eksporton"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
@@ -23336,15 +23336,19 @@ msgid "Target Location: "
 msgstr "Cela loko:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Agordas la cel-adreson por alŝuti la bildojn. Ĉi tio povas esti ajna adreso "
 "kiel uzata en Dolphin aŭ Konqueror, ekz. ftp://my.server.org/sub/folder."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Select export location..."
 msgid ""
@@ -23352,41 +23356,42 @@ msgid ""
 "location..."
 msgstr "Elekti eksportlokon..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "Elekti Celon..."
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+#| msgid "Select import location..."
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "Elekti importlokon..."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "Ĉiuj dosieroj (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>ne elektita</i>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "Jen la listo de bildoj por alŝuti al la specifita celo."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Eksporti al Fora konservejo"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Alŝuto ne Finiĝis"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -68963,6 +68968,10 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "Elekti Celon..."
 
 #~ msgid "This is the list of images to import into the current album."
 #~ msgstr "Jen la listo de bildoj por importi en la nunan albumon."

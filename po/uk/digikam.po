@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-11-05 08:02+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -23299,14 +23299,14 @@ msgid "Export to Local Storage"
 msgstr "Експорт до локального сховища"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Почати експортування"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
@@ -23377,16 +23377,20 @@ msgid "Target Location: "
 msgstr "Адреса призначення: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Встановлює адресу призначення для вивантаження зображень. Адресою може бути "
 "будь-яка адреса з Dolphin або Konqueror, наприклад ftp://мій.сервер.org/під/"
 "тека."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
 msgid ""
 "Select export\n"
@@ -23395,41 +23399,42 @@ msgstr ""
 "Вибрати місце\n"
 "експортування…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "Виберіть призначення…"
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+#| msgid "Select Source Location..."
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "Вибрати розташування джерела…"
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr "усі файли (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>не позначено</i>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr "Це список зображень, які буде вивантажено за вказаною адресою."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Експорт до віддаленого сховища"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Вивантаження не завершено"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -69056,6 +69061,10 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "Виберіть призначення…"
 
 #~ msgid "This is the list of images to import into the current album."
 #~ msgstr "Це список зображень для імпортування до поточного альбому."

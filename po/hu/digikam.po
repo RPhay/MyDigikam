@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-10-19 21:02+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -22417,7 +22417,7 @@ msgid "Export to Local Storage"
 msgstr "Exportálás helyi tárolóba ..."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, fuzzy, kde-format
 #| msgid "Start import"
 msgctxt "@action:button"
@@ -22425,7 +22425,7 @@ msgid "Start Export"
 msgstr "Importálás elindítása"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
@@ -22496,10 +22496,11 @@ msgstr "Címke létrehozási hiba"
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Edit Geolocation..."
@@ -22508,30 +22509,31 @@ msgid ""
 "location..."
 msgstr "Földrajzi hely szerkesztése ..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Select Images"
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "Képek kijelölése"
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit Geolocation..."
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "Földrajzi hely szerkesztése ..."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, kde-format
 msgid "All Files (*)"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Export to remote storage..."
@@ -22539,14 +22541,14 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Exportálás távoli tárhelyre ..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, fuzzy, kde-format
 #| msgid "Upload to Camera"
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Feltöltés a fényképezőbe"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -67643,6 +67645,12 @@ msgstr "Album elemek"
 #, kde-format
 msgid "Import Items"
 msgstr "Elemek importálása"
+
+#, fuzzy
+#~| msgid "Select Images"
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "Képek kijelölése"
 
 #~ msgctxt "@action"
 #~ msgid "Export to remote storage..."

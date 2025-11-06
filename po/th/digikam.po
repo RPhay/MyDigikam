@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 02:10+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -23161,7 +23161,7 @@ msgid "Export to Local Storage"
 msgstr "นำเข้าภาพจากเครื่องสแกนภาพ..."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:90
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
 #, fuzzy, kde-format
 #| msgid "Start Index:"
 msgctxt "@action:button"
@@ -23169,7 +23169,7 @@ msgid "Start Export"
 msgstr "ลำดับเริ่มต้น:"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:91
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
 #, fuzzy, kde-format
 #| msgid "Save current selection to a new virtual Album"
 msgctxt "@info:tooltip, button"
@@ -23245,57 +23245,57 @@ msgstr "แสดงคำบรรยายภาพ"
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
-"used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+"used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, fuzzy, kde-format
 msgid ""
 "Select export\n"
 "location..."
 msgstr "แก้ไขคำบรรยายภาพ..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Select None"
-msgctxt "@title:window"
-msgid "Select Target..."
-msgstr "ไม่เลือกเลย"
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Target Location..."
+msgstr "แก้ไขคำบรรยายภาพ..."
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
 msgstr "แฟ้มทั้งหมด"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:173
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "No tags selected"
 msgid "<i>not selected</i>"
 msgstr "ยังไม่มีการเลือกป้ายกำกับใด ๆ"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgid "This is the list of images to upload to the specified target."
 msgstr "นี่เป็นรายการของภาพต่าง ๆ ที่จะถูกประมวลผลเป็นกลุ่ม"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:87
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "นำเข้าภาพจากเครื่องสแกนภาพ..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "ดาวน์โหลดเสร็จสมบูรณ์แล้ว..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -69778,6 +69778,12 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~| msgid "Select None"
+#~ msgctxt "@title:window"
+#~ msgid "Select Target..."
+#~ msgstr "ไม่เลือกเลย"
 
 #, fuzzy
 #~| msgid "This is the list of images to batch process."
