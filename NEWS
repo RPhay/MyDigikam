@@ -55,7 +55,7 @@ BUGFIXES:
 030 --> 511467 - Cannot see GPS metadata in HEIC photos.
 031 --> 511565 - Segfault during startup scanning.
 032 --> 511622 - Display focus rectangle for Nikon Z 5 ii pictures.
-033 -->
+033 --> 490711 - Improve usability of Kio slaves based tools.
 034 -->
 035 -->
 036 -->
