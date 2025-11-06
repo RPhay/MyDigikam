@@ -3,7 +3,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
 * RESUME
 
-    These scripts build a binary digiKam installer for Windows under Windows using VCPKG, MSVC tool-chain,
+    These scripts build a binary digiKam installer for Windows x86_64 under Windows using VCPKG, MSVC tool-chain,
     and NSIS application.
 
     These scripts follow instructions from Qt bundle deployment for Windows as shared libraries
@@ -16,7 +16,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 * DESCRIPTION
 
     These files and scripts are used to make binary installer of the digiKam
-    Software Collection for Windows 64 bits. In addition to this README,
+    Software Collection for Windows Intel 64 bits. In addition to this README,
     there are comments in the scripts that provide some additional explanations for
     how they work.
 
@@ -96,7 +96,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         + Install Msys/RSync and deps packages          MSys repo: https://repo.msys2.org/msys/x86_64/
         + target: git-bash/usr install directory        C:/Program Files/Git/usr/
 
-    - Visual Studio 2022                                https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
+    - Visual Studio 2022 or later                       https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
         + Desktop development with C++
             + C++ core desktop features
             + MSVC v143 - VS2022 C++ x64/x86
@@ -115,10 +115,6 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         + Install only C/C++ headers and libraries
         + Disable all others features                   Note: in 'Addition Tasks' step
         + Use default install path in C:/
-
-    - NVIDIA CUDA + cuDNN Sdks for Windows 10 64 bits Intel
-        + Install CUDA toolkit from https://developer.nvidia.com/cuda-downloads
-        + Install cuDNN toolkit from https://developer.nvidia.com/cudnn-downloads
 
 * BUILD
 
