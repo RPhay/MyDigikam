@@ -48,7 +48,7 @@ public:
 
 public:
 
-    KUrlComboRequester* targetLabel         = nullptr;
+    KUrlComboRequester* targetCombo         = nullptr;
     QPushButton*        targetSearchButton  = nullptr;
     QUrl                targetUrl;
 };
@@ -62,19 +62,20 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
     // Setup remote target selection
 
     QLabel* const label       = new QLabel(this);
-    d->targetLabel            = new KUrlComboRequester(this);
+    d->targetCombo            = new KUrlComboRequester(this);
 
-    if (d->targetLabel->button())
+    if (d->targetCombo->button())
     {
-        d->targetLabel->button()->hide();
+        d->targetCombo->button()->hide();
     }
 
-    d->targetLabel->comboBox()->setEditable(true);
+    d->targetCombo->comboBox()->setEditable(true);
 
     label->setText(i18n("Target Location: "));
-    d->targetLabel->setWhatsThis(i18n("Sets the target address to upload the images to. "
-                                      "This can be any address as used in your file-manager, "
-                                      "e.g. ftp://my.server.org/sub/folder."));
+    d->targetCombo->setWhatsThis(i18n("Sets the target address to upload the images to. "
+                                      "This can be any address as used in your file-manager, e.g:<br>"
+                                      "<i>ftp://my.server.org/sub/folder</i><br>"
+                                      "<i>fish://username@my.server.org/sub/folder</i>"));
 
     d->targetSearchButton     = new QPushButton(i18n("Select export\nlocation..."), this);
     d->targetSearchButton->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
@@ -84,7 +85,7 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
     layout->addWidget(label);
-    layout->addWidget(d->targetLabel);
+    layout->addWidget(d->targetCombo);
     layout->addWidget(d->targetSearchButton);
     layout->addStretch();
     layout->setSpacing(layoutSpacing());
@@ -95,7 +96,7 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
     connect(d->targetSearchButton, SIGNAL(clicked(bool)),
             this, SLOT(slotShowTargetDialogClicked(bool)));
 
-    connect(d->targetLabel, SIGNAL(textChanged(QString)),
+    connect(d->targetCombo, SIGNAL(textChanged(QString)),
             this, SLOT(slotLabelUrlChanged()));
 
     // ------------------------------------------------------------------------
@@ -117,9 +118,9 @@ QList<QUrl> FTExportWidget::history() const
 {
     QList<QUrl> urls;
 
-    for (int i = 0 ; i <= d->targetLabel->comboBox()->count() ; ++i)
+    for (int i = 0 ; i <= d->targetCombo->comboBox()->count() ; ++i)
     {
-        urls << QUrl(d->targetLabel->comboBox()->itemText(i));
+        urls << QUrl(d->targetCombo->comboBox()->itemText(i));
     }
 
     return urls;
@@ -127,11 +128,11 @@ QList<QUrl> FTExportWidget::history() const
 
 void FTExportWidget::setHistory(const QList<QUrl>& urls)
 {
-    d->targetLabel->comboBox()->clear();
+    d->targetCombo->comboBox()->clear();
 
     for (const QUrl& url : std::as_const(urls))
     {
-        d->targetLabel->comboBox()->addUrl(url);
+        d->targetCombo->comboBox()->addUrl(url);
     }
 }
 
@@ -175,13 +176,13 @@ void FTExportWidget::updateTargetLabel()
     if (d->targetUrl.isValid())
     {
         urlString = d->targetUrl.toDisplayString();
-        d->targetLabel->setUrl(QUrl(urlString));
+        d->targetCombo->setUrl(QUrl(urlString));
     }
 }
 
 void FTExportWidget::slotLabelUrlChanged()
 {
-    d->targetUrl = d->targetLabel->url();
+    d->targetUrl = d->targetCombo->url();
 
     Q_EMIT signalTargetUrlChanged(d->targetUrl);
 }
