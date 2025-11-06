@@ -109,7 +109,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
                                                       true
                                                      ).toStringList();
 
-        if (!afPointUsed.isEmpty())
+        if (!afPointUsed.isEmpty() && !afPointUsed.contains(QLatin1String("(none)")))
         {
             camIdx *= 4;
             ListAFPoints points;
