@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:04+0000\n"
-"PO-Revision-Date: 2025-11-05 08:02+0200\n"
+"PO-Revision-Date: 2025-11-06 15:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -23377,18 +23377,16 @@ msgid "Target Location: "
 msgstr "Адреса призначення: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Встановлює адресу призначення для вивантаження зображень. Адресою може бути "
-"будь-яка адреса з Dolphin або Konqueror, наприклад ftp://мій.сервер.org/під/"
-"тека."
+"будь-яка адреса з вашої програми для керування файлами, приклад:<br><i>ftp://"
+"my.server.org/sub/folder</i><br><i>fish://username@my.server.org/sub/folder</"
+"i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
@@ -23400,11 +23398,10 @@ msgstr ""
 "експортування…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Select Source Location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Вибрати розташування джерела…"
+msgstr "Вибрати адресу призначення…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
