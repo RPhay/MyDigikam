@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:04+0000\n"
-"PO-Revision-Date: 2025-11-05 10:32+0100\n"
+"PO-Revision-Date: 2025-11-06 12:12+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -23277,18 +23277,16 @@ msgid "Target Location: "
 msgstr "Doellocatie: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Stelt de doellocatie in waarnaar de afbeeldingen geüpload moeten worden. Dit "
-"kan elk adres zijn zoals dat in Dolphin of Konqueror wordt gebruikt, bijv. "
-"ftp://my.server.org/sub/folder."
+"kan elk adres zijn zoals dat in uw bestandsbeheerder wordt gebruikt, bijv.:"
+"<br><i>ftp://my.server.org/sub/folder</i><br><i>fish://username@my.server."
+"org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
@@ -23300,11 +23298,10 @@ msgstr ""
 "selecteren..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Select Source Location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Bronlocatie selecteren..."
+msgstr "Doellocatie selecteren..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128

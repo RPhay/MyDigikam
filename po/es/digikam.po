@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:04+0000\n"
-"PO-Revision-Date: 2025-11-06 02:01+0100\n"
+"PO-Revision-Date: 2025-11-06 11:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23270,18 +23270,16 @@ msgid "Target Location: "
 msgstr "Ubicación de destino: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Define la dirección de destino a la que enviar imágenes. Puede ser cualquier "
-"dirección como las que usan Dolphin o Konqueror (por ejemplo, ftp://mi."
-"servidor.org/sub/carpeta)."
+"dirección como las que usa el gestor de archivos, como:<br><i>ftp://mi."
+"servidor.org/sub/carpeta</i><br><i>fish://usuario@mi.servidor.org/sub/"
+"carpeta</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
@@ -23293,11 +23291,10 @@ msgstr ""
 "de exportación…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Select Source Location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Seleccionar la ubicación de la fuente…"
+msgstr "Seleccionar la ubicación de destino…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
@@ -68822,7 +68819,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Target..."
-#~ msgstr "Seleccionar destino…"

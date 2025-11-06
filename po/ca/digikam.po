@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:04+0000\n"
-"PO-Revision-Date: 2025-11-05 10:17+0100\n"
+"PO-Revision-Date: 2025-11-06 11:06+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -5471,8 +5471,8 @@ msgid ""
 "Check this if you want the watermark to use the given size of the font or "
 "the image without any adjustment to the actual image."
 msgstr ""
-"Marqueu això si voleu que la marca d'aigua usi la mida indicada del tipus de "
-"lletra o la imatge sense cap ajust a la imatge real."
+"Marqueu això si voleu que la marca d'aigua usi la mida indicada de la lletra "
+"o la imatge sense cap ajust a la imatge real."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:162
 #, kde-format
@@ -5563,18 +5563,17 @@ msgstr "Text de la marca d'aigua: "
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
 msgstr ""
-"Trieu el tipus i l'estil del tipus de lletra, la mida es calcularà "
-"automàticament."
+"Trieu el tipus i l'estil de la lletra, la mida es calcularà automàticament."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, kde-format
 msgid "Set the font color to use here."
-msgstr "Establiu aquí el color del tipus de lletra a emprar."
+msgstr "Establiu aquí el color de la lletra a emprar."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:266
 #, kde-format
 msgid "Font color: "
-msgstr "Color del tipus de lletra: "
+msgstr "Color de la lletra: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -8469,7 +8468,7 @@ msgstr "Introduïu aquí el text que voleu inserir en la imatge."
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:126
 #, kde-format
 msgid "Here you can choose the font to be used."
-msgstr "Aquí podeu seleccionar el tipus de lletra que s'usarà."
+msgstr "Aquí podeu seleccionar la lletra que s'usarà."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:139
 #, kde-format
@@ -8531,7 +8530,7 @@ msgstr "Color:"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:183
 #, kde-format
 msgid "Set here the font color to use."
-msgstr "Establiu aquí el color del tipus de lletra a emprar."
+msgstr "Establiu aquí el color de la lletra a emprar."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:187
 #, kde-format
@@ -16488,7 +16487,7 @@ msgstr "Relació entre imatge i text:"
 #: core/showfoto/setup/showfotosetuptooltip.cpp:86
 #, kde-format
 msgid "Font:"
-msgstr "Tipus de lletra:"
+msgstr "Lletra:"
 
 #. i18n: ectx: property (text), widget (QLabel, yearLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:206
@@ -19898,7 +19897,7 @@ msgstr "Mida del text:"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:244
 #, kde-format
 msgid "Font Family:"
-msgstr "Família del tipus de lletra:"
+msgstr "Família de la lletra:"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
@@ -21776,7 +21775,7 @@ msgstr "Aquest és un exemple de comentari..."
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:17
 #, kde-format
 msgid "Select Font..."
-msgstr "Seleccioneu el tipus de lletra..."
+msgstr "Seleccioneu la lletra..."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:35
@@ -21806,7 +21805,7 @@ msgstr "Opacitat del fons:"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:147
 #, kde-format
 msgid "Font color:"
-msgstr "Color del tipus de lletra:"
+msgstr "Color de la lletra:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:154
@@ -22430,14 +22429,14 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
 msgid "Caption font:"
-msgstr "Tipus de lletra de la llegenda:"
+msgstr "Lletra de la llegenda:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
 #, kde-format
 msgid "Select here the font used to display text in the slideshow."
 msgstr ""
-"Seleccioneu aquí el tipus de lletra emprada per a mostrar el text a la "
-"presentació de diapositives."
+"Seleccioneu aquí la lletra emprada per a mostrar el text a la presentació de "
+"diapositives."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
 #, kde-format
@@ -23267,18 +23266,15 @@ msgid "Target Location: "
 msgstr "Ubicació de la destinació: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Estableix l'adreça de la destinació a on pujar les imatges. Pot ser una "
-"adreça emprada en el Dolphin o el Konqueror, p. ex. ftp://elmeu.servidor.org/"
-"sub/carpeta."
+"adreça emprada en el gestor de fitxers, p. ex.:<br><i>ftp://my.server.org/"
+"sub/folder</i><br><i>fish://username@my.server.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
@@ -23290,11 +23286,10 @@ msgstr ""
 "de l'exportació..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Select Source Location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Seleccioneu la ubicació d'origen..."
+msgstr "Seleccioneu la ubicació de destinació..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
@@ -42772,15 +42767,15 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "On Screen Display Font:"
-msgstr "Tipus de lletra a la pantalla:"
+msgstr "Lletra a la visualització en pantalla:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
 msgstr ""
-"Seleccioneu aquí el tipus de lletra emprada per a mostrar el text a la "
-"visualització en pantalla."
+"Seleccioneu aquí la lletra emprada per a mostrar el text a la visualització "
+"en pantalla."
 
 #: core/libs/video/player/audplayerwdg.cpp:264
 #, kde-format
@@ -43000,19 +42995,19 @@ msgstr "Sense opcions disponibles"
 #, kde-format
 msgctxt "@title: font properties"
 msgid "Here you can choose the font to be used."
-msgstr "Aquí podeu seleccionar el tipus de lletra que s'usarà."
+msgstr "Aquí podeu seleccionar la lletra que s'usarà."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:241
 #, kde-format
 msgctxt "@title: font properties"
 msgid "Requested Font"
-msgstr "Tipus de lletra requerit"
+msgstr "Lletra requerida"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:261
 #, kde-format
 msgctxt "@title: font properties"
 msgid "Font"
-msgstr "Tipus de lletra"
+msgstr "Lletra"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:267
 #, kde-format
@@ -43020,25 +43015,25 @@ msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font family settings."
 msgstr ""
 "Marqueu aquesta casella de selecció per a canviar la configuració de la "
-"família del tipus de lletra."
+"família de la lletra."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:268
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Change font family?"
-msgstr "Canvio la família del tipus de lletra?"
+msgstr "Canvio la família de la lletra?"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:274
 #, kde-format
 msgctxt "@label: font properties"
 msgid "Font:"
-msgstr "Tipus de lletra:"
+msgstr "Lletra:"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:284
 #, kde-format
 msgctxt "@title: font properties"
 msgid "Font style"
-msgstr "Estil del tipus de lletra"
+msgstr "Estil de la lletra"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:290
 #, kde-format
@@ -43046,19 +43041,19 @@ msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font style settings."
 msgstr ""
 "Marqueu aquesta casella de selecció per a canviar la configuració de l'estil "
-"del tipus de lletra."
+"de la lletra."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:291
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Change font style?"
-msgstr "Canvio l'estil del tipus de lletra?"
+msgstr "Canvio l'estil de la lletra?"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:297
 #, kde-format
 msgctxt "@label: font properties"
 msgid "Font style:"
-msgstr "Estil del tipus de lletra:"
+msgstr "Estil de la lletra:"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:308
 #, kde-format
@@ -43072,13 +43067,13 @@ msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font size settings."
 msgstr ""
 "Marqueu aquesta casella de selecció per a canviar la configuració de la mida "
-"del tipus de lletra."
+"de la lletra."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:315
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Change font size?"
-msgstr "Canvio la mida del tipus de lletra?"
+msgstr "Canvio la mida de la lletra?"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:321
 #, kde-format
@@ -43090,13 +43085,13 @@ msgstr "Mida:"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font family to be used."
-msgstr "Aquí podeu seleccionar la família del tipus de lletra que s'usarà."
+msgstr "Aquí podeu seleccionar la família de la lletra que s'usarà."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:366
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font style to be used."
-msgstr "Aquí podeu seleccionar l'estil del tipus de lletra que s'usarà."
+msgstr "Aquí podeu seleccionar l'estil de la lletra que s'usarà."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:380
 #, kde-format
@@ -43138,7 +43133,7 @@ msgstr "Relativa"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Font size \"fixed\" or \"relative\" to environment"
-msgstr "Mida del tipus de lletra d'amplada «fixa» o «relativa» a l'entorn"
+msgstr "Mida de lletra d'amplada «fixa» o «relativa» a l'entorn"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:406
 #, kde-format
@@ -43148,15 +43143,15 @@ msgid ""
 "dynamically and adjusted to changing environment (e.g. widget dimensions, "
 "paper size)."
 msgstr ""
-"Aquí podeu canviar entre la mida del tipus de lletra d'amplada fixa i la "
-"mida del tipus de lletra calculable dinàmicament i ajustable a l'entorn "
-"canviant (p. ex. dimensions del giny, mida de paper)."
+"Aquí podeu canviar entre la mida de lletra d'amplada fixa i la mida de "
+"lletra calculable dinàmicament i ajustable a l'entorn canviant (p. ex. "
+"dimensions del giny, mida de paper)."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:431
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font size to be used."
-msgstr "Aquí podeu seleccionar la mida del tipus de lletra que s'usarà."
+msgstr "Aquí podeu seleccionar la mida de la lletra que s'usarà."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:472
 #, kde-format
@@ -43196,12 +43191,12 @@ msgstr "Obliqua"
 #: core/libs/widgets/fonts/dfontselect.cpp:74
 #, kde-format
 msgid "System Font"
-msgstr "Tipus de lletra del sistema"
+msgstr "Lletra del sistema"
 
 #: core/libs/widgets/fonts/dfontselect.cpp:75
 #, kde-format
 msgid "Custom Font"
-msgstr "Tipus de lletra personalitzat"
+msgstr "Lletra personalitzada"
 
 #: core/libs/widgets/fonts/dfontselect.cpp:77
 #, kde-format
@@ -43211,7 +43206,7 @@ msgstr "Tria..."
 #: core/libs/widgets/fonts/dfontselect.cpp:146
 #, kde-format
 msgid "Select a Font"
-msgstr "Seleccioneu un tipus de lletra"
+msgstr "Seleccioneu una lletra"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:187
 #, kde-format
@@ -44563,7 +44558,7 @@ msgstr "Informació de FlashPix"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:172
 #, kde-format
 msgid "Font Name Tags"
-msgstr "Etiquetes de nom del tipus de lletra"
+msgstr "Etiquetes de nom de lletra"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:176
 #, kde-format
@@ -50928,15 +50923,14 @@ msgstr "Usa el tema d'icones del sistema"
 #: core/utilities/setup/misc/setupmisc.cpp:295
 #, kde-format
 msgid "Application font:"
-msgstr "Tipus de lletra de l'aplicació:"
+msgstr "Lletra de l'aplicació:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:302
 #: core/utilities/setup/misc/setupmisc.cpp:296
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
-"Establiu aquí el tipus de lletra usat per a mostrar el text en tota "
-"l'aplicació."
+"Establiu aquí la lletra emprada per a mostrar el text en tota l'aplicació."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc.cpp:311
@@ -51023,8 +51017,7 @@ msgstr ""
 #, kde-format
 msgid "Select here the font used to display text in tooltips."
 msgstr ""
-"Establiu aquí el tipus de lletra usat per a mostrar el text en els consells "
-"d'eina."
+"Establiu aquí la lletra emprada per a mostrar el text en els consells d'eina."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:91
 #, kde-format
@@ -53274,7 +53267,7 @@ msgstr ""
 "la vista de carpetes i d'icones de l'àlbum, a la vista d'icones de la "
 "càmera, la llista de la cua per lots i a la barra de miniatures. Al diàleg "
 "de configuració del digiKam podreu personalitzar el contingut d'aquests "
-"consells d'eina i el tipus de lletra que empren.</p></qt>"
+"consells d'eina i la lletra que empren.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:40
 #, kde-format
@@ -64072,14 +64065,14 @@ msgstr "Seleccioneu l'acció a fer quan cliqueu a sobre d'una miniatura."
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
-msgstr "Tipus de lletra de la vista d'icones:"
+msgstr "Lletra de la vista d'icones:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:192
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
-"Seleccioneu aquí el tipus de lletra emprada per a mostrar el text a les "
-"vistes d'icones."
+"Seleccioneu aquí la lletra emprada per a mostrar el text a les vistes "
+"d'icones."
 
 #: core/utilities/setup/album/setupalbumview.cpp:194
 #, kde-format
@@ -64147,14 +64140,14 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
 msgid "Tree View font:"
-msgstr "Tipus de lletra de la vista en arbre:"
+msgstr "Lletra de la vista en arbre:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:259
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
-"Seleccioneu aquí el tipus de lletra emprada per a mostrar el text a les "
-"vistes en arbre."
+"Seleccioneu aquí la lletra emprada per a mostrar el text a les vistes en "
+"arbre."
 
 #: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
@@ -64930,8 +64923,8 @@ msgstr "Inicia l'editor d'imatges"
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr ""
-"Seleccioneu aquí el tipus de lletra emprada per a mostrar el text a les "
-"vistes d'icones."
+"Seleccioneu aquí la lletra emprada per a mostrar el text a les vistes "
+"d'icones."
 
 #: core/utilities/setup/camera/setupcamera.cpp:493
 #, kde-format
@@ -68489,14 +68482,13 @@ msgstr "Ja existeix una plantilla de metadades anomenada «%1»."
 #: core/utilities/setup/setuptooltip.cpp:133
 #, kde-format
 msgid "Tool-Tips Font:"
-msgstr "Tipus de lletra dels consells d'eina:"
+msgstr "Lletra dels consells d'eina:"
 
 #: core/utilities/setup/setuptooltip.cpp:134
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
 msgstr ""
-"Establiu aquí el tipus de lletra emprat per a mostrar el text en els "
-"consells d'eina."
+"Establiu aquí la lletra emprada per a mostrar el text en els consells d'eina."
 
 #: core/utilities/setup/setuptooltip.cpp:142
 #, kde-format
