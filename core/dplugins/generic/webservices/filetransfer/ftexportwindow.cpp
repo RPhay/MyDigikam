@@ -71,7 +71,7 @@ FTExportWindow::FTExportWindow(DInfoInterface* const iface, QWidget* const /*par
     d->imagesList->loadImagesFromCurrentSelection();
     d->imagesList->setAllowRAW(true);
     d->imagesList->listView()->setWhatsThis(i18n("This is the list of images to upload "
-                                                "to the specified target."));
+                                                 "to the specified target."));
 
     d->exportWidget         = new FTExportWidget(iface, page);
 
