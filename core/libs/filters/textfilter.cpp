@@ -36,12 +36,14 @@ public:
 public:
 
     QAction*       itemNameAction           = nullptr;
+    QAction*       itemPathAction           = nullptr;
     QAction*       itemTitleAction          = nullptr;
     QAction*       itemCommentAction        = nullptr;
     QAction*       tagNameAction            = nullptr;
     QAction*       albumNameAction          = nullptr;
     QAction*       itemAspectRatioAction    = nullptr;
     QAction*       itemPixelSizeAction      = nullptr;
+    QAction*       invertFilterAction       = nullptr;
     QAction*       clearAllAction           = nullptr;
     QAction*       selAllAction             = nullptr;
 
@@ -71,6 +73,8 @@ TextFilter::TextFilter(QWidget* const parent)
     d->optionsMenu           = new QMenu(d->optionsBtn);
     d->itemNameAction        = d->optionsMenu->addAction(i18n("Item Name"));
     d->itemNameAction->setCheckable(true);
+    d->itemPathAction        = d->optionsMenu->addAction(i18n("Item Path"));
+    d->itemPathAction->setCheckable(true);
     d->itemTitleAction       = d->optionsMenu->addAction(i18n("Item Title"));
     d->itemTitleAction->setCheckable(true);
     d->itemCommentAction     = d->optionsMenu->addAction(i18n("Item Comment"));
@@ -83,6 +87,9 @@ TextFilter::TextFilter(QWidget* const parent)
     d->itemAspectRatioAction->setCheckable(true);
     d->itemPixelSizeAction   = d->optionsMenu->addAction(i18n("Item Pixel Size"));
     d->itemPixelSizeAction->setCheckable(true);
+    d->optionsMenu->addSeparator();
+    d->invertFilterAction    = d->optionsMenu->addAction(i18n("Inverted Filter"));
+    d->invertFilterAction->setCheckable(true);
     d->optionsMenu->addSeparator();
     d->clearAllAction        = d->optionsMenu->addAction(i18n("Clear All"));
     d->clearAllAction->setCheckable(false);
@@ -117,6 +124,11 @@ SearchTextFilterSettings::TextFilterFields TextFilter::searchTextFields()
     if (d->itemNameAction->isChecked())
     {
         fields |= SearchTextFilterSettings::ImageName;
+    }
+
+    if (d->itemPathAction->isChecked())
+    {
+        fields |= SearchTextFilterSettings::ImagePath;
     }
 
     if (d->itemTitleAction->isChecked())
@@ -155,6 +167,7 @@ SearchTextFilterSettings::TextFilterFields TextFilter::searchTextFields()
 void TextFilter::setsearchTextFields(SearchTextFilterSettings::TextFilterFields fields)
 {
     d->itemNameAction->setChecked(fields & SearchTextFilterSettings::ImageName);
+    d->itemPathAction->setChecked(fields & SearchTextFilterSettings::ImagePath);
     d->itemTitleAction->setChecked(fields & SearchTextFilterSettings::ImageTitle);
     d->itemCommentAction->setChecked(fields & SearchTextFilterSettings::ImageComment);
     d->tagNameAction->setChecked(fields & SearchTextFilterSettings::TagName);
@@ -166,6 +179,7 @@ void TextFilter::setsearchTextFields(SearchTextFilterSettings::TextFilterFields 
 void TextFilter::checkMenuActions(bool checked)
 {
     d->itemNameAction->setChecked(checked);
+    d->itemPathAction->setChecked(checked);
     d->itemTitleAction->setChecked(checked);
     d->itemCommentAction->setChecked(checked);
     d->tagNameAction->setChecked(checked);
@@ -192,6 +206,7 @@ void TextFilter::slotSearchFieldsChanged(QAction* action)
 void TextFilter::slotSearchTextFieldsChanged()
 {
     SearchTextFilterSettings settings(d->searchTextBar->searchTextSettings());
+    settings.invert     = d->invertFilterAction->isChecked();
     settings.textFields = searchTextFields();
 
     Q_EMIT signalSearchTextFilterSettings(settings);
@@ -200,6 +215,7 @@ void TextFilter::slotSearchTextFieldsChanged()
 void TextFilter::reset()
 {
     d->searchTextBar->setText(QString());
+    d->invertFilterAction->setChecked(false);
     setsearchTextFields(SearchTextFilterSettings::All);
 }
 

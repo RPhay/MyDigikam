@@ -674,7 +674,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
     if (!m_textFilterSettings.text.isEmpty())
     {
-        bool textMatch = false;
+        bool textMatch = m_textFilterSettings.invert;
 
         QRegularExpression textRegExp(m_textFilterSettings.text);
 
@@ -691,7 +691,18 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
            )
         {
-            textMatch = true;
+            textMatch = !m_textFilterSettings.invert;
+        }
+
+        // Image path
+
+        if (
+            (m_textFilterSettings.textFields & SearchTextFilterSettings::ImagePath) &&
+            (textRegExp.match(info.filePath()).hasMatch()                           ||
+            info.filePath().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+           )
+        {
+            textMatch = !m_textFilterSettings.invert;
         }
 
         // Image title
@@ -702,7 +713,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
            )
         {
-            textMatch = true;
+            textMatch = !m_textFilterSettings.invert;
         }
 
         // Image comment
@@ -713,7 +724,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
            )
         {
-            textMatch = true;
+            textMatch = !m_textFilterSettings.invert;
         }
 
         // Tag names
@@ -728,7 +739,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                 m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
                )
             {
-                textMatch = true;
+                textMatch = !m_textFilterSettings.invert;
             }
         }
 
@@ -740,7 +751,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
            )
         {
-            textMatch = true;
+            textMatch = !m_textFilterSettings.invert;
         }
 
         // Image Aspect Ratio
@@ -774,7 +785,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
                         if (fabs(infoAspect - textAspect) < 0.01)
                         {
-                            textMatch = true;
+                            textMatch = !m_textFilterSettings.invert;
                         }
                     }
                 }
@@ -789,7 +800,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                 {
                     if (fabs(info.aspectRatio() - ratio) < 0.1)
                     {
-                        textMatch = true;
+                        textMatch = !m_textFilterSettings.invert;
                     }
                 }
             }
@@ -809,21 +820,21 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                      (pixelSize > (text.remove(0, 1)).toInt())
                     )
             {
-                textMatch = true;
+                textMatch = !m_textFilterSettings.invert;
             }
             else if (
                      text.contains(QRegularExpression(QLatin1String("^<\\d{1,15}$"))) &&
                      (pixelSize < (text.remove(0, 1)).toInt())
                     )
             {
-                textMatch = true;
+                textMatch = !m_textFilterSettings.invert;
             }
             else if (
                      text.contains(QRegularExpression(QLatin1String("^\\d+$"))) &&
                      (pixelSize == text.toInt())
                     )
             {
-                textMatch = true;
+                textMatch = !m_textFilterSettings.invert;
             }
         }
 
