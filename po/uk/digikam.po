@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-07 00:41+0000\n"
 "PO-Revision-Date: 2025-11-06 15:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -23404,12 +23404,13 @@ msgid "Select Target Location..."
 msgstr "Вибрати адресу призначення…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, kde-format
 msgid "All Files (*)"
 msgstr "усі файли (*)"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>не позначено</i>"
@@ -23441,59 +23442,76 @@ msgstr ""
 "залишаються у списку. Зараз ви можете спробувати повторити процедуру "
 "експортування."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
+#, fuzzy, kde-format
+#| msgid "Target Location: "
+msgid "Source Location: "
+msgstr "Адреса призначення: "
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+#| "i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgid ""
+"Sets the source address to download the images to. This can be any address "
+"as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgstr ""
+"Встановлює адресу призначення для вивантаження зображень. Адресою може бути "
+"будь-яка адреса з вашої програми для керування файлами, приклад:<br><i>ftp://"
+"my.server.org/sub/folder</i><br><i>fish://username@my.server.org/sub/folder</"
+"i>"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, kde-format
 msgid "Select Source Location..."
 msgstr "Вибрати розташування джерела…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, kde-format
-msgid "no source selected"
-msgstr "джерело не вибрано"
-
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
 #, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
 msgstr "Це список записів джерел для імпортування до вибраного призначення."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
 #, kde-format
 msgid "Select Destination Location:"
 msgstr "Виберіть розташування призначення:"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Виберіть записи для імпортування…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Імпорт з віддаленого сховища"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Почати імпорт"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:75
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr ""
 "Почати імпортування вказаних зображень до поточного позначеного альбому."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:160
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Імпортування не завершено"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:161
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -69058,6 +69076,9 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgid "no source selected"
+#~ msgstr "джерело не вибрано"
 
 #~ msgctxt "@title:window"
 #~ msgid "Select Target..."

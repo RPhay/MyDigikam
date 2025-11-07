@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-07 00:41+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -22056,12 +22056,13 @@ msgid "Select Target Location..."
 msgstr "Свабоднае паварочванне..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, kde-format
 msgid "All Files (*)"
 msgstr "Усе файлы (*)"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr ""
@@ -22090,63 +22091,71 @@ msgid ""
 "can retry to export these images now."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
+#, fuzzy, kde-format
+#| msgid "Target location: "
+msgid "Source Location: "
+msgstr "Мэтавае размяшчэнне: "
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
+#, kde-format
+msgid ""
+"Sets the source address to download the images to. This can be any address "
+"as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgstr ""
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Free Rotation..."
 msgid "Select Source Location..."
 msgstr "Свабоднае паварочванне..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No image selected"
-msgid "no source selected"
-msgstr "Выяў не абрана"
-
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
 #, fuzzy, kde-format
 #| msgid "This is the list of items that are about to be deleted."
 msgid ""
 "This is the list of source items to import into the selected destination."
 msgstr "Гэта спіс файлаў, што будуць выдаленыя."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
 #, fuzzy, kde-format
 #| msgid "Destination Path:"
 msgid "Select Destination Location:"
 msgstr "Мэтавы шлях:"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Пачаць імпартаванне"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:75
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:160
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:161
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -65110,6 +65119,11 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпарт"
+
+#, fuzzy
+#~| msgid "No image selected"
+#~ msgid "no source selected"
+#~ msgstr "Выяў не абрана"
 
 #~ msgctxt "@title:window"
 #~ msgid "Select Target..."

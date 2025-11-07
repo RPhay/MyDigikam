@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-07 00:41+0000\n"
 "PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -23211,13 +23211,14 @@ msgid "Select Target Location..."
 msgstr "Editatu epigrafeak..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
 msgstr "Fitxategi guztiak (*)"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, fuzzy, kde-format
 #| msgid "No tags selected"
 msgid "<i>not selected</i>"
@@ -23250,63 +23251,78 @@ msgstr ""
 "Irudietako batzuk ez dira transferitu eta oraindik zerrendan daude. Berriz "
 "saia zaitezke irudiok orain esportatzen."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
+#, fuzzy, kde-format
+#| msgid "Image Caption"
+msgid "Source Location: "
+msgstr "Jomuga kokalekua:"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+msgid ""
+"Sets the source address to download the images to. This can be any address "
+"as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgstr ""
+"Irudiak zama-igotzeko jomugako helbidea ezartzen du. Hau Dolphinen edo "
+"Konquerorren erabilitakoa bezalako edozein helbide izan daiteke, adib. ftp://"
+"nire.zerbitzaria.org/azpi/karpeta."
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, fuzzy, kde-format
 msgid "Select Source Location..."
 msgstr "Editatu epigrafeak..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-msgid "no source selected"
-msgstr "Ez da etiketarik hautatu"
-
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgid ""
 "This is the list of source items to import into the selected destination."
 msgstr "Irudien zerrenda da batch prozesuan lantzeko."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
 #, fuzzy, kde-format
 #| msgid "Destination Path:"
 msgid "Select Destination Location:"
 msgstr "Helburuaren bide-izena:"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Hautatu irudiak"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Inportatu urrutiko biltegitik"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:74
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Abiatu inportatzea"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:75
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "Hasi adierazitako irudiak unean hautatutako albumera inportatzen."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:160
 #, fuzzy, kde-format
 #| msgid "Imported comments"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Inportatzea ez da osatu"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:161
 #, fuzzy, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -70024,6 +70040,10 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#, fuzzy
+#~ msgid "no source selected"
+#~ msgstr "Ez da etiketarik hautatu"
 
 #, fuzzy
 #~| msgid "Select None"

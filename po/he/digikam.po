@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-07 00:41+0000\n"
 "PO-Revision-Date: 2025-09-06 10:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -22001,12 +22001,13 @@ msgid "Select Target Location..."
 msgstr "מיקום-גאוגרפי"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, fuzzy, kde-format
 msgid "All Files (*)"
 msgstr "כל הקבצים"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, fuzzy, kde-format
 msgid "<i>not selected</i>"
 msgstr "%1 תוויות נבחרו"
@@ -22035,62 +22036,69 @@ msgid ""
 "can retry to export these images now."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
+#, fuzzy, kde-format
+msgid "Source Location: "
+msgstr "כותרת תמונה"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
+#, kde-format
+msgid ""
+"Sets the source address to download the images to. This can be any address "
+"as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgstr ""
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, fuzzy, kde-format
 msgid "Select Source Location..."
 msgstr "מיקום-גאוגרפי"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No script selected"
-msgid "no source selected"
-msgstr "לא נבחר סקריפט"
-
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
 #, fuzzy, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
 msgstr "זוהי רשימת הפריטים שאמורים להימחק."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
 #, fuzzy, kde-format
 msgid "Select Destination Location:"
 msgstr "תיאור"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "בחירת תמונות"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:70
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "מידע על הרכיב"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:74
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "התחילו עורך תמונה"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:75
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "שינוי שם הקובץ המסומן"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:160
 #, fuzzy, kde-format
 #| msgid "Imported comments"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "הערות יובאו"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:161
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -65795,6 +65803,11 @@ msgstr "פריטי אלבום"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "סידור תמונות"
+
+#, fuzzy
+#~| msgid "No script selected"
+#~ msgid "no source selected"
+#~ msgstr "לא נבחר סקריפט"
 
 #, fuzzy
 #~ msgctxt "@title:window"

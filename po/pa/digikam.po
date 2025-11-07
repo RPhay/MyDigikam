@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-07 00:41+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -22945,13 +22945,14 @@ msgid "Select Target Location..."
 msgstr "ਚਿੱਤਰ ਸੁਰਖੀ ਸੋਧ"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
 msgstr "ਸਭ ਫਾਇਲਾਂ"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, fuzzy, kde-format
 #| msgid "No tags selected"
 msgid "<i>not selected</i>"
@@ -22983,62 +22984,71 @@ msgid ""
 "can retry to export these images now."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
+#, fuzzy, kde-format
+#| msgid "Show image caption"
+msgid "Source Location: "
+msgstr "ਤਸਵੀਰ ਸੁਰਖੀ ਵੇਖੋ"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
+#, kde-format
+msgid ""
+"Sets the source address to download the images to. This can be any address "
+"as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgstr ""
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, fuzzy, kde-format
 msgid "Select Source Location..."
 msgstr "ਚਿੱਤਰ ਸੁਰਖੀ ਸੋਧ"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-msgid "no source selected"
-msgstr "ਕੋਈ ਟੈਗ ਨਹੀਂ ਚੁਣਿਆ"
-
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
 #, fuzzy, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
 #, fuzzy, kde-format
 msgid "Select Destination Location:"
 msgstr "ਵੇਰਵਾ:"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "ਚਿੱਤਰ ਚੁਣੋ"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:70
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "...ਸਕੈਨਰ ਤੋਂ ਇੰਪੋਰਟ"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:74
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "ਚਿੱਤਰ ਐਡੀਟਰ ਚਲਾਓ"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:75
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "ਮੌਜੂਦਾ ਚੁਣੀ ਆਈਟਮ ਦਾ ਫਾਇਲ ਨਾਂ ਬਦਲੋ।"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:160
 #, fuzzy, kde-format
 #| msgid "Imported comments"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "ਟਿੱਪਣੀਆਂ ਇੰਪੋਰਟ ਕੀਤੀਆਂ"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:161
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -68705,6 +68715,10 @@ msgstr "ਐਲਬਮ ਆਈਟਮਾਂ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ(&S)"
+
+#, fuzzy
+#~ msgid "no source selected"
+#~ msgstr "ਕੋਈ ਟੈਗ ਨਹੀਂ ਚੁਣਿਆ"
 
 #, fuzzy
 #~| msgid "Select None"

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-07 00:41+0000\n"
 "PO-Revision-Date: 2025-10-19 21:02+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -22518,12 +22518,13 @@ msgid "Select Target Location..."
 msgstr "Földrajzi hely szerkesztése ..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, kde-format
 msgid "All Files (*)"
 msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr ""
@@ -22555,33 +22556,41 @@ msgid ""
 "can retry to export these images now."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
+#, fuzzy, kde-format
+#| msgid "Tag creation Error"
+msgid "Source Location: "
+msgstr "Címke létrehozási hiba"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
+#, kde-format
+msgid ""
+"Sets the source address to download the images to. This can be any address "
+"as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgstr ""
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Edit Geolocation..."
 msgid "Select Source Location..."
 msgstr "Földrajzi hely szerkesztése ..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "No script selected"
-msgid "no source selected"
-msgstr "Nincs szkript kiválasztva"
-
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgid ""
 "This is the list of source items to import into the selected destination."
 msgstr "A kötegelt feldolgozás képeinek listája."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
 #, fuzzy, kde-format
 #| msgid "Database connection test"
 msgid "Select Destination Location:"
 msgstr "Adatbázis kapcsolati teszt"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
@@ -22589,34 +22598,34 @@ msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Kép kijelölése feltöltéshez"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:70
 #, fuzzy, kde-format
 #| msgid "Import from Remote Storage"
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Importálás a távoli tárhelyről"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:74
 #, fuzzy, kde-format
 #| msgid "Start import"
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Importálás elindítása"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:75
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:160
 #, fuzzy, kde-format
 #| msgid "Import Tools"
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Import-eszközök"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:161
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -67645,6 +67654,11 @@ msgstr "Album elemek"
 #, kde-format
 msgid "Import Items"
 msgstr "Elemek importálása"
+
+#, fuzzy
+#~| msgid "No script selected"
+#~ msgid "no source selected"
+#~ msgstr "Nincs szkript kiválasztva"
 
 #, fuzzy
 #~| msgid "Select Images"

@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-07 00:41+0000\n"
 "PO-Revision-Date: 2025-11-06 12:12+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -23304,12 +23304,13 @@ msgid "Select Target Location..."
 msgstr "Doellocatie selecteren..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:128
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, kde-format
 msgid "All Files (*)"
 msgstr "Alle bestanden (*)"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, kde-format
 msgid "<i>not selected</i>"
 msgstr "<i>niet geselecteerd</i>"
@@ -23342,46 +23343,63 @@ msgstr ""
 "Enkele van de afbeeldingen zijn niet overgebracht en zijn nog steeds in de "
 "lijst. U kunt nu proberen deze alsnog over te brengen."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:58
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
+#, fuzzy, kde-format
+#| msgid "Target Location: "
+msgid "Source Location: "
+msgstr "Doellocatie: "
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the target address to upload the images to. This can be any address "
+#| "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+#| "i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgid ""
+"Sets the source address to download the images to. This can be any address "
+"as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
+msgstr ""
+"Stelt de doellocatie in waarnaar de afbeeldingen geüpload moeten worden. Dit "
+"kan elk adres zijn zoals dat in uw bestandsbeheerder wordt gebruikt, bijv.:"
+"<br><i>ftp://my.server.org/sub/folder</i><br><i>fish://username@my.server."
+"org/sub/folder</i>"
+
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, kde-format
 msgid "Select Source Location..."
 msgstr "Bronlocatie selecteren..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:61
-#, kde-format
-msgid "no source selected"
-msgstr "geen bron geselecteerd"
-
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
 #, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
 msgstr "Dit is de lijst met te kopiëren bronitems naar het geselecteerde doel."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:86
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
 #, kde-format
 msgid "Select Destination Location:"
 msgstr "Bestemmingslocatie selecteren:"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:126
+#: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Te importeren items selecteren..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:61
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Uit opslag op afstand importeren"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:65
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Importeren starten"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:66
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:75
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
@@ -23389,13 +23407,13 @@ msgstr ""
 "Importeren van de gespecificeerde afbeeldingen starten naar het huidige "
 "geselecteerde album."
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:136
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:160
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Importeren niet compleet"
 
-#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:137
+#: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:161
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -68714,6 +68732,9 @@ msgstr "Album-items"
 #, kde-format
 msgid "Import Items"
 msgstr "Items importeren"
+
+#~ msgid "no source selected"
+#~ msgstr "geen bron geselecteerd"
 
 #~ msgctxt "@title:window"
 #~ msgid "Select Target..."
