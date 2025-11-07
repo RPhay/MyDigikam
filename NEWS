@@ -61,7 +61,7 @@ BUGFIXES:
 036 --> 479371 - Problems connecting to a drive.
 037 --> 510415 - Exiftool path cannot be configured.
 038 --> 511693 - Filters on right side - text filter for PATH.
-039 --> 
+039 --> 511761 - Face recognition launched when one face confirmed.
 040 --> 
 041 --> 
 042 --> 
