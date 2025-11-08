@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -35122,12 +35122,12 @@ msgstr "'Mazāks nekā' vai 'vienāds ar' nosacījums"
 msgid "Exclude Items Without Rating"
 msgstr "Neiekļaut attēlus bez vērtējuma"
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "Ātrais teksta filtrs (meklēšana)"
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, fuzzy, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
@@ -35136,57 +35136,67 @@ msgstr ""
 "Ievadiet teksta paraugu, lai ātri filtrētu šo skatu pēc failu nosaukumiem, "
 "aprakstiem (komentāriem) un tagiem"
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, fuzzy, kde-format
 msgid "Text Search Fields"
 msgstr "Manas meklēšanas"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, kde-format
 msgid "Item Name"
 msgstr "Faila nosaukumā"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+msgid "Item Path"
+msgstr "Rādīt attēla faila nosaukumu"
+
+#: core/libs/filters/textfilter.cpp:78
 #, kde-format
 msgid "Item Title"
 msgstr "Nosaukumā"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, kde-format
 msgid "Item Comment"
 msgstr "Komentārā"
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "Taga nosaukumā"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, kde-format
 msgid "Album Name"
 msgstr "Albuma nosaukumā"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Malu attiecībā"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, kde-format
 msgid "Item Pixel Size"
 msgstr "Pikseļa izmērā"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+msgid "Inverted Filter"
+msgstr "Infrasarkanā filma..."
+
+#: core/libs/filters/textfilter.cpp:94
 #, kde-format
 msgid "Clear All"
 msgstr "Notīrīt visu"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "Atlasīt visus"

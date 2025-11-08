@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -36338,12 +36338,12 @@ msgstr "Condición menor ou igual que"
 msgid "Exclude Items Without Rating"
 msgstr "Excluír os elementos sen cualificación"
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "Filtro rápido de texto (busca)"
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
@@ -36352,57 +36352,69 @@ msgstr ""
 "Insira padróns de busca para filtrar rapidamente esta vista segundo os "
 "nomes, lendas (comentarios) e etiquetas dos elementos."
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, kde-format
 msgid "Text Search Fields"
 msgstr "Campos de busca de texto"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr "Define os campos nos que buscar o texto."
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, kde-format
 msgid "Item Name"
 msgstr "Nome do elemento"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+#| msgid "Item date"
+msgid "Item Path"
+msgstr "Data do elemento"
+
+#: core/libs/filters/textfilter.cpp:78
 #, kde-format
 msgid "Item Title"
 msgstr "Título do elemento"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, kde-format
 msgid "Item Comment"
 msgstr "Comentario do elemento"
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "Nome da etiqueta"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, kde-format
 msgid "Album Name"
 msgstr "Nome do álbum"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Proporcións do elemento"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, kde-format
 msgid "Item Pixel Size"
 msgstr "Tamaño do elemento en píxeles"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+#| msgid "Infrared Filter"
+msgid "Inverted Filter"
+msgstr "Filtro de infravermellos"
+
+#: core/libs/filters/textfilter.cpp:94
 #, kde-format
 msgid "Clear All"
 msgstr "Limpar todo"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "Escoller todo"

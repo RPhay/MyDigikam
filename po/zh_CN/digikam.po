@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -34241,69 +34241,81 @@ msgstr "小于等于条件"
 msgid "Exclude Items Without Rating"
 msgstr "排除未评分项目"
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "文本快速过滤器 (搜索)"
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr "输入搜索文本以对项目的名称、说明、注释和标签等进行快速过滤。"
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, kde-format
 msgid "Text Search Fields"
 msgstr "文本搜索字段"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr "指定要进行文本搜索的字段。"
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, kde-format
 msgid "Item Name"
 msgstr "项目文件名"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+#| msgid "Item date"
+msgid "Item Path"
+msgstr "项目日期"
+
+#: core/libs/filters/textfilter.cpp:78
 #, kde-format
 msgid "Item Title"
 msgstr "项目标题"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, kde-format
 msgid "Item Comment"
 msgstr "项目注释"
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "标签名称"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, kde-format
 msgid "Album Name"
 msgstr "相册名称"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, kde-format
 msgid "Item Aspect Ratio"
 msgstr "项目宽高比"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, kde-format
 msgid "Item Pixel Size"
 msgstr "项目像素大小"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+#| msgid "Infrared Filter"
+msgid "Inverted Filter"
+msgstr "红外滤镜"
+
+#: core/libs/filters/textfilter.cpp:94
 #, kde-format
 msgid "Clear All"
 msgstr "全部清除"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "全部选中"

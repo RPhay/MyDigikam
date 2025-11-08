@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
-"PO-Revision-Date: 2025-11-05 19:18+0300\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
+"PO-Revision-Date: 2025-11-07 19:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -23050,18 +23050,16 @@ msgid "Target Location: "
 msgstr "Hedef konum: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Görsellerin karşıya yükleneceği hedef adresi ayarlar. Bu, Dolphin veya "
-"Konqueror’da kullanılan herhangi bir adres olabilir; örneğin, ftp://benim."
-"sunucum.org/alt/klasör."
+"Görsellerin karşıya yükleneceği hedef adresi ayarlar. Bu, dosya "
+"yöneticinizde kullanabileceğiniz herhangi bir adres olabilir; örneğin:"
+"<br><i>ftp://sunucum.org/alt/klasör</i><br><i>fish://kullanıcı-adı@sunucum."
+"org/alt/klasör</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
@@ -23073,11 +23071,10 @@ msgstr ""
 "konumu seç…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Select Source Location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Kaynak Konum Seç…"
+msgstr "Hedef Konum Seç…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
@@ -23118,24 +23115,20 @@ msgstr ""
 "aktarmayı yeniden deneyebilirsiniz."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Target Location: "
+#, kde-format
 msgid "Source Location: "
-msgstr "Hedef konum: "
+msgstr "Kaynak konum: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the source address to download the images to. This can be any address "
 "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Görsellerin karşıya yükleneceği hedef adresi ayarlar. Bu, Dolphin veya "
-"Konqueror’da kullanılan herhangi bir adres olabilir; örneğin, ftp://benim."
-"sunucum.org/alt/klasör."
+"Görsellerin indirileceği kaynak adresi ayarlar. Bu, dosya yöneticinizde "
+"kullanabileceğiniz herhangi bir adres olabilir; örneğin:<br><i>ftp://sunucum."
+"org/alt/klasör</i><br><i>fish://kullanıcı-adı@sunucum.org/alt/klasör</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, kde-format
@@ -35464,12 +35457,12 @@ msgstr "Küçüklük veya Eşitlik Koşulu"
 msgid "Exclude Items Without Rating"
 msgstr "Derecelendirmesiz Ögeleri Dışla"
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "Tez metin süzgeci (arama)"
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
@@ -35478,57 +35471,69 @@ msgstr ""
 "Bu görünümü öge adlarına, görsel yazılarına (yorumlara) ve künyelere göre "
 "tez süzmek için arama dizgileri girin"
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, kde-format
 msgid "Text Search Fields"
 msgstr "Metin Arama Alanları"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr "Metnin hangi alanlarda aranacağını tanımlar."
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, kde-format
 msgid "Item Name"
 msgstr "Öge Adı"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+#| msgid "Item date"
+msgid "Item Path"
+msgstr "Öge tarihi"
+
+#: core/libs/filters/textfilter.cpp:78
 #, kde-format
 msgid "Item Title"
 msgstr "Öge Başlığı"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, kde-format
 msgid "Item Comment"
 msgstr "Öge Yorumu"
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "Künye Adı"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, kde-format
 msgid "Album Name"
 msgstr "Albüm Adı"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Öge En–Boy Oranı"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, kde-format
 msgid "Item Pixel Size"
 msgstr "Öge Piksel Boyutu"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+#| msgid "Infrared Filter"
+msgid "Inverted Filter"
+msgstr "Kızılötesi Süzgeci"
+
+#: core/libs/filters/textfilter.cpp:94
 #, kde-format
 msgid "Clear All"
 msgstr "Tümünü Temizle"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "Tümünü Seç"

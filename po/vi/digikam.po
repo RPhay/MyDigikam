@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -34527,69 +34527,79 @@ msgstr "Cấu hình máy ảnh"
 msgid "Exclude Items Without Rating"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, fuzzy, kde-format
 msgid "Text Search Fields"
 msgstr "Tìm kiếm của tôì"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Item Name"
 msgstr "Ngày ảnh"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+msgid "Item Path"
+msgstr "Ngày ảnh"
+
+#: core/libs/filters/textfilter.cpp:78
 #, fuzzy, kde-format
 msgid "Item Title"
 msgstr "Tệp ảnh"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, fuzzy, kde-format
 msgid "Item Comment"
 msgstr "Quản lí màu..."
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "Tên thẻ"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, fuzzy, kde-format
 msgid "Album Name"
 msgstr "Tên tập ảnh mới"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, fuzzy, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Giữ tỉ lệ hình thể"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, fuzzy, kde-format
 msgid "Item Pixel Size"
 msgstr "Tệp ảnh"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+msgid "Inverted Filter"
+msgstr "Phim hồng ngoại"
+
+#: core/libs/filters/textfilter.cpp:94
 #, fuzzy, kde-format
 msgid "Clear All"
 msgstr "Xoá hết"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "Chọn tất cả"

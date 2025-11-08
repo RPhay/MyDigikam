@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -33004,69 +33004,80 @@ msgstr ""
 msgid "Exclude Items Without Rating"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, kde-format
 msgid "Text Search Fields"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, kde-format
 msgid "Item Name"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:74
-#, kde-format
-msgid "Item Title"
-msgstr ""
-
 #: core/libs/filters/textfilter.cpp:76
 #, kde-format
-msgid "Item Comment"
+msgid "Item Path"
 msgstr ""
 
 #: core/libs/filters/textfilter.cpp:78
 #, kde-format
-msgid "Tag Name"
+msgid "Item Title"
 msgstr ""
 
 #: core/libs/filters/textfilter.cpp:80
 #, kde-format
-msgid "Album Name"
+msgid "Item Comment"
 msgstr ""
 
 #: core/libs/filters/textfilter.cpp:82
 #, kde-format
-msgid "Item Aspect Ratio"
+msgid "Tag Name"
 msgstr ""
 
 #: core/libs/filters/textfilter.cpp:84
 #, kde-format
+msgid "Album Name"
+msgstr ""
+
+#: core/libs/filters/textfilter.cpp:86
+#, kde-format
+msgid "Item Aspect Ratio"
+msgstr ""
+
+#: core/libs/filters/textfilter.cpp:88
+#, kde-format
 msgid "Item Pixel Size"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+#| msgid "Import Filters"
+msgid "Inverted Filter"
+msgstr "Sisafievrrit silliid"
+
+#: core/libs/filters/textfilter.cpp:94
 #, kde-format
 msgid "Clear All"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr ""

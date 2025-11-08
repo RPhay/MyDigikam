@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
-"PO-Revision-Date: 2025-11-06 11:59+0100\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
+"PO-Revision-Date: 2025-11-08 00:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23336,26 +23336,21 @@ msgstr ""
 "Puede volver a intentar la exportación de estas imágenes ahora."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Target Location: "
+#, kde-format
 msgid "Source Location: "
-msgstr "Ubicación de destino: "
+msgstr "Ubicación de origen: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
-#| "i><br><i>fish://username@my.server.org/sub/folder</i>"
+#, kde-format
 msgid ""
 "Sets the source address to download the images to. This can be any address "
 "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Define la dirección de destino a la que enviar imágenes. Puede ser cualquier "
-"dirección como las que usa el gestor de archivos, como:<br><i>ftp://mi."
-"servidor.org/sub/carpeta</i><br><i>fish://usuario@mi.servidor.org/sub/"
-"carpeta</i>"
+"Define la dirección de origen de donde descargar imágenes. Puede ser "
+"cualquier dirección como las que usa el gestor de archivos, como:"
+"<br><i>ftp://mi.servidor.org/sub/carpeta</i><br><i>fish://usuario@mi."
+"servidor.org/sub/carpeta</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, kde-format
@@ -35836,12 +35831,12 @@ msgstr "Menor o igual"
 msgid "Exclude Items Without Rating"
 msgstr "Excluir elementos sin puntuación"
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "Filtro rápido de texto (búsqueda)"
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
@@ -35850,57 +35845,69 @@ msgstr ""
 "Introduzca un patrón de búsqueda para filtrar esta vista rápidamente por "
 "nombre de elemento, pie de foto (comentario) y etiquetas"
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, kde-format
 msgid "Text Search Fields"
 msgstr "Campos de búsqueda de texto"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr "Define que campos usar en la búsqueda de texto."
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, kde-format
 msgid "Item Name"
 msgstr "Nombre del elemento"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+#| msgid "Item date"
+msgid "Item Path"
+msgstr "Fecha del elemento"
+
+#: core/libs/filters/textfilter.cpp:78
 #, kde-format
 msgid "Item Title"
 msgstr "Título del elemento"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, kde-format
 msgid "Item Comment"
 msgstr "Comentario del elemento"
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "Nombre de etiqueta"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, kde-format
 msgid "Album Name"
 msgstr "Nombre del álbum"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Proporciones del elemento"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, kde-format
 msgid "Item Pixel Size"
 msgstr "Tamaño del píxel del elemento"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+#| msgid "Infrared Filter"
+msgid "Inverted Filter"
+msgstr "Filtro de infrarrojos"
+
+#: core/libs/filters/textfilter.cpp:94
 #, kde-format
 msgid "Clear All"
 msgstr "Borrar todo"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "Seleccionar todo"
@@ -68837,6 +68844,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~ msgid "no source selected"
-#~ msgstr "no se ha seleccionado ninguna fuente"

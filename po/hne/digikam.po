@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -34430,69 +34430,79 @@ msgstr "से कम या समान मापदन्ड"
 msgid "Exclude Items Without Rating"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "पाठ जल्दी छनइया (खोज)"
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, fuzzy, kde-format
 msgid "Text Search Fields"
 msgstr "मोर खोज"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Item Name"
 msgstr "फोटू तारीक"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+msgid "Item Path"
+msgstr "फोटू तारीक"
+
+#: core/libs/filters/textfilter.cpp:78
 #, fuzzy, kde-format
 msgid "Item Title"
 msgstr "फोटू फाइल मन ल"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, fuzzy, kde-format
 msgid "Item Comment"
 msgstr "टिप्पनियाँ आयातित"
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "टैग नाम"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, kde-format
 msgid "Album Name"
 msgstr "एलबम नाम"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, fuzzy, kde-format
 msgid "Item Aspect Ratio"
 msgstr "आस्पेक्ट रेसो बनाए रखव"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, fuzzy, kde-format
 msgid "Item Pixel Size"
 msgstr "फोटू फाइल"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+msgid "Inverted Filter"
+msgstr "इन्फ्रारेड फिल्म..."
+
+#: core/libs/filters/textfilter.cpp:94
 #, fuzzy, kde-format
 msgid "Clear All"
 msgstr "सब्बो साफ करव"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "सब्बो चुनव"

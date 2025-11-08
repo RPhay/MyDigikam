@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -35880,12 +35880,12 @@ msgstr "លក្ខខណ្ឌ​ស្នើ ឬ​តូច​ជាង"
 msgid "Exclude Items Without Rating"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "តម្រង​អត្ថបទ​រហ័ស (ស្វែងរក)"
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, fuzzy, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
@@ -35893,57 +35893,68 @@ msgid ""
 msgstr ""
 "បញ្ចូល​លំនាំ​ស្វែងរក​ទៅកាន់​តម្រង​រហ័ស ទិដ្ឋភាព​នេះ​នៅ​លើ​ឈ្មោះ​ឯកសារ ចំណងជើង (មតិយោបល់) និង​ស្លាក"
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, kde-format
 msgid "Text Search Fields"
 msgstr "វាល​ស្វែងរក​អត្ថបទ"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr "កំណត់​វាល​ត្រូវ​ស្វែងរក​អត្ថបទ​នៅ​ក្នុង ។"
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Item Name"
 msgstr "ឈ្មោះ​រូបភាព"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+msgid "Item Path"
+msgstr "ឈ្មោះ​រូបភាព"
+
+#: core/libs/filters/textfilter.cpp:78
 #, fuzzy, kde-format
 msgid "Item Title"
 msgstr "ចំណងជើង​រូបភាព"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, fuzzy, kde-format
 msgid "Item Comment"
 msgstr "មតិយោបល់​រូបភាព"
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "ឈ្មោះ​ស្លាក"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, kde-format
 msgid "Album Name"
 msgstr "ឈ្មោះ​អាល់ប៊ុម"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, fuzzy, kde-format
 msgid "Item Aspect Ratio"
 msgstr "សមាមាត្រ​រូបភាព​បច្ចុប្បន្ន"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, fuzzy, kde-format
 msgid "Item Pixel Size"
 msgstr "ឯកសារ​រូបភាព"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+#| msgid "Text Filter"
+msgid "Inverted Filter"
+msgstr "តម្រង​អត្ថបទ"
+
+#: core/libs/filters/textfilter.cpp:94
 #, fuzzy, kde-format
 msgid "Clear All"
 msgstr "ជ្រើស​ទាំងអស់"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "ជ្រើស​ទាំងអស់"

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:41+0000\n"
-"PO-Revision-Date: 2025-09-06 10:53+0300\n"
+"POT-Creation-Date: 2025-11-08 00:39+0000\n"
+"PO-Revision-Date: 2025-11-07 10:37+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -44,48 +44,48 @@ msgstr "אתמול"
 #: core/app/date/ddatepicker.cpp:114
 #, kde-format
 msgid "Next year"
-msgstr "בשבוע &הבא"
+msgstr "השנה הבאה"
 
 #: core/app/date/ddatepicker.cpp:115
 #, kde-format
 msgid "Previous year"
-msgstr "תמונה קודמת"
+msgstr "השנה הקודמת"
 
 #: core/app/date/ddatepicker.cpp:116
 #, kde-format
 msgid "Next month"
-msgstr "ב&חודש הבא"
+msgstr "החודש הבא"
 
 #: core/app/date/ddatepicker.cpp:117
 #, kde-format
 msgid "Previous month"
-msgstr "תמונה קודמת"
+msgstr "החודש הקודם"
 
 #: core/app/date/ddatepicker.cpp:118
 #, kde-format
 msgid "Select a week"
-msgstr "בחירת פריטים חדשים"
+msgstr "בחירת שבוע"
 
 #: core/app/date/ddatepicker.cpp:119
 #, kde-format
 msgid "Select a month"
-msgstr "בחירה בכלום"
+msgstr "בחירת חודש"
 
 #: core/app/date/ddatepicker.cpp:120
 #, kde-format
 msgid "Select a year"
-msgstr "בחירת פריטים חדשים"
+msgstr "בחירת שנה"
 
 #: core/app/date/ddatepicker.cpp:121
 #, kde-format
 msgid "Select the current day"
-msgstr "התחילו בתמונה נוכחית"
+msgstr "בחירת היום הנוכחי"
 
 #: core/app/date/ddatepicker.cpp:574
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr "&סגירה"
+msgstr "סגירה"
 
 #: core/app/date/ddatepicker_p.cpp:160
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "ב&חודש הבא"
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Y&esterday"
-msgstr "&אתמול"
+msgstr "א&תמול"
 
 #: core/app/date/ddatepickerpopup.cpp:130
 #, fuzzy, kde-format
@@ -33894,69 +33894,80 @@ msgstr ""
 msgid "Exclude Items Without Rating"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:61
+#: core/libs/filters/textfilter.cpp:63
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:62
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:66
+#: core/libs/filters/textfilter.cpp:68
 #, fuzzy, kde-format
 msgid "Text Search Fields"
 msgstr "החיפושים שלי"
 
-#: core/libs/filters/textfilter.cpp:69
+#: core/libs/filters/textfilter.cpp:71
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Item Name"
 msgstr "תאריך תמונה"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
+#, fuzzy, kde-format
+#| msgid "Item date"
+msgid "Item Path"
+msgstr "תאריך פריט"
+
+#: core/libs/filters/textfilter.cpp:78
 #, fuzzy, kde-format
 msgid "Item Title"
 msgstr "קובצי תמונת"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:80
 #, fuzzy, kde-format
 msgid "Item Comment"
 msgstr "ניהול צבעים..."
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Tag Name"
 msgstr "שם תגית"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:84
 #, fuzzy, kde-format
 msgid "Album Name"
 msgstr "שם אוסף-תמונות חדש"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:86
 #, fuzzy, kde-format
 msgid "Item Aspect Ratio"
 msgstr "שמירה על יחס"
 
-#: core/libs/filters/textfilter.cpp:84
+#: core/libs/filters/textfilter.cpp:88
 #, fuzzy, kde-format
 msgid "Item Pixel Size"
 msgstr "קובצי תמונת"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:91
+#, fuzzy, kde-format
+msgid "Inverted Filter"
+msgstr "סרט אינפרה-אדום"
+
+#: core/libs/filters/textfilter.cpp:94
 #, fuzzy, kde-format
 msgid "Clear All"
 msgstr "נקה הכל"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:96
 #, kde-format
 msgid "Select All"
 msgstr "בחירה בהכול"
@@ -38313,21 +38324,21 @@ msgid "Translate"
 msgstr "שינוי שם פריט (%1)"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
-msgstr "%1 %2"
+msgstr "%1 תחת %2"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:382
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
-msgstr "%1 %2"
+msgstr "יצירת „%1” תחת %2"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:387
-#, fuzzy, kde-format
+#, kde-format
 msgid "Create \"%1\""
-msgstr "נוצר ב: %1"
+msgstr "יצירת „%1”"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, fuzzy, kde-format
@@ -38362,11 +38373,10 @@ msgstr "למחוק את התגית ‚%1’?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:292
 #: core/libs/tags/engine/tagmodificationhelper.cpp:411
-#, fuzzy, kde-format
-#| msgid "Delete Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
-msgstr "מחיקת תווית"
+msgstr "מחיקת תגית"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, fuzzy, kde-format
@@ -38464,33 +38474,32 @@ msgid "Assign Color Label \"%1\""
 msgstr "יישום מרחב צבע"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:326
-#, fuzzy, kde-format
+#, kde-format
 msgid "Assign Tag \"%1\""
-msgstr "הוספת תוויות"
+msgstr "הקצאת התגית „%1”"
 
 #: core/libs/tags/manager/models/tagmngrlistitem.cpp:158
-#, fuzzy, kde-format
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@info"
 msgid "All Tags"
-msgstr "כל התוויות"
+msgstr "כל התגיות"
 
 #: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
-msgstr "חיפוש מהיר"
+msgstr "רשימת גישה מהירה"
 
 #: core/libs/tags/manager/models/tagmngrlistview.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
-msgstr "למחוק מסומנים"
+msgstr "מחיקת הנבחרים מהרשימה"
 
 #: core/libs/tags/manager/taglist.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgid "Add to List"
-msgstr "הוספה לשולחן-אור"
+msgstr "הוספה לרשימה"
 
 #: core/libs/tags/manager/taglist.cpp:66
 #, kde-format
@@ -38498,15 +38507,15 @@ msgid "Add selected tags to Quick Access List"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete Tags"
-msgstr "מחיקת תווית"
+msgstr "מחיקת תגיות"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
 #: core/libs/tags/manager/tagsmanager_p.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Tag Title"
-msgstr "קובצי תמונת"
+msgstr "עריכת כותרת תגית"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager_p.cpp:128
@@ -38529,49 +38538,46 @@ msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
 #: core/libs/tags/manager/tagsmanager_p.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgid "Collapse Tag Tree"
-msgstr "אוספי-התמונות שלי"
+msgstr "צמצום עץ תגיות"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:168
 #: core/libs/tags/manager/tagsmanager_p.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove Tag from Images"
-msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
+msgstr "הסרת תגית מתמונות"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:90
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
-msgstr "מאפיינים"
+msgstr "מאפייני תגית"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:99
 #: core/libs/tags/widgets/tageditdlg.cpp:131
-#, fuzzy, kde-format
-#| msgid "&Title:"
+#, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&כותרת:"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
-msgstr "הזינו שם תווית כאן..."
+msgstr "נא למלא כאן את שם התגית"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "&Icon:"
+#, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
-msgstr "סמ&ל"
+msgstr "סמ&ל:"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:126
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action"
 msgid "Reset"
-msgstr "אתחול"
+msgstr "איפוס"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:139
 #, kde-format
@@ -38592,10 +38598,10 @@ msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 
 #: core/libs/tags/manager/tagpropwidget.cpp:168
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Save"
-msgstr "&שמירה"
+msgstr "שמירה"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:169
 #, kde-format
@@ -38663,15 +38669,15 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:25
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
-msgstr "ניהול זכויות יוצרים"
+msgstr "מנהל תגיות"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
+#, kde-format
 msgid "Search for tags..."
-msgstr "חיפוש:"
+msgstr "חיפוש אחר תגיות…"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -38715,10 +38721,9 @@ msgstr "מידע על הרכיב"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:190
 #: core/libs/tags/manager/tagsmanager_io.cpp:308
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "קובץ XMP פשוט (*.xmp)"
+msgstr "קובץ טקסט (‎*.txt)"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:288
 #, kde-format
@@ -38746,18 +38751,16 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:87
-#, fuzzy, kde-format
-#| msgid "Add New Tag..."
+#, kde-format
 msgctxt "@action: button"
 msgid "Add Tag"
-msgstr "הוספת תווית חדשה..."
+msgstr "הוספת תגית"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:93
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Remove Tag"
-msgstr "הסרת תוויות"
+msgstr "הסרת תגית"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:98
 #, kde-format
@@ -43127,17 +43130,17 @@ msgstr "עוד"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:44
 msgctxt "@info: country code"
 msgid "Amharic (Ethiopia)"
-msgstr ""
+msgstr "אמהרית (אתיופיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:45
 msgctxt "@info: country code"
 msgid "North Levantine Arabic (Turkey)"
-msgstr ""
+msgstr "ערבית צפון לבנטינית (טורקיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:46
 msgctxt "@info: country code"
 msgid "Arabic (UAE)"
-msgstr ""
+msgstr "ערבית (איחוד הנסיכויות הערביות)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:47
 #, fuzzy
@@ -43154,12 +43157,12 @@ msgstr "טורית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:49
 msgctxt "@info: country code"
 msgid "Arabic (Egypt)"
-msgstr ""
+msgstr "ערבית (מצרים)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:50
 msgctxt "@info: country code"
 msgid "Arabic (Iraq)"
-msgstr ""
+msgstr "ערבית (עיראק)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:51
 #, fuzzy
@@ -43170,27 +43173,27 @@ msgstr "יצרן:"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:52
 msgctxt "@info: country code"
 msgid "Arabic (Jordan)"
-msgstr ""
+msgstr "ערבית (ירדן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:53
 msgctxt "@info: country code"
 msgid "Arabic (Kuwait)"
-msgstr ""
+msgstr "ערבית (כוויית)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:54
 msgctxt "@info: country code"
 msgid "Arabic (Lebanon)"
-msgstr ""
+msgstr "ערבית (לבנון)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:55
 msgctxt "@info: country code"
 msgid "Arabic (Libya)"
-msgstr ""
+msgstr "ערבית (לוב)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:56
 msgctxt "@info: country code"
 msgid "Arabic (Morocco)"
-msgstr ""
+msgstr "ערבית (מרוקו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:57
 #, fuzzy
@@ -43201,22 +43204,22 @@ msgstr "יצרן:"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
-msgstr ""
+msgstr "ערבית (הגדה המערבית ועזה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
 msgctxt "@info: country code"
 msgid "Arabic (Oman)"
-msgstr ""
+msgstr "ערבית (עומאן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:60
 msgctxt "@info: country code"
 msgid "Arabic (Qatar)"
-msgstr ""
+msgstr "ערבית (קטר)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:61
 msgctxt "@info: country code"
 msgid "Arabic (Saudi Arabia)"
-msgstr ""
+msgstr "ערבית (ערב הסעודית)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:62
 #, fuzzy
@@ -43233,7 +43236,7 @@ msgstr "טורית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:64
 msgctxt "@info: country code"
 msgid "Arabic (Syria)"
-msgstr ""
+msgstr "ערבית (סוריה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:65
 #, fuzzy
@@ -43244,38 +43247,38 @@ msgstr "יצרן:"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:66
 msgctxt "@info: country code"
 msgid "Arabic (Tunisia)"
-msgstr ""
+msgstr "ערבית (תוניסיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:67
 msgctxt "@info: country code"
 msgid "Arabic (Yemen)"
-msgstr ""
+msgstr "ערבית (תימן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:68
 msgctxt "@info: country code"
 msgid "Assamese (India)"
-msgstr ""
+msgstr "אסאמית (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:69
 msgctxt "@info: country code"
 msgid "Azerbaijani (Republic of Azerbaijan)"
-msgstr ""
+msgstr "אזרית (רפובליקת אזרבייג׳ן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
 msgctxt "@info: country code"
 msgid "Bashkir (Russia)"
-msgstr ""
+msgstr "בשקירית (רוסיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:71
 msgctxt "@info: country code"
 msgid "Bengali (Bangladesh)"
-msgstr ""
+msgstr "בנגלית (בנגלדש)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:72
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:76
 msgctxt "@info: country code"
 msgid "Bengali (India)"
-msgstr ""
+msgstr "בנגלית (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:73
 #, fuzzy
@@ -43299,17 +43302,17 @@ msgstr "טשטוש גאוסי"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:77
 msgctxt "@info: country code"
 msgid "Tibetan (Bhutan)"
-msgstr ""
+msgstr "טיבטית (בהוטן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:78
 msgctxt "@info: country code"
 msgid "Tibetan (People's Republic of China)"
-msgstr ""
+msgstr "טיבטית (הרפובליקה העממית של סין)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:79
 msgctxt "@info: country code"
 msgid "Breton (France)"
-msgstr ""
+msgstr "ברטונית (צרפת)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:80
 #, fuzzy
@@ -43320,7 +43323,7 @@ msgstr "טשטוש גאוסי"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:82
 msgctxt "@info: country code"
 msgid "Catalan (Andorra)"
-msgstr ""
+msgstr "קטלאנית (אנדורה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:83
 #, fuzzy
@@ -43331,7 +43334,7 @@ msgstr "תרגום לספרדית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:84
 msgctxt "@info: country code"
 msgid "Catalan (France)"
-msgstr ""
+msgstr "קטלאנית (צרפת)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:85
 #, fuzzy
@@ -43342,27 +43345,27 @@ msgstr "זווית (במעלות):"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:86
 msgctxt "@info: country code"
 msgid "Chamorro (Guam)"
-msgstr ""
+msgstr "צ׳מורו (גואם)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:87
 msgctxt "@info: country code"
 msgid "Chamorro (Northern Mariana Islands)"
-msgstr ""
+msgstr "קומורו (איי מריאנה הצפוניים)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:88
 msgctxt "@info: country code"
 msgid "Corsican (France)"
-msgstr ""
+msgstr "קורסיקאית (צרפת)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:89
 msgctxt "@info: country code"
 msgid "Czech (Czechia)"
-msgstr ""
+msgstr "צ׳כית (צ׳כיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:90
 msgctxt "@info: country code"
 msgid "Welsh (United Kingdom)"
-msgstr ""
+msgstr "ולשית (בריטניה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:91
 #, fuzzy
@@ -43409,7 +43412,7 @@ msgstr "תרגום לגרמנית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:98
 msgctxt "@info: country code"
 msgid "German (Luxembourg)"
-msgstr ""
+msgstr "גרמנית (לוקסמבורג)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:99
 #, fuzzy
@@ -43897,7 +43900,7 @@ msgstr "זווית (במעלות):"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:180
 msgctxt "@info: country code"
 msgid "Esperanto (France)"
-msgstr ""
+msgstr "אספרנטו (צרפת)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:181
 #, fuzzy
@@ -43938,7 +43941,7 @@ msgstr "תרגום לספרדית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:187
 msgctxt "@info: country code"
 msgid "Spanish (Dominican Republic)"
-msgstr ""
+msgstr "ספרדית (הרפובליקה הדומיניקנית)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:188
 #, fuzzy
@@ -44033,12 +44036,12 @@ msgstr "תרגום לספרדית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:203
 msgctxt "@info: country code"
 msgid "Estonian (Estonia)"
-msgstr ""
+msgstr "אסטונית (אסטוניה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:204
 msgctxt "@info: country code"
 msgid "Basque (Basque Country)"
-msgstr ""
+msgstr "בסקית (המדינה הבסקית)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:205
 #, fuzzy
@@ -44049,7 +44052,7 @@ msgstr "טשטוש גאוסי"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:206
 msgctxt "@info: country code"
 msgid "Finnish (Finland)"
-msgstr ""
+msgstr "פינית (פינלנד)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:207
 #, fuzzy
@@ -44060,7 +44063,7 @@ msgstr "זווית (במעלות):"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:208
 msgctxt "@info: country code"
 msgid "Fijian (Fiji)"
-msgstr ""
+msgstr "פיג׳ית (פיג׳י)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:209
 msgctxt "@info: country code"
@@ -44082,7 +44085,7 @@ msgstr "בינונית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:212
 msgctxt "@info: country code"
 msgid "French (Burkina Faso)"
-msgstr ""
+msgstr "צרפתית (בורקינה פאסו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:213
 #, fuzzy
@@ -44099,17 +44102,17 @@ msgstr "בינונית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:215
 msgctxt "@info: country code"
 msgid "French (Canada)"
-msgstr ""
+msgstr "צרפתית (קנדה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:216
 msgctxt "@info: country code"
 msgid "French (Democratic Republic of Congo)"
-msgstr ""
+msgstr "צרפתית (הרפובליקה הדמוקרטית של קונגו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:217
 msgctxt "@info: country code"
 msgid "French (Central African Republic)"
-msgstr ""
+msgstr "צרפתית (הרפובליקה המרכז-אפריקאית)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:218
 #, fuzzy
@@ -44126,7 +44129,7 @@ msgstr "תרגום לגרמנית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:220
 msgctxt "@info: country code"
 msgid "French (Cote d'Ivoire)"
-msgstr ""
+msgstr "צרפתית (חוף השנהב)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:221
 #, fuzzy
@@ -44143,7 +44146,7 @@ msgstr "בינונית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:223
 msgctxt "@info: country code"
 msgid "French (France)"
-msgstr ""
+msgstr "צרפתית (צרפת)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:224
 #, fuzzy
@@ -44160,7 +44163,7 @@ msgstr "זווית (במעלות):"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:226
 msgctxt "@info: country code"
 msgid "French (French Guiana)"
-msgstr ""
+msgstr "צרפתית (גיאנה הצרפתית)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:227
 #, fuzzy
@@ -44201,17 +44204,17 @@ msgstr "תרגום לגרמנית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:233
 msgctxt "@info: country code"
 msgid "French (Luxembourg)"
-msgstr ""
+msgstr "צרפתית (לוקסמבורג)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:234
 msgctxt "@info: country code"
 msgid "French (Monaco)"
-msgstr ""
+msgstr "צרפתית (מונקו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:235
 msgctxt "@info: country code"
 msgid "French (Madagascar)"
-msgstr ""
+msgstr "צרפתית (מדגסקר)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:236
 #, fuzzy
@@ -44234,7 +44237,7 @@ msgstr "חציון:"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:239
 msgctxt "@info: country code"
 msgid "French (French Polynesia)"
-msgstr ""
+msgstr "צרפתית (פולינזיה הצרפתית)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:240
 #, fuzzy
@@ -44281,7 +44284,7 @@ msgstr "בינונית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:247
 msgctxt "@info: country code"
 msgid "French (Wallis and Futuna)"
-msgstr ""
+msgstr "צרפתית (ואליס ופוטונה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:248
 #, fuzzy
@@ -44345,12 +44348,12 @@ msgstr ""
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
 msgctxt "@info: country code"
 msgid "Modern Hebrew (Israel)"
-msgstr ""
+msgstr "עברית מודרנית (ישראל)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:259
 msgctxt "@info: country code"
 msgid "Hindi (India)"
-msgstr ""
+msgstr "הינדי (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:260
 msgctxt "@info: country code"
@@ -44365,17 +44368,17 @@ msgstr ""
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:262
 msgctxt "@info: country code"
 msgid "Croatian (Croatia)"
-msgstr ""
+msgstr "קרואטית (קרואטיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:263
 msgctxt "@info: country code"
 msgid "Haitian Creole (France)"
-msgstr ""
+msgstr "קריאולית האיטית (צרפת)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:264
 msgctxt "@info: country code"
 msgid "Hungarian (Hungary)"
-msgstr ""
+msgstr "הונגרית (הונגריה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:265
 #, fuzzy
@@ -44386,7 +44389,7 @@ msgstr "טשטוש גאוסי"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:266
 msgctxt "@info: country code"
 msgid "Armenian (Armenia)"
-msgstr ""
+msgstr "ארמנית (ארמניה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:267
 msgctxt "@info: country code"
@@ -44443,12 +44446,12 @@ msgstr "תרגום לספרדית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:276
 msgctxt "@info: country code"
 msgid "Hebrew (Israel)"
-msgstr ""
+msgstr "עברית (ישראל)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:277
 msgctxt "@info: country code"
 msgid "Japanese (Japan)"
-msgstr ""
+msgstr "יפנית (יפן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:278
 msgctxt "@info: country code"
@@ -44470,7 +44473,7 @@ msgstr "טורית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:281
 msgctxt "@info: country code"
 msgid "Kazakh (Kazakhstan)"
-msgstr ""
+msgstr "קזחית (קזחסטן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:282
 #, fuzzy
@@ -44505,7 +44508,7 @@ msgstr "עוד"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:287
 msgctxt "@info: country code"
 msgid "Kyrgyz (Kyrgyzstan)"
-msgstr ""
+msgstr "קירגיזית (קירגיסטן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:288
 #, fuzzy
@@ -44528,7 +44531,7 @@ msgstr "תרגום לאיטלקית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:291
 msgctxt "@info: country code"
 msgid "Luxembourgish (Luxembourg)"
-msgstr ""
+msgstr "לוקסמבורגית (לוקסמבורג)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:292
 msgctxt "@info: country code"
@@ -44555,7 +44558,7 @@ msgstr "מתחזק"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:296
 msgctxt "@info: country code"
 msgid "Latvian (Latvia)"
-msgstr ""
+msgstr "לטבית (לטביה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:297
 msgctxt "@info: country code"
@@ -44698,17 +44701,17 @@ msgstr "זווית (במעלות):"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:322
 msgctxt "@info: country code"
 msgid "Occitan (France)"
-msgstr ""
+msgstr "אוקסיטנית (צרפת)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:323
 msgctxt "@info: country code"
 msgid "Oriya (India)"
-msgstr ""
+msgstr "אורייה (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:324
 msgctxt "@info: country code"
 msgid "Punjabi (India)"
-msgstr ""
+msgstr "פנג׳אבי (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:325
 msgctxt "@info: country code"
@@ -44718,12 +44721,12 @@ msgstr ""
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:326
 msgctxt "@info: country code"
 msgid "Polish (Poland)"
-msgstr ""
+msgstr "פולנית (פולין)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:327
 msgctxt "@info: country code"
 msgid "Pashto (Afghanistan)"
-msgstr ""
+msgstr "פשטו (אפגניסטן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:328
 #, fuzzy
@@ -44764,7 +44767,7 @@ msgstr "תפיסתי"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:334
 msgctxt "@info: country code"
 msgid "Portuguese (São Tomé e Principe)"
-msgstr ""
+msgstr "פורטוגלית (סאו טומה ופרינסיפה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:335
 msgctxt "@info: country code"
@@ -44780,7 +44783,7 @@ msgstr "תרגום לגרמנית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:337
 msgctxt "@info: country code"
 msgid "Romanian (Romania)"
-msgstr ""
+msgstr "רומנית (רומניה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:338
 #, fuzzy
@@ -44791,12 +44794,12 @@ msgstr "גאוסי:"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:339
 msgctxt "@info: country code"
 msgid "Kinyarwanda (Rwanda)"
-msgstr ""
+msgstr "קינירואנדה (רואנדה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:340
 msgctxt "@info: country code"
 msgid "Sanskrit (India)"
-msgstr ""
+msgstr "סנסקריט (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:341
 #, fuzzy
@@ -44828,22 +44831,22 @@ msgstr ""
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:346
 msgctxt "@info: country code"
 msgid "Sinhala (Sri Lanka)"
-msgstr ""
+msgstr "סינהלית (סרי לנקה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:347
 msgctxt "@info: country code"
 msgid "Slovak (Slovakia)"
-msgstr ""
+msgstr "סלובקית (סלובקיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:348
 msgctxt "@info: country code"
 msgid "Slovenian (Slovenia)"
-msgstr ""
+msgstr "סלובנית (סלובניה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:349
 msgctxt "@info: country code"
 msgid "Samoan (Samoa)"
-msgstr ""
+msgstr "סמואית (סמואה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:350
 #, fuzzy
@@ -44860,7 +44863,7 @@ msgstr "טורית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:352
 msgctxt "@info: country code"
 msgid "Albanian (Albania)"
-msgstr ""
+msgstr "אלבנית (אלבניה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:353
 #, fuzzy
@@ -44913,27 +44916,27 @@ msgstr "ריבועי"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:361
 msgctxt "@info: country code"
 msgid "Swedish (Finland)"
-msgstr ""
+msgstr "שוודית (פינלנד)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:362
 msgctxt "@info: country code"
 msgid "Swedish (Sweden)"
-msgstr ""
+msgstr "שוודית (שוודיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:363
 msgctxt "@info: country code"
 msgid "Swahili (Kenya)"
-msgstr ""
+msgstr "סוואהילי (קניה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:364
 msgctxt "@info: country code"
 msgid "Swahili (Tanzania)"
-msgstr ""
+msgstr "סוואהילי (טנזניה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:365
 msgctxt "@info: country code"
 msgid "Tamil (India)"
-msgstr ""
+msgstr "טמילית (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:366
 #, fuzzy
@@ -44944,7 +44947,7 @@ msgstr "זווית (במעלות):"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:367
 msgctxt "@info: country code"
 msgid "Telugu (India)"
-msgstr ""
+msgstr "טלוגו (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:368
 #, fuzzy
@@ -44955,17 +44958,17 @@ msgstr "הדפסת התמונה..."
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:369
 msgctxt "@info: country code"
 msgid "Thai (Thailand)"
-msgstr ""
+msgstr "תאית (תאילנד)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:370
 msgctxt "@info: country code"
 msgid "Turkmen (Turkmenistan)"
-msgstr ""
+msgstr "טורקמנית (טורקמניסטן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:371
 msgctxt "@info: country code"
 msgid "Klingon (US state)"
-msgstr ""
+msgstr "קלינגון (מדינה בארה״ב)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:372
 #, fuzzy
@@ -45010,12 +45013,12 @@ msgstr "נסו"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:379
 msgctxt "@info: country code"
 msgid "Tatar (Russia)"
-msgstr ""
+msgstr "טטרית (רוסיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:380
 msgctxt "@info: country code"
 msgid "Tahitian (French Polynesia)"
-msgstr ""
+msgstr "טהיטית (פולינזיה הצרפתית)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:381
 #, fuzzy
@@ -45026,27 +45029,27 @@ msgstr "גאוסי:"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:382
 msgctxt "@info: country code"
 msgid "Uighur (People's Republic of China)"
-msgstr ""
+msgstr "אויגורית (הרפובליקה העממית של סין)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:383
 msgctxt "@info: country code"
 msgid "Ukrainian (Ukraine)"
-msgstr ""
+msgstr "אוקראינית (אוקראינה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:384
 msgctxt "@info: country code"
 msgid "Urdu (India)"
-msgstr ""
+msgstr "אורדו (הודו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:385
 msgctxt "@info: country code"
 msgid "Urdu (Pakistan)"
-msgstr ""
+msgstr "אורדו (פקיסטן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:386
 msgctxt "@info: country code"
 msgid "Uzbek (Uzbekistan)"
-msgstr ""
+msgstr "אוזבקית (אוזבקיסטן)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:387
 #, fuzzy
@@ -45081,17 +45084,17 @@ msgstr "טורית"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:392
 msgctxt "@info: country code"
 msgid "Yucatec Maya (Mexico)"
-msgstr ""
+msgstr "יוקטן של המאיה (מקסיקו)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:393
 msgctxt "@info: country code"
 msgid "Chinese (People's Republic of China)"
-msgstr ""
+msgstr "סינית (הרפובליקה העממית של סין)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:394
 msgctxt "@info: country code"
 msgid "Chinese (Hong Kong SAR, People's Republic of China)"
-msgstr ""
+msgstr "סינית (הונג קונג - אזור מנהלי מיוחד ,הרפובליקה העממית של סין)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:395
 msgctxt "@info: country code"
@@ -45124,13 +45127,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Afghanistan"
-msgstr ""
+msgstr "אפגניסטן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:47
 #, kde-format
 msgctxt "@info: country code"
 msgid "Albania"
-msgstr ""
+msgstr "אלבניה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:48
 #, fuzzy, kde-format
@@ -45142,13 +45145,13 @@ msgstr "טורית"
 #, kde-format
 msgctxt "@info: country code"
 msgid "American Samoa"
-msgstr ""
+msgstr "סמואה האמריקאית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:50
 #, kde-format
 msgctxt "@info: country code"
 msgid "Andorra"
-msgstr ""
+msgstr "אנדורה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:51
 #: core/libs/widgets/metadata/utils/countryselector.cpp:53
@@ -45161,19 +45164,19 @@ msgstr "טווח:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Anguilla"
-msgstr ""
+msgstr "אנגווילה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:54
 #, kde-format
 msgctxt "@info: country code"
 msgid "Antarctica"
-msgstr ""
+msgstr "אנטארקטיקה‬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:55
 #, kde-format
 msgctxt "@info: country code"
 msgid "Antigua and Barbuda"
-msgstr ""
+msgstr "אנטיגואה וברבודה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:56
 #, fuzzy, kde-format
@@ -45185,13 +45188,13 @@ msgstr "תרגום לספרדית"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Armenia"
-msgstr ""
+msgstr "ארמניה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:58
 #, kde-format
 msgctxt "@info: country code"
 msgid "Aruba"
-msgstr ""
+msgstr "ארובה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:59
 #, fuzzy, kde-format
@@ -45209,7 +45212,7 @@ msgstr "מופשט"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Azerbaijan"
-msgstr ""
+msgstr "אזרבייג׳ן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:62
 #, kde-format
@@ -45227,19 +45230,19 @@ msgstr "יצרן:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bangladesh"
-msgstr ""
+msgstr "בנגלדש"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:65
 #, kde-format
 msgctxt "@info: country code"
 msgid "Barbados"
-msgstr ""
+msgstr "ברבדוס"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:66
 #, kde-format
 msgctxt "@info: country code"
 msgid "Belarus"
-msgstr ""
+msgstr "בלארוס"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:67
 #, fuzzy, kde-format
@@ -45257,37 +45260,37 @@ msgstr "שינוי גודל"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Benin"
-msgstr ""
+msgstr "בנין"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:70
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bermuda"
-msgstr ""
+msgstr "ברמודה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:71
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bhutan"
-msgstr ""
+msgstr "בהוטן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:72
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bolivia"
-msgstr ""
+msgstr "בוליביה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:73
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "בוסניה והרצגובינה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:74
 #, kde-format
 msgctxt "@info: country code"
 msgid "Botswana"
-msgstr ""
+msgstr "בוטסואנה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:75
 #, kde-format
@@ -45299,7 +45302,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Brazil"
-msgstr ""
+msgstr "ברזיל"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:77
 #, kde-format
@@ -45317,19 +45320,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "ברוניי דאר־א־סלאם"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:80
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bulgaria"
-msgstr ""
+msgstr "בולגריה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:81
 #, kde-format
 msgctxt "@info: country code"
 msgid "Burkina Faso"
-msgstr ""
+msgstr "בורקינה פאסו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:82
 #, fuzzy, kde-format
@@ -45365,13 +45368,13 @@ msgstr "העתיקו לכאן"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Cayman Islands"
-msgstr ""
+msgstr "איי קיימן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:88
 #, kde-format
 msgctxt "@info: country code"
 msgid "Central African Republic"
-msgstr ""
+msgstr "הרפובליקה המרכז-אפריקאית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:89
 #, fuzzy, kde-format
@@ -45395,13 +45398,13 @@ msgstr "ילדים"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Christmas Island "
-msgstr ""
+msgstr "אי חג המולד "
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:93
 #, kde-format
 msgctxt "@info: country code"
 msgid "Cocos Islands"
-msgstr ""
+msgstr "איי קוקוס"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:94
 #, fuzzy, kde-format
@@ -45419,7 +45422,7 @@ msgstr "צבעים"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Zaire"
-msgstr ""
+msgstr "זאיר"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:97
 #, fuzzy, kde-format
@@ -45431,7 +45434,7 @@ msgstr "ספירה:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Cook Islands"
-msgstr ""
+msgstr "איי קוּק"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:99
 #, fuzzy, kde-format
@@ -45443,7 +45446,7 @@ msgstr "אוסף תמונות"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Ivory Coast"
-msgstr ""
+msgstr "חוף השנהב"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:101
 #, fuzzy, kde-format
@@ -45455,19 +45458,19 @@ msgstr "מרובע"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Cyprus"
-msgstr ""
+msgstr "קפריסין"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:103
 #, kde-format
 msgctxt "@info: country code"
 msgid "Czechia"
-msgstr ""
+msgstr "צ׳כיה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:104
 #, kde-format
 msgctxt "@info: country code"
 msgid "Denmark"
-msgstr ""
+msgstr "דנמרק"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:105
 #, fuzzy, kde-format
@@ -45479,73 +45482,73 @@ msgstr "אודות"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dominica"
-msgstr ""
+msgstr "דומיניקה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:107
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dominican Republic"
-msgstr ""
+msgstr "הרפובליקה הדומיניקנית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:108
 #, kde-format
 msgctxt "@info: country code"
 msgid "Ecuador"
-msgstr ""
+msgstr "אקוודור"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:109
 #, kde-format
 msgctxt "@info: country code"
 msgid "Egypt"
-msgstr ""
+msgstr "מצרים"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:110
 #, kde-format
 msgctxt "@info: country code"
 msgid "El Salvador"
-msgstr ""
+msgstr "אל סלוודור"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:111
 #, kde-format
 msgctxt "@info: country code"
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "גינאה המשוונית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:112
 #, kde-format
 msgctxt "@info: country code"
 msgid "Eritrea"
-msgstr ""
+msgstr "אריתריאה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:113
 #, kde-format
 msgctxt "@info: country code"
 msgid "Estonia"
-msgstr ""
+msgstr "אסטוניה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:114
 #, kde-format
 msgctxt "@info: country code"
 msgid "Ethiopia"
-msgstr ""
+msgstr "אתיופיה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:115
 #, kde-format
 msgctxt "@info: country code"
 msgid "Faeroe Islands"
-msgstr ""
+msgstr "איי פארו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:116
 #, kde-format
 msgctxt "@info: country code"
 msgid "Falkland Islands"
-msgstr ""
+msgstr "איי פוקלנד"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:117
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fiji Islands"
-msgstr ""
+msgstr "איי פיג׳י"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:118
 #, fuzzy, kde-format
@@ -45563,13 +45566,13 @@ msgstr "ביטול"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French Guiana"
-msgstr ""
+msgstr "גיאנה הצרפתית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:121
 #, kde-format
 msgctxt "@info: country code"
 msgid "French Polynesia"
-msgstr ""
+msgstr "פולינזיה הצרפתית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:122
 #, kde-format
@@ -45581,7 +45584,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Gabon"
-msgstr ""
+msgstr "‫גבון‬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:124
 #, fuzzy, kde-format
@@ -45599,13 +45602,13 @@ msgstr "טורית"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Germany"
-msgstr ""
+msgstr "גרמניה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:127
 #, kde-format
 msgctxt "@info: country code"
 msgid "Ghana"
-msgstr ""
+msgstr "גאנה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:128
 #, fuzzy, kde-format
@@ -45672,13 +45675,13 @@ msgstr "תכלת"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Haiti"
-msgstr ""
+msgstr "האיטי"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:139
 #, kde-format
 msgctxt "@info: country code"
 msgid "Heard and McDonald Islands"
-msgstr ""
+msgstr "האי הרד ואיי מקדונלד"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:140
 #, fuzzy, kde-format
@@ -45696,19 +45699,19 @@ msgstr "חופשות"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hong Kong"
-msgstr ""
+msgstr "הונג קונג"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:143
 #, kde-format
 msgctxt "@info: country code"
 msgid "Croatia"
-msgstr ""
+msgstr "קרואטיה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:144
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hungary"
-msgstr ""
+msgstr "הונגריה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:145
 #, fuzzy, kde-format
@@ -45720,13 +45723,13 @@ msgstr "יצרן:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "India"
-msgstr ""
+msgstr "הודו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:147
 #, kde-format
 msgctxt "@info: country code"
 msgid "Indonesia"
-msgstr ""
+msgstr "אינדונזיה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:148
 #, fuzzy, kde-format
@@ -45738,7 +45741,7 @@ msgstr "יצרן:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Iraq"
-msgstr ""
+msgstr "עיראק"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:150
 #, fuzzy, kde-format
@@ -45762,37 +45765,37 @@ msgstr "היום"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Jamaica"
-msgstr ""
+msgstr "ג׳מייקה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:154
 #, kde-format
 msgctxt "@info: country code"
 msgid "Japan"
-msgstr ""
+msgstr "יפן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:155
 #, kde-format
 msgctxt "@info: country code"
 msgid "Jordan"
-msgstr ""
+msgstr "ירדן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:156
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kazakhstan"
-msgstr ""
+msgstr "קזחסטן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:157
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kenya"
-msgstr ""
+msgstr "קניה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:158
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kiribati"
-msgstr ""
+msgstr "קיריבס"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:159
 #, fuzzy, kde-format
@@ -45810,13 +45813,13 @@ msgstr "עוד"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kuwait"
-msgstr ""
+msgstr "כווית‬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:162
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kyrgyz Republic"
-msgstr ""
+msgstr "הרפובליקה הקירגיזית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:163
 #, fuzzy, kde-format
@@ -45828,19 +45831,19 @@ msgstr "מעבדה"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Latvia"
-msgstr ""
+msgstr "לטביה‬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:165
 #, kde-format
 msgctxt "@info: country code"
 msgid "Lebanon"
-msgstr ""
+msgstr "לבנון"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:166
 #, kde-format
 msgctxt "@info: country code"
 msgid "Lesotho"
-msgstr ""
+msgstr "לסוטו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:167
 #, fuzzy, kde-format
@@ -45852,7 +45855,7 @@ msgstr "LibKdcraw"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Libyan Arab Jamahiriya"
-msgstr ""
+msgstr "לוב"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:169
 #, fuzzy, kde-format
@@ -45870,13 +45873,13 @@ msgstr "מתחזק"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Luxembourg"
-msgstr ""
+msgstr "לוקסמבורג"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:172
 #, kde-format
 msgctxt "@info: country code"
 msgid "Macao"
-msgstr ""
+msgstr "מקאו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
 #, fuzzy, kde-format
@@ -45888,7 +45891,7 @@ msgstr "חציון:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Madagascar"
-msgstr ""
+msgstr "מדגסקר"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:175
 #, kde-format
@@ -45900,13 +45903,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Malaysia"
-msgstr ""
+msgstr "מלזיה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:177
 #, kde-format
 msgctxt "@info: country code"
 msgid "Maldives"
-msgstr ""
+msgstr "האיים המלדיביים"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:178
 #, fuzzy, kde-format
@@ -45924,7 +45927,7 @@ msgstr "ארגמן"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Marshall Islands"
-msgstr ""
+msgstr "איי מרשל"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:181
 #, fuzzy, kde-format
@@ -45954,7 +45957,7 @@ msgstr "הערות היצרן"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Mexico"
-msgstr ""
+msgstr "מקסיקו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:186
 #, fuzzy, kde-format
@@ -45966,7 +45969,7 @@ msgstr "בהירות:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Moldova"
-msgstr ""
+msgstr "‫מולדובה‬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:188
 #, fuzzy, kde-format
@@ -45996,7 +45999,7 @@ msgstr "ניגוד:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Morocco"
-msgstr ""
+msgstr "מרוקו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:193
 #, fuzzy, kde-format
@@ -46014,7 +46017,7 @@ msgstr "ספר הדרכה "
 #, kde-format
 msgctxt "@info: country code"
 msgid "Namibia"
-msgstr ""
+msgstr "נמיביה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:197
 #, fuzzy, kde-format
@@ -46074,13 +46077,13 @@ msgstr "רעש:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Norfolk Island"
-msgstr ""
+msgstr "האי נורפוק"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:207
 #, kde-format
 msgctxt "@info: country code"
 msgid "Northern Mariana Islands"
-msgstr ""
+msgstr "איי מריאנה הצפוניים"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:208
 #, fuzzy, kde-format
@@ -46092,7 +46095,7 @@ msgstr "רגיל"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oman"
-msgstr ""
+msgstr "עומאן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:210
 #, fuzzy, kde-format
@@ -46104,7 +46107,7 @@ msgstr "הדפסת התמונה..."
 #, kde-format
 msgctxt "@info: country code"
 msgid "Palau"
-msgstr ""
+msgstr "פלאו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:212
 #, fuzzy, kde-format
@@ -46116,13 +46119,13 @@ msgstr "תיאור"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Panama"
-msgstr ""
+msgstr "פנמה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:214
 #, kde-format
 msgctxt "@info: country code"
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "פפואה גיניאה החדשה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:215
 #, fuzzy, kde-format
@@ -46140,13 +46143,13 @@ msgstr "נייר"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Philippines"
-msgstr ""
+msgstr "הפיליפינים"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:218
 #, kde-format
 msgctxt "@info: country code"
 msgid "Pitcairn Island"
-msgstr ""
+msgstr "האי פיטקרן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:219
 #, fuzzy, kde-format
@@ -46164,13 +46167,13 @@ msgstr "תפיסתי"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Puerto Rico"
-msgstr ""
+msgstr "פוארטו ריקו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:222
 #, kde-format
 msgctxt "@info: country code"
 msgid "Qatar"
-msgstr ""
+msgstr "קטר"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:223
 #, fuzzy, kde-format
@@ -46182,7 +46185,7 @@ msgstr "שמש"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Romania"
-msgstr ""
+msgstr "רומניה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:225
 #, fuzzy, kde-format
@@ -46207,49 +46210,49 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Kitts and Nevis"
-msgstr ""
+msgstr "סנט קיטס ונוויס"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:229
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Lucia"
-msgstr ""
+msgstr "סנט לוסיה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:230
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Pierre and Miquelon"
-msgstr ""
+msgstr "סן פייר ומיקלון"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:231
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Vincent and the Grenadines"
-msgstr ""
+msgstr "סנט וינסנט והגרנדינים"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:232
 #, kde-format
 msgctxt "@info: country code"
 msgid "Samoa"
-msgstr ""
+msgstr "סמואה‬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:233
 #, kde-format
 msgctxt "@info: country code"
 msgid "San Marino"
-msgstr ""
+msgstr "סן מרינו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:234
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sao Tome and Principe"
-msgstr ""
+msgstr "סאו טומה ופרינסיפה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:235
 #, kde-format
 msgctxt "@info: country code"
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "ערב הסעודית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:236
 #, fuzzy, kde-format
@@ -46261,7 +46264,7 @@ msgstr "כללי"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Serbia"
-msgstr ""
+msgstr "סרביה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:238
 #, fuzzy, kde-format
@@ -46285,19 +46288,19 @@ msgstr "זווית (במעלות):"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Slovakia"
-msgstr ""
+msgstr "סלובקיה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:242
 #, kde-format
 msgctxt "@info: country code"
 msgid "Slovenia"
-msgstr ""
+msgstr "סלובניה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:243
 #, kde-format
 msgctxt "@info: country code"
 msgid "Solomon Islands"
-msgstr ""
+msgstr "איי שלמה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:244
 #, fuzzy, kde-format
@@ -46327,7 +46330,7 @@ msgstr "סריקה"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sri Lanka"
-msgstr ""
+msgstr "סרי לנקה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:249
 #, fuzzy, kde-format
@@ -46357,7 +46360,7 @@ msgstr "תרגום לגרמנית"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sweden"
-msgstr ""
+msgstr "שוודיה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:254
 #, fuzzy, kde-format
@@ -46369,37 +46372,37 @@ msgstr "תרגום לגרמנית"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Syrian Arab Republic"
-msgstr ""
+msgstr "הרפובליקה הערבית הסורית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:256
 #, kde-format
 msgctxt "@info: country code"
 msgid "Taiwan"
-msgstr ""
+msgstr "טאיוואן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:257
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tajikistan"
-msgstr ""
+msgstr "טג׳יקיסטן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:258
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tanzania"
-msgstr ""
+msgstr "טנזניה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:259
 #, kde-format
 msgctxt "@info: country code"
 msgid "Thailand"
-msgstr ""
+msgstr "תאילנד"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:260
 #, kde-format
 msgctxt "@info: country code"
 msgid "Timor-Leste"
-msgstr ""
+msgstr "מזרח טימור"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:261
 #, fuzzy, kde-format
@@ -46411,19 +46414,19 @@ msgstr "משימות"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tokelau Islands"
-msgstr ""
+msgstr "איי טוקלאו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:264
 #, kde-format
 msgctxt "@info: country code"
 msgid "Trinidad and Tobago"
-msgstr ""
+msgstr "טרינידד וטובגו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:265
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tunisia"
-msgstr ""
+msgstr "תוניסיה‬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:266
 #, fuzzy, kde-format
@@ -46441,19 +46444,19 @@ msgstr "נסו"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Turks and Caicos Islands"
-msgstr ""
+msgstr "איי טרקס וקייקוס"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:269
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tuvalu"
-msgstr ""
+msgstr "טובאלו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:270
 #, kde-format
 msgctxt "@info: country code"
 msgid "US Virgin Islands"
-msgstr ""
+msgstr "איי הבתולה של ארה״ב"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:271
 #, fuzzy, kde-format
@@ -46465,13 +46468,13 @@ msgstr "וגם"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Ukraine"
-msgstr ""
+msgstr "אוקראינה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:273
 #, kde-format
 msgctxt "@info: country code"
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "איחוד האמירויות הערביות"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:274
 #, fuzzy, kde-format
@@ -46483,13 +46486,13 @@ msgstr "חזרות:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "United States Minor Outlying Islands"
-msgstr ""
+msgstr "איים קטנים מרוחקים של ארצות הברית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:276
 #, kde-format
 msgctxt "@info: country code"
 msgid "United States of America"
-msgstr ""
+msgstr "ארצות הברית של אמריקה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:277
 #, kde-format
@@ -46501,7 +46504,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uzbekistan"
-msgstr ""
+msgstr "אוזבקיסטן"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:279
 #, fuzzy, kde-format
@@ -46513,7 +46516,7 @@ msgstr "יצרן"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Venezuela"
-msgstr ""
+msgstr "ונצואלה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:281
 #, fuzzy, kde-format
@@ -46525,13 +46528,13 @@ msgstr "שם קובץ"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Wallis and Futuna Islands "
-msgstr ""
+msgstr "איי ואליס ופוטונה "
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:283
 #, kde-format
 msgctxt "@info: country code"
 msgid "Western Sahara"
-msgstr ""
+msgstr "סהרה המערבית"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:284
 #, fuzzy, kde-format
@@ -46549,7 +46552,7 @@ msgstr "גאמה:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Zimbabwe"
-msgstr ""
+msgstr "זימבבואה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:288
 #, fuzzy, kde-format
@@ -46561,7 +46564,7 @@ msgstr "חזרות:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "European Union"
-msgstr ""
+msgstr "האיחוד האירופי"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:290
 #, fuzzy, kde-format
@@ -46621,7 +46624,7 @@ msgstr "גאמה:"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Jericho"
-msgstr ""
+msgstr "יריחו"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:320
 #, fuzzy, kde-format
@@ -60693,10 +60696,10 @@ msgid "Color Depth"
 msgstr "עומק צבע"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:313
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
-msgstr "מציאת תמונות עם"
+msgstr "איתור פריטים עם"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:323
 #, kde-format
@@ -60704,10 +60707,9 @@ msgid "Color Model"
 msgstr "תצורת צבע"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:323
-#, fuzzy, kde-format
-#| msgid "Find pictures with the color model"
+#, kde-format
 msgid "Find items with the color model"
-msgstr "מציאת תמונות בעלות תצורת צבע"
+msgstr "איתור פריטים עם דגם הצבע"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:328
 #: core/utilities/searchwindow/searchfields_createfield.cpp:329
@@ -60718,19 +60720,19 @@ msgstr "מציאת תמונות בעלות תצורת צבע"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:334
 #: core/utilities/searchwindow/searchfields_createfield.cpp:335
 #: core/utilities/searchwindow/searchfields_createfield.cpp:336
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
-msgstr "&תמונה"
+msgstr "%1 [תמונה]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:340
 #: core/utilities/searchwindow/searchfields_createfield.cpp:341
 #: core/utilities/searchwindow/searchfields_createfield.cpp:342
 #: core/utilities/searchwindow/searchfields_createfield.cpp:343
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
-msgstr "תצוגה"
+msgstr "%1 [סרטון]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
 #, kde-format
@@ -60743,14 +60745,14 @@ msgid "The model of the camera"
 msgstr "דגם המצלמה"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
-#, fuzzy, kde-format
+#, kde-format
 msgid "Lens"
-msgstr "עדשה:"
+msgstr "עדשה"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
-#, fuzzy, kde-format
+#, kde-format
 msgid "The type of the lens"
-msgstr "גודל הקובץ"
+msgstr "סוג העדשה"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:430
 #, kde-format
@@ -60813,18 +60815,16 @@ msgid "-"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:556
-#, fuzzy, kde-format
-#| msgid "Flash"
+#, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
-msgstr "מבזק:"
+msgstr "מבזק"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:556
-#, fuzzy, kde-format
-#| msgid "Flash mode"
+#, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
-msgstr "מצב מבזק:"
+msgstr "מצב מבזק"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
@@ -60881,9 +60881,9 @@ msgid "GPS"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:634
-#, fuzzy, kde-format
+#, kde-format
 msgid "Altitude range"
-msgstr "<b>גובה</b>:"
+msgstr "טווח גובה"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:635
 #, kde-format
@@ -60892,80 +60892,76 @@ msgid "-"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:657
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item has no GPS info"
-msgstr "תמונות נמצאו ב- %1"
+msgstr "לפריט אין נתוני GPS (נווטן)"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:658
-#, fuzzy, kde-format
+#, kde-format
 msgid "Not Geo-located"
-msgstr "מציאת תמונות כפולות"
+msgstr "אין תיעוד גאוגרפי"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
-#, fuzzy, kde-format
+#, kde-format
 msgid "Country"
-msgstr "ספירה:"
+msgstr "מדינה"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
-#, fuzzy, kde-format
+#, kde-format
 msgid "Country shown in the item"
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "מדינה שמופיע בפריט"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
-#, fuzzy, kde-format
+#, kde-format
 msgid "Province"
-msgstr "תצוגה מקדימה"
+msgstr "מחוז"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
-#, fuzzy, kde-format
+#, kde-format
 msgid "Province shown in the item"
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "מחוז שמופיע בפריט"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:700
-#, fuzzy, kde-format
+#, kde-format
 msgid "City shown in the item"
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "עיר שמופיעה בפריט"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:716
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sublocation"
-msgstr "מיקום-גאוגרפי"
+msgstr "תת־מקום"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:716
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sublocation shown in the item"
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "תת־מקום שמופיע בפריט"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:730
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
-msgstr "לוח־שנה"
+msgstr "יוצר/ת"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:730
-#, fuzzy, kde-format
-#| msgid "Return pictures commented by"
+#, kde-format
 msgid "Return items created by"
-msgstr "איחזור תמונות אשר מכילות הערות שנכתבו על ידי"
+msgstr "החזרת פריטים שנוצרו על ידי"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:738
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "כותרת"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:738
-#, fuzzy, kde-format
-#| msgid "Return pictures whose comment contains"
+#, kde-format
 msgid "Return items whose comment contains"
-msgstr "איחזור תמונות אשר מכילות בכותרת"
+msgstr "החזרת פריטים שההערה שלהם מכילה"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
-#, fuzzy, kde-format
-#| msgid "Return pictures commented by"
+#, kde-format
 msgid "Return items commented by"
-msgstr "איחזור תמונות אשר מכילות הערות שנכתבו על ידי"
+msgstr "החזרת תמונות עם הערות מאת"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
@@ -61629,7 +61625,7 @@ msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
-msgstr "פעולת לחיצה על הדוגמית:"
+msgstr "פעולת לחיצה על התמונה הממוזערת:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, fuzzy, kde-format
@@ -65467,39 +65463,39 @@ msgid ""
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/utilities/setup/setuptooltip.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "File/Item Information"
-msgstr "מידע קובץ/תמונה"
+msgstr "פרטי קובץ/פריט"
 
 #: core/utilities/setup/setuptooltip.cpp:149
-#, fuzzy, kde-format
+#, kde-format
 msgid "File name"
 msgstr "שם קובץ"
 
 #: core/utilities/setup/setuptooltip.cpp:152
-#, fuzzy, kde-format
+#, kde-format
 msgid "File date"
-msgstr "שם קובץ"
+msgstr "תאריך קובץ"
 
 #: core/utilities/setup/setuptooltip.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgid "File size"
 msgstr "גודל קובץ"
 
 #: core/utilities/setup/setuptooltip.cpp:158
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image type"
-msgstr "הצגת סוג תמונה"
+msgstr "סוג תמונה"
 
 #: core/utilities/setup/setuptooltip.cpp:161
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image dimensions"
-msgstr "הצגת ממדיי התמונה"
+msgstr "ממדי התמונה"
 
 #: core/utilities/setup/setuptooltip.cpp:164
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image aspect ratio"
-msgstr "שמירה על יחס"
+msgstr "יחס גובה־רוחב של תמונה"
 
 #: core/utilities/setup/setuptooltip.cpp:165
 #, fuzzy, kde-format
@@ -65508,37 +65504,37 @@ msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות
 
 #: core/utilities/setup/setuptooltip.cpp:181
 #: core/utilities/setup/setuptooltip.cpp:361
-#, fuzzy, kde-format
+#, kde-format
 msgid "Camera make and model"
-msgstr "הצגת שם-יצרן ודגם של מצלמה"
+msgstr "שם היצרן ודגם המצלמה"
 
 #: core/utilities/setup/setuptooltip.cpp:189
-#, fuzzy, kde-format
+#, kde-format
 msgid "Camera date"
-msgstr "הוספת שם מצלמה"
+msgstr "תאריך מצלמה"
 
 #: core/utilities/setup/setuptooltip.cpp:192
 #: core/utilities/setup/setuptooltip.cpp:369
-#, fuzzy, kde-format
+#, kde-format
 msgid "Camera aperture and focal length"
-msgstr "הצגת נתוני צמצם ומיקוד עדשה של תמונה"
+msgstr "נתוני צמצם ואורך מוקד של מצלמה"
 
 #: core/utilities/setup/setuptooltip.cpp:196
 #: core/utilities/setup/setuptooltip.cpp:373
-#, fuzzy, kde-format
+#, kde-format
 msgid "Camera exposure and sensitivity"
-msgstr "הצגת נתוני חשיפה ורגישות של תמונה"
+msgstr "נתוני חשיפה ורגישות של המצלמה"
 
 #: core/utilities/setup/setuptooltip.cpp:200
-#, fuzzy, kde-format
+#, kde-format
 msgid "Camera mode and program"
-msgstr "הצגת נתוני מצב-צילום של תמונה"
+msgstr "נתוני מצב צילום ותוכנית מצלמה"
 
 #: core/utilities/setup/setuptooltip.cpp:204
 #: core/utilities/setup/setuptooltip.cpp:377
-#, fuzzy, kde-format
+#, kde-format
 msgid "Camera flash settings"
-msgstr "הצגת נתוני פלאש של תמונה"
+msgstr "הגדרות מבזק מצלמה"
 
 #: core/utilities/setup/setuptooltip.cpp:208
 #: core/utilities/setup/setuptooltip.cpp:381
@@ -65723,64 +65719,64 @@ msgid "Set this option to display the album preview."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/utilities/setup/setuptooltip.cpp:336
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show import items' tool-tips"
-msgstr "הצגת עצות פריטי אלבום"
+msgstr "הצגת חלוניות צצות של פריטי ייבוא"
 
 #: core/utilities/setup/setuptooltip.cpp:337
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import Information"
-msgstr "מידע על הרכיב"
+msgstr "פרטי ייבוא"
 
 #: core/utilities/setup/setuptooltip.cpp:342
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item name"
-msgstr "תאריך תמונה"
+msgstr "שם פריט"
 
 #: core/utilities/setup/setuptooltip.cpp:343
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item name."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את שם הפריט."
 
 #: core/utilities/setup/setuptooltip.cpp:345
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item date"
-msgstr "תאריך תמונה"
+msgstr "תאריך פריט"
 
 #: core/utilities/setup/setuptooltip.cpp:346
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item date."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את תאריך הפריט."
 
 #: core/utilities/setup/setuptooltip.cpp:348
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item size"
-msgstr "קובצי תמונת"
+msgstr "גודל פריט"
 
 #: core/utilities/setup/setuptooltip.cpp:349
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item size."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את גודל הפריט."
 
 #: core/utilities/setup/setuptooltip.cpp:351
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item type"
-msgstr "קובצי תמונת"
+msgstr "סוג פריט"
 
 #: core/utilities/setup/setuptooltip.cpp:352
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item type."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את סוג הפריט."
 
 #: core/utilities/setup/setuptooltip.cpp:354
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item dimensions"
-msgstr "הצגת ממדיי התמונה"
+msgstr "ממדי פריט"
 
 #: core/utilities/setup/setuptooltip.cpp:355
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item dimensions."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את ממדי הפריט."
 
 #: core/utilities/setup/setuptooltip.cpp:358
 #, kde-format
@@ -65800,9 +65796,9 @@ msgid "Album Items"
 msgstr "פריטי אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:410
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import Items"
-msgstr "סידור תמונות"
+msgstr "ייבוא פריטים"
 
 #, fuzzy
 #~| msgid "No script selected"
