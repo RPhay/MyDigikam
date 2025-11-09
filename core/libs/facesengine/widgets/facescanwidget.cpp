@@ -41,24 +41,24 @@ void FaceScanWidget::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
-    FaceScanSettings prm;
-    prm.readFromConfig(group);
+    FaceScanSettings settings;
+    settings.readFromConfig(group);
 
     /**
      * ClearAll isn't a valid value anymore so set it Rescan.
      * ClearAll is only used by ResetFacesDb in maintenance.
      */
 
-    if (FaceScanSettings::AlreadyScannedHandling::ClearAll == prm.alreadyScannedHandling)
+    if (FaceScanSettings::AlreadyScannedHandling::ClearAll == settings.alreadyScannedHandling)
     {
-        prm.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
+        settings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
     }
 
-    d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(prm.alreadyScannedHandling));
-    d->detectAccuracyInput->setValue(prm.detectAccuracy);
-    d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(prm.detectSize));
-    d->recognizeAccuracyInput->setValue(prm.recognizeAccuracy);
-    d->useFullCpuButton->setChecked(prm.useFullCpu);
+    d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(settings.alreadyScannedHandling));
+    d->detectAccuracyInput->setValue(settings.detectAccuracy);
+    d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(settings.detectSize));
+    d->recognizeAccuracyInput->setValue(settings.recognizeAccuracy);
+    d->useFullCpuButton->setChecked(settings.useFullCpu);
 
     d->albumSelectors->loadState();
 
@@ -69,15 +69,17 @@ void FaceScanWidget::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
-    FaceScanSettings prm;
+    FaceScanSettings settings;
 
-    prm.alreadyScannedHandling = static_cast<FaceScanSettings::AlreadyScannedHandling>(d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
-    prm.detectAccuracy         = d->detectAccuracyInput->value();
-    prm.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
-    prm.recognizeAccuracy      = d->recognizeAccuracyInput->value();
-    prm.useFullCpu             = d->useFullCpuButton->isChecked();
+    settings.alreadyScannedHandling = static_cast<FaceScanSettings::AlreadyScannedHandling>
+                                      (d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
+    settings.detectAccuracy         = d->detectAccuracyInput->value();
+    settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>
+                                      (d->detectSizeBox->currentData().toInt());
+    settings.recognizeAccuracy      = d->recognizeAccuracyInput->value();
+    settings.useFullCpu             = d->useFullCpuButton->isChecked();
 
-    prm.writeToConfig(group);
+    settings.writeToConfig(group);
 
     d->albumSelectors->saveState();
 }
@@ -245,7 +247,8 @@ void FaceScanWidget::slotSettingsChanged()
     FaceScanSettings settings;
     settings.readFromConfig(group);
 
-    settings.detectSize        = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
+    settings.detectSize        = static_cast<FaceScanSettings::FaceDetectionSize>
+                                 (d->detectSizeBox->currentData().toInt());
     settings.useFullCpu        = d->useFullCpuButton->isChecked();
     settings.detectAccuracy    = d->detectAccuracyInput->value();
     settings.recognizeAccuracy = d->recognizeAccuracyInput->value();
@@ -287,7 +290,8 @@ FaceScanSettings FaceScanWidget::settings() const
 
     settings.detectAccuracy         = d->detectAccuracyInput->value();
     settings.detectModel            = FaceScanSettings::FaceDetectionModel::YuNet;
-    settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
+    settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>
+                                      (d->detectSizeBox->currentData().toInt());
     settings.recognizeAccuracy      = d->recognizeAccuracyInput->value();
     settings.recognizeModel         = FaceScanSettings::FaceRecognitionModel::SFace;
 
