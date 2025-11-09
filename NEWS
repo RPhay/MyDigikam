@@ -63,7 +63,7 @@ BUGFIXES:
 038 --> 511693 - Filters on right side - text filter for PATH.
 039 --> 511761 - Face recognition launched when one face confirmed.
 040 --> 511850 - Rebuild Thumbnails results in digiKam hang "Not Responding".
-041 --> 
+041 --> 511828 - Face recognition settings incorrect after crash.
 042 --> 
 043 --> 
 044 --> 

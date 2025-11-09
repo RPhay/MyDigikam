@@ -30,7 +30,6 @@ FaceScanWidget::FaceScanWidget(QWidget* const parent)
 {
     setObjectName(d->configName);
     setupUi();
-    setupConnections();
 }
 
 FaceScanWidget::~FaceScanWidget()
@@ -62,6 +61,8 @@ void FaceScanWidget::doLoadState()
     d->useFullCpuButton->setChecked(prm.useFullCpu);
 
     d->albumSelectors->loadState();
+
+    setupConnections();
 }
 
 void FaceScanWidget::doSaveState()
@@ -238,6 +239,7 @@ void FaceScanWidget::slotDetectAccuracyChanged()
 {
     KConfigGroup group = getConfigGroup();
     FaceScanSettings prm;
+    prm.readFromConfig(group);
     prm.detectAccuracy = d->detectAccuracyInput->value();
     prm.writeToConfig(group);
 }
@@ -246,6 +248,7 @@ void FaceScanWidget::slotDetectSizeChanged()
 {
     KConfigGroup group = getConfigGroup();
     FaceScanSettings prm;
+    prm.readFromConfig(group);
     prm.detectSize     = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
     prm.writeToConfig(group);
 }
@@ -254,6 +257,7 @@ void FaceScanWidget::slotRecognizeAccuracyChanged()
 {
     KConfigGroup group    = getConfigGroup();
     FaceScanSettings prm;
+    prm.readFromConfig(group);
     prm.recognizeAccuracy = d->recognizeAccuracyInput->value();
     prm.writeToConfig(group);
 }

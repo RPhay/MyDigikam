@@ -290,16 +290,16 @@ void PeopleSideBarWidget::doFaceScan(const FaceScanSettings& faceScanSettings)
 
         connect(facesDetector, SIGNAL(signalComplete()),
                 d->parentInstance, SLOT(slotScanComplete()));
-    
+
         connect(facesDetector, SIGNAL(signalCanceled()),
                 d->parentInstance, SLOT(slotScanComplete()));
-    
+
         connect(facesDetector, SIGNAL(signalScanNotification(QString,int)),
                 d->parentInstance, SIGNAL(signalNotificationError(QString,int)));
-    
+
         d->settingsWdg->setEnabled(false);
         d->rescanButton->setEnabled(false);
-    
+
         facesDetector->start();    
     }
     catch (...)
