@@ -68,7 +68,7 @@ ImageQualitySorter::ImageQualitySorter(const ImageQualitySettings& quality,
     init(quality);
 }
 
-ImageQualitySorter::ImageQualitySorter(const QStringList itemPaths,
+ImageQualitySorter::ImageQualitySorter(const QStringList& itemPaths,
                                        const ImageQualitySettings& quality,
                                        ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("ImageQualitySorter"), parent),
