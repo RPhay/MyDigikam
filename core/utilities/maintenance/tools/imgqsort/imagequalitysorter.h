@@ -44,8 +44,15 @@ public:
      */
     explicit ImageQualitySorter(const ImageQualitySettings& quality,
                                 ProgressItem* const parent = nullptr);
+    /**
+     * @brief Constructor using QStringList and ImageQualitySettings as argument. If list is empty, whole Albums collection is processed.
+     */
+    ImageQualitySorter(const QStringList itemPaths,
+                       const ImageQualitySettings& quality,
+                       ProgressItem* const parent = nullptr);
     ~ImageQualitySorter() override;
 
+    void init(const ImageQualitySettings& quality);
     void setUseMultiCoreCPU(bool b) override;
 
 private:

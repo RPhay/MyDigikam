@@ -65,19 +65,35 @@ ImageQualitySorter::ImageQualitySorter(const ImageQualitySettings& quality,
     : MaintenanceTool(QLatin1String("ImageQualitySorter"), parent),
       d              (new Private)
 {
-    d->quality    = quality;
-    d->thread     = new MaintenanceThread(this);
+    init(quality);
+}
+
+ImageQualitySorter::ImageQualitySorter(const QStringList itemPaths,
+                                       const ImageQualitySettings& quality,
+                                       ProgressItem* const parent)
+    : MaintenanceTool(QLatin1String("ImageQualitySorter"), parent),
+      d              (new Private)
+{
+    d->allPicturesPath = itemPaths;
+
+    init(quality);
+}
+
+ImageQualitySorter::~ImageQualitySorter()
+{
+    delete d;
+}
+
+void ImageQualitySorter::init(const ImageQualitySettings& quality)
+{
+    d->quality = quality;
+    d->thread  = new MaintenanceThread(this);
 
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
     connect(d->thread, SIGNAL(signalAdvanceProgress(ItemInfo,QImage,int)),
             this, SLOT(slotAdvance(ItemInfo,QImage,int)));
-}
-
-ImageQualitySorter::~ImageQualitySorter()
-{
-    delete d;
 }
 
 void ImageQualitySorter::setUseMultiCoreCPU(bool b)
@@ -99,6 +115,13 @@ void ImageQualitySorter::slotStart()
     setThumbnail(QIcon::fromTheme(QLatin1String("flag-green")).pixmap(48));
 
     ProgressManager::addProgressItem(this);
+
+    if (!d->allPicturesPath.isEmpty())
+    {
+        slotAffectedAlbumsFinished();
+
+        return;
+    }
 
     // Activate progress bar during album calculation.
 

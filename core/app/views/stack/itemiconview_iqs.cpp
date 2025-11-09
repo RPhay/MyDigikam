@@ -17,7 +17,7 @@
 
 // Local includes
 
-#include "maintenancethread.h"
+#include "imagequalitysorter.h"
 
 namespace Digikam
 {
@@ -35,13 +35,8 @@ void ItemIconView::slotImageQualitySorter()
     ImageQualitySettings settings;
     settings.readFromConfig();
 
-    MaintenanceThread* const thread = new MaintenanceThread(this);
-
-    thread->sortByImageQuality(paths, settings);
-    thread->start();
-
-    connect(thread, &QThread::finished,
-            thread, &QObject::deleteLater);
+    ImageQualitySorter* const tool = new ImageQualitySorter(paths, settings);
+    tool->start();
 }
 
 } // namespace Digikam
