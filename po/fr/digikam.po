@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-08 00:39+0000\n"
-"PO-Revision-Date: 2025-11-06 17:37+0100\n"
+"PO-Revision-Date: 2025-11-07 10:02+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -23461,18 +23461,16 @@ msgid "Target Location: "
 msgstr "Emplacement cible : "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Définit l'adresse cible vers laquelle envoyer les images. Ceci peut être "
-"n'importe quelle adresse utilisable dans Dolphin ou dans Konqueror, par "
-"exemple, « ftp://mon.serveur.org/sous/dossier »"
+"n'importe quelle adresse utilisable dans votre gestionnaire de fichiers, "
+"comme, par exemple : <br><i>ftp://my.server.org/sub/folder</i><br><i>fish://"
+"username@my.server.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
@@ -23484,8 +23482,7 @@ msgstr ""
 "pour exportation…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
 msgstr "Sélectionnez l'emplacement cible…"

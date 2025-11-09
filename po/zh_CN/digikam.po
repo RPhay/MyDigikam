@@ -12,8 +12,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-File: /kf5-trunk/messages/digikam/digikam.pot\n"
-"X-Crowdin-File-ID: 4777\n"
+"X-Crowdin-File: /kf6-trunk/messages/digikam/digikam.pot\n"
+"X-Crowdin-File-ID: 58702\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
@@ -22189,17 +22189,15 @@ msgid "Target Location: "
 msgstr "目标位置："
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"设定图像要上传到的目标地址。此地址可以是 Dolphin 或 Konqueror 支持的任意地"
-"址，例如 ftp://my.server.org/sub/folder。"
+"设置上传图像的目标地址。这可以是文件资源管理器中使用的任意地址，例如："
+"<br><i>ftp://my.server.org/sub/folder</i><br><i>fish://username@my.server."
+"org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
 #, kde-format
@@ -22209,12 +22207,10 @@ msgid ""
 msgstr "选择导出位置..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Target..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "选择目标..."
+msgstr "选择目标位置..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
@@ -22253,39 +22249,36 @@ msgid ""
 msgstr "部分图像未能传输。它们仍在列表中，您可以马上重新尝试导出这些图像。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Target Location: "
+#, kde-format
 msgid "Source Location: "
-msgstr "目标位置："
+msgstr "来源位置："
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the source address to download the images to. This can be any address "
 "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"设定图像要上传到的目标地址。此地址可以是 Dolphin 或 Konqueror 支持的任意地"
-"址，例如 ftp://my.server.org/sub/folder。"
+"设置下载图像的来源地址。这可以是文件资源管理器中使用的任意地址，例如："
+"<br><i>ftp://my.server.org/sub/folder</i><br><i>fish://username@my.server."
+"org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, kde-format
 msgid "Select Source Location..."
-msgstr ""
+msgstr "选择来源位置..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
 #, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr ""
+msgstr "这是要导入到选定目标的来源项目列表。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
 #, kde-format
 msgid "Select Destination Location:"
-msgstr ""
+msgstr "选择目标位置："
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, kde-format
@@ -34269,10 +34262,9 @@ msgid "Item Name"
 msgstr "项目文件名"
 
 #: core/libs/filters/textfilter.cpp:76
-#, fuzzy, kde-format
-#| msgid "Item date"
+#, kde-format
 msgid "Item Path"
-msgstr "项目日期"
+msgstr ""
 
 #: core/libs/filters/textfilter.cpp:78
 #, kde-format
@@ -34305,10 +34297,9 @@ msgid "Item Pixel Size"
 msgstr "项目像素大小"
 
 #: core/libs/filters/textfilter.cpp:91
-#, fuzzy, kde-format
-#| msgid "Infrared Filter"
+#, kde-format
 msgid "Inverted Filter"
-msgstr "红外滤镜"
+msgstr ""
 
 #: core/libs/filters/textfilter.cpp:94
 #, kde-format
