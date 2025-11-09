@@ -53,11 +53,9 @@ private:
 
 private Q_SLOTS:
 
+    void slotSettingsChanged();
     void slotPrepareForDetect(bool status);
     void slotPrepareForRecognize(bool status);
-    void slotDetectAccuracyChanged();
-    void slotDetectSizeChanged();
-    void slotRecognizeAccuracyChanged();
 
 private:
 

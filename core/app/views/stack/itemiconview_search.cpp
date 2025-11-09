@@ -88,7 +88,7 @@ void ItemIconView::slotImageScanForFaces()
 
         connect(tool, SIGNAL(signalComplete()),
                 this, SLOT(slotRefreshImagePreview()));
-    
+
         tool->start();
     }
     catch (...)

@@ -216,13 +216,13 @@ void FaceScanWidget::setupUi()
 void FaceScanWidget::setupConnections()
 {
     connect(d->detectAccuracyInput, &DIntNumInput::valueChanged,
-            this, &FaceScanWidget::slotDetectAccuracyChanged);
+            this, &FaceScanWidget::slotSettingsChanged);
 
     connect(d->recognizeAccuracyInput, &DIntNumInput::valueChanged,
-            this, &FaceScanWidget::slotRecognizeAccuracyChanged);
+            this, &FaceScanWidget::slotSettingsChanged);
 
     connect(d->detectSizeBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this, &FaceScanWidget::slotDetectSizeChanged);
+            this, &FaceScanWidget::slotSettingsChanged);
 }
 
 void FaceScanWidget::slotPrepareForDetect(bool status)
@@ -235,31 +235,18 @@ void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
     d->alreadyScannedBox->setEnabled(false);
 }
 
-void FaceScanWidget::slotDetectAccuracyChanged()
+void FaceScanWidget::slotSettingsChanged()
 {
     KConfigGroup group = getConfigGroup();
-    FaceScanSettings prm;
-    prm.readFromConfig(group);
-    prm.detectAccuracy = d->detectAccuracyInput->value();
-    prm.writeToConfig(group);
-}
 
-void FaceScanWidget::slotDetectSizeChanged()
-{
-    KConfigGroup group = getConfigGroup();
-    FaceScanSettings prm;
-    prm.readFromConfig(group);
-    prm.detectSize     = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
-    prm.writeToConfig(group);
-}
+    FaceScanSettings settings;
+    settings.readFromConfig(group);
 
-void FaceScanWidget::slotRecognizeAccuracyChanged()
-{
-    KConfigGroup group    = getConfigGroup();
-    FaceScanSettings prm;
-    prm.readFromConfig(group);
-    prm.recognizeAccuracy = d->recognizeAccuracyInput->value();
-    prm.writeToConfig(group);
+    settings.detectSize        = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
+    settings.detectAccuracy    = d->detectAccuracyInput->value();
+    settings.recognizeAccuracy = d->recognizeAccuracyInput->value();
+
+    settings.writeToConfig(group);
 }
 
 bool FaceScanWidget::settingsConflicted() const
