@@ -275,7 +275,7 @@ FaceScanSettings FaceScanWidget::settings() const
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
     settings.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
 
-    if (d->settingsConflicted)
+    if (settings.task == FaceScanSettings::RecognizeMarkedFaces)
     {
         int numberOfIdentities      = FaceDbAccess().db()->getNumberOfIdentities();
         d->settingsConflicted       = (numberOfIdentities == 0);
