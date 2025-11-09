@@ -34,9 +34,9 @@
 
 #include "dimg.h"
 #include "coredb.h"
+#include "coredbaccess.h"
 #include "albummanager.h"
 #include "collectionmanager.h"
-#include "coredbaccess.h"
 #include "maintenancethread.h"
 #include "dnotificationwidget.h"
 

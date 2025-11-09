@@ -18,6 +18,8 @@
 
 // Qt includes
 
+#include <QtConcurrentRun>
+#include <QFutureWatcher>
 #include <QString>
 #include <QIcon>
 
@@ -30,9 +32,9 @@
 #include "digikam_globals.h"
 #include "dimg.h"
 #include "coredb.h"
+#include "coredbaccess.h"
 #include "albummanager.h"
 #include "collectionmanager.h"
-#include "coredbaccess.h"
 #include "tagscache.h"
 #include "picklabelwidget.h"
 #include "maintenancethread.h"
@@ -51,6 +53,9 @@ public:
     ImageQualitySettings  quality;
 
     QStringList           allPicturesPath;
+
+    QFuture<void>         affectedAlbumTask;
+    QFutureWatcher<void>  affectedAlbumWatcher;
 
     MaintenanceThread*    thread    = nullptr;
 };
@@ -95,6 +100,48 @@ void ImageQualitySorter::slotStart()
 
     ProgressManager::addProgressItem(this);
 
+    // Activate progress bar during album calculation.
+
+    setTotalItems(1);
+
+    connect(&d->affectedAlbumWatcher, &QFutureWatcher<void>::finished,
+            this, &ImageQualitySorter::slotAffectedAlbumsFinished);
+
+    d->affectedAlbumTask =
+        QtConcurrent::run(
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                          &ImageQualitySorter::calculateAffectedAlbums, this
+
+#else
+
+                          this, &ImageQualitySorter::calculateAffectedAlbums
+
+#endif
+
+                         );
+
+    d->affectedAlbumWatcher.setFuture(d->affectedAlbumTask);
+}
+
+void ImageQualitySorter::slotAffectedAlbumsFinished()
+{
+    if (d->allPicturesPath.isEmpty())
+    {
+        slotDone();
+
+        return;
+    }
+
+    setTotalItems(d->allPicturesPath.count());
+
+    d->thread->sortByImageQuality(d->allPicturesPath, d->quality);
+    d->thread->start();
+}
+
+void ImageQualitySorter::calculateAffectedAlbums()
+{
     if (d->quality.albums.isEmpty())
     {
         d->quality.albums = AlbumManager::instance()->allPAlbums();
@@ -151,18 +198,6 @@ void ImageQualitySorter::slotStart()
             d->allPicturesPath += aPaths;
         }
     }
-
-    if (d->allPicturesPath.isEmpty())
-    {
-        slotDone();
-
-        return;
-    }
-
-    setTotalItems(d->allPicturesPath.count());
-
-    d->thread->sortByImageQuality(d->allPicturesPath, d->quality);
-    d->thread->start();
 }
 
 void ImageQualitySorter::slotAdvance(const ItemInfo& inf, const QImage& img, int pick)
