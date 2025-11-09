@@ -215,6 +215,9 @@ void FaceScanWidget::setupUi()
 
 void FaceScanWidget::setupConnections()
 {
+    connect(d->useFullCpuButton, &QCheckBox::toggled,
+            this, &FaceScanWidget::slotSettingsChanged);
+
     connect(d->detectAccuracyInput, &DIntNumInput::valueChanged,
             this, &FaceScanWidget::slotSettingsChanged);
 
@@ -243,6 +246,7 @@ void FaceScanWidget::slotSettingsChanged()
     settings.readFromConfig(group);
 
     settings.detectSize        = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
+    settings.useFullCpu        = d->useFullCpuButton->isChecked();
     settings.detectAccuracy    = d->detectAccuracyInput->value();
     settings.recognizeAccuracy = d->recognizeAccuracyInput->value();
 
