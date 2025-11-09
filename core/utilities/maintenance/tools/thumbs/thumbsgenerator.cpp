@@ -17,11 +17,10 @@
 
 // Qt includes
 
+#include <QtConcurrentRun>
+#include <QFutureWatcher>
 #include <QApplication>
 #include <QString>
-#include <QTimer>
-#include <QDir>
-#include <QFileInfo>
 #include <QPixmap>
 
 // KDE includes
@@ -30,17 +29,17 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "coredb.h"
+#include "coredbaccess.h"
 #include "coredbalbuminfo.h"
 #include "collectionmanager.h"
-#include "albummanager.h"
 #include "applicationsettings.h"
-#include "coredbaccess.h"
+#include "albummanager.h"
 #include "iteminfo.h"
-#include "thumbsdbaccess.h"
 #include "thumbsdb.h"
+#include "thumbsdbaccess.h"
 #include "maintenancethread.h"
-#include "digikam_config.h"
 
 namespace Digikam
 {
@@ -53,13 +52,16 @@ public:
 
 public:
 
-    bool               rebuildAll = true;
+    bool                 rebuildAll = true;
 
-    AlbumList          albumList;
+    AlbumList            albumList;
 
-    QStringList        allPicturesPath;
+    QStringList          allPicturesPath;
 
-    MaintenanceThread* thread     = nullptr;
+    QFuture<void>        affectedAlbumTask;
+    QFutureWatcher<void> affectedAlbumWatcher;
+
+    MaintenanceThread*   thread     = nullptr;
 };
 
 ThumbsGenerator::ThumbsGenerator(const bool rebuildAll,
@@ -121,8 +123,48 @@ void ThumbsGenerator::slotStart()
 
     ProgressManager::addProgressItem(this);
 
-    QApplication::setOverrideCursor(Qt::WaitCursor);
+    // Activate progress bar during album calculation.
 
+    setTotalItems(1);
+
+    connect(&d->affectedAlbumWatcher, &QFutureWatcher<void>::finished,
+            this, &ThumbsGenerator::slotAffectedAlbumsFinished);
+
+    d->affectedAlbumTask =
+        QtConcurrent::run(
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                          &ThumbsGenerator::calculateAffectedAlbums, this
+
+#else
+
+                          this, &ThumbsGenerator::calculateAffectedAlbums
+
+#endif
+
+                         );
+
+    d->affectedAlbumWatcher.setFuture(d->affectedAlbumTask);
+}
+
+void ThumbsGenerator::slotAffectedAlbumsFinished()
+{
+    if (d->allPicturesPath.isEmpty())
+    {
+        slotDone();
+
+        return;
+    }
+
+    setTotalItems(d->allPicturesPath.count());
+
+    d->thread->generateThumbs(d->allPicturesPath);
+    d->thread->start();
+}
+
+void ThumbsGenerator::calculateAffectedAlbums()
+{
     if (d->albumList.isEmpty())
     {
         d->albumList = AlbumManager::instance()->allPAlbums();
@@ -201,20 +243,6 @@ void ThumbsGenerator::slotStart()
             ++it;
         }
     }
-
-    QApplication::restoreOverrideCursor();
-
-    if (d->allPicturesPath.isEmpty())
-    {
-        slotDone();
-
-        return;
-    }
-
-    setTotalItems(d->allPicturesPath.count());
-
-    d->thread->generateThumbs(d->allPicturesPath);
-    d->thread->start();
 }
 
 void ThumbsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)

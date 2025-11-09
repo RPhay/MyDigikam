@@ -62,7 +62,7 @@ BUGFIXES:
 037 --> 510415 - Exiftool path cannot be configured.
 038 --> 511693 - Filters on right side - text filter for PATH.
 039 --> 511761 - Face recognition launched when one face confirmed.
-040 --> 
+040 --> 511850 - Rebuild Thumbnails results in digiKam hang "Not Responding".
 041 --> 
 042 --> 
 043 --> 

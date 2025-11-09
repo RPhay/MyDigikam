@@ -51,12 +51,14 @@ public:
 private:
 
     void init(const bool rebuildAll);
+    void calculateAffectedAlbums();
 
 private Q_SLOTS:
 
     void slotStart()                override;
     void slotCancel()               override;
     void slotDone()                 override;             // cppcheck-suppress virtualCallInConstructor
+    void slotAffectedAlbumsFinished();
     void slotAdvance(const ItemInfo&, const QImage&);
 
 private:
