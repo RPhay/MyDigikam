@@ -55,7 +55,7 @@ public:
 
     AlbumList            albumList;
 
-    QList<qlonglong>     allIitemIds;
+    QList<qlonglong>     allItemIds;
 
     QFuture<void>        affectedAlbumTask;
     QFutureWatcher<void> affectedAlbumWatcher;
@@ -130,16 +130,16 @@ void FingerPrintsGenerator::slotStart()
 
 void FingerPrintsGenerator::slotAffectedAlbumsFinished()
 {
-    if (d->allIitemIds.isEmpty())
+    if (d->allItemIds.isEmpty())
     {
         slotDone();
 
         return;
     }
 
-    setTotalItems(d->allIitemIds.count());
+    setTotalItems(d->allItemIds.count());
 
-    d->thread->generateFingerprints(d->allIitemIds, d->rebuildAll);
+    d->thread->generateFingerprints(d->allItemIds, d->rebuildAll);
     d->thread->start();
 }
 
@@ -161,9 +161,9 @@ void FingerPrintsGenerator::calculateAffectedAlbums()
 
             for (const qlonglong& id : ids)
             {
-                if (!d->allIitemIds.contains(id))
+                if (!d->allItemIds.contains(id))
                 {
-                    d->allIitemIds << id;
+                    d->allItemIds << id;
                 }
             }
         }
@@ -173,9 +173,9 @@ void FingerPrintsGenerator::calculateAffectedAlbums()
 
             for (const qlonglong& id : ids)
             {
-                if (!d->allIitemIds.contains(id))
+                if (!d->allItemIds.contains(id))
                 {
-                    d->allIitemIds << id;
+                    d->allItemIds << id;
                 }
             }
         }
