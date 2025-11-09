@@ -18,6 +18,8 @@
 
 // Qt includes
 
+#include <QtConcurrentRun>
+#include <QFutureWatcher>
 #include <QApplication>
 #include <QString>
 #include <QIcon>
@@ -49,11 +51,16 @@ public:
 
 public:
 
-    bool               rebuildAll   = true;
+    bool                 rebuildAll   = true;
 
-    AlbumList          albumList;
+    AlbumList            albumList;
 
-    MaintenanceThread* thread       = nullptr;
+    QList<qlonglong>     allIitemIds;
+
+    QFuture<void>        affectedAlbumTask;
+    QFutureWatcher<void> affectedAlbumWatcher;
+
+    MaintenanceThread*   thread       = nullptr;
 };
 
 FingerPrintsGenerator::FingerPrintsGenerator(const bool rebuildAll, const AlbumList& list, ProgressItem* const parent)
@@ -96,16 +103,54 @@ void FingerPrintsGenerator::slotStart()
 
     ProgressManager::addProgressItem(this);
 
-    QApplication::setOverrideCursor(Qt::WaitCursor);
+    // Activate progress bar during album calculation.
 
+    setTotalItems(1);
+
+    connect(&d->affectedAlbumWatcher, &QFutureWatcher<void>::finished,
+            this, &FingerPrintsGenerator::slotAffectedAlbumsFinished);
+
+    d->affectedAlbumTask =
+        QtConcurrent::run(
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                          &FingerPrintsGenerator::calculateAffectedAlbums, this
+
+#else
+
+                          this, &FingerPrintsGenerator::calculateAffectedAlbums
+
+#endif
+
+                         );
+
+    d->affectedAlbumWatcher.setFuture(d->affectedAlbumTask);
+}
+
+void FingerPrintsGenerator::slotAffectedAlbumsFinished()
+{
+    if (d->allIitemIds.isEmpty())
+    {
+        slotDone();
+
+        return;
+    }
+
+    setTotalItems(d->allIitemIds.count());
+
+    d->thread->generateFingerprints(d->allIitemIds, d->rebuildAll);
+    d->thread->start();
+}
+
+void FingerPrintsGenerator::calculateAffectedAlbums()
+{
     if (d->albumList.isEmpty())
     {
         d->albumList = AlbumManager::instance()->allPAlbums();
     }
 
     // Get all item IDs from albums.
-
-    QList<qlonglong> itemIds;
 
     for (AlbumList::ConstIterator it = d->albumList.constBegin() ;
          !canceled() && (it != d->albumList.constEnd()) ; ++it)
@@ -116,9 +161,9 @@ void FingerPrintsGenerator::slotStart()
 
             for (const qlonglong& id : ids)
             {
-                if (!itemIds.contains(id))
+                if (!d->allIitemIds.contains(id))
                 {
-                    itemIds << id;
+                    d->allIitemIds << id;
                 }
             }
         }
@@ -128,27 +173,13 @@ void FingerPrintsGenerator::slotStart()
 
             for (const qlonglong& id : ids)
             {
-                if (!itemIds.contains(id))
+                if (!d->allIitemIds.contains(id))
                 {
-                    itemIds << id;
+                    d->allIitemIds << id;
                 }
             }
         }
     }
-
-    QApplication::restoreOverrideCursor();
-
-    if (itemIds.isEmpty())
-    {
-        slotDone();
-
-        return;
-    }
-
-    setTotalItems(itemIds.count());
-
-    d->thread->generateFingerprints(itemIds, d->rebuildAll);
-    d->thread->start();
 }
 
 void FingerPrintsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)

@@ -53,12 +53,14 @@ Q_SIGNALS:
 private:
 
     void processOne();
+    void calculateAffectedAlbums();
 
 private Q_SLOTS:
 
     void slotStart()                override;
     void slotDone()                 override;      // cppcheck-suppress virtualCallInConstructor
     void slotCancel()               override;
+    void slotAffectedAlbumsFinished();
     void slotAdvance(const ItemInfo&, const QImage&);
 
 private:
