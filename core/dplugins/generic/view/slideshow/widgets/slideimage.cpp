@@ -186,11 +186,7 @@ void SlideImage::updatePixmap()
 
     QSize fullSize = QSizeF(dpr * width(), dpr * height()).toSize();
     d->pixmap      = QPixmap(fullSize);
-
-    if (d->settings->useBgColor)
-    {
-        d->pixmap.fill(d->settings->bgColor);
-    }
+    d->pixmap.fill(d->settings->bgColor);
 
     QPainter p(&(d->pixmap));
 

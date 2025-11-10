@@ -55,7 +55,6 @@ void SlideShowSettings::readFromConfig()
     printLabels               = group.readEntry(configSlideShowPrintLabelsEntry,          false);
     printRating               = group.readEntry(configSlideShowPrintRatingEntry,          false);
     showProgressIndicator     = group.readEntry(configSlideShowProgressIndicatorEntry,    true);
-    useBgColor                = group.readEntry(configSlideShowUseBgColorEntry,           true);
     bgColor                   = group.readEntry(configSlideShowBgColorEntry,              QColor(Qt::black));
     captionFont               = group.readEntry(configSlideShowCaptionFontEntry,
                                                 QFontDatabase::systemFont(QFontDatabase::GeneralFont));
@@ -85,7 +84,6 @@ void SlideShowSettings::writeToConfig()
     group.writeEntry(configSlideShowPrintLabelsEntry,          printLabels);
     group.writeEntry(configSlideShowPrintRatingEntry,          printRating);
     group.writeEntry(configSlideShowProgressIndicatorEntry,    showProgressIndicator);
-    group.writeEntry(configSlideShowUseBgColorEntry,           useBgColor);
     group.writeEntry(configSlideShowBgColorEntry,              bgColor);
     group.writeEntry(configSlideShowCaptionFontEntry,          captionFont);
     group.writeEntry(configSlideScreenEntry,                   slideScreen);
