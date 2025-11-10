@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-08 00:39+0000\n"
+"POT-Creation-Date: 2025-11-10 00:40+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -27348,10 +27348,10 @@ msgstr "Auto-tags for: %1\n"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:260
 #, fuzzy, kde-format
 #| msgid "Album: %1"
 msgid "Album: %1\n"
@@ -35325,7 +35325,7 @@ msgstr ""
 "Failed to create tables in database.\n"
 "%1"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#: core/libs/facesengine/widgets/facescanwidget.cpp:93
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:114
@@ -35334,28 +35334,28 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Search in"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#: core/libs/facesengine/widgets/facescanwidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Workflow"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:106
+#: core/libs/facesengine/widgets/facescanwidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "Scan Images"
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Scan Images"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:107
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
 #, fuzzy, kde-format
 #| msgid "Scan Images"
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Scan Images"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#: core/libs/facesengine/widgets/facescanwidget.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Recognize faces"
@@ -35363,7 +35363,7 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Recognise faces"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#: core/libs/facesengine/widgets/facescanwidget.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35377,7 +35377,7 @@ msgid ""
 "unknown faces with confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:128
+#: core/libs/facesengine/widgets/facescanwidget.cpp:131
 #, fuzzy, kde-format
 #| msgctxt "@label Face Detection Accuracy"
 #| msgid "Accuracy:"
@@ -35385,7 +35385,7 @@ msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Accuracy:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:135
+#: core/libs/facesengine/widgets/facescanwidget.cpp:138
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35401,7 +35401,7 @@ msgstr ""
 "accurately faces will\n"
 "be detected, but less faces will be detected."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:140
+#: core/libs/facesengine/widgets/facescanwidget.cpp:143
 #, fuzzy, kde-format
 #| msgctxt "@label face size for detection"
 #| msgid "Face size:"
@@ -35409,7 +35409,7 @@ msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Face size:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:144
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Extra Small"
@@ -35417,7 +35417,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Extra Small"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:145
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Small"
@@ -35425,7 +35425,7 @@ msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Small"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:146
+#: core/libs/facesengine/widgets/facescanwidget.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -35433,7 +35433,7 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Medium"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Large"
@@ -35441,7 +35441,7 @@ msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Large"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:148
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Extra Large"
@@ -35449,7 +35449,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Extra Large"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:151
+#: core/libs/facesengine/widgets/facescanwidget.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35497,14 +35497,14 @@ msgstr ""
 "6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:168
+#: core/libs/facesengine/widgets/facescanwidget.cpp:171
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgctxt "@title short translated text"
 msgid "Detection"
 msgstr "Face Detection"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:177
+#: core/libs/facesengine/widgets/facescanwidget.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "@label Face Detection Accuracy"
 #| msgid "Accuracy:"
@@ -35512,7 +35512,7 @@ msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Accuracy:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:184
+#: core/libs/facesengine/widgets/facescanwidget.cpp:187
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35532,7 +35532,7 @@ msgstr ""
 "be recognised, but less faces will be recognised.\n"
 "Note: only faces that are very similar to pre-tagged faces are recognised."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:195
+#: core/libs/facesengine/widgets/facescanwidget.cpp:198
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
 #, fuzzy, kde-format
@@ -35542,7 +35542,7 @@ msgctxt "@option:check with a short translated text"
 msgid "Uses all processors"
 msgstr "Work on all processor cores"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:197
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35559,14 +35559,14 @@ msgstr ""
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:201
+#: core/libs/facesengine/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgctxt "@title short translated text"
 msgid "Recognition"
 msgstr "Face Recognition"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:212
+#: core/libs/facesengine/widgets/facescanwidget.cpp:215
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:263
@@ -44184,7 +44184,7 @@ msgstr "Model/View Port of Image Editor Canvas"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:114
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Image Quality Sort"
@@ -62290,49 +62290,49 @@ msgstr ""
 msgid "Recognized: %1"
 msgstr "Icon Size: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:102
 #, kde-format
 msgid "Finger-prints"
 msgstr "Finger-prints"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
 #, fuzzy, kde-format
 #| msgid "Rebuild Fingerprint for: %1\n"
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Rebuild Fingerprint for: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
 #, kde-format
 msgid "Album: %1"
 msgstr "Album: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Items scanned for fingerprint: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Item scanned for fingerprint: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
 #, fuzzy, kde-format
 #| msgid "Image Quality for: %1\n"
 msgid "Image Quality: %1\n"
 msgstr "Image Quality for: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Pick Label: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:254
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Items scanned for quality: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:258
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Item scanned for quality: %1"
@@ -62427,23 +62427,23 @@ msgstr "Items scanned to update database with metadata: %1"
 msgid "Item scanned to update database with metadata: %1"
 msgstr "Item scanned to update database with metadata: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:121
 #, kde-format
 msgid "Generate Thumbnails"
 msgstr "Generate Thumbnails"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
 #, fuzzy, kde-format
 #| msgid "Thumbnail for: %1\n"
 msgid "Thumbnail: %1\n"
 msgstr "Thumbnail for: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Items scanned for thumbnails: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Item scanned for thumbnails: %1"

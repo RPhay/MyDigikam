@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-08 00:39+0000\n"
+"POT-Creation-Date: 2025-11-10 00:40+0000\n"
 "PO-Revision-Date: 2025-11-08 14:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -27173,10 +27173,10 @@ msgstr "Gir automàtic: %1\n"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:260
 #, kde-format
 msgid "Album: %1\n"
 msgstr "Àlbum: %1\n"
@@ -35237,7 +35237,7 @@ msgstr ""
 "Ha fallat en crear les taules en la base de dades.\n"
 "%1"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#: core/libs/facesengine/widgets/facescanwidget.cpp:93
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:114
@@ -35246,31 +35246,31 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Cerca a"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#: core/libs/facesengine/widgets/facescanwidget.cpp:105
 #, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Flux de treball:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:106
+#: core/libs/facesengine/widgets/facescanwidget.cpp:109
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Explora les imatges noves"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:107
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Explora totes les imatges"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#: core/libs/facesengine/widgets/facescanwidget.cpp:111
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Reconeix només les cares"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#: core/libs/facesengine/widgets/facescanwidget.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35294,13 +35294,13 @@ msgstr ""
 "desconegudes amb les cares confirmades sense explorar cares noves de les "
 "imatges.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:128
+#: core/libs/facesengine/widgets/facescanwidget.cpp:131
 #, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:135
+#: core/libs/facesengine/widgets/facescanwidget.cpp:138
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35311,43 +35311,43 @@ msgstr ""
 "valor, amb més precisió<br>es detectaran les cares, però es reconeixeran "
 "menys cares."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:140
+#: core/libs/facesengine/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Mida de les cares:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:144
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Molt petita"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:145
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Petita"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:146
+#: core/libs/facesengine/widgets/facescanwidget.cpp:149
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Mitjana"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:150
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Gran"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:148
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Molt gran"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:151
+#: core/libs/facesengine/widgets/facescanwidget.cpp:154
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35379,19 +35379,19 @@ msgstr ""
 "de detecció de 6-8 i una mida de cara <b>Mitjana</b> o <b>Gran</b> per a un "
 "ús normal.</p><p>Aquest paràmetre no s'aplica a YuNet.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:168
+#: core/libs/facesengine/widgets/facescanwidget.cpp:171
 #, kde-format
 msgctxt "@title short translated text"
 msgid "Detection"
 msgstr "Detecció"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:177
+#: core/libs/facesengine/widgets/facescanwidget.cpp:180
 #, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:184
+#: core/libs/facesengine/widgets/facescanwidget.cpp:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35405,7 +35405,7 @@ msgstr ""
 "reconeixeran menys cares.<br>Nota: només es reconeixeran les cares que "
 "siguin molt similars a les cares etiquetades amb anterioritat."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:195
+#: core/libs/facesengine/widgets/facescanwidget.cpp:198
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
 #, kde-format
@@ -35413,7 +35413,7 @@ msgctxt "@option:check with a short translated text"
 msgid "Uses all processors"
 msgstr "Utilitza tots els processadors"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:197
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35425,13 +35425,13 @@ msgstr ""
 "<br>Podeu triar si desitgeu emprar tots els nuclis del processador del "
 "sistema<br>o treballar en segon pla, amb només un nucli."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:201
+#: core/libs/facesengine/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@title short translated text"
 msgid "Recognition"
 msgstr "Reconeixement"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:212
+#: core/libs/facesengine/widgets/facescanwidget.cpp:215
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:263
@@ -43949,7 +43949,7 @@ msgstr "Adaptació model/vista del llenç de l'editor d'imatges"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:114
 #, kde-format
 msgid "Image Quality Scanner"
 msgstr "Explorador de la qualitat de les imatges"
@@ -61976,47 +61976,47 @@ msgstr "S'han trobat %1 cares."
 msgid "Recognized: %1"
 msgstr "Reconegudes: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:102
 #, kde-format
 msgid "Finger-prints"
 msgstr "Empremtes digitals"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Reconstrucció d'empremtes digitals: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
 #, kde-format
 msgid "Album: %1"
 msgstr "Àlbum: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Elements explorats cercant empremtes digitals: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Element explorat cercant empremtes digitals: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Qualitat de les imatges: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Rètol de selecció: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:254
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Elements explorats cercant qualitat: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:258
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Element explorat cercant qualitat: %1"
@@ -62114,22 +62114,22 @@ msgid "Item scanned to update database with metadata: %1"
 msgstr ""
 "Element explorat per a actualitzar la base de dades amb les metadades: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:121
 #, kde-format
 msgid "Generate Thumbnails"
 msgstr "Genera les miniatures"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "Miniatura: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Elements explorats per a miniatures: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Element explorat per a miniatures: %1"

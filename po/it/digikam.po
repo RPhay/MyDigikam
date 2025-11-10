@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-08 00:39+0000\n"
-"PO-Revision-Date: 2025-10-29 22:32+0100\n"
+"POT-Creation-Date: 2025-11-10 00:40+0000\n"
+"PO-Revision-Date: 2025-11-08 22:18+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -23195,8 +23195,7 @@ msgid "Use the album path of the items in the target"
 msgstr "Usa il percorso dell'album degli elementi nella destinazione"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
 msgstr "Regola le proprietà delle immagini"
 
@@ -23301,39 +23300,36 @@ msgid "Export to local storage..."
 msgstr "Esporta in supporto di memorizzazione locale..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Target Location: "
 msgstr "Destinazione: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Imposta l'indirizzo di destinazione in cui caricare le immagini. Esso può "
-"consistere in qualsiasi indirizzo come quelli usati in Dolphin o Konqueror, "
-"per es. ftp://mio.server.org/sub/cartella."
+"consistere in qualsiasi indirizzo come quelli usati nel tuo gestore file, "
+"per esempio:<br><i>ftp://mio.server.org/sub/cartella</i><br><i>fish://"
+"nomeutente@mio.server.org/sub/cartella</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Select export location..."
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "Seleziona la posizione di esportazione..."
+msgstr ""
+"Seleziona la posizione\n"
+"di esportazione..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Seleziona la posizione d'importazione..."
+msgstr "Seleziona la posizione di destinazione..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
@@ -23375,44 +23371,39 @@ msgstr ""
 "riprovare a esportare queste immagini ora."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Source Location: "
-msgstr "Destinazione: "
+msgstr "Posizione di origine: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the source address to download the images to. This can be any address "
 "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Imposta l'indirizzo di destinazione in cui caricare le immagini. Esso può "
-"consistere in qualsiasi indirizzo come quelli usati in Dolphin o Konqueror, "
-"per es. ftp://mio.server.org/sub/cartella."
+"Imposta l'indirizzo di origine da cui scaricare le immagini. Esso può "
+"consistere in qualsiasi indirizzo come quelli usati nel tuo gestore file, "
+"per esempio:<br><i>ftp://mio.server.org/sub/cartella</i><br><i>fish://"
+"nomeutente@mio.server.org/sub/cartella</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Seleziona la posizione d'importazione..."
+msgstr "Seleziona la posizione di origine..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
 msgstr ""
-"Questo è l'elenco degli elementi da copiare nella destinazione specificata."
+"Questo è l'elenco degli elementi di origine da importare nella destinazione "
+"selezionata."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Percorso di destinazione:"
+msgstr "Seleziona la posizione di destinazione:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, kde-format
@@ -23479,20 +23470,16 @@ msgstr ""
 "quali FTP, SFTP, SAMBA, ecc."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "Esporta in un supporto di memorizzazione remoto"
+msgstr "Esporta in un supporto di memorizzazione remoto..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "Importa da un supporto di memorizzazione remoto"
+msgstr "Importa da un supporto di memorizzazione remoto..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -26705,37 +26692,30 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "xdotcom"
-msgstr ""
+msgstr "xdotcom"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to export to Twitter web-service"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to x.com (aka Twitter) web-service"
-msgstr "Strumento per esportare nel servizio web Twitter"
+msgstr "Strumento per esportare nel servizio web x.com (ex Twitter)"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Twitter web-service.<br><br>See "
-#| "Twitter web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to x.com (aka Twitter) web-service."
 "<br><br>See Twitter web site for details: %1"
 msgstr ""
 "Questo strumento permette agli utenti di esportare gli elementi nel servizio "
-"web Twitter.<br><br>Per dettagli consulta il sito web di Twitter: %1"
+"web x.com (ex Twitter).<br><br>Per dettagli consulta il sito web di Twitter: "
+"%1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Twitter..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to x.com (aka &Twitter)..."
-msgstr "Esporta in &Twitter..."
+msgstr "Esporta in x.com (ex &Twitter)..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
@@ -26764,12 +26744,10 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Creazione del tweet per la foto caricata non riuscita"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to x.com (aka Twitter)"
-msgstr "Esportazione in Twitter"
+msgstr "Esportazione in x.com (ex Twitter)"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
 #, kde-format
@@ -27233,10 +27211,10 @@ msgstr "Rotazione automatica: %1\n"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:260
 #, kde-format
 msgid "Album: %1\n"
 msgstr "Album: %1\n"
@@ -35295,7 +35273,7 @@ msgstr ""
 "Creazione delle tabelle nella banca dati non riuscita.\n"
 "%1 "
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#: core/libs/facesengine/widgets/facescanwidget.cpp:93
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:114
@@ -35304,31 +35282,31 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Ricerca in"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#: core/libs/facesengine/widgets/facescanwidget.cpp:105
 #, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Flusso di lavoro:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:106
+#: core/libs/facesengine/widgets/facescanwidget.cpp:109
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Analizza nuove immagini"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:107
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Analizza tutte le immagini"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#: core/libs/facesengine/widgets/facescanwidget.cpp:111
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Riconosci solo i volti"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#: core/libs/facesengine/widgets/facescanwidget.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35351,13 +35329,13 @@ msgstr ""
 "volti</b> tenta di trovare corrispondenze dei volti sconosciuti con quelli "
 "confermati, senza analizzare nuovi volti nelle immagini.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:128
+#: core/libs/facesengine/widgets/facescanwidget.cpp:131
 #, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Accuratezza:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:135
+#: core/libs/facesengine/widgets/facescanwidget.cpp:138
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35368,43 +35346,43 @@ msgstr ""
 "accuratamente<br>saranno individuati i volti, ma ne saranno individuati di "
 "meno."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:140
+#: core/libs/facesengine/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Dimensione volto:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:144
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Molto piccolo"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:145
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Piccolo"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:146
+#: core/libs/facesengine/widgets/facescanwidget.cpp:149
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Medio"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:150
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Grande"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:148
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Molto grande"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:151
+#: core/libs/facesengine/widgets/facescanwidget.cpp:154
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35436,19 +35414,19 @@ msgstr ""
 "l'accuratezza del rilevamento a 6-8 e la dimensione dei volti a <b>Medio</b> "
 "o <b>Grande</b>.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:168
+#: core/libs/facesengine/widgets/facescanwidget.cpp:171
 #, kde-format
 msgctxt "@title short translated text"
 msgid "Detection"
 msgstr "Rilevamento"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:177
+#: core/libs/facesengine/widgets/facescanwidget.cpp:180
 #, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Accuratezza:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:184
+#: core/libs/facesengine/widgets/facescanwidget.cpp:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35462,7 +35440,7 @@ msgstr ""
 "meno.<br>Nota: saranno riconosciuti solo i volti molto simili a quelli cui "
 "sono già stati attribuiti dei tag."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:195
+#: core/libs/facesengine/widgets/facescanwidget.cpp:198
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
 #, kde-format
@@ -35470,7 +35448,7 @@ msgctxt "@option:check with a short translated text"
 msgid "Uses all processors"
 msgstr "Usa tutti i processori"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:197
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35482,13 +35460,13 @@ msgstr ""
 "tempo.<br>Puoi scegliere se impiegare tutti i core del tuo processore<br>o "
 "lavorare sullo sfondo usando un solo core."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:201
+#: core/libs/facesengine/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@title short translated text"
 msgid "Recognition"
 msgstr "Riconoscimento"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:212
+#: core/libs/facesengine/widgets/facescanwidget.cpp:215
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:263
@@ -35936,10 +35914,9 @@ msgid "Item Name"
 msgstr "Nome dell'elemento"
 
 #: core/libs/filters/textfilter.cpp:76
-#, fuzzy, kde-format
-#| msgid "Item date"
+#, kde-format
 msgid "Item Path"
-msgstr "Data dell'elemento"
+msgstr "Percorso dell'elemento"
 
 #: core/libs/filters/textfilter.cpp:78
 #, kde-format
@@ -35972,10 +35949,9 @@ msgid "Item Pixel Size"
 msgstr "Dimensioni dell'elemento in pixel"
 
 #: core/libs/filters/textfilter.cpp:91
-#, fuzzy, kde-format
-#| msgid "Infrared Filter"
+#, kde-format
 msgid "Inverted Filter"
-msgstr "Filtro Pellicola infrarossa"
+msgstr "Filtro invertito"
 
 #: core/libs/filters/textfilter.cpp:94
 #, kde-format
@@ -43982,7 +43958,7 @@ msgstr "Conversione Modello/Vista dell'area dell'editor di immagini"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:114
 #, kde-format
 msgid "Image Quality Scanner"
 msgstr "Analizzatore qualità dell'immagine"
@@ -47931,12 +47907,10 @@ msgid "Macao"
 msgstr "Macao"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Macedonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "North Macedonia"
-msgstr "Macedonia"
+msgstr "Macedonia del Nord"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
 #, kde-format
@@ -61985,47 +61959,47 @@ msgstr "Trovati %1 volti."
 msgid "Recognized: %1"
 msgstr "Riconosciuti: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:102
 #, kde-format
 msgid "Finger-prints"
 msgstr "Codici di controllo"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Ricalcola il codice di controllo: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
 #, kde-format
 msgid "Album: %1"
 msgstr "Album: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Elementi analizzati per il codice di controllo: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Elemento analizzato per il codice di controllo: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Qualità immagine: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Etichetta di scelta: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:254
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Elementi analizzati per la qualità: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:258
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Elemento analizzato per la qualità: %1"
@@ -62118,22 +62092,22 @@ msgstr "Elementi analizzati per aggiornare la banca dati con i metadati: %1"
 msgid "Item scanned to update database with metadata: %1"
 msgstr "Elemento analizzato per aggiornare la banca dati con i metadati: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:121
 #, kde-format
 msgid "Generate Thumbnails"
 msgstr "Genera miniature"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "Miniatura: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Elementi analizzati per le miniature: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Elemento analizzato per le miniature: %1"

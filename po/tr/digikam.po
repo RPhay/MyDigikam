@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-08 00:39+0000\n"
+"POT-Creation-Date: 2025-11-10 00:40+0000\n"
 "PO-Revision-Date: 2025-11-08 21:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -26932,10 +26932,10 @@ msgstr "Kendiliğinden döndüren: %1\n"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:232
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:260
 #, kde-format
 msgid "Album: %1\n"
 msgstr "Albüm: %1\n"
@@ -34849,7 +34849,7 @@ msgstr ""
 "Veritabanında tablolar oluşturulamadı.\n"
 "%1"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#: core/libs/facesengine/widgets/facescanwidget.cpp:93
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:114
@@ -34858,31 +34858,31 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Arama Konumu"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#: core/libs/facesengine/widgets/facescanwidget.cpp:105
 #, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "İş akışı:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:106
+#: core/libs/facesengine/widgets/facescanwidget.cpp:109
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Yeni görselleri tara"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:107
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Tüm görselleri tara"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#: core/libs/facesengine/widgets/facescanwidget.cpp:111
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Yalnızca yüzleri tanı"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#: core/libs/facesengine/widgets/facescanwidget.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34905,13 +34905,13 @@ msgstr ""
 "yeni yüzleri taramadan bilinmeyen yüzleri onaylı yüzlerle eşleştirmeye "
 "çalışacaktır.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:128
+#: core/libs/facesengine/widgets/facescanwidget.cpp:131
 #, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Doğruluk:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:135
+#: core/libs/facesengine/widgets/facescanwidget.cpp:138
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34922,43 +34922,43 @@ msgstr ""
 "olursa<br>yüzler o kadar doğru bir biçimde algılanır; ancak daha az yüz "
 "tespit edilir."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:140
+#: core/libs/facesengine/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Yüz boyutu:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:144
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Ekstra küçük"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:145
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Küçük"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:146
+#: core/libs/facesengine/widgets/facescanwidget.cpp:149
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Orta"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:150
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Büyük"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:148
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Ekstra büyük"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:151
+#: core/libs/facesengine/widgets/facescanwidget.cpp:154
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34991,19 +34991,19 @@ msgstr ""
 "ayarlamak ve yüz boyutunu <b>Orta</b> veya <b>Büyük</b> olarak seçmek "
 "önerilir.</p><p>Bu ayar yalnızca YuNet için geçerlidir.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:168
+#: core/libs/facesengine/widgets/facescanwidget.cpp:171
 #, kde-format
 msgctxt "@title short translated text"
 msgid "Detection"
 msgstr "Algılama"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:177
+#: core/libs/facesengine/widgets/facescanwidget.cpp:180
 #, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Doğruluk:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:184
+#: core/libs/facesengine/widgets/facescanwidget.cpp:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35017,7 +35017,7 @@ msgstr ""
 "sayısı daha az olur.<br>Not: Yalnızca önceden künye eklenen yüzlere çok "
 "benzeyen yüzler tanınır."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:195
+#: core/libs/facesengine/widgets/facescanwidget.cpp:198
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
 #, kde-format
@@ -35025,7 +35025,7 @@ msgctxt "@option:check with a short translated text"
 msgid "Uses all processors"
 msgstr "Tüm işlemcileri kullan"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:197
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35037,13 +35037,13 @@ msgstr ""
 "çekirdeklerini kullanmayı veya arka planda yalnızca tek bir "
 "çekirdek<br>üzerinde çalışmayı seçebilirsiniz."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:201
+#: core/libs/facesengine/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@title short translated text"
 msgid "Recognition"
 msgstr "Tanıma"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:212
+#: core/libs/facesengine/widgets/facescanwidget.cpp:215
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:263
@@ -43463,7 +43463,7 @@ msgstr "Görsel düzenleyicisi tuvalinin model/görüntü geçişi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:114
 #, kde-format
 msgid "Image Quality Scanner"
 msgstr "Görsel Kalitesi Tarayıcısı"
@@ -61370,47 +61370,47 @@ msgstr "%1 yüz bulundu."
 msgid "Recognized: %1"
 msgstr "Tanındı: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:102
 #, kde-format
 msgid "Finger-prints"
 msgstr "Parmak İzleri"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:165
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Parmak izi yeniden yapma: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:166
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
 #, kde-format
 msgid "Album: %1"
 msgstr "Albüm: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:180
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Parmak izi için taranan ögeler: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:184
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Parmak izi için taranan öge: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Görsel kalitesi: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Etiket seç: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:196
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:254
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Kalite için taranan ögeler: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:200
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:258
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Kalite için taranan öge: %1"
@@ -61503,22 +61503,22 @@ msgstr "Veritabanını üst veriyle güncellemek için taranan ögeler: %1"
 msgid "Item scanned to update database with metadata: %1"
 msgstr "Veritabanını üst veriyle güncellemek için taranan öge: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:121
 #, kde-format
 msgid "Generate Thumbnails"
 msgstr "Küçük Görseller Üret"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:231
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "Küçük görsel: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:246
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Küçük görseller için taranan ögeler: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:250
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Küçük görseller için taranan öge: %1"
