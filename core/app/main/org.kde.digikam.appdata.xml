@@ -231,6 +231,7 @@
     <p xml:lang="fi">Sovellus tarjoaa laajan joukon muokkaustyökaluja, niin perustyökaluja kuten värien säädön, rajauksen ja terävöityksen, kuin edistyneitä työkaluja käyrien säätöön, panoraamakuvien koostamiseen ja muuhun. Lensfun-kirjastoon perustuvalla erikoistyökalulla kuviin voi tehdä linssikorjauksen automaattisesti.</p>
     <p xml:lang="fr">L'application fournit un ensemble complet d'outils de modification. Cela comprend les outils de base pour ajuster les couleurs, le centrage et le découpage, mais aussi des outils avancés pour les ajustements de courbes, la production de panorama et bien plus encore. Un outil spécial construit à partie de la bibliothèque « lensfun » permet l'application de corrections automatiquement de lentilles sur les images.</p>
     <p xml:lang="gl">A aplicación fornece un conxunto de ferramentas de edición moi completo. Inclúe ferramentas básicas para o axuste de cores, recorte e enfoque, así como ferramentas avanzadas para axuste de curvas, combinación panorámica, e moito máis. Unha ferramenta especial baseada na biblioteca Lensfun permite aplicar corrección de lentes automaticamente en imaxes.</p>
+    <p xml:lang="he">היישום מספק ערכה מורחבת של כלי עריכה. לרבות כלים בסיסיים להתאמת צבעים, חיתוך וחידוד לרבות כלים מתקדמים לכוונון עקומות, תפירת פנורמה ועוד הרבה דברים. כלי מיוחד שמבוסס על ספריית Lensfun מאפשרים להחיל תיקוני עדשה על תמונות אוטומטית.</p>
     <p xml:lang="id">Aplikasi ini menyediakan seperangkat alat pengeditan yang lengkap. Ini termasuk alat dasar untuk menyesuaikan warna, memangkas, dan mempertajam serta alat canggih untuk, penyesuaian kurva, penggabungan panorama, dan banyak lagi. Alat khusus berdasarkan izin pustaka Lensfun untuk menerapkan koreksi lensa secara otomatis pada citra.</p>
     <p xml:lang="is">Hugbúnaðurinn kemur með ágætu safni myndvinnsluverkfæra. Þar má telja ýmis grunnverkfæri til að laga liti, til utansníðingar og skerpingar, auk ítarlegri verkfæra til að laga litferla, setja saman víðmyndir og margt fleira. Sérstakt verkfæri sem byggir á Lensfun-aðgerðasafninu gerir kleift að beita linsuleiðréttingum sjálfvirkt á myndir.</p>
     <p xml:lang="it">L'applicazione fornisce un set completo di strumenti di modifica. Esso include strumenti di base per la regolazione dei colori, il ritaglio e la nitidezza e strumenti avanzati per la regolazione delle curve, la composizione dei panorami e molto altro. Uno strumento speciale basato sulla libreria Lensfun permette di applicare automaticamente correzioni focali sulle immagini.</p>
@@ -262,6 +263,7 @@
     <p xml:lang="fi">digiKamin lisätoiminnot on toteutettu liitännäismekanismiin (”DPlugins”) perustuvin työkaluin. Liitännäiset voivat tuoda ja viedä etäverkkopalvelujen sisältöä, lisätä uusia muokkausominaisuuksia ja eräkäsitellä valokuvia.</p>
     <p xml:lang="fr">La fonctionnalité étendue de digiKam est intégrée par un ensemble d'outils fonctionnant à partir de mécanismes de type module externe nommé « DPlugins » pour « DigiKam Plugin ». Les modules externes peuvent être écrits pour l'importation ou l'exportation de contenus pour des services Internet distants, des ajouts de nouvelles fonctionnalités pour modifier des images ou traiter des photos par lot.</p>
     <p xml:lang="gl">A funcionalidade estendida de digiKam impleméntase mediante un conxunto de ferramentas baseado nun mecanismo de complementos (chamado DPlugins, i.e. complementos de digiKam). Os complementos poden escribirse para importar e exportar o contido de servizos web remotos, engadir novas funcionalidades para editar imaxes, e procesar varias fotos de golpe.</p>
+    <p xml:lang="he">היכולות המורחבות ב־digiKam ממומשות דרך סדרה של כלים שמבוססים על מנגנון תוספים (בשם DPlugins או תוספי digiKam). אפשר לכתוב תוספים כדי לייבא ולייצא תוכן לשירותי רשת מרוחקים, להוסיף יכולות חדשות לעריכת תמונות ולעבד תמונות במרוכז.</p>
     <p xml:lang="id">Fungsionalitas yang diperluas di digiKam diimplementasikan melalui seperangkat alat berdasarkan mekanisme plugin (dinamai DPlugins untuk digiKam Plugins). Plugin bisa ditulis untuk mengimpor dan mengekspor konten ke layanan web jarak jauh, menambahkan fitur baru untuk mengedit gambar, dan foto proses seabrek.</p>
     <p xml:lang="is">Hægt er að útvíkka ýmsa virkni í digiKam í gegnum kerfi fyrir forritsviðbætur (kallað DPlugins fyrir digiKam-viðbætur). Hægt er að skrifa viðbætur sem sjá um flutning mynda til og frá fjartengdum vefþjónustum, til að bæta við aðferðum við myndvinnslu og til magnvinnslu mynda.</p>
     <p xml:lang="it">Ulteriori funzionalità sono implementata in digiKam grazie a un insieme di strumenti basato su un meccanismo di estensioni (chiamato DPlugins, ossia digiKam Plugins). Possono essere create estensioni per importare ed esportare contenuto ai servizi web remoti, aggiungere nuove funzionalità per la modifica delle immagini e per l'elaborazione in serie delle fotografie.</p>
@@ -334,6 +336,7 @@
       <li xml:lang="fi">Valokuvien järjestely albumeiksi ja alialbumeiksi (tunniste- ja kommenttituella)</li>
       <li xml:lang="fr">Organisation de photos en albums et sous-albums (avec prise en charge des étiquettes et des commentaires)</li>
       <li xml:lang="gl">Organización de fotos en álbums e subálbums (con funcionalidade de etiquetas e comentarios).</li>
+      <li xml:lang="he">סידור תמונות באלבומים ותת־אלבומים (עם תמיכה בתגיות ותגובות)</li>
       <li xml:lang="id">Organisasi foto dalam album dan sub-album (dengan dukungan tag dan komentar)</li>
       <li xml:lang="is">Skipulag mynda í albúmasöfn og undiralbúm (með stuðningi við merki og athugasemdir)</li>
       <li xml:lang="it">Organizzazione di foto in album e sotto-album (con supporto per le etichette e i commenti)</li>
@@ -369,6 +372,7 @@
       <li xml:lang="fi">Exif-, IPTC-, XMP ja Makernotes-tuki</li>
       <li xml:lang="fr">Prise en charge des données EXIF, IPTC, XMP, MakerNotes</li>
       <li xml:lang="gl">Compatíbel con Exif, Iptc, Xmp e Makernotes.</li>
+      <li xml:lang="he">תמיכה ב־Exif,‏ Iptc,‏ Xmp,‏ Makernotes</li>
       <li xml:lang="id">Mendukung Exif. Iptc, Xmp, Makernotes</li>
       <li xml:lang="is">Stuðningur við EXIF, IPTC, XMP, Makernotes</li>
       <li xml:lang="it">Supporto per Exif, IPTC, XMP, Makernotes</li>
@@ -404,6 +408,7 @@
       <li xml:lang="fi">SQLite- tai MySQL-tallennustila albumien sisällölle ja matatiedoille sekä edistyneet hakutyökalut</li>
       <li xml:lang="fr">Stockage du contenu des albums et des métadonnées fonctionnant avec SQLite ou MySQL et des outils de recherche avancée</li>
       <li xml:lang="gl">Almacenamento mediante SQLite ou MySQL para o contido dos álbums e os seus metadatos con ferramentas de busca avanzadas.</li>
+      <li xml:lang="he">אחסון מבוסס SQLite או MySQL לתוכן האלבום ונתוני העל שלו עם כלי חיפוש מתקדמים</li>
       <li xml:lang="id">Penyimpanan yang diberdayakan SQLite atau Mysql untuk konten album dan metadatanya dengan alat pencarian tingkat-lanjut</li>
       <li xml:lang="is">SQLite eða Mysql gagnageymsla fyrir efni myndaalbúma og lýsigögn þeirra ásamt öflugum leitartólum</li>
       <li xml:lang="it">Memorizzazione del contenuto degli album e dei suoi metadati tramite SQLite o MySQL, con strumenti di ricerca avanzati</li>
