@@ -63,7 +63,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotLabelUrlChanged();
+    void slotTargetUrlChanged();
     void slotShowTargetDialogClicked(bool checked);
 
 Q_SIGNALS:

@@ -27,6 +27,7 @@
 
 #include <klocalizedstring.h>
 #include <kcombobox.h>
+#include <klineedit.h>
 #include <kurlrequester.h>
 
 // Local includes
@@ -97,7 +98,10 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
             this, SLOT(slotShowTargetDialogClicked(bool)));
 
     connect(d->targetCombo, SIGNAL(textChanged(QString)),
-            this, SLOT(slotLabelUrlChanged()));
+            this, SLOT(slotTargetUrlChanged()));
+
+    connect(d->targetCombo, SIGNAL(returnPressed(QString)),
+            this, SLOT(slotTargetUrlChanged()));
 
     // ------------------------------------------------------------------------
 
@@ -180,7 +184,7 @@ void FTExportWidget::updateTargetLabel()
     }
 }
 
-void FTExportWidget::slotLabelUrlChanged()
+void FTExportWidget::slotTargetUrlChanged()
 {
     d->targetUrl = d->targetCombo->url();
 

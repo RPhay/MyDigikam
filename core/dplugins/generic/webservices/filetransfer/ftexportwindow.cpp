@@ -92,6 +92,13 @@ FTExportWindow::FTExportWindow(DInfoInterface* const iface, QWidget* const /*par
     startButton()->setText(i18nc("@action:button", "Start Export"));
     startButton()->setToolTip(i18nc("@info:tooltip, button", "Start export to the specified target"));
 
+    for (QAbstractButton* const btn : m_buttons->buttons())
+    {
+        static_cast<QPushButton*>(btn)->setDefault(false);
+    }
+
+    // ---
+
     connect(startButton(), SIGNAL(clicked()),
             this, SLOT(slotUpload()));
 

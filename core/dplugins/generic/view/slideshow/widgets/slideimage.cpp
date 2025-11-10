@@ -39,7 +39,9 @@ public:
 
     Private() = default;
 
-    PreviewSettings     previewSettings;
+public:
+
+    SlideShowSettings*  settings                = nullptr;
 
     QPixmap             pixmap;
 
@@ -78,9 +80,9 @@ SlideImage::~SlideImage()
     delete d;
 }
 
-void SlideImage::setPreviewSettings(const PreviewSettings& settings)
+void SlideImage::setSlideShowSettings(SlideShowSettings* const settings)
 {
-    d->previewSettings = settings;
+    d->settings = settings;
 }
 
 void SlideImage::setLoadUrl(const QUrl& url)
@@ -101,7 +103,7 @@ void SlideImage::setLoadUrl(const QUrl& url)
 
     QSize desktopSize = screen->geometry().size();
     int deskSize      = qMax(640, qMax(desktopSize.height(), desktopSize.width()));
-    d->previewThread->load(url.toLocalFile(), d->previewSettings, deskSize);
+    d->previewThread->load(url.toLocalFile(), d->settings->previewSettings, deskSize);
 }
 
 void SlideImage::setPreloadUrl(const QUrl& url)
@@ -120,7 +122,7 @@ void SlideImage::setPreloadUrl(const QUrl& url)
 
     QSize desktopSize = screen->geometry().size();
     int deskSize      = qMax(640, qMax(desktopSize.height(), desktopSize.width()));
-    d->previewPreloadThread->load(url.toLocalFile(), d->previewSettings, deskSize);
+    d->previewPreloadThread->load(url.toLocalFile(), d->settings->previewSettings, deskSize);
 }
 
 void SlideImage::paintEvent(QPaintEvent*)
@@ -184,7 +186,12 @@ void SlideImage::updatePixmap()
 
     QSize fullSize = QSizeF(dpr * width(), dpr * height()).toSize();
     d->pixmap      = QPixmap(fullSize);
-    d->pixmap.fill(Qt::black);
+
+    if (d->settings->useBgColor)
+    {
+        d->pixmap.fill(d->settings->bgColor);
+    }
+
     QPainter p(&(d->pixmap));
 
     QPixmap pix(d->preview.smoothScale(d->pixmap.width(),

@@ -112,7 +112,7 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
     // ---------------------------------------------------------------
 
     d->imageView = new SlideImage(this);
-    d->imageView->setPreviewSettings(d->settings->previewSettings);
+    d->imageView->setSlideShowSettings(d->settings);
 
     connect(d->imageView, SIGNAL(signalImageLoaded(bool)),
             this, SLOT(slotImageLoaded(bool)));

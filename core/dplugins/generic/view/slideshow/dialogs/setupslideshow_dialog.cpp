@@ -38,6 +38,7 @@
 #include "dlayoutbox.h"
 #include "dnuminput.h"
 #include "dfontselect.h"
+#include "dcolorselector.h"
 #include "digikam_debug.h"
 #include "slideshowsettings.h"
 
@@ -51,6 +52,8 @@ class Q_DECL_HIDDEN SetupSlideShowDialog::Private
 public:
 
     Private() = default;
+
+public:
 
     QCheckBox*         startWithCurrent     = nullptr;
     QCheckBox*         loopMode             = nullptr;
@@ -68,11 +71,13 @@ public:
     QCheckBox*         showTags             = nullptr;
     QCheckBox*         showCapIfNoTitle     = nullptr;
     QCheckBox*         showProgress         = nullptr;
+    QCheckBox*         imageBgColor         = nullptr;
 
     QComboBox*         screenPlacement      = nullptr;
 
     DFontSelect*       captionFont          = nullptr;
     DIntNumInput*      delayInput           = nullptr;
+    DColorSelector*    imageBgColorSel      = nullptr;
 
     SlideShowSettings* settings             = nullptr;
 };
@@ -150,6 +155,12 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     d->showRating             = new QCheckBox(i18n("Show image rating"), panel);
     d->showRating->setWhatsThis(i18n("Show the digiKam image rating at the bottom of the screen."));
 
+    d->imageBgColor           = new QCheckBox(i18n("Use background color for images "), panel);
+    d->imageBgColor->setWhatsThis(i18n("Enable a specific color to use as background to render images on screen."
+                                       "If this option is desabled, the desktop background color will be used instead."));
+    d->imageBgColorSel        = new DColorSelector(panel);
+    d->imageBgColorSel->setWhatsThis(i18n("Define a color to use as background to render images on screen."));
+
     d->captionFont            = new DFontSelect(i18n("Caption font:"), panel);
     d->captionFont->setToolTip(i18n("Select here the font used to display text in the slideshow."));
 
@@ -213,14 +224,16 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     grid->addWidget(d->showCapIfNoTitle,     7, 1, 1, 1);
     grid->addWidget(d->showTags,             8, 0, 1, 1);
     grid->addWidget(d->showLabels,           8, 1, 1, 1);
-    grid->addWidget(d->captionFont,          9, 0, 1, 2);
-    grid->addWidget(screenSelectBox,        10, 0, 1, 2);
-    grid->addWidget(keyNote,                11, 0, 1, 2);
-    grid->setRowStretch(12, 10);
+    grid->addWidget(d->imageBgColor,         9, 0, 1, 1);
+    grid->addWidget(d->imageBgColorSel,      9, 1, 1, 1);
+    grid->addWidget(d->captionFont,         10, 0, 1, 2);
+    grid->addWidget(screenSelectBox,        11, 0, 1, 2);
+    grid->addWidget(keyNote,                12, 0, 1, 2);
+    grid->setRowStretch(13, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
+    QVBoxLayout* const mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(panel);
     mainLayout->addWidget(m_buttons);
 
@@ -266,6 +279,8 @@ void SetupSlideShowDialog::slotApplySettings()
     d->settings->printLabels           = d->showLabels->isChecked();
     d->settings->printRating           = d->showRating->isChecked();
     d->settings->showProgressIndicator = d->showProgress->isChecked();
+    d->settings->useBgColor            = d->imageBgColor->isChecked();
+    d->settings->bgColor               = d->imageBgColorSel->color();
     d->settings->captionFont           = d->captionFont->font();
     d->settings->slideScreen           = d->screenPlacement->currentIndex() - 2;
 
@@ -293,6 +308,8 @@ void SetupSlideShowDialog::readSettings()
     d->showLabels->setChecked(d->settings->printLabels);
     d->showRating->setChecked(d->settings->printRating);
     d->showProgress->setChecked(d->settings->showProgressIndicator);
+    d->imageBgColor->setChecked(d->settings->useBgColor);
+    d->imageBgColorSel->setColor(d->settings->bgColor);
     d->captionFont->setFont(d->settings->captionFont);
 
     const int screen = d->settings->slideScreen;

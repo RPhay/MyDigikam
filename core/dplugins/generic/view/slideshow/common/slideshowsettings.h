@@ -179,6 +179,13 @@ public:
      */
     QUrl                         imageUrl;
 
+
+    /**
+     * Uses a background color to render pictures.
+     */
+    bool                         useBgColor                 = true;
+    QColor                       bgColor                    = QColor(Qt::black);
+
     /**
      * Font for the display of caption text
      */
@@ -214,6 +221,8 @@ private:
     const QString configSlideShowPrintLabelsEntry           = QLatin1String("SlideShowPrintLabels");
     const QString configSlideShowPrintRatingEntry           = QLatin1String("SlideShowPrintRating");
     const QString configSlideShowProgressIndicatorEntry     = QLatin1String("SlideShowProgressIndicator");
+    const QString configSlideShowUseBgColorEntry            = QLatin1String("SlideShowUseBgColor");
+    const QString configSlideShowBgColorEntry               = QLatin1String("SlideShowBgColor");
     const QString configSlideShowCaptionFontEntry           = QLatin1String("SlideShowCaptionFont");
     const QString configSlideScreenEntry                    = QLatin1String("SlideScreen");
 };
