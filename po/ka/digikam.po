@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:40+0000\n"
-"PO-Revision-Date: 2025-11-09 13:26+0100\n"
+"POT-Creation-Date: 2025-11-11 00:40+0000\n"
+"PO-Revision-Date: 2025-11-10 13:03+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -5520,7 +5520,7 @@ msgstr "ჭვირნიშნის დამატება"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to overlay an image or text as a visible watermark"
-msgstr ""
+msgstr "ხელსაწყო გამოსახულების ან ტექსტის ხილულ ჭვირნიშნად დასადებად"
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:62
 #, kde-kuit-format
@@ -5540,7 +5540,7 @@ msgstr "ანტივინიეტინგი"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust vignetting to photograph"
-msgstr ""
+msgstr "ხელსაწყო ფოტოგრაფიის ვინიეტის გასასწორებლად"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:62
 #, kde-kuit-format
@@ -5564,6 +5564,9 @@ msgid ""
 "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
 "matrix radius that determines how much to blur the image."
 msgstr ""
+"თუ მოგლუვება 0-ს უდრის, მას ეფექტი არ აქვს. 1 და ზემოთ განსაზღვრავს გაუსის "
+"გაუმჭვირვალობის მატრიცის რადიუსს, რომელიც განსაზღვრავს, რამდენად აიწევა "
+"გამოსახულების გაუმჭვირვალობა."
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:42
 #, kde-format
@@ -5662,7 +5665,7 @@ msgstr "ლოკალური კონტრასტი"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
-msgstr ""
+msgstr "ხელსაწყო ტონის ასახვის ემულაციისთვის"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:62
 #, kde-kuit-format
@@ -5684,7 +5687,7 @@ msgstr "ხმაურის შემცირება"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
-msgstr ""
+msgstr "ხელსაწყო ფოტოგრაფიის ხმაურის ვეივლეტებით მოსაცილებლად"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:62
 #, kde-kuit-format
@@ -6312,13 +6315,13 @@ msgstr ""
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
 #, kde-format
 msgid "Set here the width selection for cropping."
-msgstr ""
+msgstr "დააყენეთ აქ სიგანე ამოსაჭრელად."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:112
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:316
 #, kde-format
 msgid "Set here the height selection for cropping."
-msgstr ""
+msgstr "დააყენეთ აქ სიმაღლე ამოსაჭრელად."
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:42
 #, kde-format
@@ -7223,7 +7226,7 @@ msgstr "გამოტანის ინტენსივობა."
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
-msgstr ""
+msgstr "აირჩიეთ ამ ჰისტოგრამის მინიმალური შეყვანის ინტენსივობის მნიშვნელობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, kde-format
@@ -7249,7 +7252,7 @@ msgstr "მაქსიმალური შეყვანის ინტე�
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
-msgstr ""
+msgstr "აირჩიეთ ამ ჰისტოგრამის მაქსიმალური შეყვანის ინტენსივობის მნიშვნელობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
 #, kde-format
@@ -7259,7 +7262,7 @@ msgstr "მინიმალური გამოტანის ინტე�
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
-msgstr ""
+msgstr "აირჩიეთ ამ ჰისტოგრამის მინიმალური გამოტანის ინტენსივობის მნიშვნელობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
 #, kde-format
@@ -7269,13 +7272,13 @@ msgstr "მაქსიმალური გამოტანის ინტ�
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
-msgstr ""
+msgstr "აირჩიეთ ამ ჰისტოგრამის მაქსიმალური გამოტანის ინტენსივობის მნიშვნელობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
-msgstr ""
+msgstr "ყველა არხის ჩრდის ტონის ფერის ამრჩევი"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #, kde-format
@@ -7289,7 +7292,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
-msgstr ""
+msgstr "ყველა არხის საშუალო ტონის ფერის ამრჩევი"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #, kde-format
@@ -7303,7 +7306,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
-msgstr ""
+msgstr "ყველა არხის გამოკვეთის ტონის ფერის ამრჩევი"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #, kde-format
@@ -7322,7 +7325,7 @@ msgstr "ყველა დონის ავტომატური მორ
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
-msgstr ""
+msgstr "თუ ამ ღილაკს დააჭერთ, ყველა არხის დონე ავტომატურად გასწორდება."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
@@ -7388,6 +7391,7 @@ msgstr "ხელსაწყო ფერის დონეების მო
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
 msgstr ""
+"ამ გამოსახულების რედაქტორს ფერის დონეების გასწორება შეუძლია გამოსახულებიდან."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:91
 #, kde-format
@@ -7748,7 +7752,7 @@ msgstr "ფერის პროფილის გადაყვანა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert image to a color space"
-msgstr ""
+msgstr "ხელსაწყო გამოსახულების ფერების სივრცეში გადასაყვანად"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:66
 #, kde-format
@@ -7809,7 +7813,7 @@ msgstr "საზღვრის დამატება"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add a border around image"
-msgstr ""
+msgstr "ხელსაწყო გამოსახულების გარშემო საზღვრის დასამატებლად"
 
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:60
 #, kde-format
@@ -7931,7 +7935,7 @@ msgstr "ნახევრად-გამჭვირვალე"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:200
 #, kde-format
 msgid "Use semi-transparent text background under image"
-msgstr ""
+msgstr "ნახევრადგამჭვირვალე ტექსტის ფორნის გამოყენება გამოსახულების ქვეშ"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:301
 #, kde-format
@@ -7987,7 +7991,7 @@ msgstr "ტექსტურა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply a texture over an image"
-msgstr ""
+msgstr "ხელსაწყო გამოსახულების ზემოდან ტექსტურის დასადებად"
 
 #: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:60
 #, kde-format
@@ -8202,6 +8206,8 @@ msgid ""
 "Select Source Point.\n"
 "Shortcut: S"
 msgstr ""
+"აირჩიეთ წყარო წერტილი.\n"
+"მალსახმობი: S"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:155
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:158
@@ -8388,7 +8394,7 @@ msgstr "გაკაშკაშება:"
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:138
 #, kde-format
 msgid "This value adjusts the brightness in image corners."
-msgstr ""
+msgstr "ეს მნიშვნელობა გამოსახულების კუთხეების სიკაშკაშეს ასწორებს."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:294
 #, kde-format
@@ -8878,7 +8884,7 @@ msgstr "ბონდოვნების ეფექტები"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply blur effects to an image"
-msgstr ""
+msgstr "ხელსაწყო გამოსახულებაზე გაუმჭვირვალობის ეფექტების დასადებად"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:60
 #, kde-format
@@ -10112,7 +10118,7 @@ msgstr "ოქროს კვეთები"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:372
 #, kde-format
 msgid "Enable this option to show golden sections."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი ოქროს კვეთების საჩვენებლად."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:374
 #, kde-format
@@ -10122,7 +10128,7 @@ msgstr "ოქროს სპირალის სეგმენტები"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:375
 #, kde-format
 msgid "Enable this option to show golden spiral sections."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი ოქროს სპირალის სეგმენტების საჩვენებლად."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:377
 #, kde-format
@@ -20673,232 +20679,247 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "მიმდინარეობს სლაიდშოუს ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:88
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "სლაიდშოუს მორგება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
 #, kde-format
 msgid "Delay between images:"
 msgstr "დაყოვნება გამოსახულებებს შორის:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:102
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
 #, kde-format
 msgid "The delay, in seconds, between images."
 msgstr "დაყოვნება გამოსახულებებს შორის, წამებში."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
 #, kde-format
 msgid "Start with current image"
 msgstr "მიმდინარე გამოსახულებით დაწყება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:105
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "image selected in the images list."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "სლაიდშოუ მეორდება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "სლაიდშოუს გაშვება გამეორებად რეჟიმში."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
 #, kde-format
 msgid "Shuffle images"
 msgstr "გამოსახულებების შემთხვევითობა"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
 msgid "Show progress indicator"
 msgstr "მიმდინარეობის მაჩვენებლის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Show image file name"
 msgstr "გამოსახულების ფაილის სახელის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
 msgid "Show the image file name at the bottom of the screen."
 msgstr "გამოსახულების ფაილის სახელის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "Show image creation date"
 msgstr "გამოსახულების შექნის თარიღის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
 msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "გამოსახულების შექმნის დროის/თარიღის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "კამერის დიაფრაგმისა და ფოკალური სიგრძის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr "კამერის დიაფრაგმის და ფოკალური სიგრძის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "კამერის ექსპოზიციისა და მგრძნობიარობის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
 msgstr "კამერის ექსპოზიციისა და მგრძნობიარობის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "კამერის მწარმოებლისა და მოდელის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
 msgstr "კამერის მწარმოებლისა და მოდელის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
 #, kde-format
 msgid "Show camera lens model"
 msgstr "კამერის ლინზის მოდელის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Show the camera lens model at the bottom of the screen."
 msgstr "კამერის ლინზის მოდელის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Show image caption"
 msgstr "გამოსახულების წარწერის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid "Show the image caption at the bottom of the screen."
 msgstr "გამოსახულების წარწერის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, kde-format
 msgid "Show image title"
 msgstr "გამოსახულების სათაურის ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
 #, kde-format
 msgid "Show the image title at the bottom of the screen."
 msgstr "გამოსახულების სახელის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgid "Show image caption if it has not title"
 msgstr "თუ გამოსახულებას სათაური არ გააჩნია, წარწერა იქნება ნაჩვენები"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
 msgstr ""
 "გამოსახულების წარწერის ეკრანის ქვედა მხარეს ჩვენება, თუ სახელი არ არსებობს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
 #, kde-format
 msgid "Show image tags"
 msgstr "გამოსახულების ჭდეების ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
 msgstr "გამოსახულების digiKam-ის ჭდის სახელების ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
 msgid "Show image labels"
 msgstr "გამოსახულების ჭდეების ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
 #, kde-format
 msgid ""
 "Show the digiKam image color label and pick label at the bottom of the "
 "screen."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:156
 #, kde-format
 msgid "Show image rating"
 msgstr "გამოსახულების შეფასების ჩვენება"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
 #, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "გამოსახულების digiKam-ის რეიტინგის ჩვენება ეკრანის ქვედა მხარეს."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#, fuzzy, kde-format
+#| msgid "&Use theme background color"
+msgid "Use background color for images:"
+msgstr "თემის ფონის ფერის გამო&ყენება"
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to use the background theme color in the image editor "
+#| "area."
+msgid "Define a color to use as background to render images on screen."
+msgstr ""
+"ჩართეთ ეს ფონის თემის ფერის გამოსაყენებლად გამოსახულების რედაქტორის ადგილში."
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format
 msgid "Caption font:"
 msgstr "წარწერის ფონტი:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
 #, kde-format
 msgid "Select here the font used to display text in the slideshow."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
 #, kde-format
 msgid "Screen placement:"
 msgstr "ეკრანის განთავსება:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:162
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "მიმდინარე ეკრანი"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "ნაგულისხმევი ეკრანი"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:168
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "%1-ე ეკრანი"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:174
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -21624,12 +21645,12 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "ლოკალურ საცავზე გატანა..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid "Target Location: "
 msgstr "სამიზნე მდებარეობა: "
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:76
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
@@ -21640,7 +21661,7 @@ msgstr ""
 "რომელიც თქვენს ფაილების მმართველს ესმის. მაგ: <br><i>ftp://my.server.org/sub/"
 "folder</i><br><i>fish://username@my.server.org/sub/folder</i>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
 #, kde-format
 msgid ""
 "Select export\n"
@@ -21649,19 +21670,19 @@ msgstr ""
 "აირჩიეთ გატანის\n"
 "მდებარეობა..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
 msgstr "აირჩიეთ სამიზნის მდებარეობა..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:154
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, kde-format
 msgid "All Files (*)"
 msgstr "ყველა ფაილი (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:178
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, kde-format
 msgid "<i>not selected</i>"
@@ -21678,13 +21699,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "დაშორებულ საცავზე გატანა"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "ატვირთვა არ დასრულებულა"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -24975,6 +24996,8 @@ msgid ""
 "Failed to upload photo\n"
 "Code: %1, name: %2, message: %3"
 msgstr ""
+"სურათის ატვირთვა ჩავარდა\n"
+"კოდი: %1. სახელი: %2. შეტყობინება: %3"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:924
 #, kde-format
@@ -25099,7 +25122,7 @@ msgstr "გაგზავნის პროცესის დაწყებ�
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:84
 #, kde-format
 msgid "<h3>This view lists all items to export.</h3>"
-msgstr ""
+msgstr "<h3>ეს ხედი ყველა გასატან ელემენტს შეიცავს.</h3>"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:100
 #, kde-format
@@ -25222,7 +25245,7 @@ msgstr "Raw-ის შემოტანა Libraw-ით"
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:59
 #, kde-format
 msgid "A tool to import Raw images using Libraw engine"
-msgstr ""
+msgstr "ხელსაწყო დაუმუშავებელი გამოსახულების Libraw-ის ძრავით შემოსატანად"
 
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:64
 #, kde-format
@@ -25240,6 +25263,8 @@ msgid ""
 "Cannot decode RAW image\n"
 "\"%1\""
 msgstr ""
+"დეკოდირების შეცდომა დაუმუშავებელი გამოსახულებისთვის\n"
+"\"%1\""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:138
 #, kde-format
@@ -25249,7 +25274,7 @@ msgstr "შეწყვეტა"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:141
 #, kde-format
 msgid "Abort the current Raw image preview."
-msgstr ""
+msgstr "მიმდინარე დაუმუშავებელი გამოსახულების მინიატურის შექმნის შეწყვეტა."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:144
 #, kde-format
@@ -25260,7 +25285,7 @@ msgstr "განახლება"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:147
 #, kde-format
 msgid "Generate a Raw image preview using current settings."
-msgstr ""
+msgstr "დაუმუშავებელი გამოსახულების მინიატურის შექმნა მიმდინარე პარამეტრებით."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:166
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:68
@@ -33714,12 +33739,12 @@ msgstr "ფაილი ან საქაღალდე სახელით
 #: core/libs/iojobs/iojob.cpp:156
 #, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr ""
+msgstr "აღმოჩენილია რეკურსიული საქაღალდის %1 გადატანა ალბომში %2"
 
 #: core/libs/iojobs/iojob.cpp:175
 #, kde-format
 msgid "Could not move folder %1 to album %2"
-msgstr ""
+msgstr "ვერ გადავიტანე საქაღალდე %1 ალბომში %2"
 
 #: core/libs/iojobs/iojob.cpp:182
 #, kde-format
@@ -33727,6 +33752,7 @@ msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr ""
+"ვერ გადავიტანე საქაღალდე %1 ალბომში %2. საქაღალდე %1 დაკოპირდა საქაღალდეში %2"
 
 #: core/libs/iojobs/iojob.cpp:194
 #, kde-format
@@ -33736,17 +33762,17 @@ msgstr "ფაილის %1 ალბომში %2 გადატანი�
 #: core/libs/iojobs/iojob.cpp:200
 #, kde-format
 msgid "Could not move file %1 to album %2"
-msgstr ""
+msgstr "ვერ გადავიტანე ფაილი %1 საქაღალდეში %2"
 
 #: core/libs/iojobs/iojob.cpp:215
 #, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr ""
+msgstr "აღმოჩენილია რეკურსიული საქაღალდის %1 ასლი ალბომში %2"
 
 #: core/libs/iojobs/iojob.cpp:232
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
-msgstr ""
+msgstr "ვერ დავაკოპირე საქაღალდე %1 ალბომში %2"
 
 #: core/libs/iojobs/iojob.cpp:244
 #, kde-format
@@ -33756,12 +33782,12 @@ msgstr "ფაილის %1 ალბომში %2 კოპირები�
 #: core/libs/iojobs/iojob.cpp:252
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
-msgstr ""
+msgstr "ვერ დავაკოპირე ფაილი %1 საქაღალდეში %2"
 
 #: core/libs/iojobs/iojob.cpp:257
 #, kde-format
 msgid "Could not copy file %1 to album %2"
-msgstr ""
+msgstr "ვერ დავაკოპირე ფაილი %1 ალბომში %2"
 
 #: core/libs/iojobs/iojob.cpp:306
 #, kde-format
@@ -33797,7 +33823,7 @@ msgstr "გამოსახულების %1 წაშლა შეუძ�
 #: core/libs/iojobs/iojob.cpp:410
 #, kde-format
 msgid "Could not move image %1 to collection trash"
-msgstr ""
+msgstr "ვერ გადავიტანე გამოსახულება %1 კოლექციის ნაგვის ყუთში"
 
 #: core/libs/iojobs/iojob.cpp:422
 #, kde-format
@@ -55583,7 +55609,7 @@ msgstr "ნაგულისხმევი პროგრამით გა�
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
-msgstr ""
+msgstr "ელემენტის გახსნა ნაგულისხმევ პროგრამაში."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:329
 #, kde-format
@@ -58168,7 +58194,7 @@ msgstr "კატალოგებისთვის დასკანირ�
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
-msgstr ""
+msgstr "დუბლირებული ელემენტების პოვნა"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
@@ -58213,6 +58239,8 @@ msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
+"სახის სკანირება უკვე გაშვებულია. ერთდროულად შესაძლებელია, მხოლოდ, ერთი "
+"ამოცანის გაშვება. დაელოდეთ, სანამ ის დასრულდება."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #, kde-format
@@ -58244,7 +58272,7 @@ msgstr "სახეების ბაზის განახლება"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
 #, kde-format
 msgid "Error starting face detection."
-msgstr ""
+msgstr "სახის აღმოჩენის გაშვების შეცდომა."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
 #, kde-format
@@ -58279,7 +58307,7 @@ msgstr "აღმოჩენილია %1 სახე."
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
 #, kde-format
 msgid "Found %1 faces."
-msgstr ""
+msgstr "აღმჩენილია %1 სახე."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
@@ -58289,7 +58317,7 @@ msgstr "ამოცნობილია: %1"
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:102
 #, kde-format
 msgid "Finger-prints"
-msgstr ""
+msgstr "თითის ანაბეჭდები"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
 #, kde-format
@@ -58387,12 +58415,12 @@ msgstr "ჭდეების წასაშლელად სკანირ�
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
 #, kde-format
 msgid "Synchronizing image metadata with database"
-msgstr ""
+msgstr "გამოსახულების მეტამონაცემების სინქრონიზაცია მონაცემთა ბაზასთან"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
 #, kde-format
 msgid "Updating database from image metadata"
-msgstr ""
+msgstr "მონაცემთა ბაზის განახლება გამოსახულების მეტამონაცემებიდან"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
 #, kde-format
@@ -58410,6 +58438,8 @@ msgstr ""
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr ""
+"დასკანერებულია ელემენტები მეტამონაცემების მონაცემთა ბაზასთან "
+"სინქრონიზაციისთვის: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
 #, kde-format
@@ -58461,7 +58491,7 @@ msgstr "მართვის პანელი"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:155
 #, kde-format
 msgid "Assigned Tools"
-msgstr ""
+msgstr "მინიჭებული ხელსაწყოები"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:164
 #, kde-format
@@ -58491,7 +58521,7 @@ msgstr "რიგის წაშლა"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:310
 #, kde-format
 msgid "Save Workflow"
-msgstr ""
+msgstr "სამუშაო პროცესის შენახვა"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
 #, kde-format
@@ -58521,7 +58551,7 @@ msgstr "ქვემოთ ჩამოწევა"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:344
 #, kde-format
 msgid "Remove tool"
-msgstr ""
+msgstr "ხელსაწყოს წაშლა"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
 #, kde-format
@@ -58564,27 +58594,30 @@ msgstr "მზადაა"
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
-msgstr ""
+msgstr "დამუშავება მიმდინარეობის ქვეშ"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
+"პაკეტური რიგის მმართველი გაშვებულია. გნებავთ მიმდინარე დავალების გაუქმება?"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:645
 #, kde-format
 msgid "There is no queue to be run."
-msgstr ""
+msgstr "გასაშვები რიგების გარეშე."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
-msgstr ""
+msgstr "მიმდინარე რიგში (%1) დასამუშავებელი ელემენტები არ არსებობს."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:655
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
+"მორგებული სახელის გადარქმევის წესი არასწორია მიმდინარე რიგისთვის (%1). "
+"გაასწორეთ."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:660
 #, kde-format
@@ -58592,18 +58625,20 @@ msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
 msgstr ""
+"მინიჭებული პაკეტური ხელსაწყოების სია ცარიელია მიმდინარე რიგისთვის (%1). "
+"მიანიჭეთ ხელსაწყოები."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:692
 #, kde-format
 msgid "There are no items to process in the queues."
-msgstr ""
+msgstr "რიგებში დასამუშავებელი ელემენტები არ არსებობს."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:864
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:874
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
-msgstr ""
+msgstr "დამუშავებული ელემენტების ალბომის პარამეტრები"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
 #, kde-format
@@ -58622,27 +58657,27 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:954
 #, kde-format
 msgid "Failed to process item..."
-msgstr ""
+msgstr "დამუშავების შეცდომა ელემენტისთვის..."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:967
 #, kde-format
 msgid "Process Cancelled..."
-msgstr ""
+msgstr "დამუშავება გაუქმდა..."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:987
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
-msgstr ""
+msgstr "ელემენტი \"%1\" რიგიდან \"%2\": %3"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:1016
 #, kde-format
 msgid "Batch queue finished"
-msgstr ""
+msgstr "პაკეტური რიგი დასრულდა"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:1020
 #, kde-format
 msgid "All batch queues finished"
-msgstr ""
+msgstr "ყველა პაკეტური რიგი დასრულდა"
 
 #. i18n: ectx: Menu (Queues)
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:6
@@ -58653,38 +58688,38 @@ msgstr "&რიგები"
 #: core/utilities/queuemanager/manager/actiontask.cpp:156
 #, kde-format
 msgid "Failed to find tool..."
-msgstr ""
+msgstr "ხელსაწყოს პოვნის შეცდომა..."
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:264
 #, kde-format
 msgid "(overwritten)"
-msgstr ""
+msgstr "(თავზე გადაწერილია)"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:269
 #, kde-format
 msgid "(renamed to %1)"
-msgstr ""
+msgstr "(სახელი გადარქმეულია %1-ზე)"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:274
 #, kde-format
 msgid "Item exists and was skipped"
-msgstr ""
+msgstr "ელემენტი არსებობს და გამოტოვებული იყო"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:299
 #, kde-format
 msgid "Failed to create sidecar file..."
-msgstr ""
+msgstr "დამატებითი ფაილის შექმნის შეცდომა..."
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:308
 #, kde-format
 msgid "Item processed successfully %1"
-msgstr ""
+msgstr "ელემენტი წარმატებით დამუშავდა %1"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:313
 #: core/utilities/queuemanager/manager/actiontask.cpp:318
 #, kde-format
 msgid "Failed to create file..."
-msgstr ""
+msgstr "ფაილის შექმნის სეცდომა..."
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
@@ -58750,18 +58785,18 @@ msgstr "არასწორი"
 #, kde-format
 msgctxt "@label"
 msgid "No setting available"
-msgstr ""
+msgstr "პარამეტრი ხელმისაწვდომი არაა"
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:106
 #, kde-format
 msgid "This is the list of batch tools assigned."
-msgstr ""
+msgstr "ეს მინიჭებული პაკეტური ხელსაწყოების სიაა."
 
 #: core/utilities/queuemanager/views/queuelist.cpp:292
 #, kde-format
 msgctxt "@info"
 msgid "This is the list of images to batch process."
-msgstr ""
+msgstr "ეს გამოსახულებების სიაა პაკეტურად დამუშავებისთვის."
 
 #: core/utilities/queuemanager/views/queuelist.cpp:310
 #, kde-format
@@ -58790,7 +58825,11 @@ msgid_plural ""
 "There are still %1 unprocessed items in \"%2\".\n"
 "Do you want to close this queue?"
 msgstr[0] ""
+"ჯერ კიდევ არსებობს 1 დაუმუშავებელი ელემენტი \"%2\"-ში.\n"
+"გნებავთ, დახუროთ ეს რიგი?"
 msgstr[1] ""
+"ჯერ კიდევ არსებობს %1 დაუმუშავებელი ელემენტი \"%2\"-ში.\n"
+"გნებავთ, დახუროთ ეს რიგი?"
 
 #: core/utilities/queuemanager/views/queuepool.cpp:498
 #, kde-format
@@ -58808,7 +58847,7 @@ msgstr ""
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:130
 #, kde-format
 msgid "Use original Album"
-msgstr ""
+msgstr "ორიგინალი ალბომის გამოყენება"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:132
 #, kde-format
@@ -58818,17 +58857,19 @@ msgstr "სამიზნე წერტილი"
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:142
 #, kde-format
 msgid "Use original filenames"
-msgstr ""
+msgstr "ორიგინალი ფაილის სახელების გამოყენება"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:143
 #, kde-format
 msgid "Turn on this option to use original filenames without modifications."
 msgstr ""
+"ჩართეთ ეს პარამეტრი ორიგინალი ფაილის სახელების გამოსაყენებლად, ცვლილების "
+"გარეშე."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:146
 #, kde-format
 msgid "Customize filenames:"
-msgstr ""
+msgstr "ფაილის სახელების მორგება:"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:162
 #, kde-format
@@ -58838,30 +58879,30 @@ msgstr "ფაილის სახელის გადარქმევა"
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:174
 #, kde-format
 msgid "Raw Files Loading:"
-msgstr ""
+msgstr "დაუმუშავებელი ფაილების ჩატვირთვა:"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:178
 #, kde-format
 msgid "Perform RAW demosaicing"
-msgstr ""
+msgstr "დაუმუშავებელ ფაილზე მოზაიკის მოცილების ჩატარება"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:179
 #, kde-format
 msgid "Extract embedded preview (faster)"
-msgstr ""
+msgstr "ჩაშენებული მინიატურის ამოღება (სწრაფი)"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:194
 #, kde-format
 msgctxt "@option:check"
 msgid "Save image as a newly created branch"
-msgstr ""
+msgstr "გამოსახულების შენახვა ახლადშექმნილი ბრენჩის სახით"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:195
 #, kde-format
 msgid ""
 "Turn on this option to save the current modifications to a new version of "
 "the file"
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი მიმდინარე ცვლილებების ფაილის ახალ ვერსიაში შენახვა"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -58875,6 +58916,8 @@ msgid ""
 "Turn on this option to use all CPU core from your computer to process more "
 "than one item from a queue at the same time."
 msgstr ""
+"ჩართეთ ეს პარამეტრი თქვენი CPU-ის ყველა ბირთვის გამოსაყენებლად ერთზე მეტი "
+"რიგის ერთდროულად დამუშავებისთვის."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
 #: core/utilities/setup/camera/setupcamera.cpp:350
@@ -58890,7 +58933,7 @@ msgstr "გამოსახულებების შენახვა"
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:99
 #, kde-format
 msgid "Reset current tool settings to default values."
-msgstr ""
+msgstr "მიმდინარე ხელსაწყოს პარამეტრების ჩამოყრა ნაგულისხმევ მნიშვნელობებზე."
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:53
 #, kde-format
@@ -58938,28 +58981,28 @@ msgstr "მეტამონაცემები"
 #, kde-format
 msgctxt "@title: custom tools category"
 msgid "Custom Tools"
-msgstr ""
+msgstr "მორგებული ხელსაწყოები"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:389
 #, kde-format
 msgctxt "@action"
 msgid "Assign tools"
-msgstr ""
+msgstr "ხელსაწყოების მინიჭება"
 
 #: core/utilities/queuemanager/views/toolsview.cpp:58
 #, kde-format
 msgid "This is the list of digiKam batch tools available."
-msgstr ""
+msgstr "ეს digiKam-ის ხელმისაწვდომი პაკეტური ხელსაწყოების სიაა."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:67
 #, kde-format
 msgid "Base Tools"
-msgstr ""
+msgstr "საბაზისო ხელსაწყოები"
 
 #: core/utilities/queuemanager/views/toolsview.cpp:72
 #, kde-format
 msgid "This is the list of your customized workflow settings."
-msgstr ""
+msgstr "ეს თქვენი მორგებული სამუშაო პროცესის პარამეტრების სიაა."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:73
 #, kde-format
@@ -58970,6 +59013,7 @@ msgstr "პროექტის დინება"
 #, kde-format
 msgid "You can see below the history of last batch operations processed."
 msgstr ""
+"ქვემოთ შეგიძლიათ ნახოთ ბოლოს დამუშავებული პაკეტური ოპერაციების ისტორია."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:79
 #, kde-format
@@ -58991,12 +59035,12 @@ msgstr "სამუშაო პროცესის ჩასწორებ�
 #: core/utilities/queuemanager/views/workflowdlg.cpp:74
 #, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
-msgstr ""
+msgstr "<qt><b>ახალი სამუშაო პროცესის შექმნა</b></qt>"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:78
 #, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
-msgstr ""
+msgstr "<qt><b>სამუშაო პროცესის თვისებები</b></qt>"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:89
 #, kde-format
@@ -59050,7 +59094,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
-msgstr ""
+msgstr "სამუშაოს დინების მინიჭება მიმდინარე რიგზე"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, kde-format
@@ -59068,7 +59112,7 @@ msgstr "სამუშაო პროცესის განახლებ�
 #, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
-msgstr ""
+msgstr "სამუშაოს დინების წაშლა"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:336
 #, kde-format
@@ -59080,7 +59124,7 @@ msgstr "წავშალო სამუშაო პროცესი?"
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
-msgstr ""
+msgstr "მართლა გნებავთ, წაშალოთ მონიშნული სამუშაოს დინება \"%1\"?"
 
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:57
 #, kde-format
@@ -59090,17 +59134,17 @@ msgstr "გადარქმევა..."
 #: core/utilities/searchwindow/ratingsearchutilities.cpp:201
 #, kde-format
 msgid "(No Value Selected)"
-msgstr ""
+msgstr "(მნიშვნელობა არჩეული არაა)"
 
 #: core/utilities/searchwindow/ratingsearchutilities.cpp:206
 #, kde-format
 msgid "No Rating assigned"
-msgstr ""
+msgstr "რეიტინგი მინიჭებული არაა"
 
 #: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
 msgid "Reset contents"
-msgstr ""
+msgstr "შემცველობის ჩამოყრა"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:36
 #, kde-format
@@ -59147,52 +59191,52 @@ msgstr "ნებისმიერი სიიდან: %1"
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:29
 #, kde-format
 msgid "any color depth"
-msgstr ""
+msgstr "ნებისმიერი ფერის სიღრმე"
 
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:30
 #, kde-format
 msgid "8 bits per channel"
-msgstr ""
+msgstr "8 ბიტი თითო არხზე"
 
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:31
 #, kde-format
 msgid "16 bits per channel"
-msgstr ""
+msgstr "16 ბიტი თითო არხზე"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #, kde-format
 msgid "Search items located in"
-msgstr ""
+msgstr "ელემენტების ძებნა, რომლებიც მოთავსებულია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
 #, kde-format
 msgid "The album name contains"
-msgstr ""
+msgstr "ალბომის სახელი შეიცავს"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:43
 #, kde-format
 msgid "The album caption contains"
-msgstr ""
+msgstr "ალბომის წარწერა შეიცავს"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:51
 #, kde-format
 msgid "The album category is"
-msgstr ""
+msgstr "ალბომის კატეგორიაა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #, kde-format
 msgid "Return items with tag"
-msgstr ""
+msgstr "ელემენტების დაბრუნება ჭდით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #, kde-format
 msgid "A tag of the item contains"
-msgstr ""
+msgstr "ელემენტის ჭდე შეიცავს"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
 #, kde-format
 msgid "Return items without tags"
-msgstr ""
+msgstr "ელემენტების დაბრუნება ჭდეების გარეშე"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
@@ -59207,7 +59251,7 @@ msgstr "ფაილის სახელი"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:104
 #, kde-format
 msgid "Return items whose file name contains"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომლის ფაილის სახელიც შეიცავს"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:112
 #, kde-format
@@ -59217,7 +59261,7 @@ msgstr "ცვლილება"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:112
 #, kde-format
 msgid "Return items modified between"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომლებიც შეიცვალა შუალედში"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:113
 #, kde-format
@@ -59234,7 +59278,7 @@ msgstr "ფაილის ზომა"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
 #, kde-format
 msgid "Size of the file in megabytes"
-msgstr ""
+msgstr "ფაილის ზომა მეგაბაიტებში"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #: core/utilities/searchwindow/searchfields_createfield.cpp:134
@@ -59251,22 +59295,22 @@ msgstr "ფაილის ზომა ბაიტებში"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
 msgid "Month/Day"
-msgstr ""
+msgstr "თვე/დღე"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
 msgid "Return items from a month or a day of the month"
-msgstr ""
+msgstr "ელემენტების დაბრუნება თვიდან ან თვის დღიდან"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
 msgid "Return items with labels"
-msgstr ""
+msgstr "ჭდის მქონე ელემენტების დაბრუნება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Return items rated at least"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომლის რეიტინგიც მინ. არის"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, kde-format
@@ -59277,7 +59321,7 @@ msgstr "მაქსიმუმ"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:169
 #, kde-format
 msgid "Return items created between"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომელიც შეიქმნა შუალედში"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, kde-format
@@ -59288,12 +59332,12 @@ msgstr "და"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
 msgid "Digitization"
-msgstr ""
+msgstr "გაციფრულება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
 msgid "Return items digitized between"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომელიც გაციფრულდა შუალედში"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, kde-format
@@ -59309,7 +59353,7 @@ msgstr "დრო"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:187
 #, kde-format
 msgid "Return items with created time between"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომლის შექმნის დროა შუალედში"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, kde-format
@@ -59320,17 +59364,17 @@ msgstr "და"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, kde-format
 msgid "Exif Orientation"
-msgstr ""
+msgstr "Exif-ის ორიენტაცია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, kde-format
 msgid "Find items with orientation flag"
-msgstr ""
+msgstr "ელემენტების ძებნა ორიენტაციის ალმით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Find items with a width between"
-msgstr ""
+msgstr "ელემენტების ძებნა, რომლის სიგანის შუალედია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, kde-format
@@ -59341,7 +59385,7 @@ msgstr "და"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Find items with a height between"
-msgstr ""
+msgstr "ელემენტების ძებნა, რომლის სიმაღლის შუალედია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
@@ -59353,7 +59397,7 @@ msgstr "და"
 #, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
-msgstr ""
+msgstr "ელემენტების ძებნა თვისებით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:258
 #, kde-format
@@ -59363,7 +59407,7 @@ msgstr "ფაილის ფორმატი"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:258
 #, kde-format
 msgid "Return items with the file format"
-msgstr ""
+msgstr "ელემენტების დაბრუნება ფაილის ფორმატით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:266
 #, kde-format
@@ -59392,7 +59436,7 @@ msgstr "ფერის სიღრმე"
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
-msgstr ""
+msgstr "ელემენტების ძებნა თვისებით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:323
 #, kde-format
@@ -59402,7 +59446,7 @@ msgstr "ფერის მოდელი"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:323
 #, kde-format
 msgid "Find items with the color model"
-msgstr ""
+msgstr "ელემენტების ძებნა ფერის მოდელით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:328
 #: core/utilities/searchwindow/searchfields_createfield.cpp:329
@@ -59430,12 +59474,12 @@ msgstr "%1 [ვიდეო]"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
 #, kde-format
 msgid "The make of the camera"
-msgstr ""
+msgstr "კამერის მწარმოებელი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:385
 #, kde-format
 msgid "The model of the camera"
-msgstr ""
+msgstr "კამერის მოდელი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
 #, kde-format
@@ -59445,7 +59489,7 @@ msgstr "ლინზა"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
 #, kde-format
 msgid "The type of the lens"
-msgstr ""
+msgstr "ლინზის ტიპი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:430
 #, kde-format
@@ -59461,7 +59505,7 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:450
 #, kde-format
 msgid "Focal length of the lens"
-msgstr ""
+msgstr "ლინზის ფოკალური სიგრძე"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:451
 #, kde-format
@@ -59472,7 +59516,7 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:469
 #, kde-format
 msgid "35mm equivalent focal length"
-msgstr ""
+msgstr "35 მმ-ის ეკვივალენტი ფოკალური მანძილი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:470
 #, kde-format
@@ -59489,17 +59533,17 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:509
 #, kde-format
 msgid "Automatic exposure program"
-msgstr ""
+msgstr "ავტომატური ექსპოზიციის პროგრამა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:521
 #, kde-format
 msgid "Automatic or manual exposure"
-msgstr ""
+msgstr "ავტომატური ან ხელით ექსპოზიცია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:532
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
-msgstr ""
+msgstr "ISO ლენტის სიჩქარე (წრფივი მასშტაბი, ASA)"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:533
 #, kde-format
@@ -59517,17 +59561,17 @@ msgstr "განათება"
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
-msgstr ""
+msgstr "განათების რეჟიმი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "Automatic or manual white balance"
-msgstr ""
+msgstr "ავტომატური ან ხელით თეთრის ბალანსი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:579
 #, kde-format
 msgid "Color temperature used for white balance"
-msgstr ""
+msgstr "თეთრის ბალანსისთვის გამოყენებული ფერის ტემპერატურა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:580
 #, kde-format
@@ -59543,7 +59587,7 @@ msgstr "გაზომვის რეჟიმი"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:592
 #, kde-format
 msgid "Method to determine the exposure"
-msgstr ""
+msgstr "ექსპოზიციის დადგენის მეთოდი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #: core/utilities/searchwindow/searchfields_createfield.cpp:617
@@ -59554,7 +59598,7 @@ msgstr "სუბიექტის დაშორება"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Distance of the subject from the lens"
-msgstr ""
+msgstr "სუბიექტის დაშორება ლინზიდან"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:605
 #, kde-format
@@ -59565,7 +59609,7 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Macro, close or distant view"
-msgstr ""
+msgstr "მაკრო, ახლო ან შორი ხედი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:634
 #: core/utilities/searchwindow/searchfields_createfield.cpp:657
@@ -59576,7 +59620,7 @@ msgstr "GPS"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:634
 #, kde-format
 msgid "Altitude range"
-msgstr ""
+msgstr "სიმაღლის დიაპაზონი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:635
 #, kde-format
@@ -59587,12 +59631,12 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:657
 #, kde-format
 msgid "Item has no GPS info"
-msgstr ""
+msgstr "ელემენტს GPS ინფორმაცია არ აქვს"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:658
 #, kde-format
 msgid "Not Geo-located"
-msgstr ""
+msgstr "გეოლოკაციის არმქონე"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
@@ -59602,7 +59646,7 @@ msgstr "ქვეყანა"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "Country shown in the item"
-msgstr ""
+msgstr "ელემენტში ნაჩვენები ქვეყანა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
@@ -59612,12 +59656,12 @@ msgstr "პროვინცია"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "Province shown in the item"
-msgstr ""
+msgstr "ელემენტში ნაჩვენები პროვინცია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, kde-format
 msgid "City shown in the item"
-msgstr ""
+msgstr "ელემენტში ნაჩვენები ქალაქი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:716
 #, kde-format
@@ -59627,7 +59671,7 @@ msgstr "ქვემდებარეობა"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:716
 #, kde-format
 msgid "Sublocation shown in the item"
-msgstr ""
+msgstr "ელემენტში ნაჩვენები ქვემდებარეობა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
@@ -59638,7 +59682,7 @@ msgstr "შემქმნელი"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
 msgid "Return items created by"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომლის ავტორია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
@@ -59649,12 +59693,12 @@ msgstr "წარწერა"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
 msgid "Return items whose comment contains"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომლების კომენტარი შეიცავს"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, kde-format
 msgid "Return items commented by"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომლის კომენტარიც დაწერილია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
@@ -59664,7 +59708,7 @@ msgstr "სათაური"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Return items with the IPTC headline"
-msgstr ""
+msgstr "ელემენტების დაბრუნება IPTC-ის სათაურის ხაზით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, kde-format
@@ -59675,17 +59719,17 @@ msgstr "სათაური"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, kde-format
 msgid "Return items with the IPTC title"
-msgstr ""
+msgstr "ელემენტების დაბრუნება IPTC-ის სათაურით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:770
 #, kde-format
 msgid "Find items that have associated all these words:"
-msgstr ""
+msgstr "ელემენტების ძებნა, რომლებიც ასოცირდება ყველა ამ სიტყვასთან:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, kde-format
 msgid "Empty Text"
-msgstr ""
+msgstr "ცარიელი ტექსტი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, kde-format
@@ -59731,7 +59775,7 @@ msgstr "თანაფარდობა"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:794
 #, kde-format
 msgid "Return items with the aspect ratio"
-msgstr ""
+msgstr "ელემენტების დაბრუნება, რომლის პროპორციაცაა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
@@ -59741,7 +59785,7 @@ msgstr "პიქსელის ზომა"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Value of (Width * Height) between"
-msgstr ""
+msgstr "მნიშვნელობა (სიგანე * სიმაღლე) არის შუალედში"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
@@ -59752,12 +59796,12 @@ msgstr "და"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:813
 #, kde-format
 msgid "Return video with the frame aspect ratio"
-msgstr ""
+msgstr "ვიდეოს დაბრუნება, რომლის კადრის პროპორციაცაა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:830
 #, kde-format
 msgid "Length of the video"
-msgstr ""
+msgstr "ვიდეოს სიგრძე"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:831
 #, kde-format
@@ -59779,7 +59823,7 @@ msgstr "კადრების სიხშირე"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Return video with the frame rate"
-msgstr ""
+msgstr "ვიდეოს დაბრუნება, რომლის კადრების სიხშირეა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:849
 #, kde-format
@@ -59801,12 +59845,12 @@ msgstr "კოდეკი"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:866
 #, kde-format
 msgid "Return video codec"
-msgstr ""
+msgstr "ვიდეოს კოდეკის დაბრუნება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, kde-format
 msgid "Return Audio Bits Rate"
-msgstr ""
+msgstr "აუდიოს ბიტური სიჩქარის დაბრუნება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:937
 #, kde-format
@@ -59823,7 +59867,7 @@ msgstr "ბწმ"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:954
 #, kde-format
 msgid "Return Audio Channel Type"
-msgstr ""
+msgstr "აუდიოს არხის ტიპის დაბრუნება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:956
 #, kde-format
@@ -59841,30 +59885,30 @@ msgstr "სტერეო"
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
-msgstr ""
+msgstr "5.1 სივრცითი ხმა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:959
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
-msgstr ""
+msgstr "7.1 სივრცითი ხმა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:960
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
-msgstr ""
+msgstr "16 არხების მიმდევრობა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:961
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
-msgstr ""
+msgstr "სხვა არხის ტიპი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:973
 #, kde-format
 msgid "Return Audio Codec"
-msgstr ""
+msgstr "აუდიოკოდეკის დაბრუნება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1072
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1082
@@ -59875,7 +59919,7 @@ msgstr "სახეები"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1072
 #, kde-format
 msgid "Return items by number of face regions"
-msgstr ""
+msgstr "ელემენტების დაბრუნება სახის რეგიონების რაოდენობის მიხედვით"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1073
 #, kde-format
@@ -59886,12 +59930,12 @@ msgstr "და"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1082
 #, kde-format
 msgid "Return items without face regions"
-msgstr ""
+msgstr "სახის რეგიონების არმქონე ელემენტების დაბრუნება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1083
 #, kde-format
 msgid "No Face Regions"
-msgstr ""
+msgstr "სახის რეგიონების გარეშე"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
@@ -59901,7 +59945,7 @@ msgstr "დღე:"
 #: core/utilities/searchwindow/searchfields_monthday.cpp:35
 #, kde-format
 msgid "Every Month"
-msgstr ""
+msgstr "ყოველთვე"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:42
 #, kde-format
@@ -59911,17 +59955,17 @@ msgstr "ყოველდღე"
 #: core/utilities/searchwindow/searchfields_pageorientation.cpp:29
 #, kde-format
 msgid "Any Orientation"
-msgstr ""
+msgstr "ნებისმიერი ორიენტაცია"
 
 #: core/utilities/searchwindow/searchfields_pageorientation.cpp:30
 #, kde-format
 msgid "Landscape Orientation"
-msgstr ""
+msgstr "ლანდშაფტური ორინტაცია"
 
 #: core/utilities/searchwindow/searchfields_pageorientation.cpp:31
 #, kde-format
 msgid "Portrait orientation"
-msgstr ""
+msgstr "პოტრეტული ორიენტაცია"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
@@ -59944,7 +59988,7 @@ msgstr "ჩასწორება…"
 #: core/utilities/searchwindow/searchgroup.cpp:62
 #, kde-format
 msgid "File, Album, Tags"
-msgstr ""
+msgstr "ფაილი, ალბომი, ჭდეები"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
 #, kde-format
@@ -59954,42 +59998,42 @@ msgstr "ელემენტის თვისებები"
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
 msgid "Caption, Comment, Title"
-msgstr ""
+msgstr "წარწერა, კომენტარი, სათაური"
 
 #: core/utilities/searchwindow/searchgroup.cpp:182
 #, kde-format
 msgid "Geographic position"
-msgstr ""
+msgstr "გეოგრაფიული მდებარეობა"
 
 #: core/utilities/searchwindow/searchgroup.cpp:205
 #, kde-format
 msgid "Face regions"
-msgstr ""
+msgstr "სახის რეგიონები"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:54
 #, kde-format
 msgid "Find Items"
-msgstr ""
+msgstr "ელემენტების ძებნა"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:60
 #, kde-format
 msgid "Meet All of the following conditions"
-msgstr ""
+msgstr "ყველა ამ პირობის შესრულება"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:64
 #, kde-format
 msgid "Meet Any of the following conditions"
-msgstr ""
+msgstr "ამ პირობებიდან ნებისმიერის შესრულება"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:68
 #, kde-format
 msgid "None of these conditions are met"
-msgstr ""
+msgstr "პირობები არ შესრულდა"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:72
 #, kde-format
 msgid "At least one of these conditions is not met"
-msgstr ""
+msgstr "სულ ცოტა, ერთი პირობა არ შესრულდა"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
@@ -59997,6 +60041,8 @@ msgid ""
 "<qt><p>Search your collection<br>for Items meeting the following conditions</"
 "p></qt>"
 msgstr ""
+"<qt><p>თქვენს კოლექციაში ძებნა<br>ელემენტების, რომლებიც აკმაყოფილებენ შემდეგ "
+"პირობებს</p></qt>"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
@@ -60017,18 +60063,18 @@ msgstr "წავშალო ძებნა?"
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:72
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
-msgstr ""
+msgstr "მართლა გნებავთ, წაშალოთ მონიშნული ძებნა \"%1\"?"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:67
 #, kde-format
 msgid "(Advanced Search)"
-msgstr ""
+msgstr "(გაფართოებული ძებნა)"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Autostart Search"
-msgstr ""
+msgstr "ძებნის ავტოგაშვება"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:241
 #, kde-format
@@ -60044,32 +60090,34 @@ msgstr "ძებნა:"
 #: core/utilities/searchwindow/searchtabheader.cpp:246
 #, kde-format
 msgid "Enter keywords here..."
-msgstr ""
+msgstr "შეიყვანეთ აქ საკვანძო სიტყვები..."
 
 #: core/utilities/searchwindow/searchtabheader.cpp:248
 #, kde-format
 msgid "New Advanced Search..."
-msgstr ""
+msgstr "ახალი გაფართოებული ძებნა..."
 
 #: core/utilities/searchwindow/searchtabheader.cpp:249
 #, kde-format
 msgid "Edit Current Search..."
-msgstr ""
+msgstr "მიმდინარე ძებნის ჩასწორება..."
 
 #: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
 msgid "Save Current Search"
-msgstr ""
+msgstr "მიმდინარე ძებნის შენახვა"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:268
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr ""
+"შეიყვანეთ სახელი მიმდინარე ძებნისთვის, რომ მოხდეს მისი შენახვა ხედში "
+"\"ძებნები\""
 
 #: core/utilities/searchwindow/searchtabheader.cpp:273
 #, kde-format
 msgid "Save current search to a new virtual Album"
-msgstr ""
+msgstr "მიმდინარე ძებნის შენახვა ახალ ვირტუალურ ალბომში"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:274
 #, kde-format
@@ -60082,7 +60130,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchtabheader.cpp:316
 #, kde-format
 msgid "Edit Stored Search"
-msgstr ""
+msgstr "შენახული ძებნის ჩასწორება"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:331
 #, kde-format
@@ -60092,7 +60140,7 @@ msgstr "ჩასწორება…"
 #: core/utilities/searchwindow/searchview.cpp:495
 #, kde-format
 msgid "Add Search Group"
-msgstr ""
+msgstr "ახალი ძებნის ჯგუფი"
 
 #: core/utilities/searchwindow/searchview.cpp:524
 #, kde-format
@@ -60109,7 +60157,7 @@ msgstr "გაფართოებული ძებნა"
 #: core/utilities/setup/camera/setupcamera.cpp:429
 #, kde-format
 msgid "Show file&name"
-msgstr ""
+msgstr "ფაილის სახელის ჩვე&ნება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:123
 #: core/utilities/setup/camera/setupcamera.cpp:430
@@ -60121,7 +60169,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
-msgstr ""
+msgstr "ფაილის &ზომის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:126
 #: core/utilities/setup/camera/setupcamera.cpp:433
@@ -60133,7 +60181,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:435
 #, kde-format
 msgid "Show camera creation &date"
-msgstr ""
+msgstr "კამერის შექმნის თარიღის ჩ&ვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:129
 #: core/utilities/setup/camera/setupcamera.cpp:436
@@ -60145,7 +60193,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:132
 #, kde-format
 msgid "Show file &modification date"
-msgstr ""
+msgstr "ფაილის ცვლილების თარიღის ჩვე&ნება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
 #, kde-format
@@ -60158,7 +60206,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:137
 #, kde-format
 msgid "Show ima&ge dimensions"
-msgstr ""
+msgstr "&გამოსახულების განზომილებების ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:138
 #, kde-format
@@ -60169,7 +60217,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:141
 #, kde-format
 msgid "Show image aspect ratio"
-msgstr ""
+msgstr "გამოსახულების ფარდობის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:142
 #, kde-format
@@ -60180,7 +60228,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:145
 #, kde-format
 msgid "Show image format"
-msgstr ""
+msgstr "გამოსახულების ფორმატის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:146
 #, kde-format
@@ -60190,7 +60238,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:148
 #, kde-format
 msgid "Show digiKam tit&le"
-msgstr ""
+msgstr "digiKam-ის სათაურის &ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
 #, kde-format
@@ -60200,7 +60248,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
 msgid "Show digiKam &captions"
-msgstr ""
+msgstr "digiKam-ის &წარწერების ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
 #, kde-format
@@ -60211,7 +60259,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
-msgstr ""
+msgstr "digiKam-ის &ჭდეების ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
@@ -60222,7 +60270,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
 msgid "Show digiKam &rating"
-msgstr ""
+msgstr "digiKam-ის &რეიტინგის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:161
 #, kde-format
@@ -60232,7 +60280,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:164
 #, kde-format
 msgid "Show digiKam &pick label"
-msgstr ""
+msgstr "digiKam-ის &არჩევის ჭდის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:165
 #, kde-format
@@ -60243,7 +60291,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid "Show digiKam color &label"
-msgstr ""
+msgstr "digiKam-ის &ფერის ჭდის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:169
 #, kde-format
@@ -60256,7 +60304,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
-msgstr ""
+msgstr "ბრუნვის ზემოდან დადებული ღილაკების ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:173
 #, kde-format
@@ -60268,7 +60316,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
 msgid "Show fullscreen overlay button"
-msgstr ""
+msgstr "სრულ ეკრანზე ზემოდან დადებული ღილაკის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:177
 #, kde-format
@@ -60281,7 +60329,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:448
 #, kde-format
 msgid "Show Geolocation Indicator"
-msgstr ""
+msgstr "გეოლოკაციის მაჩვენებლის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #, kde-format
@@ -60294,7 +60342,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
-msgstr ""
+msgstr "მინიატურაზე წკაპის ქმედება:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
@@ -60309,7 +60357,7 @@ msgstr "გამოსახულების რედაქტორის �
 #: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
 msgid "Show on Light Table"
-msgstr ""
+msgstr "ჩვენება სინათლის მაგიდაზე"
 
 #: core/utilities/setup/album/setupalbumview.cpp:188
 #, kde-format
@@ -60320,13 +60368,13 @@ msgstr "ნაგულისხმევი პროგრამით გა�
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
-msgstr ""
+msgstr "აირჩიეთ, რა მოხდეს, როცა მინიატურაზე დააწკაპუნებთ."
 
 #: core/utilities/setup/album/setupalbumview.cpp:191
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
-msgstr ""
+msgstr "ხატულას დათვალიერების ფონტი:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:192
 #, kde-format
@@ -60336,7 +60384,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:194
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
-msgstr ""
+msgstr "დიდი მინიატურის ზომის გამოყენება ეკრანის მაღალი გაფართოებისთვის"
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #, kde-format
@@ -60361,7 +60409,7 @@ msgstr "ხატულები"
 #: core/utilities/setup/album/setupalbumview.cpp:237
 #, kde-format
 msgid "Tree View icon size:"
-msgstr ""
+msgstr "ხის ხედის ხატულას ზომა:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:244
 #, kde-format
@@ -60373,7 +60421,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:247
 #, kde-format
 msgid "People Tree View icon size:"
-msgstr ""
+msgstr "ხალხის ხის ხედის ხატულას ზომა:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:255
 #, kde-format
@@ -60385,17 +60433,17 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
 msgid "Tree View font:"
-msgstr ""
+msgstr "ხის ხედის ფონტი:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:259
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
-msgstr ""
+msgstr "აირჩიეთ ფონტი, რომელიც ხის ხედებში ტექსტის საჩვენებლად გამოიყენება."
 
 #: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
 msgid "Show a count of items in Tree Views"
-msgstr ""
+msgstr "ელემენტების რაოდენობის ჩვენება ხის ხედებში"
 
 #: core/utilities/setup/album/setupalbumview.cpp:262
 #, kde-format
@@ -60408,25 +60456,25 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
-msgstr ""
+msgstr "ხის ხედები"
 
 #: core/utilities/setup/album/setupalbumview.cpp:282
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
-msgstr ""
+msgstr "მინიატურა აჩვენებს ჩაშენებულ ხედს, თუ ის ხელმისაწვდომია (უფრო სწრაფი)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:284
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
-msgstr ""
+msgstr "მინიატურა აჩვენებს სრულ გამოსახულებას"
 
 #: core/utilities/setup/album/setupalbumview.cpp:286
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
-msgstr ""
+msgstr "დაუმუშავებელი გამოსახულებები:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:289
 #, kde-format
@@ -60438,35 +60486,36 @@ msgstr "ავტომატური"
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
-msgstr ""
+msgstr "ჩაშენებული მინიატურა"
 
 #: core/utilities/setup/album/setupalbumview.cpp:293
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
-msgstr ""
+msgstr "ნახევარი ზომის დაუმუშავებელი მონაცემები"
 
 #: core/utilities/setup/album/setupalbumview.cpp:295
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
-msgstr ""
+msgstr "სრული ზომის დაუმუშავებელი მონაცემები (მაღალი ხარისხი)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
+"მინიატურის გამოსახულება გადაყვანილი იქნება 8 ბიტში სწრაფი დათვალიერებისთვის"
 
 #: core/utilities/setup/album/setupalbumview.cpp:298
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
-msgstr ""
+msgstr "გამორთეთ ეს, თუ არ გნებავთ 16 ბიტიანი მინიატურის გადაყვანა 8 ბიტიანში."
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr ""
+msgstr "მინიატურის გამოსახულება ყოველთვის გადიდდება ფანჯარაში ჩასატევად"
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
 #, kde-format
@@ -60476,7 +60525,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr ""
+msgstr "მინიატურის გამოსახულება მასშტაბისთვის მოგლუვებას იყენებს"
 
 #: core/utilities/setup/album/setupalbumview.cpp:304
 #, kde-format
@@ -60487,7 +60536,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
-msgstr ""
+msgstr "ხატულების და ტექსტის ჩვენება მინიატურის ზემოდან"
 
 #: core/utilities/setup/album/setupalbumview.cpp:307
 #: core/utilities/setup/camera/setupcamera.cpp:508
@@ -60548,7 +60597,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:85
 #, kde-format
 msgid "Set here the new category"
-msgstr ""
+msgstr "დააყენეთ აქ ახალი კატეგორია"
 
 #: core/utilities/setup/album/setupcategory.cpp:88
 #, kde-format
@@ -60600,7 +60649,7 @@ msgstr ""
 #: core/utilities/setup/album/setupmime.cpp:111
 #, kde-format
 msgid "Enter additional image file extensions."
-msgstr ""
+msgstr "შეიყვანეთ დამატებითი გამოსახულების ფაილის გაფართოებები."
 
 #: core/utilities/setup/album/setupmime.cpp:130
 #, kde-format
@@ -60626,7 +60675,7 @@ msgstr ""
 #: core/utilities/setup/album/setupmime.cpp:146
 #, kde-format
 msgid "Enter additional video file extensions."
-msgstr ""
+msgstr "შეიყვანეთ დამატებითი ვიდეოფაილის გაფართოებები."
 
 #: core/utilities/setup/album/setupmime.cpp:165
 #, kde-format
@@ -60652,7 +60701,7 @@ msgstr ""
 #: core/utilities/setup/album/setupmime.cpp:181
 #, kde-format
 msgid "Enter additional audio file extensions."
-msgstr ""
+msgstr "შეიყვანეთ დამატებითი აუდიოფაილის გაფართოებები."
 
 #: core/utilities/setup/album/setupmime.cpp:247
 #, kde-format
@@ -60703,7 +60752,7 @@ msgstr "კამერის მორგება"
 #: core/utilities/setup/camera/cameraselection.cpp:103
 #, kde-format
 msgid "Mounted Camera"
-msgstr ""
+msgstr "დამაგრებული კამერა"
 
 #: core/utilities/setup/camera/cameraselection.cpp:119
 #, kde-format
@@ -60721,7 +60770,7 @@ msgstr ""
 #: core/utilities/setup/camera/cameraselection.cpp:129
 #, kde-format
 msgid "Camera Title"
-msgstr ""
+msgstr "კამერის სახელი"
 
 #: core/utilities/setup/camera/cameraselection.cpp:133
 #, kde-format
@@ -60732,7 +60781,7 @@ msgstr ""
 #: core/utilities/setup/camera/cameraselection.cpp:142
 #, kde-format
 msgid "Camera Port Type"
-msgstr ""
+msgstr "კამერის პორტის ტიპი"
 
 #: core/utilities/setup/camera/cameraselection.cpp:147
 #, kde-format
@@ -60781,17 +60830,17 @@ msgstr ""
 #: core/utilities/setup/camera/cameraselection.cpp:165
 #, kde-format
 msgid "<p>Enter here the network address of your camera.</p>"
-msgstr ""
+msgstr "<p>შეიყვანეთ აქ კამერის ქსელური მისამართი.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:183
 #, kde-format
 msgid "Camera Mount Path"
-msgstr ""
+msgstr "კამერის მიმაგრების ბილიკი"
 
 #: core/utilities/setup/camera/cameraselection.cpp:187
 #, kde-format
 msgid "Note: only for USB/IEEE mass storage cameras."
-msgstr ""
+msgstr "შენიშვნა: მხოლოდ USB/IEEE მასიური საცავის მქონე კამერებისთვის."
 
 #: core/utilities/setup/camera/cameraselection.cpp:193
 #, kde-format
@@ -60846,32 +60895,32 @@ msgstr "სახელი:"
 #: core/utilities/setup/camera/importfilterdlg.cpp:98
 #, kde-format
 msgid "Mime filter:"
-msgstr ""
+msgstr "MIME ფილტრი:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:106
 #, kde-format
 msgid "Select Type Mime..."
-msgstr ""
+msgstr "აირჩიეთ MIME ტიპი..."
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:111
 #, kde-format
 msgid "File name filter:"
-msgstr ""
+msgstr "ფაილის სახელის ფილტრი:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:121
 #, kde-format
 msgid "Path filter:"
-msgstr ""
+msgstr "ბილიკის ფილტრი:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:131
 #, kde-format
 msgid "Show only new files"
-msgstr ""
+msgstr "მხოლოდ ახალი ფაილების ჩვენება"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:205
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
-msgstr ""
+msgstr "აირჩიეთ MIME ფილტრები, რომლებიც გნებავთ ამ ფილტრისთვის."
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:207
 #, kde-format
@@ -60884,6 +60933,8 @@ msgid ""
 "Here you can see the digital camera list used by digiKam via the Gphoto "
 "interface."
 msgstr ""
+"აქ შეგიძლიათ იხილოთ ციფრული კამერების სია, რომელსაც digiKam იყენებს Gphoto-"
+"ის ინტერფეისიდან."
 
 #: core/utilities/setup/camera/setupcamera.cpp:256
 #, kde-format
@@ -60918,12 +60969,12 @@ msgstr "&ჩასწორება…"
 #: core/utilities/setup/camera/setupcamera.cpp:279
 #, kde-format
 msgid "Auto-&Detect"
-msgstr ""
+msgstr "ავტო&დადგენა"
 
 #: core/utilities/setup/camera/setupcamera.cpp:290
 #, kde-format
 msgid "Visit Gphoto project website"
-msgstr ""
+msgstr "Gphoto-ის პროეტქის ვებსაიტის გახსნა"
 
 #: core/utilities/setup/camera/setupcamera.cpp:313
 #, kde-format
@@ -60933,54 +60984,58 @@ msgstr "მოწყობილობები"
 #: core/utilities/setup/camera/setupcamera.cpp:320
 #, kde-format
 msgid "Use file metadata (makes connection slower)"
-msgstr ""
+msgstr "ფაილის მეტამონაცემების გამოყენება (ანელებს კავშირს)"
 
 #: core/utilities/setup/camera/setupcamera.cpp:321
 #, kde-format
 msgid "Turn on high quality thumbnail loading (slower loading)"
-msgstr ""
+msgstr "მაღალი ხარისხის მინიატურის ჩატვირთვის ჩართვა (ნელი ჩატვირთვა)"
 
 #: core/utilities/setup/camera/setupcamera.cpp:322
 #, kde-format
 msgid "Use a default target album to download from camera"
-msgstr ""
+msgstr "ნაგულისხმევი სამიზნე ალბომის გამოყენება კამერიდან გადმოწერისას"
 
 #: core/utilities/setup/camera/setupcamera.cpp:328
 #, kde-format
 msgid "If target file exists when downloaded from camera"
-msgstr ""
+msgstr "თუ სამიზნე ფაილი არსებობს კამერიდან გადმოწერისას"
 
 #: core/utilities/setup/camera/setupcamera.cpp:369
 #, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
 msgstr ""
+"აქ შეგიძლიათ იხილოთ ფილტრები, რომელიც შემოტანის დიალოგში ფაილების "
+"გასაფილტრად გამოიყენება."
 
 #: core/utilities/setup/camera/setupcamera.cpp:383
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
+"ჰარეს გამოყენება გამყოფად გამოსატოვებელი ფაილის სახელების მისათითებლად."
 
 #: core/utilities/setup/camera/setupcamera.cpp:389
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
 msgstr ""
+"ჰარეს გამოყენება გამყოფად გამოსატოვებელი ფაილის გაფართოებების მისათითებლად."
 
 #: core/utilities/setup/camera/setupcamera.cpp:393
 #, kde-format
 msgid "Always ignore"
-msgstr ""
+msgstr "ყოველთვის გამოტოვება"
 
 #: core/utilities/setup/camera/setupcamera.cpp:394
 #, kde-format
 msgid "Ignored file names:"
-msgstr ""
+msgstr "გამოტოვებული ფაილის სახელები:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:395
 #, kde-format
 msgid "Ignored file extensions:"
-msgstr ""
+msgstr "გამოტოვებული ფაილის გაფართოებები:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
 #, kde-format
@@ -60995,7 +61050,7 @@ msgstr "ფილტრების შემოტანა"
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
 msgid "Icon-View Options"
-msgstr ""
+msgstr "ხატულას ხედის მორგება"
 
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
@@ -61004,22 +61059,25 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:445
 #, kde-format
 msgid "Show image Format"
-msgstr ""
+msgstr "გამოსახულების ფორმატის ჩვენება"
 
 #: core/utilities/setup/camera/setupcamera.cpp:452
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr ""
+"ჩართეთ ეს digiKam-ის ჭდეების საჩვენებლად გამოსახულების მინიატურის ქვემოთ."
 
 #: core/utilities/setup/camera/setupcamera.cpp:455
 #, kde-format
 msgid "Show item &rating"
-msgstr ""
+msgstr "ელემენტის &რეიტინგის ჩვენება"
 
 #: core/utilities/setup/camera/setupcamera.cpp:456
 #, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr ""
+"ჩართეთ ეს პარამეტრი ელემენტის რეიტინგის საჩვენებლად გამოსახულების მინიატურის "
+"ქვემოთ."
 
 #: core/utilities/setup/camera/setupcamera.cpp:460
 #, kde-format
@@ -61027,21 +61085,25 @@ msgid ""
 "Set this option to show overlay buttons on the image thumbnail for image "
 "rotation."
 msgstr ""
+"ჩართეთ ეს პარამეტრი ზემოდან დალაგებული გამოსახულების ტრიალის ღილაკების "
+"საჩვენებლად გამოსახულების მინიატურაზე."
 
 #: core/utilities/setup/camera/setupcamera.cpp:465
 #, kde-format
 msgid "Show embedded preview"
-msgstr ""
+msgstr "ჩაშენებული მინიატურის ჩვენება"
 
 #: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Start image editor"
-msgstr ""
+msgstr "გამოსახულების რედაქტორის გაშვება"
 
 #: core/utilities/setup/camera/setupcamera.cpp:471
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr ""
+"აირჩიეთ აქ ფონტი, რომელიც ხატულას ხედებში ტექსტის საჩვენებლად იქნება "
+"გამოყენებული."
 
 #: core/utilities/setup/camera/setupcamera.cpp:493
 #, kde-format
@@ -61051,7 +61113,7 @@ msgstr "მინიატურის მორგება"
 #: core/utilities/setup/camera/setupcamera.cpp:496
 #, kde-format
 msgid "Embedded preview loads full-sized images"
-msgstr ""
+msgstr "ჩაშენებული მინიატურა სრული ზომის გამოსახულებებს ჩატვირთავს"
 
 #: core/utilities/setup/camera/setupcamera.cpp:497
 #, kde-format
@@ -61066,12 +61128,12 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:504
 #, kde-format
 msgid "Preview each item while downloading it"
-msgstr ""
+msgstr "გამოსახულების მინიატურის ნახვა მისი გადმოწერიას"
 
 #: core/utilities/setup/camera/setupcamera.cpp:505
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
-msgstr ""
+msgstr "<p>ჩართეთ ეს გადმოწერისას თითოეული ელემენტის მინიატურის სანახავად.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -61085,11 +61147,13 @@ msgid ""
 "No default target album have been selected to process download from camera "
 "device. Please select one."
 msgstr ""
+"კამერის მოწყობილობიდან გადმოწერისას ნაგულისხმევი სამიზნე საქაღალდე არჩეული "
+"არაა. აირჩიეთ, გეთაყვა."
 
 #: core/utilities/setup/camera/setupcamera.cpp:882
 #, kde-format
 msgid "Device detection under progress, please wait..."
-msgstr ""
+msgstr "მიმდინარეობს მოწყობილობის აღმოჩენა. მოითმინეთ..."
 
 #: core/utilities/setup/camera/setupcamera.cpp:893
 #, kde-format
@@ -61098,16 +61162,19 @@ msgid ""
 "Please check if your camera is turned on and retry or try setting it "
 "manually."
 msgstr ""
+"კამერის ავტოაღმოჩენა ჩავარდა.\n"
+"შეამოწმეთ, ჩართულია თუ არა თქვენი კამერა და თავიდან სცადეთ, ან სცადეთ, "
+"პარამეტრები ხელით დააყენოთ."
 
 #: core/utilities/setup/camera/setupcamera.cpp:908
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
-msgstr ""
+msgstr "კამერა '%1' (%2) უკვე სიაშია."
 
 #: core/utilities/setup/camera/setupcamera.cpp:912
 #, kde-format
 msgid "Found camera '%1' (%2) and added it to the list."
-msgstr ""
+msgstr "აღმოჩენილია კამერა '%1' (%2) და ჩამატებულია სიაში."
 
 #: core/utilities/setup/camera/setupcamera.cpp:928
 #, kde-format
@@ -61118,7 +61185,7 @@ msgstr "უსახელო"
 #, kde-format
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
-msgstr ""
+msgstr "იმისათვის, რომ ეს ფუნქცია ჩაირთოს, სრული ზომის მინიატურები გაითიშება."
 
 #: core/utilities/setup/camera/setupcamera.cpp:1022
 #, kde-format
@@ -61149,7 +61216,7 @@ msgstr ""
 #: core/utilities/setup/collections/setupcollections.cpp:113
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
-msgstr ""
+msgstr "ალბომების მონიტორიგინი გარე ცვლილებებზე (საჭიროებს გადატვირთვას)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
 #, kde-format
@@ -61163,7 +61230,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
-msgstr ""
+msgstr "ძირითადი ალბომის საქაღალდეები"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
 #, kde-format
@@ -61184,12 +61251,15 @@ msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr ""
+"დამატებითი საქაღალდეები გამოსატოვებლად (<a href='image'>ამჟამად "
+"გამოტოვებულია საქაღალდეები</a>):"
 
 #: core/utilities/setup/collections/setupcollections.cpp:159
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
+"შეიყვანეთ საქაღალდეები, რომელიც გნებავთ გამოტოვოთ კოლექციაში ჩამატებისას."
 
 #: core/utilities/setup/collections/setupcollections.cpp:175
 #, kde-format
@@ -61203,47 +61273,49 @@ msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
 "code></p>"
 msgstr ""
+"<p>საქაღალდეები, რომლებიც წერტილით იწყება, ნაგულისხმევად გამოტოვებულია.<br> "
+"<code>%1</code></p>"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:107
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
-msgstr ""
+msgstr "ბილიკის ბოლოში მიწერა კოლექციისთვის."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
-msgstr ""
+msgstr "კოლექციის ბილიკის განახლება."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:131
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
-msgstr ""
+msgstr "წაშლის კოლექციას digiKam-დან."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:629
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
-msgstr ""
+msgstr "შეუძლებელია კოლექციის დამატება შემდეგი ბილიკებისთვის:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
 #: core/utilities/setup/collections/setupcollectionview.cpp:1505
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
-msgstr ""
+msgstr "აირჩიეთ საქაღალდე, რომელიც თქვენს კოლექციას შეიცავს"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:696
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
-msgstr ""
+msgstr "კოლექციის ბოლოში მიწერის პრობლემა"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:697
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
-msgstr ""
+msgstr "კოლექცია ბილიკით '%1' უკვე არსებობს."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:860
 #, kde-format
@@ -61255,7 +61327,7 @@ msgstr "წავშალო ბილიკი კოლექციიდა�
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
-msgstr ""
+msgstr "გნებავთ ბოლოში მიწერილი ბილიკის \"%1\" წაშლა კოლექციიდან \"%2\"?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:868
 #, kde-format
@@ -61267,55 +61339,55 @@ msgstr "წავშალო კოლექცია?"
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
-msgstr ""
+msgstr "გნებავთ წაშალოთ კოლექცია \"%1\" კოლექციების თქვენი სიიდან?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
 #: core/utilities/setup/collections/setupcollectionview.cpp:1724
 #, kde-format
 msgid "Local Collections"
-msgstr ""
+msgstr "ლოკალური კოლექციები"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
 #: core/utilities/setup/collections/setupcollectionview.cpp:1725
 #, kde-format
 msgid "Collections on Removable Media"
-msgstr ""
+msgstr "კოლექციები მოხსნად მედიაზე"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:944
 #: core/utilities/setup/collections/setupcollectionview.cpp:1726
 #, kde-format
 msgid "Collections on Network Shares"
-msgstr ""
+msgstr "კოლექციები ქსელურ ზიარებზე"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:981
 #, kde-format
 msgid "Add Collection"
-msgstr ""
+msgstr "კოლექციის დამატება"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1031
 #, kde-format
 msgid "Col. %1"
-msgstr ""
+msgstr "კოლ. %1"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1127
 #, kde-format
 msgid "This collection is currently not available."
-msgstr ""
+msgstr "ეს კოლექცია ამჟამად ხელმისაწვდომი არაა."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1132
 #, kde-format
 msgid "No problems found, enjoy this collection."
-msgstr ""
+msgstr "პრობლემები აღმოჩენილი არაა. ისიამოვნეთ ამ კოლექციით."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1137
 #, kde-format
 msgid "This collection is hidden."
-msgstr ""
+msgstr "ეს კოლექცია დამალულია."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1156
 #, kde-format
 msgid "Append network path"
-msgstr ""
+msgstr "ქსელური ბილიკის ბოლოში მიწერა"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1184
 #, kde-format
@@ -61348,13 +61420,13 @@ msgstr "სტატუსი"
 #: core/utilities/setup/collections/setupcollectionview.cpp:1555
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
-msgstr ""
+msgstr "თქვენ უკვე დაამატეთ კოლექცია, რომელიც შეიცავს ბილიკს \"%1\"."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1593
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
-msgstr ""
+msgstr "კოლექციის დამატების პრობლემა"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, kde-format
@@ -61377,12 +61449,12 @@ msgstr "კოლექციის განახლება"
 #: core/utilities/setup/collections/setupcollectionview.cpp:1627
 #, kde-format
 msgid "Your new collection will be created with this name:"
-msgstr ""
+msgstr "თქვენი ახალი კოლექცია შეიქმნება ამ სახელით:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1631
 #, kde-format
 msgid "Your collection will be updated to this name:"
-msgstr ""
+msgstr "თქვენი კოლექცია განახლდება ამ სახელზე:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1714
 #, kde-format
@@ -61393,24 +61465,24 @@ msgstr "აირჩიეთ კატეგორია"
 #: core/utilities/setup/collections/setupcollectionview.cpp:1718
 #, kde-format
 msgid "Your collection will use this category:"
-msgstr ""
+msgstr "თქვენი კოლექცია გამოიყენებს ამ კატეგორიას:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr ""
+msgstr "აუცილებელი მოდელის ფაილების გადმოწერა"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
-msgstr ""
+msgstr "მონაცემთა ფაილების საცავად გამოყენებული ლოკალური საქაღალდის გახსნა."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
-msgstr ""
+msgstr "სახეების მართვის მოდელის ფაილების მდებარეობა:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, kde-format
@@ -61422,6 +61494,7 @@ msgstr "სახის ამოცნობის მოდელის სა
 #, kde-format
 msgid "Sets the target address to download the face management model files to."
 msgstr ""
+"დააყენებს სამიზნე მისამართს სახის მართვის მოდელის ფაილების გადმოსაწერად."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
@@ -61436,7 +61509,7 @@ msgstr "სახის ამოცნობის ფუნქციის გ
 #: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr ""
+msgstr "ესთეტიკური ამოცნობის ფუნქციის გამოყენება"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:177
 #, kde-format
@@ -61465,6 +61538,13 @@ msgid ""
 "\n"
 "You can try again or continue the download at the next start."
 msgstr ""
+"შეცდომა გადმოწერისას.\n"
+"\n"
+"ფაილი: %1\n"
+"\n"
+"%2\n"
+"\n"
+"სცადეთ თავიდან, ან გააგრძელეთ გადმოწერა შემდეგი გაშვებისას."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:296
 #, kde-format
@@ -61475,7 +61555,7 @@ msgstr "კიდევ სცადეთ"
 #: core/utilities/setup/downloader/filesdownloader.cpp:434
 #, kde-format
 msgid "Checksum is incorrect."
-msgstr ""
+msgstr "საკონტროლო ჯამი არასწორია."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:458
 #, kde-format
@@ -61490,7 +61570,7 @@ msgstr "ფაილის გახსნის შეცდომა."
 #: core/utilities/setup/downloader/filesdownloader.cpp:480
 #, kde-format
 msgid "File on the server is too large."
-msgstr ""
+msgstr "ფაილი სერვერზე მეტისმეტად დიდია."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:591
 #, kde-format
@@ -61516,17 +61596,17 @@ msgstr ""
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
-msgstr ""
+msgstr "გადმოწერას სჭირდება %1 ფაილი ზომით %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:626
 #, kde-format
 msgid "All files for the selected features were found."
-msgstr ""
+msgstr "აღმოჩენილია მონიშნული ფუნქციების ყველა ფაილი."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:654
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
-msgstr ""
+msgstr "გამოუყენებელი AI/DNN მოდელის ფაილების მოსუფთავება..."
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
@@ -61563,6 +61643,7 @@ msgid ""
 "Enable this option to use the background theme color in the image editor "
 "area."
 msgstr ""
+"ჩართეთ ეს ფონის თემის ფერის გამოსაყენებლად გამოსახულების რედაქტორის ადგილში."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:114
 #, kde-format
@@ -61572,7 +61653,7 @@ msgstr "&ფონის ფერი:"
 #: core/utilities/setup/editor/setupeditoriface.cpp:117
 #, kde-format
 msgid "Customize the background color to use in the image editor area."
-msgstr ""
+msgstr "გამოსახულების რედაქტორის არეს ფონის ფერის მორგება."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:131
 #, kde-format
@@ -61592,7 +61673,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:140
 #, kde-format
 msgid "Under-exposure percents: "
-msgstr ""
+msgstr "არასაკმარისი ექსპოზიცია პროცენტებში: "
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:146
 #, kde-format
@@ -61604,7 +61685,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:149
 #, kde-format
 msgid "&Over-exposure color: "
-msgstr ""
+msgstr "ზედმეტი ექსპ&ოზიციის ფერი: "
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:152
 #, kde-format
@@ -61614,7 +61695,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:155
 #, kde-format
 msgid "Over-exposure percents: "
-msgstr ""
+msgstr "ზედმეტი ექსპოზიცია პროცენტებში: "
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:161
 #, kde-format
@@ -61626,7 +61707,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:164
 #, kde-format
 msgid "Indicate exposure as pure color"
-msgstr ""
+msgstr "ექსპოზიციის მითითება სუფთა ფერის სახით"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:165
 #, kde-format
@@ -61691,19 +61772,21 @@ msgstr "RAW ფაილების გახსნა გამოსახუ
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
-msgstr ""
+msgstr "სწრაფი და მარტივი როგორც 8 ბიტიანი გამოსახულება"
 
 #: core/utilities/setup/editor/setupraw.cpp:111
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
-msgstr ""
+msgstr "ნაგულისხმევი პარამეტრებით, 16 ბიტში"
 
 #: core/utilities/setup/editor/setupraw.cpp:113
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr ""
+"დაუმუშავებელი გამოსახულების შემოტანის ხელსაწყოს ყოველთვის გახსნა "
+"პარამეტრების მოსარგებად"
 
 #: core/utilities/setup/editor/setupraw.cpp:129
 #, kde-format
@@ -61715,7 +61798,7 @@ msgstr " (ნაგულისხმევი)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
-msgstr ""
+msgstr "ამ დაუმუშავებელი გამოსახულების შემოტანის ხელსაწყოს შესახებ..."
 
 #: core/utilities/setup/editor/setupraw.cpp:190
 #, kde-format
@@ -61733,13 +61816,14 @@ msgstr "RAW-ის ნაგულისხმევი პარამეტრ
 #, kde-format
 msgctxt "@title"
 msgid "Enable Non-Destructive Editing and Versioning"
-msgstr ""
+msgstr "არადამაზიანებელი გამოსახულების რედაქტირების და ვერსიების ჩართვა"
 
 #: core/utilities/setup/editor/setupversioning.cpp:98
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enable support for non-destructive editing and image versioning"
 msgstr ""
+"არადამაზიანებელი გამოსახულების რედაქტირების და ვერსიების მხარდაჭერის ჩართვა"
 
 #: core/utilities/setup/editor/setupversioning.cpp:100
 #, kde-kuit-format
@@ -61790,6 +61874,7 @@ msgstr ""
 msgctxt "@info:tooltip"
 msgid "Get information on available image file formats"
 msgstr ""
+"ინფორმაციის ჩვენება ხელმისაწვდომი გამოსახულების ფაილის ფორმატების შესახებ"
 
 #: core/utilities/setup/editor/setupversioning.cpp:198
 #, kde-format
@@ -61829,20 +61914,20 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Keep a snapshot of an edited image"
-msgstr ""
+msgstr "ჩასწორებული გამოსახულების სწრაფი ასლის შენარჩუნება"
 
 #: core/utilities/setup/editor/setupversioning.cpp:253
 #: core/utilities/setup/editor/setupversioning.cpp:299
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get an explanation for these options"
-msgstr ""
+msgstr "ახსნის მიღება ამ ფუნქციებისთვის"
 
 #: core/utilities/setup/editor/setupversioning.cpp:255
 #, kde-format
 msgctxt "@option:check"
 msgid "After converting from a RAW image"
-msgstr ""
+msgstr "დაუმუშავებელი გამოსახულებიდან გადაყვანის შემდეგ"
 
 #: core/utilities/setup/editor/setupversioning.cpp:256
 #, kde-format
@@ -61854,7 +61939,7 @@ msgstr "თითოეული ჩასწორების სესიი�
 #, kde-format
 msgctxt "@option:check"
 msgid "After each step that is not completely reproducible"
-msgstr ""
+msgstr "ყოველი ნაბიჯის შემდეგ, რომლის ზუსტი გამეორებაც შეუძლებელია"
 
 #: core/utilities/setup/editor/setupversioning.cpp:284
 #, kde-kuit-format
@@ -61885,7 +61970,7 @@ msgstr "ორიგინალი გამოსახულებები�
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show intermediate snapshots"
-msgstr ""
+msgstr "შუალედური სწრაფი ასლების ყოველთვის ჩვენება"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
 #, kde-kuit-format
@@ -62117,7 +62202,7 @@ msgstr "ალტერნატიული სახელი"
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:292
 #, kde-format
 msgid "Alternative special options"
-msgstr ""
+msgstr "ალტერნატიული სპეციალური პარამეტრები"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:322
 #, kde-format
@@ -62127,52 +62212,54 @@ msgstr "გამყოფი:"
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:328
 #, kde-format
 msgid "Set Tags Path:"
-msgstr ""
+msgstr "დააყენეთ ჭდეების ბილიკი:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:348
 #, kde-format
 msgid "Rating Mapping:"
-msgstr ""
+msgstr "რეიტინგის ასახვა:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
+"ეს ნაგულისხმევი სახელების სივრცეა. ნაგულისხმევი სახელის სივრცეების, მხოლოდ, "
+"გამორთვა შეგიძლიათ"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
 #, kde-format
 msgid "The namespace name is required"
-msgstr ""
+msgstr "სახელების სივრცის სახელი აუცილებელია"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
-msgstr ""
+msgstr "EXIF სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Exif\"."
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
-msgstr ""
+msgstr "EXIF ალტერნატიული სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Exif\"."
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
-msgstr ""
+msgstr "IPTC სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Iptc\"."
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
-msgstr ""
+msgstr "IPTC ალტერნატიული სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Iptc\"."
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
-msgstr ""
+msgstr "XMP სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Xmp\"."
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
-msgstr ""
+msgstr "XMP ალტერნატიული სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Xmp\"."
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
 #, kde-format
@@ -62182,7 +62269,7 @@ msgstr "ჭდის ბილიკის გამყოფი აუცილ
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
-msgstr ""
+msgstr "ჭდის ბილიკის გამყოფად, მხოლოდ, ერთი სიმბოლოა მხარდაჭერილი"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:59
 #, kde-format
@@ -62709,13 +62796,13 @@ msgstr "შემობრუნება"
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing to Sidecars"
-msgstr ""
+msgstr "ჩაწერა და წაკითხვა დამატებითი ფაილებიდან"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:36
 #, kde-format
 msgctxt "@option:check"
 msgid "Read from sidecar files"
-msgstr ""
+msgstr "წაკითხვა დამატებითი ფაილებიდან"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:38
 #, kde-format
@@ -62729,7 +62816,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Write to sidecar files"
-msgstr ""
+msgstr "ჩაწერა დამატებით ფაილებში"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:44
 #, kde-format
@@ -62808,19 +62895,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
-msgstr ""
+msgstr "შეიყვანეთ დამატებითი ფაილის გაფართოებები."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
-msgstr ""
+msgstr "დამატებითი ფაილები&ს გაფართოებები"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
-msgstr ""
+msgstr "დამატებითი ფაილები"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:83
 #, kde-format
@@ -62860,7 +62947,7 @@ msgstr "ტესტირება..."
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "OpenCV OpenCL DNN ტესტის დასაწყისი..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
@@ -62886,12 +62973,12 @@ msgstr "დახურვა"
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
-msgstr ""
+msgstr "სატესტო დიალოგის დახურვა"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
-msgstr ""
+msgstr "OpenCL GPU-ის აჩქარების თავსებადობის შემოწმება ხი-ის მოდელებთან..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
 #, kde-format
@@ -62901,7 +62988,7 @@ msgstr "OpenCL ხელმისაწვდომია გამოსაყ�
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr ""
+msgstr "OpenCL აჩქარების მოწყობილობა ხელმისაწვდომია."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
 #, kde-format
@@ -62936,7 +63023,7 @@ msgstr "%1-დან DNN მოდელის შემოწმების �
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, kde-format
 msgid "Preparing the DNN Model image for processing..."
-msgstr ""
+msgstr "მიმდინარეობს DNN მოდელის გამოსახულების მომზადება დამუშავებისთვის..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
@@ -62956,12 +63043,12 @@ msgstr "თვისების ამოღების მოდელის 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
 #, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr ""
+msgstr "სახის მომზადება თვისების ამოღებისთვის..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "სახის თვისებების ამოღება..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, kde-format
@@ -63144,12 +63231,12 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
 msgid "Confirm when moving items to the &trash"
-msgstr ""
+msgstr "დადას&ტურება ელემენტების ნაგვის ყუთში გადატანისას"
 
 #: core/utilities/setup/misc/setupmisc.cpp:77
 #, kde-format
 msgid "Confirm when permanently deleting items"
-msgstr ""
+msgstr "დადასტურება ელემენტების შეუქცევლად წაშლისას"
 
 #: core/utilities/setup/misc/setupmisc.cpp:78
 #, kde-format
@@ -63658,7 +63745,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:147
 #, kde-format
 msgid "Visit Little CMS project website"
-msgstr ""
+msgstr "Little CMS-ის პროექტის ვებგვერდზე გადასვლა"
 
 #: core/utilities/setup/setupicc.cpp:157
 #, kde-format
@@ -63703,7 +63790,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:198
 #, kde-format
 msgid "Convert the image to the working color space"
-msgstr ""
+msgstr "გამოსახულების გადაყვანა სამუშაო ფერის სივრცეში"
 
 #: core/utilities/setup/setupicc.cpp:199
 #, kde-format
@@ -63717,7 +63804,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:215
 #, kde-format
 msgid "When an image has no color profile information"
-msgstr ""
+msgstr "როცა გამოსახულებას ფერის პროფილის ინფორმაცია არ აქვს"
 
 #: core/utilities/setup/setupicc.cpp:223
 #, kde-format
@@ -63737,12 +63824,12 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:233
 #, kde-format
 msgid "and convert it to the working color space"
-msgstr ""
+msgstr "და მისი გადაყვანა მუშა ფერის სივრცეში"
 
 #: core/utilities/setup/setupicc.cpp:246
 #, kde-format
 msgid "Assume it is using the working color space"
-msgstr ""
+msgstr "ჩათვლა, რომ ის მუშა ფერის სივრცეს იყენებს"
 
 #. i18n("<p></p>"));
 #.
@@ -63850,7 +63937,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:384
 #, kde-format
 msgid "Printing and Proofing"
-msgstr ""
+msgstr "ბეჭდვა და გადამოწმება"
 
 #: core/utilities/setup/setupicc.cpp:389
 #, kde-format
@@ -64002,7 +64089,7 @@ msgstr ""
 #: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
 msgid "Clear the light table on close"
-msgstr ""
+msgstr "სინათლის მაგიდის გასუფთავება დახურვისას"
 
 #: core/utilities/setup/setuplighttable.cpp:92
 #, kde-format
@@ -64076,7 +64163,7 @@ msgstr ""
 #: core/utilities/setup/setuptemplate.cpp:254
 #, kde-format
 msgid "A metadata template named '%1' already exists."
-msgstr ""
+msgstr "მეტამონაცემების შაბლონი სახელით '%1' უკვე არსებობს."
 
 #: core/utilities/setup/setuptooltip.cpp:133
 #, kde-format
@@ -64099,6 +64186,8 @@ msgid ""
 "Set this option to display image information when the mouse hovers over an "
 "icon-view or thumb-bar item."
 msgstr ""
+"ჩართეთ ეს პარამეტრი, რომ გაჩვენოთ გამოსახულების ინფორმაცია, როცა ზედ თაგუნას "
+"გადაატარებთ ხატულას-ხედში."
 
 #: core/utilities/setup/setuptooltip.cpp:146
 #, kde-format
@@ -64138,7 +64227,7 @@ msgstr "გამოსახულების მასშტაბის ფ�
 #: core/utilities/setup/setuptooltip.cpp:165
 #, kde-format
 msgid "Set this option to display the image aspect ratio."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი გამოსახულების ზომების ფარდობის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:181
 #: core/utilities/setup/setuptooltip.cpp:361
@@ -64195,7 +64284,7 @@ msgstr "ალბომის სახელი"
 #: core/utilities/setup/setuptooltip.cpp:302
 #, kde-format
 msgid "Set this option to display the album name."
-msgstr ""
+msgstr "ჩართეთ ეს გამოსახულების ალბომის სახელის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:231
 #, kde-format
@@ -64205,7 +64294,7 @@ msgstr "გამოსახულების სათაური"
 #: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Set this option to display the image title."
-msgstr ""
+msgstr "ჩართეთ ეს გამოსახულების ფაილის სათაურის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:234
 #, kde-format
@@ -64215,7 +64304,7 @@ msgstr "გამოსახულების წარწერა"
 #: core/utilities/setup/setuptooltip.cpp:235
 #, kde-format
 msgid "Set this option to display the image captions."
-msgstr ""
+msgstr "ჩართეთ ეს გამოსახულების წარწერების საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:237
 #, kde-format
@@ -64225,7 +64314,7 @@ msgstr "გამოსახულების ჭდეები"
 #: core/utilities/setup/setuptooltip.cpp:238
 #, kde-format
 msgid "Set this option to display the image tags."
-msgstr ""
+msgstr "ჩართეთ ეს გამოსახულების ჭდეების საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:240
 #, kde-format
@@ -64236,6 +64325,7 @@ msgstr "გამოსახულების ჭდეები"
 #, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
 msgstr ""
+"ჩართეთ ეს გამოსახულების არჩევის, ფერის და რეიტინგის ჭდეების საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:253
 #, kde-format
@@ -64251,22 +64341,22 @@ msgstr "ვიდეოს ზომების ფარდობა"
 #: core/utilities/setup/setuptooltip.cpp:272
 #, kde-format
 msgid "Set this option to display the Aspect Ratio of the Video."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი ვიდეოს ზომების ფარდობის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:260
 #, kde-format
 msgid "Set this option to display the Audio Bit Rate of the Video."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი აუდიოს ბიტური სიჩქარის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:263
 #, kde-format
 msgid "Set this option to display the Audio Channel Type of the Video."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი ვიდეოში აუდიოს არხების ტიპის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:266
 #, kde-format
 msgid "Set this option to display the Audio Codec of the Video."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი ვიდეოში აუდიოკოდეკის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
@@ -64276,7 +64366,7 @@ msgstr "ვიდეოს ხანგრძლივობა"
 #: core/utilities/setup/setuptooltip.cpp:269
 #, kde-format
 msgid "Set this option to display the Duration of the Video."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი ვიდეოს ხანგრძლივობის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
@@ -64286,7 +64376,7 @@ msgstr "ვიდეოს კადრების სიხშირე"
 #: core/utilities/setup/setuptooltip.cpp:275
 #, kde-format
 msgid "Set this option to display the Codec of the Video."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი ვიდეოს კოდეკის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:295
 #, kde-format
@@ -64305,6 +64395,8 @@ msgid ""
 "Set this option to display album information when the mouse hovers over a "
 "folder-view item."
 msgstr ""
+"ჩართეთ ეს პარამეტრი, რომ გაჩვენოთ ალბომის ინფორმაცია, როცა ზედ თაგუნას "
+"გადაატარებთ ხატულას-ხედში."
 
 #: core/utilities/setup/setuptooltip.cpp:304
 #, kde-format
@@ -64314,7 +64406,7 @@ msgstr "ალბომის თარიღი"
 #: core/utilities/setup/setuptooltip.cpp:305
 #, kde-format
 msgid "Set this option to display the album date."
-msgstr ""
+msgstr "ჩართეთ ეს ალბომის თარიღის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:307
 #, kde-format
@@ -64324,7 +64416,7 @@ msgstr "ალბომის კოლექცია"
 #: core/utilities/setup/setuptooltip.cpp:308
 #, kde-format
 msgid "Set this option to display the album collection."
-msgstr ""
+msgstr "ჩართეთ ეს ალბომის კოლექციის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:310
 #, kde-format
@@ -64334,7 +64426,7 @@ msgstr "ალბომის კატეგორია"
 #: core/utilities/setup/setuptooltip.cpp:311
 #, kde-format
 msgid "Set this option to display the album category."
-msgstr ""
+msgstr "ჩართეთ ეს ალბომის კატეგორიის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
@@ -64344,7 +64436,7 @@ msgstr "ალბომის წარწერა"
 #: core/utilities/setup/setuptooltip.cpp:314
 #, kde-format
 msgid "Set this option to display the album caption."
-msgstr ""
+msgstr "ჩართეთ ეს ალბომის წარწერის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
@@ -64354,7 +64446,7 @@ msgstr "ალბომის გადახედვა"
 #: core/utilities/setup/setuptooltip.cpp:317
 #, kde-format
 msgid "Set this option to display the album preview."
-msgstr ""
+msgstr "ჩართეთ ეს ალბომის მინიატურის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:336
 #, kde-format
@@ -64374,7 +64466,7 @@ msgstr "ჩანაწერის სახელი"
 #: core/utilities/setup/setuptooltip.cpp:343
 #, kde-format
 msgid "Set this option to display the item name."
-msgstr ""
+msgstr "ჩართეთ ეს ელემენტის სახელის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:345
 #, kde-format
@@ -64384,7 +64476,7 @@ msgstr "ჩანაწერის თარიღი"
 #: core/utilities/setup/setuptooltip.cpp:346
 #, kde-format
 msgid "Set this option to display the item date."
-msgstr ""
+msgstr "ჩართეთ ეს ელემენტის თარიღის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:348
 #, kde-format
@@ -64394,7 +64486,7 @@ msgstr "ჩანაწერის ზომა"
 #: core/utilities/setup/setuptooltip.cpp:349
 #, kde-format
 msgid "Set this option to display the item size."
-msgstr ""
+msgstr "ჩართეთ ეს ელემენტის ზომის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:351
 #, kde-format
@@ -64404,7 +64496,7 @@ msgstr "ჩანაწერის ტიპი"
 #: core/utilities/setup/setuptooltip.cpp:352
 #, kde-format
 msgid "Set this option to display the item type."
-msgstr ""
+msgstr "ჩართეთ ეს ელემენტის ტიპის საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:354
 #, kde-format
@@ -64414,7 +64506,7 @@ msgstr "ჩანაწერის ზომები"
 #: core/utilities/setup/setuptooltip.cpp:355
 #, kde-format
 msgid "Set this option to display the item dimensions."
-msgstr ""
+msgstr "ჩართეთ ეს ელემენტის განზომილებების საჩვენებლად."
 
 #: core/utilities/setup/setuptooltip.cpp:358
 #, kde-format

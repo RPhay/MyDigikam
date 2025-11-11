@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:40+0000\n"
+"POT-Creation-Date: 2025-11-11 00:40+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -21064,28 +21064,28 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Spuštěna prezentace"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:88
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Nastavení promítání"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
 #, kde-format
 msgid "Delay between images:"
 msgstr "Prodleva mezi obrázky:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:102
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
 #, kde-format
 msgid "The delay, in seconds, between images."
 msgstr "Prodleva mezi obrázky v sekundách."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
 #, kde-format
 msgid "Start with current image"
 msgstr "Zahájit aktuálním obrázkem"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:105
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
@@ -21094,150 +21094,150 @@ msgstr ""
 "Pokud je tato volba zaškrtnuta, promítání obrázků začne současným obrázkem "
 "vybraným na jejich seznamu."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "Promítání ve smyčce"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "Promítat obrázky donekonečna ve smyčce."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
 #, kde-format
 msgid "Shuffle images"
 msgstr "Promíchat obrázky"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr "Pokud je tato volba zapnuta, promítání bude  v náhodném pořadí"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
 msgid "Show progress indicator"
 msgstr "Zobrazit ukazatel průběhu"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 "Zobrazit ukazatel průběhu s položkami ke zpracování a časovým průběhem."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Show image file name"
 msgstr "Zobrazit název souboru s obrázkem"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
 msgid "Show the image file name at the bottom of the screen."
 msgstr "Zobrazit název souboru s obrázkem ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "Show image creation date"
 msgstr "Zobrazit datum vytvoření obrázku"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
 msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "Zobrazit datum a čas vytvoření obrázku ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "Zobrazit clonu a ohniskovou vzdálenost fotoaparátu"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr ""
 "Zobrazit clonu a ohniskovou vzdálenost fotoaparátu ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "Zobrazit dobu expozice a citlivost"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
 msgstr "Zobrazit expozici a citlivost fotoaparátu ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "Zobrazit model fotoaparátu"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
 msgstr "Zobrazit výrobce a model fotoaparátu ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
 #, kde-format
 msgid "Show camera lens model"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Show the camera lens model at the bottom of the screen."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Show image caption"
 msgstr "Zobrazit titulek obrázku"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid "Show the image caption at the bottom of the screen."
 msgstr "Zobrazit popisek obrázku ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, kde-format
 msgid "Show image title"
 msgstr "Zobrazit název obrázku"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
 #, kde-format
 msgid "Show the image title at the bottom of the screen."
 msgstr "Zobrazit název fotografie ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgid "Show image caption if it has not title"
 msgstr "Zobrazit popisek obrázku, pokud nemá název"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
 msgstr ""
 "Zobrazit popisek obrázku ve spodní části obrazovky, pokud neexistují názvy."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
 #, kde-format
 msgid "Show image tags"
 msgstr "Zobrazit značky obrázku"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
 msgstr "Zobrazit názvy značek obrázku digiKam ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
 msgid "Show image labels"
 msgstr "Zobrazit popisky obrázku"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
 #, kde-format
 msgid ""
 "Show the digiKam image color label and pick label at the bottom of the "
@@ -21245,56 +21245,72 @@ msgid ""
 msgstr ""
 "Zobrazit barevný popisek a popisek výběru digiKamu ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:156
 #, kde-format
 msgid "Show image rating"
 msgstr "Zobrazit hodnocení obrázku"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
 #, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Zobrazit hodnocení obrázku v digiKamu ve spodní části obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#, fuzzy, kde-format
+#| msgid "&Use theme background color"
+msgid "Use background color for images:"
+msgstr "Po&užívat barvu pozadí motivu"
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to use the background theme color in the image editor "
+#| "area."
+msgid "Define a color to use as background to render images on screen."
+msgstr ""
+"Zaškrtněte tuto volbu, aby byla použita barva pozadí z motivu vzhledu na "
+"plochu editoru obrázků."
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format
 msgid "Caption font:"
 msgstr "Písmo pro titulek:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
 #, kde-format
 msgid "Select here the font used to display text in the slideshow."
 msgstr "Zde zvolte písmo použité pro vypisování textu v prezentaci."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
 #, kde-format
 msgid "Screen placement:"
 msgstr "Umístění obrazovky:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr "Pokud máte více monitorů, zvolte si zde obrazovku pro promítání."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:162
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "Současná obrazovka"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "Výchozí obrazovka"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:168
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "Obrazovka %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:174
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -21925,10 +21941,9 @@ msgid "Use the album path of the items in the target"
 msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
-msgstr "Upravit vlastnosti obrázku"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #, kde-format
@@ -22019,49 +22034,39 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Exportovat do místního úložiště..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Target location: "
-msgid "Target Location: "
-msgstr "Umístění cíle:"
-
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
+msgid "Target Location: "
+msgstr ""
+
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:76
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Nastavení cílové adresy pro odeslání obrázků. Může to být adresa jako se "
-"používá v Dolphinu nebo Konqueroru, např. ftp://my.server.org/sub/folder."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit Geolocation..."
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "Upravit geolokaci..."
+msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit Geolocation..."
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:153
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Upravit geolokaci..."
+msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:154
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, kde-format
 msgid "All Files (*)"
 msgstr "Všechny soubory (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:178
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, kde-format
 msgid "<i>not selected</i>"
@@ -22078,13 +22083,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Exportovat do vzdáleného úložiště"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Odesílání nebylo dokončeno"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -22094,43 +22099,33 @@ msgstr ""
 "tyto obrázky exportovat?"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Source Location: "
-msgstr "Umístění cíle:"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the source address to download the images to. This can be any address "
 "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Nastavení cílové adresy pro odeslání obrázků. Může to být adresa jako se "
-"používá v Dolphinu nebo Konqueroru, např. ftp://my.server.org/sub/folder."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit Geolocation..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Upravit geolokaci..."
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is the list of images to import into the current album."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "Seznam obrázků pro import do aktuálního alba."
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Cílová cesta:"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, kde-format
@@ -22192,20 +22187,16 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "Exportovat do vzdáleného úložiště"
+msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "Importovat ze vzdáleného úložiště"
+msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -25354,12 +25345,10 @@ msgid "xdotcom"
 msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to export to Twitter web-service"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to x.com (aka Twitter) web-service"
-msgstr "Nástroj pro export do webové služby Twitter"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
 #, kde-format
@@ -25370,12 +25359,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Twitter..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to x.com (aka &Twitter)..."
-msgstr "Exportovat do &Twitteru..."
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
@@ -25402,12 +25389,10 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to x.com (aka Twitter)"
-msgstr "Exportovat do Twitteru"
+msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
 #, kde-format
@@ -34221,10 +34206,9 @@ msgid "Item Name"
 msgstr "Název položky"
 
 #: core/libs/filters/textfilter.cpp:76
-#, fuzzy, kde-format
-#| msgid "Item date"
+#, kde-format
 msgid "Item Path"
-msgstr "Datum položky"
+msgstr ""
 
 #: core/libs/filters/textfilter.cpp:78
 #, kde-format
@@ -34257,10 +34241,9 @@ msgid "Item Pixel Size"
 msgstr "Velikost položky v pixelech"
 
 #: core/libs/filters/textfilter.cpp:91
-#, fuzzy, kde-format
-#| msgid "Infrared Filter"
+#, kde-format
 msgid "Inverted Filter"
-msgstr "Infračervený filtr"
+msgstr ""
 
 #: core/libs/filters/textfilter.cpp:94
 #, kde-format
@@ -45881,12 +45864,10 @@ msgid "Macao"
 msgstr "Macao"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Macedonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "North Macedonia"
-msgstr "Makedonie"
+msgstr ""
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
 #, kde-format
@@ -49819,7 +49800,7 @@ msgstr "První písmeno každého slova velké"
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
 #, kde-format
 msgid "Date Format"
-msgstr ""
+msgstr "Formát data"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
 #, kde-format
@@ -64357,26 +64338,22 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
-msgstr "Spustit"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
-msgstr "Beta tester"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
-msgstr "Nastavení..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
@@ -64398,11 +64375,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
-msgstr "Zavřít"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
 #, kde-format
@@ -64441,10 +64417,9 @@ msgid "OpenCL is not available on this system."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#, kde-format
 msgid "Loading DNN Model test image..."
-msgstr "Načítání obrázku..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
 #, kde-format
@@ -64452,11 +64427,9 @@ msgid "DNN model test image not found."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#, kde-format
 msgid "Failed to load DNN model test image from %1"
-msgstr "Chyba při ukládání obrázku do %1"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
 #, kde-format
@@ -66097,24 +66070,3 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
-
-#, fuzzy
-#~| msgid "No script selected"
-#~ msgid "no source selected"
-#~ msgstr "Nebyl vybrán žádný skript"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Target..."
-#~ msgstr "Vyberte cíl..."
-
-#~ msgctxt "@action"
-#~ msgid "Export to remote storage..."
-#~ msgstr "Exportovat do vzdáleného úložiště..."
-
-#~ msgctxt "@action"
-#~ msgid "Import from remote storage..."
-#~ msgstr "Importovat ze vzdáleného úložiště..."
-
-#~ msgctxt "@title"
-#~ msgid "Twitter"
-#~ msgstr "Twitter"

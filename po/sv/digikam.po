@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:40+0000\n"
+"POT-Creation-Date: 2025-11-11 00:40+0000\n"
 "PO-Revision-Date: 2025-10-27 22:19+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -21988,28 +21988,28 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Visar ett bildspel"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:88
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Bildspelsinställningar"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
 #, kde-format
 msgid "Delay between images:"
 msgstr "Fördröjning mellan bilder:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:102
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
 #, kde-format
 msgid "The delay, in seconds, between images."
 msgstr "Fördröjningen i sekunder mellan bilder."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
 #, kde-format
 msgid "Start with current image"
 msgstr "Starta med nuvarande bild"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:105
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
@@ -22018,148 +22018,148 @@ msgstr ""
 "Om alternativet är markerat, startas bildspelet med den nuvarande bilden som "
 "valts i bildlistan."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "Bildspelet upprepas"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "Kör bildspelet upprepade gånger."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
 #, kde-format
 msgid "Shuffle images"
 msgstr "Blanda bilder"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr "Om alternativet är markerat, körs bildspelet i slumpmässig ordning."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
 msgid "Show progress indicator"
 msgstr "Visa förloppsindikering"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr "Visa förloppsindikering med väntande objekt att visa och tidsåtgång."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Show image file name"
 msgstr "Visa bildens filnamn"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
 msgid "Show the image file name at the bottom of the screen."
 msgstr "Visa bildens filnamn längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "Show image creation date"
 msgstr "Visa bildens tillkomstdatum"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
 msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "Visa bildens tillkomsttid och datum längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "Visa kamerans bländare och fokallängd"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr "Visa kamerans bländare och fokusinställning längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "Visa kamerans exponeringstid och känslighet"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
 msgstr "Visa kamerans exponeringstid och känslighet längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "Visa kamerans märke och modell"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
 msgstr "Visa kamerans märke och modell längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
 #, kde-format
 msgid "Show camera lens model"
 msgstr "Visa kamerans linsmodell"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Show the camera lens model at the bottom of the screen."
 msgstr "Visa kamerans linsmodell längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Show image caption"
 msgstr "Visa bildrubrik"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid "Show the image caption at the bottom of the screen."
 msgstr "Visa bildrubriken längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, kde-format
 msgid "Show image title"
 msgstr "Visa bildtitel"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
 #, kde-format
 msgid "Show the image title at the bottom of the screen."
 msgstr "Visa bildens titel längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgid "Show image caption if it has not title"
 msgstr "Visa bildrubriken om den inte har en titel"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
 msgstr ""
 "Visa bildrubriken längst ner på skärmen om det inte finns några titlar."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
 #, kde-format
 msgid "Show image tags"
 msgstr "Visa bildetiketter"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
 msgstr "Visa Digikams etikettnamn för bilder längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
 msgid "Show image labels"
 msgstr "Visa bildbeteckningar"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
 #, kde-format
 msgid ""
 "Show the digiKam image color label and pick label at the bottom of the "
@@ -22168,57 +22168,73 @@ msgstr ""
 "Visa Digikams färgbeteckning och urvalsbeteckning för bilder längst ner på "
 "skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:156
 #, kde-format
 msgid "Show image rating"
 msgstr "Visa bildbetyg"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
 #, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Visa Digikams bildbetyg längst ner på skärmen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#, fuzzy, kde-format
+#| msgid "&Use theme background color"
+msgid "Use background color for images:"
+msgstr "An&vänd bakgrundsfärg från tema"
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to use the background theme color in the image editor "
+#| "area."
+msgid "Define a color to use as background to render images on screen."
+msgstr ""
+"Aktivera alternativet för att använda bakgrundsfärgen från temat i "
+"bildredigeringsområdet."
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format
 msgid "Caption font:"
 msgstr "Rubrikteckensnitt:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
 #, kde-format
 msgid "Select here the font used to display text in the slideshow."
 msgstr "Ställ in teckensnittet som används för att visa text i bildspelet."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
 #, kde-format
 msgid "Screen placement:"
 msgstr "Skärmanvändning:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr ""
 "Ifall datorn har flera bildskärmar, välj skärm för bildspelets innehåll."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:162
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "Aktuell skärm"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "Standardskärm"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:168
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "Skärm %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:174
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -22993,13 +23009,13 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Exportera till lokal lagring..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Target location: "
 msgid "Target Location: "
 msgstr "Målplats: "
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:76
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sets the target address to upload the images to. This can be any address "
@@ -23013,7 +23029,7 @@ msgstr ""
 "address som helst använd i Dolphin eller Konqueror, t.ex. ftp://min.server."
 "org/under/katalog."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
 #, fuzzy, kde-format
 #| msgid "Select export location..."
 msgid ""
@@ -23021,20 +23037,20 @@ msgid ""
 "location..."
 msgstr "Välj exportplats..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:153
 #, fuzzy, kde-format
 #| msgid "Select import location..."
 msgctxt "@title:window"
 msgid "Select Target Location..."
 msgstr "Välj importplats..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:154
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, kde-format
 msgid "All Files (*)"
 msgstr "Alla filer (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:178
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, kde-format
 msgid "<i>not selected</i>"
@@ -23051,13 +23067,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Exportera till annan dator"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Uppladdning ej slutförd"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "

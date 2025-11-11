@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:40+0000\n"
+"POT-Creation-Date: 2025-11-11 00:40+0000\n"
 "PO-Revision-Date: 2025-11-08 21:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -22032,28 +22032,28 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Slayt gösterisi yapmak"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:88
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Slayt Gösterisi Ayarları"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
 #, kde-format
 msgid "Delay between images:"
 msgstr "Görseller arası gecikme:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:102
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
 #, kde-format
 msgid "The delay, in seconds, between images."
 msgstr "Görseller arasındaki gecikme, saniye türünden"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
 #, kde-format
 msgid "Start with current image"
 msgstr "Geçerli görselle başla"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:105
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
@@ -22062,33 +22062,33 @@ msgstr ""
 "Bu seçenek etkinleştirilirse Slayt Gösterisi, görseller listesinde seçilen "
 "geçerli görselle başlatılacaktır."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "Slayt gösterisi döngü içinde çalışır"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "Slayt gösterisini döngü içinde başlatın."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
 #, kde-format
 msgid "Shuffle images"
 msgstr "Görselleri karıştır"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 "Bu seçenek etkinleştirilirse Slayt Gösterisi rastgele sırada çalışacaktır."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
 msgid "Show progress indicator"
 msgstr "İlerleme göstergesini göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
@@ -22096,116 +22096,116 @@ msgstr ""
 "Gösterilecek bekleyen ögeler ve zaman ilerlemesi ile birlikte bir ilerleme "
 "göstergesi gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Show image file name"
 msgstr "Görsel dosya adını göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
 msgid "Show the image file name at the bottom of the screen."
 msgstr "Görsel dosyasının adını ekranın alt kısmında gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "Show image creation date"
 msgstr "Görsel oluşturulma tarihini göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
 msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "Ekranın alt kısmında görsel oluşturulma tarihini/zamanını gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "Kamera açıklığını ve odak uzaklığını göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr "Ekranın alt kısmında kamera açıklığını ve odak uzaklığını gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "Kamera pozlamasını ve duyarlılığını göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
 msgstr "Ekranın alt kısmında kamera pozlamasını ve duyarlılığını gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "Kamera markasını ve modelini göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
 msgstr "Kameranın markasını ve modelini ekranın alt kısmında gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
 #, kde-format
 msgid "Show camera lens model"
 msgstr "Kamera mercek modelini göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Show the camera lens model at the bottom of the screen."
 msgstr "Ekranın alt kısmında kamera merceği modelini gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Show image caption"
 msgstr "Görsel alt yazısını göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid "Show the image caption at the bottom of the screen."
 msgstr "Ekranın alt kısmında görsel alt yazısını gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, kde-format
 msgid "Show image title"
 msgstr "Görsel başlığını göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
 #, kde-format
 msgid "Show the image title at the bottom of the screen."
 msgstr "Ekranın alt kısmında görsel başlığını gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgid "Show image caption if it has not title"
 msgstr "Başlığı yoksa görsel alt yazısını göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
 msgstr "Başlık yoksa ekranın alt kısmında görsel alt yazısını gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
 #, kde-format
 msgid "Show image tags"
 msgstr "Görsel künyelerini göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
 msgstr "Ekranın alt kısmında digiKam görsel künyesi adlarını gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
 msgid "Show image labels"
 msgstr "Görsel etiketlerini göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
 #, kde-format
 msgid ""
 "Show the digiKam image color label and pick label at the bottom of the "
@@ -22214,58 +22214,74 @@ msgstr ""
 "Ekranın alt kısmında digiKam görsel renk etiketini ve seçim etiketini "
 "gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:156
 #, kde-format
 msgid "Show image rating"
 msgstr "Görsel derecelendirmesini göster"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
 #, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Ekranın alt kısmında digiKam görsel derecelendirmesini gösterin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#, fuzzy, kde-format
+#| msgid "&Use theme background color"
+msgid "Use background color for images:"
+msgstr "&Tema arka plan rengini kullan"
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to use the background theme color in the image editor "
+#| "area."
+msgid "Define a color to use as background to render images on screen."
+msgstr ""
+"Görsel düzenleyicisi alanında arka plan tema rengini kullanmak için bu "
+"seçeneği etkinleştirin."
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format
 msgid "Caption font:"
 msgstr "Alt yazı yazıtipi:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
 #, kde-format
 msgid "Select here the font used to display text in the slideshow."
 msgstr ""
 "Slayt gösterisindeki metni görüntülemek için kullanılan yazıtipini buradan "
 "seçin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
 #, kde-format
 msgid "Screen placement:"
 msgstr "Ekran yerleşimi:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr "Çoklu ekranlı bilgisayarlarda, içeriklerin kaydırılacağı ekran seçin."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:162
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "Geçerli Ekran"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "Öntanımlı Ekran"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:168
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "Ekran %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:174
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -23044,12 +23060,12 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Yerel Depolamaya Dışa Aktar…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, kde-format
 msgid "Target Location: "
 msgstr "Hedef konum: "
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:76
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
@@ -23061,7 +23077,7 @@ msgstr ""
 "<br><i>ftp://sunucum.org/alt/klasör</i><br><i>fish://kullanıcı-adı@sunucum."
 "org/alt/klasör</i>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
 #, kde-format
 msgid ""
 "Select export\n"
@@ -23070,19 +23086,19 @@ msgstr ""
 "Dışa aktarma\n"
 "konumu seç…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
 msgstr "Hedef Konum Seç…"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:154
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tüm Dosyalar (*)"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:178
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, kde-format
 msgid "<i>not selected</i>"
@@ -23099,13 +23115,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Uzak Depolamaya Dışa Aktar"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Karşıya Yükleme Tamamlanmadı"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "

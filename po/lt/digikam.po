@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 00:40+0000\n"
+"POT-Creation-Date: 2025-11-11 00:40+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -22384,30 +22384,30 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Ruošiama skaidrių peržiūra"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:88
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:94
 #, fuzzy, kde-format
 #| msgid "Image Settings"
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Paveikslėlio nuostatos"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
 msgid "Delay between images:"
 msgstr "&Laiko tarpas tarp paveikslėlių:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:102
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
 #, kde-format
 msgid "The delay, in seconds, between images."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
 #, kde-format
 msgid "Start with current image"
 msgstr "Pradėti nuo dabartinio paveikslėlio"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:105
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
@@ -22416,150 +22416,150 @@ msgstr ""
 "Jei ši parinktis yra įjungta, skaidrių peržiūra prasidės nuo šiuo metu "
 "pažymėto paveikslėlio iš paveikslėlių sąrašo."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "Skaidrių peržiūra veikia cikle"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "Paleisti skaidrių peržiūrą cikle"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
 #, fuzzy, kde-format
 #| msgid "Select images"
 msgid "Shuffle images"
 msgstr "Pasirinkite paveikslėlius"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, fuzzy, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr "<p>Tai yra paveikslėlio filtrų efektų peržiūra."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, fuzzy, kde-format
 msgid "Show progress indicator"
 msgstr "Rodyti detalų progreso langą"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Show image file name"
 msgstr "Rodyti nuotraukos failo pavadinimą"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
 msgid "Show the image file name at the bottom of the screen."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "Show image creation date"
 msgstr "Rodyti nuotraukos sukūrimo datą"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
 msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "Ekrano apačioje rodyti nuotraukos sukūrimo datą ir laiką."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "Rodyti fotoaparato diafragmą ir židinio nuotolį"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr "Rodyti fotoaparato diafragmą ir židinio nuotolį ekrano apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "Rodyti fotoaparato ekspoziciją ir jautrumą"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, fuzzy, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
 msgstr "<p>Tai yra paveikslėlio filtrų efektų peržiūra."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "Rodyti fotoaparato gamintoją ir modelį"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
 msgstr "Rodyti fotoaparato gamintoją ir modelį ekrano apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Show camera make and model"
 msgid "Show camera lens model"
 msgstr "Rodyti fotoaparato gamintoją ir modelį"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, fuzzy, kde-format
 #| msgid "Show the camera make and model at the bottom of the screen."
 msgid "Show the camera lens model at the bottom of the screen."
 msgstr "Rodyti fotoaparato gamintoją ir modelį ekrano apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Show image caption"
 msgstr "Rodyti nuotraukos pavadinimą"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid "Show the image caption at the bottom of the screen."
 msgstr "Rodyti nuotraukos antraštę ekrano apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, fuzzy, kde-format
 msgid "Show image title"
 msgstr "Rodyti paveikslėlio tipą"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
 #, fuzzy, kde-format
 msgid "Show the image title at the bottom of the screen."
 msgstr "Rodyti nuotraukos antraštę ekrano apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, fuzzy, kde-format
 msgid "Show image caption if it has not title"
 msgstr "Rodyti nuotraukos sukūrimo datą"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, fuzzy, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
 msgstr "Rodyti nuotraukos antraštę ekrano apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
 #, kde-format
 msgid "Show image tags"
 msgstr "Rodyti paveikslėlio žymas"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #, fuzzy, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
 msgstr "Rodyti nuotraukos antraštę ekrano apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
 msgid "Show image labels"
 msgstr "Rodyti paveikslėlio etiketes"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "Show the digiKam image color label, pick label, and rating at the bottom "
@@ -22571,59 +22571,70 @@ msgstr ""
 "Rodyti digiKam nuotraukos spalvos, rinktines etiketes ir įvertinimus ekrano "
 "apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:156
 #, fuzzy, kde-format
 #| msgid "Show image caption"
 msgid "Show image rating"
 msgstr "Rodyti nuotraukos pavadinimą"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
 #, fuzzy, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Rodyti nuotraukos antraštę ekrano apačioje."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#, fuzzy, kde-format
+#| msgid "&Use theme background color"
+msgid "Use background color for images:"
+msgstr "&Naudoti temos fono paveikslėlį"
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
+#, fuzzy, kde-format
+msgid "Define a color to use as background to render images on screen."
+msgstr "<p>Tai yra paveikslėlio filtrų efektų peržiūra."
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, fuzzy, kde-format
 #| msgid "Caption:"
 msgid "Caption font:"
 msgstr "Antraštė:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgid "Select here the font used to display text in the slideshow."
 msgstr "Čia parinkite šriftą, kuriuo rodomas medžio turinys."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
 #, fuzzy, kde-format
 msgid "Screen placement:"
 msgstr "Padėtis:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:162
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
 #, fuzzy, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "Dabartinė paieška"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
 #, fuzzy, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "Numatytosios nuostatos"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:168
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, fuzzy, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "Žalia (%):"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:174
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -23392,13 +23403,13 @@ msgctxt "@action"
 msgid "Export to local storage..."
 msgstr "Importuoti iš skaitytuvo..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:74
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Show image caption"
 msgid "Target Location: "
 msgstr "Rodyti nuotraukos pavadinimą"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:76
 #, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
@@ -23406,27 +23417,27 @@ msgid ""
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:80
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
 #, fuzzy, kde-format
 msgid ""
 "Select export\n"
 "location..."
 msgstr "Geolokacija"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:149
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:153
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
 msgstr "Geolokacija"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:150
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:154
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgid "All Files (*)"
 msgstr "Visi failai"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:174
+#: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:178
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
 #, fuzzy, kde-format
 #| msgid "No tags selected"
@@ -23446,13 +23457,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Importuoti iš skaitytuvo..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:205
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Skaidrių peržiūra"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:206
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
