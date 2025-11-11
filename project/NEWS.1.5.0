@@ -4,7 +4,6 @@ digiKam 1.5.0 - Release date: 2010-10-10
 NEW FEATURES:
 
 General        : Fix compilation under windows with TDM-GCC and MSVC compilers.
-General        : Fix compilation under windows with TDM-GCC and MSVC compilers.
 General        : Including LensFun library source code as 3rd-party component, especially for windows target where
                  this library is not available.
 
