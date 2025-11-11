@@ -4,7 +4,6 @@ digiKam 1.6.0 - Release date: 2010-11-22
 NEW FEATURES:
 
 General        : Fix compilation under Mac OS-X through MacPorts project.
-General        : Fix compilation under Mac OS-X through MacPorts project.
 General        : External dependencies to libPGF and Clapack can use used now instead internal implementation
                  if available in host system dedicated to compile.
 
