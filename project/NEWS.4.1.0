@@ -5,7 +5,7 @@ NEW FEATURES:
 
 General  : Add Gelocation indicator over thumbnails when image has GPS coordinateds.
 
-AlbumGUI : Thumbnails from icon-view now support large resolution monitor (WQHD or 4K). Thumbs size can be set until 512x512 px instead 256x256 px.
+Album View : Thumbnails from icon-view now support large resolution monitor (WQHD or 4K). Thumbs size can be set until 512x512 px instead 256x256 px.
 
 *****************************************************************************************************
 BUGFIXES:

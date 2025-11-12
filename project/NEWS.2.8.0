@@ -3,7 +3,7 @@ digiKam 2.8.0 - Release date: 2012-08-05
 *****************************************************************************************************
 NEW FEATURES:
 
-CameraGUI : Add option to execute script during items to download from camera.
+Import Tool : Add option to execute script during items to download from camera.
 
 MediaWiki : GUI improvements and new features to export items.
 

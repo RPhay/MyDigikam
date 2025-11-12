@@ -10,7 +10,7 @@ Searches     : Improvements of fuzzy searches to permit fuzzy search on local im
 Searches     : Improvements of duplicate/fuzzy/sketch searches to permit sorting the resulting images in image view by similarity level.
 Searches     : Improvements of duplicate/fuzzy/sketch search results by showing the concrete similarity values in table view.
 
-AlbumGUI     : Improvements of grouped images to apply renaming, copying or metadata actions to all images.
+Album View     : Improvements of grouped images to apply renaming, copying or metadata actions to all images.
 
 SlideShow    : Add video support.
 

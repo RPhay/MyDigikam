@@ -611,7 +611,7 @@ BUGFIXES:
 595 --> 122510 - digiKam crashes after downloading images from the digital camera.
 596 --> 296779 - digiKam crashed while zooming globe.
 597 --> 254036 - digikam.org logo animation causes high CPU load in X server.
-598 --> 127621 - CameraGUI crashes when i try to import pictures from a readonly directory.
+598 --> 127621 - Import Tool crashes when i try to import pictures from a readonly directory.
 599 --> 268302 - Images are Invisible.
 600 --> 133211 - Media browse corrupted display.
 601 --> 223855 - Crash at attempt to download images from camera.

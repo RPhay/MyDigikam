@@ -7,7 +7,7 @@ General        : Fix compilation under Mac OS-X through MacPorts project.
 General        : External dependencies to libPGF and Clapack can use used now instead internal implementation
                  if available in host system dedicated to compile.
 
-AlbumGUI       : User can exclude tags in the tag-filter view.
+Album View       : User can exclude tags in the tag-filter view.
 
 Slideshow      : User can change item rating during a slide.
 

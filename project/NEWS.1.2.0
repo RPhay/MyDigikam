@@ -3,7 +3,7 @@ digiKam 1.2.0 - Release date: 2010-03-28
 *********************************************************************************************************
 NEW FEATURES:
 
-AlbumGUI          : All Album tree views are ported to pure Qt4 model/view implementation.
+Album View          : All Album tree views are ported to pure Qt4 model/view implementation.
 
 ImageEditor       : Brightness/Contrast/gamma tool is multithreaded and use a zoomable preview widget.
 ImageEditor       : Color Balance tool is multithreaded and use a zoomable preview widget.

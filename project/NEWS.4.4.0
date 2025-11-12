@@ -7,7 +7,7 @@ General     : Navigate between pictures using PageUp/PageDown is now possible wh
 General     : New keyboard shortcuts to improve usability while photo review (as to switch focus on text edit widget, or to toggle tags view).
 General     : New keyboard shortcut to switch on/off color managed view for thumbnails and preview.
 
-AlbumGUI    : Album preview can be displayed in tooltip.
+Album View    : Album preview can be displayed in tooltip.
 
 SlideShow   : Labels and Tags keyboard shortcuts can be used while slideshow.
 SlideShow   : Support multi-monitors computer.

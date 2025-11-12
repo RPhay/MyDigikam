@@ -14,9 +14,9 @@ General        : MySQl support improvements. Dependency is now optional.
 General        : Added JPEGTurbo library support.
 General        : Update internal LibPGF to 6.11.24 with OpenMP support.
 
-AlbumGUI       : Re-designed Filters view on right sidebar to perform icon-view items filtering.
-AlbumGUI       : Add options to group/ungroup items from icon-view.
-AlbumGUI       : Add options to show file format over icon-view items.
+Album View       : Re-designed Filters view on right sidebar to perform icon-view items filtering.
+Album View       : Add options to group/ungroup items from icon-view.
+Album View       : Add options to show file format over icon-view items.
 
 ImageEditor    : Image versioning support.
 ImageEditor    : Foveon sensor based camera.
