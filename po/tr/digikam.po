@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-11 00:40+0000\n"
-"PO-Revision-Date: 2025-11-08 21:11+0300\n"
+"PO-Revision-Date: 2025-11-11 20:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22225,20 +22225,16 @@ msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Ekranın alt kısmında digiKam görsel derecelendirmesini gösterin."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for images:"
-msgstr "&Tema arka plan rengini kullan"
+msgstr "Görseller için şu arka plan rengini kullan:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render images on screen."
 msgstr ""
-"Görsel düzenleyicisi alanında arka plan tema rengini kullanmak için bu "
-"seçeneği etkinleştirin."
+"Görselleri ekranda sunarken arka plan rengi olarak kullanılacak bir renk "
+"seçin."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-11 00:40+0000\n"
-"PO-Revision-Date: 2025-11-07 10:37+0200\n"
+"PO-Revision-Date: 2025-11-11 15:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -49440,14 +49440,14 @@ msgstr "חישוב הממוצע נכשל"
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove favorite stacks here."
-msgstr ""
+msgstr "אפשר להוסיף או להסיר ערימות מועדפים כאן."
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr ""
+msgstr "מועדפים"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
 #, fuzzy, kde-format
@@ -49605,7 +49605,7 @@ msgstr "הסרת פריט"
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
-msgstr ""
+msgstr "ערימה"
 
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
 #, fuzzy, kde-format
@@ -49673,13 +49673,13 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:313
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
-msgstr[0] "שינוי שם..."
-msgstr[1] "שינוי שם..."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שינוי שם"
+msgstr[1] "שינוי שם (שתי תמונות)"
+msgstr[2] "שינוי שם (%1 תמונות)"
+msgstr[3] "שינוי שם (%1 תמונות)"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:415
 #, fuzzy, kde-format
@@ -49702,7 +49702,7 @@ msgstr "&ביטול"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
-msgstr ""
+msgstr "מתבצע עיבוד…"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
@@ -49755,7 +49755,7 @@ msgstr ""
 #: core/utilities/import/widgets/scriptingsettings.cpp:79
 #, kde-format
 msgid "Show a list of all available options"
-msgstr ""
+msgstr "הצגת רשימת כל האפשרויות הזמינות"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:342
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:110
@@ -49778,7 +49778,7 @@ msgstr "אפשרויות שינוי שם קובץ"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:379
 #, kde-format
 msgid "<p>Add renaming options to the parse string.</p>"
-msgstr ""
+msgstr "<p>הוספת אפשרויות שינוי שם למחרוזת הפענוח.</p>"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
@@ -50012,7 +50012,7 @@ msgstr "רגישות"
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:62
 #, kde-format
 msgid "Regular Expression"
-msgstr ""
+msgstr "ביטוי רגולרי"
 
 #: core/utilities/advancedrename/parser/modifiers/trimmedmodifier.cpp:29
 #, fuzzy, kde-format
@@ -50376,7 +50376,7 @@ msgstr "רעף"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Accuracy"
-msgstr ""
+msgstr "דיוק"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:41
 #, fuzzy, kde-format
@@ -50785,7 +50785,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
-msgstr ""
+msgstr "מי זה או זאת?"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:563
 #, fuzzy, kde-format
@@ -50809,7 +50809,7 @@ msgstr "הוספת תווית חדשה..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
-msgstr ""
+msgstr "דחיית ההצעה הזאת"
 
 #: core/utilities/firstrun/collectionpage.cpp:58
 #, fuzzy, kde-format
@@ -51514,31 +51514,31 @@ msgstr ""
 #, kde-format
 msgctxt "the planet"
 msgid "Mercury"
-msgstr ""
+msgstr "כוכב חמה"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:289
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
-msgstr ""
+msgstr "נוגה"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:294
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
-msgstr ""
+msgstr "כדור הארץ"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:299
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
-msgstr ""
+msgstr "מאדים"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:304
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
-msgstr ""
+msgstr "צדק"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:309
 #, fuzzy, kde-format
@@ -51551,19 +51551,19 @@ msgstr "רוויה"
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
-msgstr ""
+msgstr "אורון"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:319
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
-msgstr ""
+msgstr "רהב"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:324
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
-msgstr ""
+msgstr "פלוטו"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:329
 #, fuzzy, kde-format
@@ -51582,7 +51582,7 @@ msgstr "אור ירח"
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:339
 #, kde-format
 msgid "Sky"
-msgstr ""
+msgstr "שמיים"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:345
 #, fuzzy, kde-format
@@ -51593,12 +51593,12 @@ msgstr "שגיאה לא מוכרת"
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
 #, kde-format
 msgid "&Lock"
-msgstr ""
+msgstr "&נעילה"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
 #, kde-format
 msgid "&Hide"
-msgstr ""
+msgstr "ה&סתרה"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
@@ -51611,25 +51611,25 @@ msgstr "הגדרות"
 #, kde-format
 msgctxt "means meter"
 msgid "m"
-msgstr ""
+msgstr "מ׳"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
 #, kde-format
 msgctxt "means millimeters"
 msgid "mm"
-msgstr ""
+msgstr "מ״מ"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:166
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
-msgstr ""
+msgstr "ק״מ"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:169
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
-msgstr ""
+msgstr "ס״מ"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:172
 #, fuzzy, kde-format
@@ -51685,7 +51685,7 @@ msgstr "תיאור אינו זמין"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
 #, kde-format
 msgid "National Capital"
-msgstr ""
+msgstr "בירה לאומית"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:445
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
@@ -51705,7 +51705,7 @@ msgstr "נפח אחסון:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:456
 #, kde-format
 msgid "State Capital"
-msgstr ""
+msgstr "בירת מדינה"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:453
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
@@ -51719,7 +51719,7 @@ msgstr "ספירה:"
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:458
 #, kde-format
 msgid "Capital"
-msgstr ""
+msgstr "בירה"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
@@ -51730,7 +51730,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:626
 #, kde-format
 msgid "&Info Boxes"
-msgstr ""
+msgstr "&תיבות מידע"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:973
 #, fuzzy, kde-format
@@ -51741,12 +51741,12 @@ msgstr "פרטים"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
 #, kde-format
 msgid "W"
-msgstr ""
+msgstr "מע׳"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
 #, kde-format
 msgid "E"
-msgstr ""
+msgstr "מז׳"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
@@ -51758,23 +51758,23 @@ msgstr "לא"
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"
-msgstr ""
+msgstr "דר׳"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:387
 #, kde-format
 msgid "Valley"
-msgstr ""
+msgstr "עמק"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:151
 #, kde-format
 msgid "Terrain"
-msgstr ""
+msgstr "פני שטח"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Crater"
-msgstr ""
+msgstr "מכתש"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:396
 #, fuzzy, kde-format
@@ -51784,22 +51784,22 @@ msgstr "חיפוש:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:399
 #, kde-format
 msgid "Manned Landing Site"
-msgstr ""
+msgstr "אתר נחיתה מאוישת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:402
 #, kde-format
 msgid "Robotic Rover"
-msgstr ""
+msgstr "גשושית רובוטית"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:405
 #, kde-format
 msgid "Unmanned Soft Landing Site"
-msgstr ""
+msgstr "אתר נחיתה רכה בלתי מאוישת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:408
 #, kde-format
 msgid "Unmanned Hard Landing Site"
-msgstr ""
+msgstr "אתר נחיתה קשה בלתי מאוישת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:411
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:465
@@ -51825,7 +51825,7 @@ msgstr "כותרת"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:817
 #, kde-format
 msgid "Volcano"
-msgstr ""
+msgstr "הר געש"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:471
 #, fuzzy, kde-format
@@ -51835,7 +51835,7 @@ msgstr "ניגוד:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:474
 #, kde-format
 msgid "Ocean"
-msgstr ""
+msgstr "אוקיינוס"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:477
 #, fuzzy, kde-format
@@ -51867,12 +51867,12 @@ msgstr "מחזור:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Military Danger Area"
-msgstr ""
+msgstr "אזור צבאי מסוכן"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
 msgid "OSM Site"
-msgstr ""
+msgstr "אתר OSM"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:498
 #, fuzzy, kde-format
@@ -51924,12 +51924,12 @@ msgstr "הגדרות מקומיות"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Water"
-msgstr ""
+msgstr "מים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Reef"
-msgstr ""
+msgstr "שונית"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:547
 #, fuzzy, kde-format
@@ -51940,7 +51940,7 @@ msgstr "עץ"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:550
 #, kde-format
 msgid "Beach"
-msgstr ""
+msgstr "חוף"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:553
 #, fuzzy, kde-format
@@ -51950,12 +51950,12 @@ msgstr "יצרן:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
 msgid "Glacier"
-msgstr ""
+msgstr "קרחון"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Ice Shelf"
-msgstr ""
+msgstr "מדף קרח"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:562
 #, kde-format
@@ -51965,7 +51965,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
 msgid "Cliff"
-msgstr ""
+msgstr "צוק"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:568
 #, fuzzy, kde-format
@@ -51975,7 +51975,7 @@ msgstr "הערות היצרן"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Traffic Signals"
-msgstr ""
+msgstr "רמזורים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:574
 #, fuzzy, kde-format
@@ -52002,7 +52002,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1180
 #, kde-format
 msgid "Track"
-msgstr ""
+msgstr "מסילה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
@@ -52022,17 +52022,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Residential Road"
-msgstr ""
+msgstr "דרך עירונית"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:607
 #, kde-format
 msgid "Living Street"
-msgstr ""
+msgstr "רחוב מגורים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:610
 #, kde-format
 msgid "Unclassified Road"
-msgstr ""
+msgstr "דרך לא מסווגת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:613
 #, kde-format
@@ -52067,7 +52067,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:631
 #, kde-format
 msgid "Raceway"
-msgstr ""
+msgstr "מסלול מרוצים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
@@ -52082,7 +52082,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Motorway Link Road"
-msgstr ""
+msgstr "דרך קישור לכביש"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:643
 #, fuzzy, kde-format
@@ -52103,7 +52103,7 @@ msgstr "גרסת הפרופיל"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
 msgid "Camping"
-msgstr ""
+msgstr "מחנאות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:655
 #, fuzzy, kde-format
@@ -52113,22 +52113,22 @@ msgstr "לפי שם"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
 msgid "Hotel"
-msgstr ""
+msgstr "מלון"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:661
 #, kde-format
 msgid "Motel"
-msgstr ""
+msgstr "מלון דרכים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:664
 #, kde-format
 msgid "Youth Hostel"
-msgstr ""
+msgstr "בית הארחה לנוער"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:667
 #, kde-format
 msgid "Guest House"
-msgstr ""
+msgstr "בית הארחה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:670
 #, fuzzy, kde-format
@@ -52139,17 +52139,17 @@ msgstr "ספריית אלבום"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:673
 #, kde-format
 msgid "Kindergarten"
-msgstr ""
+msgstr "גן ילדים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:676
 #, kde-format
 msgid "College"
-msgstr ""
+msgstr "מכללה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:679
 #, kde-format
 msgid "School"
-msgstr ""
+msgstr "בית ספר"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:682
 #, fuzzy, kde-format
@@ -52165,17 +52165,17 @@ msgstr "על פי צמדים"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:688
 #, kde-format
 msgid "Biergarten"
-msgstr ""
+msgstr "גינת בירה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:691
 #, kde-format
 msgid "Cafe"
-msgstr ""
+msgstr "בית קפה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:694
 #, kde-format
 msgid "Fast Food"
-msgstr ""
+msgstr "מזון מהיר"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:697
 #, fuzzy, kde-format
@@ -52191,7 +52191,7 @@ msgstr "שחזור"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:703
 #, kde-format
 msgid "Dentist"
-msgstr ""
+msgstr "מרפאת שיניים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:706
 #, fuzzy, kde-format
@@ -52201,47 +52201,47 @@ msgstr "שם קובץ"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:709
 #, kde-format
 msgid "Hospital"
-msgstr ""
+msgstr "בית חולים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:712
 #, kde-format
 msgid "Pharmacy"
-msgstr ""
+msgstr "בית מרקחת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:715
 #, kde-format
 msgid "Veterinary"
-msgstr ""
+msgstr "שירותים וטרינריים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:718
 #, kde-format
 msgid "ATM"
-msgstr ""
+msgstr "כספומט"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:721
 #, kde-format
 msgid "Bank"
-msgstr ""
+msgstr "בנק"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:724
 #, kde-format
 msgid "Archaeological Site"
-msgstr ""
+msgstr "אתר ארכיאולוגי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:727
 #, kde-format
 msgid "Embassy"
-msgstr ""
+msgstr "שגרירות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:730
 #, kde-format
 msgid "Emergency Phone"
-msgstr ""
+msgstr "טלפון חירום"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:733
 #, kde-format
 msgid "Mountain Rescue"
-msgstr ""
+msgstr "חילוץ הררי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:736
 #, fuzzy, kde-format
@@ -52261,7 +52261,7 @@ msgstr "ספירה:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:745
 #, kde-format
 msgid "Night Club"
-msgstr ""
+msgstr "מועדון לילה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:748
 #, fuzzy, kde-format
@@ -52271,7 +52271,7 @@ msgstr "בינונית"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:751
 #, kde-format
 msgid "Court House"
-msgstr ""
+msgstr "בית משפט"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:754
 #, fuzzy, kde-format
@@ -52293,17 +52293,17 @@ msgstr "זווית (במעלות):"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:763
 #, kde-format
 msgid "Post Box"
-msgstr ""
+msgstr "תיבת דואר"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:766
 #, kde-format
 msgid "Post Office"
-msgstr ""
+msgstr "משרד דואר"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:769
 #, kde-format
 msgid "Prison"
-msgstr ""
+msgstr "כלא"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:772
 #, fuzzy, kde-format
@@ -52318,22 +52318,22 @@ msgstr "מסנן אדום"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:778
 #, kde-format
 msgid "Telephone"
-msgstr ""
+msgstr "טלפון"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:781
 #, kde-format
 msgid "Toilets"
-msgstr ""
+msgstr "שירותים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:784
 #, kde-format
 msgid "Town Hall"
-msgstr ""
+msgstr "בניין העירייה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:787
 #, kde-format
 msgid "Waste Basket"
-msgstr ""
+msgstr "סל אשפה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:790
 #, fuzzy, kde-format
@@ -52343,7 +52343,7 @@ msgstr "קריאת מסד נתונים"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:793
 #, kde-format
 msgid "Graveyard"
-msgstr ""
+msgstr "בית קברות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:796
 #, fuzzy, kde-format
@@ -52354,12 +52354,12 @@ msgstr "עימוד תמונה"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:799
 #, kde-format
 msgid "Car Wash"
-msgstr ""
+msgstr "שטיפת מכוניות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:802
 #, kde-format
 msgid "Social Facility"
-msgstr ""
+msgstr "מתחם חברתי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:805
 #, fuzzy, kde-format
@@ -52369,12 +52369,12 @@ msgstr "נפח אחסון:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:808
 #, kde-format
 msgid "Gate"
-msgstr ""
+msgstr "שער"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:811
 #, kde-format
 msgid "Lift Gate"
-msgstr ""
+msgstr "שער כנף"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:814
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1438
@@ -52386,17 +52386,17 @@ msgstr "קיר"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:820
 #, kde-format
 msgid "Peak"
-msgstr ""
+msgstr "פסגה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:823
 #, kde-format
 msgid "Tree"
-msgstr ""
+msgstr "עץ"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:826
 #, kde-format
 msgid "Cave Entrance"
-msgstr ""
+msgstr "כניסה למערה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:829
 #, fuzzy, kde-format
@@ -52406,27 +52406,27 @@ msgstr "ממוצע"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:832
 #, kde-format
 msgid "Hifi"
-msgstr ""
+msgstr "ציוד שמע"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:835
 #, kde-format
 msgid "Supermarket"
-msgstr ""
+msgstr "סופרמרקט"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:838
 #, kde-format
 msgid "Liquor Store"
-msgstr ""
+msgstr "חנות משקאות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:841
 #, kde-format
 msgid "Bakery"
-msgstr ""
+msgstr "מאפייה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:844
 #, kde-format
 msgid "Butcher"
-msgstr ""
+msgstr "קצבייה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:847
 #, fuzzy, kde-format
@@ -52437,7 +52437,7 @@ msgstr "מרחב התחברות"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:850
 #, kde-format
 msgid "Convenience Shop"
-msgstr ""
+msgstr "חנות נוחות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:853
 #, fuzzy, kde-format
@@ -52447,7 +52447,7 @@ msgstr "ירוק"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:856
 #, kde-format
 msgid "Seafood Shop"
-msgstr ""
+msgstr "חנות מאכלי ים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:859
 #, fuzzy, kde-format
@@ -52458,17 +52458,17 @@ msgstr "אבן מעוצב"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:862
 #, kde-format
 msgid "Kiosk"
-msgstr ""
+msgstr "קיוסק"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:865
 #, kde-format
 msgid "Bag Shop"
-msgstr ""
+msgstr "חנות תיקים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:868
 #, kde-format
 msgid "Clothes Shop"
-msgstr ""
+msgstr "חנות ביגוד"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:871
 #, fuzzy, kde-format
@@ -52478,17 +52478,17 @@ msgstr "נתוני ההתקן"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:874
 #, kde-format
 msgid "Jewelry Shop"
-msgstr ""
+msgstr "חנות תכשיטים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:877
 #, kde-format
 msgid "Shoe Shop"
-msgstr ""
+msgstr "חנות נעליים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:880
 #, kde-format
 msgid "Variety Store"
-msgstr ""
+msgstr "חנות כלבו"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:883
 #, fuzzy, kde-format
@@ -52498,17 +52498,17 @@ msgstr "בחירה בכלום"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:886
 #, kde-format
 msgid "Chemist"
-msgstr ""
+msgstr "כימיה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:889
 #, kde-format
 msgid "Cosmetics"
-msgstr ""
+msgstr "קוסמטיקה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:892
 #, kde-format
 msgid "Hairdresser"
-msgstr ""
+msgstr "מספרה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:895
 #, fuzzy, kde-format
@@ -52518,28 +52518,28 @@ msgstr "<b>מימדים</b>:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:898
 #, kde-format
 msgid "Perfumery"
-msgstr ""
+msgstr "חנות בשמים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:901
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:907
 #, kde-format
 msgid "Hardware Store"
-msgstr ""
+msgstr "חנות אספקה טכנית"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:904
 #, kde-format
 msgid "Florist"
-msgstr ""
+msgstr "חנות פרחים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:910
 #, kde-format
 msgid "Furniture Store"
-msgstr ""
+msgstr "חנות רהיטים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:913
 #, kde-format
 msgid "Electronics Shop"
-msgstr ""
+msgstr "חנות מוצרי חשמל"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:916
 #, fuzzy, kde-format
@@ -52550,37 +52550,37 @@ msgstr "Adobe Photoshop"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:919
 #, kde-format
 msgid "Bicycle Shop"
-msgstr ""
+msgstr "חנות אופניים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:922
 #, kde-format
 msgid "Car Dealer"
-msgstr ""
+msgstr "סוכנות רכב"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:925
 #, kde-format
 msgid "Car Repair Shop"
-msgstr ""
+msgstr "מוסך"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:928
 #, kde-format
 msgid "Car Parts"
-msgstr ""
+msgstr "חלקי רכב"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:931
 #, kde-format
 msgid "Motorcycle Shop"
-msgstr ""
+msgstr "חנות אופנועים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:934
 #, kde-format
 msgid "Outdoor Shop"
-msgstr ""
+msgstr "חנות ציוד מחנאות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:937
 #, kde-format
 msgid "Sports Shop"
-msgstr ""
+msgstr "חנות ספורט"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:940
 #, fuzzy, kde-format
@@ -52590,12 +52590,12 @@ msgstr "עיבוד קבוצת תמונות"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:943
 #, kde-format
 msgid "Art Shop"
-msgstr ""
+msgstr "חנות אומנות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:946
 #, kde-format
 msgid "Musical Instrument Shop"
-msgstr ""
+msgstr "חנות כלי מוזיקה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:949
 #, fuzzy, kde-format
@@ -52606,7 +52606,7 @@ msgstr "מבזק אור (פלאש)"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:952
 #, kde-format
 msgid "Bookshop"
-msgstr ""
+msgstr "חנות ספרים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:955
 #, fuzzy, kde-format
@@ -52622,7 +52622,7 @@ msgstr "רוויה"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:961
 #, kde-format
 msgid "Laundry"
-msgstr ""
+msgstr "מכבסה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:964
 #, fuzzy, kde-format
@@ -52632,7 +52632,7 @@ msgstr "נתוני ההתקן"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:967
 #, kde-format
 msgid "Toy Store"
-msgstr ""
+msgstr "חנות צעצועים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:970
 #, fuzzy, kde-format
@@ -52643,37 +52643,37 @@ msgstr "נסיעות"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:973
 #, kde-format
 msgid "Deli"
-msgstr ""
+msgstr "מעדנייה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:976
 #, kde-format
 msgid "Tobacco Shop"
-msgstr ""
+msgstr "חנות טבק"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:979
 #, kde-format
 msgid "Tea Shop"
-msgstr ""
+msgstr "חנות תה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:982
 #, kde-format
 msgid "Computer Shop"
-msgstr ""
+msgstr "חנות מחשבים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:985
 #, kde-format
 msgid "Garden Centre"
-msgstr ""
+msgstr "ציוד לגינה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:988
 #, kde-format
 msgid "Shop"
-msgstr ""
+msgstr "חנות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:991
 #, kde-format
 msgid "Bridge"
-msgstr ""
+msgstr "גשר"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:994
 #, fuzzy, kde-format
@@ -65642,92 +65642,92 @@ msgid "Set this option to display the Audio Codec of the Video."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/utilities/setup/setuptooltip.cpp:268
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Duration"
-msgstr "הצגת פריט על סרגל שמאלי"
+msgstr "משך וידאו"
 
 #: core/utilities/setup/setuptooltip.cpp:269
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the Duration of the Video."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את משך הווידאו."
 
 #: core/utilities/setup/setuptooltip.cpp:271
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Frame Rate"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "קצב תמוניות וידאו"
 
 #: core/utilities/setup/setuptooltip.cpp:275
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the Codec of the Video."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את מפענח הווידאו."
 
 #: core/utilities/setup/setuptooltip.cpp:295
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show album items' tool-tips"
-msgstr "הצגת עצות פריטי אלבום"
+msgstr "הצגת חלוניות צצות של פריטי אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:296
-#, fuzzy, kde-format
+#, kde-format
 msgid "Album Information"
-msgstr "מידע"
+msgstr "פרטי אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:298
 #: core/utilities/setup/setuptooltip.cpp:339
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set this option to display album information when the mouse hovers over a "
 "folder-view item."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג פרטי אלבום כשהעכבר עובר מעל פריט תצוגת אלבום."
 
 #: core/utilities/setup/setuptooltip.cpp:304
-#, fuzzy, kde-format
+#, kde-format
 msgid "Album date"
-msgstr "תאריך אוסף-תמונות:"
+msgstr "תאריך אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:305
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the album date."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את תאריך האלבום."
 
 #: core/utilities/setup/setuptooltip.cpp:307
-#, fuzzy, kde-format
+#, kde-format
 msgid "Album collection"
-msgstr "הצגת אגד אוספי-התמונות"
+msgstr "אוסף אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:308
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the album collection."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את האוסף של האלבום."
 
 #: core/utilities/setup/setuptooltip.cpp:310
-#, fuzzy, kde-format
+#, kde-format
 msgid "Album category"
-msgstr "סיווג אוסף-התמונות"
+msgstr "קטגוריית אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:311
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the album category."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את הקטגוריה של האלבום."
 
 #: core/utilities/setup/setuptooltip.cpp:313
-#, fuzzy, kde-format
+#, kde-format
 msgid "Album caption"
-msgstr "הצגת כיתוב אוסף-תמונות"
+msgstr "כותרת אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:314
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the album caption."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את הכותרת של האלבום."
 
 #: core/utilities/setup/setuptooltip.cpp:316
-#, fuzzy, kde-format
+#, kde-format
 msgid "Album preview"
-msgstr "תצוגת אוסף-תמונות"
+msgstr "תצוגה מקדימה של אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:317
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the album preview."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג התצוגה המקדימה של האלבום."
 
 #: core/utilities/setup/setuptooltip.cpp:336
 #, kde-format
