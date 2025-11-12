@@ -3,8 +3,8 @@ digiKam 7.1.0 - Release date: 2020-09-06
 *****************************************************************************************************
 NEW FEATURES:
 
-QueueManager: Add new tool to fix hot pixels from images.
-QueueManager: Add new tool to apply texture over images.
+Queue Manager: Add new tool to fix hot pixels from images.
+Queue Manager: Add new tool to apply texture over images.
 Metadata:     Better Exif and XMP metadata support with CR3 file using libraw info parser.
 Metadata:     Add support of IPTC strings encoded as UTF-8 imported to the database.
 
@@ -21,7 +21,7 @@ BUGFIXES:
 008 --> 424501 - Right click >> Open in File Manager does not work.
 009 --> 424553 - Authenticating to Flickr does not work.
 010 --> 422078 - Album creation date is modification date of the folder.
-011 --> 409685 - ImageEditor can only be invoked once.
+011 --> 409685 - Image Editor can only be invoked once.
 012 --> 411723 - Trying to edit the date of a video kills digiKam.
 013 --> 412022 - Editor not show images.
 014 --> 412417 - digiKam fails to start - update fails.

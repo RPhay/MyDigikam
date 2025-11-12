@@ -857,7 +857,7 @@ BUGFIXES:
 841 --> 450563 - Could not download v7.5.0 from 7.3.0.
 842 --> 450713 - Unable to enter text in legend in Light table _ Presentation _ Caption.
 843 --> 405235 - Slow startup and new file scan on low latency networks.
-844 --> 445689 - Unable to change exif data with BatchQueueManager.
+844 --> 445689 - Unable to change exif data with BatchQueue Manager.
 845 --> 418256 - Support for album icon-view Masonry layouts.
 846 --> 448593 - New generic Flow View plugin for digiKam.
 847 --> 450982 - digiKam 7.4.0 writes unsupported XMP-exif:GPSLatitudeRef, XMP-exif:GPSLongitudeRef metadata to JPEG.

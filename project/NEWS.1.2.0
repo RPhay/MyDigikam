@@ -5,16 +5,16 @@ NEW FEATURES:
 
 Album View          : All Album tree views are ported to pure Qt4 model/view implementation.
 
-ImageEditor       : Brightness/Contrast/gamma tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : Color Balance tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : Hue/Saturation/Lightness tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : Auto Color Correction tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : Channel Mixer tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : Black and White tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : White Balance tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : Adjust Curves tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : Adjust Levels tool is multithreaded and use a zoomable preview widget.
-ImageEditor       : Complete rewrite of the FilmGrain tool. 
+Image Editor       : Brightness/Contrast/gamma tool is multithreaded and use a zoomable preview widget.
+Image Editor       : Color Balance tool is multithreaded and use a zoomable preview widget.
+Image Editor       : Hue/Saturation/Lightness tool is multithreaded and use a zoomable preview widget.
+Image Editor       : Auto Color Correction tool is multithreaded and use a zoomable preview widget.
+Image Editor       : Channel Mixer tool is multithreaded and use a zoomable preview widget.
+Image Editor       : Black and White tool is multithreaded and use a zoomable preview widget.
+Image Editor       : White Balance tool is multithreaded and use a zoomable preview widget.
+Image Editor       : Adjust Curves tool is multithreaded and use a zoomable preview widget.
+Image Editor       : Adjust Levels tool is multithreaded and use a zoomable preview widget.
+Image Editor       : Complete rewrite of the FilmGrain tool.
                     FilmGrain tool use now YCrCb color space to add noise. Graininess size can be adjusted
                     with an option to set-up photographic distribution of noise. 
                     Different amounts of noise can be added to highlights, shadows and midtones.
@@ -26,23 +26,23 @@ HTMLGallery       : Get metadata from image files and new detailed theme.
 
 PiwigoExport      : New tool to export images to Piwigo server (aka PhpWebGallery).
 
-BatchQueueManager : New tool to fix Brightness/Contrast/gamma.
-BatchQueueManager : New tool to adjust Color Balance.
-BatchQueueManager : New tool to fix Hue/Saturation/Lightness.
-BatchQueueManager : New tool to convert images color space.
-BatchQueueManager : New tool to mix color channel.
-BatchQueueManager : New tool to convert to Black and White.
-BatchQueueManager : New tool to adjust White Balance.
-BatchQueueManager : New tool to adjust Curves.
-BatchQueueManager : New tool to blur images.
-BatchQueueManager : New tool to add Film Grain to images.
-BatchQueueManager : New tool to apply Local Contrast (LDR tone mapping).
-BatchQueueManager : New tool to add/remove vignetting.
-BatchQueueManager : New tool to invert image colors.
-BatchQueueManager : New tool to convert color bits depth.
-BatchQueueManager : New tool to add border around images.
-BatchQueueManager : Rotate tool support Free Rotation adjustments.
-BatchQueueManager : It's now possible to Stop and restart a processed queue.
+BatchQueue Manager : New tool to fix Brightness/Contrast/gamma.
+BatchQueue Manager : New tool to adjust Color Balance.
+BatchQueue Manager : New tool to fix Hue/Saturation/Lightness.
+BatchQueue Manager : New tool to convert images color space.
+BatchQueue Manager : New tool to mix color channel.
+BatchQueue Manager : New tool to convert to Black and White.
+BatchQueue Manager : New tool to adjust White Balance.
+BatchQueue Manager : New tool to adjust Curves.
+BatchQueue Manager : New tool to blur images.
+BatchQueue Manager : New tool to add Film Grain to images.
+BatchQueue Manager : New tool to apply Local Contrast (LDR tone mapping).
+BatchQueue Manager : New tool to add/remove vignetting.
+BatchQueue Manager : New tool to invert image colors.
+BatchQueue Manager : New tool to convert color bits depth.
+BatchQueue Manager : New tool to add border around images.
+BatchQueue Manager : Rotate tool support Free Rotation adjustments.
+BatchQueue Manager : It's now possible to Stop and restart a processed queue.
 
 *****************************************************************************************************
 BUGFIXES:

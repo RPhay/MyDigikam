@@ -31,17 +31,17 @@ AlbumGui       : Icon view is now based on pure Qt4 model/view.
 AlbumGui       : New overlay button over icon view items to perform lossless rotations.
 AlbumGui       : Find Duplicates search can be limited to an album and tag range.
 
-Import Tool      : New history of camera actions processed.
+Import Tool    : New history of camera actions processed.
 
-ImageEditor    : New Liquid Rescale tool.
-ImageEditor    : Close tools by pressing ESC.
-ImageEditor    : New Local Contrast tool to simulate HDR images (Tone Mapping).
-ImageEditor    : New tool to remove noise using wavelets working in luminance (YCrCb color space).
+Image Editor   : New Liquid Rescale tool.
+Image Editor   : Close tools by pressing ESC.
+Image Editor   : New Local Contrast tool to simulate HDR images (Tone Mapping).
+Image Editor   : New tool to remove noise using wavelets working in luminance (YCrCb color space).
 
-ImageEditor    : New menu option to switch image color space quickly.
-ImageEditor    : Black and White converter: add standard Blue and Yellow-Green color filters.
+Image Editor   : New menu option to switch image color space quickly.
+Image Editor   : Black and White converter: add standard Blue and Yellow-Green color filters.
 
-QueueManager   : New tool to remove noise using wavelets working in luminance (YCrCb color space).
+Queue Manager  : New tool to remove noise using wavelets working in luminance (YCrCb color space).
 
 *****************************************************************************************************
 BUGFIXES:

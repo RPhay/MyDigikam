@@ -18,9 +18,9 @@ Album View       : Re-designed Filters view on right sidebar to perform icon-vie
 Album View       : Add options to group/ungroup items from icon-view.
 Album View       : Add options to show file format over icon-view items.
 
-ImageEditor    : Image versioning support.
-ImageEditor    : Foveon sensor based camera.
-ImageEditor    : New advanced RAW decoding settings backported from RawTherapee project.
+Image Editor    : Image versioning support.
+Image Editor    : Foveon sensor based camera.
+Image Editor    : New advanced RAW decoding settings backported from RawTherapee project.
 
 AdvancedRename : New datetime option "UnixTimeStamp" (requires Qt 4.7 or higher)
 

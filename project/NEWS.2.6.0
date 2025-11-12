@@ -13,8 +13,8 @@ General           : JPEGEngine tool is now disabled in digiKam. A dedicated solu
 
 ToolsInterface    : Handle progress events from tools through digiKam Progress Manager.
 
-ImageEditor       : Template Superimpose feature have been moved to PhotoLayoutEditor.
-ImageEditor       : New film color negative inverter filter.
+Image Editor       : Template Superimpose feature have been moved to PhotoLayoutEditor.
+Image Editor       : New film color negative inverter filter.
 
 RAWEngine         : Add progress management support, and parallelization of tasks using ThreadWeaver.
 

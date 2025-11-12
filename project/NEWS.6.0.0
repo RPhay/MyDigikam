@@ -3,7 +3,7 @@ digiKam 6.0.0 - Release date: 2019-02-10
 *****************************************************************************************************
 NEW FEATURES:
 
-ImageEditor  : Add Web services Import and Export tools.
+Image Editor  : Add Web services Import and Export tools.
 
 Showfoto     : Add Web services Import and Export tools.
 
@@ -19,7 +19,7 @@ General      : Add new Lensfun 0.4 support.
 General      : Use DrMinGW has crash handler under Windows.
 General      : Port all export/import tool to OAuth2 authentication.
 General      : New tool to adjust quickly time and date information from items.
-               Tool will be available in AlbumView, ImageEditor, LightTable, and Showfoto.
+               Tool will be available in AlbumView, Image Editor, LightTable, and Showfoto.
 General      : New function to group images by timelapse / burst
 General      : New tool to export to Pinterest social network.
 General      : New tool to export to OneDrive webservice.
@@ -289,7 +289,7 @@ BUGFIXES:
 219 --> 263347 - Print wizard ignores selected paper size, reverts to A4.
 220 --> 395579 - Only one tag being exported to flickr.
 221 --> 395790 - Rename with nested tags breaks due to | bar character.
-222 --> 395875 - ImageEditor window is blank when opened a second time.
+222 --> 395875 - Image Editor window is blank when opened a second time.
 223 --> 385822 - [Suggested feature] Reuse thumbnails from the database for the items in Trash.
 224 --> 382174 - Not creating thumbnails and not editing (F4) files created for Samsung panorama jpgs [patch].
 225 --> 376124 - Some Photos are not previewed.
@@ -401,7 +401,7 @@ BUGFIXES:
 331 --> 090550 - Linking error with jpeg.
 332 --> 393974 - Appimage bundle does not automatically recognize Gphoto2 devices connected.
 333 --> 141288 - Error KIoexec usb camera.
-334 --> 397554 - digiKam crashes while running BatchQueueManager.
+334 --> 397554 - digiKam crashes while running BatchQueue Manager.
 335 --> 379261 - Crash on attempting camera import.
 336 --> 379335 - digiKam crashes when deleting images in the download window [patch].
 337 --> 394291 - Cannot upgrade mysql db from v7 to v9.

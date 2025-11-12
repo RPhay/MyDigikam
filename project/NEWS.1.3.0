@@ -12,7 +12,7 @@ General        : RawEngine dependency set to 1.1.0 release.
 
 AdvancedRename : New option: database. Allows to rename files according to database values.
 
-QueueManager   : Add capability to apply an image waterwark over a photo.
+Queue Manager   : Add capability to apply an image waterwark over a photo.
 
 DNGWriter      : Update Adobe DNG sdk to 1.3.0.
                  Support non-square pixels.

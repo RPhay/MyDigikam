@@ -64,24 +64,24 @@ Showfoto      : All images from a folder can be loaded at the same time.
 Showfoto      : Add 16 bits/color/pixel support (DImg API).
 Showfoto      : Thumbbar moved to the left by default in vertical mode. Image properties side bar to the right to make a consistent GUI with digiKam main interface.
 Showfoto      : Thumbbar can be used to the bottom in horizontal mode.
-Showfoto      : New Exif Auto-rotate option like in digiKam ImageEditor.
-Showfoto      : New Set Orientation Exif flag to normal after Rotate/Flip like in digiKam ImageEditor.
+Showfoto      : New Exif Auto-rotate option like in digiKam Image Editor.
+Showfoto      : New Set Orientation Exif flag to normal after Rotate/Flip like in digiKam Image Editor.
 
-Import Tool     : New option to set metadata DateTime/PhotographerId/Copyright Exif and/or IPTC tags on the fly.
-Import Tool     : JPEG Exif thumbnail and Iptc image preview are recomputed during Exif Auto-rotation.
-Import Tool     : digiKam theme support.
-Import Tool     : Custom prefix index depend of current images selection in the camera icon items
-Import Tool     : New option to show camera summary and documentations of Gphoto2 drivers.
-Import Tool     : Option to upload pictures to camera using copy&paste or drag&drop.
-Import Tool     : New option to start number sequence index with a custom value.
-Import Tool     : New option to add postfix string to target download file name.
-Import Tool     : New option to add camera name to target download file name.
-Import Tool     : New option to increase/decrease the thumbnails size.
-Import Tool     : New option to lock/unlock pictures from camera to prevent unwanted deletion.
-Import Tool     : New option to convert JPEG files to lossless file format during download.
-Import Tool     : New option to set date format of auto-created albums.
-Import Tool     : New option to auto-create files extension-based sub-albums.
-Import Tool     : New advanced config dialog to set date/time format used to rename camera pictures file name during download.
+Import Tool   : New option to set metadata DateTime/PhotographerId/Copyright Exif and/or IPTC tags on the fly.
+Import Tool   : JPEG Exif thumbnail and Iptc image preview are recomputed during Exif Auto-rotation.
+Import Tool   : digiKam theme support.
+Import Tool   : Custom prefix index depend of current images selection in the camera icon items
+Import Tool   : New option to show camera summary and documentations of Gphoto2 drivers.
+Import Tool   : Option to upload pictures to camera using copy&paste or drag&drop.
+Import Tool   : New option to start number sequence index with a custom value.
+Import Tool   : New option to add postfix string to target download file name.
+Import Tool   : New option to add camera name to target download file name.
+Import Tool   : New option to increase/decrease the thumbnails size.
+Import Tool   : New option to lock/unlock pictures from camera to prevent unwanted deletion.
+Import Tool   : New option to convert JPEG files to lossless file format during download.
+Import Tool   : New option to set date format of auto-created albums.
+Import Tool   : New option to auto-create files extension-based sub-albums.
+Import Tool   : New advanced config dialog to set date/time format used to rename camera pictures file name during download.
 
 Geolocation   : Bookmark locations
 

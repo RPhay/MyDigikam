@@ -11,11 +11,11 @@ Album View       : User can exclude tags in the tag-filter view.
 
 Slideshow      : User can change item rating during a slide.
 
-ImageEditor    : New option to display over/under exposure indicators if pure colors is detected
+Image Editor    : New option to display over/under exposure indicators if pure colors is detected
                  or if only one color component match the condition.
-ImageEditor    : New options to adjust the levels of over/under exposed pixels from histogram,
+Image Editor    : New options to adjust the levels of over/under exposed pixels from histogram,
                  displayed by over/under exposure indicators.
-ImageEditor    : Aspect ratio crop tool is now able to deal with the aspect ratio of the current loaded image
+Image Editor    : Aspect ratio crop tool is now able to deal with the aspect ratio of the current loaded image
                  in editor. You can keep the original proportions of the image after cropping.
 
 *****************************************************************************************************

@@ -56,14 +56,14 @@ Album View       : New Search tools to find duplicates images around whole colle
 Album View       : Add Tool tips to display Physical albums properties.
 Album View       : Icon view item can be rated on the fly.
 
-ImageEditor    : Added Thumbbar to easy navigate between pictures.
-ImageEditor    : New tool based on LensFun library (https://lensfun.berlios.de) to correct automatically lens aberrations.
-ImageEditor    : LensDistortion and AntiVignetting are now merged with LensFun tool 
-ImageEditor    : All image tool tool settings provide default buttons to reset values.
-ImageEditor    : New Raw import tool to handle Raw pictures with customized decoding settings.
-ImageEditor    : All image tool dialogs are removed. All tools are embedded in editor window.
-ImageEditor    : Ported print management to Qt4.
-ImageEditor    : New ratio crop composition guide based on Diagonal Rules.
+Image Editor    : Added Thumbbar to easy navigate between pictures.
+Image Editor    : New tool based on LensFun library (https://lensfun.berlios.de) to correct automatically lens aberrations.
+Image Editor    : LensDistortion and AntiVignetting are now merged with LensFun tool
+Image Editor    : All image tool tool settings provide default buttons to reset values.
+Image Editor    : New Raw import tool to handle Raw pictures with customized decoding settings.
+Image Editor    : All image tool dialogs are removed. All tools are embedded in editor window.
+Image Editor    : Ported print management to Qt4.
+Image Editor    : New ratio crop composition guide based on Diagonal Rules.
 
 Import Tool      : Add Icon-View items Tooltip.
 Import Tool      : List camera item in more suitable order: more recent items on the top, older one on the bottom.
@@ -528,7 +528,7 @@ BUGFIXES:
 454 --> 172884 - Welcome/First-Run verbiage patches.
 455 --> 172892 - Tips verbiage changes.
 456 --> 172895 - Setup verbiage patches for slideshow and albumview.
-457 --> 172898 - Verbiage changes for Util-ImageEditor-ImageResize.cpp.
+457 --> 172898 - Verbiage changes for Util-Image Editor-ImageResize.cpp.
 458 --> 172899 - Verbiage changes for digikamapp.cpp.
 459 --> 171953 - Using create "Date-based sub-albums" makes import fail.
 460 --> 118318 - Make (lib)gphoto support a configure flag.

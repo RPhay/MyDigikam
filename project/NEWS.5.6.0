@@ -17,7 +17,7 @@ HTMLGallery : New "SimpleRounded" theme that uses flat shapes with rounded corne
 HTMLGallery : New "BlueCurved" theme with a blue rubbon on the left and an area for navigation arrows.
 HTMLGallery : Add option to generate a Gallery from a selection of images instead an album list.
 
-ImageEditor : Add HTMLGallery, Calendar, ExpoBlending, VideSlideshow, and Panorama tools support.
+Image Editor : Add HTMLGallery, Calendar, ExpoBlending, VideSlideshow, and Panorama tools support.
 
 Showfoto    : Add HTMLGallery, Calendar, ExpoBlending, VideSlideshow, and Panorama tools support.
 

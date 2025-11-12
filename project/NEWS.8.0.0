@@ -32,12 +32,12 @@ General        : Add Icon-View settings to customize Labels visibility over thum
 General        : Add support for float16 (half float) images in the TIFF Loader.
 Maintenance    : Add Aesthetic Detection to classify images using deep learning model.
                  https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe
-QueueManager   : Add new tool to assign pick label automatically by parsing image quality.
-QueueManager   : Add new tool to assign rating, pick, and color labels in batch.
-QueueManager   : Add new tool to assign titles and captions in batch.
+Queue Manager   : Add new tool to assign pick label automatically by parsing image quality.
+Queue Manager   : Add new tool to assign rating, pick, and color labels in batch.
+Queue Manager   : Add new tool to assign titles and captions in batch.
 Documentation  : Rewrite online documentation from DocBook to Sphinx/ReStructuredText framework.
                  https://docs.digikam.org/en/index.html
-ImageEditor    : Update G'MIC-Qt tool to last version 3.2.2.
+Image Editor    : Update G'MIC-Qt tool to last version 3.2.2.
                  Finalize G'MIC-Qt MacOS port and improve stability of plugin.
 General        : Add libjasper >= 4.0 support in the bundles for JPEG-2000 support.
 General        : Update ExifTool to 12.59 in bundles.
@@ -405,7 +405,7 @@ BUGFIXES:
 357 --> 209002 - Should be able to lock the aspect ratio when resizing.
 358 --> 306792 - Crashed during resizing a Tif-File.
 359 --> 151171 - Need support for adjusting in HSV and HSL colorspaces.
-360 --> 160012 - Add vibrance and fill light features in ImageEditor.
+360 --> 160012 - Add vibrance and fill light features in Image Editor.
 361 --> 174177 - Proposal for implementing smart unsharp masking.
 362 --> 184388 - More complex border style settings in Border tool.
 363 --> 194722 - Only sharpen one channel, e.g. the "value" channel of HSV.

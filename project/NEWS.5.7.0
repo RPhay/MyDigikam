@@ -16,7 +16,7 @@ PrintCreator: Add option to create printing from albums or images selection.
 PrintCreator: Add option to customize output image properties to render printing.
 PrintCreator: Tool is now multi-threaded to process images while preview and printing.
 
-ImageEditor : Add SendByMail and PrintCreator tools support.
+Image Editor : Add SendByMail and PrintCreator tools support.
 
 Showfoto    : Add SendByMail and PrintCreator tools support.
 

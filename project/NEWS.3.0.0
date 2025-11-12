@@ -28,14 +28,14 @@ ImportUI          : Preview items during downloading.
 
 Metadata          : Video files metadata support (through Exiv2 project).
 
-BatchQueueManager : Add Color Effect tool support.
-BatchQueueManager : Multicore CPU support to process items in parallel.
-BatchQueueManager : Add Raw Demosaicing settings in Queue Qettings.
-BatchQueueManager : Add new behavior options about RAW file loading (extract preview or perform demosaicing).
-BatchQueueManager : Add the capability to assign more than one time a tool to a queue.
-BatchQueueManager : Add the capability to put target file processed from queue to source album.
-BatchQueueManager : Add concept of Workflow dedicated to save and restore between sessions Queue Settings including Assigned Batch Tools list.
-BatchQueueManager : Add new tool to crop image.
+BatchQueue Manager : Add Color Effect tool support.
+BatchQueue Manager : Multicore CPU support to process items in parallel.
+BatchQueue Manager : Add Raw Demosaicing settings in Queue Qettings.
+BatchQueue Manager : Add new behavior options about RAW file loading (extract preview or perform demosaicing).
+BatchQueue Manager : Add the capability to assign more than one time a tool to a queue.
+BatchQueue Manager : Add the capability to put target file processed from queue to source album.
+BatchQueue Manager : Add concept of Workflow dedicated to save and restore between sessions Queue Settings including Assigned Batch Tools list.
+BatchQueue Manager : Add new tool to crop image.
 
 General           : New tool to export Collection to DLNA device.
 General           : New tool to make video slideshow.

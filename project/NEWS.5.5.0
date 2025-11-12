@@ -64,7 +64,7 @@ BUGFIXES:
 030 --> 339460 - BQM Watermark tool : add new option to support font style [patch].
 031 --> 375600 - Time Adjust Batch Queue depends on Global Metadata Setting for timestamp.
 032 --> 375627 - What is the input box under Fuzzy -> Image -> Similarity range?
-033 --> 375663 - Progress bars not initialized in ImageEditor at various places.
+033 --> 375663 - Progress bars not initialized in Image Editor at various places.
 034 --> 375350 - Default maintenance window too small on OSX.
 035 --> 374004 - Different Images recognised as identical images.
 036 --> 375704 - Dragging the map over the zoom slider in Marble/OSM view will unintentionally zoom out/in.
