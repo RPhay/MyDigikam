@@ -11,7 +11,7 @@ General      : New notification event when kioslave cannot be started.
 General      : OSX event notifier is now used to dispatch notifications.
 
 AlbumGui     : New Action To Exclude Items Without Rating with items filter.
-               Details: http://mohamedanwer.wordpress.com/2014/08/28/new-action-to-exclude-items-without-rating/
+               Details: https://mohamedanwer.wordpress.com/2014/08/28/new-action-to-exclude-items-without-rating/
 
 ExpoBlending : Remove OPenMP dependency. Ported to QtConcurrentRun.
 

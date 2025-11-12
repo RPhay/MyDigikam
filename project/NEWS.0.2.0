@@ -19,11 +19,11 @@ PrintCreator   : New tool that allow to choose old print assistant
                  or to print all the selected photos directly
 
 Facebook       : Facebook tool now support also import (download) of photos
-Facebook       : New tool to export images to a remote Facebook web service (http://www.facebook.com)
+Facebook       : New tool to export images to a remote Facebook web service (https://www.facebook.com)
 
 SmugExport     : Import (download) of images from SmugMug web service.
 SmugExport     : Add support for Album Templates
-SmugExport     : New tool to export images to a remote SmugMug web service (http://www.smugmug.com)
+SmugExport     : New tool to export images to a remote SmugMug web service (https://www.smugmug.com)
 
 RemoveRedEyes  : Added an option to preview the correction of the currently selected image.
 RemoveRedEyes  : New tool to remove red eyes in batch. Tool is based on OpenCV library.

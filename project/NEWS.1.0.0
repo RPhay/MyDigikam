@@ -6,7 +6,7 @@ NEW FEATURES:
 General        : Added support of Metadata Template to set easily image copyright.
 General        : Added support of LightRoom keywords path for interoperability purpose.
 General        : digiKam use a new database to cache thumbnails instead ~./thumbnails.
-                 File format used to store image is PGF (http://www.libpgf.org).
+                 File format used to store image is PGF (https://www.libpgf.org).
                  PGF is a wavelets based image compression format and give space optimizations.
 General        : Added Multi-languages support to Caption and Tags right side-bar.
 
@@ -20,12 +20,12 @@ General        : Exif, Makernotes, Iptc, and Xmp metadata tags filtering can be 
 General        : Metadata Template: add support of Contact, Location, and Subjects IPTC information.
 General        : Add support of Author properties to multi-language Captions. User can set
                  an author name for each caption value.
-General        : Add new Batch Queue Manager (http://www.digikam.org/node/427).
+General        : Add new Batch Queue Manager.
 General        : New tool bar animation banner.
 General        : Fix compilation under MSVC 9.
-General        : New first run assistant (http://www.digikam.org/node/442).
+General        : New first run assistant.
 General        : New dialog to show Database statistics.
-General        : Add support of wavelets image file format PGF (http://www.libpgf.org).
+General        : Add support of wavelets image file format PGF (https://www.libpgf.org).
 
 AlbumGui       : Icon view is now based on pure Qt4 model/view.
 AlbumGui       : New overlay button over icon view items to perform lossless rotations.
@@ -33,7 +33,7 @@ AlbumGui       : Find Duplicates search can be limited to an album and tag range
 
 CameraGUI      : New history of camera actions processed.
 
-ImageEditor    : New Liquid Rescale tool (http://www.digikam.org/node/439).
+ImageEditor    : New Liquid Rescale tool.
 ImageEditor    : Close tools by pressing ESC.
 ImageEditor    : New Local Contrast tool to simulate HDR images (Tone Mapping).
 ImageEditor    : New tool to remove noise using wavelets working in luminance (YCrCb color space).

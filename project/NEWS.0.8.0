@@ -7,7 +7,7 @@ FileTransfer   : New tool to import or export images via FTP, Samba, Fish (SSH) 
 
 AcquireImages  : Under windows, use Twain interface from libksane to factorize code.
 
-Shwup          : New tool to export images to Shwup web service (http://www.shwup.com).
+Shwup          : New tool to export images to Shwup web service (https://www.shwup.com).
 
 General        : All tools ported to Qt4. Qt3 transition class support is now dropped.
 

@@ -33,9 +33,9 @@ Panorama          : Bugfix for binary detection on OSes different than Linux (fi
                     First steps towards a cropping for target panorama.
                     Parallelization of tasks using ThreadWeaver.
 
-General           : New tool to export items to ImageShack web service (http://imageshack.us).
-General           : New tool to export items to MediaWiki web service (http://www.mediawiki.org).
-General           : New tool to export items to Imgur web service (http://imgur.com).
+General           : New tool to export items to ImageShack web service (https://imageshack.us).
+General           : New tool to export items to MediaWiki web service (https://www.mediawiki.org).
+General           : New tool to export items to Imgur web service (https://imgur.com).
 
 *****************************************************************************************************
 BUGFIXES:

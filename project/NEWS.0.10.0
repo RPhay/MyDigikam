@@ -57,7 +57,7 @@ AlbumGUI       : Add Tool tips to display Physical albums properties.
 AlbumGUI       : Icon view item can be rated on the fly.
 
 ImageEditor    : Added Thumbbar to easy navigate between pictures.
-ImageEditor    : New tool based on LensFun library (http://lensfun.berlios.de) to correct automatically lens aberrations.
+ImageEditor    : New tool based on LensFun library (https://lensfun.berlios.de) to correct automatically lens aberrations.
 ImageEditor    : LensDistortion and AntiVignetting are now merged with LensFun tool 
 ImageEditor    : All image tool tool settings provide default buttons to reset values.
 ImageEditor    : New Raw import tool to handle Raw pictures with customized decoding settings.
