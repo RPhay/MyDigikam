@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-11 00:40+0000\n"
-"PO-Revision-Date: 2025-11-10 02:26+0100\n"
+"PO-Revision-Date: 2025-11-12 01:51+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -22443,20 +22443,15 @@ msgstr ""
 "pantalla."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for images:"
-msgstr "&Usar el color de fondo del tema "
+msgstr "Usar el color de fondo para las imágenes:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render images on screen."
 msgstr ""
-"Seleccione aquí el color de fondo del tema que se usará para el área del "
-"editor de imágenes."
+"Defina un color para usar como fondo al mostrar las imágenes en la pantalla."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format

@@ -46,7 +46,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-11 00:40+0000\n"
-"PO-Revision-Date: 2025-10-17 11:14+0300\n"
+"PO-Revision-Date: 2025-10-22 17:39+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -13942,7 +13942,7 @@ msgstr "Kuvan säädöt"
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
-msgstr ""
+msgstr "Tallenna kameran käyttämät tekniset tiedot"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:133
 #, kde-format
@@ -14003,7 +14003,7 @@ msgstr "Linssin enimmäisaukko (f-luku):"
 msgid ""
 "Select here the smallest aperture of the lens used by camera to take the "
 "picture."
-msgstr ""
+msgstr "Valitse tässä pienin kameran kuvaa ottaessaan käyttämä aukko."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:78
 #, kde-format
@@ -17326,7 +17326,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Image Features Balance:"
-msgstr ""
+msgstr "Kuvapiirteiden tasapaino:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:121
 #, kde-format
@@ -17335,6 +17335,8 @@ msgid ""
 "Balances between local features (small number) or global features (high "
 "number)."
 msgstr ""
+"Tasapainottaa paikallisten (pieni luku) ja yleispiirteiden (suuri luku) "
+"välillä."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:123
 #, kde-format
@@ -20355,6 +20357,10 @@ msgid ""
 "print focal length from camera\n"
 "add a new line"
 msgstr ""
+"tulosta kameran anturitarkkuus\n"
+"tulosta kameran aukko\n"
+"tulosta kameran polttoväli\n"
+"lisää uusi rivi"
 
 #. i18n: ectx: property (placeholderText), widget (Digikam::DTextEdit, m_FreeCaptionFormat)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:145
@@ -33518,6 +33524,9 @@ msgid ""
 "outer circle the effect of the filter is at its maximum. It is expressed as "
 "a multiple of the diagonal of the image."
 msgstr ""
+"Tämä arvo on suodattimen ulomman ympyrän säde. Ulomman ympyrän ulkopuolella "
+"suodattimen vaikutus on maksimissaan. Arvo ilmaistaan kuvan halkaisijan "
+"monikertana."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:140
 #, kde-format
@@ -33562,6 +33571,8 @@ msgid ""
 "one is used to query and find relevant camera device information from "
 "Lensfun database."
 msgstr ""
+"Tämä on kuvan metatiedoista löytynyt kameranvalmistajan kuvausjono. Tätä "
+"käytetään etsittäessä Lensfun-tietokannasta kameratietoa."
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:460
 #, kde-format
@@ -33576,6 +33587,8 @@ msgid ""
 "one is used to query and found relevant camera device information from "
 "Lensfun database."
 msgstr ""
+"Tämä on kuvan metatiedoista löytynyt kameramallin kuvausjono. Tätä käytetään "
+"etsittäessä Lensfun-tietokannasta kameratietoa."
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:480
 #, kde-format
@@ -33583,6 +33596,8 @@ msgid ""
 "This is the lens description string found in image meta-data. This one is "
 "used to query and found relevant lens information from Lensfun database."
 msgstr ""
+"Tämä on kuvan metatiedoista löytynyt linssin kuvausjono. Tätä käytetään "
+"etsittäessä Lensfun-tietokannasta kameratietoa."
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:489
 #, kde-format
@@ -33590,6 +33605,8 @@ msgid ""
 "Set this option to try to guess the right camera/lens settings from the "
 "image metadata (as Exif or XMP)."
 msgstr ""
+"Aseta tämä, jos haluat ohjelman arvaavan oikeat kamera- ja linssiasetukset "
+"kuvan metatiedoista (Exif tai XMP)."
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:492
 #, kde-format
@@ -33599,7 +33616,7 @@ msgstr "Polttoväli (mm):"
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:493
 #, kde-format
 msgid "Aperture:"
-msgstr "Aukon koko:"
+msgstr "Aukko:"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:494
 #, kde-format
@@ -34109,6 +34126,8 @@ msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
 "radius that determines how much to sharpen the image."
 msgstr ""
+"0:n terävyydellä ei ole vaikutusta, 1 tai enemmän asettaa "
+"terävöitysmatriisin säteen, joka määrittää, paljonko kuvaa terävöitetään."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:161
 #, kde-format
@@ -38141,13 +38160,13 @@ msgstr ""
 #: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid "built on %1 with debug symbols"
-msgstr ""
+msgstr "koostettu alustalla %1 virheenpaikannussymbolein"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:341
 #: core/libs/onlineversion/onlineversiondlg.cpp:383
 #, kde-format
 msgid "built on %1"
-msgstr ""
+msgstr "koostettu alustalla %1"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:343
 #, fuzzy, kde-format
@@ -41391,7 +41410,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Ohje verkossa luokittelujen hallinnasta"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:71
 #, kde-format
@@ -42281,37 +42300,37 @@ msgstr "Ei mitään"
 #, kde-format
 msgctxt "Effect: KenBurnsZoomIn"
 msgid "Ken Burns - Camera Zoom In"
-msgstr ""
+msgstr "Ken Burns – Kameran lähennys"
 
 #: core/libs/transitionmngr/effectmngr.cpp:101
 #, kde-format
 msgctxt "Effect: KenBurnsZoomOut"
 msgid "Ken Burns - Camera Zoom Out"
-msgstr ""
+msgstr "Ken Burns – Kameran loitonnus"
 
 #: core/libs/transitionmngr/effectmngr.cpp:102
 #, kde-format
 msgctxt "Effect: KenBurnsPanLR"
 msgid "Ken Burns - Camera Pan Left to Right"
-msgstr ""
+msgstr "Ken Burns – Kameran panorointi vasemmalta oikealle"
 
 #: core/libs/transitionmngr/effectmngr.cpp:103
 #, kde-format
 msgctxt "Effect: KenBurnsPanRL"
 msgid "Ken Burns - Camera Pan Right to Left"
-msgstr ""
+msgstr "Ken Burns – Kameran panorointi oikealta vasemmalle"
 
 #: core/libs/transitionmngr/effectmngr.cpp:104
 #, kde-format
 msgctxt "Effect: KenBurnsPanTB"
 msgid "Ken Burns - Camera Pan Top to Bottom"
-msgstr ""
+msgstr "Ken Burns – Kameran panorointi ylhäältä alas"
 
 #: core/libs/transitionmngr/effectmngr.cpp:105
 #, kde-format
 msgctxt "Effect: KenBurnsPanBT"
 msgid "Ken Burns - Camera Pan Bottom to Top"
-msgstr ""
+msgstr "Ken Burns – Kameran panorointi alhaalta ylös"
 
 #: core/libs/transitionmngr/effectmngr.cpp:106
 #, kde-format
@@ -42499,6 +42518,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"Täydellinen alustariippumaton ratkaisu äänen ja videon nauhoittamiseen, "
+"muuntamiseen ja suoratoistoon."
 
 #: core/libs/video/manager/vidslidesettings.cpp:469
 #, kde-format
@@ -43003,7 +43024,7 @@ msgstr "Ladataan kameroita…"
 #: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
 msgid "Encoding done."
-msgstr ""
+msgstr "Koodaus valmis."
 
 #: core/libs/video/manager/vidslidethread.cpp:137
 #, fuzzy, kde-format
@@ -43227,49 +43248,49 @@ msgstr ""
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
-msgstr ""
+msgstr "0,5 ×"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
-msgstr ""
+msgstr "1,0 ×"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:314
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
-msgstr ""
+msgstr "1,5 ×"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:317
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
-msgstr ""
+msgstr "2,0 ×"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
-msgstr ""
+msgstr "2,5 ×"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:323
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
-msgstr ""
+msgstr "3,0 ×"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:326
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
-msgstr ""
+msgstr "4,0 ×"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
-msgstr ""
+msgstr "5,0 ×"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -43326,6 +43347,10 @@ msgid ""
 "click the 'Find' button to locate them on your system, otherwise please "
 "download and install them to proceed.</font></p></qt>"
 msgstr ""
+"<qt><p><font color=\"red\"><b>Varoitus:</b> Joitakin tarvittavia "
+"ohjelmatiedostoja ei järjestelmästä löytynyt. Jos ne on asennettu, paikanna "
+"ne napsauttamalla ”Etsi”-painiketta; muussa tapauksessa jatka ladattuasi ja "
+"asennettuasi ne.</font></p></qt>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:171
 #, kde-format
@@ -43343,7 +43368,7 @@ msgstr "Muuta"
 #: core/libs/widgets/files/dbinarysearch.cpp:187
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "Ohjelmatiedosto ei vaikuta toimivan odotetusti."
 
 #: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
@@ -44207,6 +44232,9 @@ msgid ""
 "OCR text Converter plugin,\n"
 "auto-tags assignment engine"
 msgstr ""
+"MJPEGSstream-liitännäinen,\n"
+"tekstintunnistus- ja muunnosliitännäinen,\n"
+"luokitusten automaattikytkentäliitännäinen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:181
 #, fuzzy, kde-format
@@ -44446,7 +44474,7 @@ msgstr "Tuetut raw-kamerat"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:69
 #, kde-format
 msgid "List of Detected Hardware"
-msgstr ""
+msgstr "Havaittujen laitteiden luettelo"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
@@ -44476,32 +44504,32 @@ msgstr "Tietokannan tilastot"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
 #, kde-format
 msgid "Toggle Left Side-bar"
-msgstr ""
+msgstr "Näytä tai piilota vasen sivupaneeli"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
 #, kde-format
 msgid "Toggle Right Side-bar"
-msgstr ""
+msgstr "Näytä tai piilota oikea sivupaneeli"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
 #, kde-format
 msgid "Previous Left Side-bar Tab"
-msgstr ""
+msgstr "Edellinen vasen sivupaneelivälilehti"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
 #, kde-format
 msgid "Next Left Side-bar Tab"
-msgstr ""
+msgstr "Seuraava vasen sivupaneelivälilehti"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
 #, kde-format
 msgid "Previous Right Side-bar Tab"
-msgstr ""
+msgstr "Edellinen oikea sivupaneelivälilehti"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
 #, kde-format
 msgid "Next Right Side-bar Tab"
-msgstr ""
+msgstr "Seuraava oikea sivupaneelivälilehti"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
 #, kde-format
@@ -44634,6 +44662,8 @@ msgid ""
 "ExifTool is a platform-independent command-line application for reading, "
 "writing and editing meta information in a wide variety of files."
 msgstr ""
+"ExifTool on alustariippumaton komentorivisovellus monien eri tiedostojen "
+"metatietojen lukemiseen, kirjoittamiseen ja muokkaamiseen."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:67
 #, kde-format
@@ -44790,7 +44820,7 @@ msgstr "JPEG-metatietotaso 8"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:100
 #, kde-format
 msgid "Microsoft Advanced Systems Format"
-msgstr ""
+msgstr "Microsoft Advanced Systems -muoto"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:104
 #, kde-format
@@ -44835,7 +44865,7 @@ msgstr "DjVu-kuva"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:136
 #, kde-format
 msgid "Photoshop Save for Web"
-msgstr ""
+msgstr "Photoshopin Save for Web"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:140
 #, kde-format
@@ -44845,12 +44875,12 @@ msgstr "DOS/Windows-ohjelmatiedosto"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:144
 #, kde-format
 msgid "Exchangeable Image File Format metadata"
-msgstr ""
+msgstr "EXIF-metatieto"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:148
 #, kde-format
 msgid "Flexible Image Transport System"
-msgstr ""
+msgstr "FITS (Flexible Image Transport System)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:152
 #, kde-format
@@ -44924,7 +44954,7 @@ msgstr "HTML (Hypertext Markup Language)"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
 #, kde-format
 msgid "International Color Consortium Color Profile"
-msgstr ""
+msgstr "ICCCP (International Color Consortium Color Profile)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
 #, kde-format
@@ -44934,7 +44964,7 @@ msgstr "ID3- ja Lyrics3-tiedot"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:212
 #, kde-format
 msgid "International Press Telecommunications Council"
-msgstr ""
+msgstr "IPTC (International Press Telecommunications Council)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:216
 #, kde-format
@@ -47575,7 +47605,7 @@ msgstr "Bahrain"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bangladesh"
-msgstr "Bangladeš"
+msgstr "Bangladesh"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:65
 #, kde-format
@@ -50847,37 +50877,29 @@ msgid "Save Images"
 msgstr "Kuvien tallennus"
 
 #: core/showfoto/setup/showfotosetup.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
-#| "to save images</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
-"<qt>Kuvien tallennuksen asetukset<br /><i>Määrittele oletusasetukset, joita "
-"käytetään tallennettaessa muokattuja kuvia</i></qt>"
+"<qt>Kuvien tallennuksen asetukset<br><i>Määritä kuvia tallennettaessa "
+"käytettävät oletusasetukset</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
-#, fuzzy, kde-format
-#| msgid "Geolocation"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Paikkasijainti"
 
 #: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Application Views Settings\n"
-#| "Customize the look of the views"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
 msgstr ""
-"Sovellusnäkymän asetukset\n"
-"Mukauta näkymien ulkoasua"
+"Paikkasijaintiasetukset\n"
+"Mukauta kohteiden paikantamisnäkymää"
 
 #: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
@@ -50901,16 +50923,13 @@ msgid "Miscellaneous"
 msgstr "Sekalaista"
 
 #: core/showfoto/setup/showfotosetup.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of Showfoto</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr ""
-"<qt>Sekalaiset asetukset<br/><i>Mukauta Showfoton muiden osien toimintaa.</"
-"i></qt>"
+"<qt>Sekalaiset asetukset<br><i>Mukauta Showfoton muiden osien toimintaa</i></"
+"qt>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
@@ -50920,11 +50939,11 @@ msgid "Rotate actions"
 msgstr "Kääntötoiminnot"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show images/thumbnails &rotated according to orientation tag."
+#, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
-msgstr "Näytä kuvat/esikatselut &käännettyinä metatietojen mukaisesti."
+msgstr ""
+"Nä&ytä kuvat tai pienoiskuvat suuntaluokituksen mukaisesti käännettyinä."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
@@ -50934,19 +50953,14 @@ msgstr "Merkitse suuntaluokitus tavalliseksi kierron ja pyöräytyksen jälkeen"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='https://en.wikipedia.org/wiki/Exif'>EXIF</a> - a standard "
-#| "used by most digital cameras today to store technical information (like "
-#| "aperture and shutter speed) about an image.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "a standard used by most digital cameras today to store technical information "
 "(like aperture and shutter speed) about an image."
 msgstr ""
-"<p><a href='http://fi.wikipedia.org/wiki/Exif'>Exif</a> on useimpien "
-"nykydigikameroiden käyttämä standardi teknisen tiedon (kuten aukon ja "
-"sulkimen nopeuden) tallettamiseksi kuvatiedostoon.</p>"
+"useimpien nykyisten digikameroiden käyttämä kuvan teknisten tietojen (kuten "
+"aukon tai suljinnopeuden) talletusstandardi."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:116
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197

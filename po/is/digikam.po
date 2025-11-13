@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-11 00:40+0000\n"
-"PO-Revision-Date: 2025-11-08 15:45+0000\n"
+"PO-Revision-Date: 2025-11-12 09:03+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -22136,19 +22136,14 @@ msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Birta einkunn myndar neðst á skjánum."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for images:"
-msgstr "Nota bakgr&unnslit frá þema"
+msgstr "Nota bakgrunnslit fyrir myndir:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render images on screen."
-msgstr ""
-"Veldu þetta til að nota bakgrunnslit úr heildaþema í myndvinnsluglugganum."
+msgstr "Skilgreindu lit til að nota sem bakgrunnslit við myndgerð á skjánum."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-11 00:40+0000\n"
-"PO-Revision-Date: 2025-11-11 15:13+0200\n"
+"PO-Revision-Date: 2025-11-12 13:55+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -8250,7 +8250,7 @@ msgstr "עדכן מרקם..."
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:153
 #, kde-format
 msgid "Vignetting Correction"
-msgstr ""
+msgstr "תיקון עיוות עדשה"
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:40
 #, fuzzy, kde-format
@@ -62807,10 +62807,10 @@ msgid "All model files were downloaded successfully."
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:287
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
-msgstr "העתקה למחשב"
+msgstr "שגיאת הורדה"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:288
 #, kde-format
@@ -62825,10 +62825,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:296
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
-msgstr "הוספת גרעיניות..."
+msgstr "לנסות שוב"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:434
 #, kde-format
@@ -62841,14 +62841,14 @@ msgid "File write error."
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:465
-#, fuzzy, kde-format
+#, kde-format
 msgid "File open error."
-msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
+msgstr "שגיאת פתיחת קובץ."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:480
-#, fuzzy, kde-format
+#, kde-format
 msgid "File on the server is too large."
-msgstr "כשל בעת הצגת קבצים ב %1"
+msgstr "הקובץ שבשרת גדול מדי."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:591
 #, kde-format
@@ -62887,22 +62887,22 @@ msgid "Clean up unused AI/DNN model files..."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Editor Window"
-msgstr "התאמת תצוגה לגודל החלון"
+msgstr "חלון עורך"
 
 #: core/utilities/setup/editor/setupeditor.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Versioning"
-msgstr "מקודד RAW"
+msgstr "ניהול גרסאות"
 
 #: core/utilities/setup/editor/setupeditor.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Save Settings"
-msgstr "הגדרת מצלמה"
+msgstr "שמירת ההגדרות"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
@@ -63123,16 +63123,16 @@ msgid "Workspace File Format"
 msgstr "תצורת קובץ"
 
 #: core/utilities/setup/editor/setupversioning.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Save files as"
-msgstr "קובצי תמונת"
+msgstr "שמירת קבצים בתור"
 
 #: core/utilities/setup/editor/setupversioning.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG"
-msgstr "LibJPEG"
+msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
 #, kde-kuit-format
@@ -63151,10 +63151,10 @@ msgid "Get information on available image file formats"
 msgstr ""
 
 #: core/utilities/setup/editor/setupversioning.cpp:198
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "When closing the editor"
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "בעת סגירת העורך"
 
 #: core/utilities/setup/editor/setupversioning.cpp:201
 #, kde-format
@@ -63163,10 +63163,10 @@ msgid "Always ask to save changes"
 msgstr ""
 
 #: core/utilities/setup/editor/setupversioning.cpp:202
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:radio"
 msgid "Save changes automatically"
-msgstr "עדכון-תאום לוחות-בקרה אוטומטי"
+msgstr "לשמור את השינויים אוטומטית"
 
 #: core/utilities/setup/editor/setupversioning.cpp:234
 #, kde-kuit-format
@@ -63229,16 +63229,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/editor/setupversioning.cpp:292
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "In main view"
-msgstr "אחזור תצוגה-מקדימה של תמונה..."
+msgstr "בתצוגה הראשית"
 
 #: core/utilities/setup/editor/setupversioning.cpp:301
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Always show original images"
-msgstr "תמונה מקורית:"
+msgstr "תמיד להציג את התמונות המקוריות"
 
 #: core/utilities/setup/editor/setupversioning.cpp:302
 #, kde-format
@@ -63330,8 +63330,7 @@ msgid "Load Advanced Metadata Profile"
 msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:198
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "אזהרה"
@@ -63356,14 +63355,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:405
-#, fuzzy, kde-format
+#, kde-format
 msgid "Read Options"
-msgstr "אפשרויות שינוי שם קובץ"
+msgstr "אפשרויות קריאה"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:406
-#, fuzzy, kde-format
+#, kde-format
 msgid "Write Options"
-msgstr "אפשרויות תצוגת תיקייה"
+msgstr "אפשרויות כתיבה"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:408
 #, kde-format
@@ -64781,69 +64780,74 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setup.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
-msgstr "יצירת תיקייה למסד הנתונים?"
+msgstr "מסד נתונים"
 
 #: core/utilities/setup/setup.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Database Settings\n"
 "Customize database settings"
-msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
+msgstr ""
+"הגדרות מסד נתונים\n"
+"התאמת הגדרות מסד הנתונים"
 
 #: core/utilities/setup/setup.cpp:132
-#, fuzzy, kde-format
-#| msgid "Collections"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
-msgstr "אגדים"
+msgstr "אוספים"
 
 #: core/utilities/setup/setup.cpp:133
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Collections Settings\n"
 "Set root albums locations"
-msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
+msgstr ""
+"הגדרת אוספים\n"
+"הגדרת מקומות אלבומי על"
 
 #: core/utilities/setup/setup.cpp:137
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
-msgstr "תצוגה"
+msgstr "תצוגות"
 
 #: core/utilities/setup/setup.cpp:138
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Application Views Settings\n"
 "Customize the look of the views"
-msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
+msgstr ""
+"הגדרות תצוגות יישום\n"
+"התאמת מראה התצוגות"
 
 #: core/utilities/setup/setup.cpp:142
-#, fuzzy, kde-format
-#| msgid "Tool-Tip"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
-msgstr "עצה"
+msgstr "חלונית צצה"
 
 #: core/utilities/setup/setup.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Items Tool-Tip Settings\n"
 "Customize information in item tool-tips"
-msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
+msgstr ""
+"הגדרות חלוניות צצות של פריטים\n"
+"התאמת המידע שמופיע בחלוניות הצצות של הפריטים"
 
 #: core/utilities/setup/setup.cpp:147
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
-msgstr "מידע-נוסף"
+msgstr "נתוני־על"
 
 #: core/utilities/setup/setup.cpp:148
 #, kde-format
@@ -64854,40 +64858,42 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setup.cpp:152
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
-msgstr "נוצר:"
+msgstr "תבניות"
 
 #: core/utilities/setup/setup.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Metadata templates\n"
 "Manage your collection of metadata templates"
-msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
+msgstr ""
+"תבניות נתוני־על\n"
+"ניהול אוסף תבניות נתוני־העל שלך"
 
 #: core/utilities/setup/setup.cpp:157
-#, fuzzy, kde-format
-#| msgid "Image Editor"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
-msgstr "עורך תמונה"
+msgstr "עורך תמונות"
 
 #: core/utilities/setup/setup.cpp:158
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Editor Settings\n"
 "Customize the image editor settings"
-msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
+msgstr ""
+"הגדרות עורך תמונות\n"
+"התאמת הגדרות עורך התמונות"
 
 #: core/utilities/setup/setup.cpp:162
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
-msgstr "ניהול צבע"
+msgstr "ניהול צבעים"
 
 #: core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
@@ -64928,10 +64934,10 @@ msgid ""
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
 #: core/utilities/setup/setup.cpp:189
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
-msgstr "תוספי KIPI"
+msgstr "תוספים"
 
 #: core/utilities/setup/setup.cpp:190
 #, fuzzy, kde-format
@@ -64942,8 +64948,7 @@ msgid ""
 msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
 
 #: core/utilities/setup/setup.cpp:194
-#, fuzzy, kde-format
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "שונות"
@@ -65193,14 +65198,14 @@ msgid "Use color managed view for previews and thumbnails"
 msgstr "תצוגת מנהל-צבע פעילה"
 
 #: core/utilities/setup/setupicc.cpp:359
-#, fuzzy, kde-format
+#, kde-format
 msgid "Camera and Scanner"
-msgstr "תיקיות מצלמה"
+msgstr "מצלמה וסורק"
 
 #: core/utilities/setup/setupicc.cpp:364
-#, fuzzy, kde-format
+#, kde-format
 msgid "Default input color profile:"
-msgstr "שימוש במרחב-צבע מתוקן ברירת מחדל"
+msgstr "פרופיל צבע קלט כברירת מחדל:"
 
 #: core/utilities/setup/setupicc.cpp:366
 #, kde-format
@@ -65224,9 +65229,9 @@ msgid "Printing and Proofing"
 msgstr ""
 
 #: core/utilities/setup/setupicc.cpp:389
-#, fuzzy, kde-format
+#, kde-format
 msgid "Output device profile:"
-msgstr "אמצעי פלט"
+msgstr "פרופיל אמצעי פלט:"
 
 #: core/utilities/setup/setupicc.cpp:398
 #, kde-format
@@ -65236,9 +65241,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setupicc.cpp:409
-#, fuzzy, kde-format
+#, kde-format
 msgid "Color Profiles Repository"
-msgstr "ספריית מרחבי-צבע"
+msgstr "מאגר פרופילי צבע"
 
 #: core/utilities/setup/setupicc.cpp:414
 #, kde-format
@@ -65274,49 +65279,48 @@ msgid "Rendering Intents:"
 msgstr "יעדי תיצוג:"
 
 #: core/utilities/setup/setupicc.cpp:467
-#, fuzzy, kde-format
-#| msgid "Behavior"
+#, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr "התנהגות"
 
 #: core/utilities/setup/setupicc.cpp:468
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
-msgstr "מספר מזהה של הפרופיל"
+msgstr "פרופילים"
 
 #: core/utilities/setup/setupicc.cpp:469
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "מתקדם"
 
 #: core/utilities/setup/setupicc.cpp:670
-#, fuzzy, kde-format
+#, kde-format
 msgid "Monitor Profile From System Settings"
-msgstr "הגדרות מרחבי-צבע ICC"
+msgstr "פרופיל צג מהגדרות המערכת"
 
 #: core/utilities/setup/setupicc.cpp:702
-#, fuzzy, kde-format
+#, kde-format
 msgid "No ICC profiles files found."
-msgstr "לצערי, לא נבחר מרחב-צבע"
+msgstr "לא נמצאו קובצי פרופילי ICC."
 
 #: core/utilities/setup/setupicc.cpp:718
-#, fuzzy, kde-format
+#, kde-format
 msgid "No Display Profile Available"
-msgstr "פרופיל לא זמין..."
+msgstr "אין פרופיל תצוגה זמין"
 
 #: core/utilities/setup/setupicc.cpp:720
-#, fuzzy, kde-format
+#, kde-format
 msgid "No Output Profile Available"
-msgstr "פרופיל לא זמין..."
+msgstr "אין פרופיל פלט זמין"
 
 #: core/utilities/setup/setupicc.cpp:854
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "none of the paths"
 msgid "none"
-msgstr "ללא"
+msgstr "אין"
 
 #: core/utilities/setup/setupicc.cpp:863
 #, kde-format
@@ -65384,39 +65388,38 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setupplugins.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Generic"
 msgstr "כללי"
 
 #: core/utilities/setup/setupplugins.cpp:74
-#, fuzzy, kde-format
-#| msgid "Image Editor"
+#, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
-msgstr "עורך תמונה"
+msgstr "עורך תמונות"
 
 #: core/utilities/setup/setupplugins.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
-msgstr "תצוגת תיקיות הושלמה..."
+msgstr "מנהל תור ריכוזי"
 
 #: core/utilities/setup/setupplugins.cpp:86
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
-msgstr "קובצי תמונת"
+msgstr "טועני תמונות"
 
 #: core/utilities/setup/setuptemplate.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "Template Title:"
-msgstr "נוצר:"
+msgstr "כותרת תבנית:"
 
 #: core/utilities/setup/setuptemplate.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the metadata template title here."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "נא למלא את כותרת תבנית נתוני־העל כאן."
 
 #: core/utilities/setup/setuptemplate.cpp:83
 #, kde-format
@@ -65436,9 +65439,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setuptemplate.cpp:112
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Replace..."
-msgstr "שינוי שם..."
+msgstr "ה&החלפה…"
 
 #: core/utilities/setup/setuptemplate.cpp:247
 #: core/utilities/setup/setuptemplate.cpp:278
@@ -65447,24 +65450,24 @@ msgid "Cannot register new metadata template without title."
 msgstr ""
 
 #: core/utilities/setup/setuptemplate.cpp:254
-#, fuzzy, kde-format
+#, kde-format
 msgid "A metadata template named '%1' already exists."
-msgstr "שם התוויות קיים"
+msgstr "כבר קיימת תבנית נתוני־על בשם ‚%1’."
 
 #: core/utilities/setup/setuptooltip.cpp:133
-#, fuzzy, kde-format
+#, kde-format
 msgid "Tool-Tips Font:"
-msgstr "עצה"
+msgstr "גופן חלוניות צצות:"
 
 #: core/utilities/setup/setuptooltip.cpp:134
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select here the font used to display text in tool-tips."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "אפשר לבחור כאן את הגופן לשימוש תצוגת הטקסט בחלוניות הצצות."
 
 #: core/utilities/setup/setuptooltip.cpp:142
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show icon-view and thumb-bar items' tool-tips"
-msgstr "הצגת עצות סרגל-תמונות-ממוזערות"
+msgstr "הצגת תצוגת סמלים וחלוניות צצות של פריטי סרגל תמוניות ממוזערות"
 
 #: core/utilities/setup/setuptooltip.cpp:143
 #, fuzzy, kde-format
@@ -65562,84 +65565,84 @@ msgstr "פרטים על digiKam"
 #: core/utilities/setup/setuptooltip.cpp:301
 #, fuzzy, kde-format
 msgid "Album name"
-msgstr "שם אוסף-תמונות חדש"
+msgstr "שם אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:229
 #: core/utilities/setup/setuptooltip.cpp:302
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the album name."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את שם האלבום."
 
 #: core/utilities/setup/setuptooltip.cpp:231
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image title"
-msgstr "הצגת סוג תמונה"
-
-#: core/utilities/setup/setuptooltip.cpp:232
-#, fuzzy, kde-format
-msgid "Set this option to display the image title."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
-
-#: core/utilities/setup/setuptooltip.cpp:234
-#, fuzzy, kde-format
-msgid "Image caption"
 msgstr "כותרת תמונה"
 
+#: core/utilities/setup/setuptooltip.cpp:232
+#, kde-format
+msgid "Set this option to display the image title."
+msgstr "הגדרת האפשרות הזאת תציג את כותרת התמונה."
+
+#: core/utilities/setup/setuptooltip.cpp:234
+#, kde-format
+msgid "Image caption"
+msgstr "תיאור תמונה"
+
 #: core/utilities/setup/setuptooltip.cpp:235
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the image captions."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את תיאורי התמונה."
 
 #: core/utilities/setup/setuptooltip.cpp:237
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image tags"
-msgstr "הגדרת מצלמה"
+msgstr "תגיות תמונה"
 
 #: core/utilities/setup/setuptooltip.cpp:238
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the image tags."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את תגיות התמונה."
 
 #: core/utilities/setup/setuptooltip.cpp:240
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image labels"
-msgstr "קובצי תמונת"
+msgstr "תוויות תמונה"
 
 #: core/utilities/setup/setuptooltip.cpp:241
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את תוויות בחירת תמונה, צבע ודירוגים."
 
 #: core/utilities/setup/setuptooltip.cpp:253
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio/Video Information"
-msgstr "נתוני ההתקן"
+msgstr "פרטי שמע/וידאו"
 
 #: core/utilities/setup/setuptooltip.cpp:256
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Aspect Ratio"
-msgstr "שמירה על יחס"
+msgstr "יחס גובה־רוחב של וידאו"
 
 #: core/utilities/setup/setuptooltip.cpp:257
 #: core/utilities/setup/setuptooltip.cpp:272
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the Aspect Ratio of the Video."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את יחס גובה־רוחב של הווידאו."
 
 #: core/utilities/setup/setuptooltip.cpp:260
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the Audio Bit Rate of the Video."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את קצב סיביות השמע של הווידאו."
 
 #: core/utilities/setup/setuptooltip.cpp:263
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the Audio Channel Type of the Video."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את סוג ערוץ השמע של הווידאו."
 
 #: core/utilities/setup/setuptooltip.cpp:266
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the Audio Codec of the Video."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את מפענח השמע של הווידאו."
 
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
