@@ -66,7 +66,7 @@ BUGFIXES:
 041 --> 511828 - Face recognition settings incorrect after crash.
 042 --> 511868 - digiKam not launching from AppImage.
 043 --> 511876 - Bulk Editing Geolocation Coordinates Across Multiple Images in Geolocation Editor.
-044 --> 
+044 --> 512021 - "Reject this suggestion" Results in "files awaiting synchronization".
 045 --> 
 046 --> 
 047 -->
