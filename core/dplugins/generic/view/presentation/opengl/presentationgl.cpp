@@ -333,7 +333,7 @@ void PresentationGL::initializeGL()
     d->texture[2] = new QOpenGLTexture(QOpenGLTexture::Target2D); // end screen texture
 
     QImage black(width(), height(), QImage::Format_RGB32);
-    black.fill(QColor(0, 0, 0).rgb());
+    black.fill(d->sharedData->bgColor.rgb());
 
     d->texture[0]->setData(black);
     d->texture[0]->bind();
@@ -627,7 +627,7 @@ void PresentationGL::loadImage()
     {
         QImage black(width(), height(), QImage::Format_RGB32);
 
-        black.fill(QColor(0, 0, 0).rgb());
+        black.fill(d->sharedData->bgColor.rgb());
 
         montage(image, black);
 
