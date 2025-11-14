@@ -21392,12 +21392,12 @@ msgstr "显示 digiKam 图像评分到屏幕底部。"
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
 #, kde-format
 msgid "Use background color for images:"
-msgstr ""
+msgstr "图像显示背景色："
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
 #, kde-format
 msgid "Define a color to use as background to render images on screen."
-msgstr ""
+msgstr "定义在屏幕上显示图像时使用的背景色。"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format

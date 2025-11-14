@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-11 00:40+0000\n"
-"PO-Revision-Date: 2025-11-09 16:37+0100\n"
+"PO-Revision-Date: 2025-11-12 14:01+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -22627,20 +22627,16 @@ msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Affiche la note digiKam de l'image au bas de l'écran."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for images:"
-msgstr "&Utiliser la couleur de fond du thème"
+msgstr "Utiliser la couleur d'arrière-plan pour les images :"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render images on screen."
 msgstr ""
-"Cochez cette option pour utiliser la couleur de fond du thème dans la zone "
-"de l'éditeur d'images."
+"Définir une couleur d'arrière-plan à utiliser pour le rendu d'images sur "
+"l'écran."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format
