@@ -87,6 +87,7 @@ public:
     bool                     offAutoDelay                   = false;
     QString                  effectName;
     QString                  effectNameGL;
+    QColor                   bgColor                        = QColor(Qt::black);
 
     /// Captions page
     uint                     commentsFontColor              = 0;

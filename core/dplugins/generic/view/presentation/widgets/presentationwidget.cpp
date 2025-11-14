@@ -241,7 +241,7 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
 
     d->pa            = QPolygon(4);
     m_buffer         = QPixmap(size());
-    m_buffer.fill(Qt::black);
+    m_buffer.fill(d->sharedData->bgColor);
 
     d->imageLoader   = new PresentationLoader(d->sharedData, width(), height(), d->fileIndex);
 
@@ -334,7 +334,7 @@ void PresentationWidget::loadNextImage()
     else
     {
         m_buffer = QPixmap(size());
-        m_buffer.fill(Qt::black);
+        m_buffer.fill(d->sharedData->bgColor);
     }
 
     d->fileIndex++;
@@ -366,7 +366,7 @@ void PresentationWidget::loadNextImage()
 
     QPixmap newPixmap = QPixmap::fromImage(img);
     QPixmap pixmap(width(), height());
-    pixmap.fill(Qt::black);
+    pixmap.fill(d->sharedData->bgColor);
     QPainter p(&pixmap);
 
     p.drawPixmap((width()  - newPixmap.width())  / 2,
@@ -417,7 +417,7 @@ void PresentationWidget::loadPrevImage()
 
     QPixmap newPixmap = QPixmap::fromImage(img);
     QPixmap pixmap(width(), height());
-    pixmap.fill(Qt::black);
+    pixmap.fill(d->sharedData->bgColor);
     QPainter p(&pixmap);
 
     p.drawPixmap((width()  - newPixmap.width())  / 2,

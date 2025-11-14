@@ -139,6 +139,7 @@ void PresentationDlg::readSettings()
     d->sharedData->printFileName     = grp.readEntry("Print Filename",           true);
     d->sharedData->printProgress     = grp.readEntry("Print Progress Indicator", true);
     d->sharedData->printFileComments = grp.readEntry("Print Comments",           false);
+    d->sharedData->bgColor           = grp.readEntry("Background Color",         QColor(Qt::black));
     d->sharedData->loop              = grp.readEntry("Loop",                     false);
     d->sharedData->shuffle           = grp.readEntry("Shuffle",                  false);
     d->sharedData->effectName        = grp.readEntry("Effect Name",              "Random");
@@ -243,6 +244,7 @@ void PresentationDlg::saveSettings()
     grp.writeEntry("Print Filename",           d->sharedData->printFileName);
     grp.writeEntry("Print Progress Indicator", d->sharedData->printProgress);
     grp.writeEntry("Print Comments",           d->sharedData->printFileComments);
+    grp.writeEntry("Background Color",         d->sharedData->bgColor);
     grp.writeEntry("Loop",                     d->sharedData->loop);
     grp.writeEntry("Shuffle",                  d->sharedData->shuffle);
     grp.writeEntry("Use Milliseconds",         d->sharedData->useMilliseconds);

@@ -179,7 +179,6 @@ public:
      */
     QUrl                         imageUrl;
 
-
     /**
      * Uses a background color to render pictures.
      */

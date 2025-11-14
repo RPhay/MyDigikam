@@ -167,7 +167,7 @@ void KBImageLoader::run()
                 // generate a black dummy image
 
                 d->texture = QImage(128, 128, QImage::Format_ARGB32);
-                d->texture.fill(Qt::black);
+                d->texture.fill(d->sharedData->bgColor);
             }
 
             d->condLock.lock();

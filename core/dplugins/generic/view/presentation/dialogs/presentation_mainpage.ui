@@ -118,53 +118,6 @@
    </item>
    <item>
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
-      <widget class="QGroupBox" name="groupBox_2">
-       <property name="title">
-        <string>Content Rendering</string>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QCheckBox" name="m_printNameCheckBox">
-            <property name="text">
-             <string>P&amp;rint filename</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="m_printCommentsCheckBox">
-          <property name="text">
-           <string>Pr&amp;int captions </string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="m_printProgressCheckBox">
-          <property name="text">
-           <string>Progress indicator</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>17</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </widget>
-     </item>
      <item row="0" column="1">
       <widget class="QGroupBox" name="groupBox_3">
        <property name="title">
@@ -187,16 +140,23 @@
         </item>
         <item>
          <widget class="QCheckBox" name="m_offAutoDelayCheckBox">
-          <property name="text">
-           <string>&amp;Off Auto Delay</string>
-          </property>
           <property name="whatsThis">
            <string>this option requires user action to switch between images</string>
+          </property>
+          <property name="text">
+           <string>&amp;Off Auto Delay</string>
           </property>
          </widget>
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="m_delayLabel">
+            <property name="text">
+             <string>Delay between images (s):</string>
+            </property>
+           </widget>
+          </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_3">
             <property name="text">
@@ -204,10 +164,10 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="0" colspan="2">
-           <widget class="QLabel" name="m_delayLabel">
+          <item row="1" column="0" colspan="2">
+           <widget class="QCheckBox" name="m_openglCheckBox">
             <property name="text">
-             <string>Delay between images (s):</string>
+             <string>Use Open&amp;GL transitions</string>
             </property>
            </widget>
           </item>
@@ -233,13 +193,6 @@
           <item row="2" column="1" colspan="2">
            <widget class="QComboBox" name="m_effectsComboBox"/>
           </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QCheckBox" name="m_openglCheckBox">
-            <property name="text">
-             <string>Use Open&amp;GL transitions</string>
-            </property>
-           </widget>
-          </item>
          </layout>
         </item>
         <item>
@@ -256,6 +209,67 @@
          </spacer>
         </item>
        </layout>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>Content Rendering</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="2" column="0">
+         <widget class="QCheckBox" name="m_printProgressCheckBox">
+          <property name="text">
+           <string>Progress indicator</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QCheckBox" name="m_printNameCheckBox">
+            <property name="text">
+             <string>P&amp;rint filename</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QLabel" name="m_bgLabel">
+          <property name="text">
+           <string>Use background color for images:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="m_printCommentsCheckBox">
+          <property name="text">
+           <string>Pr&amp;int captions </string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>17</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="2">
+         <widget class="Digikam::DColorSelector" name="m_bgColor"/>
+        </item>
+       </layout>
+       <zorder>m_bgLabel</zorder>
+       <zorder>m_printCommentsCheckBox</zorder>
+       <zorder>m_printProgressCheckBox</zorder>
+       <zorder>m_bgColor</zorder>
       </widget>
      </item>
     </layout>
@@ -275,6 +289,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Digikam::DColorSelector</class>
+   <extends>QPushButton</extends>
+   <header>dcolorselector.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
