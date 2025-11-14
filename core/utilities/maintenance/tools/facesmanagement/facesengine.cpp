@@ -466,7 +466,14 @@ void FacesEngine::slotImagesSkipped(const MLPipelinePackageNotify::Ptr& package)
 {
     Q_UNUSED(package);
 
-    advance(1);
+    uint adv = 0;
+
+    if ((adv = checkProgressNeeded()) == 0)
+    {
+        return;
+    }
+
+    advance(adv);
 }
 
 void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& package)
