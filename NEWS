@@ -18,7 +18,8 @@ Bundles component versions:
 
 Raw Engine      : Update internal Libraw to last 20251026 upstream.
 Advanced Rename : New modifier "Date Format".
-SlideShow       : Add new option to customize the color background instead pure black in case of image transparency usage.
+SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
+Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.
 File Copy       : Complete rewrite the GUI for a better usability.
 File Transfer   : Complete rewrite the GUI for a better usability.
 Web Site        : Huge update of the contents eg. screenshots, description, history, features, support, download, etc.
