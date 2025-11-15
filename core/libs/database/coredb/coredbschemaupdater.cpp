@@ -52,7 +52,7 @@ int CoreDbSchemaUpdater::schemaVersion()
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 19;
+    return 20;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -553,7 +553,15 @@ void CoreDbSchemaUpdater::defaultIgnoreDirectoryFilterSettings(QStringList& defa
     // NOTE: when updating this section,
     // just increment filterSettingsVersion() so that the changes take effect.
 
+    /**
+     * Synology NAS: in every directory the system creates a subdirectory @eaDir to store thumbnails.
+     */
     defaultIgnoreDirectoryFilter << QLatin1String("@eaDir");
+
+    /**
+     * Apple macOS Photo Application database hosted in ~/Pictures/
+     */
+    defaultIgnoreDirectoryFilter << QLatin1String("Photos Library.photoslibrary");
 }
 
 bool CoreDbSchemaUpdater::createFilterSettings()
