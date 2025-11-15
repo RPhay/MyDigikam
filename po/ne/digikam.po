@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-11 00:40+0000\n"
+"POT-Creation-Date: 2025-11-15 00:39+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -11189,7 +11189,7 @@ msgstr "छवि बचत गर्नुहोस्"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
@@ -20501,7 +20501,7 @@ msgstr "इन्टरफेस विकल्प"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_loopCheckBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:328
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:177
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:130
 #, kde-format
 msgid "&Loop"
 msgstr ""
@@ -20742,46 +20742,46 @@ msgstr "रङ:"
 msgid "Background color:"
 msgstr "पृष्ठभूमि रङ:"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:269
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
 #, fuzzy, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
 msgstr[0] "छवि"
 msgstr[1] "छवि"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:273
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
 #, fuzzy, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
 msgstr[0] "छवि"
 msgstr[1] "छवि"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:377
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:383
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:415
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:421
 #, fuzzy, kde-format
 msgctxt "Image number %1"
 msgid "Image #%1"
 msgstr "%1 मा छवि फेला पर्यो"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:455
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, kde-format
 msgid "Ken Burns"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:476
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:482
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
 msgid "Delay between images (ms):"
 msgstr "छविहरूबिच विलम्ब:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_delayLabel)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:483
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:210
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:489
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:156
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
 msgid "Delay between images (s):"
@@ -20811,67 +20811,75 @@ msgstr ""
 msgid "Currently selected image in the portfolio list."
 msgstr "चयन गरेको मेट्नुहोस्"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
-#, fuzzy, kde-format
-msgid "Content Rendering"
-msgstr "व्यतिरेक:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printNameCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:132
-#, fuzzy, kde-format
-#| msgid "Print image file name"
-msgid "P&rint filename"
-msgstr "छवि फाइल नाम मुद्रण गर्नुहोस्"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:141
-#, fuzzy, kde-format
-#| msgid "Show picture comments"
-msgid "Pr&int captions "
-msgstr "तस्विर टिप्पणी देखाउनुहोस्"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:148
-#, fuzzy, kde-format
-msgid "Progress indicator"
-msgstr "प्रर्दशन सूचक"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:171
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
 #, kde-format
 msgid "Playback"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_shuffleCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:184
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:137
 #, fuzzy, kde-format
 msgid "&Shuffle images"
 msgstr "छवि बचत गर्नुहोस्"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_offAutoDelayCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:191
-#, kde-format
-msgid "&Off Auto Delay"
-msgstr ""
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_offAutoDelayCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:194
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:144
 #, kde-format
 msgid "this option requires user action to switch between images"
 msgstr ""
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_offAutoDelayCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:147
+#, kde-format
+msgid "&Off Auto Delay"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:203
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:163
 #, fuzzy, kde-format
 msgid "Effect :"
 msgstr "रङ गहिराइ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_openglCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:239
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:170
 #, fuzzy, kde-format
 msgid "Use Open&GL transitions"
 msgstr "Exif अभिमुखीकरण ट्याग सुधार गर्नुहोस्"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:217
+#, fuzzy, kde-format
+msgid "Content Rendering"
+msgstr "व्यतिरेक:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:223
+#, fuzzy, kde-format
+msgid "Progress indicator"
+msgstr "प्रर्दशन सूचक"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printNameCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:232
+#, fuzzy, kde-format
+#| msgid "Print image file name"
+msgid "P&rint filename"
+msgstr "छवि फाइल नाम मुद्रण गर्नुहोस्"
+
+#. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#, fuzzy, kde-format
+#| msgid "&Use theme background color"
+msgid "Use background color for images:"
+msgstr "विषयवस्तु पृष्ठभूमि रङ प्रयोग गर्नुहोस्"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:248
+#, fuzzy, kde-format
+#| msgid "Show picture comments"
+msgid "Pr&int captions "
+msgstr "तस्विर टिप्पणी देखाउनुहोस्"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:70
 #, fuzzy, kde-format
@@ -21345,12 +21353,6 @@ msgstr "तस्विर दर देखाउनुहोस्"
 #, fuzzy, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "<p>स्क्रिनको तल छवि फाइलनाम मुद्रण गर्नुहोस्"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
-msgid "Use background color for images:"
-msgstr "विषयवस्तु पृष्ठभूमि रङ प्रयोग गर्नुहोस्"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
 #, fuzzy, kde-format
@@ -25986,7 +25988,7 @@ msgstr "दर:"
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:491
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
@@ -59675,22 +59677,22 @@ msgstr "%1 मा छवि फेला पर्यो"
 msgid "Face found: %1"
 msgstr "%1 मा छवि फेला पर्यो"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, fuzzy, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "खोजी:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
 #, fuzzy, kde-format
 msgid "Found %1 face."
 msgstr "फ्ल्यास:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
 #, fuzzy, kde-format
 msgid "Recognized: %1"
 msgstr "साइज:"

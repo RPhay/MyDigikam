@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-11 00:40+0000\n"
-"PO-Revision-Date: 2025-11-13 18:07+0200\n"
+"POT-Creation-Date: 2025-11-15 00:39+0000\n"
+"PO-Revision-Date: 2025-11-14 20:05+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -246,16 +246,16 @@ msgid "Upload to Camera"
 msgstr "העלאה למצלמה"
 
 #: core/app/dragdrop/itemdragdrop.cpp:56
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
-msgstr "גודל הקובץ"
+msgstr "קיבוץ לכאן"
 
 #: core/app/dragdrop/itemdragdrop.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
-msgstr "מרחב צבע"
+msgstr "להוסיף לכאן פריטים"
 
 #: core/app/dragdrop/itemdragdrop.cpp:70
 #, kde-format
@@ -264,19 +264,19 @@ msgid "Group here and move to album"
 msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:457
-#, fuzzy, kde-format
+#, kde-format
 msgid "Assign Tag to Dropped Items"
-msgstr "הוספת תוויות לפריטים המסומנים"
+msgstr "הקצאת תגית לפריטים שנגררו"
 
 #: core/app/dragdrop/itemdragdrop.cpp:755
-#, fuzzy, kde-format
+#, kde-format
 msgid "Change Face Tags"
-msgstr "הצגת תוויות התמונה"
+msgstr "החלפת תגיות פנים"
 
 #: core/app/dragdrop/itemdragdrop.cpp:759
-#, fuzzy, kde-format
+#, kde-format
 msgid "Change Face Tag"
-msgstr "שינוי גודל-אותיות ל:"
+msgstr "החלפת תגית פנים"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
@@ -302,15 +302,14 @@ msgid "Assign Tags to &All Items"
 msgstr "הוספת תוויות לכל הפריטים"
 
 #: core/app/dragdrop/itemdragdrop.cpp:853
-#, fuzzy, kde-format
+#, kde-format
 msgid "Importing"
-msgstr "ייבא"
+msgstr "מתבצע ייבוא"
 
 #: core/app/dragdrop/tagdragdrop.cpp:266
-#, fuzzy, kde-format
-#| msgid "&Move Here"
+#, kde-format
 msgid "M&erge Here"
-msgstr "העבי&רו לכאן"
+msgstr "מי&זוג לכאן"
 
 #: core/app/dragdrop/tagdragdrop.cpp:390
 #, kde-format
@@ -345,34 +344,34 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/app/filters/filtersidebarwidget.cpp:112
-#, fuzzy, kde-format
+#, kde-format
 msgid "Text Filter"
-msgstr "מסנן אדום"
+msgstr "מסנן טקסט"
 
 #: core/app/filters/filtersidebarwidget.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgid "MIME Type Filter"
-msgstr "מסנן אדום"
+msgstr "מסנן סוג תוכן/MIME"
 
 #: core/app/filters/filtersidebarwidget.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgid "Geolocation Filter"
-msgstr "מסנן ירוק"
+msgstr "מסנן גאוגרפי"
 
 #: core/app/filters/filtersidebarwidget.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgid "Images Without Tags"
-msgstr "תמונות נמצאו ב- %1"
+msgstr "תמונות ללא תגיות"
 
 #: core/app/filters/filtersidebarwidget.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show images without a tag."
-msgstr "הצגת תוויות התמונה"
+msgstr "הצגת תמונות ללא תגיות."
 
 #: core/app/filters/filtersidebarwidget.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "Tags Matching Condition"
-msgstr "תנאי התאמה"
+msgstr "תגיות שעונות על תנאי"
 
 #: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
@@ -395,46 +394,46 @@ msgid "AND"
 msgstr "וגם"
 
 #: core/app/filters/filtersidebarwidget.cpp:174
-#, fuzzy, kde-format
+#, kde-format
 msgid "Tags Filter"
-msgstr "סינון תוויות"
+msgstr "מסנן תגיות"
 
 #: core/app/filters/filtersidebarwidget.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgid "Images Without Face tags"
-msgstr "תמונות נמצאו ב- %1"
+msgstr "תמונות ללא תגיות פנים"
 
 #: core/app/filters/filtersidebarwidget.cpp:193
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show images without a face tag."
-msgstr "הצגת תוויות התמונה"
+msgstr "הצגת תמונות ללא תגית פנים."
 
 #: core/app/filters/filtersidebarwidget.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgid "Face tags Matching Condition"
-msgstr "תנאי התאמה"
+msgstr "תגיות פנים שעונות על תנאי"
 
 #: core/app/filters/filtersidebarwidget.cpp:218
-#, fuzzy, kde-format
+#, kde-format
 msgid "Face Tags Filter"
-msgstr "סינון תוויות"
+msgstr "מסנן תגיות פנים"
 
 #: core/app/filters/filtersidebarwidget.cpp:236
-#, fuzzy, kde-format
+#, kde-format
 msgid "Labels Filter"
-msgstr "מסנני עדשה"
+msgstr "מסנן תוויות"
 
 #: core/app/filters/tagfilterview.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
-msgstr "סינון תוויות"
+msgstr "שחזור מסנני תגיות"
 
 #: core/app/filters/tagfilterview.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: tag filter"
 msgid "On"
-msgstr "פתיחה באמצעות"
+msgstr "פעיל"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, kde-format
@@ -443,33 +442,33 @@ msgid "Off"
 msgstr ""
 
 #: core/app/filters/tagfilterview.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
-msgstr "סינון תוויות"
+msgstr "מצב מסנן תגיות"
 
 #: core/app/filters/tagfilterview.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
-msgstr "הוספת תוויות זו"
+msgstr "התעלמות מהתגית הזאת"
 
 #: core/app/filters/tagfilterview.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
-msgstr "הסרת תוויות זו"
+msgstr "חייבת להיות לה התגית הזאת"
 
 #: core/app/filters/tagfilterview.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
-msgstr "הסרת תוויות זו"
+msgstr "אסור שתהיה לה התגית הזאת"
 
 #: core/app/items/delegate/itemdelegate.cpp:387
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reference Image"
-msgstr "בחירת תמונות"
+msgstr "תמונת סימוכין"
 
 #: core/app/items/overlays/facerejectionoverlay.cpp:49
 #, kde-format
@@ -488,10 +487,10 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/app/items/overlays/groupindicatoroverlay.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Group is open."
-msgstr "ק&יבוץ"
+msgstr "הקבוצה פתוחה."
 
 #: core/app/items/overlays/groupindicatoroverlay.cpp:127
 #, kde-format
@@ -502,58 +501,56 @@ msgstr "הקבוצה סגורה."
 #: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has geolocation information."
-msgstr "עריכת מאפייני אוסף-התמונות ונתוני האגד-האוספים."
+msgstr "לפריט הזה יש פירוט גאוגרפי."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
-msgstr "סיום מצב מסך-מלא"
+msgstr "הצגה במסך מלא"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
 #: core/app/views/preview/itempreviewview.cpp:167
 #: core/utilities/import/items/importoverlays.cpp:434
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate Left"
-msgstr "סובב שמאלה"
+msgstr "סיבוב שמאלה"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
 #: core/app/views/preview/itempreviewview.cpp:169
 #: core/utilities/import/items/importoverlays.cpp:438
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate Right"
-msgstr "סובב ימינה"
+msgstr "סיבוב ימינה"
 
 #: core/app/items/overlays/itemselectionoverlay.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect Item"
-msgstr "ביטול בחירה"
+msgstr "ביטול בחירת פריט"
 
 #: core/app/items/overlays/itemselectionoverlay.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Item"
-msgstr "בחירת פריטים חדשים"
+msgstr "בחירת פריט"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:143
-#, fuzzy, kde-format
-#| msgid "Set as Album Thumbnail"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
-msgstr "קביעת צלמית לאלבום"
+msgstr "הגדרה כסמל לאלבום"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:147
-#, fuzzy, kde-format
-#| msgid "Set as Tag Thumbnail"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
-msgstr "קביעת תווית תצוגה מקדימה"
+msgstr "הגדרת תווית תצוגה מקדימה"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:184
 #, fuzzy, kde-format
@@ -576,24 +573,22 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
-#, fuzzy, kde-format
-#| msgid "Reset Album Icon"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Reset Album Icon"
 msgstr "איפוס סמל אלבום"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:86
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "All Albums"
-msgstr "אוספי-תמונות"
+msgstr "כל האלבומים"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:96
-#, fuzzy, kde-format
-#| msgid "All Tags"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "All Tags"
-msgstr "כל התוויות"
+msgstr "כל התגיות"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:100
 #, kde-format
@@ -603,40 +598,35 @@ msgstr "בחירה"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:105
 #: core/app/items/utils/contextmenuhelper_albums.cpp:115
-#, fuzzy, kde-format
-#| msgid "Children"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Children"
-msgstr "ילדים"
+msgstr "צאצאים"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:106
 #: core/app/items/utils/contextmenuhelper_albums.cpp:116
-#, fuzzy, kde-format
-#| msgid "Parents"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Parents"
 msgstr "הורים"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "deselect tags menu"
-#| msgid "Deselect"
+#, kde-format
 msgctxt "@action: deselect tags menu"
 msgid "Deselect"
 msgstr "ביטול בחירה"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:120
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Invert Selection"
 msgstr "היפוך בחירה"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: group items"
 msgid "Group"
-msgstr "ק&יבוץ"
+msgstr "קיבוץ"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:74
 #, kde-format
@@ -652,47 +642,47 @@ msgstr "סגירת כל הקבוצות"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:101
 #: core/app/items/utils/contextmenuhelper_groups.cpp:162
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Grouped Images"
-msgstr "סידור תמונות"
+msgstr "הצגת תמונות מקובצות"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:108
 #: core/app/items/utils/contextmenuhelper_groups.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide Grouped Images"
-msgstr "סידור תמונות"
+msgstr "הסתרת קבוצות מקובצות"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Ungroup"
-msgstr "ה&פרדה"
+msgstr "פירוק"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:126
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove From Group"
-msgstr "הסרת קבוצה"
+msgstr "הסרה מקבוצה"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:136
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected Here"
-msgstr "%1 אוספי-תמונות נבחרו"
+msgstr "קיבוץ הנבחרות לכאן"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Time"
-msgstr "%1 אוספי-תמונות נבחרו"
+msgstr "קיבוץ הנבחרות לפי זמן"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Filename"
-msgstr "%1 אוספי-תמונות נבחרו"
+msgstr "קיבוץ הנבחרות לפי שם קובץ"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:151
 #, fuzzy, kde-format
@@ -701,16 +691,16 @@ msgid "Group Selected By Timelapse / Burst"
 msgstr "%1 אוספי-תמונות נבחרו"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:177
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Selected From Groups"
-msgstr "הסרת קבוצה"
+msgstr "הסרת הנבחרות מהקבוצות"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:182
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Ungroup Selected"
-msgstr "%1 אוספי-תמונות נבחרו"
+msgstr "פירוק הפריטים הנבחרים מהקבוצה"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
@@ -718,73 +708,70 @@ msgstr "%1 אוספי-תמונות נבחרו"
 #: core/utilities/import/widgets/importcontextmenu.cpp:200
 #: core/utilities/import/widgets/importcontextmenu.cpp:227
 #: core/utilities/import/widgets/importcontextmenu.cpp:265
-#, fuzzy, kde-format
-#| msgid "Open With"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
-msgstr "פתיחה באמצעות"
+msgstr "פתיחה עם"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
 #: core/utilities/import/widgets/importcontextmenu.cpp:239
 #: core/utilities/import/widgets/importcontextmenu.cpp:280
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
-msgstr "חיתוך... "
+msgstr "אחר…"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
 #: core/utilities/import/widgets/importcontextmenu.cpp:248
 #: core/utilities/import/widgets/importcontextmenu.cpp:297
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."
-msgstr "פתיחה באמצעות"
+msgstr "פתיחה עם…"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:24
-#, fuzzy, kde-format
-#| msgid "New Tag..."
+#, kde-format
 msgctxt "@action: context menu"
 msgid "New Tag..."
-msgstr "תווית חדשה..."
+msgstr "תגית חדשה…"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:35
-#, fuzzy, kde-format
-#| msgid "Delete Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Delete Tag"
-msgstr "מחיקת תווית"
+msgstr "מחיקת תגית"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:46
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Delete Tags"
-msgstr "מחיקת תווית"
+msgstr "מחיקת תגיות"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tag"
-msgstr "הוספת תווית חדשה..."
+msgstr "סימון כתווית פנים"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tags"
-msgstr "הצגת תוויות התמונה"
+msgstr "סימון כתגיות פנים"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: edit tag properties"
 msgid "Properties..."
-msgstr "מאפיינים..."
+msgstr "מאפיינים…"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tag As Face"
-msgstr "הוספת תווית חדשה..."
+msgstr "ביטול סימון תגית כפנים"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:95
 #, kde-format
@@ -795,10 +782,10 @@ msgid ""
 msgstr ""
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tags As Face"
-msgstr "הוספת תווית חדשה..."
+msgstr "ביטול סימון תגיות כפנים"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:109
 #, kde-format
@@ -809,22 +796,22 @@ msgid ""
 msgstr ""
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "A&ssign Tag"
-msgstr "הוספת תוויות"
+msgstr "ה&קצאת תגית"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "R&emove Tag"
-msgstr "הסרת תוויות"
+msgstr "ה&סרת תגית"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "הסרת תוויות"
+msgstr "הסרת כל התגיות"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, fuzzy, kde-format
@@ -833,87 +820,80 @@ msgid "Assign Labe&ls"
 msgstr "יישום מרחב צבע"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:251
-#, fuzzy, kde-format
-#| msgid "Album"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Album"
-msgstr "אוסף-תמונות"
+msgstr "אלבום"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:252
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Date"
 msgstr "תאריך"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:260
-#, fuzzy, kde-format
-#| msgid "Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
-msgstr "תווית"
+msgstr "תגית"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:303
-#, fuzzy, kde-format
-#| msgid "Go To"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Go To"
-msgstr "ניווטו אל"
+msgstr "לעבור אל"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:27
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: file open dialog"
 msgid "Open..."
-msgstr "פתיחה באמצעות"
+msgstr "פתיחה…"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:159
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
 #: core/showfoto/stackview/showfotostackviewlist.cpp:409
-#, fuzzy, kde-format
-#| msgid "Open in File Manager"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "פתיחה במנהל הקבצים"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:73
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Import"
-msgstr "ייבא"
+msgstr "ייבוא"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "No import tool available"
-msgstr "אין אפשרויות זמינות"
+msgstr "אין כלי ייבוא זמין"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:97
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Export"
-msgstr "ייצא"
+msgstr "ייצוא"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
-msgstr "אין אפשרויות זמינות"
+msgstr "אין כלי ייצוא זמין"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
-msgstr "תצוגת תיקיות הושלמה..."
+msgstr "מנהל תור ריכוזי"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
-msgstr "הוספה לשולחן-אור"
+msgstr "הוספה לתור קיים"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:283
 #: core/app/items/utils/itemcategorydrawer.cpp:290
@@ -934,9 +914,9 @@ msgstr[3] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:297
 #: core/app/items/utils/itemcategorydrawer.cpp:306
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid date"
-msgstr "שם קובץ"
+msgstr "תאריך שגוי"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:337
 #, fuzzy, kde-format
@@ -998,24 +978,23 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:403
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:202
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
-msgstr "בחירה בכלום"
+msgstr "בחירת תיקיית יעד"
 
 #: core/app/items/utils/itemviewutilities.cpp:228
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
 "selected images into.</p>"
 msgstr ""
-"<p>אנא בחרו אוסף תמונות מתוך ספריית digiKam אליו יועתקו התמונות מהמצלמה.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
@@ -1109,16 +1088,16 @@ msgid "Dimensions:"
 msgstr "ממדים:"
 
 #: core/app/items/utils/tooltipfiller.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "לא ידוע"
 
 #: core/app/items/utils/tooltipfiller.cpp:126
 #: core/app/items/utils/tooltipfiller.cpp:330
-#, fuzzy, kde-format
+#, kde-format
 msgid "Aspect Ratio:"
-msgstr "יחס:"
+msgstr "יחס גובה־רוחב:"
 
 #: core/app/items/utils/tooltipfiller.cpp:147
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
@@ -1199,14 +1178,14 @@ msgstr "איזון לבן:"
 
 #: core/app/items/utils/tooltipfiller.cpp:319
 #: core/utilities/searchwindow/searchgroup.cpp:113
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio/Video Properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני שמע/וידאו"
 
 #: core/app/items/utils/tooltipfiller.cpp:362
-#, fuzzy, kde-format
+#, kde-format
 msgid "Duration:"
-msgstr "רוויה:"
+msgstr "משך:"
 
 #: core/app/items/utils/tooltipfiller.cpp:383
 #, kde-format
@@ -1220,14 +1199,14 @@ msgstr " תמוניות לשנייה"
 
 #: core/app/items/utils/tooltipfiller.cpp:395
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Codec:"
-msgstr "קבצי שמע"
+msgstr "מפענח וידאו:"
 
 #: core/app/items/utils/tooltipfiller.cpp:416
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio Bit Rate:"
-msgstr "קבצי שמע"
+msgstr "קצב נתוני שמע:"
 
 #: core/app/items/utils/tooltipfiller.cpp:428
 #, kde-format
@@ -1235,9 +1214,9 @@ msgid "Audio Channel Type:"
 msgstr "סוג ערוץ שמע:"
 
 #: core/app/items/utils/tooltipfiller.cpp:440
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio Codec:"
-msgstr "קבצי שמע"
+msgstr "מפענח שמע:"
 
 #: core/app/items/utils/tooltipfiller.cpp:457
 #, kde-format
@@ -1251,16 +1230,16 @@ msgid "Album:"
 msgstr "אלבום:"
 
 #: core/app/items/utils/tooltipfiller.cpp:482
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "title of the file"
 msgid "Title:"
-msgstr "&כותרת:"
+msgstr "כותרת:"
 
 #: core/app/items/utils/tooltipfiller.cpp:496
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
-msgstr "כתובית:"
+msgstr "כיתוב:"
 
 #: core/app/items/utils/tooltipfiller.cpp:505
 #, kde-format
@@ -1268,9 +1247,9 @@ msgid "Tags:"
 msgstr "תוויות:"
 
 #: core/app/items/utils/tooltipfiller.cpp:554
-#, fuzzy, kde-format
+#, kde-format
 msgid "Labels:"
-msgstr "עדשה:"
+msgstr "תוויות:"
 
 #: core/app/items/utils/tooltipfiller.cpp:583
 #, kde-format
@@ -1279,8 +1258,7 @@ msgstr "מאפייני אלבום"
 
 #: core/app/items/utils/tooltipfiller.cpp:587
 #: core/app/items/utils/tooltipfiller.cpp:668
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "שם:"
@@ -1302,36 +1280,35 @@ msgid "Category:"
 msgstr "סיווג:"
 
 #: core/app/items/utils/tooltipfiller.cpp:633
-#, fuzzy, kde-format
-#| msgid "Caption:"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
-msgstr "הערות:"
+msgstr "כיתוב:"
 
 #: core/app/items/utils/tooltipfiller.cpp:639
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preview:"
-msgstr "תצוגה מקדימה"
+msgstr "תצוגה מקדימה:"
 
 #: core/app/items/utils/tooltipfiller.cpp:664
-#, fuzzy, kde-format
+#, kde-format
 msgid "Filter"
-msgstr "מסנן:"
+msgstr "מסנן"
 
 #: core/app/items/utils/tooltipfiller.cpp:679
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "כן"
 
 #: core/app/items/utils/tooltipfiller.cpp:685
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
-msgstr "מסיבה"
+msgstr "חלקית"
 
 #: core/app/items/utils/tooltipfiller.cpp:691
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "לא"
@@ -1342,15 +1319,15 @@ msgid "Reproducible:"
 msgstr "<b>ניתן לקריאה</b>:"
 
 #: core/app/items/utils/tooltipfiller.cpp:713
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
-msgstr "תיאור"
+msgstr "תיאור:"
 
 #: core/app/items/utils/tooltipfiller.cpp:718
-#, fuzzy, kde-format
+#, kde-format
 msgid "Identifier:"
-msgstr "זיהוי"
+msgstr "מזהה:"
 
 #: core/app/items/utils/tooltipfiller.cpp:723
 #, kde-format
@@ -1360,7 +1337,7 @@ msgstr "משתנים טכניים"
 #: core/app/items/utils/tooltipfiller.cpp:742
 #, fuzzy, kde-format
 msgid "<i>Binary Data</i>"
-msgstr "<i>לא זמין</i>"
+msgstr "<i>נתונים בינריים</i>"
 
 #: core/app/main/digikamapp.cpp:79
 #, kde-format
@@ -1368,24 +1345,24 @@ msgid "Initializing..."
 msgstr "אתחול…"
 
 #: core/app/main/digikamapp.cpp:163 core/showfoto/main/showfoto.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgid "Load Plugins..."
-msgstr "טוען תוספי KIPI"
+msgstr "טעינת תוספים…"
 
 #: core/app/main/digikamapp.cpp:187 core/showfoto/main/showfoto.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgid "Checking ICC repository..."
-msgstr "בדיקת מאגר ICC"
+msgstr "בדיקת מאגר ICC…"
 
 #: core/app/main/digikamapp.cpp:201
-#, fuzzy, kde-format
+#, kde-format
 msgid "Clean up Database..."
-msgstr "קריאת מסד נתונים"
+msgstr "מסד הנתונים עובר ניקיון…"
 
 #: core/app/main/digikamapp.cpp:223
-#, fuzzy, kde-format
+#, kde-format
 msgid "Loading albums..."
-msgstr "טוען נתוני מצלמות"
+msgstr "האלבומים נטענים…"
 
 #: core/app/main/digikamapp.cpp:392
 #, kde-format
@@ -1482,10 +1459,9 @@ msgid " (%1 of %2)"
 msgstr " (%1 מתוך %2)"
 
 #: core/app/main/digikamapp.cpp:841
-#, fuzzy, kde-format
-#| msgid " (%1 of %2)"
+#, kde-format
 msgid " (%1 of %2 [%3] )"
-msgstr " (%1 of %2)"
+msgstr " (%1 מתוך %2 [%3] )"
 
 #: core/app/main/digikamapp.cpp:845
 #, kde-format
@@ -1520,15 +1496,15 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/app/main/digikamapp_camera.cpp:26
-#, fuzzy, kde-format
+#, kde-format
 msgid "Auto-Detecting Camera..."
-msgstr "זיהוי מצלמה אוטומטי"
+msgstr "המצלמות מזוהות אוטומטית…"
 
 #: core/app/main/digikamapp_camera.cpp:40
 #: core/app/main/digikamapp_camera.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgid "Opening Download Dialog..."
-msgstr "פתיחת חלון העתקת תמונות מהמצלמה"
+msgstr "חלונית ההורדה נפתחת…"
 
 #: core/app/main/digikamapp_camera.cpp:66
 #, kde-format
@@ -1587,11 +1563,10 @@ msgid ""
 msgstr ""
 
 #: core/app/main/digikamapp_import.cpp:95
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr "בחרו תיקייה לקריאה"
+msgstr "בחירת תיקייה לפענוח"
 
 #: core/app/main/digikamapp_import.cpp:115
 #, fuzzy, kde-format
@@ -3667,9 +3642,9 @@ msgid "<li>%1</li><br>"
 msgstr "<li>%1</li>\n"
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
+#, kde-format
 msgid "New Features"
-msgstr "טבע"
+msgstr "יכולות חדשות"
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3685,9 +3660,9 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:181
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
-#, fuzzy, kde-format
+#, kde-format
 msgid "About"
-msgstr "אודות"
+msgstr "על אודות"
 
 #: core/app/views/stack/welcomepageview.cpp:183
 #, kde-format
@@ -3711,9 +3686,9 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:186
-#, fuzzy, kde-format
+#, kde-format
 msgid "<li>%1</li><li>%2</li>"
-msgstr "<li>%1</li>\n"
+msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:187
 #, kde-format
@@ -3736,137 +3711,130 @@ msgid "Welcome to digiKam %1"
 msgstr "ברוך בואך ל־digiKam %1"
 
 #: core/app/views/stack/welcomepageview.cpp:246
-#, fuzzy, kde-format
+#, kde-format
 msgid "Background Image Credits"
-msgstr "צבע &רקע:"
+msgstr "תודות על תמונת הרקע"
 
 #: core/app/views/stack/welcomepageview.cpp:249
-#, fuzzy, kde-format
-#| msgid "Author"
+#, kde-format
 msgid "Author:"
-msgstr "צלם"
+msgstr "יוצר/ת:"
 
 #: core/app/views/stack/welcomepageview.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgid "Location:"
-msgstr "מיקום-גאוגרפי"
+msgstr "מקום:"
 
 #: core/app/views/stack/welcomepageview.cpp:252
-#, fuzzy, kde-format
-#| msgid "Camera"
+#, kde-format
 msgid "Camera:"
-msgstr "מצלמה"
+msgstr "מצלמה:"
 
 #: core/app/views/stack/welcomepageview.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "camera lens"
-#| msgid "Lens:"
+#, kde-format
 msgid "Lens:"
 msgstr "עדשה:"
 
 #: core/app/views/tableview/tableview.cpp:322
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide grouped items"
-msgstr "סידור תמונות"
+msgstr "הסתרת פריטים מקובצים"
 
 #: core/app/views/tableview/tableview.cpp:332
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ignore grouping"
-msgstr "הוספת תוויות זו"
+msgstr "התעלמות מקיבוץ"
 
 #: core/app/views/tableview/tableview.cpp:342
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show grouping in tree"
-msgstr "הצג בסרגל ימין"
+msgstr "הצגת קיבוץ בעץ"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio/video properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני שמע/וידאו"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:66
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio bitrate"
-msgstr "קבצי שמע"
+msgstr "קצב סיביות שמע"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:67
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio channel type"
-msgstr "ערוץ אלפא:"
+msgstr "סוג ערוץ שמע"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:973
 #: core/utilities/setup/setuptooltip.cpp:265
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio Codec"
-msgstr "קבצי שמע"
+msgstr "מפענח שמע"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:830
-#, fuzzy, kde-format
+#, kde-format
 msgid "Duration"
-msgstr "רוויה:"
+msgstr "משך"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:70
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgid "Frame rate"
-msgstr "<i>נוצר:</i>"
+msgstr "קצב תמוניות"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:71
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:107
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video codec"
-msgstr "קבצי שמע"
+msgstr "מפענח וידאו"
 
 #: core/app/views/tableview/tableview_column_configuration_dialog.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgid "Configure column \"%1\""
-msgstr "הגדרת אוסף תמונות אחד כשורש לאוספים האחרים"
+msgstr "הגדרת העמודה „%1”"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני digiKam"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:67
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@title: tableview"
 msgid "Rating"
-msgstr "דרוג"
+msgstr "דירוג"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
-msgstr "נקודות:"
+msgstr "בחירת תווית"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
-msgstr "תצורת צבע:"
+msgstr "תווית צבע"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:73
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@title: tableview"
 msgid "Title"
 msgstr "כותרת"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: tableview"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "תיאור"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, fuzzy, kde-format
@@ -3902,11 +3870,10 @@ msgid "Title"
 msgstr "כותרת"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:110
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:115
 #, fuzzy, kde-format
@@ -6059,9 +6026,9 @@ msgid ""
 msgstr "זוהי רשימת הפריטים שאמורים להימחק."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgid "Titles:"
-msgstr "&כותרת:"
+msgstr "כותרות:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
@@ -6097,10 +6064,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Assign Captions"
-msgstr "יישום מרחב צבע"
+msgstr "הקצאת כיתובים"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:57
 #, fuzzy, kde-format
@@ -6270,11 +6237,10 @@ msgid "Date"
 msgstr "תאריך"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, fuzzy, kde-format
@@ -6339,11 +6305,10 @@ msgid "Video"
 msgstr "תצוגה"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
-#, fuzzy, kde-format
-#| msgid "Caption, Comment, Title"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
-msgstr "כיתוב, הערה,כותרת"
+msgstr "כיתוב, הערה ותיאור"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:217
 #, kde-format
@@ -6398,11 +6363,10 @@ msgid "Title"
 msgstr "כותרת"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:96
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:97
 #, fuzzy, kde-format
@@ -11135,7 +11099,7 @@ msgstr "שמירת תמונות"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
@@ -12217,15 +12181,15 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "name of the document this image has been scanned from"
 msgid "Name (*):"
-msgstr "שם:"
+msgstr "שם (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the original document name."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "כאן אפשר להגדיר את השם המקורי של המסמך."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:84
 #, kde-format
@@ -12235,15 +12199,15 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:90
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "image description"
 msgid "Description (*):"
-msgstr "תיאור"
+msgstr "תיאור (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the image description."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "כאן אפשר להגדיר את תיאור התמונה."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:94
 #, kde-format
@@ -12256,9 +12220,9 @@ msgid "Artist (*):"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the author's name."
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "כאן אפשר להגדיר את שם היוצר/ת."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:103
 #, fuzzy, kde-format
@@ -12268,14 +12232,14 @@ msgid ""
 msgstr "פתיחה במנהל-הקבצים"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copyright (*):"
-msgstr "זכויות יוצרים:"
+msgstr "זכויות יוצרים (*): "
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the copyright owner."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "כאן אפשר להגדיר את הבעלות על זכויות היוצרים."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
 #, kde-format
@@ -12285,17 +12249,15 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "image caption"
 msgid "Caption:"
-msgstr "הערות:"
+msgstr "כיתוב:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
-#, fuzzy, kde-format
-#| msgid "You have edited the image caption. "
-#| msgid_plural "You have edited the captions of %1 images. "
+#, kde-format
 msgid "Set here the image's caption."
-msgstr "ערכתם את כותרת התמונה."
+msgstr "הגדרת כיתוב התוכנית כאן."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
 #, kde-format
@@ -12312,9 +12274,9 @@ msgid "Sync JFIF Comment section"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sync XMP caption"
-msgstr "תיקון-עדשה-אוטומטי"
+msgstr "סנכרון כיתוב XMP"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:127
 #, kde-format
@@ -12813,11 +12775,10 @@ msgid ""
 msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:87
 #, fuzzy, kde-format
@@ -12850,10 +12811,10 @@ msgid "Adjustments"
 msgstr "כיוונון:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:166
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Caption Information"
-msgstr "מידע"
+msgstr "פרטי כיתוב"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, fuzzy, kde-format
@@ -13374,10 +13335,10 @@ msgid ""
 msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "content description"
 msgid "Caption:"
-msgstr "הערות:"
+msgstr "כיתוב:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:86
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:83
@@ -13398,14 +13359,14 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgid "Caption Writer:"
-msgstr "הערות:"
+msgstr "כתיבת הכיתוב:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the name of the caption author."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "נא למלא את שם יוצר/ת הכיתוב."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:68
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:98
@@ -14524,10 +14485,10 @@ msgid "Set here the content synopsis."
 msgstr "פתיחה במנהל-הקבצים"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "content description"
 msgid "Captions:"
-msgstr "הערות:"
+msgstr "כיתובים:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:77
 #, fuzzy, kde-format
@@ -14535,14 +14496,14 @@ msgid "Set here the content descriptions."
 msgstr "פתיחה במנהל-הקבצים"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "Default Language Caption Options"
-msgstr "בררת מחדל"
+msgstr "אפשרויות כיתוב שפת ברירת מחדל"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the name of the caption author."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "אפשר להגדיר כאן את שם יוצר/ת הכיתוב."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:99
 #, fuzzy, kde-format
@@ -18653,35 +18614,34 @@ msgid "TIFF"
 msgstr "LibTIFF"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:149
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
-msgstr "מיקום-גאוגרפי"
+msgstr "אין כיתוב"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:150
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
-msgstr "הצגת שם קובץ"
+msgstr "שמות קובצי תמונות"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:151
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
-msgstr "כיתוב, הערה,כותרת"
+msgstr "תאריך-שעה ב־Exif"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:152
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
-msgstr "ניהול צבעים..."
+msgstr "הערות פריט"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:153
-#, fuzzy, kde-format
-#| msgid "Custom ratio:"
+#, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
-msgstr "יחס מותאם אישית:"
+msgstr "תבנית מותאמת אישית"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:184
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:231
@@ -18752,9 +18712,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:57
-#, fuzzy, kde-format
+#, kde-format
 msgid "Caption Type:"
-msgstr "הערות:"
+msgstr "סוג כיתוב:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:86
@@ -18800,9 +18760,9 @@ msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (Digikam::DTextEdit, m_FreeCaptionFormat)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:145
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter here your customized caption string..."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "נא למלא כאן מחרוזת כיתוב מותאמת אישית…"
 
 #. i18n: ectx: property (text), widget (QLabel, m_free_label)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:152
@@ -18812,24 +18772,21 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:174
-#, fuzzy, kde-format
-#| msgctxt "font color"
-#| msgid "Color:"
+#, kde-format
 msgid "Text Color:"
-msgstr "צבע:"
+msgstr "צבע טקסט:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:197
-#, fuzzy, kde-format
-#| msgid "Tile size:"
+#, kde-format
 msgid "Text Size:"
-msgstr "גודל האריח:"
+msgstr "גודל טקסט:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:244
-#, fuzzy, kde-format
+#, kde-format
 msgid "Font Family:"
-msgstr "משפחה"
+msgstr "משפחת גופנים:"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
@@ -19068,11 +19025,10 @@ msgid ">"
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: column"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:34
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:35
@@ -19306,9 +19262,9 @@ msgid "Select Page Layout"
 msgstr "בחירה בכלום"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "Caption Settings"
-msgstr "הגדרות"
+msgstr "הגדרות כיתוב"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, fuzzy, kde-format
@@ -19394,9 +19350,9 @@ msgid "Build images properties file"
 msgstr "מאפייני הקובץ"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:279
-#, fuzzy, kde-format
+#, kde-format
 msgid "no caption"
-msgstr "מיקום-גאוגרפי"
+msgstr "אין כיתוב"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:284
 #, fuzzy, kde-format
@@ -20389,7 +20345,7 @@ msgstr "אפשרויות >>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_loopCheckBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:328
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:177
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:130
 #, kde-format
 msgid "&Loop"
 msgstr ""
@@ -20585,9 +20541,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_fontselectBtn)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:17
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Font..."
-msgstr "בחירה בכלום"
+msgstr "בחירת גופן…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:35
@@ -20603,30 +20559,30 @@ msgstr "צבעים"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_commentsDrawOutlineCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:120
-#, fuzzy, kde-format
+#, kde-format
 msgid "Outlined Text"
-msgstr "מלל מלא"
+msgstr "טקסט חלול"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:140
-#, fuzzy, kde-format
+#, kde-format
 msgid "Background opacity:"
-msgstr "צבע &רקע:"
+msgstr "אטימות רקע:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:147
-#, fuzzy, kde-format
+#, kde-format
 msgid "Font color:"
-msgstr "צבע יעד:"
+msgstr "צבע גופן:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:154
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:107
-#, fuzzy, kde-format
+#, kde-format
 msgid "Background color:"
-msgstr "צבע &רקע:"
+msgstr "צבע רקע:"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:269
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
 #, fuzzy, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
@@ -20635,7 +20591,7 @@ msgstr[1] "&תמונה"
 msgstr[2] ""
 msgstr[3] ""
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:273
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
 #, fuzzy, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
@@ -20644,31 +20600,31 @@ msgstr[1] "&תמונה"
 msgstr[2] ""
 msgstr[3] ""
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:377
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:383
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:415
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:421
 #, fuzzy, kde-format
 msgctxt "Image number %1"
 msgid "Image #%1"
 msgstr "תמונות נמצאו ב- %1"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:455
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, kde-format
 msgid "Ken Burns"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:476
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:482
 #, fuzzy, kde-format
 msgid "Delay between images (ms):"
 msgstr "השהיה בין תמונות:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_delayLabel)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:483
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:210
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:489
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:156
 #, fuzzy, kde-format
 msgid "Delay between images (s):"
 msgstr "השהיה בין תמונות:"
@@ -20697,65 +20653,73 @@ msgstr ""
 msgid "Currently selected image in the portfolio list."
 msgstr "למחוק מסומנים"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
-#, fuzzy, kde-format
-msgid "Content Rendering"
-msgstr "ניגוד:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printNameCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:132
-#, fuzzy, kde-format
-msgid "P&rint filename"
-msgstr "הדפסה שם קובץ התמונה"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:141
-#, fuzzy, kde-format
-msgid "Pr&int captions "
-msgstr "אפשרויות תצוגת תיקייה"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:148
-#, fuzzy, kde-format
-msgid "Progress indicator"
-msgstr "מכווני חשיפה"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:171
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
 #, kde-format
 msgid "Playback"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_shuffleCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:184
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:137
 #, fuzzy, kde-format
 msgid "&Shuffle images"
 msgstr "בחירת תמונות"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_offAutoDelayCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:191
-#, kde-format
-msgid "&Off Auto Delay"
-msgstr ""
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_offAutoDelayCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:194
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:144
 #, kde-format
 msgid "this option requires user action to switch between images"
 msgstr ""
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_offAutoDelayCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:147
+#, kde-format
+msgid "&Off Auto Delay"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:203
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:163
 #, fuzzy, kde-format
 msgid "Effect :"
 msgstr "אפקט טשטוש"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_openglCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:239
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:170
 #, fuzzy, kde-format
 msgid "Use Open&GL transitions"
 msgstr "עדכון תווית עימוד-תמונה EXIF"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:217
+#, fuzzy, kde-format
+msgid "Content Rendering"
+msgstr "ניגוד:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:223
+#, fuzzy, kde-format
+msgid "Progress indicator"
+msgstr "מכווני חשיפה"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printNameCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:232
+#, fuzzy, kde-format
+msgid "P&rint filename"
+msgstr "הדפסה שם קובץ התמונה"
+
+#. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#, fuzzy, kde-format
+#| msgid "&Use theme background color"
+msgid "Use background color for images:"
+msgstr "להשתמש בצבע ה&רקע של ערכת העיצוב"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:248
+#, kde-format
+msgid "Pr&int captions "
+msgstr "ה&דפסת כיתובים "
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:70
 #, fuzzy, kde-format
@@ -20782,11 +20746,10 @@ msgid "Main Settings"
 msgstr "הגדרות"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:94
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:101
 #, fuzzy, kde-format
@@ -21161,9 +21124,9 @@ msgid "Show image caption"
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the image caption at the bottom of the screen."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "הצגת כיתוב התמונה בתחתית המסך."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, fuzzy, kde-format
@@ -21176,15 +21139,15 @@ msgid "Show the image title at the bottom of the screen."
 msgstr "הדפסת יצרן ודגם המצלמה"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show image caption if it has not title"
-msgstr "הצגת תאריך צילום תמונה"
+msgstr "להציג את כיתוב התמונה אם אין לה כותרת"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "הצגת כיתוב התמונה בתחתית המסך אם לא קיימות כותרות."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
 #, kde-format
@@ -21218,22 +21181,15 @@ msgstr "תצורה חדשה לתמונה:"
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "הדפסת יצרן ודגם המצלמה"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
-msgid "Use background color for images:"
-msgstr "להשתמש בצבע ה&רקע של ערכת העיצוב"
-
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
 #, fuzzy, kde-format
 msgid "Define a color to use as background to render images on screen."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
-#, fuzzy, kde-format
-#| msgid "Caption:"
+#, kde-format
 msgid "Caption font:"
-msgstr "הערות:"
+msgstr "גופן כיתוב:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
 #, fuzzy, kde-format
@@ -25789,7 +25745,7 @@ msgstr "מצב מדידת מרחק"
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:491
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
@@ -26720,17 +26676,16 @@ msgid "Ch&ild Of:"
 msgstr ""
 
 #: core/libs/album/widgets/albumpropsedit.cpp:157
-#, fuzzy, kde-format
-#| msgid "Ca&ption:"
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
-msgstr "כתובית:"
+msgstr "&כיתוב:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:162
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
-msgstr "הוסיפו מלל כאן!"
+msgstr "נא למלא כאן את כיתוב האלבום…"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:165
 #, fuzzy, kde-format
@@ -35488,11 +35443,10 @@ msgid "Rating"
 msgstr "דרוג"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:64
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: xmp namespace for comment container"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:68
 #, fuzzy, kde-format
@@ -35598,11 +35552,10 @@ msgstr "רצפת-עץ מעוצבת"
 
 #: core/libs/models/albummodel_tag.cpp:25
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title"
 msgid "Tags"
-msgstr "תוויות"
+msgstr "תגיות"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, fuzzy, kde-format
@@ -35966,9 +35919,9 @@ msgid "Show detailed progress window"
 msgstr ""
 
 #: core/libs/properties/captions/captionedit.cpp:50
-#, fuzzy, kde-format
+#, kde-format
 msgid "Captions: "
-msgstr "הערות:"
+msgstr "כיתובים: "
 
 #: core/libs/properties/captions/captionedit.cpp:54
 #, fuzzy, kde-format
@@ -35998,16 +35951,14 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:287
-#, fuzzy, kde-format
-#| msgid "You have edited the date of the image. "
-#| msgid_plural "You have edited the date of %1 images. "
+#, kde-format
 msgctxt "@info"
 msgid "You have edited the date of the image. "
 msgid_plural "You have edited the date of %1 images. "
-msgstr[0] "ערכת את התאריכים של התמונות"
-msgstr[1] "ערכתם את התאריכים של %1 תמונות."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "ערכת את תאריך התמונה. "
+msgstr[1] "ערכת תאריכים של שתי תמונות. "
+msgstr[2] "ערכת תאריכים של %1 תמונות. "
+msgstr[3] "ערכת תאריכים של %1 תמונות. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:293
 #, fuzzy, kde-format
@@ -36054,11 +36005,10 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:316
-#, fuzzy, kde-format
-#| msgid "Do you want to apply your changes?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you want to apply your changes?"
-msgstr "האם לשמור את השינויים?"
+msgstr "להחיל את השינויים שלך?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:320
 #, fuzzy, kde-format
@@ -36073,227 +36023,206 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:328
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "<li>title</li>"
-msgstr "<li>התאריך</li>"
-
-#: core/libs/properties/captions/itemdescedittab.cpp:333
-#, fuzzy, kde-format
-#| msgid "<li>caption</li>"
-msgctxt "@info"
-msgid "<li>caption</li>"
 msgstr "<li>כותרת</li>"
 
+#: core/libs/properties/captions/itemdescedittab.cpp:333
+#, kde-format
+msgctxt "@info"
+msgid "<li>caption</li>"
+msgstr "<li>כיתוב</li>"
+
 #: core/libs/properties/captions/itemdescedittab.cpp:338
-#, fuzzy, kde-format
-#| msgid "<li>date</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>date</li>"
-msgstr "<li>התאריך</li>"
+msgstr "<li>תאריך</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:343
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "<li>pick label</li>"
-msgstr "<li>התאריך</li>"
+msgstr "<li>בחירת תווית</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:348
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "<li>color label</li>"
-msgstr "<li>התאריך</li>"
+msgstr "<li>תווית צבע</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:353
-#, fuzzy, kde-format
-#| msgid "<li>rating</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>rating</li>"
-msgstr "<li>דרוג</li>"
+msgstr "<li>דירוג</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:358
-#, fuzzy, kde-format
-#| msgid "<li>tags</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>tags</li>"
-msgstr "<li>תוויות</li>"
+msgstr "<li>תגיות</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:363
-#, fuzzy, kde-format
-#| msgid "<p>Do you want to apply your changes?</p>"
+#, kde-format
 msgctxt "@info"
 msgid "<p>Do you want to apply your changes?</p>"
-msgstr "<p>האם לשמור את השינויים?</p>"
+msgstr "<p>להחיל את השינויים שלך?</p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:366
-#, fuzzy, kde-format
-#| msgid "Always apply changes without confirmation"
+#, kde-format
 msgctxt "@action"
 msgid "Always apply changes without confirmation"
-msgstr "החלת שינויים ללא אישור באופן קבוע"
+msgstr "תמיד להחיל את השינויים ללא אישור"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
-#, fuzzy, kde-format
-#| msgid "Apply changes?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
-msgstr "ביצוע שינויים?"
+msgstr "להחיל את השינויים?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:379
-#, fuzzy, kde-format
-#| msgid "Apply changes?"
+#, kde-format
 msgctxt "@info"
 msgid "Apply changes?"
-msgstr "ביצוע שינויים?"
+msgstr "להחיל את השינויים?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:440
-#, fuzzy, kde-format
-#| msgid "Reading metadata from files. Please wait..."
+#, kde-format
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
-msgstr "ביצוע קריאה של נתוניי מידע-נוסף מקבצי התמונות. אנא המתינו..."
+msgstr "נתוני העל נקראים מהקבצים. נא להמתין…"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:472
-#, fuzzy, kde-format
-#| msgid "Writing metadata to files. Please wait..."
+#, kde-format
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
-msgstr "ביצוע כתיבה של נתוניי מידע-נוסף לקובצי תמונות. אנא המתינו..."
+msgstr "נתוני העל נכתבים לקבצים. נא להמתין…"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:517
-#, fuzzy, kde-format
-#| msgid "Read metadata from file to database"
+#, kde-format
 msgctxt "@action"
 msgid "Read metadata from file to database"
-msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
+msgstr "קריאת נתוני העל מקובץ למסד הנתונים"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:519
 #: core/libs/properties/captions/itemdescedittab.cpp:538
-#, fuzzy, kde-format
-#| msgid "Write metadata to each file"
+#, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
-msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
+msgstr "כתיבת נתוני על בכל קובץ"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:535
-#, fuzzy, kde-format
-#| msgid "Read metadata from each file to database"
+#, kde-format
 msgctxt "@action"
 msgid "Read metadata from each file to database"
-msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
+msgstr "קריאת נתוני העל מכל קובץ למסד הנתונים"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:543
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
-msgstr "הוספת תוויות לפריטים המסומנים"
+msgstr "איחוד התגיות של הפריטים הנבחרים"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:36
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: comment title string"
 msgid "Title:"
-msgstr "&כותרת:"
+msgstr "כותרת:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:43
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgctxt "@label"
 msgid "Date:"
 msgstr "תאריך:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:47
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Pick Label:"
-msgstr "נקודות:"
+msgstr "בחירת תווית:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:52
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Color Label:"
-msgstr "תצורת צבע:"
+msgstr "תווית צבע:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "דירוג:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:66
-#, fuzzy, kde-format
-#| msgid "Apply"
+#, kde-format
 msgctxt "@action"
 msgid "Apply"
-msgstr "ביצוע"
+msgstr "החלה"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:69
-#, fuzzy, kde-format
-#| msgid "Apply all changes to images"
+#, kde-format
 msgctxt "@info"
 msgid "Apply all changes to images"
-msgstr "ביצוע כל השינויים לתמונות"
+msgstr "החלת כל השינויים לתמונות"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:77
-#, fuzzy, kde-format
-#| msgid "Revert all changes"
+#, kde-format
 msgctxt "@info"
 msgid "Revert all changes"
-msgstr "שחזור כל השינויים"
+msgstr "הסגת כל השינויים"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Apply to all versions"
-msgstr "ביצוע כל השינויים לתמונות"
+msgstr "החלה על כל הגרסאות"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Apply all changes to all versions of this image"
-msgstr "ביצוע כל השינויים לתמונות"
+msgstr "החלת כל השינויים לכל הגרסאות של התמונה הזאת"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:85
-#, fuzzy, kde-format
-#| msgid "More"
+#, kde-format
 msgctxt "@action: more actions to apply changes"
 msgid "More"
 msgstr "עוד"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:101
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title"
 msgid "Description"
 msgstr "תיאור"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
 #: core/utilities/import/main/importui.cpp:1981
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@title"
 msgid "Information"
-msgstr "מידע"
+msgstr "פרטים"
 
 #: core/libs/properties/captions/itemdescedittab_p.cpp:212
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Selected items have different text here."
-msgstr "ערך קלט גאמה."
+msgstr "לפריטים הנבחרים יש כאן טקסט שונה."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
 #: core/libs/properties/captions/tagsedit.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "פתיחת מנהל תגיות"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
 #: core/libs/properties/captions/tagsedit.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
-msgstr "הזנת תווית חדשה כאן..."
+msgstr "נא למלא כאן תגית."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
 #: core/libs/properties/captions/tagsedit.cpp:99
@@ -36307,27 +36236,24 @@ msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
 #: core/libs/properties/captions/tagsedit.cpp:116
-#, fuzzy, kde-format
-#| msgid "Tags already assigned"
+#, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
-msgstr "התוויות משויכות"
+msgstr "התגיות כבר מוקצות."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
 #: core/libs/properties/captions/tagsedit.cpp:122
-#, fuzzy, kde-format
-#| msgid "Recent Tags"
+#, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
-msgstr "תוויות אחרונות"
+msgstr "תגיות אחרונות"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:300
 #: core/libs/properties/captions/tagsedit.cpp:280
-#, fuzzy, kde-format
-#| msgid "No Recently Assigned Tags"
+#, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
-msgstr "לא קיימות תוויות ששויכו לאחרונה"
+msgstr "אין תגיות שהוקצו לאחרונה"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:126
 #, fuzzy, kde-format
@@ -37017,10 +36943,10 @@ msgid "%1 ISO"
 msgstr "%1 ISO"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
-msgstr "כותרת"
+msgstr "כיתובים"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:88
 #, fuzzy, kde-format
@@ -37114,10 +37040,10 @@ msgid "Title: "
 msgstr "&כותרת:"
 
 #: core/libs/properties/itempropertiestab.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
-msgstr "הערות:"
+msgstr "כיתוב: "
 
 #: core/libs/properties/itempropertiestab.cpp:240
 #, fuzzy, kde-format
@@ -40515,16 +40441,16 @@ msgid "Show the camera lens model at the bottom of the screen."
 msgstr "הדפסת יצרן ודגם המצלמה"
 
 #: core/libs/video/osd/frameosdwidget.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image caption"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "הצגת כיתוב תמונה"
 
 #: core/libs/video/osd/frameosdwidget.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Show the image caption at the bottom of the screen."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "הצגת כיתוב התמונה בתחתית המסך."
 
 #: core/libs/video/osd/frameosdwidget.cpp:79
 #, fuzzy, kde-format
@@ -40539,17 +40465,17 @@ msgid "Show the image title at the bottom of the screen."
 msgstr "הדפסת יצרן ודגם המצלמה"
 
 #: core/libs/video/osd/frameosdwidget.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image caption if it has not title"
-msgstr "הצגת תאריך צילום תמונה"
+msgstr "להציג את כיתוב התמונה אם אין לה כותרת"
 
 #: core/libs/video/osd/frameosdwidget.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "הצגת כיתוב התמונה בתחתית המסך אם לא קיימות כותרות."
 
 #: core/libs/video/osd/frameosdwidget.cpp:85
 #, fuzzy, kde-format
@@ -41513,16 +41439,16 @@ msgid "ICC Files (*.icc; *.icm)"
 msgstr "קובצי פרופיל צבע ICC (*.icc; *.icm)"
 
 #: core/libs/widgets/itemview/ditemdelegate.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
-msgstr[0] "&תמונה"
-msgstr[1] "&תמונה"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "תמונה"
+msgstr[1] "שתי תמונות"
+msgstr[2] "%1 תמונות"
+msgstr[3] "%1 תמונות"
 
 #: core/libs/widgets/itemview/itemdelegateoverlay.cpp:332
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: item overlay"
 msgid ""
 "Applying operation to\n"
@@ -41530,10 +41456,18 @@ msgid ""
 msgid_plural ""
 "Applying operation to \n"
 "\"%1\" selected pictures"
-msgstr[0] "פתיחת התמונה הבחורה בעורך-תמונה"
-msgstr[1] "פתיחת התמונה הבחורה בעורך-תמונה"
+msgstr[0] ""
+"הפעולות חלות על\n"
+"התמונה הנבחרת"
+msgstr[1] ""
+"הפעולות חלות על\n"
+"שתי התמונות הנבחרות"
 msgstr[2] ""
+"הפעולות חלות על\n"
+"„%1” התמונות הנבחרות"
 msgstr[3] ""
+"הפעולות חלות על\n"
+"„%1” התמונות הנבחרות"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, fuzzy, kde-format
@@ -41587,7 +41521,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:56
 #, kde-format
 msgid "A KDE Family Project"
-msgstr ""
+msgstr "מיזם ממשפחת KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
 #, fuzzy, kde-format
@@ -41597,7 +41531,7 @@ msgstr "(c) 2002-2009, digiKam צוות המפתחים של"
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
-msgstr ""
+msgstr "מתאם, מפתח וחונך"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #: core/libs/widgets/mainview/daboutdata.cpp:95
@@ -41695,7 +41629,7 @@ msgstr "ניהול זכויות יוצרים"
 #: core/libs/widgets/mainview/daboutdata.cpp:207
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
-msgstr ""
+msgstr "כלי ייצוא חדשים ל־OneDrive,‏ Pinterest ו־Box"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:213
 #, kde-format
@@ -42043,7 +41977,7 @@ msgstr "שדות IPTC"
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:228
 #, kde-format
 msgid "XMP viewer"
-msgstr ""
+msgstr "מציג XMP"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:232
 #, fuzzy, kde-format
@@ -42290,7 +42224,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:140
 #, kde-format
 msgid "DOS/Windows executable"
-msgstr ""
+msgstr "קובץ הפעלה ל־DOS/Windows"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:144
 #, kde-format
@@ -42346,7 +42280,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:184
 #, kde-format
 msgid "GNU Image Manipulation Program"
-msgstr ""
+msgstr "תוכנית עריכת התמונות של GNU ‏(GIMP)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:188
 #, kde-format
@@ -42366,12 +42300,12 @@ msgstr "מידע קובץ/תמונה"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:200
 #, kde-format
 msgid "HyperText Markup Language"
-msgstr ""
+msgstr "שפת סימון היפרטקסט (HTML)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
 #, kde-format
 msgid "International Color Consortium Color Profile"
-msgstr ""
+msgstr "פרופיל צבע של מאגד הצבע הבינלאומי (ICCC)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
 #, fuzzy, kde-format
@@ -42386,7 +42320,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:216
 #, kde-format
 msgid "ISO 9660 Disk Image"
-msgstr ""
+msgstr "דמות כונן ISO 9660"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:220
 #, kde-format
@@ -42504,12 +42438,12 @@ msgstr "פתיחה במנהל-הקבצים"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:308
 #, kde-format
 msgid "Ogg Opus Audio"
-msgstr ""
+msgstr "שמע Opus של Ogg"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:312
 #, kde-format
 msgid "Adobe Portable Document Format"
-msgstr ""
+msgstr "תבנית מסמך ניידת של Adobe"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:316
 #, fuzzy, kde-format
@@ -42594,7 +42528,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:376
 #, kde-format
 msgid "Mac OS Resource"
-msgstr ""
+msgstr "משאב של Mac OS"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:380
 #, fuzzy, kde-format
@@ -42994,7 +42928,7 @@ msgstr "Dublin Core"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:164
 #, kde-format
 msgid "Adobe Lightroom Schema"
-msgstr ""
+msgstr "סכמה של Adobe Lightroom"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:168
 #, fuzzy, kde-format
@@ -43021,7 +42955,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:184
 #, kde-format
 msgid "Exif 2.3 metadata for XMP"
-msgstr ""
+msgstr "נתוני על Exif 2.3 ל־XMP"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:188
 #, fuzzy, kde-format
@@ -44579,7 +44513,7 @@ msgstr "לטבית (לטביה)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:297
 msgctxt "@info: country code"
 msgid "Malagasy (Madagascar)"
-msgstr ""
+msgstr "מלגשית (מדגסקר)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:298
 msgctxt "@info: country code"
@@ -44589,7 +44523,7 @@ msgstr ""
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:299
 msgctxt "@info: country code"
 msgid "Maori (New Zealand)"
-msgstr ""
+msgstr "מאורית (ניו זילנד)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:300
 #, fuzzy
@@ -44706,7 +44640,7 @@ msgstr "נורבגית נינורשק (נורבגיה)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:320
 msgctxt "@info: country code"
 msgid "Sesotho sa Leboa (South Africa)"
-msgstr ""
+msgstr "סוטו צפונית (דרום אפריקה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:321
 #, fuzzy
@@ -45312,7 +45246,7 @@ msgstr "בוטסואנה"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bouvet Island"
-msgstr ""
+msgstr "האי בובה"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:76
 #, kde-format
@@ -45655,7 +45589,7 @@ msgstr "ירוק"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Guadaloupe"
-msgstr ""
+msgstr "גואדלופ"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:133
 #, fuzzy, kde-format
@@ -45913,7 +45847,7 @@ msgstr "מדגסקר"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Malawi"
-msgstr ""
+msgstr "מלאווי"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:176
 #, kde-format
@@ -46514,7 +46448,7 @@ msgstr "ארצות הברית של אמריקה"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uruguay, Eastern Republic of"
-msgstr ""
+msgstr "אורוגאווי, הרפובליקה המזרחית של"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:278
 #, kde-format
@@ -46764,7 +46698,7 @@ msgstr "המצלמה \"%1\" אינה נתמכת."
 #: core/libs/widgets/text/donlinetranslator.cpp:69
 #, kde-format
 msgid "Selected translation language %1 is not supported for %2"
-msgstr ""
+msgstr "שפת התרגום הנבחרת %1 אינה נתמכת עבור %2"
 
 #: core/libs/widgets/text/donlinetranslator.cpp:81
 #, fuzzy, kde-format
@@ -46783,23 +46717,23 @@ msgstr "שם תוויות אינו יכול להיות ריק"
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "שגיאה: לא ניתן למצוא את פרטי הגישה ל־Bing בגרסת האתר."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "שגיאה: לא ניתן לחלץ את המפתח של Bing מגרסת האתר."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:67
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "שגיאה: לא ניתן לחלץ את האסימון של Bing מגרסת האתר."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:77
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:87
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
-msgstr ""
+msgstr "שגיאה: לא ניתן לחלץ פרטים נוספים של Bing מגרסת האתר."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:145
 #: core/libs/widgets/text/donlinetranslator_google.cpp:88
@@ -46807,7 +46741,7 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:168
 #, kde-format
 msgid "Error: Unable to parse autodetected language"
-msgstr ""
+msgstr "שגיאה: לא ניתן לפענח שפה לזיהוי אוטומטי"
 
 #: core/libs/widgets/text/donlinetranslator_google.cpp:53
 #: core/libs/widgets/text/donlinetranslator_google.cpp:70
@@ -46817,6 +46751,8 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"שגיאה: מערכות המנגנון זיהו תעבורה חשודה מאמצעי התקשורת של המחשב שלך. נא "
+"לנסות לחזור על הבקשה שלך שוב בהמשך."
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:103
 #, fuzzy, kde-format
@@ -47303,7 +47239,7 @@ msgstr "צ׳יצ׳ווה"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Papiamento"
-msgstr ""
+msgstr "פפיאמנטו"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:346
 #, kde-format
@@ -47638,7 +47574,7 @@ msgstr "שם"
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
-msgstr ""
+msgstr "נא למלא כאן מחרוזת כדי לחפש ברשימת השפות…"
 
 #: core/libs/widgets/text/localizeconfig.cpp:144
 #, fuzzy, kde-format
@@ -47814,7 +47750,7 @@ msgstr "קבעו כאן את מספר הפריטים אשר ימצאו על יד
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
-msgstr ""
+msgstr "אפשר להוסיף או להסיר מילים להתעלמות במהלך פעולות בדיקת איות."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, fuzzy, kde-format
@@ -47845,31 +47781,31 @@ msgstr "תמונה קודמת"
 #, kde-format
 msgctxt "@info"
 msgid "Go to previous place in folder-view hierarchy"
-msgstr ""
+msgstr "מעבר למקום הקודם בהיררכיית תצוגת התיקיות"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Go to Next"
-msgstr ""
+msgstr "מעבר לבא"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Go to next place in folder-view hierarchy"
-msgstr ""
+msgstr "מעבר למקום הבא בהיררכיית תצוגת התיקיות"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "Go Up"
-msgstr ""
+msgstr "עלייה למעלה"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:131
 #, kde-format
 msgctxt "@info"
 msgid "Go up in folder-view hierarchy"
-msgstr ""
+msgstr "עלייה למעלה בהיררכיית תצוגת התיקיות"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:147
 #, kde-format
@@ -47900,7 +47836,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Short View"
-msgstr ""
+msgstr "תצוגה מקוצרת"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:187
 #, kde-format
@@ -48264,7 +48200,7 @@ msgstr "אפשרויות ממשק"
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
-msgstr ""
+msgstr "ערימה"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:152
 #, fuzzy, kde-format
@@ -48316,7 +48252,7 @@ msgstr "לא ידוע"
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
-msgstr ""
+msgstr "%1 (%2 מתוך %3)"
 
 #: core/showfoto/main/showfoto_config.cpp:116
 #, kde-format
@@ -48647,7 +48583,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetupmisc.cpp:136
 #, kde-format
 msgid "Reverse ordering"
-msgstr ""
+msgstr "היפוך הסדר"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:137
 #, kde-format
@@ -49185,10 +49121,10 @@ msgid "Items:"
 msgstr "פריטים:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:269
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
-msgstr "תיאור"
+msgstr "תיאור:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:125
 #, fuzzy, kde-format
@@ -49253,10 +49189,10 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
-msgstr "תיאור"
+msgstr "&תיאור:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:162
 #, fuzzy, kde-format
@@ -50070,7 +50006,7 @@ msgstr "הוספת שם מצלמה"
 #: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
-msgstr ""
+msgstr "מפריד מילות מפתח:"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:66
 #, fuzzy, kde-format
@@ -50170,7 +50106,7 @@ msgstr "דגם המצלמה"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:68
 #, kde-format
 msgid "A comma separated list of all authors"
-msgstr ""
+msgstr "רשימה של כל היוצרים עם הפרדה בפסיקים"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:69
 #, fuzzy, kde-format
@@ -50180,12 +50116,12 @@ msgstr "דגם המצלמה"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:70
 #, kde-format
 msgid "A comma separated list of all tags"
-msgstr ""
+msgstr "רשימה של כל התגיות עם הפרדה בפסיקים"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:71
 #, kde-format
 msgid "A comma separated list of all tags with path"
-msgstr ""
+msgstr "רשימה של כל התגיות עם נתיב עם הפרדה בפסיקים"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:60
 #, fuzzy, kde-format
@@ -50261,7 +50197,7 @@ msgstr "איזון לובן בתמונה"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:74
 #, kde-format
 msgid "White balance (color temperature)"
-msgstr ""
+msgstr "איזון לבן (טמפרטורת צבע)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
 #, fuzzy, kde-format
@@ -50300,7 +50236,7 @@ msgstr "ערוץ אלפא:"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:82
 #, kde-format
 msgid "Audio Codec (Audio Codec)"
-msgstr ""
+msgstr "מפענח שמע (מפענח שמע)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:83
 #, fuzzy, kde-format
@@ -50310,7 +50246,7 @@ msgstr "יצירה אוטומטית של כותרים"
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:84
 #, kde-format
 msgid "Frame Rate of Video"
-msgstr ""
+msgstr "קצב תמוניות של וידאו"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:85
 #: core/utilities/setup/setuptooltip.cpp:274
@@ -50336,32 +50272,32 @@ msgstr ""
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:54
 #, kde-format
 msgid "Latitude as double value"
-msgstr ""
+msgstr "קו רוחב כערך ממשי"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:55
 #, kde-format
 msgid "Longitude as double value"
-msgstr ""
+msgstr "קו אורך כערך ממשי"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:56
 #, kde-format
 msgid "Latitude in a human readable form"
-msgstr ""
+msgstr "קו רוחב בצורה שברורה לבני אדם"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:57
 #, kde-format
 msgid "Longitude in a human readable form"
-msgstr ""
+msgstr "קו אורך בצורה שברורה לבני אדם"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:58
 #, kde-format
 msgid "Altitude in meters"
-msgstr ""
+msgstr "גובה במטרים"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:59
 #, kde-format
 msgid "Altitude in a human readable form"
-msgstr ""
+msgstr "קו גובה בצורה שברורה לבני אדם"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
 #: core/utilities/searchwindow/searchfields_createfield.cpp:248
@@ -50407,7 +50343,7 @@ msgstr "מרקם:"
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
-msgstr ""
+msgstr "חותמת שעה של יוניקס"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:45
 #, fuzzy, kde-format
@@ -50753,7 +50689,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "OK"
-msgstr ""
+msgstr "אישור"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
@@ -52845,7 +52781,7 @@ msgstr "רוויה"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1087
 #, kde-format
 msgid "Parking"
-msgstr ""
+msgstr "חנייה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1090
 #, fuzzy, kde-format
@@ -52860,22 +52796,22 @@ msgstr "המרה"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1096
 #, kde-format
 msgid "Bicycle Rental"
-msgstr ""
+msgstr "השכרת אופניים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1099
 #, kde-format
 msgid "Car Rental"
-msgstr ""
+msgstr "השכרת רכב"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1102
 #, kde-format
 msgid "Ski Rental"
-msgstr ""
+msgstr "השכרת ציוד סקי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1105
 #, kde-format
 msgid "Taxi Rank"
-msgstr ""
+msgstr "תחנת מוניות"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1108
 #, fuzzy, kde-format
@@ -52891,17 +52827,17 @@ msgstr "אבן"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1114
 #, kde-format
 msgid "Bicycle Parking"
-msgstr ""
+msgstr "חניית אופניים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1117
 #, kde-format
 msgid "Motorcycle Parking"
-msgstr ""
+msgstr "חניית אופנועים"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1120
 #, kde-format
 msgid "Subway Entrance"
-msgstr ""
+msgstr "כניסה לרכבת תחתית"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1123
 #, fuzzy, kde-format
@@ -52912,32 +52848,32 @@ msgstr "מצלמה מחוברת"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1126
 #, kde-format
 msgid "Place Of Worship"
-msgstr ""
+msgstr "מקום סגידה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1129
 #, kde-format
 msgid "Bahai"
-msgstr ""
+msgstr "בהאי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1132
 #, kde-format
 msgid "Buddhist"
-msgstr ""
+msgstr "בודהיסטי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1135
 #, kde-format
 msgid "Christian"
-msgstr ""
+msgstr "נוצרי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1138
 #, kde-format
 msgid "Muslim"
-msgstr ""
+msgstr "מוסלמי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1141
 #, kde-format
 msgid "Hindu"
-msgstr ""
+msgstr "הינדי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1144
 #, kde-format
@@ -52947,17 +52883,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1147
 #, kde-format
 msgid "Jewish"
-msgstr ""
+msgstr "יהודי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1150
 #, kde-format
 msgid "Shinto"
-msgstr ""
+msgstr "שינטו"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1153
 #, kde-format
 msgid "Sikh"
-msgstr ""
+msgstr "סיקי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1156
 #, kde-format
@@ -52967,17 +52903,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1159
 #, kde-format
 msgid "Golf Course"
-msgstr ""
+msgstr "מסלול גולף"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1162
 #, kde-format
 msgid "Marina"
-msgstr ""
+msgstr "מרינה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1165
 #, kde-format
 msgid "Park"
-msgstr ""
+msgstr "פארק"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1168
 #, fuzzy, kde-format
@@ -52992,7 +52928,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1174
 #, kde-format
 msgid "Sports Centre"
-msgstr ""
+msgstr "מרכז ספורט"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1177
 #, fuzzy, kde-format
@@ -53002,12 +52938,12 @@ msgstr "בינונית"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1183
 #, kde-format
 msgid "Swimming Pool"
-msgstr ""
+msgstr "בריכת שחייה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1186
 #, kde-format
 msgid "Miniature Golf Course"
-msgstr ""
+msgstr "מסלול מיני־גולף"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1189
 #, fuzzy, kde-format
@@ -53052,7 +52988,7 @@ msgstr "&תמונה"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1213
 #, kde-format
 msgid "Grass"
-msgstr ""
+msgstr "דשא"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1216
 #, fuzzy, kde-format
@@ -53067,22 +53003,22 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1222
 #, kde-format
 msgid "Meadow"
-msgstr ""
+msgstr "אחו"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1225
 #, kde-format
 msgid "Military"
-msgstr ""
+msgstr "צבאי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1228
 #, kde-format
 msgid "Quarry"
-msgstr ""
+msgstr "מחצבה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1231
 #, kde-format
 msgid "Railway"
-msgstr ""
+msgstr "מסילת רכבת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1234
 #, fuzzy, kde-format
@@ -53104,17 +53040,17 @@ msgstr "פרטים"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1243
 #, kde-format
 msgid "Orchard"
-msgstr ""
+msgstr "פרדס"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1246
 #, kde-format
 msgid "Vineyard"
-msgstr ""
+msgstr "כרם"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1249
 #, kde-format
 msgid "Rail"
-msgstr ""
+msgstr "מסילה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1252
 #, kde-format
@@ -53125,7 +53061,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:312
 #, kde-format
 msgid "Tram"
-msgstr ""
+msgstr "חשמלית"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1258
 #, fuzzy, kde-format
@@ -53136,13 +53072,13 @@ msgstr "שולחן השוואת תמונות"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1261
 #, kde-format
 msgid "Abandoned Railway"
-msgstr ""
+msgstr "מסילת רכבת נטושה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1264
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:308
 #, kde-format
 msgid "Subway"
-msgstr ""
+msgstr "רכבת תחתית"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1267
 #, fuzzy, kde-format
@@ -53153,7 +53089,7 @@ msgstr "שמירה על יחס"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1270
 #, kde-format
 msgid "Miniature Railway"
-msgstr ""
+msgstr "מסילת רכבת ממוזערת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1273
 #, fuzzy, kde-format
@@ -53163,7 +53099,7 @@ msgstr "מרחב צבע"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1276
 #, kde-format
 msgid "Monorail"
-msgstr ""
+msgstr "מונורייל"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1279
 #, kde-format
@@ -53194,7 +53130,7 @@ msgstr "שינוי גודל-אותיות ל:"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1294
 #, kde-format
 msgid "Gondola"
-msgstr ""
+msgstr "גונדולה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1297
 #, fuzzy, kde-format
@@ -53286,12 +53222,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1348
 #, kde-format
 msgid "Snow Park"
-msgstr ""
+msgstr "פארק שלג"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1351
 #, kde-format
 msgid "Ski Playground"
-msgstr ""
+msgstr "מגרש משחקי סקי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1354
 #, kde-format
@@ -53301,57 +53237,57 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1357
 #, kde-format
 msgid "Admin Boundary (Level 1)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 1)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1360
 #, kde-format
 msgid "Admin Boundary (Level 2)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 2)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1363
 #, kde-format
 msgid "Admin Boundary (Level 3)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 3)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1366
 #, kde-format
 msgid "Admin Boundary (Level 4)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 4)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1369
 #, kde-format
 msgid "Admin Boundary (Level 5)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 5)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1372
 #, kde-format
 msgid "Admin Boundary (Level 6)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 6)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1375
 #, kde-format
 msgid "Admin Boundary (Level 7)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 7)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1378
 #, kde-format
 msgid "Admin Boundary (Level 8)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 8)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1381
 #, kde-format
 msgid "Admin Boundary (Level 9)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 9)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1384
 #, kde-format
 msgid "Admin Boundary (Level 10)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 10)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1387
 #, kde-format
 msgid "Admin Boundary (Level 11)"
-msgstr ""
+msgstr "גבול מנהלי (רמה 11)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1390
 #, kde-format
@@ -53371,12 +53307,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1399
 #, kde-format
 msgid "International Date Line"
-msgstr ""
+msgstr "קו תאריך בינלאומי"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1402
 #, kde-format
 msgid "Bathymetry"
-msgstr ""
+msgstr "בתימטריה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1405
 #, fuzzy, kde-format
@@ -53401,86 +53337,86 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1417
 #, kde-format
 msgid "River"
-msgstr ""
+msgstr "נהר"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1420
 #, kde-format
 msgid "Weir"
-msgstr ""
+msgstr "מגלש"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1423
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1426
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1429
 #, kde-format
 msgid "Crosswalk"
-msgstr ""
+msgstr "מעבר חצייה"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1432
 #, kde-format
 msgid "Railway Crossing"
-msgstr ""
+msgstr "חציית מסילת רכבת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1435
 #, kde-format
 msgid "Door"
-msgstr ""
+msgstr "דלת"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1441
 #, kde-format
 msgid "Room"
-msgstr ""
+msgstr "חדר"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:60
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:63
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:66
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:69
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:102
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:105
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:108
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:296
 #, kde-format
 msgid "Detour"
-msgstr ""
+msgstr "מעקף"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:300
 #, kde-format
 msgid "Ferry Route"
-msgstr ""
+msgstr "מסלול מעבורת"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:304
 #, fuzzy, kde-format
@@ -53490,32 +53426,32 @@ msgstr "יצרן:"
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:316
 #, kde-format
 msgid "Bus"
-msgstr ""
+msgstr "אוטובוס"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:320
 #, kde-format
 msgid "Trolley Bus"
-msgstr ""
+msgstr "טרוליבוס"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:324
 #, kde-format
 msgid "Bicycle Route"
-msgstr ""
+msgstr "מסלול אופניים"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:328
 #, kde-format
 msgid "Mountainbike Route"
-msgstr ""
+msgstr "מסלול אופני הרים"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:332
 #, kde-format
 msgid "Walking Route"
-msgstr ""
+msgstr "מסלול הליכה"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:336
 #, kde-format
 msgid "Hiking Route"
-msgstr ""
+msgstr "מסלול טיול"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:340
 #, kde-format
@@ -53535,7 +53471,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:360
 #, kde-format
 msgid "Sled Trail"
-msgstr ""
+msgstr "מסלול מזחלת"
 
 #: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:54
 #, kde-format
@@ -59552,22 +59488,22 @@ msgstr "תמונות נמצאו ב- %1"
 msgid "Face found: %1"
 msgstr "תמונות נמצאו ב- %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, fuzzy, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "חיפוש:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
 #, fuzzy, kde-format
 msgid "Found %1 face."
 msgstr "מבזק אור (פלאש)"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
 #, fuzzy, kde-format
 msgid "Recognized: %1"
 msgstr "גודל:"
@@ -60470,7 +60406,7 @@ msgstr "שם האלבום מכיל"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:43
 #, kde-format
 msgid "The album caption contains"
-msgstr "כותרת האלבום מכילה"
+msgstr "כיתוב האלבום מכיל"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:51
 #, fuzzy, kde-format
@@ -60969,7 +60905,7 @@ msgstr "החזרת פריטים שנוצרו על ידי"
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
@@ -61029,11 +60965,10 @@ msgid "Creator"
 msgstr "לוח־שנה"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:781
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
-msgstr "כותרת"
+msgstr "כיתוב"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:782
 #, fuzzy, kde-format
@@ -61296,7 +61231,7 @@ msgstr "מאפייני TIFF"
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
 msgid "Caption, Comment, Title"
-msgstr "כיתוב, הערה,כותרת"
+msgstr "כיתוב, הערה, כותרת"
 
 #: core/utilities/searchwindow/searchgroup.cpp:182
 #, fuzzy, kde-format
@@ -61552,9 +61487,9 @@ msgid "Show digiKam &captions"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את הכיתובים של digiKam מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
 #: core/utilities/setup/camera/setupcamera.cpp:451
@@ -62242,32 +62177,28 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:256
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@title: camera title"
 msgid "Title"
 msgstr "כותרת"
 
 #: core/utilities/setup/camera/setupcamera.cpp:257
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@title: camera model"
 msgid "Model"
 msgstr "דגם"
 
 #: core/utilities/setup/camera/setupcamera.cpp:258
-#, fuzzy, kde-format
-#| msgid "Port"
+#, kde-format
 msgctxt "@title: camera port"
 msgid "Port"
-msgstr "חיבור"
+msgstr "פתחה"
 
 #: core/utilities/setup/camera/setupcamera.cpp:259
-#, fuzzy, kde-format
-#| msgid "By Path"
+#, kde-format
 msgctxt "@title: camera mount path"
 msgid "Path"
-msgstr "לפי נתיב"
+msgstr "נתיב"
 
 #: core/utilities/setup/camera/setupcamera.cpp:277
 #: core/utilities/setup/camera/setupcamera.cpp:400
@@ -62286,9 +62217,9 @@ msgid "Visit Gphoto project website"
 msgstr "ביקור באתר מיזם Gphoto"
 
 #: core/utilities/setup/camera/setupcamera.cpp:313
-#, fuzzy, kde-format
+#, kde-format
 msgid "Devices"
-msgstr "עומק"
+msgstr "התקנים"
 
 #: core/utilities/setup/camera/setupcamera.cpp:320
 #, kde-format
@@ -62343,14 +62274,14 @@ msgid "Ignored file extensions:"
 msgstr "הצגת קובצי תמונה בעלי סיומת:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Defaults"
-msgstr "בררת מחדל"
+msgstr "&ברירות מחדל"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import Filters"
-msgstr "מסננים"
+msgstr "מסנני ייבוא"
 
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, fuzzy, kde-format
@@ -62579,10 +62510,10 @@ msgid "Updates the path of the collection."
 msgstr "יצירת אוסף-תמונות חדש באגד-האוספים."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:131
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
-msgstr "לפי אוסף"
+msgstr "הסרת האוסף מ־digiKam."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:629
 #, kde-format
@@ -62597,21 +62528,21 @@ msgid "Choose the Folder Containing your Collection"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:696
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
-msgstr "קבוצת אוספים"
+msgstr "בעיה בהוספה לסוף האוסף"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:697
-#, fuzzy, kde-format
+#, kde-format
 msgid "A collection with the path \"%1\" already exists."
-msgstr "הקובץ קיים"
+msgstr "כבר קיים אוסף עם הנתיב „%1”."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:860
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
-msgstr "לפי אוסף"
+msgstr "להסיר את הנתיב מהאוסף?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:861
 #, fuzzy, kde-format
@@ -62620,10 +62551,10 @@ msgid ""
 msgstr "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:868
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
-msgstr "לפי אוסף"
+msgstr "להסיר אוסף?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:869
 #, kde-format
@@ -62633,9 +62564,9 @@ msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
 #: core/utilities/setup/collections/setupcollectionview.cpp:1724
-#, fuzzy, kde-format
+#, kde-format
 msgid "Local Collections"
-msgstr "אוספים"
+msgstr "אוספים מקומיים"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
 #: core/utilities/setup/collections/setupcollectionview.cpp:1725
@@ -62650,9 +62581,9 @@ msgid "Collections on Network Shares"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:981
-#, fuzzy, kde-format
+#, kde-format
 msgid "Add Collection"
-msgstr "לפי אוסף"
+msgstr "הוספת אוסף"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1031
 #, kde-format
@@ -62660,9 +62591,9 @@ msgid "Col. %1"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1127
-#, fuzzy, kde-format
+#, kde-format
 msgid "This collection is currently not available."
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr "האוסף הזה לא זמין כרגע."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1132
 #, kde-format
@@ -62680,64 +62611,61 @@ msgid "Append network path"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1184
-#, fuzzy, kde-format
+#, kde-format
 msgid "Update collection"
-msgstr "לפי אוסף"
+msgstr "עדכון אוסף"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1212
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove collection"
-msgstr "לפי אוסף"
+msgstr "הסרת אוסף"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1247
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "שם"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1252
-#, fuzzy, kde-format
-#| msgid "By Path"
+#, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
-msgstr "לפי נתיב"
+msgstr "נתיב"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1257
-#, fuzzy, kde-format
-#| msgid "Status"
+#, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "מצב"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1555
-#, fuzzy, kde-format
+#, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
-msgstr "קיים אוסף המכיל את הספרייה \"%1\""
+msgstr "הוספת בעבר אוסף שמכיל את הנתיב „%1”."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1593
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
-msgstr "קבוצת אוספים"
+msgstr "בעיה בהוספת אוסף"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1598
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
-msgstr "קבוצת אוספים"
+msgstr "בעיה בעדכון אוסף"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1615
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
-msgstr "לפי אוסף"
+msgstr "הוספת אוסף"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1619
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
-msgstr "לפי אוסף"
+msgstr "עדכון אוסף"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1627
 #, kde-format
@@ -62750,10 +62678,10 @@ msgid "Your collection will be updated to this name:"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1714
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
-msgstr "בחירת פריטים חדשים"
+msgstr "בחירת קטגוריה"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1718
 #, kde-format
@@ -62794,9 +62722,9 @@ msgid "Use AI Auto-Tools features"
 msgstr "כיוונון:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:175
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use Face Management feature"
-msgstr "אין בחירה"
+msgstr "להשתמש ביכולת ניהול פנים"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
@@ -62804,9 +62732,9 @@ msgid "Use Aesthetic Detection feature"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:177
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use AutoTags Assignment feature"
-msgstr "כיוונון:"
+msgstr "להשתמש ביכולת הקצאת תגיות אוטומטית"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:278
 #, kde-format
@@ -62945,9 +62873,9 @@ msgid "Exposure Indicators"
 msgstr "מחווני חשיפה"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:134
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Under-exposure color: "
-msgstr "צבע תת-חשיפה:"
+msgstr "צבע תת־&חשיפה:"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:137
 #, kde-format
@@ -62955,9 +62883,9 @@ msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgid "Under-exposure percents: "
-msgstr "צבע תת-חשיפה:"
+msgstr "אחוזי תת־חשיפה: "
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:146
 #, kde-format
@@ -62967,9 +62895,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:149
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Over-exposure color: "
-msgstr "צבע חשיפת-ייתר:"
+msgstr "צבע חשיפת י&תר:"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:152
 #, kde-format
@@ -62977,9 +62905,9 @@ msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgid "Over-exposure percents: "
-msgstr "צבע חשיפת-ייתר:"
+msgstr "אחוזי חשיפת יתר: "
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:161
 #, kde-format
@@ -62989,9 +62917,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:164
-#, fuzzy, kde-format
+#, kde-format
 msgid "Indicate exposure as pure color"
-msgstr "צבע תת-חשיפה:"
+msgstr "ציון חשיפה כצבע טהור"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:165
 #, kde-format
@@ -63003,14 +62931,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:170
-#, fuzzy, kde-format
+#, kde-format
 msgid "Example:"
-msgstr "שם:"
+msgstr "דוגמה:"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:203
-#, fuzzy, kde-format
+#, kde-format
 msgid "Tool Options"
-msgstr "הגדרות מקומיות"
+msgstr "אפשרויות כלים"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:206
 #, kde-format
@@ -63025,9 +62953,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/editor/setupiofiles.cpp:183
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show Settings Dialog when Saving Image Files"
-msgstr "הגדרות שמירת תמונות של עורך התמונה"
+msgstr "הצגת חלונית הגדרות בעת שמירת קובצי תמונות"
 
 #: core/utilities/setup/editor/setupiofiles.cpp:184
 #, kde-format
@@ -63047,10 +62975,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/editor/setupraw.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
-msgstr "פתיחת התמונה הבחורה בעורך-תמונה"
+msgstr "פתיחת קבצים גולמיים (raw) בעורך התמונות"
 
 #: core/utilities/setup/editor/setupraw.cpp:109
 #, kde-format
@@ -63059,10 +62987,10 @@ msgid "Fast and simple, as 8 bit image"
 msgstr ""
 
 #: core/utilities/setup/editor/setupraw.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
-msgstr "שחזור ברירת מחדל"
+msgstr "שימוש בהגדרות ברירת המחדל, ב־16 סיביות"
 
 #: core/utilities/setup/editor/setupraw.cpp:113
 #, kde-format
@@ -63071,11 +62999,10 @@ msgid "Always open the Raw Import Tool to customize settings"
 msgstr ""
 
 #: core/utilities/setup/editor/setupraw.cpp:129
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
-msgstr "בררת מחדל"
+msgstr " (ברירת מחדל)"
 
 #: core/utilities/setup/editor/setupraw.cpp:156
 #, kde-format
@@ -63084,16 +63011,16 @@ msgid "About this Raw Import tool..."
 msgstr ""
 
 #: core/utilities/setup/editor/setupraw.cpp:190
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
-msgstr "התנהגות"
+msgstr "התנהגות גולמי (RAW)"
 
 #: core/utilities/setup/editor/setupraw.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
-msgstr "הגדרות כלליות"
+msgstr "הגדרות ברירת מחדל של גולמי (RAW)"
 
 #: core/utilities/setup/editor/setupversioning.cpp:96
 #, kde-format
@@ -63124,10 +63051,10 @@ msgid "Get information on non-destructive editing and file versioning"
 msgstr ""
 
 #: core/utilities/setup/editor/setupversioning.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group"
 msgid "Workspace File Format"
-msgstr "תצורת קובץ"
+msgstr "תסדיר קובץ סביבת עבודה"
 
 #: core/utilities/setup/editor/setupversioning.cpp:124
 #, kde-format
@@ -63325,16 +63252,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
+msgstr "שמירת פרופיל נתוני על מתקדם"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
+msgstr "טעינת פרופיל נתוני על מתקדם"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:198
 #, kde-format
@@ -63343,15 +63270,16 @@ msgid "Warning"
 msgstr "אזהרה"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:199
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This option will reset configuration to default\n"
 "All your changes will be lost.\n"
 " Do you want to continue?"
 msgstr ""
-"בנייה של תמונות ממוזערות עבור כל התמונות דורשת זמן רב.\n"
-"האם להמשיך?"
+"האפשרות הזאת תאפס את ההגדרות לברירת המחדל\n"
+"כל השינויים שלך ילכו לאיבוד.\n"
+"להמשיך?"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:395
 #, kde-format
@@ -63377,9 +63305,9 @@ msgid "Unify read and write"
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:409
-#, fuzzy, kde-format
+#, kde-format
 msgid "Read all metadata for tags"
-msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
+msgstr "לקרוא את כל נתוני העל לתגיות"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -63490,7 +63418,7 @@ msgstr "אפשרויות מיוחדות חלופיות"
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:322
 #, kde-format
 msgid "Separator:"
-msgstr ""
+msgstr "מפריד:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:328
 #, kde-format
@@ -63696,7 +63624,7 @@ msgstr "הפעלת האפשרות הזאת תגרום לאחסון תגיות ה
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
-msgstr "תיאורים וכותרת"
+msgstr "כיתובים וכותרת"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
@@ -63705,7 +63633,7 @@ msgid ""
 "Turn on this option to store item caption and title in the JFIF Comment "
 "section, the Exif tag, the XMP tag, and the IPTC tag."
 msgstr ""
-"הפעלת האפשרות הזאת תגרום לאחסון התיאור והכותרת בסעיף ההערות של ה־JFIF, תגית "
+"הפעלת האפשרות הזאת תגרום לאחסון התיאור והכיתוב בסעיף ההערות של ה־JFIF, תגית "
 "ה־Exif, תגית ה־XMP ותגית ה־IPTC."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:60
@@ -63724,28 +63652,28 @@ msgstr ""
 "הפעלת האפשרות הזאת תגרום לאחסון דירוג הפריט בתגית ה־Exit ובתגיות ה־XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
-msgstr "נקודות:"
+msgstr "בחירת תווית"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הפעלת האפשרות הזאת תגרום לאחסון תווית בחירת הפריט בתגיות ה־XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Color label"
-msgstr "תצורת צבע:"
+msgstr "תווית צבע"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הפעלת האפשרות הזאת תגרום לאחסון תווית צבע הפריט בתגיות ה־XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:75
 #, kde-format
@@ -63754,26 +63682,30 @@ msgid "Timestamps"
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store the item date and time in the EXIF, XMP, and "
 "IPTC tags."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"הפעלת האפשרות הזאת תגרום לאחסון התאריך והשעה של הפריט בתגיות ה־EXIF,‏ XMP ו־"
+"IPTC."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
-msgstr "שמירת תוויות מידע-נוסף בקובץ %1..."
+msgstr "תבניות נתוני על (זכויות יוצרים וכו׳)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store the metadata template in the XMP and the IPTC "
 "tags. You can set template values to Template setup page."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"יש להפעיל את האפשרות הזאת כדי לאחסן את תבנית נתוני העל בתגיות XMP ו־IPTC. "
+"אפשר להגדיר ערכי תבנית בעמוד הגדרת התבניות."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:85
 #, kde-format
@@ -63825,10 +63757,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "האצלת כל הפעולות למנגנון ExifTool כדי לכתוב נתוני על לקבצים"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
 #, kde-format
@@ -65597,12 +65529,12 @@ msgstr "הגדרת האפשרות הזאת תציג את כותרת התמונה
 #: core/utilities/setup/setuptooltip.cpp:234
 #, kde-format
 msgid "Image caption"
-msgstr "תיאור תמונה"
+msgstr "כיתוב תמונה"
 
 #: core/utilities/setup/setuptooltip.cpp:235
 #, kde-format
 msgid "Set this option to display the image captions."
-msgstr "הגדרת האפשרות הזאת תציג את תיאורי התמונה."
+msgstr "הגדרת האפשרות הזאת תציג את כיתובי התמונה."
 
 #: core/utilities/setup/setuptooltip.cpp:237
 #, kde-format
@@ -65726,12 +65658,12 @@ msgstr "הגדרת האפשרות הזאת תציג את הקטגוריה של �
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Album caption"
-msgstr "כותרת אלבום"
+msgstr "כיתוב אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:314
 #, kde-format
 msgid "Set this option to display the album caption."
-msgstr "הגדרת האפשרות הזאת תציג את הכותרת של האלבום."
+msgstr "הגדרת האפשרות הזאת תציג את הכיתוב של האלבום."
 
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format

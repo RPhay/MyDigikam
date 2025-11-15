@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-11 00:40+0000\n"
+"POT-Creation-Date: 2025-11-15 00:39+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -11236,7 +11236,7 @@ msgstr "Захаванне зменаў -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
@@ -20433,7 +20433,7 @@ msgstr "Параметры"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_loopCheckBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:328
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:177
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:130
 #, kde-format
 msgid "&Loop"
 msgstr "&Цыклічнасць"
@@ -20670,7 +20670,7 @@ msgstr "Колер шрыфту:"
 msgid "Background color:"
 msgstr "Колер фону:"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:269
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
 #, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
@@ -20679,7 +20679,7 @@ msgstr[1] "%1 выявы [%2]"
 msgstr[2] "%1 выяў [%2]"
 msgstr[3] "%1 выявы [%2]"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:273
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
 #, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
@@ -20688,31 +20688,31 @@ msgstr[1] "%1 выявы"
 msgstr[2] "%1 выяў"
 msgstr[3] "%1 выявы"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:377
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:383
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:415
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:421
 #, kde-format
 msgctxt "Image number %1"
 msgid "Image #%1"
 msgstr "Выява #%1"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:455
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:476
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:482
 #, kde-format
 msgid "Delay between images (ms):"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_delayLabel)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:483
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:210
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:489
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:156
 #, kde-format
 msgid "Delay between images (s):"
 msgstr ""
@@ -20741,65 +20741,73 @@ msgstr ""
 msgid "Currently selected image in the portfolio list."
 msgstr ""
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
-#, kde-format
-msgid "Content Rendering"
-msgstr "Рэндэрынг змесціва"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printNameCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:132
-#, kde-format
-msgid "P&rint filename"
-msgstr "&Паказваць назвы файлаў"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:141
-#, kde-format
-msgid "Pr&int captions "
-msgstr "Дру&каванне подпісаў "
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:148
-#, kde-format
-msgid "Progress indicator"
-msgstr "Паказальнік прагрэсу"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:171
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
 #, kde-format
 msgid "Playback"
 msgstr "Прайграванне"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_shuffleCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:184
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:137
 #, kde-format
 msgid "&Shuffle images"
 msgstr "Пе&рамяшаць выявы"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_offAutoDelayCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:191
-#, kde-format
-msgid "&Off Auto Delay"
-msgstr "&Адключыць аўтаматычнае затрымліванне"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_offAutoDelayCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:194
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:144
 #, kde-format
 msgid "this option requires user action to switch between images"
 msgstr ""
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_offAutoDelayCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:147
+#, kde-format
+msgid "&Off Auto Delay"
+msgstr "&Адключыць аўтаматычнае затрымліванне"
+
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:203
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:163
 #, kde-format
 msgid "Effect :"
 msgstr "Эфект :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_openglCheckBox)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:239
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:170
 #, kde-format
 msgid "Use Open&GL transitions"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:217
+#, kde-format
+msgid "Content Rendering"
+msgstr "Рэндэрынг змесціва"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:223
+#, kde-format
+msgid "Progress indicator"
+msgstr "Паказальнік прагрэсу"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printNameCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:232
+#, kde-format
+msgid "P&rint filename"
+msgstr "&Паказваць назвы файлаў"
+
+#. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
+#, fuzzy, kde-format
+#| msgid "&Use theme background color"
+msgid "Use background color for images:"
+msgstr "&Выкарыстоўваць колер фону з тэмы аздаблення"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:248
+#, kde-format
+msgid "Pr&int captions "
+msgstr "Дру&каванне подпісаў "
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:70
 #, kde-format
@@ -21272,12 +21280,6 @@ msgstr "Паказваць рэйтынг выявы"
 #, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr ""
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
-msgid "Use background color for images:"
-msgstr "&Выкарыстоўваць колер фону з тэмы аздаблення"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
 #, kde-format
@@ -25794,7 +25796,7 @@ msgstr "Рэйтынг: %1\n"
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:484
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:491
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
@@ -58879,25 +58881,25 @@ msgstr "У %1 знойдзеныя выявы"
 msgid "Face found: %1"
 msgstr "У %1 знойдзеныя выявы"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Face Scanning: %1\n"
 msgstr "Пошук твараў"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "Found %1 face."
 msgstr "Няма твараў"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:494
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Icon Size: %1"
