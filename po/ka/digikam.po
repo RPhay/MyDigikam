@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-11-16 00:39+0000\n"
 "PO-Revision-Date: 2025-11-14 12:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3139,7 +3139,7 @@ msgid "Map Search"
 msgstr "რუკაზე ძებნა"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
 #, kde-format
 msgid "Last Search"
 msgstr "ბოლო ძებნა"
@@ -27028,7 +27028,7 @@ msgid ""
 "as a bug at bugs.kde.org."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:686
+#: core/libs/database/coredb/coredbschemaupdater.cpp:694
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -27036,12 +27036,12 @@ msgid ""
 "place. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:711
+#: core/libs/database/coredb/coredbschemaupdater.cpp:719
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "სქემა განახლდა ვერსიამდე %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:859
+#: core/libs/database/coredb/coredbschemaupdater.cpp:867
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27049,12 +27049,12 @@ msgid ""
 "delete it."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:881
+#: core/libs/database/coredb/coredbschemaupdater.cpp:889
 #, kde-format
 msgid "Copied database file"
 msgstr "მონაცემთა ბაზის ფაილი დაკოირდა"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:886
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -27062,22 +27062,22 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:907
+#: core/libs/database/coredb/coredbschemaupdater.cpp:915
 #, kde-format
 msgid "Opened new database file"
 msgstr "გაიხსნა ახალი მონაცემთა ბაზის ფაილი"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
 #, kde-format
 msgid "Prepared table creation"
 msgstr "ცხრილების შექმნა მომზადდა"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
 #, kde-format
 msgid "Created tables"
 msgstr "შექმნილი ცხრილები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -27085,7 +27085,7 @@ msgid ""
 "your configuration."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -27097,52 +27097,52 @@ msgid ""
 "based on false assumptions from a broken installation."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
 #, kde-format
 msgid "Configured one album root"
 msgstr "მორგებულია ერთი ალბომის ძირითადი"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
 #, kde-format
 msgid "Imported albums"
 msgstr "შემოტანილი ალბომები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
 #, kde-format
 msgid "Imported images information"
 msgstr "შემოტანილი გამოსახულებების ინფორმაცია"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "ბოლო ძებნა (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "ინიციალიზებული და შემოტანილია ფაილის სუფიქსის ფილტრი"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "მოხდა საწყისი სრული სკანირება"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
 #, kde-format
 msgid "Imported creation dates"
 msgstr "შემოტანილია შექმნის თარიღები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
 #, kde-format
 msgid "Imported comments"
 msgstr "შემოტანილი კომენტარები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
 #, kde-format
 msgid "Imported ratings"
 msgstr "შემოტანილია რეიტინები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "მოცილებულია v3 ცხრილები"

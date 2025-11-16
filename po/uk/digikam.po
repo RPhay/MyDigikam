@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-11-16 00:39+0000\n"
 "PO-Revision-Date: 2025-11-11 21:44+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -3208,7 +3208,7 @@ msgid "Map Search"
 msgstr "Пошук за картою"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
 #, kde-format
 msgid "Last Search"
 msgstr "Останній пошук"
@@ -28851,7 +28851,7 @@ msgstr ""
 "Будь ласка, ознайомтеся з повідомленнями про помилки, які виведено до "
 "консолі, і повідомте про цю ваду за допомогою сторінки bugs.kde.org."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:686
+#: core/libs/database/coredb/coredbschemaupdater.cpp:694
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28861,12 +28861,12 @@ msgstr ""
 "Не вдалося виявити схеми оновлення бази даних. Будь ласка, переконайтеся, що "
 "файл dbconfig.xml поточної версії digiKam встановлено за належною адресою. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:711
+#: core/libs/database/coredb/coredbschemaupdater.cpp:719
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Схему бази даних оновлено до версії %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:859
+#: core/libs/database/coredb/coredbschemaupdater.cpp:867
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28877,12 +28877,12 @@ msgstr ""
 "(«%2»). Повідомлення про помилку: «%3». Будь ласка, переконайтеся, що цей "
 "файл можна скопіювати, або вилучіть його."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:881
+#: core/libs/database/coredb/coredbschemaupdater.cpp:889
 #, kde-format
 msgid "Copied database file"
 msgstr "Скопійовано файл бази даних"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:886
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28893,22 +28893,22 @@ msgstr ""
 "але цей файл неможливо відкрити. Будь ласка, вилучіть обидва цих файли і "
 "спробуйте знову, почавши роботу з порожньої бази даних. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:907
+#: core/libs/database/coredb/coredbschemaupdater.cpp:915
 #, kde-format
 msgid "Opened new database file"
 msgstr "Відкрито новий файл бази даних"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Підготовлено створення таблиці"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
 #, kde-format
 msgid "Created tables"
 msgstr "Створені таблиці"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28919,7 +28919,7 @@ msgstr ""
 "оновлення схеми відкладено. Будь ласка, спробуйте почати роботу з порожньої "
 "бази даних, або виправте ваші налаштування."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28939,52 +28939,52 @@ msgstr ""
 "створювати нову базу даних на основі неправильних припущень, пов'язаних з "
 "некоректним встановленням програми."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
 #, kde-format
 msgid "Configured one album root"
 msgstr "Налаштовано кореневу теку одного альбому"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
 #, kde-format
 msgid "Imported albums"
 msgstr "Імпортовані альбоми"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
 #, kde-format
 msgid "Imported images information"
 msgstr "Імпортована інформація щодо зображень"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Попередній пошук (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Ініціалізовано і імпортовано фільтр суфіксів файлів"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Виконано початкове повне сканування"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Імпортовано дати створення"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
 #, kde-format
 msgid "Imported comments"
 msgstr "Імпортовано коментарі"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
 #, kde-format
 msgid "Imported ratings"
 msgstr "Імпортовано оцінки"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Відкинуті таблиці версії 3"

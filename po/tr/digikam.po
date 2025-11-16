@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-11-16 00:39+0000\n"
 "PO-Revision-Date: 2025-11-11 20:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3178,7 +3178,7 @@ msgid "Map Search"
 msgstr "Aramayı Eşlemle"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
 #, kde-format
 msgid "Last Search"
 msgstr "Son Arama"
@@ -28463,7 +28463,7 @@ msgstr ""
 "Lütfen konsolda yazılı olan hata iletilerini okuyun ve bu hatayı bugs.kde."
 "org adresinde bir hata olarak bildirin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:686
+#: core/libs/database/coredb/coredbschemaupdater.cpp:694
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28473,12 +28473,12 @@ msgstr ""
 "Veritabanı güncelleme eylemi bulunamıyor. Lütfen digiKam’ın güncel sürümünün "
 "dbconfig.xml dosyasının doğru yere kurulduğundan emin olun."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:711
+#: core/libs/database/coredb/coredbschemaupdater.cpp:719
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Şema %1 sürümüne güncellendi."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:859
+#: core/libs/database/coredb/coredbschemaupdater.cpp:867
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28488,12 +28488,12 @@ msgstr ""
 "Eski veritabanı dosyası (“%1”) yeni konumuna (“%2”) kopyalanamadı. Hata "
 "iletisi: “%3”. Lütfen dosyanın kopyalanabildiğinden emin olun veya silin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:881
+#: core/libs/database/coredb/coredbschemaupdater.cpp:889
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopyalanan veritabanı dosyası"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:886
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28504,22 +28504,22 @@ msgstr ""
 "açılamıyor. Lütfen her iki dosyayı da silin ve boş bir veritabanıyla "
 "başlayarak yeniden deneyin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:907
+#: core/libs/database/coredb/coredbschemaupdater.cpp:915
 #, kde-format
 msgid "Opened new database file"
 msgstr "Yeni veritabanı dosyası açıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Tablo oluşumu hazırlandı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
 #, kde-format
 msgid "Created tables"
 msgstr "Tablolar oluşturuldu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28530,7 +28530,7 @@ msgstr ""
 "işleminden vazgeçiliyor. Lütfen boş bir veritabanıyla deneyin veya "
 "yapılandırmanızı onarın."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28550,52 +28550,52 @@ msgstr ""
 "veritabanı oluşturmak istemediğimiz için veritabanı güncelleme işlemi artık "
 "iptal edilecek."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
 #, kde-format
 msgid "Configured one album root"
 msgstr "Bir albüm kökü yapılandırıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
 #, kde-format
 msgid "Imported albums"
 msgstr "Albümler içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
 #, kde-format
 msgid "Imported images information"
 msgstr "Görsel bilgisi içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Son Arama (0,9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Dosya sonek süzgeci ilklendirildi ve içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "İlk tam tarama gerçekleştirildi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Oluşturulma tarihleri içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
 #, kde-format
 msgid "Imported comments"
 msgstr "Yorumlar içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
 #, kde-format
 msgid "Imported ratings"
 msgstr "Derecelendirmeler içe aktarıldı"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "v3 tabloları bırakıldı"

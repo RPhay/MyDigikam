@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-11-16 00:39+0000\n"
 "PO-Revision-Date: 2025-11-14 20:05+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3213,7 +3213,7 @@ msgid "Map Search"
 msgstr "חיפושי מפות"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
 #, kde-format
 msgid "Last Search"
 msgstr "חיפוש אחרון"
@@ -27185,7 +27185,7 @@ msgid ""
 "as a bug at bugs.kde.org."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:686
+#: core/libs/database/coredb/coredbschemaupdater.cpp:694
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -27193,12 +27193,12 @@ msgid ""
 "place. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:711
+#: core/libs/database/coredb/coredbschemaupdater.cpp:719
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:859
+#: core/libs/database/coredb/coredbschemaupdater.cpp:867
 #, fuzzy, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27208,12 +27208,12 @@ msgstr ""
 "נכשלה פעולת העתקה של קובץ מסד הנתונים הישן (\"%1\") למיקומו החדש (\"%2\"). "
 "אנא התחילו עם מסד נתונים חדש."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:881
+#: core/libs/database/coredb/coredbschemaupdater.cpp:889
 #, kde-format
 msgid "Copied database file"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:886
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -27221,22 +27221,22 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:907
+#: core/libs/database/coredb/coredbschemaupdater.cpp:915
 #, kde-format
 msgid "Opened new database file"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
 #, kde-format
 msgid "Prepared table creation"
 msgstr "הכנה ליצירת טבלה"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
 #, kde-format
 msgid "Created tables"
 msgstr "נוצרו טבלאות"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -27244,7 +27244,7 @@ msgid ""
 "your configuration."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -27256,52 +27256,52 @@ msgid ""
 "based on false assumptions from a broken installation."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
 #, kde-format
 msgid "Configured one album root"
 msgstr "הוגדר אלבום על אחד"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
 #, kde-format
 msgid "Imported albums"
 msgstr "אלבומים מיובאים"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
 #, kde-format
 msgid "Imported images information"
 msgstr "נתוני תמונות מיובאים"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
 #, fuzzy, kde-format
 msgid "Last Search (0.9)"
 msgstr "חיפוש אחרון"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "מסנן סיומות קבצים מאותחלות ומיובאות"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "סריקה ראשונית מלאה הושלמה"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
 #, kde-format
 msgid "Imported creation dates"
 msgstr "תאריכי יצירה יובאו"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
 #, kde-format
 msgid "Imported comments"
 msgstr "הערות יובאו"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
 #, kde-format
 msgid "Imported ratings"
 msgstr "הדירוגים יובאו"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "טבלאות v3 הוסרו"
