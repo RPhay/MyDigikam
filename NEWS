@@ -24,6 +24,8 @@ Raw Engine      : Update internal Libraw to last 20251117 upstream.
                                   Panasonic GH7, S9
                                   Sony ZV-E10M2, UMC-R10C
 
+Video           : Update internal QtAVPlayer to last 20251117 upstream (Qt5 only).
+
 Advanced Rename : New modifier "Date Format".
 SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
 Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.

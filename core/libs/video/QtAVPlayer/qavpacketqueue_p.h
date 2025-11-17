@@ -19,13 +19,12 @@
 // We mean it.
 //
 
-#include "qavpacket_p.h"
+#include "qavpacket.h"
 #include "qavfilter_p.h"
 #include "qavfiltergraph_p.h"
 #include "qavframe.h"
 #include "qavsubtitleframe.h"
 #include "qavstreamframe.h"
-#include "qavdemuxer_p.h"
 #include <QMutex>
 #include <QWaitCondition>
 #include <QList>
@@ -70,6 +69,8 @@ public:
         delay /= speed;
         const double time = av_gettime_relative() / 1000000.0;
         if (shouldSync) {
+            if (pts < prevPts)
+                return true;
             if (time < frameTimer + delay) {
                 double remaining_time = qMin(frameTimer + delay - time, refreshRate);
                 locker.unlock();
@@ -121,9 +122,8 @@ template<class T>
 class QAVPacketQueue
 {
 public:
-    QAVPacketQueue(AVMediaType mediaType, QAVDemuxer &demuxer)
+    QAVPacketQueue(AVMediaType mediaType)
         : m_mediaType(mediaType)
-        , m_demuxer(demuxer)
     {
     }
 
@@ -159,7 +159,7 @@ public:
     {
         QMutexLocker locker(&m_mutex);
         if (m_decodedFrames.isEmpty())
-            m_demuxer.decode(dequeue(), m_decodedFrames);
+            QAVDemuxer::decode(dequeue(), m_decodedFrames);
         if (m_decodedFrames.isEmpty())
             return false;
         frame = m_decodedFrames.front();
@@ -252,7 +252,6 @@ private:
     }
 
     const AVMediaType m_mediaType = AVMEDIA_TYPE_UNKNOWN;
-    QAVDemuxer &m_demuxer;
     QList<QAVPacket> m_packets;
     // Tracks decoded frames to prevent EOF if not all frames are landed
     QList<T> m_decodedFrames;
