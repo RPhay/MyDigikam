@@ -194,8 +194,7 @@ public:
 
 protected:
 
-    void scanForStaleAlbums(const QList<CollectionLocation>& locations);
-    void scanForStaleAlbums(const QList<int>& locationIdsToScan);
+    void scanForStaleAlbums(const CollectionLocation& location, const QString& album);
     void scanAlbumRoot(const CollectionLocation& location);
     void scanAlbum(const CollectionLocation& location, const QString& album, bool checkDate = false);
     void scanExistingFile(const QFileInfo& fi, qlonglong id);
@@ -243,6 +242,7 @@ protected:
 
     void markDatabaseAsScanned();
     void mainEntryPoint(bool complete);
+    int  createAlbumDateCache(const CollectionLocation& location, const QString& album);
     int  checkAlbum(const CollectionLocation& location, const QString& album);
     void itemsWereRemoved(const QList<qlonglong>& removedIds);
     void updateRemovedItemsTime();
@@ -250,7 +250,6 @@ protected:
     void resetDeleteRemovedSettings();
     bool checkDeleteRemoved();
     void loadNameFilters();
-    int  countItemsInFolder(const QString& path);
     DatabaseItem::Category category(const QFileInfo& info);
 
     //@}

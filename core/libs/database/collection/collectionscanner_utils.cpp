@@ -176,24 +176,37 @@ void CollectionScanner::itemsWereRemoved(const QList<qlonglong>& removedIds)
     }
 }
 
-int CollectionScanner::countItemsInFolder(const QString& path)
+int CollectionScanner::createAlbumDateCache(const CollectionLocation& location, const QString& album)
 {
-    QDir dir(path);
+    if (!location.isAvailable())
+    {
+        return 0;
+    }
+
+    QDir dir(location.albumRootPath() + album);
 
     if (!dir.exists() || !dir.isReadable())
     {
         return 0;
     }
 
-    int items = 0;
+    int items = 1;
+    QFileInfo dirInfo(dir.path());
+    d->albumDateCache.insert(dirInfo.absoluteFilePath(),
+                             asDateTimeUTC(dirInfo.lastModified()));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
 
     using ItFlag = QDirListing::IteratorFlag;
+    const QTimeZone tz(QTimeZone(QTimeZone::LocalTime));
 
     for (const auto& entry : QDirListing(dir.path(), ItFlag::Recursive))
     {
-        Q_UNUSED(entry);
+        if (entry.isDir())
+        {
+            d->albumDateCache.insert(entry.filePath(),
+                                     asDateTimeUTC(entry.lastModified(tz)));
+        }
 
         ++items;
     }
@@ -208,6 +221,13 @@ int CollectionScanner::countItemsInFolder(const QString& path)
     while (it.hasNext())
     {
         it.next();
+
+        if (it.fileInfo().isDir())
+        {
+            d->albumDateCache.insert(it.fileInfo().filePath(),
+                                     asDateTimeUTC(it.fileInfo().lastModified()));
+        }
+
         ++items;
     }
 
