@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-15 00:39+0000\n"
-"PO-Revision-Date: 2025-11-14 12:06+0100\n"
+"POT-Creation-Date: 2025-11-16 00:39+0000\n"
+"PO-Revision-Date: 2025-11-16 08:03+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3139,7 +3139,7 @@ msgid "Map Search"
 msgstr "რუკაზე ძებნა"
 
 #: core/app/views/stack/itemiconview_p.h:140
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1178
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
 #, kde-format
 msgid "Last Search"
 msgstr "ბოლო ძებნა"
@@ -3399,6 +3399,8 @@ msgid ""
 "Add spell-checking support in caption text widget using KDE framework Sonnet "
 "component."
 msgstr ""
+"დაემატა მართლწერის შემოწმების მხარდაჭერა წარწერის ტექსტებში KDE-ის "
+"ბიბლიოთეკის Sonnet კომპონენტის გამოყენებით."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3406,12 +3408,16 @@ msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
+"დაემატა მართლწერის შემოწმების კონფიგურაციის პანელი მენიუში მორგება-"
+">სხვადასხვა digiKam-ისთვის და showfoto-ისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"დაემატა ინტერნეტში თარგმანის მხარდაჭერა ალტერნატიული ენის ტექსტური "
+"რედაქტორის ვიჯეტს."
 
 #: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
@@ -3427,12 +3433,16 @@ msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"დაემატა პარამეტრები სასურველი ალტერნატიული/ნათარგმნი ენების სიას ტექსტური "
+"რედაქტორის ვიჯეტში."
 
 #: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
+"საშუალება გამოიყენოთ გლობალური ან მორგებული გამოსახულების ხარისხის "
+"სკანირების პარამეტრები ყველგან."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
@@ -9070,6 +9080,8 @@ msgstr "ხელსაწყო გამოსახულებაზე გ�
 msgctxt "@info"
 msgid "This Image Editor tool can apply blur effects to an image."
 msgstr ""
+"ამ გამოსახულების რედაქტორის ხელსაწყოს ტექსტზე დაბინდვის ეფექტის გადატარება "
+"შეუძლია."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:94
 #, kde-format
@@ -9122,6 +9134,8 @@ msgstr "ნახშირით ხატვის ეფექტი"
 msgctxt "@info"
 msgid "This Image Editor tool can emulate charcoal drawing to an image."
 msgstr ""
+"ამ გამოსახულების რედაქტორის ხელსაწყოს გამოსახულებაზე ნახშირით ხატვის "
+"ემულაცია შეუძლია."
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:91
 #, kde-format
@@ -9176,6 +9190,8 @@ msgstr "ხელსაწყო ფერის ეფექტების გ
 msgctxt "@info"
 msgid "This Image Editor tool can apply color effects to an image."
 msgstr ""
+"ამ გამოსახულების რედაქტორის ხელსაწყოს გამოსახულებაზე ფერის ეფექტების "
+"გადატარება შეუძლია."
 
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:94
 #, kde-format
@@ -9186,7 +9202,7 @@ msgstr "ფერის ეფექტები..."
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:82
 #, kde-format
 msgid "This is the preview of the distortion effect applied to the photograph."
-msgstr ""
+msgstr "ეს ფოტოგრაფიაზე დამახინჯების ეფექტის გადატარების მინიატურაა."
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:97
 #, kde-format
@@ -9457,6 +9473,8 @@ msgstr "ხელსაწყო ზეთით ხატვის ემულ
 msgctxt "@info"
 msgid "This Image Editor tool can emulate oil painting over an image."
 msgstr ""
+"ამ გამოსახულების რედაქტორის ხელსაწყოს გამოსახულებაზე ზეთით ხატვის ეფექტის "
+"ემულაცია შეუძლია."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:94
 #, kde-format
@@ -9639,7 +9657,7 @@ msgstr "წონის ნიღბების დამატება"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:220
 #, kde-format
 msgid "Enable this option to add suppression and preservation masks."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი ჩახშობისა და შენარჩუნების ნიღბების დასამატებლად."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:227
 #, kde-format
@@ -9694,7 +9712,7 @@ msgstr "დააწკაპუნეთ ღილაკზე ნიღბი�
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
 msgid "Specify here the size of the brush used to paint masks."
-msgstr ""
+msgstr "მიუთითეთ აქ ფუნჯის ზომა, რომელიც ნიღბების დასახატად გამოიყენება."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:286
 #, kde-format
@@ -10200,6 +10218,7 @@ msgstr "ზუსტი ასპექტი"
 #, kde-format
 msgid "Enable this option to force exact aspect ratio crop."
 msgstr ""
+"ჩართეთ ეს პარამეტრი ამოჭრისას გვერდების ფარდობის ზუსტად შესანარჩუნებლად."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:259
 #, kde-format
@@ -10239,12 +10258,12 @@ msgstr "მომხმარებლის პროპორციები:"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:276
 #, kde-format
 msgid "Set here the desired custom aspect numerator value."
-msgstr ""
+msgstr "დააყენეთ აქ სასურველი გვერდების ფარდობის მრიცხველის მნიშვნელობა."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:281
 #, kde-format
 msgid "Set here the desired custom aspect denominator value."
-msgstr ""
+msgstr "დააყენეთ აქ სასურველი გვერდების ფარდობის მნიშვნელის მნიშვნელობა."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:313
 #, kde-format
@@ -10354,6 +10373,7 @@ msgstr "ჰორიზონტალურად გადაბრუნე�
 #, kde-format
 msgid "Enable this option to flip the guidelines horizontally."
 msgstr ""
+"ჩართეთ ეს პარამეტრი მიმმართველი ხაზების ჰორიზონტალურად გადასაბრუნებლად."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:386
 #, kde-format
@@ -10363,7 +10383,7 @@ msgstr "ვერტიკალურად გადაბრუნება"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:387
 #, kde-format
 msgid "Enable this option to flip the guidelines vertically."
-msgstr ""
+msgstr "ჩართეთ ეს პარამეტრი მიმმართველი ხაზების ვერტიკალურად გადასაბრუნებლად."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:389
 #, kde-format
@@ -10710,7 +10730,7 @@ msgstr "მთავარი ჰორიზონტალური კუთ�
 #: core/dplugins/editor/transform/shear/sheartool.cpp:114
 #, kde-format
 msgid "The main horizontal shearing angle, in degrees."
-msgstr ""
+msgstr "მთავარი ჰორიზონტალური დახრის კუთხე გრადუსებში."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:116
 #, kde-format
@@ -10732,7 +10752,7 @@ msgstr "მთავარი ვერტიკალური კუთხე:
 #: core/dplugins/editor/transform/shear/sheartool.cpp:126
 #, kde-format
 msgid "The main vertical shearing angle, in degrees."
-msgstr ""
+msgstr "მთავარი ვერტიკალურიდახრის კუთხე გრადუსებში."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:128
 #, kde-format
@@ -10819,6 +10839,8 @@ msgid ""
 "There is no scanner device available.\n"
 "Please check your configuration"
 msgstr ""
+"სკანერის მოწყობილობა ხელმისაწვდომი არაა.\n"
+"გადაამოწმეთ თქვენი კონფიგურაცია"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:137
 #, kde-format
@@ -11041,7 +11063,7 @@ msgstr "შეუნახავი ცვლილებები"
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
-msgstr ""
+msgstr "%1 გნებავთ, მათში შეტანილი ცვლილებების შენახვა?"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:916
 #, kde-format
@@ -11276,7 +11298,7 @@ msgstr "მონაცემების საბოლოო საქაღ�
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
 msgid "Report below have been generated while KML file processing:"
-msgstr ""
+msgstr "ქვემორე ანგარიში შეიქმნა KML ფაილის დამუშავებისას:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:53
 #, kde-format
@@ -11961,6 +11983,8 @@ msgid ""
 "Set here the brightness adjustment value in APEX unit used by camera to take "
 "the picture."
 msgstr ""
+"დააყენეთ აქ სიკაშკაშის გასწორების მნიშვნელობა APEX ერთეულში, რომელსაც "
+"იყენებდა კამერა, რომელმაც ეს სურათი გადაიღო."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:82
 #, kde-format
@@ -12003,6 +12027,8 @@ msgid ""
 "Set here the degree of overall image gain adjustment used by camera to take "
 "the picture."
 msgstr ""
+"დააყენეთ გაძლიერების დონე, რომელსაც იყენებდა კამერა, რომელმაც ეს სურათი "
+"გადაიღო."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:94
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
@@ -12036,6 +12062,8 @@ msgid ""
 "Set here the direction of contrast processing applied by the camera to take "
 "the picture."
 msgstr ""
+"დააყენეთ აქ კონტრასტის დამუშავების მიმართულება, რომელსაც იყენებდა კამერა, "
+"რომელმაც ეს სურათი გადაიღო."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:104
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
@@ -12068,6 +12096,8 @@ msgid ""
 "Set here the direction of saturation processing applied by the camera to "
 "take the picture."
 msgstr ""
+"დააყენეთ აქ გაჯერების დამუშავების მიმართულება, რომელსაც იყენებდა კამერა, "
+"რომელმაც ეს სურათი გადაიღო."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:114
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
@@ -12154,7 +12184,7 @@ msgstr "დააყენეთ აქ გამოსახულების 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:94
 #, kde-format
 msgid "Enter the image description. This field is limited to ASCII characters."
-msgstr ""
+msgstr "შეიყვანეთ გამოსახულების აღწერა. ეს ველი შეზღუდულია ASCII სიმბოლოებზე."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:99
 #, kde-format
@@ -12189,6 +12219,8 @@ msgid ""
 "Enter the copyright owner of the image. This field is limited to ASCII "
 "characters."
 msgstr ""
+"შეიყვანეთ გამოსახულების საავტორო უფლებების მფლობელი. ეს ველი შეზღუდულია "
+"ASCII სიმბოლოებზე."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
 #, kde-format
@@ -12207,6 +12239,8 @@ msgid ""
 "Enter the image's caption. This field is not limited. UTF8 encoding will be "
 "used to save the text."
 msgstr ""
+"შეიყვანეთ გამოსახულების წარწერა. ეს ველი შეზღუდული არა. ტექსტის შესანახად "
+"გამოიყენება UTF-8 კოდირება."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:125
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:85
@@ -12273,6 +12307,7 @@ msgstr ""
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr ""
+"დააყენეთ აქ წამის ნაწილები გამოსახულების შექმნის დროისა და თარიღისთვის."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
 #, kde-format
@@ -13777,6 +13812,7 @@ msgstr "დააყენეთ აქ კონვერტის დანი
 msgid ""
 "Enter the envelope destination. This field is limited to 1024 characters."
 msgstr ""
+"შეიყვანეთ კონვერტის დანიშნულების წერტილი. ეს ველი შეზღუდულია 1024 სიმბოლოზე."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:162
 #, kde-format
@@ -13786,7 +13822,7 @@ msgstr "U.N.O ID:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:166
 #, kde-format
 msgid "Set here the Unique Name of Object identifier"
-msgstr ""
+msgstr "დააყენეთ აქ ობიექტის იდენტიფიკატორის უნიკალური სახელი"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:167
 #, kde-format
@@ -13794,6 +13830,8 @@ msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
 "characters."
 msgstr ""
+"დააყენეთ აქ ობიექტის იდენტიფიკატორის უნიკალური სახელი. ეს ველი შეზღუდულია 80 "
+"სიმბოლოზე."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:172
 #, kde-format
@@ -13809,7 +13847,7 @@ msgstr "დააყენეთ აქ პროდუქტის იდენ
 #, kde-format
 msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
-msgstr ""
+msgstr "დააყენეთ აქ პროდუქტის იდენტიფიკატორი. ეს ველი შეზღუდულია 32 სიმბოლოზე."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:182
 #, kde-format
@@ -13825,7 +13863,7 @@ msgstr "დააყენეთ აქ სერვისის იდენტ
 #, kde-format
 msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
-msgstr ""
+msgstr "დააყენეთ აქ სერვისის იდენტიფიკატორი. ეს ველი შეზღუდულია 10 სიმბოლოზე."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:192
 #, kde-format
@@ -13841,7 +13879,7 @@ msgstr "დააყენეთ აქ კონვერტის იდენ
 #, kde-format
 msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
-msgstr ""
+msgstr "დააყენეთ აქ კონვერტის იდენტიფიკატორი. ეს ველი შეზღუდულია 8 სიმბოლოზე."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
@@ -13915,17 +13953,17 @@ msgstr "კონვერტის გაგზავნის თარიღ�
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:249
 #, kde-format
 msgid "Set here the date when the service sent the material."
-msgstr ""
+msgstr "დააყენეთ აქ თარიღი, როცა სერვისმა მასალა გამოაგზავნა."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
 #, kde-format
 msgid "Set here the time when the service sent the material."
-msgstr ""
+msgstr "დააყენეთ აქ დრო, როცა სერვისმა მასალა გამოაგზავნა."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:251
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
-msgstr ""
+msgstr "დააყენეთ აქ დროის სარტყელი, როცა სერვისმა მასალა გამოაგზავნა."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:67
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:66
@@ -13992,24 +14030,24 @@ msgstr "Exif შექმნის თარიღის სინქრონ�
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:136
 #, kde-format
 msgid "Set here the creation date of intellectual content."
-msgstr ""
+msgstr "დააყენეთ აქ ინტელექტუალური შემცველობის შექმნის თარიღი."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:148
 #, kde-format
 msgid "Set here the creation time of intellectual content."
-msgstr ""
+msgstr "დააყენეთ აქ ინტელექტუალური შემცველობის შექმნის დრო."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:150
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:138
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:157
 #, kde-format
 msgid "Set here the time zone of intellectual content."
-msgstr ""
+msgstr "დააყენეთ აქ ინტელექტუალური შემცველობის შექმნის დროის სარტყელი."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:158
 #, kde-format
 msgid "Set here the full country name referenced by the content."
-msgstr ""
+msgstr "დააყენეთ აქ შემცველობის მიერ მიმართული ქვეყნის სრული სახელი."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:162
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:125
@@ -14032,6 +14070,8 @@ msgstr "დააყენეთ აქ შემცველობის ქა
 msgid ""
 "Set here the city of content origin. This field is limited to 32 characters."
 msgstr ""
+"დააყენეთ აქ შემცველობის წყაროს ქალაქის სახელი. ეს ველი შეზღუდულია 32 "
+"სიმბოლოზე."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:172
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:171
@@ -14052,6 +14092,7 @@ msgid ""
 "Set here the content location within city. This field is limited to 32 "
 "characters."
 msgstr ""
+"დააყენეთ აქ შემცველობის მდებარეობა ქალაქში. ეს ველი შეზღუდულია 32 სიმბოლოზე."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:182
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:130
@@ -14074,6 +14115,8 @@ msgid ""
 "Set here the Province or State of content origin. This field is limited to "
 "32 characters."
 msgstr ""
+"დააყენეთ აქ შემცველობის წყაროს პროვინცია, ან შტატი. ეს ველი შეზღუდულია 32 "
+"სიმბოლოზე."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:192
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:135
@@ -14111,17 +14154,21 @@ msgstr "გამოცემის თარიღის დღევანდ�
 #, kde-format
 msgid "Set here the earliest intended usable date of intellectual content."
 msgstr ""
+"დააყენეთ აქ ინტელექტუალური შემცველობის ყველაზე ადრეული გამოყენების თარიღი."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:122
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
 msgstr ""
+"დააყენეთ აქ ინტელექტუალური შემცველობის ყველაზე ადრეული გამოყენების დრო."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:124
 #, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
 msgstr ""
+"დააყენეთ აქ ინტელექტუალური შემცველობის ყველაზე ადრეული გამოყენების დროის "
+"სარტყელი."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
 #, kde-format
@@ -14142,16 +14189,19 @@ msgstr "ვადის დაყენება დღევანდელ დ
 #, kde-format
 msgid "Set here the latest intended usable date of intellectual content."
 msgstr ""
+"დააყენეთ აქ ინტელექტუალური შემცველობის ყველაზე გვიანი გამოყენების თარიღი."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:147
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
-msgstr ""
+msgstr "დააყენეთ აქ ინტელექტუალური შემცველობის ყველაზე გვიანი გამოყენების დრო."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
 #, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr ""
+"დააყენეთ აქ ინტელექტუალური შემცველობის ყველაზე გვიანი გამოყენების დროის "
+"სარტყელი."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
 #, kde-format
@@ -14190,7 +14240,7 @@ msgstr "8: დაბალი"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:182
 #, kde-format
 msgid "Select here the editorial urgency of content."
-msgstr ""
+msgstr "აირჩიეთ აქ რედაქტორის სიმძიმე შემცველობისთვის."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:186
 #, kde-format
@@ -14944,7 +14994,7 @@ msgstr "ტიპი:"
 #, kde-format
 msgctxt "@info"
 msgid "Select here the editorial type of the content."
-msgstr ""
+msgstr "აირჩიეთ აქ რედაქტორის ტიპი შემცველობისთვის."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:197
 #, kde-format
@@ -14956,19 +15006,19 @@ msgstr "ატრიბუტი:"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
-msgstr ""
+msgstr "დააყენეთ აქ რედაქტორის ატრიბუტის აღწერა"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description of the content."
-msgstr ""
+msgstr "დააყენეთ აქ რედაქტორის ატრიბუტის აღწერა შემცველობისთვის."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid "Select here the editorial attribute of the content."
-msgstr ""
+msgstr "აირჩიეთ აქ რედაქტორის ატრიბუტი შემცველობისთვის."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:206
 #, kde-format
@@ -15129,7 +15179,7 @@ msgstr "სათაური:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:66
 #, kde-format
 msgid "Set here a shorthand reference for the content."
-msgstr ""
+msgstr "დააყენეთ აქ მოკლე მიმართვა შემცველობისთვის."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:70
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:118
@@ -15156,6 +15206,8 @@ msgstr "იდენთიფიკატორები:"
 #, kde-format
 msgid "Set here the strings that identify content that recurs."
 msgstr ""
+"დააყენეთ აქ სტრიქონები, რომელიც გამოიყენება შემცველობის იდენტიფიკაციისთვის, "
+"რომლის დროც დგება."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
 #, kde-format
@@ -15226,7 +15278,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
-msgstr ""
+msgstr "ჩაწერეთ შესწორებული თარიღი და დრო თითოეული გამოსახულებისთვის"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:374
 #, kde-format
@@ -15960,7 +16012,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Saturation Contribution:"
-msgstr ""
+msgstr "მაღალი გაჯერებულობის წილი:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:153
 #, kde-format
@@ -15980,7 +16032,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Contrast Contribution:"
-msgstr ""
+msgstr "მაღალკონტრასტიანების წილი:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:164
 #, kde-format
@@ -16001,7 +16053,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Color Appearance Model (CIECAM02)"
-msgstr ""
+msgstr "ფერის გარეგნობის მოდელის გამოყენება (CIECAM02)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:172
 #, kde-format
@@ -16026,7 +16078,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:column Saving checkbox"
 msgid "Include during Saving"
-msgstr ""
+msgstr "ჩასმა შენახვისას"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:174
 #, kde-format
@@ -18255,7 +18307,7 @@ msgstr "პანორამის შეწებება დასრულ�
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
-msgstr ""
+msgstr "გილოცავთ, თქვენი გამოსახულებები ახლა აკინძულია პანორამაში."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, kde-format
@@ -18267,7 +18319,7 @@ msgstr "თქვენი პანორამა შეიქმნება 
 #, kde-format
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
-msgstr ""
+msgstr "როცა დააჭერთ ღილაკს \"დასრულება\", ქვემორე სახელებით."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
 #, kde-format
@@ -18659,13 +18711,13 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:145
 #, kde-format
 msgid "Enter here your customized caption string..."
-msgstr ""
+msgstr "შეიყვანეთ აქ მორგებული წარწერის სტრიქონი..."
 
 #. i18n: ectx: property (text), widget (QLabel, m_free_label)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:152
 #, kde-format
 msgid "The fields listed below can be used with the customization:"
-msgstr ""
+msgstr "ქვემოთ ჩამოთვლილი ველები შეგიძლიათ, მორგებისთვის გამოიყენოთ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:174
@@ -19064,7 +19116,7 @@ msgstr "გამოსახულების ფორმატი:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:79
 #, kde-format
 msgid "Select your preferred format to export printing as image."
-msgstr ""
+msgstr "აირჩიეთ სასურველი ფორმატი დასაბეჭდი გამოსახულების გასატანად."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:266
@@ -19082,7 +19134,7 @@ msgstr "გამოტანის სამიზნე ბილიკი"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #, kde-format
 msgid "The image output file name will be generated automatically."
-msgstr ""
+msgstr "გამოტანილი გამოსახულების ფაილის სახელი ავტომატურად დაგენერირდება."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:114
 #, kde-format
@@ -19123,7 +19175,7 @@ msgstr "ხელით განლაგება"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1126
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
-msgstr ""
+msgstr "არჩეული მორგებული ფოტოს ზომა ქაღალდის ზომაზე გამოყენებული არ იქნება."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1358
 #, kde-format
@@ -19332,7 +19384,7 @@ msgstr "სურათების ელფოსტით გაგზავ�
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:666
 #, kde-format
 msgid "Press 'Finish' button to clean up temporary files"
-msgstr ""
+msgstr "დააჭირეთ ღილაკს \"დასრულება\" დროებითი ფაილების წასაშლელად"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:97
 #, kde-format
@@ -19564,7 +19616,7 @@ msgstr "გამოსახულების სიგრძე:"
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
 #, kde-format
 msgid "Select your preferred format to convert image."
-msgstr ""
+msgstr "აირჩიეთ სასურველი ფორმატი გამოსახულებების გასატანად."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
@@ -19643,7 +19695,7 @@ msgstr "ვიდეო სლაიდშოუ"
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, kde-format
 msgid "A tool to create video slideshow from images"
-msgstr ""
+msgstr "ხელსაწყო გამოსახულებებიდან ვიდეო სლაიდშოუს შესაქმნელად"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:64
 #, kde-format
@@ -19663,7 +19715,7 @@ msgstr "ვიდეო სლაიდშოუს შექმნა..."
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:130
 #, kde-format
 msgid "Starting to generate video slideshow..."
-msgstr ""
+msgstr "ვიდეო სლაიდშოუს გენერაციის დაწყება..."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:133
 #, kde-format
@@ -19688,7 +19740,7 @@ msgstr "ვიდეო სლაიდშოუ დასრულდა."
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:196
 #, kde-format
 msgid "Opening video stream in player..."
-msgstr ""
+msgstr "ვიდეონაკადის დამკვრელში გახსნა..."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideimagespage.cpp:64
 #, kde-format
@@ -19813,7 +19865,7 @@ msgstr "ეკრანზე ჩვენება"
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:276
 #, kde-format
 msgid "The video output file name will be generated automatically."
-msgstr ""
+msgstr "გამოტანილი ვიდეოს ფაილის სახელი ავტომატურად დაგენერირდება."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:87
 #, kde-format
@@ -21199,6 +21251,9 @@ msgid ""
 "Click To Exit\n"
 "or press ESC..."
 msgstr ""
+"სლაიდშოუ დასრულდა.\n"
+"დააწკაპუნეთ გასასვლელად\n"
+"ან დააჭირეთ ღილაკს ESC..."
 
 #: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:82
 #, kde-format
@@ -22971,7 +23026,7 @@ msgstr "ImageShack"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to ImageShack web-service"
-msgstr ""
+msgstr "ხელსაწყო ImageShack-ის ვებსერვისზე გასატანად"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:64
 #, kde-format
@@ -23558,11 +23613,14 @@ msgstr "<i>იდენფიტიკაციის გარეშე</i>"
 msgid ""
 "Optionally describe your observation or explain your identification here."
 msgstr ""
+"სურვილისამებრ აღწერეთ თქვენი დაკვირვება, ან აღწერეთ თქვენი იდენტიფიკაცია."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:102
 #, kde-format
 msgid "Enter your identification here, popups will guide to a supported name."
 msgstr ""
+"შეიყვანეთ თქვენი იდენტიფიკაცია აქ. მხტუნარები მიგიყვანთ მხარდაჭერილ "
+"სახელამდე."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:105
 #, kde-format
@@ -23601,7 +23659,7 @@ msgstr "მეტრში დაკვირვებიდან."
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:157
 #, kde-format
 msgid "Known observations should be within"
-msgstr ""
+msgstr "ცნობილი დაკვირვებები უნდა იყოს სუალედში"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:209
 #, kde-format
@@ -23698,7 +23756,7 @@ msgstr "IPFS"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to IPFS web-service"
-msgstr ""
+msgstr "ხელსაწყო IPFS-ის ვებსერვისზე გასატანად"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:68
 #, kde-format
@@ -23729,7 +23787,7 @@ msgstr "IPFS-ზე ატვირთვის დაწყება"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
 #, kde-format
 msgid "Failed to upload photo to IPFS: %1\n"
-msgstr ""
+msgstr "სურათის IPFS-ზე ატვირთვა ჩავარდა: %1\n"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #, kde-format
@@ -23737,6 +23795,8 @@ msgid ""
 "Failed to upload photo to IPFS: %1\n"
 "Do you want to continue?"
 msgstr ""
+"სურათის IPFS-ზე ატვირთვა ჩავარდა: %1\n"
+"გააგრძელებთ?"
 
 #: core/dplugins/generic/webservices/mediawiki/backend/mediawiki_queryimageinfo.cpp:203
 #, kde-format
@@ -24389,6 +24449,9 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
+"სურათის Pinterest-ზე ატვირთვა ჩავარდა.\n"
+"%1\n"
+"გააგრძელებთ?"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:396
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:401
@@ -25162,7 +25225,7 @@ msgstr "xdotcom"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to x.com (aka Twitter) web-service"
-msgstr ""
+msgstr "ხელსაწყო x.com-ის (ყოფილი Twitter) ვებსერვისზე გასატანად"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
 #, kde-format
@@ -26805,7 +26868,7 @@ msgstr "კოლექცია, რომელიც საქაღალდ
 #: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
 msgid "The storage media can be uniquely identified."
-msgstr ""
+msgstr "საცავის მედიის იდენტიფიკატორი უნიკალური უნდა იყოს."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:296
 #, kde-format
@@ -27028,7 +27091,7 @@ msgid ""
 "as a bug at bugs.kde.org."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:686
+#: core/libs/database/coredb/coredbschemaupdater.cpp:694
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -27036,12 +27099,12 @@ msgid ""
 "place. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:711
+#: core/libs/database/coredb/coredbschemaupdater.cpp:719
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "სქემა განახლდა ვერსიამდე %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:859
+#: core/libs/database/coredb/coredbschemaupdater.cpp:867
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27049,12 +27112,12 @@ msgid ""
 "delete it."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:881
+#: core/libs/database/coredb/coredbschemaupdater.cpp:889
 #, kde-format
 msgid "Copied database file"
 msgstr "მონაცემთა ბაზის ფაილი დაკოირდა"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:886
+#: core/libs/database/coredb/coredbschemaupdater.cpp:894
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -27062,22 +27125,22 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:907
+#: core/libs/database/coredb/coredbschemaupdater.cpp:915
 #, kde-format
 msgid "Opened new database file"
 msgstr "გაიხსნა ახალი მონაცემთა ბაზის ფაილი"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1006
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
 #, kde-format
 msgid "Prepared table creation"
 msgstr "ცხრილების შექმნა მომზადდა"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1025
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
 #, kde-format
 msgid "Created tables"
 msgstr "შექმნილი ცხრილები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1038
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -27085,7 +27148,7 @@ msgid ""
 "your configuration."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1060
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -27097,52 +27160,52 @@ msgid ""
 "based on false assumptions from a broken installation."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1087
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
 #, kde-format
 msgid "Configured one album root"
 msgstr "მორგებულია ერთი ალბომის ძირითადი"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1113
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
 #, kde-format
 msgid "Imported albums"
 msgstr "შემოტანილი ალბომები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1150
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
 #, kde-format
 msgid "Imported images information"
 msgstr "შემოტანილი გამოსახულებების ინფორმაცია"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1180
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "ბოლო ძებნა (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1241
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "ინიციალიზებული და შემოტანილია ფაილის სუფიქსის ფილტრი"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1263
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "მოხდა საწყისი სრული სკანირება"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1287
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
 #, kde-format
 msgid "Imported creation dates"
 msgstr "შემოტანილია შექმნის თარიღები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1318
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
 #, kde-format
 msgid "Imported comments"
 msgstr "შემოტანილი კომენტარები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
 #, kde-format
 msgid "Imported ratings"
 msgstr "შემოტანილია რეიტინები"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1356
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "მოცილებულია v3 ცხრილები"
@@ -27382,7 +27445,7 @@ msgstr "არასწორი მონაცემთა ბაზის ო
 #: core/libs/database/server/databaseserver.cpp:689
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
-msgstr ""
+msgstr "მონაცემთა ბაზის პროცესი მოულოდნელად დასრულდა საწყისი კავშირის დროს."
 
 #: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
@@ -27394,6 +27457,8 @@ msgstr "60 წამი მოლოდინის შემდეგ მონ
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
+"მონაცემთა ბაზის შექმნა ჩავარდა<p>მოთხოვნის შეცდომა: %1</p><p>მონაცემთა ბაზის "
+"შეცდომა: %2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:752
 #, kde-format
@@ -30705,17 +30770,17 @@ msgstr "ტონი:"
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:86
 #, kde-format
 msgid "Set here the hue adjustment of the image."
-msgstr ""
+msgstr "დააყენეთ აქ გამოსახულების ტონის გასწორება."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:93
 #, kde-format
 msgid "Set here the saturation adjustment of the image."
-msgstr ""
+msgstr "დააყენეთ აქ გამოსახულების გაჯერებულობის გასწორება."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:95
 #, kde-format
 msgid "Vibrance:"
-msgstr ""
+msgstr "ფერადოვნება:"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:100
 #, kde-format
@@ -30838,7 +30903,7 @@ msgstr "სიმძლავრე:"
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:276
 #, kde-format
 msgid "<b>Power</b>: How strong the effect is applied."
-msgstr ""
+msgstr "<b>ძალა</b>: რამდენად ძლიერად გადატარდება ეფექტი."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:187
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:218
@@ -31280,7 +31345,7 @@ msgstr ""
 #: core/libs/dimg/filters/levels/histogrambox.cpp:272
 #, kde-format
 msgid "<p>Select the histogram channel to display:</p>"
-msgstr ""
+msgstr "<p>აირჩიეთ ჰისტოგრამის არხი გამოსატანად:</p>"
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:278
 #, kde-format
@@ -31292,6 +31357,7 @@ msgstr "სიკაშკაშე"
 #, kde-format
 msgid "<b>Luminosity</b>: display the image's luminosity values."
 msgstr ""
+"<b>განათებულობა</b>: გამოსახულების განათებულობის მნიშვნელობების გამოტანა."
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:281
 #, kde-format
@@ -31302,7 +31368,7 @@ msgstr "წითელი"
 #: core/libs/dimg/filters/levels/histogrambox.cpp:282
 #, kde-format
 msgid "<b>Red</b>: display the red image-channel values."
-msgstr ""
+msgstr "<b>წითელი</b>: გამოსახულების წითელი არხის მნიშვნელობების გამოტანა."
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:284
 #, kde-format
@@ -31313,7 +31379,7 @@ msgstr "მწვანე"
 #: core/libs/dimg/filters/levels/histogrambox.cpp:285
 #, kde-format
 msgid "<b>Green</b>: display the green image-channel values."
-msgstr ""
+msgstr "<b>მწვანე</b>: გამოსახულების მწვანე არხის მნიშვნელობების გამოტანა."
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:287
 #, kde-format
@@ -31324,7 +31390,7 @@ msgstr "ლურჯი"
 #: core/libs/dimg/filters/levels/histogrambox.cpp:288
 #, kde-format
 msgid "<b>Blue</b>: display the blue image-channel values."
-msgstr ""
+msgstr "<b>ლურჯი</b>: გამოსახულების ლურჯი არხის მნიშვნელობების გამოტანა."
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:290
 #, kde-format
@@ -31335,7 +31401,7 @@ msgstr "ფერები"
 #: core/libs/dimg/filters/levels/histogrambox.cpp:291
 #, kde-format
 msgid "<b>Colors</b>: Display all color channel values at the same time."
-msgstr ""
+msgstr "<b>ფერები</b>: ყველა ფერის არხის მნიშვნელობის ერთდროული ჩვენება."
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:293
 #, kde-format
