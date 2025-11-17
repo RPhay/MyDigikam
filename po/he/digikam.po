@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-16 00:39+0000\n"
-"PO-Revision-Date: 2025-11-14 20:05+0200\n"
+"PO-Revision-Date: 2025-11-16 15:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -6038,9 +6038,9 @@ msgid "Enter title text here."
 msgstr "הוסיפו מלל כאן!"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgid "Captions:"
-msgstr "הערות:"
+msgstr "כיתובים:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
@@ -6089,20 +6089,20 @@ msgid "Pick Label:"
 msgstr "נקודות:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Color Label:"
-msgstr "תצורת צבע:"
+msgstr "תווית צבע:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rating:"
 msgstr "דירוג:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Assign Labels"
-msgstr "יישום מרחב צבע"
+msgstr "הקצאת תוויות"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:57
 #, fuzzy, kde-format
@@ -6119,17 +6119,16 @@ msgid ""
 msgstr "זוהי רשימת הפריטים שאמורים להימחק."
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
-#, fuzzy, kde-format
-#| msgid "Assign Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
-msgstr "הוספת תוויות"
+msgstr "הקצאת תגיות"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי להקצאת תגיות לתמונות אוטומטית"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
 #, fuzzy, kde-kuit-format
@@ -6192,8 +6191,7 @@ msgid "Completely"
 msgstr "רכיב"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "תאריך"
@@ -6230,8 +6228,7 @@ msgid "Completely"
 msgstr "רכיב"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "תאריך"
@@ -6261,8 +6258,7 @@ msgid "Completely"
 msgstr "רכיב"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "תאריך"
@@ -7030,11 +7026,10 @@ msgid "JPEG-2000 verification model"
 msgstr "איכות JPEG-2000:"
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:82
-#, fuzzy, kde-format
-#| msgid "Flash has been fired"
+#, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
-msgstr "הפלאש הופעל"
+msgstr "טוען ImageMagick"
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:97
 #, kde-format
@@ -7056,8 +7051,7 @@ msgstr ""
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
 #: core/libs/dplugins/core/dplugindimg.cpp:56
 #: core/libs/dplugins/core/dplugindimg.cpp:68
-#, fuzzy, kde-format
-#| msgid "no"
+#, kde-format
 msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "לא"
@@ -7163,10 +7157,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Portable Network Graphic"
-msgstr "קובצי תמונת"
+msgstr "גרפיקת אינטרנט ניידת - PNG"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:62
 #, fuzzy, kde-format
@@ -7181,9 +7175,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "AVIF quality:"
-msgstr "איכות JPEG:"
+msgstr "איכות AVIF:"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
 #, kde-format
@@ -7209,10 +7203,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:71
-#, fuzzy, kde-format
-#| msgid "JPEG quality:"
+#, kde-format
 msgid "JPEG XL quality:"
-msgstr "איכות JPEG:"
+msgstr "איכות JPEG XL:"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
 #, kde-format
@@ -7261,9 +7254,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 msgid "WEBP quality:"
-msgstr "איכות JPEG:"
+msgstr "איכות WEBP:"
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:74
 #, kde-format
@@ -7276,11 +7269,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "RAW Files"
+#, kde-format
 msgctxt "@title"
 msgid "RAW loader"
-msgstr "קבצי RAW"
+msgstr "טוען קבצים גולמיים (RAW)"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:58
 #, kde-format
@@ -7306,8 +7298,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:117
-#, fuzzy, kde-format
-#| msgid "no"
+#, kde-format
 msgctxt "@info: can write file format"
 msgid "no"
 msgstr "לא"
@@ -7326,11 +7317,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "TIFF Files"
+#, kde-format
 msgctxt "@title"
 msgid "TIFF loader"
-msgstr "קבצי TIFF"
+msgstr "טוען TIFF"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:58
 #, kde-format
@@ -60492,10 +60482,9 @@ msgid "Size of the file in bytes"
 msgstr "גודל הקובץ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
-#, fuzzy, kde-format
-#| msgid "Month"
+#, kde-format
 msgid "Month/Day"
-msgstr "חודש"
+msgstr "חודש/יום"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
@@ -60610,10 +60599,10 @@ msgid "and"
 msgstr "וגם"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:249
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
-msgstr "מציאת תמונות עם"
+msgstr "איתור פריטים עם"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:258
 #, kde-format
@@ -60627,22 +60616,22 @@ msgid "Return items with the file format"
 msgstr "איחזור תמונות בעלות תצורת קובץ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:266
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
-msgstr "&תמונה"
+msgstr "%1 [תמונה]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:275
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
-msgstr "תצוגה"
+msgstr "%1 [וידאו]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
-msgstr "אוטומטי"
+msgstr "%1 [שמע]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:313
 #, kde-format
@@ -60923,23 +60912,20 @@ msgid "Headline"
 msgstr "כותרת ראשית"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:754
-#, fuzzy, kde-format
-#| msgid "Return pictures with the IPTC headline"
+#, kde-format
 msgid "Return items with the IPTC headline"
-msgstr "איחזור תמונות המכילות כותרת IPTC ראשית"
+msgstr "החזרת פריטים עם כותרת ראשית ב־IPTC"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:762
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "כותרת"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:762
-#, fuzzy, kde-format
-#| msgid "Return pictures with the IPTC title"
+#, kde-format
 msgid "Return items with the IPTC title"
-msgstr "איחזור תמונות המכילות נושא IPTC"
+msgstr "החזרת פריטים עם כותרת ה־IPTC"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:770
 #, fuzzy, kde-format
@@ -60978,42 +60964,40 @@ msgid "Author"
 msgstr "צלם"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:783
-#, fuzzy, kde-format
-#| msgid "Headline"
+#, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "כותרת ראשית"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:784
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "כותרת"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:794
 #: core/utilities/searchwindow/searchfields_createfield.cpp:813
-#, fuzzy, kde-format
+#, kde-format
 msgid "Aspect Ratio"
-msgstr "יחס:"
+msgstr "יחס גובה־רוחב"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:794
-#, fuzzy, kde-format
+#, kde-format
 msgid "Return items with the aspect ratio"
-msgstr "איחזור תמונות בעלות תצורת קובץ"
+msgstr "החזרת פריטים עם יחס גובה־רוחב"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:802
-#, fuzzy, kde-format
+#, kde-format
 msgid "Pixel Size"
-msgstr "גודל קובץ"
+msgstr "גודל פיקסלים"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:802
-#, fuzzy, kde-format
+#, kde-format
 msgid "Value of (Width * Height) between"
-msgstr "מציאת תמונות בעלות עימוד"
+msgstr "הערך של (רוחב × גובה) בין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:803
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "וגם"
@@ -61024,12 +61008,12 @@ msgid "Return video with the frame aspect ratio"
 msgstr "איחזור תמונות בעלות תצורת קובץ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:830
-#, fuzzy, kde-format
+#, kde-format
 msgid "Length of the video"
-msgstr "גודל הקובץ"
+msgstr "אורך הווידאו"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:831
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "וגם"
@@ -61041,9 +61025,9 @@ msgid "s"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:848
-#, fuzzy, kde-format
+#, kde-format
 msgid "Frame Rate"
-msgstr "<i>נוצר:</i>"
+msgstr "קצב תמוניות"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, fuzzy, kde-format
@@ -61051,7 +61035,7 @@ msgid "Return video with the frame rate"
 msgstr "איחזור תמונות בעלות תצורת קובץ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:849
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "וגם"
@@ -61063,24 +61047,22 @@ msgid "fps"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:866
-#, fuzzy, kde-format
+#, kde-format
 msgid "Codec"
-msgstr "קבצי שמע"
+msgstr "מפענח"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:866
-#, fuzzy, kde-format
+#, kde-format
 msgid "Return video codec"
-msgstr "קבצי שמע"
+msgstr "החזרת מפענח וידאו"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:936
-#, fuzzy, kde-format
+#, kde-format
 msgid "Return Audio Bits Rate"
-msgstr "קבצי שמע"
+msgstr "החזרת קצב סיביות שמע"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:937
-#, fuzzy, kde-format
-#| msgctxt "'Return pictures modified between...and..."
-#| msgid "and"
+#, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "וגם"
@@ -61092,9 +61074,9 @@ msgid "bps"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:954
-#, fuzzy, kde-format
+#, kde-format
 msgid "Return Audio Channel Type"
-msgstr "הצגת סוג תמונה"
+msgstr "החזרת סוג ערוץ שמע"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:956
 #, kde-format
@@ -61127,46 +61109,42 @@ msgid "16 Channels Sequence"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:961
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
-msgstr "ערוץ אלפא:"
+msgstr "סוג ערוץ אחר"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:973
-#, fuzzy, kde-format
+#, kde-format
 msgid "Return Audio Codec"
-msgstr "קבצי שמע"
+msgstr "החזרת מפענח שמע"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1072
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1082
-#, fuzzy, kde-format
+#, kde-format
 msgid "Faces"
-msgstr "הצגת סוג תמונה"
+msgstr "פנים"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Return pictures whose file name contains"
+#, kde-format
 msgid "Return items by number of face regions"
-msgstr "אחזור תמונות אשר שם הקובץ שלהם מכיל"
+msgstr "החזרת פריטים לפי מספר אזורי הפנים"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1073
-#, fuzzy, kde-format
-#| msgctxt "'Return pictures modified between...and..."
-#| msgid "and"
+#, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "וגם"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1082
-#, fuzzy, kde-format
-#| msgid "Return pictures with tag"
+#, kde-format
 msgid "Return items without face regions"
-msgstr "אחזור תמונות בעלות תווית"
+msgstr "החזרת פריטים ללא אזורי פנים"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1083
-#, fuzzy, kde-format
+#, kde-format
 msgid "No Face Regions"
-msgstr "אין בחירה"
+msgstr "ללא אזורי פנים"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
@@ -61174,10 +61152,9 @@ msgid "Day:"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:35
-#, fuzzy, kde-format
-#| msgid "Month"
+#, kde-format
 msgid "Every Month"
-msgstr "חודש"
+msgstr "כל חודש"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:42
 #, kde-format
@@ -61185,38 +61162,37 @@ msgid "Every Day"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_pageorientation.cpp:29
-#, fuzzy, kde-format
+#, kde-format
 msgid "Any Orientation"
-msgstr "עימוד תמונה"
+msgstr "כל כיוון שהוא"
 
 #: core/utilities/searchwindow/searchfields_pageorientation.cpp:30
-#, fuzzy, kde-format
+#, kde-format
 msgid "Landscape Orientation"
-msgstr "עימוד תמונה"
+msgstr "כיוון אופקי"
 
 #: core/utilities/searchwindow/searchfields_pageorientation.cpp:31
-#, fuzzy, kde-format
+#, kde-format
 msgid "Portrait orientation"
-msgstr "עימוד תמונה"
+msgstr "כיוון אנכי"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:56
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Create new search"
 msgid "New..."
-msgstr "&חדש..."
+msgstr "חדש…"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgid "Copyright"
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "זכויות יוצרים"
+msgstr "העתקה…"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."
-msgstr "עריכה..."
+msgstr "עריכה…"
 
 #: core/utilities/searchwindow/searchgroup.cpp:62
 #, kde-format
@@ -61224,9 +61200,9 @@ msgid "File, Album, Tags"
 msgstr "קובץ, אלבום, תגיות"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item Properties"
-msgstr "מאפייני TIFF"
+msgstr "מאפייני פריט"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -61234,19 +61210,19 @@ msgid "Caption, Comment, Title"
 msgstr "כיתוב, הערה, כותרת"
 
 #: core/utilities/searchwindow/searchgroup.cpp:182
-#, fuzzy, kde-format
+#, kde-format
 msgid "Geographic position"
-msgstr "שחזור תצלום"
+msgstr "מקום גאוגרפי"
 
 #: core/utilities/searchwindow/searchgroup.cpp:205
-#, fuzzy, kde-format
+#, kde-format
 msgid "Face regions"
-msgstr "אין בחירה"
+msgstr "אזורי פנים"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Find Items"
-msgstr "לפי אוסף"
+msgstr "איתור פריטים"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:60
 #, kde-format
@@ -61281,17 +61257,15 @@ msgid "Remove Group"
 msgstr "הסרת קבוצה"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:183
-#, fuzzy, kde-format
-#| msgid "Hide Options <<"
+#, kde-format
 msgid "Hide Options"
-msgstr ">> הסתרת אפשרויות"
+msgstr "הסתרת אפשרויות"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:71
-#, fuzzy, kde-format
-#| msgid "Delete Search?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
-msgstr "?מחיקת חיפוש"
+msgstr "למחוק את החיפוש?"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:72
 #, kde-format
@@ -61316,8 +61290,7 @@ msgid "New Search"
 msgstr "חיפוש חדש"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:243
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgctxt "@label: quick search properties"
 msgid "Search:"
 msgstr "חיפוש:"
@@ -61328,16 +61301,14 @@ msgid "Enter keywords here..."
 msgstr "נא למלא כאן מילות מפתח…"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:248
-#, fuzzy, kde-format
-#| msgid "Advanced Search..."
+#, kde-format
 msgid "New Advanced Search..."
-msgstr "חיפוש מתקדם..."
+msgstr "חיפוש מתקדם חדש…"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:249
-#, fuzzy, kde-format
-#| msgid "Current Search"
+#, kde-format
 msgid "Edit Current Search..."
-msgstr "חיפוש נוכחי"
+msgstr "עריכת החיפוש הנוכחי…"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
@@ -61383,23 +61354,22 @@ msgid "Try"
 msgstr "לנסות"
 
 #: core/utilities/searchwindow/searchwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Advanced Search"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "חיפוש מתקדם"
 
 #: core/utilities/setup/album/setupalbumview.cpp:122
 #: core/utilities/setup/camera/setupcamera.cpp:429
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show file&name"
-msgstr "הצגת שם קובץ"
+msgstr "הצגת שם &קובץ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:123
 #: core/utilities/setup/camera/setupcamera.cpp:430
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את שם הקובץ מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:125
 #: core/utilities/setup/camera/setupcamera.cpp:432
@@ -61409,15 +61379,15 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:126
 #: core/utilities/setup/camera/setupcamera.cpp:433
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את גודל הקובץ מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:128
 #: core/utilities/setup/camera/setupcamera.cpp:435
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show camera creation &date"
-msgstr "הצגת תאריך צילום תמונה"
+msgstr "הצגת תאריך היצירה במצלמה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:129
 #: core/utilities/setup/camera/setupcamera.cpp:436
@@ -61563,9 +61533,9 @@ msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות
 
 #: core/utilities/setup/album/setupalbumview.cpp:180
 #: core/utilities/setup/camera/setupcamera.cpp:448
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show Geolocation Indicator"
-msgstr "מסנן ירוק"
+msgstr "הצגות מחוון מקום גאוגרפי"
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #, fuzzy, kde-format
@@ -61581,26 +61551,24 @@ msgid "Thumbnail click action:"
 msgstr "פעולת לחיצה על התמונה הממוזערת:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show Preview"
-msgstr "התצגת שם אוסף-התמונות"
+msgstr "הצגת תצוגה מקדימה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgid "Start Image Editor"
-msgstr "התחילו עורך תמונה"
+msgstr "הפעלת עורך תמונות"
 
 #: core/utilities/setup/album/setupalbumview.cpp:187
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show on Light Table"
-msgstr "הצג בסרגל ימין"
+msgstr "הצגה בשולחן אור"
 
 #: core/utilities/setup/album/setupalbumview.cpp:188
-#, fuzzy, kde-format
+#, kde-format
 msgid "Open with Default Application"
-msgstr "פתיחת התמונה הבחורה בעורך-תמונה"
+msgstr "פתיחה עם יישום ברירת המחדל"
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
 #: core/utilities/setup/camera/setupcamera.cpp:468
@@ -61610,14 +61578,14 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:191
 #: core/utilities/setup/camera/setupcamera.cpp:470
-#, fuzzy, kde-format
+#, kde-format
 msgid "Icon View font:"
-msgstr "גופן תצוגת סמלים"
+msgstr "גופן תצוגת סמלים:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:192
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select here the font used to display text in icon views."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "אפשר לבחור כאן את הגופן לשימוש תצוגת הטקסט בתצוגות סמלים."
 
 #: core/utilities/setup/album/setupalbumview.cpp:194
 #, kde-format
@@ -61639,44 +61607,48 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
-msgstr "סמ&ל"
+msgstr "סמלים"
 
 #: core/utilities/setup/album/setupalbumview.cpp:237
-#, fuzzy, kde-format
+#, kde-format
 msgid "Tree View icon size:"
-msgstr "גופן תצוגת סמלים"
+msgstr "גודל סמלים בתצוגת עץ:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's sidebars."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"הגדרת האפשרות הזאת תגדיר את הגודל של הסמלים בתצוגות העץ בסרגלי הצד של "
+"digiKam בפיקסלים."
 
 #: core/utilities/setup/album/setupalbumview.cpp:247
-#, fuzzy, kde-format
+#, kde-format
 msgid "People Tree View icon size:"
-msgstr "גופן תצוגת סמלים"
+msgstr "גודל סמלים בתצוגת עץ אנשים:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:255
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"הגדרת האפשרות הזאת תגדיר את הגודל של הסמלים בתצוגות העץ בסרגלי הצד של האנשים "
+"של digiKam בפיקסלים."
 
 #: core/utilities/setup/album/setupalbumview.cpp:258
-#, fuzzy, kde-format
+#, kde-format
 msgid "Tree View font:"
-msgstr "גופן תצוגת סמלים"
+msgstr "גופן תצוגת עץ:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:259
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select here the font used to display text in Tree Views."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "אפשר לבחור כאן את הגופן לשימוש תצוגת הטקסט בתצוגות עץ."
 
 #: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
@@ -61691,10 +61663,10 @@ msgid ""
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/utilities/setup/album/setupalbumview.cpp:274
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
-msgstr "תצוגה"
+msgstr "תצוגות עץ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:282
 #, kde-format
@@ -61703,28 +61675,28 @@ msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
-msgstr "טעינת גודל התמונה המרבי"
+msgstr "תצוגה מקדימה מציגה את התמונה במלואה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:286
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
-msgstr "תמונות"
+msgstr "תמונות גולמיות (raw):"
 
 #: core/utilities/setup/album/setupalbumview.cpp:289
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
-msgstr "כיוונון:"
+msgstr "אוטומטי"
 
 #: core/utilities/setup/album/setupalbumview.cpp:291
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
-msgstr "הצגת תצוגה-מזערית של התמונה"
+msgstr "תצוגה מקדימה מוטמעת"
 
 #: core/utilities/setup/album/setupalbumview.cpp:293
 #, kde-format
@@ -61783,9 +61755,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
+#, kde-format
 msgid "Auto play of videos or animations"
-msgstr "עדכון-תאום לוחות-בקרה אוטומטי"
+msgstr "ניגון אוטומטי של סרטונים או הנפשות"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
@@ -61793,28 +61765,28 @@ msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "תצוגה מקדימה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:344
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
-msgstr "סיום מצב מסך-מלא"
+msgstr "מסך מלא"
 
 #: core/utilities/setup/album/setupalbumview.cpp:349
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
-msgstr "בחירת תמונות"
+msgstr "סוגי תוכן"
 
 #: core/utilities/setup/album/setupalbumview.cpp:352
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
-msgstr "סיווג"
+msgstr "קטגוריות"
 
 #: core/utilities/setup/album/setupalbumview.cpp:522
 #, kde-format
@@ -61832,9 +61804,9 @@ msgid "Manage categories to sort and re-arrange album tree-view."
 msgstr ""
 
 #: core/utilities/setup/album/setupcategory.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the new category"
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "כאן אפשר להגדיר את הקטגוריה החדשה"
 
 #: core/utilities/setup/album/setupcategory.cpp:88
 #, kde-format
@@ -61884,9 +61856,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupmime.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter additional image file extensions."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "נא למלא סיומות נוספות לקובץ התמונה."
 
 #: core/utilities/setup/album/setupmime.cpp:130
 #, kde-format
@@ -61910,9 +61882,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupmime.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter additional video file extensions."
-msgstr "הצגת קובצי סרטים בעלי סיומת:"
+msgstr "נא למלא סיומות נוספות לקובץ הסרטון."
 
 #: core/utilities/setup/album/setupmime.cpp:165
 #, kde-format
@@ -61936,9 +61908,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupmime.cpp:181
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter additional audio file extensions."
-msgstr "הצגת קובצי שמע בעלי סיומת:"
+msgstr "נא למלא סיומות נוספות לקובץ השמע."
 
 #: core/utilities/setup/album/setupmime.cpp:247
 #, kde-format
@@ -61982,8 +61954,7 @@ msgstr ""
 "לנסות שוב?"
 
 #: core/utilities/setup/camera/cameraselection.cpp:93
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "הגדרות מצלמה"
@@ -62036,11 +62007,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/cameraselection.cpp:151
-#, fuzzy, kde-format
-#| msgid "Serial"
+#, kde-format
 msgctxt "@item: serail port based camera"
 msgid "Serial"
-msgstr "טורית"
+msgstr "טורי"
 
 #: core/utilities/setup/camera/cameraselection.cpp:152
 #, kde-format
@@ -62079,9 +62049,9 @@ msgid "Camera Mount Path"
 msgstr "נתיב עיגון מצלמה"
 
 #: core/utilities/setup/camera/cameraselection.cpp:187
-#, fuzzy, kde-format
+#, kde-format
 msgid "Note: only for USB/IEEE mass storage cameras."
-msgstr "הערה: עבור מצלמה המחוברת בחיבור טורי בלבד"
+msgstr "הערה: רק למצלמות אחסון עתק בחיבור USB/IEEE."
 
 #: core/utilities/setup/camera/cameraselection.cpp:193
 #, kde-format
@@ -62122,42 +62092,41 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr "קבצי שמע"
+msgstr "עריכת מסנני ייבוא"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:91
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "שם:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mime filter:"
-msgstr "מסנן רעש:"
+msgstr "מסנן סוג תוכן/MIME:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Type Mime..."
-msgstr "בחירת תמונות"
+msgstr "בחירת סוג תוכן…"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgid "File name filter:"
-msgstr "שם קובץ"
+msgstr "מסנן שמות קבצים:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgid "Path filter:"
-msgstr "אין מסנן פעיל"
+msgstr "מסנן נתיבים:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:131
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show only new files"
-msgstr "הצג בסרגל שמאל"
+msgstr "להציג קבצים חדשים בלבד"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:205
 #, kde-format
@@ -62165,9 +62134,9 @@ msgid "Select the MimeTypes you want for this filter."
 msgstr ""
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:207
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Mime Types"
-msgstr "בחירת תמונות"
+msgstr "בחירת סוגי תוכן"
 
 #: core/utilities/setup/camera/setupcamera.cpp:252
 #, kde-format
@@ -62237,9 +62206,9 @@ msgid "Use a default target album to download from camera"
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:328
-#, fuzzy, kde-format
+#, kde-format
 msgid "If target file exists when downloaded from camera"
-msgstr "קובצי תמונת"
+msgstr "אם קובץ היעד קיים כשהורד מהמצלמה"
 
 #: core/utilities/setup/camera/setupcamera.cpp:369
 #, kde-format
@@ -62264,14 +62233,14 @@ msgid "Always ignore"
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:394
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ignored file names:"
-msgstr "הצגת שם קובץ"
+msgstr "שמות קבצים שנפסחים:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:395
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ignored file extensions:"
-msgstr "הצגת קובצי תמונה בעלי סיומת:"
+msgstr "סיומות קבצים שנפסחים:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
 #, kde-format
@@ -62284,28 +62253,28 @@ msgid "Import Filters"
 msgstr "מסנני ייבוא"
 
 #: core/utilities/setup/camera/setupcamera.cpp:426
-#, fuzzy, kde-format
+#, kde-format
 msgid "Icon-View Options"
-msgstr "אפשרויות ממשק"
+msgstr "אפשרויות תצוגת סמלים"
 
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
 #.
 #: core/utilities/setup/camera/setupcamera.cpp:445
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show image Format"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "הצגת סוג התמונה"
 
 #: core/utilities/setup/camera/setupcamera.cpp:452
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את התגיות של digiKam מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/camera/setupcamera.cpp:455
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show item &rating"
-msgstr "הצגת פריט על סרגל שמאלי"
+msgstr "הצגת דירוג &פריטים"
 
 #: core/utilities/setup/camera/setupcamera.cpp:456
 #, fuzzy, kde-format
@@ -62330,19 +62299,19 @@ msgid "Start image editor"
 msgstr "התחלת עורך תמונות"
 
 #: core/utilities/setup/camera/setupcamera.cpp:471
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select here the font used to display text in Icon Views."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "אפשר לבחור כאן את הגופן לשימוש תצוגת הטקסט בתצוגות סמלים."
 
 #: core/utilities/setup/camera/setupcamera.cpp:493
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preview Options"
-msgstr "אפשרויות תצוגת תיקייה"
+msgstr "אפשרויות תצוגה מקדימה"
 
 #: core/utilities/setup/camera/setupcamera.cpp:496
-#, fuzzy, kde-format
+#, kde-format
 msgid "Embedded preview loads full-sized images"
-msgstr "טעינת גודל התמונה המרבי"
+msgstr "התצוגה המקדימה המוטמעת טוענת תמונות בגודל מלא"
 
 #: core/utilities/setup/camera/setupcamera.cpp:497
 #, kde-format
@@ -62365,10 +62334,10 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
-msgstr "ייבא"
+msgstr "חלון ייבוא"
 
 #: core/utilities/setup/camera/setupcamera.cpp:794
 #, kde-format
@@ -62378,9 +62347,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:882
-#, fuzzy, kde-format
+#, kde-format
 msgid "Device detection under progress, please wait..."
-msgstr "בתהליך התנתקות ממצלמה, אנא המתינו..."
+msgstr "המכשיר מזוהה, נא להמתין…"
 
 #: core/utilities/setup/camera/setupcamera.cpp:893
 #, kde-format
@@ -62401,9 +62370,9 @@ msgid "Found camera '%1' (%2) and added it to the list."
 msgstr "המצלמה ‚%1’ (%2) נמצאה ונוספה לרשימה."
 
 #: core/utilities/setup/camera/setupcamera.cpp:928
-#, fuzzy, kde-format
+#, kde-format
 msgid "Untitled"
-msgstr "כותרת"
+msgstr "ללא שם"
 
 #: core/utilities/setup/camera/setupcamera.cpp:1011
 #, kde-format
@@ -62451,10 +62420,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
-msgstr "יצירת תיקייה?"
+msgstr "תיקיות אלבום העל"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
 #, kde-format
@@ -62483,10 +62452,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollections.cpp:175
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
-msgstr "הוספת תוויות זו"
+msgstr "התעלמות מתיקיות"
 
 #: core/utilities/setup/collections/setupcollections.cpp:246
 #, kde-format
@@ -62496,18 +62465,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:107
-#, fuzzy, kde-format
-#| msgid "Creates a new empty Album in the collection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
-msgstr "יצירת אוסף-תמונות חדש באגד-האוספים."
+msgstr "הוספת הנתיב לאוסף."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:119
-#, fuzzy, kde-format
-#| msgid "Creates a new empty Album in the collection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
-msgstr "יצירת אוסף-תמונות חדש באגד-האוספים."
+msgstr "עדכון הנתיב של האוסף."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:131
 #, kde-format
@@ -62545,10 +62512,10 @@ msgid "Remove Path from the Collection?"
 msgstr "להסיר את הנתיב מהאוסף?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:861
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
-msgstr "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
+msgstr "להסיר את הנתיב שנוסף „%1” מהאוסף „%2”?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:868
 #, kde-format
@@ -62689,10 +62656,10 @@ msgid "Your collection will use this category:"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "מעתיק למחשב את הקובץ %1..."
+msgstr "הורדת קובצי המודל הנחוצים"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
@@ -62706,20 +62673,20 @@ msgid "Location of the face management model files:"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
-msgstr "אין בחירה"
+msgstr "יעד מודל ניהול פנים"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sets the target address to download the face management model files to."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת כתובת היעד להורדת קובצי מודל ניהול הפנים אליה."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:174
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "כיוונון:"
+msgstr "להשתמש ביכולות כלים אוטומטיים של בינה מלאכותית"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
@@ -62851,11 +62818,12 @@ msgid "&Use theme background color"
 msgstr "להשתמש בצבע ה&רקע של ערכת העיצוב"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Enable this option to use the background theme color in the image editor "
 "area."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"הפעלת האפשרות הזאת תגרום לאזור עורך התמונות להשתמש בצבע הרקע של ערכת העיצוב."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:114
 #, kde-format
@@ -62863,9 +62831,9 @@ msgid "&Background color:"
 msgstr "צבע &רקע:"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgid "Customize the background color to use in the image editor area."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "בחירת צבע הרקע לשימוש באזור עורך התמונות."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:131
 #, kde-format

@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-16 00:39+0000\n"
-"PO-Revision-Date: 2025-11-08 22:18+0100\n"
+"PO-Revision-Date: 2025-11-15 22:10+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -20868,7 +20868,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
 #, kde-format
 msgid "Image Length:"
-msgstr "Lunghezza dell'immagine:"
+msgstr "Lunghezza delle immagini:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:150
@@ -20900,7 +20900,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
 #, kde-format
 msgid "Image quality:"
-msgstr "Qualità delle immagini"
+msgstr "Qualità delle immagini:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:173
@@ -22004,10 +22004,9 @@ msgstr "S&tampa nome del file"
 #. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for images:"
-msgstr "&Usa colore di sfondo del tema"
+msgstr "Usa colore di sfondo per le immagini:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:248
@@ -22490,14 +22489,11 @@ msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Mostra la valutazione dell'immagine di digiKam in fondo allo schermo."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render images on screen."
 msgstr ""
-"Abilita questa opzione per usare il colore di sfondo del tema nell'area "
-"dell'editor delle immagini."
+"Definisci un colore da usare come sfondo per rendere le immagini sullo "
+"schermo."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format
