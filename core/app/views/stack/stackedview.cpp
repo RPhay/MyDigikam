@@ -496,7 +496,10 @@ void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorized
 
 void StackedView::slotThumbBarSelectionChanged()
 {
-    if ((viewMode() != PreviewImageMode) && (viewMode() != MediaPlayerMode))
+    if (
+        (viewMode() != MediaPlayerMode)  &&
+        (viewMode() != PreviewImageMode)
+       )
     {
         return;
     }
@@ -511,7 +514,11 @@ void StackedView::slotThumbBarSelectionChanged()
 
 void StackedView::slotIconViewSelectionChanged()
 {
-    if (viewMode() != IconViewMode)
+    if (
+        (viewMode() != IconViewMode)     &&
+        (viewMode() != MediaPlayerMode)  &&
+        (viewMode() != PreviewImageMode)
+       )
     {
         return;
     }
