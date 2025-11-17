@@ -16,7 +16,14 @@ Bundles component versions:
 | macOS Qt5     | 5.15.15    | 5.116       | 4.12           | 7.1.1          | 1.19.8       | 13.40 (*)        | 0.25.5        |
 | macOS Qt6     | 6.9.1      | 6.17.0      | 4.12           | 7.1.1          | 1.19.8       | 13.40 (*)        | 0.25.5        |
 
-Raw Engine      : Update internal Libraw to last 20251026 upstream.
+Raw Engine      : Update internal Libraw to last 20251117 upstream.
+                  New Raw Camera: Canon EOS R1, EOS R5 Mark II
+                                  Fujifilm X-T50, GFX 100S II
+                                  Leica Q3 43, D-Lux8
+                                  Nikon Z6-III (no HE/HE* support)
+                                  Panasonic GH7, S9
+                                  Sony ZV-E10M2, UMC-R10C
+
 Advanced Rename : New modifier "Date Format".
 SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
 Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.
