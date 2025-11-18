@@ -198,7 +198,7 @@ int CollectionScanner::createAlbumDateCache(const CollectionLocation& location, 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
 
     using ItFlag = QDirListing::IteratorFlag;
-    const QTimeZone tz(QTimeZone(QTimeZone::LocalTime));
+    const QTimeZone tz(QTimeZone::LocalTime);
 
     for (const auto& entry : QDirListing(dir.path(), ItFlag::Recursive))
     {
