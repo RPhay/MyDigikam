@@ -145,6 +145,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     d->categoryCombo                  = new QComboBox(page);
     d->categoryCombo->setEditable(true);
+    d->categoryCombo->lineEdit()->setClearButtonEnabled(true);
     categoryLabel->setBuddy(d->categoryCombo);
 
     QLabel* const parentLabel         = new QLabel(page);
@@ -242,16 +243,17 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     if (settings)
     {
-        d->categoryCombo->addItem(QString());
         QStringList Categories = settings->getAlbumCategoryNames();
         d->categoryCombo->addItems(Categories);
         int categoryIndex      = Categories.indexOf(album->category());
 
         if (categoryIndex != -1)
         {
-            // + 1 because of the empty item
-
-            d->categoryCombo->setCurrentIndex(categoryIndex + 1);
+            d->categoryCombo->setCurrentIndex(categoryIndex);
+        }
+        else
+        {
+            d->categoryCombo->lineEdit()->clear();
         }
     }
 
@@ -352,9 +354,12 @@ QStringList AlbumPropsEdit::albumCategories() const
 
     QString currentCategory = d->categoryCombo->currentText();
 
-    if (Categories.indexOf(currentCategory) == -1)
+    if (!currentCategory.isEmpty())
     {
-        Categories.append(currentCategory);
+        if (Categories.indexOf(currentCategory) == -1)
+        {
+            Categories.append(currentCategory);
+        }
     }
 
     Categories.sort();
