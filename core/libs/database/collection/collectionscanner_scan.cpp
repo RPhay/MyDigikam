@@ -500,7 +500,6 @@ void CollectionScanner::scanForStaleAlbums(const CollectionLocation& location, c
         relativePath += QLatin1Char('/');
     }
 
-    const QString albumPath = location.albumRootPath() + album;
     QList<AlbumShortInfo> albumList = CoreDbAccess().db()->getAlbumShortInfos();
     QList<AlbumShortInfo>::const_iterator it;
     QList<int> toBeDeleted;
