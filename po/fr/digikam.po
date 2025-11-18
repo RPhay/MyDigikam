@@ -50085,7 +50085,7 @@ msgstr "Supprimer cette entrée"
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
-msgstr "Effacer une liste"
+msgstr "Effacer la liste"
 
 #: core/libs/widgets/text/searchtextbar.cpp:77
 #, kde-format
