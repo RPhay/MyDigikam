@@ -82,7 +82,7 @@ BUGFIXES:
 044 --> 512021 - "Reject this suggestion" Results in "files awaiting synchronization".
 045 --> 512040 - The existence of a regular tag named the same as a tag under People prevents face detection.
 046 --> 512237 - Select all images with Ctrl-A works but is not highlighted in the ThumbBar above the preview.
-047 -->
+047 --> 512267 - Advanced Search Tool work in a non-logical way on request about missing field.
 048 -->
 049 -->
 050 -->

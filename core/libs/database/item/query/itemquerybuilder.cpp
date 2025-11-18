@@ -716,6 +716,24 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         fieldQuery.addChoiceStringField(QLatin1String("ImageMetadata.lens"));
     }
+    else if (name == QLatin1String("nomake"))
+    {
+        reader.readToEndOfElement();
+        sql += QString::fromUtf8(" (ImageMetadata.make IS NULL OR "
+                                 "ImageMetadata.make = '') ");
+    }
+    else if (name == QLatin1String("nomodel"))
+    {
+        reader.readToEndOfElement();
+        sql += QString::fromUtf8(" (ImageMetadata.model IS NULL OR "
+                                 "ImageMetadata.model = '') ");
+    }
+    else if (name == QLatin1String("nolenses"))
+    {
+        reader.readToEndOfElement();
+        sql += QString::fromUtf8(" (ImageMetadata.lens IS NULL OR "
+                                 "ImageMetadata.lens = '') ");
+    }
     else if (name == QLatin1String("aperture"))
     {
         fieldQuery.addDoubleField(QLatin1String("ImageMetadata.aperture"));

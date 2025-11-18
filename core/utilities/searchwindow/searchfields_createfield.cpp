@@ -421,6 +421,33 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
+    else if (name == QLatin1String("nomake"))
+    {
+        SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Camera"), i18n("Return items without a camera make"));
+        field->setLabel(i18n("No Camera Make"));
+
+        return field;
+    }
+    else if (name == QLatin1String("nomodel"))
+    {
+        SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Camera"), i18n("Return items without a camera model"));
+        field->setLabel(i18n("No Camera Model"));
+
+        return field;
+    }
+    else if (name == QLatin1String("nolenses"))
+    {
+        SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Lens"), i18n("Return items without a lens type"));
+        field->setLabel(i18n("No Lens Type"));
+
+        return field;
+    }
     else if (name == QLatin1String("aperture"))
     {
         // double
