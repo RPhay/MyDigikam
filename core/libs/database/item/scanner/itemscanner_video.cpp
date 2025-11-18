@@ -194,16 +194,13 @@ void ItemScanner::scanVideoMetadata()
     if (hasValidField(metadataInfos))
     {
         d->commit.commitVideoMetadata = true;
-
-        // reuse imageMetadataInfos field
-
-        d->commit.imageMetadataInfos  = metadataInfos;
+        d->commit.videoMetadataInfos  = metadataInfos;
     }
 }
 
 void ItemScanner::commitVideoMetadata()
 {
-    CoreDbAccess().db()->addVideoMetadata(d->scanInfo.id, d->commit.imageMetadataInfos);
+    CoreDbAccess().db()->addVideoMetadata(d->scanInfo.id, d->commit.videoMetadataInfos);
 }
 
 } // namespace Digikam

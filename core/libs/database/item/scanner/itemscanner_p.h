@@ -90,6 +90,7 @@ public:
     QVariantList                     imageInformationInfos;
 
     QVariantList                     imageMetadataInfos;
+    QVariantList                     videoMetadataInfos;
     QVariantList                     imagePositionInfos;
 
     CaptionsMap                      captions;

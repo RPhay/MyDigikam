@@ -248,6 +248,7 @@ void ItemScanner::scanFile(ScanMode mode)
             if (d->hasMetadata)
             {
                 scanVideoMetadata();
+                scanImageMetadata();
                 scanItemPosition();
                 scanItemComments();
                 scanItemCopyright();

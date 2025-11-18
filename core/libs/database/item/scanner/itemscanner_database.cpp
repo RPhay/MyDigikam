@@ -62,11 +62,12 @@ void ItemScanner::commit()
         commitItemInformation();
     }
 
-    if      (d->commit.commitImageMetadata)
+    if (d->commit.commitImageMetadata)
     {
         commitImageMetadata();
     }
-    else if (d->commit.commitVideoMetadata)
+
+    if (d->commit.commitVideoMetadata)
     {
         commitVideoMetadata();
     }
