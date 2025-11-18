@@ -516,7 +516,7 @@ void CollectionScanner::scanForStaleAlbums(const CollectionLocation& location, c
         {
             QUrl url     = QUrl::fromLocalFile(location.albumRootPath() + (*it).relativePath);
             url          = url.adjusted(QUrl::StripTrailingSlash);
-            QString path = url.toLocalFile();
+            QString path = QFileInfo(url.toLocalFile()).filePath();
 
             // let digikam think that ignored directories got deleted
             // (if they already exist in the database, this will delete them)
@@ -563,7 +563,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
             {
                 QUrl url     = QUrl::fromLocalFile(location.albumRootPath() + it.key());
                 url          = url.adjusted(QUrl::StripTrailingSlash);
-                QString path = url.toLocalFile();
+                QString path = QFileInfo(url.toLocalFile()).filePath();
 
                 if (s_modificationDateEquals(d->albumDateCache.value(path), it.value()))
                 {
