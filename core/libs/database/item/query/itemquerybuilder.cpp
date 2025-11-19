@@ -736,6 +736,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         }
 
         bool firstCondition = true;
+        sql                += QLatin1String(" (");
 
         for (const QString& value : std::as_const(values))
         {
@@ -758,6 +759,8 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                                          "ImageMetadata.lens = '') ");
             }
         }
+
+        sql += QLatin1String(") ");
     }
     else if (name == QLatin1String("aperture"))
     {
