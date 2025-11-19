@@ -132,7 +132,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework.");
     newFeatures << i18n("Add new maintenance and Queue manager tools to assign tag automatically to images using deep learning neural network engine."
                         "<a href=\"https://community.kde.org/GSoc/2023/StatusReports/QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam\">See this GoSC-2023 report for details.</a>");
-    newFeatures << i18n("Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and improve stability of plugin.");
+    newFeatures << i18n("Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and improve stability of plugin.");
     newFeatures << i18n("New G'MIC generic plugin working as layer mode from a stack of images.");
     newFeatures << i18n("Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.");
     newFeatures << i18n("More compact icon-view thumbnails by using a simple horizontal line instead a frame "

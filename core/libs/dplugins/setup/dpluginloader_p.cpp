@@ -136,7 +136,7 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
             it.next();
 
             if (
-                !it.filePath().contains(QLatin1String("dSYM"))   &&  // Ignore debug binary extensions under MacOS
+                !it.filePath().contains(QLatin1String("dSYM"))   &&  // Ignore debug binary extensions under macOS
                 !it.filePath().contains(QLatin1String("marble")) &&  // Ignore Marble plugins.
                 !dupFiles.contains(it.fileInfo().baseName())
                )

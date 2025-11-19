@@ -170,7 +170,7 @@ void DXmlGuiWindow::createSettingsActions()
 
 #ifdef Q_OS_MACOS
 
-    // Under MacOS the menu bar visibility is managed by desktop.
+    // Under macOS the menu bar visibility is managed by desktop.
 
     d->showMenuBarAction->setVisible(false);
 

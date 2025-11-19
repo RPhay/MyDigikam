@@ -55,7 +55,7 @@ WelcomePage::WelcomePage(QWizard* const dlg)
 
 #if defined Q_OS_MACOS
 
-    // MacOS settings place.
+    // macOS settings place.
 
     newPlace         = QLatin1String("~/Library/Preferences/");
     oldPlace         = QLatin1String("~/Library/Preferences/KDE/share/config/");

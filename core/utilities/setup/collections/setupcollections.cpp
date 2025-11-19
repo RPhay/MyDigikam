@@ -114,7 +114,7 @@ SetupCollections::SetupCollections(QWidget* const parent)
                                                         "changes (requires restart)"), albumPanel);
 
     QLabel* const monitoringNote   = new QLabel(i18n("<b>Note: Album monitoring consumes system resources and "
-                                                     "can slow down digiKam. If you are using MacOS and network "
+                                                     "can slow down digiKam. If you are using macOS and network "
                                                      "collections, you should not activate album monitoring.</b>"));
     monitoringNote->setWordWrap(true);
     monitoringNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);

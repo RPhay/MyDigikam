@@ -69,7 +69,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                 QString     tagType;
                 QStringList sections  = it.key().split(QLatin1Char(':'));
 
-                if      (sections.size() == 6)      // With ExifTool > 12.00 (at least under Windows or MacOS), groups are return with 6 sections.
+                if      (sections.size() == 6)      // With ExifTool > 12.00 (at least under Windows or macOS), groups are return with 6 sections.
                 {
                     tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4")
                                           .arg(sections[0])
