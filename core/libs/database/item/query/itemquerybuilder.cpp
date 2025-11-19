@@ -716,23 +716,48 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         fieldQuery.addChoiceStringField(QLatin1String("ImageMetadata.lens"));
     }
-    else if (name == QLatin1String("nomake"))
+    else if (name == QLatin1String("nocamera"))
     {
-        reader.readToEndOfElement();
-        sql += QString::fromUtf8(" (ImageMetadata.make IS NULL OR "
-                                 "ImageMetadata.make = '') ");
-    }
-    else if (name == QLatin1String("nomodel"))
-    {
-        reader.readToEndOfElement();
-        sql += QString::fromUtf8(" (ImageMetadata.model IS NULL OR "
-                                 "ImageMetadata.model = '') ");
-    }
-    else if (name == QLatin1String("nolenses"))
-    {
-        reader.readToEndOfElement();
-        sql += QString::fromUtf8(" (ImageMetadata.lens IS NULL OR "
-                                 "ImageMetadata.lens = '') ");
+        QStringList values;
+
+        if (relation == SearchXml::OneOf)
+        {
+            values = reader.valueToStringList();
+
+            if (values.isEmpty())
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "List for OneOf is empty";
+                return false;
+            }
+        }
+        else
+        {
+            values << reader.value();
+        }
+
+        bool firstCondition = true;
+
+        for (const QString& value : std::as_const(values))
+        {
+            ItemQueryBuilder::addSqlOperator(sql, SearchXml::Or, firstCondition);
+            firstCondition = false;
+
+            if      (value == QLatin1String("make"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.make IS NULL OR "
+                                         "ImageMetadata.make = '') ");
+            }
+            else if (value == QLatin1String("model"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.model IS NULL OR "
+                                         "ImageMetadata.model = '') ");
+            }
+            else if (value == QLatin1String("lens"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.lens IS NULL OR "
+                                         "ImageMetadata.lens = '') ");
+            }
+        }
     }
     else if (name == QLatin1String("aperture"))
     {

@@ -421,30 +421,20 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
-    else if (name == QLatin1String("nomake"))
+    else if (name == QLatin1String("nocamera"))
     {
-        SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
-        field->setFieldName(name);
-        field->setText(i18n("Camera"), i18n("Return items without a camera make"));
-        field->setLabel(i18n("No Camera Make"));
+        // choice
 
-        return field;
-    }
-    else if (name == QLatin1String("nomodel"))
-    {
-        SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
+        SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("Camera"), i18n("Return items without a camera model"));
-        field->setLabel(i18n("No Camera Model"));
+        field->setText(i18n("Camera"), i18n("Return items without a camera..."));
 
-        return field;
-    }
-    else if (name == QLatin1String("nolenses"))
-    {
-        SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
-        field->setFieldName(name);
-        field->setText(i18n("Lens"), i18n("Return items without a lens type"));
-        field->setLabel(i18n("No Lens Type"));
+        QStringList noCamera;
+        noCamera << QLatin1String("make")  << i18nc("Camera", "Make")
+                 << QLatin1String("model") << i18nc("Camera", "Model")
+                 << QLatin1String("lens")  << i18nc("Camera", "Lens Type");
+
+        field->setChoice(noCamera);
 
         return field;
     }
