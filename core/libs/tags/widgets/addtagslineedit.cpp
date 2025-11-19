@@ -41,8 +41,11 @@ public:
     TagCompleter*       completer       = nullptr;
     TagTreeView*        tagView         = nullptr;
     AlbumFilterModel*   tagFilterModel  = nullptr;
+
     TaggingAction       currentTaggingAction;
     int                 parentTagId     = 0;
+
+    bool                returnPressed   = false;
 };
 
 AddTagsLineEdit::AddTagsLineEdit(QWidget* const parent)
@@ -157,6 +160,8 @@ void AddTagsLineEdit::setAllowExceedBound(bool value)
  */
 void AddTagsLineEdit::slotReturnPressed()
 {
+    d->returnPressed = true;
+
     if (text().isEmpty())
     {
         //focus back to mainview
@@ -177,6 +182,7 @@ void AddTagsLineEdit::slotEditingFinished()
 void AddTagsLineEdit::slotTextEdited(const QString& text)
 {
     d->currentTaggingAction = TaggingAction();
+    d->returnPressed        = false;
 
     if (text.isEmpty())
     {
@@ -192,9 +198,12 @@ void AddTagsLineEdit::slotTextEdited(const QString& text)
 
 void AddTagsLineEdit::completerActivated(const TaggingAction& action)
 {
-    setCurrentTaggingAction(action);
+    if (!d->returnPressed)
+    {
+        setCurrentTaggingAction(action);
 
-    Q_EMIT taggingActionActivated(action);
+        Q_EMIT taggingActionActivated(action);
+    }
 }
 
 void AddTagsLineEdit::completerHighlighted(const TaggingAction& action)
