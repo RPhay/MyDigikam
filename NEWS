@@ -85,7 +85,7 @@ BUGFIXES:
 047 --> 512267 - Advanced Search Tool work in a non-logical way on request about missing field.
 048 --> 512296 - Double blank line in the Album Properties - Category combo box.
 049 --> 512351 - Lens ID not picked up for Nikon Z50.
-050 -->
+050 --> 509506 - App does not appear in Apple Launchpad.
 051 -->
 052 -->
 053 -->
