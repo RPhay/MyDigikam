@@ -361,7 +361,11 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         {
             QString shortName = make[i];
             ItemPropertiesTab::shortenedMakeInfo(shortName);
-            makeMap.insert(shortName, wildcard.arg(shortName));
+
+            if (!shortName.isEmpty())
+            {
+                makeMap.insert(shortName, wildcard.arg(shortName));
+            }
         }
 
         make.clear();
@@ -392,7 +396,11 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         {
             QString shortName = model[i];
             ItemPropertiesTab::shortenedModelInfo(shortName);
-            modelMap.insert(shortName, wildcard.arg(model[i]));
+
+            if (!shortName.isEmpty())
+            {
+                modelMap.insert(shortName, wildcard.arg(model[i]));
+            }
         }
 
         model.clear();
