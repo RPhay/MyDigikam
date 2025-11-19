@@ -263,6 +263,7 @@ QString DMetadata::getLensDescription() const
     lensExifTags.append(QLatin1String("Exif.NikonLd1.LensIDNumber")); ///< Nikon Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.NikonLd2.LensIDNumber")); ///< Nikon Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.NikonLd3.LensIDNumber")); ///< Nikon Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.NikonLd4.LensIDNumber")); ///< Nikon Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Minolta.LensID"));        ///< Minolta Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Sony1.LensID"));          ///< Sony Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Sony2.LensID"));          ///< Sony Cameras Makernote.
@@ -284,6 +285,7 @@ QString DMetadata::getLensDescription() const
 
     if      (
              make.contains(QLatin1String("SONY"), Qt::CaseInsensitive)  ||
+             make.contains(QLatin1String("NIKON"), Qt::CaseInsensitive) ||
              make.contains(QLatin1String("RICOH"), Qt::CaseInsensitive) ||
              make.contains(QLatin1String("PENTAX"), Qt::CaseInsensitive)
             )

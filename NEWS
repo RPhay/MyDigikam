@@ -84,7 +84,7 @@ BUGFIXES:
 046 --> 512237 - Select all images with Ctrl-A works but is not highlighted in the ThumbBar above the preview.
 047 --> 512267 - Advanced Search Tool work in a non-logical way on request about missing field.
 048 --> 512296 - Double blank line in the Album Properties - Category combo box.
-049 -->
+049 --> 512351 - Lens ID not picked up for Nikon Z50.
 050 -->
 051 -->
 052 -->
