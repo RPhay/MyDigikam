@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2025-11-19 00:40+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3697,7 +3697,7 @@ msgstr "聲道型態"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:973
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
 #: core/utilities/setup/setuptooltip.cpp:265
 #, kde-format
 msgid "Audio Codec"
@@ -3705,7 +3705,7 @@ msgstr "音訊編碼器"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgid "Duration"
 msgstr "持續時間"
@@ -8132,7 +8132,7 @@ msgstr "色彩管理已停用..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/utilities/searchwindow/searchfields_createfield.cpp:568
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "White Balance"
 msgstr "白平衡"
@@ -16432,6 +16432,8 @@ msgstr "目標檔案"
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
 #: core/utilities/searchwindow/searchfields_createfield.cpp:385
+#: core/utilities/searchwindow/searchfields_createfield.cpp:428
+#: core/utilities/searchwindow/searchfields_createfield.cpp:437
 #, kde-format
 msgid "Camera"
 msgstr "相機"
@@ -19516,7 +19518,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, kde-format
 msgid "Author"
 msgstr "作者"
@@ -26853,9 +26855,9 @@ msgid "Reset curve to linear"
 msgstr "重設曲線為直線"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:488
-#: core/utilities/searchwindow/searchfields_createfield.cpp:509
-#: core/utilities/searchwindow/searchfields_createfield.cpp:521
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Exposure"
 msgstr "曝光"
@@ -27912,98 +27914,98 @@ msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "分類(&T)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:152
 #, fuzzy, kde-format
 #| msgid "Ch&ild Of:"
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "父類別(&I)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:158
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "簡短說明(&P)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:163
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "在這裡輸入相簿簡短說明…"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "相簿日期(&D)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "最舊(&O)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "使用這個按鈕來掃描選擇相簿中的重複項目。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "平均(&A)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "使用這個按鈕來掃描選擇相簿中的重複項目。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "最新"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "使用這個按鈕來掃描選擇相簿中的重複項目。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:260
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "新增相簿"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "已選取相簿（預設）"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "目前收藏的根"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:337
+#: core/libs/album/widgets/albumpropsedit.cpp:339
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "未分類的相簿"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:423
+#: core/libs/album/widgets/albumpropsedit.cpp:428
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -28013,14 +28015,14 @@ msgstr ""
 "建立新相簿於\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:468
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "無法計算平均值"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:469
+#: core/libs/album/widgets/albumpropsedit.cpp:474
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -51941,14 +51943,14 @@ msgid "Lens of the camera"
 msgstr "相機的鏡頭"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:430
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Aperture"
 msgstr "光圈"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:450
-#: core/utilities/searchwindow/searchfields_createfield.cpp:469
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
 #, kde-format
 msgid "Focal length"
 msgstr "焦距"
@@ -51959,7 +51961,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "焦距（跟 35mm 等長）"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:488
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
 #, kde-format
 msgid "Exposure time"
 msgstr "曝光時間"
@@ -51975,7 +51977,7 @@ msgid "Exposure mode"
 msgstr "曝光模式"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:532
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "Sensitivity"
 msgstr "靈敏度"
@@ -51986,7 +51988,7 @@ msgid "Flash mode"
 msgstr "閃光模式"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:579
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "White balance"
 msgstr "白平衡"
@@ -52017,14 +52019,14 @@ msgid "Display Aspect Ratio"
 msgstr "顯示外觀比例"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #: core/utilities/setup/setuptooltip.cpp:259
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "音效位元率"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:954
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Channel Type"
@@ -53504,7 +53506,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgid "City"
 msgstr "城市"
@@ -62749,6 +62751,7 @@ msgid "The model of the camera"
 msgstr "相機的型號"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
 #, kde-format
 msgid "Lens"
 msgstr "鏡頭"
@@ -62758,458 +62761,496 @@ msgstr "鏡頭"
 msgid "The type of the lens"
 msgstr "鏡頭類型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:430
+#: core/utilities/searchwindow/searchfields_createfield.cpp:428
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Return items without a camera make"
+msgstr "回傳沒有臉孔區域的項目"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:429
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Camera maker"
+msgid "No Camera Make"
+msgstr "相機製造商"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:437
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Return items without a camera model"
+msgstr "回傳沒有臉孔區域的項目"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Camera model"
+msgid "No Camera Model"
+msgstr "相機型號"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#, fuzzy, kde-format
+#| msgid "Return items without tags"
+msgid "Return items without a lens type"
+msgstr "回傳沒有標籤的項目"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:447
+#, fuzzy, kde-format
+#| msgid "No Lens Filter"
+msgid "No Lens Type"
+msgstr "無鏡頭濾鏡"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "鏡頭光圈（光圈數）"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:431
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:450
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "鏡頭的焦距"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:451
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:469
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35mm 等效焦距"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:470
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:489
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:509
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "自動曝光程式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:521
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "自動或手動曝光"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:532
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO 底片感光度 (直尺，ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:533
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:556
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "閃光燈"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:556
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "閃光模式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:568
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "自動或手動白平衡"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:579
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "用於白平衡的色溫"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:580
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Metering Mode"
 msgstr "測光模式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "決定曝光值的方法"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Subject Distance"
 msgstr "拍攝主體距離"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "從鏡頭到拍攝主體的距離"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:605
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "微距、特寫或遠景攝影"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:634
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:634
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, fuzzy, kde-format
 msgid "Altitude range"
 msgstr "高度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:635
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 msgid "Item has no GPS info"
 msgstr "影像沒有標籤"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:658
+#: core/utilities/searchwindow/searchfields_createfield.cpp:685
 #, kde-format
 msgid "Not Geo-located"
 msgstr "未地理定位"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:695
 #, kde-format
 msgid "Country"
 msgstr "國家"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:695
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Country shown in the item"
 msgstr "在這裡設定城市裡內容的位置。"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, kde-format
 msgid "Province"
 msgstr "州/省"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Province shown in the item"
 msgstr "在這裡設定城市裡內容的位置。"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "City shown in the item"
 msgstr "在這裡設定城市裡內容的位置。"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:716
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, kde-format
 msgid "Sublocation"
 msgstr "轄區"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:716
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Sublocation shown in the item"
 msgstr "在這裡設定城市裡內容的位置。"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "建立者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, kde-format
 msgid "Return items created by"
 msgstr "回傳由此作者建立的項目"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "簡短說明"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "項目說明包含"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "回傳此註解方式的圖片"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, kde-format
 msgid "Headline"
 msgstr "大標題"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "回傳含有此 IPTC 大標題的圖片"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "標題"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "回傳含有此 IPTC 標題的圖片"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:770
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "尋找與這些所有字彙有關聯的項目："
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, kde-format
 msgid "Empty Text"
 msgstr "空白文字"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in"
 msgstr "回傳此標籤的圖片"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:780
+#: core/utilities/searchwindow/searchfields_createfield.cpp:807
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "建立者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:781
+#: core/utilities/searchwindow/searchfields_createfield.cpp:808
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "簡短說明"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:782
+#: core/utilities/searchwindow/searchfields_createfield.cpp:809
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "作者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:783
+#: core/utilities/searchwindow/searchfields_createfield.cpp:810
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "大標題"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:784
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "標題"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
-#: core/utilities/searchwindow/searchfields_createfield.cpp:813
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "外觀比例"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "項目外觀比例為"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:829
 #, kde-format
 msgid "Pixel Size"
 msgstr "像素大小"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:829
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "(寬 * 高) 的值介於"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:830
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "和"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:813
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "回傳此影片的外觀比例"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgid "Length of the video"
 msgstr "影像長度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:831
+#: core/utilities/searchwindow/searchfields_createfield.cpp:858
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "和"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:832
+#: core/utilities/searchwindow/searchfields_createfield.cpp:859
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "秒"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Frame Rate"
 msgstr "影格率"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "回傳此影片的影格率"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:849
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "和"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:850
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:893
 #, kde-format
 msgid "Codec"
 msgstr "編解碼器"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:893
 #, kde-format
 msgid "Return video codec"
 msgstr "回傳視訊編解碼器"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Return Audio Bits Rate"
 msgstr "音效位元率"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:937
+#: core/utilities/searchwindow/searchfields_createfield.cpp:964
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "和"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:938
+#: core/utilities/searchwindow/searchfields_createfield.cpp:965
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:954
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "回傳聲道型態"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:956
+#: core/utilities/searchwindow/searchfields_createfield.cpp:983
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "單聲道"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:957
+#: core/utilities/searchwindow/searchfields_createfield.cpp:984
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "雙聲道"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:958
+#: core/utilities/searchwindow/searchfields_createfield.cpp:985
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 環繞音效"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:959
+#: core/utilities/searchwindow/searchfields_createfield.cpp:986
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 環繞音效"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:960
+#: core/utilities/searchwindow/searchfields_createfield.cpp:987
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 聲道序列"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:988
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "其他聲道型態"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:973
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
 #, fuzzy, kde-format
 #| msgid "Return video codec"
 msgid "Return Audio Codec"
 msgstr "回傳視訊編解碼器"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
 #, kde-format
 msgid "Faces"
 msgstr "臉孔"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "項目臉孔區域數量處於此範圍內"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1073
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1100
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "和"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
 #, kde-format
 msgid "Return items without face regions"
 msgstr "回傳沒有臉孔區域的項目"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1083
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1110
 #, kde-format
 msgid "No Face Regions"
 msgstr "沒有臉孔區域"
@@ -63280,12 +63321,12 @@ msgstr "項目屬性"
 msgid "Caption, Comment, Title"
 msgstr "簡短說明、註解、名稱"
 
-#: core/utilities/searchwindow/searchgroup.cpp:182
+#: core/utilities/searchwindow/searchgroup.cpp:185
 #, fuzzy, kde-format
 msgid "Geographic position"
 msgstr "相片分佈"
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, kde-format
 msgid "Face regions"
 msgstr "臉孔區域"

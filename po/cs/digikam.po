@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2025-11-19 00:40+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -3699,7 +3699,7 @@ msgstr "Typ zvukového kanálu"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:973
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
 #: core/utilities/setup/setuptooltip.cpp:265
 #, kde-format
 msgid "Audio Codec"
@@ -3707,7 +3707,7 @@ msgstr "Kodek zvuku"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgid "Duration"
 msgstr "Trvání"
@@ -7898,7 +7898,7 @@ msgstr "Správa barev je zakázána..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/utilities/searchwindow/searchfields_createfield.cpp:568
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "White Balance"
 msgstr "Vyvážení bílé"
@@ -15898,6 +15898,8 @@ msgstr "Cílový soubor"
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
 #: core/utilities/searchwindow/searchfields_createfield.cpp:385
+#: core/utilities/searchwindow/searchfields_createfield.cpp:428
+#: core/utilities/searchwindow/searchfields_createfield.cpp:437
 #, kde-format
 msgid "Camera"
 msgstr "Fotoaparát"
@@ -18768,7 +18770,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, kde-format
 msgid "Author"
 msgstr "Autor"
@@ -25735,9 +25737,9 @@ msgid "Reset curve to linear"
 msgstr "Změnit křivku zpět na přímku"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:488
-#: core/utilities/searchwindow/searchfields_createfield.cpp:509
-#: core/utilities/searchwindow/searchfields_createfield.cpp:521
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Exposure"
 msgstr "Expozice"
@@ -26749,94 +26751,94 @@ msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ka&tegorie:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:152
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Poto&mek:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:158
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Titu&lek:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:163
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Sem vložte popisek alba..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Datum alba:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "N&ejstarší"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Průměrné"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Nejnovější"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:260
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Nové album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Vybrané album (Výchozí)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Kořen současné sbírky"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:337
+#: core/libs/album/widgets/albumpropsedit.cpp:339
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Nezařazené album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:423
+#: core/libs/album/widgets/albumpropsedit.cpp:428
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26846,13 +26848,13 @@ msgstr ""
 "Vytvořit nové album v\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:468
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Nelze spočítat průměr"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:469
+#: core/libs/album/widgets/albumpropsedit.cpp:474
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -50145,14 +50147,14 @@ msgid "Lens of the camera"
 msgstr "Objektiv fotoaparátu"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:430
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Aperture"
 msgstr "Clona"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:450
-#: core/utilities/searchwindow/searchfields_createfield.cpp:469
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
 #, kde-format
 msgid "Focal length"
 msgstr "Ohnisková vzdálenost"
@@ -50163,7 +50165,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Ohnisková vzdálenost (ekvivalent 35mm)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:488
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
 #, kde-format
 msgid "Exposure time"
 msgstr "Doba expozice"
@@ -50179,7 +50181,7 @@ msgid "Exposure mode"
 msgstr "Režim expozice"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:532
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "Sensitivity"
 msgstr "Citlivost"
@@ -50190,7 +50192,7 @@ msgid "Flash mode"
 msgstr "Režim blesku"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:579
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "White balance"
 msgstr "Vyvážení bílé"
@@ -50221,14 +50223,14 @@ msgid "Display Aspect Ratio"
 msgstr "Poměr stran obrazovky"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #: core/utilities/setup/setuptooltip.cpp:259
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Datový tok zvuku"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:954
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Channel Type"
@@ -51690,7 +51692,7 @@ msgstr "Národní hlavní město"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgid "City"
 msgstr "Město"
@@ -60695,6 +60697,7 @@ msgid "The model of the camera"
 msgstr "Model fotoaparátu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
 #, kde-format
 msgid "Lens"
 msgstr "Čočka"
@@ -60704,448 +60707,486 @@ msgstr "Čočka"
 msgid "The type of the lens"
 msgstr "Typ čočky"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:430
+#: core/utilities/searchwindow/searchfields_createfield.cpp:428
+#, fuzzy, kde-format
+#| msgid "Return items with tag"
+msgid "Return items without a camera make"
+msgstr "Navrátit položky se značkou"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:429
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Camera maker"
+msgid "No Camera Make"
+msgstr "Výrobce fotoaparátu"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:437
+#, fuzzy, kde-format
+#| msgid "Return items with labels"
+msgid "Return items without a camera model"
+msgstr "Navrátit položky s popisky"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Camera model"
+msgid "No Camera Model"
+msgstr "Model fotoaparátu"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#, fuzzy, kde-format
+#| msgid "Return items with labels"
+msgid "Return items without a lens type"
+msgstr "Navrátit položky s popisky"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:447
+#, fuzzy, kde-format
+#| msgid "No Lens Filter"
+msgid "No Lens Type"
+msgstr "Nepoužít filtr objektivu"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Clona objektivu jako f-číslo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:431
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:450
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Ohnisková vzdálenost objektivu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:451
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:469
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "ekvivalent 35 mm"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:470
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:489
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:509
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Režim automatické závěrky"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:521
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Automatická nebo ruční závěrka"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:532
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO citlivost filmu (lineární měřítko, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:533
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:556
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Blesk"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:556
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Režim blesku"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:568
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Automatické nebo ruční vyvážení bílé"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:579
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Teplota barvy použitá pro vyvážení bílé"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:580
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Metering Mode"
 msgstr "Způsob měření"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Metoda, s níž byl určen čas závěrky"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Subject Distance"
 msgstr "Vzdálenost předmětu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Vzdálenost předmětu od čočky"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:605
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Makro, blízký nebo vzdálený pohled"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:634
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:634
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, kde-format
 msgid "Altitude range"
 msgstr "Rozsah výšky"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:635
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "Položka neobsahuje informace o GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:658
+#: core/utilities/searchwindow/searchfields_createfield.cpp:685
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Bez geolokace"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:695
 #, kde-format
 msgid "Country"
 msgstr "Země"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:695
 #, kde-format
 msgid "Country shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, kde-format
 msgid "Province"
 msgstr "Provincie"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, kde-format
 msgid "Province shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgid "City shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:716
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, kde-format
 msgid "Sublocation"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:716
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Vytvořil"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, kde-format
 msgid "Return items created by"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Titulek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Navrátit položky, jejichž komentář obsahuje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, kde-format
 msgid "Return items commented by"
 msgstr "Navrátit položky, jež okomentoval(a)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, kde-format
 msgid "Headline"
 msgstr "Nadpis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Navrátit položky s IPTC záhlavím"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Název"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Navrátit položky s IPTC titulkem"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:770
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Najít položky, které mají spojitost se všemi těmito slovy:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, kde-format
 msgid "Empty Text"
 msgstr "Prázdný text"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, kde-format
 msgid "Return items without text in"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:780
+#: core/utilities/searchwindow/searchfields_createfield.cpp:807
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Vytvořil"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:781
+#: core/utilities/searchwindow/searchfields_createfield.cpp:808
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Titulek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:782
+#: core/utilities/searchwindow/searchfields_createfield.cpp:809
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Autor"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:783
+#: core/utilities/searchwindow/searchfields_createfield.cpp:810
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Nadpis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:784
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Název"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
-#: core/utilities/searchwindow/searchfields_createfield.cpp:813
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Poměr stran"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Navrátit položky s poměrem stran"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:829
 #, kde-format
 msgid "Pixel Size"
 msgstr "Velikost v pixelech"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:829
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Hodnota (šířka * výška) mezi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:830
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "a"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:813
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Navrátit video se stejným poměrem stran"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgid "Length of the video"
 msgstr "Délka videa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:831
+#: core/utilities/searchwindow/searchfields_createfield.cpp:858
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "a"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:832
+#: core/utilities/searchwindow/searchfields_createfield.cpp:859
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Frame Rate"
 msgstr "Vzorkovací frekvence"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Navrátit video s vzorkovací frekvencí"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:849
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "a"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:850
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:893
 #, kde-format
 msgid "Codec"
 msgstr "Kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:893
 #, kde-format
 msgid "Return video codec"
 msgstr "Navrátit video kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:937
+#: core/utilities/searchwindow/searchfields_createfield.cpp:964
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "a"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:938
+#: core/utilities/searchwindow/searchfields_createfield.cpp:965
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:954
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Navrátit nastavení kanálů zvuku"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:956
+#: core/utilities/searchwindow/searchfields_createfield.cpp:983
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:957
+#: core/utilities/searchwindow/searchfields_createfield.cpp:984
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:958
+#: core/utilities/searchwindow/searchfields_createfield.cpp:985
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "Prostorový zvuk 5.1"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:959
+#: core/utilities/searchwindow/searchfields_createfield.cpp:986
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "Prostorový zvuk 7.1"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:960
+#: core/utilities/searchwindow/searchfields_createfield.cpp:987
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:988
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Jiný typ kanálu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:973
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Navrátit audio kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
 #, kde-format
 msgid "Faces"
 msgstr "Obličeje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1073
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1100
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "a"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
 #, kde-format
 msgid "Return items without face regions"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1083
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1110
 #, kde-format
 msgid "No Face Regions"
 msgstr ""
@@ -61213,12 +61254,12 @@ msgstr "Vlastnosti položky"
 msgid "Caption, Comment, Title"
 msgstr "Popisek, komentář, titulek"
 
-#: core/utilities/searchwindow/searchgroup.cpp:182
+#: core/utilities/searchwindow/searchgroup.cpp:185
 #, kde-format
 msgid "Geographic position"
 msgstr "Zeměpisná pozice"
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, kde-format
 msgid "Face regions"
 msgstr ""

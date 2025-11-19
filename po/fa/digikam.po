@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2025-11-19 00:40+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -4136,7 +4136,7 @@ msgstr "کانال آلفا"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:973
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
 #: core/utilities/setup/setuptooltip.cpp:265
 #, fuzzy, kde-format
 msgid "Audio Codec"
@@ -4144,7 +4144,7 @@ msgstr "پرونده‌های صوتی"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, fuzzy, kde-format
 msgid "Duration"
 msgstr "دوام: %1"
@@ -8536,7 +8536,7 @@ msgstr "نمای مدیریت‌شده رنگ غیرفعال است"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/utilities/searchwindow/searchfields_createfield.cpp:568
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "White Balance"
 msgstr "توازن سفید"
@@ -16598,6 +16598,8 @@ msgstr "بر اساس پوشه"
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
 #: core/utilities/searchwindow/searchfields_createfield.cpp:385
+#: core/utilities/searchwindow/searchfields_createfield.cpp:428
+#: core/utilities/searchwindow/searchfields_createfield.cpp:437
 #, kde-format
 msgid "Camera"
 msgstr "دوربین"
@@ -19534,7 +19536,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, kde-format
 msgid "Author"
 msgstr "نویسنده"
@@ -26700,9 +26702,9 @@ msgid "Reset curve to linear"
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:488
-#: core/utilities/searchwindow/searchfields_createfield.cpp:509
-#: core/utilities/searchwindow/searchfields_createfield.cpp:521
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Exposure"
 msgstr "آشکارسازی"
@@ -27723,33 +27725,33 @@ msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "دسته:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:152
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:158
 #, fuzzy, kde-format
 #| msgid "Ca&ption:"
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "عنوان:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:163
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "متن خود را در اینجا وارد کنید!"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&تاریخ آلبوم:‌"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the oldest image"
@@ -27758,13 +27760,13 @@ msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&قدیمی‌ترین‌"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "<p>برای نمایش نوع تصویر، این گزینه را تنظیم کنید."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "Calculates the average date"
@@ -27773,13 +27775,13 @@ msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&متوسط‌"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "<p>برای نمایش نوع تصویر، این گزینه را تنظیم کنید."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the newest image"
@@ -27788,39 +27790,39 @@ msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "جدیدترین"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "<p>برای نمایش نوع تصویر، این گزینه را تنظیم کنید."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:260
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "آلبوم جدید"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, fuzzy, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "برگزیدن آلبوم"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, fuzzy, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "وارونه کردن گزینش"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:337
+#: core/libs/album/widgets/albumpropsedit.cpp:339
 #, fuzzy, kde-format
 #| msgid "Uncategorized Album"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "آلبوم دسته‌بندی‌نشده"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:423
+#: core/libs/album/widgets/albumpropsedit.cpp:428
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@label: album properties"
@@ -27829,14 +27831,14 @@ msgid ""
 "\"%1\""
 msgstr "ایجاد آلبوم جدید"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:468
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "نتوانست میانگین را محاسبه کند"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:469
+#: core/libs/album/widgets/albumpropsedit.cpp:474
 #, fuzzy, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -51404,14 +51406,14 @@ msgid "Lens of the camera"
 msgstr "دوربین سوارشده"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:430
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Aperture"
 msgstr "روزنه"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:450
-#: core/utilities/searchwindow/searchfields_createfield.cpp:469
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
 #, fuzzy, kde-format
 msgid "Focal length"
 msgstr "تنظیمات محلی"
@@ -51422,7 +51424,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:488
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
 #, kde-format
 msgid "Exposure time"
 msgstr "زمان آشکارسازی"
@@ -51438,7 +51440,7 @@ msgid "Exposure mode"
 msgstr "حالت آشکارسازی:"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:532
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, fuzzy, kde-format
 msgid "Sensitivity"
 msgstr "حساسیت )ISO(:"
@@ -51449,7 +51451,7 @@ msgid "Flash mode"
 msgstr "فلاش:"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:579
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, fuzzy, kde-format
 msgid "White balance"
 msgstr "توازن سفید:"
@@ -51480,14 +51482,14 @@ msgid "Display Aspect Ratio"
 msgstr "ضریب نسبت:"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #: core/utilities/setup/setuptooltip.cpp:259
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "پرونده‌های صوتی"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:954
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #: core/utilities/setup/setuptooltip.cpp:262
 #, fuzzy, kde-format
 msgid "Audio Channel Type"
@@ -52895,7 +52897,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
@@ -62184,6 +62186,7 @@ msgid "The model of the camera"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
 #, fuzzy, kde-format
 msgid "Lens"
 msgstr "لنز"
@@ -62193,381 +62196,412 @@ msgstr "لنز"
 msgid "The type of the lens"
 msgstr "پالایه نوفه:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:430
+#: core/utilities/searchwindow/searchfields_createfield.cpp:428
+#, fuzzy, kde-format
+msgid "Return items without a camera make"
+msgstr "عکس اصلی:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:429
+#, fuzzy, kde-format
+msgid "No Camera Make"
+msgstr "افزودن نام دوربین"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:437
+#, fuzzy, kde-format
+msgid "Return items without a camera model"
+msgstr "عکس اصلی:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#, fuzzy, kde-format
+msgid "No Camera Model"
+msgstr "افزودن نام دوربین"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#, fuzzy, kde-format
+msgid "Return items without a lens type"
+msgstr "عکس اصلی:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:447
+#, fuzzy, kde-format
+#| msgid "No Lens Filter"
+msgid "No Lens Type"
+msgstr "بدون پالایه لنز"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:431
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:450
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
 #, kde-format
 msgid "Focal length of the lens"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:451
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:469
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:470
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:489
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:509
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
 #, fuzzy, kde-format
 msgid "Automatic exposure program"
 msgstr "تنظیمات نمایش خودکار"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:521
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:532
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:533
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:556
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, fuzzy, kde-format
 #| msgid "Flash"
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "درخش"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:556
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, fuzzy, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "فلاش:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:568
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:579
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:580
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, fuzzy, kde-format
 msgid "Metering Mode"
 msgstr "حالت اندازه‌گیری:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, fuzzy, kde-format
 msgid "Subject Distance"
 msgstr "فاصله:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:605
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:634
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "GPS"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:634
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, fuzzy, kde-format
 msgid "Altitude range"
 msgstr "ارتفاع:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:635
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 msgid "Item has no GPS info"
 msgstr "تصاویر در %1 یافت شدند"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:658
+#: core/utilities/searchwindow/searchfields_createfield.cpp:685
 #, fuzzy, kde-format
 msgid "Not Geo-located"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:695
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "کشور:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:695
 #, fuzzy, kde-format
 msgid "Country shown in the item"
 msgstr "<p>در اینجا تنظیم سایه روشن تصویر را تنظیم کنید."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, fuzzy, kde-format
 #| msgid "Province:"
 msgid "Province"
 msgstr "استان:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, fuzzy, kde-format
 msgid "Province shown in the item"
 msgstr "<p>در اینجا تنظیم سایه روشن تصویر را تنظیم کنید."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, fuzzy, kde-format
 msgid "City shown in the item"
 msgstr "<p>در اینجا تنظیم سایه روشن تصویر را تنظیم کنید."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:716
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, fuzzy, kde-format
 msgid "Sublocation"
 msgstr "گزینش"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:716
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, fuzzy, kde-format
 msgid "Sublocation shown in the item"
 msgstr "<p>در اینجا تنظیم سایه روشن تصویر را تنظیم کنید."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "تقویم"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "Return items created by"
 msgstr "حذف فقره"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "عنوان"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, fuzzy, kde-format
 msgid "Return items whose comment contains"
 msgstr "بازآوری همه محتویات آلبوم."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "Return items commented by"
 msgstr "حذف فقره"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, fuzzy, kde-format
 msgid "Headline"
 msgstr "کاشی"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, fuzzy, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "عنوان"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, fuzzy, kde-format
 msgid "Return items with the IPTC title"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:770
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, fuzzy, kde-format
 #| msgid "Apply Texture"
 msgid "Empty Text"
 msgstr "اعمال بافت"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, fuzzy, kde-format
 msgid "Return items without text in"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:780
+#: core/utilities/searchwindow/searchfields_createfield.cpp:807
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "تقویم"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:781
+#: core/utilities/searchwindow/searchfields_createfield.cpp:808
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "عنوان"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:782
+#: core/utilities/searchwindow/searchfields_createfield.cpp:809
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "نویسنده"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:783
+#: core/utilities/searchwindow/searchfields_createfield.cpp:810
 #, fuzzy, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "کاشی"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:784
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "عنوان"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
-#: core/utilities/searchwindow/searchfields_createfield.cpp:813
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, fuzzy, kde-format
 msgid "Aspect Ratio"
 msgstr "ضریب نسبت:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:829
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "اندازه پرونده"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:829
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:830
 #, fuzzy, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "و"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:813
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, fuzzy, kde-format
 msgid "Length of the video"
 msgstr "پالایه نوفه:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:831
+#: core/utilities/searchwindow/searchfields_createfield.cpp:858
 #, fuzzy, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "و"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:832
+#: core/utilities/searchwindow/searchfields_createfield.cpp:859
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, fuzzy, kde-format
 msgid "Frame Rate"
 msgstr "ایجادشده:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:849
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, fuzzy, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "و"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:850
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:893
 #, fuzzy, kde-format
 msgid "Codec"
 msgstr "پرونده‌های صوتی"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:893
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "پرونده‌های صوتی"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "پرونده‌های صوتی"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:937
+#: core/utilities/searchwindow/searchfields_createfield.cpp:964
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -62575,70 +62609,70 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "و"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:938
+#: core/utilities/searchwindow/searchfields_createfield.cpp:965
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:954
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "نمایش نوع تصویر"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:956
+#: core/utilities/searchwindow/searchfields_createfield.cpp:983
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:957
+#: core/utilities/searchwindow/searchfields_createfield.cpp:984
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:958
+#: core/utilities/searchwindow/searchfields_createfield.cpp:985
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:959
+#: core/utilities/searchwindow/searchfields_createfield.cpp:986
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:960
+#: core/utilities/searchwindow/searchfields_createfield.cpp:987
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:988
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "کانال آلفا"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:973
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "پرونده‌های صوتی"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "برگزیدن هیچ‌کدام"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
 #, fuzzy, kde-format
 msgid "Return items by number of face regions"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1073
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1100
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -62646,12 +62680,12 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "و"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
 #, fuzzy, kde-format
 msgid "Return items without face regions"
 msgstr "عکس اصلی:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1083
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1110
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "بدون گزینش"
@@ -62720,12 +62754,12 @@ msgstr "ویژگیهای تصویر"
 msgid "Caption, Comment, Title"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup.cpp:182
+#: core/utilities/searchwindow/searchgroup.cpp:185
 #, fuzzy, kde-format
 msgid "Geographic position"
 msgstr "بازگردانی عکس"
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, fuzzy, kde-format
 msgid "Face regions"
 msgstr "بدون گزینش"

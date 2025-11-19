@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:50+0000\n"
+"POT-Creation-Date: 2025-11-19 00:40+0000\n"
 "PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3829,7 +3829,7 @@ msgstr "Audio kanal mota"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:973
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
 #: core/utilities/setup/setuptooltip.cpp:265
 #, kde-format
 msgid "Audio Codec"
@@ -3837,7 +3837,7 @@ msgstr "Audio kodeka"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgid "Duration"
 msgstr "Iraupena"
@@ -8204,7 +8204,7 @@ msgstr "Kolore-kudeaketa ezgaituta dago..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/utilities/searchwindow/searchfields_createfield.cpp:568
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "White Balance"
 msgstr "Zuri-oreka"
@@ -16665,6 +16665,8 @@ msgstr "Helburu-&fitxategia:"
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
 #: core/utilities/searchwindow/searchfields_createfield.cpp:385
+#: core/utilities/searchwindow/searchfields_createfield.cpp:428
+#: core/utilities/searchwindow/searchfields_createfield.cpp:437
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
@@ -19614,7 +19616,7 @@ msgstr ""
 "en webgunea xehetasunetarako: https://jalbum.net/.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, kde-format
 msgid "Author"
 msgstr "Egilea"
@@ -27216,9 +27218,9 @@ msgid "Reset curve to linear"
 msgstr "Berrezarri kurba linealera"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:488
-#: core/utilities/searchwindow/searchfields_createfield.cpp:509
-#: core/utilities/searchwindow/searchfields_createfield.cpp:521
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Exposure"
 msgstr "Esposizioa"
@@ -28347,35 +28349,35 @@ msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Kategoria"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:152
 #, fuzzy, kde-format
 #| msgid "Ch&ild Of:"
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Honen &umea:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:158
 #, fuzzy, kde-format
 #| msgid "Ca&ption:"
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "E&pigrafea"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:163
 #, fuzzy, kde-format
 #| msgid "Enter album caption here..."
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Sartu albumaren epigrafea hemen..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "Albumaren &data:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the oldest image"
@@ -28384,7 +28386,7 @@ msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&Zaharrena"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: Button to select the date of the oldest image\n"
@@ -28393,7 +28395,7 @@ msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "&Zaharrena"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "Calculates the average date"
@@ -28402,7 +28404,7 @@ msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "Batezbestekoa"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: This is a button which calculates the average date\n"
@@ -28411,7 +28413,7 @@ msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "&Batez bestekoa"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the newest image"
@@ -28420,7 +28422,7 @@ msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Be&rriena"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: Button to select the date of the newest image\n"
@@ -28429,21 +28431,21 @@ msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "Berriena"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:260
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Album berria"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, fuzzy, kde-format
 #| msgid "Selected Album (Default)"
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Hautatutako albuma (lehenetsia)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, fuzzy, kde-format
 #| msgctxt "top level folder of album"
 #| msgid "Root of current collection"
@@ -28451,14 +28453,14 @@ msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Uneko bildumaren erroa"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:337
+#: core/libs/album/widgets/albumpropsedit.cpp:339
 #, fuzzy, kde-format
 #| msgid "Uncategorized Album"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Sailkatu gabeko albuma"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:423
+#: core/libs/album/widgets/albumpropsedit.cpp:428
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@label: album properties"
@@ -28467,14 +28469,14 @@ msgid ""
 "\"%1\""
 msgstr "Sortu album berria"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:468
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Ezin da batez bestekoa kalkulatu"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:469
+#: core/libs/album/widgets/albumpropsedit.cpp:474
 #, fuzzy, kde-format
 #| msgid "Could not calculate date average for this album."
 msgctxt "@info: album properties"
@@ -53335,14 +53337,14 @@ msgid "Lens of the camera"
 msgstr "Kameraren objektiboa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:430
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Aperture"
 msgstr "Irekidura"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:450
-#: core/utilities/searchwindow/searchfields_createfield.cpp:469
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
 #, kde-format
 msgid "Focal length"
 msgstr "Fokuaren luzera"
@@ -53353,7 +53355,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Fokuaren luzera (35mm-ren baliokidea)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:488
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
 #, kde-format
 msgid "Exposure time"
 msgstr "Esposizioaren denbora"
@@ -53369,7 +53371,7 @@ msgid "Exposure mode"
 msgstr "Esposizioaren modua"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:532
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sentikortasuna"
@@ -53380,7 +53382,7 @@ msgid "Flash mode"
 msgstr "Flash-aren modua"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:579
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "White balance"
 msgstr "Zuri-balantzea"
@@ -53411,14 +53413,14 @@ msgid "Display Aspect Ratio"
 msgstr "Bistaratu aspektu-erlazioa:"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #: core/utilities/setup/setuptooltip.cpp:259
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Audio bit-emaria"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:954
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Channel Type"
@@ -54948,7 +54950,7 @@ msgstr "Hiriburu Politikoa"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgid "City"
 msgstr "Hiria"
@@ -64475,6 +64477,7 @@ msgid "The model of the camera"
 msgstr "Kameraren modeloa"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:416
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
 #, kde-format
 msgid "Lens"
 msgstr "Objektiboa"
@@ -64484,381 +64487,419 @@ msgstr "Objektiboa"
 msgid "The type of the lens"
 msgstr "Objektibo mota"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:430
+#: core/utilities/searchwindow/searchfields_createfield.cpp:428
+#, fuzzy, kde-format
+#| msgid "Return pictures with tag"
+msgid "Return items without a camera make"
+msgstr "Itzuli irudiak etiketekin"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:429
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Camera maker"
+msgid "No Camera Make"
+msgstr "Kamera egilea"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:437
+#, fuzzy, kde-format
+#| msgid "Return pictures with tag"
+msgid "Return items without a camera model"
+msgstr "Itzuli irudiak etiketekin"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Camera model"
+msgid "No Camera Model"
+msgstr "Kamera eredua"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#, fuzzy, kde-format
+#| msgid "Return pictures with tag"
+msgid "Return items without a lens type"
+msgstr "Itzuli irudiak etiketekin"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:447
+#, fuzzy, kde-format
+#| msgid "No Lens Filter"
+msgid "No Lens Type"
+msgstr "Objektiboaren iragazkirik gabe"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Objektiboaren irekidura f-zenbaki gisa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:431
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:450
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Objektibo fokuaren luzera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:451
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:469
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35mm-ri dagokion fokuaren luzera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:470
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:489
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:509
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Esposizioaren programa automatikoa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:521
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Esposizio automatikoa edo eskuzkoa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:532
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO filmaren abiadura (eskala lineala, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:533
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:556
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Flasha"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:556
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Flash-aren modua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:568
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Zuri-balantze automatikoa edo eskuzkoa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:579
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Kolorearen tenperatura zuri-balantzean erabiltzeko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:580
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Metering Mode"
 msgstr "Neurtze modua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Esposizioa zehazteko metodoa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Subject Distance"
 msgstr "Subjektuaren distantzia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Subjektuaren objektiboarekiko distantzia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:605
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Makroa, gertuko edo urruneko ikuspegia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:634
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:634
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, kde-format
 msgid "Altitude range"
 msgstr "Garaiera barrutia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:635
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:657
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, fuzzy, kde-format
 msgid "Item has no GPS info"
 msgstr "Irudiak ez dauka etiketarik"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:658
+#: core/utilities/searchwindow/searchfields_createfield.cpp:685
 #, fuzzy, kde-format
 msgid "Not Geo-located"
 msgstr "Bilatu bikoiztutakoak"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:695
 #, kde-format
 msgid "Country"
 msgstr "Herrialdea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:695
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Country shown in the item"
 msgstr "Définissez ici l'emplacement du contenu au sein de la ville."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, kde-format
 msgid "Province"
 msgstr "Probintzia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Province shown in the item"
 msgstr "Définissez ici l'emplacement du contenu au sein de la ville."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "City shown in the item"
 msgstr "Définissez ici l'emplacement du contenu au sein de la ville."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:716
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Sublocation"
 msgstr "Azpikokalekua:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:716
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "Sublocation shown in the item"
 msgstr "Définissez ici l'emplacement du contenu au sein de la ville."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Sortzailea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Itzuli irudiak haien iruzkinak honek idatzi baditu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Epigrafea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Itzuli irudiak haien iruzkinek hau badute"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Itzuli irudiak haien iruzkinak honek idatzi baditu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, kde-format
 msgid "Headline"
 msgstr "Goiburua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "Itzuli irudiak honako IPTC goiburuarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Titulua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "Itzuli irudiak honako IPTC tituluarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:770
+#: core/utilities/searchwindow/searchfields_createfield.cpp:797
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Bilatu irudiak honako hitzak esleituta dituztenak:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, kde-format
 msgid "Empty Text"
 msgstr "Testua hutsik"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in"
 msgstr "Itzuli irudiak etiketekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:780
+#: core/utilities/searchwindow/searchfields_createfield.cpp:807
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Sortzailea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:781
+#: core/utilities/searchwindow/searchfields_createfield.cpp:808
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Epigrafea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:782
+#: core/utilities/searchwindow/searchfields_createfield.cpp:809
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Egilea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:783
+#: core/utilities/searchwindow/searchfields_createfield.cpp:810
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Goiburua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:784
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Titulua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
-#: core/utilities/searchwindow/searchfields_createfield.cpp:813
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, fuzzy, kde-format
 msgid "Aspect Ratio"
 msgstr "Aspektu-erlazioa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Itzuli irudiak fitxategi-formatuarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:829
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "Fitxategi-tamaina"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:829
 #, fuzzy, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Bilatu irudiak hauen arteko altuerarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:830
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:813
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Itzuli irudiak fitxategi-formatuarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgid "Length of the video"
 msgstr "Bideoaren iraupena"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:831
+#: core/utilities/searchwindow/searchfields_createfield.cpp:858
 #, fuzzy, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:832
+#: core/utilities/searchwindow/searchfields_createfield.cpp:859
 #, fuzzy, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, fuzzy, kde-format
 msgid "Frame Rate"
 msgstr "Fotograma-abiadura"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "Itzuli irudiak fitxategi-formatuarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:849
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, fuzzy, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:850
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, fuzzy, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:893
 #, fuzzy, kde-format
 msgid "Codec"
 msgstr "Kodeka:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:893
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "Audio-fitxategiak"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Audio-fitxategiak"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:937
+#: core/utilities/searchwindow/searchfields_createfield.cpp:964
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -64866,73 +64907,73 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:938
+#: core/utilities/searchwindow/searchfields_createfield.cpp:965
 #, fuzzy, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:954
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Erakutsi irudi mota"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:956
+#: core/utilities/searchwindow/searchfields_createfield.cpp:983
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:957
+#: core/utilities/searchwindow/searchfields_createfield.cpp:984
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Estereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:958
+#: core/utilities/searchwindow/searchfields_createfield.cpp:985
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "surround soinua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:959
+#: core/utilities/searchwindow/searchfields_createfield.cpp:986
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "surround soinua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:960
+#: core/utilities/searchwindow/searchfields_createfield.cpp:987
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:988
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Alfa kanala: "
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:973
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "Audio-fitxategiak"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Faces"
 msgid "Faces"
 msgstr "Aurpegien arabera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Itzuli irudiak, haien fitxategi-izenek hau badute"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1073
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1100
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -64940,13 +64981,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Itzuli irudiak etiketekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1083
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1110
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"
@@ -65018,12 +65059,12 @@ msgstr "Irudiaren propietateak"
 msgid "Caption, Comment, Title"
 msgstr "Epigrafea, iruzkina, titulua"
 
-#: core/utilities/searchwindow/searchgroup.cpp:182
+#: core/utilities/searchwindow/searchgroup.cpp:185
 #, fuzzy, kde-format
 msgid "Geographic position"
 msgstr "Kokapen geografikoa"
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face regions"
