@@ -86,7 +86,7 @@ BUGFIXES:
 048 --> 512296 - Double blank line in the Album Properties - Category combo box.
 049 --> 512351 - Lens ID not picked up for Nikon Z50.
 050 --> 509506 - App does not appear in Apple Launchpad.
-051 -->
+051 --> 512361 - Duplicate search (100% similarity) does not list results when choosing a sub tree.
 052 -->
 053 -->
 054 -->
