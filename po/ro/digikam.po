@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:40+0000\n"
+"POT-Creation-Date: 2025-11-20 00:40+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3734,7 +3734,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid ""
-"Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
+"Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
 msgstr ""
 
@@ -3935,7 +3935,7 @@ msgstr "Canal Alfa: "
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
+#: core/utilities/searchwindow/searchfields_createfield.cpp:998
 #: core/utilities/setup/setuptooltip.cpp:265
 #, fuzzy, kde-format
 msgid "Audio Codec"
@@ -3943,7 +3943,7 @@ msgstr "Fișiere audio"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:855
 #, fuzzy, kde-format
 msgid "Duration"
 msgstr "Durată: %1"
@@ -8478,7 +8478,7 @@ msgstr "Gestionarea culorii este dezactivată..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
 msgstr "Balanță de alb"
@@ -16672,9 +16672,8 @@ msgstr "După dosar"
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
-#: core/utilities/searchwindow/searchfields_createfield.cpp:385
-#: core/utilities/searchwindow/searchfields_createfield.cpp:428
-#: core/utilities/searchwindow/searchfields_createfield.cpp:437
+#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, kde-format
 msgid "Camera"
 msgstr "Aparat foto"
@@ -19699,7 +19698,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
 #, kde-format
 msgid "Author"
 msgstr "Autor"
@@ -26952,9 +26951,9 @@ msgid "Reset curve to linear"
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:513
+#: core/utilities/searchwindow/searchfields_createfield.cpp:534
+#: core/utilities/searchwindow/searchfields_createfield.cpp:546
 #, kde-format
 msgid "Exposure"
 msgstr "Expunere"
@@ -52654,14 +52653,14 @@ msgid "Lens of the camera"
 msgstr "Obiectivul aparatului de fotografiat"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "Distanța focală"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:475
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #, kde-format
 msgid "Focal length"
 msgstr "Distanță focală"
@@ -52672,7 +52671,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Distanța focală (echivalent 35mm)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:513
 #, kde-format
 msgid "Exposure time"
 msgstr "Timp de expunere"
@@ -52688,7 +52687,7 @@ msgid "Exposure mode"
 msgstr "Mod de expunere"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sensibilitate"
@@ -52699,7 +52698,7 @@ msgid "Flash mode"
 msgstr "Regim bliț"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "White balance"
 msgstr "Balanță de alb"
@@ -52730,14 +52729,14 @@ msgid "Display Aspect Ratio"
 msgstr "Păstrează rata aspectului"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:963
+#: core/utilities/searchwindow/searchfields_createfield.cpp:961
 #: core/utilities/setup/setuptooltip.cpp:259
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "Fișiere audio"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:981
+#: core/utilities/searchwindow/searchfields_createfield.cpp:979
 #: core/utilities/setup/setuptooltip.cpp:262
 #, fuzzy, kde-format
 msgid "Audio Channel Type"
@@ -54190,7 +54189,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:725
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
@@ -63616,435 +63615,427 @@ msgstr "Vizualizează"
 msgid "The make of the camera"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:385
+#: core/utilities/searchwindow/searchfields_createfield.cpp:389
 #, kde-format
 msgid "The model of the camera"
 msgstr "Modelul aparatului de fotografiat"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:416
-#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "Obiectiv"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:416
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, fuzzy, kde-format
 #| msgid "Type of the media file"
 msgid "The type of the lens"
 msgstr "Tipul fișierului multimedia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:428
-#, fuzzy, kde-format
-msgid "Return items without a camera make"
-msgstr "Întoarce fotografiile comentate de"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:429
-#, fuzzy, kde-format
-#| msgid "Camera maker"
-msgid "No Camera Make"
-msgstr "Producător aparat"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:437
-#, fuzzy, kde-format
-msgid "Return items without a camera model"
-msgstr "Întoarce fotografiile comentate de"
-
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
-#| msgid "Camera model"
-msgid "No Camera Model"
-msgstr "Model aparat"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:446
-#, fuzzy, kde-format
-msgid "Return items without a lens type"
+msgid "Return items without a camera..."
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:447
+#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#, fuzzy, kde-format
+#| msgid "Make:"
+msgctxt "Camera"
+msgid "Make"
+msgstr "Producător:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#, fuzzy, kde-format
+#| msgid "Model"
+msgctxt "Camera"
+msgid "Model"
+msgstr "Model"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:443
 #, fuzzy, kde-format
 #| msgid "No Lens Filter"
-msgid "No Lens Type"
+msgctxt "Camera"
+msgid "Lens Type"
 msgstr "Fără filtru de obiectiv"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Deschiderea obiectivului în număr-f"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:456
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:475
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Distanța focală a obiectivului"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:476
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:495
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:514
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:534
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Program de expunere automată"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:546
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Expunere automată sau manuală"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "Viteza filmului ISO (scalare lineară, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:558
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:581
 #, fuzzy, kde-format
 #| msgid "Flash"
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Bliț"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:581
 #, fuzzy, kde-format
 #| msgid "Flash mode"
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Regim bliț"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Balanță de alb manuală sau automată"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Temperatura culorii utilizată pentru balanța de alb"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:605
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Metering Mode"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Metoda de determinare a expunerii"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:629
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "Subject Distance"
 msgstr "Distanța subiectului"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:629
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Distanța subiectului în raport cu obiectivul"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:630
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Vizualizare apropiată, îndepărtată sau macroscopică"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:682
 #, kde-format
 msgid "GPS"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
 #, fuzzy, kde-format
 msgid "Altitude range"
 msgstr "<b>Altitudine</b>:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:660
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:682
 #, fuzzy, kde-format
 msgid "Item has no GPS info"
 msgstr "Imaginea nu are etichete"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:685
+#: core/utilities/searchwindow/searchfields_createfield.cpp:683
 #, fuzzy, kde-format
 msgid "Not Geo-located"
 msgstr "Găsește duplicate"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:695
+#: core/utilities/searchwindow/searchfields_createfield.cpp:693
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "Țară:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:695
+#: core/utilities/searchwindow/searchfields_createfield.cpp:693
 #, kde-format
 msgid "Country shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:709
 #, fuzzy, kde-format
 #| msgid "Province:"
 msgid "Province"
 msgstr "Provincie:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:709
 #, fuzzy, kde-format
 #| msgid "Preview single items"
 msgid "Province shown in the item"
 msgstr "Previzualizează elemente separate"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:725
 #, kde-format
 msgid "City shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:741
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Sublocation"
 msgstr "Sublocație:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:741
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Calendar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:765
+#: core/utilities/searchwindow/searchfields_createfield.cpp:763
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Titlu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:765
+#: core/utilities/searchwindow/searchfields_createfield.cpp:763
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Întoarce fotografiile ale căror comentarii conțin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:781
+#: core/utilities/searchwindow/searchfields_createfield.cpp:779
 #, kde-format
 msgid "Headline"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:781
+#: core/utilities/searchwindow/searchfields_createfield.cpp:779
 #, fuzzy, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Titlu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:797
+#: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgid "Empty Text"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, fuzzy, kde-format
 msgid "Return items without text in"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:807
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Calendar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:808
+#: core/utilities/searchwindow/searchfields_createfield.cpp:806
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Titlu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:809
+#: core/utilities/searchwindow/searchfields_createfield.cpp:807
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Autor"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:810
+#: core/utilities/searchwindow/searchfields_createfield.cpp:808
 #, fuzzy, kde-format
 #| msgid "Timeline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Cronologie"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:811
+#: core/utilities/searchwindow/searchfields_createfield.cpp:809
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Titlu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:838
 #, fuzzy, kde-format
 msgid "Aspect Ratio"
 msgstr "Raportul aspectului:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:829
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "Dimensiune fișier"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:829
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:828
 #, fuzzy, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "și"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:838
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:855
 #, fuzzy, kde-format
 msgid "Length of the video"
 msgstr "Obiectivul aparatului de fotografiat"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:858
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, fuzzy, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "și"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:873
 #, fuzzy, kde-format
 msgid "Frame Rate"
 msgstr "<li>Creat: </li>"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:873
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:876
+#: core/utilities/searchwindow/searchfields_createfield.cpp:874
 #, fuzzy, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "și"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:877
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:893
+#: core/utilities/searchwindow/searchfields_createfield.cpp:891
 #, fuzzy, kde-format
 msgid "Codec"
 msgstr "Fișiere audio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:893
+#: core/utilities/searchwindow/searchfields_createfield.cpp:891
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "Fișiere audio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:963
+#: core/utilities/searchwindow/searchfields_createfield.cpp:961
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Fișiere audio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:964
+#: core/utilities/searchwindow/searchfields_createfield.cpp:962
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -64052,71 +64043,71 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "și"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:965
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:981
+#: core/utilities/searchwindow/searchfields_createfield.cpp:979
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Afișează tipul imaginii"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:983
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:984
+#: core/utilities/searchwindow/searchfields_createfield.cpp:982
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:985
+#: core/utilities/searchwindow/searchfields_createfield.cpp:983
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:984
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:987
+#: core/utilities/searchwindow/searchfields_createfield.cpp:985
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:988
+#: core/utilities/searchwindow/searchfields_createfield.cpp:986
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Canal Alfa: "
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
+#: core/utilities/searchwindow/searchfields_createfield.cpp:998
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "Fișiere audio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "Nu selecta nimic"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items by number of face regions"
 msgstr "Întoarce fotografiile ale căror comentarii conțin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1100
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1098
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -64124,12 +64115,12 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "și"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
 #, fuzzy, kde-format
 msgid "Return items without face regions"
 msgstr "Întoarce fotografiile comentate de"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1110
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1108
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "Selecție"
@@ -64199,12 +64190,12 @@ msgstr "Proprietăți imagine"
 msgid "Caption, Comment, Title"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup.cpp:185
+#: core/utilities/searchwindow/searchgroup.cpp:183
 #, fuzzy, kde-format
 msgid "Geographic position"
 msgstr "Distribuție fotografică"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:206
 #, fuzzy, kde-format
 msgid "Face regions"
 msgstr "Selecție"
@@ -65483,7 +65474,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
-"digiKam. If you are using MacOS and network collections, you should not "
+"digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
 
@@ -68949,6 +68940,24 @@ msgstr "Elementele albumului"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Sortează imaginile"
+
+#, fuzzy
+#~| msgid "Camera maker"
+#~ msgid "No Camera Make"
+#~ msgstr "Producător aparat"
+
+#, fuzzy
+#~ msgid "Return items without a camera model"
+#~ msgstr "Întoarce fotografiile comentate de"
+
+#, fuzzy
+#~| msgid "Camera model"
+#~ msgid "No Camera Model"
+#~ msgstr "Model aparat"
+
+#, fuzzy
+#~ msgid "Return items without a lens type"
+#~ msgstr "Întoarce fotografiile comentate de"
 
 #, fuzzy
 #~ msgid "no source selected"

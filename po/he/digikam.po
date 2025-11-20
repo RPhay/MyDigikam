@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-19 00:40+0000\n"
-"PO-Revision-Date: 2025-11-18 09:08+0200\n"
+"POT-Creation-Date: 2025-11-20 00:40+0000\n"
+"PO-Revision-Date: 2025-11-19 14:59+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -3574,7 +3574,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid ""
-"Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
+"Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
 msgstr ""
 
@@ -3770,7 +3770,7 @@ msgstr "סוג ערוץ שמע"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
+#: core/utilities/searchwindow/searchfields_createfield.cpp:998
 #: core/utilities/setup/setuptooltip.cpp:265
 #, kde-format
 msgid "Audio Codec"
@@ -3778,7 +3778,7 @@ msgstr "מפענח שמע"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:855
 #, kde-format
 msgid "Duration"
 msgstr "משך"
@@ -7975,7 +7975,7 @@ msgstr "תצוגת מנהל-צבע כבויה"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
 msgstr "איזון לבן"
@@ -15832,9 +15832,8 @@ msgstr "אגד:"
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
-#: core/utilities/searchwindow/searchfields_createfield.cpp:385
-#: core/utilities/searchwindow/searchfields_createfield.cpp:428
-#: core/utilities/searchwindow/searchfields_createfield.cpp:437
+#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, kde-format
 msgid "Camera"
 msgstr "מצלמה"
@@ -18680,7 +18679,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
 #, kde-format
 msgid "Author"
 msgstr "צילום"
@@ -25652,9 +25651,9 @@ msgid "Reset curve to linear"
 msgstr "איפוס עקומה למצב קווי"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:513
+#: core/utilities/searchwindow/searchfields_createfield.cpp:534
+#: core/utilities/searchwindow/searchfields_createfield.cpp:546
 #, kde-format
 msgid "Exposure"
 msgstr "חשיפה"
@@ -50136,14 +50135,14 @@ msgid "Lens of the camera"
 msgstr "יצרן המצלמה"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "מפתח צמצם"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:475
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #, kde-format
 msgid "Focal length"
 msgstr "אורך מוקד"
@@ -50154,7 +50153,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "אורך מוקד העדשות"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:513
 #, kde-format
 msgid "Exposure time"
 msgstr "זמן חשיפה"
@@ -50170,7 +50169,7 @@ msgid "Exposure mode"
 msgstr "זמן חשיפה"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "רגישות"
@@ -50181,7 +50180,7 @@ msgid "Flash mode"
 msgstr "מצב מבזק"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "White balance"
 msgstr "איזון לובן בתמונה"
@@ -50212,14 +50211,14 @@ msgid "Display Aspect Ratio"
 msgstr "שמירה על יחס"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:963
+#: core/utilities/searchwindow/searchfields_createfield.cpp:961
 #: core/utilities/setup/setuptooltip.cpp:259
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "קבצי שמע"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:981
+#: core/utilities/searchwindow/searchfields_createfield.cpp:979
 #: core/utilities/setup/setuptooltip.cpp:262
 #, fuzzy, kde-format
 msgid "Audio Channel Type"
@@ -51628,7 +51627,7 @@ msgstr "בירה לאומית"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:725
 #, fuzzy, kde-format
 msgid "City"
 msgstr "נפח אחסון:"
@@ -58544,31 +58543,31 @@ msgid "Date-based sub-albums"
 msgstr "תת-אלבומים מסוג תאריכים"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Date format:"
 msgstr "תבנית תאריך:"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:103
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "ISO"
 msgstr "ISO"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Full Text"
-msgstr "מלל מלא"
+msgstr "טקסט מלא"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:105
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Local Settings"
 msgstr "הגדרות מקומיות"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Custom"
 msgstr "מותאם אישית"
@@ -58580,13 +58579,10 @@ msgid "Show a list of all available options"
 msgstr ""
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:125
-#, fuzzy, kde-format
-#| msgid "Set how digiKam creates albums automatically when downloading."
+#, kde-format
 msgctxt "@info"
 msgid "Set how digiKam creates albums automatically when downloading."
 msgstr ""
-"קבעו כיצד digiKam מייצר אוספי תמונות באופן אוטומטי כאשר הוא מעתיק אותם "
-"מהמצלמה"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:126
 #, kde-format
@@ -58628,16 +58624,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:248
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
-msgstr "גודל: %1"
+msgstr "למשל: %1"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:252
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Custom date format"
 msgid "Format is not valid..."
-msgstr "כתובת היעד %1 אינה תקנית."
+msgstr "התבנית שגויה…"
 
 #: core/utilities/import/widgets/capturewidget.cpp:81
 #, kde-format
@@ -58645,10 +58641,10 @@ msgid "Cannot display camera preview"
 msgstr "לא ניתן להציג תצוגה מקדימה של מצלמה"
 
 #: core/utilities/import/widgets/dngconvertsettings.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Convert RAW images to"
-msgstr "ממיר את הקובץ %1 לתצורת תמונה ללא איבוד מידע..."
+msgstr "המרת תמונות גולמיות/RAW ל־"
 
 #: core/utilities/import/widgets/dngconvertsettings.cpp:69
 #, kde-format
@@ -58672,74 +58668,72 @@ msgid ""
 msgstr "ממיר את הקובץ %1 לתצורת תמונה ללא איבוד מידע..."
 
 #: core/utilities/import/widgets/freespacewidget.cpp:316
-#, fuzzy, kde-format
-#| msgid "Camera Media"
+#, kde-format
 msgctxt "@title"
 msgid "Camera Media"
-msgstr "אמצעי אחסון מידע של המצלמה"
+msgstr "אמצעי אחסון של המצלמה"
 
 #: core/utilities/import/widgets/freespacewidget.cpp:320
-#, fuzzy, kde-format
-#| msgid "Album Library"
+#, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "ספריית אלבום"
 
 #: core/utilities/import/widgets/freespacewidget.cpp:330
 #: core/utilities/import/widgets/freespacewidget.cpp:341
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
-msgstr "נפח אחסון:"
+msgstr "קיבולת:"
 
 #: core/utilities/import/widgets/freespacewidget.cpp:333
 #: core/utilities/import/widgets/freespacewidget.cpp:344
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
-msgstr "נפח זמין:"
+msgstr "פנוי:"
 
 #: core/utilities/import/widgets/freespacewidget.cpp:336
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
-msgstr "נפח דרוש:"
+msgstr "דרוש:"
 
 #: core/utilities/import/widgets/importcontextmenu.cpp:492
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
-msgstr "יישום מרחב צבע"
+msgstr "הקצאת תוויות"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Files"
 msgstr "כל הקבצים"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Only New Files"
-msgstr "כל הקבצים"
+msgstr "קבצים חדשים בלבד"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:132
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Raw Files"
-msgstr "קבצי RAW"
+msgstr "קבצים גולמיים/RAW"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:142
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "JPG/TIFF Files"
-msgstr "קבצי TIFF"
+msgstr "קובצי JPG/TIFF"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Video Files"
-msgstr "קבצי שמע"
+msgstr "קובצי וידאו"
 
 #: core/utilities/import/widgets/renamecustomizer.cpp:98
 #, kde-format
@@ -59728,26 +59722,26 @@ msgid "Move down"
 msgstr "הזז"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:344
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove tool"
-msgstr "הסרת פריט"
+msgstr "הסרת כלי"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
-#, fuzzy, kde-format
+#, kde-format
 msgid "Current Queue: "
-msgstr "חיפוש נוכחי"
+msgstr "ניהול תור:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:441
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
-#, fuzzy, kde-format
+#, kde-format
 msgid "No items"
-msgstr "ללא תאריך"
+msgstr "אין פריטים"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:458
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:492
-#, fuzzy, kde-format
+#, kde-format
 msgid "No tasks"
-msgstr "16 סיביות"
+msgstr "אין משימות"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:498
@@ -59760,23 +59754,22 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:469
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
-msgstr "%1 (%2)"
+msgstr "סך הכול:"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:507
-#, fuzzy, kde-format
-#| msgid "Ready"
+#, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
-msgstr "מוכן"
+msgstr "בהמתנה"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:545
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
-msgstr "עיבוד קבוצת תמונות"
+msgstr "מתבצע עיבוד מאחורי הקלעים"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, kde-format
@@ -59784,14 +59777,14 @@ msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:645
-#, fuzzy, kde-format
+#, kde-format
 msgid "There is no queue to be run."
-msgstr "לא קיימות תמונות בתיקייה זו."
+msgstr "אין תור להריץ."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
-#, fuzzy, kde-format
+#, kde-format
 msgid "There is no item to process in the current queue (%1)."
-msgstr "לא קיימות תמונות בתיקייה זו."
+msgstr "אין פריטים לעבד בתור הנוכחי (%1)."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:655
 #, kde-format
@@ -59806,16 +59799,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:692
-#, fuzzy, kde-format
+#, kde-format
 msgid "There are no items to process in the queues."
-msgstr "לא קיימות תמונות בתיקייה זו."
+msgstr "אין פריטים לעיבוד בתורים."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:864
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:874
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
-msgstr "הסרת פריט"
+msgstr "הגדרות אלבום פריטים שעברו עיבוד"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
 #, kde-format
@@ -59832,9 +59825,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:954
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to process item..."
-msgstr "כישלון בעת ביטול נעילת הקובץ \"%1\"."
+msgstr "עיבוד הפריט…"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:967
 #, kde-format
@@ -59847,9 +59840,9 @@ msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:1016
-#, fuzzy, kde-format
+#, kde-format
 msgid "Batch queue finished"
-msgstr "תצוגת תיקיות הושלמה..."
+msgstr "תור הפעולות הריכוזיות הסתיים"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:1020
 #, fuzzy, kde-format
@@ -59858,24 +59851,24 @@ msgstr "תצוגת תיקיות הושלמה..."
 
 #. i18n: ectx: Menu (Queues)
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:6
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Queues"
-msgstr "Quique"
+msgstr "&תורים"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:156
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to find tool..."
-msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
+msgstr "איתור הכלי נכשל…"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:264
-#, fuzzy, kde-format
+#, kde-format
 msgid "(overwritten)"
-msgstr "שכתוב"
+msgstr "(שוכתב)"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:269
-#, fuzzy, kde-format
+#, kde-format
 msgid "(renamed to %1)"
-msgstr "שינוי שם פריט (%1)"
+msgstr "(השם השתנה ל־%1)"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:274
 #, kde-format
@@ -59888,15 +59881,15 @@ msgid "Failed to create sidecar file..."
 msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:308
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item processed successfully %1"
-msgstr "מעתיק למחשב את הקובץ %1..."
+msgstr "הפריט %1 עבר עיבוד בהצלחה"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:313
 #: core/utilities/queuemanager/manager/actiontask.cpp:318
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to create file..."
-msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
+msgstr "יצירת קובץ נכשלה…"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
@@ -59905,54 +59898,52 @@ msgid "Base"
 msgstr ""
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:173
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "מותאם אישית"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:178
-#, fuzzy, kde-format
-#| msgid "Colors"
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "צבעים"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:183
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "שיפור"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:188
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Transform"
-msgstr "המרה"
+msgstr "התמרה"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:193
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Decorate"
-msgstr "עיצוב"
+msgstr "עיטור"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:198
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "מסננים"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:203
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "המרה"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:208
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Metadata"
-msgstr "מידע-נוסף"
+msgstr "נתוני־על"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:217
 #, kde-format
@@ -59961,7 +59952,7 @@ msgid "Invalid"
 msgstr ""
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:628
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "No setting available"
 msgstr "אין אפשרויות זמינות"
@@ -59984,17 +59975,16 @@ msgid "Thumbnail"
 msgstr "הצגת תמונות-ממוזערות"
 
 #: core/utilities/queuemanager/views/queuelist.cpp:311
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: original item name"
 msgid "Original"
 msgstr "מקור"
 
 #: core/utilities/queuemanager/views/queuelist.cpp:312
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@title: target item name"
 msgid "Target"
-msgstr "תוצאה"
+msgstr "יעד"
 
 #: core/utilities/queuemanager/views/queuepool.cpp:432
 #, kde-format
@@ -60023,9 +60013,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:130
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use original Album"
-msgstr "שמות קבצי מצלמה"
+msgstr "להשתמש באלבום המקורי"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:132
 #, kde-format
@@ -60033,29 +60023,30 @@ msgid "Target"
 msgstr "יעד"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:142
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use original filenames"
-msgstr "שמות קבצי מצלמה"
+msgstr "להשתמש בשמות הקבצים המקוריים"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgid "Turn on this option to use original filenames without modifications."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"יש להפעיל את האפשרות הזאת כדי להשתמש בשמות הקבצים המקוריים ללא שינויים."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "Customize filenames:"
-msgstr "שמות קבצי מצלמה"
+msgstr "התאמת שמות קבצים:"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:162
-#, fuzzy, kde-format
+#, kde-format
 msgid "File Renaming"
-msgstr "אפשרויות שינוי שם קובץ"
+msgstr "שינוי שמות קבצים"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:174
-#, fuzzy, kde-format
+#, kde-format
 msgid "Raw Files Loading:"
-msgstr "קבצי RAW"
+msgstr "טעינת קבצים גולמיים (Raw):"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:178
 #, kde-format
@@ -60068,23 +60059,24 @@ msgid "Extract embedded preview (faster)"
 msgstr "הצגת תצוגה-מזערית של התמונה"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:194
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Save image as a newly created branch"
-msgstr "העברה לאשפה ללא בקשת אישור"
+msgstr "שמירת תמונה כענף חדש שנשמר"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Turn on this option to save the current modifications to a new version of "
 "the file"
-msgstr "שמירת התמונות המסומנות לתיקייה וירטואלית חדשה"
+msgstr ""
+"יש להפעיל את האפשרות הזאת כדי לשמור את השינויים הנוכחיים לגרסה חדשה של הקובץ"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Uses all processors"
-msgstr "אין מסנן פעיל"
+msgstr "משתמש בכל המעבדים"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -60100,84 +60092,83 @@ msgid "Behavior"
 msgstr "התנהגות"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:353
-#, fuzzy, kde-format
+#, kde-format
 msgid "Saving Images"
-msgstr "שמירת תמונות"
+msgstr "התמונות נשמרות"
 
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reset current tool settings to default values."
-msgstr "איפוס הכל מאפייני המסנן לערכי ברירת מחדל."
+msgstr "איפוס הגדרות הכלי הנוכחי לערכי ברירת המחדל."
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: color tools category"
 msgid "Color"
-msgstr "צבעים"
+msgstr "צבע"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: enhance tools category"
 msgid "Enhance"
 msgstr "שיפור"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: transform tools category"
 msgid "Transform"
-msgstr "המרה"
+msgstr "התמרה"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: decorate tools category"
 msgid "Decorate"
-msgstr "עיצוב"
+msgstr "עיטור"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: filters tools category"
 msgid "Filters"
 msgstr "מסננים"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:88
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: convert tools category"
 msgid "Convert"
 msgstr "המרה"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@title: metadata tools category"
 msgid "Metadata"
-msgstr "מידע-נוסף"
+msgstr "נתוני־על"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: custom tools category"
 msgid "Custom Tools"
-msgstr "גופנים מותאמים אישית"
+msgstr "כלים מותאמים אישית"
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:389
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Assign tools"
-msgstr "יישום מרחב צבע"
+msgstr "הקצאת כלים"
 
 #: core/utilities/queuemanager/views/toolsview.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the list of digiKam batch tools available."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זאת רשימת הכלים הריכוזיים הזמינים של digiKam."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgid "Base Tools"
-msgstr "&כלים"
+msgstr "כלי בסיס"
 
 #: core/utilities/queuemanager/views/toolsview.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the list of your customized workflow settings."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זאת רשימת הגדרות רצף העבודה שהתאמת."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:73
 #, kde-format
@@ -60190,43 +60181,42 @@ msgid "You can see below the history of last batch operations processed."
 msgstr ""
 
 #: core/utilities/queuemanager/views/toolsview.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "History"
-msgstr "גרף עמודות"
+msgstr "היסטוריה"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
-msgstr "התאמת תצוגה לגודל החלון"
+msgstr "רצף עבודה חדש"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
-msgstr "התאמת תצוגה לגודל החלון"
+msgstr "עריכת רצף עבודה"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
-msgstr "<qt><b>יצירת אוסף תמונות חדש ב<br>\"<i>%1</i>\"</b></qt>"
+msgstr "<qt><b>יצירת רצף עבודה חדש</b></qt>"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
-msgstr "<big><b>מאפייני הקובץ</b></big>"
+msgstr "<big><b>מאפייני רצף עבודה</b></big>"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:89
-#, fuzzy, kde-format
-#| msgid "&Title:"
+#, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "&כותרת:"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgid "Description:"
-msgstr "תיאור"
+msgstr "תיאור:"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:130
 #, kde-format
@@ -60234,30 +60224,28 @@ msgid "New Workflow"
 msgstr ""
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:100
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "כותרת"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
-msgstr "&כלים"
+msgstr "כלים"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:102
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "תיאור"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:126
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
-msgstr "תצוגת תיקיות הושלמה..."
+msgstr "מנהל תור ריכוזי"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:127
 #, kde-format
@@ -60274,34 +60262,34 @@ msgid "Assign Workflow to current queue"
 msgstr ""
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:282
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
-msgstr "התאמת תצוגה לגודל החלון"
+msgstr "עריכת רצף עבודה"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:283
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
-msgstr "התאמת תצוגה לגודל החלון"
+msgstr "עדכון רצף עבודה"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
-msgstr "למחוק הכל"
+msgstr "מחיקת רצף עבודה"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:336
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
-msgstr "למחוק הכל"
+msgstr "למחוק רצף עבודה?"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:337
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
-msgstr "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
+msgstr "למחוק את רצף העבודה הנבחר „%1”?"
 
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:57
 #, kde-format
@@ -60324,11 +60312,10 @@ msgid "Reset contents"
 msgstr "איפוס התוכן"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:36
-#, fuzzy, kde-format
-#| msgid "Any Album"
+#, kde-format
 msgctxt "@item"
 msgid "Any Album"
-msgstr "כל אוסף-תמונות"
+msgstr "אלבום כלשהו"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:48
 #, kde-format
@@ -60349,25 +60336,22 @@ msgid "In Tree"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_album.cpp:54
-#, fuzzy, kde-format
-#| msgid "Any Tag"
+#, kde-format
 msgctxt "@item"
 msgid "Any Tag"
-msgstr "כל תווית"
+msgstr "תגית כלשהי"
 
 #: core/utilities/searchwindow/searchfields_choice.cpp:25
-#, fuzzy, kde-format
-#| msgid "Any"
+#, kde-format
 msgctxt "@option: default kind of search options combined"
 msgid "Any"
-msgstr "כל"
+msgstr "כלשהו"
 
 #: core/utilities/searchwindow/searchfields_choice.cpp:111
-#, fuzzy, kde-format
-#| msgid "Any of: %1"
+#, kde-format
 msgctxt "@label: search field choice combo-box description"
 msgid "Any of: %1"
-msgstr "הכל מ:%1"
+msgstr "כלשהו מבין: %1"
 
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:29
 #, kde-format
@@ -60385,10 +60369,9 @@ msgid "16 bits per channel"
 msgstr "16 סיביות לערוץ צבע"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
-#, fuzzy, kde-format
-#| msgid "Search pictures located in"
+#, kde-format
 msgid "Search items located in"
-msgstr "חיפוש תמונות המצויות ב"
+msgstr "חיפוש פריטים תחת"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
 #, kde-format
@@ -60401,27 +60384,24 @@ msgid "The album caption contains"
 msgstr "כיתוב האלבום מכיל"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:51
-#, fuzzy, kde-format
+#, kde-format
 msgid "The album category is"
-msgstr "הצגת סיווג אוסף-תמונות"
+msgstr "קטגוריית האלבום היא"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
-#, fuzzy, kde-format
-#| msgid "Return pictures with tag"
+#, kde-format
 msgid "Return items with tag"
-msgstr "אחזור תמונות בעלות תווית"
+msgstr "החזרת פריטים עם התגית"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
-#, fuzzy, kde-format
-#| msgid "A tag of the picture contains"
+#, kde-format
 msgid "A tag of the item contains"
-msgstr "תווית התמונה מכילה"
+msgstr "תגית הפריט מכילה"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
-#, fuzzy, kde-format
-#| msgid "Return pictures with tag"
+#, kde-format
 msgid "Return items without tags"
-msgstr "אחזור תמונות בעלות תווית"
+msgstr "החזרת פריטים ללא תגיות"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
@@ -60434,10 +60414,9 @@ msgid "File Name"
 msgstr "שם קובץ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:104
-#, fuzzy, kde-format
-#| msgid "Return pictures whose file name contains"
+#, kde-format
 msgid "Return items whose file name contains"
-msgstr "אחזור תמונות אשר שם הקובץ שלהם מכיל"
+msgstr "החזרת פריטים ששם הקובץ שלהם מכיל"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:112
 #, kde-format
@@ -60445,18 +60424,15 @@ msgid "Modification"
 msgstr "שינוי"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:112
-#, fuzzy, kde-format
-#| msgid "Return pictures modified between"
+#, kde-format
 msgid "Return items modified between"
-msgstr "אחזור תמונות אשר שונו בין התאריכים"
+msgstr "החזרת פריטים שנערכו בין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "'Return pictures modified between...and..."
-#| msgid "and"
+#, kde-format
 msgctxt "'Return items modified between...and..."
 msgid "and"
-msgstr "וגם"
+msgstr "לבין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
@@ -60465,10 +60441,9 @@ msgid "File Size"
 msgstr "גודל קובץ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in megabytes"
-msgstr "גודל הקובץ"
+msgstr "גודל הקובץ במגה־בתים"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #: core/utilities/searchwindow/searchfields_createfield.cpp:134
@@ -60478,10 +60453,9 @@ msgid "-"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in bytes"
-msgstr "גודל הקובץ"
+msgstr "גודל הקובץ בבתים"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
@@ -60494,37 +60468,31 @@ msgid "Return items from a month or a day of the month"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
-#, fuzzy, kde-format
+#, kde-format
 msgid "Return items with labels"
-msgstr "אחזור תמונות בעלות תווית"
+msgstr "החזרת פריטים עם תוויות"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
-#, fuzzy, kde-format
-#| msgid "Return pictures rated at least"
+#, kde-format
 msgid "Return items rated at least"
-msgstr "אחזור תמונות אשר דורגו לפחות"
+msgstr "החזרת פריטים שהדירוג שלהם הוא לפחות"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "Return pictures rated at least...at most..."
-#| msgid "at most"
+#, kde-format
 msgctxt "Return items rated at least...at most..."
 msgid "at most"
-msgstr "לא יותר"
+msgstr "לכל היותר"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:169
-#, fuzzy, kde-format
-#| msgid "Return pictures created between"
+#, kde-format
 msgid "Return items created between"
-msgstr "אחזור תמונות אשר נוצרו בין התאריכים"
+msgstr "החזרת פריטים שנוצרו בין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "'Return pictures modified between...and..."
-#| msgid "and"
+#, kde-format
 msgctxt "'Return items created between...and..."
 msgid "and"
-msgstr "וגם"
+msgstr "לבין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:178
 #, kde-format
@@ -60532,37 +60500,31 @@ msgid "Digitization"
 msgstr "הפיכה לדיגיטלי"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:178
-#, fuzzy, kde-format
-#| msgid "Return pictures digitized between"
+#, kde-format
 msgid "Return items digitized between"
-msgstr "איחזור תמונות אשר הפכו דיגיטליות"
+msgstr "החזרת פריטים שהומרו לדיגיטליים בין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "'Return pictures modified between...and..."
-#| msgid "and"
+#, kde-format
 msgctxt "'Return items digitized between...and..."
 msgid "and"
-msgstr "וגם"
+msgstr "לבין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:187
-#, fuzzy, kde-format
+#, kde-format
 msgid "Time"
-msgstr "&כותרת:"
+msgstr "זמן"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:187
-#, fuzzy, kde-format
-#| msgid "Return pictures created between"
+#, kde-format
 msgid "Return items with created time between"
-msgstr "אחזור תמונות אשר נוצרו בין התאריכים"
+msgstr "החזרת פריטים שנוצרו בין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "'Return pictures modified between...and..."
-#| msgid "and"
+#, kde-format
 msgctxt "'Return items with created time between...and..."
 msgid "and"
-msgstr "וגם"
+msgstr "לבין"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:198
 #, kde-format
@@ -60679,498 +60641,489 @@ msgstr "%1 [סרטון]"
 msgid "The make of the camera"
 msgstr "יצרן המצלמה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:385
+#: core/utilities/searchwindow/searchfields_createfield.cpp:389
 #, kde-format
 msgid "The model of the camera"
 msgstr "דגם המצלמה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:416
-#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "עדשה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:416
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "The type of the lens"
 msgstr "סוג העדשה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:428
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
-msgid "Return items without a camera make"
-msgstr "החזרת פריטים ללא אזורי פנים"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:429
-#, fuzzy, kde-format
-msgid "No Camera Make"
-msgstr "הוספת שם מצלמה"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:437
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
-msgid "Return items without a camera model"
-msgstr "החזרת פריטים ללא אזורי פנים"
-
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
-msgid "No Camera Model"
-msgstr "הוספת שם מצלמה"
+#| msgid "Return items without a camera make"
+msgid "Return items without a camera..."
+msgstr "החזרת פריטים ללא יצרן מצלמה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, fuzzy, kde-format
-#| msgid "Return pictures with tag"
-msgid "Return items without a lens type"
-msgstr "אחזור תמונות בעלות תווית"
+msgctxt "Camera"
+msgid "Make"
+msgstr "דגם/יצרן:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:447
+#: core/utilities/searchwindow/searchfields_createfield.cpp:442
 #, fuzzy, kde-format
-#| msgid "No Lens Filter"
-msgid "No Lens Type"
-msgstr "עדשה ללא מסנן"
+#| msgid "Model"
+msgctxt "Camera"
+msgid "Model"
+msgstr "דגם"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#, fuzzy, kde-format
+#| msgid "No Lens Type"
+msgctxt "Camera"
+msgid "Lens Type"
+msgstr "אין סוג עדשה"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "מפתח צמצם כמספר f"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:456
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:475
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "אורך מוקד העדשות"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:476
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "תואם לאורך מוקד של עדשת 35 מ״מ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:495
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:514
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:534
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "תיקון חשיפה אוטומטי"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:546
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "חשיפה אוטומטית או ידנית"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "מהירות ISO של התשליל (סולם לינארי, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:558
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:581
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "מבזק"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:581
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "מצב מבזק"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "איזון לובן ידני או אוטומטי"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "טמפרטורת הצבע לאיזון לובן"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:605
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Metering Mode"
 msgstr "מצב מדידת מרחק"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "שיטה למדידת החשיפה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:629
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "Subject Distance"
 msgstr "מרחק הנושא"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:629
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "מרחק הנושא המצולם מהעדשה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:630
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "מאקרו, קרוב או מרוחק"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:682
 #, kde-format
 msgid "GPS"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
 #, kde-format
 msgid "Altitude range"
 msgstr "טווח גובה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:660
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:682
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "לפריט אין נתוני GPS (נווטן)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:685
+#: core/utilities/searchwindow/searchfields_createfield.cpp:683
 #, kde-format
 msgid "Not Geo-located"
 msgstr "אין תיעוד גאוגרפי"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:695
+#: core/utilities/searchwindow/searchfields_createfield.cpp:693
 #, kde-format
 msgid "Country"
 msgstr "מדינה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:695
+#: core/utilities/searchwindow/searchfields_createfield.cpp:693
 #, kde-format
 msgid "Country shown in the item"
 msgstr "מדינה שמופיע בפריט"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:709
 #, kde-format
 msgid "Province"
 msgstr "מחוז"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:709
 #, kde-format
 msgid "Province shown in the item"
 msgstr "מחוז שמופיע בפריט"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:725
 #, kde-format
 msgid "City shown in the item"
 msgstr "עיר שמופיעה בפריט"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:741
 #, kde-format
 msgid "Sublocation"
 msgstr "תת־מקום"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:743
+#: core/utilities/searchwindow/searchfields_createfield.cpp:741
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "תת־מקום שמופיע בפריט"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "יוצר/ת"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgid "Return items created by"
 msgstr "החזרת פריטים שנוצרו על ידי"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:765
+#: core/utilities/searchwindow/searchfields_createfield.cpp:763
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "כיתוב"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:765
+#: core/utilities/searchwindow/searchfields_createfield.cpp:763
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "החזרת פריטים שההערה שלהם מכילה"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
 #, kde-format
 msgid "Return items commented by"
 msgstr "החזרת תמונות עם הערות מאת"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:781
+#: core/utilities/searchwindow/searchfields_createfield.cpp:779
 #, kde-format
 msgid "Headline"
 msgstr "כותרת ראשית"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:781
+#: core/utilities/searchwindow/searchfields_createfield.cpp:779
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "החזרת פריטים עם כותרת ראשית ב־IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "כותרת"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "החזרת פריטים עם כותרת ה־IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:797
+#: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "איתור פריטים שכל המילים האלו משויכות אליהם:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgid "Empty Text"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgid "Return items without text in"
 msgstr "החזרת פריטים ללא טקסט תחת"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:807
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "יוצר/ת"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:808
+#: core/utilities/searchwindow/searchfields_createfield.cpp:806
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "כיתוב"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:809
+#: core/utilities/searchwindow/searchfields_createfield.cpp:807
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "מחבר/ת"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:810
+#: core/utilities/searchwindow/searchfields_createfield.cpp:808
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "כותרת ראשית"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:811
+#: core/utilities/searchwindow/searchfields_createfield.cpp:809
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "כותרת"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:838
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "יחס גובה־רוחב"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "החזרת פריטים עם יחס גובה־רוחב"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:829
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Pixel Size"
 msgstr "גודל פיקסלים"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:829
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "הערך של (רוחב × גובה) בין"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:830
+#: core/utilities/searchwindow/searchfields_createfield.cpp:828
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "וגם"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:838
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "החזרת סרטון עם יחס גובה־רוחב תמוניות"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:855
 #, kde-format
 msgid "Length of the video"
 msgstr "אורך הווידאו"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:858
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "וגם"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:873
 #, kde-format
 msgid "Frame Rate"
 msgstr "קצב תמוניות"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:873
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "החזרת סרטון עם קצב התמוניות"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:876
+#: core/utilities/searchwindow/searchfields_createfield.cpp:874
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "וגם"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:877
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:893
+#: core/utilities/searchwindow/searchfields_createfield.cpp:891
 #, kde-format
 msgid "Codec"
 msgstr "מפענח"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:893
+#: core/utilities/searchwindow/searchfields_createfield.cpp:891
 #, kde-format
 msgid "Return video codec"
 msgstr "החזרת מפענח וידאו"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:963
+#: core/utilities/searchwindow/searchfields_createfield.cpp:961
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "החזרת קצב סיביות שמע"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:964
+#: core/utilities/searchwindow/searchfields_createfield.cpp:962
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "וגם"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:965
+#: core/utilities/searchwindow/searchfields_createfield.cpp:963
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:981
+#: core/utilities/searchwindow/searchfields_createfield.cpp:979
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "החזרת סוג ערוץ שמע"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:983
+#: core/utilities/searchwindow/searchfields_createfield.cpp:981
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:984
+#: core/utilities/searchwindow/searchfields_createfield.cpp:982
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:985
+#: core/utilities/searchwindow/searchfields_createfield.cpp:983
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:984
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:987
+#: core/utilities/searchwindow/searchfields_createfield.cpp:985
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:988
+#: core/utilities/searchwindow/searchfields_createfield.cpp:986
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "סוג ערוץ אחר"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1000
+#: core/utilities/searchwindow/searchfields_createfield.cpp:998
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "החזרת מפענח שמע"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
 #, kde-format
 msgid "Faces"
 msgstr "פנים"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1099
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "החזרת פריטים לפי מספר אזורי הפנים"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1100
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1098
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "וגם"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1109
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
 #, kde-format
 msgid "Return items without face regions"
 msgstr "החזרת פריטים ללא אזורי פנים"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1110
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1108
 #, kde-format
 msgid "No Face Regions"
 msgstr "ללא אזורי פנים"
@@ -61238,12 +61191,12 @@ msgstr "מאפייני פריט"
 msgid "Caption, Comment, Title"
 msgstr "כיתוב, הערה, כותרת"
 
-#: core/utilities/searchwindow/searchgroup.cpp:185
+#: core/utilities/searchwindow/searchgroup.cpp:183
 #, kde-format
 msgid "Geographic position"
 msgstr "מקום גאוגרפי"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:206
 #, kde-format
 msgid "Face regions"
 msgstr "אזורי פנים"
@@ -62451,7 +62404,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
-"digiKam. If you are using MacOS and network collections, you should not "
+"digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
 
@@ -65760,6 +65713,20 @@ msgstr "פריטי אלבום"
 #, kde-format
 msgid "Import Items"
 msgstr "ייבוא פריטים"
+
+#~ msgid "No Camera Make"
+#~ msgstr "אין יצרן מצלמה"
+
+#~| msgid "Return items without face regions"
+#~ msgid "Return items without a camera model"
+#~ msgstr "החזרת פריטים ללא דגם מצלמה"
+
+#~ msgid "No Camera Model"
+#~ msgstr "אין דגם מצלמה"
+
+#~| msgid "Return pictures with tag"
+#~ msgid "Return items without a lens type"
+#~ msgstr "החזרת פריטים ללא סוג עדשה"
 
 #, fuzzy
 #~| msgid "No script selected"
