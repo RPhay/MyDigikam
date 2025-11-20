@@ -93,7 +93,7 @@ QVariant DateFormat::format(const QString& identifier)
 
 // --------------------------------------------------------
 
-DateOptionDialog::DateOptionDialog(Rule* parent)
+DateOptionDialog::DateOptionDialog(Rule* const parent)
     : RuleDialog(parent),
       ui        (new Ui::DateOptionDialogWidget)
 {

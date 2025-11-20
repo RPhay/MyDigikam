@@ -34,11 +34,15 @@ class SequenceNumberDialog : public RuleDialog
 public:
 
     explicit SequenceNumberDialog(Rule* const parent);
-    ~SequenceNumberDialog() override;
+    ~SequenceNumberDialog()       override;
 
 public:
 
     Ui::SequenceNumberOptionDialogWidget* const ui = nullptr;
+
+protected:
+
+    void showEvent(QShowEvent* e) override;
 
 private:
 

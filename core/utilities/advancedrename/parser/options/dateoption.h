@@ -96,7 +96,7 @@ public:
 
 public:
 
-    explicit DateOptionDialog(Rule* parent);
+    explicit DateOptionDialog(Rule* const parent);
     ~DateOptionDialog() override;
 
     DateSource dateSource() const;

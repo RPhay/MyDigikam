@@ -37,17 +37,23 @@ namespace Digikam
 
 SequenceNumberDialog::SequenceNumberDialog(Rule* const parent)
     : RuleDialog(parent),
-      ui(new Ui::SequenceNumberOptionDialogWidget())
+      ui(new Ui::SequenceNumberOptionDialogWidget)
 {
     QWidget* const mainWidget = new QWidget(this);
     ui->setupUi(mainWidget);
     setSettingsWidget(mainWidget);
-    ui->digits->setFocus();
 }
 
 SequenceNumberDialog::~SequenceNumberDialog()
 {
     delete ui;
+}
+
+void SequenceNumberDialog::showEvent(QShowEvent* e)
+{
+    RuleDialog::showEvent(e);
+
+    ui->digits->setFocus();
 }
 
 // --------------------------------------------------------
