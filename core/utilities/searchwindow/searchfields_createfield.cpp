@@ -435,7 +435,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("Camera"), i18n("Return items without a camera..."));
+        field->setText(i18n("Camera"), i18n("Return items without a camera ..."));
 
         QStringList noCamera;
         noCamera << QLatin1String("make")  << i18nc("Camera", "Make")
