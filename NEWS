@@ -87,7 +87,7 @@ BUGFIXES:
 049 --> 512351 - Lens ID not picked up for Nikon Z50.
 050 --> 509506 - App does not appear in Apple Launchpad.
 051 --> 512361 - Duplicate search (100% similarity) does not list results when choosing a sub tree.
-052 -->
+052 --> 512375 - Build Instructions to integrate G'Mic-QT Tool missing.
 053 -->
 054 -->
 055 -->
