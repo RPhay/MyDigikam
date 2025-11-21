@@ -39,6 +39,7 @@ SequenceNumberDialog::SequenceNumberDialog(Rule* const parent)
     : RuleDialog(parent),
       ui(new Ui::SequenceNumberOptionDialogWidget)
 {
+    setModal(true);
     QWidget* const mainWidget = new QWidget(this);
     ui->setupUi(mainWidget);
     setSettingsWidget(mainWidget);

@@ -97,6 +97,7 @@ DateOptionDialog::DateOptionDialog(Rule* const parent)
     : RuleDialog(parent),
       ui        (new Ui::DateOptionDialogWidget)
 {
+    setModal(true);
     QWidget* const mainWidget = new QWidget(this);
     ui->setupUi(mainWidget);
 
@@ -373,7 +374,7 @@ void DateOption::slotTokenTriggered(const QString& token)
 
     QString dateString;
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         DateFormat df;
         int index = dlg->ui->dateFormatPicker->currentIndex();
