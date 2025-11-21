@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:40+0000\n"
+"POT-Creation-Date: 2025-11-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -51767,23 +51767,23 @@ msgstr "فراداده"
 msgid "Add metadata information"
 msgstr "پالایه نوفه:"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:62
 #, fuzzy, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "عدد"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:63
 #, fuzzy, kde-format
 msgid "Add a sequence number"
 msgstr "افزودن شماره دنباله"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, fuzzy, kde-format
 msgid "Sequence number"
 msgstr "شماره دنباله:"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -51791,17 +51791,17 @@ msgid ""
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
 #, fuzzy, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "افزودن شماره دنباله"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, fuzzy, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "افزودن شماره دنباله"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, fuzzy, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "افزودن شماره دنباله"
@@ -62196,7 +62196,7 @@ msgstr "پالایه نوفه:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
-msgid "Return items without a camera..."
+msgid "Return items without a camera ..."
 msgstr "عکس اصلی:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441

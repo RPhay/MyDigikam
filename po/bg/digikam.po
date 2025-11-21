@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:40+0000\n"
-"PO-Revision-Date: 2025-11-09 17:16+0100\n"
+"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"PO-Revision-Date: 2025-11-20 10:43+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3597,16 +3597,13 @@ msgstr ""
 "\">Вижте доклад GoSC-2023 за подробности.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
 msgstr ""
 "Актуализирайте инструмента G'MIC-Qt до последната версия 3.5.0 и "
-"финализирайте порта за MacOS, като подобрите стабилността на плъгина."
+"финализирайте порта за macOS, като подобрите стабилността на плъгина."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
@@ -21975,10 +21972,9 @@ msgstr "&Отпечатване на името на файла"
 #. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for images:"
-msgstr "&Подразбиращ се фонов цвят на изгледа"
+msgstr "Използване на цветен фон за изображения:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:248
@@ -22467,14 +22463,10 @@ msgstr ""
 "Показване на рейтинга на изображението digiKam в долната част на екрана."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render images on screen."
 msgstr ""
-"Разрешете тази опция, за да използвате цвета на темата за фон в областта на "
-"редактора на изображения."
+"Определете цвят, който да се използва като фон за рендиране на изображения."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format
@@ -52647,23 +52639,23 @@ msgstr "Метаданни..."
 msgid "Add metadata information"
 msgstr "Добавяне на информация за метаданни"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:62
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "Номериране..."
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:63
 #, kde-format
 msgid "Add a sequence number"
 msgstr "Добавяне на пореден номер"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, kde-format
 msgid "Sequence number"
 msgstr "Пореден номер"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -52675,17 +52667,17 @@ msgstr ""
 "на случайността, ||ce|| = брояч и разширение||re|| = случайност и с "
 "разширение))"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Пореден номер (потребителско начало) ||опции||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Номер на последователността (потребителска стъпка) ||опции||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -63131,32 +63123,27 @@ msgstr "Видът на обектива"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
-#| msgid "Return items without face regions"
-msgid "Return items without a camera..."
-msgstr "Връщане на елементи без области на лицето"
+#| msgid "Return items without a camera..."
+msgid "Return items without a camera ..."
+msgstr "Връщане на елементи без камера..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "Производител"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Модел"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Без филтър за обектив"
+msgstr "Вид обектив"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -65074,18 +65061,14 @@ msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Наблюдавайте албумите за външни промени (изисква рестартиране)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
 "<b>Забележка: Мониторингът на албуми изразходва системни ресурси и може да "
-"забави digiKam. Ако използвате MacOS и мрежови колекции, не трябва да "
+"забави digiKam. Ако използвате macOS и мрежови колекции, не трябва да "
 "активирате мониторинг на албума.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
@@ -68886,25 +68869,3 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
-
-#, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera maker"
-#~ msgid "No Camera Make"
-#~ msgstr "Производител на камерата"
-
-#, fuzzy
-#~| msgid "Return items without face regions"
-#~ msgid "Return items without a camera model"
-#~ msgstr "Връщане на елементи без области на лицето"
-
-#, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera model"
-#~ msgid "No Camera Model"
-#~ msgstr "Модел на камерата"
-
-#, fuzzy
-#~| msgid "Return items without tags"
-#~ msgid "Return items without a lens type"
-#~ msgstr "Връщане на елементи без тагове"

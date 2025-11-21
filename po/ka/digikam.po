@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:40+0000\n"
-"PO-Revision-Date: 2025-11-19 05:31+0100\n"
+"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"PO-Revision-Date: 2025-11-20 04:52+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3364,6 +3364,8 @@ msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
+"სახელის გადარქმევის გაფართოებული ფუნქცია: ზრდადი ფაილის ნომრის დამატება "
+"პარამეტრით [c] ან [c,step]."
 
 #: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
@@ -3378,6 +3380,8 @@ msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
+"სახელის გადარქმევის გაფართოებული ფუნქცია: მორგებადი პირველი სიმბოლოს "
+"დამატება უნიკალური მოდიფიკატორისთვის {unique:n,c}-ით."
 
 #: core/app/views/stack/welcomepageview.cpp:113
 #, kde-format
@@ -3475,6 +3479,9 @@ msgid ""
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
+"დაემატა ახალი შეკეთების ხელსაწყო <a href=\"https://community.kde.org/"
+"GSoc/2022/StatusReports/PhuocKhanhLe\">გამოსახულებების კლასიფიკაციის "
+"ესთეტიკური დადგენა ღრმა სწავლის მოდელით</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:126
 #, kde-format
@@ -3482,6 +3489,8 @@ msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
+"დაემატა ახალი ხელსაწყო <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">დასკანერებული ტექსტის ამოსაცნობად</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
@@ -3520,6 +3529,8 @@ msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
+"რიგის მმართველი: დაემატა ახალი ხელსაწყო DNN-ის გამოყენებით შემცველობის "
+"ანალიზის საფუძველზე ავტომობრუნებისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3541,10 +3552,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
@@ -3572,6 +3580,8 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"უფრო კომპაქტური ხატულების ხედის მინიატურები ფერის ჭდეების რენდერისთვის "
+"ჩარჩოს მაგიერ მარტივი ჰორიზონტალური ხაზის გამოყენების საშუალებით."
 
 #: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
@@ -3641,6 +3651,8 @@ msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
+"ზოგიერთი ახალი ფუნქცია digiKam-ის ამ რელიზში. მათ შორის (digiKam 7-თან "
+"შედარებით):"
 
 #: core/app/views/stack/welcomepageview.cpp:181
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
@@ -5196,6 +5208,8 @@ msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
 "RATING and TAGSPATH (separated by ;) are available."
 msgstr ""
+"<b>შენიშვნა:</b> ხელმისაწვდომია გარემოს ცვლადები TITLE, COMMENTS, "
+"COLORLABEL, PICKLABEL, RATING და TAGSPATH (გამოყოფილი სიმბოლოთი ;)."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:231
 #, kde-format
@@ -6950,6 +6964,9 @@ msgid ""
 "<p>Toggle lossless compression for JPEG 2000 images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG 2000 pictures.</p>"
 msgstr ""
+"<p>კარგვის გარეშე შეკუმშვის გადართვა JPEG 2000 გამოსახულებებისთვის.</p><p>თუ "
+"ეს პარამეტრი ჩართულია, JPEG 2000 სურათების შესაკუმშად კარგვის გარეშე მეთოდი "
+"იქნება გამოყენებული.</p>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:71
 #, kde-format
@@ -7054,6 +7071,9 @@ msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress PGF pictures.</p>"
 msgstr ""
+"<p>კარგვის გარეშე შეკუმშვის გადართვა PGF გამოსახულებებისთვის.</p><p>თუ ეს "
+"პარამეტრი ჩართულია, PGF სურათების შესაკუმშად კარგვის გარეშე მეთოდი იქნება "
+"გამოყენებული.</p>"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
 #, kde-format
@@ -7158,6 +7178,9 @@ msgid ""
 "<p>Toggle lossless compression for AVIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG XL pictures.</p>"
 msgstr ""
+"<p>კარგვის გარეშე შეკუმშვის გადართვა AVIF გამოსახულებებისთვის.</p><p>თუ ეს "
+"პარამეტრი ჩართულია, JPEG XL სურათების შესაკუმშად კარგვის გარეშე მეთოდი "
+"იქნება გამოყენებული.</p>"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:71
 #, kde-format
@@ -7185,6 +7208,9 @@ msgid ""
 "<p>Toggle lossless compression for JPEG XL images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG XL pictures.</p>"
 msgstr ""
+"<p>კარგვის გარეშე შეკუმშვის გადართვა JPEG XL გამოსახულებებისთვის.</p><p>თუ "
+"ეს პარამეტრი ჩართულია, JPEG 2000 სურათების შესაკუმშად კარგვის გარეშე მეთოდი "
+"იქნება გამოყენებული.</p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:71
 #, kde-format
@@ -7236,6 +7262,9 @@ msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress WEBP pictures.</p>"
 msgstr ""
+"<p>კარგვის გარეშე შეკუმშვის გადართვა WEBP გამოსახულებებისთვის.</p><p>თუ ეს "
+"პარამეტრი ჩართულია, WEBP სურათების შესაკუმშად კარგვის გარეშე მეთოდი იქნება "
+"გამოყენებული.</p>"
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:72
 #, kde-format
@@ -16717,7 +16746,7 @@ msgstr "მაღლა ასვლა"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
-msgstr "Make"
+msgstr "მწარმოებელი"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
@@ -17852,7 +17881,7 @@ msgctxt "@info"
 msgid ""
 "The list does not contain any digital files to process. You need to select "
 "them."
-msgstr ""
+msgstr "სია დასამუშავებელ ციფრულ ფაილებს არ შეიცავს. მონიშნეთ ისინი."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:578
 #, kde-format
@@ -19120,7 +19149,7 @@ msgstr "ჩაწერეთ სურათის სიგანე"
 msgid ""
 "Rotate photo automatically on layout accordingly with camera orientation "
 "information"
-msgstr ""
+msgstr "სურათის ავტომატური მობრუნება კამერის ორიენტაციის ინფორმაციის მიხედვით"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:133
 #, kde-format
@@ -19158,6 +19187,8 @@ msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
 "is properly installed."
 msgstr ""
+"შეცდომა გარე Gimp პროგრამის გაშვებისას. დარწმუნდით, რომ ის სწორადაა "
+"დაყენებული."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
 #, kde-format
@@ -19899,6 +19930,8 @@ msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
+"ეს აკონტროლებს ეკვალიზაციის სიძლიერეს. ამ პარამეტრის ნულზე დაყენება არაფერს "
+"აკეთებს."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:182
 #, kde-format
@@ -20084,6 +20117,10 @@ msgid ""
 "\n"
 "Error: %2"
 msgstr ""
+"ვერ შევცვალე ფონის სურათი სურათზე\n"
+"%1\n"
+"\n"
+"შეცდომა: %2"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:65
 #, kde-format
@@ -20092,6 +20129,8 @@ msgid ""
 "Cannot change wallpaper image from current desktop with\n"
 "%1"
 msgstr ""
+"ვერ შევცვალე ფონის სურათი სურათზე\n"
+"%1"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:63
 #, kde-format
@@ -20108,6 +20147,12 @@ msgid ""
 "\n"
 "Error: %3"
 msgstr ""
+"ვერ შევცვალე ფონის სურათი სურათზე\n"
+"%1\n"
+"\n"
+"კონტექსტი: %2\n"
+"\n"
+"შეცდომა: %3"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:95
 #, kde-format
@@ -47875,7 +47920,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr ""
+msgstr "ორიენტაციის ჭდის ნორმალურზე დაყენება მობრუნების/გადაბრუნების შემდეგ."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
@@ -49839,23 +49884,23 @@ msgstr "მეტამონაცემები..."
 msgid "Add metadata information"
 msgstr "მეტამონაცემების ინფორმაციის დამატება"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:62
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "ნომერი..."
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:63
 #, kde-format
 msgid "Add a sequence number"
 msgstr "მიმდევრობის ნომრის დამატება"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, kde-format
 msgid "Sequence number"
 msgstr "მიმდევრობის ნომერი"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -49863,17 +49908,17 @@ msgid ""
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -59857,32 +59902,27 @@ msgstr "ლინზის ტიპი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
-#| msgid "Return items without a camera make"
-msgid "Return items without a camera..."
-msgstr "ელემენტების დაბრუნება კამერის მწარმოებლის გარეშე"
+#| msgid "Return items without a camera..."
+msgid "Return items without a camera ..."
+msgstr "ელემენტების დაბრუნება კამერის გარეშე..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
-msgstr "Make"
+msgstr "მწარმოებელი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "მოდელი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Type"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "ლინზის ტიპის გარეშე"
+msgstr "ლინზის ტიპი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format

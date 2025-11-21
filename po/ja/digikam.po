@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:40+0000\n"
+"POT-Creation-Date: 2025-11-21 00:41+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -54326,23 +54326,23 @@ msgstr "メタデータ..."
 msgid "Add metadata information"
 msgstr "メタデータ情報を追加"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:62
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "連続番号..."
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:63
 #, kde-format
 msgid "Add a sequence number"
 msgstr "連続番号を追加"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, kde-format
 msgid "Sequence number"
 msgstr "連続番号"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -54350,17 +54350,17 @@ msgid ""
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
 #, fuzzy, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "連続番号を追加"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, fuzzy, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "連続番号を追加"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, fuzzy, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "連続番号を追加"
@@ -65106,7 +65106,7 @@ msgstr "メディアファイルの種類"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
-msgid "Return items without a camera..."
+msgid "Return items without a camera ..."
 msgstr "次のタグが付けられている画像を探す"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441

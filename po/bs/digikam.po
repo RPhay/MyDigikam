@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:40+0000\n"
+"POT-Creation-Date: 2025-11-21 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -56420,23 +56420,23 @@ msgstr "Meta podaci..."
 msgid "Add metadata information"
 msgstr "Dodaj informacije o meta podacima"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:62
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "Broj..."
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:63
 #, kde-format
 msgid "Add a sequence number"
 msgstr "Dodaj broj sekvence"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, kde-format
 msgid "Sequence number"
 msgstr "Broj sekvence"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sequence number (||options||: ||e|| = extension aware, ||f|| = folder "
@@ -56448,19 +56448,19 @@ msgid ""
 msgstr ""
 "Redni broj (||options||: ||e|| = poznat nastavak, ||f|| = poznat direktorij)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Broj sekvence (vlastiti početak)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Broj sekvence (vlastiti početak)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start + step)"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -67750,7 +67750,7 @@ msgstr "Tip media datoteke"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
-msgid "Return items without a camera..."
+msgid "Return items without a camera ..."
 msgstr "Vratite slike s oznakom"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441

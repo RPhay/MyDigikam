@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:40+0000\n"
-"PO-Revision-Date: 2025-11-19 10:43+0100\n"
+"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"PO-Revision-Date: 2025-11-20 10:00+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3587,16 +3587,13 @@ msgstr ""
 "\">Vegeu els detalls en aquest informe del GoSC-2023.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
 msgstr ""
 "Actualitzar l'eina G'MIC-Qt a la darrera versió 3.5.0 i finalitzar "
-"l'adaptació al MacOS i millorar l'estabilitat del connector."
+"l'adaptació al macOS i millorar l'estabilitat del connector."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
@@ -52689,24 +52686,24 @@ msgstr "Metadades..."
 msgid "Add metadata information"
 msgstr "Afegeix informació de les metadades"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:62
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "Número..."
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:63
 #, kde-format
 msgid "Add a sequence number"
 msgstr "Afegeix un número de seqüència"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, kde-format
 msgid "Sequence number"
 msgstr "Número de seqüència"
 
 # skip-rule: t-e_sola
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -52719,18 +52716,18 @@ msgstr ""
 "aleatori i l'extensió)"
 
 # skip-rule: t-e_sola
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Número de seqüència (inici personalitzat) ||opcions||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Número de seqüència (pas personalitzat) ||opcions||: ||c||"
 
 # skip-rule: t-e_sola
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -63189,32 +63186,27 @@ msgstr "El tipus de lent"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
-#| msgid "Return items without a camera make"
-msgid "Return items without a camera..."
-msgstr "Retorna els elements sense fabricant de càmera"
+#| msgid "Return items without a camera..."
+msgid "Return items without a camera ..."
+msgstr "Retorna els elements sense informació de càmera..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "Fabricant"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Model"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Type"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Sense tipus de lent"
+msgstr "Tipus de lent"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -65130,18 +65122,14 @@ msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Controla els àlbums davant de canvis externs (requereix reiniciar)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
 "<b>Nota: El control dels àlbums consumeix recursos del sistema i pot alentir "
-"el digiKam. Si useu el MacOS i col·leccions de xarxa, no hauríeu d'activar "
+"el digiKam. Si useu el macOS i col·leccions de xarxa, no hauríeu d'activar "
 "el control dels àlbums.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129

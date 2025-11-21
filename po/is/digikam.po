@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:40+0000\n"
-"PO-Revision-Date: 2025-11-19 20:43+0000\n"
+"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"PO-Revision-Date: 2025-11-20 08:59+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -1106,7 +1106,7 @@ msgstr "Stillingar yfirlitssíðu"
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
 msgid "Make/Model:"
-msgstr "Tegund/Gerð:"
+msgstr "Framleiðandi/Gerð:"
 
 #: core/app/items/utils/tooltipfiller.cpp:168
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
@@ -3564,10 +3564,7 @@ msgstr ""
 "\">Skoða þessa GoSC-2023 skýrslu fyrir nánari upplýsingar.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
@@ -4171,7 +4168,7 @@ msgstr "Eiginleikar ljósmyndar"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera maker"
-msgstr "Tegund myndavélar"
+msgstr "Framleiðandi myndavélar"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:74
 #: core/app/views/tableview/tableview_column_photo.cpp:98
@@ -17376,7 +17373,7 @@ msgstr "Fara upp"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
-msgstr "Gerð"
+msgstr "Framleiðandi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
@@ -22066,12 +22063,12 @@ msgstr "Prenta lýsingartíma og ljósnæmni myndavélar neðst á skjá."
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
-msgstr "Sýna tegund og gerð myndavélar"
+msgstr "Sýna framleiðanda og gerð myndavélar"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
-msgstr "Prenta tegund og gerð myndavélar neðst á skjá."
+msgstr "Prenta framleiðanda og gerð myndavélar neðst á skjá."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
 #, kde-format
@@ -29960,7 +29957,7 @@ msgstr "<i>Forskoðun:</i>"
 #: core/libs/dialogs/imagedialog_preview.cpp:267
 #, kde-format
 msgid "<i>Make:</i>"
-msgstr "<i>Gerð:</i>"
+msgstr "<i>Framleiðandi:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:268
 #, kde-format
@@ -38011,7 +38008,7 @@ msgstr "Eiginleikar myndavélaskráa"
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
-msgstr "Gerð: "
+msgstr "Framleiðandi: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:186
 #: core/libs/properties/itempropertiestab.cpp:132
@@ -42170,13 +42167,13 @@ msgstr "Birta lýsingartíma og ljósnæmni myndavélar neðst á skjánum."
 #, kde-format
 msgctxt "@option:check"
 msgid "Show camera make and model"
-msgstr "Birta tegund og gerð myndavélar"
+msgstr "Birta framleiðanda og gerð myndavélar"
 
 #: core/libs/video/osd/frameosdwidget.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "Show the camera make and model at the bottom of the screen."
-msgstr "Birta tegund og gerð myndavélar neðst á skjánum."
+msgstr "Birta framleiðanda og gerð myndavélar neðst á skjánum."
 
 #: core/libs/video/osd/frameosdwidget.cpp:73
 #, kde-format
@@ -43718,7 +43715,7 @@ msgstr "EXIF skoðari"
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:220
 #, kde-format
 msgid "Makernotes viewer"
-msgstr "Makernote skoðari"
+msgstr "Makernote-skoðari"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:224
 #, kde-format
@@ -50512,8 +50509,8 @@ msgid ""
 "Set this option to display the make and model of the camera with which the "
 "image has been taken."
 msgstr ""
-"Veldu þetta til að sýna tegund og gerð myndavélarinnar sem var notuð til að "
-"taka myndina."
+"Veldu þetta til að sýna framleiðanda og gerð myndavélarinnar sem var notuð "
+"til að taka myndina."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:126
 #: core/utilities/setup/setuptooltip.cpp:185
@@ -52062,23 +52059,23 @@ msgstr "Lýsigögn..."
 msgid "Add metadata information"
 msgstr "Bæta upplýsingum í lýsigögn"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:62
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "Númer..."
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:63
 #, kde-format
 msgid "Add a sequence number"
 msgstr "Bæta við raðnúmeri"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, kde-format
 msgid "Sequence number"
 msgstr "Raðnúmer"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -52091,17 +52088,17 @@ msgstr ""
 "skráarendingum, ||re|| = tekur mið af tilviljanakenndum texta og "
 "skráarendingum)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Raðnúmer (sérsniðin byrjun) ||rofar||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Raðnúmer (sérsniðin þrep) ||rofar||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "Raðnúmer (sérsniðin byrjun + þrep) ||rofar||: ||e||, ||f||"
@@ -62469,32 +62466,27 @@ msgstr "Tegund linsunnar"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
-#| msgid "Return items without a camera make"
-msgid "Return items without a camera..."
-msgstr "Finna atriði án tegundar myndavélar"
+#| msgid "Return items without a camera..."
+msgid "Return items without a camera ..."
+msgstr "Finna atriði án myndavélar..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
-msgstr "Gerð"
+msgstr "Framleiðandi"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Gerð"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Type"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Engin tegund linsu"
+msgstr "Tegund linsu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -64357,18 +64349,14 @@ msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Vakta möppur fyrir utanaðkomandi breytingum (krefst endurræsingar)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
 "<b>Athugaðu: Vöktun albúma krefst töluverðs afls frá kerfinu og getur hægt á "
-"digiKam. Ef þú ertt að nota MacOS og söfn á netkerfinu, ættirðu ekki að "
+"digiKam. Ef þú ert að nota MacOS og nettengd myndasöfn, ættirðu ekki að "
 "virkja vöktun albúma.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
@@ -67794,7 +67782,7 @@ msgstr "Veldu þetta til að sýna stærðarhlutföll myndskrár."
 #: core/utilities/setup/setuptooltip.cpp:361
 #, kde-format
 msgid "Camera make and model"
-msgstr "Tegund og gerð myndavélar"
+msgstr "Framleiðandi og gerð myndavélar"
 
 #: core/utilities/setup/setuptooltip.cpp:189
 #, kde-format
