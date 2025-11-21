@@ -27,7 +27,7 @@ class ImportRenameParser : public Parser
 
 public:
 
-    ImportRenameParser();
+    ImportRenameParser(QWidget* const widget = nullptr);
 
 private:
 

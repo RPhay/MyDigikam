@@ -35,11 +35,10 @@
 namespace Digikam
 {
 
-SequenceNumberDialog::SequenceNumberDialog(Rule* const parent)
-    : RuleDialog(parent),
+SequenceNumberDialog::SequenceNumberDialog(Rule* const parent, QWidget* const widget)
+    : RuleDialog(parent, widget),
       ui(new Ui::SequenceNumberOptionDialogWidget)
 {
-    setModal(true);
     QWidget* const mainWidget = new QWidget(this);
     ui->setupUi(mainWidget);
     setSettingsWidget(mainWidget);
@@ -59,11 +58,13 @@ void SequenceNumberDialog::showEvent(QShowEvent* e)
 
 // --------------------------------------------------------
 
-SequenceNumberOption::SequenceNumberOption()
+SequenceNumberOption::SequenceNumberOption(QWidget* const widget)
     : Option(i18nc("Sequence Number", "Number..."),
              i18n("Add a sequence number"),
              QLatin1String("accessories-calculator"))
 {
+    setParentWidget(widget);
+
     addToken(QLatin1String("#"),                                 i18n("Sequence number"));
     addToken(QLatin1String("#[||options||]"),                    i18n("Sequence number (||options||: "
                                                                       "||c|| = file counter aware, "
@@ -81,13 +82,14 @@ SequenceNumberOption::SequenceNumberOption()
 
     QRegularExpression reg(QLatin1String("(#+)(\\[(([cefr]?|ce?|re?)?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
     setRegExp(reg);
+    setParentWidget(widget);
 }
 
 void SequenceNumberOption::slotTokenTriggered(const QString& token)
 {
     Q_UNUSED(token)
 
-    QPointer<SequenceNumberDialog> dlg = new SequenceNumberDialog(this);
+    QPointer<SequenceNumberDialog> dlg = new SequenceNumberDialog(this, getParentWidget());
 
     QString result;
 

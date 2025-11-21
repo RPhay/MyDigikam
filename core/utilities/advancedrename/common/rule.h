@@ -156,6 +156,9 @@ protected:
      */
     void setUseTokenMenu(bool value);
 
+    void setParentWidget(QWidget* const widget);
+    QWidget* getParentWidget() const;
+
 protected Q_SLOTS:
 
     virtual void slotTokenTriggered(const QString&);

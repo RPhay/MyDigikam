@@ -24,8 +24,8 @@
 namespace Digikam
 {
 
-ImportRenameParser::ImportRenameParser()
-    : Parser()
+ImportRenameParser::ImportRenameParser(QWidget* const widget)
+    : Parser(widget)
 {
     // unregister options that are not suitable while import
 

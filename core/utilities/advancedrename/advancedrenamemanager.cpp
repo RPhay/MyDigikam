@@ -190,11 +190,11 @@ void AdvancedRenameManager::setParserType(ParserType type)
 
     if (type == ImportParser)
     {
-        d->parser = new ImportRenameParser();
+        d->parser = new ImportRenameParser(d->widget);
     }
     else
     {
-        d->parser = new DefaultRenameParser();
+        d->parser = new DefaultRenameParser(d->widget);
     }
 
     d->parserType = type;

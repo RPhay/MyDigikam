@@ -35,7 +35,7 @@ class ReplaceDialog : public RuleDialog
 
 public:
 
-    explicit ReplaceDialog(Rule* const parent);
+    explicit ReplaceDialog(Rule* const parent, QWidget* const widget);
     ~ReplaceDialog()                                                                      override;
 
 public:
@@ -58,7 +58,7 @@ class ReplaceModifier : public Modifier
 
 public:
 
-    ReplaceModifier();
+    ReplaceModifier(QWidget* const widget);
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:

@@ -30,7 +30,7 @@ class DefaultValueDialog : public RuleDialog
 
 public:
 
-    explicit DefaultValueDialog(Rule* parent);
+    explicit DefaultValueDialog(Rule* parent, QWidget* const widget);
     ~DefaultValueDialog()                                                                 override;
 
 public:
@@ -53,7 +53,7 @@ class DefaultValueModifier : public Modifier
 
 public:
 
-    DefaultValueModifier();
+    DefaultValueModifier(QWidget* const widget);
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:

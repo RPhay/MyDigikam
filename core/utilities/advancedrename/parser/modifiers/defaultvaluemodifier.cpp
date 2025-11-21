@@ -35,8 +35,8 @@
 namespace Digikam
 {
 
-DefaultValueDialog::DefaultValueDialog(Rule* parent)
-    : RuleDialog(parent)
+DefaultValueDialog::DefaultValueDialog(Rule* parent, QWidget* const widget)
+    : RuleDialog(parent, widget)
 {
     const int spacing       = layoutSpacing();
 
@@ -69,7 +69,7 @@ DefaultValueDialog::~DefaultValueDialog()
 
 // --------------------------------------------------------
 
-DefaultValueModifier::DefaultValueModifier()
+DefaultValueModifier::DefaultValueModifier(QWidget* const widget)
     : Modifier(i18nc("default value for empty strings", "Default Value..."),
                i18n("Set a default value for empty strings"),
                QLatin1String("edit-undo"))
@@ -79,6 +79,7 @@ DefaultValueModifier::DefaultValueModifier()
     QRegularExpression reg(QLatin1String("\\{default:\"(.+)\"\\}"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
+    setParentWidget(widget);
 }
 
 void DefaultValueModifier::slotTokenTriggered(const QString& token)
@@ -87,9 +88,9 @@ void DefaultValueModifier::slotTokenTriggered(const QString& token)
 
     QString result;
 
-    QPointer<DefaultValueDialog> dlg = new DefaultValueDialog(this);
+    QPointer<DefaultValueDialog> dlg = new DefaultValueDialog(this, getParentWidget());
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         QString valueStr = dlg->valueInput->text();
 

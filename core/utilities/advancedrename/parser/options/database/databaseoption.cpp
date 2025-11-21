@@ -27,6 +27,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "itemcomments.h"
 #include "dbkeyselector.h"
 #include "digikam_debug.h"
@@ -37,8 +38,8 @@
 namespace Digikam
 {
 
-DatabaseOptionDialog::DatabaseOptionDialog(Rule* const parent) :
-    RuleDialog(parent)
+DatabaseOptionDialog::DatabaseOptionDialog(Rule* const parent, QWidget* const widget)
+    : RuleDialog(parent, widget)
 {
     QWidget* const mainWidget = new QWidget(this);
     dbkeySelectorView         = new DbKeySelectorView(this);
@@ -62,7 +63,7 @@ DatabaseOptionDialog::DatabaseOptionDialog(Rule* const parent) :
 
 // --------------------------------------------------------
 
-DatabaseOption::DatabaseOption()
+DatabaseOption::DatabaseOption(QWidget* const widget)
     : Option(i18n("Database..."),
              i18n("Add information from the database"),
              QLatin1String("network-server-database"))
@@ -71,6 +72,7 @@ DatabaseOption::DatabaseOption()
     QRegularExpression reg(QLatin1String("\\[db(:(.*))\\]"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
+    setParentWidget(widget);
 
     registerKeysCollection();
 }
@@ -108,10 +110,10 @@ void DatabaseOption::slotTokenTriggered(const QString& token)
     Q_UNUSED(token)
 
     QStringList keys;
-    QPointer<DatabaseOptionDialog> dlg = new DatabaseOptionDialog(this);
+    QPointer<DatabaseOptionDialog> dlg = new DatabaseOptionDialog(this, getParentWidget());
     dlg->dbkeySelectorView->setKeysMap(m_map);
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         QStringList checkedKeys = dlg->dbkeySelectorView->checkedKeysList();
 

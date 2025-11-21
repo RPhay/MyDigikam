@@ -37,7 +37,7 @@ class DatabaseOptionDialog : public RuleDialog
 
 public:
 
-    explicit DatabaseOptionDialog(Rule* const parent);
+    explicit DatabaseOptionDialog(Rule* const parent, QWidget* const widget);
     ~DatabaseOptionDialog() override = default;
 
     DbKeySelectorView* dbkeySelectorView    = nullptr;
@@ -63,7 +63,7 @@ class DatabaseOption : public Option
 
 public:
 
-    DatabaseOption();
+    DatabaseOption(QWidget* const widget);
     ~DatabaseOption()                                            override;
 
 protected:

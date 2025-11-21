@@ -96,7 +96,7 @@ public:
 
 public:
 
-    explicit DateOptionDialog(Rule* const parent);
+    explicit DateOptionDialog(Rule* const parent, QWidget* const widget);
     ~DateOptionDialog() override;
 
     DateSource dateSource() const;
@@ -130,7 +130,7 @@ class DateOption : public Option
 
 public:
 
-    DateOption();
+    DateOption(QWidget* const widget);
     ~DateOption()                                                override = default;
 
 protected:

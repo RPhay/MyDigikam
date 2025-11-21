@@ -49,8 +49,8 @@ public:
     QWidget*          settingsWidget    = nullptr;
 };
 
-RuleDialog::RuleDialog(Rule* const parent)
-    : QDialog(nullptr),
+RuleDialog::RuleDialog(Rule* const parent, QWidget* const widget)
+    : QDialog(widget),
       d      (new Private)
 {
     d->buttons                = new QDialogButtonBox(QDialogButtonBox::Ok     |

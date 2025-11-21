@@ -27,13 +27,14 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "ui_rangemodifierdialogwidget.h"
 
 namespace Digikam
 {
 
-RangeDialog::RangeDialog(Rule* const parent)
-    : RuleDialog(parent),
+RangeDialog::RangeDialog(Rule* const parent, QWidget* const widget)
+    : RuleDialog(parent, widget),
       ui        (new Ui::RangeModifierDialogWidget())
 {
     QWidget* const mainWidget = new QWidget(this);
@@ -59,7 +60,7 @@ void RangeDialog::slotToTheEndChecked(bool checked)
 
 // --------------------------------------------------------
 
-RangeModifier::RangeModifier()
+RangeModifier::RangeModifier(QWidget* const widget)
     : Modifier(i18n("Range..."),
                i18n("Add only a specific range of a renaming option"),
                QLatin1String("measure"))
@@ -70,6 +71,7 @@ RangeModifier::RangeModifier()
     QRegularExpression reg(QLatin1String("\\{range(:(-?\\d+)(,((-1|\\d+))?)?)\\}"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
+    setParentWidget(widget);
 }
 
 void RangeModifier::slotTokenTriggered(const QString& token)
@@ -78,9 +80,9 @@ void RangeModifier::slotTokenTriggered(const QString& token)
 
     QString result;
 
-    QPointer<RangeDialog> dlg = new RangeDialog(this);
+    QPointer<RangeDialog> dlg = new RangeDialog(this, getParentWidget());
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         int start = dlg->ui->startInput->value();
         int stop  = dlg->ui->stopInput->value();

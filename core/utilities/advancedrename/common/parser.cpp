@@ -16,6 +16,7 @@
 
 // Qt includes
 
+#include <QWidget>
 #include <QFileInfo>
 #include <QRegularExpression>
 
@@ -54,16 +55,16 @@ public:
 
 // --------------------------------------------------------
 
-Parser::Parser()
+Parser::Parser(QWidget* const widget)
     : d(new Private)
 {
     registerOption(new FilePropertiesOption());
     registerOption(new DirectoryNameOption());
     registerOption(new CameraNameOption());
-    registerOption(new SequenceNumberOption());
-    registerOption(new DateOption());
-    registerOption(new DatabaseOption());
-    registerOption(new MetadataOption());
+    registerOption(new SequenceNumberOption(widget));
+    registerOption(new DateOption(widget));
+    registerOption(new DatabaseOption(widget));
+    registerOption(new MetadataOption(widget));
 
     // --------------------------------------------------------
 
@@ -72,9 +73,9 @@ Parser::Parser()
     registerModifier(new TrimmedModifier());
     registerModifier(new UniqueModifier());
     registerModifier(new RemoveDoublesModifier());
-    registerModifier(new DefaultValueModifier());
-    registerModifier(new ReplaceModifier());
-    registerModifier(new RangeModifier());
+    registerModifier(new DefaultValueModifier(widget));
+    registerModifier(new ReplaceModifier(widget));
+    registerModifier(new RangeModifier(widget));
 }
 
 Parser::~Parser()

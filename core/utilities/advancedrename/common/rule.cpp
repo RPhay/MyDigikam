@@ -43,6 +43,8 @@ public:
     QRegularExpression      regExp;
 
     TokenList               tokens;
+
+    QWidget*                widget       = nullptr;
 };
 
 Rule::Rule(const QString& name)
@@ -225,6 +227,16 @@ bool Rule::useTokenMenu() const
 TokenList& Rule::tokens() const
 {
     return d->tokens;
+}
+
+void Rule::setParentWidget(QWidget* const widget)
+{
+    d->widget = widget;
+}
+
+QWidget* Rule::getParentWidget() const
+{
+    return d->widget;
 }
 
 void Rule::slotTokenTriggered(const QString& token)

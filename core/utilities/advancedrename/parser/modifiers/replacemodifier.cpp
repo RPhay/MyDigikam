@@ -26,13 +26,14 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "ui_replacemodifierdialogwidget.h"
 
 namespace Digikam
 {
 
-ReplaceDialog::ReplaceDialog(Rule* const parent)
-    : RuleDialog(parent),
+ReplaceDialog::ReplaceDialog(Rule* const parent, QWidget* const widget)
+    : RuleDialog(parent, widget),
       ui        (new Ui::ReplaceModifierDialogWidget())
 {
     QWidget* const mainWidget = new QWidget(this);
@@ -48,7 +49,7 @@ ReplaceDialog::~ReplaceDialog()
 
 // --------------------------------------------------------
 
-ReplaceModifier::ReplaceModifier()
+ReplaceModifier::ReplaceModifier(QWidget* const widget)
     : Modifier(i18nc("Replace text", "Replace..."), i18n("Replace text in a renaming option"),
                QLatin1String("document-edit"))
 {
@@ -58,6 +59,7 @@ ReplaceModifier::ReplaceModifier()
     QRegularExpression reg(QLatin1String("\\{replace(:\"(.*)\",\"(.*)\"(,(r|ri|ir|i))?)\\}"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
+    setParentWidget(widget);
 }
 
 void ReplaceModifier::slotTokenTriggered(const QString& token)
@@ -66,9 +68,9 @@ void ReplaceModifier::slotTokenTriggered(const QString& token)
 
     QString result;
 
-    QPointer<ReplaceDialog> dlg = new ReplaceDialog(this);
+    QPointer<ReplaceDialog> dlg = new ReplaceDialog(this, getParentWidget());
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         QString oldStr = dlg->ui->source->text();
         QString newStr = dlg->ui->destination->text();

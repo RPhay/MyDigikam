@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dmetadata.h"
 #include "metadatapanel.h"
 #include "metadataselector.h"
@@ -38,8 +39,8 @@
 namespace Digikam
 {
 
-MetadataOptionDialog::MetadataOptionDialog(Rule* const parent)
-    : RuleDialog(parent)
+MetadataOptionDialog::MetadataOptionDialog(Rule* const parent, QWidget* const widget)
+    : RuleDialog(parent, widget)
 {
     QWidget* const mainWidget = new QWidget(this);
     QTabWidget* const tab     = new QTabWidget(this);
@@ -94,7 +95,7 @@ QHash<QUrl, MetaEngine::MetaDataMap>      MetadataOption::m_exifMetadataCache;
 QHash<QUrl, MetaEngine::MetaDataMap>      MetadataOption::m_iptcMetadataCache;
 QHash<QUrl, MetaEngine::MetaDataMap>      MetadataOption::m_xmpMetadataCache;
 
-MetadataOption::MetadataOption()
+MetadataOption::MetadataOption(QWidget* const widget)
     : Option(i18n("Metadata..."),
              i18n("Add metadata information"))
 {
@@ -108,6 +109,7 @@ MetadataOption::MetadataOption()
     QRegularExpression reg(QLatin1String("\\[meta(:(.*))\\]"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
+    setParentWidget(widget);
 }
 
 MetadataOption::~MetadataOption()
@@ -124,9 +126,9 @@ void MetadataOption::slotTokenTriggered(const QString& token)
 
     QStringList tags;
 
-    QPointer<MetadataOptionDialog> dlg = new MetadataOptionDialog(this);
+    QPointer<MetadataOptionDialog> dlg = new MetadataOptionDialog(this, getParentWidget());
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         QStringList checkedTags = dlg->metadataPanel->getAllCheckedTags();
 

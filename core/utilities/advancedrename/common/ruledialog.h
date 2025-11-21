@@ -30,7 +30,7 @@ class RuleDialog : public QDialog
 
 public:
 
-    explicit RuleDialog(Rule* const parent);
+    explicit RuleDialog(Rule* const parent, QWidget* const widget);
     ~RuleDialog() override;
 
     void setSettingsWidget(QWidget* const settingsWidget);

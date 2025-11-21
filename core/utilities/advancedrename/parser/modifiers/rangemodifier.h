@@ -33,7 +33,7 @@ class RangeDialog : public RuleDialog
 
 public:
 
-    explicit RangeDialog(Rule* const parent);
+    explicit RangeDialog(Rule* const parent, QWidget* const widget);
     ~RangeDialog()                                                                        override;
 
 public:
@@ -60,7 +60,7 @@ class RangeModifier : public Modifier
 
 public:
 
-    RangeModifier();
+    RangeModifier(QWidget* const widget);
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:

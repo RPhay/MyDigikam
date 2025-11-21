@@ -37,7 +37,7 @@ class MetadataOptionDialog : public RuleDialog
 
 public:
 
-    explicit MetadataOptionDialog(Rule* const parent);
+    explicit MetadataOptionDialog(Rule* const parent, QWidget* const widget);
     ~MetadataOptionDialog() override = default;
 
 public:
@@ -61,7 +61,7 @@ class MetadataOption : public Option
 
 public:
 
-    MetadataOption();
+    MetadataOption(QWidget* const widget);
     ~MetadataOption()                                            override;
 
 protected:
