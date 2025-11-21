@@ -156,6 +156,10 @@ protected:
      */
     void setUseTokenMenu(bool value);
 
+    /**
+     * Set and get parent widget for the dialogs
+     * @param widget QWidget pointer from parent widget
+     */
     void setParentWidget(QWidget* const widget);
     QWidget* getParentWidget() const;
 

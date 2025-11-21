@@ -36,7 +36,7 @@ class Parser
 
 public:
 
-    explicit Parser(QWidget* const widget = nullptr);
+    explicit Parser(QWidget* const widget);
     virtual ~Parser();
 
     void          reset();
