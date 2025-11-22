@@ -45,8 +45,8 @@ set(FFmpeg_Conf --prefix=${PREFIX_ext_ffmpeg}
 
 ExternalProject_Add(ext_ffmpeg
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz
-    URL_MD5 26f2bd7d20c6c616f31d7130c88d7250
+    URL https://ffmpeg.org/releases/ffmpeg-8.0.1.tar.xz
+    URL_MD5 b4e86cef7b3333034977ae9df391896d
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure ${FFmpeg_Conf}
     UPDATE_COMMAND ""
