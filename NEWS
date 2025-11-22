@@ -89,7 +89,7 @@ BUGFIXES:
 051 --> 512361 - Duplicate search (100% similarity) does not list results when choosing a sub tree.
 052 --> 512375 - Build Instructions to integrate G'Mic-QT Tool missing.
 053 --> 512416 - Adding tags by drag and drop is broken.
-054 -->
+054 --> 512385 - Numbering in file rename not possible.
 055 -->
 056 -->
 057 -->
