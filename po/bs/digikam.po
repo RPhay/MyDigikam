@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"POT-Creation-Date: 2025-11-22 00:40+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -400,8 +400,8 @@ msgstr[2] ""
 #: core/app/dragdrop/tagdragdrop.cpp:538
 #, fuzzy, kde-format
 #| msgid "Assign Tag(s) '%1' to Items"
-msgid "Assign Tag '%1' to Items"
-msgid_plural "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%2' to Items"
+msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Dodijeli oznaku(e) za '%1' stavku(e)"
 msgstr[1] "Dodijeli oznaku(e) za '%1' stavku(e)"
 msgstr[2] "Dodijeli oznaku(e) za '%1' stavku(e)"
@@ -55757,17 +55757,17 @@ msgctxt "The character the string should be filled with"
 msgid "Character:"
 msgstr "Znak:"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:63
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
 #, kde-format
 msgid "Range..."
 msgstr "Opseg..."
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:65
 #, kde-format
 msgid "Add only a specific range of a renaming option"
 msgstr "Dodaj samo specifičan opseg opcije za preimenovanje"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:68
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:69
 #, kde-format
 msgid ""
 "Extract a specific range (if '||to||' is omitted, go to the end of string)"
@@ -55805,18 +55805,18 @@ msgstr "Uklonite duple"
 msgid "Remove duplicate words"
 msgstr "Uklonite duple riječi"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace..."
 msgstr "Zamjenite..."
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgid "Replace text in a renaming option"
 msgstr "Zamjenite tekst u opciji preimenovanja"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:56
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:57
 #, kde-format
 msgid ""
 "Replace text (||options||: ||r|| = regular expression, ||i|| = ignore case)"
@@ -55897,23 +55897,23 @@ msgstr "Dodaj ime aparata"
 msgid "Camera name"
 msgstr "Ime aparata"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:46
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Razdvajač kjučne riječi:"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:66
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
 #, kde-format
 msgid "Database..."
 msgstr "Baza podataka..."
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:68
 #, kde-format
 msgid "Add information from the database"
 msgstr "Dodajte podatke iz baze podataka"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:70
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:71
 #, kde-format
 msgid "Add database information"
 msgstr "Dodajte baze podataka"
@@ -56410,12 +56410,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Grupa"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
 #, kde-format
 msgid "Metadata..."
 msgstr "Meta podaci..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:100
 #, kde-format
 msgid "Add metadata information"
 msgstr "Dodaj informacije o meta podacima"
@@ -56431,12 +56431,12 @@ msgstr "Broj..."
 msgid "Add a sequence number"
 msgstr "Dodaj broj sekvence"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, kde-format
 msgid "Sequence number"
 msgstr "Broj sekvence"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sequence number (||options||: ||e|| = extension aware, ||f|| = folder "
@@ -56448,19 +56448,19 @@ msgid ""
 msgstr ""
 "Redni broj (||options||: ||e|| = poznat nastavak, ||f|| = poznat direktorij)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Broj sekvence (vlastiti početak)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Broj sekvence (vlastiti početak)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:80
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start + step)"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"

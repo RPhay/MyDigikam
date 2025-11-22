@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:40+0000\n"
-"PO-Revision-Date: 2025-11-12 01:51+0100\n"
+"POT-Creation-Date: 2025-11-22 00:40+0000\n"
+"PO-Revision-Date: 2025-11-21 02:01+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -330,9 +330,11 @@ msgstr[0] "Cambiar nombre de cara de «%2» a «%3»"
 msgstr[1] "Cambiar nombres de caras de «%2» a «%3»"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag '%1' to Items"
-msgid_plural "Assign Tag(s) '%1' to Items"
+#, fuzzy, kde-format
+#| msgid "Assign Tag '%1' to Items"
+#| msgid_plural "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%2' to Items"
+msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Asignar la etiqueta «%1» a los elementos"
 msgstr[1] "Asignar las etiquetas «%1» a los elementos"
 
@@ -3606,10 +3608,7 @@ msgstr ""
 "\">Consulte este informe de GoSC-2023 para más detalles</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
@@ -52034,17 +52033,17 @@ msgctxt "The character the string should be filled with"
 msgid "Character:"
 msgstr "Carácter:"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:63
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
 #, kde-format
 msgid "Range..."
 msgstr "Intervalo…"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:65
 #, kde-format
 msgid "Add only a specific range of a renaming option"
 msgstr "Añadir solo un intervalo específico de una opción de cambio de nombre"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:68
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:69
 #, kde-format
 msgid ""
 "Extract a specific range (if '||to||' is omitted, go to the end of string)"
@@ -52082,18 +52081,18 @@ msgstr "Eliminar duplicados"
 msgid "Remove duplicate words"
 msgstr "Eliminar palabras duplicadas"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace..."
 msgstr "Sustituir…"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgid "Replace text in a renaming option"
 msgstr "Sustituir texto en una opción de cambio de nombre"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:56
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:57
 #, kde-format
 msgid ""
 "Replace text (||options||: ||r|| = regular expression, ||i|| = ignore case)"
@@ -52179,23 +52178,23 @@ msgstr "Añadir nombre de la cámara"
 msgid "Camera name"
 msgstr "Nombre de la cámara"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:46
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Separador de palabras clave:"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:66
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
 #, kde-format
 msgid "Database..."
 msgstr "Base de datos…"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:68
 #, kde-format
 msgid "Add information from the database"
 msgstr "Añadir información desde la base de datos"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:70
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:71
 #, kde-format
 msgid "Add database information"
 msgstr "Añadir información de la base de datos"
@@ -52672,33 +52671,33 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Groupo"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
 #, kde-format
 msgid "Metadata..."
 msgstr "Metadatos…"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:100
 #, kde-format
 msgid "Add metadata information"
 msgstr "Añadir información de metadatos"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:62
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "Número…"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:63
 #, kde-format
 msgid "Add a sequence number"
 msgstr "Añadir un número de secuencia"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, kde-format
 msgid "Sequence number"
 msgstr "Número de secuencia"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -52709,17 +52708,17 @@ msgstr ""
 "= detección de la extensión, ||f|| = detectar carpeta, ||r|| = aleatorio, ||"
 "ce||= detectar contador y extensión, ||re|| = aleatorio y detectar extensión)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Número de secuencia (inicio personalizado) ||opciones||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Número de secuencia (paso personalizado) ||opciones||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:80
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -63161,32 +63160,27 @@ msgstr "El tipo de objetivo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
 #, fuzzy, kde-format
-#| msgid "Return items without face regions"
-msgid "Return items without a camera..."
-msgstr "Devolver elementos sin regiones de cara"
+#| msgid "Return items without a camera..."
+msgid "Return items without a camera ..."
+msgstr "Devolver elementos sin una cámara…"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "Fabricante"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Modelo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Sin filtros de objetivo"
+msgstr "Tipo de lente"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -65095,18 +65089,14 @@ msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Detectar cambios externos en los álbumes (necesita reiniciar)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
 "<b>Nota: La monitorización de álbumes consume recursos del sistema y puede "
-"ralentizar digiKam. Si está usando MacOS y colecciones en red, no debería "
+"ralentizar digiKam. Si está usando macOS y colecciones en red, no debería "
 "activar la monitorización de álbumes.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
@@ -68892,25 +68882,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera maker"
-#~ msgid "No Camera Make"
-#~ msgstr "Fabricante de la cámara"
-
-#, fuzzy
-#~| msgid "Return items without face regions"
-#~ msgid "Return items without a camera model"
-#~ msgstr "Devolver elementos sin regiones de cara"
-
-#, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera model"
-#~ msgid "No Camera Model"
-#~ msgstr "Modelo de la cámara"
-
-#, fuzzy
-#~| msgid "Return items without tags"
-#~ msgid "Return items without a lens type"
-#~ msgstr "Devolver elementos sin etiquetas"

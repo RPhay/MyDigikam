@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"POT-Creation-Date: 2025-11-22 00:40+0000\n"
 "PO-Revision-Date: 2025-11-20 10:43+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -346,9 +346,11 @@ msgstr[0] "Промяна на името на лицето от \"%2\" на \"%
 msgstr[1] "Промяна на имената на лицата от \"%2\" на \"%3\""
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag '%1' to Items"
-msgid_plural "Assign Tag(s) '%1' to Items"
+#, fuzzy, kde-format
+#| msgid "Assign Tag '%1' to Items"
+#| msgid_plural "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%2' to Items"
+msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Присвояване на етикет „%1“ на елементи"
 msgstr[1] "Присвояване на етикет(и) '%1' на елементи"
 
@@ -51989,17 +51991,17 @@ msgctxt "The character the string should be filled with"
 msgid "Character:"
 msgstr "Знак:"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:63
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
 #, kde-format
 msgid "Range..."
 msgstr "Обхват..."
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:65
 #, kde-format
 msgid "Add only a specific range of a renaming option"
 msgstr "Добавяне само на определен обхват в настройка за преименуване"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:68
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:69
 #, kde-format
 msgid ""
 "Extract a specific range (if '||to||' is omitted, go to the end of string)"
@@ -52038,18 +52040,18 @@ msgstr "Премахване на двойни изображения"
 msgid "Remove duplicate words"
 msgstr "Премахване на дублиращи се думи"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace..."
 msgstr "Заместване..."
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgid "Replace text in a renaming option"
 msgstr "Замяна на текст в настройка за преименуване"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:56
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:57
 #, kde-format
 msgid ""
 "Replace text (||options||: ||r|| = regular expression, ||i|| = ignore case)"
@@ -52136,23 +52138,23 @@ msgstr "Добавяне на името на камерата"
 msgid "Camera name"
 msgstr "Име на камера"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:46
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Разделител на ключови думи:"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:66
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
 #, kde-format
 msgid "Database..."
 msgstr "База от данни..."
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:68
 #, kde-format
 msgid "Add information from the database"
 msgstr "Добавяне на информация от базата данни"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:70
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:71
 #, kde-format
 msgid "Add database information"
 msgstr "Добавяне на информация за база данни"
@@ -52629,12 +52631,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Група"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
 #, kde-format
 msgid "Metadata..."
 msgstr "Метаданни..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:100
 #, kde-format
 msgid "Add metadata information"
 msgstr "Добавяне на информация за метаданни"
@@ -52650,12 +52652,12 @@ msgstr "Номериране..."
 msgid "Add a sequence number"
 msgstr "Добавяне на пореден номер"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, kde-format
 msgid "Sequence number"
 msgstr "Пореден номер"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -52667,17 +52669,17 @@ msgstr ""
 "на случайността, ||ce|| = брояч и разширение||re|| = случайност и с "
 "разширение))"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Пореден номер (потребителско начало) ||опции||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Номер на последователността (потребителска стъпка) ||опции||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:80
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""

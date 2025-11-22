@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"POT-Creation-Date: 2025-11-22 00:40+0000\n"
 "PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -353,8 +353,8 @@ msgstr[1] "Aldatu aurpegiaren izenak '%2'(e)tik '%3'(e)ra"
 #: core/app/dragdrop/tagdragdrop.cpp:538
 #, fuzzy, kde-format
 #| msgid "Assign Tag(s) '%1' to Items"
-msgid "Assign Tag '%1' to Items"
-msgid_plural "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%2' to Items"
+msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Esleitu '%1' etiketa elementuei"
 msgstr[1] "Esleitu '%1' etiketa elementuei"
 
@@ -53049,17 +53049,17 @@ msgctxt "The character the string should be filled with"
 msgid "Character:"
 msgstr "Karakterea:"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:63
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
 #, kde-format
 msgid "Range..."
 msgstr "Barrutia..."
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:65
 #, kde-format
 msgid "Add only a specific range of a renaming option"
 msgstr "Gehitu izena aldatzeko aukeraren barruti zehatza soilik"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:68
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:69
 #, kde-format
 msgid ""
 "Extract a specific range (if '||to||' is omitted, go to the end of string)"
@@ -53097,18 +53097,18 @@ msgstr "Kendu tresna"
 msgid "Remove duplicate words"
 msgstr "Kendu elementuak"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace..."
 msgstr "Ordeztu..."
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgid "Replace text in a renaming option"
 msgstr "Ordeztu testua izena aldatzeko aukeran"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:56
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:57
 #, kde-format
 msgid ""
 "Replace text (||options||: ||r|| = regular expression, ||i|| = ignore case)"
@@ -53191,23 +53191,23 @@ msgstr "Gehitu kameraren izena"
 msgid "Camera name"
 msgstr "Kameraren izena"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:46
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Gako-hitzen bereizlea:"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:66
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
 #, kde-format
 msgid "Database..."
 msgstr "Datu-basea..."
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:68
 #, kde-format
 msgid "Add information from the database"
 msgstr "Gehitu informazioa datu-basetik"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:70
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:71
 #, kde-format
 msgid "Add database information"
 msgstr "Gehitu datu-basearen informazioa"
@@ -53687,12 +53687,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Taldea"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
 #, kde-format
 msgid "Metadata..."
 msgstr "Metadatuak..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:100
 #, kde-format
 msgid "Add metadata information"
 msgstr "Gehitu metadatuen informazioa"
@@ -53708,12 +53708,12 @@ msgstr "Zenbakia..."
 msgid "Add a sequence number"
 msgstr "Gehitu sekuentziaren zenbakia"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, kde-format
 msgid "Sequence number"
 msgstr "Sekuentziaren zenbakia"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -53723,19 +53723,19 @@ msgstr ""
 "Ordeztu testua (||aukerak||: ||r|| = adierazpen erregularra, ||i|| = ezikusi "
 "egin maiuskulei/minuskulei)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Sekuentziaren zenbakia (hasiera pertsonalizatua)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Sekuentziaren zenbakia (hasiera pertsonalizatua)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:80
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start + step)"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"

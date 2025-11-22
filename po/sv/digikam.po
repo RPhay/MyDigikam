@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"POT-Creation-Date: 2025-11-22 00:40+0000\n"
 "PO-Revision-Date: 2025-10-27 22:19+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -356,9 +356,11 @@ msgstr[0] "Ändra ansiktsnamn från '%2' till '%3'"
 msgstr[1] "Ändra ansiktsnamn från '%2' till '%3'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, kde-format
-msgid "Assign Tag '%1' to Items"
-msgid_plural "Assign Tag(s) '%1' to Items"
+#, fuzzy, kde-format
+#| msgid "Assign Tag '%1' to Items"
+#| msgid_plural "Assign Tag(s) '%1' to Items"
+msgid "Assign Tag '%2' to Items"
+msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Tilldela etikett '%1' till objekt"
 msgstr[1] "Tilldela etiketter '%1' till objekt"
 
@@ -51496,19 +51498,19 @@ msgctxt "The character the string should be filled with"
 msgid "Character:"
 msgstr "Tecken:"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:63
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
 #, kde-format
 msgid "Range..."
 msgstr "Intervall..."
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:65
 #, kde-format
 msgid "Add only a specific range of a renaming option"
 msgstr ""
 "Lägg bara till ett specifikt intervall till ett alternativ för ändring av "
 "filnamn"
 
-#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:68
+#: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:69
 #, kde-format
 msgid ""
 "Extract a specific range (if '||to||' is omitted, go to the end of string)"
@@ -51547,18 +51549,18 @@ msgstr "Ta bort dubbletter"
 msgid "Remove duplicate words"
 msgstr "Ta bort duplicerade ord"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace..."
 msgstr "Ersätt..."
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:52
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgid "Replace text in a renaming option"
 msgstr "Ersätt text i ett alternativ för ändring av filnamn"
 
-#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:56
+#: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:57
 #, kde-format
 msgid ""
 "Replace text (||options||: ||r|| = regular expression, ||i|| = ignore case)"
@@ -51641,23 +51643,23 @@ msgstr "Lägg till kameranamnet"
 msgid "Camera name"
 msgstr "Kameranamn"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:46
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Nyckelordsskiljetecken:"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:66
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
 #, kde-format
 msgid "Database..."
 msgstr "Databas..."
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:68
 #, kde-format
 msgid "Add information from the database"
 msgstr "Lägg till information från databasen"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:70
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:71
 #, kde-format
 msgid "Add database information"
 msgstr "Lägg till databasinformation"
@@ -52133,12 +52135,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Grupp"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
 #, kde-format
 msgid "Metadata..."
 msgstr "Metadata..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:100
 #, kde-format
 msgid "Add metadata information"
 msgstr "Lägg till metadatainformation"
@@ -52154,12 +52156,12 @@ msgstr "Antal..."
 msgid "Add a sequence number"
 msgstr "Lägg till ett sekvensnummer"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, kde-format
 msgid "Sequence number"
 msgstr "Sekvensnummer"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -52171,17 +52173,17 @@ msgstr ""
 "slumpmässighet, ||ce|| = medveten om räknare och ändelser, ||re|| = medveten "
 "om slumpmässighet och ändelser)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:74
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Sekvensnummer (egen start) ||alternativ||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Sekvensnummer (eget steg) ||alternativ||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:80
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "Sekvensnummer (egen start och steg) ||alternativ||: ||e||, ||f||"
