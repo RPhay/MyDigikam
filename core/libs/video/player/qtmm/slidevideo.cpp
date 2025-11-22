@@ -142,7 +142,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     setMouseTracking(true);
 
     d->videoScene  = new QGraphicsScene(this);
-    d->videoView   = new QGraphicsView(d->videoScene);
+    d->videoView   = new QGraphicsView(d->videoScene, this);
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);

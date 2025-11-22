@@ -360,7 +360,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->playerView = new QFrame(this);
     d->videoScene = new QGraphicsScene(this);
-    d->videoView  = new QGraphicsView(d->videoScene);
+    d->videoView  = new QGraphicsView(d->videoScene, d->playerView);
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
