@@ -215,8 +215,8 @@ echo -e "\n"
 echo "---------- Updating MacPorts"
 port -v selfupdate
 
-cd patches
-./applypatches.sh
+#cd patches
+#./applypatches.sh
 cd $ORIG_WD
 
 if [[ $CONTINUE_INSTALL == 0 ]]; then
