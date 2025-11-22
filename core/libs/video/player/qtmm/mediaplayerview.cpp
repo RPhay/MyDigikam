@@ -195,6 +195,7 @@ public:
     QUrl                 currentItem;
 
     int                  videoOrientation   = 0;
+    bool                 videoRotated       = false;
     qint64               sliderTime         = 0;
 
     const QUrl           dummyVideo         = QUrl::fromLocalFile(
@@ -571,6 +572,11 @@ void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus
 {
     if      (newStatus == QMediaPlayer::LoadedMedia)
     {
+        if (d->videoRotated)
+        {
+            return;
+        }
+
         int rotate = d->videoMediaOrientation();
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
@@ -588,6 +594,7 @@ void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus
         }
 
         d->setVideoItemOrientation(rotate);
+        d->videoRotated = true;
     }
     else if (newStatus == QMediaPlayer::InvalidMedia)
     {
@@ -837,6 +844,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     d->player->stop();
     int orientation = 0;
     d->currentItem  = url;
+    d->videoRotated = false;
 
     if (d->iface)
     {

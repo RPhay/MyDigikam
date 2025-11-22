@@ -59,6 +59,7 @@ public:
     QAudioOutput*        audio            = nullptr;
 
     int                  videoOrientation = 0;
+    bool                 videoRotated     = false;
 
 public:
 
@@ -210,6 +211,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 
     int orientation = 0;
     d->currentUrl   = url;
+    d->videoRotated = false;
 
     if (d->iface)
     {
@@ -276,7 +278,7 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
 
         case QMediaPlayer::LoadedMedia:
         {
-            if (d->currentUrl != d->player->source())
+            if (d->videoRotated || (d->currentUrl != d->player->source()))
             {
                 return;
             }
@@ -298,6 +300,7 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
             }
 
             d->setVideoItemOrientation(rotate);
+            d->videoRotated = true;
 
             Q_EMIT signalVideoLoaded(true);
 
