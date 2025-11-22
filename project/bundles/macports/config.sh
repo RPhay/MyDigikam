@@ -163,7 +163,7 @@ else
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.30.0"
+    DK_KDE_VERSION="v6.20.0"
 
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
