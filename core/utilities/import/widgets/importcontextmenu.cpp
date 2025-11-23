@@ -383,13 +383,13 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
 
         if (list.size() == 1)
         {
-            SHELLEXECUTEINFO sei = {};
+            SHELLEXECUTEINFOW sei = {};
             memset(&sei, 0, sizeof(sei));
-            sei.cbSize           = sizeof(sei);
-            sei.fMask            = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
-            sei.nShow            = SW_SHOWNORMAL;
-            sei.lpVerb           = (LPCWSTR)QString::fromLatin1("openas").utf16();
-            sei.lpFile           = (LPCWSTR)QDir::toNativeSeparators(list.first().toLocalFile()).utf16();
+            sei.cbSize            = sizeof(sei);
+            sei.fMask             = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
+            sei.nShow             = SW_SHOWNORMAL;
+            sei.lpVerb            = (LPCWSTR)QString::fromLatin1("openas").utf16();
+            sei.lpFile            = (LPCWSTR)QDir::toNativeSeparators(list.first().toLocalFile()).utf16();
             ShellExecuteEx(&sei);
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas return code:" << GetLastError();
