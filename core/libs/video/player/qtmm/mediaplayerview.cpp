@@ -195,7 +195,6 @@ public:
     QUrl                 currentItem;
 
     int                  videoOrientation   = 0;
-    bool                 videoRotated       = false;
     qint64               sliderTime         = 0;
 
     const QUrl           dummyVideo         = QUrl::fromLocalFile(
@@ -510,6 +509,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->videoItem, SIGNAL(nativeSizeChanged(QSizeF)),
             this, SLOT(slotNativeSizeChanged()));
 
+    connect(d->player, SIGNAL(metaDataChanged()),
+            this, SLOT(slotMetaDataChanged()));
+
     connect(rateMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(slotPlaybackRate(QAction*)));
 
@@ -570,42 +572,43 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
 
 void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus)
 {
-    if      (newStatus == QMediaPlayer::LoadedMedia)
-    {
-        if (d->videoRotated)
-        {
-            return;
-        }
-
-        int rotate = d->videoMediaOrientation();
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
-                                     << rotate;
-
-        rotate     = (-rotate) + d->videoOrientation;
-
-        if      (rotate > 270)
-        {
-            rotate = 0;
-        }
-        else if (rotate < 0)
-        {
-            rotate = 270;
-        }
-
-        d->setVideoItemOrientation(rotate);
-        d->videoRotated = true;
-    }
-    else if (newStatus == QMediaPlayer::InvalidMedia)
+    if (newStatus == QMediaPlayer::InvalidMedia)
     {
         setPreviewMode(Private::ErrorView);
     }
 }
 
-void MediaPlayerView::escapePreview()
+void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const QString& errStr)
 {
-    d->player->stop();
-    d->player->setSource(d->dummyVideo);
+    setPreviewMode(Private::ErrorView);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << errStr;
+}
+
+void MediaPlayerView::slotNativeSizeChanged()
+{
+    d->adjustVideoSize();
+}
+
+void MediaPlayerView::slotMetaDataChanged()
+{
+    int rotate = d->videoMediaOrientation();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
+                                 << rotate;
+
+    rotate     = (-rotate) + d->videoOrientation;
+
+    if      (rotate > 270)
+    {
+        rotate = 0;
+    }
+    else if (rotate < 0)
+    {
+        rotate = 270;
+    }
+
+    d->setVideoItemOrientation(rotate);
 }
 
 void MediaPlayerView::slotThemeChanged()
@@ -617,6 +620,12 @@ void MediaPlayerView::slotThemeChanged()
     QPalette palette2;
     palette2.setColor(d->playerView->backgroundRole(), qApp->palette().color(QPalette::Base));
     d->playerView->setPalette(palette2);
+}
+
+void MediaPlayerView::escapePreview()
+{
+    d->player->stop();
+    d->player->setSource(d->dummyVideo);
 }
 
 void MediaPlayerView::slotEscapePressed()
@@ -844,7 +853,6 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     d->player->stop();
     int orientation = 0;
     d->currentItem  = url;
-    d->videoRotated = false;
 
     if (d->iface)
     {
@@ -989,18 +997,6 @@ void MediaPlayerView::slotPosition(int position)
     {
         d->player->setPosition((qint64)position);
     }
-}
-
-void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const QString& errStr)
-{
-    setPreviewMode(Private::ErrorView);
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << errStr;
-}
-
-void MediaPlayerView::slotNativeSizeChanged()
-{
-    d->adjustVideoSize();
 }
 
 bool MediaPlayerView::eventFilter(QObject* watched, QEvent* event)

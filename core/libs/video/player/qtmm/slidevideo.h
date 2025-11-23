@@ -65,6 +65,7 @@ private Q_SLOTS:
     void slotMediaStatusChanged(QMediaPlayer::MediaStatus status);
     void slotHandlePlayerError(QMediaPlayer::Error, const QString&);
     void slotNativeSizeChanged();
+    void slotMetaDataChanged();
 
 private:
 

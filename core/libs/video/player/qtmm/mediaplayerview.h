@@ -63,6 +63,7 @@ private Q_SLOTS:
     void slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus);
     void slotHandlePlayerError(QMediaPlayer::Error, const QString&);
     void slotNativeSizeChanged();
+    void slotMetaDataChanged();
     void slotThemeChanged();
 
     /// Slidebar slots
