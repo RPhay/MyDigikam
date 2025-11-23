@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-22 00:40+0000\n"
+"POT-Creation-Date: 2025-11-23 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -318,12 +318,10 @@ msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "更改人脸名称，从“%2”到“%3”"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag '%1' to Items"
-#| msgid_plural "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
-msgstr[0] "分配标签“%1”到项目"
+msgstr[0] ""
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -2742,7 +2740,7 @@ msgstr "文档："
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2750,7 +2748,7 @@ msgstr "后退"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3455,10 +3453,7 @@ msgstr ""
 "\">详情请见 GoSC-2023 的报告。</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
@@ -40943,92 +40938,92 @@ msgid "An error has occurred while playing: %1"
 msgstr "播放时发生错误：%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "暂停/播放"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "截图"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:347
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "媒体播放器发生错误..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:230
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:390
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:391
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "打开/关闭循环播放"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "上一帧"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "下一帧"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "更改视频播放速度"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:318
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:323
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:324
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:327
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -60779,33 +60774,27 @@ msgid "The type of the lens"
 msgstr "镜头类型"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items without a camera ..."
-msgstr "无人脸区域"
+msgstr "返回没有相机的项目..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "制造商"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "型号"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "无镜头滤镜"
+msgstr "镜头类型"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -62579,11 +62568,7 @@ msgid "Monitor the albums for external changes (requires restart)"
 msgstr "监视相册的外部更改 (需要重新启动)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "
@@ -66118,25 +66103,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera maker"
-#~ msgid "No Camera Make"
-#~ msgstr "相机制造商"
-
-#, fuzzy
-#~| msgid "Return items without face regions"
-#~ msgid "Return items without a camera model"
-#~ msgstr "无人脸区域"
-
-#, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera model"
-#~ msgid "No Camera Model"
-#~ msgstr "相机型号"
-
-#, fuzzy
-#~| msgid "Return items without tags"
-#~ msgid "Return items without a lens type"
-#~ msgstr "不包含标签"

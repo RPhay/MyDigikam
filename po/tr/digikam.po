@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-22 00:40+0000\n"
-"PO-Revision-Date: 2025-11-21 22:07+0300\n"
+"POT-Creation-Date: 2025-11-23 00:40+0000\n"
+"PO-Revision-Date: 2025-11-22 18:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -364,13 +364,11 @@ msgstr[0] "“%2” olan yüz adını “%3” olarak değiştir"
 msgstr[1] "“%2” olan yüz adlarını “%3” olarak değiştir"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag '%1' to Items"
-#| msgid_plural "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
-msgstr[0] "Ögelere “%1” Künyesini Ata"
-msgstr[1] "Ögelere “%1” Künyelerini Ata"
+msgstr[0] "Ögelere “%2” Künyesini Ata"
+msgstr[1] "Ögelere “%2” Künyelerini Ata"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -2821,7 +2819,7 @@ msgstr "Belgelendirme: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2829,7 +2827,7 @@ msgstr "Geri"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -42351,92 +42349,92 @@ msgid "An error has occurred while playing: %1"
 msgstr "Çalınırken bir hata oluştu: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Duraklat/Oynat"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Yakala"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:347
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Ortam oynatıcısında bir hata oluştu."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:230
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:390
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:391
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Bir döngüde oynatmayı aç/kapat"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Kare Geri"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Kare İleri"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "Video oynatma hızını değiştir"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0,5×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1,0×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1,5×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:318
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2,0×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2,5×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:323
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:324
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3,0×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:327
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4,0×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
