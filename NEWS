@@ -92,7 +92,7 @@ BUGFIXES:
 054 --> 512385 - Numbering in file rename not possible.
 055 --> 512142 - Example in custom script documentation does not handle spaces in path.
 056 --> 512515 - People View | Search-in Tab : Album filter not work.
-057 -->
+057 --> 512564 - digiKam fails to start on X11 due to some icc-profile related error.
 058 -->
 059 -->
 060 -->
