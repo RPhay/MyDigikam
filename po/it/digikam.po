@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-23 00:40+0000\n"
-"PO-Revision-Date: 2025-11-15 22:10+0100\n"
+"POT-Creation-Date: 2025-11-24 00:40+0000\n"
+"PO-Revision-Date: 2025-11-22 13:05+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -337,13 +337,11 @@ msgstr[0] "Cambia nome del volto da '%2' a '%3'"
 msgstr[1] "Cambia nomi del volto da '%2' a '%3'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag '%1' to Items"
-#| msgid_plural "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
-msgstr[0] "Assegna il tag «%1» agli elementi"
-msgstr[1] "Assegna i tag «%1» agli elementi"
+msgstr[0] "Assegna il tag «%2» agli elementi"
+msgstr[1] "Assegna i tag «%2» agli elementi"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -2815,7 +2813,7 @@ msgstr "Documentazione: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2823,7 +2821,7 @@ msgstr "Indietro"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3606,16 +3604,13 @@ msgstr ""
 "\">Vedi questo rapporto GoSC-2023 per i dettagli.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
 msgstr ""
 "Aggiornato lo strumento G'MIC-Qt all'ultima versione 3.5.0, terminata la "
-"conversione a MacOS e migliorata la stabilità dell'estensione."
+"conversione a macOS e migliorata la stabilità dell'estensione."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
@@ -42844,92 +42839,92 @@ msgid "An error has occurred while playing: %1"
 msgstr "Si è verificato un errore durante la riproduzione: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pausa/Riproduci"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:196
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Acquisisci"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:347
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Si è verificato un errore con il lettore multimediale..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:230
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:391
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:390
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Attiva la riproduzione con ripetizione"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Fotogramma all'indietro"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Fotogramma in avanti"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:301
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "Cambia la velocità di riproduzione video"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:318
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:324
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:323
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:327
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -63172,33 +63167,27 @@ msgid "The type of the lens"
 msgstr "Il tipo di lenti"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items without a camera ..."
-msgstr "Restituisci elementi senza regioni facciali"
+msgstr "Restituisci elementi senza una fotocamera..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "Crea"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Modello"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Senza filtro obiettivo"
+msgstr "Tipo di obiettivo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -65113,18 +65102,14 @@ msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Monitora gli album per modifiche esterne (richiede il riavvio)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
 "<b>Nota: il monitoraggio degli album consuma risorse e può rallentare "
-"digiKam. Se stai utilizzando MacOS e delle raccolte in rete, non devi "
+"digiKam. Se stai utilizzando macOS e delle raccolte in rete, non devi "
 "attivare il monitoraggio degli album.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
