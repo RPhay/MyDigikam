@@ -72,7 +72,6 @@ public:
 
     int                   currentChannel        = RedChannel;
 
-    QLabel*               monochromeTips        = nullptr;
     QLabel*               totalPercents         = nullptr;
     QLabel*               outChannelLabel       = nullptr;
 
@@ -148,19 +147,12 @@ MixerSettings::MixerSettings(QWidget* const parent)
     // -------------------------------------------------------------
 
     d->monochrome     = new QCheckBox(i18nc("@option: color", "Monochrome"));
-    d->monochromeTips = new QLabel(i18nc("@info: help",
-                                         "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
-                                         "The \"red channel\" modifies the contrast of photograph.\n"
-                                         "The \"green channel\" enhances or reduces the details level of photograph.\n"
-                                         "The \"blue channel\" affects the noise of photograph.\n"
-                                         "Note: in this mode, the histogram will display only luminosity values."));
-
-    d->monochromeTips->setEnabled(false);
-    d->monochromeTips->setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
-    d->monochromeTips->setWordWrap(true);
-    d->monochromeTips->setOpenExternalLinks(true);
-    d->monochromeTips->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
-    d->monochromeTips->setLineWidth(1);
+    d->monochrome->setToolTip(i18nc("@info: help",
+                                    "Use \"Monochrome\" mode to convert color picture to Black and White.\n"
+                                    "The \"red channel\" modifies the contrast of photograph.\n"
+                                    "The \"green channel\" enhances or reduces the details level of photograph.\n"
+                                    "The \"blue channel\" affects the noise of photograph.\n"
+                                    "Note: in this mode, the histogram will display only luminosity values."));
 
     // -------------------------------------------------------------
 
@@ -176,8 +168,7 @@ MixerSettings::MixerSettings(QWidget* const parent)
     grid->addWidget(d->totalPercents,      4, 3, 1, 1);
     grid->addWidget(d->preserveLuminosity, 5, 0, 1, 5);
     grid->addWidget(d->monochrome,         6, 0, 1, 5);
-    grid->addWidget(d->monochromeTips,     7, 0, 1, 5);
-    grid->setRowStretch(8, 10);
+    grid->setRowStretch(7, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
@@ -211,17 +202,12 @@ MixerSettings::~MixerSettings()
     delete d;
 }
 
-void MixerSettings::setMonochromeTipsVisible(bool b)
-{
-    b ? d->monochromeTips->show()
-      : d->monochromeTips->hide();
-}
-
 void MixerSettings::slotOutChannelChanged()
 {
     int index         = d->outChannelCB->currentIndex();
     d->currentChannel = (ChannelType)(d->outChannelCB->itemData(index).toInt());
     updateSettingsWidgets();
+
     Q_EMIT signalOutChannelChanged();
 }
 
@@ -396,7 +382,6 @@ void MixerSettings::updateSettingsWidgets()
 void MixerSettings::slotMonochromeActived(bool mono)
 {
     d->mixerSettings.bMonochrome = mono;
-    d->monochromeTips->setEnabled(mono);
 
     d->outChannelLabel->setEnabled(!mono);
     d->outChannelCB->setEnabled(!mono);

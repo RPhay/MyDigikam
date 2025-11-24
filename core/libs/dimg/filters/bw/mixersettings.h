@@ -51,8 +51,6 @@ public:
 
     int  currentChannel() const;
 
-    void setMonochromeTipsVisible(bool b);
-
 Q_SIGNALS:
 
     void signalSettingsChanged();

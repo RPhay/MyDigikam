@@ -45,7 +45,6 @@ void ChannelMixer::registerSettingsWidget()
 {
     DVBox* const vbox    = new DVBox;
     m_settingsView       = new MixerSettings(vbox);
-    m_settingsView->setMonochromeTipsVisible(false);
     QLabel* const space  = new QLabel(vbox);
     vbox->setStretchFactor(space, 10);
 
