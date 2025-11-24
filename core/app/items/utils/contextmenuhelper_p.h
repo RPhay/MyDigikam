@@ -131,6 +131,9 @@ public:
 
     ContextMenuHelper*           q                      = nullptr;
 
+    QString                      lpFileWin;
+    QString                      lpVerbWin;
+
 public:
 
     QModelIndex indexForAlbumFromAction(QObject* const sender) const
