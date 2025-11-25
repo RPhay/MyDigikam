@@ -96,6 +96,13 @@ public:
 
     ImportContextMenuHelper*     q                   = nullptr;
 
+#ifdef Q_OS_WIN
+
+    QString                      lpVerbWin;
+    QString                      lpFileWin;
+
+#endif
+
 public:
 
     QAction* copyFromMainCollection(const QString& name) const
@@ -383,13 +390,16 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
 
         if (list.size() == 1)
         {
+            d->lpVerbWin          = QLatin1String("openas");
+            d->lpFileWin          = QDir::toNativeSeparators(list.first().toLocalFile());
+
             SHELLEXECUTEINFOW sei = {};
-            memset(&sei, 0, sizeof(sei));
             sei.cbSize            = sizeof(sei);
             sei.fMask             = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
             sei.nShow             = SW_SHOWNORMAL;
-            sei.lpVerb            = (LPCWSTR)QString::fromLatin1("openas").utf16();
-            sei.lpFile            = (LPCWSTR)QDir::toNativeSeparators(list.first().toLocalFile()).utf16();
+            sei.lpVerb            = (LPCWSTR)d->lpVerbWin.utf16();
+            sei.lpFile            = (LPCWSTR)d->lpFileWin.utf16();
+
             ShellExecuteEx(&sei);
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas return code:" << GetLastError();

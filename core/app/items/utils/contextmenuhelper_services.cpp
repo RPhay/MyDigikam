@@ -227,13 +227,9 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
             SHELLEXECUTEINFOW sei = {};
             sei.cbSize            = sizeof(sei);
             sei.fMask             = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
-            sei.hwnd              = NULL;
+            sei.nShow             = SW_SHOWNORMAL;
             sei.lpVerb            = (LPCWSTR)d->lpVerbWin.utf16();
             sei.lpFile            = (LPCWSTR)d->lpFileWin.utf16();
-            sei.lpParameters      = NULL;
-            sei.lpDirectory       = NULL;
-            sei.nShow             = SW_SHOWNORMAL;
-            sei.hInstApp          = NULL;
 
             ShellExecuteEx(&sei);
 

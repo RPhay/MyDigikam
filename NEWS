@@ -93,8 +93,8 @@ BUGFIXES:
 055 --> 512142 - Example in custom script documentation does not handle spaces in path.
 056 --> 512515 - People View | Search-in Tab : Album filter not work.
 057 --> 512564 - digiKam fails to start on X11 due to some icc-profile related error.
-058 -->
-059 -->
+058 --> 487062 - When an external image editing software is called up for the first time, an incorrect error message appears.
+059 --> 512507 - Open with menu throws an error.
 060 -->
 061 -->
 062 -->

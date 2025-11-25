@@ -131,8 +131,12 @@ public:
 
     ContextMenuHelper*           q                      = nullptr;
 
-    QString                      lpFileWin;
+#ifdef Q_OS_WIN
+
     QString                      lpVerbWin;
+    QString                      lpFileWin;
+
+#endif
 
 public:
 
