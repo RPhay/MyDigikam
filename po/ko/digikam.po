@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:40+0000\n"
+"POT-Creation-Date: 2025-11-25 00:40+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -31504,133 +31504,133 @@ msgstr "RAW 그림"
 msgid "Channel Mixer Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "채널:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:103
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@item: color"
 msgid "Red"
 msgstr "빨간색"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:105
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "녹색"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "파란색"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:108
+#: core/libs/dimg/filters/bw/mixersettings.cpp:107
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "빨간색(%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:113
+#: core/libs/dimg/filters/bw/mixersettings.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr "<qt><p>그림 %1개의 날짜를 편집했습니다. "
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:116
+#: core/libs/dimg/filters/bw/mixersettings.cpp:115
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "녹색(%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:121
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr "<qt><p>그림 %1개의 날짜를 편집했습니다. "
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:124
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "파란색(%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:129
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr "<qt><p>그림 %1개의 날짜를 편집했습니다. "
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:133
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "초기화(&R)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:143
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "광도 유지"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:145
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, fuzzy, kde-format
 #| msgid "Monochrome"
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "흑백"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
 #, kde-format
 msgctxt "@info: help"
 msgid ""
-"Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+"Use \"Monochrome\" mode to convert color picture to Black and White.\n"
 "The \"red channel\" modifies the contrast of photograph.\n"
 "The \"green channel\" enhances or reduces the details level of photograph.\n"
 "The \"blue channel\" affects the noise of photograph.\n"
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:325
+#: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, fuzzy, kde-format
 #| msgid "Total: %1 (%)"
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "전체: %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:521
+#: core/libs/dimg/filters/bw/mixersettings.cpp:506
 #, fuzzy, kde-format
 #| msgid "Gimp Gains Mixer File to Save"
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "저장할 김프 게인 믹서 파일"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:601
+#: core/libs/dimg/filters/bw/mixersettings.cpp:586
 #, fuzzy, kde-format
 #| msgid "Cannot load settings from the Photograph Resizing text file."
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "사진 크기 조정 설정 텍스트 파일에서 불러올 수 없습니다."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:611
+#: core/libs/dimg/filters/bw/mixersettings.cpp:596
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Gimp Gains Mixer File to Save"
@@ -31638,7 +31638,7 @@ msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "저장할 김프 게인 믹서 파일"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:690
+#: core/libs/dimg/filters/bw/mixersettings.cpp:675
 #, fuzzy, kde-format
 #| msgid "Cannot save settings to the Photograph Resizing text file."
 msgctxt "@info"

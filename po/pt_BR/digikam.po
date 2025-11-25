@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:40+0000\n"
+"POT-Creation-Date: 2025-11-25 00:40+0000\n"
 "PO-Revision-Date: 2025-11-22 06:58-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -31208,73 +31208,73 @@ msgstr "Filtro de infravermelho"
 msgid "Channel Mixer Tool"
 msgstr "Ferramenta de mistura de canais"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Canal de saída:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:103
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Vermelho"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:105
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Verde"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Azul"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:108
+#: core/libs/dimg/filters/bw/mixersettings.cpp:107
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Vermelho (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:113
+#: core/libs/dimg/filters/bw/mixersettings.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr "Seleciona o ganho de cor vermelha, em porcentual, para o canal atual."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:116
+#: core/libs/dimg/filters/bw/mixersettings.cpp:115
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Verde (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:121
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr "Seleciona o ganho de cor verde, em porcentual, para o canal atual."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:124
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Azul (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:129
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr "Seleciona o ganho de cor azul, em porcentagem, para o canal atual."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:133
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "&Redefinir"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -31283,29 +31283,37 @@ msgstr ""
 "Redefine as configurações de ganhos dos canais de cor no canal atualmente "
 "selecionado."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:143
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Preservar a luminosidade"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:145
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
 msgstr "Habilite esta opção se quiser preservar a luminosidade da imagem."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Monocromático"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
-#, kde-format
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
+#, fuzzy, kde-format
+#| msgctxt "@info: help"
+#| msgid ""
+#| "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+#| "The \"red channel\" modifies the contrast of photograph.\n"
+#| "The \"green channel\" enhances or reduces the details level of "
+#| "photograph.\n"
+#| "The \"blue channel\" affects the noise of photograph.\n"
+#| "Note: in this mode, the histogram will display only luminosity values."
 msgctxt "@info: help"
 msgid ""
-"Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+"Use \"Monochrome\" mode to convert color picture to Black and White.\n"
 "The \"red channel\" modifies the contrast of photograph.\n"
 "The \"green channel\" enhances or reduces the details level of photograph.\n"
 "The \"blue channel\" affects the noise of photograph.\n"
@@ -31319,19 +31327,19 @@ msgstr ""
 "Observação: neste modo, o histograma exibirá apenas os valores de "
 "luminosidade."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:325
+#: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Total: %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:521
+#: core/libs/dimg/filters/bw/mixersettings.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Selecione o arquivo de ganhos da mistura do Gimp para carregar"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:601
+#: core/libs/dimg/filters/bw/mixersettings.cpp:586
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
@@ -31339,13 +31347,13 @@ msgstr ""
 "Não é possível carregar o arquivo de texto com as configurações de ganhos da "
 "mistura."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:611
+#: core/libs/dimg/filters/bw/mixersettings.cpp:596
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Arquivo de ganhos da mistura do Gimp a serem salvos"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:690
+#: core/libs/dimg/filters/bw/mixersettings.cpp:675
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."

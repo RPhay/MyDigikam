@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:40+0000\n"
+"POT-Creation-Date: 2025-11-25 00:40+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -31162,102 +31162,110 @@ msgstr "Pridať filter"
 msgid "Channel Mixer Tool"
 msgstr "Upraviť panorámu zvuku cez mixér"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Duálny kanál"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:103
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Červená"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:105
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Zelená"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Modrá"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:108
+#: core/libs/dimg/filters/bw/mixersettings.cpp:107
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Červená (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:113
+#: core/libs/dimg/filters/bw/mixersettings.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr "<p>Tu môžete prispôsobiť farbu pozadia pre oblasť editora obrázkov."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:116
+#: core/libs/dimg/filters/bw/mixersettings.cpp:115
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Zelená (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:121
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr "<p>Tu môžete prispôsobiť farbu pozadia pre oblasť editora obrázkov."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:124
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Modrá (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:129
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr "<p>Tu môžete prispôsobiť farbu pozadia pre oblasť editora obrázkov."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:133
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "&Pôvodné"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr "Vynulovať nastavenia zosilnenia farieb pre aktuálny kanál."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:143
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Zachovať jas"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:145
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
 msgstr "<p>Ak povolíte túto voľbu, zobrazí sa cieľový obrázok."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Čierno-biely"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
-#, kde-format
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
+#, fuzzy, kde-format
+#| msgctxt "@info: help"
+#| msgid ""
+#| "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+#| "The \"red channel\" modifies the contrast of photograph.\n"
+#| "The \"green channel\" enhances or reduces the details level of "
+#| "photograph.\n"
+#| "The \"blue channel\" affects the noise of photograph.\n"
+#| "Note: in this mode, the histogram will display only luminosity values."
 msgctxt "@info: help"
 msgid ""
-"Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+"Use \"Monochrome\" mode to convert color picture to Black and White.\n"
 "The \"red channel\" modifies the contrast of photograph.\n"
 "The \"green channel\" enhances or reduces the details level of photograph.\n"
 "The \"blue channel\" affects the noise of photograph.\n"
@@ -31271,13 +31279,13 @@ msgstr ""
 "Poznámka: v tomto režime budú v histograme zobrazené iba hodnoty jasovej "
 "zložky."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:325
+#: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Celkom: %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:521
+#: core/libs/dimg/filters/bw/mixersettings.cpp:506
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Select Gimp Gains Mixer File to Load"
@@ -31285,14 +31293,14 @@ msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Vyberte súbor obsahujúci nastavenia zosilnenia GIMPu"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:601
+#: core/libs/dimg/filters/bw/mixersettings.cpp:586
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr ""
 "Nie je možné načítať nastavenia z textového súboru Reštaurovania fotografie"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:611
+#: core/libs/dimg/filters/bw/mixersettings.cpp:596
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Gimp Gains Mixer File to Save"
@@ -31300,7 +31308,7 @@ msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Textový súbor na uloženie nastavení zosilnenia"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:690
+#: core/libs/dimg/filters/bw/mixersettings.cpp:675
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."

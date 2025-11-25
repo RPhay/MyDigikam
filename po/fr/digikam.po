@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:40+0000\n"
-"PO-Revision-Date: 2025-11-12 14:01+0100\n"
+"POT-Creation-Date: 2025-11-25 00:40+0000\n"
+"PO-Revision-Date: 2025-11-22 18:19+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.11.80\n"
 "X-Text-Markup: kde4\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -384,13 +384,11 @@ msgstr[0] "Modifier le nom du visage de « %2 » vers « %3 »"
 msgstr[1] "Modifier les noms des visages de « %2 » vers « %3 »"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag '%1' to Items"
-#| msgid_plural "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
-msgstr[0] "Attribuer l'étiquette « %1 » aux éléments"
-msgstr[1] "Attribuer l(es) étiquette(s) « %1 » à des éléments"
+msgstr[0] "Attribuer l'étiquette « %2 » aux éléments"
+msgstr[1] "Attribuer l(es) étiquette(s) « %2 » aux éléments"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -3687,15 +3685,12 @@ msgstr ""
 "\">Veuillez consulter ce rapport du GoSC 2023 pour plus de détails.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
 msgstr ""
-"Mise à jour de l'outil « G'MIC-Qt » vers sa dernière version 3.4.0, "
+"Mise à jour de l'outil « G'MIC-Qt » vers sa dernière version 3.5.0, "
 "finalisation du portage vers macOS et amélioration de la stabilité du module "
 "externe."
 
@@ -31593,37 +31588,37 @@ msgstr "Filtre infrarouge"
 msgid "Channel Mixer Tool"
 msgstr "Outil Mélangeur de canaux"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Canal de sortie :"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:103
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Rouge"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:105
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Vert"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Bleu"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:108
+#: core/libs/dimg/filters/bw/mixersettings.cpp:107
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Rouge (%) :"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:113
+#: core/libs/dimg/filters/bw/mixersettings.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
@@ -31631,13 +31626,13 @@ msgstr ""
 "Choisissez ici le gain, exprimé en pourcentage, pour la couleur rouge, "
 "applicable au canal actuel."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:116
+#: core/libs/dimg/filters/bw/mixersettings.cpp:115
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Vert (%) :"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:121
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
@@ -31645,13 +31640,13 @@ msgstr ""
 "Choisissez ici le gain, exprimé en pourcentage, pour la couleur verte, "
 "applicable au canal actuel."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:124
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Bleu (%) :"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:129
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
@@ -31659,13 +31654,13 @@ msgstr ""
 "Choisissez ici le gain, exprimé en pourcentage, pour la couleur bleue, "
 "applicable au canal actuel."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:133
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "&Réinitialiser"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -31674,30 +31669,38 @@ msgstr ""
 "Réinitialisez les paramètres de gain des canaux de couleurs à partir du "
 "canal actuellement sélectionné."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:143
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Préserver la luminosité"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:145
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
 msgstr ""
 "Activez cette option si vous voulez préserver la luminosité de l'image."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Monochrome"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
-#, kde-format
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
+#, fuzzy, kde-format
+#| msgctxt "@info: help"
+#| msgid ""
+#| "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+#| "The \"red channel\" modifies the contrast of photograph.\n"
+#| "The \"green channel\" enhances or reduces the details level of "
+#| "photograph.\n"
+#| "The \"blue channel\" affects the noise of photograph.\n"
+#| "Note: in this mode, the histogram will display only luminosity values."
 msgctxt "@info: help"
 msgid ""
-"Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+"Use \"Monochrome\" mode to convert color picture to Black and White.\n"
 "The \"red channel\" modifies the contrast of photograph.\n"
 "The \"green channel\" enhances or reduces the details level of photograph.\n"
 "The \"blue channel\" affects the noise of photograph.\n"
@@ -31710,19 +31713,19 @@ msgstr ""
 "Le « canal bleu » affecte le bruit de la photographie. Remarque : dans ce "
 "mode, l'histogramme affichera uniquement les valeurs de luminosité."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:325
+#: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Total : %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:521
+#: core/libs/dimg/filters/bw/mixersettings.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Sélectionnez le fichier « GIMP » de mélangeur de gains à charger"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:601
+#: core/libs/dimg/filters/bw/mixersettings.cpp:586
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
@@ -31730,13 +31733,13 @@ msgstr ""
 "Impossible de charger les paramètres à partir du fichier texte de mélangeur "
 "de gain."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:611
+#: core/libs/dimg/filters/bw/mixersettings.cpp:596
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Fichier « GIMP » de mélangeur de gains à enregistrer"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:690
+#: core/libs/dimg/filters/bw/mixersettings.cpp:675
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
@@ -63627,33 +63630,27 @@ msgid "The type of the lens"
 msgstr "Type d'objectif"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items without a camera ..."
-msgstr "Retourner les éléments sans régions de visages"
+msgstr "Renvoyer les éléments sans indication d'appareil photo..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
-msgstr "Marque"
+msgstr "Make"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Modèle"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Pas de filtre d'objectif"
+msgstr "Type de lentille"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -65585,11 +65582,7 @@ msgstr ""
 "relancer)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "

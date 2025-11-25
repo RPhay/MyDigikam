@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:40+0000\n"
-"PO-Revision-Date: 2025-11-20 18:27+0200\n"
+"POT-Creation-Date: 2025-11-25 00:40+0000\n"
+"PO-Revision-Date: 2025-11-24 13:11+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Poedit 3.8\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -271,12 +271,12 @@ msgstr "הקצאת תגית לפריטים שנגררו"
 #: core/app/dragdrop/itemdragdrop.cpp:755
 #, kde-format
 msgid "Change Face Tags"
-msgstr "החלפת תגיות פנים"
+msgstr "החלפת תגיות פרצופים"
 
 #: core/app/dragdrop/itemdragdrop.cpp:759
 #, kde-format
 msgid "Change Face Tag"
-msgstr "החלפת תגית פנים"
+msgstr "החלפת תגית פרצוף"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
@@ -401,22 +401,22 @@ msgstr "מסנן תגיות"
 #: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Face tags"
-msgstr "תמונות ללא תגיות פנים"
+msgstr "תמונות ללא תגיות פרצופים"
 
 #: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a face tag."
-msgstr "הצגת תמונות ללא תגית פנים."
+msgstr "הצגת תמונות ללא תגית פרצוף."
 
 #: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Face tags Matching Condition"
-msgstr "תגיות פנים שעונות על תנאי"
+msgstr "תגיות פרצופים שעונות על תנאי"
 
 #: core/app/filters/filtersidebarwidget.cpp:218
 #, kde-format
 msgid "Face Tags Filter"
-msgstr "מסנן תגיות פנים"
+msgstr "מסנן תגיות פרצופים"
 
 #: core/app/filters/filtersidebarwidget.cpp:236
 #, kde-format
@@ -474,7 +474,7 @@ msgstr "תמונת סימוכין"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "If this is not a face, click to delete it."
-msgstr "אם אלו אינם פנים, לחיצה תמחק אותם."
+msgstr "אם זה לא פרצוף, לחיצה תמחק אותו."
 
 #: core/app/items/overlays/groupindicatoroverlay.cpp:117
 #, fuzzy, kde-format
@@ -753,13 +753,13 @@ msgstr "מחיקת תגיות"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tag"
-msgstr "סימון כתווית פנים"
+msgstr "סימון כתווית פרצוף"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:68
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tags"
-msgstr "סימון כתגיות פנים"
+msgstr "סימון כתגיות פרצוף"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:79
 #, kde-format
@@ -771,7 +771,7 @@ msgstr "מאפיינים…"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tag As Face"
-msgstr "ביטול סימון תגית כפנים"
+msgstr "ביטול סימון תגית כפרצוף"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:95
 #, kde-format
@@ -785,7 +785,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tags As Face"
-msgstr "ביטול סימון תגיות כפנים"
+msgstr "ביטול סימון תגיות כפרצוף"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:109
 #, kde-format
@@ -904,13 +904,13 @@ msgstr "הוספה לתור קיים"
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 Item"
 msgid_plural "%1 Items"
-msgstr[0] "16 סיביות"
-msgstr[1] "16 סיביות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פריט"
+msgstr[1] "שני פריטים"
+msgstr[2] "%1 פריטים"
+msgstr[3] "%1 פריטים"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:297
 #: core/app/items/utils/itemcategorydrawer.cpp:306
@@ -1469,22 +1469,22 @@ msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
 #: core/app/main/digikamapp.cpp:856
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
-msgstr[0] "16 סיביות"
-msgstr[1] "16 סיביות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פריט הוסתר"
+msgstr[1] "שני פריטים הוסתרו"
+msgstr[2] "%1 פריטים הוסתרו"
+msgstr[3] "%1 פריטים הוסתרו"
 
 #: core/app/main/digikamapp.cpp:915
-#, fuzzy, kde-format
+#, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
-msgstr[0] "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
-msgstr[1] "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "כתיבת נתוני על לקובץ"
+msgstr[1] "כתיבת נתוני על לקבצים הנבחרים"
+msgstr[2] "כתיבת נתוני על לקבצים הנבחרים"
+msgstr[3] "כתיבת נתוני על לקבצים הנבחרים"
 
 #: core/app/main/digikamapp.cpp:917
 #, fuzzy, kde-format
@@ -3243,7 +3243,7 @@ msgstr "ע&זרה"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "עזרה מקוונת בנוגע לסל האשפה"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
@@ -3253,7 +3253,7 @@ msgstr "הסגה"
 #: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "לשחזר רק את הרשומה האחרונה בסל האשפה."
 
 #: core/app/views/stack/trashview.cpp:123
 #, fuzzy, kde-format
@@ -3274,7 +3274,7 @@ msgstr "מחיקה"
 #: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
-msgstr ""
+msgstr "להסיר את הפריטים הנבחרים או את כל הפריטים מסל האשפה לצמיתות."
 
 #: core/app/views/stack/trashview.cpp:135
 #, fuzzy, kde-format
@@ -3295,13 +3295,13 @@ msgstr "הגדרות"
 
 #: core/app/views/stack/trashview.cpp:274
 #: core/app/views/stack/trashview.cpp:301
-#, fuzzy, kde-format
+#, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
-msgstr[0] "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
-msgstr[1] "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לשחזר פריט?"
+msgstr[1] "לשחזר שני פריטים?"
+msgstr[2] "לשחזר %1 פריטים?"
+msgstr[3] "לשחזר %1 פריטים?"
 
 #: core/app/views/stack/trashview.cpp:300
 #, fuzzy, kde-format
@@ -3315,13 +3315,13 @@ msgid "Confirm Deletion"
 msgstr "מתאם:"
 
 #: core/app/views/stack/trashview.cpp:332
-#, fuzzy, kde-format
+#, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
-msgstr[0] "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
-msgstr[1] "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "למחוק פריט לצמיתות?"
+msgstr[1] "למחוק שני פריטים לצמיתות?"
+msgstr[2] "למחוק %1 פריטים לצמיתות?"
+msgstr[3] "למחוק %1 פריטים לצמיתות?"
 
 #: core/app/views/stack/trashview.cpp:384
 #, fuzzy, kde-format
@@ -3345,17 +3345,17 @@ msgstr "מחיקה"
 #: core/app/views/stack/trashview.cpp:524
 #, kde-format
 msgid "%1/%2 items selected"
-msgstr ""
+msgstr "%1/%2 פריטים נבחרו"
 
 #: core/app/views/stack/welcomepageview.cpp:98
 #, kde-format
 msgid "More than 1700 user-reports closed on bugzilla."
-msgstr ""
+msgstr "למעלה מ־1700 דיווחי משתמשים נסגרו ב־bugzilla (מערכת תיעוד התקלות)."
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
-msgstr ""
+msgstr "הקוד הוסב לתשתית Qt6 (הקוד עדיין תואם ל־API של Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
@@ -3522,6 +3522,8 @@ msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
+"נוסף כלי חדש <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
+"QuocHungTran\">לסריקת תווים אופטית של טקסט סרוק</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:127
 #, fuzzy, kde-format
@@ -3560,6 +3562,8 @@ msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"תיעוד: <a href=\"https://docs.digikam.org/en/index.html\">ספרון ההדרכה "
+"שוכתב</a> מ־DocBook לתשתית Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
@@ -5233,7 +5237,7 @@ msgstr ""
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:231
 #, kde-format
 msgid "User Script: No script."
-msgstr ""
+msgstr "סקריפט משתמש: אין סקריפט."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:292
 #, fuzzy, kde-format
@@ -5243,38 +5247,38 @@ msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, kde-format
 msgid "User Script: Timeout from script."
-msgstr ""
+msgstr "סקריפט משתמש: זמן ההמתנה לסקריפט פג."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:317
 #, kde-format
 msgid "User Script: No error."
-msgstr ""
+msgstr "סקריפט משתמש: אין שגיאות."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:321
 #, kde-format
 msgid "User Script: Failed to start script."
-msgstr ""
+msgstr "סקריפט משתמש: הפעלת הסקריפט נכשלה."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:327
 #, kde-format
 msgid "User Script: Script process crashed."
-msgstr ""
+msgstr "סקריפט משתמש: תהליך הסקריפט קרס."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:333
 #, kde-format
 msgid "User Script: Command not found."
-msgstr ""
+msgstr "סקריפט משתמש: הפקודה לא נמצאה."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:339
 #, kde-format
 msgid "User Script: Error code returned %1."
-msgstr ""
+msgstr "סקריפט משתמש: קוד השגיאה החזיר %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "User Shell Script"
-msgstr ""
+msgstr "סקריפט מעטפת משתמש"
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:57
 #, fuzzy, kde-format
@@ -5346,7 +5350,7 @@ msgstr ""
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:162
 #, kde-format
 msgid "Use Absolute Size"
-msgstr ""
+msgstr "להשתמש בגודל מוחלט"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:168
 #, fuzzy, kde-format
@@ -5372,7 +5376,7 @@ msgstr "הגדרת מצלמה"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
 #, kde-format
 msgid "Click to select watermark image."
-msgstr ""
+msgstr "יש ללחוץ כדי לבחור תמונת חותמת מים."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:198
 #, fuzzy, kde-format
@@ -5394,7 +5398,7 @@ msgstr "שמירה על יחס"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:220
 #, kde-format
 msgid "Check this if you want watermark to be transparent."
-msgstr ""
+msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:224
 #, fuzzy, kde-format
@@ -5404,7 +5408,7 @@ msgstr "הוספת תווית חדשה..."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
 msgid "Opacity of watermark"
-msgstr ""
+msgstr "אטימות חותמת המים"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:236
 #, fuzzy, kde-format
@@ -5429,7 +5433,7 @@ msgstr "הוספת מצלמה..."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:258
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
-msgstr ""
+msgstr "נא לבחור את סוג וסגנון הגופן. הגודל מחושב אוטומטית."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, fuzzy, kde-format
@@ -5451,12 +5455,12 @@ msgstr "נפח אחסון:"
 msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
 "transparent."
-msgstr ""
+msgstr "הגדרת אטימות טקסט חותמת המים. 100 זה אטום לחלוטין, 0 זה שקוף לחלוטין."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:284
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
-msgstr ""
+msgstr "יש לסמן את זה כדי שיהיה מילוי רקע מאחורי הטקסט."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:286
 #, fuzzy, kde-format
@@ -5483,7 +5487,7 @@ msgstr "צבע &רקע:"
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
 "transparent."
-msgstr ""
+msgstr "הגדרת אטימות רקע חותמת המים. 100 זה אטום לחלוטין, 0 זה שקוף לחלוטין."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, fuzzy, kde-format
@@ -5511,12 +5515,14 @@ msgid ""
 "When you choose to have the watermark repeated many times in the placement "
 "combo box, you can specify here whether the repetition."
 msgstr ""
+"אם בחרת שחותמת המים תחזור פעמים רבות בתיבת בחירת ההצבה המשולבת, אפשר לציין "
+"כאן את אופי החזרתיות."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
-msgstr ""
+msgstr "צפיפות חזרת חותמת המים (מושבתת במצב „מקום מסוים”)"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
 #, kde-format
@@ -6182,7 +6188,7 @@ msgstr "זוהי רשימת הפריטים שאמורים להימחק."
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
-msgstr ""
+msgstr "Exif:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, fuzzy, kde-format
@@ -6200,7 +6206,7 @@ msgstr "תאריך"
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
-msgstr ""
+msgstr "GPS"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:103
 #, fuzzy, kde-format
@@ -6219,7 +6225,7 @@ msgstr "תיאור"
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
-msgstr ""
+msgstr "Iptc:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, fuzzy, kde-format
@@ -6249,7 +6255,7 @@ msgstr "תמונה קודמת"
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
-msgstr ""
+msgstr "Xmp:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, fuzzy, kde-format
@@ -6292,7 +6298,7 @@ msgstr "Dublin Core"
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
-msgstr ""
+msgstr "Exif"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, fuzzy, kde-format
@@ -6310,7 +6316,7 @@ msgstr "כיתוב, הערה ותיאור"
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
-msgstr ""
+msgstr "הסרת נתוני על: לא הכלי האחרון ברשימה."
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:42
 #, fuzzy, kde-format
@@ -6618,9 +6624,9 @@ msgid "Do Not Enlarge Small Images"
 msgstr "לא להגדיל תמונות קטנות"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:175
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use Custom Length"
-msgstr "גופנים מותאמים אישית"
+msgstr "להשתמש באורך מותאם אישית"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:176
 #, fuzzy, kde-format
@@ -12159,9 +12165,9 @@ msgid "Normal process"
 msgstr "אין מסנן פעיל"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgid "Custom process"
-msgstr "גופנים מותאמים אישית"
+msgstr "תהליך מותאם אישית"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:128
 #, kde-format
@@ -16806,16 +16812,16 @@ msgstr "לכידת תמונה..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 albums to process:"
-msgstr "גופנים מותאמים אישית"
+msgstr "%1 אלבומים לעיבוד:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:135
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 items to process"
-msgstr "גופנים מותאמים אישית"
+msgstr "%1 פריטים לעיבוד"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:139
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
@@ -17174,11 +17180,10 @@ msgstr "התחילו עורך תמונה"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:134
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
-#, fuzzy, kde-format
-#| msgid "Custom Font"
+#, kde-format
 msgctxt "@option"
 msgid "Start Server at Startup"
-msgstr "גופנים מותאמים אישית"
+msgstr "הפעלת שרת עם העלייה"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:135
 #, fuzzy, kde-format
@@ -18876,10 +18881,9 @@ msgstr " (%1 of %2)"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, AdvPrintCustomLayout)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:26
-#, fuzzy, kde-format
-#| msgid "Custom Font"
+#, kde-format
 msgid "Custom layout"
-msgstr "גופנים מותאמים אישית"
+msgstr "פריסה מותאמת אישית"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_fitAsManyCheck)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:49
@@ -18935,10 +18939,9 @@ msgstr "הצגת רשת"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_photosXPageCheck)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:304
-#, fuzzy, kde-format
-#| msgid "Custom Font"
+#, kde-format
 msgid "Automatic layout:"
-msgstr "גופנים מותאמים אישית"
+msgstr "פריסה אוטומטית:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:316
@@ -19215,11 +19218,10 @@ msgid "Remove"
 msgstr "הסרת תוויות"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1125
-#, fuzzy, kde-format
-#| msgid "Custom Font"
+#, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
-msgstr "גופנים מותאמים אישית"
+msgstr "פריסה מותאמת אישית"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1126
 #, kde-format
@@ -19227,12 +19229,13 @@ msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1358
-#, fuzzy, kde-format
-#| msgid "Custom Font"
+#, kde-format
 msgid ""
 "Custom\n"
 "layout"
-msgstr "גופנים מותאמים אישית"
+msgstr ""
+"פריסה\n"
+"מותאמת אישית"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, fuzzy, kde-format
@@ -19559,9 +19562,9 @@ msgstr "קבוצת אוספים"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:135
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 input items to process"
-msgstr "גופנים מותאמים אישית"
+msgstr "%1 פריטי קלט לעיבוד"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:61
 #, kde-format
@@ -19758,9 +19761,9 @@ msgid "Starting to generate video slideshow..."
 msgstr "לכידת תמונה..."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:133
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 input images to process"
-msgstr "גופנים מותאמים אישית"
+msgstr "%1 פריטי קלט לעיבוד"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:181
 #, fuzzy, kde-format
@@ -29507,141 +29510,141 @@ msgstr "סרט אינפרה-אדום"
 msgid "Channel Mixer Tool"
 msgstr "מערבל ערוצים"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "ערוץ:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:103
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@item: color"
 msgid "Red"
 msgstr "אדום"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:105
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@item: color"
 msgid "Green"
 msgstr "ירוק"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "כחול"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:108
+#: core/libs/dimg/filters/bw/mixersettings.cpp:107
 #, fuzzy, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "גודל:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:113
+#: core/libs/dimg/filters/bw/mixersettings.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:116
+#: core/libs/dimg/filters/bw/mixersettings.cpp:115
 #, fuzzy, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "ירוק:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:121
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:124
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, fuzzy, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "כחול:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:129
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:133
 #, fuzzy, kde-format
 #| msgid "&Reset"
 msgctxt "@option"
 msgid "&Reset"
 msgstr "&אפס"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:143
 #, fuzzy, kde-format
 #| msgid "Preserve luminosity"
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "שמירת תאורה"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:145
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
 msgstr "<p>בחירה באפרות זו, תציג את התמונה המקורית."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, fuzzy, kde-format
 #| msgid "Monochrome"
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "צבע אחד"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
 #, kde-format
 msgctxt "@info: help"
 msgid ""
-"Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+"Use \"Monochrome\" mode to convert color picture to Black and White.\n"
 "The \"red channel\" modifies the contrast of photograph.\n"
 "The \"green channel\" enhances or reduces the details level of photograph.\n"
 "The \"blue channel\" affects the noise of photograph.\n"
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:325
+#: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, fuzzy, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "%1 (%2)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:521
+#: core/libs/dimg/filters/bw/mixersettings.cpp:506
 #, fuzzy, kde-format
 #| msgid "Select Gimp Gains Mixer File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "בחירת קובץ גימפ של ערכי ערוצי צבע"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:601
+#: core/libs/dimg/filters/bw/mixersettings.cpp:586
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:611
+#: core/libs/dimg/filters/bw/mixersettings.cpp:596
 #, fuzzy, kde-format
 #| msgid "Select Gimp Gains Mixer File to Load"
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "בחירת קובץ גימפ של ערכי ערוצי צבע"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:690
+#: core/libs/dimg/filters/bw/mixersettings.cpp:675
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
@@ -38363,13 +38366,13 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:603
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
-msgstr[0] "אתחול התוכן"
-msgstr[1] "אתחול התוכן"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "להסיר תגית פרצוף?"
+msgstr[1] "להסיר תגיות פרצוף?"
+msgstr[2] "להסיר תגיות פרצוף?"
+msgstr[3] "להסיר תגיות פרצוף?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, fuzzy, kde-format
@@ -38587,14 +38590,14 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/libs/tags/manager/tagsmanager_actions.cpp:178
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
-msgstr[0] "מחיקת תווית"
-msgstr[1] "מחיקת תווית"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מחיקת תגית"
+msgstr[1] "מחיקת תגיות"
+msgstr[2] "מחיקת תגיות"
+msgstr[3] "מחיקת תגיות"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:25
 #, kde-format
@@ -41601,7 +41604,7 @@ msgstr "מצגת-שקפים"
 #: core/libs/widgets/mainview/daboutdata.cpp:189
 #, kde-format
 msgid "Face management workflow improvements"
-msgstr "שיפורים ברצף עבודה ניהול פנים"
+msgstr "שיפורים ברצף עבודה ניהול פרצופים"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:195
 #, kde-format
@@ -46593,10 +46596,10 @@ msgid "reference code"
 msgstr "בחירת תמונות"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:136
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: subject widget"
 msgid "Use custom definition"
-msgstr "גופנים מותאמים אישית"
+msgstr "להשתמש בהגדרה מותאמת אישית"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:152
 #, fuzzy, kde-format
@@ -50541,9 +50544,9 @@ msgstr "בהירות"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:41
-#, fuzzy, kde-format
+#, kde-format
 msgid "Custom Range"
-msgstr "גופנים מותאמים אישית"
+msgstr "טווח מותאם אישית"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:49
@@ -59321,7 +59324,7 @@ msgstr "מסד נתוני תמונות ממוזערות"
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:81
 #, kde-format
 msgid "Face Recognition DB"
-msgstr "מסד נתוני זיהוי פנים"
+msgstr "מסד נתוני זיהוי פרצוף"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:82
 #, kde-format
@@ -59396,16 +59399,14 @@ msgid "Item scanned for duplicates: %1\n"
 msgstr "חיפוש:"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "כפולים"
+msgstr "נמצאו כפילויות: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "כפולים"
+msgstr "נמצא כפילות: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:130
 #, kde-format
@@ -59415,14 +59416,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
-#, fuzzy, kde-format
+#, kde-format
 msgid "Scan for faces in album: %1"
-msgstr "חיפוש:"
+msgstr "לסרוק אם יש פנים באלבום: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:261
-#, fuzzy, kde-format
+#, kde-format
 msgid "Scan for faces in %1 albums"
-msgstr "חיפוש:"
+msgstr "סריקת פרצופים ב־%1 אלבומים"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:268
 #, fuzzy, kde-format
@@ -61104,12 +61105,12 @@ msgstr "החזרת מפענח שמע"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1107
 #, kde-format
 msgid "Faces"
-msgstr "פנים"
+msgstr "פרצופים"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1097
 #, kde-format
 msgid "Return items by number of face regions"
-msgstr "החזרת פריטים לפי מספר אזורי הפנים"
+msgstr "החזרת פריטים לפי מספר אזורי הפרצוף"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1098
 #, kde-format
@@ -61120,12 +61121,12 @@ msgstr "וגם"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1107
 #, kde-format
 msgid "Return items without face regions"
-msgstr "החזרת פריטים ללא אזורי פנים"
+msgstr "החזרת פריטים ללא אזורי פרצוף"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1108
 #, kde-format
 msgid "No Face Regions"
-msgstr "ללא אזורי פנים"
+msgstr "ללא אזורי פרצוף"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
@@ -61198,7 +61199,7 @@ msgstr "מקום גאוגרפי"
 #: core/utilities/searchwindow/searchgroup.cpp:206
 #, kde-format
 msgid "Face regions"
-msgstr "אזורי פנים"
+msgstr "אזורי פרצוף"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:54
 #, kde-format
@@ -62671,12 +62672,12 @@ msgstr "מקום קובצי מודל ניהול פרצופים:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
-msgstr "יעד מודל ניהול פנים"
+msgstr "יעד מודל ניהול פרצופים"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, kde-format
 msgid "Sets the target address to download the face management model files to."
-msgstr "הגדרת כתובת היעד להורדת קובצי מודל ניהול הפנים אליה."
+msgstr "הגדרת כתובת היעד להורדת קובצי מודל ניהול הפרצופים אליה."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
@@ -62686,7 +62687,7 @@ msgstr "להשתמש ביכולות כלים אוטומטיים של בינה מ
 #: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Face Management feature"
-msgstr "להשתמש ביכולת ניהול פנים"
+msgstr "להשתמש ביכולת ניהול פרצופים"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
@@ -63681,7 +63682,7 @@ msgstr ""
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store face tags with face rectangles in the XMP tags."
-msgstr "יש להפעיל את האפשרות הזאת כדי לאחסן מרובעי תגיות פנים בתגיות XMP."
+msgstr "יש להפעיל את האפשרות הזאת כדי לאחסן מרובעי תגיות פרצופים בתגיות XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:90
 #, kde-format
@@ -64208,12 +64209,12 @@ msgstr "תמונת מודל ה־DNN עוברת הכנה לעיבוד…"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
 msgid "Initializing face detection model..."
-msgstr "מודל זיהוי הפנים מאותחל…"
+msgstr "מודל זיהוי הפרצופים מאותחל…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
 #, kde-format
 msgid "Running face detection..."
-msgstr "זיהוי פנים פועל"
+msgstr "זיהוי פרצופים פועל…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
 #, kde-format
@@ -64223,17 +64224,17 @@ msgstr "מודל חילוץ מאפיינים מאותחל…"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
 #, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "הפנים עוברות הכנה לחילוץ מאפיינים…"
+msgstr "הפרצוף עובר הכנה לחילוץ מאפיינים…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, kde-format
 msgid "Extracting face features..."
-msgstr "תכונות הפנים מחולצות…"
+msgstr "תכונות הפרצוף מחולצות…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, kde-format
 msgid "Failed to extract face features."
-msgstr "חילוץ מאפייני הפנים נכשל."
+msgstr "חילוץ מאפייני הפרצוף נכשל."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, kde-format
@@ -64365,7 +64366,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgid "Enable background face recognition scan"
-msgstr "הפעלת סריקת זיהוי פנים ברקע"
+msgstr "הפעלת סריקת זיהוי פרצופים ברקע"
 
 #: core/utilities/setup/misc/setupmisc.cpp:56
 #, kde-format

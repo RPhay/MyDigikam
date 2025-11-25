@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:40+0000\n"
+"POT-Creation-Date: 2025-11-25 00:40+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -29820,76 +29820,76 @@ msgstr "इन्फ्रारेड फ़िल्म..."
 msgid "Channel Mixer Tool"
 msgstr "चैनल मिक्सर"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "चैनल:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:103
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "लाल"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:105
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@item: color"
 msgid "Green"
 msgstr "हरा"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "नीला"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:108
+#: core/libs/dimg/filters/bw/mixersettings.cpp:107
 #, fuzzy, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "आकारः"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:113
+#: core/libs/dimg/filters/bw/mixersettings.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr "<p>छवि संपादक क्षेत्र में इस्तेमाल के लिए पृष्ठभूमि रंग चुनें"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:116
+#: core/libs/dimg/filters/bw/mixersettings.cpp:115
 #, fuzzy, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "हराः"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:121
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr "<p>छवि संपादक क्षेत्र में इस्तेमाल के लिए पृष्ठभूमि रंग चुनें"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:124
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, fuzzy, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "नीलाः"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:129
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr "<p>छवि संपादक क्षेत्र में इस्तेमाल के लिए पृष्ठभूमि रंग चुनें"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:133
 #, fuzzy, kde-format
 #| msgid "&Reset"
 msgctxt "@option"
 msgid "&Reset"
 msgstr "रीसेट (&R)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:135
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reset color channels' gains settings from the currently selected channel."
@@ -29898,66 +29898,66 @@ msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr "मौजूदा चयनित चैनल से रंग चैनल के गेन्स सेटिंग रीसेट करें."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:143
 #, fuzzy, kde-format
 #| msgid "Preserve luminosity"
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "चमकीलापन बनाए रखें"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:145
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
 msgstr ""
 "<p>यदि आप छवि के चमकीलेपन को वैसा ही रहने देना चाहते हैं तो इस विकल्प को सक्षम करें."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, fuzzy, kde-format
 #| msgid "Monochrome"
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "एकवर्ण"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
 #, kde-format
 msgctxt "@info: help"
 msgid ""
-"Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+"Use \"Monochrome\" mode to convert color picture to Black and White.\n"
 "The \"red channel\" modifies the contrast of photograph.\n"
 "The \"green channel\" enhances or reduces the details level of photograph.\n"
 "The \"blue channel\" affects the noise of photograph.\n"
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:325
+#: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, fuzzy, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "%1 (%2)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:521
+#: core/libs/dimg/filters/bw/mixersettings.cpp:506
 #, fuzzy, kde-format
 #| msgid "Select Gimp Gains Mixer File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "लोड करने के लिए गिम्प गेन मिक्सर फ़ाइल चुनें"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:601
+#: core/libs/dimg/filters/bw/mixersettings.cpp:586
 #, fuzzy, kde-format
 #| msgid "Cannot load settings from the Gains Mixer text file."
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "गेन्स मिक्सर पाठ फ़ाइल से विन्यास लोड नहीं किया जा सकता."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:611
+#: core/libs/dimg/filters/bw/mixersettings.cpp:596
 #, fuzzy, kde-format
 #| msgid "Gimp Gains Mixer File to Save"
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "सहेजने के लिए गिम्प गेन्स मिक्सर फ़ाइल"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:690
+#: core/libs/dimg/filters/bw/mixersettings.cpp:675
 #, fuzzy, kde-format
 #| msgid "Cannot save settings to the Gains Mixer text file."
 msgctxt "@info"

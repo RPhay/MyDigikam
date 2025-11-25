@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:40+0000\n"
+"POT-Creation-Date: 2025-11-25 00:40+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -30985,51 +30985,51 @@ msgstr "紅外線濾鏡"
 msgid "Channel Mixer Tool"
 msgstr "色版混合工具"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "輸出色版："
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:103
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "紅色"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:105
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "綠色"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "藍色"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:108
+#: core/libs/dimg/filters/bw/mixersettings.cpp:107
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "紅（%）："
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:113
+#: core/libs/dimg/filters/bw/mixersettings.cpp:112
 #, fuzzy, kde-format
 #| msgid "Select the red color gain, as a percentage, for the current channel."
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr "選擇目前色版的紅色增益 (百分比)。"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:116
+#: core/libs/dimg/filters/bw/mixersettings.cpp:115
 #, fuzzy, kde-format
 #| msgid "Green (%):"
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "綠（%）："
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:121
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "Select the green color gain, as a percentage, for the current channel."
@@ -31037,14 +31037,14 @@ msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr "選擇目前色版的綠色增益 (百分比)。"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:124
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, fuzzy, kde-format
 #| msgid "Blue (%):"
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "藍（%）："
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:129
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, fuzzy, kde-format
 #| msgid ""
 #| "Select the blue color gain, as a percentage, for the current channel."
@@ -31052,13 +31052,13 @@ msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr "選擇目前色版的藍色增益 (百分比)。"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:133
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "重設(&R)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:135
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reset color channels' gains settings from the currently selected channel."
@@ -31067,32 +31067,40 @@ msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr "重設目前選擇色版的色版增益設定值。"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:143
 #, fuzzy, kde-format
 #| msgid "Preserve luminosity"
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "保留明度"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:145
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, fuzzy, kde-format
 #| msgid "Enable this option is you want preserve the image luminosity."
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
 msgstr "如果您想保留影像明度請啟用這個選項。"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, fuzzy, kde-format
 #| msgid "Monochrome"
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "單色"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
-#, kde-format
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
+#, fuzzy, kde-format
+#| msgctxt "@info: help"
+#| msgid ""
+#| "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+#| "The \"red channel\" modifies the contrast of photograph.\n"
+#| "The \"green channel\" enhances or reduces the details level of "
+#| "photograph.\n"
+#| "The \"blue channel\" affects the noise of photograph.\n"
+#| "Note: in this mode, the histogram will display only luminosity values."
 msgctxt "@info: help"
 msgid ""
-"Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+"Use \"Monochrome\" mode to convert color picture to Black and White.\n"
 "The \"red channel\" modifies the contrast of photograph.\n"
 "The \"green channel\" enhances or reduces the details level of photograph.\n"
 "The \"blue channel\" affects the noise of photograph.\n"
@@ -31104,35 +31112,35 @@ msgstr ""
 "「藍色色版」會影響相片的噪度。\n"
 "請注意：這種模式下，直方圖只會顯示亮度值。"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:325
+#: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, fuzzy, kde-format
 #| msgid "Total: %1 (%)"
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "總計：%1（%）"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:521
+#: core/libs/dimg/filters/bw/mixersettings.cpp:506
 #, fuzzy, kde-format
 #| msgid "Select Gimp Gains Mixer File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "選擇要載入的 Gimp 增益混合檔"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:601
+#: core/libs/dimg/filters/bw/mixersettings.cpp:586
 #, fuzzy, kde-format
 #| msgid "Cannot load settings from the Gains Mixer text file."
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "無法從增益混合純文字檔載入設定值。"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:611
+#: core/libs/dimg/filters/bw/mixersettings.cpp:596
 #, fuzzy, kde-format
 #| msgid "Gimp Gains Mixer File to Save"
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "要儲存的 Gimp 增益混合檔"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:690
+#: core/libs/dimg/filters/bw/mixersettings.cpp:675
 #, fuzzy, kde-format
 #| msgid "Cannot save settings to the Gains Mixer text file."
 msgctxt "@info"
