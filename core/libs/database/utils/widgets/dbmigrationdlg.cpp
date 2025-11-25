@@ -54,6 +54,8 @@ public:
 
     Private() = default;
 
+public:
+
     DbEngineParameters fromDbEngineParameters;
     DbEngineParameters toDbEngineParameters;
 };
@@ -129,7 +131,7 @@ void DatabaseMigrationDialog::setupMainArea()
     d->cancelButton->setEnabled(false);
 
     QGroupBox* const progressBox       = new QGroupBox(i18n("Progress Information"), this);
-    QGridLayout* const grid            = new QGridLayout(progressBox);
+    QGridLayout* const pgrid           = new QGridLayout(progressBox);
 
     d->progressBar                     = new QProgressBar(progressBox);
     d->progressBar->setTextVisible(true);
@@ -137,28 +139,29 @@ void DatabaseMigrationDialog::setupMainArea()
     d->progressBarSmallStep            = new QProgressBar(progressBox);
     d->progressBarSmallStep->setTextVisible(true);
 
-    d->overallStepTitle                = new QLabel(i18n("Step Progress"), progressBox);
-    QLabel* const overallSteps         = new QLabel(i18n("Overall Progress"), progressBox);
+    d->overallStepTitle                = new QLabel(i18n("Step Progress:"),    progressBox);
+    QLabel* const overallSteps         = new QLabel(i18n("Overall Progress:"), progressBox);
 
-    grid->addWidget(d->overallStepTitle,     0, 0, 1, 1);
-    grid->addWidget(new QLabel(this),        0, 1, 1, 1);
-    grid->addWidget(overallSteps,            0, 2, 1, 1);
-    grid->addWidget(d->progressBarSmallStep, 1, 0, 1, 1);
-    grid->addWidget(new QLabel(this),        1, 1, 1, 1);
-    grid->addWidget(d->progressBar,          1, 2, 1, 1);
-    grid->setColumnStretch(0, 10);
-    grid->setColumnStretch(1, 2);
-    grid->setColumnStretch(2, 10);
+    pgrid->addWidget(d->overallStepTitle,     0, 0, 1, 1);
+    pgrid->addWidget(overallSteps,            1, 0, 1, 1);
+    pgrid->addWidget(d->progressBarSmallStep, 0, 1, 1, 1);
+    pgrid->addWidget(d->progressBar,          1, 1, 1, 1);
+    pgrid->setColumnStretch(1, 10);
 
     QWidget* const mainWidget = new QWidget;
-    QGridLayout* const layout = new QGridLayout;
-    mainWidget->setLayout(layout);
+    QGridLayout* const mgrid  = new QGridLayout;
+    mainWidget->setLayout(mgrid);
 
-    layout->addWidget(d->fromDatabaseSettingsWidget, 0, 0, 4, 1);
-    layout->addWidget(d->migrateButton,              1, 1);
-    layout->addWidget(d->cancelButton,               2, 1);
-    layout->addWidget(d->toDatabaseSettingsWidget,   0, 2, 4, 1);
-    layout->addWidget(progressBox,                   4, 0, 1, 3);
+    mgrid->addWidget(d->fromDatabaseSettingsWidget, 0, 0, 4, 1);
+    mgrid->addWidget(d->migrateButton,              1, 1, 1, 1);
+    mgrid->addWidget(d->cancelButton,               2, 1, 1, 1);
+    mgrid->addWidget(d->toDatabaseSettingsWidget,   0, 2, 4, 1);
+    mgrid->addWidget(progressBox,                   4, 0, 1, 3);
+    mgrid->setColumnStretch(0, 10);
+    mgrid->setColumnStretch(1, 0);
+    mgrid->setColumnStretch(2, 10);
+    mgrid->setRowStretch(0, 10);
+    mgrid->setRowStretch(3, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(mainWidget);
