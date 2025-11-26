@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-25 00:40+0000\n"
+"POT-Creation-Date: 2025-11-26 00:41+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -748,9 +748,9 @@ msgstr "Nici un album selectat"
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
 #: core/app/items/utils/contextmenuhelper_services.cpp:100
-#: core/utilities/import/widgets/importcontextmenu.cpp:200
-#: core/utilities/import/widgets/importcontextmenu.cpp:227
-#: core/utilities/import/widgets/importcontextmenu.cpp:265
+#: core/utilities/import/widgets/importcontextmenu.cpp:207
+#: core/utilities/import/widgets/importcontextmenu.cpp:234
+#: core/utilities/import/widgets/importcontextmenu.cpp:272
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action: context menu"
@@ -759,8 +759,8 @@ msgstr "Deschide cu"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
-#: core/utilities/import/widgets/importcontextmenu.cpp:239
-#: core/utilities/import/widgets/importcontextmenu.cpp:280
+#: core/utilities/import/widgets/importcontextmenu.cpp:246
+#: core/utilities/import/widgets/importcontextmenu.cpp:287
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open item with other application"
@@ -769,8 +769,8 @@ msgstr "Altele..."
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
-#: core/utilities/import/widgets/importcontextmenu.cpp:248
-#: core/utilities/import/widgets/importcontextmenu.cpp:297
+#: core/utilities/import/widgets/importcontextmenu.cpp:255
+#: core/utilities/import/widgets/importcontextmenu.cpp:304
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: context menu"
@@ -29142,12 +29142,12 @@ msgstr "Se analizează după albumele șterse"
 msgid "Scanning images in individual albums..."
 msgstr "Se analizează imaginile din albumele individuale"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:127
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
 #, kde-format
 msgid "Migrate ->"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
@@ -29155,47 +29155,49 @@ msgstr ""
 msgid "Cancel"
 msgstr "Renunță"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:131
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:133
 #, kde-format
 msgid "Progress Information"
 msgstr "Informații progres"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
-#, kde-format
-msgid "Step Progress"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
+#, fuzzy, kde-format
+#| msgid "Step Progress"
+msgid "Step Progress:"
 msgstr "Etapele progresiei"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#, kde-format
-msgid "Overall Progress"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#, fuzzy, kde-format
+#| msgid "Overall Progress"
+msgid "Overall Progress:"
 msgstr "Progres general"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:212
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:215
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:219
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:222
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:231
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:276
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:279
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Bază de date copiată cu succes."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:283
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Conversia bazei de date a fost anulată."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:293
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr ""
@@ -61547,7 +61549,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "Necesar:"
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:492
+#: core/utilities/import/widgets/importcontextmenu.cpp:502
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"

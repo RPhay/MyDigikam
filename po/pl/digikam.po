@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-25 00:40+0000\n"
+"POT-Creation-Date: 2025-11-26 00:41+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -748,9 +748,9 @@ msgstr "Rozgrupuj wybrane"
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
 #: core/app/items/utils/contextmenuhelper_services.cpp:100
-#: core/utilities/import/widgets/importcontextmenu.cpp:200
-#: core/utilities/import/widgets/importcontextmenu.cpp:227
-#: core/utilities/import/widgets/importcontextmenu.cpp:265
+#: core/utilities/import/widgets/importcontextmenu.cpp:207
+#: core/utilities/import/widgets/importcontextmenu.cpp:234
+#: core/utilities/import/widgets/importcontextmenu.cpp:272
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
@@ -758,8 +758,8 @@ msgstr "Otwórz w"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
-#: core/utilities/import/widgets/importcontextmenu.cpp:239
-#: core/utilities/import/widgets/importcontextmenu.cpp:280
+#: core/utilities/import/widgets/importcontextmenu.cpp:246
+#: core/utilities/import/widgets/importcontextmenu.cpp:287
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
@@ -767,8 +767,8 @@ msgstr "Inne..."
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
-#: core/utilities/import/widgets/importcontextmenu.cpp:248
-#: core/utilities/import/widgets/importcontextmenu.cpp:297
+#: core/utilities/import/widgets/importcontextmenu.cpp:255
+#: core/utilities/import/widgets/importcontextmenu.cpp:304
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."
@@ -29816,12 +29816,12 @@ msgstr "Skanowanie w poszukiwaniu usuniętych albumów..."
 msgid "Scanning images in individual albums..."
 msgstr "Skanowanie zdjęć w poszczególnych albumach..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:127
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
 #, kde-format
 msgid "Migrate ->"
 msgstr "Przenieś ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
@@ -29829,47 +29829,49 @@ msgstr "Przenieś ->"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:131
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:133
 #, kde-format
 msgid "Progress Information"
 msgstr "Szczegóły o postępie"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
-#, kde-format
-msgid "Step Progress"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
+#, fuzzy, kde-format
+#| msgid "Step Progress"
+msgid "Step Progress:"
 msgstr "Krok postępu"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#, kde-format
-msgid "Overall Progress"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#, fuzzy, kde-format
+#| msgid "Overall Progress"
+msgid "Overall Progress:"
 msgstr "Całkowity postęp"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:212
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:215
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "Rodzaj bazy danych lub położenie musi być inne!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:219
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:222
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "Wewnętrznego serwera można użyć tylko raz!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:231
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "Wewnętrzny serwer nie jest używany i nie jest aktywny!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:276
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:279
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Pomyślnie skopiowano bazę danych."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:283
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Porzucono przekształcanie bazy danych."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:293
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Krok postępu (%1)"
@@ -61898,7 +61900,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "Wymaga:"
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:492
+#: core/utilities/import/widgets/importcontextmenu.cpp:502
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"

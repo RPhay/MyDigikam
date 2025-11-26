@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-25 00:40+0000\n"
-"PO-Revision-Date: 2025-11-22 06:58-0300\n"
+"POT-Creation-Date: 2025-11-26 00:41+0000\n"
+"PO-Revision-Date: 2025-11-25 06:19-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -693,9 +693,9 @@ msgstr "Desagrupar as selecionadas"
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
 #: core/app/items/utils/contextmenuhelper_services.cpp:100
-#: core/utilities/import/widgets/importcontextmenu.cpp:200
-#: core/utilities/import/widgets/importcontextmenu.cpp:227
-#: core/utilities/import/widgets/importcontextmenu.cpp:265
+#: core/utilities/import/widgets/importcontextmenu.cpp:207
+#: core/utilities/import/widgets/importcontextmenu.cpp:234
+#: core/utilities/import/widgets/importcontextmenu.cpp:272
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
@@ -703,8 +703,8 @@ msgstr "Abrir com"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
-#: core/utilities/import/widgets/importcontextmenu.cpp:239
-#: core/utilities/import/widgets/importcontextmenu.cpp:280
+#: core/utilities/import/widgets/importcontextmenu.cpp:246
+#: core/utilities/import/widgets/importcontextmenu.cpp:287
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
@@ -712,8 +712,8 @@ msgstr "Outro..."
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
-#: core/utilities/import/widgets/importcontextmenu.cpp:248
-#: core/utilities/import/widgets/importcontextmenu.cpp:297
+#: core/utilities/import/widgets/importcontextmenu.cpp:255
+#: core/utilities/import/widgets/importcontextmenu.cpp:304
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."
@@ -29256,12 +29256,12 @@ msgstr "Procurando por álbuns removidos..."
 msgid "Scanning images in individual albums..."
 msgstr "Procurando imagens nos álbuns individuais..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:127
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
 #, kde-format
 msgid "Migrate ->"
 msgstr "Migrar ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
@@ -29269,47 +29269,49 @@ msgstr "Migrar ->"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:131
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:133
 #, kde-format
 msgid "Progress Information"
 msgstr "Informações do progresso"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
-#, kde-format
-msgid "Step Progress"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
+#, fuzzy, kde-format
+#| msgid "Step Progress"
+msgid "Step Progress:"
 msgstr "Progresso da etapa"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#, kde-format
-msgid "Overall Progress"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#, fuzzy, kde-format
+#| msgid "Overall Progress"
+msgid "Overall Progress:"
 msgstr "Progresso total"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:212
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:215
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "O tipo ou a localização do banco de dados devem ser diferentes!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:219
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:222
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "O servidor interno só pode ser usado uma vez!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:231
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "O servidor interno não está em uso e nem ativo!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:276
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:279
 #, kde-format
 msgid "Database copied successfully."
 msgstr "O banco de dados foi copiado com sucesso."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:283
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "A conversão do banco de dados foi cancelada."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:293
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Progresso da etapa (%1)"
@@ -31302,15 +31304,7 @@ msgid "Monochrome"
 msgstr "Monocromático"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info: help"
-#| msgid ""
-#| "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
-#| "The \"red channel\" modifies the contrast of photograph.\n"
-#| "The \"green channel\" enhances or reduces the details level of "
-#| "photograph.\n"
-#| "The \"blue channel\" affects the noise of photograph.\n"
-#| "Note: in this mode, the histogram will display only luminosity values."
+#, kde-format
 msgctxt "@info: help"
 msgid ""
 "Use \"Monochrome\" mode to convert color picture to Black and White.\n"
@@ -60954,7 +60948,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "Necessário:"
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:492
+#: core/utilities/import/widgets/importcontextmenu.cpp:502
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"

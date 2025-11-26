@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-25 00:40+0000\n"
+"POT-Creation-Date: 2025-11-26 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -676,9 +676,9 @@ msgstr "取消所选分组"
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
 #: core/app/items/utils/contextmenuhelper_services.cpp:100
-#: core/utilities/import/widgets/importcontextmenu.cpp:200
-#: core/utilities/import/widgets/importcontextmenu.cpp:227
-#: core/utilities/import/widgets/importcontextmenu.cpp:265
+#: core/utilities/import/widgets/importcontextmenu.cpp:207
+#: core/utilities/import/widgets/importcontextmenu.cpp:234
+#: core/utilities/import/widgets/importcontextmenu.cpp:272
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
@@ -686,8 +686,8 @@ msgstr "打开方式"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
-#: core/utilities/import/widgets/importcontextmenu.cpp:239
-#: core/utilities/import/widgets/importcontextmenu.cpp:280
+#: core/utilities/import/widgets/importcontextmenu.cpp:246
+#: core/utilities/import/widgets/importcontextmenu.cpp:287
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
@@ -695,8 +695,8 @@ msgstr "其他..."
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
-#: core/utilities/import/widgets/importcontextmenu.cpp:248
-#: core/utilities/import/widgets/importcontextmenu.cpp:297
+#: core/utilities/import/widgets/importcontextmenu.cpp:255
+#: core/utilities/import/widgets/importcontextmenu.cpp:304
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."
@@ -28086,12 +28086,12 @@ msgstr "正在扫描已移除的相册..."
 msgid "Scanning images in individual albums..."
 msgstr "正在扫描每个相册中的图像..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:127
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
 #, kde-format
 msgid "Migrate ->"
 msgstr "迁移 ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
@@ -28099,47 +28099,49 @@ msgstr "迁移 ->"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:131
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:133
 #, kde-format
 msgid "Progress Information"
 msgstr "进度信息"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
-#, kde-format
-msgid "Step Progress"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
+#, fuzzy, kde-format
+#| msgid "Step Progress"
+msgid "Step Progress:"
 msgstr "当前阶段进度"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#, kde-format
-msgid "Overall Progress"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#, fuzzy, kde-format
+#| msgid "Overall Progress"
+msgid "Overall Progress:"
 msgstr "整体进度"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:212
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:215
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "数据库类型或位置不能相同。"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:219
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:222
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "内建服务器只能使用一次 。"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:231
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "内建服务器未被使用且尚未激活。"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:276
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:279
 #, kde-format
 msgid "Database copied successfully."
 msgstr "数据库复制成功。"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:283
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "数据库转换已取消。"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:293
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "当前阶段进度 (%1)"
@@ -58831,7 +58833,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "需要："
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:492
+#: core/utilities/import/widgets/importcontextmenu.cpp:502
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
