@@ -42,6 +42,8 @@
 
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Restore warnings
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
@@ -60,11 +62,22 @@
 namespace Digikam
 {
 
+const QStringList ColorLabelWidget::s_colorSet = QStringList() << QLatin1String("red")      << QLatin1String("orange")
+                                                               << QLatin1String("yellow")   << QLatin1String("darkgreen")
+                                                               << QLatin1String("darkblue") << QLatin1String("magenta")
+                                                               << QLatin1String("darkgray") << QLatin1String("black")
+                                                               << QLatin1String("white")    << QLatin1String("nocolor");
+
+const QString ColorLabelWidget::s_configColorNameEntry  = QLatin1String("ColorName_");
+const QString ColorLabelWidget::s_configColorNamesGroup = QLatin1String("Color Names");
+
 class Q_DECL_HIDDEN ColorLabelWidget::Private
 {
 public:
 
     Private() = default;
+
+public:
 
     QButtonGroup*       colorBtns   = nullptr;
 
@@ -534,6 +547,32 @@ QString ColorLabelWidget::labelColorName(ColorLabel label)
     }
 
     return name;
+}
+
+QMap<QString, QString> ColorLabelWidget::loadColorNames()
+{
+    KSharedConfigPtr config  = KSharedConfig::openConfig();
+    KConfigGroup group       = config->group(ColorLabelWidget::s_configColorNamesGroup);
+
+    QMap<QString, QString> map;
+
+    QStringList defColorSetNames;
+    defColorSetNames << i18nc("@item: color tree", "Red")    << i18nc("@item: color tree", "Orange")
+                     << i18nc("@item: color tree", "Yellow") << i18nc("@item: color tree", "Green")
+                     << i18nc("@item: color tree", "Blue")   << i18nc("@item: color tree", "Magenta")
+                     << i18nc("@item: color tree", "Gray")   << i18nc("@item: color tree", "Black")
+                     << i18nc("@item: color tree", "White")  << i18nc("@item: color tree", "No Color");
+
+    int index = 0;
+
+    for (QString color : ColorLabelWidget::s_colorSet)
+    {
+        QString name = group.readEntry(ColorLabelWidget::s_configColorNameEntry + color, defColorSetNames.value(index));
+        map.insert(color, name);
+        index++;
+    }
+
+    return map;
 }
 
 // -----------------------------------------------------------------------------

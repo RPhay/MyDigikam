@@ -22,6 +22,7 @@
 #include <QList>
 #include <QMetaType>
 #include <QMenu>
+#include <QMap>
 
 // Local includes
 
@@ -35,6 +36,12 @@ namespace Digikam
 class DIGIKAM_EXPORT ColorLabelWidget : public DVBox
 {
     Q_OBJECT
+
+public:
+
+    static const QStringList s_colorSet;
+    static const QString s_configColorNameEntry;
+    static const QString s_configColorNamesGroup;
 
 public:
 
@@ -61,6 +68,13 @@ public:
      * Return the list of Color Label buttons turned on or an empty list of none.
      */
     QList<ColorLabel> colorLabels() const;
+
+public:
+
+    /**
+     * @brief Load color label names from the config file.
+     */
+    static QMap<QString, QString> loadColorNames();
 
     static QColor  labelColor(ColorLabel label);
     static QString labelColorName(ColorLabel label);
