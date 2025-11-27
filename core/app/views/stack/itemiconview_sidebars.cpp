@@ -128,6 +128,23 @@ void ItemIconView::slotLeftSidebarChangedTab(QWidget* w)
         bool active = (widget && (widget == sideBarWidget));
         sideBarWidget->setActive(active);
     }
+
+    if      (dynamic_cast<SearchSideBarWidget*>(w))
+    {
+        d->iconView->setSidebarViewMode(DigikamItemView::SearchView);
+    }
+    else if (dynamic_cast<FuzzySearchSideBarWidget*>(w))
+    {
+        d->iconView->setSidebarViewMode(DigikamItemView::FuzzySView);
+    }
+    else if (dynamic_cast<PeopleSideBarWidget*>(w))
+    {
+        d->iconView->setSidebarViewMode(DigikamItemView::PeopleView);
+    }
+    else
+    {
+        d->iconView->setSidebarViewMode(DigikamItemView::NormalView);
+    }
 }
 
 void ItemIconView::slotSidebarTabTitleStyleChanged()

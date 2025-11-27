@@ -65,7 +65,7 @@ public:
     ItemRotateOverlay*       rotateRightOverlay = nullptr;
     ItemFullScreenOverlay*   fullscreenOverlay  = nullptr;
 
-    bool                     faceMode           = false;
+    int                      sidebarViewMode    = NormalView;
 
 private:
 

@@ -170,9 +170,6 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
                                                      d->modelCollection->getTagFaceModel(),
                                                      d->searchModificationHelper);
 
-    connect(d->peopleSideBar, SIGNAL(requestFaceMode(bool)),
-            d->iconView, SLOT(setFaceMode(bool)));
-
     connect(d->peopleSideBar, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SLOT(slotNewDuplicatesSearch(QList<TAlbum*>)));
 

@@ -97,9 +97,9 @@ BUGFIXES:
 058 --> 487062 - When an external image editing software is called up for the first time, an incorrect error message appears.
 059 --> 512507 - Open with menu throws an error.
 060 --> 512681 - IPTC keywords integration in the database.
-061 -->
-062 -->
-063 -->
+061 --> 436040 - Finding collapsed group items by name does not work.
+062 --> 458880 - Search when show all grouped items as closed.
+063 --> 512674 - Searching by images/similarity will not show results if the similar image is within a closed group.
 064 -->
 065 -->
 066 -->

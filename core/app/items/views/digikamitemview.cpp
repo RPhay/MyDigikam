@@ -325,14 +325,33 @@ ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
 
 bool DigikamItemView::getFaceMode() const
 {
-    return d->faceMode;
+    return (d->sidebarViewMode == PeopleView);
 }
 
-void DigikamItemView::setFaceMode(bool on)
+void DigikamItemView::setSidebarViewMode(int mode)
 {
-    d->faceMode = on;
+    d->sidebarViewMode = mode;
 
-    if (on)
+    // Groups open view and separation mode from settings default.
+
+    bool showGroupsOpen = ApplicationSettings::instance()->getAllGroupsOpen();
+    int separationMode  = ApplicationSettings::instance()->getImageSeparationMode();
+
+    if      (mode == SearchView)
+    {
+        itemAlbumModel()->setSpecialTagListing(QString());
+        setItemDelegate(d->normalDelegate);
+
+        showGroupsOpen = true;
+    }
+    else if (mode == FuzzySView)
+    {
+        itemAlbumModel()->setSpecialTagListing(QString());
+        setItemDelegate(d->normalDelegate);
+
+        showGroupsOpen = true;
+    }
+    else if (mode == PeopleView)
     {
         // See ItemLister, which creates a search the implements listing tag in the ioslave
 
@@ -341,27 +360,22 @@ void DigikamItemView::setFaceMode(bool on)
 
         // grouping is not very much compatible with faces
 
-        itemFilterModel()->setAllGroupsOpen(true);
+        showGroupsOpen = true;
 
         // by default, Face View is categorized by Faces.
 
-        itemFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
-
-        Q_EMIT signalSeparationModeChanged((int)ItemSortSettings::CategoryByFaces);
+        separationMode = ItemSortSettings::CategoryByFaces;
     }
     else
     {
         itemAlbumModel()->setSpecialTagListing(QString());
         setItemDelegate(d->normalDelegate);
-
-        bool open = ApplicationSettings::instance()->getAllGroupsOpen();
-        int separationMode = ApplicationSettings::instance()->getImageSeparationMode();
-
-        itemFilterModel()->setAllGroupsOpen(open);
-        itemFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationMode);
-
-        Q_EMIT signalSeparationModeChanged((int)separationMode);
     }
+
+    itemFilterModel()->setAllGroupsOpen(showGroupsOpen);
+    itemFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationMode);
+
+    Q_EMIT signalSeparationModeChanged(separationMode);
 }
 
 void DigikamItemView::addRejectionOverlay(ItemDelegate* delegate)
@@ -429,7 +443,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     if (album)
     {
-        needFastRemove = (d->faceMode && (tagId != album->id()));
+        needFastRemove = (getFaceMode() && (tagId != album->id()));
     }
 
     for (const QModelIndex& index : std::as_const(indexes))

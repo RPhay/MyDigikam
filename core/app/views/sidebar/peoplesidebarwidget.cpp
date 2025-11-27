@@ -193,8 +193,6 @@ void PeopleSideBarWidget::slotInit()
 
 void PeopleSideBarWidget::setActive(bool active)
 {
-    Q_EMIT requestFaceMode(active);
-
     if (active)
     {
         d->tagFolderView->setCurrentAlbums(QList<Album*>() << d->tagFolderView->currentAlbum());

@@ -36,6 +36,16 @@ class DigikamItemView : public ItemCategorizedView,
 
 public:
 
+    enum SidebarViewMode
+    {
+        NormalView = 0,
+        SearchView,
+        FuzzySView,
+        PeopleView
+    };
+
+public:
+
     explicit DigikamItemView(QWidget* const parent = nullptr);
     ~DigikamItemView()                                                                             override;
 
@@ -46,6 +56,7 @@ public:
     QList<int> getFaceIds(const QList<QModelIndex>& indexes)                                 const;
 
     void setThumbnailSize(const ThumbnailSize& size)                                               override;
+    void setSidebarViewMode(int mode);
 
     ItemInfoList  allItemInfos(bool grouping = false)                                        const;
     ItemInfoList  selectedItemInfos(bool grouping = false)                                   const;
@@ -63,8 +74,6 @@ public Q_SLOTS:
     void rename();
 
     void assignRating(const QList<QModelIndex>& index, int rating);
-
-    void setFaceMode(bool on);
 
     /**
      * @brief Confirm the face with a face tag (name) in the database.
