@@ -174,6 +174,8 @@ void TagsActionMngr::registerTagsActionCollections()
     {
         createTagActionShortcut(tagId);
     }
+
+    Q_EMIT signalTagsActionCollectionsRegistered();
 }
 
 QList<KActionCollection*> TagsActionMngr::actionCollections() const
@@ -299,6 +301,7 @@ bool TagsActionMngr::createColorLabelActionShortcut(KActionCollection* const ac,
         ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("ALT+CTRL+%1").arg(colorId)));
         action->setIcon(ColorLabelWidget::buildIcon((ColorLabel)colorId, 32));
         action->setData(colorId);
+        action->setToolTip(d->colorLabelNames.value(colorId));
 
         connect(action, SIGNAL(triggered()),
                 this, SLOT(slotAssignFromShortcut()));

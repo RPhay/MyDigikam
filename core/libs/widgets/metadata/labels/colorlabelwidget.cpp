@@ -217,12 +217,32 @@ void ColorLabelWidget::setDescriptionBoxVisible(bool b)
 
     if (!b)
     {
-        const auto btns = d->colorBtns->buttons();
+        const auto btns    = d->colorBtns->buttons();
+        DXmlGuiWindow* app = nullptr;
+
+        for (QWidget* const widget : qApp->topLevelWidgets())
+        {
+            app = dynamic_cast<DXmlGuiWindow*>(widget);
+
+            if (app)
+            {
+                break;
+            }
+        }
 
         for (QAbstractButton* const btn : btns)
         {
-            ColorLabel id = (ColorLabel)(d->colorBtns->id(btn));
-            btn->setToolTip(labelColorName(id));
+            ColorLabel label         = (ColorLabel)(d->colorBtns->id(btn));
+
+            if (app)
+            {
+                QAction* const ac = app->actionCollection()->action(QString::fromLatin1("colorshortcut-%1").arg(label));
+
+                if (ac)
+                {
+                    btn->setToolTip(QString::fromUtf8("%1\n%2").arg(ac->toolTip()).arg(ac->shortcut().toString()));
+                }
+            }
         }
     }
 }
@@ -234,8 +254,6 @@ void ColorLabelWidget::setButtonsExclusive(bool b)
 
 void ColorLabelWidget::updateDescription(ColorLabel label)
 {
-    d->desc->setText(labelColorName(label));
-
     DXmlGuiWindow* const app = dynamic_cast<DXmlGuiWindow*>(qApp->activeWindow());
 
     if (app)
@@ -245,6 +263,7 @@ void ColorLabelWidget::updateDescription(ColorLabel label)
         if (ac)
         {
             d->shortcut->setAdjustedText(ac->shortcut().toString());
+            d->desc->setText(ac->toolTip());
         }
     }
 }

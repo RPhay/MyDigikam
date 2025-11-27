@@ -18,6 +18,7 @@
 
 #include "digikam_debug.h"
 #include "albummanager.h"
+#include "tagsactionmngr.h"
 #include "tagscache.h"
 
 namespace Digikam
@@ -26,12 +27,18 @@ namespace Digikam
 ColorLabelFilter::ColorLabelFilter(QWidget* const parent)
     : ColorLabelWidget(parent)
 {
-    setDescriptionBoxVisible(false);
     setButtonsExclusive(false);
     reset();
 
     connect(this, SIGNAL(signalColorLabelChanged(int)),
             this, SLOT(slotColorLabelSelectionChanged()));
+
+    connect(TagsActionMngr::defaultManager(), &TagsActionMngr::signalTagsActionCollectionsRegistered,
+            [this]()
+       {
+           setDescriptionBoxVisible(false);
+       }
+    );
 }
 
 void ColorLabelFilter::reset()
