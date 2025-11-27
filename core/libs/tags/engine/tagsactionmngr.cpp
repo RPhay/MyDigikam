@@ -100,15 +100,8 @@ public:
     const QString             colorShortcutPrefix    = QLatin1String("colorshortcut");
     const QString             noToggleShortcutPrefix = QLatin1String("notoggle");
 
-    QStringList colorNames = QStringList() << i18nc("@item: color tree", "No Color")
-                                           << i18nc("@item: color tree", "Red")    << i18nc("@item: color tree", "Orange")
-                                           << i18nc("@item: color tree", "Yellow") << i18nc("@item: color tree", "Green")
-                                           << i18nc("@item: color tree", "Blue")   << i18nc("@item: color tree", "Magenta")
-                                           << i18nc("@item: color tree", "Gray")   << i18nc("@item: color tree", "Black")
-                                           << i18nc("@item: color tree", "White");
- 
-    const QString configColorNameEntry  = QLatin1String("ColorName_");
-    const QString configColorNamesGroup = QLatin1String("Color Names");
+    const QString             configColorNameEntry   = QLatin1String("ColorName_");
+    const QString             configColorNamesGroup  = QLatin1String("Color Names");
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -582,7 +575,7 @@ void TagsActionMngr::loadColorNames()
     for (int i = FirstColorLabel ; i <= LastColorLabel ; i ++)
     {
         QString color = colorSet().value(i);
-        QString name  = group.readEntry(d->configColorNameEntry + color, d->colorNames.value(i));
+        QString name  = group.readEntry(d->configColorNameEntry + color, ColorLabelWidget::labelColorName((ColorLabel)i));
         d->colorLabelNames.insert(i, name);
     }
 }

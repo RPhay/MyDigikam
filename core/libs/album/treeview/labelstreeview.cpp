@@ -78,10 +78,12 @@ public:
 
     QHash<Labels, QList<int> > selectedLabels;
 
-    const QString configRatingSelectionEntry                = QLatin1String("RatingSelection");
-    const QString configPickSelectionEntry                  = QLatin1String("PickSelection");
-    const QString configColorSelectionEntry                 = QLatin1String("ColorSelection");
-    const QString configExpansionEntry                      = QLatin1String("Expansion");
+public:
+
+    const QString              configRatingSelectionEntry   = QLatin1String("RatingSelection");
+    const QString              configPickSelectionEntry     = QLatin1String("PickSelection");
+    const QString              configColorSelectionEntry    = QLatin1String("ColorSelection");
+    const QString              configExpansionEntry         = QLatin1String("Expansion");
 };
 
 LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)

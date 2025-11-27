@@ -36,12 +36,14 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kactioncollection.h>
 
 // Local includes
 
 #include "itempropertiestxtlabel.h"
 #include "picklabelwidget.h"
 #include "colorlabelwidget.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -52,6 +54,8 @@ public:
 
     Private()  = default;
     ~Private() = default;
+
+public:
 
     DTextLabelName*    caption                      = nullptr;
     DTextLabelName*    title                        = nullptr;

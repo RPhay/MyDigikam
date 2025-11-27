@@ -19,10 +19,12 @@
 
 #include <QDateTime>
 #include <QLocale>
+#include <QApplication>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kactioncollection.h>
 
 // Local includes
 
@@ -42,6 +44,7 @@
 #include "picklabelwidget.h"
 #include "albumthumbnailloader.h"
 #include "thumbnailsize.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -533,8 +536,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
             str        = PickLabelWidget::labelPickName((PickLabel)info.pickLabel());
             str       += QLatin1String(" / ");
 
-            str       += ColorLabelWidget::labelColorName((ColorLabel)info.colorLabel());
-            str       += QLatin1String(" / ");
+            // ---
 
             int rating = info.rating();
 
@@ -552,6 +554,28 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
             }
 
             tip += cnt.cellSpecBeg + i18n("Labels:") + cnt.cellSpecMid + str + cnt.cellSpecEnd;
+
+            // ---
+
+            DXmlGuiWindow* const app = dynamic_cast<DXmlGuiWindow*>(qApp->activeWindow());
+
+            if (app)
+            {
+                QAction* const ac = app->actionCollection()->action(QString::fromLatin1("colorshortcut-%1").arg(info.colorLabel()));
+
+                if (ac)
+                {
+                    tip += cnt.cellSpecBeg + cnt.cellSpecMid + ac->toolTip() + cnt.cellSpecEnd;
+                }
+                else
+                {
+                    tip += cnt.cellSpecBeg + cnt.cellSpecMid + ColorLabelWidget::labelColorName((ColorLabel)info.colorLabel()) + cnt.cellSpecEnd;
+                }
+            }
+            else
+            {
+                tip += cnt.cellSpecBeg + cnt.cellSpecMid + ColorLabelWidget::labelColorName((ColorLabel)info.colorLabel()) + cnt.cellSpecEnd;
+            }
         }
     }
 

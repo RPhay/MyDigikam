@@ -232,7 +232,7 @@ void ColorLabelWidget::setDescriptionBoxVisible(bool b)
 
         for (QAbstractButton* const btn : btns)
         {
-            ColorLabel label         = (ColorLabel)(d->colorBtns->id(btn));
+            ColorLabel label = (ColorLabel)(d->colorBtns->id(btn));
 
             if (app)
             {
@@ -242,6 +242,14 @@ void ColorLabelWidget::setDescriptionBoxVisible(bool b)
                 {
                     btn->setToolTip(QString::fromUtf8("%1\n%2").arg(ac->toolTip()).arg(ac->shortcut().toString()));
                 }
+                else
+                {
+                    btn->setToolTip(ColorLabelWidget::labelColorName(label));
+                }
+            }
+            else
+            {
+                btn->setToolTip(ColorLabelWidget::labelColorName(label));
             }
         }
     }
@@ -265,6 +273,14 @@ void ColorLabelWidget::updateDescription(ColorLabel label)
             d->shortcut->setAdjustedText(ac->shortcut().toString());
             d->desc->setText(ac->toolTip());
         }
+        else
+        {
+            d->desc->setText(ColorLabelWidget::labelColorName(label));
+        }
+    }
+    else
+    {
+        d->desc->setText(ColorLabelWidget::labelColorName(label));
     }
 }
 
@@ -622,7 +638,19 @@ void ColorLabelSelector::slotColorLabelChanged(int id)
 {
     setText(QString());
     setIcon(d->clw->buildIcon((ColorLabel)id));
-    setToolTip(i18nc("@info: color label selector", "Color Label: %1", d->clw->labelColorName((ColorLabel)id)));
+
+    DXmlGuiWindow* const app = dynamic_cast<DXmlGuiWindow*>(qApp->activeWindow());
+
+    if (app)
+    {
+        QAction* const ac = app->actionCollection()->action(QString::fromLatin1("colorshortcut-%1").arg(id));
+
+        if (ac)
+        {
+            setToolTip(ac->toolTip());
+        }
+    }
+
     menu()->close();
 
     Q_EMIT signalColorLabelChanged(id);

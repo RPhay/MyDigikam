@@ -258,7 +258,21 @@ void ItemPropertiesTab::setColorLabel(int colorId)
     }
     else
     {
-        d->labelColorLabel->setAdjustedText(ColorLabelWidget::labelColorName((ColorLabel)colorId));
+        DXmlGuiWindow* const app = dynamic_cast<DXmlGuiWindow*>(qApp->activeWindow());
+
+        if (app)
+        {
+            QAction* const ac = app->actionCollection()->action(QString::fromLatin1("colorshortcut-%1").arg(colorId));
+
+            if (ac)
+            {
+                d->labelColorLabel->setAdjustedText(ac->toolTip());
+            }
+        }
+        else
+        {
+            d->labelColorLabel->setAdjustedText(ColorLabelWidget::labelColorName((ColorLabel)colorId));
+        }
     }
 }
 
