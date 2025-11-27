@@ -96,7 +96,7 @@ BUGFIXES:
 057 --> 512564 - digiKam fails to start on X11 due to some icc-profile related error.
 058 --> 487062 - When an external image editing software is called up for the first time, an incorrect error message appears.
 059 --> 512507 - Open with menu throws an error.
-060 -->
+060 --> 512681 - IPTC keywords integration in the database.
 061 -->
 062 -->
 063 -->
