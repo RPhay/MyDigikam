@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-26 00:41+0000\n"
+"POT-Creation-Date: 2025-11-27 00:41+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -25751,63 +25751,63 @@ msgid "No Color"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -25915,118 +25915,65 @@ msgstr ""
 msgid "Should sub-albums be scanned too?"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:93
+#: core/libs/album/treeview/labelstreeview.cpp:97
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:403
+#: core/libs/album/treeview/labelstreeview.cpp:430
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:408
+#: core/libs/album/treeview/labelstreeview.cpp:435
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:444
+#: core/libs/album/treeview/labelstreeview.cpp:471
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:476
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:477
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:451
+#: core/libs/album/treeview/labelstreeview.cpp:478
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:452
+#: core/libs/album/treeview/labelstreeview.cpp:479
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:472
+#: core/libs/album/treeview/labelstreeview.cpp:499
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:504
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview.cpp:493
-#, kde-format
-msgctxt "@item: color tree"
-msgid "White"
 msgstr ""
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
@@ -41823,19 +41770,73 @@ msgstr ""
 msgid "XMP text Files (*.xmp)"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Red"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Orange"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Yellow"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Green"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Blue"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Magenta"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Gray"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Black"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#, kde-format
+msgctxt "@item: color tree"
+msgid "White"
+msgstr ""
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"

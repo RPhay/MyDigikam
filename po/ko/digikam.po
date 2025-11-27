@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-26 00:41+0000\n"
+"POT-Creation-Date: 2025-11-27 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28275,7 +28275,7 @@ msgid "No Color"
 msgstr "색 없음"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -28283,14 +28283,14 @@ msgid "Red"
 msgstr "빨간색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "주황색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -28298,14 +28298,14 @@ msgid "Yellow"
 msgstr "노란색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "녹색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -28313,7 +28313,7 @@ msgid "Blue"
 msgstr "파란색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -28321,14 +28321,14 @@ msgid "Magenta"
 msgstr "자홍색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "회색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -28336,7 +28336,7 @@ msgid "Black"
 msgstr "검정색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -28453,129 +28453,70 @@ msgstr "얼굴 스캔"
 msgid "Should sub-albums be scanned too?"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:93
+#: core/libs/album/treeview/labelstreeview.cpp:97
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "레이블"
 
-#: core/libs/album/treeview/labelstreeview.cpp:403
+#: core/libs/album/treeview/labelstreeview.cpp:430
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "별점"
 
-#: core/libs/album/treeview/labelstreeview.cpp:408
+#: core/libs/album/treeview/labelstreeview.cpp:435
 #, fuzzy, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "별점:"
 
-#: core/libs/album/treeview/labelstreeview.cpp:444
+#: core/libs/album/treeview/labelstreeview.cpp:471
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "선택"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:476
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "선택"
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:477
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "선택"
 
-#: core/libs/album/treeview/labelstreeview.cpp:451
+#: core/libs/album/treeview/labelstreeview.cpp:478
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "RAW 그림"
 
-#: core/libs/album/treeview/labelstreeview.cpp:452
+#: core/libs/album/treeview/labelstreeview.cpp:479
 #, fuzzy, kde-format
 #| msgid "Accepted"
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "수락함"
 
-#: core/libs/album/treeview/labelstreeview.cpp:472
+#: core/libs/album/treeview/labelstreeview.cpp:499
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "색상"
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:504
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "색 없음"
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, fuzzy, kde-format
-#| msgid "Red"
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "빨간색"
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "주황색"
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, fuzzy, kde-format
-#| msgid "Yellow"
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr "노란색"
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "녹색"
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, fuzzy, kde-format
-#| msgid "Blue"
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "파란색"
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, fuzzy, kde-format
-#| msgid "Magenta"
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "자홍색"
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr "회색"
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, fuzzy, kde-format
-#| msgid "Black"
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "검정색"
-
-#: core/libs/album/treeview/labelstreeview.cpp:493
-#, fuzzy, kde-format
-#| msgid "White"
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "흰색"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, fuzzy, kde-format
@@ -45559,20 +45500,80 @@ msgstr "저장할 XMP 파일"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP 텍스트 파일 (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "없음"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, fuzzy, kde-format
+#| msgid "Red"
+msgctxt "@item: color tree"
+msgid "Red"
+msgstr "빨간색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Orange"
+msgstr "주황색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, fuzzy, kde-format
+#| msgid "Yellow"
+msgctxt "@item: color tree"
+msgid "Yellow"
+msgstr "노란색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Green"
+msgstr "녹색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, fuzzy, kde-format
+#| msgid "Blue"
+msgctxt "@item: color tree"
+msgid "Blue"
+msgstr "파란색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, fuzzy, kde-format
+#| msgid "Magenta"
+msgctxt "@item: color tree"
+msgid "Magenta"
+msgstr "자홍색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Gray"
+msgstr "회색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, fuzzy, kde-format
+#| msgid "Black"
+msgctxt "@item: color tree"
+msgid "Black"
+msgstr "검정색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#, fuzzy, kde-format
+#| msgid "White"
+msgctxt "@item: color tree"
+msgid "White"
+msgstr "흰색"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "색상 레이블: %1"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"
