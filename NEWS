@@ -100,7 +100,7 @@ BUGFIXES:
 061 --> 436040 - Finding collapsed group items by name does not work.
 062 --> 458880 - Search when show all grouped items as closed.
 063 --> 512674 - Searching by images/similarity will not show results if the similar image is within a closed group.
-064 -->
+064 --> 512689 - `Write Metadata to File` in the Item menu does not work.
 065 -->
 066 -->
 067 -->
