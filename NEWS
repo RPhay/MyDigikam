@@ -26,6 +26,7 @@ Raw Engine      : Update internal Libraw to last 20251117 upstream.
 
 Video           : Update internal QtAVPlayer to last 20251117 upstream (Qt5 only).
 
+Color Labels    : Color label names are now customizable in the Labels tab from left sidebar by double clicking on text.
 Advanced Rename : New modifier "Date Format".
 SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
 Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.
