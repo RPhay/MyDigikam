@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-26 00:41+0000\n"
+"POT-Creation-Date: 2025-11-27 00:41+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -27378,7 +27378,7 @@ msgid "No Color"
 msgstr "رنگ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -27386,7 +27386,7 @@ msgid "Red"
 msgstr "قرمز"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: color label name"
@@ -27394,7 +27394,7 @@ msgid "Orange"
 msgstr "نارنجی"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -27402,7 +27402,7 @@ msgid "Yellow"
 msgstr "زرد"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -27410,7 +27410,7 @@ msgid "Green"
 msgstr "سبز"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -27418,7 +27418,7 @@ msgid "Blue"
 msgstr "آبی"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -27426,7 +27426,7 @@ msgid "Magenta"
 msgstr "زرشکی"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -27434,7 +27434,7 @@ msgid "Gray"
 msgstr "خاکستری"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -27442,7 +27442,7 @@ msgid "Black"
 msgstr "سیاه"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -27557,130 +27557,68 @@ msgstr "پویش برای تصاویر جدید"
 msgid "Should sub-albums be scanned too?"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:93
+#: core/libs/album/treeview/labelstreeview.cpp:97
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "برچسبها"
 
-#: core/libs/album/treeview/labelstreeview.cpp:403
+#: core/libs/album/treeview/labelstreeview.cpp:430
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "ارزیابی"
 
-#: core/libs/album/treeview/labelstreeview.cpp:408
+#: core/libs/album/treeview/labelstreeview.cpp:435
 #, fuzzy, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "ارزیابی"
 
-#: core/libs/album/treeview/labelstreeview.cpp:444
+#: core/libs/album/treeview/labelstreeview.cpp:471
 #, fuzzy, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "آجر"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:476
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "آجر"
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:477
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "بازنشانی"
 
-#: core/libs/album/treeview/labelstreeview.cpp:451
+#: core/libs/album/treeview/labelstreeview.cpp:478
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "معلق"
 
-#: core/libs/album/treeview/labelstreeview.cpp:452
+#: core/libs/album/treeview/labelstreeview.cpp:479
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "پذیرفته‌‌شده"
 
-#: core/libs/album/treeview/labelstreeview.cpp:472
+#: core/libs/album/treeview/labelstreeview.cpp:499
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "رنگ"
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:504
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "رنگ"
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, fuzzy, kde-format
-#| msgid "Red"
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "قرمز"
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, fuzzy, kde-format
-#| msgid "Orange"
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "نارنجی"
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, fuzzy, kde-format
-#| msgid "Yellow"
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr "زرد"
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, fuzzy, kde-format
-#| msgid "Green"
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "سبز"
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, fuzzy, kde-format
-#| msgid "Blue"
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "آبی"
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, fuzzy, kde-format
-#| msgid "Magenta"
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "زرشکی"
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, fuzzy, kde-format
-#| msgid "Gray"
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr "خاکستری"
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, fuzzy, kde-format
-#| msgid "Black"
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "سیاه"
-
-#: core/libs/album/treeview/labelstreeview.cpp:493
-#, fuzzy, kde-format
-#| msgid "White"
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "سفید"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, fuzzy, kde-format
@@ -44207,20 +44145,83 @@ msgstr "پرونده EXIF برای ذخیره"
 msgid "XMP text Files (*.xmp)"
 msgstr "پرونده‌های دوگانی EXIF )*.dat("
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "هیچ‌کدام"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, fuzzy, kde-format
+#| msgid "Red"
+msgctxt "@item: color tree"
+msgid "Red"
+msgstr "قرمز"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, fuzzy, kde-format
+#| msgid "Orange"
+msgctxt "@item: color tree"
+msgid "Orange"
+msgstr "نارنجی"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, fuzzy, kde-format
+#| msgid "Yellow"
+msgctxt "@item: color tree"
+msgid "Yellow"
+msgstr "زرد"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, fuzzy, kde-format
+#| msgid "Green"
+msgctxt "@item: color tree"
+msgid "Green"
+msgstr "سبز"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, fuzzy, kde-format
+#| msgid "Blue"
+msgctxt "@item: color tree"
+msgid "Blue"
+msgstr "آبی"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, fuzzy, kde-format
+#| msgid "Magenta"
+msgctxt "@item: color tree"
+msgid "Magenta"
+msgstr "زرشکی"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, fuzzy, kde-format
+#| msgid "Gray"
+msgctxt "@item: color tree"
+msgid "Gray"
+msgstr "خاکستری"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, fuzzy, kde-format
+#| msgid "Black"
+msgctxt "@item: color tree"
+msgid "Black"
+msgstr "سیاه"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#, fuzzy, kde-format
+#| msgid "White"
+msgctxt "@item: color tree"
+msgid "White"
+msgstr "سفید"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
 #, fuzzy, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "تندی رنگ:"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"

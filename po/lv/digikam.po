@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-26 00:41+0000\n"
+"POT-Creation-Date: 2025-11-27 00:41+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -27267,7 +27267,7 @@ msgid "No Color"
 msgstr "Krāsas"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -27275,14 +27275,14 @@ msgid "Red"
 msgstr "Sarkans"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Diapazons:"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -27290,7 +27290,7 @@ msgid "Yellow"
 msgstr "Dzeltens"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -27298,14 +27298,14 @@ msgid "Green"
 msgstr "Zaļš"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Zils"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -27313,21 +27313,21 @@ msgid "Magenta"
 msgstr "Fuksīns"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Vācija"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Atpakaļ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -27440,123 +27440,66 @@ msgstr "Atrast sejas"
 msgid "Should sub-albums be scanned too?"
 msgstr "Vai meklēt arī apakšalbumos?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:93
+#: core/libs/album/treeview/labelstreeview.cpp:97
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Iezīmes"
 
-#: core/libs/album/treeview/labelstreeview.cpp:403
+#: core/libs/album/treeview/labelstreeview.cpp:430
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Vērtējums"
 
-#: core/libs/album/treeview/labelstreeview.cpp:408
+#: core/libs/album/treeview/labelstreeview.cpp:435
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Vērtējuma nav"
 
-#: core/libs/album/treeview/labelstreeview.cpp:444
+#: core/libs/album/treeview/labelstreeview.cpp:471
 #, fuzzy, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Ķieģeļi"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:476
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Ķieģeļi"
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:477
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Nomest"
 
-#: core/libs/album/treeview/labelstreeview.cpp:451
+#: core/libs/album/treeview/labelstreeview.cpp:478
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Augošā"
 
-#: core/libs/album/treeview/labelstreeview.cpp:452
+#: core/libs/album/treeview/labelstreeview.cpp:479
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Slieksnis:"
 
-#: core/libs/album/treeview/labelstreeview.cpp:472
+#: core/libs/album/treeview/labelstreeview.cpp:499
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "Krāsas"
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:504
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "Krāsas"
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, fuzzy, kde-format
-#| msgid "Red"
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "Sarkans"
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "Diapazons:"
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, fuzzy, kde-format
-#| msgid "Yellow"
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr "Dzeltens"
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, fuzzy, kde-format
-#| msgid "Green"
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "Zaļš"
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "Zils"
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, fuzzy, kde-format
-#| msgid "Magenta"
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "Fuksīns"
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr "Vācija"
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "Atpakaļ"
-
-#: core/libs/album/treeview/labelstreeview.cpp:493
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "balta"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, fuzzy, kde-format
@@ -44482,20 +44425,78 @@ msgstr "XMP fails, kurā saglabāt"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP teksta faili (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Nav"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, fuzzy, kde-format
+#| msgid "Red"
+msgctxt "@item: color tree"
+msgid "Red"
+msgstr "Sarkans"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, fuzzy, kde-format
+msgctxt "@item: color tree"
+msgid "Orange"
+msgstr "Diapazons:"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, fuzzy, kde-format
+#| msgid "Yellow"
+msgctxt "@item: color tree"
+msgid "Yellow"
+msgstr "Dzeltens"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, fuzzy, kde-format
+#| msgid "Green"
+msgctxt "@item: color tree"
+msgid "Green"
+msgstr "Zaļš"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Blue"
+msgstr "Zils"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, fuzzy, kde-format
+#| msgid "Magenta"
+msgctxt "@item: color tree"
+msgid "Magenta"
+msgstr "Fuksīns"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, fuzzy, kde-format
+msgctxt "@item: color tree"
+msgid "Gray"
+msgstr "Vācija"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, fuzzy, kde-format
+msgctxt "@item: color tree"
+msgid "Black"
+msgstr "Atpakaļ"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#, fuzzy, kde-format
+msgctxt "@item: color tree"
+msgid "White"
+msgstr "balta"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "Krāsu iezīme: %1"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"

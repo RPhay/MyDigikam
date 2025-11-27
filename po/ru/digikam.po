@@ -55,15 +55,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-26 00:41+0000\n"
-"PO-Revision-Date: 2025-07-30 13:43+0300\n"
-"Last-Translator: Mariya Shikunova <maremarie@altlinux.org>\n"
+"POT-Creation-Date: 2025-11-27 00:41+0000\n"
+"PO-Revision-Date: 2025-11-26 10:55+0300\n"
+"Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -376,14 +376,13 @@ msgstr[2] "Изменить метки лиц с «%2» на «%3»"
 msgstr[3] "Изменить метку лица с «%2» на «%3»"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
-msgstr[0] "Присвоить метку(метки) «%1» объектам"
-msgstr[1] "Присвоить метку(метки) «%1» объектам"
-msgstr[2] "Присвоить метку(метки) «%1» объектам"
-msgstr[3] "Присвоить метку(метки) «%1» объектам"
+msgstr[0] "Присвоить объектам метки «%2»"
+msgstr[1] "Присвоить объектам метки «%2»"
+msgstr[2] "Присвоить объектам метки «%2»"
+msgstr[3] "Присвоить объектам метку «%2»"
 
 #: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
@@ -3444,16 +3443,13 @@ msgstr ""
 "преобразовывать изображения в форматы PEG-XL; WEBP и AVIF;"
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
 msgstr ""
-"Редактор изображений теперь поддерживает сохранение версий без потери "
-"качества в форматах: JPEG-XL, HEIF, WEBP и AVIF;"
+"Редактор изображений поддерживает сохранение версий без потери качества в "
+"форматах: JPEG-XL, HEIF, WEBP и AVIF."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
@@ -3696,10 +3692,7 @@ msgstr ""
 "\">Более подробная информация содержится в отчёте GoSC-2023.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
 "improve stability of plugin."
@@ -5070,15 +5063,7 @@ msgid "A tool to convert images to AVIF format"
 msgstr "Инструмент для преобразования изображений в формат AVIF"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to AVIF "
-#| "format.</para><para>AV1 Image File Format is an image file format "
-#| "specification for storing images or image sequences compressed with AV1 "
-#| "in the ISOBMFF container format.</para><para>See details about this "
-#| "format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</"
-#| "para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to AVIF format.</"
@@ -5091,8 +5076,8 @@ msgstr ""
 "изображений в формат AVIF.</para><para>Формат AV1 Image File (AVIF) — это "
 "спецификация формата для хранения изображений или последовательности "
 "изображений, сжатых с помощью AV1, в формате контейнера ISOBMFF.</"
-"para><para>Подробные сведения об этом формате доступны на <a href='https://"
-"ru.wikipedia.org/wiki/AVIF'>этой странице</a>.</para>"
+"para><para>Подробные сведения об этом формате доступны на <link url='https://"
+"ru.wikipedia.org/wiki/AVIF'>этой странице</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
@@ -5108,13 +5093,7 @@ msgstr ""
 "Инструмент для преобразование цифровых негативов RAW в формат контейнера DNG"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Generic tool can convert RAW images data to DNG format.</"
-#| "para><para>The Digital Negative is a lossless RAW image format created by "
-#| "Adobe.</para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Generic tool can convert RAW images data to DNG format.</"
@@ -5125,8 +5104,8 @@ msgstr ""
 "<para>Этот универсальный инструмент служит для преобразования изображений в "
 "формате RAW в формат DNG.</para><para>Цифровой негатив (Digital Negative) — "
 "это изображение в формате RAW без потерь, созданного Adobe.</"
-"para><para>Подробные сведения об этом формате доступны на <a href='https://"
-"ru.wikipedia.org/wiki/DNG_'>этой странице</a>.</para>"
+"para><para>Подробные сведения об этом формате доступны на <link url='https://"
+"ru.wikipedia.org/wiki/DNG_'>этой странице</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, kde-format
@@ -5141,20 +5120,7 @@ msgid "A tool to convert images to HEIF format"
 msgstr "Инструмент для преобразования изображений в формат HEIF"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to HEIF "
-#| "format.</para><para>High Efficiency Image File Format (HEIF), also known "
-#| "as High Efficiency Image Coding (HEIC), is a file format for individual "
-#| "images and image sequences. It was developed by the Moving Picture "
-#| "Experts Group (MPEG) and it claims that twice as much information can be "
-#| "stored in a HEIF image as in a JPEG image of the same size, resulting in "
-#| "a better quality image. HEIF also supports animation, and is capable of "
-#| "storing more information than an animated GIF at a small fraction of the "
-#| "size.</para><para>See <a href='https://en.wikipedia.org/wiki/"
-#| "High_Efficiency_Image_File_Format'>High Efficiency Image File Format</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to HEIF format.</"
@@ -5178,8 +5144,8 @@ msgstr ""
 "размера, что позволяет получить более качественное изображение. HEIF также "
 "поддерживает анимацию и может хранить больше информации, чем анимированное "
 "изображение GIF, при меньшем размере.</para><para>Подробные сведения "
-"доступны на веб-странице <a href='https://ru.wikipedia.org/wiki/HEIF'>HEIF</"
-"a>.</para>"
+"доступны на веб-странице <link url='https://ru.wikipedia.org/wiki/"
+"HEIF'>HEIF</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
@@ -5194,16 +5160,7 @@ msgid "A tool to convert images to JPEG-2000 format"
 msgstr "Инструмент для преобразования изображений в формат JPEG-2000"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
-#| "format.</para><para>This is an image compression standard and coding "
-#| "system. It was created by the Joint Photographic Experts Group committee "
-#| "in 2000 with the intention of superseding their original discrete cosine "
-#| "transform-based JPEG standard (created in 1992) with a newly designed, "
-#| "wavelet-based method.</para><para>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-2000 "
@@ -5236,15 +5193,7 @@ msgid "A tool to convert images to JPEG format"
 msgstr "Инструмент для преобразования изображений в формат JPEG"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG "
-#| "format.</para><para>The Joint Photographic Experts Group format is a "
-#| "commonly used method of lossy compression for digital images, "
-#| "particularly for those images produced by digital photography.</"
-#| "para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/JPEG'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG format.</"
@@ -5259,8 +5208,8 @@ msgstr ""
 "группой экспертов в области фотографии (Joint Photographic Experts Group), "
 "часто используется для сжатия цифровых изображений с потерями, в частности "
 "для сжатия изображений, полученных методом цифровой фотосъёмки.</"
-"para><para>Подробные сведения об этом формате доступны на <a href='https://"
-"ru.wikipedia.org/wiki/JPEG'>этой странице</a>.</para>"
+"para><para>Подробные сведения об этом формате доступны на <link url='https://"
+"ru.wikipedia.org/wiki/JPEG'>этой странице</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
@@ -5275,15 +5224,7 @@ msgid "A tool to convert images to JXL format"
 msgstr "Инструмент для преобразования изображений в формат JXL"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
-#| "format.</para><para>JPEG-XL is a royalty-free raster-graphics file format "
-#| "that supports both lossy and lossless compression. It is designed to "
-#| "outperform existing raster formats and thus to become their universal "
-#| "replacement.</para><para>See details about this format from <a "
-#| "href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to JPEG-XL "
@@ -5299,8 +5240,8 @@ msgstr ""
 "сжатие как с потерями, так и без потерь. Предполагается, что он сумеет "
 "превзойти существующие растровые форматы и, таким образом, стать их "
 "универсальной заменой.</para><para>Дополнительная информация об этом формате "
-"приведена на <a href='https://ru.wikipedia.org/wiki/JPEG_XL'>этой странице</"
-"a>.</para>"
+"приведена на <link url='https://ru.wikipedia.org/wiki/JPEG_XL'>этой "
+"странице</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
@@ -5315,14 +5256,7 @@ msgid "A tool to convert images to PGF format"
 msgstr "Инструмент для преобразования изображений в формат PGF"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to PGF format."
-#| "</para><para>The Progressive Graphics File is a wavelet-based bitmapped "
-#| "image format that employs lossless and lossy data compression.</"
-#| "para><para>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Progressive_Graphics_File'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PGF format.</"
@@ -5335,8 +5269,8 @@ msgstr ""
 "изображений в формат PGF.</para><para>TPGF — формат хранения графической "
 "информации, основанный на вейвлетах, использующий как сжатие без потерь, так "
 "и сжатие с потерями.</para><para>Дополнительная информация об этом формате "
-"приведена на <a href='https://en.wikipedia.org/wiki/"
-"Progressive_Graphics_File'>этой странице</a>.</para>"
+"приведена на <link url='https://en.wikipedia.org/wiki/"
+"Progressive_Graphics_File'>этой странице</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
@@ -5362,14 +5296,7 @@ msgid "A tool to convert images to PNG format"
 msgstr "Инструмент для преобразования изображений в формат PNG"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to PNG format."
-#| "</para><para>The Portable Network Graphics is a raster-graphics file-"
-#| "format that supports lossless data compression.</para><para>See details "
-#| "about this format from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to PNG format.</"
@@ -5381,8 +5308,8 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для преобразования "
 "изображений в формат PNG.</para><para>PNG — растровый формат хранения "
 "графической информации, использующий сжатие без потерь.</"
-"para><para>Дополнительная информация об этом формате доступна на <a "
-"href='https://ru.wikipedia.org/wiki/PNG'>этой странице</a>.</para>"
+"para><para>Дополнительная информация об этом формате доступна на <link "
+"url='https://ru.wikipedia.org/wiki/PNG'>этой странице</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
@@ -5397,15 +5324,7 @@ msgid "A tool to convert images to TIFF format"
 msgstr "Инструмент для преобразования изображений в формат TIFF"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to TIFF "
-#| "format.</para><para>The Tagged Image File Format is a computer file "
-#| "format for storing raster graphics images, popular among graphic artists, "
-#| "the publishing industry, and photographers.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to TIFF format.</"
@@ -5419,8 +5338,8 @@ msgstr ""
 "изображений в формат TIFF.</para><para>Формат Tagged Image File (TIFF) — "
 "формат компьютерных файлов для хранения растровых графических изображений, "
 "популярный среди художников, издателей и фотографов.</para><para>Подробные "
-"сведения об этом формате доступны на <a href='https://ru.wikipedia.org/wiki/"
-"TIFF'>этой странице</a>.</para>"
+"сведения об этом формате доступны на <link url='https://ru.wikipedia.org/"
+"wiki/TIFF'>этой странице</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, kde-format
@@ -5435,17 +5354,7 @@ msgid "A tool to convert images to WEBP format"
 msgstr "Инструмент для преобразования изображений в формат WEBP"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to WEBP "
-#| "format.</para><para>WEBP is an image file format that Google has "
-#| "developed as a replacement for JPEG, PNG, and GIF file formats. WEBP "
-#| "yields files that are smaller for the same quality, or of higher quality "
-#| "for the same size. It supports both lossy and lossless compression, as "
-#| "well as animation and alpha transparency.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images data to WEBP format.</"
@@ -5462,8 +5371,8 @@ msgstr ""
 "позволяет создавать файлы меньшего размера при том же качестве, либо более "
 "высокого качества при том же размере. Этот формат поддерживает сжатие как с "
 "потерями, так и без потерь, а также анимацию и альфа-прозрачность.</"
-"para><para>Подробная информация об этом формате доступна на <a href='https://"
-"ru.wikipedia.org/wiki/WebP'>этой странице</a>.</para>"
+"para><para>Подробная информация об этом формате доступна на <link "
+"url='https://ru.wikipedia.org/wiki/WebP'>этой странице</link>.</para>"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
@@ -8855,28 +8764,23 @@ msgid "Vignetting Correction..."
 msgstr "Коррекция виньетирования..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Filter"
-msgstr "Цвет фона: "
+msgstr "Фильтр размывания фона"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"Размер 0 (0×0) не оказывает никакого эффекта, 1 (2×2) и более указывают "
-"размерность матрицы, которая определяет степень размытия изображения."
+"Установите это значение, чтобы определить радиус матрицы, который определяет "
+"степень размывания фона вокруг объекта."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
-#, fuzzy, kde-format
-#| msgid "Progress Information"
+#, kde-format
 msgid "Progressive Transition:"
-msgstr "Сведения о ходе выполнения"
+msgstr "Прогрессивный переход"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:97
 #, kde-format
@@ -8884,31 +8788,28 @@ msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
+"Установите это значение, чтобы применить переменное размывание от близких к "
+"далёким от объектива участков. Это позволяет имитировать глубину резкости "
+"объектива."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject Isolation:"
-msgstr "Сведения о теме"
+msgstr "Изоляция объекта:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Сколько проходов будет совершать алгоритм фильтров «Неон» и «Найти края»."
+"Установите значение количества итераций в процессе разделения, чтобы "
+"изолировать большую или меньшую часть объекта."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
-#, fuzzy, kde-format
-#| msgid "Subjects"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Темы"
+msgstr "Маска объекта:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:115
 #, kde-format
@@ -8919,64 +8820,61 @@ msgid ""
 "The green area is the subject where the blur effect will not applied. You "
 "can re-adjust in this view the rectangle including the subject."
 msgstr ""
+"В этом режиме показана сегментация объекта, определённая на основе "
+"выбранного изображения. Полученная зелёная маска накладывается на исходное "
+"изображение, позволяя увидеть, правильно ли выделен объект в процессе "
+"сегментации. Зелёная область — это область, к которой не будет применён "
+"эффект размывания. В этом режиме возможно изменить размер прямоугольника, "
+"включающего объект съёмки."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:243
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Подготовка просмотра панорамы..."
+msgstr "Обработка предварительного просмотра маски..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Ошибка обработки файла XML"
+msgstr "Ошибка обработки изображения..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background Blur"
-msgstr "Цвет фона:"
+msgstr "Размывание фона"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr "Цвет фона:"
+msgstr "Размывание фона"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to blur an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr "Инструмент для размытия изображения"
+msgstr "Инструмент для размывания фона изображения"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can adjust the color curves from image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image "
 "to reproduce the depth-of-field effect from a lens."
-msgstr "Этот инструмент редактирования служит для настройки цвета кривыми."
+msgstr ""
+"Этот инструмент редактора изображений позволяет размыть фон объекта на "
+"изображении, чтобы воспроизвести эффект глубины резкости объектива."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:95
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr "Цвет фона:"
+msgstr "Размывание фона..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Tool"
-msgstr "Цвет фона: "
+msgstr "Инструмент размывания фона"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:116
 #, kde-format
@@ -8984,6 +8882,8 @@ msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
 msgstr ""
+"Сначала необходимо выбрать прямоугольную область с объектом.<br>Примечание: "
+"позже эту область можно будет скорректировать."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -22092,10 +21992,9 @@ msgstr "&Показывать имена файлов"
 #. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for images:"
-msgstr "&Цвет фона по стилю оформления:"
+msgstr "Использовать фоновый цвет для изображений:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:248
@@ -22573,13 +22472,11 @@ msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Выводить оценку, присвоенную изображению, внизу экрана"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render images on screen."
 msgstr ""
-"Использование в редакторе изображений цвета фона из текущей цветовой схемы."
+"Определить цвет, который будет использоваться в качестве фона при показе "
+"изображений на экране."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, kde-format
@@ -22855,9 +22752,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "Предупреждение"
@@ -22877,8 +22772,7 @@ msgstr "Не удалось войти. Нажмите «Продолжить» 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Continue"
 msgstr "Продолжить"
@@ -22889,8 +22783,7 @@ msgstr "Продолжить"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "Отмена"
@@ -23304,8 +23197,7 @@ msgid "Use the album path of the items in the target"
 msgstr "Использовать путь к альбому для элементов цели"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
 msgstr "Изменить свойства изображений"
 
@@ -23349,22 +23241,20 @@ msgstr "Начать экспорт в указанный каталог"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:233
-#, fuzzy, kde-format
-#| msgid "Tag creation Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "Ошибка при создании метки"
+msgstr "Ошибка каталога назначения"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "Выбранная папка не существует или её нельзя открыть"
+msgstr "Целевая папка не существует. Создать её?"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:234
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "Целевая папка не существует и её невозможно создать."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:312
 #, kde-format
@@ -23407,39 +23297,35 @@ msgid "Export to local storage..."
 msgstr "Экспорт в локальное хранилище..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Target Location: "
 msgstr "Каталог назначения: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Устанавливает адрес конечной папки, в которую будут загружены изображения. "
-"Это может быть адрес, аналогичный адресам, используемым в Dolphin или "
-"Konqueror, например, ftp://my.server.org/sub/folder."
+"Устанавливает целевой адрес для загрузки изображений. Адрес может быть любым "
+"адресом диспетчера файлов, например:<br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select export location..."
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "Выбор местоположение для экспорта..."
+msgstr ""
+"Выбор местоположения\n"
+"для экспорта..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:153
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Выбор расположения импорта..."
+msgstr "Выбор целевого расположения..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:154
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
@@ -23480,43 +23366,36 @@ msgstr ""
 "повторить попытку экспорта сейчас."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Source Location: "
-msgstr "Каталог назначения: "
+msgstr "Местоположение источника: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the source address to download the images to. This can be any address "
 "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Устанавливает адрес конечной папки, в которую будут загружены изображения. "
-"Это может быть адрес, аналогичный адресам, используемым в Dolphin или "
-"Konqueror, например, ftp://my.server.org/sub/folder."
+"Устанавливает адрес источника для скачивания изображений. Это может быть "
+"любой адрес из диспетчера файлов, например:<br><i>ftp://my.server.org/sub/"
+"folder</i><br><i>fish://username@my.server.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Выбор расположения импорта..."
+msgstr "Выбор расположения источника..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "Список изображений, которые будут скопированы в указанный каталог."
+msgstr "Список изображений, которые будут импортированы в указанный каталог."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Путь назначения:"
+msgstr "Укажите путь назначения:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, kde-format
@@ -23582,18 +23461,16 @@ msgstr ""
 "SAMBA и другие."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "Экспорт в сетевое хранилище"
+msgstr "Экспорт в удалённое хранилище..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "Импорт из удалённого хранилища"
+msgstr "Импорт из удалённого хранилища..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -24369,31 +24246,25 @@ msgstr "Не удалось выполнить вызов Google Диска: %1\
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Error"
 msgstr "Ошибка"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Drive export"
 msgstr "Экспорт на Google Диск"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Photos export"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Photos export"
 msgstr "Экспорт в Google Фото"
@@ -26826,37 +26697,29 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "xdotcom"
-msgstr ""
+msgstr "xdotcom"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to export to Twitter web-service"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to x.com (aka Twitter) web-service"
-msgstr "Инструмент для экспорта в веб-службу Twitter"
+msgstr "Инструмент для экспорта в веб-службу  x.com (быв. Twitter)"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Twitter web-service.<br><br>See "
-#| "Twitter web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to x.com (aka Twitter) web-service."
 "<br><br>See Twitter web site for details: %1"
 msgstr ""
-"Этот инструмент позволяет экспортировать изображения в веб-службу Твиттер."
-"<br><br>Подробные сведения доступны на веб-сайте Твиттер: %1"
+"Этот инструмент позволяет экспортировать изображения в веб-службу x.com "
+"(быв. Twitter).<br><br>Подробные сведения доступны на веб-сайте x.com: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Twitter..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to x.com (aka &Twitter)..."
-msgstr "Экспорт в Твиттер..."
+msgstr "Экспорт в x.com (&Twitter)..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
@@ -26885,12 +26748,10 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Не удалось создать твит для переданной фотографии"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to x.com (aka Twitter)"
-msgstr "Экспорт в Твиттер"
+msgstr "Экспорт в x.com (бывший Twitter)"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
 #, kde-format
@@ -27994,63 +27855,63 @@ msgid "No Color"
 msgstr "Без цвета"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Красный"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Оранжевый"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Жёлтый"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Зелёный"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Синий"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Пурпурный"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Серый"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Чёрный"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -28158,120 +28019,67 @@ msgstr "Поиск лиц"
 msgid "Should sub-albums be scanned too?"
 msgstr "Сканировать вложенные альбомы?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:93
+#: core/libs/album/treeview/labelstreeview.cpp:97
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Ярлыки"
 
-#: core/libs/album/treeview/labelstreeview.cpp:403
+#: core/libs/album/treeview/labelstreeview.cpp:430
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Оценка"
 
-#: core/libs/album/treeview/labelstreeview.cpp:408
+#: core/libs/album/treeview/labelstreeview.cpp:435
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Без оценки"
 
 # app/album/albumlabelstreeview.cpp:368: поддерево "Pick" -- "Отбор" --aspotashev
-#: core/libs/album/treeview/labelstreeview.cpp:444
+#: core/libs/album/treeview/labelstreeview.cpp:471
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Отбор"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:476
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Без ярлыка отбора"
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:477
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Отклонённые"
 
-#: core/libs/album/treeview/labelstreeview.cpp:451
+#: core/libs/album/treeview/labelstreeview.cpp:478
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Ожидающие решения"
 
-#: core/libs/album/treeview/labelstreeview.cpp:452
+#: core/libs/album/treeview/labelstreeview.cpp:479
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Одобренные"
 
-#: core/libs/album/treeview/labelstreeview.cpp:472
+#: core/libs/album/treeview/labelstreeview.cpp:499
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "Цвет"
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:504
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "Без цвета"
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "Красный"
-
-#: core/libs/album/treeview/labelstreeview.cpp:489
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "Оранжевый"
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr "Жёлтый"
-
-#: core/libs/album/treeview/labelstreeview.cpp:490
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "Зелёный"
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "Синий"
-
-#: core/libs/album/treeview/labelstreeview.cpp:491
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "Пурпурный"
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr "Серый"
-
-#: core/libs/album/treeview/labelstreeview.cpp:492
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "Чёрный"
-
-#: core/libs/album/treeview/labelstreeview.cpp:493
-#, kde-format
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "Белый"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, kde-format
@@ -28497,12 +28305,10 @@ msgid "All albums"
 msgstr "Все альбомы"
 
 #: core/libs/album/widgets/albumselectors.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive album selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
-msgstr "Выбор альбома в обратном порядке."
+msgstr "Переключить выбор альбомов в обратном порядке."
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -28529,12 +28335,10 @@ msgid "All tags"
 msgstr "Все метки"
 
 #: core/libs/album/widgets/albumselectors.cpp:241
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive tags selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
-msgstr "Выбор меток в обратном порядке."
+msgstr "Переключить выбор меток в обратном порядке."
 
 #: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
@@ -29536,16 +29340,14 @@ msgid "Progress Information"
 msgstr "Сведения о ходе выполнения"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
-#, fuzzy, kde-format
-#| msgid "Step Progress"
+#, kde-format
 msgid "Step Progress:"
-msgstr "Шаг прогресса"
+msgstr "Шаг прогресса:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Overall Progress"
+#, kde-format
 msgid "Overall Progress:"
-msgstr "Общий ход выполнения"
+msgstr "Общий ход выполнения:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:215
 #, kde-format
@@ -30604,13 +30406,13 @@ msgid "Build Environment"
 msgstr "Среда сборки"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Неизвестно"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -30635,7 +30437,7 @@ msgid "Libraries"
 msgstr "Библиотеки"
 
 #: core/libs/dialogs/libsinfodlg_libraries.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: libx265 version"
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -31576,15 +31378,7 @@ msgid "Monochrome"
 msgstr "Монохромный режим"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info: help"
-#| msgid ""
-#| "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
-#| "The \"red channel\" modifies the contrast of photograph.\n"
-#| "The \"green channel\" enhances or reduces the details level of "
-#| "photograph.\n"
-#| "The \"blue channel\" affects the noise of photograph.\n"
-#| "Note: in this mode, the histogram will display only luminosity values."
+#, kde-format
 msgctxt "@info: help"
 msgid ""
 "Use \"Monochrome\" mode to convert color picture to Black and White.\n"
@@ -31598,8 +31392,7 @@ msgstr ""
 "«Красный канал» изменяет контраст фотографии.\n"
 "«Зелёный канал» увеличивает или уменьшает уровень детализации\n"
 "«Синий канал» влияет на уровень шума.\n"
-"Примечание: в данном режиме на гистограмме отображаются только значения "
-"яркости."
+"Примечание: в данном режиме на гистограмме показаны только значения яркости."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, kde-format
@@ -35378,9 +35171,7 @@ msgid "Search in"
 msgstr "Искать в"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@label short translated text about the Face Worflow."
-#| msgid "Workflow:"
+#, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
 msgstr "Профиль пакетной обработки:"
@@ -36012,10 +35803,9 @@ msgid "Item Name"
 msgstr "Имя объекта"
 
 #: core/libs/filters/textfilter.cpp:76
-#, fuzzy, kde-format
-#| msgid "Item date"
+#, kde-format
 msgid "Item Path"
-msgstr "Дата объекта"
+msgstr "Путь к объекту"
 
 #: core/libs/filters/textfilter.cpp:78
 #, kde-format
@@ -36048,10 +35838,9 @@ msgid "Item Pixel Size"
 msgstr "Размер объекта в пикселях"
 
 #: core/libs/filters/textfilter.cpp:91
-#, fuzzy, kde-format
-#| msgid "Infrared Filter"
+#, kde-format
 msgid "Inverted Filter"
-msgstr "Инфракрасный фильтр"
+msgstr "Инвертированный фильтр"
 
 #: core/libs/filters/textfilter.cpp:94
 #, kde-format
@@ -36371,10 +36160,9 @@ msgid "A file or folder named %1 already exists in %2"
 msgstr "Файл или папка с именем «%1» уже существует в «%2»"
 
 #: core/libs/iojobs/iojob.cpp:156
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 move detected to album %2"
-msgstr "Не удалось переместить папку «%1» в альбом «%2»"
+msgstr "Обнаруженное рекурсивное перемещение папки %1 в альбом %2"
 
 #: core/libs/iojobs/iojob.cpp:175
 #, kde-format
@@ -36401,10 +36189,9 @@ msgid "Could not move file %1 to album %2"
 msgstr "Не удалось переместить файл «%1» в альбом «%2»"
 
 #: core/libs/iojobs/iojob.cpp:215
-#, fuzzy, kde-format
-#| msgid "Could not move folder %1 to album %2"
+#, kde-format
 msgid "Recursive folder %1 copy detected to album %2"
-msgstr "Не удалось переместить папку «%1» в альбом «%2»"
+msgstr "Обнаруженное рекурсивное копирование папки %1 в альбом %2"
 
 #: core/libs/iojobs/iojob.cpp:232
 #, kde-format
@@ -39204,9 +38991,7 @@ msgid "Rating: "
 msgstr "Оценка: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
 msgstr "Версия: "
@@ -40482,9 +40267,7 @@ msgid "Tagging Mode:"
 msgstr "Режим присваивания меток:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@item: remplace existing autotags entries in database"
-#| msgid "Replace Existing"
+#, kde-format
 msgctxt "@item: replace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Заменить существующие"
@@ -40932,11 +40715,9 @@ msgid "Tags Manager"
 msgstr "Диспетчер меток"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "Искать в избранном..."
+msgstr "Поиск меток..."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -40972,49 +40753,42 @@ msgstr ""
 "Продолжить?"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a base tag from which the tags should be exported."
-msgstr "Выбрать все метки, которые нужно обработать"
+msgstr "Выберите базовую метку, из которой необходимо экспортировать метки."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:181
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
-msgstr ""
+msgstr "Выбранная метка не является базовой меткой на верхнем уровне иерархии."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
-msgstr "Экспорт в локальное хранилище"
+msgstr "Экспорт файла меток контролируемого словаря"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:190
 #: core/libs/tags/manager/tagsmanager_io.cpp:308
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "Текстовые файлы XMP (*.xmp)"
+msgstr "Текстовый файл (*.txt)"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a tag into which the tags should be imported."
-msgstr "Выбрать все метки, которые нужно обработать"
+msgstr "Выберите метку, до которой должны быть импортированы метки."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:298
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
-msgstr ""
+msgstr "Нельзя импортировать метки в выбранную метку лица."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:307
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
-msgstr ""
+msgstr "Импорт файла меток контролируемого словаря"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:406
 #, kde-format
@@ -41026,16 +40800,13 @@ msgstr[2] "Удалить выбранные метки со всех изобр
 msgstr[3] "Удалить выбранную метку со всех изображений?"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Add Tag"
-msgstr "Создание метки"
+msgstr "Добавить метку"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:93
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Remove Tag"
 msgstr "Удалить метку"
@@ -41132,16 +40903,14 @@ msgid "Wipe all tags from Database only"
 msgstr "Удалить все метки только из базы данных"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:227
-#, fuzzy, kde-format
-#| msgid "Edit title from selected tag."
+#, kde-format
 msgid "Export tags to a file from selected tag"
-msgstr "Изменить название выбранной метки."
+msgstr "Экспорт меток в файл из выбранной метки"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:230
-#, fuzzy, kde-format
-#| msgid "Import all tags from a file to restore a backup."
+#, kde-format
 msgid "Import tags from a file to selected tag"
-msgstr "Импорт всех меток из файла для восстановления резервной копии."
+msgstr "Импорт меток из файла в выбранную метку"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:232
 #, kde-format
@@ -45452,19 +45221,73 @@ msgid "XMP text Files (*.xmp)"
 msgstr "Текстовые файлы XMP (*.xmp)"
 
 # utilities/assistants/htmlgallery/wizard/htmloutputpage.cpp:102: "Не открывать" --aspotashev
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Нет"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Red"
+msgstr "Красный"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Orange"
+msgstr "Оранжевый"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Yellow"
+msgstr "Жёлтый"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Green"
+msgstr "Зелёный"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Blue"
+msgstr "Синий"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Magenta"
+msgstr "Пурпурный"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Gray"
+msgstr "Серый"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#, kde-format
+msgctxt "@item: color tree"
+msgid "Black"
+msgstr "Чёрный"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#, kde-format
+msgctxt "@item: color tree"
+msgid "White"
+msgstr "Белый"
+
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "Цветовой ярлык: %1"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
@@ -45478,8 +45301,7 @@ msgid "None"
 msgstr "Нет"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-#| msgid "Pick Label: %1"
+#, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
 msgstr "Ярлык отбора: %1"
@@ -48069,12 +47891,10 @@ msgid "Macao"
 msgstr "Макао"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Macedonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "North Macedonia"
-msgstr "Македония"
+msgstr "Северная Македония"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
 #, kde-format
@@ -48173,12 +47993,10 @@ msgid "Mongolia"
 msgstr "Монголия"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "Монтсеррат"
+msgstr "Черногория"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -49839,17 +49657,7 @@ msgid "Select here the online engine to translate text"
 msgstr "Выберите онлайн-движок для перевода текста"
 
 #: core/libs/widgets/text/localizeconfig.cpp:230
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>The translator engine is an online Web-service used to translate "
-#| "text from one language to another one. This feature is available on "
-#| "metadata option where alternative language is supported, as Title, "
-#| "Caption, etc. The translation process is fully automatized but it "
-#| "requires an Internet connection to work.</para><para>User can select the "
-#| "more appropriate translator engine depending of desired target language, "
-#| "as not all world-wide languages are supported by online Web-services.</"
-#| "para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>The translator engine is an online Web-service used to translate text "
@@ -49866,7 +49674,7 @@ msgstr ""
 "Процесс перевода полностью автоматизирован, но он требует наличия интернет-"
 "соединения для работы.</para><para>Пользователь может выбирать более "
 "подходящий движок в зависимости от желаемого целевого языка, потому что "
-"некоторыми онлайн-службами не поддерживаются некоторые языки.</para>"
+"некоторые языки не поддерживаются некоторыми онлайн-службами.</para>"
 
 #: core/libs/widgets/text/localizeconfig.cpp:320
 #, kde-format
@@ -52113,21 +51921,19 @@ msgid "First Letter of Each Word Uppercase"
 msgstr "Каждое Слово С Прописной Буквы"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
+#, kde-format
 msgid "Date Format"
-msgstr "Формат даты:"
+msgstr "Формат даты"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
-#, fuzzy, kde-format
+#, kde-format
 msgid "Recognize and format a date"
-msgstr "Распознать лица"
+msgstr "Распознавание и форматирование даты"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
 #, kde-format
 msgid "Recognize and format a date to string"
-msgstr ""
+msgstr "Распознавать и форматировать дату в виде строки"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
 #, kde-format
@@ -53461,17 +53267,7 @@ msgstr ""
 "работы программы.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53483,14 +53279,15 @@ msgid ""
 "files, so it is not recommended to do it for the moment, and therefore use "
 "at your own risk.</p></qt>"
 msgstr ""
-"<qt> <br> <p>При первоначальном использовании digiKam данное предупреждение "
-"может быть проигнорировано:</p> <p><b>Переход с digiKam версии 4</b></p> "
-"<p>Файлы настроек digiKam 4 не переносятся. База данных предыдущей версии "
-"может быть использована после утонения расположения коллекций и БД.  Перед "
-"началом переноса рекомендуется выполнить резервное копирование базы данных</"
-"p> <p>Новое расположение файлов конфигурации — «%1» (старое было «%2»). При "
-"использовании файлов конфигурации от предыдущей версии возникают "
-"неразрешимые проблемы, поэтому их использование не рекомендуется.</p> </qt>"
+"<qt><br><p>При первоначальном использовании digiKam данное предупреждение "
+"можно проигнорировать:</p><p><b>Переход с digiKam версии 4</b></p><p>Файлы "
+"конфигурации digiKam версии 4 не будут перенесены. Базу данных предыдущей "
+"версии можно использовать после настройки расположения коллекций и базы "
+"данных в соответствующих диалогах. Перед началом переноса рекомендуется "
+"выполнить резервное копирование базы данных.</p><p>Новое расположение файлов "
+"конфигурации — %1 (старое: %2). При использовании файлов конфигурации от "
+"предыдущей версии возникают неразрешимые проблемы, поэтому их использование "
+"не рекомендуется.</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
@@ -53675,12 +53472,10 @@ msgstr ""
 "альбом с эталонным изображением из поиска."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "Обновить контрольные строки"
+msgstr "Обновить все отпечатки"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
@@ -54001,8 +53796,7 @@ msgid "m"
 msgstr "м"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
 msgstr "мм"
@@ -58152,10 +57946,9 @@ msgid "Look up missing altitude values"
 msgstr "Найти недостающие значения высот"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
-#, fuzzy, kde-format
-#| msgid "Images with coordinates"
+#, kde-format
 msgid "Items have different coordinates."
-msgstr "Изображения с координатами"
+msgstr "Объекты имеют разные координаты."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
@@ -60097,47 +59890,22 @@ msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Не удалось переключить файл блокировки <b>%1</b>. Продолжить?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
-msgstr ""
-"Название: «%1»\n"
-"Модель: «%2»\n"
-"Порт: «%3»\n"
-"Путь: «%4»\n"
-"\n"
+msgstr "Название: «%1»<br>Модель: «%2»<br>Порт: «%3»<br>Путь: «%4»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"Миниатюры: «%1»\n"
-"Снято изображений: «%2»\n"
-"Удалённые объекты: «%3»\n"
-"Загруженные объекты: «%4»\n"
-"Созданные каталоги: «%5»\n"
-"Удалённые каталоги: «%6»\n"
-"\n"
+"Миниатюры: «%1»<br>Снято изображений: «%2»<br>Удалённые объекты: "
+"«%3»<br>Загруженные объекты: «%4»<br>Созданные каталоги: «%5»<br>Удалённые "
+"каталоги: «%6»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -60162,66 +59930,35 @@ msgid "no"
 msgstr "нет"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
 "Драйвер «Примонтированная камера» для камер с большим объёмом памяти, "
-"подключаемых по стандарту USB/IEEE1394, и устройств чтения карт памяти.\n"
+"подключаемых по стандарту USB/IEEE1394, и устройств чтения карт памяти."
+"<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
-msgstr ""
-"Название: %1\n"
-"Модель: %2\n"
-"Порт: %3\n"
-"Путь: %4\n"
-"UUID: %5\n"
-"\n"
+msgstr "Название: %1<br>Модель: %2<br>Порт: %3<br>Путь: %4<br>UUID: %5<br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"Миниатюры: «%1»\n"
-"Снято изображений: «%2»\n"
-"Удалённые объекты: «%3»\n"
-"Загруженные объекты: «%4»\n"
-"Созданные каталоги: «%5»\n"
-"Удалённые каталоги: «%6»\n"
-"\n"
+"Миниатюры: «%1»<br>Снято изображений: «%2»<br>Удалённые объекты: "
+"«%3»<br>Загруженные объекты: «%4»<br>Созданные каталоги: «%5»<br>Удалённые "
+"каталоги: «%6»<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -60256,18 +59993,7 @@ msgstr ""
 "«Поддерживаемые цифровые фотоаппараты» руководства пользователя digiKam."
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -60276,14 +60002,10 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "Драйвер «Примонтированная камера» — это простой интерфейс к устройству "
-"хранения камеры, примонтированному локально к файловой системе.\n"
-"\n"
-"Он не использует драйверы libgphoto2.\n"
-"\n"
-"Чтобы сообщить о каких-либо проблемах с этим драйвером, следует связаться с "
-"командой разработчиков digiKam по этому адресу:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"хранения камеры, примонтированному локально к файловой системе.<br><br>Он не "
+"использует драйверы libgphoto2.<br><br>Чтобы сообщить о каких-либо проблемах "
+"с этим драйвером, следует связаться с командой разработчиков digiKam по "
+"этому адресу:<br><br>https://www.digikam.org/support/contact/"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format
@@ -63447,33 +63169,27 @@ msgid "The type of the lens"
 msgstr "Тип объектива"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:438
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items without a camera ..."
-msgstr "Вернуть записи без областей с лицами"
+msgstr "Вернуть записи без данных фотоаппарата ..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "Производитель"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Модель"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
-#, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Без светофильтра"
+msgstr "Тип объектива"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -64572,20 +64288,16 @@ msgstr ""
 "предварительном просмотре изображения."
 
 #: core/utilities/setup/album/setupalbumview.cpp:309
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
+#, kde-format
 msgid "Auto play of videos or animations"
-msgstr "Сохранять изменения автоматически"
+msgstr "Автоматическое воспроизведение видео или анимации"
 
 #: core/utilities/setup/album/setupalbumview.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
-"Отключите этот параметр, если нет необходимости масштабировать маленькие "
-"изображения в соответствии с размером окна."
+"Снимите этот флажок, чтобы видео или анимация не воспроизводились "
+"автоматически."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format
@@ -65351,11 +65063,7 @@ msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Отслеживать внешние изменения в альбомах (требуется перезапуск)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "
@@ -65364,7 +65072,7 @@ msgstr ""
 "<b>Примечание: функция отслеживания внешних изменений в альбомах использует "
 "ресурсы системы и может замедлять работу digiKam. Эту функцию не следует "
 "использовать при работе в MacOS при наличии коллекций, расположенных на "
-"сетевых ресурсах."
+"сетевых ресурсах.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
 #, kde-format
@@ -65631,21 +65339,18 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
-msgstr ""
+msgstr "Расположение файлов модели распознавания лиц:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
-#, fuzzy, kde-format
-#| msgid "Use Face Management feature"
+#, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
-msgstr "Использовать функцию управления лицами"
+msgstr "Цель модели управления лицами"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, fuzzy, kde-format
-#| msgid "Sets the target address to copy the items to."
+#, kde-format
 msgid "Sets the target address to download the face management model files to."
-msgstr ""
-"Установить адрес конечной папки, в которую будут скопированы изображения."
+msgstr "Задаёт целевой адрес для загрузки файлов модели управления лицом."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
@@ -65741,15 +65446,7 @@ msgstr ""
 "требуются файлы моделей управления лицами.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some required files are missing. Click “Download” to start installing "
-#| "the necessary model files. If you close this dialog you will be prompted "
-#| "again the next time you launch digiKam. The selected features will not "
-#| "function without these files.</p><p>The files will be downloaded to \"<i>"
-#| "%1</i>\".</p><p><b>You must restart digiKam after successfully "
-#| "downloading the files.</b></p>"
+#, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
@@ -65760,8 +65457,8 @@ msgstr ""
 "<p>Отсутствует часть необходимых файлов. Нажмите кнопку «Скачать», чтобы "
 "начать их установку. Можно отменить этот процесс, это окно будет показано "
 "снова при следующем запуске digiKam. Без этих файлов выбранные функции не "
-"будут работать.</p><p>Файлы будут загружены в «<i>%1</i>».</p><p><b>После "
-"успешной загрузки необходимо будет перезапустить digiKam.</b></p>"
+"будут работать.</p><p><b>После успешной загрузки необходимо будет "
+"перезапустить digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, kde-format
@@ -66058,13 +65755,7 @@ msgid "JPEG"
 msgstr "JPEG"
 
 #: core/utilities/setup/editor/setupversioning.cpp:171
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving Versionned Images</"
-#| "title><para>Select the file format in which edited images are saved "
-#| "automatically. Format-specific options, like compression settings, can be "
-#| "configured on the <interface>Format Options</interface> tab.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Default File Format for Saving Versioned Images</title><para>Select "
@@ -66073,10 +65764,10 @@ msgid ""
 "<interface>Format Options</interface> tab.</para>"
 msgstr ""
 "<title>Формат по умолчанию для сохранения версий файлов</"
-"title><para>Выберите формат файлов, в который изменённые изображения будут "
-"сохраняться автоматически. Параметры, имеющие отношение к конкретному "
-"формату, например параметры сжатия, можно настроить на вкладке "
-"<interface>Параметры формата</interface>.</para>"
+"title><para>Выберите формат файлов, в котором изменённые изображения будут "
+"сохраняться автоматически. Параметры выбранного формата, например параметры "
+"сжатия, можно настроить на вкладке <interface>Параметры формата</interface>."
+"</para>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:181
 #, kde-format
@@ -67339,25 +67030,19 @@ msgstr ""
 "Проверить систему сейчас?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Запустить"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Begin test"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "Начать проверку"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Testing..."
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Проверка..."
@@ -67386,16 +67071,13 @@ msgstr ""
 "ускорение графического процессора для моделей искусственного интеллекта."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Закрыть"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Close the test dialog"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "Закрыть диалог проверки"
@@ -67433,28 +67115,24 @@ msgid "OpenCL is not available on this system."
 msgstr "OpenCL недоступен на этой системе."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, fuzzy, kde-format
-#| msgid "Loading test image..."
+#, kde-format
 msgid "Loading DNN Model test image..."
-msgstr "Загрузка тестового изображения..."
+msgstr "Загрузка тестового изображения DNN-модели..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
-#, fuzzy, kde-format
-#| msgid "Test image not found."
+#, kde-format
 msgid "DNN model test image not found."
-msgstr "Тестовое изображение не найдено."
+msgstr "Тестовое изображение модели DNN не найдено."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, fuzzy, kde-format
-#| msgid "Failed to load test image from %1"
+#, kde-format
 msgid "Failed to load DNN model test image from %1"
-msgstr "Не удалось загрузить тестовое изображение из %1"
+msgstr "Не удалось загрузить тестовое изображение модели DNN из %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
-#, fuzzy, kde-format
-#| msgid "Preparing the image for processing..."
+#, kde-format
 msgid "Preparing the DNN Model image for processing..."
-msgstr "Подготовка изображения для обработки..."
+msgstr "Подготовка изображения DNN-модели для обработки..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
@@ -68448,6 +68126,11 @@ msgid ""
 "In all cases, the color management workflow will try to get in first the "
 "profile set for your monitor in your the desktop</p>"
 msgstr ""
+"<p>Если среда рабочего стола не предусматривает цветовой профиль для экрана, "
+"здесь можно выбрать цветовой профиль по умолчанию. Если профиль не указан, "
+"будет использоваться резервный профиль sRGB. Во всех случаях процедура "
+"управления цветом сначала попытается использовать профиль, установленный для "
+"монитора рабочей средой.</p>"
 
 #: core/utilities/setup/setupicc.cpp:331
 #, kde-format
@@ -69158,29 +68841,22 @@ msgid "Import Items"
 msgstr "Импорт"
 
 #, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera maker"
 #~ msgid "No Camera Make"
 #~ msgstr "Производитель камеры"
 
 #, fuzzy
-#~| msgid "Return items without face regions"
 #~ msgid "Return items without a camera model"
 #~ msgstr "Вернуть записи без областей с лицами"
 
 #, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera model"
 #~ msgid "No Camera Model"
 #~ msgstr "Модель камеры"
 
 #, fuzzy
-#~| msgid "Return items without tags"
 #~ msgid "Return items without a lens type"
 #~ msgstr "Вернуть записи без меток"
 
 #, fuzzy
-#~| msgid "No script selected"
 #~ msgid "no source selected"
 #~ msgstr "Нет выбранных сценариев"
 
@@ -69204,14 +68880,11 @@ msgstr "Импорт"
 #~ msgstr "Twitter"
 
 #, fuzzy
-#~| msgctxt "@action: button"
-#~| msgid "Start"
 #~ msgctxt "@action:button start the AI GUP test"
 #~ msgid "Start"
 #~ msgstr "Запустить"
 
 #, fuzzy
-#~| msgid "Close"
 #~ msgctxt "@action:button start the AI GUP test"
 #~ msgid "Close"
 #~ msgstr "Закрыть"
@@ -69241,8 +68914,6 @@ msgstr "Импорт"
 #~ msgstr "%v / %m"
 
 #, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Subject Information"
 #~ msgid "Subject Segmentation:"
 #~ msgstr "Сведения о теме"
 
@@ -69251,8 +68922,6 @@ msgstr "Импорт"
 #~ msgstr "Ярлык отбора: %1"
 
 #, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Segmentation mode:"
 #~ msgid "Segmentation Iterations:"
 #~ msgstr "Режим сегментации:"
 
