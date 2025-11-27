@@ -27,6 +27,7 @@ namespace Digikam
 ColorLabelFilter::ColorLabelFilter(QWidget* const parent)
     : ColorLabelWidget(parent)
 {
+    setDescriptionBoxVisible(false);
     setButtonsExclusive(false);
     reset();
 
