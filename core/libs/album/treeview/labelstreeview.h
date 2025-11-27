@@ -130,7 +130,7 @@ private Q_SLOTS:
 Q_SIGNALS:
 
     void signalSetCurrentAlbum();
-    void signalColorNameChanged(const QString& color, const QString& name);
+    void signalColorNameChanged(int, const QString& name);
 
 private:
 

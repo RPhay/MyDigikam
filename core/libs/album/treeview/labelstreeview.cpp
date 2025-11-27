@@ -45,7 +45,7 @@
 #include "applicationsettings.h"
 #include "dnotificationwrapper.h"
 #include "digikamapp.h"
-#include "colorlabelwidget.h"
+#include "tagsactionmngr.h"
 #include "ratingwidget.h"
 #include "dbjobsmanager.h"
 
@@ -120,6 +120,9 @@ LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSettingsChanged()));
+
+    connect(this, SIGNAL(signalColorNameChanged(int,QString)),
+            TagsActionMngr::defaultManager(), SLOT(slotColorNameChanged(int,QString)));
 
     connect(ThemeManager::instance(), &ThemeManager::signalThemeChanged,
             this, [this]()
@@ -351,15 +354,6 @@ void LabelsTreeView::doLoadState()
         }
     }
 
-    QMap<QString, QString> map = ColorLabelWidget::loadColorNames();
-
-    for (int i = 0 ; i < d->colors->childCount() ; i++)
-    {
-        QTreeWidgetItem* const item = d->colors->child(i);
-        QString color               = item->data(0, Qt::UserRole).toString();
-        item->setText(0, map.value(color));
-    }
-
     d->isLoadingState = false;
 }
 
@@ -389,20 +383,6 @@ void LabelsTreeView::doSaveState()
     configGroup.writeEntry(entryName(d->configRatingSelectionEntry), labels[Ratings]);
     configGroup.writeEntry(entryName(d->configPickSelectionEntry),   labels[Picks]);
     configGroup.writeEntry(entryName(d->configColorSelectionEntry),  labels[Colors]);
-
-    // ---
-
-    KSharedConfigPtr config  = KSharedConfig::openConfig();
-    KConfigGroup group       = config->group(ColorLabelWidget::s_configColorNamesGroup);
-
-    for (int i = 0 ; i < d->colors->childCount() ; i++)
-    {
-        QTreeWidgetItem* const item = d->colors->child(i);
-        QString color               = item->data(0, Qt::UserRole).toString();
-        QString name                = item->text(0);
-
-        group.writeEntry(ColorLabelWidget::s_configColorNameEntry + color, name);
-    }
 }
 
 void LabelsTreeView::setCurrentAlbum()
@@ -495,37 +475,33 @@ void LabelsTreeView::initPicksTree()
 
 void LabelsTreeView::initColorsTree()
 {
-    d->colors                      = getOrCreateItem(nullptr);
+    QMap<int, QString> map = TagsActionMngr::defaultManager()->colorLabelNames();
+    d->colors              = getOrCreateItem(nullptr);
     d->colors->setText(0, i18nc("@item: color tree", "Color"));
     d->colors->setFont(0, d->regularFont);
     d->colors->setFlags(Qt::ItemIsEnabled);
 
-    QTreeWidgetItem* const noColor = getOrCreateItem(d->colors);
-    noColor->setText(0, i18nc("@item: color tree", "No Color"));
-    noColor->setFont(0, d->regularFont);
-    noColor->setIcon(0, QIcon(QIcon::fromTheme(QLatin1String("emblem-unmounted")).pixmap(64, 64)));
-    noColor->setData(0, Qt::UserRole, ColorLabelWidget::s_colorSet.last());
-
-    if (!d->isCheckableTreeView)
+    for (int label : map.keys())
     {
-        noColor->setFlags(noColor->flags() | Qt::ItemIsEditable);
-    }
+        QTreeWidgetItem* const colorWidgetItem = getOrCreateItem(d->colors);
+        colorWidgetItem->setData(0, Qt::UserRole, label);
+        colorWidgetItem->setFont(0, d->regularFont);
+        colorWidgetItem->setText(0, map.value(label));
 
-    for (const QString& color : std::as_const(ColorLabelWidget::s_colorSet))
-    {
-        if (color != ColorLabelWidget::s_colorSet.last())
+        if (label == NoColorLabel)
         {
-            QTreeWidgetItem* const colorWidgetItem = getOrCreateItem(d->colors);
-            colorWidgetItem->setData(0, Qt::UserRole, color);
-            colorWidgetItem->setFont(0, d->regularFont);
-            QPixmap colorIcon                      = colorRectPixmap(QColor(color));
+            colorWidgetItem->setIcon(0, QIcon(QIcon::fromTheme(QLatin1String("emblem-unmounted")).pixmap(64, 64)));
+        }
+        else
+        {
+            QPixmap colorIcon = colorRectPixmap(QColor(TagsActionMngr::colorSet().value(label)));
             colorWidgetItem->setIcon(0, QIcon(colorIcon));
             colorWidgetItem->setSizeHint(0, d->iconSize);
+        }
 
-            if (!d->isCheckableTreeView)
-            {
-                colorWidgetItem->setFlags(colorWidgetItem->flags() | Qt::ItemIsEditable);
-            }
+        if (!d->isCheckableTreeView)
+        {
+            colorWidgetItem->setFlags(colorWidgetItem->flags() | Qt::ItemIsEditable);
         }
     }
 
@@ -534,7 +510,7 @@ void LabelsTreeView::initColorsTree()
         {
             if (changedItem && (changedItem->parent() == d->colors) && (column == 0))
             {
-                Q_EMIT signalColorNameChanged(changedItem->data(0, Qt::UserRole).toString(), changedItem->text(0));
+                Q_EMIT signalColorNameChanged(changedItem->data(0, Qt::UserRole).toInt(), changedItem->text(0));
             }
         }
     );

@@ -39,12 +39,6 @@ class DIGIKAM_EXPORT ColorLabelWidget : public DVBox
 
 public:
 
-    static const QStringList s_colorSet;
-    static const QString s_configColorNameEntry;
-    static const QString s_configColorNamesGroup;
-
-public:
-
     explicit ColorLabelWidget(QWidget* const parent = nullptr);
     ~ColorLabelWidget()                             override;
 
@@ -70,11 +64,6 @@ public:
     QList<ColorLabel> colorLabels() const;
 
 public:
-
-    /**
-     * @brief Load color label names from the config file.
-     */
-    static QMap<QString, QString> loadColorNames();
 
     static QColor  labelColor(ColorLabel label);
     static QString labelColorName(ColorLabel label);

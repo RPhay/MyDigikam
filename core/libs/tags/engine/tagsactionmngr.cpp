@@ -37,6 +37,8 @@
 
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Restore warnings
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
@@ -50,6 +52,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "album.h"
 #include "coredb.h"
 #include "albummanager.h"
@@ -85,14 +88,27 @@ public:
 
     Private() = default;
 
+public:
+
     QMultiMap<int, QAction*>  tagsActionMap;
     QList<KActionCollection*> actionCollectionList;
+    QMap<int, QString>        colorLabelNames;
 
     const QString             ratingShortcutPrefix   = QLatin1String("rateshortcut");
     const QString             tagShortcutPrefix      = QLatin1String("tagshortcut");
     const QString             pickShortcutPrefix     = QLatin1String("pickshortcut");
     const QString             colorShortcutPrefix    = QLatin1String("colorshortcut");
     const QString             noToggleShortcutPrefix = QLatin1String("notoggle");
+
+    QStringList colorNames = QStringList() << i18nc("@item: color tree", "No Color")
+                                           << i18nc("@item: color tree", "Red")    << i18nc("@item: color tree", "Orange")
+                                           << i18nc("@item: color tree", "Yellow") << i18nc("@item: color tree", "Green")
+                                           << i18nc("@item: color tree", "Blue")   << i18nc("@item: color tree", "Magenta")
+                                           << i18nc("@item: color tree", "Gray")   << i18nc("@item: color tree", "Black")
+                                           << i18nc("@item: color tree", "White");
+ 
+    const QString configColorNameEntry  = QLatin1String("ColorName_");
+    const QString configColorNamesGroup = QLatin1String("Color Names");
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -106,12 +122,16 @@ TagsActionMngr::TagsActionMngr(QWidget* const parent)
         m_defaultManager = this;
     }
 
+    loadColorNames();
+
     connect(AlbumManager::instance(), SIGNAL(signalAlbumDeleted(Album*)),
             this, SLOT(slotAlbumDeleted(Album*)));
 }
 
 TagsActionMngr::~TagsActionMngr()
 {
+    saveColorNames();
+
     delete d;
 
     if (m_defaultManager == this)
@@ -549,6 +569,53 @@ void TagsActionMngr::slotAssignFromShortcut()
     // Emit signal to DInfoInterface to broadcast to another component:
 
     Q_EMIT signalShortcutPressed(action->objectName(), val);
+}
+
+void TagsActionMngr::loadColorNames()
+{
+    KSharedConfigPtr config  = KSharedConfig::openConfig();
+    KConfigGroup group       = config->group(d->configColorNamesGroup);
+
+    for (int i = FirstColorLabel ; i <= LastColorLabel ; i ++)
+    {
+        QString color = colorSet().value(i);
+        QString name  = group.readEntry(d->configColorNameEntry + color, d->colorNames.value(i));
+        d->colorLabelNames.insert(i, name);
+    }
+}
+
+void TagsActionMngr::saveColorNames()
+{
+    KSharedConfigPtr config  = KSharedConfig::openConfig();
+    KConfigGroup group       = config->group(d->configColorNamesGroup);
+
+    for (int i = FirstColorLabel ; i <= LastColorLabel ; i ++)
+    {
+        QString color = colorSet().value(i);
+        group.writeEntry(d->configColorNameEntry + color, d->colorLabelNames.value(i));
+    }
+}
+
+QMap<int, QString> TagsActionMngr::colorLabelNames() const
+{
+    return d->colorLabelNames;
+}
+
+void TagsActionMngr::slotColorNameChanged(int label, const QString& name)
+{
+    d->colorLabelNames.insert(label, name);
+}
+
+QStringList TagsActionMngr::colorSet()
+{
+   return (
+           QStringList() << QLatin1String("nocolor")
+                         << QLatin1String("red")      << QLatin1String("orange")
+                         << QLatin1String("yellow")   << QLatin1String("darkgreen")
+                         << QLatin1String("darkblue") << QLatin1String("magenta")
+                         << QLatin1String("darkgray") << QLatin1String("black")
+                         << QLatin1String("white")
+          );
 }
 
 } // namespace Digikam

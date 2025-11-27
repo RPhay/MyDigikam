@@ -18,6 +18,7 @@
 
 #include <QObject>
 #include <QWidget>
+#include <QMap>
 
 class KActionCollection;
 
@@ -70,11 +71,24 @@ public:
     QString pickShortcutPrefix()                    const;
     QString colorShortcutPrefix()                   const;
 
+    /**
+     * @brief return the current map of color label names ordered by ColorLabel enum.
+     */
+    QMap<int, QString> colorLabelNames()            const;
+
+    static QStringList colorSet();
+
+public:
+
     static TagsActionMngr* defaultManager();
 
 Q_SIGNALS:
 
     void signalShortcutPressed(const QString& shortcut, int val);
+
+public Q_SLOTS:
+
+    void slotColorNameChanged(int label, const QString& name);
 
 private Q_SLOTS:
 
@@ -101,6 +115,9 @@ private:
     bool createRatingActionShortcut(KActionCollection* const ac, int rating);
     bool createPickLabelActionShortcut(KActionCollection* const ac, int pickId);
     bool createColorLabelActionShortcut(KActionCollection* const ac, int colorId);
+
+    void loadColorNames();
+    void saveColorNames();
 
 private:
 
