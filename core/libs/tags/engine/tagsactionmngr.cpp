@@ -600,6 +600,19 @@ QMap<int, QString> TagsActionMngr::colorLabelNames() const
 void TagsActionMngr::slotColorNameChanged(int label, const QString& name)
 {
     d->colorLabelNames.insert(label, name);
+
+    for (KActionCollection* const col : std::as_const(d->actionCollectionList))
+    {
+        for (QAction* const ac : col->actions())
+        {
+            if (ac->objectName().startsWith(d->colorShortcutPrefix))
+            {
+                ac->setToolTip(d->colorLabelNames.value(label));
+            }
+        }
+    }
+
+    Q_EMIT signalColorLabelNamesUpdated();
 }
 
 QStringList TagsActionMngr::colorSet()

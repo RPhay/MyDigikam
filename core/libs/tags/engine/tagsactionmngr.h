@@ -86,6 +86,7 @@ Q_SIGNALS:
 
     void signalShortcutPressed(const QString& shortcut, int val);
     void signalTagsActionCollectionsRegistered();
+    void signalColorLabelNamesUpdated();
 
 public Q_SLOTS:
 

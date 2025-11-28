@@ -123,8 +123,8 @@ LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSettingsChanged()));
 
-    connect(this, SIGNAL(signalColorNameChanged(int,QString)),
-            TagsActionMngr::defaultManager(), SLOT(slotColorNameChanged(int,QString)));
+    connect(this, &LabelsTreeView::signalColorNameChanged,
+            TagsActionMngr::defaultManager(), &TagsActionMngr::slotColorNameChanged);
 
     connect(ThemeManager::instance(), &ThemeManager::signalThemeChanged,
             this, [this]()
@@ -512,7 +512,11 @@ void LabelsTreeView::initColorsTree()
         {
             if (changedItem && (changedItem->parent() == d->colors) && (column == 0))
             {
-                Q_EMIT signalColorNameChanged(changedItem->data(0, Qt::UserRole).toInt(), changedItem->text(0));
+                Q_EMIT signalColorNameChanged(changedItem->data(
+                                                                0,
+                                                                Qt::UserRole).toInt(),
+                                                                changedItem->text(0)
+                                                               );
             }
         }
     );

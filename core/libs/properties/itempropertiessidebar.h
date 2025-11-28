@@ -96,7 +96,7 @@ protected:
 
     QRect                       m_currentRect;
 
-    QUrl                        m_currentURL;
+    QUrl                        m_currentUrl;
 
     DImg*                       m_image                     = nullptr;
 

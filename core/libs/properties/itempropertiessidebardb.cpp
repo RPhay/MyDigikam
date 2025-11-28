@@ -48,6 +48,7 @@
 #include "itempropertiesversionstab.h"
 #include "itemposition.h"
 #include "tagscache.h"
+#include "tagsactionmngr.h"
 #include "dtrash.h"
 
 #ifdef HAVE_GEOLOCATION
@@ -127,6 +128,9 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotLoadMetadataFilters()));
+
+    connect(TagsActionMngr::defaultManager(), SIGNAL(signalColorLabelNamesUpdated()),
+            this, SLOT(slotColorLabelNamesUpdated()));
 }
 
 ItemPropertiesSideBarDB::~ItemPropertiesSideBarDB()
@@ -156,7 +160,7 @@ void ItemPropertiesSideBarDB::itemChanged(const QUrl& url,
         return;
     }
 
-    m_currentURL = url;
+    m_currentUrl = url;
 
     // Special case if item come from a trash view. ItemInfo will be empty as item is removed from the database.
     // We need to use the DMetadata based method to populated the properties view.
@@ -187,7 +191,7 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos, const ItemI
         return;
     }
 
-    m_currentURL = infos.first().fileUrl();
+    m_currentUrl = infos.first().fileUrl();
 
     itemChanged(infos, allInfos, QRect(), nullptr, DImageHistory());
 }
@@ -259,16 +263,16 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
 
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
-        m_propertiesTab->setCurrentURL(m_currentURL);
-        m_selectionPropertiesTab->setCurrentURL(m_currentURL);
+        m_propertiesTab->setCurrentURL(m_currentUrl);
+        m_selectionPropertiesTab->setCurrentURL(m_currentUrl);
 
         if      (d->currentInfos.isEmpty())
         {
-            ItemPropertiesSideBar::setImagePropertiesInformation(m_currentURL);
+            ItemPropertiesSideBar::setImagePropertiesInformation(m_currentUrl);
         }
         else if (d->currentInfos.count() == 1)
         {
-            setImagePropertiesInformation(m_currentURL);
+            setImagePropertiesInformation(m_currentUrl);
             m_propertiesStackedView->setCurrentWidget(m_propertiesTab);
         }
         else
@@ -300,11 +304,11 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
         else if (m_image)
         {
             QScopedPointer<DMetadata> data(new DMetadata(m_image->getMetadata()));
-            m_metadataTab->setCurrentData(data.data(), m_currentURL);
+            m_metadataTab->setCurrentData(data.data(), m_currentUrl);
         }
         else
         {
-            m_metadataTab->setCurrentURL(m_currentURL);
+            m_metadataTab->setCurrentURL(m_currentUrl);
         }
 
         m_dirtyMetadataTab = true;
@@ -329,7 +333,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
         }
         else
         {
-            m_colorTab->setData(m_currentURL, m_currentRect, m_image);
+            m_colorTab->setData(m_currentUrl, m_currentRect, m_image);
         }
 
         m_dirtyColorTab = true;
@@ -360,7 +364,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
     {
         if (d->currentInfos.count() == 0)
         {
-            m_gpsTab->setCurrentURL(m_currentURL);
+            m_gpsTab->setCurrentURL(m_currentUrl);
         }
         else
         {
@@ -421,7 +425,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
 
 void ItemPropertiesSideBarDB::slotFileMetadataChanged(const QUrl& url)
 {
-    if (url == m_currentURL)
+    if (url == m_currentUrl)
     {
         // trigger an update
 
@@ -627,6 +631,11 @@ void ItemPropertiesSideBarDB::refreshTagsView()
 /*
     d->desceditTab->refreshTagsView();
 */
+}
+
+void ItemPropertiesSideBarDB::slotColorLabelNamesUpdated()
+{
+    setImagePropertiesInformation(m_currentUrl);
 }
 
 void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)

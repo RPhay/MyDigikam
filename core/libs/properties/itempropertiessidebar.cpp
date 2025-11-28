@@ -100,7 +100,7 @@ void ItemPropertiesSideBar::itemChanged(const QUrl& url, const QRect& rect, DImg
         return;
     }
 
-    m_currentURL         = url;
+    m_currentUrl         = url;
     m_currentRect        = rect;
     m_image              = img;
     m_dirtyPropertiesTab = false;
@@ -114,7 +114,7 @@ void ItemPropertiesSideBar::itemChanged(const QUrl& url, const QRect& rect, DImg
 
 void ItemPropertiesSideBar::slotNoCurrentItem()
 {
-    m_currentURL = QUrl();
+    m_currentUrl = QUrl();
 
     m_selectionPropertiesTab->setCurrentURL();
     m_propertiesTab->setCurrentURL();
@@ -150,7 +150,7 @@ void ItemPropertiesSideBar::slotImageSelectionChanged(const QRect& rect)
 
 void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 {
-    if (!m_currentURL.isValid())
+    if (!m_currentUrl.isValid())
     {
 
 #ifdef HAVE_GEOLOCATION
@@ -166,18 +166,18 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
-        m_propertiesTab->setCurrentURL(m_currentURL);
-        setImagePropertiesInformation(m_currentURL);
+        m_propertiesTab->setCurrentURL(m_currentUrl);
+        setImagePropertiesInformation(m_currentUrl);
         m_dirtyPropertiesTab = true;
     }
     else if ((tab == m_metadataTab) && !m_dirtyMetadataTab)
     {
-        m_metadataTab->setCurrentURL(m_currentURL);
+        m_metadataTab->setCurrentURL(m_currentUrl);
         m_dirtyMetadataTab = true;
     }
     else if ((tab == m_colorTab) && !m_dirtyColorTab)
     {
-        m_colorTab->setData(m_currentURL, m_currentRect, m_image);
+        m_colorTab->setData(m_currentUrl, m_currentRect, m_image);
         m_dirtyColorTab = true;
     }
 
@@ -185,7 +185,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 
     else if ((tab == m_gpsTab) && !m_dirtyGpsTab)
     {
-        m_gpsTab->setCurrentURL(m_currentURL);
+        m_gpsTab->setCurrentURL(m_currentUrl);
         m_dirtyGpsTab = true;
     }
 

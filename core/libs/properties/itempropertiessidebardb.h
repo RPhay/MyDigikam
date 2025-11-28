@@ -105,6 +105,7 @@ private Q_SLOTS:
     void slotImageChangeDatabase(const ImageChangeset& changeset);
     void slotImageTagChanged(const ImageTagChangeset& changeset);
     void slotPropertiesButtonPressed(int);
+    void slotColorLabelNamesUpdated();
 
 private:
 
