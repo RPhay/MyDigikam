@@ -40,6 +40,13 @@ ColorLabelFilter::ColorLabelFilter(QWidget* const parent)
            setDescriptionBoxVisible(false);
        }
     );
+
+    connect(TagsActionMngr::defaultManager(), &TagsActionMngr::signalColorLabelNamesUpdated,
+            [this]()
+       {
+           setDescriptionBoxVisible(false);
+       }
+    );
 }
 
 void ColorLabelFilter::reset()
