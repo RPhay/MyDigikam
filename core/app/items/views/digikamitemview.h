@@ -52,7 +52,7 @@ public:
     ItemViewUtilities* utilities()                                                           const;
 
     int  fitToWidthIcons();
-    bool getFaceMode()                                                                       const;
+    bool isPeopleViewMode()                                                                  const;
     QList<int> getFaceIds(const QList<QModelIndex>& indexes)                                 const;
 
     void setThumbnailSize(const ThumbnailSize& size)                                               override;

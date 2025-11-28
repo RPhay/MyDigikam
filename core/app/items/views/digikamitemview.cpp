@@ -323,7 +323,7 @@ ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
     return infos;
 }
 
-bool DigikamItemView::getFaceMode() const
+bool DigikamItemView::isPeopleViewMode() const
 {
     return (d->sidebarViewMode == PeopleView);
 }
@@ -438,7 +438,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     if (album)
     {
-        needFastRemove = (getFaceMode() && (tagId != album->id()));
+        needFastRemove = (isPeopleViewMode() && (tagId != album->id()));
     }
 
     for (const QModelIndex& index : std::as_const(indexes))
@@ -884,7 +884,7 @@ void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
                               ProgressManager::instance()->findItembyId(FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource::BQM))
                              );
 
-    if ((viewMode() == QListView::IconMode) && getFaceMode() && runningFaceAction)
+    if ((viewMode() == QListView::IconMode) && isPeopleViewMode() && runningFaceAction)
     {
         return;
     }

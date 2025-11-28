@@ -79,7 +79,7 @@ void ItemIconView::setAllGroupsOpen(bool open)
 {
     ApplicationSettings::instance()->setAllGroupsOpen(open);
 
-    if (!d->iconView->getFaceMode())
+    if (!d->iconView->isPeopleViewMode())
     {
         d->iconView->itemFilterModel()->setAllGroupsOpen(open);
     }
