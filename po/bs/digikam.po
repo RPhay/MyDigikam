@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-27 00:41+0000\n"
+"POT-Creation-Date: 2025-11-28 00:40+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1125,14 +1125,14 @@ msgstr ""
 msgid "Album \"%1\""
 msgstr "Album \"%1\""
 
-#: core/app/items/utils/tooltipfiller.cpp:72
+#: core/app/items/utils/tooltipfiller.cpp:75
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "Svojstve datoteke"
 
-#: core/app/items/utils/tooltipfiller.cpp:77
+#: core/app/items/utils/tooltipfiller.cpp:80
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
@@ -1140,8 +1140,8 @@ msgctxt "filename"
 msgid "Name:"
 msgstr "Naziv:"
 
-#: core/app/items/utils/tooltipfiller.cpp:85
-#: core/app/items/utils/tooltipfiller.cpp:608
+#: core/app/items/utils/tooltipfiller.cpp:88
+#: core/app/items/utils/tooltipfiller.cpp:632
 #: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
@@ -1150,7 +1150,7 @@ msgstr "Naziv:"
 msgid "Date:"
 msgstr "Datum:"
 
-#: core/app/items/utils/tooltipfiller.cpp:90
+#: core/app/items/utils/tooltipfiller.cpp:93
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:300
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
@@ -1160,8 +1160,8 @@ msgstr "Datum:"
 msgid "Size:"
 msgstr "Veličina:"
 
-#: core/app/items/utils/tooltipfiller.cpp:92
-#: core/app/items/utils/tooltipfiller.cpp:224
+#: core/app/items/utils/tooltipfiller.cpp:95
+#: core/app/items/utils/tooltipfiller.cpp:227
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
@@ -1170,7 +1170,7 @@ msgstr "Veličina:"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/items/utils/tooltipfiller.cpp:98
+#: core/app/items/utils/tooltipfiller.cpp:101
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
@@ -1184,7 +1184,7 @@ msgstr "%1 (%2)"
 msgid "Type:"
 msgstr "Vrsta:"
 
-#: core/app/items/utils/tooltipfiller.cpp:106
+#: core/app/items/utils/tooltipfiller.cpp:109
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
@@ -1192,7 +1192,7 @@ msgctxt "unknown / invalid image dimension"
 msgid "Unknown"
 msgstr "Nepoznata"
 
-#: core/app/items/utils/tooltipfiller.cpp:111
+#: core/app/items/utils/tooltipfiller.cpp:114
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1044
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
@@ -1201,33 +1201,33 @@ msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/app/items/utils/tooltipfiller.cpp:115
+#: core/app/items/utils/tooltipfiller.cpp:118
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
 msgstr "Dimenzije:"
 
-#: core/app/items/utils/tooltipfiller.cpp:123
+#: core/app/items/utils/tooltipfiller.cpp:126
 #, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: core/app/items/utils/tooltipfiller.cpp:126
-#: core/app/items/utils/tooltipfiller.cpp:330
+#: core/app/items/utils/tooltipfiller.cpp:129
+#: core/app/items/utils/tooltipfiller.cpp:333
 #, kde-format
 msgid "Aspect Ratio:"
 msgstr "Omjer dužine i visine slike:"
 
-#: core/app/items/utils/tooltipfiller.cpp:147
+#: core/app/items/utils/tooltipfiller.cpp:150
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
 msgstr "Svojstva fotoaparata"
 
-#: core/app/items/utils/tooltipfiller.cpp:162
+#: core/app/items/utils/tooltipfiller.cpp:165
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
@@ -1235,7 +1235,7 @@ msgstr "Svojstva fotoaparata"
 msgid "Make/Model:"
 msgstr "Proizvođač/Model:"
 
-#: core/app/items/utils/tooltipfiller.cpp:168
+#: core/app/items/utils/tooltipfiller.cpp:171
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
@@ -1244,22 +1244,22 @@ msgctxt "camera lens"
 msgid "Lens:"
 msgstr "Objektiv:"
 
-#: core/app/items/utils/tooltipfiller.cpp:205
-#: core/app/items/utils/tooltipfiller.cpp:210
+#: core/app/items/utils/tooltipfiller.cpp:208
+#: core/app/items/utils/tooltipfiller.cpp:213
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "Napravljeno:"
 
-#: core/app/items/utils/tooltipfiller.cpp:232
+#: core/app/items/utils/tooltipfiller.cpp:235
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "Blenda/Fokus:"
 
-#: core/app/items/utils/tooltipfiller.cpp:238
+#: core/app/items/utils/tooltipfiller.cpp:241
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
@@ -1269,20 +1269,20 @@ msgstr "Blenda/Fokus:"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/items/utils/tooltipfiller.cpp:245
+#: core/app/items/utils/tooltipfiller.cpp:248
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "Ekspozicija/Osetljivost:"
 
-#: core/app/items/utils/tooltipfiller.cpp:272
+#: core/app/items/utils/tooltipfiller.cpp:275
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "Režim/Program:"
 
-#: core/app/items/utils/tooltipfiller.cpp:285
+#: core/app/items/utils/tooltipfiller.cpp:288
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
@@ -1290,176 +1290,176 @@ msgctxt "camera flash settings"
 msgid "Flash:"
 msgstr "Blic:"
 
-#: core/app/items/utils/tooltipfiller.cpp:297
+#: core/app/items/utils/tooltipfiller.cpp:300
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
 msgstr "Balans bijelog:"
 
-#: core/app/items/utils/tooltipfiller.cpp:319
+#: core/app/items/utils/tooltipfiller.cpp:322
 #: core/utilities/searchwindow/searchgroup.cpp:113
 #, fuzzy, kde-format
 #| msgid "Audio/video properties"
 msgid "Audio/Video Properties"
 msgstr "Audio/video svojstva"
 
-#: core/app/items/utils/tooltipfiller.cpp:362
+#: core/app/items/utils/tooltipfiller.cpp:365
 #, kde-format
 msgid "Duration:"
 msgstr "Trajanje:"
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid "Frame Rate:"
 msgstr "Broj slika po jedinici vremena:"
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid " fps"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:395
+#: core/app/items/utils/tooltipfiller.cpp:398
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
 #, kde-format
 msgid "Video Codec:"
 msgstr "Video kodek:"
 
-#: core/app/items/utils/tooltipfiller.cpp:416
+#: core/app/items/utils/tooltipfiller.cpp:419
 #, kde-format
 msgid "Audio Bit Rate:"
 msgstr "Broj bita po jedinici vremena:"
 
-#: core/app/items/utils/tooltipfiller.cpp:428
+#: core/app/items/utils/tooltipfiller.cpp:431
 #, kde-format
 msgid "Audio Channel Type:"
 msgstr "Tip audio kanala:"
 
-#: core/app/items/utils/tooltipfiller.cpp:440
+#: core/app/items/utils/tooltipfiller.cpp:443
 #, fuzzy, kde-format
 #| msgid "Video Codec:"
 msgid "Audio Codec:"
 msgstr "Video kodek:"
 
-#: core/app/items/utils/tooltipfiller.cpp:457
+#: core/app/items/utils/tooltipfiller.cpp:460
 #, kde-format
 msgid "digiKam Properties"
 msgstr "svojstva digiKam-a"
 
-#: core/app/items/utils/tooltipfiller.cpp:468
+#: core/app/items/utils/tooltipfiller.cpp:471
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "Album:"
 
-#: core/app/items/utils/tooltipfiller.cpp:482
+#: core/app/items/utils/tooltipfiller.cpp:485
 #, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "Naslov:"
 
-#: core/app/items/utils/tooltipfiller.cpp:496
+#: core/app/items/utils/tooltipfiller.cpp:499
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "Natpis:"
 
-#: core/app/items/utils/tooltipfiller.cpp:505
+#: core/app/items/utils/tooltipfiller.cpp:508
 #, kde-format
 msgid "Tags:"
 msgstr "Oznake:"
 
-#: core/app/items/utils/tooltipfiller.cpp:554
+#: core/app/items/utils/tooltipfiller.cpp:556
 #, kde-format
 msgid "Labels:"
 msgstr "Labele:"
 
-#: core/app/items/utils/tooltipfiller.cpp:583
+#: core/app/items/utils/tooltipfiller.cpp:607
 #, kde-format
 msgid "Album Properties"
 msgstr "Osobine albuma"
 
-#: core/app/items/utils/tooltipfiller.cpp:587
-#: core/app/items/utils/tooltipfiller.cpp:668
+#: core/app/items/utils/tooltipfiller.cpp:611
+#: core/app/items/utils/tooltipfiller.cpp:692
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "Ime:"
 
-#: core/app/items/utils/tooltipfiller.cpp:593
+#: core/app/items/utils/tooltipfiller.cpp:617
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "Stavki:"
 
-#: core/app/items/utils/tooltipfiller.cpp:599
+#: core/app/items/utils/tooltipfiller.cpp:623
 #, kde-format
 msgid "Collection:"
 msgstr "Zbirka:"
 
-#: core/app/items/utils/tooltipfiller.cpp:620
+#: core/app/items/utils/tooltipfiller.cpp:644
 #, kde-format
 msgid "Category:"
 msgstr "Kategorija:"
 
-#: core/app/items/utils/tooltipfiller.cpp:633
+#: core/app/items/utils/tooltipfiller.cpp:657
 #, fuzzy, kde-format
 #| msgid "Caption:"
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "Komentar:"
 
-#: core/app/items/utils/tooltipfiller.cpp:639
+#: core/app/items/utils/tooltipfiller.cpp:663
 #, kde-format
 msgid "Preview:"
 msgstr "Pregled:"
 
-#: core/app/items/utils/tooltipfiller.cpp:664
+#: core/app/items/utils/tooltipfiller.cpp:688
 #, kde-format
 msgid "Filter"
 msgstr "Filtriraj"
 
-#: core/app/items/utils/tooltipfiller.cpp:679
+#: core/app/items/utils/tooltipfiller.cpp:703
 #, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "Da"
 
-#: core/app/items/utils/tooltipfiller.cpp:685
+#: core/app/items/utils/tooltipfiller.cpp:709
 #, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "Djelimično"
 
-#: core/app/items/utils/tooltipfiller.cpp:691
+#: core/app/items/utils/tooltipfiller.cpp:715
 #, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "Ne"
 
-#: core/app/items/utils/tooltipfiller.cpp:701
+#: core/app/items/utils/tooltipfiller.cpp:725
 #, kde-format
 msgid "Reproducible:"
 msgstr "Reproduktibilno:"
 
-#: core/app/items/utils/tooltipfiller.cpp:713
+#: core/app/items/utils/tooltipfiller.cpp:737
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "Opis:"
 
-#: core/app/items/utils/tooltipfiller.cpp:718
+#: core/app/items/utils/tooltipfiller.cpp:742
 #, kde-format
 msgid "Identifier:"
 msgstr "Identifikator:"
 
-#: core/app/items/utils/tooltipfiller.cpp:723
+#: core/app/items/utils/tooltipfiller.cpp:747
 #, kde-format
 msgid "Technical Parameters"
 msgstr "Tehnički parametri"
 
-#: core/app/items/utils/tooltipfiller.cpp:742
+#: core/app/items/utils/tooltipfiller.cpp:766
 #, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<i>Binarni podaci</i>"
@@ -3289,21 +3289,21 @@ msgctxt "@info"
 msgid "Face engine is disabled"
 msgstr "Pregled upravljan bojom je isključen."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:204
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:259
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:257
 #, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:279
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:277
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3483,7 +3483,7 @@ msgstr[0] "%1 stavka"
 msgstr[1] "%1 stavke"
 msgstr[2] "%1 stavki"
 
-#: core/app/views/stack/itemiconview.cpp:201
+#: core/app/views/stack/itemiconview.cpp:198
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -29517,7 +29517,7 @@ msgid "No Color"
 msgstr "Bez boje"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -29525,7 +29525,7 @@ msgid "Red"
 msgstr "Crvena"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: color label name"
@@ -29533,7 +29533,7 @@ msgid "Orange"
 msgstr "Narandžasta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -29541,7 +29541,7 @@ msgid "Yellow"
 msgstr "Žuta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -29549,7 +29549,7 @@ msgid "Green"
 msgstr "Zelena"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -29557,7 +29557,7 @@ msgid "Blue"
 msgstr "Plava"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -29565,7 +29565,7 @@ msgid "Magenta"
 msgstr "Purpurna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -29573,7 +29573,7 @@ msgid "Gray"
 msgstr "Siva"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -29581,7 +29581,7 @@ msgid "Black"
 msgstr "Crna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -29705,75 +29705,67 @@ msgstr "Skeniranje lica"
 msgid "Should sub-albums be scanned too?"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:97
+#: core/libs/album/treeview/labelstreeview.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Labele"
 
-#: core/libs/album/treeview/labelstreeview.cpp:430
+#: core/libs/album/treeview/labelstreeview.cpp:412
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Ocjena"
 
-#: core/libs/album/treeview/labelstreeview.cpp:435
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, fuzzy, kde-format
 #| msgid "No Rating"
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Bez procjene"
 
-#: core/libs/album/treeview/labelstreeview.cpp:471
+#: core/libs/album/treeview/labelstreeview.cpp:453
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Odaberi"
 
-#: core/libs/album/treeview/labelstreeview.cpp:476
+#: core/libs/album/treeview/labelstreeview.cpp:458
 #, fuzzy, kde-format
 #| msgid "No Pick"
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Bez izbora"
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:459
 #, fuzzy, kde-format
 #| msgid "Rejected Item"
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Odbijena stavka"
 
-#: core/libs/album/treeview/labelstreeview.cpp:478
+#: core/libs/album/treeview/labelstreeview.cpp:460
 #, fuzzy, kde-format
 #| msgid "Pending Item"
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Stavka u očekivanju"
 
-#: core/libs/album/treeview/labelstreeview.cpp:479
+#: core/libs/album/treeview/labelstreeview.cpp:461
 #, fuzzy, kde-format
 #| msgid "Accepted Item"
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Prihvaćena stavka"
 
-#: core/libs/album/treeview/labelstreeview.cpp:499
+#: core/libs/album/treeview/labelstreeview.cpp:482
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "Boja"
-
-#: core/libs/album/treeview/labelstreeview.cpp:504
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, fuzzy, kde-format
-#| msgid "No Color"
-msgctxt "@item: color tree"
-msgid "No Color"
-msgstr "Bez boje"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, fuzzy, kde-format
@@ -41368,7 +41360,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab_setters.cpp:364
+#: core/libs/properties/itempropertiestab_setters.cpp:378
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -42691,28 +42683,28 @@ msgstr[0] "Ukloni trenutno odabranu vrijednost sa liste"
 msgstr[1] "Ukloni trenutno odabranu vrijednost sa liste"
 msgstr[2] "Ukloni trenutno odabranu vrijednost sa liste"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:218
+#: core/libs/tags/engine/tagsactionmngr.cpp:233
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Pridruži ocjenu \"%1 Zvijezda\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:234
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, fuzzy, kde-format
 #| msgid "Assign Rating \"%1 Star\""
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "Pridruži ocjenu \"%1 Zvijezda\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:270
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Dodijeli Pick labelu \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:277
+#: core/libs/tags/engine/tagsactionmngr.cpp:292
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Dodijeli Color labelu \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:326
+#: core/libs/tags/engine/tagsactionmngr.cpp:342
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Pridruži oznaku \"%1\""
@@ -47796,84 +47788,14 @@ msgstr "Sačuvajte XMP datoteku"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP tekstualne datoteke (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Bez"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, fuzzy, kde-format
-#| msgid "Red"
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "Crvena"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, fuzzy, kde-format
-#| msgid "Orange"
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "Narandžasta"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, fuzzy, kde-format
-#| msgid "Yellow"
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr "Žuta"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, fuzzy, kde-format
-#| msgid "Green"
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "Zelena"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, fuzzy, kde-format
-#| msgid "Blue"
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "Plava"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, fuzzy, kde-format
-#| msgid "Magenta"
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "Purpurna"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, fuzzy, kde-format
-#| msgid "Gray"
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr "Siva"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, fuzzy, kde-format
-#| msgid "Black"
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "Crna"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, fuzzy, kde-format
-#| msgid "White"
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "Bijela"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
-#, fuzzy, kde-format
-#| msgid "Color Label: %1"
-msgctxt "@info: color label selector"
-msgid "Color Label: %1"
-msgstr "Oznaka boje: %1"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"
@@ -73773,6 +73695,72 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgid "No Color"
+#~ msgctxt "@item: color tree"
+#~ msgid "No Color"
+#~ msgstr "Bez boje"
+
+#, fuzzy
+#~| msgid "Red"
+#~ msgctxt "@item: color tree"
+#~ msgid "Red"
+#~ msgstr "Crvena"
+
+#, fuzzy
+#~| msgid "Orange"
+#~ msgctxt "@item: color tree"
+#~ msgid "Orange"
+#~ msgstr "Narandžasta"
+
+#, fuzzy
+#~| msgid "Yellow"
+#~ msgctxt "@item: color tree"
+#~ msgid "Yellow"
+#~ msgstr "Žuta"
+
+#, fuzzy
+#~| msgid "Green"
+#~ msgctxt "@item: color tree"
+#~ msgid "Green"
+#~ msgstr "Zelena"
+
+#, fuzzy
+#~| msgid "Blue"
+#~ msgctxt "@item: color tree"
+#~ msgid "Blue"
+#~ msgstr "Plava"
+
+#, fuzzy
+#~| msgid "Magenta"
+#~ msgctxt "@item: color tree"
+#~ msgid "Magenta"
+#~ msgstr "Purpurna"
+
+#, fuzzy
+#~| msgid "Gray"
+#~ msgctxt "@item: color tree"
+#~ msgid "Gray"
+#~ msgstr "Siva"
+
+#, fuzzy
+#~| msgid "Black"
+#~ msgctxt "@item: color tree"
+#~ msgid "Black"
+#~ msgstr "Crna"
+
+#, fuzzy
+#~| msgid "White"
+#~ msgctxt "@item: color tree"
+#~ msgid "White"
+#~ msgstr "Bijela"
+
+#, fuzzy
+#~| msgid "Color Label: %1"
+#~ msgctxt "@info: color label selector"
+#~ msgid "Color Label: %1"
+#~ msgstr "Oznaka boje: %1"
 
 #, fuzzy
 #~| msgid "Camera maker"

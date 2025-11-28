@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-27 00:41+0000\n"
+"POT-Creation-Date: 2025-11-28 00:40+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1087,14 +1087,14 @@ msgstr "<p>សូម​ជ្រើស​អាល់ប៊ុម​ពី​ប
 msgid "Album \"%1\""
 msgstr "អាល់ប៊ុម \"%1\""
 
-#: core/app/items/utils/tooltipfiller.cpp:72
+#: core/app/items/utils/tooltipfiller.cpp:75
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "លក្ខណ​សម្បត្តិ​ឯកសារ"
 
-#: core/app/items/utils/tooltipfiller.cpp:77
+#: core/app/items/utils/tooltipfiller.cpp:80
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
@@ -1102,8 +1102,8 @@ msgctxt "filename"
 msgid "Name:"
 msgstr "ឈ្មោះ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:85
-#: core/app/items/utils/tooltipfiller.cpp:608
+#: core/app/items/utils/tooltipfiller.cpp:88
+#: core/app/items/utils/tooltipfiller.cpp:632
 #: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
@@ -1112,7 +1112,7 @@ msgstr "ឈ្មោះ ៖"
 msgid "Date:"
 msgstr "កាលបរិច្ឆេទ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:90
+#: core/app/items/utils/tooltipfiller.cpp:93
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:300
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
@@ -1122,8 +1122,8 @@ msgstr "កាលបរិច្ឆេទ ៖"
 msgid "Size:"
 msgstr "ទំហំ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:92
-#: core/app/items/utils/tooltipfiller.cpp:224
+#: core/app/items/utils/tooltipfiller.cpp:95
+#: core/app/items/utils/tooltipfiller.cpp:227
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
@@ -1132,7 +1132,7 @@ msgstr "ទំហំ ៖"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/items/utils/tooltipfiller.cpp:98
+#: core/app/items/utils/tooltipfiller.cpp:101
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
@@ -1146,7 +1146,7 @@ msgstr "%1 (%2)"
 msgid "Type:"
 msgstr "ប្រភេទ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:106
+#: core/app/items/utils/tooltipfiller.cpp:109
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
@@ -1154,7 +1154,7 @@ msgctxt "unknown / invalid image dimension"
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: core/app/items/utils/tooltipfiller.cpp:111
+#: core/app/items/utils/tooltipfiller.cpp:114
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1044
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
@@ -1163,33 +1163,33 @@ msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/app/items/utils/tooltipfiller.cpp:115
+#: core/app/items/utils/tooltipfiller.cpp:118
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
 msgstr "វិមាត្រ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:123
+#: core/app/items/utils/tooltipfiller.cpp:126
 #, fuzzy, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: core/app/items/utils/tooltipfiller.cpp:126
-#: core/app/items/utils/tooltipfiller.cpp:330
+#: core/app/items/utils/tooltipfiller.cpp:129
+#: core/app/items/utils/tooltipfiller.cpp:333
 #, fuzzy, kde-format
 msgid "Aspect Ratio:"
 msgstr "សមាមាត្រ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:147
+#: core/app/items/utils/tooltipfiller.cpp:150
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
 msgstr "លក្ខណសម្បត្តិ​រូបថត"
 
-#: core/app/items/utils/tooltipfiller.cpp:162
+#: core/app/items/utils/tooltipfiller.cpp:165
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
@@ -1197,7 +1197,7 @@ msgstr "លក្ខណសម្បត្តិ​រូបថត"
 msgid "Make/Model:"
 msgstr "បង្កើត/​ម៉ូដែល ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:168
+#: core/app/items/utils/tooltipfiller.cpp:171
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
@@ -1206,22 +1206,22 @@ msgctxt "camera lens"
 msgid "Lens:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:205
-#: core/app/items/utils/tooltipfiller.cpp:210
+#: core/app/items/utils/tooltipfiller.cpp:208
+#: core/app/items/utils/tooltipfiller.cpp:213
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "បាន​បង្កើត ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:232
+#: core/app/items/utils/tooltipfiller.cpp:235
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "ទី​ចំហ/​ដែល​​ប្រសព្វ​គ្នា ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:238
+#: core/app/items/utils/tooltipfiller.cpp:241
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
@@ -1231,20 +1231,20 @@ msgstr "ទី​ចំហ/​ដែល​​ប្រសព្វ​គ្ន�
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/items/utils/tooltipfiller.cpp:245
+#: core/app/items/utils/tooltipfiller.cpp:248
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:272
+#: core/app/items/utils/tooltipfiller.cpp:275
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "របៀប/​កម្មវិធី ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:285
+#: core/app/items/utils/tooltipfiller.cpp:288
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
@@ -1252,175 +1252,175 @@ msgctxt "camera flash settings"
 msgid "Flash:"
 msgstr "បញ្ចេញ​ពន្លឺ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:297
+#: core/app/items/utils/tooltipfiller.cpp:300
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:319
+#: core/app/items/utils/tooltipfiller.cpp:322
 #: core/utilities/searchwindow/searchgroup.cpp:113
 #, fuzzy, kde-format
 msgid "Audio/Video Properties"
 msgstr "លក្ខណ​សម្បត្តិ​ឯកសារ"
 
-#: core/app/items/utils/tooltipfiller.cpp:362
+#: core/app/items/utils/tooltipfiller.cpp:365
 #, fuzzy, kde-format
 msgid "Duration:"
 msgstr "ការ​ធ្វើ​សារ​ជា​ថ្មី ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid "Frame Rate:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid " fps"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:395
+#: core/app/items/utils/tooltipfiller.cpp:398
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
 #, kde-format
 msgid "Video Codec:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:416
+#: core/app/items/utils/tooltipfiller.cpp:419
 #, fuzzy, kde-format
 msgid "Audio Bit Rate:"
 msgstr "ឯកសារ​អូឌីយ៉ូ"
 
-#: core/app/items/utils/tooltipfiller.cpp:428
+#: core/app/items/utils/tooltipfiller.cpp:431
 #, kde-format
 msgid "Audio Channel Type:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:440
+#: core/app/items/utils/tooltipfiller.cpp:443
 #, fuzzy, kde-format
 #| msgid "Audio Files"
 msgid "Audio Codec:"
 msgstr "ឯកសារ​អូឌីយ៉ូ"
 
-#: core/app/items/utils/tooltipfiller.cpp:457
+#: core/app/items/utils/tooltipfiller.cpp:460
 #, kde-format
 msgid "digiKam Properties"
 msgstr "លក្ខណ​សម្បត្តិ digiKam"
 
-#: core/app/items/utils/tooltipfiller.cpp:468
+#: core/app/items/utils/tooltipfiller.cpp:471
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "អាល់ប៊ុម ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:482
+#: core/app/items/utils/tooltipfiller.cpp:485
 #, fuzzy, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "ចំណងជើង ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:496
+#: core/app/items/utils/tooltipfiller.cpp:499
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "ចំណងជើង ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:505
+#: core/app/items/utils/tooltipfiller.cpp:508
 #, kde-format
 msgid "Tags:"
 msgstr "ស្លាក ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:554
+#: core/app/items/utils/tooltipfiller.cpp:556
 #, kde-format
 msgid "Labels:"
 msgstr "ស្លាក ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:583
+#: core/app/items/utils/tooltipfiller.cpp:607
 #, kde-format
 msgid "Album Properties"
 msgstr "លក្ខណសម្បត្តិ​អាល់ប៊ុម"
 
-#: core/app/items/utils/tooltipfiller.cpp:587
-#: core/app/items/utils/tooltipfiller.cpp:668
+#: core/app/items/utils/tooltipfiller.cpp:611
+#: core/app/items/utils/tooltipfiller.cpp:692
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "ឈ្មោះ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:593
+#: core/app/items/utils/tooltipfiller.cpp:617
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "ធាតុ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:599
+#: core/app/items/utils/tooltipfiller.cpp:623
 #, kde-format
 msgid "Collection:"
 msgstr "សម្រាំង ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:620
+#: core/app/items/utils/tooltipfiller.cpp:644
 #, kde-format
 msgid "Category:"
 msgstr "ប្រភេទ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:633
+#: core/app/items/utils/tooltipfiller.cpp:657
 #, fuzzy, kde-format
 #| msgid "Caption:"
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "ចំណងជើង ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:639
+#: core/app/items/utils/tooltipfiller.cpp:663
 #, fuzzy, kde-format
 msgid "Preview:"
 msgstr "មើល​ជាមុន"
 
-#: core/app/items/utils/tooltipfiller.cpp:664
+#: core/app/items/utils/tooltipfiller.cpp:688
 #, kde-format
 msgid "Filter"
 msgstr "តម្រង"
 
-#: core/app/items/utils/tooltipfiller.cpp:679
+#: core/app/items/utils/tooltipfiller.cpp:703
 #, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "បាទ/ចាស"
 
-#: core/app/items/utils/tooltipfiller.cpp:685
+#: core/app/items/utils/tooltipfiller.cpp:709
 #, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "ជា​ចំណែក"
 
-#: core/app/items/utils/tooltipfiller.cpp:691
+#: core/app/items/utils/tooltipfiller.cpp:715
 #, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "គ្មាន"
 
-#: core/app/items/utils/tooltipfiller.cpp:701
+#: core/app/items/utils/tooltipfiller.cpp:725
 #, kde-format
 msgid "Reproducible:"
 msgstr "ដែល​អាច​ផលិត​​ឡើង​វិញ​បាន ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:713
+#: core/app/items/utils/tooltipfiller.cpp:737
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "សេចក្ដី​ពិពណ៌នា ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:718
+#: core/app/items/utils/tooltipfiller.cpp:742
 #, kde-format
 msgid "Identifier:"
 msgstr "ឧបករណ៍​សម្គាល់ ៖"
 
-#: core/app/items/utils/tooltipfiller.cpp:723
+#: core/app/items/utils/tooltipfiller.cpp:747
 #, kde-format
 msgid "Technical Parameters"
 msgstr "ប៉ារ៉ាម៉ែត្រ​បច្ចេកទេស"
 
-#: core/app/items/utils/tooltipfiller.cpp:742
+#: core/app/items/utils/tooltipfiller.cpp:766
 #, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<i>ទិន្នន័យ​គោល​ពីរ</i>"
@@ -3183,21 +3183,21 @@ msgctxt "@info"
 msgid "Face engine is disabled"
 msgstr "បាន​បិទ​ការ​គ្រប់គ្រង​ពណ៌..."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:204
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:259
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:257
 #, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:279
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:277
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3369,7 +3369,7 @@ msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 
-#: core/app/views/stack/itemiconview.cpp:201
+#: core/app/views/stack/itemiconview.cpp:198
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -28064,7 +28064,7 @@ msgid "No Color"
 msgstr "ពណ៌"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
 msgctxt "@info: color label name"
@@ -28072,28 +28072,28 @@ msgid "Red"
 msgstr "មិន​ធ្វើ​វិញ​​/​ធ្វើវិញ​"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "រក្សាទុក​ការផ្លាស់ប្ដូរ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "ក្រិក​"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
 #, fuzzy, kde-format
 #| msgid "Blue Jean"
 msgctxt "@info: color label name"
@@ -28101,7 +28101,7 @@ msgid "Blue"
 msgstr "ក្រណាត់​​អំបោះ​ខៀវ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
 #, fuzzy, kde-format
 #| msgid "Argentina"
 msgctxt "@info: color label name"
@@ -28109,14 +28109,14 @@ msgid "Magenta"
 msgstr "អាហ្សង់ទីន"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgctxt "@info: color label name"
@@ -28124,7 +28124,7 @@ msgid "Black"
 msgstr "ស៊ុម​ខ្មៅ..."
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -28237,67 +28237,60 @@ msgstr "វិភាគ​រក​សម្រាំង​សម្រាប់
 msgid "Should sub-albums be scanned too?"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:97
+#: core/libs/album/treeview/labelstreeview.cpp:99
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "ស្លាក ៖"
 
-#: core/libs/album/treeview/labelstreeview.cpp:430
+#: core/libs/album/treeview/labelstreeview.cpp:412
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "តាម​ការ​វាយ​តម្លៃ"
 
-#: core/libs/album/treeview/labelstreeview.cpp:435
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, fuzzy, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "តាម​ការ​វាយ​តម្លៃ"
 
-#: core/libs/album/treeview/labelstreeview.cpp:471
+#: core/libs/album/treeview/labelstreeview.cpp:453
 #, fuzzy, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "ឥដ្ឋ ២"
 
-#: core/libs/album/treeview/labelstreeview.cpp:476
+#: core/libs/album/treeview/labelstreeview.cpp:458
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:459
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "ជ្រើស​ធាតុ"
 
-#: core/libs/album/treeview/labelstreeview.cpp:478
+#: core/libs/album/treeview/labelstreeview.cpp:460
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "មើល​រូបភាព​ជាមុន"
 
-#: core/libs/album/treeview/labelstreeview.cpp:479
+#: core/libs/album/treeview/labelstreeview.cpp:461
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "ជ្រើស​ធាតុ"
 
-#: core/libs/album/treeview/labelstreeview.cpp:499
+#: core/libs/album/treeview/labelstreeview.cpp:482
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@item: color tree"
 msgid "Color"
-msgstr "ពណ៌"
-
-#: core/libs/album/treeview/labelstreeview.cpp:504
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "No Color"
 msgstr "ពណ៌"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
@@ -39161,7 +39154,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab_setters.cpp:364
+#: core/libs/properties/itempropertiestab_setters.cpp:378
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -40430,28 +40423,28 @@ msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "យក​តម្លៃ​ដែល​បាន​ជ្រើស​​បច្ចុប្បន្ន​ចេញ​​​ពី​បញ្ជី​"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:218
+#: core/libs/tags/engine/tagsactionmngr.cpp:233
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "កំណត់​ការ​វាយ​តម្លៃ \"%1 ផ្កាយ\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:234
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, fuzzy, kde-format
 #| msgid "Assign Rating \"%1 Star\""
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "កំណត់​ការ​វាយ​តម្លៃ \"%1 ផ្កាយ\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:270
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "កំណត់​ស្លាក​ជម្រើស \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:277
+#: core/libs/tags/engine/tagsactionmngr.cpp:292
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "កំណត់​ស្លាក​ពណ៌ \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:326
+#: core/libs/tags/engine/tagsactionmngr.cpp:342
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "កំណត់​​ស្លាក \"%1\""
@@ -45101,78 +45094,14 @@ msgstr ""
 msgid "XMP text Files (*.xmp)"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "គ្មាន"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, fuzzy, kde-format
-#| msgid "Undo/Redo"
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "មិន​ធ្វើ​វិញ​​/​ធ្វើវិញ​"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "រក្សាទុក​ការផ្លាស់ប្ដូរ"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr ""
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "ក្រិក​"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, fuzzy, kde-format
-#| msgid "Blue Jean"
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "ក្រណាត់​​អំបោះ​ខៀវ"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, fuzzy, kde-format
-#| msgid "Argentina"
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "អាហ្សង់ទីន"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr ""
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "ស៊ុម​ខ្មៅ..."
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "តុល្យភាព​ពណ៌​ស​ ៖​​"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
-#, fuzzy, kde-format
-msgctxt "@info: color label selector"
-msgid "Color Label: %1"
-msgstr "តុល្យភាព​ពណ៌"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: color label menu"
@@ -69313,6 +69242,55 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "តម្រៀប​រូបភាព"
+
+#, fuzzy
+#~ msgctxt "@item: color tree"
+#~ msgid "No Color"
+#~ msgstr "ពណ៌"
+
+#, fuzzy
+#~| msgid "Undo/Redo"
+#~ msgctxt "@item: color tree"
+#~ msgid "Red"
+#~ msgstr "មិន​ធ្វើ​វិញ​​/​ធ្វើវិញ​"
+
+#, fuzzy
+#~ msgctxt "@item: color tree"
+#~ msgid "Orange"
+#~ msgstr "រក្សាទុក​ការផ្លាស់ប្ដូរ"
+
+#, fuzzy
+#~ msgctxt "@item: color tree"
+#~ msgid "Green"
+#~ msgstr "ក្រិក​"
+
+#, fuzzy
+#~| msgid "Blue Jean"
+#~ msgctxt "@item: color tree"
+#~ msgid "Blue"
+#~ msgstr "ក្រណាត់​​អំបោះ​ខៀវ"
+
+#, fuzzy
+#~| msgid "Argentina"
+#~ msgctxt "@item: color tree"
+#~ msgid "Magenta"
+#~ msgstr "អាហ្សង់ទីន"
+
+#, fuzzy
+#~| msgid "Black Frame..."
+#~ msgctxt "@item: color tree"
+#~ msgid "Black"
+#~ msgstr "ស៊ុម​ខ្មៅ..."
+
+#, fuzzy
+#~ msgctxt "@item: color tree"
+#~ msgid "White"
+#~ msgstr "តុល្យភាព​ពណ៌​ស​ ៖​​"
+
+#, fuzzy
+#~ msgctxt "@info: color label selector"
+#~ msgid "Color Label: %1"
+#~ msgstr "តុល្យភាព​ពណ៌"
 
 #, fuzzy
 #~ msgid "No Camera Make"

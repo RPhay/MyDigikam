@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-27 00:41+0000\n"
+"POT-Creation-Date: 2025-11-28 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -958,14 +958,14 @@ msgstr "<p>请从 digiKam 数据库中选择目标相册以移动所选图像。
 msgid "Album \"%1\""
 msgstr "相册“%1”"
 
-#: core/app/items/utils/tooltipfiller.cpp:72
+#: core/app/items/utils/tooltipfiller.cpp:75
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "文件属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:77
+#: core/app/items/utils/tooltipfiller.cpp:80
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
@@ -973,8 +973,8 @@ msgctxt "filename"
 msgid "Name:"
 msgstr "名称："
 
-#: core/app/items/utils/tooltipfiller.cpp:85
-#: core/app/items/utils/tooltipfiller.cpp:608
+#: core/app/items/utils/tooltipfiller.cpp:88
+#: core/app/items/utils/tooltipfiller.cpp:632
 #: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
@@ -983,7 +983,7 @@ msgstr "名称："
 msgid "Date:"
 msgstr "日期："
 
-#: core/app/items/utils/tooltipfiller.cpp:90
+#: core/app/items/utils/tooltipfiller.cpp:93
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:300
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
@@ -993,8 +993,8 @@ msgstr "日期："
 msgid "Size:"
 msgstr "大小："
 
-#: core/app/items/utils/tooltipfiller.cpp:92
-#: core/app/items/utils/tooltipfiller.cpp:224
+#: core/app/items/utils/tooltipfiller.cpp:95
+#: core/app/items/utils/tooltipfiller.cpp:227
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
@@ -1003,7 +1003,7 @@ msgstr "大小："
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/items/utils/tooltipfiller.cpp:98
+#: core/app/items/utils/tooltipfiller.cpp:101
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
@@ -1017,7 +1017,7 @@ msgstr "%1 (%2)"
 msgid "Type:"
 msgstr "类型："
 
-#: core/app/items/utils/tooltipfiller.cpp:106
+#: core/app/items/utils/tooltipfiller.cpp:109
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
@@ -1025,7 +1025,7 @@ msgctxt "unknown / invalid image dimension"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/app/items/utils/tooltipfiller.cpp:111
+#: core/app/items/utils/tooltipfiller.cpp:114
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1044
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
@@ -1034,33 +1034,33 @@ msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
-#: core/app/items/utils/tooltipfiller.cpp:115
+#: core/app/items/utils/tooltipfiller.cpp:118
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
 msgstr "尺寸："
 
-#: core/app/items/utils/tooltipfiller.cpp:123
+#: core/app/items/utils/tooltipfiller.cpp:126
 #, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/app/items/utils/tooltipfiller.cpp:126
-#: core/app/items/utils/tooltipfiller.cpp:330
+#: core/app/items/utils/tooltipfiller.cpp:129
+#: core/app/items/utils/tooltipfiller.cpp:333
 #, kde-format
 msgid "Aspect Ratio:"
 msgstr "宽高比："
 
-#: core/app/items/utils/tooltipfiller.cpp:147
+#: core/app/items/utils/tooltipfiller.cpp:150
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
 msgstr "照片属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:162
+#: core/app/items/utils/tooltipfiller.cpp:165
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
@@ -1068,7 +1068,7 @@ msgstr "照片属性"
 msgid "Make/Model:"
 msgstr "制造商/型号："
 
-#: core/app/items/utils/tooltipfiller.cpp:168
+#: core/app/items/utils/tooltipfiller.cpp:171
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
@@ -1077,22 +1077,22 @@ msgctxt "camera lens"
 msgid "Lens:"
 msgstr "镜头："
 
-#: core/app/items/utils/tooltipfiller.cpp:205
-#: core/app/items/utils/tooltipfiller.cpp:210
+#: core/app/items/utils/tooltipfiller.cpp:208
+#: core/app/items/utils/tooltipfiller.cpp:213
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "创建日期："
 
-#: core/app/items/utils/tooltipfiller.cpp:232
+#: core/app/items/utils/tooltipfiller.cpp:235
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "光圈/焦距："
 
-#: core/app/items/utils/tooltipfiller.cpp:238
+#: core/app/items/utils/tooltipfiller.cpp:241
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
@@ -1102,20 +1102,20 @@ msgstr "光圈/焦距："
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/items/utils/tooltipfiller.cpp:245
+#: core/app/items/utils/tooltipfiller.cpp:248
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "曝光时间/感光度："
 
-#: core/app/items/utils/tooltipfiller.cpp:272
+#: core/app/items/utils/tooltipfiller.cpp:275
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "模式/程序："
 
-#: core/app/items/utils/tooltipfiller.cpp:285
+#: core/app/items/utils/tooltipfiller.cpp:288
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
@@ -1123,172 +1123,172 @@ msgctxt "camera flash settings"
 msgid "Flash:"
 msgstr "闪光灯："
 
-#: core/app/items/utils/tooltipfiller.cpp:297
+#: core/app/items/utils/tooltipfiller.cpp:300
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
 msgstr "白平衡："
 
-#: core/app/items/utils/tooltipfiller.cpp:319
+#: core/app/items/utils/tooltipfiller.cpp:322
 #: core/utilities/searchwindow/searchgroup.cpp:113
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "音频/视频属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:362
+#: core/app/items/utils/tooltipfiller.cpp:365
 #, kde-format
 msgid "Duration:"
 msgstr "时间长度："
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid "Frame Rate:"
 msgstr "帧速率："
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid " fps"
 msgstr " fps"
 
-#: core/app/items/utils/tooltipfiller.cpp:395
+#: core/app/items/utils/tooltipfiller.cpp:398
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
 #, kde-format
 msgid "Video Codec:"
 msgstr "视频编码："
 
-#: core/app/items/utils/tooltipfiller.cpp:416
+#: core/app/items/utils/tooltipfiller.cpp:419
 #, kde-format
 msgid "Audio Bit Rate:"
 msgstr "音频比特率："
 
-#: core/app/items/utils/tooltipfiller.cpp:428
+#: core/app/items/utils/tooltipfiller.cpp:431
 #, kde-format
 msgid "Audio Channel Type:"
 msgstr "音频声道："
 
-#: core/app/items/utils/tooltipfiller.cpp:440
+#: core/app/items/utils/tooltipfiller.cpp:443
 #, kde-format
 msgid "Audio Codec:"
 msgstr "音频编码："
 
-#: core/app/items/utils/tooltipfiller.cpp:457
+#: core/app/items/utils/tooltipfiller.cpp:460
 #, kde-format
 msgid "digiKam Properties"
 msgstr "digiKam 属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:468
+#: core/app/items/utils/tooltipfiller.cpp:471
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "相册："
 
-#: core/app/items/utils/tooltipfiller.cpp:482
+#: core/app/items/utils/tooltipfiller.cpp:485
 #, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "标题："
 
-#: core/app/items/utils/tooltipfiller.cpp:496
+#: core/app/items/utils/tooltipfiller.cpp:499
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "说明："
 
-#: core/app/items/utils/tooltipfiller.cpp:505
+#: core/app/items/utils/tooltipfiller.cpp:508
 #, kde-format
 msgid "Tags:"
 msgstr "标签："
 
-#: core/app/items/utils/tooltipfiller.cpp:554
+#: core/app/items/utils/tooltipfiller.cpp:556
 #, kde-format
 msgid "Labels:"
 msgstr "标记："
 
-#: core/app/items/utils/tooltipfiller.cpp:583
+#: core/app/items/utils/tooltipfiller.cpp:607
 #, kde-format
 msgid "Album Properties"
 msgstr "相册属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:587
-#: core/app/items/utils/tooltipfiller.cpp:668
+#: core/app/items/utils/tooltipfiller.cpp:611
+#: core/app/items/utils/tooltipfiller.cpp:692
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "名称："
 
-#: core/app/items/utils/tooltipfiller.cpp:593
+#: core/app/items/utils/tooltipfiller.cpp:617
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "结果数量："
 
-#: core/app/items/utils/tooltipfiller.cpp:599
+#: core/app/items/utils/tooltipfiller.cpp:623
 #, kde-format
 msgid "Collection:"
 msgstr "相册集合："
 
-#: core/app/items/utils/tooltipfiller.cpp:620
+#: core/app/items/utils/tooltipfiller.cpp:644
 #, kde-format
 msgid "Category:"
 msgstr "分类："
 
-#: core/app/items/utils/tooltipfiller.cpp:633
+#: core/app/items/utils/tooltipfiller.cpp:657
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "说明："
 
-#: core/app/items/utils/tooltipfiller.cpp:639
+#: core/app/items/utils/tooltipfiller.cpp:663
 #, kde-format
 msgid "Preview:"
 msgstr "预览："
 
-#: core/app/items/utils/tooltipfiller.cpp:664
+#: core/app/items/utils/tooltipfiller.cpp:688
 #, kde-format
 msgid "Filter"
 msgstr "过滤"
 
-#: core/app/items/utils/tooltipfiller.cpp:679
+#: core/app/items/utils/tooltipfiller.cpp:703
 #, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "是"
 
-#: core/app/items/utils/tooltipfiller.cpp:685
+#: core/app/items/utils/tooltipfiller.cpp:709
 #, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "部分"
 
-#: core/app/items/utils/tooltipfiller.cpp:691
+#: core/app/items/utils/tooltipfiller.cpp:715
 #, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "否"
 
-#: core/app/items/utils/tooltipfiller.cpp:701
+#: core/app/items/utils/tooltipfiller.cpp:725
 #, kde-format
 msgid "Reproducible:"
 msgstr "可重现："
 
-#: core/app/items/utils/tooltipfiller.cpp:713
+#: core/app/items/utils/tooltipfiller.cpp:737
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "描述："
 
-#: core/app/items/utils/tooltipfiller.cpp:718
+#: core/app/items/utils/tooltipfiller.cpp:742
 #, kde-format
 msgid "Identifier:"
 msgstr "标识符："
 
-#: core/app/items/utils/tooltipfiller.cpp:723
+#: core/app/items/utils/tooltipfiller.cpp:747
 #, kde-format
 msgid "Technical Parameters"
 msgstr "技术参数"
 
-#: core/app/items/utils/tooltipfiller.cpp:742
+#: core/app/items/utils/tooltipfiller.cpp:766
 #, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<b>二进制数据</b>"
@@ -2874,7 +2874,7 @@ msgctxt "@info"
 msgid "Face engine is disabled"
 msgstr "人脸引擎已禁用"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:204
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2883,14 +2883,14 @@ msgstr ""
 "欢迎使用 digiKam 的人脸管理功能。如果您是第一次使用此功能，可以在左侧栏最下方"
 "的面板查看帮助框。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:259
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:257
 #, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr "人脸扫描已中止，因为没有可供识别的人物。请添加新人物。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:279
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:277
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3054,7 +3054,7 @@ msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 项"
 
-#: core/app/views/stack/itemiconview.cpp:201
+#: core/app/views/stack/itemiconview.cpp:198
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -26629,63 +26629,63 @@ msgid "No Color"
 msgstr "未标色"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "红"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "橙"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "黄"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "绿"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "蓝"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "品红"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "灰"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "黑"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -26793,66 +26793,59 @@ msgstr "扫描人脸"
 msgid "Should sub-albums be scanned too?"
 msgstr "要同时扫描子相册吗？"
 
-#: core/libs/album/treeview/labelstreeview.cpp:97
+#: core/libs/album/treeview/labelstreeview.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "标记"
 
-#: core/libs/album/treeview/labelstreeview.cpp:430
+#: core/libs/album/treeview/labelstreeview.cpp:412
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "评分"
 
-#: core/libs/album/treeview/labelstreeview.cpp:435
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "未评分"
 
-#: core/libs/album/treeview/labelstreeview.cpp:471
+#: core/libs/album/treeview/labelstreeview.cpp:453
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "挑选"
 
-#: core/libs/album/treeview/labelstreeview.cpp:476
+#: core/libs/album/treeview/labelstreeview.cpp:458
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "未挑选"
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:459
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "否决项"
 
-#: core/libs/album/treeview/labelstreeview.cpp:478
+#: core/libs/album/treeview/labelstreeview.cpp:460
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "待定项"
 
-#: core/libs/album/treeview/labelstreeview.cpp:479
+#: core/libs/album/treeview/labelstreeview.cpp:461
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "接受项"
 
-#: core/libs/album/treeview/labelstreeview.cpp:499
+#: core/libs/album/treeview/labelstreeview.cpp:482
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "颜色"
-
-#: core/libs/album/treeview/labelstreeview.cpp:504
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, kde-format
-msgctxt "@item: color tree"
-msgid "No Color"
-msgstr "未标色"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, kde-format
@@ -37398,7 +37391,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:364
+#: core/libs/properties/itempropertiestab_setters.cpp:378
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -38727,27 +38720,27 @@ msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "要从图像中移除对应此人脸标签的 %1 个标签吗？"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:218
+#: core/libs/tags/engine/tagsactionmngr.cpp:233
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "分配评分“%1 星”"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:234
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "分配评分“%1 星” (不切换)"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:270
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "分配挑选标记“%1”"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:277
+#: core/libs/tags/engine/tagsactionmngr.cpp:292
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "分配颜色标记“%1”"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:326
+#: core/libs/tags/engine/tagsactionmngr.cpp:342
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "分配标签“%1”"
@@ -43305,73 +43298,13 @@ msgstr "要保存的 XMP 文件"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP 文本文件 (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "无"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "红"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "橙"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr "黄"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "绿"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "蓝"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "品红"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr "灰"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "黑"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, kde-format
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "白"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
-#, kde-format
-msgctxt "@info: color label selector"
-msgid "Color Label: %1"
-msgstr "颜色标记：%1"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
@@ -66099,3 +66032,47 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "No Color"
+#~ msgstr "未标色"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Red"
+#~ msgstr "红"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Orange"
+#~ msgstr "橙"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Yellow"
+#~ msgstr "黄"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Green"
+#~ msgstr "绿"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Blue"
+#~ msgstr "蓝"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Magenta"
+#~ msgstr "品红"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Gray"
+#~ msgstr "灰"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Black"
+#~ msgstr "黑"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "White"
+#~ msgstr "白"
+
+#~ msgctxt "@info: color label selector"
+#~ msgid "Color Label: %1"
+#~ msgstr "颜色标记：%1"

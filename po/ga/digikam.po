@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-27 00:41+0000\n"
+"POT-Creation-Date: 2025-11-28 00:40+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1114,14 +1114,14 @@ msgstr ""
 msgid "Album \"%1\""
 msgstr "Albam \"%1\""
 
-#: core/app/items/utils/tooltipfiller.cpp:72
+#: core/app/items/utils/tooltipfiller.cpp:75
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "Airíonna Comhaid"
 
-#: core/app/items/utils/tooltipfiller.cpp:77
+#: core/app/items/utils/tooltipfiller.cpp:80
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
@@ -1129,8 +1129,8 @@ msgctxt "filename"
 msgid "Name:"
 msgstr "Ainm:"
 
-#: core/app/items/utils/tooltipfiller.cpp:85
-#: core/app/items/utils/tooltipfiller.cpp:608
+#: core/app/items/utils/tooltipfiller.cpp:88
+#: core/app/items/utils/tooltipfiller.cpp:632
 #: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
@@ -1139,7 +1139,7 @@ msgstr "Ainm:"
 msgid "Date:"
 msgstr "Dáta:"
 
-#: core/app/items/utils/tooltipfiller.cpp:90
+#: core/app/items/utils/tooltipfiller.cpp:93
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:300
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
@@ -1149,8 +1149,8 @@ msgstr "Dáta:"
 msgid "Size:"
 msgstr "Méid:"
 
-#: core/app/items/utils/tooltipfiller.cpp:92
-#: core/app/items/utils/tooltipfiller.cpp:224
+#: core/app/items/utils/tooltipfiller.cpp:95
+#: core/app/items/utils/tooltipfiller.cpp:227
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
@@ -1159,7 +1159,7 @@ msgstr "Méid:"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/items/utils/tooltipfiller.cpp:98
+#: core/app/items/utils/tooltipfiller.cpp:101
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
@@ -1173,7 +1173,7 @@ msgstr "%1 (%2)"
 msgid "Type:"
 msgstr "Cineál:"
 
-#: core/app/items/utils/tooltipfiller.cpp:106
+#: core/app/items/utils/tooltipfiller.cpp:109
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
@@ -1181,7 +1181,7 @@ msgctxt "unknown / invalid image dimension"
 msgid "Unknown"
 msgstr "Anaithnid"
 
-#: core/app/items/utils/tooltipfiller.cpp:111
+#: core/app/items/utils/tooltipfiller.cpp:114
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1044
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
@@ -1190,33 +1190,33 @@ msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3Mpct)"
 
-#: core/app/items/utils/tooltipfiller.cpp:115
+#: core/app/items/utils/tooltipfiller.cpp:118
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
 msgstr "Toisí:"
 
-#: core/app/items/utils/tooltipfiller.cpp:123
+#: core/app/items/utils/tooltipfiller.cpp:126
 #, fuzzy, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "Anaithnid"
 
-#: core/app/items/utils/tooltipfiller.cpp:126
-#: core/app/items/utils/tooltipfiller.cpp:330
+#: core/app/items/utils/tooltipfiller.cpp:129
+#: core/app/items/utils/tooltipfiller.cpp:333
 #, kde-format
 msgid "Aspect Ratio:"
 msgstr "Cóimheas Treoíochta:"
 
-#: core/app/items/utils/tooltipfiller.cpp:147
+#: core/app/items/utils/tooltipfiller.cpp:150
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
 msgstr "Airíonna an Ghrianghraif"
 
-#: core/app/items/utils/tooltipfiller.cpp:162
+#: core/app/items/utils/tooltipfiller.cpp:165
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
@@ -1224,7 +1224,7 @@ msgstr "Airíonna an Ghrianghraif"
 msgid "Make/Model:"
 msgstr "Déanamh/Samhail:"
 
-#: core/app/items/utils/tooltipfiller.cpp:168
+#: core/app/items/utils/tooltipfiller.cpp:171
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
@@ -1233,22 +1233,22 @@ msgctxt "camera lens"
 msgid "Lens:"
 msgstr "Lionsa:"
 
-#: core/app/items/utils/tooltipfiller.cpp:205
-#: core/app/items/utils/tooltipfiller.cpp:210
+#: core/app/items/utils/tooltipfiller.cpp:208
+#: core/app/items/utils/tooltipfiller.cpp:213
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "Cruthaithe:"
 
-#: core/app/items/utils/tooltipfiller.cpp:232
+#: core/app/items/utils/tooltipfiller.cpp:235
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "Cró/Fad Fócais:"
 
-#: core/app/items/utils/tooltipfiller.cpp:238
+#: core/app/items/utils/tooltipfiller.cpp:241
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
@@ -1258,20 +1258,20 @@ msgstr "Cró/Fad Fócais:"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/items/utils/tooltipfiller.cpp:245
+#: core/app/items/utils/tooltipfiller.cpp:248
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "Nochtadh/Íogaireacht:"
 
-#: core/app/items/utils/tooltipfiller.cpp:272
+#: core/app/items/utils/tooltipfiller.cpp:275
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "Mód/Clár:"
 
-#: core/app/items/utils/tooltipfiller.cpp:285
+#: core/app/items/utils/tooltipfiller.cpp:288
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
@@ -1279,178 +1279,178 @@ msgctxt "camera flash settings"
 msgid "Flash:"
 msgstr "Splanc:"
 
-#: core/app/items/utils/tooltipfiller.cpp:297
+#: core/app/items/utils/tooltipfiller.cpp:300
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:319
+#: core/app/items/utils/tooltipfiller.cpp:322
 #: core/utilities/searchwindow/searchgroup.cpp:113
 #, fuzzy, kde-format
 msgid "Audio/Video Properties"
 msgstr "Cuir airíonna comhaid leis"
 
-#: core/app/items/utils/tooltipfiller.cpp:362
+#: core/app/items/utils/tooltipfiller.cpp:365
 #, kde-format
 msgid "Duration:"
 msgstr "Tréimhse:"
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid "Frame Rate:"
 msgstr "Ráta Fráma:"
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid " fps"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:395
+#: core/app/items/utils/tooltipfiller.cpp:398
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
 #, kde-format
 msgid "Video Codec:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:416
+#: core/app/items/utils/tooltipfiller.cpp:419
 #, kde-format
 msgid "Audio Bit Rate:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:428
+#: core/app/items/utils/tooltipfiller.cpp:431
 #, kde-format
 msgid "Audio Channel Type:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:440
+#: core/app/items/utils/tooltipfiller.cpp:443
 #, fuzzy, kde-format
 #| msgid "Audio Compressor:"
 msgid "Audio Codec:"
 msgstr "Comhbhrúiteoir Fuaime:"
 
-#: core/app/items/utils/tooltipfiller.cpp:457
+#: core/app/items/utils/tooltipfiller.cpp:460
 #, kde-format
 msgid "digiKam Properties"
 msgstr "Airíonna digiKam"
 
-#: core/app/items/utils/tooltipfiller.cpp:468
+#: core/app/items/utils/tooltipfiller.cpp:471
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "Albam:"
 
-#: core/app/items/utils/tooltipfiller.cpp:482
+#: core/app/items/utils/tooltipfiller.cpp:485
 #, fuzzy, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "Teideal:"
 
-#: core/app/items/utils/tooltipfiller.cpp:496
+#: core/app/items/utils/tooltipfiller.cpp:499
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "Foscríbhinn:"
 
-#: core/app/items/utils/tooltipfiller.cpp:505
+#: core/app/items/utils/tooltipfiller.cpp:508
 #, kde-format
 msgid "Tags:"
 msgstr "Clibeanna:"
 
-#: core/app/items/utils/tooltipfiller.cpp:554
+#: core/app/items/utils/tooltipfiller.cpp:556
 #, kde-format
 msgid "Labels:"
 msgstr "Lipéid:"
 
-#: core/app/items/utils/tooltipfiller.cpp:583
+#: core/app/items/utils/tooltipfiller.cpp:607
 #, kde-format
 msgid "Album Properties"
 msgstr "Airíonna an Albaim"
 
-#: core/app/items/utils/tooltipfiller.cpp:587
-#: core/app/items/utils/tooltipfiller.cpp:668
+#: core/app/items/utils/tooltipfiller.cpp:611
+#: core/app/items/utils/tooltipfiller.cpp:692
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "Ainm:"
 
-#: core/app/items/utils/tooltipfiller.cpp:593
+#: core/app/items/utils/tooltipfiller.cpp:617
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "Míreanna:"
 
-#: core/app/items/utils/tooltipfiller.cpp:599
+#: core/app/items/utils/tooltipfiller.cpp:623
 #, kde-format
 msgid "Collection:"
 msgstr "Bailiúchán:"
 
-#: core/app/items/utils/tooltipfiller.cpp:620
+#: core/app/items/utils/tooltipfiller.cpp:644
 #, kde-format
 msgid "Category:"
 msgstr "Catagóir:"
 
-#: core/app/items/utils/tooltipfiller.cpp:633
+#: core/app/items/utils/tooltipfiller.cpp:657
 #, fuzzy, kde-format
 #| msgid "Caption:"
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "Foscríbhinn:"
 
-#: core/app/items/utils/tooltipfiller.cpp:639
+#: core/app/items/utils/tooltipfiller.cpp:663
 #, fuzzy, kde-format
 msgid "Preview:"
 msgstr "Réamhamharc"
 
-#: core/app/items/utils/tooltipfiller.cpp:664
+#: core/app/items/utils/tooltipfiller.cpp:688
 #, kde-format
 msgid "Filter"
 msgstr "Scagaire"
 
 # three in cameraitempropertiestab: is readable? is writable? downloaded?
 # imagepropertiescolorstab.cpp: yes/no for "hasAlpha"
-#: core/app/items/utils/tooltipfiller.cpp:679
+#: core/app/items/utils/tooltipfiller.cpp:703
 #, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "Tá"
 
-#: core/app/items/utils/tooltipfiller.cpp:685
+#: core/app/items/utils/tooltipfiller.cpp:709
 #, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "Leath"
 
 # see "Yes" comments
-#: core/app/items/utils/tooltipfiller.cpp:691
+#: core/app/items/utils/tooltipfiller.cpp:715
 #, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "Níl"
 
-#: core/app/items/utils/tooltipfiller.cpp:701
+#: core/app/items/utils/tooltipfiller.cpp:725
 #, kde-format
 msgid "Reproducible:"
 msgstr "In-atáirgthe:"
 
-#: core/app/items/utils/tooltipfiller.cpp:713
+#: core/app/items/utils/tooltipfiller.cpp:737
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "Cur Síos:"
 
-#: core/app/items/utils/tooltipfiller.cpp:718
+#: core/app/items/utils/tooltipfiller.cpp:742
 #, kde-format
 msgid "Identifier:"
 msgstr "Aitheantóir:"
 
-#: core/app/items/utils/tooltipfiller.cpp:723
+#: core/app/items/utils/tooltipfiller.cpp:747
 #, kde-format
 msgid "Technical Parameters"
 msgstr "Paraiméadair Theicniúla"
 
-#: core/app/items/utils/tooltipfiller.cpp:742
+#: core/app/items/utils/tooltipfiller.cpp:766
 #, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<i>Sonraí Dénártha</i>"
@@ -3209,21 +3209,21 @@ msgctxt "@info"
 msgid "Face engine is disabled"
 msgstr "Díchumasaíodh Bainisteoireacht na nDathanna..."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:204
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:259
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:257
 #, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:279
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:277
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3392,7 +3392,7 @@ msgstr[2] "%1 mhír"
 msgstr[3] "%1 mír"
 msgstr[4] "%1 mír"
 
-#: core/app/views/stack/itemiconview.cpp:201
+#: core/app/views/stack/itemiconview.cpp:198
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -28040,7 +28040,7 @@ msgid "No Color"
 msgstr "Dath"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -28048,7 +28048,7 @@ msgid "Red"
 msgstr "Dearg"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: color label name"
@@ -28056,7 +28056,7 @@ msgid "Orange"
 msgstr "Oráiste"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -28064,7 +28064,7 @@ msgid "Yellow"
 msgstr "Buí"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -28072,7 +28072,7 @@ msgid "Green"
 msgstr "Uaine"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -28080,7 +28080,7 @@ msgid "Blue"
 msgstr "Gorm"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -28088,7 +28088,7 @@ msgid "Magenta"
 msgstr "Maigeanta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -28096,7 +28096,7 @@ msgid "Gray"
 msgstr "Liath"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -28104,7 +28104,7 @@ msgid "Black"
 msgstr "Dubh"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -28222,68 +28222,61 @@ msgid "Should sub-albums be scanned too?"
 msgstr ""
 
 # leave as is!
-#: core/libs/album/treeview/labelstreeview.cpp:97
+#: core/libs/album/treeview/labelstreeview.cpp:99
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Lipéid"
 
-#: core/libs/album/treeview/labelstreeview.cpp:430
+#: core/libs/album/treeview/labelstreeview.cpp:412
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Rátáil"
 
-#: core/libs/album/treeview/labelstreeview.cpp:435
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, fuzzy, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Rátáil"
 
-#: core/libs/album/treeview/labelstreeview.cpp:471
+#: core/libs/album/treeview/labelstreeview.cpp:453
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Roghnaigh"
 
-#: core/libs/album/treeview/labelstreeview.cpp:476
+#: core/libs/album/treeview/labelstreeview.cpp:458
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Roghnaigh"
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:459
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Diúltaithe"
 
-#: core/libs/album/treeview/labelstreeview.cpp:478
+#: core/libs/album/treeview/labelstreeview.cpp:460
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Ar Feitheamh"
 
-#: core/libs/album/treeview/labelstreeview.cpp:479
+#: core/libs/album/treeview/labelstreeview.cpp:461
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Glactha"
 
-#: core/libs/album/treeview/labelstreeview.cpp:499
+#: core/libs/album/treeview/labelstreeview.cpp:482
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@item: color tree"
 msgid "Color"
-msgstr "Dath"
-
-#: core/libs/album/treeview/labelstreeview.cpp:504
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, fuzzy, kde-format
-msgctxt "@item: color tree"
-msgid "No Color"
 msgstr "Dath"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
@@ -39230,7 +39223,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab_setters.cpp:364
+#: core/libs/properties/itempropertiestab_setters.cpp:378
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -40561,28 +40554,28 @@ msgstr[2] "Bain an luach roghnaithe faoi láthair ón liosta"
 msgstr[3] "Bain an luach roghnaithe faoi láthair ón liosta"
 msgstr[4] "Bain an luach roghnaithe faoi láthair ón liosta"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:218
+#: core/libs/tags/engine/tagsactionmngr.cpp:233
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Tabhair Rátáil \"%1 Réiltín\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:234
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, fuzzy, kde-format
 #| msgid "Assign Rating \"%1 Star\""
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "Tabhair Rátáil \"%1 Réiltín\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:270
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:277
+#: core/libs/tags/engine/tagsactionmngr.cpp:292
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:326
+#: core/libs/tags/engine/tagsactionmngr.cpp:342
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Sann Clib \"%1\""
@@ -45332,84 +45325,14 @@ msgstr "Comhad XMP le Sábháil"
 msgid "XMP text Files (*.xmp)"
 msgstr "Téacschomhaid XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Neamhní"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, fuzzy, kde-format
-#| msgid "Red"
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "Dearg"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, fuzzy, kde-format
-#| msgid "Orange"
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "Oráiste"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, fuzzy, kde-format
-#| msgid "Yellow"
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr "Buí"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, fuzzy, kde-format
-#| msgid "Green"
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "Uaine"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, fuzzy, kde-format
-#| msgid "Blue"
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "Gorm"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, fuzzy, kde-format
-#| msgid "Magenta"
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "Maigeanta"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, fuzzy, kde-format
-#| msgid "Gray"
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr "Liath"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, fuzzy, kde-format
-#| msgid "Black"
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "Dubh"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, fuzzy, kde-format
-#| msgid "White"
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "Bán"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
-#, fuzzy, kde-format
-#| msgid "Color Label: %1"
-msgctxt "@info: color label selector"
-msgid "Color Label: %1"
-msgstr "Lipéad Datha: %1"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"
@@ -70257,6 +70180,71 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~ msgctxt "@item: color tree"
+#~ msgid "No Color"
+#~ msgstr "Dath"
+
+#, fuzzy
+#~| msgid "Red"
+#~ msgctxt "@item: color tree"
+#~ msgid "Red"
+#~ msgstr "Dearg"
+
+#, fuzzy
+#~| msgid "Orange"
+#~ msgctxt "@item: color tree"
+#~ msgid "Orange"
+#~ msgstr "Oráiste"
+
+#, fuzzy
+#~| msgid "Yellow"
+#~ msgctxt "@item: color tree"
+#~ msgid "Yellow"
+#~ msgstr "Buí"
+
+#, fuzzy
+#~| msgid "Green"
+#~ msgctxt "@item: color tree"
+#~ msgid "Green"
+#~ msgstr "Uaine"
+
+#, fuzzy
+#~| msgid "Blue"
+#~ msgctxt "@item: color tree"
+#~ msgid "Blue"
+#~ msgstr "Gorm"
+
+#, fuzzy
+#~| msgid "Magenta"
+#~ msgctxt "@item: color tree"
+#~ msgid "Magenta"
+#~ msgstr "Maigeanta"
+
+#, fuzzy
+#~| msgid "Gray"
+#~ msgctxt "@item: color tree"
+#~ msgid "Gray"
+#~ msgstr "Liath"
+
+#, fuzzy
+#~| msgid "Black"
+#~ msgctxt "@item: color tree"
+#~ msgid "Black"
+#~ msgstr "Dubh"
+
+#, fuzzy
+#~| msgid "White"
+#~ msgctxt "@item: color tree"
+#~ msgid "White"
+#~ msgstr "Bán"
+
+#, fuzzy
+#~| msgid "Color Label: %1"
+#~ msgctxt "@info: color label selector"
+#~ msgid "Color Label: %1"
+#~ msgstr "Lipéad Datha: %1"
 
 #, fuzzy
 #~ msgid "No Camera Make"

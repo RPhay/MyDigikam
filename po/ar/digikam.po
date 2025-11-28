@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-27 00:41+0000\n"
-"PO-Revision-Date: 2025-11-26 10:41+0400\n"
+"POT-Creation-Date: 2025-11-28 00:40+0000\n"
+"PO-Revision-Date: 2025-11-27 12:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1034,14 +1034,14 @@ msgstr ""
 msgid "Album \"%1\""
 msgstr "الألبوم ”%1“"
 
-#: core/app/items/utils/tooltipfiller.cpp:72
+#: core/app/items/utils/tooltipfiller.cpp:75
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "خصائص الملفّ"
 
-#: core/app/items/utils/tooltipfiller.cpp:77
+#: core/app/items/utils/tooltipfiller.cpp:80
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
@@ -1049,8 +1049,8 @@ msgctxt "filename"
 msgid "Name:"
 msgstr "الاسم:"
 
-#: core/app/items/utils/tooltipfiller.cpp:85
-#: core/app/items/utils/tooltipfiller.cpp:608
+#: core/app/items/utils/tooltipfiller.cpp:88
+#: core/app/items/utils/tooltipfiller.cpp:632
 #: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
@@ -1059,7 +1059,7 @@ msgstr "الاسم:"
 msgid "Date:"
 msgstr "التّاريخ:"
 
-#: core/app/items/utils/tooltipfiller.cpp:90
+#: core/app/items/utils/tooltipfiller.cpp:93
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:300
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
@@ -1069,8 +1069,8 @@ msgstr "التّاريخ:"
 msgid "Size:"
 msgstr "الحجم:"
 
-#: core/app/items/utils/tooltipfiller.cpp:92
-#: core/app/items/utils/tooltipfiller.cpp:224
+#: core/app/items/utils/tooltipfiller.cpp:95
+#: core/app/items/utils/tooltipfiller.cpp:227
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
@@ -1079,7 +1079,7 @@ msgstr "الحجم:"
 msgid "%1 (%2)"
 msgstr "‏%1 (‏%2)"
 
-#: core/app/items/utils/tooltipfiller.cpp:98
+#: core/app/items/utils/tooltipfiller.cpp:101
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
@@ -1093,7 +1093,7 @@ msgstr "‏%1 (‏%2)"
 msgid "Type:"
 msgstr "النّوع:"
 
-#: core/app/items/utils/tooltipfiller.cpp:106
+#: core/app/items/utils/tooltipfiller.cpp:109
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
@@ -1101,7 +1101,7 @@ msgctxt "unknown / invalid image dimension"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/app/items/utils/tooltipfiller.cpp:111
+#: core/app/items/utils/tooltipfiller.cpp:114
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1044
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
@@ -1110,33 +1110,33 @@ msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3م.بكسل)"
 
-#: core/app/items/utils/tooltipfiller.cpp:115
+#: core/app/items/utils/tooltipfiller.cpp:118
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
 msgstr "الأبعاد:"
 
-#: core/app/items/utils/tooltipfiller.cpp:123
+#: core/app/items/utils/tooltipfiller.cpp:126
 #, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "مجهولة"
 
-#: core/app/items/utils/tooltipfiller.cpp:126
-#: core/app/items/utils/tooltipfiller.cpp:330
+#: core/app/items/utils/tooltipfiller.cpp:129
+#: core/app/items/utils/tooltipfiller.cpp:333
 #, kde-format
 msgid "Aspect Ratio:"
 msgstr "النّسبة الباعيّة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:147
+#: core/app/items/utils/tooltipfiller.cpp:150
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
 msgstr "خصائص الصّورة الفوتوغرافيّة"
 
-#: core/app/items/utils/tooltipfiller.cpp:162
+#: core/app/items/utils/tooltipfiller.cpp:165
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
@@ -1144,7 +1144,7 @@ msgstr "خصائص الصّورة الفوتوغرافيّة"
 msgid "Make/Model:"
 msgstr "الصّانع/الطّراز:"
 
-#: core/app/items/utils/tooltipfiller.cpp:168
+#: core/app/items/utils/tooltipfiller.cpp:171
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
@@ -1153,22 +1153,22 @@ msgctxt "camera lens"
 msgid "Lens:"
 msgstr "العدسة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:205
-#: core/app/items/utils/tooltipfiller.cpp:210
+#: core/app/items/utils/tooltipfiller.cpp:208
+#: core/app/items/utils/tooltipfiller.cpp:213
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "أُنشأت في:"
 
-#: core/app/items/utils/tooltipfiller.cpp:232
+#: core/app/items/utils/tooltipfiller.cpp:235
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "الفتحة/البؤرة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:238
+#: core/app/items/utils/tooltipfiller.cpp:241
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
@@ -1178,20 +1178,20 @@ msgstr "الفتحة/البؤرة:"
 msgid "%1 ISO"
 msgstr "%1 آيزو"
 
-#: core/app/items/utils/tooltipfiller.cpp:245
+#: core/app/items/utils/tooltipfiller.cpp:248
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "التّعريض/الحساسيّة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:272
+#: core/app/items/utils/tooltipfiller.cpp:275
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "الوضع/البرنامج:"
 
-#: core/app/items/utils/tooltipfiller.cpp:285
+#: core/app/items/utils/tooltipfiller.cpp:288
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
@@ -1199,172 +1199,172 @@ msgctxt "camera flash settings"
 msgid "Flash:"
 msgstr "الوميض:"
 
-#: core/app/items/utils/tooltipfiller.cpp:297
+#: core/app/items/utils/tooltipfiller.cpp:300
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
 msgstr "توازن الأبيض:"
 
-#: core/app/items/utils/tooltipfiller.cpp:319
+#: core/app/items/utils/tooltipfiller.cpp:322
 #: core/utilities/searchwindow/searchgroup.cpp:113
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "خصائص الصّوت/الفيديو"
 
-#: core/app/items/utils/tooltipfiller.cpp:362
+#: core/app/items/utils/tooltipfiller.cpp:365
 #, kde-format
 msgid "Duration:"
 msgstr "المدّة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid "Frame Rate:"
 msgstr "معدّل الإطارات:"
 
-#: core/app/items/utils/tooltipfiller.cpp:383
+#: core/app/items/utils/tooltipfiller.cpp:386
 #, kde-format
 msgid " fps"
 msgstr "  إطار/ثا"
 
-#: core/app/items/utils/tooltipfiller.cpp:395
+#: core/app/items/utils/tooltipfiller.cpp:398
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
 #, kde-format
 msgid "Video Codec:"
 msgstr "مرماز الفيديو:"
 
-#: core/app/items/utils/tooltipfiller.cpp:416
+#: core/app/items/utils/tooltipfiller.cpp:419
 #, kde-format
 msgid "Audio Bit Rate:"
 msgstr "معدّل بتّات الصّوت:"
 
-#: core/app/items/utils/tooltipfiller.cpp:428
+#: core/app/items/utils/tooltipfiller.cpp:431
 #, kde-format
 msgid "Audio Channel Type:"
 msgstr "نوع قناة الصّوت:"
 
-#: core/app/items/utils/tooltipfiller.cpp:440
+#: core/app/items/utils/tooltipfiller.cpp:443
 #, kde-format
 msgid "Audio Codec:"
 msgstr "مرماز الصّوت:"
 
-#: core/app/items/utils/tooltipfiller.cpp:457
+#: core/app/items/utils/tooltipfiller.cpp:460
 #, kde-format
 msgid "digiKam Properties"
 msgstr "خصائص «دِجي‌كام»"
 
-#: core/app/items/utils/tooltipfiller.cpp:468
+#: core/app/items/utils/tooltipfiller.cpp:471
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "الألبوم:"
 
-#: core/app/items/utils/tooltipfiller.cpp:482
+#: core/app/items/utils/tooltipfiller.cpp:485
 #, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "العنوان:"
 
-#: core/app/items/utils/tooltipfiller.cpp:496
+#: core/app/items/utils/tooltipfiller.cpp:499
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "الواصفة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:505
+#: core/app/items/utils/tooltipfiller.cpp:508
 #, kde-format
 msgid "Tags:"
 msgstr "الوسوم:"
 
-#: core/app/items/utils/tooltipfiller.cpp:554
+#: core/app/items/utils/tooltipfiller.cpp:556
 #, kde-format
 msgid "Labels:"
 msgstr "اللصائق:"
 
-#: core/app/items/utils/tooltipfiller.cpp:583
+#: core/app/items/utils/tooltipfiller.cpp:607
 #, kde-format
 msgid "Album Properties"
 msgstr "خصائص الألبوم"
 
-#: core/app/items/utils/tooltipfiller.cpp:587
-#: core/app/items/utils/tooltipfiller.cpp:668
+#: core/app/items/utils/tooltipfiller.cpp:611
+#: core/app/items/utils/tooltipfiller.cpp:692
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "الاسم:"
 
-#: core/app/items/utils/tooltipfiller.cpp:593
+#: core/app/items/utils/tooltipfiller.cpp:617
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "العناصر:"
 
-#: core/app/items/utils/tooltipfiller.cpp:599
+#: core/app/items/utils/tooltipfiller.cpp:623
 #, kde-format
 msgid "Collection:"
 msgstr "التّجميعة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:620
+#: core/app/items/utils/tooltipfiller.cpp:644
 #, kde-format
 msgid "Category:"
 msgstr "الفئة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:633
+#: core/app/items/utils/tooltipfiller.cpp:657
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "الواصفة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:639
+#: core/app/items/utils/tooltipfiller.cpp:663
 #, kde-format
 msgid "Preview:"
 msgstr "المعاينة:"
 
-#: core/app/items/utils/tooltipfiller.cpp:664
+#: core/app/items/utils/tooltipfiller.cpp:688
 #, kde-format
 msgid "Filter"
 msgstr "مرشّح"
 
-#: core/app/items/utils/tooltipfiller.cpp:679
+#: core/app/items/utils/tooltipfiller.cpp:703
 #, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "نعم"
 
-#: core/app/items/utils/tooltipfiller.cpp:685
+#: core/app/items/utils/tooltipfiller.cpp:709
 #, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "جزئيًّا"
 
-#: core/app/items/utils/tooltipfiller.cpp:691
+#: core/app/items/utils/tooltipfiller.cpp:715
 #, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "لا"
 
-#: core/app/items/utils/tooltipfiller.cpp:701
+#: core/app/items/utils/tooltipfiller.cpp:725
 #, kde-format
 msgid "Reproducible:"
 msgstr "إمكانيّة تكراره:"
 
-#: core/app/items/utils/tooltipfiller.cpp:713
+#: core/app/items/utils/tooltipfiller.cpp:737
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "الوصف:"
 
-#: core/app/items/utils/tooltipfiller.cpp:718
+#: core/app/items/utils/tooltipfiller.cpp:742
 #, kde-format
 msgid "Identifier:"
 msgstr "المعرّف:"
 
-#: core/app/items/utils/tooltipfiller.cpp:723
+#: core/app/items/utils/tooltipfiller.cpp:747
 #, kde-format
 msgid "Technical Parameters"
 msgstr "المعاملات التّقنيّة"
 
-#: core/app/items/utils/tooltipfiller.cpp:742
+#: core/app/items/utils/tooltipfiller.cpp:766
 #, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<i>البيانات الثّنائيّة</i>"
@@ -2999,7 +2999,7 @@ msgctxt "@info"
 msgid "Face engine is disabled"
 msgstr "محرك الوجه معطل"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:204
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3009,7 +3009,7 @@ msgstr ""
 "فيها هذه الميزة، يرجى التفكير في استخدام صندوق المساعدة في اللوحة الجانبية "
 "السفلى اليسرى."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:259
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:257
 #, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
@@ -3017,7 +3017,7 @@ msgid ""
 msgstr ""
 "أجهض مسح الوجه، لأنه لا توجد هويات للتعرف عليها. الرجاء أضف هويات جديدة."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:279
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:277
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3190,7 +3190,7 @@ msgstr[3] "%1 عناصر"
 msgstr[4] "%1 عنصرًا"
 msgstr[5] "%1 عنصر"
 
-#: core/app/views/stack/itemiconview.cpp:201
+#: core/app/views/stack/itemiconview.cpp:198
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -27223,63 +27223,63 @@ msgid "No Color"
 msgstr "بلا لون"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "أحمر"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:496
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "برتقالي"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:502
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "أصفر"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:508
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "أخضر"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:514
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "أزرق"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:520
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "أرجواني"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:526
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "رصاصيّ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:532
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "أسود"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:538
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -27387,66 +27387,59 @@ msgstr "تعرف على الوجوه"
 msgid "Should sub-albums be scanned too?"
 msgstr "أينبغي مسح الألبومات الفرعية ضوئيًا أيضًا؟"
 
-#: core/libs/album/treeview/labelstreeview.cpp:97
+#: core/libs/album/treeview/labelstreeview.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "اللصائق"
 
-#: core/libs/album/treeview/labelstreeview.cpp:430
+#: core/libs/album/treeview/labelstreeview.cpp:412
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "التّقييم"
 
-#: core/libs/album/treeview/labelstreeview.cpp:435
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "دون تقييم"
 
-#: core/libs/album/treeview/labelstreeview.cpp:471
+#: core/libs/album/treeview/labelstreeview.cpp:453
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "اختر"
 
-#: core/libs/album/treeview/labelstreeview.cpp:476
+#: core/libs/album/treeview/labelstreeview.cpp:458
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "لا تختر شيء"
 
-#: core/libs/album/treeview/labelstreeview.cpp:477
+#: core/libs/album/treeview/labelstreeview.cpp:459
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "عنصر مرفوض"
 
-#: core/libs/album/treeview/labelstreeview.cpp:478
+#: core/libs/album/treeview/labelstreeview.cpp:460
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "عنصر ينتظر"
 
-#: core/libs/album/treeview/labelstreeview.cpp:479
+#: core/libs/album/treeview/labelstreeview.cpp:461
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "عنصر مقبول"
 
-#: core/libs/album/treeview/labelstreeview.cpp:499
+#: core/libs/album/treeview/labelstreeview.cpp:482
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "اللون"
-
-#: core/libs/album/treeview/labelstreeview.cpp:504
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, kde-format
-msgctxt "@item: color tree"
-msgid "No Color"
-msgstr " لا لون"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, kde-format
@@ -28689,16 +28682,14 @@ msgid "Progress Information"
 msgstr "معلومات التّقدّم"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
-#, fuzzy, kde-format
-#| msgid "Step Progress"
+#, kde-format
 msgid "Step Progress:"
-msgstr "تقدم الخطوة"
+msgstr "تقدم الخطوة:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Overall Progress"
+#, kde-format
 msgid "Overall Progress:"
-msgstr "التّقدّم الكلّيّ"
+msgstr "التّقدّم الكلّيّ:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:215
 #, kde-format
@@ -38272,7 +38263,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "بايت"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:364
+#: core/libs/properties/itempropertiestab_setters.cpp:378
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -39681,27 +39672,27 @@ msgstr[4] "أزل الوسم المطابق %1 وسمًا الوجه هذا من
 msgstr[5] "أزل الوسم المطابق %1 وسم الوجه هذا من الصور؟"
 
 # علة
-#: core/libs/tags/engine/tagsactionmngr.cpp:218
+#: core/libs/tags/engine/tagsactionmngr.cpp:233
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "عيّن التقييم \"%1 نجمة\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:234
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "عيّن التقييم \"%1 نجمة\" (بلا تبديل)"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:270
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "عيّن لصيقة الاختيار \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:277
+#: core/libs/tags/engine/tagsactionmngr.cpp:292
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "عيّن لصيقة اللون \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:326
+#: core/libs/tags/engine/tagsactionmngr.cpp:342
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "أسند الوسم ”%1“"
@@ -44364,73 +44355,13 @@ msgstr "ملف XMP للحفظ"
 msgid "XMP text Files (*.xmp)"
 msgstr "ملفات نص XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:544
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "لا شيء"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Red"
-msgstr "أحمر"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:560
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Orange"
-msgstr "برتقالي"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Yellow"
-msgstr "أصفر"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:561
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Green"
-msgstr "أخضر"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Blue"
-msgstr "أزرق"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:562
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Magenta"
-msgstr "أرجواني"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Gray"
-msgstr "رصاصيّ"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
-#, kde-format
-msgctxt "@item: color tree"
-msgid "Black"
-msgstr "أسود"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
-#, kde-format
-msgctxt "@item: color tree"
-msgid "White"
-msgstr "أبيض"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:639
-#, kde-format
-msgctxt "@info: color label selector"
-msgid "Color Label: %1"
-msgstr "اللصيقة اللونيّة: %1"
-
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:650
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
@@ -67542,6 +67473,50 @@ msgstr "عناصر الألبوم"
 #, kde-format
 msgid "Import Items"
 msgstr "استورد عناصر"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "No Color"
+#~ msgstr " لا لون"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Red"
+#~ msgstr "أحمر"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Orange"
+#~ msgstr "برتقالي"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Yellow"
+#~ msgstr "أصفر"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Green"
+#~ msgstr "أخضر"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Blue"
+#~ msgstr "أزرق"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Magenta"
+#~ msgstr "أرجواني"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Gray"
+#~ msgstr "رصاصيّ"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "Black"
+#~ msgstr "أسود"
+
+#~ msgctxt "@item: color tree"
+#~ msgid "White"
+#~ msgstr "أبيض"
+
+#~ msgctxt "@info: color label selector"
+#~ msgid "Color Label: %1"
+#~ msgstr "اللصيقة اللونيّة: %1"
 
 #, fuzzy
 #~| msgctxt "@title: tableview"
