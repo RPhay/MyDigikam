@@ -323,54 +323,49 @@ ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
     return infos;
 }
 
-bool DigikamItemView::getFaceMode() const
+bool DigikamItemView::isPeopleViewMode() const
 {
     return (d->sidebarViewMode == PeopleView);
 }
 
 void DigikamItemView::setSidebarViewMode(int mode)
 {
-    d->sidebarViewMode = mode;
+    d->sidebarViewMode     = mode;
 
     // Groups open view and separation mode from settings default.
 
-    bool showGroupsOpen = ApplicationSettings::instance()->getAllGroupsOpen();
-    int separationMode  = ApplicationSettings::instance()->getImageSeparationMode();
+    QString tagListing;
+    ItemDelegate* delegate = d->normalDelegate;
+    bool showGroupsOpen    = ApplicationSettings::instance()->getAllGroupsOpen();
+    int separationMode     = ApplicationSettings::instance()->getImageSeparationMode();
 
     if      (mode == SearchView)
     {
-        itemAlbumModel()->setSpecialTagListing(QString());
-        setItemDelegate(d->normalDelegate);
-
         showGroupsOpen = true;
     }
     else if (mode == FuzzySView)
     {
-        itemAlbumModel()->setSpecialTagListing(QString());
-        setItemDelegate(d->normalDelegate);
-
         showGroupsOpen = true;
     }
     else if (mode == PeopleView)
     {
-        // See ItemLister, which creates a search the implements listing tag in the ioslave
+        // See ItemLister, which creates a search the
+        // implements listing tag in the ioslave
 
-        itemAlbumModel()->setSpecialTagListing(QLatin1String("faces"));
-        setItemDelegate(d->faceDelegate);
+        tagListing     = QLatin1String("faces");
+        delegate       = d->faceDelegate;
 
-        // grouping is not very much compatible with faces
+        // Grouping is not very much compatible with faces.
 
         showGroupsOpen = true;
 
-        // by default, Face View is categorized by Faces.
+        // By default, Face View is categorized by Faces.
 
         separationMode = ItemSortSettings::CategoryByFaces;
     }
-    else
-    {
-        itemAlbumModel()->setSpecialTagListing(QString());
-        setItemDelegate(d->normalDelegate);
-    }
+
+    itemAlbumModel()->setSpecialTagListing(tagListing);
+    setItemDelegate(delegate);
 
     itemFilterModel()->setAllGroupsOpen(showGroupsOpen);
     itemFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationMode);
@@ -443,7 +438,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     if (album)
     {
-        needFastRemove = (getFaceMode() && (tagId != album->id()));
+        needFastRemove = (isPeopleViewMode() && (tagId != album->id()));
     }
 
     for (const QModelIndex& index : std::as_const(indexes))
@@ -889,7 +884,7 @@ void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
                               ProgressManager::instance()->findItembyId(FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource::BQM))
                              );
 
-    if ((viewMode() == QListView::IconMode) && getFaceMode() && runningFaceAction)
+    if ((viewMode() == QListView::IconMode) && isPeopleViewMode() && runningFaceAction)
     {
         return;
     }
