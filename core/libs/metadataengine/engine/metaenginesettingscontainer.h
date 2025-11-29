@@ -81,6 +81,8 @@ public:
     void readFromConfig(const KConfigGroup& group);
     void writeToConfig(KConfigGroup& group)  const;
 
+    bool isMetadataWriteEnabled()            const;
+
     QStringList defaultExifToolSearchPaths() const;
 
 public:

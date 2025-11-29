@@ -126,6 +126,21 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("ExifTool Path",                           exifToolPath);
 }
 
+bool MetaEngineSettingsContainer::isMetadataWriteEnabled() const
+{
+    return (
+            saveTags       ||
+            saveTemplate   ||
+            saveFaceTags   ||
+            savePosition   ||
+            saveComments   ||
+            saveDateTime   ||
+            savePickLabel  ||
+            saveColorLabel ||
+            saveRating
+           );
+}
+
 QStringList MetaEngineSettingsContainer::defaultExifToolSearchPaths() const
 {
     QStringList defPaths;

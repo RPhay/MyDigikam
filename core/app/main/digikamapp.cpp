@@ -610,6 +610,7 @@ void DigikamApp::slotAlbumSelected(Album* album)
     if (album && !album->isTrashAlbum())
     {
         PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
+        bool writeMetadata   = MetaEngineSettings::instance()->isMetadataWriteEnabled();
 
         if (album->type() != Album::PHYSICAL || !palbum)
         {
@@ -620,7 +621,7 @@ void DigikamApp::slotAlbumSelected(Album* album)
             d->propsEditAction->setEnabled(false);
             d->openInFileManagerAction->setEnabled(false);
             d->newAction->setEnabled(false);
-            d->writeAlbumMetadataAction->setEnabled(true);
+            d->writeAlbumMetadataAction->setEnabled(writeMetadata);
             d->readAlbumMetadataAction->setEnabled(true);
 
             d->pasteItemsAction->setEnabled(!album->isRoot());
@@ -658,7 +659,7 @@ void DigikamApp::slotAlbumSelected(Album* album)
             d->propsEditAction->setEnabled(isNormalAlbum);
             d->openInFileManagerAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->newAction->setEnabled(isNormalAlbum || isAlbumRoot);
-            d->writeAlbumMetadataAction->setEnabled(isNormalAlbum || isAlbumRoot);
+            d->writeAlbumMetadataAction->setEnabled((isNormalAlbum || isAlbumRoot) && writeMetadata);
             d->readAlbumMetadataAction->setEnabled(isNormalAlbum || isAlbumRoot);
 
             d->pasteItemsAction->setEnabled(isNormalAlbum || isAlbumRoot);
@@ -873,6 +874,7 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
     // or if multiple images are selected, but one image is the 'current image'.
 
     bool hasAtLeastCurrent = (selectionCount == 1) || ((selectionCount > 0) && d->view->hasCurrentItem());
+    bool writeMetadata     = MetaEngineSettings::instance()->isMetadataWriteEnabled();
 
     d->imagePreviewAction->setEnabled(hasAtLeastCurrent);
     d->imageViewAction->setEnabled(hasAtLeastCurrent);
@@ -891,7 +893,7 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
     d->imageAddLightTableAction->setEnabled(selectionCount > 0);
     d->imageAddCurrentQueueAction->setEnabled((selectionCount > 0) && !QueueMgrWindow::queueManagerWindow()->isBusy());
     d->imageAddNewQueueAction->setEnabled((selectionCount > 0) && !QueueMgrWindow::queueManagerWindow()->isBusy());
-    d->imageWriteMetadataAction->setEnabled(selectionCount > 0);
+    d->imageWriteMetadataAction->setEnabled((selectionCount > 0) && writeMetadata);
     d->imageReadMetadataAction->setEnabled(selectionCount > 0);
     d->imageDeleteAction->setEnabled(selectionCount > 0);
     d->imageRotateActionMenu->setEnabled(selectionCount > 0);

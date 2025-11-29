@@ -116,11 +116,6 @@ MetaEngineSettingsContainer MetaEngineSettings::settings() const
     return s;
 }
 
-bool MetaEngineSettings::exifRotate() const
-{
-    return d->settings.exifRotate;
-}
-
 void MetaEngineSettings::setSettings(const MetaEngineSettingsContainer& settings)
 {
     MetaEngineSettingsContainer old = d->setSettings(settings);
@@ -129,6 +124,16 @@ void MetaEngineSettings::setSettings(const MetaEngineSettingsContainer& settings
     Q_EMIT signalSettingsChanged();
 
     d->writeToConfig();
+}
+
+bool MetaEngineSettings::isMetadataWriteEnabled() const
+{
+    return d->settings.isMetadataWriteEnabled();
+}
+
+bool MetaEngineSettings::exifRotate() const
+{
+    return d->settings.exifRotate;
 }
 
 void MetaEngineSettings::readFromConfig()

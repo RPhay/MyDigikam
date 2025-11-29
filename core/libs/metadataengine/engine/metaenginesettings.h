@@ -51,6 +51,11 @@ public:
     void setSettings(const MetaEngineSettingsContainer& settings);
 
     /**
+     * Shortcut to get if metadata write using one option is enabled.
+     */
+    bool isMetadataWriteEnabled()          const;
+
+    /**
      * Shortcut to get exif rotation settings from container.
      */
     bool exifRotate()                      const;
