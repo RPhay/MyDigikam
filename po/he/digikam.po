@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-28 00:40+0000\n"
-"PO-Revision-Date: 2025-11-27 12:39+0200\n"
+"POT-Creation-Date: 2025-11-29 00:40+0000\n"
+"PO-Revision-Date: 2025-11-28 23:29+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -36555,7 +36555,7 @@ msgstr "<i>לא השתנה</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:639
+#: core/libs/properties/itempropertiessidebardb.cpp:648
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -36567,10 +36567,10 @@ msgstr "לא זמין"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:697
-#: core/libs/properties/itempropertiessidebardb.cpp:699
-#: core/libs/properties/itempropertiessidebardb.cpp:802
-#: core/libs/properties/itempropertiessidebardb.cpp:804
+#: core/libs/properties/itempropertiessidebardb.cpp:706
+#: core/libs/properties/itempropertiessidebardb.cpp:708
+#: core/libs/properties/itempropertiessidebardb.cpp:811
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
@@ -36583,10 +36583,10 @@ msgstr "לא"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:698
-#: core/libs/properties/itempropertiessidebardb.cpp:801
-#: core/libs/properties/itempropertiessidebardb.cpp:803
+#: core/libs/properties/itempropertiessidebardb.cpp:705
+#: core/libs/properties/itempropertiessidebardb.cpp:707
+#: core/libs/properties/itempropertiessidebardb.cpp:810
+#: core/libs/properties/itempropertiessidebardb.cpp:812
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -36847,8 +36847,8 @@ msgstr "לא כוון"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:673
-#: core/libs/properties/itempropertiessidebardb.cpp:686
+#: core/libs/properties/itempropertiessidebardb.cpp:682
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -36863,7 +36863,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:704
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -36871,7 +36871,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:738
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -36879,26 +36879,26 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:743
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:87
+#: core/libs/properties/itempropertiessidebardb.cpp:88
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "כיתובים"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:88
+#: core/libs/properties/itempropertiessidebardb.cpp:89
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "הרשאות:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:678
+#: core/libs/properties/itempropertiessidebardb.cpp:687
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
@@ -57298,10 +57298,10 @@ msgid "Preview on mouse-over"
 msgstr "אפשרויות תצוגת תיקייה"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:192
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
-msgstr "חזרה למצב תצוגה רגיל"
+msgstr "מצב תצוגה מקדימה"
 
 #: core/utilities/import/backend/cameracontroller.cpp:419
 #, kde-format
@@ -57309,14 +57309,14 @@ msgid "Connecting to camera..."
 msgstr "התחברות למצלמה…"
 
 #: core/utilities/import/backend/cameracontroller.cpp:428
-#, fuzzy, kde-format
+#, kde-format
 msgid "Connection established."
-msgstr "חיבור בוצע"
+msgstr "החיבור נוצר."
 
 #: core/utilities/import/backend/cameracontroller.cpp:432
-#, fuzzy, kde-format
+#, kde-format
 msgid "Connection failed."
-msgstr "חיבור כשל"
+msgstr "החיבור נכשל."
 
 #: core/utilities/import/backend/cameracontroller.cpp:458
 #, fuzzy, kde-format
@@ -57391,49 +57391,49 @@ msgid "Failed to run script for <filename>%1</filename>"
 msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1024
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to download file <b>%1</b>."
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמצלמה למחשב."
+msgstr "הורדת הקובץ <b>%1</b> נכשלה."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1028
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr "הורדת הקובץ <b>%1</b> נכשלה. להמשיך?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1045
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
+msgstr "העלאת הקובץ <filename>%1</filename> נכשלה"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1053
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to upload file <b>%1</b>."
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
+msgstr "העלאת הקובץ <b>%1</b> נכשלה."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1057
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr "העלאת הקובץ <b>%1</b> נכשלה. להמשיך?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1073
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמצלמה למחשב."
+msgstr "המחיקה של <filename>%1</filename> נכשלה"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1081
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to delete file <b>%1</b>."
-msgstr "כישלון בעת מחיקת הקובץ \"%1\"."
+msgstr "מחיקת הקובץ <b>%1</b> נכשלה."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1085
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr "מחיקת הקובץ <b>%1</b> נכשלה. להמשיך?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1101
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
+msgstr "נעילת <filename>%1</filename> נכשלה"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1109
 #, fuzzy, kde-format
@@ -57473,8 +57473,7 @@ msgstr ""
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#, fuzzy, kde-format
-#| msgid "yes"
+#, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "כן"
@@ -57485,8 +57484,7 @@ msgstr "כן"
 #: core/utilities/import/backend/gpcamera.cpp:1632
 #: core/utilities/import/backend/gpcamera.cpp:1633
 #: core/utilities/import/backend/gpcamera.cpp:1634
-#, fuzzy, kde-format
-#| msgid "no"
+#, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "לא"
@@ -57500,14 +57498,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"כותרת: <b>%1</b><br/>דגם: <b>%2</b><br/>חיבור: <b>%3</b><br/>נתיב: <b>%4</"
-"b><br/>UUID: <b>%5</b><br/><br/>"
+"כותרת: „%1”<br>דגם: „%2”<br>פתחה: „%3”<br>נתיב: „%4”<br>מזהה ייחודי: "
+"„%5”<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
 #, fuzzy, kde-format
@@ -57527,8 +57525,7 @@ msgstr ""
 #: core/utilities/import/backend/umscamera.cpp:590
 #: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
-#, fuzzy, kde-format
-#| msgid "yes"
+#, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "כן"
@@ -57539,8 +57536,7 @@ msgstr "כן"
 #: core/utilities/import/backend/umscamera.cpp:590
 #: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
-#, fuzzy, kde-format
-#| msgid "no"
+#, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "לא"
@@ -57564,7 +57560,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
 msgstr "%1 - בחירת תיקיית מצלמה"
@@ -57576,31 +57572,28 @@ msgid "Please select the camera folder where you want to upload the images."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:46
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Device Information"
-msgstr "נתוני ההתקן"
+msgstr "פרטי התקן"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "Device Summary"
+#, kde-format
 msgctxt "@title"
 msgid "Device Summary"
-msgstr "תקציר מצלמה"
+msgstr "תקציר התקן"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:67
-#, fuzzy, kde-format
-#| msgid "Device Manual"
+#, kde-format
 msgctxt "@title"
 msgid "Device Manual"
-msgstr "ספר הדרכה של המצלמה"
+msgstr "מדריך ההתקן"
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:75
-#, fuzzy, kde-format
-#| msgid "About Driver"
+#, kde-format
 msgctxt "@title"
 msgid "About Driver"
-msgstr "אודות מנהל התקן"
+msgstr "על מנהל ההתקן"
 
 #: core/utilities/import/dialogs/cameramessagebox.cpp:132
 #, fuzzy, kde-format
@@ -57609,39 +57602,39 @@ msgid "Thumb"
 msgstr "הצגת תמונות-ממוזערות"
 
 #: core/utilities/import/dialogs/capturedlg.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "Capture from %1"
-msgstr "לכידה מ %1"
+msgstr "לכידה מ־%1"
 
 #: core/utilities/import/dialogs/capturedlg.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Capture"
 msgstr "לכידה"
 
 #: core/utilities/import/items/importcategorydrawer.cpp:216
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown Format"
-msgstr "לא ידוע"
+msgstr "התסדיר לא ידוע"
 
 #: core/utilities/import/items/importoverlays.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This item is locked."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "הפריט הזה נעולה."
 
 #: core/utilities/import/items/importoverlays.cpp:238
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has an unknown download status"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "מצב ההורדה של הפריט הזה לא ידוע"
 
 #: core/utilities/import/items/importoverlays.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has never been downloaded"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "הפריט הזה לא ירד מעולם"
 
 #: core/utilities/import/items/importoverlays.cpp:250
 #, kde-format
@@ -57658,140 +57651,136 @@ msgstr ""
 "קבעו כיצד digiKam נותן שמות לקבצי תמונות כאשר הוא מעתיק אותם למחשב מהמצלמה"
 
 #: core/utilities/import/main/importui.cpp:159
-#, fuzzy, kde-format
-#| msgid "File Renaming Options"
+#, kde-format
 msgctxt "@item"
 msgid "File Renaming Options"
-msgstr "אפשרויות שינוי שם קובץ"
+msgstr "אפשרויות שינוי שמות קבצים"
 
 #: core/utilities/import/main/importui.cpp:165
-#, fuzzy, kde-format
-#| msgid "Auto-creation of Albums"
+#, kde-format
 msgctxt "@item"
 msgid "Auto-creation of Albums"
-msgstr "יצירה אוטומטית של כותרים"
+msgstr "יצירת אלבומים אוטומטית"
 
 #: core/utilities/import/main/importui.cpp:171
-#, fuzzy, kde-format
-#| msgid "On the Fly Operations (JPEG only)"
+#, kde-format
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
-msgstr "עיבוד תמונה תוך כדי העתקה (תמונות JPEG בלבד)"
+msgstr "פעולות תוך כדי פעילות (JPEG בלבד)"
 
 #: core/utilities/import/main/importui.cpp:179
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
-msgstr "אפשרויות תצוגת תיקייה"
+msgstr "אפשרויות המרת DNG"
 
 #: core/utilities/import/main/importui.cpp:187
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Scripting"
-msgstr "החלקה:"
+msgstr "סקריפטים"
 
 #: core/utilities/import/main/importui.cpp:191
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr "הגדרות"
 
 #: core/utilities/import/main/importui.cpp:206
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "ביטול"
 
 #: core/utilities/import/main/importui.cpp:213
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
-msgstr "מידע"
+msgstr "פרטים"
 
 #: core/utilities/import/main/importui.cpp:220
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "לכידה"
 
 #: core/utilities/import/main/importui.cpp:232
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
-msgstr "בחירת הכל"
+msgstr "בחירה בהכול"
 
 #: core/utilities/import/main/importui.cpp:240
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
-msgstr "בחירה בכלום"
+msgstr "לא לבחור בכלום"
 
 #: core/utilities/import/main/importui.cpp:248
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
-msgstr "היפוך בחירה"
+msgstr "היפוך הבחירה"
 
 #: core/utilities/import/main/importui.cpp:256
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "בחירת פריטים חדשים"
 
 #: core/utilities/import/main/importui.cpp:263
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
-msgstr "בחירת פריטים חדשים"
+msgstr "בחירת פריטים נעולים"
 
 #: core/utilities/import/main/importui.cpp:271
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "Download"
-msgstr "העתקה למחשב"
+msgstr "הורדה"
 
 #: core/utilities/import/main/importui.cpp:276
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download New"
-msgstr "העתקה למחשב"
+msgstr "הורדת חדשות"
 
 #: core/utilities/import/main/importui.cpp:286
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download Selected"
-msgstr "העתקת התמונות המסומנות למחשב"
+msgstr "הורדת הנבחרות"
 
 #: core/utilities/import/main/importui.cpp:293
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download All"
-msgstr "העתקת כל התמונות למחשב"
+msgstr "הורדה של הכול"
 
 #: core/utilities/import/main/importui.cpp:301
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
-msgstr "העתקה למחשב/מחיקת כל התמונות"
+msgstr "הורדת ומחיקת חדשים"
 
 #: core/utilities/import/main/importui.cpp:309
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
-msgstr "העתקה למחשב/מחיקת המסומנות"
+msgstr "הורדת ומחיקת הנבחרות"
 
 #: core/utilities/import/main/importui.cpp:317
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
-msgstr "העתקה למחשב/מחיקת כל התמונות"
+msgstr "הורדה ומחיקה של הכול"
 
 #: core/utilities/import/main/importui.cpp:324
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Upload..."
-msgstr "העתקה למצלמה..."
+msgstr "העלאה…"
 
 #: core/utilities/import/main/importui.cpp:332
 #, fuzzy, kde-format
@@ -57806,46 +57795,46 @@ msgid "Mark as downloaded"
 msgstr "הועתקו למחשב:"
 
 #: core/utilities/import/main/importui.cpp:347
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "מחיקה"
 
 #: core/utilities/import/main/importui.cpp:352
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
-msgstr "למחוק מסומנים"
+msgstr "מחיקת הנבחרים"
 
 #: core/utilities/import/main/importui.cpp:360
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
-msgstr "למחוק הכל"
+msgstr "למחוק הכול"
 
 #: core/utilities/import/main/importui.cpp:366
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
-msgstr "מחיקת קובץ"
+msgstr "מחיקת חדשים"
 
 #: core/utilities/import/main/importui.cpp:374
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group"
 msgid "Views"
-msgstr "תצוגה"
+msgstr "תצוגות"
 
 #: core/utilities/import/main/importui.cpp:378
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
-msgstr "הצגת תמונות-ממוזערות"
+msgstr "תמונות ממוזערות"
 
 #: core/utilities/import/main/importui.cpp:385
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
-msgstr "תמונה קודמת"
+msgstr "תצוגת פריט מקדימה"
 
 #: core/utilities/import/main/importui.cpp:395
 #, kde-format
@@ -57854,10 +57843,10 @@ msgid "Map"
 msgstr "מפה"
 
 #: core/utilities/import/main/importui.cpp:407
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
-msgstr "סידור תמונות"
+msgstr "מיון &פריטים"
 
 #: core/utilities/import/main/importui.cpp:408
 #, kde-format
@@ -57866,44 +57855,40 @@ msgid "The value by which the items are sorted in the thumbnail view"
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:413
-#, fuzzy, kde-format
-#| msgid "By Name"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "לפי שם"
 
 #: core/utilities/import/main/importui.cpp:414
-#, fuzzy, kde-format
-#| msgid "By Path"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "לפי נתיב"
 
 #: core/utilities/import/main/importui.cpp:415
-#, fuzzy, kde-format
-#| msgid "By Date"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "לפי תאריך"
 
 #: core/utilities/import/main/importui.cpp:416
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
-msgstr "לפי גודל קובץ"
+msgstr "לפי גודל"
 
 #: core/utilities/import/main/importui.cpp:417
-#, fuzzy, kde-format
-#| msgid "By Rating"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
-msgstr "לפי דרוג"
+msgstr "לפי דירוג"
 
 #: core/utilities/import/main/importui.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
-msgstr "העתקת התמונות המסומנות למחשב"
+msgstr "לפי מצב הורדה"
 
 #: core/utilities/import/main/importui.cpp:442
 #, fuzzy, kde-format
@@ -57918,22 +57903,22 @@ msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:447
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
-msgstr "מקודד RAW"
+msgstr "עולה"
 
 #: core/utilities/import/main/importui.cpp:449
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
-msgstr "מקודד RAW"
+msgstr "יורד"
 
 #: core/utilities/import/main/importui.cpp:461
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
-msgstr "סידור תמונות"
+msgstr "&קיבוץ פריטים"
 
 #: core/utilities/import/main/importui.cpp:462
 #, kde-format
@@ -57990,68 +57975,66 @@ msgid "Show Thumbbar"
 msgstr "הצגת תמונות-ממוזערות"
 
 #: core/utilities/import/main/importui.cpp:560
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
-msgstr "נסו שנית"
+msgstr "לנסות שוב"
 
 #: core/utilities/import/main/importui.cpp:783
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
-msgstr "חזרה למצב תצוגה רגיל"
+msgstr "יציאה ממצב תצוגה מקדימה"
 
 #: core/utilities/import/main/importui.cpp:788
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Next Image"
-msgstr "תמונה הבאה"
+msgstr "התמונה הבאה"
 
 #: core/utilities/import/main/importui.cpp:800
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
-msgstr "תמונה ראשונה"
+msgstr "התמונה הראשונה"
 
 #: core/utilities/import/main/importui.cpp:805
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
-msgstr "תמונה אחרונה"
+msgstr "התמונה האחרונה"
 
 #: core/utilities/import/main/importui.cpp:906
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
-msgstr "בתהליך ביטול הפעולה הנוכחית, אנא המתינו..."
+msgstr "הפעולה האחרונה מבוטלת, נא להמתין…"
 
 #: core/utilities/import/main/importui.cpp:957
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
-msgstr "האם לסגור את החלון ולבטל את הפעולה הנוכחית?"
+msgstr "לסגור את החלונית ולבטל את הפעולה הנוכחית?"
 
 #: core/utilities/import/main/importui.cpp:967
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
-msgstr "בתהליך התנתקות ממצלמה, אנא המתינו..."
+msgstr "המצלמה מנותקת, נא להמתין…"
 
 #: core/utilities/import/main/importui.cpp:1044
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
-msgstr "מוכן"
+msgstr "בהמתנה"
 
 #: core/utilities/import/main/importui.cpp:1101
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to connect to the camera. Please make sure it is connected properly "
 "and turned on."
-msgstr ""
-"כישלון בעת הניסיון להתחבר למצלמה. אנא בדקו שהיא מחוברת באופן תקין למחשב "
-"ודלוקה. האם אתם מעוניינים לנסות שוב?"
+msgstr "החיבור למצלמה נכשל. נא לוודא שהיא מחוברת כראוי ודולקת."
 
 #: core/utilities/import/main/importui.cpp:1195
 #, kde-format
@@ -58060,7 +58043,7 @@ msgid "Select Image to Upload"
 msgstr "בחירת תמונה להעלאה"
 
 #: core/utilities/import/main/importui.cpp:1230
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "There is not enough free space on the Camera Medium to upload pictures.\n"
@@ -58068,11 +58051,10 @@ msgid ""
 "Space require: %1\n"
 "Available free space: %2"
 msgstr ""
-"לא קיים מספיק זיכרון פנוי ברכיב האחסון של המצלמה על מנת שתוכלו להעתיק אליו "
-"את התמונות.\n"
+"אין מספיק מקום פנוי באמצעי האחסון של המצלמה להעלאת תמונות.\n"
 "\n"
-"זכרון דרוש: %1\n"
-"זיכרון פנוי מצוי: %2"
+"הנפח הדרוש: %1\n"
+"הנפח הפנוי הזמין: %2"
 
 #: core/utilities/import/main/importui.cpp:1285
 #, kde-format
@@ -58114,13 +58096,12 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:1432
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Please select the destination album from the digiKam library to import the "
 "camera pictures into."
-msgstr ""
-"<p>אנא בחרו אוסף תמונות מתוך ספריית digiKam אליו יועתקו התמונות מהמצלמה.</p>"
+msgstr "נא לבחור את אלבום היעד מהספרייה של digiKam לייבוא התמונות אליו."
 
 #: core/utilities/import/main/importui.cpp:1463
 #, kde-format
@@ -58136,9 +58117,9 @@ msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
 
 #: core/utilities/import/main/importui.cpp:1534
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
+msgstr "העברת קובץ עבור <filename>%1</filename> נכשלה"
 
 #: core/utilities/import/main/importui.cpp:1978
 #, kde-format
@@ -58230,9 +58211,9 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/utilities/import/main/importui.cpp:2433
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
+msgstr "<filename>%1</filename> נפסח"
 
 #: core/utilities/import/main/importui.cpp:2455
 #, kde-kuit-format
@@ -58316,10 +58297,10 @@ msgid "Write the document name to EXIF"
 msgstr ""
 
 #: core/utilities/import/widgets/advancedsettings.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Fix internal date && time"
-msgstr "תיקון תאריך וזמן פנימי"
+msgstr "תיקון תאריך ושעה פנימיים"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:77
 #, fuzzy, kde-format
@@ -58723,7 +58704,7 @@ msgid "Set the method to use to change the case of the image filenames."
 msgstr ""
 
 #: core/utilities/import/widgets/renamecustomizer.cpp:125
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Custom Image Renaming"
 msgid "Customize"
 msgstr "התאמה אישית"
@@ -58838,27 +58819,25 @@ msgid "Open the item with default assigned application."
 msgstr "פתיחת התמונה הבחורה בעורך-תמונה"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
-msgstr "הסרת פריט משולחן-האור"
+msgstr "הסרת פריט משולחן האור"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
-msgstr "הסרת כל הפריטים משולחן-האור"
+msgstr "הסרת כל הפריטים משולחן האור"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
 msgstr "העברה לאשפה"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete immediately"
-msgstr "מחיקה לצמיתות"
+msgstr "מחיקה מיידית"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:102
 #, kde-format
@@ -58881,9 +58860,9 @@ msgid "Navigate by pairs with all items"
 msgstr "ניווט לפי צמדים בכל הפריטים"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgid "Clear On Close"
-msgstr "מחיקת הציור"
+msgstr "פינוי בסגירה"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
 #, kde-format
@@ -58908,9 +58887,9 @@ msgid "Fit to &Window"
 msgstr "התאמת תצוגה ל&גודל החלון"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgid "Color-Managed View"
-msgstr "תצוגת ניהול צבע"
+msgstr "תצוגה מנוהלת צבע"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
@@ -58918,46 +58897,46 @@ msgid "Previous Image"
 msgstr "תמונה קודמת"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Titles on the Right"
-msgstr "יישור מלל לימין"
+msgstr "עריכת כותרות מימין"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Comments on the Right"
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "עריכת הערות מימין"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show Assigned Tags on the Right"
-msgstr "הוספת תוויות לפריט זה"
+msgstr "הצגת תגיות מוקצות מימין"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:249
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Titles on the Left"
-msgstr "יישור מלל לשמאל"
+msgstr "עריכת כותרות משמאל"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:254
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Comments on the Left"
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "עריכת הערות משמאל"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:259
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show Assigned Tags on the Left"
-msgstr "הוספת תוויות לפריט זה"
+msgstr "הצגת תגיות מוקצות משמאל"
 
 #. i18n: ectx: Menu (LeftPanel)
 #: core/utilities/lighttable/lighttablewindowui5.rc:35
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Left Panel"
-msgstr "ניהול זכויות יוצרים"
+msgstr "לוח &שמאלי"
 
 #. i18n: ectx: Menu (RightPanel)
 #: core/utilities/lighttable/lighttablewindowui5.rc:41
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Right Panel"
-msgstr "ניהול זכויות יוצרים"
+msgstr "לוח י&מני"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:39
 #, kde-format
@@ -59434,14 +59413,14 @@ msgid "Recognized: %1"
 msgstr "גודל:"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgid "Finger-prints"
-msgstr "בנייה מחודשת של תמונות ממוזערות..."
+msgstr "טביעות אצבע"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "בנייה מחודשת של מאפייני זיהוי תמונות..."
+msgstr "טביעת אצבע מורכבת מחדש: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
 #, kde-format
@@ -59532,9 +59511,9 @@ msgid "Item scanned to remove tags: %1"
 msgstr "פריטים שנסרקו להסרת תגית: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
-#, fuzzy, kde-format
+#, kde-format
 msgid "Synchronizing image metadata with database"
-msgstr "מתאם מידע-נוסף של תמונות עם מסד הנתונים, אנא המתינו..."
+msgstr "סנכרון נתוני העל של התמונה עם מסד הנתונים"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
 #, fuzzy, kde-format
@@ -59911,10 +59890,10 @@ msgid "This is the list of images to batch process."
 msgstr "זאת רשימת התמונות לעיבוד במרוכז."
 
 #: core/utilities/queuemanager/views/queuelist.cpp:310
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: preview item"
 msgid "Thumbnail"
-msgstr "הצגת תמונות-ממוזערות"
+msgstr "תמונה ממוזערת"
 
 #: core/utilities/queuemanager/views/queuelist.cpp:311
 #, kde-format
@@ -61343,25 +61322,26 @@ msgid ""
 msgstr "הגדרת האפשרות הזאת תציג את גודל הקובץ מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show image aspect ratio"
-msgstr "שמירה על יחס"
+msgstr "הצגת יחס גובה־רוחב של תמונה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:142
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"הגדרת האפשרות הזאת תציג את יחס הגובה־רחב של התמונה מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show image format"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "הצגת סוג התמונה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:146
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את סוג תוכן התמונה מעל לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
 #, kde-format
@@ -61369,9 +61349,9 @@ msgid "Show digiKam tit&le"
 msgstr "הצגת &כותרת digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את הכותרת של digiKam מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
@@ -61390,10 +61370,11 @@ msgid "Show digiKam &tags"
 msgstr "הצגת &תגיות digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"הגדרת האפשרות הזאת תציג את רשימת התגיות של digiKam מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
@@ -61401,9 +61382,9 @@ msgid "Show digiKam &rating"
 msgstr "הצגת &דירוג digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:161
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את הדירוג של digiKam מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
 #, fuzzy, kde-format

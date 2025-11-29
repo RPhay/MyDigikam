@@ -3,7 +3,7 @@
 # Florin Cătălin RUSSEN <cfrussen@yahoo.co.uk>, 2009, 2011.
 # Cristian Oneț <onet.cristian@gmail.com>, 2011.
 # Laurenţiu Buzdugan <lbuz@rolix.org>, 2008.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2011, 2012, 2013, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2008, 2009, 2011, 2012, 2013, 2020, 2021, 2022, 2023, 2024, 2025 Sergiu Bivol <sergiu@cip.md>
 #
 # --- kipiplugin_acquireimages
 # Traducerea kipiplugin_acquireimages.po în Română
@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-28 00:40+0000\n"
-"PO-Revision-Date: 2024-02-24 15:47+0000\n"
+"POT-Creation-Date: 2025-11-29 00:40+0000\n"
+"PO-Revision-Date: 2025-10-19 01:27+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -12715,22 +12715,22 @@ msgid "Contrast:"
 msgstr "Contrast:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "contrast mode"
 msgid "Normal"
 msgstr "Normal"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "contrast mode"
 msgid "Soft"
 msgstr "Moale"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "contrast mode"
 msgid "Hard"
-msgstr "Dificil"
+msgstr "Tare"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:99
 #, kde-format
@@ -12747,19 +12747,19 @@ msgid "Saturation:"
 msgstr "Saturație:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "saturation mode"
 msgid "Normal"
-msgstr "Normal"
+msgstr "Normală"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "saturation mode"
 msgid "Low"
-msgstr "Scăzut"
+msgstr "Joasă"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "saturation mode"
 msgid "High"
 msgstr "Înaltă"
@@ -12775,7 +12775,7 @@ msgstr ""
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
 #, kde-format
 msgid "Sharpness:"
-msgstr "Accentuare: "
+msgstr "Claritate:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:116
 #, fuzzy, kde-format
@@ -38267,7 +38267,7 @@ msgstr "<i>neschimbat</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:639
+#: core/libs/properties/itempropertiessidebardb.cpp:648
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -38279,10 +38279,10 @@ msgstr "indisponibil"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:697
-#: core/libs/properties/itempropertiessidebardb.cpp:699
-#: core/libs/properties/itempropertiessidebardb.cpp:802
-#: core/libs/properties/itempropertiessidebardb.cpp:804
+#: core/libs/properties/itempropertiessidebardb.cpp:706
+#: core/libs/properties/itempropertiessidebardb.cpp:708
+#: core/libs/properties/itempropertiessidebardb.cpp:811
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
@@ -38295,10 +38295,10 @@ msgstr "Nu"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:698
-#: core/libs/properties/itempropertiessidebardb.cpp:801
-#: core/libs/properties/itempropertiessidebardb.cpp:803
+#: core/libs/properties/itempropertiessidebardb.cpp:705
+#: core/libs/properties/itempropertiessidebardb.cpp:707
+#: core/libs/properties/itempropertiessidebardb.cpp:810
+#: core/libs/properties/itempropertiessidebardb.cpp:812
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -38570,8 +38570,8 @@ msgstr "Necalibrat"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:673
-#: core/libs/properties/itempropertiessidebardb.cpp:686
+#: core/libs/properties/itempropertiessidebardb.cpp:682
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -38586,7 +38586,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:704
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -38594,7 +38594,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:738
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -38602,27 +38602,27 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:743
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:87
+#: core/libs/properties/itempropertiessidebardb.cpp:88
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Titlu"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:88
+#: core/libs/properties/itempropertiessidebardb.cpp:89
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Permisiuni: "
 
-#: core/libs/properties/itempropertiessidebardb.cpp:678
+#: core/libs/properties/itempropertiessidebardb.cpp:687
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
@@ -58918,7 +58918,7 @@ msgstr ""
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:258
 #, kde-format
 msgid "Input Color Profile:"
-msgstr "Profilul colorimetric de intrare"
+msgstr "Profilul de culoare de intrare:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:276
 #, kde-format
@@ -68475,7 +68475,7 @@ msgstr ""
 #: core/utilities/setup/setuptemplate.cpp:112
 #, kde-format
 msgid "&Replace..."
-msgstr "Înlocui&re..."
+msgstr "Î&nlocuiește…"
 
 #: core/utilities/setup/setuptemplate.cpp:247
 #: core/utilities/setup/setuptemplate.cpp:278
@@ -68518,39 +68518,34 @@ msgid "File/Item Information"
 msgstr "Informații fișier/imagine"
 
 #: core/utilities/setup/setuptooltip.cpp:149
-#, fuzzy, kde-format
-#| msgid "Filename"
+#, kde-format
 msgid "File name"
 msgstr "Denumire fișier"
 
 #: core/utilities/setup/setuptooltip.cpp:152
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgid "File date"
-msgstr "Nume fișier"
+msgstr "Dată fișier"
 
 #: core/utilities/setup/setuptooltip.cpp:155
-#, fuzzy, kde-format
-#| msgid "File Size"
+#, kde-format
 msgid "File size"
 msgstr "Dimensiune fișier"
 
 #: core/utilities/setup/setuptooltip.cpp:158
-#, fuzzy, kde-format
-#| msgid "Show image type"
+#, kde-format
 msgid "Image type"
-msgstr "Afișează tipul imaginii"
+msgstr "Tip imagine"
 
 #: core/utilities/setup/setuptooltip.cpp:161
-#, fuzzy, kde-format
-#| msgid "Image dimension"
+#, kde-format
 msgid "Image dimensions"
-msgstr "Dimensiunile imaginii"
+msgstr "Dimensiuni imagine"
 
 #: core/utilities/setup/setuptooltip.cpp:164
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image aspect ratio"
-msgstr "Păstrează rata aspectului"
+msgstr "Raport de aspect imagine"
 
 #: core/utilities/setup/setuptooltip.cpp:165
 #, fuzzy, kde-format
@@ -68559,16 +68554,14 @@ msgstr "Selectați această opțiune pentru a afișa legendele imaginii."
 
 #: core/utilities/setup/setuptooltip.cpp:181
 #: core/utilities/setup/setuptooltip.cpp:361
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgid "Camera make and model"
-msgstr "Afișează marca și modelul aparatului"
+msgstr "Marca și modelul aparatului"
 
 #: core/utilities/setup/setuptooltip.cpp:189
-#, fuzzy, kde-format
-#| msgid "Camera name"
+#, kde-format
 msgid "Camera date"
-msgstr "Numele aparatului"
+msgstr "Data aparatului"
 
 #: core/utilities/setup/setuptooltip.cpp:192
 #: core/utilities/setup/setuptooltip.cpp:369

@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-28 00:40+0000\n"
+"POT-Creation-Date: 2025-11-29 00:40+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -37745,7 +37745,7 @@ msgstr "<i>تغییرنیافته </i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:639
+#: core/libs/properties/itempropertiessidebardb.cpp:648
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -37757,10 +37757,10 @@ msgstr "ناموجود"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:697
-#: core/libs/properties/itempropertiessidebardb.cpp:699
-#: core/libs/properties/itempropertiessidebardb.cpp:802
-#: core/libs/properties/itempropertiessidebardb.cpp:804
+#: core/libs/properties/itempropertiessidebardb.cpp:706
+#: core/libs/properties/itempropertiessidebardb.cpp:708
+#: core/libs/properties/itempropertiessidebardb.cpp:811
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
@@ -37773,10 +37773,10 @@ msgstr "خیر"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:698
-#: core/libs/properties/itempropertiessidebardb.cpp:801
-#: core/libs/properties/itempropertiessidebardb.cpp:803
+#: core/libs/properties/itempropertiessidebardb.cpp:705
+#: core/libs/properties/itempropertiessidebardb.cpp:707
+#: core/libs/properties/itempropertiessidebardb.cpp:810
+#: core/libs/properties/itempropertiessidebardb.cpp:812
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -38023,8 +38023,8 @@ msgstr "رنگ راهنما:"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:673
-#: core/libs/properties/itempropertiessidebardb.cpp:686
+#: core/libs/properties/itempropertiessidebardb.cpp:682
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -38038,7 +38038,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1 )%2 از %3("
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:704
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -38046,33 +38046,33 @@ msgid "%1 bpp"
 msgstr "%1 بیت در تصویردانه"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:738
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 بیت در تصویردانه"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:743
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "ISO-8859-14"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:87
+#: core/libs/properties/itempropertiessidebardb.cpp:88
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "عنوان"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:88
+#: core/libs/properties/itempropertiessidebardb.cpp:89
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "نسخه‌ها..."
 
-#: core/libs/properties/itempropertiessidebardb.cpp:678
+#: core/libs/properties/itempropertiessidebardb.cpp:687
 #, fuzzy, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
