@@ -101,7 +101,7 @@ BUGFIXES:
 062 --> 458880 - Search when show all grouped items as closed.
 063 --> 512674 - Searching by images/similarity will not show results if the similar image is within a closed group.
 064 --> 512689 - `Write Metadata to File` in the Item menu does not work.
-065 -->
+065 --> 512728 - Searching for _v in filename to detect versions returns erroneous results.
 066 -->
 067 -->
 068 -->
