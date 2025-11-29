@@ -72,7 +72,6 @@ public:
 
     QButtonGroup*       colorBtns   = nullptr;
 
-    QLabel*             desc        = nullptr;
 
     QToolButton*        btnNone     = nullptr;
     QToolButton*        btnRed      = nullptr;
@@ -87,6 +86,7 @@ public:
 
     DHBox*              descBox     = nullptr;
 
+    DAdjustableLabel*   desc        = nullptr;
     DAdjustableLabel*   shortcut    = nullptr;
 };
 
@@ -176,7 +176,7 @@ ColorLabelWidget::ColorLabelWidget(QWidget* const parent)
     d->descBox  = new DHBox(this);
     d->descBox->setContentsMargins(QMargins());
     d->descBox->setSpacing(0);
-    d->desc     = new QLabel(d->descBox);
+    d->desc     = new DAdjustableLabel(d->descBox);
     d->shortcut = new DAdjustableLabel(d->descBox);
     QFont fnt = d->shortcut->font();
     fnt.setItalic(true);
@@ -271,16 +271,16 @@ void ColorLabelWidget::updateDescription(ColorLabel label)
         if (ac)
         {
             d->shortcut->setAdjustedText(ac->shortcut().toString());
-            d->desc->setText(ac->toolTip());
+            d->desc->setAdjustedText(ac->toolTip());
         }
         else
         {
-            d->desc->setText(ColorLabelWidget::labelColorName(label));
+            d->desc->setAdjustedText(ColorLabelWidget::labelColorName(label));
         }
     }
     else
     {
-        d->desc->setText(ColorLabelWidget::labelColorName(label));
+        d->desc->setAdjustedText(ColorLabelWidget::labelColorName(label));
     }
 }
 
