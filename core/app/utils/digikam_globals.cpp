@@ -253,7 +253,7 @@ int dialogExec(QDialog* const dlg)
         QEventLoop loop;
 
         QObject::connect(dlg, &QDialog::finished,
-                     &loop, &QEventLoop::quit);
+                         &loop, &QEventLoop::quit);
 
         dlg->open();
         loop.exec();

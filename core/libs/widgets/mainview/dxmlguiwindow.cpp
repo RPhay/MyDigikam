@@ -128,11 +128,11 @@ void DXmlGuiWindow::slotConfNotifications()
 
 void DXmlGuiWindow::editKeyboardShortcuts(KActionCollection* const extraac, const QString& actitle)
 {
-    KShortcutsDialog dialog(KShortcutsEditor::AllActions,
-                            KShortcutsEditor::LetterShortcutsAllowed, this);
-    dialog.addCollection(actionCollection(), i18nc("general keyboard shortcuts", "General"));
+    QPointer<KShortcutsDialog> dialog = new KShortcutsDialog(KShortcutsEditor::AllActions,
+                                                             KShortcutsEditor::LetterShortcutsAllowed, this);
+    dialog->addCollection(actionCollection(), i18nc("general keyboard shortcuts", "General"));
 
-    QDialogButtonBox* const btnbox = dialog.findChild<QDialogButtonBox*>();
+    QDialogButtonBox* const btnbox = dialog->findChild<QDialogButtonBox*>();
 
     if (btnbox)
     {
@@ -148,10 +148,10 @@ void DXmlGuiWindow::editKeyboardShortcuts(KActionCollection* const extraac, cons
 
     if (extraac)
     {
-        dialog.addCollection(extraac, actitle);
+        dialog->addCollection(extraac, actitle);
     }
 
-    dialog.configure();
+    dialog->configure();
 }
 
 bool DXmlGuiWindow::eventFilter(QObject* obj, QEvent* ev)
