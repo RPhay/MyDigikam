@@ -176,7 +176,7 @@ void DatabaseMigrationDialog::setupMainArea()
             this, SLOT(accept()));
 
     connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
-            this, SLOT(accept()));
+            this, SLOT(slotHelp()));
 
     connect(d->migrateButton, SIGNAL(clicked()),
             this, SLOT(slotPerformCopy()));
@@ -201,7 +201,9 @@ void DatabaseMigrationDialog::setupMainArea()
 
 void DatabaseMigrationDialog::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("database_settings"), QLatin1String("database_migration"));
+    openOnlineDocumentation(QLatin1String("setup_application"),
+                            QLatin1String("database_settings"),
+                            QLatin1String("database_migration"));
 }
 
 void DatabaseMigrationDialog::slotPerformCopy()

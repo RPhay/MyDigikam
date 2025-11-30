@@ -198,7 +198,7 @@ void DigikamApp::slotDetectFaces()
 void DigikamApp::slotDatabaseMigration()
 {
     QPointer<DatabaseMigrationDialog> dlg = new DatabaseMigrationDialog(this);
-    (void)dlg->exec();
+    (void)dialogExec(dlg);
     delete dlg;
 }
 
