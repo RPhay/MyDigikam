@@ -410,12 +410,14 @@ void ImportUI::setupActions()
 
     // map to CamItemSortSettings enum
 
-    QAction* const sortByNameAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Name"));
-    QAction* const sortByPathAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Path"));
-    QAction* const sortByDateAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Date"));
-    QAction* const sortByFileSizeAction = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Size"));
-    QAction* const sortByRatingAction   = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Rating"));
-    QAction* const sortByDownloadAction = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Download State"));
+    QAction* const sortByNameAction       = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Name"));
+    QAction* const sortByPathAction       = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Path"));
+    QAction* const sortByDateAction       = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Date"));
+    QAction* const sortByFileSizeAction   = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Size"));
+    QAction* const sortByRatingAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Rating"));
+    QAction* const sortByPickLabelAction  = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By PickLabel"));
+    QAction* const sortByColorLabelAction = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By ColorLabel"));
+    QAction* const sortByDownloadAction   = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Download State"));
 
     connect(sortByNameAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByFileName); });
@@ -431,6 +433,13 @@ void ImportUI::setupActions()
 
     connect(sortByRatingAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByRating); });
+
+    connect(sortByPickLabelAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByPickLabel); });
+
+    connect(sortByColorLabelAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByColorLabel); });
+
 
     connect(sortByDownloadAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByDownloadState); });

@@ -259,6 +259,16 @@ int CamItemSortSettings::compare(const CamItemInfo& left, const CamItemInfo& rig
             return compareByOrder(left.rating, right.rating, currentSortOrder);
         }
 
+        case SortByPickLabel:
+        {
+            return compareByOrder(left.pickLabel, right.pickLabel, currentSortOrder);
+        }
+
+        case SortByColorLabel:
+        {
+            return compareByOrder(left.colorLabel, right.colorLabel, currentSortOrder);
+        }
+
         case SortByDownloadState:
         {
             return compareByOrder(left.downloaded, right.downloaded, currentSortOrder);
