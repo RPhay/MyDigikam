@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:40+0000\n"
+"POT-Creation-Date: 2025-11-30 00:40+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1384,93 +1384,93 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "कोई वस्तु चुना नहीं गया"
 msgstr[1] "कोई वस्तु चुना नहीं गया"
 
-#: core/app/main/digikamapp.cpp:742
+#: core/app/main/digikamapp.cpp:743
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "कोई वस्तु चुना नहीं गया"
 msgstr[1] "कोई वस्तु चुना नहीं गया"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:748
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "कोई वस्तु चुना नहीं गया"
 msgstr[1] "कोई वस्तु चुना नहीं गया"
 
-#: core/app/main/digikamapp.cpp:758
+#: core/app/main/digikamapp.cpp:759
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 वस्तुएँ चयनित"
 msgstr[1] "%1/%2 वस्तुएँ चयनित"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:772
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 वस्तुएँ चयनित"
 msgstr[1] "%1/%2 वस्तुएँ चयनित"
 
-#: core/app/main/digikamapp.cpp:779
+#: core/app/main/digikamapp.cpp:780
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "कोई वस्तु चुना नहीं गया"
 msgstr[1] "कोई वस्तु चुना नहीं गया"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:788
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 वस्तुएँ चयनित"
 msgstr[1] "%1/%2 वस्तुएँ चयनित"
 
-#: core/app/main/digikamapp.cpp:796
+#: core/app/main/digikamapp.cpp:797
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "कोई वस्तु चुना नहीं गया"
 msgstr[1] "कोई वस्तु चुना नहीं गया"
 
-#: core/app/main/digikamapp.cpp:827
+#: core/app/main/digikamapp.cpp:828
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%2 में से %1)"
 
-#: core/app/main/digikamapp.cpp:841
+#: core/app/main/digikamapp.cpp:842
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%2 में से %1)"
 
-#: core/app/main/digikamapp.cpp:845
+#: core/app/main/digikamapp.cpp:846
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:856
+#: core/app/main/digikamapp.cpp:857
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "16 बिट्स"
 msgstr[1] "16 बिट्स"
 
-#: core/app/main/digikamapp.cpp:915
+#: core/app/main/digikamapp.cpp:917
 #, fuzzy, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "प्रत्येक फ़ाइल में मेटाडाटा लिखें"
 msgstr[1] "प्रत्येक फ़ाइल में मेटाडाटा लिखें"
 
-#: core/app/main/digikamapp.cpp:917
+#: core/app/main/digikamapp.cpp:919
 #, fuzzy, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"

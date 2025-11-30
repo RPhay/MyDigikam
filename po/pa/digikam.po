@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:40+0000\n"
+"POT-Creation-Date: 2025-11-30 00:40+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1462,14 +1462,14 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:742
+#: core/app/main/digikamapp.cpp:743
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1478,7 +1478,7 @@ msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:748
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1487,7 +1487,7 @@ msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:758
+#: core/app/main/digikamapp.cpp:759
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected"
 msgid "1/%2 item selected (%3/%4)"
@@ -1495,7 +1495,7 @@ msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%2/%1 ਆਈਟਮਾਂ ਚੁਣੀਆਂ"
 msgstr[1] "%2/%1 ਆਈਟਮਾਂ ਚੁਣੀਆਂ"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:772
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1504,7 +1504,7 @@ msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 msgstr[1] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 
-#: core/app/main/digikamapp.cpp:779
+#: core/app/main/digikamapp.cpp:780
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1513,7 +1513,7 @@ msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:788
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1522,7 +1522,7 @@ msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 msgstr[1] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 
-#: core/app/main/digikamapp.cpp:796
+#: core/app/main/digikamapp.cpp:797
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1531,23 +1531,23 @@ msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:827
+#: core/app/main/digikamapp.cpp:828
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%2 ਵਿੱਚੋਂ %1)"
 
-#: core/app/main/digikamapp.cpp:841
+#: core/app/main/digikamapp.cpp:842
 #, fuzzy, kde-format
 #| msgid " (%1 of %2 [%3])"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%2 ਵਿੱਚੋਂ %1 [%3])"
 
-#: core/app/main/digikamapp.cpp:845
+#: core/app/main/digikamapp.cpp:846
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:856
+#: core/app/main/digikamapp.cpp:857
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1556,7 +1556,7 @@ msgid_plural "%1 items hidden"
 msgstr[0] "੧ ਬਿੱਟ"
 msgstr[1] "%1 ਬਿੱਟ"
 
-#: core/app/main/digikamapp.cpp:915
+#: core/app/main/digikamapp.cpp:917
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1565,7 +1565,7 @@ msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "ਚਿੱਤਰ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 msgstr[1] "ਚੁਣੇ ਚਿੱਤਰਾਂ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 
-#: core/app/main/digikamapp.cpp:917
+#: core/app/main/digikamapp.cpp:919
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"

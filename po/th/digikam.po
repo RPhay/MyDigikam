@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:40+0000\n"
+"POT-Creation-Date: 2025-11-30 00:40+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1415,25 +1415,25 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:742
+#: core/app/main/digikamapp.cpp:743
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:748
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:758
+#: core/app/main/digikamapp.cpp:759
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1441,7 +1441,7 @@ msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:772
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1449,13 +1449,13 @@ msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:779
+#: core/app/main/digikamapp.cpp:780
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:788
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1463,29 +1463,29 @@ msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:796
+#: core/app/main/digikamapp.cpp:797
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:827
+#: core/app/main/digikamapp.cpp:828
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (ภาพที่ %1 จาก %2 ภาพ)"
 
-#: core/app/main/digikamapp.cpp:841
+#: core/app/main/digikamapp.cpp:842
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (ภาพที่ %1 จาก %2 ภาพ)"
 
-#: core/app/main/digikamapp.cpp:845
+#: core/app/main/digikamapp.cpp:846
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:856
+#: core/app/main/digikamapp.cpp:857
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1493,7 +1493,7 @@ msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:915
+#: core/app/main/digikamapp.cpp:917
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1501,7 +1501,7 @@ msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "เขียนข้อมูลกำกับไปยังภาพต่าง ๆ ที่เลือกไว้"
 
-#: core/app/main/digikamapp.cpp:917
+#: core/app/main/digikamapp.cpp:919
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"

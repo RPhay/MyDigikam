@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:40+0000\n"
+"POT-Creation-Date: 2025-11-30 00:40+0000\n"
 "PO-Revision-Date: 2025-11-26 07:28+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1417,7 +1417,7 @@ msgstr ""
 "ExifTool v razdelku z metapodatki.\n"
 "Sporočilo o napaki: %1"
 
-#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1426,7 +1426,7 @@ msgstr[1] "Ni izbranih predmetov (%1 predmeta)"
 msgstr[2] "Ni izbranih predmetov (%1 predmeti)"
 msgstr[3] "Ni izbranih predmetov (%1 predmetov)"
 
-#: core/app/main/digikamapp.cpp:742
+#: core/app/main/digikamapp.cpp:743
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1435,7 +1435,7 @@ msgstr[1] "Ni izbranih predmetov ((%1 [%2]  predmeta)"
 msgstr[2] "Ni izbranih predmetov ((%1 [%2] predmeti)"
 msgstr[3] "Ni izbranih predmetov ((%1 [%2] predmetov)"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1444,7 +1444,7 @@ msgstr[1] "Ni izbranih predmetov (%1 predmeta. S predmeti v skupini: %2)"
 msgstr[2] "Ni izbranih predmetov (%1 predmeti. S predmeti v skupini: %2)"
 msgstr[3] "Ni izbranih predmetov (%1 predmetov. S predmeti v skupini: %2)"
 
-#: core/app/main/digikamapp.cpp:758
+#: core/app/main/digikamapp.cpp:759
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1453,7 +1453,7 @@ msgstr[1] "%1/%2 izbrana predmeta (%3/%4)"
 msgstr[2] "%1/%2 izbrani predmeti (%3/%4)"
 msgstr[3] "%1/%2 izbranih predmetov (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:772
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1462,7 +1462,7 @@ msgstr[1] "%1/%2 [%3] izbrana predmeta (%4/%5)"
 msgstr[2] "%1/%2 [%3] izbrani predmeti (%4/%5)"
 msgstr[3] "%1/%2 [%3] izbranih predmetov (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:779
+#: core/app/main/digikamapp.cpp:780
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1471,7 +1471,7 @@ msgstr[1] "%1/%2 izbrana predmeta. Skupaj s predmeti v skupini: %3"
 msgstr[2] "%1/%2 izbrani predmeti. Skupaj s predmeti v skupini: %3"
 msgstr[3] "%1/%2 izbranih predmetov. Skupaj s predmeti v skupini: %3"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:788
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1480,7 +1480,7 @@ msgstr[1] "%1/%2 [%3/%4] izbrana predmeta (%5/%6)"
 msgstr[2] "%1/%2 [%3/%4] izbrani predmeti (%5/%6)"
 msgstr[3] "%1/%2 [%3/%4] izbranih predmetov (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:796
+#: core/app/main/digikamapp.cpp:797
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1489,22 +1489,22 @@ msgstr[1] "%1/%2 izbrana predmeta. Skupaj s predmeti v skupini: %3/%4"
 msgstr[2] "%1/%2 izbrani predmeti. Skupaj s predmeti v skupini: %3/%4"
 msgstr[3] "%1/%2 izbranih predmetov. Skupaj s predmeti v skupini: %3/%4"
 
-#: core/app/main/digikamapp.cpp:827
+#: core/app/main/digikamapp.cpp:828
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 od %2)"
 
-#: core/app/main/digikamapp.cpp:841
+#: core/app/main/digikamapp.cpp:842
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 od %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:845
+#: core/app/main/digikamapp.cpp:846
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 od %2. Skupaj s predmeti v skupini: %3)"
 
-#: core/app/main/digikamapp.cpp:856
+#: core/app/main/digikamapp.cpp:857
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1513,7 +1513,7 @@ msgstr[1] "%1 skrita predmeta"
 msgstr[2] "%1 skriti predmeti"
 msgstr[3] "%1 skritih predmetov"
 
-#: core/app/main/digikamapp.cpp:915
+#: core/app/main/digikamapp.cpp:917
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1522,7 +1522,7 @@ msgstr[1] "Zapiši metapodatke v izbrani datoteki"
 msgstr[2] "Zapiši metapodatke v izbrane datoteke"
 msgstr[3] "Zapiši metapodatke v izbrane datoteke"
 
-#: core/app/main/digikamapp.cpp:917
+#: core/app/main/digikamapp.cpp:919
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"

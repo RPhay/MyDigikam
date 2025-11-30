@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:40+0000\n"
+"POT-Creation-Date: 2025-11-30 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1340,82 +1340,82 @@ msgstr ""
 "ExifTool 的可执行文件是否可用。\n"
 "错误消息：%1"
 
-#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "无选中项 (共 %1 项)"
 
-#: core/app/main/digikamapp.cpp:742
+#: core/app/main/digikamapp.cpp:743
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "无选中项 (共 %1 [%2] 项)"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "无选中项 (共 %1 项，含已分组项：%2)"
 
-#: core/app/main/digikamapp.cpp:758
+#: core/app/main/digikamapp.cpp:759
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "已选择 %1/%2 个项目 (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:772
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "已选择 %1/%2 [%3] 个项目 (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:779
+#: core/app/main/digikamapp.cpp:780
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "已选择 %1/%2 个项目。含已分组项目：%3"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:788
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "已选择 %1/%2 [%3/%4] 个项目 (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:796
+#: core/app/main/digikamapp.cpp:797
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "已选择 %1/%2 个项目，含已分组项：%3/%4"
 
-#: core/app/main/digikamapp.cpp:827
+#: core/app/main/digikamapp.cpp:828
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (第 %1 项，共 %2 项)"
 
-#: core/app/main/digikamapp.cpp:841
+#: core/app/main/digikamapp.cpp:842
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (第 %1 项，共 %2 [%3] 项)"
 
-#: core/app/main/digikamapp.cpp:845
+#: core/app/main/digikamapp.cpp:846
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (第 %1 项，共 %2 项，含已分组项：%3)"
 
-#: core/app/main/digikamapp.cpp:856
+#: core/app/main/digikamapp.cpp:857
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 隐藏项"
 
-#: core/app/main/digikamapp.cpp:915
+#: core/app/main/digikamapp.cpp:917
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "将元数据写入所选文件"
 
-#: core/app/main/digikamapp.cpp:917
+#: core/app/main/digikamapp.cpp:919
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -28047,12 +28047,12 @@ msgstr "进度信息"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
 #, kde-format
 msgid "Step Progress:"
-msgstr ""
+msgstr "当前阶段进度："
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
 #, kde-format
 msgid "Overall Progress:"
-msgstr ""
+msgstr "整体进度："
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:215
 #, kde-format
@@ -29954,6 +29954,11 @@ msgid ""
 "The \"blue channel\" affects the noise of photograph.\n"
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
+"使用“单色”模式将彩色图像转换为黑白。\n"
+"“红通道”调整照片对比度。\n"
+"“绿通道”增强或降低照片的细节水平。\n"
+"“蓝通道”影响照片的噪点。\n"
+"提示：在此模式下，直方图将只显示亮度数值。"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, kde-format
@@ -66032,47 +66037,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "No Color"
-#~ msgstr "未标色"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Red"
-#~ msgstr "红"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Orange"
-#~ msgstr "橙"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Yellow"
-#~ msgstr "黄"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Green"
-#~ msgstr "绿"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Blue"
-#~ msgstr "蓝"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Magenta"
-#~ msgstr "品红"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Gray"
-#~ msgstr "灰"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Black"
-#~ msgstr "黑"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "White"
-#~ msgstr "白"
-
-#~ msgctxt "@info: color label selector"
-#~ msgid "Color Label: %1"
-#~ msgstr "颜色标记：%1"
