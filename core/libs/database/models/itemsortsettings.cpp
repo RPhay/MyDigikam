@@ -127,6 +127,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         }
 
         case SortByRating:
+        case SortByPickLabel:
         case SortByFileSize:
         case SortByImageSize:
         case SortBySimilarity:
@@ -429,6 +430,11 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             // I have the feeling that inverting the sort order for rating is the natural order
 
             return (- compareByOrder(left.rating(), right.rating(), currentSortOrder));
+        }
+
+        case SortByPickLabel:
+        {
+            return (- compareByOrder(left.pickLabel(), right.pickLabel(), currentSortOrder));
         }
 
         case SortByImageSize:
@@ -738,6 +744,12 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
         case SortByRating:
         {
             set |= DatabaseFields::Rating;
+            break;
+        }
+
+        case SortByPickLabel:
+        {
+            set |= DatabaseFields::PickLabel;
             break;
         }
 

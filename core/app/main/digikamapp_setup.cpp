@@ -597,6 +597,7 @@ void DigikamApp::setupActions()
     QAction* const sortByModDateAction            = d->imageSortAction->addAction(i18nc("@action: setup", "By Modification Date"));
     QAction* const sortByFileSizeAction           = d->imageSortAction->addAction(i18nc("@action: setup", "By File Size"));
     QAction* const sortByRatingAction             = d->imageSortAction->addAction(i18nc("@action: setup", "By Rating"));
+    QAction* const sortByPickLabelAction          = d->imageSortAction->addAction(i18nc("@action: setup", "By Pick Label"));
     QAction* const sortByImageSizeAction          = d->imageSortAction->addAction(i18nc("@action: setup", "By Image Size"));
     QAction* const sortByAspectRatioAction        = d->imageSortAction->addAction(i18nc("@action: setup", "By Aspect Ratio"));
     QAction* const sortByFacesAction              = d->imageSortAction->addAction(i18nc("@action: setup", "By Face type"));
@@ -607,7 +608,9 @@ void DigikamApp::setupActions()
     // activate the sort by similarity if the fuzzy search sidebar is active. Deactivate at start.
 
     sortBySimilarityAction->setEnabled(false);
-    connect(d->view, SIGNAL(signalFuzzySidebarActive(bool)), sortBySimilarityAction, SLOT(setEnabled(bool)));
+
+    connect(d->view, SIGNAL(signalFuzzySidebarActive(bool)),
+            sortBySimilarityAction, SLOT(setEnabled(bool)));
 
     connect(sortByNameAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByFileName); });
@@ -626,6 +629,9 @@ void DigikamApp::setupActions()
 
     connect(sortByRatingAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByRating); });
+
+    connect(sortByPickLabelAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByPickLabel); });
 
     connect(sortByImageSizeAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByImageSize); });

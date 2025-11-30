@@ -66,6 +66,7 @@ public:
         SortByModificationDate,
         SortByFileSize,
         SortByRating,
+        SortByPickLabel,
         SortByImageSize,            ///< pixel number
         SortByAspectRatio,          ///< width / height * 100000
         SortByFaces,                ///< count of unconfirmed faces
