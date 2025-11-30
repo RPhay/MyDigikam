@@ -340,7 +340,12 @@ void openOnlineDocumentation(const QString& section, const QString& chapter, con
         }
     }
 
-    WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
+    QWidget* const activeWindow  = qApp->activeWindow();
+    WebBrowserDlg* const browser = new WebBrowserDlg(url, activeWindow);
+
+    QObject::connect(activeWindow, SIGNAL(destroyed(QObject*)),
+                     browser, SLOT(close()));
+
     browser->show();
 }
 

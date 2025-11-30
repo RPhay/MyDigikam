@@ -373,7 +373,7 @@ bool AlbumPropsEdit::editProps(PAlbum* const album, QString& title,
 {
     QPointer<AlbumPropsEdit> dlg = new AlbumPropsEdit(album);
 
-    bool ok = (dlg->exec() == QDialog::Accepted);
+    bool ok = (dialogExec(dlg) == QDialog::Accepted);
 
     title           = dlg->title();
     comments        = dlg->comments();
@@ -391,7 +391,7 @@ bool AlbumPropsEdit::createNew(PAlbum* const parent, QString& title, QString& co
 {
     QPointer<AlbumPropsEdit> dlg = new AlbumPropsEdit(parent, true);
 
-    bool ok = (dlg->exec() == QDialog::Accepted);
+    bool ok = (dialogExec(dlg) == QDialog::Accepted);
 
     title           = dlg->title();
     comments        = dlg->comments();
@@ -477,7 +477,7 @@ void AlbumPropsEdit::slotDateAverageButtonClicked()
 
 void AlbumPropsEdit::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"),
+    openOnlineDocumentation(QLatin1String("left_sidebar"),
                             QLatin1String("albums_view"),
                             QLatin1String("managing-albums"));
 }

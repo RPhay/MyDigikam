@@ -546,7 +546,8 @@ void SearchViewBottomBar::paintEvent(QPaintEvent*)
 
 void SearchViewBottomBar::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("search_view"));
+    openOnlineDocumentation(QLatin1String("left_sidebar"),
+                            QLatin1String("search_view"));
 }
 
 } // namespace Digikam

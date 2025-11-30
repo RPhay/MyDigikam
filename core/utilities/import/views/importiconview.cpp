@@ -178,7 +178,7 @@ void ImportIconView::rename()
     QPointer<AdvancedRenameDialog> dlg = new AdvancedRenameDialog(this);
     dlg->slotAddImages(urls);
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         newNamesList = dlg->newNames();
     }

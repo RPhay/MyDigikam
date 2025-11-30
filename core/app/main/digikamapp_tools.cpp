@@ -100,7 +100,7 @@ void DigikamApp::slotMaintenance()
 {
     QPointer<MaintenanceDlg> dlg = new MaintenanceDlg(this);
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         d->maintenanceAction->setEnabled(false);
         d->scanNewItemsAction->setEnabled(false);
