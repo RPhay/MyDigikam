@@ -22,9 +22,9 @@ void DXmlGuiWindow::slotConfToolbars()
     KConfigGroup group = KSharedConfig::openConfig()->group(configGroupName());
     saveMainWindowSettings(group);
 
-    KEditToolBar dlg(factory(), this);
+    QPointer<KEditToolBar> dlg = new KEditToolBar(factory(), this);
 
-    QDialogButtonBox* const btnbox = dlg.findChild<QDialogButtonBox*>();
+    QDialogButtonBox* const btnbox = dlg->findChild<QDialogButtonBox*>();
 
     if (btnbox)
     {
@@ -38,10 +38,11 @@ void DXmlGuiWindow::slotConfToolbars()
         );
     }
 
-    connect(&dlg, SIGNAL(newToolbarConfig()),
-            this, SLOT(slotNewToolbarConfig()));
+    connect(dlg, &KEditToolBar::newToolBarConfig,
+            this, &DXmlGuiWindow::slotNewToolbarConfig);
 
-    (void)dlg.exec();
+    (void)dlg->exec();
+    delete dlg;
 }
 
 void DXmlGuiWindow::slotNewToolbarConfig()
