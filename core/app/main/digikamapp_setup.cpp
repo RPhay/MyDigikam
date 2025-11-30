@@ -598,6 +598,7 @@ void DigikamApp::setupActions()
     QAction* const sortByFileSizeAction           = d->imageSortAction->addAction(i18nc("@action: setup", "By File Size"));
     QAction* const sortByRatingAction             = d->imageSortAction->addAction(i18nc("@action: setup", "By Rating"));
     QAction* const sortByPickLabelAction          = d->imageSortAction->addAction(i18nc("@action: setup", "By Pick Label"));
+    QAction* const sortByColorLabelAction         = d->imageSortAction->addAction(i18nc("@action: setup", "By Color Label"));
     QAction* const sortByImageSizeAction          = d->imageSortAction->addAction(i18nc("@action: setup", "By Image Size"));
     QAction* const sortByAspectRatioAction        = d->imageSortAction->addAction(i18nc("@action: setup", "By Aspect Ratio"));
     QAction* const sortByFacesAction              = d->imageSortAction->addAction(i18nc("@action: setup", "By Face type"));
@@ -632,6 +633,9 @@ void DigikamApp::setupActions()
 
     connect(sortByPickLabelAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByPickLabel); });
+
+    connect(sortByColorLabelAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByColorLabel); });
 
     connect(sortByImageSizeAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByImageSize); });

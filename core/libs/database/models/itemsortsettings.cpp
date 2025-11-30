@@ -128,6 +128,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
 
         case SortByRating:
         case SortByPickLabel:
+        case SortByColorLabel:
         case SortByFileSize:
         case SortByImageSize:
         case SortBySimilarity:
@@ -435,6 +436,11 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
         case SortByPickLabel:
         {
             return (- compareByOrder(left.pickLabel(), right.pickLabel(), currentSortOrder));
+        }
+
+        case SortByColorLabel:
+        {
+            return (- compareByOrder(left.colorLabel(), right.colorLabel(), currentSortOrder));
         }
 
         case SortByImageSize:
@@ -750,6 +756,12 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
         case SortByPickLabel:
         {
             set |= DatabaseFields::PickLabel;
+            break;
+        }
+
+        case SortByColorLabel:
+        {
+            set |= DatabaseFields::ColorLabel;
             break;
         }
 
