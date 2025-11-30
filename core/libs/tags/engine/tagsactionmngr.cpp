@@ -148,11 +148,6 @@ QString TagsActionMngr::pickShortcutPrefix() const
     return d->pickShortcutPrefix;
 }
 
-QString TagsActionMngr::colorShortcutPrefix() const
-{
-    return d->colorShortcutPrefix;
-}
-
 void TagsActionMngr::registerTagsActionCollections()
 {
     d->actionCollectionList.append(DigikamApp::instance()->actionCollection());
@@ -272,29 +267,6 @@ bool TagsActionMngr::createPickLabelActionShortcut(KActionCollection* const ac, 
         ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("ALT+%1").arg(pickId)));
         action->setIcon(PickLabelWidget::buildIcon((PickLabel)pickId));
         action->setData(pickId);
-
-        connect(action, SIGNAL(triggered()),
-                this, SLOT(slotAssignFromShortcut()));
-
-        return true;
-    }
-
-    return false;
-}
-
-bool TagsActionMngr::createColorLabelActionShortcut(KActionCollection* const ac, int colorId)
-{
-    if (ac)
-    {
-        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2")
-                                                  .arg(d->colorShortcutPrefix).arg(colorId));
-
-        action->setText(i18n("Assign Color Label \"%1\"",
-                             ColorLabelWidget::labelColorName((ColorLabel)colorId)));
-        ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("ALT+CTRL+%1").arg(colorId)));
-        action->setIcon(ColorLabelWidget::buildIcon((ColorLabel)colorId, 32));
-        action->setData(colorId);
-        action->setToolTip(d->colorLabelNames.value(colorId));
 
         connect(action, SIGNAL(triggered()),
                 this, SLOT(slotAssignFromShortcut()));
@@ -567,6 +539,35 @@ void TagsActionMngr::slotAssignFromShortcut()
     Q_EMIT signalShortcutPressed(action->objectName(), val);
 }
 
+// --- Color Labels
+
+QString TagsActionMngr::colorShortcutPrefix() const
+{
+    return d->colorShortcutPrefix;
+}
+
+bool TagsActionMngr::createColorLabelActionShortcut(KActionCollection* const ac, int colorId)
+{
+    if (ac)
+    {
+        QAction* const action = ac->addAction(QString::fromUtf8("%1-%2")
+                                                  .arg(d->colorShortcutPrefix).arg(colorId));
+
+        action->setText(i18n("Assign Color Label \"%1\"", d->colorLabelNames.value(colorId)));
+        ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("ALT+CTRL+%1").arg(colorId)));
+        action->setIcon(ColorLabelWidget::buildIcon((ColorLabel)colorId, 32));
+        action->setData(colorId);
+        action->setToolTip(d->colorLabelNames.value(colorId));
+
+        connect(action, SIGNAL(triggered()),
+                this, SLOT(slotAssignFromShortcut()));
+
+        return true;
+    }
+
+    return false;
+}
+
 void TagsActionMngr::loadColorNames()
 {
     KSharedConfigPtr config  = KSharedConfig::openConfig();
@@ -605,8 +606,9 @@ void TagsActionMngr::slotColorNameChanged(int label, const QString& name)
     {
         for (QAction* const ac : col->actions())
         {
-            if (ac->objectName().startsWith(d->colorShortcutPrefix))
+            if ((ac->objectName().startsWith(d->colorShortcutPrefix)) && (ac->data() == label))
             {
+                ac->setText(i18n("Assign Color Label \"%1\"", d->colorLabelNames.value(label)));
                 ac->setToolTip(d->colorLabelNames.value(label));
             }
         }
