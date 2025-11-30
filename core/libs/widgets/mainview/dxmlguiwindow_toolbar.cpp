@@ -41,7 +41,7 @@ void DXmlGuiWindow::slotConfToolbars()
     connect(dlg, &KEditToolBar::newToolBarConfig,
             this, &DXmlGuiWindow::slotNewToolbarConfig);
 
-    (void)dlg->exec();
+    (void)dialogExec(dlg);
     delete dlg;
 }
 
