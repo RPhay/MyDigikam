@@ -59,21 +59,64 @@ public:
 
     enum SortRole
     {
-        // Note: For legacy reasons, the order of the first five entries must remain unchanged
+        // NOTE: For legacy reasons, the order of the first five entries must remain unchanged
+
         SortByFileName,
+
         SortByFilePath,
+
         SortByCreationDate,
+
         SortByModificationDate,
+
         SortByFileSize,
+
+        /**
+         * Compare by Rating enum values.
+         */
         SortByRating,
+
+        /**
+         * Compare by Pick Label enum values.
+         */
         SortByPickLabel,
+
+        /**
+         * Compare by Color Label enum values.
+         */
         SortByColorLabel,
-        SortByImageSize,            ///< pixel number
+
+        /**
+         * Compare pixel number.
+         */
+        SortByImageSize,
+
+        /**
+         * Compare Exif Rotation flag.
+         */
         SortByOrientation,
-        SortByAspectRatio,          ///< width / height * 100000
-        SortByFaces,                ///< count of unconfirmed faces
+
+        /**
+         * Compare ((width / height) * 100000).
+         */
+        SortByAspectRatio,
+
+        /**
+         * If an image lacks GPS coordinates it is placed after images with GPS data.
+         * If both images lack GPS data, they are treated as equal.
+         * The primary sort is by latitude, followed by longitude if latitudes are equal.
+         */
+        SortByGpsPosition,
+
+        /**
+         * Compare by counting of unconfirmed faces.
+         */
+        SortByFaces,
+
         SortBySimilarity,
+
         SortByManualOrderAndName,
+
         SortByManualOrderAndDate
     };
 

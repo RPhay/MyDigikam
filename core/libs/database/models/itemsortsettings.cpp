@@ -23,6 +23,7 @@
 // Local includes
 
 #include "iteminfo.h"
+#include "itemposition.h"
 #include "coredbfields.h"
 #include "facetagseditor.h"
 
@@ -122,6 +123,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
         case SortByFaces:
+        case SortByGpsPosition:
         {
             return Qt::AscendingOrder;
         }
@@ -364,6 +366,11 @@ bool ItemSortSettings::lessThan(const ItemInfo& left, const ItemInfo& right) con
         return (result < 0);
     }
 
+    if ((result = compare(left, right, SortByGpsPosition)) != 0)
+    {
+        return (result < 0);
+    }
+
     if ((result = compare(left, right, SortBySimilarity)) != 0)
     {
         return (result < 0);
@@ -467,6 +474,30 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             int rightAR     = (double(rightSize.width()) / double(rightSize.height())) * 1000000;
 
             return compareByOrder(leftAR, rightAR, currentSortOrder);
+        }
+
+        case SortByGpsPosition:
+        {
+            ItemPosition leftPos  = left.imagePosition();
+            ItemPosition rightPos = right.imagePosition();
+
+            // Check if position are valid.
+
+            if (!leftPos.isEmpty() || !rightPos.isEmpty())
+            {
+                return 1;
+            }
+
+            // Compare by latitude and next by longitude.
+
+            int latCompare = (- compareByOrder(leftPos.latitudeNumber(), rightPos.latitudeNumber(), currentSortOrder));
+
+            if (latCompare != 0)
+            {
+                return latCompare;
+            }
+
+            return (- compareByOrder(leftPos.longitudeNumber(), rightPos.longitudeNumber(), currentSortOrder));
         }
 
         case SortBySimilarity:
@@ -786,6 +817,12 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
         case SortByAspectRatio:
         {
             set |= DatabaseFields::Width | DatabaseFields::Height;
+            break;
+        }
+
+        case SortByGpsPosition:
+        {
+            set |= DatabaseFields::LatitudeNumber | DatabaseFields::LongitudeNumber;
             break;
         }
 
