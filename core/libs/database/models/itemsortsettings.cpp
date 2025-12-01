@@ -118,6 +118,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
     {
         case SortByFilePath:
         case SortByFileName:
+        case SortByFormat:
         case SortByCreationDate:
         case SortByModificationDate:
         case SortByManualOrderAndName:
@@ -346,6 +347,11 @@ bool ItemSortSettings::lessThan(const ItemInfo& left, const ItemInfo& right) con
         return (result < 0);
     }
 
+    if ((result = compare(left, right, SortByFormat)) != 0)
+    {
+        return (result < 0);
+    }
+
     if ((result = compare(left, right, SortByCreationDate)) != 0)
     {
         return (result < 0);
@@ -413,6 +419,17 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             return naturalCompare(
                                   left.filePath(),
                                   right.filePath(),
+                                  currentSortOrder,
+                                  sortCaseSensitivity,
+                                  strTypeNatural
+                                 );
+        }
+
+        case SortByFormat:
+        {
+            return naturalCompare(
+                                  left.format(),
+                                  right.format(),
                                   currentSortOrder,
                                   sortCaseSensitivity,
                                   strTypeNatural
@@ -763,6 +780,12 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
         case SortByFilePath:
         {
             set |= DatabaseFields::Name;
+            break;
+        }
+
+        case SortByFormat:
+        {
+            set |= DatabaseFields::Format;
             break;
         }
 

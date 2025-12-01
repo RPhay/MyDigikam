@@ -596,6 +596,7 @@ void DigikamApp::setupActions()
     QAction* const sortByDateAction               = d->imageSortAction->addAction(i18nc("@action: setup", "By Creation Date"));
     QAction* const sortByModDateAction            = d->imageSortAction->addAction(i18nc("@action: setup", "By Modification Date"));
     QAction* const sortByFileSizeAction           = d->imageSortAction->addAction(i18nc("@action: setup", "By File Size"));
+    QAction* const sortByFormatAction             = d->imageSortAction->addAction(i18nc("@action: setup", "By Format"));
     d->imageSortAction->menu()->addSeparator();
     QAction* const sortByRatingAction             = d->imageSortAction->addAction(i18nc("@action: setup", "By Rating"));
     QAction* const sortByPickLabelAction          = d->imageSortAction->addAction(i18nc("@action: setup", "By Pick Label"));
@@ -632,6 +633,9 @@ void DigikamApp::setupActions()
 
     connect(sortByFileSizeAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByFileSize); });
+
+    connect(sortByFormatAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByFormat); });
 
     connect(sortByRatingAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByRating); });

@@ -72,6 +72,11 @@ public:
         SortByFileSize,
 
         /**
+         * Compare by type-mime.
+         */
+        SortByFormat,
+
+        /**
          * Compare by Rating enum values.
          */
         SortByRating,
