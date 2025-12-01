@@ -108,8 +108,8 @@ BUGFIXES:
 066 --> 469627 - Rotating images (left / right) don't work.
 067 --> 404749 - Feature request: Separate items by pick and color labels.
 068 --> 494034 - Assign color picks and filtering on a color pick, change the color pick to none crashes digiKam.
-069 -->
-070 -->
+069 --> 355838 - Sort images by orientation mode.
+070 --> 510760 - Could NOT find Eigen3 5.0.0.
 071 -->
 072 -->
 073 -->
