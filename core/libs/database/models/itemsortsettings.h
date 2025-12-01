@@ -61,52 +61,68 @@ public:
     {
         // NOTE: For legacy reasons, the order of the first five entries must remain unchanged
 
+        /**
+         * Compare by file name in alphabetical order.
+         */
         SortByFileName,
 
+        /**
+         * Compare by file path in alphabetical order.
+         */
         SortByFilePath,
 
+        /**
+         * Compare by camera create date.
+         */
         SortByCreationDate,
 
+        /**
+         * Compare by date modified by the computer.
+         */
         SortByModificationDate,
 
+        /**
+         * Compare by file size in bytes.
+         */
         SortByFileSize,
 
         /**
-         * Compare by type-mime.
+         * Compare by type-mime in alphabetical order.
          */
         SortByFormat,
 
         /**
-         * Compare by Rating enum values.
+         * Compare by Rating enumarate values.
          */
         SortByRating,
 
         /**
-         * Compare by Pick Label enum values.
+         * Compare by Pick Label enumarate values.
          */
         SortByPickLabel,
 
         /**
-         * Compare by Color Label enum values.
+         * Compare by Color Label enumarate values.
          */
         SortByColorLabel,
 
         /**
-         * Compare pixel number.
+         * Compare by pixels number.
          */
         SortByImageSize,
 
         /**
-         * Compare Exif Rotation flag.
+         * Compare by Exif Rotation flag.
          */
         SortByOrientation,
 
         /**
-         * Compare ((width / height) * 100000).
+         * Compare by aspect ratio computed as ((width / height) * 100000).
          */
         SortByAspectRatio,
 
         /**
+         * Compare by GPS location properties.
          * If an image lacks GPS coordinates it is placed after images with GPS data.
          * If both images lack GPS data, they are treated as equal.
          * The primary sort is by latitude, followed by longitude if latitudes are equal.
@@ -114,14 +130,23 @@ public:
         SortByGpsPosition,
 
         /**
-         * Compare by counting of unconfirmed faces.
+         * Compare by counting the number of unconfirmed faces.
          */
         SortByFaces,
 
+        /**
+         * Compare by similarity results (only available in the Similarity Search View).
+         */
         SortBySimilarity,
 
+        /**
+         * Compare by the manual sorting order and the file name.
+         */
         SortByManualOrderAndName,
 
+        /**
+         * Compare by the manual sorting order and the creation date.
+         */
         SortByManualOrderAndDate
     };
 
