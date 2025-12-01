@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-30 00:40+0000\n"
+"POT-Creation-Date: 2025-12-01 00:40+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2019,110 +2019,124 @@ msgid "By Rating"
 msgstr "별점순"
 
 #: core/app/main/digikamapp_setup.cpp:600
+#, fuzzy, kde-format
+#| msgid "Pick Label:"
+msgctxt "@action: setup"
+msgid "By Pick Label"
+msgstr "레이블 선택:"
+
+#: core/app/main/digikamapp_setup.cpp:601
+#, fuzzy, kde-format
+#| msgid "Color Label:"
+msgctxt "@action: setup"
+msgid "By Color Label"
+msgstr "색상 레이블:"
+
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "이미지 크기순"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "종횡비순"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:604
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "얼굴 형식순"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:605
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "유사성순"
 
-#: core/app/main/digikamapp_setup.cpp:604
+#: core/app/main/digikamapp_setup.cpp:606
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "수동 및 이름순"
 
-#: core/app/main/digikamapp_setup.cpp:605
+#: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "수동 및 날짜순"
 
-#: core/app/main/digikamapp_setup.cpp:650
+#: core/app/main/digikamapp_setup.cpp:660
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "항목 정렬 순서(&O)"
 
-#: core/app/main/digikamapp_setup.cpp:651
+#: core/app/main/digikamapp_setup.cpp:661
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "이미지를 오름차순 또는 내림차순으로 정렬할지를 정의합니다."
 
-#: core/app/main/digikamapp_setup.cpp:655
-#: core/app/main/digikamapp_setup.cpp:714
+#: core/app/main/digikamapp_setup.cpp:665
+#: core/app/main/digikamapp_setup.cpp:724
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "오름차순"
 
-#: core/app/main/digikamapp_setup.cpp:657
-#: core/app/main/digikamapp_setup.cpp:716
+#: core/app/main/digikamapp_setup.cpp:667
+#: core/app/main/digikamapp_setup.cpp:726
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "내림차순"
 
-#: core/app/main/digikamapp_setup.cpp:667
+#: core/app/main/digikamapp_setup.cpp:677
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "항목 구분"
 
-#: core/app/main/digikamapp_setup.cpp:668
+#: core/app/main/digikamapp_setup.cpp:678
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "섬네일 보기에 이미지를 표시할 분류"
 
-#: core/app/main/digikamapp_setup.cpp:673
+#: core/app/main/digikamapp_setup.cpp:683
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "단순 목록"
 
-#: core/app/main/digikamapp_setup.cpp:674
+#: core/app/main/digikamapp_setup.cpp:684
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "앨범별"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:685
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "형식별"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:686
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "얼굴별"
 
-#: core/app/main/digikamapp_setup.cpp:677
+#: core/app/main/digikamapp_setup.cpp:687
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "월별"
 
-#: core/app/main/digikamapp_setup.cpp:678
+#: core/app/main/digikamapp_setup.cpp:688
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Date"
@@ -2130,284 +2144,284 @@ msgctxt "@action: setup"
 msgid "By Day"
 msgstr "날짜순"
 
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:719
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "항목 분리 순서"
 
-#: core/app/main/digikamapp_setup.cpp:710
+#: core/app/main/digikamapp_setup.cpp:720
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "분리된 항목 그룹의 정렬 순서"
 
-#: core/app/main/digikamapp_setup.cpp:731
+#: core/app/main/digikamapp_setup.cpp:741
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "모두 선택"
 
-#: core/app/main/digikamapp_setup.cpp:738
+#: core/app/main/digikamapp_setup.cpp:748
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "선택 해제"
 
-#: core/app/main/digikamapp_setup.cpp:745
+#: core/app/main/digikamapp_setup.cpp:755
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "선택 반전"
 
-#: core/app/main/digikamapp_setup.cpp:753
+#: core/app/main/digikamapp_setup.cpp:763
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "섬네일 표시줄 표시"
 
-#: core/app/main/digikamapp_setup.cpp:784
+#: core/app/main/digikamapp_setup.cpp:794
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "100%로 크기 조절"
 
-#: core/app/main/digikamapp_setup.cpp:792
+#: core/app/main/digikamapp_setup.cpp:802
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "창에 맞춤(&W)"
 
-#: core/app/main/digikamapp_setup.cpp:805
+#: core/app/main/digikamapp_setup.cpp:815
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "색 관리가 적용된 보기"
 
-#: core/app/main/digikamapp_setup.cpp:823
+#: core/app/main/digikamapp_setup.cpp:833
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "검색..."
 
-#: core/app/main/digikamapp_setup.cpp:831
+#: core/app/main/digikamapp_setup.cpp:841
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "고급 검색..."
 
-#: core/app/main/digikamapp_setup.cpp:839
+#: core/app/main/digikamapp_setup.cpp:849
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "중복 항목 찾기..."
 
-#: core/app/main/digikamapp_setup.cpp:849
+#: core/app/main/digikamapp_setup.cpp:859
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "데이터베이스 이전..."
 
-#: core/app/main/digikamapp_setup.cpp:858
+#: core/app/main/digikamapp_setup.cpp:868
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "관리..."
 
-#: core/app/main/digikamapp_setup.cpp:865
+#: core/app/main/digikamapp_setup.cpp:875
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "새 항목 검색"
 
-#: core/app/main/digikamapp_setup.cpp:871
+#: core/app/main/digikamapp_setup.cpp:881
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "수동으로 카메라 추가..."
 
-#: core/app/main/digikamapp_setup.cpp:882
+#: core/app/main/digikamapp_setup.cpp:892
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "카메라 불러오는 중..."
 
-#: core/app/main/digikamapp_setup.cpp:918
+#: core/app/main/digikamapp_setup.cpp:928
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "미리 보기 모드 끝내기"
 
-#: core/app/main/digikamapp_setup.cpp:923
+#: core/app/main/digikamapp_setup.cpp:933
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "다음 이미지"
 
-#: core/app/main/digikamapp_setup.cpp:929
+#: core/app/main/digikamapp_setup.cpp:939
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "이전 이미지"
 
-#: core/app/main/digikamapp_setup.cpp:935
+#: core/app/main/digikamapp_setup.cpp:945
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "첫 이미지"
 
-#: core/app/main/digikamapp_setup.cpp:940
+#: core/app/main/digikamapp_setup.cpp:950
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "마지막 이미지"
 
-#: core/app/main/digikamapp_setup.cpp:945
+#: core/app/main/digikamapp_setup.cpp:955
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "잘라내기(&T)"
 
-#: core/app/main/digikamapp_setup.cpp:947
+#: core/app/main/digikamapp_setup.cpp:957
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "선택 항목을 클립보드로 잘라내기"
 
-#: core/app/main/digikamapp_setup.cpp:966
+#: core/app/main/digikamapp_setup.cpp:976
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "제목 편집"
 
-#: core/app/main/digikamapp_setup.cpp:971
+#: core/app/main/digikamapp_setup.cpp:981
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "주석 편집"
 
-#: core/app/main/digikamapp_setup.cpp:976
+#: core/app/main/digikamapp_setup.cpp:986
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "할당된 태그 표시"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:995
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Exif 방향 태그 조정"
 
-#: core/app/main/digikamapp_setup.cpp:988
+#: core/app/main/digikamapp_setup.cpp:998
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "일반"
 
-#: core/app/main/digikamapp_setup.cpp:990
+#: core/app/main/digikamapp_setup.cpp:1000
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "수평으로 뒤집힘"
 
-#: core/app/main/digikamapp_setup.cpp:992
+#: core/app/main/digikamapp_setup.cpp:1002
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "거꾸로 회전함"
 
-#: core/app/main/digikamapp_setup.cpp:994
+#: core/app/main/digikamapp_setup.cpp:1004
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "수직으로 뒤집힘"
 
-#: core/app/main/digikamapp_setup.cpp:996
+#: core/app/main/digikamapp_setup.cpp:1006
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "오른쪽으로 회전함/수평으로 뒤집힘"
 
-#: core/app/main/digikamapp_setup.cpp:998
+#: core/app/main/digikamapp_setup.cpp:1008
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "오른쪽으로 회전함"
 
-#: core/app/main/digikamapp_setup.cpp:1000
+#: core/app/main/digikamapp_setup.cpp:1010
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "오른쪽으로 회전함/수직으로 뒤집힘"
 
-#: core/app/main/digikamapp_setup.cpp:1002
+#: core/app/main/digikamapp_setup.cpp:1012
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "왼쪽으로 회전함"
 
-#: core/app/main/digikamapp_setup.cpp:1063
+#: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "회전"
 
-#: core/app/main/digikamapp_setup.cpp:1069
+#: core/app/main/digikamapp_setup.cpp:1079
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "자동 회전"
 
-#: core/app/main/digikamapp_setup.cpp:1077
+#: core/app/main/digikamapp_setup.cpp:1087
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "왼쪽"
 
-#: core/app/main/digikamapp_setup.cpp:1084
+#: core/app/main/digikamapp_setup.cpp:1094
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "오른쪽"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1104
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "뒤집기"
 
-#: core/app/main/digikamapp_setup.cpp:1098
+#: core/app/main/digikamapp_setup.cpp:1108
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "수평으로"
 
-#: core/app/main/digikamapp_setup.cpp:1105
+#: core/app/main/digikamapp_setup.cpp:1115
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "수직으로"
 
-#: core/app/main/digikamapp_setup.cpp:1115
+#: core/app/main/digikamapp_setup.cpp:1125
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Exif 정보를 사용하여 자동 회전/뒤집기"
 
-#: core/app/main/digikamapp_setup.cpp:1126
+#: core/app/main/digikamapp_setup.cpp:1136
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "테마 불러오는 중..."
 
-#: core/app/main/digikamapp_setup.cpp:1129
+#: core/app/main/digikamapp_setup.cpp:1139
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "테마(&T)"
 
-#: core/app/main/digikamapp_setup.cpp:1145
+#: core/app/main/digikamapp_setup.cpp:1155
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -29666,32 +29680,32 @@ msgstr "전체 진행 상황"
 msgid "Overall Progress:"
 msgstr "전체 진행 상황"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:215
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:217
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:222
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:224
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:231
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:233
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:279
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:281
 #, kde-format
 msgid "Database copied successfully."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:288
 #, kde-format
 msgid "Database conversion canceled."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:298
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr ""
@@ -38451,7 +38465,7 @@ msgid "Description"
 msgstr "설명"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1981
+#: core/utilities/import/main/importui.cpp:1990
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -40721,31 +40735,32 @@ msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "이 얼굴 태그에 해당하는 태그 %1개를 이미지에서 삭제하시겠습니까?"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:233
+#: core/libs/tags/engine/tagsactionmngr.cpp:228
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "별점 \"%1점\" 할당"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:249
+#: core/libs/tags/engine/tagsactionmngr.cpp:244
 #, fuzzy, kde-format
 #| msgid "Assign Rating \"%1 Star\""
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "별점 \"%1점\" 할당"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:270
+#: core/libs/tags/engine/tagsactionmngr.cpp:265
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "선택 레이블 \"%1\" 할당"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:292
-#, kde-format
-msgid "Assign Color Label \"%1\""
-msgstr "색상 레이블 \"%1\" 할당"
-
-#: core/libs/tags/engine/tagsactionmngr.cpp:342
+#: core/libs/tags/engine/tagsactionmngr.cpp:314
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "태그 \"%1\" 할당"
+
+#: core/libs/tags/engine/tagsactionmngr.cpp:556
+#: core/libs/tags/engine/tagsactionmngr.cpp:611
+#, kde-format
+msgid "Assign Color Label \"%1\""
+msgstr "색상 레이블 \"%1\" 할당"
 
 #: core/libs/tags/manager/models/tagmngrlistitem.cpp:158
 #, kde-format
@@ -60305,7 +60320,7 @@ msgid ""
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:471
-#: core/utilities/import/main/importui.cpp:508
+#: core/utilities/import/main/importui.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
@@ -60378,8 +60393,8 @@ msgid "Auto-Rotate"
 msgstr "자동 회전"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
-#: core/utilities/import/main/importui.cpp:553
-#: core/utilities/import/main/importui.cpp:794
+#: core/utilities/import/main/importui.cpp:562
+#: core/utilities/import/main/importui.cpp:803
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -60941,7 +60956,7 @@ msgstr "<filename>%1</filename>에 대한 메타데이터를 가져오지 못했
 
 #: core/utilities/import/backend/cameracontroller.cpp:645
 #: core/utilities/import/backend/cameracontroller.cpp:1016
-#: core/utilities/import/main/importui.cpp:2498
+#: core/utilities/import/main/importui.cpp:2507
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "<filename>%1</filename>을(를) 다운로드하지 못했습니다"
@@ -61501,144 +61516,158 @@ msgid "By Rating"
 msgstr "별점순"
 
 #: core/utilities/import/main/importui.cpp:418
+#, fuzzy, kde-format
+#| msgid "Pick Label:"
+msgctxt "@item:inmenu Sort by"
+msgid "By PickLabel"
+msgstr "레이블 선택:"
+
+#: core/utilities/import/main/importui.cpp:419
+#, fuzzy, kde-format
+#| msgid "Color Label:"
+msgctxt "@item:inmenu Sort by"
+msgid "By ColorLabel"
+msgstr "색상 레이블:"
+
+#: core/utilities/import/main/importui.cpp:420
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "다운로드 상태순"
 
-#: core/utilities/import/main/importui.cpp:442
+#: core/utilities/import/main/importui.cpp:451
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "항목 정렬 순서(&O)"
 
-#: core/utilities/import/main/importui.cpp:443
+#: core/utilities/import/main/importui.cpp:452
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:447
+#: core/utilities/import/main/importui.cpp:456
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "오름차순"
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:458
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "내림차순"
 
-#: core/utilities/import/main/importui.cpp:461
+#: core/utilities/import/main/importui.cpp:470
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "항목 그룹화(&G)"
 
-#: core/utilities/import/main/importui.cpp:462
+#: core/utilities/import/main/importui.cpp:471
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:467
+#: core/utilities/import/main/importui.cpp:476
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "단순 목록"
 
-#: core/utilities/import/main/importui.cpp:468
+#: core/utilities/import/main/importui.cpp:477
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "폴더별"
 
-#: core/utilities/import/main/importui.cpp:469
+#: core/utilities/import/main/importui.cpp:478
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "형식별"
 
-#: core/utilities/import/main/importui.cpp:470
+#: core/utilities/import/main/importui.cpp:479
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "날짜별"
 
-#: core/utilities/import/main/importui.cpp:496
+#: core/utilities/import/main/importui.cpp:505
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "창에 맞춤(&W)"
 
-#: core/utilities/import/main/importui.cpp:501
+#: core/utilities/import/main/importui.cpp:510
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "100%로 크기 조절"
 
-#: core/utilities/import/main/importui.cpp:519
+#: core/utilities/import/main/importui.cpp:528
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "기록 표시"
 
-#: core/utilities/import/main/importui.cpp:525
+#: core/utilities/import/main/importui.cpp:534
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "섬네일 표시줄 표시"
 
-#: core/utilities/import/main/importui.cpp:560
+#: core/utilities/import/main/importui.cpp:569
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "다시 시도"
 
-#: core/utilities/import/main/importui.cpp:783
+#: core/utilities/import/main/importui.cpp:792
 #, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "미리 보기 모드 끝내기"
 
-#: core/utilities/import/main/importui.cpp:788
+#: core/utilities/import/main/importui.cpp:797
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "다음 이미지"
 
-#: core/utilities/import/main/importui.cpp:800
+#: core/utilities/import/main/importui.cpp:809
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "첫 이미지"
 
-#: core/utilities/import/main/importui.cpp:805
+#: core/utilities/import/main/importui.cpp:814
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "마지막 이미지"
 
-#: core/utilities/import/main/importui.cpp:906
+#: core/utilities/import/main/importui.cpp:915
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/import/main/importui.cpp:957
+#: core/utilities/import/main/importui.cpp:966
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:967
+#: core/utilities/import/main/importui.cpp:976
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1044
+#: core/utilities/import/main/importui.cpp:1053
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -61646,7 +61675,7 @@ msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "준비"
 
-#: core/utilities/import/main/importui.cpp:1101
+#: core/utilities/import/main/importui.cpp:1110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61654,13 +61683,13 @@ msgid ""
 "and turned on."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1195
+#: core/utilities/import/main/importui.cpp:1204
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "업로드할 이미지 선택"
 
-#: core/utilities/import/main/importui.cpp:1230
+#: core/utilities/import/main/importui.cpp:1239
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61670,7 +61699,7 @@ msgid ""
 "Available free space: %2"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1285
+#: core/utilities/import/main/importui.cpp:1294
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -61685,7 +61714,7 @@ msgstr ""
 "<qt><resource>%1</resource> 카메라 폴더는 이미 항목 <resource>%2</resource>이"
 "(가) 포함되어 있습니다.<br/>새 파일 이름(확장자 없이)을 입력하십시오:</qt>"
 
-#: core/utilities/import/main/importui.cpp:1289
+#: core/utilities/import/main/importui.cpp:1298
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
@@ -61693,7 +61722,7 @@ msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "파일이 이미 존재함"
 
-#: core/utilities/import/main/importui.cpp:1358
+#: core/utilities/import/main/importui.cpp:1367
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61701,7 +61730,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1398
+#: core/utilities/import/main/importui.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61710,7 +61739,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1407
+#: core/utilities/import/main/importui.cpp:1416
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61718,7 +61747,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1432
+#: core/utilities/import/main/importui.cpp:1441
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Please select the destination album from the digiKam library to import "
@@ -61729,7 +61758,7 @@ msgid ""
 "camera pictures into."
 msgstr "<p>폴더를 가져올 대상 앨범을 digiKam 라이브러리에서 선택하십시오.</p>"
 
-#: core/utilities/import/main/importui.cpp:1463
+#: core/utilities/import/main/importui.cpp:1472
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61737,19 +61766,19 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1527
+#: core/utilities/import/main/importui.cpp:1536
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 사이드카 파일을 저장하지 못했습니다"
 
-#: core/utilities/import/main/importui.cpp:1534
+#: core/utilities/import/main/importui.cpp:1543
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 사이드카 파일을 저장하지 못했습니다"
 
-#: core/utilities/import/main/importui.cpp:1978
+#: core/utilities/import/main/importui.cpp:1987
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61758,7 +61787,7 @@ msgid ""
 "and try again."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1989
+#: core/utilities/import/main/importui.cpp:1998
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -61773,19 +61802,19 @@ msgstr[0] ""
 "%1개의 그림을 삭제하려고 합니다. 삭제한 파일은 복구할 수 없습니다. 계속 진행"
 "하시겠습니까?"
 
-#: core/utilities/import/main/importui.cpp:1999
+#: core/utilities/import/main/importui.cpp:2008
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "경고"
 
-#: core/utilities/import/main/importui.cpp:2043
+#: core/utilities/import/main/importui.cpp:2052
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "디스크 공간 부족"
 
-#: core/utilities/import/main/importui.cpp:2044
+#: core/utilities/import/main/importui.cpp:2053
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61798,15 +61827,15 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2312
-#: core/utilities/import/main/importui.cpp:2338
+#: core/utilities/import/main/importui.cpp:2321
+#: core/utilities/import/main/importui.cpp:2347
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "선택한 항목 없음(항목 %1개)"
 
-#: core/utilities/import/main/importui.cpp:2331
+#: core/utilities/import/main/importui.cpp:2340
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -61814,29 +61843,29 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%3 중 %2)"
 
-#: core/utilities/import/main/importui.cpp:2348
+#: core/utilities/import/main/importui.cpp:2357
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "항목 %2/%1개 선택됨"
 
-#: core/utilities/import/main/importui.cpp:2433
+#: core/utilities/import/main/importui.cpp:2442
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "<filename>%1</filename> 파일을 건너뛰었습니다"
 
-#: core/utilities/import/main/importui.cpp:2455
+#: core/utilities/import/main/importui.cpp:2464
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "파일 이름을 <filename>%1</filename>로 변경합니다"
 
-#: core/utilities/import/main/importui.cpp:2478
+#: core/utilities/import/main/importui.cpp:2487
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 대한 사이드카 파일을 저장하지 못했습니다"
 
-#: core/utilities/import/main/importui.cpp:2555
+#: core/utilities/import/main/importui.cpp:2564
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -61844,19 +61873,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2563
+#: core/utilities/import/main/importui.cpp:2572
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "이미지 다운로드 완료"
 
-#: core/utilities/import/main/importui.cpp:2589
+#: core/utilities/import/main/importui.cpp:2598
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "폴더 %2에 같은 이름의 파일이 (%1) 존재합니다"
 
-#: core/utilities/import/main/importui.cpp:2602
+#: core/utilities/import/main/importui.cpp:2611
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
