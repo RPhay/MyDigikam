@@ -132,6 +132,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         case SortByFileSize:
         case SortByImageSize:
         case SortBySimilarity:
+        case SortByOrientation:
         case SortByAspectRatio:
         {
             return Qt::DescendingOrder;
@@ -453,6 +454,11 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             return compareByOrder(leftPixels, rightPixels, currentSortOrder);
         }
 
+        case SortByOrientation:
+        {
+            return (- compareByOrder(left.orientation(), right.orientation(), currentSortOrder));
+        }
+
         case SortByAspectRatio:
         {
             QSize leftSize  = left.dimensions();
@@ -768,6 +774,12 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
         case SortByImageSize:
         {
             set |= DatabaseFields::Width | DatabaseFields::Height;
+            break;
+        }
+
+        case SortByOrientation:
+        {
+            set |= DatabaseFields::Orientation;
             break;
         }
 

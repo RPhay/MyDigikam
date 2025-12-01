@@ -69,6 +69,7 @@ public:
         SortByPickLabel,
         SortByColorLabel,
         SortByImageSize,            ///< pixel number
+        SortByOrientation,
         SortByAspectRatio,          ///< width / height * 100000
         SortByFaces,                ///< count of unconfirmed faces
         SortBySimilarity,

@@ -132,6 +132,8 @@ Qt::SortOrder CamItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         }
 
         case SortByRating:
+        case SortByPickLabel:
+        case SortByColorLabel:
         {
             return Qt::DescendingOrder;
         }
@@ -210,6 +212,16 @@ bool CamItemSortSettings::lessThan(const CamItemInfo& left, const CamItemInfo& r
     }
 
     if ((result = compare(left, right, SortByRating)) != 0)
+    {
+        return (result < 0);
+    }
+
+    if ((result = compare(left, right, SortByPickLabel)) != 0)
+    {
+        return (result < 0);
+    }
+
+    if ((result = compare(left, right, SortByColorLabel)) != 0)
     {
         return (result < 0);
     }
