@@ -72,7 +72,7 @@ public:
         SortByFilePath,
 
         /**
-         * Compare by camera create date.
+         * Compare by camera creation date.
          */
         SortByCreationDate,
 
@@ -92,17 +92,17 @@ public:
         SortByFormat,
 
         /**
-         * Compare by Rating enumarate values.
+         * Compare by Rating order.
          */
         SortByRating,
 
         /**
-         * Compare by Pick Label enumarate values.
+         * Compare by Pick Label order.
          */
         SortByPickLabel,
 
         /**
-         * Compare by Color Label enumarate values.
+         * Compare by Color Label order.
          */
         SortByColorLabel,
 
