@@ -112,6 +112,7 @@ Qt::SortOrder CamItemSortSettings::defaultSortOrderForSortRole(SortRole role)
     {
         case SortByFileName:
         case SortByFilePath:
+        case SortByFormat:
         {
             return Qt::AscendingOrder;
         }
@@ -206,6 +207,11 @@ bool CamItemSortSettings::lessThan(const CamItemInfo& left, const CamItemInfo& r
         return (result < 0);
     }
 
+    if ((result = compare(left, right, SortByFormat)) != 0)
+    {
+        return (result < 0);
+    }
+
     if ((result = compare(left, right, SortByFileSize)) != 0)
     {
         return (result < 0);
@@ -252,6 +258,12 @@ int CamItemSortSettings::compare(const CamItemInfo& left, const CamItemInfo& rig
         case SortByFilePath:
         {
             return naturalCompare(left.url().toLocalFile(), right.url().toLocalFile(),
+                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
+        }
+
+        case SortByFormat:
+        {
+            return naturalCompare(left.mime, right.mime,
                                   currentSortOrder, sortCaseSensitivity, strTypeNatural);
         }
 

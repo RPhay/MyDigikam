@@ -56,7 +56,8 @@ public:
         SortByDownloadState,
         SortByRating,
         SortByPickLabel,
-        SortByColorLabel
+        SortByColorLabel,
+        SortByFormat
     };
 
 public:

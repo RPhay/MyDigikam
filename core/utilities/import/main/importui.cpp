@@ -414,9 +414,12 @@ void ImportUI::setupActions()
     QAction* const sortByPathAction       = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Path"));
     QAction* const sortByDateAction       = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Date"));
     QAction* const sortByFileSizeAction   = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Size"));
+    QAction* const sortByFormatAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Format"));
+    d->itemSortAction->menu()->addSeparator();
     QAction* const sortByRatingAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Rating"));
     QAction* const sortByPickLabelAction  = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By PickLabel"));
     QAction* const sortByColorLabelAction = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By ColorLabel"));
+    d->itemSortAction->menu()->addSeparator();
     QAction* const sortByDownloadAction   = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Download State"));
 
     connect(sortByNameAction, &QAction::triggered,
@@ -430,6 +433,9 @@ void ImportUI::setupActions()
 
     connect(sortByFileSizeAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByFileSize); });
+
+    connect(sortByFormatAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByFormat); });
 
     connect(sortByRatingAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByRating); });
