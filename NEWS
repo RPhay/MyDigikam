@@ -110,7 +110,7 @@ BUGFIXES:
 068 --> 494034 - Assign color picks and filtering on a color pick, change the color pick to none crashes digiKam.
 069 --> 355838 - Sort images by orientation mode.
 070 --> 510760 - Could NOT find Eigen3 5.0.0.
-071 -->
+071 --> 512850 - downloadable epub manual will not open in ReadEra Ereader program, android OS 16.
 072 -->
 073 -->
 074 -->
