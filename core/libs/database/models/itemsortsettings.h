@@ -59,21 +59,94 @@ public:
 
     enum SortRole
     {
-        // Note: For legacy reasons, the order of the first five entries must remain unchanged
+        // NOTE: For legacy reasons, the order of the first five entries must remain unchanged
+
+        /**
+         * Compare by file name in alphabetical order.
+         */
         SortByFileName,
+
+        /**
+         * Compare by file path in alphabetical order.
+         */
         SortByFilePath,
+
+        /**
+         * Compare by camera creation date.
+         */
         SortByCreationDate,
+
+        /**
+         * Compare by date modified by the computer.
+         */
         SortByModificationDate,
+
+        /**
+         * Compare by file size in bytes.
+         */
         SortByFileSize,
+
+        /**
+         * Compare by type-mime in alphabetical order.
+         */
+        SortByFormat,
+
+        /**
+         * Compare by Rating order.
+         */
         SortByRating,
+
+        /**
+         * Compare by Pick Label order.
+         */
         SortByPickLabel,
+
+        /**
+         * Compare by Color Label order.
+         */
         SortByColorLabel,
-        SortByImageSize,            ///< pixel number
+
+        /**
+         * Compare by pixels number.
+         */
+        SortByImageSize,
+
+        /**
+         * Compare by Exif Rotation flag.
+         */
         SortByOrientation,
-        SortByAspectRatio,          ///< width / height * 100000
-        SortByFaces,                ///< count of unconfirmed faces
+
+        /**
+         * Compare by aspect ratio computed as ((width / height) * 100000).
+         */
+        SortByAspectRatio,
+
+        /**
+         * Compare by GPS location properties.
+         * If an image lacks GPS coordinates it is placed after images with GPS data.
+         * If both images lack GPS data, they are treated as equal.
+         * The primary sort is by latitude, followed by longitude if latitudes are equal.
+         */
+        SortByGpsPosition,
+
+        /**
+         * Compare by counting the number of unconfirmed faces.
+         */
+        SortByFaces,
+
+        /**
+         * Compare by similarity results (only available in the Similarity Search View).
+         */
         SortBySimilarity,
+
+        /**
+         * Compare by the manual sorting order and the file name.
+         */
         SortByManualOrderAndName,
+
+        /**
+         * Compare by the manual sorting order and the creation date.
+         */
         SortByManualOrderAndDate
     };
 

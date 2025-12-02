@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:40+0000\n"
+"POT-Creation-Date: 2025-12-02 00:40+0000\n"
 "PO-Revision-Date: 2024-03-09 12:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -2010,412 +2010,427 @@ msgid "By File Size"
 msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:599
+#: core/app/main/digikamapp_setup.cpp:700
+#, kde-format
+msgctxt "@action: setup"
+msgid "By Format"
+msgstr ""
+
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:602
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgctxt "@action: setup"
 msgid "By Pick Label"
 msgstr "Plukk-merkelapp:"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:603
 #, fuzzy, kde-format
 #| msgid "Color Label:"
 msgctxt "@action: setup"
 msgid "By Color Label"
 msgstr "Fargemerkelapp:"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:605
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:606
+#, fuzzy, kde-format
+#| msgid "Any Orientation"
+msgctxt "@action: setup"
+msgid "By Orientation"
+msgstr "Hvilken som helst retning"
+
+#: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:604
+#: core/app/main/digikamapp_setup.cpp:608
+#, fuzzy, kde-format
+#| msgid "Position:"
+msgctxt "@action: setup"
+msgid "By Gps Position"
+msgstr "Posisjon:"
+
+#: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:605
+#: core/app/main/digikamapp_setup.cpp:611
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:606
+#: core/app/main/digikamapp_setup.cpp:612
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:607
+#: core/app/main/digikamapp_setup.cpp:613
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:660
+#: core/app/main/digikamapp_setup.cpp:675
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:661
+#: core/app/main/digikamapp_setup.cpp:676
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:665
-#: core/app/main/digikamapp_setup.cpp:724
+#: core/app/main/digikamapp_setup.cpp:680
+#: core/app/main/digikamapp_setup.cpp:739
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:667
-#: core/app/main/digikamapp_setup.cpp:726
+#: core/app/main/digikamapp_setup.cpp:682
+#: core/app/main/digikamapp_setup.cpp:741
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:677
+#: core/app/main/digikamapp_setup.cpp:692
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:678
+#: core/app/main/digikamapp_setup.cpp:693
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:683
+#: core/app/main/digikamapp_setup.cpp:698
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:684
+#: core/app/main/digikamapp_setup.cpp:699
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:685
-#, kde-format
-msgctxt "@action: setup"
-msgid "By Format"
-msgstr ""
-
-#: core/app/main/digikamapp_setup.cpp:686
+#: core/app/main/digikamapp_setup.cpp:701
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:687
+#: core/app/main/digikamapp_setup.cpp:702
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:688
+#: core/app/main/digikamapp_setup.cpp:703
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:719
+#: core/app/main/digikamapp_setup.cpp:734
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:720
+#: core/app/main/digikamapp_setup.cpp:735
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:741
+#: core/app/main/digikamapp_setup.cpp:756
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:748
+#: core/app/main/digikamapp_setup.cpp:763
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:755
+#: core/app/main/digikamapp_setup.cpp:770
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:763
+#: core/app/main/digikamapp_setup.cpp:778
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:794
+#: core/app/main/digikamapp_setup.cpp:809
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:802
+#: core/app/main/digikamapp_setup.cpp:817
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:815
+#: core/app/main/digikamapp_setup.cpp:830
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:833
+#: core/app/main/digikamapp_setup.cpp:848
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:841
+#: core/app/main/digikamapp_setup.cpp:856
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:849
+#: core/app/main/digikamapp_setup.cpp:864
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:859
+#: core/app/main/digikamapp_setup.cpp:874
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:868
+#: core/app/main/digikamapp_setup.cpp:883
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:875
+#: core/app/main/digikamapp_setup.cpp:890
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:881
+#: core/app/main/digikamapp_setup.cpp:896
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:892
+#: core/app/main/digikamapp_setup.cpp:907
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:943
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:933
+#: core/app/main/digikamapp_setup.cpp:948
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:939
+#: core/app/main/digikamapp_setup.cpp:954
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:945
+#: core/app/main/digikamapp_setup.cpp:960
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:950
+#: core/app/main/digikamapp_setup.cpp:965
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:955
+#: core/app/main/digikamapp_setup.cpp:970
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:957
+#: core/app/main/digikamapp_setup.cpp:972
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:976
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:981
+#: core/app/main/digikamapp_setup.cpp:996
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:986
+#: core/app/main/digikamapp_setup.cpp:1001
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:1010
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:998
+#: core/app/main/digikamapp_setup.cpp:1013
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1000
+#: core/app/main/digikamapp_setup.cpp:1015
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1002
+#: core/app/main/digikamapp_setup.cpp:1017
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1004
+#: core/app/main/digikamapp_setup.cpp:1019
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1006
+#: core/app/main/digikamapp_setup.cpp:1021
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1008
+#: core/app/main/digikamapp_setup.cpp:1023
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1010
+#: core/app/main/digikamapp_setup.cpp:1025
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1012
+#: core/app/main/digikamapp_setup.cpp:1027
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1073
+#: core/app/main/digikamapp_setup.cpp:1088
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1079
+#: core/app/main/digikamapp_setup.cpp:1094
 #, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1087
+#: core/app/main/digikamapp_setup.cpp:1102
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1109
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1104
+#: core/app/main/digikamapp_setup.cpp:1119
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1108
+#: core/app/main/digikamapp_setup.cpp:1123
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1115
+#: core/app/main/digikamapp_setup.cpp:1130
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1125
+#: core/app/main/digikamapp_setup.cpp:1140
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1136
+#: core/app/main/digikamapp_setup.cpp:1151
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1139
+#: core/app/main/digikamapp_setup.cpp:1154
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1155
+#: core/app/main/digikamapp_setup.cpp:1170
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -20014,7 +20029,7 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
 #, kde-format
-msgid "A tool to preview image with OpenGL"
+msgid "A tool to preview items with OpenGL"
 msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
@@ -20031,7 +20046,7 @@ msgid ""
 "\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></td></"
 "tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
 "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom or "
-"change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
+"change item)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
 "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original size:</"
 "td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse in up-down-"
 "direction while pressing the right mouse button</td></tr><tr><td></"
@@ -20046,7 +20061,7 @@ msgstr ""
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
 #, kde-format
 msgctxt "@action"
-msgid "OpenGL Image Viewer"
+msgid "OpenGL Viewer"
 msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
@@ -35967,7 +35982,7 @@ msgid "Description"
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1990
+#: core/utilities/import/main/importui.cpp:1996
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -56123,7 +56138,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:471
-#: core/utilities/import/main/importui.cpp:517
+#: core/utilities/import/main/importui.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
@@ -56188,8 +56203,8 @@ msgid "Auto-Rotate"
 msgstr ""
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
-#: core/utilities/import/main/importui.cpp:562
-#: core/utilities/import/main/importui.cpp:803
+#: core/utilities/import/main/importui.cpp:568
+#: core/utilities/import/main/importui.cpp:809
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -56735,7 +56750,7 @@ msgstr ""
 
 #: core/utilities/import/backend/cameracontroller.cpp:645
 #: core/utilities/import/backend/cameracontroller.cpp:1016
-#: core/utilities/import/main/importui.cpp:2507
+#: core/utilities/import/main/importui.cpp:2513
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr ""
@@ -57245,171 +57260,179 @@ msgid "By Size"
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:417
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Group Items"
+#| msgid "By Format"
+msgctxt "@item:inmenu Sort by"
+msgid "By Format"
+msgstr "Etter format"
+
+#: core/utilities/import/main/importui.cpp:419
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:418
+#: core/utilities/import/main/importui.cpp:420
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgctxt "@item:inmenu Sort by"
 msgid "By PickLabel"
 msgstr "Plukk-merkelapp:"
 
-#: core/utilities/import/main/importui.cpp:419
+#: core/utilities/import/main/importui.cpp:421
 #, fuzzy, kde-format
 #| msgid "Color Label:"
 msgctxt "@item:inmenu Sort by"
 msgid "By ColorLabel"
 msgstr "Fargemerkelapp:"
 
-#: core/utilities/import/main/importui.cpp:420
+#: core/utilities/import/main/importui.cpp:423
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:457
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:458
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
 "Bestemer om elementene er sortert i stigende eller synkende rekkefølge."
 
-#: core/utilities/import/main/importui.cpp:456
+#: core/utilities/import/main/importui.cpp:462
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Stigende"
 
-#: core/utilities/import/main/importui.cpp:458
+#: core/utilities/import/main/importui.cpp:464
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Synkende"
 
-#: core/utilities/import/main/importui.cpp:470
+#: core/utilities/import/main/importui.cpp:476
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "&Grupper elementer"
 
-#: core/utilities/import/main/importui.cpp:471
+#: core/utilities/import/main/importui.cpp:477
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "Elementer i miniatyrvisningen vises i disse kategoriene"
 
-#: core/utilities/import/main/importui.cpp:476
+#: core/utilities/import/main/importui.cpp:482
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Flat liste"
 
-#: core/utilities/import/main/importui.cpp:477
+#: core/utilities/import/main/importui.cpp:483
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Etter mappe"
 
-#: core/utilities/import/main/importui.cpp:478
+#: core/utilities/import/main/importui.cpp:484
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Etter format"
 
-#: core/utilities/import/main/importui.cpp:479
+#: core/utilities/import/main/importui.cpp:485
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:505
+#: core/utilities/import/main/importui.cpp:511
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Avpass til &vinduet"
 
-#: core/utilities/import/main/importui.cpp:510
+#: core/utilities/import/main/importui.cpp:516
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Skaler til 100 %"
 
-#: core/utilities/import/main/importui.cpp:528
+#: core/utilities/import/main/importui.cpp:534
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Vis historien"
 
-#: core/utilities/import/main/importui.cpp:534
+#: core/utilities/import/main/importui.cpp:540
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Vis sidestolpe for miniatyrer"
 
-#: core/utilities/import/main/importui.cpp:569
+#: core/utilities/import/main/importui.cpp:575
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Prøv igjen"
 
-#: core/utilities/import/main/importui.cpp:792
+#: core/utilities/import/main/importui.cpp:798
 #, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Forlat forhåndsvisning"
 
-#: core/utilities/import/main/importui.cpp:797
+#: core/utilities/import/main/importui.cpp:803
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Neste bilde"
 
-#: core/utilities/import/main/importui.cpp:809
+#: core/utilities/import/main/importui.cpp:815
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "Første bilde"
 
-#: core/utilities/import/main/importui.cpp:814
+#: core/utilities/import/main/importui.cpp:820
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Siste bilde"
 
-#: core/utilities/import/main/importui.cpp:915
+#: core/utilities/import/main/importui.cpp:921
 #, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Avbryter pågående handling. Vent litt  …"
 
-#: core/utilities/import/main/importui.cpp:966
+#: core/utilities/import/main/importui.cpp:972
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "Vil du lukke dette vinduet og avbryte pågående handling?"
 
-#: core/utilities/import/main/importui.cpp:976
+#: core/utilities/import/main/importui.cpp:982
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Kobler fra kameraet. Vent litt …"
 
-#: core/utilities/import/main/importui.cpp:1053
+#: core/utilities/import/main/importui.cpp:1059
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1110
+#: core/utilities/import/main/importui.cpp:1116
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57419,13 +57442,13 @@ msgstr ""
 "Klarte ikke å skaffe forbindelse til kameraet. Forsikre deg om at det er "
 "koblet ordentlig til og at det er slått på."
 
-#: core/utilities/import/main/importui.cpp:1204
+#: core/utilities/import/main/importui.cpp:1210
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Velg bilde som skal lastes opp"
 
-#: core/utilities/import/main/importui.cpp:1239
+#: core/utilities/import/main/importui.cpp:1245
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57439,7 +57462,7 @@ msgstr ""
 "Plassbehov: %1\n"
 "Ledig plass: %2"
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1300
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57447,13 +57470,13 @@ msgid ""
 "Please enter a new filename (without extension):"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1298
+#: core/utilities/import/main/importui.cpp:1304
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1367
+#: core/utilities/import/main/importui.cpp:1373
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57463,7 +57486,7 @@ msgstr ""
 "Det datoformatet du har bestemt for målalbumets dato er ikke gyldig. "
 "Kontroller innstillingene …"
 
-#: core/utilities/import/main/importui.cpp:1407
+#: core/utilities/import/main/importui.cpp:1413
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57475,7 +57498,7 @@ msgstr ""
 "fra kameraenheten er ikke tilgjengelig. Velg en annen fra oppsettsdialogen "
 "for kamera."
 
-#: core/utilities/import/main/importui.cpp:1416
+#: core/utilities/import/main/importui.cpp:1422
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57486,7 +57509,7 @@ msgstr ""
 "kameraenheten er ikke tilgjengelig. Velg et annet fra oppsettsdialogen for "
 "kamera."
 
-#: core/utilities/import/main/importui.cpp:1441
+#: core/utilities/import/main/importui.cpp:1447
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57494,7 +57517,7 @@ msgid ""
 "camera pictures into."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1472
+#: core/utilities/import/main/importui.cpp:1478
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57502,17 +57525,17 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1536
+#: core/utilities/import/main/importui.cpp:1542
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1543
+#: core/utilities/import/main/importui.cpp:1549
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1987
+#: core/utilities/import/main/importui.cpp:1993
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57524,7 +57547,7 @@ msgstr ""
 "elementene slettes ikke Hvis du virkelig vil slette dem, lås dem opp og prøv "
 "igjen."
 
-#: core/utilities/import/main/importui.cpp:1998
+#: core/utilities/import/main/importui.cpp:2004
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57538,19 +57561,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/import/main/importui.cpp:2008
+#: core/utilities/import/main/importui.cpp:2014
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2052
+#: core/utilities/import/main/importui.cpp:2058
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Ikke nok diskplass"
 
-#: core/utilities/import/main/importui.cpp:2053
+#: core/utilities/import/main/importui.cpp:2059
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57567,8 +57590,8 @@ msgstr ""
 "Beregnet plassbehov: %1\n"
 "Tilgjengelig plass: %2"
 
-#: core/utilities/import/main/importui.cpp:2321
-#: core/utilities/import/main/importui.cpp:2347
+#: core/utilities/import/main/importui.cpp:2327
+#: core/utilities/import/main/importui.cpp:2353
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -57576,13 +57599,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ingen merkede elementer (%1 element)"
 msgstr[1] "Ingen merkede elementer (%1 elementer)"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2346
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2357
+#: core/utilities/import/main/importui.cpp:2363
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -57590,22 +57613,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 element valgt"
 msgstr[1] "%2/%1 elementer valgt"
 
-#: core/utilities/import/main/importui.cpp:2442
+#: core/utilities/import/main/importui.cpp:2448
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2464
+#: core/utilities/import/main/importui.cpp:2470
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2487
+#: core/utilities/import/main/importui.cpp:2493
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2564
+#: core/utilities/import/main/importui.cpp:2570
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -57613,19 +57636,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2572
+#: core/utilities/import/main/importui.cpp:2578
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Bildenedlasting er fullført"
 
-#: core/utilities/import/main/importui.cpp:2598
+#: core/utilities/import/main/importui.cpp:2604
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2611
+#: core/utilities/import/main/importui.cpp:2617
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

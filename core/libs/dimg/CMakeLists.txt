@@ -195,8 +195,6 @@ if(Eigen3_FOUND)
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/sharp/refocusmatrix.cpp
     )
 
-    include_directories(${EIGEN3_INCLUDE_DIR})
-
 endif()
 
 set(libdimgloaders_SRCS
@@ -262,3 +260,9 @@ set_target_properties(core_dimg_obj
                       C_STANDARD_REQUIRED YES
                       C_EXTENSIONS NO
 )
+
+if(Eigen3_FOUND)
+
+    target_link_libraries(core_dimg_obj Eigen3::Eigen)
+
+endif()

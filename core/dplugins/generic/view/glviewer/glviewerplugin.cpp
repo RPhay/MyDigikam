@@ -53,7 +53,7 @@ QIcon GLViewerPlugin::icon() const
 
 QString GLViewerPlugin::description() const
 {
-    return i18n("A tool to preview image with OpenGL");
+    return i18n("A tool to preview items with OpenGL");
 }
 
 QString GLViewerPlugin::details() const
@@ -86,7 +86,7 @@ QString GLViewerPlugin::details() const
                     "</tr>"
 
                     "<tr><td>Toggle fullscreen to normal:</td>"  "<td><i>f</i> key</td></tr>"
-                    "<tr><td>Toggle scroll-wheel action:</td>"   "<td><i>c</i> key (either zoom or change image)</td></tr>"
+                    "<tr><td>Toggle scroll-wheel action:</td>"   "<td><i>c</i> key (either zoom or change item)</td></tr>"
                     "<tr><td>Rotation:</td>"                     "<td><i>r</i> key</td></tr>"
                     "<tr><td>Reset view:</td>"                   "<td>double click</td></tr>"
                     "<tr><td>Original size:</td>"                "<td><i>o</i> key</td></tr>"
@@ -127,7 +127,7 @@ QList<DPluginAuthor> GLViewerPlugin::authors() const
                              QString::fromUtf8("(C) 2007-2008"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2024"))
+                             QString::fromUtf8("(C) 2008-2025"))
             ;
 }
 
@@ -135,7 +135,7 @@ void GLViewerPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "OpenGL Image Viewer"));
+    ac->setText(i18nc("@action", "OpenGL Viewer"));
     ac->setObjectName(QLatin1String("glviewer"));
     ac->setActionCategory(DPluginAction::GenericView);
 
@@ -155,12 +155,12 @@ void GLViewerPlugin::slotGLViewer()
 
     if      (selection.count() == 0)
     {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no image selected, load entire album";
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no item selected, load entire album";
         myfiles = iface->currentAlbumItems();
     }
     else if (selection.count() == 1)
     {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "one image selected, load entire album and start with selected image";
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "one item selected, load entire album and start with selected item";
         selectedImage = selection.first().toLocalFile();
         myfiles       = iface->currentAlbumItems();
     }

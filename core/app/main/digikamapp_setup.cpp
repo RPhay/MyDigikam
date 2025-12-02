@@ -596,12 +596,17 @@ void DigikamApp::setupActions()
     QAction* const sortByDateAction               = d->imageSortAction->addAction(i18nc("@action: setup", "By Creation Date"));
     QAction* const sortByModDateAction            = d->imageSortAction->addAction(i18nc("@action: setup", "By Modification Date"));
     QAction* const sortByFileSizeAction           = d->imageSortAction->addAction(i18nc("@action: setup", "By File Size"));
+    QAction* const sortByFormatAction             = d->imageSortAction->addAction(i18nc("@action: setup", "By Format"));
+    d->imageSortAction->menu()->addSeparator();
     QAction* const sortByRatingAction             = d->imageSortAction->addAction(i18nc("@action: setup", "By Rating"));
     QAction* const sortByPickLabelAction          = d->imageSortAction->addAction(i18nc("@action: setup", "By Pick Label"));
     QAction* const sortByColorLabelAction         = d->imageSortAction->addAction(i18nc("@action: setup", "By Color Label"));
+    d->imageSortAction->menu()->addSeparator();
     QAction* const sortByImageSizeAction          = d->imageSortAction->addAction(i18nc("@action: setup", "By Image Size"));
     QAction* const sortByOrientationAction        = d->imageSortAction->addAction(i18nc("@action: setup", "By Orientation"));
     QAction* const sortByAspectRatioAction        = d->imageSortAction->addAction(i18nc("@action: setup", "By Aspect Ratio"));
+    QAction* const sortByGpsPositionAction        = d->imageSortAction->addAction(i18nc("@action: setup", "By Gps Position"));
+    d->imageSortAction->menu()->addSeparator();
     QAction* const sortByFacesAction              = d->imageSortAction->addAction(i18nc("@action: setup", "By Face type"));
     QAction* const sortBySimilarityAction         = d->imageSortAction->addAction(i18nc("@action: setup", "By Similarity"));
     QAction* const sortByManualOrderAndNameAction = d->imageSortAction->addAction(i18nc("@action: setup", "By Manual and Name"));
@@ -629,6 +634,9 @@ void DigikamApp::setupActions()
     connect(sortByFileSizeAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByFileSize); });
 
+    connect(sortByFormatAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByFormat); });
+
     connect(sortByRatingAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByRating); });
 
@@ -646,6 +654,9 @@ void DigikamApp::setupActions()
 
     connect(sortByAspectRatioAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByAspectRatio); });
+
+    connect(sortByGpsPositionAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByGpsPosition); });
 
     connect(sortByFacesAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByFaces); });
