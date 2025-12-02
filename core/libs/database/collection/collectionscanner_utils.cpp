@@ -200,7 +200,8 @@ int CollectionScanner::createAlbumDateCache(const CollectionLocation& location, 
     using ItFlag = QDirListing::IteratorFlag;
     const QTimeZone tz(QTimeZone::LocalTime);
 
-    for (const auto& entry : QDirListing(dir.path(), ItFlag::Recursive))
+    for (const auto& entry : QDirListing(dir.path(), ItFlag::Recursive   |
+                                                     ItFlag::FollowDirSymlinks))
     {
         if (entry.isDir())
         {
@@ -216,7 +217,8 @@ int CollectionScanner::createAlbumDateCache(const CollectionLocation& location, 
     QDirIterator it(dir.path(), QDir::Dirs    |
                                 QDir::Files   |
                                 QDir::NoDotAndDotDot,
-                                QDirIterator::Subdirectories);
+                                QDirIterator::Subdirectories |
+                                QDirIterator::FollowSymlinks);
 
     while (it.hasNext())
     {
