@@ -19,6 +19,8 @@
 
 #include <QApplication>
 #include <QPainter>
+#include <QValidator>
+#include <QStyledItemDelegate>
 #include <QUrl>
 
 // KDE includes
@@ -52,12 +54,72 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN ColorLabelValidator : public QValidator
+{
+public:
+
+    ColorLabelValidator(int maxLength, QObject* const parent = nullptr)
+        : QValidator (parent),
+          m_maxLength(maxLength)
+    {
+    }
+
+    QValidator::State validate(QString& input, int& /*pos*/) const override
+    {
+        if (input.length() <= m_maxLength)
+        {
+            return QValidator::Acceptable;
+        }
+
+        return QValidator::Invalid;
+    }
+
+private:
+
+    int m_maxLength = 32;
+};
+
+// ---
+
+class Q_DECL_HIDDEN ColorLabelDelegate : public QStyledItemDelegate
+{
+    Q_OBJECT
+
+public:
+
+    ColorLabelDelegate(int maxLength, QObject *parent = nullptr)
+        : QStyledItemDelegate(parent), m_maxLength(maxLength) {}
+
+    QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override {
+        QLineEdit *editor = new QLineEdit(parent);
+        editor->setValidator(new ColorLabelValidator(m_maxLength, editor));
+        return editor;
+    }
+
+    void setEditorData(QWidget *editor, const QModelIndex &index) const override {
+        QString text = index.model()->data(index, Qt::EditRole).toString();
+        QLineEdit *lineEdit = qobject_cast<QLineEdit*>(editor);
+        lineEdit->setText(text);
+    }
+
+    void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override {
+        QLineEdit *lineEdit = qobject_cast<QLineEdit*>(editor);
+        model->setData(index, lineEdit->text(), Qt::EditRole);
+    }
+
+private:
+
+    int m_maxLength = 32;
+};
+
+// ---
+
 class Q_DECL_HIDDEN LabelsTreeView::Private
 {
 public:
 
     explicit Private(QTreeWidget* const w)
-      : itemIterator(w)
+        : itemIterator(w)
     {
     }
 
@@ -98,6 +160,7 @@ LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
 
     setHeaderLabel(i18nc("@title", "Labels"));
     setUniformRowHeights(false);
+
     initTreeView();
 
     if (d->isCheckableTreeView)
@@ -119,6 +182,8 @@ LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
     {
         setSelectionMode(QAbstractItemView::ExtendedSelection);
     }
+
+    // ---
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -148,6 +213,7 @@ bool LabelsTreeView::isLoadingState() const
 {
     return d->isLoadingState;
 }
+
 
 QTreeWidgetItem* LabelsTreeView::getOrCreateItem(QTreeWidgetItem* const parent)
 {
@@ -483,12 +549,16 @@ void LabelsTreeView::initColorsTree()
     d->colors->setFont(0, d->regularFont);
     d->colors->setFlags(Qt::ItemIsEnabled);
 
+    ColorLabelDelegate* const delegate = new ColorLabelDelegate(32, this);
+
     for (int label : map.keys())
     {
         QTreeWidgetItem* const colorWidgetItem = getOrCreateItem(d->colors);
         colorWidgetItem->setData(0, Qt::UserRole, label);
         colorWidgetItem->setFont(0, d->regularFont);
         colorWidgetItem->setText(0, map.value(label));
+
+        setItemDelegateForRow(indexFromItem(colorWidgetItem).row(), delegate);
 
         if (label == NoColorLabel)
         {
@@ -580,3 +650,4 @@ void LabelsTreeView::restoreSelectionFromHistory(QHash<Labels, QList<int> > need
 } // namespace Digikam
 
 #include "moc_labelstreeview.cpp"
+#include "labelstreeview.moc"
