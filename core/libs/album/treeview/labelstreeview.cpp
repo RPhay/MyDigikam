@@ -13,140 +13,10 @@
  *
  * ============================================================ */
 
-#include "labelstreeview.h"
-
-// QT includes
-
-#include <QApplication>
-#include <QPainter>
-#include <QValidator>
-#include <QStyledItemDelegate>
-#include <QUrl>
-
-// KDE includes
-
-#include <kconfiggroup.h>
-#include <ksharedconfig.h>
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "digikam_globals.h"
-#include "coredbsearchxml.h"
-#include "searchtabheader.h"
-#include "thememanager.h"
-#include "albummanager.h"
-#include "albumtreeview.h"
-#include "itemlister.h"
-#include "coredbaccess.h"
-#include "coredb.h"
-#include "colorlabelfilter.h"
-#include "picklabelfilter.h"
-#include "tagscache.h"
-#include "applicationsettings.h"
-#include "dnotificationwrapper.h"
-#include "digikamapp.h"
-#include "tagsactionmngr.h"
-#include "ratingwidget.h"
-#include "dbjobsmanager.h"
+#include "labelstreeview_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN ColorLabelValidator : public QValidator
-{
-public:
-
-    ColorLabelValidator(int maxLength, QObject* const parent = nullptr)
-        : QValidator (parent),
-          m_maxLength(maxLength)
-    {
-    }
-
-    QValidator::State validate(QString& input, int& /*pos*/) const override
-    {
-        if (input.length() <= m_maxLength)
-        {
-            return QValidator::Acceptable;
-        }
-
-        return QValidator::Invalid;
-    }
-
-private:
-
-    int m_maxLength = 32;
-};
-
-// ---
-
-class Q_DECL_HIDDEN ColorLabelDelegate : public QStyledItemDelegate
-{
-    Q_OBJECT
-
-public:
-
-    ColorLabelDelegate(int maxLength, QObject *parent = nullptr)
-        : QStyledItemDelegate(parent), m_maxLength(maxLength) {}
-
-    QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override {
-        QLineEdit *editor = new QLineEdit(parent);
-        editor->setValidator(new ColorLabelValidator(m_maxLength, editor));
-        return editor;
-    }
-
-    void setEditorData(QWidget *editor, const QModelIndex &index) const override {
-        QString text = index.model()->data(index, Qt::EditRole).toString();
-        QLineEdit *lineEdit = qobject_cast<QLineEdit*>(editor);
-        lineEdit->setText(text);
-    }
-
-    void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override {
-        QLineEdit *lineEdit = qobject_cast<QLineEdit*>(editor);
-        model->setData(index, lineEdit->text(), Qt::EditRole);
-    }
-
-private:
-
-    int m_maxLength = 32;
-};
-
-// ---
-
-class Q_DECL_HIDDEN LabelsTreeView::Private
-{
-public:
-
-    explicit Private(QTreeWidget* const w)
-        : itemIterator(w)
-    {
-    }
-
-public:
-
-    QFont                      regularFont;
-    QSize                      iconSize;
-
-    QTreeWidgetItem*           ratings                      = nullptr;
-    QTreeWidgetItem*           picks                        = nullptr;
-    QTreeWidgetItem*           colors                       = nullptr;
-
-    QTreeWidgetItemIterator    itemIterator;
-
-    bool                       isCheckableTreeView          = false;
-    bool                       isLoadingState               = false;
-    int                        iconSizeFromSetting          = 0;
-
-    QHash<Labels, QList<int> > selectedLabels;
-
-public:
-
-    const QString              configRatingSelectionEntry   = QLatin1String("RatingSelection");
-    const QString              configPickSelectionEntry     = QLatin1String("PickSelection");
-    const QString              configColorSelectionEntry    = QLatin1String("ColorSelection");
-    const QString              configExpansionEntry         = QLatin1String("Expansion");
-};
 
 LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
     : QTreeWidget      (parent),
@@ -650,4 +520,3 @@ void LabelsTreeView::restoreSelectionFromHistory(QHash<Labels, QList<int> > need
 } // namespace Digikam
 
 #include "moc_labelstreeview.cpp"
-#include "labelstreeview.moc"
