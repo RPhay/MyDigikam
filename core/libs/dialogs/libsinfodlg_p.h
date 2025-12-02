@@ -193,8 +193,6 @@ class Q_DECL_HIDDEN LibsInfoDlg::Private
 public:
 
     static const char* CONTEXT;
-    static QString SUPPORTED_YES;
-    static QString SUPPORTED_NO;
 
 public:
 
@@ -202,6 +200,8 @@ public:
 
 public:
 
+    QString supportedNo()                           const;
+    QString supportedYes()                          const;
     QString checkTriState(int value)                const;
     QString openCVBytesToStringRepr(size_t value)   const;
     QString openCVGetDeviceTypeString(const cv::ocl::Device& device);
