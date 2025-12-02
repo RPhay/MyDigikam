@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:40+0000\n"
+"POT-Creation-Date: 2025-12-02 00:40+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -2270,337 +2270,352 @@ msgid "By File Size"
 msgstr "De Réir Méide"
 
 #: core/app/main/digikamapp_setup.cpp:599
-#, fuzzy, kde-format
-#| msgid "By Rating"
-msgctxt "@action: setup"
-msgid "By Rating"
-msgstr "De Réir Rátála"
-
-#: core/app/main/digikamapp_setup.cpp:600
-#, fuzzy, kde-format
-#| msgid "Pick Label:"
-msgctxt "@action: setup"
-msgid "By Pick Label"
-msgstr "Roghnaigh Lipéad:"
-
-#: core/app/main/digikamapp_setup.cpp:601
-#, fuzzy, kde-format
-#| msgid "Color Label:"
-msgctxt "@action: setup"
-msgid "By Color Label"
-msgstr "Lipéad Datha:"
-
-#: core/app/main/digikamapp_setup.cpp:602
-#, fuzzy, kde-format
-msgctxt "@action: setup"
-msgid "By Image Size"
-msgstr "De Réir Méide"
-
-#: core/app/main/digikamapp_setup.cpp:603
-#, fuzzy, kde-format
-msgctxt "@action: setup"
-msgid "By Aspect Ratio"
-msgstr "Cóimheas Treoíochta:"
-
-#: core/app/main/digikamapp_setup.cpp:604
-#, fuzzy, kde-format
-#| msgid "Show image type"
-msgctxt "@action: setup"
-msgid "By Face type"
-msgstr "Taispeáin cineál na híomhá"
-
-#: core/app/main/digikamapp_setup.cpp:605
-#, fuzzy, kde-format
-#| msgid "Current Name"
-msgctxt "@action: setup"
-msgid "By Similarity"
-msgstr "Ainm Reatha"
-
-#: core/app/main/digikamapp_setup.cpp:606
-#, fuzzy, kde-format
-#| msgid "Manual"
-msgctxt "@action: setup"
-msgid "By Manual and Name"
-msgstr "De Láimh"
-
-#: core/app/main/digikamapp_setup.cpp:607
-#, fuzzy, kde-format
-#| msgid "Manual"
-msgctxt "@action: setup"
-msgid "By Manual and Date"
-msgstr "De Láimh"
-
-#: core/app/main/digikamapp_setup.cpp:660
-#, fuzzy, kde-format
-msgctxt "@action: setup"
-msgid "Item Sort &Order"
-msgstr "Eagarthóir Íomhá"
-
-#: core/app/main/digikamapp_setup.cpp:661
-#, kde-format
-msgctxt "@info: setup"
-msgid "Defines whether images are sorted in ascending or descending manner."
-msgstr ""
-
-#: core/app/main/digikamapp_setup.cpp:665
-#: core/app/main/digikamapp_setup.cpp:724
-#, fuzzy, kde-format
-#| msgid "Ascending"
-msgctxt "@action: setup"
-msgid "Ascending"
-msgstr "Ag dul suas"
-
-#: core/app/main/digikamapp_setup.cpp:667
-#: core/app/main/digikamapp_setup.cpp:726
-#, fuzzy, kde-format
-#| msgid "Descending"
-msgctxt "@action: setup"
-msgid "Descending"
-msgstr "Ag dul síos"
-
-#: core/app/main/digikamapp_setup.cpp:677
-#, fuzzy, kde-format
-msgctxt "@action: setup"
-msgid "Separate Items"
-msgstr "&Sórtáil Íomhánna"
-
-#: core/app/main/digikamapp_setup.cpp:678
-#, kde-format
-msgctxt "@info: setup"
-msgid "The categories in which the images in the thumbnail view are displayed"
-msgstr ""
-
-#: core/app/main/digikamapp_setup.cpp:683
-#, fuzzy, kde-format
-#| msgid "Flat List"
-msgctxt "@action: setup"
-msgid "Flat List"
-msgstr "Liosta Cothrom"
-
-#: core/app/main/digikamapp_setup.cpp:684
-#, fuzzy, kde-format
-#| msgid "By Album"
-msgctxt "@action: setup"
-msgid "By Album"
-msgstr "De Réir Albaim"
-
-#: core/app/main/digikamapp_setup.cpp:685
+#: core/app/main/digikamapp_setup.cpp:700
 #, fuzzy, kde-format
 #| msgid "By Format"
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "De Réir Formáide"
 
-#: core/app/main/digikamapp_setup.cpp:686
+#: core/app/main/digikamapp_setup.cpp:601
+#, fuzzy, kde-format
+#| msgid "By Rating"
+msgctxt "@action: setup"
+msgid "By Rating"
+msgstr "De Réir Rátála"
+
+#: core/app/main/digikamapp_setup.cpp:602
+#, fuzzy, kde-format
+#| msgid "Pick Label:"
+msgctxt "@action: setup"
+msgid "By Pick Label"
+msgstr "Roghnaigh Lipéad:"
+
+#: core/app/main/digikamapp_setup.cpp:603
+#, fuzzy, kde-format
+#| msgid "Color Label:"
+msgctxt "@action: setup"
+msgid "By Color Label"
+msgstr "Lipéad Datha:"
+
+#: core/app/main/digikamapp_setup.cpp:605
+#, fuzzy, kde-format
+msgctxt "@action: setup"
+msgid "By Image Size"
+msgstr "De Réir Méide"
+
+#: core/app/main/digikamapp_setup.cpp:606
+#, fuzzy, kde-format
+#| msgid "Any Orientation"
+msgctxt "@action: setup"
+msgid "By Orientation"
+msgstr "Treoshuíomh Ar Bith"
+
+#: core/app/main/digikamapp_setup.cpp:607
+#, fuzzy, kde-format
+msgctxt "@action: setup"
+msgid "By Aspect Ratio"
+msgstr "Cóimheas Treoíochta:"
+
+#: core/app/main/digikamapp_setup.cpp:608
+#, fuzzy, kde-format
+#| msgid "Position:"
+msgctxt "@action: setup"
+msgid "By Gps Position"
+msgstr "Ionad:"
+
+#: core/app/main/digikamapp_setup.cpp:610
+#, fuzzy, kde-format
+#| msgid "Show image type"
+msgctxt "@action: setup"
+msgid "By Face type"
+msgstr "Taispeáin cineál na híomhá"
+
+#: core/app/main/digikamapp_setup.cpp:611
+#, fuzzy, kde-format
+#| msgid "Current Name"
+msgctxt "@action: setup"
+msgid "By Similarity"
+msgstr "Ainm Reatha"
+
+#: core/app/main/digikamapp_setup.cpp:612
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgctxt "@action: setup"
+msgid "By Manual and Name"
+msgstr "De Láimh"
+
+#: core/app/main/digikamapp_setup.cpp:613
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgctxt "@action: setup"
+msgid "By Manual and Date"
+msgstr "De Láimh"
+
+#: core/app/main/digikamapp_setup.cpp:675
+#, fuzzy, kde-format
+msgctxt "@action: setup"
+msgid "Item Sort &Order"
+msgstr "Eagarthóir Íomhá"
+
+#: core/app/main/digikamapp_setup.cpp:676
+#, kde-format
+msgctxt "@info: setup"
+msgid "Defines whether images are sorted in ascending or descending manner."
+msgstr ""
+
+#: core/app/main/digikamapp_setup.cpp:680
+#: core/app/main/digikamapp_setup.cpp:739
+#, fuzzy, kde-format
+#| msgid "Ascending"
+msgctxt "@action: setup"
+msgid "Ascending"
+msgstr "Ag dul suas"
+
+#: core/app/main/digikamapp_setup.cpp:682
+#: core/app/main/digikamapp_setup.cpp:741
+#, fuzzy, kde-format
+#| msgid "Descending"
+msgctxt "@action: setup"
+msgid "Descending"
+msgstr "Ag dul síos"
+
+#: core/app/main/digikamapp_setup.cpp:692
+#, fuzzy, kde-format
+msgctxt "@action: setup"
+msgid "Separate Items"
+msgstr "&Sórtáil Íomhánna"
+
+#: core/app/main/digikamapp_setup.cpp:693
+#, kde-format
+msgctxt "@info: setup"
+msgid "The categories in which the images in the thumbnail view are displayed"
+msgstr ""
+
+#: core/app/main/digikamapp_setup.cpp:698
+#, fuzzy, kde-format
+#| msgid "Flat List"
+msgctxt "@action: setup"
+msgid "Flat List"
+msgstr "Liosta Cothrom"
+
+#: core/app/main/digikamapp_setup.cpp:699
+#, fuzzy, kde-format
+#| msgid "By Album"
+msgctxt "@action: setup"
+msgid "By Album"
+msgstr "De Réir Albaim"
+
+#: core/app/main/digikamapp_setup.cpp:701
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Ná Roghnaigh"
 
-#: core/app/main/digikamapp_setup.cpp:687
+#: core/app/main/digikamapp_setup.cpp:702
 #, fuzzy, kde-format
 #| msgid "Month"
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Mí"
 
-#: core/app/main/digikamapp_setup.cpp:688
+#: core/app/main/digikamapp_setup.cpp:703
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr "De Réir Dáta"
 
-#: core/app/main/digikamapp_setup.cpp:719
+#: core/app/main/digikamapp_setup.cpp:734
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Eagarthóir Íomhá"
 
-#: core/app/main/digikamapp_setup.cpp:720
+#: core/app/main/digikamapp_setup.cpp:735
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Ord sórtála íomhánna"
 
-#: core/app/main/digikamapp_setup.cpp:741
+#: core/app/main/digikamapp_setup.cpp:756
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Roghnaigh Uile"
 
-#: core/app/main/digikamapp_setup.cpp:748
+#: core/app/main/digikamapp_setup.cpp:763
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Ná Roghnaigh"
 
-#: core/app/main/digikamapp_setup.cpp:755
+#: core/app/main/digikamapp_setup.cpp:770
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Inbhéartaigh an Rogha"
 
-#: core/app/main/digikamapp_setup.cpp:763
+#: core/app/main/digikamapp_setup.cpp:778
 #, fuzzy, kde-format
 #| msgid "Show scale bar"
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Taispeáin barra scála"
 
-#: core/app/main/digikamapp_setup.cpp:794
+#: core/app/main/digikamapp_setup.cpp:809
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Súmáil go 100%"
 
-#: core/app/main/digikamapp_setup.cpp:802
+#: core/app/main/digikamapp_setup.cpp:817
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Oiriúnaigh don &Fuinneog"
 
-#: core/app/main/digikamapp_setup.cpp:815
+#: core/app/main/digikamapp_setup.cpp:830
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Bainisteoireacht na nDathanna"
 
-#: core/app/main/digikamapp_setup.cpp:833
+#: core/app/main/digikamapp_setup.cpp:848
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Cuardaigh..."
 
-#: core/app/main/digikamapp_setup.cpp:841
+#: core/app/main/digikamapp_setup.cpp:856
 #, fuzzy, kde-format
 #| msgid "Advanced Search..."
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Cuardach Casta..."
 
-#: core/app/main/digikamapp_setup.cpp:849
+#: core/app/main/digikamapp_setup.cpp:864
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Amhráin Dúbailte"
 
-#: core/app/main/digikamapp_setup.cpp:859
+#: core/app/main/digikamapp_setup.cpp:874
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Cumraíocht Cheamara"
 
-#: core/app/main/digikamapp_setup.cpp:868
+#: core/app/main/digikamapp_setup.cpp:883
 #, fuzzy, kde-format
 #| msgid "Maintenance"
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Cothú"
 
-#: core/app/main/digikamapp_setup.cpp:875
+#: core/app/main/digikamapp_setup.cpp:890
 #, fuzzy, kde-format
 #| msgid "Scan for new items"
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Scan le haghaidh míreanna nua"
 
-#: core/app/main/digikamapp_setup.cpp:881
+#: core/app/main/digikamapp_setup.cpp:896
 #, fuzzy, kde-format
 #| msgid "Add Camera Manually..."
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Cuir Ceamara Leis De Láimh..."
 
-#: core/app/main/digikamapp_setup.cpp:892
+#: core/app/main/digikamapp_setup.cpp:907
 #, fuzzy, kde-format
 #| msgid "Loading cameras..."
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Ceamaraí á luchtú..."
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:943
 #, fuzzy, kde-format
 #| msgid "Exit Preview Mode"
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Scoir den Mhód Réamhamhairc"
 
-#: core/app/main/digikamapp_setup.cpp:933
+#: core/app/main/digikamapp_setup.cpp:948
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "An Chéad Íomhá Eile"
 
-#: core/app/main/digikamapp_setup.cpp:939
+#: core/app/main/digikamapp_setup.cpp:954
 #, fuzzy, kde-format
 #| msgid "Previous Image"
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "An Íomhá Roimhe Seo"
 
-#: core/app/main/digikamapp_setup.cpp:945
+#: core/app/main/digikamapp_setup.cpp:960
 #, fuzzy, kde-format
 #| msgid "First Image"
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "An Chéad Íomhá"
 
-#: core/app/main/digikamapp_setup.cpp:950
+#: core/app/main/digikamapp_setup.cpp:965
 #, fuzzy, kde-format
 #| msgid "Last Image"
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "An Íomhá Dheiridh"
 
-#: core/app/main/digikamapp_setup.cpp:955
+#: core/app/main/digikamapp_setup.cpp:970
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:957
+#: core/app/main/digikamapp_setup.cpp:972
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Cóipeáil meitashonraí go dtí an ghearrthaisce"
 
-#: core/app/main/digikamapp_setup.cpp:976
+#: core/app/main/digikamapp_setup.cpp:991
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Teideal na hÍomhá"
 
-#: core/app/main/digikamapp_setup.cpp:981
+#: core/app/main/digikamapp_setup.cpp:996
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Iompórtáladh nótaí"
 
-#: core/app/main/digikamapp_setup.cpp:986
+#: core/app/main/digikamapp_setup.cpp:1001
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Taispeáin clibeanna na híomhá"
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:1010
 #, fuzzy, kde-format
 #| msgid "Use Exif Orientation"
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Úsáid Treoshuíomh Exif"
 
-#: core/app/main/digikamapp_setup.cpp:998
+#: core/app/main/digikamapp_setup.cpp:1013
 #, fuzzy, kde-format
 #| msgctxt "normal exif orientation"
 #| msgid "Normal"
@@ -2608,69 +2623,69 @@ msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Gnáth"
 
-#: core/app/main/digikamapp_setup.cpp:1000
+#: core/app/main/digikamapp_setup.cpp:1015
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Smeach go Cothrománach"
 
-#: core/app/main/digikamapp_setup.cpp:1002
+#: core/app/main/digikamapp_setup.cpp:1017
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Rothlú"
 
-#: core/app/main/digikamapp_setup.cpp:1004
+#: core/app/main/digikamapp_setup.cpp:1019
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Smeach go hIngearach"
 
-#: core/app/main/digikamapp_setup.cpp:1006
+#: core/app/main/digikamapp_setup.cpp:1021
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Rothlaithe go Deisealach"
 
-#: core/app/main/digikamapp_setup.cpp:1008
+#: core/app/main/digikamapp_setup.cpp:1023
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Rothlaithe go Deisealach"
 
-#: core/app/main/digikamapp_setup.cpp:1010
+#: core/app/main/digikamapp_setup.cpp:1025
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Rothlaithe go Deisealach"
 
-#: core/app/main/digikamapp_setup.cpp:1012
+#: core/app/main/digikamapp_setup.cpp:1027
 #, fuzzy, kde-format
 #| msgid "Rotated Left"
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Rothlaithe go Tuathalach"
 
-#: core/app/main/digikamapp_setup.cpp:1073
+#: core/app/main/digikamapp_setup.cpp:1088
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Rothlaigh"
 
-#: core/app/main/digikamapp_setup.cpp:1079
+#: core/app/main/digikamapp_setup.cpp:1094
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Uath-rothlaigh"
 
-#: core/app/main/digikamapp_setup.cpp:1087
+#: core/app/main/digikamapp_setup.cpp:1102
 #, fuzzy, kde-format
 #| msgctxt "rotate image left"
 #| msgid "Left"
@@ -2678,7 +2693,7 @@ msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Go Tuathalach"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1109
 #, fuzzy, kde-format
 #| msgctxt "rotate image right"
 #| msgid "Right"
@@ -2686,49 +2701,49 @@ msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Go Deisealach"
 
-#: core/app/main/digikamapp_setup.cpp:1104
+#: core/app/main/digikamapp_setup.cpp:1119
 #, fuzzy, kde-format
 #| msgid "Flip"
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Smeach"
 
-#: core/app/main/digikamapp_setup.cpp:1108
+#: core/app/main/digikamapp_setup.cpp:1123
 #, fuzzy, kde-format
 #| msgid "Horizontally"
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Go Cothrománach"
 
-#: core/app/main/digikamapp_setup.cpp:1115
+#: core/app/main/digikamapp_setup.cpp:1130
 #, fuzzy, kde-format
 #| msgid "Vertically"
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Go hIngearach"
 
-#: core/app/main/digikamapp_setup.cpp:1125
+#: core/app/main/digikamapp_setup.cpp:1140
 #, fuzzy, kde-format
 #| msgid "Auto Rotate/Flip Using Exif Information"
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Rothlaigh/Smeach go hUathoibríoch le hEolas Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1136
+#: core/app/main/digikamapp_setup.cpp:1151
 #, fuzzy, kde-format
 #| msgid "Loading themes..."
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Téamaí á luchtú..."
 
-#: core/app/main/digikamapp_setup.cpp:1139
+#: core/app/main/digikamapp_setup.cpp:1154
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Téamaí"
 
-#: core/app/main/digikamapp_setup.cpp:1155
+#: core/app/main/digikamapp_setup.cpp:1170
 #, fuzzy, kde-format
 #| msgid "Loading tools..."
 msgctxt "@info: setup"
@@ -21477,9 +21492,9 @@ msgid "OpenGL Viewer"
 msgstr "Oscail fillteán"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, kde-format
-msgid "A tool to preview image with OpenGL"
-msgstr ""
+#, fuzzy, kde-format
+msgid "A tool to preview items with OpenGL"
+msgstr "Easpórtáil"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
 #, kde-format
@@ -21495,7 +21510,7 @@ msgid ""
 "\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></td></"
 "tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
 "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom or "
-"change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
+"change item)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
 "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original size:</"
 "td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse in up-down-"
 "direction while pressing the right mouse button</td></tr><tr><td></"
@@ -21509,11 +21524,9 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
 #, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
 msgctxt "@action"
-msgid "OpenGL Image Viewer"
-msgstr "1 Íomhá"
+msgid "OpenGL Viewer"
+msgstr "Oscail fillteán"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
@@ -38269,7 +38282,7 @@ msgid "Description"
 msgstr "Cur Síos"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1990
+#: core/utilities/import/main/importui.cpp:1996
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -60800,7 +60813,7 @@ msgid ""
 msgstr "Cumasaigh an rogha seo chun dáta na híomhá a thaispeáint."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:471
-#: core/utilities/import/main/importui.cpp:517
+#: core/utilities/import/main/importui.cpp:523
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@action"
@@ -60873,8 +60886,8 @@ msgid "Auto-Rotate"
 msgstr "Uath-rothlaigh"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
-#: core/utilities/import/main/importui.cpp:562
-#: core/utilities/import/main/importui.cpp:803
+#: core/utilities/import/main/importui.cpp:568
+#: core/utilities/import/main/importui.cpp:809
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -61457,7 +61470,7 @@ msgstr "Theip ar uasluchtú comhaid \"%1\"."
 
 #: core/utilities/import/backend/cameracontroller.cpp:645
 #: core/utilities/import/backend/cameracontroller.cpp:1016
-#: core/utilities/import/main/importui.cpp:2507
+#: core/utilities/import/main/importui.cpp:2513
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -62006,172 +62019,179 @@ msgstr "De Réir Méide"
 
 #: core/utilities/import/main/importui.cpp:417
 #, fuzzy, kde-format
+#| msgid "By Format"
+msgctxt "@item:inmenu Sort by"
+msgid "By Format"
+msgstr "De Réir Formáide"
+
+#: core/utilities/import/main/importui.cpp:419
+#, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "De Réir Rátála"
 
-#: core/utilities/import/main/importui.cpp:418
+#: core/utilities/import/main/importui.cpp:420
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgctxt "@item:inmenu Sort by"
 msgid "By PickLabel"
 msgstr "Roghnaigh Lipéad:"
 
-#: core/utilities/import/main/importui.cpp:419
+#: core/utilities/import/main/importui.cpp:421
 #, fuzzy, kde-format
 #| msgid "Color Label:"
 msgctxt "@item:inmenu Sort by"
 msgid "By ColorLabel"
 msgstr "Lipéad Datha:"
 
-#: core/utilities/import/main/importui.cpp:420
+#: core/utilities/import/main/importui.cpp:423
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "Íosluchtaigh na Cinn Roghnaithe"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:457
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "Eagarthóir Íomhá"
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:458
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:456
+#: core/utilities/import/main/importui.cpp:462
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Ag dul suas"
 
-#: core/utilities/import/main/importui.cpp:458
+#: core/utilities/import/main/importui.cpp:464
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Ag dul síos"
 
-#: core/utilities/import/main/importui.cpp:470
+#: core/utilities/import/main/importui.cpp:476
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "&Grúpáil Míreanna"
 
-#: core/utilities/import/main/importui.cpp:471
+#: core/utilities/import/main/importui.cpp:477
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:476
+#: core/utilities/import/main/importui.cpp:482
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Liosta Cothrom"
 
-#: core/utilities/import/main/importui.cpp:477
+#: core/utilities/import/main/importui.cpp:483
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "De réir fillteán"
 
-#: core/utilities/import/main/importui.cpp:478
+#: core/utilities/import/main/importui.cpp:484
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "De Réir Formáide"
 
-#: core/utilities/import/main/importui.cpp:479
+#: core/utilities/import/main/importui.cpp:485
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "De Réir Dáta"
 
-#: core/utilities/import/main/importui.cpp:505
+#: core/utilities/import/main/importui.cpp:511
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Oiriúnaigh don &Fuinneog"
 
-#: core/utilities/import/main/importui.cpp:510
+#: core/utilities/import/main/importui.cpp:516
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Súmáil go 100%"
 
-#: core/utilities/import/main/importui.cpp:528
+#: core/utilities/import/main/importui.cpp:534
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Taispeáin Stair"
 
-#: core/utilities/import/main/importui.cpp:534
+#: core/utilities/import/main/importui.cpp:540
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:569
+#: core/utilities/import/main/importui.cpp:575
 #, fuzzy, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Atriail"
 
-#: core/utilities/import/main/importui.cpp:792
+#: core/utilities/import/main/importui.cpp:798
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Scoir den Mhód Réamhamhairc"
 
-#: core/utilities/import/main/importui.cpp:797
+#: core/utilities/import/main/importui.cpp:803
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "An Chéad Íomhá Eile"
 
-#: core/utilities/import/main/importui.cpp:809
+#: core/utilities/import/main/importui.cpp:815
 #, fuzzy, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "An Chéad Íomhá"
 
-#: core/utilities/import/main/importui.cpp:814
+#: core/utilities/import/main/importui.cpp:820
 #, fuzzy, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "An Íomhá Dheiridh"
 
-#: core/utilities/import/main/importui.cpp:915
+#: core/utilities/import/main/importui.cpp:921
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Oibríocht reatha á cealú, fan go fóill..."
 
-#: core/utilities/import/main/importui.cpp:966
+#: core/utilities/import/main/importui.cpp:972
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr ""
 "An bhfuil fonn ort an dialóg a dhúnadh agus an oibríocht reatha a chealú?"
 
-#: core/utilities/import/main/importui.cpp:976
+#: core/utilities/import/main/importui.cpp:982
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Comhaid nua á scanadh, fan go fóill..."
 
-#: core/utilities/import/main/importui.cpp:1053
+#: core/utilities/import/main/importui.cpp:1059
 #, fuzzy, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Réidh"
 
-#: core/utilities/import/main/importui.cpp:1110
+#: core/utilities/import/main/importui.cpp:1116
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62179,13 +62199,13 @@ msgid ""
 "and turned on."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1204
+#: core/utilities/import/main/importui.cpp:1210
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Roghnaigh Íomhá le hUasluchtú"
 
-#: core/utilities/import/main/importui.cpp:1239
+#: core/utilities/import/main/importui.cpp:1245
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62195,7 +62215,7 @@ msgid ""
 "Available free space: %2"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1294
+#: core/utilities/import/main/importui.cpp:1300
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62203,13 +62223,13 @@ msgid ""
 "Please enter a new filename (without extension):"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1298
+#: core/utilities/import/main/importui.cpp:1304
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Tá an comhad ann cheana"
 
-#: core/utilities/import/main/importui.cpp:1367
+#: core/utilities/import/main/importui.cpp:1373
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62217,7 +62237,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1407
+#: core/utilities/import/main/importui.cpp:1413
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62226,7 +62246,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1416
+#: core/utilities/import/main/importui.cpp:1422
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62234,7 +62254,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1441
+#: core/utilities/import/main/importui.cpp:1447
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62242,7 +62262,7 @@ msgid ""
 "camera pictures into."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1472
+#: core/utilities/import/main/importui.cpp:1478
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62250,17 +62270,17 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1536
+#: core/utilities/import/main/importui.cpp:1542
 #, fuzzy, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Theip ar uasluchtú comhaid \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:1543
+#: core/utilities/import/main/importui.cpp:1549
 #, fuzzy, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Theip ar uasluchtú comhaid \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:1987
+#: core/utilities/import/main/importui.cpp:1993
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62269,7 +62289,7 @@ msgid ""
 "and try again."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1998
+#: core/utilities/import/main/importui.cpp:2004
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -62296,20 +62316,20 @@ msgstr[4] ""
 "Tá tú ar tí na %1 íomhá seo a scriosadh. Ní féidir comhaid scriosta a fháil "
 "ar ais.  An bhfuil tú cinnte?"
 
-#: core/utilities/import/main/importui.cpp:2008
+#: core/utilities/import/main/importui.cpp:2014
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Rabhadh"
 
-#: core/utilities/import/main/importui.cpp:2052
+#: core/utilities/import/main/importui.cpp:2058
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2053
+#: core/utilities/import/main/importui.cpp:2059
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62322,8 +62342,8 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2321
-#: core/utilities/import/main/importui.cpp:2347
+#: core/utilities/import/main/importui.cpp:2327
+#: core/utilities/import/main/importui.cpp:2353
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -62334,7 +62354,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2346
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -62342,7 +62362,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 as %3)"
 
-#: core/utilities/import/main/importui.cpp:2357
+#: core/utilities/import/main/importui.cpp:2363
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -62353,24 +62373,24 @@ msgstr[2] "Roghnaíodh %2/%1 mhír"
 msgstr[3] "Roghnaíodh %2/%1 mír"
 msgstr[4] "Roghnaíodh %2/%1 mír"
 
-#: core/utilities/import/main/importui.cpp:2442
+#: core/utilities/import/main/importui.cpp:2448
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Theip ar uasluchtú comhaid \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:2464
+#: core/utilities/import/main/importui.cpp:2470
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Theip ar uasluchtú comhaid \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:2487
+#: core/utilities/import/main/importui.cpp:2493
 #, fuzzy, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Theip ar uasluchtú comhaid \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:2564
+#: core/utilities/import/main/importui.cpp:2570
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -62378,19 +62398,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2572
+#: core/utilities/import/main/importui.cpp:2578
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Aimsíodh íomhánna i %1"
 
-#: core/utilities/import/main/importui.cpp:2598
+#: core/utilities/import/main/importui.cpp:2604
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Tá comhad ann leis an ainm céanna (%1) i bhfillteán %2."
 
-#: core/utilities/import/main/importui.cpp:2611
+#: core/utilities/import/main/importui.cpp:2617
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -70209,6 +70229,13 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~| msgid "1 Image"
+#~| msgid_plural "%1 Images"
+#~ msgctxt "@action"
+#~ msgid "OpenGL Image Viewer"
+#~ msgstr "1 Íomhá"
 
 #, fuzzy
 #~ msgctxt "@item: color tree"
