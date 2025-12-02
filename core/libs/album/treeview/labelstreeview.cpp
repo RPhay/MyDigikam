@@ -84,7 +84,6 @@ bool LabelsTreeView::isLoadingState() const
     return d->isLoadingState;
 }
 
-
 QTreeWidgetItem* LabelsTreeView::getOrCreateItem(QTreeWidgetItem* const parent)
 {
     QTreeWidgetItem* item = nullptr;
@@ -149,7 +148,7 @@ QPixmap LabelsTreeView::colorRectPixmap(const QColor& color) const
     QPainter p1(&pixmap);
     p1.setRenderHint(QPainter::Antialiasing, true);
     p1.setBrush(color);
-    p1.setPen(palette().color(QPalette::Active, foregroundRole()));
+    p1.setPen((color == Qt::black) ? Qt::white : Qt::black);
     p1.drawRect(rect);
     p1.end();
 
@@ -432,7 +431,8 @@ void LabelsTreeView::initColorsTree()
 
         if (label == NoColorLabel)
         {
-            colorWidgetItem->setIcon(0, QIcon(QIcon::fromTheme(QLatin1String("emblem-unmounted")).pixmap(64, 64)));
+            colorWidgetItem->setIcon(0, QIcon(QIcon::fromTheme(QLatin1String("emblem-unmounted"))
+                                        .pixmap(64, 64, QIcon::Disabled)));
         }
         else
         {

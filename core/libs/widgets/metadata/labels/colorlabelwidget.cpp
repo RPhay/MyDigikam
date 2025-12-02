@@ -72,7 +72,6 @@ public:
 
     QButtonGroup*       colorBtns   = nullptr;
 
-
     QToolButton*        btnNone     = nullptr;
     QToolButton*        btnRed      = nullptr;
     QToolButton*        btnOrange   = nullptr;
@@ -426,14 +425,14 @@ QIcon ColorLabelWidget::buildIcon(ColorLabel label, int size)
     {
         QPixmap pix(size, size);
         QPainter p(&pix);
-        p.setPen(qApp->palette().color(QPalette::Active, QPalette::ButtonText));
+        p.setPen((label == BlackLabel) ? Qt::white : Qt::black);
         p.fillRect(0, 0, pix.width()-1, pix.height()-1, labelColor(label));
         p.drawRect(0, 0, pix.width()-1, pix.height()-1);
 
         return QIcon(pix);
     }
 
-    return QIcon::fromTheme(QLatin1String("emblem-unmounted"));
+    return QIcon::fromTheme(QLatin1String("emblem-unmounted")).pixmap(size, size, QIcon::Disabled);
 }
 
 QColor ColorLabelWidget::labelColor(ColorLabel label)
