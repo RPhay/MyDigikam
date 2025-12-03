@@ -117,7 +117,7 @@ BUGFIXES:
 072 --> 478101 - Add a new option to sort by item file format.
 073 --> 512850 - Downloadable epub manual will not open in ReadEra Ereader program, android OS 16.
 074 --> 512862 - digiKam failed to start.
-075 --> 
+075 --> 512875 - Allow to Ignore / Remove multiple detected faces at once.
 076 --> 
 077 --> 
 078 --> 
