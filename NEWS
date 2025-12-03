@@ -118,7 +118,7 @@ BUGFIXES:
 073 --> 512850 - Downloadable epub manual will not open in ReadEra Ereader program, android OS 16.
 074 --> 512862 - digiKam failed to start.
 075 --> 512875 - Allow to Ignore / Remove multiple detected faces at once.
-076 --> 
+076 --> 512887 - Crash when work with many pictures > 2500.
 077 --> 
 078 --> 
 079 --> 
