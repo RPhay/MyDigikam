@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-02 00:40+0000\n"
-"PO-Revision-Date: 2025-12-01 13:23+0100\n"
+"POT-Creation-Date: 2025-12-03 00:41+0000\n"
+"PO-Revision-Date: 2025-12-02 09:53+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2079,11 +2079,10 @@ msgid "By Image Size"
 msgstr "Per la mida de la imatge"
 
 #: core/app/main/digikamapp_setup.cpp:606
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "Qualsevol orientació"
+msgstr "Per l'orientació"
 
 #: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
@@ -2092,11 +2091,10 @@ msgid "By Aspect Ratio"
 msgstr "Per la relació d'aspecte"
 
 #: core/app/main/digikamapp_setup.cpp:608
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "Posició:"
+msgstr "Per la posició de GPS"
 
 #: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
@@ -21359,36 +21357,12 @@ msgid "OpenGL Viewer"
 msgstr "Visualitzador OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, fuzzy, kde-format
-#| msgid "A tool to preview image with OpenGL"
+#, kde-format
 msgid "A tool to preview items with OpenGL"
-msgstr "Una eina per a previsualitzar una imatge amb l'OpenGL"
+msgstr "Una eina per a previsualitzar elements amb l'OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool preview a series of items using OpenGL effects.</"
-#| "p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td>Next Item:</"
-#| "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
-#| "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse "
-#| "wheel down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-#| "colspan=\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></"
-#| "td></tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
-#| "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom "
-#| "or change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
-#| "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original "
-#| "size:</td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse "
-#| "in up-down-direction while pressing the right mouse button</td></"
-#| "tr><tr><td></td><td><i>c</i> key and use the scroll-wheel</td></"
-#| "tr><tr><td></td><td><i>+</i> and <i>-</i> keys</td></tr><tr><td></"
-#| "td><td>ctrl + scrollwheel</td></tr><tr><td>Panning:</td><td>Move mouse "
-#| "while pressing the left button</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
 "</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
@@ -21425,7 +21399,7 @@ msgstr ""
 "\"2\"><nobr><center><b><h1>Mostrar els elements</h1></b></center></nobr></"
 "td></tr><tr><td>Commuta de pantalla completa a normal:</td><td>Tecla <i>f</"
 "i></td></tr><tr><td>Commuta l'acció de la roda de desplaçament:</"
-"td><td>Tecla <i>c</i> (fer zoom o canviar d'imatge)</td></tr><tr><td>Gir:</"
+"td><td>Tecla <i>c</i> (fer zoom o canviar d'element)</td></tr><tr><td>Gir:</"
 "td><td>Tecla <i>r</i></td></tr><tr><td>Restableix la vista:</td><td>doble "
 "clic</td></tr><tr><td>Mida original:</td><td>Tecla <i>o</i></td></"
 "tr><tr><td>Fer zoom:</td><td>Moure el ratolí cap amunt-avall mentre es prem "
@@ -21437,8 +21411,7 @@ msgstr ""
 "tr><tr><td>Mostra aquesta ajuda:</td><td>Tecla <i>F1</i></td></tr></table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
-#, fuzzy, kde-format
-#| msgid "OpenGL Viewer"
+#, kde-format
 msgctxt "@action"
 msgid "OpenGL Viewer"
 msgstr "Visualitzador OpenGL"
@@ -27882,63 +27855,63 @@ msgid "No Color"
 msgstr "Sense color"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Vermell"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Taronja"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Groc"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Verd"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Blau"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Gris"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Negre"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -28046,55 +28019,55 @@ msgstr "Exploració de cares"
 msgid "Should sub-albums be scanned too?"
 msgstr "Cal explorar també els subàlbums?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:99
+#: core/libs/album/treeview/labelstreeview.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Rètols"
 
-#: core/libs/album/treeview/labelstreeview.cpp:412
+#: core/libs/album/treeview/labelstreeview.cpp:347
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Valoració"
 
-#: core/libs/album/treeview/labelstreeview.cpp:417
+#: core/libs/album/treeview/labelstreeview.cpp:352
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Sense valoració"
 
-#: core/libs/album/treeview/labelstreeview.cpp:453
+#: core/libs/album/treeview/labelstreeview.cpp:388
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Selecció"
 
-#: core/libs/album/treeview/labelstreeview.cpp:458
+#: core/libs/album/treeview/labelstreeview.cpp:393
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Sense selecció"
 
-#: core/libs/album/treeview/labelstreeview.cpp:459
+#: core/libs/album/treeview/labelstreeview.cpp:394
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Element rebutjat"
 
-#: core/libs/album/treeview/labelstreeview.cpp:460
+#: core/libs/album/treeview/labelstreeview.cpp:395
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Element pendent"
 
-#: core/libs/album/treeview/labelstreeview.cpp:461
+#: core/libs/album/treeview/labelstreeview.cpp:396
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Element acceptat"
 
-#: core/libs/album/treeview/labelstreeview.cpp:482
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
@@ -30489,35 +30462,35 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuració de l'OpenCV"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#: core/libs/dialogs/libsinfodlg_p.cpp:28
 #, kde-format
-msgctxt "@item: component is supported/available"
+msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#: core/libs/dialogs/libsinfodlg_p.cpp:33
+#, kde-format
+msgctxt "@info: tri state"
+msgid "No"
+msgstr "No"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:38
+#, kde-format
+msgctxt "@info: tri state"
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:45
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:30
+#: core/libs/dialogs/libsinfodlg_p.cpp:50
 #, kde-format
-msgctxt "@info: tri state"
+msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Sí"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:35
-#, kde-format
-msgctxt "@info: tri state"
-msgid "No"
-msgstr "No"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:40
-#, kde-format
-msgctxt "@info: tri state"
-msgid "Unknown"
-msgstr "Desconegut"
 
 #: core/libs/dialogs/rawcameradlg.cpp:52
 #, kde-format
@@ -44149,7 +44122,7 @@ msgstr "Llista del maquinari detectat"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Donate..."
-msgstr "Donatius..."
+msgstr "Donació..."
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:79
 #, kde-format
@@ -45300,13 +45273,13 @@ msgstr "Fitxer a desar amb l'XMP"
 msgid "XMP text Files (*.xmp)"
 msgstr "Fitxers de text amb l'XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Cap"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
@@ -60347,9 +60320,7 @@ msgid "By Size"
 msgstr "Per mida"
 
 #: core/utilities/import/main/importui.cpp:417
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Format"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Format"
 msgstr "Per format"

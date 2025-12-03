@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-02 00:40+0000\n"
-"PO-Revision-Date: 2025-12-01 07:09+0100\n"
+"POT-Creation-Date: 2025-12-03 00:41+0000\n"
+"PO-Revision-Date: 2025-12-02 06:13+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2138,11 +2138,10 @@ msgid "By Image Size"
 msgstr "Po velikosti datoteke"
 
 #: core/app/main/digikamapp_setup.cpp:606
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "Katerakoli usmerjenost"
+msgstr "Po usmerjenosti"
 
 #: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
@@ -2151,11 +2150,10 @@ msgid "By Aspect Ratio"
 msgstr "Po razmerju"
 
 #: core/app/main/digikamapp_setup.cpp:608
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "Položaj:"
+msgstr "Po poziciji GPS"
 
 #: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
@@ -21175,36 +21173,12 @@ msgid "OpenGL Viewer"
 msgstr "Ogledovalnik OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, fuzzy, kde-format
-#| msgid "A tool to preview image with OpenGL"
+#, kde-format
 msgid "A tool to preview items with OpenGL"
-msgstr "Orodje za predogled slike z OpenGL"
+msgstr "Orodje za predogled predmetov z OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool preview a series of items using OpenGL effects.</"
-#| "p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td>Next Item:</"
-#| "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
-#| "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse "
-#| "wheel down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-#| "colspan=\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></"
-#| "td></tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
-#| "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom "
-#| "or change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
-#| "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original "
-#| "size:</td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse "
-#| "in up-down-direction while pressing the right mouse button</td></"
-#| "tr><tr><td></td><td><i>c</i> key and use the scroll-wheel</td></"
-#| "tr><tr><td></td><td><i>+</i> and <i>-</i> keys</td></tr><tr><td></"
-#| "td><td>ctrl + scrollwheel</td></tr><tr><td>Panning:</td><td>Move mouse "
-#| "while pressing the left button</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
 "</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
@@ -21228,32 +21202,31 @@ msgid ""
 "nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></"
 "table>"
 msgstr ""
-"<p>To orodje omogoča predogled serije predmetov z uporabo učinkov OpenGL.</"
+"<p>To orodje omogoča predogled vrste predmetov z učinki OpenGL.</"
 "p><p><u>Uporaba:</u></p><table><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Dostop do predmeta</h1></b></center></nobr></td></"
-"tr><tr><td>Prejšnji predmet</td><td>Tipka <i>navzgor</i></td></tr><tr><td></"
-"td><td>Tipka <i>PgUp</i></td></tr><tr><td></td><td>Tipka <i>levo</i></td></"
-"tr><tr><td></td><td>Kolešček miške gor</td></tr><tr><td>Naslednji predmet:</"
-"td><td>Tipka <i>navzdol</i></td></tr><tr><td></td><td>Tipka <i>PgDown</i></"
-"td></tr><tr><td></td><td>Tipka <i>desno</i></td></tr><tr><td></"
-"td><td>Kolešček miške dol</td></tr><tr><td>Izhod:</td><td><i>ubežnica</i> "
-"(Esc)</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Prikaz predmeta:</"
-"h1></b></center></nobr></td></tr><tr><td>Preklopi celozaslonski način v "
-"navadnega:</td><td>Tipka <i>f</i></td></tr><tr><td>Preklopi dejanje drsenja "
-"koleščka:</td><td>Tipka <i>c</i> (povečava ali sprememba slike)</td></"
-"tr><tr><td>Vrtenje:</td><td>Tipka <i>r</i></td></tr><tr><td>Ponastavi pogled:"
-"</td><td>dvojni klik</td></tr><tr><td>Izvirna velikost:</td><td>Tipka <i>o</"
-"i></td></tr><tr><td>Povečava:</td><td>Premaknite miško v smeri gor-dol ob "
-"pritisnjenem desnem gumbu miške</td></tr><tr><td></td><td>Tipka <i>c</i> in "
-"raba koleščka miške</td></tr><tr><td></td><td>Tipki <i>+</i> in <i>-</i></"
-"td></tr><tr><td></td><td>Krmilka + kolešček miške</td></tr><tr><td>Zasuk:</"
-"td><td>Premik miške ob pritisnjenem levem gumbu miške</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Ostalo</h1></b></center></nobr></td></"
-"tr><tr><td>Prikaži to pomoč:</td><td>Tipka <i>F1</i></td></tr></table>"
+"\"2\"><nobr><center><b><h1>Dostop do predmetov</h1></b></center></nobr></"
+"td></tr><tr><td>Prejšnji predmet:</td><td><i>Tipka gor</i></tr><tr><td></"
+"td><td><i>Tipka PgUp</i></td></tr><tr><td></td><td><i>Tipka levo</i></td></"
+"tr><tr><td></td><td>Kolesce miške gor</td></tr><tr><td>Naslednji element:</"
+"td><td><i>Tipka dol</i></td></tr><tr><td></td><td><i>Tipka PgDown</i></td></"
+"tr><tr><td></td><td><i>Tipka desno</td></tr><tr><td></td><td>Kolesce miške "
+"navzdol</td></tr><tr><td>Izhod:</td><td><i>Tipka Esc</td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Prikaz predmeta</h1></b></center></nobr></"
+"td></tr><tr><td>Preklopi iz celozaslonskega načina v običajni:</"
+"td><td><i>tipka f</td></tr><tr><td>Preklopi delovanje drsnega kolesca:</"
+"td><td><i>tipka c</i> (povečava ali sprememba elementa)</td></"
+"tr><tr><td>Vrtenje:</td><td><i>tipka r</td></tr><tr><td>Ponastavi pogled:</"
+"td><td>dvojni klik</td></tr><tr><td>Prvotna velikost:</td><td><i>tipka o</"
+"i></tr><tr><td>Povečava:</td><td>Premikajte miško gor-dol, medtem ko držite "
+"desni gumb miške</td></tr><tr><td></td><td><i>tipko c</i> in uporabite drsni "
+"kolesce</td></tr><tr><td></td><td><i>+</i> in <i>-</i></td></tr><tr><td></"
+"td><td>ctrl + drsno kolesce</td></tr><tr><td>Pomikanje:</td><td>Premikajte "
+"miško, medtem ko držite levi gumb miške</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Drugo</h1></b></center></nobr></td></"
+"tr><tr><td>Prikaži to pomoč:</td><td><i>tipka F1</i></td></tr></table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
-#, fuzzy, kde-format
-#| msgid "OpenGL Viewer"
+#, kde-format
 msgctxt "@action"
 msgid "OpenGL Viewer"
 msgstr "Ogledovalnik OpenGL"
@@ -27618,63 +27591,63 @@ msgid "No Color"
 msgstr "Ni barve"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Rdeča"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Oranžna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Rumena"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Zelena"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Modra"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Siva"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Črna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -27782,55 +27755,55 @@ msgstr "Preišči za obraze"
 msgid "Should sub-albums be scanned too?"
 msgstr "Ali naj se pregleda tudi pod-albume?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:99
+#: core/libs/album/treeview/labelstreeview.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Oznake"
 
-#: core/libs/album/treeview/labelstreeview.cpp:412
+#: core/libs/album/treeview/labelstreeview.cpp:347
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Ocena"
 
-#: core/libs/album/treeview/labelstreeview.cpp:417
+#: core/libs/album/treeview/labelstreeview.cpp:352
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Brez ocene"
 
-#: core/libs/album/treeview/labelstreeview.cpp:453
+#: core/libs/album/treeview/labelstreeview.cpp:388
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Izbor"
 
-#: core/libs/album/treeview/labelstreeview.cpp:458
+#: core/libs/album/treeview/labelstreeview.cpp:393
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Brez izbora"
 
-#: core/libs/album/treeview/labelstreeview.cpp:459
+#: core/libs/album/treeview/labelstreeview.cpp:394
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Zavrnjen predmet"
 
-#: core/libs/album/treeview/labelstreeview.cpp:460
+#: core/libs/album/treeview/labelstreeview.cpp:395
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Še ne odločen predmet"
 
-#: core/libs/album/treeview/labelstreeview.cpp:461
+#: core/libs/album/treeview/labelstreeview.cpp:396
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Sprejet predmet"
 
-#: core/libs/album/treeview/labelstreeview.cpp:482
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
@@ -30202,35 +30175,35 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Konfiguracija OpenCV"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#: core/libs/dialogs/libsinfodlg_p.cpp:28
 #, kde-format
-msgctxt "@item: component is supported/available"
+msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#: core/libs/dialogs/libsinfodlg_p.cpp:33
+#, kde-format
+msgctxt "@info: tri state"
+msgid "No"
+msgstr "Ne"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:38
+#, kde-format
+msgctxt "@info: tri state"
+msgid "Unknown"
+msgstr "Neznano"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:45
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:30
+#: core/libs/dialogs/libsinfodlg_p.cpp:50
 #, kde-format
-msgctxt "@info: tri state"
+msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Da"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:35
-#, kde-format
-msgctxt "@info: tri state"
-msgid "No"
-msgstr "Ne"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:40
-#, kde-format
-msgctxt "@info: tri state"
-msgid "Unknown"
-msgstr "Neznano"
 
 #: core/libs/dialogs/rawcameradlg.cpp:52
 #, kde-format
@@ -44904,13 +44877,13 @@ msgstr "Datoteka XMP, ki bo shranjena"
 msgid "XMP text Files (*.xmp)"
 msgstr "Besedilne datoteke XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Brez"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
@@ -59859,12 +59832,10 @@ msgid "By Size"
 msgstr "Po velikosti"
 
 #: core/utilities/import/main/importui.cpp:417
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Format"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Format"
-msgstr "Po vrsti"
+msgstr "Po formatu"
 
 #: core/utilities/import/main/importui.cpp:419
 #, kde-format
