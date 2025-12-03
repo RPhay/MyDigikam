@@ -48,13 +48,15 @@ QWidget* ColorLabelDelegate::createEditor(QWidget* parent,
 {
     QLineEdit* const editor = new QLineEdit(parent);
     editor->setValidator(new ColorLabelValidator(m_maxLength, editor));
+    editor->setClearButtonEnabled(true);
+    editor->setPlaceholderText(i18n("Customize label name here..."));
 
     return editor;
 }
 
 void ColorLabelDelegate::setEditorData(QWidget* editor, const QModelIndex& index) const
 {
-    QString text = index.model()->data(index, Qt::EditRole).toString();
+    QString text              = index.model()->data(index, Qt::EditRole).toString();
     QLineEdit* const lineEdit = qobject_cast<QLineEdit*>(editor);
     lineEdit->setText(text);
 }
@@ -64,7 +66,17 @@ void ColorLabelDelegate::setModelData(QWidget* editor,
                                       const QModelIndex& index) const
 {
     QLineEdit* const lineEdit = qobject_cast<QLineEdit*>(editor);
-    model->setData(index, lineEdit->text(), Qt::EditRole);
+    QString text              = lineEdit->text();
+
+    if (text.isEmpty())
+    {
+        // If empty, reset to default name.
+
+        int label = index.model()->data(index, Qt::UserRole).toInt();
+        text      = ColorLabelWidget::labelColorName((ColorLabel)label);
+    }
+
+    model->setData(index, text, Qt::EditRole);
 }
 
 // ---

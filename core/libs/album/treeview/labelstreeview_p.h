@@ -42,6 +42,7 @@
 #include "coredbaccess.h"
 #include "coredb.h"
 #include "colorlabelfilter.h"
+#include "colorlabelwidget.h"
 #include "picklabelfilter.h"
 #include "tagscache.h"
 #include "applicationsettings.h"
