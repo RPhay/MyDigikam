@@ -29,6 +29,8 @@ set(libalbum_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/treeview/albumtreeview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/treeview/labelstreeview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/treeview/labelstreeview_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/treeview/labelstreeview_init.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/treeview/labelstreeview_settings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/treeview/albumlabelssearchhandler.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/treeview/tagtreeview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/treeview/searchtreeview.cpp

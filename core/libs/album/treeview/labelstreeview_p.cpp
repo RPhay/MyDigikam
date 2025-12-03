@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2014-05-17
- * Description : Album Labels Tree View.
+ * Description : Album Labels Tree View - Private containers and classes.
  *
  * SPDX-FileCopyrightText: 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * SPDX-FileCopyrightText: 2014-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
