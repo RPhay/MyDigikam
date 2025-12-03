@@ -110,8 +110,9 @@ void LabelsTreeView::initColorsTree()
     d->colors->setFlags(Qt::ItemIsEnabled);
 
     ColorLabelDelegate* const delegate = new ColorLabelDelegate(32, this);
+    const QList<int> keys              = map.keys();
 
-    for (int label : map.keys())
+    for (int label : keys)
     {
         QTreeWidgetItem* const colorWidgetItem = getOrCreateItem(d->colors);
         colorWidgetItem->setData(0, Qt::UserRole, label);
