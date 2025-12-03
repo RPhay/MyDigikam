@@ -17,9 +17,7 @@
 namespace Digikam
 {
 
-const char* LibsInfoDlg::Private::CONTEXT   = "@item: Component information, see help->components";
-QString LibsInfoDlg::Private::SUPPORTED_YES = i18nc("@item: component is supported/available",     "Yes");
-QString LibsInfoDlg::Private::SUPPORTED_NO  = i18nc("@item: component is not available/supported", "No");
+const char* LibsInfoDlg::Private::CONTEXT = "@item: Component information, see help->components";
 
 QString LibsInfoDlg::Private::checkTriState(int value) const
 {
@@ -40,6 +38,16 @@ QString LibsInfoDlg::Private::checkTriState(int value) const
             return i18nc("@info: tri state", "Unknown");
         }
     }
+}
+
+QString LibsInfoDlg::Private::supportedNo() const
+{
+    return i18nc("@item: component is not available/supported", "No");
+}
+
+QString LibsInfoDlg::Private::supportedYes() const
+{
+    return i18nc("@item: component is supported/available",     "Yes");
 }
 
 QString LibsInfoDlg::Private::openCVBytesToStringRepr(size_t value) const

@@ -29,7 +29,7 @@ void LibsInfoDlg::populateOpenCV()
         if (!cv::ocl::haveOpenCL() || !cv::ocl::useOpenCL())
         {
             new QTreeWidgetItem(opencvHead, QStringList() <<
-                                i18nc(Private::CONTEXT, "OpenCL availability") << Private::SUPPORTED_NO);
+                                i18nc(Private::CONTEXT, "OpenCL availability") << d->supportedNo());
         }
         else
         {
@@ -39,7 +39,7 @@ void LibsInfoDlg::populateOpenCV()
             if (platforms.empty())
             {
                 new QTreeWidgetItem(opencvHead, QStringList() <<
-                                    i18nc(Private::CONTEXT, "OpenCL availability") << Private::SUPPORTED_NO);
+                                    i18nc(Private::CONTEXT, "OpenCL availability") << d->supportedNo());
 
             }
             else
@@ -80,7 +80,7 @@ void LibsInfoDlg::populateOpenCV()
                 if (!device.available())
                 {
                     new QTreeWidgetItem(opencvHead, QStringList() <<
-                                        i18nc(Private::CONTEXT, "OpenCL device") << Private::SUPPORTED_NO);
+                                        i18nc(Private::CONTEXT, "OpenCL device") << d->supportedNo());
                 }
                 else
                 {
@@ -101,19 +101,19 @@ void LibsInfoDlg::populateOpenCV()
                     QString maxMemAllocSizeStr = d->openCVBytesToStringRepr(device.maxMemAllocSize());
                     new QTreeWidgetItem(ocldev, QStringList() << i18nc(Private::CONTEXT, "Max memory allocation size") << maxMemAllocSizeStr);
 
-                    QString doubleSupportStr = (device.doubleFPConfig() > 0) ? Private::SUPPORTED_YES : Private::SUPPORTED_NO;
+                    QString doubleSupportStr = (device.doubleFPConfig() > 0) ? d->supportedYes() : d->supportedNo();
                     new QTreeWidgetItem(ocldev, QStringList() << i18nc(Private::CONTEXT, "Double support")             << doubleSupportStr);
 
-                    QString halfSupportStr = (device.halfFPConfig() > 0) ? Private::SUPPORTED_YES : Private::SUPPORTED_NO;
+                    QString halfSupportStr = (device.halfFPConfig() > 0) ? d->supportedYes() : d->supportedNo();
                     new QTreeWidgetItem(ocldev, QStringList() << i18nc(Private::CONTEXT, "Half support")               << halfSupportStr);
 
-                    QString isUnifiedMemoryStr = device.hostUnifiedMemory() ? Private::SUPPORTED_YES : Private::SUPPORTED_NO;
+                    QString isUnifiedMemoryStr = device.hostUnifiedMemory() ? d->supportedYes() : d->supportedNo();
                     new QTreeWidgetItem(ocldev, QStringList() << i18nc(Private::CONTEXT, "Host unified memory")        << isUnifiedMemoryStr);
 
-                    QString haveAmdBlasStr = cv::ocl::haveAmdBlas() ? Private::SUPPORTED_YES : Private::SUPPORTED_NO;
+                    QString haveAmdBlasStr = cv::ocl::haveAmdBlas() ? d->supportedYes() : d->supportedNo();
                     new QTreeWidgetItem(ocldev, QStringList() << i18nc(Private::CONTEXT, "Has AMD Blas")                  << haveAmdBlasStr);
 
-                    QString haveAmdFftStr  = cv::ocl::haveAmdFft() ? Private::SUPPORTED_YES : Private::SUPPORTED_NO;
+                    QString haveAmdFftStr  = cv::ocl::haveAmdFft() ? d->supportedYes() : d->supportedNo();
                     new QTreeWidgetItem(ocldev, QStringList() << i18nc(Private::CONTEXT, "Has AMD Fft")                   << haveAmdFftStr);
                     new QTreeWidgetItem(ocldev, QStringList() << i18nc(Private::CONTEXT, "Preferred vector width char")   << QString::number(device.preferredVectorWidthChar()));
                     new QTreeWidgetItem(ocldev, QStringList() << i18nc(Private::CONTEXT, "Preferred vector width short")  << QString::number(device.preferredVectorWidthShort()));
@@ -139,7 +139,7 @@ void LibsInfoDlg::populateOpenCV()
                         if (pos2 > pos)
                         {
                             QString extensionName = extensionsStr.mid(pos, pos2 - pos);
-                            new QTreeWidgetItem(ocldevext, QStringList() << extensionName << Private::SUPPORTED_YES);
+                            new QTreeWidgetItem(ocldevext, QStringList() << extensionName << d->supportedYes());
                         }
 
                         pos = pos2 + 1;
@@ -155,7 +155,7 @@ void LibsInfoDlg::populateOpenCV()
     }
     catch (...)
     {
-        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(Private::CONTEXT, "OpenCL availability") << Private::SUPPORTED_NO);
+        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(Private::CONTEXT, "OpenCL availability") << d->supportedNo());
     }
 
     // --- OpenCV::Hardware features.
@@ -180,13 +180,13 @@ void LibsInfoDlg::populateOpenCV()
             if (enabled)
             {
                 count++;
-                new QTreeWidgetItem(ocvhdw, QStringList() << name << Private::SUPPORTED_YES);
+                new QTreeWidgetItem(ocvhdw, QStringList() << name << d->supportedYes());
             }
         }
     }
     catch (...)
     {
-        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(Private::CONTEXT, "Hardware features availability") << Private::SUPPORTED_NO);
+        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(Private::CONTEXT, "Hardware features availability") << d->supportedNo());
     }
 
     // --- OpenCV::Threads features.
@@ -205,7 +205,7 @@ void LibsInfoDlg::populateOpenCV()
     }
     catch (...)
     {
-        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(Private::CONTEXT, "Threads features availability") << Private::SUPPORTED_NO);
+        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(Private::CONTEXT, "Threads features availability") << d->supportedNo());
     }
 }
 

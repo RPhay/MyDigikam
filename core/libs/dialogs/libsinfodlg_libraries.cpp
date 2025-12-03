@@ -40,7 +40,7 @@ void LibsInfoDlg::populateLibraries()
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "Eigen support") <<                  Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "Eigen support") <<                  d->supportedNo());
 
 #endif
 
@@ -64,7 +64,7 @@ void LibsInfoDlg::populateLibraries()
     else
     {
         new QTreeWidgetItem(m_features, QStringList() <<
-                            i18nc(Private::CONTEXT, "ExifTool support") <<           Private::SUPPORTED_NO);
+                            i18nc(Private::CONTEXT, "ExifTool support") <<           d->supportedNo());
     }
 
 #ifdef HAVE_LENSFUN
@@ -75,7 +75,7 @@ void LibsInfoDlg::populateLibraries()
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "LensFun support") <<                Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "LensFun support") <<                d->supportedNo());
 
 #endif
 
@@ -87,7 +87,7 @@ void LibsInfoDlg::populateLibraries()
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "ImageMagick codecs support") <<     Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "ImageMagick codecs support") <<     d->supportedNo());
 
 #endif
 
@@ -96,12 +96,12 @@ void LibsInfoDlg::populateLibraries()
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(Private::CONTEXT, "LibHEIF") <<                        QLatin1String(LIBHEIF_VERSION));
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "HEIF reading support") <<           Private::SUPPORTED_YES);
+                        i18nc(Private::CONTEXT, "HEIF reading support") <<           d->supportedYes());
 
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "HEIF reading support") <<           Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "HEIF reading support") <<           d->supportedNo());
 
 #endif
 
@@ -113,12 +113,12 @@ void LibsInfoDlg::populateLibraries()
                         i18nc(Private::CONTEXT, "Libx265") <<             (x265api ? QLatin1String(x265api->version_str)
                                                                           : i18nc("@info: libx265 version", "Unknown")));
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "HEIF writing support") <<           Private::SUPPORTED_YES);
+                        i18nc(Private::CONTEXT, "HEIF writing support") <<           d->supportedYes());
 
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "HEIF Writing support") <<           Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "HEIF Writing support") <<           d->supportedNo());
 
 #endif
 
@@ -154,7 +154,7 @@ void LibsInfoDlg::populateLibraries()
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "DNG support") <<                    Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "DNG support") <<                    d->supportedNo());
 
 #endif
 
@@ -166,19 +166,19 @@ void LibsInfoDlg::populateLibraries()
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "LibJasper support") <<              Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "LibJasper support") <<              d->supportedNo());
 
 #endif
 
 #ifdef HAVE_GEOLOCATION
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
-                        i18nc(Private::CONTEXT, "Geolocation support") <<            Private::SUPPORTED_YES);
+                        i18nc(Private::CONTEXT, "Geolocation support") <<            d->supportedYes());
 
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(Private::CONTEXT, "Geolocation support") <<            Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "Geolocation support") <<            d->supportedNo());
 
 #endif
 

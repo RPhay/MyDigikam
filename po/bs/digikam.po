@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-02 00:40+0000\n"
+"POT-Creation-Date: 2025-12-03 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -29546,7 +29546,7 @@ msgid "No Color"
 msgstr "Bez boje"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -29554,7 +29554,7 @@ msgid "Red"
 msgstr "Crvena"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: color label name"
@@ -29562,7 +29562,7 @@ msgid "Orange"
 msgstr "Narandžasta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -29570,7 +29570,7 @@ msgid "Yellow"
 msgstr "Žuta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -29578,7 +29578,7 @@ msgid "Green"
 msgstr "Zelena"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -29586,7 +29586,7 @@ msgid "Blue"
 msgstr "Plava"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -29594,7 +29594,7 @@ msgid "Magenta"
 msgstr "Purpurna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -29602,7 +29602,7 @@ msgid "Gray"
 msgstr "Siva"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -29610,7 +29610,7 @@ msgid "Black"
 msgstr "Crna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -29734,62 +29734,62 @@ msgstr "Skeniranje lica"
 msgid "Should sub-albums be scanned too?"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:99
+#: core/libs/album/treeview/labelstreeview.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Labele"
 
-#: core/libs/album/treeview/labelstreeview.cpp:412
+#: core/libs/album/treeview/labelstreeview.cpp:347
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Ocjena"
 
-#: core/libs/album/treeview/labelstreeview.cpp:417
+#: core/libs/album/treeview/labelstreeview.cpp:352
 #, fuzzy, kde-format
 #| msgid "No Rating"
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Bez procjene"
 
-#: core/libs/album/treeview/labelstreeview.cpp:453
+#: core/libs/album/treeview/labelstreeview.cpp:388
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Odaberi"
 
-#: core/libs/album/treeview/labelstreeview.cpp:458
+#: core/libs/album/treeview/labelstreeview.cpp:393
 #, fuzzy, kde-format
 #| msgid "No Pick"
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Bez izbora"
 
-#: core/libs/album/treeview/labelstreeview.cpp:459
+#: core/libs/album/treeview/labelstreeview.cpp:394
 #, fuzzy, kde-format
 #| msgid "Rejected Item"
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Odbijena stavka"
 
-#: core/libs/album/treeview/labelstreeview.cpp:460
+#: core/libs/album/treeview/labelstreeview.cpp:395
 #, fuzzy, kde-format
 #| msgid "Pending Item"
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Stavka u očekivanju"
 
-#: core/libs/album/treeview/labelstreeview.cpp:461
+#: core/libs/album/treeview/labelstreeview.cpp:396
 #, fuzzy, kde-format
 #| msgid "Accepted Item"
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Prihvaćena stavka"
 
-#: core/libs/album/treeview/labelstreeview.cpp:482
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@item: color tree"
@@ -32268,40 +32268,40 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Podešavanje fotoaparata"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#: core/libs/dialogs/libsinfodlg_p.cpp:28
 #, fuzzy, kde-format
 #| msgid "Yes"
-msgctxt "@item: component is supported/available"
+msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#: core/libs/dialogs/libsinfodlg_p.cpp:33
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@info: tri state"
+msgid "No"
+msgstr "Ne"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:38
+#, fuzzy, kde-format
+#| msgid "Unknown"
+msgctxt "@info: tri state"
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:45
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:30
+#: core/libs/dialogs/libsinfodlg_p.cpp:50
 #, fuzzy, kde-format
 #| msgid "Yes"
-msgctxt "@info: tri state"
+msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Da"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:35
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@info: tri state"
-msgid "No"
-msgstr "Ne"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:40
-#, fuzzy, kde-format
-#| msgid "Unknown"
-msgctxt "@info: tri state"
-msgid "Unknown"
-msgstr "Nepoznato"
 
 #: core/libs/dialogs/rawcameradlg.cpp:52
 #, fuzzy, kde-format
@@ -47818,14 +47818,14 @@ msgstr "Sačuvajte XMP datoteku"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP tekstualne datoteke (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Bez"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"

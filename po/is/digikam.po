@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-02 00:40+0000\n"
-"PO-Revision-Date: 2025-12-01 05:49+0000\n"
+"POT-Creation-Date: 2025-12-03 00:41+0000\n"
+"PO-Revision-Date: 2025-12-02 10:22+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -2083,11 +2083,10 @@ msgid "By Image Size"
 msgstr "Eftir stærð myndar"
 
 #: core/app/main/digikamapp_setup.cpp:606
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "Einhver stefna"
+msgstr "Eftir stefnu"
 
 #: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
@@ -2096,11 +2095,10 @@ msgid "By Aspect Ratio"
 msgstr "Eftir stærðarhlutföllum"
 
 #: core/app/main/digikamapp_setup.cpp:608
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "Staða:"
+msgstr "Eftir GPS-staðsetningu"
 
 #: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
@@ -21093,36 +21091,12 @@ msgid "OpenGL Viewer"
 msgstr "OpenGL skoðari"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, fuzzy, kde-format
-#| msgid "A tool to preview image with OpenGL"
+#, kde-format
 msgid "A tool to preview items with OpenGL"
-msgstr "Verkfæri til að forskoða myndir með OpenGL"
+msgstr "Verkfæri til að forskoða atriði með OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool preview a series of items using OpenGL effects.</"
-#| "p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td>Next Item:</"
-#| "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
-#| "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse "
-#| "wheel down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-#| "colspan=\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></"
-#| "td></tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
-#| "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom "
-#| "or change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
-#| "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original "
-#| "size:</td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse "
-#| "in up-down-direction while pressing the right mouse button</td></"
-#| "tr><tr><td></td><td><i>c</i> key and use the scroll-wheel</td></"
-#| "tr><tr><td></td><td><i>+</i> and <i>-</i> keys</td></tr><tr><td></"
-#| "td><td>ctrl + scrollwheel</td></tr><tr><td>Panning:</td><td>Move mouse "
-#| "while pressing the left button</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
 "</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
@@ -21146,21 +21120,21 @@ msgid ""
 "nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></"
 "table>"
 msgstr ""
-"<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
-"</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
-"b></center></nobr></td></tr><tr><td>Previous Item:</td><td><i>Upp</i>-"
-"lykill</td></tr><tr><td></td><td><i>PgUp</i>-lykill</td></tr><tr><td></"
-"td><td><i>Vinstri</i>-lykill</td></tr><tr><td></td><td>Músarhjól upp</td></"
-"tr><tr><td>Næsta atriði:</td><td><i>Niður</i>-lykill</td></tr><tr><td></"
-"td><td><i>PgDown</i>-lykill</td></tr><tr><td></td><td><i>Hægri</i>-lykill</"
-"td></tr><tr><td></td><td>Músarhjól niður</td></tr><tr><td>Hætta:</"
-"td><td><i>Esc</i>-lykill</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Birting atriða</h1></b></center></nobr></td></"
-"tr><tr><td>Úr skjáfylli í venjulegt:</td><td><i>f</i>-lykill</td></"
-"tr><tr><td>Víxla skrunhjólsaðgerð af/á:</td><td><i>c</i>-lykill (annað hvort "
-"aðdráttur eða skipta um mynd)</td></tr><tr><td>Snúningur:</td><td><i>r</i>-"
-"lykill</td></tr><tr><td>Endurstilla sýn:</td><td>tvísmella</td></"
-"tr><tr><td>Upprunaleg stærð:</td><td><i>o</i>-lykill</td></"
+"<p>Þetta verkfæri forskoðar röð atriða með því að nota OpenGL-sjónbrellur.</"
+"p><p><u>Notkun:</u></p><table><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Aðgangur atriðis</h1></b></center></nobr></td></"
+"tr><tr><td>Fyrra atriði:</td><td><i>Upp</i>-lykill</td></tr><tr><td></"
+"td><td><i>PgUp</i>-lykill</td></tr><tr><td></td><td><i>Vinstri</i>-lykill</"
+"td></tr><tr><td></td><td>Músarhjól upp</td></tr><tr><td>Næsta atriði:</"
+"td><td><i>Niður</i>-lykill</td></tr><tr><td></td><td><i>PgDown</i>-lykill</"
+"td></tr><tr><td></td><td><i>Hægri</i>-lykill</td></tr><tr><td></"
+"td><td>Músarhjól niður</td></tr><tr><td>Hætta:</td><td><i>Esc</i>-lykill</"
+"td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Birting atriða</h1></b></"
+"center></nobr></td></tr><tr><td>Úr skjáfylli í venjulegt:</td><td><i>f</i>-"
+"lykill</td></tr><tr><td>Víxla skrunhjólsaðgerð af/á:</td><td><i>c</i>-lykill "
+"(annað hvort aðdráttur eða skipta um mynd)</td></tr><tr><td>Snúningur:</"
+"td><td><i>r</i>-lykill</td></tr><tr><td>Endurstilla sýn:</td><td>tvísmella</"
+"td></tr><tr><td>Upprunaleg stærð:</td><td><i>o</i>-lykill</td></"
 "tr><tr><td>Aðdráttur:</td><td>Færa mús upp/niður á meðan ýtt er á hægri "
 "músarhnapp</td></tr><tr><td></td><td><i>c</i> key and use the scroll-wheel</"
 "td></tr><tr><td></td><td><i>+</i> og <i>-</i> lyklar</td></tr><tr><td></"
@@ -21170,11 +21144,10 @@ msgstr ""
 "tr><tr><td>Birta þessa hjálp:</td><td><i>F1</i>-lykill</td></tr></table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
-#, fuzzy, kde-format
-#| msgid "OpenGL Viewer"
+#, kde-format
 msgctxt "@action"
 msgid "OpenGL Viewer"
-msgstr "OpenGL skoðari"
+msgstr "OpenGL-skoðari"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
@@ -27529,63 +27502,63 @@ msgid "No Color"
 msgstr "Enginn litur"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Rautt"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Appelsínugult"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Gult"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Grænt"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Blátt"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Blárautt (magenta)"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Grátt"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Svart"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -27693,55 +27666,55 @@ msgstr "Leita að andlitum"
 msgid "Should sub-albums be scanned too?"
 msgstr "Á einnig að leita í undiralbúmum?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:99
+#: core/libs/album/treeview/labelstreeview.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Merkingar"
 
-#: core/libs/album/treeview/labelstreeview.cpp:412
+#: core/libs/album/treeview/labelstreeview.cpp:347
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Einkunn"
 
-#: core/libs/album/treeview/labelstreeview.cpp:417
+#: core/libs/album/treeview/labelstreeview.cpp:352
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Engin einkunn"
 
-#: core/libs/album/treeview/labelstreeview.cpp:453
+#: core/libs/album/treeview/labelstreeview.cpp:388
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Sérmerki"
 
-#: core/libs/album/treeview/labelstreeview.cpp:458
+#: core/libs/album/treeview/labelstreeview.cpp:393
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Ekkert sérmerki"
 
-#: core/libs/album/treeview/labelstreeview.cpp:459
+#: core/libs/album/treeview/labelstreeview.cpp:394
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Hafnað atriði"
 
-#: core/libs/album/treeview/labelstreeview.cpp:460
+#: core/libs/album/treeview/labelstreeview.cpp:395
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Atriði í bið"
 
-#: core/libs/album/treeview/labelstreeview.cpp:461
+#: core/libs/album/treeview/labelstreeview.cpp:396
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Samþykkt atriði"
 
-#: core/libs/album/treeview/labelstreeview.cpp:482
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
@@ -30094,35 +30067,35 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Uppsetning OpenCV"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#: core/libs/dialogs/libsinfodlg_p.cpp:28
 #, kde-format
-msgctxt "@item: component is supported/available"
+msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Já"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#: core/libs/dialogs/libsinfodlg_p.cpp:33
+#, kde-format
+msgctxt "@info: tri state"
+msgid "No"
+msgstr "Nei"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:38
+#, kde-format
+msgctxt "@info: tri state"
+msgid "Unknown"
+msgstr "Óþekkt"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:45
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Nei"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:30
+#: core/libs/dialogs/libsinfodlg_p.cpp:50
 #, kde-format
-msgctxt "@info: tri state"
+msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Já"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:35
-#, kde-format
-msgctxt "@info: tri state"
-msgid "No"
-msgstr "Nei"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:40
-#, kde-format
-msgctxt "@info: tri state"
-msgid "Unknown"
-msgstr "Óþekkt"
 
 #: core/libs/dialogs/rawcameradlg.cpp:52
 #, kde-format
@@ -44719,13 +44692,13 @@ msgstr "XMP-skrá til að vista"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP textaskrár (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Ekkert"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
@@ -59654,9 +59627,7 @@ msgid "By Size"
 msgstr "Eftir stærð"
 
 #: core/utilities/import/main/importui.cpp:417
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Format"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Format"
 msgstr "Eftir skráasniði"
@@ -60123,7 +60094,7 @@ msgstr "Umbreyta í taplaust þjöppunarsnið"
 #, kde-format
 msgctxt "@label"
 msgid "New image format:"
-msgstr "Nýtt myndskráarform:"
+msgstr "Nýtt myndskráarsnið:"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:82
 #: core/utilities/setup/editor/setupversioning.cpp:131

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-02 00:40+0000\n"
-"PO-Revision-Date: 2025-11-25 08:54+0100\n"
+"POT-Creation-Date: 2025-12-03 00:41+0000\n"
+"PO-Revision-Date: 2025-12-02 09:53+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2060,18 +2060,16 @@ msgid "By Rating"
 msgstr "Per la valoració"
 
 #: core/app/main/digikamapp_setup.cpp:602
-#, fuzzy, kde-format
-#| msgid "Pick Label:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Pick Label"
-msgstr "Rètol de selecció:"
+msgstr "Pel rètol de selecció"
 
 #: core/app/main/digikamapp_setup.cpp:603
-#, fuzzy, kde-format
-#| msgid "Color Label:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Color Label"
-msgstr "Rètol de color:"
+msgstr "Pel rètol de color"
 
 #: core/app/main/digikamapp_setup.cpp:605
 #, kde-format
@@ -2080,11 +2078,10 @@ msgid "By Image Size"
 msgstr "Per la mida de la imatge"
 
 #: core/app/main/digikamapp_setup.cpp:606
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "Qualsevol orientació"
+msgstr "Per l'orientació"
 
 #: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
@@ -2093,11 +2090,10 @@ msgid "By Aspect Ratio"
 msgstr "Per la relació d'aspecte"
 
 #: core/app/main/digikamapp_setup.cpp:608
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "Posició:"
+msgstr "Per la posició de GPS"
 
 #: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
@@ -8754,7 +8750,7 @@ msgstr "S'està processant la vista prèvia de la màscara…"
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:307
 #, kde-format
 msgid "Error while processing image..."
-msgstr "S'ha produït un error en processar una imatge…"
+msgstr "S'ha produït un error mentre es processava una imatge…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:340
 #, kde-format
@@ -16211,12 +16207,12 @@ msgstr "Estat"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
 #, kde-format
 msgid "Failed to update metadata timestamp"
-msgstr "No s'ha pogut actualitzar la marca de temps de les metadades"
+msgstr "Ha fallat mentre s'actualitzava la marca de temps de les metadades"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
 #, kde-format
 msgid "Failed to update file timestamp"
-msgstr "No s'ha pogut actualitzar la marca de temps del fitxer"
+msgstr "Ha fallat mentre s'actualitzava la marca de temps del fitxer"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
 #, kde-format
@@ -16679,7 +16675,7 @@ msgstr "Ha fallat mentre es guardava la imatge"
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:461
 #, kde-format
 msgid "Failed to move sidecar"
-msgstr "No s'ha pogut moure el lateral"
+msgstr "Ha fallat mentre es movia el lateral"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:467
 #, kde-format
@@ -17550,7 +17546,7 @@ msgstr "No s'ha pogut carregar el fitxer en XML «%1»"
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
-msgstr "S'ha produït un error en processar el fitxer en XML"
+msgstr "S'ha produït un error mentre es processava el fitxer en XML"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:390
 #, kde-format
@@ -19161,7 +19157,7 @@ msgstr "El fitxer PTO no s'ha pogut crear en el directori temporal."
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
 msgid "Project file parsing failed."
-msgstr "L'anàlisi del fitxer de projecte ha fallat."
+msgstr "L'anàlisi sintàctica del fitxer de projecte ha fallat."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
 #, kde-format
@@ -20238,8 +20234,8 @@ msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
 "is properly installed."
 msgstr ""
-"S'ha produït un error en iniciar el programa Gimp extern. Assegureu-vos que "
-"està instal·lat correctament."
+"S'ha produït un error mentre es llançava el programa Gimp extern. Assegureu-"
+"vos que està instal·lat correctament."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
 #, kde-format
@@ -20458,7 +20454,7 @@ msgstr "S'ha redimensionat correctament %1"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:202
 #, kde-format
 msgid "Failed to resize %1: %2"
-msgstr "No s'ha pogut redimensionar %1: %2"
+msgstr "Ha fallat mentre es redimensionava %1: %2"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:239
 #, kde-format
@@ -21338,36 +21334,12 @@ msgid "OpenGL Viewer"
 msgstr "Visor OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, fuzzy, kde-format
-#| msgid "A tool to preview image with OpenGL"
+#, kde-format
 msgid "A tool to preview items with OpenGL"
-msgstr "Una eina per a previsualitzar una imatge amb OpenGL"
+msgstr "Una eina per a previsualitzar elements amb OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool preview a series of items using OpenGL effects.</"
-#| "p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td>Next Item:</"
-#| "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
-#| "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse "
-#| "wheel down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-#| "colspan=\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></"
-#| "td></tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
-#| "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom "
-#| "or change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
-#| "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original "
-#| "size:</td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse "
-#| "in up-down-direction while pressing the right mouse button</td></"
-#| "tr><tr><td></td><td><i>c</i> key and use the scroll-wheel</td></"
-#| "tr><tr><td></td><td><i>+</i> and <i>-</i> keys</td></tr><tr><td></"
-#| "td><td>ctrl + scrollwheel</td></tr><tr><td>Panning:</td><td>Move mouse "
-#| "while pressing the left button</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
 "</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
@@ -21404,7 +21376,7 @@ msgstr ""
 "\"2\"><nobr><center><b><h1>Mostrar els elements</h1></b></center></nobr></"
 "td></tr><tr><td>Canvia de pantalla completa a normal:</td><td>Tecla <i>f</"
 "i></td></tr><tr><td>Canvia l'acció de la roda de desplaçament:</td><td>Tecla "
-"<i>c</i> (fer zoom o canviar d'imatge)</td></tr><tr><td>Gir:</td><td>Tecla "
+"<i>c</i> (fer zoom o canviar d'element)</td></tr><tr><td>Gir:</td><td>Tecla "
 "<i>r</i></td></tr><tr><td>Restablix la vista:</td><td>doble clic</td></"
 "tr><tr><td>Mida original:</td><td>Tecla <i>o</i></td></tr><tr><td>Fer zoom:</"
 "td><td>Moure el ratolí cap amunt-avall mentre es prem el botó dret del "
@@ -21416,8 +21388,7 @@ msgstr ""
 "tr><tr><td>Mostra esta ajuda:</td><td>Tecla <i>F1</i></td></tr></table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
-#, fuzzy, kde-format
-#| msgid "OpenGL Viewer"
+#, kde-format
 msgctxt "@action"
 msgid "OpenGL Viewer"
 msgstr "Visor OpenGL"
@@ -22632,7 +22603,7 @@ msgid ""
 "An error has occurred to show item\n"
 "%1"
 msgstr ""
-"S'ha produït un error en mostrar l'element\n"
+"S'ha produït un error mentre es mostrava l'element\n"
 "%1"
 
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:122
@@ -22689,7 +22660,7 @@ msgstr "Exporta cap a &Box…"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:859
 #, kde-format
 msgid "Failed to upload photo"
-msgstr "No s'ha pogut pujar la fotografia"
+msgstr "Ha fallat mentre es pujava la fotografia"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:455
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
@@ -22826,7 +22797,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a Box.\n"
+"Ha fallat mentre es pujava la fotografia a Box.\n"
 "%1\n"
 "Voleu continuar?"
 
@@ -22948,7 +22919,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a DropBox.\n"
+"Ha fallat mentre es pujava la fotografia a DropBox.\n"
 "%1\n"
 "Voleu continuar?"
 
@@ -23138,7 +23109,7 @@ msgid ""
 "Failed to upload photo into Facebook: %1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a Facebook: %1\n"
+"Ha fallat mentre es pujava la fotografia a Facebook: %1\n"
 "Voleu continuar?"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:639
@@ -23695,7 +23666,7 @@ msgstr "No s'ha pogut crear el conjunt de fotografies: "
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1114
 #, kde-format
 msgid "Failed to fetch list of photo sets."
-msgstr "No s'ha pogut recuperar la llista dels conjunts de fotografies."
+msgstr "Ha fallat mentre es recuperava la llista dels conjunts de fotografies."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1259
 #, kde-format
@@ -23930,8 +23901,8 @@ msgstr "Exporteu cap a Flickr"
 #, kde-format
 msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr ""
-"No s'ha pogut recuperar la informació del conjunt de fotografies des de %1. "
-"%2\n"
+"Ha fallat mentre es recuperava la informació del conjunt de fotografies des "
+"de %1. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
 #, kde-format
@@ -23945,7 +23916,7 @@ msgid ""
 "Failed to upload photo into %1. %2\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a %1. %2\n"
+"Ha fallat mentre es pujava la fotografia a %1. %2\n"
 "Voleu continuar?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
@@ -23998,7 +23969,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:858
 #, kde-format
 msgid "Failed to fetch photo-set list"
-msgstr "No s'ha pogut recuperar la llista dels conjunts de fotografies"
+msgstr "Ha fallat mentre es recuperava la llista dels conjunts de fotografies"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:61
 #, kde-format
@@ -24347,7 +24318,7 @@ msgid ""
 "%2\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a %1.\n"
+"Ha fallat mentre es pujava la fotografia a %1.\n"
 "%2\n"
 "Voleu continuar?"
 
@@ -24558,7 +24529,7 @@ msgstr "No s'ha pogut fer l'inici de la sessió: %1\n"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:335
 #, kde-format
 msgid "Failed to get galleries list: %1\n"
-msgstr "No s'ha pogut obtindre la llista de galeries: %1\n"
+msgstr "Ha fallat mentre s'obtenia la llista de galeries: %1\n"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:417
 #, kde-format
@@ -24566,7 +24537,7 @@ msgid ""
 "Failed to upload photo into ImageShack: %1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a ImageShack: %1\n"
+"Ha fallat mentre es pujava la fotografia a ImageShack: %1\n"
 "Voleu continuar?"
 
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:56
@@ -24678,12 +24649,12 @@ msgstr "No s'ha pogut fer l'autorització"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
 #, kde-format
 msgid "Failed to log into Imgur: %1\n"
-msgstr "No s'ha pogut connectar-se a Imgur: %1\n"
+msgstr "Ha fallat mentre es connectava a Imgur: %1\n"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:271
 #, kde-format
 msgid "Failed to upload photo to Imgur: %1\n"
-msgstr "No s'ha pogut pujar la fotografia a Imgur: %1\n"
+msgstr "Ha fallat mentre es pujava la fotografia a Imgur: %1\n"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
 #, kde-format
@@ -24691,7 +24662,7 @@ msgid ""
 "Failed to upload photo to Imgur: %1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a Imgur: %1\n"
+"Ha fallat mentre es pujava la fotografia a Imgur: %1\n"
 "Voleu continuar?"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:116
@@ -24771,20 +24742,20 @@ msgstr "Inici de sessió"
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
-msgstr "ERROR en crear l'observació"
+msgstr "ERROR menmtre es creava l'observació"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1582
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1700
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
-msgstr "ERROR en pujar la fotografia"
+msgstr "ERROR mentre es pujava la fotografia"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1824
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
-msgstr "ERROR en suprimir l'observació"
+msgstr "ERROR mentre se suprimia l'observació"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1929
 #, kde-format
@@ -25231,7 +25202,7 @@ msgstr "Comença la pujada a IPFS"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
 #, kde-format
 msgid "Failed to upload photo to IPFS: %1\n"
-msgstr "No s'ha pogut pujar la fotografia a IPFS: %1\n"
+msgstr "Ha fallat mentre es pujava la fotografia a IPFS: %1\n"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #, kde-format
@@ -25239,7 +25210,7 @@ msgid ""
 "Failed to upload photo to IPFS: %1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a IPFS: %1\n"
+"Ha fallat mentre es pujava la fotografia a IPFS: %1\n"
 "Voleu continuar?"
 
 #: core/dplugins/generic/webservices/mediawiki/backend/mediawiki_queryimageinfo.cpp:203
@@ -25357,7 +25328,7 @@ msgstr "Latitud:"
 #, kde-format
 msgctxt "@label: properties"
 msgid "Longitude:"
-msgstr "Llargària:"
+msgstr "Longitud:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
 #, kde-format
@@ -25832,7 +25803,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia al OneDrive.\n"
+"Ha fallat mentre es pujava la fotografia al OneDrive.\n"
 "%1\n"
 "Voleu continuar?"
 
@@ -25878,7 +25849,7 @@ msgstr "Exporta cap a &Pinterest…"
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:491
 #, kde-format
 msgid "Failed to upload Pin"
-msgstr "No s'ha pogut pujar el PIN"
+msgstr "Ha fallat mentre es pujava el PIN"
 
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:517
 #, kde-format
@@ -25916,7 +25887,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a Pinterest.\n"
+"Ha fallat mentre es pujava la fotografia a Pinterest.\n"
 "%1\n"
 "Voleu continuar?"
 
@@ -26127,7 +26098,7 @@ msgstr "Edita les dades de Piwigo"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:411
 #, kde-format
 msgid "Failed to login into remote piwigo. "
-msgstr "No s'ha pogut connectar al piwigo remot. "
+msgstr "Ha fallat mentre es connectava al piwigo remot. "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:412
 #, kde-format
@@ -26170,7 +26141,7 @@ msgstr "S'està pujant el fitxer %1"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:639
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
-msgstr "No s'ha pogut pujar el suport a Piwigo remot. "
+msgstr "Ha fallat mentre es pujava el suport a Piwigo remot. "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:640
 #, kde-format
@@ -26675,7 +26646,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a SmugMug:\n"
+"Ha fallat mentre es pujava la fotografia a SmugMug:\n"
 "%1\n"
 "Voleu continuar?"
 
@@ -26743,7 +26714,7 @@ msgid ""
 "Failed to upload photo\n"
 "Code: %1, name: %2, message: %3"
 msgstr ""
-"No s'ha pogut pujar la fotografia\n"
+"Ha fallat mentre es pujava la fotografia\n"
 "Codi: %1, nom: %2, missatge: %3"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:924
@@ -26775,7 +26746,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia a Twitter.\n"
+"Ha fallat mentre es pujava la fotografia a Twitter.\n"
 "%1\n"
 "Voleu continuar?"
 
@@ -26814,7 +26785,7 @@ msgid ""
 "Failed to upload photo: %1\n"
 "Do you want to continue?"
 msgstr ""
-"No s'ha pogut pujar la fotografia: %1\n"
+"Ha fallat mentre es pujava la fotografia: %1\n"
 "Voleu continuar?"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:40
@@ -26960,7 +26931,7 @@ msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"S'ha produït un error en importar la imatge RAW amb ART\n"
+"S'ha produït un error mentre s'importava la imatge RAW amb ART\n"
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
@@ -26975,7 +26946,7 @@ msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"S'ha produït un error en importar la imatge RAW amb Darktable\n"
+"S'ha produït un error mentre s'importava la imatge RAW amb Darktable\n"
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
@@ -27177,7 +27148,7 @@ msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"S'ha produït un error en importar la imatge RAW amb RawTherapee\n"
+"S'ha produït un error mentre s'importava la imatge RAW amb RawTherapee\n"
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
@@ -27192,7 +27163,7 @@ msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"S'ha produït un error en importar la imatge RAW amb UFRaw\n"
+"S'ha produït un error mentre s'importava la imatge RAW amb UFRaw\n"
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
@@ -27397,7 +27368,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:243
 #, kde-format
 msgid "Failed to initialize the database."
-msgstr "Ha fallat mentre es restablix la base de dades."
+msgstr "Ha fallat mentre es restablia la base de dades."
 
 #: core/libs/album/manager/albummanager_database.cpp:266
 #, kde-format
@@ -27558,8 +27529,9 @@ msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Trying to upgrade old databases."
 msgstr ""
-"No s'ha pogut copiar el fitxer de la base de dades antiga («%1») a la seua "
-"ubicació nova («%2»). S'està intentant actualitzar la base de dades antiga."
+"Ha fallat mentre es copiava el fitxer de la base de dades antiga («%1») a la "
+"seua ubicació nova («%2»). S'està intentant actualitzar la base de dades "
+"antiga."
 
 #: core/libs/album/manager/albummanager_database.cpp:618
 #, kde-format
@@ -27597,8 +27569,8 @@ msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
 "file without backup, using the existing file."
 msgstr ""
-"No s'ha pogut fer la còpia de seguretat del fitxer de base de dades («%1»). "
-"S'ha rebutjat substituir el fitxer sense una còpia de seguretat, i "
+"Ha fallat mentre es feia la còpia de seguretat del fitxer de base de dades "
+"(«%1»). S'ha rebutjat substituir el fitxer sense una còpia de seguretat, i "
 "s'utilitza el fitxer existent."
 
 #: core/libs/album/manager/albummanager_database.cpp:733
@@ -27607,8 +27579,8 @@ msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Starting with an empty database."
 msgstr ""
-"No s'ha pogut copiar el fitxer de la base de dades antiga («%1») a la seua "
-"ubicació nova («%2»). Es comença amb una base de dades buida."
+"Ha fallat mentre es copiava el fitxer de la base de dades antiga («%1») a la "
+"seua ubicació nova («%2»). Es comença amb una base de dades buida."
 
 #: core/libs/album/manager/albummanager_database.cpp:756
 #, kde-format
@@ -27862,63 +27834,63 @@ msgid "No Color"
 msgstr "Sense color"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:516
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Roig"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:522
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Taronja"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:528
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Groc"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:534
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Verd"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:540
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Blau"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:546
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:552
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Gris"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:558
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Negre"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:564
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -28026,55 +27998,55 @@ msgstr "Exploració de cares"
 msgid "Should sub-albums be scanned too?"
 msgstr "Cal explorar també els subàlbums?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:99
+#: core/libs/album/treeview/labelstreeview.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Rètols"
 
-#: core/libs/album/treeview/labelstreeview.cpp:412
+#: core/libs/album/treeview/labelstreeview.cpp:347
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Valoració"
 
-#: core/libs/album/treeview/labelstreeview.cpp:417
+#: core/libs/album/treeview/labelstreeview.cpp:352
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Sense valoració"
 
-#: core/libs/album/treeview/labelstreeview.cpp:453
+#: core/libs/album/treeview/labelstreeview.cpp:388
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Selecció"
 
-#: core/libs/album/treeview/labelstreeview.cpp:458
+#: core/libs/album/treeview/labelstreeview.cpp:393
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Sense selecció"
 
-#: core/libs/album/treeview/labelstreeview.cpp:459
+#: core/libs/album/treeview/labelstreeview.cpp:394
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Element rebutjat"
 
-#: core/libs/album/treeview/labelstreeview.cpp:460
+#: core/libs/album/treeview/labelstreeview.cpp:395
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Element pendent"
 
-#: core/libs/album/treeview/labelstreeview.cpp:461
+#: core/libs/album/treeview/labelstreeview.cpp:396
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Element acceptat"
 
-#: core/libs/album/treeview/labelstreeview.cpp:482
+#: core/libs/album/treeview/labelstreeview.cpp:417
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
@@ -28467,8 +28439,8 @@ msgid ""
 "path. It will be added using the file path as the only identifier. This will "
 "work well for your local hard disk."
 msgstr ""
-"Hi ha un problema en identificar el suport d'emmagatzematge d'este camí. "
-"S'afegirà utilitzant el camí de fitxer com a únic identificador. Açò "
+"Hi ha un problema mentre s'identificava el suport d'emmagatzematge d'este "
+"camí. S'afegirà utilitzant el camí de fitxer com a únic identificador. Açò "
 "funcionarà correctament per al vostre disc dur local."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:425
@@ -28555,12 +28527,14 @@ msgstr "S'ha produït un error mentre s'obria la base de dades de destinació."
 #: core/libs/database/coredb/coredbcopymanager.cpp:114
 #, kde-format
 msgid "Error while preparing the target database."
-msgstr "S'ha produït un error en preparar la base de dades de destinació."
+msgstr ""
+"S'ha produït un error mentre es preparava la base de dades de destinació."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:126
 #, kde-format
 msgid "Error while scrubbing the target database."
-msgstr "S'ha produït un error en sanejar la base de dades de destinació."
+msgstr ""
+"S'ha produït un error mentre se sanejava la base de dades de destinació."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:140
 #, kde-format
@@ -28578,7 +28552,7 @@ msgid ""
 "Error while converting the database.\n"
 " Details: %1"
 msgstr ""
-"S'ha produït un error en convertir la base de dades.\n"
+"S'ha produït un error mentre es convertia la base de dades.\n"
 " Detalls: %1"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:201
@@ -28713,9 +28687,9 @@ msgid ""
 "Error message: \"%3\". Please make sure that the file can be copied, or "
 "delete it."
 msgstr ""
-"No s'ha pogut copiar el fitxer de la base de dades antiga («%1») a la seua "
-"ubicació nova («%2»). Missatge d'error: «%3». Assegureu-vos que el fitxer es "
-"puga copiar o suprimir."
+"Ha fallat mentre es copiava el fitxer de la base de dades antiga («%1») a la "
+"seua ubicació nova («%2»). Missatge d'error: «%3». Assegureu-vos que el "
+"fitxer es puga copiar o suprimir."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:889
 #, kde-format
@@ -28770,14 +28744,14 @@ msgid ""
 "process will now be aborted because we do not want to create a new database "
 "based on false assumptions from a broken installation."
 msgstr ""
-"S'ha produït un error en associar el camí amb la biblioteca d'àlbums («%1») "
-"amb un volum d'emmagatzematge del sistema. Este problema pot indicar que hi "
-"ha un problema amb la instal·lació. Si esteu treballant en Linux, verifiqueu "
-"que HAL estiga instal·lat i executant-se. En qualsevol cas, podeu buscar "
-"consell en la llista de correu dels desenvolupadors de digiKam (vegeu www."
-"digikam.org/support). El procés d'actualització de la base de dades ara "
-"s'interromprà perquè no es vol crear una base de dades nova basada en "
-"premisses falses a partir d'una instal·lació defectuosa."
+"S'ha produït un error mentre s'associava el camí cap a la biblioteca "
+"d'àlbums («%1») amb un volum d'emmagatzematge del sistema. Este problema pot "
+"indicar que hi ha un problema amb la instal·lació. Si esteu treballant en "
+"Linux, verifiqueu que HAL estiga instal·lat i executant-se. En qualsevol "
+"cas, podeu buscar consell en la llista de correu dels desenvolupadors de "
+"digiKam (vegeu www.digikam.org/support). El procés d'actualització de la "
+"base de dades ara s'interromprà perquè no es vol crear una base de dades "
+"nova basada en premisses falses a partir d'una instal·lació defectuosa."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1095
 #, kde-format
@@ -29359,16 +29333,14 @@ msgid "Progress Information"
 msgstr "Informació de l'evolució"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
-#, fuzzy, kde-format
-#| msgid "Step Progress"
+#, kde-format
 msgid "Step Progress:"
-msgstr "Evolució del pas"
+msgstr "Evolució del pas:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Overall Progress"
+#, kde-format
 msgid "Overall Progress:"
-msgstr "Evolució global"
+msgstr "Evolució global:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:217
 #, kde-format
@@ -30474,35 +30446,35 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configureu l'OpenCV"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#: core/libs/dialogs/libsinfodlg_p.cpp:28
 #, kde-format
-msgctxt "@item: component is supported/available"
+msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#: core/libs/dialogs/libsinfodlg_p.cpp:33
+#, kde-format
+msgctxt "@info: tri state"
+msgid "No"
+msgstr "No"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:38
+#, kde-format
+msgctxt "@info: tri state"
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:45
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg_p.cpp:30
+#: core/libs/dialogs/libsinfodlg_p.cpp:50
 #, kde-format
-msgctxt "@info: tri state"
+msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Sí"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:35
-#, kde-format
-msgctxt "@info: tri state"
-msgid "No"
-msgstr "No"
-
-#: core/libs/dialogs/libsinfodlg_p.cpp:40
-#, kde-format
-msgctxt "@info: tri state"
-msgid "Unknown"
-msgstr "Desconegut"
 
 #: core/libs/dialogs/rawcameradlg.cpp:52
 #, kde-format
@@ -37935,7 +37907,7 @@ msgstr "El fitxer baixat està buit."
 #: core/libs/onlineversion/onlineversiondwnl.cpp:312
 #, kde-format
 msgid "Checksums error."
-msgstr "S'ha produït un error en la suma de verificació."
+msgstr "S'ha produït un error durant la suma de verificació."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:340
 #, kde-format
@@ -41084,7 +41056,7 @@ msgstr "<b>Propietats de l'etiqueta<br>«%1»</b>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
-msgstr "S'ha produït un error en la creació de l'etiqueta"
+msgstr "S'ha produït un error durant la creació de l'etiqueta"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
@@ -41700,7 +41672,7 @@ msgstr "No s'ha pogut crear la miniatura per a %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
-msgstr "Ha fallat mentre es restablix la base de dades de miniatures"
+msgstr "Ha fallat mentre es restablia la base de dades de miniatures"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:170
 #, kde-format
@@ -42629,7 +42601,7 @@ msgstr "S'ha fet la codificació."
 #: core/libs/video/manager/vidslidethread.cpp:137
 #, kde-format
 msgid "Error while encoding frames!"
-msgstr "S'ha produït un error en codificar els fotogrames!"
+msgstr "S'ha produït un error mentre es codificaven els fotogrames!"
 
 #: core/libs/video/osd/frameosdwidget.cpp:58
 #, kde-format
@@ -42796,13 +42768,14 @@ msgstr ""
 #: core/libs/video/player/audplayerwdg.cpp:264
 #, kde-format
 msgid "An error has occurred while playing: the media is not valid"
-msgstr "S'ha produït un error en reproduir: l'element multimèdia no és vàlid"
+msgstr ""
+"S'ha produït un error mentre es reproduia: l'element multimèdia no és vàlid"
 
 #: core/libs/video/player/audplayerwdg.cpp:293
 #: core/libs/video/player/audplayerwdg.cpp:328
 #, kde-format
 msgid "An error has occurred while playing: %1"
-msgstr "S'ha produït un error en reproduir: %1"
+msgstr "S'ha produït un error mentre es reproduia: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:293
@@ -44135,7 +44108,7 @@ msgstr "Llista del maquinari detectat"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Donate..."
-msgstr "Donatius…"
+msgstr "Donació…"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:79
 #, kde-format
@@ -45286,13 +45259,13 @@ msgstr "Fitxer que es guardarà amb l'XMP"
 msgid "XMP text Files (*.xmp)"
 msgstr "Fitxers de text amb l'XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:570
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Cap"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:664
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
@@ -51800,11 +51773,11 @@ msgid_plural ""
 "Do you want to rename these images again or rename these images by "
 "overwriting?"
 msgstr[0] ""
-"S'ha produït un error en canviar de nom %1 imatge.\n"
+"S'ha produït un error mentre es canviava de nom %1 imatge.\n"
 "Voleu canviar de nom esta imatge una altra vegada o canviar de nom esta "
 "imatge sobreescrivint-la?"
 msgstr[1] ""
-"S'ha produït un error en canviar de nom %1 imatges.\n"
+"S'ha produït un error mentre es canviava de nom %1 imatges.\n"
 "Voleu canviar de nom estes imatges una altra vegada o canviar de nom estes "
 "imatges sobreescrivint-les?"
 
@@ -57915,7 +57888,7 @@ msgstr "Ha fallat mentre s'afegia la informació del GPS a la imatge."
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1016
 #, kde-format
 msgid "Failed to remove GPS info from image"
-msgstr "No s'ha pogut eliminar la informació del GPS de la imatge"
+msgstr "Ha fallat mentre s'eliminava la informació del GPS de la imatge"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1051
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1059
@@ -59781,17 +59754,17 @@ msgstr "La connexió ha fallat."
 #: core/utilities/import/backend/cameracontroller.cpp:458
 #, kde-format
 msgid "Failed to get free space from camera"
-msgstr "No s'ha pogut obtindre espai lliure des de la càmera"
+msgstr "Ha fallat mentre s'obtenia espai lliure des de la càmera"
 
 #: core/utilities/import/backend/cameracontroller.cpp:473
 #, kde-format
 msgid "Failed to get preview from camera"
-msgstr "No s'ha pogut obtindre la vista prèvia des de la càmera"
+msgstr "Ha fallat mentre s'obtenia la vista prèvia des de la càmera"
 
 #: core/utilities/import/backend/cameracontroller.cpp:488
 #, kde-format
 msgid "Failed to process capture from camera"
-msgstr "No s'ha pogut processar la captura des de la càmera"
+msgstr "Ha fallat mentre es processava la captura des de la càmera"
 
 #: core/utilities/import/backend/cameracontroller.cpp:503
 #, kde-kuit-format
@@ -59806,12 +59779,12 @@ msgstr "No s'han pogut llistar els fitxers de <filename>%1</filename>"
 #: core/utilities/import/backend/cameracontroller.cpp:572
 #, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
-msgstr "No s'ha pogut obtindre la miniatura de <filename>%1</filename>"
+msgstr "Ha fallat mentre s'obtenia la miniatura de <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:590
 #, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
-msgstr "No s'han pogut obtindre les metadades de <filename>%1</filename>"
+msgstr "Ha fallat mentre s'obtenien les metadades de <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:645
 #: core/utilities/import/backend/cameracontroller.cpp:1016
@@ -59823,12 +59796,12 @@ msgstr "No s'ha pogut descarregar <filename>%1</filename>"
 #: core/utilities/import/backend/cameracontroller.cpp:743
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
-msgstr "No s'ha pogut convertir el fitxer <filename>%1</filename> a JPEG"
+msgstr "Ha fallat mentre es convertia el fitxer <filename>%1</filename> a JPEG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:791
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
-msgstr "No s'ha pogut convertir el fitxer <filename>%1</filename> a DNG"
+msgstr "Ha fallat mentre es convertia el fitxer <filename>%1</filename> a DNG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
 #, kde-kuit-format
@@ -59848,7 +59821,7 @@ msgstr "Temps d'espera exhaurit des de l'script de <filename>%1</filename>"
 #: core/utilities/import/backend/cameracontroller.cpp:909
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
-msgstr "No s'ha pogut executar l'script de <filename>%1</filename>"
+msgstr "Ha fallat mentre s'executava l'script de <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1024
 #, kde-format
@@ -59868,12 +59841,12 @@ msgstr "Ha fallat mentre es carregava <filename>%1</filename>"
 #: core/utilities/import/backend/cameracontroller.cpp:1053
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
-msgstr "No s'ha pogut pujar el fitxer <b>%1</b>."
+msgstr "Ha fallat mentre es pujava el fitxer <b>%1</b>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1057
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
-msgstr "No s'ha pogut pujar el fitxer <b>%1</b>. Voleu continuar?"
+msgstr "Ha fallat mentre es pujava el fitxer <b>%1</b>. Voleu continuar?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1073
 #, kde-kuit-format
@@ -60342,9 +60315,7 @@ msgid "By Size"
 msgstr "Per mida"
 
 #: core/utilities/import/main/importui.cpp:417
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Format"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Format"
 msgstr "Per format"
@@ -60356,18 +60327,16 @@ msgid "By Rating"
 msgstr "Per la valoració"
 
 #: core/utilities/import/main/importui.cpp:420
-#, fuzzy, kde-format
-#| msgid "Pick Label:"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By PickLabel"
-msgstr "Rètol de selecció:"
+msgstr "Pel rètol de selecció"
 
 #: core/utilities/import/main/importui.cpp:421
-#, fuzzy, kde-format
-#| msgid "Color Label:"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By ColorLabel"
-msgstr "Rètol de color:"
+msgstr "Pel rètol de color"
 
 #: core/utilities/import/main/importui.cpp:423
 #, kde-format
@@ -60617,12 +60586,12 @@ msgstr ""
 #: core/utilities/import/main/importui.cpp:1542
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
-msgstr "No s'ha pogut moure el fitxer lateral de <filename>%1</filename>"
+msgstr "Ha fallat mentre es movia el fitxer lateral de <filename>%1</filename>"
 
 #: core/utilities/import/main/importui.cpp:1549
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
-msgstr "No s'ha pogut moure el fitxer de <filename>%1</filename>"
+msgstr "Ha fallat mentre es movia el fitxer de <filename>%1</filename>"
 
 #: core/utilities/import/main/importui.cpp:1993
 #, kde-format
@@ -62340,7 +62309,7 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:954
 #, kde-format
 msgid "Failed to process item..."
-msgstr "No s'ha pogut processar l'element…"
+msgstr "Ha fallat mentre es processava l'element…"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:967
 #, kde-format
@@ -65225,7 +65194,7 @@ msgstr "Trieu la carpeta que conté la vostra col·lecció"
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
-msgstr "Problema en annexar una col·lecció"
+msgstr "Problema mentre s'afegia una col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:697
 #, kde-format
@@ -65341,13 +65310,13 @@ msgstr "Heu afegit prèviament una col·lecció que conté el camí «%1»."
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
-msgstr "Problema en annexar una col·lecció"
+msgstr "Problema mentre s'afegia una col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
-msgstr "Problema en actualitzar la col·lecció"
+msgstr "Problema mentre s'actualitzava la col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1615
 #, kde-format
@@ -67237,7 +67206,7 @@ msgstr "S'estan extraent les característiques de cares…"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, kde-format
 msgid "Failed to extract face features."
-msgstr "No s'han pogut extraure les característiques de cares."
+msgstr "Ha fallat mentre s'extragueren les característiques de cares."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, kde-format
@@ -68434,8 +68403,8 @@ msgstr ""
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr ""
-"En seleccionar un element de la barra de miniatures es carrega la imatge al "
-"quadro dret"
+"Quan se seleccione un element de la barra de miniatures es carrega la imatge "
+"al quadro dret"
 
 #: core/utilities/setup/setuplighttable.cpp:88
 #, kde-format
@@ -68907,51 +68876,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@action"
-#~ msgid "OpenGL Image Viewer"
-#~ msgstr "Visor d'imatges OpenGL"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "No Color"
-#~ msgstr "Sense color"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Red"
-#~ msgstr "Roig"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Orange"
-#~ msgstr "Taronja"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Yellow"
-#~ msgstr "Groc"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Green"
-#~ msgstr "Verd"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Blue"
-#~ msgstr "Blau"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Magenta"
-#~ msgstr "Magenta"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Gray"
-#~ msgstr "Gris"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Black"
-#~ msgstr "Negre"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "White"
-#~ msgstr "Blanc"
-
-#~ msgctxt "@info: color label selector"
-#~ msgid "Color Label: %1"
-#~ msgstr "Rètol de color: %1"
