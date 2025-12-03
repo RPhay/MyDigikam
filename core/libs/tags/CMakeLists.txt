@@ -38,6 +38,9 @@ set(libtags_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagscompleter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagmodificationhelper.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagsactionmngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagsactionmngr_actions.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagsactionmngr_color.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagsactionmngr_shortcuts.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/taggingaction.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/taggingactionfactory.cpp
 
