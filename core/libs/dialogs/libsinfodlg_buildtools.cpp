@@ -45,7 +45,7 @@ void LibsInfoDlg::populateBuildTools()
 #else
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Ccache support")            << Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "Ccache support")            << d->supportedNo());
 
 #endif
 
