@@ -305,7 +305,6 @@ void ItemPropertiesTab::setRating(int rating)
 
     for (int i = 0 ; i < rating ; i++)
     {
-
         painter.drawPixmap(i * 16, 0, star);
     }
 

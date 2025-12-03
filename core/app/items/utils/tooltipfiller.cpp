@@ -19,6 +19,8 @@
 
 #include <QDateTime>
 #include <QLocale>
+#include <QPainter>
+#include <QPalette>
 #include <QApplication>
 
 // KDE includes
@@ -41,6 +43,7 @@
 #include "iteminfo.h"
 #include "itempropertiestab.h"
 #include "colorlabelwidget.h"
+#include "ratingwidget.h"
 #include "picklabelwidget.h"
 #include "albumthumbnailloader.h"
 #include "thumbnailsize.h"
@@ -533,7 +536,8 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
         if (settings->getToolTipsShowLabelRating())
         {
-            str        = PickLabelWidget::labelPickName((PickLabel)info.pickLabel());
+            str        = cnt.imageAsBase64(PickLabelWidget::buildIcon((PickLabel)info.pickLabel()).pixmap(16, 16).toImage());
+            str       += PickLabelWidget::labelPickName((PickLabel)info.pickLabel());
             str       += QLatin1String(" / ");
 
             // ---
@@ -542,11 +546,21 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
             if ((rating > RatingMin) && (rating <= RatingMax))
             {
-                for (int i = 0 ; i < rating ; ++i)
+                QPixmap star = RatingWidget::buildIcon(rating, 32).pixmap(16, 16);
+                QPixmap pix(16 * rating, 16);
+                pix.fill(Qt::transparent);
+                QPainter painter(&pix);
+                painter.setRenderHint(QPainter::Antialiasing, true);
+                painter.setPen(qApp->palette().color(QPalette::Active, QPalette::Text));
+
+                for (int i = 0 ; i < rating ; i++)
                 {
-                    str += QChar(0x2730);
-                    str += QLatin1Char(' ');
+                    painter.drawPixmap(i * 16, 0, star);
                 }
+
+                painter.end();
+
+                str += cnt.imageAsBase64(pix.toImage());
             }
             else
             {
@@ -558,6 +572,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
             // ---
 
             DXmlGuiWindow* const app = dynamic_cast<DXmlGuiWindow*>(qApp->activeWindow());
+            QString color            = cnt.imageAsBase64(ColorLabelWidget::buildIcon((ColorLabel)info.colorLabel()).pixmap(16, 16).toImage()) + QLatin1Char(' ');
 
             if (app)
             {
@@ -565,16 +580,16 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
                 if (ac)
                 {
-                    tip += cnt.cellSpecBeg + cnt.cellSpecMid + ac->toolTip() + cnt.cellSpecEnd;
+                    tip += cnt.cellSpecBeg + cnt.cellSpecMid + color + ac->toolTip() + cnt.cellSpecEnd;
                 }
                 else
                 {
-                    tip += cnt.cellSpecBeg + cnt.cellSpecMid + ColorLabelWidget::labelColorName((ColorLabel)info.colorLabel()) + cnt.cellSpecEnd;
+                    tip += cnt.cellSpecBeg + cnt.cellSpecMid + color + ColorLabelWidget::labelColorName((ColorLabel)info.colorLabel()) + cnt.cellSpecEnd;
                 }
             }
             else
             {
-                tip += cnt.cellSpecBeg + cnt.cellSpecMid + ColorLabelWidget::labelColorName((ColorLabel)info.colorLabel()) + cnt.cellSpecEnd;
+                tip += cnt.cellSpecBeg + cnt.cellSpecMid + color + ColorLabelWidget::labelColorName((ColorLabel)info.colorLabel()) + cnt.cellSpecEnd;
             }
         }
     }
