@@ -135,6 +135,12 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     {
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Cannot create HEIF context!";
 
+#if LIBHEIF_NUMERIC_VERSION >= 0x010d0000
+
+        heif_deinit();
+
+#endif
+
         return false;
     }
 
