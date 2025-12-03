@@ -58,9 +58,11 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
 
         d->labelTitle->clear();
         d->labelCaption->clear();
+        d->labelPick->clear();
         d->labelPickLabel->setAdjustedText();
+        d->labelColor->clear();
         d->labelColorLabel->setAdjustedText();
-        d->labelRating->setAdjustedText();
+        d->labelRating->clear();
         d->labelTags->clear();
         d->labelPeoples->clear();
         d->labelPhotoDateTime->setAdjustedText();
@@ -254,11 +256,13 @@ void ItemPropertiesTab::setColorLabel(int colorId)
 {
     if (colorId == NoColorLabel)
     {
+        d->labelColor->clear();
         d->labelColorLabel->setAdjustedText(QString());
     }
     else
     {
         DXmlGuiWindow* const app = dynamic_cast<DXmlGuiWindow*>(qApp->activeWindow());
+        d->labelColor->setPixmap(ColorLabelWidget::buildIcon((ColorLabel)colorId).pixmap(16, 16));
 
         if (app)
         {
@@ -280,30 +284,34 @@ void ItemPropertiesTab::setPickLabel(int pickId)
 {
     if (pickId == NoPickLabel)
     {
+        d->labelPick->clear();
         d->labelPickLabel->setAdjustedText(QString());
     }
     else
     {
+        d->labelPick->setPixmap(PickLabelWidget::buildIcon((PickLabel)pickId).pixmap(16, 16));
         d->labelPickLabel->setAdjustedText(PickLabelWidget::labelPickName((PickLabel)pickId));
     }
 }
 
 void ItemPropertiesTab::setRating(int rating)
 {
-    QString str;
+    QPixmap star = RatingWidget::buildIcon(rating, 32).pixmap(16, 16);
+    QPixmap pix(16 * rating, 16);
+    pix.fill(Qt::transparent);
+    QPainter painter(&pix);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setPen(palette().color(QPalette::Active, foregroundRole()));
 
-    if ((rating > RatingMin) && (rating <= RatingMax))
+    for (int i = 0 ; i < rating ; i++)
     {
-        str = QLatin1Char(' ');
 
-        for (int i = 0 ; i < rating ; ++i)
-        {
-            str += QChar(0x2730);
-            str += QLatin1Char(' ');
-        }
+        painter.drawPixmap(i * 16, 0, star);
     }
 
-    d->labelRating->setAdjustedText(str);
+    painter.end();
+
+    d->labelRating->setPixmap(pix);
 }
 
 void ItemPropertiesTab::setVideoAspectRatio(const QString& str)

@@ -43,6 +43,7 @@
 #include "itempropertiestxtlabel.h"
 #include "picklabelwidget.h"
 #include "colorlabelwidget.h"
+#include "ratingwidget.h"
 #include "dxmlguiwindow.h"
 
 namespace Digikam
@@ -107,9 +108,12 @@ public:
     QLabel*            labelLocation                = nullptr;
     QLabel*            labelRights                  = nullptr;
 
+    QLabel*            labelPick                    = nullptr;
+    QLabel*            labelColor                   = nullptr;
+    QLabel*            labelRating                  = nullptr;
+
     DTextLabelValue*   labelPickLabel               = nullptr;
     DTextLabelValue*   labelColorLabel              = nullptr;
-    DTextLabelValue*   labelRating                  = nullptr;
 
     DTextLabelValue*   labelVideoAspectRatio        = nullptr;
     DTextLabelValue*   labelVideoDuration           = nullptr;

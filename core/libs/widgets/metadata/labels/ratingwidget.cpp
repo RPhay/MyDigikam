@@ -428,7 +428,7 @@ QIcon RatingWidget::buildIcon(int rate, int size)
     pix.fill(Qt::transparent);
     QPainter p(&pix);
     QTransform transform;
-    transform.scale(size/15.0, size/15.0);
+    transform.scale(size / 15.0, size / 15.0);
     p.setTransform(transform);
     p.setRenderHint(QPainter::Antialiasing, true);
     p.setPen(qApp->palette().color(QPalette::Active, QPalette::ButtonText));
