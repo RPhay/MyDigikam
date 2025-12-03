@@ -57,6 +57,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ColorLabelValidator : public QValidator
 {
+    Q_OBJECT
+
 public:
 
     ColorLabelValidator(int maxLength, QObject* const parent = nullptr);
