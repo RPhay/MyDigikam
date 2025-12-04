@@ -303,8 +303,10 @@ void ItemPropertiesTab::setRating(int rating)
 {
     if ((rating > RatingMin) && (rating <= RatingMax))
     {
+        double dpr   = devicePixelRatio();
         QPixmap star = RatingWidget::buildIcon(rating, 32).pixmap(16, 16);
-        QPixmap pix(16 * rating, 16);
+        QPixmap pix(16 * rating * dpr, 16 * dpr);
+        pix.setDevicePixelRatio(dpr);
         pix.fill(Qt::transparent);
         QPainter painter(&pix);
         painter.setRenderHint(QPainter::Antialiasing, true);
