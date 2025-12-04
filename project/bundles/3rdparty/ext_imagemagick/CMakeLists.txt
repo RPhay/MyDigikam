@@ -36,7 +36,7 @@ set(Magick_Conf --prefix=${PREFIX_ext_imagemagick}
                 --with-xml                             # Enable XML support.
                 --with-fpx                             # Enable FlashPix Codec.
                 --with-openexr                         # Enable OpenEXR codec.
-                --with-quantum-depth=16                # Use 1§Bits quantum for color components.
+                --with-quantum-depth=16                # Use 16Bits quantum for color components.
                 --without-utilities                    # Disable CLI tools.
 )
 
@@ -52,13 +52,6 @@ ExternalProject_Add(ext_jbig
 
     GIT_REPOSITORY https://github.com/zdenop/jbigkit.git
 
-    CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                      <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
-
-    BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) -j
-
-    INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
-
     BUILD_IN_SOURCE 1
 
     UPDATE_COMMAND ""
@@ -72,7 +65,7 @@ ExternalProject_Add(ext_imagemagick
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/ImageMagick/ImageMagick.git
-    GIT_TAG 7.1.2-0
+    GIT_TAG 7.1.2-9
 
     PATCH_COMMAND ${Magick_Patch}
 

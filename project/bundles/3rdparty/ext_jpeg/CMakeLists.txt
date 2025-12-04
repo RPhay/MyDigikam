@@ -10,8 +10,8 @@ SET(PREFIX_ext_jpeg "${EXTPREFIX}")
 
 ExternalProject_Add(ext_jpeg
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.1.1/libjpeg-turbo-3.1.1.tar.gz
-    URL_MD5 e71063e0b043e38207c8cefda6931cbd
+    URL https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.1.2/libjpeg-turbo-3.1.2.tar.gz
+    URL_MD5 6f4780b95edde615c34de515f5eb617a
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${PREFIX_ext_jpeg}
                                              --without-simd
