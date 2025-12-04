@@ -146,8 +146,9 @@ void ColorLabelWidget::setDescriptionBoxVisible(bool b)
     {
         const auto btns    = d->colorBtns->buttons();
         DXmlGuiWindow* app = nullptr;
+        const auto wdgs    = qApp->topLevelWidgets();
 
-        for (QWidget* const widget : qApp->topLevelWidgets())
+        for (QWidget* const widget : wdgs)
         {
             app = dynamic_cast<DXmlGuiWindow*>(widget);
 

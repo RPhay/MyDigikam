@@ -80,7 +80,9 @@ void TagsActionMngr::slotColorNameChanged(int label, const QString& name)
 
     for (KActionCollection* const col : std::as_const(d->actionCollectionList))
     {
-        for (QAction* const ac : col->actions())
+        const auto acs = col->actions();
+
+        for (QAction* const ac : acs)
         {
             if ((ac->objectName().startsWith(d->colorShortcutPrefix)) && (ac->data() == label))
             {

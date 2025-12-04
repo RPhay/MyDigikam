@@ -42,10 +42,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN FileSaveOptionsBox::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QWidget*            noneOptions     = nullptr;
 
