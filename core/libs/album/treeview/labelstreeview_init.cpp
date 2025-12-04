@@ -81,7 +81,7 @@ void LabelsTreeView::initPicksTree()
     d->picks->setFlags(Qt::ItemIsEnabled);
 
     QStringList pickSetNames;
-    pickSetNames << i18nc("@item: pick tree", "No Pick")
+    pickSetNames << i18nc("@item: pick tree", "None")
                  << i18nc("@item: pick tree", "Rejected Item")
                  << i18nc("@item: pick tree", "Pending Item")
                  << i18nc("@item: pick tree", "Accepted Item");
