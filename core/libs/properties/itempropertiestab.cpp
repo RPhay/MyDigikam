@@ -379,17 +379,45 @@ void ItemPropertiesTab::showOrHideCachedProperties()
     d->labelCaption->setVisible(hasCaption);
     d->caption->setVisible(hasCaption);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     bool hasPickLabel  = !d->labelPick->pixmap().isNull();
+
+#else
+
+    bool hasPickLabel  = !d->labelPick->pixmap(Qt::ReturnByValue).isNull();
+
+#endif
+
     d->pickLabel->setVisible(hasPickLabel);
     d->labelPick->setVisible(hasPickLabel);
     d->labelPickLabel->setVisible(hasPickLabel);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     bool hasColorLabel = !d->labelColor->pixmap().isNull();
+
+#else
+
+    bool hasColorLabel = !d->labelColor->pixmap(Qt::ReturnByValue).isNull();
+
+#endif
+
     d->colorLabel->setVisible(hasColorLabel);
     d->labelColor->setVisible(hasColorLabel);
     d->labelColorLabel->setVisible(hasColorLabel);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     bool hasRating     = !d->labelRating->pixmap().isNull();
+
+
+#else
+
+    bool hasRating     = !d->labelRating->pixmap(Qt::ReturnByValue).isNull();
+
+#endif
+
     d->rating->setVisible(hasRating);
     d->labelRating->setVisible(hasRating);
 

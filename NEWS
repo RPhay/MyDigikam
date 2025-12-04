@@ -119,7 +119,7 @@ BUGFIXES:
 074 --> 512862 - digiKam failed to start.
 075 --> 512875 - Allow to Ignore / Remove multiple detected faces at once.
 076 --> 512887 - Crash when work with many pictures > 2500.
-077 --> 
+077 --> 512928 - The compilation stops with an error in core_itemproperties_obj.
 078 --> 
 079 --> 
 080 --> 
