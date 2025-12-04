@@ -187,7 +187,7 @@ static Taxon parseTaxon(const QJsonObject& taxon)
         taxon[DEFAULT_PHOTO].toObject().contains(SQUARE_URL))
     {
         squareUrl = QUrl(taxon[DEFAULT_PHOTO].toObject()
-                         [SQUARE_URL].toString());
+                         .value(SQUARE_URL).toString());
     }
 
     if (taxon.contains(ANCESTORS))
@@ -975,7 +975,7 @@ public:
 
                     int observationId     = result[ID].toInt();
                     QJsonArray coordinates(result[GEOJSON].toObject()
-                                           [COORDINATES].toArray());
+                                           .value(COORDINATES).toArray());
                     double latitude       = coordinates[1].toDouble();
                     double longitude      = coordinates[0].toDouble();
                     bool obscured         = result[OBSCURED].toBool();
@@ -1369,7 +1369,7 @@ public:
                     result.contains(OBSERVED_ON_STRING)                      &&
                     result.contains(TAXON)                                   &&
                     (result[OBSERVED_ON_STRING].toString() == m_observed_on) &&
-                    (result[TAXON].toObject()[ID].toInt()  == m_taxon_id)
+                    (result[TAXON].toObject().value(ID).toInt()  == m_taxon_id)
                    )
                 {
                     observationId = result[ID].toInt();
@@ -1610,7 +1610,7 @@ public:
                     QJsonObject obsPhoto   = result[OBSERVATION_PHOTOS].
                                              toArray()[noPhotos-1].toObject();
                     lastObservationPhotoId = obsPhoto[ID].toInt();
-                    lastPhotoId            = obsPhoto[PHOTO].toObject()[ID].toInt();
+                    lastPhotoId            = obsPhoto[PHOTO].toObject().value(ID).toInt();
                 }
             }
 
