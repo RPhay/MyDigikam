@@ -8,8 +8,8 @@
 
 SET(EXTPREFIX_qt ${EXTPREFIX})
 
-SET(QT_URL https://download.qt.io/official_releases/qt/6.9/6.9.1/single/qt-everywhere-src-6.9.1.tar.xz)
-SET(QT_HASH 96dd62d709cc6bd626750ef41777cf2f)
+SET(QT_URL https://download.qt.io/official_releases/qt/6.10/6.10.1/single/qt-everywhere-src-6.10.1.tar.xz)
+SET(QT_HASH cb2c438c33e3f9e6a430d63c7ba0920a)
 
 IF(MSVC)
 
