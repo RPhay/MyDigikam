@@ -36,6 +36,7 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelImageBitDepth->setAdjustedText();
         d->labelImageColorMode->setAdjustedText();
         d->labelHasSidecar->setAdjustedText();
+        d->labelHasGPSInfo->setAdjustedText();
 
         d->labelPhotoMake->setAdjustedText();
         d->labelPhotoModel->setAdjustedText();
@@ -63,6 +64,9 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelColor->clear();
         d->labelColorLabel->setAdjustedText();
         d->labelRating->clear();
+        d->labelVersionedInfo->setAdjustedText();
+        d->labelGroupedInfo->setAdjustedText();
+
         d->labelTags->clear();
         d->labelPeoples->clear();
         d->labelPhotoDateTime->setAdjustedText();
