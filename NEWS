@@ -26,7 +26,7 @@ Raw Engine      : Update internal Libraw to last 20251117 upstream.
 
 Video           : Update internal QtAVPlayer to last 20251117 upstream (Qt5 only).
 
-Color Labels    : Color label names are now customizable in the Labels tab from left sidebar by double clicking on text. Label strings size are limited to 32 charaters.
+Color Labels    : Color label names are now customizable in the Labels tab from left sidebar by double clicking on text. Label strings size are limited to 32 characters.
 Sort Items      : Add support of Album Icon-View sort items by Pick and Color Labels.
 Sort Items      : Add support of Import Icon-View sort items by Pick and Color Labels.
 Sort Items      : Add support of Album Icon-View sort items by Orientation.
