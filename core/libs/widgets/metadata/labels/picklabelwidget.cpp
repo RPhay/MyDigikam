@@ -12,73 +12,10 @@
  *
  * ============================================================ */
 
-#include "picklabelwidget.h"
-
-// Qt includes
-
-#include <QPainter>
-#include <QIcon>
-#include <QLayout>
-#include <QLabel>
-#include <QButtonGroup>
-#include <QWidgetAction>
-#include <QFontMetrics>
-#include <QFont>
-#include <QToolButton>
-#include <QApplication>
-
-// KDE includes
-
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif
-
-#include <klocalizedstring.h>
-#include <kactioncollection.h>
-
-// Restore warnings
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
-// Local includes
-
-#include "dxmlguiwindow.h"
-#include "dexpanderbox.h"
+#include "picklabelwidget_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN PickLabelWidget::Private
-{
-
-public:
-
-    Private() = default;
-
-    QButtonGroup*     pickBtns  = nullptr;
-
-    QLabel*           desc      = nullptr;
-
-    QToolButton*      btnNone   = nullptr;
-    QToolButton*      btnRej    = nullptr;
-    QToolButton*      btnPndg   = nullptr;
-    QToolButton*      btnAccpt  = nullptr;
-
-    DHBox*            descBox   = nullptr;
-
-    DAdjustableLabel* shortcut  = nullptr;
-};
 
 PickLabelWidget::PickLabelWidget(QWidget* const parent)
     : DVBox(parent),
@@ -335,91 +272,6 @@ QString PickLabelWidget::labelPickName(PickLabel label)
     }
 
     return name;
-}
-
-// -----------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN PickLabelSelector::Private
-{
-
-public:
-
-    Private() = default;
-
-    PickLabelWidget* plw = nullptr;
-};
-
-PickLabelSelector::PickLabelSelector(QWidget* const parent)
-    : QPushButton(parent),
-      d          (new Private)
-{
-    QMenu* const popup          = new QMenu(this);
-    setMenu(popup);
-
-    QWidgetAction* const action = new QWidgetAction(this);
-    d->plw                      = new PickLabelWidget(this);
-    action->setDefaultWidget(d->plw);
-    popup->addAction(action);
-    slotPickLabelChanged(NoPickLabel);
-
-    connect(d->plw, SIGNAL(signalPickLabelChanged(int)),
-            this, SLOT(slotPickLabelChanged(int)));
-}
-
-PickLabelSelector::~PickLabelSelector()
-{
-    delete d;
-}
-
-PickLabelWidget* PickLabelSelector::pickLabelWidget() const
-{
-    return d->plw;
-}
-
-void PickLabelSelector::setPickLabel(PickLabel label)
-{
-    d->plw->setPickLabels(QList<PickLabel>() << label);
-    slotPickLabelChanged(label);
-}
-
-PickLabel PickLabelSelector::pickLabel()
-{
-    QList<PickLabel> list = d->plw->pickLabels();
-
-    if (!list.isEmpty())
-    {
-        return list.first();
-    }
-
-    return NoPickLabel;
-}
-
-void PickLabelSelector::slotPickLabelChanged(int id)
-{
-    setText(QString());
-    setIcon(d->plw->buildIcon((PickLabel)id));
-    setToolTip(i18nc("@info: pick label selector", "Pick Label: %1", d->plw->labelPickName((PickLabel)id)));
-    menu()->close();
-
-    Q_EMIT signalPickLabelChanged(id);
-}
-
-// -----------------------------------------------------------------------------
-
-PickLabelMenuAction::PickLabelMenuAction(QMenu* const parent)
-    : QMenu(parent)
-{
-    setTitle(i18nc("@title: pick label menu", "Pick"));
-    QWidgetAction* const wa    = new QWidgetAction(this);
-    PickLabelWidget* const plw = new PickLabelWidget(parent);
-    wa->setDefaultWidget(plw);
-    addAction(wa);
-
-    connect(plw, SIGNAL(signalPickLabelChanged(int)),
-            this, SIGNAL(signalPickLabelChanged(int)));
-
-    connect(plw, SIGNAL(signalPickLabelChanged(int)),
-            parent, SLOT(close()));
 }
 
 } // namespace Digikam

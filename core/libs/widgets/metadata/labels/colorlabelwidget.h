@@ -127,7 +127,7 @@ class DIGIKAM_EXPORT ColorLabelMenuAction : public QMenu
 public:
 
     explicit ColorLabelMenuAction(QMenu* const parent = nullptr);
-    ~ColorLabelMenuAction() override;
+    ~ColorLabelMenuAction() override = default;
 
 Q_SIGNALS:
 

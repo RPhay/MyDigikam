@@ -13,6 +13,8 @@
  *
  * ============================================================ */
 
+#pragma once
+
 #include "labelstreeview.h"
 
 // QT includes

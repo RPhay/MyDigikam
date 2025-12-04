@@ -134,8 +134,14 @@ set(libmetadatawidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/xmpwidget.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/ratingwidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/colorlabelwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/ratingwidget_box.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/ratingwidget_menu.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/picklabelwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/picklabelwidget_menu.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/picklabelwidget_selector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/colorlabelwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/colorlabelwidget_menu.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/colorlabelwidget_selector.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/config/metadataselector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/config/metadatapanel.cpp

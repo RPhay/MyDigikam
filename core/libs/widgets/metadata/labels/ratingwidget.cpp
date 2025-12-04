@@ -13,80 +13,10 @@
  *
  * ============================================================ */
 
-#include "ratingwidget.h"
-
-// C++ includes
-
-#include <cmath>
-
-// Qt includes
-
-#include <QApplication>
-#include <QPainter>
-#include <QPalette>
-#include <QPixmap>
-#include <QTimeLine>
-#include <QFont>
-#include <QAction>
-#include <QWidgetAction>
-
-// KDE includes
-
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif
-
-#include <klocalizedstring.h>
-#include <kactioncollection.h>
-
-// Restore warnings
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "digikam_globals.h"
-#include "thememanager.h"
-#include "dxmlguiwindow.h"
-#include "dexpanderbox.h"
+#include "ratingwidget_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN RatingWidget::Private
-{
-public:
-
-    Private() = default;
-
-    bool       tracking         = true;
-    bool       isHovered        = false;
-    bool       fading           = false;
-
-    int        rating           = 0;
-    int        fadingValue      = 0;
-    int        duration         = 600;       ///< in milliseconds
-    int        offset           = 0;
-    int        width            = 15;
-
-    QTimeLine* fadingTimeLine   = nullptr;
-
-    QPixmap    selPixmap;      ///< Selected star.
-    QPixmap    regPixmap;      ///< Regular star.
-    QPixmap    disPixmap;      ///< Disable star.
-};
 
 RatingWidget::RatingWidget(QWidget* const parent)
     : QWidget(parent),
@@ -497,87 +427,6 @@ void RatingWidget::applyFading(QPixmap& pix)
         p.fillRect(pix.rect(), QColor(0, 0, 0, d->fadingValue));
         p.end();
     }
-}
-
-// -------------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN RatingBox::Private
-{
-
-public:
-
-    Private() = default;
-
-    DAdjustableLabel* shortcut      = nullptr;
-
-    RatingWidget*     ratingWidget  = nullptr;
-};
-
-RatingBox::RatingBox(QWidget* const parent)
-    : DVBox(parent),
-      d    (new Private)
-{
-    setAttribute(Qt::WA_DeleteOnClose);
-    setFocusPolicy(Qt::NoFocus);
-
-    d->ratingWidget = new RatingWidget(this);
-    d->ratingWidget->setTracking(false);
-
-    d->shortcut     = new DAdjustableLabel(this);
-    QFont fnt       = d->shortcut->font();
-    fnt.setItalic(true);
-    d->shortcut->setFont(fnt);
-    d->shortcut->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-    d->shortcut->setWordWrap(false);
-
-    setContentsMargins(QMargins());
-    setSpacing(0);
-
-    // -------------------------------------------------------------
-
-    connect(d->ratingWidget, SIGNAL(signalRatingModified(int)),
-            this, SLOT(slotUpdateDescription(int)));
-
-    connect(d->ratingWidget, SIGNAL(signalRatingChanged(int)),
-            this, SIGNAL(signalRatingChanged(int)));
-}
-
-RatingBox::~RatingBox()
-{
-    delete d;
-}
-
-void RatingBox::slotUpdateDescription(int rating)
-{
-    DXmlGuiWindow* const app = dynamic_cast<DXmlGuiWindow*>(qApp->activeWindow());
-
-    if (app)
-    {
-        QAction* const ac = app->actionCollection()->action(QString::fromLatin1("rateshortcut-%1").arg(rating));
-
-        if (ac)
-        {
-            d->shortcut->setAdjustedText(ac->shortcut().toString());
-        }
-    }
-}
-
-// -------------------------------------------------------------------------------
-
-RatingMenuAction::RatingMenuAction(QMenu* const parent)
-    : QMenu(parent)
-{
-    setTitle(i18n("Rating"));
-    QWidgetAction* const wa = new QWidgetAction(this);
-    RatingBox* const rb     = new RatingBox(parent);
-    wa->setDefaultWidget(rb);
-    addAction(wa);
-
-    connect(rb, SIGNAL(signalRatingChanged(int)),
-            this, SIGNAL(signalRatingChanged(int)));
-
-    connect(rb, SIGNAL(signalRatingChanged(int)),
-            parent, SLOT(close()));
 }
 
 } // namespace Digikam

@@ -12,6 +12,8 @@
  *
  * ============================================================ */
 
+#pragma once
+
 #include "tagsactionmngr.h"
 
 // Qt includes
