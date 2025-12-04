@@ -35,14 +35,14 @@ ColorLabelFilter::ColorLabelFilter(QWidget* const parent)
             this, SLOT(slotColorLabelSelectionChanged()));
 
     connect(TagsActionMngr::defaultManager(), &TagsActionMngr::signalTagsActionCollectionsRegistered,
-            [this]()
+            this, [this]()
        {
            setDescriptionBoxVisible(false);
        }
     );
 
     connect(TagsActionMngr::defaultManager(), &TagsActionMngr::signalColorLabelNamesUpdated,
-            [this]()
+            this, [this]()
        {
            setDescriptionBoxVisible(false);
        }
