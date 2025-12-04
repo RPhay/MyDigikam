@@ -64,6 +64,7 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelColor->clear();
         d->labelColorLabel->setAdjustedText();
         d->labelRating->clear();
+        d->labelRating->setProperty("Rating", -1);
         d->labelVersionedInfo->setAdjustedText();
         d->labelGroupedInfo->setAdjustedText();
 
@@ -315,6 +316,7 @@ void ItemPropertiesTab::setRating(int rating)
     painter.end();
 
     d->labelRating->setPixmap(pix);
+    d->labelRating->setProperty("Rating", rating);
 }
 
 void ItemPropertiesTab::setVideoAspectRatio(const QString& str)

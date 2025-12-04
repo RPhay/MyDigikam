@@ -98,6 +98,14 @@ public:
     DTextLabelValue*   labelPhotoFlash              = nullptr;
     DTextLabelValue*   labelPhotoWhiteBalance       = nullptr;
 
+    DTextLabelValue*   labelVideoAspectRatio        = nullptr;
+    DTextLabelValue*   labelVideoDuration           = nullptr;
+    DTextLabelValue*   labelVideoFrameRate          = nullptr;
+    DTextLabelValue*   labelVideoVideoCodec         = nullptr;
+    DTextLabelValue*   labelVideoAudioBitRate       = nullptr;
+    DTextLabelValue*   labelVideoAudioChannelType   = nullptr;
+    DTextLabelValue*   labelVideoAudioCodec         = nullptr;
+
     // NOTE: special case for the caption and title. See bug #460134
     QLabel*            labelCaption                 = nullptr;
     QLabel*            labelTitle                   = nullptr;
@@ -114,14 +122,6 @@ public:
 
     DTextLabelValue*   labelPickLabel               = nullptr;
     DTextLabelValue*   labelColorLabel              = nullptr;
-
-    DTextLabelValue*   labelVideoAspectRatio        = nullptr;
-    DTextLabelValue*   labelVideoDuration           = nullptr;
-    DTextLabelValue*   labelVideoFrameRate          = nullptr;
-    DTextLabelValue*   labelVideoVideoCodec         = nullptr;
-    DTextLabelValue*   labelVideoAudioBitRate       = nullptr;
-    DTextLabelValue*   labelVideoAudioChannelType   = nullptr;
-    DTextLabelValue*   labelVideoAudioCodec         = nullptr;
 };
 
 } // namespace Digikam

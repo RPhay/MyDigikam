@@ -90,15 +90,19 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 
     m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setButtonVisible(true);
+    m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setToolTip(i18n("Open the Decription tab for editing"));
 
     m_propertiesTab->widget(ItemPropertiesTab::TagsProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     m_propertiesTab->widget(ItemPropertiesTab::TagsProperties)->setButtonVisible(true);
+    m_propertiesTab->widget(ItemPropertiesTab::TagsProperties)->setToolTip(i18n("Open the Tags tab for editing"));
 
     m_propertiesTab->widget(ItemPropertiesTab::LocationProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     m_propertiesTab->widget(ItemPropertiesTab::LocationProperties)->setButtonVisible(true);
+    m_propertiesTab->widget(ItemPropertiesTab::LocationProperties)->setToolTip(i18n("Open the Information tab for editing"));
 
     m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setButtonVisible(true);
+    m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setToolTip(i18n("Open the Information tab for editing"));
 
     // ----------------------------------------------------------
 

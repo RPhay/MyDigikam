@@ -33,6 +33,7 @@ Sort Items      : Add support of Album Icon-View sort items by Orientation.
 Sort Items      : Add support of Album Icon-View sort items by GPS location.
 Sort Items      : Add support of Album Icon-View sort items by File Format.
 Sort Items      : Add support of Import Icon-View sort items by File Format.
+Image Properties: Add new button to copy all properties as text in clipboard.
 Advanced Rename : New modifier "Date Format".
 SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
 Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.
@@ -121,7 +122,7 @@ BUGFIXES:
 076 --> 512887 - Crash when work with many pictures > 2500.
 077 --> 512928 - The compilation stops with an error in core_itemproperties_obj.
 078 --> 495360 - File properties should show disk folder path.
-079 --> 
+079 --> 495361 - Copy path and image properties to clipboard.
 080 --> 
 081 --> 
 082 --> 

@@ -23,6 +23,8 @@
 #include <QLocale>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QClipboard>
+#include <QMimeData>
 
 // KDE includes
 
@@ -70,6 +72,10 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
         m_propertiesTab->setVideoInfoDisable(true);
     }
 
+    m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
+    m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setButtonVisible(true);
+    m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setToolTip(i18n("Copy the all properties in clipboard"));
+
     appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")),        i18nc("@title: item properties", "Properties"));
     appendTab(m_metadataTab,           QIcon::fromTheme(QLatin1String("format-text-code")), i18nc("@title: item properties", "Metadata")); // krazy:exclude=iconnames
     appendTab(m_colorTab,              QIcon::fromTheme(QLatin1String("fill-color")),       i18nc("@title: item properties", "Colors"));
@@ -80,6 +86,9 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
     appendTab(m_gpsTab,                QIcon::fromTheme(QLatin1String("globe")),            i18nc("@title: item properties", "Map"));
 
 #endif // HAVE_GEOLOCATION
+
+    connect(m_propertiesTab, SIGNAL(signalItemButtonPressed(int)),
+            this, SLOT(slotCopyPropertiesToClipBoard(int)));
 
     connect(m_metadataTab, SIGNAL(signalSetupMetadataFilters(int)),
             this, SIGNAL(signalSetupMetadataFilters(int)));
@@ -435,6 +444,16 @@ void ItemPropertiesSideBar::doSaveState()
 void ItemPropertiesSideBar::slotLoadMetadataFilters()
 {
     m_metadataTab->loadFilters();
+}
+
+void ItemPropertiesSideBar::slotCopyPropertiesToClipBoard(int index)
+{
+    if (index == ItemPropertiesTab::FileProperties)
+    {
+        QMimeData* const mimeData = new QMimeData();
+        mimeData->setText(m_propertiesTab->propertiesToText());
+        QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+    }
 }
 
 } // namespace Digikam

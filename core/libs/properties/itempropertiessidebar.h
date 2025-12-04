@@ -72,6 +72,10 @@ protected Q_SLOTS:
 
     virtual void slotChangedTab(QWidget* tab);
 
+private Q_SLOTS:
+
+    void slotCopyPropertiesToClipBoard(int index);
+
 protected:
 
     /**

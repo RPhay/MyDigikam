@@ -111,6 +111,8 @@ public:
                  const QStringList& peopleTagNames = QStringList());
     void setTemplate(const Template& t);
 
+    QString propertiesToText() const;
+
     ///@}
 
     ///@{
@@ -153,6 +155,8 @@ private:
     static double doubleToHumanReadableFraction(double val, long* num, long* den, long maxden = 2);
 
     ///@}
+
+    void appendProperty(QString& data, const QString& key, const QString& value) const;
 
 private:
 

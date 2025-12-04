@@ -457,6 +457,70 @@ void ItemPropertiesTab::showOrHideCachedProperties()
     widget(ItemPropertiesTab::RightProperties)->setVisible(hasRights);
 }
 
+void ItemPropertiesTab::appendProperty(QString& data, const QString& key, const QString& value) const
+{
+    QString stripped = value;
+    stripped.remove(QLatin1String("<i>"));
+    stripped.remove(QLatin1String("</i>"));
+    stripped.replace(QLatin1Char('\n'), QLatin1Char(' '));
+    data.append(key + QLatin1String(": ") + stripped + QLatin1Char('\n'));
+}
+
+QString ItemPropertiesTab::propertiesToText() const
+{
+    QString data;
+
+    appendProperty(data, i18n("File")                    , d->labelFile->adjustedText()                 );
+    appendProperty(data, i18n("Folder")                  , d->labelFolder->adjustedText()               );
+    appendProperty(data, i18n("Symlink")                 , d->labelSymlink->adjustedText()              );
+    appendProperty(data, i18n("Modified Date")           , d->labelFileModifiedDate->adjustedText()     );
+    appendProperty(data, i18n("Size")                    , d->labelFileSize->adjustedText()             );
+    appendProperty(data, i18n("Owner")                   , d->labelFileOwner->adjustedText()            );
+    appendProperty(data, i18n("Permissions")             , d->labelFilePermissions->adjustedText()      );
+
+    appendProperty(data, i18n("Mime")                    , d->labelImageMime->adjustedText()            );
+    appendProperty(data, i18n("Dimensions")              , d->labelImageDimensions->adjustedText()      );
+    appendProperty(data, i18n("Ratio")                   , d->labelImageRatio->adjustedText()           );
+    appendProperty(data, i18n("Bit Depth")               , d->labelImageBitDepth->adjustedText()        );
+    appendProperty(data, i18n("Color Mode")              , d->labelImageColorMode->adjustedText()       );
+    appendProperty(data, i18n("Has Sidecar")             , d->labelHasSidecar->adjustedText()           );
+    appendProperty(data, i18n("Has GPS")                 , d->labelHasGPSInfo->adjustedText()           );
+    appendProperty(data, i18n("Versioned")               , d->labelVersionedInfo->adjustedText()        );
+    appendProperty(data, i18n("Grouped")                 , d->labelGroupedInfo->adjustedText()          );
+
+    appendProperty(data, i18n("Make")                    , d->labelPhotoMake->adjustedText()            );
+    appendProperty(data, i18n("Model")                   , d->labelPhotoModel->adjustedText()           );
+    appendProperty(data, i18n("Date Time")               , d->labelPhotoDateTime->adjustedText()        );
+    appendProperty(data, i18n("Lens")                    , d->labelPhotoLens->adjustedText()            );
+    appendProperty(data, i18n("Aperture")                , d->labelPhotoAperture->adjustedText()        );
+    appendProperty(data, i18n("Focal Length")            , d->labelPhotoFocalLength->adjustedText()     );
+    appendProperty(data, i18n("Exposure Time")           , d->labelPhotoExposureTime->adjustedText()    );
+    appendProperty(data, i18n("Sensitivity")             , d->labelPhotoSensitivity->adjustedText()     );
+    appendProperty(data, i18n("Exposure Mode")           , d->labelPhotoExposureMode->adjustedText()    );
+    appendProperty(data, i18n("Flash")                   , d->labelPhotoFlash->adjustedText()           );
+    appendProperty(data, i18n("White Balance")           , d->labelPhotoWhiteBalance->adjustedText()    );
+
+    appendProperty(data, i18n("Video Aspect Ratio")      , d->labelVideoAspectRatio->adjustedText()     );
+    appendProperty(data, i18n("Video Duration")          , d->labelVideoDuration->adjustedText()        );
+    appendProperty(data, i18n("Video Frame Rate")        , d->labelVideoFrameRate->adjustedText()       );
+    appendProperty(data, i18n("Video Video Codec")       , d->labelVideoVideoCodec->adjustedText()      );
+    appendProperty(data, i18n("Video Audio Bit Rate")    , d->labelVideoAudioBitRate->adjustedText()    );
+    appendProperty(data, i18n("Video Audio Channel Type"), d->labelVideoAudioChannelType->adjustedText());
+    appendProperty(data, i18n("Video Audio Codec")       , d->labelVideoAudioCodec->adjustedText()      );
+
+    appendProperty(data, i18n("Caption")                 , d->labelCaption->text()                      );
+    appendProperty(data, i18n("Title")                   , d->labelTitle->text()                        );
+    appendProperty(data, i18n("Tags")                    , d->labelTags->text()                         );
+    appendProperty(data, i18n("Peoples")                 , d->labelPeoples->text()                      );
+    appendProperty(data, i18n("Location")                , d->labelLocation->text()                     );
+    appendProperty(data, i18n("Rights")                  , d->labelRights->text()                       );
+    appendProperty(data, i18n("Pick")                    , d->labelPickLabel->adjustedText()            );
+    appendProperty(data, i18n("Color")                   , d->labelColorLabel->adjustedText()           );
+    appendProperty(data, i18n("Rating")                  , d->labelRating->property("Rating").toString());
+
+    return data;
+}
+
 } // namespace Digikam
 
 #include "moc_itempropertiestab.cpp"
