@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:41+0000\n"
+"POT-Creation-Date: 2025-12-04 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -958,14 +958,14 @@ msgstr "<p>请从 digiKam 数据库中选择目标相册以移动所选图像。
 msgid "Album \"%1\""
 msgstr "相册“%1”"
 
-#: core/app/items/utils/tooltipfiller.cpp:75
+#: core/app/items/utils/tooltipfiller.cpp:78
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "文件属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:80
+#: core/app/items/utils/tooltipfiller.cpp:83
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
@@ -973,8 +973,8 @@ msgctxt "filename"
 msgid "Name:"
 msgstr "名称："
 
-#: core/app/items/utils/tooltipfiller.cpp:88
-#: core/app/items/utils/tooltipfiller.cpp:632
+#: core/app/items/utils/tooltipfiller.cpp:91
+#: core/app/items/utils/tooltipfiller.cpp:647
 #: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
@@ -983,7 +983,7 @@ msgstr "名称："
 msgid "Date:"
 msgstr "日期："
 
-#: core/app/items/utils/tooltipfiller.cpp:93
+#: core/app/items/utils/tooltipfiller.cpp:96
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:300
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
@@ -993,8 +993,8 @@ msgstr "日期："
 msgid "Size:"
 msgstr "大小："
 
-#: core/app/items/utils/tooltipfiller.cpp:95
-#: core/app/items/utils/tooltipfiller.cpp:227
+#: core/app/items/utils/tooltipfiller.cpp:98
+#: core/app/items/utils/tooltipfiller.cpp:230
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
@@ -1003,7 +1003,7 @@ msgstr "大小："
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/items/utils/tooltipfiller.cpp:101
+#: core/app/items/utils/tooltipfiller.cpp:104
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
@@ -1017,7 +1017,7 @@ msgstr "%1 (%2)"
 msgid "Type:"
 msgstr "类型："
 
-#: core/app/items/utils/tooltipfiller.cpp:109
+#: core/app/items/utils/tooltipfiller.cpp:112
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
@@ -1025,7 +1025,7 @@ msgctxt "unknown / invalid image dimension"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/app/items/utils/tooltipfiller.cpp:114
+#: core/app/items/utils/tooltipfiller.cpp:117
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1044
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
@@ -1034,33 +1034,33 @@ msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
-#: core/app/items/utils/tooltipfiller.cpp:118
+#: core/app/items/utils/tooltipfiller.cpp:121
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
 msgstr "尺寸："
 
-#: core/app/items/utils/tooltipfiller.cpp:126
+#: core/app/items/utils/tooltipfiller.cpp:129
 #, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/app/items/utils/tooltipfiller.cpp:129
-#: core/app/items/utils/tooltipfiller.cpp:333
+#: core/app/items/utils/tooltipfiller.cpp:132
+#: core/app/items/utils/tooltipfiller.cpp:336
 #, kde-format
 msgid "Aspect Ratio:"
 msgstr "宽高比："
 
-#: core/app/items/utils/tooltipfiller.cpp:150
+#: core/app/items/utils/tooltipfiller.cpp:153
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
 msgstr "照片属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:165
+#: core/app/items/utils/tooltipfiller.cpp:168
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
@@ -1068,7 +1068,7 @@ msgstr "照片属性"
 msgid "Make/Model:"
 msgstr "制造商/型号："
 
-#: core/app/items/utils/tooltipfiller.cpp:171
+#: core/app/items/utils/tooltipfiller.cpp:174
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
@@ -1077,22 +1077,22 @@ msgctxt "camera lens"
 msgid "Lens:"
 msgstr "镜头："
 
-#: core/app/items/utils/tooltipfiller.cpp:208
-#: core/app/items/utils/tooltipfiller.cpp:213
+#: core/app/items/utils/tooltipfiller.cpp:211
+#: core/app/items/utils/tooltipfiller.cpp:216
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "创建日期："
 
-#: core/app/items/utils/tooltipfiller.cpp:235
+#: core/app/items/utils/tooltipfiller.cpp:238
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "光圈/焦距："
 
-#: core/app/items/utils/tooltipfiller.cpp:241
+#: core/app/items/utils/tooltipfiller.cpp:244
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
@@ -1102,20 +1102,20 @@ msgstr "光圈/焦距："
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/items/utils/tooltipfiller.cpp:248
+#: core/app/items/utils/tooltipfiller.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "曝光时间/感光度："
 
-#: core/app/items/utils/tooltipfiller.cpp:275
+#: core/app/items/utils/tooltipfiller.cpp:278
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "模式/程序："
 
-#: core/app/items/utils/tooltipfiller.cpp:288
+#: core/app/items/utils/tooltipfiller.cpp:291
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
@@ -1123,172 +1123,172 @@ msgctxt "camera flash settings"
 msgid "Flash:"
 msgstr "闪光灯："
 
-#: core/app/items/utils/tooltipfiller.cpp:300
+#: core/app/items/utils/tooltipfiller.cpp:303
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
 msgstr "白平衡："
 
-#: core/app/items/utils/tooltipfiller.cpp:322
+#: core/app/items/utils/tooltipfiller.cpp:325
 #: core/utilities/searchwindow/searchgroup.cpp:113
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "音频/视频属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:365
+#: core/app/items/utils/tooltipfiller.cpp:368
 #, kde-format
 msgid "Duration:"
 msgstr "时间长度："
 
-#: core/app/items/utils/tooltipfiller.cpp:386
+#: core/app/items/utils/tooltipfiller.cpp:389
 #, kde-format
 msgid "Frame Rate:"
 msgstr "帧速率："
 
-#: core/app/items/utils/tooltipfiller.cpp:386
+#: core/app/items/utils/tooltipfiller.cpp:389
 #, kde-format
 msgid " fps"
 msgstr " fps"
 
-#: core/app/items/utils/tooltipfiller.cpp:398
+#: core/app/items/utils/tooltipfiller.cpp:401
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
 #, kde-format
 msgid "Video Codec:"
 msgstr "视频编码："
 
-#: core/app/items/utils/tooltipfiller.cpp:419
+#: core/app/items/utils/tooltipfiller.cpp:422
 #, kde-format
 msgid "Audio Bit Rate:"
 msgstr "音频比特率："
 
-#: core/app/items/utils/tooltipfiller.cpp:431
+#: core/app/items/utils/tooltipfiller.cpp:434
 #, kde-format
 msgid "Audio Channel Type:"
 msgstr "音频声道："
 
-#: core/app/items/utils/tooltipfiller.cpp:443
+#: core/app/items/utils/tooltipfiller.cpp:446
 #, kde-format
 msgid "Audio Codec:"
 msgstr "音频编码："
 
-#: core/app/items/utils/tooltipfiller.cpp:460
+#: core/app/items/utils/tooltipfiller.cpp:463
 #, kde-format
 msgid "digiKam Properties"
 msgstr "digiKam 属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:471
+#: core/app/items/utils/tooltipfiller.cpp:474
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "相册："
 
-#: core/app/items/utils/tooltipfiller.cpp:485
+#: core/app/items/utils/tooltipfiller.cpp:488
 #, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "标题："
 
-#: core/app/items/utils/tooltipfiller.cpp:499
+#: core/app/items/utils/tooltipfiller.cpp:502
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "说明："
 
-#: core/app/items/utils/tooltipfiller.cpp:508
+#: core/app/items/utils/tooltipfiller.cpp:511
 #, kde-format
 msgid "Tags:"
 msgstr "标签："
 
-#: core/app/items/utils/tooltipfiller.cpp:556
+#: core/app/items/utils/tooltipfiller.cpp:570
 #, kde-format
 msgid "Labels:"
 msgstr "标记："
 
-#: core/app/items/utils/tooltipfiller.cpp:607
+#: core/app/items/utils/tooltipfiller.cpp:622
 #, kde-format
 msgid "Album Properties"
 msgstr "相册属性"
 
-#: core/app/items/utils/tooltipfiller.cpp:611
-#: core/app/items/utils/tooltipfiller.cpp:692
+#: core/app/items/utils/tooltipfiller.cpp:626
+#: core/app/items/utils/tooltipfiller.cpp:707
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "名称："
 
-#: core/app/items/utils/tooltipfiller.cpp:617
+#: core/app/items/utils/tooltipfiller.cpp:632
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "结果数量："
 
-#: core/app/items/utils/tooltipfiller.cpp:623
+#: core/app/items/utils/tooltipfiller.cpp:638
 #, kde-format
 msgid "Collection:"
 msgstr "相册集合："
 
-#: core/app/items/utils/tooltipfiller.cpp:644
+#: core/app/items/utils/tooltipfiller.cpp:659
 #, kde-format
 msgid "Category:"
 msgstr "分类："
 
-#: core/app/items/utils/tooltipfiller.cpp:657
+#: core/app/items/utils/tooltipfiller.cpp:672
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "说明："
 
-#: core/app/items/utils/tooltipfiller.cpp:663
+#: core/app/items/utils/tooltipfiller.cpp:678
 #, kde-format
 msgid "Preview:"
 msgstr "预览："
 
-#: core/app/items/utils/tooltipfiller.cpp:688
+#: core/app/items/utils/tooltipfiller.cpp:703
 #, kde-format
 msgid "Filter"
 msgstr "过滤"
 
-#: core/app/items/utils/tooltipfiller.cpp:703
+#: core/app/items/utils/tooltipfiller.cpp:718
 #, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "是"
 
-#: core/app/items/utils/tooltipfiller.cpp:709
+#: core/app/items/utils/tooltipfiller.cpp:724
 #, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "部分"
 
-#: core/app/items/utils/tooltipfiller.cpp:715
+#: core/app/items/utils/tooltipfiller.cpp:730
 #, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "否"
 
-#: core/app/items/utils/tooltipfiller.cpp:725
+#: core/app/items/utils/tooltipfiller.cpp:740
 #, kde-format
 msgid "Reproducible:"
 msgstr "可重现："
 
-#: core/app/items/utils/tooltipfiller.cpp:737
+#: core/app/items/utils/tooltipfiller.cpp:752
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "描述："
 
-#: core/app/items/utils/tooltipfiller.cpp:742
+#: core/app/items/utils/tooltipfiller.cpp:757
 #, kde-format
 msgid "Identifier:"
 msgstr "标识符："
 
-#: core/app/items/utils/tooltipfiller.cpp:747
+#: core/app/items/utils/tooltipfiller.cpp:762
 #, kde-format
 msgid "Technical Parameters"
 msgstr "技术参数"
 
-#: core/app/items/utils/tooltipfiller.cpp:766
+#: core/app/items/utils/tooltipfiller.cpp:781
 #, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<b>二进制数据</b>"
@@ -2008,13 +2008,13 @@ msgstr "按评分"
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Pick Label"
-msgstr ""
+msgstr "按选择标记"
 
 #: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Color Label"
-msgstr ""
+msgstr "按颜色标记"
 
 #: core/app/main/digikamapp_setup.cpp:605
 #, kde-format
@@ -2023,11 +2023,10 @@ msgid "By Image Size"
 msgstr "按图像尺寸"
 
 #: core/app/main/digikamapp_setup.cpp:606
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "任意方向"
+msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
@@ -2036,11 +2035,10 @@ msgid "By Aspect Ratio"
 msgstr "按宽高比"
 
 #: core/app/main/digikamapp_setup.cpp:608
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "位置："
+msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
@@ -20362,36 +20360,12 @@ msgid "OpenGL Viewer"
 msgstr "OpenGL 图像查看器"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, fuzzy, kde-format
-#| msgid "A tool to preview image with OpenGL"
+#, kde-format
 msgid "A tool to preview items with OpenGL"
-msgstr "使用 OpenGL 特效预览图像"
+msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool preview a series of items using OpenGL effects.</"
-#| "p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td>Next Item:</"
-#| "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
-#| "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse "
-#| "wheel down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-#| "colspan=\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></"
-#| "td></tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
-#| "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom "
-#| "or change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
-#| "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original "
-#| "size:</td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse "
-#| "in up-down-direction while pressing the right mouse button</td></"
-#| "tr><tr><td></td><td><i>c</i> key and use the scroll-wheel</td></"
-#| "tr><tr><td></td><td><i>+</i> and <i>-</i> keys</td></tr><tr><td></"
-#| "td><td>ctrl + scrollwheel</td></tr><tr><td>Panning:</td><td>Move mouse "
-#| "while pressing the left button</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
 "</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
@@ -20415,31 +20389,12 @@ msgid ""
 "nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></"
 "table>"
 msgstr ""
-"<p>此工具使用 OpenGL 特效预览一系列项目。</p><p><u>使用方式：</u></"
-"p><table><tr><td colspan=\"2\"><nobr><center><b><h1>基本控制</h1></b></"
-"center></nobr></td></tr><tr><td>上一个项目：</td><td>方向键 - 上</td></"
-"tr><tr><td></td><td>翻页键 - 上</td></tr><tr><td></td><td>方向键 - 左</td></"
-"tr><tr><td></td><td>鼠标滚轮 - 上</td></tr><tr><td>下一个项目：</td><td>方向"
-"键 - 下</td></tr><tr><td></td><td>翻页键 - 下</td></tr><tr><td></td><td>方向"
-"键 - 右</td></tr><tr><td></td><td>鼠标滚轮 - 下</td></tr><tr><td>退出预览：</"
-"td><td>ESC 键</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>视图控制</"
-"h1></b></center></nobr></td></tr><tr><td>切换视图全屏/窗口模式：</td><td>F 键"
-"</td></tr><tr><td>切换鼠标滚轮功能：</td><td>C 键 (缩放/翻页)</td></"
-"tr><tr><td>视图旋转：</td><td>R 键</td></tr><tr><td>视图重置：</td><td>双击</"
-"td></tr><tr><td>原始大小：</td><td>O 键</td></tr><tr><td>视图缩放：</td><td>"
-"按住鼠标右键并上下移动鼠标</td></tr><tr><td></td><td>按 C 键后使用鼠标滚轮</"
-"td></tr><tr><td></td><td>+ 或 - 键</td></tr><tr><td></td><td>Ctrl+鼠标滚轮</"
-"td></tr><tr><td>Panning:</td><td>Move mouse while pressing the left button</"
-"td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Others</h1></b></center></"
-"nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></"
-"table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
-#, fuzzy, kde-format
-#| msgid "OpenGL Viewer"
+#, kde-format
 msgctxt "@action"
 msgid "OpenGL Viewer"
-msgstr "OpenGL 图像查看器"
+msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
@@ -26851,53 +26806,59 @@ msgctxt "@title"
 msgid "Labels"
 msgstr "标记"
 
-#: core/libs/album/treeview/labelstreeview.cpp:347
+#: core/libs/album/treeview/labelstreeview_init.cpp:38
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "评分"
 
-#: core/libs/album/treeview/labelstreeview.cpp:352
+#: core/libs/album/treeview/labelstreeview_init.cpp:43
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "未评分"
 
-#: core/libs/album/treeview/labelstreeview.cpp:388
+#: core/libs/album/treeview/labelstreeview_init.cpp:79
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "挑选"
 
-#: core/libs/album/treeview/labelstreeview.cpp:393
+#: core/libs/album/treeview/labelstreeview_init.cpp:84
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "未挑选"
 
-#: core/libs/album/treeview/labelstreeview.cpp:394
+#: core/libs/album/treeview/labelstreeview_init.cpp:85
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "否决项"
 
-#: core/libs/album/treeview/labelstreeview.cpp:395
+#: core/libs/album/treeview/labelstreeview_init.cpp:86
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "待定项"
 
-#: core/libs/album/treeview/labelstreeview.cpp:396
+#: core/libs/album/treeview/labelstreeview_init.cpp:87
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "接受项"
 
-#: core/libs/album/treeview/labelstreeview.cpp:417
+#: core/libs/album/treeview/labelstreeview_init.cpp:108
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "颜色"
+
+#: core/libs/album/treeview/labelstreeview_p.cpp:52
+#, fuzzy, kde-format
+#| msgid "Enter tag name here..."
+msgid "Customize label name here..."
+msgstr "在此输入标签名称..."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, kde-format
@@ -36763,21 +36724,21 @@ msgid "File: "
 msgstr "文件："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:128
-#: core/libs/properties/itempropertiestab.cpp:36
+#: core/libs/properties/itempropertiestab.cpp:35
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "文件夹："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:129
-#: core/libs/properties/itempropertiestab.cpp:38
+#: core/libs/properties/itempropertiestab.cpp:37
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "日期："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:130
-#: core/libs/properties/itempropertiestab.cpp:39
+#: core/libs/properties/itempropertiestab.cpp:38
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
@@ -36796,14 +36757,14 @@ msgid "Writable: "
 msgstr "可写入："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:133
-#: core/libs/properties/itempropertiestab.cpp:87
+#: core/libs/properties/itempropertiestab.cpp:86
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "类型："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:134
-#: core/libs/properties/itempropertiestab.cpp:88
+#: core/libs/properties/itempropertiestab.cpp:87
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -36811,8 +36772,8 @@ msgstr "尺寸："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:135
 #: core/libs/properties/import/importitempropertiestab.cpp:243
-#: core/libs/properties/itempropertiestab.cpp:89
-#: core/libs/properties/itempropertiestab.cpp:187
+#: core/libs/properties/itempropertiestab.cpp:88
+#: core/libs/properties/itempropertiestab.cpp:186
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -36837,14 +36798,14 @@ msgid "Camera File Properties"
 msgstr "相机文件属性"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:185
-#: core/libs/properties/itempropertiestab.cpp:131
+#: core/libs/properties/itempropertiestab.cpp:130
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "制造商："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:186
-#: core/libs/properties/itempropertiestab.cpp:132
+#: core/libs/properties/itempropertiestab.cpp:131
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
@@ -36857,56 +36818,56 @@ msgid "Created: "
 msgstr "创建日期："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:133
+#: core/libs/properties/itempropertiestab.cpp:132
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "镜头："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:134
+#: core/libs/properties/itempropertiestab.cpp:133
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "光圈："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:135
+#: core/libs/properties/itempropertiestab.cpp:134
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "焦距："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:191
-#: core/libs/properties/itempropertiestab.cpp:136
+#: core/libs/properties/itempropertiestab.cpp:135
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "曝光时间："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:192
-#: core/libs/properties/itempropertiestab.cpp:137
+#: core/libs/properties/itempropertiestab.cpp:136
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "感光度："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:138
+#: core/libs/properties/itempropertiestab.cpp:137
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "拍摄模式/程序："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:139
+#: core/libs/properties/itempropertiestab.cpp:138
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "闪光灯："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
-#: core/libs/properties/itempropertiestab.cpp:140
+#: core/libs/properties/itempropertiestab.cpp:139
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -36919,42 +36880,42 @@ msgid "Photograph Properties"
 msgstr "照片属性"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:244
-#: core/libs/properties/itempropertiestab.cpp:191
+#: core/libs/properties/itempropertiestab.cpp:190
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "音频比特率："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:192
+#: core/libs/properties/itempropertiestab.cpp:191
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "音频声道类型："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:193
+#: core/libs/properties/itempropertiestab.cpp:192
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "音频编码："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:188
+#: core/libs/properties/itempropertiestab.cpp:187
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "持续时间："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:189
+#: core/libs/properties/itempropertiestab.cpp:188
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "帧速率："
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:190
+#: core/libs/properties/itempropertiestab.cpp:189
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -36995,7 +36956,7 @@ msgstr "不可用"
 #: core/libs/properties/itempropertiessidebardb.cpp:708
 #: core/libs/properties/itempropertiessidebardb.cpp:811
 #: core/libs/properties/itempropertiessidebardb.cpp:813
-#: core/libs/properties/itempropertiestab_setters.cpp:81
+#: core/libs/properties/itempropertiestab_setters.cpp:83
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -37292,145 +37253,145 @@ msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
-#: core/libs/properties/itempropertiestab.cpp:37
+#: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr "符号链接： "
 
-#: core/libs/properties/itempropertiestab.cpp:40
+#: core/libs/properties/itempropertiestab.cpp:39
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "所有者："
 
-#: core/libs/properties/itempropertiestab.cpp:41
+#: core/libs/properties/itempropertiestab.cpp:40
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "权限："
 
-#: core/libs/properties/itempropertiestab.cpp:80
+#: core/libs/properties/itempropertiestab.cpp:79
 #, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "文件属性"
 
-#: core/libs/properties/itempropertiestab.cpp:90
+#: core/libs/properties/itempropertiestab.cpp:89
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "位深度："
 
-#: core/libs/properties/itempropertiestab.cpp:91
+#: core/libs/properties/itempropertiestab.cpp:90
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "色彩模型："
 
-#: core/libs/properties/itempropertiestab.cpp:92
+#: core/libs/properties/itempropertiestab.cpp:91
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr "附带文件："
 
-#: core/libs/properties/itempropertiestab.cpp:93
+#: core/libs/properties/itempropertiestab.cpp:92
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
 msgstr "GPS："
 
-#: core/libs/properties/itempropertiestab.cpp:124
+#: core/libs/properties/itempropertiestab.cpp:123
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "项目属性"
 
-#: core/libs/properties/itempropertiestab.cpp:180
+#: core/libs/properties/itempropertiestab.cpp:179
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "照片属性"
 
-#: core/libs/properties/itempropertiestab.cpp:224
+#: core/libs/properties/itempropertiestab.cpp:223
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "音频/视频属性"
 
-#: core/libs/properties/itempropertiestab.cpp:238
+#: core/libs/properties/itempropertiestab.cpp:237
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "标题："
 
-#: core/libs/properties/itempropertiestab.cpp:239
+#: core/libs/properties/itempropertiestab.cpp:238
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "说明："
 
-#: core/libs/properties/itempropertiestab.cpp:240
+#: core/libs/properties/itempropertiestab.cpp:239
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "挑选标记："
 
-#: core/libs/properties/itempropertiestab.cpp:241
+#: core/libs/properties/itempropertiestab.cpp:240
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "颜色标记："
 
-#: core/libs/properties/itempropertiestab.cpp:242
+#: core/libs/properties/itempropertiestab.cpp:241
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "评分："
 
-#: core/libs/properties/itempropertiestab.cpp:243
+#: core/libs/properties/itempropertiestab.cpp:242
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
 msgstr "已版本管理："
 
-#: core/libs/properties/itempropertiestab.cpp:244
+#: core/libs/properties/itempropertiestab.cpp:243
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "已分组："
 
-#: core/libs/properties/itempropertiestab.cpp:278
+#: core/libs/properties/itempropertiestab.cpp:292
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKam 属性"
 
-#: core/libs/properties/itempropertiestab.cpp:285
+#: core/libs/properties/itempropertiestab.cpp:299
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "关键词："
 
-#: core/libs/properties/itempropertiestab.cpp:289
+#: core/libs/properties/itempropertiestab.cpp:303
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "人物："
 
-#: core/libs/properties/itempropertiestab.cpp:304
+#: core/libs/properties/itempropertiestab.cpp:318
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "标签"
 
-#: core/libs/properties/itempropertiestab.cpp:322
+#: core/libs/properties/itempropertiestab.cpp:336
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "位置"
 
-#: core/libs/properties/itempropertiestab.cpp:343
+#: core/libs/properties/itempropertiestab.cpp:357
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
@@ -37448,7 +37409,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:378
+#: core/libs/properties/itempropertiestab_setters.cpp:385
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -38777,31 +38738,31 @@ msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "要从图像中移除对应此人脸标签的 %1 个标签吗？"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:228
+#: core/libs/tags/engine/tagsactionmngr_color.cpp:32
+#: core/libs/tags/engine/tagsactionmngr_color.cpp:87
+#, kde-format
+msgid "Assign Color Label \"%1\""
+msgstr "分配颜色标记“%1”"
+
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:42
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "分配评分“%1 星”"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:244
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:58
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "分配评分“%1 星” (不切换)"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:265
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:79
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "分配挑选标记“%1”"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:314
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:128
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "分配标签“%1”"
-
-#: core/libs/tags/engine/tagsactionmngr.cpp:556
-#: core/libs/tags/engine/tagsactionmngr.cpp:611
-#, kde-format
-msgid "Assign Color Label \"%1\""
-msgstr "分配颜色标记“%1”"
 
 #: core/libs/tags/manager/models/tagmngrlistitem.cpp:158
 #, kde-format
@@ -58043,12 +58004,10 @@ msgid "By Size"
 msgstr "按体积"
 
 #: core/utilities/import/main/importui.cpp:417
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Format"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Format"
-msgstr "按格式"
+msgstr ""
 
 #: core/utilities/import/main/importui.cpp:419
 #, kde-format
@@ -58060,13 +58019,13 @@ msgstr "按评分"
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By PickLabel"
-msgstr ""
+msgstr "按选择标记"
 
 #: core/utilities/import/main/importui.cpp:421
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By ColorLabel"
-msgstr ""
+msgstr "按颜色标记"
 
 #: core/utilities/import/main/importui.cpp:423
 #, kde-format
@@ -66110,7 +66069,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@action"
-#~ msgid "OpenGL Image Viewer"
-#~ msgstr "OpenGL 图像查看器"
