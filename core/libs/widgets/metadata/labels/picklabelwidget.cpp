@@ -266,7 +266,7 @@ QString PickLabelWidget::labelPickName(PickLabel label)
 
         default:   // NoPickLabel
         {
-            name = i18nc("@info: pick label name", "None");
+            name = i18nc("@info: pick label name", "No Pick");
             break;
         }
     }

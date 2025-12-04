@@ -62,6 +62,8 @@ public:
      */
     QList<PickLabel> pickLabels() const;
 
+public:
+
     static QString labelPickName(PickLabel label);
 
     static QIcon buildIcon(PickLabel label);

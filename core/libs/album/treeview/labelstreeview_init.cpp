@@ -80,24 +80,12 @@ void LabelsTreeView::initPicksTree()
     d->picks->setFont(0, d->regularFont);
     d->picks->setFlags(Qt::ItemIsEnabled);
 
-    QStringList pickSetNames;
-    pickSetNames << i18nc("@item: pick tree", "None")
-                 << i18nc("@item: pick tree", "Rejected Item")
-                 << i18nc("@item: pick tree", "Pending Item")
-                 << i18nc("@item: pick tree", "Accepted Item");
-
-    QStringList pickSetIcons;
-    pickSetIcons << QLatin1String("flag-black")
-                 << QLatin1String("flag-red")
-                 << QLatin1String("flag-yellow")
-                 << QLatin1String("flag-green");
-
-    for (const QString& pick : std::as_const(pickSetNames))
+    for (int i = FirstPickLabel ; i <= LastPickLabel ; i++)
     {
         QTreeWidgetItem* const pickWidgetItem = getOrCreateItem(d->picks);
-        pickWidgetItem->setText(0, pick);
+        pickWidgetItem->setText(0, PickLabelWidget::labelPickName((PickLabel)i));
         pickWidgetItem->setFont(0, d->regularFont);
-        pickWidgetItem->setIcon(0, QIcon(QIcon::fromTheme(pickSetIcons.at(pickSetNames.indexOf(pick))).pixmap(64, 64)));
+        pickWidgetItem->setIcon(0, PickLabelWidget::buildIcon((PickLabel)i).pixmap(64, 64));
     }
 }
 
