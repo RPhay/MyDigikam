@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     DFileSelector* dirSelector = nullptr;
     QList<QUrl>    urls;
     QUrl           caUrl;
@@ -115,8 +117,8 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
         QFileInfo info(url.toLocalFile());
 
         map.insert(QLatin1String("name"),               info.fileName());
-        map.insert(QLatin1String("title"),              meta->getItemTitles()[def].caption);
-        map.insert(QLatin1String("comment"),            meta->getItemComments()[def].caption);
+        map.insert(QLatin1String("title"),              meta->getItemTitles().value(def).caption);
+        map.insert(QLatin1String("comment"),            meta->getItemComments().value(def).caption);
         map.insert(QLatin1String("orientation"),        (int)meta->getItemOrientation());
         map.insert(QLatin1String("datetime"),           meta->getItemDateTime());
         map.insert(QLatin1String("rating"),             meta->getItemRating());

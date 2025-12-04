@@ -82,7 +82,7 @@ cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
     while (query.next())
     {
         label.push_back(query.value(0).toInt());
-        feature.push_back(cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone());
+        feature.push_back(cv::Mat(1, 128, CV_32F, const_cast<char*>(query.value(1).toByteArray().constData())).clone());
     }
 
     if (0 == feature.rows)
