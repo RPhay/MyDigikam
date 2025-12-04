@@ -37,6 +37,7 @@
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dmetadata.h"
+#include "dfileoperations.h"
 #include "itempropertiestab.h"
 #include "itemselectionpropertiestab.h"
 #include "itempropertiesmetadatatab.h"
@@ -76,6 +77,10 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
     m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setButtonVisible(true);
     m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setToolTip(i18n("Copy the all properties in clipboard"));
 
+    m_propertiesTab->widget(ItemPropertiesTab::ImageProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("folder-open")));
+    m_propertiesTab->widget(ItemPropertiesTab::ImageProperties)->setButtonVisible(true);
+    m_propertiesTab->widget(ItemPropertiesTab::ImageProperties)->setToolTip(i18n("Open item in the file manager"));
+
     appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")),        i18nc("@title: item properties", "Properties"));
     appendTab(m_metadataTab,           QIcon::fromTheme(QLatin1String("format-text-code")), i18nc("@title: item properties", "Metadata")); // krazy:exclude=iconnames
     appendTab(m_colorTab,              QIcon::fromTheme(QLatin1String("fill-color")),       i18nc("@title: item properties", "Colors"));
@@ -87,8 +92,8 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
 
 #endif // HAVE_GEOLOCATION
 
-    connect(m_propertiesTab, SIGNAL(signalItemButtonPressed(int)),
-            this, SLOT(slotCopyPropertiesToClipBoard(int)));
+    connect(m_propertiesTab, &ItemPropertiesTab::signalItemButtonPressed,
+            this, &ItemPropertiesSideBar::slotFileButtonPressed);
 
     connect(m_metadataTab, SIGNAL(signalSetupMetadataFilters(int)),
             this, SIGNAL(signalSetupMetadataFilters(int)));
@@ -446,13 +451,30 @@ void ItemPropertiesSideBar::slotLoadMetadataFilters()
     m_metadataTab->loadFilters();
 }
 
-void ItemPropertiesSideBar::slotCopyPropertiesToClipBoard(int index)
+void ItemPropertiesSideBar::slotFileButtonPressed(int index)
 {
-    if (index == ItemPropertiesTab::FileProperties)
+    switch (index)
     {
-        QMimeData* const mimeData = new QMimeData();
-        mimeData->setText(m_propertiesTab->propertiesToText());
-        QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+        case ItemPropertiesTab::FileProperties:
+        {
+            QMimeData* const mimeData = new QMimeData();
+            mimeData->setText(m_propertiesTab->propertiesToText());
+            QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+
+            break;
+        }
+
+        case ItemPropertiesTab::ImageProperties:
+        {
+            DFileOperations::openInFileManager(QList<QUrl>() << m_currentUrl);
+
+            break;
+        }
+
+        default:
+        {
+            break;
+        }
     }
 }
 

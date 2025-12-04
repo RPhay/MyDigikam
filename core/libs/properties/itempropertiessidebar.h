@@ -74,7 +74,7 @@ protected Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotCopyPropertiesToClipBoard(int index);
+    void slotFileButtonPressed(int index);
 
 protected:
 
