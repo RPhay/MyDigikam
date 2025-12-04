@@ -124,7 +124,7 @@ BUGFIXES:
 077 --> 512928 - The compilation stops with an error in core_itemproperties_obj.
 078 --> 495360 - File properties should show disk folder path.
 079 --> 495361 - Copy path and image properties to clipboard.
-080 --> 
+080 --> 512954 - Movie preview - slider button to change clip speed.
 081 --> 
 082 --> 
 083 --> 
