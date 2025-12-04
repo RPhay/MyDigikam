@@ -301,21 +301,29 @@ void ItemPropertiesTab::setPickLabel(int pickId)
 
 void ItemPropertiesTab::setRating(int rating)
 {
-    QPixmap star = RatingWidget::buildIcon(rating, 32).pixmap(16, 16);
-    QPixmap pix(16 * rating, 16);
-    pix.fill(Qt::transparent);
-    QPainter painter(&pix);
-    painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setPen(palette().color(QPalette::Active, foregroundRole()));
-
-    for (int i = 0 ; i < rating ; i++)
+    if ((rating > RatingMin) && (rating <= RatingMax))
     {
-        painter.drawPixmap(i * 16, 0, star);
+        QPixmap star = RatingWidget::buildIcon(rating, 32).pixmap(16, 16);
+        QPixmap pix(16 * rating, 16);
+        pix.fill(Qt::transparent);
+        QPainter painter(&pix);
+        painter.setRenderHint(QPainter::Antialiasing, true);
+        painter.setPen(palette().color(QPalette::Active, foregroundRole()));
+
+        for (int i = 0 ; i < rating ; i++)
+        {
+            painter.drawPixmap(i * 16, 0, star);
+        }
+
+        painter.end();
+
+        d->labelRating->setPixmap(pix);
+    }
+    else
+    {
+        d->labelRating->setPixmap(QPixmap());
     }
 
-    painter.end();
-
-    d->labelRating->setPixmap(pix);
     d->labelRating->setProperty("Rating", rating);
 }
 
