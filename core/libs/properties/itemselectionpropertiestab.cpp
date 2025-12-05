@@ -27,6 +27,7 @@
 
 // Local includes
 
+#include "dexpanderbox.h"
 #include "itempropertiestab.h"
 #include "itempropertiestxtlabel.h"
 #include "digikam_globals.h"
@@ -49,10 +50,12 @@ public:
 
 public:
 
-    DTextLabelValue* labelSelectionCount = nullptr;
-    DTextLabelValue* labelSelectionSize  = nullptr;
-    DTextLabelValue* labelTotalCount     = nullptr;
-    DTextLabelValue* labelTotalSize      = nullptr;
+    DTextLabelValue* labelSelectionCount  = nullptr;
+    DTextLabelValue* labelSelectionSize   = nullptr;
+    DTextLabelValue* labelSelectionGroups = nullptr;
+    DTextLabelValue* labelTotalCount      = nullptr;
+    DTextLabelValue* labelTotalSize       = nullptr;
+    DTextLabelValue* labelTotalGroups     = nullptr;
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
@@ -66,27 +69,38 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     const int spacing = layoutSpacing();
 
-    QWidget* const w1                    = new QWidget(this);
-    QGridLayout* const glay1             = new QGridLayout(w1);
+    QWidget* const w1                     = new QWidget(this);
+    QGridLayout* const glay1              = new QGridLayout(w1);
 
-    DTextLabelName* const selectionCount = new DTextLabelName(i18n("Count: "),       w1);
-    DTextLabelName* const selectionSize  = new DTextLabelName(i18n("Size: "),        w1);
-    DTextLabelName* const totalCount     = new DTextLabelName(i18n("Total Count: "), w1);
-    DTextLabelName* const totalSize      = new DTextLabelName(i18n("Total Size: "),  w1);
+    DTextLabelName* const selectionCount  = new DTextLabelName(i18n("Count: "),        w1);
+    DTextLabelName* const selectionSize   = new DTextLabelName(i18n("Size: "),         w1);
+    DTextLabelName* const selectionGroups = new DTextLabelName(i18n("Groups: "),       w1);
+    DTextLabelName* const totalCount      = new DTextLabelName(i18n("Total Count: "),  w1);
+    DTextLabelName* const totalSize       = new DTextLabelName(i18n("Total Size: "),   w1);
+    DTextLabelName* const totalGroups     = new DTextLabelName(i18n("Total Groups: "), w1);
 
-    d->labelSelectionCount               = new DTextLabelValue(QString(), w1);
-    d->labelSelectionSize                = new DTextLabelValue(QString(), w1);
-    d->labelTotalCount                   = new DTextLabelValue(QString(), w1);
-    d->labelTotalSize                    = new DTextLabelValue(QString(), w1);
+    d->labelSelectionCount                = new DTextLabelValue(QString(), w1);
+    d->labelSelectionSize                 = new DTextLabelValue(QString(), w1);
+    d->labelSelectionGroups               = new DTextLabelValue(QString(), w1);
+    d->labelTotalCount                    = new DTextLabelValue(QString(), w1);
+    d->labelTotalSize                     = new DTextLabelValue(QString(), w1);
+    d->labelTotalGroups                   = new DTextLabelValue(QString(), w1);
 
-    glay1->addWidget(selectionCount,         0, 0, 1, 1);
-    glay1->addWidget(d->labelSelectionCount, 0, 1, 1, 1);
-    glay1->addWidget(selectionSize,          1, 0, 1, 1);
-    glay1->addWidget(d->labelSelectionSize,  1, 1, 1, 1);
-    glay1->addWidget(totalCount,             2, 0, 1, 1);
-    glay1->addWidget(d->labelTotalCount,     2, 1, 1, 1);
-    glay1->addWidget(totalSize,              3, 0, 1, 1);
-    glay1->addWidget(d->labelTotalSize,      3, 1, 1, 1);
+    glay1->addWidget(selectionCount,                  0, 0, 1, 1);
+    glay1->addWidget(d->labelSelectionCount,          0, 1, 1, 1);
+    glay1->addWidget(selectionSize,                   1, 0, 1, 1);
+    glay1->addWidget(d->labelSelectionSize,           1, 1, 1, 1);
+    glay1->addWidget(selectionGroups,                 2, 0, 1, 1);
+    glay1->addWidget(d->labelSelectionGroups,         2, 1, 1, 1);
+
+    glay1->addWidget(new DLineWidget(Qt::Horizontal), 4, 0, 1, 2);
+
+    glay1->addWidget(totalCount,                      5, 0, 1, 1);
+    glay1->addWidget(d->labelTotalCount,              5, 1, 1, 1);
+    glay1->addWidget(totalSize,                       6, 0, 1, 1);
+    glay1->addWidget(d->labelTotalSize,               6, 1, 1, 1);
+    glay1->addWidget(totalGroups,                     7, 0, 1, 1);
+    glay1->addWidget(d->labelTotalGroups,             7, 1, 1, 1);
 
     glay1->setContentsMargins(spacing, spacing, spacing, spacing);
     glay1->setColumnStretch(0, 10);
@@ -132,6 +146,11 @@ void ItemSelectionPropertiesTab::setSelectionSize(const QString& str)
     d->labelSelectionSize->setAdjustedText(str);
 }
 
+void ItemSelectionPropertiesTab::setSelectionGroups(const QString& str)
+{
+    d->labelSelectionGroups->setAdjustedText(str);
+}
+
 void ItemSelectionPropertiesTab::setTotalCount(const QString& str)
 {
     d->labelTotalCount->setAdjustedText(str);
@@ -140,6 +159,11 @@ void ItemSelectionPropertiesTab::setTotalCount(const QString& str)
 void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
 {
     d->labelTotalSize->setAdjustedText(str);
+}
+
+void ItemSelectionPropertiesTab::setTotalGroups(const QString& str)
+{
+    d->labelTotalGroups->setAdjustedText(str);
 }
 
 } // namespace Digikam

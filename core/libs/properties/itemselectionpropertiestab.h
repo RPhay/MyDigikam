@@ -41,8 +41,10 @@ public:
 
     void setSelectionCount(const QString& str);
     void setSelectionSize(const QString& str);
+    void setSelectionGroups(const QString& str);
     void setTotalCount(const QString& str);
     void setTotalSize(const QString& str);
+    void setTotalGroups(const QString& str);
 
 private:
 

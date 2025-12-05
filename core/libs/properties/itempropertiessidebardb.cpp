@@ -65,12 +65,14 @@ public:
 
     Private() = default;
 
+public:
+
     bool                       dirtyDesceditTab     = false;
     bool                       hasPrevious          = false;
     bool                       hasNext              = false;
     bool                       hasItemInfoOwnership = false;
 
-    ItemInfoList               currentInfos;
+    ItemInfoList               currentInfos;                    ///< Used while multiple items selected.
     ItemInfoList               allInfos;
     DImageHistory              currentHistory;
     ItemDescEditTab*           desceditTab          = nullptr;
@@ -830,28 +832,34 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
     m_selectionPropertiesTab->setSelectionCount(QLocale().toString(d->currentInfos.count()));
 
     qint64 selectionFileSize = 0;
+    quint64 selectionGroups  = 0;
 
     for (const ItemInfo& info : std::as_const(d->currentInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
+        selectionGroups   += info.hasGroupedImages();
     }
 
     m_selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
+    m_selectionPropertiesTab->setSelectionGroups(QString::number(selectionGroups));
 
     // --Total Selection Properties------------------------------------------------------
 
     m_selectionPropertiesTab->setTotalCount(QLocale().toString(d->allInfos.count()));
 
     qint64 totalFileSize = 0;
+    quint64 totalGroups  = 0;
 
     for (const ItemInfo& info : std::as_const(d->allInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         totalFileSize += info.fileSize();
+        totalGroups   += info.hasGroupedImages();
     }
 
     m_selectionPropertiesTab->setTotalSize(ItemPropertiesTab::humanReadableBytesCount(totalFileSize));
+    m_selectionPropertiesTab->setTotalGroups(QString::number(totalGroups));
 
     return;
 }
