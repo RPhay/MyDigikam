@@ -34,7 +34,6 @@ namespace Digikam
 class DImg;
 class SidebarSplitter;
 class ItemPropertiesTab;
-class ItemSelectionPropertiesTab;
 class ItemPropertiesMetadataTab;
 class ItemPropertiesColorsTab;
 
@@ -107,7 +106,6 @@ protected:
     QStackedWidget*             m_propertiesStackedView     = nullptr;
 
     ItemPropertiesTab*          m_propertiesTab             = nullptr;
-    ItemSelectionPropertiesTab* m_selectionPropertiesTab    = nullptr;
     ItemPropertiesMetadataTab*  m_metadataTab               = nullptr;
     ItemPropertiesColorsTab*    m_colorTab                  = nullptr;
 

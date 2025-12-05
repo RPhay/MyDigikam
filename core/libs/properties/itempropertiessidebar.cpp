@@ -39,7 +39,6 @@
 #include "dmetadata.h"
 #include "dfileoperations.h"
 #include "itempropertiestab.h"
-#include "itemselectionpropertiestab.h"
 #include "itempropertiesmetadatatab.h"
 #include "itempropertiescolorstab.h"
 #include "itempropertiesversionstab.h"
@@ -59,12 +58,10 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
 {
     m_propertiesStackedView  = new QStackedWidget(parent);
     m_propertiesTab          = new ItemPropertiesTab(parent);
-    m_selectionPropertiesTab = new ItemSelectionPropertiesTab(parent);
     m_metadataTab            = new ItemPropertiesMetadataTab(parent);
     m_colorTab               = new ItemPropertiesColorsTab(parent);
 
     m_propertiesStackedView->addWidget(m_propertiesTab);
-    m_propertiesStackedView->addWidget(m_selectionPropertiesTab);
 
     // NOTE: Special case with Showfoto which will only be able to load image, not video.
 
@@ -130,7 +127,6 @@ void ItemPropertiesSideBar::slotNoCurrentItem()
 {
     m_currentUrl = QUrl();
 
-    m_selectionPropertiesTab->setCurrentURL();
     m_propertiesTab->setCurrentURL();
     m_metadataTab->setCurrentURL();
     m_colorTab->setData();

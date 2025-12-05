@@ -17,18 +17,19 @@
 // Qt includes
 
 #include <QUrl>
+#include <QPixmap>
+#include <QTreeWidgetItem>
 
 // Local includes
 
 #include "dexpanderbox.h"
-#include "digikam_export.h"
+#include "iteminfo.h"
+#include "thumbnailloadthread.h"
 
 namespace Digikam
 {
 
-class ItemInfoList;
-
-class DIGIKAM_EXPORT ItemSelectionPropertiesTab : public DExpanderBox
+class ItemSelectionPropertiesTab : public DExpanderBox
 {
     Q_OBJECT
 
@@ -41,10 +42,18 @@ public:
 
     void setSelectionCount(const QString& str);
     void setSelectionSize(const QString& str);
-    void setSelectionGroups(const QString& str);
+    void setSelectionGroups(const ItemInfoList& infos);
     void setTotalCount(const QString& str);
     void setTotalSize(const QString& str);
-    void setTotalGroups(const QString& str);
+    void setTotalGroups(const ItemInfoList& infos);
+
+private Q_SLOTS:
+
+    void slotThumbnail(const LoadingDescription&, const QPixmap&);
+
+private:
+
+    void setThumbnail(QTreeWidgetItem* const item, const QPixmap& pix);
 
 private:
 

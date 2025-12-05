@@ -24,6 +24,7 @@
 #include <QLocale>
 #include <QSplitter>
 #include <QFileInfo>
+#include <QHash>
 #include <QScopedPointer>
 
 // KDE includes
@@ -38,6 +39,7 @@
 #include "coredbinfocontainers.h"
 #include "coredbwatch.h"
 #include "dimg.h"
+#include "itemselectionpropertiestab.h"
 #include "itemattributeswatch.h"
 #include "itemdescedittab.h"
 #include "iteminfo.h"
@@ -67,16 +69,17 @@ public:
 
 public:
 
-    bool                       dirtyDesceditTab     = false;
-    bool                       hasPrevious          = false;
-    bool                       hasNext              = false;
-    bool                       hasItemInfoOwnership = false;
+    bool                        dirtyDesceditTab       = false;
+    bool                        hasPrevious            = false;
+    bool                        hasNext                = false;
+    bool                        hasItemInfoOwnership   = false;
 
-    ItemInfoList               currentInfos;                    ///< Used while multiple items selected.
-    ItemInfoList               allInfos;
-    DImageHistory              currentHistory;
-    ItemDescEditTab*           desceditTab          = nullptr;
-    ItemPropertiesVersionsTab* versionsHistoryTab   = nullptr;
+    ItemInfoList                currentInfos;                    ///< Used while multiple items selected.
+    ItemInfoList                allInfos;
+    DImageHistory               currentHistory;
+    ItemSelectionPropertiesTab* selectionPropertiesTab = nullptr;
+    ItemDescEditTab*            desceditTab            = nullptr;
+    ItemPropertiesVersionsTab*  versionsHistoryTab     = nullptr;
 };
 
 ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarSplitter* const splitter,
@@ -84,8 +87,11 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
     : ItemPropertiesSideBar(parent, splitter, side, mimimizedDefault),
       d                    (new Private)
 {
-    d->desceditTab        = new ItemDescEditTab(parent);
-    d->versionsHistoryTab = new ItemPropertiesVersionsTab(parent);
+    d->selectionPropertiesTab = new ItemSelectionPropertiesTab(parent);
+    m_propertiesStackedView->addWidget(d->selectionPropertiesTab);
+
+    d->desceditTab            = new ItemDescEditTab(parent);
+    d->versionsHistoryTab     = new ItemPropertiesVersionsTab(parent);
 
     appendTab(d->desceditTab,        QIcon::fromTheme(QLatin1String("edit-text-frame-update")), i18nc("@title: database properties", "Captions"));
     appendTab(d->versionsHistoryTab, QIcon::fromTheme(QLatin1String("view-catalog")),           i18nc("@title: database properties", "Versions"));
@@ -238,6 +244,8 @@ void ItemPropertiesSideBarDB::slotNoCurrentItem()
 {
     ItemPropertiesSideBar::slotNoCurrentItem();
 
+    d->selectionPropertiesTab->setCurrentURL();
+
     // All tabs that store the ItemInfo list and access it after selection change
     // must release the image info here. changedTab only handles the active tab!
 
@@ -270,7 +278,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentUrl);
-        m_selectionPropertiesTab->setCurrentURL(m_currentUrl);
+        d->selectionPropertiesTab->setCurrentURL(m_currentUrl);
 
         if      (d->currentInfos.isEmpty())
         {
@@ -284,7 +292,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
         else
         {
             setImageSelectionPropertiesInformation();
-            m_propertiesStackedView->setCurrentWidget(m_selectionPropertiesTab);
+            m_propertiesStackedView->setCurrentWidget(d->selectionPropertiesTab);
         }
 
         m_dirtyPropertiesTab = true;
@@ -829,39 +837,48 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 {
     // --Selection Properties------------------------------------------------------
 
-    m_selectionPropertiesTab->setSelectionCount(QLocale().toString(d->currentInfos.count()));
+    d->selectionPropertiesTab->setSelectionCount(QLocale().toString(d->currentInfos.count()));
 
-    qint64 selectionFileSize = 0;
-    quint64 selectionGroups  = 0;
-    auto restInfos           = d->allInfos;
+    qint64 selectionFileSize   = 0;
+    auto restInfos             = d->allInfos;
+    ItemInfoList selectionGroups;
 
     for (const ItemInfo& info : std::as_const(d->currentInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
-        selectionGroups   += info.hasGroupedImages();
+
+        if (info.hasGroupedImages())
+        {
+            selectionGroups.append(info);
+        }
+
         restInfos.removeAll(info);
     }
 
-    m_selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
-    m_selectionPropertiesTab->setSelectionGroups(QString::number(selectionGroups));
+    d->selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
+    d->selectionPropertiesTab->setSelectionGroups(selectionGroups);
 
     // --Total Selection Properties------------------------------------------------------
 
-    m_selectionPropertiesTab->setTotalCount(QLocale().toString(d->allInfos.count()));
+    d->selectionPropertiesTab->setTotalCount(QLocale().toString(d->allInfos.count()));
 
-    qint64 totalFileSize = selectionFileSize;
-    quint64 totalGroups  = selectionGroups;
+    qint64 totalFileSize     = selectionFileSize;
+    ItemInfoList totalGroups = selectionGroups;
 
     for (const ItemInfo& info : std::as_const(restInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         totalFileSize += info.fileSize();
-        totalGroups   += info.hasGroupedImages();
+
+        if (info.hasGroupedImages())
+        {
+            totalGroups.append(info);
+        }
     }
 
-    m_selectionPropertiesTab->setTotalSize(ItemPropertiesTab::humanReadableBytesCount(totalFileSize));
-    m_selectionPropertiesTab->setTotalGroups(QString::number(totalGroups));
+    d->selectionPropertiesTab->setTotalSize(ItemPropertiesTab::humanReadableBytesCount(totalFileSize));
+    d->selectionPropertiesTab->setTotalGroups(totalGroups);
 
     return;
 }
