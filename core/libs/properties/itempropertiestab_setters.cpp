@@ -23,7 +23,7 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
     if (url.isEmpty())
     {
         d->labelFile->setAdjustedText();
-        d->labelFolder->setAdjustedText();
+        d->labelFolder->clear();
         d->labelSymlink->setAdjustedText();
         d->labelFileModifiedDate->setAdjustedText();
         d->labelFileSize->setAdjustedText();
@@ -84,7 +84,7 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
     QFileInfo info(url.toLocalFile());
 
     d->labelFile->setAdjustedText(info.fileName());
-    d->labelFolder->setAdjustedText(QDir::toNativeSeparators(info.path()));
+    d->labelFolder->setText(QDir::toNativeSeparators(info.path()));
     d->labelSymlink->setAdjustedText(!info.isSymLink() ? i18nc("@info: item properties", "No")
                                                        : QDir::toNativeSeparators(info.canonicalPath()));
 }
@@ -120,7 +120,7 @@ void ItemPropertiesTab::setFileName(const QString& str)
 
 void ItemPropertiesTab::setFileFolder(const QString& str)
 {
-    d->labelFolder->setAdjustedText(str);
+    d->labelFolder->setText(str);
 }
 
 void ItemPropertiesTab::setFileModifiedDate(const QString& str)

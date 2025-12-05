@@ -69,7 +69,8 @@ public:
     DTextLabelName*    grouped                      = nullptr;
 
     DTextLabelValue*   labelFile                    = nullptr;
-    DTextLabelValue*   labelFolder                  = nullptr;
+    // Special case for the file path. See bug #512081
+    QLabel*            labelFolder                  = nullptr;
     DTextLabelValue*   labelSymlink                 = nullptr;
     DTextLabelValue*   labelFileModifiedDate        = nullptr;
     DTextLabelValue*   labelFileSize                = nullptr;
@@ -106,13 +107,11 @@ public:
     DTextLabelValue*   labelVideoAudioChannelType   = nullptr;
     DTextLabelValue*   labelVideoAudioCodec         = nullptr;
 
-    // NOTE: special case for the caption and title. See bug #460134
+    // NOTE: special case for the digiKam text properties. See bug #460134
     QLabel*            labelCaption                 = nullptr;
     QLabel*            labelTitle                   = nullptr;
-
     QLabel*            labelTags                    = nullptr;
     QLabel*            labelPeoples                 = nullptr;
-
     QLabel*            labelLocation                = nullptr;
     QLabel*            labelRights                  = nullptr;
 

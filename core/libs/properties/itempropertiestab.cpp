@@ -46,7 +46,8 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelFile->setFont(fnt);
     d->labelFile->setAlignment(Qt::AlignCenter);
 
-    d->labelFolder                     = new DTextLabelValue(QString(), w1);
+    d->labelFolder                     = new QLabel(QString(), w1);
+    d->labelFolder->setWordWrap(true);
     d->labelSymlink                    = new DTextLabelValue(QString(), w1);
     d->labelFileModifiedDate           = new DTextLabelValue(QString(), w1);
     d->labelFileSize                   = new DTextLabelValue(QString(), w1);
@@ -58,7 +59,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     glay1->addWidget(d->labelFile,             0, 0, 1, 2);
     glay1->addWidget(folder,                   1, 0, 1, 1);
-    glay1->addWidget(d->labelFolder,           1, 1, 1, 1);
+    glay1->addWidget(d->labelFolder,           1, 1, 1, 1, Qt::AlignRight);
     glay1->addWidget(symlink,                  2, 0, 1, 1);
     glay1->addWidget(d->labelSymlink,          2, 1, 1, 1);
     glay1->addWidget(modifiedDate,             3, 0, 1, 1);
@@ -305,9 +306,9 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelPeoples->setWordWrap(true);
 
     glay6->addWidget(d->tags,         0, 0, 1, 1);
-    glay6->addWidget(d->labelTags,    0, 1, 1, 1);
+    glay6->addWidget(d->labelTags,    0, 1, 1, 1, Qt::AlignRight);
     glay6->addWidget(d->peoples,      1, 0, 1, 1);
-    glay6->addWidget(d->labelPeoples, 1, 1, 1, 1);
+    glay6->addWidget(d->labelPeoples, 1, 1, 1, 1, Qt::AlignRight);
     glay6->setContentsMargins(spacing, spacing, spacing, spacing);
     glay6->setColumnStretch(0, 10);
     glay6->setColumnStretch(1, 25);
@@ -471,7 +472,7 @@ QString ItemPropertiesTab::propertiesToText() const
     QString data;
 
     appendProperty(data, i18n("File")                    , d->labelFile->adjustedText()                 );
-    appendProperty(data, i18n("Folder")                  , d->labelFolder->adjustedText()               );
+    appendProperty(data, i18n("Folder")                  , d->labelFolder->text()                       );
     appendProperty(data, i18n("Symlink")                 , d->labelSymlink->adjustedText()              );
     appendProperty(data, i18n("Modified Date")           , d->labelFileModifiedDate->adjustedText()     );
     appendProperty(data, i18n("Size")                    , d->labelFileSize->adjustedText()             );
