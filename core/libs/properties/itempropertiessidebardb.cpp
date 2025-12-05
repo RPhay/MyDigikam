@@ -833,12 +833,14 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     qint64 selectionFileSize = 0;
     quint64 selectionGroups  = 0;
+    auto restInfos           = d->allInfos;
 
     for (const ItemInfo& info : std::as_const(d->currentInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
         selectionGroups   += info.hasGroupedImages();
+        restInfos.removeAll(info);
     }
 
     m_selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
@@ -848,10 +850,10 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     m_selectionPropertiesTab->setTotalCount(QLocale().toString(d->allInfos.count()));
 
-    qint64 totalFileSize = 0;
-    quint64 totalGroups  = 0;
+    qint64 totalFileSize = selectionFileSize;
+    quint64 totalGroups  = selectionGroups;
 
-    for (const ItemInfo& info : std::as_const(d->allInfos))
+    for (const ItemInfo& info : std::as_const(restInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         totalFileSize += info.fileSize();
