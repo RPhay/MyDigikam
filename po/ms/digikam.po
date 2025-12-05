@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:41+0000\n"
+"POT-Creation-Date: 2025-12-05 00:40+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -2954,6 +2954,7 @@ msgstr "Album"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -3857,6 +3858,7 @@ msgstr "Laluan"
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
+#: core/libs/properties/itempropertiestab.cpp:477
 #, fuzzy, kde-format
 msgid "Size"
 msgstr "Saiz"
@@ -3954,6 +3956,7 @@ msgstr "Tinggi"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:102
+#: core/libs/properties/itempropertiestab.cpp:482
 #, fuzzy, kde-format
 msgid "Dimensions"
 msgstr "Format Fail"
@@ -7751,6 +7754,7 @@ msgstr "Keseimbangan Warna"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
+#: core/libs/properties/itempropertiestab.cpp:501
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -16591,7 +16595,7 @@ msgstr "Huraian"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:275
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:277
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -18627,7 +18631,7 @@ msgstr "Imej"
 msgid ">"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
+#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:124
 #, fuzzy, kde-format
 msgctxt "@title: column"
 msgid "Caption"
@@ -18784,7 +18788,7 @@ msgstr "Huraian"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:276
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:278
 #, fuzzy, kde-format
 msgid "Output Destination Path"
 msgstr "Tetapan"
@@ -21560,13 +21564,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Maklumat Imej"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:214
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Paparan slaid"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:215
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -23152,6 +23156,7 @@ msgid "Date"
 msgstr "Tarikh"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, fuzzy, kde-format
@@ -25782,63 +25787,63 @@ msgid "No Color"
 msgstr "Warna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Merah"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Purata"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Kuning"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Hijau"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Biru"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Skala kelabu"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Undur"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -25851,27 +25856,28 @@ msgid "Picks: "
 msgstr "Bata "
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:398
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:269
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr "Bata "
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:251
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Set semula"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:257
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "Menaik"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:416
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:263
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
@@ -25970,31 +25976,7 @@ msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Bata "
 
-#: core/libs/album/treeview/labelstreeview_init.cpp:84
-#, fuzzy, kde-format
-msgctxt "@item: pick tree"
-msgid "No Pick"
-msgstr "Bata "
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:85
-#, fuzzy, kde-format
-msgctxt "@item: pick tree"
-msgid "Rejected Item"
-msgstr "Set semula"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:86
-#, fuzzy, kde-format
-msgctxt "@item: pick tree"
-msgid "Pending Item"
-msgstr "Menaik"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:87
-#, fuzzy, kde-format
-msgctxt "@item: pick tree"
-msgid "Accepted Item"
-msgstr "Ambang:"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:108
+#: core/libs/album/treeview/labelstreeview_init.cpp:96
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
@@ -35656,8 +35638,8 @@ msgid "unchanged"
 msgstr "Purata"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
-#: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:648
+#: core/libs/properties/itempropertiessidebar.cpp:221
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -35666,13 +35648,13 @@ msgstr "Boleh didapatkan:"
 #: core/libs/properties/import/importitempropertiestab.cpp:348
 #: core/libs/properties/import/importitempropertiestab.cpp:363
 #: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:706
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:811
-#: core/libs/properties/itempropertiessidebardb.cpp:813
-#: core/libs/properties/itempropertiestab_setters.cpp:83
+#: core/libs/properties/itempropertiessidebar.cpp:282
+#: core/libs/properties/itempropertiessidebar.cpp:285
+#: core/libs/properties/itempropertiessidebardb.cpp:710
+#: core/libs/properties/itempropertiessidebardb.cpp:712
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -35681,12 +35663,12 @@ msgstr "Tidak"
 #: core/libs/properties/import/importitempropertiestab.cpp:352
 #: core/libs/properties/import/importitempropertiestab.cpp:367
 #: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:705
-#: core/libs/properties/itempropertiessidebardb.cpp:707
-#: core/libs/properties/itempropertiessidebardb.cpp:810
-#: core/libs/properties/itempropertiessidebardb.cpp:812
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebar.cpp:284
+#: core/libs/properties/itempropertiessidebardb.cpp:709
+#: core/libs/properties/itempropertiessidebardb.cpp:711
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -35877,31 +35859,41 @@ msgstr ""
 msgid "XMP"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:73
+#: core/libs/properties/itempropertiessidebar.cpp:78
+#, fuzzy, kde-format
+msgid "Copy the all properties in clipboard"
+msgstr "Koordinat Kutub"
+
+#: core/libs/properties/itempropertiessidebar.cpp:82
+#, fuzzy, kde-format
+msgid "Open item in the file manager"
+msgstr "Buka dalam Pengurus Fail"
+
+#: core/libs/properties/itempropertiessidebar.cpp:84
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "Ciri-ciri"
 
-#: core/libs/properties/itempropertiessidebar.cpp:74
+#: core/libs/properties/itempropertiessidebar.cpp:85
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Metadata"
 msgstr "Edit..."
 
-#: core/libs/properties/itempropertiessidebar.cpp:75
+#: core/libs/properties/itempropertiessidebar.cpp:86
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "Warna"
 
-#: core/libs/properties/itempropertiessidebar.cpp:80
+#: core/libs/properties/itempropertiessidebar.cpp:91
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Map"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:232
+#: core/libs/properties/itempropertiessidebar.cpp:246
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, fuzzy, kde-format
@@ -35909,43 +35901,43 @@ msgctxt "@info: item properties"
 msgid "RAW Image"
 msgstr "Imej"
 
-#: core/libs/properties/itempropertiessidebar.cpp:235
+#: core/libs/properties/itempropertiessidebar.cpp:249
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:250
-#: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:682
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebar.cpp:264
+#: core/libs/properties/itempropertiessidebar.cpp:271
+#: core/libs/properties/itempropertiessidebardb.cpp:686
+#: core/libs/properties/itempropertiessidebardb.cpp:699
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "Tidak diketahui"
 
-#: core/libs/properties/itempropertiessidebar.cpp:251
+#: core/libs/properties/itempropertiessidebar.cpp:265
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:704
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:708
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:738
+#: core/libs/properties/itempropertiessidebar.cpp:316
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:743
+#: core/libs/properties/itempropertiessidebar.cpp:321
+#: core/libs/properties/itempropertiessidebardb.cpp:747
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -35963,7 +35955,23 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Menurun"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:687
+#: core/libs/properties/itempropertiessidebardb.cpp:93
+#, fuzzy, kde-format
+msgid "Open the Decription tab for editing"
+msgstr "Maklumat"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:97
+#, fuzzy, kde-format
+msgid "Open the Tags tab for editing"
+msgstr "Akan menghapuskan fail yang dipilih"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:105
+#, kde-format
+msgid "Open the Information tab for editing"
+msgstr ""
+
+#: core/libs/properties/itempropertiessidebardb.cpp:691
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -36113,6 +36121,209 @@ msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Tinggi"
 
+#: core/libs/properties/itempropertiestab.cpp:473
+#: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
+#, fuzzy, kde-format
+msgid "File"
+msgstr "Fail"
+
+#: core/libs/properties/itempropertiestab.cpp:474
+#, fuzzy, kde-format
+msgid "Folder"
+msgstr "Carian Baru"
+
+#: core/libs/properties/itempropertiestab.cpp:475
+#, kde-format
+msgid "Symlink"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:476
+#, fuzzy, kde-format
+msgid "Modified Date"
+msgstr "Nama Fail"
+
+#: core/libs/properties/itempropertiestab.cpp:478
+#, fuzzy, kde-format
+msgid "Owner"
+msgstr "Pemilik"
+
+#: core/libs/properties/itempropertiestab.cpp:479
+#, fuzzy, kde-format
+msgid "Permissions"
+msgstr "Menurun"
+
+#: core/libs/properties/itempropertiestab.cpp:481
+#, kde-format
+msgid "Mime"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:483
+#, fuzzy, kde-format
+msgid "Ratio"
+msgstr "Putaran:"
+
+#: core/libs/properties/itempropertiestab.cpp:484
+#, fuzzy, kde-format
+msgid "Bit Depth"
+msgstr "Kedalaman:"
+
+#: core/libs/properties/itempropertiestab.cpp:485
+#, fuzzy, kde-format
+msgid "Color Mode"
+msgstr "Model Warna"
+
+#: core/libs/properties/itempropertiestab.cpp:486
+#, kde-format
+msgid "Has Sidecar"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:487
+#, kde-format
+msgid "Has GPS"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:488
+#, fuzzy, kde-format
+msgid "Versioned"
+msgstr "Menurun"
+
+#: core/libs/properties/itempropertiestab.cpp:489
+#, fuzzy, kde-format
+msgid "Grouped"
+msgstr "Kumpulan"
+
+#: core/libs/properties/itempropertiestab.cpp:491
+#, kde-format
+msgid "Make"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:492
+#, fuzzy, kde-format
+msgid "Model"
+msgstr "Model"
+
+#: core/libs/properties/itempropertiestab.cpp:493
+#, fuzzy, kde-format
+msgid "Date Time"
+msgstr "Hitam Putih"
+
+#: core/libs/properties/itempropertiestab.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#, kde-format
+msgid "Lens"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:495
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#, fuzzy, kde-format
+msgid "Aperture"
+msgstr "Lubang Bukaan"
+
+#: core/libs/properties/itempropertiestab.cpp:496
+#, fuzzy, kde-format
+msgid "Focal Length"
+msgstr "Panjang:"
+
+#: core/libs/properties/itempropertiestab.cpp:497
+#, fuzzy, kde-format
+msgid "Exposure Time"
+msgstr "Pembetulan Warna"
+
+#: core/libs/properties/itempropertiestab.cpp:498
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#, kde-format
+msgid "Sensitivity"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:499
+#, fuzzy, kde-format
+msgid "Exposure Mode"
+msgstr "Pembetulan Warna"
+
+#: core/libs/properties/itempropertiestab.cpp:500
+#, fuzzy, kde-format
+msgid "Flash"
+msgstr "Kamera"
+
+#: core/libs/properties/itempropertiestab.cpp:503
+#: core/utilities/setup/setuptooltip.cpp:256
+#, fuzzy, kde-format
+msgid "Video Aspect Ratio"
+msgstr "Kekalkan nisbah aspek"
+
+#: core/libs/properties/itempropertiestab.cpp:504
+#: core/utilities/setup/setuptooltip.cpp:268
+#, fuzzy, kde-format
+msgid "Video Duration"
+msgstr "Format Fail"
+
+#: core/libs/properties/itempropertiestab.cpp:505
+#: core/utilities/setup/setuptooltip.cpp:271
+#, fuzzy, kde-format
+msgid "Video Frame Rate"
+msgstr "Format Fail"
+
+#: core/libs/properties/itempropertiestab.cpp:506
+#, fuzzy, kde-format
+msgid "Video Video Codec"
+msgstr "Paparkan"
+
+#: core/libs/properties/itempropertiestab.cpp:507
+#, fuzzy, kde-format
+msgid "Video Audio Bit Rate"
+msgstr "Format Fail"
+
+#: core/libs/properties/itempropertiestab.cpp:508
+#, fuzzy, kde-format
+msgid "Video Audio Channel Type"
+msgstr "Paparkan"
+
+#: core/libs/properties/itempropertiestab.cpp:509
+#, fuzzy, kde-format
+msgid "Video Audio Codec"
+msgstr "Paparkan"
+
+#: core/libs/properties/itempropertiestab.cpp:511
+#, fuzzy, kde-format
+msgid "Caption"
+msgstr "Kapsyen"
+
+#: core/libs/properties/itempropertiestab.cpp:512
+#, fuzzy, kde-format
+msgid "Title"
+msgstr "Tajuk"
+
+#: core/libs/properties/itempropertiestab.cpp:514
+#, fuzzy, kde-format
+msgid "Peoples"
+msgstr "Nama:"
+
+#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/template/templatepanel.cpp:209
+#: core/libs/template/templateviewer.cpp:127
+#, kde-format
+msgid "Rights"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:517
+#, fuzzy, kde-format
+msgid "Pick"
+msgstr "Bata "
+
+#: core/libs/properties/itempropertiestab.cpp:518
+#, fuzzy, kde-format
+msgid "Color"
+msgstr "Warna"
+
+#: core/libs/properties/itempropertiestab.cpp:519
+#: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#, fuzzy, kde-format
+msgid "Rating"
+msgstr "Kadaran"
+
 #: core/libs/properties/itempropertiestab_helpers.cpp:210
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
@@ -36125,7 +36336,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab_setters.cpp:385
+#: core/libs/properties/itempropertiestab_setters.cpp:401
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -37348,7 +37559,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/libs/tags/engine/tagsactionmngr_color.cpp:32
-#: core/libs/tags/engine/tagsactionmngr_color.cpp:87
+#: core/libs/tags/engine/tagsactionmngr_color.cpp:89
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr ""
@@ -38136,12 +38347,6 @@ msgid ""
 "<p>The Instructions field should be used to list editorial instructions "
 "concerning the use of photograph.</p><p>With IPTC, this field is limited to "
 "256 characters.</p>"
-msgstr ""
-
-#: core/libs/template/templatepanel.cpp:209
-#: core/libs/template/templateviewer.cpp:127
-#, kde-format
-msgid "Rights"
 msgstr ""
 
 #: core/libs/template/templatepanel.cpp:220
@@ -39636,7 +39841,7 @@ msgstr ""
 msgid "Skip automatically"
 msgstr "Balikkan menegak"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:91
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:92
 #, kde-format
 msgid "No options available"
 msgstr ""
@@ -41803,41 +42008,29 @@ msgstr ""
 msgid "XMP text Files (*.xmp)"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Tiada"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
+#: core/libs/widgets/metadata/labels/colorlabelwidget_menu.cpp:23
 #, fuzzy, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "Warna"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
-#, fuzzy, kde-format
-msgctxt "@info: pick label name"
-msgid "None"
-msgstr "Tiada"
-
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-msgctxt "@info: pick label selector"
-msgid "Pick Label: %1"
-msgstr "Nama:"
-
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
+#: core/libs/widgets/metadata/labels/picklabelwidget_menu.cpp:23
 #, fuzzy, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Bata "
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:69
 #, fuzzy, kde-format
-msgid "Rating"
-msgstr "Kadaran"
+msgctxt "@info: pick label selector"
+msgid "Pick Label: %1"
+msgstr "Nama:"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:28
 #, fuzzy, kde-format
@@ -48698,12 +48891,6 @@ msgstr ""
 msgid "Lens of the camera"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
-#, fuzzy, kde-format
-msgid "Aperture"
-msgstr "Lubang Bukaan"
-
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:475
 #: core/utilities/searchwindow/searchfields_createfield.cpp:494
@@ -48730,12 +48917,6 @@ msgstr ""
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:70
 #, kde-format
 msgid "Exposure mode"
-msgstr ""
-
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
-#, kde-format
-msgid "Sensitivity"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:72
@@ -48994,11 +49175,6 @@ msgid ""
 "Name of the parent directory, additional '.' characters move up in the "
 "directory hierarchy"
 msgstr ""
-
-#: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
-#, fuzzy, kde-format
-msgid "File"
-msgstr "Fail"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:41
 #, kde-format
@@ -58959,11 +59135,6 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
-msgid "Lens"
-msgstr ""
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
-#, kde-format
 msgid "The type of the lens"
 msgstr ""
 
@@ -63775,11 +63946,6 @@ msgstr ""
 msgid "Audio/Video Information"
 msgstr "Maklumat Peranti"
 
-#: core/utilities/setup/setuptooltip.cpp:256
-#, fuzzy, kde-format
-msgid "Video Aspect Ratio"
-msgstr "Kekalkan nisbah aspek"
-
 #: core/utilities/setup/setuptooltip.cpp:257
 #: core/utilities/setup/setuptooltip.cpp:272
 #, kde-format
@@ -63801,20 +63967,10 @@ msgstr ""
 msgid "Set this option to display the Audio Codec of the Video."
 msgstr ""
 
-#: core/utilities/setup/setuptooltip.cpp:268
-#, fuzzy, kde-format
-msgid "Video Duration"
-msgstr "Format Fail"
-
 #: core/utilities/setup/setuptooltip.cpp:269
 #, kde-format
 msgid "Set this option to display the Duration of the Video."
 msgstr ""
-
-#: core/utilities/setup/setuptooltip.cpp:271
-#, fuzzy, kde-format
-msgid "Video Frame Rate"
-msgstr "Format Fail"
 
 #: core/utilities/setup/setuptooltip.cpp:275
 #, kde-format
@@ -63970,6 +64126,31 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "Sharuzzaman Ahmat Raslan"
+
+#, fuzzy
+#~ msgctxt "@item: pick tree"
+#~ msgid "No Pick"
+#~ msgstr "Bata "
+
+#, fuzzy
+#~ msgctxt "@item: pick tree"
+#~ msgid "Rejected Item"
+#~ msgstr "Set semula"
+
+#, fuzzy
+#~ msgctxt "@item: pick tree"
+#~ msgid "Pending Item"
+#~ msgstr "Menaik"
+
+#, fuzzy
+#~ msgctxt "@item: pick tree"
+#~ msgid "Accepted Item"
+#~ msgstr "Ambang:"
+
+#, fuzzy
+#~ msgctxt "@info: pick label name"
+#~ msgid "None"
+#~ msgstr "Tiada"
 
 #, fuzzy
 #~ msgctxt "@action"
@@ -64847,10 +65028,6 @@ msgstr "Sharuzzaman Ahmat Raslan"
 #~ msgstr "Songsangkan Warna"
 
 #, fuzzy
-#~ msgid "Folders"
-#~ msgstr "Carian Baru"
-
-#, fuzzy
 #~ msgid "New..."
 #~ msgstr "Baru..."
 
@@ -65251,10 +65428,6 @@ msgstr "Sharuzzaman Ahmat Raslan"
 #, fuzzy
 #~ msgid "Formatted text"
 #~ msgstr "&Eksport"
-
-#, fuzzy
-#~ msgid "Color"
-#~ msgstr "Warna"
 
 #, fuzzy
 #~ msgid "Missing encoding tools"

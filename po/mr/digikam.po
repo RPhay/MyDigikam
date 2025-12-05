@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:41+0000\n"
+"POT-Creation-Date: 2025-12-05 00:40+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -3099,6 +3099,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4026,6 +4027,7 @@ msgstr "मार्ग"
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
+#: core/libs/properties/itempropertiestab.cpp:477
 #, kde-format
 msgid "Size"
 msgstr "आकार"
@@ -4124,6 +4126,7 @@ msgstr "उंची"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:102
+#: core/libs/properties/itempropertiestab.cpp:482
 #, fuzzy, kde-format
 msgid "Dimensions"
 msgstr "परिमाणे"
@@ -8022,6 +8025,7 @@ msgstr "रंग पद्धत"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
+#: core/libs/properties/itempropertiestab.cpp:501
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -17129,7 +17133,7 @@ msgstr "लक्ष्य :"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:275
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:277
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@title:window"
@@ -19246,7 +19250,7 @@ msgstr "प्रतिमा"
 msgid ">"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
+#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:124
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: column"
@@ -19410,7 +19414,7 @@ msgstr "लक्ष्य :"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:276
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:278
 #, fuzzy, kde-format
 msgid "Output Destination Path"
 msgstr "संयोजना"
@@ -22270,13 +22274,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "निर्यात"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:214
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "स्लाइडशो"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:215
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -23925,6 +23929,7 @@ msgid "Date"
 msgstr "दिनांक"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, fuzzy, kde-format
@@ -26619,7 +26624,7 @@ msgid "No Color"
 msgstr "रंग"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -26627,14 +26632,14 @@ msgid "Red"
 msgstr "लाल"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "क्षेत्र"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -26642,7 +26647,7 @@ msgid "Yellow"
 msgstr "पिवळा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -26650,7 +26655,7 @@ msgid "Green"
 msgstr "हिरवा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -26658,7 +26663,7 @@ msgid "Blue"
 msgstr "निळा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
 #, fuzzy, kde-format
 #| msgid "Argentina"
 msgctxt "@info: color label name"
@@ -26666,7 +26671,7 @@ msgid "Magenta"
 msgstr "अर्जेन्टिना"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -26674,7 +26679,7 @@ msgid "Gray"
 msgstr "धूसर"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -26682,7 +26687,7 @@ msgid "Black"
 msgstr "काळा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -26696,20 +26701,21 @@ msgid "Picks: "
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:398
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:269
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:251
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "माइम प्रकार निवडा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:257
 #, fuzzy, kde-format
 #| msgid "Pending"
 msgctxt "@info: pick label name"
@@ -26717,7 +26723,7 @@ msgid "Pending"
 msgstr "अनिर्णायक"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:416
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:263
 #, fuzzy, kde-format
 #| msgid "Accepted"
 msgctxt "@info: pick label name"
@@ -26820,31 +26826,7 @@ msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview_init.cpp:84
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "No Pick"
-msgstr ""
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:85
-#, fuzzy, kde-format
-msgctxt "@item: pick tree"
-msgid "Rejected Item"
-msgstr "माइम प्रकार निवडा"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:86
-#, fuzzy, kde-format
-msgctxt "@item: pick tree"
-msgid "Pending Item"
-msgstr "अनिर्णायक"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:87
-#, fuzzy, kde-format
-msgctxt "@item: pick tree"
-msgid "Accepted Item"
-msgstr "स्वीकृत"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:108
+#: core/libs/album/treeview/labelstreeview_init.cpp:96
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@item: color tree"
@@ -36788,8 +36770,8 @@ msgid "unchanged"
 msgstr "न बदललेले"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
-#: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:648
+#: core/libs/properties/itempropertiessidebar.cpp:221
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -36799,13 +36781,13 @@ msgstr "अनुपलब्ध"
 #: core/libs/properties/import/importitempropertiestab.cpp:348
 #: core/libs/properties/import/importitempropertiestab.cpp:363
 #: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:706
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:811
-#: core/libs/properties/itempropertiessidebardb.cpp:813
-#: core/libs/properties/itempropertiestab_setters.cpp:83
+#: core/libs/properties/itempropertiessidebar.cpp:282
+#: core/libs/properties/itempropertiessidebar.cpp:285
+#: core/libs/properties/itempropertiessidebardb.cpp:710
+#: core/libs/properties/itempropertiessidebardb.cpp:712
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: item properties"
@@ -36815,12 +36797,12 @@ msgstr "नाही"
 #: core/libs/properties/import/importitempropertiestab.cpp:352
 #: core/libs/properties/import/importitempropertiestab.cpp:367
 #: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:705
-#: core/libs/properties/itempropertiessidebardb.cpp:707
-#: core/libs/properties/itempropertiessidebardb.cpp:810
-#: core/libs/properties/itempropertiessidebardb.cpp:812
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebar.cpp:284
+#: core/libs/properties/itempropertiessidebardb.cpp:709
+#: core/libs/properties/itempropertiessidebardb.cpp:711
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37019,27 +37001,38 @@ msgstr ""
 msgid "XMP"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:73
+#: core/libs/properties/itempropertiessidebar.cpp:78
+#, fuzzy, kde-format
+#| msgid "Copy to Clipboard"
+msgid "Copy the all properties in clipboard"
+msgstr "चिकटपट्टीवर प्रत करा"
+
+#: core/libs/properties/itempropertiessidebar.cpp:82
+#, fuzzy, kde-format
+msgid "Open item in the file manager"
+msgstr "संचयीका उघडा : \"%1\""
+
+#: core/libs/properties/itempropertiessidebar.cpp:84
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/properties/itempropertiessidebar.cpp:74
+#: core/libs/properties/itempropertiessidebar.cpp:85
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Metadata"
 msgstr "संपादित करा..."
 
-#: core/libs/properties/itempropertiessidebar.cpp:75
+#: core/libs/properties/itempropertiessidebar.cpp:86
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "रंग"
 
-#: core/libs/properties/itempropertiessidebar.cpp:80
+#: core/libs/properties/itempropertiessidebar.cpp:91
 #, fuzzy, kde-format
 #| msgctxt "@action Switch to map view"
 #| msgid "Map"
@@ -37047,7 +37040,7 @@ msgctxt "@title: item properties"
 msgid "Map"
 msgstr "नकाशा"
 
-#: core/libs/properties/itempropertiessidebar.cpp:232
+#: core/libs/properties/itempropertiessidebar.cpp:246
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, fuzzy, kde-format
@@ -37055,43 +37048,43 @@ msgctxt "@info: item properties"
 msgid "RAW Image"
 msgstr "प्रतिमा"
 
-#: core/libs/properties/itempropertiessidebar.cpp:235
+#: core/libs/properties/itempropertiessidebar.cpp:249
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:250
-#: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:682
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebar.cpp:264
+#: core/libs/properties/itempropertiessidebar.cpp:271
+#: core/libs/properties/itempropertiessidebardb.cpp:686
+#: core/libs/properties/itempropertiessidebardb.cpp:699
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "अपरिचीत"
 
-#: core/libs/properties/itempropertiessidebar.cpp:251
+#: core/libs/properties/itempropertiessidebar.cpp:265
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:704
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:708
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1bpp"
 
-#: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:738
+#: core/libs/properties/itempropertiessidebar.cpp:316
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "प्रतिमा"
 
-#: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:743
+#: core/libs/properties/itempropertiessidebar.cpp:321
+#: core/libs/properties/itempropertiessidebardb.cpp:747
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -37110,7 +37103,24 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "विस्तारण:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:687
+#: core/libs/properties/itempropertiessidebardb.cpp:93
+#, fuzzy, kde-format
+#| msgid "Information"
+msgid "Open the Decription tab for editing"
+msgstr "माहिती"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:97
+#, fuzzy, kde-format
+msgid "Open the Tags tab for editing"
+msgstr "%1 घटक निवडला"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:105
+#, kde-format
+msgid "Open the Information tab for editing"
+msgstr ""
+
+#: core/libs/properties/itempropertiessidebardb.cpp:691
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -37263,6 +37273,220 @@ msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "उजवे"
 
+#: core/libs/properties/itempropertiestab.cpp:473
+#: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
+#, kde-format
+msgid "File"
+msgstr "फाईल"
+
+#: core/libs/properties/itempropertiestab.cpp:474
+#, fuzzy, kde-format
+msgid "Folder"
+msgstr "संचयीका"
+
+#: core/libs/properties/itempropertiestab.cpp:475
+#, kde-format
+msgid "Symlink"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:476
+#, fuzzy, kde-format
+#| msgid "Modified"
+msgid "Modified Date"
+msgstr "सुधारले"
+
+#: core/libs/properties/itempropertiestab.cpp:478
+#, fuzzy, kde-format
+#| msgctxt "Owner of the file"
+#| msgid "Owner"
+msgid "Owner"
+msgstr "मालक"
+
+#: core/libs/properties/itempropertiestab.cpp:479
+#, fuzzy, kde-format
+msgid "Permissions"
+msgstr "परवानगी"
+
+#: core/libs/properties/itempropertiestab.cpp:481
+#, kde-format
+msgid "Mime"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:483
+#, fuzzy, kde-format
+msgid "Ratio"
+msgstr "फिरवणे"
+
+#: core/libs/properties/itempropertiestab.cpp:484
+#, fuzzy, kde-format
+msgid "Bit Depth"
+msgstr "रंग खोली"
+
+#: core/libs/properties/itempropertiestab.cpp:485
+#, fuzzy, kde-format
+msgid "Color Mode"
+msgstr "रंग पद्धत"
+
+#: core/libs/properties/itempropertiestab.cpp:486
+#, kde-format
+msgid "Has Sidecar"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:487
+#, kde-format
+msgid "Has GPS"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:488
+#, fuzzy, kde-format
+msgid "Versioned"
+msgstr "विस्तारण:"
+
+#: core/libs/properties/itempropertiestab.cpp:489
+#, fuzzy, kde-format
+#| msgid "Group"
+msgid "Grouped"
+msgstr "समूह"
+
+#: core/libs/properties/itempropertiestab.cpp:491
+#, kde-format
+msgid "Make"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:492
+#, fuzzy, kde-format
+#| msgid "Model"
+msgid "Model"
+msgstr "मॉडेल"
+
+#: core/libs/properties/itempropertiestab.cpp:493
+#, fuzzy, kde-format
+#| msgid "Date & Time"
+msgid "Date Time"
+msgstr "दिनांक व वेळ"
+
+#: core/libs/properties/itempropertiestab.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#, kde-format
+msgid "Lens"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:495
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#, fuzzy, kde-format
+msgid "Aperture"
+msgstr "एपेर्चर :"
+
+#: core/libs/properties/itempropertiestab.cpp:496
+#, fuzzy, kde-format
+msgid "Focal Length"
+msgstr "फोकल लांबी :"
+
+#: core/libs/properties/itempropertiestab.cpp:497
+#, fuzzy, kde-format
+msgid "Exposure Time"
+msgstr "एक्सपोजर वेळ :"
+
+#: core/libs/properties/itempropertiestab.cpp:498
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#, kde-format
+msgid "Sensitivity"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:499
+#, fuzzy, kde-format
+msgid "Exposure Mode"
+msgstr "एक्सपोजर वेळ :"
+
+#: core/libs/properties/itempropertiestab.cpp:500
+#, fuzzy, kde-format
+msgid "Flash"
+msgstr "सुधारले"
+
+#: core/libs/properties/itempropertiestab.cpp:503
+#: core/utilities/setup/setuptooltip.cpp:256
+#, fuzzy, kde-format
+msgid "Video Aspect Ratio"
+msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
+
+#: core/libs/properties/itempropertiestab.cpp:504
+#: core/utilities/setup/setuptooltip.cpp:268
+#, fuzzy, kde-format
+msgid "Video Duration"
+msgstr "कालावधी :"
+
+#: core/libs/properties/itempropertiestab.cpp:505
+#: core/utilities/setup/setuptooltip.cpp:271
+#, kde-format
+msgid "Video Frame Rate"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:506
+#, fuzzy, kde-format
+#| msgid "Audio Files"
+msgid "Video Video Codec"
+msgstr "ऑडिओ फाईल्स"
+
+#: core/libs/properties/itempropertiestab.cpp:507
+#, fuzzy, kde-format
+msgid "Video Audio Bit Rate"
+msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
+
+#: core/libs/properties/itempropertiestab.cpp:508
+#, kde-format
+msgid "Video Audio Channel Type"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:509
+#, fuzzy, kde-format
+#| msgid "Audio Files"
+msgid "Video Audio Codec"
+msgstr "ऑडिओ फाईल्स"
+
+#: core/libs/properties/itempropertiestab.cpp:511
+#, fuzzy, kde-format
+#| msgid "Caption"
+msgid "Caption"
+msgstr "कॅप्शन"
+
+#: core/libs/properties/itempropertiestab.cpp:512
+#, fuzzy, kde-format
+#| msgid "Title"
+msgid "Title"
+msgstr "शिर्षक"
+
+#: core/libs/properties/itempropertiestab.cpp:514
+#, fuzzy, kde-format
+msgid "Peoples"
+msgstr "उदाहरण"
+
+#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/template/templatepanel.cpp:209
+#: core/libs/template/templateviewer.cpp:127
+#, kde-format
+msgid "Rights"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:517
+#, kde-format
+msgid "Pick"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:518
+#, fuzzy, kde-format
+#| msgid "Color"
+msgid "Color"
+msgstr "रंग"
+
+#: core/libs/properties/itempropertiestab.cpp:519
+#: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#, fuzzy, kde-format
+msgid "Rating"
+msgstr "गुणवत्ताश्रेणी"
+
 #: core/libs/properties/itempropertiestab_helpers.cpp:210
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
@@ -37275,7 +37499,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab_setters.cpp:385
+#: core/libs/properties/itempropertiestab_setters.cpp:401
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -38525,7 +38749,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/libs/tags/engine/tagsactionmngr_color.cpp:32
-#: core/libs/tags/engine/tagsactionmngr_color.cpp:87
+#: core/libs/tags/engine/tagsactionmngr_color.cpp:89
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr ""
@@ -39326,12 +39550,6 @@ msgid ""
 "<p>The Instructions field should be used to list editorial instructions "
 "concerning the use of photograph.</p><p>With IPTC, this field is limited to "
 "256 characters.</p>"
-msgstr ""
-
-#: core/libs/template/templatepanel.cpp:209
-#: core/libs/template/templateviewer.cpp:127
-#, kde-format
-msgid "Rights"
 msgstr ""
 
 #: core/libs/template/templatepanel.cpp:220
@@ -40855,7 +41073,7 @@ msgstr ""
 msgid "Skip automatically"
 msgstr "उभे पलटी करा"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:91
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:92
 #, kde-format
 msgid "No options available"
 msgstr ""
@@ -43095,42 +43313,30 @@ msgstr ""
 msgid "XMP text Files (*.xmp)"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "काही नाही"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
+#: core/libs/widgets/metadata/labels/colorlabelwidget_menu.cpp:23
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "रंग"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
-#, fuzzy, kde-format
-msgctxt "@info: pick label name"
-msgid "None"
-msgstr "काही नाही"
-
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, fuzzy, kde-format
-msgctxt "@info: pick label selector"
-msgid "Pick Label: %1"
-msgstr "लेबले"
-
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
+#: core/libs/widgets/metadata/labels/picklabelwidget_menu.cpp:23
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:69
 #, fuzzy, kde-format
-msgid "Rating"
-msgstr "गुणवत्ताश्रेणी"
+msgctxt "@info: pick label selector"
+msgid "Pick Label: %1"
+msgstr "लेबले"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:28
 #, fuzzy, kde-format
@@ -50890,12 +51096,6 @@ msgstr ""
 msgid "Lens of the camera"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
-#, fuzzy, kde-format
-msgid "Aperture"
-msgstr "एपेर्चर :"
-
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:475
 #: core/utilities/searchwindow/searchfields_createfield.cpp:494
@@ -50922,12 +51122,6 @@ msgstr ""
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:70
 #, kde-format
 msgid "Exposure mode"
-msgstr ""
-
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
-#, kde-format
-msgid "Sensitivity"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:72
@@ -51192,11 +51386,6 @@ msgid ""
 "Name of the parent directory, additional '.' characters move up in the "
 "directory hierarchy"
 msgstr ""
-
-#: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
-#, kde-format
-msgid "File"
-msgstr "फाईल"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:41
 #, kde-format
@@ -61479,11 +61668,6 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
-msgid "Lens"
-msgstr ""
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
-#, kde-format
 msgid "The type of the lens"
 msgstr ""
 
@@ -66399,11 +66583,6 @@ msgstr ""
 msgid "Audio/Video Information"
 msgstr "साधन माहिती"
 
-#: core/utilities/setup/setuptooltip.cpp:256
-#, fuzzy, kde-format
-msgid "Video Aspect Ratio"
-msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
-
 #: core/utilities/setup/setuptooltip.cpp:257
 #: core/utilities/setup/setuptooltip.cpp:272
 #, kde-format
@@ -66425,19 +66604,9 @@ msgstr ""
 msgid "Set this option to display the Audio Codec of the Video."
 msgstr ""
 
-#: core/utilities/setup/setuptooltip.cpp:268
-#, fuzzy, kde-format
-msgid "Video Duration"
-msgstr "कालावधी :"
-
 #: core/utilities/setup/setuptooltip.cpp:269
 #, kde-format
 msgid "Set this option to display the Duration of the Video."
-msgstr ""
-
-#: core/utilities/setup/setuptooltip.cpp:271
-#, kde-format
-msgid "Video Frame Rate"
 msgstr ""
 
 #: core/utilities/setup/setuptooltip.cpp:275
@@ -66599,6 +66768,26 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "@item: pick tree"
+#~ msgid "Rejected Item"
+#~ msgstr "माइम प्रकार निवडा"
+
+#, fuzzy
+#~ msgctxt "@item: pick tree"
+#~ msgid "Pending Item"
+#~ msgstr "अनिर्णायक"
+
+#, fuzzy
+#~ msgctxt "@item: pick tree"
+#~ msgid "Accepted Item"
+#~ msgstr "स्वीकृत"
+
+#, fuzzy
+#~ msgctxt "@info: pick label name"
+#~ msgid "None"
+#~ msgstr "काही नाही"
 
 #, fuzzy
 #~ msgctxt "@action"
@@ -67602,10 +67791,6 @@ msgstr ""
 #~ msgstr "ओळखचिन्हे"
 
 #, fuzzy
-#~ msgid "Folders"
-#~ msgstr "संचयीका"
-
-#, fuzzy
 #~| msgctxt "Create new search"
 #~| msgid "New..."
 #~ msgid "New..."
@@ -68109,11 +68294,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Formatted text"
 #~ msgstr "निर्यात"
-
-#, fuzzy
-#~| msgid "Color"
-#~ msgid "Color"
-#~ msgstr "रंग"
 
 #, fuzzy
 #~| msgid "Labels"

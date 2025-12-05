@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:41+0000\n"
+"POT-Creation-Date: 2025-12-05 00:40+0000\n"
 "PO-Revision-Date: 2025-12-01 10:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3049,6 +3049,7 @@ msgstr "Künye Albümü Yok"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4052,6 +4053,7 @@ msgstr "Yol"
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
+#: core/libs/properties/itempropertiestab.cpp:477
 #, kde-format
 msgid "Size"
 msgstr "Boyut"
@@ -4149,6 +4151,7 @@ msgstr "Yükseklik"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:102
+#: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
 msgid "Dimensions"
 msgstr "Boyutlar"
@@ -8380,6 +8383,7 @@ msgstr "Renk Yönetimi Devre Dışı…"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
+#: core/libs/properties/itempropertiestab.cpp:501
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -17779,7 +17783,7 @@ msgstr "Hedef klasör:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:275
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:277
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -19992,7 +19996,7 @@ msgstr "Sonraki sayfa"
 msgid ">"
 msgstr ">"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
+#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:124
 #, kde-format
 msgctxt "@title: column"
 msgid "Caption"
@@ -20159,7 +20163,7 @@ msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:276
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:278
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Çıktı Hedef Yolu"
@@ -23166,13 +23170,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Uzak Depolamaya Dışa Aktar"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Karşıya Yükleme Tamamlanmadı"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:215
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -24833,6 +24837,7 @@ msgid "Date"
 msgstr "Tarih"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -27638,63 +27643,63 @@ msgid "No Color"
 msgstr "Renk yok"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Kırmızı"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Turuncu"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Sarı"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Yeşil"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Mavi"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Camgöbeği"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Gri"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Siyah"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -27707,27 +27712,28 @@ msgid "Picks: "
 msgstr "Seçimler: "
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:398
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:269
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr "Seçim yok"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:251
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Reddedildi"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:257
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "Bekletiliyor"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:416
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:263
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
@@ -27826,31 +27832,7 @@ msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Seçim"
 
-#: core/libs/album/treeview/labelstreeview_init.cpp:84
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "No Pick"
-msgstr "Seçim yok"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:85
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "Rejected Item"
-msgstr "Reddedilen öge"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:86
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "Pending Item"
-msgstr "Bekleyen öge"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:87
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "Accepted Item"
-msgstr "Kabul edilen öge"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:108
+#: core/libs/album/treeview/labelstreeview_init.cpp:96
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
@@ -38246,8 +38228,8 @@ msgid "unchanged"
 msgstr "değiştirilmemiş"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
-#: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:648
+#: core/libs/properties/itempropertiessidebar.cpp:221
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38256,13 +38238,13 @@ msgstr "kullanılamıyor"
 #: core/libs/properties/import/importitempropertiestab.cpp:348
 #: core/libs/properties/import/importitempropertiestab.cpp:363
 #: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:706
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:811
-#: core/libs/properties/itempropertiessidebardb.cpp:813
-#: core/libs/properties/itempropertiestab_setters.cpp:83
+#: core/libs/properties/itempropertiessidebar.cpp:282
+#: core/libs/properties/itempropertiessidebar.cpp:285
+#: core/libs/properties/itempropertiessidebardb.cpp:710
+#: core/libs/properties/itempropertiessidebardb.cpp:712
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -38271,12 +38253,12 @@ msgstr "Hayır"
 #: core/libs/properties/import/importitempropertiestab.cpp:352
 #: core/libs/properties/import/importitempropertiestab.cpp:367
 #: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:705
-#: core/libs/properties/itempropertiessidebardb.cpp:707
-#: core/libs/properties/itempropertiessidebardb.cpp:810
-#: core/libs/properties/itempropertiessidebardb.cpp:812
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebar.cpp:284
+#: core/libs/properties/itempropertiessidebardb.cpp:709
+#: core/libs/properties/itempropertiessidebardb.cpp:711
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38469,31 +38451,44 @@ msgstr "IPTC"
 msgid "XMP"
 msgstr "XMP"
 
-#: core/libs/properties/itempropertiessidebar.cpp:73
+#: core/libs/properties/itempropertiessidebar.cpp:78
+#, fuzzy, kde-format
+#| msgid "Copy GPS coordinates to clipboard"
+msgid "Copy the all properties in clipboard"
+msgstr "GPS Koordinatlarını Panoya Kopyala"
+
+#: core/libs/properties/itempropertiessidebar.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "Open in File Manager"
+msgid "Open item in the file manager"
+msgstr "Dosya Yöneticisinde Aç"
+
+#: core/libs/properties/itempropertiessidebar.cpp:84
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "Özellikler"
 
-#: core/libs/properties/itempropertiessidebar.cpp:74
+#: core/libs/properties/itempropertiessidebar.cpp:85
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Metadata"
 msgstr "Üst Veri"
 
-#: core/libs/properties/itempropertiessidebar.cpp:75
+#: core/libs/properties/itempropertiessidebar.cpp:86
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "Renkler"
 
-#: core/libs/properties/itempropertiessidebar.cpp:80
+#: core/libs/properties/itempropertiessidebar.cpp:91
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Map"
 msgstr "Harita"
 
-#: core/libs/properties/itempropertiessidebar.cpp:232
+#: core/libs/properties/itempropertiessidebar.cpp:246
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
@@ -38501,43 +38496,43 @@ msgctxt "@info: item properties"
 msgid "RAW Image"
 msgstr "RAW görseli"
 
-#: core/libs/properties/itempropertiessidebar.cpp:235
+#: core/libs/properties/itempropertiessidebar.cpp:249
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
 msgstr "Kalibre edilmemiş"
 
-#: core/libs/properties/itempropertiessidebar.cpp:250
-#: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:682
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebar.cpp:264
+#: core/libs/properties/itempropertiessidebar.cpp:271
+#: core/libs/properties/itempropertiessidebardb.cpp:686
+#: core/libs/properties/itempropertiessidebardb.cpp:699
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/libs/properties/itempropertiessidebar.cpp:251
+#: core/libs/properties/itempropertiessidebar.cpp:265
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 × %2 (%3 Mpks)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:704
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:708
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
-#: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:738
+#: core/libs/properties/itempropertiessidebar.cpp:316
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:743
+#: core/libs/properties/itempropertiessidebar.cpp:321
+#: core/libs/properties/itempropertiessidebardb.cpp:747
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -38555,7 +38550,26 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Sürümler"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:687
+#: core/libs/properties/itempropertiessidebardb.cpp:93
+#, fuzzy, kde-format
+#| msgid "BitTorrent Description Information"
+msgid "Open the Decription tab for editing"
+msgstr "BitTorrent Açıklaması Bilgisi"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:97
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Open the image editor."
+msgid "Open the Tags tab for editing"
+msgstr "Görsel düzenleyicisini açın."
+
+#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:105
+#, kde-format
+msgid "Open the Information tab for editing"
+msgstr ""
+
+#: core/libs/properties/itempropertiessidebardb.cpp:691
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -38705,6 +38719,255 @@ msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Haklar"
 
+#: core/libs/properties/itempropertiestab.cpp:473
+#: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
+#, kde-format
+msgid "File"
+msgstr "Dosya"
+
+#: core/libs/properties/itempropertiestab.cpp:474
+#, fuzzy, kde-format
+#| msgctxt "@title: file system tree"
+#| msgid "Folders"
+msgid "Folder"
+msgstr "Klasörler"
+
+#: core/libs/properties/itempropertiestab.cpp:475
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Symlink: "
+msgid "Symlink"
+msgstr "Sembolik bağlantı: "
+
+#: core/libs/properties/itempropertiestab.cpp:476
+#, fuzzy, kde-format
+#| msgid "Modified"
+msgid "Modified Date"
+msgstr "Değiştirildi"
+
+#: core/libs/properties/itempropertiestab.cpp:478
+#, fuzzy, kde-format
+#| msgctxt "Owner of the file"
+#| msgid "Owner"
+msgid "Owner"
+msgstr "Sahibi"
+
+#: core/libs/properties/itempropertiestab.cpp:479
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Permissions: "
+msgid "Permissions"
+msgstr "İzinler: "
+
+#: core/libs/properties/itempropertiestab.cpp:481
+#, kde-format
+msgid "Mime"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:483
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Rational"
+msgid "Ratio"
+msgstr "Oransal"
+
+#: core/libs/properties/itempropertiestab.cpp:484
+#, fuzzy, kde-format
+#| msgid "Bit depth"
+msgid "Bit Depth"
+msgstr "Bit Derinliği"
+
+#: core/libs/properties/itempropertiestab.cpp:485
+#, fuzzy, kde-format
+#| msgid "Color Model"
+msgid "Color Mode"
+msgstr "Renk Modeli"
+
+#: core/libs/properties/itempropertiestab.cpp:486
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Sidecars"
+msgid "Has Sidecar"
+msgstr "Sepet"
+
+#: core/libs/properties/itempropertiestab.cpp:487
+#, kde-format
+msgid "Has GPS"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:488
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Versioned: "
+msgid "Versioned"
+msgstr "Sürümlendi: "
+
+#: core/libs/properties/itempropertiestab.cpp:489
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Grouped: "
+msgid "Grouped"
+msgstr "Gruplandı: "
+
+#: core/libs/properties/itempropertiestab.cpp:491
+#, fuzzy, kde-format
+#| msgctxt "@info: xslt param"
+#| msgid "Make"
+msgid "Make"
+msgstr "Yapımcı"
+
+#: core/libs/properties/itempropertiestab.cpp:492
+#, fuzzy, kde-format
+#| msgctxt "@info: Camera Model"
+#| msgid "Model"
+msgid "Model"
+msgstr "Model"
+
+#: core/libs/properties/itempropertiestab.cpp:493
+#, fuzzy, kde-format
+#| msgctxt "@item: date properties"
+#| msgid "Date & Time"
+msgid "Date Time"
+msgstr "Tarih ve Zaman"
+
+#: core/libs/properties/itempropertiestab.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#, kde-format
+msgid "Lens"
+msgstr "Mercek"
+
+#: core/libs/properties/itempropertiestab.cpp:495
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#, kde-format
+msgid "Aperture"
+msgstr "Diyafram açıklığı"
+
+#: core/libs/properties/itempropertiestab.cpp:496
+#, fuzzy, kde-format
+#| msgctxt "@info: xslt param"
+#| msgid "Focal Length"
+msgid "Focal Length"
+msgstr "Odak Uzaklığı"
+
+#: core/libs/properties/itempropertiestab.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@info: xslt param"
+#| msgid "Exposure Time"
+msgid "Exposure Time"
+msgstr "Pozlama Süresi"
+
+#: core/libs/properties/itempropertiestab.cpp:498
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#, kde-format
+msgid "Sensitivity"
+msgstr "Duyarlılık"
+
+#: core/libs/properties/itempropertiestab.cpp:499
+#, fuzzy, kde-format
+#| msgid "Exposure mode"
+msgid "Exposure Mode"
+msgstr "Pozlandırma kipi"
+
+#: core/libs/properties/itempropertiestab.cpp:500
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Flash"
+msgid "Flash"
+msgstr "Flaş"
+
+#: core/libs/properties/itempropertiestab.cpp:503
+#: core/utilities/setup/setuptooltip.cpp:256
+#, kde-format
+msgid "Video Aspect Ratio"
+msgstr "Video En–Boy Oranı"
+
+#: core/libs/properties/itempropertiestab.cpp:504
+#: core/utilities/setup/setuptooltip.cpp:268
+#, kde-format
+msgid "Video Duration"
+msgstr "Video Süresi"
+
+#: core/libs/properties/itempropertiestab.cpp:505
+#: core/utilities/setup/setuptooltip.cpp:271
+#, kde-format
+msgid "Video Frame Rate"
+msgstr "Video Kare Hızı"
+
+#: core/libs/properties/itempropertiestab.cpp:506
+#, fuzzy, kde-format
+#| msgid "Video Codec"
+msgid "Video Video Codec"
+msgstr "Video Kodlayıcısı"
+
+#: core/libs/properties/itempropertiestab.cpp:507
+#, fuzzy, kde-format
+#| msgid "Audio Bit Rate"
+msgid "Video Audio Bit Rate"
+msgstr "Ses Bit Hızı"
+
+#: core/libs/properties/itempropertiestab.cpp:508
+#, fuzzy, kde-format
+#| msgid "Audio Channel Type"
+msgid "Video Audio Channel Type"
+msgstr "Ses Kanal Türü"
+
+#: core/libs/properties/itempropertiestab.cpp:509
+#, fuzzy, kde-format
+#| msgid "Audio Codec"
+msgid "Video Audio Codec"
+msgstr "Ses Kodlayıcısı"
+
+#: core/libs/properties/itempropertiestab.cpp:511
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Caption"
+msgid "Caption"
+msgstr "Alt Yazı"
+
+#: core/libs/properties/itempropertiestab.cpp:512
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Title"
+msgid "Title"
+msgstr "Başlık"
+
+#: core/libs/properties/itempropertiestab.cpp:514
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgid "Peoples"
+msgstr "Kişiler"
+
+#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/template/templatepanel.cpp:209
+#: core/libs/template/templateviewer.cpp:127
+#, kde-format
+msgid "Rights"
+msgstr "Haklar"
+
+#: core/libs/properties/itempropertiestab.cpp:517
+#, fuzzy, kde-format
+#| msgctxt "@title: pick tree"
+#| msgid "Pick"
+msgid "Pick"
+msgstr "Seçim"
+
+#: core/libs/properties/itempropertiestab.cpp:518
+#, fuzzy, kde-format
+#| msgctxt "@item: color tree"
+#| msgid "Color"
+msgid "Color"
+msgstr "Renk"
+
+#: core/libs/properties/itempropertiestab.cpp:519
+#: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#, kde-format
+msgid "Rating"
+msgstr "Derecelendirme"
+
 #: core/libs/properties/itempropertiestab_helpers.cpp:210
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
@@ -38717,7 +38980,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:385
+#: core/libs/properties/itempropertiestab_setters.cpp:401
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -40121,7 +40384,7 @@ msgstr[1] ""
 "Bu yüz künyesine karşılık gelen %1 künye görsellerden kaldırılsın mı?"
 
 #: core/libs/tags/engine/tagsactionmngr_color.cpp:32
-#: core/libs/tags/engine/tagsactionmngr_color.cpp:87
+#: core/libs/tags/engine/tagsactionmngr_color.cpp:89
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "“%1” Renk Etiketi Ata"
@@ -41024,12 +41287,6 @@ msgstr ""
 "<p>Fotoğrafın kullanımına ilişkin editoryal yönergeleri listelemek için "
 "Yönergeler alanı kullanılmalıdır.</p><p>IPTC’de bu alan 256 karakterle "
 "sınırlıdır.</p>"
-
-#: core/libs/template/templatepanel.cpp:209
-#: core/libs/template/templateviewer.cpp:127
-#, kde-format
-msgid "Rights"
-msgstr "Haklar"
 
 #: core/libs/template/templatepanel.cpp:220
 #, kde-format
@@ -42545,7 +42802,7 @@ msgstr "Kendiliğinden üzerine yaz"
 msgid "Skip automatically"
 msgstr "Kendiliğinden atla"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:91
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:92
 #, kde-format
 msgid "No options available"
 msgstr "Kullanılabilir seçenek yok"
@@ -44810,41 +45067,29 @@ msgstr "Kaydedilecek XMP Dosyası"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP Metin Dosyaları (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Yok"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
+#: core/libs/widgets/metadata/labels/colorlabelwidget_menu.cpp:23
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "Renk"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
-#, kde-format
-msgctxt "@info: pick label name"
-msgid "None"
-msgstr "Yok"
-
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, kde-format
-msgctxt "@info: pick label selector"
-msgid "Pick Label: %1"
-msgstr "Etiket seç: %1"
-
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
+#: core/libs/widgets/metadata/labels/picklabelwidget_menu.cpp:23
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Seç"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:69
 #, kde-format
-msgid "Rating"
-msgstr "Derecelendirme"
+msgctxt "@info: pick label selector"
+msgid "Pick Label: %1"
+msgstr "Etiket seç: %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:28
 #, kde-format
@@ -51791,12 +52036,6 @@ msgstr "Kameranın modeli"
 msgid "Lens of the camera"
 msgstr "Kameranın merceği"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
-#, kde-format
-msgid "Aperture"
-msgstr "Diyafram açıklığı"
-
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:475
 #: core/utilities/searchwindow/searchfields_createfield.cpp:494
@@ -51824,12 +52063,6 @@ msgstr "Pozlandırma programı"
 #, kde-format
 msgid "Exposure mode"
 msgstr "Pozlandırma kipi"
-
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
-#, kde-format
-msgid "Sensitivity"
-msgstr "Duyarlılık"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:72
 #, kde-format
@@ -52088,11 +52321,6 @@ msgid ""
 "directory hierarchy"
 msgstr ""
 "Üst dizinin adı, ek “.” karakterler dizin hiyerarşisinde yukarı taşınır"
-
-#: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
-#, kde-format
-msgid "File"
-msgstr "Dosya"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:41
 #, kde-format
@@ -62571,11 +62799,6 @@ msgstr "Kameranın modeli"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
-msgid "Lens"
-msgstr "Mercek"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
-#, kde-format
 msgid "The type of the lens"
 msgstr "Merceğin türü"
 
@@ -68036,11 +68259,6 @@ msgstr ""
 msgid "Audio/Video Information"
 msgstr "Ses/Video Bilgisi"
 
-#: core/utilities/setup/setuptooltip.cpp:256
-#, kde-format
-msgid "Video Aspect Ratio"
-msgstr "Video En–Boy Oranı"
-
 #: core/utilities/setup/setuptooltip.cpp:257
 #: core/utilities/setup/setuptooltip.cpp:272
 #, kde-format
@@ -68062,20 +68280,10 @@ msgstr "Videonun ses kanalı türünü görüntülemek için bu seçeneği ayarl
 msgid "Set this option to display the Audio Codec of the Video."
 msgstr "Videonun ses kodlayıcısını görüntülemek için bu seçeneği ayarlayın."
 
-#: core/utilities/setup/setuptooltip.cpp:268
-#, kde-format
-msgid "Video Duration"
-msgstr "Video Süresi"
-
 #: core/utilities/setup/setuptooltip.cpp:269
 #, kde-format
 msgid "Set this option to display the Duration of the Video."
 msgstr "Videonun süresini görüntülemek için bu seçeneği ayarlayın."
-
-#: core/utilities/setup/setuptooltip.cpp:271
-#, kde-format
-msgid "Video Frame Rate"
-msgstr "Video Kare Hızı"
 
 #: core/utilities/setup/setuptooltip.cpp:275
 #, kde-format
@@ -68235,6 +68443,26 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgctxt "@item: pick tree"
+#~ msgid "No Pick"
+#~ msgstr "Seçim yok"
+
+#~ msgctxt "@item: pick tree"
+#~ msgid "Rejected Item"
+#~ msgstr "Reddedilen öge"
+
+#~ msgctxt "@item: pick tree"
+#~ msgid "Pending Item"
+#~ msgstr "Bekleyen öge"
+
+#~ msgctxt "@item: pick tree"
+#~ msgid "Accepted Item"
+#~ msgstr "Kabul edilen öge"
+
+#~ msgctxt "@info: pick label name"
+#~ msgid "None"
+#~ msgstr "Yok"
 
 #~ msgctxt "@action"
 #~ msgid "OpenGL Image Viewer"

@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:41+0000\n"
-"PO-Revision-Date: 2025-12-02 08:42+0100\n"
+"POT-Creation-Date: 2025-12-05 00:40+0000\n"
+"PO-Revision-Date: 2025-12-03 11:15+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -2152,11 +2152,10 @@ msgid "By Image Size"
 msgstr "Par taille d'image"
 
 #: core/app/main/digikamapp_setup.cpp:606
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "N'importe quelle orientation"
+msgstr "Par orientation"
 
 #: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
@@ -2165,11 +2164,10 @@ msgid "By Aspect Ratio"
 msgstr "Par ratio d'apparence"
 
 #: core/app/main/digikamapp_setup.cpp:608
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "Position :"
+msgstr "Par position GPS"
 
 #: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
@@ -3113,6 +3111,7 @@ msgstr "Album sans étiquettes"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4162,6 +4161,7 @@ msgstr "Emplacement"
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
+#: core/libs/properties/itempropertiestab.cpp:477
 #, kde-format
 msgid "Size"
 msgstr "Taille"
@@ -4259,6 +4259,7 @@ msgstr "Hauteur"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:102
+#: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
 msgid "Dimensions"
 msgstr "Dimensions"
@@ -8573,6 +8574,7 @@ msgstr "La gestion des couleurs est désactivée…"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
+#: core/libs/properties/itempropertiestab.cpp:501
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -18102,7 +18104,7 @@ msgstr "Dossier de destination :"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:275
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:277
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -20364,7 +20366,7 @@ msgstr "Page suivante"
 msgid ">"
 msgstr ">"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
+#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:124
 #, kde-format
 msgctxt "@title: column"
 msgid "Caption"
@@ -20532,7 +20534,7 @@ msgstr "Dossier de destination :"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:276
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:278
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Emplacement de destination"
@@ -21563,36 +21565,12 @@ msgid "OpenGL Viewer"
 msgstr "Afficheur OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, fuzzy, kde-format
-#| msgid "A tool to preview image with OpenGL"
+#, kde-format
 msgid "A tool to preview items with OpenGL"
 msgstr "Un outil d'aperçu d'images utilisant OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool preview a series of items using OpenGL effects.</"
-#| "p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td>Next Item:</"
-#| "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
-#| "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse "
-#| "wheel down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-#| "colspan=\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></"
-#| "td></tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
-#| "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom "
-#| "or change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
-#| "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original "
-#| "size:</td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse "
-#| "in up-down-direction while pressing the right mouse button</td></"
-#| "tr><tr><td></td><td><i>c</i> key and use the scroll-wheel</td></"
-#| "tr><tr><td></td><td><i>+</i> and <i>-</i> keys</td></tr><tr><td></"
-#| "td><td>ctrl + scrollwheel</td></tr><tr><td>Panning:</td><td>Move mouse "
-#| "while pressing the left button</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
 "</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
@@ -21617,38 +21595,38 @@ msgid ""
 "table>"
 msgstr ""
 "<p>Cet outil donne un aperçu d'une série d'éléments utilisant des effets "
-"« OpenGL »</p><p><u>Usage : </u></p><table><tr><td colspan="
+"« OpenGL ».</p><p><u>Usage : </u></p><table><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Accès à l'élément</h1></b></center></nobr></td></"
-"tr><tr><td>Élément précédent :</td><td>Touche <i> « Flèche vers le haut » </"
-"i></td></tr><tr><td></td><td>Touche <i> « Page Supérieure » </i></td></"
-"tr><tr><td></td><td>Touche <i> «  Flèche gauche » </i></td></tr><tr><td></"
-"td><td>Molette de la souris vers le haut</td></tr><tr><td></td><td>Bouton "
-"gauche de la souris</td></tr><tr><td>Élément suivant : </td><td>Touche <i> "
-"« Flèche vers le bas » </i></td></tr><tr><td></td><td>Touche <i> « Page vers "
-"le bas » </i></td></tr><tr><td></td><td>Touche <i> » Flèche droite » </i></"
-"td></tr><tr><td></td><td>Molette de la souris vers le bas</td></tr><tr><td></"
-"td><td>Bouton droit de la souris</td></tr><tr><td>Pause / Démarrage : </"
-"td><td>Touche <i> « Espace » </i></td></tr><tr> <td>Paramétrage du "
-"diaporama : </td><td>Touche <i> « F2 » </i></td><td>Afficher / masquer les "
-"propriétés :</td><td>Touche <i> « F4 » </i></td></tr><tr><td>Quitter : </"
-"td><td>Touche <i> « Échap » </i></td> </tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Propriétés de l'élément</h1></b></center></nobr></"
-"td></tr><tr><td>Modifier les étiquettes :</td><td>Utiliser les raccourcis de "
-"clavier pour les étiquettes</td></tr><tr><td>Modifier la note :</"
-"td><td>Utiliser les raccourcis de clavier pour la notation</td></"
-"tr><tr><td>Modifier l'étiquette de couleur :</td><td>Utiliser les raccourcis "
-"clavier d'étiquette de couleur</td></tr><tr><td>Modifier l'étiquette de "
-"sélection :</td><td>Utiliser les raccourcis de clavier d'étiquettes de "
-"sélection</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Autres</h1></"
-"b></center></nobr></td></tr><tr><td>Afficher cette page d'aide : </"
-"td><td>Touche <i> « F1 » </i></td></tr></table>"
+"tr><tr><td>Élément précédent :</td><td>Touche <i> </i> « Flèche vers le "
+"haut »</td></tr><tr><td></td><td>Touche <i>« Page vers le haut »</i></td></"
+"tr><tr><td></td><td>Touche <i>« Flèche vers la gauche »</i></td></"
+"tr><tr><td></td><td>Molette de la souris vers le haut</td></"
+"tr><tr><td>Élément suivant : </td><td>Touche <i>« Flèche vers le bas »</i> </"
+"td></tr><tr><td></td><td>Touche <i>« Flèche vers le bas »</i></td></"
+"tr><tr><td></td><td>Touche <i> « Page vers le bas » </i></td></tr><tr><td></"
+"td><td>Molette de la souris vers le bas</td></tr><tr><td>Fermer :</"
+"td><td>Touche <i>Échap</i> </td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Affichage des éléments</h1></b></center></nobr></"
+"td></tr><tr><td>Basculer l'affichage de plein écran à norma</td><td>Touche "
+"<i>F</i></td></tr><tr><td>Basculer entre actions avec la molette de souris :"
+"</td><td>Touche <i>c</i> key (Soit pour  zoomer ou modifier un élément)</"
+"td></tr><tr><td>Rotation :</td><td>Touche <i>r</i> </td></"
+"tr><tr><td>Réinitialiser l'affichage :</td><td>Double clic</td></"
+"tr><tr><td>Taille initiale :</td><td>Touche <i>o</i></td></tr><tr><td>Zoom :"
+"</td><td>Déplacez la souris vers le haut et vers le bas tout en appuyant sur "
+"le bouton droit de la souris</td></tr><tr><td></td><td>Touche <i>c</i> et "
+"utilisez la molette de la souris</td></tr><tr><td></td><td>Touches <i>+</i> "
+"et <i>-</i></td></tr><tr><td></td><td>Touche « CTRL » + molette de la "
+"souris</td></tr><tr><td>Panorama :</td><td>Déplacez la souris tout en "
+"appuyant sur le bouton gauche</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Autres</h1></b></center></nobr></td></"
+"tr><tr><td>Affichez cette aide :</td><td>Touche <i>F1</i></td></tr></table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
-#, fuzzy, kde-format
-#| msgid "OpenGL Viewer"
+#, kde-format
 msgctxt "@action"
 msgid "OpenGL Viewer"
-msgstr "Afficheur OpenGL"
+msgstr "Afficheur sous OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
@@ -23577,13 +23555,13 @@ msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Exporter vers un périphérique d'enregistrement distant"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:212
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:214
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Envoi non terminé"
 
-#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:213
+#: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:215
 #, kde-format
 msgid ""
 "Some of the images have not been transferred and are still in the list. You "
@@ -25260,6 +25238,7 @@ msgid "Date"
 msgstr "Date"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -28127,63 +28106,63 @@ msgid "No Color"
 msgstr "Aucune couleur"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:515
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Rouge"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:521
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Orange"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:527
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Jaune"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:533
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Vert"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:539
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Bleu"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:545
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:551
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Gris"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:557
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Noir"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -28196,27 +28175,28 @@ msgid "Picks: "
 msgstr "Sélections :"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:398
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:269
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr "Aucune sélection"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:251
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Rejeté"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:257
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "En attente"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:416
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:263
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
@@ -28315,31 +28295,7 @@ msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Sélectionner"
 
-#: core/libs/album/treeview/labelstreeview_init.cpp:84
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "No Pick"
-msgstr "Aucune sélection"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:85
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "Rejected Item"
-msgstr "Élément rejeté"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:86
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "Pending Item"
-msgstr "Élément en attente"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:87
-#, kde-format
-msgctxt "@item: pick tree"
-msgid "Accepted Item"
-msgstr "Élément accepté"
-
-#: core/libs/album/treeview/labelstreeview_init.cpp:108
+#: core/libs/album/treeview/labelstreeview_init.cpp:96
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
@@ -38958,8 +38914,8 @@ msgid "unchanged"
 msgstr "Inchangé"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
-#: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:648
+#: core/libs/properties/itempropertiessidebar.cpp:221
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38968,13 +38924,13 @@ msgstr "indisponible"
 #: core/libs/properties/import/importitempropertiestab.cpp:348
 #: core/libs/properties/import/importitempropertiestab.cpp:363
 #: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:706
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:811
-#: core/libs/properties/itempropertiessidebardb.cpp:813
-#: core/libs/properties/itempropertiestab_setters.cpp:83
+#: core/libs/properties/itempropertiessidebar.cpp:282
+#: core/libs/properties/itempropertiessidebar.cpp:285
+#: core/libs/properties/itempropertiessidebardb.cpp:710
+#: core/libs/properties/itempropertiessidebardb.cpp:712
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -38983,12 +38939,12 @@ msgstr "Non"
 #: core/libs/properties/import/importitempropertiestab.cpp:352
 #: core/libs/properties/import/importitempropertiestab.cpp:367
 #: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:705
-#: core/libs/properties/itempropertiessidebardb.cpp:707
-#: core/libs/properties/itempropertiessidebardb.cpp:810
-#: core/libs/properties/itempropertiessidebardb.cpp:812
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebar.cpp:284
+#: core/libs/properties/itempropertiessidebardb.cpp:709
+#: core/libs/properties/itempropertiessidebardb.cpp:711
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -39186,31 +39142,44 @@ msgstr "IPTC"
 msgid "XMP"
 msgstr "XMP"
 
-#: core/libs/properties/itempropertiessidebar.cpp:73
+#: core/libs/properties/itempropertiessidebar.cpp:78
+#, fuzzy, kde-format
+#| msgid "Copy GPS coordinates to clipboard"
+msgid "Copy the all properties in clipboard"
+msgstr "Copier les coordonnées GPS dans le presse-papier"
+
+#: core/libs/properties/itempropertiessidebar.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "Open in File Manager"
+msgid "Open item in the file manager"
+msgstr "Ouvrir dans un gestionnaire de fichiers"
+
+#: core/libs/properties/itempropertiessidebar.cpp:84
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "Propriétés"
 
-#: core/libs/properties/itempropertiessidebar.cpp:74
+#: core/libs/properties/itempropertiessidebar.cpp:85
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Metadata"
 msgstr "Métadonnées"
 
-#: core/libs/properties/itempropertiessidebar.cpp:75
+#: core/libs/properties/itempropertiessidebar.cpp:86
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "Couleurs"
 
-#: core/libs/properties/itempropertiessidebar.cpp:80
+#: core/libs/properties/itempropertiessidebar.cpp:91
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Map"
 msgstr "Carte"
 
-#: core/libs/properties/itempropertiessidebar.cpp:232
+#: core/libs/properties/itempropertiessidebar.cpp:246
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
@@ -39218,43 +39187,43 @@ msgctxt "@info: item properties"
 msgid "RAW Image"
 msgstr "Image brute"
 
-#: core/libs/properties/itempropertiessidebar.cpp:235
+#: core/libs/properties/itempropertiessidebar.cpp:249
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
 msgstr "Non calibré"
 
-#: core/libs/properties/itempropertiessidebar.cpp:250
-#: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:682
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebar.cpp:264
+#: core/libs/properties/itempropertiessidebar.cpp:271
+#: core/libs/properties/itempropertiessidebardb.cpp:686
+#: core/libs/properties/itempropertiessidebardb.cpp:699
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: core/libs/properties/itempropertiessidebar.cpp:251
+#: core/libs/properties/itempropertiessidebar.cpp:265
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 x %2 (%3 Mpx)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:704
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:708
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
-#: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:738
+#: core/libs/properties/itempropertiessidebar.cpp:316
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:743
+#: core/libs/properties/itempropertiessidebar.cpp:321
+#: core/libs/properties/itempropertiessidebardb.cpp:747
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -39272,7 +39241,26 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versions"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:687
+#: core/libs/properties/itempropertiessidebardb.cpp:93
+#, fuzzy, kde-format
+#| msgid "BitTorrent Description Information"
+msgid "Open the Decription tab for editing"
+msgstr "Informations de description de « BitTorrent »"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:97
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Open the image editor."
+msgid "Open the Tags tab for editing"
+msgstr "Ouvre l'éditeur d'images."
+
+#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:105
+#, kde-format
+msgid "Open the Information tab for editing"
+msgstr ""
+
+#: core/libs/properties/itempropertiessidebardb.cpp:691
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -39422,6 +39410,255 @@ msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Droits"
 
+#: core/libs/properties/itempropertiestab.cpp:473
+#: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
+#, kde-format
+msgid "File"
+msgstr "Fichier"
+
+#: core/libs/properties/itempropertiestab.cpp:474
+#, fuzzy, kde-format
+#| msgctxt "@title: file system tree"
+#| msgid "Folders"
+msgid "Folder"
+msgstr "Dossiers"
+
+#: core/libs/properties/itempropertiestab.cpp:475
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Symlink: "
+msgid "Symlink"
+msgstr "Lien symbolique : "
+
+#: core/libs/properties/itempropertiestab.cpp:476
+#, fuzzy, kde-format
+#| msgid "Modified"
+msgid "Modified Date"
+msgstr "Modifié"
+
+#: core/libs/properties/itempropertiestab.cpp:478
+#, fuzzy, kde-format
+#| msgctxt "Owner of the file"
+#| msgid "Owner"
+msgid "Owner"
+msgstr "Propriétaire"
+
+#: core/libs/properties/itempropertiestab.cpp:479
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Permissions: "
+msgid "Permissions"
+msgstr "Droits d'accès : "
+
+#: core/libs/properties/itempropertiestab.cpp:481
+#, kde-format
+msgid "Mime"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:483
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Rational"
+msgid "Ratio"
+msgstr "Rationnel"
+
+#: core/libs/properties/itempropertiestab.cpp:484
+#, fuzzy, kde-format
+#| msgid "Bit depth"
+msgid "Bit Depth"
+msgstr "Profondeur de couleur"
+
+#: core/libs/properties/itempropertiestab.cpp:485
+#, fuzzy, kde-format
+#| msgid "Color Model"
+msgid "Color Mode"
+msgstr "Modèle de couleur"
+
+#: core/libs/properties/itempropertiestab.cpp:486
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Sidecars"
+msgid "Has Sidecar"
+msgstr "Fichiers associés"
+
+#: core/libs/properties/itempropertiestab.cpp:487
+#, kde-format
+msgid "Has GPS"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:488
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Versioned: "
+msgid "Versioned"
+msgstr "Versionné :"
+
+#: core/libs/properties/itempropertiestab.cpp:489
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Grouped: "
+msgid "Grouped"
+msgstr "Groupé :"
+
+#: core/libs/properties/itempropertiestab.cpp:491
+#, fuzzy, kde-format
+#| msgctxt "@info: xslt param"
+#| msgid "Make"
+msgid "Make"
+msgstr "Marque"
+
+#: core/libs/properties/itempropertiestab.cpp:492
+#, fuzzy, kde-format
+#| msgctxt "@info: Camera Model"
+#| msgid "Model"
+msgid "Model"
+msgstr "Modèle"
+
+#: core/libs/properties/itempropertiestab.cpp:493
+#, fuzzy, kde-format
+#| msgctxt "@item: date properties"
+#| msgid "Date & Time"
+msgid "Date Time"
+msgstr "Date et Heure"
+
+#: core/libs/properties/itempropertiestab.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#, kde-format
+msgid "Lens"
+msgstr "Objectif"
+
+#: core/libs/properties/itempropertiestab.cpp:495
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#, kde-format
+msgid "Aperture"
+msgstr "Ouverture"
+
+#: core/libs/properties/itempropertiestab.cpp:496
+#, fuzzy, kde-format
+#| msgctxt "@info: xslt param"
+#| msgid "Focal Length"
+msgid "Focal Length"
+msgstr "Longueur focale"
+
+#: core/libs/properties/itempropertiestab.cpp:497
+#, fuzzy, kde-format
+#| msgctxt "@info: xslt param"
+#| msgid "Exposure Time"
+msgid "Exposure Time"
+msgstr "Temps d'exposition"
+
+#: core/libs/properties/itempropertiestab.cpp:498
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#, kde-format
+msgid "Sensitivity"
+msgstr "Sensibilité"
+
+#: core/libs/properties/itempropertiestab.cpp:499
+#, fuzzy, kde-format
+#| msgid "Exposure mode"
+msgid "Exposure Mode"
+msgstr "Mode d'exposition"
+
+#: core/libs/properties/itempropertiestab.cpp:500
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Flash"
+msgid "Flash"
+msgstr "Flash"
+
+#: core/libs/properties/itempropertiestab.cpp:503
+#: core/utilities/setup/setuptooltip.cpp:256
+#, kde-format
+msgid "Video Aspect Ratio"
+msgstr "Rapport hauteur / largeur de la vidéo"
+
+#: core/libs/properties/itempropertiestab.cpp:504
+#: core/utilities/setup/setuptooltip.cpp:268
+#, kde-format
+msgid "Video Duration"
+msgstr "Durée de la vidéo"
+
+#: core/libs/properties/itempropertiestab.cpp:505
+#: core/utilities/setup/setuptooltip.cpp:271
+#, kde-format
+msgid "Video Frame Rate"
+msgstr "Nombre d'images par seconde de la vidéo"
+
+#: core/libs/properties/itempropertiestab.cpp:506
+#, fuzzy, kde-format
+#| msgid "Show Video Codec"
+msgid "Video Video Codec"
+msgstr "Afficher le codec vidéo"
+
+#: core/libs/properties/itempropertiestab.cpp:507
+#, fuzzy, kde-format
+#| msgid "Audio Bit Rate"
+msgid "Video Audio Bit Rate"
+msgstr "Débit binaire audio"
+
+#: core/libs/properties/itempropertiestab.cpp:508
+#, fuzzy, kde-format
+#| msgid "Audio Channel Type"
+msgid "Video Audio Channel Type"
+msgstr "Type de canal audio"
+
+#: core/libs/properties/itempropertiestab.cpp:509
+#, fuzzy, kde-format
+#| msgid "Audio Codec"
+msgid "Video Audio Codec"
+msgstr "Codec audio"
+
+#: core/libs/properties/itempropertiestab.cpp:511
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Caption"
+msgid "Caption"
+msgstr "Légende"
+
+#: core/libs/properties/itempropertiestab.cpp:512
+#, fuzzy, kde-format
+#| msgctxt "@title: tableview"
+#| msgid "Title"
+msgid "Title"
+msgstr "Titre"
+
+#: core/libs/properties/itempropertiestab.cpp:514
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgid "Peoples"
+msgstr "Personnes"
+
+#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/template/templatepanel.cpp:209
+#: core/libs/template/templateviewer.cpp:127
+#, kde-format
+msgid "Rights"
+msgstr "Droits"
+
+#: core/libs/properties/itempropertiestab.cpp:517
+#, fuzzy, kde-format
+#| msgctxt "@title: pick tree"
+#| msgid "Pick"
+msgid "Pick"
+msgstr "Sélectionner"
+
+#: core/libs/properties/itempropertiestab.cpp:518
+#, fuzzy, kde-format
+#| msgctxt "@item: color tree"
+#| msgid "Color"
+msgid "Color"
+msgstr "Couleur"
+
+#: core/libs/properties/itempropertiestab.cpp:519
+#: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
+#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#, kde-format
+msgid "Rating"
+msgstr "Note"
+
 #: core/libs/properties/itempropertiestab_helpers.cpp:210
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
@@ -39434,7 +39671,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:385
+#: core/libs/properties/itempropertiestab_setters.cpp:401
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -40868,7 +41105,7 @@ msgstr[1] ""
 "visage ?"
 
 #: core/libs/tags/engine/tagsactionmngr_color.cpp:32
-#: core/libs/tags/engine/tagsactionmngr_color.cpp:87
+#: core/libs/tags/engine/tagsactionmngr_color.cpp:89
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Attribuer un libellé de couleur « %1 »"
@@ -41810,12 +42047,6 @@ msgstr ""
 "<p>Le champ « Instructions » devrait être utilisé pour lister les "
 "instructions éditoriales concernant l'utilisation de la photographie.</p> "
 "<p>Avec « IPTC », ce champ est limité à 256 caractères.</p>"
-
-#: core/libs/template/templatepanel.cpp:209
-#: core/libs/template/templateviewer.cpp:127
-#, kde-format
-msgid "Rights"
-msgstr "Droits"
 
 #: core/libs/template/templatepanel.cpp:220
 #, kde-format
@@ -43355,7 +43586,7 @@ msgstr "Écraser automatiquement"
 msgid "Skip automatically"
 msgstr "Ignorer automatiquement"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:91
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:92
 #, kde-format
 msgid "No options available"
 msgstr "Pas d'options disponibles"
@@ -45645,41 +45876,29 @@ msgstr "Fichier XMP à enregistrer"
 msgid "XMP text Files (*.xmp)"
 msgstr "Fichiers texte XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:569
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Aucun"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:663
+#: core/libs/widgets/metadata/labels/colorlabelwidget_menu.cpp:23
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "Couleur"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
-#, kde-format
-msgctxt "@info: pick label name"
-msgid "None"
-msgstr "Aucun"
-
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
-#, kde-format
-msgctxt "@info: pick label selector"
-msgid "Pick Label: %1"
-msgstr "Étiquette de sélection : %1"
-
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
+#: core/libs/widgets/metadata/labels/picklabelwidget_menu.cpp:23
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Choix"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:69
 #, kde-format
-msgid "Rating"
-msgstr "Note"
+msgctxt "@info: pick label selector"
+msgid "Pick Label: %1"
+msgstr "Étiquette de sélection : %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:28
 #, kde-format
@@ -52683,12 +52902,6 @@ msgstr "Modèle de l'appareil photo"
 msgid "Lens of the camera"
 msgstr "Objectif de l'appareil photo"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
-#, kde-format
-msgid "Aperture"
-msgstr "Ouverture"
-
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:475
 #: core/utilities/searchwindow/searchfields_createfield.cpp:494
@@ -52716,12 +52929,6 @@ msgstr "Programme d'exposition"
 #, kde-format
 msgid "Exposure mode"
 msgstr "Mode d'exposition"
-
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
-#, kde-format
-msgid "Sensitivity"
-msgstr "Sensibilité"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:72
 #, kde-format
@@ -52981,11 +53188,6 @@ msgid ""
 msgstr ""
 "Nom du dossier parent, des caractères additionnels « . » permettent de "
 "monter dans la hiérarchie des dossiers"
-
-#: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
-#, kde-format
-msgid "File"
-msgstr "Fichier"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:41
 #, kde-format
@@ -60763,9 +60965,7 @@ msgid "By Size"
 msgstr "Par taille"
 
 #: core/utilities/import/main/importui.cpp:417
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Format"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Format"
 msgstr "Par format"
@@ -63625,11 +63825,6 @@ msgstr "Marque de l'appareil photo"
 #, kde-format
 msgid "The model of the camera"
 msgstr "Modèle de l'appareil photo"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
-#, kde-format
-msgid "Lens"
-msgstr "Objectif"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
@@ -69245,11 +69440,6 @@ msgstr ""
 msgid "Audio/Video Information"
 msgstr "Informations audio/vidéo"
 
-#: core/utilities/setup/setuptooltip.cpp:256
-#, kde-format
-msgid "Video Aspect Ratio"
-msgstr "Rapport hauteur / largeur de la vidéo"
-
 #: core/utilities/setup/setuptooltip.cpp:257
 #: core/utilities/setup/setuptooltip.cpp:272
 #, kde-format
@@ -69272,20 +69462,10 @@ msgstr "Cochez cette option pour afficher le type de canal audio de la vidéo."
 msgid "Set this option to display the Audio Codec of the Video."
 msgstr "Cochez cette option pour afficher le codec audio de la vidéo."
 
-#: core/utilities/setup/setuptooltip.cpp:268
-#, kde-format
-msgid "Video Duration"
-msgstr "Durée de la vidéo"
-
 #: core/utilities/setup/setuptooltip.cpp:269
 #, kde-format
 msgid "Set this option to display the Duration of the Video."
 msgstr "Cochez cette option pour afficher la durée de la vidéo."
-
-#: core/utilities/setup/setuptooltip.cpp:271
-#, kde-format
-msgid "Video Frame Rate"
-msgstr "Nombre d'images par seconde de la vidéo"
 
 #: core/utilities/setup/setuptooltip.cpp:275
 #, kde-format
@@ -69446,6 +69626,26 @@ msgstr "Éléments de l'album"
 #, kde-format
 msgid "Import Items"
 msgstr "Importer des éléments"
+
+#~ msgctxt "@item: pick tree"
+#~ msgid "No Pick"
+#~ msgstr "Aucune sélection"
+
+#~ msgctxt "@item: pick tree"
+#~ msgid "Rejected Item"
+#~ msgstr "Élément rejeté"
+
+#~ msgctxt "@item: pick tree"
+#~ msgid "Pending Item"
+#~ msgstr "Élément en attente"
+
+#~ msgctxt "@item: pick tree"
+#~ msgid "Accepted Item"
+#~ msgstr "Élément accepté"
+
+#~ msgctxt "@info: pick label name"
+#~ msgid "None"
+#~ msgstr "Aucun"
 
 #~ msgctxt "@action"
 #~ msgid "OpenGL Image Viewer"
@@ -71879,12 +72079,6 @@ msgstr "Importer des éléments"
 #~ msgstr "Exporter un signet"
 
 #, fuzzy
-#~| msgctxt "@title: file system tree"
-#~| msgid "Folders"
-#~ msgid "Folders"
-#~ msgstr "Dossiers"
-
-#, fuzzy
 #~| msgctxt "Create new search"
 #~| msgid "New..."
 #~ msgid "New..."
@@ -72695,12 +72889,6 @@ msgstr "Importer des éléments"
 #~| msgid "Format error"
 #~ msgid "Formatted text"
 #~ msgstr "Erreur de format"
-
-#, fuzzy
-#~| msgctxt "@item: color tree"
-#~| msgid "Color"
-#~ msgid "Color"
-#~ msgstr "Couleur"
 
 #, fuzzy
 #~| msgctxt "@action"
@@ -78711,9 +78899,6 @@ msgstr "Importer des éléments"
 
 #~ msgid "Show Audio Compressor"
 #~ msgstr "Afficher le compresseur audio"
-
-#~ msgid "Show Video Codec"
-#~ msgstr "Afficher le codec vidéo"
 
 #~ msgid "Show album date"
 #~ msgstr "Afficher la date de l'album"
