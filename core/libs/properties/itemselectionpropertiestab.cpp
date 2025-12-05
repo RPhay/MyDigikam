@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     DTextLabelValue* labelSelectionCount = nullptr;
     DTextLabelValue* labelSelectionSize  = nullptr;
     DTextLabelValue* labelTotalCount     = nullptr;
@@ -64,7 +66,6 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     const int spacing = layoutSpacing();
 
-
     QWidget* const w1                    = new QWidget(this);
     QGridLayout* const glay1             = new QGridLayout(w1);
 
@@ -72,7 +73,6 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     DTextLabelName* const selectionSize  = new DTextLabelName(i18n("Size: "),        w1);
     DTextLabelName* const totalCount     = new DTextLabelName(i18n("Total Count: "), w1);
     DTextLabelName* const totalSize      = new DTextLabelName(i18n("Total Size: "),  w1);
-
 
     d->labelSelectionCount               = new DTextLabelValue(QString(), w1);
     d->labelSelectionSize                = new DTextLabelValue(QString(), w1);
@@ -87,7 +87,6 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     glay1->addWidget(d->labelTotalCount,     2, 1, 1, 1);
     glay1->addWidget(totalSize,              3, 0, 1, 1);
     glay1->addWidget(d->labelTotalSize,      3, 1, 1, 1);
-
 
     glay1->setContentsMargins(spacing, spacing, spacing, spacing);
     glay1->setColumnStretch(0, 10);
