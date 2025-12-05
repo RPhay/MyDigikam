@@ -857,7 +857,6 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
     }
 
     d->selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
-    d->selectionPropertiesTab->setSelectionGroups(selectionGroups);
 
     // --Total Selection Properties------------------------------------------------------
 
@@ -878,7 +877,8 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
     }
 
     d->selectionPropertiesTab->setTotalSize(ItemPropertiesTab::humanReadableBytesCount(totalFileSize));
-    d->selectionPropertiesTab->setTotalGroups(totalGroups);
+
+    d->selectionPropertiesTab->setGroups(selectionGroups, totalGroups);
 
     return;
 }

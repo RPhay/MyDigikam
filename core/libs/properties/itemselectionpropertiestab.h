@@ -42,13 +42,14 @@ public:
 
     void setSelectionCount(const QString& str);
     void setSelectionSize(const QString& str);
-    void setSelectionGroups(const ItemInfoList& infos);
     void setTotalCount(const QString& str);
     void setTotalSize(const QString& str);
-    void setTotalGroups(const ItemInfoList& infos);
+
+    void setGroups(const ItemInfoList& selected, const ItemInfoList& total);
 
 private Q_SLOTS:
 
+    void slotGetThumbnails();
     void slotThumbnail(const LoadingDescription&, const QPixmap&);
 
 private:

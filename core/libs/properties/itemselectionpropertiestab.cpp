@@ -22,9 +22,12 @@
 #include <QTreeWidget>
 #include <QHeaderView>
 #include <QIcon>
+#include <QTimer>
 #include <QPixmap>
 #include <QPainter>
 #include <QFileInfo>
+#include <QMutexLocker>
+#include <QMutex>
 
 // KDE includes
 
@@ -66,9 +69,12 @@ public:
     QTreeWidget*         treeSelectionGroups  = nullptr;
     QTreeWidget*         treeTotalGroups      = nullptr;
 
-    ThumbnailLoadThread* thumbLoadThread      = ThumbnailLoadThread::defaultThread();
+    QMutex               mutex;
 
-    const int iconSize                        = 24;
+    ThumbnailLoadThread* thumbLoadThread      = ThumbnailLoadThread::defaultThread();
+    QList<ThumbnailIdentifier> thumbs;
+
+    const int            iconSize             = 24;
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
@@ -189,28 +195,44 @@ void ItemSelectionPropertiesTab::setSelectionSize(const QString& str)
     d->labelSelectionSize->setAdjustedText(str);
 }
 
-void ItemSelectionPropertiesTab::setSelectionGroups(const ItemInfoList& infos)
+void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& selected, const ItemInfoList& total)
 {
-    d->labelSelectionGroups->setAdjustedText(QString::number(infos.count()));
+    d->labelSelectionGroups->setAdjustedText(QString::number(selected.count()));
     d->treeSelectionGroups->clear();
-    QList<ThumbnailIdentifier> thumbs;
 
-    for (const ItemInfo& pinf : std::as_const(infos))
+    for (const ItemInfo& pinf : std::as_const(selected))
     {
         QTreeWidgetItem* const p = new QTreeWidgetItem(d->treeSelectionGroups, QStringList() << pinf.name());
         d->treeSelectionGroups->addTopLevelItem(p);
-        thumbs.append(ThumbnailIdentifier(pinf.fileUrl().toLocalFile()));
         const auto list          = pinf.groupedImages();
 
         for (const ItemInfo& cinf : list)
         {
             new QTreeWidgetItem(p, QStringList() << cinf.name());
-            thumbs.append(ThumbnailIdentifier(cinf.fileUrl().toLocalFile()));
         }
     }
-qDebug() << "Items to get Thumbnails from selection:" << thumbs.size();
 
-    d->thumbLoadThread->findGroup(thumbs, d->iconSize);
+    d->labelTotalGroups->setAdjustedText(QString::number(total.count()));
+    d->treeTotalGroups->clear();
+
+    QMutexLocker lock(&d->mutex);
+    d->thumbs.clear();
+
+    for (const ItemInfo& pinf : std::as_const(total))
+    {
+        QTreeWidgetItem* const p = new QTreeWidgetItem(d->treeTotalGroups, QStringList() << pinf.name());
+        d->treeTotalGroups->addTopLevelItem(p);
+        d->thumbs.append(ThumbnailIdentifier(pinf.fileUrl().toLocalFile()));
+        const auto list          = pinf.groupedImages();
+
+        for (const ItemInfo& cinf : list)
+        {
+            new QTreeWidgetItem(p, QStringList() << cinf.name());
+            d->thumbs.append(ThumbnailIdentifier(cinf.fileUrl().toLocalFile()));
+        }
+    }
+
+    QTimer::singleShot(1000, this, SLOT(slotGetThumbnails()));
 }
 
 void ItemSelectionPropertiesTab::setTotalCount(const QString& str)
@@ -223,28 +245,10 @@ void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
     d->labelTotalSize->setAdjustedText(str);
 }
 
-void ItemSelectionPropertiesTab::setTotalGroups(const ItemInfoList& infos)
+void ItemSelectionPropertiesTab::slotGetThumbnails()
 {
-    d->labelTotalGroups->setAdjustedText(QString::number(infos.count()));
-    d->treeTotalGroups->clear();
-    QList<ThumbnailIdentifier> thumbs;
-
-    for (const ItemInfo& pinf : std::as_const(infos))
-    {
-        QTreeWidgetItem* const p = new QTreeWidgetItem(d->treeTotalGroups, QStringList() << pinf.name());
-        d->treeTotalGroups->addTopLevelItem(p);
-        thumbs.append(ThumbnailIdentifier(pinf.fileUrl().toLocalFile()));
-        const auto list          = pinf.groupedImages();
-
-        for (const ItemInfo& cinf : list)
-        {
-            new QTreeWidgetItem(p, QStringList() << cinf.name());
-            thumbs.append(ThumbnailIdentifier(cinf.fileUrl().toLocalFile()));
-        }
-    }
-qDebug() << "Items to get Thumbnails from album:" << thumbs.size();
-
-    d->thumbLoadThread->findGroup(thumbs, d->iconSize);
+    QMutexLocker lock(&d->mutex);
+    d->thumbLoadThread->findGroup(d->thumbs, d->iconSize);
 }
 
 void ItemSelectionPropertiesTab::slotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
