@@ -90,7 +90,7 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 
     m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setButtonVisible(true);
-    m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setToolTip(i18n("Open the Decription tab for editing"));
+    m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setToolTip(i18n("Open the Description tab for editing"));
 
     m_propertiesTab->widget(ItemPropertiesTab::TagsProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     m_propertiesTab->widget(ItemPropertiesTab::TagsProperties)->setButtonVisible(true);
