@@ -264,7 +264,7 @@ void ItemSelectionPropertiesTab::slotGetThumbnails()
 {
     QMutexLocker lock(&d->mutex);
 
-    for (const ThumbnailIdentifier& th : d->thumbs)
+    for (const ThumbnailIdentifier& th : std::as_const(d->thumbs))
     {
         d->thumbLoadThread->find(th);
     }
