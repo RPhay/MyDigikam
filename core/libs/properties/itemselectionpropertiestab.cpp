@@ -68,10 +68,7 @@ public:
 
     QTreeWidget*               treeSelectionGroups  = nullptr;
     QTreeWidget*               treeTotalGroups      = nullptr;
-
     ThumbnailLoadThread*       thumbLoadThread      = nullptr;
-    QList<ThumbnailIdentifier> thumbs;
-
     int                        iconSize             = ApplicationSettings::instance()->getTreeViewIconSize();
 };
 
