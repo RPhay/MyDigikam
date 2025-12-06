@@ -149,7 +149,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     grid2->setSpacing(0);
 
     insertItem(ItemSelectionPropertiesTab::Private::AlbumItemProperties, total,
-               QIcon::fromTheme(QLatin1String("dialog-information")),
+               QIcon::fromTheme(QLatin1String("folder")),
                i18n("Album Item Properties"), QLatin1String("Album Item Properties"), true);
 
     addStretch();
@@ -261,6 +261,13 @@ void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& selected, const I
 
 void ItemSelectionPropertiesTab::slotGotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
 {
+    QPixmap thumb = pix;
+
+    if (thumb.isNull())
+    {
+        thumb = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(d->iconSize, d->iconSize, QIcon::Disabled);
+    }
+
     QString file = QFileInfo(desc.filePath).fileName();
     QTreeWidgetItemIterator it(d->treeSelectionGroups);
 
@@ -268,7 +275,7 @@ void ItemSelectionPropertiesTab::slotGotThumbnail(const LoadingDescription& desc
     {
         if ((*it)->text(0) == file)
         {
-            setThumbnail(*it, pix);
+            setThumbnail(*it, thumb);
             break;
         }
 
@@ -281,7 +288,7 @@ void ItemSelectionPropertiesTab::slotGotThumbnail(const LoadingDescription& desc
     {
         if ((*it2)->text(0) == file)
         {
-            setThumbnail(*it2, pix);
+            setThumbnail(*it2, thumb);
             break;
         }
 
