@@ -102,7 +102,11 @@ public:
 
     /**
      * Find a group of thumbnails. The items will be loaded in order and signals will be sent.
-     * Can be used to ensure that thumbnails are loaded in a particular order
+     * Can be used to ensure that thumbnails are loaded in a particular order.
+     *
+     * @note: the signal signalThumbnailLoaded() is only fired once, after it has been loaded, this behavior is intentional.
+     * On all subsequent attempts, during the conversion from ThumbnailIdentifier to LoadingDescription, it checks whether the
+     * thumbnail is already in the cache. The load request is then discarded.
      */
     void findGroup(QList<ThumbnailIdentifier>& identifiers);
     void findGroup(QList<ThumbnailIdentifier>& identifiers, int size);
