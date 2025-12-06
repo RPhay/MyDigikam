@@ -131,7 +131,7 @@ BUGFIXES:
 084 --> 506551 - Window size / Selection of Album Collections.
 085 --> 506335 - Left sidebar is too wide.
 086 --> 512081 - Word Wrap - Especially in Right Sidebar.
-087 --> 
+087 --> 512958 - Saving image as AVIF after cropping crashes.
 088 --> 
 089 --> 
 090 --> 
