@@ -50,7 +50,6 @@ public:
 
 private Q_SLOTS:
 
-    void slotGetThumbnails();
     void slotGotThumbnail(const LoadingDescription&, const QPixmap&);
     void slotSettingsChanged();
 

@@ -27,8 +27,6 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QFileInfo>
-#include <QMutexLocker>
-#include <QMutex>
 
 // KDE includes
 
@@ -70,8 +68,6 @@ public:
 
     QTreeWidget*               treeSelectionGroups  = nullptr;
     QTreeWidget*               treeTotalGroups      = nullptr;
-
-    QMutex                     mutex;
 
     ThumbnailLoadThread*       thumbLoadThread      = nullptr;
     QList<ThumbnailIdentifier> thumbs;
@@ -210,6 +206,16 @@ void ItemSelectionPropertiesTab::setSelectionSize(const QString& str)
     d->labelSelectionSize->setAdjustedText(str);
 }
 
+void ItemSelectionPropertiesTab::setTotalCount(const QString& str)
+{
+    d->labelTotalCount->setAdjustedText(str);
+}
+
+void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
+{
+    d->labelTotalSize->setAdjustedText(str);
+}
+
 void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& selected, const ItemInfoList& total)
 {
     d->labelSelectionGroups->setAdjustedText(QString::number(selected.count()));
@@ -230,44 +236,30 @@ void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& selected, const I
     d->labelTotalGroups->setAdjustedText(QString::number(total.count()));
     d->treeTotalGroups->clear();
 
-    QMutexLocker lock(&d->mutex);
-    d->thumbs.clear();
+    QList<ThumbnailIdentifier> thumbs;
 
     for (const ItemInfo& pinf : std::as_const(total))
     {
         QTreeWidgetItem* const p = new QTreeWidgetItem(d->treeTotalGroups, QStringList() << pinf.name());
         d->treeTotalGroups->addTopLevelItem(p);
-        d->thumbs.append(ThumbnailIdentifier(pinf.fileUrl().toLocalFile()));
+        thumbs.append(ThumbnailIdentifier(pinf.fileUrl().toLocalFile()));
         const auto list          = pinf.groupedImages();
 
         for (const ItemInfo& cinf : list)
         {
             new QTreeWidgetItem(p, QStringList() << cinf.name());
-            d->thumbs.append(ThumbnailIdentifier(cinf.fileUrl().toLocalFile()));
+            thumbs.append(ThumbnailIdentifier(cinf.fileUrl().toLocalFile()));
         }
     }
 
-    QTimer::singleShot(1000, this, SLOT(slotGetThumbnails()));
-}
-
-void ItemSelectionPropertiesTab::setTotalCount(const QString& str)
-{
-    d->labelTotalCount->setAdjustedText(str);
-}
-
-void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
-{
-    d->labelTotalSize->setAdjustedText(str);
-}
-
-void ItemSelectionPropertiesTab::slotGetThumbnails()
-{
-    QMutexLocker lock(&d->mutex);
-
-    for (const ThumbnailIdentifier& th : std::as_const(d->thumbs))
-    {
-        d->thumbLoadThread->find(th);
-    }
+    QTimer::singleShot(1000, [this, thumbs]()
+        {
+            for (const ThumbnailIdentifier& th : std::as_const(thumbs))
+            {
+                d->thumbLoadThread->find(th);
+            }
+        }
+    );
 }
 
 void ItemSelectionPropertiesTab::slotGotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
