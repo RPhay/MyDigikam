@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:40+0000\n"
+"POT-Creation-Date: 2025-12-06 00:40+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -3304,7 +3304,7 @@ msgstr "Níl a leithéid d'albam ann"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:514
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4265,7 +4265,7 @@ msgstr "Conair"
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:477
+#: core/libs/properties/itempropertiestab.cpp:478
 #, kde-format
 msgid "Size"
 msgstr "Méid"
@@ -4368,7 +4368,7 @@ msgstr "Airde"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:102
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:483
 #, fuzzy, kde-format
 msgid "Dimensions"
 msgstr "Toisí:"
@@ -8481,7 +8481,7 @@ msgstr "Díchumasaíodh Bainisteoireacht na nDathanna..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:502
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -25245,7 +25245,7 @@ msgid "Date"
 msgstr "Dáta"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:516
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -38492,7 +38492,7 @@ msgid "Writable: "
 msgstr "Inscríofa: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:133
-#: core/libs/properties/itempropertiestab.cpp:86
+#: core/libs/properties/itempropertiestab.cpp:87
 #, fuzzy, kde-format
 #| msgid "Type: "
 msgctxt "@label: item properties"
@@ -38500,7 +38500,7 @@ msgid "Type: "
 msgstr "Cineál: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:134
-#: core/libs/properties/itempropertiestab.cpp:87
+#: core/libs/properties/itempropertiestab.cpp:88
 #, fuzzy, kde-format
 #| msgid "Dimensions: "
 msgctxt "@label: item properties"
@@ -38509,8 +38509,8 @@ msgstr "Toisí: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:135
 #: core/libs/properties/import/importitempropertiestab.cpp:243
-#: core/libs/properties/itempropertiestab.cpp:88
-#: core/libs/properties/itempropertiestab.cpp:186
+#: core/libs/properties/itempropertiestab.cpp:89
+#: core/libs/properties/itempropertiestab.cpp:187
 #, fuzzy, kde-format
 #| msgid "Aspect Ratio: "
 msgctxt "@label: item properties"
@@ -38539,7 +38539,7 @@ msgid "Camera File Properties"
 msgstr "Airíonna Comhaid"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:185
-#: core/libs/properties/itempropertiestab.cpp:130
+#: core/libs/properties/itempropertiestab.cpp:131
 #, fuzzy, kde-format
 #| msgid "Make: "
 msgctxt "@label: item properties"
@@ -38547,7 +38547,7 @@ msgid "Make: "
 msgstr "Déanamh: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:186
-#: core/libs/properties/itempropertiestab.cpp:131
+#: core/libs/properties/itempropertiestab.cpp:132
 #, fuzzy, kde-format
 #| msgid "Model: "
 msgctxt "@label: item properties"
@@ -38562,7 +38562,7 @@ msgid "Created: "
 msgstr "Cruthaithe: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:132
+#: core/libs/properties/itempropertiestab.cpp:133
 #, fuzzy, kde-format
 #| msgid "Lens: "
 msgctxt "@label: item properties"
@@ -38570,7 +38570,7 @@ msgid "Lens: "
 msgstr "Lionsa: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:133
+#: core/libs/properties/itempropertiestab.cpp:134
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@label: item properties"
@@ -38578,7 +38578,7 @@ msgid "Aperture: "
 msgstr "Cró: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:134
+#: core/libs/properties/itempropertiestab.cpp:135
 #, fuzzy, kde-format
 #| msgid "Focal: "
 msgctxt "@label: item properties"
@@ -38586,7 +38586,7 @@ msgid "Focal: "
 msgstr "Fad Fócasach: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:191
-#: core/libs/properties/itempropertiestab.cpp:135
+#: core/libs/properties/itempropertiestab.cpp:136
 #, fuzzy, kde-format
 #| msgid "Exposure: "
 msgctxt "@label: item properties"
@@ -38594,7 +38594,7 @@ msgid "Exposure: "
 msgstr "Nochtadh: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:192
-#: core/libs/properties/itempropertiestab.cpp:136
+#: core/libs/properties/itempropertiestab.cpp:137
 #, fuzzy, kde-format
 #| msgid "Sensitivity: "
 msgctxt "@label: item properties"
@@ -38602,7 +38602,7 @@ msgid "Sensitivity: "
 msgstr "Íogaireacht: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:137
+#: core/libs/properties/itempropertiestab.cpp:138
 #, fuzzy, kde-format
 #| msgid "Mode/Program: "
 msgctxt "@label: item properties"
@@ -38610,7 +38610,7 @@ msgid "Mode/Program: "
 msgstr "Mód/Clár: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:138
+#: core/libs/properties/itempropertiestab.cpp:139
 #, fuzzy, kde-format
 #| msgid "Flash: "
 msgctxt "@label: item properties"
@@ -38618,7 +38618,7 @@ msgid "Flash: "
 msgstr "Splanc: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
-#: core/libs/properties/itempropertiestab.cpp:139
+#: core/libs/properties/itempropertiestab.cpp:140
 #, fuzzy, kde-format
 #| msgid "White balance:"
 msgctxt "@label: item properties"
@@ -38633,14 +38633,14 @@ msgid "Photograph Properties"
 msgstr "Airíonna an Ghrianghraif"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:244
-#: core/libs/properties/itempropertiestab.cpp:190
+#: core/libs/properties/itempropertiestab.cpp:191
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "Ráta Fráma:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:191
+#: core/libs/properties/itempropertiestab.cpp:192
 #, fuzzy, kde-format
 #| msgid "Output Channel:"
 msgctxt "@label: item properties"
@@ -38648,7 +38648,7 @@ msgid "Audio Channel Type: "
 msgstr "Cainéal Aschurtha:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:192
+#: core/libs/properties/itempropertiestab.cpp:193
 #, fuzzy, kde-format
 #| msgid "Audio Compressor: "
 msgctxt "@label: item properties"
@@ -38656,7 +38656,7 @@ msgid "Audio Codec: "
 msgstr "Comhbhrúiteoir Fuaime:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:187
+#: core/libs/properties/itempropertiestab.cpp:188
 #, fuzzy, kde-format
 #| msgid "Duration: "
 msgctxt "@label: item properties"
@@ -38664,7 +38664,7 @@ msgid "Duration: "
 msgstr "Tréimhse: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:188
+#: core/libs/properties/itempropertiestab.cpp:189
 #, fuzzy, kde-format
 #| msgid "Frame Rate:"
 msgctxt "@label: item properties"
@@ -38672,7 +38672,7 @@ msgid "Frame Rate: "
 msgstr "Ráta Fráma:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:189
+#: core/libs/properties/itempropertiestab.cpp:190
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -38699,8 +38699,8 @@ msgid "unchanged"
 msgstr "<i>gan athrú</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
-#: core/libs/properties/itempropertiessidebar.cpp:221
-#: core/libs/properties/itempropertiessidebardb.cpp:652
+#: core/libs/properties/itempropertiessidebar.cpp:217
+#: core/libs/properties/itempropertiessidebardb.cpp:662
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -38711,12 +38711,12 @@ msgstr "níl ar fáil"
 #: core/libs/properties/import/importitempropertiestab.cpp:348
 #: core/libs/properties/import/importitempropertiestab.cpp:363
 #: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:282
-#: core/libs/properties/itempropertiessidebar.cpp:285
-#: core/libs/properties/itempropertiessidebardb.cpp:710
-#: core/libs/properties/itempropertiessidebardb.cpp:712
-#: core/libs/properties/itempropertiessidebardb.cpp:815
-#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiessidebar.cpp:278
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebardb.cpp:720
+#: core/libs/properties/itempropertiessidebardb.cpp:722
+#: core/libs/properties/itempropertiessidebardb.cpp:825
+#: core/libs/properties/itempropertiessidebardb.cpp:827
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 #| msgid "No"
@@ -38729,12 +38729,12 @@ msgstr "Níl"
 #: core/libs/properties/import/importitempropertiestab.cpp:352
 #: core/libs/properties/import/importitempropertiestab.cpp:367
 #: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebar.cpp:284
-#: core/libs/properties/itempropertiessidebardb.cpp:709
-#: core/libs/properties/itempropertiessidebardb.cpp:711
-#: core/libs/properties/itempropertiessidebardb.cpp:814
-#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:719
+#: core/libs/properties/itempropertiessidebardb.cpp:721
+#: core/libs/properties/itempropertiessidebardb.cpp:824
+#: core/libs/properties/itempropertiessidebardb.cpp:826
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -38954,46 +38954,46 @@ msgstr "IPTC"
 msgid "XMP"
 msgstr "XMP"
 
-#: core/libs/properties/itempropertiessidebar.cpp:78
+#: core/libs/properties/itempropertiessidebar.cpp:75
 #, fuzzy, kde-format
 #| msgid "Copy coordinates"
 msgid "Copy the all properties in clipboard"
 msgstr "Cóipeáil comhordanáidí"
 
-#: core/libs/properties/itempropertiessidebar.cpp:82
+#: core/libs/properties/itempropertiessidebar.cpp:79
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open item in the file manager"
 msgstr "Oscail i mBainisteoir na gComhad"
 
-#: core/libs/properties/itempropertiessidebar.cpp:84
+#: core/libs/properties/itempropertiessidebar.cpp:81
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "Airíonna"
 
-#: core/libs/properties/itempropertiessidebar.cpp:85
+#: core/libs/properties/itempropertiessidebar.cpp:82
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: item properties"
 msgid "Metadata"
 msgstr "Meiteashonraí"
 
-#: core/libs/properties/itempropertiessidebar.cpp:86
+#: core/libs/properties/itempropertiessidebar.cpp:83
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "Dathanna"
 
-#: core/libs/properties/itempropertiessidebar.cpp:91
+#: core/libs/properties/itempropertiessidebar.cpp:88
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Map"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:246
+#: core/libs/properties/itempropertiessidebar.cpp:242
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, fuzzy, kde-format
@@ -39002,86 +39002,86 @@ msgctxt "@info: item properties"
 msgid "RAW Image"
 msgstr "Íomhá RAW"
 
-#: core/libs/properties/itempropertiessidebar.cpp:249
+#: core/libs/properties/itempropertiessidebar.cpp:245
 #, fuzzy, kde-format
 #| msgid "Uncalibrated"
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
 msgstr "Neamhchalabraithe"
 
-#: core/libs/properties/itempropertiessidebar.cpp:264
-#: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:686
-#: core/libs/properties/itempropertiessidebardb.cpp:699
+#: core/libs/properties/itempropertiessidebar.cpp:260
+#: core/libs/properties/itempropertiessidebar.cpp:267
+#: core/libs/properties/itempropertiessidebardb.cpp:696
+#: core/libs/properties/itempropertiessidebardb.cpp:709
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "Anaithnid"
 
-#: core/libs/properties/itempropertiessidebar.cpp:265
+#: core/libs/properties/itempropertiessidebar.cpp:261
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: item properties"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3Mpct)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:708
+#: core/libs/properties/itempropertiessidebar.cpp:276
+#: core/libs/properties/itempropertiessidebardb.cpp:718
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
-#: core/libs/properties/itempropertiessidebar.cpp:316
-#: core/libs/properties/itempropertiessidebardb.cpp:742
+#: core/libs/properties/itempropertiessidebar.cpp:312
+#: core/libs/properties/itempropertiessidebardb.cpp:752
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:321
-#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebar.cpp:317
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:88
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Foscríbhinn"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:89
+#: core/libs/properties/itempropertiessidebardb.cpp:97
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Leaganacha"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:93
+#: core/libs/properties/itempropertiessidebardb.cpp:101
 #, fuzzy, kde-format
 #| msgid "Caption Information"
-msgid "Open the Decription tab for editing"
+msgid "Open the Description tab for editing"
 msgstr "Faisnéis Fhotheidil"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
+#: core/libs/properties/itempropertiessidebardb.cpp:105
 #, fuzzy, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "Níl aon mhír roghnaithe (%1 mhír)"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:109
+#: core/libs/properties/itempropertiessidebardb.cpp:113
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:691
+#: core/libs/properties/itempropertiessidebardb.cpp:701
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
@@ -39108,7 +39108,7 @@ msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Ceadanna: "
 
-#: core/libs/properties/itempropertiestab.cpp:79
+#: core/libs/properties/itempropertiestab.cpp:80
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title: item properties"
@@ -39116,60 +39116,60 @@ msgid "File Properties"
 msgstr "Airíonna Comhaid"
 
 # focal.ie
-#: core/libs/properties/itempropertiestab.cpp:89
+#: core/libs/properties/itempropertiestab.cpp:90
 #, fuzzy, kde-format
 #| msgid "Color depth: "
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Doimhneacht datha: "
 
-#: core/libs/properties/itempropertiestab.cpp:90
+#: core/libs/properties/itempropertiestab.cpp:91
 #, fuzzy, kde-format
 #| msgid "Color mode: "
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Mód na ndathanna: "
 
-#: core/libs/properties/itempropertiestab.cpp:91
+#: core/libs/properties/itempropertiestab.cpp:92
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:92
+#: core/libs/properties/itempropertiestab.cpp:93
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:123
+#: core/libs/properties/itempropertiestab.cpp:124
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Airíonna na Míre"
 
-#: core/libs/properties/itempropertiestab.cpp:179
+#: core/libs/properties/itempropertiestab.cpp:180
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Airíonna an Ghrianghraif"
 
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:224
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Cuir airíonna comhaid leis"
 
-#: core/libs/properties/itempropertiestab.cpp:237
+#: core/libs/properties/itempropertiestab.cpp:238
 #, fuzzy, kde-format
 #| msgid "Title:"
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "Teideal:"
 
-#: core/libs/properties/itempropertiestab.cpp:238
+#: core/libs/properties/itempropertiestab.cpp:239
 #, fuzzy, kde-format
 #| msgid "Caption: "
 msgctxt "@label: item properties"
@@ -39177,56 +39177,56 @@ msgid "Caption: "
 msgstr "Foscríbhinn: "
 
 # Not "Roghnaigh lipéad"
-#: core/libs/properties/itempropertiestab.cpp:239
+#: core/libs/properties/itempropertiestab.cpp:240
 #, fuzzy, kde-format
 #| msgid "Pick label: "
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Lipéad roghnaithe: "
 
-#: core/libs/properties/itempropertiestab.cpp:240
+#: core/libs/properties/itempropertiestab.cpp:241
 #, fuzzy, kde-format
 #| msgid "Color label: "
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Lipéad datha: "
 
-#: core/libs/properties/itempropertiestab.cpp:241
+#: core/libs/properties/itempropertiestab.cpp:242
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Rátáil: "
 
-#: core/libs/properties/itempropertiestab.cpp:242
+#: core/libs/properties/itempropertiestab.cpp:243
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@label: item properties"
 msgid "Versioned: "
 msgstr "Leaganacha"
 
-#: core/libs/properties/itempropertiestab.cpp:243
+#: core/libs/properties/itempropertiestab.cpp:244
 #, fuzzy, kde-format
 #| msgid "Group"
 msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "Grúpa"
 
-#: core/libs/properties/itempropertiestab.cpp:292
+#: core/libs/properties/itempropertiestab.cpp:293
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "Airíonna digiKam"
 
-#: core/libs/properties/itempropertiestab.cpp:299
+#: core/libs/properties/itempropertiestab.cpp:300
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Lorgfhocail"
 
-#: core/libs/properties/itempropertiestab.cpp:303
+#: core/libs/properties/itempropertiestab.cpp:304
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
@@ -39234,249 +39234,249 @@ msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Daoine"
 
-#: core/libs/properties/itempropertiestab.cpp:318
+#: core/libs/properties/itempropertiestab.cpp:319
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Clibeanna"
 
-#: core/libs/properties/itempropertiestab.cpp:336
+#: core/libs/properties/itempropertiestab.cpp:337
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Suíomh"
 
-#: core/libs/properties/itempropertiestab.cpp:357
+#: core/libs/properties/itempropertiestab.cpp:358
 #, fuzzy, kde-format
 #| msgid "Rights"
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Cearta"
 
-#: core/libs/properties/itempropertiestab.cpp:473
+#: core/libs/properties/itempropertiestab.cpp:474
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "Comhad"
 
-#: core/libs/properties/itempropertiestab.cpp:474
+#: core/libs/properties/itempropertiestab.cpp:475
 #, fuzzy, kde-format
 #| msgid "Folder: "
 msgid "Folder"
 msgstr "Fillteán: "
 
-#: core/libs/properties/itempropertiestab.cpp:475
+#: core/libs/properties/itempropertiestab.cpp:476
 #, kde-format
 msgid "Symlink"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:476
+#: core/libs/properties/itempropertiestab.cpp:477
 #, fuzzy, kde-format
 #| msgid "Modified"
 msgid "Modified Date"
 msgstr "Athraithe"
 
-#: core/libs/properties/itempropertiestab.cpp:478
+#: core/libs/properties/itempropertiestab.cpp:479
 #, fuzzy, kde-format
 #| msgctxt "Owner of the file"
 #| msgid "Owner"
 msgid "Owner"
 msgstr "Úinéir"
 
-#: core/libs/properties/itempropertiestab.cpp:479
+#: core/libs/properties/itempropertiestab.cpp:480
 #, fuzzy, kde-format
 #| msgid "Permissions: "
 msgid "Permissions"
 msgstr "Ceadanna: "
 
-#: core/libs/properties/itempropertiestab.cpp:481
+#: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
 msgid "Mime"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:484
 #, fuzzy, kde-format
 msgid "Ratio"
 msgstr "Rothlú"
 
 # focal.ie
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:485
 #, fuzzy, kde-format
 #| msgid "Color depth: "
 msgid "Bit Depth"
 msgstr "Doimhneacht datha: "
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:486
 #, fuzzy, kde-format
 #| msgid "Color Model"
 msgid "Color Mode"
 msgstr "Samhail Datha"
 
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
 msgid "Has Sidecar"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Has GPS"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:489
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgid "Versioned"
 msgstr "Leaganacha"
 
-#: core/libs/properties/itempropertiestab.cpp:489
+#: core/libs/properties/itempropertiestab.cpp:490
 #, fuzzy, kde-format
 #| msgid "Group"
 msgid "Grouped"
 msgstr "Grúpa"
 
-#: core/libs/properties/itempropertiestab.cpp:491
+#: core/libs/properties/itempropertiestab.cpp:492
 #, fuzzy, kde-format
 #| msgid "Make:"
 msgid "Make"
 msgstr "Déanamh:"
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:493
 #, fuzzy, kde-format
 #| msgid "Model"
 msgid "Model"
 msgstr "Samhail"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:494
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgid "Date Time"
 msgstr "Dáta agus Am"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:495
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, fuzzy, kde-format
 msgid "Lens"
 msgstr "&Lionsa"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:496
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "Cró"
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:497
 #, fuzzy, kde-format
 #| msgid "Focal length"
 msgid "Focal Length"
 msgstr "Fad fócais"
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:498
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgid "Exposure Time"
 msgstr "Am nochta"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:499
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "Íogaireacht"
 
-#: core/libs/properties/itempropertiestab.cpp:499
+#: core/libs/properties/itempropertiestab.cpp:500
 #, fuzzy, kde-format
 #| msgid "Exposure mode:"
 msgid "Exposure Mode"
 msgstr "Mód nochta:"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:501
 #, fuzzy, kde-format
 #| msgid "Flash"
 msgid "Flash"
 msgstr "Splanc"
 
-#: core/libs/properties/itempropertiestab.cpp:503
+#: core/libs/properties/itempropertiestab.cpp:504
 #: core/utilities/setup/setuptooltip.cpp:256
 #, fuzzy, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Cóimheas Treoíochta:"
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:505
 #: core/utilities/setup/setuptooltip.cpp:268
 #, fuzzy, kde-format
 #| msgid "Video Information"
 msgid "Video Duration"
 msgstr "Eolas faoin Fhíseán"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:506
 #: core/utilities/setup/setuptooltip.cpp:271
 #, fuzzy, kde-format
 msgid "Video Frame Rate"
 msgstr "Ráta Fráma:"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:507
 #, fuzzy, kde-format
 msgid "Video Video Codec"
 msgstr "Comhaid Fhíse"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:508
 #, fuzzy, kde-format
 msgid "Video Audio Bit Rate"
 msgstr "Ráta Fráma:"
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:509
 #, fuzzy, kde-format
 #| msgid "Output Channel:"
 msgid "Video Audio Channel Type"
 msgstr "Cainéal Aschurtha:"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:510
 #, fuzzy, kde-format
 msgid "Video Audio Codec"
 msgstr "Comhbhrúiteoir Fuaime:"
 
-#: core/libs/properties/itempropertiestab.cpp:511
+#: core/libs/properties/itempropertiestab.cpp:512
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgid "Caption"
 msgstr "Foscríbhinn"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:513
 #, fuzzy, kde-format
 #| msgid "Title"
 msgid "Title"
 msgstr "Teideal"
 
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:515
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
 msgid "Peoples"
 msgstr "Daoine"
 
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:517
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "Cearta"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:518
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgid "Pick"
 msgstr "Roghnaigh"
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:519
 #, fuzzy, kde-format
 #| msgid "Color"
 msgid "Color"
 msgstr "Dath"
 
-#: core/libs/properties/itempropertiestab.cpp:519
+#: core/libs/properties/itempropertiestab.cpp:520
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -39501,32 +39501,36 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:71
+#: core/libs/properties/itemselectionpropertiestab.cpp:94
+#: core/libs/properties/itemselectionpropertiestab.cpp:128
 #, kde-format
 msgid "Count: "
 msgstr "Líon: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:72
+#: core/libs/properties/itemselectionpropertiestab.cpp:95
+#: core/libs/properties/itemselectionpropertiestab.cpp:129
 #, kde-format
 msgid "Size: "
 msgstr "Méid: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:73
+#: core/libs/properties/itemselectionpropertiestab.cpp:96
+#: core/libs/properties/itemselectionpropertiestab.cpp:130
 #, fuzzy, kde-format
-#| msgid "Count: "
-msgid "Total Count: "
-msgstr "Líon: "
+#| msgid "Group"
+msgid "Groups: "
+msgstr "Grúpa"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:74
-#, fuzzy, kde-format
-msgid "Total Size: "
-msgstr "Iomlán: %1 (%)"
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:99
+#: core/libs/properties/itemselectionpropertiestab.cpp:123
 #, fuzzy, kde-format
 #| msgid "File Properties"
-msgid "Selection Properties"
+msgid "Selected Item Properties"
 msgstr "Airíonna Comhaid"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:158
+#, fuzzy, kde-format
+#| msgid "Album Properties"
+msgid "Album Item Properties"
+msgstr "Airíonna an Albaim"
 
 # focal.ie
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
@@ -70417,6 +70421,15 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~| msgid "Count: "
+#~ msgid "Total Count: "
+#~ msgstr "Líon: "
+
+#, fuzzy
+#~ msgid "Total Size: "
+#~ msgstr "Iomlán: %1 (%)"
 
 #, fuzzy
 #~ msgctxt "@item: pick tree"
