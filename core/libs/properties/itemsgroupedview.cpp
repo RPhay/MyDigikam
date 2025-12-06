@@ -12,7 +12,7 @@
  *
  * ============================================================ */
 
-#include "groupeditemsview.h"
+#include "itemsgroupedview.h"
 
 // Qt includes
 
@@ -33,7 +33,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN GroupedItemsView::Private
+class Q_DECL_HIDDEN ItemsGroupedView::Private
 {
 public:
 
@@ -43,25 +43,20 @@ public:
 
     QTreeWidget*               treeSelectionGroups  = nullptr;
     QTreeWidget*               treeTotalGroups      = nullptr;
-    ThumbnailLoadThread*       thumbLoadThread      = nullptr;
+    ThumbnailLoadThread*       thumbLoadThread      = ThumbnailLoadThread::defaultThread();
     int                        iconSize             = ApplicationSettings::instance()->getTreeViewIconSize();
 };
 
-GroupedItemsView::GroupedItemsView(QWidget* const parent)
+ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
     : QTreeWidget(parent),
       d          (new Private)
 {
-
     setSortingEnabled(true);
     setRootIsDecorated(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
     header()->hide();
-
-    d->thumbLoadThread = new ThumbnailLoadThread();
-    d->thumbLoadThread->setThumbnailSize(d->iconSize);
-    d->thumbLoadThread->setSendSurrogatePixmap(false);
 
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
             this, SLOT(slotGotThumbnail(LoadingDescription,QPixmap)),
@@ -71,13 +66,12 @@ GroupedItemsView::GroupedItemsView(QWidget* const parent)
             this, SLOT(slotSettingsChanged()));
 }
 
-GroupedItemsView::~GroupedItemsView()
+ItemsGroupedView::~ItemsGroupedView()
 {
-    delete d->thumbLoadThread;
     delete d;
 }
 
-void GroupedItemsView::setGroups(const ItemInfoList& items)
+void ItemsGroupedView::setGroups(const ItemInfoList& items)
 {
     clear();
 
@@ -97,17 +91,13 @@ void GroupedItemsView::setGroups(const ItemInfoList& items)
         }
     }
 
-    QTimer::singleShot(1000, [this, thumbs]()
-        {
-            for (const ThumbnailIdentifier& th : std::as_const(thumbs))
-            {
-                d->thumbLoadThread->find(th);
-            }
-        }
-    );
+    for (const ThumbnailIdentifier& th : std::as_const(thumbs))
+    {
+        d->thumbLoadThread->find(th);
+    }
 }
 
-void GroupedItemsView::slotGotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
+void ItemsGroupedView::slotGotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
 {
     QPixmap thumb = pix;
 
@@ -131,7 +121,7 @@ void GroupedItemsView::slotGotThumbnail(const LoadingDescription& desc, const QP
     }
 }
 
-void GroupedItemsView::setThumbnail(QTreeWidgetItem* const item, const QPixmap& pix)
+void ItemsGroupedView::setThumbnail(QTreeWidgetItem* const item, const QPixmap& pix)
 {
     QPixmap pixmap(d->iconSize + 2, d->iconSize + 2);
     pixmap.fill(Qt::transparent);
@@ -151,7 +141,7 @@ void GroupedItemsView::setThumbnail(QTreeWidgetItem* const item, const QPixmap& 
     item->setIcon(0, icon);
 }
 
-void GroupedItemsView::slotSettingsChanged()
+void ItemsGroupedView::slotSettingsChanged()
 {
     if (d->iconSize != ApplicationSettings::instance()->getTreeViewIconSize())
     {
@@ -159,7 +149,7 @@ void GroupedItemsView::slotSettingsChanged()
     }
 }
 
-void GroupedItemsView::setIconSize(int size)
+void ItemsGroupedView::setIconSize(int size)
 {
     d->iconSize = size;
     d->thumbLoadThread->setThumbnailSize(d->iconSize);
@@ -175,4 +165,4 @@ void GroupedItemsView::setIconSize(int size)
 
 } // namespace Digikam
 
-#include "moc_groupeditemsview.cpp"
+#include "moc_itemsgroupedview.cpp"

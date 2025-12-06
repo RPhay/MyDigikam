@@ -28,14 +28,14 @@
 namespace Digikam
 {
 
-class GroupedItemsView : public QTreeWidget
+class ItemsGroupedView : public QTreeWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit GroupedItemsView(QWidget* const parent);
-    ~GroupedItemsView() override;
+    explicit ItemsGroupedView(QWidget* const parent);
+    ~ItemsGroupedView() override;
 
     void setGroups(const ItemInfoList& items);
 

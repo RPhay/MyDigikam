@@ -39,7 +39,7 @@
 #include "itempropertiestxtlabel.h"
 #include "digikam_globals.h"
 #include "applicationsettings.h"
-#include "groupeditemsview.h"
+#include "itemsgroupedview.h"
 
 namespace Digikam
 {
@@ -67,8 +67,8 @@ public:
     DTextLabelValue*           labelTotalSize       = nullptr;
     DTextLabelValue*           labelTotalGroups     = nullptr;
 
-    GroupedItemsView*         treeSelectionGroups  = nullptr;
-    GroupedItemsView*         treeTotalGroups      = nullptr;
+    ItemsGroupedView*         treeSelectionGroups  = nullptr;
+    ItemsGroupedView*         treeTotalGroups      = nullptr;
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
@@ -92,7 +92,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     d->labelSelectionSize                 = new DTextLabelValue(QString(), select);
     d->labelSelectionGroups               = new DTextLabelValue(QString(), select);
 
-    d->treeSelectionGroups                = new GroupedItemsView(select);
+    d->treeSelectionGroups                = new ItemsGroupedView(select);
 
     grid1->addWidget(selectionCount,                  0, 0, 1, 1);
     grid1->addWidget(d->labelSelectionCount,          0, 1, 1, 1);
@@ -121,7 +121,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     d->labelTotalSize                     = new DTextLabelValue(QString(), total);
     d->labelTotalGroups                   = new DTextLabelValue(QString(), total);
 
-    d->treeTotalGroups                    = new GroupedItemsView(total);
+    d->treeTotalGroups                    = new ItemsGroupedView(total);
 
     grid2->addWidget(totalCount,                      5, 0, 1, 1);
     grid2->addWidget(d->labelTotalCount,              5, 1, 1, 1);

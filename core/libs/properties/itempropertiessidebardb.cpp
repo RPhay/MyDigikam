@@ -51,7 +51,7 @@
 #include "tagscache.h"
 #include "tagsactionmngr.h"
 #include "dtrash.h"
-#include "groupeditemsview.h"
+#include "itemsgroupedview.h"
 
 #ifdef HAVE_GEOLOCATION
 #   include "itempropertiesgpstab.h"
@@ -80,7 +80,7 @@ public:
     ItemSelectionPropertiesTab* selectionPropertiesTab = nullptr;
     ItemDescEditTab*            desceditTab            = nullptr;
     ItemPropertiesVersionsTab*  versionsHistoryTab     = nullptr;
-    GroupedItemsView*           treeGroup              = nullptr;
+    ItemsGroupedView*           treeGroup              = nullptr;
 };
 
 ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarSplitter* const splitter,
@@ -113,7 +113,7 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
     m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setButtonVisible(true);
     m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setToolTip(i18n("Open the Information tab for editing"));
 
-    d->treeGroup = new GroupedItemsView(this);
+    d->treeGroup = new ItemsGroupedView(this);
     m_propertiesTab->setGroupedWidget(d->treeGroup);
 
     // ----------------------------------------------------------
