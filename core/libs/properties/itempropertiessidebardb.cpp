@@ -51,6 +51,7 @@
 #include "tagscache.h"
 #include "tagsactionmngr.h"
 #include "dtrash.h"
+#include "groupeditemsview.h"
 
 #ifdef HAVE_GEOLOCATION
 #   include "itempropertiesgpstab.h"
@@ -79,6 +80,7 @@ public:
     ItemSelectionPropertiesTab* selectionPropertiesTab = nullptr;
     ItemDescEditTab*            desceditTab            = nullptr;
     ItemPropertiesVersionsTab*  versionsHistoryTab     = nullptr;
+    GroupedItemsView*           treeGroup              = nullptr;
 };
 
 ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarSplitter* const splitter,
@@ -110,6 +112,9 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
     m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setButtonVisible(true);
     m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setToolTip(i18n("Open the Information tab for editing"));
+
+    d->treeGroup = new GroupedItemsView(this);
+    m_propertiesTab->setGroupedWidget(d->treeGroup);
 
     // ----------------------------------------------------------
 
@@ -242,6 +247,7 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
 void ItemPropertiesSideBarDB::slotNoCurrentItem()
 {
     ItemPropertiesSideBar::slotNoCurrentItem();
+    d->treeGroup->setVisible(false);
 
     d->selectionPropertiesTab->setCurrentURL();
 
@@ -823,6 +829,8 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             m_propertiesTab->setVersionedInfo((info.hasDerivedImages() || info.hasAncestorImages()) ? i18nc("@info: item properties", "Yes")
                                                                                                     : i18nc("@info: item properties", "No"));
 
+            d->treeGroup->setVisible(false);
+
             if      (info.isGrouped())
             {
                 m_propertiesTab->setGroupedInfo(i18nc("@info: item properties", "Yes"));
@@ -833,6 +841,10 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
                                                        "Yes (1 item)",
                                                        "Yes (%1 items)",
                                                        info.numberOfGroupedImages()));
+                ItemInfoList list;
+                list.append(info);
+                d->treeGroup->setGroups(list);
+                d->treeGroup->setVisible(true);
             }
             else
             {

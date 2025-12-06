@@ -58,6 +58,7 @@ public:
 
 public:
 
+    QGridLayout*       glay5                        = nullptr;
     DTextLabelName*    caption                      = nullptr;
     DTextLabelName*    title                        = nullptr;
     DTextLabelName*    pickLabel                    = nullptr;

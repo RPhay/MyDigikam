@@ -48,16 +48,6 @@ public:
 
     void setGroups(const ItemInfoList& selected, const ItemInfoList& total);
 
-private Q_SLOTS:
-
-    void slotGotThumbnail(const LoadingDescription&, const QPixmap&);
-    void slotSettingsChanged();
-
-private:
-
-    void setIconSize(int size);
-    void setThumbnail(QTreeWidgetItem* const item, const QPixmap& pix);
-
 private:
 
     class Private;

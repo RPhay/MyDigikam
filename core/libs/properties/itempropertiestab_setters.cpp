@@ -188,6 +188,11 @@ void ItemPropertiesTab::setGroupedInfo(const QString& str)
     d->labelGroupedInfo->setAdjustedText(str);
 }
 
+void ItemPropertiesTab::setGroupedWidget(QWidget* const wdg)
+{
+    d->glay5->addWidget(wdg, 8, 0, 1, 2);
+}
+
 void ItemPropertiesTab::setPhotoMake(const QString& str)
 {
     d->labelPhotoMake->setAdjustedText(str);

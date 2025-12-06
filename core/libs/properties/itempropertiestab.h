@@ -79,6 +79,7 @@ public:
     void setHasGPSInfo(const QString& str);
     void setVersionedInfo(const QString& str);
     void setGroupedInfo(const QString& str);
+    void setGroupedWidget(QWidget* const wdg);
 
     void setPhotoMake(const QString& str);
     void setPhotoModel(const QString& str);

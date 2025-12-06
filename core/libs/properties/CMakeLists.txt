@@ -60,6 +60,7 @@ set(libitemversionssidebar_SRCS
 set(libitempropertiesdigikam_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiessidebardb.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itemselectionpropertiestab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/groupeditemsview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/import/importitempropertiessidebar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/import/importitempropertiestab.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab.cpp

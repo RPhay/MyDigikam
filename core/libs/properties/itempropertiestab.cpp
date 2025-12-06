@@ -226,7 +226,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     // --------------------------------------------------
 
     QWidget* const w5                = new QWidget(this);
-    QGridLayout* const glay5         = new QGridLayout(w5);
+    d->glay5                         = new QGridLayout(w5);
 
     d->labelPhotoDateTime            = new DTextLabelValue(QString(), w5);
     fnt                              = d->labelPhotoDateTime->font();
@@ -268,25 +268,25 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelVersionedInfo            = new DTextLabelValue(QString(), w5);
     d->labelGroupedInfo              = new DTextLabelValue(QString(), w5);
 
-    glay5->addWidget(d->labelPhotoDateTime, 0, 0, 1, 2);
-    glay5->addWidget(d->title,              1, 0, 1, 1);
-    glay5->addWidget(d->labelTitle,         1, 1, 1, 1);
-    glay5->addWidget(d->caption,            2, 0, 1, 1);
-    glay5->addWidget(d->labelCaption,       2, 1, 1, 1);
-    glay5->addWidget(d->pickLabel,          3, 0, 1, 1);
-    glay5->addWidget(labelPickBox,          3, 1, 1, 1);
-    glay5->addWidget(d->colorLabel,         4, 0, 1, 1);
-    glay5->addWidget(labelColorBox,         4, 1, 1, 1);
-    glay5->addWidget(d->rating,             5, 0, 1, 1);
-    glay5->addWidget(d->labelRating,        5, 1, 1, 1, Qt::AlignRight);
-    glay5->addWidget(d->versioned,          6, 0, 1, 1);
-    glay5->addWidget(d->labelVersionedInfo, 6, 1, 1, 1);
-    glay5->addWidget(d->grouped,            7, 0, 1, 1);
-    glay5->addWidget(d->labelGroupedInfo,   7, 1, 1, 1);
-    glay5->setContentsMargins(spacing, spacing, spacing, spacing);
-    glay5->setColumnStretch(0, 10);
-    glay5->setColumnStretch(1, 25);
-    glay5->setSpacing(0);
+    d->glay5->addWidget(d->labelPhotoDateTime, 0, 0, 1, 2);
+    d->glay5->addWidget(d->title,              1, 0, 1, 1);
+    d->glay5->addWidget(d->labelTitle,         1, 1, 1, 1);
+    d->glay5->addWidget(d->caption,            2, 0, 1, 1);
+    d->glay5->addWidget(d->labelCaption,       2, 1, 1, 1);
+    d->glay5->addWidget(d->pickLabel,          3, 0, 1, 1);
+    d->glay5->addWidget(labelPickBox,          3, 1, 1, 1);
+    d->glay5->addWidget(d->colorLabel,         4, 0, 1, 1);
+    d->glay5->addWidget(labelColorBox,         4, 1, 1, 1);
+    d->glay5->addWidget(d->rating,             5, 0, 1, 1);
+    d->glay5->addWidget(d->labelRating,        5, 1, 1, 1, Qt::AlignRight);
+    d->glay5->addWidget(d->versioned,          6, 0, 1, 1);
+    d->glay5->addWidget(d->labelVersionedInfo, 6, 1, 1, 1);
+    d->glay5->addWidget(d->grouped,            7, 0, 1, 1);
+    d->glay5->addWidget(d->labelGroupedInfo,   7, 1, 1, 1);
+    d->glay5->setContentsMargins(spacing, spacing, spacing, spacing);
+    d->glay5->setColumnStretch(0, 10);
+    d->glay5->setColumnStretch(1, 25);
+    d->glay5->setSpacing(0);
 
     insertItem(ItemPropertiesTab::digiKamProperties,
                w5, QIcon::fromTheme(QLatin1String("edit-text-frame-update")),

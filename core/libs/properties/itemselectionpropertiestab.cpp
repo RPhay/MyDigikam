@@ -39,6 +39,7 @@
 #include "itempropertiestxtlabel.h"
 #include "digikam_globals.h"
 #include "applicationsettings.h"
+#include "groupeditemsview.h"
 
 namespace Digikam
 {
@@ -66,10 +67,8 @@ public:
     DTextLabelValue*           labelTotalSize       = nullptr;
     DTextLabelValue*           labelTotalGroups     = nullptr;
 
-    QTreeWidget*               treeSelectionGroups  = nullptr;
-    QTreeWidget*               treeTotalGroups      = nullptr;
-    ThumbnailLoadThread*       thumbLoadThread      = nullptr;
-    int                        iconSize             = ApplicationSettings::instance()->getTreeViewIconSize();
+    GroupedItemsView*         treeSelectionGroups  = nullptr;
+    GroupedItemsView*         treeTotalGroups      = nullptr;
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
@@ -93,13 +92,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     d->labelSelectionSize                 = new DTextLabelValue(QString(), select);
     d->labelSelectionGroups               = new DTextLabelValue(QString(), select);
 
-    d->treeSelectionGroups                = new QTreeWidget(select);
-    d->treeSelectionGroups->setSortingEnabled(true);
-    d->treeSelectionGroups->setRootIsDecorated(true);
-    d->treeSelectionGroups->setSelectionMode(QAbstractItemView::SingleSelection);
-    d->treeSelectionGroups->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->treeSelectionGroups->setAllColumnsShowFocus(true);
-    d->treeSelectionGroups->header()->hide();
+    d->treeSelectionGroups                = new GroupedItemsView(select);
 
     grid1->addWidget(selectionCount,                  0, 0, 1, 1);
     grid1->addWidget(d->labelSelectionCount,          0, 1, 1, 1);
@@ -128,13 +121,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     d->labelTotalSize                     = new DTextLabelValue(QString(), total);
     d->labelTotalGroups                   = new DTextLabelValue(QString(), total);
 
-    d->treeTotalGroups                    = new QTreeWidget(total);
-    d->treeTotalGroups->setSortingEnabled(true);
-    d->treeTotalGroups->setRootIsDecorated(true);
-    d->treeTotalGroups->setSelectionMode(QAbstractItemView::SingleSelection);
-    d->treeTotalGroups->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->treeTotalGroups->setAllColumnsShowFocus(true);
-    d->treeTotalGroups->header()->hide();
+    d->treeTotalGroups                    = new GroupedItemsView(total);
 
     grid2->addWidget(totalCount,                      5, 0, 1, 1);
     grid2->addWidget(d->labelTotalCount,              5, 1, 1, 1);
@@ -153,24 +140,10 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
                i18n("Album Item Properties"), QLatin1String("Album Item Properties"), true);
 
     addStretch();
-
-    // --------------------------------------------------
-
-    d->thumbLoadThread = new ThumbnailLoadThread();
-    d->thumbLoadThread->setThumbnailSize(d->iconSize);
-    d->thumbLoadThread->setSendSurrogatePixmap(false);
-
-    connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-            this, SLOT(slotGotThumbnail(LoadingDescription,QPixmap)),
-            Qt::QueuedConnection);
-
-    connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
-            this, SLOT(slotSettingsChanged()));
 }
 
 ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
 {
-    delete d->thumbLoadThread;
     delete d;
 }
 
@@ -216,134 +189,11 @@ void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
 void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& selected, const ItemInfoList& total)
 {
     d->labelSelectionGroups->setAdjustedText(QString::number(selected.count()));
-    d->treeSelectionGroups->clear();
 
-    for (const ItemInfo& pinf : std::as_const(selected))
-    {
-        QTreeWidgetItem* const p = new QTreeWidgetItem(d->treeSelectionGroups, QStringList() << pinf.name());
-        d->treeSelectionGroups->addTopLevelItem(p);
-        const auto list          = pinf.groupedImages();
-
-        for (const ItemInfo& cinf : list)
-        {
-            new QTreeWidgetItem(p, QStringList() << cinf.name());
-        }
-    }
+    d->treeSelectionGroups->setGroups(selected);
 
     d->labelTotalGroups->setAdjustedText(QString::number(total.count()));
-    d->treeTotalGroups->clear();
-
-    QList<ThumbnailIdentifier> thumbs;
-
-    for (const ItemInfo& pinf : std::as_const(total))
-    {
-        QTreeWidgetItem* const p = new QTreeWidgetItem(d->treeTotalGroups, QStringList() << pinf.name());
-        d->treeTotalGroups->addTopLevelItem(p);
-        thumbs.append(ThumbnailIdentifier(pinf.fileUrl().toLocalFile()));
-        const auto list          = pinf.groupedImages();
-
-        for (const ItemInfo& cinf : list)
-        {
-            new QTreeWidgetItem(p, QStringList() << cinf.name());
-            thumbs.append(ThumbnailIdentifier(cinf.fileUrl().toLocalFile()));
-        }
-    }
-
-    QTimer::singleShot(1000, [this, thumbs]()
-        {
-            for (const ThumbnailIdentifier& th : std::as_const(thumbs))
-            {
-                d->thumbLoadThread->find(th);
-            }
-        }
-    );
-}
-
-void ItemSelectionPropertiesTab::slotGotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
-{
-    QPixmap thumb = pix;
-
-    if (thumb.isNull())
-    {
-        thumb = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(d->iconSize, d->iconSize, QIcon::Disabled);
-    }
-
-    QString file = QFileInfo(desc.filePath).fileName();
-    QTreeWidgetItemIterator it(d->treeSelectionGroups);
-
-    while (*it)
-    {
-        if ((*it)->text(0) == file)
-        {
-            setThumbnail(*it, thumb);
-            break;
-        }
-
-        ++it;
-    }
-
-    QTreeWidgetItemIterator it2(d->treeTotalGroups);
-
-    while (*it2)
-    {
-        if ((*it2)->text(0) == file)
-        {
-            setThumbnail(*it2, thumb);
-            break;
-        }
-
-        ++it2;
-    }
-}
-
-void ItemSelectionPropertiesTab::setThumbnail(QTreeWidgetItem* const item, const QPixmap& pix)
-{
-    QPixmap pixmap(d->iconSize + 2, d->iconSize + 2);
-    pixmap.fill(Qt::transparent);
-    QPainter p(&pixmap);
-    p.drawPixmap((pixmap.width()  / 2) - (pix.width()  / 2),
-                 (pixmap.height() / 2) - (pix.height() / 2), pix);
-    QIcon icon = QIcon(pixmap);
-
-    // We make sure the preview icon stays the same regardless of the role.
-
-    icon.addPixmap(pix, QIcon::Selected, QIcon::On);
-    icon.addPixmap(pix, QIcon::Selected, QIcon::Off);
-    icon.addPixmap(pix, QIcon::Active,   QIcon::On);
-    icon.addPixmap(pix, QIcon::Active,   QIcon::Off);
-    icon.addPixmap(pix, QIcon::Normal,   QIcon::On);
-    icon.addPixmap(pix, QIcon::Normal,   QIcon::Off);
-    item->setIcon(0, icon);
-}
-
-void ItemSelectionPropertiesTab::slotSettingsChanged()
-{
-    if (d->iconSize != ApplicationSettings::instance()->getTreeViewIconSize())
-    {
-        setIconSize(ApplicationSettings::instance()->getTreeViewIconSize());
-    }
-}
-
-void ItemSelectionPropertiesTab::setIconSize(int size)
-{
-    d->iconSize = size;
-    d->thumbLoadThread->setThumbnailSize(d->iconSize);
-
-    QTreeWidgetItemIterator it(d->treeSelectionGroups);
-
-    while (*it)
-    {
-        (*it)->setSizeHint(0, QSize(d->iconSize, d->iconSize));
-        ++it;
-    }
-
-    QTreeWidgetItemIterator it2(d->treeTotalGroups);
-
-    while (*it2)
-    {
-        (*it2)->setSizeHint(0, QSize(d->iconSize, d->iconSize));
-        ++it2;
-    }
+    d->treeTotalGroups->setGroups(total);
 }
 
 } // namespace Digikam
