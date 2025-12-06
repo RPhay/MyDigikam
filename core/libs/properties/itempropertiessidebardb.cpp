@@ -39,7 +39,6 @@
 #include "coredbinfocontainers.h"
 #include "coredbwatch.h"
 #include "dimg.h"
-#include "itemselectionpropertiestab.h"
 #include "itemattributeswatch.h"
 #include "itemdescedittab.h"
 #include "iteminfo.h"

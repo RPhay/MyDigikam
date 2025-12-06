@@ -6,7 +6,8 @@
  * Date        : 2020-04-11
  * Description : A tab to display information about the current selection.
  *
- * SPDX-FileCopyrightText: 2020 by Kartik Ramesh <kartikx2000 at gmail dot com>
+ * SPDX-FileCopyrightText:      2020 by Kartik Ramesh <kartikx2000 at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -39,6 +40,7 @@
 #include "itempropertiestab.h"
 #include "itempropertiestxtlabel.h"
 #include "digikam_globals.h"
+#include "applicationsettings.h"
 
 namespace Digikam
 {
@@ -59,22 +61,22 @@ public:
 
 public:
 
-    DTextLabelValue*     labelSelectionCount  = nullptr;
-    DTextLabelValue*     labelSelectionSize   = nullptr;
-    DTextLabelValue*     labelSelectionGroups = nullptr;
-    DTextLabelValue*     labelTotalCount      = nullptr;
-    DTextLabelValue*     labelTotalSize       = nullptr;
-    DTextLabelValue*     labelTotalGroups     = nullptr;
+    DTextLabelValue*           labelSelectionCount  = nullptr;
+    DTextLabelValue*           labelSelectionSize   = nullptr;
+    DTextLabelValue*           labelSelectionGroups = nullptr;
+    DTextLabelValue*           labelTotalCount      = nullptr;
+    DTextLabelValue*           labelTotalSize       = nullptr;
+    DTextLabelValue*           labelTotalGroups     = nullptr;
 
-    QTreeWidget*         treeSelectionGroups  = nullptr;
-    QTreeWidget*         treeTotalGroups      = nullptr;
+    QTreeWidget*               treeSelectionGroups  = nullptr;
+    QTreeWidget*               treeTotalGroups      = nullptr;
 
-    QMutex               mutex;
+    QMutex                     mutex;
 
-    ThumbnailLoadThread* thumbLoadThread      = ThumbnailLoadThread::defaultThread();
+    ThumbnailLoadThread*       thumbLoadThread      = nullptr;
     QList<ThumbnailIdentifier> thumbs;
 
-    const int            iconSize             = 24;
+    int                        iconSize             = ApplicationSettings::instance()->getTreeViewIconSize();
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
@@ -157,16 +159,25 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
                QIcon::fromTheme(QLatin1String("dialog-information")),
                i18n("Album Item Properties"), QLatin1String("Album Item Properties"), true);
 
-    // --------------------------------------------------
-
     addStretch();
 
+    // --------------------------------------------------
+
+    d->thumbLoadThread = new ThumbnailLoadThread();
+    d->thumbLoadThread->setThumbnailSize(d->iconSize);
+    d->thumbLoadThread->setSendSurrogatePixmap(false);
+
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-            this, SLOT(slotThumbnail(LoadingDescription,QPixmap)));
+            this, SLOT(slotGotThumbnail(LoadingDescription,QPixmap)),
+            Qt::QueuedConnection);
+
+    connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
+            this, SLOT(slotSettingsChanged()));
 }
 
 ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
 {
+    delete d->thumbLoadThread;
     delete d;
 }
 
@@ -178,6 +189,10 @@ void ItemSelectionPropertiesTab::setCurrentURL(const QUrl& url)
          d->labelSelectionSize->setAdjustedText(QString());
          d->labelTotalCount->setAdjustedText(QString());
          d->labelTotalSize->setAdjustedText(QString());
+         d->labelSelectionGroups->setAdjustedText(QString());
+         d->labelTotalGroups->setAdjustedText(QString());
+         d->treeSelectionGroups->clear();
+         d->treeTotalGroups->clear();
          setEnabled(false);
          return;
     }
@@ -248,29 +263,40 @@ void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
 void ItemSelectionPropertiesTab::slotGetThumbnails()
 {
     QMutexLocker lock(&d->mutex);
-    d->thumbLoadThread->findGroup(d->thumbs, d->iconSize);
+
+    for (const ThumbnailIdentifier& th : d->thumbs)
+    {
+        d->thumbLoadThread->find(th);
+    }
 }
 
-void ItemSelectionPropertiesTab::slotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
+void ItemSelectionPropertiesTab::slotGotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
 {
     QString file = QFileInfo(desc.filePath).fileName();
-qDebug() << "File to find:" << file;
+    QTreeWidgetItemIterator it(d->treeSelectionGroups);
 
-
-    auto items = d->treeSelectionGroups->findItems(file, Qt::MatchExactly);
-
-    if (!items.isEmpty())
+    while (*it)
     {
-qDebug() << "Found in Selection:" << items.first();
-        setThumbnail(items.first(), pix);
+        if ((*it)->text(0) == file)
+        {
+            setThumbnail(*it, pix);
+            break;
+        }
+
+        ++it;
     }
 
-    items = d->treeTotalGroups->findItems(file, Qt::MatchExactly);
+    QTreeWidgetItemIterator it2(d->treeTotalGroups);
 
-    if (!items.isEmpty())
+    while (*it2)
     {
-qDebug() << "Found in album:" << items.first();
-        setThumbnail(items.first(), pix);
+        if ((*it2)->text(0) == file)
+        {
+            setThumbnail(*it2, pix);
+            break;
+        }
+
+        ++it2;
     }
 }
 
@@ -292,6 +318,36 @@ void ItemSelectionPropertiesTab::setThumbnail(QTreeWidgetItem* const item, const
     icon.addPixmap(pix, QIcon::Normal,   QIcon::On);
     icon.addPixmap(pix, QIcon::Normal,   QIcon::Off);
     item->setIcon(0, icon);
+}
+
+void ItemSelectionPropertiesTab::slotSettingsChanged()
+{
+    if (d->iconSize != ApplicationSettings::instance()->getTreeViewIconSize())
+    {
+        setIconSize(ApplicationSettings::instance()->getTreeViewIconSize());
+    }
+}
+
+void ItemSelectionPropertiesTab::setIconSize(int size)
+{
+    d->iconSize = size;
+    d->thumbLoadThread->setThumbnailSize(d->iconSize);
+
+    QTreeWidgetItemIterator it(d->treeSelectionGroups);
+
+    while (*it)
+    {
+        (*it)->setSizeHint(0, QSize(d->iconSize, d->iconSize));
+        ++it;
+    }
+
+    QTreeWidgetItemIterator it2(d->treeTotalGroups);
+
+    while (*it2)
+    {
+        (*it2)->setSizeHint(0, QSize(d->iconSize, d->iconSize));
+        ++it2;
+    }
 }
 
 } // namespace Digikam
