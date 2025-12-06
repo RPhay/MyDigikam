@@ -814,16 +814,30 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             m_propertiesTab->setTags(
                                      TagsCache::instance()->tagPaths(regularTagIds, TagsCache::NoLeadingSlash, TagsCache::NoHiddenTags),
                                      TagsCache::instance()->tagNames(regularTagIds, TagsCache::NoHiddenTags),
-                                     TagsCache::instance()->tagPaths(peopleTagIds, TagsCache::NoLeadingSlash, TagsCache::NoHiddenTags),
-                                     TagsCache::instance()->tagNames(peopleTagIds, TagsCache::NoHiddenTags)
+                                     TagsCache::instance()->tagPaths(peopleTagIds,  TagsCache::NoLeadingSlash, TagsCache::NoHiddenTags),
+                                     TagsCache::instance()->tagNames(peopleTagIds,  TagsCache::NoHiddenTags)
                                     );
 
             m_propertiesTab->setTemplate(info.metadataTemplate());
 
             m_propertiesTab->setVersionedInfo((info.hasDerivedImages() || info.hasAncestorImages()) ? i18nc("@info: item properties", "Yes")
                                                                                                     : i18nc("@info: item properties", "No"));
-            m_propertiesTab->setGroupedInfo((info.isGrouped() || info.hasGroupedImages()) ? i18nc("@info: item properties", "Yes")
-                                                                                          : i18nc("@info: item properties", "No"));
+
+            if      (info.isGrouped())
+            {
+                m_propertiesTab->setGroupedInfo(i18nc("@info: item properties", "Yes"));
+            }
+            else if (info.hasGroupedImages())
+            {
+                m_propertiesTab->setGroupedInfo(i18ncp("@info: item properties",
+                                                       "Yes (1 item)",
+                                                       "Yes (%1 items)",
+                                                       info.numberOfGroupedImages()));
+            }
+            else
+            {
+                m_propertiesTab->setGroupedInfo(i18nc("@info: item properties", "No"));
+            }
 
             m_propertiesTab->showOrHideCachedProperties();
 
