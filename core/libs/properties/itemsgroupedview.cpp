@@ -76,10 +76,14 @@ void ItemsGroupedView::setGroups(const ItemInfoList& items)
     clear();
 
     QList<ThumbnailIdentifier> thumbs;
+    bool count = ApplicationSettings::instance()->getShowFolderTreeViewItemsCount();
 
     for (const ItemInfo& pinf : std::as_const(items))
     {
-        QTreeWidgetItem* const p = new QTreeWidgetItem(this, QStringList() << pinf.name());
+        QTreeWidgetItem* const p = new QTreeWidgetItem(this, QStringList() << (count ? QString::fromLatin1("%1 (%2)")
+                                                                                       .arg(pinf.name())
+                                                                                       .arg(pinf.numberOfGroupedImages() + 1)
+                                                                                     : pinf.name()));
         addTopLevelItem(p);
         thumbs.append(ThumbnailIdentifier(pinf.fileUrl().toLocalFile()));
         const auto list          = pinf.groupedImages();
