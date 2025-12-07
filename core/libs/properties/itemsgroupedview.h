@@ -28,6 +28,8 @@
 namespace Digikam
 {
 
+class CollectionImageChangeset;
+
 class ItemsGroupedView : public QTreeWidget
 {
     Q_OBJECT
@@ -35,7 +37,7 @@ class ItemsGroupedView : public QTreeWidget
 public:
 
     explicit ItemsGroupedView(QWidget* const parent);
-    ~ItemsGroupedView() override;
+    ~ItemsGroupedView()                                                  override;
 
     void setGroups(const ItemInfoList& items);
     void setEnableToolTips(bool val);
@@ -45,6 +47,7 @@ private Q_SLOTS:
     void slotGotThumbnail(const LoadingDescription&, const QPixmap&);
     void slotSettingsChanged();
     void slotToolTip();
+    void slotCollectionImageChange(const CollectionImageChangeset&);
 
 private:
 
@@ -56,6 +59,8 @@ private:
     void keyPressEvent(QKeyEvent*)                                       override;
     void focusOutEvent(QFocusEvent*)                                     override;
     void leaveEvent(QEvent*)                                             override;
+
+    void removeItemById(qlonglong id);
 
 private:
 
