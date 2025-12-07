@@ -138,7 +138,7 @@ BUGFIXES:
 091 --> 511180 - Failure to launch.
 092 --> 393313 - Next item sometimes goes next image, other times it scrolls the bar.
 093 --> 507153 - Settings menu opens slowly.
-094 --> 
+094 --> 511229 - Dates pane completely empty after update from Debian Bookworm to Trixie.
 095 --> 
 096 --> 
 097 --> 
