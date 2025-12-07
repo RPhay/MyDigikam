@@ -43,7 +43,7 @@ public:
 
     QTreeWidget*               treeSelectionGroups  = nullptr;
     QTreeWidget*               treeTotalGroups      = nullptr;
-    ThumbnailLoadThread*       thumbLoadThread      = ThumbnailLoadThread::defaultThread();
+    ThumbnailLoadThread*       thumbLoadThread      = nullptr;
     int                        iconSize             = ApplicationSettings::instance()->getTreeViewIconSize();
 };
 
@@ -58,6 +58,10 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
     setAllColumnsShowFocus(true);
     header()->hide();
 
+    d->thumbLoadThread = new ThumbnailLoadThread();
+    d->thumbLoadThread->setThumbnailSize(d->iconSize);
+    d->thumbLoadThread->setSendSurrogatePixmap(false);
+
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
             this, SLOT(slotGotThumbnail(LoadingDescription,QPixmap)),
             Qt::QueuedConnection);
@@ -68,6 +72,7 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
 
 ItemsGroupedView::~ItemsGroupedView()
 {
+    delete d->thumbLoadThread;
     delete d;
 }
 
@@ -115,7 +120,7 @@ void ItemsGroupedView::slotGotThumbnail(const LoadingDescription& desc, const QP
 
     while (*it)
     {
-        if ((*it)->text(0) == file)
+        if ((*it)->text(0).startsWith(file))
         {
             setThumbnail(*it, thumb);
             break;
