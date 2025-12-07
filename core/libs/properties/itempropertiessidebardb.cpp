@@ -857,7 +857,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
 void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 {
-    // --Selection Properties------------------------------------------------------
+    // -- Items Selection Properties
 
     d->selectionPropertiesTab->setSelectionCount(QLocale().toString(d->currentInfos.count()));
 
@@ -880,7 +880,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     d->selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
 
-    // --Total Selection Properties------------------------------------------------------
+    // -- Total Album Items Properties
 
     d->selectionPropertiesTab->setTotalCount(QLocale().toString(d->allInfos.count()));
 
