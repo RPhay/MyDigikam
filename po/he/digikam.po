@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:40+0000\n"
-"PO-Revision-Date: 2025-12-05 12:02+0200\n"
+"POT-Creation-Date: 2025-12-07 00:40+0000\n"
+"PO-Revision-Date: 2025-12-06 08:46+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -34123,11 +34123,9 @@ msgid "Could not move image %1 to collection trash"
 msgstr "כשל בעת הצגת קבצים ב %1"
 
 #: core/libs/iojobs/iojob.cpp:422
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image with the same name %1 already there"
-msgstr ""
-"אוסף-תמונות בעל אותו שם קיים\n"
-"אנא בחרו שם חדש"
+msgstr "כבר יש שם תמונה באותו השם %1"
 
 #: core/libs/iojobs/iojob.cpp:440
 #, kde-format
@@ -34135,9 +34133,9 @@ msgid "Image %1 could not be renamed"
 msgstr "לא ניתן לשנות את שם התמונה %1"
 
 #: core/libs/iojobs/iojob.cpp:526
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not restore file %1 from trash"
-msgstr "כשל בעת הצגת קבצים ב %1"
+msgstr "לא ניתן לשחזר את הקובץ %1 מהאשפה"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:860
 #, fuzzy, kde-format
@@ -34202,16 +34200,13 @@ msgid "Rotated Right"
 msgstr "סיבוב ימינה"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:905
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: rotation"
 msgid "Unknown"
 msgstr "לא ידוע"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:991
-#, fuzzy, kde-format
-#| msgctxt "Temperature in Kelvin"
-#| msgid "%1 K"
+#, kde-format
 msgctxt "@info: Temperature in Kelvin"
 msgid "%1 K"
 msgstr "%1 K"
@@ -36080,14 +36075,14 @@ msgid "<b>Date</b>:"
 msgstr "<b>תאריך</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:158
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copy GPS coordinates to clipboard"
-msgstr "קואורדינטות קוטביות"
+msgstr "העתקת נקודות ציון GPS ללוח הגזירים"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:168
-#, fuzzy, kde-format
+#, kde-format
 msgid "See more information on the Internet"
-msgstr "תקלה בעת שינוי עימוד תמונה בנתוני EXIF של הקבצים:"
+msgstr "הצגת פרטים נוספים באינטרנט"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:407
 #, kde-format
@@ -36096,52 +36091,52 @@ msgid "Undefined"
 msgstr ""
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Versions"
-msgstr "הרשאות:"
+msgstr "גרסאות"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Used Filters"
-msgstr "מסנן אדום"
+msgstr "מסננים בשימוש"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: open image"
 msgid "Open"
-msgstr "פתיחה באמצעות"
+msgstr "פתיחה"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:148
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open file"
-msgstr "פתיחת תיקייה"
+msgstr "פתיחת קובץ"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: go to album"
 msgid "Go To Albums"
-msgstr "אוספי-התמונות שלי"
+msgstr "מעבר לאלבומים"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:158
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Go to the album of this image"
-msgstr "מעבר לפריט הראשון"
+msgstr "מעבר לאלבום התמונה הזאת"
 
 #: core/libs/properties/history/versionsoverlays.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide item permanently"
-msgstr "מחיקה לצמיתות"
+msgstr "הסתרת פריט לצמיתות"
 
 #: core/libs/properties/history/versionsoverlays.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show item permanently"
-msgstr "הצגת פריט על סרגל שמאלי"
+msgstr "הצגת פריט לצמיתות"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:77
 #, kde-format
@@ -36161,35 +36156,31 @@ msgid "Geolocation"
 msgstr "מקום גאוגרפי"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:127
-#, fuzzy, kde-format
-#| msgid "File: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
-msgstr "קובץ:"
+msgstr "קובץ: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:128
 #: core/libs/properties/itempropertiestab.cpp:35
-#, fuzzy, kde-format
-#| msgid "Folder: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
-msgstr "תיקייה:"
+msgstr "תיקייה: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:129
 #: core/libs/properties/itempropertiestab.cpp:37
-#, fuzzy, kde-format
-#| msgid "Date: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
-msgstr "תאריך:"
+msgstr "תאריך: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:130
 #: core/libs/properties/itempropertiestab.cpp:38
-#, fuzzy, kde-format
-#| msgid "Size: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
-msgstr "גודל:"
+msgstr "גודל: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:131
 #, fuzzy, kde-format
@@ -36207,35 +36198,32 @@ msgstr "<b>ניתן לכתיבה</b>:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:133
 #: core/libs/properties/itempropertiestab.cpp:87
-#, fuzzy, kde-format
-#| msgid "Type: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
-msgstr "סוג:"
+msgstr "סוג: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:134
 #: core/libs/properties/itempropertiestab.cpp:88
-#, fuzzy, kde-format
-#| msgid "Dimensions: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
-msgstr "מימדים:"
+msgstr "ממדים: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:135
 #: core/libs/properties/import/importitempropertiestab.cpp:243
 #: core/libs/properties/itempropertiestab.cpp:89
 #: core/libs/properties/itempropertiestab.cpp:187
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
-msgstr "יחס:"
+msgstr "יחס גובה־רוחב: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:136
-#, fuzzy, kde-format
-#| msgid "New Name: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "New Name: "
-msgstr "שם חדש:"
+msgstr "שם חדש: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:137
 #, fuzzy, kde-format
@@ -36245,26 +36233,24 @@ msgid "Downloaded: "
 msgstr "הועתקו למחשב:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:178
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Camera File Properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני קובץ מצלמה"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:185
 #: core/libs/properties/itempropertiestab.cpp:131
-#, fuzzy, kde-format
-#| msgid "Make: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
-msgstr "יצרן:"
+msgstr "יצרן: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:186
 #: core/libs/properties/itempropertiestab.cpp:132
-#, fuzzy, kde-format
-#| msgid "Model: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
-msgstr "דגם:"
+msgstr "דגם: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
 #, fuzzy, kde-format
@@ -36275,141 +36261,130 @@ msgstr "נוצר:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
 #: core/libs/properties/itempropertiestab.cpp:133
-#, fuzzy, kde-format
-#| msgid "Lens: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
-msgstr "עדשה:"
+msgstr "עדשה: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
 #: core/libs/properties/itempropertiestab.cpp:134
-#, fuzzy, kde-format
-#| msgid "Aperture: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
-msgstr "מוקד/מיפתח:"
+msgstr "מפתח: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
 #: core/libs/properties/itempropertiestab.cpp:135
-#, fuzzy, kde-format
-#| msgid "Focal: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
-msgstr "מוקד:"
+msgstr "מוקד: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:191
 #: core/libs/properties/itempropertiestab.cpp:136
-#, fuzzy, kde-format
-#| msgid "Exposure: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
-msgstr "חשיפה:"
+msgstr "חשיפה: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:192
 #: core/libs/properties/itempropertiestab.cpp:137
-#, fuzzy, kde-format
-#| msgid "Sensitivity: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
-msgstr "רגישות:"
+msgstr "רגישות: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
 #: core/libs/properties/itempropertiestab.cpp:138
-#, fuzzy, kde-format
-#| msgid "Mode/Program: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
-msgstr "מצב/תוכנית:"
+msgstr "מצב/תוכנית: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
 #: core/libs/properties/itempropertiestab.cpp:139
-#, fuzzy, kde-format
-#| msgid "Flash: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
-msgstr "מבזק:"
+msgstr "מבזק: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/itempropertiestab.cpp:140
-#, fuzzy, kde-format
-#| msgid "White balance: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
-msgstr "איזון לובן:"
+msgstr "איזון לבן: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:236
-#, fuzzy, kde-format
-#| msgid "Photograph Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Photograph Properties"
-msgstr "מאפייני התצלום"
+msgstr "מאפייני הצילום"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:244
 #: core/libs/properties/itempropertiestab.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
-msgstr "קבצי שמע"
+msgstr "קצב נתוני שמע: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
 #: core/libs/properties/itempropertiestab.cpp:192
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
-msgstr "ערוץ אלפא:"
+msgstr "סוג ערוץ שמע: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
 #: core/libs/properties/itempropertiestab.cpp:193
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
-msgstr "קבצי שמע"
+msgstr "מפענח שמע: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
 #: core/libs/properties/itempropertiestab.cpp:188
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
-msgstr "רוויה:"
+msgstr "משך:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
 #: core/libs/properties/itempropertiestab.cpp:189
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
-msgstr "<i>נוצר:</i>"
+msgstr "קצב תמוניות: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
 #: core/libs/properties/itempropertiestab.cpp:190
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
-msgstr "קבצי שמע"
+msgstr "מפענח וידאו: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:278
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Audio/Video Properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני שמע/וידאו"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:333
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: item properties"
 msgid "unknown"
 msgstr "לא ידוע"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:334
-#, fuzzy, kde-format
-#| msgid "<i>unchanged</i>"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "unchanged"
-msgstr "<i>לא השתנה</i>"
+msgstr "ללא שינוי"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:662
-#, fuzzy, kde-format
-#| msgid "unavailable"
+#: core/libs/properties/itempropertiessidebardb.cpp:667
+#, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "לא זמין"
@@ -36419,13 +36394,12 @@ msgstr "לא זמין"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:720
-#: core/libs/properties/itempropertiessidebardb.cpp:722
-#: core/libs/properties/itempropertiessidebardb.cpp:825
-#: core/libs/properties/itempropertiessidebardb.cpp:827
+#: core/libs/properties/itempropertiessidebardb.cpp:725
+#: core/libs/properties/itempropertiessidebardb.cpp:727
+#: core/libs/properties/itempropertiessidebardb.cpp:830
+#: core/libs/properties/itempropertiessidebardb.cpp:848
 #: core/libs/properties/itempropertiestab_setters.cpp:88
-#, fuzzy, kde-format
-#| msgid "No"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "No"
 msgstr "לא"
@@ -36435,29 +36409,26 @@ msgstr "לא"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:719
-#: core/libs/properties/itempropertiessidebardb.cpp:721
-#: core/libs/properties/itempropertiessidebardb.cpp:824
-#: core/libs/properties/itempropertiessidebardb.cpp:826
-#, fuzzy, kde-format
-#| msgid "Yes"
+#: core/libs/properties/itempropertiessidebardb.cpp:724
+#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:829
+#: core/libs/properties/itempropertiessidebardb.cpp:836
+#, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "כן"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:381
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "@info: item size"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:388
-#, fuzzy, kde-format
-#| msgid "RAW Image"
+#, kde-format
 msgctxt "@label"
 msgid "RAW Image"
-msgstr "תמונה לא דחוסה"
+msgstr "תמונה גולמית (RAW)"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:428
 #, fuzzy, kde-format
@@ -36481,8 +36452,7 @@ msgid "%1 ISO"
 msgstr "%1 ISO"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:132
-#, fuzzy, kde-format
-#| msgid "Range:"
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Range:"
 msgstr "טווח:"
@@ -36502,8 +36472,7 @@ msgid "Select the maximal intensity value of the histogram selection here."
 msgstr "סמנו את הערכי העצמה הגבוהים ביותר להיסטוגרמה שנבחרה"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:153
-#, fuzzy, kde-format
-#| msgid "Statistics"
+#, kde-format
 msgctxt "@title: color properties"
 msgid "Statistics"
 msgstr "סטטיסטיקה"
@@ -36517,32 +36486,28 @@ msgid ""
 msgstr ""
 
 #: core/libs/properties/itempropertiescolorstab.cpp:159
-#, fuzzy, kde-format
-#| msgid "Pixels: "
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Pixels: "
-msgstr "נקודות:"
+msgstr "פיקסלים: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:162
-#, fuzzy, kde-format
-#| msgid "Count: "
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Count: "
-msgstr "ספירה:"
+msgstr "כמות: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:165
-#, fuzzy, kde-format
-#| msgid "Mean: "
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Mean: "
-msgstr "ממוצע:"
+msgstr "ממוצע: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:168
-#, fuzzy, kde-format
-#| msgid "Std. deviation: "
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Std. deviation: "
-msgstr "סטיית תקן:"
+msgstr "סטיית תקן: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:171
 #, fuzzy, kde-format
@@ -36552,86 +36517,76 @@ msgid "Median: "
 msgstr "חציון:"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:174
-#, fuzzy, kde-format
-#| msgid "Percentile: "
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Percentile: "
-msgstr "אחוז:"
+msgstr "אחוזון: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:177
-#, fuzzy, kde-format
-#| msgid "Color depth: "
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Color depth: "
-msgstr "עומק צבע:"
+msgstr "עומק צבע: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:180
-#, fuzzy, kde-format
-#| msgid "Alpha Channel: "
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Alpha Channel: "
-msgstr "ערוץ אלפא:"
+msgstr "ערוץ שקיפות: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:183
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Source: "
-msgstr "מקור:"
+msgstr "מקור: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:238
-#, fuzzy, kde-format
-#| msgid "Histogram"
+#, kde-format
 msgctxt "@title: color properties"
 msgid "Histogram"
-msgstr "גרף עמודות"
+msgstr "היסטוגרמה"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:248
-#, fuzzy, kde-format
-#| msgid "ICC profile"
+#, kde-format
 msgctxt "@title: color properties"
 msgid "ICC profile"
-msgstr "מאפייני ICC"
+msgstr "פרופיל ICC"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:667
-#, fuzzy, kde-format
-#| msgid "16 bits"
+#, kde-format
 msgctxt "@label: color properties"
 msgid "16 bits"
 msgstr "16 סיביות"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:668
-#, fuzzy, kde-format
-#| msgid "8 bits"
+#, kde-format
 msgctxt "@label: color properties"
 msgid "8 bits"
 msgstr "8 סיביות"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:669
-#, fuzzy, kde-format
-#| msgid "Yes"
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Yes"
 msgstr "כן"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:670
-#, fuzzy, kde-format
-#| msgid "No"
+#, kde-format
 msgctxt "@label: color properties"
 msgid "No"
 msgstr "לא"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:711
-#, fuzzy, kde-format
-#| msgid "Full Image"
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Full Image"
 msgstr "תמונה מלאה"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:712
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Image Region"
-msgstr "הצגת ממדיי התמונה"
+msgstr "אזור בתמונה"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:77
 #, kde-format
@@ -36655,34 +36610,29 @@ msgid "XMP"
 msgstr "XMP"
 
 #: core/libs/properties/itempropertiessidebar.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copy the all properties in clipboard"
-msgstr "קואורדינטות קוטביות"
+msgstr "העתקת כל המאפיינים ללוח הגזירים"
 
 #: core/libs/properties/itempropertiessidebar.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "Open in File Manager"
+#, kde-format
 msgid "Open item in the file manager"
-msgstr "פתיחה במנהל הקבצים"
+msgstr "פתיחת פריט במנהל הקבצים"
 
 #: core/libs/properties/itempropertiessidebar.cpp:81
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "מאפיינים"
 
 #: core/libs/properties/itempropertiessidebar.cpp:82
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Metadata"
-msgstr "מידע-נוסף"
+msgstr "נתוני־על"
 
 #: core/libs/properties/itempropertiessidebar.cpp:83
-#, fuzzy, kde-format
-#| msgid "Colors"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "צבעים"
@@ -36696,25 +36646,22 @@ msgstr "מפה"
 #: core/libs/properties/itempropertiessidebar.cpp:242
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
-#, fuzzy, kde-format
-#| msgid "RAW Image"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "RAW Image"
-msgstr "תמונה לא דחוסה"
+msgstr "תמונה גולמית (RAW)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:245
-#, fuzzy, kde-format
-#| msgid "Uncalibrated"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
-msgstr "לא כוון"
+msgstr "לא מכויל"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:709
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:714
+#, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "לא ידוע"
@@ -36727,7 +36674,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:718
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -36735,7 +36682,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -36743,47 +36690,53 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:757
+#: core/libs/properties/itempropertiessidebardb.cpp:762
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:97
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "כיתובים"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
-#, fuzzy, kde-format
+#: core/libs/properties/itempropertiessidebardb.cpp:98
+#, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
-msgstr "הרשאות:"
+msgstr "גרסאות"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
-#, fuzzy, kde-format
+#: core/libs/properties/itempropertiessidebardb.cpp:102
+#, kde-format
 msgid "Open the Description tab for editing"
-msgstr "מידע"
+msgstr "פתיחת לשונית התיאור לעריכה"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
-#, fuzzy, kde-format
+#: core/libs/properties/itempropertiessidebardb.cpp:106
+#, kde-format
 msgid "Open the Tags tab for editing"
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "פתיחת לשונית התגיות לעריכה"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
-#: core/libs/properties/itempropertiessidebardb.cpp:113
+#: core/libs/properties/itempropertiessidebardb.cpp:110
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:706
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:840
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (root)"
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -36792,39 +36745,34 @@ msgid "Symlink: "
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:39
-#, fuzzy, kde-format
-#| msgid "Owner: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
-msgstr "בעלים:"
+msgstr "בעלות: "
 
 #: core/libs/properties/itempropertiestab.cpp:40
-#, fuzzy, kde-format
-#| msgid "Permissions: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
-msgstr "הרשאות:"
+msgstr "הרשאות: "
 
 #: core/libs/properties/itempropertiestab.cpp:80
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני קובץ"
 
 #: core/libs/properties/itempropertiestab.cpp:90
-#, fuzzy, kde-format
-#| msgid "Bit depth: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
-msgstr "עומק צבע:"
+msgstr "עומק סיביות: "
 
 #: core/libs/properties/itempropertiestab.cpp:91
-#, fuzzy, kde-format
-#| msgid "Color mode: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
-msgstr "תצורת צבע:"
+msgstr "מצב צבע: "
 
 #: core/libs/properties/itempropertiestab.cpp:92
 #, kde-format
@@ -36839,29 +36787,28 @@ msgid "GPS: "
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
-msgstr "מאפייני TIFF"
+msgstr "מאפייני פריט"
 
 #: core/libs/properties/itempropertiestab.cpp:180
-#, fuzzy, kde-format
-#| msgid "Photograph Properties"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
-msgstr "מאפייני התצלום"
+msgstr "מאפייני הצילום"
 
 #: core/libs/properties/itempropertiestab.cpp:224
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני שמע/וידאו"
 
 #: core/libs/properties/itempropertiestab.cpp:238
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
-msgstr "&כותרת:"
+msgstr "כותרת: "
 
 #: core/libs/properties/itempropertiestab.cpp:239
 #, kde-format
@@ -36876,16 +36823,16 @@ msgid "Pick label: "
 msgstr "נקודות:"
 
 #: core/libs/properties/itempropertiestab.cpp:241
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
-msgstr "תצורת צבע:"
+msgstr "תווית צבע: "
 
 #: core/libs/properties/itempropertiestab.cpp:242
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
-msgstr "דירוג:"
+msgstr "דירוג: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
 #, fuzzy, kde-format
@@ -36894,47 +36841,46 @@ msgid "Versioned: "
 msgstr "הרשאות:"
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
-msgstr "ק&יבוץ"
+msgstr "מקובץ: "
 
 #: core/libs/properties/itempropertiestab.cpp:293
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני digiKam"
 
 #: core/libs/properties/itempropertiestab.cpp:300
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "מידע-נוסף"
+msgstr "מילות מפתח: "
 
 #: core/libs/properties/itempropertiestab.cpp:304
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
-msgstr "שינוי שם..."
+msgstr "אנשים: "
 
 #: core/libs/properties/itempropertiestab.cpp:319
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
-msgstr "תוויות"
+msgstr "תגיות"
 
 #: core/libs/properties/itempropertiestab.cpp:337
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
-msgstr "מיקום-גאוגרפי"
+msgstr "מקום"
 
 #: core/libs/properties/itempropertiestab.cpp:358
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
-msgstr "בהירות"
+msgstr "זכויות"
 
 #: core/libs/properties/itempropertiestab.cpp:474
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
@@ -36943,10 +36889,9 @@ msgid "File"
 msgstr "קובץ"
 
 #: core/libs/properties/itempropertiestab.cpp:475
-#, fuzzy, kde-format
-#| msgid "Folder: "
+#, kde-format
 msgid "Folder"
-msgstr "תיקייה:"
+msgstr "תיקייה"
 
 #: core/libs/properties/itempropertiestab.cpp:476
 #, kde-format
@@ -36954,22 +36899,19 @@ msgid "Symlink"
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:477
-#, fuzzy, kde-format
+#, kde-format
 msgid "Modified Date"
-msgstr "שונה:"
+msgstr "מועד עריכה"
 
 #: core/libs/properties/itempropertiestab.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "Owner of the file"
-#| msgid "Owner"
+#, kde-format
 msgid "Owner"
 msgstr "בעלות"
 
 #: core/libs/properties/itempropertiestab.cpp:480
-#, fuzzy, kde-format
-#| msgid "Permissions: "
+#, kde-format
 msgid "Permissions"
-msgstr "הרשאות:"
+msgstr "הרשאות"
 
 #: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
@@ -36977,20 +36919,19 @@ msgid "Mime"
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:484
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ratio"
-msgstr "סיבוב:"
+msgstr "יחס"
 
 #: core/libs/properties/itempropertiestab.cpp:485
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bit Depth"
-msgstr "עומק צבע:"
+msgstr "עומק סיביות"
 
 #: core/libs/properties/itempropertiestab.cpp:486
-#, fuzzy, kde-format
-#| msgid "Color Model"
+#, kde-format
 msgid "Color Mode"
-msgstr "תצורת צבע"
+msgstr "מצב צבע"
 
 #: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
@@ -37008,25 +36949,24 @@ msgid "Versioned"
 msgstr "הרשאות:"
 
 #: core/libs/properties/itempropertiestab.cpp:490
-#, fuzzy, kde-format
+#, kde-format
 msgid "Grouped"
-msgstr "ק&יבוץ"
+msgstr "מקובץ"
 
 #: core/libs/properties/itempropertiestab.cpp:492
-#, fuzzy, kde-format
+#, kde-format
 msgid "Make"
-msgstr "דגם/יצרן:"
+msgstr "יצרן"
 
 #: core/libs/properties/itempropertiestab.cpp:493
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgid "Model"
 msgstr "דגם"
 
 #: core/libs/properties/itempropertiestab.cpp:494
-#, fuzzy, kde-format
+#, kde-format
 msgid "Date Time"
-msgstr "הוספת תאריך וזמן"
+msgstr "תאריך ושעה"
 
 #: core/libs/properties/itempropertiestab.cpp:495
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
@@ -37042,12 +36982,12 @@ msgid "Aperture"
 msgstr "מפתח צמצם"
 
 #: core/libs/properties/itempropertiestab.cpp:497
-#, fuzzy, kde-format
+#, kde-format
 msgid "Focal Length"
 msgstr "אורך מוקד"
 
 #: core/libs/properties/itempropertiestab.cpp:498
-#, fuzzy, kde-format
+#, kde-format
 msgid "Exposure Time"
 msgstr "זמן חשיפה"
 
@@ -37059,8 +36999,7 @@ msgid "Sensitivity"
 msgstr "רגישות"
 
 #: core/libs/properties/itempropertiestab.cpp:500
-#, fuzzy, kde-format
-#| msgid "Exposure mode"
+#, kde-format
 msgid "Exposure Mode"
 msgstr "מצב חשיפה"
 
@@ -37089,47 +37028,37 @@ msgid "Video Frame Rate"
 msgstr "קצב תמוניות וידאו"
 
 #: core/libs/properties/itempropertiestab.cpp:507
-#, fuzzy, kde-format
-#| msgid "Video Codec"
+#, kde-format
 msgid "Video Video Codec"
-msgstr "מפענח וידאו"
+msgstr "מפענח וידאו וידאו"
 
 #: core/libs/properties/itempropertiestab.cpp:508
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
+#, kde-format
 msgid "Video Audio Bit Rate"
-msgstr "קצב נתוני שמע"
+msgstr "קצב נתוני וידאו שמע"
 
 #: core/libs/properties/itempropertiestab.cpp:509
-#, fuzzy, kde-format
-#| msgid "Audio Channel Type"
+#, kde-format
 msgid "Video Audio Channel Type"
-msgstr "סוג ערוץ שמע"
+msgstr "סוג ערוץ וידאו שמע"
 
 #: core/libs/properties/itempropertiestab.cpp:510
-#, fuzzy, kde-format
-#| msgid "Audio Codec"
+#, kde-format
 msgid "Video Audio Codec"
-msgstr "מפענח שמע"
+msgstr "מפענח וידאו שמע"
 
 #: core/libs/properties/itempropertiestab.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Caption"
-msgstr "תיאור"
+msgstr "כיתוב"
 
 #: core/libs/properties/itempropertiestab.cpp:513
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgid "Title"
 msgstr "כותרת"
 
 #: core/libs/properties/itempropertiestab.cpp:515
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgid "Peoples"
 msgstr "אנשים"
 
@@ -37146,9 +37075,9 @@ msgid "Pick"
 msgstr "אבנים"
 
 #: core/libs/properties/itempropertiestab.cpp:519
-#, fuzzy, kde-format
+#, kde-format
 msgid "Color"
-msgstr "צבעים"
+msgstr "צבע"
 
 #: core/libs/properties/itempropertiestab.cpp:520
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
@@ -37158,10 +37087,10 @@ msgid "Rating"
 msgstr "דירוג"
 
 #: core/libs/properties/itempropertiestab_helpers.cpp:210
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
-msgstr "%1x%2 (%3Mpx)"
+msgstr "%1:%2 (%3)"
 
 #: core/libs/properties/itempropertiestab_helpers.cpp:243
 #, kde-format
@@ -37169,37 +37098,37 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "ב׳"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:401
+#: core/libs/properties/itempropertiestab_setters.cpp:406
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " תמוניות לשנייה"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:128
+#: core/libs/properties/itemselectionpropertiestab.cpp:88
+#: core/libs/properties/itemselectionpropertiestab.cpp:116
 #, kde-format
 msgid "Count: "
 msgstr "כמות: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:129
+#: core/libs/properties/itemselectionpropertiestab.cpp:89
+#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Size: "
 msgstr "גודל: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:130
-#, fuzzy, kde-format
+#: core/libs/properties/itemselectionpropertiestab.cpp:90
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#, kde-format
 msgid "Groups: "
-msgstr "ק&יבוץ"
+msgstr "קבוצות: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Selected Item Properties"
 msgstr "מאפייני הקובץ"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:158
+#: core/libs/properties/itemselectionpropertiestab.cpp:140
 #, fuzzy, kde-format
 #| msgid "Album Properties"
 msgid "Album Item Properties"
@@ -37266,10 +37195,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Quality:"
-msgstr "איכות JPEG:"
+msgstr "איכות:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:239
 #, fuzzy, kde-format
@@ -37487,10 +37416,10 @@ msgid "Blend"
 msgstr "לוח־שנה"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:371
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Rebuild"
-msgstr "בנייה מחודשת כוללת..."
+msgstr "בנייה מחדש"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:373
 #, kde-kuit-format
@@ -37507,7 +37436,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:384
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:slider Highlight reconstruct level"
 msgid "Level:"
 msgstr "רמה:"
@@ -37577,10 +37506,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Auto Brightness"
-msgstr "בהירות:"
+msgstr "בהירות אוטומטית"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:419
 #, kde-kuit-format
@@ -37591,7 +37520,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:422
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
 msgstr "בהירות:"
@@ -37605,10 +37534,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:437
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check Black point"
 msgid "Black:"
-msgstr "אחורה"
+msgstr "שחור:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:438
 #, kde-kuit-format
@@ -37628,10 +37557,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:448
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check White point"
 msgid "White:"
-msgstr "כותרת"
+msgstr "לבן:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:449
 #, kde-kuit-format
@@ -37651,16 +37580,16 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:496
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "White Balance"
 msgstr "איזון לבן"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:504
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Noise reduction:"
-msgstr "אין בחירה"
+msgstr "הפחתת רעשים:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:506
 #, fuzzy, kde-format
@@ -37992,9 +37921,9 @@ msgid "Leica Digital Camera Raw Image Format"
 msgstr ""
 
 #: core/libs/rawengine/drawfiles.cpp:133
-#, fuzzy, kde-format
+#, kde-format
 msgid "Samsung Raw Image Format"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "תסדיר תמונה גולמית (Raw) של Samsung"
 
 #: core/libs/rawengine/drawfiles.cpp:138
 #, kde-format
@@ -38036,14 +37965,14 @@ msgid "Batch Queue Manager"
 msgstr ""
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
-#, fuzzy, kde-format
+#, kde-format
 msgid "Renaming"
-msgstr "אפשרויות שינוי שם קובץ"
+msgstr "שינוי שם"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:458
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import/Export tools"
-msgstr "אורן מעוצב"
+msgstr "כלי ייבוא/ייצוא"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
@@ -38058,9 +37987,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/settings/applicationsettings_miscs.cpp:485
-#, fuzzy, kde-format
+#, kde-format
 msgid "Adding items to the Light Table"
-msgstr "הוספה לשולחן-אור"
+msgstr "הוספת פריטים לשולחן האור"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
@@ -38073,9 +38002,9 @@ msgid "Opening items in the Slideshow"
 msgstr ""
 
 #: core/libs/settings/applicationsettings_miscs.cpp:500
-#, fuzzy, kde-format
+#, kde-format
 msgid "Renaming items"
-msgstr "אפשרויות שינוי שם קובץ"
+msgstr "שינוי שמות פריטים"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
@@ -39016,9 +38945,9 @@ msgid "Remove this Tag"
 msgstr "הסרת התגית הזאת"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:730
-#, fuzzy, kde-format
+#, kde-format
 msgid "Go to this Tag"
-msgstr "הסרת תוויות זו"
+msgstr "מעבר לתגית הזאת"
 
 #: core/libs/template/subjectedit.cpp:47
 #, kde-format
@@ -39070,22 +38999,21 @@ msgid "Here you can see the metadata template list managed by digiKam."
 msgstr ""
 
 #: core/libs/template/templatelist.cpp:73
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@title: template properties"
 msgid "Title"
 msgstr "כותרת"
 
 #: core/libs/template/templatelist.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: template properties"
 msgid "Authors"
-msgstr "צלם"
+msgstr "יוצרים"
 
 #: core/libs/template/templatepanel.cpp:89
-#, fuzzy, kde-format
+#, kde-format
 msgid "Author Names:"
-msgstr "צלם"
+msgstr "שם היוצר/ת:"
 
 #: core/libs/template/templatepanel.cpp:92
 #, kde-format
@@ -39107,14 +39035,14 @@ msgid ""
 msgstr ""
 
 #: core/libs/template/templatepanel.cpp:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "Authors' Positions:"
-msgstr "תפקיד הצלם:"
+msgstr "תפקיד הצלם/ת:"
 
 #: core/libs/template/templatepanel.cpp:105
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the job titles of the authors here."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "כאן אפשר למלא את התפקידים של היוצרים."
 
 #: core/libs/template/templatepanel.cpp:107
 #, kde-format
@@ -39127,9 +39055,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/template/templatepanel.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the photograph credit here."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "כאן אפשר למלא את התודות לצילום."
 
 #: core/libs/template/templatepanel.cpp:119
 #, kde-format
@@ -39193,8 +39121,7 @@ msgstr ""
 
 #: core/libs/template/templatepanel.cpp:163
 #: core/libs/template/templateviewer.cpp:112
-#, fuzzy, kde-format
-#| msgid "Source:"
+#, kde-format
 msgctxt "@label: template properties"
 msgid "Source:"
 msgstr "מקור:"

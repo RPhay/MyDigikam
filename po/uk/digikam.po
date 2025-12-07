@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:40+0000\n"
-"PO-Revision-Date: 2025-12-04 16:51+0200\n"
+"POT-Creation-Date: 2025-12-07 00:40+0000\n"
+"PO-Revision-Date: 2025-12-06 16:32+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -38754,7 +38754,7 @@ msgstr "без змін"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:662
+#: core/libs/properties/itempropertiessidebardb.cpp:667
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38765,10 +38765,10 @@ msgstr "недоступне"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:720
-#: core/libs/properties/itempropertiessidebardb.cpp:722
-#: core/libs/properties/itempropertiessidebardb.cpp:825
-#: core/libs/properties/itempropertiessidebardb.cpp:827
+#: core/libs/properties/itempropertiessidebardb.cpp:725
+#: core/libs/properties/itempropertiessidebardb.cpp:727
+#: core/libs/properties/itempropertiessidebardb.cpp:830
+#: core/libs/properties/itempropertiessidebardb.cpp:848
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -38780,10 +38780,10 @@ msgstr "Ні"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:719
-#: core/libs/properties/itempropertiessidebardb.cpp:721
-#: core/libs/properties/itempropertiessidebardb.cpp:824
-#: core/libs/properties/itempropertiessidebardb.cpp:826
+#: core/libs/properties/itempropertiessidebardb.cpp:724
+#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:829
+#: core/libs/properties/itempropertiessidebardb.cpp:836
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38981,17 +38981,14 @@ msgid "XMP"
 msgstr "XMP"
 
 #: core/libs/properties/itempropertiessidebar.cpp:75
-#, fuzzy, kde-format
-#| msgid "Copy GPS coordinates to clipboard"
+#, kde-format
 msgid "Copy the all properties in clipboard"
-msgstr "Скопіювати координати GPS до буфера обміну даними"
+msgstr "Скопіювати усі властивості до буфера обміну даними"
 
 #: core/libs/properties/itempropertiessidebar.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "Open in File Manager"
+#, kde-format
 msgid "Open item in the file manager"
-msgstr "Відкрити у менеджері файлів"
+msgstr "Відкрити запис у програмі для керування файлами"
 
 #: core/libs/properties/itempropertiessidebar.cpp:81
 #, kde-format
@@ -39033,8 +39030,8 @@ msgstr "Некалібрована"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:709
+#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:714
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -39047,62 +39044,65 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Мпк)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:718
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 біт/піксель"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:757
+#: core/libs/properties/itempropertiessidebardb.cpp:762
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:97
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Підписи"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
+#: core/libs/properties/itempropertiessidebardb.cpp:98
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Версії"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
-#, fuzzy, kde-format
-#| msgid "BitTorrent Description Information"
+#: core/libs/properties/itempropertiessidebardb.cpp:102
+#, kde-format
 msgid "Open the Description tab for editing"
-msgstr "Дані опису BitTorrent"
+msgstr "Відкрити вкладку опису для редагування"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Open the image editor."
+#: core/libs/properties/itempropertiessidebardb.cpp:106
+#, kde-format
 msgid "Open the Tags tab for editing"
-msgstr "Відкрити у редакторі зображень."
+msgstr "Відкрити вкладку міток для редагування"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
-#: core/libs/properties/itempropertiessidebardb.cpp:113
+#: core/libs/properties/itempropertiessidebardb.cpp:110
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Information tab for editing"
-msgstr ""
+msgstr "Відкрити вкладку відомостей для редагування"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:706
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1⨯%2 (%3Мпк)"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:840
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (root)"
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -39255,106 +39255,82 @@ msgid "File"
 msgstr "Файл"
 
 #: core/libs/properties/itempropertiestab.cpp:475
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgid "Folder"
-msgstr "Теки"
+msgstr "Тека"
 
 #: core/libs/properties/itempropertiestab.cpp:476
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Symlink: "
+#, kde-format
 msgid "Symlink"
-msgstr "Сим. посилання:"
+msgstr "Сим. посилання"
 
 #: core/libs/properties/itempropertiestab.cpp:477
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgid "Modified Date"
-msgstr "Змінено"
+msgstr "Дата зміни"
 
 #: core/libs/properties/itempropertiestab.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "Owner of the file"
-#| msgid "Owner"
+#, kde-format
 msgid "Owner"
 msgstr "Власник"
 
 #: core/libs/properties/itempropertiestab.cpp:480
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
+#, kde-format
 msgid "Permissions"
-msgstr "Права доступу: "
+msgstr "Права доступу"
 
 #: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
 msgid "Mime"
-msgstr ""
+msgstr "MIME"
 
 #: core/libs/properties/itempropertiestab.cpp:484
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "Ratio"
-msgstr "Раціональне число"
+msgstr "Пропорції"
 
 #: core/libs/properties/itempropertiestab.cpp:485
-#, fuzzy, kde-format
-#| msgid "Bit depth"
+#, kde-format
 msgid "Bit Depth"
 msgstr "Бітова глибина"
 
 #: core/libs/properties/itempropertiestab.cpp:486
-#, fuzzy, kde-format
-#| msgid "Color Model"
+#, kde-format
 msgid "Color Mode"
-msgstr "Модель кольору"
+msgstr "Режим кольорів"
 
 #: core/libs/properties/itempropertiestab.cpp:487
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Sidecars"
+#, kde-format
 msgid "Has Sidecar"
-msgstr "Додаткові файли"
+msgstr "Має додаткові файли"
 
 #: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Has GPS"
-msgstr ""
+msgstr "Містить GPS"
 
 #: core/libs/properties/itempropertiestab.cpp:489
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versioned: "
+#, kde-format
 msgid "Versioned"
-msgstr "Версія: "
+msgstr "Має версію"
 
 #: core/libs/properties/itempropertiestab.cpp:490
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgid "Grouped"
-msgstr "Згруповано:"
+msgstr "Групування"
 
 #: core/libs/properties/itempropertiestab.cpp:492
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgid "Make"
 msgstr "Виробник"
 
 #: core/libs/properties/itempropertiestab.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgid "Model"
 msgstr "Модель"
 
 #: core/libs/properties/itempropertiestab.cpp:494
-#, fuzzy, kde-format
-#| msgctxt "@item: date properties"
-#| msgid "Date & Time"
+#, kde-format
 msgid "Date Time"
 msgstr "Дата і час"
 
@@ -39372,18 +39348,14 @@ msgid "Aperture"
 msgstr "Апертура:"
 
 #: core/libs/properties/itempropertiestab.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Focal Length"
+#, kde-format
 msgid "Focal Length"
 msgstr "Фокусна відстань"
 
 #: core/libs/properties/itempropertiestab.cpp:498
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Exposure Time"
+#, kde-format
 msgid "Exposure Time"
-msgstr "Час експозиції"
+msgstr "Час експонування"
 
 #: core/libs/properties/itempropertiestab.cpp:499
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
@@ -39393,15 +39365,12 @@ msgid "Sensitivity"
 msgstr "Чутливість"
 
 #: core/libs/properties/itempropertiestab.cpp:500
-#, fuzzy, kde-format
-#| msgid "Exposure mode"
+#, kde-format
 msgid "Exposure Mode"
 msgstr "Режим експозиції"
 
 #: core/libs/properties/itempropertiestab.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Flash"
+#, kde-format
 msgid "Flash"
 msgstr "Спалах"
 
@@ -39424,49 +39393,39 @@ msgid "Video Frame Rate"
 msgstr "Частота кадрів відео"
 
 #: core/libs/properties/itempropertiestab.cpp:507
-#, fuzzy, kde-format
-#| msgid "Video Codec"
+#, kde-format
 msgid "Video Video Codec"
 msgstr "Відеокодек"
 
 #: core/libs/properties/itempropertiestab.cpp:508
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
+#, kde-format
 msgid "Video Audio Bit Rate"
-msgstr "Бітова швидкість звуку"
+msgstr "Бітова швидкість звуку у відео"
 
 #: core/libs/properties/itempropertiestab.cpp:509
-#, fuzzy, kde-format
-#| msgid "Audio Channel Type"
+#, kde-format
 msgid "Video Audio Channel Type"
-msgstr "Тип звукового каналу"
+msgstr "Тип звукових каналів у відео"
 
 #: core/libs/properties/itempropertiestab.cpp:510
-#, fuzzy, kde-format
-#| msgid "Audio Codec"
+#, kde-format
 msgid "Video Audio Codec"
-msgstr "Аудіокодек"
+msgstr "Аудіокодек у відео"
 
 #: core/libs/properties/itempropertiestab.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Caption"
 msgstr "Підпис"
 
 #: core/libs/properties/itempropertiestab.cpp:513
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgid "Title"
-msgstr "Назва"
+msgstr "Заголовок"
 
 #: core/libs/properties/itempropertiestab.cpp:515
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgid "Peoples"
-msgstr "Люди"
+msgstr "Люди:"
 
 #: core/libs/properties/itempropertiestab.cpp:517
 #: core/libs/template/templatepanel.cpp:209
@@ -39476,9 +39435,7 @@ msgid "Rights"
 msgstr "Права"
 
 #: core/libs/properties/itempropertiestab.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@title: pick tree"
-#| msgid "Pick"
+#, kde-format
 msgid "Pick"
 msgstr "Впорядкування"
 
@@ -39506,43 +39463,39 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "Б"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:401
+#: core/libs/properties/itempropertiestab_setters.cpp:406
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " кд/с"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:128
+#: core/libs/properties/itemselectionpropertiestab.cpp:88
+#: core/libs/properties/itemselectionpropertiestab.cpp:116
 #, kde-format
 msgid "Count: "
 msgstr "Кількість: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:129
+#: core/libs/properties/itemselectionpropertiestab.cpp:89
+#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Size: "
 msgstr "Розмір: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#: core/libs/properties/itemselectionpropertiestab.cpp:90
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#, kde-format
 msgid "Groups: "
-msgstr "Згруповано:"
+msgstr "Групи: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
-#, fuzzy, kde-format
-#| msgid "Selection Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#, kde-format
 msgid "Selected Item Properties"
-msgstr "Властивості позначеного"
+msgstr "Властивості позначеного запису"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:158
-#, fuzzy, kde-format
-#| msgid "Album Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:140
+#, kde-format
 msgid "Album Item Properties"
-msgstr "Властивості альбому"
+msgstr "Властивості запису альбому"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
