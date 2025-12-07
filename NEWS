@@ -136,7 +136,7 @@ BUGFIXES:
 089 --> 510749 - Automatically group JPEG and Raw pairs.
 090 --> 377857 - Ideas to improve usability of image properties sidebar tab.
 091 --> 511180 - Failure to launch.
-092 --> 
+092 --> 393313 - Next item sometimes goes next image, other times it scrolls the bar.
 093 --> 
 094 --> 
 095 --> 
