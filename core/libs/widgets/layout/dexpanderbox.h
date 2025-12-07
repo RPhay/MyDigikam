@@ -199,6 +199,7 @@ public:
     void setButtonVisible(bool b);
     bool buttonIsVisible()      const;
     void setButtonIcon(const QIcon& icon);
+    void setButtonToolTip(const QString& tip);
 
     void setIcon(const QIcon &icon);
     QIcon icon()                const;
@@ -288,6 +289,7 @@ public:
     void setButtonVisible(int index, bool b);
     bool buttonIsVisible(int index)             const;
     void setButtonIcon(int index, const QIcon& icon);
+    void setButtonToolTip(int index, const QString& tip);
 
     void setItemToolTip(int index, const QString& tip);
     QString itemToolTip(int index)              const;

@@ -72,11 +72,11 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
 
     m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
     m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setButtonVisible(true);
-    m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setToolTip(i18n("Copy the all properties in clipboard"));
+    m_propertiesTab->widget(ItemPropertiesTab::FileProperties)->setButtonToolTip(i18n("Copy the all properties in clipboard"));
 
     m_propertiesTab->widget(ItemPropertiesTab::ImageProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("folder-open")));
     m_propertiesTab->widget(ItemPropertiesTab::ImageProperties)->setButtonVisible(true);
-    m_propertiesTab->widget(ItemPropertiesTab::ImageProperties)->setToolTip(i18n("Open item in the file manager"));
+    m_propertiesTab->widget(ItemPropertiesTab::ImageProperties)->setButtonToolTip(i18n("Open item in the file manager"));
 
     appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")),        i18nc("@title: item properties", "Properties"));
     appendTab(m_metadataTab,           QIcon::fromTheme(QLatin1String("format-text-code")), i18nc("@title: item properties", "Metadata")); // krazy:exclude=iconnames

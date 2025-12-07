@@ -622,6 +622,11 @@ void DLabelExpander::setButtonIcon(const QIcon& icon)
                               style()->pixelMetric(QStyle::PM_SmallIconSize)));
 }
 
+void DLabelExpander::setButtonToolTip(const QString& tip)
+{
+    d->btn->setToolTip(tip);
+}
+
 void DLabelExpander::setWidget(QWidget* const widget)
 {
     if (widget)
@@ -971,6 +976,16 @@ void DExpanderBox::setButtonIcon(int index, const QIcon& icon)
     }
 
     d->wList[index]->setButtonIcon(icon);
+}
+
+void DExpanderBox::setButtonToolTip(int index, const QString& tip)
+{
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
+    d->wList[index]->setToolTip(tip);
 }
 
 int DExpanderBox::count() const
