@@ -837,7 +837,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             }
             else if (info.hasGroupedImages())
             {
-                m_propertiesTab->setGroupedInfo(i18nc("@info: item properties", "Yes (root)"));
+                m_propertiesTab->setGroupedInfo(i18nc("@info: item properties", "Yes (stack)"));
                 ItemInfoList list;
                 list.append(info);
                 d->treeGroup->setGroups(list);
