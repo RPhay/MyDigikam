@@ -44,7 +44,7 @@ public:
     QTreeWidget*               treeSelectionGroups  = nullptr;
     QTreeWidget*               treeTotalGroups      = nullptr;
     ThumbnailLoadThread*       thumbLoadThread      = nullptr;
-    int                        iconSize             = ApplicationSettings::instance()->getTreeViewIconSize();
+    int                        iconSize             = 0;
 };
 
 ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
@@ -68,6 +68,8 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSettingsChanged()));
+
+    slotSettingsChanged();
 }
 
 ItemsGroupedView::~ItemsGroupedView()
@@ -154,21 +156,17 @@ void ItemsGroupedView::slotSettingsChanged()
 {
     if (d->iconSize != ApplicationSettings::instance()->getTreeViewIconSize())
     {
-        setIconSize(ApplicationSettings::instance()->getTreeViewIconSize());
-    }
-}
+        d->iconSize = ApplicationSettings::instance()->getTreeViewIconSize();
+        setIconSize(QSize(d->iconSize, d->iconSize));
+        d->thumbLoadThread->setThumbnailSize(d->iconSize);
 
-void ItemsGroupedView::setIconSize(int size)
-{
-    d->iconSize = size;
-    d->thumbLoadThread->setThumbnailSize(d->iconSize);
+        QTreeWidgetItemIterator it(this);
 
-    QTreeWidgetItemIterator it(this);
-
-    while (*it)
-    {
-        (*it)->setSizeHint(0, QSize(d->iconSize, d->iconSize));
-        ++it;
+        while (*it)
+        {
+            (*it)->setSizeHint(0, QSize(d->iconSize, d->iconSize));
+            ++it;
+        }
     }
 }
 

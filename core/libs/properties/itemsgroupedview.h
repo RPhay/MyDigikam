@@ -46,7 +46,6 @@ private Q_SLOTS:
 
 private:
 
-    void setIconSize(int size);
     void setThumbnail(QTreeWidgetItem* const item, const QPixmap& pix);
 
 private:
