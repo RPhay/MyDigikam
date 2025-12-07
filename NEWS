@@ -134,8 +134,8 @@ BUGFIXES:
 087 --> 512958 - Saving image as AVIF after cropping crashes.
 088 --> 509568 - Unable to see the context menu items Under Windows 11 due to font color except for the default color theme.
 089 --> 510749 - Automatically group JPEG and Raw pairs.
-090 --> 
-091 --> 
+090 --> 377857 - Ideas to improve usability of image properties sidebar tab.
+091 --> 511180 - Failure to launch.
 092 --> 
 093 --> 
 094 --> 
