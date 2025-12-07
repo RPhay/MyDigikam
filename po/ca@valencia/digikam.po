@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:40+0000\n"
-"PO-Revision-Date: 2025-12-04 10:52+0100\n"
+"POT-Creation-Date: 2025-12-07 00:40+0000\n"
+"PO-Revision-Date: 2025-12-06 11:30+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -11822,7 +11822,7 @@ msgstr "Latitud"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Longitude"
-msgstr "Llargària"
+msgstr "Longitud"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:687
@@ -23292,7 +23292,7 @@ msgid ""
 msgstr ""
 "Establix l'adreça de la destinació a on s'han de pujar les imatges. Pot ser "
 "una adreça emprada en el gestor de fitxers, p. ex.:<br><i>ftp://my.server."
-"org/sub/folder</i><br><i>fish://username@my.server.org/sub/folder</i>"
+"org/sub/folder</i><br><i>fish://nom_usuari@servidor.meu.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
 #, kde-format
@@ -23362,7 +23362,7 @@ msgid ""
 msgstr ""
 "Establix l'adreça d'origen d'on baixar les imatges. Pot ser una adreça "
 "emprada en el gestor de fitxers, p. ex.:<br><i>ftp://my.server.org/sub/"
-"folder</i><br><i>fish://username@my.server.org/sub/folder</i>"
+"folder</i><br><i>fish://nom_usuari@servidor.meu.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, kde-format
@@ -23772,7 +23772,7 @@ msgstr "Opcions de les etiquetes"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:109
 #, kde-format
 msgid "Use Host Application Tags"
-msgstr "Utilitza les etiquetes d'aplicació de l'amfitrió"
+msgstr "Utilitza les etiquetes de l'aplicació pare"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:111
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:472
@@ -30999,7 +30999,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:309
 #, kde-format
 msgid "Green Filter"
-msgstr "Filtre verd"
+msgstr "Filtre «Verd»"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:224
 #, kde-format
@@ -31008,9 +31008,9 @@ msgid ""
 "exposure using a green filter. This is useful for all scenic shoots, "
 "especially portraits photographed against the sky.</p>"
 msgstr ""
-"<b>Blanc i negre amb filtre verd</b>:<p>Simula una exposició de pel·lícula "
-"en blanc i negre utilitzant un filtre verd. Proporciona un guany general per "
-"a totes les captures de paisatges, especialment indicat per a retrats "
+"<b>Blanc i negre amb filtre «Verd»</b>:<p>Simula una exposició de pel·lícula "
+"en blanc i negre utilitzant un filtre «Verd». Proporciona un guany general "
+"per a totes les captures de paisatges, especialment indicat per a retrats "
 "fotografiats contra el cel.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:229
@@ -31032,7 +31032,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
 #, kde-format
 msgid "Red Filter"
-msgstr "Filtre roig"
+msgstr "Filtre «Roig»"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:236
 #, kde-format
@@ -31041,8 +31041,8 @@ msgid ""
 "exposure using a red filter. This creates dramatic sky effects, and "
 "simulates moonlight scenes in the daytime.</p>"
 msgstr ""
-"<b>Blanc i negre amb filtre roig</b>:<p>Simula una exposició de pel·lícula "
-"en blanc i negre utilitzant un filtre roig. Este crea efectes teatrals de "
+"<b>Blanc i negre amb filtre «Roig»</b>:<p>Simula una exposició de pel·lícula "
+"en blanc i negre utilitzant un filtre «Roig». Este crea efectes teatrals de "
 "cel i simula escenes de llum de lluna durant el dia.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:241
@@ -31064,7 +31064,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:247
 #, kde-format
 msgid "Yellow-Green Filter"
-msgstr "Filtre verd-groc"
+msgstr "Filtre «Verd-Groc»"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:248
 #, kde-format
@@ -31076,18 +31076,18 @@ msgid ""
 "expressions in close-ups and emphasizing the feeling of liveliness. This "
 "filter is highly effective for indoor portraits under tungsten lighting.</p>"
 msgstr ""
-"<b>Blanc i negre amb filtre verd-groc</b>:<p>simula una exposició de "
-"pel·lícula de blanc i negre utilitzant un filtre verd-groc. Un filtre verd-"
-"groc és altament efectiu per a retrats de camp perquè el roig es renderitza "
-"fosc mentre que el verd apareix més lluminós. Va bé per a corregir els tons "
-"de la pell, per a realçar les expressions facials en primers plans i per a "
-"emfatitzar la sensació de vitalitat. Este filtre és altament efectiu per a "
-"retrats d'interior amb il·luminació de tungstè.</p>"
+"<b>Blanc i negre amb filtre «Verd-Groc»</b>:<p>simula una exposició de "
+"pel·lícula de blanc i negre utilitzant un filtre «Verd-Groc». Un filtre "
+"«Verd-Groc» és altament efectiu per a retrats de camp perquè el roig es "
+"renderitza fosc mentre que el verd apareix més lluminós. Va bé per a "
+"corregir els tons de la pell, per a realçar les expressions facials en "
+"primers plans i per a emfatitzar la sensació de vitalitat. Este filtre és "
+"altament efectiu per a retrats d'interior amb il·luminació de tungstè.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:255
 #, kde-format
 msgid "Blue Filter"
-msgstr "Filtre blau"
+msgstr "Filtre «Blau»"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:256
 #, kde-format
@@ -31096,8 +31096,8 @@ msgid ""
 "exposure using a blue filter. This accentuates haze and fog. Used for dye "
 "transfer and contrast effects.</p>"
 msgstr ""
-"<b>Blanc i negre amb filtre blau</b>:<p>simula una exposició de pel·lícula "
-"de blanc i negre utilitzant un filtre blau. Este accentua la boirina i la "
+"<b>Blanc i negre amb filtre «Blau»</b>:<p>simula una exposició de pel·lícula "
+"de blanc i negre utilitzant un filtre «Blau». Este accentua la boirina i la "
 "boira. S'utilitza per a transferir tints i efectes de contrast.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:261
@@ -38588,7 +38588,7 @@ msgstr "sense canvis"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:662
+#: core/libs/properties/itempropertiessidebardb.cpp:667
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38599,10 +38599,10 @@ msgstr "no disponible"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:720
-#: core/libs/properties/itempropertiessidebardb.cpp:722
-#: core/libs/properties/itempropertiessidebardb.cpp:825
-#: core/libs/properties/itempropertiessidebardb.cpp:827
+#: core/libs/properties/itempropertiessidebardb.cpp:725
+#: core/libs/properties/itempropertiessidebardb.cpp:727
+#: core/libs/properties/itempropertiessidebardb.cpp:830
+#: core/libs/properties/itempropertiessidebardb.cpp:848
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -38614,10 +38614,10 @@ msgstr "No"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:719
-#: core/libs/properties/itempropertiessidebardb.cpp:721
-#: core/libs/properties/itempropertiessidebardb.cpp:824
-#: core/libs/properties/itempropertiessidebardb.cpp:826
+#: core/libs/properties/itempropertiessidebardb.cpp:724
+#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:829
+#: core/libs/properties/itempropertiessidebardb.cpp:836
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38812,17 +38812,14 @@ msgid "XMP"
 msgstr "XMP"
 
 #: core/libs/properties/itempropertiessidebar.cpp:75
-#, fuzzy, kde-format
-#| msgid "Copy GPS coordinates to clipboard"
+#, kde-format
 msgid "Copy the all properties in clipboard"
-msgstr "Copia les coordenades del GPS en el porta-retalls"
+msgstr "Copia totes les propietats del porta-retalls"
 
 #: core/libs/properties/itempropertiessidebar.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "Open in File Manager"
+#, kde-format
 msgid "Open item in the file manager"
-msgstr "Obri en el gestor de fitxers"
+msgstr "Obri l'element al gestor de fitxers"
 
 #: core/libs/properties/itempropertiessidebar.cpp:81
 #, kde-format
@@ -38864,8 +38861,8 @@ msgstr "Sense calibrar"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:709
+#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:714
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38878,62 +38875,65 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:718
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:757
+#: core/libs/properties/itempropertiessidebardb.cpp:762
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:97
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Llegendes"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
+#: core/libs/properties/itempropertiessidebardb.cpp:98
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versions"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
-#, fuzzy, kde-format
-#| msgid "BitTorrent Description Information"
+#: core/libs/properties/itempropertiessidebardb.cpp:102
+#, kde-format
 msgid "Open the Description tab for editing"
-msgstr "Informació de la descripció de BitTorrent"
+msgstr "Obri la pestanya de descripció per a l'edició"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Open the image editor."
+#: core/libs/properties/itempropertiessidebardb.cpp:106
+#, kde-format
 msgid "Open the Tags tab for editing"
-msgstr "Obri l'editor d'imatges."
+msgstr "Obri la pestanya d'etiquetes per a l'edició"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
-#: core/libs/properties/itempropertiessidebardb.cpp:113
+#: core/libs/properties/itempropertiessidebardb.cpp:110
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Information tab for editing"
-msgstr ""
+msgstr "Obri la pestanya d'informació per a l'edició"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:706
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:840
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (root)"
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -39086,107 +39086,82 @@ msgid "File"
 msgstr "Fitxer"
 
 #: core/libs/properties/itempropertiestab.cpp:475
-#, fuzzy, kde-format
-#| msgctxt "@title: file system tree"
-#| msgid "Folders"
+#, kde-format
 msgid "Folder"
-msgstr "Carpetes"
+msgstr "Carpeta"
 
 #: core/libs/properties/itempropertiestab.cpp:476
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Symlink: "
+#, kde-format
 msgid "Symlink"
-msgstr "Enllaç simbòlic: "
+msgstr "Enllaç simbòlic"
 
 #: core/libs/properties/itempropertiestab.cpp:477
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgid "Modified Date"
-msgstr "Modificat"
+msgstr "Data de modificació"
 
 #: core/libs/properties/itempropertiestab.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "Owner of the file"
-#| msgid "Owner"
+#, kde-format
 msgid "Owner"
 msgstr "Propietari"
 
 #: core/libs/properties/itempropertiestab.cpp:480
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
+#, kde-format
 msgid "Permissions"
-msgstr "Permisos: "
+msgstr "Permisos"
 
 #: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
 msgid "Mime"
-msgstr ""
+msgstr "MIME"
 
 #: core/libs/properties/itempropertiestab.cpp:484
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "Ratio"
-msgstr "Racional"
+msgstr "Relació"
 
 #: core/libs/properties/itempropertiestab.cpp:485
-#, fuzzy, kde-format
-#| msgid "Bit depth"
+#, kde-format
 msgid "Bit Depth"
-msgstr "Bits de profunditat"
+msgstr "Profunditat de bits"
 
 #: core/libs/properties/itempropertiestab.cpp:486
-#, fuzzy, kde-format
-#| msgid "Color Model"
+#, kde-format
 msgid "Color Mode"
-msgstr "Model del color"
+msgstr "Mode de color"
 
 #: core/libs/properties/itempropertiestab.cpp:487
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Sidecars"
+#, kde-format
 msgid "Has Sidecar"
-msgstr "Laterals"
+msgstr "Té lateral"
 
 #: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Has GPS"
-msgstr ""
+msgstr "Té GPS"
 
 #: core/libs/properties/itempropertiestab.cpp:489
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versioned: "
+#, kde-format
 msgid "Versioned"
-msgstr "Versionat: "
+msgstr "Versionat"
 
 #: core/libs/properties/itempropertiestab.cpp:490
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgid "Grouped"
-msgstr "Agrupat: "
+msgstr "Agrupat"
 
 #: core/libs/properties/itempropertiestab.cpp:492
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgid "Make"
 msgstr "Fabricant"
 
 #: core/libs/properties/itempropertiestab.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgid "Model"
 msgstr "Model"
 
 #: core/libs/properties/itempropertiestab.cpp:494
-#, fuzzy, kde-format
-#| msgctxt "@item: date properties"
-#| msgid "Date & Time"
+#, kde-format
 msgid "Date Time"
 msgstr "Data i hora"
 
@@ -39204,16 +39179,12 @@ msgid "Aperture"
 msgstr "Obertura"
 
 #: core/libs/properties/itempropertiestab.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Focal Length"
+#, kde-format
 msgid "Focal Length"
 msgstr "Distància focal"
 
 #: core/libs/properties/itempropertiestab.cpp:498
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Exposure Time"
+#, kde-format
 msgid "Exposure Time"
 msgstr "Temps d'exposició"
 
@@ -39225,15 +39196,12 @@ msgid "Sensitivity"
 msgstr "Sensibilitat"
 
 #: core/libs/properties/itempropertiestab.cpp:500
-#, fuzzy, kde-format
-#| msgid "Exposure mode"
+#, kde-format
 msgid "Exposure Mode"
 msgstr "Mode d'exposició"
 
 #: core/libs/properties/itempropertiestab.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Flash"
+#, kde-format
 msgid "Flash"
 msgstr "Flaix"
 
@@ -39256,47 +39224,37 @@ msgid "Video Frame Rate"
 msgstr "Velocitat dels fotogrames del vídeo"
 
 #: core/libs/properties/itempropertiestab.cpp:507
-#, fuzzy, kde-format
-#| msgid "Video Codec"
+#, kde-format
 msgid "Video Video Codec"
-msgstr "Còdec de vídeo"
+msgstr "Còdec de vídeo del vídeo"
 
 #: core/libs/properties/itempropertiestab.cpp:508
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
+#, kde-format
 msgid "Video Audio Bit Rate"
-msgstr "Taxa de bits de l'àudio"
+msgstr "Taxa de bits d'àudio del vídeo"
 
 #: core/libs/properties/itempropertiestab.cpp:509
-#, fuzzy, kde-format
-#| msgid "Audio Channel Type"
+#, kde-format
 msgid "Video Audio Channel Type"
-msgstr "Tipus de canal d'àudio"
+msgstr "Tipus de canal d'àudio del vídeo"
 
 #: core/libs/properties/itempropertiestab.cpp:510
-#, fuzzy, kde-format
-#| msgid "Audio Codec"
+#, kde-format
 msgid "Video Audio Codec"
-msgstr "Còdec d'àudio"
+msgstr "Còdec d'àudio del vídeo"
 
 #: core/libs/properties/itempropertiestab.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Caption"
 msgstr "Llegenda"
 
 #: core/libs/properties/itempropertiestab.cpp:513
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgid "Title"
 msgstr "Títol"
 
 #: core/libs/properties/itempropertiestab.cpp:515
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgid "Peoples"
 msgstr "Persones"
 
@@ -39308,16 +39266,12 @@ msgid "Rights"
 msgstr "Drets"
 
 #: core/libs/properties/itempropertiestab.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@title: pick tree"
-#| msgid "Pick"
+#, kde-format
 msgid "Pick"
 msgstr "Selecció"
 
 #: core/libs/properties/itempropertiestab.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "@item: color tree"
-#| msgid "Color"
+#, kde-format
 msgid "Color"
 msgstr "Color"
 
@@ -39340,43 +39294,39 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:401
+#: core/libs/properties/itempropertiestab_setters.cpp:406
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:128
+#: core/libs/properties/itemselectionpropertiestab.cpp:88
+#: core/libs/properties/itemselectionpropertiestab.cpp:116
 #, kde-format
 msgid "Count: "
 msgstr "Compte: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:129
+#: core/libs/properties/itemselectionpropertiestab.cpp:89
+#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Size: "
 msgstr "Mida: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#: core/libs/properties/itemselectionpropertiestab.cpp:90
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#, kde-format
 msgid "Groups: "
-msgstr "Agrupat: "
+msgstr "Grups: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
-#, fuzzy, kde-format
-#| msgid "Selection Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#, kde-format
 msgid "Selected Item Properties"
-msgstr "Propietats de la selecció"
+msgstr "Propietats seleccionades dels elements"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:158
-#, fuzzy, kde-format
-#| msgid "Album Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:140
+#, kde-format
 msgid "Album Item Properties"
-msgstr "Propietats de l'àlbum"
+msgstr "Propietats d'àlbum de l'element"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
@@ -67441,7 +67391,7 @@ msgstr "S'estan extraent les característiques de cares…"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, kde-format
 msgid "Failed to extract face features."
-msgstr "Ha fallat mentre s'extragueren les característiques de cares."
+msgstr "Ha fallat mentre s'extreien les característiques de cares."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, kde-format
@@ -67491,7 +67441,7 @@ msgstr "Configureu el servidor i&ntermediari de xarxa"
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
 #, kde-format
 msgid "&Proxy:"
-msgstr "&Servidor intermediari:"
+msgstr "&Amfitrió intermediari:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
 #: core/utilities/setup/misc/proxysettingswidget.ui:60
@@ -67503,7 +67453,7 @@ msgstr "P&ort:"
 #: core/utilities/setup/misc/proxysettingswidget.ui:116
 #, kde-format
 msgid "Proxy type:"
-msgstr "Tipus de servidor intermediari:"
+msgstr "Tipus d'amfitrió intermediari:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:124
@@ -69096,29 +69046,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid "Total Count: "
-#~ msgstr "Nombre total: "
-
-#~ msgid "Total Size: "
-#~ msgstr "Mida total: "
-
-#~ msgctxt "@item: pick tree"
-#~ msgid "No Pick"
-#~ msgstr "Sense selecció"
-
-#~ msgctxt "@item: pick tree"
-#~ msgid "Rejected Item"
-#~ msgstr "Element rebutjat"
-
-#~ msgctxt "@item: pick tree"
-#~ msgid "Pending Item"
-#~ msgstr "Element pendent"
-
-#~ msgctxt "@item: pick tree"
-#~ msgid "Accepted Item"
-#~ msgstr "Element acceptat"
-
-#~ msgctxt "@info: pick label name"
-#~ msgid "None"
-#~ msgstr "Cap"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:40+0000\n"
+"POT-Creation-Date: 2025-12-07 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -26856,7 +26856,7 @@ msgstr "颜色"
 #: core/libs/album/treeview/labelstreeview_p.cpp:52
 #, kde-format
 msgid "Customize label name here..."
-msgstr ""
+msgstr "在此输入自定义标记名称..."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, kde-format
@@ -36939,7 +36939,7 @@ msgstr "未更改"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:662
+#: core/libs/properties/itempropertiessidebardb.cpp:667
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -36950,10 +36950,10 @@ msgstr "不可用"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:720
-#: core/libs/properties/itempropertiessidebardb.cpp:722
-#: core/libs/properties/itempropertiessidebardb.cpp:825
-#: core/libs/properties/itempropertiessidebardb.cpp:827
+#: core/libs/properties/itempropertiessidebardb.cpp:725
+#: core/libs/properties/itempropertiessidebardb.cpp:727
+#: core/libs/properties/itempropertiessidebardb.cpp:830
+#: core/libs/properties/itempropertiessidebardb.cpp:848
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -36965,10 +36965,10 @@ msgstr "否"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:719
-#: core/libs/properties/itempropertiessidebardb.cpp:721
-#: core/libs/properties/itempropertiessidebardb.cpp:824
-#: core/libs/properties/itempropertiessidebardb.cpp:826
+#: core/libs/properties/itempropertiessidebardb.cpp:724
+#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:829
+#: core/libs/properties/itempropertiessidebardb.cpp:836
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37162,12 +37162,12 @@ msgstr "XMP"
 #: core/libs/properties/itempropertiessidebar.cpp:75
 #, kde-format
 msgid "Copy the all properties in clipboard"
-msgstr ""
+msgstr "复制剪贴板中的所有属性"
 
 #: core/libs/properties/itempropertiessidebar.cpp:79
 #, kde-format
 msgid "Open item in the file manager"
-msgstr ""
+msgstr "用文件管理器打开项目"
 
 #: core/libs/properties/itempropertiessidebar.cpp:81
 #, kde-format
@@ -37209,8 +37209,8 @@ msgstr "未校准"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:709
+#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:714
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37223,60 +37223,65 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:718
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 位/像素"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:757
+#: core/libs/properties/itempropertiessidebardb.cpp:762
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:97
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "说明"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
+#: core/libs/properties/itempropertiessidebardb.cpp:98
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "版本"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
-#, fuzzy, kde-format
-#| msgid "BitTorrent Description Information"
+#: core/libs/properties/itempropertiessidebardb.cpp:102
+#, kde-format
 msgid "Open the Description tab for editing"
-msgstr "BitTorrent 描述信息"
+msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:106
 #, kde-format
 msgid "Open the Tags tab for editing"
-msgstr ""
+msgstr "打开标签标签页以进行编辑"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
-#: core/libs/properties/itempropertiessidebardb.cpp:113
+#: core/libs/properties/itempropertiessidebardb.cpp:110
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Information tab for editing"
-msgstr ""
+msgstr "打开信息标签页以进行编辑"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:706
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:840
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (root)"
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -37431,82 +37436,82 @@ msgstr "文件"
 #: core/libs/properties/itempropertiestab.cpp:475
 #, kde-format
 msgid "Folder"
-msgstr ""
+msgstr "文件夹"
 
 #: core/libs/properties/itempropertiestab.cpp:476
 #, kde-format
 msgid "Symlink"
-msgstr ""
+msgstr "符号链接"
 
 #: core/libs/properties/itempropertiestab.cpp:477
 #, kde-format
 msgid "Modified Date"
-msgstr ""
+msgstr "修改日期"
 
 #: core/libs/properties/itempropertiestab.cpp:479
 #, kde-format
 msgid "Owner"
-msgstr ""
+msgstr "所有者"
 
 #: core/libs/properties/itempropertiestab.cpp:480
 #, kde-format
 msgid "Permissions"
-msgstr ""
+msgstr "权限"
 
 #: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
 msgid "Mime"
-msgstr ""
+msgstr "MIME"
 
 #: core/libs/properties/itempropertiestab.cpp:484
 #, kde-format
 msgid "Ratio"
-msgstr ""
+msgstr "宽高比"
 
 #: core/libs/properties/itempropertiestab.cpp:485
 #, kde-format
 msgid "Bit Depth"
-msgstr ""
+msgstr "位深度"
 
 #: core/libs/properties/itempropertiestab.cpp:486
 #, kde-format
 msgid "Color Mode"
-msgstr ""
+msgstr "色彩模式"
 
 #: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
 msgid "Has Sidecar"
-msgstr ""
+msgstr "有附带文件"
 
 #: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Has GPS"
-msgstr ""
+msgstr "有 GPS 信息"
 
 #: core/libs/properties/itempropertiestab.cpp:489
 #, kde-format
 msgid "Versioned"
-msgstr ""
+msgstr "已版本管理"
 
 #: core/libs/properties/itempropertiestab.cpp:490
 #, kde-format
 msgid "Grouped"
-msgstr ""
+msgstr "已分组"
 
 #: core/libs/properties/itempropertiestab.cpp:492
 #, kde-format
 msgid "Make"
-msgstr ""
+msgstr "制造商"
 
 #: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Model"
-msgstr ""
+msgstr "型号"
 
 #: core/libs/properties/itempropertiestab.cpp:494
 #, kde-format
 msgid "Date Time"
-msgstr ""
+msgstr "日期和时间"
 
 #: core/libs/properties/itempropertiestab.cpp:495
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
@@ -37524,12 +37529,12 @@ msgstr "光圈"
 #: core/libs/properties/itempropertiestab.cpp:497
 #, kde-format
 msgid "Focal Length"
-msgstr ""
+msgstr "焦距"
 
 #: core/libs/properties/itempropertiestab.cpp:498
 #, kde-format
 msgid "Exposure Time"
-msgstr ""
+msgstr "曝光时间"
 
 #: core/libs/properties/itempropertiestab.cpp:499
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
@@ -37541,12 +37546,12 @@ msgstr "感光度"
 #: core/libs/properties/itempropertiestab.cpp:500
 #, kde-format
 msgid "Exposure Mode"
-msgstr ""
+msgstr "曝光模式"
 
 #: core/libs/properties/itempropertiestab.cpp:501
 #, kde-format
 msgid "Flash"
-msgstr ""
+msgstr "闪光灯"
 
 #: core/libs/properties/itempropertiestab.cpp:504
 #: core/utilities/setup/setuptooltip.cpp:256
@@ -37569,37 +37574,37 @@ msgstr "视频帧速率"
 #: core/libs/properties/itempropertiestab.cpp:507
 #, kde-format
 msgid "Video Video Codec"
-msgstr ""
+msgstr "视频视频解码器"
 
 #: core/libs/properties/itempropertiestab.cpp:508
 #, kde-format
 msgid "Video Audio Bit Rate"
-msgstr ""
+msgstr "视频音频解码器"
 
 #: core/libs/properties/itempropertiestab.cpp:509
 #, kde-format
 msgid "Video Audio Channel Type"
-msgstr ""
+msgstr "视频音频声道类型"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #, kde-format
 msgid "Video Audio Codec"
-msgstr ""
+msgstr "视频音频编码"
 
 #: core/libs/properties/itempropertiestab.cpp:512
 #, kde-format
 msgid "Caption"
-msgstr ""
+msgstr "说明文字"
 
 #: core/libs/properties/itempropertiestab.cpp:513
 #, kde-format
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: core/libs/properties/itempropertiestab.cpp:515
 #, kde-format
 msgid "Peoples"
-msgstr ""
+msgstr "人物"
 
 #: core/libs/properties/itempropertiestab.cpp:517
 #: core/libs/template/templatepanel.cpp:209
@@ -37611,12 +37616,12 @@ msgstr "版权信息"
 #: core/libs/properties/itempropertiestab.cpp:518
 #, kde-format
 msgid "Pick"
-msgstr ""
+msgstr "挑选"
 
 #: core/libs/properties/itempropertiestab.cpp:519
 #, kde-format
 msgid "Color"
-msgstr ""
+msgstr "颜色"
 
 #: core/libs/properties/itempropertiestab.cpp:520
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
@@ -37637,43 +37642,39 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:401
+#: core/libs/properties/itempropertiestab_setters.cpp:406
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " 帧/秒"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:128
+#: core/libs/properties/itemselectionpropertiestab.cpp:88
+#: core/libs/properties/itemselectionpropertiestab.cpp:116
 #, kde-format
 msgid "Count: "
 msgstr "数量："
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:129
+#: core/libs/properties/itemselectionpropertiestab.cpp:89
+#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Size: "
 msgstr "体积："
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#: core/libs/properties/itemselectionpropertiestab.cpp:90
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#, kde-format
 msgid "Groups: "
-msgstr "已分组："
+msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
-#, fuzzy, kde-format
-#| msgid "Selection Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#, kde-format
 msgid "Selected Item Properties"
-msgstr "所选项目属性"
+msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:158
-#, fuzzy, kde-format
-#| msgid "Album Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:140
+#, kde-format
 msgid "Album Item Properties"
-msgstr "相册属性"
+msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
@@ -66249,9 +66250,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Total Count: "
-#~ msgstr "总项目数："
-
-#~ msgid "Total Size: "
-#~ msgstr "总项目体积："

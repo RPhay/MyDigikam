@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:40+0000\n"
+"POT-Creation-Date: 2025-12-07 00:40+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -38118,7 +38118,7 @@ msgstr "<i>ਅਣ-ਤਬਦੀਲ</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:662
+#: core/libs/properties/itempropertiessidebardb.cpp:667
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -38130,10 +38130,10 @@ msgstr "ਨਾ-ਉਪਲੱਬਧ"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:720
-#: core/libs/properties/itempropertiessidebardb.cpp:722
-#: core/libs/properties/itempropertiessidebardb.cpp:825
-#: core/libs/properties/itempropertiessidebardb.cpp:827
+#: core/libs/properties/itempropertiessidebardb.cpp:725
+#: core/libs/properties/itempropertiessidebardb.cpp:727
+#: core/libs/properties/itempropertiessidebardb.cpp:830
+#: core/libs/properties/itempropertiessidebardb.cpp:848
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 #| msgid "No"
@@ -38146,10 +38146,10 @@ msgstr "ਨਹੀਂ"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:719
-#: core/libs/properties/itempropertiessidebardb.cpp:721
-#: core/libs/properties/itempropertiessidebardb.cpp:824
-#: core/libs/properties/itempropertiessidebardb.cpp:826
+#: core/libs/properties/itempropertiessidebardb.cpp:724
+#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:829
+#: core/libs/properties/itempropertiessidebardb.cpp:836
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -38424,8 +38424,8 @@ msgstr "ਅਣ-ਕੈਲੀਬਰੇਟ"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:709
+#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:714
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -38440,7 +38440,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:718
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -38448,7 +38448,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -38456,51 +38456,57 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:757
+#: core/libs/properties/itempropertiessidebardb.cpp:762
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:97
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "ਸੁਰਖੀ"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
+#: core/libs/properties/itempropertiessidebardb.cpp:98
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "ਵਰਜਨ"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:102
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid "Open the Description tab for editing"
 msgstr "ਸੁਰਖੀ ਜਾਣਕਾਰੀ"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:106
 #, fuzzy, kde-format
 #| msgid "Open the image editor."
 msgid "Open the Tags tab for editing"
 msgstr "ਚਿੱਤਰ ਐਡੀਟਰ ਖੋਲ੍ਹੋ।"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
-#: core/libs/properties/itempropertiessidebardb.cpp:113
+#: core/libs/properties/itempropertiessidebardb.cpp:110
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:706
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
+
+#: core/libs/properties/itempropertiessidebardb.cpp:840
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (root)"
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -38904,39 +38910,39 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab_setters.cpp:401
+#: core/libs/properties/itempropertiestab_setters.cpp:406
 #, fuzzy, kde-format
 #| msgid " fps"
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:128
+#: core/libs/properties/itemselectionpropertiestab.cpp:88
+#: core/libs/properties/itemselectionpropertiestab.cpp:116
 #, kde-format
 msgid "Count: "
 msgstr "ਗਿਣਤੀ: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:129
+#: core/libs/properties/itemselectionpropertiestab.cpp:89
+#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Size: "
 msgstr "ਸਾਈਜ਼: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:130
+#: core/libs/properties/itemselectionpropertiestab.cpp:90
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
 #, fuzzy, kde-format
 #| msgid "Group"
 msgid "Groups: "
 msgstr "ਗਰੁੱਪ"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Selected Item Properties"
 msgstr "ਫਾਇਲ ਵਿਸ਼ੇਸਤਾ"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:158
+#: core/libs/properties/itemselectionpropertiestab.cpp:140
 #, fuzzy, kde-format
 #| msgid "Album Properties"
 msgid "Album Item Properties"
