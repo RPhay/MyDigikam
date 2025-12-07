@@ -139,7 +139,7 @@ BUGFIXES:
 092 --> 393313 - Next item sometimes goes next image, other times it scrolls the bar.
 093 --> 507153 - Settings menu opens slowly.
 094 --> 511229 - Dates pane completely empty after update from Debian Bookworm to Trixie.
-095 --> 
+095 --> 501026 - digiKam crash when click on documentation on left panel button.
 096 --> 
 097 --> 
 098 --> 
