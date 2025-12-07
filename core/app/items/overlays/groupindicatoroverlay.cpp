@@ -116,7 +116,7 @@ bool GroupIndicatorOverlay::checkIndex(const QModelIndex& index) const
         QString tip = i18ncp("@info:tooltip",
                              "1 grouped item.\n",
                              "%1 grouped items.\n",
-                             info.numberOfGroupedImages());
+                             info.numberOfGroupedImages() + 1);
 
         if (index.data(ItemFilterModel::GroupIsOpenRole).toBool())
         {
