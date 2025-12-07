@@ -38,11 +38,24 @@ public:
     ~ItemsGroupedView() override;
 
     void setGroups(const ItemInfoList& items);
+    void setEnableToolTips(bool val);
 
 private Q_SLOTS:
 
     void slotGotThumbnail(const LoadingDescription&, const QPixmap&);
     void slotSettingsChanged();
+    void slotToolTip();
+
+private:
+
+    void hideToolTip();
+    bool acceptToolTip(const QPoint& pos)                          const;
+
+    void mouseMoveEvent(QMouseEvent*)                                    override;
+    void wheelEvent(QWheelEvent*)                                        override;
+    void keyPressEvent(QKeyEvent*)                                       override;
+    void focusOutEvent(QFocusEvent*)                                     override;
+    void leaveEvent(QEvent*)                                             override;
 
 private:
 

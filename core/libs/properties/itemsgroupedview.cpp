@@ -30,6 +30,7 @@
 #include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "itemsgroupedviewitem.h"
+#include "itemsgroupedtooltip.h"
 
 namespace Digikam
 {
@@ -42,11 +43,15 @@ public:
 
 public:
 
-    QTreeWidget*         treeSelectionGroups  = nullptr;
-    QTreeWidget*         treeTotalGroups      = nullptr;
-    ThumbnailLoadThread* thumbLoadThread      = nullptr;
-    int                  iconSize             = 0;
-    bool                 showCount            = false;
+    QTreeWidget*          treeSelectionGroups = nullptr;
+    QTreeWidget*          treeTotalGroups     = nullptr;
+    ThumbnailLoadThread*  thumbLoadThread     = nullptr;
+    int                   iconSize            = 0;
+    bool                  showCount           = false;
+    bool                  showTips            = false;
+    QTimer*               toolTipTimer        = nullptr;
+    ItemsGroupedToolTip*  toolTip             = nullptr;
+    ItemsGroupedViewItem* toolTipItem         = nullptr;
 };
 
 ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
@@ -58,11 +63,17 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
+    viewport()->setMouseTracking(true);
     header()->hide();
 
     d->thumbLoadThread = new ThumbnailLoadThread();
     d->thumbLoadThread->setThumbnailSize(d->iconSize);
     d->thumbLoadThread->setSendSurrogatePixmap(false);
+
+    d->toolTip         = new ItemsGroupedToolTip(this);
+    d->toolTipTimer    = new QTimer(this);
+
+    // ---
 
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
             this, SLOT(slotGotThumbnail(LoadingDescription,QPixmap)),
@@ -71,13 +82,112 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->toolTipTimer, SIGNAL(timeout()),
+            this, SLOT(slotToolTip()));
+
     slotSettingsChanged();
 }
 
 ItemsGroupedView::~ItemsGroupedView()
 {
+    delete d->toolTip;
     delete d->thumbLoadThread;
     delete d;
+}
+
+void ItemsGroupedView::setEnableToolTips(bool val)
+{
+    d->showTips = val;
+
+    if (!val)
+    {
+        hideToolTip();
+    }
+}
+
+void ItemsGroupedView::hideToolTip()
+{
+    d->toolTipItem = nullptr;
+    d->toolTipTimer->stop();
+    slotToolTip();
+}
+
+bool ItemsGroupedView::acceptToolTip(const QPoint& pos) const
+{
+    if (columnAt(pos.x()) == 0)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+void ItemsGroupedView::slotToolTip()
+{
+    d->toolTip->setItem(d->toolTipItem);
+}
+
+void ItemsGroupedView::mouseMoveEvent(QMouseEvent* e)
+{
+    if (e->buttons() == Qt::NoButton)
+    {
+        ItemsGroupedViewItem* const item = dynamic_cast<ItemsGroupedViewItem*>(itemAt(e->pos()));
+
+        if (d->showTips)
+        {
+            if (!isActiveWindow())
+            {
+                hideToolTip();
+                return;
+            }
+
+            if (item != d->toolTipItem)
+            {
+                hideToolTip();
+
+                if (acceptToolTip(e->pos()))
+                {
+                    d->toolTipItem = item;
+                    d->toolTipTimer->setSingleShot(true);
+                    d->toolTipTimer->start(500);
+                }
+            }
+
+            if ((item == d->toolTipItem) && !acceptToolTip(e->pos()))
+            {
+                hideToolTip();
+            }
+        }
+
+        return;
+    }
+
+    hideToolTip();
+    QTreeWidget::mouseMoveEvent(e);
+}
+
+void ItemsGroupedView::wheelEvent(QWheelEvent* e)
+{
+    hideToolTip();
+    QTreeWidget::wheelEvent(e);
+}
+
+void ItemsGroupedView::keyPressEvent(QKeyEvent* e)
+{
+    hideToolTip();
+    QTreeWidget::keyPressEvent(e);
+}
+
+void ItemsGroupedView::focusOutEvent(QFocusEvent* e)
+{
+    hideToolTip();
+    QTreeWidget::focusOutEvent(e);
+}
+
+void ItemsGroupedView::leaveEvent(QEvent* e)
+{
+    hideToolTip();
+    QTreeWidget::leaveEvent(e);
 }
 
 void ItemsGroupedView::setGroups(const ItemInfoList& items)
@@ -150,6 +260,11 @@ void ItemsGroupedView::slotSettingsChanged()
             static_cast<ItemsGroupedViewItem*>(*it)->updateTitle();
             ++it;
         }
+    }
+
+    if (d->showTips != ApplicationSettings::instance()->getShowToolTips())
+    {
+        setEnableToolTips(ApplicationSettings::instance()->getShowToolTips());
     }
 }
 
