@@ -61,7 +61,7 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
     : QTreeWidget(parent),
       d          (new Private)
 {
-    setSortingEnabled(true);
+    setSortingEnabled(false);
     setRootIsDecorated(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
