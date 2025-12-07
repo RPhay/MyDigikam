@@ -133,7 +133,7 @@ BUGFIXES:
 086 --> 512081 - Word Wrap - Especially in Right Sidebar.
 087 --> 512958 - Saving image as AVIF after cropping crashes.
 088 --> 509568 - Unable to see the context menu items Under Windows 11 due to font color except for the default color theme.
-089 --> 
+089 --> 510749 - Automatically group JPEG and Raw pairs.
 090 --> 
 091 --> 
 092 --> 
