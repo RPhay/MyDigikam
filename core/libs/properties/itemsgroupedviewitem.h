@@ -16,38 +16,50 @@
 
 // Qt includes
 
-#include <QPixmap>
 #include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QWidget>
+#include <QPixmap>
+#include <QIcon>
 
 // Local includes
 
 #include "iteminfo.h"
-#include "thumbnailloadthread.h"
 
 namespace Digikam
 {
 
-class ItemsGroupedView : public QTreeWidget
+class ItemsGroupedView;
+
+class ItemsGroupedViewItem : public QTreeWidgetItem
 {
-    Q_OBJECT
 
 public:
 
-    explicit ItemsGroupedView(QWidget* const parent);
-    ~ItemsGroupedView() override;
+    ItemsGroupedViewItem(ItemsGroupedView* const view, const ItemInfo& info);
+    ItemsGroupedViewItem(ItemsGroupedViewItem* const item, const ItemInfo& info);
+    ~ItemsGroupedViewItem()              override;
 
-    void setGroups(const ItemInfoList& items);
+    void setInfo(const ItemInfo& info);
+    ItemInfo info()             const;
 
-private Q_SLOTS:
+    ItemsGroupedView* view()    const;
 
-    void slotGotThumbnail(const LoadingDescription&, const QPixmap&);
-    void slotSettingsChanged();
+    void setThumb(const QPixmap& pix);
+
+    void updateTitle();
+
+private:
+
+    void setPixmap(const QPixmap& pix);
 
 private:
 
     class Private;
     Private* const d = nullptr;
+
+private:
+
+    Q_DISABLE_COPY(ItemsGroupedViewItem)
 };
 
 } // namespace Digikam
