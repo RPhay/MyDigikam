@@ -146,7 +146,7 @@ BUGFIXES:
 094 --> 511229 - Dates pane completely empty after update from Debian Bookworm to Trixie.
 095 --> 501026 - digiKam crash when click on documentation on left panel button.
 096 --> 513062 - Moving an album to an SMB network share permanently deletes hidden directories and files.
-097 --> 
+097 --> 501293 - Image Quality - Rating 2, 3 and 4 instead of The Red flag for Rejected. The Yellow flag for Pending. The Green flag for Accepted.
 098 --> 
 099 --> 
 100 --> 
