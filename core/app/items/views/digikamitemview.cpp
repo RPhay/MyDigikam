@@ -73,10 +73,6 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 {
     installDefaultModels();
 
-    // d->editPipeline.plugDatabaseEditor();
-    // d->editPipeline.plugTrainer();
-    // d->editPipeline.construct();
-
     d->newEditPipeline = FacePipelineEdit::instance();
     d->newEditPipeline->start();
 
@@ -113,31 +109,37 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     itemFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)settings->getImageSeparationMode());
     itemFilterModel()->setCategorizationSortOrder((ItemSortSettings::SortOrder) settings->getImageSeparationSortOrder());
 
-    // selection overlay
+    // --- Plug icon-view overlays 
+
+    // Selection overlay
 
     addSelectionOverlay(d->normalDelegate);
     addSelectionOverlay(d->faceDelegate);
 
-    // rotation overlays
+    // Rotation overlay
 
     d->rotateLeftOverlay  = ItemRotateOverlay::left(this);
     d->rotateRightOverlay = ItemRotateOverlay::right(this);
     d->fullscreenOverlay  = ItemFullScreenOverlay::instance(this);
     d->updateOverlays();
 
-    // rating overlay
+    // Rating overlay
 
     ItemRatingOverlay* const ratingOverlay = new ItemRatingOverlay(this);
     addOverlay(ratingOverlay);
 
-    // face overlays
+    // Face overlay
     // NOTE: order to plug this overlay is important, else rejection cannot be suitable (see bug #324759).
 
     addAssignNameOverlay(d->faceDelegate);
     addRejectionOverlay(d->faceDelegate);
 
+    // Group overlay
+
     GroupIndicatorOverlay* const groupOverlay = new GroupIndicatorOverlay(this);
     addOverlay(groupOverlay);
+
+    // Geolocation overlay
 
     addOverlay(new ItemCoordinatesOverlay(this));
 
@@ -149,6 +151,8 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 
     connect(groupOverlay, SIGNAL(showButtonContextMenu(QModelIndex,QContextMenuEvent*)),
             this, SLOT(showGroupContextMenu(QModelIndex,QContextMenuEvent*)));
+
+    // ---
 
     d->utilities = new ItemViewUtilities(this);
 
@@ -175,10 +179,12 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 DigikamItemView::~DigikamItemView()
 {
     d->newEditPipeline->cancel();
+
     while (!d->newEditPipeline->hasFinished())
     {
         QThread::msleep(10);
     }
+
     delete d;
 }
 
@@ -305,9 +311,11 @@ void DigikamItemView::slotSetupChanged()
 
 bool DigikamItemView::hasHiddenGroupedImages(const ItemInfo& info) const
 {
-    return (info.hasGroupedImages()                &&
+    return (
+            info.hasGroupedImages()               &&
             !itemFilterModel()->isAllGroupsOpen() &&
-            !itemFilterModel()->isGroupOpen(info.id()));
+            !itemFilterModel()->isGroupOpen(info.id())
+           );
 }
 
 ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
@@ -873,8 +881,8 @@ void DigikamItemView::slotInitProgressIndicator()
 
 void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
 {
-    // we do not want to change the view, when in the "Thumbnails" view in "People"
-    // see bugs 444692, 40232, ...
+    // We do not want to change the view, when in the "Thumbnails" view in "People"
+    // See bugs 444692, 440232, ...
 
     bool runningFaceAction = (
                               ProgressManager::instance()->findItembyId(FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource::FaceScanWidget)) ||
