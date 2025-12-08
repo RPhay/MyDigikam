@@ -117,6 +117,27 @@ void ItemsGroupedView::setEnableToolTips(bool val)
 void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
 {
     d->itemModel = model;
+
+    connect(d->itemModel, &ItemFilterModel::signalGroupIsOpen,
+            [this](qlonglong group, bool open)
+        {
+            QTreeWidgetItemIterator it(this);
+
+            while (*it)
+            {
+                ItemsGroupedViewItem* const item = dynamic_cast<ItemsGroupedViewItem*>(*it);
+
+                if (item && (item->info().id() == group))
+                {
+                    item->setExpanded(open);
+                }
+
+                break;
+            }
+
+            ++it;
+        }
+    );
 }
 
 void ItemsGroupedView::hideToolTip()

@@ -588,6 +588,8 @@ void ItemFilterModel::setGroupOpen(qlonglong group, bool open)
 
     d->groupFilter.setOpen(group, open);
     setGroupItemFilterSettings(d->groupFilter);
+
+    Q_EMIT signalGroupIsOpen(group, open);
 }
 
 void ItemFilterModel::toggleGroupOpen(qlonglong group)

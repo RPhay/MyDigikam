@@ -261,6 +261,11 @@ Q_SIGNALS:
     void imageInfosAdded(const QList<ItemInfo>& infos);
     void imageInfosAboutToBeRemoved(const QList<ItemInfo>& infos);
 
+    /**
+     * @brief This signal is emitted when a group is open or closed.
+     */
+    void signalGroupIsOpen(qlonglong group, bool open);
+
 public:
 
     /// @note Declared as public because of use in sub-classes.
