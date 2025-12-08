@@ -413,7 +413,9 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
     {
         int count = 0;
 
-        QDirIterator it(srcDir.path(), QDir::Files,
+        QDirIterator it(srcDir.path(), QDir::Files   |
+                                       QDir::Hidden  |
+                                       QDir::NoDotAndDotDot,
                                        QDirIterator::Subdirectories);
 
         while (it.hasNext())
@@ -430,7 +432,9 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         }
     }
 
-    const auto list = srcDir.entryInfoList(QDir::Files);
+    const auto list = srcDir.entryInfoList(QDir::Files   |
+                                           QDir::Hidden  |
+                                           QDir::NoDotAndDotDot);
 
     for (const QFileInfo& fileInfo : list)
     {
@@ -457,7 +461,9 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         }
     }
 
-    const auto list2 = srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+    const auto list2 = srcDir.entryInfoList(QDir::Dirs    |
+                                            QDir::Hidden  |
+                                            QDir::NoDotAndDotDot);
 
     for (const QFileInfo& fileInfo : list2)
     {

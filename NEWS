@@ -145,7 +145,7 @@ BUGFIXES:
 093 --> 507153 - Settings menu opens slowly.
 094 --> 511229 - Dates pane completely empty after update from Debian Bookworm to Trixie.
 095 --> 501026 - digiKam crash when click on documentation on left panel button.
-096 --> 
+096 --> 513062 - Moving an album to an SMB network share permanently deletes hidden directories and files.
 097 --> 
 098 --> 
 099 --> 
