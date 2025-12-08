@@ -675,7 +675,7 @@ void DIO::slotOneProccessed(const QUrl& url)
                     QString relativePath = access.db()->getAlbumRelativePath(albumId);
                     relativePath         = relativePath.section(basePath, 1, -1);
                     relativePath         = destPath + newName + relativePath;
-                    int copyId           = access.db()->addAlbum(data->srcAlbum()->albumRootId(),
+                    int copyId           = access.db()->addAlbum(data->destAlbum()->albumRootId(),
                                                                  relativePath, QString(), QDate(), QString());
 
                     access.db()->copyAlbumProperties(albumId, copyId);
