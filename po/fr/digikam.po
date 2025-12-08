@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-07 00:40+0000\n"
-"PO-Revision-Date: 2025-12-05 09:29+0100\n"
+"POT-Creation-Date: 2025-12-08 00:41+0000\n"
+"PO-Revision-Date: 2025-12-06 10:04+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -39142,17 +39142,14 @@ msgid "XMP"
 msgstr "XMP"
 
 #: core/libs/properties/itempropertiessidebar.cpp:75
-#, fuzzy, kde-format
-#| msgid "Copy GPS coordinates to clipboard"
+#, kde-format
 msgid "Copy the all properties in clipboard"
-msgstr "Copier les coordonnées GPS dans le presse-papier"
+msgstr "Copier la totalité des propriétés dans le presse-papier"
 
 #: core/libs/properties/itempropertiessidebar.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "Open in File Manager"
+#, kde-format
 msgid "Open item in the file manager"
-msgstr "Ouvrir dans un gestionnaire de fichiers"
+msgstr "Ouvrir l'élément dans un gestionnaire de fichiers"
 
 #: core/libs/properties/itempropertiessidebar.cpp:81
 #, kde-format
@@ -39247,17 +39244,15 @@ msgid "Open the Description tab for editing"
 msgstr "Informations de description de « BitTorrent »"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Open the image editor."
+#, kde-format
 msgid "Open the Tags tab for editing"
-msgstr "Ouvre l'éditeur d'images."
+msgstr "Ouvre l'onglet « Étiquettes » pour modification."
 
 #: core/libs/properties/itempropertiessidebardb.cpp:110
 #: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Information tab for editing"
-msgstr ""
+msgstr "Ouvre l'onglet « Informations » pour modification."
 
 #: core/libs/properties/itempropertiessidebardb.cpp:706
 #, kde-format
@@ -39268,7 +39263,7 @@ msgstr "%1 x %2 (%3 Mpx)"
 #: core/libs/properties/itempropertiessidebardb.cpp:840
 #, kde-format
 msgctxt "@info: item properties"
-msgid "Yes (root)"
+msgid "Yes (stack)"
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
@@ -39422,109 +39417,84 @@ msgid "File"
 msgstr "Fichier"
 
 #: core/libs/properties/itempropertiestab.cpp:475
-#, fuzzy, kde-format
-#| msgctxt "@title: file system tree"
-#| msgid "Folders"
+#, kde-format
 msgid "Folder"
-msgstr "Dossiers"
+msgstr "Dossier"
 
 #: core/libs/properties/itempropertiestab.cpp:476
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Symlink: "
+#, kde-format
 msgid "Symlink"
-msgstr "Lien symbolique : "
+msgstr "Lien symbolique"
 
 #: core/libs/properties/itempropertiestab.cpp:477
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgid "Modified Date"
-msgstr "Modifié"
+msgstr "Date de modification"
 
 #: core/libs/properties/itempropertiestab.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "Owner of the file"
-#| msgid "Owner"
+#, kde-format
 msgid "Owner"
 msgstr "Propriétaire"
 
 #: core/libs/properties/itempropertiestab.cpp:480
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
+#, kde-format
 msgid "Permissions"
-msgstr "Droits d'accès : "
+msgstr "Droits d'accès"
 
 #: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
 msgid "Mime"
-msgstr ""
+msgstr "MIME"
 
 #: core/libs/properties/itempropertiestab.cpp:484
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "Ratio"
-msgstr "Rationnel"
+msgstr "Ratio"
 
 #: core/libs/properties/itempropertiestab.cpp:485
-#, fuzzy, kde-format
-#| msgid "Bit depth"
+#, kde-format
 msgid "Bit Depth"
-msgstr "Profondeur de couleur"
+msgstr "Profondeur en bits"
 
 #: core/libs/properties/itempropertiestab.cpp:486
-#, fuzzy, kde-format
-#| msgid "Color Model"
+#, kde-format
 msgid "Color Mode"
-msgstr "Modèle de couleur"
+msgstr "Mode des couleurs"
 
 #: core/libs/properties/itempropertiestab.cpp:487
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Sidecars"
+#, kde-format
 msgid "Has Sidecar"
-msgstr "Fichiers associés"
+msgstr "Possède un module d'extension"
 
 #: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Has GPS"
-msgstr ""
+msgstr "Possède un GPS"
 
 #: core/libs/properties/itempropertiestab.cpp:489
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versioned: "
+#, kde-format
 msgid "Versioned"
-msgstr "Versionné :"
+msgstr "Versionné"
 
 #: core/libs/properties/itempropertiestab.cpp:490
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgid "Grouped"
-msgstr "Groupé :"
+msgstr "Regroupé"
 
 #: core/libs/properties/itempropertiestab.cpp:492
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgid "Make"
-msgstr "Marque"
+msgstr "Make"
 
 #: core/libs/properties/itempropertiestab.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgid "Model"
 msgstr "Modèle"
 
 #: core/libs/properties/itempropertiestab.cpp:494
-#, fuzzy, kde-format
-#| msgctxt "@item: date properties"
-#| msgid "Date & Time"
+#, kde-format
 msgid "Date Time"
-msgstr "Date et Heure"
+msgstr "Date et heure"
 
 #: core/libs/properties/itempropertiestab.cpp:495
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
@@ -39540,16 +39510,12 @@ msgid "Aperture"
 msgstr "Ouverture"
 
 #: core/libs/properties/itempropertiestab.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Focal Length"
+#, kde-format
 msgid "Focal Length"
 msgstr "Longueur focale"
 
 #: core/libs/properties/itempropertiestab.cpp:498
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Exposure Time"
+#, kde-format
 msgid "Exposure Time"
 msgstr "Temps d'exposition"
 
@@ -39561,15 +39527,12 @@ msgid "Sensitivity"
 msgstr "Sensibilité"
 
 #: core/libs/properties/itempropertiestab.cpp:500
-#, fuzzy, kde-format
-#| msgid "Exposure mode"
+#, kde-format
 msgid "Exposure Mode"
 msgstr "Mode d'exposition"
 
 #: core/libs/properties/itempropertiestab.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Flash"
+#, kde-format
 msgid "Flash"
 msgstr "Flash"
 
@@ -39592,47 +39555,37 @@ msgid "Video Frame Rate"
 msgstr "Nombre d'images par seconde de la vidéo"
 
 #: core/libs/properties/itempropertiestab.cpp:507
-#, fuzzy, kde-format
-#| msgid "Show Video Codec"
+#, kde-format
 msgid "Video Video Codec"
-msgstr "Afficher le codec vidéo"
+msgstr "Codec vidéo"
 
 #: core/libs/properties/itempropertiestab.cpp:508
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
+#, kde-format
 msgid "Video Audio Bit Rate"
-msgstr "Débit binaire audio"
+msgstr "Débit binaire audio - vidéo"
 
 #: core/libs/properties/itempropertiestab.cpp:509
-#, fuzzy, kde-format
-#| msgid "Audio Channel Type"
+#, kde-format
 msgid "Video Audio Channel Type"
-msgstr "Type de canal audio"
+msgstr "Type de canal audio - vidéo"
 
 #: core/libs/properties/itempropertiestab.cpp:510
-#, fuzzy, kde-format
-#| msgid "Audio Codec"
+#, kde-format
 msgid "Video Audio Codec"
-msgstr "Codec audio"
+msgstr "Codec audio - vidéo"
 
 #: core/libs/properties/itempropertiestab.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Caption"
 msgstr "Légende"
 
 #: core/libs/properties/itempropertiestab.cpp:513
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgid "Title"
 msgstr "Titre"
 
 #: core/libs/properties/itempropertiestab.cpp:515
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgid "Peoples"
 msgstr "Personnes"
 
@@ -39644,16 +39597,12 @@ msgid "Rights"
 msgstr "Droits"
 
 #: core/libs/properties/itempropertiestab.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@title: pick tree"
-#| msgid "Pick"
+#, kde-format
 msgid "Pick"
 msgstr "Sélectionner"
 
 #: core/libs/properties/itempropertiestab.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "@item: color tree"
-#| msgid "Color"
+#, kde-format
 msgid "Color"
 msgstr "Couleur"
 

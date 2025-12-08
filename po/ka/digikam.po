@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-07 00:40+0000\n"
+"POT-Creation-Date: 2025-12-08 00:41+0000\n"
 "PO-Revision-Date: 2025-12-06 15:01+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -36909,7 +36909,7 @@ msgstr "%1x%2 (%3Mpx)"
 #: core/libs/properties/itempropertiessidebardb.cpp:840
 #, kde-format
 msgctxt "@info: item properties"
-msgid "Yes (root)"
+msgid "Yes (stack)"
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
