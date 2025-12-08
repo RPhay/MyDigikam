@@ -119,9 +119,9 @@ public:
         Q_EMIT signalAssignRating(infos, rating);
     }
 
-    void editGroup(int groupAction, const ItemInfo& info, const FileActionItemInfoList& infos)
+    void editGroup(int groupAction, const ItemInfo& stack, const FileActionItemInfoList& infos)
     {
-        Q_EMIT signalEditGroup(groupAction, info, infos);
+        Q_EMIT signalEditGroup(groupAction, stack, infos);
     }
 
     void setExifOrientation(const FileActionItemInfoList& infos, int orientation)

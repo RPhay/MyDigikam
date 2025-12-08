@@ -252,7 +252,7 @@ void FileActionMngrDatabaseWorker::assignRating(const FileActionItemInfoList& in
     infos.dbFinished();
 }
 
-void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pick, const FileActionItemInfoList& infos)
+void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& stack, const FileActionItemInfoList& infos)
 {
     {
         CoreDbOperationGroup group;
@@ -271,7 +271,7 @@ void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pi
             {
                 case AddToGroup:
                 {
-                    info.addToGroup(pick);
+                    info.addToGroup(stack);
                     break;
                 }
 
