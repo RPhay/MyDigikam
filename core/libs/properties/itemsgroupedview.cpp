@@ -138,6 +138,30 @@ void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
             ++it;
         }
     );
+
+    connect(this, &QTreeWidget::itemCollapsed,
+            [this](QTreeWidgetItem* item)
+        {
+            ItemsGroupedViewItem* const gitem = dynamic_cast<ItemsGroupedViewItem*>(item);
+
+            if (gitem)
+            {
+                d->itemModel->setGroupOpen(gitem->info().id(), false);
+            }
+        }
+    );
+
+    connect(this, &QTreeWidget::itemExpanded,
+            [this](QTreeWidgetItem* item)
+        {
+            ItemsGroupedViewItem* const gitem = dynamic_cast<ItemsGroupedViewItem*>(item);
+
+            if (gitem)
+            {
+                d->itemModel->setGroupOpen(gitem->info().id(), true);
+            }
+        }
+    );
 }
 
 void ItemsGroupedView::hideToolTip()
