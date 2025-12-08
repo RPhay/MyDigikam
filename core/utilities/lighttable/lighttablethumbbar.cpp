@@ -465,6 +465,11 @@ void LightTableThumbBar::slotSetupChanged()
     d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)settings->getImageSorting());
 }
 
+ItemFilterModel* LightTableThumbBar::itemFilterModel() const
+{
+    return d->imageFilterModel;
+}
+
 } // namespace Digikam
 
 #include "lighttablethumbbar.moc"

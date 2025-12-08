@@ -30,6 +30,8 @@
 namespace Digikam
 {
 
+class ItemFilterModel;
+
 class ItemSelectionPropertiesTab : public DExpanderBox
 {
     Q_OBJECT
@@ -47,6 +49,8 @@ public:
     void setTotalSize(const QString& str);
 
     void setGroups(const ItemInfoList& selected, const ItemInfoList& total);
+
+    void setItemFilterModel(ItemFilterModel* const model);
 
 private:
 

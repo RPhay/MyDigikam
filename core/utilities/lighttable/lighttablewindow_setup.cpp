@@ -441,7 +441,7 @@ void LightTableWindow::setupUserArea()
 
     // The right sidebar.
 
-    d->rightSideBar = new ItemPropertiesSideBarDB(mainW, d->hSplitter, Qt::RightEdge, true);
+    d->rightSideBar         = new ItemPropertiesSideBarDB(mainW, d->hSplitter, Qt::RightEdge, true);
 
     hlay->addWidget(d->leftSideBar);
     hlay->addWidget(d->hSplitter);
@@ -471,6 +471,9 @@ void LightTableWindow::setupUserArea()
             d->thumbView, SLOT(slotDockLocationChanged(Qt::DockWidgetArea)));
 
     d->barViewDock->reInitialize();
+
+    d->leftSideBar->setItemFilterModel(d->thumbView->itemFilterModel());
+    d->rightSideBar->setItemFilterModel(d->thumbView->itemFilterModel());
 
     setCentralWidget(mainW);
 }

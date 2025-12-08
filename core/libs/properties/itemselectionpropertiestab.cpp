@@ -60,15 +60,15 @@ public:
 
 public:
 
-    DTextLabelValue*           labelSelectionCount  = nullptr;
-    DTextLabelValue*           labelSelectionSize   = nullptr;
-    DTextLabelValue*           labelSelectionGroups = nullptr;
-    DTextLabelValue*           labelTotalCount      = nullptr;
-    DTextLabelValue*           labelTotalSize       = nullptr;
-    DTextLabelValue*           labelTotalGroups     = nullptr;
+    DTextLabelValue*  labelSelectionCount  = nullptr;
+    DTextLabelValue*  labelSelectionSize   = nullptr;
+    DTextLabelValue*  labelSelectionGroups = nullptr;
+    DTextLabelValue*  labelTotalCount      = nullptr;
+    DTextLabelValue*  labelTotalSize       = nullptr;
+    DTextLabelValue*  labelTotalGroups     = nullptr;
 
-    ItemsGroupedView*         treeSelectionGroups  = nullptr;
-    ItemsGroupedView*         treeTotalGroups      = nullptr;
+    ItemsGroupedView* treeSelectionGroups  = nullptr;
+    ItemsGroupedView* treeTotalGroups      = nullptr;
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
@@ -194,6 +194,12 @@ void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& selected, const I
 
     d->labelTotalGroups->setAdjustedText(QString::number(total.count()));
     d->treeTotalGroups->setGroups(total);
+}
+
+void ItemSelectionPropertiesTab::setItemFilterModel(ItemFilterModel* const model)
+{
+    d->treeSelectionGroups->setItemFilterModel(model);
+    d->treeTotalGroups->setItemFilterModel(model);
 }
 
 } // namespace Digikam

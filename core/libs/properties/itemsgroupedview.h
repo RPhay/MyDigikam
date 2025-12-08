@@ -29,6 +29,7 @@ namespace Digikam
 {
 
 class CollectionImageChangeset;
+class ItemFilterModel;
 
 class ItemsGroupedView : public QTreeWidget
 {
@@ -41,6 +42,7 @@ public:
 
     void setGroups(const ItemInfoList& items);
     void setEnableToolTips(bool val);
+    void setItemFilterModel(ItemFilterModel* const model);
 
 private Q_SLOTS:
 

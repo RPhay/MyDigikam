@@ -22,7 +22,7 @@
 #include <QIcon>
 #include <QTimer>
 #include <QPixmap>
-#include <QPainter>
+#include <QModelIndex>
 #include <QFileInfo>
 
 // Local includes
@@ -34,6 +34,7 @@
 #include "applicationsettings.h"
 #include "itemsgroupedviewitem.h"
 #include "itemsgroupedtooltip.h"
+#include "itemfiltermodel.h"
 
 namespace Digikam
 {
@@ -55,6 +56,7 @@ public:
     QTimer*               toolTipTimer        = nullptr;
     ItemsGroupedToolTip*  toolTip             = nullptr;
     ItemsGroupedViewItem* toolTipItem         = nullptr;
+    ItemFilterModel*      itemModel           = nullptr;
 };
 
 ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
@@ -110,6 +112,11 @@ void ItemsGroupedView::setEnableToolTips(bool val)
     {
         hideToolTip();
     }
+}
+
+void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
+{
+    d->itemModel = model;
 }
 
 void ItemsGroupedView::hideToolTip()
@@ -208,6 +215,17 @@ void ItemsGroupedView::setGroups(const ItemInfoList& items)
         ItemsGroupedViewItem* const p = new ItemsGroupedViewItem(this, pinf);
         addTopLevelItem(p);
         thumbs.append(ThumbnailIdentifier(pinf.fileUrl().toLocalFile()));
+
+        if (d->itemModel)
+        {
+            QModelIndex index = d->itemModel->indexForItemInfo(pinf);
+
+            if (index.isValid())
+            {
+                p->setExpanded(index.data(ItemFilterModel::GroupIsOpenRole).toBool());
+            }
+        }
+
         const auto list               = pinf.groupedImages();
 
         for (const ItemInfo& cinf : std::as_const(list))
@@ -256,7 +274,7 @@ void ItemsGroupedView::slotGotThumbnail(const LoadingDescription& desc, const QP
 void ItemsGroupedView::slotSettingsChanged()
 {
     if (
-        d->iconSize  != ApplicationSettings::instance()->getTreeViewIconSize() &&
+        d->iconSize  != ApplicationSettings::instance()->getTreeViewIconSize() ||
         d->showCount != ApplicationSettings::instance()->getShowFolderTreeViewItemsCount()
        )
     {

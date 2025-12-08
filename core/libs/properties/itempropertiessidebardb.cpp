@@ -48,6 +48,7 @@
 #include "itempropertiescolorstab.h"
 #include "itempropertiesversionstab.h"
 #include "itemposition.h"
+#include "itemfiltermodel.h"
 #include "tagscache.h"
 #include "tagsactionmngr.h"
 #include "dtrash.h"
@@ -152,6 +153,12 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 ItemPropertiesSideBarDB::~ItemPropertiesSideBarDB()
 {
     delete d;
+}
+
+void ItemPropertiesSideBarDB::setItemFilterModel(ItemFilterModel* const model)
+{
+    d->treeGroup->setItemFilterModel(model);
+    d->selectionPropertiesTab->setItemFilterModel(model);
 }
 
 void ItemPropertiesSideBarDB::itemChanged(const ItemInfo& info, const QRect& rect,

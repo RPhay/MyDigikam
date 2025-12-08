@@ -201,6 +201,7 @@ void ImageWindow::setupUserArea()
     d->thumbBarDock->setWidget(d->thumbBar);
     d->viewContainer->addDockWidget(Qt::LeftDockWidgetArea, d->thumbBarDock);
     d->thumbBarDock->setFloating(false);
+    d->rightSideBar->setItemFilterModel(d->imageFilterModel);
 
     setCentralWidget(widget);
 }

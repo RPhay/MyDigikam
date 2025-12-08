@@ -93,6 +93,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     d->rightSideBar        = new ItemPropertiesSideBarDB(this, d->splitter, Qt::RightEdge, true);
     d->rightSideBar->setObjectName(QLatin1String("Digikam Right Sidebar"));
+    d->rightSideBar->setItemFilterModel(d->iconView->itemFilterModel());
 
     // album folder view
 

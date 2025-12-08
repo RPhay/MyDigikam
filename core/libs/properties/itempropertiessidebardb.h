@@ -35,6 +35,7 @@ namespace Digikam
 class DImg;
 class SidebarSplitter;
 class ItemInfo;
+class ItemFilterModel;
 class ImageChangeset;
 class ItemDescEditTab;
 class ImageTagChangeset;
@@ -59,6 +60,8 @@ public:
     /// This is for image editor to be able to update the filter list in sidebar
     ItemPropertiesVersionsTab* getFiltersHistoryTab() const;
     ItemDescEditTab*           imageDescEditTab()     const;
+
+    void setItemFilterModel(ItemFilterModel* const model);
 
     void itemChanged(const QUrl& url,
                      const QRect& rect = QRect(),
