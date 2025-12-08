@@ -17,12 +17,17 @@ Bundles component versions:
 | macOS Qt6     | 6.10.0 (*) | 6.20.0 (*)  | 4.12           | 7.1.2 (*)      | 1.20.2 (*)   | 13.43 (*)        | 0.28.7 (*)    |
 
 Raw Engine      : Update internal Libraw to last 20251208 upstream.
-                  New Raw Camera: Canon EOS R1, EOS R5 Mark II
-                                  Fujifilm X-T50, GFX 100S II
-                                  Leica Q3 43, D-Lux8
-                                  Nikon Z6-III (no HE/HE* support)
-                                  Panasonic GH7, S9
-                                  Sony ZV-E10M2, UMC-R10C
+                  New Raw Camera: * Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra
+                                  * Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S
+                                  * Hasselblad  CFV-50c, CFV-100c, X2D-100c
+                                  * Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom
+                                  * Nikon (standard compression only): Z6-III, Z f, Z30, Z8
+                                  * Olympus/OM System OM-1 Mark II, TG-7, OM-5
+                                  * Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6
+                                  * Pentax KF, K III Monochrome
+                                  * Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1
+                                  * Multiple DJI and Skydio drones
+                                  * Tested with multiple smartphones with DNG format recorded.
 
 Video           : Update internal QtAVPlayer to last 20251117 upstream (Qt5 only).
 
