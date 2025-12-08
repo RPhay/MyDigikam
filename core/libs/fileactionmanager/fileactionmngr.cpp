@@ -199,11 +199,11 @@ void FileActionMngr::assignRating(const QList<ItemInfo>& infos, int rating)
     d->assignRating(taskList, rating);
 }
 
-void FileActionMngr::addToGroup(const ItemInfo& pick, const QList<ItemInfo>& infos)
+void FileActionMngr::addToGroup(const ItemInfo& info, const QList<ItemInfo>& infos)
 {
     FileActionItemInfoList taskList = FileActionItemInfoList::create(infos);
     taskList.schedulingForDB(i18n("Editing group"), d->dbProgressCreator());
-    d->editGroup(AddToGroup, pick, taskList);
+    d->editGroup(AddToGroup, info, taskList);
 }
 
 void FileActionMngr::removeFromGroup(const ItemInfo& info)

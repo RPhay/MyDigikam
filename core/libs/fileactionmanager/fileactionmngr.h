@@ -78,7 +78,7 @@ public Q_SLOTS:
     void assignRating(const ItemInfo& info, int rating);
     void assignRating(const QList<ItemInfo>& infos, int rating);
 
-    void addToGroup(const ItemInfo& pick, const QList<ItemInfo>& infos);
+    void addToGroup(const ItemInfo& info, const QList<ItemInfo>& infos);
     void removeFromGroup(const ItemInfo& info);
     void removeFromGroup(const QList<ItemInfo>& infos);
     void ungroup(const ItemInfo& info);
