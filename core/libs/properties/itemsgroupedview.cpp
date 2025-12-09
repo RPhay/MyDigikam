@@ -293,15 +293,11 @@ void ItemsGroupedView::slotGotThumbnail(const LoadingDescription& desc, const QP
 
     while (*it)
     {
-        if ((*it)->text(0).startsWith(file))
+        ItemsGroupedViewItem* const item = dynamic_cast<ItemsGroupedViewItem*>(*it);
+
+        if (item && (item->info().name() == file))
         {
-            ItemsGroupedViewItem* const item = dynamic_cast<ItemsGroupedViewItem*>(*it);
-
-            if (item)
-            {
-                item->setThumb(thumb);
-            }
-
+            item->setThumb(thumb);
             break;
         }
 
