@@ -322,7 +322,7 @@ void ItemPropertiesGPSTab::slotCopyGPSDetails()
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 }
 
-void ItemPropertiesGPSTab::setCurrentURL(const QUrl& url)
+void ItemPropertiesGPSTab::setCurrentUrl(const QUrl& url)
 {
     if (url.isEmpty())
     {

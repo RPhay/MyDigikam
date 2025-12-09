@@ -18,7 +18,7 @@
 namespace Digikam
 {
 
-void ItemPropertiesTab::setCurrentURL(const QUrl& url)
+void ItemPropertiesTab::setCurrentUrl(const QUrl& url)
 {
     if (url.isEmpty())
     {

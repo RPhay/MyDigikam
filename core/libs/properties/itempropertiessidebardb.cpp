@@ -256,7 +256,7 @@ void ItemPropertiesSideBarDB::slotNoCurrentItem()
     ItemPropertiesSideBar::slotNoCurrentItem();
     d->treeGroup->setVisible(false);
 
-    d->selectionPropertiesTab->setCurrentURL();
+    d->selectionPropertiesTab->setCurrentUrl();
 
     // All tabs that store the ItemInfo list and access it after selection change
     // must release the image info here. changedTab only handles the active tab!
@@ -289,8 +289,8 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
 
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
-        m_propertiesTab->setCurrentURL(m_currentUrl);
-        d->selectionPropertiesTab->setCurrentURL(m_currentUrl);
+        m_propertiesTab->setCurrentUrl(m_currentUrl);
+        d->selectionPropertiesTab->setCurrentUrl(m_currentUrl);
 
         if      (d->currentInfos.isEmpty())
         {
@@ -320,11 +320,11 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
 
             if (!mainItem.isNull())
             {
-                m_metadataTab->setCurrentURL(mainItem.fileUrl());
+                m_metadataTab->setCurrentUrl(mainItem.fileUrl());
             }
             else
             {
-                m_metadataTab->setCurrentURL();
+                m_metadataTab->setCurrentUrl();
             }
         }
         else if (m_image)
@@ -334,7 +334,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
         }
         else
         {
-            m_metadataTab->setCurrentURL(m_currentUrl);
+            m_metadataTab->setCurrentUrl(m_currentUrl);
         }
 
         m_dirtyMetadataTab = true;
@@ -390,7 +390,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
     {
         if (d->currentInfos.count() == 0)
         {
-            m_gpsTab->setCurrentURL(m_currentUrl);
+            m_gpsTab->setCurrentUrl(m_currentUrl);
         }
         else
         {
@@ -409,7 +409,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
 
             if (list.isEmpty())
             {
-                m_gpsTab->setCurrentURL();
+                m_gpsTab->setCurrentUrl();
             }
             else
             {

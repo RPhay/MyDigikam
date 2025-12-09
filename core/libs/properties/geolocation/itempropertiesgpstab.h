@@ -51,7 +51,7 @@ public:
 
     void clearGPSInfo();
     void setGPSInfoList(const GPSItemInfo::List& list);
-    void setCurrentURL(const QUrl& url = QUrl());
+    void setCurrentUrl(const QUrl& url = QUrl());
 
     void setMetadata(DMetadata* const meta, const QUrl& url);
 

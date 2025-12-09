@@ -197,7 +197,7 @@ void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)
     group.writeEntry("Current ExifTool Item",       d->exifToolWidget->getCurrentItemKey());
 }
 
-void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
+void ItemPropertiesMetadataTab::setCurrentUrl(const QUrl& url)
 {
     if (url.isEmpty())
     {

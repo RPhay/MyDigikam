@@ -58,7 +58,7 @@ public:
     ///@{
     /// Setter methods (itempropertiestab_setters.cpp)
 
-    void setCurrentURL(const QUrl& url = QUrl());
+    void setCurrentUrl(const QUrl& url = QUrl());
 
     void setPhotoInfoDisable(const bool b);
     void setVideoInfoDisable(const bool b);

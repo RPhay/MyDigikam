@@ -127,13 +127,13 @@ void ItemPropertiesSideBar::slotNoCurrentItem()
 {
     m_currentUrl = QUrl();
 
-    m_propertiesTab->setCurrentURL();
-    m_metadataTab->setCurrentURL();
+    m_propertiesTab->setCurrentUrl();
+    m_metadataTab->setCurrentUrl();
     m_colorTab->setData();
 
 #ifdef HAVE_GEOLOCATION
 
-    m_gpsTab->setCurrentURL();
+    m_gpsTab->setCurrentUrl();
 
 #endif // HAVE_GEOLOCATION
 
@@ -176,13 +176,13 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
-        m_propertiesTab->setCurrentURL(m_currentUrl);
+        m_propertiesTab->setCurrentUrl(m_currentUrl);
         setImagePropertiesInformation(m_currentUrl);
         m_dirtyPropertiesTab = true;
     }
     else if ((tab == m_metadataTab) && !m_dirtyMetadataTab)
     {
-        m_metadataTab->setCurrentURL(m_currentUrl);
+        m_metadataTab->setCurrentUrl(m_currentUrl);
         m_dirtyMetadataTab = true;
     }
     else if ((tab == m_colorTab) && !m_dirtyColorTab)
@@ -195,7 +195,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 
     else if ((tab == m_gpsTab) && !m_dirtyGpsTab)
     {
-        m_gpsTab->setCurrentURL(m_currentUrl);
+        m_gpsTab->setCurrentUrl(m_currentUrl);
         m_dirtyGpsTab = true;
     }
 

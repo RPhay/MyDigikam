@@ -147,7 +147,7 @@ ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
     delete d;
 }
 
-void ItemSelectionPropertiesTab::setCurrentURL(const QUrl& url)
+void ItemSelectionPropertiesTab::setCurrentUrl(const QUrl& url)
 {
     if (url.isEmpty())
     {

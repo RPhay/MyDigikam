@@ -143,11 +143,11 @@ void ImportItemPropertiesSideBarImport::slotNoCurrentItem()
     d->dirtyGpsTab        = false;
 
     d->cameraItemTab->setCurrentItem();
-    d->metadataTab->setCurrentURL();
+    d->metadataTab->setCurrentUrl();
 
 #ifdef HAVE_GEOLOCATION
 
-    d->gpsTab->setCurrentURL();
+    d->gpsTab->setCurrentUrl();
 
 #endif // HAVE_GEOLOCATION
 

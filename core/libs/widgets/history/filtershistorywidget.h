@@ -66,7 +66,7 @@ public:
     explicit FiltersHistoryWidget(QWidget* const parent);
     ~FiltersHistoryWidget() override;
 
-    void setCurrentURL(const QUrl& url = QUrl());
+    void setCurrentUrl(const QUrl& url = QUrl());
 
 public Q_SLOTS:
 

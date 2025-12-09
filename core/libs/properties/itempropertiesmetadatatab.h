@@ -37,7 +37,7 @@ public:
     explicit ItemPropertiesMetadataTab(QWidget* const parent);
     ~ItemPropertiesMetadataTab() override;
 
-    void setCurrentURL(const QUrl& url = QUrl());
+    void setCurrentUrl(const QUrl& url = QUrl());
     void setCurrentData(DMetadata* const metadata = nullptr,
                         const QUrl& url = QUrl());
 
