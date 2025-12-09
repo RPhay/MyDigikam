@@ -140,7 +140,7 @@ TableView::TableView(QItemSelectionModel* const selectionModel,
     connect(s->imageFilterModel, &ItemFilterModel::signalGroupIsOpen,
             this, [this](qlonglong group, bool open)
         {
-            if (s->tableViewModel->groupingMode() == TableViewModel::GroupingShowSubItems)
+            if (s->isActive && (s->tableViewModel->groupingMode() == TableViewModel::GroupingShowSubItems))
             {
                 const QModelIndex index = s->tableViewModel->indexFromImageId(group, 0);
 
