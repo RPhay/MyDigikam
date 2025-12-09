@@ -140,7 +140,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     insertItem(ItemSelectionPropertiesTab::Private::AlbumItemProperties, d->total,
                QIcon::fromTheme(QLatin1String("folder")),
-               i18n("Total Item Properties"), QLatin1String("Total Item Properties"), true);
+               i18n("All Item Properties"), QLatin1String("All Item Properties"), true);
 
     addStretch();
 }
