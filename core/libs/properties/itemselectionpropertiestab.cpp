@@ -69,6 +69,9 @@ public:
 
     ItemsGroupedView* treeSelectionGroups  = nullptr;
     ItemsGroupedView* treeTotalGroups      = nullptr;
+
+    QWidget*          select               = nullptr;
+    QWidget*          total                = nullptr;
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
@@ -82,17 +85,17 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     const int spacing                     = layoutSpacing();
 
-    QWidget* const select                 = new QWidget(this);
-    QGridLayout* const grid1              = new QGridLayout(select);
+    d->select                             = new QWidget(this);
+    QGridLayout* const grid1              = new QGridLayout(d->select);
 
-    DTextLabelName* const selectionCount  = new DTextLabelName(i18n("Count: "),  select);
-    DTextLabelName* const selectionSize   = new DTextLabelName(i18n("Size: "),   select);
-    DTextLabelName* const selectionGroups = new DTextLabelName(i18n("Groups: "), select);
-    d->labelSelectionCount                = new DTextLabelValue(QString(), select);
-    d->labelSelectionSize                 = new DTextLabelValue(QString(), select);
-    d->labelSelectionGroups               = new DTextLabelValue(QString(), select);
+    DTextLabelName* const selectionCount  = new DTextLabelName(i18n("Count: "),  d->select);
+    DTextLabelName* const selectionSize   = new DTextLabelName(i18n("Size: "),   d->select);
+    DTextLabelName* const selectionGroups = new DTextLabelName(i18n("Groups: "), d->select);
+    d->labelSelectionCount                = new DTextLabelValue(QString(), d->select);
+    d->labelSelectionSize                 = new DTextLabelValue(QString(), d->select);
+    d->labelSelectionGroups               = new DTextLabelValue(QString(), d->select);
 
-    d->treeSelectionGroups                = new ItemsGroupedView(select);
+    d->treeSelectionGroups                = new ItemsGroupedView(d->select);
 
     grid1->addWidget(selectionCount,                  0, 0, 1, 1);
     grid1->addWidget(d->labelSelectionCount,          0, 1, 1, 1);
@@ -106,22 +109,22 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     grid1->setColumnStretch(1, 25);
     grid1->setSpacing(0);
 
-    insertItem(ItemSelectionPropertiesTab::Private::SelectionItemProperties, select,
+    insertItem(ItemSelectionPropertiesTab::Private::SelectionItemProperties, d->select,
                QIcon::fromTheme(QLatin1String("dialog-information")),
                i18n("Selected Item Properties"), QLatin1String("Selection Properties"), true);
 
-    QWidget* const total                  = new QWidget(this);
-    QGridLayout* const grid2              = new QGridLayout(total);
+    d->total                              = new QWidget(this);
+    QGridLayout* const grid2              = new QGridLayout(d->total);
 
-    DTextLabelName* const totalCount      = new DTextLabelName(i18n("Count: "),  total);
-    DTextLabelName* const totalSize       = new DTextLabelName(i18n("Size: "),   total);
-    DTextLabelName* const totalGroups     = new DTextLabelName(i18n("Groups: "), total);
+    DTextLabelName* const totalCount      = new DTextLabelName(i18n("Count: "),  d->total);
+    DTextLabelName* const totalSize       = new DTextLabelName(i18n("Size: "),   d->total);
+    DTextLabelName* const totalGroups     = new DTextLabelName(i18n("Groups: "), d->total);
 
-    d->labelTotalCount                    = new DTextLabelValue(QString(), total);
-    d->labelTotalSize                     = new DTextLabelValue(QString(), total);
-    d->labelTotalGroups                   = new DTextLabelValue(QString(), total);
+    d->labelTotalCount                    = new DTextLabelValue(QString(), d->total);
+    d->labelTotalSize                     = new DTextLabelValue(QString(), d->total);
+    d->labelTotalGroups                   = new DTextLabelValue(QString(), d->total);
 
-    d->treeTotalGroups                    = new ItemsGroupedView(total);
+    d->treeTotalGroups                    = new ItemsGroupedView(d->total);
 
     grid2->addWidget(totalCount,                      5, 0, 1, 1);
     grid2->addWidget(d->labelTotalCount,              5, 1, 1, 1);
@@ -135,7 +138,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     grid2->setColumnStretch(1, 25);
     grid2->setSpacing(0);
 
-    insertItem(ItemSelectionPropertiesTab::Private::AlbumItemProperties, total,
+    insertItem(ItemSelectionPropertiesTab::Private::AlbumItemProperties, d->total,
                QIcon::fromTheme(QLatin1String("folder")),
                i18n("Album Item Properties"), QLatin1String("Album Item Properties"), true);
 
@@ -149,21 +152,6 @@ ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
 
 void ItemSelectionPropertiesTab::setCurrentUrl(const QUrl& url)
 {
-    if (url.isEmpty())
-    {
-         d->labelSelectionCount->setAdjustedText(QString());
-         d->labelSelectionSize->setAdjustedText(QString());
-         d->labelTotalCount->setAdjustedText(QString());
-         d->labelTotalSize->setAdjustedText(QString());
-         d->labelSelectionGroups->setAdjustedText(QString());
-         d->labelTotalGroups->setAdjustedText(QString());
-         d->treeSelectionGroups->clear();
-         d->treeTotalGroups->clear();
-         setEnabled(false);
-         return;
-    }
-
-    setEnabled(true);
 }
 
 void ItemSelectionPropertiesTab::setSelectionCount(const QString& str)

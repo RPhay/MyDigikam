@@ -61,6 +61,12 @@ public:
     ItemPropertiesVersionsTab* getFiltersHistoryTab() const;
     ItemDescEditTab*           imageDescEditTab()     const;
 
+    /**
+     * If no item selected, show the synthesis panel with information from all items.
+     * Disabled by default.
+     */
+    void setShowAllPropertiesMode(bool b);
+
     void setItemFilterModel(ItemFilterModel* const model);
 
     void itemChanged(const QUrl& url,

@@ -74,8 +74,9 @@ public:
     bool                        hasPrevious            = false;
     bool                        hasNext                = false;
     bool                        hasItemInfoOwnership   = false;
+    bool                        showAllPropertiesMode  = false;
 
-    ItemInfoList                currentInfos;                    ///< Used while multiple items selected.
+    ItemInfoList                currentInfos;                    ///< Used if multiple items are selected.
     ItemInfoList                allInfos;
     DImageHistory               currentHistory;
     ItemSelectionPropertiesTab* selectionPropertiesTab = nullptr;
@@ -159,6 +160,11 @@ void ItemPropertiesSideBarDB::setItemFilterModel(ItemFilterModel* const model)
 {
     d->treeGroup->setItemFilterModel(model);
     d->selectionPropertiesTab->setItemFilterModel(model);
+}
+
+void ItemPropertiesSideBarDB::setShowAllPropertiesMode(bool b)
+{
+    d->showAllPropertiesMode = b;
 }
 
 void ItemPropertiesSideBarDB::itemChanged(const ItemInfo& info, const QRect& rect,
@@ -257,13 +263,16 @@ void ItemPropertiesSideBarDB::slotNoCurrentItem()
     d->treeGroup->setVisible(false);
 
     d->selectionPropertiesTab->setCurrentUrl();
+    m_dirtyPropertiesTab = false;
 
     // All tabs that store the ItemInfo list and access it after selection change
     // must release the image info here. changedTab only handles the active tab!
 
     d->desceditTab->setItem();
     d->currentInfos.clear();
-    d->dirtyDesceditTab = false;
+    d->dirtyDesceditTab  = false;
+
+    changedTab(getActiveTab());
 }
 
 void ItemPropertiesSideBarDB::populateTags()
@@ -294,7 +303,15 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
 
         if      (d->currentInfos.isEmpty())
         {
-            ItemPropertiesSideBar::setImagePropertiesInformation(m_currentUrl);
+            if (!d->showAllPropertiesMode)
+            {
+                ItemPropertiesSideBar::setImagePropertiesInformation(m_currentUrl);
+            }
+            else
+            {
+                setImageSelectionPropertiesInformation();
+                m_propertiesStackedView->setCurrentWidget(d->selectionPropertiesTab);
+            }
         }
         else if (d->currentInfos.count() == 1)
         {
