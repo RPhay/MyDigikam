@@ -262,7 +262,9 @@ void ItemsGroupedView::setGroups(const ItemInfoList& items)
 
             if (index.isValid())
             {
+                blockSignals(true);
                 p->setExpanded(index.data(ItemFilterModel::GroupIsOpenRole).toBool());
+                blockSignals(false);
             }
         }
 
