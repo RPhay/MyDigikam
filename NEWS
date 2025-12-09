@@ -156,7 +156,7 @@ BUGFIXES:
 103 --> 399220 - When no item is selected from icon-view the right sidebar must display a resume of the current album content in Properties tab.
 104 --> 513082 - Advanced Search - Trying to exclude multiple person.
 104 --> 494640 - DNG conversion from CR2.
-105 --> 
+105 --> 506431 - It is not possible to delete suggested faces.
 106 --> 
 107 --> 
 108 --> 
