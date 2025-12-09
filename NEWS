@@ -157,7 +157,7 @@ BUGFIXES:
 104 --> 513082 - Advanced Search - Trying to exclude multiple person.
 104 --> 494640 - DNG conversion from CR2.
 105 --> 506431 - It is not possible to delete suggested faces.
-106 --> 
+106 --> 502360 - Similarity view - external deletion.
 107 --> 
 108 --> 
 109 --> 
