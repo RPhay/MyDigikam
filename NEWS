@@ -150,7 +150,7 @@ BUGFIXES:
 098 --> 513117 - ASSERT failure in KCatalogPrivate::setupGettextEnv.
 099 --> 500363 - Confirmed faces incorrectly confirms the next face in the list when using the keyboard.
 100 --> 501980 - digiKam hangs and does not respond during restoration image.
-101 --> 
+101 --> 499395 - Application Crash of Modul Qt6Core.dll - Exception Code 0xc0000005.
 102 --> 
 103 --> 
 104 --> 
