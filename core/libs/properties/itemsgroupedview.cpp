@@ -28,9 +28,6 @@
 // Local includes
 
 #include "digikam_globals.h"
-#include "coredb.h"
-#include "coredbchangesets.h"
-#include "coredbwatch.h"
 #include "applicationsettings.h"
 #include "itemsgroupedviewitem.h"
 #include "itemsgroupedtooltip.h"
@@ -89,10 +86,6 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
 
     connect(d->toolTipTimer, SIGNAL(timeout()),
             this, SLOT(slotToolTip()));
-
-    connect(CoreDbAccess::databaseWatch(), SIGNAL(collectionImageChange(CollectionImageChangeset)),
-            this, SLOT(slotCollectionImageChange(CollectionImageChangeset)),
-            Qt::QueuedConnection);
 
     slotSettingsChanged();
 }
@@ -349,59 +342,6 @@ void ItemsGroupedView::slotSettingsChanged()
     {
         setEnableToolTips(ApplicationSettings::instance()->getShowToolTips());
     }
-}
-
-void ItemsGroupedView::slotCollectionImageChange(const CollectionImageChangeset& changeset)
-{
-    switch (changeset.operation())
-    {
-        case CollectionImageChangeset::Deleted:
-        case CollectionImageChangeset::Removed:
-        case CollectionImageChangeset::RemovedAll:
-        {
-            const auto ids = changeset.ids();
-
-            for (const qlonglong& id : ids)
-            {
-                removeItemById(id);
-            }
-
-            break;
-        }
-
-        default:
-        {
-            break;
-        }
-    }
-}
-
-void ItemsGroupedView::removeItemById(qlonglong id)
-{
-    hideToolTip();
-
-    bool find;
-
-    do
-    {
-        find = false;
-        QTreeWidgetItemIterator it(this);
-
-        while (*it)
-        {
-            ItemsGroupedViewItem* const item = dynamic_cast<ItemsGroupedViewItem*>(*it);
-
-            if (item && (item->info().id() == id))
-            {
-                delete item;
-                find = true;
-                break;
-            }
-
-            ++it;
-        }
-    }
-    while (find);
 }
 
 } // namespace Digikam
