@@ -122,7 +122,9 @@ void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
 
                 if (item && (item->info().id() == group))
                 {
+                    blockSignals(true);
                     item->setExpanded(open);
+                    blockSignals(false);
                 }
 
                 break;
