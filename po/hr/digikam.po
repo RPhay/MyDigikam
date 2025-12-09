@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-08 00:41+0000\n"
+"POT-Creation-Date: 2025-12-09 00:40+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -3119,7 +3119,7 @@ msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/views/stack/itemiconview.cpp:198
+#: core/app/views/stack/itemiconview.cpp:199
 #, fuzzy, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -35958,7 +35958,7 @@ msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiessidebardb.cpp:674
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -35969,10 +35969,10 @@ msgstr "Nije dostupno"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:725
-#: core/libs/properties/itempropertiessidebardb.cpp:727
-#: core/libs/properties/itempropertiessidebardb.cpp:830
-#: core/libs/properties/itempropertiessidebardb.cpp:848
+#: core/libs/properties/itempropertiessidebardb.cpp:732
+#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:837
+#: core/libs/properties/itempropertiessidebardb.cpp:855
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
@@ -35984,10 +35984,10 @@ msgstr "Ne"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:726
-#: core/libs/properties/itempropertiessidebardb.cpp:829
+#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:733
 #: core/libs/properties/itempropertiessidebardb.cpp:836
+#: core/libs/properties/itempropertiessidebardb.cpp:843
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -36231,8 +36231,8 @@ msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:701
-#: core/libs/properties/itempropertiessidebardb.cpp:714
+#: core/libs/properties/itempropertiessidebardb.cpp:708
+#: core/libs/properties/itempropertiessidebardb.cpp:721
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -36245,61 +36245,61 @@ msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:723
+#: core/libs/properties/itempropertiessidebardb.cpp:730
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:757
+#: core/libs/properties/itempropertiessidebardb.cpp:764
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:762
+#: core/libs/properties/itempropertiessidebardb.cpp:769
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
+#: core/libs/properties/itempropertiessidebardb.cpp:98
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Orijentacija:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:98
+#: core/libs/properties/itempropertiessidebardb.cpp:99
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:102
+#: core/libs/properties/itempropertiessidebardb.cpp:103
 #, fuzzy, kde-format
 msgid "Open the Description tab for editing"
 msgstr "Ukloni koordinate…"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:106
+#: core/libs/properties/itempropertiessidebardb.cpp:107
 #, kde-format
 msgid "Open the Tags tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:110
-#: core/libs/properties/itempropertiessidebardb.cpp:114
+#: core/libs/properties/itempropertiessidebardb.cpp:111
+#: core/libs/properties/itempropertiessidebardb.cpp:115
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:706
+#: core/libs/properties/itempropertiessidebardb.cpp:713
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:840
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -57189,17 +57189,17 @@ msgstr "Uredi koordinate…"
 msgid "Show Assigned Tags"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:228
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
 #, kde-format
 msgid "Assign Tag"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:230
 #, kde-format
 msgid "Remove Tag"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:254
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:255
 #, kde-format
 msgid "Assign Labels"
 msgstr ""

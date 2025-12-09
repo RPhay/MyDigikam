@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-08 00:41+0000\n"
-"PO-Revision-Date: 2025-12-06 11:30+0100\n"
+"POT-Creation-Date: 2025-12-09 00:40+0000\n"
+"PO-Revision-Date: 2025-12-08 12:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3156,7 +3156,7 @@ msgid_plural "%1 items"
 msgstr[0] "1 element"
 msgstr[1] "%1 elements"
 
-#: core/app/views/stack/itemiconview.cpp:198
+#: core/app/views/stack/itemiconview.cpp:199
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -38588,7 +38588,7 @@ msgstr "sense canvis"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiessidebardb.cpp:674
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38599,10 +38599,10 @@ msgstr "no disponible"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:725
-#: core/libs/properties/itempropertiessidebardb.cpp:727
-#: core/libs/properties/itempropertiessidebardb.cpp:830
-#: core/libs/properties/itempropertiessidebardb.cpp:848
+#: core/libs/properties/itempropertiessidebardb.cpp:732
+#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:837
+#: core/libs/properties/itempropertiessidebardb.cpp:855
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -38614,10 +38614,10 @@ msgstr "No"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:726
-#: core/libs/properties/itempropertiessidebardb.cpp:829
+#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:733
 #: core/libs/properties/itempropertiessidebardb.cpp:836
+#: core/libs/properties/itempropertiessidebardb.cpp:843
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38861,8 +38861,8 @@ msgstr "Sense calibrar"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:701
-#: core/libs/properties/itempropertiessidebardb.cpp:714
+#: core/libs/properties/itempropertiessidebardb.cpp:708
+#: core/libs/properties/itempropertiessidebardb.cpp:721
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38875,65 +38875,65 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:723
+#: core/libs/properties/itempropertiessidebardb.cpp:730
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:757
+#: core/libs/properties/itempropertiessidebardb.cpp:764
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:762
+#: core/libs/properties/itempropertiessidebardb.cpp:769
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
+#: core/libs/properties/itempropertiessidebardb.cpp:98
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Llegendes"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:98
+#: core/libs/properties/itempropertiessidebardb.cpp:99
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versions"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:102
+#: core/libs/properties/itempropertiessidebardb.cpp:103
 #, kde-format
 msgid "Open the Description tab for editing"
 msgstr "Obri la pestanya de descripció per a l'edició"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:106
+#: core/libs/properties/itempropertiessidebardb.cpp:107
 #, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "Obri la pestanya d'etiquetes per a l'edició"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:110
-#: core/libs/properties/itempropertiessidebardb.cpp:114
+#: core/libs/properties/itempropertiessidebardb.cpp:111
+#: core/libs/properties/itempropertiessidebardb.cpp:115
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr "Obri la pestanya d'informació per a l'edició"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:706
+#: core/libs/properties/itempropertiessidebardb.cpp:713
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:840
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
-msgstr ""
+msgstr "Sí (pila)"
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -59760,17 +59760,17 @@ msgstr "Edita els comentaris"
 msgid "Show Assigned Tags"
 msgstr "Mostra les etiquetes assignades"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:228
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
 #, kde-format
 msgid "Assign Tag"
 msgstr "Assigna una etiqueta"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:230
 #, kde-format
 msgid "Remove Tag"
 msgstr "Elimina una etiqueta"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:254
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:255
 #, kde-format
 msgid "Assign Labels"
 msgstr "Assigna rètols"

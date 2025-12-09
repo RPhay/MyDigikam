@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-08 00:41+0000\n"
+"POT-Creation-Date: 2025-12-09 00:40+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -3144,7 +3144,7 @@ msgid_plural "%1 items"
 msgstr[0] "१६ बिट"
 msgstr[1] "१६ बिट"
 
-#: core/app/views/stack/itemiconview.cpp:198
+#: core/app/views/stack/itemiconview.cpp:199
 #, fuzzy, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -36742,7 +36742,7 @@ msgstr "<i>अपरिवर्तित</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiessidebardb.cpp:674
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -36754,10 +36754,10 @@ msgstr "उपलब्ध छैन"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:725
-#: core/libs/properties/itempropertiessidebardb.cpp:727
-#: core/libs/properties/itempropertiessidebardb.cpp:830
-#: core/libs/properties/itempropertiessidebardb.cpp:848
+#: core/libs/properties/itempropertiessidebardb.cpp:732
+#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:837
+#: core/libs/properties/itempropertiessidebardb.cpp:855
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
@@ -36769,10 +36769,10 @@ msgstr "कुनै होइन"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:726
-#: core/libs/properties/itempropertiessidebardb.cpp:829
+#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:733
 #: core/libs/properties/itempropertiessidebardb.cpp:836
+#: core/libs/properties/itempropertiessidebardb.cpp:843
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37031,8 +37031,8 @@ msgstr "अनक्यालिब्रेट"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:701
-#: core/libs/properties/itempropertiessidebardb.cpp:714
+#: core/libs/properties/itempropertiessidebardb.cpp:708
+#: core/libs/properties/itempropertiessidebardb.cpp:721
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -37047,7 +37047,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:723
+#: core/libs/properties/itempropertiessidebardb.cpp:730
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -37055,7 +37055,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:757
+#: core/libs/properties/itempropertiessidebardb.cpp:764
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -37063,49 +37063,49 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:762
+#: core/libs/properties/itempropertiessidebardb.cpp:769
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:97
+#: core/libs/properties/itempropertiessidebardb.cpp:98
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "दर:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:98
+#: core/libs/properties/itempropertiessidebardb.cpp:99
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "<b>अनुमति</b>:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:102
+#: core/libs/properties/itempropertiessidebardb.cpp:103
 #, fuzzy, kde-format
 msgid "Open the Description tab for editing"
 msgstr "छवि सूचना"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:106
+#: core/libs/properties/itempropertiessidebardb.cpp:107
 #, fuzzy, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "कन्क्वेररमा खोल्नुहोस्"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:110
-#: core/libs/properties/itempropertiessidebardb.cpp:114
+#: core/libs/properties/itempropertiessidebardb.cpp:111
+#: core/libs/properties/itempropertiessidebardb.cpp:115
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:706
+#: core/libs/properties/itempropertiessidebardb.cpp:713
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:840
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -57498,17 +57498,17 @@ msgstr "रङ व्यवस्थापन..."
 msgid "Show Assigned Tags"
 msgstr "मानाङ्कन गरेको ट्याग"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:228
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
 #, kde-format
 msgid "Assign Tag"
 msgstr "ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:230
 #, kde-format
 msgid "Remove Tag"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:254
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:255
 #, fuzzy, kde-format
 msgid "Assign Labels"
 msgstr "प्रोफाइल मानाङ्कन गर्नुहोस्"
