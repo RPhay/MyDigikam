@@ -59,6 +59,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<TableViewColumnProfile> columnProfiles;
     ThumbnailSize                 thumbnailSize;
     ItemViewUtilities*            imageViewUtilities = nullptr;

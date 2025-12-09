@@ -112,17 +112,17 @@ public:
     QModelIndex   indexFromImageId(const qlonglong imageId, const int columnIndex)                              const;
     Item*         itemFromImageId(const qlonglong imageId)                                                      const;
     Item*         itemFromIndex(const QModelIndex& i)                                                           const;
-    ItemInfo     infoFromItem(Item* const item)                                                                 const;
-    ItemInfoList infosFromItems(const QList<Item*>& items)                                                      const;
+    ItemInfo      infoFromItem(Item* const item)                                                                const;
+    ItemInfoList  infosFromItems(const QList<Item*>& items)                                                     const;
 
     QVariant              itemDatabaseFieldRaw(Item* const item, const DatabaseFields::Set& requestedField);
     DatabaseFieldsHashRaw itemDatabaseFieldsRaw(Item* const item, const DatabaseFields::Set& requestedSet);
 
     qlonglong        imageId(const QModelIndex& anIndex)                                                        const;
     QList<qlonglong> imageIds(const QModelIndexList& indexList)                                                 const;
-    QList<ItemInfo> imageInfos(const QModelIndexList& indexList)                                                const;
-    ItemInfo        imageInfo(const QModelIndex& index)                                                         const;
-    QList<ItemInfo> allItemInfo()                                                                               const;
+    QList<ItemInfo>  imageInfos(const QModelIndexList& indexList)                                               const;
+    ItemInfo         imageInfo(const QModelIndex& index)                                                        const;
+    QList<ItemInfo>  allItemInfo()                                                                              const;
 
     QList<Item*> sortItems(const QList<Item*>& itemList);
     class LessThan;

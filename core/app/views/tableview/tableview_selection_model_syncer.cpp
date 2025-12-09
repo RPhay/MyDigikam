@@ -35,6 +35,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool syncing = false;
 };
 

@@ -76,12 +76,14 @@ TableViewTreeView::TableViewTreeView(TableViewShared* const tableViewShared, QWi
 /*
     viewport()->setAcceptDrops(true);
 */
-    d->actionHeaderContextMenuRemoveColumn    = new QAction(QIcon::fromTheme(QLatin1String("edit-table-delete-column")), i18n("Remove this column"), this);
+    d->actionHeaderContextMenuRemoveColumn    = new QAction(QIcon::fromTheme(QLatin1String("edit-table-delete-column")),
+                                                            i18n("Remove this column"), this);
 
     connect(d->actionHeaderContextMenuRemoveColumn, SIGNAL(triggered(bool)),
             this, SLOT(slotHeaderContextMenuActionRemoveColumnTriggered()));
 
-    d->actionHeaderContextMenuConfigureColumn = new QAction(QIcon::fromTheme(QLatin1String("configure")), i18n("Configure this column"), this);
+    d->actionHeaderContextMenuConfigureColumn = new QAction(QIcon::fromTheme(QLatin1String("configure")),
+                                                            i18n("Configure this column"), this);
 
     connect(d->actionHeaderContextMenuConfigureColumn, SIGNAL(triggered(bool)),
             this, SLOT(slotHeaderContextMenuConfigureColumn()));
@@ -112,7 +114,8 @@ bool TableViewTreeView::eventFilter(QObject* watched, QEvent* event)
     return QObject::eventFilter(watched, event);
 }
 
-void TableViewTreeView::addColumnDescriptionsToMenu(const QList<TableViewColumnDescription>& columnDescriptions, QMenu* const menu)
+void TableViewTreeView::addColumnDescriptionsToMenu(const QList<TableViewColumnDescription>& columnDescriptions,
+                                                    QMenu* const menu)
 {
     for (int i = 0 ; i < columnDescriptions.count() ; ++i)
     {
@@ -153,7 +156,8 @@ void TableViewTreeView::showHeaderContextMenu(QEvent* const event)
 
     d->actionHeaderContextMenuRemoveColumn->setEnabled(s->tableViewModel->columnCount(QModelIndex())>1);
     menu->addAction(d->actionHeaderContextMenuRemoveColumn);
-    const bool columnCanConfigure = columnObject->getColumnFlags().testFlag(TableViewColumn::ColumnHasConfigurationWidget);
+    const bool columnCanConfigure             = columnObject->getColumnFlags()
+                                                .testFlag(TableViewColumn::ColumnHasConfigurationWidget);
     d->actionHeaderContextMenuConfigureColumn->setEnabled(columnCanConfigure);
     menu->addAction(d->actionHeaderContextMenuConfigureColumn);
     menu->addSeparator();
@@ -169,8 +173,7 @@ void TableViewTreeView::showHeaderContextMenu(QEvent* const event)
 void TableViewTreeView::slotHeaderContextMenuAddColumn()
 {
     QAction* const triggeredAction = qobject_cast<QAction*>(sender());
-
-    const QVariant actionData = triggeredAction->data();
+    const QVariant actionData      = triggeredAction->data();
 
     if (!actionData.canConvert<TableViewColumnDescription>())
     {
@@ -207,7 +210,7 @@ void TableViewTreeView::slotHeaderContextMenuAddColumn()
     // This is especially important if the new column is the last one,
     // because then it can be outside of the viewport.
 
-    const QModelIndex topIndex = indexAt(QPoint(0, 0));
+    const QModelIndex topIndex    = indexAt(QPoint(0, 0));
     const QModelIndex targetIndex = s->tableViewModel->index(topIndex.row(), newColumnLogicalIndex, topIndex.parent());
     scrollTo(targetIndex, EnsureVisible);
 }
@@ -252,7 +255,7 @@ QModelIndex TableViewTreeView::mapIndexForDragDrop(const QModelIndex& index) con
     return imageModelIndex;
 }
 
-QPixmap TableViewTreeView::pixmapForDrag(const QList< QModelIndex >& indexes) const
+QPixmap TableViewTreeView::pixmapForDrag(const QList<QModelIndex>& indexes) const
 {
     const QModelIndex& firstIndex = indexes.at(0);
     const ItemInfo info           = s->tableViewModel->imageInfo(firstIndex);

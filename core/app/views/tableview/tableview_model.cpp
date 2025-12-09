@@ -99,6 +99,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<TableViewColumn*>     columnObjects;
     TableViewModel::Item*       rootItem            = nullptr;
     ItemFilterSettings          imageFilterSettings;

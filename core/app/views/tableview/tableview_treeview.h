@@ -40,9 +40,9 @@ namespace Digikam
 
 /**
  * @todo For proper drag-and-drop support, we probably have to implement more
- *        of DragDropModelImplementation's functions in the TableViewModel or
- *        in the sort model. Subclassing DragDropModelImplementation would not
- *        work there, because we want to reuse ItemDragDropHandler.
+ *       of DragDropModelImplementation's functions in the TableViewModel or
+ *       in the sort model. Subclassing DragDropModelImplementation would not
+ *       work there, because we want to reuse ItemDragDropHandler.
  */
 class TableViewTreeView : public QTreeView,
                           public DragDropViewImplementation,
