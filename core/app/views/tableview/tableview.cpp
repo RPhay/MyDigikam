@@ -103,11 +103,56 @@ TableView::TableView(QItemSelectionModel* const selectionModel,
     connect(s->tableViewSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SIGNAL(signalItemsChanged()));
 
-    connect(s->treeView, SIGNAL(collapsed(QModelIndex)),
-            this, SIGNAL(signalItemsChanged()));
+    connect(s->treeView, &QTreeView::collapsed,
+            this, [this](const QModelIndex& index)
+        {
+            if (s->tableViewModel->groupingMode() == TableViewModel::GroupingShowSubItems)
+            {
+                const ItemInfo info = s->tableViewModel->imageInfo(index);
 
-    connect(s->treeView, SIGNAL(expanded(QModelIndex)),
-            this, SIGNAL(signalItemsChanged()));
+                if (!info.isNull())
+                {
+                    s->imageFilterModel->blockSignals(true);
+                    s->imageFilterModel->setGroupOpen(info.id(), false);
+                    s->imageFilterModel->blockSignals(false);
+                }
+            }
+        }
+    );
+
+    connect(s->treeView, &QTreeView::expanded,
+            this, [this](const QModelIndex& index)
+        {
+            if (s->tableViewModel->groupingMode() == TableViewModel::GroupingShowSubItems)
+            {
+                const ItemInfo info = s->tableViewModel->imageInfo(index);
+
+                if (!info.isNull())
+                {
+                    s->imageFilterModel->blockSignals(true);
+                    s->imageFilterModel->setGroupOpen(info.id(), true);
+                    s->imageFilterModel->blockSignals(false);
+                }
+            }
+        }
+    );
+
+    connect(s->imageFilterModel, &ItemFilterModel::signalGroupIsOpen,
+            this, [this](qlonglong group, bool open)
+        {
+            if (s->tableViewModel->groupingMode() == TableViewModel::GroupingShowSubItems)
+            {
+                const QModelIndex index = s->tableViewModel->indexFromImageId(group, 0);
+
+                if (index.isValid())
+                {
+                    s->treeView->blockSignals(true);
+                    s->treeView->setExpanded(index, open);
+                    s->treeView->blockSignals(false);
+                }
+            }
+        }
+    );
 
     connect(s->tableViewModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
             this, SIGNAL(signalItemsChanged()));
