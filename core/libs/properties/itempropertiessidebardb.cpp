@@ -495,10 +495,11 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
 
                 DatabaseFields::Set set = changeset.changes();
 
-                if      ((set & DatabaseFields::ImagesAll)          ||
-                         (set & DatabaseFields::ItemInformationAll) ||
-                         (set & DatabaseFields::ImageMetadataAll)   ||
-                         (set & DatabaseFields::VideoMetadataAll)   ||
+                if      ((set & DatabaseFields::ImagesAll)           ||
+                         (set & DatabaseFields::ItemInformationAll)  ||
+                         (set & DatabaseFields::ImageMetadataAll)    ||
+                         (set & DatabaseFields::VideoMetadataAll)    ||
+                         (set & DatabaseFields::ImageHistoryInfoAll) ||
                          (set & DatabaseFields::ItemCommentsAll))
                 {
                     m_dirtyPropertiesTab = false;
