@@ -41,14 +41,13 @@ public:
     explicit ItemSelectionPropertiesTab(QWidget* const parent);
     ~ItemSelectionPropertiesTab() override;
 
-    void setCurrentUrl(const QUrl& url = QUrl());
-
     void setSelectionCount(const QString& str);
     void setSelectionSize(const QString& str);
     void setTotalCount(const QString& str);
     void setTotalSize(const QString& str);
 
-    void setGroups(const ItemInfoList& selected, const ItemInfoList& total);
+    void setGroups(const ItemInfoList& total,
+                   const ItemInfoList& selected = ItemInfoList());
 
     void setItemFilterModel(ItemFilterModel* const model);
 

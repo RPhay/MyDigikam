@@ -107,6 +107,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     grid1->setContentsMargins(spacing, spacing, spacing, spacing);
     grid1->setColumnStretch(0, 10);
     grid1->setColumnStretch(1, 25);
+    grid1->setRowStretch(3, 10);
     grid1->setSpacing(0);
 
     insertItem(ItemSelectionPropertiesTab::Private::SelectionItemProperties, d->select,
@@ -126,32 +127,27 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     d->treeTotalGroups                    = new ItemsGroupedView(d->total);
 
-    grid2->addWidget(totalCount,                      5, 0, 1, 1);
-    grid2->addWidget(d->labelTotalCount,              5, 1, 1, 1);
-    grid2->addWidget(totalSize,                       6, 0, 1, 1);
-    grid2->addWidget(d->labelTotalSize,               6, 1, 1, 1);
-    grid2->addWidget(totalGroups,                     7, 0, 1, 1);
-    grid2->addWidget(d->labelTotalGroups,             7, 1, 1, 1);
-    grid2->addWidget(d->treeTotalGroups,              8, 0, 1, 2);
+    grid2->addWidget(totalCount,                      0, 0, 1, 1);
+    grid2->addWidget(d->labelTotalCount,              0, 1, 1, 1);
+    grid2->addWidget(totalSize,                       1, 0, 1, 1);
+    grid2->addWidget(d->labelTotalSize,               1, 1, 1, 1);
+    grid2->addWidget(totalGroups,                     2, 0, 1, 1);
+    grid2->addWidget(d->labelTotalGroups,             2, 1, 1, 1);
+    grid2->addWidget(d->treeTotalGroups,              3, 0, 1, 2);
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setColumnStretch(0, 10);
     grid2->setColumnStretch(1, 25);
+    grid2->setRowStretch(3, 10);
     grid2->setSpacing(0);
 
     insertItem(ItemSelectionPropertiesTab::Private::AlbumItemProperties, d->total,
                QIcon::fromTheme(QLatin1String("folder")),
                i18n("All Item Properties"), QLatin1String("All Item Properties"), true);
-
-    addStretch();
 }
 
 ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
 {
     delete d;
-}
-
-void ItemSelectionPropertiesTab::setCurrentUrl(const QUrl& url)
-{
 }
 
 void ItemSelectionPropertiesTab::setSelectionCount(const QString& str)
@@ -174,11 +170,18 @@ void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
     d->labelTotalSize->setAdjustedText(str);
 }
 
-void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& selected, const ItemInfoList& total)
+void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& total, const ItemInfoList& selected)
 {
-    d->labelSelectionGroups->setAdjustedText(QString::number(selected.count()));
-
-    d->treeSelectionGroups->setGroups(selected);
+    if (!selected.isEmpty())
+    {
+        d->labelSelectionGroups->setAdjustedText(QString::number(selected.count()));
+        d->treeSelectionGroups->setGroups(selected);
+        widget(ItemSelectionPropertiesTab::Private::SelectionItemProperties)->setVisible(true);
+    }
+    else
+    {
+        widget(ItemSelectionPropertiesTab::Private::SelectionItemProperties)->setVisible(false);
+    }
 
     d->labelTotalGroups->setAdjustedText(QString::number(total.count()));
     d->treeTotalGroups->setGroups(total);

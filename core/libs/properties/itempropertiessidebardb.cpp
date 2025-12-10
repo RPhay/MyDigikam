@@ -261,8 +261,6 @@ void ItemPropertiesSideBarDB::slotNoCurrentItem()
 {
     ItemPropertiesSideBar::slotNoCurrentItem();
     d->treeGroup->setVisible(false);
-
-    d->selectionPropertiesTab->setCurrentUrl();
     m_dirtyPropertiesTab = false;
 
     // All tabs that store the ItemInfo list and access it after selection change
@@ -299,7 +297,6 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentUrl(m_currentUrl);
-        d->selectionPropertiesTab->setCurrentUrl(m_currentUrl);
 
         if      (d->currentInfos.isEmpty())
         {
@@ -925,7 +922,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     d->selectionPropertiesTab->setTotalSize(ItemPropertiesTab::humanReadableBytesCount(totalFileSize));
 
-    d->selectionPropertiesTab->setGroups(selectionGroups, totalGroups);
+    d->selectionPropertiesTab->setGroups(totalGroups, selectionGroups);
 
     return;
 }
