@@ -15,9 +15,6 @@
 
 #include "tableview_treeview_delegate.h"
 
-// Qt includes
-
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -44,7 +41,8 @@ TableViewItemDelegate::TableViewItemDelegate(TableViewShared* const tableViewSha
 {
 }
 
-void TableViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex) const
+void TableViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option,
+                                  const QModelIndex& tableViewModelIndex) const
 {
     const int columnIndex               = tableViewModelIndex.column();
     const int columnCount               = s->tableViewModel->columnCount(QModelIndex());
@@ -72,7 +70,7 @@ void TableViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem&
 
 QSize TableViewItemDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex) const
 {
-    const int columnIndex = tableViewModelIndex.column();
+    const int columnIndex            = tableViewModelIndex.column();
 
     /// we have to take the maximum of all columns for the height
     /// @todo somehow cache this calculation

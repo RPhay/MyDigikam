@@ -197,7 +197,7 @@ void TableView::doLoadState()
 
 void TableView::doSaveState()
 {
-    KConfigGroup group = getConfigGroup();
+    KConfigGroup group               = getConfigGroup();
 
     TableViewColumnProfile profile   = s->tableViewModel->getColumnProfile();
     profile.headerState              = s->treeView->header()->saveState();

@@ -237,7 +237,7 @@ void TableViewTreeView::slotHeaderContextMenuConfigureColumn()
 
 AbstractItemDragDropHandler* TableViewTreeView::dragDropHandler() const
 {
-    qCDebug(DIGIKAM_GENERAL_LOG)<<s->imageModel->dragDropHandler();
+    qCDebug(DIGIKAM_GENERAL_LOG) << s->imageModel->dragDropHandler();
 
     return s->imageModel->dragDropHandler();
 }

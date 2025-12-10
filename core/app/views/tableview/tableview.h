@@ -73,15 +73,15 @@ public:
     ItemInfoList allItemInfos(bool grouping = false)                                        const;
     ItemInfoList selectedItemInfos(bool grouping = false)                                   const;
     ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false)                       const;
-    bool          allNeedGroupResolving(const OperationType type)      const;
-    bool          selectedNeedGroupResolving(const OperationType type) const;
+    bool          allNeedGroupResolving(const OperationType type)                           const;
+    bool          selectedNeedGroupResolving(const OperationType type)                      const;
 
 protected:
 
-    void doLoadState() override;
-    void doSaveState() override;
+    void doLoadState()                                                                            override;
+    void doSaveState()                                                                            override;
 
-    bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event)                                             override;
     QList<QAction*> getExtraGroupingActions();
 
 public Q_SLOTS:
