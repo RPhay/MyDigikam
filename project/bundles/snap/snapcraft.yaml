@@ -291,7 +291,7 @@ parts:
       - libsane-airscan
     plugin: cmake
     source: https://invent.kde.org/libraries/ksanecore.git
-    source-branch: 25.12
+    source-branch: release/25.12
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
