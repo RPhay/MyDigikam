@@ -163,8 +163,8 @@ BUGFIXES:
 108 --> 512555 - Right sidebar properties view content with grouped files
 109 --> 381414 - Reduce opacity of grouped, expanded thumbnails to indicate group.
 110 --> 392936 - "Shown" grouped images look identical to non-grouped images.
-111 --> 
-112 --> 
+111 --> 462245 - Identifying items in an expanded group.
+112 --> 426664 - Cannot tell different between an opened or closed group of images.
 113 --> 
 114 --> 
 115 --> 
