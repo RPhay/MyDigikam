@@ -151,7 +151,7 @@ BUGFIXES:
 098 --> 513117 - ASSERT failure in KCatalogPrivate::setupGettextEnv.
 099 --> 500363 - Confirmed faces incorrectly confirms the next face in the list when using the keyboard.
 100 --> 501980 - digiKam hangs and does not respond during restoration image.
-101 --> 499395 - Application Crash of Modul Qt6Core.dll - Exception Code 0xc0000005.
+101 --> 499395 - Application Crash of Module Qt6Core.dll - Exception Code 0xc0000005.
 102 --> 503898 - Slow digiKam start and display of images.
 103 --> 399220 - When no item is selected from icon-view the right sidebar must display a resume of the current album content in Properties tab.
 104 --> 513082 - Advanced Search - Trying to exclude multiple person.
