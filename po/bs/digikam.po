@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:40+0000\n"
+"POT-Creation-Date: 2025-12-10 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3513,7 +3513,7 @@ msgstr[0] "%1 stavka"
 msgstr[1] "%1 stavke"
 msgstr[2] "%1 stavki"
 
-#: core/app/views/stack/itemiconview.cpp:199
+#: core/app/views/stack/itemiconview.cpp:200
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -4120,17 +4120,17 @@ msgstr "Fotoaparat"
 msgid "Lens:"
 msgstr "Objektiv:"
 
-#: core/app/views/tableview/tableview.cpp:322
+#: core/app/views/tableview/tableview.cpp:369
 #, kde-format
 msgid "Hide grouped items"
 msgstr "Sakrij grupisane stavke"
 
-#: core/app/views/tableview/tableview.cpp:332
+#: core/app/views/tableview/tableview.cpp:379
 #, kde-format
 msgid "Ignore grouping"
 msgstr "Zanemari grupiranje"
 
-#: core/app/views/tableview/tableview.cpp:342
+#: core/app/views/tableview/tableview.cpp:389
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "Prikaži grupiranje na stablu"
@@ -4734,12 +4734,12 @@ msgstr "Jedinica"
 msgid "Thumbnail"
 msgstr "Sličica"
 
-#: core/app/views/tableview/tableview_treeview.cpp:79
+#: core/app/views/tableview/tableview_treeview.cpp:80
 #, kde-format
 msgid "Remove this column"
 msgstr "Ukloni ovu kolonu"
 
-#: core/app/views/tableview/tableview_treeview.cpp:84
+#: core/app/views/tableview/tableview_treeview.cpp:86
 #, kde-format
 msgid "Configure this column"
 msgstr "Konfiguriraj ovu kolonu"
@@ -40832,7 +40832,7 @@ msgstr "<i>neizmenjen</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:674
+#: core/libs/properties/itempropertiessidebardb.cpp:692
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -40844,10 +40844,10 @@ msgstr "nedostupno"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:732
-#: core/libs/properties/itempropertiessidebardb.cpp:734
-#: core/libs/properties/itempropertiessidebardb.cpp:837
+#: core/libs/properties/itempropertiessidebardb.cpp:750
+#: core/libs/properties/itempropertiessidebardb.cpp:752
 #: core/libs/properties/itempropertiessidebardb.cpp:855
+#: core/libs/properties/itempropertiessidebardb.cpp:873
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 #| msgid "No"
@@ -40860,10 +40860,10 @@ msgstr "Ne"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:731
-#: core/libs/properties/itempropertiessidebardb.cpp:733
-#: core/libs/properties/itempropertiessidebardb.cpp:836
-#: core/libs/properties/itempropertiessidebardb.cpp:843
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:854
+#: core/libs/properties/itempropertiessidebardb.cpp:861
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -41145,8 +41145,8 @@ msgstr "Nekalibriran"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:721
+#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:739
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -41161,7 +41161,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:730
+#: core/libs/properties/itempropertiessidebardb.cpp:748
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -41169,7 +41169,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:764
+#: core/libs/properties/itempropertiessidebardb.cpp:782
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -41177,53 +41177,53 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:769
+#: core/libs/properties/itempropertiessidebardb.cpp:787
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:98
+#: core/libs/properties/itempropertiessidebardb.cpp:99
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Naslov"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:99
+#: core/libs/properties/itempropertiessidebardb.cpp:100
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Verzije"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:103
+#: core/libs/properties/itempropertiessidebardb.cpp:104
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid "Open the Description tab for editing"
 msgstr "Podaci natpisa"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:107
+#: core/libs/properties/itempropertiessidebardb.cpp:108
 #, fuzzy, kde-format
 #| msgid "Open the image editor."
 msgid "Open the Tags tab for editing"
 msgstr "Otvori uređivač slike."
 
-#: core/libs/properties/itempropertiessidebardb.cpp:111
-#: core/libs/properties/itempropertiessidebardb.cpp:115
+#: core/libs/properties/itempropertiessidebardb.cpp:112
+#: core/libs/properties/itempropertiessidebardb.cpp:116
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:713
+#: core/libs/properties/itempropertiessidebardb.cpp:731
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:847
+#: core/libs/properties/itempropertiessidebardb.cpp:865
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -41649,35 +41649,35 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:88
-#: core/libs/properties/itemselectionpropertiestab.cpp:116
+#: core/libs/properties/itemselectionpropertiestab.cpp:91
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
 #, kde-format
 msgid "Count: "
 msgstr "Broj: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:89
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
+#: core/libs/properties/itemselectionpropertiestab.cpp:92
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
 #, kde-format
 msgid "Size: "
 msgstr "Veličina: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:90
-#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:121
 #, fuzzy, kde-format
 #| msgid "Group"
 msgid "Groups: "
 msgstr "Grupiši"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:114
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Selected Item Properties"
 msgstr "Svojstve datoteke"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:140
+#: core/libs/properties/itemselectionpropertiestab.cpp:143
 #, fuzzy, kde-format
 #| msgid "Album Properties"
-msgid "Album Item Properties"
+msgid "All Item Properties"
 msgstr "Osobine albuma"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179

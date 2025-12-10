@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:40+0000\n"
+"POT-Creation-Date: 2025-12-10 00:41+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -3242,7 +3242,7 @@ msgstr[0] "%1 attēls"
 msgstr[1] "%1 attēli"
 msgstr[2] "%1 attēlu"
 
-#: core/app/views/stack/itemiconview.cpp:199
+#: core/app/views/stack/itemiconview.cpp:200
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -3805,17 +3805,17 @@ msgstr "Fotoaparāts"
 msgid "Lens:"
 msgstr "Lēcas:"
 
-#: core/app/views/tableview/tableview.cpp:322
+#: core/app/views/tableview/tableview.cpp:369
 #, fuzzy, kde-format
 msgid "Hide grouped items"
 msgstr "&Grupēt attēlus"
 
-#: core/app/views/tableview/tableview.cpp:332
+#: core/app/views/tableview/tableview.cpp:379
 #, fuzzy, kde-format
 msgid "Ignore grouping"
 msgstr "Piešķirt šo tagu"
 
-#: core/app/views/tableview/tableview.cpp:342
+#: core/app/views/tableview/tableview.cpp:389
 #, fuzzy, kde-format
 msgid "Show grouping in tree"
 msgstr "Rādīt jaunākos vispirms"
@@ -4378,12 +4378,12 @@ msgstr "Laika vienība:"
 msgid "Thumbnail"
 msgstr "Sīktēls"
 
-#: core/app/views/tableview/tableview_treeview.cpp:79
+#: core/app/views/tableview/tableview_treeview.cpp:80
 #, kde-format
 msgid "Remove this column"
 msgstr ""
 
-#: core/app/views/tableview/tableview_treeview.cpp:84
+#: core/app/views/tableview/tableview_treeview.cpp:86
 #, fuzzy, kde-format
 msgid "Configure this column"
 msgstr "Fotoaparāta konfigurācija"
@@ -37904,7 +37904,7 @@ msgstr "nemainīts"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:674
+#: core/libs/properties/itempropertiessidebardb.cpp:692
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37915,10 +37915,10 @@ msgstr "nav pieejams"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:732
-#: core/libs/properties/itempropertiessidebardb.cpp:734
-#: core/libs/properties/itempropertiessidebardb.cpp:837
+#: core/libs/properties/itempropertiessidebardb.cpp:750
+#: core/libs/properties/itempropertiessidebardb.cpp:752
 #: core/libs/properties/itempropertiessidebardb.cpp:855
+#: core/libs/properties/itempropertiessidebardb.cpp:873
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 #| msgid "No"
@@ -37931,10 +37931,10 @@ msgstr "Nē"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:731
-#: core/libs/properties/itempropertiessidebardb.cpp:733
-#: core/libs/properties/itempropertiessidebardb.cpp:836
-#: core/libs/properties/itempropertiessidebardb.cpp:843
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:854
+#: core/libs/properties/itempropertiessidebardb.cpp:861
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38197,8 +38197,8 @@ msgstr "Nav kalibrēts"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:721
+#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:739
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38212,7 +38212,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpiks)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:730
+#: core/libs/properties/itempropertiessidebardb.cpp:748
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -38220,7 +38220,7 @@ msgid "%1 bpp"
 msgstr "%1 biti uz pikseli"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:764
+#: core/libs/properties/itempropertiessidebardb.cpp:782
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -38228,49 +38228,49 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:769
+#: core/libs/properties/itempropertiessidebardb.cpp:787
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:98
+#: core/libs/properties/itempropertiessidebardb.cpp:99
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Piezīmes"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:99
+#: core/libs/properties/itempropertiessidebardb.cpp:100
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versijas"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:103
+#: core/libs/properties/itempropertiessidebardb.cpp:104
 #, fuzzy, kde-format
 msgid "Open the Description tab for editing"
 msgstr "Informācija"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:107
+#: core/libs/properties/itempropertiessidebardb.cpp:108
 #, fuzzy, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "Atvērt redaktorā"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:111
-#: core/libs/properties/itempropertiessidebardb.cpp:115
+#: core/libs/properties/itempropertiessidebardb.cpp:112
+#: core/libs/properties/itempropertiessidebardb.cpp:116
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:713
+#: core/libs/properties/itempropertiessidebardb.cpp:731
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpiks)"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:847
+#: core/libs/properties/itempropertiessidebardb.cpp:865
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -38686,36 +38686,36 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:88
-#: core/libs/properties/itemselectionpropertiestab.cpp:116
+#: core/libs/properties/itemselectionpropertiestab.cpp:91
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
 #, kde-format
 msgid "Count: "
 msgstr "Skaits: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:89
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
+#: core/libs/properties/itemselectionpropertiestab.cpp:92
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
 #, kde-format
 msgid "Size: "
 msgstr "Izmērs: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:90
-#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@action: group items"
 #| msgid "Group"
 msgid "Groups: "
 msgstr "Grupa"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:114
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Selected Item Properties"
 msgstr "Faila īpašības"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:140
+#: core/libs/properties/itemselectionpropertiestab.cpp:143
 #, fuzzy, kde-format
 #| msgid "Album Properties"
-msgid "Album Item Properties"
+msgid "All Item Properties"
 msgstr "Albuma īpašības"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
