@@ -459,7 +459,7 @@ void ItemViewDelegate::drawFileSize(QPainter* p, const QRect& r, qlonglong bytes
 }
 
 void ItemViewDelegate::drawTags(QPainter* p, const QRect& r, const QString& tagsString,
-                                     bool isSelected) const
+                                bool isSelected) const
 {
     Q_D(const ItemViewDelegate);
 
@@ -471,7 +471,7 @@ void ItemViewDelegate::drawTags(QPainter* p, const QRect& r, const QString& tags
 }
 
 void ItemViewDelegate::drawFocusRect(QPainter* p, const QStyleOptionViewItem& option,
-                                          bool isSelected) const
+                                     bool isSelected) const
 {
     Q_D(const ItemViewDelegate);
 
