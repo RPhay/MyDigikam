@@ -653,6 +653,14 @@ void ItemViewDelegate::drawMouseOverRect(QPainter* p, const QStyleOptionViewItem
     }
 }
 
+void ItemViewDelegate::drawGroupedRect(QPainter* p, const QStyleOptionViewItem& option) const
+{
+    Q_D(const ItemViewDelegate);
+
+    p->setPen(QPen(option.palette.color(QPalette::Highlight), 3, Qt::SolidLine));
+    p->drawRect(1, 1, d->rect.width() - 3, d->rect.height() - 3);
+}
+
 void ItemViewDelegate::prepareFonts()
 {
     Q_D(ItemViewDelegate);

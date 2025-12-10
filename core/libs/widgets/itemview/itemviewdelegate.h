@@ -125,6 +125,7 @@ protected:
     void drawPanelSideIcon(QPainter* p, bool left, bool right)                                const;
     void drawFocusRect(QPainter* p, const QStyleOptionViewItem& option, bool isSelected)      const;
     void drawMouseOverRect(QPainter* p, const QStyleOptionViewItem& option)                   const;
+    void drawGroupedRect(QPainter* p, const QStyleOptionViewItem& option)                     const;
     void prepareFonts();
     void prepareMetrics(int maxWidth);
     void prepareBackground();

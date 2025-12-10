@@ -402,6 +402,34 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
         drawMouseOverRect(p, option);
     }
 
+    /**
+     * Rules to show grouped items when a group is open.
+     * The idea is to use the mouse over rectangle highlightment to surround all items from a group.
+     */
+
+    bool groupOpen                    = false;
+    bool grouped                      = info.isGrouped();
+    QAbstractItemModel* const model   = const_cast<QAbstractItemModel*>(index.model());
+    ItemFilterModel* fmodel           = dynamic_cast<ItemFilterModel*>(model);
+
+    if (fmodel)
+    {
+        qlonglong gid      = info.groupImageId();
+
+        if (gid > 0)
+        {
+            QModelIndex gindex = fmodel->indexForImageId(gid);
+            groupOpen          = gindex.data(ItemFilterModel::GroupIsOpenRole).toBool();
+        }
+    }
+
+    bool isGroupedItem  = (grouped && groupOpen);
+
+    if (d->drawMouseOverFrame && isGroupedItem)
+    {
+        drawGroupedRect(p, option);
+    }
+
     p->restore();
 
     drawOverlays(p, option, index);
