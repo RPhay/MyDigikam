@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:40+0000\n"
+"POT-Creation-Date: 2025-12-10 00:41+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -3138,7 +3138,7 @@ msgstr[0] "1 položka"
 msgstr[1] "%1 položky"
 msgstr[2] "%1 položek"
 
-#: core/app/views/stack/itemiconview.cpp:199
+#: core/app/views/stack/itemiconview.cpp:200
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -3696,17 +3696,17 @@ msgstr "Fotoaparát:"
 msgid "Lens:"
 msgstr "Objektiv:"
 
-#: core/app/views/tableview/tableview.cpp:322
+#: core/app/views/tableview/tableview.cpp:369
 #, kde-format
 msgid "Hide grouped items"
 msgstr "Skrýt seskupené položky"
 
-#: core/app/views/tableview/tableview.cpp:332
+#: core/app/views/tableview/tableview.cpp:379
 #, kde-format
 msgid "Ignore grouping"
 msgstr "Ignorovat seskupení"
 
-#: core/app/views/tableview/tableview.cpp:342
+#: core/app/views/tableview/tableview.cpp:389
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "Nejdříve seskupení ve stromu"
@@ -4256,12 +4256,12 @@ msgstr "Jednotka"
 msgid "Thumbnail"
 msgstr "Náhled"
 
-#: core/app/views/tableview/tableview_treeview.cpp:79
+#: core/app/views/tableview/tableview_treeview.cpp:80
 #, kde-format
 msgid "Remove this column"
 msgstr "Odstranit tento sloupec"
 
-#: core/app/views/tableview/tableview_treeview.cpp:84
+#: core/app/views/tableview/tableview_treeview.cpp:86
 #, kde-format
 msgid "Configure this column"
 msgstr "Nastavit tento sloupec"
@@ -27897,10 +27897,9 @@ msgid "Step Progress:"
 msgstr "Průběh kroku"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Overall Progress"
+#, kde-format
 msgid "Overall Progress:"
-msgstr "Celkový průběh"
+msgstr "Celkový průběh:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:217
 #, kde-format
@@ -36833,7 +36832,7 @@ msgstr "nezměněno"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:674
+#: core/libs/properties/itempropertiessidebardb.cpp:692
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -36844,10 +36843,10 @@ msgstr "nedostupný"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:732
-#: core/libs/properties/itempropertiessidebardb.cpp:734
-#: core/libs/properties/itempropertiessidebardb.cpp:837
+#: core/libs/properties/itempropertiessidebardb.cpp:750
+#: core/libs/properties/itempropertiessidebardb.cpp:752
 #: core/libs/properties/itempropertiessidebardb.cpp:855
+#: core/libs/properties/itempropertiessidebardb.cpp:873
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -36859,10 +36858,10 @@ msgstr "Ne"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:731
-#: core/libs/properties/itempropertiessidebardb.cpp:733
-#: core/libs/properties/itempropertiessidebardb.cpp:836
-#: core/libs/properties/itempropertiessidebardb.cpp:843
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:854
+#: core/libs/properties/itempropertiessidebardb.cpp:861
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37108,8 +37107,8 @@ msgstr "Nekalibrované"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:721
+#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:739
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37122,65 +37121,65 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:730
+#: core/libs/properties/itempropertiessidebardb.cpp:748
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:764
+#: core/libs/properties/itempropertiessidebardb.cpp:782
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:769
+#: core/libs/properties/itempropertiessidebardb.cpp:787
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:98
+#: core/libs/properties/itempropertiessidebardb.cpp:99
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Popisky"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:99
+#: core/libs/properties/itempropertiessidebardb.cpp:100
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Verze"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:103
+#: core/libs/properties/itempropertiessidebardb.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Open the image editor."
 msgid "Open the Description tab for editing"
 msgstr "Otevřít editor obrázků."
 
-#: core/libs/properties/itempropertiessidebardb.cpp:107
+#: core/libs/properties/itempropertiessidebardb.cpp:108
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Open the image editor."
 msgid "Open the Tags tab for editing"
 msgstr "Otevřít editor obrázků."
 
-#: core/libs/properties/itempropertiessidebardb.cpp:111
-#: core/libs/properties/itempropertiessidebardb.cpp:115
+#: core/libs/properties/itempropertiessidebardb.cpp:112
+#: core/libs/properties/itempropertiessidebardb.cpp:116
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:713
+#: core/libs/properties/itempropertiessidebardb.cpp:731
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:847
+#: core/libs/properties/itempropertiessidebardb.cpp:865
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -37337,11 +37336,9 @@ msgid "File"
 msgstr "Soubor"
 
 #: core/libs/properties/itempropertiestab.cpp:475
-#, fuzzy, kde-format
-#| msgctxt "@title: file system tree"
-#| msgid "Folders"
+#, kde-format
 msgid "Folder"
-msgstr "Složky"
+msgstr "Složka"
 
 #: core/libs/properties/itempropertiestab.cpp:476
 #, fuzzy, kde-format
@@ -37351,48 +37348,39 @@ msgid "Symlink"
 msgstr "Symbol. odkaz: "
 
 #: core/libs/properties/itempropertiestab.cpp:477
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgid "Modified Date"
-msgstr "Změněno"
+msgstr "Pozměněné datum"
 
 #: core/libs/properties/itempropertiestab.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "Owner of the file"
-#| msgid "Owner"
+#, kde-format
 msgid "Owner"
 msgstr "Vlastník"
 
 #: core/libs/properties/itempropertiestab.cpp:480
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
+#, kde-format
 msgid "Permissions"
-msgstr "Oprávnění: "
+msgstr "Oprávnění"
 
 #: core/libs/properties/itempropertiestab.cpp:482
 #, kde-format
 msgid "Mime"
-msgstr ""
+msgstr "Mime"
 
 #: core/libs/properties/itempropertiestab.cpp:484
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "Ratio"
-msgstr "Racionální"
+msgstr "Poměr"
 
 #: core/libs/properties/itempropertiestab.cpp:485
-#, fuzzy, kde-format
-#| msgid "Bit depth"
+#, kde-format
 msgid "Bit Depth"
 msgstr "Bitová hloubka"
 
 #: core/libs/properties/itempropertiestab.cpp:486
-#, fuzzy, kde-format
-#| msgid "Color Model"
+#, kde-format
 msgid "Color Mode"
-msgstr "Model barev"
+msgstr "Barevný režim"
 
 #: core/libs/properties/itempropertiestab.cpp:487
 #, fuzzy, kde-format
@@ -37414,23 +37402,17 @@ msgid "Versioned"
 msgstr "Verze"
 
 #: core/libs/properties/itempropertiestab.cpp:490
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgid "Grouped"
-msgstr "Seskupeno: "
+msgstr "Seskupeno"
 
 #: core/libs/properties/itempropertiestab.cpp:492
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgid "Make"
 msgstr "Make"
 
 #: core/libs/properties/itempropertiestab.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgid "Model"
 msgstr "Model"
 
@@ -37455,16 +37437,12 @@ msgid "Aperture"
 msgstr "Clona"
 
 #: core/libs/properties/itempropertiestab.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Focal Length"
+#, kde-format
 msgid "Focal Length"
 msgstr "Ohnisková vzdálenost"
 
 #: core/libs/properties/itempropertiestab.cpp:498
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Exposure Time"
+#, kde-format
 msgid "Exposure Time"
 msgstr "Doba expozice"
 
@@ -37476,15 +37454,12 @@ msgid "Sensitivity"
 msgstr "Citlivost"
 
 #: core/libs/properties/itempropertiestab.cpp:500
-#, fuzzy, kde-format
-#| msgid "Exposure mode"
+#, kde-format
 msgid "Exposure Mode"
 msgstr "Režim expozice"
 
 #: core/libs/properties/itempropertiestab.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Flash"
+#, kde-format
 msgid "Flash"
 msgstr "Blesk"
 
@@ -37531,16 +37506,12 @@ msgid "Video Audio Codec"
 msgstr "Kodek zvuku"
 
 #: core/libs/properties/itempropertiestab.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Caption"
 msgstr "Titulek"
 
 #: core/libs/properties/itempropertiestab.cpp:513
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgid "Title"
 msgstr "Název"
 
@@ -37559,16 +37530,12 @@ msgid "Rights"
 msgstr "Práva"
 
 #: core/libs/properties/itempropertiestab.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@title: pick tree"
-#| msgid "Pick"
+#, kde-format
 msgid "Pick"
 msgstr "Výběr"
 
 #: core/libs/properties/itempropertiestab.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "@item: color tree"
-#| msgid "Color"
+#, kde-format
 msgid "Color"
 msgstr "Barva"
 
@@ -37597,36 +37564,36 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:88
-#: core/libs/properties/itemselectionpropertiestab.cpp:116
+#: core/libs/properties/itemselectionpropertiestab.cpp:91
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
 #, kde-format
 msgid "Count: "
 msgstr "Počet: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:89
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
+#: core/libs/properties/itemselectionpropertiestab.cpp:92
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
 #, kde-format
 msgid "Size: "
 msgstr "Velikost: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:90
-#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@label: item properties"
 #| msgid "Grouped: "
 msgid "Groups: "
 msgstr "Seskupeno: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:114
 #, fuzzy, kde-format
 #| msgid "Selection Properties"
 msgid "Selected Item Properties"
 msgstr "Vlastnosti výběru"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:140
+#: core/libs/properties/itemselectionpropertiestab.cpp:143
 #, fuzzy, kde-format
 #| msgid "Album Properties"
-msgid "Album Item Properties"
+msgid "All Item Properties"
 msgstr "Vlastnosti alba"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
