@@ -158,7 +158,7 @@ BUGFIXES:
 104 --> 494640 - DNG conversion from CR2.
 105 --> 506431 - It is not possible to delete suggested faces.
 106 --> 502360 - Similarity view - external deletion.
-107 --> 
+107 --> 363522 - Import: use UUID from XMP sidecar / metadata instead of creating another one.
 108 --> 
 109 --> 
 110 --> 
