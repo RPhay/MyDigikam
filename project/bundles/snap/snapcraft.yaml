@@ -319,7 +319,7 @@ parts:
       - libksane
     parse-info:
       - usr/share/metainfo/org.kde.digikam.appdata.xml
-    source: http://download.kde.org/stable/digikam/8.9.0/digiKam-8.9.0.tar.xz
+    source: http://download.kde.org/stable/digikam/8.8.0/digiKam-8.8.0.tar.xz
     plugin: cmake
     cmake-generator: Ninja
     cmake-parameters:
