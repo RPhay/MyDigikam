@@ -605,7 +605,7 @@ void ItemViewDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
         QPixmap pixmap = icon.pixmap(r.size());
         QPainter iconPainter(&pixmap);
         iconPainter.setCompositionMode(QPainter::CompositionMode_SourceIn);
-        iconPainter.fillRect(pixmap.rect(), QColor(0, 100, 200));
+        iconPainter.fillRect(pixmap.rect(), qApp->palette().color(QPalette::Base));
         iconPainter.end();
         p->drawPixmap(r, pixmap);
 
@@ -616,11 +616,11 @@ void ItemViewDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
 
         if (open)
         {
-            p->setPen(Qt::lightGray);
+            p->setPen(qApp->palette().color(QPalette::HighlightedText));
         }
         else
         {
-            p->setPen(Qt::white);
+            p->setPen(qApp->palette().color(QPalette::Text));
         }
 
         p->drawText(r, Qt::AlignCenter, text);
