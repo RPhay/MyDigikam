@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:41+0000\n"
-"PO-Revision-Date: 2025-12-08 12:16+0100\n"
+"POT-Creation-Date: 2025-12-11 00:41+0000\n"
+"PO-Revision-Date: 2025-12-10 09:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -38588,7 +38588,7 @@ msgstr "sense canvis"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38599,10 +38599,10 @@ msgstr "no disponible"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:750
-#: core/libs/properties/itempropertiessidebardb.cpp:752
-#: core/libs/properties/itempropertiessidebardb.cpp:855
-#: core/libs/properties/itempropertiessidebardb.cpp:873
+#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:852
+#: core/libs/properties/itempropertiessidebardb.cpp:870
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -38614,10 +38614,10 @@ msgstr "No"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:751
-#: core/libs/properties/itempropertiessidebardb.cpp:854
-#: core/libs/properties/itempropertiessidebardb.cpp:861
+#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:851
+#: core/libs/properties/itempropertiessidebardb.cpp:858
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38861,8 +38861,8 @@ msgstr "Sense calibrar"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:726
-#: core/libs/properties/itempropertiessidebardb.cpp:739
+#: core/libs/properties/itempropertiessidebardb.cpp:723
+#: core/libs/properties/itempropertiessidebardb.cpp:736
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38875,21 +38875,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:745
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:782
+#: core/libs/properties/itempropertiessidebardb.cpp:779
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:787
+#: core/libs/properties/itempropertiessidebardb.cpp:784
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -38923,13 +38923,13 @@ msgstr "Obri la pestanya d'etiquetes per a l'edició"
 msgid "Open the Information tab for editing"
 msgstr "Obri la pestanya d'informació per a l'edició"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:728
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:865
+#: core/libs/properties/itempropertiessidebardb.cpp:862
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -39301,33 +39301,32 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:91
-#: core/libs/properties/itemselectionpropertiestab.cpp:119
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
 #, kde-format
 msgid "Count: "
 msgstr "Compte: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:92
-#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:121
 #, kde-format
 msgid "Size: "
 msgstr "Mida: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:121
+#: core/libs/properties/itemselectionpropertiestab.cpp:122
 #, kde-format
 msgid "Groups: "
 msgstr "Grups: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:114
+#: core/libs/properties/itemselectionpropertiestab.cpp:115
 #, kde-format
 msgid "Selected Item Properties"
-msgstr "Propietats seleccionades dels elements"
+msgstr "Propietats seleccionades de l'element"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:143
-#, fuzzy, kde-format
-#| msgid "Album Item Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:145
+#, kde-format
 msgid "All Item Properties"
-msgstr "Propietats d'àlbum de l'element"
+msgstr "Totes les propietats de l'element"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
