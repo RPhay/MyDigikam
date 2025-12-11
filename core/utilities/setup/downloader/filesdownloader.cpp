@@ -610,6 +610,9 @@ void FilesDownloader::slotUpdateDownloadInfo()
             if (!dir.cdUp())
             {
                 qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot change directory up to" << dir;
+
+                dir = QDir();
+                break;
             }
         }
 

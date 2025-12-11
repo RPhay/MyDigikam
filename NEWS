@@ -167,7 +167,7 @@ BUGFIXES:
 112 --> 426664 - Cannot tell different between an opened or closed group of images.
 113 --> 509239 - Setup wizard will not select network drive for photos source.
 114 --> 441643 - Moving grouped pictures to an album changes file extension to lowercase => tagging etc. is lost.
-115 --> 
+115 --> 508403 - Rev released 8.8.0 doesnt start.
 116 --> 
 117 --> 
 118 --> 
