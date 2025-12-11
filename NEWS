@@ -168,7 +168,7 @@ BUGFIXES:
 113 --> 509239 - Setup wizard will not select network drive for photos source.
 114 --> 441643 - Moving grouped pictures to an album changes file extension to lowercase => tagging etc. is lost.
 115 --> 508403 - Rev released 8.8.0 doesnt start.
-116 --> 
+116 --> 472203 - UI improvements.
 117 --> 
 118 --> 
 119 --> 
