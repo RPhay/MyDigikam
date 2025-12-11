@@ -72,7 +72,6 @@ protected Q_SLOTS:
 protected:
 
     void updatePosition();
-    void updateRating();
 
     QWidget* createWidget()                           override;
     void setActive(bool)                              override;
