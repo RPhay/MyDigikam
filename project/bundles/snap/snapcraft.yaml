@@ -304,7 +304,7 @@ parts:
       - ksanecore
     plugin: cmake
     source: https://invent.kde.org/graphics/libksane.git
-    source-branch: 25.12
+    source-branch: release/25.12
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
