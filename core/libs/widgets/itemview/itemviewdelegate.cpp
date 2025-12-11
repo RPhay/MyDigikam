@@ -609,9 +609,13 @@ void ItemViewDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
         iconPainter.end();
         p->drawPixmap(r, pixmap);
 
+        int fontSize   = qMin(r.width(), r.height()) / 2;
+        fontSize       = qMax(fontSize, 8);
+
         QString text   = QString::number(numberOfGroupedImages + 1);
         QFont font     = p->font();
         font.setBold(true);
+        font.setPixelSize(fontSize);
         p->setFont(font);
 
         if (open)
