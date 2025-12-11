@@ -598,20 +598,31 @@ void ItemViewDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
 {
     if (numberOfGroupedImages)
     {
-        QIcon icon;
-
-        if (open)
-        {
-            icon = QIcon::fromTheme(QLatin1String("folder-open")); //image-stack-open
-        }
-        else
-        {
-            icon = QIcon::fromTheme(QLatin1String("folder")); //image-stack
-        }
+        QIcon icon     = QIcon::fromTheme(QLatin1String("box"));
 
         icon.paint(p, r);
 
-        QString text = QString::number(numberOfGroupedImages + 1);
+        QPixmap pixmap = icon.pixmap(r.size());
+        QPainter iconPainter(&pixmap);
+        iconPainter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+        iconPainter.fillRect(pixmap.rect(), QColor(0, 100, 200));
+        iconPainter.end();
+        p->drawPixmap(r, pixmap);
+
+        QString text   = QString::number(numberOfGroupedImages + 1);
+        QFont font     = p->font();
+        font.setBold(true);
+        p->setFont(font);
+
+        if (open)
+        {
+            p->setPen(Qt::lightGray);
+        }
+        else
+        {
+            p->setPen(Qt::white);
+        }
+
         p->drawText(r, Qt::AlignCenter, text);
     }
 }
