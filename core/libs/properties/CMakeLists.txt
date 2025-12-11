@@ -63,6 +63,7 @@ set(libitempropertiesdigikam_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/itemsgroupedview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itemsgroupedviewitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itemsgroupedtooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itemsgroupedviewtoolbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/import/importitempropertiessidebar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/import/importitempropertiestab.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab.cpp
