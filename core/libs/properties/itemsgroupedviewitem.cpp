@@ -86,12 +86,12 @@ void ItemsGroupedViewItem::updateTitle()
 {
     if ((d->view->indexOfTopLevelItem(this) != -1) && ApplicationSettings::instance()->getShowFolderTreeViewItemsCount())
     {
-        setText(0, QString::fromUtf8("%1 (%2)").arg(d->info.name())
+        setText(1, QString::fromUtf8("%1 (%2)").arg(d->info.name())
                                                .arg(d->info.numberOfGroupedImages() + 1));
     }
     else
     {
-        setText(0, d->info.name());
+        setText(1, d->info.name());
     }
 }
 
