@@ -123,6 +123,9 @@ export IOLIBS=$DIR/usr/lib/libgphoto2_port
 
 # ImageMagick run-time environment
 
+export APPIMAGE_ORIGINAL_MAGICK_CODER_MODULE_PATH=$MAGICK_CODER_MODULE_PATH
+export APPIMAGE_ORIGINAL_MAGICK_CODER_FILTER_PATH=$MAGICK_CODER_FILTER_PATH
+
 export MAGICK_CODER_MODULE_PATH=$DIR/usr/lib/modules-Q16HDRI/coders
 export MAGICK_CODER_FILTER_PATH=$DIR/usr/lib/modules-Q16HDRI/filters
 

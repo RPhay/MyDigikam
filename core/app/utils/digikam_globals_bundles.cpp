@@ -165,6 +165,26 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
         {
             env.remove(QLatin1String("XDG_SESSION_DESKTOP"));
         }
+
+        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_MAGICK_CODER_MODULE_PATH")).isEmpty())
+        {
+            env.insert(QLatin1String("MAGICK_CODER_MODULE_PATH"),
+                       env.value(QLatin1String("APPIMAGE_ORIGINAL_MAGICK_CODER_MODULE_PATH")));
+        }
+        else
+        {
+            env.remove(QLatin1String("MAGICK_CODER_MODULE_PATH"));
+        }
+
+        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_MAGICK_CODER_FILTER_PATH")).isEmpty())
+        {
+            env.insert(QLatin1String("MAGICK_CODER_FILTER_PATH"),
+                       env.value(QLatin1String("APPIMAGE_ORIGINAL_MAGICK_CODER_FILTER_PATH")));
+        }
+        else
+        {
+            env.remove(QLatin1String("MAGICK_CODER_FILTER_PATH"));
+        }
     }
     else
     {
