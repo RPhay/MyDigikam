@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-11 00:41+0000\n"
+"POT-Creation-Date: 2025-12-12 00:40+0000\n"
 "PO-Revision-Date: 2025-12-10 05:04-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -39197,6 +39197,13 @@ msgstr "Propriedades do item selecionado"
 msgid "All Item Properties"
 msgstr "Todas as propriedades do item"
 
+#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Remove From Group"
+msgid "Remove from Group"
+msgstr "Remover do grupo"
+
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
 msgctxt "@option:check"
@@ -65452,13 +65459,13 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "O download requer %1 arquivos com tamanho %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:626
+#: core/utilities/setup/downloader/filesdownloader.cpp:629
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 "Todos os arquivos para as funcionalidades selecionadas foram encontrados."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:654
+#: core/utilities/setup/downloader/filesdownloader.cpp:657
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Limpar os arquivos de modelo AI/DNN não utilizados..."

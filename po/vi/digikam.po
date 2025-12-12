@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-11 00:41+0000\n"
+"POT-Creation-Date: 2025-12-12 00:40+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -37961,6 +37961,11 @@ msgstr "Thuộc tính tệp"
 msgid "All Item Properties"
 msgstr "Sửa thuộc tính tập ảnh..."
 
+#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#, fuzzy, kde-format
+msgid "Remove from Group"
+msgstr "Bỏ"
+
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, fuzzy, kde-format
 msgctxt "@option:check"
@@ -63719,12 +63724,12 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:626
+#: core/utilities/setup/downloader/filesdownloader.cpp:629
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:654
+#: core/utilities/setup/downloader/filesdownloader.cpp:657
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""

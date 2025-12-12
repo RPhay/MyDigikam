@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-11 00:41+0000\n"
+"POT-Creation-Date: 2025-12-12 00:40+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -20236,9 +20236,10 @@ msgstr "Prohlížeč OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
 #, fuzzy, kde-format
-#| msgid "A tool to preview image with OpenGL"
+#| msgctxt "@info"
+#| msgid "A tool to export items to web-services"
 msgid "A tool to preview items with OpenGL"
-msgstr "Nástroj pro náhledy obrázků pomocí OpenGL"
+msgstr "Nástroj pro export do webových služeb"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
 #, kde-format
@@ -27892,9 +27893,9 @@ msgstr "Informace o průběhu"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
 #, fuzzy, kde-format
-#| msgid "Step Progress"
+#| msgid "Step Progress (%1)"
 msgid "Step Progress:"
-msgstr "Průběh kroku"
+msgstr "Průběh kroku (%1)"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
 #, kde-format
@@ -29849,15 +29850,7 @@ msgid "Monochrome"
 msgstr "Monochromatické"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info: help"
-#| msgid ""
-#| "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
-#| "The \"red channel\" modifies the contrast of photograph.\n"
-#| "The \"green channel\" enhances or reduces the details level of "
-#| "photograph.\n"
-#| "The \"blue channel\" affects the noise of photograph.\n"
-#| "Note: in this mode, the histogram will display only luminosity values."
+#, kde-format
 msgctxt "@info: help"
 msgid ""
 "Use \"Monochrome\" mode to convert color picture to Black and White.\n"
@@ -29866,12 +29859,6 @@ msgid ""
 "The \"blue channel\" affects the noise of photograph.\n"
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
-"Použít \"Monochromatický\" režim pro převod barevného obrázku na černobílý:\n"
-"\"Červený kanál\" upraví kontrast fotografie\n"
-"\"Zelený kanál\" zlepšuje, nebo snižuje úroveň detailů fotografie.\n"
-"\"Modrý kanál\" ovlivňuje šum fotografie.\n"
-"Pozn: v tomto režimu budou v histogramu zobrazeny pouze hodnoty jasové "
-"složky."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:311
 #, kde-format
@@ -37154,11 +37141,9 @@ msgid "Versions"
 msgstr "Verze"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Open the image editor."
+#, kde-format
 msgid "Open the Description tab for editing"
-msgstr "Otevřít editor obrázků."
+msgstr ""
 
 #: core/libs/properties/itempropertiessidebardb.cpp:108
 #, fuzzy, kde-format
@@ -37586,15 +37571,22 @@ msgstr "Seskupeno: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:115
 #, fuzzy, kde-format
-#| msgid "Selection Properties"
+#| msgid "Item Properties"
 msgid "Selected Item Properties"
-msgstr "Vlastnosti výběru"
+msgstr "Vlastnosti položky"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:145
 #, fuzzy, kde-format
-#| msgid "Album Properties"
+#| msgid "Item Properties"
 msgid "All Item Properties"
-msgstr "Vlastnosti alba"
+msgstr "Vlastnosti položky"
+
+#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Remove From Group"
+msgid "Remove from Group"
+msgstr "Odstranit ze skupiny"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
@@ -60922,7 +60914,6 @@ msgstr "Navrátit položky se značkou"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
 #| msgid "Make"
 msgctxt "Camera"
 msgid "Make"
@@ -60930,7 +60921,6 @@ msgstr "Make"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
 #, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
 #| msgid "Model"
 msgctxt "Camera"
 msgid "Model"
@@ -60938,10 +60928,11 @@ msgstr "Model"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:443
 #, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#| msgctxt "@label: item properties"
+#| msgid "Lens: "
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Nepoužít filtr objektivu"
+msgstr "Objektiv: "
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
@@ -63156,12 +63147,12 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:626
+#: core/utilities/setup/downloader/filesdownloader.cpp:629
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:654
+#: core/utilities/setup/downloader/filesdownloader.cpp:657
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -66296,95 +66287,3 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
-
-#~ msgid "Total Count: "
-#~ msgstr "Celkový počet: "
-
-#~ msgid "Total Size: "
-#~ msgstr "Celková velikost: "
-
-#~ msgctxt "@item: pick tree"
-#~ msgid "No Pick"
-#~ msgstr "Žádný výběr"
-
-#~ msgctxt "@item: pick tree"
-#~ msgid "Rejected Item"
-#~ msgstr "Odmítnutá položka"
-
-#~ msgctxt "@item: pick tree"
-#~ msgid "Pending Item"
-#~ msgstr "Čekající položka"
-
-#~ msgctxt "@item: pick tree"
-#~ msgid "Accepted Item"
-#~ msgstr "Přijatá položka"
-
-#~ msgctxt "@info: pick label name"
-#~ msgid "None"
-#~ msgstr "Žádný"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "No Color"
-#~ msgstr "Žádná barva"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Red"
-#~ msgstr "Červená"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Orange"
-#~ msgstr "Oranžová"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Yellow"
-#~ msgstr "Žlutá"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Green"
-#~ msgstr "Zelená"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Blue"
-#~ msgstr "Modrá"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Magenta"
-#~ msgstr "Fialová"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Gray"
-#~ msgstr "Šedá"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "Black"
-#~ msgstr "Černá"
-
-#~ msgctxt "@item: color tree"
-#~ msgid "White"
-#~ msgstr "Bílá"
-
-#~ msgctxt "@info: color label selector"
-#~ msgid "Color Label: %1"
-#~ msgstr "Barevný popisek: %1"
-
-#, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera maker"
-#~ msgid "No Camera Make"
-#~ msgstr "Výrobce fotoaparátu"
-
-#, fuzzy
-#~| msgid "Return items with labels"
-#~ msgid "Return items without a camera model"
-#~ msgstr "Navrátit položky s popisky"
-
-#, fuzzy
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera model"
-#~ msgid "No Camera Model"
-#~ msgstr "Model fotoaparátu"
-
-#, fuzzy
-#~| msgid "Return items with labels"
-#~ msgid "Return items without a lens type"
-#~ msgstr "Navrátit položky s popisky"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-11 00:41+0000\n"
+"POT-Creation-Date: 2025-12-12 00:40+0000\n"
 "PO-Revision-Date: 2025-12-10 06:30+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -37305,6 +37305,13 @@ msgstr "მონიშნული ელემენტის თვისე�
 msgid "All Item Properties"
 msgstr "ელემენტის ყველა თვისება"
 
+#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Remove From Group"
+msgid "Remove from Group"
+msgstr "ჯგუფიდან წაშლა"
+
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
 msgctxt "@option:check"
@@ -62354,12 +62361,12 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "გადმოწერას სჭირდება %1 ფაილი ზომით %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:626
+#: core/utilities/setup/downloader/filesdownloader.cpp:629
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "აღმოჩენილია მონიშნული ფუნქციების ყველა ფაილი."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:654
+#: core/utilities/setup/downloader/filesdownloader.cpp:657
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "გამოუყენებელი AI/DNN მოდელის ფაილების მოსუფთავება..."
