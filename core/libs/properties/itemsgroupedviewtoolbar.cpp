@@ -65,3 +65,5 @@ void ItemsGroupedViewToolbar::leaveEvent(QEvent* event)
 }
 
 } // namespace Digikam
+
+#include "moc_itemsgroupedviewtoolbar.cpp"
