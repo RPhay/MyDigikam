@@ -44,8 +44,6 @@ public:
 
 public:
 
-    QTreeWidget*          treeSelectionGroups = nullptr;
-    QTreeWidget*          treeTotalGroups     = nullptr;
     ThumbnailLoadThread*  thumbLoadThread     = nullptr;
     int                   iconSize            = 0;
     bool                  showCount           = false;
@@ -65,6 +63,7 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
+    resizeColumnToContents(0);
     viewport()->setMouseTracking(true);
     header()->hide();
 
