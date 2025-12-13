@@ -170,7 +170,7 @@ BUGFIXES:
 114 --> 441643 - Moving grouped pictures to an album changes file extension to lowercase => tagging etc. is lost.
 115 --> 508403 - Rev released 8.8.0 doesnt start.
 116 --> 472203 - UI improvements.
-117 --> 
+117 --> 513240 - Build failed on core/libs/properties/itemsgroupedviewtoolbar.cpp with QT5 compatibilty error.
 118 --> 
 119 --> 
 120 --> 
