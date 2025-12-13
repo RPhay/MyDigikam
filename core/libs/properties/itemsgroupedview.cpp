@@ -70,6 +70,7 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
     setColumnCount(2);
+    header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);
     viewport()->setMouseTracking(true);
     header()->hide();
