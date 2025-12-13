@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-12 00:40+0000\n"
-"PO-Revision-Date: 2025-12-09 09:14+0100\n"
+"PO-Revision-Date: 2025-12-11 08:46+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -39654,10 +39654,9 @@ msgid "Selected Item Properties"
 msgstr "Propriétés de l'élément sélectionné"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:145
-#, fuzzy, kde-format
-#| msgid "Album Item Properties"
+#, kde-format
 msgid "All Item Properties"
-msgstr "Propriétés de l'élément d'album"
+msgstr "Propriétés de la totalité des éléments"
 
 #: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
 #, fuzzy, kde-format

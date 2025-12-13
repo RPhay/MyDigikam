@@ -37281,7 +37281,7 @@ msgstr "%1x%2 (%3M 像素)"
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
-msgstr ""
+msgstr "是 (图集)"
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -37672,17 +37672,14 @@ msgid "Selected Item Properties"
 msgstr "选中项目属性"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:145
-#, fuzzy, kde-format
-#| msgid "Album Item Properties"
+#, kde-format
 msgid "All Item Properties"
-msgstr "相册项目属性"
+msgstr ""
 
 #: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Remove From Group"
+#, kde-format
 msgid "Remove from Group"
-msgstr "移出分组"
+msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format

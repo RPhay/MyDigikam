@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-12 00:40+0000\n"
-"PO-Revision-Date: 2025-12-10 10:53+0100\n"
+"PO-Revision-Date: 2025-12-12 11:06+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -39330,9 +39330,7 @@ msgid "All Item Properties"
 msgstr "Todas las propiedades del elemento"
 
 #: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Remove From Group"
+#, kde-format
 msgid "Remove from Group"
 msgstr "Eliminar del grupo"
 
