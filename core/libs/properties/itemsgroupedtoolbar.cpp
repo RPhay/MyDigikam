@@ -48,7 +48,8 @@ ItemsGroupedToolBar::ItemsGroupedToolBar(ItemsGroupedView* const view)
             this, &ItemsGroupedToolBar::signalDeleteRequested);
 
     hlay->addWidget(deleteButton);
-    update();
+    adjustSize();
+    setMinimumSize(minimumSizeHint());
 
     hide();
 }

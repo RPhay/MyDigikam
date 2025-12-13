@@ -261,7 +261,6 @@ void ItemsGroupedView::mouseMoveEvent(QMouseEvent* e)
             {
                 d->toolBarItem = item;
                 QRect rect     = visualItemRect(d->toolBarItem);
-                qDebug() << rect.right() << d->toolBar->width();
                 QPoint pos(rect.right() - d->toolBar->width(), rect.top());
                 d->toolBar->move(pos);
                 d->toolBar->show();
