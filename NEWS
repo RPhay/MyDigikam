@@ -171,7 +171,7 @@ BUGFIXES:
 115 --> 508403 - Rev released 8.8.0 doesnt start.
 116 --> 472203 - UI improvements.
 117 --> 513240 - Build failed on core/libs/properties/itemsgroupedviewtoolbar.cpp with QT5 compatibilty error.
-118 --> 
+118 --> 490524 - BQM custom scripts stopped working after upgrading OS.
 119 --> 
 120 --> 
 121 --> 
