@@ -54,6 +54,9 @@ private:
     void hideToolTip();
     bool acceptToolTip(const QPoint& pos)                          const;
 
+    void hideToolBar();
+    bool acceptToolBar(const QPoint& pos)                          const;
+
     void mouseMoveEvent(QMouseEvent*)                                    override;
     void wheelEvent(QWheelEvent*)                                        override;
     void keyPressEvent(QKeyEvent*)                                       override;

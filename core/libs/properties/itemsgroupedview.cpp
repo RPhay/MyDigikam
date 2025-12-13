@@ -31,7 +31,9 @@
 #include "applicationsettings.h"
 #include "itemsgroupedviewitem.h"
 #include "itemsgroupedtooltip.h"
+#include "itemsgroupedtoolbar.h"
 #include "itemfiltermodel.h"
+#include "fileactionmngr.h"
 
 namespace Digikam
 {
@@ -44,14 +46,18 @@ public:
 
 public:
 
-    ThumbnailLoadThread*  thumbLoadThread     = nullptr;
-    int                   iconSize            = 0;
-    bool                  showCount           = false;
-    bool                  showTips            = false;
-    QTimer*               toolTipTimer        = nullptr;
-    ItemsGroupedToolTip*  toolTip             = nullptr;
-    ItemsGroupedViewItem* toolTipItem         = nullptr;
-    ItemFilterModel*      itemModel           = nullptr;
+    ThumbnailLoadThread*     thumbLoadThread     = nullptr;
+    int                      iconSize            = 0;
+    bool                     showCount           = false;
+    bool                     showTips            = false;
+    ItemFilterModel*         itemModel           = nullptr;
+
+    ItemsGroupedToolTip*     toolTip             = nullptr;
+    ItemsGroupedViewItem*    toolTipItem         = nullptr;
+    QTimer*                  toolTipTimer        = nullptr;
+
+    ItemsGroupedToolBar*     toolBar             = nullptr;
+    ItemsGroupedViewItem*    toolBarItem         = nullptr;
 };
 
 ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
@@ -74,6 +80,7 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
 
     d->toolTip         = new ItemsGroupedToolTip(this);
     d->toolTipTimer    = new QTimer(this);
+    d->toolBar         = new ItemsGroupedToolBar(this);
 
     // ---
 
@@ -87,6 +94,13 @@ ItemsGroupedView::ItemsGroupedView(QWidget* const parent)
     connect(d->toolTipTimer, SIGNAL(timeout()),
             this, SLOT(slotToolTip()));
 
+    connect(d->toolBar, &ItemsGroupedToolBar::signalDeleteRequested,
+            this, [this]()
+        {
+            FileActionMngr::instance()->removeFromGroup(ItemInfoList() << d->toolBarItem->info());
+        }
+    );
+
     slotSettingsChanged();
 }
 
@@ -95,16 +109,6 @@ ItemsGroupedView::~ItemsGroupedView()
     delete d->toolTip;
     delete d->thumbLoadThread;
     delete d;
-}
-
-void ItemsGroupedView::setEnableToolTips(bool val)
-{
-    d->showTips = val;
-
-    if (!val)
-    {
-        hideToolTip();
-    }
 }
 
 void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
@@ -159,6 +163,16 @@ void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
     );
 }
 
+void ItemsGroupedView::setEnableToolTips(bool val)
+{
+    d->showTips = val;
+
+    if (!val)
+    {
+        hideToolTip();
+    }
+}
+
 void ItemsGroupedView::hideToolTip()
 {
     d->toolTipItem = nullptr;
@@ -166,9 +180,25 @@ void ItemsGroupedView::hideToolTip()
     slotToolTip();
 }
 
+void ItemsGroupedView::hideToolBar()
+{
+    d->toolBarItem = nullptr;
+    d->toolBar->hide();
+}
+
 bool ItemsGroupedView::acceptToolTip(const QPoint& pos) const
 {
     if (columnAt(pos.x()) == 0)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool ItemsGroupedView::acceptToolBar(const QPoint& pos) const
+{
+    if (columnAt(pos.x()) == 1)
     {
         return true;
     }
@@ -186,6 +216,8 @@ void ItemsGroupedView::mouseMoveEvent(QMouseEvent* e)
     if (e->buttons() == Qt::NoButton)
     {
         ItemsGroupedViewItem* const item = dynamic_cast<ItemsGroupedViewItem*>(itemAt(e->pos()));
+
+        // ToolTip
 
         if (d->showTips)
         {
@@ -213,34 +245,67 @@ void ItemsGroupedView::mouseMoveEvent(QMouseEvent* e)
             }
         }
 
+        // ToolBar
+
+        if (!isActiveWindow())
+        {
+            hideToolBar();
+            return;
+        }
+
+        if (item != d->toolBarItem)
+        {
+            hideToolBar();
+
+            if (acceptToolBar(e->pos()))
+            {
+                d->toolBarItem = item;
+                QRect rect     = visualItemRect(d->toolBarItem);
+                qDebug() << rect.right() << d->toolBar->width();
+                QPoint pos(rect.right() - d->toolBar->width(), rect.top());
+                d->toolBar->move(pos);
+                d->toolBar->show();
+            }
+        }
+
+        if ((item == d->toolBarItem) && !acceptToolBar(e->pos()))
+        {
+            hideToolBar();
+        }
+
         return;
     }
 
     hideToolTip();
+    hideToolBar();
     QTreeWidget::mouseMoveEvent(e);
 }
 
 void ItemsGroupedView::wheelEvent(QWheelEvent* e)
 {
     hideToolTip();
+    hideToolBar();
     QTreeWidget::wheelEvent(e);
 }
 
 void ItemsGroupedView::keyPressEvent(QKeyEvent* e)
 {
     hideToolTip();
+    hideToolBar();
     QTreeWidget::keyPressEvent(e);
 }
 
 void ItemsGroupedView::focusOutEvent(QFocusEvent* e)
 {
     hideToolTip();
+    hideToolBar();
     QTreeWidget::focusOutEvent(e);
 }
 
 void ItemsGroupedView::leaveEvent(QEvent* e)
 {
     hideToolTip();
+    hideToolBar();
     QTreeWidget::leaveEvent(e);
 }
 

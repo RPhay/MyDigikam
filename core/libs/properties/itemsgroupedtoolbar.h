@@ -21,22 +21,20 @@
 namespace Digikam
 {
 
-class ItemsGroupedViewToolbar : public QWidget
+class ItemsGroupedViewItem;
+class ItemsGroupedView;
+
+class ItemsGroupedToolBar : public QWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit ItemsGroupedViewToolbar(QWidget* const parent = nullptr);
+    explicit ItemsGroupedToolBar(ItemsGroupedView* const view);
 
 Q_SIGNALS:
 
     void signalDeleteRequested();
-
-protected:
-
-    void enterEvent(QEnterEvent *event) override;
-    void leaveEvent(QEvent *event)      override;
 };
 
 } // namespace Digikam
