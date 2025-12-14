@@ -192,7 +192,7 @@ BUGFIXES:
 135 --> 101630 - digiKam ui problem selecting images.
 136 --> 145253 - Disable edit metadata menu when image is read-only.
 137 --> 128915 - Calling scripts from contextual menu/toolbar.
-138 --> 
+138 --> 144654 - Ctrl-Tab and Ctrl-Shift-Tab don't switch focus between widgets.
 139 -->
 140 -->
 141 -->
