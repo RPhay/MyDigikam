@@ -212,18 +212,21 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->fullscreenAction         = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                               i18n("Show Fullscreen"),                this);
 
-    DHBox* const labelsBox      = new DHBox(this);
+    QString btnStyleSheet       = QLatin1String("%1 { padding: 1px; background-color: "
+                                                "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
+                                                "  stop: 0 rgba(100, 100, 100, 70%), "
+                                                "  stop: 1 rgba(170, 170, 170, 70%)); "
+                                                "border: 1px solid rgba(170, 170, 170, 10%); } ");
 
-    labelsBox->setStyleSheet(QLatin1String("QFrame { padding: 1px; background-color: "
-                                           "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
-                                           "  stop: 0 rgba(100, 100, 100, 70%), "
-                                           "  stop: 1 rgba(170, 170, 170, 70%)); "
-                                           "border: 1px solid rgba(170, 170, 170, 10%); } "));
+    DHBox* const labelsBox      = new DHBox(this);
+    labelsBox->setStyleSheet(btnStyleSheet.arg(QLatin1String("QFrame")));
 
     d->clWidget                 = new ColorLabelSelector(labelsBox);
+    d->clWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
     d->clWidget->setFocusPolicy(Qt::NoFocus);
 
     d->plWidget                 = new PickLabelSelector(labelsBox);
+    d->plWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
     d->plWidget->setFocusPolicy(Qt::NoFocus);
 
     d->ratingWidget             = new RatingWidget(labelsBox);
