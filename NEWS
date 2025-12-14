@@ -177,7 +177,7 @@ BUGFIXES:
 120 --> 336593 - Add overlay to show file type mime over canvas.
 121 --> 493779 - Visible feedback when adding or removing Labels via keyboard.
 122 --> 251891 - Show rating in preview.
-123 --> 
+123 --> 489408 - WAV-Files don't play anymore under Version 8.3.0.
 124 --> 
 125 --> 
 126 --> 
