@@ -881,7 +881,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 {
     // -- Items Selection Properties
 
-    d->selectionPropertiesTab->setSelectionCount(QLocale().toString(d->currentInfos.count()));
+    d->selectionPropertiesTab->setSelectionCount(d->currentInfos.count());
 
     qint64 selectionFileSize   = 0;
     auto restInfos             = d->allInfos;
@@ -904,7 +904,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     // -- Total Album Items Properties
 
-    d->selectionPropertiesTab->setTotalCount(QLocale().toString(d->allInfos.count()));
+    d->selectionPropertiesTab->setTotalCount(d->allInfos.count());
 
     qint64 totalFileSize     = selectionFileSize;
     ItemInfoList totalGroups = selectionGroups;

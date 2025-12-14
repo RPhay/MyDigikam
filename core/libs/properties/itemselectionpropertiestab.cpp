@@ -27,6 +27,7 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QFileInfo>
+#include <QLocale>
 
 // KDE includes
 
@@ -66,6 +67,7 @@ public:
     DTextLabelValue*  labelTotalCount      = nullptr;
     DTextLabelValue*  labelTotalSize       = nullptr;
     DTextLabelValue*  labelTotalGroups     = nullptr;
+    DTextLabelName*   selectionGroups      = nullptr;
 
     ItemsGroupedView* treeSelectionGroups  = nullptr;
     ItemsGroupedView* treeTotalGroups      = nullptr;
@@ -90,7 +92,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     DTextLabelName* const selectionCount  = new DTextLabelName(i18n("Count: "),  d->select);
     DTextLabelName* const selectionSize   = new DTextLabelName(i18n("Size: "),   d->select);
-    DTextLabelName* const selectionGroups = new DTextLabelName(i18n("Groups: "), d->select);
+    d->selectionGroups                    = new DTextLabelName(i18n("Groups: "), d->select);
     d->labelSelectionCount                = new DTextLabelValue(QString(), d->select);
     d->labelSelectionSize                 = new DTextLabelValue(QString(), d->select);
     d->labelSelectionGroups               = new DTextLabelValue(QString(), d->select);
@@ -101,7 +103,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     grid1->addWidget(d->labelSelectionCount,          0, 1, 1, 1);
     grid1->addWidget(selectionSize,                   1, 0, 1, 1);
     grid1->addWidget(d->labelSelectionSize,           1, 1, 1, 1);
-    grid1->addWidget(selectionGroups,                 2, 0, 1, 1);
+    grid1->addWidget(d->selectionGroups,              2, 0, 1, 1);
     grid1->addWidget(d->labelSelectionGroups,         2, 1, 1, 1);
     grid1->addWidget(d->treeSelectionGroups,          3, 0, 1, 2);
     grid1->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -150,9 +152,11 @@ ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
     delete d;
 }
 
-void ItemSelectionPropertiesTab::setSelectionCount(const QString& str)
+void ItemSelectionPropertiesTab::setSelectionCount(int count)
 {
-    d->labelSelectionCount->setAdjustedText(str);
+    d->labelSelectionCount->setAdjustedText(QLocale().toString(count));
+
+    widget(ItemSelectionPropertiesTab::Private::SelectionItemProperties)->setVisible(count != 0);
 }
 
 void ItemSelectionPropertiesTab::setSelectionSize(const QString& str)
@@ -160,9 +164,9 @@ void ItemSelectionPropertiesTab::setSelectionSize(const QString& str)
     d->labelSelectionSize->setAdjustedText(str);
 }
 
-void ItemSelectionPropertiesTab::setTotalCount(const QString& str)
+void ItemSelectionPropertiesTab::setTotalCount(int count)
 {
-    d->labelTotalCount->setAdjustedText(str);
+    d->labelTotalCount->setAdjustedText(QLocale().toString(count));
 }
 
 void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
@@ -170,21 +174,25 @@ void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
     d->labelTotalSize->setAdjustedText(str);
 }
 
-void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& total, const ItemInfoList& selected)
+void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& totalGroup, const ItemInfoList& selectedGroup)
 {
-    if (!selected.isEmpty())
+    d->labelTotalGroups->setAdjustedText(QString::number(totalGroup.count()));
+    d->treeTotalGroups->setGroups(totalGroup);
+
+    if (!selectedGroup.isEmpty())
     {
-        d->labelSelectionGroups->setAdjustedText(QString::number(selected.count()));
-        d->treeSelectionGroups->setGroups(selected);
-        widget(ItemSelectionPropertiesTab::Private::SelectionItemProperties)->setVisible(true);
+        d->labelSelectionGroups->setAdjustedText(QString::number(selectedGroup.count()));
+        d->treeSelectionGroups->setGroups(selectedGroup);
+        d->selectionGroups->setVisible(true);
+        d->labelSelectionGroups->setVisible(true);
+        d->treeSelectionGroups->setVisible(true);
     }
     else
     {
-        widget(ItemSelectionPropertiesTab::Private::SelectionItemProperties)->setVisible(false);
+        d->selectionGroups->setVisible(false);
+        d->labelSelectionGroups->setVisible(false);
+        d->treeSelectionGroups->setVisible(false);
     }
-
-    d->labelTotalGroups->setAdjustedText(QString::number(total.count()));
-    d->treeTotalGroups->setGroups(total);
 }
 
 void ItemSelectionPropertiesTab::setItemFilterModel(ItemFilterModel* const model)
