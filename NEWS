@@ -43,6 +43,7 @@ Image Properties: Add new button to open current item is file manager.
 Image Properties: If no icon-view item selected, show current album statistics.
 Grouped Items   : Show items from an open group highlighted for a better usability.
 Grouped Items   : Usability improvements of the grouped icon-view items overlay.
+Preview         : Extend Toolbar overlay with Labels editor.
 Advanced Rename : New modifier "Date Format".
 SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
 Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.
@@ -173,9 +174,9 @@ BUGFIXES:
 117 --> 513240 - Build failed on core/libs/properties/itemsgroupedviewtoolbar.cpp with QT5 compatibilty error.
 118 --> 490524 - BQM custom scripts stopped working after upgrading OS.
 119 --> 501485 - Feature request, change the view menu.
-120 --> 
-121 --> 
-122 --> 
+120 --> 336593 - Add overlay to show file type mime over canvas.
+121 --> 493779 - Visible feedback when adding or removing Labels via keyboard.
+122 --> 251891 - Show rating in preview.
 123 --> 
 124 --> 
 125 --> 
