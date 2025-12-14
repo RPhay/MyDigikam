@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:40+0000\n"
+"POT-Creation-Date: 2025-12-14 00:39+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -39978,7 +39978,7 @@ msgstr "Właściwości wyboru"
 msgid "All Item Properties"
 msgstr "Właściwości albumu"
 
-#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Remove From Group"

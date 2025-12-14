@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:40+0000\n"
+"POT-Creation-Date: 2025-12-14 00:39+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -36375,7 +36375,7 @@ msgstr ""
 msgid "All Item Properties"
 msgstr ""
 
-#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
 msgid "Remove from Group"
 msgstr ""

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:40+0000\n"
+"POT-Creation-Date: 2025-12-14 00:39+0000\n"
 "PO-Revision-Date: 2025-10-19 01:27+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -39105,7 +39105,7 @@ msgstr "Proprietăți fișier"
 msgid "All Item Properties"
 msgstr "Proprietăți album"
 
-#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, fuzzy, kde-format
 msgid "Remove from Group"
 msgstr "Șterge grupul"

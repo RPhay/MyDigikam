@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:40+0000\n"
+"POT-Creation-Date: 2025-12-14 00:39+0000\n"
 "PO-Revision-Date: 2025-12-12 07:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -38994,7 +38994,7 @@ msgstr "Lastnosti izbranega predmeta"
 msgid "All Item Properties"
 msgstr "Vse lastnosti predmeta"
 
-#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
 msgid "Remove from Group"
 msgstr "Odstrani iz skupine"

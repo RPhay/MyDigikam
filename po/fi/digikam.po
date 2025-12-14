@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:40+0000\n"
+"POT-Creation-Date: 2025-12-14 00:39+0000\n"
 "PO-Revision-Date: 2025-10-22 17:39+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -39836,7 +39836,7 @@ msgstr "Valinnan ominaisuudet"
 msgid "All Item Properties"
 msgstr "Albumin ominaisuudet"
 
-#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Remove From Group"

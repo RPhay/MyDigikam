@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:40+0000\n"
+"POT-Creation-Date: 2025-12-14 00:39+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -37674,12 +37674,12 @@ msgstr "选中项目属性"
 #: core/libs/properties/itemselectionpropertiestab.cpp:145
 #, kde-format
 msgid "All Item Properties"
-msgstr ""
+msgstr "所有项目属性"
 
-#: core/libs/properties/itemsgroupedviewtoolbar.cpp:44
+#: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
 msgid "Remove from Group"
-msgstr ""
+msgstr "移出分组"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
