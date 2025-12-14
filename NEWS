@@ -182,14 +182,14 @@ BUGFIXES:
 125 --> 087780 - Sort on date should look at the date the picture is taken.
 126 --> 090116 - Albums should internally sort and divide images by date.
 127 --> 149363 - Sort by date problem when copying images from an album to another.
-128 --> 
-129 --> 
-130 --> 
-131 --> 
-132 --> 
-133 --> 
-134 --> 
-135 --> 
+128 --> 178608 - Center headers in item tooltip.
+129 --> 105663 - Position is lost after deleting picture and using arrow keys.
+130 --> 091484 - Album view not updated after images are modified in the image viewer.
+131 --> 110178 - Ease selecting of pictures, i.e. make space around images select them and only a click on an image open it.
+132 --> 121315 - Allow to display exif info under thumbnails in Digikam main window.
+133 --> 112971 - After rotating an image, the first image in the folder get's the keyboard focus.
+134 --> 142774 - Moving pictures between albums.
+135 --> 101630 - digiKam ui problem selecting images.
 136 --> 
 137 --> 
 138 --> 
