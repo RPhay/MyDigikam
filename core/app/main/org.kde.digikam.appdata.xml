@@ -994,7 +994,4 @@
     <content_attribute id="money-advertising">none</content_attribute>
   </content_rating>
   <launchable type="desktop-id">org.kde.digikam.desktop</launchable>
-  <custom>
-    <value key="KDE::supporters"/>
-  </custom>
 </component>
