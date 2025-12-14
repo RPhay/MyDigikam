@@ -178,7 +178,7 @@ BUGFIXES:
 121 --> 493779 - Visible feedback when adding or removing Labels via keyboard.
 122 --> 251891 - Show rating in preview.
 123 --> 489408 - WAV-Files don't play anymore under Version 8.3.0.
-124 --> 
+124 --> 513355 - File properties are being truncated.
 125 --> 
 126 --> 
 127 --> 
