@@ -48,6 +48,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     d->labelFolder                     = new QLabel(QString(), w1);
     d->labelFolder->setWordWrap(true);
+    d->labelFolder->setAlignment(Qt::AlignRight);
     d->labelSymlink                    = new DTextLabelValue(QString(), w1);
     d->labelFileModifiedDate           = new DTextLabelValue(QString(), w1);
     d->labelFileSize                   = new DTextLabelValue(QString(), w1);
@@ -59,7 +60,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     glay1->addWidget(d->labelFile,             0, 0, 1, 2);
     glay1->addWidget(folder,                   1, 0, 1, 1);
-    glay1->addWidget(d->labelFolder,           1, 1, 1, 1, Qt::AlignRight);
+    glay1->addWidget(d->labelFolder,           1, 1, 1, 1);
     glay1->addWidget(symlink,                  2, 0, 1, 1);
     glay1->addWidget(d->labelSymlink,          2, 1, 1, 1);
     glay1->addWidget(modifiedDate,             3, 0, 1, 1);
@@ -245,8 +246,10 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     d->labelTitle                    = new QLabel(QString(), w5);
     d->labelTitle->setWordWrap(true);
+    d->labelTitle->setAlignment(Qt::AlignRight);
     d->labelCaption                  = new QLabel(QString(), w5);
     d->labelCaption->setWordWrap(true);
+    d->labelCaption->setAlignment(Qt::AlignRight);
 
     QWidget* const labelPickBox      = new QWidget(w5);
     QHBoxLayout* const labelPickLay  = new QHBoxLayout(labelPickBox);
@@ -265,6 +268,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     labelColorLay->addWidget(d->labelColor);
 
     d->labelRating                   = new QLabel(QString(), w5);
+    d->labelRating->setAlignment(Qt::AlignRight);
     d->labelVersionedInfo            = new DTextLabelValue(QString(), w5);
     d->labelGroupedInfo              = new DTextLabelValue(QString(), w5);
 
@@ -278,7 +282,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->glay5->addWidget(d->colorLabel,         4, 0, 1, 1);
     d->glay5->addWidget(labelColorBox,         4, 1, 1, 1);
     d->glay5->addWidget(d->rating,             5, 0, 1, 1);
-    d->glay5->addWidget(d->labelRating,        5, 1, 1, 1, Qt::AlignRight);
+    d->glay5->addWidget(d->labelRating,        5, 1, 1, 1);
     d->glay5->addWidget(d->versioned,          6, 0, 1, 1);
     d->glay5->addWidget(d->labelVersionedInfo, 6, 1, 1, 1);
     d->glay5->addWidget(d->grouped,            7, 0, 1, 1);
@@ -300,15 +304,17 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->tags                  = new DTextLabelName(i18nc("@label: item properties", "Keywords: "),      w6);
     d->labelTags             = new QLabel(QString(), w6);
     d->labelTags->setWordWrap(true);
+    d->labelTags->setAlignment(Qt::AlignRight);
 
     d->peoples               = new DTextLabelName(i18nc("@label: item properties", "People: "),      w6);
     d->labelPeoples          = new QLabel(QString(), w6);
     d->labelPeoples->setWordWrap(true);
+    d->labelPeoples->setAlignment(Qt::AlignRight);
 
     glay6->addWidget(d->tags,         0, 0, 1, 1);
-    glay6->addWidget(d->labelTags,    0, 1, 1, 1, Qt::AlignRight);
+    glay6->addWidget(d->labelTags,    0, 1, 1, 1);
     glay6->addWidget(d->peoples,      1, 0, 1, 1);
-    glay6->addWidget(d->labelPeoples, 1, 1, 1, 1, Qt::AlignRight);
+    glay6->addWidget(d->labelPeoples, 1, 1, 1, 1);
     glay6->setContentsMargins(spacing, spacing, spacing, spacing);
     glay6->setColumnStretch(0, 10);
     glay6->setColumnStretch(1, 25);
@@ -325,6 +331,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     d->labelLocation         = new QLabel(QString(), w7);
     d->labelLocation->setWordWrap(true);
+    d->labelLocation->setAlignment(Qt::AlignRight);
 
     glay7->addWidget(d->labelLocation, 0, 0, 1, 2);
     glay7->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -343,6 +350,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     d->labelRights           = new QLabel(QString(), w8);
     d->labelRights->setWordWrap(true);
+    d->labelRights->setAlignment(Qt::AlignRight);
     d->labelRights->setOpenExternalLinks(true);
     d->labelRights->setTextFormat(Qt::RichText);
     d->labelRights->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
