@@ -156,6 +156,7 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     d->ratingWidget->setFocusPolicy(Qt::NoFocus);
     d->ratingWidget->setMouseTracking(true);
 
+    d->labelsBox->setStretchFactor(new QWidget(d->labelsBox), 10);
     d->labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
     d->labelsBox->setMouseTracking(true);
 
