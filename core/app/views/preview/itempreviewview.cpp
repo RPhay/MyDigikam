@@ -77,6 +77,9 @@
 #include "albummanager.h"
 #include "facegroup.h"
 #include "focuspointgroup.h"
+#include "ratingwidget.h"
+#include "colorlabelwidget.h"
+#include "picklabelwidget.h"
 
 namespace Digikam
 {
@@ -86,6 +89,8 @@ class Q_DECL_HIDDEN ItemPreviewView::Private
 public:
 
     Private() = default;
+
+public:
 
     bool                   fullSize             = false;
     double                 scale                = 1.0;
@@ -114,6 +119,10 @@ public:
     QAction*               showFocusPointAction = nullptr;
 
     QAction*               fullscreenAction     = nullptr;
+
+    RatingWidget*          ratingWidget         = nullptr;
+    ColorLabelSelector*    clWidget             = nullptr;
+    PickLabelSelector*     plWidget             = nullptr;
 
     Album*                 currAlbum            = nullptr;
 };
@@ -202,6 +211,29 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     d->fullscreenAction         = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                               i18n("Show Fullscreen"),                this);
+
+    DHBox* const labelsBox      = new DHBox(this);
+
+    labelsBox->setStyleSheet(QLatin1String("QFrame { padding: 1px; background-color: "
+                                           "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
+                                           "  stop: 0 rgba(100, 100, 100, 70%), "
+                                           "  stop: 1 rgba(170, 170, 170, 70%)); "
+                                           "border: 1px solid rgba(170, 170, 170, 10%); } "));
+
+    d->clWidget                 = new ColorLabelSelector(labelsBox);
+    d->clWidget->setFocusPolicy(Qt::NoFocus);
+
+    d->plWidget                 = new PickLabelSelector(labelsBox);
+    d->plWidget->setFocusPolicy(Qt::NoFocus);
+
+    d->ratingWidget             = new RatingWidget(labelsBox);
+    d->ratingWidget->setTracking(false);
+    d->ratingWidget->setFading(false);
+    d->ratingWidget->setFocusPolicy(Qt::NoFocus);
+    labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
+
+    // ---
+
     d->toolBar                  = new QToolBar(this);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
@@ -217,6 +249,10 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->toolBar->addAction(d->peopleToggleAction);
     d->toolBar->addAction(d->addPersonAction);
     d->toolBar->addAction(d->fullscreenAction);
+
+    d->toolBar->addWidget(labelsBox);
+
+    // ---
 
     connect(d->prevAction, SIGNAL(triggered()),
             this, SIGNAL(toPreviousImage()));
@@ -275,6 +311,15 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->fullscreenAction, SIGNAL(triggered()),
             this, SLOT(slotSlideShowCurrent()));
 
+    connect(d->ratingWidget, SIGNAL(signalRatingChanged(int)),
+            this, SLOT(slotAssignRating(int)));
+
+    connect(d->clWidget, SIGNAL(signalColorLabelChanged(int)),
+            this, SLOT(slotAssignColorLabel(int)));
+
+    connect(d->plWidget, SIGNAL(signalPickLabelChanged(int)),
+            this, SLOT(slotAssignPickLabel(int)));
+
     // ------------------------------------------------------------
 
     connect(this, SIGNAL(toNextImage()),
@@ -329,6 +374,18 @@ void ItemPreviewView::imageLoaded()
     }
 
     d->addFocusPointAction->setEnabled(add);
+
+    d->clWidget->blockSignals(true);
+    d->plWidget->blockSignals(true);
+    d->ratingWidget->blockSignals(true);
+
+    d->clWidget->setColorLabel((ColorLabel)d->item->imageInfo().colorLabel());
+    d->plWidget->setPickLabel((PickLabel)d->item->imageInfo().pickLabel());
+    d->ratingWidget->setRating(d->item->imageInfo().rating());
+
+    d->clWidget->blockSignals(false);
+    d->plWidget->blockSignals(false);
+    d->ratingWidget->blockSignals(false);
 }
 
 void ItemPreviewView::imageLoadingFailed()
@@ -339,9 +396,12 @@ void ItemPreviewView::imageLoadingFailed()
     d->rotRightAction->setEnabled(false);
     d->addFocusPointAction->setEnabled(false);
 
+    d->clWidget->setEnabled(false);
+    d->plWidget->setEnabled(false);
+    d->ratingWidget->setEnabled(false);
+
     d->faceGroup->setInfo(ItemInfo());
     d->focusPointGroup->setInfo(ItemInfo());
-
 }
 
 void ItemPreviewView::setItemInfo(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
