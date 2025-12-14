@@ -310,9 +310,12 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 
     // --------------------------------------------------------
 
-    cmHelper.addAction(QLatin1String("image_scan_for_faces"));
-    cmHelper.addAction(QLatin1String("image_recognize_faces"));
-    cmHelper.addAction(QLatin1String("image_remove_all_faces"));
+    QMenu* const fmenu = new QMenu(i18nc("@action: face workflow", "Faces"));
+    fmenu->setIcon(QIcon::fromTheme(QLatin1String("edit-image-face-show")));
+    fmenu->addAction(DigikamApp::instance()->actionCollection()->action(QLatin1String("image_scan_for_faces")));
+    fmenu->addAction(DigikamApp::instance()->actionCollection()->action(QLatin1String("image_recognize_faces")));
+    fmenu->addAction(DigikamApp::instance()->actionCollection()->action(QLatin1String("image_remove_all_faces")));
+    cmHelper.addSubMenu(fmenu);
     cmHelper.addSeparator();
 
     // --------------------------------------------------------

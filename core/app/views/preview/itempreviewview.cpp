@@ -442,15 +442,18 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
 
     // --------------------------------------------------------
 
-    cmHelper.addAction(d->peopleToggleAction,  true);
-    cmHelper.addAction(QLatin1String("image_scan_for_faces"));
-    cmHelper.addAction(d->addPersonAction,     true);
+    QMenu* const fmenu = new QMenu(i18nc("@action: face workflow", "Faces"));
+    fmenu->setIcon(QIcon::fromTheme(QLatin1String("edit-image-face-show")));
+
+    fmenu->addAction(d->peopleToggleAction);
+    fmenu->addAction(DigikamApp::instance()->actionCollection()->action(QLatin1String("image_scan_for_faces")));
+    fmenu->addAction(d->addPersonAction);
 
     // if there is a face in the image, give the option to remove all faces
 
     if (d->faceGroup->items().length() > 0)
     {
-        cmHelper.addAction(d->forgetFacesAction,   true);
+        fmenu->addAction(d->forgetFacesAction);
     }
 
     // if there is at least one unconfirmed face
@@ -459,12 +462,14 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     {
         // give the option to ignore unconfirmed faces
 
-        cmHelper.addAction(d->markAsIgnoredAction, true);
+        fmenu->addAction(d->markAsIgnoredAction);
 
         // give the option to recognize faces
 
-        cmHelper.addAction(QLatin1String("image_recognize_faces"));
+        fmenu->addAction(QLatin1String("image_recognize_faces"));
     }
+
+    cmHelper.addSubMenu(fmenu);
     cmHelper.addSeparator();
 
     // -------------------------------------------------------
