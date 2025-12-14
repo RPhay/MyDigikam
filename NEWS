@@ -193,7 +193,7 @@ BUGFIXES:
 136 --> 145253 - Disable edit metadata menu when image is read-only.
 137 --> 128915 - Calling scripts from contextual menu/toolbar.
 138 --> 144654 - Ctrl-Tab and Ctrl-Shift-Tab don't switch focus between widgets.
-139 -->
+139 --> 137707 - A new icon for the albums in digiKam.
 140 -->
 141 -->
 142 -->
