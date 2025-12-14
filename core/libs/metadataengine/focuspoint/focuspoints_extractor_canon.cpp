@@ -108,11 +108,9 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 
     // Get size image
 
-    QString model       = findValue(QLatin1String("EXIF.IFD0.Camera.Make")).toString();
-
     QVariant imageWidth, imageHeight;
 
-    if (model.toLower() == QLatin1String("canon eos 5d"))
+    if (model() == QLatin1String("CANON EOS 5D"))
     {
         imageWidth  = findValueFirstMatch(QStringList()
                                           << QLatin1String("MakerNotes.Canon.Image.CanonImageWidth")
@@ -219,12 +217,11 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 
     // Get direction
 
-    QString cameraType      = findValue(TagNameRoot, QLatin1String("CameraType")).toString().toUpper();
-
-    int yDirection          = 1;
+    QString cameraType = findValue(TagNameRoot, QLatin1String("CameraType")).toString().toUpper();
+    int yDirection     = 1;
 
     if (
-        (cameraType == QLatin1String("COMPACT"))    ||
+        (cameraType == QLatin1String("COMPACT"))   ||
         (cameraType == QLatin1String("EOS HIGH-END"))
        )
     {
