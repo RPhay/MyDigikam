@@ -53,6 +53,14 @@ public:
     explicit ItemCoordinatesOverlay(QObject* const parent);
     CoordinatesOverlayWidget* buttonWidget() const;
 
+Q_SIGNALS:
+
+    void signalOpenGeolocationMap(const QModelIndex& index);
+
+protected Q_SLOTS:
+
+    void slotButtonClicked();
+
 protected:
 
     void updatePosition();

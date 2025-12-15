@@ -191,6 +191,9 @@ StackedView::StackedView(QWidget* const parent)
     connect(d->imageIconView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotIconViewSelectionChanged()));
 
+    connect(d->imageIconView, SIGNAL(signalOpenGeolocationMap()),
+            this, SIGNAL(signalOpenGeolocationMap()));
+
     connect(d->thumbBarDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),
             d->thumbBar, SLOT(slotDockLocationChanged(Qt::DockWidgetArea)));
 

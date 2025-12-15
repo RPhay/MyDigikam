@@ -141,7 +141,11 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 
     // Geolocation overlay
 
-    addOverlay(new ItemCoordinatesOverlay(this));
+    ItemCoordinatesOverlay* const geoOverlay = new ItemCoordinatesOverlay(this);
+    addOverlay(geoOverlay);
+
+    connect(geoOverlay, SIGNAL(signalOpenGeolocationMap(QModelIndex)),
+            this, SLOT(slotOpenGeolocationMap(QModelIndex)));
 
     connect(ratingOverlay, SIGNAL(ratingEdited(QList<QModelIndex>,int)),
             this, SLOT(assignRating(QList<QModelIndex>,int)));
@@ -748,6 +752,20 @@ void DigikamItemView::assignRating(const QList<QModelIndex>& indexes, int rating
 {
     ItemInfoList infos = imageInfos(indexes, MetadataOps);
     FileActionMngr::instance()->assignRating(infos, rating);
+}
+
+void DigikamItemView::slotOpenGeolocationMap(const QModelIndex& index)
+{
+    ItemInfo info = itemFilterModel()->imageInfo(index);
+
+    if (info.isNull())
+    {
+        return;
+    }
+
+    setCurrentIndex(index);
+
+    Q_EMIT signalOpenGeolocationMap();
 }
 
 void DigikamItemView::groupIndicatorClicked(const QModelIndex& index)

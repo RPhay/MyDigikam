@@ -105,6 +105,7 @@ public Q_SLOTS:
 
     void slotPopupTagsView();
 
+    void slotOpenGeolocationMap();
     void slotNoCurrentItem()                            override;
 
 private Q_SLOTS:

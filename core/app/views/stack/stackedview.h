@@ -141,6 +141,8 @@ Q_SIGNALS:
     void signalGotoDateAndItem(const ItemInfo&);
     void signalGotoTagAndItem(int);
 
+    void signalOpenGeolocationMap();
+
 private Q_SLOTS:
 
     void slotPreviewLoaded(bool);

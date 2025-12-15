@@ -37,7 +37,6 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     const int spacing           = layoutSpacing();
 
-
     d->splitter    = new SidebarSplitter;
     d->splitter->setFrameStyle(QFrame::NoFrame | QFrame::Plain);
     d->splitter->setOpaqueResize(false);
@@ -95,6 +94,9 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->rightSideBar->setObjectName(QLatin1String("Digikam Right Sidebar"));
     d->rightSideBar->setItemFilterModel(d->iconView->itemFilterModel());
     d->rightSideBar->setShowAllPropertiesMode(true);
+
+    connect(d->stackedView, SIGNAL(signalOpenGeolocationMap()),
+            d->rightSideBar, SLOT(slotOpenGeolocationMap()));
 
     // album folder view
 

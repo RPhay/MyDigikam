@@ -1028,6 +1028,17 @@ void ItemPropertiesSideBarDB::slotPropertiesButtonPressed(int index)
     }
 }
 
+void ItemPropertiesSideBarDB::slotOpenGeolocationMap()
+{
+
+#ifdef HAVE_GEOLOCATION
+
+    setActiveTab(m_gpsTab);
+
+#endif // HAVE_GEOLOCATION
+
+}
+
 } // namespace Digikam
 
 #include "moc_itempropertiessidebardb.cpp"

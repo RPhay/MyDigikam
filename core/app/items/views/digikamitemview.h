@@ -128,8 +128,11 @@ Q_SIGNALS:
                                     const QList<ItemInfo>& selectedInfos,
                                     ItemFilterModel* filterModel);
 
+    void signalOpenGeolocationMap();
+
 protected Q_SLOTS:
 
+    void slotOpenGeolocationMap(const QModelIndex& index);
     void groupIndicatorClicked(const QModelIndex& index);
     void showGroupContextMenu(const QModelIndex& index, QContextMenuEvent* event);
 
