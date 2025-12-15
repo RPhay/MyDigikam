@@ -217,7 +217,7 @@ BUGFIXES:
 160 --> 102699 - When using light color as thumbnail background, text below is unreadable.
 161 --> 087762 - Can't single-click to open thumbnails.
 162 --> 166564 - Display of *already* *created* thumbnails is slow.
-163 --> 
+163 --> 513386 - digiKam Qt6: Full-size image preview fails ("Impossible de charger l’image") while thumbnails work; Qt5 works fine on same system.
 164 --> 
 165 --> 
 166 --> 
