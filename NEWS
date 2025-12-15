@@ -196,7 +196,7 @@ BUGFIXES:
 139 --> 137707 - A new icon for the albums in digiKam.
 140 --> 486755 - Images.album = NULL without reason (disappearing images in DK).
 141 --> 508995 - All album lost in collection.
-142 --> 
+142 --> 510508 - Locks up at 6% when importing.
 143 --> 
 144 --> 
 145 --> 
