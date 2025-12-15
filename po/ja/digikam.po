@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:39+0000\n"
+"POT-Creation-Date: 2025-12-15 00:40+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -295,7 +295,7 @@ msgstr "顔タグを変更"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:704
+#: core/app/views/preview/itempreviewview.cpp:772
 #, kde-format
 msgid "&Cancel"
 msgstr "キャンセル(&C)"
@@ -306,7 +306,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "選択したアイテムにタグを付ける(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:702
+#: core/app/views/preview/itempreviewview.cpp:770
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "このアイテムにタグを付ける(&T)"
@@ -521,7 +521,7 @@ msgid "Show Fullscreen"
 msgstr "フルスクリーンで表示"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:167
+#: core/app/views/preview/itempreviewview.cpp:176
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -529,7 +529,7 @@ msgid "Rotate Left"
 msgstr "左に回転"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:169
+#: core/app/views/preview/itempreviewview.cpp:178
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2818,7 +2818,7 @@ msgid "Documentation: "
 msgstr "向き"
 
 # ACCELERATOR added by translator
-#: core/app/views/preview/itempreviewview.cpp:163
+#: core/app/views/preview/itempreviewview.cpp:172
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
@@ -2827,7 +2827,7 @@ msgid "Back"
 msgstr "戻る"
 
 # ACCELERATOR added by translator
-#: core/app/views/preview/itempreviewview.cpp:165
+#: core/app/views/preview/itempreviewview.cpp:174
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
@@ -2835,40 +2835,49 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "進む"
 
-#: core/app/views/preview/itempreviewview.cpp:176
+#: core/app/views/preview/itempreviewview.cpp:185
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "顔タグを追加"
 
-#: core/app/views/preview/itempreviewview.cpp:181
+#: core/app/views/preview/itempreviewview.cpp:190
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "この画像のすべての顔をクリア"
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewview.cpp:193
 #, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "すべての未確認の顔を無視済みとしてマーク"
 
-#: core/app/views/preview/itempreviewview.cpp:191
+#: core/app/views/preview/itempreviewview.cpp:200
 #, kde-format
 msgid "Show Face Tags"
 msgstr "顔タグを表示"
 
-#: core/app/views/preview/itempreviewview.cpp:196
+#: core/app/views/preview/itempreviewview.cpp:205
 #, kde-format
 msgid "Add a focus point"
 msgstr "フォーカスポイントを追加"
 
-#: core/app/views/preview/itempreviewview.cpp:198
+#: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
 msgid "Show focus points"
 msgstr "フォーカスポイントを表示"
 
-#: core/app/views/preview/itempreviewview.cpp:204
+#: core/app/views/preview/itempreviewview.cpp:213
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "フルスクリーンで表示"
+
+#: core/app/views/preview/itempreviewview.cpp:508
+#: core/app/views/stack/itemiconview_views.cpp:313
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Faces"
+msgctxt "@action: face workflow"
+msgid "Faces"
+msgstr "顔で"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -3039,7 +3048,7 @@ msgstr "タグのないアルバム"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:522
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -3141,7 +3150,7 @@ msgstr ""
 "仮想アルバムに保存されます。"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:383
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:145
 #, kde-format
 msgid "Timeline"
 msgstr "時間軸"
@@ -3179,22 +3188,22 @@ msgstr ""
 "データベースからの現在のクエリに一致する結果がありません。検索設定を変更する"
 "か、コンテンツのあるアルバムを選択してください。"
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:126
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "スケッチによるファジー検索"
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:130
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "画像によるファジー検索"
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:134
 #, kde-format
 msgid "Map Search"
 msgstr "地図検索"
 
-#: core/app/views/stack/itemiconview_p.h:140
+#: core/app/views/stack/itemiconview_p.h:141
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1186
 #, kde-format
 msgid "Last Search"
@@ -4048,7 +4057,7 @@ msgstr "パス"
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:478
+#: core/libs/properties/itempropertiestab.cpp:486
 #, kde-format
 msgid "Size"
 msgstr "サイズ"
@@ -4146,7 +4155,7 @@ msgstr "高さ"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:102
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:491
 #, kde-format
 msgid "Dimensions"
 msgstr "寸法"
@@ -8383,7 +8392,7 @@ msgstr "カラーマネージメントが無効になっています..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:502
+#: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -25314,7 +25323,7 @@ msgid "Date"
 msgstr "日付"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:524
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, fuzzy, kde-format
@@ -38951,7 +38960,7 @@ msgid "Writable: "
 msgstr "書き込み可能: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:133
-#: core/libs/properties/itempropertiestab.cpp:87
+#: core/libs/properties/itempropertiestab.cpp:88
 #, fuzzy, kde-format
 #| msgid "Type: "
 msgctxt "@label: item properties"
@@ -38959,7 +38968,7 @@ msgid "Type: "
 msgstr "種類: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:134
-#: core/libs/properties/itempropertiestab.cpp:88
+#: core/libs/properties/itempropertiestab.cpp:89
 #, fuzzy, kde-format
 #| msgid "Dimensions: "
 msgctxt "@label: item properties"
@@ -38968,8 +38977,8 @@ msgstr "画素数: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:135
 #: core/libs/properties/import/importitempropertiestab.cpp:243
-#: core/libs/properties/itempropertiestab.cpp:89
-#: core/libs/properties/itempropertiestab.cpp:187
+#: core/libs/properties/itempropertiestab.cpp:90
+#: core/libs/properties/itempropertiestab.cpp:188
 #, fuzzy, kde-format
 #| msgid "Aspect Ratio: "
 msgctxt "@label: item properties"
@@ -38998,7 +39007,7 @@ msgid "Camera File Properties"
 msgstr "カメラファイルのプロパティ"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:185
-#: core/libs/properties/itempropertiestab.cpp:131
+#: core/libs/properties/itempropertiestab.cpp:132
 #, fuzzy, kde-format
 #| msgid "Make: "
 msgctxt "@label: item properties"
@@ -39006,7 +39015,7 @@ msgid "Make: "
 msgstr "メーカー: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:186
-#: core/libs/properties/itempropertiestab.cpp:132
+#: core/libs/properties/itempropertiestab.cpp:133
 #, fuzzy, kde-format
 #| msgid "Model: "
 msgctxt "@label: item properties"
@@ -39021,7 +39030,7 @@ msgid "Created: "
 msgstr "作成日: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:133
+#: core/libs/properties/itempropertiestab.cpp:134
 #, fuzzy, kde-format
 #| msgid "Lens: "
 msgctxt "@label: item properties"
@@ -39029,7 +39038,7 @@ msgid "Lens: "
 msgstr "レンズ: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:134
+#: core/libs/properties/itempropertiestab.cpp:135
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@label: item properties"
@@ -39037,7 +39046,7 @@ msgid "Aperture: "
 msgstr "絞り: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:135
+#: core/libs/properties/itempropertiestab.cpp:136
 #, fuzzy, kde-format
 #| msgid "Focal: "
 msgctxt "@label: item properties"
@@ -39045,7 +39054,7 @@ msgid "Focal: "
 msgstr "焦点距離: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:191
-#: core/libs/properties/itempropertiestab.cpp:136
+#: core/libs/properties/itempropertiestab.cpp:137
 #, fuzzy, kde-format
 #| msgid "Exposure: "
 msgctxt "@label: item properties"
@@ -39053,7 +39062,7 @@ msgid "Exposure: "
 msgstr "露出: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:192
-#: core/libs/properties/itempropertiestab.cpp:137
+#: core/libs/properties/itempropertiestab.cpp:138
 #, fuzzy, kde-format
 #| msgid "Sensitivity: "
 msgctxt "@label: item properties"
@@ -39061,7 +39070,7 @@ msgid "Sensitivity: "
 msgstr "感度: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:138
+#: core/libs/properties/itempropertiestab.cpp:139
 #, fuzzy, kde-format
 #| msgid "Mode/Program: "
 msgctxt "@label: item properties"
@@ -39069,7 +39078,7 @@ msgid "Mode/Program: "
 msgstr "モード/プログラム: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:139
+#: core/libs/properties/itempropertiestab.cpp:140
 #, fuzzy, kde-format
 #| msgid "Flash: "
 msgctxt "@label: item properties"
@@ -39077,7 +39086,7 @@ msgid "Flash: "
 msgstr "フラッシュ: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
-#: core/libs/properties/itempropertiestab.cpp:140
+#: core/libs/properties/itempropertiestab.cpp:141
 #, fuzzy, kde-format
 #| msgid "White balance: "
 msgctxt "@label: item properties"
@@ -39092,7 +39101,7 @@ msgid "Photograph Properties"
 msgstr "写真のプロパティ"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:244
-#: core/libs/properties/itempropertiestab.cpp:191
+#: core/libs/properties/itempropertiestab.cpp:192
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate: "
 msgctxt "@label: item properties"
@@ -39100,7 +39109,7 @@ msgid "Audio Bit Rate: "
 msgstr "音声ビットレート: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:192
+#: core/libs/properties/itempropertiestab.cpp:193
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type: "
 msgctxt "@label: item properties"
@@ -39108,7 +39117,7 @@ msgid "Audio Channel Type: "
 msgstr "音声チャンネルタイプ: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:193
+#: core/libs/properties/itempropertiestab.cpp:194
 #, fuzzy, kde-format
 #| msgid "Video Codec: "
 msgctxt "@label: item properties"
@@ -39116,14 +39125,14 @@ msgid "Audio Codec: "
 msgstr "動画コーデック: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:188
+#: core/libs/properties/itempropertiestab.cpp:189
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "所要時間: %1"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:189
+#: core/libs/properties/itempropertiestab.cpp:190
 #, fuzzy, kde-format
 #| msgid "Frame Rate: "
 msgctxt "@label: item properties"
@@ -39131,7 +39140,7 @@ msgid "Frame Rate: "
 msgstr "フレームレート: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:190
+#: core/libs/properties/itempropertiestab.cpp:191
 #, fuzzy, kde-format
 #| msgid "Video Codec: "
 msgctxt "@label: item properties"
@@ -39580,103 +39589,103 @@ msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "パーミッション: "
 
-#: core/libs/properties/itempropertiestab.cpp:80
+#: core/libs/properties/itempropertiestab.cpp:81
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "ファイルのプロパティ"
 
-#: core/libs/properties/itempropertiestab.cpp:90
+#: core/libs/properties/itempropertiestab.cpp:91
 #, fuzzy, kde-format
 #| msgid "Bit depth: "
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "ビット深度: "
 
-#: core/libs/properties/itempropertiestab.cpp:91
+#: core/libs/properties/itempropertiestab.cpp:92
 #, fuzzy, kde-format
 #| msgid "Color mode: "
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "カラーモデル: "
 
-#: core/libs/properties/itempropertiestab.cpp:92
+#: core/libs/properties/itempropertiestab.cpp:93
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:93
+#: core/libs/properties/itempropertiestab.cpp:94
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:124
+#: core/libs/properties/itempropertiestab.cpp:125
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "アイテムのプロパティ"
 
-#: core/libs/properties/itempropertiestab.cpp:180
+#: core/libs/properties/itempropertiestab.cpp:181
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "写真のプロパティ"
 
-#: core/libs/properties/itempropertiestab.cpp:224
+#: core/libs/properties/itempropertiestab.cpp:225
 #, fuzzy, kde-format
 #| msgid "Audio/video properties"
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "音声/動画のプロパティ"
 
-#: core/libs/properties/itempropertiestab.cpp:238
+#: core/libs/properties/itempropertiestab.cpp:239
 #, fuzzy, kde-format
 #| msgid "Title:"
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "タイトル:"
 
-#: core/libs/properties/itempropertiestab.cpp:239
+#: core/libs/properties/itempropertiestab.cpp:240
 #, fuzzy, kde-format
 #| msgid "Caption: "
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "キャプション: "
 
-#: core/libs/properties/itempropertiestab.cpp:240
+#: core/libs/properties/itempropertiestab.cpp:241
 #, fuzzy, kde-format
 #| msgid "Pick label: "
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "選抜ラベル: "
 
-#: core/libs/properties/itempropertiestab.cpp:241
+#: core/libs/properties/itempropertiestab.cpp:242
 #, fuzzy, kde-format
 #| msgid "Color label: "
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "色ラベル:"
 
-#: core/libs/properties/itempropertiestab.cpp:242
+#: core/libs/properties/itempropertiestab.cpp:243
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "評価: "
 
-#: core/libs/properties/itempropertiestab.cpp:243
+#: core/libs/properties/itempropertiestab.cpp:244
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@label: item properties"
 msgid "Versioned: "
 msgstr "バージョン"
 
-#: core/libs/properties/itempropertiestab.cpp:244
+#: core/libs/properties/itempropertiestab.cpp:245
 #, fuzzy, kde-format
 #| msgctxt "@action: group items"
 #| msgid "Group"
@@ -39684,21 +39693,21 @@ msgctxt "@label: item properties"
 msgid "Grouped: "
 msgstr "グループ"
 
-#: core/libs/properties/itempropertiestab.cpp:293
+#: core/libs/properties/itempropertiestab.cpp:297
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKam のプロパティ"
 
-#: core/libs/properties/itempropertiestab.cpp:300
+#: core/libs/properties/itempropertiestab.cpp:304
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "キーワード"
 
-#: core/libs/properties/itempropertiestab.cpp:304
+#: core/libs/properties/itempropertiestab.cpp:309
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
@@ -39706,255 +39715,255 @@ msgctxt "@label: item properties"
 msgid "People: "
 msgstr "人"
 
-#: core/libs/properties/itempropertiestab.cpp:319
+#: core/libs/properties/itempropertiestab.cpp:325
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "タグ"
 
-#: core/libs/properties/itempropertiestab.cpp:337
+#: core/libs/properties/itempropertiestab.cpp:344
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "ジオロケーション"
 
-#: core/libs/properties/itempropertiestab.cpp:358
+#: core/libs/properties/itempropertiestab.cpp:366
 #, fuzzy, kde-format
 #| msgid "Rights"
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "権利"
 
-#: core/libs/properties/itempropertiestab.cpp:474
+#: core/libs/properties/itempropertiestab.cpp:482
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "ファイル"
 
-#: core/libs/properties/itempropertiestab.cpp:475
+#: core/libs/properties/itempropertiestab.cpp:483
 #, fuzzy, kde-format
 #| msgid "Folder: "
 msgid "Folder"
 msgstr "フォルダ: "
 
-#: core/libs/properties/itempropertiestab.cpp:476
+#: core/libs/properties/itempropertiestab.cpp:484
 #, kde-format
 msgid "Symlink"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:477
+#: core/libs/properties/itempropertiestab.cpp:485
 #, fuzzy, kde-format
 msgid "Modified Date"
 msgstr "ファイル名"
 
-#: core/libs/properties/itempropertiestab.cpp:479
+#: core/libs/properties/itempropertiestab.cpp:487
 #, fuzzy, kde-format
 #| msgctxt "Owner of the file"
 #| msgid "Owner"
 msgid "Owner"
 msgstr "所有者"
 
-#: core/libs/properties/itempropertiestab.cpp:480
+#: core/libs/properties/itempropertiestab.cpp:488
 #, fuzzy, kde-format
 #| msgid "Permissions: "
 msgid "Permissions"
 msgstr "パーミッション: "
 
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:490
 #, kde-format
 msgid "Mime"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:492
 #, fuzzy, kde-format
 msgid "Ratio"
 msgstr "回転:"
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:493
 #, fuzzy, kde-format
 #| msgid "Bit depth"
 msgid "Bit Depth"
 msgstr "ビット深度"
 
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:494
 #, fuzzy, kde-format
 #| msgid "Color Model"
 msgid "Color Mode"
 msgstr "カラーモデル"
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:495
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Sidecars"
 msgid "Has Sidecar"
 msgstr "サイドカー"
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:496
 #, kde-format
 msgid "Has GPS"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:489
+#: core/libs/properties/itempropertiestab.cpp:497
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgid "Versioned"
 msgstr "バージョン"
 
-#: core/libs/properties/itempropertiestab.cpp:490
+#: core/libs/properties/itempropertiestab.cpp:498
 #, fuzzy, kde-format
 #| msgctxt "@action: group items"
 #| msgid "Group"
 msgid "Grouped"
 msgstr "グループ"
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "camera make"
 #| msgid "Make:"
 msgid "Make"
 msgstr "メーカー:"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:501
 #, fuzzy, kde-format
 #| msgid "Model"
 msgid "Model"
 msgstr "モデル"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:502
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgid "Date Time"
 msgstr "日付と時間"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:503
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "レンズ"
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:504
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "絞り"
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:505
 #, fuzzy, kde-format
 #| msgid "Focal length"
 msgid "Focal Length"
 msgstr "焦点距離"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:506
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgid "Exposure Time"
 msgstr "露出時間"
 
-#: core/libs/properties/itempropertiestab.cpp:499
+#: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "フィルム感度"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:508
 #, fuzzy, kde-format
 #| msgid "Exposure mode"
 msgid "Exposure Mode"
 msgstr "露出モード"
 
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:509
 #, fuzzy, kde-format
 #| msgctxt "@title: tableview"
 #| msgid "Flash"
 msgid "Flash"
 msgstr "フラッシュ"
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:512
 #: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "動画のアスペクト比"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "動画の長さ"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:514
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "動画のフレームレート"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:515
 #, fuzzy, kde-format
 #| msgid "Video Codec"
 msgid "Video Video Codec"
 msgstr "動画コーデック"
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:516
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Video Audio Bit Rate"
 msgstr "音声ビットレート"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:517
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgid "Video Audio Channel Type"
 msgstr "音声チャンネルタイプ"
 
-#: core/libs/properties/itempropertiestab.cpp:510
+#: core/libs/properties/itempropertiestab.cpp:518
 #, fuzzy, kde-format
 #| msgid "Audio Codec"
 msgid "Video Audio Codec"
 msgstr "音声コーデック"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:520
 #, fuzzy, kde-format
 #| msgctxt "@title: tableview"
 #| msgid "Caption"
 msgid "Caption"
 msgstr "キャプション"
 
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:521
 #, fuzzy, kde-format
 #| msgctxt "@title: tableview"
 #| msgid "Title"
 msgid "Title"
 msgstr "タイトル"
 
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:523
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
 msgid "Peoples"
 msgstr "人"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "権利"
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:526
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgid "Pick"
 msgstr "選抜"
 
-#: core/libs/properties/itempropertiestab.cpp:519
+#: core/libs/properties/itempropertiestab.cpp:527
 #, fuzzy, kde-format
 #| msgid "Color"
 msgid "Color"
 msgstr "色"
 
-#: core/libs/properties/itempropertiestab.cpp:520
+#: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -39981,33 +39990,33 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:91
-#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:122
 #, kde-format
 msgid "Count: "
 msgstr "カウント値: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:92
-#: core/libs/properties/itemselectionpropertiestab.cpp:121
+#: core/libs/properties/itemselectionpropertiestab.cpp:94
+#: core/libs/properties/itemselectionpropertiestab.cpp:123
 #, kde-format
 msgid "Size: "
 msgstr "サイズ: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:122
+#: core/libs/properties/itemselectionpropertiestab.cpp:95
+#: core/libs/properties/itemselectionpropertiestab.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "@action: group items"
 #| msgid "Group"
 msgid "Groups: "
 msgstr "グループ"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:115
+#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Selected Item Properties"
 msgstr "ファイルのプロパティ"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:145
+#: core/libs/properties/itemselectionpropertiestab.cpp:147
 #, fuzzy, kde-format
 #| msgid "Album Properties"
 msgid "All Item Properties"
