@@ -194,7 +194,7 @@ BUGFIXES:
 137 --> 128915 - Calling scripts from contextual menu/toolbar.
 138 --> 144654 - Ctrl-Tab and Ctrl-Shift-Tab don't switch focus between widgets.
 139 --> 137707 - A new icon for the albums in digiKam.
-140 -->
+140 --> 486755 - Images.album = NULL without reason (disappearing images in DK).
 141 -->
 142 -->
 143 -->
