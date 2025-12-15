@@ -201,22 +201,22 @@ BUGFIXES:
 144 --> 451586 - Convert "Geotagged" overlay icon into button.
 145 --> 498074 - Malloc error with ffmpeg > 7.x.
 146 --> 472529 - File names are truncated on only one line.
-147 --> 
-148 --> 
-149 --> 
-150 --> 
-151 --> 
-152 --> 
-153 --> 
-154 --> 
-155 --> 
-156 --> 
-157 --> 
-158 --> 
-159 --> 
-160 --> 
-161 --> 
-162 --> 
+147 --> 099416 - Thumbnail view: spacing between thumbnail borders is quite small (on high resolution screens).
+148 --> 107742 - Thumbnails in main view are not created/displayed.
+149 --> 135082 - Selected thumb does not deselect when selecting next thumb.
+150 --> 087975 - Thumbnail tooltip not deleted when scrolling with MMB wheel.
+151 --> 093534 - Should provide option to save thumbnails in album folder(s).
+152 --> 116186 - No thumbnails in the album view.
+153 --> 171310 - No preview photos shown clicking on imported albums.
+154 --> 118506 - Thumbnail generation impossible after renaming album.
+155 --> 103600 - Partial broken thumbnails for new images created outside digikam.
+156 --> 112467 - Slow showing of thumbnails.
+157 --> 114036 - Thumbnails not showing in folders (on any view).
+158 --> 103458 - Thumbnail view not updated after changing comments.
+159 --> 088687 - Change album's thumbnail manually.
+160 --> 102699 - When using light color as thumbnail background, text below is unreadable.
+161 --> 087762 - Can't single-click to open thumbnails.
+162 --> 166564 - Display of *already* *created* thumbnails is slow.
 163 --> 
 164 --> 
 165 --> 
