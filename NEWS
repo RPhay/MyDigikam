@@ -43,6 +43,7 @@ Image Properties: Add new button to open current item is file manager.
 Image Properties: If no icon-view item selected, show current album statistics.
 Grouped Items   : Show items from an open group highlighted for a better usability.
 Grouped Items   : Usability improvements of the grouped icon-view items overlay.
+Filter Items    : Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.
 Preview         : Extend Toolbar overlay with Labels editor.
 Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
 Advanced Rename : New modifier "Date Format".
@@ -290,7 +291,7 @@ BUGFIXES:
 232 --> 112971 - After rotating an image, the first image in the folder get's the keyboard focus.
 233 --> 111595 - AND instead of OR in tag filters (option to switch between the 2).
 234 --> 179850 - Show sorting of albums/tags in left panel.
-235 --> 
+235 --> 512082 - Drag to Change Size of Vertical Spacing in Right Sidebar for different components.
 236 --> 
 237 --> 
 238 --> 

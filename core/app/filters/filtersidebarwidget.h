@@ -106,7 +106,6 @@ private Q_SLOTS:
     void slotColorLabelFilterChanged(const QList<ColorLabel>&);
     void slotPickLabelFilterChanged(const QList<PickLabel>&);
     void slotWithoutTagChanged(int newState);
-    void slotItemExpanded(int id, bool b);
     void slotTagOptionsTriggered(QAction*);
     void slotTagOptionsMenu();
 

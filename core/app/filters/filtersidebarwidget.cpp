@@ -27,6 +27,7 @@
 #include <QToolButton>
 #include <QMenu>
 #include <QIcon>
+#include <QTabWidget>
 
 // KDE includes
 
@@ -55,14 +56,19 @@ class Q_DECL_HIDDEN FilterSideBarWidget::Private
 {
 public:
 
-    enum FilterType
+    enum PropertiesFilter
     {
         TEXT = 0,
         MIME,
         GEOLOCATION,
-        TAGS,
-        FACES,
         LABELS
+    };
+
+    enum FilterTabs
+    {
+        PropertiesTab = 0,
+        TagsTab,
+        FacesTab
     };
 
 public:
@@ -105,6 +111,7 @@ public:
     QCheckBox*                             withoutFaceCheckBox                  = nullptr;
 
     DExpanderBox*                          expbox                               = nullptr;
+    QTabWidget*                            tabWidget                            = nullptr;
 };
 
 // ---------------------------------------------------------------------------------------------------
@@ -116,7 +123,10 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
 {
     setObjectName(QLatin1String("TagFilter Sidebar"));
 
-    d->expbox = new DExpanderBox(this);
+    d->tabWidget                  = new QTabWidget(this);
+    QWidget* const propertiesView = new QWidget(d->tabWidget);
+
+    d->expbox = new DExpanderBox(propertiesView);
     d->expbox->setObjectName(QLatin1String("FilterSideBarWidget Expander"));
 
     // --------------------------------------------------------------------------------------------------------
@@ -139,7 +149,33 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
 
     // --------------------------------------------------------------------------------------------------------
 
-    QWidget* const box3 = new QWidget(d->expbox);
+    QWidget* const box4 = new QWidget(d->expbox);
+    d->colorLabelFilter = new ColorLabelFilter(box4);
+    d->pickLabelFilter  = new PickLabelFilter(box4);
+    d->ratingFilter     = new RatingFilter(box4);
+
+    QGridLayout* const lay4 = new QGridLayout(box4);
+    lay4->addWidget(d->colorLabelFilter, 0, 0, 1, 3);
+    lay4->addWidget(d->pickLabelFilter,  1, 0, 1, 1);
+    lay4->addWidget(d->ratingFilter,     1, 2, 1, 1);
+    lay4->setColumnStretch(2, 1);
+    lay4->setColumnStretch(3, 10);
+    lay4->setContentsMargins(QMargins());
+    lay4->setSpacing(0);
+
+    d->expbox->insertItem(Private::LABELS, box4, QIcon::fromTheme(QLatin1String("folder-favorites")),
+                          i18n("Labels Filter"), QLatin1String("LabelsFilter"), true);
+
+    d->expanderVlay = dynamic_cast<QVBoxLayout*>(dynamic_cast<QScrollArea*>(d->expbox)->widget()->layout());
+    d->space        = new QWidget();
+    d->expanderVlay->addWidget(d->space);
+    d->expanderVlay->setStretchFactor(d->space, 100);
+
+    d->tabWidget->insertTab(Private::PropertiesTab, propertiesView, i18nc("@title", "Properties"));
+
+    // --------------------------------------------------------------------------------------------------------
+
+    QWidget* const box3 = new QWidget(d->tabWidget);
     d->tagFilterModel   = tagFilterModel;
     d->tagFilterView    = new TagFilterView(box3, tagFilterModel);
     d->tagFilterView->setObjectName(QLatin1String("ItemIconViewTagFilterView"));
@@ -185,12 +221,11 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     lay3->setContentsMargins(QMargins());
     lay3->setSpacing(0);
 
-    d->expbox->insertItem(Private::TAGS, box3, QIcon::fromTheme(QLatin1String("tag-assigned")),
-                          i18n("Tags Filter"), QLatin1String("TagsFilter"), true);
+    d->tabWidget->insertTab(Private::TagsTab, box3, i18nc("@title", "Tags"));
 
     // --------------------------------------------------------------------------------------------------------
 
-    QWidget* const box5 = new QWidget(d->expbox);
+    QWidget* const box5 = new QWidget(d->tabWidget);
     d->faceFilterModel  = tagFilterModel;
     d->faceFilterView   = new TagFilterView(box5, tagFilterModel);
     d->faceFilterView->setObjectName(QLatin1String("ItemIconViewFaceTagFilterView"));
@@ -230,36 +265,9 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     lay5->setContentsMargins(QMargins());
     lay5->setSpacing(0);
 
-    d->expbox->insertItem(Private::FACES, box5, QIcon::fromTheme(QLatin1String("tag-assigned")),
-                          i18n("Face Tags Filter"), QLatin1String("FaceTagsFilter"), true);
+    d->tabWidget->insertTab(Private::FacesTab, box5, i18nc("@title", "People"));
 
     // --------------------------------------------------------------------------------------------------------
-
-    QWidget* const box4 = new QWidget(d->expbox);
-    d->colorLabelFilter = new ColorLabelFilter(box4);
-    d->pickLabelFilter  = new PickLabelFilter(box4);
-    d->ratingFilter     = new RatingFilter(box4);
-
-    QGridLayout* const lay4 = new QGridLayout(box4);
-    lay4->addWidget(d->colorLabelFilter, 0, 0, 1, 3);
-    lay4->addWidget(d->pickLabelFilter,  1, 0, 1, 1);
-    lay4->addWidget(d->ratingFilter,     1, 2, 1, 1);
-    lay4->setColumnStretch(2, 1);
-    lay4->setColumnStretch(3, 10);
-    lay4->setContentsMargins(QMargins());
-    lay4->setSpacing(0);
-
-    d->expbox->insertItem(Private::LABELS, box4, QIcon::fromTheme(QLatin1String("folder-favorites")),
-                          i18n("Labels Filter"), QLatin1String("LabelsFilter"), true);
-
-    d->expanderVlay = dynamic_cast<QVBoxLayout*>(dynamic_cast<QScrollArea*>(d->expbox)->widget()->layout());
-    d->space        = new QWidget();
-    d->expanderVlay->addWidget(d->space);
-
-    // --------------------------------------------------------------------------------------------------------
-
-    connect(d->expbox, SIGNAL(signalItemExpanded(int,bool)),
-            this, SLOT(slotItemExpanded(int,bool)));
 
     connect(d->mimeFilter, SIGNAL(activated(int)),
             this, SIGNAL(signalMimeTypeFilterChanged(int)));
@@ -324,14 +332,6 @@ void FilterSideBarWidget::slotTagOptionsMenu()
             d->tagAndCondAction->setChecked(true);
             break;
         }
-    }
-}
-
-void FilterSideBarWidget::slotItemExpanded(int id, bool b)
-{
-    if (id == Private::TAGS)
-    {
-        d->expanderVlay->setStretchFactor(d->space, b ? 0 : 100);
     }
 }
 
