@@ -44,6 +44,7 @@ Image Properties: If no icon-view item selected, show current album statistics.
 Grouped Items   : Show items from an open group highlighted for a better usability.
 Grouped Items   : Usability improvements of the grouped icon-view items overlay.
 Preview         : Extend Toolbar overlay with Labels editor.
+Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
 Advanced Rename : New modifier "Date Format".
 SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
 Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.
