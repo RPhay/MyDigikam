@@ -200,7 +200,7 @@ BUGFIXES:
 143 --> 513378 - Cannot hide (collapse) background jobs when there are no running background jobs.
 144 --> 451586 - Convert "Geotagged" overlay icon into button.
 145 --> 498074 - Malloc error with ffmpeg > 7.x.
-146 --> 
+146 --> 472529 - File names are truncated on only one line.
 147 --> 
 148 --> 
 149 --> 
