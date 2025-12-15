@@ -257,14 +257,14 @@ BUGFIXES:
 199 --> 218007 - When "creating a new album" from a selection of images, digiKam should try to *move* them first.
 200 --> 217331 - Download all photos with digiKam wizard made digikam crash.
 201 --> 216996 - Crash when importing pictures.
-202 --> 
-203 --> 
-204 --> 
-205 --> 
-206 --> 
-207 --> 
-208 --> 
-209 --> 
+202 --> 508191 - "Open in File Manager" not working in network storage.
+203 --> 510462 - Cannot rename album/directory.
+204 --> 505619 - Strange behavior of cores processors.
+205 --> 477543 - Suggestion: import tags from thesaurus.
+206 --> 438029 - Similarity-Duplicates / Groups -group members are not visible under certain conditions.
+207 --> 432412 - Training Face recognition for blur and pixellation.
+208 --> 224257 - Add a new option to "move" as default with mouse dragging action without confirmation.
+209 --> 148796 - Autoalign / join multiple images.
 210 --> 
 211 --> 
 212 --> 
