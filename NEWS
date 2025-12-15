@@ -219,44 +219,44 @@ BUGFIXES:
 161 --> 087762 - Can't single-click to open thumbnails.
 162 --> 166564 - Display of *already* *created* thumbnails is slow.
 163 --> 513386 - digiKam Qt6: Full-size image preview fails ("Impossible de charger l’image") while thumbnails work; Qt5 works fine on same system.
-164 --> 
-165 --> 
-166 --> 
-167 --> 
-168 --> 
-169 --> 
-170 --> 
-171 --> 
-172 --> 
-173 --> 
-174 --> 
-175 --> 
-176 --> 
-177 --> 
-178 --> 
-179 --> 
-180 --> 
-181 --> 
-182 --> 
-183 --> 
-184 --> 
-185 --> 
-186 --> 
-187 --> 
-188 --> 
-189 --> 
-190 --> 
-191 --> 
-192 --> 
-193 --> 
-194 --> 
-195 --> 
-196 --> 
-197 --> 
-198 --> 
-199 --> 
-200 --> 
-201 --> 
+164 --> 511929 - No more face recognition.
+165 --> 511363 - Cannot delete auto keywords.
+166 --> 509223 - Changing the date of a photo via Adjust Time & Date works correctly, but if I later apply a tag to the same photo, digiKam resets the photo’s date to the current date/time.
+167 --> 508579 - Database and Storage access failure - see log.
+168 --> 506362 - Mp4 files are sorted into the incorrect folder on import.
+169 --> 502775 - Portable version is not working in Windows 11.
+170 --> 479417 - Keep all UI elements visible when People sidebar is resized.
+171 --> 479371 - Problems connecting to a drive.
+172 --> 432152 - Upload one file or several files to ipfs web fails.
+173 --> 396976 - Facebook plugin cannot auth to post.
+174 --> 395203 - Unable to connect to Facebook due to app settings.
+175 --> 365015 - Unable to import facebook albums and photo.
+176 --> 362639 - Spam on digiKam website?
+177 --> 361699 - Unable to import from Facebook, does nothing.
+178 --> 347452 - Facebook export does not work any more -- authentication problem.
+179 --> 320935 - Trying to send a picture from host application to facebook.
+180 --> 320626 - Export to Facebook tool crashes when exporting to Facebook.
+181 --> 319573 - Facebook Application Authorization not working.
+182 --> 318967 - Export photos to Facebook open Firefox but the link is OK only for 1 or 2 seconds.
+183 --> 316436 - Allow to export local albums to albums of a Community FaceBook Page.
+184 --> 312387 - Crashed when adding effects with photo layout editor.
+185 --> 309916 - Warn end-user about actions around metadata.
+186 --> 309179 - Facebook tool crash.
+187 --> 306415 - Remember account configuration between tool sessions.
+188 --> 305811 - Crashed when uploading photo to facebook.
+189 --> 298135 - Fails to import from facebook.
+190 --> 290991 - digiKam photo layout occasionally crashed when save is pressed.
+191 --> 281158 - Cannot upload from FTP to Yandex.Fotki.
+192 --> 276627 - Facebook Call Failed: Application has been deleted.
+193 --> 268325 - Export to facebook wrong album.
+194 --> 255053 - Export to Facebook can't upload to existing albums.
+195 --> 254037 - Try to import friend's facebook album, only 'Profile pictures' album visible.
+196 --> 218752 - digiKam crashed upon downloading from USB-Card Reader-SD.
+197 --> 218746 - After connecting to my camera, I selected 3 photos to import, and when I tried to import, it crashed.
+198 --> 218111 - Fotos download olympus e-510 sudden exit.
+199 --> 218007 - When "creating a new album" from a selection of images, digiKam should try to *move* them first.
+200 --> 217331 - Download all photos with digiKam wizard made digikam crash.
+201 --> 216996 - Crash when importing pictures.
 202 --> 
 203 --> 
 204 --> 
