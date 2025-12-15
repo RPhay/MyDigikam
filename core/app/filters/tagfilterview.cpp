@@ -41,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     QAction*       onRestoreTagFiltersAction    = nullptr;
     QAction*       offRestoreTagFiltersAction   = nullptr;
     QAction*       ignoreTagAction              = nullptr;

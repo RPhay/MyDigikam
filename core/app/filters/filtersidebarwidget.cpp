@@ -55,7 +55,21 @@ class Q_DECL_HIDDEN FilterSideBarWidget::Private
 {
 public:
 
+    enum FilterType
+    {
+        TEXT = 0,
+        MIME,
+        GEOLOCATION,
+        TAGS,
+        FACES,
+        LABELS
+    };
+
+public:
+
     Private() = default;
+
+public:
 
     const QString                          configSearchTextFilterFieldsEntry    = QLatin1String("Search Text Filter Fields");
     const QString                          configLastShowUntaggedEntry          = QLatin1String("Show Untagged");
@@ -108,20 +122,20 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     // --------------------------------------------------------------------------------------------------------
 
     d->textFilter = new TextFilter(d->expbox);
-    d->expbox->addItem(d->textFilter, QIcon::fromTheme(QLatin1String("text-field")),
-                       i18n("Text Filter"), QLatin1String("TextFilter"), true);
+    d->expbox->insertItem(Private::TEXT, d->textFilter, QIcon::fromTheme(QLatin1String("text-field")),
+                          i18n("Text Filter"), QLatin1String("TextFilter"), true);
 
     // --------------------------------------------------------------------------------------------------------
 
     d->mimeFilter = new MimeFilter(d->expbox);
-    d->expbox->addItem(d->mimeFilter, QIcon::fromTheme(QLatin1String("folder-open")),
-                       i18n("MIME Type Filter"), QLatin1String("TypeMimeFilter"), true);
+    d->expbox->insertItem(Private::MIME, d->mimeFilter, QIcon::fromTheme(QLatin1String("folder-open")),
+                          i18n("MIME Type Filter"), QLatin1String("TypeMimeFilter"), true);
 
     // --------------------------------------------------------------------------------------------------------
 
     d->geolocationFilter = new GeolocationFilter(d->expbox);
-    d->expbox->addItem(d->geolocationFilter, QIcon::fromTheme(QLatin1String("globe")),
-                       i18n("Geolocation Filter"), QLatin1String("TypeGeolocationFilter"), true);
+    d->expbox->insertItem(Private::GEOLOCATION, d->geolocationFilter, QIcon::fromTheme(QLatin1String("globe")),
+                          i18n("Geolocation Filter"), QLatin1String("TypeGeolocationFilter"), true);
 
     // --------------------------------------------------------------------------------------------------------
 
@@ -171,7 +185,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     lay3->setContentsMargins(QMargins());
     lay3->setSpacing(0);
 
-    d->expbox->addItem(box3, QIcon::fromTheme(QLatin1String("tag-assigned")), i18n("Tags Filter"), QLatin1String("TagsFilter"), true);
+    d->expbox->insertItem(Private::TAGS, box3, QIcon::fromTheme(QLatin1String("tag-assigned")),
+                          i18n("Tags Filter"), QLatin1String("TagsFilter"), true);
 
     // --------------------------------------------------------------------------------------------------------
 
@@ -215,7 +230,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     lay5->setContentsMargins(QMargins());
     lay5->setSpacing(0);
 
-    d->expbox->addItem(box5, QIcon::fromTheme(QLatin1String("tag-assigned")), i18n("Face Tags Filter"), QLatin1String("FaceTagsFilter"), true);
+    d->expbox->insertItem(Private::FACES, box5, QIcon::fromTheme(QLatin1String("tag-assigned")),
+                          i18n("Face Tags Filter"), QLatin1String("FaceTagsFilter"), true);
 
     // --------------------------------------------------------------------------------------------------------
 
@@ -233,7 +249,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     lay4->setContentsMargins(QMargins());
     lay4->setSpacing(0);
 
-    d->expbox->addItem(box4, QIcon::fromTheme(QLatin1String("folder-favorites")), i18n("Labels Filter"), QLatin1String("LabelsFilter"), true);
+    d->expbox->insertItem(Private::LABELS, box4, QIcon::fromTheme(QLatin1String("folder-favorites")),
+                          i18n("Labels Filter"), QLatin1String("LabelsFilter"), true);
 
     d->expanderVlay = dynamic_cast<QVBoxLayout*>(dynamic_cast<QScrollArea*>(d->expbox)->widget()->layout());
     d->space        = new QWidget();
@@ -312,7 +329,7 @@ void FilterSideBarWidget::slotTagOptionsMenu()
 
 void FilterSideBarWidget::slotItemExpanded(int id, bool b)
 {
-    if (id == Digikam::TAGS)
+    if (id == Private::TAGS)
     {
         d->expanderVlay->setStretchFactor(d->space, b ? 0 : 100);
     }
