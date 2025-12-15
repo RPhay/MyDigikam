@@ -292,7 +292,7 @@ BUGFIXES:
 233 --> 111595 - AND instead of OR in tag filters (option to switch between the 2).
 234 --> 179850 - Show sorting of albums/tags in left panel.
 235 --> 512082 - Drag to Change Size of Vertical Spacing in Right Sidebar for different components.
-236 --> 
+236 --> 512925 - Can't load file after rotation (except in album view).
 237 --> 
 238 --> 
 239 --> 
