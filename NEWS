@@ -199,7 +199,7 @@ BUGFIXES:
 142 --> 510508 - Locks up at 6% when importing.
 143 --> 513378 - Cannot hide (collapse) background jobs when there are no running background jobs.
 144 --> 451586 - Convert "Geotagged" overlay icon into button.
-145 --> 
+145 --> 498074 - Malloc error with ffmpeg > 7.x.
 146 --> 
 147 --> 
 148 --> 
