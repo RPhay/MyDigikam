@@ -756,14 +756,13 @@ void DigikamItemView::assignRating(const QList<QModelIndex>& indexes, int rating
 
 void DigikamItemView::slotOpenGeolocationMap(const QModelIndex& index)
 {
-    ItemInfo info = itemFilterModel()->imageInfo(index);
+    ItemInfo info              = itemFilterModel()->imageInfo(index);
+    ItemInfoList imageInfoList = selectedItemInfos(true);
 
-    if (info.isNull())
+    if (!imageInfoList.contains(info))
     {
-        return;
+        setCurrentIndex(index);
     }
-
-    setCurrentIndex(index);
 
     Q_EMIT signalOpenGeolocationMap();
 }
