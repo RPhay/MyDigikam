@@ -289,7 +289,7 @@ BUGFIXES:
 231 --> 113803 - Can an imported Album have the same "Collection" field as its parent album?
 232 --> 112971 - After rotating an image, the first image in the folder get's the keyboard focus.
 233 --> 111595 - AND instead of OR in tag filters (option to switch between the 2).
-234 --> 
+234 --> 179850 - Show sorting of albums/tags in left panel.
 235 --> 
 236 --> 
 237 --> 
