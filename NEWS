@@ -198,7 +198,7 @@ BUGFIXES:
 141 --> 508995 - All album lost in collection.
 142 --> 510508 - Locks up at 6% when importing.
 143 --> 513378 - Cannot hide (collapse) background jobs when there are no running background jobs.
-144 --> 
+144 --> 451586 - Convert "Geotagged" overlay icon into button.
 145 --> 
 146 --> 
 147 --> 
