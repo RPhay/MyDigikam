@@ -265,19 +265,19 @@ BUGFIXES:
 207 --> 432412 - Training Face recognition for blur and pixellation.
 208 --> 224257 - Add a new option to "move" as default with mouse dragging action without confirmation.
 209 --> 148796 - Autoalign / join multiple images.
-210 --> 
-211 --> 
-212 --> 
-213 --> 
-214 --> 
-215 --> 
-216 --> 
-217 --> 
-218 --> 
-219 --> 
-220 --> 
-221 --> 
-222 --> 
+210 --> 178608 - Center headers in item tooltip.
+211 --> 169306 - Renaming an album should reorder the whole album list.
+212 --> 165345 - Selecting images from bottom right to top left does not work.
+213 --> 165342 - Crash when changing album sort modus.
+214 --> 162206 - Case sensitivity in the text quick filter.
+215 --> 161304 - Status bar info cleared after rating assigment.
+216 --> 158868 - Non natural album sorting.
+217 --> 158795 - Should be obvious if a tag filter is in use.
+218 --> 154964 - Browse album one image in largest possible zoom.
+219 --> 153798 - Bad calculation of images in recursive showed albums.
+220 --> 149572 - Add parent album selector to "new album" dialog.
+221 --> 145253 - Disable edit metadata menu when image is read-only.
+222 --> 142774 - Moving pictures between albums.
 223 --> 
 224 --> 
 225 --> 
