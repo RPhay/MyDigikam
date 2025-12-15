@@ -294,7 +294,7 @@ BUGFIXES:
 235 --> 512082 - Drag to Change Size of Vertical Spacing in Right Sidebar for different components.
 236 --> 512925 - Can't load file after rotation (except in album view).
 237 --> 510980 - Ghost albums appear when searching through Tags view.
-238 --> 
+238 --> 373345 - After return from preview view the album view scrolls the selected image to the top.
 239 --> 
 240 --> 
 241 --> 
