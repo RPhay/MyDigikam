@@ -32,7 +32,7 @@ void FilterSideBarWidget::populateFacesView()
 
     d->faceFilterSearchBar = new SearchTextBarDb(box5, QLatin1String("ItemIconViewFaceTagFilterSearchBar"));
     d->faceFilterSearchBar->setModel(d->faceFilterView->filteredModel(),
-                                    AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
+                                     AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->faceFilterSearchBar->setFilterModel(d->faceFilterView->albumFilterModel());
 
     const QString notfaceTaggedTitle = i18n("Images Without Face tags");
@@ -40,7 +40,7 @@ void FilterSideBarWidget::populateFacesView()
     d->withoutFaceCheckBox->setWhatsThis(i18n("Show images without a face tag."));
 
     d->faceOptionsBtn = new QToolButton(box5);
-    d->faceOptionsBtn->setToolTip( i18n("Face tags Matching Condition"));
+    d->faceOptionsBtn->setToolTip(i18n("Face tags Matching Condition"));
     d->faceOptionsBtn->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     d->faceOptionsBtn->setPopupMode(QToolButton::InstantPopup);
     d->faceOptionsBtn->setWhatsThis(i18n("Defines in which way the selected tags are combined "
