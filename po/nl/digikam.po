@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2025-12-15 11:06+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -381,50 +381,23 @@ msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Tag '%2' toewijzen aan items"
 msgstr[1] "Tags '%2' toewijzen aan items"
 
-#: core/app/filters/filtersidebarwidget.cpp:136
+#: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, kde-format
-msgid "Text Filter"
-msgstr "Tekstfilter"
+msgid "Images Without Face tags"
+msgstr "Afbeeldingen zonder gezichtstags"
 
-#: core/app/filters/filtersidebarwidget.cpp:142
+#: core/app/filters/filtersidebarwidget_faces.cpp:40
 #, kde-format
-msgid "MIME Type Filter"
-msgstr "Filter op MIME-type"
+msgid "Show images without a face tag."
+msgstr "Afbeeldingen zonder een gezichtstag tonen."
 
-#: core/app/filters/filtersidebarwidget.cpp:148
+#: core/app/filters/filtersidebarwidget_faces.cpp:43
 #, kde-format
-msgid "Geolocation Filter"
-msgstr "Geo-locatie-filter"
+msgid "Face tags Matching Condition"
+msgstr "Gezichtstags overeenkomend met voorwaarde"
 
-#: core/app/filters/filtersidebarwidget.cpp:167
-#, kde-format
-msgid "Labels Filter"
-msgstr "Filter op labels"
-
-#: core/app/filters/filtersidebarwidget.cpp:174
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, kde-format
-msgctxt "@title"
-msgid "Properties"
-msgstr "Eigenschappen"
-
-#: core/app/filters/filtersidebarwidget.cpp:191
-#, kde-format
-msgid "Images Without Tags"
-msgstr "Afbeeldingen zonder tags"
-
-#: core/app/filters/filtersidebarwidget.cpp:193
-#, kde-format
-msgid "Show images without a tag."
-msgstr "Afbeeldingen zonder een tag tonen"
-
-#: core/app/filters/filtersidebarwidget.cpp:196
-#, kde-format
-msgid "Tags Matching Condition"
-msgstr "Voorwaarde voor overeenkomst in tags"
-
-#: core/app/filters/filtersidebarwidget.cpp:199
-#: core/app/filters/filtersidebarwidget.cpp:249
+#: core/app/filters/filtersidebarwidget_faces.cpp:46
+#: core/app/filters/filtersidebarwidget_tags.cpp:43
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -433,48 +406,79 @@ msgstr ""
 "Definieert hoe de geselecteerde tags worden gecombineerd om de afbeeldingen "
 "te filteren. Dit houdt ook het '%1'-keuzevakje in."
 
-#: core/app/filters/filtersidebarwidget.cpp:206
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
-#, kde-format
-msgid "OR"
-msgstr "OF"
-
-#: core/app/filters/filtersidebarwidget.cpp:209
-#: core/utilities/searchwindow/searchgroup_label.cpp:278
-#, kde-format
-msgid "AND"
-msgstr "EN"
-
-#: core/app/filters/filtersidebarwidget.cpp:224
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, kde-format
-msgctxt "@title"
-msgid "Tags"
-msgstr "Tags"
-
-#: core/app/filters/filtersidebarwidget.cpp:241
-#, kde-format
-msgid "Images Without Face tags"
-msgstr "Afbeeldingen zonder gezichtstags"
-
-#: core/app/filters/filtersidebarwidget.cpp:243
-#, kde-format
-msgid "Show images without a face tag."
-msgstr "Afbeeldingen zonder een gezichtstag tonen."
-
-#: core/app/filters/filtersidebarwidget.cpp:246
-#, kde-format
-msgid "Face tags Matching Condition"
-msgstr "Gezichtstags overeenkomend met voorwaarde"
-
-#: core/app/filters/filtersidebarwidget.cpp:268
+#: core/app/filters/filtersidebarwidget_faces.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
 msgctxt "@title"
 msgid "People"
 msgstr "Mensen"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:36
+#, fuzzy, kde-format
+#| msgid "Text Filter"
+msgid "Text Filter:"
+msgstr "Tekstfilter"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:41
+#, fuzzy, kde-format
+#| msgid "MIME Type Filter"
+msgid "MIME Type Filter:"
+msgstr "Filter op MIME-type"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:46
+#, fuzzy, kde-format
+#| msgid "Geolocation Filter"
+msgid "Geolocation Filter:"
+msgstr "Geo-locatie-filter"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:51
+#, fuzzy, kde-format
+#| msgid "Labels Filter"
+msgid "Labels Filter:"
+msgstr "Filter op labels"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:72
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, kde-format
+msgctxt "@title"
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:35
+#, kde-format
+msgid "Images Without Tags"
+msgstr "Afbeeldingen zonder tags"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:37
+#, kde-format
+msgid "Show images without a tag."
+msgstr "Afbeeldingen zonder een tag tonen"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:40
+#, kde-format
+msgid "Tags Matching Condition"
+msgstr "Voorwaarde voor overeenkomst in tags"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:50
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#, kde-format
+msgid "OR"
+msgstr "OF"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:53
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
+#, kde-format
+msgid "AND"
+msgstr "EN"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:68
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
+#, kde-format
+msgctxt "@title"
+msgid "Tags"
+msgstr "Tags"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, kde-format

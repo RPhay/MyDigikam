@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -324,51 +324,23 @@ msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "항목에 '%1' 태그 할당"
 
-#: core/app/filters/filtersidebarwidget.cpp:136
+#: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, kde-format
-msgid "Text Filter"
-msgstr "텍스트 필터"
+msgid "Images Without Face tags"
+msgstr "얼굴 태그가 없는 이미지"
 
-#: core/app/filters/filtersidebarwidget.cpp:142
+#: core/app/filters/filtersidebarwidget_faces.cpp:40
 #, kde-format
-msgid "MIME Type Filter"
-msgstr "MIME 형식 필터"
+msgid "Show images without a face tag."
+msgstr "얼굴 태그가 없는 이미지를 표시합니다."
 
-#: core/app/filters/filtersidebarwidget.cpp:148
+#: core/app/filters/filtersidebarwidget_faces.cpp:43
 #, kde-format
-msgid "Geolocation Filter"
-msgstr "지리적 위치 필터"
+msgid "Face tags Matching Condition"
+msgstr "조건과 일치하는 얼굴 태그"
 
-#: core/app/filters/filtersidebarwidget.cpp:167
-#, kde-format
-msgid "Labels Filter"
-msgstr "레이블 필터"
-
-#: core/app/filters/filtersidebarwidget.cpp:174
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "속성"
-
-#: core/app/filters/filtersidebarwidget.cpp:191
-#, kde-format
-msgid "Images Without Tags"
-msgstr "태그가 없는 이미지"
-
-#: core/app/filters/filtersidebarwidget.cpp:193
-#, kde-format
-msgid "Show images without a tag."
-msgstr "태그가 없는 이미지를 표시합니다."
-
-#: core/app/filters/filtersidebarwidget.cpp:196
-#, kde-format
-msgid "Tags Matching Condition"
-msgstr "조건과 일치하는 태그"
-
-#: core/app/filters/filtersidebarwidget.cpp:199
-#: core/app/filters/filtersidebarwidget.cpp:249
+#: core/app/filters/filtersidebarwidget_faces.cpp:46
+#: core/app/filters/filtersidebarwidget_tags.cpp:43
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -377,19 +349,74 @@ msgstr ""
 "선택한 태그를 결합하여 이미지를 필터링하는 방법을 정의합니다. '%1' 체크 상자"
 "도 포함됩니다."
 
-#: core/app/filters/filtersidebarwidget.cpp:206
+#: core/app/filters/filtersidebarwidget_faces.cpp:65
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "사람"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:36
+#, fuzzy, kde-format
+#| msgid "Text Filter"
+msgid "Text Filter:"
+msgstr "텍스트 필터"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:41
+#, fuzzy, kde-format
+#| msgid "MIME Type Filter"
+msgid "MIME Type Filter:"
+msgstr "MIME 형식 필터"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:46
+#, fuzzy, kde-format
+#| msgid "Geolocation Filter"
+msgid "Geolocation Filter:"
+msgstr "지리적 위치 필터"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:51
+#, fuzzy, kde-format
+#| msgid "Labels Filter"
+msgid "Labels Filter:"
+msgstr "레이블 필터"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:72
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "속성"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:35
+#, kde-format
+msgid "Images Without Tags"
+msgstr "태그가 없는 이미지"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:37
+#, kde-format
+msgid "Show images without a tag."
+msgstr "태그가 없는 이미지를 표시합니다."
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:40
+#, kde-format
+msgid "Tags Matching Condition"
+msgstr "조건과 일치하는 태그"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:50
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "또는"
 
-#: core/app/filters/filtersidebarwidget.cpp:209
+#: core/app/filters/filtersidebarwidget_tags.cpp:53
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "그리고"
 
-#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/app/filters/filtersidebarwidget_tags.cpp:68
 #: core/libs/models/albummodel_tag.cpp:25
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, fuzzy, kde-format
@@ -397,29 +424,6 @@ msgstr "그리고"
 msgctxt "@title"
 msgid "Tags"
 msgstr "태그"
-
-#: core/app/filters/filtersidebarwidget.cpp:241
-#, kde-format
-msgid "Images Without Face tags"
-msgstr "얼굴 태그가 없는 이미지"
-
-#: core/app/filters/filtersidebarwidget.cpp:243
-#, kde-format
-msgid "Show images without a face tag."
-msgstr "얼굴 태그가 없는 이미지를 표시합니다."
-
-#: core/app/filters/filtersidebarwidget.cpp:246
-#, kde-format
-msgid "Face tags Matching Condition"
-msgstr "조건과 일치하는 얼굴 태그"
-
-#: core/app/filters/filtersidebarwidget.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
-msgctxt "@title"
-msgid "People"
-msgstr "사람"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, kde-format

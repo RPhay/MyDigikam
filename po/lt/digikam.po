@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -388,27 +388,65 @@ msgstr[1] "Priskirti žymą „%1“ vienetams"
 msgstr[2] "Priskirti žymą „%1“ vienetams"
 msgstr[3] "Priskirti žymą „%1“ vienetams"
 
-#: core/app/filters/filtersidebarwidget.cpp:136
+#: core/app/filters/filtersidebarwidget_faces.cpp:38
+#, fuzzy, kde-format
+#| msgid "Images Without Tags"
+msgid "Images Without Face tags"
+msgstr "Nuotraukos be žymų"
+
+#: core/app/filters/filtersidebarwidget_faces.cpp:40
+#, fuzzy, kde-format
+#| msgid "Show images without a tag."
+msgid "Show images without a face tag."
+msgstr "Rodyti nuotraukas be žymų."
+
+#: core/app/filters/filtersidebarwidget_faces.cpp:43
+#, fuzzy, kde-format
+#| msgid "Tags Matching Condition"
+msgid "Face tags Matching Condition"
+msgstr "Žymos atitinkančios sąlygą"
+
+#: core/app/filters/filtersidebarwidget_faces.cpp:46
+#: core/app/filters/filtersidebarwidget_tags.cpp:43
 #, kde-format
-msgid "Text Filter"
+msgid ""
+"Defines in which way the selected tags are combined to filter the images. "
+"This also includes the '%1' check box."
+msgstr ""
+
+#: core/app/filters/filtersidebarwidget_faces.cpp:65
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Žmonės"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:36
+#, fuzzy, kde-format
+#| msgid "Text Filter"
+msgid "Text Filter:"
 msgstr "Teksto filtras"
 
-#: core/app/filters/filtersidebarwidget.cpp:142
-#, kde-format
-msgid "MIME Type Filter"
+#: core/app/filters/filtersidebarwidget_properties.cpp:41
+#, fuzzy, kde-format
+#| msgid "MIME Type Filter"
+msgid "MIME Type Filter:"
 msgstr "MIME tipo filtras"
 
-#: core/app/filters/filtersidebarwidget.cpp:148
-#, kde-format
-msgid "Geolocation Filter"
+#: core/app/filters/filtersidebarwidget_properties.cpp:46
+#, fuzzy, kde-format
+#| msgid "Geolocation Filter"
+msgid "Geolocation Filter:"
 msgstr "Geoolokacijos filtras"
 
-#: core/app/filters/filtersidebarwidget.cpp:167
-#, kde-format
-msgid "Labels Filter"
+#: core/app/filters/filtersidebarwidget_properties.cpp:51
+#, fuzzy, kde-format
+#| msgid "Labels Filter"
+msgid "Labels Filter:"
 msgstr "Etiketės filtras"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
 #, fuzzy, kde-format
 #| msgid "Properties"
@@ -416,42 +454,34 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "Savybės"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget_tags.cpp:35
 #, kde-format
 msgid "Images Without Tags"
 msgstr "Nuotraukos be žymų"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget_tags.cpp:37
 #, kde-format
 msgid "Show images without a tag."
 msgstr "Rodyti nuotraukas be žymų."
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget_tags.cpp:40
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr "Žymos atitinkančios sąlygą"
 
-#: core/app/filters/filtersidebarwidget.cpp:199
-#: core/app/filters/filtersidebarwidget.cpp:249
-#, kde-format
-msgid ""
-"Defines in which way the selected tags are combined to filter the images. "
-"This also includes the '%1' check box."
-msgstr ""
-
-#: core/app/filters/filtersidebarwidget.cpp:206
+#: core/app/filters/filtersidebarwidget_tags.cpp:50
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "ARBA"
 
-#: core/app/filters/filtersidebarwidget.cpp:209
+#: core/app/filters/filtersidebarwidget_tags.cpp:53
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "IR"
 
-#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/app/filters/filtersidebarwidget_tags.cpp:68
 #: core/libs/models/albummodel_tag.cpp:25
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, fuzzy, kde-format
@@ -459,32 +489,6 @@ msgstr "IR"
 msgctxt "@title"
 msgid "Tags"
 msgstr "Žymos"
-
-#: core/app/filters/filtersidebarwidget.cpp:241
-#, fuzzy, kde-format
-#| msgid "Images Without Tags"
-msgid "Images Without Face tags"
-msgstr "Nuotraukos be žymų"
-
-#: core/app/filters/filtersidebarwidget.cpp:243
-#, fuzzy, kde-format
-#| msgid "Show images without a tag."
-msgid "Show images without a face tag."
-msgstr "Rodyti nuotraukas be žymų."
-
-#: core/app/filters/filtersidebarwidget.cpp:246
-#, fuzzy, kde-format
-#| msgid "Tags Matching Condition"
-msgid "Face tags Matching Condition"
-msgstr "Žymos atitinkančios sąlygą"
-
-#: core/app/filters/filtersidebarwidget.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
-msgctxt "@title"
-msgid "People"
-msgstr "Žmonės"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format

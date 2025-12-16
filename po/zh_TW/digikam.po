@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -352,98 +352,102 @@ msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "指定標籤「%1」到項目"
 
-#: core/app/filters/filtersidebarwidget.cpp:136
+#: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, kde-format
-msgid "Text Filter"
-msgstr "文字過濾器"
+msgid "Images Without Face tags"
+msgstr "沒有臉孔標籤的影像"
 
-#: core/app/filters/filtersidebarwidget.cpp:142
+#: core/app/filters/filtersidebarwidget_faces.cpp:40
 #, kde-format
-msgid "MIME Type Filter"
-msgstr "MIME 型態過濾器"
+msgid "Show images without a face tag."
+msgstr "顯示沒有臉孔標籤的影像。"
 
-#: core/app/filters/filtersidebarwidget.cpp:148
+#: core/app/filters/filtersidebarwidget_faces.cpp:43
 #, kde-format
-msgid "Geolocation Filter"
-msgstr "地理位置濾鏡"
+msgid "Face tags Matching Condition"
+msgstr "臉孔標籤相符條件"
 
-#: core/app/filters/filtersidebarwidget.cpp:167
-#, kde-format
-msgid "Labels Filter"
-msgstr "旗標過濾器"
-
-#: core/app/filters/filtersidebarwidget.cpp:174
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, kde-format
-msgctxt "@title"
-msgid "Properties"
-msgstr "屬性"
-
-#: core/app/filters/filtersidebarwidget.cpp:191
-#, kde-format
-msgid "Images Without Tags"
-msgstr "沒有標籤的影像"
-
-#: core/app/filters/filtersidebarwidget.cpp:193
-#, kde-format
-msgid "Show images without a tag."
-msgstr "顯示沒有標籤的影像。"
-
-#: core/app/filters/filtersidebarwidget.cpp:196
-#, kde-format
-msgid "Tags Matching Condition"
-msgstr "符合條件的標籤"
-
-#: core/app/filters/filtersidebarwidget.cpp:199
-#: core/app/filters/filtersidebarwidget.cpp:249
+#: core/app/filters/filtersidebarwidget_faces.cpp:46
+#: core/app/filters/filtersidebarwidget_tags.cpp:43
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
 msgstr "定義用哪種方式合併選擇的標籤和過濾的影像。這也包含此「%1」勾選框。"
 
-#: core/app/filters/filtersidebarwidget.cpp:206
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
-#, kde-format
-msgid "OR"
-msgstr "或"
-
-#: core/app/filters/filtersidebarwidget.cpp:209
-#: core/utilities/searchwindow/searchgroup_label.cpp:278
-#, kde-format
-msgid "AND"
-msgstr "且"
-
-#: core/app/filters/filtersidebarwidget.cpp:224
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, kde-format
-msgctxt "@title"
-msgid "Tags"
-msgstr "標籤"
-
-#: core/app/filters/filtersidebarwidget.cpp:241
-#, kde-format
-msgid "Images Without Face tags"
-msgstr "沒有臉孔標籤的影像"
-
-#: core/app/filters/filtersidebarwidget.cpp:243
-#, kde-format
-msgid "Show images without a face tag."
-msgstr "顯示沒有臉孔標籤的影像。"
-
-#: core/app/filters/filtersidebarwidget.cpp:246
-#, kde-format
-msgid "Face tags Matching Condition"
-msgstr "臉孔標籤相符條件"
-
-#: core/app/filters/filtersidebarwidget.cpp:268
+#: core/app/filters/filtersidebarwidget_faces.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
 msgctxt "@title"
 msgid "People"
 msgstr "人物"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:36
+#, fuzzy, kde-format
+#| msgid "Text Filter"
+msgid "Text Filter:"
+msgstr "文字過濾器"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:41
+#, fuzzy, kde-format
+#| msgid "MIME Type Filter"
+msgid "MIME Type Filter:"
+msgstr "MIME 型態過濾器"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:46
+#, fuzzy, kde-format
+#| msgid "Geolocation Filter"
+msgid "Geolocation Filter:"
+msgstr "地理位置濾鏡"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:51
+#, fuzzy, kde-format
+#| msgid "Labels Filter"
+msgid "Labels Filter:"
+msgstr "旗標過濾器"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:72
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, kde-format
+msgctxt "@title"
+msgid "Properties"
+msgstr "屬性"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:35
+#, kde-format
+msgid "Images Without Tags"
+msgstr "沒有標籤的影像"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:37
+#, kde-format
+msgid "Show images without a tag."
+msgstr "顯示沒有標籤的影像。"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:40
+#, kde-format
+msgid "Tags Matching Condition"
+msgstr "符合條件的標籤"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:50
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#, kde-format
+msgid "OR"
+msgstr "或"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:53
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
+#, kde-format
+msgid "AND"
+msgstr "且"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:68
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
+#, kde-format
+msgctxt "@title"
+msgid "Tags"
+msgstr "標籤"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, kde-format

@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -368,27 +368,56 @@ msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Lab"
 msgstr[1] "Lab"
 
-#: core/app/filters/filtersidebarwidget.cpp:136
+#: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, fuzzy, kde-format
-msgid "Text Filter"
-msgstr "Filtri:"
+msgid "Images Without Face tags"
+msgstr "I Parazgjedhur"
 
-#: core/app/filters/filtersidebarwidget.cpp:142
+#: core/app/filters/filtersidebarwidget_faces.cpp:40
 #, kde-format
-msgid "MIME Type Filter"
+msgid "Show images without a face tag."
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:148
-#, fuzzy, kde-format
-msgid "Geolocation Filter"
-msgstr "Gjeovendndodhje"
+#: core/app/filters/filtersidebarwidget_faces.cpp:43
+#, kde-format
+msgid "Face tags Matching Condition"
+msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:167
+#: core/app/filters/filtersidebarwidget_faces.cpp:46
+#: core/app/filters/filtersidebarwidget_tags.cpp:43
+#, kde-format
+msgid ""
+"Defines in which way the selected tags are combined to filter the images. "
+"This also includes the '%1' check box."
+msgstr ""
+
+#: core/app/filters/filtersidebarwidget_faces.cpp:65
 #, fuzzy, kde-format
-msgid "Labels Filter"
+msgctxt "@title"
+msgid "People"
+msgstr "Zhduke Etiketën"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:36
+#, fuzzy, kde-format
+msgid "Text Filter:"
 msgstr "Filtri:"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/app/filters/filtersidebarwidget_properties.cpp:41
+#, fuzzy, kde-format
+msgid "MIME Type Filter:"
+msgstr "Filtri:"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:46
+#, fuzzy, kde-format
+msgid "Geolocation Filter:"
+msgstr "Gjeovendndodhje"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:51
+#, fuzzy, kde-format
+msgid "Labels Filter:"
+msgstr "Filtri:"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
 #, fuzzy, kde-format
 #| msgid "Properties"
@@ -396,42 +425,34 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "Parametrat"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget_tags.cpp:35
 #, kde-format
 msgid "Images Without Tags"
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget_tags.cpp:37
 #, kde-format
 msgid "Show images without a tag."
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget_tags.cpp:40
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:199
-#: core/app/filters/filtersidebarwidget.cpp:249
-#, kde-format
-msgid ""
-"Defines in which way the selected tags are combined to filter the images. "
-"This also includes the '%1' check box."
-msgstr ""
-
-#: core/app/filters/filtersidebarwidget.cpp:206
+#: core/app/filters/filtersidebarwidget_tags.cpp:50
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "OR"
 
-#: core/app/filters/filtersidebarwidget.cpp:209
+#: core/app/filters/filtersidebarwidget_tags.cpp:53
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "AND"
 
-#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/app/filters/filtersidebarwidget_tags.cpp:68
 #: core/libs/models/albummodel_tag.cpp:25
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, fuzzy, kde-format
@@ -439,27 +460,6 @@ msgstr "AND"
 msgctxt "@title"
 msgid "Tags"
 msgstr "Etiketat"
-
-#: core/app/filters/filtersidebarwidget.cpp:241
-#, fuzzy, kde-format
-msgid "Images Without Face tags"
-msgstr "I Parazgjedhur"
-
-#: core/app/filters/filtersidebarwidget.cpp:243
-#, kde-format
-msgid "Show images without a face tag."
-msgstr ""
-
-#: core/app/filters/filtersidebarwidget.cpp:246
-#, kde-format
-msgid "Face tags Matching Condition"
-msgstr ""
-
-#: core/app/filters/filtersidebarwidget.cpp:268
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "People"
-msgstr "Zhduke Etiketën"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format

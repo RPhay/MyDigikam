@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2025-10-19 01:27+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -367,51 +367,25 @@ msgstr[0] "Atribuie marcajul „%1” la elemente"
 msgstr[1] "Atribuie marcajul „%1” la elemente"
 msgstr[2] "Atribuie marcajul „%1” la elemente"
 
-#: core/app/filters/filtersidebarwidget.cpp:136
+#: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, fuzzy, kde-format
-msgid "Text Filter"
-msgstr "Filtre de etichetă"
-
-#: core/app/filters/filtersidebarwidget.cpp:142
-#, fuzzy, kde-format
-msgid "MIME Type Filter"
-msgstr "Ochi roșii"
-
-#: core/app/filters/filtersidebarwidget.cpp:148
-#, fuzzy, kde-format
-msgid "Geolocation Filter"
-msgstr "Restaurează filtrele de etichetă"
-
-#: core/app/filters/filtersidebarwidget.cpp:167
-#, fuzzy, kde-format
-msgid "Labels Filter"
-msgstr "Filtre de obiective"
-
-#: core/app/filters/filtersidebarwidget.cpp:174
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "Proprietăți"
-
-#: core/app/filters/filtersidebarwidget.cpp:191
-#, kde-format
-msgid "Images Without Tags"
+#| msgid "Images Without Tags"
+msgid "Images Without Face tags"
 msgstr "Imagini fără etichete"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
-#, kde-format
-msgid "Show images without a tag."
+#: core/app/filters/filtersidebarwidget_faces.cpp:40
+#, fuzzy, kde-format
+#| msgid "Show images without a tag."
+msgid "Show images without a face tag."
 msgstr "Afișează imaginile fără etichetă."
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget_faces.cpp:43
 #, fuzzy, kde-format
-msgid "Tags Matching Condition"
+msgid "Face tags Matching Condition"
 msgstr "Condiția de potrivire:"
 
-#: core/app/filters/filtersidebarwidget.cpp:199
-#: core/app/filters/filtersidebarwidget.cpp:249
+#: core/app/filters/filtersidebarwidget_faces.cpp:46
+#: core/app/filters/filtersidebarwidget_tags.cpp:43
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -420,19 +394,70 @@ msgstr ""
 "Definește felul în care etichetele selectate sunt combinate pentru a filtra "
 "imaginile. Acesta include și căsuța de bifat „%1”."
 
-#: core/app/filters/filtersidebarwidget.cpp:206
+#: core/app/filters/filtersidebarwidget_faces.cpp:65
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Oameni"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:36
+#, fuzzy, kde-format
+msgid "Text Filter:"
+msgstr "Filtre de etichetă"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:41
+#, fuzzy, kde-format
+msgid "MIME Type Filter:"
+msgstr "Ochi roșii"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:46
+#, fuzzy, kde-format
+msgid "Geolocation Filter:"
+msgstr "Restaurează filtrele de etichetă"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:51
+#, fuzzy, kde-format
+msgid "Labels Filter:"
+msgstr "Filtre de obiective"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:72
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "Proprietăți"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:35
+#, kde-format
+msgid "Images Without Tags"
+msgstr "Imagini fără etichete"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:37
+#, kde-format
+msgid "Show images without a tag."
+msgstr "Afișează imaginile fără etichetă."
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:40
+#, fuzzy, kde-format
+msgid "Tags Matching Condition"
+msgstr "Condiția de potrivire:"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:50
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "SAU"
 
-#: core/app/filters/filtersidebarwidget.cpp:209
+#: core/app/filters/filtersidebarwidget_tags.cpp:53
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "ȘI"
 
-#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/app/filters/filtersidebarwidget_tags.cpp:68
 #: core/libs/models/albummodel_tag.cpp:25
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, fuzzy, kde-format
@@ -440,31 +465,6 @@ msgstr "ȘI"
 msgctxt "@title"
 msgid "Tags"
 msgstr "Marcaje"
-
-#: core/app/filters/filtersidebarwidget.cpp:241
-#, fuzzy, kde-format
-#| msgid "Images Without Tags"
-msgid "Images Without Face tags"
-msgstr "Imagini fără etichete"
-
-#: core/app/filters/filtersidebarwidget.cpp:243
-#, fuzzy, kde-format
-#| msgid "Show images without a tag."
-msgid "Show images without a face tag."
-msgstr "Afișează imaginile fără etichetă."
-
-#: core/app/filters/filtersidebarwidget.cpp:246
-#, fuzzy, kde-format
-msgid "Face tags Matching Condition"
-msgstr "Condiția de potrivire:"
-
-#: core/app/filters/filtersidebarwidget.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
-msgctxt "@title"
-msgid "People"
-msgstr "Oameni"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format

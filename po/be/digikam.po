@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -338,50 +338,23 @@ msgstr[1] "Прызначыць тэг(і) \"%1\"элементам"
 msgstr[2] "Прызначыць тэг(і) \"%1\"элементам"
 msgstr[3] "Прызначыць тэг(і) \"%1\"элементам"
 
-#: core/app/filters/filtersidebarwidget.cpp:136
+#: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, kde-format
-msgid "Text Filter"
-msgstr "Тэкставы фільтр"
+msgid "Images Without Face tags"
+msgstr "Выявы без тэгаў твараў"
 
-#: core/app/filters/filtersidebarwidget.cpp:142
+#: core/app/filters/filtersidebarwidget_faces.cpp:40
 #, kde-format
-msgid "MIME Type Filter"
-msgstr "Фільтр па тыпу MIME"
+msgid "Show images without a face tag."
+msgstr "Паказваць выявы без тэгаў твараў."
 
-#: core/app/filters/filtersidebarwidget.cpp:148
+#: core/app/filters/filtersidebarwidget_faces.cpp:43
 #, kde-format
-msgid "Geolocation Filter"
-msgstr "Фільтр па геалакацыі"
+msgid "Face tags Matching Condition"
+msgstr "Тэгі твараў, якія адпавядаюць умовам"
 
-#: core/app/filters/filtersidebarwidget.cpp:167
-#, kde-format
-msgid "Labels Filter"
-msgstr "Фільтр адмецін"
-
-#: core/app/filters/filtersidebarwidget.cpp:174
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, kde-format
-msgctxt "@title"
-msgid "Properties"
-msgstr "Уласцівасці"
-
-#: core/app/filters/filtersidebarwidget.cpp:191
-#, kde-format
-msgid "Images Without Tags"
-msgstr "Выявы без тэгаў"
-
-#: core/app/filters/filtersidebarwidget.cpp:193
-#, kde-format
-msgid "Show images without a tag."
-msgstr "Паказваць выявы без тэгаў."
-
-#: core/app/filters/filtersidebarwidget.cpp:196
-#, kde-format
-msgid "Tags Matching Condition"
-msgstr "Параметры пошуку тэгаў"
-
-#: core/app/filters/filtersidebarwidget.cpp:199
-#: core/app/filters/filtersidebarwidget.cpp:249
+#: core/app/filters/filtersidebarwidget_faces.cpp:46
+#: core/app/filters/filtersidebarwidget_tags.cpp:43
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -390,48 +363,79 @@ msgstr ""
 "Вызначае спалучэнне абраных тэгаў для фільтравання выяў. Таксама ўключае "
 "\"%1\"."
 
-#: core/app/filters/filtersidebarwidget.cpp:206
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
-#, kde-format
-msgid "OR"
-msgstr "АЛЬБО"
-
-#: core/app/filters/filtersidebarwidget.cpp:209
-#: core/utilities/searchwindow/searchgroup_label.cpp:278
-#, kde-format
-msgid "AND"
-msgstr "І"
-
-#: core/app/filters/filtersidebarwidget.cpp:224
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, kde-format
-msgctxt "@title"
-msgid "Tags"
-msgstr "Тэгі"
-
-#: core/app/filters/filtersidebarwidget.cpp:241
-#, kde-format
-msgid "Images Without Face tags"
-msgstr "Выявы без тэгаў твараў"
-
-#: core/app/filters/filtersidebarwidget.cpp:243
-#, kde-format
-msgid "Show images without a face tag."
-msgstr "Паказваць выявы без тэгаў твараў."
-
-#: core/app/filters/filtersidebarwidget.cpp:246
-#, kde-format
-msgid "Face tags Matching Condition"
-msgstr "Тэгі твараў, якія адпавядаюць умовам"
-
-#: core/app/filters/filtersidebarwidget.cpp:268
+#: core/app/filters/filtersidebarwidget_faces.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
 msgctxt "@title"
 msgid "People"
 msgstr "Людзі"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:36
+#, fuzzy, kde-format
+#| msgid "Text Filter"
+msgid "Text Filter:"
+msgstr "Тэкставы фільтр"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:41
+#, fuzzy, kde-format
+#| msgid "MIME Type Filter"
+msgid "MIME Type Filter:"
+msgstr "Фільтр па тыпу MIME"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:46
+#, fuzzy, kde-format
+#| msgid "Geolocation Filter"
+msgid "Geolocation Filter:"
+msgstr "Фільтр па геалакацыі"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:51
+#, fuzzy, kde-format
+#| msgid "Labels Filter"
+msgid "Labels Filter:"
+msgstr "Фільтр адмецін"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:72
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, kde-format
+msgctxt "@title"
+msgid "Properties"
+msgstr "Уласцівасці"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:35
+#, kde-format
+msgid "Images Without Tags"
+msgstr "Выявы без тэгаў"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:37
+#, kde-format
+msgid "Show images without a tag."
+msgstr "Паказваць выявы без тэгаў."
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:40
+#, kde-format
+msgid "Tags Matching Condition"
+msgstr "Параметры пошуку тэгаў"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:50
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#, kde-format
+msgid "OR"
+msgstr "АЛЬБО"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:53
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
+#, kde-format
+msgid "AND"
+msgstr "І"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:68
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
+#, kde-format
+msgctxt "@title"
+msgid "Tags"
+msgstr "Тэгі"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, kde-format

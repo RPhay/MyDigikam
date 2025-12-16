@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -364,51 +364,24 @@ msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "กำหนดป้ายกำกับ '%1' ไปยังรายการ"
 
-#: core/app/filters/filtersidebarwidget.cpp:136
+#: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, fuzzy, kde-format
-msgid "Text Filter"
-msgstr "ฟิลเตอร์สีแดง"
-
-#: core/app/filters/filtersidebarwidget.cpp:142
-#, fuzzy, kde-format
-msgid "MIME Type Filter"
-msgstr "ฟิลเตอร์สีแดง"
-
-#: core/app/filters/filtersidebarwidget.cpp:148
-#, fuzzy, kde-format
-msgid "Geolocation Filter"
-msgstr "ฟิลเตอร์สีเขียว"
-
-#: core/app/filters/filtersidebarwidget.cpp:167
-#, fuzzy, kde-format
-msgid "Labels Filter"
-msgstr "เลนส์ฟิลเตอร์"
-
-#: core/app/filters/filtersidebarwidget.cpp:174
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "คุณสมบัติ"
-
-#: core/app/filters/filtersidebarwidget.cpp:191
-#, fuzzy, kde-format
-msgid "Images Without Tags"
+msgid "Images Without Face tags"
 msgstr "ภาพต่าง ๆ โดยไม่มีป้ายข้อมูลกำกับ"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
-#, kde-format
-msgid "Show images without a tag."
+#: core/app/filters/filtersidebarwidget_faces.cpp:40
+#, fuzzy, kde-format
+#| msgid "Show images without a tag."
+msgid "Show images without a face tag."
 msgstr "แสดงภาพต่าง ๆ โดยไม่มีป้ายข้อมูลกำกับ"
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget_faces.cpp:43
 #, fuzzy, kde-format
-msgid "Tags Matching Condition"
+msgid "Face tags Matching Condition"
 msgstr "เงื่อนไขการเข้าคู่:"
 
-#: core/app/filters/filtersidebarwidget.cpp:199
-#: core/app/filters/filtersidebarwidget.cpp:249
+#: core/app/filters/filtersidebarwidget_faces.cpp:46
+#: core/app/filters/filtersidebarwidget_tags.cpp:43
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -417,19 +390,68 @@ msgstr ""
 "นิยามว่าจะให้ป้ายกำกับต่าง ๆ ที่เลือกไว้ถูกรวมกันไปยังตัวกรองภาพต่าง ๆ ในแบบใด "
 "ซึ่งรวมถึงกล่องกา '%1' ด้วย"
 
-#: core/app/filters/filtersidebarwidget.cpp:206
+#: core/app/filters/filtersidebarwidget_faces.cpp:65
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "People"
+msgstr "แ&ทนที่"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:36
+#, fuzzy, kde-format
+msgid "Text Filter:"
+msgstr "ฟิลเตอร์สีแดง"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:41
+#, fuzzy, kde-format
+msgid "MIME Type Filter:"
+msgstr "ฟิลเตอร์สีแดง"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:46
+#, fuzzy, kde-format
+msgid "Geolocation Filter:"
+msgstr "ฟิลเตอร์สีเขียว"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:51
+#, fuzzy, kde-format
+msgid "Labels Filter:"
+msgstr "เลนส์ฟิลเตอร์"
+
+#: core/app/filters/filtersidebarwidget_properties.cpp:72
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "คุณสมบัติ"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:35
+#, fuzzy, kde-format
+msgid "Images Without Tags"
+msgstr "ภาพต่าง ๆ โดยไม่มีป้ายข้อมูลกำกับ"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:37
+#, kde-format
+msgid "Show images without a tag."
+msgstr "แสดงภาพต่าง ๆ โดยไม่มีป้ายข้อมูลกำกับ"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:40
+#, fuzzy, kde-format
+msgid "Tags Matching Condition"
+msgstr "เงื่อนไขการเข้าคู่:"
+
+#: core/app/filters/filtersidebarwidget_tags.cpp:50
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "หรือ"
 
-#: core/app/filters/filtersidebarwidget.cpp:209
+#: core/app/filters/filtersidebarwidget_tags.cpp:53
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "และ"
 
-#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/app/filters/filtersidebarwidget_tags.cpp:68
 #: core/libs/models/albummodel_tag.cpp:25
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, fuzzy, kde-format
@@ -437,28 +459,6 @@ msgstr "และ"
 msgctxt "@title"
 msgid "Tags"
 msgstr "ป้ายกำกับ"
-
-#: core/app/filters/filtersidebarwidget.cpp:241
-#, fuzzy, kde-format
-msgid "Images Without Face tags"
-msgstr "ภาพต่าง ๆ โดยไม่มีป้ายข้อมูลกำกับ"
-
-#: core/app/filters/filtersidebarwidget.cpp:243
-#, fuzzy, kde-format
-#| msgid "Show images without a tag."
-msgid "Show images without a face tag."
-msgstr "แสดงภาพต่าง ๆ โดยไม่มีป้ายข้อมูลกำกับ"
-
-#: core/app/filters/filtersidebarwidget.cpp:246
-#, fuzzy, kde-format
-msgid "Face tags Matching Condition"
-msgstr "เงื่อนไขการเข้าคู่:"
-
-#: core/app/filters/filtersidebarwidget.cpp:268
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "People"
-msgstr "แ&ทนที่"
 
 #: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format
