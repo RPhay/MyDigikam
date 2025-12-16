@@ -23,13 +23,10 @@ namespace Digikam
 
 void FilterSideBarWidget::populateTagsView()
 {
-    QWidget* const box3 = new QWidget(d->tabWidget);
-    d->tagFilterView    = new TagFilterView(box3, d->tagFilterModel);
+    QWidget* const box3   = new QWidget(d->tabWidget);
+    d->tagFilterView      = new TagFilterView(box3, d->tagFilterModel);
     d->tagFilterView->setObjectName(QLatin1String("ItemIconViewTagFilterView"));
-/*
-    d->tagFilterView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
-    d->tagFilterView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
-*/
+
     d->tagFilterSearchBar = new SearchTextBarDb(box3, QLatin1String("ItemIconViewTagFilterSearchBar"));
     d->tagFilterSearchBar->setModel(d->tagFilterView->filteredModel(),
                                     AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
@@ -40,7 +37,7 @@ void FilterSideBarWidget::populateTagsView()
     d->withoutTagCheckBox->setWhatsThis(i18n("Show images without a tag."));
 
     d->tagOptionsBtn = new QToolButton(box3);
-    d->tagOptionsBtn->setToolTip( i18n("Tags Matching Condition"));
+    d->tagOptionsBtn->setToolTip(i18n("Tags Matching Condition"));
     d->tagOptionsBtn->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     d->tagOptionsBtn->setPopupMode(QToolButton::InstantPopup);
     d->tagOptionsBtn->setWhatsThis(i18n("Defines in which way the selected tags are combined "
