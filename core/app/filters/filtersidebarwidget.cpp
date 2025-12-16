@@ -247,8 +247,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     d->faceOptionsBtn->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     d->faceOptionsBtn->setPopupMode(QToolButton::InstantPopup);
     d->faceOptionsBtn->setWhatsThis(i18n("Defines in which way the selected tags are combined "
-                                        "to filter the images. This also includes the '%1' check box.",
-                                        notfaceTaggedTitle));
+                                         "to filter the images. This also includes the '%1' check box.",
+                                         notfaceTaggedTitle));
 
     d->faceOptionsMenu = new QMenu(d->faceOptionsBtn);
     d->faceOptionsMenu->addAction(d->tagOrCondAction);
