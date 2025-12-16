@@ -42,6 +42,9 @@ set(libdigikamgui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dragdrop/tagdragdrop.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/filtersidebarwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/filtersidebarwidget_properties.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/filtersidebarwidget_tags.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/filtersidebarwidget_faces.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/tagfilterview.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/items/delegate/digikamitemdelegate.cpp

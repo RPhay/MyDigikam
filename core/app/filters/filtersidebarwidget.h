@@ -111,6 +111,9 @@ private Q_SLOTS:
 
 private:
 
+    void populatePropertiesView();
+    void populateTagsView();
+    void populateFacesView();
     void checkFilterChanges();
 
 private:
