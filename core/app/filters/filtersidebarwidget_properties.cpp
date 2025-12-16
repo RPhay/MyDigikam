@@ -23,52 +23,53 @@ namespace Digikam
 
 void FilterSideBarWidget::populatePropertiesView()
 {
-    d->expbox     = new DExpanderBox(this);
-    d->expbox->setObjectName(QLatin1String("FilterSideBarWidget Expander"));
+    QScrollArea* const sv         = new QScrollArea(d->tabWidget);
+    sv->setFrameStyle(QFrame::NoFrame);
+    sv->setWidgetResizable(true);
 
-    // --------------------------------------------------------------------------------------------------------
+    QWidget* const propertiesView = new QWidget(sv->viewport());
+    QGridLayout* const grid       = new QGridLayout(propertiesView);
+    sv->setWidget(propertiesView);
 
-    d->textFilter = new TextFilter(d->expbox);
-    d->expbox->insertItem(Private::TEXT, d->textFilter, QIcon::fromTheme(QLatin1String("text-field")),
-                          i18n("Text Filter"), QLatin1String("TextFilter"), true);
+    // ---
 
-    // --------------------------------------------------------------------------------------------------------
+    QLabel* const textLbl = new QLabel(i18n("Text Filter:"), propertiesView);
+    d->textFilter         = new TextFilter(propertiesView);
 
-    d->mimeFilter = new MimeFilter(d->expbox);
-    d->expbox->insertItem(Private::MIME, d->mimeFilter, QIcon::fromTheme(QLatin1String("folder-open")),
-                          i18n("MIME Type Filter"), QLatin1String("TypeMimeFilter"), true);
+    // ---
 
-    // --------------------------------------------------------------------------------------------------------
+    QLabel* const mimeLbl = new QLabel(i18n("MIME Type Filter:"), propertiesView);
+    d->mimeFilter         = new MimeFilter(propertiesView);
 
-    d->geolocationFilter = new GeolocationFilter(d->expbox);
-    d->expbox->insertItem(Private::GEOLOCATION, d->geolocationFilter, QIcon::fromTheme(QLatin1String("globe")),
-                          i18n("Geolocation Filter"), QLatin1String("TypeGeolocationFilter"), true);
+    // ---
 
-    // --------------------------------------------------------------------------------------------------------
+    QLabel* const geoLbl  = new QLabel(i18n("Geolocation Filter:"), propertiesView);
+    d->geolocationFilter  = new GeolocationFilter(propertiesView);
 
-    QWidget* const box4 = new QWidget(d->expbox);
-    d->colorLabelFilter = new ColorLabelFilter(box4);
-    d->pickLabelFilter  = new PickLabelFilter(box4);
-    d->ratingFilter     = new RatingFilter(box4);
+    // ---
 
-    QGridLayout* const lay4 = new QGridLayout(box4);
-    lay4->addWidget(d->colorLabelFilter, 0, 0, 1, 3);
-    lay4->addWidget(d->pickLabelFilter,  1, 0, 1, 1);
-    lay4->addWidget(d->ratingFilter,     1, 2, 1, 1);
-    lay4->setColumnStretch(2, 1);
-    lay4->setColumnStretch(3, 10);
-    lay4->setContentsMargins(QMargins());
-    lay4->setSpacing(0);
+    QLabel* const labelsLbl = new QLabel(i18n("Labels Filter:"), propertiesView);
+    d->colorLabelFilter     = new ColorLabelFilter(propertiesView);
+    d->pickLabelFilter      = new PickLabelFilter(propertiesView);
+    d->ratingFilter         = new RatingFilter(propertiesView);
 
-    d->expbox->insertItem(Private::LABELS, box4, QIcon::fromTheme(QLatin1String("folder-favorites")),
-                          i18n("Labels Filter"), QLatin1String("LabelsFilter"), true);
+    // ---
 
-    d->expanderVlay = dynamic_cast<QVBoxLayout*>(dynamic_cast<QScrollArea*>(d->expbox)->widget()->layout());
-    d->space        = new QWidget();
-    d->expanderVlay->addWidget(d->space);
-    d->expanderVlay->setStretchFactor(d->space, 100);
+    grid->addWidget(textLbl,              0, 0, 1, 2);
+    grid->addWidget(d->textFilter,        1, 0, 1, 2);
+    grid->addWidget(mimeLbl,              2, 0, 1, 2);
+    grid->addWidget(d->mimeFilter,        3, 0, 1, 2);
+    grid->addWidget(geoLbl,               4, 0, 1, 2);
+    grid->addWidget(d->geolocationFilter, 5, 0, 1, 2);
+    grid->addWidget(labelsLbl,            6, 0, 1, 2);
+    grid->addWidget(d->colorLabelFilter,  7, 0, 1, 2, Qt::AlignRight);
+    grid->addWidget(d->pickLabelFilter,   8, 0, 1, 2, Qt::AlignRight);
+    grid->addWidget(d->ratingFilter,      9, 0, 1, 2, Qt::AlignRight);
+    grid->setRowStretch(10, 10);
+    grid->setContentsMargins(layoutSpacing(), layoutSpacing(), layoutSpacing(), layoutSpacing());
+    grid->setSpacing(layoutSpacing());
 
-    d->tabWidget->insertTab(Private::PropertiesTab, d->expbox, i18nc("@title", "Properties"));
+    d->tabWidget->insertTab(Private::PropertiesTab, sv, i18nc("@title", "Properties"));
 
     // ---
 

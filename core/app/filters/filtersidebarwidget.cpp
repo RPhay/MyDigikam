@@ -141,8 +141,6 @@ void FilterSideBarWidget::doLoadState()
 
     KConfigGroup group = getConfigGroup();
 
-    d->expbox->readSettings(group);
-
     d->textFilter->setsearchTextFields((SearchTextFilterSettings::TextFilterFields)
                                        (group.readEntry(entryName(d->configSearchTextFilterFieldsEntry),
                                                                    (int)SearchTextFilterSettings::All)));
@@ -174,8 +172,6 @@ void FilterSideBarWidget::doLoadState()
 void FilterSideBarWidget::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
-
-    d->expbox->writeSettings(group);
 
     group.writeEntry(entryName(d->configSearchTextFilterFieldsEntry), (int)d->textFilter->searchTextFields());
 

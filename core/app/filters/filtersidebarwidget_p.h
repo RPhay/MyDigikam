@@ -29,6 +29,8 @@
 #include <QToolButton>
 #include <QMenu>
 #include <QIcon>
+#include <QLabel>
+#include <QScrollArea>
 #include <QTabWidget>
 
 // KDE includes
@@ -39,7 +41,6 @@
 // Local includes
 
 #include "dlayoutbox.h"
-#include "dexpanderbox.h"
 #include "digikam_debug.h"
 #include "applicationsettings.h"
 #include "colorlabelfilter.h"
@@ -112,7 +113,6 @@ public:
     QCheckBox*                             withoutTagCheckBox                   = nullptr;
     QCheckBox*                             withoutFaceCheckBox                  = nullptr;
 
-    DExpanderBox*                          expbox                               = nullptr;
     QTabWidget*                            tabWidget                            = nullptr;
 };
 
