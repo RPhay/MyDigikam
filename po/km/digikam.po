@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -396,133 +396,147 @@ msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "កំណត់​ស្លាក '%1' ទៅ​ធាតុ"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, kde-format
 msgid "Text Filter"
 msgstr "តម្រង​អត្ថបទ"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, kde-format
 msgid "MIME Type Filter"
 msgstr "តម្រង​ប្រភេទ MIME"
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, kde-format
 msgid "Geolocation Filter"
 msgstr "តម្រង​ភូមិសាស្ត្រ"
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, kde-format
+msgid "Labels Filter"
+msgstr "តម្រង​ស្លាក"
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "លក្ខណ​សម្បត្តិ​"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Tags"
 msgstr "រូបភាព​ដែល​គ្មាន​ស្លាក"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a tag."
 msgstr "បង្ហាញ​រូបភាព​ដែល​គ្មាន​ស្លាក ។"
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr "ស្លាក​ដែល​ផ្គូផ្គង​លក្ខខណ្ឌ"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
 msgstr "កំណត់​វិធី​ស្លាក​ដែល​​បាន​ជ្រើស​ដែល​ត្រូវ​បន្សំ​ទៅ​កាន់​​តម្រង​រូបភាព ។ រួម​នឹង​ប្រអប់​ '%1' ផងដែរ ។"
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "ឬ"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "និង"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
-#, kde-format
-msgid "Tags Filter"
-msgstr "តម្រង​ស្លាក"
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@title"
+msgid "Tags"
+msgstr "ស្លាក"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, fuzzy, kde-format
 #| msgid "Images Without Tags"
 msgid "Images Without Face tags"
 msgstr "រូបភាព​ដែល​គ្មាន​ស្លាក"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "Show images without a tag."
 msgid "Show images without a face tag."
 msgstr "បង្ហាញ​រូបភាព​ដែល​គ្មាន​ស្លាក ។"
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Tags Matching Condition"
 msgid "Face tags Matching Condition"
 msgstr "ស្លាក​ដែល​ផ្គូផ្គង​លក្ខខណ្ឌ"
 
-#: core/app/filters/filtersidebarwidget.cpp:218
+#: core/app/filters/filtersidebarwidget.cpp:268
 #, fuzzy, kde-format
-#| msgid "Tags Filter"
-msgid "Face Tags Filter"
-msgstr "តម្រង​ស្លាក"
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "មនុស្ស"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, kde-format
-msgid "Labels Filter"
-msgstr "តម្រង​ស្លាក"
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format
 #| msgid "Restore Tag Filters"
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "ស្ដារ​តម្រង​ស្លាក"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, fuzzy, kde-format
 #| msgid "On"
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "បើក"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, fuzzy, kde-format
 #| msgid "Off"
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "បិទ"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, fuzzy, kde-format
 #| msgid "Tag Filter Mode"
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "របៀប​តម្រង​ស្លាក"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "មិន​អើពើ​ស្លាក​នេះ"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, fuzzy, kde-format
 #| msgid "Must Have This Tag"
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "ត្រូវតែ​មាន​ស្លាក​នេះ"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, fuzzy, kde-format
 #| msgid "Must Not Have This Tag"
 msgctxt "@action: tag filter"
@@ -563,7 +577,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr ""
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, fuzzy, kde-format
@@ -3404,7 +3418,7 @@ msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -34586,13 +34600,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "ឈ្មោះ​ឯកសារ​"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "លក្ខណ​សម្បត្តិ​"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name:"
@@ -37588,14 +37595,6 @@ msgstr "ជ្រើស​ធាតុ"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr ""
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
-msgctxt "@title"
-msgid "Tags"
-msgstr "ស្លាក"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, fuzzy, kde-format
@@ -69497,6 +69496,14 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "តម្រៀប​រូបភាព"
+
+#~ msgid "Tags Filter"
+#~ msgstr "តម្រង​ស្លាក"
+
+#, fuzzy
+#~| msgid "Tags Filter"
+#~ msgid "Face Tags Filter"
+#~ msgstr "តម្រង​ស្លាក"
 
 #, fuzzy
 #~| msgid "total"

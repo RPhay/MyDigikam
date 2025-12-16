@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -406,38 +406,51 @@ msgstr[0] "Dodijeli oznaku(e) za '%1' stavku(e)"
 msgstr[1] "Dodijeli oznaku(e) za '%1' stavku(e)"
 msgstr[2] "Dodijeli oznaku(e) za '%1' stavku(e)"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, kde-format
 msgid "Text Filter"
 msgstr "Filter teksta"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, kde-format
 msgid "MIME Type Filter"
 msgstr "MIME tip filtera"
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, kde-format
 msgid "Geolocation Filter"
 msgstr "Geolokacijski filter"
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, kde-format
+msgid "Labels Filter"
+msgstr "Filter za naljepnice"
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "Svojstva"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Tags"
 msgstr "Slike bez oznaka"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a tag."
 msgstr "Prikaži slike bez oznake."
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr "Stanje podudaranja oznaka"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -446,95 +459,96 @@ msgstr ""
 "Definiše na koij način su selektirane oznake kombinirane za pročišćavanje "
 "slika. To također uključuje  i  '%1'  potvrdni okvir."
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "ILI"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "I"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
-#, kde-format
-msgid "Tags Filter"
-msgstr "Filter za oznake"
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@title"
+msgid "Tags"
+msgstr "Oznake"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, fuzzy, kde-format
 #| msgid "Images Without Tags"
 msgid "Images Without Face tags"
 msgstr "Slike bez oznaka"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "Show images without a tag."
 msgid "Show images without a face tag."
 msgstr "Prikaži slike bez oznake."
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Tags Matching Condition"
 msgid "Face tags Matching Condition"
 msgstr "Stanje podudaranja oznaka"
 
-#: core/app/filters/filtersidebarwidget.cpp:218
+#: core/app/filters/filtersidebarwidget.cpp:268
 #, fuzzy, kde-format
-#| msgid "Tags Filter"
-msgid "Face Tags Filter"
-msgstr "Filter za oznake"
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Osobe"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, kde-format
-msgid "Labels Filter"
-msgstr "Filter za naljepnice"
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format
 #| msgid "Restore Tag Filters"
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "Uništi filtere oznake"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, fuzzy, kde-format
 #| msgid "On"
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "Uključeno"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, fuzzy, kde-format
 #| msgid "Off"
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "Isključeno"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, fuzzy, kde-format
 #| msgid "Tag Filter Mode"
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "Označi filter način"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "Ignoriraj ovu oznaku"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, fuzzy, kde-format
 #| msgid "Must Have This Tag"
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "Mora imati ovu oznaku"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, fuzzy, kde-format
 #| msgid "Must Not Have This Tag"
 msgctxt "@action: tag filter"
@@ -578,7 +592,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr "Grupa je zatvorena."
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, kde-format
@@ -3522,7 +3536,7 @@ msgstr[0] "%1 stavka"
 msgstr[1] "%1 stavke"
 msgstr[2] "%1 stavki"
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -36559,13 +36573,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Datoteka"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "Svojstva"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
@@ -39700,14 +39707,6 @@ msgstr "Odaberi stavku"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "Parket"
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
-msgctxt "@title"
-msgid "Tags"
-msgstr "Oznake"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, fuzzy, kde-format
@@ -73961,6 +73960,14 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#~ msgid "Tags Filter"
+#~ msgstr "Filter za oznake"
+
+#, fuzzy
+#~| msgid "Tags Filter"
+#~ msgid "Face Tags Filter"
+#~ msgstr "Filter za oznake"
 
 #, fuzzy
 #~| msgid "Count: "

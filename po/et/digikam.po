@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -379,38 +379,51 @@ msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Omista silt '%1' elementidele"
 msgstr[1] "Omista silt '%1' elementidele"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, kde-format
 msgid "Text Filter"
 msgstr "Tekstifilter"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, kde-format
 msgid "MIME Type Filter"
 msgstr "MIME tüübi filter"
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, kde-format
 msgid "Geolocation Filter"
 msgstr "Geolokatsiooni filter"
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, kde-format
+msgid "Labels Filter"
+msgstr "Pealdisefilter"
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "Omadused"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Tags"
 msgstr "Siltideta pildid"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a tag."
 msgstr "Siltideta piltide näitamine"
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr "Siltide sobivuse tingimus"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -419,91 +432,93 @@ msgstr ""
 "Määrab, mil moel kombineeritakse valitud silte piltide filtreerimiseks. "
 "Kaasatakse ka märkekast \"%1\"."
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "VÕI"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "JA"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
-#, kde-format
-msgid "Tags Filter"
-msgstr "Sildifilter"
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@title"
+msgid "Tags"
+msgstr "Sildid"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, kde-format
 msgid "Images Without Face tags"
 msgstr "Pildid ilma näosildita"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, kde-format
 msgid "Show images without a face tag."
 msgstr "Näosildita piltide näitamine"
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, kde-format
 msgid "Face tags Matching Condition"
 msgstr "Näosiltide sobivuse tingimus"
 
-#: core/app/filters/filtersidebarwidget.cpp:218
-#, kde-format
-msgid "Face Tags Filter"
-msgstr "Näosiltide filter"
+#: core/app/filters/filtersidebarwidget.cpp:268
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Inimesed"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, kde-format
-msgid "Labels Filter"
-msgstr "Pealdisefilter"
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format
 #| msgid "Restore Tag Filters"
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "Taasta sildifiltrid"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, fuzzy, kde-format
 #| msgid "On"
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "Sees"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, fuzzy, kde-format
 #| msgid "Off"
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "Väljas"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, fuzzy, kde-format
 #| msgid "Tag Filter Mode"
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "Sildifiltri režiim"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "Selle sildi eiramine"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, fuzzy, kde-format
 #| msgid "Must Have This Tag"
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "Peab olema selle sildiga"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, fuzzy, kde-format
 #| msgid "Must Not Have This Tag"
 msgctxt "@action: tag filter"
@@ -545,7 +560,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr "Rühm on suletud."
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, kde-format
@@ -3436,7 +3451,7 @@ msgid_plural "%1 items"
 msgstr[0] "1 element"
 msgstr[1] "%1 elementi"
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -36575,13 +36590,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Failide kopeerimine"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "Omadused"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
@@ -39774,14 +39782,6 @@ msgstr "Valitud sisendid"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "Suhteline"
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
-msgctxt "@title"
-msgid "Tags"
-msgstr "Sildid"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, fuzzy, kde-format
@@ -73816,6 +73816,12 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#~ msgid "Tags Filter"
+#~ msgstr "Sildifilter"
+
+#~ msgid "Face Tags Filter"
+#~ msgstr "Näosiltide filter"
 
 #~ msgid "Total Count: "
 #~ msgstr "Koguarv:Arv: "

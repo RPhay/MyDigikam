@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
 "PO-Revision-Date: 2025-12-04 08:56+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -349,38 +349,50 @@ msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Úthluta merkinu '%2' á atriði"
 msgstr[1] "Úthluta merkjunum '%2' á atriði"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, kde-format
 msgid "Text Filter"
 msgstr "Textasía"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, kde-format
 msgid "MIME Type Filter"
 msgstr "Síun MIME-tegunda"
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, kde-format
 msgid "Geolocation Filter"
 msgstr "Hnattstaðsetningarsía"
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, kde-format
+msgid "Labels Filter"
+msgstr "Síun merkinga"
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, kde-format
+msgctxt "@title"
+msgid "Properties"
+msgstr "Eiginleikar"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Tags"
 msgstr "Myndir án merkja"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a tag."
 msgstr "Sýna myndir án merkja."
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr "Merki sem uppfylla skilyrði"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -389,85 +401,86 @@ msgstr ""
 "Skilgreinir hvernig valin merki eru notuð saman við að sía myndirnar. Þar er "
 "með talinn '%1' gátreiturinn."
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "EÐA"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "OG"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, kde-format
-msgid "Tags Filter"
-msgstr "Sía merki"
+msgctxt "@title"
+msgid "Tags"
+msgstr "Merki"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, kde-format
 msgid "Images Without Face tags"
 msgstr "Myndir án andlitsmerkja"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, kde-format
 msgid "Show images without a face tag."
 msgstr "Sýna myndir án andlitsmerkja."
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, kde-format
 msgid "Face tags Matching Condition"
 msgstr "Andlitsmerki sem uppfylla skilyrði"
 
-#: core/app/filters/filtersidebarwidget.cpp:218
-#, kde-format
-msgid "Face Tags Filter"
-msgstr "Sía andlitsmerki"
+#: core/app/filters/filtersidebarwidget.cpp:268
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Fólk"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, kde-format
-msgid "Labels Filter"
-msgstr "Síun merkinga"
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "Endurheimta merkjasíur"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "Á"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "Af"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "Merkjasíunarhamur"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "Hunsa þetta merki"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "Verður að hafa þetta merki"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
@@ -504,7 +517,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr "Hópur er lokaður."
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, kde-format
@@ -3160,7 +3173,7 @@ msgid_plural "%1 items"
 msgstr[0] "1 hlutur"
 msgstr[1] "%1 hlutir"
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -34095,12 +34108,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Hópur skráar"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, kde-format
-msgctxt "@title"
-msgid "Properties"
-msgstr "Eiginleikar"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, kde-format
 msgctxt "@title: Dplugin property"
@@ -37019,13 +37026,6 @@ msgstr "Valið með virkni"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "Óvirkt"
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, kde-format
-msgctxt "@title"
-msgid "Tags"
-msgstr "Merki"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, kde-format
@@ -68297,6 +68297,12 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgid "Tags Filter"
+#~ msgstr "Sía merki"
+
+#~ msgid "Face Tags Filter"
+#~ msgstr "Sía andlitsmerki"
 
 #~ msgid "Total Count: "
 #~ msgstr "Heildarfjöldi: "

@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
-"PO-Revision-Date: 2025-12-12 07:17-0300\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
+"PO-Revision-Date: 2025-12-15 06:21-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -336,38 +336,50 @@ msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Atribuir a etiqueta '%2' aos itens"
 msgstr[1] "Atribuir a(s) etiqueta(s) '%2' aos itens"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, kde-format
 msgid "Text Filter"
 msgstr "Filtro de texto"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, kde-format
 msgid "MIME Type Filter"
 msgstr "Filtro de tipos MIME"
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, kde-format
 msgid "Geolocation Filter"
 msgstr "Filtro de geolocalização"
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, kde-format
+msgid "Labels Filter"
+msgstr "Filtro de rótulos"
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, kde-format
+msgctxt "@title"
+msgid "Properties"
+msgstr "Propriedades"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Tags"
 msgstr "Imagens sem etiquetas"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a tag."
 msgstr "Exibir imagens sem etiquetas."
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr "Etiquetas correspondentes à condição"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -376,85 +388,86 @@ msgstr ""
 "Define a forma como as etiquetas selecionadas serão combinadas para filtrar "
 "as imagens. Isto também inclui a opção '%1'."
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "OU"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "E"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, kde-format
-msgid "Tags Filter"
-msgstr "Filtro de etiquetas"
+msgctxt "@title"
+msgid "Tags"
+msgstr "Etiquetas"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, kde-format
 msgid "Images Without Face tags"
 msgstr "Imagens sem etiquetas de rosto"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, kde-format
 msgid "Show images without a face tag."
 msgstr "Mostrar imagens sem etiquetas de rosto."
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, kde-format
 msgid "Face tags Matching Condition"
 msgstr "Condição de correspondência das etiquetas de rosto"
 
-#: core/app/filters/filtersidebarwidget.cpp:218
-#, kde-format
-msgid "Face Tags Filter"
-msgstr "Filtro de etiquetas de rosto"
+#: core/app/filters/filtersidebarwidget.cpp:268
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Pessoas"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, kde-format
-msgid "Labels Filter"
-msgstr "Filtro de rótulos"
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "Restaurar os filtros de etiqueta"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "Ligado"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "Desligado"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "Modo dos filtros de etiquetas"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "Ignorar esta etiqueta"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "Deve conter esta etiqueta"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
@@ -491,7 +504,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr "O grupo está fechado."
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, kde-format
@@ -2868,8 +2881,7 @@ msgstr "Mostrar em tela cheia"
 
 #: core/app/views/preview/itempreviewview.cpp:508
 #: core/app/views/stack/itemiconview_views.cpp:313
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Rostos"
@@ -3155,7 +3167,7 @@ msgid_plural "%1 items"
 msgstr[0] "1 item"
 msgstr[1] "%1 itens"
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -34437,12 +34449,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Grupo do arquivo"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, kde-format
-msgctxt "@title"
-msgid "Properties"
-msgstr "Propriedades"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, kde-format
 msgctxt "@title: Dplugin property"
@@ -37373,13 +37379,6 @@ msgstr "Selecionado no foco"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "Inativo"
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, kde-format
-msgctxt "@title"
-msgid "Tags"
-msgstr "Etiquetas"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, kde-format
@@ -68821,6 +68820,12 @@ msgstr "Álbuns"
 #, kde-format
 msgid "Import Items"
 msgstr "Itens importados"
+
+#~ msgid "Tags Filter"
+#~ msgstr "Filtro de etiquetas"
+
+#~ msgid "Face Tags Filter"
+#~ msgstr "Filtro de etiquetas de rosto"
 
 #~ msgid "Total Count: "
 #~ msgstr "Quantidade total: "

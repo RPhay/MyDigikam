@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -343,123 +343,136 @@ msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "टैग '%1' इन वस्तुओं पर आबंटित करें"
 msgstr[1] "टैग '%1' इन वस्तुओं पर आबंटित करें"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, fuzzy, kde-format
 msgid "Text Filter"
 msgstr "टैग फ़िल्टर्स"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, fuzzy, kde-format
 msgid "MIME Type Filter"
 msgstr "रेड आई..."
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, fuzzy, kde-format
 msgid "Geolocation Filter"
 msgstr "टैग फ़िल्टर्स"
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, fuzzy, kde-format
+msgid "Labels Filter"
+msgstr "टैग फ़िल्टर्स"
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "गुण"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, fuzzy, kde-format
 msgid "Images Without Tags"
 msgstr "%1 में चित्र मिले"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, fuzzy, kde-format
 msgid "Show images without a tag."
 msgstr "कैमरा तारीख दिखाएँ"
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, fuzzy, kde-format
 msgid "Tags Matching Condition"
 msgstr "मिलान मापदण्ड"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "या"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "और"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, fuzzy, kde-format
-msgid "Tags Filter"
-msgstr "टैग फ़िल्टर्स"
+#| msgid "Tags"
+msgctxt "@title"
+msgid "Tags"
+msgstr "टैग्स"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, fuzzy, kde-format
 msgid "Images Without Face tags"
 msgstr "%1 में चित्र मिले"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, fuzzy, kde-format
 msgid "Show images without a face tag."
 msgstr "कैमरा तारीख दिखाएँ"
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, fuzzy, kde-format
 msgid "Face tags Matching Condition"
 msgstr "मिलान मापदण्ड"
 
-#: core/app/filters/filtersidebarwidget.cpp:218
+#: core/app/filters/filtersidebarwidget.cpp:268
 #, fuzzy, kde-format
-msgid "Face Tags Filter"
-msgstr "टैग फ़िल्टर्स"
+msgctxt "@title"
+msgid "People"
+msgstr "बदलें (&R)"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, fuzzy, kde-format
-msgid "Labels Filter"
-msgstr "टैग फ़िल्टर्स"
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "टैग फ़िल्टर्स"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "चालू"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "बंद"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "टैग फ़िल्टर्स"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "यह टैग आबंटित करें"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "यह टैग मिटाएँ"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
@@ -497,7 +510,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr ""
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, fuzzy, kde-format
@@ -3169,7 +3182,7 @@ msgid_plural "%1 items"
 msgstr[0] "16 बिट्स"
 msgstr[1] "16 बिट्स"
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -32925,13 +32938,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "फ़ाइल (&F)"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "गुण"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
@@ -35861,14 +35867,6 @@ msgstr "छवियाँ सहेजें"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "सजावटी परक्वेट"
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
-msgctxt "@title"
-msgid "Tags"
-msgstr "टैग्स"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, fuzzy, kde-format
@@ -66857,6 +66855,14 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवियाँ छांटें (&S)"
+
+#, fuzzy
+#~ msgid "Tags Filter"
+#~ msgstr "टैग फ़िल्टर्स"
+
+#, fuzzy
+#~ msgid "Face Tags Filter"
+#~ msgstr "टैग फ़िल्टर्स"
 
 #, fuzzy
 #~ msgid "Total Count: "

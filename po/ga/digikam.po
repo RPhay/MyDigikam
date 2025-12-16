@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -396,132 +396,146 @@ msgstr[2] "Cuir '%1' ar &Gach Mír"
 msgstr[3] "Cuir '%1' ar &Gach Mír"
 msgstr[4] "Cuir '%1' ar &Gach Mír"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, kde-format
 msgid "Text Filter"
 msgstr "Scagaire Téacs"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, kde-format
 msgid "MIME Type Filter"
 msgstr "Scagaire Cineáil MIME"
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, kde-format
 msgid "Geolocation Filter"
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, kde-format
+msgid "Labels Filter"
+msgstr ""
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "Airíonna"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Tags"
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a tag."
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "NÓ"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "AGUS"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
-#, kde-format
-msgid "Tags Filter"
-msgstr "Scagaire Clibeanna"
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@title"
+msgid "Tags"
+msgstr "Clibeanna"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, fuzzy, kde-format
 #| msgid "Queue Settings"
 msgid "Images Without Face tags"
 msgstr "Socruithe an Chiú"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "New image width, as a percentage (%)."
 msgid "Show images without a face tag."
 msgstr "Leithead nua na híomhá, mar chéatadán (%)."
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, kde-format
 msgid "Face tags Matching Condition"
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:218
+#: core/app/filters/filtersidebarwidget.cpp:268
 #, fuzzy, kde-format
-#| msgid "Tags Filter"
-msgid "Face Tags Filter"
-msgstr "Scagaire Clibeanna"
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Daoine"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, kde-format
-msgid "Labels Filter"
-msgstr ""
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format
 #| msgid "Restore Tag Filters"
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "Athchóirigh na Scagairí Clibe"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, fuzzy, kde-format
 #| msgid "On"
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "Ann"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, fuzzy, kde-format
 #| msgid "Off"
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "As"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, fuzzy, kde-format
 #| msgid "Tags Filter"
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "Scagaire Clibeanna"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "Déan Neamhaird den Chlib Seo"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "Déan Neamhaird den Chlib Seo"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
@@ -563,7 +577,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr ""
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, kde-format
@@ -3429,7 +3443,7 @@ msgstr[2] "%1 mhír"
 msgstr[3] "%1 mír"
 msgstr[4] "%1 mír"
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -34480,13 +34494,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Comhad"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "Airíonna"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
@@ -37572,14 +37579,6 @@ msgstr "Roghnaigh Mír"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "Páipéar Maisiúil"
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
-msgctxt "@title"
-msgid "Tags"
-msgstr "Clibeanna"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, fuzzy, kde-format
@@ -70441,6 +70440,14 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#~ msgid "Tags Filter"
+#~ msgstr "Scagaire Clibeanna"
+
+#, fuzzy
+#~| msgid "Tags Filter"
+#~ msgid "Face Tags Filter"
+#~ msgstr "Scagaire Clibeanna"
 
 #, fuzzy
 #~| msgid "Count: "

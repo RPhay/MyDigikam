@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
 "PO-Revision-Date: 2025-10-19 01:27+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -367,38 +367,51 @@ msgstr[0] "Atribuie marcajul „%1” la elemente"
 msgstr[1] "Atribuie marcajul „%1” la elemente"
 msgstr[2] "Atribuie marcajul „%1” la elemente"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, fuzzy, kde-format
 msgid "Text Filter"
 msgstr "Filtre de etichetă"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, fuzzy, kde-format
 msgid "MIME Type Filter"
 msgstr "Ochi roșii"
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, fuzzy, kde-format
 msgid "Geolocation Filter"
 msgstr "Restaurează filtrele de etichetă"
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, fuzzy, kde-format
+msgid "Labels Filter"
+msgstr "Filtre de obiective"
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "Proprietăți"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Tags"
 msgstr "Imagini fără etichete"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a tag."
 msgstr "Afișează imaginile fără etichetă."
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, fuzzy, kde-format
 msgid "Tags Matching Condition"
 msgstr "Condiția de potrivire:"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -407,93 +420,95 @@ msgstr ""
 "Definește felul în care etichetele selectate sunt combinate pentru a filtra "
 "imaginile. Acesta include și căsuța de bifat „%1”."
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "SAU"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "ȘI"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
 #, fuzzy, kde-format
-msgid "Tags Filter"
-msgstr "Filtre de etichetă"
+#| msgid "Tags"
+msgctxt "@title"
+msgid "Tags"
+msgstr "Marcaje"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, fuzzy, kde-format
 #| msgid "Images Without Tags"
 msgid "Images Without Face tags"
 msgstr "Imagini fără etichete"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "Show images without a tag."
 msgid "Show images without a face tag."
 msgstr "Afișează imaginile fără etichetă."
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, fuzzy, kde-format
 msgid "Face tags Matching Condition"
 msgstr "Condiția de potrivire:"
 
-#: core/app/filters/filtersidebarwidget.cpp:218
+#: core/app/filters/filtersidebarwidget.cpp:268
 #, fuzzy, kde-format
-msgid "Face Tags Filter"
-msgstr "Filtre de etichetă"
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Oameni"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, fuzzy, kde-format
-msgid "Labels Filter"
-msgstr "Filtre de obiective"
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, fuzzy, kde-format
 #| msgid "Restore Tag Filters"
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "Restaurează filtrele de etichetă"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, fuzzy, kde-format
 #| msgid "On"
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "Pornit"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, fuzzy, kde-format
 #| msgid "Off"
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "Oprit"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, fuzzy, kde-format
 #| msgid "Tag Filter Mode"
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "Regimul filtrului de etichete"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "Ignoră această etichetă"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, fuzzy, kde-format
 #| msgid "Must Have This Tag"
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "Trebuie să aibă această etichetă"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, fuzzy, kde-format
 #| msgid "Must Not Have This Tag"
 msgctxt "@action: tag filter"
@@ -533,7 +548,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr ""
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, fuzzy, kde-format
@@ -3374,7 +3389,7 @@ msgstr[0] "1 element"
 msgstr[1] "%1 elemente"
 msgstr[2] "%1 de elemente"
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "Filters as in Search type Filters"
@@ -34179,13 +34194,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Fișier"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "Proprietăți"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
@@ -37187,14 +37195,6 @@ msgstr "Selectează elementul"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "Parchet decorativ"
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
-msgctxt "@title"
-msgid "Tags"
-msgstr "Marcaje"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, fuzzy, kde-format
@@ -69115,6 +69115,14 @@ msgstr "Elementele albumului"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Sortează imaginile"
+
+#, fuzzy
+#~ msgid "Tags Filter"
+#~ msgstr "Filtre de etichetă"
+
+#, fuzzy
+#~ msgid "Face Tags Filter"
+#~ msgstr "Filtre de etichetă"
 
 #, fuzzy
 #~| msgid "Count: "

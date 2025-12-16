@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:40+0000\n"
+"POT-Creation-Date: 2025-12-16 06:49+0000\n"
 "PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -358,38 +358,51 @@ msgid_plural "Assign Tag(s) '%2' to Items"
 msgstr[0] "Esleitu '%1' etiketa elementuei"
 msgstr[1] "Esleitu '%1' etiketa elementuei"
 
-#: core/app/filters/filtersidebarwidget.cpp:112
+#: core/app/filters/filtersidebarwidget.cpp:136
 #, kde-format
 msgid "Text Filter"
 msgstr "Testu iragazkia"
 
-#: core/app/filters/filtersidebarwidget.cpp:118
+#: core/app/filters/filtersidebarwidget.cpp:142
 #, kde-format
 msgid "MIME Type Filter"
 msgstr "MIME mota iragazkia"
 
-#: core/app/filters/filtersidebarwidget.cpp:124
+#: core/app/filters/filtersidebarwidget.cpp:148
 #, kde-format
 msgid "Geolocation Filter"
 msgstr "Geokokapen iragazkia"
 
-#: core/app/filters/filtersidebarwidget.cpp:141
+#: core/app/filters/filtersidebarwidget.cpp:167
+#, kde-format
+msgid "Labels Filter"
+msgstr "Etiketen iragazkia"
+
+#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@title"
+msgid "Properties"
+msgstr "Propietateak"
+
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Tags"
 msgstr "Etiketarik gabeko irudiak"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a tag."
 msgstr "Erakutsi etiketarik gabeko irudiak."
 
-#: core/app/filters/filtersidebarwidget.cpp:146
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr "Etiketak bat etortzeko baldintza"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
 #: core/app/filters/filtersidebarwidget.cpp:199
+#: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -398,85 +411,87 @@ msgstr ""
 "Hautatutako etiketak irudiak iragazteko zein eratan konbinatzen diren "
 "definitzen du. Honek '%1' kontrol-laukia barnean hartzen du."
 
-#: core/app/filters/filtersidebarwidget.cpp:156
+#: core/app/filters/filtersidebarwidget.cpp:206
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "EDO"
 
-#: core/app/filters/filtersidebarwidget.cpp:159
+#: core/app/filters/filtersidebarwidget.cpp:209
 #: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "ETA"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
-#, kde-format
-msgid "Tags Filter"
-msgstr "Etiketen iragazkia"
+#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/libs/models/albummodel_tag.cpp:25
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@title"
+msgid "Tags"
+msgstr "Etiketak"
 
-#: core/app/filters/filtersidebarwidget.cpp:191
+#: core/app/filters/filtersidebarwidget.cpp:241
 #, kde-format
 msgid "Images Without Face tags"
 msgstr "Aurpegi etiketarik gabeko irudiak"
 
-#: core/app/filters/filtersidebarwidget.cpp:193
+#: core/app/filters/filtersidebarwidget.cpp:243
 #, kde-format
 msgid "Show images without a face tag."
 msgstr "Erakutsi aurpegi etiketarik gabeko irudiak."
 
-#: core/app/filters/filtersidebarwidget.cpp:196
+#: core/app/filters/filtersidebarwidget.cpp:246
 #, kde-format
 msgid "Face tags Matching Condition"
 msgstr "Aurpegi etiketak bat etortzeko baldintza"
 
-#: core/app/filters/filtersidebarwidget.cpp:218
-#, kde-format
-msgid "Face Tags Filter"
-msgstr "Aurpegi etiketen iragazkia"
+#: core/app/filters/filtersidebarwidget.cpp:268
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@title"
+msgid "People"
+msgstr "Jendartea"
 
-#: core/app/filters/filtersidebarwidget.cpp:236
-#, kde-format
-msgid "Labels Filter"
-msgstr "Etiketen iragazkia"
-
-#: core/app/filters/tagfilterview.cpp:62
+#: core/app/filters/tagfilterview.cpp:64
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "Leheneratu etiketen iragazkiak"
 
-#: core/app/filters/tagfilterview.cpp:63
+#: core/app/filters/tagfilterview.cpp:65
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "Piztuta"
 
-#: core/app/filters/tagfilterview.cpp:64
+#: core/app/filters/tagfilterview.cpp:66
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "Itzalita"
 
-#: core/app/filters/tagfilterview.cpp:66
+#: core/app/filters/tagfilterview.cpp:68
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "Etiketen iragazte-modua"
 
-#: core/app/filters/tagfilterview.cpp:67
+#: core/app/filters/tagfilterview.cpp:69
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "Ezikusi etiketa hau"
 
-#: core/app/filters/tagfilterview.cpp:68
+#: core/app/filters/tagfilterview.cpp:70
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "Etiketa hau izan behar du"
 
-#: core/app/filters/tagfilterview.cpp:69
+#: core/app/filters/tagfilterview.cpp:71
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
@@ -513,7 +528,7 @@ msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr "Taldea itxita dago."
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:100
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, kde-format
@@ -3187,7 +3202,7 @@ msgid_plural "%1 items"
 msgstr[0] "Elementu 1"
 msgstr[1] "%1 elementu"
 
-#: core/app/views/stack/itemiconview.cpp:200
+#: core/app/views/stack/itemiconview.cpp:202
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
@@ -35023,13 +35038,6 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Fitxategia"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
-msgctxt "@title"
-msgid "Properties"
-msgstr "Propietateak"
-
 #: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
@@ -38099,14 +38107,6 @@ msgstr "Fokuan hautatua"
 msgctxt "Focus point type description"
 msgid "Inactive"
 msgstr "Inaktiboa"
-
-#: core/libs/models/albummodel_tag.cpp:25
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
-msgctxt "@title"
-msgid "Tags"
-msgstr "Etiketak"
 
 #: core/libs/models/albummodel_tag.cpp:54
 #, kde-format
@@ -70306,6 +70306,12 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#~ msgid "Tags Filter"
+#~ msgstr "Etiketen iragazkia"
+
+#~ msgid "Face Tags Filter"
+#~ msgstr "Aurpegi etiketen iragazkia"
 
 #, fuzzy
 #~| msgid "Count: "
