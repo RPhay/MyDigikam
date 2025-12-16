@@ -44,6 +44,7 @@ Image Properties: If no icon-view item selected, show current album statistics.
 Grouped Items   : Show items from an open group highlighted for a better usability.
 Grouped Items   : Usability improvements of the grouped icon-view items overlay.
 Filter Items    : Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.
+Trash View      : load and save column states between sessions.
 Preview         : Extend Toolbar overlay with Labels editor.
 Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
 Advanced Rename : New modifier "Date Format".
@@ -296,7 +297,7 @@ BUGFIXES:
 237 --> 510980 - Ghost albums appear when searching through Tags view.
 238 --> 373345 - After return from preview view the album view scrolls the selected image to the top.
 239 --> 452184 - Empty Folders.
-240 --> 
+240 --> 385821 - Change columns width in Trash.
 241 --> 
 242 --> 
 243 --> 

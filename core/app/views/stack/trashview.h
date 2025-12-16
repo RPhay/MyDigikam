@@ -14,6 +14,10 @@
 
 #pragma once
 
+// Local includes
+
+#include "statesavingobject.h"
+
 // Qt includes
 
 #include <QWidget>
@@ -25,7 +29,8 @@ namespace Digikam
 class DTrashItemModel;
 class ThumbnailSize;
 
-class TrashView : public QWidget
+class TrashView : public QWidget,
+                  public StateSavingObject
 {
     Q_OBJECT
 
@@ -64,6 +69,11 @@ public:
      * @return text for the main status bar
      */
     QString statusBarText()             const;
+
+protected:
+
+    void doLoadState()                        override;
+    void doSaveState()                        override;
 
 private Q_SLOTS:
 
