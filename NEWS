@@ -298,7 +298,7 @@ BUGFIXES:
 238 --> 373345 - After return from preview view the album view scrolls the selected image to the top.
 239 --> 452184 - Empty Folders.
 240 --> 385821 - Change columns width in Trash.
-241 --> 
+241 --> 128915 - Calling scripts from contextual menu/toolbar.
 242 --> 
 243 --> 
 244 --> 
