@@ -172,9 +172,9 @@ BUGFIXES:
 112 --> 426664 - Cannot tell different between an opened or closed group of images.
 113 --> 509239 - Setup wizard will not select network drive for photos source.
 114 --> 441643 - Moving grouped pictures to an album changes file extension to lowercase => tagging etc. is lost.
-115 --> 508403 - Rev released 8.8.0 doesnt start.
+115 --> 508403 - Rev released 8.8.0 doesn't start.
 116 --> 472203 - UI improvements.
-117 --> 513240 - Build failed on core/libs/properties/itemsgroupedviewtoolbar.cpp with QT5 compatibilty error.
+117 --> 513240 - Build failed on core/libs/properties/itemsgroupedviewtoolbar.cpp with QT5 compatibility error.
 118 --> 490524 - BQM custom scripts stopped working after upgrading OS.
 119 --> 501485 - Feature request, change the view menu.
 120 --> 336593 - Add overlay to show file type mime over canvas.
@@ -190,7 +190,7 @@ BUGFIXES:
 130 --> 091484 - Album view not updated after images are modified in the image viewer.
 131 --> 110178 - Ease selecting of pictures, i.e. make space around images select them and only a click on an image open it.
 132 --> 121315 - Allow to display exif info under thumbnails in Digikam main window.
-133 --> 112971 - After rotating an image, the first image in the folder get's the keyboard focus.
+133 --> 112971 - After rotating an image, the first image in the folder gets the keyboard focus.
 134 --> 142774 - Moving pictures between albums.
 135 --> 101630 - digiKam ui problem selecting images.
 136 --> 145253 - Disable edit metadata menu when image is read-only.
@@ -272,7 +272,7 @@ BUGFIXES:
 212 --> 165345 - Selecting images from bottom right to top left does not work.
 213 --> 165342 - Crash when changing album sort modus.
 214 --> 162206 - Case sensitivity in the text quick filter.
-215 --> 161304 - Status bar info cleared after rating assigment.
+215 --> 161304 - Status bar info cleared after rating assignment.
 216 --> 158868 - Non natural album sorting.
 217 --> 158795 - Should be obvious if a tag filter is in use.
 218 --> 154964 - Browse album one image in largest possible zoom.
@@ -286,18 +286,18 @@ BUGFIXES:
 226 --> 135300 - Mark photos for batch processing.
 227 --> 132312 - Filter and show untagged photos.
 228 --> 126117 - Changing album category should ask for subdirectory.
-229 --> 124410 - Make it possible to launch gimp/gqview/whatever with doubleclick.
+229 --> 124410 - Make it possible to launch gimp/gqview/whatever with double-click.
 230 --> 121315 - Allow to display exif info under thumbnails in digiKam main window.
 231 --> 113803 - Can an imported Album have the same "Collection" field as its parent album?
-232 --> 112971 - After rotating an image, the first image in the folder get's the keyboard focus.
-233 --> 111595 - AND instead of OR in tag filters (option to switch between the 2).
-234 --> 179850 - Show sorting of albums/tags in left panel.
-235 --> 512082 - Drag to Change Size of Vertical Spacing in Right Sidebar for different components.
-236 --> 512925 - Can't load file after rotation (except in album view).
-237 --> 510980 - Ghost albums appear when searching through Tags view.
-238 --> 373345 - After return from preview view the album view scrolls the selected image to the top.
-239 --> 452184 - Empty Folders.
-240 --> 385821 - Change columns width in Trash.
+232 --> 111595 - AND instead of OR in tag filters (option to switch between the 2).
+233 --> 179850 - Show sorting of albums/tags in left panel.
+234 --> 512082 - Drag to Change Size of Vertical Spacing in Right Sidebar for different components.
+235 --> 512925 - Can't load file after rotation (except in album view).
+236 --> 510980 - Ghost albums appear when searching through Tags view.
+237 --> 373345 - After return from preview view the album view scrolls the selected image to the top.
+238 --> 452184 - Empty Folders.
+239 --> 385821 - Change columns width in Trash.
+240 -->
 241 --> 
 242 --> 
 243 --> 
