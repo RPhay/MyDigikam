@@ -162,11 +162,9 @@ void ColorLabelWidget::setDescriptionBoxVisible(bool b)
         {
             ColorLabel label = (ColorLabel)(d->colorBtns->id(btn));
 
-qDebug() << "ColorLabelWidget app=" << app;
             if (app)
             {
                 QAction* const ac = app->actionCollection()->action(QString::fromLatin1("colorshortcut-%1").arg(label));
-qDebug() << "ColorLabelWidget action=" << ac;
 
                 if (ac)
                 {
