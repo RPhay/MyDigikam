@@ -85,9 +85,6 @@ public:
     const QString                          configLastShowWithoutFaceEntry       = QLatin1String("Show Without Face");
     const QString                          configMatchingConditionEntry         = QLatin1String("Matching Condition");
 
-    QWidget*                               space                                = nullptr;
-    QVBoxLayout*                           expanderVlay                         = nullptr;
-
     TagFilterView*                         tagFilterView                        = nullptr;
     SearchTextBarDb*                       tagFilterSearchBar                   = nullptr;
     QToolButton*                           tagOptionsBtn                        = nullptr;
