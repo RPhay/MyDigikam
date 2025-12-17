@@ -54,7 +54,9 @@ QStringList ColumnDigikamProperties::getSubColumns()
             << QLatin1String("digikam-colorlabel")
             << QLatin1String("digikam-title")
             << QLatin1String("digikam-caption")
-            << QLatin1String("digikam-tags");
+            << QLatin1String("digikam-tags")
+            << QLatin1String("digikam-grouped")
+            << QLatin1String("digikam-versioned");
 
     return columns;
 }
@@ -77,6 +79,8 @@ TableViewColumnDescription ColumnDigikamProperties::getDescription()
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-caption"),    i18nc("@title: tableview", "Caption")));
 
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-tags"),       i18nc("@title: tableview", "Tags")).setIcon(QLatin1String("tag")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-grouped"),    i18nc("@title: grouped",   "Grouped")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-versioned"),  i18nc("@title: versioned", "Versioned")));
 
     return description;
 }
@@ -113,6 +117,16 @@ QString ColumnDigikamProperties::getTitle() const
         case SubColumnTags:
         {
             return i18nc("@info: tableview", "Tags");
+        }
+
+        case SubColumnGrouped:
+        {
+            return i18nc("@info: tableview", "Grouped");
+        }
+
+        case SubColumnVersioned:
+        {
+            return i18nc("@info: tableview", "Versioned");
         }
     }
 
@@ -215,7 +229,7 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
 
             case SubColumnColorLabel:
             {
-                const ItemInfo info        = s->tableViewModel->infoFromItem(item);
+                const ItemInfo info         = s->tableViewModel->infoFromItem(item);
                 const ColorLabel colorLabel = ColorLabel(info.colorLabel());
                 QColor labelColor;
 
@@ -469,6 +483,34 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
 
             return tagPaths.join(QLatin1String(", "));
         }
+
+        case SubColumnGrouped:
+        {
+            QString grouped;
+
+            if      (info.isGrouped())
+            {
+                grouped = i18nc("@info: item properties", "Yes");
+            }
+            else if (info.hasGroupedImages())
+            {
+                grouped = i18nc("@info: item properties", "Yes (stack)");
+            }
+            else
+            {
+                grouped = i18nc("@info: item properties", "Yes");
+            }
+
+            return grouped;
+        }
+
+        case SubColumnVersioned:
+        {
+            QString versioned = (info.hasDerivedImages() || info.hasAncestorImages()) ? i18nc("@info: item properties", "Yes")
+                                                                                      : i18nc("@info: item properties", "No");
+
+            return versioned;
+        }
     }
 
     return QVariant();
@@ -528,6 +570,8 @@ bool Digikam::TableViewColumns::ColumnDigikamProperties::columnAffectedByChanges
         case SubColumnTitle:
         case SubColumnCaption:
         case SubColumnTags:
+        case SubColumnGrouped:
+        case SubColumnVersioned:
         {
             return true;
             /// @todo These are not the right flags for these columns
