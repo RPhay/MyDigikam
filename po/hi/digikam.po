@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"POT-Creation-Date: 2025-12-17 00:41+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1397,7 +1397,7 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:526
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3235,112 +3235,112 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "औज़ार (&T)"
 
-#: core/app/views/stack/trashview.cpp:107
+#: core/app/views/stack/trashview.cpp:112
 #: core/libs/tags/manager/tagsmanager_p.cpp:270
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
 msgstr "मदद (&H)"
 
-#: core/app/views/stack/trashview.cpp:108
+#: core/app/views/stack/trashview.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Undo"
 msgstr "पहले जैसा"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Restore"
 msgstr "बहाल करें"
 
-#: core/app/views/stack/trashview.cpp:124
+#: core/app/views/stack/trashview.cpp:129
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:135
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete..."
 msgstr "मिटाएँ"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:136
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:140
 #, fuzzy, kde-format
 msgid "Selected Items Permanently"
 msgstr "हमेशा के लिए मिटाएँ"
 
-#: core/app/views/stack/trashview.cpp:138
+#: core/app/views/stack/trashview.cpp:143
 #, fuzzy, kde-format
 msgid "All Items Permanently"
 msgstr "हमेशा के लिए मिटाएँ"
 
-#: core/app/views/stack/trashview.cpp:273
+#: core/app/views/stack/trashview.cpp:282
 #, fuzzy, kde-format
 msgid "Confirm Undo"
 msgstr "कॉन्फ़िगर"
 
-#: core/app/views/stack/trashview.cpp:274
-#: core/app/views/stack/trashview.cpp:301
+#: core/app/views/stack/trashview.cpp:283
+#: core/app/views/stack/trashview.cpp:310
 #, fuzzy, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 msgstr[1] "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:309
 #, fuzzy, kde-format
 msgid "Confirm Restore"
 msgstr "कोई चयन नहीं"
 
-#: core/app/views/stack/trashview.cpp:331
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:340
+#: core/app/views/stack/trashview.cpp:392
 #, fuzzy, kde-format
 msgid "Confirm Deletion"
 msgstr "कोई चयन नहीं"
 
-#: core/app/views/stack/trashview.cpp:332
+#: core/app/views/stack/trashview.cpp:341
 #, fuzzy, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 msgstr[1] "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 
-#: core/app/views/stack/trashview.cpp:384
+#: core/app/views/stack/trashview.cpp:393
 #, fuzzy, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 
-#: core/app/views/stack/trashview.cpp:455
+#: core/app/views/stack/trashview.cpp:464
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "चयन"
 
-#: core/app/views/stack/trashview.cpp:457
+#: core/app/views/stack/trashview.cpp:466
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "मिटाएँ"
 
-#: core/app/views/stack/trashview.cpp:524
+#: core/app/views/stack/trashview.cpp:533
 #, fuzzy, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 वस्तुएँ चयनित"

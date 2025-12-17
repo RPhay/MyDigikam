@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"POT-Creation-Date: 2025-12-17 00:41+0000\n"
 "PO-Revision-Date: 2025-10-22 17:39+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1452,7 +1452,7 @@ msgstr ""
 "ohjelmatiedosto käytettävissä.\n"
 "Virheviesti: %1"
 
-#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:526
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3341,7 +3341,7 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Työkalut"
 
-#: core/app/views/stack/trashview.cpp:107
+#: core/app/views/stack/trashview.cpp:112
 #: core/libs/tags/manager/tagsmanager_p.cpp:270
 #, fuzzy, kde-format
 #| msgctxt "@info"
@@ -3349,105 +3349,105 @@ msgstr "Työkalut"
 msgid "Help"
 msgstr "Ohje"
 
-#: core/app/views/stack/trashview.cpp:108
+#: core/app/views/stack/trashview.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "Roskakorin verkko-ohje"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Undo"
 msgstr "Kumoa"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Palauta roskakorista vain viimeisin tietue."
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Restore"
 msgstr "Palauta"
 
-#: core/app/views/stack/trashview.cpp:124
+#: core/app/views/stack/trashview.cpp:129
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Poista luettelosta valitut kuvat"
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "Delete..."
 msgstr "Poista…"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:136
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "Poista roskakorista pysyvästi valinta tai kaikki tietueet."
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:140
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Valitut kohteet pysyvästi"
 
-#: core/app/views/stack/trashview.cpp:138
+#: core/app/views/stack/trashview.cpp:143
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Kaikki kohteet pysyvästi"
 
-#: core/app/views/stack/trashview.cpp:273
+#: core/app/views/stack/trashview.cpp:282
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Vahvista kumoaminen"
 
-#: core/app/views/stack/trashview.cpp:274
-#: core/app/views/stack/trashview.cpp:301
+#: core/app/views/stack/trashview.cpp:283
+#: core/app/views/stack/trashview.cpp:310
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Haluatko varmasti palauttaa %1 kohteen?"
 msgstr[1] "Haluatko varmasti palauttaa %1 kohdetta?"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:309
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Vahvista palauttaminen"
 
-#: core/app/views/stack/trashview.cpp:331
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:340
+#: core/app/views/stack/trashview.cpp:392
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Vahvista poisto"
 
-#: core/app/views/stack/trashview.cpp:332
+#: core/app/views/stack/trashview.cpp:341
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Haluatko varmasti poistaa %1 kohteen pysyvästi?"
 msgstr[1] "Haluatko varmasti poistaa %1 kohdetta pysyvästi?"
 
-#: core/app/views/stack/trashview.cpp:384
+#: core/app/views/stack/trashview.cpp:393
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Haluatko varmasti poistaa KAIKKI kohteet pysyvästi?"
 
-#: core/app/views/stack/trashview.cpp:455
+#: core/app/views/stack/trashview.cpp:464
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Valinta"
 
-#: core/app/views/stack/trashview.cpp:457
+#: core/app/views/stack/trashview.cpp:466
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Poista"
 
-#: core/app/views/stack/trashview.cpp:524
+#: core/app/views/stack/trashview.cpp:533
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 kohdetta valittu"

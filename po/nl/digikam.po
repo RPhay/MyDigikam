@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-15 11:06+0100\n"
+"POT-Creation-Date: 2025-12-17 00:41+0000\n"
+"PO-Revision-Date: 2025-12-16 18:19+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -407,36 +407,30 @@ msgstr ""
 "te filteren. Dit houdt ook het '%1'-keuzevakje in."
 
 #: core/app/filters/filtersidebarwidget_faces.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@title"
 msgid "People"
 msgstr "Mensen"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgid "Text Filter:"
-msgstr "Tekstfilter"
+msgstr "Tekstfilter:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:41
-#, fuzzy, kde-format
-#| msgid "MIME Type Filter"
+#, kde-format
 msgid "MIME Type Filter:"
-msgstr "Filter op MIME-type"
+msgstr "Filter op MIME-type:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
-#, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#, kde-format
 msgid "Geolocation Filter:"
-msgstr "Geo-locatie-filter"
+msgstr "Geo-locatie-filter:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
-#, fuzzy, kde-format
-#| msgid "Labels Filter"
+#, kde-format
 msgid "Labels Filter:"
-msgstr "Filter op labels"
+msgstr "Filter op labels:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
@@ -1433,7 +1427,7 @@ msgstr ""
 "binaire bestand ExifTool in de sectie metagegevens.\n"
 "Foutmelding: %1"
 
-#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:526
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3283,108 +3277,108 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Hulpmiddelen"
 
-#: core/app/views/stack/trashview.cpp:107
+#: core/app/views/stack/trashview.cpp:112
 #: core/libs/tags/manager/tagsmanager_p.cpp:270
 #, kde-format
 msgid "Help"
 msgstr "Help"
 
-#: core/app/views/stack/trashview.cpp:108
+#: core/app/views/stack/trashview.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "Online hulp over de prullenbak"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Alleen het laatste item in de prullenbak herstellen."
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Restore"
 msgstr "Herstellen"
 
-#: core/app/views/stack/trashview.cpp:124
+#: core/app/views/stack/trashview.cpp:129
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Geselecteerde bestanden uit de prullenbak herstellen"
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "Delete..."
 msgstr "Verwijderen..."
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:136
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 "Permanent de geselecteerde items of alle items uit de prullenbak verwijderen."
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:140
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Geselecteerde items permanent"
 
-#: core/app/views/stack/trashview.cpp:138
+#: core/app/views/stack/trashview.cpp:143
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Alle items permanent"
 
-#: core/app/views/stack/trashview.cpp:273
+#: core/app/views/stack/trashview.cpp:282
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Ongedaan maken bevestigen"
 
-#: core/app/views/stack/trashview.cpp:274
-#: core/app/views/stack/trashview.cpp:301
+#: core/app/views/stack/trashview.cpp:283
+#: core/app/views/stack/trashview.cpp:310
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Wilt u echt %1 item herstellen?"
 msgstr[1] "Wilt u echt %1 items herstellen?"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:309
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Herstellen bevestigen"
 
-#: core/app/views/stack/trashview.cpp:331
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:340
+#: core/app/views/stack/trashview.cpp:392
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Verwijderen bevestigen"
 
-#: core/app/views/stack/trashview.cpp:332
+#: core/app/views/stack/trashview.cpp:341
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Wilt u echt %1 item permanent verwijderen?"
 msgstr[1] "Wilt u echt %1 items permanent verwijderen?"
 
-#: core/app/views/stack/trashview.cpp:384
+#: core/app/views/stack/trashview.cpp:393
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Wilt u ALLE items permanent verwijderen?"
 
-#: core/app/views/stack/trashview.cpp:455
+#: core/app/views/stack/trashview.cpp:464
 #, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Selectie"
 
-#: core/app/views/stack/trashview.cpp:457
+#: core/app/views/stack/trashview.cpp:466
 #, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: core/app/views/stack/trashview.cpp:524
+#: core/app/views/stack/trashview.cpp:533
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 items geselecteerd"

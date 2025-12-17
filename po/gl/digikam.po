@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"POT-Creation-Date: 2025-12-17 00:41+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1438,7 +1438,7 @@ msgstr ""
 "do ficheiro executábel de ExifTool na sección de metadatos.\n"
 "Mensaxe de erro: %1"
 
-#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:526
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3297,109 +3297,109 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: core/app/views/stack/trashview.cpp:107
+#: core/app/views/stack/trashview.cpp:112
 #: core/libs/tags/manager/tagsmanager_p.cpp:270
 #, kde-format
 msgid "Help"
 msgstr "Axuda"
 
-#: core/app/views/stack/trashview.cpp:108
+#: core/app/views/stack/trashview.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "Axuda de trash-bin en Internet"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Undo"
 msgstr "Desfacer"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Restaurar só a última entrada en trash-bin."
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Restore"
 msgstr "Restaurar"
 
-#: core/app/views/stack/trashview.cpp:124
+#: core/app/views/stack/trashview.cpp:129
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Restaurar a selección de ficheiros de trash-bin."
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "Delete..."
 msgstr "Eliminar…"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:136
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 "Eliminar permanentemente a selección de elementos ou todos os elementos de "
 "trash-bin."
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:140
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Os elementos seleccionados permanentemente"
 
-#: core/app/views/stack/trashview.cpp:138
+#: core/app/views/stack/trashview.cpp:143
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Todos os elementos permanentemente"
 
-#: core/app/views/stack/trashview.cpp:273
+#: core/app/views/stack/trashview.cpp:282
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Confirmar o desfacer"
 
-#: core/app/views/stack/trashview.cpp:274
-#: core/app/views/stack/trashview.cpp:301
+#: core/app/views/stack/trashview.cpp:283
+#: core/app/views/stack/trashview.cpp:310
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Seguro que quere restaurar %1 elemento?"
 msgstr[1] "Seguro que quere restaurar %1 elementos?"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:309
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Confirmar a restauración"
 
-#: core/app/views/stack/trashview.cpp:331
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:340
+#: core/app/views/stack/trashview.cpp:392
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Confirmar a eliminación"
 
-#: core/app/views/stack/trashview.cpp:332
+#: core/app/views/stack/trashview.cpp:341
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Seguro que quere eliminar %1 elemento permanentemente?"
 msgstr[1] "Seguro que quere eliminar %1 elementos permanentemente?"
 
-#: core/app/views/stack/trashview.cpp:384
+#: core/app/views/stack/trashview.cpp:393
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Seguro que quere eliminar todos os elementos permanentemente?"
 
-#: core/app/views/stack/trashview.cpp:455
+#: core/app/views/stack/trashview.cpp:464
 #, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Selección"
 
-#: core/app/views/stack/trashview.cpp:457
+#: core/app/views/stack/trashview.cpp:466
 #, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: core/app/views/stack/trashview.cpp:524
+#: core/app/views/stack/trashview.cpp:533
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "Seleccionou %1 de %2 elementos"
