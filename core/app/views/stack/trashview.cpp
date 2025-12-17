@@ -97,7 +97,7 @@ TrashView::TrashView(QWidget* const parent)
     d->tableView->setModel(d->model);
     d->tableView->setItemDelegateForColumn(0, d->thumbDelegate);
     d->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
-    d->tableView->horizontalHeader()->setStretchLastSection(true);                      // Strech if no column size config are not found in settings file.
+    d->tableView->horizontalHeader()->setStretchLastSection(true);                      // Stretch if no column size config are not found in settings file.
     d->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     d->tableView->verticalHeader()->setDefaultSectionSize(d->thumbSize.size());
     d->tableView->verticalHeader()->hide();
