@@ -47,7 +47,7 @@ Filter Items    : Split filters view into 3 separated tabs for better usabilty: 
 Trash View      : load and save column states between sessions.
 Preview         : Extend Toolbar overlay with Labels editor.
 Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
-Table-View      : Add customizable columns "Grouped" and "Versioned".
+Table-View      : Add customizable columns to show "Grouped" and "Versioned" properties.
 Advanced Rename : New modifier "Date Format".
 SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
 Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.
