@@ -260,7 +260,8 @@ void SetupTemplate::slotAddTemplate()
 
     Template t = d->tview->getTemplate();
     t.setTemplateTitle(d->titleEdit->text());
-    new TemplateListItem(d->listView, t);
+    TemplateListItem* const item = new TemplateListItem(d->listView, t);
+    d->listView->setCurrentItem(item);
 }
 
 void SetupTemplate::slotDelTemplate()
