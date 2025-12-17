@@ -9,12 +9,12 @@ Bundles component versions:
 
 | Bundles       | Qt version | KDE version | OpenCV version | FFmpeg version | Heif version | ExifTool version | Exiv2 version |
 |---------------|------------|-------------|----------------|----------------|--------------|------------------|---------------|
-| Windows Qt5   | 5.15.17    | 5.116       | 4.11           | 7.1.1          | 1.20.2       | 13.43 (*)        | 0.28.5        |
-| Windows Qt6   | 6.9.1      | 6.17.0      | 4.11           | 7.1.1          | 1.20.2       | 13.43 (*)        | 0.28.5        |
-| AppImage Qt5  | 5.15.17    | 5.116       | 4.12           | 7.1.1          | 1.20.1       | 13.43 (*)        | 0.28.5        |
-| AppImage Qt6  | 6.9.1      | 6.17.0      | 4.12           | 7.1.1          | 1.20.1       | 13.43 (*)        | 0.28.5        |
-| macOS Qt5     | 5.15.15    | 5.116       | 4.12           | 7.1.1          | 1.19.8       | 13.43 (*)        | 0.28.5        |
-| macOS Qt6     | 6.10.0 (*) | 6.20.0 (*)  | 4.12           | 7.1.2 (*)      | 1.20.2 (*)   | 13.43 (*)        | 0.28.7 (*)    |
+| Windows Qt5   | 5.15.17    | 5.116       | 4.11           | 7.1.1          | 1.20.2       | 13.44 (*)        | 0.28.5        |
+| Windows Qt6   | 6.9.1      | 6.17.0      | 4.11           | 7.1.1          | 1.20.2       | 13.44 (*)        | 0.28.5        |
+| AppImage Qt5  | 5.15.17    | 5.116       | 4.12           | 7.1.1          | 1.20.1       | 13.44 (*)        | 0.28.5        |
+| AppImage Qt6  | 6.9.1      | 6.17.0      | 4.12           | 7.1.1          | 1.20.1       | 13.44 (*)        | 0.28.5        |
+| macOS Qt5     | 5.15.15    | 5.116       | 4.12           | 7.1.1          | 1.19.8       | 13.44 (*)        | 0.28.5        |
+| macOS Qt6     | 6.10.0 (*) | 6.20.0 (*)  | 4.12           | 7.1.2 (*)      | 1.20.2 (*)   | 13.44 (*)        | 0.28.7 (*)    |
 
 Raw Engine      : Update internal Libraw to last 20251208 upstream.
                   New Raw Camera: * Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra
@@ -298,7 +298,7 @@ BUGFIXES:
 238 --> 373345 - After return from preview view the album view scrolls the selected image to the top.
 239 --> 452184 - Empty Folders.
 240 --> 385821 - Change columns width in Trash.
-241 --> 128915 - Calling scripts from contextual menu/toolbar.
+241 --> 
 242 --> 
 243 --> 
 244 --> 
