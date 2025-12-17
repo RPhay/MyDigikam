@@ -72,6 +72,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                paused          = false;
     bool                video           = false;
     bool                blink           = false;
@@ -173,6 +175,13 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
 
     connect(d->plWidget, SIGNAL(signalPickLabelChanged(int)),
             parent, SLOT(slotAssignPickLabel(int)));
+
+    connect(d->settings->iface, &DInfoInterface::signalColorLabelNamesUpdated,
+            this, [this]()
+       {
+          d->clWidget->colorLabelWidget()->setDescriptionBoxVisible(false);
+       }
+    );
 
     // ---------------------------------------------------------------
 

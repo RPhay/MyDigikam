@@ -72,6 +72,9 @@ public:
 
     Q_SIGNAL void signalShortcutPressed(const QString& shortcut, int val);
 
+    /// Signal emitted when color label names are updated (digiKam only).
+    Q_SIGNAL void signalColorLabelNamesUpdated(const QMap<int, QString>& labels);
+
 public:
 
     ///@{

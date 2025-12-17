@@ -68,6 +68,8 @@ public:
 
     Private() = default;
 
+public:
+
     AlbumManager*        albumManager     = AlbumManager::instance();
     AlbumSelectTabs*     albumsChooser    = nullptr;
     AlbumSelectWidget*   albumSelector    = nullptr;
@@ -298,10 +300,17 @@ DBInfoIface::DBInfoIface(QObject* const parent, const QList<QUrl>& lst,
     d->itemUrls      = lst;
     d->operationType = type;
 
-    // forward signal to DPluginAction of Digikam
+    // Forward signal to DPluginAction of Digikam
 
-    connect(TagsActionMngr::defaultManager(), SIGNAL(signalShortcutPressed(QString,int)),
-            this, SIGNAL(signalShortcutPressed(QString,int)));
+    connect(TagsActionMngr::defaultManager(), &TagsActionMngr::signalShortcutPressed,
+            this, &DBInfoIface::signalShortcutPressed);
+
+    connect(TagsActionMngr::defaultManager(), &TagsActionMngr::signalColorLabelNamesUpdated,
+            this, [this]()
+        {
+            Q_EMIT signalColorLabelNamesUpdated(TagsActionMngr::defaultManager()->colorLabelNames());
+        }
+    );
 }
 
 DBInfoIface::~DBInfoIface()

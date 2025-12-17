@@ -61,10 +61,11 @@ namespace DigikamGenericSlideShowPlugin
 
 class Q_DECL_HIDDEN SlideShowLoader::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     int                    fileIndex            = -1;
     int                    screenSaverCookie    = -1;
