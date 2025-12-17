@@ -298,7 +298,7 @@ BUGFIXES:
 237 --> 373345 - After return from preview view the album view scrolls the selected image to the top.
 238 --> 452184 - Empty Folders.
 239 --> 385821 - Change columns width in Trash.
-240 -->
+240 --> 513323 - Adding a new metadata template overwrites existing one.
 241 --> 
 242 --> 
 243 --> 
