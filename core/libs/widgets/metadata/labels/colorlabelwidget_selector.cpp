@@ -67,7 +67,18 @@ void ColorLabelSelector::slotColorLabelChanged(int id)
     setText(QString());
     setIcon(d->clw->buildIcon((ColorLabel)id));
 
-    DXmlGuiWindow* const app = dynamic_cast<DXmlGuiWindow*>(qApp->activeWindow());
+    DXmlGuiWindow* app = nullptr;
+    const auto wdgs    = qApp->topLevelWidgets();
+
+    for (QWidget* const widget : wdgs)
+    {
+        app = dynamic_cast<DXmlGuiWindow*>(widget);
+
+        if (app)
+        {
+            break;
+        }
+    }
 
     if (app)
     {
