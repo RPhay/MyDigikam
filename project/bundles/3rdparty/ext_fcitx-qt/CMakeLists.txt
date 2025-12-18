@@ -21,10 +21,10 @@ ExternalProject_Add(ext_fcitx-core
                          -DENABLE_TESTING_ADDONS=OFF
                          -DENABLE_TEST=OFF
                          -DENABLE_ENCHANT=OFF
-                         -DENABLE_DBUS=OFF
+                         -DENABLE_DBUS=ON
                          -DENABLE_SERVER=OFF
                          -DENABLE_KEYBOARD=ON
-                         -DUSE_SYSTEMD=ON
+                         -DUSE_SYSTEMD=OFF
                          -DENABLE_XDGAUTOSTART=OFF
                          -DENABLE_EMOJI=OFF
                          -DENABLE_X11=ON
