@@ -24,7 +24,7 @@ ExternalProject_Add(ext_fcitx-core
                          -DENABLE_DBUS=OFF
                          -DENABLE_SERVER=OFF
                          -DENABLE_KEYBOARD=ON
-                         -DUSE_SYSTEMD=OFF
+                         -DUSE_SYSTEMD=ON
                          -DENABLE_XDGAUTOSTART=OFF
                          -DENABLE_EMOJI=OFF
                          -DENABLE_X11=ON
