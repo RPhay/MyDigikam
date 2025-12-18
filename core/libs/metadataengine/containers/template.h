@@ -62,6 +62,9 @@ public:
     void setTemplateTitle(const QString& title);
     QString templateTitle()                     const;
 
+    void setTemplateMerge(bool merge);
+    bool templateMerge()                        const;
+
     void setAuthors(const QStringList& authors);
     void setAuthorsPosition(const QString& authorPosition);
     void setCredit(const QString& credit);
@@ -95,6 +98,11 @@ protected:
      * Template title used internally. This value always exist and cannot be empty.
      */
     QString                  m_templateTitle;
+
+    /**
+     * Merge flag when applying the template.
+     */
+    bool                     m_templateMerge  = false;
 
     /**
      * List of author names.

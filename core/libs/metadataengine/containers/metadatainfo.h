@@ -34,7 +34,7 @@ public:
     bool operator==(const IptcCoreLocationInfo& t) const;
     bool isEmpty()                                 const;
     bool isNull()                                  const;
-    void merge(const IptcCoreLocationInfo& t);
+    void merge(const IptcCoreLocationInfo& t, bool merge);
 
 public:
 
@@ -57,7 +57,7 @@ public:
     bool operator==(const IptcCoreContactInfo& t) const;
     bool isEmpty()                                const;
     bool isNull()                                 const;
-    void merge(const IptcCoreContactInfo& t);
+    void merge(const IptcCoreContactInfo& t, bool merge);
 
 public:
 

@@ -68,46 +68,47 @@ bool Template::isEmpty() const
 void Template::merge(const Template& t)
 {
     m_templateTitle = t.templateTitle();
+    m_templateMerge = t.templateMerge();
 
-    if (!t.authors().isEmpty())
+    if (!m_templateMerge || (!t.authors().isEmpty() && m_authors.isEmpty()))
     {
         m_authors = t.authors();
     }
 
-    if (!t.authorsPosition().isEmpty())
+    if (!m_templateMerge || (!t.authorsPosition().isEmpty() && m_authorsPosition.isEmpty()))
     {
         m_authorsPosition = t.authorsPosition();
     }
 
-    if (!t.credit().isEmpty())
+    if (!m_templateMerge || (!t.credit().isEmpty() && m_credit.isEmpty()))
     {
         m_credit = t.credit();
     }
 
-    if (!t.copyright().isEmpty())
+    if (!m_templateMerge || (!t.copyright().isEmpty() && m_copyright.isEmpty()))
     {
         m_copyright = t.copyright();
     }
 
-    if (!t.rightUsageTerms().isEmpty())
+    if (!m_templateMerge || (!t.rightUsageTerms().isEmpty() && m_rightUsageTerms.isEmpty()))
     {
         m_rightUsageTerms = t.rightUsageTerms();
     }
 
-    if (!t.source().isEmpty())
+    if (!m_templateMerge || (!t.source().isEmpty() && m_source.isEmpty()))
     {
         m_source = t.source();
     }
 
-    if (!t.instructions().isEmpty())
+    if (!m_templateMerge || (!t.instructions().isEmpty() && m_instructions.isEmpty()))
     {
         m_instructions = t.instructions();
     }
 
-    m_locationInfo.merge(t.locationInfo());
-    m_contactInfo.merge(t.contactInfo());
+    m_locationInfo.merge(t.locationInfo(), m_templateMerge);
+    m_contactInfo.merge(t.contactInfo(), m_templateMerge);
 
-    if (!t.IptcSubjects().isEmpty())
+    if (!m_templateMerge || (!t.IptcSubjects().isEmpty() && m_subjects.isEmpty()))
     {
         m_subjects = t.IptcSubjects();
     }
@@ -121,6 +122,16 @@ void Template::setTemplateTitle(const QString& title)
 QString Template::templateTitle() const
 {
     return m_templateTitle;
+}
+
+void Template::setTemplateMerge(bool merge)
+{
+    m_templateMerge = merge;
+}
+
+bool Template::templateMerge() const
+{
+    return m_templateMerge;
 }
 
 void Template::setAuthors(const QStringList& authors)
@@ -229,6 +240,8 @@ QDebug operator<<(QDebug dbg, const Template& t)
 {
     dbg.nospace() << "Template::title: "
                   << t.templateTitle() << ", ";
+    dbg.nospace() << "Template::merge: "
+                  << t.templateMerge() << ", ";
     dbg.nospace() << "Template::authors: "
                   << t.authors() << ", ";
     dbg.nospace() << "Template::authorsPosition: "

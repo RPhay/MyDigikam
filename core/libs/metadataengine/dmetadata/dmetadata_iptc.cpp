@@ -65,14 +65,14 @@ IptcCoreContactInfo DMetadata::getCreatorContactInfo() const
     return info;
 }
 
-bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
+bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info, bool merge) const
 {
     if (!supportXmp())
     {
         return false;
     }
 
-    if (!info.city.isEmpty())
+    if (!merge || !info.city.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", info.city))
         {
@@ -80,7 +80,7 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
         }
     }
 
-    if (!info.country.isEmpty())
+    if (!merge || !info.country.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", info.country))
         {
@@ -88,7 +88,7 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
         }
     }
 
-    if (!info.address.isEmpty())
+    if (!merge || !info.address.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", info.address))
         {
@@ -96,7 +96,7 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
         }
     }
 
-    if (!info.postalCode.isEmpty())
+    if (!merge || !info.postalCode.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", info.postalCode))
         {
@@ -104,7 +104,7 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
         }
     }
 
-    if (!info.provinceState.isEmpty())
+    if (!merge || !info.provinceState.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrRegion", info.provinceState))
         {
@@ -112,7 +112,7 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
         }
     }
 
-    if (!info.email.isEmpty())
+    if (!merge || !info.email.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", info.email))
         {
@@ -120,7 +120,7 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
         }
     }
 
-    if (!info.phone.isEmpty())
+    if (!merge || !info.phone.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", info.phone))
         {
@@ -128,7 +128,7 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
         }
     }
 
-    if (!info.webUrl.isEmpty())
+    if (!merge || !info.webUrl.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", info.webUrl))
         {
@@ -164,11 +164,11 @@ IptcCoreLocationInfo DMetadata::getIptcCoreLocation() const
     return location;
 }
 
-bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
+bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location, bool merge) const
 {
     if (supportXmp())
     {
-        if (!location.country.isEmpty())
+        if (!merge || !location.country.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.Country", location.country))
             {
@@ -176,7 +176,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
             }
         }
 
-        if (!location.countryCode.isEmpty())
+        if (!merge || !location.countryCode.isEmpty())
         {
             if (!setXmpTagString("Xmp.iptc.CountryCode", location.countryCode))
             {
@@ -184,7 +184,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
             }
         }
 
-        if (!location.city.isEmpty())
+        if (!merge || !location.city.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.City", location.city))
             {
@@ -192,7 +192,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
             }
         }
 
-        if (!location.location.isEmpty())
+        if (!merge || !location.location.isEmpty())
         {
             if (!setXmpTagString("Xmp.iptc.Location", location.location))
             {
@@ -200,7 +200,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
             }
         }
 
-        if (!location.provinceState.isEmpty())
+        if (!merge || !location.provinceState.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.State", location.provinceState))
             {
@@ -209,7 +209,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
         }
     }
 
-    if (!location.country.isEmpty())
+    if (!merge || !location.country.isEmpty())
     {
         if (!setIptcTag(location.country,       64,  "Country",        "Iptc.Application2.CountryName"))
         {
@@ -217,7 +217,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
         }
     }
 
-    if (!location.countryCode.isEmpty())
+    if (!merge || !location.countryCode.isEmpty())
     {
         if (!setIptcTag(location.countryCode,    3,  "Country Code",   "Iptc.Application2.CountryCode"))
         {
@@ -225,7 +225,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
         }
     }
 
-    if (!location.city.isEmpty())
+    if (!merge || !location.city.isEmpty())
     {
         if (!setIptcTag(location.city,          32,  "City",           "Iptc.Application2.City"))
         {
@@ -233,7 +233,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
         }
     }
 
-    if (!location.location.isEmpty())
+    if (!merge || !location.location.isEmpty())
     {
         if (!setIptcTag(location.location,      32,  "SubLocation",    "Iptc.Application2.SubLocation"))
         {
@@ -241,7 +241,7 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
         }
     }
 
-    if (!location.provinceState.isEmpty())
+    if (!merge || !location.provinceState.isEmpty())
     {
         if (!setIptcTag(location.provinceState, 32,  "Province/State", "Iptc.Application2.ProvinceState"))
         {

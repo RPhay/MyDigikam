@@ -142,6 +142,10 @@ bool TemplateManager::load()
             {
                 t.setTemplateTitle(val2);
             }
+            else if (name2 == QLatin1String("templatemerge"))
+            {
+                t.setTemplateMerge(val2 == QLatin1String("true"));
+            }
             else if (name2 == QLatin1String("authorsposition"))
             {
                 t.setAuthorsPosition(val2);
@@ -317,6 +321,11 @@ bool TemplateManager::save()
             QDomElement templatetitle = doc.createElement(QLatin1String("templatetitle"));
             templatetitle.setAttribute(QLatin1String("value"), t.templateTitle());
             elem.appendChild(templatetitle);
+
+            QDomElement templatemerge = doc.createElement(QLatin1String("templatemerge"));
+            templatemerge.setAttribute(QLatin1String("value"), t.templateMerge() ? QLatin1String("true")
+                                                                                 : QLatin1String("false"));
+            elem.appendChild(templatemerge);
 
             QDomElement authorsposition = doc.createElement(QLatin1String("authorsposition"));
             authorsposition.setAttribute(QLatin1String("value"), t.authorsPosition());

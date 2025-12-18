@@ -406,7 +406,9 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
         }
         else if (!d->metadataTemplate.isEmpty())
         {
-            info.setMetadataTemplate(d->metadataTemplate);
+            Template t = info.metadataTemplate();
+            t.merge(d->metadataTemplate);
+            info.setMetadataTemplate(t);
         }
 
         changed = true;

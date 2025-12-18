@@ -19,6 +19,7 @@
 #include <QFrame>
 #include <QGridLayout>
 #include <QLabel>
+#include <QCheckBox>
 #include <QPushButton>
 #include <QApplication>
 #include <QStyle>
@@ -53,6 +54,7 @@ public:
     QPushButton*   addButton    = nullptr;
     QPushButton*   delButton    = nullptr;
     QPushButton*   repButton    = nullptr;
+    QCheckBox*     mergeCBox    = nullptr;
 
     DTextEdit*     titleEdit    = nullptr;
 
@@ -83,6 +85,8 @@ SetupTemplate::SetupTemplate(QWidget* const parent)
     d->titleEdit->setWhatsThis(i18n("<p>Enter the metadata template title here. This title will be "
                                     "used to identify a template in your collection.</p>"));
     label0->setBuddy(d->titleEdit);
+
+    d->mergeCBox         = new QCheckBox(i18n("Merge Template"), this);
 
     // --------------------------------------------------------
 
@@ -128,6 +132,7 @@ SetupTemplate::SetupTemplate(QWidget* const parent)
     grid->addWidget(d->repButton, 2, 2, 1, 1);
     grid->addWidget(label0,       4, 0, 1, 1);
     grid->addWidget(d->titleEdit, 4, 1, 1, 1);
+    grid->addWidget(d->mergeCBox, 4, 2, 1, 1);
     grid->addWidget(d->tview,     5, 0, 1, 3);
     grid->addWidget(note,         6, 0, 1, 3);
     panel->setLayout(grid);
@@ -180,6 +185,7 @@ void SetupTemplate::applySettings()
 
             Template t = d->tview->getTemplate();
             t.setTemplateTitle(title);
+            t.setTemplateMerge(d->mergeCBox->isChecked());
             item->setTemplate(t);
         }
     }
@@ -235,12 +241,14 @@ void SetupTemplate::populateTemplate(const Template& t)
 {
     d->tview->setTemplate(t);
     d->titleEdit->setText(t.templateTitle());
+    d->mergeCBox->setChecked(t.templateMerge());
     d->titleEdit->setFocus();
 }
 
 void SetupTemplate::slotAddTemplate()
 {
     QString title = d->titleEdit->text();
+    bool merge    = d->mergeCBox->isChecked();
 
     if (title.isEmpty())
     {
@@ -259,7 +267,8 @@ void SetupTemplate::slotAddTemplate()
     d->tview->apply();
 
     Template t = d->tview->getTemplate();
-    t.setTemplateTitle(d->titleEdit->text());
+    t.setTemplateTitle(title);
+    t.setTemplateMerge(merge);
     TemplateListItem* const item = new TemplateListItem(d->listView, t);
     d->listView->setCurrentItem(item);
 }
@@ -273,6 +282,7 @@ void SetupTemplate::slotDelTemplate()
 void SetupTemplate::slotRepTemplate()
 {
     QString title = d->titleEdit->text();
+    bool merge    = d->mergeCBox->isChecked();
 
     if (title.isEmpty())
     {
@@ -292,6 +302,7 @@ void SetupTemplate::slotRepTemplate()
 
     Template t = d->tview->getTemplate();
     t.setTemplateTitle(title);
+    t.setTemplateMerge(merge);
     item->setTemplate(t);
 }
 

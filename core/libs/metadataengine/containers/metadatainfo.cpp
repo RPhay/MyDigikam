@@ -62,44 +62,44 @@ bool IptcCoreContactInfo::operator==(const IptcCoreContactInfo& t) const
     return (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8);
 }
 
-void IptcCoreContactInfo::merge(const IptcCoreContactInfo& t)
+void IptcCoreContactInfo::merge(const IptcCoreContactInfo& t, bool merge)
 {
-    if (!t.city.isEmpty())
+    if (!merge || (!t.city.isEmpty() && city.isEmpty()))
     {
         city = t.city;
     }
 
-    if (!t.country.isEmpty())
+    if (!merge || (!t.country.isEmpty() && country.isEmpty()))
     {
         country = t.country;
     }
 
-    if (!t.address.isEmpty())
+    if (!merge || (!t.address.isEmpty() && address.isEmpty()))
     {
         address = t.address;
     }
 
-    if (!t.postalCode.isEmpty())
+    if (!merge || (!t.postalCode.isEmpty() && postalCode.isEmpty()))
     {
         postalCode = t.postalCode;
     }
 
-    if (!t.provinceState.isEmpty())
+    if (!merge || (!t.provinceState.isEmpty() && provinceState.isEmpty()))
     {
         provinceState = t.provinceState;
     }
 
-    if (!t.email.isEmpty())
+    if (!merge || (!t.email.isEmpty() && email.isEmpty()))
     {
         email = t.email;
     }
 
-    if (!t.phone.isEmpty())
+    if (!merge || (!t.phone.isEmpty() && phone.isEmpty()))
     {
         phone = t.phone;
     }
 
-    if (!t.webUrl.isEmpty())
+    if (!merge || (!t.webUrl.isEmpty() && webUrl.isEmpty()))
     {
         webUrl = t.webUrl;
     }
@@ -162,29 +162,29 @@ bool IptcCoreLocationInfo::operator==(const IptcCoreLocationInfo& t) const
     return (b1 && b2 && b3 && b4 && b5);
 }
 
-void IptcCoreLocationInfo::merge(const IptcCoreLocationInfo& t)
+void IptcCoreLocationInfo::merge(const IptcCoreLocationInfo& t, bool merge)
 {
-    if (!t.country.isEmpty())
+    if (!merge || (!t.country.isEmpty() && country.isEmpty()))
     {
         country = t.country;
     }
 
-    if (!t.countryCode.isEmpty())
+    if (!merge || (!t.countryCode.isEmpty() && countryCode.isEmpty()))
     {
         countryCode = t.countryCode;
     }
 
-    if (!t.provinceState.isEmpty())
+    if (!merge || (!t.provinceState.isEmpty() && provinceState.isEmpty()))
     {
         provinceState = t.provinceState;
     }
 
-    if (!t.city.isEmpty())
+    if (!merge || (!t.city.isEmpty() && city.isEmpty()))
     {
         city = t.city;
     }
 
-    if (!t.location.isEmpty())
+    if (!merge || (!t.location.isEmpty() && location.isEmpty()))
     {
         location = t.location;
     }

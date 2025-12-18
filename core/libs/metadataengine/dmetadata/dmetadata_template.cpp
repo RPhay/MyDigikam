@@ -38,6 +38,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         return false;
     }
 
+    bool templateMerge                = t.templateMerge();
     QStringList authors               = t.authors();
     QString authorsPosition           = t.authorsPosition();
     QString credit                    = t.credit();
@@ -52,7 +53,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
 
     if (supportXmp())
     {
-        if (!authors.isEmpty())
+        if (!templateMerge || !authors.isEmpty())
         {
             if (!setXmpTagStringSeq("Xmp.dc.creator", authors))
             {
@@ -65,7 +66,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
             }
         }
 
-        if (!authorsPosition.isEmpty())
+        if (!templateMerge || !authorsPosition.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.AuthorsPosition", authorsPosition))
             {
@@ -73,7 +74,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
             }
         }
 
-        if (!credit.isEmpty())
+        if (!templateMerge || !credit.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.Credit", credit))
             {
@@ -81,7 +82,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
             }
         }
 
-        if (!source.isEmpty())
+        if (!templateMerge || !source.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.Source", source))
             {
@@ -94,7 +95,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
             }
         }
 
-        if (!copyright.isEmpty())
+        if (!templateMerge || !copyright.isEmpty())
         {
             if (!setXmpTagStringListLangAlt("Xmp.dc.rights", copyright))
             {
@@ -107,7 +108,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
             }
         }
 
-        if (!rightUsage.isEmpty())
+        if (!templateMerge || !rightUsage.isEmpty())
         {
             if (!setXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", rightUsage))
             {
@@ -115,7 +116,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
             }
         }
 
-        if (!instructions.isEmpty())
+        if (!templateMerge || !instructions.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.Instructions", instructions))
             {
@@ -126,7 +127,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
 
     // Set IPTC tags.
 
-    if (!authors.isEmpty())
+    if (!templateMerge || !authors.isEmpty())
     {
         if (!setIptcTagsStringList("Iptc.Application2.Byline", 32,
                                    getIptcTagsStringList("Iptc.Application2.Byline"),
@@ -136,7 +137,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         }
     }
 
-    if (!authorsPosition.isEmpty())
+    if (!templateMerge || !authorsPosition.isEmpty())
     {
         if (!setIptcTag(authorsPosition,        32,  "Authors Title", "Iptc.Application2.BylineTitle"))
         {
@@ -144,7 +145,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         }
     }
 
-    if (!credit.isEmpty())
+    if (!templateMerge || !credit.isEmpty())
     {
         if (!setIptcTag(credit,                 32,  "Credit",        "Iptc.Application2.Credit"))
         {
@@ -152,7 +153,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         }
     }
 
-    if (!source.isEmpty())
+    if (!templateMerge || !source.isEmpty())
     {
         if (!setIptcTag(source,                 32,  "Source",        "Iptc.Application2.Source"))
         {
@@ -160,7 +161,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         }
     }
 
-    if (!copyright[QLatin1String("x-default")].isEmpty())
+    if (!templateMerge || !copyright[QLatin1String("x-default")].isEmpty())
     {
         if (!setIptcTag(copyright[QLatin1String("x-default")], 128, "Copyright",     "Iptc.Application2.Copyright"))
         {
@@ -168,7 +169,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         }
     }
 
-    if (!instructions.isEmpty())
+    if (!templateMerge || !instructions.isEmpty())
     {
         if (!setIptcTag(instructions,           256, "Instructions",  "Iptc.Application2.SpecialInstructions"))
         {
@@ -176,19 +177,19 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         }
     }
 
-    if (!setIptcCoreLocation(t.locationInfo()))
+    if (!setIptcCoreLocation(t.locationInfo(), templateMerge))
     {
         return false;
     }
 
-    if (!setCreatorContactInfo(t.contactInfo()))
+    if (!setCreatorContactInfo(t.contactInfo(), templateMerge))
     {
         return false;
     }
 
     if (supportXmp())
     {
-        if (!t.IptcSubjects().isEmpty())
+        if (!templateMerge || !t.IptcSubjects().isEmpty())
         {
             if (!setXmpSubjects(t.IptcSubjects()))
             {
@@ -199,7 +200,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
 
     // Synchronize Iptc subjects tags with Xmp subjects tags.
 
-    if (!t.IptcSubjects().isEmpty())
+    if (!templateMerge || !t.IptcSubjects().isEmpty())
     {
         QStringList list = t.IptcSubjects();
         QStringList newList;

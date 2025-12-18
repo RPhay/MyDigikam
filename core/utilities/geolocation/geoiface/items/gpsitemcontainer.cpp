@@ -1075,7 +1075,7 @@ QString GPSItemContainer::saveChanges()
                     }
                 }
 
-                success = meta->setIptcCoreLocation(locationInfo);
+                success = meta->setIptcCoreLocation(locationInfo, false);
 
                 if (!success)
                 {
