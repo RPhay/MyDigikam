@@ -23,6 +23,7 @@ if(${ENABLE_QTVERSION} MATCHES "5")
                              -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                              -DCMAKE_POLICY_VERSION_MINIMUM=3.5
                              -DENABLE_LIBRARY=OFF
+                             -DENABLE_QT4=OFF
                              -DENABLE_QT5=ON
                              -DENABLE_QT6=OFF
                              ${GLOBAL_PROFILE}
@@ -47,6 +48,7 @@ else()
                              -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                              -DCMAKE_POLICY_VERSION_MINIMUM=3.5
                              -DENABLE_LIBRARY=OFF
+                             -DENABLE_QT4=OFF
                              -DENABLE_QT5=OFF
                              -DENABLE_QT6=ON
                              ${GLOBAL_PROFILE}
