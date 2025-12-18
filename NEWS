@@ -314,7 +314,7 @@ BUGFIXES:
 253 --> 424557 - Metadata tags lost/changed.
 254 --> 431037 - Very poor performance when applying actions (e.g. refresh folder, apply tag) -> takes very long with 7.2.0 and NAS.
 255 --> 470242 - Create finger prints process is too slow.
-256 --> 
+256 --> 419903 - Editor view very slow.
 257 --> 
 258 --> 
 259 --> 
