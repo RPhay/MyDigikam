@@ -307,8 +307,8 @@ BUGFIXES:
 246 --> 363913 - Improve export menu structure.
 247 --> 457603 - After saving a picture, keyboard becomes unresponsive until something is done with the mouse.
 248 --> 375656 - Tags view (left side) includes grouped images when it shouldn't.
-249 --> 
-250 --> 
+249 --> 330924 - Rating is lost after tagging and rating.
+250 --> 259228 - Assign rating fails when tags have been changed too.
 251 --> 
 252 --> 
 253 --> 
