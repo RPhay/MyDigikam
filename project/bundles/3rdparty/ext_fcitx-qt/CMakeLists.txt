@@ -7,6 +7,7 @@
 
 set(EXTPREFIX_fcitx-qt "${EXTPREFIX}" )
 
+ExternalProject_Add(ext_fcitx-core
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/fcitx/fcitx5.git
