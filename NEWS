@@ -312,7 +312,7 @@ BUGFIXES:
 251 --> 399841 - Quality sorter rejecting images sharp, in focus and low ISO.
 252 --> 406224 - 'No space left on device' on startup.
 253 --> 424557 - Metadata tags lost/changed.
-254 --> 
+254 --> 431037 - Very poor performance when applying actions (e.g. refresh folder, apply tag) -> takes very long with 7.2.0 and NAS.
 255 --> 
 256 --> 
 257 --> 
