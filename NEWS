@@ -309,7 +309,7 @@ BUGFIXES:
 248 --> 375656 - Tags view (left side) includes grouped images when it shouldn't.
 249 --> 330924 - Rating is lost after tagging and rating.
 250 --> 259228 - Assign rating fails when tags have been changed too.
-251 --> 
+251 --> 399841 - Quality sorter rejecting images sharp, in focus and low ISO.
 252 --> 
 253 --> 
 254 --> 
