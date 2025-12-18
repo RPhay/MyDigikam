@@ -122,6 +122,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "automake"
                    "ccache"
                    "yasm"
+                   "nasm"
                    "patch"
                    "libdrm-dev"
                    "libxcb*-dev"
