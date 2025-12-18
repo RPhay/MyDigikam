@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-17 00:41+0000\n"
+"POT-Creation-Date: 2025-12-18 00:41+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -4083,13 +4083,13 @@ msgstr "Comhaid Fhíse"
 msgid "Configure column \"%1\""
 msgstr "Cumraigh"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:64
+#: core/app/views/tableview/tableview_column_digikam.cpp:66
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "Airíonna digiKam"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:67
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@title: tableview"
@@ -4097,40 +4097,54 @@ msgid "Rating"
 msgstr "Rátáil"
 
 # Not "Roghnaigh lipéad"
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:70
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "Lipéad roghnaithe"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:69
+#: core/app/views/tableview/tableview_column_digikam.cpp:71
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
 msgstr "Lipéad datha"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:73
+#: core/app/views/tableview/tableview_column_digikam.cpp:75
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@title: tableview"
 msgid "Title"
 msgstr "Teideal"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, fuzzy, kde-format
-#| msgid "Caption"
-msgctxt "@title: tableview"
-msgid "Caption"
-msgstr "Foscríbhinn"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, fuzzy, kde-format
+#| msgid "Caption"
+msgctxt "@title: tableview"
+msgid "Caption"
+msgstr "Foscríbhinn"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "Clibeanna"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:90
+#: core/app/views/tableview/tableview_column_digikam.cpp:82
+#, fuzzy, kde-format
+#| msgid "Group"
+msgctxt "@title: grouped"
+msgid "Grouped"
+msgstr "Grúpa"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#, fuzzy, kde-format
+#| msgid "Versions"
+msgctxt "@title: versioned"
+msgid "Versioned"
+msgstr "Leaganacha"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@info: tableview"
@@ -4138,130 +4152,189 @@ msgid "Rating"
 msgstr "Rátáil"
 
 # Not "Roghnaigh lipéad"
-#: core/app/views/tableview/tableview_column_digikam.cpp:95
+#: core/app/views/tableview/tableview_column_digikam.cpp:99
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "Lipéad roghnaithe"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:100
+#: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "Lipéad datha"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:105
+#: core/app/views/tableview/tableview_column_digikam.cpp:109
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "Teideal"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:110
+#: core/app/views/tableview/tableview_column_digikam.cpp:114
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "Foscríbhinn"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:115
+#: core/app/views/tableview/tableview_column_digikam.cpp:119
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "Clibeanna"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:334
-#: core/app/views/tableview/tableview_column_digikam.cpp:374
+#: core/app/views/tableview/tableview_column_digikam.cpp:124
+#, fuzzy, kde-format
+#| msgid "Group"
+msgctxt "@info: tableview"
+msgid "Grouped"
+msgstr "Grúpa"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:129
+#, fuzzy, kde-format
+#| msgid "Versions"
+msgctxt "@info: tableview"
+msgid "Versioned"
+msgstr "Leaganacha"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:348
+#: core/app/views/tableview/tableview_column_digikam.cpp:388
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "Neamhní"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:340
+#: core/app/views/tableview/tableview_column_digikam.cpp:354
 #, fuzzy, kde-format
 #| msgid "Rejected"
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "Diúltaithe"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:346
+#: core/app/views/tableview/tableview_column_digikam.cpp:360
 #, fuzzy, kde-format
 #| msgid "Pending"
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "Ar Feitheamh"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:352
+#: core/app/views/tableview/tableview_column_digikam.cpp:366
 #, fuzzy, kde-format
 #| msgid "Accepted"
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "Glactha"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:380
+#: core/app/views/tableview/tableview_column_digikam.cpp:394
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "Dearg"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:386
+#: core/app/views/tableview/tableview_column_digikam.cpp:400
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "Oráiste"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:392
+#: core/app/views/tableview/tableview_column_digikam.cpp:406
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "Buí"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:398
+#: core/app/views/tableview/tableview_column_digikam.cpp:412
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "Uaine"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:404
+#: core/app/views/tableview/tableview_column_digikam.cpp:418
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "Gorm"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:410
+#: core/app/views/tableview/tableview_column_digikam.cpp:424
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "Maigeanta"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:416
+#: core/app/views/tableview/tableview_column_digikam.cpp:430
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "Liath"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:422
+#: core/app/views/tableview/tableview_column_digikam.cpp:436
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "Dubh"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:428
+#: core/app/views/tableview/tableview_column_digikam.cpp:442
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: tableview"
 msgid "White"
 msgstr "Bán"
+
+# three in cameraitempropertiestab: is readable? is writable? downloaded?
+# imagepropertiescolorstab.cpp: yes/no for "hasAlpha"
+#: core/app/views/tableview/tableview_column_digikam.cpp:493
+#: core/app/views/tableview/tableview_column_digikam.cpp:501
+#: core/app/views/tableview/tableview_column_digikam.cpp:509
+#: core/libs/properties/import/importitempropertiestab.cpp:352
+#: core/libs/properties/import/importitempropertiestab.cpp:367
+#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:851
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@info: item properties"
+msgid "Yes"
+msgstr "Tá"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:497
+#: core/libs/properties/itempropertiessidebardb.cpp:862
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (stack)"
+msgstr ""
+
+# see "Yes" comments
+#: core/app/views/tableview/tableview_column_digikam.cpp:510
+#: core/libs/properties/import/importitempropertiestab.cpp:348
+#: core/libs/properties/import/importitempropertiestab.cpp:363
+#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/itempropertiessidebar.cpp:278
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:852
+#: core/libs/properties/itempropertiessidebardb.cpp:870
+#: core/libs/properties/itempropertiestab_setters.cpp:88
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@info: item properties"
+msgid "No"
+msgstr "Níl"
 
 #: core/app/views/tableview/tableview_column_file.cpp:52
 #, fuzzy, kde-format
@@ -22442,14 +22515,14 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Blobaí"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:102
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Taispeántas Sleamhnán"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -28096,7 +28169,7 @@ msgid "No Color"
 msgstr "Dath"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:455
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -28104,7 +28177,7 @@ msgid "Red"
 msgstr "Dearg"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:461
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: color label name"
@@ -28112,7 +28185,7 @@ msgid "Orange"
 msgstr "Oráiste"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:467
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -28120,7 +28193,7 @@ msgid "Yellow"
 msgstr "Buí"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:473
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -28128,7 +28201,7 @@ msgid "Green"
 msgstr "Uaine"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:479
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -28136,7 +28209,7 @@ msgid "Blue"
 msgstr "Gorm"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:485
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -28144,7 +28217,7 @@ msgid "Magenta"
 msgstr "Maigeanta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:491
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -28152,7 +28225,7 @@ msgid "Gray"
 msgstr "Liath"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:497
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -28160,7 +28233,7 @@ msgid "Black"
 msgstr "Dubh"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:503
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -38716,40 +38789,6 @@ msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "níl ar fáil"
 
-# see "Yes" comments
-#: core/libs/properties/import/importitempropertiestab.cpp:348
-#: core/libs/properties/import/importitempropertiestab.cpp:363
-#: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:278
-#: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:870
-#: core/libs/properties/itempropertiestab_setters.cpp:88
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@info: item properties"
-msgid "No"
-msgstr "Níl"
-
-# three in cameraitempropertiestab: is readable? is writable? downloaded?
-# imagepropertiescolorstab.cpp: yes/no for "hasAlpha"
-#: core/libs/properties/import/importitempropertiestab.cpp:352
-#: core/libs/properties/import/importitempropertiestab.cpp:367
-#: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:746
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:851
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@info: item properties"
-msgid "Yes"
-msgstr "Tá"
-
 #: core/libs/properties/import/importitempropertiestab.cpp:381
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
@@ -39096,12 +39135,6 @@ msgstr ""
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3Mpct)"
-
-#: core/libs/properties/itempropertiessidebardb.cpp:862
-#, kde-format
-msgctxt "@info: item properties"
-msgid "Yes (stack)"
-msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -45618,7 +45651,7 @@ msgstr "Comhad XMP le Sábháil"
 msgid "XMP text Files (*.xmp)"
 msgstr "Téacschomhaid XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:509
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
@@ -70062,7 +70095,7 @@ msgid "&Replace..."
 msgstr "&Ionadaigh..."
 
 #: core/utilities/setup/setuptemplate.cpp:247
-#: core/utilities/setup/setuptemplate.cpp:278
+#: core/utilities/setup/setuptemplate.cpp:279
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr ""

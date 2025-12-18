@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-17 00:41+0000\n"
+"POT-Creation-Date: 2025-12-18 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3790,175 +3790,249 @@ msgstr "비디오 코덱"
 msgid "Configure column \"%1\""
 msgstr "열 \"%1\" 설정"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:64
+#: core/app/views/tableview/tableview_column_digikam.cpp:66
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "digiKam 속성"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:67
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@title: tableview"
 msgid "Rating"
 msgstr "별점"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:70
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "레이블 선택"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:69
+#: core/app/views/tableview/tableview_column_digikam.cpp:71
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
 msgstr "색상 레이블"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:73
+#: core/app/views/tableview/tableview_column_digikam.cpp:75
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@title: tableview"
 msgid "Title"
 msgstr "제목"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, kde-format
-msgctxt "@title: tableview"
-msgid "Caption"
-msgstr "캡션"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, kde-format
 msgctxt "@title: tableview"
+msgid "Caption"
+msgstr "캡션"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#, kde-format
+msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "태그"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:90
+#: core/app/views/tableview/tableview_column_digikam.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@action: group items"
+#| msgid "Group"
+msgctxt "@title: grouped"
+msgid "Grouped"
+msgstr "그룹"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Version"
+msgctxt "@title: versioned"
+msgid "Versioned"
+msgstr "버전"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "별점"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:95
+#: core/app/views/tableview/tableview_column_digikam.cpp:99
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "레이블 선택"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:100
+#: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "색상 레이블"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:105
+#: core/app/views/tableview/tableview_column_digikam.cpp:109
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "제목"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:110
+#: core/app/views/tableview/tableview_column_digikam.cpp:114
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "캡션"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:115
+#: core/app/views/tableview/tableview_column_digikam.cpp:119
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "태그"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:334
-#: core/app/views/tableview/tableview_column_digikam.cpp:374
+#: core/app/views/tableview/tableview_column_digikam.cpp:124
+#, fuzzy, kde-format
+#| msgctxt "@action: group items"
+#| msgid "Group"
+msgctxt "@info: tableview"
+msgid "Grouped"
+msgstr "그룹"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:129
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Version"
+msgctxt "@info: tableview"
+msgid "Versioned"
+msgstr "버전"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:348
+#: core/app/views/tableview/tableview_column_digikam.cpp:388
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "없음"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:340
+#: core/app/views/tableview/tableview_column_digikam.cpp:354
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "거부됨"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:346
+#: core/app/views/tableview/tableview_column_digikam.cpp:360
 #, fuzzy, kde-format
 #| msgid "Pending"
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "대기 중"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:352
+#: core/app/views/tableview/tableview_column_digikam.cpp:366
 #, fuzzy, kde-format
 #| msgid "Accepted"
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "수락함"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:380
+#: core/app/views/tableview/tableview_column_digikam.cpp:394
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "빨간색"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:386
+#: core/app/views/tableview/tableview_column_digikam.cpp:400
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "주황색"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:392
+#: core/app/views/tableview/tableview_column_digikam.cpp:406
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "노란색"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:398
+#: core/app/views/tableview/tableview_column_digikam.cpp:412
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "녹색"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:404
+#: core/app/views/tableview/tableview_column_digikam.cpp:418
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "파란색"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:410
+#: core/app/views/tableview/tableview_column_digikam.cpp:424
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "자홍색"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:416
+#: core/app/views/tableview/tableview_column_digikam.cpp:430
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "회색"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:422
+#: core/app/views/tableview/tableview_column_digikam.cpp:436
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "검정색"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:428
+#: core/app/views/tableview/tableview_column_digikam.cpp:442
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: tableview"
 msgid "White"
 msgstr "흰색"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:493
+#: core/app/views/tableview/tableview_column_digikam.cpp:501
+#: core/app/views/tableview/tableview_column_digikam.cpp:509
+#: core/libs/properties/import/importitempropertiestab.cpp:352
+#: core/libs/properties/import/importitempropertiestab.cpp:367
+#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:851
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@info: item properties"
+msgid "Yes"
+msgstr "예"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:497
+#: core/libs/properties/itempropertiessidebardb.cpp:862
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (stack)"
+msgstr ""
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:510
+#: core/libs/properties/import/importitempropertiestab.cpp:348
+#: core/libs/properties/import/importitempropertiestab.cpp:363
+#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/itempropertiessidebar.cpp:278
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:852
+#: core/libs/properties/itempropertiessidebardb.cpp:870
+#: core/libs/properties/itempropertiestab_setters.cpp:88
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@info: item properties"
+msgid "No"
+msgstr "아니요"
 
 #: core/app/views/tableview/tableview_column_file.cpp:52
 #, kde-format
@@ -22626,14 +22700,14 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "상자"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:102
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "슬라이드 쇼"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -28339,7 +28413,7 @@ msgid "No Color"
 msgstr "색 없음"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:455
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -28347,14 +28421,14 @@ msgid "Red"
 msgstr "빨간색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:461
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "주황색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:467
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -28362,14 +28436,14 @@ msgid "Yellow"
 msgstr "노란색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:473
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "녹색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:479
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -28377,7 +28451,7 @@ msgid "Blue"
 msgstr "파란색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:485
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -28385,14 +28459,14 @@ msgid "Magenta"
 msgstr "자홍색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:491
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "회색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:497
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -28400,7 +28474,7 @@ msgid "Black"
 msgstr "검정색"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:503
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -38899,37 +38973,6 @@ msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "사용할 수 없음"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:348
-#: core/libs/properties/import/importitempropertiestab.cpp:363
-#: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:278
-#: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:870
-#: core/libs/properties/itempropertiestab_setters.cpp:88
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@info: item properties"
-msgid "No"
-msgstr "아니요"
-
-#: core/libs/properties/import/importitempropertiestab.cpp:352
-#: core/libs/properties/import/importitempropertiestab.cpp:367
-#: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:746
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:851
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@info: item properties"
-msgid "Yes"
-msgstr "예"
-
 #: core/libs/properties/import/importitempropertiestab.cpp:381
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
@@ -39252,12 +39295,6 @@ msgstr ""
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2(%3백만 화소)"
-
-#: core/libs/properties/itempropertiessidebardb.cpp:862
-#, kde-format
-msgctxt "@info: item properties"
-msgid "Yes (stack)"
-msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -45812,7 +45849,7 @@ msgstr "저장할 XMP 파일"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP 텍스트 파일 (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:509
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
@@ -69468,7 +69505,7 @@ msgid "&Replace..."
 msgstr "바꾸기(&R)..."
 
 #: core/utilities/setup/setuptemplate.cpp:247
-#: core/utilities/setup/setuptemplate.cpp:278
+#: core/utilities/setup/setuptemplate.cpp:279
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr ""

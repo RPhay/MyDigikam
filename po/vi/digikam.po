@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-17 00:41+0000\n"
+"POT-Creation-Date: 2025-12-18 00:41+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -3778,174 +3778,240 @@ msgstr "Tệp âm thanh"
 msgid "Configure column \"%1\""
 msgstr "Cấu hình"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:64
+#: core/app/views/tableview/tableview_column_digikam.cpp:66
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "Thuộc tính digiKam"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:67
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@title: tableview"
 msgid "Rating"
 msgstr "Đánh giá"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:70
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "Điểm ảnh:"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:69
+#: core/app/views/tableview/tableview_column_digikam.cpp:71
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
 msgstr "Độ sâu màu :"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:73
+#: core/app/views/tableview/tableview_column_digikam.cpp:75
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@title: tableview"
 msgid "Title"
 msgstr "Tựa"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, fuzzy, kde-format
-msgctxt "@title: tableview"
-msgid "Caption"
-msgstr "Độ xoay:"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, fuzzy, kde-format
+msgctxt "@title: tableview"
+msgid "Caption"
+msgstr "Độ xoay:"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "Thẻ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:90
+#: core/app/views/tableview/tableview_column_digikam.cpp:82
+#, fuzzy, kde-format
+msgctxt "@title: grouped"
+msgid "Grouped"
+msgstr "&Nhóm lại"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#, fuzzy, kde-format
+msgctxt "@title: versioned"
+msgid "Versioned"
+msgstr "<b>Quyền hạn</b>:"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "Đánh giá"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:95
+#: core/app/views/tableview/tableview_column_digikam.cpp:99
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "Điểm ảnh:"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:100
+#: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "Độ sâu màu :"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:105
+#: core/app/views/tableview/tableview_column_digikam.cpp:109
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "Tựa"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:110
+#: core/app/views/tableview/tableview_column_digikam.cpp:114
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "Độ xoay:"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:115
+#: core/app/views/tableview/tableview_column_digikam.cpp:119
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "Thẻ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:334
-#: core/app/views/tableview/tableview_column_digikam.cpp:374
+#: core/app/views/tableview/tableview_column_digikam.cpp:124
+#, fuzzy, kde-format
+msgctxt "@info: tableview"
+msgid "Grouped"
+msgstr "&Nhóm lại"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:129
+#, fuzzy, kde-format
+msgctxt "@info: tableview"
+msgid "Versioned"
+msgstr "<b>Quyền hạn</b>:"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:348
+#: core/app/views/tableview/tableview_column_digikam.cpp:388
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "Không có"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:340
+#: core/app/views/tableview/tableview_column_digikam.cpp:354
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "Đặt lại"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:346
+#: core/app/views/tableview/tableview_column_digikam.cpp:360
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "Giải mã RAW"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:352
+#: core/app/views/tableview/tableview_column_digikam.cpp:366
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "Ngưỡng:"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:380
+#: core/app/views/tableview/tableview_column_digikam.cpp:394
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "Đỏ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:386
+#: core/app/views/tableview/tableview_column_digikam.cpp:400
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "Phạm vi:"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:392
+#: core/app/views/tableview/tableview_column_digikam.cpp:406
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "Vàng"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:398
+#: core/app/views/tableview/tableview_column_digikam.cpp:412
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "Lục"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:404
+#: core/app/views/tableview/tableview_column_digikam.cpp:418
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "Xanh"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:410
+#: core/app/views/tableview/tableview_column_digikam.cpp:424
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "Đỏ tươi"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:416
+#: core/app/views/tableview/tableview_column_digikam.cpp:430
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "Chuẩn"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:422
+#: core/app/views/tableview/tableview_column_digikam.cpp:436
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "Lùi"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:428
+#: core/app/views/tableview/tableview_column_digikam.cpp:442
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "White"
 msgstr "Tựa"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:493
+#: core/app/views/tableview/tableview_column_digikam.cpp:501
+#: core/app/views/tableview/tableview_column_digikam.cpp:509
+#: core/libs/properties/import/importitempropertiestab.cpp:352
+#: core/libs/properties/import/importitempropertiestab.cpp:367
+#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:851
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@info: item properties"
+msgid "Yes"
+msgstr "Có"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:497
+#: core/libs/properties/itempropertiessidebardb.cpp:862
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (stack)"
+msgstr ""
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:510
+#: core/libs/properties/import/importitempropertiestab.cpp:348
+#: core/libs/properties/import/importitempropertiestab.cpp:363
+#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/itempropertiessidebar.cpp:278
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:852
+#: core/libs/properties/itempropertiessidebardb.cpp:870
+#: core/libs/properties/itempropertiestab_setters.cpp:88
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@info: item properties"
+msgid "No"
+msgstr "Không"
 
 #: core/app/views/tableview/tableview_column_file.cpp:52
 #, fuzzy, kde-format
@@ -21413,13 +21479,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:102
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Trình chiếu"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -26862,7 +26928,7 @@ msgid "No Color"
 msgstr "Màu sắc"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:455
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -26870,14 +26936,14 @@ msgid "Red"
 msgstr "Đỏ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:461
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Phạm vi:"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:467
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -26885,7 +26951,7 @@ msgid "Yellow"
 msgstr "Vàng"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:473
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -26893,7 +26959,7 @@ msgid "Green"
 msgstr "Lục"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:479
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -26901,7 +26967,7 @@ msgid "Blue"
 msgstr "Xanh"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:485
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -26909,21 +26975,21 @@ msgid "Magenta"
 msgstr "Đỏ tươi"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:491
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Chuẩn"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:497
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Lùi"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:503
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -37195,37 +37261,6 @@ msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "không sẵn sàng"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:348
-#: core/libs/properties/import/importitempropertiestab.cpp:363
-#: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:278
-#: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:870
-#: core/libs/properties/itempropertiestab_setters.cpp:88
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@info: item properties"
-msgid "No"
-msgstr "Không"
-
-#: core/libs/properties/import/importitempropertiestab.cpp:352
-#: core/libs/properties/import/importitempropertiestab.cpp:367
-#: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:746
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:851
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@info: item properties"
-msgid "Yes"
-msgstr "Có"
-
 #: core/libs/properties/import/importitempropertiestab.cpp:381
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
@@ -37557,12 +37592,6 @@ msgstr ""
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
-
-#: core/libs/properties/itempropertiessidebardb.cpp:862
-#, kde-format
-msgctxt "@info: item properties"
-msgid "Yes (stack)"
-msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -43812,7 +43841,7 @@ msgstr "Tệp EXIF cần lưu"
 msgid "XMP text Files (*.xmp)"
 msgstr "Tệp nhị phân EXIF (*.dat)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:509
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
@@ -66350,7 +66379,7 @@ msgid "&Replace..."
 msgstr "Tương đối"
 
 #: core/utilities/setup/setuptemplate.cpp:247
-#: core/utilities/setup/setuptemplate.cpp:278
+#: core/utilities/setup/setuptemplate.cpp:279
 #, fuzzy, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "<p>Ở đây hãy chọn độ xoay đoạn cần dùng."

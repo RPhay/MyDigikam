@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-17 00:41+0000\n"
+"POT-Creation-Date: 2025-12-18 00:41+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -3852,176 +3852,243 @@ msgstr ""
 msgid "Configure column \"%1\""
 msgstr "संयोजीत करा"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:64
+#: core/app/views/tableview/tableview_column_digikam.cpp:66
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "गुणधर्म"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:67
-#, fuzzy, kde-format
-msgctxt "@title: tableview"
-msgid "Rating"
-msgstr "गुणवत्ताश्रेणी"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
-#, kde-format
-msgctxt "@title: tableview"
-msgid "Pick label"
-msgstr ""
-
 #: core/app/views/tableview/tableview_column_digikam.cpp:69
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
+msgid "Rating"
+msgstr "गुणवत्ताश्रेणी"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:70
+#, kde-format
+msgctxt "@title: tableview"
+msgid "Pick label"
+msgstr ""
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:71
+#, fuzzy, kde-format
+msgctxt "@title: tableview"
 msgid "Color label"
 msgstr "रंग खोली"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:73
+#: core/app/views/tableview/tableview_column_digikam.cpp:75
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@title: tableview"
 msgid "Title"
 msgstr "शिर्षक"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
+#: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: tableview"
 msgid "Caption"
 msgstr "कॅप्शन"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:79
+#: core/app/views/tableview/tableview_column_digikam.cpp:81
 #, fuzzy, kde-format
 msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "टॅग्स"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:90
+#: core/app/views/tableview/tableview_column_digikam.cpp:82
+#, fuzzy, kde-format
+#| msgid "Group"
+msgctxt "@title: grouped"
+msgid "Grouped"
+msgstr "समूह"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#, fuzzy, kde-format
+msgctxt "@title: versioned"
+msgid "Versioned"
+msgstr "विस्तारण:"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "गुणवत्ताश्रेणी"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:95
+#: core/app/views/tableview/tableview_column_digikam.cpp:99
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr ""
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:100
+#: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "रंग खोली"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:105
+#: core/app/views/tableview/tableview_column_digikam.cpp:109
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "शिर्षक"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:110
+#: core/app/views/tableview/tableview_column_digikam.cpp:114
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "कॅप्शन"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:115
+#: core/app/views/tableview/tableview_column_digikam.cpp:119
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "टॅग्स"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:334
-#: core/app/views/tableview/tableview_column_digikam.cpp:374
+#: core/app/views/tableview/tableview_column_digikam.cpp:124
+#, fuzzy, kde-format
+#| msgid "Group"
+msgctxt "@info: tableview"
+msgid "Grouped"
+msgstr "समूह"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:129
+#, fuzzy, kde-format
+msgctxt "@info: tableview"
+msgid "Versioned"
+msgstr "विस्तारण:"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:348
+#: core/app/views/tableview/tableview_column_digikam.cpp:388
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "काही नाही"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:340
+#: core/app/views/tableview/tableview_column_digikam.cpp:354
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "माइम प्रकार निवडा"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:346
+#: core/app/views/tableview/tableview_column_digikam.cpp:360
 #, fuzzy, kde-format
 #| msgid "Pending"
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "अनिर्णायक"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:352
+#: core/app/views/tableview/tableview_column_digikam.cpp:366
 #, fuzzy, kde-format
 #| msgid "Accepted"
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "स्वीकृत"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:380
+#: core/app/views/tableview/tableview_column_digikam.cpp:394
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "लाल"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:386
+#: core/app/views/tableview/tableview_column_digikam.cpp:400
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "क्षेत्र"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:392
+#: core/app/views/tableview/tableview_column_digikam.cpp:406
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "पिवळा"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:398
+#: core/app/views/tableview/tableview_column_digikam.cpp:412
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "हिरवा"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:404
+#: core/app/views/tableview/tableview_column_digikam.cpp:418
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "निळा"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:410
+#: core/app/views/tableview/tableview_column_digikam.cpp:424
 #, fuzzy, kde-format
 #| msgid "Argentina"
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "अर्जेन्टिना"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:416
+#: core/app/views/tableview/tableview_column_digikam.cpp:430
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "धूसर"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:422
+#: core/app/views/tableview/tableview_column_digikam.cpp:436
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "काळा"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:428
+#: core/app/views/tableview/tableview_column_digikam.cpp:442
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: tableview"
 msgid "White"
 msgstr "पांढरा"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:493
+#: core/app/views/tableview/tableview_column_digikam.cpp:501
+#: core/app/views/tableview/tableview_column_digikam.cpp:509
+#: core/libs/properties/import/importitempropertiestab.cpp:352
+#: core/libs/properties/import/importitempropertiestab.cpp:367
+#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:851
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#, fuzzy, kde-format
+msgctxt "@info: item properties"
+msgid "Yes"
+msgstr "हो"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:497
+#: core/libs/properties/itempropertiessidebardb.cpp:862
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (stack)"
+msgstr ""
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:510
+#: core/libs/properties/import/importitempropertiestab.cpp:348
+#: core/libs/properties/import/importitempropertiestab.cpp:363
+#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/itempropertiessidebar.cpp:278
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:852
+#: core/libs/properties/itempropertiessidebardb.cpp:870
+#: core/libs/properties/itempropertiestab_setters.cpp:88
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@info: item properties"
+msgid "No"
+msgstr "नाही"
 
 #: core/app/views/tableview/tableview_column_file.cpp:52
 #, fuzzy, kde-format
@@ -21279,13 +21346,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:102
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "स्लाइडशो"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -26646,7 +26713,7 @@ msgid "No Color"
 msgstr "रंग"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:455
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -26654,14 +26721,14 @@ msgid "Red"
 msgstr "लाल"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:461
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "क्षेत्र"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:467
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -26669,7 +26736,7 @@ msgid "Yellow"
 msgstr "पिवळा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:473
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -26677,7 +26744,7 @@ msgid "Green"
 msgstr "हिरवा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:479
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -26685,7 +26752,7 @@ msgid "Blue"
 msgstr "निळा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:485
 #, fuzzy, kde-format
 #| msgid "Argentina"
 msgctxt "@info: color label name"
@@ -26693,7 +26760,7 @@ msgid "Magenta"
 msgstr "अर्जेन्टिना"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:491
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -26701,7 +26768,7 @@ msgid "Gray"
 msgstr "धूसर"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:497
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -26709,7 +26776,7 @@ msgid "Black"
 msgstr "काळा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:503
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -36786,36 +36853,6 @@ msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "अनुपलब्ध"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:348
-#: core/libs/properties/import/importitempropertiestab.cpp:363
-#: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:278
-#: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:870
-#: core/libs/properties/itempropertiestab_setters.cpp:88
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@info: item properties"
-msgid "No"
-msgstr "नाही"
-
-#: core/libs/properties/import/importitempropertiestab.cpp:352
-#: core/libs/properties/import/importitempropertiestab.cpp:367
-#: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:746
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:851
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#, fuzzy, kde-format
-msgctxt "@info: item properties"
-msgid "Yes"
-msgstr "हो"
-
 #: core/libs/properties/import/importitempropertiestab.cpp:381
 #, fuzzy, kde-format
 msgctxt "@info: item size"
@@ -37132,12 +37169,6 @@ msgstr ""
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
-msgstr ""
-
-#: core/libs/properties/itempropertiessidebardb.cpp:862
-#, kde-format
-msgctxt "@info: item properties"
-msgid "Yes (stack)"
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:36
@@ -43336,7 +43367,7 @@ msgstr ""
 msgid "XMP text Files (*.xmp)"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:509
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "None"
@@ -66424,7 +66455,7 @@ msgid "&Replace..."
 msgstr "बदला (&R)..."
 
 #: core/utilities/setup/setuptemplate.cpp:247
-#: core/utilities/setup/setuptemplate.cpp:278
+#: core/utilities/setup/setuptemplate.cpp:279
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr ""

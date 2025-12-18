@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-16 10:36+0100\n"
+"POT-Creation-Date: 2025-12-18 00:41+0000\n"
+"PO-Revision-Date: 2025-12-17 01:58+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -358,28 +358,24 @@ msgid "People"
 msgstr "ხალხი"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgid "Text Filter:"
-msgstr "ტექსტის ფილტრი"
+msgstr "ტექსტის ფილტრი:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:41
-#, fuzzy, kde-format
-#| msgid "MIME Type Filter"
+#, kde-format
 msgid "MIME Type Filter:"
-msgstr "MIME ტიპის ფილტრი"
+msgstr "MIME ტიპის ფილტრი:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
-#, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#, kde-format
 msgid "Geolocation Filter:"
-msgstr "გეოლოკაციის ფილტრი"
+msgstr "გეოლოკაციის ფილტრი:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
-#, fuzzy, kde-format
-#| msgid "Labels Filter"
+#, kde-format
 msgid "Labels Filter:"
-msgstr "ჭდეების ფილტრი"
+msgstr "ჭდეების ფილტრი:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
@@ -1376,7 +1372,7 @@ msgstr ""
 "პროგრამა ExifTool მეტამონაცემების სექციაში, თუ არა.\n"
 "შეცდომის შეტყობინება: %1"
 
-#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:517
+#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:526
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3212,107 +3208,107 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
-#: core/app/views/stack/trashview.cpp:107
+#: core/app/views/stack/trashview.cpp:112
 #: core/libs/tags/manager/tagsmanager_p.cpp:270
 #, kde-format
 msgid "Help"
 msgstr "დახმარება"
 
-#: core/app/views/stack/trashview.cpp:108
+#: core/app/views/stack/trashview.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "დახმარება ინტერნეტში ნაგვის ყუთის შესახებ"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Undo"
 msgstr "დაბრუნება"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "ნაგვის ყუთიდან, მხოლოდ, ბოლო ჩანაწერის აღდგენა."
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: core/app/views/stack/trashview.cpp:124
+#: core/app/views/stack/trashview.cpp:129
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "მონიშნული ფაილების აღდგენა სანაგვე ყუთიდან."
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "Delete..."
 msgstr "წაშლა..."
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:136
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "მონიშნული ან ყველა ელემენტის შეუქცევადი წაშლა ნავის ყუთიდან."
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:140
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "მონიშნული ელემენტი სამუდამოდ"
 
-#: core/app/views/stack/trashview.cpp:138
+#: core/app/views/stack/trashview.cpp:143
 #, kde-format
 msgid "All Items Permanently"
 msgstr "ყველა ელემენტი სამუდამოდ"
 
-#: core/app/views/stack/trashview.cpp:273
+#: core/app/views/stack/trashview.cpp:282
 #, kde-format
 msgid "Confirm Undo"
 msgstr "დაადასტურეთ გაუქმება"
 
-#: core/app/views/stack/trashview.cpp:274
-#: core/app/views/stack/trashview.cpp:301
+#: core/app/views/stack/trashview.cpp:283
+#: core/app/views/stack/trashview.cpp:310
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "დარწმუნებული ბრძანდებით, რომ გნებავთ, აღადგინოთ %1 ჩანაწერი?"
 msgstr[1] "დარწმუნებული ბრძანდებით, რომ გნებავთ, აღადგინოთ %1 ჩანაწერი?"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:309
 #, kde-format
 msgid "Confirm Restore"
 msgstr "დაადასტურეთ აღდგენა"
 
-#: core/app/views/stack/trashview.cpp:331
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:340
+#: core/app/views/stack/trashview.cpp:392
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "წაშლის დადასტურება"
 
-#: core/app/views/stack/trashview.cpp:332
+#: core/app/views/stack/trashview.cpp:341
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "მართლა გნებავთ %1 ელემენტის შეუქცევადად წაშლა?"
 msgstr[1] "მართლა გნებავთ %1 ელემენტის შეუქცევადად წაშლა?"
 
-#: core/app/views/stack/trashview.cpp:384
+#: core/app/views/stack/trashview.cpp:393
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "მართლა გნებავთ ყველა ელემენტის შეუქცევადად წაშლა?"
 
-#: core/app/views/stack/trashview.cpp:455
+#: core/app/views/stack/trashview.cpp:464
 #, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "მონიშნული"
 
-#: core/app/views/stack/trashview.cpp:457
+#: core/app/views/stack/trashview.cpp:466
 #, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: core/app/views/stack/trashview.cpp:524
+#: core/app/views/stack/trashview.cpp:533
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "მონიშნულია ჩანაწერი %1/%2"
@@ -3863,162 +3859,230 @@ msgstr "ვიდეო კოდეკი"
 msgid "Configure column \"%1\""
 msgstr "სვეტის მორგება: \"%1\""
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:64
+#: core/app/views/tableview/tableview_column_digikam.cpp:66
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "digiKam -ის ფუნქციები"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:67
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Rating"
 msgstr "შეფასება"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:70
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "აირჩიეთ ჭდე"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:69
+#: core/app/views/tableview/tableview_column_digikam.cpp:71
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
 msgstr "ჭდის ფერი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:73
+#: core/app/views/tableview/tableview_column_digikam.cpp:75
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Title"
 msgstr "სათაური"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, kde-format
-msgctxt "@title: tableview"
-msgid "Caption"
-msgstr "წარწერა"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, kde-format
 msgctxt "@title: tableview"
+msgid "Caption"
+msgstr "წარწერა"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#, kde-format
+msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "ჭდეები"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:90
+#: core/app/views/tableview/tableview_column_digikam.cpp:82
+#, fuzzy, kde-format
+#| msgid "Grouped"
+msgctxt "@title: grouped"
+msgid "Grouped"
+msgstr "დაჯგუფებული"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#, fuzzy, kde-format
+#| msgid "Versioned"
+msgctxt "@title: versioned"
+msgid "Versioned"
+msgstr "ვერსიის მქონე"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "შეფასება"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:95
+#: core/app/views/tableview/tableview_column_digikam.cpp:99
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "აირჩიეთ ჭდე"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:100
+#: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "ჭდის ფერი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:105
+#: core/app/views/tableview/tableview_column_digikam.cpp:109
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "სათაური"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:110
+#: core/app/views/tableview/tableview_column_digikam.cpp:114
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "წარწერა"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:115
+#: core/app/views/tableview/tableview_column_digikam.cpp:119
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "ჭდეები"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:334
-#: core/app/views/tableview/tableview_column_digikam.cpp:374
+#: core/app/views/tableview/tableview_column_digikam.cpp:124
+#, fuzzy, kde-format
+#| msgid "Grouped"
+msgctxt "@info: tableview"
+msgid "Grouped"
+msgstr "დაჯგუფებული"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:129
+#, fuzzy, kde-format
+#| msgid "Versioned"
+msgctxt "@info: tableview"
+msgid "Versioned"
+msgstr "ვერსიის მქონე"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:348
+#: core/app/views/tableview/tableview_column_digikam.cpp:388
 #, kde-format
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "არცერთი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:340
+#: core/app/views/tableview/tableview_column_digikam.cpp:354
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "უარყოფილია"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:346
+#: core/app/views/tableview/tableview_column_digikam.cpp:360
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "დარჩენილი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:352
+#: core/app/views/tableview/tableview_column_digikam.cpp:366
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "მიღებულია"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:380
+#: core/app/views/tableview/tableview_column_digikam.cpp:394
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "წითელი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:386
+#: core/app/views/tableview/tableview_column_digikam.cpp:400
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "ნარინჯისფერი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:392
+#: core/app/views/tableview/tableview_column_digikam.cpp:406
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "ყვითელი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:398
+#: core/app/views/tableview/tableview_column_digikam.cpp:412
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "მწვანე"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:404
+#: core/app/views/tableview/tableview_column_digikam.cpp:418
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "ლურჯი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:410
+#: core/app/views/tableview/tableview_column_digikam.cpp:424
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "ალისფერი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:416
+#: core/app/views/tableview/tableview_column_digikam.cpp:430
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "ნაცრისფერი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:422
+#: core/app/views/tableview/tableview_column_digikam.cpp:436
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "შავი"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:428
+#: core/app/views/tableview/tableview_column_digikam.cpp:442
 #, kde-format
 msgctxt "@info: tableview"
 msgid "White"
 msgstr "თეთრი"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:493
+#: core/app/views/tableview/tableview_column_digikam.cpp:501
+#: core/app/views/tableview/tableview_column_digikam.cpp:509
+#: core/libs/properties/import/importitempropertiestab.cpp:352
+#: core/libs/properties/import/importitempropertiestab.cpp:367
+#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:851
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes"
+msgstr "დიახ"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:497
+#: core/libs/properties/itempropertiessidebardb.cpp:862
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (stack)"
+msgstr "დიახ (დასტა)"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:510
+#: core/libs/properties/import/importitempropertiestab.cpp:348
+#: core/libs/properties/import/importitempropertiestab.cpp:363
+#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/itempropertiessidebar.cpp:278
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:852
+#: core/libs/properties/itempropertiessidebardb.cpp:870
+#: core/libs/properties/itempropertiestab_setters.cpp:88
+#, kde-format
+msgctxt "@info: item properties"
+msgid "No"
+msgstr "არა"
 
 #: core/app/views/tableview/tableview_column_file.cpp:52
 #, kde-format
@@ -21231,13 +21295,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "წვეთები"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:102
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "სლაიდშოუ"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -26601,63 +26665,63 @@ msgid "No Color"
 msgstr "ფერის გარეშე"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:455
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "წითელი"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:461
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "ნარინჯისფერი"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:467
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "ყვითელი"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:473
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "მწვანე"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:479
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "ლურჯი"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:485
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "ალისფერი"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:491
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "ნაცრისფერი"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:497
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "შავი"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:503
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -36596,35 +36660,6 @@ msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "მიუწვდომელი"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:348
-#: core/libs/properties/import/importitempropertiestab.cpp:363
-#: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:278
-#: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:870
-#: core/libs/properties/itempropertiestab_setters.cpp:88
-#, kde-format
-msgctxt "@info: item properties"
-msgid "No"
-msgstr "არა"
-
-#: core/libs/properties/import/importitempropertiestab.cpp:352
-#: core/libs/properties/import/importitempropertiestab.cpp:367
-#: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:746
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:851
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#, kde-format
-msgctxt "@info: item properties"
-msgid "Yes"
-msgstr "დიახ"
-
 #: core/libs/properties/import/importitempropertiestab.cpp:381
 #, kde-format
 msgctxt "@info: item size"
@@ -36927,12 +36962,6 @@ msgstr "ინფორმაციის ჩანართის გახს�
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
-
-#: core/libs/properties/itempropertiessidebardb.cpp:862
-#, kde-format
-msgctxt "@info: item properties"
-msgid "Yes (stack)"
-msgstr "დიახ (დასტა)"
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -43037,7 +43066,7 @@ msgstr "XMP ფაილი შესანახად"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP ტექსტური ფაილები (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:509
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
@@ -64958,7 +64987,7 @@ msgid "&Replace..."
 msgstr "&ჩანაცვლება..."
 
 #: core/utilities/setup/setuptemplate.cpp:247
-#: core/utilities/setup/setuptemplate.cpp:278
+#: core/utilities/setup/setuptemplate.cpp:279
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "ახალი მეტამონაცემების შაბლონის რეგისტრაცია სახელის გარეშე სეუძლებელია."

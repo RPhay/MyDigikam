@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-17 00:41+0000\n"
-"PO-Revision-Date: 2025-12-13 07:24+0100\n"
+"POT-Creation-Date: 2025-12-18 00:41+0000\n"
+"PO-Revision-Date: 2025-12-17 09:52+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.11.90\n"
+"X-Generator: Lokalize 25.12.0\n"
 "X-Text-Markup: kde4\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -416,36 +416,30 @@ msgstr ""
 "filtrer les images. Inclut également la case à cocher « %1 »"
 
 #: core/app/filters/filtersidebarwidget_faces.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@title"
 msgid "People"
 msgstr "Personnes"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgid "Text Filter:"
-msgstr "Filtre de texte"
+msgstr "Filtre de texte :"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:41
-#, fuzzy, kde-format
-#| msgid "MIME Type Filter"
+#, kde-format
 msgid "MIME Type Filter:"
-msgstr "Filtre de type MIME"
+msgstr "Filtre par type « MIME » :"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
-#, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#, kde-format
 msgid "Geolocation Filter:"
-msgstr "Filtre de géolocalisation"
+msgstr "Filtre par géolocalisation :"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
-#, fuzzy, kde-format
-#| msgid "Labels Filter"
+#, kde-format
 msgid "Labels Filter:"
-msgstr "Filtre de libellés"
+msgstr "Filtre par étiquette :"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
@@ -2971,8 +2965,7 @@ msgstr "Afficher en plein écran"
 
 #: core/app/views/preview/itempreviewview.cpp:508
 #: core/app/views/stack/itemiconview_views.cpp:313
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Visages"
@@ -4003,162 +3996,230 @@ msgstr "Codec vidéo"
 msgid "Configure column \"%1\""
 msgstr "Configurer la colonne « %1 »"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:64
+#: core/app/views/tableview/tableview_column_digikam.cpp:66
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "Propriétés de digiKam"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:67
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Rating"
 msgstr "Notation"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:70
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "Libellé de désignation"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:69
+#: core/app/views/tableview/tableview_column_digikam.cpp:71
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
 msgstr "Libellé de couleur"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:73
+#: core/app/views/tableview/tableview_column_digikam.cpp:75
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Title"
 msgstr "Titre"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, kde-format
-msgctxt "@title: tableview"
-msgid "Caption"
-msgstr "Légende"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, kde-format
 msgctxt "@title: tableview"
+msgid "Caption"
+msgstr "Légende"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#, kde-format
+msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "Étiquettes"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:90
+#: core/app/views/tableview/tableview_column_digikam.cpp:82
+#, fuzzy, kde-format
+#| msgid "Grouped"
+msgctxt "@title: grouped"
+msgid "Grouped"
+msgstr "Regroupé"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#, fuzzy, kde-format
+#| msgid "Versioned"
+msgctxt "@title: versioned"
+msgid "Versioned"
+msgstr "Versionné"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "Notation"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:95
+#: core/app/views/tableview/tableview_column_digikam.cpp:99
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "Libellé de désignation"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:100
+#: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "Libellé de couleur"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:105
+#: core/app/views/tableview/tableview_column_digikam.cpp:109
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "Titre"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:110
+#: core/app/views/tableview/tableview_column_digikam.cpp:114
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "Légende"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:115
+#: core/app/views/tableview/tableview_column_digikam.cpp:119
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "Étiquettes"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:334
-#: core/app/views/tableview/tableview_column_digikam.cpp:374
+#: core/app/views/tableview/tableview_column_digikam.cpp:124
+#, fuzzy, kde-format
+#| msgid "Grouped"
+msgctxt "@info: tableview"
+msgid "Grouped"
+msgstr "Regroupé"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:129
+#, fuzzy, kde-format
+#| msgid "Versioned"
+msgctxt "@info: tableview"
+msgid "Versioned"
+msgstr "Versionné"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:348
+#: core/app/views/tableview/tableview_column_digikam.cpp:388
 #, kde-format
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "Aucun"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:340
+#: core/app/views/tableview/tableview_column_digikam.cpp:354
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "Rejeté"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:346
+#: core/app/views/tableview/tableview_column_digikam.cpp:360
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "En attente"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:352
+#: core/app/views/tableview/tableview_column_digikam.cpp:366
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "Accepté"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:380
+#: core/app/views/tableview/tableview_column_digikam.cpp:394
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "Rouge"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:386
+#: core/app/views/tableview/tableview_column_digikam.cpp:400
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "Orange"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:392
+#: core/app/views/tableview/tableview_column_digikam.cpp:406
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "Jaune"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:398
+#: core/app/views/tableview/tableview_column_digikam.cpp:412
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "Vert"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:404
+#: core/app/views/tableview/tableview_column_digikam.cpp:418
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "Bleu"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:410
+#: core/app/views/tableview/tableview_column_digikam.cpp:424
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "Magenta"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:416
+#: core/app/views/tableview/tableview_column_digikam.cpp:430
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "Gris"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:422
+#: core/app/views/tableview/tableview_column_digikam.cpp:436
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "Noir"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:428
+#: core/app/views/tableview/tableview_column_digikam.cpp:442
 #, kde-format
 msgctxt "@info: tableview"
 msgid "White"
 msgstr "Blanc"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:493
+#: core/app/views/tableview/tableview_column_digikam.cpp:501
+#: core/app/views/tableview/tableview_column_digikam.cpp:509
+#: core/libs/properties/import/importitempropertiestab.cpp:352
+#: core/libs/properties/import/importitempropertiestab.cpp:367
+#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:280
+#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:851
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes"
+msgstr "Oui"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:497
+#: core/libs/properties/itempropertiessidebardb.cpp:862
+#, kde-format
+msgctxt "@info: item properties"
+msgid "Yes (stack)"
+msgstr "Oui (Pile)"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:510
+#: core/libs/properties/import/importitempropertiestab.cpp:348
+#: core/libs/properties/import/importitempropertiestab.cpp:363
+#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/itempropertiessidebar.cpp:278
+#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:852
+#: core/libs/properties/itempropertiessidebardb.cpp:870
+#: core/libs/properties/itempropertiestab_setters.cpp:88
+#, kde-format
+msgctxt "@info: item properties"
+msgid "No"
+msgstr "Non"
 
 #: core/app/views/tableview/tableview_column_file.cpp:52
 #, kde-format
@@ -22478,13 +22539,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Tâches"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:102
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:691
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -28131,63 +28192,63 @@ msgid "No Color"
 msgstr "Aucune couleur"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:444
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:455
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Rouge"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:450
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:461
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Orange"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:467
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Jaune"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:473
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Vert"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:479
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Bleu"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:474
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:485
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:491
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Gris"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:497
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Noir"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:503
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -38932,35 +38993,6 @@ msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "indisponible"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:348
-#: core/libs/properties/import/importitempropertiestab.cpp:363
-#: core/libs/properties/import/importitempropertiestab.cpp:451
-#: core/libs/properties/itempropertiessidebar.cpp:278
-#: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:870
-#: core/libs/properties/itempropertiestab_setters.cpp:88
-#, kde-format
-msgctxt "@info: item properties"
-msgid "No"
-msgstr "Non"
-
-#: core/libs/properties/import/importitempropertiestab.cpp:352
-#: core/libs/properties/import/importitempropertiestab.cpp:367
-#: core/libs/properties/import/importitempropertiestab.cpp:447
-#: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:746
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:851
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#, kde-format
-msgctxt "@info: item properties"
-msgid "Yes"
-msgstr "Oui"
-
 #: core/libs/properties/import/importitempropertiestab.cpp:381
 #, kde-format
 msgctxt "@info: item size"
@@ -39270,12 +39302,6 @@ msgstr "Ouvre l'onglet « Informations » pour modification."
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 x %2 (%3 Mpx)"
-
-#: core/libs/properties/itempropertiessidebardb.cpp:862
-#, kde-format
-msgctxt "@info: item properties"
-msgid "Yes (stack)"
-msgstr "Oui (Pile)"
 
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
@@ -45849,7 +45875,7 @@ msgstr "Fichier XMP à enregistrer"
 msgid "XMP text Files (*.xmp)"
 msgstr "Fichiers texte XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:498
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:509
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
@@ -69232,7 +69258,7 @@ msgid "&Replace..."
 msgstr "&Remplacer…"
 
 #: core/utilities/setup/setuptemplate.cpp:247
-#: core/utilities/setup/setuptemplate.cpp:278
+#: core/utilities/setup/setuptemplate.cpp:279
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "Impossible d'enregistrer un nouveau modèle de métadonnées sans titre."
