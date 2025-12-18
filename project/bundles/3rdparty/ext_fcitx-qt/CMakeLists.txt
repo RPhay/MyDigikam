@@ -14,13 +14,14 @@ if(${ENABLE_QTVERSION} MATCHES "5")
     ExternalProject_Add(ext_fcitx-qt
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-        GIT_REPOSITORY https://github.com/fcitx/fcitx-qt5.git
-        GIT_TAG 1.2.7
+        GIT_REPOSITORY https://github.com/fcitx/fcitx5-qt.git
+        GIT_TAG 5.1.11
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> &&
                           $(CMAKE_COMMAND) .
                              -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_fcitx-qt}
                              -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                             -DCMAKE_POLICY_VERSION_MINIMUM=3.5
                              -DENABLE_LIBRARY=OFF
                              -DENABLE_QT5=ON
                              -DENABLE_QT6=OFF
@@ -38,8 +39,8 @@ else()
     ExternalProject_Add(ext_fcitx-qt
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-        GIT_REPOSITORY https://github.com/fcitx/fcitx-qt5.git
-        GIT_TAG 1.2.7
+        GIT_REPOSITORY https://github.com/fcitx/fcitx5-qt.git
+        GIT_TAG 5.1.11
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> &&
                           $(CMAKE_COMMAND) .
