@@ -15,7 +15,7 @@ if(${ENABLE_QTVERSION} MATCHES "5")
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/fcitx/fcitx5-qt.git
-        GIT_TAG 5.1.11
+        GIT_TAG 5.0.11
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> &&
                           $(CMAKE_COMMAND) .
@@ -40,7 +40,7 @@ else()
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/fcitx/fcitx5-qt.git
-        GIT_TAG 5.1.11
+        GIT_TAG 5.0.11
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> &&
                           $(CMAKE_COMMAND) .
