@@ -44,6 +44,7 @@ else()
         CONFIGURE_COMMAND cd <SOURCE_DIR> &&
                           $(CMAKE_COMMAND) .
                              -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                             -DCMAKE_POLICY_VERSION_MINIMUM=3.5
                              -DENABLE_LIBRARY=OFF
                              -DENABLE_QT5=OFF
                              -DENABLE_QT6=ON
