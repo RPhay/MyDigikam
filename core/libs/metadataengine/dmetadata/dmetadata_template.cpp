@@ -38,7 +38,6 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         return false;
     }
 
-    bool templateMerge                = t.templateMerge();
     QStringList authors               = t.authors();
     QString authorsPosition           = t.authorsPosition();
     QString credit                    = t.credit();
@@ -46,6 +45,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
     MetaEngine::AltLangMap copyright  = t.copyright();
     MetaEngine::AltLangMap rightUsage = t.rightUsageTerms();
     QString instructions              = t.instructions();
+    const QString xdefault            = QLatin1String("x-default");
 
     //qCDebug(DIGIKAM_METAENGINE_LOG) << "Applying Metadata Template: " << t.templateTitle() << " :: " << authors;
 
@@ -53,7 +53,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
 
     if (supportXmp())
     {
-        if (!templateMerge || !authors.isEmpty())
+        if (!authors.isEmpty())
         {
             if (!setXmpTagStringSeq("Xmp.dc.creator", authors))
             {
@@ -65,24 +65,37 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.dc.creator");
+            removeXmpTag("Xmp.tiff.Artist");
+        }
 
-        if (!templateMerge || !authorsPosition.isEmpty())
+        if (!authorsPosition.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.AuthorsPosition", authorsPosition))
             {
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.photoshop.AuthorsPosition");
+        }
 
-        if (!templateMerge || !credit.isEmpty())
+        if (!credit.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.Credit", credit))
             {
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.photoshop.Credit");
+        }
 
-        if (!templateMerge || !source.isEmpty())
+        if (!source.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.Source", source))
             {
@@ -94,8 +107,13 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.photoshop.Source");
+            removeXmpTag("Xmp.dc.source");
+        }
 
-        if (!templateMerge || !copyright.isEmpty())
+        if (!copyright.value(xdefault).isEmpty())
         {
             if (!setXmpTagStringListLangAlt("Xmp.dc.rights", copyright))
             {
@@ -107,27 +125,40 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.dc.rights");
+            removeXmpTag("Xmp.tiff.Copyright");
+        }
 
-        if (!templateMerge || !rightUsage.isEmpty())
+        if (!rightUsage.value(xdefault).isEmpty())
         {
             if (!setXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", rightUsage))
             {
                 return false;
             }
         }
+        else
+        {
+             removeXmpTag("Xmp.xmpRights.UsageTerms");
+        }
 
-        if (!templateMerge || !instructions.isEmpty())
+        if (!instructions.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.Instructions", instructions))
             {
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.photoshop.Instructions");
+        }
     }
 
     // Set IPTC tags.
 
-    if (!templateMerge || !authors.isEmpty())
+    if (!authors.isEmpty())
     {
         if (!setIptcTagsStringList("Iptc.Application2.Byline", 32,
                                    getIptcTagsStringList("Iptc.Application2.Byline"),
@@ -136,60 +167,84 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
             return false;
         }
     }
+    else
+    {
+        removeIptcTag("Iptc.Application2.Byline");
+    }
 
-    if (!templateMerge || !authorsPosition.isEmpty())
+    if (!authorsPosition.isEmpty())
     {
         if (!setIptcTag(authorsPosition,        32,  "Authors Title", "Iptc.Application2.BylineTitle"))
         {
             return false;
         }
     }
+    else
+    {
+        removeIptcTag("Iptc.Application2.BylineTitle");
+    }
 
-    if (!templateMerge || !credit.isEmpty())
+    if (!credit.isEmpty())
     {
         if (!setIptcTag(credit,                 32,  "Credit",        "Iptc.Application2.Credit"))
         {
             return false;
         }
     }
+    else
+    {
+        removeIptcTag("Iptc.Application2.Credit");
+    }
 
-    if (!templateMerge || !source.isEmpty())
+    if (!source.isEmpty())
     {
         if (!setIptcTag(source,                 32,  "Source",        "Iptc.Application2.Source"))
         {
             return false;
         }
     }
-
-    if (!templateMerge || !copyright[QLatin1String("x-default")].isEmpty())
+    else
     {
-        if (!setIptcTag(copyright[QLatin1String("x-default")], 128, "Copyright",     "Iptc.Application2.Copyright"))
+        removeIptcTag("Iptc.Application2.Source");
+    }
+
+    if (!copyright.value(xdefault).isEmpty())
+    {
+        if (!setIptcTag(copyright[xdefault],   128, "Copyright",      "Iptc.Application2.Copyright"))
         {
             return false;
         }
     }
-
-    if (!templateMerge || !instructions.isEmpty())
+    else
     {
-        if (!setIptcTag(instructions,           256, "Instructions",  "Iptc.Application2.SpecialInstructions"))
+        removeIptcTag("Iptc.Application2.Copyright");
+    }
+
+    if (!instructions.isEmpty())
+    {
+        if (!setIptcTag(instructions,          256, "Instructions",   "Iptc.Application2.SpecialInstructions"))
         {
             return false;
         }
     }
+    else
+    {
+        removeIptcTag("Iptc.Application2.SpecialInstructions");
+    }
 
-    if (!setIptcCoreLocation(t.locationInfo(), templateMerge))
+    if (!setIptcCoreLocation(t.locationInfo()))
     {
         return false;
     }
 
-    if (!setCreatorContactInfo(t.contactInfo(), templateMerge))
+    if (!setCreatorContactInfo(t.contactInfo()))
     {
         return false;
     }
 
     if (supportXmp())
     {
-        if (!templateMerge || !t.IptcSubjects().isEmpty())
+        if (!t.IptcSubjects().isEmpty())
         {
             if (!setXmpSubjects(t.IptcSubjects()))
             {
@@ -197,10 +252,14 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
             }
         }
     }
+    else
+    {
+        removeXmpTag("Xmp.iptc.SubjectCode");
+    }
 
     // Synchronize Iptc subjects tags with Xmp subjects tags.
 
-    if (!templateMerge || !t.IptcSubjects().isEmpty())
+    if (!t.IptcSubjects().isEmpty())
     {
         QStringList list = t.IptcSubjects();
         QStringList newList;
@@ -219,6 +278,10 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         {
             return false;
         }
+    }
+    else
+    {
+        removeIptcTag("Iptc.Application2.Subject");
     }
 
     return true;

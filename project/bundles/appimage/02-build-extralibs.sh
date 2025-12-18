@@ -123,7 +123,7 @@ cmake --build . --config RelWithDebInfo --target ext_libksane                   
 cmake --build . --config RelWithDebInfo --target ext_kcalendarcore              -- -j$CPU_CORES
 
 # Platform Input Context Qt plugin
-cmake --build . --config RelWithDebInfo --target ext_fcitx-qt                   -- -j$CPU_CORES
+#cmake --build . --config RelWithDebInfo --target ext_fcitx-qt                   -- -j$CPU_CORES
 
 # Breeze style support
 cmake --build . --config RelWithDebInfo --target ext_breeze                     -- -j$CPU_CORES

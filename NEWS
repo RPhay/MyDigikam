@@ -316,8 +316,8 @@ BUGFIXES:
 255 --> 470242 - Create finger prints process is too slow.
 256 --> 419903 - Editor view very slow.
 257 --> 472273 - Auto Brightness in Raw Default Settings turns off but does not turn on again.
-258 --> 490730 - Crash in image editor.
-259 --> 
+258 --> 513321 - Metadata templates applied to multiple items overwrite existing information in all items selected with that from first item.
+259 --> 490730 - Crash in image editor.
 260 --> 
 261 --> 
 262 --> 

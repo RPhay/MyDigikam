@@ -212,10 +212,10 @@ private:
 public: // IPTC helpers
 
     IptcCoreContactInfo getCreatorContactInfo()                                                                         const;
-    bool setCreatorContactInfo(const IptcCoreContactInfo& info, bool merge)                                             const;
+    bool setCreatorContactInfo(const IptcCoreContactInfo& info)                                                         const;
 
     IptcCoreLocationInfo getIptcCoreLocation()                                                                          const;
-    bool setIptcCoreLocation(const IptcCoreLocationInfo& location, bool merge)                                          const;
+    bool setIptcCoreLocation(const IptcCoreLocationInfo& location)                                                      const;
 
     QStringList getIptcCoreSubjects()                                                                                   const;
 
