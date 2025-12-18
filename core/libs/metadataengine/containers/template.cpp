@@ -67,8 +67,9 @@ bool Template::isEmpty() const
 
 void Template::merge(const Template& t)
 {
-    m_templateTitle = t.templateTitle();
-    m_templateMerge = t.templateMerge();
+    m_templateTitle        = t.templateTitle();
+    m_templateMerge        = t.templateMerge();
+    const QString xdefault = QLatin1String("x-default");
 
     if (!m_templateMerge || (!t.authors().isEmpty() && m_authors.isEmpty()))
     {
@@ -85,12 +86,18 @@ void Template::merge(const Template& t)
         m_credit = t.credit();
     }
 
-    if (!m_templateMerge || (!t.copyright().isEmpty() && m_copyright.isEmpty()))
+    bool tc = ((t.copyright().size() <= 1) && t.copyright().value(xdefault).isEmpty());
+    bool mc = ((m_copyright.size() <= 1) && m_copyright.value(xdefault).isEmpty());
+
+    if (!m_templateMerge || (!tc && mc))
     {
         m_copyright = t.copyright();
     }
 
-    if (!m_templateMerge || (!t.rightUsageTerms().isEmpty() && m_rightUsageTerms.isEmpty()))
+    bool tr = ((t.rightUsageTerms().size() <= 1) && t.rightUsageTerms().value(xdefault).isEmpty());
+    bool mr = ((m_rightUsageTerms.size() <= 1) && m_rightUsageTerms.value(xdefault).isEmpty());
+
+    if (!m_templateMerge || (!tr && mr))
     {
         m_rightUsageTerms = t.rightUsageTerms();
     }

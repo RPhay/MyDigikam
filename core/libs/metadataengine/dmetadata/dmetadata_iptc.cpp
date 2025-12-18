@@ -65,62 +65,86 @@ IptcCoreContactInfo DMetadata::getCreatorContactInfo() const
     return info;
 }
 
-bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info, bool merge) const
+bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
 {
     if (!supportXmp())
     {
         return false;
     }
 
-    if (!merge || !info.city.isEmpty())
+    if (!info.city.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", info.city))
         {
             return false;
         }
     }
+    else
+    {
+        removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity");
+    }
 
-    if (!merge || !info.country.isEmpty())
+    if (!info.country.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", info.country))
         {
             return false;
         }
     }
+    else
+    {
+        removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry");
+    }
 
-    if (!merge || !info.address.isEmpty())
+    if (!info.address.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", info.address))
         {
             return false;
         }
     }
+    else
+    {
+        removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr");
+    }
 
-    if (!merge || !info.postalCode.isEmpty())
+    if (!info.postalCode.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", info.postalCode))
         {
             return false;
         }
     }
+    else
+    {
+        removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode");
+    }
 
-    if (!merge || !info.provinceState.isEmpty())
+    if (!info.provinceState.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrRegion", info.provinceState))
         {
             return false;
         }
     }
+    else
+    {
+        removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrRegion");
+    }
 
-    if (!merge || !info.email.isEmpty())
+    if (!info.email.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", info.email))
         {
             return false;
         }
     }
+    else
+    {
+        removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork");
+    }
 
-    if (!merge || !info.phone.isEmpty())
+    if (!info.phone.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", info.phone))
         {
@@ -128,12 +152,16 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info, bool merg
         }
     }
 
-    if (!merge || !info.webUrl.isEmpty())
+    if (!info.webUrl.isEmpty())
     {
         if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", info.webUrl))
         {
             return false;
         }
+    }
+    else
+    {
+        removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork");
     }
 
     return true;
@@ -164,89 +192,129 @@ IptcCoreLocationInfo DMetadata::getIptcCoreLocation() const
     return location;
 }
 
-bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location, bool merge) const
+bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
 {
     if (supportXmp())
     {
-        if (!merge || !location.country.isEmpty())
+        if (!location.country.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.Country", location.country))
             {
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.photoshop.Country");
+        }
 
-        if (!merge || !location.countryCode.isEmpty())
+        if (!location.countryCode.isEmpty())
         {
             if (!setXmpTagString("Xmp.iptc.CountryCode", location.countryCode))
             {
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.iptc.CountryCode");
+        }
 
-        if (!merge || !location.city.isEmpty())
+        if (!location.city.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.City", location.city))
             {
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.photoshop.City");
+        }
 
-        if (!merge || !location.location.isEmpty())
+        if (!location.location.isEmpty())
         {
             if (!setXmpTagString("Xmp.iptc.Location", location.location))
             {
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.iptc.Location");
+        }
 
-        if (!merge || !location.provinceState.isEmpty())
+        if (!location.provinceState.isEmpty())
         {
             if (!setXmpTagString("Xmp.photoshop.State", location.provinceState))
             {
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.photoshop.State");
+        }
     }
 
-    if (!merge || !location.country.isEmpty())
+    if (!location.country.isEmpty())
     {
         if (!setIptcTag(location.country,       64,  "Country",        "Iptc.Application2.CountryName"))
         {
             return false;
         }
     }
+    else
+    {
+        removeIptcTag("Iptc.Application2.CountryName");
+    }
 
-    if (!merge || !location.countryCode.isEmpty())
+    if (!location.countryCode.isEmpty())
     {
         if (!setIptcTag(location.countryCode,    3,  "Country Code",   "Iptc.Application2.CountryCode"))
         {
             return false;
         }
     }
+    else
+    {
+        removeIptcTag("Iptc.Application2.CountryCode");
+    }
 
-    if (!merge || !location.city.isEmpty())
+    if (!location.city.isEmpty())
     {
         if (!setIptcTag(location.city,          32,  "City",           "Iptc.Application2.City"))
         {
             return false;
         }
     }
+    else
+    {
+        removeIptcTag("Iptc.Application2.City");
+    }
 
-    if (!merge || !location.location.isEmpty())
+    if (!location.location.isEmpty())
     {
         if (!setIptcTag(location.location,      32,  "SubLocation",    "Iptc.Application2.SubLocation"))
         {
             return false;
         }
     }
+    else
+    {
+        removeIptcTag("Iptc.Application2.SubLocation");
+    }
 
-    if (!merge || !location.provinceState.isEmpty())
+    if (!location.provinceState.isEmpty())
     {
         if (!setIptcTag(location.provinceState, 32,  "Province/State", "Iptc.Application2.ProvinceState"))
         {
             return false;
         }
+    }
+    else
+    {
+        removeIptcTag("Iptc.Application2.ProvinceState");
     }
 
     return true;
