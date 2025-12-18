@@ -304,7 +304,7 @@ BUGFIXES:
 243 --> 377809 - digiKam suggested bug re hot key assignment.
 244 --> 379352 - Ambiguous shortcut for lock in digiKam.
 245 --> 381165 - Multiple assigned shortcut CTRL+L in Dutch after [Importeren] -> autodetected device.
-246 --> 
+246 --> 363913 - Improve export menu structure.
 247 --> 
 248 --> 
 249 --> 
