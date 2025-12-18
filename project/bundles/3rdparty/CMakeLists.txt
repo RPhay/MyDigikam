@@ -5,8 +5,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-# Lower minimal version of cmake required by Ubuntu 18.04.
-cmake_minimum_required(VERSION 3.3.2)
+# Lower minimal version of cmake required by Ubuntu 20.04.
+cmake_minimum_required(VERSION 3.6)
 
 project(digikam-bundles)
 
