@@ -4,7 +4,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 set(FlowView_Conf ${GLOBAL_PROFILE})
 
@@ -32,7 +31,10 @@ ExternalProject_Add(ext_flowview
                   cd extern/QtFlowLayout &&
                   git checkout master
 
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_flowview} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${FlowView_Conf}
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_flowview}
+               -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+               -DCMAKE_BUILD_TYPE=RelWithDebInfo
+               ${FlowView_Conf}
 
     BUILD_IN_SOURCE 1
 
