@@ -318,7 +318,7 @@ BUGFIXES:
 257 --> 472273 - Auto Brightness in Raw Default Settings turns off but does not turn on again.
 258 --> 513321 - Metadata templates applied to multiple items overwrite existing information in all items selected with that from first item.
 259 --> 490730 - Crash in image editor.
-260 --> 
+260 --> 513590 - Using Windows 11.
 261 --> 
 262 --> 
 263 --> 
