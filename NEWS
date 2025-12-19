@@ -319,7 +319,7 @@ BUGFIXES:
 258 --> 513321 - Metadata templates applied to multiple items overwrite existing information in all items selected with that from first item.
 259 --> 490730 - Crash in image editor.
 260 --> 513590 - Using Windows 11.
-261 --> 
+261 --> 513590 - Only Google Maps in the right sidebar.
 262 --> 
 263 --> 
 264 --> 
