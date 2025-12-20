@@ -324,7 +324,7 @@ BUGFIXES:
 262 --> 367788 - It should be possible to save Metadata templates.
 263 --> 467312 - Applying a template in the BQM fails in MP4 files.
 264 --> 392451 - Write Artist information into EXIF tag using Metadata template in addition to IPTC and XMP.
-265 --> 
+265 --> 469114 - Remember the Advanced Rename last used patterns.
 266 --> 
 267 --> 
 268 --> 
