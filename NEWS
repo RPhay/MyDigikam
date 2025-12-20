@@ -327,7 +327,7 @@ BUGFIXES:
 265 --> 469114 - Remember the Advanced Rename last used patterns.
 266 --> 427225 - Showfoto GUI becomes unresponsive when used with the keyboard.
 267 --> 495508 - Crash in image editor while opening Color Auto Correction.
-268 --> 
+268 --> 492123 - "Show Focus Point" behaviour in LightTable.
 269 --> 
 270 --> 
 271 --> 
