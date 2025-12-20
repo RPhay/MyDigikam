@@ -24,7 +24,7 @@ namespace Digikam
 
 class Template;
 
-class DIGIKAM_GUI_EXPORT TemplateSelector : public DHBox
+class DIGIKAM_GUI_EXPORT TemplateSelector : public DVBox
 {
     Q_OBJECT
 
@@ -54,6 +54,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotOpenSetup();
+    void slotTemplateSelected();
     void slotTemplateListChanged();
 
 private:

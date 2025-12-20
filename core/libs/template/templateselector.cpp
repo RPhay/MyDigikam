@@ -45,6 +45,7 @@ public:
     Private() = default;
 
     QLabel*           label             = nullptr;
+    QLabel*           mergeLabel        = nullptr;
 
     QToolButton*      setupButton       = nullptr;
 
@@ -54,12 +55,13 @@ public:
 };
 
 TemplateSelector::TemplateSelector(QWidget* const parent)
-    : DHBox(parent),
+    : DVBox(parent),
       d    (new Private)
 {
-    d->label         = new QLabel(i18n("Template: "), this);
-    d->templateCombo = new SqueezedComboBox(this);
-    d->setupButton   = new QToolButton(this);
+    DHBox* const hbox = new DHBox(this);
+    d->label          = new QLabel(i18n("Template: "), hbox);
+    d->templateCombo  = new SqueezedComboBox(hbox);
+    d->setupButton    = new QToolButton(hbox);
     d->setupButton->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     d->setupButton->setWhatsThis(i18n("Open metadata template editor"));
     d->templateCombo->setWhatsThis(i18n("<p>Select here the action to perform using the metadata template.</p>"
@@ -68,12 +70,18 @@ TemplateSelector::TemplateSelector(QWidget* const parent)
                                         "<p>All other values are template titles managed by digiKam. "
                                         "Selecting one will assign information as well.</p>"));
 
+    d->mergeLabel     = new QLabel(this);
+    d->mergeLabel->setAlignment(Qt::AlignCenter);
+
+    hbox->setSpacing(layoutSpacing());
+    hbox->setContentsMargins(QMargins());
+    hbox->setStretchFactor(d->templateCombo, 10);
+
     setSpacing(layoutSpacing());
     setContentsMargins(QMargins());
-    setStretchFactor(d->templateCombo, 10);
 
     connect(d->templateCombo, SIGNAL(activated(int)),
-            this, SIGNAL(signalTemplateSelected()));
+            this, SLOT(slotTemplateSelected()));
 
     connect(d->setupButton, SIGNAL(clicked()),
             this, SLOT(slotOpenSetup()));
@@ -163,6 +171,7 @@ void TemplateSelector::setTemplate(const Template& t)
     else if (title.isEmpty())
     {
         d->templateCombo->setCurrentIndex(DONTCHANGE);
+        d->mergeLabel->clear();
     }
 
     d->templateCombo->setCurrent(title);
@@ -186,6 +195,29 @@ void TemplateSelector::slotOpenSetup()
 void TemplateSelector::slotTemplateListChanged()
 {
     populateTemplates();
+}
+
+void TemplateSelector::slotTemplateSelected()
+{
+    Template t = getTemplate();
+
+    if      (t.isNull())
+    {
+        d->mergeLabel->clear();
+    }
+    else if (
+             !t.templateMerge()                                  ||
+             (t.templateTitle() == Template::removeTemplateTitle())
+            )
+    {
+        d->mergeLabel->setText(i18n("Template overwrites all"));
+    }
+    else
+    {
+        d->mergeLabel->setText(i18n("Template will be merged"));
+    }
+
+    Q_EMIT signalTemplateSelected();
 }
 
 } // namespace Digikam
