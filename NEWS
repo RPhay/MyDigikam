@@ -325,7 +325,7 @@ BUGFIXES:
 263 --> 467312 - Applying a template in the BQM fails in MP4 files.
 264 --> 392451 - Write Artist information into EXIF tag using Metadata template in addition to IPTC and XMP.
 265 --> 469114 - Remember the Advanced Rename last used patterns.
-266 --> 
+266 --> 427225 - Showfoto GUI becomes unresponsive when used with the keyboard.
 267 --> 
 268 --> 
 269 --> 
