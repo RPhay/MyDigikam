@@ -284,6 +284,34 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         removeIptcTag("Iptc.Application2.Subject");
     }
 
+    // Synchronize Exif Tags. See bug #392451
+
+    if (!authors.isEmpty())
+    {
+        // All properties must be list in a single string separated by semi-colons.
+
+        if (!setExifTagString("Exif.Image.Artist", authors.join(QLatin1Char(';'))))
+        {
+            return false;
+        }
+    }
+    else
+    {
+        removeExifTag("Exif.Image.Artist");
+    }
+
+    if (!copyright.value(xdefault).isEmpty())
+    {
+        if (!setExifTagString("Exif.Image.Copyright", copyright.value(xdefault)))
+        {
+            return false;
+        }
+    }
+    else
+    {
+        removeExifTag("Exif.Image.Copyright");
+    }
+
     return true;
 }
 
@@ -338,6 +366,11 @@ bool DMetadata::removeMetadataTemplate() const
 
     removeXmpTag("Xmp.iptc.SubjectCode");
     removeIptcTag("Iptc.Application2.Subject");
+
+    // Remove extra Exif Tags.
+
+    removeExifTag("Exif.Image.Artist");
+    removeExifTag("Exif.Image.Copyright");
 
     return true;
 }
