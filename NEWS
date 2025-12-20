@@ -321,7 +321,7 @@ BUGFIXES:
 259 --> 490730 - Crash in image editor.
 260 --> 513590 - Only Google Maps in the right sidebar.
 261 --> 376463 - Improve keyboard assignment and usage of tags.
-262 --> 
+262 --> 367788 - It should be possible to save Metadata templates.
 263 --> 
 264 --> 
 265 --> 
