@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:41+0000\n"
-"PO-Revision-Date: 2025-12-18 10:09+0100\n"
+"PO-Revision-Date: 2025-12-19 11:33+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -68697,11 +68697,9 @@ msgstr ""
 "s'utilitzarà per a identificar una plantilla en la vostra col·lecció.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "Plantilla:"
+msgstr "Fusiona la plantilla"
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format

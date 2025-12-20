@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:41+0000\n"
-"PO-Revision-Date: 2025-12-18 07:52+0200\n"
+"PO-Revision-Date: 2025-12-19 13:29+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -68908,11 +68908,9 @@ msgstr ""
 "зможете орієнтуватися серед шаблонів у вашій збірці.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "Шаблон:"
+msgstr "Шаблон об'єднання"
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format

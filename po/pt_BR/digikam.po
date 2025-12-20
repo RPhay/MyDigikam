@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:41+0000\n"
-"PO-Revision-Date: 2025-12-18 06:38-0300\n"
+"PO-Revision-Date: 2025-12-19 09:48-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -68461,11 +68461,9 @@ msgstr ""
 "identificar um modelo na sua coleção.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "Modelo:"
+msgstr "Mesclar modelo"
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format

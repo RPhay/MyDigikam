@@ -367,27 +367,28 @@ msgstr "Lidé"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
 #, fuzzy, kde-format
-#| msgid "Text Filter"
+#| msgid "Texture Filter"
 msgid "Text Filter:"
-msgstr "Textový filtr"
+msgstr "Filtr textur"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:41
 #, fuzzy, kde-format
-#| msgid "MIME Type Filter"
+#| msgid "No Tone Filter"
 msgid "MIME Type Filter:"
-msgstr "Filtr typů MIME"
+msgstr "Žádný tónovací filtr"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
 #, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#| msgctxt "@title:window"
+#| msgid "Geolocation Editor"
 msgid "Geolocation Filter:"
-msgstr "Filtr geolokace"
+msgstr "Editor geolokace"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
 #, fuzzy, kde-format
-#| msgid "Labels Filter"
+#| msgid "Lens Filters"
 msgid "Labels Filter:"
-msgstr "Filtry popisek"
+msgstr "Filtry objektivu"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
@@ -37629,9 +37630,7 @@ msgid "All Item Properties"
 msgstr "Vlastnosti položky"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Remove From Group"
+#, kde-format
 msgid "Remove from Group"
 msgstr "Odstranit ze skupiny"
 
@@ -66341,9 +66340,3 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
-
-#~ msgid "Tags Filter"
-#~ msgstr "Filtry značek"
-
-#~ msgid "Face Tags Filter"
-#~ msgstr "Filtr značek obličeje"

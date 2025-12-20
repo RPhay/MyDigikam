@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:41+0000\n"
-"PO-Revision-Date: 2025-12-18 10:58+0000\n"
+"PO-Revision-Date: 2025-12-19 10:04+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -67885,11 +67885,9 @@ msgstr ""
 "auðkenna Settu hér titil á sniðmátið í safninu þínu.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "Sniðmát:"
+msgstr "Sameina sniðmát"
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format

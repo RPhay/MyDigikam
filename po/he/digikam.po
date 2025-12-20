@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:41+0000\n"
-"PO-Revision-Date: 2025-12-11 16:46+0200\n"
+"PO-Revision-Date: 2025-12-17 16:12+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -21536,7 +21536,7 @@ msgstr "ביטול"
 #, kde-format
 msgctxt "@info: progress bar"
 msgid "%v / %m"
-msgstr ""
+msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:284
 #, fuzzy, kde-format
@@ -21605,7 +21605,7 @@ msgstr "כל הקבצים"
 #, kde-format
 msgctxt "@title"
 msgid "Dropbox"
-msgstr ""
+msgstr "Dropbox"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:59
 #, fuzzy, kde-format
@@ -21644,7 +21644,7 @@ msgstr "בחרו תמונה להעברה"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:243
 #, kde-format
 msgid "No image selected. Please select which images should be uploaded."
-msgstr ""
+msgstr "לא נבחרה תמונה. נא לבחור אילו תמונות להעלות."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
@@ -21652,7 +21652,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:387
 #, kde-format
 msgid "Authentication failed. Do you want to try again?"
-msgstr ""
+msgstr "האימות נכשל. לנסות שוב?"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:269
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
@@ -21663,7 +21663,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:283
 #, kde-format
 msgid "%v / %m"
-msgstr ""
+msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:273
 #, kde-format
@@ -21685,11 +21685,13 @@ msgid ""
 "Dropbox call failed:\n"
 "%1"
 msgstr ""
+"הקריאה ל־Dropbox נכשלה:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/facebook/fbnewalbumdlg.cpp:46
 #, kde-format
 msgid "Privacy setting of the album that will be created (required)."
-msgstr ""
+msgstr "הגדרות הפרטיות של האלבום שייווצר (חובה)."
 
 #: core/dplugins/generic/webservices/facebook/fbnewalbumdlg.cpp:48
 #, kde-format
@@ -21764,25 +21766,25 @@ msgstr "שגיאה בעת שמירת הקובץ"
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:467
 #, kde-format
 msgid "The service is not available at this time."
-msgstr ""
+msgstr "השירות לא זמין כרגע."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:504
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:470
 #, kde-format
 msgid "The application has reached the maximum number of requests allowed."
-msgstr ""
+msgstr "היישום הגיע למספר הבקשות המרבי המותר."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:507
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:473
 #, kde-format
 msgid "Invalid session key or session expired. Try to log in again."
-msgstr ""
+msgstr "מפתח ההפעלה שגוי או שתוקף ההפעלה פג. יש לנסות להיכנס שוב."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:510
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:476
 #, kde-format
 msgid "Invalid album ID."
-msgstr ""
+msgstr "מזהה אלבום שגוי."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:513
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:479
@@ -21800,12 +21802,12 @@ msgstr "יישום מרחב צבע"
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:485
 #, kde-format
 msgid "Too many unapproved photos pending."
-msgstr ""
+msgstr "יש יותר מדי תמונות ממתינות שטרם אושרו."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:197
 #, kde-format
 msgid "Validate previous session..."
-msgstr ""
+msgstr "אימות הפעלה קודמת…"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
 #, fuzzy, kde-format
@@ -21823,12 +21825,12 @@ msgstr "בחרו תמונה להעברה"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
 #, kde-format
 msgid "Continue with Facebook"
-msgstr ""
+msgstr "להמשיך עם פייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:310
 #, kde-format
 msgid "Log Out of Facebook"
-msgstr ""
+msgstr "יציאה מפייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:325
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:355
@@ -21840,12 +21842,12 @@ msgstr "סיבוב/היפוך אוטומטי של תמונה"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:350
 #, kde-format
 msgid "Facebook Call Failed: %1\n"
-msgstr ""
+msgstr "הקריאה לפייסבוק נכשלה: %1\n"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:485
 #, kde-format
 msgid "Facebook export"
-msgstr ""
+msgstr "ייצוא מפייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:620
 #, fuzzy, kde-format
@@ -21857,7 +21859,7 @@ msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:639
 #, kde-format
 msgid "Facebook Call Failed: %1"
-msgstr ""
+msgstr "הקריאה לפייסבוק נכשלה: %1"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:90
 #, fuzzy, kde-format
@@ -21899,12 +21901,12 @@ msgstr "הוספת תוויות זו"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:103
 #, kde-format
 msgid "Include the sidecar of the items"
-msgstr ""
+msgstr "לכלול את הנלווים של הפריטים"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:104
 #, kde-format
 msgid "Overwrite existing items in the target"
-msgstr ""
+msgstr "שכתוב פריטים קיימים ביעד"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
 #, fuzzy, kde-format
@@ -21973,7 +21975,7 @@ msgstr "התיקייה שנבחרה אינה קיימת או שאינה ניתנ
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:234
 #, kde-format
 msgid "The target folder could not be created and does not exist."
-msgstr ""
+msgstr "לא ניתן ליצור את תיקיית היעד והיא לא קיימת."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:312
 #, fuzzy, kde-format
@@ -21987,6 +21989,8 @@ msgid ""
 "Some of the items have not been copied and are still in the list. You can "
 "retry to copy these items now."
 msgstr ""
+"חלק מהפריטים לא הועתקו והם עדיין ברשימה. אפשר לנסות להעתיק את הפריטים האלה "
+"עכשיו."
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:45
 #, fuzzy, kde-format
@@ -22024,6 +22028,9 @@ msgid ""
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
+"הגדרת היעד להעלות אליו את התמונות. זאת יכולה להיות כל כתובת כפי שאפשר להשתמש "
+"בה במנהל הקבצים, למשל: <br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
 #, fuzzy, kde-format
@@ -22073,6 +22080,8 @@ msgid ""
 "Some of the images have not been transferred and are still in the list. You "
 "can retry to export these images now."
 msgstr ""
+"חלק מהתמונות לא הועברו והן עדיין ברשימה. אפשר לנסות לייצר את התמונות האלה "
+"מחדש כעת."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
 #, fuzzy, kde-format
@@ -22086,6 +22095,9 @@ msgid ""
 "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
+"הגדרת היעד להוריד ממנו את התמונות. זאת יכולה להיות כל כתובת כפי שאפשר להשתמש "
+"בה במנהל הקבצים, למשל: <br><i>ftp://my.server.org/sub/folder</"
+"i><br><i>fish://username@my.server.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
 #, fuzzy, kde-format
@@ -22142,6 +22154,8 @@ msgid ""
 "Some of the images have not been transferred and are still in the list. You "
 "can retry to import these images now."
 msgstr ""
+"חלק מהתמונות לא הועברו והן עדיין ברשימה. אפשר לנסות לייבא את התמונות האלה "
+"עכשיו."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:46
 #, fuzzy, kde-format
@@ -22219,7 +22233,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:537
 #, kde-format
 msgid "Enter extra tags, separated by commas."
-msgstr ""
+msgstr "אפשר למלא תגיות נוספות עם פסיקים ביניהן."
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:44
 #, fuzzy, kde-format
@@ -22250,12 +22264,12 @@ msgstr "ייצא"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:324
 #, kde-format
 msgid "Getting the maximum allowed file size."
-msgstr ""
+msgstr "גודל הקובץ המרבי המורשה מתקבל."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:618
 #, kde-format
 msgid "File Size exceeds maximum allowed file size."
-msgstr ""
+msgstr "גודל הקובץ חורג מגודל הקבצים המרבי המורשה."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:705
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:490
@@ -22278,36 +22292,36 @@ msgstr "גודל קובץ"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:723
 #, kde-format
 msgid "Filetype was not recognized"
-msgstr ""
+msgstr "סוג הקובץ לא זוהה"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:729
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:514
 #, kde-format
 msgid "User exceeded upload limit"
-msgstr ""
+msgstr "המשתמש חרג ממגבלת ההעלאה"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:735
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:520
 #, kde-format
 msgid "Invalid signature"
-msgstr ""
+msgstr "חתימה שגויה"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:741
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:526
 #, kde-format
 msgid "Missing signature"
-msgstr ""
+msgstr "חתימה חסרה"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
 #, kde-format
 msgid "Login Failed / Invalid auth token"
-msgstr ""
+msgstr "הכניסה נכשלה / אסימון האימות שגוי"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:753
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:538
 #, kde-format
 msgid "Invalid API Key"
-msgstr ""
+msgstr "מפתח API שגוי"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:759
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
@@ -22325,7 +22339,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:556
 #, kde-format
 msgid "Format \"xxx\" not found"
-msgstr ""
+msgstr "התבנית „xxx” לא נמצאה"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:777
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:562
@@ -22337,18 +22351,18 @@ msgstr "אגד:"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:568
 #, kde-format
 msgid "Invalid SOAP envelope"
-msgstr ""
+msgstr "מעטפת SOAP שגויה"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:789
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:574
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
-msgstr ""
+msgstr "קריאת שיטת XML-RPC שגויה"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
 #, kde-format
 msgid "The POST method is now required for all setters"
-msgstr ""
+msgstr "שיטת ה־POST נחוצה כרגע לכל המגדירים"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:801
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
@@ -22363,6 +22377,8 @@ msgid ""
 "Error Occurred: %1\n"
 "Cannot proceed any further."
 msgstr ""
+"אירעה שגיאה: %1\n"
+"לא ניתן להמשיך מעבר לכך."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
 #, fuzzy, kde-format
@@ -22390,7 +22406,7 @@ msgstr "לפי אוסף"
 #, kde-format
 msgctxt "photo permissions"
 msgid "Public"
-msgstr ""
+msgstr "ציבורי"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:50
 #, fuzzy, kde-format
@@ -22420,7 +22436,7 @@ msgstr "חברים"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:80
 #, kde-format
 msgid "Safety level"
-msgstr ""
+msgstr "רמת בטיחות"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:82
 #, fuzzy, kde-format
@@ -22493,7 +22509,7 @@ msgstr "תוויות:"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:130
 #, kde-format
 msgid "Enter new tags here, separated by commas."
-msgstr ""
+msgstr "יש למלא כאן תגיות חדשות, עם פסיקים ביניהן."
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:132
 #, fuzzy, kde-format
@@ -22504,11 +22520,12 @@ msgstr "הוספת תווית חדשה..."
 #, kde-format
 msgid "If checked, you can set extra tags for each image in the File List tab"
 msgstr ""
+"אם האפשרות מסומנת, אפשר להגדיר תגיות נוספות לכל תמונה בלשונית רשימת הקבצים"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:137
 #, kde-format
 msgid "Strip Spaces From Tags"
-msgstr ""
+msgstr "הסרת רווחים מהתגיות"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:150
 #, fuzzy, kde-format
@@ -22519,17 +22536,17 @@ msgstr "אפשרויות שינוי שם קובץ"
 #, kde-format
 msgctxt "As in accessible for people"
 msgid "Public (anyone can see them)"
-msgstr ""
+msgstr "ציבורי (גלוי לעיני כול)"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:158
 #, kde-format
 msgid "Visible to Family"
-msgstr ""
+msgstr "גלוי למשפחה"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:161
 #, kde-format
 msgid "Visible to Friends"
-msgstr ""
+msgstr "גלוי לחברים"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:165
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:458
@@ -22538,30 +22555,29 @@ msgid "More publication options"
 msgstr "אפשרויות תצוגת תיקייה"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:180
-#, fuzzy, kde-format
+#, kde-format
 msgid "Safety level:"
-msgstr "רמה:"
+msgstr "רמת בטיחות:"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:182
 #, kde-format
 msgid "Safe"
-msgstr "בטיחות"
+msgstr "בטוחה"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:183
-#, fuzzy, kde-format
-#| msgid "Modern"
+#, kde-format
 msgid "Moderate"
-msgstr "מודרני"
+msgstr "מתונה"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:184
-#, fuzzy, kde-format
+#, kde-format
 msgid "Restricted"
-msgstr "שחזור"
+msgstr "מוגבלת"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:186
-#, fuzzy, kde-format
+#, kde-format
 msgid "Content type:"
-msgstr "ניגוד:"
+msgstr "סוג תוכן:"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:262
 #, kde-format
@@ -22569,40 +22585,41 @@ msgid ""
 "<b><h2><a href='https://www.flickr.com'><font color=\"#0065DE\">flick</"
 "font><font color=\"#FF0084\">r</font></a> Export</h2></b>"
 msgstr ""
+"<b><h2>ייצוא מ־<a href='https://www.flickr.com'><font color=\"#0065DE"
+"\">flick</font><font color=\"#FF0084\">r</font></a></h2></b>"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:454
 #, kde-format
 msgid "Fewer publication options"
-msgstr ""
+msgstr "פחות אפשרויות פרסום"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:477
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgid "Fewer tag options"
-msgstr "סיבוב חופשי"
+msgstr "פחות אפשרויות תגיות"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
-msgstr "הדרוגים יובאו"
+msgstr "ייצוא לשירות המקוון %1"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:158
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:205
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Uploading"
-msgstr "בחרו תמונה להעברה"
+msgstr "התחלת העלאה"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:586
 #, kde-format
 msgid "Photostream Only"
-msgstr ""
+msgstr "תזרים תמונות בלבד"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:779
-#, fuzzy, kde-format
+#, kde-format
 msgid "Flickr Export"
-msgstr "ייצא"
+msgstr "ייצוא ל־Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:814
 #, fuzzy, kde-format
@@ -22610,8 +22627,7 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "מידע קובץ/תמונה"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
 msgstr "אזהרה"
@@ -22630,8 +22646,7 @@ msgid "Continue"
 msgstr "מכיל"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
 msgstr "ביטול"
@@ -22644,22 +22659,22 @@ msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:502
 #, kde-format
 msgid "File-size was zero"
-msgstr ""
+msgstr "גודל הקובץ היה אפס"
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:508
 #, kde-format
 msgid "File-type was not recognized"
-msgstr ""
+msgstr "סוג הקובץ לא מזוהה"
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:532
 #, kde-format
 msgid "Login failed / Invalid auth token"
-msgstr ""
+msgstr "הכניסה נכשלה / אסימון האימות שגוי"
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:580
 #, kde-format
 msgid "The POST method is now required for all setters."
-msgstr ""
+msgstr "שיטת ה־POST נחוצה כרגע לכל המגדירים."
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:591
 #, kde-format
@@ -22667,6 +22682,8 @@ msgid ""
 "Error occurred: %1\n"
 "Unable to proceed further."
 msgstr ""
+"אירעה שגיאה: %1\n"
+"לא ניתן להמשיך."
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:858
 #, kde-format
@@ -22674,9 +22691,9 @@ msgid "Failed to fetch photo-set list"
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgid "Access Level"
-msgstr "עדכון רמת צבע"
+msgstr "רמת גישה"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:62
 #, kde-format
@@ -22685,33 +22702,33 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "google photos album privacy"
 msgid "Public"
-msgstr "חיפוש מהיר"
+msgstr "ציבורי"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:66
 #, kde-format
 msgid "Public album is listed on your public Google Photos page."
-msgstr ""
+msgstr "אלבום ציבורי מופיע בעמוד ה־Google Photos הציבורי שלך."
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:67
 #, kde-format
 msgctxt "google photos album privacy"
 msgid "Unlisted / Private"
-msgstr ""
+msgstr "לא מופיע / פרטי"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:68
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:127
 #, kde-format
 msgid "Unlisted album is only accessible via URL."
-msgstr ""
+msgstr "אלבום שלא מופיע נגיש רק דרך כתובת."
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:69
 #, kde-format
 msgctxt "google photos album privacy"
 msgid "Sign-In Required to View"
-msgstr ""
+msgstr "יש להיכנס כדי לצפות"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:70
 #, kde-format
@@ -22722,7 +22739,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:140
 #, kde-format
 msgid "Privacy:"
-msgstr ""
+msgstr "פרטיות:"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:46
 #, fuzzy, kde-format
@@ -22772,7 +22789,7 @@ msgstr "הוספת מסגרת"
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:92
 #, kde-format
 msgid "Item will be added alongside the linked version."
-msgstr ""
+msgstr "ייווצר פריט ליד הגרסה המקושרת."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:98
 #, fuzzy, kde-format
@@ -22839,7 +22856,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gswidget.cpp:57
 #, kde-format
 msgid "Export only the leaf tags of tag hierarchies"
-msgstr ""
+msgstr "לייצא רק את תגיות העלה של היררכיות התגיות"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:58
 #, fuzzy, kde-format
@@ -22849,17 +22866,17 @@ msgstr "מחיקת תווית"
 #: core/dplugins/generic/webservices/google/gswidget.cpp:59
 #, kde-format
 msgid "Export the leaf tag and all ancestors as single tags."
-msgstr ""
+msgstr "ייצוא תגית העלה ואת כל הצאצאים כתגית אחת."
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:60
 #, kde-format
 msgid "Combined String"
-msgstr ""
+msgstr "מחרוזת מעורבת"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:61
 #, kde-format
 msgid "Build a combined tag string."
-msgstr ""
+msgstr "בניית מחרוזת תגיות מעורבת."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:127
 #, fuzzy, kde-format
@@ -22933,7 +22950,7 @@ msgstr "שגיאה"
 #, kde-format
 msgctxt "@info: progress bar start transfer"
 msgid "%v / %m"
-msgstr ""
+msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
 #, fuzzy, kde-format
@@ -23142,12 +23159,12 @@ msgstr "פתיחה במנהל-הקבצים"
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:247
 #, kde-format
 msgid "Getting galleries from server"
-msgstr ""
+msgstr "הגלריות מתקבלות מהשרת"
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:339
 #, kde-format
 msgid "Successfully retrieved galleries"
-msgstr ""
+msgstr "הגלריות התקבלו בהצלחה"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:45
 #, fuzzy, kde-format
@@ -23215,7 +23232,7 @@ msgstr "הגדרות"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:321
 #, kde-format
 msgid "Login failed: %1\n"
-msgstr ""
+msgstr "הכניסה נכשלה: %1\n"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:335
 #, fuzzy, kde-format
@@ -23453,25 +23470,25 @@ msgstr ""
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "kingdom"
-msgstr ""
+msgstr "ממלכה"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:123
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "subkingdom"
-msgstr ""
+msgstr "תת־ממלכה"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:127
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "phylum"
-msgstr ""
+msgstr "מערכה"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:131
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "subphylum"
-msgstr ""
+msgstr "תת־מערכה"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:135
 #, fuzzy, kde-format
@@ -23569,19 +23586,19 @@ msgstr "מיפתח צמצם"
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "genus"
-msgstr ""
+msgstr "סוג"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:195
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "genushybrid"
-msgstr ""
+msgstr "סוג כלאיים"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:199
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "subgenus"
-msgstr ""
+msgstr "תת־סוג"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:203
 #, fuzzy, kde-format
@@ -23612,7 +23629,7 @@ msgstr "לא צויין"
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "hybrid"
-msgstr ""
+msgstr "כלאיים"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:223
 #, fuzzy, kde-format
@@ -23625,7 +23642,7 @@ msgstr "לא צויין"
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "variety"
-msgstr ""
+msgstr "מגוון"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:231
 #, fuzzy, kde-format
@@ -23661,19 +23678,19 @@ msgstr "שעה"
 #, kde-format
 msgctxt "time"
 msgid "hours"
-msgstr ""
+msgstr "שעות"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:315
 #, kde-format
 msgctxt "time"
 msgid "minute"
-msgstr ""
+msgstr "דקה"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:316
 #, kde-format
 msgctxt "time"
 msgid "minutes"
-msgstr ""
+msgstr "דקות"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:327
 #, fuzzy, kde-format
