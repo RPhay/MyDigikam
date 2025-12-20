@@ -49,6 +49,7 @@ Preview         : Extend Toolbar overlay with Labels editor.
 Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
 Table-View      : Add customizable columns to show "Grouped" and "Versioned" properties.
 Advanced Rename : New modifier "Date Format".
+Template        : Add support to merge existing template entries assigned in items with a new template.
 SlideShow       : Add new option to customize the color background instead pure black in case of images transparency usage.
 Presentation    : Add new option to customize the color background instead pure black in case of images transparency usage.
 File Copy       : Complete rewrite the GUI for a better usability.
