@@ -322,7 +322,7 @@ BUGFIXES:
 260 --> 513590 - Only Google Maps in the right sidebar.
 261 --> 376463 - Improve keyboard assignment and usage of tags.
 262 --> 367788 - It should be possible to save Metadata templates.
-263 --> 
+263 --> 467312 - Applying a template in the BQM fails in MP4 files.
 264 --> 
 265 --> 
 266 --> 
