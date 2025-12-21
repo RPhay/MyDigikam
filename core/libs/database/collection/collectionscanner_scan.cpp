@@ -520,7 +520,7 @@ void CollectionScanner::scanForStaleAlbums(const CollectionLocation& location, c
             // let digikam think that ignored directories got deleted
             // (if they already exist in the database, this will delete them)
 
-            if (!d->albumDateCache.contains(path) || d->ignoreDirectory.contains(url.fileName()))
+            if (!d->albumDateCache.contains(path) || d->checkIgnoreDirectory(url.fileName()))
             {
                 // We have an ignored album, all sub-albums have to be ignored
 
@@ -799,7 +799,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
 #endif
 
-            if (d->ignoreDirectory.contains(info.fileName()))
+            if (d->checkIgnoreDirectory(info.fileName()))
             {
                 continue;
             }

@@ -332,8 +332,8 @@ BUGFIXES:
 270 --> 510941 - Localization seems broken in digiKam-8.8.0-Qt5-MacOS-x86_64.pkg.
 271 --> 513232 - Spanish translation not available in macOS.
 272 --> 512330 - Running "Recognize Faces" from Right Click Menu Results in Progress Detail Window That with Unclickable Cancel Button.
-273 --> 
-274 --> 
+273 --> 513583 - Possibility to use wildcards for folders in the "Ignored directories" part.
+274 --> 379207 - Excludes folders from collections using RegEx.
 275 --> 
 276 --> 
 277 --> 

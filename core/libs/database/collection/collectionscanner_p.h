@@ -109,6 +109,7 @@ public:
 
     bool checkObserver();
     bool checkDeferred(const QFileInfo& info);
+    bool checkIgnoreDirectory(const QString& dirName);
 
     void finishScanner(ItemScanner& scanner);
 

@@ -153,6 +153,22 @@ bool CollectionScanner::Private::checkDeferred(const QFileInfo& info)
     return false;
 }
 
+bool CollectionScanner::Private::checkIgnoreDirectory(const QString& dirName)
+{
+    for (const QString& ignore : std::as_const(ignoreDirectory))
+    {
+        QString wildcard = QRegularExpression::wildcardToRegularExpression(ignore);
+        QRegularExpression regExp(QRegularExpression::anchoredPattern(wildcard));
+
+        if (regExp.match(dirName).hasMatch())
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void CollectionScanner::Private::finishScanner(ItemScanner& scanner)
 {
     /**
