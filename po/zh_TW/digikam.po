@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:41+0000\n"
+"POT-Creation-Date: 2025-12-21 00:40+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -41474,17 +41474,17 @@ msgstr "<p>這欄位應含有主要作者的網站網址。</p>"
 msgid "Subjects"
 msgstr "主題"
 
-#: core/libs/template/templateselector.cpp:60
+#: core/libs/template/templateselector.cpp:62
 #, kde-format
 msgid "Template: "
 msgstr "範本："
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:66
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "開啟中繼資料範本編輯器"
 
-#: core/libs/template/templateselector.cpp:65
+#: core/libs/template/templateselector.cpp:67
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -41497,15 +41497,27 @@ msgstr ""
 "範本。</p><p><b>不變更</b>：不動範本資訊。</p><p>全部其他數值是由 digiKam 管"
 "理的範本標題。選擇一個同樣會指定資訊。</p>"
 
-#: core/libs/template/templateselector.cpp:103
+#: core/libs/template/templateselector.cpp:111
 #, kde-format
 msgid "To remove"
 msgstr "移除"
 
-#: core/libs/template/templateselector.cpp:104
+#: core/libs/template/templateselector.cpp:112
 #, kde-format
 msgid "Do not change"
 msgstr "不變更"
+
+#: core/libs/template/templateselector.cpp:213
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template overwrites all"
+msgstr "範本標題："
+
+#: core/libs/template/templateselector.cpp:217
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template will be merged"
+msgstr "範本標題："
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format

@@ -38,15 +38,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:41+0000\n"
-"PO-Revision-Date: 2025-08-23 00:57+0200\n"
+"POT-Creation-Date: 2025-12-21 00:40+0000\n"
+"PO-Revision-Date: 2025-12-20 22:38+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.12.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -351,12 +351,11 @@ msgstr[0] "Aldatu aurpegiaren izena '%2'(e)tik '%3'(e)ra"
 msgstr[1] "Aldatu aurpegiaren izenak '%2'(e)tik '%3'(e)ra"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
-msgstr[0] "Esleitu '%1' etiketa elementuei"
-msgstr[1] "Esleitu '%1' etiketa elementuei"
+msgstr[0] "Esleitu '%2' etiketa elementuei"
+msgstr[1] "Esleitu '%2' etiketa(k) elementuei"
 
 #: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, kde-format
@@ -384,41 +383,34 @@ msgstr ""
 "definitzen du. Honek '%1' kontrol-laukia barnean hartzen du."
 
 #: core/app/filters/filtersidebarwidget_faces.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@title"
 msgid "People"
 msgstr "Jendartea"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgid "Text Filter:"
-msgstr "Testu iragazkia"
+msgstr "Testu iragazkia:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:41
-#, fuzzy, kde-format
-#| msgid "MIME Type Filter"
+#, kde-format
 msgid "MIME Type Filter:"
-msgstr "MIME mota iragazkia"
+msgstr "MIME-mota iragazkia:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
-#, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#, kde-format
 msgid "Geolocation Filter:"
-msgstr "Geokokapen iragazkia"
+msgstr "Geokokapen iragazkia:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
-#, fuzzy, kde-format
-#| msgid "Labels Filter"
+#, kde-format
 msgid "Labels Filter:"
-msgstr "Etiketen iragazkia"
+msgstr "Etiketen iragazkia:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Properties"
 msgstr "Propietateak"
@@ -453,8 +445,7 @@ msgstr "ETA"
 #: core/app/filters/filtersidebarwidget_tags.cpp:68
 #: core/libs/models/albummodel_tag.cpp:25
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title"
 msgid "Tags"
 msgstr "Etiketak"
@@ -2104,18 +2095,16 @@ msgid "By Rating"
 msgstr "Balorazioaren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:602
-#, fuzzy, kde-format
-#| msgid "Pick Label:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Pick Label"
-msgstr "Hautapen etiketa:"
+msgstr "Hautapen-etiketaren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:603
-#, fuzzy, kde-format
-#| msgid "Color Label:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Color Label"
-msgstr "Kolore-etiketa:"
+msgstr "Kolore-etiketaren arabera:"
 
 #: core/app/main/digikamapp_setup.cpp:605
 #, kde-format
@@ -2124,11 +2113,10 @@ msgid "By Image Size"
 msgstr "Irudi-neurriaren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:606
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "Edozer orientazio"
+msgstr "Orientazioaren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:607
 #, kde-format
@@ -2137,11 +2125,10 @@ msgid "By Aspect Ratio"
 msgstr "Itxura proportzioaren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:608
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "Posizioa:"
+msgstr "GPS kokapenaren arabera"
 
 #: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
@@ -2177,22 +2164,21 @@ msgstr "Elementua sailkatzeko &hurrenkera"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
-msgstr ""
-"Irudiak era gorakorrean edo beherakorrean sailkatuko diren zehazten du."
+msgstr "Irudiak goranzko edo beheranzko eran sailkatuko diren zehazten du."
 
 #: core/app/main/digikamapp_setup.cpp:680
 #: core/app/main/digikamapp_setup.cpp:739
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
-msgstr "Gorakorra"
+msgstr "Goranzkoa"
 
 #: core/app/main/digikamapp_setup.cpp:682
 #: core/app/main/digikamapp_setup.cpp:741
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
-msgstr "Beherakorra"
+msgstr "Beheranzkoa"
 
 #: core/app/main/digikamapp_setup.cpp:692
 #, kde-format
@@ -2919,12 +2905,10 @@ msgstr "Erakutsi pantaila osoan"
 
 #: core/app/views/preview/itempreviewview.cpp:508
 #: core/app/views/stack/itemiconview_views.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Faces"
+#, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
-msgstr "Aurpegien arabera"
+msgstr "Aurpegiak"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -3410,16 +3394,13 @@ msgstr ""
 "Sorta ilara kudeatzailean JPEG-XL; WEBP, eta AVIF bihurtzaileak gehitu."
 
 #: core/app/views/stack/welcomepageview.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#| "image format to store versionned images in editor."
+#, kde-format
 msgid ""
 "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versioned images in editor."
 msgstr ""
-"Bertsio-kontrola: Editorean irudien bertsioak gordetzeko JPEG-XL, HEIF, "
-"WEBP, eta AVIF galerarik gabeko irudi-formatuen euskarria gehitu."
+"Bertsio-kontrola: JPEG-XL, HEIF, WEBP, eta AVIF galerarik gabeko irudi-"
+"formatu gisa euskarria gehitu da, editorean irudien bertsioak gordetzeko."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
@@ -3527,8 +3508,8 @@ msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
-"Ezarpenak/Bestelakoak atalean digiKam eta Showfoto-rako ortografia-"
-"egiaztatzea konfiguratzeko panela gehitu."
+"Gehitu ortografia-egiaztapena konfiguratzeko panela Ezarpenak/Bestelakoak "
+"atalean digiKamen eta Showfoton."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
@@ -3543,6 +3524,8 @@ msgstr ""
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
+"Gehitu Leku-ezarpenak konfiguratzeko panel bat Ezarpenak/Bestelakoak atalean "
+"digiKamen eta Showfoton."
 
 #: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
@@ -3605,8 +3588,8 @@ msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Gaitu aukera hau irudiaren kalitatean oinarrituta automatikoki aukera "
-"etiketak esleitzeko."
+"Ilara-kudeatzailea: Gaitu aukera hau irudiaren kalitatean oinarrituta "
+"automatikoki aukera etiketak esleitzeko."
 
 #: core/app/views/stack/welcomepageview.cpp:129
 #, fuzzy, kde-format
@@ -3960,18 +3943,16 @@ msgid "Tags"
 msgstr "Etiketak"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action: group items"
-#| msgid "Group"
+#, kde-format
 msgctxt "@title: grouped"
 msgid "Grouped"
-msgstr "Taldea"
+msgstr "Taldekatuta"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: versioned"
 msgid "Versioned"
-msgstr "Bertsioa"
+msgstr "Bertsioduna"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, kde-format
@@ -4010,18 +3991,16 @@ msgid "Tags"
 msgstr "Etiketak"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@action: group items"
-#| msgid "Group"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Grouped"
-msgstr "Taldea"
+msgstr "Taldekatuta"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Versioned"
-msgstr "Bertsioa"
+msgstr "Bertsioduna"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:348
 #: core/app/views/tableview/tableview_column_digikam.cpp:388
@@ -4114,8 +4093,7 @@ msgstr "Zuria"
 #: core/libs/properties/itempropertiessidebardb.cpp:748
 #: core/libs/properties/itempropertiessidebardb.cpp:851
 #: core/libs/properties/itempropertiessidebardb.cpp:858
-#, fuzzy, kde-format
-#| msgid "Yes"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Bai"
@@ -4125,7 +4103,7 @@ msgstr "Bai"
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
-msgstr ""
+msgstr "Bai (pila)"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:510
 #: core/libs/properties/import/importitempropertiestab.cpp:348
@@ -4138,8 +4116,7 @@ msgstr ""
 #: core/libs/properties/itempropertiessidebardb.cpp:852
 #: core/libs/properties/itempropertiessidebardb.cpp:870
 #: core/libs/properties/itempropertiestab_setters.cpp:88
-#, fuzzy, kde-format
-#| msgid "No"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "No"
 msgstr "Ez"
@@ -6408,13 +6385,10 @@ msgstr ""
 "aplikatu ditzake.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
-msgstr "Irudi-kalitatearen araberako sailkapena"
+msgstr "Irudi-kalitatea aztertzea"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -8283,7 +8257,7 @@ msgstr "Informazioa..."
 #: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:113
 #, kde-format
 msgid "Current Color Space:"
-msgstr "Uneko kolore-espazioa:"
+msgstr "Uneko kolore-eremua:"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:216
 #: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:244
@@ -8293,31 +8267,29 @@ msgid "Color Profile Conversion"
 msgstr "Kolore-profilaren bihurketa"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert image to a color space"
-msgstr "Irudia kolore-espazio batera bihurtzeko tresna."
+msgstr "Irudia kolore-eremu batera bihurtzeko tresna bat"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:66
-#, fuzzy, kde-format
-#| msgid "A tool to convert to black and white."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image to a different color space."
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr ""
+"Irudia editatzeko tresna honek irudia beste kolore-eremu batera bihur dezake."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:108
-#, fuzzy, kde-format
-#| msgid "Color Space"
+#, kde-format
 msgctxt "@action"
 msgid "Color Spaces"
-msgstr "Kolore-espazioa"
+msgstr "Kolore-eremuak"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "Color Space Conversion"
+#, kde-format
 msgctxt "@action"
 msgid "Color Space Converter..."
-msgstr "Kolore-espazioaren bihurketa"
+msgstr "Kolore-eremu bihurtzailea..."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:137
 #, fuzzy, kde-format
@@ -33214,7 +33186,7 @@ msgstr "Bihurtu hona:"
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:68
 #, kde-format
 msgid "Select the profile of the color space to convert to."
-msgstr "Ezarri kolore-espazioaren profila horra bihurtzeko."
+msgstr "Hautatu, zein kolore-eremura bihurtu nahi den, haren profila."
 
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:110
 #, fuzzy, kde-format
@@ -36553,18 +36525,16 @@ msgid "aesthetic image quality"
 msgstr "irudiaren kalitate estetikoa"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
-msgstr "Miatzeko modua: "
+msgstr "Aztertzeko modua:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
-msgstr "Guztiak"
+msgstr "Guztia"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, fuzzy, kde-format
@@ -42497,17 +42467,17 @@ msgstr ""
 msgid "Subjects"
 msgstr "Gaiak"
 
-#: core/libs/template/templateselector.cpp:60
+#: core/libs/template/templateselector.cpp:62
 #, kde-format
 msgid "Template: "
 msgstr "Txantiloia: "
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:66
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "Ireki metadatuen txantiloiaren editorea"
 
-#: core/libs/template/templateselector.cpp:65
+#: core/libs/template/templateselector.cpp:67
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -42522,15 +42492,27 @@ msgstr ""
 "digiKam-ek kudeatutako txantiloiaren tituluak dira. Bat hautatzean "
 "informazioa ere esleituko da.</p>"
 
-#: core/libs/template/templateselector.cpp:103
+#: core/libs/template/templateselector.cpp:111
 #, kde-format
 msgid "To remove"
 msgstr "Kentzeko"
 
-#: core/libs/template/templateselector.cpp:104
+#: core/libs/template/templateselector.cpp:112
 #, kde-format
 msgid "Do not change"
 msgstr "Ez aldatu"
+
+#: core/libs/template/templateselector.cpp:213
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template overwrites all"
+msgstr "Txantiloiaren titulua:"
+
+#: core/libs/template/templateselector.cpp:217
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template will be merged"
+msgstr "Txantiloiaren titulua:"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -44280,7 +44262,7 @@ msgstr ""
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:803
 #, kde-format
 msgid "Uncalibrated color space"
-msgstr "Kalibratu gabeko kolore-espazioa"
+msgstr "Kalibratu gabeko kolore-eremua"
 
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:809
 #, kde-format
@@ -44808,13 +44790,12 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:56
 #, kde-format
 msgid "A KDE Family Project"
-msgstr ""
+msgstr "KDE Familiaren proiektu bat"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2021, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "(c) 2001-2021, digiKam garatzaileen taldea"
+msgstr "(c) 2001-2025, digiKam garatzaileen taldea"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
@@ -44857,13 +44838,12 @@ msgid "Releases Manager"
 msgstr "Argitalpen kudeatzailea"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "Kalitatea:"
+msgstr "Kalitate proben ingeniaria"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgid "Port to Qt6"
 msgstr "Qt6ra eratortzea"
 
@@ -44909,7 +44889,7 @@ msgstr "UPnP / DLNA esportatzeko tresna eta tutoretza"
 #: core/libs/widgets/mainview/daboutdata.cpp:201
 #, kde-format
 msgid "Tags Manager"
-msgstr "Etiketa kudeatzailea"
+msgstr "Etiketa-kudeatzailea"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:207
 #, kde-format
@@ -44922,6 +44902,8 @@ msgid ""
 "Face-engine improvements\n"
 "and manual icon-view sort"
 msgstr ""
+"Aurpegi-motorrean hobekuntzak\n"
+"eta ikono-ikuspegia eskuz sailkatzea"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:219
 #, kde-format
@@ -44931,12 +44913,9 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "Irudi-kalitatearen araberako sailkapena"
+msgstr "Irudi-kalitatearen aztertzailea"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:231
 #, kde-format
@@ -45093,14 +45072,12 @@ msgid "Developer (2004)"
 msgstr "Garatzailea (2004)"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:461
-#, fuzzy, kde-format
-#| msgid "Developer and Mentoring"
+#, kde-format
 msgid "Developer and Mentoring (2005-2012)"
-msgstr "Garatzailea eta tutoretza"
+msgstr "Garatzailea eta mentoretza (2005-2012)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:87
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
 msgstr "Konfiguratu jakinarazpenak"
 
@@ -45187,12 +45164,10 @@ msgstr "Erakutsi egoera-barra"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:123
 #: core/libs/widgets/mainview/dzoombar.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%2 %1"
+msgstr "%%1"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:227
 #, kde-format
@@ -45210,19 +45185,19 @@ msgid "H&ide toolbars"
 msgstr "E&zkutatu tresna-barrak"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
-msgstr "E&zkutatu tresna-barra pantaila osoko moduan"
+msgstr "Ezkutatu tresna-barra denak leihoa pantaila osoko modura aldatzean."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:64
 #, kde-format
 msgid "Hide &thumbbar"
-msgstr ""
+msgstr "Ezkutatu koadro &txikien barra"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
-msgstr "E&zkutatu koadro txikien barra pantaila osoko moduan"
+msgstr "Ezkutatu koadro txikien barra leihoa pantaila osoko modura aldatzean."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
@@ -45230,20 +45205,19 @@ msgid "Hide &sidebars"
 msgstr "Ezkutatu al&boko barrak"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
-msgstr "E&zkutatu tresna-barra pantaila osoko moduan"
+msgstr "Ezkutatu alboko barra denak leihoa pantaila osoko modura aldatzean."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:70
-#, fuzzy, kde-format
-#| msgid "Show Thumbbar"
+#, kde-format
 msgid "Hide st&atusbar"
-msgstr "Erakutsi koadro txikien barra"
+msgstr "Ezkutatu egoer&a-barra"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
-msgstr "E&zkutatu tresna-barra pantaila osoko moduan"
+msgstr "Ezkutatu egoera-barra leihoa pantaila osoko modura aldatzean."
 
 #: core/libs/widgets/mainview/thememanager_p.cpp:1323
 #, kde-format
@@ -45312,6 +45286,9 @@ msgid ""
 "ExifTool is a platform-independent command-line application for reading, "
 "writing and editing meta information in a wide variety of files."
 msgstr ""
+"ExifTool plataformekiko independentea den komando-lerroko aplikazio bat da, "
+"fitxategi aniztasun zabal bateko metadatuen informazioa irakurtzeko, "
+"idazteko eta editatzeko balio duena."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:67
 #, kde-format
@@ -45461,7 +45438,7 @@ msgstr "JPEG meta-informazioaren  8. maila"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:100
 #, kde-format
 msgid "Microsoft Advanced Systems Format"
-msgstr ""
+msgstr "Microsoft Advanced Systems Formatua"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:104
 #, kde-format
@@ -45474,10 +45451,9 @@ msgid "Canon Camera Information"
 msgstr "Canon kamararen informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:112
-#, fuzzy, kde-format
-#| msgid "Common File Information"
+#, kde-format
 msgid "Canon Recipe Data Information"
-msgstr "Fitxategi arrunten informazioa"
+msgstr "Canon errezeta-datuen informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:116
 #, kde-format
@@ -45537,44 +45513,39 @@ msgid "FLIR Thermal Imaging Camera Information"
 msgstr "Fitxategiaren/Irudiaren informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:160
-#, fuzzy, kde-format
-#| msgid "File/Item Information"
+#, kde-format
 msgid "File System Information"
-msgstr "Fitxategi/Irudiaren informazioa"
+msgstr "Fitxategi-sistemaren informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:164
-#, fuzzy, kde-format
-#| msgid "Common File Information"
+#, kde-format
 msgid "Macromedia/Adobe Flash Information"
-msgstr "Fitxategi arrunten informazioa"
+msgstr "Macromedia/Adobe Flash-en informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:168
-#, fuzzy, kde-format
-#| msgid "Caption Information"
+#, kde-format
 msgid "FlashPix Information"
-msgstr "Informations de légende"
+msgstr "FlashPix-en informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:172
-#, fuzzy, kde-format
-#| msgid "Found Tags"
+#, kde-format
 msgid "Font Name Tags"
-msgstr "Aurkitutako etiketak"
+msgstr "Letra-tipo izen etiketak"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:176
-#, fuzzy, kde-format
-#| msgid "Caption Information"
+#, kde-format
 msgid "FotoWare FotoStation Information"
-msgstr "Informations de légende"
+msgstr "FotoWare FotoStation-en informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:180
 #, kde-format
 msgid "Compuserve Graphics Interchange Format"
-msgstr ""
+msgstr "Compuserve Graphics Interchange Formatua"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:184
-#, fuzzy, kde-format
+#, kde-format
 msgid "GNU Image Manipulation Program"
-msgstr "Irudiak Manipulatzeko GNU Programa"
+msgstr "GNUren Irudiak Manipulatzeko Programa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:188
 #, fuzzy, kde-format
@@ -45583,22 +45554,19 @@ msgid "Geolocated Tagged Image File Format"
 msgstr "TIFF (Tagged Image File Format version 5.0)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:192
-#, fuzzy, kde-format
-#| msgid "No Tags"
+#, kde-format
 msgid "GoPro Tags"
-msgstr "Etiketarik ez"
+msgstr "GoPro etiketak"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:196
-#, fuzzy, kde-format
-#| msgid "File/Item Information"
+#, kde-format
 msgid "H.264 Video Streams Information"
-msgstr "Fitxategi/Irudiaren informazioa"
+msgstr "H.264 Bideo korronteen Informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:200
-#, fuzzy, kde-format
-#| msgid "Hypertext Markup Language \"HTML\""
+#, kde-format
 msgid "HyperText Markup Language"
-msgstr "Langage de balisage hypertexte « HTML »"
+msgstr "HiperTestu Marka Lengoaia"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
 #, kde-format
@@ -45606,10 +45574,9 @@ msgid "International Color Consortium Color Profile"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
-#, fuzzy, kde-format
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "ID3 And Lyrics3 information"
-msgstr "Informations sur la date et l'heure"
+msgstr "ID3 eta Lyrics3 informazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:212
 #, kde-format
@@ -45627,21 +45594,20 @@ msgid "iTunes Cover Flow Artwork"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:224
-#, fuzzy, kde-format
-#| msgid "JPEG File Interchange"
+#, kde-format
 msgid "JPEG File Interchange Format"
-msgstr "JPEG File Interchange"
+msgstr "JPEG fitxategi elkartrukerako formatu"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:228
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgid "Joint Photographic Experts Group"
-msgstr "Argazkiaren propietateak"
+msgstr "Joint Photographic Experts Group"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:232
 #, kde-format
 msgid "JavaScript Object Notation"
-msgstr ""
+msgstr "JavaScript Objektuen Notazioa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:236
 #, kde-format
@@ -45665,16 +45631,14 @@ msgid "Lytro Light Field Picture Info"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:252
-#, fuzzy, kde-format
-#| msgid "JPEG 2000 image"
+#, kde-format
 msgid "MPEG-2 Transport Stream"
-msgstr "JPEG 2000 irudia"
+msgstr "MPEG-2 Garraio korrontea"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:256
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Meta Information Encapsulation"
-msgstr "Metadatuen informazioa"
+msgstr "Meta-informazioa kapsulatzea"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:260
 #, fuzzy, kde-format
@@ -52008,8 +51972,8 @@ msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
 "order."
 msgstr ""
-"Aukera hau gaitzen bada, berriki kargatutako irudiak beherantz ordenatuko "
-"dira."
+"Aukera hau gaitzen bada, berriki zamatutako irudiak beheranzko ordenan "
+"sailkatuko dira."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:146
 #, fuzzy, kde-format
@@ -53017,13 +52981,13 @@ msgstr "Fitxategi-neurriaren arabera"
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
-msgstr "Gorakorra"
+msgstr "Goranzkoa"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:226
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
-msgstr "Beherakorra"
+msgstr "Beheranzkoa"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:253
 #, kde-format
@@ -61863,20 +61827,20 @@ msgstr "Elementua sailkatzeko &hurrenkera"
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
-"Elementuak hurrenkera gorakorrean edo beherakorrean sailkatzen diren "
-"definitzen du."
+"Elementuak goranzko edo beheranzko hurrenkeran sailkatzen diren definitzen "
+"du."
 
 #: core/utilities/import/main/importui.cpp:462
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
-msgstr "Gorakorra"
+msgstr "Goranzkoa"
 
 #: core/utilities/import/main/importui.cpp:464
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
-msgstr "Beherakorra"
+msgstr "Beheranzkoa"
 
 #: core/utilities/import/main/importui.cpp:476
 #, kde-format
@@ -68323,16 +68287,17 @@ msgid "Even allow lossy rotation if necessary"
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:38
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Write flag to metadata if possible"
-msgstr "Idatzi metadatuak fitxategi bakoitzean"
+msgstr "Idatzi bandera metadatuetan posible bada"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate files only by changing a flag, not touching the pixel data"
 msgstr ""
+"Biratu fitxategiak bandera bat aldatuz bakarrik, pixelen datuak ukitu gabe"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:52
 #, kde-kuit-format
@@ -68351,7 +68316,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "If possible rotate files by changing the pixel data"
-msgstr ""
+msgstr "Ahal bada, biratu fitxategiak pixelen datuak aldatuz"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:63
 #, kde-kuit-format
@@ -68430,16 +68395,16 @@ msgid "Rotation"
 msgstr "Biraketa"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:33
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Reading and Writing to Sidecars"
-msgstr "Neurtze modua"
+msgstr "Alboko fitxategietatik irakurtzea eta haietan idaztea"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:36
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Read from sidecar files"
-msgstr "Irakurri metadatuak fitxategi bakoitzetik datu-basera"
+msgstr "Irakurri alboko fitxategietatik"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:38
 #, fuzzy, kde-format
@@ -68452,10 +68417,10 @@ msgstr ""
 "direnean."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Write to sidecar files"
-msgstr "Idatzi metadatuak fitxategi bakoitzean"
+msgstr "Idatzi alboko fitxategietan"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:44
 #, fuzzy, kde-format
@@ -68467,34 +68432,34 @@ msgstr ""
 "direnean."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar for read-only item only"
-msgstr "Idatzi metadatuak fitxategi bakoitzean"
+msgstr "Idatzi XMP alboko fitxategian bakarrik irakurtzeko elementuan"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:49
 #, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar only"
-msgstr "Idatzi XMP sidekarretan bakarrik"
+msgstr "Idatzi XMP alboko fitxategian bakarrik"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:50
 #, kde-format
 msgctxt "@item"
 msgid "Write to item and XMP Sidecar"
-msgstr "Idatzi elementuan eta XMP sidekarretan"
+msgstr "Idatzi elementuan eta XMP alboko fitxategian"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Specify the exact mode of XMP sidecar writing"
-msgstr "XMP sidekarretan idazteko modu zehatza zehaztu"
+msgstr "Zehaztu XMP alboko fitxategietan idazteko modu zehatza"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Sidecar file names are compatible with commercial programs"
-msgstr "Sidekar fitxategi-izenak programa komertzialekin bateragarriak dira"
+msgstr "Alboko fitxategien izenak programa komertzialekin bateragarriak dira"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:57
 #, fuzzy, kde-format
@@ -68536,30 +68501,39 @@ msgid ""
 "the *.xyz and *.abc extensions. The internally\n"
 "used sidecars type *.xmp is always included."
 msgstr ""
+"Hemen elementu arruntekin prozesatu\n"
+"beharreko alboko fitxategien luzapen\n"
+"gehigarriak gehi ditzakezu. Fitxategi hauek\n"
+"ez dira ikusgai egongo, baina fitxategi\n"
+"nagusiaren hedapen gisa hartuko dira.\n"
+"\"xyz abc\" besterik ez duzu idatzi behar\n"
+"*.xyz eta *.abc luzapena duten fitxategiak\n"
+"onartzeko. Barnean erabiltzen den *.xmp\n"
+"alboko fitxategi mota beti barne hartzen da."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
-msgstr "Sartu sidekar fitxategi-luzapen gehigarriak."
+msgstr "Sartu alboko fitxategien luzapen gehigarriak."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
-msgstr "&Sidekar fitxategi-luzapen gehigarriak"
+msgstr "&Alboko fitxategien luzapen gehigarriak"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
-msgstr "Sidekarrak"
+msgstr "Alboko fitxategiak"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
-msgstr ""
+msgstr "AA GPU proba"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
 #, kde-format
@@ -68573,31 +68547,27 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Hasi"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
-msgstr "Beta-probatzailea"
+msgstr "Hasi proba"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
-msgstr "Ezarpenak..."
+msgstr "Probatzen..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "OpenCV OpenCL DNN proba hasten..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
@@ -68605,6 +68575,8 @@ msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Proba ondo osatu da! Zure sistema AA ereduetarako GPU azelerazioa erabil "
+"dezake."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:221
 #, kde-format
@@ -68612,20 +68584,20 @@ msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Probak huts egin du. Baliteke zure sistemak AA ereduetarako GPU azelerazioa "
+"ezin erabiltzea."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "&Close"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Itxi"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
-#, fuzzy, kde-format
-#| msgid "Close the theme designer"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
-msgstr "Itxi gaiaren diseinatzailea"
+msgstr "Itxi proba elkarrizketa-koadroa"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
@@ -68645,11 +68617,9 @@ msgid "OpenCL acceleration device is available."
 msgstr "Aukera ez dago erabilgarri"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#, kde-format
 msgid "Using device: %1"
-msgstr "Lotura-gailua"
+msgstr "Gailua erabiltzen: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
 #, fuzzy, kde-format
@@ -68688,57 +68658,49 @@ msgid "Preparing the DNN Model image for processing..."
 msgstr "Jarri irudia panoramikoki eskualde batean"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing face detection model..."
-msgstr "Ikuspegi nagusia hasieratzen..."
+msgstr "Aurpegia antzemateko eredua hasieratzen..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Running face detection..."
-msgstr "Aurpegia atzematea"
+msgstr "Aurpegia atzematea exekutatzen..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "Ikuspegi nagusia hasieratzen..."
+msgstr "Ezaugarriak ateratzeko eredua hasieratzen..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "Bilduma azterketa prestatzen..."
+msgstr "Aurpegia ezaugarriak ateratzeko prestatzen..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "Aurpegiaren ezaugarriak ateratzen..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "Karpeta sortzea huts egin du"
+msgstr "Aurpegien ezaugarriak ateratzea huts egin du."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "Datu-base kopiatze arrakastatsua."
+msgstr "Proba guztiak ondo osatu dira!"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
-#, fuzzy, kde-format
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "Esportatu"
+msgstr "OpenCV errorea: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Errorea"
+msgstr "Errorea: %1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
@@ -68909,6 +68871,7 @@ msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
 msgstr ""
+"<font color='red'><i>Abisua: Ezarpen hauek abioa moteltzen dute!</i></font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
@@ -68929,6 +68892,7 @@ msgstr "Ez baieztatu e&skuineko alboko barran aldaketak aplikatzean"
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
+"Erakutsi aurpegi etiketak jendarte alboko barran izenak esleitzeko bakarrik"
 
 #: core/utilities/setup/misc/setupmisc.cpp:80
 #, kde-format

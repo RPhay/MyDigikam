@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:41+0000\n"
+"POT-Creation-Date: 2025-12-21 00:40+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -41084,17 +41084,17 @@ msgstr "<p>Šim laukam būtu jāsatur galvenā autora tīmekļa vietnes URL.</p>
 msgid "Subjects"
 msgstr "Temati"
 
-#: core/libs/template/templateselector.cpp:60
+#: core/libs/template/templateselector.cpp:62
 #, kde-format
 msgid "Template: "
 msgstr "Sagatave: "
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:66
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "Atvērt metadatu sagatavju redaktoru"
 
-#: core/libs/template/templateselector.cpp:65
+#: core/libs/template/templateselector.cpp:67
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -41104,15 +41104,27 @@ msgid ""
 "well.</p>"
 msgstr ""
 
-#: core/libs/template/templateselector.cpp:103
+#: core/libs/template/templateselector.cpp:111
 #, kde-format
 msgid "To remove"
 msgstr "Izņemt"
 
-#: core/libs/template/templateselector.cpp:104
+#: core/libs/template/templateselector.cpp:112
 #, kde-format
 msgid "Do not change"
 msgstr "Nemainīt"
+
+#: core/libs/template/templateselector.cpp:213
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template overwrites all"
+msgstr "Sagataves nosaukums:"
+
+#: core/libs/template/templateselector.cpp:217
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template will be merged"
+msgstr "Sagataves nosaukums:"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format

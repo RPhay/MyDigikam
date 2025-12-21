@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:41+0000\n"
+"POT-Creation-Date: 2025-12-21 00:40+0000\n"
 "PO-Revision-Date: 2025-12-19 09:48-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -41703,17 +41703,17 @@ msgstr "<p>Este campo deverá conter a URL do site do autor principal.</p>"
 msgid "Subjects"
 msgstr "Assuntos"
 
-#: core/libs/template/templateselector.cpp:60
+#: core/libs/template/templateselector.cpp:62
 #, kde-format
 msgid "Template: "
 msgstr "Modelo: "
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:66
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "Abrir o editor de modelos de metadados"
 
-#: core/libs/template/templateselector.cpp:65
+#: core/libs/template/templateselector.cpp:67
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -41728,15 +41728,29 @@ msgstr ""
 "títulos de modelos gerenciados pelo digiKam. Se selecionar um também irá "
 "atribuir as informações.</p>"
 
-#: core/libs/template/templateselector.cpp:103
+#: core/libs/template/templateselector.cpp:111
 #, kde-format
 msgid "To remove"
 msgstr "Remover"
 
-#: core/libs/template/templateselector.cpp:104
+#: core/libs/template/templateselector.cpp:112
 #, kde-format
 msgid "Do not change"
 msgstr "Não alterar"
+
+# A TRADUÇÃO COMO "TÍTULO DO MODELO" NÃO FICA ADEQUADA NO CONTEXTO.
+#: core/libs/template/templateselector.cpp:213
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template overwrites all"
+msgstr "Título do modelo:"
+
+# A TRADUÇÃO COMO "TÍTULO DO MODELO" NÃO FICA ADEQUADA NO CONTEXTO.
+#: core/libs/template/templateselector.cpp:217
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template will be merged"
+msgstr "Título do modelo:"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format

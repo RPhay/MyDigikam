@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:41+0000\n"
+"POT-Creation-Date: 2025-12-21 00:40+0000\n"
 "PO-Revision-Date: 2025-07-21 23:21+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -42699,17 +42699,17 @@ msgstr ""
 msgid "Subjects"
 msgstr "Themen"
 
-#: core/libs/template/templateselector.cpp:60
+#: core/libs/template/templateselector.cpp:62
 #, kde-format
 msgid "Template: "
 msgstr "Vorlage: "
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:66
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "Editor für Metadaten-Vorlagen öffnen"
 
-#: core/libs/template/templateselector.cpp:65
+#: core/libs/template/templateselector.cpp:67
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -42724,15 +42724,27 @@ msgstr ""
 "anderen Werte sind Vorlagentitel, die von digiKam verwaltet wird. Auswahl "
 "einer Vorlage wird die Information ebenfalls zuweisen.</p>"
 
-#: core/libs/template/templateselector.cpp:103
+#: core/libs/template/templateselector.cpp:111
 #, kde-format
 msgid "To remove"
 msgstr "Entfernen"
 
-#: core/libs/template/templateselector.cpp:104
+#: core/libs/template/templateselector.cpp:112
 #, kde-format
 msgid "Do not change"
 msgstr "Nicht ändern"
+
+#: core/libs/template/templateselector.cpp:213
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template overwrites all"
+msgstr "Vorlagenname:"
+
+#: core/libs/template/templateselector.cpp:217
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template will be merged"
+msgstr "Vorlagenname:"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format

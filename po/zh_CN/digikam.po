@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:41+0000\n"
+"POT-Creation-Date: 2025-12-21 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -347,36 +347,30 @@ msgid ""
 msgstr "指定如何结合多个选中的标签来对图像进行过滤，“%1”复选框勾选时也生效。"
 
 #: core/app/filters/filtersidebarwidget_faces.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@title"
 msgid "People"
 msgstr "人物"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgid "Text Filter:"
-msgstr "文本过滤器"
+msgstr "文本过滤器："
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:41
-#, fuzzy, kde-format
-#| msgid "MIME Type Filter"
+#, kde-format
 msgid "MIME Type Filter:"
-msgstr "MIME 类型过滤器"
+msgstr "MIME 类型过滤器："
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
-#, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#, kde-format
 msgid "Geolocation Filter:"
-msgstr "地理位置过滤器"
+msgstr "地理位置过滤器："
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
-#, fuzzy, kde-format
-#| msgid "Labels Filter"
+#, kde-format
 msgid "Labels Filter:"
-msgstr "标记过滤器"
+msgstr "标记过滤器："
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
@@ -2833,8 +2827,7 @@ msgstr "全屏显示"
 
 #: core/app/views/preview/itempreviewview.cpp:508
 #: core/app/views/stack/itemiconview_views.cpp:313
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "人脸"
@@ -3796,14 +3789,12 @@ msgstr "标签"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:82
 #, fuzzy, kde-format
-#| msgid "Grouped"
 msgctxt "@title: grouped"
 msgid "Grouped"
 msgstr "已分组"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
 #, fuzzy, kde-format
-#| msgid "Versioned"
 msgctxt "@title: versioned"
 msgid "Versioned"
 msgstr "已版本管理"
@@ -3846,14 +3837,12 @@ msgstr "标签"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:124
 #, fuzzy, kde-format
-#| msgid "Grouped"
 msgctxt "@info: tableview"
 msgid "Grouped"
 msgstr "已分组"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:129
 #, fuzzy, kde-format
-#| msgid "Versioned"
 msgctxt "@info: tableview"
 msgid "Versioned"
 msgstr "已版本管理"
@@ -40023,17 +40012,17 @@ msgstr "<p>此字段应当包含照片的主要作者的网站 URL。</p>"
 msgid "Subjects"
 msgstr "主题"
 
-#: core/libs/template/templateselector.cpp:60
+#: core/libs/template/templateselector.cpp:62
 #, kde-format
 msgid "Template: "
 msgstr "模板："
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:66
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "打开元数据模板编辑器"
 
-#: core/libs/template/templateselector.cpp:65
+#: core/libs/template/templateselector.cpp:67
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -40046,15 +40035,27 @@ msgstr ""
 "p><p><b>不更改</b>：不更改模板信息。</p><p>所有其他值均为 digiKam 管理的模板"
 "标题，选择其一时将同时分配其信息。</p>"
 
-#: core/libs/template/templateselector.cpp:103
+#: core/libs/template/templateselector.cpp:111
 #, kde-format
 msgid "To remove"
 msgstr "移除"
 
-#: core/libs/template/templateselector.cpp:104
+#: core/libs/template/templateselector.cpp:112
 #, kde-format
 msgid "Do not change"
 msgstr "不更改"
+
+#: core/libs/template/templateselector.cpp:213
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template overwrites all"
+msgstr "模板名称："
+
+#: core/libs/template/templateselector.cpp:217
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template will be merged"
+msgstr "模板名称："
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -65927,8 +65928,6 @@ msgstr ""
 
 #: core/utilities/setup/setuptemplate.cpp:89
 #, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
 msgid "Merge Template"
 msgstr "模板："
 
@@ -66307,9 +66306,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Tags Filter"
-#~ msgstr "标签过滤器"
-
-#~ msgid "Face Tags Filter"
-#~ msgstr "人脸标签过滤器"
