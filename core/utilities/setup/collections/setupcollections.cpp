@@ -142,6 +142,7 @@ SetupCollections::SetupCollections(QWidget* const parent)
                                                       "store thumbnails. To avoid digiKam inserting the original "
                                                       "photo and its corresponding thumbnail twice, @eaDir is "
                                                       "ignored by default.</p>"
+                                                      "<p>Wildcard characters such as '*' or '?' are supported.</p>"
                                                       "<p>To re-include directories that are ignored by default "
                                                       "prefix it with a minus, e.g. -@eaDir.</p>"),
                                                  ignorePanel);
