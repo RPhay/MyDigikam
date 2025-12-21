@@ -341,7 +341,7 @@ BUGFIXES:
 278 --> 474492 - digiKam crash when creating digital signatures in Similarity.
 279 --> 502696 - Rotation (and other metadata edits?) don't work and soft-corrupts database-vs-EXIF state so desynced, on certain filetypes.
 280 --> 499017 - Metadata is not written.
-281 --> 
+281 --> 386291 - Lazy synchronization.
 282 --> 
 283 --> 
 284 --> 
