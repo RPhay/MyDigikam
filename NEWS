@@ -340,7 +340,7 @@ BUGFIXES:
 277 --> 513652 - Thumbbar select all (ctrl+a) does select all but items are not marked.
 278 --> 474492 - digiKam crash when creating digital signatures in Similarity.
 279 --> 502696 - Rotation (and other metadata edits?) don't work and soft-corrupts database-vs-EXIF state so desynced, on certain filetypes.
-280 --> 
+280 --> 499017 - Metadata is not written.
 281 --> 
 282 --> 
 283 --> 
