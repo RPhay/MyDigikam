@@ -338,7 +338,7 @@ BUGFIXES:
 275 --> 406443 - Dropdown menu in Advanced Search and Scanning faces difficult to navigate.
 276 --> 490464 - digiKam Crashes upon Opening App.
 277 --> 502696 - Rotation (and other metadata edits?) don't work and soft-corrupts database-vs-EXIF state so desynced, on certain filetypes.
-278 --> 
+278 --> 474492 - digiKam crash when creating digital signatures in Similarity.
 279 --> 
 280 --> 
 281 --> 
