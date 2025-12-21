@@ -38,6 +38,7 @@ Sort Items      : Add support of Album Icon-View sort items by Orientation.
 Sort Items      : Add support of Album Icon-View sort items by GPS location.
 Sort Items      : Add support of Album Icon-View sort items by File Format.
 Sort Items      : Add support of Import Icon-View sort items by File Format.
+Setup Collection: Add regular expression wildcard support for ignored directories settings.
 Image Properties: Add new button to copy all properties as text in clipboard.
 Image Properties: Add new button to open current item is file manager.
 Image Properties: If no icon-view item selected, show current album statistics.
