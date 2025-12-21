@@ -39,17 +39,26 @@ TagRegion::TagRegion(const QString& descriptor)
     {
         if (reader.name() == QLatin1String("rect"))
         {
-            QRect r(
-                    reader.attributes().value(QLatin1String("x")).toString().toInt(),
-                    reader.attributes().value(QLatin1String("y")).toString().toInt(),
-                    reader.attributes().value(QLatin1String("width")).toString().toInt(),
-                    reader.attributes().value(QLatin1String("height")).toString().toInt()
-                   );
+            int x = 0;
+            int y = 0;
+            int w = 0;
+            int h = 0;
 
-            if (r.isValid())
+            if (
+                safeToInt(reader.attributes().value(QLatin1String("x")).toString(),      x) &&
+                safeToInt(reader.attributes().value(QLatin1String("y")).toString(),      y) &&
+                safeToInt(reader.attributes().value(QLatin1String("width")).toString(),  w) &&
+                safeToInt(reader.attributes().value(QLatin1String("height")).toString(), h)
+               )
             {
-                m_value = r;
-                m_type  = Rect;
+
+                QRect r(x, y, w, h);
+
+                if (r.isValid())
+                {
+                    m_value = r;
+                    m_type  = Rect;
+                }
             }
         }
     }
@@ -387,6 +396,20 @@ void TagRegion::reverseToOrientation(QRect& region, int orientation, const QSize
     }
 }
 
+bool TagRegion::safeToInt(const QString& str, int& result)
+{
+    bool ok;
+
+    result = str.toInt(&ok);
+
+    if (!ok || (result == INT_MIN) || (result == INT_MAX))
+    {
+        return false;
+    }
+
+    return true;
+}
+
 QDebug operator<<(QDebug dbg, const TagRegion& r)
 {
     QVariant var = r.toVariant();
@@ -442,5 +465,6 @@ QDebug operator<<(QDebug dbg, const TagRegion& r)
 
     return dbg;
 }
+
 
 } // namespace Digikam

@@ -143,6 +143,13 @@ protected:
 
     QVariant m_value;
     Type     m_type = Invalid;
+
+private:
+
+    /**
+     * Helper method for a safe conversion of XML rectangle properties to int values.
+     */
+    bool safeToInt(const QString& str, int& result);
 };
 
 QDebug DIGIKAM_EXPORT operator<<(QDebug dbg, const TagRegion& r);
