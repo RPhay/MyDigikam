@@ -337,7 +337,7 @@ BUGFIXES:
 274 --> 379207 - Excludes folders from collections using RegEx.
 275 --> 406443 - Dropdown menu in Advanced Search and Scanning faces difficult to navigate.
 276 --> 490464 - digiKam Crashes upon Opening App.
-277 --> 
+277 --> 513652 - Thumbbar select all (ctrl+a) does select all but items are not marked.
 278 --> 
 279 --> 
 280 --> 
