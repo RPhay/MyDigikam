@@ -107,9 +107,9 @@ public:
     void resetRemovedItemsTime();
     void removedItems();
 
-    bool checkObserver();
+    bool checkObserver()                              const;
     bool checkDeferred(const QFileInfo& info);
-    bool checkIgnoreDirectory(const QString& dirName);
+    bool checkIgnoreDirectory(const QString& dirName) const;
 
     void finishScanner(ItemScanner& scanner);
 

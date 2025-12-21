@@ -131,7 +131,7 @@ void CollectionScanner::Private::removedItems()
     removedItemsTime = QDateTime::currentDateTime();
 }
 
-bool CollectionScanner::Private::checkObserver()
+bool CollectionScanner::Private::checkObserver() const
 {
     if (observer)
     {
@@ -153,7 +153,7 @@ bool CollectionScanner::Private::checkDeferred(const QFileInfo& info)
     return false;
 }
 
-bool CollectionScanner::Private::checkIgnoreDirectory(const QString& dirName)
+bool CollectionScanner::Private::checkIgnoreDirectory(const QString& dirName) const
 {
     for (const QString& ignore : std::as_const(ignoreDirectory))
     {
