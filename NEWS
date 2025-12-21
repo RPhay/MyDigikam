@@ -331,7 +331,7 @@ BUGFIXES:
 269 --> 434101 - Image Editor to save changes in DB to keep history.
 270 --> 510941 - Localization seems broken in digiKam-8.8.0-Qt5-MacOS-x86_64.pkg.
 271 --> 513232 - Spanish translation not available in macOS.
-272 --> 
+272 --> 512330 - Running "Recognize Faces" from Right Click Menu Results in Progress Detail Window That with Unclickable Cancel Button.
 273 --> 
 274 --> 
 275 --> 
