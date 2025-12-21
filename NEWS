@@ -345,7 +345,7 @@ BUGFIXES:
 282 --> 458583 - Typos are not correctable in at least some fields in IPTC metadata.
 283 --> 339273 - Write file versioning information from database into XMP metadata.
 284 --> 362638 - Reading Darktable metadata.
-285 --> 
+285 --> 370016 - Bad correlation rate with GPX file GPS Correlator.
 286 --> 
 287 --> 
 288 --> 
