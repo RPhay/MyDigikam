@@ -329,8 +329,8 @@ BUGFIXES:
 267 --> 495508 - Crash in image editor while opening Color Auto Correction.
 268 --> 492123 - "Show Focus Point" behaviour in LightTable.
 269 --> 434101 - Image Editor to save changes in DB to keep history.
-270 --> 
-271 --> 
+270 --> 510941 - Localization seems broken in digiKam-8.8.0-Qt5-MacOS-x86_64.pkg.
+271 --> 513232 - Spanish translation not available in macOS.
 272 --> 
 273 --> 
 274 --> 
