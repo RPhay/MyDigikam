@@ -336,7 +336,7 @@ BUGFIXES:
 273 --> 513583 - Possibility to use wildcards for folders in the "Ignored directories" part.
 274 --> 379207 - Excludes folders from collections using RegEx.
 275 --> 406443 - Dropdown menu in Advanced Search and Scanning faces difficult to navigate.
-276 --> 
+276 --> 490464 - digiKam Crashes upon Opening App.
 277 --> 
 278 --> 
 279 --> 
