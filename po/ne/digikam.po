@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:41+0000\n"
+"POT-Creation-Date: 2025-12-21 00:40+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -39776,17 +39776,17 @@ msgstr ""
 msgid "Subjects"
 msgstr "सेतो सन्तुलन:"
 
-#: core/libs/template/templateselector.cpp:60
+#: core/libs/template/templateselector.cpp:62
 #, fuzzy, kde-format
 msgid "Template: "
 msgstr "सिर्जना:"
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:66
 #, fuzzy, kde-format
 msgid "Open metadata template editor"
 msgstr "कन्क्वेररमा खोल्नुहोस्"
 
-#: core/libs/template/templateselector.cpp:65
+#: core/libs/template/templateselector.cpp:67
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -39796,15 +39796,25 @@ msgid ""
 "well.</p>"
 msgstr ""
 
-#: core/libs/template/templateselector.cpp:103
+#: core/libs/template/templateselector.cpp:111
 #, fuzzy, kde-format
 msgid "To remove"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/libs/template/templateselector.cpp:104
+#: core/libs/template/templateselector.cpp:112
 #, fuzzy, kde-format
 msgid "Do not change"
 msgstr "केहि नगर्नुहोस्"
+
+#: core/libs/template/templateselector.cpp:213
+#, fuzzy, kde-format
+msgid "Template overwrites all"
+msgstr "सिर्जना:"
+
+#: core/libs/template/templateselector.cpp:217
+#, fuzzy, kde-format
+msgid "Template will be merged"
+msgstr "सिर्जना:"
 
 #: core/libs/template/templateviewer.cpp:102
 #, fuzzy, kde-format

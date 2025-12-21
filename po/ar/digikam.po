@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:41+0000\n"
-"PO-Revision-Date: 2025-12-18 09:23+0400\n"
+"POT-Creation-Date: 2025-12-21 00:40+0000\n"
+"PO-Revision-Date: 2025-12-20 11:15+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3971,15 +3971,13 @@ msgid "Tags"
 msgstr "الوسوم"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:82
-#, fuzzy, kde-format
-#| msgid "Grouped"
+#, kde-format
 msgctxt "@title: grouped"
 msgid "Grouped"
-msgstr "مجمعة"
+msgstr "مجمّعة"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
-#, fuzzy, kde-format
-#| msgid "Versioned"
+#, kde-format
 msgctxt "@title: versioned"
 msgid "Versioned"
 msgstr "ذات إصدارات"
@@ -4021,15 +4019,13 @@ msgid "Tags"
 msgstr "الوسوم"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:124
-#, fuzzy, kde-format
-#| msgid "Grouped"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Grouped"
-msgstr "مجمعة"
+msgstr "مجمّعة"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:129
-#, fuzzy, kde-format
-#| msgid "Versioned"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Versioned"
 msgstr "ذات إصدارات"
@@ -41035,17 +41031,17 @@ msgstr ""
 msgid "Subjects"
 msgstr "المواضيع"
 
-#: core/libs/template/templateselector.cpp:60
+#: core/libs/template/templateselector.cpp:62
 #, kde-format
 msgid "Template: "
 msgstr "القالب: "
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:66
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "افتح محرّر قوالب البيانات الوصفيّة"
 
-#: core/libs/template/templateselector.cpp:65
+#: core/libs/template/templateselector.cpp:67
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -41059,15 +41055,27 @@ msgstr ""
 "تلمس معلومات القالب.</p><p>كل القيم الأخرى هي عناوين قوالب يديرها دجيكام. "
 "تحديد واحدة سيعين المعلومات أيضًا.</p>"
 
-#: core/libs/template/templateselector.cpp:103
+#: core/libs/template/templateselector.cpp:111
 #, kde-format
 msgid "To remove"
 msgstr "للإزالة"
 
-#: core/libs/template/templateselector.cpp:104
+#: core/libs/template/templateselector.cpp:112
 #, kde-format
 msgid "Do not change"
 msgstr "لا تغير"
+
+#: core/libs/template/templateselector.cpp:213
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template overwrites all"
+msgstr "عنوان القالب:"
+
+#: core/libs/template/templateselector.cpp:217
+#, fuzzy, kde-format
+#| msgid "Template Title:"
+msgid "Template will be merged"
+msgstr "عنوان القالب:"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -67351,11 +67359,9 @@ msgstr ""
 "القالب في مجموعتك.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "القالب:"
+msgstr "ادمج القالب"
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format
