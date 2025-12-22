@@ -56,6 +56,7 @@ Presentation    : Add new option to customize the color background instead pure 
 File Copy       : Complete rewrite the GUI for a better usability.
 File Transfer   : Complete rewrite the GUI for a better usability.
 Web Site        : Huge update of the contents eg. screenshots, description, history, features, support, download, etc.
+Preview         : Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.
 
 *****************************************************************************************************
 BUGFIXES:
