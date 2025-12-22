@@ -346,7 +346,7 @@ BUGFIXES:
 283 --> 339273 - Write file versioning information from database into XMP metadata.
 284 --> 362638 - Reading Darktable metadata.
 285 --> 370016 - Bad correlation rate with GPX file GPS Correlator.
-286 --> 
+286 --> 504711 - Sync Metadata and Database ignores album selection.
 287 --> 
 288 --> 
 289 --> 
