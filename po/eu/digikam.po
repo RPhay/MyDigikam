@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 00:40+0000\n"
-"PO-Revision-Date: 2025-12-20 22:38+0100\n"
+"POT-Creation-Date: 2025-12-22 00:40+0000\n"
+"PO-Revision-Date: 2025-12-21 11:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -65793,10 +65793,10 @@ msgstr ""
 "barrako elementu baten gainean kokatzean."
 
 #: core/utilities/setup/album/setupalbumview.cpp:274
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
-msgstr "Ikusi"
+msgstr "Zuhaitz-ikuspegiak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:282
 #, kde-format
@@ -65805,28 +65805,28 @@ msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
-msgstr "Kapsulatutako aurrebistak tamaina osoko irudiak kargatzen ditu."
+msgstr "Aurreikuspegiak irudi osoa erakusten du"
 
 #: core/utilities/setup/album/setupalbumview.cpp:286
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
-msgstr "Erref. irudiak"
+msgstr "RAW irudiak:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:289
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automatikoa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:291
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
-msgstr "Erakutsi kapsulatutako aurrebista"
+msgstr "Kapsulatutako aurreikuspegia"
 
 #: core/utilities/setup/album/setupalbumview.cpp:293
 #, kde-format
@@ -65875,7 +65875,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
-msgstr ""
+msgstr "Erakutsi ikonoak eta testua aurreikuspegiaren gainean"
 
 #: core/utilities/setup/album/setupalbumview.cpp:307
 #: core/utilities/setup/camera/setupcamera.cpp:508
@@ -65898,27 +65898,25 @@ msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr "Markatu hau filigrana gardena izatea nahi baduzu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Aurreikuspegia"
 
 #: core/utilities/setup/album/setupalbumview.cpp:344
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
-msgstr "Pantaila-betea"
+msgstr "Pantaila osoa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:349
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "MIME motak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:352
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategoriak"
@@ -65937,12 +65935,12 @@ msgstr ""
 #, kde-format
 msgid "Manage categories to sort and re-arrange album tree-view."
 msgstr ""
+"Kudeatu kategoriak album zuhaitz-ikuspegia sailkatzeko eta berrantolatzeko."
 
 #: core/utilities/setup/album/setupcategory.cpp:85
-#, fuzzy, kde-format
-#| msgid "Set here the contact city."
+#, kde-format
 msgid "Set here the new category"
-msgstr "Définissez ici la ville du contact."
+msgstr "Ezarri hemen kategoria berria.v"
 
 #: core/utilities/setup/album/setupcategory.cpp:88
 #, kde-format
@@ -66018,10 +66016,9 @@ msgstr ""
 "p>"
 
 #: core/utilities/setup/album/setupmime.cpp:111
-#, fuzzy, kde-format
-#| msgid "Enter the editorial usage instructions."
+#, kde-format
 msgid "Enter additional image file extensions."
-msgstr "Saisissez les instructions d'utilisation éditoriale."
+msgstr "Sartu irudi-fitxategien luzapen gehigarriak."
 
 #: core/utilities/setup/album/setupmime.cpp:130
 #, fuzzy, kde-format
@@ -66071,10 +66068,9 @@ msgstr ""
 "du.</p> "
 
 #: core/utilities/setup/album/setupmime.cpp:146
-#, fuzzy, kde-format
-#| msgid "Show only &movie files with extensions:"
+#, kde-format
 msgid "Enter additional video file extensions."
-msgstr "Erakutsi luzapen hau duten &filma-fitxategiak bakarrik:"
+msgstr "Sartu bideo-fitxategien luzapen gehigarriak."
 
 #: core/utilities/setup/album/setupmime.cpp:165
 #, kde-format
@@ -66121,10 +66117,9 @@ msgstr ""
 "du.</p> "
 
 #: core/utilities/setup/album/setupmime.cpp:181
-#, fuzzy, kde-format
-#| msgid "Show only &audio files with extensions:"
+#, kde-format
 msgid "Enter additional audio file extensions."
-msgstr "Erakutsi luzapen hau duten &audio-fitxategiak bakarrik:"
+msgstr "Sartu audio-fitxategien luzapen gehigarriak."
 
 #: core/utilities/setup/album/setupmime.cpp:247
 #, kde-format
@@ -66189,8 +66184,7 @@ msgstr ""
 "dagoela eta piztu duzula. Berriro saiatu nahi duzu?"
 
 #: core/utilities/setup/camera/cameraselection.cpp:93
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "Kameraren konfigurazioa"
@@ -66233,12 +66227,12 @@ msgstr ""
 #: core/utilities/setup/camera/cameraselection.cpp:142
 #, kde-format
 msgid "Camera Port Type"
-msgstr "Kameraren ataka mota"
+msgstr "Kameraren ataka-mota"
 
 #: core/utilities/setup/camera/cameraselection.cpp:147
 #, kde-format
 msgid "USB"
-msgstr "USBa"
+msgstr "USB"
 
 #: core/utilities/setup/camera/cameraselection.cpp:148
 #, kde-format
@@ -66250,8 +66244,7 @@ msgstr ""
 "ordenagailura.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:151
-#, fuzzy, kde-format
-#| msgid "Serial"
+#, kde-format
 msgctxt "@item: serail port based camera"
 msgid "Serial"
 msgstr "Seriekoa"
@@ -66266,7 +66259,7 @@ msgstr ""
 "ordenagailura.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgid "Network"
 msgstr "Sarea"
 
@@ -66294,7 +66287,7 @@ msgstr ""
 #: core/utilities/setup/camera/cameraselection.cpp:165
 #, kde-format
 msgid "<p>Enter here the network address of your camera.</p>"
-msgstr ""
+msgstr "<p>Sartu hemen zure kameraren sareko helbidea.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:183
 #, kde-format
@@ -66361,65 +66354,60 @@ msgstr ""
 "a> kameren zerrendatik.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:231
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>A complete list of camera settings to use is<br/>available at <a "
-#| "href='http://www.teaser.fr/~hfiguiere/linux/digicam.html'>this URL</a>.</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p>A complete list of camera settings to use is<br>available at <a "
 "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
 msgstr ""
-"<p>Kameren ezarpenen zerrenda osoa honako<br/> <a href='http://www.teaser.fr/"
-"~hfiguiere/linux/digicam.html'>URLan</a> eskuragarri duzu.</p>"
+"<p><a href='https://www.figuiere.net/digicam/'>URL honetan</a> erabil "
+"daitezkeen<br/> kamera-ezarpenen zerrenda oso bat erabilgarri dago.</p>"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr "Audio-fitxategiak"
+msgstr "Editatu inportatzeko iragazkiak"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:91
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Izena:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mime filter:"
-msgstr "Zarataren iragazkia:"
+msgstr "MIME iragazkia:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Type Mime..."
-msgstr "Hautatu irudiak"
+msgstr "Hautatu MIME mota..."
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgid "File name filter:"
-msgstr "Irudi berriaren fitxategi-izena"
+msgstr "Fitxategi-izen iragazkiak:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgid "Path filter:"
-msgstr "Ez dago iragazki aktiborik"
+msgstr "Bide-izen iragazkiak:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:131
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show only new files"
-msgstr "Erakutsi zaharrena lehenik"
+msgstr "Erakutsi fitxategi berriak bakarrik"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:205
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
-msgstr ""
+msgstr "Hautatu iragazki honetarako nahi dituzun MIME-motak."
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:207
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Mime Types"
-msgstr "Hautatu MIME motak"
+msgstr "Hautatu MIME-motak"
 
 #: core/utilities/setup/camera/setupcamera.cpp:252
 #, kde-format
@@ -66431,29 +66419,25 @@ msgstr ""
 "interfazea erabiliz)."
 
 #: core/utilities/setup/camera/setupcamera.cpp:256
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@title: camera title"
 msgid "Title"
 msgstr "Titulua"
 
 #: core/utilities/setup/camera/setupcamera.cpp:257
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@title: camera model"
 msgid "Model"
 msgstr "Eredua"
 
 #: core/utilities/setup/camera/setupcamera.cpp:258
-#, fuzzy, kde-format
-#| msgid "Port"
+#, kde-format
 msgctxt "@title: camera port"
 msgid "Port"
 msgstr "Ataka"
 
 #: core/utilities/setup/camera/setupcamera.cpp:259
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@title: camera mount path"
 msgid "Path"
 msgstr "Bide-izena"
@@ -66475,7 +66459,7 @@ msgid "Visit Gphoto project website"
 msgstr "Bisitatu Gphoto proiektuaren webgunea"
 
 #: core/utilities/setup/camera/setupcamera.cpp:313
-#, fuzzy, kde-format
+#, kde-format
 msgid "Devices"
 msgstr "Gailuak"
 
@@ -66487,63 +66471,65 @@ msgstr "Erabili fitxategiaren metadatuak (konexioa moteltzen du)"
 #: core/utilities/setup/camera/setupcamera.cpp:321
 #, kde-format
 msgid "Turn on high quality thumbnail loading (slower loading)"
-msgstr ""
+msgstr "Aktibatu kalitate handiko koadro txikiak zamatzea (zamatze motelagoa)"
 
 #: core/utilities/setup/camera/setupcamera.cpp:322
 #, kde-format
 msgid "Use a default target album to download from camera"
-msgstr ""
+msgstr "Erabili helburuko album lehenetsi bat kameratik zama-jaisteko"
 
 #: core/utilities/setup/camera/setupcamera.cpp:328
-#, fuzzy, kde-format
-#| msgid "If Target File Exists:"
+#, kde-format
 msgid "If target file exists when downloaded from camera"
-msgstr "Helburuko fitxategia existitzen bada:"
+msgstr "Kameratik zama-jaistean helburuko fitxategia existitzen bada"
 
 #: core/utilities/setup/camera/setupcamera.cpp:369
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
 msgstr ""
-"<p>Bilaketan erabiliko diren arauak ikus ditzakezu, albumen liburutegian "
-"elementuen bilaketan erabiltzeko."
+"Hemen ikus ditzakezu inportatzeko elkarrizketa-koadroan fitxategiak "
+"iragazteko erabil daitezkeen iragazkiak."
 
 #: core/utilities/setup/camera/setupcamera.cpp:383
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
+"Erabili zuriune bat bereizle gisa ezikusi beharreko fitxategi-fitxategi "
+"anitz zehazteko."
 
 #: core/utilities/setup/camera/setupcamera.cpp:389
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
 msgstr ""
+"Erabili zuriune bat bereizle gisa ezikusi beharreko fitxategi-luzapen anitz "
+"zehazteko."
 
 #: core/utilities/setup/camera/setupcamera.cpp:393
-#, fuzzy, kde-format
+#, kde-format
 msgid "Always ignore"
 msgstr "Ezikusi beti"
 
 #: core/utilities/setup/camera/setupcamera.cpp:394
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ignored file names:"
-msgstr "Erakutsi fitxategien ize&nak"
+msgstr "Ezikusitako fitxategi-izenak:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:395
-#, fuzzy, kde-format
+#, kde-format
 msgid "Ignored file extensions:"
-msgstr "Erakutsi luzapen hau duten &irudi-fitxategiak bakarrik:"
+msgstr "Ezikusitako fitxategi-luzapenak:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
-#| msgid "Defaults"
+#, kde-format
 msgid "&Defaults"
-msgstr "Lehenetsiak"
+msgstr "&Lehenetsiak"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import Filters"
-msgstr "Inportatu iragazkiak"
+msgstr "Inportatzeko iragazkiak"
 
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
@@ -66555,9 +66541,9 @@ msgstr "Ikonoen ikuspegiaren aukerak"
 #. "below the image thumbnail."));
 #.
 #: core/utilities/setup/camera/setupcamera.cpp:445
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show image Format"
-msgstr "Erakutsi irudien puntuazioak"
+msgstr "Erakutsi irudiaren formatua"
 
 #: core/utilities/setup/camera/setupcamera.cpp:452
 #, kde-format
@@ -66567,15 +66553,15 @@ msgstr ""
 "erakusteko."
 
 #: core/utilities/setup/camera/setupcamera.cpp:455
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show item &rating"
-msgstr "Erakutsi digiKam-en &puntuazioak"
+msgstr "Erakutsi elementuaren &balorazioa"
 
 #: core/utilities/setup/camera/setupcamera.cpp:456
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr ""
-"Gaitu aukera hau digiKam-en puntuazioak irudien koadro txikien azpian "
+"Gaitu aukera hau elementuaren balorazioa irudiaren koadro txikien azpian "
 "erakusteko."
 
 #: core/utilities/setup/camera/setupcamera.cpp:460
@@ -66604,14 +66590,14 @@ msgstr ""
 "Hautatu erabiliko den letra-tipoa testua ikonoen ikuspegian bistaratzeko."
 
 #: core/utilities/setup/camera/setupcamera.cpp:493
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preview Options"
 msgstr "Aurreikusteko aukerak"
 
 #: core/utilities/setup/camera/setupcamera.cpp:496
-#, fuzzy, kde-format
+#, kde-format
 msgid "Embedded preview loads full-sized images"
-msgstr "Kapsulatutako aurrebistak tamaina osoko irudiak kargatzen ditu."
+msgstr "Kapsulatutako aurreikuspegiak neurri osoko irudiak zamatzen ditu"
 
 #: core/utilities/setup/camera/setupcamera.cpp:497
 #, kde-format
@@ -66631,18 +66617,19 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:504
 #, kde-format
 msgid "Preview each item while downloading it"
-msgstr ""
+msgstr "Aurreikusi elementu bakoitza hura zama-jaitsi bitartean"
 
 #: core/utilities/setup/camera/setupcamera.cpp:505
-#, fuzzy, kde-format
+#, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
-msgstr "<p>Gaitu aukera hau urrezko triangeluak erakusteko."
+msgstr ""
+"<p>Gaitu aukera hau zama-jaitsi bitartean irudi bakoitza aurreikusteko.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
-msgstr "Inportatu"
+msgstr "Inportatzeko leihoa"
 
 #: core/utilities/setup/camera/setupcamera.cpp:794
 #, kde-format
@@ -66675,10 +66662,10 @@ msgstr "\"%1\" kamera (%2) dagoeneko zerrendan dago."
 #: core/utilities/setup/camera/setupcamera.cpp:912
 #, kde-format
 msgid "Found camera '%1' (%2) and added it to the list."
-msgstr "\"%1\" kamera (%2) aurkitu da eta zerrendan gehitu da."
+msgstr "'%1' kamera (%2) aurkitu du eta zerrendan gehitu du."
 
 #: core/utilities/setup/camera/setupcamera.cpp:928
-#, fuzzy, kde-format
+#, kde-format
 msgid "Untitled"
 msgstr "Izengabea"
 
@@ -66686,7 +66673,7 @@ msgstr "Izengabea"
 #, kde-format
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
-msgstr ""
+msgstr "Ezaugarri hau gaitzeko, neurri osoko aurreikuspegia ezgaituko da."
 
 #: core/utilities/setup/camera/setupcamera.cpp:1022
 #, kde-format
@@ -66731,6 +66718,7 @@ msgstr ""
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr ""
+"Gainbegiratu albumak kanpoko aldaketetarako (berrabiarazi beharra dago)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
 #, kde-format
@@ -66739,10 +66727,12 @@ msgid ""
 "digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
+"<b>Oharra: Albumak gainbegiratzea sistemaren baliabideak erabiltzen ditu eta "
+"digiKam moteldu dezake. macOS eta sareko bildumak erabiltzen badituzu, ez "
+"zenuke albumak gainbegiratzea aktibatu behar.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
-#, fuzzy, kde-format
-#| msgid "Root Album Folders"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "Erroko albumen karpetak"
@@ -66756,68 +66746,58 @@ msgid ""
 "Synology NAS (Network Attached Storage). In every directory the system "
 "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
 "inserting the original photo and its corresponding thumbnail twice, @eaDir "
-"is ignored by default.</p><p>To re-include directories that are ignored by "
-"default prefix it with a minus, e.g. -@eaDir.</p>"
+"is ignored by default.</p><p>Wildcard characters such as '*' or '?' are "
+"supported.</p><p>To re-include directories that are ignored by default "
+"prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "Additional &image file extensions (<a href='image'>Currently-supported "
-#| "types</a>):"
+#: core/utilities/setup/collections/setupcollections.cpp:155
+#, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr ""
-"&Irudi-fitxategien luzapen gehigarriak (<a href='image'>Unean onartutako "
-"motak</a>):"
+"Ezikusi egiteko direktorio gehigarriak (<a href='image'>Unean ezikusitako "
+"direktorioak</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:159
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
-msgstr ""
+msgstr "Sartu zure bilduman sartzeko ezikusi nahi dituzun direktorioak."
 
-#: core/utilities/setup/collections/setupcollections.cpp:175
-#, fuzzy, kde-format
+#: core/utilities/setup/collections/setupcollections.cpp:176
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
-msgstr "Esleitu etiketa hau"
+msgstr "Ezikusitako direktorioak"
 
-#: core/utilities/setup/collections/setupcollections.cpp:246
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as movie files and "
-#| "included into the database:<br/> <code>%1</code></p>"
+#: core/utilities/setup/collections/setupcollections.cpp:247
+#, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
 "code></p>"
 msgstr ""
-"<p>Luzapen horietako fitxategiak filmatzat hartu eta datu-basean sartuko "
-"dira:<br/> <code>%1</code></p>"
+"<p>Puntu batekin hasten diren direktorioei ezikusi egiten zaie era "
+"lehenetsian.<br/> <code>%1</code></p>"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Creates a new empty Album in the collection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
-msgstr "Bilduman album huts berri bat sortuko du."
+msgstr "Bilduman bide-izen bat eransten du."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Creates a new empty Album in the collection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
-msgstr "Bilduman album huts berri bat sortuko du."
+msgstr "Bildumaren bide-izena eguneratzen du."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:131
-#, fuzzy, kde-format
-#| msgid "Remove collection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
-msgstr "Kendu bilduma"
+msgstr "Bilduma digiKametik kentzen du."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:629
 #, kde-format
@@ -66826,45 +66806,39 @@ msgstr "Ezin da bilduma bat honako bide-izenei gehitu:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
 #: core/utilities/setup/collections/setupcollectionview.cpp:1505
-#, fuzzy, kde-format
-#| msgid "Choose the folder containing your collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Aukeratu zure bilduma duen karpeta"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:696
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
-msgstr "Arazoa bilduma gehitzean"
+msgstr "Arazoa bilduma eranstean"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:697
-#, fuzzy, kde-format
+#, kde-format
 msgid "A collection with the path \"%1\" already exists."
-msgstr "Fitxategiak falta dira"
+msgstr "Jada badago \"%1\" bide-izena duen bilduma bat."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:860
-#, fuzzy, kde-format
-#| msgid "Remove Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
-msgstr "Kendu bilduma?"
+msgstr "Bide-izena bildumatik kendu nahi duzu?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:861
-#, fuzzy, kde-format
-#| msgid ""
-#| "Do you want to remove the collection \"%1\" from your list of collections?"
+#, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
-msgstr "\"%1\" bilduma bildumen zerrendatik kentzea nahi duzu?"
+msgstr "Erantsitako \"%1\" bide-izena \"%2\" bildumatik kendu nahi duzu?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:868
-#, fuzzy, kde-format
-#| msgid "Remove Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
-msgstr "Kendu bilduma?"
+msgstr "Bilduma kendu?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:869
 #, kde-format
@@ -66999,18 +66973,16 @@ msgid "Your collection will use this category:"
 msgstr "Zure bildumak kategoria hau erabiliko du:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Beharrezko fitxategiak zama-jaitsi"
+msgstr "Zama-jaitsi beharrezko eredu-fitxategiak"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
-msgstr ""
+msgstr "Ireki datu-fitxategiak gordetzeko erabiltzen den direktorio lokala."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
@@ -67153,10 +67125,10 @@ msgid "Editor Window"
 msgstr "Editore leihoa"
 
 #: core/utilities/setup/editor/setupeditor.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Versioning"
-msgstr "Beherantz"
+msgstr "Bertsio-kudeaketa"
 
 #: core/utilities/setup/editor/setupeditor.cpp:67
 #, kde-format
@@ -67284,6 +67256,8 @@ msgid ""
 "Enable this option to restore the settings of the Image Editor tools from "
 "the last session. Otherwise, the default settings will be used."
 msgstr ""
+"Gaitu aukera hau Irudi Editore tresnen azken saioko ezarpenak "
+"lehengoratzeko. Bestela, ezarpen lehenetsiak erabiliko dira."
 
 #: core/utilities/setup/editor/setupiofiles.cpp:183
 #, kde-format
@@ -67329,10 +67303,10 @@ msgid "Using the default settings, in 16 bit"
 msgstr "Ezarpen lehenetsiak erabiliz, 16 bit"
 
 #: core/utilities/setup/editor/setupraw.cpp:113
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
-msgstr "Erabili Raw inportatzeko tresna zuzenketak eskuz doitzeko"
+msgstr "Ezarpenak neurrira ipintzeko ireki beti RAW inportatzeko tresna"
 
 #: core/utilities/setup/editor/setupraw.cpp:129
 #, kde-format
@@ -67362,13 +67336,13 @@ msgstr "RAW ezarpen lehenetsia"
 #, kde-format
 msgctxt "@title"
 msgid "Enable Non-Destructive Editing and Versioning"
-msgstr ""
+msgstr "Gaitu edizio ez-suntsitzailea eta bertsio-kudeaketa"
 
 #: core/utilities/setup/editor/setupversioning.cpp:98
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enable support for non-destructive editing and image versioning"
-msgstr ""
+msgstr "Gaitu edizio ez-suntsitzailearen eta irudi-bertsioen kudeaketa"
 
 #: core/utilities/setup/editor/setupversioning.cpp:100
 #, kde-kuit-format
@@ -67385,6 +67359,8 @@ msgstr ""
 msgctxt "@info:tooltip"
 msgid "Get information on non-destructive editing and file versioning"
 msgstr ""
+"Lortu informazioa edizio ez-suntsitzaileari buruz eta fitxategi-bertsioen "
+"kudeaketari buruz"
 
 #: core/utilities/setup/editor/setupversioning.cpp:119
 #, kde-format
@@ -67863,10 +67839,10 @@ msgid "Yes I Understand"
 msgstr "Bai, ulertzen dut"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:308
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
-msgstr "Idatzi metadatuak fitxategi bakoitzean"
+msgstr "RAW fitxategietan metadatuak idaztea ezgaitzea nahiago duzu?"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:345
 #, kde-format
@@ -67988,19 +67964,20 @@ msgstr ""
 "etiketan, XMP etiketan eta IPTC etiketan."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Rating"
 msgstr "Balorazioa"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store the item rating in the Exif tag and the XMP "
 "tags."
 msgstr ""
-"Gaitu aukera hau irudiaren puntuazioa EXIF eta XMP etiketetan gordetzeko."
+"Gaitu aukera hau irudiaren balorazioa EXIF etiketan eta XMP etiketetan "
+"gordetzeko."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:65
 #, kde-format
@@ -68050,14 +68027,15 @@ msgid "Metadata templates (Copyright etc.)"
 msgstr "Metadatuen txantiloiak (Copyright etab.)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store the metadata template in the XMP and the IPTC "
 "tags. You can set template values to Template setup page."
 msgstr ""
-"Gaitu aukera metadatuen txantiloiak  XMP eta the IPTC etiketetan gordetzeko. "
-"Txantiloiaren balioa ezar dezakezu Txantiloia-ren konfigurazioko orrialdean."
+"Gaitu aukera hau metadatuen txantiloia XMP eta the IPTC etiketetan "
+"gordetzeko. Txantiloiaren balioak Txantiloi ezarpen orrialdean ezar "
+"ditzakezu."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:85
 #, kde-format
@@ -68097,15 +68075,10 @@ msgid "Reading and Writing Metadata"
 msgstr "Metadatuak irakurtzea eta idaztea"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid ""
-#| "Delegate to ExifTool backend all operations to write metadata to files"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr ""
-"ExifTool bizkarraldekoari eskuordetu fitxategietara metadatuak idazteko "
-"eragiketa guztiak"
+msgstr "Erabili ExifTool bizkarraldekoa fitxategietatik metadatuak irakurtzeko"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, fuzzy, kde-format
@@ -68209,10 +68182,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:160
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
-msgstr "&Eguneratu fitxategiaren data-zigilua metadatuak gordetzean"
+msgstr "Be&rraztertu fitxategia fitxategiak aldatzen direnean"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:162
 #, kde-format
@@ -68228,13 +68201,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
-msgstr ""
+msgstr "Oharra: begiratu ExifTool bizkarraldekoaren %1."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "write limitations"
-msgstr "Karpeta-ikuspegiaren aukerak"
+msgstr "idazteko mugak"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:245
 #, kde-format
@@ -68243,6 +68216,8 @@ msgid ""
 "Note: these options depends of %1 availability. Check in the ExifTool tab "
 "for details."
 msgstr ""
+"Oharra: aukera hauek %1 erabilgarri egotearen menpe daude. Aztertu ExifTool "
+"fitxa xehetasunetarako."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:248
 #, kde-format
@@ -68255,6 +68230,7 @@ msgstr "ExifTool bizkarraldekoa"
 msgctxt "@label"
 msgid "Select Metadata Fields to be Displayed when using Custom Filters"
 msgstr ""
+"Hautatu neurriko iragazkiak erabiltzean azaldu beharreko metadatu-eremuak"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:43
 #, kde-format
@@ -68263,10 +68239,10 @@ msgid "Views"
 msgstr "Ikuspegiak"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:31
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "When rotating a file"
-msgstr "%1 fitxategiaren EXIF biraketa..."
+msgstr "Fitxategi bat biratzean"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:35
 #, kde-format
@@ -68407,14 +68383,14 @@ msgid "Read from sidecar files"
 msgstr "Irakurri alboko fitxategietatik"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:38
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from XMP sidecar files when reading "
 "metadata."
 msgstr ""
-"Gaitu aukera hau fitxategien data-zigilua eguneratzeko metadatuak gordetzen "
-"direnean."
+"Gaitu aukera hau metadatuak irakurtzean alboko XMP fitxategietatik "
+"metadatuak irakurtzeko."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:42
 #, kde-format
@@ -68423,37 +68399,37 @@ msgid "Write to sidecar files"
 msgstr "Idatzi alboko fitxategietan"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to save, as specified, metadata to XMP sidecar files."
 msgstr ""
-"Gaitu aukera hau fitxategien data-zigilua eguneratzeko metadatuak gordetzen "
-"direnean."
+"Gaitu aukera hau alboko XMP fitxategietan metadatuak, zehaztu bezala, "
+"gordetzeko."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:48
 #, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar for read-only item only"
-msgstr "Idatzi XMP alboko fitxategian bakarrik irakurtzeko elementuan"
+msgstr "Idatzi alboko XMP fitxategian bakarrik irakurtzeko elementuan"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:49
 #, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar only"
-msgstr "Idatzi XMP alboko fitxategian bakarrik"
+msgstr "Idatzi alboko XMP fitxategian bakarrik"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:50
 #, kde-format
 msgctxt "@item"
 msgid "Write to item and XMP Sidecar"
-msgstr "Idatzi elementuan eta XMP alboko fitxategian"
+msgstr "Idatzi elementuan eta alboko XMP fitxategian"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Specify the exact mode of XMP sidecar writing"
-msgstr "Zehaztu XMP alboko fitxategietan idazteko modu zehatza"
+msgstr "Zehaztu alboko XMP fitxategietan idazteko modu zehatza"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:55
 #, kde-format
@@ -68605,16 +68581,14 @@ msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is available on this system."
-msgstr "OpenGL euskarria ez dago erabilgarri sisteman."
+msgstr "OpenCL sistema honetan erabilgarri dago."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
-#, fuzzy, kde-format
-#| msgid "No options available"
+#, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr "Aukera ez dago erabilgarri"
+msgstr "OpenCL azelerazio-gailua erabilgarri dago."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
 #, kde-format
@@ -68622,16 +68596,14 @@ msgid "Using device: %1"
 msgstr "Gailua erabiltzen: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "Bilduma hau unean ez dago erabilgarri."
+msgstr "OpenCL azelerazio-gailua ez dago erabilgarri."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "OpenGL euskarria ez dago erabilgarri sisteman."
+msgstr "OpenCL ez dago erabilgarri sistema honetan."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
 #, fuzzy, kde-format
@@ -68825,10 +68797,9 @@ msgid "Detect faces in newly added images"
 msgstr "Irudi erantsi berrietan aurkegiak antzematea"
 
 #: core/utilities/setup/misc/setupmisc.cpp:55
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Enable background face recognition scan"
-msgstr "Atzeko planoko irudiaren merituak"
+msgstr "Gaitu atzeko planoko aurpegi-ezagutza azterketa"
 
 #: core/utilities/setup/misc/setupmisc.cpp:56
 #, kde-format

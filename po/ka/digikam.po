@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 00:40+0000\n"
-"PO-Revision-Date: 2025-12-19 02:33+0100\n"
+"POT-Creation-Date: 2025-12-22 00:40+0000\n"
+"PO-Revision-Date: 2025-12-21 07:49+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -39639,16 +39639,14 @@ msgid "Do not change"
 msgstr "არ შეცვალო"
 
 #: core/libs/template/templateselector.cpp:213
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template overwrites all"
-msgstr "შაბლონის სათაური:"
+msgstr "შაბლონი ყველას აწერს თავზე"
 
 #: core/libs/template/templateselector.cpp:217
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template will be merged"
-msgstr "შაბლონის სათაური:"
+msgstr "შაბლონი გაერთიანდება"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -62140,11 +62138,12 @@ msgid ""
 "Synology NAS (Network Attached Storage). In every directory the system "
 "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
 "inserting the original photo and its corresponding thumbnail twice, @eaDir "
-"is ignored by default.</p><p>To re-include directories that are ignored by "
-"default prefix it with a minus, e.g. -@eaDir.</p>"
+"is ignored by default.</p><p>Wildcard characters such as '*' or '?' are "
+"supported.</p><p>To re-include directories that are ignored by default "
+"prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:154
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
@@ -62153,20 +62152,20 @@ msgstr ""
 "დამატებითი საქაღალდეები გამოსატოვებლად (<a href='image'>ამჟამად "
 "გამოტოვებულია საქაღალდეები</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:159
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
 "შეიყვანეთ საქაღალდეები, რომელიც გნებავთ გამოტოვოთ კოლექციაში ჩამატებისას."
 
-#: core/utilities/setup/collections/setupcollections.cpp:175
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "იგნორირებული საქაღალდეები"
 
-#: core/utilities/setup/collections/setupcollections.cpp:246
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"

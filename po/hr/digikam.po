@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 00:40+0000\n"
+"POT-Creation-Date: 2025-12-22 00:40+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -62374,30 +62374,31 @@ msgid ""
 "Synology NAS (Network Attached Storage). In every directory the system "
 "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
 "inserting the original photo and its corresponding thumbnail twice, @eaDir "
-"is ignored by default.</p><p>To re-include directories that are ignored by "
-"default prefix it with a minus, e.g. -@eaDir.</p>"
+"is ignored by default.</p><p>Wildcard characters such as '*' or '?' are "
+"supported.</p><p>To re-include directories that are ignored by default "
+"prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:154
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:159
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:175
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:246
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"

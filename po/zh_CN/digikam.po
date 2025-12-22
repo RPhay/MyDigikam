@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 00:40+0000\n"
+"POT-Creation-Date: 2025-12-22 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3788,16 +3788,16 @@ msgid "Tags"
 msgstr "标签"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: grouped"
 msgid "Grouped"
-msgstr "已分组"
+msgstr ""
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: versioned"
 msgid "Versioned"
-msgstr "已版本管理"
+msgstr ""
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, kde-format
@@ -3836,16 +3836,16 @@ msgid "Tags"
 msgstr "标签"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Grouped"
-msgstr "已分组"
+msgstr ""
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Versioned"
-msgstr "已版本管理"
+msgstr ""
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:348
 #: core/app/views/tableview/tableview_column_digikam.cpp:388
@@ -40046,16 +40046,14 @@ msgid "Do not change"
 msgstr "不更改"
 
 #: core/libs/template/templateselector.cpp:213
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template overwrites all"
-msgstr "模板名称："
+msgstr ""
 
 #: core/libs/template/templateselector.cpp:217
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template will be merged"
-msgstr "模板名称："
+msgstr ""
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -62797,7 +62795,16 @@ msgid "Root Album Folders"
 msgstr "根相册文件夹"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set the names of directories that you want to ignore from your photo "
+#| "collections. The names are case sensitive and should be separated by a "
+#| "semicolon.</p><p>This is for example useful when you store your photos on "
+#| "a Synology NAS (Network Attached Storage). In every directory the system "
+#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
+#| "inserting the original photo and its corresponding thumbnail twice, "
+#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
+#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -62805,8 +62812,9 @@ msgid ""
 "Synology NAS (Network Attached Storage). In every directory the system "
 "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
 "inserting the original photo and its corresponding thumbnail twice, @eaDir "
-"is ignored by default.</p><p>To re-include directories that are ignored by "
-"default prefix it with a minus, e.g. -@eaDir.</p>"
+"is ignored by default.</p><p>Wildcard characters such as '*' or '?' are "
+"supported.</p><p>To re-include directories that are ignored by default "
+"prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 "<p>设置要从相册集合中忽略的目录。目录名称区分大小写，以半角分号分隔。</p><p>"
 "以 Synology NAS (网络附加存储系统) 为例，该系统会在每个目录创建一个名为 "
@@ -62814,26 +62822,26 @@ msgstr ""
 "图，@eaDir 目录已被默认忽略。</p><p>要包含被默认忽略的目录，请在目录名称前添"
 "加半角减号前缀，如 -@eaDir。</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:154
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr "额外的忽略目录 (<a href='image'>当前已忽略目录</a>)："
 
-#: core/utilities/setup/collections/setupcollections.cpp:159
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr "输入您想在添加到相册集合时忽略的目录。"
 
-#: core/utilities/setup/collections/setupcollections.cpp:175
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "已忽略目录"
 
-#: core/utilities/setup/collections/setupcollections.cpp:246
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
@@ -65927,9 +65935,9 @@ msgstr ""
 "<p>在此输入元数据模板的名称。此名称将用于在您的相册集合中识别该模板。</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
+#, kde-format
 msgid "Merge Template"
-msgstr "模板："
+msgstr ""
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format

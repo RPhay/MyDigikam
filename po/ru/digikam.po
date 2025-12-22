@@ -55,7 +55,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 00:40+0000\n"
+"POT-Creation-Date: 2025-12-22 00:40+0000\n"
 "PO-Revision-Date: 2025-11-26 10:55+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -65394,7 +65394,16 @@ msgid "Root Album Folders"
 msgstr "Папки корневых альбомов"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set the names of directories that you want to ignore from your photo "
+#| "collections. The names are case sensitive and should be separated by a "
+#| "semicolon.</p><p>This is for example useful when you store your photos on "
+#| "a Synology NAS (Network Attached Storage). In every directory the system "
+#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
+#| "inserting the original photo and its corresponding thumbnail twice, "
+#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
+#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -65402,8 +65411,9 @@ msgid ""
 "Synology NAS (Network Attached Storage). In every directory the system "
 "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
 "inserting the original photo and its corresponding thumbnail twice, @eaDir "
-"is ignored by default.</p><p>To re-include directories that are ignored by "
-"default prefix it with a minus, e.g. -@eaDir.</p>"
+"is ignored by default.</p><p>Wildcard characters such as '*' or '?' are "
+"supported.</p><p>To re-include directories that are ignored by default "
+"prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 "<p>Задайте имена каталогов, которые не следует включать в коллекции. Имена "
 "должны быть указаны с учётом регистра и разделены точкой с запятой.</"
@@ -65414,7 +65424,7 @@ msgstr ""
 "пропущен по умолчанию.</p><p>Если каталог необходимо исключить из списка "
 "игнорируемых, укажите его имя со знаком «-»: «-@eaDir».</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:154
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
@@ -65423,19 +65433,19 @@ msgstr ""
 "Дополнительные игнорируемые каталоги (<a href='image'>Текущие игнорируемые "
 "каталоги</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:159
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr "Укажите каталоги, которые не должны добавляться в коллекции."
 
-#: core/utilities/setup/collections/setupcollections.cpp:175
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "Игнорируемые каталоги"
 
-#: core/utilities/setup/collections/setupcollections.cpp:246
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"

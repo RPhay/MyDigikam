@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 00:40+0000\n"
-"PO-Revision-Date: 2025-12-19 11:33+0100\n"
+"POT-Creation-Date: 2025-12-22 00:40+0000\n"
+"PO-Revision-Date: 2025-12-21 10:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -41912,16 +41912,14 @@ msgid "Do not change"
 msgstr "No la canviïs"
 
 #: core/libs/template/templateselector.cpp:213
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template overwrites all"
-msgstr "Títol de la plantilla:"
+msgstr "La plantilla ho sobreescriu tot"
 
 #: core/libs/template/templateselector.cpp:217
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template will be merged"
-msgstr "Títol de la plantilla:"
+msgstr "La plantilla es fusionarà"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -65352,7 +65350,16 @@ msgid "Root Album Folders"
 msgstr "Carpetes de l'àlbum principal"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set the names of directories that you want to ignore from your photo "
+#| "collections. The names are case sensitive and should be separated by a "
+#| "semicolon.</p><p>This is for example useful when you store your photos on "
+#| "a Synology NAS (Network Attached Storage). In every directory the system "
+#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
+#| "inserting the original photo and its corresponding thumbnail twice, "
+#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
+#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -65360,8 +65367,9 @@ msgid ""
 "Synology NAS (Network Attached Storage). In every directory the system "
 "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
 "inserting the original photo and its corresponding thumbnail twice, @eaDir "
-"is ignored by default.</p><p>To re-include directories that are ignored by "
-"default prefix it with a minus, e.g. -@eaDir.</p>"
+"is ignored by default.</p><p>Wildcard characters such as '*' or '?' are "
+"supported.</p><p>To re-include directories that are ignored by default "
+"prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 "<p>Establiu els noms dels directoris que voleu ignorar de les col·leccions "
 "de fotografies. Els noms distingeixen entre majúscules i minúscules, i s'han "
@@ -65374,7 +65382,7 @@ msgstr ""
 "p><p>Per a tornar a incloure els directoris que s'ignoren de manera "
 "predeterminada, poseu-hi un menys al davant, p. ex. -@eaDir.</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:154
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
@@ -65383,20 +65391,20 @@ msgstr ""
 "Directoris addicionals a ignorar (<a href='image'>directoris actualment "
 "ignorats</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:159
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
 "Introduïu els directoris que voleu ignorar per a afegir a les col·leccions."
 
-#: core/utilities/setup/collections/setupcollections.cpp:175
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "Directoris ignorats"
 
-#: core/utilities/setup/collections/setupcollections.cpp:246
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"

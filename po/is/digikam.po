@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 00:40+0000\n"
+"POT-Creation-Date: 2025-12-22 00:40+0000\n"
 "PO-Revision-Date: 2025-12-19 10:04+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -64579,7 +64579,16 @@ msgid "Root Album Folders"
 msgstr "Grunnmöppur albúma"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set the names of directories that you want to ignore from your photo "
+#| "collections. The names are case sensitive and should be separated by a "
+#| "semicolon.</p><p>This is for example useful when you store your photos on "
+#| "a Synology NAS (Network Attached Storage). In every directory the system "
+#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
+#| "inserting the original photo and its corresponding thumbnail twice, "
+#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
+#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -64587,8 +64596,9 @@ msgid ""
 "Synology NAS (Network Attached Storage). In every directory the system "
 "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
 "inserting the original photo and its corresponding thumbnail twice, @eaDir "
-"is ignored by default.</p><p>To re-include directories that are ignored by "
-"default prefix it with a minus, e.g. -@eaDir.</p>"
+"is ignored by default.</p><p>Wildcard characters such as '*' or '?' are "
+"supported.</p><p>To re-include directories that are ignored by default "
+"prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 "<p>Settu inn heiti á þeim möppum sem þú vilt að séu undanskildar frá "
 "ljósmyndasöfnunum þínum. Heitin eru háð Há-/lágstöfum og ætti að aðgreina "
@@ -64600,7 +64610,7 @@ msgstr ""
 "verið sjálfgefið undanskildar en hægt að setja mínus á undan heiti þeirra, t."
 "d. -@eaDir.</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:154
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
@@ -64609,7 +64619,7 @@ msgstr ""
 "Fleiri möppur sem á að hunsa (<a href='image'>Möppur sem hunsaðar eru núna</"
 "a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:159
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
@@ -64617,13 +64627,13 @@ msgstr ""
 "Settu inn þær möppur sem á að hunsa þegar möppum er bætt á lista yfir "
 "myndasöfn."
 
-#: core/utilities/setup/collections/setupcollections.cpp:175
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "Hunsaðar möppur"
 
-#: core/utilities/setup/collections/setupcollections.cpp:246
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
