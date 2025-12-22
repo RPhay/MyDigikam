@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QGraphicsView>
+#include <QGestureEvent>
 
 // Local includes
 
@@ -107,6 +108,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent*)                        override;
     void wheelEvent(QWheelEvent*)                               override;
     void resizeEvent(QResizeEvent*)                             override;
+    bool event(QEvent*)                                         override;
 
     void startPanning(const QPoint& pos);
     void continuePanning(const QPoint& pos);
@@ -125,6 +127,10 @@ protected Q_SLOTS:
     void         slotPanIconHidden();
 
     virtual void slotPanIconSelectionMoved(const QRect&, bool);
+
+private:
+
+    void gestureEvent(QGestureEvent*);
 
 private:
 

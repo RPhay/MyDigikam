@@ -338,6 +338,24 @@ void SinglePhotoPreviewLayout::updateZoomAndSize()
     updateLayout();
 }
 
+void SinglePhotoPreviewLayout::zoomByFactor(qreal factor, const QPoint& viewportAnchor)
+{
+    if (!d->item || !d->view || (factor <= 0.0))
+    {
+        return;
+    }
+
+    // Compute the new zoom factor
+
+    double currentZoom = d->zoomSettings()->zoomFactor();
+    double newZoom = currentZoom * factor;
+    newZoom = qBound(d->minZoom, newZoom, d->maxZoom);
+
+    // Apply the centered zoom on the specific point
+
+    setZoomFactor(newZoom, viewportAnchor);
+}
+
 } // namespace Digikam
 
 #include "moc_singlephotopreviewlayout.cpp"

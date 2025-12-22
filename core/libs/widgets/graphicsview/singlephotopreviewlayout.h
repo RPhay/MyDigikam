@@ -68,6 +68,7 @@ public:
     bool   isFitToWindow()  const;
     double zoomFactor()     const;
     double realZoomFactor() const;
+    void zoomByFactor(qreal factor, const QPoint& viewportAnchor);
 
     /**
      * @brief The zoom range for incrementing and decrementing.

@@ -22,6 +22,10 @@
 #include <QScrollBar>
 #include <QToolButton>
 #include <QStyle>
+#include <QGesture>
+#include <QPinchGesture>
+#include <QPanGesture>
+#include <QSwipeGesture>
 
 // Local includes
 
@@ -73,6 +77,12 @@ GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
     horizontalScrollBar()->setPageStep(1);
     verticalScrollBar()->setSingleStep(1);
     verticalScrollBar()->setPageStep(1);
+
+    // Enable the gesture support
+
+    grabGesture(Qt::PinchGesture);
+    grabGesture(Qt::PanGesture);
+    grabGesture(Qt::SwipeGesture);
 
     connect(horizontalScrollBar(), SIGNAL(valueChanged(int)),
             this, SLOT(slotContentsMoved()));
@@ -553,6 +563,102 @@ void GraphicsDImgView::toggleFullScreen(bool set)
         d->scene->setBackgroundBrush(Qt::NoBrush);
         setFrameShape(QFrame::StyledPanel);
     }
+}
+
+void GraphicsDImgView::gestureEvent(QGestureEvent* event)
+{
+    // Handle pinch gesture event to zoom in/out centered on mouse position.
+
+    if (QGesture* const pinch = event->gesture(Qt::PinchGesture))
+    {
+        QPinchGesture* const pinchGesture = dynamic_cast<QPinchGesture*>(pinch);
+
+        if (pinchGesture && (pinchGesture->changeFlags() & QPinchGesture::ScaleFactorChanged))
+        {
+            QPointF center    = pinchGesture->centerPoint();
+            qreal scaleFactor = pinchGesture->scaleFactor();
+            d->layout->zoomByFactor(scaleFactor, center.toPoint());
+            event->accept();
+
+            return;
+        }
+    }
+
+    // Handle pan gesture event to move contents.
+
+    if (QGesture* const pan = event->gesture(Qt::PanGesture))
+    {
+        QPanGesture* const panGesture = dynamic_cast<QPanGesture*>(pan);
+
+        if (panGesture)
+        {
+            if      (panGesture->state() == Qt::GestureStarted)
+            {
+                d->panningScrollPos = QPoint(horizontalScrollBar()->value(), verticalScrollBar()->value());
+                d->mousePressPos    = panGesture->hotSpot().toPoint();
+                viewport()->setCursor(Qt::SizeAllCursor);
+                d->movingInProgress = true;
+                event->accept();
+
+                return;
+            }
+            else if (panGesture->state() == Qt::GestureUpdated)
+            {
+                QPointF delta = panGesture->lastOffset();
+                horizontalScrollBar()->setValue(d->panningScrollPos.x() - static_cast<int>(delta.x()));
+                verticalScrollBar()->setValue(d->panningScrollPos.y() - static_cast<int>(delta.y()));
+                viewport()->update();
+                event->accept();
+
+                return;
+            }
+            else if (panGesture->state() == Qt::GestureFinished)
+            {
+                viewport()->unsetCursor();
+                d->movingInProgress = false;
+                event->accept();
+
+                return;
+            }
+        }
+    }
+
+    // Handle swipe gesture event to change current item.
+
+    if (QGesture* const swipe = event->gesture(Qt::SwipeGesture))
+    {
+        QSwipeGesture* const swipeGesture = dynamic_cast<QSwipeGesture*>(swipe);
+
+        if (swipeGesture && (swipeGesture->state() == Qt::GestureFinished))
+        {
+            if      (swipeGesture->horizontalDirection() == QSwipeGesture::Left)
+            {
+                Q_EMIT toNextImage();
+            }
+            else if (swipeGesture->horizontalDirection() == QSwipeGesture::Right)
+            {
+                Q_EMIT toPreviousImage();
+            }
+
+            event->accept();
+
+            return;
+        }
+    }
+
+    event->ignore();
+}
+
+bool GraphicsDImgView::event(QEvent* event)
+{
+    if (event->type() == QEvent::Gesture)
+    {
+        gestureEvent(static_cast<QGestureEvent*>(event));
+
+        return true;
+    }
+
+    return QGraphicsView::event(event);
 }
 
 } // namespace Digikam
