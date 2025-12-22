@@ -70,7 +70,7 @@
 #include "regionframeitem.h"
 #include "tagspopupmenu.h"
 #include "thememanager.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "previewsettings.h"
 #include "tagscache.h"
 #include "itemtagpair.h"

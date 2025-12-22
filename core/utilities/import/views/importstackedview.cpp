@@ -23,7 +23,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "importsettings.h"
 
 namespace Digikam

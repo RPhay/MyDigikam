@@ -12,7 +12,7 @@
  *
  * ============================================================ */
 
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 
 // C++ includes
 
@@ -340,4 +340,4 @@ void SinglePhotoPreviewLayout::updateZoomAndSize()
 
 } // namespace Digikam
 
-#include "moc_previewlayout.cpp"
+#include "moc_singlephotopreviewlayout.cpp"

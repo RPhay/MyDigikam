@@ -31,7 +31,7 @@
 #include "digikam_debug.h"
 #include "managedloadsavethread.h"
 #include "editorcore.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "imagepreviewitem.h"
 
 namespace DigikamRawImportNativePlugin

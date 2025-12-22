@@ -118,7 +118,7 @@ set(libgraphicsviewwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/imagezoomsettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/previewlayout.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/singlephotopreviewlayout.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/paniconwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/itemvisibilitycontroller.cpp
 )

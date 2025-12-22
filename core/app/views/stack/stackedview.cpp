@@ -40,7 +40,7 @@
 #include "itempreviewview.h"
 #include "itemthumbnailbar.h"
 #include "loadingcacheinterface.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "tableview.h"
 #include "trashview.h"
 #include "dimg.h"

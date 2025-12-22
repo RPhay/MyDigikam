@@ -29,7 +29,7 @@
 
 #include "digikam_debug.h"
 #include "overlaywidget.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 
 namespace DigikamEditorHealingCloneToolPlugin
 {

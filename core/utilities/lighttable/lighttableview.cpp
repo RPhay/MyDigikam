@@ -28,7 +28,7 @@
 #include "dzoombar.h"
 #include "thumbnailsize.h"
 #include "lighttablepreview.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "dimgpreviewitem.h"
 
 namespace Digikam

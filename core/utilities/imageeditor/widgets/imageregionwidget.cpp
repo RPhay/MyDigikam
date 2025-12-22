@@ -34,7 +34,7 @@
 #include "digikam_debug.h"
 #include "imageregionitem.h"
 #include "previewtoolbar.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "dimgitems_p.h"
 
 namespace Digikam

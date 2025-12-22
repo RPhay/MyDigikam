@@ -29,7 +29,7 @@
 #include "dimgpreviewitem.h"
 #include "imagezoomsettings.h"
 #include "paniconwidget.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "dimgchilditem.h"
 
 namespace Digikam

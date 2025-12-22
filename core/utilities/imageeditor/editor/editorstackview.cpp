@@ -20,7 +20,7 @@
 #include "canvas.h"
 #include "thumbnailsize.h"
 #include "graphicsdimgview.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 
 namespace Digikam
 {

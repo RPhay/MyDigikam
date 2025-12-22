@@ -50,17 +50,17 @@ public:
     ~SinglePhotoPreviewLayout() override;
 
     /**
-     * Set the graphics view, and associated scene, to operate on.
+     * @brief Set the graphics view, and associated scene, to operate on.
      */
     void setGraphicsView(GraphicsDImgView* const view);
 
     /**
-     * Set to true to scale small images to fit to window.
+     * @brief Set to true to scale small images to fit to window.
      */
     void setScaleFitToWindow(bool value);
 
     /**
-     * Set the item to layout. For a SinglePhoto layout, typically,
+     * @brief Set the item to layout. For a SinglePhoto layout, typically,
      * you can add only one item.
      */
     void addItem(GraphicsDImgItem* const item);
@@ -70,7 +70,7 @@ public:
     double realZoomFactor() const;
 
     /**
-     * The zoom range for incrementing and decrementing.
+     * @brief The zoom range for incrementing and decrementing.
      */
     double maxZoomFactor()  const;
     double minZoomFactor()  const;
@@ -93,13 +93,19 @@ public Q_SLOTS:
     void setZoomFactorSnapped(double z);
     void fitToWindow();
 
-    /// Toggle between fitToWindow and previous zoom factor
+    /**
+     * @brief Toggle between fitToWindow and previous zoom factor
+     */
     void toggleFitToWindow();
 
-    /// Toggle between fitToWindow and zoom factor 1
+    /**
+     * @brief Toggle between fitToWindow and zoom factor 1
+     */
     void toggleFitToWindowOr100();
 
-    /// Update settings when size of image or view changed
+    /**
+     * @brief Update settings when size of image or view changed
+     */
     void updateZoomAndSize();
 
 protected:
@@ -109,6 +115,8 @@ protected:
 private:
 
     SinglePhotoPreviewLayout(); // Disable default constructor.
+
+private:
 
     class Private;
     Private* const d = nullptr;

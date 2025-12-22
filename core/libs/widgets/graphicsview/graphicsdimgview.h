@@ -40,34 +40,36 @@ public:
     ~GraphicsDImgView()                           override;
 
     /**
-     * Store internal instance of item as GraphicsDImgItem. You can store DImgPreviewItem object also by this method.
+     * @brief Store internal instance of item as GraphicsDImgItem. You can store DImgPreviewItem object also by this method.
      * Use item() or previewItem() to get right version.
-     * Note: if you store a GraphicsDImgItem object, previewItem() will return 0.
+     * @note if you store a GraphicsDImgItem object, previewItem() will return 0.
      */
     void setItem(GraphicsDImgItem* const item);
 
     /**
-     * Return the instance of item set by setItem().
+     * @brief Return the instance of item set by setItem().
      */
     GraphicsDImgItem*         item()        const;
 
     /**
-     * Return a cast of item instance of item set by setItem() as DImgPreviewItem
-     * Note: if you store a GraphicsDImgItem object using setItem(), this method will return 0.
+     * @return a cast of item instance of item set by setItem() as DImgPreviewItem
+     * @note if you store a GraphicsDImgItem object using setItem(), this method will return 0.
      */
     DImgPreviewItem*          previewItem() const;
 
     SinglePhotoPreviewLayout* layout()      const;
 
     /**
-     * Scrolls the view such that scenePos (in scene coordinates
+     * @brief Scrolls the view such that scenePos (in scene coordinates
      * is displayed on the viewport at viewportPos (in viewport coordinates).
      * E.g., calling scrollPointOnPoint(scenePos, viewport()->rect().center()) is
      * equivalent to calling centerOn(scenePos).
      */
     void scrollPointOnPoint(const QPointF& scenePos, const QPoint& viewportPos);
 
-    // Change from protected to public to be used by ImageRegionWidget and ImageRegionItem
+    /**
+     * @note Change from protected to public to be used by ImageRegionWidget and ImageRegionItem
+     */
     void drawText(QPainter* p, const QRectF& rect, const QString& text);
 
     int   contentsX()                       const;

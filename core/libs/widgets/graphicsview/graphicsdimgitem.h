@@ -41,8 +41,8 @@ public:
     ~GraphicsDImgItem()                                               override;
 
     /**
-     * Sets the DImg to be drawn by this item.
-     * Note: DImg is explicitly shared, and no copy is automatically taken here.
+     * @brief Sets the DImg to be drawn by this item.
+     * @note DImg is explicitly shared, and no copy is automatically taken here.
      */
     void setImage(const DImg& img);
     DImg image()                                                const;
@@ -77,7 +77,9 @@ protected:
 
 public:
 
-    // Declared public because of DImgPreviewItemPrivate.
+    /**
+     * @note Declared public because of DImgPreviewItemPrivate.
+     */
     class GraphicsDImgItemPrivate;
 
 protected:

@@ -38,7 +38,7 @@
 #include "iofilesettings.h"
 #include "loadingcacheinterface.h"
 #include "imagepreviewitem.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "imagezoomsettings.h"
 #include "clickdragreleaseitem.h"
 #include "rubberitem.h"

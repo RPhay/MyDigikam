@@ -32,7 +32,7 @@
 #include "dimgpreviewitem.h"
 #include "fileactionmngr.h"
 #include "importcontextmenu.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "thememanager.h"
 #include "importsettings.h"
 #include "previewsettings.h"

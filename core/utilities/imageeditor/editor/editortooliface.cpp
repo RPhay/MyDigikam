@@ -33,7 +33,7 @@
 #include "editorwindow.h"
 #include "imageguidewidget.h"
 #include "imageregionwidget.h"
-#include "previewlayout.h"
+#include "singlephotopreviewlayout.h"
 #include "dcategorizedview.h"
 
 namespace Digikam
