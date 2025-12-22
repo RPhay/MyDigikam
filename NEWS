@@ -349,7 +349,7 @@ BUGFIXES:
 285 --> 370016 - Bad correlation rate with GPX file GPS Correlator.
 286 --> 504711 - Sync Metadata and Database ignores album selection.
 287 --> 502302 - Crash in Qt version 6.8.2 from QtMultimedia framework with std::default_delete<QFFmpegResampler>::operator().
-288 --> 
+288 --> 443616 - Implement gesture support to zoom on touchscreen or touchpad laptop.
 289 --> 
 290 --> 
 291 --> 
