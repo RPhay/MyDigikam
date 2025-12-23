@@ -150,8 +150,8 @@ public:
 
     QMainWindow*              dockArea                      = nullptr;
 
-    DAdjustableLabel*         leftFileName                  = nullptr;     ///< File name loaded in left preview and show on status bar.
-    DAdjustableLabel*         rightFileName                 = nullptr;     ///< File name loaded in right preview and show on status bar.
+    StatusProgressBar*        leftFileName                  = nullptr;     ///< File name loaded in left preview and show on status bar.
+    StatusProgressBar*        rightFileName                 = nullptr;     ///< File name loaded in right preview and show on status bar.
 
     SidebarSplitter*          hSplitter                     = nullptr;
     ThumbBarDock*             barViewDock                   = nullptr;

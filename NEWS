@@ -47,6 +47,8 @@ Grouped Items   : Usability improvements of the grouped icon-view items overlay.
 Filter Items    : Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.
 Trash View      : load and save column states between sessions.
 Preview         : Extend Toolbar overlay with Labels editor.
+Preview         : Add load progress indicator on the status bar (Icon-view and LightTable).
+Preview         : Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.
 Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
 Table-View      : Add customizable columns to show "Grouped" and "Versioned" properties.
 Advanced Rename : New modifier "Date Format".
@@ -56,7 +58,6 @@ Presentation    : Add new option to customize the color background instead pure 
 File Copy       : Complete rewrite the GUI for a better usability.
 File Transfer   : Complete rewrite the GUI for a better usability.
 Web Site        : Huge update of the contents eg. screenshots, description, history, features, support, download, etc.
-Preview         : Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -351,7 +352,7 @@ BUGFIXES:
 287 --> 502302 - Crash in Qt version 6.8.2 from QtMultimedia framework with std::default_delete<QFFmpegResampler>::operator().
 288 --> 443616 - Implement gesture support to zoom on touchscreen or touchpad laptop.
 289 --> 504482 - Crash on launch after install.
-290 --> 
+290 --> 391435 - Show a loading indicator when loading a picture in Preview mode.
 291 --> 
 292 --> 
 293 --> 

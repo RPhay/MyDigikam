@@ -280,7 +280,7 @@ void LightTableWindow::setupStatusBar()
     d->leftZoomBar->setEnabled(false);
     statusBar()->addWidget(d->leftZoomBar, 1);
 
-    d->leftFileName = new DAdjustableLabel(statusBar());
+    d->leftFileName = new StatusProgressBar(statusBar());
     d->leftFileName->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     statusBar()->addWidget(d->leftFileName, 10);
 
@@ -288,7 +288,7 @@ void LightTableWindow::setupStatusBar()
     d->statusProgressBar->setAlignment(Qt::AlignCenter);
     statusBar()->addWidget(d->statusProgressBar, 10);
 
-    d->rightFileName = new DAdjustableLabel(statusBar());
+    d->rightFileName = new StatusProgressBar(statusBar());
     d->rightFileName->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     statusBar()->addWidget(d->rightFileName, 10);
 
@@ -412,7 +412,51 @@ void LightTableWindow::setupConnections()
     connect(this, SIGNAL(signalWindowHasMoved()),
             d->rightZoomBar, SLOT(slotUpdateTrackerPos()));
 
-    // TODO: connect signal last image from SLideShow plugin to slotSlideShowLastItemUrl
+    // ---
+
+    connect(d->previewView, &LightTableView::signalLeftPreviewStartedLoading,
+            this, [this]()
+       {
+            d->leftFileName->setProgressBarMode(StatusProgressBar::ProgressBarMode, i18nc("@label", "Loading:"));
+       }
+    );
+
+    connect(d->previewView, &LightTableView::signalLeftPreviewLoadingProgress,
+            this, [this](float progress)
+       {
+            d->leftFileName->setProgressValue((int)(progress * 100.0));
+       }
+    );
+
+    connect(d->previewView, &LightTableView::signalLeftPreviewLoadingComplete,
+            this, [this]()
+       {
+            d->leftFileName->setProgressBarMode(StatusProgressBar::TextMode, d->leftFileName->text());
+       }
+    );
+
+    // ---
+
+    connect(d->previewView, &LightTableView::signalRightPreviewStartedLoading,
+            this, [this]()
+       {
+            d->rightFileName->setProgressBarMode(StatusProgressBar::ProgressBarMode, i18nc("@label", "Loading:"));
+       }
+    );
+
+    connect(d->previewView, &LightTableView::signalRightPreviewLoadingProgress,
+            this, [this](float progress)
+       {
+            d->rightFileName->setProgressValue((int)(progress * 100.0));
+       }
+    );
+
+    connect(d->previewView, &LightTableView::signalRightPreviewLoadingComplete,
+            this, [this]()
+       {
+            d->rightFileName->setProgressBarMode(StatusProgressBar::TextMode, d->rightFileName->text());
+       }
+    );
 
     // -- FileWatch connections ------------------------------
 

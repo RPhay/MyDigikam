@@ -254,11 +254,11 @@ void LightTableWindow::slotRightPanelLeftButtonClicked()
 void LightTableWindow::slotLeftPreviewLoaded(bool b)
 {
     d->leftZoomBar->setEnabled(b);
-    d->leftFileName->setAdjustedText();
+    d->leftFileName->setText(QString());
 
     if (b)
     {
-        d->leftFileName->setAdjustedText(d->previewView->leftItemInfo().name());
+        d->leftFileName->setText(d->previewView->leftItemInfo().name());
         d->previewView->checkForSelection(d->thumbView->currentInfo());
         d->thumbView->setOnLeftPanel(d->previewView->leftItemInfo());
 
@@ -285,11 +285,11 @@ void LightTableWindow::slotLeftPreviewLoaded(bool b)
 void LightTableWindow::slotRightPreviewLoaded(bool b)
 {
     d->rightZoomBar->setEnabled(b);
-    d->rightFileName->setAdjustedText();
+    d->rightFileName->setText(QString());
 
     if (b)
     {
-        d->rightFileName->setAdjustedText(d->previewView->rightItemInfo().name());
+        d->rightFileName->setText(d->previewView->rightItemInfo().name());
         d->previewView->checkForSelection(d->thumbView->currentInfo());
         d->thumbView->setOnRightPanel(d->previewView->rightItemInfo());
 

@@ -57,13 +57,6 @@ void DigikamApp::setupViewConnections()
 
     connect(d->view, SIGNAL(signalSwitchedToTrashView()),
             this, SLOT(slotSwitchedToTrashView()));
-}
-
-void DigikamApp::setupStatusBar()
-{
-    d->statusLabel = new StatusProgressBar(statusBar());
-    d->statusLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
-    statusBar()->addWidget(d->statusLabel, 80);
 
     connect(d->view, &ItemIconView::signalStartedLoading,
             this, [this]()
@@ -85,6 +78,13 @@ void DigikamApp::setupStatusBar()
             d->statusLabel->setProgressBarMode(StatusProgressBar::TextMode, d->statusLabel->text());
        }
     );
+}
+
+void DigikamApp::setupStatusBar()
+{
+    d->statusLabel = new StatusProgressBar(statusBar());
+    d->statusLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
+    statusBar()->addWidget(d->statusLabel, 80);
 
     //------------------------------------------------------------------------------
 

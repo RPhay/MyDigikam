@@ -94,6 +94,14 @@ Q_SIGNALS:
     void signalEditItem(const ItemInfo&);
     void signalToggleOnSyncPreview(bool);
 
+    void signalLeftPreviewStartedLoading();
+    void signalLeftPreviewLoadingProgress(float progress);
+    void signalLeftPreviewLoadingComplete();
+
+    void signalRightPreviewStartedLoading();
+    void signalRightPreviewLoadingProgress(float progress);
+    void signalRightPreviewLoadingComplete();
+
 public Q_SLOTS:
 
     void slotDecreaseLeftZoom();

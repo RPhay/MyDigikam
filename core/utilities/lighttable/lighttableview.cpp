@@ -40,6 +40,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool               syncPreview  = false;
 
     QGridLayout*       grid         = nullptr;
@@ -112,6 +114,15 @@ LightTableView::LightTableView(QWidget* const parent)
     connect(d->leftPreview, SIGNAL(signalDeleteItem()),
             this, SLOT(slotDeleteLeftItem()));
 
+    connect(d->leftPreview, SIGNAL(signalStartedLoading()),
+            this, SIGNAL(signalLeftPreviewStartedLoading()));
+
+    connect(d->leftPreview, SIGNAL(signalLoadingProgress(float)),
+            this, SIGNAL(signalLeftPreviewLoadingProgress(float)));
+
+    connect(d->leftPreview, SIGNAL(signalLoadingComplete()),
+            this, SIGNAL(signalLeftPreviewLoadingComplete()));
+
     // Right panel connections ------------------------------------------------
 
     connect(d->rightPreview, SIGNAL(signalPopupTagsView()),
@@ -137,6 +148,15 @@ LightTableView::LightTableView(QWidget* const parent)
 
     connect(d->rightPreview, SIGNAL(signalDeleteItem()),
             this, SLOT(slotDeleteRightItem()));
+
+    connect(d->rightPreview, SIGNAL(signalStartedLoading()),
+            this, SIGNAL(signalRightPreviewStartedLoading()));
+
+    connect(d->rightPreview, SIGNAL(signalLoadingProgress(float)),
+            this, SIGNAL(signalRightPreviewLoadingProgress(float)));
+
+    connect(d->rightPreview, SIGNAL(signalLoadingComplete()),
+            this, SIGNAL(signalRightPreviewLoadingComplete()));
 }
 
 LightTableView::~LightTableView()
