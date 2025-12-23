@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-22 00:40+0000\n"
-"PO-Revision-Date: 2025-12-21 10:46+0100\n"
+"PO-Revision-Date: 2025-12-22 09:35+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -65350,16 +65350,7 @@ msgid "Root Album Folders"
 msgstr "Carpetes de l'àlbum principal"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set the names of directories that you want to ignore from your photo "
-#| "collections. The names are case sensitive and should be separated by a "
-#| "semicolon.</p><p>This is for example useful when you store your photos on "
-#| "a Synology NAS (Network Attached Storage). In every directory the system "
-#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
-#| "inserting the original photo and its corresponding thumbnail twice, "
-#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
-#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
+#, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -65379,8 +65370,9 @@ msgstr ""
 "directori un subdirectori @eaDir per a emmagatzemar les miniatures. Per a "
 "evitar que el digiKam insereixi la fotografia original i la seva miniatura "
 "corresponent dues vegades, el @eaDir s'ignorarà de manera predeterminada.</"
-"p><p>Per a tornar a incloure els directoris que s'ignoren de manera "
-"predeterminada, poseu-hi un menys al davant, p. ex. -@eaDir.</p>"
+"p><p>S'admeten els caràcters de comodí com «*» o «?».</p><p>Per a tornar a "
+"incloure els directoris que s'ignoren de manera predeterminada, poseu-hi un "
+"menys al davant, p. ex. -@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format

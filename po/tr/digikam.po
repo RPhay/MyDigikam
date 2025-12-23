@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-22 00:40+0000\n"
-"PO-Revision-Date: 2025-12-21 11:06+0300\n"
+"PO-Revision-Date: 2025-12-22 18:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.11.80\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3686,7 +3686,7 @@ msgstr "Yüz yönetimi ile ilgili OpenCL desteğini açıp kapatma desteği ekle
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
-msgstr "İçsel RAW işletkesi, güncel 2025-05-12 anlık görüntüsüne güncellendi."
+msgstr "İçsel RAW işletkesi, güncel 2025‒05‒12 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -60697,7 +60697,7 @@ msgstr ""
 "Yeni albümler oluşturmak için kullanılan tercih edilen\n"
 "tarih biçiminizi seçin Kullanılabilir seçenekler:\n"
 "“ISO”: ISO 8601 belirtimiyle uyumlu tarih biçimi\n"
-"(YYYY-AA-GG). Örneğin: 2006-08-24\n"
+"(YYYY‒AA‒GG). Örneğin: 2006‒08‒24\n"
 "“Tam Metin”: Kullanıcı tarafından okunabilen bir\n"
 "metin dizisi. Örneğin: Per Ağu 24 2006\n"
 "“Yerel Ayarlar”: KDE yerel ayarlarındaki biçim.\n"
@@ -64715,16 +64715,7 @@ msgid "Root Album Folders"
 msgstr "Kök Albüm Klasörleri"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set the names of directories that you want to ignore from your photo "
-#| "collections. The names are case sensitive and should be separated by a "
-#| "semicolon.</p><p>This is for example useful when you store your photos on "
-#| "a Synology NAS (Network Attached Storage). In every directory the system "
-#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
-#| "inserting the original photo and its corresponding thumbnail twice, "
-#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
-#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
+#, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -64742,9 +64733,9 @@ msgstr ""
 "Bağlı Depolama) depoladığınızda kullanışlıdır. Her dizinde sistem, küçük "
 "görselleri depolamak için bir @eaDir alt dizini oluşturur. digiKam’ın özgün "
 "fotoğrafı ve ona karşılık gelen küçük görseli iki kez eklemesini önlemek "
-"için @eaDir öntanımlı olarak dikkate alınmaz.</p><p>Öntanımlı olarak yok "
-"sayılan dizinleri yeniden içermek için önüne bir eksi ekleyin; örneğin, "
-"−@eaDir.</p>"
+"için @eaDir öntanımlı olarak dikkate alınmaz.</p><p>“*” veya “?” gibi joker "
+"karakterler desteklenir.</p><p>Öntanımlı olarak yok sayılan dizinleri "
+"yeniden içermek için önüne bir eksi ekleyin; örneğin, −@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format

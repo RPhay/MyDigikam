@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-22 00:40+0000\n"
-"PO-Revision-Date: 2025-12-21 07:11+0100\n"
+"PO-Revision-Date: 2025-12-22 06:11+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -64810,16 +64810,7 @@ msgid "Root Album Folders"
 msgstr "Korenske mape albuma"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set the names of directories that you want to ignore from your photo "
-#| "collections. The names are case sensitive and should be separated by a "
-#| "semicolon.</p><p>This is for example useful when you store your photos on "
-#| "a Synology NAS (Network Attached Storage). In every directory the system "
-#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
-#| "inserting the original photo and its corresponding thumbnail twice, "
-#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
-#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
+#, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -64837,8 +64828,9 @@ msgstr ""
 "Synology NAS (Network Attached Storage). V vsaki mapi sistem ustvari podmapo "
 "@eaDir za shranjevanje predoglednih sličic. Da bi se digiKam izognil "
 "dvakratnemu vstavljanju izvirnih slik ter predoglednih sličic je mapa @eaDir "
-"privzeto izvzeta.</p><p>Če želite ponovno vključiti mape, ki so privzeto "
-"prezrte, jih predpona z minusom, npr. -@eaDir, spet vključi.</p>"
+"privzeto prezrta.</p><p>Podprti so nadomestni znaki, kot sta '*' ali '?'.</"
+"p><p>Če želite ponovno vključiti imenike, ki so privzeto prezrti, jim "
+"dodajte predpono minus, npr. -@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format

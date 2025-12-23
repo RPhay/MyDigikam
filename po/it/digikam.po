@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-22 00:40+0000\n"
-"PO-Revision-Date: 2025-12-06 16:50+0100\n"
+"PO-Revision-Date: 2025-12-20 11:11+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -369,36 +369,30 @@ msgstr ""
 "Questo si applica anche alla casella di spunta «%1». "
 
 #: core/app/filters/filtersidebarwidget_faces.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@title"
 msgid "People"
 msgstr "Persone"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgid "Text Filter:"
-msgstr "Filtro testo"
+msgstr "Filtro testo:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:41
-#, fuzzy, kde-format
-#| msgid "MIME Type Filter"
+#, kde-format
 msgid "MIME Type Filter:"
-msgstr "Filtro dei tipi MIME"
+msgstr "Filtro dei tipi MIME:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
-#, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#, kde-format
 msgid "Geolocation Filter:"
-msgstr "Filtro geolocalizzazione"
+msgstr "Filtro geolocalizzazione:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
-#, fuzzy, kde-format
-#| msgid "Labels Filter"
+#, kde-format
 msgid "Labels Filter:"
-msgstr "Filtro delle etichette"
+msgstr "Filtro delle etichette:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
@@ -2906,8 +2900,7 @@ msgstr "Mostra a schermo intero"
 
 #: core/app/views/preview/itempreviewview.cpp:508
 #: core/app/views/stack/itemiconview_views.cpp:313
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Volti"
@@ -3964,15 +3957,13 @@ msgid "Tags"
 msgstr "Tag"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:82
-#, fuzzy, kde-format
-#| msgid "Grouped"
+#, kde-format
 msgctxt "@title: grouped"
 msgid "Grouped"
 msgstr "Raggruppate"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
-#, fuzzy, kde-format
-#| msgid "Versioned"
+#, kde-format
 msgctxt "@title: versioned"
 msgid "Versioned"
 msgstr "Con versione"
@@ -4014,15 +4005,13 @@ msgid "Tags"
 msgstr "Tag"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:124
-#, fuzzy, kde-format
-#| msgid "Grouped"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Grouped"
 msgstr "Raggruppate"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:129
-#, fuzzy, kde-format
-#| msgid "Versioned"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Versioned"
 msgstr "Con versione"
@@ -4130,7 +4119,7 @@ msgstr "Sì"
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
-msgstr ""
+msgstr "Sì (pila)"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:510
 #: core/libs/properties/import/importitempropertiestab.cpp:348
@@ -39433,15 +39422,12 @@ msgid "Selected Item Properties"
 msgstr "Proprietà dell'elemento selezionate"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:147
-#, fuzzy, kde-format
-#| msgid "Album Item Properties"
+#, kde-format
 msgid "All Item Properties"
-msgstr "Proprietà dell'elemento dell'album"
+msgstr "Tutte le proprietà dell'elemento"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Remove From Group"
+#, kde-format
 msgid "Remove from Group"
 msgstr "Rimuovi dal gruppo"
 
@@ -68743,11 +68729,9 @@ msgstr ""
 "per identificare il modello nella tua raccolta.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "Modello:"
+msgstr "Unisci modello"
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format
