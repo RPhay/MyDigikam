@@ -63,7 +63,7 @@ class Q_DECL_HIDDEN ColorLabelValidator : public QValidator
 
 public:
 
-    ColorLabelValidator(int maxLength, QObject* const parent = nullptr);
+    explicit ColorLabelValidator(int maxLength, QObject* const parent = nullptr);
 
     QValidator::State validate(QString& input, int& /*pos*/)                                             const override;
 
@@ -80,7 +80,7 @@ class Q_DECL_HIDDEN ColorLabelDelegate : public QStyledItemDelegate
 
 public:
 
-    ColorLabelDelegate(int maxLength, QObject* const parent = nullptr);
+    explicit ColorLabelDelegate(int maxLength, QObject* const parent = nullptr);
 
     QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
