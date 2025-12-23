@@ -353,15 +353,15 @@ BUGFIXES:
 288 --> 443616 - Implement gesture support to zoom on touchscreen or touchpad laptop.
 289 --> 504482 - Crash on launch after install.
 290 --> 391435 - Show a loading indicator when loading a picture in Preview mode.
-291 --> 
-292 --> 
-293 --> 
-294 --> 
-295 --> 
-296 --> 
-297 --> 
-298 --> 
-299 --> 
+291 --> 087027 - digiKam does not allow nested directories anymore.
+292 --> 096368 - Sort images by comment.
+293 --> 105663 - Position is lost after deleting picture and using arrow keys.
+294 --> 110178 - Ease selecting of pictures, i.e. make space around images select them and only a click on an image open it.
+295 --> 088174 - Albums only sorted into Collection if collection is listed digikamrc.
+296 --> 206488 - Add new browsing mode.
+297 --> 087439 - Box draw selection bug: only selects photo's, does not deselect when moving box out.
+298 --> 091484 - Album view not updated after images are modified in the image viewer.
+299 --> 101630 - digiKam ui problem selecting images.
 300 --> 
 301 --> 
 302 --> 
