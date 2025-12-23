@@ -264,7 +264,7 @@ void SharedLoadingTask::execute()
                     }
                     else
                     {
-                            l->setResult(m_loadingDescription, m_img);
+                        l->setResult(m_loadingDescription, m_img);
                     }
                 }
             }
@@ -346,7 +346,9 @@ void SharedLoadingTask::postProcess()
     switch (m_loadingDescription.postProcessingParameters.colorManagement)
     {
         case LoadingDescription::NoColorConversion:
+        {
             break;
+        }
 
         case LoadingDescription::ApplyTransform:
         {
@@ -457,7 +459,7 @@ void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process,
 
 bool SharedLoadingTask::querySendNotifyEvent() const
 {
-    return m_thread && m_thread->querySendNotifyEvent();
+    return (m_thread && m_thread->querySendNotifyEvent());
 }
 
 LoadSaveNotifier* SharedLoadingTask::loadSaveNotifier() const
@@ -483,8 +485,8 @@ SavingTask::SavingTask(LoadSaveThread* const thread,
                        const QString& format)
     : LoadSaveTask(thread),
         m_filePath(filePath),
-        m_format(format),
-        m_img(img)
+        m_format  (format),
+        m_img     (img)
 {
 }
 

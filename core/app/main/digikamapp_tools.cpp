@@ -13,9 +13,6 @@
  * ============================================================ */
 
 #include "digikamapp_p.h"
-#include "facetrainingupgradedlg.h"
-#include "peoplesidebarwidget.h"
-#include "systemsettings.h"
 
 namespace Digikam
 {

@@ -13,7 +13,6 @@
  * ============================================================ */
 
 #include "digikamapp_p.h"
-#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -62,9 +61,30 @@ void DigikamApp::setupViewConnections()
 
 void DigikamApp::setupStatusBar()
 {
-    d->statusLabel = new DAdjustableLabel(statusBar());
+    d->statusLabel = new StatusProgressBar(statusBar());
     d->statusLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
     statusBar()->addWidget(d->statusLabel, 80);
+
+    connect(d->view, &ItemIconView::signalStartedLoading,
+            this, [this]()
+       {
+            d->statusLabel->setProgressBarMode(StatusProgressBar::ProgressBarMode, i18nc("@label", "Loading:"));
+       }
+    );
+
+    connect(d->view, &ItemIconView::signalLoadingProgress,
+            this, [this](float progress)
+       {
+            d->statusLabel->setProgressValue((int)(progress * 100.0));
+       }
+    );
+
+    connect(d->view, &ItemIconView::signalLoadingComplete,
+            this, [this]()
+       {
+            d->statusLabel->setProgressBarMode(StatusProgressBar::TextMode, d->statusLabel->text());
+       }
+    );
 
     //------------------------------------------------------------------------------
 

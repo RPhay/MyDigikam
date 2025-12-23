@@ -67,12 +67,20 @@ public:
 
 Q_SIGNALS:
 
+    /**
+     * For the progress bar on the top level.
+     */
+    void signalStartedLoading();
+    void signalLoadingProgress(float progress);
+    void signalLoadingComplete();
+
     void stateChanged(int state);
     void loaded();
     void loadingFailed();
 
 private Q_SLOTS:
 
+    void slotLoadingProgress(const LoadingDescription& loadingDescription, float progress);
     void slotGotImagePreview(const LoadingDescription& loadingDescription, const DImg& image);
     void preloadNext();
     void slotFileChanged(const QString& path);

@@ -59,6 +59,8 @@ public:
     void setNotify(bool b);
     void setNotificationTitle(const QString& title, const QIcon& icon);
 
+    QString text()            const;
+
 public Q_SLOTS:
 
     void setText(const QString& text);

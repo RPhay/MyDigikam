@@ -858,13 +858,13 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                                         numOfImagesInModel - numImagesWithGrouped);
     }
 
-    d->statusLabel->setAdjustedText(statusBarSelectionText);
+    d->statusLabel->setText(statusBarSelectionText);
     d->statusLabel->setToolTip(statusBarSelectionToolTip);
 }
 
 void DigikamApp::slotTrashSelectionChanged(const QString& text)
 {
-    d->statusLabel->setAdjustedText(text);
+    d->statusLabel->setText(text);
     d->statusLabel->setToolTip(text);
 }
 

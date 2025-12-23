@@ -76,6 +76,10 @@ Q_SIGNALS:
     void signalGotoTagAndItem(int);
     void signalPopupTagsView();
 
+    void signalStartedLoading();
+    void signalLoadingProgress(float progress);
+    void signalLoadingComplete();
+
 protected:
 
     bool acceptsMouseClick(QMouseEvent* e)  override;

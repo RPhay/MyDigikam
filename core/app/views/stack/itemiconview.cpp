@@ -236,6 +236,15 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     connect(d->iconView, SIGNAL(signalSeparationModeChanged(int)),
             this, SIGNAL(signalSeparationModeChanged(int)));
+
+    connect(d->stackedView->imagePreviewView(), SIGNAL(signalStartedLoading()),
+            this, SIGNAL(signalStartedLoading()));
+
+    connect(d->stackedView->imagePreviewView(), SIGNAL(signalLoadingProgress(float)),
+            this, SIGNAL(signalLoadingProgress(float)));
+
+    connect(d->stackedView->imagePreviewView(), SIGNAL(signalLoadingComplete()),
+            this, SIGNAL(signalLoadingComplete()));
 }
 
 ItemIconView::~ItemIconView()

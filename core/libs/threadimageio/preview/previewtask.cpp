@@ -51,6 +51,11 @@ void PreviewLoadingTask::execute()
         return;
     }
 
+    if (m_thread)
+    {
+        m_thread->imageStartedLoading(m_loadingDescription);
+    }
+
     // Check if preview is in cache first.
 
     LoadingCache* const cache = LoadingCache::cache();
@@ -422,6 +427,16 @@ void PreviewLoadingTask::execute()
     {
         m_thread->taskHasFinished();
         m_thread->imageLoaded(m_loadingDescription, m_img);
+    }
+}
+
+void PreviewLoadingTask::progressInfo(float progress)
+{
+    SharedLoadingTask::progressInfo(progress);
+
+    if ((m_loadingTaskStatus == LoadingTaskStatusLoading) && m_thread)
+    {
+        m_thread->loadingProgress(m_loadingDescription, progress);
     }
 }
 

@@ -33,9 +33,11 @@ public:
 
     explicit PreviewLoadingTask(LoadSaveThread* const thread,
                                 const LoadingDescription& description);
-    ~PreviewLoadingTask() override = default;
+    ~PreviewLoadingTask()               override = default;
 
-    void execute()        override;
+    void execute()                      override;
+    void progressInfo(float progress)   override;
+
 
 private:
 

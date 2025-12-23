@@ -32,6 +32,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                             running            = true;
     bool                             blockNotification  = false;
 
@@ -292,7 +294,7 @@ int LoadSaveThread::exifOrientation(const QString& filePath,
     {
         // Did the user apply any additional rotation over the metadata flag?
 
-        if (dbOrientation == MetaEngine::ORIENTATION_UNSPECIFIED || dbOrientation == exifOrientation)
+        if ((dbOrientation == MetaEngine::ORIENTATION_UNSPECIFIED) || (dbOrientation == exifOrientation))
         {
             return MetaEngine::ORIENTATION_NORMAL;
         }

@@ -141,6 +141,8 @@
 #include "dnotificationpopup.h"
 #include "dimgloader.h"
 #include "categorizeditemmodel.h"
+#include "autorotator.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {

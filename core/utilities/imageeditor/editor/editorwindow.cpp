@@ -15,8 +15,7 @@
  * ============================================================ */
 
 #include "editorwindow_p.h"
-#include "autorotator.h"
-#include "systemsettings.h"
+
 namespace Digikam
 {
 

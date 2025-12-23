@@ -151,6 +151,15 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->item, SIGNAL(imageChanged()),
             this, SLOT(slotUpdateFaces()));
 
+    connect(d->item, SIGNAL(signalStartedLoading()),
+            this, SIGNAL(signalStartedLoading()));
+
+    connect(d->item, SIGNAL(signalLoadingProgress(float)),
+            this, SIGNAL(signalLoadingProgress(float)));
+
+    connect(d->item, SIGNAL(signalLoadingComplete()),
+            this, SIGNAL(signalLoadingComplete()));
+
     connect(d->item, SIGNAL(showContextMenu(QGraphicsSceneContextMenuEvent*)),
             this, SLOT(slotShowContextMenu(QGraphicsSceneContextMenuEvent*)));
 

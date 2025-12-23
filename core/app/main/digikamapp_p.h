@@ -130,6 +130,7 @@
 #include "tagsactionmngr.h"
 #include "databaseserverstarter.h"
 #include "metaenginesettings.h"
+#include "statusprogressbar.h"
 #include "statusbarprogresswidget.h"
 #include "dbmigrationdlg.h"
 #include "progressmanager.h"
@@ -153,6 +154,9 @@
 #include "facesengine.h"
 #include "identityprovider.h"
 #include "aitoolspipeline.h"
+#include "systemsettings.h"
+#include "facetrainingupgradedlg.h"
+#include "peoplesidebarwidget.h"
 
 #ifdef HAVE_GEOLOCATION
 #   include "geolocationsettings.h"
@@ -361,7 +365,7 @@ public:
     CameraList*                         cameraList                              = nullptr;
     TagsActionMngr*                     tagsActionManager                       = nullptr;
     DZoomBar*                           zoomBar                                 = nullptr;
-    DAdjustableLabel*                   statusLabel                             = nullptr;
+    StatusProgressBar*                  statusLabel                             = nullptr;
 
     DModelFactory*                      modelCollection                         = nullptr;
 };

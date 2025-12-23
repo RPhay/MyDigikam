@@ -419,6 +419,10 @@ Q_SIGNALS:
     void signalGotoDateAndItem(AlbumIconItem*);
     void signalGotoTagAndItem(int tagID);
 
+    void signalStartedLoading();
+    void signalLoadingProgress(float progress);
+    void signalLoadingComplete();
+
 private Q_SLOTS:
 
     void slotTogglePreviewMode(const ItemInfo& info);
