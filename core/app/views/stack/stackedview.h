@@ -42,7 +42,7 @@ class TrashView;
 
 class MediaPlayerView;
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
 #ifdef HAVE_GEOLOCATION
 
@@ -88,7 +88,7 @@ public:
 
     MediaPlayerView*  mediaPlayerView()  const;
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
 #ifdef HAVE_GEOLOCATION
 
@@ -149,6 +149,14 @@ private Q_SLOTS:
     void slotZoomFactorChanged(double);
     void slotThumbBarSelectionChanged();
     void slotIconViewSelectionChanged();
+
+#ifdef HAVE_MEDIAPLAYER
+
+    void slotAssignRating(int rating);
+    void slotAssignPickLabel(int pickId);
+    void slotAssignColorLabel(int colorId);
+
+#endif // HAVE_MEDIAPLAYER
 
 private:
 

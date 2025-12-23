@@ -46,6 +46,8 @@ public:
     void escapePreview();
     void reload();
 
+    void setToolbarExtraWidget(QWidget* const extra);
+
 Q_SIGNALS:
 
     void signalNextItem();

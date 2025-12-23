@@ -319,6 +319,11 @@ MediaPlayerView::~MediaPlayerView()
     delete d;
 }
 
+void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)
+{
+    d->toolBar->addWidget(extra);
+}
+
 void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
 {
     d->iface = iface;
