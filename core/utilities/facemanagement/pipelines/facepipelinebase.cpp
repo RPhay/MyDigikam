@@ -385,47 +385,71 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
         if (!cvImage.empty())
         {
-            cv::UMat cvUImage = cvImage.getUMat(cv::ACCESS_READ);
+            cv::UMat cvUImage                     = cvImage.getUMat(cv::ACCESS_READ);
 
-            // extract the face features
+            // Extract the face features
 
             QPair<cv::Mat, cv::Mat> faceEmbedding = extractor.getFaceEmbedding(cvUImage);
-            package->features = faceEmbedding.second;
+            package->features                     = faceEmbedding.second;
 
-            // check for a valid feature set
+            // Check for a valid feature set
 
             if (!package->features.empty() && trainingQualityCheck)
             {
-               /**
-                * compute the size of the face region in pixels as shown
-                * in the original image
-                * this is used to check if the image is suitable for training
-                */
+                /**
+                 * Compute the size of the face region in pixels as shown in the original image
+                 * This is used to check if the image is suitable for training.
+                 */
 
-                // percentage of the region compared to the image
+                // Prevent divide by zero - bug 513760.
 
-                float xThumbnailPercent = static_cast<float>(package->face.region().toRect().width()) /
-                                          static_cast<float>(package->info.dimensions().width());
+                float width       = static_cast<float>(package->info.dimensions().width());
+                float height      = static_cast<float>(package->info.dimensions().height());
+                float thumbWidth  = static_cast<float>(package->thumbnail.width());
+                float thumbHeight = static_cast<float>(package->thumbnail.height());
 
-                float yThumbnailPercent = static_cast<float>(package->face.region().toRect().height()) /
-                                          static_cast<float>(package->info.dimensions().height());
+                if ((width <= 0.0) || (height <= 0.0) || (thumbWidth <= 0.0) || (thumbHeight <= 0.0))
+                {
+                    qCWarning(DIGIKAM_FACESENGINE_LOG) << "Invalid dimensions or thumbnail size, skipping training check.";
+                    package->useForTraining = false;
+                }
+                else
+                {
+                    // Percentage of the region compared to the image
 
-                // percentage of the face compared to the thumbnail
+                    float xThumbnailPercent = static_cast<float>(package->face.region().toRect().width())  / width;
+                    float yThumbnailPercent = static_cast<float>(package->face.region().toRect().height()) / height;
 
-                float xFaceAreaPercent = static_cast<float>(faceEmbedding.first.at<float>(0, 2)) /
-                                         static_cast<float>(package->thumbnail.width());
+                    // Prevent infinite or not a number values - bug 513760.
 
-                float yFaceAreaPercent = static_cast<float>(faceEmbedding.first.at<float>(0, 3)) /
-                                         static_cast<float>(package->thumbnail.height());
+                    float xFacePos          = faceEmbedding.first.at<float>(0, 2);
+                    float yFacePos          = faceEmbedding.first.at<float>(0, 3);
 
-                // compute the size of the face area in pixels
+                    if (
+                        std::isnan(xFacePos) || std::isnan(yFacePos) ||
+                        std::isinf(xFacePos) || std::isinf(yFacePos)
+                       )
+                    {
+                        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Invalid face embedding values, skipping training check.";
+                        package->useForTraining = false;
+                    }
+                    else
+                    {
+                        // Percentage of the face compared to the thumbnail
 
-                QSize faceSize(qRound(package->info.dimensions().width() * xThumbnailPercent * xFaceAreaPercent),
-                               qRound(package->info.dimensions().height() * yThumbnailPercent * yFaceAreaPercent));
+                        float xFaceAreaPercent = xFacePos / thumbWidth;
+                        float yFaceAreaPercent = yFacePos / thumbHeight;
 
-                // check if the image is suitable for training
+                        // Compute the size of the face area in pixels
 
-                package->useForTraining = useForTraining(faceSize, cvImage);
+                        QSize faceSize(qRound(package->info.dimensions().width()  * xThumbnailPercent * xFaceAreaPercent),
+                                       qRound(package->info.dimensions().height() * yThumbnailPercent * yFaceAreaPercent));
+
+                        // Check if the image is suitable for training
+
+                        package->useForTraining = useForTraining(faceSize, cvImage);
+                    }
+                }
             }
 
             for (const auto tagId : package->face.rejectedFaceTagList())
