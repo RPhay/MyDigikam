@@ -306,7 +306,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->rateButton->setPopupMode(QToolButton::InstantPopup);
     d->rateButton->setArrowType(Qt::NoArrow);
 
-    QMenu* const rateMenu         = new QMenu(this);
+    QMenu* const rateMenu         = new QMenu(i18n("Rate"), this);
+    rateMenu->setIcon(QIcon::fromTheme(QLatin1String("player-time")));
     QActionGroup* const rateGroup = new QActionGroup(this);
 
     QAction* const rate05         = rateGroup->addAction(i18nc("video play rate", "0.5x"));
@@ -537,7 +538,8 @@ QList<QAction*> MediaPlayerView::actionsList() const
                              << d->nextAction
                              << d->playAction
                              << d->forwAction
-                             << d->grabAction;
+                             << d->grabAction
+                             << d->rateButton->menu()->menuAction();
 }
 
 void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)
