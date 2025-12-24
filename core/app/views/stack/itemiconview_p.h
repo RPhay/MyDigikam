@@ -100,7 +100,7 @@
 #include "tagfolderview.h"
 
 #ifdef HAVE_MEDIAPLAYER
-#   include "mediaplayerview.h"
+#   include "itempreviewvideo.h"
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_GEOLOCATION

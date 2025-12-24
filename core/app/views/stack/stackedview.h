@@ -40,7 +40,7 @@ class TrashView;
 
 #ifdef HAVE_MEDIAPLAYER
 
-class MediaPlayerView;
+class ItemPreviewVideo;
 
 #endif // HAVE_MEDIAPLAYER
 
@@ -86,7 +86,7 @@ public:
 
 #ifdef HAVE_MEDIAPLAYER
 
-    MediaPlayerView*  mediaPlayerView()  const;
+    ItemPreviewVideo* mediaPlayerView()  const;
 
 #endif // HAVE_MEDIAPLAYER
 
@@ -149,14 +149,6 @@ private Q_SLOTS:
     void slotZoomFactorChanged(double);
     void slotThumbBarSelectionChanged();
     void slotIconViewSelectionChanged();
-
-#ifdef HAVE_MEDIAPLAYER
-
-    void slotAssignRating(int rating);
-    void slotAssignPickLabel(int pickId);
-    void slotAssignColorLabel(int colorId);
-
-#endif // HAVE_MEDIAPLAYER
 
 private:
 

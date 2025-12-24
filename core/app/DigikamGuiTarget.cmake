@@ -123,6 +123,13 @@ set(libdigikamgui_SRCS
     ${digikamadaptor_SRCS}
 )
 
+if(ENABLE_MEDIAPLAYER)
+    set(libdigikamgui_SRCS
+        ${libdigikamgui_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/views/preview/itempreviewvideo.cpp
+    )
+endif()
+
 if(${ENABLE_GEOLOCATION})
     set(libdigikamgui_SRCS
         ${libdigikamgui_SRCS}

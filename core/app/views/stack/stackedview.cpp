@@ -33,7 +33,6 @@
 #include "welcomepageview.h"
 #include "digikamitemview.h"
 #include "itemiconview.h"
-#include "dbinfoiface.h"
 #include "itemalbummodel.h"
 #include "itemalbumfiltermodel.h"
 #include "dtrashitemmodel.h"
@@ -44,13 +43,9 @@
 #include "tableview.h"
 #include "trashview.h"
 #include "dimg.h"
-#include "ratingwidget.h"
-#include "colorlabelwidget.h"
-#include "picklabelwidget.h"
-#include "fileactionmngr.h"
 
 #ifdef HAVE_MEDIAPLAYER
-#   include "mediaplayerview.h"
+#   include "itempreviewvideo.h"
 #endif // HAVE_MEDIAPLAYER
 
 #ifdef HAVE_GEOLOCATION
@@ -83,13 +78,7 @@ public:
 
 #ifdef HAVE_MEDIAPLAYER
 
-    MediaPlayerView*  mediaPlayerView   = nullptr;
-
-    RatingWidget*          ratingWidget = nullptr;
-    ColorLabelSelector*    clWidget     = nullptr;
-    PickLabelSelector*     plWidget     = nullptr;
-
-    ItemInfo               info;
+    ItemPreviewVideo* mediaPlayerView   = nullptr;
 
 #endif // HAVE_MEDIAPLAYER
 
@@ -137,34 +126,7 @@ StackedView::StackedView(QWidget* const parent)
 
 #ifdef HAVE_MEDIAPLAYER
 
-    d->mediaPlayerView  = new MediaPlayerView(this);
-    d->mediaPlayerView->setObjectName(QLatin1String("main_media_player"));
-    d->mediaPlayerView->setInfoInterface(new DBInfoIface(this, QList<QUrl>()));
-
-    QString btnStyleSheet       = QLatin1String("%1 { padding: 1px; background-color: "
-                                                "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
-                                                "  stop: 0 rgba(100, 100, 100, 70%), "
-                                                "  stop: 1 rgba(170, 170, 170, 70%)); "
-                                                "border: 1px solid rgba(170, 170, 170, 10%); } ");
-
-    DHBox* const labelsBox      = new DHBox(d->mediaPlayerView);
-    labelsBox->setStyleSheet(btnStyleSheet.arg(QLatin1String("QFrame")));
-
-    d->clWidget                 = new ColorLabelSelector(labelsBox);
-    d->clWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
-    d->clWidget->setFocusPolicy(Qt::NoFocus);
-
-    d->plWidget                 = new PickLabelSelector(labelsBox);
-    d->plWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
-    d->plWidget->setFocusPolicy(Qt::NoFocus);
-
-    d->ratingWidget             = new RatingWidget(labelsBox);
-    d->ratingWidget->setTracking(false);
-    d->ratingWidget->setFading(false);
-    d->ratingWidget->setFocusPolicy(Qt::NoFocus);
-    labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
-
-    d->mediaPlayerView->setToolbarExtraWidget(labelsBox);
+    d->mediaPlayerView  = new ItemPreviewVideo(this);
 
 #endif // HAVE_MEDIAPLAYER
 
@@ -248,15 +210,6 @@ StackedView::StackedView(QWidget* const parent)
     connect(d->mediaPlayerView, SIGNAL(signalEscapePreview()),
             this, SIGNAL(signalEscapePreview()));
 
-    connect(d->ratingWidget, SIGNAL(signalRatingChanged(int)),
-            this, SLOT(slotAssignRating(int)));
-
-    connect(d->clWidget, SIGNAL(signalColorLabelChanged(int)),
-            this, SLOT(slotAssignColorLabel(int)));
-
-    connect(d->plWidget, SIGNAL(signalPickLabelChanged(int)),
-            this, SLOT(slotAssignPickLabel(int)));
-
 #endif // HAVE_MEDIAPLAYER
 
 }
@@ -324,7 +277,7 @@ TrashView* StackedView::trashView() const
 
 #ifdef HAVE_MEDIAPLAYER
 
-MediaPlayerView* StackedView::mediaPlayerView() const
+ItemPreviewVideo* StackedView::mediaPlayerView() const
 {
     return d->mediaPlayerView;
 }
@@ -355,13 +308,6 @@ bool StackedView::isInAbstractMode() const
 
 void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
 {
-
-#ifdef HAVE_MEDIAPLAYER
-
-    d->info = info;
-
-#endif // HAVE_MEDIAPLAYER
-
     if (info.isNull())
     {
         if      (viewMode() == MediaPlayerMode)
@@ -399,7 +345,7 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
 #ifdef HAVE_MEDIAPLAYER
 
             setViewMode(MediaPlayerMode);
-            d->mediaPlayerView->setCurrentItem(info.fileUrl(), !previous.isNull(), !next.isNull());
+            d->mediaPlayerView->setItemInfo(info, previous, next);
 
 #endif // HAVE_MEDIAPLAYER
 
@@ -667,25 +613,6 @@ void StackedView::slotPreviewLoaded(bool)
     setViewMode(StackedView::PreviewImageMode);
     previewLoaded();
 }
-
-#ifdef HAVE_MEDIAPLAYER
-
-void StackedView::slotAssignPickLabel(int pickId)
-{
-    FileActionMngr::instance()->assignPickLabel(d->info, pickId);
-}
-
-void StackedView::slotAssignColorLabel(int colorId)
-{
-    FileActionMngr::instance()->assignColorLabel(d->info, colorId);
-}
-
-void StackedView::slotAssignRating(int rating)
-{
-    FileActionMngr::instance()->assignRating(d->info, rating);
-}
-
-#endif // HAVE_MEDIAPLAYER
 
 } // namespace Digikam
 
