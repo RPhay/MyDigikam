@@ -515,7 +515,7 @@ void DigikamApp::setupActions()
 
     // Pop up dialog to ask user whether to move to trash
 
-    d->imageDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
+    d->imageDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("albumfolder-user-trash")),  // In red - bug 513774
                                        i18nc("@action: Non-pluralized", "Move to Trash"), this);
     connect(d->imageDeleteAction, SIGNAL(triggered()), d->view, SLOT(slotImageDelete()));
     ac->addAction(QLatin1String("image_delete"), d->imageDeleteAction);

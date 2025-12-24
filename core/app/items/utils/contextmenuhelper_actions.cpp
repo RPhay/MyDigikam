@@ -179,7 +179,7 @@ void ContextMenuHelper::addStandardActionPaste(QObject* const recv, const char* 
 
 void ContextMenuHelper::addStandardActionItemDelete(QObject* const recv, const char* const slot, int quantity)
 {
-    QAction* const trashAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
+    QAction* const trashAction = new QAction(QIcon::fromTheme(QLatin1String("albumfolder-user-trash")),  // In red - bug 513774
                                              i18ncp("@action:inmenu Pluralized",
                                                     "Move to Trash", "Move %1 Files to Trash",
                                                     quantity), d->parent);

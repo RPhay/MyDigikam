@@ -308,7 +308,7 @@ void EditorWindow::setupStandardActions()
     ac->setDefaultShortcut(d->openWithAction, QKeySequence(Qt::CTRL | Qt::Key_F4));
     d->openWithAction->setEnabled(false);
 
-    m_fileDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
+    m_fileDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("albumfolder-user-trash")),  // In red - bug 513774
                                      i18nc("@action: Non-pluralized", "Move to Trash"), this);
     connect(m_fileDeleteAction, SIGNAL(triggered()), this, SLOT(slotDeleteCurrentItem()));
     ac->addAction(QLatin1String("editorwindow_delete"), m_fileDeleteAction);

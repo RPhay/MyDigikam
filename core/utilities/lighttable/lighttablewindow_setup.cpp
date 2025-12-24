@@ -81,8 +81,8 @@ void LightTableWindow::setupActions()
     connect(d->clearListAction, SIGNAL(triggered()), this, SLOT(slotClearItemsList()));
     ac->addAction(QLatin1String("lighttable_clearlist"), d->clearListAction);
     ac->setDefaultShortcut(d->clearListAction, Qt::CTRL | Qt::SHIFT | Qt::Key_K);
-
-    d->fileDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")), i18nc("Non-pluralized", "Move to Trash"), this);
+    d->fileDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("albumfolder-user-trash")),  // In red - bug 513774
+                                      i18nc("Non-pluralized", "Move to Trash"), this);
     d->fileDeleteAction->setEnabled(false);
     connect(d->fileDeleteAction, SIGNAL(triggered()), this, SLOT(slotDeleteItem()));
     ac->addAction(QLatin1String("lighttable_filedelete"), d->fileDeleteAction);

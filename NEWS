@@ -362,8 +362,8 @@ BUGFIXES:
 297 --> 087439 - Box draw selection bug: only selects photo's, does not deselect when moving box out.
 298 --> 091484 - Album view not updated after images are modified in the image viewer.
 299 --> 101630 - digiKam ui problem selecting images.
-300 --> 
-301 --> 
+300 --> 463263 - Enhancement Request: Make it easier to identify where unmounted Albums are located.
+301 --> 513774 - "move to trash" should be shown in red.
 302 --> 
 303 --> 
 304 --> 

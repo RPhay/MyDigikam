@@ -586,7 +586,7 @@ void DeleteDialog::slotShouldDelete(bool shouldDelete)
     d->buttons->button(QDialogButtonBox::Apply)->setText(shouldDelete ? i18n("&Delete")
                                                                       : i18n("&Move to Trash"));
     d->buttons->button(QDialogButtonBox::Apply)->setIcon(shouldDelete ? QIcon::fromTheme(QLatin1String("edit-delete"))
-                                                                      : QIcon::fromTheme(QLatin1String("user-trash")));
+                                                                      : QIcon::fromTheme(QLatin1String("albumfolder-user-trash")));  // In red - bug 513774
 
     d->buttons->button(QDialogButtonBox::Apply)->setDefault(!shouldDelete);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(shouldDelete);
