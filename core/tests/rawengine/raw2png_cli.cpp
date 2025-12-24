@@ -6,7 +6,7 @@
  * Date        : 2008-15-09
  * Description : a command line tool to convert RAW file to PNG
  *
- * SPDX-FileCopyrightText: 2008-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

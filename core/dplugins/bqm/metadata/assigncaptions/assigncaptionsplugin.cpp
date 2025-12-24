@@ -6,7 +6,7 @@
  * Date        : 2024-09-23
  * Description : a BQM plugin to assign captions metadata.
  *
- * SPDX-FileCopyrightText: 2021-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

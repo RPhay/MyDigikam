@@ -6,7 +6,7 @@
  * Date        : 11/08/2025
  * Description : Extraction of focus points by exiftool data - Fujifilm devices
  *
- * SPDX-FileCopyrightText: 2021-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2021      by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  * SPDX-FileCopyrightText: 2025      by Maik Qualmann <metzpinguin at gmail dot com>
  *

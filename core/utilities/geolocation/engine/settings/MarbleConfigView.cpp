@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2009      by Bastian Holst <bastianholst at gmx dot de>
  * SPDX-FileCopyrightText: 2012      by Mohammed Nafees <nafees dot technocool at gmail dot com>
- * SPDX-FileCopyrightText: 2022-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: LGPL-2.1-or-later
  *

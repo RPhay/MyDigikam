@@ -6,7 +6,7 @@
  * Date        : 2008-07-23
  * Description : QGraphicsRectItem wrapper for FacesEngine Demo
  *
- * SPDX-FileCopyrightText: 2009-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2008      by Adrien Bustany <madcat at mymadcat dot com>
  * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *

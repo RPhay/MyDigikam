@@ -6,7 +6,7 @@
  * Date        : 2005-24-01
  * Description : Channels mixer filter
  *
- * SPDX-FileCopyrightText: 2005-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

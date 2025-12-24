@@ -7,7 +7,7 @@
  * Description : calendar system.
  *
  * SPDX-FileCopyrightText: 2014      by John Layt <john at layt dot net>
- * SPDX-FileCopyrightText: 2016-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

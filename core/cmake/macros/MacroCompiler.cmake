@@ -4,7 +4,7 @@
 # depending of compiler version, check this url:
 # https://github.com/Barro/compiler-warnings
 #
-# SPDX-FileCopyrightText: 2010-2025 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2026 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

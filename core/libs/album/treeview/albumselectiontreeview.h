@@ -7,7 +7,7 @@
  * Description : Albums folder view.
  *
  * SPDX-FileCopyrightText: 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * SPDX-FileCopyrightText: 2006-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  *

@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2007      by Inge Wallin <ingwa at kde dot org>
  * SPDX-FileCopyrightText: 2008      by Jens-Michael Hoffmann <jensmh at gmx dot de>
- * SPDX-FileCopyrightText: 2022-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: LGPL-2.1-or-later
  *

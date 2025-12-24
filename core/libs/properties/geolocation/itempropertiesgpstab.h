@@ -6,7 +6,7 @@
  * Date        : 2006-02-22
  * Description : a tab to display GPS info
  *
- * SPDX-FileCopyrightText: 2006-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2011      by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

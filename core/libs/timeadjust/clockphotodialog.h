@@ -7,7 +7,7 @@
  * Description : Figure out camera clock delta from a clock picture.
  *
  * SPDX-FileCopyrightText: 2009      by Pieter Edelman <p dot edelman at gmx dot net>
- * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

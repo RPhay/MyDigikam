@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * SPDX-FileCopyrightText: 2009-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 1999-2001 by Mirko Boehm <mirko at kde dot org>
  * SPDX-FileCopyrightText: 1999-2001 by Espen Sand <espen at kde dot org>
  * SPDX-FileCopyrightText: 1999-2001 by Holger Freyther <freyther at kde dot org>

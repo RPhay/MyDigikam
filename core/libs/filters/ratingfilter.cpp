@@ -6,7 +6,7 @@
  * Date        : 2007-10-09
  * Description : a widget to filter album contents by rating
  *
- * SPDX-FileCopyrightText: 2007-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2007      by Arnd Baecker <arnd dot baecker at web dot de>
  * SPDX-FileCopyrightText: 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *

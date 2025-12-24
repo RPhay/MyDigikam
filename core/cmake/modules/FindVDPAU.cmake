@@ -7,7 +7,7 @@
 # VDPAU_LIBRARIES    - the VDPAU libraries
 # VDPAU_DEFINITIONS  - the VDPAU definitions
 #
-# SPDX-FileCopyrightText: 2016-2025 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2016-2026 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

@@ -6,7 +6,7 @@
  * Date        : 2022-04-04
  * Description : WEBP image export settings widget.
  *
- * SPDX-FileCopyrightText: 2022-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

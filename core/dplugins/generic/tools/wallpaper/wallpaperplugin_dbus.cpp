@@ -8,7 +8,7 @@
  * References  : https://bugs.kde.org/show_bug.cgi?id=217950
  *
  * SPDX-FileCopyrightText: 2019      by Igor Antropov <antropovi at yahoo dot com>
- * SPDX-FileCopyrightText: 2019-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

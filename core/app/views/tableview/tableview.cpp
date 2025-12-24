@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
- * SPDX-FileCopyrightText: 2017-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

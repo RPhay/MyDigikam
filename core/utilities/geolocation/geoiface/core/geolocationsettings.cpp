@@ -6,7 +6,7 @@
  * Date        : 2023-12-21
  * Description : Geolocation Settings.
  *
- * SPDX-FileCopyrightText: 2022-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

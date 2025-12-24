@@ -6,7 +6,7 @@
  * Date        : 2010-12-15
  * Description : white balance color correction settings container
  *
- * SPDX-FileCopyrightText: 2007-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2008      by Guillaume Castagnino <casta at xwing dot info>
  * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *

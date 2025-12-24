@@ -6,7 +6,7 @@
  * Date        : 2009-06-11
  * Description : An unit-test to print item info from file using DMetadata.
  *
- * SPDX-FileCopyrightText: 2009-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

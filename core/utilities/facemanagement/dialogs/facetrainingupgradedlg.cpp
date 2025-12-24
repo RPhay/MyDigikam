@@ -6,7 +6,7 @@
  * Date        : 2024-10-08
  * Description : confirmation of changing the face recognition model
  *
- * SPDX-FileCopyrightText: 2009-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

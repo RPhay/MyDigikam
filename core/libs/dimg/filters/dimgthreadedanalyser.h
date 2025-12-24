@@ -8,7 +8,7 @@
  *               this class is dedicated to run algorithm in a separated thread
  *               over an image to process analys. No image data are changed.
  *
- * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

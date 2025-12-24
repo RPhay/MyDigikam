@@ -7,7 +7,7 @@
  * Description : a combobox with time zones.
  *
  * SPDX-FileCopyrightText: 2015      by Maik Qualmann <metzpinguin at gmail dot com>
- * SPDX-FileCopyrightText: 2006-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

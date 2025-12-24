@@ -6,7 +6,7 @@
  * Date        : 2011-12-28
  * Description : test for implementation of thread manager api
  *
- * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2014 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

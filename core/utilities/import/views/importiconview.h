@@ -7,7 +7,7 @@
  * Description : Icon view for import tool items
  *
  * SPDX-FileCopyrightText: 2012      by Islam Wazery <wazery at ubuntu dot com>
- * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

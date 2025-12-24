@@ -6,7 +6,7 @@
  * Date        : 2022-09-22
  * Description : assign pick label metadata by image quality batch tool.
  *
- * SPDX-FileCopyrightText: 2021-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

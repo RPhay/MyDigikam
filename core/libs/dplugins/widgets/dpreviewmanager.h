@@ -6,7 +6,7 @@
  * Date        : 2009-12-23
  * Description : a widget to manage preview.
  *
- * SPDX-FileCopyrightText: 2009-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2012      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

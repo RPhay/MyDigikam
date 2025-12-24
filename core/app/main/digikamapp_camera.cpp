@@ -6,7 +6,7 @@
  * Date        : 2002-16-10
  * Description : main digiKam interface implementation - Camera management
  *
- * SPDX-FileCopyrightText: 2002-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2002-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

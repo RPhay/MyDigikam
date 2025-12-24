@@ -6,7 +6,7 @@
  * Date        : 2024-01-14
  * Description : QtAVPlayer video integration class.
  *
- * SPDX-FileCopyrightText: 2023-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2023-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

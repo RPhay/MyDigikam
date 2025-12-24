@@ -6,7 +6,7 @@
  * Date        : 2005-04-29
  * Description : refocus deconvolution matrix implementation.
  *
- * SPDX-FileCopyrightText: 2005-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 1999-2003 Ernst Lippe <ernstl at users dot sourceforge dot net>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
