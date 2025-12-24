@@ -371,7 +371,7 @@ BUGFIXES:
 306 --> 092678 - Error compiling.
 307 --> 092929 - digiKam fails to build.
 308 --> 094161 - Compile error: database is locked on query.
-309 --> 
+309 --> 501223 - digiKam cannot use exiftool binary located in macOS system folder.
 310 --> 
 311 --> 
 312 --> 
