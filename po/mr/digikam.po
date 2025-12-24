@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:40+0000\n"
+"POT-Creation-Date: 2025-12-24 00:41+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -312,7 +312,7 @@ msgstr "घटक काढून टाका"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:772
+#: core/app/views/preview/itempreviewview.cpp:781
 #, kde-format
 msgid "&Cancel"
 msgstr "रद्द करा (&C)"
@@ -323,7 +323,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:770
+#: core/app/views/preview/itempreviewview.cpp:779
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr ""
@@ -561,7 +561,7 @@ msgid "Show Fullscreen"
 msgstr ""
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:176
+#: core/app/views/preview/itempreviewview.cpp:185
 #: core/utilities/import/items/importoverlays.cpp:434
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
@@ -569,7 +569,7 @@ msgid "Rotate Left"
 msgstr "डाव्या बाजूला फिरवा"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:178
+#: core/app/views/preview/itempreviewview.cpp:187
 #: core/utilities/import/items/importoverlays.cpp:438
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
@@ -1623,114 +1623,123 @@ msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:25
+#: core/app/main/digikamapp_setup.cpp:24
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "सुरु करत आहे"
 
-#: core/app/main/digikamapp_setup.cpp:136
+#: core/app/main/digikamapp_setup.cpp:64
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1516
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:420
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:443
+#, fuzzy, kde-format
+msgctxt "@label"
+msgid "Loading:"
+msgstr "दाखल करत आहे..."
+
+#: core/app/main/digikamapp_setup.cpp:156
 #, fuzzy, kde-format
 #| msgid "&Back"
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "मागे (&B)"
 
-#: core/app/main/digikamapp_setup.cpp:161
+#: core/app/main/digikamapp_setup.cpp:181
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "पुढे"
 
-#: core/app/main/digikamapp_setup.cpp:186
+#: core/app/main/digikamapp_setup.cpp:206
 #, fuzzy, kde-format
 #| msgid "Refresh"
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "ताजे करा"
 
-#: core/app/main/digikamapp_setup.cpp:187
+#: core/app/main/digikamapp_setup.cpp:207
 #, fuzzy, kde-format
 #| msgid "Remove the current filter"
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "वर्तमान गाळणी काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:216
+#: core/app/main/digikamapp_setup.cpp:236
 #, fuzzy, kde-format
 #| msgid "&New..."
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "नवीन (&N)..."
 
-#: core/app/main/digikamapp_setup.cpp:217
+#: core/app/main/digikamapp_setup.cpp:237
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:225
+#: core/app/main/digikamapp_setup.cpp:245
 #, fuzzy, kde-format
 #| msgid "Move up"
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "वर हलवा"
 
-#: core/app/main/digikamapp_setup.cpp:226
+#: core/app/main/digikamapp_setup.cpp:246
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:233
+#: core/app/main/digikamapp_setup.cpp:253
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:234
+#: core/app/main/digikamapp_setup.cpp:254
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "निवड"
 
-#: core/app/main/digikamapp_setup.cpp:241
+#: core/app/main/digikamapp_setup.cpp:261
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "सर्व काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:248
-#: core/app/main/digikamapp_setup.cpp:488
+#: core/app/main/digikamapp_setup.cpp:268
+#: core/app/main/digikamapp_setup.cpp:508
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "नाव बदला..."
 
-#: core/app/main/digikamapp_setup.cpp:256
-#: core/app/main/digikamapp_setup.cpp:308
+#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:328
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "गुणधर्म"
 
-#: core/app/main/digikamapp_setup.cpp:257
+#: core/app/main/digikamapp_setup.cpp:277
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:265
+#: core/app/main/digikamapp_setup.cpp:285
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "गाळणी काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:266
-#: core/app/main/digikamapp_setup.cpp:442
+#: core/app/main/digikamapp_setup.cpp:286
+#: core/app/main/digikamapp_setup.cpp:462
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1738,15 +1747,15 @@ msgid ""
 "database (file metadata will be overwritten with data from the database)."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:296
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "गाळणी काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:277
-#: core/app/main/digikamapp_setup.cpp:453
+#: core/app/main/digikamapp_setup.cpp:297
+#: core/app/main/digikamapp_setup.cpp:473
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1755,45 +1764,45 @@ msgid ""
 "files' metadata)."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:287
+#: core/app/main/digikamapp_setup.cpp:307
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "संचयीका उघडा : \"%1\""
 
-#: core/app/main/digikamapp_setup.cpp:294
+#: core/app/main/digikamapp_setup.cpp:314
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:301
+#: core/app/main/digikamapp_setup.cpp:321
 #, fuzzy, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "नवीन"
 
-#: core/app/main/digikamapp_setup.cpp:315
+#: core/app/main/digikamapp_setup.cpp:335
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:322
+#: core/app/main/digikamapp_setup.cpp:342
 #, fuzzy, kde-format
 #| msgid "Labels"
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "लेबले"
 
-#: core/app/main/digikamapp_setup.cpp:330
+#: core/app/main/digikamapp_setup.cpp:350
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "दृश्य"
 
-#: core/app/main/digikamapp_setup.cpp:334
+#: core/app/main/digikamapp_setup.cpp:354
 #, fuzzy, kde-format
 #| msgctxt "@action Go to thumbnails (icon) view"
 #| msgid "Thumbnails"
@@ -1801,7 +1810,7 @@ msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "लघुप्रतिमा"
 
-#: core/app/main/digikamapp_setup.cpp:341
+#: core/app/main/digikamapp_setup.cpp:361
 #: core/app/views/stack/itemiconview_views.cpp:303
 #, fuzzy, kde-format
 #| msgid "Preview"
@@ -1809,7 +1818,7 @@ msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "पूर्वावलोकन"
 
-#: core/app/main/digikamapp_setup.cpp:351
+#: core/app/main/digikamapp_setup.cpp:371
 #, fuzzy, kde-format
 #| msgctxt "@action Switch to map view"
 #| msgid "Map"
@@ -1817,170 +1826,170 @@ msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "नकाशा"
 
-#: core/app/main/digikamapp_setup.cpp:360
+#: core/app/main/digikamapp_setup.cpp:380
 #, fuzzy, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "कार्यान्वित"
 
-#: core/app/main/digikamapp_setup.cpp:369
+#: core/app/main/digikamapp_setup.cpp:389
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "यामध्ये उघडा..."
 
-#: core/app/main/digikamapp_setup.cpp:370
+#: core/app/main/digikamapp_setup.cpp:390
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "%1 घटक निवडला"
 
-#: core/app/main/digikamapp_setup.cpp:376
+#: core/app/main/digikamapp_setup.cpp:396
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:377
+#: core/app/main/digikamapp_setup.cpp:397
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:383
+#: core/app/main/digikamapp_setup.cpp:403
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "प्रतिमा"
 
-#: core/app/main/digikamapp_setup.cpp:384
+#: core/app/main/digikamapp_setup.cpp:404
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "%1 घटक निवडला"
 
-#: core/app/main/digikamapp_setup.cpp:391
+#: core/app/main/digikamapp_setup.cpp:411
 #, fuzzy, kde-format
 #| msgid "Light"
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "हलके"
 
-#: core/app/main/digikamapp_setup.cpp:397
+#: core/app/main/digikamapp_setup.cpp:417
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:398
+#: core/app/main/digikamapp_setup.cpp:418
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:404
+#: core/app/main/digikamapp_setup.cpp:424
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "संचयीका"
 
-#: core/app/main/digikamapp_setup.cpp:405
+#: core/app/main/digikamapp_setup.cpp:425
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:413
+#: core/app/main/digikamapp_setup.cpp:433
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:419
+#: core/app/main/digikamapp_setup.cpp:439
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:420
+#: core/app/main/digikamapp_setup.cpp:440
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:426
+#: core/app/main/digikamapp_setup.cpp:446
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:427
+#: core/app/main/digikamapp_setup.cpp:447
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:434
+#: core/app/main/digikamapp_setup.cpp:454
 #, fuzzy, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "आयात"
 
-#: core/app/main/digikamapp_setup.cpp:441
+#: core/app/main/digikamapp_setup.cpp:461
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "गाळणी काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:452
+#: core/app/main/digikamapp_setup.cpp:472
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "गाळणी काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:463
+#: core/app/main/digikamapp_setup.cpp:483
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "प्रतिमा"
 
-#: core/app/main/digikamapp_setup.cpp:468
+#: core/app/main/digikamapp_setup.cpp:488
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "सिंक्रोनाईझ"
 
-#: core/app/main/digikamapp_setup.cpp:473
+#: core/app/main/digikamapp_setup.cpp:493
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "घटक काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:480
+#: core/app/main/digikamapp_setup.cpp:500
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:481
+#: core/app/main/digikamapp_setup.cpp:501
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:489
+#: core/app/main/digikamapp_setup.cpp:509
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "पूर्वावलोकन"
 
-#: core/app/main/digikamapp_setup.cpp:499
-#: core/utilities/imageeditor/editor/editorwindow.cpp:313
+#: core/app/main/digikamapp_setup.cpp:519
+#: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Move to Trash"
@@ -1989,76 +1998,76 @@ msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "कचरापेटीत टाका"
 
-#: core/app/main/digikamapp_setup.cpp:513
+#: core/app/main/digikamapp_setup.cpp:533
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "सर्व काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:524
+#: core/app/main/digikamapp_setup.cpp:544
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "संयोजना"
 
-#: core/app/main/digikamapp_setup.cpp:532
+#: core/app/main/digikamapp_setup.cpp:552
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "संयोजना"
 
-#: core/app/main/digikamapp_setup.cpp:539
+#: core/app/main/digikamapp_setup.cpp:559
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "घटक"
 
-#: core/app/main/digikamapp_setup.cpp:540
+#: core/app/main/digikamapp_setup.cpp:560
 #, fuzzy, kde-format
 #| msgid "Album Name"
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "अल्बम नाव"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:579
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "संचयीका"
 
-#: core/app/main/digikamapp_setup.cpp:560
+#: core/app/main/digikamapp_setup.cpp:580
 #, fuzzy, kde-format
 #| msgid "By Category"
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "विभागा प्रमाणे"
 
-#: core/app/main/digikamapp_setup.cpp:561
+#: core/app/main/digikamapp_setup.cpp:581
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "दिनांक नुरूप"
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:586
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:568
+#: core/app/main/digikamapp_setup.cpp:588
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:573
+#: core/app/main/digikamapp_setup.cpp:593
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:575
+#: core/app/main/digikamapp_setup.cpp:595
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2066,391 +2075,391 @@ msgid ""
 "sub-tags."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:580
+#: core/app/main/digikamapp_setup.cpp:600
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:582
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:608
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "घटक"
 
-#: core/app/main/digikamapp_setup.cpp:589
+#: core/app/main/digikamapp_setup.cpp:609
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:594
+#: core/app/main/digikamapp_setup.cpp:614
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "नावानुरूप"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:615
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "मार्ग"
 
-#: core/app/main/digikamapp_setup.cpp:596
+#: core/app/main/digikamapp_setup.cpp:616
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "दिनांक नुरूप"
 
-#: core/app/main/digikamapp_setup.cpp:597
+#: core/app/main/digikamapp_setup.cpp:617
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "दिनांक नुरूप"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:618
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "फाईलचा आकार"
 
-#: core/app/main/digikamapp_setup.cpp:599
-#: core/app/main/digikamapp_setup.cpp:700
+#: core/app/main/digikamapp_setup.cpp:619
+#: core/app/main/digikamapp_setup.cpp:720
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "स्वरूप"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:621
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "गुणवत्ताश्रेणी"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:622
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Pick Label"
 msgstr "लेबले"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:623
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Color Label"
 msgstr "रंग खोली"
 
-#: core/app/main/digikamapp_setup.cpp:605
+#: core/app/main/digikamapp_setup.cpp:625
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "आकारानुरूप"
 
-#: core/app/main/digikamapp_setup.cpp:606
+#: core/app/main/digikamapp_setup.cpp:626
 #, fuzzy, kde-format
 #| msgid "Orientation"
 msgctxt "@action: setup"
 msgid "By Orientation"
 msgstr "कल"
 
-#: core/app/main/digikamapp_setup.cpp:607
+#: core/app/main/digikamapp_setup.cpp:627
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
 
-#: core/app/main/digikamapp_setup.cpp:608
+#: core/app/main/digikamapp_setup.cpp:628
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@action: setup"
 msgid "By Gps Position"
 msgstr "स्थान :"
 
-#: core/app/main/digikamapp_setup.cpp:610
+#: core/app/main/digikamapp_setup.cpp:630
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "प्रतिमा"
 
-#: core/app/main/digikamapp_setup.cpp:611
+#: core/app/main/digikamapp_setup.cpp:631
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "नवीन नाव :"
 
-#: core/app/main/digikamapp_setup.cpp:612
+#: core/app/main/digikamapp_setup.cpp:632
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "स्वहस्ते"
 
-#: core/app/main/digikamapp_setup.cpp:613
+#: core/app/main/digikamapp_setup.cpp:633
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "स्वहस्ते"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:695
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "निवड"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:696
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:680
-#: core/app/main/digikamapp_setup.cpp:739
+#: core/app/main/digikamapp_setup.cpp:700
+#: core/app/main/digikamapp_setup.cpp:759
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "चढत्या क्रमाने"
 
-#: core/app/main/digikamapp_setup.cpp:682
-#: core/app/main/digikamapp_setup.cpp:741
+#: core/app/main/digikamapp_setup.cpp:702
+#: core/app/main/digikamapp_setup.cpp:761
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "उतरत्या क्रमाने"
 
-#: core/app/main/digikamapp_setup.cpp:692
+#: core/app/main/digikamapp_setup.cpp:712
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "घटक"
 
-#: core/app/main/digikamapp_setup.cpp:693
+#: core/app/main/digikamapp_setup.cpp:713
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:698
+#: core/app/main/digikamapp_setup.cpp:718
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "यादी रिकामी करा"
 
-#: core/app/main/digikamapp_setup.cpp:699
+#: core/app/main/digikamapp_setup.cpp:719
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "येथे प्रत करा (&C)"
 
-#: core/app/main/digikamapp_setup.cpp:701
+#: core/app/main/digikamapp_setup.cpp:721
 #, fuzzy, kde-format
 #| msgid "Select images"
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "प्रतिमा निवडा"
 
-#: core/app/main/digikamapp_setup.cpp:702
+#: core/app/main/digikamapp_setup.cpp:722
 #, fuzzy, kde-format
 #| msgid "Month"
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "महीना"
 
-#: core/app/main/digikamapp_setup.cpp:703
+#: core/app/main/digikamapp_setup.cpp:723
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr "दिनांक नुरूप"
 
-#: core/app/main/digikamapp_setup.cpp:734
+#: core/app/main/digikamapp_setup.cpp:754
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "निवड"
 
-#: core/app/main/digikamapp_setup.cpp:735
+#: core/app/main/digikamapp_setup.cpp:755
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:756
+#: core/app/main/digikamapp_setup.cpp:776
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: core/app/main/digikamapp_setup.cpp:763
+#: core/app/main/digikamapp_setup.cpp:783
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "निवड"
 
-#: core/app/main/digikamapp_setup.cpp:770
+#: core/app/main/digikamapp_setup.cpp:790
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "उलट निवडा"
 
-#: core/app/main/digikamapp_setup.cpp:778
+#: core/app/main/digikamapp_setup.cpp:798
 #, fuzzy, kde-format
 #| msgid "Show numbers"
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "क्रमांक दर्शवा"
 
-#: core/app/main/digikamapp_setup.cpp:809
+#: core/app/main/digikamapp_setup.cpp:829
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "झूम करा %1%%"
 
-#: core/app/main/digikamapp_setup.cpp:817
+#: core/app/main/digikamapp_setup.cpp:837
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "आयात करत आहे..."
 
-#: core/app/main/digikamapp_setup.cpp:830
+#: core/app/main/digikamapp_setup.cpp:850
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "रंग पद्धत"
 
-#: core/app/main/digikamapp_setup.cpp:848
+#: core/app/main/digikamapp_setup.cpp:868
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "शोधा..."
 
-#: core/app/main/digikamapp_setup.cpp:856
+#: core/app/main/digikamapp_setup.cpp:876
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "शोधा..."
 
-#: core/app/main/digikamapp_setup.cpp:864
+#: core/app/main/digikamapp_setup.cpp:884
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "घटक काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:874
+#: core/app/main/digikamapp_setup.cpp:894
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "संयोजना"
 
-#: core/app/main/digikamapp_setup.cpp:883
+#: core/app/main/digikamapp_setup.cpp:903
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "बदला"
 
-#: core/app/main/digikamapp_setup.cpp:890
+#: core/app/main/digikamapp_setup.cpp:910
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "प्रतिमा"
 
-#: core/app/main/digikamapp_setup.cpp:896
+#: core/app/main/digikamapp_setup.cpp:916
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:907
+#: core/app/main/digikamapp_setup.cpp:927
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "दाखल करत आहे..."
 
-#: core/app/main/digikamapp_setup.cpp:943
+#: core/app/main/digikamapp_setup.cpp:963
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "पूर्वावलोकन"
 
-#: core/app/main/digikamapp_setup.cpp:948
+#: core/app/main/digikamapp_setup.cpp:968
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "प्रतिमा"
 
-#: core/app/main/digikamapp_setup.cpp:954
+#: core/app/main/digikamapp_setup.cpp:974
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "प्रतिमा छापा"
 
-#: core/app/main/digikamapp_setup.cpp:960
+#: core/app/main/digikamapp_setup.cpp:980
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "प्रतिमा छापा"
 
-#: core/app/main/digikamapp_setup.cpp:965
+#: core/app/main/digikamapp_setup.cpp:985
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "प्रतिमा"
 
-#: core/app/main/digikamapp_setup.cpp:970
+#: core/app/main/digikamapp_setup.cpp:990
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:972
+#: core/app/main/digikamapp_setup.cpp:992
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "चिकटपट्टीवर प्रत करा"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:1011
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "शिर्षक"
 
-#: core/app/main/digikamapp_setup.cpp:996
+#: core/app/main/digikamapp_setup.cpp:1016
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "प्रणाली फॉन्ट"
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:1021
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "टॅग काढून टाका"
 
-#: core/app/main/digikamapp_setup.cpp:1010
+#: core/app/main/digikamapp_setup.cpp:1030
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "दिनांक नुरूप"
 
-#: core/app/main/digikamapp_setup.cpp:1013
+#: core/app/main/digikamapp_setup.cpp:1033
 #, fuzzy, kde-format
 #| msgctxt "normal exif orientation"
 #| msgid "Normal"
@@ -2458,115 +2467,115 @@ msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "सामान्य"
 
-#: core/app/main/digikamapp_setup.cpp:1015
+#: core/app/main/digikamapp_setup.cpp:1035
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "आडवे पलटी करा"
 
-#: core/app/main/digikamapp_setup.cpp:1017
+#: core/app/main/digikamapp_setup.cpp:1037
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "फिरवणे"
 
-#: core/app/main/digikamapp_setup.cpp:1019
+#: core/app/main/digikamapp_setup.cpp:1039
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "उभे पलटी करा"
 
-#: core/app/main/digikamapp_setup.cpp:1021
+#: core/app/main/digikamapp_setup.cpp:1041
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "उजव्या बाजूला फिरवा"
 
-#: core/app/main/digikamapp_setup.cpp:1023
+#: core/app/main/digikamapp_setup.cpp:1043
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "उजव्या बाजूला फिरवा"
 
-#: core/app/main/digikamapp_setup.cpp:1025
+#: core/app/main/digikamapp_setup.cpp:1045
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "उजव्या बाजूला फिरवा"
 
-#: core/app/main/digikamapp_setup.cpp:1027
+#: core/app/main/digikamapp_setup.cpp:1047
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "डाव्या बाजूला फिरवा"
 
-#: core/app/main/digikamapp_setup.cpp:1088
+#: core/app/main/digikamapp_setup.cpp:1108
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "फिरवा"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1114
 #, fuzzy, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "प्रखरता :"
 
-#: core/app/main/digikamapp_setup.cpp:1102
+#: core/app/main/digikamapp_setup.cpp:1122
 #, fuzzy, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "डावे"
 
-#: core/app/main/digikamapp_setup.cpp:1109
+#: core/app/main/digikamapp_setup.cpp:1129
 #, fuzzy, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "उजवे"
 
-#: core/app/main/digikamapp_setup.cpp:1119
+#: core/app/main/digikamapp_setup.cpp:1139
 #, fuzzy, kde-format
 #| msgid "Flip"
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "पलटी करा"
 
-#: core/app/main/digikamapp_setup.cpp:1123
+#: core/app/main/digikamapp_setup.cpp:1143
 #, fuzzy, kde-format
 #| msgid "Horizontally"
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "आडवे"
 
-#: core/app/main/digikamapp_setup.cpp:1130
+#: core/app/main/digikamapp_setup.cpp:1150
 #, fuzzy, kde-format
 #| msgid "Vertically"
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "उभे"
 
-#: core/app/main/digikamapp_setup.cpp:1140
+#: core/app/main/digikamapp_setup.cpp:1160
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1151
+#: core/app/main/digikamapp_setup.cpp:1171
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "दाखल करत आहे..."
 
-#: core/app/main/digikamapp_setup.cpp:1154
+#: core/app/main/digikamapp_setup.cpp:1174
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "शैली"
 
-#: core/app/main/digikamapp_setup.cpp:1170
+#: core/app/main/digikamapp_setup.cpp:1190
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2652,29 +2661,29 @@ msgstr ""
 msgid "The specified camera (\"%1\") is not supported."
 msgstr ""
 
-#: core/app/main/digikamapp_tools.cpp:32
+#: core/app/main/digikamapp_tools.cpp:29
 #, fuzzy, kde-format
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "मुख्य साधनपट्टी"
 
-#: core/app/main/digikamapp_tools.cpp:41
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
+#: core/app/main/digikamapp_tools.cpp:38
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "प्रतिमा छापा"
 
-#: core/app/main/digikamapp_tools.cpp:61
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2697
+#: core/app/main/digikamapp_tools.cpp:58
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2696
 #, fuzzy, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "निर्यात"
 
-#: core/app/main/digikamapp_tools.cpp:72
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2708
+#: core/app/main/digikamapp_tools.cpp:69
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2707
 #, fuzzy, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -2911,7 +2920,7 @@ msgstr ""
 msgid "Documentation: "
 msgstr "दस्तऐवज"
 
-#: core/app/views/preview/itempreviewview.cpp:172
+#: core/app/views/preview/itempreviewview.cpp:181
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
@@ -2919,7 +2928,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "मागे"
 
-#: core/app/views/preview/itempreviewview.cpp:174
+#: core/app/views/preview/itempreviewview.cpp:183
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
@@ -2927,43 +2936,43 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "पुढे"
 
-#: core/app/views/preview/itempreviewview.cpp:185
+#: core/app/views/preview/itempreviewview.cpp:194
 #, kde-format
 msgid "Add a Face Tag"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:190
+#: core/app/views/preview/itempreviewview.cpp:199
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:193
+#: core/app/views/preview/itempreviewview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "घटक काढून टाका"
 
-#: core/app/views/preview/itempreviewview.cpp:200
+#: core/app/views/preview/itempreviewview.cpp:209
 #, kde-format
 msgid "Show Face Tags"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
 msgid "Add a focus point"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:207
+#: core/app/views/preview/itempreviewview.cpp:216
 #, fuzzy, kde-format
 msgid "Show focus points"
 msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
 
-#: core/app/views/preview/itempreviewview.cpp:213
+#: core/app/views/preview/itempreviewview.cpp:222
 #, kde-format
 msgid "Show Fullscreen"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:508
+#: core/app/views/preview/itempreviewview.cpp:517
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, fuzzy, kde-format
 #| msgid "Select images"
@@ -10991,7 +11000,7 @@ msgstr "प्रतिमा"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:172
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1849
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1848
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@title:window"
@@ -11029,8 +11038,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2322
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2341
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -15517,7 +15526,7 @@ msgstr "गुणधर्म"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:585
+#: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action"
@@ -41364,27 +41373,27 @@ msgstr "निवडा..."
 msgid "Select a Font"
 msgstr "निवड"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:187
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:193
 #, fuzzy, kde-format
 msgid "Loading..."
 msgstr "दाखल करत आहे..."
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:196
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:202
 #, kde-format
 msgid "Embedded JPEG Preview"
 msgstr ""
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:204
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:210
 #, kde-format
 msgid "Half Size Raw Preview"
 msgstr ""
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:216
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:222
 #, kde-format
 msgid "Reduced Size Preview"
 msgstr ""
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:229
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:235
 #, kde-format
 msgid "Failed to load image"
 msgstr ""
@@ -49290,7 +49299,7 @@ msgid "Delete File"
 msgstr ""
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2368
 #, fuzzy, kde-format
 #| msgid "Select images"
 msgctxt "@title:window"
@@ -51692,7 +51701,7 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:579
+#: core/utilities/imageeditor/editor/editorwindow.cpp:578
 #, fuzzy, kde-format
 #| msgid "OK"
 msgctxt "@action"
@@ -57646,51 +57655,51 @@ msgstr "प्रयत्न करा (&T)"
 msgid "Try all settings."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:187
+#: core/utilities/imageeditor/editor/editorwindow.cpp:186
 #, fuzzy, kde-format
 #| msgid "&First"
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "पहिले (&F)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:194
+#: core/utilities/imageeditor/editor/editorwindow.cpp:193
 #, fuzzy, kde-format
 #| msgid "&Last"
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "शेवटचे (&L)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:201
+#: core/utilities/imageeditor/editor/editorwindow.cpp:200
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:213
+#: core/utilities/imageeditor/editor/editorwindow.cpp:212
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "बदल साठवा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:214
+#: core/utilities/imageeditor/editor/editorwindow.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:219
+#: core/utilities/imageeditor/editor/editorwindow.cpp:218
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:220
+#: core/utilities/imageeditor/editor/editorwindow.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:226
+#: core/utilities/imageeditor/editor/editorwindow.cpp:225
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -57698,7 +57707,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:227
+#: core/utilities/imageeditor/editor/editorwindow.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57706,161 +57715,161 @@ msgid ""
 "filename and format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:232
+#: core/utilities/imageeditor/editor/editorwindow.cpp:231
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:234
+#: core/utilities/imageeditor/editor/editorwindow.cpp:233
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:235
+#: core/utilities/imageeditor/editor/editorwindow.cpp:234
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:236
+#: core/utilities/imageeditor/editor/editorwindow.cpp:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:237
+#: core/utilities/imageeditor/editor/editorwindow.cpp:236
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:241
+#: core/utilities/imageeditor/editor/editorwindow.cpp:240
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:247
+#: core/utilities/imageeditor/editor/editorwindow.cpp:246
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:253
+#: core/utilities/imageeditor/editor/editorwindow.cpp:252
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:258
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:263
+#: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:281
+#: core/utilities/imageeditor/editor/editorwindow.cpp:280
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "निर्यात"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:282
+#: core/utilities/imageeditor/editor/editorwindow.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:291
+#: core/utilities/imageeditor/editor/editorwindow.cpp:290
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr "बदल रद्द करा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:292
+#: core/utilities/imageeditor/editor/editorwindow.cpp:291
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:305
+#: core/utilities/imageeditor/editor/editorwindow.cpp:304
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:306
+#: core/utilities/imageeditor/editor/editorwindow.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:328
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@action"
 msgid "Undo"
 msgstr "पूर्ववत करा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:358
+#: core/utilities/imageeditor/editor/editorwindow.cpp:357
 #, fuzzy, kde-format
 #| msgid "Redo"
 msgctxt "@action"
 msgid "Redo"
 msgstr "पुन्हा करा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:386
+#: core/utilities/imageeditor/editor/editorwindow.cpp:385
 #, fuzzy, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:391
+#: core/utilities/imageeditor/editor/editorwindow.cpp:390
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr "निवड"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:405
+#: core/utilities/imageeditor/editor/editorwindow.cpp:404
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "झूम करा %1%%"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:411
+#: core/utilities/imageeditor/editor/editorwindow.cpp:410
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "आयात करत आहे..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:417
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "निवड"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:423
+#: core/utilities/imageeditor/editor/editorwindow.cpp:422
 #, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:451
+#: core/utilities/imageeditor/editor/editorwindow.cpp:450
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "एक्सपोजर वेळ :"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:453
+#: core/utilities/imageeditor/editor/editorwindow.cpp:452
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57868,13 +57877,13 @@ msgid ""
 "to avoid under-exposing the image."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:461
+#: core/utilities/imageeditor/editor/editorwindow.cpp:460
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "एक्सपोजर वेळ :"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:463
+#: core/utilities/imageeditor/editor/editorwindow.cpp:462
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57882,32 +57891,32 @@ msgid ""
 "to avoid over-exposing the image."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:471
+#: core/utilities/imageeditor/editor/editorwindow.cpp:470
 #: core/utilities/import/main/importui.cpp:523
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "रंग पद्धत"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:478
+#: core/utilities/imageeditor/editor/editorwindow.cpp:477
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:483
+#: core/utilities/imageeditor/editor/editorwindow.cpp:482
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:490
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:493
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57915,41 +57924,41 @@ msgid ""
 "enable this action."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:502
+#: core/utilities/imageeditor/editor/editorwindow.cpp:501
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "आडवे पलटी करा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:510
+#: core/utilities/imageeditor/editor/editorwindow.cpp:509
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "उभे पलटी करा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:520
+#: core/utilities/imageeditor/editor/editorwindow.cpp:519
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "डाव्या बाजूला फिरवा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:528
+#: core/utilities/imageeditor/editor/editorwindow.cpp:527
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "उजव्या बाजूला फिरवा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:538
+#: core/utilities/imageeditor/editor/editorwindow.cpp:537
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "प्रखरता :"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:571
+#: core/utilities/imageeditor/editor/editorwindow.cpp:570
 #: core/utilities/import/main/importui.cpp:568
 #: core/utilities/import/main/importui.cpp:809
 #, fuzzy, kde-format
@@ -57957,25 +57966,25 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "प्रतिमा छापा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:601
+#: core/utilities/imageeditor/editor/editorwindow.cpp:600
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "(निवड नाही)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:604
+#: core/utilities/imageeditor/editor/editorwindow.cpp:603
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:609
+#: core/utilities/imageeditor/editor/editorwindow.cpp:608
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1130
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -57983,13 +57992,13 @@ msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "बदल साठवा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1132
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57997,13 +58006,13 @@ msgid ""
 "Are you sure?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1158
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1157
 #, fuzzy, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "इशारा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1268
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1267
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58011,7 +58020,7 @@ msgid ""
 "Do you want to save it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1419
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1418
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58019,26 +58028,20 @@ msgid ""
 "All changes will be lost."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1497
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1496
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "(निवड नाही)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1517
-#, fuzzy, kde-format
-msgctxt "@label"
-msgid "Loading:"
-msgstr "दाखल करत आहे..."
-
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1545
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1544
 #, fuzzy, kde-format
 #| msgid "Cannot save \"%1\" file"
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "फाईल \"%1\" साठवू शकत नाही"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1587
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1586
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58047,13 +58050,13 @@ msgid ""
 "configuration in digiKam's setup."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1643
 #, fuzzy, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "साठवित आहे"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1666
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1665
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58063,31 +58066,31 @@ msgid ""
 "\"%2\"."
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1799
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1798
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "उघडणे शक्य झाले नाही : %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1995
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1994
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2002
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2001
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2249
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2248
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58096,7 +58099,7 @@ msgid ""
 msgstr ""
 "\"%1\" नावाची फाईल आधीपासूनच अस्तित्वात आहे. तुम्हाला ती खोडून पुन्हा लिहायची आहे का?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58104,25 +58107,25 @@ msgid ""
 msgstr ""
 "\"%1\" नावाची फाईल आधीपासूनच अस्तित्वात आहे. तुम्हाला ती खोडून पुन्हा लिहायची आहे का?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "उघडणे शक्य झाले नाही : %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2453
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2458
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2457
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58130,77 +58133,77 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2493
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2508
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2601
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2600
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "स्वरूप बदला"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2624
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2623
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2634
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2646
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2645
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "रंग"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2656
 #, fuzzy, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "गाळणी"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2847
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2898
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2846
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2897
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "यामध्ये उघडा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2858
 #, fuzzy, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "इतर"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2867
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"

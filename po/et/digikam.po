@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:40+0000\n"
+"POT-Creation-Date: 2025-12-24 00:41+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -321,7 +321,7 @@ msgstr "Muuda näosilti"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:772
+#: core/app/views/preview/itempreviewview.cpp:781
 #, kde-format
 msgid "&Cancel"
 msgstr "&Loobu"
@@ -332,7 +332,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Omi&sta sildid valitud elementidele"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:770
+#: core/app/views/preview/itempreviewview.cpp:779
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Omist&a sildid sellele elemendile"
@@ -579,7 +579,7 @@ msgid "Show Fullscreen"
 msgstr "Täisekraanirežiim"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:176
+#: core/app/views/preview/itempreviewview.cpp:185
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -587,7 +587,7 @@ msgid "Rotate Left"
 msgstr "Pööra vasakule"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:178
+#: core/app/views/preview/itempreviewview.cpp:187
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1690,122 +1690,132 @@ msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
 msgstr "Kogu, mis sisaldab kataloogi \"%1\", on juba olemas"
 
-#: core/app/main/digikamapp_setup.cpp:25
+#: core/app/main/digikamapp_setup.cpp:24
 #, fuzzy, kde-format
 #| msgid "Initializing Main View..."
 msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "Põhivaate initsialiseerimine..."
 
-#: core/app/main/digikamapp_setup.cpp:136
+#: core/app/main/digikamapp_setup.cpp:64
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1516
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:420
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:443
+#, fuzzy, kde-format
+#| msgid "Loading:"
+msgctxt "@label"
+msgid "Loading:"
+msgstr "Laadimine:"
+
+#: core/app/main/digikamapp_setup.cpp:156
 #, fuzzy, kde-format
 #| msgid "&Back"
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "Ta&gasi"
 
-#: core/app/main/digikamapp_setup.cpp:161
+#: core/app/main/digikamapp_setup.cpp:181
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "Edasi"
 
-#: core/app/main/digikamapp_setup.cpp:186
+#: core/app/main/digikamapp_setup.cpp:206
 #, fuzzy, kde-format
 #| msgid "Refresh"
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "Uuenda"
 
-#: core/app/main/digikamapp_setup.cpp:187
+#: core/app/main/digikamapp_setup.cpp:207
 #, fuzzy, kde-format
 #| msgid "Refresh the current contents."
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "Aktiivse sisu värskendamine."
 
-#: core/app/main/digikamapp_setup.cpp:216
+#: core/app/main/digikamapp_setup.cpp:236
 #, fuzzy, kde-format
 #| msgid "&New..."
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Uus..."
 
-#: core/app/main/digikamapp_setup.cpp:217
+#: core/app/main/digikamapp_setup.cpp:237
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "Sellega saab luua kogus uue tühja albumi."
 
-#: core/app/main/digikamapp_setup.cpp:225
+#: core/app/main/digikamapp_setup.cpp:245
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "Liiguta albu&misse..."
 
-#: core/app/main/digikamapp_setup.cpp:226
+#: core/app/main/digikamapp_setup.cpp:246
 #, fuzzy, kde-format
 #| msgid "Move selected images into an album."
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Valitud piltide liigutamine albumisse."
 
-#: core/app/main/digikamapp_setup.cpp:233
+#: core/app/main/digikamapp_setup.cpp:253
 #, fuzzy, kde-format
 #| msgid "Copy Tags..."
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "Siltide kopeerimine..."
 
-#: core/app/main/digikamapp_setup.cpp:234
+#: core/app/main/digikamapp_setup.cpp:254
 #, fuzzy, kde-format
 #| msgid "Move selected images into an album."
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Valitud piltide liigutamine albumisse."
 
-#: core/app/main/digikamapp_setup.cpp:241
+#: core/app/main/digikamapp_setup.cpp:261
 #, fuzzy, kde-format
 #| msgid "Delete Album"
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Kustuta album"
 
-#: core/app/main/digikamapp_setup.cpp:248
-#: core/app/main/digikamapp_setup.cpp:488
+#: core/app/main/digikamapp_setup.cpp:268
+#: core/app/main/digikamapp_setup.cpp:508
 #, fuzzy, kde-format
 #| msgid "Rename..."
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Nimeta ümber..."
 
-#: core/app/main/digikamapp_setup.cpp:256
-#: core/app/main/digikamapp_setup.cpp:308
+#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:328
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Omadused"
 
-#: core/app/main/digikamapp_setup.cpp:257
+#: core/app/main/digikamapp_setup.cpp:277
 #, fuzzy, kde-format
 #| msgid "Edit album properties and collection information."
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Albumi omaduste ja kogu teabe muutmine."
 
-#: core/app/main/digikamapp_setup.cpp:265
+#: core/app/main/digikamapp_setup.cpp:285
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Files"
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Kirjuta metaandmed failidesse"
 
-#: core/app/main/digikamapp_setup.cpp:266
-#: core/app/main/digikamapp_setup.cpp:442
+#: core/app/main/digikamapp_setup.cpp:286
+#: core/app/main/digikamapp_setup.cpp:462
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates metadata of files in the current album with the contents of "
@@ -1819,15 +1829,15 @@ msgstr ""
 "See uuendab aktiivse albumi failide metaandmeid vastavalt digiKami "
 "andmebaasile (failide metaandmed kirjutatakse üle andmebaasi andmetega)."
 
-#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:296
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Files"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Loe uuesti failidest metaandmed"
 
-#: core/app/main/digikamapp_setup.cpp:277
-#: core/app/main/digikamapp_setup.cpp:453
+#: core/app/main/digikamapp_setup.cpp:297
+#: core/app/main/digikamapp_setup.cpp:473
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates the digiKam database from the metadata of the files in the "
@@ -1843,21 +1853,21 @@ msgstr ""
 "metaandmetele (andmebaasi teave kirjutatakse üle failide metaandmete "
 "teabega)."
 
-#: core/app/main/digikamapp_setup.cpp:287
+#: core/app/main/digikamapp_setup.cpp:307
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Ava failihalduris"
 
-#: core/app/main/digikamapp_setup.cpp:294
+#: core/app/main/digikamapp_setup.cpp:314
 #, fuzzy, kde-format
 #| msgid "Tag Manager"
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Sildihaldur"
 
-#: core/app/main/digikamapp_setup.cpp:301
+#: core/app/main/digikamapp_setup.cpp:321
 #, fuzzy, kde-format
 #| msgctxt "new tag"
 #| msgid "N&ew..."
@@ -1865,35 +1875,35 @@ msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "&Uus..."
 
-#: core/app/main/digikamapp_setup.cpp:315
+#: core/app/main/digikamapp_setup.cpp:335
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Kustuta"
 
-#: core/app/main/digikamapp_setup.cpp:322
+#: core/app/main/digikamapp_setup.cpp:342
 #, fuzzy, kde-format
 #| msgid "Assign Tag"
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Omista silt"
 
-#: core/app/main/digikamapp_setup.cpp:330
+#: core/app/main/digikamapp_setup.cpp:350
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Vaated"
 
-#: core/app/main/digikamapp_setup.cpp:334
+#: core/app/main/digikamapp_setup.cpp:354
 #, fuzzy, kde-format
 #| msgid "Thumbnails"
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Pisipildid"
 
-#: core/app/main/digikamapp_setup.cpp:341
+#: core/app/main/digikamapp_setup.cpp:361
 #: core/app/views/stack/itemiconview_views.cpp:303
 #, fuzzy, kde-format
 #| msgid "Preview"
@@ -1901,7 +1911,7 @@ msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Eelvaatlus"
 
-#: core/app/main/digikamapp_setup.cpp:351
+#: core/app/main/digikamapp_setup.cpp:371
 #, fuzzy, kde-format
 #| msgctxt "@action Switch to map view"
 #| msgid "Map"
@@ -1909,7 +1919,7 @@ msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "Kaart"
 
-#: core/app/main/digikamapp_setup.cpp:360
+#: core/app/main/digikamapp_setup.cpp:380
 #, fuzzy, kde-format
 #| msgctxt "@action Switch to table view"
 #| msgid "Table"
@@ -1917,98 +1927,98 @@ msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Tabel"
 
-#: core/app/main/digikamapp_setup.cpp:369
+#: core/app/main/digikamapp_setup.cpp:389
 #, fuzzy, kde-format
 #| msgid "Open..."
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Ava ..."
 
-#: core/app/main/digikamapp_setup.cpp:370
+#: core/app/main/digikamapp_setup.cpp:390
 #, fuzzy, kde-format
 #| msgid "Open the selected item."
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Valitud elemendi avamine."
 
-#: core/app/main/digikamapp_setup.cpp:376
+#: core/app/main/digikamapp_setup.cpp:396
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "Ava vaikerakendusega"
 
-#: core/app/main/digikamapp_setup.cpp:377
+#: core/app/main/digikamapp_setup.cpp:397
 #, fuzzy, kde-format
 #| msgid "Open the selected item with default assigned application."
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "Valitud elemendi avamine vaikimisi omistatud rakendusega."
 
-#: core/app/main/digikamapp_setup.cpp:383
+#: core/app/main/digikamapp_setup.cpp:403
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Pildiredaktor"
 
-#: core/app/main/digikamapp_setup.cpp:384
+#: core/app/main/digikamapp_setup.cpp:404
 #, fuzzy, kde-format
 #| msgid "Open the image editor."
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Pildiredaktori avamine."
 
-#: core/app/main/digikamapp_setup.cpp:391
+#: core/app/main/digikamapp_setup.cpp:411
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Valguslaud"
 
-#: core/app/main/digikamapp_setup.cpp:397
+#: core/app/main/digikamapp_setup.cpp:417
 #, fuzzy, kde-format
 #| msgid "Place onto Light Table"
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "Aseta valguslauale"
 
-#: core/app/main/digikamapp_setup.cpp:398
+#: core/app/main/digikamapp_setup.cpp:418
 #, fuzzy, kde-format
 #| msgid "Place the selected items on the light table thumbbar."
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "See asetab valitud elemendid valguslaua pisipildireale."
 
-#: core/app/main/digikamapp_setup.cpp:404
+#: core/app/main/digikamapp_setup.cpp:424
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "Lisa valguslauale"
 
-#: core/app/main/digikamapp_setup.cpp:405
+#: core/app/main/digikamapp_setup.cpp:425
 #, fuzzy, kde-format
 #| msgid "Add selected items to the light table thumbbar."
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "See lisab valitud elemendid valguslaua pisipildireale."
 
-#: core/app/main/digikamapp_setup.cpp:413
+#: core/app/main/digikamapp_setup.cpp:433
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Hulgi-järjekorrahaldur"
 
-#: core/app/main/digikamapp_setup.cpp:419
+#: core/app/main/digikamapp_setup.cpp:439
 #, fuzzy, kde-format
 #| msgid "Add to Current Queue"
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Lisa aktiivsele järjekorrale"
 
-#: core/app/main/digikamapp_setup.cpp:420
+#: core/app/main/digikamapp_setup.cpp:440
 #, fuzzy, kde-format
 #| msgid "Add selected items to current queue from batch manager."
 msgctxt "@info: setup"
@@ -2016,49 +2026,49 @@ msgid "Add selected items to current queue from batch manager."
 msgstr ""
 "Hulgi-järjekorrahalduri valitud elementide lisamine aktiivsesse järjekorda."
 
-#: core/app/main/digikamapp_setup.cpp:426
+#: core/app/main/digikamapp_setup.cpp:446
 #, fuzzy, kde-format
 #| msgid "Add to New Queue"
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Lisa uuele järjekorrale"
 
-#: core/app/main/digikamapp_setup.cpp:427
+#: core/app/main/digikamapp_setup.cpp:447
 #, fuzzy, kde-format
 #| msgid "Add selected items to a new queue from batch manager."
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Hulgi-järjekorrahalduri valitud elementide lisamine uude järjekorda."
 
-#: core/app/main/digikamapp_setup.cpp:434
+#: core/app/main/digikamapp_setup.cpp:454
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Import"
 
-#: core/app/main/digikamapp_setup.cpp:441
+#: core/app/main/digikamapp_setup.cpp:461
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Selected Files"
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Kirjuta metaandmed valitud failidesse"
 
-#: core/app/main/digikamapp_setup.cpp:452
+#: core/app/main/digikamapp_setup.cpp:472
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Selected Files"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Loe uuesti valitud failidest metaandmed"
 
-#: core/app/main/digikamapp_setup.cpp:463
+#: core/app/main/digikamapp_setup.cpp:483
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Uuri nägusid"
 
-#: core/app/main/digikamapp_setup.cpp:468
+#: core/app/main/digikamapp_setup.cpp:488
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Recognize faces"
@@ -2066,36 +2076,36 @@ msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Nägude äratundmine"
 
-#: core/app/main/digikamapp_setup.cpp:473
+#: core/app/main/digikamapp_setup.cpp:493
 #, fuzzy, kde-format
 #| msgid "Remove Face Tags"
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Eemalda näosildid"
 
-#: core/app/main/digikamapp_setup.cpp:480
+#: core/app/main/digikamapp_setup.cpp:500
 #, fuzzy, kde-format
 #| msgid "Find Similar..."
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Otsi sarnaseid..."
 
-#: core/app/main/digikamapp_setup.cpp:481
+#: core/app/main/digikamapp_setup.cpp:501
 #, fuzzy, kde-format
 #| msgid "Find similar images using selected item as reference."
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Sarnaste piltide otsimine valitud pildi põhjal."
 
-#: core/app/main/digikamapp_setup.cpp:489
+#: core/app/main/digikamapp_setup.cpp:509
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Sellega saab muuta parajasti valitud pildi failinime."
 
-#: core/app/main/digikamapp_setup.cpp:499
-#: core/utilities/imageeditor/editor/editorwindow.cpp:313
+#: core/app/main/digikamapp_setup.cpp:519
+#: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Move to Trash"
@@ -2104,84 +2114,84 @@ msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Viska prügikasti"
 
-#: core/app/main/digikamapp_setup.cpp:513
+#: core/app/main/digikamapp_setup.cpp:533
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Kustuta jäädavalt"
 
-#: core/app/main/digikamapp_setup.cpp:524
+#: core/app/main/digikamapp_setup.cpp:544
 #, fuzzy, kde-format
 #| msgid "Delete permanently without confirmation"
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Kustuta jäädavalt kinnitust küsimata"
 
-#: core/app/main/digikamapp_setup.cpp:532
+#: core/app/main/digikamapp_setup.cpp:552
 #, fuzzy, kde-format
 #| msgid "Move to trash without confirmation"
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Liiguta prügikasti kinnitust küsimata"
 
-#: core/app/main/digikamapp_setup.cpp:539
+#: core/app/main/digikamapp_setup.cpp:559
 #, fuzzy, kde-format
 #| msgid "&Sort Albums"
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "Albumite &sorteerimine"
 
-#: core/app/main/digikamapp_setup.cpp:540
+#: core/app/main/digikamapp_setup.cpp:560
 #, fuzzy, kde-format
 #| msgid "Sort Albums in tree-view."
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Albumite sorteerimine puuvaates."
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:579
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Kataloogi järgi"
 
-#: core/app/main/digikamapp_setup.cpp:560
+#: core/app/main/digikamapp_setup.cpp:580
 #, fuzzy, kde-format
 #| msgid "By Category"
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Kategooria järgi"
 
-#: core/app/main/digikamapp_setup.cpp:561
+#: core/app/main/digikamapp_setup.cpp:581
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Kuupäeva järgi"
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:586
 #, fuzzy, kde-format
 #| msgid "Include Album Sub-Tree"
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Kaasa arvatud alamalbumid"
 
-#: core/app/main/digikamapp_setup.cpp:568
+#: core/app/main/digikamapp_setup.cpp:588
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr "Sisselülitamisel näidatakse kõiki aktiivse albumi alamalbumeid."
 
-#: core/app/main/digikamapp_setup.cpp:573
+#: core/app/main/digikamapp_setup.cpp:593
 #, fuzzy, kde-format
 #| msgid "Include Tag Sub-Tree"
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Kaasa arvatud alamsildid"
 
-#: core/app/main/digikamapp_setup.cpp:575
+#: core/app/main/digikamapp_setup.cpp:595
 #, fuzzy, kde-format
 #| msgid ""
 #| "Activate this option to show all images marked by the given tag and all "
@@ -2193,28 +2203,28 @@ msgid ""
 msgstr ""
 "Sisselülitamisel näidatakse kõiki antud sildi ja selle alamsiltidega pilte."
 
-#: core/app/main/digikamapp_setup.cpp:580
+#: core/app/main/digikamapp_setup.cpp:600
 #, fuzzy, kde-format
 #| msgid "Show All Grouped Items As Open"
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Näita kõiki rühmitatud elemente avatuna"
 
-#: core/app/main/digikamapp_setup.cpp:582
+#: core/app/main/digikamapp_setup.cpp:602
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all grouped items as open."
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr "Sisselülitamisel näidatakse kõiki rühmitatud elemente avatuna."
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:608
 #, fuzzy, kde-format
 #| msgid "&Sort Items"
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Sordi elemente"
 
-#: core/app/main/digikamapp_setup.cpp:589
+#: core/app/main/digikamapp_setup.cpp:609
 #, fuzzy, kde-format
 #| msgid ""
 #| "The value by which the images in one album are sorted in the thumbnail "
@@ -2224,164 +2234,164 @@ msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "Väärtus, mille järgi ühe albumi pilte sorditakse pisipildivaates"
 
-#: core/app/main/digikamapp_setup.cpp:594
+#: core/app/main/digikamapp_setup.cpp:614
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Nime järgi"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:615
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Asukoha järgi"
 
-#: core/app/main/digikamapp_setup.cpp:596
+#: core/app/main/digikamapp_setup.cpp:616
 #, fuzzy, kde-format
 #| msgid "By Creation Date"
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Loomise kuupäeva järgi"
 
-#: core/app/main/digikamapp_setup.cpp:597
+#: core/app/main/digikamapp_setup.cpp:617
 #, fuzzy, kde-format
 #| msgid "By Modification Date"
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Muutmise kuupäeva järgi"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:618
 #, fuzzy, kde-format
 #| msgid "By File Size"
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Failisuuruse järgi"
 
-#: core/app/main/digikamapp_setup.cpp:599
-#: core/app/main/digikamapp_setup.cpp:700
+#: core/app/main/digikamapp_setup.cpp:619
+#: core/app/main/digikamapp_setup.cpp:720
 #, fuzzy, kde-format
 #| msgid "By Format"
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Vormingu järgi"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:621
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Hinnangu järgi"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:622
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgctxt "@action: setup"
 msgid "By Pick Label"
 msgstr "Valikumärgis: "
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:623
 #, fuzzy, kde-format
 #| msgid "Color Label:"
 msgctxt "@action: setup"
 msgid "By Color Label"
 msgstr "Värvimärgis: "
 
-#: core/app/main/digikamapp_setup.cpp:605
+#: core/app/main/digikamapp_setup.cpp:625
 #, fuzzy, kde-format
 #| msgid "By Image Size"
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Pildisuuruse järgi"
 
-#: core/app/main/digikamapp_setup.cpp:606
+#: core/app/main/digikamapp_setup.cpp:626
 #, fuzzy, kde-format
 #| msgid "Any Orientation"
 msgctxt "@action: setup"
 msgid "By Orientation"
 msgstr "Suvaline orientatsioon"
 
-#: core/app/main/digikamapp_setup.cpp:607
+#: core/app/main/digikamapp_setup.cpp:627
 #, fuzzy, kde-format
 #| msgid "By Aspect Ratio"
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Proportsiooni järgi"
 
-#: core/app/main/digikamapp_setup.cpp:608
+#: core/app/main/digikamapp_setup.cpp:628
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@action: setup"
 msgid "By Gps Position"
 msgstr "Amet:"
 
-#: core/app/main/digikamapp_setup.cpp:610
+#: core/app/main/digikamapp_setup.cpp:630
 #, fuzzy, kde-format
 #| msgid "Image type"
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Pildi tüüp"
 
-#: core/app/main/digikamapp_setup.cpp:611
+#: core/app/main/digikamapp_setup.cpp:631
 #, fuzzy, kde-format
 #| msgid "By Similarity"
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Sarnasuse järgi"
 
-#: core/app/main/digikamapp_setup.cpp:612
+#: core/app/main/digikamapp_setup.cpp:632
 #, fuzzy, kde-format
 #| msgid "By Manual and Name"
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Käsitsi ja nime järgi"
 
-#: core/app/main/digikamapp_setup.cpp:613
+#: core/app/main/digikamapp_setup.cpp:633
 #, fuzzy, kde-format
 #| msgid "By Manual and Date"
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Käsitsi ja kuupäeva järgi"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:695
 #, fuzzy, kde-format
 #| msgid "Item Sort &Order"
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Elementide s&ortimise järjekord"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:696
 #, fuzzy, kde-format
 #| msgid "Defines whether images are sorted in ascending or descending manner."
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Määrab, kas pildid sorditakse kasvavas või kahanevas järjekorras."
 
-#: core/app/main/digikamapp_setup.cpp:680
-#: core/app/main/digikamapp_setup.cpp:739
+#: core/app/main/digikamapp_setup.cpp:700
+#: core/app/main/digikamapp_setup.cpp:759
 #, fuzzy, kde-format
 #| msgid "Ascending"
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Kasvav"
 
-#: core/app/main/digikamapp_setup.cpp:682
-#: core/app/main/digikamapp_setup.cpp:741
+#: core/app/main/digikamapp_setup.cpp:702
+#: core/app/main/digikamapp_setup.cpp:761
 #, fuzzy, kde-format
 #| msgid "Descending"
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Kahanev"
 
-#: core/app/main/digikamapp_setup.cpp:692
+#: core/app/main/digikamapp_setup.cpp:712
 #, fuzzy, kde-format
 #| msgid "Shared Items"
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Jagatud elemendid"
 
-#: core/app/main/digikamapp_setup.cpp:693
+#: core/app/main/digikamapp_setup.cpp:713
 #, fuzzy, kde-format
 #| msgid ""
 #| "The categories in which the images in the thumbnail view are displayed"
@@ -2389,41 +2399,41 @@ msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Kategooriad, mille järgi kuvatakse pisipildivaates pilte"
 
-#: core/app/main/digikamapp_setup.cpp:698
+#: core/app/main/digikamapp_setup.cpp:718
 #, fuzzy, kde-format
 #| msgid "Flat List"
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Ühtlane nimekiri"
 
-#: core/app/main/digikamapp_setup.cpp:699
+#: core/app/main/digikamapp_setup.cpp:719
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Albumi järgi"
 
-#: core/app/main/digikamapp_setup.cpp:701
+#: core/app/main/digikamapp_setup.cpp:721
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Tühista kõik valikud"
 
-#: core/app/main/digikamapp_setup.cpp:702
+#: core/app/main/digikamapp_setup.cpp:722
 #, fuzzy, kde-format
 #| msgid "By Month"
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Kuu järgi"
 
-#: core/app/main/digikamapp_setup.cpp:703
+#: core/app/main/digikamapp_setup.cpp:723
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr "Kuupäeva järgi"
 
-#: core/app/main/digikamapp_setup.cpp:734
+#: core/app/main/digikamapp_setup.cpp:754
 #, fuzzy, kde-format
 #| msgctxt "@title:inmenu"
 #| msgid "Item Sorting &Order"
@@ -2431,265 +2441,265 @@ msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Elementide s&ortimise järjekord"
 
-#: core/app/main/digikamapp_setup.cpp:735
+#: core/app/main/digikamapp_setup.cpp:755
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:756
+#: core/app/main/digikamapp_setup.cpp:776
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: core/app/main/digikamapp_setup.cpp:763
+#: core/app/main/digikamapp_setup.cpp:783
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Tühista kõik valikud"
 
-#: core/app/main/digikamapp_setup.cpp:770
+#: core/app/main/digikamapp_setup.cpp:790
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Vaheta valik"
 
-#: core/app/main/digikamapp_setup.cpp:778
+#: core/app/main/digikamapp_setup.cpp:798
 #, fuzzy, kde-format
 #| msgid "Show Thumbbar"
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Näita pisipildiriba"
 
-#: core/app/main/digikamapp_setup.cpp:809
+#: core/app/main/digikamapp_setup.cpp:829
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Suurendus 100%"
 
-#: core/app/main/digikamapp_setup.cpp:817
+#: core/app/main/digikamapp_setup.cpp:837
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "So&bita aknasse"
 
-#: core/app/main/digikamapp_setup.cpp:830
+#: core/app/main/digikamapp_setup.cpp:850
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Värvihalduse vaade"
 
-#: core/app/main/digikamapp_setup.cpp:848
+#: core/app/main/digikamapp_setup.cpp:868
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Otsing..."
 
-#: core/app/main/digikamapp_setup.cpp:856
+#: core/app/main/digikamapp_setup.cpp:876
 #, fuzzy, kde-format
 #| msgid "Advanced Search..."
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Täpsem otsing..."
 
-#: core/app/main/digikamapp_setup.cpp:864
+#: core/app/main/digikamapp_setup.cpp:884
 #, fuzzy, kde-format
 #| msgid "Find Duplicates..."
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Topeltpiltide otsimine..."
 
-#: core/app/main/digikamapp_setup.cpp:874
+#: core/app/main/digikamapp_setup.cpp:894
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Andmebaasi migreerimine..."
 
-#: core/app/main/digikamapp_setup.cpp:883
+#: core/app/main/digikamapp_setup.cpp:903
 #, fuzzy, kde-format
 #| msgid "Maintenance..."
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Hooldus..."
 
-#: core/app/main/digikamapp_setup.cpp:890
+#: core/app/main/digikamapp_setup.cpp:910
 #, fuzzy, kde-format
 #| msgid "Scan for new items"
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Uute elementide otsimine"
 
-#: core/app/main/digikamapp_setup.cpp:896
+#: core/app/main/digikamapp_setup.cpp:916
 #, fuzzy, kde-format
 #| msgid "Add Camera Manually..."
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Lisa kaamera käsitsi..."
 
-#: core/app/main/digikamapp_setup.cpp:907
+#: core/app/main/digikamapp_setup.cpp:927
 #, fuzzy, kde-format
 #| msgid "Loading cameras..."
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Kaamerate laadimine..."
 
-#: core/app/main/digikamapp_setup.cpp:943
+#: core/app/main/digikamapp_setup.cpp:963
 #, fuzzy, kde-format
 #| msgid "Exit Preview Mode"
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Väljumine eelvaatlusrežiimist"
 
-#: core/app/main/digikamapp_setup.cpp:948
+#: core/app/main/digikamapp_setup.cpp:968
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Järgmine pilt"
 
-#: core/app/main/digikamapp_setup.cpp:954
+#: core/app/main/digikamapp_setup.cpp:974
 #, fuzzy, kde-format
 #| msgid "Previous Image"
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Eelmine pilt"
 
-#: core/app/main/digikamapp_setup.cpp:960
+#: core/app/main/digikamapp_setup.cpp:980
 #, fuzzy, kde-format
 #| msgid "First Image"
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Esimene pilt"
 
-#: core/app/main/digikamapp_setup.cpp:965
+#: core/app/main/digikamapp_setup.cpp:985
 #, fuzzy, kde-format
 #| msgid "Last Image"
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Viimane pilt"
 
-#: core/app/main/digikamapp_setup.cpp:970
+#: core/app/main/digikamapp_setup.cpp:990
 #, fuzzy, kde-format
 #| msgid "Cu&t"
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "&Lõika"
 
-#: core/app/main/digikamapp_setup.cpp:972
+#: core/app/main/digikamapp_setup.cpp:992
 #, fuzzy, kde-format
 #| msgid "Cut selection to clipboard"
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Valiku lõikamine lõikepuhvrisse"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:1011
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Muuda pealkirju"
 
-#: core/app/main/digikamapp_setup.cpp:996
+#: core/app/main/digikamapp_setup.cpp:1016
 #, fuzzy, kde-format
 #| msgid "Edit Comments"
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Muuda kommentaare"
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:1021
 #, fuzzy, kde-format
 #| msgid "Show Assigned Tags"
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Näita omistatud silte"
 
-#: core/app/main/digikamapp_setup.cpp:1010
+#: core/app/main/digikamapp_setup.cpp:1030
 #, fuzzy, kde-format
 #| msgid "Adjust Exif Orientation Tag"
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Korrigeeri EXIF-i orientatsioonisilti"
 
-#: core/app/main/digikamapp_setup.cpp:1013
+#: core/app/main/digikamapp_setup.cpp:1033
 #, fuzzy, kde-format
 #| msgid "Normal"
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Tavaline"
 
-#: core/app/main/digikamapp_setup.cpp:1015
+#: core/app/main/digikamapp_setup.cpp:1035
 #, fuzzy, kde-format
 #| msgid "Flipped Horizontally"
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Peegeldatud horisontaalselt"
 
-#: core/app/main/digikamapp_setup.cpp:1017
+#: core/app/main/digikamapp_setup.cpp:1037
 #, fuzzy, kde-format
 #| msgid "Rotated Upside Down"
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Pööratud pea peale"
 
-#: core/app/main/digikamapp_setup.cpp:1019
+#: core/app/main/digikamapp_setup.cpp:1039
 #, fuzzy, kde-format
 #| msgid "Flipped Vertically"
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Peegeldatud vertikaalselt"
 
-#: core/app/main/digikamapp_setup.cpp:1021
+#: core/app/main/digikamapp_setup.cpp:1041
 #, fuzzy, kde-format
 #| msgid "Rotated Right / Horiz. Flipped"
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Pööratud paremale / peegeldatud horisontaalselt"
 
-#: core/app/main/digikamapp_setup.cpp:1023
+#: core/app/main/digikamapp_setup.cpp:1043
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Pööratud paremale"
 
-#: core/app/main/digikamapp_setup.cpp:1025
+#: core/app/main/digikamapp_setup.cpp:1045
 #, fuzzy, kde-format
 #| msgid "Rotated Right / Vert. Flipped"
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Pööratud paremale / peegeldatud vertikaalselt"
 
-#: core/app/main/digikamapp_setup.cpp:1027
+#: core/app/main/digikamapp_setup.cpp:1047
 #, fuzzy, kde-format
 #| msgid "Rotated Left"
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Pööratud vasakule"
 
-#: core/app/main/digikamapp_setup.cpp:1088
+#: core/app/main/digikamapp_setup.cpp:1108
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Pööramine"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1114
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Automaatne pööramine"
 
-#: core/app/main/digikamapp_setup.cpp:1102
+#: core/app/main/digikamapp_setup.cpp:1122
 #, fuzzy, kde-format
 #| msgctxt "rotate image left"
 #| msgid "Left"
@@ -2697,7 +2707,7 @@ msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Vasakule"
 
-#: core/app/main/digikamapp_setup.cpp:1109
+#: core/app/main/digikamapp_setup.cpp:1129
 #, fuzzy, kde-format
 #| msgctxt "rotate image right"
 #| msgid "Right"
@@ -2705,49 +2715,49 @@ msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Paremale"
 
-#: core/app/main/digikamapp_setup.cpp:1119
+#: core/app/main/digikamapp_setup.cpp:1139
 #, fuzzy, kde-format
 #| msgid "Flip"
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Peegeldamine"
 
-#: core/app/main/digikamapp_setup.cpp:1123
+#: core/app/main/digikamapp_setup.cpp:1143
 #, fuzzy, kde-format
 #| msgid "Horizontally"
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Rõhtsuunas"
 
-#: core/app/main/digikamapp_setup.cpp:1130
+#: core/app/main/digikamapp_setup.cpp:1150
 #, fuzzy, kde-format
 #| msgid "Vertically"
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Püstsuunas"
 
-#: core/app/main/digikamapp_setup.cpp:1140
+#: core/app/main/digikamapp_setup.cpp:1160
 #, fuzzy, kde-format
 #| msgid "Auto Rotate/Flip Using Exif Information"
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Automaatne pööramine EXIF info põhjal"
 
-#: core/app/main/digikamapp_setup.cpp:1151
+#: core/app/main/digikamapp_setup.cpp:1171
 #, fuzzy, kde-format
 #| msgid "Loading themes..."
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Teemade laadimine..."
 
-#: core/app/main/digikamapp_setup.cpp:1154
+#: core/app/main/digikamapp_setup.cpp:1174
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Teemad"
 
-#: core/app/main/digikamapp_setup.cpp:1170
+#: core/app/main/digikamapp_setup.cpp:1190
 #, fuzzy, kde-format
 #| msgid "Loading tools..."
 msgctxt "@info: setup"
@@ -2834,28 +2844,28 @@ msgstr "Määratud seade (\"%1\") ei ole korrektne."
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "Määratud kaamera (\"%1\") ei ole toetatud."
 
-#: core/app/main/digikamapp_tools.cpp:32
+#: core/app/main/digikamapp_tools.cpp:29
 #, kde-format
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "Põhitööriistad"
 
-#: core/app/main/digikamapp_tools.cpp:41
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
+#: core/app/main/digikamapp_tools.cpp:38
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Järeltöötlus"
 
-#: core/app/main/digikamapp_tools.cpp:61
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2697
+#: core/app/main/digikamapp_tools.cpp:58
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2696
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Eksport"
 
-#: core/app/main/digikamapp_tools.cpp:72
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2708
+#: core/app/main/digikamapp_tools.cpp:69
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2707
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -3105,7 +3115,7 @@ msgstr ""
 msgid "Documentation: "
 msgstr "Dokumentatsioon"
 
-#: core/app/views/preview/itempreviewview.cpp:172
+#: core/app/views/preview/itempreviewview.cpp:181
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
@@ -3113,7 +3123,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "Tagasi"
 
-#: core/app/views/preview/itempreviewview.cpp:174
+#: core/app/views/preview/itempreviewview.cpp:183
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
@@ -3121,44 +3131,44 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "Edasi"
 
-#: core/app/views/preview/itempreviewview.cpp:185
+#: core/app/views/preview/itempreviewview.cpp:194
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "Lisa näosilt..."
 
-#: core/app/views/preview/itempreviewview.cpp:190
+#: core/app/views/preview/itempreviewview.cpp:199
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "Kõigi nägude eemaldamine pildilt"
 
-#: core/app/views/preview/itempreviewview.cpp:193
+#: core/app/views/preview/itempreviewview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Mark As Face Tag"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Märgi näosildina"
 
-#: core/app/views/preview/itempreviewview.cpp:200
+#: core/app/views/preview/itempreviewview.cpp:209
 #, kde-format
 msgid "Show Face Tags"
 msgstr "Näosiltide näitamine"
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
 msgid "Add a focus point"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:207
+#: core/app/views/preview/itempreviewview.cpp:216
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgid "Show focus points"
 msgstr "Uusimate näitamine esimesena"
 
-#: core/app/views/preview/itempreviewview.cpp:213
+#: core/app/views/preview/itempreviewview.cpp:222
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "Täisekraanirežiim"
 
-#: core/app/views/preview/itempreviewview.cpp:508
+#: core/app/views/preview/itempreviewview.cpp:517
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
@@ -12458,7 +12468,7 @@ msgstr "Piltide skannimine"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:172
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1849
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1848
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title:window"
@@ -12501,8 +12511,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2322
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2341
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -17420,7 +17430,7 @@ msgstr "Kuupäeva ja kellaaja kohendamine"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:585
+#: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action"
@@ -46038,27 +46048,27 @@ msgstr "Vali..."
 msgid "Select a Font"
 msgstr "Kuu valimine"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:187
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:193
 #, kde-format
 msgid "Loading..."
 msgstr "Laadimine..."
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:196
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:202
 #, kde-format
 msgid "Embedded JPEG Preview"
 msgstr "Põimitud JPEG eelvaatlus"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:204
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:210
 #, kde-format
 msgid "Half Size Raw Preview"
 msgstr "Vähendatud suurusega toorfaili eelvaatlus"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:216
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:222
 #, kde-format
 msgid "Reduced Size Preview"
 msgstr "Vähendatud suurusega eelvaatlus"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:229
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:235
 #, kde-format
 msgid "Failed to load image"
 msgstr "Pildi laadimine nurjus"
@@ -54377,7 +54387,7 @@ msgid "Delete File"
 msgstr "Kustuta fail"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2368
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
@@ -57012,7 +57022,7 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:579
+#: core/utilities/imageeditor/editor/editorwindow.cpp:578
 #, fuzzy, kde-format
 #| msgid "OK"
 msgctxt "@action"
@@ -63419,51 +63429,51 @@ msgstr "Proovi"
 msgid "Try all settings."
 msgstr "Võimaldab proovida kõiki seadistusi."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:187
+#: core/utilities/imageeditor/editor/editorwindow.cpp:186
 #, fuzzy, kde-format
 #| msgid "&First"
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "&Esimene"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:194
+#: core/utilities/imageeditor/editor/editorwindow.cpp:193
 #, fuzzy, kde-format
 #| msgid "&Last"
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "&Viimane"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:201
+#: core/utilities/imageeditor/editor/editorwindow.cpp:200
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr "Ava originaal"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:213
+#: core/utilities/imageeditor/editor/editorwindow.cpp:212
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "Salvesta muudatused"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:214
+#: core/utilities/imageeditor/editor/editorwindow.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr "Muudatuste salvestamine faili aktiivsesse versiooni"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:219
+#: core/utilities/imageeditor/editor/editorwindow.cpp:218
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr "Salvesta uue versioonina"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:220
+#: core/utilities/imageeditor/editor/editorwindow.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr "Aktiivsete muudatuste salvestamine faili uude versiooni"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:226
+#: core/utilities/imageeditor/editor/editorwindow.cpp:225
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -63471,7 +63481,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr "Salvesta uus versioon kui..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:227
+#: core/utilities/imageeditor/editor/editorwindow.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -63481,154 +63491,154 @@ msgstr ""
 "Aktiivsete muudatuste salvestamine faili uude versiooni, määrates failinime "
 "ja vormingu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:232
+#: core/utilities/imageeditor/editor/editorwindow.cpp:231
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "Salvesta vormingus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:234
+#: core/utilities/imageeditor/editor/editorwindow.cpp:233
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:235
+#: core/utilities/imageeditor/editor/editorwindow.cpp:234
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:236
+#: core/utilities/imageeditor/editor/editorwindow.cpp:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:237
+#: core/utilities/imageeditor/editor/editorwindow.cpp:236
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:241
+#: core/utilities/imageeditor/editor/editorwindow.cpp:240
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:247
+#: core/utilities/imageeditor/editor/editorwindow.cpp:246
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:253
+#: core/utilities/imageeditor/editor/editorwindow.cpp:252
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:258
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:263
+#: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:281
+#: core/utilities/imageeditor/editor/editorwindow.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "Ekspordi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:282
+#: core/utilities/imageeditor/editor/editorwindow.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr "Faili salvestamine kataloogi väljaspool kogu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:291
+#: core/utilities/imageeditor/editor/editorwindow.cpp:290
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr "Unusta muudatused"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:292
+#: core/utilities/imageeditor/editor/editorwindow.cpp:291
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr "Kõigi faili aktiivsete muudatuste unustamine"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:305
+#: core/utilities/imageeditor/editor/editorwindow.cpp:304
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "Ava vaikerakendusega"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:306
+#: core/utilities/imageeditor/editor/editorwindow.cpp:305
 #, fuzzy, kde-format
 #| msgid "Open the item with default assigned application."
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr "See avab valitud elemendi vaikimisi omistatud rakendusega."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:328
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@action"
 msgid "Undo"
 msgstr "Võta tagasi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:358
+#: core/utilities/imageeditor/editor/editorwindow.cpp:357
 #, fuzzy, kde-format
 #| msgid "Redo"
 msgctxt "@action"
 msgid "Redo"
 msgstr "Tee uuesti"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:386
+#: core/utilities/imageeditor/editor/editorwindow.cpp:385
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:391
+#: core/utilities/imageeditor/editor/editorwindow.cpp:390
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action"
 msgid "Select None"
 msgstr "Tühista kõik valikud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:405
+#: core/utilities/imageeditor/editor/editorwindow.cpp:404
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "Suurendus 100%"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:411
+#: core/utilities/imageeditor/editor/editorwindow.cpp:410
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "So&bita aknasse"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:417
 #, fuzzy, kde-format
 #| msgid "Fit to &Selection"
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "&Sobita valikuga"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:423
+#: core/utilities/imageeditor/editor/editorwindow.cpp:422
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to zoom the image to the current selection area."
@@ -63637,14 +63647,14 @@ msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr "See võimaldab pilti suurendada valitud ala suuruseks."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:451
+#: core/utilities/imageeditor/editor/editorwindow.cpp:450
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Alasärituse indikaator"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:453
+#: core/utilities/imageeditor/editor/editorwindow.cpp:452
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display black overlaid on the image. This will help "
@@ -63656,14 +63666,14 @@ msgid ""
 msgstr ""
 "Selle valimisel tähistatakse sihtpildi eelvaatlusel alasäritusega pikslid."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:461
+#: core/utilities/imageeditor/editor/editorwindow.cpp:460
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Ülesärituse indikaator"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:463
+#: core/utilities/imageeditor/editor/editorwindow.cpp:462
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display white overlaid on the image. This will help "
@@ -63675,7 +63685,7 @@ msgid ""
 msgstr ""
 "Selle valimisel tähistatakse sihtpildi eelvaatlusel ülesäritusega pikslid."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:471
+#: core/utilities/imageeditor/editor/editorwindow.cpp:470
 #: core/utilities/import/main/importui.cpp:523
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
@@ -63683,27 +63693,27 @@ msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Värvihalduse vaade"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:478
+#: core/utilities/imageeditor/editor/editorwindow.cpp:477
 #, fuzzy, kde-format
 #| msgid "Soft Proofing Options..."
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Väljundvaate valikud..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:483
+#: core/utilities/imageeditor/editor/editorwindow.cpp:482
 #, fuzzy, kde-format
 #| msgid "Soft Proofing View"
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Väljundvaade"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:490
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "Kärbi valikuni"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:493
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to crop the image. Select a region of the image "
@@ -63714,21 +63724,21 @@ msgid ""
 "enable this action."
 msgstr "See võimaldab pilti kärpida. Selleks tuleb valida vajalik piirkond."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:502
+#: core/utilities/imageeditor/editor/editorwindow.cpp:501
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Peegeldamine horisontaalselt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:510
+#: core/utilities/imageeditor/editor/editorwindow.cpp:509
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Peegeldamine vertikaalselt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:520
+#: core/utilities/imageeditor/editor/editorwindow.cpp:519
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
@@ -63736,7 +63746,7 @@ msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Pööramine vasakule"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:528
+#: core/utilities/imageeditor/editor/editorwindow.cpp:527
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
@@ -63744,14 +63754,14 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Pööramine paremale"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:538
+#: core/utilities/imageeditor/editor/editorwindow.cpp:537
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Automaatne pööramine"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:571
+#: core/utilities/imageeditor/editor/editorwindow.cpp:570
 #: core/utilities/import/main/importui.cpp:568
 #: core/utilities/import/main/importui.cpp:809
 #, kde-format
@@ -63759,42 +63769,42 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Eelmine pilt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:601
+#: core/utilities/imageeditor/editor/editorwindow.cpp:600
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@label"
 msgid "No selection"
 msgstr "Valik puudub"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:604
+#: core/utilities/imageeditor/editor/editorwindow.cpp:603
 #, fuzzy, kde-format
 #| msgid "Information about current image selection"
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Teave praegu valitud piltide kohta"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:609
+#: core/utilities/imageeditor/editor/editorwindow.cpp:608
 #, fuzzy, kde-format
 #| msgid "Information about image size"
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Teave pildi suuruse kohta"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1130
 #, fuzzy, kde-format
 #| msgid "Saving image..."
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Pildi salvestamine..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1132
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
 #, fuzzy, kde-format
 #| msgid "Please wait for the image to be saved..."
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Palun oota, kuni pilti salvestatakse..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
 #, fuzzy, kde-format
 #| msgid ""
 #| "About to overwrite file \"%1\"\n"
@@ -63807,14 +63817,14 @@ msgstr ""
 "Kavatsed kirjutada üle faili \"%1\"\n"
 "Kas oled kindel?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1158
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1157
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Hoiatus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1268
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1267
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -63826,7 +63836,7 @@ msgid ""
 "Do you want to save it?"
 msgstr "<qt>Pilti <b>%1</b> on muudetud.<br/>Kas salvestada see?</qt>"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1419
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1418
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "The image <b>%1</b> has been modified.<br/>All changes will be lost."
@@ -63836,28 +63846,21 @@ msgid ""
 "All changes will be lost."
 msgstr "Pilti <b>%1</b> on muudetud.<br/>Kõik muudatused lähevad kaotsi."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1497
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1496
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "Valik puudub"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1517
-#, fuzzy, kde-format
-#| msgid "Loading:"
-msgctxt "@label"
-msgid "Loading:"
-msgstr "Laadimine:"
-
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1545
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1544
 #, fuzzy, kde-format
 #| msgid "Cannot load \"%1\""
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "\"%1\" laadimine nurjus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1587
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1586
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot open the specified working space profile (\"%1\"). No color "
@@ -63872,14 +63875,14 @@ msgstr ""
 "Määratud tööruumi profiili (\"%1\") avamine nurjus. Värviteisendust ei "
 "kasutata. Palun kontrolli digiKami seadistustedialoogis värvihalduse osa."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1643
 #, fuzzy, kde-format
 #| msgid "Saving:"
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Salvestamine:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1666
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1665
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -63898,28 +63901,28 @@ msgstr ""
 "salvestamine asukohta\n"
 "\"%2\" nurjus."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1799
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1798
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Ajutise faili avamine kataloogis \"%1\" nurjus: %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1995
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1994
 #, fuzzy, kde-format
 #| msgid "Unable to determine the format to save the target image with."
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "Vormingu tuvastamine, millesse sihtpilt salvestada, nurjus."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2002
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2001
 #, fuzzy, kde-format
 #| msgid "Cannot Save: Found file path <b>%1</b> is invalid."
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "Salvestamine nurjus: faili asukoht <b>%1</b> on vigane."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2249
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2248
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -63929,7 +63932,7 @@ msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "Faili <b>%1</b> salvestamine pakutud versiooni failinimega <b>%2</b> nurjus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #, fuzzy, kde-format
 #| msgid ""
 #| "You do not have write permissions for the file named \"%1\". Are you sure "
@@ -63941,7 +63944,7 @@ msgid ""
 msgstr ""
 "Sul puudub faili nimega \"%1\" kirjutamisõigus. Kas tõesti see üle kirjutada?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -63950,28 +63953,28 @@ msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Fail nimega \"%1\" on juba olemas. Kas tõesti see üle kirjutada?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
 #, fuzzy, kde-format
 #| msgid "Failed to overwrite original file"
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Algse faili ülekirjutamine nurjus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
 #, fuzzy, kde-format
 #| msgid "Color-Managed View is enabled."
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Värvihalduse vaade on lubatud."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2453
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
 #, fuzzy, kde-format
 #| msgid "Color-Managed View is disabled."
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Värvihalduse vaade on keelatud."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2458
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2457
 #, fuzzy, kde-format
 #| msgid ""
 #| "Color Management is not configured, so the Color-Managed View is not "
@@ -63983,80 +63986,80 @@ msgid ""
 msgstr ""
 "Värvihaldust pole seadistatud, seepärast ei saa kasutada värvihalduse vaadet."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2493
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Alasärituse indikaator lubatud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Alasärituse indikaator keelatud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2508
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Ülesärituse indikaator lubatud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Ülesärituse indikaator keelatud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2601
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2600
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Teisendamine"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2624
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2623
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Dekoor"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2634
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Efektid"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2646
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2645
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Värvid"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2656
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Parandamine"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2847
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2898
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2846
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2897
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "Ava rakendusega"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2858
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Muu..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2867
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"
