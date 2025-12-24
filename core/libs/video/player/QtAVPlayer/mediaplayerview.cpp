@@ -23,7 +23,6 @@
 #include <QPushButton>
 #include <QFileInfo>
 #include <QToolBar>
-#include <QAction>
 #include <QSlider>
 #include <QLabel>
 #include <QFrame>
@@ -185,15 +184,18 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     const int spacing      = layoutSpacing();
 
-
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
                                          i18nc("go to previous image", "Back"),   this);
+    d->prevAction->setObjectName(QLatin1String("back"));
     d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
                                          i18nc("go to next image", "Forward"),    this);
+    d->nextAction->setObjectName(QLatin1String("next"));
     d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                          i18nc("pause/play video", "Pause/Play"), this);
+    d->playAction->setObjectName(QLatin1String("play"));
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                          i18nc("capture video frame", "Capture"), this);
+    d->grabAction->setObjectName(QLatin1String("grab"));
 
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
@@ -317,6 +319,14 @@ MediaPlayerView::~MediaPlayerView()
 {
     escapePreview();
     delete d;
+}
+
+QList<QAction*> MediaPlayerView::actionsList() const
+{
+    return QList<QAction*>() << d->prevAction
+                             << d->nextAction
+                             << d->playAction
+                             << d->grabAction;
 }
 
 void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)

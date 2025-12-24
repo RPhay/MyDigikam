@@ -20,6 +20,8 @@
 #include <QEvent>
 #include <QUrl>
 #include <QMediaPlayer>
+#include <QAction>
+#include <QList>
 
 // Local includes
 
@@ -47,6 +49,8 @@ public:
     void reload();
 
     void setToolbarExtraWidget(QWidget* const extra);
+
+    QList<QAction*> actionsList() const;
 
 Q_SIGNALS:
 

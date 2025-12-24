@@ -40,6 +40,7 @@ private Q_SLOTS:
     void slotAssignRating(int rating);
     void slotAssignPickLabel(int pickId);
     void slotAssignColorLabel(int colorId);
+    void slotContextMenu();
 
 private:
 

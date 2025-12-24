@@ -25,7 +25,6 @@
 #include <QToolButton>
 #include <QFileInfo>
 #include <QToolBar>
-#include <QAction>
 #include <QSlider>
 #include <QLabel>
 #include <QFrame>
@@ -285,16 +284,21 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
                                          i18nc("go to previous image", "Back"),           this);
+    d->prevAction->setObjectName(QLatin1String("back"));
     d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
                                          i18nc("go to next image", "Forward"),            this);
+    d->nextAction->setObjectName(QLatin1String("next"));
     d->backAction          = new QAction(QIcon::fromTheme(QLatin1String("media-seek-backward")),
                                          i18nc("video frame backward", "Frame Backward"), this);
     d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                          i18nc("pause/play video", "Pause/Play"),         this);
+    d->playAction->setObjectName(QLatin1String("play"));
     d->forwAction          = new QAction(QIcon::fromTheme(QLatin1String("media-seek-forward")),
                                          i18nc("video frame forward", "Frame Forward"),   this);
+    d->forwAction->setObjectName(QLatin1String("forw"));
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                          i18nc("capture video frame", "Capture"),         this);
+    d->grabAction->setObjectName(QLatin1String("grab"));
 
     d->rateButton          = new QToolButton(this);
     d->rateButton->setToolTip(i18nc("@info", "Change video playback rate"));
@@ -525,6 +529,15 @@ MediaPlayerView::~MediaPlayerView()
     d->player->setSource(QUrl());
 
     delete d;
+}
+
+QList<QAction*> MediaPlayerView::actionsList() const
+{
+    return QList<QAction*>() << d->prevAction
+                             << d->nextAction
+                             << d->playAction
+                             << d->forwAction
+                             << d->grabAction;
 }
 
 void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)

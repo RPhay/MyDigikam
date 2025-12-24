@@ -43,6 +43,7 @@
 #include "colorlabelwidget.h"
 #include "picklabelwidget.h"
 #include "fileactionmngr.h"
+#include "contextmenuhelper.h"
 
 namespace Digikam
 {
@@ -54,7 +55,6 @@ public:
     Private() = default;
 
 public:
-
 
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
@@ -69,6 +69,7 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
 {
     setObjectName(QLatin1String("main_media_player"));
     setInfoInterface(new DBInfoIface(this, QList<QUrl>()));
+    setContextMenuPolicy(Qt::CustomContextMenu);
 
     QString btnStyleSheet       = QLatin1String("%1 { padding: 1px; background-color: "
                                                 "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
@@ -105,11 +106,40 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
 
     connect(d->plWidget, SIGNAL(signalPickLabelChanged(int)),
             this, SLOT(slotAssignPickLabel(int)));
+
+    connect(this, SIGNAL(customContextMenuRequested(QPoint)),
+            this, SLOT(slotContextMenu()));
 }
 
 ItemPreviewVideo::~ItemPreviewVideo()
 {
     delete d;
+}
+
+void ItemPreviewVideo::slotContextMenu()
+{
+    if (d->info.isNull())
+    {
+        return;
+    }
+
+    QMenu popmenu(this);
+    ContextMenuHelper cmHelper(&popmenu);
+
+    cmHelper.addAction(QLatin1String("full_screen"));
+    cmHelper.addAction(QLatin1String("options_show_menubar"));
+    cmHelper.addSeparator();
+
+    // --------------------------------------------------------
+
+    for (auto* const ac : actionsList())
+    {
+        cmHelper.addAction(ac, true);
+    }
+
+    cmHelper.addSeparator();
+
+    cmHelper.exec(QCursor::pos());
 }
 
 void ItemPreviewVideo::setItemInfo(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
