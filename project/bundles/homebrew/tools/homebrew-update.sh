@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# SPDX-FileCopyrightText: 2013-2025 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2026 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 # Updated for Homebrew by Michael Miller <michael underscore miller at dot msn dot com>
 # This script must be run as sudo
 #

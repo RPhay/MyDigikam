@@ -4,7 +4,7 @@
 # Modified from https://github.com/mixxxdj/mixxx/blob/master/build/osx/otool.py.
 #
 # SPDX-FileCopyrightText: 2015      by Shanti <listaccount at revenant dot org>
-# SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

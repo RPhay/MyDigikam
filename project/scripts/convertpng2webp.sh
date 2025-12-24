@@ -6,7 +6,7 @@
 # Date:        2011-11-02
 # Description: simple Bash script to convert PNG file to WEBP using IM
 #
-# Copyright (C) 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# Copyright (C) 2011-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

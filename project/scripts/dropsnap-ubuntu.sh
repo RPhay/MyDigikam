@@ -6,7 +6,7 @@
 #
 # SPDX-FileCopyrightText: 2021      by TRAN Quoc Hung <quochungtran1999 at gmail dot com>
 # SPDX-FileCopyrightText: 2021      by Surya K M      <suryakm_is20 dot rvitm@rvei dot edu dot in>
-# SPDX-FileCopyrightText: 2021-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2021-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
 # SPDX-FileCopyrightText: 2024      by Joerg Lohse    <joergmlpts at gmail dot com>
 
 #

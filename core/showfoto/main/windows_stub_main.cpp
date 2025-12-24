@@ -9,7 +9,7 @@
  *               This is a work around "command line is too long" issue on Windows.
  *               see https://stackoverflow.com/questions/43184251/cmake-command-line-too-long-windows
  *
- * SPDX-FileCopyrightText: 2002-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2002-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -5,7 +5,7 @@
 # This script must be run as sudo
 #
 # SPDX-FileCopyrightText: 2015      by Shanti, <listaccount at revenant dot org>
-# SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2026 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -410,7 +410,7 @@ echo "---------- Create package pre-install script"
 cat << EOF > "$PROJECTDIR/preinstall"
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2026 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -467,7 +467,7 @@ echo "---------- Create package post-install script"
 cat << EOF > "$PROJECTDIR/postinstall"
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2026 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
