@@ -365,10 +365,10 @@ BUGFIXES:
 300 --> 463263 - Enhancement Request: Make it easier to identify where unmounted Albums are located.
 301 --> 513774 - "move to trash" should be shown in red.
 302 --> 513740 - Crash while "Refresh" of album.
-303 --> 
-304 --> 
-305 --> 
-306 --> 
+303 --> 142808 - Wish: export to folder.
+304 --> 182781 - Cannot compile/update: make: *** [cmake_check_build_system] Error 1.
+305 --> 090542 - Cant compile, jpeg missing.
+306 --> 092678 - Error compiling.
 307 --> 
 308 --> 
 309 --> 
