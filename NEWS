@@ -369,8 +369,8 @@ BUGFIXES:
 304 --> 182781 - Cannot compile/update: make: *** [cmake_check_build_system] Error 1.
 305 --> 090542 - Cant compile, jpeg missing.
 306 --> 092678 - Error compiling.
-307 --> 
-308 --> 
+307 --> 092929 - digiKam fails to build.
+308 --> 094161 - Compile error: database is locked on query.
 309 --> 
 310 --> 
 311 --> 
