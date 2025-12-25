@@ -260,9 +260,13 @@ void ActionThreadBase::setCurrentThreadName(const QString& name)
 
     SetThreadDescription(GetCurrentThread(), reinterpret_cast<const wchar_t *>(name.utf16()));
 
+#elif defined(Q_OS_NETBSD)
+
+    pthread_setname_np(pthread_self(), "%s", (void*)name.toLatin1().constData());
+
 #else
 
-    qCWarning(DIGIKAM_GENERAL_LOG) << "Unsupported plateform to customize the current thread name.";
+    qCWarning(DIGIKAM_GENERAL_LOG) << "Unsupported platform to customize the current thread name.";
 
 #endif
 
