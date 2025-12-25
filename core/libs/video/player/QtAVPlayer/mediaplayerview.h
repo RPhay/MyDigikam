@@ -67,7 +67,8 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     void slotEscapePressed();
-    void slotRotateVideo();
+    void slotRotateVideoLeft();
+    void slotRotateVideoRight();
 
 private Q_SLOTS:
 

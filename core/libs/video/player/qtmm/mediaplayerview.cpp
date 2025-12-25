@@ -164,7 +164,8 @@ public:
     QAction*             grabAction         = nullptr;
     QAction*             backAction         = nullptr;
     QAction*             forwAction         = nullptr;
-    QAction*             rotaAction         = nullptr;
+    QAction*             rotlAction         = nullptr;
+    QAction*             rotrAction         = nullptr;
 
     QToolButton*         rateButton         = nullptr;
 
@@ -277,26 +278,29 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     const int spacing      = layoutSpacing();
 
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
-                                         i18nc("go to previous image", "Back"),           this);
+                                         i18nc("go to previous image", "Back"),                    this);
     d->prevAction->setObjectName(QLatin1String("back"));
     d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
-                                         i18nc("go to next image", "Forward"),            this);
+                                         i18nc("go to next image", "Forward"),                     this);
     d->nextAction->setObjectName(QLatin1String("next"));
     d->backAction          = new QAction(QIcon::fromTheme(QLatin1String("media-seek-backward")),
-                                         i18nc("video frame backward", "Frame Backward"), this);
+                                         i18nc("video frame backward", "Frame Backward"),          this);
+    d->backAction->setObjectName(QLatin1String("back"));
     d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
-                                         i18nc("pause/play video", "Pause/Play"),         this);
+                                         i18nc("pause/play video", "Pause/Play"),                  this);
     d->playAction->setObjectName(QLatin1String("play"));
     d->forwAction          = new QAction(QIcon::fromTheme(QLatin1String("media-seek-forward")),
-                                         i18nc("video frame forward", "Frame Forward"),   this);
+                                         i18nc("video frame forward", "Frame Forward"),            this);
     d->forwAction->setObjectName(QLatin1String("forw"));
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
-                                         i18nc("capture video frame", "Capture"),         this);
+                                         i18nc("capture video frame", "Capture"),                  this);
     d->grabAction->setObjectName(QLatin1String("grab"));
-
-    d->rotaAction          = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),
-                                         i18nc("rotate video in clockwize", "Rotate"),    this);
-    d->rotaAction->setObjectName(QLatin1String("rota"));
+    d->rotlAction          = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),
+                                         i18nc("rotate video in counterclockwize", "Rotate Left"), this);
+    d->rotlAction->setObjectName(QLatin1String("rotl"));
+    d->rotrAction          = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),
+                                         i18nc("rotate video in clockwize", "Rotate Right"),       this);
+    d->rotrAction->setObjectName(QLatin1String("rotr"));
 
     d->rateButton          = new QToolButton(this);
     d->rateButton->setToolTip(i18nc("@info", "Change video playback rate"));
@@ -444,7 +448,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->forwAction);
     d->toolBar->addWidget(d->rateButton);
     d->toolBar->addAction(d->grabAction);
-    d->toolBar->addAction(d->rotaAction);
+    d->toolBar->addAction(d->rotlAction);
+    d->toolBar->addAction(d->rotrAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
@@ -483,8 +488,11 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->grabAction, SIGNAL(triggered()),
             this, SLOT(slotCapture()));
 
-    connect(d->rotaAction, SIGNAL(triggered()),
-            this, SLOT(slotRotateVideo()));
+    connect(d->rotlAction, SIGNAL(triggered()),
+            this, SLOT(slotRotateVideoLeft()));
+
+    connect(d->rotrAction, SIGNAL(triggered()),
+            this, SLOT(slotRotateVideoRight()));
 
     connect(d->slider, SIGNAL(sliderMoved(int)),
             this, SLOT(slotPosition(int)));
@@ -541,7 +549,8 @@ QList<QAction*> MediaPlayerView::actionsList() const
                              << d->playAction
                              << d->forwAction
                              << d->grabAction
-                             << d->rotaAction
+                             << d->rotlAction
+                             << d->rotrAction
                              << d->rateButton->menu()->menuAction();
 }
 
@@ -656,7 +665,44 @@ void MediaPlayerView::slotEscapePressed()
     Q_EMIT signalEscapePreview();
 }
 
-void MediaPlayerView::slotRotateVideo()
+void MediaPlayerView::slotRotateVideoLeft()
+{
+    if (d->player->playbackState() != QMediaPlayer::StoppedState)
+    {
+        int orientation = 0;
+
+        switch (d->videoOrientation)
+        {
+            case 0:
+            {
+                orientation = 270;
+                break;
+            }
+
+            case 90:
+            {
+                orientation = 0;
+                break;
+            }
+
+            case 180:
+            {
+                orientation = 90;
+                break;
+            }
+
+            default:
+            {
+                orientation = 180;
+                break;
+            }
+        }
+
+        d->setVideoItemOrientation(orientation);
+    }
+}
+
+void MediaPlayerView::slotRotateVideoRight()
 {
     if (d->player->playbackState() != QMediaPlayer::StoppedState)
     {

@@ -148,7 +148,8 @@ public:
     QAction*             nextAction         = nullptr;
     QAction*             playAction         = nullptr;
     QAction*             grabAction         = nullptr;
-    QAction*             rotaAction         = nullptr;
+    QAction*             rotlAction         = nullptr;
+    QAction*             rotrAction         = nullptr;
 
     QPushButton*         loopPlay           = nullptr;
 
@@ -190,9 +191,12 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                          i18nc("capture video frame", "Capture"), this);
     d->grabAction->setObjectName(QLatin1String("grab"));
-    d->rotaAction          = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),
-                                         i18nc("rotate video in clockwize", "Rotate"),    this);
-    d->rotaAction->setObjectName(QLatin1String("rota"));
+    d->rotlAction          = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),
+                                         i18nc("rotate video in counterclockwize", "Rotate Left"), this);
+    d->rotlAction->setObjectName(QLatin1String("rotl"));
+    d->rotrAction          = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),
+                                         i18nc("rotate video in clockwize", "Rotate Right"),       this);
+    d->rotrAction->setObjectName(QLatin1String("rotr"));
 
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
@@ -253,7 +257,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->nextAction);
     d->toolBar->addAction(d->playAction);
     d->toolBar->addAction(d->grabAction);
-    d->toolBar->addAction(d->rotaAction);
+    d->toolBar->addAction(d->rotlAction);
+    d->toolBar->addAction(d->rotrAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
@@ -285,8 +290,11 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->grabAction, SIGNAL(triggered()),
             this, SLOT(slotCapture()));
 
-    connect(d->rotaAction, SIGNAL(triggered()),
-            this, SLOT(slotRotateVideo()));
+    connect(d->rotlAction, SIGNAL(triggered()),
+            this, SLOT(slotRotateVideoLeft()));
+
+    connect(d->rotrAction, SIGNAL(triggered()),
+            this, SLOT(slotRotateVideoRight()));
 
     connect(d->slider, SIGNAL(sliderMoved(int)),
             this, SLOT(slotPosition(int)));
@@ -328,7 +336,8 @@ QList<QAction*> MediaPlayerView::actionsList() const
                              << d->nextAction
                              << d->playAction
                              << d->grabAction
-                             << d->rotaAction;
+                             << d->rotlAction
+                             << d->rotrAction;
 }
 
 void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)
@@ -411,7 +420,44 @@ void MediaPlayerView::slotEscapePressed()
     Q_EMIT signalEscapePreview();
 }
 
-void MediaPlayerView::slotRotateVideo()
+void MediaPlayerView::slotRotateVideoLeft()
+{
+    if (d->videoWidget->player()->state() == QAVPlayer::PlayingState)
+    {
+        int orientation = 0;
+
+        switch (d->videoWidget->videoItemOrientation())
+        {
+            case 0:
+            {
+                orientation = 270;
+                break;
+            }
+
+            case 90:
+            {
+                orientation = 0;
+                break;
+            }
+
+            case 180:
+            {
+                orientation = 90;
+                break;
+            }
+
+            default:
+            {
+                orientation = 180;
+                break;
+            }
+        }
+
+        d->videoWidget->setVideoItemOrientation(orientation);
+    }
+}
+
+void MediaPlayerView::slotRotateVideoRight()
 {
     if (d->videoWidget->player()->state() == QAVPlayer::PlayingState)
     {
