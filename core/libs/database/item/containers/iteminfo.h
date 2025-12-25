@@ -56,7 +56,7 @@ class ThumbnailIdentifier;
 class ThumbnailInfo;
 
 /**
- * @brief The ItemInfo class contains provides access to the database for a single image.
+ * @brief The ItemInfo class contains provides access to the database for a single item.
  *        The properties can be read and written. Information will be cached.
  *
  * @note access rules for all methods in this class:
@@ -74,13 +74,13 @@ public:
 
     /**
      * Constructor
-     * Creates a null image info
+     * Creates a null item info
      */
     ItemInfo();
 
     /**
      * Constructor. Creates an ItemInfo object without any cached data initially.
-     * @param ID the unique ID for this image
+     * @param ID the unique ID for this item
      */
     explicit ItemInfo(qlonglong ID);
 
@@ -128,7 +128,7 @@ public:
 
     /**
      * Returns true if this is a valid ItemInfo,
-     * and the location of the image is currently available
+     * and the location of the item is currently available
      * (information freshly obtained from CollectionManager)
      */
     bool isLocationAvailable()                                                          const;
@@ -148,27 +148,27 @@ public:
     bool isNull()                                                                       const;
 
     /**
-     * @return the name of the image
+     * @return the name of the item
      */
     QString name()                                                                      const;
 
     /**
-     * @return the datetime of the image
+     * @return the datetime of the item
      */
     QDateTime dateTime()                                                                const;
 
     /**
-     * @return the modification datetime of the image
+     * @return the modification datetime of the item
      */
     QDateTime modDateTime()                                                             const;
 
     /**
-     * @return the filesize of the image
+     * @return the filesize of the item
      */
     qlonglong fileSize()                                                                const;
 
     /**
-     * @return the dimensions of the image (valid only if dimensions
+     * @return the dimensions of the item (valid only if dimensions
      * have been requested)
      */
     QSize dimensions()                                                                  const;
@@ -180,17 +180,17 @@ public:
     QUrl fileUrl()                                                                      const;
 
     /**
-     * Returns the file path to the image
+     * Returns the file path to the item
      */
     QString filePath()                                                                  const;
 
     /**
-     * Returns the relative path part to the image
+     * Returns the relative path part to the item
      */
     QString relativePath()                                                              const;
 
     /**
-     * @return the unique image id for this item
+     * @return the unique id for this item
      */
     qlonglong id()                                                                      const;
 
@@ -220,13 +220,13 @@ public:
     DatabaseItem::Category category()                                                   const;
 
     /**
-     * Returns the image format / mimetype as a standardized
+     * Returns the item format / mimetype as a standardized
      * string (see project/documents/DBSCHEMA.ODS).
      */
     QString format()                                                                    const;
 
     /**
-     * Returns true if the image is marked as visible in the database.
+     * Returns true if the item is marked as visible in the database.
      */
     bool isVisible()                                                                    const;
 
@@ -236,7 +236,7 @@ public:
     bool isRemoved()                                                                    const;
 
     /**
-     * Returns the orientation of the image,
+     * Returns the orientation of the item,
      * (MetaEngine::ImageOrientation, EXIF standard)
      */
     int orientation()                                                                   const;
@@ -264,7 +264,7 @@ public:
     /**
      * @return the map of Tag Region (in XML form) to Suggested Names for all
      * Faces in the Image.
-     * Used to categorize images based on Face Suggestions.
+     * Used to categorize items based on Face Suggestions.
      */
     QMap<QString, QString> getSuggestedNames()                                          const;
 
@@ -345,9 +345,9 @@ public:
     //@{
 
     /**
-     * Retrieves and sets the image history from the database.
-     * Note: The image history retrieved here does typically include all
-     * steps from the original to this image, but does not reference this image
+     * Retrieves and sets the item history from the database.
+     * Note: The item history retrieved here does typically include all
+     * steps from the original to this item, but does not reference this item
      * itself.
      */
     DImageHistory imageHistory()                                                        const;
@@ -355,20 +355,20 @@ public:
     bool hasImageHistory()                                                              const;
 
     /**
-     * Retrieves and sets this' images UUID
+     * Retrieves and sets this' item UUID
      */
     QString uuid()                                                                      const;
     void setUuid(const QString& uuid);
 
     /**
-     * Constructs a HistoryImageId with all available information for this image.
+     * Constructs a HistoryImageId with all available information for this item.
      */
     HistoryImageId historyImageId()                                                     const;
 
     /**
-     * Retrieve information about images from which this image
-     * is derived (ancestorImages) and images that have been derived
-     * from this images (derivedImages).
+     * Retrieve information about items from which this item
+     * is derived (ancestorImages) and items that have been derived
+     * from this items (derivedImages).
      */
     bool hasDerivedImages()                                                             const;
     bool hasAncestorImages()                                                            const;
@@ -377,14 +377,14 @@ public:
     QList<ItemInfo> ancestorImages()                                                    const;
 
     /**
-     * Returns the cloud of all directly or indirectly related images,
-     * derived images or ancestors, in from of "a derived from b" pairs.
+     * Returns the cloud of all directly or indirectly related items,
+     * derived items or ancestors, in from of "a derived from b" pairs.
      */
     QList<QPair<qlonglong, qlonglong> > relationCloud()                                 const;
 
     /**
      * Add a relation to the database:
-     * This image is derived from the ancestorImage.
+     * This item is derived from the ancestorImage.
      */
     void markDerivedFrom(const ItemInfo& ancestorImage);
 
@@ -400,43 +400,43 @@ public:
     //@{
 
     /**
-     * The image is grouped in the group of another (leading) image.
+     * The item is grouped in the group of another (leading) item.
      */
     bool isGrouped()                                                                    const;
     /**
-     * The image is the leading image of a group,
-     * there are other images grouped behind this one.
+     * The item is the leading item of a group,
+     * there are other items grouped behind this one.
      */
     bool hasGroupedImages()                                                             const;
     int  numberOfGroupedImages()                                                        const;
 
     /**
-     * Returns the leading image of the group.
-     * Returns a null image if this image is not grouped (isGrouped())
+     * Returns the leading item of the group.
+     * Returns a null item if this item is not grouped (isGrouped())
      */
     ItemInfo groupImage()                                                               const;
     qlonglong groupImageId()                                                            const;
 
     /**
-     * Returns the list of images grouped behind this image (not including this
-     * image itself) and an empty list if there is none.
+     * Returns the list of items grouped behind this item (not including this
+     * item itself) and an empty list if there is none.
      */
     QList<ItemInfo> groupedImages()                                                     const;
 
     /**
-     * Group this image behind the given image
+     * Group this item behind the given item
      */
     void addToGroup(const ItemInfo& info);
 
     /**
-     * This image is grouped behind another image:
-     * Remove this image from its group
+     * This item is grouped behind another item:
+     * Remove this item from its group
      */
     void removeFromGroup();
 
     /**
-     * This image hasGroupedImages(): Split up the group,
-     * remove all groupedImages() from this image's group.
+     * This item hasGroupedImages(): Split up the group,
+     * remove all groupedImages() from this item's group.
      */
     void clearGroup();
 
@@ -452,7 +452,7 @@ public:
     //@{
 
     /**
-     * Retrieve information about the image,
+     * Retrieve information about the item,
      * in form of numbers and user presentable strings,
      * for certain defined fields of information (see databaseinfocontainers.h)
      */
@@ -463,7 +463,7 @@ public:
     VideoInfoContainer     videoInfoContainer()                                         const;
 
     /**
-     * Retrieve metadata template information about the image.
+     * Retrieve metadata template information about the item.
      */
     Template metadataTemplate()                                                         const;
 
@@ -474,7 +474,7 @@ public:
     void setMetadataTemplate(const Template& t);
 
     /**
-     * Remove all template info about the image from database.
+     * Remove all template info about the item from database.
      */
     void removeMetadataTemplate();
 
@@ -537,7 +537,7 @@ public:
 
     /**
      * Retrieve an ItemTagPair object for a single tag, or for all
-     * image/tag pairs for which properties are available
+     * item/tag pairs for which properties are available
      * (not necessarily the assigned tags)
      */
     ItemTagPair imageTagPair(int tagId)                                                 const;
@@ -632,7 +632,7 @@ public:
     double currentSimilarity()                                                          const;
 
     /**
-     * Returns the id of the current fuzzy search reference image.
+     * Returns the id of the current fuzzy search reference item.
      */
     qlonglong currentReferenceImage()                                                   const;
 
@@ -656,7 +656,7 @@ public:
     QList<ItemInfo> fromUniqueHash(const QString& uniqueHash, qlonglong fileSize);
 
     /**
-     * @return the unique hash signature as string of the image.
+     * @return the unique hash signature as string of the item.
      */
     QString uniqueHash()                                                                const;
 
