@@ -123,6 +123,9 @@ void ItemPreviewVideo::slotContextMenu()
         return;
     }
 
+    QList<qlonglong> idList;
+    idList << d->info.id();
+
     QMenu popmenu(this);
     ContextMenuHelper cmHelper(&popmenu);
 
@@ -139,6 +142,45 @@ void ItemPreviewVideo::slotContextMenu()
 
     cmHelper.addSeparator();
 
+    // --------------------------------------------------------
+
+    cmHelper.addOpenAndNavigateActions(idList, true);
+    cmHelper.addSeparator();
+
+    // --------------------------------------------------------
+
+    cmHelper.addStandardActionItemDelete(this, SLOT(slotDeleteItem()));
+    cmHelper.addSeparator();
+
+    // --------------------------------------------------------
+
+    cmHelper.addAssignTagsMenu(idList);
+    cmHelper.addRemoveTagsMenu(idList);
+    cmHelper.addRemoveAllTags(idList);
+    cmHelper.addLabelsAction();
+
+    // --------------------------------------------------------
+
+    connect(&cmHelper, SIGNAL(signalAssignTag(int)),
+            this, SLOT(slotAssignTag(int)));
+
+    connect(&cmHelper, SIGNAL(signalPopupTagsView()),
+            this, SIGNAL(signalPopupTagsView()));
+
+    connect(&cmHelper, SIGNAL(signalRemoveTag(int)),
+            this, SLOT(slotRemoveTag(int)));
+
+    connect(&cmHelper, SIGNAL(signalAssignPickLabel(int)),
+            this, SLOT(slotAssignPickLabel(int)));
+
+    connect(&cmHelper, SIGNAL(signalAssignColorLabel(int)),
+            this, SLOT(slotAssignColorLabel(int)));
+
+    connect(&cmHelper, SIGNAL(signalAssignRating(int)),
+            this, SLOT(slotAssignRating(int)));
+
+    // --------------------------------------------------------
+
     cmHelper.exec(QCursor::pos());
 }
 
@@ -146,6 +188,21 @@ void ItemPreviewVideo::setItemInfo(const ItemInfo& info, const ItemInfo& previou
 {
     d->info = info;
     setCurrentItem(info.fileUrl(), !previous.isNull(), !next.isNull());
+}
+
+void ItemPreviewVideo::slotDeleteItem()
+{
+    Q_EMIT signalDeleteItem();
+}
+
+void ItemPreviewVideo::slotAssignTag(int tagID)
+{
+    FileActionMngr::instance()->assignTag(d->info, tagID);
+}
+
+void ItemPreviewVideo::slotRemoveTag(int tagID)
+{
+    FileActionMngr::instance()->removeTag(d->info, tagID);
 }
 
 void ItemPreviewVideo::slotAssignPickLabel(int pickId)

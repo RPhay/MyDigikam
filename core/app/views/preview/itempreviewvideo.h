@@ -35,8 +35,16 @@ public:
 
     void setItemInfo(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next);
 
+Q_SIGNALS:
+
+    void signalDeleteItem();
+    void signalPopupTagsView();
+
 private Q_SLOTS:
 
+    void slotDeleteItem();
+    void slotAssignTag(int tagID);
+    void slotRemoveTag(int tagID);
     void slotAssignRating(int rating);
     void slotAssignPickLabel(int pickId);
     void slotAssignColorLabel(int colorId);

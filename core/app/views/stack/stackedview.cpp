@@ -210,6 +210,12 @@ StackedView::StackedView(QWidget* const parent)
     connect(d->mediaPlayerView, SIGNAL(signalEscapePreview()),
             this, SIGNAL(signalEscapePreview()));
 
+    connect(d->mediaPlayerView, SIGNAL(signalDeleteItem()),
+            this, SIGNAL(signalDeleteItem()));
+
+    connect(d->mediaPlayerView, SIGNAL(signalPopupTagsView()),
+            this, SIGNAL(signalPopupTagsView()));
+
 #endif // HAVE_MEDIAPLAYER
 
 }

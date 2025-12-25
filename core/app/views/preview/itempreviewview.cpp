@@ -556,7 +556,7 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
 
     // --------------------------------------------------------
 
-    if (d->mode == IconViewPreview && d->currAlbum)
+    if ((d->mode == IconViewPreview) && d->currAlbum)
     {
         cmHelper.addStandardActionThumbnail(idList, d->currAlbum);
     }
