@@ -40,6 +40,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "itempreviewcanvas.h"
+#include "itempreviewosd.h"
 #include "applicationsettings.h"
 #include "contextmenuhelper.h"
 #include "ddragobjects.h"
@@ -105,6 +106,7 @@ public:
     ColorLabelSelector*    clWidget             = nullptr;
     PickLabelSelector*     plWidget             = nullptr;
 
+    ItemPreviewOsd*         osd                 = nullptr;
     Album*                 currAlbum            = nullptr;
 };
 
@@ -244,6 +246,13 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->toolBar->addAction(d->fullscreenAction);
 
     d->toolBar->addWidget(labelsBox);
+
+    d->osd                  = new ItemPreviewOsd(this);
+
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
+    vlay->addWidget(d->toolBar);
+    vlay->addWidget(d->osd);
+//    vlay->addStretch(10);
 
     // ---
 
@@ -401,6 +410,7 @@ void ItemPreviewView::setItemInfo(const ItemInfo& info, const ItemInfo& previous
 {
     d->faceGroup->aboutToSetInfo(info);
     d->item->setItemInfo(info);
+    d->osd->setItemInfo(info);
 
     d->prevAction->setEnabled(!previous.isNull());
     d->nextAction->setEnabled(!next.isNull());

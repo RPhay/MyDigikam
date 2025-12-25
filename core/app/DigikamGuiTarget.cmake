@@ -106,6 +106,7 @@ set(libdigikamgui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/stackedview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/preview/itempreviewcanvas.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/preview/itempreviewview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/preview/itempreviewosd.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/views/sidebar/albumfolderviewsidebarwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/sidebar/datefolderviewsidebarwidget.cpp
