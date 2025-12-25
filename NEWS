@@ -47,6 +47,7 @@ Grouped Items   : Usability improvements of the grouped icon-view items overlay.
 Filter Items    : Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.
 Trash View      : load and save column states between sessions.
 Preview         : Extend Image and Video preview toolbar overlay with Labels editor.
+Preview         : Add context-menu to the video player.
 Preview         : Add load progress indicator on the status bar (Icon-view and LightTable).
 Preview         : Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.
 Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
@@ -372,7 +373,7 @@ BUGFIXES:
 307 --> 092929 - digiKam fails to build.
 308 --> 094161 - Compile error: database is locked on query.
 309 --> 501223 - digiKam cannot use exiftool binary located in macOS system folder.
-310 --> 
+310 --> 407657 - Add Context Menu In Video Preview.
 311 --> 
 312 --> 
 313 --> 

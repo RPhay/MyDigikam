@@ -98,13 +98,6 @@ protected:
                     {
                         mplayer->slotEscapePressed();
                     }
-                    else if (
-                             (mouseEvent->button() == Qt::RightButton) &&
-                             (event->type()        == QEvent::MouseButtonPress)
-                            )
-                    {
-                        mplayer->slotRotateVideo();
-                    }
 
                     return true;
                 }
@@ -171,6 +164,7 @@ public:
     QAction*             grabAction         = nullptr;
     QAction*             backAction         = nullptr;
     QAction*             forwAction         = nullptr;
+    QAction*             rotaAction         = nullptr;
 
     QToolButton*         rateButton         = nullptr;
 
@@ -299,6 +293,10 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                          i18nc("capture video frame", "Capture"),         this);
     d->grabAction->setObjectName(QLatin1String("grab"));
+
+    d->rotaAction          = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),
+                                         i18nc("rotate video in clockwize", "Rotate"),    this);
+    d->rotaAction->setObjectName(QLatin1String("rota"));
 
     d->rateButton          = new QToolButton(this);
     d->rateButton->setToolTip(i18nc("@info", "Change video playback rate"));
@@ -446,6 +444,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->forwAction);
     d->toolBar->addWidget(d->rateButton);
     d->toolBar->addAction(d->grabAction);
+    d->toolBar->addAction(d->rotaAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
@@ -483,6 +482,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->grabAction, SIGNAL(triggered()),
             this, SLOT(slotCapture()));
+
+    connect(d->rotaAction, SIGNAL(triggered()),
+            this, SLOT(slotRotateVideo()));
 
     connect(d->slider, SIGNAL(sliderMoved(int)),
             this, SLOT(slotPosition(int)));
@@ -539,6 +541,7 @@ QList<QAction*> MediaPlayerView::actionsList() const
                              << d->playAction
                              << d->forwAction
                              << d->grabAction
+                             << d->rotaAction
                              << d->rateButton->menu()->menuAction();
 }
 

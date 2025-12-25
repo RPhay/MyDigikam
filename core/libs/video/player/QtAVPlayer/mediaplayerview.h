@@ -48,8 +48,14 @@ public:
     void escapePreview();
     void reload();
 
+    /**
+     * Allow to plug an extra widget at end of the toolbar.
+     */
     void setToolbarExtraWidget(QWidget* const extra);
 
+    /**
+     * @return the list of action avaialble in the toolbar.
+     */
     QList<QAction*> actionsList() const;
 
 Q_SIGNALS:
