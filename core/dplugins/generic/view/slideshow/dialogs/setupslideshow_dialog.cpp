@@ -182,7 +182,7 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     d->screenPlacement->addItems(choices);
 
     QLabel* const keyNote        = new QLabel(i18n("<b>Note: This dialog for the Slideshow Settings "
-                                                   "can be activated at any time with the F2 key.</b>"), panel);
+                                                   "can be activated at any time with the Alt+P key.</b>"), panel);
     keyNote->setWordWrap(true);
     keyNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
