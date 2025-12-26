@@ -48,7 +48,6 @@ public:
 
     ItemInfo   info;
 
-    bool       printName            = true;
     bool       printTags            = true;
     bool       printTitle           = true;
     bool       printComment         = true;
@@ -246,13 +245,6 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
             str = QLocale().toString(dateTime, QLocale::ShortFormat);
             printInfoText(p, offset, str);
         }
-    }
-
-    // Display image File Name.
-
-    if (d->printName)
-    {
-        printInfoText(p, offset, d->info.name());
     }
 }
 
