@@ -38,20 +38,12 @@ public:
 
     void setItemInfo(const ItemInfo& inf);
 
-Q_SIGNALS:
-
-    void leftMouseButtonPressed();
-
 private:
 
     void printInfoText(QPainter& p, int& offset, const QString& str, const QColor& pcol = Qt::white);
     void printComments(QPainter& p, int& offset, const QString& comments);
     void printTags(QPainter& p, int& offset, QStringList& tags);
     void paintEvent(QPaintEvent*)                    override;
-
-protected:
-
-    bool eventFilter(QObject* object, QEvent* event) override;
 
 private:
 
