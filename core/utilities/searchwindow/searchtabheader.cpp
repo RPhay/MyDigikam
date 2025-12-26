@@ -514,7 +514,7 @@ void SearchTabHeader::newAdvancedSearch()
 
 void SearchTabHeader::keywordChanged()
 {
-    QString keywords = d->keywordEdit->getText();
+    QString keywords = d->keywordEdit->getText().toLower();
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "keywords changed to '" << keywords << "'";
 
