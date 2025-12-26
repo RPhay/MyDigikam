@@ -379,7 +379,7 @@ BUGFIXES:
 313 --> 189280 - While loading updates box came up and saidbackend took to long to to process the syncrohousrequest-you need to fork.
 314 --> 182096 - Download photos from memory card / camera to new album downloads photos to parent album.
 315 --> 512651 - Crash.
-316 --> 513820 - Search is case-insensitive for ASCII but case-sensitive for accented characters.
+316 --> 
 317 --> 
 318 --> 
 319 --> 
