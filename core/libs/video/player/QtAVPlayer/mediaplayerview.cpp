@@ -364,6 +364,9 @@ void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)
 void MediaPlayerView::setOsdWidget(QWidget* const osd)
 {
     d->osdView = osd;
+
+    connect(d->osdView, SIGNAL(leftMouseButtonPressed()),
+            this, SLOT(slotEscapePressed()));
 }
 
 void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
