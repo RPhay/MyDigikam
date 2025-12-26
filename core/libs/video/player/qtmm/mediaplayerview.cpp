@@ -254,8 +254,9 @@ public:
             osdView->resize(videoView->width(),
                             videoView->height());
             osdView->raise();
-            toolBar->raise();
         }
+
+        toolBar->raise();
     };
 
     int videoMediaOrientation() const

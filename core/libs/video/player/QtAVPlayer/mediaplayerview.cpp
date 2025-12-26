@@ -139,6 +139,21 @@ public:
 
     Private() = default;
 
+    void adjustVideoSize()
+    {
+        videoWidget->adjustVideoSize();
+
+        if (osdView)
+        {
+            osdView->resize(videoWidget->width(),
+                            videoWidget->height());
+            osdView->raise();
+        }
+
+        toolBar->raise();
+
+    }
+
 public:
 
     QFrame*              errorView          = nullptr;
@@ -154,7 +169,7 @@ public:
     QPushButton*         loopPlay           = nullptr;
 
     QToolBar*            toolBar            = nullptr;
-    QVBoxLayout*         vlay               = nullptr;
+    QWidget*             osdView            = nullptr;
 
     DInfoInterface*      iface              = nullptr;
 
@@ -262,9 +277,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->rotrAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
-    d->vlay = new QVBoxLayout(this);
-    d->vlay->addWidget(d->toolBar);
-
     setPreviewMode(Private::PlayerView);
 
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
@@ -351,7 +363,7 @@ void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)
 
 void MediaPlayerView::setOsdWidget(QWidget* const osd)
 {
-    d->vlay->addWidget(osd);
+    d->osdView = osd;
 }
 
 void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
@@ -623,7 +635,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 {
     d->prevAction->setEnabled(hasPrevious);
     d->nextAction->setEnabled(hasNext);
-    d->videoWidget->adjustVideoSize();
+    d->adjustVideoSize();
 
     if (url.isEmpty())
     {
@@ -787,7 +799,7 @@ bool MediaPlayerView::eventFilter(QObject* watched, QEvent* event)
 {
     if ((watched == d->playerView) && (event->type() == QEvent::Resize))
     {
-        d->videoWidget->adjustVideoSize();
+        d->adjustVideoSize();
     }
 
     return QStackedWidget::eventFilter(watched, event);
