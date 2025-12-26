@@ -172,6 +172,7 @@ public:
     QPushButton*         loopPlay           = nullptr;
     QPushButton*         speaker            = nullptr;
 
+    QVBoxLayout*         vlay               = nullptr;
     QToolBar*            toolBar            = nullptr;
 
     DInfoInterface*      iface              = nullptr;
@@ -452,6 +453,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->rotrAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
+    d->vlay = new QVBoxLayout(this);
+    d->vlay->addWidget(d->toolBar);
+
     setPreviewMode(Private::PlayerView);
 
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
@@ -557,6 +561,11 @@ QList<QAction*> MediaPlayerView::actionsList() const
 void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)
 {
     d->toolBar->addWidget(extra);
+}
+
+void MediaPlayerView::setOsdWidget(QWidget* const osd)
+{
+    d->vlay->addWidget(osd);
 }
 
 void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)

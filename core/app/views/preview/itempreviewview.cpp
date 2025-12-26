@@ -252,7 +252,6 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     QVBoxLayout* const vlay = new QVBoxLayout(this);
     vlay->addWidget(d->toolBar);
     vlay->addWidget(d->osd);
-//    vlay->addStretch(10);
 
     // ---
 

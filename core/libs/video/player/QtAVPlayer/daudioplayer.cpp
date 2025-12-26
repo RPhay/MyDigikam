@@ -32,6 +32,8 @@ public:
 
     Private() = default;
 
+public:
+
     QAVPlayer*      player      = nullptr;
     QAVAudioOutput* audioOutput = nullptr;
 };

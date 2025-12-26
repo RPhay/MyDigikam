@@ -44,6 +44,7 @@
 #include "picklabelwidget.h"
 #include "fileactionmngr.h"
 #include "contextmenuhelper.h"
+#include "itempreviewosd.h"
 
 namespace Digikam
 {
@@ -59,6 +60,8 @@ public:
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
     PickLabelSelector*     plWidget             = nullptr;
+
+    ItemPreviewOsd*        osd                  = nullptr;
 
     ItemInfo               info;
 };
@@ -95,6 +98,10 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
     labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
 
     setToolbarExtraWidget(labelsBox);
+
+    d->osd                      = new ItemPreviewOsd(this);
+
+    setOsdWidget(d->osd);
 
     // ---
 
@@ -188,6 +195,19 @@ void ItemPreviewVideo::setItemInfo(const ItemInfo& info, const ItemInfo& previou
 {
     d->info = info;
     setCurrentItem(info.fileUrl(), !previous.isNull(), !next.isNull());
+    d->osd->setItemInfo(info);
+
+    d->clWidget->blockSignals(true);
+    d->plWidget->blockSignals(true);
+    d->ratingWidget->blockSignals(true);
+
+    d->clWidget->setColorLabel((ColorLabel)info.colorLabel());
+    d->plWidget->setPickLabel((PickLabel)info.pickLabel());
+    d->ratingWidget->setRating(info.rating());
+
+    d->clWidget->blockSignals(false);
+    d->plWidget->blockSignals(false);
+    d->ratingWidget->blockSignals(false);
 }
 
 void ItemPreviewVideo::slotDeleteItem()

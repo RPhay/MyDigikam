@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     DInfoInterface*      iface            = nullptr;
 
     DVideoWidget*        videoWidget      = nullptr;

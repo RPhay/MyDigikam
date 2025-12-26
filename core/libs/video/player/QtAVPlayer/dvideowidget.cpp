@@ -39,6 +39,8 @@ public:
 
     Private() = default;
 
+public:
+
     QGraphicsScene*      videoScene         = nullptr;
     QGraphicsView*       videoView          = nullptr;
     QGraphicsVideoItem*  videoItem          = nullptr;

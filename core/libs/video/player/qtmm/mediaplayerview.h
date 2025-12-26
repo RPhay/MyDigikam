@@ -49,9 +49,14 @@ public:
     void reload();
 
     /**
-     * Allow to plug an extra widget at end of the toolbar.
+     * @brief plug an extra widget at end of the toolbar.
      */
     void setToolbarExtraWidget(QWidget* const extra);
+
+    /**
+     * @brief plug an On Screen Display widget over the player.
+     */
+    void setOsdWidget(QWidget* const osd);
 
     /**
      * @return the list of action avaialble in the toolbar.
