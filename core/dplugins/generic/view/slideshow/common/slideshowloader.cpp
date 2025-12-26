@@ -681,9 +681,6 @@ void SlideShowLoader::slotMouseMoveTimeOut()
 
 }
 
-/**
- * Inspired from Okular's presentation widget
- */
 void SlideShowLoader::inhibitScreenSaver()
 {
 
@@ -718,7 +715,7 @@ void SlideShowLoader::inhibitScreenSaver()
                                 kIOPMAssertionTypePreventUserIdleDisplaySleep,
                                 kIOPMAssertionLevelOn,
                                 cfReason,
-                                &d->m_powerAssertion
+                                &d->powerAssertion
                                );
 
 #endif
@@ -746,10 +743,10 @@ void SlideShowLoader::allowScreenSaver()
 
 #elif defined Q_OS_MACOS
 
-    if (d->m_powerAssertion != 0)
+    if (d->powerAssertion != 0)
     {
-        IOPMAssertionRelease(d->m_powerAssertion);
-        d->m_powerAssertion = 0;
+        IOPMAssertionRelease(d->powerAssertion);
+        d->powerAssertion = 0;
     }
 
 #endif
