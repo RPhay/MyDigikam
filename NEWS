@@ -378,7 +378,7 @@ BUGFIXES:
 312 --> 218746 - After connecting to my camera, I selected 3 photos to import, and when I tried to import, it crashed.
 313 --> 189280 - While loading updates box came up and saidbackend took to long to to process the syncrohousrequest-you need to fork.
 314 --> 182096 - Download photos from memory card / camera to new album downloads photos to parent album.
-315 --> 
+315 --> 512651 - Crash.
 316 --> 
 317 --> 
 318 --> 
