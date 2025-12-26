@@ -3384,17 +3384,29 @@ qlonglong CoreDB::getItemFromAlbum(int albumID, const QString& fileName) const
     return values.first().toLongLong();
 }
 
-QVariantList CoreDB::getAllCreationDates() const
+QHash<QDateTime, int> CoreDB::getAllCreationDates() const
 {
+    int count = 0;
+    QDateTime dateTime;
     QVariantList values;
-    d->db->execSql(QString::fromUtf8("SELECT creationDate FROM ImageInformation "
+    QHash<QDateTime, int> dateNumberHash;
+
+    d->db->execSql(QString::fromUtf8("SELECT creationDate, COUNT(*) FROM ImageInformation "
                                      "INNER JOIN Images ON Images.id=ImageInformation.imageid "
-                                     " WHERE Images.status=1;"),
+                                     " WHERE Images.status=1 GROUP BY creationDate;"),
                    &values);
 
-    // UTC is set in the DatesJob
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
+    {
+        dateTime = asDateTimeUTC((*it).toDateTime());
+        ++it;
+        count    = (*it).toInt();
+        ++it;
 
-    return values;
+        dateNumberHash[dateTime] = count;
+    }
+
+    return dateNumberHash;
 }
 
 QList<qlonglong> CoreDB::getObsoleteItemIds() const

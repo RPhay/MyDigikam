@@ -779,9 +779,9 @@ public:
     QList<qlonglong> getItemIDsInTag(int tagID, bool recursive = false)                                             const;
 
     /**
-     * Returns a QVariantList of creationDate of all items
+     * Returns a QHash of creationDate of all items and count of dates
      */
-    QVariantList getAllCreationDates()                                                                              const;
+    QHash<QDateTime, int> getAllCreationDates()                                                                     const;
 
     /**
      * Get obsolete item Ids.

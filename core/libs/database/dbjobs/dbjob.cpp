@@ -81,34 +81,7 @@ void DatesJob::run()
 
     if (m_jobInfo.isFoldersJob())
     {
-        const QVariantList& values = CoreDbAccess().db()->getAllCreationDates();
-
-        QHash<QDateTime, int> dateNumberHash;
-        QHash<QDateTime, int>::iterator it;
-
-        for (const QVariant& value : std::as_const(values))
-        {
-            if (!value.isNull())
-            {
-                QDateTime dateTime = asDateTimeUTC(value.toDateTime());
-
-                if (!dateTime.isValid())
-                {
-                    continue;
-                }
-
-                it = dateNumberHash.find(dateTime);
-
-                if (it == dateNumberHash.end())
-                {
-                    dateNumberHash.insert(dateTime, 1);
-                }
-                else
-                {
-                    it.value()++;
-                }
-            }
-        }
+        const QHash<QDateTime, int>& dateNumberHash = CoreDbAccess().db()->getAllCreationDates();
 
         Q_EMIT foldersData(dateNumberHash);
     }
