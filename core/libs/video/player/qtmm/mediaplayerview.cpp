@@ -172,8 +172,8 @@ public:
     QPushButton*         loopPlay           = nullptr;
     QPushButton*         speaker            = nullptr;
 
-    QVBoxLayout*         vlay               = nullptr;
     QToolBar*            toolBar            = nullptr;
+    QWidget*             osdView            = nullptr;
 
     DInfoInterface*      iface              = nullptr;
 
@@ -248,6 +248,14 @@ public:
         videoView->fitInView(videoItem, Qt::KeepAspectRatio);
         videoView->centerOn(videoItem);
         videoView->raise();
+
+        if (osdView)
+        {
+            osdView->resize(videoView->width(),
+                            videoView->height());
+            osdView->raise();
+            toolBar->raise();
+        }
     };
 
     int videoMediaOrientation() const
@@ -453,9 +461,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->rotrAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
-    d->vlay = new QVBoxLayout(this);
-    d->vlay->addWidget(d->toolBar);
-
     setPreviewMode(Private::PlayerView);
 
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
@@ -565,7 +570,7 @@ void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)
 
 void MediaPlayerView::setOsdWidget(QWidget* const osd)
 {
-    d->vlay->addWidget(osd);
+    d->osdView = osd;
 }
 
 void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
