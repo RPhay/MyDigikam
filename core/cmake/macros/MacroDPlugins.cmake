@@ -48,7 +48,9 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
     endif()
 
     if(APPLE)
-        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework
+                        /System/Library/Frameworks/IOKit.framework
+        )
     endif()
 
     add_library(Generic_${_parse_results_NAME}_Plugin
@@ -137,7 +139,9 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
     endif()
 
     if(APPLE)
-        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework
+                        /System/Library/Frameworks/IOKit.framework
+        )
     endif()
 
     add_library(Editor_${_parse_results_NAME}_Plugin
@@ -224,7 +228,9 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
     endif()
 
     if(APPLE)
-        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework
+                        /System/Library/Frameworks/IOKit.framework
+        )
     endif()
 
     add_library(Bqm_${_parse_results_NAME}_Plugin
@@ -314,7 +320,9 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
     endif()
 
     if(APPLE)
-        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework
+                        /System/Library/Frameworks/IOKit.framework
+        )
     endif()
 
     add_library(RawImport_${_parse_results_NAME}_Plugin
@@ -401,7 +409,9 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
     endif()
 
     if(APPLE)
-        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework
+                        /System/Library/Frameworks/IOKit.framework
+        )
     endif()
 
     add_library(DImg_${_parse_results_NAME}_Plugin
