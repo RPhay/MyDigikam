@@ -210,6 +210,8 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
                                                 "  stop: 1 rgba(170, 170, 170, 70%)); "
                                                 "border: 1px solid rgba(170, 170, 170, 10%); } ");
 
+    const int spacing           = layoutSpacing();
+
     DHBox* const labelsBox      = new DHBox(this);
     labelsBox->setStyleSheet(btnStyleSheet.arg(QLatin1String("QFrame")));
 
@@ -252,6 +254,8 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     QVBoxLayout* const vlay = new QVBoxLayout(this);
     vlay->addWidget(d->toolBar);
     vlay->addWidget(d->osd);
+    vlay->setContentsMargins(QMargins());
+    vlay->setSpacing(spacing);
 
     // ---
 
