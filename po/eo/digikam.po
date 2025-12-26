@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-25 00:41+0000\n"
+"POT-Creation-Date: 2025-12-26 00:41+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -285,7 +285,7 @@ msgstr "Ŝanĝi Vizaĝan Etikedon"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:762
+#: core/app/views/preview/itempreviewview.cpp:772
 #, kde-format
 msgid "&Cancel"
 msgstr "&Rezigni"
@@ -296,7 +296,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "A&signi Etikedojn al Elektitaj Eroj"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:760
+#: core/app/views/preview/itempreviewview.cpp:770
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Asigni Etikedojn al Ĉi &tiu Ero"
@@ -532,7 +532,7 @@ msgid "Show Fullscreen"
 msgstr "Montri Plenekranon"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:166
+#: core/app/views/preview/itempreviewview.cpp:168
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -540,7 +540,7 @@ msgid "Rotate Left"
 msgstr "Turni maldekstren"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:168
+#: core/app/views/preview/itempreviewview.cpp:170
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1146,6 +1146,7 @@ msgid "Aperture/Focal:"
 msgstr "Aperturo/Fokuso:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
+#: core/app/views/preview/itempreviewosd.cpp:185
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
@@ -2852,58 +2853,58 @@ msgstr ""
 msgid "Documentation: "
 msgstr "Dokumentado: "
 
-#: core/app/views/preview/itempreviewview.cpp:162
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
+#: core/app/views/preview/itempreviewview.cpp:164
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:281
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Reen"
 
-#: core/app/views/preview/itempreviewview.cpp:164
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
+#: core/app/views/preview/itempreviewview.cpp:166
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:284
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
 msgstr "Antaŭen"
 
-#: core/app/views/preview/itempreviewview.cpp:175
+#: core/app/views/preview/itempreviewview.cpp:177
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "Aldoni Vizaĝan Etikedon"
 
-#: core/app/views/preview/itempreviewview.cpp:180
+#: core/app/views/preview/itempreviewview.cpp:182
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "Forigi ĉiujn vizaĝojn sur ĉi tiu bildo"
 
-#: core/app/views/preview/itempreviewview.cpp:183
+#: core/app/views/preview/itempreviewview.cpp:185
 #, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Marki ĉiujn nekonfirmitajn vizaĝojn kiel ignoritajn"
 
-#: core/app/views/preview/itempreviewview.cpp:190
+#: core/app/views/preview/itempreviewview.cpp:192
 #, kde-format
 msgid "Show Face Tags"
 msgstr "Montri Vizaĝajn Etikedojn"
 
-#: core/app/views/preview/itempreviewview.cpp:195
+#: core/app/views/preview/itempreviewview.cpp:197
 #, kde-format
 msgid "Add a focus point"
 msgstr "Aldoni fokuspunkton"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:199
 #, kde-format
 msgid "Show focus points"
 msgstr "Montri fokuspunktojn"
 
-#: core/app/views/preview/itempreviewview.cpp:203
+#: core/app/views/preview/itempreviewview.cpp:205
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "Montri Plenekranon"
 
-#: core/app/views/preview/itempreviewview.cpp:498
+#: core/app/views/preview/itempreviewview.cpp:508
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, fuzzy, kde-format
 #| msgid "Faces"
@@ -43318,100 +43319,116 @@ msgstr "Okazis eraro dum ludado: la aŭdvidaĵo ne estas valida"
 msgid "An error has occurred while playing: %1"
 msgstr "Okazis eraro ludante: %1"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Paŭzo/Ludo"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Kapto"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:201
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:351
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:195
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#, fuzzy, kde-format
+#| msgid "Rotate Left"
+msgctxt "rotate video in counterclockwize"
+msgid "Rotate Left"
+msgstr "Turni maldekstre"
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:302
+#, fuzzy, kde-format
+#| msgid "Rotate Right"
+msgctxt "rotate video in clockwize"
+msgid "Rotate Right"
+msgstr "Turni dekstre"
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:353
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Okazis eraro ĉe la plurmedia ludilo..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:232
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:395
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:397
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Ŝalti ludadon en buklo"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:292
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Kadro Malantaŭen"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Kadro Antaŭen"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, fuzzy, kde-format
 #| msgctxt "@info: download status"
 #| msgid "Rate:"
 msgid "Rate"
 msgstr "Prezo:"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:318
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:324
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:327
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:333
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:334
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:336
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -44320,8 +44337,9 @@ msgid "A KDE Family Project"
 msgstr "KDE Familia Projekto"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
-#, kde-format
-msgid "(c) 2001-2025, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2025, digiKam developers team"
+msgid "(c) 2001-2026, digiKam developers team"
 msgstr "(c) 2001-2025, teamo de programistoj digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
