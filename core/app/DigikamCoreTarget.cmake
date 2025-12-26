@@ -420,6 +420,7 @@ if(APPLE)
     target_link_libraries(digikamcore
                           PRIVATE
                           "-framework AppKit"
+                          "-framework IOKit"
                           "-framework CoreGraphics"
                           "-framework ColorSync"
     )
