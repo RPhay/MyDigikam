@@ -18,9 +18,11 @@
 
 #include <QTextDocument>
 #include <QApplication>
+#include <QMouseEvent>
 #include <QDateTime>
 #include <QPixmap>
 #include <QLocale>
+#include <QStyle>
 
 // KDE includes
 
@@ -62,6 +64,7 @@ ItemPreviewOsd::ItemPreviewOsd(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
+    installEventFilter(this);
 }
 
 ItemPreviewOsd::~ItemPreviewOsd()
@@ -352,6 +355,33 @@ void ItemPreviewOsd::printTags(QPainter& p, int& offset, QStringList& tags)
     {
         printInfoText(p, offset, str, qApp->palette().color(QPalette::Link).name());
     }
+}
+
+bool ItemPreviewOsd::eventFilter(QObject* object, QEvent* event)
+{
+    if ((event->type() == QEvent::MouseButtonPress) || (event->type() == QEvent::MouseButtonDblClick))
+    {
+        bool singleClick              = qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick);
+        QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
+
+        if (mouseEvent)
+        {
+            if (
+                (mouseEvent->button() == Qt::LeftButton) &&
+                (
+                    (singleClick  && (event->type() == QEvent::MouseButtonPress)) ||
+                    (!singleClick && (event->type() == QEvent::MouseButtonDblClick))
+                )
+            )
+            {
+                Q_EMIT leftMouseButtonPressed();
+            }
+
+            return true;
+        }
+    }
+
+    return QWidget::eventFilter(object, event);
 }
 
 } // namespace Digikam
