@@ -54,6 +54,10 @@
 #   include "windows.h"
 #endif
 
+#ifdef Q_OS_MACOS
+#   include <IOKit/pwr_mgt/IOPMLib.h>
+#endif
+
 using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
@@ -87,6 +91,13 @@ public:
     SlideShowSettings*     settings             = nullptr;
 
     QMap<QString, QString> shortcutPrefixes;
+
+#ifdef Q_OS_MACOS
+
+    IOPMAssertionID        powerAssertion       = 0;        ///< For the screen saver lock/unlock under macOS.
+
+#endif
+
 };
 
 SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
@@ -672,7 +683,6 @@ void SlideShowLoader::slotMouseMoveTimeOut()
 
 /**
  * Inspired from Okular's presentation widget
- * TODO: Add OSX support
  */
 void SlideShowLoader::inhibitScreenSaver()
 {
@@ -698,6 +708,19 @@ void SlideShowLoader::inhibitScreenSaver()
         d->screenSaverCookie = reply.value();
     }
 
+#elif defined Q_OS_MACOS
+
+    QString reason       = i18nc("Reason for inhibiting the screensaver activation, when the presentation mode is active",
+                                 "Giving a slideshow");
+    CFStringRef cfReason = reason.toCFString();
+
+    IOPMAssertionCreateWithName(
+                                kIOPMAssertionTypePreventUserIdleDisplaySleep,
+                                kIOPMAssertionLevelOn,
+                                cfReason,
+                                &d->m_powerAssertion
+                               );
+
 #endif
 
 }
@@ -719,6 +742,14 @@ void SlideShowLoader::allowScreenSaver()
                                                               QLatin1String("UnInhibit"));
         message << (uint)d->screenSaverCookie;
         QDBusConnection::sessionBus().send(message);
+    }
+
+#elif defined Q_OS_MACOS
+
+    if (d->m_powerAssertion != 0)
+    {
+        IOPMAssertionRelease(d->m_powerAssertion);
+        d->m_powerAssertion = 0;
     }
 
 #endif
