@@ -382,7 +382,7 @@ BUGFIXES:
 316 --> 513819 - Scripting plugin does not work at all in Windows as no environmental variables populated with filenames.
 317 --> 302559 - Add overlay to Preview Mode to edit properties as Labels and Tags.
 318 --> 221142 - Show as overlay some editable information on the images with preview canvas.
-319 --> 
+319 --> 431753 - Show overlay with metadata in Preview mode.
 320 --> 
 321 --> 
 322 --> 
