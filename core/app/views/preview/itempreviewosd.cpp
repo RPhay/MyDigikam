@@ -48,6 +48,7 @@ public:
 
     ItemInfo   info;
 
+    bool       enabled              = false;
     bool       printTags            = true;
     bool       printTitle           = true;
     bool       printComment         = true;
@@ -77,8 +78,18 @@ void ItemPreviewOsd::setItemInfo(const ItemInfo& inf)
     update();
 }
 
+void ItemPreviewOsd::setOsdEnabled(bool val)
+{
+    d->enabled = val;
+}
+
 void ItemPreviewOsd::paintEvent(QPaintEvent*)
 {
+    if (!d->enabled)
+    {
+        return;
+    }
+
     QPainter p(this);
 
     QString str;

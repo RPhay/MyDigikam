@@ -37,6 +37,7 @@ public:
     ~ItemPreviewOsd()                                override;
 
     void setItemInfo(const ItemInfo& inf);
+    void setOsdEnabled(bool val);
 
 private:
 

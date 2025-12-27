@@ -202,7 +202,7 @@ void ItemPreviewVideo::setItemInfo(const ItemInfo& info, const ItemInfo& previou
     d->info = info;
     setCurrentItem(info.fileUrl(), !previous.isNull(), !next.isNull());
     d->osd->setItemInfo(info);
-    d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
+    d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
 
     d->clWidget->blockSignals(true);
     d->plWidget->blockSignals(true);

@@ -672,7 +672,7 @@ void ItemPreviewView::slotSetupChanged()
     setScaleFitToWindow(ApplicationSettings::instance()->getScaleFitToWindow());
     setShowText(ApplicationSettings::instance()->getPreviewShowIcons());
 
-    d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
+    d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
 
     layout()->updateZoomAndSize();
 
