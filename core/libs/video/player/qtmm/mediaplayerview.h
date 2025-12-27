@@ -54,6 +54,11 @@ public:
     void setToolbarExtraWidget(QWidget* const extra);
 
     /**
+     * @brief turn off/on toolbar visibility.
+     */
+    void setToolbarVisible(bool b);
+
+    /**
      * @brief plug an On Screen Display widget over the player.
      */
     void setOsdWidget(QWidget* const osd);

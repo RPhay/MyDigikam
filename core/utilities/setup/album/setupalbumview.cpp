@@ -86,6 +86,7 @@ public:
     QCheckBox*          previewSmoothScaled             = nullptr;
     QCheckBox*          previewShowIcons                = nullptr;
     QCheckBox*          previewAutoPlay                 = nullptr;
+    QCheckBox*          previewOverlay                  = nullptr;
     QCheckBox*          showFolderTreeViewItemsCount    = nullptr;
     QCheckBox*          largeThumbsBox                  = nullptr;
 
@@ -309,6 +310,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewAutoPlay           = new QCheckBox(i18n("Auto play of videos or animations"), pwpanel);
     d->previewAutoPlay->setWhatsThis(i18n("Uncheck this if you do not want to auto play of videos or animations."));
 
+    d->previewOverlay             = new QCheckBox(i18n("Show a text overlay over preview."), pwpanel);
+    d->previewOverlay->setWhatsThis(i18n("Uncheck this if you do not want to show a canvas overlay with technical shot settings and properties."));
+
     grid3->setContentsMargins(spacing, spacing, spacing, spacing);
     grid3->setSpacing(spacing);
     grid3->addWidget(d->previewFastPreview,       0, 0, 1, 2);
@@ -320,7 +324,8 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     grid3->addWidget(d->previewSmoothScaled,      5, 0, 1, 2);
     grid3->addWidget(d->previewShowIcons,         6, 0, 1, 2);
     grid3->addWidget(d->previewAutoPlay,          7, 0, 1, 2);
-    grid3->setRowStretch(8, 10);
+    grid3->addWidget(d->previewOverlay,           8, 0, 1, 2);
+    grid3->setRowStretch(9, 10);
 
     d->previewFastPreview->setChecked(true);
     d->previewRawMode->setCurrentIndex(0);
@@ -420,6 +425,7 @@ void SetupAlbumView::applySettings()
     settings->setPreviewSettings(previewSettings);
 
     settings->setPreviewAutoPlay(d->previewAutoPlay->isChecked());
+    settings->setPreviewOverlay(d->previewOverlay->isChecked());
     settings->setPreviewShowIcons(d->previewShowIcons->isChecked());
     settings->setPreviewSmoothScaled(d->previewSmoothScaled->isChecked());
     settings->setScaleFitToWindow(d->previewScaleFitToWindow->isChecked());
@@ -488,6 +494,7 @@ void SetupAlbumView::readSettings()
     d->previewRawMode->setCurrentIndex(d->previewRawMode->findData(previewSettings.rawLoading));
 
     d->previewAutoPlay->setChecked(settings->getPreviewAutoPlay());
+    d->previewOverlay->setChecked(settings->getPreviewOverlay());
     d->previewShowIcons->setChecked(settings->getPreviewShowIcons());
     d->previewSmoothScaled->setChecked(settings->getPreviewSmoothScaled());
     d->previewScaleFitToWindow->setChecked(settings->getScaleFitToWindow());

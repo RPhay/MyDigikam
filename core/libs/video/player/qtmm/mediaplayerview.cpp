@@ -564,6 +564,11 @@ QList<QAction*> MediaPlayerView::actionsList() const
                              << d->rateButton->menu()->menuAction();
 }
 
+void MediaPlayerView::setToolbarVisible(bool b)
+{
+    d->toolBar->setVisible(b);
+}
+
 void MediaPlayerView::setToolbarExtraWidget(QWidget* const extra)
 {
     d->toolBar->addWidget(extra);

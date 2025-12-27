@@ -38,6 +38,7 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "digikam_globals.h"
+#include "applicationsettings.h"
 #include "dbinfoiface.h"
 #include "ratingwidget.h"
 #include "colorlabelwidget.h"
@@ -116,6 +117,11 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
 
     connect(this, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotContextMenu()));
+
+    connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
+            this, SLOT(slotSetupChanged()));
+
+    slotSetupChanged();
 }
 
 ItemPreviewVideo::~ItemPreviewVideo()
@@ -196,6 +202,7 @@ void ItemPreviewVideo::setItemInfo(const ItemInfo& info, const ItemInfo& previou
     d->info = info;
     setCurrentItem(info.fileUrl(), !previous.isNull(), !next.isNull());
     d->osd->setItemInfo(info);
+    d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
 
     d->clWidget->blockSignals(true);
     d->plWidget->blockSignals(true);
@@ -238,6 +245,12 @@ void ItemPreviewVideo::slotAssignColorLabel(int colorId)
 void ItemPreviewVideo::slotAssignRating(int rating)
 {
     FileActionMngr::instance()->assignRating(d->info, rating);
+}
+
+void ItemPreviewVideo::slotSetupChanged()
+{
+    setToolbarVisible(ApplicationSettings::instance()->getPreviewShowIcons());
+    d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
 }
 
 } // namespace Digikam

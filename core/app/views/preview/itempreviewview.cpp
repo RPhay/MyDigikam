@@ -106,7 +106,7 @@ public:
     ColorLabelSelector*    clWidget             = nullptr;
     PickLabelSelector*     plWidget             = nullptr;
 
-    ItemPreviewOsd*         osd                 = nullptr;
+    ItemPreviewOsd*        osd                  = nullptr;
     Album*                 currAlbum            = nullptr;
 };
 
@@ -671,6 +671,8 @@ void ItemPreviewView::slotSetupChanged()
     d->toolBar->setVisible(ApplicationSettings::instance()->getPreviewShowIcons());
     setScaleFitToWindow(ApplicationSettings::instance()->getScaleFitToWindow());
     setShowText(ApplicationSettings::instance()->getPreviewShowIcons());
+
+    d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
 
     layout()->updateZoomAndSize();
 

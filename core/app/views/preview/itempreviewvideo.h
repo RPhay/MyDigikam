@@ -49,6 +49,7 @@ private Q_SLOTS:
     void slotAssignPickLabel(int pickId);
     void slotAssignColorLabel(int colorId);
     void slotContextMenu();
+    void slotSetupChanged();
 
 private:
 
