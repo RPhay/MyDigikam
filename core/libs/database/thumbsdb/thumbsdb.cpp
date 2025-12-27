@@ -63,9 +63,9 @@ bool ThumbsDb::setSetting(const QString& keyword, const QString& value )
 
 QString ThumbsDb::getSetting(const QString& keyword)
 {
+    QVariantList            values;
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
-    QList<QVariant> values;
 
     // TODO Should really check return status here
 
@@ -85,9 +85,9 @@ QString ThumbsDb::getSetting(const QString& keyword)
 
 QString ThumbsDb::getLegacySetting(const QString& keyword)
 {
+    QVariantList            values;
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
-    QList<QVariant> values;
 
     // TODO Should really check return status here
 
@@ -105,7 +105,7 @@ QString ThumbsDb::getLegacySetting(const QString& keyword)
     return QString();
 }
 
-ThumbsDbInfo ThumbsDb::fillThumbnailInfo(const QList<QVariant>& values)
+ThumbsDbInfo ThumbsDb::fillThumbnailInfo(const QVariantList& values)
 {
     if (values.isEmpty())
     {
@@ -125,7 +125,8 @@ ThumbsDbInfo ThumbsDb::fillThumbnailInfo(const QList<QVariant>& values)
 
 ThumbsDbInfo ThumbsDb::findByHash(const QString& uniqueHash, qlonglong fileSize)
 {
-    QList<QVariant> values;
+    QVariantList values;
+
     d->db->execSql(QLatin1String("SELECT id, type, modificationDate, orientationHint, data "
                                  "FROM Thumbnails "
                                  " INNER JOIN UniqueHashes ON id = thumbId "
@@ -137,7 +138,8 @@ ThumbsDbInfo ThumbsDb::findByHash(const QString& uniqueHash, qlonglong fileSize)
 
 ThumbsDbInfo ThumbsDb::findByFilePath(const QString& path)
 {
-    QList<QVariant> values;
+    QVariantList values;
+
     d->db->execSql(QLatin1String("SELECT id, type, modificationDate, orientationHint, data "
                                  "FROM Thumbnails "
                                  " INNER JOIN FilePaths ON id = thumbId "
@@ -163,7 +165,8 @@ ThumbsDbInfo ThumbsDb::findByFilePath(const QString& path, const QString& unique
 
     // double check that thumbnail is not referenced by a different hash
 
-    QList<QVariant> values;
+    QVariantList values;
+
     d->db->execSql(QLatin1String("SELECT uniqueHash FROM UniqueHashes WHERE thumbId=?;"),
                    info.id, &values);
 
@@ -185,7 +188,8 @@ ThumbsDbInfo ThumbsDb::findByFilePath(const QString& path, const QString& unique
 
 ThumbsDbInfo ThumbsDb::findByCustomIdentifier(const QString& id)
 {
-    QList<QVariant> values;
+    QVariantList values;
+
     d->db->execSql(QLatin1String("SELECT id, type, modificationDate, orientationHint, data "
                                  "FROM Thumbnails "
                                  " INNER JOIN CustomIdentifiers ON id = thumbId "
@@ -197,7 +201,8 @@ ThumbsDbInfo ThumbsDb::findByCustomIdentifier(const QString& id)
 
 QList<int> ThumbsDb::findAll()
 {
-    QList<QVariant> values;
+    QVariantList values;
+
     d->db->execSql(QLatin1String("SELECT id FROM Thumbnails;"),
                    &values);
 
@@ -340,7 +345,8 @@ void ThumbsDb::replaceUniqueHash(const QString& oldUniqueHash, int oldFileSize,
 
 bool ThumbsDb::integrityCheck()
 {
-    QList<QVariant> values;
+    QVariantList values;
+
     d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("checkThumbnailsDbIntegrity")),
                         &values);
 

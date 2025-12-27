@@ -133,7 +133,7 @@ private:
     explicit ThumbsDb(ThumbsDbBackend* const backend);
     ~ThumbsDb();
 
-    ThumbsDbInfo fillThumbnailInfo(const QList<QVariant>& values);
+    ThumbsDbInfo fillThumbnailInfo(const QVariantList& values);
 
 private:
 

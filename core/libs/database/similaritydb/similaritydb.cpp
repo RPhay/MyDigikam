@@ -61,9 +61,9 @@ bool SimilarityDb::setSetting(const QString& keyword, const QString& value )
 
 QString SimilarityDb::getSetting(const QString& keyword)
 {
+    QVariantList            values;
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
-    QList<QVariant> values;
 
     // TODO Should really check return status here
 
@@ -83,9 +83,9 @@ QString SimilarityDb::getSetting(const QString& keyword)
 
 QString SimilarityDb::getLegacySetting(const QString& keyword)
 {
+    QVariantList            values;
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
-    QList<QVariant> values;
 
     // TODO Should really check return status here
 
@@ -108,8 +108,8 @@ QString SimilarityDb::getLegacySetting(const QString& keyword)
 
 QSet<qlonglong> SimilarityDb::registeredImageIds() const
 {
+    QVariantList    values;
     QSet<qlonglong> imageIds;
-    QList<QVariant> values;
 
     // Get all image ids from the first and second imageid column of the ImageSimilarity table.
 
@@ -145,7 +145,7 @@ bool SimilarityDb::hasFingerprint(qlonglong imageId, FuzzyAlgorithm algorithm) c
 {
     if (algorithm == FuzzyAlgorithm::Haar)
     {
-        QList<QVariant> values;
+        QVariantList values;
 
         d->db->execSql(QString::fromUtf8("SELECT imageid FROM ImageHaarMatrix "
                                          "WHERE matrix IS NOT NULL AND imageid=? LIMIT 1;"),
@@ -169,7 +169,7 @@ bool SimilarityDb::hasFingerprints(FuzzyAlgorithm algorithm) const
 {
     if (algorithm == FuzzyAlgorithm::Haar)
     {
-        QList<QVariant> values;
+        QVariantList values;
 
         d->db->execSql(QString::fromUtf8("SELECT imageid FROM ImageHaarMatrix "
                                          "WHERE matrix IS NOT NULL LIMIT 1;"),
@@ -187,7 +187,7 @@ bool SimilarityDb::hasDirtyOrMissingFingerprint(const ItemInfo& imageInfo, Fuzzy
 {
     if (algorithm == FuzzyAlgorithm::Haar)
     {
-        QList<QVariant> values;
+        QVariantList values;
 
         d->db->execSql(QString::fromUtf8("SELECT modificationDate, uniqueHash FROM ImageHaarMatrix "
                                          "WHERE imageid=?;"),
@@ -230,7 +230,7 @@ QList<qlonglong> SimilarityDb::getDirtyOrMissingFingerprints(const QList<ItemInf
     {
         for (const ItemInfo& info : std::as_const(imageInfos))
         {
-            QList<QVariant> values;
+            QVariantList values;
 
             d->db->execSql(QString::fromUtf8("SELECT modificationDate, uniqueHash FROM ImageHaarMatrix "
                                              "WHERE imageid=?;"),
@@ -274,7 +274,7 @@ QStringList SimilarityDb::getDirtyOrMissingFingerprintURLs(const QList<ItemInfo>
     {
         for (const ItemInfo& info : std::as_const(imageInfos))
         {
-            QList<QVariant> values;
+            QVariantList values;
 
             d->db->execSql(QString::fromUtf8("SELECT modificationDate, uniqueHash FROM ImageHaarMatrix "
                                              "WHERE imageid=?;"),
@@ -456,10 +456,8 @@ void SimilarityDb::clearImageSimilarity(FuzzyAlgorithm algorithm)
 
 QList<FuzzyAlgorithm> SimilarityDb::getImageSimilarityAlgorithms(qlonglong imageID1, qlonglong imageID2)
 {
-
+    QVariantList                values;
     QPair<qlonglong, qlonglong> orderedIds = orderIds(imageID1, imageID2);
-
-    QList<QVariant> values;
 
     d->db->execSql(QString::fromUtf8("SELECT algorithm FROM ImageSimilarity "
                                      "WHERE imageid1=? AND imageid2=?;"),
@@ -488,7 +486,8 @@ QList<FuzzyAlgorithm> SimilarityDb::getImageSimilarityAlgorithms(qlonglong image
 
 bool SimilarityDb::integrityCheck()
 {
-    QList<QVariant> values;
+    QVariantList values;
+
     d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("checkSimilarityDbIntegrity")), &values);
 
     switch (d->db->databaseType())
@@ -601,7 +600,7 @@ QPair<qlonglong, qlonglong> SimilarityDb::orderIds(qlonglong id1, qlonglong id2)
 
 QString SimilarityDb::getImageSimilarityOrdered(qlonglong imageID1, qlonglong imageID2, FuzzyAlgorithm algorithm)
 {
-    QList<QVariant> values;
+    QVariantList values;
 
     d->db->execSql(QString::fromUtf8("SELECT value FROM ImageSimilarity "
                                      "WHERE ( imageid1=? OR imageid2=? ) AND algorithm=?;"),

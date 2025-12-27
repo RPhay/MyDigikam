@@ -42,9 +42,9 @@ BdEngineBackend::QueryState FaceDb::setSetting(const QString& keyword, const QSt
 
 QString FaceDb::setting(const QString& keyword) const
 {
+    QVariantList            values;
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
-    QList<QVariant> values;
 
     // TODO: Should really check return status here.
 
@@ -66,7 +66,8 @@ QString FaceDb::setting(const QString& keyword) const
 
 bool FaceDb::integrityCheck()
 {
-    QList<QVariant> values;
+    QVariantList values;
+
     d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("checkRecognitionDbIntegrity")), &values);
 
     switch (d->db->databaseType())
