@@ -162,6 +162,7 @@ public:
     const QString configPreviewScaleFitToWindowEntry                = QLatin1String("Preview Scale Fit To Window");
     const QString configPreviewShowIconsEntry                       = QLatin1String("Preview Show Icons");
     const QString configPreviewAutoPlayEntry                        = QLatin1String("Preview Auto Play");
+    const QString configPreviewOverlayEntry                         = QLatin1String("Preview Overlay");
     const QString configShowThumbbarEntry                           = QLatin1String("Show Thumbbar");
     const QString configShowFolderTreeViewItemsCountEntry           = QLatin1String("Show Folder Tree View Items Count");
     const QString configShowSplashEntry                             = QLatin1String("Show Splash");
@@ -283,6 +284,7 @@ public:
     bool                                         scaleFitToWindow                                   = false;
     bool                                         previewShowIcons                                   = true;
     bool                                         previewAutoPlay                                    = true;
+    bool                                         previewOverlay                                     = false;
     bool                                         showThumbbar                                       = true;
 
     bool                                         showFolderTreeViewItemsCount                       = false;

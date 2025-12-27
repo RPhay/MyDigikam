@@ -172,7 +172,7 @@ public:
     bool addAlbumCategoryName(const QString& name) const;
     bool delAlbumCategoryName(const QString& name) const;
 
-    // -- Icon-View Settings -------------------------------------------------------
+    // -- Views Settings -------------------------------------------------------
 
     void setDefaultIconSize(int val);
     int  getDefaultIconSize() const;
@@ -267,6 +267,12 @@ public:
 
     void setPreviewSmoothScaled(bool val);
     bool getPreviewSmoothScaled() const;
+
+    /**
+     * Sets the visibility of the text properties overlay over the image and video preview.
+     */
+    void setPreviewOverlay(bool val);
+    bool getPreviewOverlay() const;
 
     // -- Mime-Types Settings -------------------------------------------------------
 

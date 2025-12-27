@@ -303,4 +303,14 @@ bool ApplicationSettings::getPreviewSmoothScaled() const
     return d->imageSmoothScaled;
 }
 
+void ApplicationSettings::setPreviewOverlay(bool val)
+{
+    d->previewOverlay = val;
+}
+
+bool ApplicationSettings::getPreviewOverlay() const
+{
+    return d->previewOverlay;
+}
+
 } // namespace Digikam
