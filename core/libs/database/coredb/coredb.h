@@ -1495,8 +1495,8 @@ public:
     int addToDownloadHistory(const QString& identifier, const QString& name,
                              qlonglong fileSize, const QDateTime& date)                                             const;
 
-    QList<QVariant> getImageIdsFromArea(qreal lat1, qreal lat2, qreal lng1, qreal lng2,
-                                        int sortMode, const QString& sortBy)                                        const;
+    QVariantList getImageIdsFromArea(qreal lat1, qreal lat2, qreal lng1, qreal lng2,
+                                     int sortMode, const QString& sortBy)                                           const;
 
     // ----------- Database shrinking methods ----------
 
