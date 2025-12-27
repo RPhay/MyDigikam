@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:41+0000\n"
+"POT-Creation-Date: 2025-12-27 00:40+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -286,7 +286,7 @@ msgstr "Zmeniť tvárový štítok"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:772
+#: core/app/views/preview/itempreviewview.cpp:775
 #, kde-format
 msgid "&Cancel"
 msgstr "&Zrušiť"
@@ -297,7 +297,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Prir&adiť štítky vybraným položkám"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:770
+#: core/app/views/preview/itempreviewview.cpp:773
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Priradiť štítky &tejto položke"
@@ -2876,16 +2876,16 @@ msgid "Documentation: "
 msgstr "Dokumentácia"
 
 #: core/app/views/preview/itempreviewview.cpp:164
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:281
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Späť"
 
 #: core/app/views/preview/itempreviewview.cpp:166
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:284
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2928,7 +2928,7 @@ msgstr "Zobrazovať najskôr priečinky"
 msgid "Show Fullscreen"
 msgstr "Zobraziť na celej obrazovke"
 
-#: core/app/views/preview/itempreviewview.cpp:508
+#: core/app/views/preview/itempreviewview.cpp:511
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
@@ -22119,14 +22119,15 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Bubliny"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:114
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Premietanie"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:699
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:711
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22375,10 +22376,13 @@ msgid "Screen %1"
 msgstr "Obrazovka %1"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
+#| "time with the F2 key.</b>"
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
-"with the F2 key.</b>"
+"with the Alt+P key.</b>"
 msgstr ""
 "<b>Poznámka: Toto okno nastavenia premietania môžete hocikedy privolať "
 "stlačením klávesu F2.</b>"
@@ -43330,55 +43334,55 @@ msgstr ""
 "Pri spracovaní položky nastala chyba\n"
 "%1"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:205
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pozastaviť/Prehrať"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:208
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Zachytiť"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Otočiť doľava"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:302
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Otočiť doprava"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:353
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:363
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Vyskytla se chyba s prehrávačom médií..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:233
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:397
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:407
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Prehrávanie v slučke"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:303
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
@@ -43386,62 +43390,62 @@ msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Ďalej"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
 #, fuzzy, kde-format
 #| msgctxt "@info: download status"
 #| msgid "Rate:"
 msgid "Rate"
 msgstr "Ohodnoťte:"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:318
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:324
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:334
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:327
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:337
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:340
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:333
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:343
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:336
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"

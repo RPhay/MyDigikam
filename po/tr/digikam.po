@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:41+0000\n"
-"PO-Revision-Date: 2025-12-25 10:47+0300\n"
+"POT-Creation-Date: 2025-12-27 00:40+0000\n"
+"PO-Revision-Date: 2025-12-26 11:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -313,7 +313,7 @@ msgstr "Yüz Künyesini Değiştir"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:772
+#: core/app/views/preview/itempreviewview.cpp:775
 #, kde-format
 msgid "&Cancel"
 msgstr "İ&ptal"
@@ -324,7 +324,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "&Seçili Ögelere Künyeler Ata"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:770
+#: core/app/views/preview/itempreviewview.cpp:773
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Bu Ögeye &Künyeler Ata"
@@ -2864,16 +2864,16 @@ msgid "Documentation: "
 msgstr "Belgelendirme: "
 
 #: core/app/views/preview/itempreviewview.cpp:164
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:281
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Geri"
 
 #: core/app/views/preview/itempreviewview.cpp:166
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:284
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2914,7 +2914,7 @@ msgstr "Odak Noktalarını Göster"
 msgid "Show Fullscreen"
 msgstr "Tam Ekran Göster"
 
-#: core/app/views/preview/itempreviewview.cpp:508
+#: core/app/views/preview/itempreviewview.cpp:511
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, kde-format
 msgctxt "@action: face workflow"
@@ -22147,13 +22147,14 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Damlalar"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Slayt Gösterisi"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:699
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:711
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22402,10 +22403,13 @@ msgid "Screen %1"
 msgstr "Ekran %1"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
+#| "time with the F2 key.</b>"
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
-"with the F2 key.</b>"
+"with the Alt+P key.</b>"
 msgstr ""
 "<b>Not: Slayt Gösterisi ayarlarına ilişkin bu iletişim kutusu, herhangi bir "
 "anda F2 düğmesiyle etkinleştirilebilir.</b>"
@@ -42594,114 +42598,112 @@ msgstr "Çalınırken bir hata oluştu: Ortam geçerli değil"
 msgid "An error has occurred while playing: %1"
 msgstr "Çalınırken bir hata oluştu: %1"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:205
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Duraklat/Oynat"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:208
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Yakala"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
-#, fuzzy, kde-format
-#| msgid "Rotate Left"
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
+#, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Sola Döndür"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:302
-#, fuzzy, kde-format
-#| msgid "Rotate Right"
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
+#, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Sağa Döndür"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:353
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:363
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Ortam oynatıcısında bir hata oluştu."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:233
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:397
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:407
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Bir döngüde oynatmayı aç/kapat"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Kare Geri"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:303
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Kare İleri"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "Video oynatma hızını değiştir"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
 #, kde-format
 msgid "Rate"
 msgstr "Hız"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0,5×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:318
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1,0×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1,5×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:324
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:334
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2,0×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:327
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:337
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2,5×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:340
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3,0×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:333
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:343
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4,0×"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:336
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -43605,10 +43607,9 @@ msgid "A KDE Family Project"
 msgstr "Bir KDE projesi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2025, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2026, digiKam developers team"
-msgstr "© 2002–2025, digiKam geliştiricileri takımı"
+msgstr "© 2002–2026, digiKam geliştiricileri takımı"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format

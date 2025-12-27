@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:41+0000\n"
+"POT-Creation-Date: 2025-12-27 00:40+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -341,7 +341,7 @@ msgstr "បន្ថែម​ស្លាក​មុខ"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:772
+#: core/app/views/preview/itempreviewview.cpp:775
 #, kde-format
 msgid "&Cancel"
 msgstr "បោះបង់"
@@ -352,7 +352,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ជ្រើស"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:770
+#: core/app/views/preview/itempreviewview.cpp:773
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​នេះ"
@@ -3100,16 +3100,16 @@ msgid "Documentation: "
 msgstr "ឯកសារ​"
 
 #: core/app/views/preview/itempreviewview.cpp:164
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:281
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "ថយក្រោយ"
 
 #: core/app/views/preview/itempreviewview.cpp:166
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:284
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3152,7 +3152,7 @@ msgstr "ដំបូង​បង្ហាញ​​ថ្មី​​បំផុ
 msgid "Show Fullscreen"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:508
+#: core/app/views/preview/itempreviewview.cpp:511
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
@@ -22554,14 +22554,15 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "ស្នាម​ប្រឡាក់"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:114
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:699
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:711
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22807,7 +22808,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
-"with the F2 key.</b>"
+"with the Alt+P key.</b>"
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
@@ -42958,22 +42959,22 @@ msgstr "មាន​កំហុស​ដោយ​សារ​ឧបករណ៍
 msgid "An error has occurred while playing: %1"
 msgstr "មាន​កំហុស​ដោយ​សារ​ឧបករណ៍​ចាក់​មេឌៀ...."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:205
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:208
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "ធម្មជាតិ"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Rotate Left"
@@ -42981,8 +42982,8 @@ msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "បង្វិល​ទៅ​ឆ្វេង"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:302
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Rotate Right"
@@ -42990,87 +42991,87 @@ msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "បង្វិល​ទៅ​ស្ដាំ"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:353
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:363
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "មាន​កំហុស​ដោយ​សារ​ឧបករណ៍​ចាក់​មេឌៀ...."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:233
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:397
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:407
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:303
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "ទៅមុន"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
 #, fuzzy, kde-format
 #| msgid "Date:"
 msgid "Rate"
 msgstr "កាលបរិច្ឆេទ ៖"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:318
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:324
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:334
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:327
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:337
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:340
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:333
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:343
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:336
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"

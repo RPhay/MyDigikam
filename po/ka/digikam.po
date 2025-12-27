@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:41+0000\n"
-"PO-Revision-Date: 2025-12-25 03:34+0100\n"
+"POT-Creation-Date: 2025-12-27 00:40+0000\n"
+"PO-Revision-Date: 2025-12-26 07:28+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -269,7 +269,7 @@ msgstr "სახის ჭდის შეცვლა"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:772
+#: core/app/views/preview/itempreviewview.cpp:775
 #, kde-format
 msgid "&Cancel"
 msgstr "&შეწყვეტა"
@@ -280,7 +280,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "&მონიშნული ობიექტებისთვის ჭდის მინიჭება"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:770
+#: core/app/views/preview/itempreviewview.cpp:773
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "&ამ ობიექტის ჭდის მინიჭება"
@@ -2829,16 +2829,16 @@ msgid "Documentation: "
 msgstr "დოკუმენტაცია: "
 
 #: core/app/views/preview/itempreviewview.cpp:164
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:281
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "უკან"
 
 #: core/app/views/preview/itempreviewview.cpp:166
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:284
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2879,7 +2879,7 @@ msgstr "ფოკუსის წერტილების ჩვენებ�
 msgid "Show Fullscreen"
 msgstr "მთელ ეკრანზე ჩვენება"
 
-#: core/app/views/preview/itempreviewview.cpp:508
+#: core/app/views/preview/itempreviewview.cpp:511
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, kde-format
 msgctxt "@action: face workflow"
@@ -21322,13 +21322,14 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "წვეთები"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:103
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:114
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "სლაიდშოუ"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:699
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:711
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -21577,7 +21578,7 @@ msgstr "%1-ე ეკრანი"
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
-"with the F2 key.</b>"
+"with the Alt+P key.</b>"
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
@@ -40776,114 +40777,112 @@ msgstr "შეცდომა დაკვრისას: მედია ა�
 msgid "An error has occurred while playing: %1"
 msgstr "შეცდომა დაკვრისას: %1"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:290
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:205
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "დაკვრა/პაუზა"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:208
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "ჩაჭერა"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
-#, fuzzy, kde-format
-#| msgid "Rotate Left"
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
+#, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "მარცხნივ შებრუნება"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:302
-#, fuzzy, kde-format
-#| msgid "Rotate Right"
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
+#, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "მარჯვნივ შებრუნება"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:353
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:363
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "მედიის დამკვრელის შეცდომა..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:233
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:397
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:407
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "მარყუჟში დაკვრის გადართვა"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "კადრი უკან"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:303
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "კადრით წინ"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "აირჩიეთ ვიდეოს დაკვრის სიჩქარე"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
 #, kde-format
 msgid "Rate"
 msgstr "სიხშირე"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:315
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:318
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:324
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:334
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:327
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:337
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:340
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:333
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:343
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:336
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -41742,10 +41741,9 @@ msgid "A KDE Family Project"
 msgstr "KDE-ის ოჯახის პროექტი"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2025, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2026, digiKam developers team"
-msgstr "(c) 2001-2025, digiKam-ის პროგრამისტების გუნდი"
+msgstr "(c) 2001-2026, digiKam-ის პროგრამისტების გუნდი"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
