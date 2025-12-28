@@ -24,6 +24,7 @@
 #include <QApplication>
 #include <QScreen>
 #include <QStyle>
+#include <QGroupBox>
 #include <QComboBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
@@ -100,9 +101,13 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     QWidget* const panel      = new QWidget(this);
     const int spacing         = layoutSpacing();
 
-    DHBox* const hbox1        = new DHBox(panel);
-    new QLabel(i18n("Delay between items:"), hbox1);
-    d->delayInput             = new DIntNumInput(hbox1);
+    // ---
+
+    QGroupBox* const behavior = new QGroupBox(i18n("Behavior"), panel);
+    QGridLayout* const bgrid  = new QGridLayout(behavior);
+
+    QLabel* const delayLbl    = new QLabel(i18n("Delay between items: "), panel);
+    d->delayInput             = new DIntNumInput(panel);
     d->delayInput->setDefaultValue(5);
     d->delayInput->setRange(1, 3600, 1);
     d->delayInput->setWhatsThis(i18n("The delay, in seconds, between items."));
@@ -119,6 +124,48 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
 
     d->showProgress           = new QCheckBox(i18n("Show progress indicator"), panel);
     d->showProgress->setWhatsThis(i18n("Show a progress indicator with pending items to show and time progression."));
+
+    d->itemBgColorLbl        = new QLabel(i18n("Use background color for items:"), panel);
+    d->itemBgColorSel        = new DColorSelector(panel);
+    d->itemBgColorSel->setWhatsThis(i18n("Define a color to use as background to render items on screen."));
+
+    d->captionFont            = new DFontSelect(i18n("Caption font:"), panel);
+    d->captionFont->setToolTip(i18n("Select here the font used to display text in the slideshow."));
+
+    QLabel* const screenLbl      = new QLabel(i18n("Screen placement:"), panel);
+    d->screenPlacement           = new QComboBox(panel);
+    d->screenPlacement->setToolTip(i18n("In case of multi-screen computer, select here the monitor to slide contents."));
+
+    QStringList choices;
+    choices.append(i18nc("@label:listbox The current screen, for the presentation mode", "Current Screen"));
+    choices.append(i18nc("@label:listbox The default screen for the presentation mode",  "Default Screen"));
+
+    for (int i = 0 ; i < qApp->screens().count() ; ++i)
+    {
+        QString model = qApp->screens().at(i)->model();
+        choices.append(i18nc("@label:listbox %1 is the screen number (0, 1, ...)", "Screen %1", i) +
+                             QString::fromUtf8(" (%1)").arg(model.left(model.length() - 1)));
+    }
+
+    d->screenPlacement->addItems(choices);
+
+    bgrid->addWidget(delayLbl,            0, 0, 1, 2);
+    bgrid->addWidget(d->delayInput,       0, 3, 1, 1);
+    bgrid->addWidget(d->startWithCurrent, 1, 0, 1, 2);
+    bgrid->addWidget(d->loopMode,         1, 2, 1, 2);
+    bgrid->addWidget(d->suffleMode,       2, 0, 1, 2);
+    bgrid->addWidget(d->showProgress,     2, 2, 1, 2);
+    bgrid->addWidget(d->itemBgColorLbl,   3, 0, 1, 2);
+    bgrid->addWidget(d->itemBgColorSel,   3, 3, 1, 1);
+    bgrid->addWidget(d->captionFont,      4, 0, 1, 4);
+    bgrid->addWidget(screenLbl,           5, 0, 1, 2);
+    bgrid->addWidget(d->screenPlacement,  5, 2, 1, 2);
+    bgrid->setColumnStretch(1, 10);
+
+    // ---
+
+    QGroupBox* const info     = new QGroupBox(i18n("On Screen Display"), panel);
+    QGridLayout* const igrid  = new QGridLayout(info);
 
     d->showName               = new QCheckBox(i18n("Show item file name"), panel);
     d->showName->setWhatsThis(i18n("Show the item file name at the bottom of the screen."));
@@ -156,30 +203,21 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     d->showRating             = new QCheckBox(i18n("Show item rating"), panel);
     d->showRating->setWhatsThis(i18n("Show the digiKam item rating at the bottom of the screen."));
 
-    d->itemBgColorLbl        = new QLabel(i18n("Use background color for items:"), panel);
-    d->itemBgColorSel        = new DColorSelector(panel);
-    d->itemBgColorSel->setWhatsThis(i18n("Define a color to use as background to render items on screen."));
+    igrid->addWidget(d->showName,             0, 0, 1, 1);
+    igrid->addWidget(d->showDate,             0, 2, 1, 1);
+    igrid->addWidget(d->showApertureFocal,    1, 0, 1, 1);
+    igrid->addWidget(d->showExpoSensitivity,  1, 2, 1, 1);
+    igrid->addWidget(d->showMakeModel,        2, 0, 1, 1);
+    igrid->addWidget(d->showLensModel,        2, 2, 1, 1);
+    igrid->addWidget(d->showComment,          3, 0, 1, 1);
+    igrid->addWidget(d->showTitle,            3, 2, 1, 1);
+    igrid->addWidget(d->showCapIfNoTitle,     4, 0, 1, 1);
+    igrid->addWidget(d->showTags,             4, 2, 1, 1);
+    igrid->addWidget(d->showLabels,           5, 0, 1, 1);
+    igrid->addWidget(d->showRating,           5, 2, 1, 1);
+    igrid->setColumnStretch(1, 10);
 
-    d->captionFont            = new DFontSelect(i18n("Caption font:"), panel);
-    d->captionFont->setToolTip(i18n("Select here the font used to display text in the slideshow."));
-
-    DHBox* const screenSelectBox = new DHBox(panel);
-    new QLabel(i18n("Screen placement:"), screenSelectBox);
-    d->screenPlacement           = new QComboBox(screenSelectBox);
-    d->screenPlacement->setToolTip(i18n("In case of multi-screen computer, select here the monitor to slide contents."));
-
-    QStringList choices;
-    choices.append(i18nc("@label:listbox The current screen, for the presentation mode", "Current Screen"));
-    choices.append(i18nc("@label:listbox The default screen for the presentation mode",  "Default Screen"));
-
-    for (int i = 0 ; i < qApp->screens().count() ; ++i)
-    {
-        QString model = qApp->screens().at(i)->model();
-        choices.append(i18nc("@label:listbox %1 is the screen number (0, 1, ...)", "Screen %1", i) +
-                             QString::fromUtf8(" (%1)").arg(model.left(model.length() - 1)));
-    }
-
-    d->screenPlacement->addItems(choices);
+    // ---
 
     QLabel* const keyNote        = new QLabel(i18n("<b>Note: This dialog for the Slideshow Settings "
                                                    "can be activated at any time with the Alt+P key.</b>"), panel);
@@ -205,30 +243,13 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
         d->showTags->hide();
     }
 
+    // ---
+
     QGridLayout* const grid   = new QGridLayout(panel);
-    grid->addWidget(hbox1,                   0, 0, 1, 2);
-    grid->addWidget(d->startWithCurrent,     1, 0, 1, 1);
-    grid->addWidget(d->showRating,           1, 1, 1, 1);
-    grid->addWidget(d->suffleMode,           2, 0, 1, 1);
-    grid->addWidget(d->loopMode,             2, 1, 1, 1);
-    grid->addWidget(d->showName,             3, 0, 1, 1);
-    grid->addWidget(d->showProgress,         3, 1, 1, 1);
-    grid->addWidget(d->showApertureFocal,    4, 0, 1, 1);
-    grid->addWidget(d->showDate,             4, 1, 1, 1);
-    grid->addWidget(d->showMakeModel,        5, 0, 1, 1);
-    grid->addWidget(d->showExpoSensitivity,  5, 1, 1, 1);
-    grid->addWidget(d->showLensModel,        6, 0, 1, 1);
-    grid->addWidget(d->showComment,          6, 1, 1, 1);
-    grid->addWidget(d->showTitle,            7, 0, 1, 1);
-    grid->addWidget(d->showCapIfNoTitle,     7, 1, 1, 1);
-    grid->addWidget(d->showTags,             8, 0, 1, 1);
-    grid->addWidget(d->showLabels,           8, 1, 1, 1);
-    grid->addWidget(d->itemBgColorLbl,      9, 0, 1, 1);
-    grid->addWidget(d->itemBgColorSel,      9, 1, 1, 1);
-    grid->addWidget(d->captionFont,         10, 0, 1, 2);
-    grid->addWidget(screenSelectBox,        11, 0, 1, 2);
-    grid->addWidget(keyNote,                12, 0, 1, 2);
-    grid->setRowStretch(13, 10);
+    grid->addWidget(behavior, 0, 0, 1, 1);
+    grid->addWidget(info,     1, 0, 1, 1);
+    grid->addWidget(keyNote,  2, 0, 1, 1);
+    grid->setRowStretch(3, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
