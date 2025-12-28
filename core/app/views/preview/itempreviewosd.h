@@ -23,6 +23,7 @@
 // Local includes
 
 #include "iteminfo.h"
+#include "previewosdsettings.h"
 
 namespace Digikam
 {
@@ -33,7 +34,7 @@ class ItemPreviewOsd : public QWidget
 
 public:
 
-    explicit ItemPreviewOsd(QWidget* const parent);
+    explicit ItemPreviewOsd(PreviewOsdSettings* const settings, QWidget* const parent);
     ~ItemPreviewOsd()                                override;
 
     void setItemInfo(const ItemInfo& inf);

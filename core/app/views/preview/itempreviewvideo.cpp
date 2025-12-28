@@ -46,6 +46,7 @@
 #include "fileactionmngr.h"
 #include "contextmenuhelper.h"
 #include "itempreviewosd.h"
+#include "previewosdsettings.h"
 
 namespace Digikam
 {
@@ -63,6 +64,7 @@ public:
     PickLabelSelector*     plWidget             = nullptr;
 
     ItemPreviewOsd*        osd                  = nullptr;
+    PreviewOsdSettings     osdSettings;
 
     ItemInfo               info;
 };
@@ -100,7 +102,7 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
 
     setToolbarExtraWidget(labelsBox);
 
-    d->osd                      = new ItemPreviewOsd(this);
+    d->osd                      = new ItemPreviewOsd(&d->osdSettings, this);
 
     setOsdWidget(d->osd);
 
@@ -250,6 +252,7 @@ void ItemPreviewVideo::slotAssignRating(int rating)
 void ItemPreviewVideo::slotSetupChanged()
 {
     setToolbarVisible(ApplicationSettings::instance()->getPreviewShowIcons());
+    d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));
     d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
 }
 

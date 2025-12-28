@@ -40,8 +40,8 @@ public:
     PreviewOsdSettings()  = default;
     ~PreviewOsdSettings() = default;
 
-    void readFromConfig();
-    void writeToConfig();
+    void readFromConfig(const QString& configGroupName);
+    void writeToConfig(const QString& configGroupName);
 
 public:
 
@@ -102,7 +102,6 @@ public:
 
 private:
 
-    const QString configGroupName                            = QLatin1String("Preview OSD Settings");
     const QString configPreviewOsdPrintApertureFocalEntry    = QLatin1String("PreviewOsdPrintApertureFocal");
     const QString configPreviewOsdPrintCommentEntry          = QLatin1String("PreviewOsdPrintComment");
     const QString configPreviewOsdPrintTitleEntry            = QLatin1String("PreviewOsdPrintTitle");

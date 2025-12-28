@@ -44,26 +44,21 @@ public:
 
 public:
 
-    const int  maxStringLen         = 80;
+    const int           maxStringLen = 80;
 
-    ItemInfo   info;
+    ItemInfo            info;
 
-    bool       enabled              = false;
-    bool       printTags            = true;
-    bool       printTitle           = true;
-    bool       printComment         = true;
-    bool       printMakeModel       = true;
-    bool       printLensModel       = true;
-    bool       printExpoSensitivity = true;
-    bool       printApertureFocal   = true;
-    bool       printDate            = true;
+    bool                enabled      = false;
+
+    PreviewOsdSettings* settings     = nullptr;
 };
 
-ItemPreviewOsd::ItemPreviewOsd(QWidget* const parent)
+ItemPreviewOsd::ItemPreviewOsd(PreviewOsdSettings* const settings, QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
     setAttribute(Qt::WA_TransparentForMouseEvents);
+    d->settings = settings;
 }
 
 ItemPreviewOsd::~ItemPreviewOsd()
@@ -102,14 +97,14 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
 
     // Display tag names.
 
-    if (d->printTags)
+    if (d->settings->printTags)
     {
         printTags(p, offset, tags);
     }
 
     // Display Titles.
 
-    if (d->printTitle)
+    if (d->settings->printTitle)
     {
         str.clear();
 
@@ -120,9 +115,22 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
         }
     }
 
+    // Display Captions if no Titles.
+
+    if (d->settings->printCapIfNoTitle)
+    {
+        str.clear();
+
+        if (title.isEmpty())
+        {
+            str += comment;
+            printComments(p, offset, str);
+        }
+    }
+
     // Display Comments.
 
-    if (d->printComment)
+    if (d->settings->printComment)
     {
         str = comment;
         printComments(p, offset, str);
@@ -130,7 +138,7 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
 
     // Display Make and Model.
 
-    if (d->printMakeModel)
+    if (d->settings->printMakeModel)
     {
         str.clear();
 
@@ -159,7 +167,7 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
 
     // Display Lens model.
 
-    if (d->printLensModel)
+    if (d->settings->printLensModel)
     {
         str.clear();
 
@@ -174,7 +182,7 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
 
     // Display Exposure and Sensitivity.
 
-    if (d->printExpoSensitivity)
+    if (d->settings->printExpoSensitivity)
     {
         str.clear();
 
@@ -201,7 +209,7 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
 
     // Display Aperture and Focal.
 
-    if (d->printApertureFocal)
+    if (d->settings->printApertureFocal)
     {
         str.clear();
 
@@ -248,7 +256,7 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
 
     // Display Creation Date.
 
-    if (d->printDate)
+    if (d->settings->printDate)
     {
         QDateTime dateTime = d->info.dateTime();
 
@@ -257,6 +265,13 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
             str = QLocale().toString(dateTime, QLocale::ShortFormat);
             printInfoText(p, offset, str);
         }
+    }
+
+    // Display image File Name.
+
+    if (d->settings->printName)
+    {
+        printInfoText(p, offset, d->info.name());
     }
 }
 

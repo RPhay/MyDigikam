@@ -49,7 +49,7 @@ void SlideShowSettings::readFromConfig()
     slideScreen               = group.readEntry(configSlideScreenEntry,                   -2);
     exifRotate                = MetaEngineSettings::instance()->settings().exifRotate;
 
-    osdSettings.readFromConfig();
+    osdSettings.readFromConfig(QLatin1String("SlideShow OSD Settings"));
 }
 
 void SlideShowSettings::writeToConfig()
@@ -68,7 +68,7 @@ void SlideShowSettings::writeToConfig()
     group.writeEntry(configSlideScreenEntry,                   slideScreen);
     group.sync();
 
-    osdSettings.writeToConfig();
+    osdSettings.writeToConfig(QLatin1String("Slideshow OSD Settings"));
 }
 
 int SlideShowSettings::indexOf(const QUrl& url) const

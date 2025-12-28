@@ -23,7 +23,7 @@
 namespace Digikam
 {
 
-void PreviewOsdSettings::readFromConfig()
+void PreviewOsdSettings::readFromConfig(const QString& configGroupName)
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName);
@@ -42,7 +42,7 @@ void PreviewOsdSettings::readFromConfig()
                                                 QFontDatabase::systemFont(QFontDatabase::GeneralFont));
 }
 
-void PreviewOsdSettings::writeToConfig()
+void PreviewOsdSettings::writeToConfig(const QString& configGroupName)
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName);

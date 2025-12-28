@@ -45,6 +45,8 @@
 #include "fullscreensettings.h"
 #include "dxmlguiwindow.h"
 #include "previewsettings.h"
+#include "previewosdsettings.h"
+#include "previewosdwidget.h"
 #include "setupcategory.h"
 #include "setupmime.h"
 
@@ -100,6 +102,9 @@ public:
     DFontSelect*        treeViewFontSelect              = nullptr;
 
     FullScreenSettings* fullScreenSettings              = nullptr;
+
+    PreviewOsdSettings  osdSettings;
+    PreviewOsdWidget*   osdWidget                       = nullptr;
 
     SetupCategory*      category                        = nullptr;
     SetupMime*          mimetype                        = nullptr;
@@ -313,6 +318,8 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewOverlay             = new QCheckBox(i18n("Show a text overlay over preview."), pwpanel);
     d->previewOverlay->setWhatsThis(i18n("Uncheck this if you do not want to show a canvas overlay with technical shot settings and properties."));
 
+    d->osdWidget                  = new PreviewOsdWidget(&d->osdSettings, pwpanel);
+
     grid3->setContentsMargins(spacing, spacing, spacing, spacing);
     grid3->setSpacing(spacing);
     grid3->addWidget(d->previewFastPreview,       0, 0, 1, 2);
@@ -325,7 +332,8 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     grid3->addWidget(d->previewShowIcons,         6, 0, 1, 2);
     grid3->addWidget(d->previewAutoPlay,          7, 0, 1, 2);
     grid3->addWidget(d->previewOverlay,           8, 0, 1, 2);
-    grid3->setRowStretch(9, 10);
+    grid3->addWidget(d->osdWidget,                9, 0, 1, 2);
+    grid3->setRowStretch(10, 10);
 
     d->previewFastPreview->setChecked(true);
     d->previewRawMode->setCurrentIndex(0);
@@ -365,6 +373,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     connect(d->previewFullView, SIGNAL(toggled(bool)),
             d->previewRawMode, SLOT(setEnabled(bool)));
+
+    connect(d->previewOverlay, SIGNAL(toggled(bool)),
+            d->osdWidget, SLOT(setEnabled(bool)));
 
     connect(d->largeThumbsBox, SIGNAL(toggled(bool)),
             this, SLOT(slotUseLargeThumbsToggled(bool)));
@@ -431,6 +442,9 @@ void SetupAlbumView::applySettings()
     settings->setScaleFitToWindow(d->previewScaleFitToWindow->isChecked());
     settings->setShowFolderTreeViewItemsCount(d->showFolderTreeViewItemsCount->isChecked());
     settings->saveSettings();
+
+    d->osdWidget->writeSettings();
+    d->osdSettings.writeToConfig(QLatin1String("Preview OSD Settings"));
 
     KConfigGroup group = KSharedConfig::openConfig()->group(settings->generalConfigGroupName());
     d->fullScreenSettings->saveSettings(group);
@@ -500,6 +514,9 @@ void SetupAlbumView::readSettings()
     d->previewScaleFitToWindow->setChecked(settings->getScaleFitToWindow());
     d->previewConvertToEightBit->setChecked(previewSettings.convertToEightBit);
     d->showFolderTreeViewItemsCount->setChecked(settings->getShowFolderTreeViewItemsCount());
+
+    d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));
+    d->osdWidget->readSettings();
 
     KConfigGroup group = KSharedConfig::openConfig()->group(settings->generalConfigGroupName());
     d->fullScreenSettings->readSettings(group);

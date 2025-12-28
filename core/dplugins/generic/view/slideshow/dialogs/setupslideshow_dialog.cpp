@@ -172,11 +172,11 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
 
     // ---
 
-    d->osd = new PreviewOsdWidget(&d->settings->osdSettings, panel);
+    d->osd                = new PreviewOsdWidget(&d->settings->osdSettings, panel);
 
     // ---
 
-    QLabel* const keyNote        = new QLabel(i18n("<b>Note: This dialog for the Slideshow Settings "
+    QLabel* const keyNote = new QLabel(i18n("<b>Note: This dialog for the Slideshow Settings "
                                                    "can be activated at any time with the Alt+P key.</b>"), panel);
     keyNote->setWordWrap(true);
     keyNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);

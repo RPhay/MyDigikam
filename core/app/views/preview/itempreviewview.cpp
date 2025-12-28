@@ -54,6 +54,7 @@
 #include "thememanager.h"
 #include "singlephotopreviewlayout.h"
 #include "previewsettings.h"
+#include "previewosdsettings.h"
 #include "tagscache.h"
 #include "itemtagpair.h"
 #include "albummanager.h"
@@ -107,6 +108,7 @@ public:
     PickLabelSelector*     plWidget             = nullptr;
 
     ItemPreviewOsd*        osd                  = nullptr;
+    PreviewOsdSettings     osdSettings;
     Album*                 currAlbum            = nullptr;
 };
 
@@ -249,7 +251,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     d->toolBar->addWidget(labelsBox);
 
-    d->osd                  = new ItemPreviewOsd(this);
+    d->osd                  = new ItemPreviewOsd(&d->osdSettings, this);
 
     QVBoxLayout* const vlay = new QVBoxLayout(this);
     vlay->addWidget(d->toolBar);
@@ -673,6 +675,7 @@ void ItemPreviewView::slotSetupChanged()
     setShowText(ApplicationSettings::instance()->getPreviewShowIcons());
 
     d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
+    d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));
 
     layout()->updateZoomAndSize();
 
