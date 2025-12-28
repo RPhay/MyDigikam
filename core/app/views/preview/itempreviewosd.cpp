@@ -84,6 +84,7 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
     }
 
     QPainter p(this);
+    p.setFont(d->settings->captionFont);
 
     QString str;
 
