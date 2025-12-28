@@ -42,9 +42,6 @@ public:
 
 private:
 
-    void printInfoText(QPainter& p, int& offset, const QString& str, const QColor& pcol = Qt::white);
-    void printComments(QPainter& p, int& offset, const QString& comments);
-    void printTags(QPainter& p, int& offset, QStringList& tags);
     void paintEvent(QPaintEvent*)                    override;
 
 private:

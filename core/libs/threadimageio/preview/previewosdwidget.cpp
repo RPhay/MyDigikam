@@ -153,10 +153,10 @@ void PreviewOsdWidget::writeSettings()
     d->settings->printExpoSensitivity  = d->showExpoSensitivity->isChecked();
     d->settings->printMakeModel        = d->showMakeModel->isChecked();
     d->settings->printLensModel        = d->showLensModel->isChecked();
-    d->settings->printComment          = d->showComment->isChecked();
+    d->settings->printCaption          = d->showComment->isChecked();
     d->settings->printTitle            = d->showTitle->isChecked();
     d->settings->printCapIfNoTitle     = d->showCapIfNoTitle->isChecked();
-    d->settings->printTags             = d->showTags->isChecked();
+    d->settings->printKeywords         = d->showTags->isChecked();
     d->settings->captionFont           = d->textFont->font();
 }
 
@@ -168,10 +168,10 @@ void PreviewOsdWidget::readSettings()
     d->showExpoSensitivity->setChecked(d->settings->printExpoSensitivity);
     d->showMakeModel->setChecked(d->settings->printMakeModel);
     d->showLensModel->setChecked(d->settings->printLensModel);
-    d->showComment->setChecked(d->settings->printComment);
+    d->showComment->setChecked(d->settings->printCaption);
     d->showTitle->setChecked(d->settings->printTitle);
     d->showCapIfNoTitle->setChecked(d->settings->printCapIfNoTitle);
-    d->showTags->setChecked(d->settings->printTags);
+    d->showTags->setChecked(d->settings->printKeywords);
     d->textFont->setFont(d->settings->captionFont);
 }
 

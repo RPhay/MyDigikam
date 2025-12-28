@@ -19,6 +19,8 @@
 
 #include <QColor>
 #include <QString>
+#include <QStringList>
+#include <QPainter>
 #include <QFont>
 #include <QFontDatabase>
 
@@ -42,6 +44,15 @@ public:
 
     void readFromConfig(const QString& configGroupName);
     void writeToConfig(const QString& configGroupName);
+
+public:
+
+    /**
+     * Helper methods to render text on the OSD.
+     */
+    static void printInfoText(QPainter& p, int& offset, const QString& str, const QColor& pcol = Qt::white);
+    static void printComments(QPainter& p, int& offset, const QString& comments);
+    static void printTags(QPainter& p, int& offset, QStringList& tags);
 
 public:
 
@@ -78,7 +89,7 @@ public:
     /**
      * Print picture comment while slide
      */
-    bool                         printComment               = false;
+    bool                         printCaption               = false;
 
     /**
      * Print image title while slide
@@ -93,7 +104,7 @@ public:
     /**
      * Print tag names while slide
      */
-    bool                         printTags                  = false;
+    bool                         printKeywords              = false;
 
     /**
      * Font for the display of caption text
