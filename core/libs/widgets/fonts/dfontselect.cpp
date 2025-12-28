@@ -143,6 +143,7 @@ bool DFontSelect::event(QEvent* e)
             QToolTip::setFont(font());
             QToolTip::showText(helpEvent->globalPos(),
                                d->modeCombo->currentText());
+            QToolTip::setFont(d->ttFont);
         }
         else
         {
