@@ -147,6 +147,7 @@ QList<AlbumRootInfo> CoreDB::getAlbumRoots() const
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         AlbumRootInfo info;
+
         info.id              = (*it).toInt();
         ++it;
         info.label           = (*it).toString();
@@ -307,7 +308,7 @@ TagInfo CoreDB::getTagInfo(int tagId) const
     {
         QList<QVariant>::const_iterator it = values.constBegin();
 
-        info.id = (*it).toInt();
+        info.id     = (*it).toInt();
         ++it;
         info.pid    = (*it).toInt();
         ++it;
@@ -1994,6 +1995,7 @@ QList<CommentInfo> CoreDB::getItemComments(qlonglong imageID) const
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         CommentInfo info;
+
         info.imageId  = imageID;
 
         info.id       = (*it).toInt();
@@ -2156,6 +2158,7 @@ QList<CopyrightInfo> CoreDB::getItemCopyright(qlonglong imageID, const QString& 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         CopyrightInfo info;
+
         info.id         = imageID;
 
         info.property   = (*it).toString();
@@ -3391,8 +3394,6 @@ qlonglong CoreDB::getItemFromAlbum(int albumID, const QString& fileName) const
 
 QHash<QDateTime, int> CoreDB::getAllCreationDates() const
 {
-    int count             = 0;
-    QDateTime             dateTime;
     QVariantList          values;
     QHash<QDateTime, int> dateNumberHash;
 
@@ -3400,6 +3401,9 @@ QHash<QDateTime, int> CoreDB::getAllCreationDates() const
                                      "INNER JOIN Images ON Images.id=ImageInformation.imageid "
                                      " WHERE Images.status=1 GROUP BY creationDate;"),
                    &values);
+
+    int       count;
+    QDateTime dateTime;
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
@@ -3460,11 +3464,14 @@ QMap<QString, QDateTime> CoreDB::getAlbumModificationMap(int albumRootId) const
                                      " WHERE albumRoot=?;"),
                    albumRootId, &values);
 
+    QDateTime dateTime;
+    QString   relativePath;
+
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
-        QString relativePath = (*it).toString();
+        relativePath = (*it).toString();
         ++it;
-        QDateTime dateTime   = asDateTimeUTC((*it).toDateTime());
+        dateTime     = asDateTimeUTC((*it).toDateTime());
         ++it;
 
         pathDateMap.insert(relativePath, dateTime);
@@ -3781,9 +3788,9 @@ QList<int> CoreDB::getAlbumAndSubalbumsForPath(int albumRootId, const QString& r
                    (relativePath == QLatin1String("/") ? QLatin1String("/%")
                                                        : QString(relativePath + QLatin1String("/%"))), &values);
 
-    QList<int> albumIds;
     int id;
-    QString albumRelativePath;
+    QList<int> albumIds;
+    QString    albumRelativePath;
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
@@ -4076,8 +4083,8 @@ QMap<qlonglong, QString> CoreDB::getItemIDsAndURLsInAlbum(int albumID) const
                                      "  WHERE Albums.id=?;"),
                    albumID, &values);
 
-    QString   path;
     qlonglong id;
+    QString   path;
     QString   relativePath, name;
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
@@ -4796,15 +4803,17 @@ bool CoreDB::integrityCheck() const
                 return false;
             }
 
+            QString tableName, operation, messageType, messageText;
+
             for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ; )
             {
-                QString tableName   = (*it).toString();
+                tableName   = (*it).toString();
                 ++it;
-                QString operation   = (*it).toString();
+                operation   = (*it).toString();
                 ++it;
-                QString messageType = (*it).toString();
+                messageType = (*it).toString();
                 ++it;
-                QString messageText = (*it).toString();
+                messageText = (*it).toString();
                 ++it;
 
                 Q_UNUSED(operation);
