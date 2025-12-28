@@ -42,24 +42,14 @@ void SlideShowSettings::readFromConfig()
     delay                     = group.readEntry(configSlideShowDelayEntry,                5);
     loop                      = group.readEntry(configSlideShowLoopEntry,                 false);
     suffle                    = group.readEntry(configSlideShowSuffleEntry,               false);
-    printName                 = group.readEntry(configSlideShowPrintNameEntry,            true);
-    printDate                 = group.readEntry(configSlideShowPrintDateEntry,            false);
-    printApertureFocal        = group.readEntry(configSlideShowPrintApertureFocalEntry,   false);
-    printExpoSensitivity      = group.readEntry(configSlideShowPrintExpoSensitivityEntry, false);
-    printMakeModel            = group.readEntry(configSlideShowPrintMakeModelEntry,       false);
-    printLensModel            = group.readEntry(configSlideShowPrintLensModelEntry,       false);
-    printComment              = group.readEntry(configSlideShowPrintCommentEntry,         false);
-    printTitle                = group.readEntry(configSlideShowPrintTitleEntry,           false);
-    printCapIfNoTitle         = group.readEntry(configSlideShowPrintCapIfNoTitleEntry,    false);
-    printTags                 = group.readEntry(configSlideShowPrintTagsEntry,            false);
     printLabels               = group.readEntry(configSlideShowPrintLabelsEntry,          false);
     printRating               = group.readEntry(configSlideShowPrintRatingEntry,          false);
     showProgressIndicator     = group.readEntry(configSlideShowProgressIndicatorEntry,    true);
     bgColor                   = group.readEntry(configSlideShowBgColorEntry,              QColor(Qt::black));
-    captionFont               = group.readEntry(configSlideShowCaptionFontEntry,
-                                                QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     slideScreen               = group.readEntry(configSlideScreenEntry,                   -2);
     exifRotate                = MetaEngineSettings::instance()->settings().exifRotate;
+
+    osdSettings.readFromConfig();
 }
 
 void SlideShowSettings::writeToConfig()
@@ -71,23 +61,14 @@ void SlideShowSettings::writeToConfig()
     group.writeEntry(configSlideShowDelayEntry,                delay);
     group.writeEntry(configSlideShowLoopEntry,                 loop);
     group.writeEntry(configSlideShowSuffleEntry,               suffle);
-    group.writeEntry(configSlideShowPrintNameEntry,            printName);
-    group.writeEntry(configSlideShowPrintDateEntry,            printDate);
-    group.writeEntry(configSlideShowPrintApertureFocalEntry,   printApertureFocal);
-    group.writeEntry(configSlideShowPrintExpoSensitivityEntry, printExpoSensitivity);
-    group.writeEntry(configSlideShowPrintMakeModelEntry,       printMakeModel);
-    group.writeEntry(configSlideShowPrintLensModelEntry,       printLensModel);
-    group.writeEntry(configSlideShowPrintCommentEntry,         printComment);
-    group.writeEntry(configSlideShowPrintTitleEntry,           printTitle);
-    group.writeEntry(configSlideShowPrintCapIfNoTitleEntry,    printCapIfNoTitle);
-    group.writeEntry(configSlideShowPrintTagsEntry,            printTags);
     group.writeEntry(configSlideShowPrintLabelsEntry,          printLabels);
     group.writeEntry(configSlideShowPrintRatingEntry,          printRating);
     group.writeEntry(configSlideShowProgressIndicatorEntry,    showProgressIndicator);
     group.writeEntry(configSlideShowBgColorEntry,              bgColor);
-    group.writeEntry(configSlideShowCaptionFontEntry,          captionFont);
     group.writeEntry(configSlideScreenEntry,                   slideScreen);
     group.sync();
+
+    osdSettings.writeToConfig();
 }
 
 int SlideShowSettings::indexOf(const QUrl& url) const

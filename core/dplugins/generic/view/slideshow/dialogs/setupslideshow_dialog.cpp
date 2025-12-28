@@ -42,6 +42,7 @@
 #include "dcolorselector.h"
 #include "digikam_debug.h"
 #include "slideshowsettings.h"
+#include "previewosdwidget.h"
 
 using namespace Digikam;
 
@@ -81,6 +82,7 @@ public:
     DIntNumInput*      delayInput           = nullptr;
     DColorSelector*    itemBgColorSel       = nullptr;
 
+    PreviewOsdWidget*  osd                  = nullptr;
     SlideShowSettings* settings             = nullptr;
 };
 
@@ -90,6 +92,8 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     : DPluginDialog(parent, QLatin1String("Slideshow Settings")),
       d            (new Private)
 {
+    d->settings               = settings;
+
     setModal(true);
     setPlugin(settings->plugin);
     setWindowTitle(i18nc("@title:window", "Slideshow Settings"));
@@ -168,54 +172,7 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
 
     // ---
 
-    QGroupBox* const info     = new QGroupBox(i18n("On Screen Display"), panel);
-    QGridLayout* const igrid  = new QGridLayout(info);
-
-    d->showName               = new QCheckBox(i18n("Show item file name"), panel);
-    d->showName->setWhatsThis(i18n("Show the item file name at the bottom of the screen."));
-
-    d->showDate               = new QCheckBox(i18n("Show item creation date"), panel);
-    d->showDate->setWhatsThis(i18n("Show the item creation time/date at the bottom of the screen."));
-
-    d->showApertureFocal      = new QCheckBox(i18n("Show camera aperture and focal length"), panel);
-    d->showApertureFocal->setWhatsThis(i18n("Show the camera aperture and focal length at the bottom of the screen."));
-
-    d->showExpoSensitivity    = new QCheckBox(i18n("Show camera exposure and sensitivity"), panel);
-    d->showExpoSensitivity->setWhatsThis(i18n("Show the camera exposure and sensitivity at the bottom of the screen."));
-
-    d->showMakeModel          = new QCheckBox(i18n("Show camera make and model"), panel);
-    d->showMakeModel->setWhatsThis(i18n("Show the camera make and model at the bottom of the screen."));
-
-    d->showLensModel          = new QCheckBox(i18n("Show camera lens model"), panel);
-    d->showLensModel->setWhatsThis(i18n("Show the camera lens model at the bottom of the screen."));
-
-    d->showComment            = new QCheckBox(i18n("Show item caption"), panel);
-    d->showComment->setWhatsThis(i18n("Show the item caption at the bottom of the screen."));
-
-    d->showTitle              = new QCheckBox(i18n("Show item title"), panel);
-    d->showTitle->setWhatsThis(i18n("Show the item title at the bottom of the screen."));
-
-    d->showCapIfNoTitle       = new QCheckBox(i18n("Show item caption if it has not title"), panel);
-    d->showCapIfNoTitle->setWhatsThis(i18n("Show the item caption at the bottom of the screen if no titles existed."));
-
-    d->showTags               = new QCheckBox(i18n("Show item tags"), panel);
-    d->showTags->setWhatsThis(i18n("Show the digiKam item tag names at the bottom of the screen."));
-
-    d->textFont            = new DFontSelect(i18n("Text font:"), panel);
-    d->textFont->setToolTip(i18n("Select here the font used to display OSD text over the slideshow."));
-
-    igrid->addWidget(d->showName,             0, 0, 1, 1);
-    igrid->addWidget(d->showDate,             0, 2, 1, 1);
-    igrid->addWidget(d->showApertureFocal,    1, 0, 1, 1);
-    igrid->addWidget(d->showExpoSensitivity,  1, 2, 1, 1);
-    igrid->addWidget(d->showMakeModel,        2, 0, 1, 1);
-    igrid->addWidget(d->showLensModel,        2, 2, 1, 1);
-    igrid->addWidget(d->showComment,          3, 0, 1, 1);
-    igrid->addWidget(d->showTitle,            3, 2, 1, 1);
-    igrid->addWidget(d->showCapIfNoTitle,     4, 0, 1, 1);
-    igrid->addWidget(d->showTags,             4, 2, 1, 1);
-    igrid->addWidget(d->textFont,             6, 0, 1, 3);
-    igrid->setColumnStretch(1, 10);
+    d->osd = new PreviewOsdWidget(&d->settings->osdSettings, panel);
 
     // ---
 
@@ -224,30 +181,19 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     keyNote->setWordWrap(true);
     keyNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
-    // Disable and uncheck the "Show texts if no title" checkbox if the "Show comment" checkbox enabled
-
-    connect(d->showComment, SIGNAL(stateChanged(int)),
-            this, SLOT(slotSetUnchecked(int)));
-
-    connect(d->showComment, SIGNAL(toggled(bool)),
-            d->showCapIfNoTitle, SLOT(setDisabled(bool)));
-
     // Only digiKam support this feature, showFoto do not support digiKam database information.
 
     if (qApp->applicationName() == QLatin1String("showfoto"))
     {
-        d->showCapIfNoTitle->hide();
         d->showLabels->hide();
         d->showRating->hide();
-        d->showTitle->hide();
-        d->showTags->hide();
     }
 
     // ---
 
     QGridLayout* const grid   = new QGridLayout(panel);
     grid->addWidget(behavior, 0, 0, 1, 1);
-    grid->addWidget(info,     1, 0, 1, 1);
+    grid->addWidget(d->osd,   1, 0, 1, 1);
     grid->addWidget(keyNote,  2, 0, 1, 1);
     grid->setRowStretch(3, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -264,8 +210,6 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
 
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(reject()));
-
-    d->settings = settings;
 
     readSettings();
 }
@@ -292,17 +236,7 @@ void SetupSlideShowDialog::slotApplySettings()
     d->settings->bgColor               = d->itemBgColorSel->color();
     d->settings->slideScreen           = d->screenPlacement->currentIndex() - 2;
 
-    d->settings->printName             = d->showName->isChecked();
-    d->settings->printDate             = d->showDate->isChecked();
-    d->settings->printApertureFocal    = d->showApertureFocal->isChecked();
-    d->settings->printExpoSensitivity  = d->showExpoSensitivity->isChecked();
-    d->settings->printMakeModel        = d->showMakeModel->isChecked();
-    d->settings->printLensModel        = d->showLensModel->isChecked();
-    d->settings->printComment          = d->showComment->isChecked();
-    d->settings->printTitle            = d->showTitle->isChecked();
-    d->settings->printCapIfNoTitle     = d->showCapIfNoTitle->isChecked();
-    d->settings->printTags             = d->showTags->isChecked();
-    d->settings->captionFont           = d->textFont->font();
+    d->osd->writeSettings();
 
     d->settings->writeToConfig();
 
@@ -333,17 +267,7 @@ void SetupSlideShowDialog::readSettings()
         d->settings->writeToConfig();
     }
 
-    d->showName->setChecked(d->settings->printName);
-    d->showDate->setChecked(d->settings->printDate);
-    d->showApertureFocal->setChecked(d->settings->printApertureFocal);
-    d->showExpoSensitivity->setChecked(d->settings->printExpoSensitivity);
-    d->showMakeModel->setChecked(d->settings->printMakeModel);
-    d->showLensModel->setChecked(d->settings->printLensModel);
-    d->showComment->setChecked(d->settings->printComment);
-    d->showTitle->setChecked(d->settings->printTitle);
-    d->showCapIfNoTitle->setChecked(d->settings->printCapIfNoTitle);
-    d->showTags->setChecked(d->settings->printTags);
-    d->textFont->setFont(d->settings->captionFont);
+    d->osd->readSettings();
 }
 
 } // namespace DigikamGenericSlideShowPlugin

@@ -28,6 +28,7 @@
 
 #include "digikam_export.h"
 #include "previewsettings.h"
+#include "previewosdsettings.h"
 #include "dinfointerface.h"
 #include "dplugingeneric.h"
 
@@ -68,56 +69,6 @@ public:
      * Auto-rotate image accordingly with Exif Rotation tag
      */
     bool                         exifRotate                 = true;
-
-    /**
-     * Print picture file name while slide
-     */
-    bool                         printName                  = true;
-
-    /**
-     * Print picture creation date while slide
-     */
-    bool                         printDate                  = false;
-
-    /**
-     * Print camera Aperture and Focal while slide
-     */
-    bool                         printApertureFocal         = false;
-
-    /**
-     * Print camera Make and Model while slide
-     */
-    bool                         printMakeModel             = false;
-
-    /**
-     * Print camera Lens model while slide
-     */
-    bool                         printLensModel             = false;
-
-    /**
-     * Print camera Exposure and Sensitivity while slide
-     */
-    bool                         printExpoSensitivity       = false;
-
-    /**
-     * Print picture comment while slide
-     */
-    bool                         printComment               = false;
-
-    /**
-     * Print image title while slide
-     */
-    bool                         printTitle                 = false;
-
-    /**
-     * Print image captions if no title available while slide
-     */
-    bool                         printCapIfNoTitle          = false;
-
-    /**
-     * Print tag names while slide
-     */
-    bool                         printTags                  = false;
 
     /**
      * Print color label and pick label while slide
@@ -165,6 +116,11 @@ public:
     PreviewSettings              previewSettings;
 
     /**
+     * On Screen Dispaly configuration.
+     */
+    PreviewOsdSettings           osdSettings;
+
+    /**
      * List of pictures URL to slide
      */
     QList<QUrl>                  fileList;
@@ -183,11 +139,6 @@ public:
      * Uses a background color to render pictures.
      */
     QColor                       bgColor                    = QColor(Qt::black);
-
-    /**
-     * Font for the display of caption text
-     */
-    QFont                        captionFont                = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     /**
      * Interface to access to host application data

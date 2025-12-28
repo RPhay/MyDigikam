@@ -79,7 +79,7 @@ void SlideProperties::setCurrentUrl(const QUrl& url)
 void SlideProperties::paintEvent(QPaintEvent*)
 {
     QPainter p(this);
-    p.setFont(d->settings->captionFont);
+    p.setFont(d->settings->osdSettings.captionFont);
 
     DItemInfo item(d->infoMap);
 
@@ -94,14 +94,14 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display tag names.
 
-    if (d->settings->printTags)
+    if (d->settings->osdSettings.printTags)
     {
         printTags(p, offset, tags);
     }
 
     // Display Titles.
 
-    if (d->settings->printTitle)
+    if (d->settings->osdSettings.printTitle)
     {
         str.clear();
 
@@ -114,7 +114,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Captions if no Titles.
 
-    if (d->settings->printCapIfNoTitle)
+    if (d->settings->osdSettings.printCapIfNoTitle)
     {
         str.clear();
 
@@ -127,7 +127,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Comments.
 
-    if (d->settings->printComment)
+    if (d->settings->osdSettings.printComment)
     {
         str = comment;
         printComments(p, offset, str);
@@ -135,7 +135,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Make and Model.
 
-    if (d->settings->printMakeModel)
+    if (d->settings->osdSettings.printMakeModel)
     {
         str.clear();
 
@@ -164,7 +164,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Lens model.
 
-    if (d->settings->printLensModel)
+    if (d->settings->osdSettings.printLensModel)
     {
         str.clear();
 
@@ -179,7 +179,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Exposure and Sensitivity.
 
-    if (d->settings->printExpoSensitivity)
+    if (d->settings->osdSettings.printExpoSensitivity)
     {
         str.clear();
 
@@ -206,7 +206,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Aperture and Focal.
 
-    if (d->settings->printApertureFocal)
+    if (d->settings->osdSettings.printApertureFocal)
     {
         str.clear();
 
@@ -253,7 +253,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Creation Date.
 
-    if (d->settings->printDate)
+    if (d->settings->osdSettings.printDate)
     {
         QDateTime dateTime = item.dateTime();
 
@@ -266,7 +266,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display image File Name.
 
-    if (d->settings->printName)
+    if (d->settings->osdSettings.printName)
     {
         printInfoText(p, offset, d->url.fileName());
     }
