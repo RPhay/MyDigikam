@@ -18,12 +18,14 @@
 
 #include <QLabel>
 #include <QEvent>
-#include <QPushButton>
-#include <QFontDatabase>
-#include <QApplication>
 #include <QStyle>
+#include <QToolTip>
 #include <QComboBox>
+#include <QHelpEvent>
+#include <QPushButton>
 #include <QFontDialog>
+#include <QApplication>
+#include <QFontDatabase>
 
 // KDE includes
 
@@ -48,6 +50,7 @@ public:
     DAdjustableLabel*     desc              = nullptr;
 
     QFont                 font;
+    QFont                 ttFont            = QToolTip::font();
 
     QPushButton*          chooseFontButton  = nullptr;
 
@@ -131,9 +134,24 @@ void DFontSelect::setFont(const QFont& font)
 
 bool DFontSelect::event(QEvent* e)
 {
-    if (e->type() == QEvent::Polish)
+    if (e->type() == QEvent::ToolTip)
     {
-        d->modeCombo->setFont(font());
+        QHelpEvent* const helpEvent = static_cast<QHelpEvent*>(e);
+
+        if (d->modeCombo == qApp->widgetAt(helpEvent->globalPos()))
+        {
+            QToolTip::setFont(font());
+            QToolTip::showText(helpEvent->globalPos(),
+                               d->modeCombo->currentText());
+        }
+        else
+        {
+            QToolTip::setFont(d->ttFont);
+            QToolTip::showText(helpEvent->globalPos(), toolTip());
+        }
+
+         e->ignore();
+         return true;
     }
 
     return DHBox::event(e);
