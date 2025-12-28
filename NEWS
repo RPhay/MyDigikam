@@ -368,7 +368,7 @@ BUGFIXES:
 302 --> 513740 - Crash while "Refresh" of album.
 303 --> 142808 - Wish: export to folder.
 304 --> 182781 - Cannot compile/update: make: *** [cmake_check_build_system] Error 1.
-305 --> 090542 - Cant compile, jpeg missing.
+305 --> 090542 - Can't compile, jpeg missing.
 306 --> 092678 - Error compiling.
 307 --> 092929 - digiKam fails to build.
 308 --> 094161 - Compile error: database is locked on query.

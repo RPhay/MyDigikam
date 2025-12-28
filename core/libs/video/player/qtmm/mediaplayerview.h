@@ -64,7 +64,7 @@ public:
     void setOsdWidget(QWidget* const osd);
 
     /**
-     * @return the list of action avaialble in the toolbar.
+     * @return the list of action available in the toolbar.
      */
     QList<QAction*> actionsList() const;
 

@@ -116,7 +116,7 @@ public:
     PreviewSettings              previewSettings;
 
     /**
-     * On Screen Dispaly configuration.
+     * On Screen Display configuration.
      */
     PreviewOsdSettings           osdSettings;
 
