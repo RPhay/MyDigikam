@@ -42,6 +42,7 @@
 #include "thumbnailsize.h"
 #include "applicationsettings.h"
 #include "dfontselect.h"
+#include "dexpanderbox.h"
 #include "fullscreensettings.h"
 #include "dxmlguiwindow.h"
 #include "previewsettings.h"
@@ -175,6 +176,8 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->iconShowColorLabelBox->setWhatsThis(i18n("Set this option to show the digiKam color label "
                                             "as a border around the thumbnail."));
 
+    DLineWidget* const line    = new DLineWidget(Qt::Horizontal, iwpanel);
+
     d->iconShowOverlaysBox     = new QCheckBox(i18n("Show rotation overlay buttons"), iwpanel);
     d->iconShowOverlaysBox->setWhatsThis(i18n("Set this option to show overlay buttons over "
                                               "the image thumbnail to be able to process left or right image rotation."));
@@ -183,8 +186,11 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->iconShowFullscreenBox->setWhatsThis(i18n("Set this option to show an overlay button over the "
                                                 "image thumbnail to open it in fullscreen mode."));
 
-    d->iconShowCoordinatesBox  = new QCheckBox(i18n("Show Geolocation Indicator"), iwpanel);
-    d->iconShowCoordinatesBox->setWhatsThis(i18n("Set this option to show an icon over the image thumbnail if item has geolocation information."));
+    d->iconShowCoordinatesBox  = new QCheckBox(i18n("Show geolocation overlay button"), iwpanel);
+    d->iconShowCoordinatesBox->setWhatsThis(i18n("Set this option to show an overlay button over the "
+                                                 "image thumbnail to open the geolocation view."));
+
+    DLineWidget* const line2   = new DLineWidget(Qt::Horizontal, iwpanel);
 
     QLabel* leftClickLabel     = new QLabel(i18n("Thumbnail click action:"), iwpanel);
     d->leftClickActionComboBox = new QComboBox(iwpanel);
@@ -205,33 +211,36 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
                                          "digiKam needs to be restarted to take effect, and Rebuild Thumbnails option from Maintenance tool "
                                          "needs to be processed over whole collections."));
 
-    grid->addWidget(d->iconShowNameBox,          0, 0, 1, 1);
-    grid->addWidget(d->iconShowSizeBox,          1, 0, 1, 1);
-    grid->addWidget(d->iconShowDateBox,          2, 0, 1, 1);
-    grid->addWidget(d->iconShowModDateBox,       3, 0, 1, 1);
-    grid->addWidget(d->iconShowResolutionBox,    4, 0, 1, 1);
-    grid->addWidget(d->iconShowAspectRatioBox,   5, 0, 1, 1);
-    grid->addWidget(d->iconShowFormatBox,        6, 0, 1, 1);
-    grid->addWidget(d->iconShowCoordinatesBox,   7, 0, 1, 1);
+    grid->addWidget(d->iconShowNameBox,          0,  0, 1, 1);
+    grid->addWidget(d->iconShowSizeBox,          1,  0, 1, 1);
+    grid->addWidget(d->iconShowDateBox,          2,  0, 1, 1);
+    grid->addWidget(d->iconShowModDateBox,       3,  0, 1, 1);
+    grid->addWidget(d->iconShowResolutionBox,    4,  0, 1, 1);
+    grid->addWidget(d->iconShowAspectRatioBox,   5,  0, 1, 1);
+    grid->addWidget(d->iconShowFormatBox,        6,  0, 1, 1);
 
-    grid->addWidget(d->iconShowTitleBox,         0, 1, 1, 1);
-    grid->addWidget(d->iconShowCommentsBox,      1, 1, 1, 1);
-    grid->addWidget(d->iconShowTagsBox,          2, 1, 1, 1);
-    grid->addWidget(d->iconShowRatingBox,        3, 1, 1, 1);
-    grid->addWidget(d->iconShowPickLabelBox,     4, 1, 1, 1);
-    grid->addWidget(d->iconShowColorLabelBox,    5, 1, 1, 1);
-    grid->addWidget(d->iconShowOverlaysBox,      6, 1, 1, 1);
-    grid->addWidget(d->iconShowFullscreenBox,    7, 1, 1, 1);
+    grid->addWidget(d->iconShowTitleBox,         0,  1, 1, 1);
+    grid->addWidget(d->iconShowCommentsBox,      1,  1, 1, 1);
+    grid->addWidget(d->iconShowTagsBox,          2,  1, 1, 1);
+    grid->addWidget(d->iconShowRatingBox,        3,  1, 1, 1);
+    grid->addWidget(d->iconShowPickLabelBox,     4,  1, 1, 1);
+    grid->addWidget(d->iconShowColorLabelBox,    5,  1, 1, 1);
 
-    grid->addWidget(leftClickLabel,              9, 0, 1, 1);
-    grid->addWidget(d->leftClickActionComboBox,  9, 1, 1, 1);
-    grid->addWidget(d->iconViewFontSelect,       10, 0, 1, 2);
-    grid->addWidget(d->largeThumbsBox,           11, 0, 1, 2);
+    grid->addWidget(line,                        7,  0, 1, 2);
+    grid->addWidget(d->iconShowCoordinatesBox,   8,  0, 1, 1);
+    grid->addWidget(d->iconShowFullscreenBox,    8,  1, 1, 1);
+    grid->addWidget(d->iconShowOverlaysBox,      9,  0, 1, 1);
+    grid->addWidget(line2,                       10, 0, 1, 2);
+
+    grid->addWidget(leftClickLabel,              11, 0, 1, 1);
+    grid->addWidget(d->leftClickActionComboBox,  11, 1, 1, 1);
+    grid->addWidget(d->iconViewFontSelect,       12, 0, 1, 2);
+    grid->addWidget(d->largeThumbsBox,           13, 0, 1, 2);
 
     grid->setRowMinimumHeight(8, 10); // vertical space
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
-    grid->setRowStretch(13, 13);
+    grid->setRowStretch(14, 10);
 
     d->tab->insertTab(IconView, iwpanel, i18nc("@title:tab", "Icons"));
 
@@ -312,7 +321,7 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
     d->previewShowIcons->setWhatsThis(i18n("Uncheck this if you do not want to see icons and text in the image preview."));
 
-    d->previewAutoPlay           = new QCheckBox(i18n("Auto play of videos or animations"), pwpanel);
+    d->previewAutoPlay            = new QCheckBox(i18n("Auto play of videos or animations"), pwpanel);
     d->previewAutoPlay->setWhatsThis(i18n("Uncheck this if you do not want to auto play of videos or animations."));
 
     d->previewOverlay             = new QCheckBox(i18n("Show a text overlay over preview."), pwpanel);
