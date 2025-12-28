@@ -25,6 +25,10 @@
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -70,19 +74,20 @@ void PreviewOsdSettings::printInfoText(QPainter& p, int& offset, const QString& 
 {
     if (!str.isEmpty())
     {
-        offset += QFontMetrics(p.font()).lineSpacing();
+        offset           += QFontMetrics(p.font()).lineSpacing();
+        const int spacing = layoutSpacing();
         p.setPen(Qt::black);
 
         for (int x = -1 ; x <= 1 ; ++x)
         {
             for (int y = offset + 1 ; y >= offset - 1 ; --y)
             {
-                p.drawText(x, p.window().height() - y, str);
+                p.drawText(x + spacing, p.window().height() - y, str);
             }
         }
 
         p.setPen(pcol);
-        p.drawText(0, p.window().height() - offset, str);
+        p.drawText(spacing, p.window().height() - offset, str);
     }
 }
 
