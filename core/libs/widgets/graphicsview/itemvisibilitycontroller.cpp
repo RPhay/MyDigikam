@@ -196,6 +196,12 @@ private:
 
     QParallelAnimationGroup*        m_animationGroup = nullptr;
     ItemVisibilityController* const m_q              = nullptr;
+
+private:
+
+    // Disable
+    AnimationControl(const AnimationControl&)            = delete;
+    AnimationControl& operator=(const AnimationControl&) = delete;
 };
 
 AnimationControl::AnimationControl(ItemVisibilityController* const q)
