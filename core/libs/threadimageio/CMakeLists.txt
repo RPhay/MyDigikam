@@ -11,6 +11,7 @@ set(libthreadimageio_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewloadthread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewtask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewosdsettings.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/thumb/thumbnailcreator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumb/thumbnailcreator_basic.cpp
