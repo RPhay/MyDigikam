@@ -247,7 +247,7 @@ void SaveImgThread::run()
 
     if (!sixteenBit)
     {
-        uchar* src = (uchar*)d->ksaneData.data();
+        uchar* src = reinterpret_cast<uchar*>(d->ksaneData.data());
         uchar* dst = img.bits();
 
         for (int h = 0 ; h < d->height ; ++h)
