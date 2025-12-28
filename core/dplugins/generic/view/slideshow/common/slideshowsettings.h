@@ -152,7 +152,7 @@ public:
 
 private:
 
-    const QString configGroupName                           = QLatin1String("ImageViewer Settings");
+    const QString configGroupName                           = QLatin1String("SlideShow Settings");
     const QString configSlideShowStartCurrentEntry          = QLatin1String("SlideShowStartCurrent");
     const QString configSlideShowDelayEntry                 = QLatin1String("SlideShowDelay");
     const QString configSlideShowLoopEntry                  = QLatin1String("SlideShowLoop");
