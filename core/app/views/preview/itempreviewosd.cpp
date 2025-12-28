@@ -85,7 +85,7 @@ void ItemPreviewOsd::setOsdEnabled(bool val)
 
 void ItemPreviewOsd::paintEvent(QPaintEvent*)
 {
-    if (!d->enabled)
+    if (!d->enabled || d->info.isNull())
     {
         return;
     }
