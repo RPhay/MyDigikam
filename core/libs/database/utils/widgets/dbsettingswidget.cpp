@@ -39,7 +39,6 @@ void DatabaseSettingsWidget::setupMainArea()
 
     const int spacing = layoutSpacing();
 
-
     QGroupBox* const dbConfigBox    = new QGroupBox(i18n("Database Configuration"), this);
     QVBoxLayout* const vlay         = new QVBoxLayout(dbConfigBox);
 

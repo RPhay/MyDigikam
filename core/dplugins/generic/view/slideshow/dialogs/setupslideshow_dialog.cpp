@@ -72,13 +72,13 @@ public:
     QCheckBox*         showCapIfNoTitle     = nullptr;
     QCheckBox*         showProgress         = nullptr;
 
-    QLabel*            imageBgColorLbl      = nullptr;
+    QLabel*            itemBgColorLbl       = nullptr;
 
     QComboBox*         screenPlacement      = nullptr;
 
     DFontSelect*       captionFont          = nullptr;
     DIntNumInput*      delayInput           = nullptr;
-    DColorSelector*    imageBgColorSel      = nullptr;
+    DColorSelector*    itemBgColorSel       = nullptr;
 
     SlideShowSettings* settings             = nullptr;
 };
@@ -101,30 +101,30 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     const int spacing         = layoutSpacing();
 
     DHBox* const hbox1        = new DHBox(panel);
-    new QLabel(i18n("Delay between images:"), hbox1);
+    new QLabel(i18n("Delay between items:"), hbox1);
     d->delayInput             = new DIntNumInput(hbox1);
     d->delayInput->setDefaultValue(5);
     d->delayInput->setRange(1, 3600, 1);
-    d->delayInput->setWhatsThis(i18n("The delay, in seconds, between images."));
+    d->delayInput->setWhatsThis(i18n("The delay, in seconds, between items."));
 
-    d->startWithCurrent       = new QCheckBox(i18n("Start with current image"), panel);
+    d->startWithCurrent       = new QCheckBox(i18n("Start with current item"), panel);
     d->startWithCurrent->setWhatsThis(i18n("If this option is enabled, the Slideshow will be started "
-                                           "with the current image selected in the images list."));
+                                           "with the current item selected in the items list."));
 
     d->loopMode               = new QCheckBox(i18n("Slideshow runs in a loop"), panel);
     d->loopMode->setWhatsThis(i18n("Run the slideshow in a loop."));
 
-    d->suffleMode             = new QCheckBox(i18n("Shuffle images"), panel);
+    d->suffleMode             = new QCheckBox(i18n("Shuffle items"), panel);
     d->suffleMode->setWhatsThis(i18n("If this option is enabled, the Slideshow will run in random order"));
 
     d->showProgress           = new QCheckBox(i18n("Show progress indicator"), panel);
     d->showProgress->setWhatsThis(i18n("Show a progress indicator with pending items to show and time progression."));
 
-    d->showName               = new QCheckBox(i18n("Show image file name"), panel);
-    d->showName->setWhatsThis(i18n("Show the image file name at the bottom of the screen."));
+    d->showName               = new QCheckBox(i18n("Show item file name"), panel);
+    d->showName->setWhatsThis(i18n("Show the item file name at the bottom of the screen."));
 
-    d->showDate               = new QCheckBox(i18n("Show image creation date"), panel);
-    d->showDate->setWhatsThis(i18n("Show the image creation time/date at the bottom of the screen."));
+    d->showDate               = new QCheckBox(i18n("Show item creation date"), panel);
+    d->showDate->setWhatsThis(i18n("Show the item creation time/date at the bottom of the screen."));
 
     d->showApertureFocal      = new QCheckBox(i18n("Show camera aperture and focal length"), panel);
     d->showApertureFocal->setWhatsThis(i18n("Show the camera aperture and focal length at the bottom of the screen."));
@@ -138,27 +138,27 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     d->showLensModel          = new QCheckBox(i18n("Show camera lens model"), panel);
     d->showLensModel->setWhatsThis(i18n("Show the camera lens model at the bottom of the screen."));
 
-    d->showComment            = new QCheckBox(i18n("Show image caption"), panel);
-    d->showComment->setWhatsThis(i18n("Show the image caption at the bottom of the screen."));
+    d->showComment            = new QCheckBox(i18n("Show item caption"), panel);
+    d->showComment->setWhatsThis(i18n("Show the item caption at the bottom of the screen."));
 
-    d->showTitle              = new QCheckBox(i18n("Show image title"), panel);
-    d->showTitle->setWhatsThis(i18n("Show the image title at the bottom of the screen."));
+    d->showTitle              = new QCheckBox(i18n("Show item title"), panel);
+    d->showTitle->setWhatsThis(i18n("Show the item title at the bottom of the screen."));
 
-    d->showCapIfNoTitle       = new QCheckBox(i18n("Show image caption if it has not title"), panel);
-    d->showCapIfNoTitle->setWhatsThis(i18n("Show the image caption at the bottom of the screen if no titles existed."));
+    d->showCapIfNoTitle       = new QCheckBox(i18n("Show item caption if it has not title"), panel);
+    d->showCapIfNoTitle->setWhatsThis(i18n("Show the item caption at the bottom of the screen if no titles existed."));
 
-    d->showTags               = new QCheckBox(i18n("Show image tags"), panel);
-    d->showTags->setWhatsThis(i18n("Show the digiKam image tag names at the bottom of the screen."));
+    d->showTags               = new QCheckBox(i18n("Show item tags"), panel);
+    d->showTags->setWhatsThis(i18n("Show the digiKam item tag names at the bottom of the screen."));
 
-    d->showLabels             = new QCheckBox(i18n("Show image labels"), panel);
-    d->showLabels->setWhatsThis(i18n("Show the digiKam image color label and pick label at the bottom of the screen."));
+    d->showLabels             = new QCheckBox(i18n("Show item labels"), panel);
+    d->showLabels->setWhatsThis(i18n("Show the digiKam item color label and pick label at the bottom of the screen."));
 
-    d->showRating             = new QCheckBox(i18n("Show image rating"), panel);
-    d->showRating->setWhatsThis(i18n("Show the digiKam image rating at the bottom of the screen."));
+    d->showRating             = new QCheckBox(i18n("Show item rating"), panel);
+    d->showRating->setWhatsThis(i18n("Show the digiKam item rating at the bottom of the screen."));
 
-    d->imageBgColorLbl        = new QLabel(i18n("Use background color for images:"), panel);
-    d->imageBgColorSel        = new DColorSelector(panel);
-    d->imageBgColorSel->setWhatsThis(i18n("Define a color to use as background to render images on screen."));
+    d->itemBgColorLbl        = new QLabel(i18n("Use background color for items:"), panel);
+    d->itemBgColorSel        = new DColorSelector(panel);
+    d->itemBgColorSel->setWhatsThis(i18n("Define a color to use as background to render items on screen."));
 
     d->captionFont            = new DFontSelect(i18n("Caption font:"), panel);
     d->captionFont->setToolTip(i18n("Select here the font used to display text in the slideshow."));
@@ -223,8 +223,8 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     grid->addWidget(d->showCapIfNoTitle,     7, 1, 1, 1);
     grid->addWidget(d->showTags,             8, 0, 1, 1);
     grid->addWidget(d->showLabels,           8, 1, 1, 1);
-    grid->addWidget(d->imageBgColorLbl,      9, 0, 1, 1);
-    grid->addWidget(d->imageBgColorSel,      9, 1, 1, 1);
+    grid->addWidget(d->itemBgColorLbl,      9, 0, 1, 1);
+    grid->addWidget(d->itemBgColorSel,      9, 1, 1, 1);
     grid->addWidget(d->captionFont,         10, 0, 1, 2);
     grid->addWidget(screenSelectBox,        11, 0, 1, 2);
     grid->addWidget(keyNote,                12, 0, 1, 2);
@@ -278,7 +278,7 @@ void SetupSlideShowDialog::slotApplySettings()
     d->settings->printLabels           = d->showLabels->isChecked();
     d->settings->printRating           = d->showRating->isChecked();
     d->settings->showProgressIndicator = d->showProgress->isChecked();
-    d->settings->bgColor               = d->imageBgColorSel->color();
+    d->settings->bgColor               = d->itemBgColorSel->color();
     d->settings->captionFont           = d->captionFont->font();
     d->settings->slideScreen           = d->screenPlacement->currentIndex() - 2;
 
@@ -306,7 +306,7 @@ void SetupSlideShowDialog::readSettings()
     d->showLabels->setChecked(d->settings->printLabels);
     d->showRating->setChecked(d->settings->printRating);
     d->showProgress->setChecked(d->settings->showProgressIndicator);
-    d->imageBgColorSel->setColor(d->settings->bgColor);
+    d->itemBgColorSel->setColor(d->settings->bgColor);
     d->captionFont->setFont(d->settings->captionFont);
 
     const int screen = d->settings->slideScreen;
