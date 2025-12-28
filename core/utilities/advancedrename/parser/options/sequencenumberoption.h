@@ -60,7 +60,7 @@ class SequenceNumberOption : public Option
 
 public:
 
-    SequenceNumberOption(QWidget* const widget);
+    explicit SequenceNumberOption(QWidget* const widget);
     ~SequenceNumberOption()                                      override = default;
 
 protected:

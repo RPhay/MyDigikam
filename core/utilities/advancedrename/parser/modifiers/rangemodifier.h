@@ -60,7 +60,7 @@ class RangeModifier : public Modifier
 
 public:
 
-    RangeModifier(QWidget* const widget);
+    explicit RangeModifier(QWidget* const widget);
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:

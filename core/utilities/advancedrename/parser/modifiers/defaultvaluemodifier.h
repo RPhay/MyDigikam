@@ -53,7 +53,7 @@ class DefaultValueModifier : public Modifier
 
 public:
 
-    DefaultValueModifier(QWidget* const widget);
+    explicit DefaultValueModifier(QWidget* const widget);
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:

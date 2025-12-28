@@ -58,7 +58,7 @@ class ReplaceModifier : public Modifier
 
 public:
 
-    ReplaceModifier(QWidget* const widget);
+    explicit ReplaceModifier(QWidget* const widget);
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:

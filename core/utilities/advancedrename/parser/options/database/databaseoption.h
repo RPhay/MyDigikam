@@ -63,7 +63,7 @@ class DatabaseOption : public Option
 
 public:
 
-    DatabaseOption(QWidget* const widget);
+    explicit DatabaseOption(QWidget* const widget);
     ~DatabaseOption()                                            override;
 
 protected:

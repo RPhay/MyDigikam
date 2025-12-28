@@ -27,7 +27,7 @@ class DefaultRenameParser : public Parser
 
 public:
 
-    DefaultRenameParser(QWidget* const widget)
+    explicit DefaultRenameParser(QWidget* const widget)
         : Parser(widget)
     {
     };

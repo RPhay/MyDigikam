@@ -61,7 +61,7 @@ class MetadataOption : public Option
 
 public:
 
-    MetadataOption(QWidget* const widget);
+    explicit MetadataOption(QWidget* const widget);
     ~MetadataOption()                                            override;
 
 protected:

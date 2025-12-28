@@ -130,7 +130,7 @@ class DateOption : public Option
 
 public:
 
-    DateOption(QWidget* const widget);
+    explicit DateOption(QWidget* const widget);
     ~DateOption()                                                override = default;
 
 protected:
