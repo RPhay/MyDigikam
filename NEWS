@@ -388,7 +388,7 @@ BUGFIXES:
 322 --> 438840 - Fail when reading images from LG-M250 Phone.
 323 --> 464832 - Corrupted file causes crash on startup.
 324 --> 513760 - digiKam crashes in FaceEditextract with `ASSERT: "!std::isnan(value)"` in qnumeric.h when confirming a face from a HEIF/HEIC file.
-325 --> 
+325 --> 510043 - JPEG files getting corrupted with 0kb.
 326 --> 
 327 --> 
 328 --> 
