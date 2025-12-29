@@ -88,14 +88,14 @@ HSLSettings::HSLSettings(QWidget* const parent)
     QLabel* const label3 = new QLabel(i18n("Saturation:"));
     d->sInput            = new DDoubleNumInput();
     d->sInput->setDecimals(2);
-    d->sInput->setRange(-100.0, 100.0, 0.01);
+    d->sInput->setRange(-100.0, 100.0, 0.1);
     d->sInput->setDefaultValue(0.0);
     d->sInput->setWhatsThis(i18n("Set here the saturation adjustment of the image."));
 
     QLabel* const label4 = new QLabel(i18n("Vibrance:"));
     d->vInput            = new DDoubleNumInput();
     d->vInput->setDecimals(2);
-    d->vInput->setRange(-100.0, 100.0, 0.01);
+    d->vInput->setRange(-100.0, 100.0, 0.1);
     d->vInput->setDefaultValue(0.0);
     d->vInput->setWhatsThis(i18n("Set here the vibrance adjustment of the image."
                                  "Vibrance performs selective saturation on less saturated colors and avoiding skin tones."));
@@ -103,7 +103,7 @@ HSLSettings::HSLSettings(QWidget* const parent)
     QLabel* const label5 = new QLabel(i18n("Lightness:"));
     d->lInput            = new DDoubleNumInput();
     d->lInput->setDecimals(2);
-    d->lInput->setRange(-100.0, 100.0, 0.01);
+    d->lInput->setRange(-100.0, 100.0, 0.1);
     d->lInput->setDefaultValue(0.0);
     d->lInput->setWhatsThis(i18n("Set here the lightness adjustment of the image."));
 

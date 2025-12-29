@@ -390,7 +390,7 @@ BUGFIXES:
 324 --> 513760 - digiKam crashes in FaceEditextract with `ASSERT: "!std::isnan(value)"` in qnumeric.h when confirming a face from a HEIF/HEIC file.
 325 --> 510043 - JPEG files getting corrupted with 0kb.
 326 --> 497698 - Reimport images to empty database - faces arent right in people tree.
-327 --> 
+327 --> 513958 - Saturation slider granularity too small.
 328 --> 
 329 --> 
 330 --> 
