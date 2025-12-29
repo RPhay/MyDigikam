@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-28 00:40+0000\n"
-"PO-Revision-Date: 2025-12-27 07:55+0200\n"
+"POT-Creation-Date: 2025-12-29 00:40+0000\n"
+"PO-Revision-Date: 2025-12-28 14:04+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -273,7 +273,7 @@ msgstr "Змінити мітку обличчя"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:777
+#: core/app/views/preview/itempreviewview.cpp:780
 #, kde-format
 msgid "&Cancel"
 msgstr "&Скасувати"
@@ -284,7 +284,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Призначити мітки виб&раним зображенням"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:775
+#: core/app/views/preview/itempreviewview.cpp:778
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Призначити мітки &цьому запису"
@@ -519,7 +519,7 @@ msgid "Show Fullscreen"
 msgstr "Показати на весь екран"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:168
+#: core/app/views/preview/itempreviewview.cpp:170
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -527,7 +527,7 @@ msgid "Rotate Left"
 msgstr "Повернути ліворуч"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:170
+#: core/app/views/preview/itempreviewview.cpp:172
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1067,7 +1067,7 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:48
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -1151,8 +1151,8 @@ msgid "Aperture/Focal:"
 msgstr "Апертура/фокальна віддаль:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:196
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
+#: core/app/views/preview/itempreviewosd.cpp:203
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
@@ -2881,7 +2881,7 @@ msgstr "Відгуки: "
 msgid "Documentation: "
 msgstr "Документація: "
 
-#: core/app/views/preview/itempreviewview.cpp:164
+#: core/app/views/preview/itempreviewview.cpp:166
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
@@ -2889,7 +2889,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "Назад"
 
-#: core/app/views/preview/itempreviewview.cpp:166
+#: core/app/views/preview/itempreviewview.cpp:168
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
@@ -2897,42 +2897,42 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "Вперед"
 
-#: core/app/views/preview/itempreviewview.cpp:177
+#: core/app/views/preview/itempreviewview.cpp:179
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "Додати мітку обличчя"
 
-#: core/app/views/preview/itempreviewview.cpp:182
+#: core/app/views/preview/itempreviewview.cpp:184
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "Вилучити всі прив'язки до облич на цьому зображенні"
 
-#: core/app/views/preview/itempreviewview.cpp:185
+#: core/app/views/preview/itempreviewview.cpp:187
 #, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Позначити усі непідтверджені обличчя як ігноровані"
 
-#: core/app/views/preview/itempreviewview.cpp:192
+#: core/app/views/preview/itempreviewview.cpp:194
 #, kde-format
 msgid "Show Face Tags"
 msgstr "Показати мітки облич"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:199
 #, kde-format
 msgid "Add a focus point"
 msgstr "Додати точку фокусування"
 
-#: core/app/views/preview/itempreviewview.cpp:199
+#: core/app/views/preview/itempreviewview.cpp:201
 #, kde-format
 msgid "Show focus points"
 msgstr "Показувати точки фокусування"
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "Показати на весь екран"
 
-#: core/app/views/preview/itempreviewview.cpp:511
+#: core/app/views/preview/itempreviewview.cpp:513
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, kde-format
 msgctxt "@action: face workflow"
@@ -21328,6 +21328,7 @@ msgid "Audio Track"
 msgstr "Звукова доріжка"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:65
 #, kde-format
 msgid "On Screen Display"
 msgstr "Екранна панель"
@@ -22195,7 +22196,6 @@ msgstr "Д&рукувати назву файла"
 
 #. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
 #, kde-format
 msgid "Use background color for images:"
 msgstr "Використовувати колір тла для зображень:"
@@ -22483,223 +22483,132 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Показ слайдів"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:94
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Параметри показу слайдів"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:212
+#: core/utilities/setup/camera/setupcamera.cpp:350
 #, kde-format
-msgid "Delay between images:"
+msgid "Behavior"
+msgstr "Поведінка"
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
+#, fuzzy, kde-format
+#| msgid "Delay between images:"
+msgid "Delay between items: "
 msgstr "Затримка між зображеннями:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
-#, kde-format
-msgid "The delay, in seconds, between images."
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#, fuzzy, kde-format
+#| msgid "The delay, in seconds, between images."
+msgid "The delay, in seconds, between items."
 msgstr "Затримка між зображеннями (у секундах)."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
-#, kde-format
-msgid "Start with current image"
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
+#, fuzzy, kde-format
+#| msgid "Start with current image"
+msgid "Start with current item"
 msgstr "Почати з поточного зображення"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
-#, kde-format
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#, fuzzy, kde-format
+#| msgid ""
+#| "If this option is enabled, the Slideshow will be started with the current "
+#| "image selected in the images list."
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
-"image selected in the images list."
+"item selected in the items list."
 msgstr ""
 "Якщо увімкнено цей параметр, показ слайдів починатиметься з поточного "
 "зображення зі списку зображень."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "Зациклити показ слайдів"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "Зациклити показ слайдів."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
-#, kde-format
-msgid "Shuffle images"
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#, fuzzy, kde-format
+#| msgid "Shuffle images"
+msgid "Shuffle items"
 msgstr "Випадковий порядок зображень"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 "Якщо позначено цей пункт, слайди у показі буде впорядковано випадковими "
 "чином."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #, kde-format
 msgid "Show progress indicator"
 msgstr "Показувати індикатор поступу"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr "Показувати індикатор поступу під час обробки зображень."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
-#, kde-format
-msgid "Show image file name"
-msgstr "Показувати назву файла"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
-#, kde-format
-msgid "Show the image file name at the bottom of the screen."
-msgstr "Показувати назву файла зображення внизу екрана."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
-#, kde-format
-msgid "Show image creation date"
-msgstr "Показувати дату створення зображення"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
-#, kde-format
-msgid "Show the image creation time/date at the bottom of the screen."
-msgstr "Показувати час і дату створення зображення внизу екрана."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
-#: core/showfoto/setup/showfotosetuptooltip.cpp:133
-#, kde-format
-msgid "Show camera aperture and focal length"
-msgstr "Показувати діафрагму і фокусну відстань фотоапарата"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
-#, kde-format
-msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "Показувати діафрагму і фокусну відстань фотоапарата внизу екрана."
-
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#: core/showfoto/setup/showfotosetuptooltip.cpp:137
-#, kde-format
-msgid "Show camera exposure and sensitivity"
-msgstr "Показувати експозицію і чутливість фотоапарата"
+#, fuzzy, kde-format
+#| msgid "Show progress indicator"
+msgid "Show labels editor"
+msgstr "Показувати індикатор поступу"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
-#, kde-format
-msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Показувати експозицію і чутливість внизу екрана."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#: core/showfoto/setup/showfotosetuptooltip.cpp:122
-#, kde-format
-msgid "Show camera make and model"
-msgstr "Показувати виробника і модель фотоапарата"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, kde-format
-msgid "Show the camera make and model at the bottom of the screen."
-msgstr "Показувати виробника фотоапарата і модель внизу екрана."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
-#, kde-format
-msgid "Show camera lens model"
-msgstr "Показувати модель об'єктива фотоапарата"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
-#, kde-format
-msgid "Show the camera lens model at the bottom of the screen."
-msgstr "Показувати модель об'єктива фотоапарата внизу екрана."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
-#, kde-format
-msgid "Show image caption"
-msgstr "Показувати підписи зображень"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
-#, kde-format
-msgid "Show the image caption at the bottom of the screen."
-msgstr "Показувати підпис зображення внизу екрана."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
-#, kde-format
-msgid "Show image title"
-msgstr "Показувати заголовок зображення"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
-#, kde-format
-msgid "Show the image title at the bottom of the screen."
-msgstr "Показувати заголовок зображення внизу екрана."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
-#, kde-format
-msgid "Show image caption if it has not title"
-msgstr "Показувати підпис до зображення, якщо у нього немає заголовка"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the digiKam image color label and pick label at the bottom of the "
+#| "screen."
 msgid ""
-"Show the image caption at the bottom of the screen if no titles existed."
-msgstr ""
-"Показувати підпис до зображення внизу екрана, якщо не вказано заголовка "
-"зображення."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
-#, kde-format
-msgid "Show image tags"
-msgstr "Показувати мітки зображень"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
-#, kde-format
-msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr "Показувати назви міток зображень digiKam у нижній частині вікна."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
-#, kde-format
-msgid "Show image labels"
-msgstr "Показувати позначки зображення"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
-#, kde-format
-msgid ""
-"Show the digiKam image color label and pick label at the bottom of the "
-"screen."
+"Show the digiKam item color label and pick label editors at the bottom of "
+"the screen."
 msgstr ""
 "Показувати позначку кольору та впорядкувальну позначку digiKam внизу екрана."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:156
-#, kde-format
-msgid "Show image rating"
-msgstr "Показувати оцінку зображення"
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#, fuzzy, kde-format
+#| msgid "Show Geolocation Indicator"
+msgid "Show rating editor"
+msgstr "Показувати індикатор геопозиціювання"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
-#, kde-format
-msgid "Show the digiKam image rating at the bottom of the screen."
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#, fuzzy, kde-format
+#| msgid "Show the digiKam image rating at the bottom of the screen."
+msgid "Show the digiKam item rating editor at the bottom of the screen."
 msgstr "Показувати оцінки зображень digiKam у нижній частині вікна."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, kde-format
-msgid "Define a color to use as background to render images on screen."
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#, fuzzy, kde-format
+#| msgid "Use background color for images:"
+msgid "Use background color for items:"
+msgstr "Використовувати колір тла для зображень:"
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
+#, fuzzy, kde-format
+#| msgid "Define a color to use as background to render images on screen."
+msgid "Define a color to use as background to render items on screen."
 msgstr ""
 "Визначити колір, який слід використовувати для тла при показі зображень на "
 "екрані."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
-#, kde-format
-msgid "Caption font:"
-msgstr "Шрифт підпису:"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
-#, kde-format
-msgid "Select here the font used to display text in the slideshow."
-msgstr ""
-"Тут ви можете встановити шрифт, який буде використано для показу тексту у "
-"показі слайдів."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid "Screen placement:"
 msgstr "Екран:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
@@ -22707,25 +22616,25 @@ msgstr ""
 "Якщо ви працюєте за комп'ютером із декількома моніторами, виберіть той з "
 "них, на якому слід показувати слайди."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "Поточний екран"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "Типовий екран"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "Екран %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -26640,7 +26549,7 @@ msgstr ""
 "пароля (необов'язкова)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -29593,27 +29502,27 @@ msgstr "Перетворення бази даних скасовано."
 msgid "Step Progress (%1)"
 msgstr "Крок поступу (%1)"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:43
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format
 msgid "Database Configuration"
 msgstr "Налаштування баз даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:54
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:53
 #, kde-format
 msgid "SQLite"
 msgstr "SQLite"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:61
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:60
 #, kde-format
 msgid "Mysql Internal"
 msgstr "Вбудований MySQL"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:66
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:65
 #, kde-format
 msgid "MySQL Server"
 msgstr "Сервер MySQL"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:71
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:70
 #, kde-format
 msgid ""
 "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend is "
@@ -29626,7 +29535,7 @@ msgstr ""
 "розмірів. Цей модуль є типовим і рекомендованим для збірок, у яких менше за "
 "100 тисяч записів.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:80
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:79
 #, kde-format
 msgid ""
 "<p><b>MySQL Internal</b> backend is for local database storage with huge "
@@ -29637,7 +29546,7 @@ msgstr ""
 "великого розміру. Рекомендуємо користуватися ним для локальних збірок, у "
 "яких понад 100 тисяч записів.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:85
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:84
 #, kde-format
 msgid ""
 "<p><b>MySQL Server</b> backend is a more robust solution especially for "
@@ -29649,7 +29558,7 @@ msgstr ""
 "модуль є ефективнішим для керування великими збірками з понад 100 тисяч "
 "записів.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
 #, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
@@ -29675,12 +29584,12 @@ msgstr ""
 "підвищення швидкодії також не рекомендовано використовувати мережеві "
 "пристрої запам'ятовування.</p><p></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:112
 #, kde-format
 msgid "Enable WAL mode for the databases"
 msgstr "Увімкнути режим WAL для баз даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:114
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
 msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
@@ -29689,7 +29598,7 @@ msgstr ""
 "Режим WAL (Write-Ahead Log або випереджального запису до журналу) є значно "
 "швидшим для більшості сценаріїв на підтримуваних системах."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:116
 #, kde-format
 msgid ""
 "Write-Ahead Log is a mode to use a roll-forward journal that records "
@@ -29707,7 +29616,7 @@ msgstr ""
 "бази даних, записують до журналу. Це робить запити до бази даних атомарними "
 "і стійкими у випадках надмірного та критичного навантаження на систему."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:130
 #, kde-format
 msgid ""
 "<p>Here you can configure locations where MySQL binary tools are located. "
@@ -29718,23 +29627,23 @@ msgstr ""
 "інструментів MySQL. digiKam намагатиметься знайти ці виконувані файли у "
 "автоматичному режимі, якщо їх встановлено у системі.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:140
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:139
 #, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "Виконувані файли MySQL"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
 #, kde-format
 msgid "Host Name:"
 msgstr "Назва вузла:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
 #, kde-format
 msgid "Set the host computer name"
 msgstr "Встановити назву комп'ютера-вузла"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:186
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -29746,7 +29655,7 @@ msgstr ""
 " комп'ютера у мережі, це буде назва (або IP-адреса) цього комп'ютера у "
 "мережі."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:191
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:190
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
@@ -29755,12 +29664,12 @@ msgstr ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Параметри "
 "з'єднання:</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
 #, kde-format
 msgid "Set the database connection options"
 msgstr "Встановити параметри з'єднання із базою даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -29769,17 +29678,17 @@ msgstr ""
 "Встановити параметри з'єднання із сервером MySQL.\n"
 "Лише для досвідчених користувачів."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
 #, kde-format
 msgid "User:"
 msgstr "Користувач:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
 #, kde-format
 msgid "Set the database account name"
 msgstr "Встановити назву облікового запису для доступу до бази даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:202
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -29792,7 +29701,7 @@ msgstr ""
 "Цей обліковий запис має бути доступним на віддаленому сервері\n"
 "MySQL на час створення бази даних."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:209
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:208
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -29804,12 +29713,12 @@ msgstr ""
 "Можна не заповнювати це поле, якщо використовується облікових запис без "
 "пароля."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
 #, kde-format
 msgid "Host Port:"
 msgstr "Порт вузла:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:217
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:216
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -29818,12 +29727,12 @@ msgstr ""
 "Встановити номер порту комп'ютера-вузла.\n"
 "Зазвичай, сервер MySQL типово використовує порт із номером 3306."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid "Check Connection"
 msgstr "Перевірити з'єднання"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
@@ -29832,17 +29741,17 @@ msgstr ""
 "Виконати спробу базового з'єднання із базою даних з метою переконатися, що "
 "поточні параметри роботи із сервером MySQL є прийнятними."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, kde-format
 msgid "Core Db Name:"
 msgstr "Назва основної бази даних:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
 #, kde-format
 msgid "Set the core database name"
 msgstr "Встановити назву основної бази даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -29851,18 +29760,18 @@ msgstr ""
 "Основна база даних є основним сховищем даних digiKam, де\n"
 "програма зберігає метадані альбомів, зображень та пошуку."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:236
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:593
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Назва бази даних мініатюр:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "Встановити назву або теку бази даних мініатюр"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:242
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -29877,17 +29786,17 @@ msgstr ""
 "особливо якщо у збірці дуже багато зображень.\n"
 "Виберіть локальну теку, щоб скористатися базою даних SQLite."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, kde-format
 msgid "Face Db Name:"
 msgstr "Назва бази даних облич:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
 #, kde-format
 msgid "Set the face database name"
 msgstr "Встановити назву бази даних облич"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:251
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -29900,17 +29809,17 @@ msgstr ""
 "Така база даних швидко досягає доволі значних об'ємів, особливо\n"
 "якщо у збірці багато зображень із визначеними і відміченими обличчями людей."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "Назва бази даних подібності:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
 #, kde-format
 msgid "Set the similarity database name"
 msgstr "Встановити назву бази даних подібності"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
@@ -29919,27 +29828,27 @@ msgstr ""
 "База даних подібності використовується digiKam\n"
 "для зберігання даних матриці Хаара для пошуку за подібністю."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
 #, kde-format
 msgid "Default Settings"
 msgstr "Типові параметри"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:265
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "Скинути всі параметри назв баз даних до їхніх типових значень."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:284
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:283
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "Параметри віддаленого сервера"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "Інструкції щодо сервера бази даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:290
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -29954,7 +29863,7 @@ msgstr ""
 "можете скористатися такими командами SQL (після заміни <b><i>пароля</i></b> "
 "на належний).</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -29979,17 +29888,17 @@ msgstr ""
 "за допомогою команди mysql --max_allowed_packet=128M або змінити параметри у "
 "my.ini чи ~/.my.cnf</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
 #, kde-format
 msgid "Requirements"
 msgstr "Вимоги"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Технічні параметри сервера бази даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:333
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:332
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -30029,79 +29938,79 @@ msgstr ""
 "має бути створено адміністратором баз даних. Докладніше про це на вкладці "
 "<b>Вимоги</b>.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:359
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:358
 #, kde-format
 msgid "Documentation"
 msgstr "Документація"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:590
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:589
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Тека бази даних мініатюр:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:608
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:863
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Перевірка з'єднання з базою даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:605
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
 #, kde-format
 msgid "Database connection test successful."
 msgstr "Виконано успішне з'єднання з базою даних."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:610
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 "Спроба перевірити з'єднання з базою даних завершилася невдало. <p>Помилка: "
 "%1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Назва вузла сервера порожня"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:625
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:624
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Ім'я користувача сервера порожнє"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
 #, kde-format
 msgid "The core database name is empty"
 msgstr "Назва основної бази даних є порожньою"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Назва бази даних мініатюр є порожньою"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
 #, kde-format
 msgid "The face database name is empty"
 msgstr "Назва бази даних облич є порожньою"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:654
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:653
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "Назва бази даних подібності є порожньою"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:716
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:715
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 "Цей шлях було встановлено як команду lineoption (--database-directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:854
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Налаштування баз даних"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
@@ -30110,7 +30019,7 @@ msgstr ""
 "Налаштування назв баз даних є некоректними. Повідомлення щодо помилки: <br/"
 "><p>%1</p><br>Перевірте, чи правильно вказано налаштування."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
@@ -30119,7 +30028,7 @@ msgstr ""
 "Спроба перевірити з'єднання із базами даних завершилася повідомленням про "
 "помилку:<br><p>%1</p><br>Перевірте, чи правильно вказано налаштування."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:883
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -30128,13 +30037,13 @@ msgstr ""
 "Ви маєте вибрати теку, яку digiKam буде використовувати для зберігання "
 "відомостей і метаданих у файлі бази даних."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:892
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Створити теку бази даних?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -30143,13 +30052,13 @@ msgstr ""
 "<p>Теки, де має зберігатися файл бази даних, не існує:</p> <p><b>%1</b></"
 "p>Чи бажаєте ви, щоб digiKam створив її?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:904
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Створення теки бази даних зазнало невдачі"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:906
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
@@ -30158,13 +30067,13 @@ msgstr ""
 "<p>Програма digiKam не змогла створити теку, де має зберігатися файл бази "
 "даних.<br>Будь ласка, виберіть інше місце.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:930
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Немає доступу до бази даних для запису"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:932
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -42113,6 +42022,138 @@ msgstr "Імена:"
 msgid "Usages:"
 msgstr "Призначення:"
 
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:72
+#, fuzzy, kde-format
+#| msgid "Show image file name"
+msgid "Show item file name"
+msgstr "Показувати назву файла"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:73
+#, fuzzy, kde-format
+#| msgid "Show the image file name at the bottom of the screen."
+msgid "Show the item file name at the bottom of the screen."
+msgstr "Показувати назву файла зображення внизу екрана."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:75
+#, fuzzy, kde-format
+#| msgid "Show image creation date"
+msgid "Show item creation date"
+msgstr "Показувати дату створення зображення"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:76
+#, fuzzy, kde-format
+#| msgid "Show the image creation time/date at the bottom of the screen."
+msgid "Show the item creation time/date at the bottom of the screen."
+msgstr "Показувати час і дату створення зображення внизу екрана."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:78
+#: core/showfoto/setup/showfotosetuptooltip.cpp:133
+#, kde-format
+msgid "Show camera aperture and focal length"
+msgstr "Показувати діафрагму і фокусну відстань фотоапарата"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:79
+#, kde-format
+msgid "Show the camera aperture and focal length at the bottom of the screen."
+msgstr "Показувати діафрагму і фокусну відстань фотоапарата внизу екрана."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:81
+#: core/showfoto/setup/showfotosetuptooltip.cpp:137
+#, kde-format
+msgid "Show camera exposure and sensitivity"
+msgstr "Показувати експозицію і чутливість фотоапарата"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:82
+#, kde-format
+msgid "Show the camera exposure and sensitivity at the bottom of the screen."
+msgstr "Показувати експозицію і чутливість внизу екрана."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:84
+#: core/showfoto/setup/showfotosetuptooltip.cpp:122
+#, kde-format
+msgid "Show camera make and model"
+msgstr "Показувати виробника і модель фотоапарата"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:85
+#, kde-format
+msgid "Show the camera make and model at the bottom of the screen."
+msgstr "Показувати виробника фотоапарата і модель внизу екрана."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:87
+#, kde-format
+msgid "Show camera lens model"
+msgstr "Показувати модель об'єктива фотоапарата"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:88
+#, kde-format
+msgid "Show the camera lens model at the bottom of the screen."
+msgstr "Показувати модель об'єктива фотоапарата внизу екрана."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Show image caption"
+msgid "Show item caption"
+msgstr "Показувати підписи зображень"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:91
+#, fuzzy, kde-format
+#| msgid "Show the image caption at the bottom of the screen."
+msgid "Show the item caption at the bottom of the screen."
+msgstr "Показувати підпис зображення внизу екрана."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:93
+#, fuzzy, kde-format
+#| msgid "Show image title"
+msgid "Show item title"
+msgstr "Показувати заголовок зображення"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:94
+#, fuzzy, kde-format
+#| msgid "Show the image title at the bottom of the screen."
+msgid "Show the item title at the bottom of the screen."
+msgstr "Показувати заголовок зображення внизу екрана."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:96
+#, fuzzy, kde-format
+#| msgid "Show image caption if it has not title"
+msgid "Show item caption if it has not title"
+msgstr "Показувати підпис до зображення, якщо у нього немає заголовка"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:97
+#, fuzzy, kde-format
+#| msgid ""
+#| "Show the image caption at the bottom of the screen if no titles existed."
+msgid "Show the item caption at the bottom of the screen if no titles existed."
+msgstr ""
+"Показувати підпис до зображення внизу екрана, якщо не вказано заголовка "
+"зображення."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:99
+#, fuzzy, kde-format
+#| msgid "Show image tags"
+msgid "Show item tags"
+msgstr "Показувати мітки зображень"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:100
+#, fuzzy, kde-format
+#| msgid "Show the digiKam image tag names at the bottom of the screen."
+msgid "Show the digiKam item tag names at the bottom of the screen."
+msgstr "Показувати назви міток зображень digiKam у нижній частині вікна."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Next month"
+msgid "Text font:"
+msgstr "Наступний місяць"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in the slideshow."
+msgid "Select here the font used to display OSD text over the slideshow."
+msgstr ""
+"Тут ви можете встановити шрифт, який буде використано для показу тексту у "
+"показі слайдів."
+
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
 msgid "No or invalid size specified"
@@ -43642,22 +43683,22 @@ msgctxt "@info: font style"
 msgid "Oblique"
 msgstr "Нахилений"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:74
+#: core/libs/widgets/fonts/dfontselect.cpp:77
 #, kde-format
 msgid "System Font"
 msgstr "Системний шрифт"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:75
+#: core/libs/widgets/fonts/dfontselect.cpp:78
 #, kde-format
 msgid "Custom Font"
 msgstr "Нетиповий шрифт"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:77
+#: core/libs/widgets/fonts/dfontselect.cpp:80
 #, kde-format
 msgid "Choose..."
 msgstr "Вибрати…"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:146
+#: core/libs/widgets/fonts/dfontselect.cpp:165
 #, kde-format
 msgid "Select a Font"
 msgstr "Виберіть шрифт"
@@ -63039,12 +63080,6 @@ msgstr ""
 "Позначте цей пункт, щоб програма скористалася багатопроцесорністю вашої "
 "системи для обробки декількох пунктів у черзі обробки одночасно."
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:212
-#: core/utilities/setup/camera/setupcamera.cpp:350
-#, kde-format
-msgid "Behavior"
-msgstr "Поведінка"
-
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:353
 #, kde-format
 msgid "Saving Images"
@@ -64295,39 +64330,39 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Складний пошук"
 
-#: core/utilities/setup/album/setupalbumview.cpp:123
+#: core/utilities/setup/album/setupalbumview.cpp:129
 #: core/utilities/setup/camera/setupcamera.cpp:429
 #, kde-format
 msgid "Show file&name"
 msgstr "Показувати &назву файла"
 
-#: core/utilities/setup/album/setupalbumview.cpp:124
+#: core/utilities/setup/album/setupalbumview.cpp:130
 #: core/utilities/setup/camera/setupcamera.cpp:430
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано назву файла."
 
-#: core/utilities/setup/album/setupalbumview.cpp:126
+#: core/utilities/setup/album/setupalbumview.cpp:132
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Показувати &розмір файла"
 
-#: core/utilities/setup/album/setupalbumview.cpp:127
+#: core/utilities/setup/album/setupalbumview.cpp:133
 #: core/utilities/setup/camera/setupcamera.cpp:433
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано розмір файла."
 
-#: core/utilities/setup/album/setupalbumview.cpp:129
+#: core/utilities/setup/album/setupalbumview.cpp:135
 #: core/utilities/setup/camera/setupcamera.cpp:435
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Показувати дату &створення з фотоапарата"
 
-#: core/utilities/setup/album/setupalbumview.cpp:130
+#: core/utilities/setup/album/setupalbumview.cpp:136
 #: core/utilities/setup/camera/setupcamera.cpp:436
 #, kde-format
 msgid ""
@@ -64336,12 +64371,12 @@ msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано дату "
 "створення зображення з фотоапарата."
 
-#: core/utilities/setup/album/setupalbumview.cpp:133
+#: core/utilities/setup/album/setupalbumview.cpp:139
 #, kde-format
 msgid "Show file &modification date"
 msgstr "Показувати дату в&несення змін до зображення"
 
-#: core/utilities/setup/album/setupalbumview.cpp:134
+#: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -64353,12 +64388,12 @@ msgstr ""
 "яку було записано фотоапаратом. Цей пункт корисний для пришвидшення "
 "виявлення записів, до яких було внесено зміни."
 
-#: core/utilities/setup/album/setupalbumview.cpp:138
+#: core/utilities/setup/album/setupalbumview.cpp:144
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "Показувати р&озміри зображення"
 
-#: core/utilities/setup/album/setupalbumview.cpp:139
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
@@ -64366,12 +64401,12 @@ msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано розмір "
 "зображення у пікселях."
 
-#: core/utilities/setup/album/setupalbumview.cpp:142
+#: core/utilities/setup/album/setupalbumview.cpp:148
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr "Показувати співвідношення розмірів зображення"
 
-#: core/utilities/setup/album/setupalbumview.cpp:143
+#: core/utilities/setup/album/setupalbumview.cpp:149
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
@@ -64379,49 +64414,49 @@ msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано "
 "співвідношення розмірів зображення."
 
-#: core/utilities/setup/album/setupalbumview.cpp:146
+#: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
 msgid "Show image format"
 msgstr "Показувати формат зображень"
 
-#: core/utilities/setup/album/setupalbumview.cpp:147
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано назву типу "
 "MIME даних файла."
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:155
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Показати &назву digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:150
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано назву "
 "digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Показувати &підписи digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:154
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано підпис "
 "digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:163
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Показувати мі&тки digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:158
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
@@ -64429,24 +64464,24 @@ msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано список міток "
 "digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
+#: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Показати &оцінку digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:162
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано оцінку "
 "digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:171
 #, kde-format
 msgid "Show digiKam &pick label"
 msgstr "Показати &впорядкувальну мітку digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:166
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
@@ -64454,12 +64489,12 @@ msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано "
 "впорядкувальну мітку digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
 msgid "Show digiKam color &label"
 msgstr "Показати &кольорову мітку digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:170
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
@@ -64468,13 +64503,13 @@ msgstr ""
 "Позначте цей пункт, щоб кольорову мітку digiKam було показано навколо "
 "мініатюри."
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Показувати накладні кнопки обертання"
 
-#: core/utilities/setup/album/setupalbumview.cpp:174
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
@@ -64483,12 +64518,12 @@ msgstr ""
 "Позначення цього пункту призведе до показу накладних кнопок обертання на "
 "мініатюрі зображення для обертання за чи проти годинникової стрілки."
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Показувати кнопку повноекранного режиму"
 
-#: core/utilities/setup/album/setupalbumview.cpp:178
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -64497,48 +64532,51 @@ msgstr ""
 "Позначення цього пункту призведе до показу накладної кнопки відкриття "
 "мініатюри у повноекранному режимі."
 
-#: core/utilities/setup/album/setupalbumview.cpp:181
-#: core/utilities/setup/camera/setupcamera.cpp:448
-#, kde-format
-msgid "Show Geolocation Indicator"
-msgstr "Показувати індикатор геопозиціювання"
+#: core/utilities/setup/album/setupalbumview.cpp:189
+#, fuzzy, kde-format
+#| msgid "Show rotation overlay buttons"
+msgid "Show geolocation overlay button"
+msgstr "Показувати накладні кнопки обертання"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
-#, kde-format
+#: core/utilities/setup/album/setupalbumview.cpp:190
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show an overlay button over the image thumbnail to "
+#| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an icon over the image thumbnail if item has "
-"geolocation information."
+"Set this option to show an overlay button over the image thumbnail to open "
+"the geolocation view."
 msgstr ""
-"Позначте цей пункт, щоб програма показувала накладну піктограму на мініатюрі "
-"зображення, якщо файл зображення містить дані щодо геопозиціювання."
+"Позначення цього пункту призведе до показу накладної кнопки відкриття "
+"мініатюри у повноекранному режимі."
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Дія за натисканням мініатюри:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
+#: core/utilities/setup/album/setupalbumview.cpp:197
 #, kde-format
 msgid "Show Preview"
 msgstr "Показати попередній перегляд"
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:198
 #, kde-format
 msgid "Start Image Editor"
 msgstr "Запустити редактор зображень"
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:199
 #, kde-format
 msgid "Show on Light Table"
 msgstr "Показати на столі з підсвічуванням"
 
-#: core/utilities/setup/album/setupalbumview.cpp:189
+#: core/utilities/setup/album/setupalbumview.cpp:200
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Відкрити за допомогою типової програми"
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
@@ -64546,26 +64584,26 @@ msgstr ""
 "Тут ви можете вибрати дію, яка виконуватиметься, якщо ви натиснете на "
 "мініатюру."
 
-#: core/utilities/setup/album/setupalbumview.cpp:192
+#: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Шрифт перегляду піктограмами:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:193
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 "Тут ви можете вказати шрифт, який буде використано для тексту у всіх "
 "переглядах піктограмами."
 
-#: core/utilities/setup/album/setupalbumview.cpp:195
+#: core/utilities/setup/album/setupalbumview.cpp:206
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 "Використовувати мініатюри великих розмірів для екранів з високою роздільністю"
 
-#: core/utilities/setup/album/setupalbumview.cpp:196
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -64590,18 +64628,18 @@ msgstr ""
 "скористатися пунктом повторної побудови мініатюр інструмента супроводу "
 "збірки для усіх ваших збірок."
 
-#: core/utilities/setup/album/setupalbumview.cpp:231
+#: core/utilities/setup/album/setupalbumview.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Піктограми"
 
-#: core/utilities/setup/album/setupalbumview.cpp:238
+#: core/utilities/setup/album/setupalbumview.cpp:252
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Розмір піктограми перегляду деревом:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:245
+#: core/utilities/setup/album/setupalbumview.cpp:259
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -64610,12 +64648,12 @@ msgstr ""
 "Тут можна вказати розмір у пікселях піктограм у перегляді деревом на бічних "
 "панелях digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:248
+#: core/utilities/setup/album/setupalbumview.cpp:262
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "Розмір піктограми ієрархії списку людей:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:256
+#: core/utilities/setup/album/setupalbumview.cpp:270
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -64624,24 +64662,24 @@ msgstr ""
 "Тут можна вказати розмір у пікселях піктограм у перегляді деревом на бічних "
 "панелях списку людей digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:273
 #, kde-format
 msgid "Tree View font:"
 msgstr "Шрифт перегляду деревом:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:260
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
 "Тут ви можете встановити шрифт, який буде використано для показу тексту у "
 "ієрархічному перегляді."
 
-#: core/utilities/setup/album/setupalbumview.cpp:262
+#: core/utilities/setup/album/setupalbumview.cpp:276
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Показувати кількість записів у дереві"
 
-#: core/utilities/setup/album/setupalbumview.cpp:263
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -64650,62 +64688,62 @@ msgstr ""
 "Позначте цей пункт, щоб програма показувала разом із назвою альбому "
 "кількість записів у ньому."
 
-#: core/utilities/setup/album/setupalbumview.cpp:275
+#: core/utilities/setup/album/setupalbumview.cpp:289
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Ієрархічні списки"
 
-#: core/utilities/setup/album/setupalbumview.cpp:283
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "Вбудоване зображення попереднього перегляду, якщо доступне (швидше)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:285
+#: core/utilities/setup/album/setupalbumview.cpp:299
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Зображення цілком у попередньому перегляді"
 
-#: core/utilities/setup/album/setupalbumview.cpp:287
+#: core/utilities/setup/album/setupalbumview.cpp:301
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Зображення негативів:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:304
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Автоматично"
 
-#: core/utilities/setup/album/setupalbumview.cpp:292
+#: core/utilities/setup/album/setupalbumview.cpp:306
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Вбудований ескіз"
 
-#: core/utilities/setup/album/setupalbumview.cpp:294
+#: core/utilities/setup/album/setupalbumview.cpp:308
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Негатив у половину розміру"
 
-#: core/utilities/setup/album/setupalbumview.cpp:296
+#: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Негатив у повний розмір (висока якість)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:298
+#: core/utilities/setup/album/setupalbumview.cpp:312
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 "Зображення попереднього перегляду перетворено на 8-бітове для пришвидшення "
 "обробки"
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
@@ -64713,37 +64751,37 @@ msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете перетворювати 16-бітове "
 "зображення на 8-бітове для попереднього перегляду."
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "Зображення перегляду завжди масштабоване за вікном"
 
-#: core/utilities/setup/album/setupalbumview.cpp:302
+#: core/utilities/setup/album/setupalbumview.cpp:316
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма "
 "масштабувала малі зображення так, щоб вони заповнювали вікно."
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
+#: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr "На зображенні перегляду використано згладжування для масштабування"
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма "
 "використовувала згладжування для збільшення."
 
-#: core/utilities/setup/album/setupalbumview.cpp:307
+#: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Показувати піктограми і текст над попереднім переглядом"
 
-#: core/utilities/setup/album/setupalbumview.cpp:308
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid ""
@@ -64752,61 +64790,57 @@ msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете бачити піктограми і текст "
 "на панелі попереднього перегляду зображення."
 
-#: core/utilities/setup/album/setupalbumview.cpp:310
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
 msgid "Auto play of videos or animations"
 msgstr "Відтворювати відео або анімацію автоматично"
 
-#: core/utilities/setup/album/setupalbumview.cpp:311
+#: core/utilities/setup/album/setupalbumview.cpp:325
 #, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма автоматично "
 "відтворювала відео або анімації."
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
-#, fuzzy, kde-format
-#| msgid "Show icons and text over preview"
+#: core/utilities/setup/album/setupalbumview.cpp:327
+#, kde-format
 msgid "Show a text overlay over preview."
-msgstr "Показувати піктограми і текст над попереднім переглядом"
+msgstr "Показувати текстову накладку над зображенням попереднього перегляду."
 
-#: core/utilities/setup/album/setupalbumview.cpp:314
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#: core/utilities/setup/album/setupalbumview.cpp:328
+#, kde-format
 msgid ""
 "Uncheck this if you do not want to show a canvas overlay with technical shot "
 "settings and properties."
 msgstr ""
-"Зніміть позначку з цього пункту, якщо ви не хочете бачити піктограми і текст "
-"на панелі попереднього перегляду зображення."
+"Зніміть позначку з цього пункту, якщо ви не хочете бачити накладку з "
+"технічними параметрами і властивостями знімка."
 
-#: core/utilities/setup/album/setupalbumview.cpp:334
+#: core/utilities/setup/album/setupalbumview.cpp:351
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Перегляд"
 
-#: core/utilities/setup/album/setupalbumview.cpp:349
+#: core/utilities/setup/album/setupalbumview.cpp:366
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "На весь екран"
 
-#: core/utilities/setup/album/setupalbumview.cpp:354
+#: core/utilities/setup/album/setupalbumview.cpp:371
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Типи MIME"
 
-#: core/utilities/setup/album/setupalbumview.cpp:357
+#: core/utilities/setup/album/setupalbumview.cpp:374
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Категорії"
 
-#: core/utilities/setup/album/setupalbumview.cpp:529
+#: core/utilities/setup/album/setupalbumview.cpp:555
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65384,6 +65418,11 @@ msgstr "Параметри перегляду піктограмами"
 #, kde-format
 msgid "Show image Format"
 msgstr "Показувати формат зображень"
+
+#: core/utilities/setup/camera/setupcamera.cpp:448
+#, kde-format
+msgid "Show Geolocation Indicator"
+msgstr "Показувати індикатор геопозиціювання"
 
 #: core/utilities/setup/camera/setupcamera.cpp:452
 #, kde-format
@@ -69364,6 +69403,23 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgid "Show image labels"
+#~ msgstr "Показувати позначки зображення"
+
+#~ msgid "Show image rating"
+#~ msgstr "Показувати оцінку зображення"
+
+#~ msgid "Caption font:"
+#~ msgstr "Шрифт підпису:"
+
+#~ msgid ""
+#~ "Set this option to show an icon over the image thumbnail if item has "
+#~ "geolocation information."
+#~ msgstr ""
+#~ "Позначте цей пункт, щоб програма показувала накладну піктограму на "
+#~ "мініатюрі зображення, якщо файл зображення містить дані щодо "
+#~ "геопозиціювання."
 
 #~ msgid "Tags Filter"
 #~ msgstr "Фільтр за мітками"

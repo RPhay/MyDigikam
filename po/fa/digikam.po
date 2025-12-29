@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-28 00:40+0000\n"
+"POT-Creation-Date: 2025-12-29 00:40+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -652,7 +652,7 @@ msgstr "تغيير حالت"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:777
+#: core/app/views/preview/itempreviewview.cpp:780
 #, kde-format
 msgid "&Cancel"
 msgstr "&لغو‌"
@@ -663,7 +663,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "انتساب برچسبها به فقره‌های &برگزیده‌"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:775
+#: core/app/views/preview/itempreviewview.cpp:778
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "انتساب برچسبها به &این فقره‌"
@@ -895,7 +895,7 @@ msgid "Show Fullscreen"
 msgstr "ویرایش حالت تمام پرده‌"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:168
+#: core/app/views/preview/itempreviewview.cpp:170
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -903,7 +903,7 @@ msgid "Rotate Left"
 msgstr "چرخش چپ"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:170
+#: core/app/views/preview/itempreviewview.cpp:172
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1449,7 +1449,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:48
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -1533,8 +1533,8 @@ msgid "Aperture/Focal:"
 msgstr "روزنه/کانونی:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:196
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
+#: core/app/views/preview/itempreviewosd.cpp:203
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:203
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
@@ -3270,7 +3270,7 @@ msgstr ""
 msgid "Documentation: "
 msgstr "جهت"
 
-#: core/app/views/preview/itempreviewview.cpp:164
+#: core/app/views/preview/itempreviewview.cpp:166
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, fuzzy, kde-format
@@ -3278,7 +3278,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "پس"
 
-#: core/app/views/preview/itempreviewview.cpp:166
+#: core/app/views/preview/itempreviewview.cpp:168
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
@@ -3286,43 +3286,43 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "پیش‌سو"
 
-#: core/app/views/preview/itempreviewview.cpp:177
+#: core/app/views/preview/itempreviewview.cpp:179
 #, fuzzy, kde-format
 msgid "Add a Face Tag"
 msgstr "افزودن برچسب جدید..."
 
-#: core/app/views/preview/itempreviewview.cpp:182
+#: core/app/views/preview/itempreviewview.cpp:184
 #, fuzzy, kde-format
 msgid "Clear all faces on this image"
 msgstr "اعمال همه تغییرات به عکسها"
 
-#: core/app/views/preview/itempreviewview.cpp:185
+#: core/app/views/preview/itempreviewview.cpp:187
 #, fuzzy, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "افزودن برچسب جدید..."
 
-#: core/app/views/preview/itempreviewview.cpp:192
+#: core/app/views/preview/itempreviewview.cpp:194
 #, fuzzy, kde-format
 msgid "Show Face Tags"
 msgstr "نمایش نوع تصویر"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:199
 #, kde-format
 msgid "Add a focus point"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:199
+#: core/app/views/preview/itempreviewview.cpp:201
 #, fuzzy, kde-format
 #| msgid "Show picture rating"
 msgid "Show focus points"
 msgstr "نمایش ارزیابی عکس"
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
 msgid "Show Fullscreen"
 msgstr "ویرایش حالت تمام پرده‌"
 
-#: core/app/views/preview/itempreviewview.cpp:511
+#: core/app/views/preview/itempreviewview.cpp:513
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
@@ -20917,6 +20917,7 @@ msgid "Audio Track"
 msgstr "پرونده‌های صوتی"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:65
 #, fuzzy, kde-format
 msgid "On Screen Display"
 msgstr "&جادهی:‌"
@@ -21730,7 +21731,6 @@ msgstr "چاپ نام پرونده تصویر"
 
 #. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
 #, fuzzy, kde-format
 #| msgid "&Use theme background color"
 msgid "Use background color for images:"
@@ -22033,246 +22033,144 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "آماده‌سازی نمایش اسلاید. لطفاً، منتظر بمانید..."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:94
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Slide Show Settings"
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "تنظیمات نمایش اسلاید"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:212
+#: core/utilities/setup/camera/setupcamera.cpp:350
+#, kde-format
+msgid "Behavior"
+msgstr "رفتار"
+
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
-msgid "Delay between images:"
+msgid "Delay between items: "
 msgstr "&تأخیر بین تصاویر:‌"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
 #, fuzzy, kde-format
-msgid "The delay, in seconds, between images."
+msgid "The delay, in seconds, between items."
 msgstr "<p>تأخیر بر حسب ثانیه بین تصاویر."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
-#, kde-format
-msgid "Start with current image"
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
+#, fuzzy, kde-format
+#| msgid "Start with current image"
+msgid "Start with current item"
 msgstr "آغاز با تصویر جاری"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, fuzzy, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
-"image selected in the images list."
+"item selected in the items list."
 msgstr ""
 "<p>اگر این گزینه فعال شود، نمایش اسلاید با تصویر برگزیده از فهرست تصاویر "
 "آغاز می‌شود."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, fuzzy, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "<p>اجرای نمایش اسلاید در یک حلقه."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, fuzzy, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "<p>اجرای نمایش اسلاید در یک حلقه."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, fuzzy, kde-format
-msgid "Shuffle images"
+msgid "Shuffle items"
 msgstr "ذخیره کردن تصاویر"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>If you enable this option, the preview area will not be separated."
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr "<p>اگر این گزینه را فعال کنید، ناحیه پیش‌نمایش جدا نخواهد شد."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #, fuzzy, kde-format
 msgid "Show progress indicator"
 msgstr "آشکارسازی شاخصها"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
-#, fuzzy, kde-format
-msgid "Show image file name"
-msgstr "نمایش &نام پرونده تصویر‌"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
-#, fuzzy, kde-format
-msgid "Show the image file name at the bottom of the screen."
-msgstr "<p>چاپ نام پرونده تصویر در پایین صفحه‌."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
-#, fuzzy, kde-format
-msgid "Show image creation date"
-msgstr "نمایش &تاریخ ایجاد پرونده‌"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
-#, fuzzy, kde-format
-msgid "Show the image creation time/date at the bottom of the screen."
-msgstr "<p>چاپ ایجاد تصویر ‌در پایین پرده."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
-#: core/showfoto/setup/showfotosetuptooltip.cpp:133
-#, fuzzy, kde-format
-msgid "Show camera aperture and focal length"
-msgstr "نمایش روزنه و کانونی دوربین"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
-#, fuzzy, kde-format
-msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "<p>چاپ روزنه و طول کانونی دوربین در پایین پرده."
-
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#: core/showfoto/setup/showfotosetuptooltip.cpp:137
-#, kde-format
-msgid "Show camera exposure and sensitivity"
-msgstr "نمایش آشکارسازی و حساسیت دوربین"
+#, fuzzy, kde-format
+msgid "Show labels editor"
+msgstr "آشکارسازی شاخصها"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, fuzzy, kde-format
-msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "<p>چاپ آشکارسازی و حساسیت دوربین در پایین پرده."
+msgid ""
+"Show the digiKam item color label and pick label editors at the bottom of "
+"the screen."
+msgstr "<p>چاپ ایجاد تصویر ‌در پایین پرده."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#: core/showfoto/setup/showfotosetuptooltip.cpp:122
-#, kde-format
-msgid "Show camera make and model"
-msgstr "نمایش ساخت و مدل دوربین"
+#, fuzzy, kde-format
+msgid "Show rating editor"
+msgstr "پالایه سبز"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, fuzzy, kde-format
-msgid "Show the camera make and model at the bottom of the screen."
-msgstr "<p>چاپ ساخت و مدل دوربین در پایین پرده."
+msgid "Show the digiKam item rating editor at the bottom of the screen."
+msgstr "<p>چاپ نام پرونده تصویر در پایین صفحه‌."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
 #, fuzzy, kde-format
-#| msgid "Show camera make and model"
-msgid "Show camera lens model"
-msgstr "نمایش ساخت و مدل دوربین"
+#| msgid "&Use theme background color"
+msgid "Use background color for items:"
+msgstr "&استفاده از رنگ زمینه چهره‌"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
 #, fuzzy, kde-format
-msgid "Show the camera lens model at the bottom of the screen."
-msgstr "<p>چاپ ساخت و مدل دوربین در پایین پرده."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
-#, fuzzy, kde-format
-msgid "Show image caption"
-msgstr "نمایش ارزیابی عکس"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
-#, fuzzy, kde-format
-msgid "Show the image caption at the bottom of the screen."
-msgstr "<p>چاپ ایجاد تصویر ‌در پایین پرده."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
-#, fuzzy, kde-format
-msgid "Show image title"
-msgstr "نمایش نوع تصویر"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
-#, fuzzy, kde-format
-msgid "Show the image title at the bottom of the screen."
-msgstr "<p>چاپ نام پرونده تصویر در پایین صفحه‌."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
-#, fuzzy, kde-format
-msgid "Show image caption if it has not title"
-msgstr "نمایش &تاریخ ایجاد پرونده‌"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
-#, fuzzy, kde-format
-msgid ""
-"Show the image caption at the bottom of the screen if no titles existed."
-msgstr "<p>چاپ ایجاد تصویر ‌در پایین پرده."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
-#, fuzzy, kde-format
-msgid "Show image tags"
-msgstr "نمایش نوع تصویر"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
-#, fuzzy, kde-format
-msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr "<p>چاپ نام پرونده تصویر در پایین صفحه‌."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
-#, fuzzy, kde-format
-msgid "Show image labels"
-msgstr "نمایش نوع تصویر"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
-#, fuzzy, kde-format
-msgid ""
-"Show the digiKam image color label and pick label at the bottom of the "
-"screen."
-msgstr "<p>چاپ ایجاد تصویر ‌در پایین پرده."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:156
-#, fuzzy, kde-format
-msgid "Show image rating"
-msgstr "نمایش ارزیابی عکس"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
-#, fuzzy, kde-format
-msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr "<p>چاپ نام پرونده تصویر در پایین صفحه‌."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
-#, fuzzy, kde-format
-msgid "Define a color to use as background to render images on screen."
+msgid "Define a color to use as background to render items on screen."
 msgstr ""
 "<p>برای استفاده از رنگ زمینه چهره در ناحیه ویرایشگر تصویر، این گزینه را فعال "
 "کنید"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
-#, fuzzy, kde-format
-#| msgid "Caption:"
-msgid "Caption font:"
-msgstr "عنوان:"
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
-#, fuzzy, kde-format
-msgid "Select here the font used to display text in the slideshow."
-msgstr "<p>در اینجا رنگ استفاده‌شده برای ترسیم خط‌چینهای راهنما را تنظیم کنید."
-
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, fuzzy, kde-format
 msgid "Screen placement:"
 msgstr "&جادهی:‌"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, fuzzy, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "حذف جستجو"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, fuzzy, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "تنظیمات &پیش‌فرض‌"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, fuzzy, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "سبز"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -26145,7 +26043,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, fuzzy, kde-format
 #| msgid "Password"
@@ -28909,27 +28807,27 @@ msgstr ""
 msgid "Step Progress (%1)"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:43
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, fuzzy, kde-format
 msgid "Database Configuration"
 msgstr "آمار"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:54
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:53
 #, fuzzy, kde-format
 msgid "SQLite"
 msgstr "اندازه"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:61
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:60
 #, fuzzy, kde-format
 msgid "Mysql Internal"
 msgstr "درون‌یابی:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:66
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:65
 #, fuzzy, kde-format
 msgid "MySQL Server"
 msgstr "زاویه اصلی:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:71
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:70
 #, kde-format
 msgid ""
 "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend is "
@@ -28938,7 +28836,7 @@ msgid ""
 "items.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:80
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:79
 #, kde-format
 msgid ""
 "<p><b>MySQL Internal</b> backend is for local database storage with huge "
@@ -28946,7 +28844,7 @@ msgid ""
 "than 100K items.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:85
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:84
 #, kde-format
 msgid ""
 "<p><b>MySQL Server</b> backend is a more robust solution especially for "
@@ -28954,7 +28852,7 @@ msgid ""
 "collection sizes with more than 100K items.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
 #, fuzzy, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
@@ -28971,19 +28869,19 @@ msgstr ""
 "تنظیم کنید. <p>دستیابی به نوشتن برای این مسیر لازم است و در اینجا از یک مسیر "
 "دور نظیر یک سیستم پرونده سوارشده NFS استفاده نمی‌شود."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:112
 #, fuzzy, kde-format
 msgid "Enable WAL mode for the databases"
 msgstr "اطلاعات عکس"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:114
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
 msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
 "supported systems."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:116
 #, kde-format
 msgid ""
 "Write-Ahead Log is a mode to use a roll-forward journal that records "
@@ -28994,7 +28892,7 @@ msgid ""
 "atomic and robust in extensive and critical use cases."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:130
 #, kde-format
 msgid ""
 "<p>Here you can configure locations where MySQL binary tools are located. "
@@ -29002,24 +28900,24 @@ msgid ""
 "installed on your computer.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:140
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:139
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "زاویه اصلی:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
 #, fuzzy, kde-format
 #| msgid "Host Name"
 msgid "Host Name:"
 msgstr "نام میزبان"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
 #, fuzzy, kde-format
 msgid "Set the host computer name"
 msgstr "افزودن نام دوربین"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:186
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -29027,37 +28925,37 @@ msgid ""
 "name (or IP address) in case of remote computer."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:191
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:190
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
 "a>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
 #, fuzzy, kde-format
 msgid "Set the database connection options"
 msgstr "آمار"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
 "For advanced users only."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
 #, fuzzy, kde-format
 #| msgid "User"
 msgid "User:"
 msgstr "کار‌بر"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
 #, kde-format
 msgid "Set the database account name"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:202
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -29066,7 +28964,7 @@ msgid ""
 "MySQL server when database have been created."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:209
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:208
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -29074,61 +28972,61 @@ msgid ""
 "You can left this field empty to use an account set without password."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
 #, fuzzy, kde-format
 #| msgid "Port"
 msgid "Host Port:"
 msgstr "درگاه"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:217
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:216
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
 "Usually, MySQL server use port number 3306 by default"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, fuzzy, kde-format
 msgid "Check Connection"
 msgstr "بر اساس مجموعه"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
 "suitable."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, fuzzy, kde-format
 msgid "Core Db Name:"
 msgstr "نام تصویر"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
 #, fuzzy, kde-format
 #| msgid "Failed to add tag to database"
 msgid "Set the core database name"
 msgstr "خرابی در افزودن برچسب به دادگان"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
 "albums, items, and searches metadata."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:236
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:593
 #, fuzzy, kde-format
 msgid "Thumbs Db Name:"
 msgstr "نام تصویر"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, fuzzy, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "خرابی در افزودن برچسب به دادگان"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:242
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -29138,17 +29036,17 @@ msgid ""
 "Choose a local folder to use a SQLite database."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, fuzzy, kde-format
 msgid "Face Db Name:"
 msgstr "نام تصویر"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
 #, fuzzy, kde-format
 msgid "Set the face database name"
 msgstr "<b>به‌روزرسانی دادگان ریزنقشها در حال اجراست. لطفاً، منتظر بمانید...</b>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:251
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -29157,45 +29055,45 @@ msgid ""
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
 #, fuzzy, kde-format
 msgid "Similarity Db Name:"
 msgstr "نظم:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
 #, fuzzy, kde-format
 #| msgid "Failed to add tag to database"
 msgid "Set the similarity database name"
 msgstr "خرابی در افزودن برچسب به دادگان"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
 "image Haar matrix data for the similarity search."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
 #, fuzzy, kde-format
 msgid "Default Settings"
 msgstr "تنظیمات &پیش‌فرض‌"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:265
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
 #, fuzzy, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "<p>بازنشانی کل پارامترهای پالایه به مقادیر پیش‌فرض آنها."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:284
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:283
 #, fuzzy, kde-format
 msgid "Remote Server Settings"
 msgstr "تنظیمات عمومی"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
 #, fuzzy, kde-format
 msgid "Database Server Instructions"
 msgstr "آمار"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:290
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -29205,7 +29103,7 @@ msgid ""
 "correct one).</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -29219,17 +29117,17 @@ msgid ""
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
 #, fuzzy, kde-format
 msgid "Requirements"
 msgstr "برجسته:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
 #, fuzzy, kde-format
 msgid "Database Server Technical Details"
 msgstr "آمار"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:333
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:332
 #, fuzzy, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29253,93 +29151,93 @@ msgstr ""
 "تنظیم کنید. <p>دستیابی به نوشتن برای این مسیر لازم است و در اینجا از یک مسیر "
 "دور نظیر یک سیستم پرونده سوارشده NFS استفاده نمی‌شود."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:359
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:358
 #, fuzzy, kde-format
 #| msgid "Orientation"
 msgid "Documentation"
 msgstr "جهت"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:590
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:589
 #, fuzzy, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "نام تصویر"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:608
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:863
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "آمار"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:605
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
 #, kde-format
 msgid "Database connection test successful."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:610
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server hostname is empty"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:625
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:624
 #, kde-format
 msgid "The server user name is empty"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
 #, fuzzy, kde-format
 #| msgid "Failed to add tag to database"
 msgid "The core database name is empty"
 msgstr "خرابی در افزودن برچسب به دادگان"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
 #, fuzzy, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "خرابی در افزودن برچسب به دادگان"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
 #, fuzzy, kde-format
 msgid "The face database name is empty"
 msgstr "<b>به‌روزرسانی دادگان ریزنقشها در حال اجراست. لطفاً، منتظر بمانید...</b>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:654
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:653
 #, fuzzy, kde-format
 #| msgid "Failed to add tag to database"
 msgid "The similarity database name is empty"
 msgstr "خرابی در افزودن برچسب به دادگان"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:716
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:715
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:854
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "آمار"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
 "p><br>Please check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:883
 #, fuzzy, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -29347,13 +29245,13 @@ msgid ""
 msgstr ""
 "باید پوشه‌ای برای digiKam جهت استفاده به عنوان پوشه کتابخانه آلبوم برگزینید."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:892
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "پوشه ایجاد شود؟"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
 #, fuzzy, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29362,13 +29260,13 @@ msgstr ""
 "<qt>پوشه‌ای که برگزیدید، موجود نیست: <p><b>%1</b></p>می‌خواهید digiKam آن را "
 "برای شما ایجاد کند؟</qt>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:904
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "خرابی در ایجاد پوشه"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:906
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
 #, fuzzy, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
@@ -29377,13 +29275,13 @@ msgstr ""
 "<qt>digiKam نتوانست پوشه‌ای که در زیر نمایش داده شده است را ایجاد کند. لطفاً، "
 "محل دیگری را انتخاب کنید.<p><b>%1</b></p></qt>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:930
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "در حال بارگیری پرونده %1..."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:932
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
 #, fuzzy, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -40846,6 +40744,121 @@ msgstr "نامها:"
 msgid "Usages:"
 msgstr "برچسبها:"
 
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:72
+#, fuzzy, kde-format
+msgid "Show item file name"
+msgstr "نمایش &نام پرونده تصویر‌"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:73
+#, fuzzy, kde-format
+msgid "Show the item file name at the bottom of the screen."
+msgstr "<p>چاپ نام پرونده تصویر در پایین صفحه‌."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:75
+#, fuzzy, kde-format
+msgid "Show item creation date"
+msgstr "نمایش &تاریخ ایجاد پرونده‌"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:76
+#, fuzzy, kde-format
+msgid "Show the item creation time/date at the bottom of the screen."
+msgstr "<p>چاپ ایجاد تصویر ‌در پایین پرده."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:78
+#: core/showfoto/setup/showfotosetuptooltip.cpp:133
+#, fuzzy, kde-format
+msgid "Show camera aperture and focal length"
+msgstr "نمایش روزنه و کانونی دوربین"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:79
+#, fuzzy, kde-format
+msgid "Show the camera aperture and focal length at the bottom of the screen."
+msgstr "<p>چاپ روزنه و طول کانونی دوربین در پایین پرده."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:81
+#: core/showfoto/setup/showfotosetuptooltip.cpp:137
+#, kde-format
+msgid "Show camera exposure and sensitivity"
+msgstr "نمایش آشکارسازی و حساسیت دوربین"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:82
+#, fuzzy, kde-format
+msgid "Show the camera exposure and sensitivity at the bottom of the screen."
+msgstr "<p>چاپ آشکارسازی و حساسیت دوربین در پایین پرده."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:84
+#: core/showfoto/setup/showfotosetuptooltip.cpp:122
+#, kde-format
+msgid "Show camera make and model"
+msgstr "نمایش ساخت و مدل دوربین"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:85
+#, fuzzy, kde-format
+msgid "Show the camera make and model at the bottom of the screen."
+msgstr "<p>چاپ ساخت و مدل دوربین در پایین پرده."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:87
+#, fuzzy, kde-format
+#| msgid "Show camera make and model"
+msgid "Show camera lens model"
+msgstr "نمایش ساخت و مدل دوربین"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:88
+#, fuzzy, kde-format
+msgid "Show the camera lens model at the bottom of the screen."
+msgstr "<p>چاپ ساخت و مدل دوربین در پایین پرده."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:90
+#, fuzzy, kde-format
+msgid "Show item caption"
+msgstr "نمایش ارزیابی عکس"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:91
+#, fuzzy, kde-format
+msgid "Show the item caption at the bottom of the screen."
+msgstr "<p>چاپ ایجاد تصویر ‌در پایین پرده."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:93
+#, fuzzy, kde-format
+msgid "Show item title"
+msgstr "نمایش نوع تصویر"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:94
+#, fuzzy, kde-format
+msgid "Show the item title at the bottom of the screen."
+msgstr "<p>چاپ نام پرونده تصویر در پایین صفحه‌."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:96
+#, fuzzy, kde-format
+msgid "Show item caption if it has not title"
+msgstr "نمایش &تاریخ ایجاد پرونده‌"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:97
+#, fuzzy, kde-format
+msgid "Show the item caption at the bottom of the screen if no titles existed."
+msgstr "<p>چاپ ایجاد تصویر ‌در پایین پرده."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:99
+#, fuzzy, kde-format
+msgid "Show item tags"
+msgstr "نمایش نوع تصویر"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:100
+#, fuzzy, kde-format
+msgid "Show the digiKam item tag names at the bottom of the screen."
+msgstr "<p>چاپ نام پرونده تصویر در پایین صفحه‌."
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Next M&onth"
+msgid "Text font:"
+msgstr "&ماه بعدی‌"
+
+#: core/libs/threadimageio/preview/previewosdwidget.cpp:103
+#, fuzzy, kde-format
+msgid "Select here the font used to display OSD text over the slideshow."
+msgstr "<p>در اینجا رنگ استفاده‌شده برای ترسیم خط‌چینهای راهنما را تنظیم کنید."
+
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
 msgid "No or invalid size specified"
@@ -42400,22 +42413,22 @@ msgctxt "@info: font style"
 msgid "Oblique"
 msgstr "یکتا"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:74
+#: core/libs/widgets/fonts/dfontselect.cpp:77
 #, kde-format
 msgid "System Font"
 msgstr "قلم سیستم"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:75
+#: core/libs/widgets/fonts/dfontselect.cpp:78
 #, kde-format
 msgid "Custom Font"
 msgstr "قلم سفارشی"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:77
+#: core/libs/widgets/fonts/dfontselect.cpp:80
 #, kde-format
 msgid "Choose..."
 msgstr "انتخاب..."
 
-#: core/libs/widgets/fonts/dfontselect.cpp:146
+#: core/libs/widgets/fonts/dfontselect.cpp:165
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgid "Select a Font"
@@ -61845,12 +61858,6 @@ msgid ""
 "than one item from a queue at the same time."
 msgstr ""
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:212
-#: core/utilities/setup/camera/setupcamera.cpp:350
-#, kde-format
-msgid "Behavior"
-msgstr "رفتار"
-
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:353
 #, fuzzy, kde-format
 msgid "Saving Images"
@@ -63146,37 +63153,37 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "جستجوی پیشرفته"
 
-#: core/utilities/setup/album/setupalbumview.cpp:123
+#: core/utilities/setup/album/setupalbumview.cpp:129
 #: core/utilities/setup/camera/setupcamera.cpp:429
 #, fuzzy, kde-format
 msgid "Show file&name"
 msgstr "نمایش &نام پرونده‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:124
+#: core/utilities/setup/album/setupalbumview.cpp:130
 #: core/utilities/setup/camera/setupcamera.cpp:430
 #, fuzzy, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "<p>برای نمایش نام پرونده زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:126
+#: core/utilities/setup/album/setupalbumview.cpp:132
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "نمایش &اندازه پرونده‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:127
+#: core/utilities/setup/album/setupalbumview.cpp:133
 #: core/utilities/setup/camera/setupcamera.cpp:433
 #, fuzzy, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "<p>برای نمایش اندازه پرونده زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:129
+#: core/utilities/setup/album/setupalbumview.cpp:135
 #: core/utilities/setup/camera/setupcamera.cpp:435
 #, fuzzy, kde-format
 msgid "Show camera creation &date"
 msgstr "نمایش &تاریخ ایجاد پرونده‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:130
+#: core/utilities/setup/album/setupalbumview.cpp:136
 #: core/utilities/setup/camera/setupcamera.cpp:436
 #, fuzzy, kde-format
 msgid ""
@@ -63184,12 +63191,12 @@ msgid ""
 msgstr ""
 "<p>برای نمایش تاریخ ایجاد پرونده زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:133
+#: core/utilities/setup/album/setupalbumview.cpp:139
 #, fuzzy, kde-format
 msgid "Show file &modification date"
 msgstr "نمایش &تاریخ ایجاد پرونده‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:134
+#: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -63197,12 +63204,12 @@ msgid ""
 "identify quickly which items have been modified."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:138
+#: core/utilities/setup/album/setupalbumview.cpp:144
 #, fuzzy, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "نمایش ابعاد تصویر"
 
-#: core/utilities/setup/album/setupalbumview.cpp:139
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
@@ -63210,92 +63217,92 @@ msgstr ""
 "<p>برای نمایش اندازه عکس بر حسب تصویردانه زیر ریزنقش تصویر، این گزینه را "
 "تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:142
+#: core/utilities/setup/album/setupalbumview.cpp:148
 #, fuzzy, kde-format
 msgid "Show image aspect ratio"
 msgstr "نمایش ارزیابی عکس"
 
-#: core/utilities/setup/album/setupalbumview.cpp:143
+#: core/utilities/setup/album/setupalbumview.cpp:149
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:146
+#: core/utilities/setup/album/setupalbumview.cpp:152
 #, fuzzy, kde-format
 msgid "Show image format"
 msgstr "نمایش ارزیابی عکس"
 
-#: core/utilities/setup/album/setupalbumview.cpp:147
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #, fuzzy, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr "<p>برای نمایش نام پرونده زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:155
 #, fuzzy, kde-format
 msgid "Show digiKam tit&le"
 msgstr "نمایش &ارزیابی digiKam‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:150
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #, fuzzy, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:159
 #, fuzzy, kde-format
 msgid "Show digiKam &captions"
 msgstr "نمایش &ارزیابی digiKam‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:154
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #, fuzzy, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:163
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "نمایش &برچسبهای digiKam‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:158
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr ""
 "<p>برای نمایش برچسبهای digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
+#: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "نمایش &ارزیابی digiKam‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:162
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, fuzzy, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:171
 #, fuzzy, kde-format
 msgid "Show digiKam &pick label"
 msgstr "نمایش &ارزیابی digiKam‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:166
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:175
 #, fuzzy, kde-format
 msgid "Show digiKam color &label"
 msgstr "نمایش &ارزیابی digiKam‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:170
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
@@ -63303,13 +63310,13 @@ msgid ""
 msgstr ""
 "<p>برای نمایش برچسبهای digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:174
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
@@ -63317,12 +63324,12 @@ msgid ""
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:178
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -63330,71 +63337,70 @@ msgid ""
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:181
-#: core/utilities/setup/camera/setupcamera.cpp:448
+#: core/utilities/setup/album/setupalbumview.cpp:189
 #, fuzzy, kde-format
-msgid "Show Geolocation Indicator"
+msgid "Show geolocation overlay button"
 msgstr "پالایه سبز"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show an icon over the image thumbnail if item has "
-"geolocation information."
+"Set this option to show an overlay button over the image thumbnail to open "
+"the geolocation view."
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "کنش فشار ریزنقش:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
+#: core/utilities/setup/album/setupalbumview.cpp:197
 #, fuzzy, kde-format
 msgid "Show Preview"
 msgstr "نمایش نام آلبوم"
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:198
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "Start Image Editor"
 msgstr "آغاز ویرایشگر تصویر"
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:199
 #, fuzzy, kde-format
 #| msgid "Show on right panel"
 msgid "Show on Light Table"
 msgstr "نمایش روی تابلوی راست"
 
-#: core/utilities/setup/album/setupalbumview.cpp:189
+#: core/utilities/setup/album/setupalbumview.cpp:200
 #, fuzzy, kde-format
 msgid "Open with Default Application"
 msgstr "بار کردن فقره برگزیده در ویرایشگر تصویر."
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:192
+#: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, fuzzy, kde-format
 msgid "Icon View font:"
 msgstr "گزینه‌های واسط"
 
-#: core/utilities/setup/album/setupalbumview.cpp:193
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #, fuzzy, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr "<p>در اینجا رنگ استفاده‌شده برای ترسیم خط‌چینهای راهنما را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:195
+#: core/utilities/setup/album/setupalbumview.cpp:206
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:196
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -63408,19 +63414,19 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:231
+#: core/utilities/setup/album/setupalbumview.cpp:245
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "&شمایل:‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:238
+#: core/utilities/setup/album/setupalbumview.cpp:252
 #, fuzzy, kde-format
 msgid "Tree View icon size:"
 msgstr "اندازه ریزنقشهای میله جانبی:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:245
+#: core/utilities/setup/album/setupalbumview.cpp:259
 #, fuzzy, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63429,12 +63435,12 @@ msgstr ""
 "<p>برای نمایش اندازه عکس بر حسب تصویردانه زیر ریزنقش تصویر، این گزینه را "
 "تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:248
+#: core/utilities/setup/album/setupalbumview.cpp:262
 #, fuzzy, kde-format
 msgid "People Tree View icon size:"
 msgstr "اندازه ریزنقشهای میله جانبی:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:256
+#: core/utilities/setup/album/setupalbumview.cpp:270
 #, fuzzy, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63443,22 +63449,22 @@ msgstr ""
 "<p>برای نمایش اندازه عکس بر حسب تصویردانه زیر ریزنقش تصویر، این گزینه را "
 "تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:273
 #, kde-format
 msgid "Tree View font:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:260
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, fuzzy, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "<p>در اینجا رنگ استفاده‌شده برای ترسیم خط‌چینهای راهنما را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:262
+#: core/utilities/setup/album/setupalbumview.cpp:276
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:263
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -63467,148 +63473,148 @@ msgstr ""
 "<p>برای نمایش اطلاعات تصویر هنگامی که موشی روی یک فقره آلبوم می‌پلکد، این "
 "گزینه را تنظیم کنید."
 
-#: core/utilities/setup/album/setupalbumview.cpp:275
+#: core/utilities/setup/album/setupalbumview.cpp:289
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "نماها"
 
-#: core/utilities/setup/album/setupalbumview.cpp:283
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:285
+#: core/utilities/setup/album/setupalbumview.cpp:299
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "تصویر قبلی"
 
-#: core/utilities/setup/album/setupalbumview.cpp:287
+#: core/utilities/setup/album/setupalbumview.cpp:301
 #, fuzzy, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "ذخیره کردن تصاویر"
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:304
 #, fuzzy, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "تنظیم:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:292
+#: core/utilities/setup/album/setupalbumview.cpp:306
 #, fuzzy, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "نمایش پیش‌نمایش نهفته"
 
-#: core/utilities/setup/album/setupalbumview.cpp:294
+#: core/utilities/setup/album/setupalbumview.cpp:308
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:296
+#: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:298
+#: core/utilities/setup/album/setupalbumview.cpp:312
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:302
+#: core/utilities/setup/album/setupalbumview.cpp:316
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
+#: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:307
+#: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:308
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:310
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, fuzzy, kde-format
 msgid "Auto play of videos or animations"
 msgstr "پرونده جای‌نوشت شود؟"
 
-#: core/utilities/setup/album/setupalbumview.cpp:311
+#: core/utilities/setup/album/setupalbumview.cpp:325
 #, kde-format
 msgid "Uncheck this if you do not want to auto play of videos or animations."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:327
 #, kde-format
 msgid "Show a text overlay over preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:314
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to show a canvas overlay with technical shot "
 "settings and properties."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:334
+#: core/utilities/setup/album/setupalbumview.cpp:351
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "پیش‌نمایش"
 
-#: core/utilities/setup/album/setupalbumview.cpp:349
+#: core/utilities/setup/album/setupalbumview.cpp:366
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "ویرایش حالت تمام پرده‌"
 
-#: core/utilities/setup/album/setupalbumview.cpp:354
+#: core/utilities/setup/album/setupalbumview.cpp:371
 #, fuzzy, kde-format
 #| msgid "Select Mime Types"
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "برگزیدن انواع مایم"
 
-#: core/utilities/setup/album/setupalbumview.cpp:357
+#: core/utilities/setup/album/setupalbumview.cpp:374
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "دسته"
 
-#: core/utilities/setup/album/setupalbumview.cpp:529
+#: core/utilities/setup/album/setupalbumview.cpp:555
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64127,6 +64133,11 @@ msgstr "گزینه‌های واسط"
 #, fuzzy, kde-format
 msgid "Show image Format"
 msgstr "نمایش ارزیابی عکس"
+
+#: core/utilities/setup/camera/setupcamera.cpp:448
+#, fuzzy, kde-format
+msgid "Show Geolocation Indicator"
+msgstr "پالایه سبز"
 
 #: core/utilities/setup/camera/setupcamera.cpp:452
 #, fuzzy, kde-format
@@ -67671,6 +67682,26 @@ msgstr "آلبومها"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&مرتب‌سازی تصاویر‌"
+
+#, fuzzy
+#~ msgid "Show image labels"
+#~ msgstr "نمایش نوع تصویر"
+
+#, fuzzy
+#~ msgid "Show image rating"
+#~ msgstr "نمایش ارزیابی عکس"
+
+#, fuzzy
+#~| msgid "Caption:"
+#~ msgid "Caption font:"
+#~ msgstr "عنوان:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Set this option to show an icon over the image thumbnail if item has "
+#~ "geolocation information."
+#~ msgstr ""
+#~ "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
 #, fuzzy
 #~ msgid "Tags Filter"
