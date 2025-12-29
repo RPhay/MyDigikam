@@ -655,6 +655,11 @@ cd $APP_IMG_DIR
 
 cp ${ORIG_WD}/data/AppRun ./
 
+# A script to run a remote GDB instance to hack dysfunction with the AppImage bundle.
+# For details: https://www.digikam.org/contribute/#appimage-bundle
+
+cp ${ORIG_WD}/data/run_remote_gdb.sh ./
+
 # desktop integration files
 
 cp /usr/share/applications/org.kde.digikam.desktop      ./
