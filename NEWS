@@ -385,7 +385,7 @@ BUGFIXES:
 319 --> 431753 - Show overlay with metadata in Preview mode.
 320 --> 513886 - When jumping in Video the Video turns to landscape.
 321 --> 502929 - Shift in People view.
-322 --> 
+322 --> 438840 - Fail when reading images from LG-M250 Phone.
 323 --> 
 324 --> 
 325 --> 
