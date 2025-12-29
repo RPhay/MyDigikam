@@ -127,68 +127,68 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     QGridLayout* const grid    = new QGridLayout(iwpanel);
 
     d->iconShowNameBox         = new QCheckBox(i18n("Show file&name"), iwpanel);
-    d->iconShowNameBox->setWhatsThis(i18n("Set this option to show the filename below the image thumbnail."));
+    d->iconShowNameBox->setWhatsThis(i18n("Set this option to show the filename below the thumbnail."));
 
     d->iconShowSizeBox         = new QCheckBox(i18n("Show file si&ze"), iwpanel);
-    d->iconShowSizeBox->setWhatsThis(i18n("Set this option to show the file size below the image thumbnail."));
+    d->iconShowSizeBox->setWhatsThis(i18n("Set this option to show the file size below the thumbnail."));
 
     d->iconShowDateBox         = new QCheckBox(i18n("Show camera creation &date"), iwpanel);
     d->iconShowDateBox->setWhatsThis(i18n("Set this option to show the camera creation date "
-                                          "below the image thumbnail."));
+                                          "below the thumbnail."));
 
     d->iconShowModDateBox      = new QCheckBox(i18n("Show file &modification date"), iwpanel);
     d->iconShowModDateBox->setWhatsThis(i18n("Set this option to show the file modification date "
-                                             "below the image thumbnail if it is different than camera creation date. "
+                                             "below the thumbnail if it is different than camera creation date. "
                                              "This option is useful to identify quickly which items have been modified."));
 
-    d->iconShowResolutionBox   = new QCheckBox(i18n("Show ima&ge dimensions"), iwpanel);
-    d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
-                                                "below the image thumbnail."));
+    d->iconShowResolutionBox   = new QCheckBox(i18n("Show item dimensions"), iwpanel);
+    d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the item size in pixels "
+                                                "below the thumbnail."));
 
-    d->iconShowAspectRatioBox  = new QCheckBox(i18n("Show image aspect ratio"), iwpanel);
-    d->iconShowAspectRatioBox->setWhatsThis(i18n("Set this option to show the image aspect ratio "
-                                                "below the image thumbnail."));
+    d->iconShowAspectRatioBox  = new QCheckBox(i18n("Show item aspect ratio"), iwpanel);
+    d->iconShowAspectRatioBox->setWhatsThis(i18n("Set this option to show the item aspect ratio "
+                                                "below the thumbnail."));
 
-    d->iconShowFormatBox       = new QCheckBox(i18n("Show image format"), iwpanel);
-    d->iconShowFormatBox->setWhatsThis(i18n("Set this option to show image mime type over image thumbnail."));
+    d->iconShowFormatBox       = new QCheckBox(i18n("Show item format"), iwpanel);
+    d->iconShowFormatBox->setWhatsThis(i18n("Set this option to show item mime type over thumbnail."));
 
     d->iconShowTitleBox        = new QCheckBox(i18n("Show digiKam tit&le"), iwpanel);
     d->iconShowTitleBox->setWhatsThis(i18n("Set this option to show the digiKam title "
-                                           "below the image thumbnail."));
+                                           "below the thumbnail."));
 
     d->iconShowCommentsBox     = new QCheckBox(i18n("Show digiKam &captions"), iwpanel);
     d->iconShowCommentsBox->setWhatsThis(i18n("Set this option to show the digiKam captions "
-                                              "below the image thumbnail."));
+                                              "below the thumbnail."));
 
     d->iconShowTagsBox         = new QCheckBox(i18n("Show digiKam &tags"), iwpanel);
     d->iconShowTagsBox->setWhatsThis(i18n("Set this option to show the digiKam tags list "
-                                          "below the image thumbnail."));
+                                          "below the thumbnail."));
 
     d->iconShowRatingBox       = new QCheckBox(i18n("Show digiKam &rating"), iwpanel);
     d->iconShowRatingBox->setWhatsThis(i18n("Set this option to show the digiKam rating "
-                                            "below the image thumbnail."));
+                                            "below the thumbnail."));
 
     d->iconShowPickLabelBox    = new QCheckBox(i18n("Show digiKam &pick label"), iwpanel);
     d->iconShowPickLabelBox->setWhatsThis(i18n("Set this option to show the digiKam pick label "
-                                            "below the image thumbnail."));
+                                            "below the thumbnail."));
 
     d->iconShowColorLabelBox   = new QCheckBox(i18n("Show digiKam color &label"), iwpanel);
     d->iconShowColorLabelBox->setWhatsThis(i18n("Set this option to show the digiKam color label "
-                                            "as a border around the thumbnail."));
+                                                "as a line below the thumbnail."));
 
     DLineWidget* const line    = new DLineWidget(Qt::Horizontal, iwpanel);
 
     d->iconShowOverlaysBox     = new QCheckBox(i18n("Show rotation overlay buttons"), iwpanel);
-    d->iconShowOverlaysBox->setWhatsThis(i18n("Set this option to show overlay buttons over "
-                                              "the image thumbnail to be able to process left or right image rotation."));
+    d->iconShowOverlaysBox->setWhatsThis(i18n("Set this option to show the transformation overlay buttons over "
+                                              "the thumbnail to process left or right rotation."));
 
     d->iconShowFullscreenBox   = new QCheckBox(i18n("Show fullscreen overlay button"), iwpanel);
     d->iconShowFullscreenBox->setWhatsThis(i18n("Set this option to show an overlay button over the "
-                                                "image thumbnail to open it in fullscreen mode."));
+                                                "thumbnail to open it in fullscreen mode."));
 
     d->iconShowCoordinatesBox  = new QCheckBox(i18n("Show geolocation overlay button"), iwpanel);
     d->iconShowCoordinatesBox->setWhatsThis(i18n("Set this option to show an overlay button over the "
-                                                 "image thumbnail to open the geolocation view."));
+                                                 "thumbnail to identify geoloacted item and open the geolocation tab."));
 
     DLineWidget* const line2   = new DLineWidget(Qt::Horizontal, iwpanel);
 
@@ -310,22 +310,22 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
                                      "Raw data in full size (high quality)"), PreviewSettings::RawPreviewFromRawFullSize);
 
     d->previewConvertToEightBit   = new QCheckBox(i18n("Preview image is converted to 8 bits for a faster viewing"), pwpanel);
-    d->previewConvertToEightBit->setWhatsThis(i18n("Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."));
+    d->previewConvertToEightBit->setWhatsThis(i18n("Check this if you want to convert a 16 bits preview image to 8 bits."));
 
     d->previewScaleFitToWindow    = new QCheckBox(i18n("Preview image is always scaled to fit to window"), pwpanel);
-    d->previewScaleFitToWindow->setWhatsThis(i18n("Uncheck this if you do not want to scale small images to fit to window."));
+    d->previewScaleFitToWindow->setWhatsThis(i18n("Check this if you want to scale small images to fit to window."));
 
     d->previewSmoothScaled        = new QCheckBox(i18n("Preview image use Anti-aliasing to scale up"), pwpanel);
-    d->previewSmoothScaled->setWhatsThis(i18n("Uncheck this if you do not want use Anti-aliasing to scale up."));
+    d->previewSmoothScaled->setWhatsThis(i18n("Check this if you want to use Anti-aliasing to scale up."));
 
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
-    d->previewShowIcons->setWhatsThis(i18n("Uncheck this if you do not want to see icons and text in the image preview."));
+    d->previewShowIcons->setWhatsThis(i18n("Check this if you want to see icons and text in the image preview."));
 
     d->previewAutoPlay            = new QCheckBox(i18n("Auto play of videos or animations"), pwpanel);
-    d->previewAutoPlay->setWhatsThis(i18n("Uncheck this if you do not want to auto play of videos or animations."));
+    d->previewAutoPlay->setWhatsThis(i18n("Check this if you want to auto play the videos or animations."));
 
     d->previewOverlay             = new QCheckBox(i18n("Show a text overlay over preview."), pwpanel);
-    d->previewOverlay->setWhatsThis(i18n("Uncheck this if you do not want to show a canvas overlay with technical shot settings and properties."));
+    d->previewOverlay->setWhatsThis(i18n("Check this if you want to show a canvas overlay with technical shot settings and properties."));
 
     d->osdWidget                  = new PreviewOsdWidget(&d->osdSettings, pwpanel);
 
