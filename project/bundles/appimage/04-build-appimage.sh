@@ -658,7 +658,7 @@ cp ${ORIG_WD}/data/AppRun ./
 # A script to run a remote GDB instance to hack dysfunction with the AppImage bundle.
 # For details: https://www.digikam.org/contribute/#appimage-bundle
 
-cp ${ORIG_WD}/data/run_remote_gdb.sh ./
+cp ${ORIG_WD}/data/run_digikam_gdb.sh ./
 
 # desktop integration files
 
