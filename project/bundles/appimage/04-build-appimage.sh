@@ -643,7 +643,12 @@ echo -e "------------- Create Bundle with AppImage SDK stage1\n"
 
 if [[ ! -s ./functions.sh ]] ; then
 
-    wget --no-check-certificate https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+    # TODO: port to the new AppImageTool (https://github.com/AppImage/appimagetool/releases/tag/continuous)
+    # See bug #513837
+    #
+    #wget --no-check-certificate https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+
+    cp ${ORIG_WD}/appimagekit/functions.sh ./
 
 fi
 
@@ -691,7 +696,12 @@ APPIMGBIN=AppImageTool-x86_64.AppImage
 
 if [[ ! -s ./$APPIMGBIN ]] ; then
 
-    wget --no-check-certificate https://github.com/AppImage/AppImageKit/releases/download/continuous/$APPIMGBIN -O ./$APPIMGBIN
+    # TODO: port to the new AppImageTool (https://github.com/AppImage/appimagetool/releases/tag/continuous)
+    # See bug #513837
+    #
+    #wget --no-check-certificate https://github.com/AppImage/AppImageKit/releases/download/continuous/$APPIMGBIN -O ./$APPIMGBIN
+
+    cp ${ORIG_WD}/appimagekit/$APPIMGBIN ./
 
 fi
 
