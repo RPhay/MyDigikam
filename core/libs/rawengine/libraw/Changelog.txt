@@ -1,6 +1,6 @@
-2025-10-29  Alex Tutubalin <lexa@lexa.ru>
+2025-12-25  Alex Tutubalin <lexa@lexa.ru>
 
-  LibRaw 0.22 RC1 (Changelog relative to 0.21-release)
+  LibRaw 0.22 Release (Changelog relative to 0.21-release)
 
  == Raw format support ==
 
@@ -53,6 +53,7 @@
      - old RED Cine cameras
      - Canon C500
      - ARRI video/digital cinema cameras    
+ * Total supported camera count: 1284 (if compiled with all features)
 
   == Preview format support ==
 

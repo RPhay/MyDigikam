@@ -16,7 +16,7 @@ Bundles component versions:
 | macOS Qt5     | 5.15.18 (*)| 5.116       | 4.12           | 7.1.2 (*)      | 1.20.2 (*)   | 13.44 (*)        | 0.28.7 (*)    |
 | macOS Qt6     | 6.10.0 (*) | 6.20.0 (*)  | 4.12           | 7.1.2 (*)      | 1.20.2 (*)   | 13.44 (*)        | 0.28.7 (*)    |
 
-Raw Engine      : Update internal Libraw to last 20251224 upstream.
+Raw Engine      : Update internal Libraw to last 20251229 upstream.
                   New Raw Camera: * Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra
                                   * Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S
                                   * Hasselblad  CFV-50c, CFV-100c, X2D-100c
