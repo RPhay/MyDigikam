@@ -47,7 +47,7 @@ public:
     int  countItems()                                    const;
     QModelIndex findItemByInfo(const ItemInfo& info)     const;
     ItemInfo   findItemByIndex(const QModelIndex& index) const;
-    ItemFilterModel* itemFilterModel()                   const;
+    ItemFilterModel* itemFilterModel()                   const             override;
 
 Q_SIGNALS:
 

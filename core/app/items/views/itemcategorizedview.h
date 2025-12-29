@@ -42,35 +42,35 @@ class ItemCategorizedView : public ItemViewCategorized
 public:
 
     explicit ItemCategorizedView(QWidget* const parent = nullptr);
-    ~ItemCategorizedView()                                                                override;
+    ~ItemCategorizedView()                                                                   override;
 
     void setModels(ItemModel* model, ImageSortFilterModel* filterModel);
 
-    ItemModel*            itemModel()                                               const;
-    ImageSortFilterModel* itemSortFilterModel()                                     const;
+    ItemModel*               itemModel()                                               const;
+    ImageSortFilterModel*    itemSortFilterModel()                                     const;
 
-    QItemSelectionModel*  getSelectionModel()                                       const;
+    QItemSelectionModel*     getSelectionModel()                                       const;
 
     /// @return Any ItemFilterMode in chain. May not be sourceModel()
-    ItemFilterModel*      itemFilterModel()                                         const;
+    virtual ItemFilterModel* itemFilterModel()                                         const;
 
     /// @return 0 if the ItemModel is not an ItemThumbnailModel
-    ItemThumbnailModel*   itemThumbnailModel()                                      const;
+    ItemThumbnailModel*      itemThumbnailModel()                                      const;
 
     /// @return 0 if the ItemModel is not an ItemAlbumModel
-    ItemAlbumModel*       itemAlbumModel()                                          const;
-    ItemAlbumFilterModel* itemAlbumFilterModel()                                    const;
+    ItemAlbumModel*          itemAlbumModel()                                          const;
+    ItemAlbumFilterModel*    itemAlbumFilterModel()                                    const;
 
-    ItemDelegate*         itemDelegate()                                            const;
+    ItemDelegate*            itemDelegate()                                            const;
 
-    Album*                currentAlbum()                                            const;
-    ItemInfo              currentInfo()                                             const;
-    QUrl                  currentUrl()                                              const;
+    Album*                   currentAlbum()                                            const;
+    ItemInfo                 currentInfo()                                             const;
+    QUrl                     currentUrl()                                              const;
 
-    ItemInfoList          allItemInfos()                                            const;
-    QList<QUrl>           allUrls()                                                 const;
-    ItemInfoList          selectedItemInfos()                                       const;
-    ItemInfoList          selectedItemInfosCurrentFirst()                           const;
+    ItemInfoList             allItemInfos()                                            const;
+    QList<QUrl>              allUrls()                                                 const;
+    ItemInfoList             selectedItemInfos()                                       const;
+    ItemInfoList             selectedItemInfosCurrentFirst()                           const;
 
     /**
      * @brief Selects the index as current and scrolls to it.
