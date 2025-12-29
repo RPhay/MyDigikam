@@ -153,7 +153,7 @@
     <p>
         In addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library
         by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata.
-        You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents
+        You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library and ExifTool to handle metadata tag contents
         from files to populate the photo library.
     </p>
     <p xml:lang="ar">بالإضافة إلى وظيفة التصفية، تتميز دجيكام بقدرات بحث قوية تتيح لك البحث في مكتبة الصور بواسطة مجموعة واسعة من المعايير. يمكنك البحث في الصور عن طريق العلامات، والتسميات، والتصنيف، والبيانات، والموقع، وحتى بيانات تعريف EXIF أو IPTC أو XMP محددة. يمكنك أيضًا الجمع بين عدة معايير لإجراء عمليات بحث أكثر تقدمًا. يعتمد دجيكام على مكتبة Exiv2 للتعامل مع البيانات الوصفية للصور لتعبئة مكتبة الصور.</p>
@@ -220,7 +220,8 @@
     <p>
         The application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening
         as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit
-        to apply lens corrections automatically on images.
+        to apply lens corrections automatically on images. The famous Gmic-Qt plugin is also available with more than 600 filters to extend your creativity.
+        All editing operations in digiKam are versioned.
     </p>
     <p xml:lang="ar">يوفر التطبيق مجموعة شاملة من أدوات التحرير. يتضمن ذلك الأدوات الأساسية لضبط الألوان والاقتصاص والشحذ بالإضافة إلى الأدوات المتقدمة لتعديل المنحنيات وخياطة البانوراما وغير ذلك الكثير. تسمح الأداة الخاصة القائمة على مكتبة Lensfun بتطبيق تصحيحات العدسة آليًّا على الصور.</p>
     <p xml:lang="be">Праграма мае шырокі набор інструментаў для рэдагавання. Гэта асноўныя інструменты для падладжвання колераў, абразання і павышэння рэзкасці, а таксама інструменты для падладжвання крывых, панарамнага сшывання і многае іншае. Адмысловы інструмент на базе бібліятэкі Lensfun дае магчымасць аўтаматычна ўжываць карэкцыю аб'ектыва да выяў.</p>
