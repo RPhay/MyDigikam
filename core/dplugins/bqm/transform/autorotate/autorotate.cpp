@@ -41,32 +41,14 @@
 namespace DigikamBqmAutoRotatePlugin
 {
 
-class Q_DECL_HIDDEN AutoRotate::Private
-{
-public:
-
-    Private() = default;
-
-    // const int             CUSTOM_ANGLE  = DImg::ROT270 + 1;
-
-    // QLabel*               label         = nullptr;
-
-    // QCheckBox*            useExif       = nullptr;
-
-    // DComboBox*            comboBox      = nullptr;
-
-    // FreeRotationSettings* frSettings    = nullptr;
-};
-
 AutoRotate::AutoRotate(QObject* const parent)
-    : BatchTool(QLatin1String("AutoRotate"), TransformTool, parent),
-      d        (new Private)
+    : BatchTool(QLatin1String("AutoRotate"), TransformTool, parent)
 {
 }
 
-AutoRotate::~AutoRotate()
+BatchToolSettings AutoRotate::defaultSettings()
 {
-    delete d;
+    return BatchToolSettings();
 }
 
 BatchTool* AutoRotate::clone(QObject* const parent) const
@@ -74,101 +56,9 @@ BatchTool* AutoRotate::clone(QObject* const parent) const
     return new AutoRotate(parent);
 }
 
-void AutoRotate::registerSettingsWidget()
-{
-
-    DVBox* const vbox = new DVBox;
-    // d->useExif        = new QCheckBox(i18nc("@title", "Use Exif Orientation"), vbox);
-
-    // d->label     = new QLabel(vbox);
-    // d->comboBox  = new DComboBox(vbox);
-    // d->comboBox->insertItem(DImg::ROT90,     i18nc("@item: angle", "90 degrees"));
-    // d->comboBox->insertItem(DImg::ROT180,    i18nc("@item: angle", "180 degrees"));
-    // d->comboBox->insertItem(DImg::ROT270,    i18nc("@item: angle", "270 degrees"));
-    // d->comboBox->insertItem(d->CUSTOM_ANGLE, i18nc("@item: angle", "Custom"));
-    // d->comboBox->setDefaultIndex(DImg::ROT90);
-    // d->label->setText(i18nc("@label", "Angle:"));
-
-    // d->frSettings       = new FreeRotationSettings(vbox);
-
-    QLabel* const space = new QLabel(vbox);
-    vbox->setStretchFactor(space, 10);
-
-    m_settingsWidget    = vbox;
-
-    // setNeedResetExifOrientation(true);
-
-    // connect(d->comboBox, SIGNAL(activated(int)),
-    //         this, SLOT(slotSettingsChanged()));
-
-    // connect(d->useExif, SIGNAL(toggled(bool)),
-    //         this, SLOT(slotSettingsChanged()));
-
-    // connect(d->frSettings, SIGNAL(signalSettingsChanged()),
-    //         this, SLOT(slotSettingsChanged()));
-
-    // slotSettingsChanged();
-
-    BatchTool::registerSettingsWidget();
-}
-
-BatchToolSettings AutoRotate::defaultSettings()
-{
-    BatchToolSettings settings;
-    // FreeRotationContainer defaultPrm = d->frSettings->defaultSettings();
-
-    // settings.insert(QLatin1String("useExif"),         true);
-    // // settings.insert(QLatin1String("rotation"),        d->comboBox->defaultIndex());
-    // // settings.insert(QLatin1String("angle"),           defaultPrm.angle);
-    // settings.insert(QLatin1String("antiAlias"),       defaultPrm.antiAlias);
-    // settings.insert(QLatin1String("autoCrop"),        defaultPrm.autoCrop);
-    // settings.insert(QLatin1String("backgroundColor"), defaultPrm.backgroundColor);
-
-    return settings;
-}
-
-void AutoRotate::slotAssignSettings2Widget()
-{
-    // d->useExif->setChecked(settings().value(QLatin1String("useExif")).toBool());
-    // // d->comboBox->setCurrentIndex(settings().value(QLatin1String("rotation")).toInt());
-    // FreeRotationContainer prm;
-    // // prm.angle           = settings().value(QLatin1String("angle")).toDouble();
-    // prm.antiAlias       = settings().value(QLatin1String("antiAlias")).toBool();
-    // prm.autoCrop        = settings().value(QLatin1String("autoCrop")).toInt();
-    // prm.backgroundColor = settings().value(QLatin1String("backgroundColor")).value<QColor>();
-    // d->frSettings->setSettings(prm);
-}
-
-void AutoRotate::slotSettingsChanged()
-{
-    // d->label->setEnabled(!d->useExif->isChecked());
-    // // d->comboBox->setEnabled(!d->useExif->isChecked());
-    // // d->frSettings->setEnabled(d->comboBox->isEnabled() && d->comboBox->currentIndex() == d->CUSTOM_ANGLE);
-
-    // BatchToolSettings settings;
-    // FreeRotationContainer currentPrm = d->frSettings->settings();
-
-    // settings.insert(QLatin1String("useExif"),         d->useExif->isChecked());
-    // // settings.insert(QLatin1String("rotation"),        d->comboBox->currentIndex());
-    // // settings.insert(QLatin1String("angle"),           currentPrm.angle);
-    // settings.insert(QLatin1String("antiAlias"),       currentPrm.antiAlias);
-    // settings.insert(QLatin1String("autoCrop"),        currentPrm.autoCrop);
-    // settings.insert(QLatin1String("backgroundColor"), currentPrm.backgroundColor);
-
-    // BatchTool::slotSettingsChanged(settings);
-}
-
 bool AutoRotate::toolOperations()
 {
-    // FreeRotationContainer prm;
-    // bool useExif        = settings().value(QLatin1String("useExif")).toBool();
-    // // int rotation        = settings().value(QLatin1String("rotation")).toInt();
-    // // prm.angle           = settings().value(QLatin1String("angle")).toDouble();
-    // prm.antiAlias       = settings().value(QLatin1String("antiAlias")).toBool();
-    // prm.autoCrop        = settings().value(QLatin1String("autoCrop")).toInt();
-    // prm.backgroundColor = settings().value(QLatin1String("backgroundColor")).value<QColor>();
-
-    // JPEG image : lossless method if non-custom rotation angle.
+    // NOTE: for JPEG image uses lossless method if non-custom rotation angle.
 
     AutoRotator autorotator;
     MetaEngineRotation::TransformationAction rotation = autorotator.rotationOrientation(inputUrl().toLocalFile(), 10);

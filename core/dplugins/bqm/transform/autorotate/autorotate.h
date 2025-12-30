@@ -31,13 +31,11 @@ class AutoRotate : public BatchTool
 public:
 
     explicit AutoRotate(QObject* const parent = nullptr);
-    ~AutoRotate()                                           override;
+    ~AutoRotate()                                           override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
     BatchTool* clone(QObject* const parent = nullptr) const override;
-
-    void registerSettingsWidget()                           override;
 
 private:
 
@@ -45,13 +43,8 @@ private:
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget()                        override;
-    void slotSettingsChanged()                              override;
-
-private:
-
-    class Private;
-    Private* const d = nullptr;
+    void slotAssignSettings2Widget()                        override {};
+    void slotSettingsChanged()                              override {};
 };
 
 } // namespace DigikamBqmAutoAutoRotatePlugin
