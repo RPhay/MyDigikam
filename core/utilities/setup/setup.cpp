@@ -228,7 +228,7 @@ Setup::~Setup()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
     group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
-    group.writeEntry(QLatin1String("Albumview Tab"),   (int)d->albumViewPage->activeTab());
+    group.writeEntry(QLatin1String("AlbumView Tab"),   (int)d->albumViewPage->activeTab());
     group.writeEntry(QLatin1String("ToolTip Tab"),     (int)d->tooltipPage->activeTab());
     group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
     group.writeEntry(QLatin1String("Metadata SubTab"), (int)d->metadataPage->activeSubTab());
