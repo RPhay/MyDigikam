@@ -210,6 +210,7 @@ bool AutoRotate::toolOperations()
             applyFilter(&filter);
             break;
         }
+
         default:
         {
             // no transformation

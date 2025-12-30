@@ -55,12 +55,13 @@ QIcon AutoRotatePlugin::icon() const
 
 QString AutoRotatePlugin::description() const
 {
-    return i18nc("@info", "AI tool to automatically rotate images");
+    return i18nc("@info", "A tool to automatically rotate images");
 }
 
 QString AutoRotatePlugin::details() const
 {
-    return xi18nc("@info", "<para>This Batch Queue Manager tool can automatically detect the correct orientation of an image and rotate the image.</para>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can automatically detect the correct "
+                           "orientation of an image and rotate the image.</para>");
 }
 
 QString AutoRotatePlugin::handbookSection() const
@@ -86,7 +87,7 @@ QList<DPluginAuthor> AutoRotatePlugin::authors() const
                              QString::fromUtf8("(C) 2025"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2025"));
+                             QString::fromUtf8("(C) 2009-2026"));
 }
 
 void AutoRotatePlugin::setup(QObject* const parent)
