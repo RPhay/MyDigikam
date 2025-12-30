@@ -39,7 +39,7 @@ AssignTemplatePlugin::AssignTemplatePlugin(QObject* const parent)
 
 QString AssignTemplatePlugin::name() const
 {
-    return i18nc("@title", "Apply Metadata Template");
+    return i18nc("@title", "Apply Template");
 }
 
 QString AssignTemplatePlugin::iid() const
@@ -82,7 +82,7 @@ QList<DPluginAuthor> AssignTemplatePlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2025"))
+                             QString::fromUtf8("(C) 2009-2026"))
             ;
 }
 
