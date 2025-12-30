@@ -228,6 +228,7 @@ Setup::~Setup()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
     group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
+    group.writeEntry(QLatin1String("Collections Tab"), (int)d->collectionsPage->activeTab());
     group.writeEntry(QLatin1String("AlbumView Tab"),   (int)d->albumViewPage->activeTab());
     group.writeEntry(QLatin1String("ToolTip Tab"),     (int)d->tooltipPage->activeTab());
     group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
@@ -549,10 +550,11 @@ void Setup::showPage(Setup::Page page)
         KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
 
         item = d->pageItem((Page)group.readEntry(QLatin1String("Setup Page"), (int)CollectionsPage));
-        d->albumViewPage->setActiveTab((SetupAlbumView::AlbumTab)group.readEntry(QLatin1String("AlbumView Tab"), (int)SetupAlbumView::IconView));
-        d->tooltipPage->setActiveTab((SetupToolTip::ToolTipTab)group.readEntry(QLatin1String("ToolTip Tab"), (int)SetupToolTip::IconItems));
-        d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)SetupMetadata::Behavior));
-        d->metadataPage->setActiveSubTab((SetupMetadata::MetadataSubTab)group.readEntry(QLatin1String("Metadata SubTab"), (int)SetupMetadata::ExifViewer));
+        d->collectionsPage->setActiveTab((SetupCollections::CollectionsTab)group.readEntry(QLatin1String("Collections Tab"), (int)SetupCollections::Collections));
+        d->albumViewPage->setActiveTab((SetupAlbumView::AlbumTab)group.readEntry(QLatin1String("AlbumView Tab"),             (int)SetupAlbumView::IconView));
+        d->tooltipPage->setActiveTab((SetupToolTip::ToolTipTab)group.readEntry(QLatin1String("ToolTip Tab"),                 (int)SetupToolTip::IconItems));
+        d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"),             (int)SetupMetadata::Behavior));
+        d->metadataPage->setActiveSubTab((SetupMetadata::MetadataSubTab)group.readEntry(QLatin1String("Metadata SubTab"),    (int)SetupMetadata::ExifViewer));
 
 #ifdef HAVE_GEOLOCATION
 
@@ -560,11 +562,11 @@ void Setup::showPage(Setup::Page page)
 
 #endif
 
-        d->editorPage->setActiveTab((SetupEditor::EditorTab)group.readEntry(QLatin1String("Editor Tab"), (int)SetupEditor::EditorWindow));
-        d->iccPage->setActiveTab((SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)SetupICC::Behavior));
-        d->cameraPage->setActiveTab((SetupCamera::CameraTab)group.readEntry(QLatin1String("Camera Tab"), (int)SetupCamera::Devices));
-        d->pluginsPage->setActiveTab((SetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"), (int)SetupPlugins::Generic));
-        d->miscPage->setActiveTab((SetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"), (int)SetupMisc::Behavior));
+        d->editorPage->setActiveTab((SetupEditor::EditorTab)group.readEntry(QLatin1String("Editor Tab"),                     (int)SetupEditor::EditorWindow));
+        d->iccPage->setActiveTab((SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"),                                 (int)SetupICC::Behavior));
+        d->cameraPage->setActiveTab((SetupCamera::CameraTab)group.readEntry(QLatin1String("Camera Tab"),                     (int)SetupCamera::Devices));
+        d->pluginsPage->setActiveTab((SetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"),                   (int)SetupPlugins::Generic));
+        d->miscPage->setActiveTab((SetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"),                             (int)SetupMisc::Behavior));
     }
     else
     {
