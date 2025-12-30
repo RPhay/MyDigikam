@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2008-2025 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2008-2026 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
 # Configuration to tune before to build tarball.
 
-TARBALL_VERSION="8.7.0"
+TARBALL_VERSION="9.0.0"
 
 # Location to host target files.
 TARBALL_DIR="$PWD/../digikam-$TARBALL_VERSION"
