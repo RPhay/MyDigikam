@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
 "PO-Revision-Date: 2025-05-03 11:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -60742,10 +60742,12 @@ msgid "Show file&name"
 msgstr "Vis &filnamn"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
 #: core/utilities/setup/camera/setupcamera.cpp:432
@@ -60754,10 +60756,12 @@ msgid "Show file si&ze"
 msgstr "Vis fil&storleik"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:135
 #: core/utilities/setup/camera/setupcamera.cpp:435
@@ -60766,11 +60770,10 @@ msgid "Show camera creation &date"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set this option to visualize the correction grid to be applied."
+msgid "Set this option to show the camera creation date below the thumbnail."
+msgstr "Kryss av her for å visa eit grafisk korrigeringsrutenett."
 
 #: core/utilities/setup/album/setupalbumview.cpp:139
 #, kde-format
@@ -60780,42 +60783,50 @@ msgstr "Vis &endringsdato"
 #: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Item dimensions"
+msgid "Show item dimensions"
+msgstr "Elementstorleik"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Show file date"
+msgid "Show item aspect ratio"
+msgstr "Vis fildato"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Enable this option to maintain aspect ratio with new image sizes."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
+"Kryss av her for å halda forholdet mellom høgd og breidd konstant ved ny "
+"biletstorleik."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, kde-format
-msgid "Show image format"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "&Show image Format"
+msgid "Show item format"
+msgstr "&Vis biletformat"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Enable this option to show a golden spiral guide."
+msgid "Set this option to show item mime type over thumbnail."
+msgstr "Vis støttelinjer i form av ein gyllen spiral."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
 #, kde-format
@@ -60823,9 +60834,12 @@ msgid "Show digiKam tit&le"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
@@ -60833,9 +60847,12 @@ msgid "Show digiKam &captions"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
 #: core/utilities/setup/camera/setupcamera.cpp:451
@@ -60844,10 +60861,12 @@ msgid "Show digiKam &tags"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
@@ -60855,9 +60874,12 @@ msgid "Show digiKam &rating"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
 #, kde-format
@@ -60865,10 +60887,12 @@ msgid "Show digiKam &pick label"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
@@ -60876,11 +60900,14 @@ msgid "Show digiKam color &label"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Activate this option to show all sub-albums below the current album."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
+"Kryss av her viss du vil visa alle under­albuma til det gjeldande albumet."
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
@@ -60891,8 +60918,8 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:182
 #, kde-format
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
@@ -60903,8 +60930,8 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
@@ -60915,8 +60942,8 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:190
 #, kde-format
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
@@ -61087,10 +61114,10 @@ msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
+msgstr "Kryss av her viss du vil gjera vassmerket delvis gjennomsiktig."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
@@ -61098,9 +61125,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to scale small images to fit to window."
+msgstr "Kryss av her viss du vil gjera vassmerket delvis gjennomsiktig."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -61108,9 +61136,10 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to use Anti-aliasing to scale up."
+msgstr "Kryss av her viss du vil gjera vassmerket delvis gjennomsiktig."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -61119,11 +61148,10 @@ msgid "Show icons and text over preview"
 msgstr "Vis ikon og tekst over førehandsvising"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want a background fill behind the text."
+msgid "Check this if you want to see icons and text in the image preview."
+msgstr "Kryss av her viss du vil ha ein bakgrunn til teksten."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
@@ -61131,9 +61159,10 @@ msgid "Auto play of videos or animations"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to auto play the videos or animations."
+msgstr "Kryss av her viss du vil gjera vassmerket delvis gjennomsiktig."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
 #, fuzzy, kde-format
@@ -61144,8 +61173,8 @@ msgstr "Vis ikon og tekst over førehandsvising"
 #: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
@@ -61641,6 +61670,22 @@ msgstr "Importer filter"
 msgid "Icon-View Options"
 msgstr ""
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr ""
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr ""
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr ""
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -61720,6 +61765,12 @@ msgstr "Førehandsvis elementa ved nedlasting"
 #: core/utilities/setup/camera/setupcamera.cpp:505
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
+msgstr ""
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:527

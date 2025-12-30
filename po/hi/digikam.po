@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -62566,9 +62566,8 @@ msgid "Show file&name"
 msgstr "फ़ाइल नाम दिखाएँ (&n)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
 #, fuzzy, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
@@ -62578,9 +62577,8 @@ msgid "Show file si&ze"
 msgstr "फ़ाइल आकार दिखाएँ (&z)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
 #, fuzzy, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:135
@@ -62590,10 +62588,8 @@ msgid "Show camera creation &date"
 msgstr "कैमरा तारीख दिखाएँ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
 #, fuzzy, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:139
@@ -62604,41 +62600,40 @@ msgstr "कैमरा तारीख दिखाएँ"
 #: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
 #, fuzzy, kde-format
-msgid "Show ima&ge dimensions"
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
 msgstr "छवि आयाम दिखाएँ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
 #, fuzzy, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
 #, fuzzy, kde-format
-msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "आस्पेक्ट रेशो बनाए रखें"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
 #, fuzzy, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
 #, fuzzy, kde-format
-msgid "Show image format"
+msgid "Show item format"
 msgstr "छवि क़िस्म दिखाएं"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
 #, fuzzy, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
@@ -62648,7 +62643,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
 #, fuzzy, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
@@ -62658,7 +62653,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
 #, fuzzy, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
@@ -62669,8 +62664,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
 #, fuzzy, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
@@ -62680,7 +62674,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
 #, fuzzy, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
@@ -62690,8 +62684,7 @@ msgstr "फ़ाइल नाम दिखाएँ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
 #, fuzzy, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
@@ -62702,7 +62695,7 @@ msgstr "फ़ाइल नाम दिखाएँ"
 #: core/utilities/setup/album/setupalbumview.cpp:176
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
@@ -62715,8 +62708,8 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:182
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
@@ -62727,8 +62720,8 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:186
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
@@ -62739,8 +62732,8 @@ msgstr "टैग फ़िल्टर्स"
 #: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
@@ -62917,8 +62910,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
@@ -62928,7 +62920,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
 #, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
@@ -62938,7 +62930,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
@@ -62948,10 +62940,8 @@ msgid "Show icons and text over preview"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
+msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
@@ -62960,9 +62950,9 @@ msgid "Auto play of videos or animations"
 msgstr "फ़ाइल को मिटाकर लिखें?"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
-msgstr ""
+#, fuzzy, kde-format
+msgid "Check this if you want to auto play the videos or animations."
+msgstr "फ़ाइल को मिटाकर लिखें?"
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
 #, kde-format
@@ -62972,8 +62962,8 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
@@ -63478,6 +63468,22 @@ msgstr "फ़िल्टर्स (&i)"
 msgid "Icon-View Options"
 msgstr "इंटरफ़ेस विकल्प"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, fuzzy, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, fuzzy, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, fuzzy, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr "<p>छवि फ़ाइल नाम प्रदर्शित करने के लिए यह विकल्प सेट करें."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -63558,6 +63564,12 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>छवि फ़ाइल तिथि प्रदर्शित करने के लिए यह विकल्प सेट करें."
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, fuzzy, kde-format
@@ -66951,6 +66963,10 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवियाँ छांटें (&S)"
+
+#, fuzzy
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "छवि आयाम दिखाएँ"
 
 #, fuzzy
 #~ msgid "Show image labels"

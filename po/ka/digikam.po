@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
-"PO-Revision-Date: 2025-12-28 13:31+0100\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"PO-Revision-Date: 2025-12-29 06:27+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -21388,30 +21388,26 @@ msgid "Behavior"
 msgstr "ქცევა"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
-#, fuzzy, kde-format
-#| msgid "Delay between images:"
+#, kde-format
 msgid "Delay between items: "
-msgstr "დაყოვნება გამოსახულებებს შორის:"
+msgstr "დაყოვნება ელემენტებს შორის: "
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgid "The delay, in seconds, between items."
-msgstr "დაყოვნება გამოსახულებებს შორის, წამებში."
+msgstr "დაყოვნება ელემენტებს შორის, წამებში."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "Start with current image"
+#, kde-format
 msgid "Start with current item"
-msgstr "მიმდინარე გამოსახულებით დაწყება"
+msgstr "დაწყება მიმდინარე ელემენტით"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
-#, fuzzy, kde-format
-#| msgid "If this option is enabled, the Slideshow will run in random order"
+#, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
-msgstr "თუ ეს ჩართულია, სლაიდშოუ შემთხვევითი მიმდევრობით გაეშვება"
+msgstr "თუ ეს ჩართულია, სლაიდშოუ ახლა მონიშნული ელემენტების სიით დაიწყება."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
@@ -21424,10 +21420,9 @@ msgid "Run the slideshow in a loop."
 msgstr "სლაიდშოუს გაშვება გამეორებად რეჟიმში."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Shuffle images"
+#, kde-format
 msgid "Shuffle items"
-msgstr "გამოსახულებების შემთხვევითობა"
+msgstr "ელემენტების შემთხვევითობა"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
@@ -21448,47 +21443,39 @@ msgstr ""
 "მიმდინარეობით."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Show labels editor"
-msgstr "მიმდინარეობის მაჩვენებლის ჩვენება"
+msgstr "ჭდეების რედაქტორის ჩვენება"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the digiKam image color label and pick label at the bottom of the "
-#| "screen."
+#, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
 msgstr ""
-"digiKam-ის გამოსახულების ჭდის და არჩევის ჭდის ჩვენება ეკრანის ქვედა მხარეს."
+"digiKam-ის ელემენტის ჭდის და არჩევის ჭდის ჩვენება ეკრანის ქვედა მხარეს."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Show rating editor"
-msgstr "გეოლოკაციის მაჩვენებლის ჩვენება"
+msgstr "რეიტინგის რედაქტორის ჩვენება"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image rating at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
-msgstr "გამოსახულების digiKam-ის რეიტინგის ჩვენება ეკრანის ქვედა მხარეს."
+msgstr "ელემენტის digiKam-ის რეიტინგის ჩვენება ეკრანის ქვედა მხარეს."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Use background color for images:"
+#, kde-format
 msgid "Use background color for items:"
-msgstr "ფონის ფერის გამოყენება გამოსახულებებისთვის:"
+msgstr "ფონის ფერის გამოყენება ელემენტებისთვის:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "Define a color to use as background to render images on screen."
+#, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr ""
-"აღწერეთ ფერი, რომელიც გამოყენებული იქნება ფონის ფერად ეკრანზე "
-"გამოსახულებების რენდერისთვის."
+"აღწერეთ ფერი, რომელიც გამოყენებული იქნება ფონის ფერად ეკრანზე ელემენტების "
+"რენდერისთვის."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
@@ -39678,28 +39665,24 @@ msgid "Usages:"
 msgstr "გამოყენებებები:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Show image file name"
+#, kde-format
 msgid "Show item file name"
-msgstr "გამოსახულების ფაილის სახელის ჩვენება"
+msgstr "ელემენტის ფაილის სახელის ჩვენება"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
+#, kde-format
 msgid "Show the item file name at the bottom of the screen."
-msgstr "გამოსახულების ფაილის სახელის ჩვენება ეკრანის ქვედა მხარეს."
+msgstr "ელემენტის ფაილის სახელის ჩვენება ეკრანის ქვედა მხარეს."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgid "Show item creation date"
-msgstr "გამოსახულების შექნის თარიღის ჩვენება"
+msgstr "ელემენტის შექნის თარიღის ჩვენება"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
+#, kde-format
 msgid "Show the item creation time/date at the bottom of the screen."
-msgstr "გამოსახულების შექმნის დროის/თარიღის ჩვენება ეკრანის ქვედა მხარეს."
+msgstr "ელემენტის შექმნის დროის/თარიღის ჩვენება ეკრანის ქვედა მხარეს."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:78
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
@@ -39745,66 +39728,56 @@ msgid "Show the camera lens model at the bottom of the screen."
 msgstr "კამერის ლინზის მოდელის ჩვენება ეკრანის ქვედა მხარეს."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show item caption"
-msgstr "გამოსახულების წარწერის ჩვენება"
+msgstr "ელემენტის წარწერის ჩვენება"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen."
-msgstr "გამოსახულების წარწერის ჩვენება ეკრანის ქვედა მხარეს."
+msgstr "ელემენტის წარწერის ჩვენება ეკრანის ქვედა მხარეს."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show item title"
-msgstr "გამოსახულების სათაურის ჩვენება"
+msgstr "ელემენტის სათაურის ჩვენება"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgid "Show the item title at the bottom of the screen."
-msgstr "გამოსახულების სახელის ჩვენება ეკრანის ქვედა მხარეს."
+msgstr "ელემენტის სახელის ჩვენება ეკრანის ქვედა მხარეს."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
+#, kde-format
 msgid "Show item caption if it has not title"
-msgstr "თუ გამოსახულებას სათაური არ გააჩნია, წარწერა იქნება ნაჩვენები"
+msgstr "თუ ელემენტს სათაური არ გააჩნია, წარწერა იქნება ნაჩვენები"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen if no titles existed."
 msgstr ""
-"გამოსახულების წარწერის ეკრანის ქვედა მხარეს ჩვენება, თუ სახელი არ არსებობს."
+"ელემენტის წარწერის ეკრანის ქვედა მხარეს ჩვენება, თუ სახელი არ არსებობს."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgid "Show item tags"
-msgstr "გამოსახულების ჭდეების ჩვენება"
+msgstr "ელემენტის ჭდეების ჩვენება"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item tag names at the bottom of the screen."
-msgstr "გამოსახულების digiKam-ის ჭდის სახელების ჩვენება ეკრანის ქვედა მხარეს."
+msgstr "ელემენტის digiKam-ის ჭდის სახელების ჩვენება ეკრანის ქვედა მხარეს."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "შემდეგი თვე"
+msgstr "ტექსტის ფონტი:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#, kde-format
 msgid "Select here the font used to display OSD text over the slideshow."
-msgstr "აირჩიეთ აქ ფონტი, რომელიც სლაიდშოუში ტექსტის გამოსატანად გამოიყენება."
+msgstr ""
+"აირჩიეთ აქ ფონტი, რომელიც სლაიდშოუზე OSD ტექსტის გამოსატანად გამოიყენება."
 
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
@@ -48561,6 +48534,7 @@ msgstr "მობრუნების ქმედებები"
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr ""
+"გამოსახულებების/მინიატურების შებ&რუნებული ჩვენება ორიენტაციის ჭდის მიხედვით."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
@@ -61301,9 +61275,9 @@ msgid "Show file&name"
 msgstr "ფაილის სახელის ჩვე&ნება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი ფაილის სახელის საჩვენებლად გამოსახულების მინიატურის "
 "ქვემოთ."
@@ -61315,9 +61289,9 @@ msgid "Show file si&ze"
 msgstr "ფაილის &ზომის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი ფაილის ზომის საჩვენებლად გამოსახულების მინიატურის ქვემოთ."
 
@@ -61328,10 +61302,11 @@ msgid "Show camera creation &date"
 msgstr "კამერის შექმნის თარიღის ჩ&ვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი კამერის შექმნის თარიღის საჩვენებლად გამოსახულების "
 "მინიატურის ქვემოთ."
@@ -61344,45 +61319,52 @@ msgstr "ფაილის ცვლილების თარიღის ჩ
 #: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "&გამოსახულების განზომილებების ჩვენება"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "გამოსახულების განზომილებების ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი გამოსახულების ზომის საჩვენებლად პიქსელებში გამოსახულების "
 "მინიატურის ქვემოთ."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
+#, fuzzy, kde-format
+#| msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "გამოსახულების ფარდობის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი გამოსახულების ფარდობის საჩვენებლად გამოსახულების "
 "მინიატურის ქვემოთ."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, kde-format
-msgid "Show image format"
+#, fuzzy, kde-format
+#| msgid "Show image format"
+msgid "Show item format"
 msgstr "გამოსახულების ფორმატის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი გამოსახულების mime ტიპის საჩვენებლად გამოსახულების "
 "მინიატურის ზემოდან."
@@ -61393,8 +61375,9 @@ msgid "Show digiKam tit&le"
 msgstr "digiKam-ის სათაურის &ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი digiKam-ის სათაურის საჩვენებლად გამოსახულების მინიატურის "
 "ქვემოთ."
@@ -61405,8 +61388,10 @@ msgid "Show digiKam &captions"
 msgstr "digiKam-ის &წარწერების ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი digiKam-ის წარწერების საჩვენებლად გამოსახულების "
 "მინიატურის ქვემოთ."
@@ -61418,9 +61403,10 @@ msgid "Show digiKam &tags"
 msgstr "digiKam-ის &ჭდეების ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი digiKam-ის ჭდეების სიის საჩვენებლად გამოსახულების "
 "მინიატურის ქვემოთ."
@@ -61431,8 +61417,10 @@ msgid "Show digiKam &rating"
 msgstr "digiKam-ის &რეიტინგის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი digiKam-ის რეიტინგის საჩვენებლად გამოსახულების "
 "მინიატურის ქვემოთ."
@@ -61443,9 +61431,10 @@ msgid "Show digiKam &pick label"
 msgstr "digiKam-ის &არჩევის ჭდის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი digiKam-ის აღებული ჭდის საჩვენებლად გამოსახულების "
 "მინიატურის ქვემოთ."
@@ -61456,9 +61445,12 @@ msgid "Show digiKam color &label"
 msgstr "digiKam-ის &ფერის ჭდის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam color label as a border around the "
+#| "thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
 "ჩართეთ ეს პარამეტრი digiKam-ის ფერის ჭდის მინიატურის გარშემო საზღვრის სახით "
@@ -61471,11 +61463,16 @@ msgid "Show rotation overlay buttons"
 msgstr "ბრუნვის ზემოდან დადებული ღილაკების ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show overlay buttons on the image thumbnail for image "
+#| "rotation."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
+"ჩართეთ ეს პარამეტრი ზემოდან დალაგებული გამოსახულების ტრიალის ღილაკების "
+"საჩვენებლად გამოსახულების მინიატურაზე."
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
@@ -61483,29 +61480,33 @@ msgid "Show fullscreen overlay button"
 msgstr "სრულ ეკრანზე ზემოდან დადებული ღილაკის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show an overlay button over the image thumbnail to "
+#| "open the geolocation view."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
+"ჩართეთ ეს პარამეტრი გამოსახულების მინიატურაზე გეოლოკაციის ხედის განლაგების "
+"ღილაკის საჩვენებლად."
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
-#, fuzzy, kde-format
-#| msgid "Show rotation overlay buttons"
+#, kde-format
 msgid "Show geolocation overlay button"
-msgstr "ბრუნვის ზემოდან დადებული ღილაკების ჩვენება"
+msgstr "გეოლოკაციის განლაგების ღილაკის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 #| msgid ""
-#| "Set this option to show overlay buttons on the image thumbnail for image "
-#| "rotation."
+#| "Set this option to show an overlay button over the image thumbnail to "
+#| "open the geolocation view."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr ""
-"ჩართეთ ეს პარამეტრი ზემოდან დალაგებული გამოსახულების ტრიალის ღილაკების "
-"საჩვენებლად გამოსახულების მინიატურაზე."
+"ჩართეთ ეს პარამეტრი გამოსახულების მინიატურაზე გეოლოკაციის ხედის განლაგების "
+"ღილაკის საჩვენებლად."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -61678,9 +61679,11 @@ msgstr ""
 "მინიატურის გამოსახულება გადაყვანილი იქნება 8 ბიტში სწრაფი დათვალიერებისთვის"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
+#| "bits."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr "გამორთეთ ეს, თუ არ გნებავთ 16 ბიტიანი მინიატურის გადაყვანა 8 ბიტიანში."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
@@ -61689,8 +61692,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "მინიატურის გამოსახულება ყოველთვის გადიდდება ფანჯარაში ჩასატევად"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 "გამორთეთ ეს, თუ არ გნებავთ პატარა გამოსახულებების გადიდება ფანჯარაში "
 "ჩასატევად."
@@ -61701,9 +61706,10 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "მინიატურის გამოსახულება მასშტაბისთვის მოგლუვებას იყენებს"
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Preview image use Anti-aliasing to scale up"
+msgid "Check this if you want to use Anti-aliasing to scale up."
+msgstr "მინიატურის გამოსახულება მასშტაბისთვის მოგლუვებას იყენებს"
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -61712,11 +61718,10 @@ msgid "Show icons and text over preview"
 msgstr "ხატულების და ტექსტის ჩვენება მინიატურის ზემოდან"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want a background fill behind the text."
+msgid "Check this if you want to see icons and text in the image preview."
+msgstr "ჩართეთ ეს, თუ გნებავთ ტექსტის მიღმა ფონის შევსება."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
@@ -61724,8 +61729,10 @@ msgid "Auto play of videos or animations"
 msgstr "ვიდეოების ან ანიმაციების ავტომატური დაკვრა"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to auto play of videos or animations."
+msgid "Check this if you want to auto play the videos or animations."
 msgstr "გამორთეთ ეს, თუ არ გნებავთ ვიდეოების ან ანიმაციების ავტომატური დაკვრა."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
@@ -61734,10 +61741,13 @@ msgid "Show a text overlay over preview."
 msgstr "ტექსტის ჩვენება მინიატურის ზემოდან."
 
 #: core/utilities/setup/album/setupalbumview.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to show a canvas overlay with technical "
+#| "shot settings and properties."
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 "გამორთეთ ეს, თუ არ გნებავთ ტილოს განლაგების ჩვენება ტექნიკური კადრის "
 "პარამეტრებისა და თვისებებით."
@@ -62242,6 +62252,27 @@ msgstr "ფილტრების შემოტანა"
 msgid "Icon-View Options"
 msgstr "ხატულას ხედის მორგება"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr ""
+"ჩართეთ ეს პარამეტრი ფაილის სახელის საჩვენებლად გამოსახულების მინიატურის "
+"ქვემოთ."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr ""
+"ჩართეთ ეს პარამეტრი ფაილის ზომის საჩვენებლად გამოსახულების მინიატურის ქვემოთ."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr ""
+"ჩართეთ ეს პარამეტრი კამერის შექმნის თარიღის საჩვენებლად გამოსახულების "
+"მინიატურის ქვემოთ."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -62329,6 +62360,12 @@ msgstr "გამოსახულების მინიატურის �
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>ჩართეთ ეს გადმოწერისას თითოეული ელემენტის მინიატურის სანახავად.</p>"
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -65757,6 +65794,9 @@ msgstr "ალბომის ელემენტები"
 #, kde-format
 msgid "Import Items"
 msgstr "ელემენტების შემოტანა"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "&გამოსახულების განზომილებების ჩვენება"
 
 #~ msgid "Show image labels"
 #~ msgstr "გამოსახულების ჭდეების ჩვენება"

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
 "PO-Revision-Date: 2025-12-21 11:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -65484,9 +65484,9 @@ msgid "Show file&name"
 msgstr "Erakutsi fitxategien &izenak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr ""
 "Gaitu aukera hau fitxategi-izenak irudien koadro txikien azpian erakusteko."
 
@@ -65497,9 +65497,9 @@ msgid "Show file si&ze"
 msgstr "Erakutsi fitxategien &tamainak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr ""
 "Gaitu aukera hau fitxategien tamainak irudien koadro txikien azpian "
 "erakusteko."
@@ -65511,10 +65511,11 @@ msgid "Show camera creation &date"
 msgstr "Erakutsi kameraren &sorrera-datak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "Gaitu aukera hau kameraren sorrera-datak irudien koadro txikien azpian "
 "erakusteko."
@@ -65528,45 +65529,47 @@ msgstr "Erakutsi irudiaren sorrera-data"
 #: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "Erakutsi irudien &dimentsioak"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "Erakutsi irudiaren dimentsioak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
 "Gaitu aukera hau irudien tamainak pixeletan irudien koadro txikien azpian "
 "erakusteko."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
 #, fuzzy, kde-format
-msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "Mantendu aspektu-erlazioa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
 #, fuzzy, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
 "Gaitu aukera hau digiKam-en puntuazioak irudien koadro txikien azpian "
 "erakusteko."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
 #, fuzzy, kde-format
-msgid "Show image format"
+msgid "Show item format"
 msgstr "Erakutsi irudien puntuazioak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
 #, fuzzy, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
 "Gaitu aukera hau fitxategi-izenak irudien koadro txikien azpian erakusteko."
 
@@ -65577,7 +65580,7 @@ msgstr "Erakutsi digiKam-en &puntuazioak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
 #, fuzzy, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
 "Gaitu aukera hau digiKam-en puntuazioak irudien koadro txikien azpian "
 "erakusteko."
@@ -65588,8 +65591,10 @@ msgid "Show digiKam &captions"
 msgstr "Erakutsi digiKam-en &epigrafeak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
 "Gaitu aukera hau digiKam-en epigrafeak irudien koadro txikien azpian "
 "erakusteko."
@@ -65603,8 +65608,7 @@ msgstr "Erakutsi digiKam-en eti&ketak"
 #: core/utilities/setup/album/setupalbumview.cpp:164
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "Gaitu aukera hau digiKam-en etiketak irudien koadro txikien azpian "
 "erakusteko."
@@ -65615,8 +65619,10 @@ msgid "Show digiKam &rating"
 msgstr "Erakutsi digiKam-en &puntuazioak"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
 "Gaitu aukera hau digiKam-en puntuazioak irudien koadro txikien azpian "
 "erakusteko."
@@ -65627,9 +65633,10 @@ msgid "Show digiKam &pick label"
 msgstr "Erakutsi digiKam-en hauta&pen etiketa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "Hautatu aukera hau digiKam-en hautapen etiketa irudiaren koadro txikiaren "
 "azpian erakusteko."
@@ -65643,7 +65650,7 @@ msgstr "Erakutsi digiKam-en &puntuazioak"
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
 "Gaitu aukera hau digiKam-en etiketak irudien koadro txikien azpian "
@@ -65661,8 +65668,8 @@ msgstr "Erakutsi biraketako gainjarritako botoiak"
 #| "Set this option to show overlay buttons on the image thumbnail for image "
 #| "rotation."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
 "Gaitu aukera hau irudia biratzeko botoiak irudien koadro txikietan "
 "gainjarrita erakusteko."
@@ -65675,8 +65682,8 @@ msgstr "Erakutsi biraketako gainjarritako botoiak"
 #: core/utilities/setup/album/setupalbumview.cpp:186
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
 "Gaitu aukera hau irudia biratzeko botoiak irudien koadro txikietan "
 "gainjarrita erakusteko."
@@ -65690,8 +65697,8 @@ msgstr "Erakutsi biraketako gainjarritako botoiak"
 #: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr ""
 "Gaitu aukera hau irudia biratzeko botoiak irudien koadro txikietan "
 "gainjarrita erakusteko."
@@ -65888,10 +65895,10 @@ msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
+msgstr "Markatu hau filigrana gardena izatea nahi baduzu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
@@ -65899,9 +65906,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to scale small images to fit to window."
+msgstr "Markatu hau filigrana gardena izatea nahi baduzu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -65909,9 +65917,10 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to use Anti-aliasing to scale up."
+msgstr "Markatu hau filigrana gardena izatea nahi baduzu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -65920,11 +65929,11 @@ msgid "Show icons and text over preview"
 msgstr "Erakutsi ikonoak eta testua aurreikuspegiaren gainean"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
+#, fuzzy, kde-format
+#| msgid "Check this if you want a background fill behind the text."
+msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
+"Markatu hau testuaren hondoan atzeko planoko betegarri bat nahi baduzu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
 #, fuzzy, kde-format
@@ -65936,7 +65945,7 @@ msgstr "Gorde aldaketak automatikoki"
 #: core/utilities/setup/album/setupalbumview.cpp:325
 #, fuzzy, kde-format
 #| msgid "Check this if you want watermark to be transparent."
-msgid "Uncheck this if you do not want to auto play of videos or animations."
+msgid "Check this if you want to auto play the videos or animations."
 msgstr "Markatu hau filigrana gardena izatea nahi baduzu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
@@ -65949,8 +65958,8 @@ msgstr "Erakutsi ikonoak eta testua aurreikuspegiaren gainean"
 #, fuzzy, kde-format
 #| msgid "Check this if you want watermark to be transparent."
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr "Markatu hau filigrana gardena izatea nahi baduzu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
@@ -66592,6 +66601,27 @@ msgstr "Inportatzeko iragazkiak"
 msgid "Icon-View Options"
 msgstr "Ikonoen ikuspegiaren aukerak"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr ""
+"Gaitu aukera hau fitxategi-izenak irudien koadro txikien azpian erakusteko."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr ""
+"Gaitu aukera hau fitxategien tamainak irudien koadro txikien azpian "
+"erakusteko."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr ""
+"Gaitu aukera hau kameraren sorrera-datak irudien koadro txikien azpian "
+"erakusteko."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -66685,6 +66715,12 @@ msgstr "Aurreikusi elementu bakoitza hura zama-jaitsi bitartean"
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 "<p>Gaitu aukera hau zama-jaitsi bitartean irudi bakoitza aurreikusteko.</p>"
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -70346,6 +70382,9 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "Erakutsi irudien &dimentsioak"
 
 #, fuzzy
 #~ msgid "Show image labels"

@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
-"PO-Revision-Date: 2025-12-28 14:31+0000\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"PO-Revision-Date: 2025-12-29 09:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -6326,8 +6326,8 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
-"Ef þú virkjar þennan valkost, munu titlar og skýringartextar verða "
-"hreinsaðir út og skipt út fyrir nýju gildin,\n"
+"Ef þú virkjar þennan valkost, munu titlar og skýringatextar verða hreinsaðir "
+"út og skipt út fyrir nýju gildin,\n"
 "annars verða gömlu gildin verða sameinuð nýju gildunum."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
@@ -6340,7 +6340,7 @@ msgstr "Úthluta skýringatextum"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
-msgstr "Verkfæri til að setja lýsigögn skýringartexta á myndir"
+msgstr "Verkfæri til að setja lýsigögn skýringatexta á myndir"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:62
 #, kde-kuit-format
@@ -12887,7 +12887,7 @@ msgstr "Skýringatexti:"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
 msgid "Set here the image's caption."
-msgstr "Settu hér inn skýringartexta við myndina."
+msgstr "Settu hér inn skýringatexta við myndina."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
 #, kde-format
@@ -12895,7 +12895,7 @@ msgid ""
 "Enter the image's caption. This field is not limited. UTF8 encoding will be "
 "used to save the text."
 msgstr ""
-"Settu hér inn skýringartexta myndarinnar. Þessi reitur er ekki takmarkaður. "
+"Settu hér inn skýringatexta myndarinnar. Þessi reitur er ekki takmarkaður. "
 "UTF-8 stafataflan verður notuð til að vista textann."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:125
@@ -13477,7 +13477,7 @@ msgstr "Myndstillingar"
 #, kde-format
 msgctxt "@title"
 msgid "Caption Information"
-msgstr "Upplýsingar varðandi skýringartexta"
+msgstr "Upplýsingar varðandi skýringatexta"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, kde-format
@@ -14046,7 +14046,7 @@ msgstr "Höfundur skýringatexta:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
 #, kde-format
 msgid "Enter the name of the caption author."
-msgstr "Settu hér nafn höfundar skýringartexta."
+msgstr "Settu hér nafn höfundar skýringatexta."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:68
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:98
@@ -15233,7 +15233,7 @@ msgstr "Valkostir fyrir sjálfgefið tungumál skýringatexta"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, kde-format
 msgid "Set here the name of the caption author."
-msgstr "Settu hér inn nafn höfundar skýringartextans."
+msgstr "Settu hér inn nafn höfundar skýringatextans."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:99
 #, kde-format
@@ -19583,7 +19583,7 @@ msgstr "TIFF"
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
-msgstr "Enginn skýringartexti"
+msgstr "Enginn skýringatexti"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:150
 #, kde-format
@@ -19747,7 +19747,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:145
 #, kde-format
 msgid "Enter here your customized caption string..."
-msgstr "Settu hér sérsniðna fyrirsögn skýringartexta..."
+msgstr "Settu hér sérsniðna fyrirsögn skýringatexta..."
 
 #. i18n: ectx: property (text), widget (QLabel, m_free_label)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:152
@@ -20251,7 +20251,7 @@ msgstr "Veldu uppsetningu á síðu"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Caption Settings"
-msgstr "Stillingar skýringartexta"
+msgstr "Stillingar skýringatexta"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, kde-format
@@ -20337,7 +20337,7 @@ msgstr "Byggi skrá með eigileikum mynda"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:279
 #, kde-format
 msgid "no caption"
-msgstr "enginn skýringartexti"
+msgstr "enginn skýringatexti"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:284
 #, kde-format
@@ -22091,28 +22091,22 @@ msgid "Behavior"
 msgstr "Hegðun"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
-#, fuzzy, kde-format
-#| msgid "Delay between images:"
+#, kde-format
 msgid "Delay between items: "
-msgstr "Töf milli mynda:"
+msgstr "Töf milli atriða:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgid "The delay, in seconds, between items."
-msgstr "Töf milli mynda, í sekúndum."
+msgstr "Töf milli atriða, í sekúndum."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "Start with current image"
+#, kde-format
 msgid "Start with current item"
-msgstr "Byrja með núverandi mynd"
+msgstr "Byrja með núverandi atriði"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
-#, fuzzy, kde-format
-#| msgid ""
-#| "If this option is enabled, the Slideshow will be started with the current "
-#| "image selected in the images list."
+#, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
@@ -22131,10 +22125,9 @@ msgid "Run the slideshow in a loop."
 msgstr "Sýna skyggnusýninguna endurtekið frá byrjun."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Shuffle images"
+#, kde-format
 msgid "Shuffle items"
-msgstr "Stokka upp myndir"
+msgstr "Stokka upp atriði"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
@@ -22154,42 +22147,34 @@ msgid ""
 msgstr "Sýna framvinduvísi sem gefur til kynna atriði í bið og framvindu tíma."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Show labels editor"
-msgstr "Sýna framvinduvísi"
+msgstr "Birta merkingaritil"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the digiKam image color label and pick label at the bottom of the "
-#| "screen."
+#, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
-msgstr "Birta litmerkingu og sérmerkingu neðst á skjánum."
+msgstr "Birta ritla fyrir litmerkingar og sérmerkingar neðst á skjánum."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Show rating editor"
-msgstr "Sýna gaumvísi fyrir hnattstaðsetningu"
+msgstr "Birta einkunnaritil"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image rating at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
-msgstr "Birta einkunn myndar neðst á skjánum."
+msgstr "Birta einkunnaritil atriðis í digiKam neðst á skjánum."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Use background color for images:"
+#, kde-format
 msgid "Use background color for items:"
-msgstr "Nota bakgrunnslit fyrir myndir:"
+msgstr "Nota bakgrunnslit fyrir atriði:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "Define a color to use as background to render images on screen."
+#, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr "Skilgreindu lit til að nota sem bakgrunnslit við myndgerð á skjánum."
 
@@ -37456,7 +37441,7 @@ msgstr "Settu hér nafn höfundar á skýringatexta."
 msgctxt "@info"
 msgid "You have edited the image caption. "
 msgid_plural "You have edited the captions of %1 images. "
-msgstr[0] "Þú hefur breytt skýringartexta á myndinni. "
+msgstr[0] "Þú hefur breytt skýringatexta á myndinni. "
 msgstr[1] "Þú hefur breytt skýringartextum á %1 myndum. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:281
@@ -37531,7 +37516,7 @@ msgstr "<li>titill</li>"
 #, kde-format
 msgctxt "@info"
 msgid "<li>caption</li>"
-msgstr "<li>skýringartexti</li>"
+msgstr "<li>skýringatexti</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:338
 #, kde-format
@@ -41320,28 +41305,24 @@ msgid "Usages:"
 msgstr "Notkun:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Show image file name"
+#, kde-format
 msgid "Show item file name"
 msgstr "Sýna nafn myndskráar"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
+#, kde-format
 msgid "Show the item file name at the bottom of the screen."
-msgstr "Prenta skráarheiti myndar neðst á skjáinn."
+msgstr "Birta skráarheiti atriða neðst á skjánum."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgid "Show item creation date"
-msgstr "Sýna upprunadagsetningu"
+msgstr "Sýna upprunadagsetningu atriðis"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
+#, kde-format
 msgid "Show the item creation time/date at the bottom of the screen."
-msgstr "Prenta upprunalega dagsetningu myndar neðst á skjáinn."
+msgstr "Birta upprunalega dagsetningu/tíma atriðis neðst á skjánum."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:78
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
@@ -41387,65 +41368,54 @@ msgid "Show the camera lens model at the bottom of the screen."
 msgstr "Birta gerð myndavélarlinsu neðst á skjánum."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show item caption"
-msgstr "Sýna skýringartexta myndar"
+msgstr "Sýna skýringatexta atriðis"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen."
-msgstr "Prenta upprunalega dagsetningu myndar neðst á skjáinn."
+msgstr "Birta skýringatexta atriðis neðst á skjánum."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show item title"
-msgstr "Birta titil myndar"
+msgstr "Birta titil atriðis"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgid "Show the item title at the bottom of the screen."
-msgstr "Birta titil myndar myndar neðst á skjánum."
+msgstr "Birta titil atriðis neðst á skjánum."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
+#, kde-format
 msgid "Show item caption if it has not title"
-msgstr "Birta skýringartexta myndar ef hún er ekki með titil"
+msgstr "Birta skýringatexta atriðis ef það er ekki með titil"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen if no titles existed."
-msgstr "Birta skýringartexta mynda neðst á skjá ef þær eru ekki með titil."
+msgstr "Birta skýringatexta atriðis neðst á skjánum ef það er ekki með titil."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgid "Show item tags"
-msgstr "Birta merki mynda"
+msgstr "Birta merki atriða"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item tag names at the bottom of the screen."
-msgstr "Birta digiKam heiti myndamerkja neðst á skjánum."
+msgstr "Birta heiti digiKam merkja neðst á skjánum."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "Næsti mánuður"
+msgstr "Letur texta:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#, kde-format
 msgid "Select here the font used to display OSD text over the slideshow."
-msgstr "Veldu hér letur fyrir texta sem birtist í skyggnusýningum."
+msgstr "Veldu hér letur fyrir stjórntexta sem birtist yfir skyggnusýningum."
 
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
@@ -42477,13 +42447,13 @@ msgstr "Birta gerð myndavélarlinsu neðst á skjánum."
 #, kde-format
 msgctxt "@option:check"
 msgid "Show image caption"
-msgstr "Birta skýringartexta myndar"
+msgstr "Birta skýringatexta myndar"
 
 #: core/libs/video/osd/frameosdwidget.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "Show the image caption at the bottom of the screen."
-msgstr "Birta skýringartexta myndar neðst á skjánum."
+msgstr "Birta skýringatexta myndar neðst á skjánum."
 
 #: core/libs/video/osd/frameosdwidget.cpp:79
 #, kde-format
@@ -42501,14 +42471,14 @@ msgstr "Birta titil myndar myndar neðst á skjánum."
 #, kde-format
 msgctxt "@option:check"
 msgid "Show image caption if it has not title"
-msgstr "Birta skýringartexta myndar ef hún er ekki með titil"
+msgstr "Birta skýringatexta myndar ef hún er ekki með titil"
 
 #: core/libs/video/osd/frameosdwidget.cpp:83
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
-msgstr "Birta skýringartexta mynda neðst á skjá ef þær eru ekki með titil."
+msgstr "Birta skýringatexta mynda neðst á skjá ef þær eru ekki með titil."
 
 #: core/libs/video/osd/frameosdwidget.cpp:85
 #, kde-format
@@ -63428,9 +63398,9 @@ msgid "Show file&name"
 msgstr "Sý&na heiti skráa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr "Veldu þetta til að sýna skráarnafn undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
@@ -63440,9 +63410,9 @@ msgid "Show file si&ze"
 msgstr "&Hámarks skráarstærð"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr "Veldu þetta til að sýna skráarstærð undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:135
@@ -63452,10 +63422,11 @@ msgid "Show camera creation &date"
 msgstr "Sýna uppruna&dagsetningu úr myndavél"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr "Veldu þetta til að sýna upprunadagsetningu undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:139
@@ -63464,46 +63435,57 @@ msgid "Show file &modification date"
 msgstr "Sýna breytinga&dagsetningu"
 
 #: core/utilities/setup/album/setupalbumview.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the file modification date below the image "
+#| "thumbnail if it is different than camera creation date. This option is "
+#| "useful to identify quickly which items have been modified."
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 "Veldu þetta til að sýna breytingadagsetningu undir smámyndum ef hún er önnur "
 "en upprunadagsetning frá myndavél. Þessi möguleiki gerir kleift að geta séð "
 "fljótt hvaða atriðum hefur verið breytt."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "Sýna málsetnin&gu mynda"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "Sýna málsetningu mynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr "Veldu þetta til að sýna myndstærð í dílum undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
+#, fuzzy, kde-format
+#| msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "Birta stærðarhlutföll mynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr "Veldu þetta til að sýna stærðarhlutföll undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, kde-format
-msgid "Show image format"
+#, fuzzy, kde-format
+#| msgid "Show image format"
+msgid "Show item format"
 msgstr "Sýna skráasnið mynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr "Veldu þetta til að sýna skráasnið mynda yfir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
@@ -63512,18 +63494,21 @@ msgid "Show digiKam tit&le"
 msgstr "Sýna digiKam titi&l"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr "Veldu þetta til að sýna digiKam titil undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
 msgid "Show digiKam &captions"
-msgstr "Sýna digiKam skýringarte&xta"
+msgstr "Sýna digiKam skýringate&xta"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr "Veldu þetta til að sýna digiKam athugasemdir undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
@@ -63533,9 +63518,10 @@ msgid "Show digiKam &tags"
 msgstr "Sýna digiKam &merki"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr "Veldu þetta til að sýna digiKam merki undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
@@ -63544,8 +63530,10 @@ msgid "Show digiKam &rating"
 msgstr "Sýna digiKam einkunna&gjöf"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr "Veldu þetta til að sýna digiKam einkunnagjöf undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
@@ -63554,9 +63542,10 @@ msgid "Show digiKam &pick label"
 msgstr "Sýna digiKam sér&merki"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr "Veldu þetta til að sýna digiKam sérmerkingu undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
@@ -63565,9 +63554,12 @@ msgid "Show digiKam color &label"
 msgstr "Sýna digiKam &litamerki"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam color label as a border around the "
+#| "thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr "Veldu þetta til að sýna digiKam litmerki sem jaðar í kringum smámynd."
 
@@ -63578,10 +63570,13 @@ msgid "Show rotation overlay buttons"
 msgstr "Sýna yfirliggjandi snúningshnappa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show overlay buttons over the image thumbnail to be "
+#| "able to process left or right image rotation."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
 "Veldu þetta til að sýna yfirlagða hnappa á smámyndum sem nota má til að snúa "
 "myndum."
@@ -63592,31 +63587,33 @@ msgid "Show fullscreen overlay button"
 msgstr "Sýna yfirliggjandi hnappa í skjáfylliham"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, kde-format
-msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
-msgstr ""
-"Veldu þetta til að sýna yfirlagða hnappa á smámyndum sem nota má til að opna "
-"þær þegar verið er í skjáfylliham."
-
-#: core/utilities/setup/album/setupalbumview.cpp:189
-#, fuzzy, kde-format
-#| msgid "Show rotation overlay buttons"
-msgid "Show geolocation overlay button"
-msgstr "Sýna yfirliggjandi snúningshnappa"
-
-#: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show an overlay button over the image thumbnail to "
 #| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
 "Veldu þetta til að sýna yfirlagða hnappa á smámyndum sem nota má til að opna "
 "þær þegar verið er í skjáfylliham."
+
+#: core/utilities/setup/album/setupalbumview.cpp:189
+#, kde-format
+msgid "Show geolocation overlay button"
+msgstr "Sýna yfirliggjandi staðsetningarhnappa"
+
+#: core/utilities/setup/album/setupalbumview.cpp:190
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show an overlay button over the image thumbnail to "
+#| "open the geolocation view."
+msgid ""
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
+msgstr ""
+"Veldu þetta til að sýna yfirlagða hnappa á smámyndum sem nota má til að opna "
+"þær í hnattstaðsetningarsýn."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -63802,9 +63799,11 @@ msgstr ""
 "Forskoðunarmynd er umbreytt í 8-bita svo að skoðun gangi hraðar fyrir sig"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
+#| "bits."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 "Taktu merkið úr hér ef þú vilt ekki umbreyta 16-bita forskoðunarmynd í 8-"
 "bita."
@@ -63815,8 +63814,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "Forskoðunarmynd er alltaf kvörðuð svo hún passi í gluggann"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 "Taktu merkið úr hér ef þú vilt ekki kvarða litlar myndir svo þær passi í "
 "gluggann."
@@ -63827,8 +63828,9 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "Forskoðunarmynd notar afstöllun (anti-aliasing) við uppkvörðun"
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, fuzzy, kde-format
+#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
 "Taktu merkið úr hér ef þú vilt ekki nota afstöllun við að kvarða litlar "
 "myndir svo þær passi í gluggann."
@@ -63840,12 +63842,12 @@ msgid "Show icons and text over preview"
 msgstr "Birta táknmyndir og texta yfir forskoðun"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you don't want to see icons and text in the image preview."
+msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki sjá táknmyndir og texta við forskoðun "
+"Taka hakið úr hér ef þú vilt ekki sjá táknmyndir og texta við forskoðun "
 "mynda."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
@@ -63854,8 +63856,10 @@ msgid "Auto play of videos or animations"
 msgstr "Sjálfvirk spilun myndskeiða eða hreyfimynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to auto play of videos or animations."
+msgid "Check this if you want to auto play the videos or animations."
 msgstr ""
 "Taktu merkið úr hér ef þú vilt ekki spila sjálfvirkt myndskeið eða "
 "hreyfimyndir."
@@ -63866,10 +63870,13 @@ msgid "Show a text overlay over preview."
 msgstr "Birta yfirlag texta ofan á forskoðun"
 
 #: core/utilities/setup/album/setupalbumview.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to show a canvas overlay with technical "
+#| "shot settings and properties."
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 "Taktu merkið úr hér ef þú vilt ekki sjá yfirlag á myndfleti með tæknilegum "
 "upplýsingum um töku og eiginleika myndar."
@@ -64455,6 +64462,22 @@ msgstr "Innflutningssíur"
 msgid "Icon-View Options"
 msgstr "Stillingar smámyndasýnar"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr "Veldu þetta til að sýna skráarnafn undir smámyndum."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr "Veldu þetta til að sýna skráarstærð undir smámyndum."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr "Veldu þetta til að sýna upprunadagsetningu undir smámyndum."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -64544,6 +64567,14 @@ msgstr "Forskoða hvert atriði á meðan því er hlaðið inn"
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 "<p> Veldu þetta til að forskoða hvert atriði á meðan því er hlaðið inn.</p>"
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr ""
+"Taktu merkið úr hér ef þú vilt ekki sjá táknmyndir og texta við forskoðun "
+"mynda."
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -65909,7 +65940,7 @@ msgid ""
 "Baloo storage"
 msgstr ""
 "Veldu þennan möguleika til að vista einkunn, skýringar og merki mynda inn í "
-"Baloo grunn"
+"Baloo-grunn"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:40
 #, kde-format
@@ -68262,12 +68293,12 @@ msgstr "Veldu þetta til að sýna flokk albúma."
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Album caption"
-msgstr "Skýringartexti albúms"
+msgstr "Skýringatexti albúms"
 
 #: core/utilities/setup/setuptooltip.cpp:314
 #, kde-format
 msgid "Set this option to display the album caption."
-msgstr "Veldu þetta til að sýna skýringartexta við albúm."
+msgstr "Veldu þetta til að sýna skýringatexta við albúm."
 
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
@@ -68362,6 +68393,9 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "Sýna málsetnin&gu mynda"
 
 #~ msgid "Show image labels"
 #~ msgstr "Birta merkingar mynda"
@@ -76708,12 +76742,6 @@ msgstr "Flytja inn atriði"
 
 #~ msgid "Move"
 #~ msgstr "Færa"
-
-#~ msgid ""
-#~ "Uncheck this if you don't want to see icons and text in the image preview."
-#~ msgstr ""
-#~ "Taka hakið úr hér ef þú vilt ekki sjá táknmyndir og texta við forskoðun "
-#~ "mynda."
 
 #~ msgid ""
 #~ "Replacing digiKam KIOSlaves by a multi-threaded interface to query the "

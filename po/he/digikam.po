@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
-"PO-Revision-Date: 2025-12-26 17:59+0200\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"PO-Revision-Date: 2025-12-29 09:41+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -53751,9 +53751,9 @@ msgstr "גו&דל:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
-#, fuzzy, kde-format
+#, kde-format
 msgid "x"
-msgstr "נק"
+msgstr "×"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
@@ -53772,9 +53772,9 @@ msgid "&Download Progress"
 msgstr "הת&קדמות הורדה"
 
 #: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
-msgstr "מכווני חשיפה"
+msgstr "תוסף להצגת מחוון התקדמות הורדה כתרשים עוגה על גבי המפה"
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:41
 #, kde-format
@@ -54819,9 +54819,9 @@ msgid "<p>Copyright %1</p>"
 msgstr "<p>הזכויות שמורות ל־%1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgid "Warning: Sidecar settings"
-msgstr "הגדרת מצלמה"
+msgstr "אזהרה: הגדרות קבצים נלווים"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:116
 #, kde-format
@@ -57727,7 +57727,7 @@ msgid "Insufficient Disk Space"
 msgstr "אין מספיק מקום פנוי בכונן"
 
 #: core/utilities/import/main/importui.cpp:2059
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "There is not enough free space on the disk of the album you selected to "
@@ -57738,11 +57738,13 @@ msgid ""
 "\n"
 "Try Anyway?"
 msgstr ""
-"לא קיים מספיק זיכרון פנוי ברכיב האחסון של המצלמה על מנת שתוכלו להעתיק אליו "
-"את התמונות.\n"
+"אין מספיק מקום בכונן של האלבום שאליו בחרת להוריד ולעבד את התמונות הנבחרות "
+"מהמצלמה.\n"
 "\n"
-"זכרון דרוש: %1\n"
-"זיכרון פנוי מצוי: %2"
+"הערכת מקום דרוש: %1\n"
+"מקום פנוי: %2\n"
+"\n"
+"לנסות בכל זאת?"
 
 #: core/utilities/import/main/importui.cpp:2327
 #: core/utilities/import/main/importui.cpp:2353
@@ -57782,9 +57784,9 @@ msgid "Rename file to <filename>%1</filename>"
 msgstr "שם הקובץ השתנה לשם<filename>%1</filename>"
 
 #: core/utilities/import/main/importui.cpp:2493
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
+msgstr "קריאת הקובץ הנלווה עבור <filename>%1</filename> נכשלה"
 
 #: core/utilities/import/main/importui.cpp:2570
 #, kde-format
@@ -59348,9 +59350,9 @@ msgid "Item exists and was skipped"
 msgstr "הפריט קיים ונפסח"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:299
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to create sidecar file..."
-msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
+msgstr "יצירת קובץ נלווה נכשלה…"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:308
 #, kde-format
@@ -60806,9 +60808,9 @@ msgid "Show file&name"
 msgstr "הצגת שם &קובץ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את שם הקובץ מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
@@ -60818,9 +60820,9 @@ msgid "Show file si&ze"
 msgstr "הצגת &גודל קובץ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את גודל הקובץ מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:135
@@ -60830,10 +60832,11 @@ msgid "Show camera creation &date"
 msgstr "הצגת תאריך היצירה במצלמה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "הגדרת האפשרות הזאת תגרום להצגת תאריך היצירה במצלמה מתחת לתמונה הממוזערת."
 
@@ -60845,42 +60848,49 @@ msgstr "הצגת מועד &שינוי הקובץ"
 #: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "הצגת ממ&די תמונה"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "הצגת ממדי התמונה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את גודל התמונה בפיקסלים מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
+#, fuzzy, kde-format
+#| msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "הצגת יחס גובה־רוחב של תמונה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
 "הגדרת האפשרות הזאת תציג את יחס הגובה־רחב של התמונה מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, kde-format
-msgid "Show image format"
+#, fuzzy, kde-format
+#| msgid "Show image format"
+msgid "Show item format"
 msgstr "הצגת סוג התמונה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את סוג תוכן התמונה מעל לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
@@ -60889,8 +60899,9 @@ msgid "Show digiKam tit&le"
 msgstr "הצגת &כותרת digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את הכותרת של digiKam מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
@@ -60899,8 +60910,10 @@ msgid "Show digiKam &captions"
 msgstr "הצגת &כיתובי digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את הכיתובים של digiKam מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
@@ -60910,9 +60923,10 @@ msgid "Show digiKam &tags"
 msgstr "הצגת &תגיות digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "הגדרת האפשרות הזאת תציג את רשימת התגיות של digiKam מתחת לתמונה הממוזערת."
 
@@ -60922,8 +60936,10 @@ msgid "Show digiKam &rating"
 msgstr "הצגת &דירוג digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את הדירוג של digiKam מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
@@ -60932,9 +60948,10 @@ msgid "Show digiKam &pick label"
 msgstr "הצגות תווית &בחירה של digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "הגדרת האפשרות הזאת תציג את תוויות הבחירה של digiKam מתחת לתמונה הממוזערת."
 
@@ -60944,9 +60961,12 @@ msgid "Show digiKam color &label"
 msgstr "הצגות תוויות &צבע של digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam color label as a border around the "
+#| "thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
 "הגדרת האפשרות הזאת תציג את תוויות הצבע של digiKam כמסגרת סביב התמונה "
@@ -60959,10 +60979,13 @@ msgid "Show rotation overlay buttons"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show overlay buttons over the image thumbnail to be "
+#| "able to process left or right image rotation."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
 "הגדרת האפשרות הזאת תציג כפתורים מרחפים מעל התמונה הממוזערת כדי לעבד אותה "
 "מבחינת הטיה שמאלה או ימינה."
@@ -60973,10 +60996,13 @@ msgid "Show fullscreen overlay button"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show an overlay button over the image thumbnail to "
+#| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
 "הגדרת האפשרות הזאת תציג כפתור מרחף מעל התמונה הממוזערת כדי לפתוח אותה במסך "
 "מלא."
@@ -60993,8 +61019,8 @@ msgstr "הצגות מחוון מקום גאוגרפי"
 #| "Set this option to show an overlay button over the image thumbnail to "
 #| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr ""
 "הגדרת האפשרות הזאת תציג כפתור מרחף מעל התמונה הממוזערת כדי לפתוח אותה במסך "
 "מלא."
@@ -61172,10 +61198,10 @@ msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
+msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
@@ -61183,9 +61209,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to scale small images to fit to window."
+msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -61193,9 +61220,10 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to use Anti-aliasing to scale up."
+msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -61204,11 +61232,10 @@ msgid "Show icons and text over preview"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want a background fill behind the text."
+msgid "Check this if you want to see icons and text in the image preview."
+msgstr "יש לסמן את זה כדי שיהיה מילוי רקע מאחורי הטקסט."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
@@ -61216,9 +61243,10 @@ msgid "Auto play of videos or animations"
 msgstr "ניגון אוטומטי של סרטונים או הנפשות"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want watermark to be transparent."
+msgid "Check this if you want to auto play the videos or animations."
+msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
 #, kde-format
@@ -61228,8 +61256,8 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
@@ -61729,6 +61757,23 @@ msgstr "מסנני ייבוא"
 msgid "Icon-View Options"
 msgstr "אפשרויות תצוגת סמלים"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr "הגדרת האפשרות הזאת תציג את שם הקובץ מתחת לתמונה הממוזערת."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr "הגדרת האפשרות הזאת תציג את גודל הקובץ מתחת לתמונה הממוזערת."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr ""
+"הגדרת האפשרות הזאת תגרום להצגת תאריך היצירה במצלמה מתחת לתמונה הממוזערת."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -61811,6 +61856,12 @@ msgstr "להציג כל פריט בתצוגה מקדימה בזמן הורדתו
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>הגדרת האפשרות הזאת תגרום להצגת כל אחד מהפריטים בזמן הורדתו.</p>"
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -63464,43 +63515,46 @@ msgid "Reading and Writing to Sidecars"
 msgstr "קריאה וכתיבה לקבצים נלווים"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:36
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Read from sidecar files"
-msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
+msgstr "קריאה מקבצים נלווים"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:38
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from XMP sidecar files when reading "
 "metadata."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"יש להפעיל את האפשרות הזאת כדי לקרוא נתוני על מקובצי XMP נלווים בזמן קריאת "
+"נתוני על."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Write to sidecar files"
-msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
+msgstr "כתיבה לקבצים נלווים"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to save, as specified, metadata to XMP sidecar files."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"יש להפעיל את האפשרות הזאת כדי לשמור, כפי שצוין, נתוני על לקובצי XMP נלווים."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar for read-only item only"
-msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
+msgstr "לכתוב לקובץ XMP נלווה רק לפריטים לקריאה בלבד"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar only"
-msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
+msgstr "כתיבה לקובץ XMP נלווה בלבד"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:50
 #, kde-format
@@ -63557,16 +63611,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "ניתן למלא סיומות קבצים של קבצים נלווים."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "סיומות קבצים נוספות לקבצים &נלווים"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
@@ -64822,11 +64876,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "תבנית:"
+msgstr "מיזוג תבנית"
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format
@@ -65200,6 +65252,9 @@ msgstr "פריטי אלבום"
 #, kde-format
 msgid "Import Items"
 msgstr "ייבוא פריטים"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "הצגת ממ&די תמונה"
 
 #, fuzzy
 #~ msgid "Show image labels"

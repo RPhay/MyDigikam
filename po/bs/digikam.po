@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -68809,9 +68809,9 @@ msgid "Show file&name"
 msgstr "Prikažite &ime datoteke"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr "Postavite ovu opciju za prikaz imena datoteke ispod sličice."
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
@@ -68821,9 +68821,9 @@ msgid "Show file si&ze"
 msgstr "Prikaži &veličinu datoteke"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr "Postavite ovu opciju da prikaže veličinu datoteke ispod sličice."
 
 #: core/utilities/setup/album/setupalbumview.cpp:135
@@ -68833,10 +68833,11 @@ msgid "Show camera creation &date"
 msgstr "Prikažite &datum kreiranja"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr "Postavite ovu opciju za prikaz datuma kreiranja kamerom ispod sličice."
 
 #: core/utilities/setup/album/setupalbumview.cpp:139
@@ -68852,47 +68853,52 @@ msgstr "Prikažite datum stvaranja slike"
 #| "thumbnail if it's different than camera creation date. This option is "
 #| "useful to identify quickly which items have been modified."
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 "Postavi ovu opciju za prikaz datuma modifikacije datoteke ispod sličice "
 "slike ako je razlčit od datuma kreiranja kamere. Ova opcija je korisna za "
 "brzo prepoznavanje koje stavke su se mijenjale."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "Prikažite dimenzije sli&ke"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "Prikaži veličinu slike"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
 "Postavite ovu opciju za prikaz veličine slike u pikselima ispod sličice."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
+#, fuzzy, kde-format
+#| msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "Prikaži omjer slike"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr "Omogućite ovu opciju za prikaz razmjere slike ispod ikone slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
 #, fuzzy, kde-format
 #| msgid "Show image Format"
-msgid "Show image format"
+msgid "Show item format"
 msgstr "Prikažite format slike"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
 #, fuzzy, kde-format
 #| msgid "Set this option to show image format over image thumbnail."
-msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr "Postavite ovu opciju za prikaz formata slike preko sličice."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
@@ -68901,8 +68907,9 @@ msgid "Show digiKam tit&le"
 msgstr "Prikažite digiKam na&slov"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr "Postavite ovu opciju za prikaz naslova digiKam-a ispod sličice."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
@@ -68911,8 +68918,10 @@ msgid "Show digiKam &captions"
 msgstr "Prikaži digiKam-ove &komentare"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr "Postavite ovu opciju za prikaz opisa digiKam-a ispod sličice."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
@@ -68924,8 +68933,7 @@ msgstr "Prikaži digiKam-ove &oznake"
 #: core/utilities/setup/album/setupalbumview.cpp:164
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr "Omogućite ovu opciju za prikaz digiKam oznaka ispod ikone slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
@@ -68934,8 +68942,10 @@ msgid "Show digiKam &rating"
 msgstr "Prikaži digiKam-ove o&cjene"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr "Omogućite ovu opciju za prikaz digiKam ocjene ispod ikone slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
@@ -68947,8 +68957,7 @@ msgstr "Prikažite digiKam na&slov"
 #: core/utilities/setup/album/setupalbumview.cpp:172
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam title below the image thumbnail."
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr "Postavite ovu opciju za prikaz naslova digiKam-a ispod sličice."
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
@@ -68961,7 +68970,7 @@ msgstr "Prikažite digiKam na&slov"
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr "Omogućite ovu opciju za prikaz digiKam oznaka ispod ikone slike."
 
@@ -68977,8 +68986,8 @@ msgstr "Prikaži dugmad za preklapanje pri rotaciji"
 #| "Set this option to show overlay buttons on the image thumbnail for image "
 #| "rotation."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
 "Omogućite ovu opciju da bi se prikazivala dugmad za preklapanje na ikoni "
 "slike za rotaciju slike."
@@ -68991,8 +69000,8 @@ msgstr "Prikaži dugmad za preklapanje pri rotaciji"
 #: core/utilities/setup/album/setupalbumview.cpp:186
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
 "Omogućite ovu opciju da bi se prikazivala dugmad za preklapanje na ikoni "
 "slike za rotaciju slike."
@@ -69006,8 +69015,8 @@ msgstr "Prikaži dugmad za preklapanje pri rotaciji"
 #: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr ""
 "Omogućite ovu opciju da bi se prikazivala dugmad za preklapanje na ikoni "
 "slike za rotaciju slike."
@@ -69231,8 +69240,7 @@ msgstr ""
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
 #| "preview."
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
@@ -69245,7 +69253,7 @@ msgstr ""
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
 #| "preview."
-msgid "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Check this if you want to scale small images to fit to window."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
@@ -69258,7 +69266,7 @@ msgstr ""
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
 #| "preview."
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
@@ -69268,10 +69276,11 @@ msgid "Show icons and text over preview"
 msgstr "Prikažite ikone i tekst preko pregleda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to see icons and text in the image "
+#| "preview."
+msgid "Check this if you want to see icons and text in the image preview."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
@@ -69286,7 +69295,7 @@ msgstr "Automatsko spremanje promjena"
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
 #| "preview."
-msgid "Uncheck this if you do not want to auto play of videos or animations."
+msgid "Check this if you want to auto play the videos or animations."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
@@ -69301,8 +69310,8 @@ msgstr "Prikažite ikone i tekst preko pregleda"
 #| "Uncheck this if you do not want to see icons and text in the image "
 #| "preview."
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
@@ -69962,6 +69971,22 @@ msgstr "Importuj filtere"
 msgid "Icon-View Options"
 msgstr "Opcije pregleda ikone"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr "Postavite ovu opciju za prikaz imena datoteke ispod sličice."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr "Postavite ovu opciju da prikaže veličinu datoteke ispod sličice."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr "Postavite ovu opciju za prikaz datuma kreiranja kamerom ispod sličice."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -70052,6 +70077,12 @@ msgstr "Pregledaj svaku stavku dok je skidaš"
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>Pregledaj svaku stavku dok je skidaš.</p>"
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, fuzzy, kde-format
@@ -74085,6 +74116,9 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "Prikažite dimenzije sli&ke"
 
 #~ msgid "Show image labels"
 #~ msgstr "Prikažite naljepnice slike"

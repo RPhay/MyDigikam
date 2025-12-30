@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
 "PO-Revision-Date: 2025-10-19 21:02+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -63518,9 +63518,9 @@ msgid "Show file&name"
 msgstr "Fájl&név megjelenítése"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl neve a fotó "
 "bélyegképe alatt."
@@ -63532,9 +63532,9 @@ msgid "Show file si&ze"
 msgstr "Fájl&méret megjelenítése"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl mérete a fotó "
 "bélyegképe alatt."
@@ -63546,10 +63546,11 @@ msgid "Show camera creation &date"
 msgstr "Mutassa a kamera létrehozási &dátumot"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a készítés ideje a fotó "
 "bélyegképe alatt."
@@ -63562,46 +63563,55 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "&Képméretek megjelenítése"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "Képméretek megjelenítése"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl pixelmérete a fotó "
 "bélyegképe alatt."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
+#, fuzzy, kde-format
+#| msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "Kép méretarányának megjelenítése"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a kép méretaránya a fotó "
 "bélyegképe alatt."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, kde-format
-msgid "Show image format"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Show item date"
+msgid "Show item format"
+msgstr "Elem dátumának megjelenítése"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show image format over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
+"Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl formátuma a fotó "
+"bélyegképe alatt."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
 #, kde-format
@@ -63609,8 +63619,9 @@ msgid "Show digiKam tit&le"
 msgstr "Mutassa a digiKam érté&kelést"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a digiKam cím a fotó "
 "bélyegképe alatt."
@@ -63621,8 +63632,10 @@ msgid "Show digiKam &captions"
 msgstr "Mutassa a digiKam &feliratokat"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjenek a digiKam feliratok a fotó "
 "bélyegképe alatt."
@@ -63634,10 +63647,12 @@ msgid "Show digiKam &tags"
 msgstr "Mutassa a digiKam &cimkéket"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
+"Válassza ki ezt a lehetőséget, hogy megjelenjenek a címkék a fotó bélyegképe "
+"alatt."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
@@ -63645,8 +63660,10 @@ msgid "Show digiKam &rating"
 msgstr "Mutassa a &digiKam értékelést"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen az értékelés a fotó "
 "bélyegképe alatt."
@@ -63660,8 +63677,7 @@ msgstr "Mutassa a digiKam érté&kelést"
 #: core/utilities/setup/album/setupalbumview.cpp:172
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam title below the image thumbnail."
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a digiKam cím a fotó "
 "bélyegképe alatt."
@@ -63676,7 +63692,7 @@ msgstr "Mutassa a digiKam érté&kelést"
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjenek a címkék a fotó bélyegképe "
@@ -63689,11 +63705,14 @@ msgid "Show rotation overlay buttons"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Set this option to show image format over image thumbnail."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
+"Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl formátuma a fotó "
+"bélyegképe alatt."
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
@@ -63701,11 +63720,14 @@ msgid "Show fullscreen overlay button"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Set this option to show image format over image thumbnail."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
+"Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl formátuma a fotó "
+"bélyegképe alatt."
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
 #, kde-format
@@ -63716,8 +63738,8 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Set this option to show image format over image thumbnail."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl formátuma a fotó "
 "bélyegképe alatt."
@@ -63897,8 +63919,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
@@ -63908,7 +63929,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
 #, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
@@ -63918,7 +63939,7 @@ msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
@@ -63928,10 +63949,8 @@ msgid "Show icons and text over preview"
 msgstr "Ikonok és szövegek megjelenítése az előnézet felett"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
+msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
@@ -63942,9 +63961,11 @@ msgid "Auto play of videos or animations"
 msgstr "Változások automatikus mentése"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Save changes automatically"
+msgid "Check this if you want to auto play the videos or animations."
+msgstr "Változások automatikus mentése"
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
 #, fuzzy, kde-format
@@ -63955,8 +63976,8 @@ msgstr "Ikonok és szövegek megjelenítése az előnézet felett"
 #: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
@@ -64463,6 +64484,28 @@ msgstr "Importszűrők"
 msgid "Icon-View Options"
 msgstr "Ikon nézet beállítások"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr ""
+"Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl neve a fotó "
+"bélyegképe alatt."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr ""
+"Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl mérete a fotó "
+"bélyegképe alatt."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr ""
+"Válassza ki ezt a lehetőséget, hogy megjelenjen a készítés ideje a fotó "
+"bélyegképe alatt."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -64544,6 +64587,12 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:505
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
+msgstr ""
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
@@ -68082,6 +68131,9 @@ msgstr "Album elemek"
 #, kde-format
 msgid "Import Items"
 msgstr "Elemek importálása"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "&Képméretek megjelenítése"
 
 #~ msgid "Tags Filter"
 #~ msgstr "Címkeszűrők"
@@ -73697,9 +73749,6 @@ msgstr "Elemek importálása"
 
 #~ msgid "Show item name"
 #~ msgstr "Elem nevének megjelenítése"
-
-#~ msgid "Show item date"
-#~ msgstr "Elem dátumának megjelenítése"
 
 #~ msgid "Show item type"
 #~ msgstr "Elem típusának megjelenítése"

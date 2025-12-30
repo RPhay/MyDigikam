@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -61722,9 +61722,9 @@ msgid "Show file&name"
 msgstr "Zobrazit &název souboru"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby byl zobrazen název souboru pod náhledem obrázku."
 
@@ -61735,9 +61735,9 @@ msgid "Show file si&ze"
 msgstr "Zobrazit &velikost souboru"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby byla zobrazena velikost souboru pod náhledem na "
 "obrázek."
@@ -61749,10 +61749,11 @@ msgid "Show camera creation &date"
 msgstr "Zobrazit &datum pořízení z fotoaparátu"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby bylo zobrazeno datum pořízení fotografie pod "
 "náhledem na obrázek."
@@ -61763,50 +61764,61 @@ msgid "Show file &modification date"
 msgstr "Zobrazit čas poslední &změny"
 
 #: core/utilities/setup/album/setupalbumview.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the file modification date below the image "
+#| "thumbnail if it is different than camera creation date. This option is "
+#| "useful to identify quickly which items have been modified."
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazilo datum "
 "poslední úpravy souboru, pokud se liší od data pořízení z fotoaparátu. Tato "
 "možnost je užitečná pro rychlé nalezení upravených obrázků."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "Zobrazit &rozměry obrázku"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "Zobrazit velikost obrázku"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily rozměry "
 "obrázku."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
+#, fuzzy, kde-format
+#| msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "Zobrazit poměr stran obrázku"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil poměr stran "
 "obrázku."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, kde-format
-msgid "Show image format"
+#, fuzzy, kde-format
+#| msgid "Show image format"
+msgid "Show item format"
 msgstr "Zobrazit formát ob&rázku"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil MIME typ "
 "obrázku."
@@ -61817,8 +61829,9 @@ msgid "Show digiKam tit&le"
 msgstr "Zobrazit &názvy digiKamu"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil název digiKam."
 
@@ -61828,8 +61841,10 @@ msgid "Show digiKam &captions"
 msgstr "Zobrazit p&opisky digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily popisky "
 "digiKam."
@@ -61841,9 +61856,10 @@ msgid "Show digiKam &tags"
 msgstr "Zobrazi&t značky digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil seznam značek "
 "digiKamu."
@@ -61854,8 +61870,10 @@ msgid "Show digiKam &rating"
 msgstr "Zob&razit hodnocení digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazilo hodnocení "
 "digiKam."
@@ -61866,10 +61884,11 @@ msgid "Show digiKam &pick label"
 msgstr "Zobrazit &popisek výběru digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
+"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil název digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
@@ -61877,11 +61896,15 @@ msgid "Show digiKam color &label"
 msgstr "Zobrazit &popisek barvy digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
+"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazilo hodnocení "
+"digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
@@ -61890,10 +61913,13 @@ msgid "Show rotation overlay buttons"
 msgstr "Zobrazit tlačítka pro otáčení"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show overlay buttons over the image thumbnail to be "
+#| "able to process left or right image rotation."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se na náhledu obrázku zobrazila tlačítka pro "
 "otáčení obrázku."
@@ -61904,10 +61930,13 @@ msgid "Show fullscreen overlay button"
 msgstr "Zobrazit tlačítko pro přepnutí do celoobrazovkového režimu"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show an overlay button over the image thumbnail to "
+#| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se na náhledu obrázku zobrazilo tlačítko pro "
 "otevření obrázku v režimu celé obrazovky."
@@ -61924,8 +61953,8 @@ msgstr "Zobrazit tlačítka pro otáčení"
 #| "Set this option to show an overlay button over the image thumbnail to "
 #| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se na náhledu obrázku zobrazilo tlačítko pro "
 "otevření obrázku v režimu celé obrazovky."
@@ -62099,9 +62128,11 @@ msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "Pro rychlejší zobrazení se náhledy převedou do 8bitové barevné hloubky"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
+#| "bits."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 "Zrušte zaškrtnutí pokud si přejete převést 16bitový náhled obrázku na 8bitů."
 
@@ -62111,9 +62142,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "Obrázek náhledu je vždy přizpůsoben velikosti okna"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want a background fill behind the text."
+msgid "Check this if you want to scale small images to fit to window."
+msgstr "Zvolte, pokud si přejete vyplnit pozadí za textem."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -62121,9 +62153,10 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Check this if you want a background fill behind the text."
+msgid "Check this if you want to use Anti-aliasing to scale up."
+msgstr "Zvolte, pokud si přejete vyplnit pozadí za textem."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -62132,10 +62165,11 @@ msgid "Show icons and text over preview"
 msgstr "Zobrazit ikony a text nad náhledem"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to see icons and text in the image "
+#| "preview."
+msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 "Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
 "této volby."
@@ -62146,9 +62180,10 @@ msgid "Auto play of videos or animations"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set this option to display the image captions."
+msgid "Check this if you want to auto play the videos or animations."
+msgstr "Zaškrtněte tuto volbu, aby se zobrazily popisky obrázku."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
 #, fuzzy, kde-format
@@ -62162,8 +62197,8 @@ msgstr "Zobrazit ikony a text nad náhledem"
 #| "Uncheck this if you do not want to see icons and text in the image "
 #| "preview."
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 "Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
 "této volby."
@@ -62729,6 +62764,27 @@ msgstr "Importní filtry"
 msgid "Icon-View Options"
 msgstr "Možnosti ikonového pohledu"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr ""
+"Zaškrtněte tuto volbu, aby byl zobrazen název souboru pod náhledem obrázku."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr ""
+"Zaškrtněte tuto volbu, aby byla zobrazena velikost souboru pod náhledem na "
+"obrázek."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr ""
+"Zaškrtněte tuto volbu, aby bylo zobrazeno datum pořízení fotografie pod "
+"náhledem na obrázek."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -62821,6 +62877,14 @@ msgstr "Náhled každé položky při stahování"
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 "<p>Zaškrtněte tuto volbu pro náhled každé položky již během stahování.</p>"
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr ""
+"Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
+"této volby."
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -66450,6 +66514,9 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "Zobrazit &rozměry obrázku"
 
 #~ msgid "Show image labels"
 #~ msgstr "Zobrazit popisky obrázku"

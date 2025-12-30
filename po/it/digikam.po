@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
 "PO-Revision-Date: 2025-12-20 11:11+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -64141,9 +64141,9 @@ msgid "Show file&name"
 msgstr "Mostra il &nome del file"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare il nome del file sotto la miniatura "
 "dell'immagine."
@@ -64155,9 +64155,9 @@ msgid "Show file si&ze"
 msgstr "Mostra la &dimensione del file"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare la dimensione del file sotto la "
 "miniatura dell'immagine."
@@ -64169,10 +64169,11 @@ msgid "Show camera creation &date"
 msgstr "Mostra la &data di creazione dello scatto"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare la data di creazione della macchina "
 "fotografica sotto la miniatura dell'immagine."
@@ -64183,11 +64184,15 @@ msgid "Show file &modification date"
 msgstr "Mostra la data di &modifica del file"
 
 #: core/utilities/setup/album/setupalbumview.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the file modification date below the image "
+#| "thumbnail if it is different than camera creation date. This option is "
+#| "useful to identify quickly which items have been modified."
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 "Attiva questa opzione per mostrare la data di modifica del file sotto la "
 "miniatura dell'immagine, se essa differisce dalla data di creazione della "
@@ -64195,39 +64200,46 @@ msgstr ""
 "elementi sono stati modificati."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "Mostra le dimensioni dell'imma&gine"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "Mostra le dimensioni dell'immagine"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare le dimensioni dell'immagine in pixel "
 "sotto la miniatura dell'immagine."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
+#, fuzzy, kde-format
+#| msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "Mostra le proporzioni dell'immagine"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare la proporzioni dell'immagine sotto la "
 "miniatura dell'immagine."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, kde-format
-msgid "Show image format"
+#, fuzzy, kde-format
+#| msgid "Show image format"
+msgid "Show item format"
 msgstr "Mostra il formato dell'immagine"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare il tipo MIME sopra la miniatura "
 "dell'immagine."
@@ -64238,8 +64250,9 @@ msgid "Show digiKam tit&le"
 msgstr "Mostra il tito&lo di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare il titolo di digiKam sotto la miniatura "
 "dell'immagine."
@@ -64250,8 +64263,10 @@ msgid "Show digiKam &captions"
 msgstr "Mostra le didas&calie di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare le didascalie di digiKam sotto la "
 "miniatura dell'immagine."
@@ -64263,9 +64278,10 @@ msgid "Show digiKam &tags"
 msgstr "Mostra i &tag di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare l'elenco dei tag di digiKam sotto la "
 "miniatura dell'immagine."
@@ -64276,8 +64292,10 @@ msgid "Show digiKam &rating"
 msgstr "Mostra la &valutazione di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare la valutazione di digiKam sotto la "
 "miniatura dell'immagine."
@@ -64288,9 +64306,10 @@ msgid "Show digiKam &pick label"
 msgstr "Mostra l'etichetta di &scelta di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare l'etichetta di scelta di digiKam sotto "
 "la miniatura dell'immagine."
@@ -64301,9 +64320,12 @@ msgid "Show digiKam color &label"
 msgstr "Mostra l'etichetta co&lorata di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam color label as a border around the "
+#| "thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare l'etichetta colorata di digiKam attorno "
@@ -64316,10 +64338,13 @@ msgid "Show rotation overlay buttons"
 msgstr "Mostra in sovrimpressione i pulsanti per la rotazione"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show overlay buttons over the image thumbnail to be "
+#| "able to process left or right image rotation."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
 "Abilita questa opzione per mostrare i pulsanti per la rotazione "
 "dell'immagine sopra la miniatura, in modo da poter eseguire la rotazione "
@@ -64331,10 +64356,13 @@ msgid "Show fullscreen overlay button"
 msgstr "Mostra in sovrimpressione il pulsante per lo schermo intero"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show an overlay button over the image thumbnail to "
+#| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
 "Abilita questa opzione per mostrare un pulsante per l'apertura in modalità a "
 "schermo intero dell'immagine sopra la miniatura."
@@ -64351,8 +64379,8 @@ msgstr "Mostra in sovrimpressione i pulsanti per la rotazione"
 #| "Set this option to show an overlay button over the image thumbnail to "
 #| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
 msgstr ""
 "Abilita questa opzione per mostrare un pulsante per l'apertura in modalità a "
 "schermo intero dell'immagine sopra la miniatura."
@@ -64549,9 +64577,11 @@ msgstr ""
 "più rapida"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
+#| "bits."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 "Deseleziona questa opzione se non vuoi convertire l'immagine di anteprima a "
 "16 bit in 8 bit."
@@ -64562,8 +64592,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "L'immagine in anteprima viene sempre adattata alla finestra"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 "Deseleziona questa opzione se non vuoi ridimensionare le immagini piccole "
 "alla finestra."
@@ -64574,8 +64606,9 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "L'immagine in anteprima usa l'antialias per ridimensionare"
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, fuzzy, kde-format
+#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
 "Deseleziona questa opzione se non vuoi usare l'antialias per ridimensionare."
 
@@ -64586,10 +64619,10 @@ msgid "Show icons and text over preview"
 msgstr "Mostra le icone e il testo sopra l'anteprima"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you don't want to see icons and text in the image preview."
+msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 "Deseleziona questa opzione se non vuoi vedere le icone e il testo sopra "
 "l'anteprima."
@@ -64600,8 +64633,10 @@ msgid "Auto play of videos or animations"
 msgstr "Riproduzione automatica di video o animazioni"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to auto play of videos or animations."
+msgid "Check this if you want to auto play the videos or animations."
 msgstr ""
 "Deseleziona questa opzione se non vuoi riprodurre automaticamente video o "
 "animazioni."
@@ -64618,8 +64653,8 @@ msgstr "Mostra le icone e il testo sopra l'anteprima"
 #| "Uncheck this if you do not want to see icons and text in the image "
 #| "preview."
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 "Deseleziona questa opzione se non vuoi vedere le icone e il testo sopra "
 "l'anteprima."
@@ -65217,6 +65252,28 @@ msgstr "Filtri importazione"
 msgid "Icon-View Options"
 msgstr "Opzioni della vista a icone"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr ""
+"Abilita questa opzione per mostrare il nome del file sotto la miniatura "
+"dell'immagine."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr ""
+"Abilita questa opzione per mostrare la dimensione del file sotto la "
+"miniatura dell'immagine."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr ""
+"Abilita questa opzione per mostrare la data di creazione della macchina "
+"fotografica sotto la miniatura dell'immagine."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -65311,6 +65368,14 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 "<p>Abilita questa opzione per visualizzare l'anteprima di ogni elemento "
 "mentre viene scaricato.</p>"
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr ""
+"Deseleziona questa opzione se non vuoi vedere le icone e il testo sopra "
+"l'anteprima."
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -69214,6 +69279,9 @@ msgstr "Elementi album"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementi importati"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "Mostra le dimensioni dell'imma&gine"
 
 #~ msgid "Show image labels"
 #~ msgstr "Mostra le etichette dell'immagine"
@@ -77534,12 +77602,6 @@ msgstr "Elementi importati"
 
 #~ msgid "Move"
 #~ msgstr "Sposta"
-
-#~ msgid ""
-#~ "Uncheck this if you don't want to see icons and text in the image preview."
-#~ msgstr ""
-#~ "Deseleziona questa opzione se non vuoi vedere le icone e il testo sopra "
-#~ "l'anteprima."
 
 #~ msgid ""
 #~ "Replacing digiKam KIOSlaves by a multi-threaded interface to query the "

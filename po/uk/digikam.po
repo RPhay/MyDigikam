@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:40+0000\n"
-"PO-Revision-Date: 2025-12-28 14:04+0200\n"
+"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"PO-Revision-Date: 2025-12-29 09:09+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -22497,28 +22497,22 @@ msgid "Behavior"
 msgstr "Поведінка"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
-#, fuzzy, kde-format
-#| msgid "Delay between images:"
+#, kde-format
 msgid "Delay between items: "
-msgstr "Затримка між зображеннями:"
+msgstr "Затримка між зображеннями: "
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgid "The delay, in seconds, between items."
 msgstr "Затримка між зображеннями (у секундах)."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "Start with current image"
+#, kde-format
 msgid "Start with current item"
 msgstr "Почати з поточного зображення"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
-#, fuzzy, kde-format
-#| msgid ""
-#| "If this option is enabled, the Slideshow will be started with the current "
-#| "image selected in the images list."
+#, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
@@ -22537,8 +22531,7 @@ msgid "Run the slideshow in a loop."
 msgstr "Зациклити показ слайдів."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Shuffle images"
+#, kde-format
 msgid "Shuffle items"
 msgstr "Випадковий порядок зображень"
 
@@ -22561,43 +22554,36 @@ msgid ""
 msgstr "Показувати індикатор поступу під час обробки зображень."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Show labels editor"
-msgstr "Показувати індикатор поступу"
+msgstr "Показати редактор позначок"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the digiKam image color label and pick label at the bottom of the "
-#| "screen."
+#, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
 msgstr ""
-"Показувати позначку кольору та впорядкувальну позначку digiKam внизу екрана."
+"Показувати позначку кольору та редактори впорядкувальних позначок digiKam "
+"внизу екрана."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Show rating editor"
-msgstr "Показувати індикатор геопозиціювання"
+msgstr "Показати редактор оцінок"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image rating at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
-msgstr "Показувати оцінки зображень digiKam у нижній частині вікна."
+msgstr "Показувати редактор оцінок зображень digiKam у нижній частині вікна."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Use background color for images:"
+#, kde-format
 msgid "Use background color for items:"
 msgstr "Використовувати колір тла для зображень:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "Define a color to use as background to render images on screen."
+#, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr ""
 "Визначити колір, який слід використовувати для тла при показі зображень на "
@@ -42023,26 +42009,22 @@ msgid "Usages:"
 msgstr "Призначення:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Show image file name"
+#, kde-format
 msgid "Show item file name"
 msgstr "Показувати назву файла"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
+#, kde-format
 msgid "Show the item file name at the bottom of the screen."
 msgstr "Показувати назву файла зображення внизу екрана."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgid "Show item creation date"
 msgstr "Показувати дату створення зображення"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
+#, kde-format
 msgid "Show the item creation time/date at the bottom of the screen."
 msgstr "Показувати час і дату створення зображення внизу екрана."
 
@@ -42090,69 +42072,58 @@ msgid "Show the camera lens model at the bottom of the screen."
 msgstr "Показувати модель об'єктива фотоапарата внизу екрана."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show item caption"
 msgstr "Показувати підписи зображень"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen."
 msgstr "Показувати підпис зображення внизу екрана."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show item title"
 msgstr "Показувати заголовок зображення"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgid "Show the item title at the bottom of the screen."
 msgstr "Показувати заголовок зображення внизу екрана."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
+#, kde-format
 msgid "Show item caption if it has not title"
 msgstr "Показувати підпис до зображення, якщо у нього немає заголовка"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen if no titles existed."
 msgstr ""
 "Показувати підпис до зображення внизу екрана, якщо не вказано заголовка "
 "зображення."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgid "Show item tags"
 msgstr "Показувати мітки зображень"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item tag names at the bottom of the screen."
 msgstr "Показувати назви міток зображень digiKam у нижній частині вікна."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "Наступний місяць"
+msgstr "Шрифт тексту:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#, kde-format
 msgid "Select here the font used to display OSD text over the slideshow."
 msgstr ""
-"Тут ви можете встановити шрифт, який буде використано для показу тексту у "
-"показі слайдів."
+"Тут ви можете встановити шрифт, який буде використано для показу тексту "
+"накладної панелі у показі слайдів."
 
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
@@ -64337,9 +64308,9 @@ msgid "Show file&name"
 msgstr "Показувати &назву файла"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#: core/utilities/setup/camera/setupcamera.cpp:430
-#, kde-format
-msgid "Set this option to show the filename below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the filename below the image thumbnail."
+msgid "Set this option to show the filename below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано назву файла."
 
@@ -64350,9 +64321,9 @@ msgid "Show file si&ze"
 msgstr "Показувати &розмір файла"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#: core/utilities/setup/camera/setupcamera.cpp:433
-#, kde-format
-msgid "Set this option to show the file size below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the file size below the image thumbnail."
+msgid "Set this option to show the file size below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано розмір файла."
 
@@ -64363,10 +64334,11 @@ msgid "Show camera creation &date"
 msgstr "Показувати дату &створення з фотоапарата"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#: core/utilities/setup/camera/setupcamera.cpp:436
-#, kde-format
-msgid ""
-"Set this option to show the camera creation date below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the camera creation date below the image "
+#| "thumbnail."
+msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано дату "
 "створення зображення з фотоапарата."
@@ -64377,11 +64349,15 @@ msgid "Show file &modification date"
 msgstr "Показувати дату в&несення змін до зображення"
 
 #: core/utilities/setup/album/setupalbumview.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the file modification date below the image "
+#| "thumbnail if it is different than camera creation date. This option is "
+#| "useful to identify quickly which items have been modified."
 msgid ""
-"Set this option to show the file modification date below the image thumbnail "
-"if it is different than camera creation date. This option is useful to "
-"identify quickly which items have been modified."
+"Set this option to show the file modification date below the thumbnail if it "
+"is different than camera creation date. This option is useful to identify "
+"quickly which items have been modified."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано дату "
 "модифікації файла, якщо вона відрізняється від дати створення зображення, "
@@ -64389,39 +64365,46 @@ msgstr ""
 "виявлення записів, до яких було внесено зміни."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, kde-format
-msgid "Show ima&ge dimensions"
-msgstr "Показувати р&озміри зображення"
+#, fuzzy, kde-format
+#| msgid "Show image dimensions"
+msgid "Show item dimensions"
+msgstr "Показувати розміри зображення"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, kde-format
-msgid ""
-"Set this option to show the image size in pixels below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image size in pixels below the image "
+#| "thumbnail."
+msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано розмір "
 "зображення у пікселях."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, kde-format
-msgid "Show image aspect ratio"
+#, fuzzy, kde-format
+#| msgid "Show image aspect ratio"
+msgid "Show item aspect ratio"
 msgstr "Показувати співвідношення розмірів зображення"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, kde-format
-msgid ""
-"Set this option to show the image aspect ratio below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the image aspect ratio below the image thumbnail."
+msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано "
 "співвідношення розмірів зображення."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, kde-format
-msgid "Show image format"
+#, fuzzy, kde-format
+#| msgid "Show image format"
+msgid "Show item format"
 msgstr "Показувати формат зображень"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, kde-format
-msgid "Set this option to show image mime type over image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show image mime type over image thumbnail."
+msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано назву типу "
 "MIME даних файла."
@@ -64432,8 +64415,9 @@ msgid "Show digiKam tit&le"
 msgstr "Показати &назву digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, kde-format
-msgid "Set this option to show the digiKam title below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано назву "
 "digiKam."
@@ -64444,8 +64428,10 @@ msgid "Show digiKam &captions"
 msgstr "Показувати &підписи digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, kde-format
-msgid "Set this option to show the digiKam captions below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано підпис "
 "digiKam."
@@ -64457,9 +64443,10 @@ msgid "Show digiKam &tags"
 msgstr "Показувати мі&тки digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, kde-format
-msgid ""
-"Set this option to show the digiKam tags list below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam tags list below the image thumbnail."
+msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано список міток "
 "digiKam."
@@ -64470,8 +64457,10 @@ msgid "Show digiKam &rating"
 msgstr "Показати &оцінку digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, kde-format
-msgid "Set this option to show the digiKam rating below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam rating below the image thumbnail."
+msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано оцінку "
 "digiKam."
@@ -64482,9 +64471,10 @@ msgid "Show digiKam &pick label"
 msgstr "Показати &впорядкувальну мітку digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, kde-format
-msgid ""
-"Set this option to show the digiKam pick label below the image thumbnail."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam pick label below the image thumbnail."
+msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано "
 "впорядкувальну мітку digiKam."
@@ -64495,9 +64485,12 @@ msgid "Show digiKam color &label"
 msgstr "Показати &кольорову мітку digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show the digiKam color label as a border around the "
+#| "thumbnail."
 msgid ""
-"Set this option to show the digiKam color label as a border around the "
+"Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб кольорову мітку digiKam було показано навколо "
@@ -64510,10 +64503,13 @@ msgid "Show rotation overlay buttons"
 msgstr "Показувати накладні кнопки обертання"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show overlay buttons over the image thumbnail to be "
+#| "able to process left or right image rotation."
 msgid ""
-"Set this option to show overlay buttons over the image thumbnail to be able "
-"to process left or right image rotation."
+"Set this option to show the transformation overlay buttons over the "
+"thumbnail to process left or right rotation."
 msgstr ""
 "Позначення цього пункту призведе до показу накладних кнопок обертання на "
 "мініатюрі зображення для обертання за чи проти годинникової стрілки."
@@ -64524,31 +64520,33 @@ msgid "Show fullscreen overlay button"
 msgstr "Показувати кнопку повноекранного режиму"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, kde-format
-msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"it in fullscreen mode."
-msgstr ""
-"Позначення цього пункту призведе до показу накладної кнопки відкриття "
-"мініатюри у повноекранному режимі."
-
-#: core/utilities/setup/album/setupalbumview.cpp:189
-#, fuzzy, kde-format
-#| msgid "Show rotation overlay buttons"
-msgid "Show geolocation overlay button"
-msgstr "Показувати накладні кнопки обертання"
-
-#: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show an overlay button over the image thumbnail to "
 #| "open it in fullscreen mode."
 msgid ""
-"Set this option to show an overlay button over the image thumbnail to open "
-"the geolocation view."
+"Set this option to show an overlay button over the thumbnail to open it in "
+"fullscreen mode."
 msgstr ""
 "Позначення цього пункту призведе до показу накладної кнопки відкриття "
 "мініатюри у повноекранному режимі."
+
+#: core/utilities/setup/album/setupalbumview.cpp:189
+#, kde-format
+msgid "Show geolocation overlay button"
+msgstr "Показувати кнопку накладки геопозиціювання"
+
+#: core/utilities/setup/album/setupalbumview.cpp:190
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to show an overlay button over the image thumbnail to "
+#| "open the geolocation view."
+msgid ""
+"Set this option to show an overlay button over the thumbnail to identify "
+"geoloacted item and open the geolocation tab."
+msgstr ""
+"Позначення цього пункту призведе до показу накладної кнопки відкриття "
+"перегляду даних геопозиціювання."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -64744,9 +64742,11 @@ msgstr ""
 "обробки"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
+#| "bits."
+msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете перетворювати 16-бітове "
 "зображення на 8-бітове для попереднього перегляду."
@@ -64757,8 +64757,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "Зображення перегляду завжди масштабоване за вікном"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, kde-format
-msgid "Uncheck this if you do not want to scale small images to fit to window."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to scale small images to fit to window."
+msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма "
 "масштабувала малі зображення так, щоб вони заповнювали вікно."
@@ -64769,8 +64771,9 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "На зображенні перегляду використано згладжування для масштабування"
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, kde-format
-msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, fuzzy, kde-format
+#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма "
 "використовувала згладжування для збільшення."
@@ -64782,10 +64785,11 @@ msgid "Show icons and text over preview"
 msgstr "Показувати піктограми і текст над попереднім переглядом"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#: core/utilities/setup/camera/setupcamera.cpp:508
-#, kde-format
-msgid ""
-"Uncheck this if you do not want to see icons and text in the image preview."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to see icons and text in the image "
+#| "preview."
+msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете бачити піктограми і текст "
 "на панелі попереднього перегляду зображення."
@@ -64796,8 +64800,10 @@ msgid "Auto play of videos or animations"
 msgstr "Відтворювати відео або анімацію автоматично"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, kde-format
-msgid "Uncheck this if you do not want to auto play of videos or animations."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to auto play of videos or animations."
+msgid "Check this if you want to auto play the videos or animations."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете, щоб програма автоматично "
 "відтворювала відео або анімації."
@@ -64808,10 +64814,13 @@ msgid "Show a text overlay over preview."
 msgstr "Показувати текстову накладку над зображенням попереднього перегляду."
 
 #: core/utilities/setup/album/setupalbumview.cpp:328
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want to show a canvas overlay with technical "
+#| "shot settings and properties."
 msgid ""
-"Uncheck this if you do not want to show a canvas overlay with technical shot "
-"settings and properties."
+"Check this if you want to show a canvas overlay with technical shot settings "
+"and properties."
 msgstr ""
 "Зніміть позначку з цього пункту, якщо ви не хочете бачити накладку з "
 "технічними параметрами і властивостями знімка."
@@ -65410,6 +65419,26 @@ msgstr "Фільтри імпортування"
 msgid "Icon-View Options"
 msgstr "Параметри перегляду піктограмами"
 
+#: core/utilities/setup/camera/setupcamera.cpp:430
+#, kde-format
+msgid "Set this option to show the filename below the image thumbnail."
+msgstr ""
+"Позначте цей пункт, щоб під мініатюрою зображення було показано назву файла."
+
+#: core/utilities/setup/camera/setupcamera.cpp:433
+#, kde-format
+msgid "Set this option to show the file size below the image thumbnail."
+msgstr ""
+"Позначте цей пункт, щоб під мініатюрою зображення було показано розмір файла."
+
+#: core/utilities/setup/camera/setupcamera.cpp:436
+#, kde-format
+msgid ""
+"Set this option to show the camera creation date below the image thumbnail."
+msgstr ""
+"Позначте цей пункт, щоб під мініатюрою зображення було показано дату "
+"створення зображення з фотоапарата."
+
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
@@ -65506,6 +65535,14 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 "<p>Позначте цей пункт, якщо хочете переглядати кожне зображення під час "
 "отримання.</p>"
+
+#: core/utilities/setup/camera/setupcamera.cpp:508
+#, kde-format
+msgid ""
+"Uncheck this if you do not want to see icons and text in the image preview."
+msgstr ""
+"Зніміть позначку з цього пункту, якщо ви не хочете бачити піктограми і текст "
+"на панелі попереднього перегляду зображення."
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -69403,6 +69440,9 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgid "Show ima&ge dimensions"
+#~ msgstr "Показувати р&озміри зображення"
 
 #~ msgid "Show image labels"
 #~ msgstr "Показувати позначки зображення"
