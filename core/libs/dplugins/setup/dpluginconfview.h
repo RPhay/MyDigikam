@@ -35,6 +35,18 @@ class DIGIKAM_EXPORT DPluginConfView : public QTreeWidget
 
 public:
 
+    enum Columns
+    {
+        Name            = 0,
+        Categories      = 1,
+        Tools           = 2,
+        Description     = 3,
+
+        NumberOfColumns
+    };
+
+public:
+
     /**
      * Default constructor.
      */

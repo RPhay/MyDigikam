@@ -34,9 +34,9 @@ namespace Digikam
 DPluginConfViewDImg::DPluginConfViewDImg(QWidget* const parent)
     : DPluginConfView(parent)
 {
-    setColumnHidden(1, true);
-    headerItem()->setText(2, i18n("Type-Mimes"));
-    header()->setSectionResizeMode(2, QHeaderView::Stretch);
+    setColumnHidden(DPluginConfView::Categories, true);
+    headerItem()->setText(DPluginConfView::Tools, i18n("Type-Mimes"));
+    header()->setSectionResizeMode(DPluginConfView::Tools, QHeaderView::Stretch);
     this->loadPlugins();
 }
 
@@ -56,14 +56,14 @@ void DPluginConfViewDImg::loadPlugins()
             {
                 QTreeWidgetItem* const item = appendPlugin(plug);
                 DTextBrowser* const tview   = new DTextBrowser(plug->typeMimes(), this);
-                setItemWidget(item, 2, tview);
+                setItemWidget(item, DPluginConfView::Tools, tview);
             }
         }
     }
 
     // Sort items by plugin names.
 
-    sortItems(0, Qt::AscendingOrder);
+    sortItems(DPluginConfView::Name, Qt::AscendingOrder);
 }
 
 } // namespace Digikam

@@ -33,6 +33,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<BatchTool*> tools;
 };
 

@@ -46,33 +46,28 @@ public:
 
         // Name + Icon + Selector
 
-        setText(0, m_plugin->name());
-        setIcon(0, m_plugin->icon());
+        setText(DPluginConfView::Name, m_plugin->name());
+        setIcon(DPluginConfView::Name, m_plugin->icon());
 
         if (m_plugin->hasVisibilityProperty())
         {
-            setCheckState(0, m_plugin->shouldLoaded() ? Qt::Checked : Qt::Unchecked);
+            setCheckState(DPluginConfView::Name, m_plugin->shouldLoaded() ? Qt::Checked : Qt::Unchecked);
         }
 
-        setToolTip(0, m_plugin->description());
+        setToolTip(DPluginConfView::Name, m_plugin->description());
 
         // Categories
 
         QStringList list = m_plugin->categories();
-        setText(1, list.join(QString::fromLatin1(", ")));
+        setText(DPluginConfView::Categories, list.join(QString::fromLatin1(", ")));
 
         // Number of tools
 
-        setText(2, QString::number(m_plugin->count()));
+        setText(DPluginConfView::Tools, QString::number(m_plugin->count()));
 
         // Description
 
-        setText(3, m_plugin->description());
-
-        // Authors
-
-        QStringList auth = m_plugin->pluginAuthors();
-        setText(4, auth.join(QString::fromLatin1(", ")));
+        setText(DPluginConfView::Description, m_plugin->description());
     };
 
     ~DPluginCB() override = default;
@@ -80,11 +75,10 @@ public:
     bool contains(const QString& txt, Qt::CaseSensitivity cs) const
     {
         return (
-                text(0).contains(txt, cs) ||
-                text(1).contains(txt, cs) ||
-                text(2).contains(txt, cs) ||
-                text(3).contains(txt, cs) ||
-                text(4).contains(txt, cs)
+                text(DPluginConfView::Name)       .contains(txt, cs) ||
+                text(DPluginConfView::Categories) .contains(txt, cs) ||
+                text(DPluginConfView::Tools)      .contains(txt, cs) ||
+                text(DPluginConfView::Description).contains(txt, cs)
                );
     };
 
@@ -105,6 +99,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString           filter;
     QList<DPluginCB*> plugBoxes;
 };
@@ -119,13 +115,12 @@ DPluginConfView::DPluginConfView(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
     setSortingEnabled(true);
-    setColumnCount(5);
+    setColumnCount(NumberOfColumns);
 
-    header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
-    header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
-    header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
-    header()->setSectionResizeMode(3, QHeaderView::Stretch);
-    header()->setSectionResizeMode(4, QHeaderView::Interactive);
+    header()->setSectionResizeMode(Name,        QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(Categories,  QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(Tools,       QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(Description, QHeaderView::Stretch);
     header()->setSortIndicatorShown(true);
 
     QStringList labels;
@@ -133,7 +128,6 @@ DPluginConfView::DPluginConfView(QWidget* const parent)
     labels.append(i18nc("@title: Dplugin property", "Categories"));
     labels.append(i18nc("@title: Dplugin property", "Tools"));
     labels.append(i18nc("@title: Dplugin property", "Description"));
-    labels.append(i18nc("@title: Dplugin property", "Authors"));
     setHeaderLabels(labels);
 
     setAutoFillBackground(false);
@@ -181,7 +175,7 @@ void DPluginConfView::apply()
         {
             if (item->m_plugin->hasVisibilityProperty())
             {
-                bool load = (item->checkState(0) == Qt::Checked);
+                bool load = (item->checkState(Name) == Qt::Checked);
                 group.writeEntry(item->m_plugin->iid(), load);
                 item->m_plugin->setVisible(load);
                 item->m_plugin->setShouldLoaded(load);
@@ -196,7 +190,7 @@ void DPluginConfView::selectAll()
 {
     for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
-        item->setCheckState(0, Qt::Checked);
+        item->setCheckState(Name, Qt::Checked);
     }
 }
 
@@ -204,7 +198,7 @@ void DPluginConfView::clearAll()
 {
     for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
-        item->setCheckState(0, Qt::Unchecked);
+        item->setCheckState(Name, Qt::Unchecked);
     }
 }
 
@@ -219,7 +213,7 @@ int DPluginConfView::activated() const
 
     for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
-        if (item->checkState(0) == Qt::Checked)
+        if (item->checkState(Name) == Qt::Checked)
         {
             ++activated; // cppcheck-suppress useStlAlgorithm
         }

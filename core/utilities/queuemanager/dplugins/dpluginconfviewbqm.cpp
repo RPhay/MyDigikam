@@ -49,7 +49,7 @@ void DPluginConfViewBqm::loadPlugins()
 
     // Sort items by plugin names.
 
-    sortItems(0, Qt::AscendingOrder);
+    sortItems(DPluginConfView::Name, Qt::AscendingOrder);
 }
 
 } // namespace Digikam
