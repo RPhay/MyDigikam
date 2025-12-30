@@ -188,7 +188,7 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     d->iconShowCoordinatesBox  = new QCheckBox(i18n("Show geolocation overlay button"), iwpanel);
     d->iconShowCoordinatesBox->setWhatsThis(i18n("Set this option to show an overlay button over the "
-                                                 "thumbnail to identify geoloacted item and open the geolocation tab."));
+                                                 "thumbnail to identify geolocated item and open the map tab."));
 
     DLineWidget* const line2   = new DLineWidget(Qt::Horizontal, iwpanel);
 
