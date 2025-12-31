@@ -391,7 +391,7 @@ BUGFIXES:
 325 --> 510043 - JPEG files getting corrupted with 0kb.
 326 --> 497698 - Reimport images to empty database - faces arent right in people tree.
 327 --> 513958 - Saturation slider granularity too small.
-328 --> 
+328 --> 467505 - When launching the latest version of digiKam, the old internal MySql database cannot be started.
 329 --> 
 330 --> 
 331 --> 
