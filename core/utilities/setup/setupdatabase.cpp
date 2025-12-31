@@ -195,6 +195,13 @@ void SetupDatabase::createUpdateBox()
                                 "After the upgrade you cannot use your database with a digiKam version "
                                 "prior to 8.5.0."));
 
+    connect(infoBtn, &QPushButton::clicked,
+            this, [this, infoBtn]()
+        {
+            qApp->postEvent(infoBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
+        }
+    );
+
     QGridLayout* const grid = new QGridLayout;
     grid->addWidget(d->hashesButton, 0, 0);
     grid->addWidget(infoBtn,         0, 2);
@@ -202,13 +209,6 @@ void SetupDatabase::createUpdateBox()
 
     d->updateBox                    = new QGroupBox(i18nc("@title:group", "Updates"));
     d->updateBox->setLayout(grid);
-
-    connect(infoBtn, &QPushButton::clicked,
-            this, [this, infoBtn]()
-        {
-            qApp->postEvent(infoBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
-        }
-    );
 
     connect(d->hashesButton, SIGNAL(clicked()),
             this, SLOT(slotUpgradeUniqueHashes()));
