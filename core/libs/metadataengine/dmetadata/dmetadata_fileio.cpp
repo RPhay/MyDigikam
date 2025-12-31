@@ -117,8 +117,13 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
     {
         // No image files (aka video or audio), process with ExifTool and ffmpeg backends.
 
-        if      ((hasLoaded = loadUsingExifTool(filePath, videoAll)))
+        if ((hasLoaded = loadUsingExifTool(filePath, videoAll)))
         {
+            // Load and merge metadata from sidecar first
+            // before adding virtual metadata to XMP.
+
+            hasLoaded = loadFromSidecarAndMerge(filePath);
+
             if (videoAll && (hasLoaded = loadUsingFFmpeg(filePath)))
             {
                 usedBackend = VideoMergeBackend;
@@ -128,16 +133,19 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
                 usedBackend = ExifToolBackend;
             }
         }
-        else if ((hasLoaded = loadUsingFFmpeg(filePath)))
-        {
-            usedBackend = FFMpegBackend;
-        }
         else
         {
-            usedBackend = NoBackend;
-        }
+            hasLoaded = loadFromSidecarAndMerge(filePath);
 
-        hasLoaded |= loadFromSidecarAndMerge(filePath);
+            if (videoAll && (hasLoaded = loadUsingFFmpeg(filePath)))
+            {
+                usedBackend = FFMpegBackend;
+            }
+            else
+            {
+                usedBackend = NoBackend;
+            }
+        }
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with"
