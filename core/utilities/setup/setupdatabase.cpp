@@ -182,31 +182,31 @@ void SetupDatabase::slotUpgradeUniqueHashes()
 
 void SetupDatabase::createUpdateBox()
 {
-    d->updateBox                    = new QGroupBox(i18nc("@title:group", "Updates"));
-    QGridLayout* const updateLayout = new QGridLayout;
     d->hashesButton                 = new QPushButton(i18nc("@action:button", "Update File Hashes"));
 
-    QPushButton* const infoHash     = new QPushButton;
-    infoHash->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
-    infoHash->setToolTip(i18nc("@info:tooltip", "Get information about <b>Update File Hashes</b>"));
-    infoHash->setWhatsThis(i18nc("@info:tooltip",
-                                 "File hashes are used to identify identical files and to display thumbnails. "
-                                 "A new, improved algorithm to create the hash is now used. "
-                                 "The old algorithm, though, still works quite well, so it is recommended to "
-                                 "carry out this upgrade, but not required.\n"
-                                 "After the upgrade you cannot use your database with a digiKam version "
-                                 "prior to 8.5.0."));
+    QPushButton* const infoBtn      = new QPushButton;
+    infoBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
+    infoBtn->setToolTip(i18nc("@info:tooltip", "Get information about <b>Update File Hashes</b>"));
+    infoBtn->setWhatsThis(i18nc("@info:tooltip",
+                                "File hashes are used to identify identical files and to display thumbnails. "
+                                "A new, improved algorithm to create the hash is now used. "
+                                "The old algorithm, though, still works quite well, so it is recommended to "
+                                "carry out this upgrade, but not required.\n"
+                                "After the upgrade you cannot use your database with a digiKam version "
+                                "prior to 8.5.0."));
 
-    updateLayout->addWidget(d->hashesButton, 0, 0);
-    updateLayout->addWidget(infoHash,        0, 2);
-    updateLayout->setColumnStretch(1, 10);
+    QGridLayout* const grid = new QGridLayout;
+    grid->addWidget(d->hashesButton, 0, 0);
+    grid->addWidget(infoBtn,         0, 2);
+    grid->setColumnStretch(1, 10);
 
-    d->updateBox->setLayout(updateLayout);
+    d->updateBox                    = new QGroupBox(i18nc("@title:group", "Updates"));
+    d->updateBox->setLayout(grid);
 
-    connect(infoHash, &QPushButton::clicked,
-            this, [this, infoHash]()
+    connect(infoBtn, &QPushButton::clicked,
+            this, [this, infoBtn]()
         {
-            qApp->postEvent(infoHash, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
+            qApp->postEvent(infoBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
         }
     );
 
