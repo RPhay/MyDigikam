@@ -743,7 +743,7 @@ ln -sv "../../../../digikam.app/Contents/lib/mariadb"                           
 cd $DOWNLOAD_DIR
 
 #if [ ! -f "$DOWNLOAD_DIR/Image-ExifTool.tar.gz" ] ; then
-    wget https://files.kde.org/digikam/exiftool/Image-ExifTool.tar.gz -O Image-ExifTool.tar.gz
+    wget https://mirrors.xtom.de/kde-application/digikam/exiftool/Image-ExifTool.tar.gz -O Image-ExifTool.tar.gz
 #fi
 
 tar -xvf "$DOWNLOAD_DIR/Image-ExifTool.tar.gz" -C "$TEMPROOT/digikam.app/Contents/bin"

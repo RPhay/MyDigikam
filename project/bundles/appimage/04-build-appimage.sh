@@ -589,7 +589,7 @@ fi
 cd $DOWNLOAD_DIR
 
 #if [ ! -f $DOWNLOAD_DIR/Image-ExifTool.tar.gz ] ; then
-    wget --no-check-certificate https://files.kde.org/digikam/exiftool/Image-ExifTool.tar.gz -O Image-ExifTool.tar.gz
+    wget --no-check-certificate https://mirrors.xtom.de/kde-application/digikam/exiftool/Image-ExifTool.tar.gz -O Image-ExifTool.tar.gz
 #fi
 
 tar -xvf $DOWNLOAD_DIR/Image-ExifTool.tar.gz -C $APP_IMG_DIR/usr/bin

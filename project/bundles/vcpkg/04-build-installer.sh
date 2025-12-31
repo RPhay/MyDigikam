@@ -482,7 +482,7 @@ fi
 echo -e "\n---------- Copy ExifTool executable"
 
 cd $DOWNLOAD_DIR
-curl -LO https://files.kde.org/digikam/exiftool/exiftool.zip
+curl -LO https://mirrors.xtom.de/kde-application/digikam/exiftool/exiftool.zip
 unzip -o $DOWNLOAD_DIR/exiftool.zip -d $BUNDLEDIR
 mv "$BUNDLEDIR/exiftool(-k).exe" "$BUNDLEDIR/exiftool.exe"
 
