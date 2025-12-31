@@ -387,6 +387,8 @@ parts:
       - libmariadb-dev
       - libxkbcommon-dev
     build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
       - hunspell-dictionaries
       - ffmpeg-2404-sdk
     stage-packages:
