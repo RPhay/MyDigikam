@@ -135,6 +135,11 @@ public:
      */
     int leftCharacters() const;
 
+    /**
+     * Reimplementation of sizeHint().
+     */
+    QSize sizeHint() const override;
+
 Q_SIGNALS:
 
     /**
@@ -271,6 +276,11 @@ public:
      * Return the left characters that user can enter if a limit have been previously set with setMaxLeght().
      */
     int leftCharacters() const;
+
+    /**
+     * Reimplementation of sizeHint().
+     */
+    QSize sizeHint() const override;
 
 Q_SIGNALS:
 

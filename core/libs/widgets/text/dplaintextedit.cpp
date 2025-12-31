@@ -71,20 +71,6 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
 
     d->lines = lines;
 
-    // NOTE: inspired from QLineEdit::sizeHint()
-
-    QFont fnt;
-    setFont(fnt);
-    QFontMetrics fm(fnt);
-    const int iconSize = style()->pixelMetric(QStyle::PM_SmallIconSize, nullptr, this);
-    QMargins cm        = contentsMargins();
-    qreal tm           = document()->documentMargin();
-    int h              = qMax(fm.height(), qMax(16, iconSize)) * d->lines +
-                         2 * frameWidth()                                 +
-                         2 * tm                                           +
-                         cm.top() + cm.bottom();
-    setFixedHeight(h);
-
     // Mimic QLineEdit
 
     if (d->lines == 1)
@@ -400,6 +386,21 @@ void DPlainTextEdit::slotChanged()
                        i18np("%1 character left", "%1 characters left",
                        maxLength() - text().size()),
                        this);
+}
+
+QSize DPlainTextEdit::sizeHint() const
+{
+    // NOTE: inspired from QLineEdit::sizeHint()
+
+    QFontMetrics fm(font());
+    QSize sizeHint     = QPlainTextEdit::sizeHint();
+    const int iconSize = style()->pixelMetric(QStyle::PM_SmallIconSize, nullptr, this);
+    qreal tm           = document()->documentMargin();
+    int h              = qMax(fm.height(), qMax(16, iconSize)) * d->lines +
+                         2 * frameWidth()                                 +
+                         2 * tm;
+
+    return QSize(sizeHint.width(), h);
 }
 
 } // namespace Digikam

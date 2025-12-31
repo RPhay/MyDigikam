@@ -24,8 +24,8 @@
 #include <QTextDocument>
 #include <QFontMetrics>
 #include <QFontDatabase>
+#include <QToolButton>
 #include <QMimeData>
-#include <QLabel>
 #include <QIcon>
 #include <QStyle>
 #include <QPainter>
@@ -67,7 +67,7 @@ using namespace Sonnet;
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DTextEditClearButton : public QLabel
+class Q_DECL_HIDDEN DTextEditClearButton : public QToolButton
 {
     Q_OBJECT
 
@@ -75,13 +75,6 @@ public:
 
     explicit DTextEditClearButton(QWidget* const parent);
 
-Q_SIGNALS:
-
-    void clicked();
-
-protected:
-
-    void mousePressEvent(QMouseEvent* e) override;
 };
 
 // -------------------------------------------------------------------------------
