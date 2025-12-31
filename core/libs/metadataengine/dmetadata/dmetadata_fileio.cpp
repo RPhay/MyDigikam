@@ -41,6 +41,7 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
     FileReadLocker lock(filePath);
 
     Backend usedBackend = NoBackend;
+    bool sidecarLoaded  = false;
     bool hasLoaded      = false;
     QFileInfo info(filePath);
     QMimeDatabase mimeDB;
@@ -111,7 +112,7 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
             }
         }
 
-        hasLoaded |= loadFromSidecarAndMerge(filePath);
+        sidecarLoaded = loadFromSidecarAndMerge(filePath);
     }
     else
     {
@@ -122,9 +123,9 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
             // Load and merge metadata from sidecar first
             // before adding virtual metadata to XMP.
 
-            hasLoaded |= loadFromSidecarAndMerge(filePath);
+            sidecarLoaded = loadFromSidecarAndMerge(filePath);
 
-            if (videoAll && (hasLoaded |= loadUsingFFmpeg(filePath)))
+            if (videoAll && (hasLoaded = loadUsingFFmpeg(filePath)))
             {
                 usedBackend = VideoMergeBackend;
             }
@@ -135,9 +136,9 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
         }
         else
         {
-            hasLoaded |= loadFromSidecarAndMerge(filePath);
+            sidecarLoaded = loadFromSidecarAndMerge(filePath);
 
-            if (videoAll && (hasLoaded |= loadUsingFFmpeg(filePath)))
+            if (videoAll && (hasLoaded = loadUsingFFmpeg(filePath)))
             {
                 usedBackend = FFMpegBackend;
             }
@@ -157,7 +158,7 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
         *backend = usedBackend;
     }
 
-    return hasLoaded;
+    return (hasLoaded | sidecarLoaded);
 }
 
 bool DMetadata::save(const QString& filePath, bool setVersion) const
