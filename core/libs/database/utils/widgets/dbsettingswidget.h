@@ -48,6 +48,14 @@ public:
     explicit DatabaseSettingsWidget(QWidget* const parent = nullptr);
     ~DatabaseSettingsWidget() override;
 
+private:
+
+    void setupMainArea();
+
+private Q_SLOTS:
+
+    void slotUpdateSqlInit();
+
 // --- Properties ----------------------------------------
 
 public:
@@ -72,11 +80,8 @@ public:
      */
     bool checkDatabaseSettings();
 
-// --------------------------------------------------------
-
 private:
 
-    void setupMainArea();
     void handleInternalServer(int index);
     void setDatabaseInputFields(int index);
     bool isNotEqualToThumbName(const QString& name);
@@ -87,7 +92,6 @@ private Q_SLOTS:
     void slotHandleDBTypeIndexChanged(int index);
     void slotDatabasePathEditedDelayed();
     void slotDatabasePathEdited();
-    void slotUpdateSqlInit();
 
 // --- Mysql ----------------------------------------------
 
