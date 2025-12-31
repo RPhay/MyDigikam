@@ -122,9 +122,9 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
             // Load and merge metadata from sidecar first
             // before adding virtual metadata to XMP.
 
-            hasLoaded = loadFromSidecarAndMerge(filePath);
+            hasLoaded |= loadFromSidecarAndMerge(filePath);
 
-            if (videoAll && (hasLoaded = loadUsingFFmpeg(filePath)))
+            if (videoAll && (hasLoaded |= loadUsingFFmpeg(filePath)))
             {
                 usedBackend = VideoMergeBackend;
             }
@@ -135,9 +135,9 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
         }
         else
         {
-            hasLoaded = loadFromSidecarAndMerge(filePath);
+            hasLoaded |= loadFromSidecarAndMerge(filePath);
 
-            if (videoAll && (hasLoaded = loadUsingFFmpeg(filePath)))
+            if (videoAll && (hasLoaded |= loadUsingFFmpeg(filePath)))
             {
                 usedBackend = FFMpegBackend;
             }
