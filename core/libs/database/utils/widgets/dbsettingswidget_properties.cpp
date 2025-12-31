@@ -69,10 +69,11 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
     {
         case SQlite:
         {
-            d->dbPathLabel->setVisible(true);
+            d->dbPathBtn->setVisible(true);
+            d->dbPathLbl->setVisible(true);
             d->dbPathEdit->setVisible(true);
             d->walModeCheck->setVisible(true);
-            d->walLabel->setVisible(true);
+            d->walModeBtn->setVisible(true);
             d->mysqlCmdBox->setVisible(false);
             d->tab->setVisible(false);
 
@@ -84,10 +85,11 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
 
         case MysqlInternal:
         {
-            d->dbPathLabel->setVisible(true);
+            d->dbPathBtn->setVisible(true);
+            d->dbPathLbl->setVisible(true);
             d->dbPathEdit->setVisible(true);
             d->walModeCheck->setVisible(false);
-            d->walLabel->setVisible(false);
+            d->walModeBtn->setVisible(false);
             d->mysqlCmdBox->setVisible(true);
             d->tab->setVisible(false);
 
@@ -99,10 +101,11 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
 
         default: // MysqlServer
         {
-            d->dbPathLabel->setVisible(false);
+            d->dbPathBtn->setVisible(false);
+            d->dbPathLbl->setVisible(false);
             d->dbPathEdit->setVisible(false);
             d->walModeCheck->setVisible(false);
-            d->walLabel->setVisible(false);
+            d->walModeBtn->setVisible(false);
             d->mysqlCmdBox->setVisible(false);
             d->tab->setVisible(true);
 
@@ -144,10 +147,12 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
         if (settings->getDatabaseDirSetAtCmd() && !migration)
         {
             d->dbType->setEnabled(false);
+            d->dbTypeBtn->setEnabled(false);
+            d->dbPathLbl->setEnabled(false);
             d->dbPathEdit->setEnabled(false);
-            d->dbPathLabel->setText(d->dbPathLabel->text() +
-                                    i18n("This path was set as a command line"
-                                         "option (--database-directory)."));
+            d->dbPathBtn->setWhatsThis(d->dbPathBtn->whatsThis() +
+                                       i18n("<p>This path was set as a command line"
+                                            "option (--database-directory).</p>"));
         }
     }
 

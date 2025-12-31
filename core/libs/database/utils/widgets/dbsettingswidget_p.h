@@ -36,11 +36,13 @@
 #include <QSqlError>
 #include <QStandardPaths>
 #include <QString>
+#include <QPushButton>
 #include <QStyle>
 #include <QTabWidget>
 #include <QTemporaryFile>
 #include <QTextBrowser>
 #include <QTimer>
+#include <QHelpEvent>
 #include <QVBoxLayout>
 
 // KDE includes
@@ -89,9 +91,11 @@ public:
     QSpinBox*          hostPort                 = nullptr;
 
     QComboBox*         dbType                   = nullptr;
-    QLabel*            dbPathLabel              = nullptr;
+    QPushButton*       dbTypeBtn                = nullptr;
+    QLabel*            dbPathLbl                = nullptr;
+    QPushButton*       dbPathBtn                = nullptr;
+    QPushButton*       walModeBtn               = nullptr;
     QLabel*            dbThumbsLabel            = nullptr;
-    QLabel*            walLabel                 = nullptr;
     QTextBrowser*      sqlInit                  = nullptr;
     QGroupBox*         expertSettings           = nullptr;
     QGroupBox*         dbNoticeBox              = nullptr;

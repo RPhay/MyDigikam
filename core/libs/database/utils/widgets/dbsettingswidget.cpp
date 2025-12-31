@@ -45,7 +45,9 @@ void DatabaseSettingsWidget::setupMainArea()
     DHBox* const typeHbox           = new DHBox();
     QLabel* const databaseTypeLabel = new QLabel(typeHbox);
     d->dbType                       = new QComboBox(typeHbox);
-    databaseTypeLabel->setText(i18n("Type:"));
+    QWidget* const spacer           = new QWidget(typeHbox);
+    databaseTypeLabel->setText(i18n("Type: "));
+    typeHbox->setStretchFactor(spacer, 10);
 
     // --------- fill with default values ---------------------
 
@@ -86,11 +88,33 @@ void DatabaseSettingsWidget::setupMainArea()
 
 #endif
 
-    d->dbType->setToolTip(tip);
+    d->dbTypeBtn           = new QPushButton(typeHbox);
+    d->dbTypeBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
+    d->dbTypeBtn->setToolTip(i18nc("@info:tooltip", "Get information about <b>Database Type</b>"));
+    d->dbTypeBtn->setWhatsThis(tip);
+
+    connect(d->dbPathBtn, &QPushButton::clicked,
+            this, [this]()
+        {
+            qApp->postEvent(d->dbPathBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
+        }
+    );
 
     // --------------------------------------------------------
 
-    d->dbPathLabel = new QLabel(i18n("<p>Set here the location where the database files will be stored on your system. "
+    DHBox* const dbPathBox = new DHBox(dbConfigBox);
+
+    d->dbPathLbl           = new QLabel(i18nc("@label:database path", "Path: "), dbPathBox);
+
+    d->dbPathEdit          = new DFileSelector(dbPathBox);
+    d->dbPathEdit->setFileDlgMode(QFileDialog::Directory);
+    d->dbPathEdit->setFileDlgOptions(QFileDialog::ShowDirsOnly);
+
+    d->dbPathBtn           = new QPushButton(dbPathBox);
+    d->dbPathBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
+    d->dbPathBtn->setToolTip(i18nc("@info:tooltip", "Get information about <b>Database Path</b>"));
+    d->dbPathBtn->setWhatsThis(i18nc("@info:tooltip",
+                                     "<p>Set here the location where the database files will be stored on your system. "
                                      "There are four databases: "
                                      "one for all collections properties, "
                                      "one to store compressed thumbnails, "
@@ -100,26 +124,41 @@ void DatabaseSettingsWidget::setupMainArea()
                                      "<p>Databases are digiKam core engines. Take care to use a place hosted by fast "
                                      "hardware (eg. SSD or NVMe) with enough free space especially for thumbnails database.</p>"
                                      "<p>Note: a remote file system such as NFS, cannot be used here. "
-                                     "For performance reasons, it is also recommended not to use network storage media.</p>"
-                                     "<p></p>"), dbConfigBox);
-    d->dbPathLabel->setWordWrap(true);
-    d->dbPathEdit  = new DFileSelector(dbConfigBox);
-    d->dbPathEdit->setFileDlgMode(QFileDialog::Directory);
-    d->dbPathEdit->setFileDlgOptions(QFileDialog::ShowDirsOnly);
+                                     "For performance reasons, it is also recommended not to use network storage media.</p>"));
+
+    connect(d->dbPathBtn, &QPushButton::clicked,
+            this, [this]()
+        {
+            qApp->postEvent(d->dbPathBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
+        }
+    );
+
 
     // --------------------------------------------------------
 
-    d->walModeCheck = new QCheckBox(i18n("Enable WAL mode for the databases"), dbConfigBox);
+    DHBox* const walModeBox = new DHBox(dbConfigBox);
+
+    d->walModeCheck         = new QCheckBox(i18n("Enable WAL mode for the databases"), walModeBox);
     d->walModeCheck->setToolTip(i18n("The WAL (Write-Ahead Log) mode is significantly "
                                      "faster in most scenarios on supported systems."));
 
-    d->walLabel     = new QLabel(i18n("Write-Ahead Log is a mode to use a roll-forward journal that records transactions "
-                                      "that have been committed but not yet applied to the databases. It uses an auxiliary "
-                                      "journalized file to host structures for recovery transactions during a crash. The changes "
-                                      "are first recorded in the log, before the changes are written to the database. This made "
-                                      "database requests atomic and robust in extensive and critical use cases."),
-                                 dbConfigBox);
-    d->walLabel->setWordWrap(true);
+    QWidget* const spacer2  = new QWidget(walModeBox);
+    walModeBox->setStretchFactor(spacer2, 10);
+    d->walModeBtn           = new QPushButton(walModeBox);
+    d->walModeBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
+    d->walModeBtn->setToolTip(i18nc("@info:tooltip", "Get information about <b>WAL Mode</b>"));
+    d->walModeBtn->setWhatsThis(i18n("Write-Ahead Log is a mode to use a roll-forward journal that records transactions "
+                                     "that have been committed but not yet applied to the databases. It uses an auxiliary "
+                                     "journalized file to host structures for recovery transactions during a crash. The changes "
+                                     "are first recorded in the log, before the changes are written to the database. This made "
+                                     "database requests atomic and robust in extensive and critical use cases."));
+
+    connect(d->walModeBtn, &QPushButton::clicked,
+            this, [this]()
+        {
+            qApp->postEvent(d->walModeBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
+        }
+    );
 
     // --------------------------------------------------------
 
@@ -361,12 +400,11 @@ void DatabaseSettingsWidget::setupMainArea()
 
     vlay->addWidget(typeHbox);
     vlay->addWidget(new DLineWidget(Qt::Horizontal));
-    vlay->addWidget(d->dbPathLabel);
-    vlay->addWidget(d->dbPathEdit);
+    vlay->addWidget(dbPathBox);
+    vlay->addWidget(new DLineWidget(Qt::Horizontal));
     vlay->addWidget(d->mysqlCmdBox);
     vlay->addWidget(d->tab);
-    vlay->addWidget(d->walModeCheck);
-    vlay->addWidget(d->walLabel);
+    vlay->addWidget(walModeBox);
     vlay->addStretch(10);
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
