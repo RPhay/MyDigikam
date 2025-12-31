@@ -128,10 +128,10 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->focusPointGroup = new FocusPointGroup(this);
 
     connect(d->item, SIGNAL(loaded()),
-            this, SLOT(slotImageLoaded()));
+            this, SLOT(slotItemLoaded()));
 
     connect(d->item, SIGNAL(loadingFailed()),
-            this, SLOT(slotLoadingFailed()));
+            this, SLOT(slotItemLoadingFailed()));
 
     connect(d->item, SIGNAL(imageChanged()),
             this, SLOT(slotUpdateFaces()));
@@ -359,7 +359,7 @@ void ItemPreviewView::reload()
     previewItem()->reload();
 }
 
-void ItemPreviewView::slotImageLoaded()
+void ItemPreviewView::slotItemLoaded()
 {
     Q_EMIT signalPreviewLoaded(true);
 
@@ -395,7 +395,7 @@ void ItemPreviewView::slotImageLoaded()
     d->ratingWidget->blockSignals(false);
 }
 
-void ItemPreviewView::slotImageLoadingFailed()
+void ItemPreviewView::slotItemLoadingFailed()
 {
     Q_EMIT signalPreviewLoaded(false);
 
