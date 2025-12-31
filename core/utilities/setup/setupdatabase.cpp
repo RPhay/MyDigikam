@@ -164,7 +164,7 @@ void SetupDatabase::readSettings()
     d->databaseWidget->setParametersFromSettings(settings);
 }
 
-void SetupDatabase::upgradeUniqueHashes()
+void SetupDatabase::slotUpgradeUniqueHashes()
 {
     int result = QMessageBox::warning(this, qApp->applicationName(),
                                       i18nc("@info",
@@ -184,36 +184,34 @@ void SetupDatabase::createUpdateBox()
 {
     d->updateBox                    = new QGroupBox(i18nc("@title:group", "Updates"));
     QGridLayout* const updateLayout = new QGridLayout;
-
     d->hashesButton                 = new QPushButton(i18nc("@action:button", "Update File Hashes"));
-    d->hashesButton->setWhatsThis(i18nc("@info:tooltip",
-                                        "File hashes are used to identify identical files and to display thumbnails. "
-                                        "A new, improved algorithm to create the hash is now used. "
-                                        "The old algorithm, though, still works quite well, so it is recommended to "
-                                        "carry out this upgrade, but not required.\n"
-                                        "After the upgrade you cannot use your database with a digiKam version "
-                                        "prior to 8.5.0."));
 
     QPushButton* const infoHash     = new QPushButton;
     infoHash->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
     infoHash->setToolTip(i18nc("@info:tooltip", "Get information about <b>Update File Hashes</b>"));
+    infoHash->setWhatsThis(i18nc("@info:tooltip",
+                                 "File hashes are used to identify identical files and to display thumbnails. "
+                                 "A new, improved algorithm to create the hash is now used. "
+                                 "The old algorithm, though, still works quite well, so it is recommended to "
+                                 "carry out this upgrade, but not required.\n"
+                                 "After the upgrade you cannot use your database with a digiKam version "
+                                 "prior to 8.5.0."));
 
     updateLayout->addWidget(d->hashesButton, 0, 0);
-    updateLayout->addWidget(infoHash,        0, 1);
-    updateLayout->setColumnStretch(2, 1);
+    updateLayout->addWidget(infoHash,        0, 2);
+    updateLayout->setColumnStretch(1, 10);
 
     d->updateBox->setLayout(updateLayout);
 
+    connect(infoHash, &QPushButton::clicked,
+            this, [this, infoHash]()
+        {
+            qApp->postEvent(infoHash, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
+        }
+    );
+
     connect(d->hashesButton, SIGNAL(clicked()),
-            this, SLOT(upgradeUniqueHashes()));
-
-    connect(infoHash, SIGNAL(clicked()),
-            this, SLOT(showHashInformation()));
-}
-
-void SetupDatabase::showHashInformation()
-{
-    qApp->postEvent(d->hashesButton, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
+            this, SLOT(slotUpgradeUniqueHashes()));
 }
 
 } // namespace Digikam

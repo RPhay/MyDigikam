@@ -40,8 +40,7 @@ private:
 
 private Q_SLOTS:
 
-    void upgradeUniqueHashes();
-    void showHashInformation();
+    void slotUpgradeUniqueHashes();
 
 private:
 
