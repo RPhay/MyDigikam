@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
-"PO-Revision-Date: 2025-12-29 09:41+0200\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
+"PO-Revision-Date: 2025-12-30 18:06+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -6259,7 +6259,7 @@ msgstr "זוהי רשימת הפריטים שאמורים להימחק."
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "שמירת תוויות מידע-נוסף בקובץ %1..."
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -6536,7 +6536,7 @@ msgstr "סיבוב/היפוך אוטומטי של תמונה"
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -21293,48 +21293,52 @@ msgid ""
 msgstr "מצגת השקופיות הסתיימה."
 
 #: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "An error has occurred to show item\n"
 "%1"
-msgstr "תקלה נגרמה בעת השימוש בנגן הסרטים"
+msgstr ""
+"אירעה שגיאה בהצגת הפריט\n"
+"%1"
 
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgid "Switch Screen"
-msgstr "סיום מצב מסך-מלא"
+msgstr "החלפת מסך"
 
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:135
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
-msgstr "ירוק:"
+msgstr "מסך %1"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Box"
-msgstr "תיבה"
+msgstr "Box"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Box web-service"
-msgstr "הדרוגים יובאו"
+msgstr "ייצוא לשירות המקוון Box"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Box web-service.<br><br>See Box "
 "web site for details: %1"
-msgstr "הדרוגים יובאו"
+msgstr ""
+"הכלי הזה מאפשר למשתמשים לייצא פריטים לשירות Box המקוון.<br><br>יש פרטים "
+"נוספים באתר של Box‏: %1"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Box..."
-msgstr "ייצא"
+msgstr "ייצו&א ל־Box…"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:429
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:430
@@ -21348,24 +21352,24 @@ msgstr "ייצא"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:780
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:823
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:859
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to upload photo"
-msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
+msgstr "העלאת התמונה נכשלה"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:455
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:943
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to list folders"
-msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
+msgstr "הצגת רשימת התיקיות נכשלה"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
-msgstr "ייצא"
+msgstr "ייצוא ל־Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:77
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:73
@@ -21379,16 +21383,16 @@ msgstr "ייצא"
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:119
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Upload"
-msgstr "בחרו תמונה להעברה"
+msgstr "התחלת העלאה"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
-msgstr "בחרו תמונה להעברה"
+msgstr "התחלת העלאה ל־Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:240
 #: core/dplugins/generic/webservices/google/gswindow.cpp:498
@@ -21396,7 +21400,7 @@ msgstr "בחרו תמונה להעברה"
 #, kde-format
 msgctxt "@info"
 msgid "No image selected. Please select which images should be uploaded."
-msgstr ""
+msgstr "לא נבחרה תמונה. נא לבחור אילו תמונות להעלות."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:247
 #: core/dplugins/generic/webservices/google/gswindow.cpp:518
@@ -21404,8 +21408,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfer"
 msgid "Warning"
 msgstr "אזהרה"
@@ -21417,7 +21420,7 @@ msgstr "אזהרה"
 #, kde-format
 msgctxt "@info"
 msgid "Authentication failed. Click \"Continue\" to authenticate."
-msgstr ""
+msgstr "האימות נכשל. יש ללחוץ על „המשך” כדי לעבור אימות."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:251
 #: core/dplugins/generic/webservices/google/gswindow.cpp:522
@@ -21425,10 +21428,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Continue"
-msgstr "מכיל"
+msgstr "להמשיך"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/google/gswindow.cpp:523
@@ -21436,8 +21439,7 @@ msgstr "מכיל"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfer"
 msgid "Cancel"
 msgstr "ביטול"
@@ -21611,10 +21613,9 @@ msgid "Only Me"
 msgstr "רק לי"
 
 #: core/dplugins/generic/webservices/facebook/fbnewalbumdlg.cpp:50
-#, fuzzy, kde-format
-#| msgid "Friends"
+#, kde-format
 msgid "Only Friends"
-msgstr "חברים"
+msgstr "חברים בלבד"
 
 #: core/dplugins/generic/webservices/facebook/fbnewalbumdlg.cpp:52
 #, kde-format
@@ -21632,29 +21633,32 @@ msgid "Facebook"
 msgstr "פייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgid "A tool to export to Facebook web-service"
-msgstr "הדרוגים יובאו"
+msgstr "כלי לייצור לשירות המקוון פייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>This tool allows users to export items to Facebook web-service.</p><p>See "
 "Facebook web site for details: <a href='https://www.facebook.com/'>https://"
 "www.facebook.com/</a></p>"
-msgstr "הדרוגים יובאו"
+msgstr ""
+"<p>הכלי הזה מאפשר לייצא פריטים לשירות המקוון פייסבוק.</p><p>באתר של פייסבוק "
+"יש פרטים נוספים: <a href='https://www.facebook.com/'>https://www.facebook."
+"com/</a></p>"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:105
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Facebook..."
-msgstr "ייצא"
+msgstr "ייצוא ל&פייסבוק…"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
-msgstr "הצגת סוג תמונה"
+msgstr "פייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:121
 #, kde-format
@@ -21670,9 +21674,9 @@ msgstr ""
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:586
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:877
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:891
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot open file"
-msgstr "שגיאה בעת שמירת הקובץ"
+msgstr "לא ניתן לפתוח את הקובץ"
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:501
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:467
@@ -21700,15 +21704,15 @@ msgstr "מזהה אלבום שגוי."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:513
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:479
-#, fuzzy, kde-format
+#, kde-format
 msgid "Album is full."
-msgstr "אוספי-תמונות"
+msgstr "האלבום מלא."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:516
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:482
-#, fuzzy, kde-format
+#, kde-format
 msgid "Missing or invalid file."
-msgstr "יישום מרחב צבע"
+msgstr "קובץ חסר או שגוי."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:519
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:485
@@ -21722,16 +21726,16 @@ msgid "Validate previous session..."
 msgstr "אימות הפעלה קודמת…"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
-msgstr "הדרוגים יובאו"
+msgstr "ייצוא לשירות המקוון פייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
-msgstr "בחרו תמונה להעברה"
+msgstr "התחלת העלאה לשירות המקוון פייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:125
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
@@ -21746,9 +21750,9 @@ msgstr "יציאה מפייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:325
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:355
-#, fuzzy, kde-format
+#, kde-format
 msgid "<i>auto create</i>"
-msgstr "סיבוב/היפוך אוטומטי של תמונה"
+msgstr "<i>יצירה אוטומטית</i>"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:330
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:350
@@ -21762,11 +21766,13 @@ msgid "Facebook export"
 msgstr "ייצוא מפייסבוק"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:620
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo into Facebook: %1\n"
 "Do you want to continue?"
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr ""
+"העלאת התמונה לפייסבוק נכשלה: %1\n"
+"להמשיך?"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:639
 #, kde-format
@@ -21774,41 +21780,40 @@ msgid "Facebook Call Failed: %1"
 msgstr "הקריאה לפייסבוק נכשלה: %1"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:90
-#, fuzzy, kde-format
+#, kde-format
 msgid "Target location: "
-msgstr "כותרת תמונה"
+msgstr "מקום יעד: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
-msgstr "אגד:"
+msgstr "תיקיית היעד"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sets the target address to copy the items to."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת כתובת היעד להעתקת הפריטים."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgid "Target file behavior:"
-msgstr "קובצי תמונת"
+msgstr "התנהגות קובץ יעד:"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copy files"
-msgstr "העתיקו לכאן"
+msgstr "העתקת קבצים"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Created tables"
+#, kde-format
 msgid "Create symlinks"
-msgstr "טבלאות נוצרו"
+msgstr "יצירת קישורים סמליים"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgid "Create relative symlinks"
-msgstr "הוספת תוויות זו"
+msgstr "יצירת קישורים סמליים יחסיים"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:103
 #, kde-format
@@ -21821,20 +21826,19 @@ msgid "Overwrite existing items in the target"
 msgstr "שכתוב פריטים קיימים ביעד"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
-#, fuzzy, kde-format
-#| msgid "Write metadata to each file"
+#, kde-format
 msgid "Write sidecar metadata to the items"
-msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
+msgstr "לכתוב נתוני על נלווים לתוך הפריטים"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use the album path of the items in the target"
-msgstr "מעבר לפריט הראשון"
+msgstr "להשתמש בנתיב האלבום של הפריטים ביעד"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgid "Adjust Image Properties"
-msgstr "מאפייני הקובץ"
+msgstr "כוונון מאפייני תמונה"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #, kde-format
@@ -21846,43 +21850,41 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the list of items to copy to the specified target."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זאת רשימת הפריטים להעתקה ליעד שצוין."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:113
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
-msgstr "מידע על הרכיב"
+msgstr "ייצוא לאחסון מקומי"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:116
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
-msgstr "עוצמה:"
+msgstr "התחלת ייצוא"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:117
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:93
-#, fuzzy, kde-format
-#| msgid "Align text to the left"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
-msgstr "יישור מלל לשמאל"
+msgstr "התחלת ייצוא ליעד שצוין"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:233
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Location Error"
-msgstr "כותרת תמונה"
+msgstr "שגיאת מקום יעד"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
-#, fuzzy, kde-format
-#| msgid "The selected folder does not exist or is not readable"
+#, kde-format
 msgid "The target folder does not exist. Should it be created?"
-msgstr "התיקייה שנבחרה אינה קיימת או שאינה ניתנת לקריאה"
+msgstr "תיקיית היעד לא קיימת. ליצור אותה?"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:234
 #, kde-format
@@ -21890,10 +21892,10 @@ msgid "The target folder could not be created and does not exist."
 msgstr "לא ניתן ליצור את תיקיית היעד והיא לא קיימת."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:312
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
-msgstr "מצגת-שקפים"
+msgstr "ההעתקה לא הושלמה"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:313
 #, kde-format
@@ -21905,33 +21907,33 @@ msgstr ""
 "עכשיו."
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:45
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "File Copy"
-msgstr "&קובץ"
+msgstr "העתקת קבצים"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export items to a local storage"
-msgstr "הדרוגים יובאו"
+msgstr "כלי לייצוא פריטים לאחסון מקומי"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This tool allows users to export items to a local storage."
-msgstr "הדרוגים יובאו"
+msgstr "הכלי הזה מאפשר למשתמשים לייצא פריטים לאחסון מקומי."
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
-msgstr "מידע על הרכיב"
+msgstr "ייצוא לאחסון מקומי…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgid "Target Location: "
-msgstr "כותרת תמונה"
+msgstr "מקום יעד: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:76
 #, kde-format
@@ -21945,46 +21947,48 @@ msgstr ""
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "מיקום-גאוגרפי"
+msgstr ""
+"בחירת מקום\n"
+"לייצוא…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "מיקום-גאוגרפי"
+msgstr "בחירת מקום יעד…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:154
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
-#, fuzzy, kde-format
+#, kde-format
 msgid "All Files (*)"
-msgstr "כל הקבצים"
+msgstr "כל הקבצים (*)"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:178
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:198
-#, fuzzy, kde-format
+#, kde-format
 msgid "<i>not selected</i>"
-msgstr "%1 תוויות נבחרו"
+msgstr "<i>לא נבחר</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:73
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the list of images to upload to the specified target."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זאת רשימת התמונות להעלאה ליעד שצוין."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:89
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "מידע על הרכיב"
+msgstr "ייצוא לאחסון מרוחק"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:214
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
-msgstr "מצגת-שקפים"
+msgstr "ההעלאה לא הושלמה"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:215
 #, kde-format
@@ -21996,9 +22000,9 @@ msgstr ""
 "מחדש כעת."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 msgid "Source Location: "
-msgstr "כותרת תמונה"
+msgstr "מקום מקור: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
 #, kde-format
@@ -22012,53 +22016,50 @@ msgstr ""
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Source Location..."
-msgstr "מיקום-גאוגרפי"
+msgstr "בחירת מקום מקור…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זאת רשימת פריטי המקור לייבוא ליעד הנבחר."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "תיאור"
+msgstr "בחירת מקום יעד:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
-msgstr "בחירת תמונות"
+msgstr "בחירת פריטים לייבוא…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
-msgstr "מידע על הרכיב"
+msgstr "ייבוא מאחסון מרוחק"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:74
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
-msgstr "התחילו עורך תמונה"
+msgstr "התחלת ייבוא"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:75
-#, fuzzy, kde-format
-#| msgid "Change the filename of the currently selected item."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
-msgstr "שינוי שם הקובץ המסומן"
+msgstr "התחלת ייבוא התמונות המסוימות האלה לאלבום שנבחר כרגע."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:160
-#, fuzzy, kde-format
-#| msgid "Imported comments"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
-msgstr "הערות יובאו"
+msgstr "הייבוא לא הושלם"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:161
 #, kde-format
@@ -22070,36 +22071,38 @@ msgstr ""
 "עכשיו."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:46
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "File Transfer"
-msgstr "המרה"
+msgstr "העברת קבצים"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export and import items with a remote location"
-msgstr "התאמה לבחירה"
+msgstr "כלי לייצוא וייבוא פריטים למקום מרוחק"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with a remote location."
 "<br><br>Many protocols can be used, as FTP, SFTP, SAMBA, etc."
-msgstr "התאמה לבחירה"
+msgstr ""
+"הכלי הזה מאפשר למשתמשים לייצא ולייבוא פריטים מול מקום מרוחק <br><br>אפשר "
+"להשתמש במגוון פרוטוקולים כגון FTP,‏ SFTP,‏ SAMBA, וכו׳."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "מידע על הרכיב"
+msgstr "ייצוא לאחסון מרוחק…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "מידע על הרכיב"
+msgstr "ייבוא מאחסון מרוחק…"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
 #, kde-format
@@ -22320,9 +22323,9 @@ msgid "Public"
 msgstr "ציבורי"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:50
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the list of images to upload to your Flickr account."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זאת רשימת התמונות להעלאה לחשבון שלך ב־Flickr."
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:56
 #, kde-format
@@ -22741,16 +22744,15 @@ msgstr "הקובץ קיים"
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:156
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgid "Destination"
-msgstr "תיאור"
+msgstr "יעד"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:161
-#, fuzzy, kde-format
-#| msgid "Source:"
+#, kde-format
 msgctxt "@label: source file"
 msgid "Source"
-msgstr "מקור:"
+msgstr "מקור"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:54
 #, kde-format
@@ -22768,9 +22770,9 @@ msgid "Export only the leaf tags of tag hierarchies"
 msgstr "לייצא רק את תגיות העלה של היררכיות התגיות"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "Split tags"
-msgstr "מחיקת תווית"
+msgstr "פיצול תגיות"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:59
 #, kde-format
@@ -22788,62 +22790,60 @@ msgid "Build a combined tag string."
 msgstr "בניית מחרוזת תגיות מעורבת."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
-msgstr "ייצא"
+msgstr "ייצוא ל־Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:130
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
-msgstr "בחרו תמונה להעברה"
+msgstr "התחלת העלאה ל־Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:174
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
-msgstr "מידע על הרכיב"
+msgstr "ייצוא לשירות Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:177
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
-msgstr "בחרו תמונה להעברה"
+msgstr "התחלת העלאה לשירות Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:183
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
-msgstr "מידע על הרכיב"
+msgstr "ייבוא משירות Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:185
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Download"
-msgstr "העתקה למחשב"
+msgstr "התחלת הורדה"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:186
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
-msgstr "בחרו תמונה להעברה"
+msgstr "התחלת הורדה משירות Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:358
 #: core/dplugins/generic/webservices/google/gswindow.cpp:430
-#, fuzzy, kde-format
-#| msgid "All Files"
+#, kde-format
 msgctxt "@info"
 msgid "Google Photos call failed: %1\n"
-msgstr "כל הקבצים"
+msgstr "הקריאה ל־Google Photos נכשלה: %1\n"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:399
-#, fuzzy, kde-format
-#| msgid "All Files"
+#, kde-format
 msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
-msgstr "כל הקבצים"
+msgstr "הקריאה ל־Google Drive נכשלה: %1\n"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:497
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
@@ -22861,18 +22861,16 @@ msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgid "Toggle Auto"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Drive export"
-msgstr "שינוי מצב אוטומטי"
+msgstr "ייצוא מ־Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgid "Toggle Auto"
+#, kde-format
 msgctxt "@info: start transfer"
 msgid "Google Photos export"
-msgstr "שינוי מצב אוטומטי"
+msgstr "ייצוא מ־Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
@@ -22964,13 +22962,16 @@ msgid "Warning"
 msgstr "אזהרה"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1107
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to finish uploading photo to %1.\n"
 "%2\n"
 "No image uploaded to your account."
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr ""
+"סיום העלאת התמונה אל %1 נכשלה.\n"
+"%2\n"
+"לא הועלו תמונות לחשבון שלך."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
 #, kde-format
@@ -22986,22 +22987,24 @@ msgid "Error"
 msgstr "שגיאה"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1266
-#, fuzzy, kde-format
-#| msgid "All Files"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Google Drive call failed:\n"
 "%1"
-msgstr "כל הקבצים"
+msgstr ""
+"הקריאה ל־Google Drive נכשלה:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1283
-#, fuzzy, kde-format
-#| msgid "All Files"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Google Photos call failed:\n"
 "%1"
-msgstr "כל הקבצים"
+msgstr ""
+"הקריאה ל־Google Photos נכשלה:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:665
@@ -23045,24 +23048,26 @@ msgid "A tool to export to ImageShack web-service"
 msgstr "כלי לייצוא לשירות המקוון ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to ImageShack web-service.\n"
 "\n"
 "See ImageShack web site for details: %1"
-msgstr "הדרוגים יובאו"
+msgstr ""
+"הכלי הזה מאפשר למשתמשים לייצא פריטים לשירות ImageShack המקוון. יש פרטים "
+"נוספים באתר של ImageShack‏: %1"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to &Imageshack..."
-msgstr "ייצא"
+msgstr "ייצוא &ל־Imageshack…"
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:222
-#, fuzzy, kde-format
+#, kde-format
 msgid "Authenticating the user"
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "אימות המשתמש"
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:247
 #, kde-format
@@ -23075,67 +23080,64 @@ msgid "Successfully retrieved galleries"
 msgstr "הגלריות התקבלו בהצלחה"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Makernote"
+#, kde-format
 msgctxt "@option"
 msgid "Make private"
-msgstr "הערות היצרן"
+msgstr "הפיכה לפרטי"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:50
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Tags (optional):"
-msgstr "מסנן דרוג"
+msgstr "תגיות (רשות):"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:52
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option"
 msgid "Remove information bar on thumbnails"
-msgstr "תקלה בעת שינוי עימוד תמונה בנתוני EXIF של הקבצים:"
+msgstr "הסרת סרגל פרטים מתמונות ממוזערות"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:88
-#, fuzzy, kde-format
-#| msgid "Add Border"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Add to root folder"
-msgstr "הוספת מסגרת"
+msgstr "הוספה לתיקייה העליונה"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Create new album"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Create new gallery"
-msgstr "יצירת אוסף-תמונות חדש"
+msgstr "יצירת גלריה חדשה"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
-msgstr "ייצא"
+msgstr "ייצוא ל־Imageshack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Upload"
-msgstr "העתקה למצלמה..."
+msgstr "העלאה"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
-msgstr "הדרוגים יובאו"
+msgstr "התחלת העלאה לשירות המקוון ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image Shack Export"
-msgstr "תמונות נמצאו ב- %1"
+msgstr "ייצוא ל־ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:263
-#, fuzzy, kde-format
+#, kde-format
 msgid "Authenticating..."
-msgstr "הגדרות"
+msgstr "מתבצע אימות…"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:321
 #, kde-format
@@ -23143,16 +23145,18 @@ msgid "Login failed: %1\n"
 msgstr "הכניסה נכשלה: %1\n"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:335
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to get galleries list: %1\n"
-msgstr "כשל בעת הצגת קבצים ב %1"
+msgstr "משיכת רשימת הגלריות נכשלה: %1\n"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:417
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo into ImageShack: %1\n"
 "Do you want to continue?"
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr ""
+"העלאת התמונה ל־ImageShack נכשלה: %1\n"
+"להמשיך?"
 
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:56
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:48
@@ -23194,13 +23198,15 @@ msgid "A tool to export to ImgUr web-service"
 msgstr "ייצוא לשירות המקוון ImgUr"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to ImgUr web-service.<br><br>You can "
 "export items as anonymous or with an user account.<br><br>See ImgUr web site "
 "for details: %1"
-msgstr "הדרוגים יובאו"
+msgstr ""
+"הכלי הזה מאפשר למשתמשים לייצא פריטים לשירות המקוון ImgUr.<br><br>אפשר לייצר "
+"פריטים באלמוניות או עם חשבון משתמש.<br><br>יש עוד פרטים באתר של ImgUr‏: %1"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:102
 #, kde-format
@@ -23422,37 +23428,34 @@ msgid "infraorder"
 msgstr "אינפרא־סדרה"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:151
-#, fuzzy, kde-format
-#| msgid "Add Border"
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "parvorder"
-msgstr "הוספת מסגרת"
+msgstr "תת־סדרה זוטרית"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:155
-#, fuzzy, kde-format
-#| msgid "No selection"
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "zoosection"
-msgstr "אין בחירה"
+msgstr "מחלקה זוטרית"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:159
-#, fuzzy, kde-format
-#| msgid "No selection"
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "zoosubsection"
-msgstr "אין בחירה"
+msgstr "תת־מחלקת זוטרית"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "superfamily"
-msgstr "משפחה"
+msgstr "על־משפחה"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "epifamily"
-msgstr "משפחה"
+msgstr "על־משפחה זוטרית"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:171
 #, kde-format
@@ -23503,16 +23506,16 @@ msgid "subgenus"
 msgstr "תת־סוג"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:203
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "section"
-msgstr "מיקום-גאוגרפי"
+msgstr "סעיף"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:207
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "subsection"
-msgstr "מיקום-גאוגרפי"
+msgstr "תת־סעיף"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:211
 #, kde-format
@@ -23545,16 +23548,16 @@ msgid "variety"
 msgstr "מגוון"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:231
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "form"
-msgstr "המרה"
+msgstr "צורה"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:235
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "infrahybrid"
-msgstr "סרט אינפרה-אדום"
+msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:283
 #, kde-format
@@ -23605,9 +23608,9 @@ msgid "seconds"
 msgstr "שניות"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the list of images to upload to an iNaturalist observation."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זאת רשימת התמונה להעלאה לתצפית של iNaturalist."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:169
@@ -23624,44 +23627,42 @@ msgid "Location"
 msgstr "מקום"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Iteration:"
+#, kde-format
 msgid "Observation"
-msgstr "מחזור:"
+msgstr "תצפית"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "<li>caption</li>"
+#, kde-format
 msgid "<i>no identification</i>"
-msgstr "<li>כותרת</li>"
+msgstr "<i>אין זיהוי</i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:88
 #, kde-format
 msgid ""
 "Optionally describe your observation or explain your identification here."
-msgstr ""
+msgstr "אפשר לתאר את התיאור שלך או להסביר את הזיהוי שלך."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:102
 #, kde-format
 msgid "Enter your identification here, popups will guide to a supported name."
-msgstr ""
+msgstr "כאן אפשר למלא את הזיהוי שלך, חלוניות צצות תדרכנה אותך בנוגע לשם נתמך."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:105
 #, kde-format
 msgid "Enter your identification here; it is required."
-msgstr ""
+msgstr "אפשר למלא את הזיהוי שלך כאן, הוא נחוץ."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgid "Place:"
-msgstr "שינוי שם..."
+msgstr "מקום:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:504
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:439
-#, fuzzy, kde-format
+#, kde-format
 msgid "More options"
-msgstr "אפשרויות תצוגת תיקייה"
+msgstr "אפשרויות נוספות"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:127
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:142
@@ -23691,12 +23692,14 @@ msgid ""
 "<b><h2><a href=\"%1\"><font color=\"#74ac00\">iNaturalist</font></a> Export</"
 "h2></b>"
 msgstr ""
+"<b><h2>ייצוא ל־<a href=\"%1\"><font color=\"#74ac00\">iNaturalist</font></"
+"a></h2></b>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:151
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export as %1 Observation"
-msgstr "הדרוגים יובאו"
+msgstr "ייצוא כתצפית %1"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:498
 #, kde-format
@@ -23706,17 +23709,17 @@ msgstr "פחות אפשרויות"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:563
 #, kde-format
 msgid "<i>login <b>failed</b></i>"
-msgstr ""
+msgstr "<i>הכניסה <b>נכשלה</b></i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:626
-#, fuzzy, kde-format
+#, kde-format
 msgid "<i>login <b>canceled</b></i>"
-msgstr "<b>ירד</b>:"
+msgstr "<i>הכניסה <b>בוטלה</b></i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:683
 #, kde-format
 msgid "<i>no valid identification</i>"
-msgstr ""
+msgstr "<i>אין זיהוי תקף</i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:730
 #, kde-format
@@ -23724,16 +23727,15 @@ msgid "iNaturalist Export"
 msgstr "ייצוא ל־iNaturalist"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:986
-#, fuzzy, kde-format
-#| msgid "Iteration:"
+#, kde-format
 msgid "observation"
-msgstr "מחזור:"
+msgstr "תצפית"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:992
 #, kde-format
 msgctxt "location"
 msgid "obscured"
-msgstr ""
+msgstr "מעורפל"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:996
 #, kde-format
@@ -23741,15 +23743,15 @@ msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1043
-#, fuzzy, kde-format
+#, kde-format
 msgid "observation time"
-msgstr "כיתוב, הערה,כותרת"
+msgstr "זמן תצפית"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1052
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1079
-#, fuzzy, kde-format
+#, kde-format
 msgid "from observation"
-msgstr "מידע"
+msgstr "מתצפית"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
@@ -23760,10 +23762,9 @@ msgid "not available"
 msgstr "לא זמין"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1091
-#, fuzzy, kde-format
-#| msgid "Geolocation"
+#, kde-format
 msgid "observation location"
-msgstr "מיקום-גאוגרפי"
+msgstr "מקום תצפית"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:54
 #, kde-format
@@ -23805,22 +23806,24 @@ msgid "Export to IPFS"
 msgstr "ייצוא ל־IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
-msgstr "בחרו תמונה להעברה"
+msgstr "התחלת העלאה ל־IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to upload photo to IPFS: %1\n"
-msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
+msgstr "העלאת התמונה ל־IPFS נכשלה: %1\n"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo to IPFS: %1\n"
 "Do you want to continue?"
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr ""
+"העלאת התמונה ל־IPFS נכשלה: %1\n"
+"להמשיך?"
 
 #: core/dplugins/generic/webservices/mediawiki/backend/mediawiki_queryimageinfo.cpp:203
 #, kde-format
@@ -23830,72 +23833,73 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Median:"
+#, kde-format
 msgctxt "@title"
 msgid "MediaWiki"
-msgstr "חציון:"
+msgstr "MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to MediaWiki web-service"
-msgstr "הדרוגים יובאו"
+msgstr "ייצוא לשירות המקוון MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to MediaWiki web-service.<br><br>See "
 "MediaWiki web site for details: %1"
-msgstr "הדרוגים יובאו"
+msgstr ""
+"הכלי הזה מאפשר למשתמשים לייצא פריטים לשירות MediaWiki המקוון.<br><br>יש "
+"פרטים נוספים באתר של MediaWiki‏: %1"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Export to MediaWiki..."
-msgstr "ייצא"
+msgstr "ייצוא ל־MediaWiki…"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:112
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error on file '%1'\n"
-msgstr "שגיאה בעת שמירת הקובץ"
+msgstr "שגיאה בקובץ ‚%1’\n"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:116
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error on file '%1': %2\n"
-msgstr "שגיאה בעת שמירת הקובץ"
+msgstr "שגיאה בקובץ ‚%1’: %2\n"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:154
 #, kde-format
 msgid "Uploaded via digiKam uploader"
-msgstr ""
+msgstr "העלאה דרך המעלה של digiKam"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:109
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Select an image"
-msgstr "בחירת תמונות"
+msgstr "בחירת תמונה"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid ""
 "This is a clickable link to open the MediaWiki home page in a web browser."
-msgstr ""
+msgstr "זה קישור ללחיצה שפותח את עמוד הבית של MediaWiki בדפדפן."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This is the list of images to upload to the wiki."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זאת רשימת התמונות להעלאה לוויקי."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:169
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:346
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This is the login form to your account on the chosen wiki."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "זה טופס הכניסה לחשבון שלך בוויקי הנבחר."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:191
 #, kde-format
@@ -32451,35 +32455,29 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "קבוצת הקובץ"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "שם"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "קטגוריות"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "כלים"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "תיאור"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, kde-format
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "יוצרים"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -61020,7 +61018,7 @@ msgstr "הצגות מחוון מקום גאוגרפי"
 #| "open it in fullscreen mode."
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr ""
 "הגדרת האפשרות הזאת תציג כפתור מרחף מעל התמונה הממוזערת כדי לפתוח אותה במסך "
 "מלא."
@@ -65252,6 +65250,10 @@ msgstr "פריטי אלבום"
 #, kde-format
 msgid "Import Items"
 msgstr "ייבוא פריטים"
+
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "יוצרים"
 
 #~ msgid "Show ima&ge dimensions"
 #~ msgstr "הצגת ממ&די תמונה"

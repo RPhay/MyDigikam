@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2025-12-29 09:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -6413,9 +6413,11 @@ msgstr ""
 "learning).</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Apply Metadata Template"
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "Beita forsniði lýsigagna"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -6698,9 +6700,11 @@ msgid "Auto-Rotate"
 msgstr "Sjálfvirkur snúningur"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "AI tool to automatically rotate images"
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr ""
 "Verkfæri til að úthluta sjálfvirkt merkjum á myndir með aðstoð gervigreindar"
 
@@ -34078,35 +34082,29 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Hópur skráar"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Nafn"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Flokkar"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Verkfæri"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Lýsing"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, kde-format
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "Höfundar"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -63610,7 +63608,7 @@ msgstr "Sýna yfirliggjandi staðsetningarhnappa"
 #| "open the geolocation view."
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr ""
 "Veldu þetta til að sýna yfirlagða hnappa á smámyndum sem nota má til að opna "
 "þær í hnattstaðsetningarsýn."
@@ -68393,6 +68391,10 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "Höfundar"
 
 #~ msgid "Show ima&ge dimensions"
 #~ msgstr "Sýna málsetnin&gu mynda"

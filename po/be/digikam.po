@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -6489,10 +6489,12 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "new smug album dialog"
+#| msgid "Template:"
 msgctxt "@title"
-msgid "Apply Metadata Template"
-msgstr ""
+msgid "Apply Template"
+msgstr "Шаблон:"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -6768,7 +6770,7 @@ msgstr "Аўтапаварочванне"
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "Інвертаваць выбар"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -32718,35 +32720,29 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Група файла"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Назва"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Катэгорыі"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Інструменты"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Апісанне"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, kde-format
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "Аўтары"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -61336,7 +61332,7 @@ msgstr ""
 #| msgid "Set this option to display the image aspect ratio."
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr "Паказваць суадносіны бакоў выявы."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
@@ -65576,6 +65572,10 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпарт"
+
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "Аўтары"
 
 #~ msgid "Show image labels"
 #~ msgstr "Паказваць адмеціны выявы"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -6757,9 +6757,11 @@ msgstr ""
 "dados com hierarquias de palavras-chave  às imagens.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Apply Metadata Template"
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "Aplicar o Modelo de Meta-Dados"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -7059,7 +7061,7 @@ msgstr "Rodar automaticamente"
 #| msgctxt "@info"
 #| msgid "A tool to assign tags metadata to images"
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "Uma ferramenta para atribuir meta-dados de marcas às imagens"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -35413,35 +35415,29 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Grupo do Ficheiro"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Nome"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Categorias"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Descrição"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, kde-format
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "Autores"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -66058,7 +66054,7 @@ msgstr "Mostrar os botões sobrepostos de rotação"
 #| "open it in fullscreen mode."
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr ""
 "Active esta opção para mostrar um botão sobreposto na miniatura da imagem "
 "para a abrir em todo o ecrã."
@@ -71142,6 +71138,10 @@ msgstr "Itens do Álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os Itens"
+
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "Autores"
 
 #~ msgid "Show ima&ge dimensions"
 #~ msgstr "Mostrar as dimensões da ima&gem"

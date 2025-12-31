@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -6713,7 +6713,7 @@ msgstr "فاصله رنگ"
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "تنظیم برچسبهای فراداده برای پرونده %1..."
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -7008,7 +7008,7 @@ msgstr "&چرخش خودکار صفحه‌"
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "<p>این گزینه را برای تنظیمات خودکار جهت، فعال سازید."
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -33818,38 +33818,31 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "پرونده"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "نام"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, fuzzy, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "دسته"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, fuzzy, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "&ابزارها‌"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "توصیف"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Authors"
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "نویسندگان"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, fuzzy, kde-format
@@ -63339,7 +63332,7 @@ msgstr "پالایه سبز"
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr ""
 "<p>برای نمایش ارزیابی digiKam زیر ریزنقش تصویر، این گزینه را تنظیم کنید."
 
@@ -67695,6 +67688,12 @@ msgstr "آلبومها"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&مرتب‌سازی تصاویر‌"
+
+#, fuzzy
+#~| msgid "Authors"
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "نویسندگان"
 
 #, fuzzy
 #~ msgid "Show ima&ge dimensions"

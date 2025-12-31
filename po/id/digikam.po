@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -6376,10 +6376,12 @@ msgstr ""
 "citra gambar.</p>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "new smug album dialog"
+#| msgid "Template:"
 msgctxt "@title"
-msgid "Apply Metadata Template"
-msgstr ""
+msgid "Apply Template"
+msgstr "Template:"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, fuzzy, kde-format
@@ -6707,7 +6709,7 @@ msgstr "Auto rotasikan"
 #, fuzzy, kde-format
 #| msgid "A tool to create calendar from images"
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "Sebuah alat untuk menciptakan kalender dari citra"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -33563,38 +33565,31 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "File"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Nama"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Kategori"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Peralatan"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Deskripsi"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Author"
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "Penulis"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -64005,7 +64000,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
@@ -68386,6 +68381,12 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Author"
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "Penulis"
 
 #, fuzzy
 #~| msgid "Count: "

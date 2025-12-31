@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -6662,7 +6662,7 @@ msgstr "Breiseán íomhá digiKam chun braonta báistí a chur le híomhá."
 #, fuzzy, kde-format
 #| msgid "Applying metadata"
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "Meiteashonraí á gcur i bhfeidhm"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -6965,7 +6965,7 @@ msgstr "Uath-rothlaigh"
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "Cumasaigh an rogha seo chun an treoshuíomh a shocrú go huathoibríoch."
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -34478,40 +34478,33 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Comhad"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Ainm"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Catagóirí"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Uirlisí"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Cur Síos"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Authors"
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "Údair"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -66178,7 +66171,7 @@ msgstr "Taispeáin dáta cruthaithe na híomhá"
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr ""
 "Cumasaigh an rogha seo chun an rátáil a thaispeáint faoi mhionsamhail na "
 "híomhá."
@@ -70591,6 +70584,12 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~| msgid "Authors"
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "Údair"
 
 #~ msgid "Show image labels"
 #~ msgstr "Taispeáin lipéid na híomhá"

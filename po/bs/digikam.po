@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -6882,7 +6882,7 @@ msgstr "Ova slika nije upravljana bojom."
 #, fuzzy, kde-format
 #| msgid "Apply Metadata Template"
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "Primijenite predložak metapodataka"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -7201,7 +7201,7 @@ msgstr "Automatsko rotiranje"
 #| "Enable this option to assign automatically Pick Labels based on image "
 #| "quality."
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr ""
 "Omogućite ovu opciju da biste automatski dodijelili naljepnice izbora na "
 "osnovu kvaliteta slike."
@@ -36557,40 +36557,33 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Datoteka"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Ime"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Kategorije"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Alati"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Opis"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Authors"
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "Autori"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -69016,7 +69009,7 @@ msgstr "Prikaži dugmad za preklapanje pri rotaciji"
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr ""
 "Omogućite ovu opciju da bi se prikazivala dugmad za preklapanje na ikoni "
 "slike za rotaciju slike."
@@ -74116,6 +74109,12 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgid "Authors"
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "Autori"
 
 #~ msgid "Show ima&ge dimensions"
 #~ msgstr "Prikažite dimenzije sli&ke"

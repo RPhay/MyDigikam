@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -6540,7 +6540,7 @@ msgstr "ਰੰਗ ਥਾਂ"
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "ਫਾਇਲ %1 ਲਈ ਮੈਟਾਡਾਟਾ ਟੈਗ ਦਿੱਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -6846,7 +6846,7 @@ msgstr "ਆਟੋ-ਘੁੰਮਾਓ"
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "<p>ਇਹ ਚੋਣ ਸਥਿਤੀ ਲਈ ਆਟੋਮੈਟਿਕ ਸੈਟਿੰਗ ਯੋਗ ਕਰਦੀ ਹੈ।"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -34009,39 +34009,32 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "ਫਾਇਲ"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "ਨਾਂ"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, fuzzy, kde-format
 #| msgid "Category"
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "ਕੈਟਾਗਰੀ"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, fuzzy, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "ਟੂਲ(&T)"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "ਵੇਰਵਾ"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Authors"
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "ਲੇਖਕ"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, fuzzy, kde-format
@@ -64681,7 +64674,7 @@ msgstr "ਭੂਗੋਲੀ-ਟਿਕਾਣਾ ਫਿਲਟਰ"
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr "ਚਿੱਤਰ ਥੰਮਨੇਲ ਹੇਠ ਡਿਜਿਕੈਮ ਸੁਰਖੀ ਵੇਖਣ ਲਈ ਇਹ ਚੋਣ ਕਰੋ।"
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
@@ -69090,6 +69083,12 @@ msgstr "ਐਲਬਮ ਆਈਟਮਾਂ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ(&S)"
+
+#, fuzzy
+#~| msgid "Authors"
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "ਲੇਖਕ"
 
 #~ msgid "Show ima&ge dimensions"
 #~ msgstr "ਚਿੱਤਰ ਮਾਪ ਵੇਖੋ(&g)"

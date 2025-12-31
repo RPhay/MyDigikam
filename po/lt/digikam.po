@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -6632,7 +6632,7 @@ msgstr "Failus, esančius šiame sąraše, ketinama pašalinti."
 #, fuzzy, kde-format
 #| msgid "Apply Metadata Template"
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "Pritaikyti metaduomenų šabloną"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -6933,7 +6933,7 @@ msgstr "Automatiškai pasukti"
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "<p>Tai yra paveikslėlio filtrų efektų peržiūra."
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -34604,40 +34604,33 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Failas"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Kategorijos"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Įrankiai"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Aprašymas"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Authors"
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "Autoriai"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -65888,7 +65881,7 @@ msgstr "Geoolokacijos filtras"
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr "<p>Tai yra paveikslėlio filtrų efektų peržiūra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
@@ -70418,6 +70411,12 @@ msgstr "Albumo objektai"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Rikiuoti paveikslėlius"
+
+#, fuzzy
+#~| msgid "Authors"
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "Autoriai"
 
 #~ msgid "Show ima&ge dimensions"
 #~ msgstr "Rodyti paveikslėlių matmenis"

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -6330,7 +6330,7 @@ msgstr "रंग जगह"
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "फाइल प्रबंधक मं खोलव"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -6624,7 +6624,7 @@ msgstr "अपने अपन ब्रेकेट"
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "फाइल प्रबंधक मं खोलव"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -33158,38 +33158,32 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "फाइल (&F)"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "नाम"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "स्रेनी"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, fuzzy, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "औजार (&T)"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "वर्नन"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, fuzzy, kde-format
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "लेखक"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, fuzzy, kde-format
@@ -63149,7 +63143,7 @@ msgstr "हरियर फिल्टर"
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr "फोटू जब ले गे हे ओ तारीक ल प्रदर्सित करे बर ए विकल्प सेट करव."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
@@ -67398,6 +67392,11 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "फोटू छांटव (&S)"
+
+#, fuzzy
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "लेखक"
 
 #~ msgid "Show ima&ge dimensions"
 #~ msgstr "फोटू आयाम देखाव (&g)"

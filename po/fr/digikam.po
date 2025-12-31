@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-30 00:39+0000\n"
-"PO-Revision-Date: 2025-12-27 12:40+0100\n"
+"POT-Creation-Date: 2025-12-31 00:41+0000\n"
+"PO-Revision-Date: 2025-12-29 10:37+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -6583,9 +6583,11 @@ msgstr ""
 "d'un moteur d'apprentissage profond.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Apply Metadata Template"
 msgctxt "@title"
-msgid "Apply Metadata Template"
+msgid "Apply Template"
 msgstr "Appliquer un modèle de métadonnées"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
@@ -6872,9 +6874,11 @@ msgid "Auto-Rotate"
 msgstr "Faire pivoter automatiquement"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "AI tool to automatically rotate images"
 msgctxt "@info"
-msgid "AI tool to automatically rotate images"
+msgid "A tool to automatically rotate images"
 msgstr "Un outil avec IA pour faire pivoter automatiquement des images."
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
@@ -22715,16 +22719,13 @@ msgid "Screen %1"
 msgstr "Écran %1"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
-#| "time with the F2 key.</b>"
+#, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the Alt+P key.</b>"
 msgstr ""
-"<b>Remarque : cette boite de dialogue « Paramètres du diaporama » peut être "
-"ouverte à tout moment par un appui sur la la touche « F2 » </b>"
+"<b>Remarque : cette boite de dialogue « Configuration du diaporama » peut "
+"être ouverte à tout moment par le raccourci de touches « ALT » + « P ». </b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
 #, kde-format
@@ -34859,35 +34860,29 @@ msgctxt "@item"
 msgid "File Group"
 msgstr "Groupe du fichier"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:132
+#: core/libs/dplugins/setup/dpluginconfview.cpp:127
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Nom"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:133
+#: core/libs/dplugins/setup/dpluginconfview.cpp:128
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Catégories"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:129
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Outils"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:130
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Description"
-
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
-#, kde-format
-msgctxt "@title: Dplugin property"
-msgid "Authors"
-msgstr "Auteurs"
 
 #: core/libs/dplugins/setup/dpluginconfviewdimg.cpp:38
 #, kde-format
@@ -64830,7 +64825,7 @@ msgstr "Afficher les boutons de recouvrement de rotation"
 #| "open it in fullscreen mode."
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
-"geoloacted item and open the geolocation tab."
+"geolocated item and open the map tab."
 msgstr ""
 "Cochez cette option pour afficher le bouton de passage en mode plein écran "
 "sur la vignette de l'image."
@@ -65091,10 +65086,9 @@ msgstr ""
 "les animations"
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
-#, fuzzy, kde-format
-#| msgid "Show icons and text over preview"
+#, kde-format
 msgid "Show a text overlay over preview."
-msgstr "Afficher les icônes et le texte sur l'aperçu"
+msgstr "Afficher le texte en superposition sur l'aperçu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:328
 #, fuzzy, kde-format
@@ -69793,6 +69787,10 @@ msgstr "Éléments de l'album"
 #, kde-format
 msgid "Import Items"
 msgstr "Importer des éléments"
+
+#~ msgctxt "@title: Dplugin property"
+#~ msgid "Authors"
+#~ msgstr "Auteurs"
 
 #~ msgid "Show ima&ge dimensions"
 #~ msgstr "Afficher les dimensions de l'ima&ge"
