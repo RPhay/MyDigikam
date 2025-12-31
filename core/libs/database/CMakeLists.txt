@@ -222,6 +222,7 @@ endif()
 set(libdatabasemain_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/dbstatdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/dbsettingswidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/dbsettingswidget_mysql.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/dbmigrationdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/mysqlupgradebinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/mysqlserverbinary.cpp

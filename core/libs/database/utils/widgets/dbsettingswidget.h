@@ -48,6 +48,8 @@ public:
     explicit DatabaseSettingsWidget(QWidget* const parent = nullptr);
     ~DatabaseSettingsWidget() override;
 
+// --- Properties ----------------------------------------
+
 public:
 
     void setParametersFromSettings(const ApplicationSettings* const settings,
@@ -70,15 +72,14 @@ public:
      */
     bool checkDatabaseSettings();
 
+// --------------------------------------------------------
+
 private:
 
     void setupMainArea();
     void handleInternalServer(int index);
     void setDatabaseInputFields(int index);
     bool isNotEqualToThumbName(const QString& name);
-    bool checkMysqlServerConnection(QString& error);
-    bool checkMysqlServerConnectionConfig(QString& error);
-    bool checkMysqlServerDbNamesConfig(QString& error);
     bool checkDatabasePath();
 
 private Q_SLOTS:
@@ -87,8 +88,21 @@ private Q_SLOTS:
     void slotDatabasePathEditedDelayed();
     void slotDatabasePathEdited();
     void slotUpdateSqlInit();
+
+// --- Mysql ----------------------------------------------
+
+private:
+
+    bool checkMysqlServerConnection(QString& error);
+    bool checkMysqlServerConnectionConfig(QString& error);
+    bool checkMysqlServerDbNamesConfig(QString& error);
+
+private Q_SLOTS:
+
     void slotCheckMysqlServerConnection();
     void slotResetMysqlServerDBNames();
+
+// --------------------------------------------------------
 
 private:
 
