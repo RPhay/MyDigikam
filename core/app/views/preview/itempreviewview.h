@@ -96,8 +96,8 @@ protected:
 
 private Q_SLOTS:
 
-    void imageLoaded();
-    void imageLoadingFailed();
+    void slotImageLoaded();
+    void slotImageLoadingFailed();
 
     void slotAssignTag(int tagID);
     void slotRemoveTag(int tagID);
