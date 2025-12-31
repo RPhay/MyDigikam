@@ -18,12 +18,23 @@ namespace Digikam
 {
 
 DTextEditClearButton::DTextEditClearButton(QWidget* const parent)
-    : QToolButton(parent)
+    : QLabel(parent)
 {
-    setStyleSheet(QLatin1String("QToolButton { border: none; padding: 0px; }"));
-    QIcon icon = qApp->style()->standardIcon(QStyle::SP_LineEditClearButton);
+    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     setFocusPolicy(Qt::NoFocus);
-    setIcon(icon);
+    setContentsMargins(QMargins());
+    setScaledContents(false);
+    setMouseTracking(false);
+    QIcon ico = qApp->style()->standardIcon(QStyle::SP_LineEditClearButton);
+    int s     = qApp->style()->pixelMetric(QStyle::PM_SliderLength) -
+                qApp->style()->pixelMetric(QStyle::PM_DefaultFrameWidth);
+    setPixmap(ico.pixmap(QSize(s, s)));
+}
+
+void DTextEditClearButton::mousePressEvent(QMouseEvent* e)
+{
+    Q_EMIT clicked();
+    QLabel::mousePressEvent(e);
 }
 
 // -------------------------------------------------------------------------------
