@@ -383,9 +383,12 @@ parts:
       - pkg-config
       - portaudio19-dev
       - libglib2.0-dev
+      - libgps-dev
       - libpulse0
       - libmariadb-dev
       - libxkbcommon-dev
+      - libwlocate-dev
+      - libshp-dev
     build-snaps:
       - kde-qt6-core24-sdk/latest/beta
       - kf6-core24-sdk/latest/beta
@@ -397,6 +400,7 @@ parts:
       - libgomp1
       - libgphoto2-6t64
       - libgphoto2-port12t64
+      - libgps30t64
       - libheif1
       - libjpeg8
       - libjxl0.7
@@ -419,6 +423,8 @@ parts:
       - cups-client
       - libxkbcommon0
       - bash
+      - libwlocate0
+      - libshp4
     override-pull: |
         craftctl default
         patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
