@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "itempropertiestxtlabel.h"
 #include "dlayoutbox.h"
 #include "itempropertiestab.h"
@@ -371,7 +372,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
 
     if (itemInfo.ctime.isValid())
     {
-        d->labelFileDate->setAdjustedText(QLocale().toString(itemInfo.ctime, QLocale::ShortFormat));
+        d->labelFileDate->setAdjustedText(asShortDateTime(itemInfo.ctime));
     }
     else
     {
@@ -474,7 +475,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
 
     if (photoInfo.dateTime.isValid())
     {
-        str = QLocale().toString(photoInfo.dateTime, QLocale::ShortFormat);
+        str = asShortDateTime(photoInfo.dateTime);
         d->labelPhotoDateTime->setAdjustedText(str);
     }
     else

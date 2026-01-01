@@ -26,6 +26,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "ditemtooltip.h"
 #include "itempropertiestab.h"
 #include "showfotoiteminfo.h"
@@ -67,8 +68,7 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
 
         if (settings->getShowFileDate())
         {
-            QDateTime createdDate  = info.dtime;
-            str                    = QLocale().toString(createdDate, QLocale::ShortFormat);
+            str                    = asShortDateTime(info.dtime);
             tip                   += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
         }
 
@@ -169,9 +169,8 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
             {
                 if (info.ctime.isValid())
                 {
-                    QDateTime createdDate  = info.ctime;
-                    str                    = QLocale().toString(createdDate, QLocale::ShortFormat);
-                    tip                   += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
+                    str                     = asShortDateTime(info.ctime);
+                    tip                    += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
                 }
                 else
                 {

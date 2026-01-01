@@ -31,6 +31,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "albummanager.h"
 #include "collectionlocation.h"
 #include "collectionmanager.h"
@@ -86,8 +87,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
         if (settings->getToolTipsShowFileDate())
         {
-            QDateTime modifiedDate = commonInfo.fileModificationDate;
-            str                    = QLocale().toString(modifiedDate, QLocale::ShortFormat);
+            str                    = asShortDateTime(commonInfo.fileModificationDate);
             tip                   += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
         }
 
@@ -200,7 +200,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
             {
                 if (commonInfo.creationDate.isValid())
                 {
-                    str = QLocale().toString(commonInfo.creationDate, QLocale::ShortFormat);
+                    str = asShortDateTime(commonInfo.creationDate);
 
                     if (str.length() > cnt.maxStringLength)
                     {

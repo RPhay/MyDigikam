@@ -308,20 +308,20 @@ QDateTime asDateTimeLocal(const QDateTime& dt)
 
 QString asShortDateTime(const QDateTime& dt)
 {
-    static QString dateTimeFormat;
+    static QString s_dateTimeFormat;
 
-    if (dateTimeFormat.isEmpty())
+    if (s_dateTimeFormat.isEmpty())
     {
-        dateTimeFormat = QLocale().dateTimeFormat(QLocale::ShortFormat);
+        s_dateTimeFormat = QLocale().dateTimeFormat(QLocale::ShortFormat);
 
-        if (!dateTimeFormat.contains(QLatin1String("mm:ss")))
+        if (!s_dateTimeFormat.contains(QLatin1String("mm:ss")))
         {
-            dateTimeFormat.replace(QLatin1String("mm"),
-                                   QLatin1String("mm:ss"));
+            s_dateTimeFormat.replace(QLatin1String("mm"),
+                                     QLatin1String("mm:ss"));
         }
     }
 
-    return dt.toString(dateTimeFormat);
+    return dt.toString(s_dateTimeFormat);
 }
 
 void openOnlineDocumentation(const QString& section, const QString& chapter, const QString& reference)
