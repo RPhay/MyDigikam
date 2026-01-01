@@ -33,8 +33,9 @@
 
 // Local includes
 
-#include "drawdecoder.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
+#include "drawdecoder.h"
 #include "dimg.h"
 #include "dmetadata.h"
 #include "dfileoperations.h"
@@ -220,8 +221,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     // -- File system information -----------------------------------------
 
-    QDateTime modifiedDate = fileInfo.lastModified();
-    str = QLocale().toString(modifiedDate, QLocale::ShortFormat);
+    str = asShortDateTime(fileInfo.lastModified());
     m_propertiesTab->setFileModifiedDate(str);
 
     str = QString::fromUtf8("%1 (%2)").arg(ItemPropertiesTab::humanReadableBytesCount(fileInfo.size()))
@@ -292,7 +292,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     if (photoInfo.dateTime.isValid())
     {
-        str = QLocale().toString(photoInfo.dateTime, QLocale::ShortFormat);
+        str = asShortDateTime(photoInfo.dateTime);
         m_propertiesTab->setPhotoDateTime(str);
     }
     else

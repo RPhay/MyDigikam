@@ -29,11 +29,12 @@
 
 // Local includes
 
+#include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "thememanager.h"
 #include "itempropertiestab.h"
 #include "showfotoiteminfo.h"
 #include "colorlabelwidget.h"
-#include "digikam_debug.h"
 #include "thumbnailsize.h"
 #include "itemdelegateoverlay.h"
 

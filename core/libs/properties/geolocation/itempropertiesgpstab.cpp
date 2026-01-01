@@ -49,10 +49,11 @@
 
 // Local includes
 
+#include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "mapwidget.h"
 #include "itemmarkertiler.h"
 #include "dlayoutbox.h"
-#include "digikam_debug.h"
 #include "itemgpsmodelhelper.h"
 #include "dexpanderbox.h"
 #include "digikam_config.h"
@@ -414,7 +415,7 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
         d->gpsCopyBtn->setEnabled(true);
         d->latitude->setAdjustedText(QLocale().toString(coordinates.lat(), 'g', 7));
         d->longitude->setAdjustedText(QLocale().toString(coordinates.lon(), 'g', 7));
-        d->date->setAdjustedText(QLocale().toString(info.dateTime, QLocale::ShortFormat));
+        d->date->setAdjustedText(asShortDateTime(info.dateTime));
     }
     else
     {

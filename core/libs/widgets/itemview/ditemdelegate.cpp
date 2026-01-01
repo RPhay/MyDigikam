@@ -190,11 +190,6 @@ QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
     return pix;
 }
 
-QString DItemDelegate::dateToString(const QDateTime& datetime)
-{
-    return QLocale().toString(datetime, QLocale::ShortFormat);
-}
-
 QString DItemDelegate::squeezedTextCached(QPainter* const p, int width, const QString& text) const
 {
     QCache<QString, QString>* const cache = &const_cast<DItemDelegate*>(this)->d->squeezedTextCache;

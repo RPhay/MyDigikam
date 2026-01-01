@@ -309,6 +309,11 @@ DIGIKAM_EXPORT QDateTime asDateTimeUTC(const QDateTime& dt);
 DIGIKAM_EXPORT QDateTime asDateTimeLocal(const QDateTime& dt);
 
 /**
+ * This method returns QString as short QDateTime with seconds.
+ */
+DIGIKAM_EXPORT QString asShortDateTime(const QDateTime& dt);
+
+/**
  * Open online handbook at the section/chapter/reference page.
  *
  * if section and chapter and reference are empty, front page is open.  (https://en.wikipedia.org/wiki/Matrix_(protocol)#Bridges)

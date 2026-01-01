@@ -34,7 +34,6 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "itempropertiestab.h"
 #include "thememanager.h"
 #include "colorlabelwidget.h"
@@ -390,7 +389,7 @@ void ItemViewDelegate::drawCreationDate(QPainter* p, const QRect& dateRect, cons
     Q_D(const ItemViewDelegate);
 
     p->setFont(d->fontXtra);
-    QString str = dateToString(date);
+    QString str = asShortDateTime(date);
 /*
     str         = i18nc("date of image creation", "created: %1", str);
 */
@@ -402,7 +401,7 @@ void ItemViewDelegate::drawModificationDate(QPainter* p, const QRect& dateRect, 
     Q_D(const ItemViewDelegate);
 
     p->setFont(d->fontXtra);
-    QString str = dateToString(date);
+    QString str = asShortDateTime(date);
     str         = i18nc("date of last image modification", "Mod.: %1",str);
     p->drawText(dateRect, Qt::AlignCenter, str); //squeezedTextCached(p, dateRect.width(), str));
 }
