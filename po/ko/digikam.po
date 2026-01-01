@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-31 00:41+0000\n"
+"POT-Creation-Date: 2026-01-01 00:40+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1039,7 +1039,6 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:48
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -26945,7 +26944,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr "앨범에 접근할 때 물어볼 암호 힌트입니다(선택)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -29737,24 +29736,30 @@ msgstr ""
 msgid "Database Configuration"
 msgstr "RAW 그림"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:53
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
+#, fuzzy, kde-format
+#| msgid "Type: "
+msgid "Type: "
+msgstr "형식:"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:55
 #, kde-format
 msgid "SQLite"
 msgstr "SQLite"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:60
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Internal"
 msgid "Mysql Internal"
 msgstr "내부"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:65
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "MySQL interface"
 msgid "MySQL Server"
 msgstr "MySQL 인터페이스"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:70
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:72
 #, kde-format
 msgid ""
 "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend is "
@@ -29763,7 +29768,7 @@ msgid ""
 "items.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:79
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:81
 #, kde-format
 msgid ""
 "<p><b>MySQL Internal</b> backend is for local database storage with huge "
@@ -29771,7 +29776,7 @@ msgid ""
 "than 100K items.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:84
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:86
 #, kde-format
 msgid ""
 "<p><b>MySQL Server</b> backend is a more robust solution especially for "
@@ -29780,6 +29785,27 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
+#, fuzzy, kde-format
+#| msgid "Add information from the database"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Type</b>"
+msgstr "데이터베이스에서 정보 추가"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgid "#Sat: %1"
+msgctxt "@label:database path"
+msgid "Path: "
+msgstr "위성 개수: %1"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgid "Add information from the database"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Path</b>"
+msgstr "데이터베이스에서 정보 추가"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Set here the location where the database files will be stored on your "
@@ -29791,6 +29817,7 @@ msgstr ""
 #| "for thumbnails database.</p><p>Note: a remote file system such as NFS, "
 #| "cannot be used here. For performance reasons, it is also recommended not "
 #| "to use removable media.</p><p></p>"
+msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29800,7 +29827,7 @@ msgid ""
 "care to use a place hosted by fast hardware (eg. SSD or NVMe) with enough "
 "free space especially for thumbnails database.</p><p>Note: a remote file "
 "system such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use network storage media.</p><p></p>"
+"recommended not to use network storage media.</p>"
 msgstr ""
 "<p>데이터베이스 파일을 시스템에 저장할 위치를 설정하십시오. 모든 모음집 속"
 "성, 압축된 축소판, 얼굴 인식 메타데이터를 저장하는 데이터베이스가 각각 총 세 "
@@ -29810,20 +29837,26 @@ msgstr ""
 "</p><p>참고: NFS와 같은 원격 파일 시스템은 사용할 수 없습니다. 성능상의 이유"
 "로 이동식 미디어를 사용하지 않는 것이 좋습니다.</p><p></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:112
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, fuzzy, kde-format
 #| msgid "Add information from the database"
 msgid "Enable WAL mode for the databases"
 msgstr "데이터베이스에서 정보 추가"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
 "supported systems."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:116
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Get information about <b>WAL Mode</b>"
+msgstr ""
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
 msgid ""
 "Write-Ahead Log is a mode to use a roll-forward journal that records "
@@ -29834,7 +29867,7 @@ msgid ""
 "atomic and robust in extensive and critical use cases."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:130
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:169
 #, kde-format
 msgid ""
 "<p>Here you can configure locations where MySQL binary tools are located. "
@@ -29842,23 +29875,23 @@ msgid ""
 "installed on your computer.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:139
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:178
 #, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "MySQL 실행 파일"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid "Host Name:"
 msgstr "호스트 이름:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
 #, fuzzy, kde-format
 msgid "Set the host computer name"
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:224
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -29866,36 +29899,36 @@ msgid ""
 "name (or IP address) in case of remote computer."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:190
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
 "a>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
 #, fuzzy, kde-format
 msgid "Set the database connection options"
 msgstr "선택 반전"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
 "For advanced users only."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
 #, kde-format
 msgid "User:"
 msgstr "사용자:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, kde-format
 msgid "Set the database account name"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -29904,7 +29937,7 @@ msgid ""
 "MySQL server when database have been created."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:208
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -29912,12 +29945,12 @@ msgid ""
 "You can left this field empty to use an account set without password."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:253
 #, kde-format
 msgid "Host Port:"
 msgstr "호스트 포트:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:216
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -29926,48 +29959,48 @@ msgstr ""
 "호스트 컴퓨터 포트를 설정하십시오.\n"
 "일반적으로 MySQL 서버는 기본적으로 포트 번호 3306을 사용합니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
 #, kde-format
 msgid "Check Connection"
 msgstr "연결 확인"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
 "suitable."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:268
 #, kde-format
 msgid "Core Db Name:"
 msgstr "코어 DB 이름:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:270
 #, kde-format
 msgid "Set the core database name"
 msgstr "코어 데이터베이스 이름 설정"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:271
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
 "albums, items, and searches metadata."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:236
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:593
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:275
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:513
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "섬네일 DB 이름:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:279
 #, fuzzy, kde-format
 #| msgid "Set the thumbnails database name"
 msgid "Set the thumbnails database name or folder"
 msgstr "축소판 데이터베이스 이름 설정"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:280
 #, fuzzy, kde-format
 #| msgid ""
 #| "The thumbnails database is used by digiKam to host\n"
@@ -29986,17 +30019,17 @@ msgstr ""
 "모음집이 매우 크다면 많은 디스크 공간을\n"
 "빠르게 사용할 수도 있습니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, kde-format
 msgid "Face Db Name:"
 msgstr "얼굴 DB 이름:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid "Set the face database name"
 msgstr "얼굴 데이터베이스 이름 설정"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -30005,17 +30038,17 @@ msgid ""
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:295
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "유사성 DB 이름:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:297
 #, kde-format
 msgid "Set the similarity database name"
 msgstr "유사성 데이터베이스 이름 설정"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:298
 #, fuzzy, kde-format
 #| msgid ""
 #| "The similarity database is used by digiKam to host image Haar matrix data "
@@ -30027,27 +30060,27 @@ msgstr ""
 "유사성 데이터베이스는 digiKam에서 이미지 Haar 매트릭스 데이터를 저장하여 유사"
 "성 검색을 위해 사용합니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
 #, kde-format
 msgid "Default Settings"
 msgstr "기본 설정"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "데이터베이스 이름 설정을 기본값으로 초기화합니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:283
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:322
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "원격 서버 설정"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "데이터베이스 서버 지침"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -30057,7 +30090,7 @@ msgid ""
 "correct one).</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:341
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -30071,17 +30104,17 @@ msgid ""
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:365
 #, kde-format
 msgid "Requirements"
 msgstr "요구 사항"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:369
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "데이터베이스 서버 기술 세부 정보"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:332
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:371
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -30102,134 +30135,136 @@ msgid ""
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:358
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:397
 #, kde-format
 msgid "Documentation"
 msgstr "문서화"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:589
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:509
 #, fuzzy, kde-format
 #| msgid "Thumbs Db Name:"
 msgid "Thumbs Db Folder:"
 msgstr "축소판 DB 이름:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:608
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:863
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:35
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:40
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:302
 #, fuzzy, kde-format
 #| msgid "Database Connection Test"
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "데이터베이스 연결 테스트"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:36
 #, kde-format
 msgid "Database connection test successful."
 msgstr "데이터베이스 연결 테스트가 성공했습니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:41
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:50
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "서버 호스트 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:624
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:56
 #, kde-format
 msgid "The server user name is empty"
 msgstr "서버 사용자 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:67
 #, kde-format
 msgid "The core database name is empty"
 msgstr "코어 데이터베이스 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:73
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "섬네일 데이터베이스 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:79
 #, kde-format
 msgid "The face database name is empty"
 msgstr "얼굴 데이터베이스 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:653
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:85
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "유사성 데이터베이스 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:715
-#, kde-format
-msgid "This path was set as a command lineoption (--database-directory)."
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
+#, fuzzy, kde-format
+#| msgid "This path was set as a command lineoption (--database-directory)."
+msgid ""
+"<p>This path was set as a command lineoption (--database-directory).</p>"
 msgstr "이 경로는 명령줄 옵션(--database-directory)으로 설정되었습니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:854
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "RAW 그림"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:294
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
 "p><br>Please check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:303
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:883
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:322
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:892
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:331
 #, fuzzy, kde-format
 #| msgid "Create Database Folder?"
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "데이터베이스 폴더를 만드시겠습니까?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:332
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
 "b></p>Would you like digiKam to create it for you?"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:904
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:343
 #, fuzzy, kde-format
 #| msgid "Create Database Folder?"
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "데이터베이스 폴더를 만드시겠습니까?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:344
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:930
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:369
 #, fuzzy, kde-format
 #| msgid "Database connection test successful."
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "데이터베이스 연결 테스트가 성공했습니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:370
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -69117,17 +69152,17 @@ msgstr ""
 
 #: core/utilities/setup/setupdatabase.cpp:185
 #, kde-format
-msgctxt "@title:group"
-msgid "Updates"
-msgstr "업데이트"
-
-#: core/utilities/setup/setupdatabase.cpp:188
-#, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr ""
 
-#: core/utilities/setup/setupdatabase.cpp:190
+#: core/utilities/setup/setupdatabase.cpp:189
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Update File Hashes</b>"
+msgstr ""
+
+#: core/utilities/setup/setupdatabase.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -69139,11 +69174,11 @@ msgid ""
 "to 8.5.0."
 msgstr ""
 
-#: core/utilities/setup/setupdatabase.cpp:199
+#: core/utilities/setup/setupdatabase.cpp:210
 #, kde-format
-msgctxt "@info:tooltip"
-msgid "Get information about <b>Update File Hashes</b>"
-msgstr ""
+msgctxt "@title:group"
+msgid "Updates"
+msgstr "업데이트"
 
 #: core/utilities/setup/setupgeolocation.cpp:106
 #, fuzzy, kde-format
@@ -70553,11 +70588,6 @@ msgstr "최근 태그"
 #, fuzzy
 #~| msgid "#Sat: %1"
 #~ msgid "Path: %1\n"
-#~ msgstr "위성 개수: %1"
-
-#, fuzzy
-#~| msgid "#Sat: %1"
-#~ msgid "Path: %1"
 #~ msgstr "위성 개수: %1"
 
 #~ msgid "Caulier Gilles"

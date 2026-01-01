@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-31 00:41+0000\n"
-"PO-Revision-Date: 2025-12-30 06:31+0100\n"
+"POT-Creation-Date: 2026-01-01 00:40+0000\n"
+"PO-Revision-Date: 2025-12-31 04:04+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1038,7 +1038,6 @@ msgstr "%1 ( %2 )"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:48
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -6326,12 +6325,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Template"
-msgstr "მეტამონაცემების შაბლონის გადატარება"
+msgstr "შაბლონის გადატარება"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -6607,12 +6604,10 @@ msgid "Auto-Rotate"
 msgstr "ავტომატური მობრუნება"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "AI tool to automatically rotate images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically rotate images"
-msgstr "ხი-ის ხელსაწყო გამოსახულებების ავტომატურად შესაბრუნებლად"
+msgstr "ხელსაწყო გამოსახულებების ავტომატურად შესაბრუნებლად"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
 #, kde-kuit-format
@@ -8030,6 +8025,8 @@ msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
 "you want to apply color balance yourself."
 msgstr ""
+"ჩართეთ ეს ლენტის პროფილზე ჩაშენებული ფერის ბალანსის გადასატარებლად. "
+"გამორთეთ, თუ ფერის ბალანსს თვითონ გადაატარებთ."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
@@ -13208,6 +13205,8 @@ msgid ""
 "Set here equivalent focal length assuming a 35mm film camera, in mm. A value "
 "of 0 means the focal length is unknown."
 msgstr ""
+"დააყენეთ აქ ეკვივალენტური ფოკალური სიგრძე 35მმ ლენტის კამერის "
+"გათვალისწინებით, მმ-ში. მნიშვნელობა 0 ნიშნავს, რომ ფოკალური სიგრძე უცნობია."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:156
 #, kde-format
@@ -16677,6 +16676,8 @@ msgid ""
 "This tool fuses bracketed images with different exposure to make pseudo HDR "
 "Image"
 msgstr ""
+"ეს ხელსაწყო ახდენს სხვადასხვა ექსპოზიციის მქონე ფრჩხილებიანი გამოსახულებების "
+"შერწყმას ფსევდო-HDR გამოსახულების შესაქმნელად"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
@@ -25307,7 +25308,7 @@ msgstr ""
 "(არასავალდებულო)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -28056,22 +28057,29 @@ msgstr "მიმდინარეობის ნაბიჯი (%1)"
 msgid "Database Configuration"
 msgstr "ბაზის მორგება"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:53
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Type: "
+msgid "Type: "
+msgstr "ტიპი: "
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:55
 #, kde-format
 msgid "SQLite"
 msgstr "SQLite"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:60
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:62
 #, kde-format
 msgid "Mysql Internal"
 msgstr "Mysql შიდა"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:65
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:67
 #, kde-format
 msgid "MySQL Server"
 msgstr "MySQL სერვერი"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:70
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:72
 #, kde-format
 msgid ""
 "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend is "
@@ -28080,7 +28088,7 @@ msgid ""
 "items.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:79
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:81
 #, kde-format
 msgid ""
 "<p><b>MySQL Internal</b> backend is for local database storage with huge "
@@ -28088,7 +28096,7 @@ msgid ""
 "than 100K items.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:84
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:86
 #, kde-format
 msgid ""
 "<p><b>MySQL Server</b> backend is a more robust solution especially for "
@@ -28097,7 +28105,32 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Type</b>"
+msgstr "ინფორმაციის მიღება <b>განახლების ფაილის ჰეშების შესახებ</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@label: bookmark properties"
+#| msgid "&Path:"
+msgctxt "@label:database path"
+msgid "Path: "
+msgstr "&ბილიკი:"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Path</b>"
+msgstr "ინფორმაციის მიღება <b>განახლების ფაილის ჰეშების შესახებ</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -28107,15 +28140,15 @@ msgid ""
 "care to use a place hosted by fast hardware (eg. SSD or NVMe) with enough "
 "free space especially for thumbnails database.</p><p>Note: a remote file "
 "system such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use network storage media.</p><p></p>"
+"recommended not to use network storage media.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:112
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
 msgid "Enable WAL mode for the databases"
 msgstr "WAL რეჟიმის ჩართვა მონაცემთა ბაზისთვის"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
@@ -28124,7 +28157,15 @@ msgstr ""
 "რეჟიმი WAL (წინასწარჩაწერადი ჟურნალი) საგრძნობლად სწრაფია სცენარების "
 "უმრავლესობაში მხარდაჭერილ სისტემებზე."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:116
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>WAL Mode</b>"
+msgstr "ინფორმაციის მიღება <b>განახლების ფაილის ჰეშების შესახებ</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
 msgid ""
 "Write-Ahead Log is a mode to use a roll-forward journal that records "
@@ -28135,7 +28176,7 @@ msgid ""
 "atomic and robust in extensive and critical use cases."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:130
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:169
 #, kde-format
 msgid ""
 "<p>Here you can configure locations where MySQL binary tools are located. "
@@ -28143,23 +28184,23 @@ msgid ""
 "installed on your computer.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:139
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:178
 #, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "MySQL -ის გამშვები ფაილები"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid "Host Name:"
 msgstr "ჰოსტის სახელი:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
 #, kde-format
 msgid "Set the host computer name"
 msgstr "ჰოსტის სახელი"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:224
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -28167,7 +28208,7 @@ msgid ""
 "name (or IP address) in case of remote computer."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:190
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
@@ -28176,12 +28217,12 @@ msgstr ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">დაკავშირების "
 "პარამეტრები:</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
 #, kde-format
 msgid "Set the database connection options"
 msgstr "დააყენეთ მონაცემთა ბაზასთან დაკავშირების პარამეტრები"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -28190,17 +28231,17 @@ msgstr ""
 "დააყენეთ MySQL სერვერთან დაკავშირების პარამეტრები.\n"
 "მხოლოდ გამოცდილი მომხმარებლებისთვის."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
 #, kde-format
 msgid "User:"
 msgstr "მომხმარებელი:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, kde-format
 msgid "Set the database account name"
 msgstr "დააყენეთ მონაცემთა ბაზის ანგარიშის სახელი"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -28213,7 +28254,7 @@ msgstr ""
 "ეს ანგარიში ხელმისაწვდომი უნდა იყოს დაშორებულ MySQL სერვერზე,\n"
 "როცა მონაცემთა ბაზა შეიქმნა."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:208
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -28224,12 +28265,12 @@ msgstr ""
 "digiKam სერვერთან დასაკავშირებლად გამოიყენებს.\n"
 "თუ ანგარიშს პაროლი არ აქვს, ეს ველი, შეგიძლიათ, ცარიელი დატოვოთ."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:253
 #, kde-format
 msgid "Host Port:"
 msgstr "ჰოსტის პორტი:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:216
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -28238,12 +28279,12 @@ msgstr ""
 "აირჩიეთ ჰოსტი კომპიუტერის პორტი.\n"
 "ჩვეულებრივ, MySQL სერვერი ნაგულისხმევად 3306-ე პორტს იყენებს"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
 #, kde-format
 msgid "Check Connection"
 msgstr "შეერთების შემოწმება"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
@@ -28252,17 +28293,17 @@ msgstr ""
 "ძირითადი მონაცემთა ბაზის კავშირის დამყარება დასარწმუნებლად, რომ შეყვანილი "
 "MySQL-ის სერვერის პარამეტრები შესაფერისია."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:268
 #, kde-format
 msgid "Core Db Name:"
 msgstr "ბირთვი ბაზის სახელი:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:270
 #, kde-format
 msgid "Set the core database name"
 msgstr "დააყენეთ ბირთვი მონაცემთა ბაზის სახელი"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:271
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -28271,18 +28312,18 @@ msgstr ""
 "ძირითადი მონაცემთა ბაზა ძირითადი digiKam-ის კონტეინერია\n"
 "ალბომების, ელემენტების და ძებნების მეტამონაცემების შესანახად."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:236
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:593
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:275
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:513
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "მინიატურების ბაზის სახელი:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:279
 #, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "დააყენეთ მინიატურების მონაცემთა ბაზის სახელი ანს აქაღალდე"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:280
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -28292,17 +28333,17 @@ msgid ""
 "Choose a local folder to use a SQLite database."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, kde-format
 msgid "Face Db Name:"
 msgstr "სახეების ბაზის სახელი:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid "Set the face database name"
 msgstr "დააყენეთ სახეების მონაცემთა ბაზის სახელი"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -28311,46 +28352,46 @@ msgid ""
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:295
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "მსგავსების ბაზის სახელი:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:297
 #, kde-format
 msgid "Set the similarity database name"
 msgstr "დააყენეთ მსგავსების მონაცემთა ბაზის სახელი"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:298
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
 "image Haar matrix data for the similarity search."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
 #, kde-format
 msgid "Default Settings"
 msgstr "ნაგულისხმევი პარამეტრები"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr ""
 "მონაცემთა ბაზის სახელების პარამეტრების ჩამოყრა საერთო ნაგულისხმევ "
 "მნიშვნელობებზე."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:283
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:322
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "დაშორებული სერვერის პარამეტრები"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "ბაზის სერვერის ინსტრუქციები"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -28360,7 +28401,7 @@ msgid ""
 "correct one).</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:341
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -28374,17 +28415,17 @@ msgid ""
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:365
 #, kde-format
 msgid "Requirements"
 msgstr "მოთხოვნები"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:369
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "მონაცემთა ბაზის სერვერის ტექნიკური დეტალები"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:332
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:371
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -28405,132 +28446,134 @@ msgid ""
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:358
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:397
 #, kde-format
 msgid "Documentation"
 msgstr "დოკუმენტაცია"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:589
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:509
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "მინიატურების ბაზის საქაღალდე:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:608
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:863
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:35
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:40
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:302
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "ბაზასთან შეერთების შემოწმება"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:36
 #, kde-format
 msgid "Database connection test successful."
 msgstr "ბაზასთან სატესტო შეერთება წარმატებით დასრულდა."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:41
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 "მონაცემთა ბაზასთან დაკავშირების შემოწმება წარუმატებელია. <p>შეცდომაა: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:50
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "სერვერის ჰოსტის სახელი ცარიელია"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:624
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:56
 #, kde-format
 msgid "The server user name is empty"
 msgstr "სერვერის მომხმარებლის სახელი ცარიელია"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:67
 #, kde-format
 msgid "The core database name is empty"
 msgstr "ბირთვი მონაცემთა ბაზის სახელი ცარიელია"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:73
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "მინიატურების მონაცემთა ბაზის სახელი ცარიელია"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:79
 #, kde-format
 msgid "The face database name is empty"
 msgstr "სახეების მონაცემთა ბაზის სახელი ცარიელია"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:653
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:85
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "მსგავსების მონაცემთა ბაზის სახელი ცარიელია"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:715
-#, kde-format
-msgid "This path was set as a command lineoption (--database-directory)."
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
+#, fuzzy, kde-format
+#| msgid "This path was set as a command lineoption (--database-directory)."
+msgid ""
+"<p>This path was set as a command lineoption (--database-directory).</p>"
 msgstr ""
 "ეს ბილიკი დაყენებული იყო ბრძანების სტრიქონის პარამეტრით (--database-"
 "directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:854
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "ბაზის მორგება"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:294
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
 "p><br>Please check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:303
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:883
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:322
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:892
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:331
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "შევქმნა ბაზის საქაღალდე?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:332
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
 "b></p>Would you like digiKam to create it for you?"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:904
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:343
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "ბაზის საქაღალდის შექმნის შეცდომა"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:344
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:930
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "ბაზაში ჩაწერის უფლების გარეშე"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:370
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -61454,10 +61497,7 @@ msgid "Show geolocation overlay button"
 msgstr "გეოლოკაციის განლაგების ღილაკის ჩვენება"
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the thumbnail to identify "
-#| "geoloacted item and open the geolocation tab."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
@@ -64905,17 +64945,17 @@ msgstr ""
 
 #: core/utilities/setup/setupdatabase.cpp:185
 #, kde-format
-msgctxt "@title:group"
-msgid "Updates"
-msgstr "განახლებები"
-
-#: core/utilities/setup/setupdatabase.cpp:188
-#, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "ფაილის ჰეშების გამოყენება"
 
-#: core/utilities/setup/setupdatabase.cpp:190
+#: core/utilities/setup/setupdatabase.cpp:189
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Update File Hashes</b>"
+msgstr "ინფორმაციის მიღება <b>განახლების ფაილის ჰეშების შესახებ</b>"
+
+#: core/utilities/setup/setupdatabase.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -64927,11 +64967,11 @@ msgid ""
 "to 8.5.0."
 msgstr ""
 
-#: core/utilities/setup/setupdatabase.cpp:199
+#: core/utilities/setup/setupdatabase.cpp:210
 #, kde-format
-msgctxt "@info:tooltip"
-msgid "Get information about <b>Update File Hashes</b>"
-msgstr "ინფორმაციის მიღება <b>განახლების ფაილის ჰეშების შესახებ</b>"
+msgctxt "@title:group"
+msgid "Updates"
+msgstr "განახლებები"
 
 #: core/utilities/setup/setupgeolocation.cpp:106
 #, kde-format
@@ -66137,12 +66177,6 @@ msgstr "ელემენტების შემოტანა"
 #~| msgid "Rating: %1\n"
 #~ msgid "Path: %1\n"
 #~ msgstr "შეფასება: %1\n"
-
-#, fuzzy
-#~| msgctxt "@label: bookmark properties"
-#~| msgid "&Path:"
-#~ msgid "Path: %1"
-#~ msgstr "&ბილიკი:"
 
 #~ msgid "Caulier Gilles"
 #~ msgstr "Caulier Gilles"
