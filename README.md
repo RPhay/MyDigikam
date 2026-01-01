@@ -7,9 +7,9 @@
 
 If you are reading this on Github, be aware that this is an out-dated mirror. Our real code repository [is located here](https://invent.kde.org/graphics/digikam)
 
-Developers, if you want to contribute, see the online [API documentation here](https://files.kde.org/digikam/api/)
+Developers, if you want to contribute, see the project [Contribute Page](https://www.digikam.org/contribute/)
 
-NOTE: this project support Qt5 and Qt6 frameworks.
+NOTE: this C++ project compile with **CMake** and support **Qt5** and **Qt6** frameworks.
 
 # About
 
@@ -70,14 +70,7 @@ See [AUTHORS](AUTHORS) file for details.
 
 # Contact
 
-If you have questions, comments, and suggestions, write an email to:
-
-digikam-users@kde.org
-
-IRC channel from irc.libera.chat server: #digikam (or use [web chat](https://web.libera.chat/))
-
-Also you can ask to the forum:
-https://discuss.kde.org/tag/digikam
+If you have questions, comments, and suggestions see the project [Support Page](https://www.digikam.org/support/).
 
 # Bug reports
 
@@ -87,16 +80,15 @@ A mail will automatically be sent to the digiKam development mailing list.
 There is no need to contact directly the digiKam mailing list for a bug report
 or a devel wish.
 
-The current bugs and devel wishes reported to the bugzilla servers can be seen at this url:
+The intructions to report bugs or wishes to the digiKam project can be seen at [this url](https://www.digikam.org/contribute/#reporting-bugs-and-submitting-feature-requests):
 
-* [digiKam](https://bugs.kde.org/buglist.cgi?product=digikam&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED)
+See also the extra issue entries for the shared libraries used by digiKam:
 
-Extra Bugzilla servers for shared libs used by digiKam :
-
-* [LibRaw library](https://github.com/LibRaw/LibRaw/issues)
-* [Lensfun library](https://github.com/lensfun/lensfun/issues)
-* [GPhoto2 library](http://gphoto.org/bugs)
-* [Exiv2 library](https://github.com/Exiv2/exiv2/issues)
+* Raw file formats support: [LibRaw library](https://github.com/LibRaw/LibRaw/issues)
+* Lens database support: [Lensfun library](https://github.com/lensfun/lensfun/issues)
+* Camera drivers: [GPhoto2 library](http://gphoto.org/bugs)
+* Files metadata backend: [Exiv2 library](https://github.com/Exiv2/exiv2/issues)
+* Heif file format support: [LibHeif library](https://github.com/strukturag/libheif/issues)
 
 # Compilation and Installation
 
