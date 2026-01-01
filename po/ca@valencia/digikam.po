@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-31 00:41+0000\n"
-"PO-Revision-Date: 2025-12-30 10:05+0100\n"
+"POT-Creation-Date: 2026-01-01 00:40+0000\n"
+"PO-Revision-Date: 2025-12-31 08:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1045,7 +1045,6 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:48
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -6462,12 +6461,10 @@ msgstr ""
 "models d'IA d'aprenentatge profund.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Template"
-msgstr "Aplica una plantilla de metadades"
+msgstr "Aplica una plantilla"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -6751,12 +6748,10 @@ msgid "Auto-Rotate"
 msgstr "Gir automàtic"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "AI tool to automatically rotate images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically rotate images"
-msgstr "Una eina d'IA per a girar automàticament les imatges"
+msgstr "Una eina per a girar automàticament les imatges"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
 #, kde-kuit-format
@@ -26375,7 +26370,7 @@ msgstr ""
 "contrasenya (opcional)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -29344,22 +29339,29 @@ msgstr "Evolució del pas (%1)"
 msgid "Database Configuration"
 msgstr "Configureu la base de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:53
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Type: "
+msgid "Type: "
+msgstr "Tipus: "
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:55
 #, kde-format
 msgid "SQLite"
 msgstr "SQLite"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:60
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:62
 #, kde-format
 msgid "Mysql Internal"
 msgstr "MySQL intern"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:65
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:67
 #, kde-format
 msgid "MySQL Server"
 msgstr "Servidor MySQL"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:70
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:72
 #, kde-format
 msgid ""
 "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend is "
@@ -29372,7 +29374,7 @@ msgstr ""
 "mitjanes de col·leccions. És el dorsal predeterminat i recomanat per a "
 "col·leccions amb menys de 100.000 elements.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:79
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:81
 #, kde-format
 msgid ""
 "<p><b>MySQL Internal</b> backend is for local database storage with huge "
@@ -29383,7 +29385,7 @@ msgstr ""
 "local amb mides grans de col·leccions. Este dorsal està recomanat per a "
 "col·leccions locals amb més de 100.000 elements.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:84
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:86
 #, kde-format
 msgid ""
 "<p><b>MySQL Server</b> backend is a more robust solution especially for "
@@ -29396,7 +29398,43 @@ msgstr ""
 "de 100.000 elements.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Type</b>"
+msgstr "Obtín informació quant a <b>Actualitza els resums dels fitxers</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@label: bookmark properties"
+#| msgid "&Path:"
+msgctxt "@label:database path"
+msgid "Path: "
+msgstr "&Camí:"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Path</b>"
+msgstr "Obtín informació quant a <b>Actualitza els resums dels fitxers</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set here the location where the database files will be stored on your "
+#| "system. There are four databases: one for all collections properties, one "
+#| "to store compressed thumbnails, one to store faces recognition metadata, "
+#| "and one to store similarity fingerprints.<br>Write access is required to "
+#| "be able to edit image properties.</p><p>Databases are digiKam core "
+#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
+#| "NVMe) with enough free space especially for thumbnails database.</"
+#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
+#| "performance reasons, it is also recommended not to use network storage "
+#| "media.</p><p></p>"
+msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29406,7 +29444,7 @@ msgid ""
 "care to use a place hosted by fast hardware (eg. SSD or NVMe) with enough "
 "free space especially for thumbnails database.</p><p>Note: a remote file "
 "system such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use network storage media.</p><p></p>"
+"recommended not to use network storage media.</p>"
 msgstr ""
 "<p>Establiu ací la ubicació del sistema on s'emmagatzemaran els fitxers de "
 "la base de dades. Hi ha quatre bases de dades: una per a les propietats de "
@@ -29420,12 +29458,12 @@ msgstr ""
 "utilitzar sistemes de fitxers remots, com el NFS. Per motius de rendiment, "
 "també es recomana no utilitzar mitjans d'emmagatzematge de xarxa.</p><p></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:112
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
 msgid "Enable WAL mode for the databases"
 msgstr "Activa el mode WAL per a les bases de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
@@ -29435,7 +29473,15 @@ msgstr ""
 "significativament més ràpid en la majoria dels escenaris en els sistemes "
 "admesos."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:116
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>WAL Mode</b>"
+msgstr "Obtín informació quant a <b>Actualitza els resums dels fitxers</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
 msgid ""
 "Write-Ahead Log is a mode to use a roll-forward journal that records "
@@ -29453,7 +29499,7 @@ msgstr ""
 "els canvis s'escriguen a la base de dades. Açò fa que les sol·licituds a la "
 "base de dades siguen atòmiques i robustes en casos d'ús extensiu i crítica."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:130
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:169
 #, kde-format
 msgid ""
 "<p>Here you can configure locations where MySQL binary tools are located. "
@@ -29464,23 +29510,23 @@ msgstr ""
 "MySQL. digiKam intentarà trobar estos executables automàticament si ja estan "
 "instal·lats en l'ordinador.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:139
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:178
 #, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "Executables de MySQL"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid "Host Name:"
 msgstr "Nom de l'amfitrió:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
 #, kde-format
 msgid "Set the host computer name"
 msgstr "Establiu el nom de l'ordinador amfitrió"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:224
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -29491,7 +29537,7 @@ msgstr ""
 "Pot ser «localhost» per a un servidor local o el nom de l'ordinador de xarxa "
 "(o l'adreça IP) en cas d'un ordinador remot."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:190
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
@@ -29500,12 +29546,12 @@ msgstr ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Opcions de "
 "connexió:</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
 #, kde-format
 msgid "Set the database connection options"
 msgstr "Establiu les opcions de connexió amb la base de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -29514,17 +29560,17 @@ msgstr ""
 "Establix les opcions de connexió del servidor de MySQL.\n"
 "Només per a usuaris avançats."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
 #, kde-format
 msgid "User:"
 msgstr "Usuari:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, kde-format
 msgid "Set the database account name"
 msgstr "Establiu el nom del compte de la base de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -29537,7 +29583,7 @@ msgstr ""
 "Cal que este compte estiga disponible en el servidor\n"
 "de MySQL remot quan es cree la base de dades."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:208
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -29548,12 +29594,12 @@ msgstr ""
 "digiKam per a connectar-se amb el servidor.\n"
 "Es pot deixar este camp buit per a utilitzar un compte sense contrasenya."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:253
 #, kde-format
 msgid "Host Port:"
 msgstr "Port de l'amfitrió:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:216
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -29562,12 +29608,12 @@ msgstr ""
 "Establix el port de l'ordinador amfitrió.\n"
 "Normalment, el servidor de MySQL utilitza el port predeterminat número 3306"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
 #, kde-format
 msgid "Check Connection"
 msgstr "Comprova la connexió"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
@@ -29576,17 +29622,17 @@ msgstr ""
 "Porta a terme una connexió bàsica amb la base de dades per a provar si la "
 "configuració actual del servidor MySQL és adequada."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:268
 #, kde-format
 msgid "Core Db Name:"
 msgstr "Nom de la BD del nucli:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:270
 #, kde-format
 msgid "Set the core database name"
 msgstr "Establiu el nom de la base de dades del nucli"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:271
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -29595,18 +29641,18 @@ msgstr ""
 "La base de dades del nucli és el contenidor principal de digiKam utilitzat "
 "per a emmagatzemar àlbums, elements, i metadades de busques."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:236
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:593
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:275
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:513
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Nom de la BD de miniatures:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:279
 #, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "Establiu el nom de la base de dades o carpeta de les miniatures"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:280
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -29621,17 +29667,17 @@ msgstr ""
 "hi ha col·leccions molt grans.\n"
 "Trieu una carpeta local per a emprar una base de dades SQLite."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, kde-format
 msgid "Face Db Name:"
 msgstr "Nom de la BD de cares:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid "Set the face database name"
 msgstr "Establiu el nom de la base de dades de cares"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -29644,17 +29690,17 @@ msgstr ""
 "Açò pot utilitzar ràpidament molt espai, especialment si hi ha moltes "
 "imatges amb cares de persones detectades i etiquetades."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:295
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "Nom de BD de similitud:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:297
 #, kde-format
 msgid "Set the similarity database name"
 msgstr "Establiu el nom de la base de dades de similitud"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:298
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
@@ -29664,29 +29710,29 @@ msgstr ""
 "allotjar les dades de les matrius Haar de les imatges\n"
 "per a la busca de similitud."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
 #, kde-format
 msgid "Default Settings"
 msgstr "Configuració predeterminada"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr ""
 "Restablix la configuració dels noms de les bases de dades als valors "
 "predeterminats habituals."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:283
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:322
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "Configureu el servidor remot"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "Instruccions del servidor de bases de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -29701,7 +29747,7 @@ msgstr ""
 "utilitzar les ordres SQL següents (després de substituir la "
 "<b><i>contrasenya</i></b> per la correcta).</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:341
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -29725,18 +29771,18 @@ msgstr ""
 "enorme, haureu d'iniciar el servidor MySQL amb «mysql --"
 "max_allowed_packet=128M» O canvieu la configuració a my.ini o ~/.my.cnf</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:365
 #, kde-format
 msgid "Requirements"
 msgstr "Requisits"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:369
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Detalls tècnics del servidor de bases de dades"
 
 # skip-rule: kct-tab
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:332
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:371
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29777,80 +29823,82 @@ msgstr ""
 "bases de dades en el servidor remot. Reviseu la pestanya <b>Requirements</b> "
 "pels detalls.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:358
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:397
 #, kde-format
 msgid "Documentation"
 msgstr "Documentació"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:589
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:509
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Nom de la carpeta de BD de miniatures:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:608
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:863
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:35
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:40
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:302
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Prova de connexió amb la base de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:36
 #, kde-format
 msgid "Database connection test successful."
 msgstr "La prova de connexió amb la base de dades ha sigut correcta."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:41
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 "La prova de connexió amb la base de dades no ha sigut correcta. <p>L'error "
 "és: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:50
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "El nom d'amfitrió del servidor està buit"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:624
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:56
 #, kde-format
 msgid "The server user name is empty"
 msgstr "El nom d'usuari del servidor està buit"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:67
 #, kde-format
 msgid "The core database name is empty"
 msgstr "El nom de la base de dades del nucli està buit"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:73
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "El nom de la base de dades de miniatures està buit"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:79
 #, kde-format
 msgid "The face database name is empty"
 msgstr "El nom de la base de dades de cares està buit"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:653
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:85
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "El nom de la base de dades de similitud està buit"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:715
-#, kde-format
-msgid "This path was set as a command lineoption (--database-directory)."
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
+#, fuzzy, kde-format
+#| msgid "This path was set as a command lineoption (--database-directory)."
+msgid ""
+"<p>This path was set as a command lineoption (--database-directory).</p>"
 msgstr ""
 "Este camí s'ha establit com a opció de la línia d'ordres (--database-"
 "directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:854
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Configureu la base de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:294
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
@@ -29859,7 +29907,7 @@ msgstr ""
 "La configuració dels noms de les bases de dades no és vàlida. L'error és "
 "<br><p>%1</p><br>Comproveu la configuració."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:303
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
@@ -29868,7 +29916,7 @@ msgstr ""
 "La prova de la connexió de la base de dades ha fallat amb l'error<br><p>%1</"
 "p><br>Comproveu la configuració."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:883
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:322
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -29877,13 +29925,13 @@ msgstr ""
 "Heu de seleccionar una carpeta perquè digiKam guarde informació i metadades "
 "en un fitxer de base de dades."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:892
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:331
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Voleu crear la carpeta base de dades?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:332
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29892,13 +29940,13 @@ msgstr ""
 "<p>La carpeta on allotjar el fitxer de la base de dades no existix:</p><p><b>"
 "%1</b></p>Voleu que la cree digiKam?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:904
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:343
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "No s'ha pogut crear la carpeta de la base de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:344
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
@@ -29907,13 +29955,13 @@ msgstr ""
 "<p>digiKam no ha pogut crear la carpeta per a allotjar el fitxer de la base "
 "de dades.<br>Trieu una ubicació diferent.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:930
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "No hi ha accés d'escriptura a la base de dades"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:370
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -64300,17 +64348,14 @@ msgid "Show geolocation overlay button"
 msgstr "Mostra el botó de superposició de la geolocalització"
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the thumbnail to identify "
-#| "geoloacted item and open the geolocation tab."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
 msgstr ""
 "Establiu esta opció per a mostrar un botó de superposició damunt de la "
 "miniatura per a identificar l'element geolocalitzat i obrir la pestanya de "
-"geolocalització."
+"mapa."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -68224,17 +68269,17 @@ msgstr ""
 
 #: core/utilities/setup/setupdatabase.cpp:185
 #, kde-format
-msgctxt "@title:group"
-msgid "Updates"
-msgstr "Actualitzacions"
-
-#: core/utilities/setup/setupdatabase.cpp:188
-#, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "Actualitza els resums dels fitxers"
 
-#: core/utilities/setup/setupdatabase.cpp:190
+#: core/utilities/setup/setupdatabase.cpp:189
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Update File Hashes</b>"
+msgstr "Obtín informació quant a <b>Actualitza els resums dels fitxers</b>"
+
+#: core/utilities/setup/setupdatabase.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -68252,11 +68297,11 @@ msgstr ""
 "Després de l'actualització no podreu utilitzar la base de dades amb una "
 "versió de digiKam anterior a la 8.5.0."
 
-#: core/utilities/setup/setupdatabase.cpp:199
+#: core/utilities/setup/setupdatabase.cpp:210
 #, kde-format
-msgctxt "@info:tooltip"
-msgid "Get information about <b>Update File Hashes</b>"
-msgstr "Obtín informació quant a <b>Actualitza els resums dels fitxers</b>"
+msgctxt "@title:group"
+msgid "Updates"
+msgstr "Actualitzacions"
 
 #: core/utilities/setup/setupgeolocation.cpp:106
 #, kde-format
@@ -69163,7 +69208,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@title: Dplugin property"
-#~ msgid "Authors"
-#~ msgstr "Autoria"

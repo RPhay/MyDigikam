@@ -55,7 +55,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-31 00:41+0000\n"
+"POT-Creation-Date: 2026-01-01 00:40+0000\n"
 "PO-Revision-Date: 2025-11-26 10:55+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1125,7 +1125,6 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:48
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -26502,7 +26501,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr "Выводить подсказку о пароле при запросе пароля (необязательно)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -29442,22 +29441,29 @@ msgstr "Шаг прогресса (%1)"
 msgid "Database Configuration"
 msgstr "Параметры базы данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:53
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Type: "
+msgid "Type: "
+msgstr "Тип: "
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:55
 #, kde-format
 msgid "SQLite"
 msgstr "SQLite"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:60
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:62
 #, kde-format
 msgid "Mysql Internal"
 msgstr "Встроенная Mysql"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:65
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:67
 #, kde-format
 msgid "MySQL Server"
 msgstr "Сервер MySQL"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:70
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:72
 #, kde-format
 msgid ""
 "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend is "
@@ -29470,7 +29476,7 @@ msgstr ""
 "среднего размера. Это значение по умолчанию и рекомендуется для коллекций, "
 "состоящих из менее чем 100 000 изображений.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:79
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:81
 #, kde-format
 msgid ""
 "<p><b>MySQL Internal</b> backend is for local database storage with huge "
@@ -29481,7 +29487,7 @@ msgstr ""
 "хранения локальной базы данных коллекций большого размера. Его рекомендуется "
 "использовать для коллекций, состоящих из более чем 100 000 изображений.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:84
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:86
 #, kde-format
 msgid ""
 "<p><b>MySQL Server</b> backend is a more robust solution especially for "
@@ -29494,7 +29500,42 @@ msgstr ""
 "размера (более 100 000 изображений).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Type</b>"
+msgstr "Получить информацию об <b>Обновлении хеша файла</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgid "Path: %1"
+msgctxt "@label:database path"
+msgid "Path: "
+msgstr "Путь: %1"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Path</b>"
+msgstr "Получить информацию об <b>Обновлении хеша файла</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set here the location where the database files will be stored on your "
+#| "system. There are four databases: one for all collections properties, one "
+#| "to store compressed thumbnails, one to store faces recognition metadata, "
+#| "and one to store similarity fingerprints.<br>Write access is required to "
+#| "be able to edit image properties.</p><p>Databases are digiKam core "
+#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
+#| "NVMe) with enough free space especially for thumbnails database.</"
+#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
+#| "performance reasons, it is also recommended not to use network storage "
+#| "media.</p><p></p>"
+msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29504,7 +29545,7 @@ msgid ""
 "care to use a place hosted by fast hardware (eg. SSD or NVMe) with enough "
 "free space especially for thumbnails database.</p><p>Note: a remote file "
 "system such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use network storage media.</p><p></p>"
+"recommended not to use network storage media.</p>"
 msgstr ""
 "<p>Укажите каталог для размещения файлов базы данных. Приложение использует "
 "четыре базы данных: основную базу данных для хранения свойств изображений, "
@@ -29519,12 +29560,12 @@ msgstr ""
 "таких как NFS, недопустимо. По причинам производительности также не "
 "рекомендуется использовать съёмные носители.</p> <p></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:112
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
 msgid "Enable WAL mode for the databases"
 msgstr "Включить режим WAL для баз данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
@@ -29533,7 +29574,15 @@ msgstr ""
 "Режим WAL (Write-Ahead Log) намного быстрее в больших сценариях на "
 "поддерживаемых системах."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:116
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>WAL Mode</b>"
+msgstr "Получить информацию об <b>Обновлении хеша файла</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
 msgid ""
 "Write-Ahead Log is a mode to use a roll-forward journal that records "
@@ -29551,7 +29600,7 @@ msgstr ""
 "позволило сделать запросы к базе данных надёжными в критических случаях "
 "использования."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:130
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:169
 #, kde-format
 msgid ""
 "<p>Here you can configure locations where MySQL binary tools are located. "
@@ -29562,23 +29611,23 @@ msgstr ""
 "попытается найти эти файлы автоматически, если они уже установлены на "
 "компьютере.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:139
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:178
 #, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "Исполняемые файлы MySQL"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid "Host Name:"
 msgstr "Имя хоста:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
 #, kde-format
 msgid "Set the host computer name"
 msgstr "Укажите имя хоста"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:224
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -29589,7 +29638,7 @@ msgstr ""
 "Это может быть «localhost» для локального сервера или сетевое имя\n"
 "(или IP-адрес) в случае удалённого компьютера."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:190
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
@@ -29598,12 +29647,12 @@ msgstr ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Параметры "
 "подключения:</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
 #, kde-format
 msgid "Set the database connection options"
 msgstr "Укажите параметры подключения к базе данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -29612,17 +29661,17 @@ msgstr ""
 "Укажите параметры соединения с сервером MySQL.\n"
 "Только для опытных пользователей."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
 #, kde-format
 msgid "User:"
 msgstr "Имя пользователя:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, kde-format
 msgid "Set the database account name"
 msgstr "Укажите имя учётной записи для соединения с базой данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -29635,7 +29684,7 @@ msgstr ""
 "Эта учётная запись должна существовать на удалённом\n"
 "сервере MySQL при создании базы данных."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:208
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -29646,12 +29695,12 @@ msgstr ""
 "используемый digiKam при соединении с сервером.\n"
 "Можно оставить это поле пустым, если используется учётная запись без пароля."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:253
 #, kde-format
 msgid "Host Port:"
 msgstr "Порт:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:216
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -29660,12 +29709,12 @@ msgstr ""
 "Укажите порт, на котором запущен сервер MySQL.\n"
 "Обычно сервер MySQL использует порт 3306."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
 #, kde-format
 msgid "Check Connection"
 msgstr "Проверить соединение"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
@@ -29674,17 +29723,17 @@ msgstr ""
 "Выполнить простое соединение с базой данных для проверки введённых "
 "параметров подключения к серверу MySQL."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:268
 #, kde-format
 msgid "Core Db Name:"
 msgstr "Имя главной БД:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:270
 #, kde-format
 msgid "Set the core database name"
 msgstr "Укажите имя главной базы данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:271
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -29693,18 +29742,18 @@ msgstr ""
 "Главная база данных — это главное хранилище digiKam, используемое для "
 "хранения информации об альбомах, объектах и метаданных для поиска."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:236
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:593
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:275
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:513
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Имя БД миниатюр:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:279
 #, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "Укажите имя или папку базы данных для хранения миниатюр"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:280
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -29719,17 +29768,17 @@ msgstr ""
 "особенно если у вас огромная коллекция изображений.\n"
 "Укажите локальную папку для использования базы данных SQLite."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, kde-format
 msgid "Face Db Name:"
 msgstr "Название БД меток лиц:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid "Set the face database name"
 msgstr "Укажите имя базы данных для хранения меток лиц"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -29743,18 +29792,18 @@ msgstr ""
 "особенно если у вас много изображений с распознанными и/или отмеченными "
 "лицами."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:295
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "Имя базы данных для хранения сведений о сходстве изображений:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:297
 #, kde-format
 msgid "Set the similarity database name"
 msgstr ""
 "Параметр задаёт имя базы данных для хранения сведений о сходстве изображений."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:298
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
@@ -29763,27 +29812,27 @@ msgstr ""
 "База данных со сведениями о сходстве изображений служит для хранения\n"
 "вейвлетов Хаара, используемых при поиске схожих изображений."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
 #, kde-format
 msgid "Default Settings"
 msgstr "Параметры по умолчанию"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "Сбросить имена баз данных на значения по умолчанию"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:283
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:322
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "Параметры удалённого сервера"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "Инструкция по настройке сервера баз данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -29798,7 +29847,7 @@ msgstr ""
 "настроена, можете использовать указанные ниже команды SQL (не забудьте "
 "заменить<b><i>password</i></b> на правильный пароль).</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:341
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -29823,17 +29872,17 @@ msgstr ""
 "коллекция изображений, запускайте сервер MySQL с ключом --"
 "max_allowed_packet=128M или внесите изменения в файл my.ini или ~/.my.cnf</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:365
 #, kde-format
 msgid "Requirements"
 msgstr "Требования"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:369
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Технические сведения о сервере баз данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:332
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:371
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29873,80 +29922,82 @@ msgstr ""
 "на внешнем сервере должны быть заранее созданы администратором. Более "
 "подробное описание приведено на вкладке <b>Требования</b>.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:358
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:397
 #, kde-format
 msgid "Documentation"
 msgstr "Документация"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:589
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:509
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Папка БД миниатюр:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:608
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:863
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:35
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:40
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:302
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Проверка подключения к базе данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:36
 #, kde-format
 msgid "Database connection test successful."
 msgstr "Проверка подключения к базе данных успешно завершена."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:41
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 "Проверка подключения к базе данных завершилась неудачно. <p>Ошибка: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:50
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Имя хоста сервера не указано"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:624
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:56
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Имя пользователя не указано"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:67
 #, kde-format
 msgid "The core database name is empty"
 msgstr "Не указано имя основной базы данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:73
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Не указано имя базы данных миниатюр"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:79
 #, kde-format
 msgid "The face database name is empty"
 msgstr "Не указано имя базы данных меток лиц"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:653
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:85
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr ""
 "Не указано имя базы данных для хранения информации о сходстве изображений"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:715
-#, kde-format
-msgid "This path was set as a command lineoption (--database-directory)."
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
+#, fuzzy, kde-format
+#| msgid "This path was set as a command lineoption (--database-directory)."
+msgid ""
+"<p>This path was set as a command lineoption (--database-directory).</p>"
 msgstr ""
 "Этот путь был указан в виде параметра командной строки (--database-"
 "directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:854
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Параметры базы данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:294
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
@@ -29955,7 +30006,7 @@ msgstr ""
 "Некорректная конфигурация имён баз данных. Ошибка:<br> <p>«%1»</p> "
 "<br>Проверьте параметры."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:303
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
@@ -29964,7 +30015,7 @@ msgstr ""
 "Не удалось проверить соединение с базой данных:<br> <p>%1</p> <br>Проверьте "
 "правильность настройки."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:883
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:322
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -29973,13 +30024,13 @@ msgstr ""
 "Необходимо выбрать папку, в которой digiKam будет хранить информацию и "
 "метаданные в файле базы данных."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:892
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:331
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Создание папки баз данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:332
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29988,13 +30039,13 @@ msgstr ""
 "<p>Папка, выбранная для хранения базы данных, не существует:</p><p><b>%1</"
 "b></p>Создать её?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:904
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:343
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Ошибка создания папки баз данных"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:344
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
@@ -30003,13 +30054,13 @@ msgstr ""
 "<p>digiKam не может создать здесь папку для хранения файла базы данных."
 "<br>Выберите другое место.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:930
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Отсутствует доступ к базе данных с правом записи"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:370
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -68368,17 +68419,17 @@ msgstr ""
 
 #: core/utilities/setup/setupdatabase.cpp:185
 #, kde-format
-msgctxt "@title:group"
-msgid "Updates"
-msgstr "Обновления"
-
-#: core/utilities/setup/setupdatabase.cpp:188
-#, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "Обновить хеши файлов"
 
-#: core/utilities/setup/setupdatabase.cpp:190
+#: core/utilities/setup/setupdatabase.cpp:189
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Update File Hashes</b>"
+msgstr "Получить информацию об <b>Обновлении хеша файла</b>"
+
+#: core/utilities/setup/setupdatabase.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -68396,11 +68447,11 @@ msgstr ""
 "После обновления базу данных нельзя будет использовать с версией digiKam "
 "старше 8.5.0."
 
-#: core/utilities/setup/setupdatabase.cpp:199
+#: core/utilities/setup/setupdatabase.cpp:210
 #, kde-format
-msgctxt "@info:tooltip"
-msgid "Get information about <b>Update File Hashes</b>"
-msgstr "Получить информацию об <b>Обновлении хеша файла</b>"
+msgctxt "@title:group"
+msgid "Updates"
+msgstr "Обновления"
 
 #: core/utilities/setup/setupgeolocation.cpp:106
 #, kde-format
@@ -69905,9 +69956,6 @@ msgstr "Импорт"
 
 #~ msgid "Path: %1\n"
 #~ msgstr "Путь: %1\n"
-
-#~ msgid "Path: %1"
-#~ msgstr "Путь: %1"
 
 #~ msgid "Caulier Gilles"
 #~ msgstr "Caulier Gilles"

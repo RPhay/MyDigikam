@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-31 00:41+0000\n"
+"POT-Creation-Date: 2026-01-01 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1020,7 +1020,6 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:48
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -6196,12 +6195,10 @@ msgstr ""
 "模型。</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Template"
-msgstr "应用元数据模板"
+msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -6473,12 +6470,10 @@ msgid "Auto-Rotate"
 msgstr "自动旋转"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "AI tool to automatically rotate images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically rotate images"
-msgstr "使用 AI 为图像自动分配标签"
+msgstr ""
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
 #, kde-kuit-format
@@ -21350,32 +21345,26 @@ msgid "Behavior"
 msgstr "行为"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
-#, fuzzy, kde-format
-#| msgid "Delay between images:"
+#, kde-format
 msgid "Delay between items: "
-msgstr "图像切换间隔时间："
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgid "The delay, in seconds, between items."
-msgstr "设置图像切换到下一张前的等待时间，单位为秒。"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "Start with current image"
+#, kde-format
 msgid "Start with current item"
-msgstr "从当前图像开始放映"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
-#, fuzzy, kde-format
-#| msgid ""
-#| "If this option is enabled, the Slideshow will be started with the current "
-#| "image selected in the images list."
+#, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
-msgstr "勾选此项后，幻灯片将以当前图像列表中选中的图像开始放映。"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
@@ -21388,10 +21377,9 @@ msgid "Run the slideshow in a loop."
 msgstr "循环播放幻灯片。"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Shuffle images"
+#, kde-format
 msgid "Shuffle items"
-msgstr "随机图像顺序"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
@@ -21410,44 +21398,36 @@ msgid ""
 msgstr "显示当前项目的已展示时间进度条，并显示当前张数和总张数。"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Show labels editor"
-msgstr "显示进度条"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the digiKam image color label and pick label at the bottom of the "
-#| "screen."
+#, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
-msgstr "显示 digiKam 图像颜色标记和挑选标记到屏幕底部。"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Show rating editor"
-msgstr "显示地理位置指示图标"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image rating at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
-msgstr "显示 digiKam 图像评分到屏幕底部。"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Use background color for images:"
+#, kde-format
 msgid "Use background color for items:"
-msgstr "图像显示背景色："
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "Define a color to use as background to render images on screen."
+#, kde-format
 msgid "Define a color to use as background to render items on screen."
-msgstr "定义在屏幕上显示图像时使用的背景色。"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
@@ -21479,14 +21459,11 @@ msgid "Screen %1"
 msgstr "屏幕 %1"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
-#| "time with the F2 key.</b>"
+#, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the Alt+P key.</b>"
-msgstr "<b>提示：幻灯片设置对话框可以在幻灯片播放时随时按 F2 打开。</b>"
+msgstr ""
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
 #, kde-format
@@ -25284,7 +25261,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr "显示在密码输入框旁的密码提示信息 (可选)。"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -28112,22 +28089,29 @@ msgstr "当前阶段进度 (%1)"
 msgid "Database Configuration"
 msgstr "数据库配置"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:53
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Type: "
+msgid "Type: "
+msgstr "类型："
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:55
 #, kde-format
 msgid "SQLite"
 msgstr "SQLite"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:60
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:62
 #, kde-format
 msgid "Mysql Internal"
 msgstr "MySQL 本机服务器"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:65
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:67
 #, kde-format
 msgid "MySQL Server"
 msgstr "MySQL 远程服务器"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:70
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:72
 #, kde-format
 msgid ""
 "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend is "
@@ -28138,7 +28122,7 @@ msgstr ""
 "<p>在此选择数据库后端程序。</p><p><b>SQLite</b> 后端程序适用于数据库存储在本"
 "地的中小规模相册集合。此为默认设置，推荐 100K 件项目以内的相册集合使用。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:79
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:81
 #, kde-format
 msgid ""
 "<p><b>MySQL Internal</b> backend is for local database storage with huge "
@@ -28148,7 +28132,7 @@ msgstr ""
 "<p><b>MySQL 本地服务器</b>后端程序适用于数据库存储在本地的大型相册集合。推荐"
 "超过 100K 件项目的本地相册集合使用。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:84
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:86
 #, kde-format
 msgid ""
 "<p><b>MySQL Server</b> backend is a more robust solution especially for "
@@ -28160,7 +28144,43 @@ msgstr ""
 "p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Type</b>"
+msgstr "获取关于 <b>更新文件哈希值</b> 的信息"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@label: bookmark properties"
+#| msgid "&Path:"
+msgctxt "@label:database path"
+msgid "Path: "
+msgstr "路径(&P)："
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Path</b>"
+msgstr "获取关于 <b>更新文件哈希值</b> 的信息"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set here the location where the database files will be stored on your "
+#| "system. There are four databases: one for all collections properties, one "
+#| "to store compressed thumbnails, one to store faces recognition metadata, "
+#| "and one to store similarity fingerprints.<br>Write access is required to "
+#| "be able to edit image properties.</p><p>Databases are digiKam core "
+#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
+#| "NVMe) with enough free space especially for thumbnails database.</"
+#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
+#| "performance reasons, it is also recommended not to use network storage "
+#| "media.</p><p></p>"
+msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -28170,7 +28190,7 @@ msgid ""
 "care to use a place hosted by fast hardware (eg. SSD or NVMe) with enough "
 "free space especially for thumbnails database.</p><p>Note: a remote file "
 "system such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use network storage media.</p><p></p>"
+"recommended not to use network storage media.</p>"
 msgstr ""
 "<p>请在此设置数据库文件的存储位置。digiKam 会建立 4 个数据库：一个用于存储所"
 "有相册集合的属性、一个用于存储压缩后的缩略图、一个用于存储人脸识别元数据、一"
@@ -28180,12 +28200,12 @@ msgstr ""
 "留足够的存储空间。</p><p>注意：为了避免性能低下，不可使用诸如 NFS 等远程文件"
 "系统来存储数据库，也不建议使用任何网络存储媒介。</p><p></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:112
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
 msgid "Enable WAL mode for the databases"
 msgstr "启用数据库的 WAL (滚动日志) 模式"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
@@ -28193,7 +28213,15 @@ msgid ""
 msgstr ""
 "WAL (Write-Ahead Log，滚动日志) 模式在支持该模式的系统中比其他模式明显更快。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:116
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>WAL Mode</b>"
+msgstr "获取关于 <b>更新文件哈希值</b> 的信息"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
 msgid ""
 "Write-Ahead Log is a mode to use a roll-forward journal that records "
@@ -28208,7 +28236,7 @@ msgstr ""
 "记录在该日志文件中，然后才会被写入到数据库。在高强度的使用环境下，此模式可以"
 "大幅降低数据的写入量，并提高系统的可靠性。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:130
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:169
 #, kde-format
 msgid ""
 "<p>Here you can configure locations where MySQL binary tools are located. "
@@ -28218,23 +28246,23 @@ msgstr ""
 "<p>请指定 MySQL 可执行文件所在的位置。如果本机已经安装了 MySQL，digiKam 将尝"
 "试自动定位它的可执行文件。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:139
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:178
 #, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "MySQL 可执行文件"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid "Host Name:"
 msgstr "主机名："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
 #, kde-format
 msgid "Set the host computer name"
 msgstr "设置主机名"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:224
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -28245,7 +28273,7 @@ msgstr ""
 "对于本地服务器而言它可能是“localhost”，\n"
 "对于远程计算机而言则可能是该计算机的网络名称或 IP 地址。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:190
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
@@ -28253,12 +28281,12 @@ msgid ""
 msgstr ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">连接选项：</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
 #, kde-format
 msgid "Set the database connection options"
 msgstr "设置数据库连接选项"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -28267,17 +28295,17 @@ msgstr ""
 "设置 MySQL 服务器连接选项。\n"
 "仅适用于高级用户。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
 #, kde-format
 msgid "User:"
 msgstr "用户："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, kde-format
 msgid "Set the database account name"
 msgstr "设置数据库账户名称"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -28288,7 +28316,7 @@ msgstr ""
 "设置 digiKam 使用的 MySQL 服务器账户名称以连接到服务器。\n"
 "数据库创建后，此账户必须在远程 MySQL 服务器上可用。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:208
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -28298,12 +28326,12 @@ msgstr ""
 "设置 digiKam 使用的 MySQL 服务器账户密码以连接到服务器。\n"
 "如果使用无需密码的账户，请将此字段留空。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:253
 #, kde-format
 msgid "Host Port:"
 msgstr "主机端口："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:216
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -28312,29 +28340,29 @@ msgstr ""
 "设置目标计算机的主机端口。\n"
 "MySQL 服务器通常默认使用 3306 端口。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
 #, kde-format
 msgid "Check Connection"
 msgstr "检查连接"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
 "suitable."
 msgstr "执行一次基本数据库连接，以检查当前 MySQL 服务器设置是否正确。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:268
 #, kde-format
 msgid "Core Db Name:"
 msgstr "核心数据库名称："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:270
 #, kde-format
 msgid "Set the core database name"
 msgstr "设置核心数据库名称"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:271
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -28343,18 +28371,18 @@ msgstr ""
 "核心数据库是 digiKam 的首要数据容器，\n"
 "用于存储相册、项目和搜索元数据。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:236
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:593
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:275
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:513
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "缩略图数据库名称："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:279
 #, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "设置缩略图数据库名称或文件夹"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:280
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -28369,17 +28397,17 @@ msgstr ""
 "尤其是在相册集合规模庞大的时候。\n"
 "请为该 SQLite 数据库选择一个本地文件夹。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, kde-format
 msgid "Face Db Name:"
 msgstr "人脸数据库名称："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid "Set the face database name"
 msgstr "设置人脸数据库名称"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -28392,17 +28420,17 @@ msgstr ""
 "此数据库将在短时间内占用大量空间，\n"
 "尤其是在大量图像中检测到了人脸并指定了人脸标签时。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:295
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "相似性数据库名称："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:297
 #, kde-format
 msgid "Set the similarity database name"
 msgstr "设置相似性数据库名称"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:298
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
@@ -28411,27 +28439,27 @@ msgstr ""
 "相似性数据库用于存储 digiKam 生成的图像 Haar 矩阵数据。\n"
 "它们将被用于进行相似性搜索。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
 #, kde-format
 msgid "Default Settings"
 msgstr "默认设置"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "重置所有数据库名称为常用的默认值。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:283
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:322
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "远程服务器设置"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "数据库服务器使用说明"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -28444,7 +28472,7 @@ msgstr ""
 "它需要数据库的完全访问权限。<br>如果该数据库尚未建立，您可以使用下面的 SQL\n"
 "命令建立它 (记得将 <b>password</b> 替换为实际密码)。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:341
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -28466,17 +28494,17 @@ msgstr ""
 "合规模庞大，请在启动 MySQL 服务器时使用 mysql --max_allowed_packet=128M 命"
 "令，也可以在 my.ini 或 ~/.my.cnf 中更改相关设置。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:365
 #, kde-format
 msgid "Requirements"
 msgstr "技术要求"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:369
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "数据库服务器技术详情"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:332
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:371
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -28510,103 +28538,105 @@ msgstr ""
 "压缩。</p><p>远程数据库要由服务器管理员事先创建。请在<b>技术要求</b>标签页查"
 "看有关详情。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:358
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:397
 #, kde-format
 msgid "Documentation"
 msgstr "技术说明"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:589
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:509
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "缩略图数据库名文件夹："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:608
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:863
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:35
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:40
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:302
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "数据库连接测试"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:36
 #, kde-format
 msgid "Database connection test successful."
 msgstr "数据库连接测试成功。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:41
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr "数据库连接测试失败。<p>错误：%1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:50
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "服务器主机名为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:624
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:56
 #, kde-format
 msgid "The server user name is empty"
 msgstr "服务器用户名为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:67
 #, kde-format
 msgid "The core database name is empty"
 msgstr "核心数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:73
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "缩略图数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:79
 #, kde-format
 msgid "The face database name is empty"
 msgstr "人脸数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:653
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:85
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "相似性数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:715
-#, kde-format
-msgid "This path was set as a command lineoption (--database-directory)."
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
+#, fuzzy, kde-format
+#| msgid "This path was set as a command lineoption (--database-directory)."
+msgid ""
+"<p>This path was set as a command lineoption (--database-directory).</p>"
 msgstr "此路径已被设置为命令行选项 (--database-directory)。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:854
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "数据库配置"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:294
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
 "p><br>Please check your configuration."
 msgstr "数据库名称配置无效。错误：<br><p>%1</p><br>请检查您的配置是否正确。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:303
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
 msgstr "数据库连接测试失败，错误：<br><p>%1</p><br>请检查您的配置是否正确。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:883
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:322
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr "您必须为 digiKam 选择一个文件夹，用于存储信息和元数据的数据库文件。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:892
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:331
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "您想要创建数据库文件夹吗？"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:332
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -28615,13 +28645,13 @@ msgstr ""
 "<p>用于存储数据库的文件夹不存在：</p><p><b>%1</b></p>您想要让 digiKam 现在创"
 "建它吗？"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:904
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:343
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "创建数据库文件夹失败"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:344
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
@@ -28630,13 +28660,13 @@ msgstr ""
 "<p>digiKam 无法创建用于存储您数据库文件的文件夹。<br>请选择一个不同的位置。</"
 "p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:930
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "没有数据库写入权限"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:370
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -39990,28 +40020,24 @@ msgid "Usages:"
 msgstr "使用方式："
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Show image file name"
+#, kde-format
 msgid "Show item file name"
-msgstr "显示图像文件名称"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
+#, kde-format
 msgid "Show the item file name at the bottom of the screen."
-msgstr "显示图像名称到屏幕底部。"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgid "Show item creation date"
-msgstr "显示图像创建日期"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
+#, kde-format
 msgid "Show the item creation time/date at the bottom of the screen."
-msgstr "显示图像创建时间/日期到屏幕底部。"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:78
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
@@ -40058,65 +40084,54 @@ msgid "Show the camera lens model at the bottom of the screen."
 msgstr "显示相机的镜头型号到屏幕底部。"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show item caption"
-msgstr "显示图像说明"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen."
-msgstr "显示图像说明到屏幕底部。"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show item title"
-msgstr "显示图像标题"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgid "Show the item title at the bottom of the screen."
-msgstr "显示图像的标题到屏幕底部。"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
+#, kde-format
 msgid "Show item caption if it has not title"
-msgstr "如果图像不含标题，则显示图像说明。"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen if no titles existed."
-msgstr "如果图像不含标题，则显示图像说明到屏幕底部。"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgid "Show item tags"
-msgstr "显示图像标签"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item tag names at the bottom of the screen."
-msgstr "显示 digiKam 图像标签到屏幕底部。"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "下一月"
+msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#, kde-format
 msgid "Select here the font used to display OSD text over the slideshow."
-msgstr "选择幻灯片的文字信息使用的字体。"
+msgstr ""
 
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
@@ -41242,14 +41257,14 @@ msgstr "截图"
 #, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
-msgstr ""
+msgstr "旋转 (向左)"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
-msgstr ""
+msgstr "旋转 (向右)"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:363
@@ -41284,7 +41299,7 @@ msgstr "更改视频播放速度"
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:321
 #, kde-format
 msgid "Rate"
-msgstr ""
+msgstr "评分"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
@@ -42204,7 +42219,7 @@ msgstr "KDE 社区软件项目"
 #: core/libs/widgets/mainview/daboutdata.cpp:61
 #, kde-format
 msgid "(c) 2001-2026, digiKam developers team"
-msgstr ""
+msgstr "(c) 2001-2026, digiKam developers team"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
@@ -61732,10 +61747,9 @@ msgid "Show file&name"
 msgstr "显示文件名(&N)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#, fuzzy, kde-format
-#| msgid "Set this option to show the filename below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the filename below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示文件名。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
 #: core/utilities/setup/camera/setupcamera.cpp:432
@@ -61744,10 +61758,9 @@ msgid "Show file si&ze"
 msgstr "显示文件体积(&Z)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#, fuzzy, kde-format
-#| msgid "Set this option to show the file size below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the file size below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示文件体积。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:135
 #: core/utilities/setup/camera/setupcamera.cpp:435
@@ -61756,12 +61769,9 @@ msgid "Show camera creation &date"
 msgstr "显示相机拍摄日期(&D)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the camera creation date below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the camera creation date below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像的相机拍摄日期。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:139
 #, kde-format
@@ -61769,57 +61779,42 @@ msgid "Show file &modification date"
 msgstr "显示文件修改日期"
 
 #: core/utilities/setup/album/setupalbumview.cpp:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the file modification date below the image "
-#| "thumbnail if it is different than camera creation date. This option is "
-#| "useful to identify quickly which items have been modified."
+#, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
 "is different than camera creation date. This option is useful to identify "
 "quickly which items have been modified."
 msgstr ""
-"勾选此项以在图像缩略图下方显示文件修改日期。这对于快速判断哪些图像曾在相机外"
-"被修改过很有用。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Show image dimensions"
+#, kde-format
 msgid "Show item dimensions"
-msgstr "显示图像尺寸"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image size in pixels below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the item size in pixels below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像尺寸，单位为像素。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#, kde-format
 msgid "Show item aspect ratio"
-msgstr "显示图像宽高比"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image aspect ratio below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the item aspect ratio below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像的宽高比。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Show image format"
+#, kde-format
 msgid "Show item format"
-msgstr "显示图像格式"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Set this option to show image mime type over image thumbnail."
+#, kde-format
 msgid "Set this option to show item mime type over thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像的 MIME 类型。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
 #, kde-format
@@ -61827,10 +61822,9 @@ msgid "Show digiKam tit&le"
 msgstr "显示 digiKam 标题(&L)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam title below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 标题。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
@@ -61838,11 +61832,9 @@ msgid "Show digiKam &captions"
 msgstr "显示 digiKam 说明(&C)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam captions below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam captions below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 说明。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
 #: core/utilities/setup/camera/setupcamera.cpp:451
@@ -61851,11 +61843,9 @@ msgid "Show digiKam &tags"
 msgstr "显示 digiKam 标签(&T)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam tags list below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam tags list below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 标签列表。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
@@ -61863,11 +61853,9 @@ msgid "Show digiKam &rating"
 msgstr "显示 digiKam 评分(&R)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam rating below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam rating below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 评分。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
 #, kde-format
@@ -61875,11 +61863,9 @@ msgid "Show digiKam &pick label"
 msgstr "显示 digiKam 挑选标记 (&P)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam pick label below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam pick label below the thumbnail."
-msgstr "勾选此项以在图像缩略图下方显示图像的 digiKam 挑选标记。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
@@ -61887,14 +61873,11 @@ msgid "Show digiKam color &label"
 msgstr "显示 digiKam 颜色标记 (&L)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam color label as a border around the "
-#| "thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a line below the "
 "thumbnail."
-msgstr "勾选此项以在图像缩略图边框显示图像的 digiKam 颜色标记。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
@@ -61903,14 +61886,11 @@ msgid "Show rotation overlay buttons"
 msgstr "显示悬停旋转按钮"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show overlay buttons over the image thumbnail to be "
-#| "able to process left or right image rotation."
+#, kde-format
 msgid ""
 "Set this option to show the transformation overlay buttons over the "
 "thumbnail to process left or right rotation."
-msgstr "勾选此项以在图像缩略图上方显示用于旋转图像的悬停按钮。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
@@ -61918,30 +61898,23 @@ msgid "Show fullscreen overlay button"
 msgstr "显示悬停全屏按钮"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
 "fullscreen mode."
-msgstr "勾选此项以在图像缩略图上方显示用于切换全屏模式的悬停按钮。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
-#, fuzzy, kde-format
-#| msgid "Show rotation overlay buttons"
+#, kde-format
 msgid "Show geolocation overlay button"
-msgstr "显示悬停旋转按钮"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
-msgstr "勾选此项以在图像缩略图上方显示用于切换全屏模式的悬停按钮。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -62115,12 +62088,9 @@ msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "预览时将图像转换为 8 位以提高打开速度"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
-msgstr "如果您不想将 16 位的预览图像转换为 8 位，请不要勾选此项。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
@@ -62128,11 +62098,9 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "预览图像总是缩放至适合窗口"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Check this if you want to scale small images to fit to window."
-msgstr "如果您不想缩放较小图像以适合窗口，请取消勾选此项。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -62140,10 +62108,9 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "预览图像使用抗锯齿插值放大"
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
-msgstr "如果您不想使用抗锯齿插值来放大图像，请不要勾选此项。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -62152,12 +62119,9 @@ msgid "Show icons and text over preview"
 msgstr "预览视图显示悬浮图标和文字"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
-msgstr "如果您不想在图像预览视图中看到悬浮的图标和文字，请不要勾选此项。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
@@ -62165,27 +62129,21 @@ msgid "Auto play of videos or animations"
 msgstr "自动播放视频或动画"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to auto play of videos or animations."
+#, kde-format
 msgid "Check this if you want to auto play the videos or animations."
-msgstr "如果您不想自动播放视频或动画，请取消选中此项。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
-#, fuzzy, kde-format
-#| msgid "Show icons and text over preview"
+#, kde-format
 msgid "Show a text overlay over preview."
-msgstr "预览视图显示悬浮图标和文字"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
-msgstr "如果您不想在图像预览视图中看到悬浮的图标和文字，请不要勾选此项。"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
 #, kde-format
@@ -65561,17 +65519,17 @@ msgstr ""
 
 #: core/utilities/setup/setupdatabase.cpp:185
 #, kde-format
-msgctxt "@title:group"
-msgid "Updates"
-msgstr "更新"
-
-#: core/utilities/setup/setupdatabase.cpp:188
-#, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "更新文件哈希值"
 
-#: core/utilities/setup/setupdatabase.cpp:190
+#: core/utilities/setup/setupdatabase.cpp:189
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Update File Hashes</b>"
+msgstr "获取关于 <b>更新文件哈希值</b> 的信息"
+
+#: core/utilities/setup/setupdatabase.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -65587,11 +65545,11 @@ msgstr ""
 "制性的要求。\n"
 "升级完成后，您的数据库将无法在 8.5.0 版之前的 digiKam 中使用。"
 
-#: core/utilities/setup/setupdatabase.cpp:199
+#: core/utilities/setup/setupdatabase.cpp:210
 #, kde-format
-msgctxt "@info:tooltip"
-msgid "Get information about <b>Update File Hashes</b>"
-msgstr "获取关于 <b>更新文件哈希值</b> 的信息"
+msgctxt "@title:group"
+msgid "Updates"
+msgstr "更新"
 
 #: core/utilities/setup/setupgeolocation.cpp:106
 #, kde-format
@@ -66445,26 +66403,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@title: Dplugin property"
-#~ msgid "Authors"
-#~ msgstr "作者"
-
-#~ msgid "Show ima&ge dimensions"
-#~ msgstr "显示图像尺寸(&G)"
-
-#~ msgid "Show image labels"
-#~ msgstr "显示图像标记"
-
-#~ msgid "Show image rating"
-#~ msgstr "显示图像评分"
-
-#~ msgid "Caption font:"
-#~ msgstr "图像说明字体："
-
-#~ msgid ""
-#~ "Set this option to show an icon over the image thumbnail if item has "
-#~ "geolocation information."
-#~ msgstr ""
-#~ "勾选此项以在图像缩略图上方显示地理位置信息指示图标 (图像含有地理位置信息时"
-#~ "显示)。"

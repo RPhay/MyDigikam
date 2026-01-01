@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-31 00:41+0000\n"
-"PO-Revision-Date: 2025-12-29 09:09+0000\n"
+"POT-Creation-Date: 2026-01-01 00:40+0000\n"
+"PO-Revision-Date: 2025-12-31 09:40+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -1060,7 +1060,6 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:48
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -6413,12 +6412,10 @@ msgstr ""
 "learning).</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Template"
-msgstr "Beita forsniði lýsigagna"
+msgstr "Beita forsniði"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -6700,13 +6697,10 @@ msgid "Auto-Rotate"
 msgstr "Sjálfvirkur snúningur"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "AI tool to automatically rotate images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically rotate images"
-msgstr ""
-"Verkfæri til að úthluta sjálfvirkt merkjum á myndir með aðstoð gervigreindar"
+msgstr "Verkfæri til að snúa myndum sjálfvirkt"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
 #, kde-kuit-format
@@ -26074,7 +26068,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr "Ábending um lykilorð til notenda í innskráningu (val)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -28993,22 +28987,29 @@ msgstr "Þrep (%1) í framvindu"
 msgid "Database Configuration"
 msgstr "Uppsetning gagnagrunns"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:53
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Type: "
+msgid "Type: "
+msgstr "Tegund: "
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:55
 #, kde-format
 msgid "SQLite"
 msgstr "SQLite"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:60
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:62
 #, kde-format
 msgid "Mysql Internal"
 msgstr "Innbyggt-MySQL"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:65
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:67
 #, kde-format
 msgid "MySQL Server"
 msgstr "MySQL-þjónn"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:70
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:72
 #, kde-format
 msgid ""
 "<p>Select here the type of database backend.</p><p><b>SQlite</b> backend is "
@@ -29021,7 +29022,7 @@ msgstr ""
 "miðlungsstór söfn. Þetta er sjálfgefin uppsetning og er mælt er með þessu "
 "fyrir söfn með minna en 100K atriðum.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:79
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:81
 #, kde-format
 msgid ""
 "<p><b>MySQL Internal</b> backend is for local database storage with huge "
@@ -29032,7 +29033,7 @@ msgstr ""
 "viðkomandi tölvu en þá fyrir mjög stór söfn. Mælt er með þessu fyrir söfn "
 "með meira en 100K atriðum.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:84
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:86
 #, kde-format
 msgid ""
 "<p><b>MySQL Server</b> backend is a more robust solution especially for "
@@ -29044,7 +29045,42 @@ msgstr ""
 "afkastameira þegar sýslað er með söfn með meira en 100K atriðum.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Type</b>"
+msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgid "Path: %1"
+msgctxt "@label:database path"
+msgid "Path: "
+msgstr "Slóð: %1"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Database Path</b>"
+msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set here the location where the database files will be stored on your "
+#| "system. There are four databases: one for all collections properties, one "
+#| "to store compressed thumbnails, one to store faces recognition metadata, "
+#| "and one to store similarity fingerprints.<br>Write access is required to "
+#| "be able to edit image properties.</p><p>Databases are digiKam core "
+#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
+#| "NVMe) with enough free space especially for thumbnails database.</"
+#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
+#| "performance reasons, it is also recommended not to use network storage "
+#| "media.</p><p></p>"
+msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29054,7 +29090,7 @@ msgid ""
 "care to use a place hosted by fast hardware (eg. SSD or NVMe) with enough "
 "free space especially for thumbnails database.</p><p>Note: a remote file "
 "system such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use network storage media.</p><p></p>"
+"recommended not to use network storage media.</p>"
 msgstr ""
 "<p>Hér geturðu ákveðið staðsetninguna þar sem gagnagrunnsskrárnar eru "
 "geymdar í tölvunni þinni. Það eru fjórir gagnagrunnar: einn fyrir eiginleika "
@@ -29068,12 +29104,12 @@ msgstr ""
 "skráakerfi. Og ef verið er að hugsa um afköst, er alls ekki mælt með að "
 "notuð séu nettengd tæki.</p><p></p> "
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:112
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
 msgid "Enable WAL mode for the databases"
 msgstr "Virkja WAL-ham fyrir gagnagrunnana"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
@@ -29082,7 +29118,15 @@ msgstr ""
 "WAL-hamurinn (Write-Ahead Log) er merkjanlega hraðvirkari í flestum "
 "tilfellum á þeim kerfum sem styðja hann."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:116
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Get information about <b>Update File Hashes</b>"
+msgctxt "@info:tooltip"
+msgid "Get information about <b>WAL Mode</b>"
+msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
+
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
 msgid ""
 "Write-Ahead Log is a mode to use a roll-forward journal that records "
@@ -29100,7 +29144,7 @@ msgstr ""
 "breytingar eru skrifaðar í gagnagrunn. Þetta gerir gagnagrunnabeiðnir "
 "smættaðar og áreiðanlegar við umfangsmikla og áríðandi notkun."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:130
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:169
 #, kde-format
 msgid ""
 "<p>Here you can configure locations where MySQL binary tools are located. "
@@ -29111,23 +29155,23 @@ msgstr ""
 "eru. digiKam mun reyna að finna þessar keyrsluskrár sjálfvirkt, ef þær eru "
 "þegar fyrir hendi á tölvunni þinni.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:139
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:178
 #, kde-format
 msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "MySQL tvíundarkerfisskrár"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid "Host Name:"
 msgstr "Vélarheiti:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
 #, kde-format
 msgid "Set the host computer name"
 msgstr "Settu inn heiti á hýsilvél"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:224
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -29138,7 +29182,7 @@ msgstr ""
 "Það getur verið \"localhost\" fyrir staðværan þjón, eða heiti nettengdrar\n"
 "tölvu (eða IP-vistfang) sé tölvan fjartengd."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:190
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
@@ -29146,12 +29190,12 @@ msgid ""
 msgstr ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Tengivalkostir:</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
 #, kde-format
 msgid "Set the database connection options"
 msgstr "Setja upp valkosti gagnagrunnstengingar"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -29160,17 +29204,17 @@ msgstr ""
 "Setja upp valkosti tengingar við MySQL-þjón.\n"
 "Einungis fyrir vana notendur."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
 #, kde-format
 msgid "User:"
 msgstr "Notandi:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, kde-format
 msgid "Set the database account name"
 msgstr "Setja heiti gagnagrunnsaðgangs"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -29183,7 +29227,7 @@ msgstr ""
 "Þessi aðgangur verður að vera tiltækur á fjartengda \n"
 "MySQL-þjóninum þegar gagnagrunnurinn hefur verið útbúinn."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:208
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -29194,12 +29238,12 @@ msgstr ""
 "ætti að nota til að tengjast við gagnagrunnsþjóninn.\n"
 "Þú getur skilið þetta eftir autt til að nota aðgang án lykilorðs."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:253
 #, kde-format
 msgid "Host Port:"
 msgstr "Gátt vélar:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:216
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -29208,12 +29252,12 @@ msgstr ""
 "Settu inn gátt hýsilvélar.\n"
 "Venjulega notar MySQL-þjónn gátt númer 3306 sjálfgefið"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
 #, kde-format
 msgid "Check Connection"
 msgstr "Athuga tengingu"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
@@ -29222,17 +29266,17 @@ msgstr ""
 "Keyrðu einfalda gagnagrunnstengingu til að sjá hvort stillingar MySQL-þjóns "
 "henti."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:268
 #, kde-format
 msgid "Core Db Name:"
 msgstr "Heiti aðalgagnagrunns:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:270
 #, kde-format
 msgid "Set the core database name"
 msgstr "Setja heiti aðalgagnagrunns"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:271
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -29241,18 +29285,18 @@ msgstr ""
 "Aðalgagnagrunnurinn er helsta geymsla digiKam fyrir\n"
 "albúm, atriði og lýsigögn fyrir leitir."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:236
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:593
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:275
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:513
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Heiti smámyndagagnagrunns:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:279
 #, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "Setja möppu eða heiti smámyndagagnagrunns"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:280
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -29267,17 +29311,17 @@ msgstr ""
 "safnið þitt er mjög umfangsmikið.\n"
 "Veldu möppu á tölvunni til að nota SQLite gagnagrunn."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, kde-format
 msgid "Face Db Name:"
 msgstr "Heiti andlitagagnagrunns:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid "Set the face database name"
 msgstr "Setja heiti andlitagagnagrunns"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -29290,17 +29334,17 @@ msgstr ""
 "Þetta getur fljótt tekið mikið pláss, sérstaklega ef\n"
 "þú ert með mjög mörg andlit greind og merkt."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:295
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "Heiti líkindagagnagrunns:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:297
 #, kde-format
 msgid "Set the similarity database name"
 msgstr "Setja heiti líkindagagnagrunns"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:298
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
@@ -29310,27 +29354,27 @@ msgstr ""
 "til að hýsa Haar-fylkisgögn mynda sem nýtt eru\n"
 "við líkindaleit."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
 #, kde-format
 msgid "Default Settings"
 msgstr "Sjálfgefnar stillingar"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "Frumstilla nöfn gagnagrunna á almenn sjálfgefin gildi."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:283
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:322
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "Grunnstillingar fjartengds þjóns"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "Skipanir fyrir gagnagrunnsþjón"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:289
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -29345,7 +29389,7 @@ msgstr ""
 "gagnagrunninn þinn, geturðu notað eftirfarandi SQL-skipanir til þess (eftir "
 "að hafa skipt út <b><i>password</i></b> fyrir rétta lykilorðið).</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:302
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:341
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -29370,17 +29414,17 @@ msgstr ""
 "max_allowed_packet=128M EÐA breyta stillingum í my.ini eða ~/.my.cnf "
 "skránum</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:326
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:365
 #, kde-format
 msgid "Requirements"
 msgstr "Kerfiskröfur"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:369
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Tæknilegar upplýsingar um gagnagrunnsmiðlara"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:332
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:371
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29420,76 +29464,78 @@ msgstr ""
 "kerfisstjóri að útbúa fyrirfram á fjartengda þjóninum. Skoðaðu flipann "
 "<b>Kerfiskröfur</b> til að sjá nańari upplýsingar.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:358
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:397
 #, kde-format
 msgid "Documentation"
 msgstr "Handbækur"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:589
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:509
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Mappa smámyndagagnagrunns:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:608
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:863
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:35
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:40
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:302
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Prófun gagnagrunnstengingar"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:36
 #, kde-format
 msgid "Database connection test successful."
 msgstr "Prófun gagnagrunnstengingar heppnaðist."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:41
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr "Prófun gagnagrunnstengingar tókst ekki. <p>Villan var: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:50
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Nafnið á miðlaranum er autt"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:624
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:56
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Notandanafnið á þjóninum er autt"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:67
 #, kde-format
 msgid "The core database name is empty"
 msgstr "Aðalgagnagrunnurinn er tómur"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:73
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Smámyndagagnagrunnurinn er tómur"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:79
 #, kde-format
 msgid "The face database name is empty"
 msgstr "Andlitagagnagrunnurinn er tómur"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:653
+#: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:85
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "Líkindagagnagrunnurinn er tómur"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:715
-#, kde-format
-msgid "This path was set as a command lineoption (--database-directory)."
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
+#, fuzzy, kde-format
+#| msgid "This path was set as a command lineoption (--database-directory)."
+msgid ""
+"<p>This path was set as a command lineoption (--database-directory).</p>"
 msgstr "Þessi slóð var sett sem rofi á skipanalínu (--database-directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:854
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Uppsetning gagnagrunns"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:294
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
@@ -29498,7 +29544,7 @@ msgstr ""
 "Uppsetning nafna í gagnagrunninum er ógild. Villan er <br><p>%1</"
 "p><br>Athugaðu uppsetninguna þína."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:303
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
@@ -29507,7 +29553,7 @@ msgstr ""
 "Prófun á gagnagrunnstengingu mistókst með villumeldingunni <br><p>%1</"
 "p><br>Athugaðu uppsetninguna þína."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:883
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:322
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -29516,13 +29562,13 @@ msgstr ""
 "Þú verður að velja möppu sem digiKam mun nota fyrir ýmis gögn í "
 "gagnagrunnsskrá."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:892
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:331
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Búa til gagnagrunnsmöppu?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:332
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29531,13 +29577,13 @@ msgstr ""
 "<p>Mappan sem þú valdir er ekki til: </p><p><b>%1</b></p>Viltu að digiKam "
 "búi hana til fyrir þig?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:904
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:343
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Mistókst að búa til gagnagrunnsmöppu"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:344
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
@@ -29546,13 +29592,13 @@ msgstr ""
 "<p>digiKam gat ekki búið til möppuna til að geyma gagnagrunnsskrána þína."
 "<br>Veldu aðra staðsetningu.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:930
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Enginn skrifaðgangur í gagnagrunn"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
+#: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:370
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -63396,10 +63442,9 @@ msgid "Show file&name"
 msgstr "Sý&na heiti skráa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#, fuzzy, kde-format
-#| msgid "Set this option to show the filename below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the filename below the thumbnail."
-msgstr "Veldu þetta til að sýna skráarnafn undir smámyndum."
+msgstr "Veldu þetta til að sýna skráarheiti undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
 #: core/utilities/setup/camera/setupcamera.cpp:432
@@ -63408,8 +63453,7 @@ msgid "Show file si&ze"
 msgstr "&Hámarks skráarstærð"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#, fuzzy, kde-format
-#| msgid "Set this option to show the file size below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the file size below the thumbnail."
 msgstr "Veldu þetta til að sýna skráarstærð undir smámyndum."
 
@@ -63420,12 +63464,9 @@ msgid "Show camera creation &date"
 msgstr "Sýna uppruna&dagsetningu úr myndavél"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the camera creation date below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the camera creation date below the thumbnail."
-msgstr "Veldu þetta til að sýna upprunadagsetningu undir smámyndum."
+msgstr "Veldu þetta til að sýna upprunadagsetningu myndavélar undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:139
 #, kde-format
@@ -63433,11 +63474,7 @@ msgid "Show file &modification date"
 msgstr "Sýna breytinga&dagsetningu"
 
 #: core/utilities/setup/album/setupalbumview.cpp:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the file modification date below the image "
-#| "thumbnail if it is different than camera creation date. This option is "
-#| "useful to identify quickly which items have been modified."
+#, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
 "is different than camera creation date. This option is useful to identify "
@@ -63448,41 +63485,32 @@ msgstr ""
 "fljótt hvaða atriðum hefur verið breytt."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Show image dimensions"
+#, kde-format
 msgid "Show item dimensions"
-msgstr "Sýna málsetningu mynda"
+msgstr "Birta málsetningu mynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image size in pixels below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr "Veldu þetta til að sýna myndstærð í dílum undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#, kde-format
 msgid "Show item aspect ratio"
 msgstr "Birta stærðarhlutföll mynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image aspect ratio below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr "Veldu þetta til að sýna stærðarhlutföll undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Show image format"
+#, kde-format
 msgid "Show item format"
-msgstr "Sýna skráasnið mynda"
+msgstr "Birta skráasnið mynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Set this option to show image mime type over image thumbnail."
+#, kde-format
 msgid "Set this option to show item mime type over thumbnail."
 msgstr "Veldu þetta til að sýna skráasnið mynda yfir smámyndum."
 
@@ -63492,10 +63520,9 @@ msgid "Show digiKam tit&le"
 msgstr "Sýna digiKam titi&l"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam title below the thumbnail."
-msgstr "Veldu þetta til að sýna digiKam titil undir smámyndum."
+msgstr "Veldu þetta til að sýna digiKam-titil undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
@@ -63503,11 +63530,9 @@ msgid "Show digiKam &captions"
 msgstr "Sýna digiKam skýringate&xta"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam captions below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam captions below the thumbnail."
-msgstr "Veldu þetta til að sýna digiKam athugasemdir undir smámyndum."
+msgstr "Veldu þetta til að sýna digiKam-skýringartexta undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
 #: core/utilities/setup/camera/setupcamera.cpp:451
@@ -63516,11 +63541,9 @@ msgid "Show digiKam &tags"
 msgstr "Sýna digiKam &merki"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam tags list below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam tags list below the thumbnail."
-msgstr "Veldu þetta til að sýna digiKam merki undir smámyndum."
+msgstr "Veldu þetta til að sýna digiKam-merki undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
@@ -63528,11 +63551,9 @@ msgid "Show digiKam &rating"
 msgstr "Sýna digiKam einkunna&gjöf"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam rating below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam rating below the thumbnail."
-msgstr "Veldu þetta til að sýna digiKam einkunnagjöf undir smámyndum."
+msgstr "Veldu þetta til að sýna digiKam-einkunnagjöf undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
 #, kde-format
@@ -63540,11 +63561,9 @@ msgid "Show digiKam &pick label"
 msgstr "Sýna digiKam sér&merki"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam pick label below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam pick label below the thumbnail."
-msgstr "Veldu þetta til að sýna digiKam sérmerkingu undir smámyndum."
+msgstr "Veldu þetta til að sýna digiKam-sérmerkingar undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
@@ -63552,14 +63571,11 @@ msgid "Show digiKam color &label"
 msgstr "Sýna digiKam &litamerki"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam color label as a border around the "
-#| "thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a line below the "
 "thumbnail."
-msgstr "Veldu þetta til að sýna digiKam litmerki sem jaðar í kringum smámynd."
+msgstr "Veldu þetta til að sýna digiKam-litmerki sem línu undir smámynd."
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
@@ -63568,10 +63584,7 @@ msgid "Show rotation overlay buttons"
 msgstr "Sýna yfirliggjandi snúningshnappa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show overlay buttons over the image thumbnail to be "
-#| "able to process left or right image rotation."
+#, kde-format
 msgid ""
 "Set this option to show the transformation overlay buttons over the "
 "thumbnail to process left or right rotation."
@@ -63585,10 +63598,7 @@ msgid "Show fullscreen overlay button"
 msgstr "Sýna yfirliggjandi hnappa í skjáfylliham"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
 "fullscreen mode."
@@ -63602,10 +63612,7 @@ msgid "Show geolocation overlay button"
 msgstr "Sýna yfirliggjandi staðsetningarhnappa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open the geolocation view."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
@@ -63797,14 +63804,9 @@ msgstr ""
 "Forskoðunarmynd er umbreytt í 8-bita svo að skoðun gangi hraðar fyrir sig"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
-msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki umbreyta 16-bita forskoðunarmynd í 8-"
-"bita."
+msgstr "Merktu við hér ef þú vilt umbreyta 16-bita forskoðunarmynd í 8-bita."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
@@ -63812,13 +63814,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "Forskoðunarmynd er alltaf kvörðuð svo hún passi í gluggann"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki kvarða litlar myndir svo þær passi í "
-"gluggann."
+"Merktu við hér ef þú vilt kvarða litlar myndir svo þær passi í gluggann."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -63826,12 +63825,10 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "Forskoðunarmynd notar afstöllun (anti-aliasing) við uppkvörðun"
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki nota afstöllun við að kvarða litlar "
-"myndir svo þær passi í gluggann."
+"Merktu við hér ef þú vilt nota afstöllun við að kvarða litlar myndir stærri."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -63840,13 +63837,10 @@ msgid "Show icons and text over preview"
 msgstr "Birta táknmyndir og texta yfir forskoðun"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you don't want to see icons and text in the image preview."
+#, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
-"Taka hakið úr hér ef þú vilt ekki sjá táknmyndir og texta við forskoðun "
-"mynda."
+"Merktu við hér ef þú vilt sýna táknmyndir og texta við forskoðun mynda."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
@@ -63854,13 +63848,9 @@ msgid "Auto play of videos or animations"
 msgstr "Sjálfvirk spilun myndskeiða eða hreyfimynda"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to auto play of videos or animations."
+#, kde-format
 msgid "Check this if you want to auto play the videos or animations."
-msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki spila sjálfvirkt myndskeið eða "
-"hreyfimyndir."
+msgstr "Merktu við hér ef þú vilt spila sjálfvirkt myndskeið eða hreyfimyndir."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
 #, kde-format
@@ -63868,15 +63858,12 @@ msgid "Show a text overlay over preview."
 msgstr "Birta yfirlag texta ofan á forskoðun"
 
 #: core/utilities/setup/album/setupalbumview.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to show a canvas overlay with technical "
-#| "shot settings and properties."
+#, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
 msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki sjá yfirlag á myndfleti með tæknilegum "
+"Merktu við hér ef þú vilt sýna yfirlag á myndfleti með tæknilegum "
 "upplýsingum um töku og eiginleika myndar."
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
@@ -67475,17 +67462,17 @@ msgstr ""
 
 #: core/utilities/setup/setupdatabase.cpp:185
 #, kde-format
-msgctxt "@title:group"
-msgid "Updates"
-msgstr "Uppfærslur"
-
-#: core/utilities/setup/setupdatabase.cpp:188
-#, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "Uppfæra tætigildi skráa"
 
-#: core/utilities/setup/setupdatabase.cpp:190
+#: core/utilities/setup/setupdatabase.cpp:189
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Get information about <b>Update File Hashes</b>"
+msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
+
+#: core/utilities/setup/setupdatabase.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -67503,11 +67490,11 @@ msgstr ""
 "Eftir uppfærsluna muntu ekki geta notað gagnagrunninn með útgáfum digiKam "
 "eldri en 8.5.0."
 
-#: core/utilities/setup/setupdatabase.cpp:199
+#: core/utilities/setup/setupdatabase.cpp:210
 #, kde-format
-msgctxt "@info:tooltip"
-msgid "Get information about <b>Update File Hashes</b>"
-msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
+msgctxt "@title:group"
+msgid "Updates"
+msgstr "Uppfærslur"
 
 #: core/utilities/setup/setupgeolocation.cpp:106
 #, kde-format
@@ -68992,9 +68979,6 @@ msgstr "Flytja inn atriði"
 
 #~ msgid "Path: %1\n"
 #~ msgstr "Slóð: %1\n"
-
-#~ msgid "Path: %1"
-#~ msgstr "Slóð: %1"
 
 #~ msgid "Caulier Gilles"
 #~ msgstr "Caulier Gilles"
