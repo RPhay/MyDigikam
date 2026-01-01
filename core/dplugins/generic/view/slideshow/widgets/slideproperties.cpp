@@ -21,7 +21,6 @@
 #include <QApplication>
 #include <QDateTime>
 #include <QPixmap>
-#include <QLocale>
 
 // KDE includes
 
@@ -30,6 +29,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dinfointerface.h"
 #include "itempropertiestab.h"
 
@@ -257,7 +257,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
         if (dateTime.isValid())
         {
-            str = QLocale().toString(dateTime, QLocale::ShortFormat);
+            str = asShortDateTime(dateTime);
             PreviewOsdSettings::printInfoText(p, offset, str);
         }
     }
