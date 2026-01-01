@@ -18,23 +18,12 @@ namespace Digikam
 {
 
 DTextEditClearButton::DTextEditClearButton(QWidget* const parent)
-    : QLabel(parent)
+    : QToolButton(parent)
 {
-    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    setStyleSheet(QLatin1String("QToolButton { border: none; padding: 0px; }"));
+    QIcon icon = qApp->style()->standardIcon(QStyle::SP_LineEditClearButton);
     setFocusPolicy(Qt::NoFocus);
-    setContentsMargins(QMargins());
-    setScaledContents(false);
-    setMouseTracking(false);
-    QIcon ico = qApp->style()->standardIcon(QStyle::SP_LineEditClearButton);
-    int s     = qApp->style()->pixelMetric(QStyle::PM_SliderLength) -
-                qApp->style()->pixelMetric(QStyle::PM_DefaultFrameWidth);
-    setPixmap(ico.pixmap(QSize(s, s)));
-}
-
-void DTextEditClearButton::mousePressEvent(QMouseEvent* e)
-{
-    Q_EMIT clicked();
-    QLabel::mousePressEvent(e);
+    setIcon(icon);
 }
 
 // -------------------------------------------------------------------------------
@@ -69,8 +58,13 @@ void DTextEdit::Private::init(DTextEdit* const parent)
     parent->setLinesVisible(lines);
     parent->setTabChangesFocus(true);
 
-    clrBtn = new DTextEditClearButton(parent);
-    parent->setCornerWidget(clrBtn);
+    clrBtn                  = new DTextEditClearButton(parent);
+    QHBoxLayout* const hlay = new QHBoxLayout(parent);
+    hlay->addStretch(10);
+    hlay->addWidget(clrBtn);
+    hlay->setContentsMargins(QMargins());
+    hlay->setSpacing(0);
+    clrBtn->hide();
 
     connect(clrBtn, &DTextEditClearButton::clicked,
             parent, &QTextEdit::clear);
@@ -122,8 +116,13 @@ void DPlainTextEdit::Private::init(DPlainTextEdit* const parent)
 
     parent->setLinesVisible(lines);
 
-    clrBtn = new DTextEditClearButton(parent);
-    parent->setCornerWidget(clrBtn);
+    clrBtn                  = new DTextEditClearButton(parent);
+    QHBoxLayout* const hlay = new QHBoxLayout(parent);
+    hlay->addStretch(10);
+    hlay->addWidget(clrBtn);
+    hlay->setContentsMargins(QMargins());
+    hlay->setSpacing(0);
+    clrBtn->hide();
 
     connect(clrBtn, &DTextEditClearButton::clicked,
             parent, &QPlainTextEdit::clear);
