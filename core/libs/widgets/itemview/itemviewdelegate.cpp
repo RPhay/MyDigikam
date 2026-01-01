@@ -402,7 +402,7 @@ void ItemViewDelegate::drawModificationDate(QPainter* p, const QRect& dateRect, 
 
     p->setFont(d->fontXtra);
     QString str = asShortDateTime(date);
-    str         = i18nc("date of last image modification", "Mod.: %1",str);
+    str         = i18nc("Date of last image modification, shortened", "Mod.: %1", str);
     p->drawText(dateRect, Qt::AlignCenter, str); //squeezedTextCached(p, dateRect.width(), str));
 }
 
