@@ -64,8 +64,7 @@ QString ImportToolTipFiller::CamItemInfoTipContents(const CamItemInfo& info)
 
         if (settings->getToolTipsShowFileDate())
         {
-            QDateTime createdDate  = info.ctime;
-            str                    = asShortDateTime(createdDate);
+            str                    = asShortDateTime(info.ctime);
             tip                   += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
         }
 
