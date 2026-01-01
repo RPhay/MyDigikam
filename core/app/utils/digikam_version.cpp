@@ -57,14 +57,17 @@ const QString additionalInformation()
     QString ret = QString::fromUtf8("<table>");
 
     ret        += QString::fromUtf8("<tr><td>%1</td><td>%2</td></tr>")
-                  .arg(i18n("IRC: "))
-                  .arg(QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a> - #digikam"));
-    ret        += QString::fromUtf8("<tr><td>%1</td><td>%2</td></tr>")
-                  .arg(i18n("Feedback: "))
-                  .arg(QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"));
+                  .arg(i18n("Support: "))
+                  .arg(QString::fromLatin1("<a href='https://www.digikam.org/support/'>digikam.org/support </a>"));
     ret        += QString::fromUtf8("<tr><td>%1</td><td>%2</td></tr>")
                   .arg(i18n("Documentation: "))
-                  .arg(QString::fromLatin1("<a href='https://docs.digikam.org/en/index.html'>docs.digikam.org</a>"));
+                  .arg(QString::fromLatin1("<a href='https://www.digikam.org/documentation/'>digikam.org/documentation</a>"));
+    ret        += QString::fromUtf8("<tr><td>%1</td><td>%2</td></tr>")
+                  .arg(i18n("Contribute: "))
+                  .arg(QString::fromLatin1("<a href='https://www.digikam.org/contribute/'>digikam.org/contribute</a>"));
+    ret        += QString::fromUtf8("<tr><td>%1</td><td>%2</td></tr>")
+                  .arg(i18n("Donate: "))
+                  .arg(QString::fromLatin1("<a href='https://www.digikam.org/donate/'>digikam.org/donate</a>"));
 
     ret        += QString::fromUtf8("</table>");
 
