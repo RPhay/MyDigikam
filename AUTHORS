@@ -2,8 +2,8 @@ MAIN DEVELOPERS:
 ----------------
 
 Gilles Caulier <caulier dot gilles at gmail dot com>                      : Coordinator, lead developer, project management.
-Maik Qualmann <metzpinguin at gmail dot com>                              : Lead Developer.
-Michael Miller <michael_miller at msn dot com>                            : Lead Developer.
+Maik Qualmann <metzpinguin at gmail dot com>                              : Coordinator, lead developer.
+Michael Miller <michael_miller at msn dot com>                            : Lead developer.
 Marcel Wiesweg <marcel dot wiesweg at gmx dot de>                         : Lead developer.
 Mario Frank <mario dot frank at uni-potsdam dot de>                       : Developer.
 Simon Frei <freisim93 at gmail dot com>                                   : Developer.
@@ -11,7 +11,6 @@ Simon Frei <freisim93 at gmail dot com>                                   : Deve
 CONTRIBUTORS:
 -------------
 
-Nicolas Lecureuil <nlecureuil at mandriva dot com>                        : Release manager.
 Mohamed Anwer <m dot anwer at gmx dot com>                                : Developer.
 Veaceslav Munteanu <veaceslav dot munteanu90 at gmail.com>                : Developer.
 Pieter Edelman <p dot edelman at gmx dot net>                             : Developer.
@@ -42,7 +41,7 @@ Alexander Potashev <aspotashev at gmail dot com>                          : Deve
 Lukasz Spas <lukasz dot spas at gmail dot com>                            : Developer.
 Marius Orcsik <marius at habarnam dot ro>                                 : Developer.
 Valerio Fuoglio <valerio dot fuoglio at gmail dot com>                    : Developer, Presentation tool.
-Ralf Hoelzer <kde at ralfhoelzer dot com>                                 : Developer, initial Exif support.
+Ralf Hoelzer <kde at ralfhoelzer dot com>                                 : Developer, Metadata support.
 Andrea Diamantini <adjam7 at gmail dot com>                               : Developer, Webservices tool.
 Tudor Calin <tudor at 1xtech dot com>                                     : Developer, Webservices tool.
 Owen Hirst <n8rider at sbcglobal dot net>                                 : Developer.
@@ -52,30 +51,31 @@ Vardhman Jain <vardhman at gmail.com>                                     : Deve
 Colin Guthrie <kde at colin dot guthr dot ie>                             : Developer, Webservices tool.
 Smit Mehta <smit dot meh at gmail dot com>                                : Developer, Webservices tool.
 Angelo Naselli <anaselli at linux dot it>                                 : Developer, Mandriva packages.
-Michael G. Hansen <mike at mghansen dot de>                               : Lead developer.
+Michael G. Hansen <mike at mghansen dot de>                               : Developer, Geolocation support.
 Holger Foerster <hamsi2k at freenet dot de>                               : Developer.
 Luka Renko <lure at kubuntu dot org>                                      : Developer, Kubuntu packages.
-Ananta Palani <anantapalani at gmail dot com>                             : Windows port and packaging.
-Andi Clemens <andi dot clemens at gmail dot com>                          : Advance Rename tool, developer.
-Franscesco Riosa <francesco at pnpitalia dot it>                          : LCMS2 port, Mysql support.
+Ananta Palani <anantapalani at gmail dot com>                             : Developer, Windows port and packaging.
+Andi Clemens <andi dot clemens at gmail dot com>                          : Developer, Advance Rename tool.
+Franscesco Riosa <francesco at pnpitalia dot it>                          : Developer, LCMS2 port, Mysql support.
 Patrick Spendrin <patrick_spendrin at gmx dot de>                         : Developer, Windows port, Marble support.
-Gerhard Kulzer <gerhard at kulzer dot net>                                : Bug reports, patches, and handbook writer.
-Risto Saukonpaa <paristo at gmail dot com>                                : Design, icons, logo, banner, mocup, beta tester.
-Achim Bohnet <ach at mpe dot mpg dot de>                                  : Bug reports, patches, Debian packages.
-Oliver Doerr <oliver at doerr-privat dot de>                              : Beta tester, German translations.
 Arnd Baecker <arnd dot baecker at web dot de>                             : Developer.
 Ralf Holzer <kde at ralfhoelzer dot com>                                  : Developer (0.7.x).
 Todd Shoemaker <todd at theshoemakers dot net>                            : Developer (0.6.x).
 Unai Garro <ugarro at sourceforge dot net>                                : Developer (Hot Pixels Fixer tools - 0.9.x).
-Gregory Kokanosky <gregory dot kokanosky at free dot fr>                  : Feedback and patches (0.6.x).
-Richard Taylor <r dot taylor at bcs dot org dot uk>                       : Feedback, patches, and handbook writer (0.7.x).
-Yves Chaufour <yves dot chaufour at wanadoo dot fr>                       : digiKam webpage maintainer (0.7.x).
-Charles Bouveyron <c dot bouveyron at tuxfamily dot org>                  : Beta tester (0.6.x).
-Sebastian Rooder <seppelrockt at web dot de>                              : Crystal icons style (0.6.2).
-Tung Nguyen <ntung at free dot fr>                                        : Bug reports, French translations, new image plugins icon set (0.8.x).
-Pieter Voloshyn <pieter dot voloshyn at gmail dot com>                    : Image filter algorithms (0.8.x - 0.9.x).
 Francisco J. Cruz <fj dot cruz at supercable dot es>                      : Developer (0.9.0-0.9.2: Color Management)
-Fabien Salvi <fabien dot ubuntu at gmail dot com>                         : Webmaster(0.9.0 series), French translations.
+Pieter Voloshyn <pieter dot voloshyn at gmail dot com>                    : Developer, Image filter algorithms (0.8.x - 0.9.x).
+Gerhard Kulzer <gerhard at kulzer dot net>                                : Bug reports, patches, and handbook writer.
+Risto Saukonpaa <paristo at gmail dot com>                                : Design, icons, logo, banner, mocup, beta tester.
+Achim Bohnet <ach at mpe dot mpg dot de>                                  : Bug reports, patches, Debian packages.
+Tung Nguyen <ntung at free dot fr>                                        : Bug reports, French translations, new image plugins icon set (0.8.x).
+Oliver Doerr <oliver at doerr-privat dot de>                              : Beta tester, German translations.
+Charles Bouveyron <c dot bouveyron at tuxfamily dot org>                  : Beta tester (0.6.x).
+Gregory Kokanosky <gregory dot kokanosky at free dot fr>                  : Feedback and patches (0.6.x).
+Nicolas Lecureuil <nlecureuil at mandriva dot com>                        : Packaging (0.9.x-2.9.x).
+Richard Taylor <r dot taylor at bcs dot org dot uk>                       : Feedback, patches, and handbook writer (0.7.x).
+Fabien Salvi <fabien dot ubuntu at gmail dot com>                         : Webmaster (0.9.x-1.9.x), French translations.
+Yves Chaufour <yves dot chaufour at wanadoo dot fr>                       : digiKam webpage maintainer (0.7.x).
+Sebastian Rooder <seppelrockt at web dot de>                              : Designer, Crystal icons style (0.6.2).
 Stefano Rivoir <s dot rivoir at gts dot it>                               : Italian translations.
 Jan Toenjes <jan dot toenjes at web dot de>                               : German translations.
 Quique <quique at sindominio dot net>                                     : Spanish translations.
@@ -88,14 +88,14 @@ Anna Sawicka <ania at kajak dot org dot pl>                               : Poli
 FORMER MEMBERS:
 ---------------
 
-Renchi Raju <renchi dot raju at gmail dot com>                            : 0.1.0 to 0.8.0 : main coordinator and lead developer.
+Renchi Raju <renchi dot raju at gmail dot com>                            : Developer, Coordinator, Projet Manager (0.1.0 to 0.8.0).
 Joern Ahrens <kde at jokele dot de>                                       : Developer, digiKam webpage maintainer (0.7.x-0.8.x).
 Tom Albers <tomalbers at kde dot nl>                                      : Developer, digiKam webpage maintainer (0.7.x-0.8.x).
 
 DIGIKAM SPLASHSCREENS CREDITS:
 ------------------------------
 
-8.9.0          : Didier Dalcantara              <didier.dalcantara@free.fr>
+9.0.0          : Didier Dalcantara              <didier.dalcantara@free.fr>
 8.8.0          : Andreas K. Huettel             <dilfridge at gentoo dot org>
 8.7.0          : Shaun Rambaran                 <shaun at method dot moda>
 8.6.0          : Michael Miller                 <michael_miller at msn dot com>
@@ -201,12 +201,11 @@ DIGIKAM SPLASHSCREENS CREDITS:
 0.6.1          : Jens Gassmann                  <jens dot gassmann at atomix dot de>
 0.6.0          : Renchi Raju                    <renchi dot raju at gmail dot com>
 0.5.0          : Renchi Raju                    <renchi dot raju at gmail dot com>
-0.4.0          : NONE
 
 SHOWFOTO SPLASHSCREENS CREDITS:
 -------------------------------
 
-8.9.0          : Didier Dalcantara              <didier.dalcantara@free.fr>
+9.0.0          : Didier Dalcantara              <didier.dalcantara@free.fr>
 8.8.0          : Caulier Gilles                 <caulier dot gilles at gmail dot com>
 8.7.0          : Shaun Rambaran                 <shaun at method dot moda>
 8.6.0          : Michael Miller                 <michael_miller at msn dot com>
@@ -305,12 +304,11 @@ SHOWFOTO SPLASHSCREENS CREDITS:
 0.3.1          : Maxime Delorme                 <maxime dot delorme at tiscali dot fr>
 0.3.0          : Caulier Gilles                 <caulier dot gilles at gmail dot com>
 0.2.0          : Joern Ahrens                   <kde at jokele dot de>
-0.1.0          : NONE
 
-ABOUT BACKGROUND IMAGE:
------------------------
+WELCOME PAGE IMAGE CREDITS:
+---------------------------
 
-8.9.0          : Andreas K. Huettel             <dilfridge at gentoo dot org>
+9.0.0          : Andreas K. Huettel             <dilfridge at gentoo dot org>
 8.8.0          : Carlos Wallingre               <cadasur at yahoo dot com dot ar>
 8.7.0          : Carlos Wallingre               <cadasur at yahoo dot com dot ar>
 8.6.0          : Michael Miller                 <michael_miller at msn dot com>
