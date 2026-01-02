@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-01 00:40+0000\n"
+"POT-Creation-Date: 2026-01-02 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -988,16 +988,16 @@ msgstr ""
 msgid "Album \"%1\""
 msgstr "\"%1\" 앨범"
 
-#: core/app/items/utils/tooltipfiller.cpp:78
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
-#: core/utilities/import/items/importtooltipfiller.cpp:55
+#: core/app/items/utils/tooltipfiller.cpp:79
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:61
+#: core/utilities/import/items/importtooltipfiller.cpp:56
 #, kde-format
 msgid "File Properties"
 msgstr "파일 속성"
 
-#: core/app/items/utils/tooltipfiller.cpp:83
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
-#: core/utilities/import/items/importtooltipfiller.cpp:60
+#: core/app/items/utils/tooltipfiller.cpp:84
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:65
+#: core/utilities/import/items/importtooltipfiller.cpp:61
 #, kde-format
 msgctxt "filename"
 msgid "Name:"
@@ -1007,7 +1007,7 @@ msgstr "이름:"
 #: core/app/items/utils/tooltipfiller.cpp:647
 #: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
 #, kde-format
 msgid "Date:"
@@ -1026,7 +1026,7 @@ msgstr "크기:"
 #: core/app/items/utils/tooltipfiller.cpp:98
 #: core/app/items/utils/tooltipfiller.cpp:230
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:192
 #: core/utilities/import/items/importtooltipfiller.cpp:75
 #: core/utilities/import/items/importtooltipfiller.cpp:170
 #, kde-format
@@ -1108,45 +1108,45 @@ msgstr "렌즈:"
 
 #: core/app/items/utils/tooltipfiller.cpp:211
 #: core/app/items/utils/tooltipfiller.cpp:216
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:178
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "만든 날짜:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:200
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "조리개/초점:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:203
+#: core/app/views/preview/itempreviewosd.cpp:204
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
-#: core/libs/video/osd/frameosd.cpp:203
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
+#: core/libs/video/osd/frameosd.cpp:204
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:206
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
 msgid "%1 ISO"
 msgstr "ISO %1"
 
 #: core/app/items/utils/tooltipfiller.cpp:251
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:213
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "노출/감도:"
 
 #: core/app/items/utils/tooltipfiller.cpp:278
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:240
 #, kde-format
 msgid "Mode/Program:"
 msgstr "모드/프로그램:"
 
 #: core/app/items/utils/tooltipfiller.cpp:291
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:253
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
 msgctxt "camera flash settings"
@@ -1154,7 +1154,7 @@ msgid "Flash:"
 msgstr "플래시:"
 
 #: core/app/items/utils/tooltipfiller.cpp:303
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:265
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
@@ -2802,20 +2802,30 @@ msgid "All supported files (%1)"
 msgstr "모든 지원하는 파일 (%1)"
 
 #: core/app/utils/digikam_version.cpp:60
-#, kde-format
-msgid "IRC: "
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@info: week properties"
+#| msgid "Start: "
+msgid "Support: "
+msgstr "시작:"
 
 #: core/app/utils/digikam_version.cpp:63
-#, kde-format
-msgid "Feedback: "
-msgstr ""
-
-#: core/app/utils/digikam_version.cpp:66
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Documentation: "
 msgstr "문서화"
+
+#: core/app/utils/digikam_version.cpp:66
+#, fuzzy, kde-format
+#| msgid "Contribute..."
+msgid "Contribute: "
+msgstr "기여..."
+
+#: core/app/utils/digikam_version.cpp:69
+#, fuzzy, kde-format
+#| msgctxt "@label: item properties"
+#| msgid "Date: "
+msgid "Donate: "
+msgstr "날짜: "
 
 #: core/app/views/preview/itempreviewview.cpp:166
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
@@ -4005,15 +4015,15 @@ msgstr "흰색"
 #: core/app/views/tableview/tableview_column_digikam.cpp:493
 #: core/app/views/tableview/tableview_column_digikam.cpp:501
 #: core/app/views/tableview/tableview_column_digikam.cpp:509
-#: core/libs/properties/import/importitempropertiestab.cpp:352
-#: core/libs/properties/import/importitempropertiestab.cpp:367
-#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/import/importitempropertiestab.cpp:353
+#: core/libs/properties/import/importitempropertiestab.cpp:368
+#: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:746
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:851
-#: core/libs/properties/itempropertiessidebardb.cpp:858
+#: core/libs/properties/itempropertiessidebardb.cpp:747
+#: core/libs/properties/itempropertiessidebardb.cpp:749
+#: core/libs/properties/itempropertiessidebardb.cpp:852
+#: core/libs/properties/itempropertiessidebardb.cpp:859
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -4021,22 +4031,22 @@ msgid "Yes"
 msgstr "예"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:862
+#: core/libs/properties/itempropertiessidebardb.cpp:863
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
 msgstr ""
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:510
-#: core/libs/properties/import/importitempropertiestab.cpp:348
-#: core/libs/properties/import/importitempropertiestab.cpp:363
-#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/import/importitempropertiestab.cpp:349
+#: core/libs/properties/import/importitempropertiestab.cpp:364
+#: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:870
+#: core/libs/properties/itempropertiessidebardb.cpp:748
+#: core/libs/properties/itempropertiessidebardb.cpp:750
+#: core/libs/properties/itempropertiessidebardb.cpp:853
+#: core/libs/properties/itempropertiessidebardb.cpp:871
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 #| msgid "No"
@@ -4044,14 +4054,14 @@ msgctxt "@info: item properties"
 msgid "No"
 msgstr "아니요"
 
-#: core/app/views/tableview/tableview_column_file.cpp:52
+#: core/app/views/tableview/tableview_column_file.cpp:53
 #, kde-format
 msgid "File properties"
 msgstr "파일 속성"
 
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
-#: core/app/views/tableview/tableview_column_file.cpp:55
-#: core/app/views/tableview/tableview_column_file.cpp:80
+#: core/app/views/tableview/tableview_column_file.cpp:56
+#: core/app/views/tableview/tableview_column_file.cpp:81
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
@@ -4059,42 +4069,42 @@ msgstr "파일 속성"
 msgid "Filename"
 msgstr "파일 이름"
 
-#: core/app/views/tableview/tableview_column_file.cpp:56
-#: core/app/views/tableview/tableview_column_file.cpp:85
+#: core/app/views/tableview/tableview_column_file.cpp:57
+#: core/app/views/tableview/tableview_column_file.cpp:86
 #: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
 msgstr "경로"
 
-#: core/app/views/tableview/tableview_column_file.cpp:57
-#: core/app/views/tableview/tableview_column_file.cpp:90
+#: core/app/views/tableview/tableview_column_file.cpp:58
+#: core/app/views/tableview/tableview_column_file.cpp:91
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
 #: core/libs/properties/itempropertiestab.cpp:486
 #, kde-format
 msgid "Size"
 msgstr "크기"
 
-#: core/app/views/tableview/tableview_column_file.cpp:58
-#: core/app/views/tableview/tableview_column_file.cpp:95
+#: core/app/views/tableview/tableview_column_file.cpp:59
+#: core/app/views/tableview/tableview_column_file.cpp:96
 #, kde-format
 msgid "Last modified"
 msgstr "수정한 날짜"
 
-#: core/app/views/tableview/tableview_column_file.cpp:234
+#: core/app/views/tableview/tableview_column_file.cpp:233
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Human readable"
 msgstr "쉽게 읽을 수 있음"
 
-#: core/app/views/tableview/tableview_column_file.cpp:235
+#: core/app/views/tableview/tableview_column_file.cpp:234
 #, fuzzy, kde-format
 #| msgid "Plain"
 msgctxt "@item: tableview"
 msgid "Plain"
 msgstr "일반"
 
-#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_file.cpp:235
 #: core/app/views/tableview/tableview_column_geo.cpp:255
 #, kde-format
 msgid "Display format"
@@ -4150,79 +4160,79 @@ msgstr "미터법 단위"
 msgid "Imperial units"
 msgstr "영미법 단위"
 
-#: core/app/views/tableview/tableview_column_item.cpp:68
+#: core/app/views/tableview/tableview_column_item.cpp:69
 #, kde-format
 msgid "Item properties"
 msgstr "항목 속성"
 
-#: core/app/views/tableview/tableview_column_item.cpp:71
-#: core/app/views/tableview/tableview_column_item.cpp:92
+#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:93
 #: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "너비"
 
-#: core/app/views/tableview/tableview_column_item.cpp:72
-#: core/app/views/tableview/tableview_column_item.cpp:97
+#: core/app/views/tableview/tableview_column_item.cpp:73
+#: core/app/views/tableview/tableview_column_item.cpp:98
 #: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "높이"
 
-#: core/app/views/tableview/tableview_column_item.cpp:73
-#: core/app/views/tableview/tableview_column_item.cpp:102
+#: core/app/views/tableview/tableview_column_item.cpp:74
+#: core/app/views/tableview/tableview_column_item.cpp:103
 #: core/libs/properties/itempropertiestab.cpp:491
 #, kde-format
 msgid "Dimensions"
 msgstr "크기"
 
-#: core/app/views/tableview/tableview_column_item.cpp:74
-#: core/app/views/tableview/tableview_column_item.cpp:107
+#: core/app/views/tableview/tableview_column_item.cpp:75
+#: core/app/views/tableview/tableview_column_item.cpp:108
 #, kde-format
 msgid "Pixel count"
 msgstr "픽셀 개수"
 
-#: core/app/views/tableview/tableview_column_item.cpp:75
-#: core/app/views/tableview/tableview_column_item.cpp:112
+#: core/app/views/tableview/tableview_column_item.cpp:76
+#: core/app/views/tableview/tableview_column_item.cpp:113
 #, kde-format
 msgid "Bit depth"
 msgstr "색 농도"
 
-#: core/app/views/tableview/tableview_column_item.cpp:76
-#: core/app/views/tableview/tableview_column_item.cpp:117
+#: core/app/views/tableview/tableview_column_item.cpp:77
+#: core/app/views/tableview/tableview_column_item.cpp:118
 #, kde-format
 msgid "Color mode"
 msgstr "색상 모드"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/app/views/tableview/tableview_column_item.cpp:77
-#: core/app/views/tableview/tableview_column_item.cpp:122
+#: core/app/views/tableview/tableview_column_item.cpp:78
+#: core/app/views/tableview/tableview_column_item.cpp:123
 #: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:227
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
 msgstr "형식"
 
-#: core/app/views/tableview/tableview_column_item.cpp:78
-#: core/app/views/tableview/tableview_column_item.cpp:127
+#: core/app/views/tableview/tableview_column_item.cpp:79
+#: core/app/views/tableview/tableview_column_item.cpp:128
 #, kde-format
 msgid "Creation date/time"
 msgstr "만든 날짜/시간"
 
-#: core/app/views/tableview/tableview_column_item.cpp:79
-#: core/app/views/tableview/tableview_column_item.cpp:132
+#: core/app/views/tableview/tableview_column_item.cpp:80
+#: core/app/views/tableview/tableview_column_item.cpp:133
 #, kde-format
 msgid "Digitization date/time"
 msgstr "전산화 날짜/시간"
 
-#: core/app/views/tableview/tableview_column_item.cpp:80
-#: core/app/views/tableview/tableview_column_item.cpp:137
+#: core/app/views/tableview/tableview_column_item.cpp:81
+#: core/app/views/tableview/tableview_column_item.cpp:138
 #, kde-format
 msgid "Aspect ratio"
 msgstr "종횡 비율"
 
-#: core/app/views/tableview/tableview_column_item.cpp:81
-#: core/app/views/tableview/tableview_column_item.cpp:142
+#: core/app/views/tableview/tableview_column_item.cpp:82
+#: core/app/views/tableview/tableview_column_item.cpp:143
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, kde-format
 msgid "Similarity"
@@ -12168,7 +12178,7 @@ msgstr "지리적 위치 편집..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:70
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:71
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "사진 '%1'을(를) 불러올 수 없음"
@@ -12179,13 +12189,13 @@ msgid "Format of image '%1' is unknown"
 msgstr "사진 '%1'의 형식을 알 수 없음"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:81
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "사진 '%1'을(를) 불러올 수 없음"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:136
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "사진 '%1'을(를) '%2'(으)로 저장할 수 없음"
@@ -12786,8 +12796,8 @@ msgstr[0] "<p>%1글자.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:430
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:128
-#: core/libs/widgets/text/dplaintextedit.cpp:400
-#: core/libs/widgets/text/dtextedit.cpp:412
+#: core/libs/widgets/text/dplaintextedit.cpp:386
+#: core/libs/widgets/text/dtextedit.cpp:398
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -17847,19 +17857,19 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "스택된 이미지 도구"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:125
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:156
 #, fuzzy, kde-format
 #| msgid "Could not save image to file '%1'"
 msgid "Could not copy image to file '%1'"
 msgstr "파일 '%1'에 이미지를 저장할 수 없음"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:173
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "이미지 '%1'의 섬네일을 '%2'(으)로 저장할 수 없습니다."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:184
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -38564,7 +38574,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "최근에 붙인 태그가 없음"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:126
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:127
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Geolocation information (GPS)"
@@ -38574,38 +38584,38 @@ msgid ""
 "Available"
 msgstr "지리적 위치 정보(GPS)"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>고도</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>위도</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>경도</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>날짜</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:158
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:159
 #, fuzzy, kde-format
 #| msgid "Copy coordinates"
 msgid "Copy GPS coordinates to clipboard"
 msgstr "좌표 복사"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:168
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:169
 #, kde-format
 msgid "See more information on the Internet"
 msgstr "인터넷에서 더 많은 정보 찾아보기"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:407
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:408
 #, kde-format
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
@@ -38677,14 +38687,14 @@ msgstr "메타데이터"
 msgid "Geolocation"
 msgstr "위치"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:127
+#: core/libs/properties/import/importitempropertiestab.cpp:128
 #, fuzzy, kde-format
 #| msgid "File: "
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "파일:"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:128
+#: core/libs/properties/import/importitempropertiestab.cpp:129
 #: core/libs/properties/itempropertiestab.cpp:35
 #, fuzzy, kde-format
 #| msgid "Folder: "
@@ -38692,33 +38702,33 @@ msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "폴더:"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:129
+#: core/libs/properties/import/importitempropertiestab.cpp:130
 #: core/libs/properties/itempropertiestab.cpp:37
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "날짜: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:130
+#: core/libs/properties/import/importitempropertiestab.cpp:131
 #: core/libs/properties/itempropertiestab.cpp:38
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
 msgstr "크기: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:131
+#: core/libs/properties/import/importitempropertiestab.cpp:132
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Readable: "
 msgstr "읽기 가능:"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:132
+#: core/libs/properties/import/importitempropertiestab.cpp:133
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Writable: "
 msgstr "쓰기 가능:"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:133
+#: core/libs/properties/import/importitempropertiestab.cpp:134
 #: core/libs/properties/itempropertiestab.cpp:88
 #, fuzzy, kde-format
 #| msgid "Type: "
@@ -38726,15 +38736,15 @@ msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "형식:"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:134
+#: core/libs/properties/import/importitempropertiestab.cpp:135
 #: core/libs/properties/itempropertiestab.cpp:89
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
 msgstr "크기: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:135
-#: core/libs/properties/import/importitempropertiestab.cpp:243
+#: core/libs/properties/import/importitempropertiestab.cpp:136
+#: core/libs/properties/import/importitempropertiestab.cpp:244
 #: core/libs/properties/itempropertiestab.cpp:90
 #: core/libs/properties/itempropertiestab.cpp:188
 #, kde-format
@@ -38742,25 +38752,25 @@ msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
 msgstr "종횡비: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:136
+#: core/libs/properties/import/importitempropertiestab.cpp:137
 #, kde-format
 msgctxt "@label: item properties"
 msgid "New Name: "
 msgstr "새 이름: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:137
+#: core/libs/properties/import/importitempropertiestab.cpp:138
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Downloaded: "
 msgstr "다운로드됨: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:178
+#: core/libs/properties/import/importitempropertiestab.cpp:179
 #, kde-format
 msgctxt "@title"
 msgid "Camera File Properties"
 msgstr "카메라 파일 속성"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:185
+#: core/libs/properties/import/importitempropertiestab.cpp:186
 #: core/libs/properties/itempropertiestab.cpp:132
 #, fuzzy, kde-format
 #| msgid "Make: "
@@ -38768,105 +38778,105 @@ msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "제조사: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:186
+#: core/libs/properties/import/importitempropertiestab.cpp:187
 #: core/libs/properties/itempropertiestab.cpp:133
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr "모델: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:187
+#: core/libs/properties/import/importitempropertiestab.cpp:188
 #, fuzzy, kde-format
 #| msgid "Created: "
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "만든 날짜: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:188
+#: core/libs/properties/import/importitempropertiestab.cpp:189
 #: core/libs/properties/itempropertiestab.cpp:134
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "렌즈: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:189
+#: core/libs/properties/import/importitempropertiestab.cpp:190
 #: core/libs/properties/itempropertiestab.cpp:135
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "조리개 구경: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:190
+#: core/libs/properties/import/importitempropertiestab.cpp:191
 #: core/libs/properties/itempropertiestab.cpp:136
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "초점 거리: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:191
+#: core/libs/properties/import/importitempropertiestab.cpp:192
 #: core/libs/properties/itempropertiestab.cpp:137
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "노출: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:192
+#: core/libs/properties/import/importitempropertiestab.cpp:193
 #: core/libs/properties/itempropertiestab.cpp:138
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "감도: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:193
+#: core/libs/properties/import/importitempropertiestab.cpp:194
 #: core/libs/properties/itempropertiestab.cpp:139
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "모드/프로그램: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:194
+#: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/itempropertiestab.cpp:140
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "플래시: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:195
+#: core/libs/properties/import/importitempropertiestab.cpp:196
 #: core/libs/properties/itempropertiestab.cpp:141
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
 msgstr "화이트 밸런스: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:236
+#: core/libs/properties/import/importitempropertiestab.cpp:237
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgctxt "@title"
 msgid "Photograph Properties"
 msgstr "사진 속성"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:244
+#: core/libs/properties/import/importitempropertiestab.cpp:245
 #: core/libs/properties/itempropertiestab.cpp:192
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "오디오 비트 전송률: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:245
+#: core/libs/properties/import/importitempropertiestab.cpp:246
 #: core/libs/properties/itempropertiestab.cpp:193
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "오디오 채널 형식: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:246
+#: core/libs/properties/import/importitempropertiestab.cpp:247
 #: core/libs/properties/itempropertiestab.cpp:194
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "오디오 코덱: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:247
+#: core/libs/properties/import/importitempropertiestab.cpp:248
 #: core/libs/properties/itempropertiestab.cpp:189
 #, fuzzy, kde-format
 #| msgid "Duration: "
@@ -38874,28 +38884,28 @@ msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "재생 시간: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:248
+#: core/libs/properties/import/importitempropertiestab.cpp:249
 #: core/libs/properties/itempropertiestab.cpp:190
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "프레임 레이트:"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:249
+#: core/libs/properties/import/importitempropertiestab.cpp:250
 #: core/libs/properties/itempropertiestab.cpp:191
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
 msgstr "비디오 코덱: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:278
+#: core/libs/properties/import/importitempropertiestab.cpp:279
 #, fuzzy, kde-format
 #| msgid "Audio/Video Properties"
 msgctxt "@title"
 msgid "Audio/Video Properties"
 msgstr "오디오/비디오 속성"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:333
+#: core/libs/properties/import/importitempropertiestab.cpp:334
 #, fuzzy, kde-format
 #| msgctxt "average scene luminance value unknown"
 #| msgid "unknown"
@@ -38903,48 +38913,48 @@ msgctxt "@info: item properties"
 msgid "unknown"
 msgstr "알 수 없음"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:334
+#: core/libs/properties/import/importitempropertiestab.cpp:335
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unchanged"
 msgstr "변경되지 않음"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:335
-#: core/libs/properties/itempropertiessidebar.cpp:217
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/import/importitempropertiestab.cpp:336
+#: core/libs/properties/itempropertiessidebar.cpp:218
+#: core/libs/properties/itempropertiessidebardb.cpp:690
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "사용할 수 없음"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:381
+#: core/libs/properties/import/importitempropertiestab.cpp:382
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item size"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:388
+#: core/libs/properties/import/importitempropertiestab.cpp:389
 #, kde-format
 msgctxt "@label"
 msgid "RAW Image"
 msgstr "RAW 이미지"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:428
+#: core/libs/properties/import/importitempropertiestab.cpp:429
 #, kde-format
 msgctxt "@info: item resolution"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2(%3백만 화소)"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:494
+#: core/libs/properties/import/importitempropertiestab.cpp:495
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: focal length"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:499
+#: core/libs/properties/import/importitempropertiestab.cpp:500
 #, kde-format
 msgctxt "@label"
 msgid "%1 ISO"
@@ -39110,41 +39120,41 @@ msgstr "IPTC"
 msgid "XMP"
 msgstr "XMP"
 
-#: core/libs/properties/itempropertiessidebar.cpp:75
+#: core/libs/properties/itempropertiessidebar.cpp:76
 #, fuzzy, kde-format
 #| msgid "Copy coordinates"
 msgid "Copy the all properties in clipboard"
 msgstr "좌표 복사"
 
-#: core/libs/properties/itempropertiessidebar.cpp:79
+#: core/libs/properties/itempropertiessidebar.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "Open in File Manager"
 msgid "Open item in the file manager"
 msgstr "파일 관리자에서 열기"
 
-#: core/libs/properties/itempropertiessidebar.cpp:81
+#: core/libs/properties/itempropertiessidebar.cpp:82
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "속성"
 
-#: core/libs/properties/itempropertiessidebar.cpp:82
+#: core/libs/properties/itempropertiessidebar.cpp:83
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: item properties"
 msgid "Metadata"
 msgstr "메타데이터"
 
-#: core/libs/properties/itempropertiessidebar.cpp:83
+#: core/libs/properties/itempropertiessidebar.cpp:84
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "색상"
 
-#: core/libs/properties/itempropertiessidebar.cpp:88
+#: core/libs/properties/itempropertiessidebar.cpp:89
 #, fuzzy, kde-format
 #| msgid "Map"
 msgctxt "@title: item properties"
@@ -39153,7 +39163,7 @@ msgstr "지도"
 
 #: core/libs/properties/itempropertiessidebar.cpp:242
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
-#: core/showfoto/stackview/showfotostackviewitem.cpp:66
+#: core/showfoto/stackview/showfotostackviewitem.cpp:67
 #, kde-format
 msgctxt "@info: item properties"
 msgid "RAW Image"
@@ -39167,8 +39177,8 @@ msgstr "조정하지 않음"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:723
-#: core/libs/properties/itempropertiessidebardb.cpp:736
+#: core/libs/properties/itempropertiessidebardb.cpp:724
+#: core/libs/properties/itempropertiessidebardb.cpp:737
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -39182,14 +39192,14 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2(%3백만 화소)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:745
+#: core/libs/properties/itempropertiessidebardb.cpp:746
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:779
+#: core/libs/properties/itempropertiessidebardb.cpp:780
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -39197,45 +39207,45 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:784
+#: core/libs/properties/itempropertiessidebardb.cpp:785
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "ISO %1"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:99
+#: core/libs/properties/itempropertiessidebardb.cpp:100
 #, fuzzy, kde-format
 #| msgid "Captions"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "캡션"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:100
+#: core/libs/properties/itempropertiessidebardb.cpp:101
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "버전"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:104
+#: core/libs/properties/itempropertiessidebardb.cpp:105
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid "Open the Description tab for editing"
 msgstr "캡션 정보"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:108
+#: core/libs/properties/itempropertiessidebardb.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Open the image editor."
 msgid "Open the Tags tab for editing"
 msgstr "이미지 편집기를 엽니다."
 
-#: core/libs/properties/itempropertiessidebardb.cpp:112
-#: core/libs/properties/itempropertiessidebardb.cpp:116
+#: core/libs/properties/itempropertiessidebardb.cpp:113
+#: core/libs/properties/itempropertiessidebardb.cpp:117
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:728
+#: core/libs/properties/itempropertiessidebardb.cpp:729
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -44349,25 +44359,27 @@ msgid_plural ""
 "\"%1\" selected pictures"
 msgstr[0] "<i>선택한 사진 <br/><b>%1개에</b> 작업 적용 중</i>"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
-#, kde-format
-msgctxt "date of last image modification"
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#, fuzzy, kde-format
+#| msgctxt "date of last image modification"
+#| msgid "Mod.: %1"
+msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
 msgstr "수정: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
 #: core/showfoto/main/showfoto.cpp:267
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
-#: core/utilities/import/items/itemviewimportdelegate.cpp:368
+#: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2(%3백만 화소)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
-#: core/utilities/import/items/itemviewimportdelegate.cpp:373
+#: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -53122,7 +53134,7 @@ msgid "C&ancel"
 msgstr "취소(&A)"
 
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
-#: core/utilities/import/items/itemviewimportdelegate.cpp:321
+#: core/utilities/import/items/itemviewimportdelegate.cpp:320
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
