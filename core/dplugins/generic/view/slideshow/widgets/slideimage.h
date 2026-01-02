@@ -26,6 +26,7 @@
 #include "loadingdescription.h"
 #include "previewsettings.h"
 #include "slideshowsettings.h"
+#include "graphicsdimgview.h"
 #include "dimg.h"
 
 using namespace Digikam;
@@ -33,7 +34,8 @@ using namespace Digikam;
 namespace DigikamGenericSlideShowPlugin
 {
 
-class SlideImage : public QWidget
+class SlideImage : public GraphicsDImgView
+
 {
     Q_OBJECT
 
@@ -49,7 +51,7 @@ public:
 Q_SIGNALS:
 
     void signalImageLoaded(bool);
-
+/*
 private Q_SLOTS:
 
     void slotGotImagePreview(const LoadingDescription&, const DImg&);
@@ -58,7 +60,7 @@ private:
 
     void paintEvent(QPaintEvent*)   override;
     void updatePixmap();
-
+*/
 private:
 
     class Private;

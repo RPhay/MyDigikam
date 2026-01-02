@@ -102,8 +102,6 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
       d      (new Private)
 {
     const int spacing         = layoutSpacing();
-
-
     QGridLayout* const layout = new QGridLayout(this);
 
     // Screen options
@@ -141,12 +139,12 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    d->enableHWVideoCheck     = new QCheckBox(i18n("Use video hardware acceleration"), this);
-    d->enableHWTConvCheck     = new QCheckBox(i18n("Use video textures conversion"), this);
+    d->enableHWVideoCheck        = new QCheckBox(i18n("Use video hardware acceleration"), this);
+    d->enableHWTConvCheck        = new QCheckBox(i18n("Use video textures conversion"), this);
 
-    QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render video:"), this);
+    QLabel* const videoLabel     = new QLabel(i18n("Decoding backend to render video:"), this);
 
-    d->videoBackendCBox       = new QComboBox(this);
+    d->videoBackendCBox          = new QComboBox(this);
     d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"),      QLatin1String("ffmpeg"));
 
 #   if defined(Q_OS_LINUX)
@@ -234,6 +232,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     // Proxy settings options
 
+    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 3);
     layout->addWidget(proxySettings,                         row++, 0, 1, 3);
     layout->addWidget(systemNote,                            row++, 0, 1, 3);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -311,7 +310,9 @@ void SystemSettingsWidget::saveSettings()
     system.softwareOpenGL    = d->softwareOpenGLCheck->isChecked();
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.enableOpenCL      = d->enableOpenCLCheck->isChecked();
-    system.enableDnnOpenCL   = d->enableOpenCLDNNCheck->isChecked() && d->enableOpenCLCheck->isChecked() && d->openCLDNNTestResult;
+    system.enableDnnOpenCL   = d->enableOpenCLDNNCheck->isChecked() &&
+                               d->enableOpenCLCheck->isChecked()    &&
+                               d->openCLDNNTestResult;
     system.dnnOpenCLTested   = d->openCLDNNTestResult;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))

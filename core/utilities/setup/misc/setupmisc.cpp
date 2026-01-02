@@ -183,16 +183,18 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->showTrashDeleteDialogCheck,              7, 0, 1, 4);
     layout->addWidget(d->showPermanentDeleteDialogCheck,          8, 0, 1, 4);
     layout->addWidget(d->sidebarApplyDirectlyCheck,               9, 0, 1, 4);
-    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck, 10, 0, 1, 4);
-    layout->addWidget(d->selectFirstAlbumItemCheck,              11, 0, 1, 4);
-    layout->addWidget(d->expandNewCurrentItemCheck,              12, 0, 1, 4);
-    layout->addWidget(d->scrollItemToCenterCheck,                13, 0, 1, 4);
-    layout->addWidget(albumDateSourceHbox,                       14, 0, 1, 4);
-    layout->addWidget(stringComparisonHbox,                      15, 0, 1, 4);
-    layout->addWidget(minSimilarityBoundHbox,                    16, 0, 1, 4);
-    layout->addWidget(upOptionsGroup,                            17, 0, 1, 4);
+    layout->addWidget(new DLineWidget(Qt::Horizontal),           10, 0, 1, 4);
+    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck, 11, 0, 1, 4);
+    layout->addWidget(d->selectFirstAlbumItemCheck,              12, 0, 1, 4);
+    layout->addWidget(d->expandNewCurrentItemCheck,              13, 0, 1, 4);
+    layout->addWidget(d->scrollItemToCenterCheck,                14, 0, 1, 4);
+    layout->addWidget(new DLineWidget(Qt::Horizontal),           15, 0, 1, 4);
+    layout->addWidget(albumDateSourceHbox,                       16, 0, 1, 4);
+    layout->addWidget(stringComparisonHbox,                      17, 0, 1, 4);
+    layout->addWidget(minSimilarityBoundHbox,                    18, 0, 1, 4);
+    layout->addWidget(upOptionsGroup,                            19, 0, 1, 4);
     layout->setColumnStretch(3, 10);
-    layout->setRowStretch(18, 10);
+    layout->setRowStretch(20, 10);
 
     // --------------------------------------------------------
 
