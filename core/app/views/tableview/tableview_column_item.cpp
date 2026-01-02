@@ -26,6 +26,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "iteminfo.h"
 #include "coredbinfocontainers.h"
 #include "itempropertiestab.h"
@@ -277,17 +278,14 @@ QVariant ColumnItemProperties::data(TableViewModel::Item* const item, const int 
 
         case SubColumnCreationDateTime:
         {
-            const QDateTime creationDateTime = info.dateTime();
-
-            return QLocale().toString(creationDateTime, QLocale::ShortFormat);
+            return asShortDateTime(info.dateTime());
         }
 
         case SubColumnDigitizationDateTime:
         {
             const ImageCommonContainer commonInfo = info.imageCommonContainer();
-            const QDateTime digitizationDateTime  = commonInfo.digitizationDate;
 
-            return QLocale().toString(digitizationDateTime, QLocale::ShortFormat);
+            return asShortDateTime(commonInfo.digitizationDate);
         }
         case SubColumnSimilarity:
         {

@@ -28,7 +28,6 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "thememanager.h"
 #include "itemscanner.h"
 #include "itempropertiestab.h"
@@ -317,7 +316,7 @@ void ItemViewImportDelegate::drawCreationDate(QPainter* p, const QRect& dateRect
     Q_D(const ItemViewImportDelegate);
 
     p->setFont(d->fontXtra);
-    QString str = dateToString(date);
+    QString str = asShortDateTime(date);
     str         = i18nc("date of image creation", "created: %1", str);
     p->drawText(dateRect, Qt::AlignCenter, str);//squeezedTextCached(p, dateRect.width(), str));
 }

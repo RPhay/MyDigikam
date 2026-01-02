@@ -30,6 +30,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "itempropertiestab.h"
 
 namespace Digikam
@@ -81,7 +82,7 @@ void FrameOsd::populateOSD(const QUrl& url,
 
         if (dateTime.isValid())
         {
-            str = QLocale().toString(dateTime, QLocale::ShortFormat);
+            str = asShortDateTime(dateTime);
             m_desc.append(QString::fromLatin1("\n%1").arg(str));
         }
     }

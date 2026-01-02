@@ -29,6 +29,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "itempropertiestab.h"
 #include "iteminfo.h"
 
@@ -175,9 +176,7 @@ QVariant ColumnFileProperties::data(TableViewModel::Item* const item, const int 
 
         case SubColumnLastModified:
         {
-            const QDateTime lastModifiedTime = info.modDateTime();
-
-            return QLocale().toString(lastModifiedTime, QLocale::ShortFormat);
+            return asShortDateTime(info.modDateTime());
         }
     }
 

@@ -27,6 +27,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "importsettings.h"
 #include "itempropertiestab.h"
 #include "ditemtooltip.h"
@@ -63,8 +64,7 @@ QString ImportToolTipFiller::CamItemInfoTipContents(const CamItemInfo& info)
 
         if (settings->getToolTipsShowFileDate())
         {
-            QDateTime createdDate  = info.ctime;
-            str                    = QLocale().toString(createdDate, QLocale::ShortFormat);
+            str                    = asShortDateTime(info.ctime);
             tip                   += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
         }
 

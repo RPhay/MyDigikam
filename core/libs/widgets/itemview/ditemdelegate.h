@@ -73,7 +73,6 @@ public:
     virtual void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index) = 0;
 
     static QString squeezedText(const QFontMetrics& fm, int width, const QString& text);
-    static QString dateToString(const QDateTime& datetime);
     static QPixmap makeDragPixmap(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes,
                                   double displayRatio, const QPixmap& suggestedPixmap = QPixmap());
 

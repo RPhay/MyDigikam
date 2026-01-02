@@ -32,6 +32,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "galleryinfo.h"
 #include "gallerygenerator.h"
 #include "galleryelement.h"
@@ -231,7 +232,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 
         if (meta->getItemDateTime().isValid())
         {
-            element.m_exifImageDateTime = QLocale().toString(meta->getItemDateTime(), QLocale::ShortFormat);
+            element.m_exifImageDateTime = asShortDateTime(meta->getItemDateTime());
         }
 
         element.m_exifImageYCbCrPositioning = meta->getExifTagString("Exif.Image.YCbCrPositioning");

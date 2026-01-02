@@ -30,7 +30,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_export.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {

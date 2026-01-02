@@ -35,6 +35,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "coredbinfocontainers.h"
 #include "coredbwatch.h"
@@ -695,7 +696,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             ImageMetadataContainer photoInfo = info.imageMetadataContainer();
             VideoMetadataContainer videoInfo = info.videoMetadataContainer();
 
-            str = QLocale().toString(commonInfo.fileModificationDate, QLocale::ShortFormat);
+            str = asShortDateTime(commonInfo.fileModificationDate);
             m_propertiesTab->setFileModifiedDate(str);
 
             str = QString::fromUtf8("%1 (%2)").arg(ItemPropertiesTab::humanReadableBytesCount(commonInfo.fileSize))
@@ -759,7 +760,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
             if (commonInfo.creationDate.isValid())
             {
-                str = QLocale().toString(commonInfo.creationDate, QLocale::ShortFormat);
+                str = asShortDateTime(commonInfo.creationDate);
                 m_propertiesTab->setPhotoDateTime(str);
             }
             else
