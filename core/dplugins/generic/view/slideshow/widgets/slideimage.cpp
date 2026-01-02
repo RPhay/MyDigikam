@@ -26,9 +26,6 @@
 
 #include "digikam_debug.h"
 #include "previewloadthread.h"
-#include "graphicsdimgview.h"
-#include "dimgpreviewitem.h"
-#include "singlephotopreviewlayout.h"
 
 using namespace Digikam;
 
@@ -46,51 +43,19 @@ public:
 
     SlideShowSettings*  settings                = nullptr;
 
-    DImgPreviewItem*    item                    = nullptr;
+    QPixmap             pixmap;
 
     QUrl                currentImage;
-/*
-    QPixmap             pixmap;
+
     DImg                preview;
     PreviewLoadThread*  previewThread           = nullptr;
     PreviewLoadThread*  previewPreloadThread    = nullptr;
-*/
 };
 
 SlideImage::SlideImage(QWidget* const parent)
-    : GraphicsDImgView(parent),
-      d               (new Private)
+    : QWidget(parent),
+      d      (new Private)
 {
-    d->item = new DImgPreviewItem();
-    d->item->setAcceptHoverEvents(true);
-    setItem(d->item);
-    setMouseTracking(true);
-
-    connect(d->item, &DImgPreviewItem::loaded,
-            this, [this]()
-        {
-            Q_EMIT signalImageLoaded(true);
-        }
-    );
-
-    connect(d->item, &DImgPreviewItem::loadingFailed,
-            this, [this]()
-        {
-            Q_EMIT signalImageLoaded(false);
-        }
-    );
-
-    // set default zoom
-
-    layout()->fitToWindow();
-
-    // ------------------------------------------------------------
-
-    installPanIcon();
-
-    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-/*
     setAttribute(Qt::WA_OpaquePaintEvent);
     setWindowFlags(Qt::FramelessWindowHint);
     setMouseTracking(true);
@@ -100,12 +65,10 @@ SlideImage::SlideImage(QWidget* const parent)
 
     connect(d->previewThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
             this, SLOT(slotGotImagePreview(LoadingDescription,DImg)));
-*/
 }
 
 SlideImage::~SlideImage()
 {
-/*
     d->previewPreloadThread->stopAllTasks();
     d->previewThread->stopAllTasks();
 
@@ -114,9 +77,6 @@ SlideImage::~SlideImage()
 
     delete d->previewPreloadThread;
     delete d->previewThread;
-*/
-
-    delete d->item;
     delete d;
 }
 
@@ -128,9 +88,7 @@ void SlideImage::setSlideShowSettings(SlideShowSettings* const settings)
 void SlideImage::setLoadUrl(const QUrl& url)
 {
     d->currentImage = url;
-    d->item->setPath(d->currentImage.toLocalFile());
 
-/*
     // calculate preview size which is used for fast previews
 
     QScreen* screen = qApp->primaryScreen();
@@ -146,13 +104,10 @@ void SlideImage::setLoadUrl(const QUrl& url)
     QSize desktopSize = screen->geometry().size();
     int deskSize      = qMax(640, qMax(desktopSize.height(), desktopSize.width()));
     d->previewThread->load(url.toLocalFile(), d->settings->previewSettings, deskSize);
-*/
 }
 
 void SlideImage::setPreloadUrl(const QUrl& url)
 {
-    d->item->setPreloadPaths(QStringList() << url.toLocalFile());
-/*
     // calculate preview size which is used for fast previews
 
     QScreen* screen = qApp->primaryScreen();
@@ -168,9 +123,8 @@ void SlideImage::setPreloadUrl(const QUrl& url)
     QSize desktopSize = screen->geometry().size();
     int deskSize      = qMax(640, qMax(desktopSize.height(), desktopSize.width()));
     d->previewPreloadThread->load(url.toLocalFile(), d->settings->previewSettings, deskSize);
-*/
 }
-/*
+
 void SlideImage::paintEvent(QPaintEvent*)
 {
     QPainter p(this);
@@ -208,23 +162,25 @@ void SlideImage::slotGotImagePreview(const LoadingDescription& desc, const DImg&
 
 void SlideImage::updatePixmap()
 {
-//     * For high resolution ("retina") displays, Mac OS X / Qt
-//     * report only half of the physical resolution in terms of
-//     * pixels, i.e. every logical pixels corresponds to 2x2
-//     * physical pixels. However, UI elements and fonts are
-//     * nevertheless rendered at full resolution, and pixmaps
-//     * as well, provided their resolution is high enough (that
-//     * is, higher than the reported, logical resolution).
-//     *
-//     * To work around this, we render the photos not a logical
-//     * resolution, but with the photo's full resolution, but
-//     * at the screen's aspect ratio. When we later draw this
-//     * high resolution bitmap, it is up to Qt to scale the
-//     * photo to the true physical resolution.  The ratio
-//     * computed below is the ratio between the photo and
-//     * screen resolutions, or equivalently the factor by which
-//     * we need to increase the pixel size of the rendered
-//     * pixmap.
+    /**
+     * For high resolution ("retina") displays, Mac OS X / Qt
+     * report only half of the physical resolution in terms of
+     * pixels, i.e. every logical pixels corresponds to 2x2
+     * physical pixels. However, UI elements and fonts are
+     * nevertheless rendered at full resolution, and pixmaps
+     * as well, provided their resolution is high enough (that
+     * is, higher than the reported, logical resolution).
+     *
+     * To work around this, we render the photos not a logical
+     * resolution, but with the photo's full resolution, but
+     * at the screen's aspect ratio. When we later draw this
+     * high resolution bitmap, it is up to Qt to scale the
+     * photo to the true physical resolution.  The ratio
+     * computed below is the ratio between the photo and
+     * screen resolutions, or equivalently the factor by which
+     * we need to increase the pixel size of the rendered
+     * pixmap.
+     */
 
     double dpr     = devicePixelRatio();
 
@@ -242,7 +198,7 @@ void SlideImage::updatePixmap()
                  (d->pixmap.height() - pix.height()) / 2, pix,
                  0, 0, pix.width(), pix.height());
 }
-*/
+
 } // namespace DigikamGenericSlideShowPlugin
 
 #include "moc_slideimage.cpp"
