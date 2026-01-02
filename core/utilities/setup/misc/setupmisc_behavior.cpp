@@ -54,13 +54,19 @@ void SetupMisc::setupBehavior()
                                      "This option does not clean up other databases as the thumbnails or recognition db.\n"
                                      "For clean up routines for other databases, please use the maintenance."));
 
-    QLabel* const startupNote = new QLabel(i18nc("@info", "<font color='red'><i>"
-                                                 "Warning: These settings makes startup slower!"
-                                                 "</i></font>"), this);
+    QLabel* const startupNote = new QLabel(i18nc("@info",
+                                                 "<font color='black'><i><b>⚠️Warning:</b> "
+                                                 "These settings make startup slower! Read the "
+                                                 "<a href=\"%1\">online documentation</a> carefully first.</i></font>",
+                                                 QString::fromUtf8("https://docs.digikam.org/en/setup_application/miscs_settings.html#behavior-settings")),
+                                           this);
+    startupNote->setOpenExternalLinks(true);
+    startupNote->setTextFormat(Qt::RichText);
+    startupNote->setFocusPolicy(Qt::NoFocus);
+    startupNote->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
     startupNote->setWordWrap(true);
-    startupNote->setFrameStyle(QFrame::Box | QFrame::Plain);
-    startupNote->setLineWidth(1);
-    startupNote->setFrameShape(QFrame::Box);
+    startupNote->setAlignment(Qt::AlignCenter);
+    startupNote->setStyleSheet(QLatin1String("QLabel { background-color: #ffcccc; border: none; padding: 5px; }"));
 
     // ---------------------------------------------------------
 
