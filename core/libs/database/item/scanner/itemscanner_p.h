@@ -93,6 +93,8 @@ public:
     QVariantList                     videoMetadataInfos;
     QVariantList                     imagePositionInfos;
 
+    QStringList                      filteredKeywords;
+
     CaptionsMap                      captions;
     QString                          headline;
     CaptionsMap                      titles;

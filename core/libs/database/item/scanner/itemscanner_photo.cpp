@@ -428,7 +428,6 @@ void ItemScanner::scanTags()
 
     QVariant var         = d->metadata->getMetadataField(MetadataInfo::Keywords);
     QStringList keywords = var.toStringList();
-    QStringList filteredKeywords;
 
     // Extra empty tags check, empty tag = root tag which is not asignable
 
@@ -448,15 +447,15 @@ void ItemScanner::scanTags()
                                           QLatin1String(""));
             }
 
-            filteredKeywords.append(keyword);
+            d->commit.filteredKeywords.append(keyword);
         }
     }
 
-    if (!filteredKeywords.isEmpty())
+    if (!d->commit.filteredKeywords.isEmpty())
     {
         // get tag ids, create if necessary
 
-        QList<int> tagIds = TagsCache::instance()->getOrCreateTags(filteredKeywords);
+        QList<int> tagIds = TagsCache::instance()->getOrCreateTags(d->commit.filteredKeywords);
         d->commit.tagIds += tagIds;
     }
 
@@ -620,7 +619,27 @@ void ItemScanner::commitFaces()
         }
         else
         {
-            int tagId = FaceTags::getOrCreateTagForPerson(name);
+            int tagId = 0;
+
+            for (const QString& keyword : std::as_const(d->commit.filteredKeywords))
+            {
+                if (keyword.endsWith(QLatin1Char('/') + name))
+                {
+                    tagId = TagsCache::instance()->getOrCreateTag(keyword);
+
+                    if (tagId)
+                    {
+                        FaceTags::ensureIsPerson(tagId, name);
+                    }
+
+                    break;
+                }
+            }
+
+            if (!tagId)
+            {
+                tagId = FaceTags::getOrCreateTagForPerson(name);
+            }
 
             if (tagId)
             {
