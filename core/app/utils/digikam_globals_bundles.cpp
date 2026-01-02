@@ -325,6 +325,8 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
+    // Qt6 version
+
     const QStringList ecmCatalogs =
     {
         QLatin1String("kbookmarks6_qt"),
@@ -340,21 +342,24 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
 #else
 
+    // Qt5 version
+
     const QStringList ecmCatalogs =
     {
-        QLatin1String("kauth5_qt"),
         QLatin1String("kbookmarks5_qt"),
         QLatin1String("kcodecs5_qt"),
         QLatin1String("kcompletion5_qt"),
         QLatin1String("kconfig5_qt"),
         QLatin1String("kcoreaddons5_qt"),
         QLatin1String("kdbusaddons5_qt"),
-        QLatin1String("kde5_xml_mimetypes"),
-        QLatin1String("kglobalaccel5_qt"),
         QLatin1String("kitemviews5_qt"),
         QLatin1String("kwidgetsaddons5_qt"),
         QLatin1String("kwindowsystem5_qt"),
         QLatin1String("solid5_qt"),
+
+        QLatin1String("kde5_xml_mimetypes"),
+        QLatin1String("kglobalaccel5_qt"),
+        QLatin1String("kauth5_qt"),
 
 #endif
 
