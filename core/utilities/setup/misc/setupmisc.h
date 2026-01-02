@@ -54,6 +54,10 @@ private:
 
     void readSettings();
 
+    void setupBehavior();
+    void setupAppearance();
+    void setupGrouping();
+
 private:
 
     class Private;

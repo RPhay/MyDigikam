@@ -57,6 +57,7 @@
 #include "onlineversionchecker.h"
 #include "setup.h"
 #include "localizeconfig.h"
+#include "facebackgroundrecognition.h"
 
 #ifdef HAVE_SONNET
 #   include "spellcheckconfig.h"
@@ -121,6 +122,9 @@ public:
 
     LocalizeConfig*           localizeWidget                            = nullptr;
     QHash<int, QButtonGroup*> groupingButtons                           = QHash<int, QButtonGroup*>();
+
+    QWidget*                   parent                                   = nullptr;
+    const int                  spacing                                  = layoutSpacing();
 };
 
 } // namespace Digikam

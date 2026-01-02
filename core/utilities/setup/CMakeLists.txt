@@ -61,6 +61,10 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setuputils.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/misc/setupmisc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/setupmisc_behavior.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/setupmisc_appearance.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/setupmisc_grouping.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/setupmisc_settings.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupeditor.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupversioning.cpp
