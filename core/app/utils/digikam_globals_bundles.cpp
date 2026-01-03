@@ -364,6 +364,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
         QLatin1String("kwindowsystem5_qt"),
         QLatin1String("solid5_qt"),
 
+        // Do not exists in Qt6 version
         QLatin1String("kde5_xml_mimetypes"),
         QLatin1String("kglobalaccel5_qt"),
 
