@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:41+0000\n"
+"POT-Creation-Date: 2026-01-03 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -48941,7 +48941,7 @@ msgstr "一套较新的数字摄影规范，它被设计来取代 IPTC。"
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:207
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:206
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -49030,7 +49030,7 @@ msgstr ""
 "勾选此项以在图像缩略图上方显示地理位置信息图标 (图像含有地理位置信息时显示)。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#: core/utilities/setup/misc/setupmisc.cpp:82
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:79
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "当前项目在缩略图栏居中显示"
@@ -49046,31 +49046,31 @@ msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr "如果您不想在磁盘上缓存缩略图，请禁用此选项。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
-#: core/utilities/setup/misc/setupmisc.cpp:126
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:123
 #, kde-format
 msgid "Updates"
 msgstr "更新"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:169
-#: core/utilities/setup/misc/setupmisc.cpp:130
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:127
 #, kde-format
 msgid "Check for new version:"
 msgstr "检查新版软件："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:171
-#: core/utilities/setup/misc/setupmisc.cpp:132
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:129
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "仅检查稳定版本"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
-#: core/utilities/setup/misc/setupmisc.cpp:133
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:130
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "检查每周测试版本"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
-#: core/utilities/setup/misc/setupmisc.cpp:134
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:131
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -49084,13 +49084,13 @@ msgstr ""
 "\"测试版本\"是每周发布的版本，仅用于测试新功能，不建议用于生产环境。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
-#: core/utilities/setup/misc/setupmisc.cpp:139
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "使用含调试符号包的版本"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
-#: core/utilities/setup/misc/setupmisc.cpp:140
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:137
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -49102,19 +49102,19 @@ msgstr ""
 "该版本体积更大，但可用于协助开发人员在调试器中跟踪程序问题。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
-#: core/utilities/setup/misc/setupmisc.cpp:145
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:142
 #, kde-format
 msgid "Last check: %1"
 msgstr "上次检查时间：%1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:185
-#: core/utilities/setup/misc/setupmisc.cpp:146
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:143
 #, kde-format
 msgid "Check now..."
 msgstr "立即检查..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
-#: core/utilities/setup/misc/setupmisc.cpp:214
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:29
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "启动时显示启动画面(&S)"
@@ -49125,19 +49125,19 @@ msgid "Use native file dialogs from the system"
 msgstr "使用系统内建的文件对话框"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:219
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:34
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "侧边栏标签页标题："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc.cpp:221
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "仅在活动标签页显示"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc.cpp:222
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
 #, kde-format
 msgid "For All Tabs"
 msgstr "全部显示"
@@ -49150,126 +49150,126 @@ msgstr ""
 "标签页显示”。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc.cpp:227
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
 #, kde-format
 msgid "Widget style:"
 msgstr "窗口部件外观样式："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc.cpp:229
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:44
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "选择默认窗口装饰和外观风格。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:252
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "图标主题 (重启程序生效)："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc.cpp:254
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:69
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "选择默认图标主题。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc.cpp:258
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita 古龟"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc.cpp:259
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze 微风"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc.cpp:260
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze 微风深色"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc.cpp:261
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza 法恩扎"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc.cpp:262
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance 意境"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc.cpp:263
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:78
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity 仁心"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc.cpp:264
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:79
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen 轻氧"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:103
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "使用系统图标主题"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:110
 #, kde-format
 msgid "Application font:"
 msgstr "界面字体："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc.cpp:296
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:111
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "选择整个应用程序的文字信息使用的字体。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:126
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "外观"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:324
-#: core/utilities/setup/misc/setupmisc.cpp:378
+#: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "拼写检查"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:330
-#: core/utilities/setup/misc/setupmisc.cpp:384
+#: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "本地化"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:390
+#: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "系统"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:425
+#: core/utilities/setup/misc/setupmisc_settings.cpp:34
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -63123,7 +63123,7 @@ msgid "Download Required Model Files"
 msgstr "下载所需的模型文件"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
-#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr "打开用于存储数据文件的本地目录。"
@@ -64939,12 +64939,32 @@ msgstr "用户名(&S)："
 msgid "&Password:"
 msgstr "密码(&P)："
 
-#: core/utilities/setup/misc/setupmisc.cpp:38
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:30
+#, kde-format
+msgid "Use native file dialogs from system"
+msgstr "使用系统内建的文件对话框"
+
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:31
+#, kde-format
+msgid "Draw frames around grouped items"
+msgstr "分组项目周围显示外框"
+
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:38
+#, kde-format
+msgid ""
+"Set this option to configure how sidebar tab titles are visible. Use \"Only "
+"For Active Tab\" option if you use a small screen resolution as with a "
+"laptop computer."
+msgstr ""
+"选择侧边栏标签页标题文字的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动"
+"标签页显示”。"
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr "启动时扫描新项目(&S)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -64966,12 +64986,12 @@ msgstr ""
 "如果您的相册集合很大，或者使用的是远程数据库，这可能造成拖慢。\n"
 "在这种情况下请禁用此选项，并安排合适的时间段进行手动扫描。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "快速扫描 (仅检测新增/删除/重命名项目)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:48
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -64983,17 +65003,17 @@ msgstr ""
 "勾选此项后，扫描的速度将得到明显提升。仅检测新增、删除、重命名项目。如需检测"
 "项目本身的更改，请不要勾选此项。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:54
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "检测新增图像中的人脸"
 
-#: core/utilities/setup/misc/setupmisc.cpp:55
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "启用后台人脸识别扫描"
 
-#: core/utilities/setup/misc/setupmisc.cpp:56
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
@@ -65002,12 +65022,12 @@ msgstr ""
 "选择此项后，分配新的人脸标签时将自动启动后台人脸识别扫描，\n"
 "从而简化标签分配过程。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:59
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr "移除过时的核心数据库对象"
 
-#: core/utilities/setup/misc/setupmisc.cpp:60
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -65025,103 +65045,108 @@ msgstr ""
 "此选项不会清理缩略图和人脸识别等其他数据库。\n"
 "要清理其他数据库，请使用工具菜单中的系统维护功能。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:66
-#, kde-format
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
+#| "font>"
 msgctxt "@info"
 msgid ""
-"<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr "<font color='red'><i>警告：这些设置会使启动速度变慢。</i></font>"
 
-#: core/utilities/setup/misc/setupmisc.cpp:76
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
 msgid "Confirm when moving items to the &trash"
 msgstr "移动项目到回收站时需要确认(&T)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:77
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:74
 #, kde-format
 msgid "Confirm when permanently deleting items"
 msgstr "彻底删除项目时需要确认"
 
-#: core/utilities/setup/misc/setupmisc.cpp:78
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:75
 #, kde-format
 msgid "Do not confirm when applying changes in the &right sidebar"
 msgstr "应用右侧栏更改时无需确认(&R)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:79
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:76
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr "人物侧栏面板只显示人脸标签"
 
-#: core/utilities/setup/misc/setupmisc.cpp:80
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:77
 #, kde-format
 msgid "Initially select the first item in the album"
 msgstr "默认选择相册中的第一个项目"
 
-#: core/utilities/setup/misc/setupmisc.cpp:81
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:78
 #, kde-format
 msgid "Expand current tree item with a single mouse click"
 msgstr "单击展开树形视图折叠项"
 
-#: core/utilities/setup/misc/setupmisc.cpp:87
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:84
 #, kde-format
 msgid "Get album date source:"
 msgstr "获取相册日期来源："
 
-#: core/utilities/setup/misc/setupmisc.cpp:89
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:86
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Newest Item Date"
 msgstr "来自最新项目日期"
 
-#: core/utilities/setup/misc/setupmisc.cpp:90
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:87
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Oldest Item Date"
 msgstr "来自最旧项目日期"
 
-#: core/utilities/setup/misc/setupmisc.cpp:91
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:88
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Average Date"
 msgstr "来自平均日期"
 
-#: core/utilities/setup/misc/setupmisc.cpp:92
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:89
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Folder Date"
 msgstr "来自文件夹日期"
 
-#: core/utilities/setup/misc/setupmisc.cpp:93
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:90
 #, kde-format
 msgctxt "method to get the album date"
 msgid "No Change Of Date"
 msgstr "不变更日期"
 
-#: core/utilities/setup/misc/setupmisc.cpp:94
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:91
 #, kde-format
 msgid ""
 "The album date is adjusted depending on the option set when new items are "
 "found during scanning."
 msgstr "相册日期将在扫描过程中发现新项目时按照设置的选项进行更改。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:98
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:95
 #, kde-format
 msgid "String comparison type:"
 msgstr "字符串比较/排序方式："
 
-#: core/utilities/setup/misc/setupmisc.cpp:100
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:97
 #, kde-format
 msgctxt "method to compare strings"
 msgid "Natural"
 msgstr "自然习惯排序"
 
-#: core/utilities/setup/misc/setupmisc.cpp:101
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:98
 #, kde-format
 msgctxt "method to compare strings"
 msgid "Normal"
 msgstr "正常规范排序"
 
-#: core/utilities/setup/misc/setupmisc.cpp:102
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:99
 #, kde-format
 msgid ""
 "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
@@ -65138,12 +65163,12 @@ msgstr ""
 "的项目按照 ISO 日期格式 (201006 或 20090523) 进行了命名，可以选用此方式进行排"
 "序。</qt>"
 
-#: core/utilities/setup/misc/setupmisc.cpp:111
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:108
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr "模糊搜索/查找重复项的最小相似度下限："
 
-#: core/utilities/setup/misc/setupmisc.cpp:117
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:114
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -65153,32 +65178,12 @@ msgstr ""
 "设置模糊搜索和查找重复项的最小相似度下限。默认值为 40，低于此值可能会使搜索过"
 "程变得<b>非常慢</b>。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:215
-#, kde-format
-msgid "Use native file dialogs from system"
-msgstr "使用系统内建的文件对话框"
-
-#: core/utilities/setup/misc/setupmisc.cpp:216
-#, kde-format
-msgid "Draw frames around grouped items"
-msgstr "分组项目周围显示外框"
-
-#: core/utilities/setup/misc/setupmisc.cpp:223
-#, kde-format
-msgid ""
-"Set this option to configure how sidebar tab titles are visible. Use \"Only "
-"For Active Tab\" option if you use a small screen resolution as with a "
-"laptop computer."
-msgstr ""
-"选择侧边栏标签页标题文字的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动"
-"标签页显示”。"
-
-#: core/utilities/setup/misc/setupmisc.cpp:318
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:29
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "是否对分组的全部子项目执行下列操作："
 
-#: core/utilities/setup/misc/setupmisc.cpp:319
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:30
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br>are performed only on "
@@ -65189,130 +65194,130 @@ msgstr ""
 "图像分组后，下列操作是否对分组的全部子项目执行：<br>否：仅对显示的分组子项目"
 "执行。<br>是：对分组所有子项目执行。<br>询问：每次操作时询问用户如何处理。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:325
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:36
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "否"
 
-#: core/utilities/setup/misc/setupmisc.cpp:326
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:37
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "是"
 
-#: core/utilities/setup/misc/setupmisc.cpp:327
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:38
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "询问"
 
-#: core/utilities/setup/misc/setupmisc.cpp:370
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:81
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "分组"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "按照系统屏幕缩放比率进行高分辨率缩放"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:114
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "在高分辨率下使用像素映射"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "使用软件 OpenGL 渲染"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "使用 OpenCL 硬件加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid "Use OpenCL acceleration for AI models"
 msgstr "使用 OpenCL 加速 AI 模型"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:126
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr "此选项仍处于试验阶段，如果没有安装适当的驱动程序，可能会导致程序崩溃。"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "测试 GPU 的 AI 兼容性"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, kde-format
 msgid "Download required binary data:"
 msgstr "下载所需的软件包："
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "打开下载对话框..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Open Local Storage..."
 msgstr "打开本地存储..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:144
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "使用显卡硬件加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "使用显卡纹理转换"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:147
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "渲染视频使用的解码器后端程序："
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:150
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (默认)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:154
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:158
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:162
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:170
+#: core/utilities/setup/misc/systemsettingswidget.cpp:168
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "启用内部调试日志"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:187
+#: core/utilities/setup/misc/systemsettingswidget.cpp:185
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
