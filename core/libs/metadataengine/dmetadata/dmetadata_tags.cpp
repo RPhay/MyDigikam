@@ -155,10 +155,23 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 // Try to get Tags Path list from Exif Windows keywords.
 
                 QString keyWords = getExifTagString("Exif.Image.XPKeywords", false);
+                QStringList exifTagsPath;
 
                 if (!keyWords.isEmpty())
                 {
-                    QStringList exifTagsPath = keyWords.split(entry.separator);
+                    if (entry.tagPaths == NamespaceEntry::TAGPATH)
+                    {
+                       exifTagsPath = keyWords.split(QLatin1Char(';'));
+
+                       if (entry.separator != QLatin1String("/"))
+                        {
+                            exifTagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
+                        }
+                    }
+                    else
+                    {
+                        exifTagsPath = keyWords.split(entry.separator);
+                    }
 
                     if (!exifTagsPath.isEmpty())
                     {
@@ -168,7 +181,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                         {
                             return true;
                         }
-                     }
+                    }
                 }
 
                 break;
@@ -303,7 +316,24 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                 {
                     if      (writeWithExifTool() && !newList.isEmpty())
                     {
-                        QString xpKeywords = newList.join(entry.separator);
+                        QString xpKeywords;
+
+                        if (entry.tagPaths == NamespaceEntry::TAGPATH)
+                        {
+                            newList = tagsPath;
+
+                            if (entry.separator != QLatin1String("/"))
+                            {
+                                newList.replaceInStrings(QLatin1String("/"), entry.separator);
+                            }
+
+                            xpKeywords = newList.join(QLatin1Char(';'));
+                        }
+                        else
+                        {
+                            xpKeywords = newList.join(entry.separator);
+                        }
+
                         QByteArray xpData  = QByteArray(reinterpret_cast<const char*>(xpKeywords.utf16()), xpKeywords.size() * 2);
                         xpData.append(2, '\0');
 

@@ -452,9 +452,8 @@ void NamespaceEditDlg::setType(NamespaceEntry::NamespaceType type)
             d->commentTipLabel->hide();
             d->ratingMappings->hide();
 
-            // disable IPTC and EXIF for tags
+            // disable IPTC for tags
 
-            d->subspaceCombo->setItemData(0, 0, Qt::UserRole -1);
             d->subspaceCombo->setItemData(1, 0, Qt::UserRole -1);
 
             break;
