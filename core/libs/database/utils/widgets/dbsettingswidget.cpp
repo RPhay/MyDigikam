@@ -93,10 +93,10 @@ void DatabaseSettingsWidget::setupMainArea()
     d->dbTypeBtn->setToolTip(i18nc("@info:tooltip", "Get information about <b>Database Type</b>"));
     d->dbTypeBtn->setWhatsThis(tip);
 
-    connect(d->dbPathBtn, &QPushButton::clicked,
+    connect(d->dbTypeBtn, &QPushButton::clicked,
             this, [this]()
         {
-            qApp->postEvent(d->dbPathBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
+            qApp->postEvent(d->dbTypeBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
         }
     );
 
