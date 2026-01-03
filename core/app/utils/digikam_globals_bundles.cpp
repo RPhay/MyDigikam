@@ -325,57 +325,68 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    /**
-     * Bundle                                     macOs      AppImage    Windows
-     * Legend:
-     *    X = present
-     *    o = do not exists
-     *    ? = to check
-     */
-
     // Qt6 version
 
+    /**
+     * Bundle                                           macOS      AppImage    Windows
+     *                                                  A  I        A  I        A  I
+     * Legend:
+     *    A = available
+     *    I = included
+     *    x = do not exists
+     *    ? = to check
+     */
     const QStringList ecmCatalogs =
     {
-        QLatin1String("karchive6_qt"),          //  X           ?           ?
-        QLatin1String("kauth6_qt"),             //  X           ?           ?
-        QLatin1String("kbookmarks6_qt"),        //  X           ?           ?
-        QLatin1String("kcodecs6_qt"),           //  X           ?           ?
-        QLatin1String("kcompletion6_qt"),       //  X           ?           ?
-        QLatin1String("kconfig6_qt"),           //  X           ?           ?
-        QLatin1String("kcoreaddons6_qt"),       //  X           ?           ?
-        QLatin1String("kdbusaddons6_qt"),       //  X           ?           ?
-        QLatin1String("kitemviews6_qt"),        //  X           ?           ?
-        QLatin1String("kjobwidgets6_qt"),       //  X           ?           ?
-        QLatin1String("knotifications6_qt"),    //  X           ?           ?
-        QLatin1String("kwidgetsaddons6_qt"),    //  X           ?           ?
-        QLatin1String("kwindowsystem6_qt"),     //  X           ?           ?
-        QLatin1String("solid6_qt"),             //  X           ?           ?
-        QLatin1String("sonnet6_qt"),            //  X           ?           ?
+        QLatin1String("karchive6_qt"),          //      A           ?           ?
+        QLatin1String("kauth6_qt"),             //      A           ?           ?
+        QLatin1String("kbookmarks6_qt"),        //      A           ?           ?
+        QLatin1String("kcodecs6_qt"),           //      A           ?           ?
+        QLatin1String("kcompletion6_qt"),       //      A           ?           ?
+        QLatin1String("kconfig6_qt"),           //      A           ?           ?
+        QLatin1String("kcoreaddons6_qt"),       //      A           ?           ?
+        QLatin1String("kdbusaddons6_qt"),       //      A           ?           ?
+        QLatin1String("kitemviews6_qt"),        //      A           ?           ?
+        QLatin1String("kjobwidgets6_qt"),       //      A           ?           ?
+        QLatin1String("knotifications6_qt"),    //      A           ?           ?
+        QLatin1String("kwidgetsaddons6_qt"),    //      A           ?           ?
+        QLatin1String("kwindowsystem6_qt"),     //      A           ?           ?
+        QLatin1String("solid6_qt"),             //      A           ?           ?
+        QLatin1String("sonnet6_qt"),            //      A  I        ?           ?
 
 #else
 
     // Qt5 version
 
+    /**
+     * Bundle                                           macOS      AppImage    Windows
+     *                                                  A  I        A  I        A  I
+     * Legend:
+     *    A = available
+     *    I = included
+     *    x = do not exists
+     *    ? = to check
+     */
+
     const QStringList ecmCatalogs =
     {
-        QLatin1String("karchive5_qt"),          //  X           ?           ?
-        QLatin1String("kauth5_qt"),             //  X           ?           ?
-        QLatin1String("kbookmarks5_qt"),        //  X           ?           ?
-        QLatin1String("kcodecs5_qt"),           //  X           ?           ?
-        QLatin1String("kcompletion5_qt"),       //  X           ?           ?
-        QLatin1String("kconfig5_qt"),           //  X           ?           ?
-        QLatin1String("kcoreaddons5_qt"),       //  X           ?           ?
-        QLatin1String("kdbusaddons5_qt"),       //  X           ?           ?
-        QLatin1String("kitemviews5_qt"),        //  X           ?           ?
-        QLatin1String("kjobwidgets5_qt"),       //  X           ?           ?
-        QLatin1String("knotifications5_qt"),    //  X           ?           ?
-        QLatin1String("kwidgetsaddons5_qt"),    //  X           ?           ?
-        QLatin1String("kwindowsystem5_qt"),     //  X           ?           ?
-        QLatin1String("solid5_qt"),             //  X           ?           ?
+        QLatin1String("karchive5_qt"),          //      A  I        ?           ?
+        QLatin1String("kauth5_qt"),             //      A  I        ?           ?
+        QLatin1String("kbookmarks5_qt"),        //      A  I        ?           ?
+        QLatin1String("kcodecs5_qt"),           //      A  I        ?           ?
+        QLatin1String("kcompletion5_qt"),       //      A  I        ?           ?
+        QLatin1String("kconfig5_qt"),           //      A  I        ?           ?
+        QLatin1String("kcoreaddons5_qt"),       //      A  I        ?           ?
+        QLatin1String("kdbusaddons5_qt"),       //      A  I        ?           ?
+        QLatin1String("kitemviews5_qt"),        //      A  I        ?           ?
+        QLatin1String("kjobwidgets5_qt"),       //      A  I        ?           ?
+        QLatin1String("knotifications5_qt"),    //      A  I        ?           ?
+        QLatin1String("kwidgetsaddons5_qt"),    //      A  I        ?           ?
+        QLatin1String("kwindowsystem5_qt"),     //      A  I        ?           ?
+        QLatin1String("solid5_qt"),             //      A  I        ?           ?
 
-        QLatin1String("kde5_xml_mimetypes"),    //  o           ?           ?
-        QLatin1String("kglobalaccel5_qt"),      //  o           ?           ?
+        QLatin1String("kde5_xml_mimetypes"),    //      x  x        ?           ?
+        QLatin1String("kglobalaccel5_qt"),      //      x  x        ?           ?
 
 #endif
 
