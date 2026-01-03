@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:41+0000\n"
+"POT-Creation-Date: 2026-01-03 00:40+0000\n"
 "PO-Revision-Date: 2025-10-27 22:19+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -50608,7 +50608,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:207
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:206
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -50702,7 +50702,7 @@ msgstr ""
 "lokaliseringsinformation."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#: core/utilities/setup/misc/setupmisc.cpp:82
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:79
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Panorera aktuellt objekt till miniatyrbildsradens mitt"
@@ -50720,31 +50720,31 @@ msgstr ""
 "disk."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
-#: core/utilities/setup/misc/setupmisc.cpp:126
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:123
 #, kde-format
 msgid "Updates"
 msgstr "Uppdateringar"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:169
-#: core/utilities/setup/misc/setupmisc.cpp:130
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:127
 #, kde-format
 msgid "Check for new version:"
 msgstr "Sök efter ny version för:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:171
-#: core/utilities/setup/misc/setupmisc.cpp:132
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:129
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Bara stabila utgåvor"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
-#: core/utilities/setup/misc/setupmisc.cpp:133
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:130
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Veckovisa förutgåvor"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
-#: core/utilities/setup/misc/setupmisc.cpp:134
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:131
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -50761,13 +50761,13 @@ msgstr ""
 "rekommenderas inte för användning i produktion eftersom fel kan finnas kvar."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
-#: core/utilities/setup/misc/setupmisc.cpp:139
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Använd version med avlusningssymboler"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
-#: core/utilities/setup/misc/setupmisc.cpp:140
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:137
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -50781,19 +50781,19 @@ msgstr ""
 "en avlusare."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
-#: core/utilities/setup/misc/setupmisc.cpp:145
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:142
 #, kde-format
 msgid "Last check: %1"
 msgstr "Senaste kontroll: %1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:185
-#: core/utilities/setup/misc/setupmisc.cpp:146
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:143
 #, kde-format
 msgid "Check now..."
 msgstr "Kontrollera nu..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
-#: core/utilities/setup/misc/setupmisc.cpp:214
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:29
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Visa &startskärm"
@@ -50804,19 +50804,19 @@ msgid "Use native file dialogs from the system"
 msgstr "Använd systemets inbyggda fildialogrutor"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:219
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:34
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Sidoradens flikrubrik:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc.cpp:221
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Bara för aktiv flik"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc.cpp:222
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
 #, kde-format
 msgid "For All Tabs"
 msgstr "För alla flikar"
@@ -50829,128 +50829,128 @@ msgstr ""
 "synliga."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc.cpp:227
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
 #, kde-format
 msgid "Widget style:"
 msgstr "Grafisk komponentstil:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc.cpp:229
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:44
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ""
 "Aktivera alternativet för att välja fönsterdekorationer och standardutseende."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:252
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Ikontema (ändras efter omstart):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc.cpp:254
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:69
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Ställ in alternativet för att välja standardikontema."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc.cpp:258
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc.cpp:259
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc.cpp:260
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze mörk"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc.cpp:261
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc.cpp:262
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc.cpp:263
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:78
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Mänskligheten"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc.cpp:264
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:79
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:103
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Använd systemets ikontema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:110
 #, kde-format
 msgid "Application font:"
 msgstr "Programteckensnitt:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc.cpp:296
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:111
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Ställ in teckensnittet som används för att visa text i hela programmet här."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:126
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Utseende"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:324
-#: core/utilities/setup/misc/setupmisc.cpp:378
+#: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Stavningskontroll"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:330
-#: core/utilities/setup/misc/setupmisc.cpp:384
+#: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Landsanpassa"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:390
+#: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "System"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:425
+#: core/utilities/setup/misc/setupmisc_settings.cpp:34
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -65289,7 +65289,7 @@ msgid "Download Required Model Files"
 msgstr "Laddar ner nödvändiga modellfiler"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
-#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr "Öppna den lokala katalogen som används för lagring av datafiler."
@@ -67218,12 +67218,33 @@ msgstr "An&vändarnamn:"
 msgid "&Password:"
 msgstr "&Lösenord:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:38
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:30
+#, kde-format
+msgid "Use native file dialogs from system"
+msgstr "Använd systemets inbyggda fildialogrutor"
+
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:31
+#, kde-format
+msgid "Draw frames around grouped items"
+msgstr "Ritar ramar omkring grupperade objekt"
+
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:38
+#, kde-format
+msgid ""
+"Set this option to configure how sidebar tab titles are visible. Use \"Only "
+"For Active Tab\" option if you use a small screen resolution as with a "
+"laptop computer."
+msgstr ""
+"Ställ in alternativet för att ange hur namn på flikar i sidoraden är "
+"synliga. Använd alternativet \"Bara för aktiv flik\" om en låg "
+"skärmupplösning används, såsom för en bärbar dator."
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr "&Sök efter nya objekt vid start"
 
-#: core/utilities/setup/misc/setupmisc.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -67249,12 +67270,12 @@ msgstr ""
 "inaktivera alternativet och planera för en manuell sökning via \n"
 "underhållsverktyget vid lämpligt tillfälle."
 
-#: core/utilities/setup/misc/setupmisc.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Snabbsökning (detekterar nya, borttagna och namnändrade objekt)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:48
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -67269,17 +67290,17 @@ msgstr ""
 "det här\n"
 "alternativet inaktiveras."
 
-#: core/utilities/setup/misc/setupmisc.cpp:54
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Detektera ansikten i nytillagda bilder"
 
-#: core/utilities/setup/misc/setupmisc.cpp:55
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "Aktivera ansiktsigenkänningssökning i bakgrunden"
 
-#: core/utilities/setup/misc/setupmisc.cpp:56
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
@@ -67289,12 +67310,12 @@ msgstr ""
 "ansiktsigenkänning när ett nytt ansikte etiketteras. Det gör "
 "etiketteringsprocessen enklare."
 
-#: core/utilities/setup/misc/setupmisc.cpp:59
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr "Ta bort föråldrade objekt i huvuddatabasen"
 
-#: core/utilities/setup/misc/setupmisc.cpp:60
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -67315,82 +67336,87 @@ msgstr ""
 "igenkänningsdatabasen.\n"
 "Använd underhåll för rensningsrutiner av andra databaser."
 
-#: core/utilities/setup/misc/setupmisc.cpp:66
-#, kde-format
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
+#| "font>"
 msgctxt "@info"
 msgid ""
-"<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
 "<font color='red'><i>Varning: Inställningarna gör start långsammare.</i></"
 "font>"
 
-#: core/utilities/setup/misc/setupmisc.cpp:76
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
 msgid "Confirm when moving items to the &trash"
 msgstr "Bekräfta när objekt flyttas till &papperskorgen"
 
-#: core/utilities/setup/misc/setupmisc.cpp:77
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:74
 #, kde-format
 msgid "Confirm when permanently deleting items"
 msgstr "Bekräfta när objekt tas bort permanent"
 
-#: core/utilities/setup/misc/setupmisc.cpp:78
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:75
 #, kde-format
 msgid "Do not confirm when applying changes in the &right sidebar"
 msgstr "Bekräfta inte när ändringar i &höger sidorad verkställs"
 
-#: core/utilities/setup/misc/setupmisc.cpp:79
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:76
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
 "Visa bara ansiktsetiketter för att tilldela namn på personer i sidoraden"
 
-#: core/utilities/setup/misc/setupmisc.cpp:80
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:77
 #, kde-format
 msgid "Initially select the first item in the album"
 msgstr "Välj det första objektet i albumet från början"
 
-#: core/utilities/setup/misc/setupmisc.cpp:81
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:78
 #, kde-format
 msgid "Expand current tree item with a single mouse click"
 msgstr "Expandera aktuellt trädobjekt med ett enda musklick"
 
-#: core/utilities/setup/misc/setupmisc.cpp:87
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:84
 #, kde-format
 msgid "Get album date source:"
 msgstr "Hämta albumets datum:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:89
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:86
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Newest Item Date"
 msgstr "Från det nyaste objektets datum"
 
-#: core/utilities/setup/misc/setupmisc.cpp:90
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:87
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Oldest Item Date"
 msgstr "Från det äldsta objektets datum"
 
-#: core/utilities/setup/misc/setupmisc.cpp:91
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:88
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Average Date"
 msgstr "Från medelvärdet av datum"
 
-#: core/utilities/setup/misc/setupmisc.cpp:92
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:89
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Folder Date"
 msgstr "Från katalogens datum"
 
-#: core/utilities/setup/misc/setupmisc.cpp:93
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:90
 #, kde-format
 msgctxt "method to get the album date"
 msgid "No Change Of Date"
 msgstr "Ingen datumändring"
 
-#: core/utilities/setup/misc/setupmisc.cpp:94
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:91
 #, kde-format
 msgid ""
 "The album date is adjusted depending on the option set when new items are "
@@ -67399,24 +67425,24 @@ msgstr ""
 "Albumets datum justeras beroende på inställt alternativ när nya objekt "
 "hittas vid sökning."
 
-#: core/utilities/setup/misc/setupmisc.cpp:98
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:95
 #, kde-format
 msgid "String comparison type:"
 msgstr "Typ av strängjämförelse:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:100
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:97
 #, kde-format
 msgctxt "method to compare strings"
 msgid "Natural"
 msgstr "Naturlig"
 
-#: core/utilities/setup/misc/setupmisc.cpp:101
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:98
 #, kde-format
 msgctxt "method to compare strings"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/utilities/setup/misc/setupmisc.cpp:102
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:99
 #, kde-format
 msgid ""
 "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
@@ -67435,12 +67461,12 @@ msgstr ""
 "enligt ISO-datum (201006 eller 20090523), och albumen ska sorteras enligt "
 "dessa datum.</qt>"
 
-#: core/utilities/setup/misc/setupmisc.cpp:111
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:108
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr "Undre gräns för minsta likhet:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:117
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:114
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -67451,33 +67477,12 @@ msgstr ""
 "dubblettsökningar här. Standardvärdet är 40. Att välja ett lägre värde än 40 "
 "kan göra sökningen <b>mycket</b> långsam."
 
-#: core/utilities/setup/misc/setupmisc.cpp:215
-#, kde-format
-msgid "Use native file dialogs from system"
-msgstr "Använd systemets inbyggda fildialogrutor"
-
-#: core/utilities/setup/misc/setupmisc.cpp:216
-#, kde-format
-msgid "Draw frames around grouped items"
-msgstr "Ritar ramar omkring grupperade objekt"
-
-#: core/utilities/setup/misc/setupmisc.cpp:223
-#, kde-format
-msgid ""
-"Set this option to configure how sidebar tab titles are visible. Use \"Only "
-"For Active Tab\" option if you use a small screen resolution as with a "
-"laptop computer."
-msgstr ""
-"Ställ in alternativet för att ange hur namn på flikar i sidoraden är "
-"synliga. Använd alternativet \"Bara för aktiv flik\" om en låg "
-"skärmupplösning används, såsom för en bärbar dator."
-
-#: core/utilities/setup/misc/setupmisc.cpp:318
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:29
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "Utför följande åtgärder för alla medlemmar i gruppen:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:319
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:30
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br>are performed only on "
@@ -67489,51 +67494,51 @@ msgstr ""
 "objektet (Nej)<br>eller också alla dolda objekt i gruppen (Ja).<br>Om Fråga "
 "är valt, visas en fråga varje<br>gång åtgärden utförs."
 
-#: core/utilities/setup/misc/setupmisc.cpp:325
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:36
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Nej"
 
-#: core/utilities/setup/misc/setupmisc.cpp:326
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:37
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/utilities/setup/misc/setupmisc.cpp:327
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:38
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Fråga"
 
-#: core/utilities/setup/misc/setupmisc.cpp:370
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:81
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Gruppering"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Använd skalning med hög upplösning från skärmfaktorn"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:114
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Använd bildpunktsavbildningar med hög upplösning"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Använd OpenGL-återgivning med programvara"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Använd OpenCL maskinvaruacceleration"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67542,12 +67547,12 @@ msgstr ""
 "Alternativet är fortfarande experimentellt och kräver att vissa "
 "miljövariabler ställs in manuellt."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid "Use OpenCL acceleration for AI models"
 msgstr "Använd OpenCL-acceleration för AI-modeller"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:126
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -67556,67 +67561,67 @@ msgstr ""
 "Alternativet är fortfarande experimentellt och kan leda till krascher om "
 "lämpliga drivrutiner inte är installerade."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Testa grafikprocessorns AI-kompatibilitet"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Ladda ner nödvändig binärdata:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Öppnar nerladdningsdialogruta..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Open Local Storage..."
 msgstr "Öppna lokal lagring..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:144
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Använd video-maskinvaruacceleration"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Använd video-strukturkonversion"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:147
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Avkodningsgränssnitt för att återge video:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:150
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (förval)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:154
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (system)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:158
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (system)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:162
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (system)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:170
+#: core/utilities/setup/misc/systemsettingswidget.cpp:168
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Aktivera intern felsökningsloggning"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:187
+#: core/utilities/setup/misc/systemsettingswidget.cpp:185
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

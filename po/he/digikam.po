@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:41+0000\n"
-"PO-Revision-Date: 2025-12-30 18:06+0200\n"
+"POT-Creation-Date: 2026-01-03 00:40+0000\n"
+"PO-Revision-Date: 2026-01-02 15:22+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -3250,7 +3250,7 @@ msgstr "מסננים"
 #: core/app/views/stack/itemiconview_albums.cpp:302
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
-msgstr ""
+msgstr "לא ניתן לפתוח את אלבום העל. זה לא מקום פיזי."
 
 #: core/app/views/stack/itemiconview_items.cpp:739
 #, kde-format
@@ -48236,7 +48236,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:207
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:206
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -48324,7 +48324,7 @@ msgid "Set this option to indicate if image has geolocation information."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#: core/utilities/setup/misc/setupmisc.cpp:82
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:79
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr ""
@@ -48340,31 +48340,31 @@ msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
-#: core/utilities/setup/misc/setupmisc.cpp:126
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:123
 #, kde-format
 msgid "Updates"
 msgstr "עדכונים"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:169
-#: core/utilities/setup/misc/setupmisc.cpp:130
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:127
 #, kde-format
 msgid "Check for new version:"
 msgstr "לבדוק אם יש גרסה חדשה:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:171
-#: core/utilities/setup/misc/setupmisc.cpp:132
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:129
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
-#: core/utilities/setup/misc/setupmisc.cpp:133
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:130
 #, fuzzy, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "הסרת פריט"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
-#: core/utilities/setup/misc/setupmisc.cpp:134
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:131
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -48375,13 +48375,13 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
-#: core/utilities/setup/misc/setupmisc.cpp:139
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
-#: core/utilities/setup/misc/setupmisc.cpp:140
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:137
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -48391,19 +48391,19 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
-#: core/utilities/setup/misc/setupmisc.cpp:145
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:142
 #, kde-format
 msgid "Last check: %1"
 msgstr "בדיקה אחרונה: %1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:185
-#: core/utilities/setup/misc/setupmisc.cpp:146
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:143
 #, kde-format
 msgid "Check now..."
 msgstr "לבדוק כעת…"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
-#: core/utilities/setup/misc/setupmisc.cpp:214
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:29
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "הצגת חלון קבלת &פנים בהתחלה"
@@ -48414,19 +48414,19 @@ msgid "Use native file dialogs from the system"
 msgstr "שמירת התמונות המסומנות לתיקייה וירטואלית חדשה"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:219
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:34
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "כותרת לשונית סרגל צד:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc.cpp:221
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "רק ללשונית הפעילה"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc.cpp:222
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
 #, kde-format
 msgid "For All Tabs"
 msgstr "לכל הלשוניות"
@@ -48437,112 +48437,112 @@ msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc.cpp:227
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
 #, kde-format
 msgid "Widget style:"
 msgstr "סגנון וידג׳ט:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc.cpp:229
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:44
 #, fuzzy, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:252
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "ערכת סמלים (תשתנה אחרי הפעלה מחדש):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc.cpp:254
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:69
 #, fuzzy, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc.cpp:258
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc.cpp:259
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "בריזה"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc.cpp:260
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "בריזה כהה"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc.cpp:261
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc.cpp:262
-#, fuzzy, kde-format
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
+#, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
-msgstr "תאורה:"
+msgstr "אווירה"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc.cpp:263
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:78
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "אנושות"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc.cpp:264
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:79
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "חמצן"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:103
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:110
 #, kde-format
 msgid "Application font:"
 msgstr "גופן היישום:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc.cpp:296
-#, fuzzy, kde-format
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:111
+#, kde-format
 msgid "Select here the font used to display text in whole application."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "אפשר לבחור כאן את הגופן לשימוש תצוגת הטקסט ביישום כולו."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:126
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "מראה"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:324
-#: core/utilities/setup/misc/setupmisc.cpp:378
+#: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "בדיקת איות"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:330
-#: core/utilities/setup/misc/setupmisc.cpp:384
+#: core/utilities/setup/misc/setupmisc.cpp:49
 #, fuzzy, kde-format
 #| msgid "Normalize"
 msgctxt "@title:tab"
@@ -48550,14 +48550,14 @@ msgid "Localize"
 msgstr "נירמול"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:390
+#: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "מערכת"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:425
+#: core/utilities/setup/misc/setupmisc_settings.cpp:34
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -48591,11 +48591,13 @@ msgid "Show Items' Toolti&ps With Thumbbar and Folder-View"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set this option to display the image information when the mouse hovers over "
 "a thumbbar or folder-view item."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
+"הגדרת האפשרות הזאת תציג את פרטי התמונה כשהעכבר עובר מעל סרגל תמונות ממוזערות "
+"או פריט תצוגת אלבום."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:87
 #, kde-format
@@ -48681,10 +48683,10 @@ msgstr "דגם עדשת המצלמה"
 #: core/showfoto/setup/showfotosetuptooltip.cpp:127
 #: core/utilities/setup/setuptooltip.cpp:186
 #: core/utilities/setup/setuptooltip.cpp:366
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set this option to display the lens model with which the image was taken."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את דגם העדשה איתה צולמה התמונה הזאת."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:130
 #, kde-format
@@ -48709,12 +48711,12 @@ msgstr ""
 #: core/showfoto/setup/showfotosetuptooltip.cpp:138
 #: core/utilities/setup/setuptooltip.cpp:197
 #: core/utilities/setup/setuptooltip.cpp:374
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
 "the image."
 msgstr ""
-"בחרו באפשרות זו כדי להציג  את זמן-החשיפה ורגישות המצלמה בעת צילום התמונה"
+"בחירה באפשרות הזאת תציג את חשיפת המצלמה והרגישות ששימשו לצילום התמונה הזאת."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:141
 #, kde-format
@@ -48763,11 +48765,10 @@ msgid "My Favorites"
 msgstr "המועדפים שלי"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני תיקייה מועדפת"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, kde-format
@@ -48782,11 +48783,10 @@ msgid "Hierarchy:"
 msgstr "היררכיה:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
-msgstr "מאפייני הקובץ"
+msgstr "מאפייני פריט מועדף"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:257
 #, kde-format
@@ -48795,12 +48795,10 @@ msgid "Name:"
 msgstr "שם:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:260
-#, fuzzy, kde-format
-#| msgctxt "creation date of the image"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
-msgstr "נוצר:"
+msgstr "יצירה:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:263
 #, kde-format
@@ -48827,11 +48825,10 @@ msgid "&Name:"
 msgstr "&שם:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
-msgstr "הזינו שם תווית כאן..."
+msgstr "נא למלא כאן שם לרשומת מועדפים…"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:130
 #, kde-format
@@ -48858,16 +48855,16 @@ msgid "Type:"
 msgstr "סוג:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
-msgstr "טבע"
+msgstr "הוספת תיקייה למועדפים"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
-msgstr "טבע"
+msgstr "הוספת פריט למועדפים"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:150
 #, kde-format
@@ -48885,11 +48882,10 @@ msgid "&Description:"
 msgstr "&תיאור:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:162
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
-msgstr "הזינו שם תווית כאן..."
+msgstr "נא למלא תיאור פריט מועדפים…"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:168
 #, kde-format
@@ -49163,10 +49159,10 @@ msgid "Date"
 msgstr "תאריך"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:344
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Stack-View"
-msgstr "אפשרויות ממשק"
+msgstr "תצוגת ערמה"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:346
 #, kde-format
@@ -49236,10 +49232,10 @@ msgstr "&ביטול"
 
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
 #: core/utilities/import/items/itemviewimportdelegate.cpp:320
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
-msgstr "נוצר ב: %1"
+msgstr "יצירה: %1"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:215
 #, kde-format
@@ -49306,11 +49302,10 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>שמות התמונות משתנים. נא להמתין…</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
-msgstr "&ביטול"
+msgstr "ביטול &גורף"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
@@ -49352,9 +49347,9 @@ msgid "Overwrite"
 msgstr "שכתוב"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
-msgstr "מסיר תוויות מתמונות. אנא המתינו..."
+msgstr "<b>שמות התמונות משתנים. שגיאות: %1</b>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:331
 #, kde-format
@@ -49439,9 +49434,9 @@ msgid "Change Case"
 msgstr "החלפת אותיות רישיות/רגילות"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:29
-#, fuzzy, kde-format
+#, kde-format
 msgid "change the case of a renaming option"
-msgstr "אפשרויות שינוי שם קובץ"
+msgstr "החלפת מצב רישיות של אפשרות שינוי שם"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:33
 #, kde-format
@@ -49710,9 +49705,9 @@ msgid "Description"
 msgstr "תיאור"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Common File Information"
-msgstr "מידע על הרכיב"
+msgstr "פרטי קבצים משותפים"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:56
 #, kde-format
@@ -50181,19 +50176,19 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "הוספת מספר סידורי"
+msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "הוספת מספר סידורי"
+msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "הוספת מספר סידורי"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -50404,11 +50399,9 @@ msgid "Reject this suggestion"
 msgstr "דחיית ההצעה הזאת"
 
 #: core/utilities/firstrun/collectionpage.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Configure where you keep your images</b>"
-msgstr ""
-"<b>אשף ההפעלה הראשונית: הגדרות מיקום האחסון של התמונות והמידע הנלווה אליהם</"
-"b>"
+msgstr "<b>הגדרה איפה לשמור את התמונות שלך</b>"
 
 #: core/utilities/firstrun/collectionpage.cpp:71
 #, kde-format
@@ -50437,30 +50430,28 @@ msgstr ""
 msgid ""
 "You must select a folder for digiKam to use as the root album. All of your "
 "images will go there."
-msgstr "יש לבחור תיקייה ראשית בה תשמור digiKam את התמונות שלך."
+msgstr "יש לבחור תיקייה בה תשתמש digiKam כאלבום על. כל התמונות שלך תאוחסנה שם."
 
 #: core/utilities/firstrun/collectionpage.cpp:176
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr "האם ליצור תקיית מקור לאוסף התמונות?"
+msgstr "ליצור תיקיית אלבום על?"
 
 #: core/utilities/firstrun/collectionpage.cpp:177
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>The folder to use as the root album path does not exist:</p><p><b>%1</b></"
 "p>Would you like digiKam to create it for you?"
 msgstr ""
-"התיקייה שנבחרה להיות תיקיית מקור לאוסף התמונות אינה קיימת: <p><b>%1</b></"
-"p>האם ליצור אותה?"
+"<p>התיקייה לשימוש כנתיב אלבום על:</p><p><b>%1</b></p>האם על digiKam ליצור "
+"אותה עבורך?"
 
 #: core/utilities/firstrun/collectionpage.cpp:189
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
-msgstr "תהליך יצירת התיקייה נכשל"
+msgstr "יצירת תיקיית אלבום על נכשלה"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
 #, fuzzy, kde-format
@@ -53834,9 +53825,9 @@ msgid "Marble Cache Files"
 msgstr "קובצי מטמון של Marble"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:37
-#, fuzzy, kde-format
+#, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "המרה"
+msgstr "מפענח קובצי GPSBabel NMEA"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -60762,11 +60753,10 @@ msgid "(Advanced Search)"
 msgstr "(חיפוש מתקדם)"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:104
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Autostart Search"
-msgstr "חיפוש אחרון"
+msgstr "התחלת חיפוש אוטומטית"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:241
 #, kde-format
@@ -60850,8 +60840,7 @@ msgid "Show file&name"
 msgstr "הצגת שם &קובץ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#, fuzzy, kde-format
-#| msgid "Set this option to show the filename below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the filename below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את שם הקובץ מתחת לתמונה הממוזערת."
 
@@ -60862,8 +60851,7 @@ msgid "Show file si&ze"
 msgstr "הצגת &גודל קובץ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#, fuzzy, kde-format
-#| msgid "Set this option to show the file size below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the file size below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את גודל הקובץ מתחת לתמונה הממוזערת."
 
@@ -60874,10 +60862,7 @@ msgid "Show camera creation &date"
 msgstr "הצגת תאריך היצירה במצלמה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the camera creation date below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "הגדרת האפשרות הזאת תגרום להצגת תאריך היצירה במצלמה מתחת לתמונה הממוזערת."
@@ -60896,44 +60881,35 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Show image dimensions"
+#, kde-format
 msgid "Show item dimensions"
-msgstr "הצגת ממדי התמונה"
+msgstr "הצגת ממדי הפריט"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image size in pixels below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the item size in pixels below the thumbnail."
-msgstr "הגדרת האפשרות הזאת תציג את גודל התמונה בפיקסלים מתחת לתמונה הממוזערת."
+msgstr "הגדרת האפשרות הזאת תציג את גודל הפריט בפיקסלים מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#, kde-format
 msgid "Show item aspect ratio"
-msgstr "הצגת יחס גובה־רוחב של תמונה"
+msgstr "הצגת יחס גובה־רוחב של פריט"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image aspect ratio below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
-"הגדרת האפשרות הזאת תציג את יחס הגובה־רחב של התמונה מתחת לתמונה הממוזערת."
+"הגדרת האפשרות הזאת תציג את יחס הגובה־רחב של הפריט מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Show image format"
+#, kde-format
 msgid "Show item format"
-msgstr "הצגת סוג התמונה"
+msgstr "הצגת סוג הפריט"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Set this option to show image mime type over image thumbnail."
+#, kde-format
 msgid "Set this option to show item mime type over thumbnail."
-msgstr "הגדרת האפשרות הזאת תציג את סוג תוכן התמונה מעל לתמונה הממוזערת."
+msgstr "הגדרת האפשרות הזאת תציג את סוג תוכן הפריט מעל לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
 #, kde-format
@@ -60941,8 +60917,7 @@ msgid "Show digiKam tit&le"
 msgstr "הצגת &כותרת digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את הכותרת של digiKam מתחת לתמונה הממוזערת."
 
@@ -60952,9 +60927,7 @@ msgid "Show digiKam &captions"
 msgstr "הצגת &כיתובי digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam captions below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את הכיתובים של digiKam מתחת לתמונה הממוזערת."
 
@@ -60965,9 +60938,7 @@ msgid "Show digiKam &tags"
 msgstr "הצגת &תגיות digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam tags list below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "הגדרת האפשרות הזאת תציג את רשימת התגיות של digiKam מתחת לתמונה הממוזערת."
@@ -60978,9 +60949,7 @@ msgid "Show digiKam &rating"
 msgstr "הצגת &דירוג digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam rating below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr "הגדרת האפשרות הזאת תציג את הדירוג של digiKam מתחת לתמונה הממוזערת."
 
@@ -60990,9 +60959,7 @@ msgid "Show digiKam &pick label"
 msgstr "הצגות תווית &בחירה של digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam pick label below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "הגדרת האפשרות הזאת תציג את תוויות הבחירה של digiKam מתחת לתמונה הממוזערת."
@@ -61003,16 +60970,12 @@ msgid "Show digiKam color &label"
 msgstr "הצגות תוויות &צבע של digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam color label as a border around the "
-#| "thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
-"הגדרת האפשרות הזאת תציג את תוויות הצבע של digiKam כמסגרת סביב התמונה "
-"הממוזערת."
+"הגדרת האפשרות הזאת תציג את תווית הצבע של digiKam כקו מתחת לתמונה הממוזערת."
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
@@ -61021,16 +60984,13 @@ msgid "Show rotation overlay buttons"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show overlay buttons over the image thumbnail to be "
-#| "able to process left or right image rotation."
+#, kde-format
 msgid ""
 "Set this option to show the transformation overlay buttons over the "
 "thumbnail to process left or right rotation."
 msgstr ""
-"הגדרת האפשרות הזאת תציג כפתורים מרחפים מעל התמונה הממוזערת כדי לעבד אותה "
-"מבחינת הטיה שמאלה או ימינה."
+"הגדרת האפשרות הזאת תציג כפתורי התמרה מרחפים מעל התמונה הממוזערת כדי להטות "
+"אותה שמאלה או ימינה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
@@ -61038,10 +60998,7 @@ msgid "Show fullscreen overlay button"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
 "fullscreen mode."
@@ -61050,22 +61007,18 @@ msgstr ""
 "מלא."
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Show geolocation overlay button"
-msgstr "הצגות מחוון מקום גאוגרפי"
+msgstr "הצגת כפתור מרחף למקום גאוגרפי"
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
 msgstr ""
-"הגדרת האפשרות הזאת תציג כפתור מרחף מעל התמונה הממוזערת כדי לפתוח אותה במסך "
-"מלא."
+"הגדרת האפשרות הזאת תציג כפתור מרחף מעל התמונה הממוזערת כדי לזהות פריט עם "
+"הצמדה גאוגרפית ולפתוח את לשונית המפה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -61240,10 +61193,9 @@ msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, fuzzy, kde-format
-#| msgid "Check this if you want watermark to be transparent."
+#, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
-msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
+msgstr "יש לסמן את זה כדי להמיר תמונת תצוגה מקדימה של 16 סיביות ל־8 סיביות."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
@@ -61251,10 +61203,9 @@ msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, fuzzy, kde-format
-#| msgid "Check this if you want watermark to be transparent."
+#, kde-format
 msgid "Check this if you want to scale small images to fit to window."
-msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
+msgstr "יש לסמן את זה כדי להתאים את גודל התמונה לחלון."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -61262,10 +61213,9 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, fuzzy, kde-format
-#| msgid "Check this if you want watermark to be transparent."
+#, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
-msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
+msgstr "יש לסמן את זה כדי להשתמש בהחלקת קצוות כדי למתוח את התמונה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -61274,10 +61224,9 @@ msgid "Show icons and text over preview"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#, fuzzy, kde-format
-#| msgid "Check this if you want a background fill behind the text."
+#, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
-msgstr "יש לסמן את זה כדי שיהיה מילוי רקע מאחורי הטקסט."
+msgstr "יש לסמן את זה כדי לראות סמלים וטקסט בתצוגה המקדימה של התמונה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
@@ -61285,10 +61234,9 @@ msgid "Auto play of videos or animations"
 msgstr "ניגון אוטומטי של סרטונים או הנפשות"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid "Check this if you want watermark to be transparent."
+#, kde-format
 msgid "Check this if you want to auto play the videos or animations."
-msgstr "יש לסמן את זה כדי שחותמת המים תהיה שקופה."
+msgstr "יש לסמן את זה כדי שהסרטונים או ההנפשות יופעלו אוטומטית."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
 #, kde-format
@@ -61930,6 +61878,8 @@ msgid ""
 "Please check if your camera is turned on and retry or try setting it "
 "manually."
 msgstr ""
+"זיהוי המצלמה אוטומטית נכשל.\n"
+"נא לבדוק האם המצלמה שלך פעילה ולנסות שוב או לנסות להגדיר אותה ידנית."
 
 #: core/utilities/setup/camera/setupcamera.cpp:908
 #, kde-format
@@ -62235,7 +62185,7 @@ msgid "Download Required Model Files"
 msgstr "הורדת קובצי המודל הנחוצים"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
-#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
@@ -63905,12 +63855,30 @@ msgstr "&שם משתמש:"
 msgid "&Password:"
 msgstr "&סיסמה:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:38
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:30
+#, kde-format
+msgid "Use native file dialogs from system"
+msgstr "להשתמש בחלוניות קבצים מובנות של המערכת"
+
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:31
+#, kde-format
+msgid "Draw frames around grouped items"
+msgstr "לצייר מסגרת מסביב לפריטים מקובצים"
+
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:38
+#, kde-format
+msgid ""
+"Set this option to configure how sidebar tab titles are visible. Use \"Only "
+"For Active Tab\" option if you use a small screen resolution as with a "
+"laptop computer."
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr "ל&סרוק פריטים חדשים עם העלייה"
 
-#: core/utilities/setup/misc/setupmisc.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -63927,12 +63895,12 @@ msgid ""
 "a manual scan through the maintenance tool at the right moment."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:48
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -63942,29 +63910,29 @@ msgid ""
 "option must be deactivated."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:54
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:55
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "הפעלת סריקת זיהוי פרצופים ברקע"
 
-#: core/utilities/setup/misc/setupmisc.cpp:56
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:59
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr "הסרת פריטי ליבה מיושנים ממסד הנתונים"
 
-#: core/utilities/setup/misc/setupmisc.cpp:60
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -63977,103 +63945,104 @@ msgid ""
 "For clean up routines for other databases, please use the maintenance."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:66
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid ""
-"<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:76
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
 msgid "Confirm when moving items to the &trash"
 msgstr "לאשר העברת פריטים ל&אשפה"
 
-#: core/utilities/setup/misc/setupmisc.cpp:77
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:74
 #, kde-format
 msgid "Confirm when permanently deleting items"
 msgstr "לאשר מחיקת פריטים לצמיתות"
 
-#: core/utilities/setup/misc/setupmisc.cpp:78
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:75
 #, kde-format
 msgid "Do not confirm when applying changes in the &right sidebar"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:79
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:76
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:80
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:77
 #, kde-format
 msgid "Initially select the first item in the album"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:81
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:78
 #, kde-format
 msgid "Expand current tree item with a single mouse click"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:87
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:84
 #, kde-format
 msgid "Get album date source:"
 msgstr "קבלת מקור תאריך אלבום:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:89
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:86
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Newest Item Date"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:90
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:87
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Oldest Item Date"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:91
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:88
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Average Date"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:92
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:89
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Folder Date"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:93
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:90
 #, kde-format
 msgctxt "method to get the album date"
 msgid "No Change Of Date"
 msgstr "ללא שינוי תאריך"
 
-#: core/utilities/setup/misc/setupmisc.cpp:94
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:91
 #, kde-format
 msgid ""
 "The album date is adjusted depending on the option set when new items are "
 "found during scanning."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:98
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:95
 #, kde-format
 msgid "String comparison type:"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:100
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:97
 #, kde-format
 msgctxt "method to compare strings"
 msgid "Natural"
 msgstr "טבעית"
 
-#: core/utilities/setup/misc/setupmisc.cpp:101
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:98
 #, kde-format
 msgctxt "method to compare strings"
 msgid "Normal"
 msgstr "רגילה"
 
-#: core/utilities/setup/misc/setupmisc.cpp:102
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:99
 #, kde-format
 msgid ""
 "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
@@ -64085,12 +64054,12 @@ msgid ""
 "should be sorted according to these dates.</qt>"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:111
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:108
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:117
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:114
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -64098,30 +64067,12 @@ msgid ""
 "than 40 can make the search <b>really</b> slow."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:215
-#, kde-format
-msgid "Use native file dialogs from system"
-msgstr "להשתמש בחלוניות קבצים מובנות של המערכת"
-
-#: core/utilities/setup/misc/setupmisc.cpp:216
-#, kde-format
-msgid "Draw frames around grouped items"
-msgstr "לצייר מסגרת מסביב לפריטים מקובצים"
-
-#: core/utilities/setup/misc/setupmisc.cpp:223
-#, kde-format
-msgid ""
-"Set this option to configure how sidebar tab titles are visible. Use \"Only "
-"For Active Tab\" option if you use a small screen resolution as with a "
-"laptop computer."
-msgstr ""
-
-#: core/utilities/setup/misc/setupmisc.cpp:318
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:29
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:319
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:30
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br>are performed only on "
@@ -64130,130 +64081,130 @@ msgid ""
 "operation is executed."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:325
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:36
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "לא"
 
-#: core/utilities/setup/misc/setupmisc.cpp:326
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:37
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "כן"
 
-#: core/utilities/setup/misc/setupmisc.cpp:327
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:38
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "לשאול"
 
-#: core/utilities/setup/misc/setupmisc.cpp:370
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:81
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "קיבוץ"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:114
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "להשתמש ב־OpenGL תוכנתי לתיצוג"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "להשתמש בהאצת חומרה עם OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid "Use OpenCL acceleration for AI models"
 msgstr "האצת OpenCL למודלים של בינה מלאכותית"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:126
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "בדיקת תאימות בינה מלאכותית מול המעבד"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, kde-format
 msgid "Download required binary data:"
 msgstr "הורדת נתונים בינריים נחוצים:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "פתיחת חלונית הורדה…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Open Local Storage..."
 msgstr "פתיחת אחסון מקומי…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:144
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "להשתמש בהאצת חומרת וידאו"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "להשתמש בהמרת מרקמי וידאו"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:147
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "מנגנון פענוח לתיצוג הווידאו:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:150
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (ברירת מחדל)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:154
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (מערכת)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:158
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (מערכת)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:162
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (מערכת)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:170
+#: core/utilities/setup/misc/systemsettingswidget.cpp:168
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:187
+#: core/utilities/setup/misc/systemsettingswidget.cpp:185
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
