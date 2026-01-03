@@ -25,13 +25,13 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Sveinn í Felli <sv1@fellsnet.is>
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:41+0000\n"
-"PO-Revision-Date: 2025-12-31 09:40+0000\n"
+"POT-Creation-Date: 2026-01-03 00:40+0000\n"
+"PO-Revision-Date: 2026-01-02 11:16+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -2827,11 +2827,9 @@ msgid "All supported files (%1)"
 msgstr "Allar studdar skrár (%1)"
 
 #: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info: week properties"
-#| msgid "Start: "
+#, kde-format
 msgid "Support: "
-msgstr "Upphaf:"
+msgstr "Aðstoð: "
 
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
@@ -2839,17 +2837,14 @@ msgid "Documentation: "
 msgstr "Hjálparskjöl:"
 
 #: core/app/utils/digikam_version.cpp:66
-#, fuzzy, kde-format
-#| msgid "Contribute..."
+#, kde-format
 msgid "Contribute: "
-msgstr "Taka þátt..."
+msgstr "Taka þátt: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Date: "
+#, kde-format
 msgid "Donate: "
-msgstr "Dagsetning: "
+msgstr "Styrkja: "
 
 #: core/app/views/preview/itempreviewview.cpp:166
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
@@ -28998,9 +28993,7 @@ msgid "Database Configuration"
 msgstr "Uppsetning gagnagrunns"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Type: "
+#, kde-format
 msgid "Type: "
 msgstr "Tegund: "
 
@@ -29055,41 +29048,25 @@ msgstr ""
 "afkastameira þegar sýslað er með söfn með meira en 100K atriðum.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Type</b>"
-msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
+msgstr "Fá nánari upplýsingar um <b>Tegund gagnagrunns</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Path: %1"
+#, kde-format
 msgctxt "@label:database path"
 msgid "Path: "
-msgstr "Slóð: %1"
+msgstr "Slóð: "
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Path</b>"
-msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
+msgstr "Fá nánari upplýsingar um <b>Slóð gagnagrunns</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
-#| "NVMe) with enough free space especially for thumbnails database.</"
-#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
-#| "performance reasons, it is also recommended not to use network storage "
-#| "media.</p><p></p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
@@ -29112,7 +29089,7 @@ msgstr ""
 "með nóg af lausu plássi, sérstaklega fyrir smámyndagagnagrunninn.</p> "
 "<p>Athugið: ekki má nota hér möppu á fjarlægum miðli eins og t.d. NFS-"
 "skráakerfi. Og ef verið er að hugsa um afköst, er alls ekki mælt með að "
-"notuð séu nettengd tæki.</p><p></p> "
+"notuð séu nettengd tæki.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
@@ -29129,12 +29106,10 @@ msgstr ""
 "tilfellum á þeim kerfum sem styðja hann."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>WAL Mode</b>"
-msgstr "Fá nánari upplýsingar um <b>Uppfæra tætigildi skráa</b>"
+msgstr "Fá nánari upplýsingar um <b>WAL-ham</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
@@ -29533,11 +29508,11 @@ msgid "The similarity database name is empty"
 msgstr "Líkindagagnagrunnurinn er tómur"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
-#, fuzzy, kde-format
-#| msgid "This path was set as a command lineoption (--database-directory)."
+#, kde-format
 msgid ""
 "<p>This path was set as a command lineoption (--database-directory).</p>"
-msgstr "Þessi slóð var sett sem rofi á skipanalínu (--database-directory)."
+msgstr ""
+"<p>Þessi slóð var sett sem rofi á skipanalínu (--database-directory).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
@@ -43528,9 +43503,7 @@ msgstr[1] ""
 "\"%1\" valdar myndir"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:405
-#, fuzzy, kde-format
-#| msgctxt "date of last image modification"
-#| msgid "Mod.: %1"
+#, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
 msgstr "Breytt: %1"
@@ -50365,7 +50338,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:207
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:206
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -50458,7 +50431,7 @@ msgstr ""
 "Veldu þetta til að sýna hvort mynd sé með hnattstaðsetningarupplýsingar."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#: core/utilities/setup/misc/setupmisc.cpp:82
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:79
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Skruna þetta atriði á miðja smámyndastiku"
@@ -50476,31 +50449,31 @@ msgstr ""
 "diski."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
-#: core/utilities/setup/misc/setupmisc.cpp:126
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:123
 #, kde-format
 msgid "Updates"
 msgstr "Uppfærslur"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:169
-#: core/utilities/setup/misc/setupmisc.cpp:130
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:127
 #, kde-format
 msgid "Check for new version:"
 msgstr "Athuga með nýja útgáfu:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:171
-#: core/utilities/setup/misc/setupmisc.cpp:132
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:129
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Aðeins fyrir stöðugar útgáfur"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
-#: core/utilities/setup/misc/setupmisc.cpp:133
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:130
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Vikulegar forútgáfur"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
-#: core/utilities/setup/misc/setupmisc.cpp:134
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:131
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -50517,13 +50490,13 @@ msgstr ""
 "alltaf slæðst með."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
-#: core/utilities/setup/misc/setupmisc.cpp:139
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Nota útgáfu með aflúsunartáknum"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
-#: core/utilities/setup/misc/setupmisc.cpp:140
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:137
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -50537,19 +50510,19 @@ msgstr ""
 "gríðarlega við að finna galla."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
-#: core/utilities/setup/misc/setupmisc.cpp:145
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:142
 #, kde-format
 msgid "Last check: %1"
 msgstr "Síðasta athugun: %1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:185
-#: core/utilities/setup/misc/setupmisc.cpp:146
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:143
 #, kde-format
 msgid "Check now..."
 msgstr "Kanna núna..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
-#: core/utilities/setup/misc/setupmisc.cpp:214
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:29
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "&Sýna upphafsskjá við ræsingu"
@@ -50560,19 +50533,19 @@ msgid "Use native file dialogs from the system"
 msgstr "Nota innbyggða samskiptaglugga frá stýrikerfinu"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:219
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:34
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Titill hliðarspjaldsflipa:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc.cpp:221
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Aðeins fyrir virkan flipa"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc.cpp:222
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
 #, kde-format
 msgid "For All Tabs"
 msgstr "Fyrir alla flipa"
@@ -50583,126 +50556,126 @@ msgid "Set this option to configure how sidebars tab title are visible."
 msgstr "Veldu þetta til að stilla birtingu á titilflipum á hliðarspjaldi."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc.cpp:227
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
 #, kde-format
 msgid "Widget style:"
 msgstr "Græjustíll:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc.cpp:229
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:44
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "Veldu þetta til að ákveða sjálfgefna gluggaskreytingu og útlit."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:252
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Táknmyndaþema (breytingar krefjast endurræsingar):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc.cpp:254
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:69
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Veldu þetta til að stilla sjálfgefið táknmyndaþema."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc.cpp:258
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc.cpp:259
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc.cpp:260
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze dökkt"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc.cpp:261
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc.cpp:262
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc.cpp:263
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:78
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc.cpp:264
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:79
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:103
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Nota táknmyndaþema kerfisins"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:110
 #, kde-format
 msgid "Application font:"
 msgstr "Letur í forritinu:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc.cpp:296
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:111
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "Veldu hér letrið sem notað er við birtingu texta í öllu forritinu."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:126
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Útlit"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:324
-#: core/utilities/setup/misc/setupmisc.cpp:378
+#: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Stafsetningaryfirferð"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:330
-#: core/utilities/setup/misc/setupmisc.cpp:384
+#: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Staðfæra"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:390
+#: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Kerfi"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:425
+#: core/utilities/setup/misc/setupmisc_settings.cpp:34
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -64938,7 +64911,7 @@ msgid "Download Required Model Files"
 msgstr "Sækja nauðsynlegar líkanaskrár"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
-#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr "Opna staðværu möppuna sem notuð er til að geyma gagnaskrárnar."
@@ -66853,12 +66826,33 @@ msgstr "Notan&danafn:"
 msgid "&Password:"
 msgstr "&Lykilorð:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:38
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:30
+#, kde-format
+msgid "Use native file dialogs from system"
+msgstr "Nota innbyggða samskiptaglugga frá stýrikerfinu"
+
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:31
+#, kde-format
+msgid "Draw frames around grouped items"
+msgstr "Teikna ramma í kringum hópuð atriði"
+
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:38
+#, kde-format
+msgid ""
+"Set this option to configure how sidebar tab titles are visible. Use \"Only "
+"For Active Tab\" option if you use a small screen resolution as with a "
+"laptop computer."
+msgstr ""
+"Veldu þetta til að stilla hvernig flipatitlar á hliðarslá eru birtir. Notaðu "
+"\"Aðeins fyrir virkan flipa\" ef þú ert með lága skjáupplausn eins og oft er "
+"með fartölvur."
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr "&Skanna nýja hluti í ræsingu"
 
-#: core/utilities/setup/misc/setupmisc.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -66886,12 +66880,12 @@ msgstr ""
 "og áætla frekar handvirka skönnun á hentugum tíma í gegnum "
 "viðhaldsvalmyndina."
 
-#: core/utilities/setup/misc/setupmisc.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Hröð skönnun (finnur ný, eydd og endurnefnd atriði)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:48
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -66904,17 +66898,17 @@ msgstr ""
 "eydd atriði og einnig endurnefnd atriði munu finnast. Til að finna atriði\n"
 "sem hafa breyst, verður að gera þetta óvirkt."
 
-#: core/utilities/setup/misc/setupmisc.cpp:54
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Finna andlit í nýlega viðbættum myndum"
 
-#: core/utilities/setup/misc/setupmisc.cpp:55
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "Virkja keyrslu andlitakennsla í bakgrunni"
 
-#: core/utilities/setup/misc/setupmisc.cpp:56
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
@@ -66923,12 +66917,12 @@ msgstr ""
 "Veldu þetta til að setja sjálfkrafa í gang andlitagreiningu í bakgrunni\n"
 "þegar nýtt andlit er merkt. Þetta mun einfalda ferlið við merkingar."
 
-#: core/utilities/setup/misc/setupmisc.cpp:59
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr "Fjarlægja úrelta kjarnahluti úr gagnagrunni"
 
-#: core/utilities/setup/misc/setupmisc.cpp:60
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -66949,81 +66943,86 @@ msgstr ""
 "andlitaskönnun.\n"
 "Til að hreinsa hina gagnagrunnana ætti að nota viðhaldsverkfærin."
 
-#: core/utilities/setup/misc/setupmisc.cpp:66
-#, kde-format
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
+#| "font>"
 msgctxt "@info"
 msgid ""
-"<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
 "<font color='red'><i>Aðvörun: þessar stillingar hægja á ræsingu!</i></font>"
 
-#: core/utilities/setup/misc/setupmisc.cpp:76
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
 msgid "Confirm when moving items to the &trash"
 msgstr "S&taðfesta þegar skrár eru fluttar í ruslið"
 
-#: core/utilities/setup/misc/setupmisc.cpp:77
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:74
 #, kde-format
 msgid "Confirm when permanently deleting items"
 msgstr "Staðfesta þegar skrám er endanlega eytt"
 
-#: core/utilities/setup/misc/setupmisc.cpp:78
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:75
 #, kde-format
 msgid "Do not confirm when applying changes in the &right sidebar"
 msgstr "Framkvæma b&reytingar á hægri hliðarspjaldi án staðfestingar"
 
-#: core/utilities/setup/misc/setupmisc.cpp:79
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:76
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
 "Sýna einungis andlitamerki til að úthluta nöfnum á hliðarspjaldinu með fólki"
 
-#: core/utilities/setup/misc/setupmisc.cpp:80
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:77
 #, kde-format
 msgid "Initially select the first item in the album"
 msgstr "Byrjaður á að velja fyrsta atriðið í albúminu"
 
-#: core/utilities/setup/misc/setupmisc.cpp:81
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:78
 #, kde-format
 msgid "Expand current tree item with a single mouse click"
 msgstr "Fletta út möppum með einum músarsmelli"
 
-#: core/utilities/setup/misc/setupmisc.cpp:87
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:84
 #, kde-format
 msgid "Get album date source:"
 msgstr "Ná í uppruna dagsetningar albúms:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:89
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:86
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Newest Item Date"
 msgstr "Úr dagsetningu nýjasta atriðisins"
 
-#: core/utilities/setup/misc/setupmisc.cpp:90
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:87
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Oldest Item Date"
 msgstr "Úr dagsetningu elsta atriðisins"
 
-#: core/utilities/setup/misc/setupmisc.cpp:91
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:88
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Average Date"
 msgstr "Úr meðaltalsdagsetningu"
 
-#: core/utilities/setup/misc/setupmisc.cpp:92
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:89
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Folder Date"
 msgstr "Úr dagsetningu möppu"
 
-#: core/utilities/setup/misc/setupmisc.cpp:93
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:90
 #, kde-format
 msgctxt "method to get the album date"
 msgid "No Change Of Date"
 msgstr "Engin breyting á dagsetningu"
 
-#: core/utilities/setup/misc/setupmisc.cpp:94
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:91
 #, kde-format
 msgid ""
 "The album date is adjusted depending on the option set when new items are "
@@ -67032,24 +67031,24 @@ msgstr ""
 "Dagsetning albúms er aðlöguð samkvæmt stilltum valkosti þegar ný atriði "
 "finnast við skönnun."
 
-#: core/utilities/setup/misc/setupmisc.cpp:98
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:95
 #, kde-format
 msgid "String comparison type:"
 msgstr "Gerð samanburðar strengja:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:100
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:97
 #, kde-format
 msgctxt "method to compare strings"
 msgid "Natural"
 msgstr "Náttúrulegt"
 
-#: core/utilities/setup/misc/setupmisc.cpp:101
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:98
 #, kde-format
 msgctxt "method to compare strings"
 msgid "Normal"
 msgstr "Venjulegt"
 
-#: core/utilities/setup/misc/setupmisc.cpp:102
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:99
 #, kde-format
 msgid ""
 "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
@@ -67069,12 +67068,12 @@ msgstr ""
 "dæmis nota ISO dagsetningar (201006 eða 20090523) í albúmaheitum og að þau "
 "eigi að raðast í samræmi við þær dagsetningar.</qt>"
 
-#: core/utilities/setup/misc/setupmisc.cpp:111
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:108
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr "Lægri mörk fyrir lágmarkslíkindi:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:117
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:114
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -67085,33 +67084,12 @@ msgstr ""
 "tvítökum. Sjálfgefið gildi er 40. Sé valið lægra gildi en 40 getur leitin "
 "orðið <b>mjög</b> hægvirk."
 
-#: core/utilities/setup/misc/setupmisc.cpp:215
-#, kde-format
-msgid "Use native file dialogs from system"
-msgstr "Nota innbyggða samskiptaglugga frá stýrikerfinu"
-
-#: core/utilities/setup/misc/setupmisc.cpp:216
-#, kde-format
-msgid "Draw frames around grouped items"
-msgstr "Teikna ramma í kringum hópuð atriði"
-
-#: core/utilities/setup/misc/setupmisc.cpp:223
-#, kde-format
-msgid ""
-"Set this option to configure how sidebar tab titles are visible. Use \"Only "
-"For Active Tab\" option if you use a small screen resolution as with a "
-"laptop computer."
-msgstr ""
-"Veldu þetta til að stilla hvernig flipatitlar á hliðarslá eru birtir. Notaðu "
-"\"Aðeins fyrir virkan flipa\" ef þú ert með lága skjáupplausn eins og oft er "
-"með fartölvur."
-
-#: core/utilities/setup/misc/setupmisc.cpp:318
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:29
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "Framkvæma eftirfarandi aðgerðir á öll atriði hóps:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:319
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:30
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br>are performed only on "
@@ -67124,51 +67102,51 @@ msgstr ""
 "<br>Ef 'Spyrja' er valið, kemur upp kvaðningargluggi í hvert<br/>skipti sem "
 "aðgerðin er framkvæmd."
 
-#: core/utilities/setup/misc/setupmisc.cpp:325
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:36
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Nei"
 
-#: core/utilities/setup/misc/setupmisc.cpp:326
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:37
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Já"
 
-#: core/utilities/setup/misc/setupmisc.cpp:327
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:38
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Spyrja"
 
-#: core/utilities/setup/misc/setupmisc.cpp:370
+#: core/utilities/setup/misc/setupmisc_grouping.cpp:81
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Hópun"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:111
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Nota mikla kvörðun mynddíla úr skjáhlutföllum"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:114
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Nota pixmaps með háupplausn"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Nota hugbúnaðar-OpenGL til myndgerðar"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Nota OpenCL-vélbúnaðarhröðun"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67177,12 +67155,12 @@ msgstr ""
 "Þessi valkostur er enn á tilraunastigi og krefst líka að ýmsar "
 "umhverfisbreytur séu handstilltar."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid "Use OpenCL acceleration for AI models"
 msgstr "Nota OpenCL-vélbúnaðarhröðun fyrir gervigreindarlíkön"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:126
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -67191,67 +67169,67 @@ msgstr ""
 "Þessi valkostur er enn á tilraunastigi og getur valdið hruni séu réttir "
 "reklar ekki uppsettir."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Prófa samhæfni AI-gervigreindar á GPU-skjákortsörgjörva"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Sækja nauðsynleg tvíundakerfisgögn:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Opna niðurhalsglugga..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Open Local Storage..."
 msgstr "Opna staðværa geymslu..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:144
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Nota vélbúnaðarhröðun fyrir myndmerki"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Nota umbreytingu efnisáferða fyrir myndmerki"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:147
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Bakendi fyrir afkóðun myndmerkis:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:150
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (sjálfgefið)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:154
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (kerfis)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:158
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (kerfis)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:162
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (kerfis)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:170
+#: core/utilities/setup/misc/systemsettingswidget.cpp:168
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Virkja innri villuskráningu"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:187
+#: core/utilities/setup/misc/systemsettingswidget.cpp:185
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
