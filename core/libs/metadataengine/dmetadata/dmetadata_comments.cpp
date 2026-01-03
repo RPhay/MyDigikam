@@ -348,7 +348,7 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                     if      (writeWithExifTool() && !defaultComment.isEmpty())
                     {
                         QByteArray xpData  = QByteArray(reinterpret_cast<const char*>(defaultComment.utf16()), defaultComment.size() * 2);
-                        xpData.append("\x00\x00");
+                        xpData.append(2, '\0');
 
                         if (!setExifTagData(nameSpace, xpData))
                         {
