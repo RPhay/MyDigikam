@@ -329,6 +329,9 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
     const QStringList ecmCatalogs =
     {
+        QLatin1String("karchive6_qt"),
+
+        QLatin1String("kauth6_qt"),
         QLatin1String("kbookmarks6_qt"),
         QLatin1String("kcodecs6_qt"),
         QLatin1String("kcompletion6_qt"),
@@ -336,9 +339,12 @@ void loadEcmQtTranslationFiles(QApplication& app)
         QLatin1String("kcoreaddons6_qt"),
         QLatin1String("kdbusaddons6_qt"),
         QLatin1String("kitemviews6_qt"),
+        QLatin1String("kjobwidgets6_qt"),
+        QLatin1String("knotifications6_qt"),
         QLatin1String("kwidgetsaddons6_qt"),
         QLatin1String("kwindowsystem6_qt"),
         QLatin1String("solid6_qt"),
+        QLatin1String("sonnet6_qt"),
 
 #else
 
@@ -346,6 +352,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
     const QStringList ecmCatalogs =
     {
+        QLatin1String("kauth5_qt"),
         QLatin1String("kbookmarks5_qt"),
         QLatin1String("kcodecs5_qt"),
         QLatin1String("kcompletion5_qt"),
@@ -359,7 +366,6 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
         QLatin1String("kde5_xml_mimetypes"),
         QLatin1String("kglobalaccel5_qt"),
-        QLatin1String("kauth5_qt"),
 
 #endif
 
