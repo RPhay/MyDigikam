@@ -301,7 +301,8 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
         d->applicationIcon->addItem(it.key(), it.value());
     }
 
-    d->dateTimeFormatLabel    = new QLabel(i18n("Date/time format:"), appearancePanel);
+    d->dateTimeFormatLabel    = new QLabel(i18n("Date/time format (%1):",
+                                                getDateFormatLinkText()), appearancePanel);
     d->dateTimeFormatLabel->setOpenExternalLinks(true);
     d->dateTimeFormatLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
 

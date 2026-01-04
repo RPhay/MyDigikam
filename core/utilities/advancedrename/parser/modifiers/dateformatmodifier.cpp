@@ -24,6 +24,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "timeadjustcontainer.h"
 
 namespace Digikam
@@ -41,14 +42,6 @@ DateFormatModifier::DateFormatModifier()
     QRegularExpression reg(QLatin1String("\\{dateformat(:(.*))?\\}"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
-}
-
-QString DateFormatModifier::getDateFormatLinkText()
-{
-    const QString dateFormatLink      = QString::fromUtf8("<a href='https://doc.qt.io/qt-6/qdatetime.html#toString'>%1</a>");
-    const QString dateFormatLinkDescr = i18nc("@info: date format settings", "format settings");
-
-    return dateFormatLink.arg(dateFormatLinkDescr);
 }
 
 QString DateFormatModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)

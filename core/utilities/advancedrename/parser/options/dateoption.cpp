@@ -257,7 +257,7 @@ DateOption::DateOption(QWidget* const widget)
     addToken(QLatin1String("[date:||key||]"),    i18nc("@item", "Date and time") +
                                                                  QLatin1String(" (||key|| = Standard|ISO|UnixTimeStamp|Text)"));
     addToken(QLatin1String("[date:||format||]"), i18nc("@item", "Date and time") + QLatin1String(" (") +
-                                                                 DateFormatModifier::getDateFormatLinkText() + QLatin1Char(')'));
+                                                                 getDateFormatLinkText() + QLatin1Char(')'));
 
     QRegularExpression reg(QLatin1String("\\[date(:(.*))?\\]"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);

@@ -29,8 +29,6 @@ public:
 
     DateFormatModifier();
 
-    static QString getDateFormatLinkText();
-
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private:

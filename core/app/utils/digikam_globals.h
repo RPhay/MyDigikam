@@ -322,6 +322,11 @@ DIGIKAM_EXPORT QDateTime asDateTimeLocal(const QDateTime& dt);
 DIGIKAM_EXPORT QString asUserDateTime(const QDateTime& dt);
 
 /**
+ * This method returns a link to the QDateTime string format doc.
+ */
+DIGIKAM_EXPORT QString getDateFormatLinkText();
+
+/**
  * Open online handbook at the section/chapter/reference page.
  *
  * if section and chapter and reference are empty, front page is open.  (https://en.wikipedia.org/wiki/Matrix_(protocol)#Bridges)

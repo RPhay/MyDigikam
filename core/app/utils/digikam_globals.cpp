@@ -313,6 +313,14 @@ QString asUserDateTime(const QDateTime& dt)
     return dt.toString(DATETIMEFORMATSTRING);
 }
 
+QString getDateFormatLinkText()
+{
+    const QString dateFormatLink      = QString::fromUtf8("<a href='https://doc.qt.io/qt-6/qdatetime.html#toString'>%1</a>");
+    const QString dateFormatLinkDescr = i18nc("@info: date format settings", "format settings");
+
+    return dateFormatLink.arg(dateFormatLinkDescr);
+}
+
 void openOnlineDocumentation(const QString& section, const QString& chapter, const QString& reference)
 {
     QUrl url;

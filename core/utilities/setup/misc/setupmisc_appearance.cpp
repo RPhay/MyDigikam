@@ -107,7 +107,7 @@ void SetupMisc::setupAppearance()
 
 
     d->dateTimeFormatLabel    = new QLabel(i18n("Date/time format (%1):",
-                                                DateFormatModifier::getDateFormatLinkText()), appearancePanel);
+                                                getDateFormatLinkText()), appearancePanel);
     d->dateTimeFormatLabel->setOpenExternalLinks(true);
     d->dateTimeFormatLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
 
