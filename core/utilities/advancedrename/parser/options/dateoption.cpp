@@ -130,7 +130,7 @@ DateOptionDialog::DateOptionDialog(Rule* const parent, QWidget* const widget)
 
     ui->dateFormatLink->setOpenExternalLinks(true);
     ui->dateFormatLink->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
-    ui->dateFormatLink->setText(DateFormatModifier::getDateFormatLinkText());
+    ui->dateFormatLink->setText(getDateFormatLinkText());
 
     QRegularExpression validRegExp(QLatin1String("[^/]+"));
     QValidator* const validator = new QRegularExpressionValidator(validRegExp, this);
