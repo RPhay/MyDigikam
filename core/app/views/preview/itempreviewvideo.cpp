@@ -277,19 +277,17 @@ void ItemPreviewVideo::slotImageTagChange(const ImageTagChangeset& changeset)
         return;
     }
 
-    QVector<int> labelTagIds;
-    labelTagIds << TagsCache::instance()->pickLabelTags();
-    labelTagIds << TagsCache::instance()->colorLabelTags();
-
-    for (int tagId : changeset.tags())
+    if (TagsCache::instance()->pickLabelFromTags(changeset.tags()) > 0)
     {
-        if (labelTagIds.contains(tagId))
-        {
-            d->clWidget->setColorLabel((ColorLabel)d->info.colorLabel());
-            d->plWidget->setPickLabel((PickLabel)d->info.pickLabel());
-        }
+        d->plWidget->setPickLabel((PickLabel)d->info.pickLabel());
+    }
+
+    if (TagsCache::instance()->colorLabelFromTags(changeset.tags()) > 0)
+    {
+        d->clWidget->setColorLabel((ColorLabel)d->info.colorLabel());
     }
 }
+
 } // namespace Digikam
 
 #include "moc_itempreviewvideo.cpp"
