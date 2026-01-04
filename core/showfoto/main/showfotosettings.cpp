@@ -28,8 +28,9 @@
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
+#include "digikam_globals.h"
 #include "setupmisc.h"
 #include "thememanager.h"
 
@@ -97,6 +98,7 @@ public:
     const QString configRightSideBarStyle       = QLatin1String("Sidebar Title Style");
     const QString configApplicationStyle        = QLatin1String("Application Style");
     const QString configIconTheme               = QLatin1String("Icon Theme");
+    const QString configDateTimeFormat          = QLatin1String("DateTime Format");
     const QString configApplicationFont         = QLatin1String("Application Font");
     const QString configShowFormatOverThumbnail = QLatin1String("ShowMimeOverImage");
     const QString configShowCoordinates         = QLatin1String("Show Coordinates");
@@ -201,7 +203,11 @@ void ShowfotoSettings::readSettings()
 
     d->applicationIcon         = group.readEntry(d->configIconTheme,               QString());
 
-    setApplicationFont(group.readEntry(d->configApplicationFont, QFontDatabase::systemFont(QFontDatabase::GeneralFont)));
+    setDateTimeFormat(group.readEntry(d->configDateTimeFormat,
+                                      QLocale().dateTimeFormat(QLocale::ShortFormat)));
+
+    setApplicationFont(group.readEntry(d->configApplicationFont,
+                                       QFontDatabase::systemFont(QFontDatabase::GeneralFont)));
 
     d->showSplash              = group.readEntry(d->configShowSplash,              true);
 
@@ -290,6 +296,11 @@ QString ShowfotoSettings::getApplicationStyle() const
 QString ShowfotoSettings::getIconTheme() const
 {
     return d->applicationIcon;
+}
+
+QString ShowfotoSettings::getDateTimeFormat() const
+{
+    return Digikam::DATETIMEFORMATSTRING;
 }
 
 QFont ShowfotoSettings::getApplicationFont() const
@@ -522,6 +533,12 @@ void ShowfotoSettings::setApplicationStyle(const QString& style)
 void ShowfotoSettings::setIconTheme(const QString& theme)
 {
     d->group.writeEntry(d->configIconTheme, theme);
+}
+
+void ShowfotoSettings::setDateTimeFormat(const QString& fmt)
+{
+    d->group.writeEntry(d->configDateTimeFormat, fmt);
+    Digikam::DATETIMEFORMATSTRING = fmt;
 }
 
 void ShowfotoSettings::setApplicationFont(const QFont& font)
