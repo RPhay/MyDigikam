@@ -55,7 +55,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:40+0000\n"
+"POT-Creation-Date: 2026-01-04 00:42+0000\n"
 "PO-Revision-Date: 2025-11-26 10:55+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -66734,54 +66734,54 @@ msgstr "Установить путь метки:"
 msgid "Rating Mapping:"
 msgstr "Привязка оценки:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Это пространство имён по умолчанию. Пространства имён по умолчанию можно "
 "только отключить."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
 #, kde-format
 msgid "The namespace name is required"
 msgstr "Необходимо имя пространства имён"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "Имя пространства имён EXIF должно начинаться с «Exif»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "Имя альтернативного пространства имён EXIF должно начинаться с «Exif»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "Имя пространства имён IPTC должно начинаться с «Iptc»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "Имя альтернативного пространства имён IPTC должно начинаться с «Iptc»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "Имя пространства имён XMP должно начинаться с «Xmp»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "Имя альтернативного пространства имён XMP должно начинаться с «Xmp»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Необходим разделитель пути к метке"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr ""

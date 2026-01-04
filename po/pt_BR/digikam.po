@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:40+0000\n"
-"PO-Revision-Date: 2026-01-02 17:04-0300\n"
+"POT-Creation-Date: 2026-01-04 00:42+0000\n"
+"PO-Revision-Date: 2026-01-03 14:43-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -4728,7 +4728,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "BCG Correction"
-msgstr "Correção do BCG"
+msgstr "Correção de BCG"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:55
@@ -4751,7 +4751,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Black and White Convert"
-msgstr "Conversão para Preto e branco"
+msgstr "Conversão para preto e branco"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:57
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:55
@@ -5437,7 +5437,7 @@ msgstr "WEBP"
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:108
 #, kde-format
 msgid "Shell Script:"
-msgstr "Shell script:"
+msgstr "Script shell:"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:111
 #, kde-format
@@ -5617,7 +5617,7 @@ msgstr "Clique para selecionar a imagem de marca d'água."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:198
 #, kde-format
 msgid "Watermark image: "
-msgstr "Imagem de marca d'água: "
+msgstr "Imagem da marca d'água: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:206
 #, kde-format
@@ -6284,7 +6284,7 @@ msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
 msgstr ""
-"Seleciona uma imagem ou arquivo JSON compatível com o ExifTool para aplicar "
+"Selecione uma imagem ou arquivo JSON compatível com o ExifTool para aplicar "
 "os metadados do arquivo às imagens."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
@@ -32250,7 +32250,7 @@ msgstr "Efeito de pintura a óleo"
 #: core/libs/dimg/filters/fx/raindropfilter.cpp:91
 #, kde-format
 msgid "Rain Drops Effect"
-msgstr "Efeito de pingos de chuva"
+msgstr "Efeito de gotas de chuva"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:167
 #, kde-format
@@ -66318,54 +66318,54 @@ msgstr "Definir o caminho das etiquetas:"
 msgid "Rating Mapping:"
 msgstr "Associação das avaliações:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Este é um espaço de nomes padrão. Os espaços de nomes padrão só podem ser "
 "desativados"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
 #, kde-format
 msgid "The namespace name is required"
 msgstr "É necessário um nome para o espaço de nomes"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "O nome do espaço de nomes EXIF deve começar com \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "O nome do espaço de nomes alternativo EXIF deve começar com \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "O nome do espaço de nomes IPTC deve começar com \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "O nome do espaço de nomes alternativo IPTC deve começar com \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "O nome do espaço de nomes XMP deve começar com \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "O nome do espaço de nomes alternativo XMP deve começar com \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "É necessário um separador para o caminho das etiquetas"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Só é permitido um caractere como separador do caminho das etiquetas"
@@ -67511,18 +67511,15 @@ msgstr ""
 "Para rotinas de limpeza para outros bancos de dados, utilize a manutenção."
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
 "Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
-"<font color='red'><i>Aviso: Essas configurações tornam a inicialização mais "
-"lenta!</i></font>"
+"<font color='black'><i><b>⚠️Aviso:</b> Essas configurações tornam a "
+"inicialização mais lenta! Leia a <a href=\"%1\">documentação online</a> "
+"atentamente primeiro.</i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format

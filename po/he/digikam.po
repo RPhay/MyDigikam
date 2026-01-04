@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:40+0000\n"
-"PO-Revision-Date: 2026-01-02 15:22+0200\n"
+"POT-Creation-Date: 2026-01-04 00:42+0000\n"
+"PO-Revision-Date: 2026-01-03 18:09+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -29933,69 +29933,60 @@ msgid "Set here the color of the second line."
 msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
 
 #: core/libs/dimg/filters/decorate/texturefilter.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 msgid "Texture Filter"
-msgstr "מסנן אדום"
+msgstr "מסנן מרקם"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:75
-#, fuzzy, kde-format
-#| msgid "Paper"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Paper"
 msgstr "נייר"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:76
-#, fuzzy, kde-format
-#| msgid "Paper 2"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Paper 2"
 msgstr "נייר 2"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:77
-#, fuzzy, kde-format
-#| msgid "Fabric"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Fabric"
 msgstr "בד"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:78
-#, fuzzy, kde-format
-#| msgid "Burlap"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Burlap"
-msgstr "Burlap"
+msgstr "אריג יוטה"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:79
-#, fuzzy, kde-format
-#| msgid "Bricks"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Bricks"
-msgstr "אבנים"
+msgstr "לבנים"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:80
-#, fuzzy, kde-format
-#| msgid "Bricks 2"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Bricks 2"
-msgstr "אבנים 2"
+msgstr "לבנים 2"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:81
-#, fuzzy, kde-format
-#| msgid "Canvas"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Canvas"
-msgstr "בד ציור"
+msgstr "משטח ציור"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:82
-#, fuzzy, kde-format
-#| msgid "Marble"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Marble"
 msgstr "שיש"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:83
-#, fuzzy, kde-format
-#| msgid "Marble 2"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Marble 2"
 msgstr "שיש 2"
@@ -30015,22 +30006,19 @@ msgid "Cell Wood"
 msgstr "עץ"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:86
-#, fuzzy, kde-format
-#| msgid "Metal Wire"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Metal Wire"
 msgstr "חוט ברזל"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:87
-#, fuzzy, kde-format
-#| msgid "Modern"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Modern"
 msgstr "מודרני"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:88
-#, fuzzy, kde-format
-#| msgid "Wall"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Wall"
 msgstr "קיר"
@@ -30042,17 +30030,16 @@ msgid "Moss"
 msgstr ""
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:90
-#, fuzzy, kde-format
-#| msgid "Stone"
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Stone"
 msgstr "אבן"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Set here the texture type to apply to image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כאן אפשר להגדיר את סוג המרקם להחלה על התמונה."
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:96
 #, kde-format
@@ -30072,10 +30059,9 @@ msgid "Rotate Right"
 msgstr "סיבוב ימינה"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:392
-#, fuzzy, kde-format
-#| msgid "Rotated by 180 Degrees"
+#, kde-format
 msgid "Rotate 180 degrees"
-msgstr "סיבוב 180 מעלות"
+msgstr "סיבוב של 180 מעלות"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:397
 #, kde-format
@@ -30098,20 +30084,20 @@ msgid "Crop"
 msgstr "חיתוך"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:422
-#, fuzzy, kde-format
+#, kde-format
 msgid "Convert to 8 Bit"
-msgstr "המרה"
+msgstr "המרה ל־8 סיביות"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:427
-#, fuzzy, kde-format
+#, kde-format
 msgid "Convert to 16 Bit"
-msgstr "המרה"
+msgstr "המרה ל־16 סיביות"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:496
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Rotate image"
 msgid "Rotate"
-msgstr "סובב שמאלה"
+msgstr "סיבוב"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:500
 #, kde-format
@@ -30437,9 +30423,9 @@ msgid "Set here the film sensitivity to use for simulating the CCD red noise."
 msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:278
-#, fuzzy, kde-format
+#, kde-format
 msgid "Common Settings"
-msgstr "הגדרות מקומיות"
+msgstr "הגדרות משותפות"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:281
 #, fuzzy, kde-format
@@ -30457,19 +30443,19 @@ msgid "Chrominance Red Noise"
 msgstr "תאורה:"
 
 #: core/libs/dimg/filters/fx/invertfilter.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invert Effect"
-msgstr "היפוך בחירה"
+msgstr "היפוך אפקט"
 
 #: core/libs/dimg/filters/fx/oilpaintfilter.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Oil Painter Effect"
-msgstr "ביצוע אפקט ציור שמן"
+msgstr "אפקט צבע שמן"
 
 #: core/libs/dimg/filters/fx/raindropfilter.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rain Drops Effect"
-msgstr "טיפת גשם"
+msgstr "אפקט טיפות גשם"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:167
 #, fuzzy, kde-format
@@ -30477,8 +30463,7 @@ msgid "Greycstoration Filter"
 msgstr "מסנן ירוק"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:96
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title: general settings"
 msgid "General"
 msgstr "כללי"
@@ -30553,8 +30538,7 @@ msgid "Sets the noise scale."
 msgstr "הגדרת סולם דרגות הרעש."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:160
-#, fuzzy, kde-format
-#| msgid "Advanced Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr "הגדרות מתקדמות"
@@ -30616,18 +30600,16 @@ msgid "Interpolation:"
 msgstr "ביון:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:193
-#, fuzzy, kde-format
-#| msgid "Nearest Neighbor"
+#, kde-format
 msgctxt "@item: interpolation"
 msgid "Nearest Neighbor"
-msgstr "השכן הקרוב ביותר:"
+msgstr "השכן הקרוב ביותר"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:194
-#, fuzzy, kde-format
-#| msgid "Linear"
+#, kde-format
 msgctxt "@item: interpolation"
 msgid "Linear"
-msgstr "קווי:"
+msgstr "קווי"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:195
 #, fuzzy, kde-format
@@ -30666,9 +30648,9 @@ msgstr "הסרת מסגרת שחורה"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:260
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:348
-#, fuzzy, kde-format
+#, kde-format
 msgid "Clear List"
-msgstr "רשימת מצלמות"
+msgstr "פינוי הרשימה"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:96
 #, fuzzy, kde-format
@@ -30776,9 +30758,9 @@ msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
 
 #: core/libs/dimg/filters/hsl/hslfilter.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hue / Saturation / Lightness Filter"
-msgstr "רוויה/גוון/בהירות"
+msgstr "מסנן רוויה / גוון / בהירות"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:73
 #, fuzzy, kde-format
@@ -30838,19 +30820,19 @@ msgid "Select the profile of the color space to convert to."
 msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
 
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgid "Input color profile \"%1\" not available"
-msgstr "פרופיל לא זמין..."
+msgstr "פרופיל קלט הצבע „%1” לא זמין"
 
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:116
-#, fuzzy, kde-format
+#, kde-format
 msgid "Output color profile \"%1\" not available"
-msgstr "פרופיל לא זמין..."
+msgstr "פרופיל פלט הצבע „%1” לא זמין"
 
 #: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "Local Contrast Filter"
-msgstr "הגדלת ניגודיות"
+msgstr "מסנן ניגודיות מקומי"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:119
 #, kde-format
@@ -30858,17 +30840,16 @@ msgid "Function:"
 msgstr "פונקציה:"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: function type"
 msgid "Power"
-msgstr "עצמה:"
+msgstr "עוצמה"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:122
-#, fuzzy, kde-format
-#| msgid "Linear"
+#, kde-format
 msgctxt "@item: function type"
 msgid "Linear"
-msgstr "קווי:"
+msgstr "קווי"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:124
 #, kde-format
@@ -30881,7 +30862,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:132
-#, fuzzy, kde-format
+#, kde-format
 msgid "Stretch contrast"
 msgstr "מתיחת ניגודיות"
 
@@ -30906,9 +30887,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:150
-#, fuzzy, kde-format
+#, kde-format
 msgid "Shadow saturation:"
-msgstr "רוויה:"
+msgstr "רוויית צל:"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:155
 #, kde-format
@@ -31007,14 +30988,14 @@ msgid "Cannot save settings to the Photograph Local Contrast text file."
 msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
 
 #: core/libs/dimg/filters/lens/antivignettingfilter.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "Anti-Vignetting Tool"
-msgstr "הגדרות מקומיות"
+msgstr "כלי לתיקון עיוות עדשה"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Add vignetting"
-msgstr "הגדרות מקומיות"
+msgstr "הוספת עיוות עדשה"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:83
 #, kde-format
@@ -31511,9 +31492,9 @@ msgid "Percent:"
 msgstr "אחוז:"
 
 #: core/libs/dimg/filters/levels/levelsfilter.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgid "Levels Adjust Tool"
-msgstr "עדכון רמות צבע..."
+msgstr "כלי כוונון רמות"
 
 #: core/libs/dimg/filters/nr/nrfilter.cpp:127
 #, kde-format
@@ -31537,9 +31518,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgid "Estimate Noise"
-msgstr "תאורה:"
+msgstr "הערכת רעש"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:96
 #, kde-format
@@ -31608,14 +31589,14 @@ msgid "Cannot save settings to the Photograph Noise Reduction text file."
 msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
 
 #: core/libs/dimg/filters/raw/rawprocessingfilter.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgid "Raw Conversion"
-msgstr "מרחב צבע"
+msgstr "המרת גלם"
 
 #: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgid "RedEye Correction Filter"
-msgstr "כלי תיקון עין-אדומה"
+msgstr "מסנן תיקון עיניים אדומות"
 
 #: core/libs/dimg/filters/redeye/redeyecorrectionsettings.cpp:64
 #, fuzzy, kde-format
@@ -31936,7 +31917,7 @@ msgstr "אור ירח"
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Neutral"
-msgstr "נייטרלי"
+msgstr "ניטרלי"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:168
 #, fuzzy, kde-format
@@ -32030,7 +32011,7 @@ msgstr "אור ירח"
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "neutral color temperature"
-msgstr "טמפרטורת צבע נייטרלית"
+msgstr "טמפרטורת צבע ניטרלית"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:186
 #, kde-format
@@ -32236,9 +32217,9 @@ msgid "Lossless Compression"
 msgstr "דחיסה ללא אובדן איכות"
 
 #: core/libs/dngwriter/dngsettings.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "JPEG Preview:"
-msgstr "תצוגה מקדימה"
+msgstr "תצוגה מקדימה של JPEG:"
 
 #: core/libs/dngwriter/dngsettings.cpp:81
 #, fuzzy, kde-format
@@ -32247,16 +32228,16 @@ msgid "None"
 msgstr "ללא"
 
 #: core/libs/dngwriter/dngsettings.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "Medium"
 msgstr "בינונית"
 
 #: core/libs/dngwriter/dngsettings.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "Full size"
-msgstr "גודל האריח:"
+msgstr "גודל מלא"
 
 #: core/libs/dngwriter/dngsettings.cpp:87
 #, kde-format
@@ -32989,9 +32970,9 @@ msgstr "עזרה"
 #: core/libs/dplugins/widgets/dplugindialog.cpp:74
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Online Handbook..."
-msgstr "מדריך תוספים KIPI"
+msgstr "ספרון ההדרכה המקוון…"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:75
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:68
@@ -33073,9 +33054,9 @@ msgid "Relative Path"
 msgstr "נתיב יחסי"
 
 #: core/libs/dtrash/dtrashitemmodel.cpp:275
-#, fuzzy, kde-format
+#, kde-format
 msgid "Deletion Time"
-msgstr "מחיקת קובץ"
+msgstr "זמן מחיקה"
 
 #: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
 #, kde-format
@@ -33095,11 +33076,13 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/facedb/facedbschemaupdater.cpp:194
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to create tables in database.\n"
 "%1"
-msgstr "שגיאה בעת יצירת טבלאות במסד הנתונים.\n"
+msgstr ""
+"יצירת טבלאות במסד הנתונים נכשלה.\n"
+"%1"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:93
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
@@ -33117,22 +33100,22 @@ msgid "Workflow:"
 msgstr "התאמת תצוגה לגודל החלון"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:109
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "בחירת תמונה"
+msgstr "סריקת תמונות"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "בחירת תמונה"
+msgstr "סריקת כל התמונות"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "צג:"
+msgstr "זיהוי פרצופים בלבד"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:113
 #, kde-format
@@ -33278,9 +33261,9 @@ msgstr "הגדרות"
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:244
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:360
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:394
-#, fuzzy, kde-format
+#, kde-format
 msgid "Writing metadata to files"
-msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
+msgstr "כתיבת נתוני על לקבצים"
 
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:322
 #, fuzzy, kde-format
@@ -37340,10 +37323,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:366
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Highlights:"
-msgstr "גובה:"
+msgstr "הדגשות:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:368
 #, kde-format
@@ -37427,7 +37410,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@label:slider"
 msgid "Highlight:"
-msgstr "גובה:"
+msgstr "הדגשה:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:409
 #, kde-kuit-format
@@ -37711,10 +37694,9 @@ msgid "Casio Digital Camera Raw File Format"
 msgstr ""
 
 #: core/libs/rawengine/drawfiles.cpp:54
-#, fuzzy, kde-format
-#| msgid "New Image File Name"
+#, kde-format
 msgid "NuCore Raw Image File"
-msgstr "שם חדש לקובץ תמונה"
+msgstr "קובץ תמונה גולמי מסוג NuCore"
 
 #: core/libs/rawengine/drawfiles.cpp:59
 #, kde-format
@@ -37813,9 +37795,9 @@ msgid "Panasonic Digital Camera Image Format"
 msgstr ""
 
 #: core/libs/rawengine/drawfiles.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgid "Digital Foto Maker Raw Image File"
-msgstr "הדפסת התמונה..."
+msgstr "קובץ תמונה גולמי מסוג Digital Foto Maker"
 
 #: core/libs/rawengine/drawfiles.cpp:92 core/libs/rawengine/drawfiles.cpp:97
 #: core/libs/rawengine/drawfiles.cpp:107
@@ -37834,14 +37816,14 @@ msgid "Hasselblad Digital Camera Raw Image Format"
 msgstr ""
 
 #: core/libs/rawengine/drawfiles.cpp:114 core/libs/rawengine/drawfiles.cpp:156
-#, fuzzy, kde-format
+#, kde-format
 msgid "Phantom Software Raw Image File"
-msgstr "הדפסת התמונה..."
+msgstr "קובץ תמונה גולמי מסוג Phantom Software"
 
 #: core/libs/rawengine/drawfiles.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sinar Raw Image File"
-msgstr "הדפסת התמונה..."
+msgstr "קובץ תמונה גולמי מסוג Sinar"
 
 #: core/libs/rawengine/drawfiles.cpp:116
 #, kde-format
@@ -38698,14 +38680,14 @@ msgid "Wipe all tags from Database only"
 msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:227
-#, fuzzy, kde-format
+#, kde-format
 msgid "Export tags to a file from selected tag"
-msgstr "אתחול התוכן"
+msgstr "ייצוא תגיות מקובץ לתגית נבחרת"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import tags from a file to selected tag"
-msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
+msgstr "ייבוא תגיות מקובץ לתגית נבחרת"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:232
 #, kde-format
@@ -39100,9 +39082,9 @@ msgid "Instructions:"
 msgstr "הנחיות:"
 
 #: core/libs/template/templatepanel.cpp:181
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the editorial notice here."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "נא למלא כאן את הודעת העריכה."
 
 #: core/libs/template/templatepanel.cpp:183
 #, kde-format
@@ -39113,9 +39095,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/template/templatepanel.cpp:220
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the city of contents here."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "נא למלא כאן את עיר התוכן."
 
 #: core/libs/template/templatepanel.cpp:222
 #, kde-format
@@ -39125,9 +39107,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/template/templatepanel.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the city sublocation of contents here."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "נא למלא כאן את תת המקום בעיר של התוכן."
 
 #: core/libs/template/templatepanel.cpp:232
 #, kde-format
@@ -39301,16 +39283,14 @@ msgid "Do not change"
 msgstr "לא לשנות"
 
 #: core/libs/template/templateselector.cpp:213
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template overwrites all"
-msgstr "כותרת תבנית:"
+msgstr "תבנית דורסת הכול"
 
 #: core/libs/template/templateselector.cpp:217
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template will be merged"
-msgstr "כותרת תבנית:"
+msgstr "תבנית תמוזג"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -39323,24 +39303,24 @@ msgid "Usages:"
 msgstr "שימושים:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show item file name"
-msgstr "הצגת שם קובץ"
+msgstr "הצגת שם קובץ פריט"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the item file name at the bottom of the screen."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "להציג את שם קובץ הפריט בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show item creation date"
-msgstr "הצגת תאריך צילום תמונה"
+msgstr "הצגת תאריך יצירת הפריט"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the item creation time/date at the bottom of the screen."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "להציג את שעת/תאריך יצירת הפריט בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:78
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
@@ -39349,9 +39329,9 @@ msgid "Show camera aperture and focal length"
 msgstr "הצגת נתוני צמצם ומיקוד עדשה של המצלמה"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "הדפסת מספר צמצם ואורך מוקד המצלמה"
+msgstr "להציג את נתוני הצמצם ואת אורך מוקד המצלמה בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:81
 #: core/showfoto/setup/showfotosetuptooltip.cpp:137
@@ -39360,9 +39340,9 @@ msgid "Show camera exposure and sensitivity"
 msgstr "הצגת נתוני חשיפה ורגישות של המצלמה"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "הדפסת זמן חשיפה ורגישות המצלמה"
+msgstr "להציג את נתוני החשיפה והרגישות של המצלמה בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:84
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
@@ -39371,73 +39351,64 @@ msgid "Show camera make and model"
 msgstr "הצגת שם היצרן ודגם המצלמה"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "להציג את דגם ויצרן המצלמה בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgid "Show camera lens model"
-msgstr "הצגת שם-יצרן ודגם של מצלמה"
+msgstr "להציג את דגם עדשת המצלמה"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:88
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the camera lens model at the bottom of the screen."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "להציג את דגם עדשת המצלמה בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show item caption"
-msgstr "הצגת כיתוב תמונה"
+msgstr "הצגת כיתוב פריט"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen."
-msgstr "הצגת כיתוב התמונה בתחתית המסך."
+msgstr "הצגת כיתוב הפריט בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show item title"
-msgstr "הצגת סוג תמונה"
+msgstr "הצגת כותרת פריט"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the item title at the bottom of the screen."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "להציג את כותרת הפריט בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
+#, kde-format
 msgid "Show item caption if it has not title"
-msgstr "להציג את כיתוב התמונה אם אין לה כותרת"
+msgstr "להציג את כיתוב הפריט אם אין לו כותרת"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen if no titles existed."
-msgstr "הצגת כיתוב התמונה בתחתית המסך אם לא קיימות כותרות."
+msgstr "הצגת כיתוב הפריט בתחתית המסך אם לא קיימות כותרות."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgid "Show item tags"
-msgstr "הצגת תגיות התמונה"
+msgstr "הצגת תגיות פריט"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show the digiKam item tag names at the bottom of the screen."
-msgstr "הדפסת יצרן ודגם המצלמה"
+msgstr "להציג את שמות תגיות פריטי digiKam בתחתית המסך."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "החודש הבא"
+msgstr "גופן טקסט:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
 #, fuzzy, kde-format
@@ -40562,16 +40533,14 @@ msgstr "לכידה"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:309
-#, fuzzy, kde-format
-#| msgid "Rotate Left"
+#, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "סיבוב שמאלה"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
-#, fuzzy, kde-format
-#| msgid "Rotate Right"
+#, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "סיבוב ימינה"
@@ -40607,11 +40576,9 @@ msgid "Change video playback rate"
 msgstr "החלפת קצב נגינת הווידאו"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info: download status"
-#| msgid "Rate:"
+#, kde-format
 msgid "Rate"
-msgstr "קצב:"
+msgstr "קצב"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
@@ -41228,11 +41195,10 @@ msgid "The ICC profile rendering intent"
 msgstr "ייעוד תצוגה בפרופיל ICC"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Profile Version"
+#, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Profile Version"
-msgstr "גרסת הפרופיל"
+msgstr "גרסת פרופיל"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:146
 #, fuzzy, kde-format
@@ -41275,24 +41241,21 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:243
-#, fuzzy, kde-format
-#| msgid "ICC Color Profile Information"
+#, kde-format
 msgctxt "@title: icc profile properties"
 msgid "ICC Color Profile Information"
-msgstr "נתוני צבע בפרופיל ICC"
+msgstr "פרטי פרופיל צבע ICC"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:347
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:408
-#, fuzzy, kde-format
-#| msgid "Lab"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "Lab"
 msgstr "מעבדה"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:353
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:414
-#, fuzzy, kde-format
-#| msgid "Luv"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "Luv"
 msgstr "Luv"
@@ -41371,11 +41334,10 @@ msgid "Color space"
 msgstr "מרחב צבע"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:493
-#, fuzzy, kde-format
-#| msgid "Link device"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Link device"
-msgstr "אמצעי קישור"
+msgstr "קישור מכשיר"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:499
 #, kde-format
@@ -41384,15 +41346,13 @@ msgid "Abstract"
 msgstr "מופשט"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:505
-#, fuzzy, kde-format
-#| msgid "Named color"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Named color"
-msgstr "שם צבע"
+msgstr "צבע עם שם"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:511
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Unknown"
 msgstr "לא ידוע"
@@ -41474,10 +41434,10 @@ msgstr[3] ""
 "„%1” התמונות הנבחרות"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:405
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
-msgstr "דגם:"
+msgstr "שינוי: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
 #: core/showfoto/main/showfoto.cpp:267
@@ -41530,10 +41490,9 @@ msgid "A KDE Family Project"
 msgstr "מיזם ממשפחת KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2025, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2026, digiKam developers team"
-msgstr "‏(c) 2001‏-2025, צוות הפיתוח של digiKam"
+msgstr "‏(c) 2001‏-2026, צוות הפיתוח של digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
@@ -41566,9 +41525,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:137
-#, fuzzy, kde-format
+#, kde-format
 msgid "Advanced Searches Tool Improvements"
-msgstr "חיפוש מתקדם"
+msgstr "שיפורים לכלי החיפושים המתקדמים"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:142
 #, kde-format
@@ -41919,9 +41878,9 @@ msgid "Full-screen Options"
 msgstr "אפשרויות מסך מלא"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgid "H&ide toolbars"
-msgstr "סרגל כלים ראשי"
+msgstr "ה&סתרת סרגלי כלים"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:62
 #, fuzzy, kde-format
@@ -62921,52 +62880,52 @@ msgstr "הגדרת נתיב תגיות:"
 msgid "Rating Mapping:"
 msgstr "מיפוי דירוג:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
 #, kde-format
 msgid "The namespace name is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr ""

@@ -395,7 +395,7 @@ BUGFIXES:
 329 --> 514047 - No face recognition when albums are permanently monitored?
 330 --> 392008 - Inconsistent behavior of "People" Tag.
 331 --> 416213 - People tags appear duplicated after having moved them in the tag tree, if the tag was already present at /People/.
-332 --> 
+332 --> 514061 - Metadata lost on face tag change.
 333 --> 
 334 --> 
 335 --> 
