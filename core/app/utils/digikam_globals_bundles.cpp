@@ -344,23 +344,22 @@ void loadEcmQtTranslationFiles(QApplication& app)
      */
     const QStringList ecmCatalogs =
     {
-        QLatin1String("karchive6_qt"),          //      A  I        ?           A  I
-        QLatin1String("kauth6_qt"),             //      A  I        ?           x
-        QLatin1String("kbookmarks6_qt"),        //      A  I        ?           A  I
-        QLatin1String("kcodecs6_qt"),           //      A  I        ?           A  I
-        QLatin1String("kcompletion6_qt"),       //      A  I        ?           A  I
-        QLatin1String("kconfig6_qt"),           //      A  I        ?           A  I
-        QLatin1String("kcoreaddons6_qt"),       //      A  I        ?           A  I
-        QLatin1String("kdbusaddons6_qt"),       //      A  I        ?           A  I
-        QLatin1String("kitemviews6_qt"),        //      A  I        ?           A  I
-        QLatin1String("kjobwidgets6_qt"),       //      A  I        ?           A  I
-        QLatin1String("knotifications6_qt"),    //      A  I        ?           A  I
-        QLatin1String("kwidgetsaddons6_qt"),    //      A  I        ?           A  I
-        QLatin1String("kwindowsystem6_qt"),     //      A  I        ?           A  I
-        QLatin1String("solid6_qt"),             //      A  I        ?           A  I
-        QLatin1String("sonnet6_qt"),            //      A  I        ?           A  I
-
-        // NOTE: kglobalaccel6_qt do not exists in Qt6 version.
+        QLatin1String("karchive6_qt"),          //      A  I        A  I        A  I
+        QLatin1String("kauth6_qt"),             //      A  I        A  I        x
+        QLatin1String("kbookmarks6_qt"),        //      A  I        A  I        A  I
+        QLatin1String("kcodecs6_qt"),           //      A  I        A  I        A  I
+        QLatin1String("kcompletion6_qt"),       //      A  I        A  I        A  I
+        QLatin1String("kconfig6_qt"),           //      A  I        A  I        A  I
+        QLatin1String("kcoreaddons6_qt"),       //      A  I        A  I        A  I
+        QLatin1String("kdbusaddons6_qt"),       //      A  I        A  I        A  I
+        QLatin1String("kglobalaccel6_qt"),      //      x           A  I        x
+        QLatin1String("kitemviews6_qt"),        //      A  I        A  I        A  I
+        QLatin1String("kjobwidgets6_qt"),       //      A  I        A  I        A  I
+        QLatin1String("knotifications6_qt"),    //      A  I        A  I        A  I
+        QLatin1String("kwidgetsaddons6_qt"),    //      A  I        A  I        A  I
+        QLatin1String("kwindowsystem6_qt"),     //      A  I        A  I        A  I
+        QLatin1String("solid6_qt"),             //      A  I        A  I        A  I
+        QLatin1String("sonnet6_qt"),            //      A  I        A  I        A  I
 
 #else
 
@@ -392,6 +391,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
         QLatin1String("kconfig5_qt"),           //      A  I        A  I        A  I
         QLatin1String("kcoreaddons5_qt"),       //      A  I        A  I        A  I
         QLatin1String("kdbusaddons5_qt"),       //      A  I        A  I        A  I
+        QLatin1String("kglobalaccel5_qt"),      //      x           A  I        x
         QLatin1String("kitemviews5_qt"),        //      A  I        A  I        A  I
         QLatin1String("kjobwidgets5_qt"),       //      A  I        A  I        A  I
         QLatin1String("knotifications5_qt"),    //      A  I        A  I        A  I
@@ -399,8 +399,6 @@ void loadEcmQtTranslationFiles(QApplication& app)
         QLatin1String("kwindowsystem5_qt"),     //      A  I        A  I        A  I
         QLatin1String("solid5_qt"),             //      A  I        A  I        A  I
         QLatin1String("sonnet5_qt"),            //      x           A  I        A  I
-
-        QLatin1String("kglobalaccel5_qt"),      //      x           A  I        x
 
 #endif
 
