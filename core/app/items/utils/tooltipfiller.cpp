@@ -87,7 +87,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
         if (settings->getToolTipsShowFileDate())
         {
-            str                    = asShortDateTime(commonInfo.fileModificationDate);
+            str                    = asUserDateTime(commonInfo.fileModificationDate);
             tip                   += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
         }
 
@@ -200,7 +200,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
             {
                 if (commonInfo.creationDate.isValid())
                 {
-                    str = asShortDateTime(commonInfo.creationDate);
+                    str = asUserDateTime(commonInfo.creationDate);
 
                     if (str.length() > cnt.maxStringLength)
                     {

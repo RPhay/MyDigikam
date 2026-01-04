@@ -478,7 +478,7 @@ QVariant GPSItemContainer::data(const int column, const int role) const
     {
         if (m_dateTime.isValid())
         {
-            return asShortDateTime(m_dateTime);
+            return asUserDateTime(m_dateTime);
         }
 
         return i18n("Not available");

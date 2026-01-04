@@ -104,6 +104,14 @@ static const QStringList ColorLabelAsText({QLatin1String("NoColor"),
 
 // --------------------------------------------------------
 
+/**
+ * String for the date/time format used in the application
+ */
+
+DIGIKAM_EXPORT extern QString DATETIMEFORMATSTRING;
+
+// --------------------------------------------------------
+
 enum ColorLabel
 {
     NoColorLabel        = 0,
@@ -309,9 +317,9 @@ DIGIKAM_EXPORT QDateTime asDateTimeUTC(const QDateTime& dt);
 DIGIKAM_EXPORT QDateTime asDateTimeLocal(const QDateTime& dt);
 
 /**
- * This method returns QString as short QDateTime with seconds.
+ * This method returns QString as user QDateTime.
  */
-DIGIKAM_EXPORT QString asShortDateTime(const QDateTime& dt);
+DIGIKAM_EXPORT QString asUserDateTime(const QDateTime& dt);
 
 /**
  * Open online handbook at the section/chapter/reference page.

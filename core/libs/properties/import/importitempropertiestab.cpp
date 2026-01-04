@@ -372,7 +372,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
 
     if (itemInfo.ctime.isValid())
     {
-        d->labelFileDate->setAdjustedText(asShortDateTime(itemInfo.ctime));
+        d->labelFileDate->setAdjustedText(asUserDateTime(itemInfo.ctime));
     }
     else
     {
@@ -475,7 +475,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
 
     if (photoInfo.dateTime.isValid())
     {
-        str = asShortDateTime(photoInfo.dateTime);
+        str = asUserDateTime(photoInfo.dateTime);
         d->labelPhotoDateTime->setAdjustedText(str);
     }
     else

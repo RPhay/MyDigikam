@@ -265,8 +265,8 @@ void ApplicationSettings::readSettings()
 
     d->applicationIcon                   = group.readEntry(d->configIconThemeEntry,                                   QString());
 
-    d->dateTimeFormat                    = group.readEntry(d->configDateTimeFormatEntry,
-                                                           QLocale().dateTimeFormat(QLocale::ShortFormat));
+    setDateTimeFormat(group.readEntry(d->configDateTimeFormatEntry,
+                                      QLocale().dateTimeFormat(QLocale::ShortFormat)));
 
     setApplicationFont(group.readEntry(d->configApplicationFontEntry,
                                        QFontDatabase::systemFont(QFontDatabase::GeneralFont)));

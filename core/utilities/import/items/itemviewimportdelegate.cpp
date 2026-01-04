@@ -316,7 +316,7 @@ void ItemViewImportDelegate::drawCreationDate(QPainter* p, const QRect& dateRect
     Q_D(const ItemViewImportDelegate);
 
     p->setFont(d->fontXtra);
-    QString str = asShortDateTime(date);
+    QString str = asUserDateTime(date);
     str         = i18nc("date of image creation", "created: %1", str);
     p->drawText(dateRect, Qt::AlignCenter, str);//squeezedTextCached(p, dateRect.width(), str));
 }

@@ -232,7 +232,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 
         if (meta->getItemDateTime().isValid())
         {
-            element.m_exifImageDateTime = asShortDateTime(meta->getItemDateTime());
+            element.m_exifImageDateTime = asUserDateTime(meta->getItemDateTime());
         }
 
         element.m_exifImageYCbCrPositioning = meta->getExifTagString("Exif.Image.YCbCrPositioning");

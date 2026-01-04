@@ -82,7 +82,7 @@ void FrameOsd::populateOSD(const QUrl& url,
 
         if (dateTime.isValid())
         {
-            str = asShortDateTime(dateTime);
+            str = asUserDateTime(dateTime);
             m_desc.append(QString::fromLatin1("\n%1").arg(str));
         }
     }

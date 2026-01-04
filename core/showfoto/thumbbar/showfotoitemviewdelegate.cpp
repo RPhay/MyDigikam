@@ -250,7 +250,7 @@ void ShowfotoItemViewDelegate::drawCreationDate(QPainter* p, const QRect& dateRe
     Q_D(const ShowfotoItemViewDelegate);
 
     p->setFont(d->fontXtra);
-    QString str = asShortDateTime(date);
+    QString str = asUserDateTime(date);
     str         = i18nc("date of image creation", "created: %1", str);
     p->drawText(dateRect, Qt::AlignCenter, str);    //squeezedTextCached(p, dateRect.width(), str));
 }

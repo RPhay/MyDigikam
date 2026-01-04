@@ -176,7 +176,7 @@ QVariant ColumnFileProperties::data(TableViewModel::Item* const item, const int 
 
         case SubColumnLastModified:
         {
-            return asShortDateTime(info.modDateTime());
+            return asUserDateTime(info.modDateTime());
         }
     }
 

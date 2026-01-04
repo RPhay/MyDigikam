@@ -17,6 +17,8 @@
 namespace Digikam
 {
 
+QString DATETIMEFORMATSTRING = QLocale().dateTimeFormat(QLocale::ShortFormat);
+
 QShortcut* defineShortcut(QWidget* const w, const QKeySequence& key, const QObject* receiver, const char* slot)
 {
     QShortcut* const s = new QShortcut(w);
@@ -306,22 +308,9 @@ QDateTime asDateTimeLocal(const QDateTime& dt)
     return dateTime;
 }
 
-QString asShortDateTime(const QDateTime& dt)
+QString asUserDateTime(const QDateTime& dt)
 {
-    static QString s_dateTimeFormat;
-
-    if (s_dateTimeFormat.isEmpty())
-    {
-        s_dateTimeFormat = QLocale().dateTimeFormat(QLocale::ShortFormat);
-
-        if (!s_dateTimeFormat.contains(QLatin1String("mm:ss")))
-        {
-            s_dateTimeFormat.replace(QLatin1String("mm"),
-                                     QLatin1String("mm:ss"));
-        }
-    }
-
-    return dt.toString(s_dateTimeFormat);
+    return dt.toString(DATETIMEFORMATSTRING);
 }
 
 void openOnlineDocumentation(const QString& section, const QString& chapter, const QString& reference)

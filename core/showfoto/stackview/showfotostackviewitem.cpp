@@ -54,7 +54,7 @@ void ShowfotoStackViewItem::setInfo(const ShowfotoItemInfo& info)
     setText(ShowfotoStackViewList::FileName, m_info.name);
 
     QDateTime dt           = (m_info.ctime.isValid() ? m_info.ctime : m_info.dtime);
-    QString str            = asShortDateTime(dt);
+    QString str            = asUserDateTime(dt);
     setText(ShowfotoStackViewList::FileDate, str);
     setData(ShowfotoStackViewList::FileDate, Qt::UserRole, dt);
 

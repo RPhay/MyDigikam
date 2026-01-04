@@ -143,7 +143,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     QFileInfo fi(tool->libraryFileName());
 
     new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Size")    << ItemPropertiesTab::humanReadableBytesCount(fi.size()));
-    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Date")    << asShortDateTime(fi.lastModified()));
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Date")    << asUserDateTime(fi.lastModified()));
     new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Owner")   << fi.owner());
     new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Group")   << fi.group());
 

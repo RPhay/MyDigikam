@@ -68,7 +68,7 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
 
         if (settings->getShowFileDate())
         {
-            str                    = asShortDateTime(info.dtime);
+            str                    = asUserDateTime(info.dtime);
             tip                   += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
         }
 
@@ -169,7 +169,7 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
             {
                 if (info.ctime.isValid())
                 {
-                    str                     = asShortDateTime(info.ctime);
+                    str                     = asUserDateTime(info.ctime);
                     tip                    += cnt.cellBeg + i18n("Date:") + cnt.cellMid + str + cnt.cellEnd;
                 }
                 else

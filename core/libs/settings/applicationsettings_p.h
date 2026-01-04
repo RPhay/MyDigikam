@@ -46,6 +46,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "previewsettings.h"
 #include "dbengineparameters.h"
 #include "imagezoomsettings.h"

@@ -415,7 +415,7 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
         d->gpsCopyBtn->setEnabled(true);
         d->latitude->setAdjustedText(QLocale().toString(coordinates.lat(), 'g', 7));
         d->longitude->setAdjustedText(QLocale().toString(coordinates.lon(), 'g', 7));
-        d->date->setAdjustedText(asShortDateTime(info.dateTime));
+        d->date->setAdjustedText(asUserDateTime(info.dateTime));
     }
     else
     {

@@ -696,7 +696,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             ImageMetadataContainer photoInfo = info.imageMetadataContainer();
             VideoMetadataContainer videoInfo = info.videoMetadataContainer();
 
-            str = asShortDateTime(commonInfo.fileModificationDate);
+            str = asUserDateTime(commonInfo.fileModificationDate);
             m_propertiesTab->setFileModifiedDate(str);
 
             str = QString::fromUtf8("%1 (%2)").arg(ItemPropertiesTab::humanReadableBytesCount(commonInfo.fileSize))
@@ -760,7 +760,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
             if (commonInfo.creationDate.isValid())
             {
-                str = asShortDateTime(commonInfo.creationDate);
+                str = asUserDateTime(commonInfo.creationDate);
                 m_propertiesTab->setPhotoDateTime(str);
             }
             else

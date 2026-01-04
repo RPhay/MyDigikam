@@ -389,7 +389,7 @@ void ItemViewDelegate::drawCreationDate(QPainter* p, const QRect& dateRect, cons
     Q_D(const ItemViewDelegate);
 
     p->setFont(d->fontXtra);
-    QString str = asShortDateTime(date);
+    QString str = asUserDateTime(date);
 /*
     str         = i18nc("date of image creation", "created: %1", str);
 */
@@ -401,7 +401,7 @@ void ItemViewDelegate::drawModificationDate(QPainter* p, const QRect& dateRect, 
     Q_D(const ItemViewDelegate);
 
     p->setFont(d->fontXtra);
-    QString str = asShortDateTime(date);
+    QString str = asUserDateTime(date);
     str         = i18nc("Date of last image modification, shortened", "Mod.: %1", str);
     p->drawText(dateRect, Qt::AlignCenter, str); //squeezedTextCached(p, dateRect.width(), str));
 }

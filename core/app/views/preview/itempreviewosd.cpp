@@ -262,7 +262,7 @@ void ItemPreviewOsd::paintEvent(QPaintEvent*)
 
         if (dateTime.isValid())
         {
-            str = asShortDateTime(dateTime);
+            str = asUserDateTime(dateTime);
             PreviewOsdSettings::printInfoText(p, offset, str);
         }
     }

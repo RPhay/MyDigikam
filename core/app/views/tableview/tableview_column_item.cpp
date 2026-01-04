@@ -278,14 +278,14 @@ QVariant ColumnItemProperties::data(TableViewModel::Item* const item, const int 
 
         case SubColumnCreationDateTime:
         {
-            return asShortDateTime(info.dateTime());
+            return asUserDateTime(info.dateTime());
         }
 
         case SubColumnDigitizationDateTime:
         {
             const ImageCommonContainer commonInfo = info.imageCommonContainer();
 
-            return asShortDateTime(commonInfo.digitizationDate);
+            return asUserDateTime(commonInfo.digitizationDate);
         }
         case SubColumnSimilarity:
         {

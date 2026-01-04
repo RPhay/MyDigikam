@@ -245,7 +245,8 @@ QString ApplicationSettings::getIconTheme() const
 
 void ApplicationSettings::setDateTimeFormat(const QString& fmt)
 {
-    d->dateTimeFormat = fmt;
+    d->dateTimeFormat    = fmt;
+    DATETIMEFORMATSTRING = fmt;
 }
 
 QString ApplicationSettings::getDateTimeFormat() const

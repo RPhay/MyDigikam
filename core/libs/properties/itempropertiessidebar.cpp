@@ -221,7 +221,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     // -- File system information -----------------------------------------
 
-    str = asShortDateTime(fileInfo.lastModified());
+    str = asUserDateTime(fileInfo.lastModified());
     m_propertiesTab->setFileModifiedDate(str);
 
     str = QString::fromUtf8("%1 (%2)").arg(ItemPropertiesTab::humanReadableBytesCount(fileInfo.size()))
@@ -292,7 +292,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     if (photoInfo.dateTime.isValid())
     {
-        str = asShortDateTime(photoInfo.dateTime);
+        str = asUserDateTime(photoInfo.dateTime);
         m_propertiesTab->setPhotoDateTime(str);
     }
     else
