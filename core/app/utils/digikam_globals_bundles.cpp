@@ -331,7 +331,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
      * Bundle                                           macOS      AppImage    Windows
      *                                                  A  I        A  I        A  I
      * Legend:
-     *    A = available
+     *    A = available (check with DE i18n set)
      *    I = included
      *    x = do not exists
      *    ? = to check
@@ -362,7 +362,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
      * Bundle                                           macOS      AppImage    Windows
      *                                                  A  I        A  I        A  I
      * Legend:
-     *    A = available
+     *    A = available (check with DE i18n set)
      *    I = included
      *    x = do not exists
      *    ? = to check
@@ -385,8 +385,8 @@ void loadEcmQtTranslationFiles(QApplication& app)
         QLatin1String("kwindowsystem5_qt"),     //      A  I        ?           ?
         QLatin1String("solid5_qt"),             //      A  I        ?           ?
 
-        QLatin1String("kde5_xml_mimetypes"),    //      x  x        ?           ?
-        QLatin1String("kglobalaccel5_qt"),      //      x  x        ?           ?
+        QLatin1String("kde5_xml_mimetypes"),    //      x           ?           ?
+        QLatin1String("kglobalaccel5_qt"),      //      x           ?           ?
 
 #endif
 
