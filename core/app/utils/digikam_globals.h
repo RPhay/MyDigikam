@@ -322,7 +322,7 @@ DIGIKAM_EXPORT QDateTime asDateTimeLocal(const QDateTime& dt);
 DIGIKAM_EXPORT QString asUserDateTime(const QDateTime& dt);
 
 /**
- * This method returns a link to the QDateTime string format doc.
+ * This method returns QString as link to the QDateTime doc.
  */
 DIGIKAM_EXPORT QString getDateFormatLinkText();
 
