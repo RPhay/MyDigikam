@@ -105,14 +105,20 @@ void SetupMisc::setupAppearance()
         d->applicationIcon->addItem(it.key(), it.value());
     }
 
-    d->dateTimeFormatLabel = new QLabel(i18n("Date/time format (%1):",
-                                             DateFormatModifier::getDateFormatLinkText()), appearancePanel);
+
+    d->dateTimeFormatLabel    = new QLabel(i18n("Date/time format (%1):",
+                                                DateFormatModifier::getDateFormatLinkText()), appearancePanel);
     d->dateTimeFormatLabel->setOpenExternalLinks(true);
     d->dateTimeFormatLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
-    d->dateTimeFormatEdit  = new QLineEdit(appearancePanel);
-    d->dateTimeFormatEdit->setToolTip(i18n("This string is used as the date/time format in whole application."));
 
-    d->applicationFont     = new DFontSelect(i18n("Application font:"), appearancePanel);
+    DHBox* const dtFormatHBox = new DHBox(appearancePanel);
+    d->dateTimeFormatEdit     = new QLineEdit(dtFormatHBox);
+    d->dateTimeFormatEdit->setToolTip(i18n("This string is used as the date/time format in whole application."));
+    d->dateTimeFormatReset    = new QToolButton(dtFormatHBox);
+    d->dateTimeFormatReset->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
+    d->dateTimeFormatReset->setToolTip(i18n("Reverts to the local short date/time format"));
+
+    d->applicationFont        = new DFontSelect(i18n("Application font:"), appearancePanel);
     d->applicationFont->setToolTip(i18n("Select here the font used to display text in whole application."));
 
     // --------------------------------------------------------
@@ -129,12 +135,19 @@ void SetupMisc::setupAppearance()
     layout2->addWidget(d->applicationIconLabel,     5, 0, 1, 1);
     layout2->addWidget(d->applicationIcon,          5, 1, 1, 1);
     layout2->addWidget(d->dateTimeFormatLabel,      6, 0, 1, 1);
-    layout2->addWidget(d->dateTimeFormatEdit,       6, 1, 1, 1);
+    layout2->addWidget(dtFormatHBox,                6, 1, 1, 1);
     layout2->addWidget(d->applicationFont,          7, 0, 1, 2);
     layout2->setColumnStretch(1, 10);
     layout2->setRowStretch(8, 10);
 
     d->tab->insertTab(Appearance, appearancePanel, i18nc("@title:tab", "Appearance"));
+
+    connect(d->dateTimeFormatReset, &QToolButton::clicked,
+            this, [this]()
+        {
+            d->dateTimeFormatEdit->setText(QLocale().dateTimeFormat(QLocale::ShortFormat));
+        }
+    );
 }
 
 } // namespace Digikam

@@ -23,6 +23,7 @@
 #include <QApplication>
 #include <QDirIterator>
 #include <QButtonGroup>
+#include <QToolButton>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QFile>
@@ -89,6 +90,7 @@ public:
     QLabel*                   minSimilarityBoundLabel                   = nullptr;
 
     QLineEdit*                dateTimeFormatEdit                        = nullptr;
+    QToolButton*              dateTimeFormatReset                       = nullptr;
 
     QCheckBox*                showSplashCheck                           = nullptr;
     QCheckBox*                showTrashDeleteDialogCheck                = nullptr;
