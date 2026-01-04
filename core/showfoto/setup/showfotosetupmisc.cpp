@@ -313,7 +313,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     d->dateTimeFormatReset->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
     d->dateTimeFormatReset->setToolTip(i18n("Reverts to the local short date/time format"));
 
-    d->applicationFont = new DFontSelect(i18n("Application font:"), appearancePanel);
+    d->applicationFont        = new DFontSelect(i18n("Application font:"), appearancePanel);
     d->applicationFont->setToolTip(i18n("Select here the font used to display text in whole application."));
 
     // --------------------------------------------------------
