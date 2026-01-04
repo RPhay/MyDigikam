@@ -104,6 +104,24 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     const int spacing         = layoutSpacing();
     QGridLayout* const layout = new QGridLayout(this);
 
+    // ---
+
+    QLabel* const systemNote  = new QLabel(i18nc("@info",
+                                                 "<font color='black'><i><b>⚠️Warning:</b> "
+                                                 "All changes to these settings only take effect "
+                                                 "after the restart. Some settings are hardware dependent "
+                                                 "and may have side-effects. Read the "
+                                                 "<a href=\"%1\">online documentation</a> for more information.</i></font>",
+                                                 QString::fromUtf8("https://docs.digikam.org/en/setup_application/miscs_settings.html#system-settings")),
+                                           this);
+    systemNote->setOpenExternalLinks(true);
+    systemNote->setTextFormat(Qt::RichText);
+    systemNote->setFocusPolicy(Qt::NoFocus);
+    systemNote->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
+    systemNote->setWordWrap(true);
+    systemNote->setAlignment(Qt::AlignCenter);
+    systemNote->setStyleSheet(QLatin1String("QLabel { background-color: #ffcccc; border: none; padding: 5px; }"));
+
     // Screen options
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
@@ -127,11 +145,11 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->openCLDNNTest          = new QPushButton(i18n("Test GPU AI compatibility"), this);
     d->openCLDNNTest->setIcon(QIcon::fromTheme(QLatin1String("show-gpu-effects")));
 
-    QLabel* const filesLabel     = new QLabel(i18n("Download required binary data:"), this);
-    d->filesDownloadButton       = new QPushButton(i18n("Open Download Dialog..."), this);
+    QLabel* const filesLabel  = new QLabel(i18n("Download required binary data:"), this);
+    d->filesDownloadButton    = new QPushButton(i18n("Open Download Dialog..."), this);
     d->filesDownloadButton->setIcon(QIcon::fromTheme(QLatin1String("download")));
 
-    d->openLocalStorageButton    = new QPushButton(i18n("Open Local Storage..."), this);
+    d->openLocalStorageButton = new QPushButton(i18n("Open Local Storage..."), this);
     d->openLocalStorageButton->setIcon(QIcon::fromTheme(QLatin1String("folder-open")));
     d->openLocalStorageButton->setToolTip(i18n("Open local directory used for the data files storage."));
 
@@ -139,12 +157,12 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    d->enableHWVideoCheck        = new QCheckBox(i18n("Use video hardware acceleration"), this);
-    d->enableHWTConvCheck        = new QCheckBox(i18n("Use video textures conversion"), this);
+    d->enableHWVideoCheck     = new QCheckBox(i18n("Use video hardware acceleration"), this);
+    d->enableHWTConvCheck     = new QCheckBox(i18n("Use video textures conversion"), this);
 
-    QLabel* const videoLabel     = new QLabel(i18n("Decoding backend to render video:"), this);
+    QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render video:"), this);
 
-    d->videoBackendCBox          = new QComboBox(this);
+    d->videoBackendCBox       = new QComboBox(this);
     d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"),      QLatin1String("ffmpeg"));
 
 #   if defined(Q_OS_LINUX)
@@ -165,7 +183,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     // Debug traces options
 
-    d->enableLoggingCheck        = new QCheckBox(i18n("Enable internal debug logging"), this);
+    d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
 
     // Proxy settings options
 
@@ -182,15 +200,11 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
         d->openCLDNNTest->hide();
     }
 
-    QLabel* const systemNote     = new QLabel(i18n("<b>Note: All changes to these settings only take effect "
-                                                   "after the restart. Some settings are hardware dependent "
-                                                   "and may have no effect.</b>"), this);
-    systemNote->setWordWrap(true);
-    systemNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
-
     // ---
 
     int row = 0;
+
+    layout->addWidget(systemNote,                            row++, 0, 1, 3);
 
     // Screen options
 
@@ -234,7 +248,6 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 3);
     layout->addWidget(proxySettings,                         row++, 0, 1, 3);
-    layout->addWidget(systemNote,                            row++, 0, 1, 3);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setRowStretch(row, 10);
 
