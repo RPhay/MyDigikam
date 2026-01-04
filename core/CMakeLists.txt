@@ -424,6 +424,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # Remove Clang flags which generate a lots of compilation warnings
     REMOVE_CLANG_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
     REMOVE_CLANG_COMPILER_WARNINGS("-Wc11-extensions")
+    REMOVE_CLANG_COMPILER_WARNINGS("-Wc++23-attribute-extensions")
 
     include(MacroSanitizers)
     ENABLE_COMPILER_SANITIZERS()
