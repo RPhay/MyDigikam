@@ -59,13 +59,6 @@ void RatingWidget::setRating(int val)
 
     d->rating = val;
 
-    if (d->tracking)
-    {
-        Q_EMIT signalRatingChanged(d->rating);
-    }
-
-    Q_EMIT signalRatingModified(d->rating);
-
     update();
 }
 

@@ -316,19 +316,13 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
 
     if (d->settings->printLabels)
     {
-        d->clWidget->blockSignals(true);
-        d->plWidget->blockSignals(true);
         d->clWidget->setColorLabel((ColorLabel)item.colorLabel());
         d->plWidget->setPickLabel((PickLabel)item.pickLabel());
-        d->clWidget->blockSignals(false);
-        d->plWidget->blockSignals(false);
     }
 
     if (d->settings->printRating)
     {
-        d->ratingWidget->blockSignals(true);
         d->ratingWidget->setRating(item.rating());
-        d->ratingWidget->blockSignals(false);
     }
 
     // Make the OSD the proper size
