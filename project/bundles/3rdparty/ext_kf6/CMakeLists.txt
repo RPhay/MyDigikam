@@ -93,10 +93,26 @@ function(InstallKF6Component
 
 endfunction()
 
-if(MSVC)
+if(MSVC)        # Windows
+
+    # All is currently broken about the generation and resource icons.
+    # Uses a RCC icon sets pre-compiledled under Linux.
+
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=OFF -DSKIP_INSTALL_ICONS=OFF -DWITH_ICON_GENERATION=OFF)
-else()
+
+elseif(APPLE)   # macOS
+
+    # Python3 lxml module detection fail under macOS with Macports even if right Python3 verison is selected.
+    # Sounds like a python3 path problem not propagated in cmake script to run the generation icons script.
+
+    set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON -DWITH_ICON_GENERATION=OFF)
+
+else()          # Linux
+
+    # All is suitable here.
+
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
+
 endif()
 
 set(MarbleQtOnlyOptions -DWITH_DESIGNER_PLUGIN=OFF -DBUILD_MARBLE_TESTS=OFF -DBUILD_MARBLE_TOOLS=OFF -DBUILD_MARBLE_EXAMPLES=OFF -DBUILD_MARBLE_APPS=OFF -DBUILD_WITH_DBUS=OFF -DQTONLY=ON -DBUILD_TESTING=OFF)

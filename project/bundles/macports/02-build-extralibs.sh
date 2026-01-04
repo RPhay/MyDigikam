@@ -45,7 +45,11 @@ OsxCodeName
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
-export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt$DK_QTVERSION/bin:$ORIG_PATH
+export PATH="$INSTALL_PREFIX/bin:$INSTALL_PREFIX/sbin:$INSTALL_PREFIX/libexec/qt$DK_QTVERSION/bin:$ORIG_PATH"
+
+# Typically, for the Breeze-icons python3 generation icons script (do not work yet with macports).
+port select --set python3 python312
+export PYTHONPATH="$INSTALL_PREFIX/bin:$PYTHONPATH"
 
 #################################################################################################
 
