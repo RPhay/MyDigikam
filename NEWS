@@ -16,7 +16,8 @@ Bundles component versions:
 | macOS Qt5     | 5.15.18 (*)| 5.116       | 4.12           | 7.1.2 (*)      | 1.20.2 (*)   | 13.45 (*)        | 0.28.7 (*)    |
 | macOS Qt6     | 6.10.0 (*) | 6.20.0 (*)  | 4.12           | 7.1.2 (*)      | 1.20.2 (*)   | 13.45 (*)        | 0.28.7 (*)    |
 
-Raw Engine      : Update internal Libraw to last 20251229 upstream.
+Raw Engine      : Internal Libraw has been updated to the latest upstream 20251229 which brings with
+                  it a variety of bug fixes and performance improvements.
                   New Raw Camera: * Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra
                                   * Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S
                                   * Hasselblad  CFV-50c, CFV-100c, X2D-100c
@@ -29,7 +30,8 @@ Raw Engine      : Update internal Libraw to last 20251229 upstream.
                                   * Multiple DJI and Skydio drones
                                   * Tested with multiple smartphones with DNG format recorded.
 
-Video           : Update internal QtAVPlayer to last 20251210 upstream (Qt5 only).
+Video           : Internal QtAVPlayer has been updated to the latest upstream 20251210 which brings with
+                  it a variety of bug fixes and performance improvements (Qt5 only).
 
 Color Labels    : Color label names are now customizable in the Labels tab from left sidebar by double clicking on text. Label strings size are limited to 32 characters.
 Sort Items      : Add support of Album Icon-View sort items by Pick and Color Labels.
