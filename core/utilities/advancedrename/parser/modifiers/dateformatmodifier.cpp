@@ -45,7 +45,7 @@ DateFormatModifier::DateFormatModifier()
 
 QString DateFormatModifier::getDateFormatLinkText()
 {
-    const QString dateFormatLink      = QString::fromUtf8("<a href='https://doc.qt.io/qt-5.15/qdatetime.html#toString'>%1</a>");
+    const QString dateFormatLink      = QString::fromUtf8("<a href='https://doc.qt.io/qt-6/qdatetime.html#toString'>%1</a>");
     const QString dateFormatLinkDescr = i18nc("@info: date format settings", "format settings");
 
     return dateFormatLink.arg(dateFormatLinkDescr);
