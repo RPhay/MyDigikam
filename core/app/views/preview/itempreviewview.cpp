@@ -63,6 +63,8 @@
 #include "ratingwidget.h"
 #include "colorlabelwidget.h"
 #include "picklabelwidget.h"
+#include "coredbchangesets.h"
+#include "coredbwatch.h"
 
 namespace Digikam
 {
@@ -147,6 +149,12 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     connect(d->item, SIGNAL(showContextMenu(QGraphicsSceneContextMenuEvent*)),
             this, SLOT(slotShowContextMenu(QGraphicsSceneContextMenuEvent*)));
+
+    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
+            this, SLOT(slotImageChange(ImageChangeset)));
+
+    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
+            this, SLOT(slotImageTagChange(ImageTagChangeset)));
 
     // set default zoom
 
@@ -363,6 +371,10 @@ void ItemPreviewView::slotItemLoaded()
 {
     Q_EMIT signalPreviewLoaded(true);
 
+    d->clWidget->setEnabled(true);
+    d->plWidget->setEnabled(true);
+    d->ratingWidget->setEnabled(true);
+
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
 
@@ -381,31 +393,19 @@ void ItemPreviewView::slotItemLoaded()
     }
 
     d->addFocusPointAction->setEnabled(add);
-
-    d->clWidget->blockSignals(true);
-    d->plWidget->blockSignals(true);
-    d->ratingWidget->blockSignals(true);
-
-    d->clWidget->setColorLabel((ColorLabel)d->item->imageInfo().colorLabel());
-    d->plWidget->setPickLabel((PickLabel)d->item->imageInfo().pickLabel());
-    d->ratingWidget->setRating(d->item->imageInfo().rating());
-
-    d->clWidget->blockSignals(false);
-    d->plWidget->blockSignals(false);
-    d->ratingWidget->blockSignals(false);
 }
 
 void ItemPreviewView::slotItemLoadingFailed()
 {
     Q_EMIT signalPreviewLoaded(false);
 
-    d->rotLeftAction->setEnabled(false);
-    d->rotRightAction->setEnabled(false);
-    d->addFocusPointAction->setEnabled(false);
-
     d->clWidget->setEnabled(false);
     d->plWidget->setEnabled(false);
     d->ratingWidget->setEnabled(false);
+
+    d->rotLeftAction->setEnabled(false);
+    d->rotRightAction->setEnabled(false);
+    d->addFocusPointAction->setEnabled(false);
 
     d->faceGroup->setInfo(ItemInfo());
     d->focusPointGroup->setInfo(ItemInfo());
@@ -419,6 +419,18 @@ void ItemPreviewView::setItemInfo(const ItemInfo& info, const ItemInfo& previous
 
     d->prevAction->setEnabled(!previous.isNull());
     d->nextAction->setEnabled(!next.isNull());
+
+    d->clWidget->blockSignals(true);
+    d->plWidget->blockSignals(true);
+    d->ratingWidget->blockSignals(true);
+
+    d->clWidget->setColorLabel((ColorLabel)d->item->imageInfo().colorLabel());
+    d->plWidget->setPickLabel((PickLabel)d->item->imageInfo().pickLabel());
+    d->ratingWidget->setRating(d->item->imageInfo().rating());
+
+    d->clWidget->blockSignals(false);
+    d->plWidget->blockSignals(false);
+    d->ratingWidget->blockSignals(false);
 
     QStringList previewPaths;
 
@@ -614,6 +626,48 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
             this, SIGNAL(signalGotoDateAndItem(ItemInfo)));
 
     cmHelper.exec(event->screenPos());
+}
+
+void ItemPreviewView::slotImageChange(const ImageChangeset& changeset)
+{
+    if (!changeset.containsImage(d->item->imageInfo().id()))
+    {
+        return;
+    }
+
+    if (changeset.changes() & DatabaseFields::Rating)
+    {
+        d->ratingWidget->blockSignals(true);
+        d->ratingWidget->setRating(d->item->imageInfo().rating());
+        d->ratingWidget->blockSignals(false);
+    }
+}
+
+void ItemPreviewView::slotImageTagChange(const ImageTagChangeset& changeset)
+{
+    if (!changeset.containsImage(d->item->imageInfo().id()))
+    {
+        return;
+    }
+
+    QVector<int> labelTagIds;
+    labelTagIds << TagsCache::instance()->pickLabelTags();
+    labelTagIds << TagsCache::instance()->colorLabelTags();
+
+    for (int tagId : changeset.tags())
+    {
+        if (labelTagIds.contains(tagId))
+        {
+            d->clWidget->blockSignals(true);
+            d->plWidget->blockSignals(true);
+
+            d->clWidget->setColorLabel((ColorLabel)d->item->imageInfo().colorLabel());
+            d->plWidget->setPickLabel((PickLabel)d->item->imageInfo().pickLabel());
+
+            d->clWidget->blockSignals(false);
+            d->plWidget->blockSignals(false);
+        }
+    }
 }
 
 void ItemPreviewView::slotSlideShowCurrent()

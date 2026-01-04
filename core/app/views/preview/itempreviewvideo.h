@@ -24,6 +24,9 @@
 namespace Digikam
 {
 
+class ImageChangeset;
+class ImageTagChangeset;
+
 class ItemPreviewVideo : public MediaPlayerView
 {
     Q_OBJECT
@@ -50,6 +53,9 @@ private Q_SLOTS:
     void slotAssignColorLabel(int colorId);
     void slotContextMenu();
     void slotSetupChanged();
+
+    void slotImageChange(const ImageChangeset& changeset);
+    void slotImageTagChange(const ImageTagChangeset& changeset);
 
 private:
 
