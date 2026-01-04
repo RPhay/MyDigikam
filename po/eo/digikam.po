@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:40+0000\n"
+"POT-Creation-Date: 2026-01-04 00:42+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -66949,54 +66949,54 @@ msgstr "Metu Vojon por Etikedoj:"
 msgid "Rating Mapping:"
 msgstr "Mapado de taksado:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Ĉi tio estas defaŭlta nomspaco. Defaŭltaj nomspacoj nur povas esti "
 "malŝaltitaj"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
 #, kde-format
 msgid "The namespace name is required"
 msgstr "La nomspaca nomo estas postulata"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "EXIF nomspaco nomo devas komenci per \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "EXIF-alternativa nomspaco nomo devas komenciĝi per \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "IPTC-nomspaco nomo devas komenciĝi per \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "IPTC-alternativa nomspaco nomo devas komenciĝi per \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "XMP nomspaco nomo devas komenci per \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "XMP alternativa nomspaco nomo devas komenci per \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Etikedvoja apartigilo estas bezonata"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Nur unu signo nun estas subtenata kiel etikedvojapartigilo"

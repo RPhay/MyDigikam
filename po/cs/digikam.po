@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:40+0000\n"
+"POT-Creation-Date: 2026-01-04 00:42+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -64070,52 +64070,52 @@ msgstr "Nastavit cestu značek:"
 msgid "Rating Mapping:"
 msgstr "Mapování hodnocení:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr "Toto je výchozí jmenný prostor a může být pouze zakázán."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
 #, kde-format
 msgid "The namespace name is required"
 msgstr "Tento jmenný prostor je povinný"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "Jmenný prostor EXIF musí začínat \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "Alternativní jmenný prostor EXIF musí začínat \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "Jmenný prostor IPTC musí začínat \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "Alternativní jmenný prostor IPTC musí začínat \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "Jmenný prostor XMP musí začínat \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "Alternativní jmenný prostor XMP musí začínat \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Zadejte oddělovač cesty značek"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Oddělovač může být jen jeden znak"

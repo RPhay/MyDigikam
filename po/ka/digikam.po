@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-03 00:40+0000\n"
-"PO-Revision-Date: 2026-01-02 05:01+0100\n"
+"POT-Creation-Date: 2026-01-04 00:42+0000\n"
+"PO-Revision-Date: 2026-01-03 02:59+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -63450,54 +63450,54 @@ msgstr "დააყენეთ ჭდეების ბილიკი:"
 msgid "Rating Mapping:"
 msgstr "რეიტინგის ასახვა:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "ეს ნაგულისხმევი სახელების სივრცეა. ნაგულისხმევი სახელის სივრცეების, მხოლოდ, "
 "გამორთვა შეგიძლიათ"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
 #, kde-format
 msgid "The namespace name is required"
 msgstr "სახელების სივრცის სახელი აუცილებელია"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "EXIF სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "EXIF ალტერნატიული სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "IPTC სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "IPTC ალტერნატიული სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "XMP სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "XMP ალტერნატიული სახელების სივრცე უნდა იწყებოდეს სტრიქონით \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "ჭდის ბილიკის გამყოფი აუცილებელია"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "ჭდის ბილიკის გამყოფად, მხოლოდ, ერთი სიმბოლოა მხარდაჭერილი"
@@ -64496,17 +64496,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
 "Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
-"<font color='red'><i>გაფრთხილება: ეს პარამეტრები გაშვებას შეანელებენ!</i></"
+"<font color='black'><i><b>⚠️გაფრთხილება:</b> ეს პარამეტრები გაშვებას "
+"შეანელებენ! ჯერ დაკვირვებით წაიკითხეთ <a href=\"%1\">დოკუმენტაცია</a>.</i></"
 "font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
