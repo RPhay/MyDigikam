@@ -183,6 +183,7 @@ public:
     const QString configStringComparisonTypeEntry                   = QLatin1String("String Comparison Type");
     const QString configApplicationStyleEntry                       = QLatin1String("Application Style");
     const QString configIconThemeEntry                              = QLatin1String("Icon Theme");
+    const QString configDateTimeFormatEntry                         = QLatin1String("DateTime Format");
     const QString configApplicationFontEntry                        = QLatin1String("Application Font");
     const QString configScanAtStartEntry                            = QLatin1String("Scan At Start");
     const QString configCleanAtStartEntry                           = QLatin1String("Clean core DB At Start");
@@ -343,6 +344,7 @@ public:
     ApplicationSettings::StringComparisonType    stringComparisonType                               = ApplicationSettings::Natural;
     QString                                      applicationStyle                                   = qApp->style()->objectName();
     QString                                      applicationIcon;
+    QString                                      dateTimeFormat                                     = QLocale().dateTimeFormat(QLocale::ShortFormat);
     QFont                                        applicationFont                                    = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     int                                          minimumSimilarityBound                             = 40;

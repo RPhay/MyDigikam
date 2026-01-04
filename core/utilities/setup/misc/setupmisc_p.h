@@ -58,6 +58,7 @@
 #include "setup.h"
 #include "localizeconfig.h"
 #include "facebackgroundrecognition.h"
+#include "dateformatmodifier.h"
 
 #ifdef HAVE_SONNET
 #   include "spellcheckconfig.h"
@@ -84,7 +85,10 @@ public:
     QLabel*                   stringComparisonTypeLabel                 = nullptr;
     QLabel*                   applicationStyleLabel                     = nullptr;
     QLabel*                   applicationIconLabel                      = nullptr;
+    QLabel*                   dateTimeFormatLabel                       = nullptr;
     QLabel*                   minSimilarityBoundLabel                   = nullptr;
+
+    QLineEdit*                dateTimeFormatEdit                        = nullptr;
 
     QCheckBox*                showSplashCheck                           = nullptr;
     QCheckBox*                showTrashDeleteDialogCheck                = nullptr;

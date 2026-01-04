@@ -24,23 +24,21 @@ void SetupMisc::setupAppearance()
     // -- Application Appearance Options --------------------------------------------------------
 
     QWidget* const appearancePanel = new QWidget(d->tab);
-    QVBoxLayout* const layout2     = new QVBoxLayout(appearancePanel);
+    QGridLayout* const layout2     = new QGridLayout(appearancePanel);
 
     d->showSplashCheck             = new QCheckBox(i18n("&Show splash screen at startup"), appearancePanel);
     d->useNativeFileDialogCheck    = new QCheckBox(i18n("Use native file dialogs from system"), appearancePanel);
     d->drawFramesToGroupedCheck    = new QCheckBox(i18n("Draw frames around grouped items"), appearancePanel);
 
-    DHBox* const tabStyleHbox = new DHBox(appearancePanel);
-    d->sidebarTypeLabel       = new QLabel(i18n("Sidebar tab title:"), tabStyleHbox);
-    d->sidebarType            = new QComboBox(tabStyleHbox);
+    d->sidebarTypeLabel       = new QLabel(i18n("Sidebar tab title:"), appearancePanel);
+    d->sidebarType            = new QComboBox(appearancePanel);
     d->sidebarType->addItem(i18n("Only For Active Tab"), 0);
     d->sidebarType->addItem(i18n("For All Tabs"),        1);
     d->sidebarType->setToolTip(i18n("Set this option to configure how sidebar tab titles are visible. "
                                     "Use \"Only For Active Tab\" option if you use a small screen resolution as with a laptop computer."));
 
-    DHBox* const appStyleHbox = new DHBox(appearancePanel);
-    d->applicationStyleLabel  = new QLabel(i18n("Widget style:"), appStyleHbox);
-    d->applicationStyle       = new QComboBox(appStyleHbox);
+    d->applicationStyleLabel  = new QLabel(i18n("Widget style:"), appearancePanel);
+    d->applicationStyle       = new QComboBox(appearancePanel);
     d->applicationStyle->setToolTip(i18n("Set this option to choose the default window decoration and looks."));
     const auto styles         = QStyleFactory::keys();
 
@@ -63,9 +61,8 @@ void SetupMisc::setupAppearance()
 
 #endif
 
-    DHBox* const iconThemeHbox = new DHBox(appearancePanel);
-    d->applicationIconLabel    = new QLabel(i18n("Icon theme (changes after restart):"), iconThemeHbox);
-    d->applicationIcon         = new QComboBox(iconThemeHbox);
+    d->applicationIconLabel    = new QLabel(i18n("Icon theme (changes after restart):"), appearancePanel);
+    d->applicationIcon         = new QComboBox(appearancePanel);
     d->applicationIcon->setToolTip(i18n("Set this option to choose the default icon theme."));
 
     QMap<QString, QString> iconThemes;
@@ -107,21 +104,34 @@ void SetupMisc::setupAppearance()
         d->applicationIcon->addItem(it.key(), it.value());
     }
 
-    d->applicationFont = new DFontSelect(i18n("Application font:"), appearancePanel);
+    d->dateTimeFormatLabel = new QLabel(i18n("Date/time format (%1):",
+                                             DateFormatModifier::getDateFormatLinkText()), appearancePanel);
+    d->dateTimeFormatLabel->setOpenExternalLinks(true);
+    d->dateTimeFormatLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
+    d->dateTimeFormatEdit  = new QLineEdit(appearancePanel);
+    d->dateTimeFormatEdit->setToolTip(i18n("This string is used as the date/time format in whole application."));
+
+    d->applicationFont     = new DFontSelect(i18n("Application font:"), appearancePanel);
     d->applicationFont->setToolTip(i18n("Select here the font used to display text in whole application."));
 
     // --------------------------------------------------------
 
     layout2->setContentsMargins(d->spacing, d->spacing, d->spacing, d->spacing);
     layout2->setSpacing(d->spacing);
-    layout2->addWidget(d->showSplashCheck);
-    layout2->addWidget(d->useNativeFileDialogCheck);
-    layout2->addWidget(d->drawFramesToGroupedCheck);
-    layout2->addWidget(tabStyleHbox);
-    layout2->addWidget(appStyleHbox);
-    layout2->addWidget(iconThemeHbox);
-    layout2->addWidget(d->applicationFont);
-    layout2->addStretch();
+    layout2->addWidget(d->showSplashCheck,          0, 0, 1, 2);
+    layout2->addWidget(d->useNativeFileDialogCheck, 1, 0, 1, 2);
+    layout2->addWidget(d->drawFramesToGroupedCheck, 2, 0, 1, 2);
+    layout2->addWidget(d->sidebarTypeLabel,         3, 0, 1, 1);
+    layout2->addWidget(d->sidebarType,              3, 1, 1, 1);
+    layout2->addWidget(d->applicationStyleLabel,    4, 0, 1, 1);
+    layout2->addWidget(d->applicationStyle,         4, 1, 1, 1);
+    layout2->addWidget(d->applicationIconLabel,     5, 0, 1, 1);
+    layout2->addWidget(d->applicationIcon,          5, 1, 1, 1);
+    layout2->addWidget(d->dateTimeFormatLabel,      6, 0, 1, 1);
+    layout2->addWidget(d->dateTimeFormatEdit,       6, 1, 1, 1);
+    layout2->addWidget(d->applicationFont,          7, 0, 1, 2);
+    layout2->setColumnStretch(1, 10);
+    layout2->setRowStretch(8, 10);
 
     d->tab->insertTab(Appearance, appearancePanel, i18nc("@title:tab", "Appearance"));
 }

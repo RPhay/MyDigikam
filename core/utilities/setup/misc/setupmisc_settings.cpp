@@ -101,6 +101,7 @@ void SetupMisc::applySettings()
 #endif
 
     settings->setIconTheme(d->applicationIcon->currentData().toString());
+    settings->setDateTimeFormat(d->dateTimeFormatEdit->text().trimmed());
     settings->setApplicationFont(d->applicationFont->font());
     settings->saveSettings();
 
@@ -156,6 +157,7 @@ void SetupMisc::readSettings()
 #endif
 
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(settings->getIconTheme()));
+    d->dateTimeFormatEdit->setText(settings->getDateTimeFormat());
     d->applicationFont->setFont(settings->getApplicationFont());
 
     // NOTE: Spellcheck and Localize read settings is done in widget constructor.

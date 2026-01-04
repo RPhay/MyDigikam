@@ -265,7 +265,11 @@ void ApplicationSettings::readSettings()
 
     d->applicationIcon                   = group.readEntry(d->configIconThemeEntry,                                   QString());
 
-    setApplicationFont(group.readEntry(d->configApplicationFontEntry, QFontDatabase::systemFont(QFontDatabase::GeneralFont)));
+    d->dateTimeFormat                    = group.readEntry(d->configDateTimeFormatEntry,
+                                                           QLocale().dateTimeFormat(QLocale::ShortFormat));
+
+    setApplicationFont(group.readEntry(d->configApplicationFontEntry,
+                                       QFontDatabase::systemFont(QFontDatabase::GeneralFont)));
 
     d->scanAtStart                       = group.readEntry(d->configScanAtStartEntry,                                 true);
     d->cleanAtStart                      = group.readEntry(d->configCleanAtStartEntry,                                false);
@@ -450,6 +454,7 @@ void ApplicationSettings::saveSettings()
 #endif
 
     group.writeEntry(d->configIconThemeEntry,                           d->applicationIcon);
+    group.writeEntry(d->configDateTimeFormatEntry,                      d->dateTimeFormat);
     group.writeEntry(d->configApplicationFontEntry,                     d->applicationFont);
 
     group.writeEntry(d->configScanAtStartEntry,                         d->scanAtStart);

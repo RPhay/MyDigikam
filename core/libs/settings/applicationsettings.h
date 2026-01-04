@@ -463,6 +463,9 @@ public:
     void setIconTheme(const QString& theme);
     QString getIconTheme() const;
 
+    void setDateTimeFormat(const QString& fmt);
+    QString getDateTimeFormat() const;
+
     void setApplicationFont(const QFont& fnt);
     QFont getApplicationFont() const;
 

@@ -243,6 +243,16 @@ QString ApplicationSettings::getIconTheme() const
     return d->applicationIcon;
 }
 
+void ApplicationSettings::setDateTimeFormat(const QString& fmt)
+{
+    d->dateTimeFormat = fmt;
+}
+
+QString ApplicationSettings::getDateTimeFormat() const
+{
+    return d->dateTimeFormat;
+}
+
 void ApplicationSettings::setShowThumbbar(bool val)
 {
     d->showThumbbar = val;
