@@ -47,6 +47,9 @@
 #include "contextmenuhelper.h"
 #include "itempreviewosd.h"
 #include "previewosdsettings.h"
+#include "coredbchangesets.h"
+#include "coredbwatch.h"
+#include "tagscache.h"
 
 namespace Digikam
 {
@@ -122,6 +125,12 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSetupChanged()));
+
+    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
+            this, SLOT(slotImageChange(ImageChangeset)));
+
+    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
+            this, SLOT(slotImageTagChange(ImageTagChangeset)));
 
     slotSetupChanged();
 }
@@ -256,6 +265,47 @@ void ItemPreviewVideo::slotSetupChanged()
     d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
 }
 
+void ItemPreviewVideo::slotImageChange(const ImageChangeset& changeset)
+{
+    if (!changeset.containsImage(d->info.id()))
+    {
+        return;
+    }
+
+    if (changeset.changes() & DatabaseFields::Rating)
+    {
+        d->ratingWidget->blockSignals(true);
+        d->ratingWidget->setRating(d->info.rating());
+        d->ratingWidget->blockSignals(false);
+    }
+}
+
+void ItemPreviewVideo::slotImageTagChange(const ImageTagChangeset& changeset)
+{
+    if (!changeset.containsImage(d->info.id()))
+    {
+        return;
+    }
+
+    QVector<int> labelTagIds;
+    labelTagIds << TagsCache::instance()->pickLabelTags();
+    labelTagIds << TagsCache::instance()->colorLabelTags();
+
+    for (int tagId : changeset.tags())
+    {
+        if (labelTagIds.contains(tagId))
+        {
+            d->clWidget->blockSignals(true);
+            d->plWidget->blockSignals(true);
+
+            d->clWidget->setColorLabel((ColorLabel)d->info.colorLabel());
+            d->plWidget->setPickLabel((PickLabel)d->info.pickLabel());
+
+            d->clWidget->blockSignals(false);
+            d->plWidget->blockSignals(false);
+        }
+    }
+}
 } // namespace Digikam
 
 #include "moc_itempreviewvideo.cpp"

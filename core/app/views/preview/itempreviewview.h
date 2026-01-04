@@ -23,6 +23,8 @@ namespace Digikam
 {
 
 class Album;
+class ImageChangeset;
+class ImageTagChangeset;
 class LoadingDescription;
 
 class ItemPreviewView : public GraphicsDImgView
@@ -117,6 +119,9 @@ private Q_SLOTS:
      *                          image, update face tags position
      */
     void slotUpdateFaces();
+
+    void slotImageChange(const ImageChangeset& changeset);
+    void slotImageTagChange(const ImageTagChangeset& changeset);
 
     void slotShowContextMenu(QGraphicsSceneContextMenuEvent* event);
 
