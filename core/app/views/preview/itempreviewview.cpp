@@ -420,17 +420,9 @@ void ItemPreviewView::setItemInfo(const ItemInfo& info, const ItemInfo& previous
     d->prevAction->setEnabled(!previous.isNull());
     d->nextAction->setEnabled(!next.isNull());
 
-    d->clWidget->blockSignals(true);
-    d->plWidget->blockSignals(true);
-    d->ratingWidget->blockSignals(true);
-
     d->clWidget->setColorLabel((ColorLabel)d->item->imageInfo().colorLabel());
     d->plWidget->setPickLabel((PickLabel)d->item->imageInfo().pickLabel());
     d->ratingWidget->setRating(d->item->imageInfo().rating());
-
-    d->clWidget->blockSignals(false);
-    d->plWidget->blockSignals(false);
-    d->ratingWidget->blockSignals(false);
 
     QStringList previewPaths;
 
@@ -637,9 +629,7 @@ void ItemPreviewView::slotImageChange(const ImageChangeset& changeset)
 
     if (changeset.changes() & DatabaseFields::Rating)
     {
-        d->ratingWidget->blockSignals(true);
         d->ratingWidget->setRating(d->item->imageInfo().rating());
-        d->ratingWidget->blockSignals(false);
     }
 }
 
@@ -658,14 +648,8 @@ void ItemPreviewView::slotImageTagChange(const ImageTagChangeset& changeset)
     {
         if (labelTagIds.contains(tagId))
         {
-            d->clWidget->blockSignals(true);
-            d->plWidget->blockSignals(true);
-
             d->clWidget->setColorLabel((ColorLabel)d->item->imageInfo().colorLabel());
             d->plWidget->setPickLabel((PickLabel)d->item->imageInfo().pickLabel());
-
-            d->clWidget->blockSignals(false);
-            d->plWidget->blockSignals(false);
         }
     }
 }

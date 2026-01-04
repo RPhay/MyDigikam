@@ -46,8 +46,12 @@ ColorLabelWidget* ColorLabelSelector::colorLabelWidget() const
 
 void ColorLabelSelector::setColorLabel(ColorLabel label)
 {
+    blockSignals(true);
+
     d->clw->setColorLabels(QList<ColorLabel>() << label);
     slotColorLabelChanged(label);
+
+    blockSignals(false);
 }
 
 ColorLabel ColorLabelSelector::colorLabel()

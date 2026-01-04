@@ -46,8 +46,12 @@ PickLabelWidget* PickLabelSelector::pickLabelWidget() const
 
 void PickLabelSelector::setPickLabel(PickLabel label)
 {
+    blockSignals(true);
+
     d->plw->setPickLabels(QList<PickLabel>() << label);
     slotPickLabelChanged(label);
+
+    blockSignals(false);
 }
 
 PickLabel PickLabelSelector::pickLabel()

@@ -215,17 +215,9 @@ void ItemPreviewVideo::setItemInfo(const ItemInfo& info, const ItemInfo& previou
     d->osd->setItemInfo(info);
     d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
 
-    d->clWidget->blockSignals(true);
-    d->plWidget->blockSignals(true);
-    d->ratingWidget->blockSignals(true);
-
     d->clWidget->setColorLabel((ColorLabel)info.colorLabel());
     d->plWidget->setPickLabel((PickLabel)info.pickLabel());
     d->ratingWidget->setRating(info.rating());
-
-    d->clWidget->blockSignals(false);
-    d->plWidget->blockSignals(false);
-    d->ratingWidget->blockSignals(false);
 }
 
 void ItemPreviewVideo::slotDeleteItem()
@@ -274,9 +266,7 @@ void ItemPreviewVideo::slotImageChange(const ImageChangeset& changeset)
 
     if (changeset.changes() & DatabaseFields::Rating)
     {
-        d->ratingWidget->blockSignals(true);
         d->ratingWidget->setRating(d->info.rating());
-        d->ratingWidget->blockSignals(false);
     }
 }
 
@@ -295,14 +285,8 @@ void ItemPreviewVideo::slotImageTagChange(const ImageTagChangeset& changeset)
     {
         if (labelTagIds.contains(tagId))
         {
-            d->clWidget->blockSignals(true);
-            d->plWidget->blockSignals(true);
-
             d->clWidget->setColorLabel((ColorLabel)d->info.colorLabel());
             d->plWidget->setPickLabel((PickLabel)d->info.pickLabel());
-
-            d->clWidget->blockSignals(false);
-            d->plWidget->blockSignals(false);
         }
     }
 }
