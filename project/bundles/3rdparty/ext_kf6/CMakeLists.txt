@@ -96,14 +96,15 @@ endfunction()
 if(MSVC)        # Windows
 
     # All is currently broken about the generation and resource icons.
-    # Uses a RCC icon sets pre-compiledled under Linux.
+    # For the moment, We uses a RCC icon sets pre-compiled under Linux.
 
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=OFF -DSKIP_INSTALL_ICONS=OFF -DWITH_ICON_GENERATION=OFF)
 
 elseif(APPLE)   # macOS
 
-    # Python3 lxml module detection fail under macOS with Macports even if right Python3 verison is selected.
-    # Sounds like a python3 path problem not propagated in cmake script to run the generation icons script.
+    # Python3 lxml module detection fail under macOS with Macports even if right Python3 version is selected.
+    # Sounds like a python3 path problem not propagated in cmake scripts to run the generation icons python3 script.
+    # After investiguations, the macOS python3 interpreter is used and this one do not provides the lxml module.
 
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON -DWITH_ICON_GENERATION=OFF)
 
