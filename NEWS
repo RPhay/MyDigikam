@@ -399,7 +399,7 @@ BUGFIXES:
 331 --> 416213 - People tags appear duplicated after having moved them in the tag tree, if the tag was already present at /People/.
 332 --> 514061 - Metadata lost on face tag change.
 333 --> 514127 - New action preview bar not updating rating when changing rating with rating hotkeys instantly.
-334 --> 
+334 --> 514156 - Face Tags are not unique (Problem with unique assignment to image tags).
 335 --> 
 336 --> 
 337 --> 
