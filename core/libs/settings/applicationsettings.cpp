@@ -454,7 +454,7 @@ void ApplicationSettings::saveSettings()
 #endif
 
     group.writeEntry(d->configIconThemeEntry,                           d->applicationIcon);
-    group.writeEntry(d->configDateTimeFormatEntry,                      d->dateTimeFormat);
+    group.writeEntry(d->configDateTimeFormatEntry,                      DATETIMEFORMATSTRING);
     group.writeEntry(d->configApplicationFontEntry,                     d->applicationFont);
 
     group.writeEntry(d->configScanAtStartEntry,                         d->scanAtStart);

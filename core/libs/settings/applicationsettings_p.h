@@ -345,7 +345,6 @@ public:
     ApplicationSettings::StringComparisonType    stringComparisonType                               = ApplicationSettings::Natural;
     QString                                      applicationStyle                                   = qApp->style()->objectName();
     QString                                      applicationIcon;
-    QString                                      dateTimeFormat                                     = QLocale().dateTimeFormat(QLocale::ShortFormat);
     QFont                                        applicationFont                                    = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     int                                          minimumSimilarityBound                             = 40;

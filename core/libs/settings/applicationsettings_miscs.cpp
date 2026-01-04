@@ -245,13 +245,12 @@ QString ApplicationSettings::getIconTheme() const
 
 void ApplicationSettings::setDateTimeFormat(const QString& fmt)
 {
-    d->dateTimeFormat    = fmt;
     DATETIMEFORMATSTRING = fmt;
 }
 
 QString ApplicationSettings::getDateTimeFormat() const
 {
-    return d->dateTimeFormat;
+    return DATETIMEFORMATSTRING;
 }
 
 void ApplicationSettings::setShowThumbbar(bool val)
