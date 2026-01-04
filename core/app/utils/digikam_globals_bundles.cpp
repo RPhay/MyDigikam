@@ -404,6 +404,30 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
     };
 
+    /**
+     * NOTE: these files handled by this function are .qm Qt formated translation catalogs (Qt Compiled Translation Source File).
+     * At the same place in the bundles, the .mo translations catalogs (Machine Objects)
+     * are also present and do not need a special rules to be loaded in memory at run time
+     * as it's done automatically in another place by the KDE framework.
+     *
+     * Typically list of .mo files present in the DE i18n catalog of the Qt6 AppImage bundle is listed below:
+     *
+     * breeze_kwin_deco.mo
+     * digikam.mo
+     * kconfigwidgets6.mo
+     * kiconthemes6.mo
+     * knotifyconfig6.mo
+     * kservice6.mo
+     * kxmlgui6.mo
+     * breeze_style_config.mo
+     * exiv2.mo
+     * ki18n6.mo
+     * kio6.mo
+     * ksanecore.mo
+     * ktextwidgets6.mo
+     * libksane.mo
+     */
+
     QStringList ecmLangs = KLocalizedString::languages();
     const QString langEn = QLatin1String("en");
 
