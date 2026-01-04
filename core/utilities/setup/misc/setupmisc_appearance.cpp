@@ -57,7 +57,8 @@ void SetupMisc::setupAppearance()
 
     // See Bug #365262
 
-    appStyleHbox->setVisible(false);
+    d->applicationStyleLabel->setVisible(false);
+    d->applicationStyle->setVisible(false);
 
 #endif
 
