@@ -338,20 +338,20 @@ void loadEcmQtTranslationFiles(QApplication& app)
      */
     const QStringList ecmCatalogs =
     {
-        QLatin1String("karchive6_qt"),          //      A           ?           ?
-        QLatin1String("kauth6_qt"),             //      A           ?           ?
-        QLatin1String("kbookmarks6_qt"),        //      A           ?           ?
-        QLatin1String("kcodecs6_qt"),           //      A           ?           ?
-        QLatin1String("kcompletion6_qt"),       //      A           ?           ?
-        QLatin1String("kconfig6_qt"),           //      A           ?           ?
-        QLatin1String("kcoreaddons6_qt"),       //      A           ?           ?
-        QLatin1String("kdbusaddons6_qt"),       //      A           ?           ?
-        QLatin1String("kitemviews6_qt"),        //      A           ?           ?
-        QLatin1String("kjobwidgets6_qt"),       //      A           ?           ?
-        QLatin1String("knotifications6_qt"),    //      A           ?           ?
-        QLatin1String("kwidgetsaddons6_qt"),    //      A           ?           ?
-        QLatin1String("kwindowsystem6_qt"),     //      A           ?           ?
-        QLatin1String("solid6_qt"),             //      A           ?           ?
+        QLatin1String("karchive6_qt"),          //      A  I        ?           ?
+        QLatin1String("kauth6_qt"),             //      A  I        ?           ?
+        QLatin1String("kbookmarks6_qt"),        //      A  I        ?           ?
+        QLatin1String("kcodecs6_qt"),           //      A  I        ?           ?
+        QLatin1String("kcompletion6_qt"),       //      A  I        ?           ?
+        QLatin1String("kconfig6_qt"),           //      A  I        ?           ?
+        QLatin1String("kcoreaddons6_qt"),       //      A  I        ?           ?
+        QLatin1String("kdbusaddons6_qt"),       //      A  I        ?           ?
+        QLatin1String("kitemviews6_qt"),        //      A  I        ?           ?
+        QLatin1String("kjobwidgets6_qt"),       //      A  I        ?           ?
+        QLatin1String("knotifications6_qt"),    //      A  I        ?           ?
+        QLatin1String("kwidgetsaddons6_qt"),    //      A  I        ?           ?
+        QLatin1String("kwindowsystem6_qt"),     //      A  I        ?           ?
+        QLatin1String("solid6_qt"),             //      A  I        ?           ?
         QLatin1String("sonnet6_qt"),            //      A  I        ?           ?
 
 #else
