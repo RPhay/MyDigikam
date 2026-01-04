@@ -328,7 +328,13 @@ void loadEcmQtTranslationFiles(QApplication& app)
     // Qt6 version
 
     /**
-     * Bundle                                           macOS      AppImage    Windows
+     * Translation files have been verified with the DE i18n set located at:
+     *
+     * macOS:    /Applications/digikam.org/digikam.app/Contents/Ressources/locale/de/LC_MESSAGES
+     * AppImage: squashfs-root/usr/share/locale/de/LC_MESSAGES
+     * Windows:  C:\Program Files\digiKam\data\locale\de\LC_MESSAGES
+     *
+     * Bundle:                                          macOS      AppImage    Windows
      *                                                  A  I        A  I        A  I
      * Legend:
      *    A = available (check with DE i18n set)
@@ -338,28 +344,36 @@ void loadEcmQtTranslationFiles(QApplication& app)
      */
     const QStringList ecmCatalogs =
     {
-        QLatin1String("karchive6_qt"),          //      A  I        ?           ?
-        QLatin1String("kauth6_qt"),             //      A  I        ?           ?
-        QLatin1String("kbookmarks6_qt"),        //      A  I        ?           ?
-        QLatin1String("kcodecs6_qt"),           //      A  I        ?           ?
-        QLatin1String("kcompletion6_qt"),       //      A  I        ?           ?
-        QLatin1String("kconfig6_qt"),           //      A  I        ?           ?
-        QLatin1String("kcoreaddons6_qt"),       //      A  I        ?           ?
-        QLatin1String("kdbusaddons6_qt"),       //      A  I        ?           ?
-        QLatin1String("kitemviews6_qt"),        //      A  I        ?           ?
-        QLatin1String("kjobwidgets6_qt"),       //      A  I        ?           ?
-        QLatin1String("knotifications6_qt"),    //      A  I        ?           ?
-        QLatin1String("kwidgetsaddons6_qt"),    //      A  I        ?           ?
-        QLatin1String("kwindowsystem6_qt"),     //      A  I        ?           ?
-        QLatin1String("solid6_qt"),             //      A  I        ?           ?
-        QLatin1String("sonnet6_qt"),            //      A  I        ?           ?
+        QLatin1String("karchive6_qt"),          //      A  I        ?           A  I
+        QLatin1String("kauth6_qt"),             //      A  I        ?           x
+        QLatin1String("kbookmarks6_qt"),        //      A  I        ?           A  I
+        QLatin1String("kcodecs6_qt"),           //      A  I        ?           A  I
+        QLatin1String("kcompletion6_qt"),       //      A  I        ?           A  I
+        QLatin1String("kconfig6_qt"),           //      A  I        ?           A  I
+        QLatin1String("kcoreaddons6_qt"),       //      A  I        ?           A  I
+        QLatin1String("kdbusaddons6_qt"),       //      A  I        ?           A  I
+        QLatin1String("kitemviews6_qt"),        //      A  I        ?           A  I
+        QLatin1String("kjobwidgets6_qt"),       //      A  I        ?           A  I
+        QLatin1String("knotifications6_qt"),    //      A  I        ?           A  I
+        QLatin1String("kwidgetsaddons6_qt"),    //      A  I        ?           A  I
+        QLatin1String("kwindowsystem6_qt"),     //      A  I        ?           A  I
+        QLatin1String("solid6_qt"),             //      A  I        ?           A  I
+        QLatin1String("sonnet6_qt"),            //      A  I        ?           A  I
+
+        // NOTE: kglobalaccel6_qt do not exists in Qt6 version.
 
 #else
 
     // Qt5 version
 
     /**
-     * Bundle                                           macOS      AppImage    Windows
+     * Translation files have been verified with the DE i18n set located at:
+     *
+     * macOS:    /Applications/digikam.org/digikam.app/Contents/Ressources/locale/de/LC_MESSAGES
+     * AppImage: squashfs-root/usr/share/locale/de/LC_MESSAGES
+     * Windows:  C:\Program Files\digiKam\data\locale\de\LC_MESSAGES
+     *
+     * Bundle:                                          macOS      AppImage    Windows
      *                                                  A  I        A  I        A  I
      * Legend:
      *    A = available (check with DE i18n set)
@@ -370,23 +384,23 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
     const QStringList ecmCatalogs =
     {
-        QLatin1String("karchive5_qt"),          //      A  I        ?           ?
-        QLatin1String("kauth5_qt"),             //      A  I        ?           ?
-        QLatin1String("kbookmarks5_qt"),        //      A  I        ?           ?
-        QLatin1String("kcodecs5_qt"),           //      A  I        ?           ?
-        QLatin1String("kcompletion5_qt"),       //      A  I        ?           ?
-        QLatin1String("kconfig5_qt"),           //      A  I        ?           ?
-        QLatin1String("kcoreaddons5_qt"),       //      A  I        ?           ?
-        QLatin1String("kdbusaddons5_qt"),       //      A  I        ?           ?
-        QLatin1String("kitemviews5_qt"),        //      A  I        ?           ?
-        QLatin1String("kjobwidgets5_qt"),       //      A  I        ?           ?
-        QLatin1String("knotifications5_qt"),    //      A  I        ?           ?
-        QLatin1String("kwidgetsaddons5_qt"),    //      A  I        ?           ?
-        QLatin1String("kwindowsystem5_qt"),     //      A  I        ?           ?
-        QLatin1String("solid5_qt"),             //      A  I        ?           ?
+        QLatin1String("karchive5_qt"),          //      A  I        A  I        A  I
+        QLatin1String("kauth5_qt"),             //      A  I        A  I        x
+        QLatin1String("kbookmarks5_qt"),        //      A  I        A  I        A  I
+        QLatin1String("kcodecs5_qt"),           //      A  I        A  I        A  I
+        QLatin1String("kcompletion5_qt"),       //      A  I        A  I        A  I
+        QLatin1String("kconfig5_qt"),           //      A  I        A  I        A  I
+        QLatin1String("kcoreaddons5_qt"),       //      A  I        A  I        A  I
+        QLatin1String("kdbusaddons5_qt"),       //      A  I        A  I        A  I
+        QLatin1String("kitemviews5_qt"),        //      A  I        A  I        A  I
+        QLatin1String("kjobwidgets5_qt"),       //      A  I        A  I        A  I
+        QLatin1String("knotifications5_qt"),    //      A  I        A  I        A  I
+        QLatin1String("kwidgetsaddons5_qt"),    //      A  I        A  I        A  I
+        QLatin1String("kwindowsystem5_qt"),     //      A  I        A  I        A  I
+        QLatin1String("solid5_qt"),             //      A  I        A  I        A  I
+        QLatin1String("sonnet5_qt"),            //      x           A  I        A  I
 
-        QLatin1String("kde5_xml_mimetypes"),    //      x           ?           ?
-        QLatin1String("kglobalaccel5_qt"),      //      x           ?           ?
+        QLatin1String("kglobalaccel5_qt"),      //      x           A  I        x
 
 #endif
 
