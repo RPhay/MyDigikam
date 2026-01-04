@@ -301,17 +301,17 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
         d->applicationIcon->addItem(it.key(), it.value());
     }
 
-    d->dateTimeFormatLabel    = new QLabel(i18n("Date/time format (%1):",
+    d->dateTimeFormatLabel    = new QLabel(i18n("Date and time format (%1):",
                                                 getDateFormatLinkText()), appearancePanel);
     d->dateTimeFormatLabel->setOpenExternalLinks(true);
     d->dateTimeFormatLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
 
     DHBox* const dtFormatHBox = new DHBox(appearancePanel);
     d->dateTimeFormatEdit     = new QLineEdit(dtFormatHBox);
-    d->dateTimeFormatEdit->setToolTip(i18n("This string is used as the date/time format in whole application."));
+    d->dateTimeFormatEdit->setToolTip(i18n("This string is used as the date and time format in whole application."));
     d->dateTimeFormatReset    = new QToolButton(dtFormatHBox);
     d->dateTimeFormatReset->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
-    d->dateTimeFormatReset->setToolTip(i18n("Reverts to the local short date/time format"));
+    d->dateTimeFormatReset->setToolTip(i18n("Reverts to the local short date and time format"));
 
     d->applicationFont        = new DFontSelect(i18n("Application font:"), appearancePanel);
     d->applicationFont->setToolTip(i18n("Select here the font used to display text in whole application."));
