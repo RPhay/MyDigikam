@@ -190,11 +190,6 @@ void SurveyView::slotDeleteItem()
     Q_EMIT signalDeleteItem(d->preview->getItemInfo());
 }
 
-bool SurveyView::previewLoading() const
-{
-    return (d->preview->previewItem()->state() == DImgPreviewItem::Loading);
-}
-
 void SurveyView::toggleFullScreen(bool set)
 {
     d->preview->toggleFullScreen(set);

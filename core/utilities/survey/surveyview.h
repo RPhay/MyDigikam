@@ -85,7 +85,7 @@ private Q_SLOTS:
 
     void slotZoomFactorChanged(double);
     void slotPreviewLoaded(bool);
-    void slotDeleteitem();
+    void slotDeleteItem();
 
 private:
 

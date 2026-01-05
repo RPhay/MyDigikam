@@ -62,7 +62,7 @@
 #include "statusprogressbar.h"
 #include "dzoombar.h"
 #include "surveyview.h"
-#include "surveythumbbar.h"
+#include "lighttablethumbbar.h"
 #include "thumbbardock.h"
 #include "drawdecoder.h"
 #include "digikam_debug.h"
@@ -83,7 +83,7 @@
 #include "itemdescedittab.h"
 #include "setup.h"
 #include "syncjob.h"
-#include "surveypreview.h"
+#include "lighttablepreview.h"
 #include "albummodel.h"
 #include "albumfiltermodel.h"
 #include "coredbchangesets.h"
@@ -117,10 +117,6 @@ public:
 
 public:
 
-    bool                      autoLoadOnRightPanel          = true;
-    bool                      autoSyncPreview               = true;
-    bool                      fromLeftPreview               = true;
-
     QAction*                  setItemLeftAction             = nullptr;
     QAction*                  setItemRightAction            = nullptr;
     QAction*                  clearListAction               = nullptr;
@@ -150,22 +146,19 @@ public:
 
     QMainWindow*              dockArea                      = nullptr;
 
-    StatusProgressBar*        leftFileName                  = nullptr;     ///< File name loaded in left preview and show on status bar.
     StatusProgressBar*        rightFileName                 = nullptr;     ///< File name loaded in right preview and show on status bar.
 
     SidebarSplitter*          hSplitter                     = nullptr;
     ThumbBarDock*             barViewDock                   = nullptr;
 
-    SurveyThumbBar*       thumbView                     = nullptr;     ///< Top level view to host thumbar.
+    LightTableThumbBar*       thumbView                     = nullptr;     ///< Top level view to host thumbar.
 
-    SurveyView*           previewView                   = nullptr;     ///< Central view including left and right panels.
+    SurveyView*               previewView                   = nullptr;     ///< Central view including left and right panels.
 
-    DZoomBar*                 leftZoomBar                   = nullptr;     ///< Zoom bar to control the left preview and show on status bar.
     DZoomBar*                 rightZoomBar                  = nullptr;     ///< Zoom bar to control the right preview and show on status bar.
 
     StatusProgressBar*        statusProgressBar             = nullptr;
 
-    ItemPropertiesSideBarDB*  leftSideBar                   = nullptr;     ///< Side bar to display properties of the left preview and show on the left side..
     ItemPropertiesSideBarDB*  rightSideBar                  = nullptr;     ///< Side bar to display properties of the right preview and show on the right side..
 };
 
