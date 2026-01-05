@@ -17,15 +17,15 @@
 # Stefano Ferri <ferriste@gmail.com>, 2013.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2022.
 # Luigi Toscano <luigi.toscano@tiscali.it>, 2015.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Valter Mura <valtermura@gmail.com>
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:42+0000\n"
-"PO-Revision-Date: 2025-12-20 11:11+0100\n"
+"POT-Creation-Date: 2026-01-05 00:40+0000\n"
+"PO-Revision-Date: 2026-01-04 01:47+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -286,7 +286,7 @@ msgstr "Cambia il tag volto"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:780
+#: core/app/views/preview/itempreviewview.cpp:815
 #, kde-format
 msgid "&Cancel"
 msgstr "&Annulla"
@@ -297,7 +297,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Assegna i tag agli elementi &selezionati"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:778
+#: core/app/views/preview/itempreviewview.cpp:813
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Assegna i tag a questo elemen&to"
@@ -524,7 +524,7 @@ msgid "Show Fullscreen"
 msgstr "Mostra a schermo intero"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:170
+#: core/app/views/preview/itempreviewview.cpp:178
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -532,7 +532,7 @@ msgid "Rotate Left"
 msgstr "Ruota a sinistra"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:172
+#: core/app/views/preview/itempreviewview.cpp:180
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2796,57 +2796,61 @@ msgstr ""
 "cartella superiore non esiste, o è la stessa cartella o non ci si può "
 "leggere / scrivere al suo interno.</p>"
 
-#: core/app/utils/digikam_globals.cpp:121
+#: core/app/utils/digikam_globals.cpp:123
 #, kde-format
 msgid "%1 Image (%2)"
 msgstr "%1 immagine (%2)"
 
-#: core/app/utils/digikam_globals.cpp:125
+#: core/app/utils/digikam_globals.cpp:127
 #, kde-format
 msgid "TIFF Image (*.tiff *.tif)"
 msgstr "Immagine TIFF (*.tiff *.tif)"
 
-#: core/app/utils/digikam_globals.cpp:127
+#: core/app/utils/digikam_globals.cpp:129
 #, kde-format
 msgid "JPEG Image (*.jpg *.jpeg *.jpe)"
 msgstr "Immagine JPEG (*.jpg *.jpeg *.jpe)"
 
-#: core/app/utils/digikam_globals.cpp:132
+#: core/app/utils/digikam_globals.cpp:134
 #, kde-format
 msgid "JPEG2000 Image (*.jp2 *.j2k *.jpx *.pgx)"
 msgstr "Immagine JPEG2000 (*.jp2 *.j2k *.jpx *.pgx)"
 
-#: core/app/utils/digikam_globals.cpp:137
+#: core/app/utils/digikam_globals.cpp:139
 #, kde-format
 msgid "Progressive Graphics file (*.pgf)"
 msgstr "Progressive Graphics file (*.pgf)"
 
-#: core/app/utils/digikam_globals.cpp:142
+#: core/app/utils/digikam_globals.cpp:144
 #, kde-format
 msgid "High Efficiency Image Coding (*.heic *.heif)"
 msgstr "High Efficiency Image Coding (*.heic *.heif)"
 
-#: core/app/utils/digikam_globals.cpp:149
+#: core/app/utils/digikam_globals.cpp:151
 #, kde-format
 msgid "Flexible Image Transport System (*.fts *.fit *.fits)"
 msgstr "Flexible Image Transport System (*.fts *.fit *.fits)"
 
-#: core/app/utils/digikam_globals.cpp:156
+#: core/app/utils/digikam_globals.cpp:158
 #, kde-format
 msgid "Raw Images (%1)"
 msgstr "Immagini Raw (%1)"
 
-#: core/app/utils/digikam_globals.cpp:158
+#: core/app/utils/digikam_globals.cpp:160
 #, kde-format
 msgid "All supported files (%1)"
 msgstr "Tutti i file supportati (%1)"
 
+#: core/app/utils/digikam_globals.cpp:319
+#, kde-format
+msgctxt "@info: date format settings"
+msgid "format settings"
+msgstr "impostazioni del formato"
+
 #: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info: week properties"
-#| msgid "Start: "
+#, kde-format
 msgid "Support: "
-msgstr "Inizio: "
+msgstr "Supporto: "
 
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
@@ -2854,19 +2858,16 @@ msgid "Documentation: "
 msgstr "Documentazione: "
 
 #: core/app/utils/digikam_version.cpp:66
-#, fuzzy, kde-format
-#| msgid "Contribute..."
+#, kde-format
 msgid "Contribute: "
-msgstr "Collabora..."
+msgstr "Collabora: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Date: "
+#, kde-format
 msgid "Donate: "
-msgstr "Data: "
+msgstr "Fai una donazione: "
 
-#: core/app/views/preview/itempreviewview.cpp:166
+#: core/app/views/preview/itempreviewview.cpp:174
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
@@ -2874,7 +2875,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "Indietro"
 
-#: core/app/views/preview/itempreviewview.cpp:168
+#: core/app/views/preview/itempreviewview.cpp:176
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
@@ -2882,42 +2883,42 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "Avanti"
 
-#: core/app/views/preview/itempreviewview.cpp:179
+#: core/app/views/preview/itempreviewview.cpp:187
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "Aggiungi un tag volto"
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewview.cpp:192
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "Pulisci tutti i volti in questa immagine"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:195
 #, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Segna tutti i volti non confermati come Ignorati"
 
-#: core/app/views/preview/itempreviewview.cpp:194
+#: core/app/views/preview/itempreviewview.cpp:202
 #, kde-format
 msgid "Show Face Tags"
 msgstr "Mostra i tag volto"
 
-#: core/app/views/preview/itempreviewview.cpp:199
+#: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
 msgid "Add a focus point"
 msgstr "Aggiungi un punto focale"
 
-#: core/app/views/preview/itempreviewview.cpp:201
+#: core/app/views/preview/itempreviewview.cpp:209
 #, kde-format
 msgid "Show focus points"
 msgstr "Mostra i punti focali"
 
-#: core/app/views/preview/itempreviewview.cpp:207
+#: core/app/views/preview/itempreviewview.cpp:215
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "Mostra a schermo intero"
 
-#: core/app/views/preview/itempreviewview.cpp:513
+#: core/app/views/preview/itempreviewview.cpp:517
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, kde-format
 msgctxt "@action: face workflow"
@@ -6381,7 +6382,7 @@ msgid "Titles:"
 msgstr "Titoli:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
-#: core/libs/properties/captions/itemdescedittab_descview.cpp:289
+#: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
@@ -6393,7 +6394,7 @@ msgid "Captions:"
 msgstr "Didascalie:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
-#: core/libs/properties/captions/itemdescedittab_descview.cpp:294
+#: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
@@ -6501,12 +6502,10 @@ msgstr ""
 "immagini, utilizzando dei modelli di apprendimento profondo IA.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Template"
-msgstr "Applica il modello di metadati"
+msgstr "Applica modello"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -6789,12 +6788,10 @@ msgid "Auto-Rotate"
 msgstr "Rotazione automatica"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "AI tool to automatically rotate images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically rotate images"
-msgstr "Strumento IA per ruotare automaticamente le immagini"
+msgstr "Strumento per ruotare automaticamente le immagini"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
 #, kde-kuit-format
@@ -22441,34 +22438,28 @@ msgid "Behavior"
 msgstr "Comportamento"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
-#, fuzzy, kde-format
-#| msgid "Delay between images:"
+#, kde-format
 msgid "Delay between items: "
-msgstr "Ritardo tra le immagini:"
+msgstr "Ritardo tra gli elementi:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgid "The delay, in seconds, between items."
-msgstr "Il ritardo tra le immagini, in secondi."
+msgstr "Il ritardo tra gli elementi, in secondi."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "Start with current image"
+#, kde-format
 msgid "Start with current item"
-msgstr "Parti con l'immagine attuale"
+msgstr "Parti con l'elemento attuale"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
-#, fuzzy, kde-format
-#| msgid ""
-#| "If this option is enabled, the Slideshow will be started with the current "
-#| "image selected in the images list."
+#, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
 msgstr ""
-"Se questa opzione è abilitata, la presentazione sarà avviata con l'immagine "
-"attualmente selezionata."
+"Se questa opzione è abilitata, la presentazione sarà avviata con l'elemento "
+"attualmente selezionato."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
@@ -22481,10 +22472,9 @@ msgid "Run the slideshow in a loop."
 msgstr "Esegui la presentazione in ciclo continuo."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Shuffle images"
+#, kde-format
 msgid "Shuffle items"
-msgstr "Ordine casuale immagini"
+msgstr "Ordine casuale elementi"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
@@ -22507,47 +22497,41 @@ msgstr ""
 "e l'avanzamento temporale."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Show labels editor"
-msgstr "Mostra l'indicatore di avanzamento"
+msgstr "Mostra editor delle etichette"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the digiKam image color label and pick label at the bottom of the "
-#| "screen."
+#, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
 msgstr ""
-"Mostra l'etichetta colorata e l'etichetta di scelta dell'immagine di digiKam "
-"in fondo allo schermo."
+"Mostra l'etichetta colorata dell'elemento e gli editor di scelta delle "
+"etichette di digiKam in fondo allo schermo."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Show rating editor"
-msgstr "Mostra l'indicatore di geolocalizzazione"
+msgstr "Mostra editor delle valutazioni"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image rating at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
-msgstr "Mostra la valutazione dell'immagine di digiKam in fondo allo schermo."
+msgstr ""
+"Mostra l'editor delle valutazioni degli elementi di digiKam in fondo allo "
+"schermo."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Use background color for images:"
+#, kde-format
 msgid "Use background color for items:"
-msgstr "Usa colore di sfondo per le immagini:"
+msgstr "Usa colore di sfondo per gli elementi:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "Define a color to use as background to render images on screen."
+#, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr ""
-"Definisci un colore da usare come sfondo per rendere le immagini sullo "
+"Definisci un colore da usare come sfondo per rendere gli elementi sullo "
 "schermo."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
@@ -22582,16 +22566,13 @@ msgid "Screen %1"
 msgstr "Schermo %1"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
-#| "time with the F2 key.</b>"
+#, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the Alt+P key.</b>"
 msgstr ""
 "<b>Nota: questa finestra di dialogo delle Impostazioni per la presentazione "
-"è sempre attivabile col tasto F2.</b>"
+"è sempre attivabile con la combinazione di tasti Alt+P.</b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
 #, kde-format
@@ -22667,7 +22648,7 @@ msgid "Slideshow"
 msgstr "Presentazione di diapositive"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:448
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Presentazione"
@@ -29438,9 +29419,7 @@ msgid "Database Configuration"
 msgstr "Configurazione della banca dati"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Type: "
+#, kde-format
 msgid "Type: "
 msgstr "Tipo: "
 
@@ -29495,41 +29474,25 @@ msgstr ""
 "nella gestione di collezioni che contengono più di 100.000 elementi.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Type</b>"
-msgstr "Ottieni informazioni su <b>Aggiorna gli hash dei file</b>"
+msgstr "Ottieni informazioni sul <b>tipo di banca dati</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Path: %1"
+#, kde-format
 msgctxt "@label:database path"
 msgid "Path: "
-msgstr "Percorso: %1"
+msgstr "Percorso: "
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Path</b>"
-msgstr "Ottieni informazioni su <b>Aggiorna gli hash dei file</b>"
+msgstr "Ottieni informazioni sul <b>percorso della banca dati</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
-#| "NVMe) with enough free space especially for thumbnails database.</"
-#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
-#| "performance reasons, it is also recommended not to use network storage "
-#| "media.</p><p></p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
@@ -29553,7 +29516,7 @@ msgstr ""
 "spazio libero per la banca dati delle miniature.</p><p>Nota: qui non può "
 "essere utilizzato un sistema di file remoti, tipo NFS. Per ragioni di "
 "prestazioni, si raccomanda di non utilizzare dispositivi di memorizzazione "
-"di rete.</p><p></p>"
+"di rete.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
@@ -29570,12 +29533,10 @@ msgstr ""
 "degli scenari, nei sistemi supportati."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>WAL Mode</b>"
-msgstr "Ottieni informazioni su <b>Aggiorna gli hash dei file</b>"
+msgstr "Ottieni informazioni sulla <b>modalità WAL</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
@@ -29979,13 +29940,12 @@ msgid "The similarity database name is empty"
 msgstr "Il nome della banca dati delle somiglianze è vuoto"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
-#, fuzzy, kde-format
-#| msgid "This path was set as a command lineoption (--database-directory)."
+#, kde-format
 msgid ""
 "<p>This path was set as a command lineoption (--database-directory).</p>"
 msgstr ""
-"Questo percorso era stato impostato come opzione per riga di comando (--"
-"database-directory)."
+"<p>Questo percorso era stato impostato come opzione per riga di comando (--"
+"database-directory).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
@@ -38461,7 +38421,7 @@ msgid "Properties"
 msgstr "Proprietà"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:433
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
@@ -40364,48 +40324,48 @@ msgstr "Formato immagine raw Phase One Digital Camera"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Formato immagine raw Arriflex Camera"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:402
+#: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Vuoi applicare questa operazione a tutti gli elementi del gruppo?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:404
+#: core/libs/settings/applicationsettings_miscs.cpp:414
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Ricorda la scelta per questa operazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:438
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Tavolo luminoso"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:443
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Gestore elaborazione in serie"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Renaming"
 msgstr "Rinomina"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:458
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Strumenti d'importazione ed esportazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 "Strumenti (editor, panorama, fusione di sovrapposizioni, calendario, "
 "programma esterno)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:480
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -40414,33 +40374,33 @@ msgstr ""
 "Operazioni collegate a metadati, etichette, valutazioni, tag, "
 "geolocalizzazione e rotazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:485
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Aggiunta degli elementi al tavolo luminoso"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:490
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Aggiungi elementi al Gestore elaborazione in serie"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:495
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Apertura degli elementi nella Presentazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:500
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, kde-format
 msgid "Renaming items"
 msgstr "Rinomina degli elementi"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:505
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 "Trasferimento degli elementi agli strumenti d'importazione ed esportazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:510
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -41918,16 +41878,14 @@ msgid "Do not change"
 msgstr "Non cambiare"
 
 #: core/libs/template/templateselector.cpp:213
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template overwrites all"
-msgstr "Titolo del modello:"
+msgstr "Il modello sovrascrive tutto"
 
 #: core/libs/template/templateselector.cpp:217
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template will be merged"
-msgstr "Titolo del modello:"
+msgstr "Il modello sarà unito"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -41940,29 +41898,25 @@ msgid "Usages:"
 msgstr "Usi:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Show image file name"
+#, kde-format
 msgid "Show item file name"
-msgstr "Mostra il nome del file dell'immagine"
+msgstr "Mostra nome file dell'elemento"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
+#, kde-format
 msgid "Show the item file name at the bottom of the screen."
-msgstr "Scrivi il nome del file dell'immagine in fondo allo schermo."
+msgstr "Mostra il nome del file dell'elemento in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgid "Show item creation date"
-msgstr "Mostra la data di creazione dell'immagine"
+msgstr "Mostra data di creazione dell'elemento"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
+#, kde-format
 msgid "Show the item creation time/date at the bottom of the screen."
 msgstr ""
-"Scrivi la data e l'ora di creazione dell'immagine in fondo allo schermo."
+"Mostra la data e l'ora di creazione dell'elemento in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:78
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
@@ -41974,7 +41928,7 @@ msgstr "Mostra diaframma e focale della fotocamera"
 #, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr ""
-"Scrivi il diaframma e la lunghezza focale dello scatto in fondo allo schermo."
+"Mostra il diaframma e la lunghezza focale dello scatto in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:81
 #: core/showfoto/setup/showfotosetuptooltip.cpp:137
@@ -41985,7 +41939,8 @@ msgstr "Mostra esposizione e sensibilità della fotocamera"
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:82
 #, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Scrivi esposizione e sensibilità dello scatto in fondo allo schermo."
+msgstr ""
+"Mostra l'esposizione e la sensibilità dello scatto in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:84
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
@@ -41997,7 +41952,7 @@ msgstr "Mostra produttore e modello della fotocamera"
 #, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
 msgstr ""
-"Scrivi il produttore e il modello della fotocamera in fondo allo schermo."
+"Mostra il produttore e il modello della fotocamera in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:87
 #, kde-format
@@ -42007,70 +41962,60 @@ msgstr "Mostra il modello di lenti della fotocamera"
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:88
 #, kde-format
 msgid "Show the camera lens model at the bottom of the screen."
-msgstr "Scrivi il modello di lenti della fotocamera in fondo allo schermo."
+msgstr "Mostra il modello di lenti della fotocamera in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show item caption"
-msgstr "Mostra la didascalia dell'immagine"
+msgstr "Mostra didascalia dell'elemento"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen."
-msgstr "Scrivi la didascalia dell'immagine in fondo allo schermo."
+msgstr "Mostra la didascalia dell'elemento in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show item title"
-msgstr "Mostra il titolo dell'immagine"
+msgstr "Mostra titolo dell'elemento"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgid "Show the item title at the bottom of the screen."
-msgstr "Mostra il titolo dell'immagine in fondo allo schermo."
+msgstr "Mostra il titolo dell'elemento in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
+#, kde-format
 msgid "Show item caption if it has not title"
-msgstr "Mostra la didascalia dell'immagine se manca il titolo"
+msgstr "Mostra didascalia dell'elemento se manca il titolo"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen if no titles existed."
 msgstr ""
-"Scrivi la didascalia dell'immagine in fondo allo schermo se manca il titolo."
+"Mostra la didascalia dell'elemento in fondo allo schermo se manca il titolo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgid "Show item tags"
-msgstr "Mostra i tag dell'immagine"
+msgstr "Mostra tag dell'elemento"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item tag names at the bottom of the screen."
-msgstr "Mostra i nomi dei tag delle immagini digiKam in fondo allo schermo."
+msgstr "Mostra i nomi dei tag degli elementi digiKam in fondo allo schermo."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "Mese prossimo"
+msgstr "Carattere del testo:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#, kde-format
 msgid "Select here the font used to display OSD text over the slideshow."
 msgstr ""
-"Seleziona qui il carattere usato per il testo in tutte le viste ad albero."
+"Seleziona qui il tipo di carattere usato per visualizzare il testo OSD sulla "
+"presentazione."
 
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
@@ -43207,16 +43152,14 @@ msgstr "Acquisisci"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:309
-#, fuzzy, kde-format
-#| msgid "Rotate Left"
+#, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Ruota a sinistra"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
-#, fuzzy, kde-format
-#| msgid "Rotate Right"
+#, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Ruota a destra"
@@ -43252,11 +43195,9 @@ msgid "Change video playback rate"
 msgstr "Cambia la velocità di riproduzione video"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info: download status"
-#| msgid "Rate:"
+#, kde-format
 msgid "Rate"
-msgstr "Velocità:"
+msgstr "Velocità"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
@@ -44153,9 +44094,7 @@ msgstr[1] ""
 "«%1» immagini selezionate"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:405
-#, fuzzy, kde-format
-#| msgctxt "date of last image modification"
-#| msgid "Mod.: %1"
+#, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
 msgstr "Mod.: %1"
@@ -44212,10 +44151,9 @@ msgid "A KDE Family Project"
 msgstr "Un progetto della famiglia KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2025, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2026, digiKam developers team"
-msgstr "(c) 2001-2025, la squadra degli sviluppatori di digiKam"
+msgstr "(c) 2001-2026, la squadra degli sviluppatori di digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
@@ -45706,7 +45644,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Preleva"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:69
+#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:73
 #, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
@@ -51011,7 +50949,7 @@ msgstr ""
 "sostituire IPTC."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
-#: core/showfoto/setup/showfotosetupmisc.cpp:213
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:206
 #, kde-format
@@ -51026,37 +50964,37 @@ msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ExifTool"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:124
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 "Sequenza di ordinamento elementi della barra delle miniature, della vista a "
 "cartelle e della vista a pila"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:128
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid "Sort images by:"
 msgstr "Ordina immagini per:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:130
+#: core/showfoto/setup/showfotosetupmisc.cpp:135
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Data"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:131
+#: core/showfoto/setup/showfotosetupmisc.cpp:136
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Nome"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:132
+#: core/showfoto/setup/showfotosetupmisc.cpp:137
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Dimensione del file"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:133
+#: core/showfoto/setup/showfotosetupmisc.cpp:138
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -51065,12 +51003,12 @@ msgstr ""
 "Seleziona qui se le immagini caricate di recente debbano essere ordinate per "
 "data, nome o dimensione sul disco."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:136
+#: core/showfoto/setup/showfotosetupmisc.cpp:141
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Ordinamento inverso"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:137
+#: core/showfoto/setup/showfotosetupmisc.cpp:142
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -51079,17 +51017,17 @@ msgstr ""
 "Se questa opzione è abilitata, le immagini caricate di recente saranno "
 "ordinate in ordine decrescente."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:146
+#: core/showfoto/setup/showfotosetupmisc.cpp:151
 #, kde-format
 msgid "Thumbbar Items"
 msgstr "Elementi della barra delle miniature"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:149
+#: core/showfoto/setup/showfotosetupmisc.cpp:154
 #, kde-format
 msgid "&Show image Format"
 msgstr "Mo&stra il formato dell'immagine"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:150
+#: core/showfoto/setup/showfotosetupmisc.cpp:155
 #: core/utilities/setup/camera/setupcamera.cpp:446
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
@@ -51097,12 +51035,12 @@ msgstr ""
 "Abilita questa opzione per mostrare il formato del file sopra la miniatura "
 "dell'immagine."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:156
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "Mo&stra l'indicatore di geolocalizzazione"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:152
+#: core/showfoto/setup/showfotosetupmisc.cpp:157
 #: core/utilities/setup/camera/setupcamera.cpp:449
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
@@ -51110,49 +51048,49 @@ msgstr ""
 "Abilita questa opzione per indicare se l'immagine possiede informazioni di "
 "geolocalizzazione."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:153
+#: core/showfoto/setup/showfotosetupmisc.cpp:158
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:79
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Scorri l'elemento attivo al centro della barra delle miniature"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:154
+#: core/showfoto/setup/showfotosetupmisc.cpp:159
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
 msgstr "Memorizza le miniature sul disco per un riuso più rapido"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:155
+#: core/showfoto/setup/showfotosetupmisc.cpp:160
 #, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
 "Disabilita questa opzione se non vuoi usare che le miniature siano "
 "memorizzate nella cache sul disco."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:165
+#: core/showfoto/setup/showfotosetupmisc.cpp:170
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:123
 #, kde-format
 msgid "Updates"
 msgstr "Aggiornamenti"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:169
+#: core/showfoto/setup/showfotosetupmisc.cpp:174
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:127
 #, kde-format
 msgid "Check for new version:"
 msgstr "Verifica la disponibilità di una nuova versione:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:171
+#: core/showfoto/setup/showfotosetupmisc.cpp:176
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:129
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Solo per i rilasci stabili"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:172
+#: core/showfoto/setup/showfotosetupmisc.cpp:177
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:130
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Pre-rilasci settimanali"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:131
 #, kde-format
 msgid ""
@@ -51171,13 +51109,13 @@ msgstr ""
 "e non sono consigliati per un uso in ambienti di produzione in quanto "
 "potrebbero contenere degli errori."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Usa la versione con i simboli di debug"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:184
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:137
 #, kde-format
 msgid ""
@@ -51191,175 +51129,198 @@ msgstr ""
 "Questa versione è di dimensioni maggiori ma può aiutare gli sviluppatori a "
 "tracciare le disfunzioni col debugger."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:184
+#: core/showfoto/setup/showfotosetupmisc.cpp:189
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:142
 #, kde-format
 msgid "Last check: %1"
 msgstr "Ultimo controllo: %1"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:185
+#: core/showfoto/setup/showfotosetupmisc.cpp:190
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:143
 #, kde-format
 msgid "Check now..."
 msgstr "Controlla ora..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:220
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:29
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Mostra la &schermata iniziale"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:221
+#: core/showfoto/setup/showfotosetupmisc.cpp:226
 #, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "Usa le finestre di dialogo native dei file del sistema"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:34
+#: core/showfoto/setup/showfotosetupmisc.cpp:228
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:33
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Titolo della scheda della barra laterale:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
+#: core/showfoto/setup/showfotosetupmisc.cpp:230
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:35
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Solo per la scheda attiva"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
+#: core/showfoto/setup/showfotosetupmisc.cpp:231
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
 #, kde-format
 msgid "For All Tabs"
 msgstr "Per tutte le schede"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:228
+#: core/showfoto/setup/showfotosetupmisc.cpp:232
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Abilita questa opzione per configurare come sono visibili i titoli delle "
 "schede delle barre laterali."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
+#: core/showfoto/setup/showfotosetupmisc.cpp:234
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:40
 #, kde-format
 msgid "Widget style:"
 msgstr "Stile del widget:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:44
+#: core/showfoto/setup/showfotosetupmisc.cpp:236
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ""
 "Abilita questa opzione per scegliere l'aspetto della finestra e delle viste."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
+#: core/showfoto/setup/showfotosetupmisc.cpp:260
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:65
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Tema icone (modifiche dopo il riavvio):"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:69
+#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Abilita questa opzione per scegliere il tema predefinito delle icone."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
+#: core/showfoto/setup/showfotosetupmisc.cpp:266
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:71
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
+#: core/showfoto/setup/showfotosetupmisc.cpp:267
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:72
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Brezza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
+#: core/showfoto/setup/showfotosetupmisc.cpp:268
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Brezza scuro"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
+#: core/showfoto/setup/showfotosetupmisc.cpp:269
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
+#: core/showfoto/setup/showfotosetupmisc.cpp:270
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:78
+#: core/showfoto/setup/showfotosetupmisc.cpp:271
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:79
+#: core/showfoto/setup/showfotosetupmisc.cpp:272
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:103
+#: core/showfoto/setup/showfotosetupmisc.cpp:297
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:101
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Usa il tema icone dal sistema"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:110
+#: core/showfoto/setup/showfotosetupmisc.cpp:304
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Date and Time Information"
+msgid "Date and time format (%1):"
+msgstr "Informazioni sulla data e sull'ora"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:116
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in whole application."
+msgid "This string is used as the date and time format in whole application."
+msgstr "Seleziona qui il carattere usato per il testo in tutta l'applicazione."
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Write the corrected date and time for each image"
+msgid "Reverts to the local short date and time format"
+msgstr "Scrivi la data e l'ora corretta per ciascuna immagine"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:316
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:121
 #, kde-format
 msgid "Application font:"
 msgstr "Carattere applicazione:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:111
+#: core/showfoto/setup/showfotosetupmisc.cpp:317
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:122
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "Seleziona qui il carattere usato per il testo in tutta l'applicazione."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:126
+#: core/showfoto/setup/showfotosetupmisc.cpp:337
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:143
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Aspetto"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:324
+#: core/showfoto/setup/showfotosetupmisc.cpp:352
 #: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Controllo ortografico"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:330
+#: core/showfoto/setup/showfotosetupmisc.cpp:358
 #: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Impostazioni regionali"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/showfoto/setup/showfotosetupmisc.cpp:364
 #: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Sistema"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:370
+#: core/showfoto/setup/showfotosetupmisc.cpp:398
 #: core/utilities/setup/misc/setupmisc_settings.cpp:34
 #, kde-format
 msgid ""
@@ -52333,26 +52294,20 @@ msgstr "Converte la prima lettera di ogni parola in maiuscolo"
 msgid "First Letter of Each Word Uppercase"
 msgstr "Prima Lettera Maiuscola Di Ogni Parola"
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
 #, kde-format
 msgid "Date Format"
 msgstr "Formato della data"
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:35
 #, kde-format
 msgid "Recognize and format a date"
 msgstr "Riconosce e formatta una data"
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:39
 #, kde-format
 msgid "Recognize and format a date to string"
 msgstr "Riconosce e formatta una data in una stringa"
-
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
-#, kde-format
-msgctxt "@info: date format settings"
-msgid "format settings"
-msgstr "impostazioni del formato"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, kde-format
@@ -64202,12 +64157,10 @@ msgid "Show file&name"
 msgstr "Mostra il &nome del file"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#, fuzzy, kde-format
-#| msgid "Set this option to show the filename below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the filename below the thumbnail."
 msgstr ""
-"Abilita questa opzione per mostrare il nome del file sotto la miniatura "
-"dell'immagine."
+"Abilita questa opzione per mostrare il nome del file sotto la miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
 #: core/utilities/setup/camera/setupcamera.cpp:432
@@ -64216,12 +64169,11 @@ msgid "Show file si&ze"
 msgstr "Mostra la &dimensione del file"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#, fuzzy, kde-format
-#| msgid "Set this option to show the file size below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the file size below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare la dimensione del file sotto la "
-"miniatura dell'immagine."
+"miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:135
 #: core/utilities/setup/camera/setupcamera.cpp:435
@@ -64230,14 +64182,11 @@ msgid "Show camera creation &date"
 msgstr "Mostra la &data di creazione dello scatto"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the camera creation date below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare la data di creazione della macchina "
-"fotografica sotto la miniatura dell'immagine."
+"fotografica sotto la miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:139
 #, kde-format
@@ -64245,65 +64194,52 @@ msgid "Show file &modification date"
 msgstr "Mostra la data di &modifica del file"
 
 #: core/utilities/setup/album/setupalbumview.cpp:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the file modification date below the image "
-#| "thumbnail if it is different than camera creation date. This option is "
-#| "useful to identify quickly which items have been modified."
+#, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
 "is different than camera creation date. This option is useful to identify "
 "quickly which items have been modified."
 msgstr ""
 "Attiva questa opzione per mostrare la data di modifica del file sotto la "
-"miniatura dell'immagine, se essa differisce dalla data di creazione della "
-"fotocamera. Questa opzione è utile per identificare rapidamente quali "
-"elementi sono stati modificati."
+"miniatura, se essa differisce dalla data di creazione della fotocamera. "
+"Questa opzione è utile per identificare rapidamente quali elementi sono "
+"stati modificati."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Show image dimensions"
+#, kde-format
 msgid "Show item dimensions"
-msgstr "Mostra le dimensioni dell'immagine"
+msgstr "Mostra dimensioni dell'elemento"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image size in pixels below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
-"Abilita questa opzione per mostrare le dimensioni dell'immagine in pixel "
-"sotto la miniatura dell'immagine."
+"Abilita questa opzione per mostrare le dimensioni dell'elemento in pixel "
+"sotto la miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#, kde-format
 msgid "Show item aspect ratio"
-msgstr "Mostra le proporzioni dell'immagine"
+msgstr "Mostra proporzioni dell'elemento"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image aspect ratio below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
-"Abilita questa opzione per mostrare la proporzioni dell'immagine sotto la "
-"miniatura dell'immagine."
+"Abilita questa opzione per mostrare la proporzioni dell'elemento sotto la "
+"miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Show image format"
+#, kde-format
 msgid "Show item format"
-msgstr "Mostra il formato dell'immagine"
+msgstr "Mostra formato dell'elemento"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Set this option to show image mime type over image thumbnail."
+#, kde-format
 msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
-"Abilita questa opzione per mostrare il tipo MIME sopra la miniatura "
-"dell'immagine."
+"Abilita questa opzione per mostrare il tipo MIME dell'elemento sopra la "
+"miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
 #, kde-format
@@ -64311,12 +64247,10 @@ msgid "Show digiKam tit&le"
 msgstr "Mostra il tito&lo di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
-"Abilita questa opzione per mostrare il titolo di digiKam sotto la miniatura "
-"dell'immagine."
+"Abilita questa opzione per mostrare il titolo di digiKam sotto la miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
@@ -64324,13 +64258,11 @@ msgid "Show digiKam &captions"
 msgstr "Mostra le didas&calie di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam captions below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare le didascalie di digiKam sotto la "
-"miniatura dell'immagine."
+"miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
 #: core/utilities/setup/camera/setupcamera.cpp:451
@@ -64339,13 +64271,11 @@ msgid "Show digiKam &tags"
 msgstr "Mostra i &tag di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam tags list below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare l'elenco dei tag di digiKam sotto la "
-"miniatura dell'immagine."
+"miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
@@ -64353,13 +64283,11 @@ msgid "Show digiKam &rating"
 msgstr "Mostra la &valutazione di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam rating below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare la valutazione di digiKam sotto la "
-"miniatura dell'immagine."
+"miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
 #, kde-format
@@ -64367,13 +64295,11 @@ msgid "Show digiKam &pick label"
 msgstr "Mostra l'etichetta di &scelta di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam pick label below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "Abilita questa opzione per mostrare l'etichetta di scelta di digiKam sotto "
-"la miniatura dell'immagine."
+"la miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
@@ -64381,16 +64307,13 @@ msgid "Show digiKam color &label"
 msgstr "Mostra l'etichetta co&lorata di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam color label as a border around the "
-#| "thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
-"Abilita questa opzione per mostrare l'etichetta colorata di digiKam attorno "
-"alla miniatura."
+"Abilita questa opzione per mostrare l'etichetta colorata di digiKam come "
+"linea sotto la miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
@@ -64399,17 +64322,13 @@ msgid "Show rotation overlay buttons"
 msgstr "Mostra in sovrimpressione i pulsanti per la rotazione"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show overlay buttons over the image thumbnail to be "
-#| "able to process left or right image rotation."
+#, kde-format
 msgid ""
 "Set this option to show the transformation overlay buttons over the "
 "thumbnail to process left or right rotation."
 msgstr ""
-"Abilita questa opzione per mostrare i pulsanti per la rotazione "
-"dell'immagine sopra la miniatura, in modo da poter eseguire la rotazione "
-"dell'immagine a destra o a sinistra."
+"Abilita questa opzione per mostrare i pulsanti della trasformazione sopra la "
+"miniatura per poter eseguire la rotazione a destra o a sinistra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
@@ -64417,34 +64336,28 @@ msgid "Show fullscreen overlay button"
 msgstr "Mostra in sovrimpressione il pulsante per lo schermo intero"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
 "fullscreen mode."
 msgstr ""
 "Abilita questa opzione per mostrare un pulsante per l'apertura in modalità a "
-"schermo intero dell'immagine sopra la miniatura."
+"schermo intero sopra la miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
-#, fuzzy, kde-format
-#| msgid "Show rotation overlay buttons"
+#, kde-format
 msgid "Show geolocation overlay button"
-msgstr "Mostra in sovrimpressione i pulsanti per la rotazione"
+msgstr "Mostra pulsante di geolocalizzazione"
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
 msgstr ""
-"Abilita questa opzione per mostrare un pulsante per l'apertura in modalità a "
-"schermo intero dell'immagine sopra la miniatura."
+"Abilita questa opzione per mostrare un pulsante sopra la miniatura per "
+"identificare in modo geolocalizzato l'elemento e aprire la scheda della "
+"mappa."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -64638,14 +64551,11 @@ msgstr ""
 "più rapida"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
-"Deseleziona questa opzione se non vuoi convertire l'immagine di anteprima a "
-"16 bit in 8 bit."
+"Seleziona questa opzione se vuoi convertire l'immagine di anteprima a 16 bit "
+"in 8 bit."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
@@ -64653,13 +64563,10 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "L'immagine in anteprima viene sempre adattata alla finestra"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
-"Deseleziona questa opzione se non vuoi ridimensionare le immagini piccole "
-"alla finestra."
+"Seleziona questa opzione se vuoi adattare le immagini piccole alla finestra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -64667,11 +64574,9 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "L'immagine in anteprima usa l'antialias per ridimensionare"
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
-msgstr ""
-"Deseleziona questa opzione se non vuoi usare l'antialias per ridimensionare."
+msgstr "Seleziona questa opzione se vuoi usare l'antialias per ridimensionare."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -64680,12 +64585,10 @@ msgid "Show icons and text over preview"
 msgstr "Mostra le icone e il testo sopra l'anteprima"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you don't want to see icons and text in the image preview."
+#, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
-"Deseleziona questa opzione se non vuoi vedere le icone e il testo sopra "
+"Seleziona questa opzione se vuoi vedere le icone e il testo sopra "
 "l'anteprima."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
@@ -64694,31 +64597,25 @@ msgid "Auto play of videos or animations"
 msgstr "Riproduzione automatica di video o animazioni"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to auto play of videos or animations."
+#, kde-format
 msgid "Check this if you want to auto play the videos or animations."
 msgstr ""
-"Deseleziona questa opzione se non vuoi riprodurre automaticamente video o "
+"Seleziona questa opzione se vuoi riprodurre automaticamente video o "
 "animazioni."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
-#, fuzzy, kde-format
-#| msgid "Show icons and text over preview"
+#, kde-format
 msgid "Show a text overlay over preview."
-msgstr "Mostra le icone e il testo sopra l'anteprima"
+msgstr "Mostra un testo sopra l'anteprima"
 
 #: core/utilities/setup/album/setupalbumview.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
 msgstr ""
-"Deseleziona questa opzione se non vuoi vedere le icone e il testo sopra "
-"l'anteprima."
+"Seleziona questa opzione se vuoi visualizzare un riquadro in "
+"sovraimpressione con i dettagli tecnici e le proprietà dello scatto."
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
 #, kde-format
@@ -65553,16 +65450,7 @@ msgid "Root Album Folders"
 msgstr "Cartelle di album radice"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set the names of directories that you want to ignore from your photo "
-#| "collections. The names are case sensitive and should be separated by a "
-#| "semicolon.</p><p>This is for example useful when you store your photos on "
-#| "a Synology NAS (Network Attached Storage). In every directory the system "
-#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
-#| "inserting the original photo and its corresponding thumbnail twice, "
-#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
-#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
+#, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -65581,9 +65469,9 @@ msgstr ""
 "cartella il sistema crea una sotto-cartella @eaDir per memorizzare le "
 "miniature. Per evitare che digiKam inserisca due volte la fotografia "
 "originale e la relativa miniatura, @eaDir viene ignorata per impostazione "
-"predefinita.</p><p>Per includere di nuovo le cartelle ignorate per "
-"impostazione predefinita, aggiungi ad esse un prefisso meno, per es. -@eaDir."
-"</p>"
+"predefinita.</p><p>Sono supportati i caratteri jolly tipo '*' o '?'.</"
+"p><p>Per includere di nuovo le cartelle ignorate per impostazione "
+"predefinita, aggiungi ad esse un prefisso meno, per es. -@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
@@ -65814,7 +65702,7 @@ msgid "Download Required Model Files"
 msgstr "Scarica i file modello richiesti"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
@@ -67775,7 +67663,7 @@ msgstr "Usa le finestre di dialogo native dei file del sistema"
 msgid "Draw frames around grouped items"
 msgstr "Disegna cornici attorno agli elementi raggruppati"
 
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:38
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
 #, kde-format
 msgid ""
 "Set this option to configure how sidebar tab titles are visible. Use \"Only "
@@ -67891,18 +67779,15 @@ msgstr ""
 "manutenzione."
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
 "Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
-"<font color='red'><i>Attenzione: queste impostazioni rallentano l'avvio!</"
-"i></font>"
+"<font color='black'><i><b>⚠️Attenzione:</b> queste impostazioni rallentano "
+"l'avvio! Leggi prima attentamente la <a href=\"%1\">documentazione in linea</"
+"a>.</i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
@@ -68078,27 +67963,45 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Raggruppamento"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<font color='black'><i><b>⚠️Warning:</b> These settings make startup "
+#| "slower! Read the <a href=\"%1\">online documentation</a> carefully first."
+#| "</i></font>"
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
+"take effect after the restart. Some settings are hardware dependent and may "
+"have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
+"information.</i></font>"
+msgstr ""
+"<font color='black'><i><b>⚠️Attenzione:</b> queste impostazioni rallentano "
+"l'avvio! Leggi prima attentamente la <a href=\"%1\">documentazione in linea</"
+"a>.</i></font>"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Usa ridimensionamento High DPI dal fattore dello schermo"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Usa mappe di pixel con risoluzione High DPI"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Usa software OpenGL per la resa"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:120
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Usa accelerazione hardware OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -68107,12 +68010,12 @@ msgstr ""
 "Questa opzione è ancora sperimentale e richiede anche che certe variabili "
 "d'ambiente siano impostate manualmente."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:141
 #, kde-format
 msgid "Use OpenCL acceleration for AI models"
 msgstr "Usa l'accelerazione OpenCL per i modelli di IA"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -68121,75 +68024,65 @@ msgstr ""
 "Questa opzione è ancora sperimentale e potrebbe causare blocchi se non sono "
 "installati i driver corretti."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Test GPU di compatibilità IA"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Scarica i dati degli eseguibili richiesti:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Apri finestra di dialogo dello scaricamento..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "Open Local Storage..."
 msgstr "Apri memorizzazione locale..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Usa accelerazione hardware della scheda video"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:143
+#: core/utilities/setup/misc/systemsettingswidget.cpp:161
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Usa conversione delle trame video"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Motore di decodifica per la resa video:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:148
+#: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (predefinito)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:170
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:174
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:178
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:168
+#: core/utilities/setup/misc/systemsettingswidget.cpp:186
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Abilita il registro del debug interno"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:185
-#, kde-format
-msgid ""
-"<b>Note: All changes to these settings only take effect after the restart. "
-"Some settings are hardware dependent and may have no effect.</b>"
-msgstr ""
-"<b>Nota: tutte le modifiche a queste impostazioni saranno applicate dopo il "
-"riavvio. Alcune impostazioni dipendono dall'hardware e potrebbero non essere "
-"applicate.</b>"
 
 #: core/utilities/setup/setup.cpp:127
 #, kde-format
@@ -69345,6 +69238,14 @@ msgstr "Elementi album"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementi importati"
+
+#~ msgid ""
+#~ "<b>Note: All changes to these settings only take effect after the "
+#~ "restart. Some settings are hardware dependent and may have no effect.</b>"
+#~ msgstr ""
+#~ "<b>Nota: tutte le modifiche a queste impostazioni saranno applicate dopo "
+#~ "il riavvio. Alcune impostazioni dipendono dall'hardware e potrebbero non "
+#~ "essere applicate.</b>"
 
 #~ msgid "IRC: "
 #~ msgstr "IRC: "

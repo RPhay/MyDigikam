@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:42+0000\n"
+"POT-Creation-Date: 2026-01-05 00:40+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -285,7 +285,7 @@ msgstr "Ŝanĝi Vizaĝan Etikedon"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:780
+#: core/app/views/preview/itempreviewview.cpp:815
 #, kde-format
 msgid "&Cancel"
 msgstr "&Rezigni"
@@ -296,7 +296,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "A&signi Etikedojn al Elektitaj Eroj"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:778
+#: core/app/views/preview/itempreviewview.cpp:813
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Asigni Etikedojn al Ĉi &tiu Ero"
@@ -532,7 +532,7 @@ msgid "Show Fullscreen"
 msgstr "Montri Plenekranon"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:170
+#: core/app/views/preview/itempreviewview.cpp:178
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -540,7 +540,7 @@ msgid "Rotate Left"
 msgstr "Turni maldekstren"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:172
+#: core/app/views/preview/itempreviewview.cpp:180
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2792,50 +2792,56 @@ msgstr ""
 "<p>La donita vojo por la agorda dosiero ne validas. Aŭ ĝia gepatra dosierujo "
 "ne ekzistas, ĝi estas dosierujo mem aŭ ĝi ne povas esti legita/skribita.</p>"
 
-#: core/app/utils/digikam_globals.cpp:121
+#: core/app/utils/digikam_globals.cpp:123
 #, kde-format
 msgid "%1 Image (%2)"
 msgstr "%1 Bildo (%2)"
 
-#: core/app/utils/digikam_globals.cpp:125
+#: core/app/utils/digikam_globals.cpp:127
 #, kde-format
 msgid "TIFF Image (*.tiff *.tif)"
 msgstr "TIFF-bildo (*.tiff *.tif)"
 
-#: core/app/utils/digikam_globals.cpp:127
+#: core/app/utils/digikam_globals.cpp:129
 #, kde-format
 msgid "JPEG Image (*.jpg *.jpeg *.jpe)"
 msgstr "JPEG-bildo (*.jpg *.jpeg *.jpe)"
 
-#: core/app/utils/digikam_globals.cpp:132
+#: core/app/utils/digikam_globals.cpp:134
 #, kde-format
 msgid "JPEG2000 Image (*.jp2 *.j2k *.jpx *.pgx)"
 msgstr "JPEG2000 Bildo (*.jp2 *.j2k *.jpx *.pgx)"
 
-#: core/app/utils/digikam_globals.cpp:137
+#: core/app/utils/digikam_globals.cpp:139
 #, kde-format
 msgid "Progressive Graphics file (*.pgf)"
 msgstr "Progresema Grafika dosiero (*.pgf)"
 
-#: core/app/utils/digikam_globals.cpp:142
+#: core/app/utils/digikam_globals.cpp:144
 #, kde-format
 msgid "High Efficiency Image Coding (*.heic *.heif)"
 msgstr "Alta Efikeca Bilda Kodigo (*.heic *.heif)"
 
-#: core/app/utils/digikam_globals.cpp:149
+#: core/app/utils/digikam_globals.cpp:151
 #, kde-format
 msgid "Flexible Image Transport System (*.fts *.fit *.fits)"
 msgstr "Fleksebla Bilda Transportsistemo (*.fts *.fit *.fits)"
 
-#: core/app/utils/digikam_globals.cpp:156
+#: core/app/utils/digikam_globals.cpp:158
 #, kde-format
 msgid "Raw Images (%1)"
 msgstr "Krudaj Bildoj (%1)"
 
-#: core/app/utils/digikam_globals.cpp:158
+#: core/app/utils/digikam_globals.cpp:160
 #, kde-format
 msgid "All supported files (%1)"
 msgstr "Ĉiuj subtenataj dosieroj (%1)"
+
+#: core/app/utils/digikam_globals.cpp:319
+#, kde-format
+msgctxt "@info: date format settings"
+msgid "format settings"
+msgstr "formataj agordoj"
 
 #: core/app/utils/digikam_version.cpp:60
 #, fuzzy, kde-format
@@ -2862,7 +2868,7 @@ msgstr "Kontribuu..."
 msgid "Donate: "
 msgstr "Dato: "
 
-#: core/app/views/preview/itempreviewview.cpp:166
+#: core/app/views/preview/itempreviewview.cpp:174
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
@@ -2870,7 +2876,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "Reen"
 
-#: core/app/views/preview/itempreviewview.cpp:168
+#: core/app/views/preview/itempreviewview.cpp:176
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
@@ -2878,42 +2884,42 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "Antaŭen"
 
-#: core/app/views/preview/itempreviewview.cpp:179
+#: core/app/views/preview/itempreviewview.cpp:187
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "Aldoni Vizaĝan Etikedon"
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewview.cpp:192
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "Forigi ĉiujn vizaĝojn sur ĉi tiu bildo"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:195
 #, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Marki ĉiujn nekonfirmitajn vizaĝojn kiel ignoritajn"
 
-#: core/app/views/preview/itempreviewview.cpp:194
+#: core/app/views/preview/itempreviewview.cpp:202
 #, kde-format
 msgid "Show Face Tags"
 msgstr "Montri Vizaĝajn Etikedojn"
 
-#: core/app/views/preview/itempreviewview.cpp:199
+#: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
 msgid "Add a focus point"
 msgstr "Aldoni fokuspunkton"
 
-#: core/app/views/preview/itempreviewview.cpp:201
+#: core/app/views/preview/itempreviewview.cpp:209
 #, kde-format
 msgid "Show focus points"
 msgstr "Montri fokuspunktojn"
 
-#: core/app/views/preview/itempreviewview.cpp:207
+#: core/app/views/preview/itempreviewview.cpp:215
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "Montri Plenekranon"
 
-#: core/app/views/preview/itempreviewview.cpp:513
+#: core/app/views/preview/itempreviewview.cpp:517
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, fuzzy, kde-format
 #| msgid "Faces"
@@ -6419,7 +6425,7 @@ msgid "Titles:"
 msgstr "Titoloj:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
-#: core/libs/properties/captions/itemdescedittab_descview.cpp:289
+#: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
@@ -6431,7 +6437,7 @@ msgid "Captions:"
 msgstr "Subtitoloj:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
-#: core/libs/properties/captions/itemdescedittab_descview.cpp:294
+#: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
@@ -22727,7 +22733,7 @@ msgid "Slideshow"
 msgstr "Bildoprezento"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:448
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Bildoprezento"
@@ -38603,7 +38609,7 @@ msgid "Properties"
 msgstr "Ecoj"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:433
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
@@ -40547,46 +40553,46 @@ msgstr "Phase One Cifereca Fotilo Kruda Bilda Formato"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Arriflex Camera Raw Image Format"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:402
+#: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Ĉu vi volas fari ĉi tiun operacion sur ĉiuj grupaj eroj?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:404
+#: core/libs/settings/applicationsettings_miscs.cpp:414
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Memori elekton por ĉi tiu operacio"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:438
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Luma Tablo"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:443
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Batch Queue Manager"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Renaming"
 msgstr "Alinomado"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:458
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Importi/Eksporti ilojn"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr "Iloj (redaktilo, panoramo, stakmiksado, kalendaro, ekstera programo)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:480
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -40595,32 +40601,32 @@ msgstr ""
 "Operacioj rilataj al metadatenoj, etikedoj, taksoj, etikedoj, geolokigo kaj "
 "rotacio"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:485
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Aldonante erojn al la Luma Tablo"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:490
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Aldonante erojn al la Batch Queue Manager"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:495
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Malfermante erojn en la Bildaprezento"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:500
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, kde-format
 msgid "Renaming items"
 msgstr "Renomi aĵojn"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:505
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr "Pasante erojn por importi/eksporti ilojn"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:510
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -45919,7 +45925,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Elekti"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:69
+#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:73
 #, fuzzy, kde-format
 #| msgid "Pick Label: %1"
 msgctxt "@info: pick label selector"
@@ -51244,7 +51250,7 @@ msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr "nova normo uzita en cifereca fotarto, dizajnita por anstataŭigi IPTC."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
-#: core/showfoto/setup/showfotosetupmisc.cpp:213
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:206
 #, kde-format
@@ -51259,35 +51265,35 @@ msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ExifTool"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:124
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr "Thumbbar, Dosierujo-Vido, kaj Stack-Vidi Erojn Ordo Ordo"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:128
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid "Sort images by:"
 msgstr "Ordigi bildojn per:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:130
+#: core/showfoto/setup/showfotosetupmisc.cpp:135
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Dato"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:131
+#: core/showfoto/setup/showfotosetupmisc.cpp:136
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Nomo"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:132
+#: core/showfoto/setup/showfotosetupmisc.cpp:137
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Dosiera grandeco"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:133
+#: core/showfoto/setup/showfotosetupmisc.cpp:138
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -51296,12 +51302,12 @@ msgstr ""
 "Ĉi tie, elektu ĉu lastatempe ŝargitaj bildoj estas ordigitaj laŭ sia dato, "
 "nomo aŭ grandeco sur disko."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:136
+#: core/showfoto/setup/showfotosetupmisc.cpp:141
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Inversa ordo"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:137
+#: core/showfoto/setup/showfotosetupmisc.cpp:142
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -51310,76 +51316,76 @@ msgstr ""
 "Se ĉi tiu opcio estas ebligita, lastatempe ŝargitaj bildoj estos ordigitaj "
 "en malkreskanta ordo."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:146
+#: core/showfoto/setup/showfotosetupmisc.cpp:151
 #, kde-format
 msgid "Thumbbar Items"
 msgstr "Thumbbar Eroj"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:149
+#: core/showfoto/setup/showfotosetupmisc.cpp:154
 #, kde-format
 msgid "&Show image Format"
 msgstr "&Montri bildoformaton"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:150
+#: core/showfoto/setup/showfotosetupmisc.cpp:155
 #: core/utilities/setup/camera/setupcamera.cpp:446
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri bildformaton super bildeto."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:156
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "&Montri Geolokigan Indikilon"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:152
+#: core/showfoto/setup/showfotosetupmisc.cpp:157
 #: core/utilities/setup/camera/setupcamera.cpp:449
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr "Agordu ĉi tiun opcion por indiki ĉu bildo havas geolokigan informon."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:153
+#: core/showfoto/setup/showfotosetupmisc.cpp:158
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:79
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Rulumi nunan eron al la centro de la dikfingrostango"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:154
+#: core/showfoto/setup/showfotosetupmisc.cpp:159
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:155
+#: core/showfoto/setup/showfotosetupmisc.cpp:160
 #, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
 "Malebligu ĉi tiun opcion se vi ne volas ke bildetoj estu konservitaj en "
 "kaŝmemoro sur disko."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:165
+#: core/showfoto/setup/showfotosetupmisc.cpp:170
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:123
 #, kde-format
 msgid "Updates"
 msgstr "Ĝisdatigoj"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:169
+#: core/showfoto/setup/showfotosetupmisc.cpp:174
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:127
 #, kde-format
 msgid "Check for new version:"
 msgstr "Kontroli disponeblon de nova versio:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:171
+#: core/showfoto/setup/showfotosetupmisc.cpp:176
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:129
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Nur Por Stabilaj Eldonoj"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:172
+#: core/showfoto/setup/showfotosetupmisc.cpp:177
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:130
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Semajnaj Antaŭ-Eldonoj"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:131
 #, kde-format
 msgid ""
@@ -51396,13 +51402,13 @@ msgstr ""
 "funkciojn. \n"
 "kaj ne rekomendas uzi en produktado ĉar cimoj povas resti."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Uzi Version Kun Sencimigaj Simboloj"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:184
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:137
 #, kde-format
 msgid ""
@@ -51416,177 +51422,201 @@ msgstr ""
 "Ĉi tiu versio estas pli peza sed povas helpi programistojn spuri "
 "misfunkciojn en erarserĉilo."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:184
+#: core/showfoto/setup/showfotosetupmisc.cpp:189
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:142
 #, kde-format
 msgid "Last check: %1"
 msgstr "Lasta kontrolo: %1"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:185
+#: core/showfoto/setup/showfotosetupmisc.cpp:190
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:143
 #, kde-format
 msgid "Check now..."
 msgstr "Kontroli nun..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:220
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:29
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "&Montri fulmekranon ĉe ekfunkciigo"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:221
+#: core/showfoto/setup/showfotosetupmisc.cpp:226
 #, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "Uzi denaskajn dosierajn dialogojn de la sistemo"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:34
+#: core/showfoto/setup/showfotosetupmisc.cpp:228
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:33
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Flankmenuklapeta titolo:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
+#: core/showfoto/setup/showfotosetupmisc.cpp:230
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:35
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Nur Por Aktiva Tab"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
+#: core/showfoto/setup/showfotosetupmisc.cpp:231
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
 #, kde-format
 msgid "For All Tabs"
 msgstr "Por Ĉiuj Langetoj"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:228
+#: core/showfoto/setup/showfotosetupmisc.cpp:232
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Agordu ĉi tiun opcion por agordi kiel videblas la titolo de la langeto "
 "flankaj."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
+#: core/showfoto/setup/showfotosetupmisc.cpp:234
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:40
 #, kde-format
 msgid "Widget style:"
 msgstr "Stilo de fenestraĵo:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:44
+#: core/showfoto/setup/showfotosetupmisc.cpp:236
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ""
 "Agordu ĉi tiun opcion por elekti la defaŭltajn fenestran dekoracion kaj "
 "aspekton."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
+#: core/showfoto/setup/showfotosetupmisc.cpp:260
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:65
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Piktogrametoso (ŝanĝoj post rekomenco):"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:69
+#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Agordu ĉi tiun opcion por elekti la defaŭltan piktogrametoson."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
+#: core/showfoto/setup/showfotosetupmisc.cpp:266
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:71
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
+#: core/showfoto/setup/showfotosetupmisc.cpp:267
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:72
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Vento"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
+#: core/showfoto/setup/showfotosetupmisc.cpp:268
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Vento Malhela"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
+#: core/showfoto/setup/showfotosetupmisc.cpp:269
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
+#: core/showfoto/setup/showfotosetupmisc.cpp:270
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:78
+#: core/showfoto/setup/showfotosetupmisc.cpp:271
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Homaro"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:79
+#: core/showfoto/setup/showfotosetupmisc.cpp:272
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oksigeno"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:103
+#: core/showfoto/setup/showfotosetupmisc.cpp:297
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:101
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Uzi Piktograman Etoson de Sistemo"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:110
+#: core/showfoto/setup/showfotosetupmisc.cpp:304
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Date and Time Information"
+msgid "Date and time format (%1):"
+msgstr "Informoj pri Dato kaj Tempo"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:116
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in whole application."
+msgid "This string is used as the date and time format in whole application."
+msgstr ""
+"Elektu ĉi tie la tiparon uzatan por montri tekston en la tuta aplikaĵo."
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Write the corrected date and time for each image"
+msgid "Reverts to the local short date and time format"
+msgstr "Skribi la korektitan daton kaj horon por ĉiu bildo"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:316
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:121
 #, kde-format
 msgid "Application font:"
 msgstr "Tiparo de aplikaĵo:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:111
+#: core/showfoto/setup/showfotosetupmisc.cpp:317
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:122
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Elektu ĉi tie la tiparon uzatan por montri tekston en la tuta aplikaĵo."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:126
+#: core/showfoto/setup/showfotosetupmisc.cpp:337
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:143
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Aspekto"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:324
+#: core/showfoto/setup/showfotosetupmisc.cpp:352
 #: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Literumkontrolo"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:330
+#: core/showfoto/setup/showfotosetupmisc.cpp:358
 #: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Lokalizi"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/showfoto/setup/showfotosetupmisc.cpp:364
 #: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Sistemo"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:370
+#: core/showfoto/setup/showfotosetupmisc.cpp:398
 #: core/utilities/setup/misc/setupmisc_settings.cpp:34
 #, kde-format
 msgid ""
@@ -52542,28 +52572,22 @@ msgstr "Konverti la unuan literon de ĉiu vorto al majuskla"
 msgid "First Letter of Each Word Uppercase"
 msgstr "Unua Litero de Ĉiu Vorto Majuskla"
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Date format:"
 msgid "Date Format"
 msgstr "Datformato:"
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:35
 #, kde-format
 msgid "Recognize and format a date"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:39
 #, kde-format
 msgid "Recognize and format a date to string"
 msgstr ""
-
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
-#, kde-format
-msgctxt "@info: date format settings"
-msgid "format settings"
-msgstr "formataj agordoj"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, kde-format
@@ -66069,7 +66093,7 @@ msgid "Download Required Model Files"
 msgstr "Elŝuti Bezonatajn Modeldosierojn"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
@@ -68035,7 +68059,7 @@ msgstr "Uzi denaskajn dosierdialogojn de sistemo"
 msgid "Draw frames around grouped items"
 msgstr "Desegni kadrojn ĉirkaŭ grupigitaj eroj"
 
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:38
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
 #, kde-format
 msgid ""
 "Set this option to configure how sidebar tab titles are visible. Use \"Only "
@@ -68335,119 +68359,125 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Grupiĝo"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#, fuzzy, kde-format
+#| msgid ""
+#| "<b>Note: All changes to these settings only take effect after the "
+#| "restart. Some settings are hardware dependent and may have no effect.</b>"
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
+"take effect after the restart. Some settings are hardware dependent and may "
+"have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
+"information.</i></font>"
+msgstr ""
+"<b>Noto: Ĉiuj ŝanĝoj al ĉi tiuj agordoj efektiviĝas nur post la rekomenco. "
+"Iuj agordoj dependas de aparataro kaj eble ne efikas.</b>"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Uzi altan DPI-skalon de la ekranfaktoro"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Uzi bildmapojn kun alta DPI-distingivo"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "Use the software OpenGL for rendering"
 msgid "Use software OpenGL for rendering"
 msgstr "Uzi la programaron OpenGL por bildigo"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:120
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, fuzzy, kde-format
 #| msgid "Use the OpenCL hardware acceleration"
 msgid "Use OpenCL hardware acceleration"
 msgstr "Uzi la OpenCL aparatan akcelon"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:141
 #, fuzzy, kde-format
 #| msgid "Use the OpenCL hardware acceleration"
 msgid "Use OpenCL acceleration for AI models"
 msgstr "Uzi la OpenCL aparatan akcelon"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Elŝuti bezonatajn duumajn datumojn:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Malfermi Elŝutan Dialogon..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Export to Local Storage"
 msgid "Open Local Storage..."
 msgstr "Eksporti al Loka konservejo"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, fuzzy, kde-format
 #| msgid "Use the video hardware acceleration"
 msgid "Use video hardware acceleration"
 msgstr "Uzi la akceladon de video aparataro"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:143
+#: core/utilities/setup/misc/systemsettingswidget.cpp:161
 #, kde-format
 msgid "Use video textures conversion"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Malkodi backend por bildi video:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:148
+#: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (Defaŭlto)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:170
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:174
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (Sistemo)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:178
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AV-Fondaĵo (Sistemo)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:168
+#: core/utilities/setup/misc/systemsettingswidget.cpp:186
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Ebligi internan sencimigan registradon"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:185
-#, kde-format
-msgid ""
-"<b>Note: All changes to these settings only take effect after the restart. "
-"Some settings are hardware dependent and may have no effect.</b>"
-msgstr ""
-"<b>Noto: Ĉiuj ŝanĝoj al ĉi tiuj agordoj efektiviĝas nur post la rekomenco. "
-"Iuj agordoj dependas de aparataro kaj eble ne efikas.</b>"
 
 #: core/utilities/setup/setup.cpp:127
 #, kde-format

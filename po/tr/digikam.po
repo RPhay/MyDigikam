@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:42+0000\n"
+"POT-Creation-Date: 2026-01-05 00:40+0000\n"
 "PO-Revision-Date: 2026-01-01 12:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -313,7 +313,7 @@ msgstr "Yüz Künyesini Değiştir"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:780
+#: core/app/views/preview/itempreviewview.cpp:815
 #, kde-format
 msgid "&Cancel"
 msgstr "İ&ptal"
@@ -324,7 +324,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "&Seçili Ögelere Künyeler Ata"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:778
+#: core/app/views/preview/itempreviewview.cpp:813
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Bu Ögeye &Künyeler Ata"
@@ -551,7 +551,7 @@ msgid "Show Fullscreen"
 msgstr "Tam Ekran Göster"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:170
+#: core/app/views/preview/itempreviewview.cpp:178
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -559,7 +559,7 @@ msgid "Rotate Left"
 msgstr "Sola Döndür"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:172
+#: core/app/views/preview/itempreviewview.cpp:180
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2802,50 +2802,56 @@ msgstr ""
 "<p>Yapılandırma dosyasının verilen yolu geçerli değil. Ya ana dizini yok, "
 "kendisi bir dizin ya da okunamıyor/yazılamıyor.</p>"
 
-#: core/app/utils/digikam_globals.cpp:121
+#: core/app/utils/digikam_globals.cpp:123
 #, kde-format
 msgid "%1 Image (%2)"
 msgstr "%1 Görsel (%2)"
 
-#: core/app/utils/digikam_globals.cpp:125
+#: core/app/utils/digikam_globals.cpp:127
 #, kde-format
 msgid "TIFF Image (*.tiff *.tif)"
 msgstr "TIFF Görseli (*.tiff *.tif)"
 
-#: core/app/utils/digikam_globals.cpp:127
+#: core/app/utils/digikam_globals.cpp:129
 #, kde-format
 msgid "JPEG Image (*.jpg *.jpeg *.jpe)"
 msgstr "JPEG Görseli (*.jpg *.jpeg *.jpe)"
 
-#: core/app/utils/digikam_globals.cpp:132
+#: core/app/utils/digikam_globals.cpp:134
 #, kde-format
 msgid "JPEG2000 Image (*.jp2 *.j2k *.jpx *.pgx)"
 msgstr "JPEG2000 Görseli (*.jp2 *.j2k *.jpx *.pgx)"
 
-#: core/app/utils/digikam_globals.cpp:137
+#: core/app/utils/digikam_globals.cpp:139
 #, kde-format
 msgid "Progressive Graphics file (*.pgf)"
 msgstr "Progressive Graphics dosyası (*.pgf)"
 
-#: core/app/utils/digikam_globals.cpp:142
+#: core/app/utils/digikam_globals.cpp:144
 #, kde-format
 msgid "High Efficiency Image Coding (*.heic *.heif)"
 msgstr "Yüksek Verimli Görsel Kodlaması (*.heic *.heif)"
 
-#: core/app/utils/digikam_globals.cpp:149
+#: core/app/utils/digikam_globals.cpp:151
 #, kde-format
 msgid "Flexible Image Transport System (*.fts *.fit *.fits)"
 msgstr "Esnek Görsel Taşıma Sistemi (*.fts *.fit *.fits)"
 
-#: core/app/utils/digikam_globals.cpp:156
+#: core/app/utils/digikam_globals.cpp:158
 #, kde-format
 msgid "Raw Images (%1)"
 msgstr "Ham Görseller (%1)"
 
-#: core/app/utils/digikam_globals.cpp:158
+#: core/app/utils/digikam_globals.cpp:160
 #, kde-format
 msgid "All supported files (%1)"
 msgstr "Desteklenen tüm dosyalar (%1)"
+
+#: core/app/utils/digikam_globals.cpp:319
+#, kde-format
+msgctxt "@info: date format settings"
+msgid "format settings"
+msgstr "Biçim ayarları"
 
 #: core/app/utils/digikam_version.cpp:60
 #, fuzzy, kde-format
@@ -2872,7 +2878,7 @@ msgstr "Katkıda Bulun…"
 msgid "Donate: "
 msgstr "Tarih: "
 
-#: core/app/views/preview/itempreviewview.cpp:166
+#: core/app/views/preview/itempreviewview.cpp:174
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, kde-format
@@ -2880,7 +2886,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "Geri"
 
-#: core/app/views/preview/itempreviewview.cpp:168
+#: core/app/views/preview/itempreviewview.cpp:176
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:294
 #, kde-format
@@ -2888,42 +2894,42 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "İleri"
 
-#: core/app/views/preview/itempreviewview.cpp:179
+#: core/app/views/preview/itempreviewview.cpp:187
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "Yüz Künyesi Ekle"
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewview.cpp:192
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "Bu Görseldeki Tüm Yüzleri Temizle"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:195
 #, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Doğrulanmamış Tüm Yüzleri Yok Sayıldı Olarak İmle"
 
-#: core/app/views/preview/itempreviewview.cpp:194
+#: core/app/views/preview/itempreviewview.cpp:202
 #, kde-format
 msgid "Show Face Tags"
 msgstr "Yüz Künyelerini Göster"
 
-#: core/app/views/preview/itempreviewview.cpp:199
+#: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
 msgid "Add a focus point"
 msgstr "Bir Odak Noktası Ekle"
 
-#: core/app/views/preview/itempreviewview.cpp:201
+#: core/app/views/preview/itempreviewview.cpp:209
 #, kde-format
 msgid "Show focus points"
 msgstr "Odak Noktalarını Göster"
 
-#: core/app/views/preview/itempreviewview.cpp:207
+#: core/app/views/preview/itempreviewview.cpp:215
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "Tam Ekran Göster"
 
-#: core/app/views/preview/itempreviewview.cpp:513
+#: core/app/views/preview/itempreviewview.cpp:517
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, kde-format
 msgctxt "@action: face workflow"
@@ -6328,7 +6334,7 @@ msgid "Titles:"
 msgstr "Başlıklar:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
-#: core/libs/properties/captions/itemdescedittab_descview.cpp:289
+#: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
@@ -6340,7 +6346,7 @@ msgid "Captions:"
 msgstr "Alt yazılar:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
-#: core/libs/properties/captions/itemdescedittab_descview.cpp:294
+#: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
@@ -22388,7 +22394,7 @@ msgid "Slideshow"
 msgstr "Slayt Gösterisi"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:448
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Slayt Gösterisi"
@@ -37978,7 +37984,7 @@ msgid "Properties"
 msgstr "Özellikler"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:433
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
@@ -39868,46 +39874,46 @@ msgstr "Phase One Sayısal Kamera RAW Görsel Biçimi"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Arriflex Kamera RAW Görsel Biçimi"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:402
+#: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Bu işlemi tüm grup ögelerinde yapmak istiyor musunuz?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:404
+#: core/libs/settings/applicationsettings_miscs.cpp:414
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Bu işlem için seçimi anımsa"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:438
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Işık Tablası"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:443
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Toplu Kuyruk Yöneticisi"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Renaming"
 msgstr "Yeniden Adlandırma"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:458
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, kde-format
 msgid "Import/Export tools"
 msgstr "İçe/Dışa Aktarma Araçları"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr "Araçlar"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:480
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -39916,32 +39922,32 @@ msgstr ""
 "Üst veri, yazılar, derecelendirmeler, etiketler, künyeler, coğrafi konum ve "
 "döndürme ile ilgili işlemler"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:485
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Ögeleri ışık tablasına eklemek"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:490
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Ögeleri Toplu Kuyruk Yöneticisi’ne eklemek"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:495
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Ögeleri slayt gösterisinde açmak"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:500
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, kde-format
 msgid "Renaming items"
 msgstr "Ögeleri yeniden adlandırmak"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:505
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr "Ögeleri içe/dışa aktarma araçlarına geçirmek"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:510
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -45142,7 +45148,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Seç"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:69
+#: core/libs/widgets/metadata/labels/picklabelwidget_selector.cpp:73
 #, kde-format
 msgctxt "@info: pick label selector"
 msgid "Pick Label: %1"
@@ -50434,7 +50440,7 @@ msgstr ""
 "yeni bir standart."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
-#: core/showfoto/setup/showfotosetupmisc.cpp:213
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:206
 #, kde-format
@@ -50449,37 +50455,37 @@ msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ExifTool"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:124
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 "Küçük Görsel Çubuğu, Klasör Görünümü ve Yığın Görünümü Ögelerinin Sıralama "
 "Düzeni"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:128
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid "Sort images by:"
 msgstr "Görselleri şuna göre sırala:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:130
+#: core/showfoto/setup/showfotosetupmisc.cpp:135
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Tarih"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:131
+#: core/showfoto/setup/showfotosetupmisc.cpp:136
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Ad"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:132
+#: core/showfoto/setup/showfotosetupmisc.cpp:137
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Dosya Boyutu"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:133
+#: core/showfoto/setup/showfotosetupmisc.cpp:138
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -50488,12 +50494,12 @@ msgstr ""
 "Burada, yeni yüklenen görsellerin diskteki tarihlerine, adlarına veya "
 "boyutlarına göre sıralanıp sıralanmayacağını seçin."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:136
+#: core/showfoto/setup/showfotosetupmisc.cpp:141
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Sıralamayı tersine çevir"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:137
+#: core/showfoto/setup/showfotosetupmisc.cpp:142
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -50502,29 +50508,29 @@ msgstr ""
 "Bu seçenek etkinleştirilirse yeni yüklenen görseller azalan düzende "
 "sıralanacaktır."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:146
+#: core/showfoto/setup/showfotosetupmisc.cpp:151
 #, kde-format
 msgid "Thumbbar Items"
 msgstr "Küçük Görsel Çubuğu Ögeleri"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:149
+#: core/showfoto/setup/showfotosetupmisc.cpp:154
 #, kde-format
 msgid "&Show image Format"
 msgstr "Görsel Biçimini &Göster"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:150
+#: core/showfoto/setup/showfotosetupmisc.cpp:155
 #: core/utilities/setup/camera/setupcamera.cpp:446
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr ""
 "Küçük görselin üzerinde görsel biçimini göstermek için bu seçeneği ayarlayın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:156
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "Coğrafi Konum Göstergesini &Göster"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:152
+#: core/showfoto/setup/showfotosetupmisc.cpp:157
 #: core/utilities/setup/camera/setupcamera.cpp:449
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
@@ -50532,49 +50538,49 @@ msgstr ""
 "Görselin coğrafi konum bilgisi içerip içermediğini belirtmek için bu "
 "seçeneği ayarlayın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:153
+#: core/showfoto/setup/showfotosetupmisc.cpp:158
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:79
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Geçerli ögeyi küçük görsel çubuğunun merkezine sardır"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:154
+#: core/showfoto/setup/showfotosetupmisc.cpp:159
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
 msgstr "Daha hızlı yeniden kullanım için küçük görselleri diskte depola"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:155
+#: core/showfoto/setup/showfotosetupmisc.cpp:160
 #, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
 "Küçük görsellerin diskte önbelleğinin tutulmasını istemiyorsanız bu "
 "seçeneğin işaretini kaldırın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:165
+#: core/showfoto/setup/showfotosetupmisc.cpp:170
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:123
 #, kde-format
 msgid "Updates"
 msgstr "Güncellemeler"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:169
+#: core/showfoto/setup/showfotosetupmisc.cpp:174
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:127
 #, kde-format
 msgid "Check for new version:"
 msgstr "Yeni sürüm denetleme kriteri:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:171
+#: core/showfoto/setup/showfotosetupmisc.cpp:176
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:129
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Yalnızca kararlı yayımlar"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:172
+#: core/showfoto/setup/showfotosetupmisc.cpp:177
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:130
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Haftalık ön yayımlar"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:131
 #, kde-format
 msgid ""
@@ -50591,13 +50597,13 @@ msgstr ""
 "Yeni özellikleri hızlı bir şekilde sınamak için “ön yayımlar” haftalık\n"
 "çıkarılır ve hatalar sürebileceğinden iş ortamında kullanılması önerilmez."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Hata ayıklama sembolleri olan sürümü kullan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:184
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:137
 #, kde-format
 msgid ""
@@ -50611,177 +50617,201 @@ msgstr ""
 "Bu sürüm daha ağırdır ancak geliştiricilerin hata ayıklayıcıdaki işlev "
 "bozukluklarını izlemesine yardımcı olabilir."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:184
+#: core/showfoto/setup/showfotosetupmisc.cpp:189
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:142
 #, kde-format
 msgid "Last check: %1"
 msgstr "Son denetleme: %1"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:185
+#: core/showfoto/setup/showfotosetupmisc.cpp:190
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:143
 #, kde-format
 msgid "Check now..."
 msgstr "Şimdi Denetle…"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:220
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:29
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "&Açılış ekranını göster"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:221
+#: core/showfoto/setup/showfotosetupmisc.cpp:226
 #, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "Yerel sistem dosya iletişim kutularını kullan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:34
+#: core/showfoto/setup/showfotosetupmisc.cpp:228
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:33
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Kenar çubuğu sekmesi başlığı:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
+#: core/showfoto/setup/showfotosetupmisc.cpp:230
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:35
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Yalnızca etkin sekme için"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
+#: core/showfoto/setup/showfotosetupmisc.cpp:231
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:36
 #, kde-format
 msgid "For All Tabs"
 msgstr "Tüm sekmeler için"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:228
+#: core/showfoto/setup/showfotosetupmisc.cpp:232
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Kenar çubuğu sekme başlıklarının nasıl göründüğünü yapılandırmak için bu "
 "seçeneği ayarlayın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
+#: core/showfoto/setup/showfotosetupmisc.cpp:234
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:40
 #, kde-format
 msgid "Widget style:"
 msgstr "Araç takımı biçemi:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:44
+#: core/showfoto/setup/showfotosetupmisc.cpp:236
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:42
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ""
 "Öntanımlı pencere dekorasyonu ve görünümünü seçmek için bu seçeneği "
 "ayarlayın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
+#: core/showfoto/setup/showfotosetupmisc.cpp:260
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:65
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Simge teması (yeniden başlatma gerekir):"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:69
+#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:67
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Öntanımlı simge temasını seçmek için bu seçeneği ayarlayın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
+#: core/showfoto/setup/showfotosetupmisc.cpp:266
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:71
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
+#: core/showfoto/setup/showfotosetupmisc.cpp:267
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:72
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Esinti"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
+#: core/showfoto/setup/showfotosetupmisc.cpp:268
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:73
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Esinti Koyu"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
+#: core/showfoto/setup/showfotosetupmisc.cpp:269
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:74
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
+#: core/showfoto/setup/showfotosetupmisc.cpp:270
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:75
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiyans"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:78
+#: core/showfoto/setup/showfotosetupmisc.cpp:271
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:76
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "İnsanlık"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:79
+#: core/showfoto/setup/showfotosetupmisc.cpp:272
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:77
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oksijen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:103
+#: core/showfoto/setup/showfotosetupmisc.cpp:297
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:101
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Sistem Simge Temasını Kullan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:110
+#: core/showfoto/setup/showfotosetupmisc.cpp:304
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Date and Time Information"
+msgid "Date and time format (%1):"
+msgstr "Tarih ve Zaman Bilgisi"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:116
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in whole application."
+msgid "This string is used as the date and time format in whole application."
+msgstr ""
+"Tüm uygulamada metin görüntülemek için kullanılan yazıtipini burada seçin."
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Write the corrected date and time for each image"
+msgid "Reverts to the local short date and time format"
+msgstr "Her bir görsel için düzeltilmiş tarihi ve zamanı yaz"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:316
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:121
 #, kde-format
 msgid "Application font:"
 msgstr "Uygulama yazıtipi:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:111
+#: core/showfoto/setup/showfotosetupmisc.cpp:317
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:122
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Tüm uygulamada metin görüntülemek için kullanılan yazıtipini burada seçin."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:126
+#: core/showfoto/setup/showfotosetupmisc.cpp:337
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:143
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Görünüş"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:324
+#: core/showfoto/setup/showfotosetupmisc.cpp:352
 #: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Yazım Denetimi"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:330
+#: core/showfoto/setup/showfotosetupmisc.cpp:358
 #: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Yerel Ayarlar"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/showfoto/setup/showfotosetupmisc.cpp:364
 #: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Sistem"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:370
+#: core/showfoto/setup/showfotosetupmisc.cpp:398
 #: core/utilities/setup/misc/setupmisc_settings.cpp:34
 #, kde-format
 msgid ""
@@ -51741,26 +51771,20 @@ msgstr "Her sözcüğün ilk harfini BÜYÜK harfe dönüştür"
 msgid "First Letter of Each Word Uppercase"
 msgstr "Her Sözcüğün İlk Harfi BÜYÜK"
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:33
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
 #, kde-format
 msgid "Date Format"
 msgstr "Tarih Biçimi"
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:35
 #, kde-format
 msgid "Recognize and format a date"
 msgstr "Tarihi tanı ve biçimlendir"
 
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:38
+#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:39
 #, kde-format
 msgid "Recognize and format a date to string"
 msgstr "Tarihi tanı ve bir dizi olarak biçimlendir"
-
-#: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:49
-#, kde-format
-msgctxt "@info: date format settings"
-msgid "format settings"
-msgstr "Biçim ayarları"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, kde-format
@@ -65067,7 +65091,7 @@ msgid "Download Required Model Files"
 msgstr "Gerekli Model Dosyalarını İndir"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:157
-#: core/utilities/setup/misc/systemsettingswidget.cpp:136
+#: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr "Veri dosyalarının depolanması için kullanılan yerel dizini açın."
@@ -66994,7 +67018,7 @@ msgstr "Sistem yerel dosya iletişim kutularını kullan"
 msgid "Draw frames around grouped items"
 msgstr "Gruplanan ögeler etrafında çerçeveler çiz"
 
-#: core/utilities/setup/misc/setupmisc_appearance.cpp:38
+#: core/utilities/setup/misc/setupmisc_appearance.cpp:37
 #, kde-format
 msgid ""
 "Set this option to configure how sidebar tab titles are visible. Use \"Only "
@@ -67283,27 +67307,43 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Gruplama"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:111
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
+#| "font>"
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
+"take effect after the restart. Some settings are hardware dependent and may "
+"have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
+"information.</i></font>"
+msgstr ""
+"<font color='red'><i>Uyarı: Bu ayarlar başlangıcı daha yavaş yapar!</i></"
+"font>"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Ekran çarpanından yüksek DPI’li ölçeklendirme kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:130
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Yüksek DPI çözünürlüğüne sahip piksel eşlemleri kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Sunum için yazılım OpenGL kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:120
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "OpenCL donanım ivmelendirmesini kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67312,12 +67352,12 @@ msgstr ""
 "Bu seçenek hâlâ deneyseldir ve çeşitli çevre değişkenlerinin elle "
 "ayarlanmasını gerektirir."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:123
+#: core/utilities/setup/misc/systemsettingswidget.cpp:141
 #, kde-format
 msgid "Use OpenCL acceleration for AI models"
 msgstr "Yapay zekâ modelleri için OpenCL ivmelendirmesini kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -67326,75 +67366,65 @@ msgstr ""
 "Bu seçenek hâlâ deneyseldir ve gerekli sürücüler kurulu değilse çökmelere "
 "neden olabilir."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "GPU Yapay Zekâ Uyumluluğunu Sına"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:130
+#: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Gerekli ikili veriyi indir:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "İndirme İletişim Kutusunu Aç…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "Open Local Storage..."
 msgstr "Yerel Depolamayı Aç…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Video donanım ivmelendirmesi kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:143
+#: core/utilities/setup/misc/systemsettingswidget.cpp:161
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Video dokuları dönüşümünü kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Video sunumu için kullanılan kod çözme arka ucu:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:148
+#: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (Öntanımlı)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:170
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:174
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:178
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:168
+#: core/utilities/setup/misc/systemsettingswidget.cpp:186
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "İçsel hata ayıklama günlüklemesini etkinleştir"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:185
-#, kde-format
-msgid ""
-"<b>Note: All changes to these settings only take effect after the restart. "
-"Some settings are hardware dependent and may have no effect.</b>"
-msgstr ""
-"<b>Not: Bu ayarlarda yapılan tüm değişiklikler yalnızca yeniden başlatmanın "
-"ardından etkili olur. Bazı ayarlar donanıma bağlıdır ve hiçbir etkisi "
-"olmayabilir.</b>"
 
 #: core/utilities/setup/setup.cpp:127
 #, kde-format
@@ -68532,6 +68562,14 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgid ""
+#~ "<b>Note: All changes to these settings only take effect after the "
+#~ "restart. Some settings are hardware dependent and may have no effect.</b>"
+#~ msgstr ""
+#~ "<b>Not: Bu ayarlarda yapılan tüm değişiklikler yalnızca yeniden "
+#~ "başlatmanın ardından etkili olur. Bazı ayarlar donanıma bağlıdır ve "
+#~ "hiçbir etkisi olmayabilir.</b>"
 
 #~ msgid "IRC: "
 #~ msgstr "IRC: "
