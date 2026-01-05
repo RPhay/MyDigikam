@@ -194,6 +194,7 @@ set(DIGIKAMGUI_OBJECTS
             # Utilities
             $<TARGET_OBJECTS:gui_setup_obj>
             $<TARGET_OBJECTS:gui_lighttable_obj>
+            $<TARGET_OBJECTS:gui_survey_obj>
             $<TARGET_OBJECTS:gui_maintenance_obj>
             $<TARGET_OBJECTS:gui_searchwindow_obj>
             $<TARGET_OBJECTS:gui_firstrun_obj>
