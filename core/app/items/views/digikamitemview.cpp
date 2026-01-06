@@ -697,6 +697,10 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
         {
             d->utilities->insertToLightTable(allItemInfos(), info, false);
         }
+        else if (leftClickAction == ApplicationSettings::ShowOnSurvey)
+        {
+            d->utilities->insertToSurvey(allItemInfos(), info, false);
+        }
         else
         {
             d->utilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);

@@ -189,6 +189,7 @@ enum OperationType
     ImportExportOps,
     BQMOps,
     LightTableOps,
+    SurveyOps,
     SlideshowOps,
     RenameOps,
     ToolsOps,

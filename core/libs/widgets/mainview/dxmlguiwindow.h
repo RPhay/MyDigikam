@@ -56,6 +56,7 @@ enum FullScreenOptions
     FS_ALBUMGUI   = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR,    ///< Album GUI Config.
     FS_EDITOR     = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR,    ///< Image Editor Config.
     FS_LIGHTTABLE = FS_TOOLBARS | FS_SIDEBARS | FS_STATUSBAR,                  ///< Light Table Config.
+    FS_SURVEY     = FS_TOOLBARS | FS_SIDEBARS | FS_STATUSBAR,                  ///< Survey Config.
     FS_IMPORTUI   = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR     ///< Import UI Config.
 };
 
@@ -75,7 +76,6 @@ enum StdActionType
     StdBackAction,
     StdForwardAction
 };
-
 
 /**
  * Generic class to use with all main window.

@@ -268,6 +268,8 @@ public:
     QAction*                            imageIconViewAction                     = nullptr;
     QAction*                            imageLightTableAction                   = nullptr;
     QAction*                            imageAddLightTableAction                = nullptr;
+    QAction*                            imageSurveyAction                       = nullptr;
+    QAction*                            imageAddSurveyAction                    = nullptr;
     QAction*                            imageAddCurrentQueueAction              = nullptr;
     QAction*                            imageAddNewQueueAction                  = nullptr;
     QAction*                            imageViewAction                         = nullptr;
@@ -292,8 +294,9 @@ public:
     QAction*                            imageDeleteAction                       = nullptr;
     QMenu*                              imageExifOrientationActionMenu          = nullptr;
     QAction*                            openWithAction                          = nullptr;
-    QAction*                            ieAction                                = nullptr;
-    QAction*                            ltAction                                = nullptr;
+    QAction*                            ieAction                                = nullptr;          // Image Editor
+    QAction*                            ltAction                                = nullptr;          // Light Table
+    QAction*                            svAction                                = nullptr;          // Survey
 
     //@}
 

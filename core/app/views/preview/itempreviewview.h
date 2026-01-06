@@ -42,7 +42,7 @@ public:
 public:
 
     explicit ItemPreviewView(QWidget* const parent,
-                             Mode mode=IconViewPreview,
+                             Mode mode = IconViewPreview,
                              Album* const currAlbum = nullptr);
     ~ItemPreviewView() override;
 

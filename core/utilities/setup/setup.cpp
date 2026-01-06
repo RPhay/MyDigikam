@@ -38,6 +38,7 @@
 #include "setupeditor.h"
 #include "setupicc.h"
 #include "setuplighttable.h"
+#include "setupsurvey.h"
 #include "setupmetadata.h"
 #include "setupmisc.h"
 #include "setuptooltip.h"
@@ -68,6 +69,7 @@ public:
     DConfigDlgWdgItem*       page_metadata              = nullptr;
     DConfigDlgWdgItem*       page_template              = nullptr;
     DConfigDlgWdgItem*       page_lighttable            = nullptr;
+    DConfigDlgWdgItem*       page_survey                = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
@@ -88,6 +90,7 @@ public:
     SetupMetadata*           metadataPage               = nullptr;
     SetupTemplate*           templatePage               = nullptr;
     SetupLightTable*         lighttablePage             = nullptr;
+    SetupSurvey*             surveyPage                 = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
@@ -167,6 +170,11 @@ Setup::Setup(QWidget* const parent)
     d->page_lighttable = addPage(d->lighttablePage, i18nc("@title: settings section", "Light Table"));
     d->page_lighttable->setHeader(i18nc("@title", "Light Table Settings\nCustomize tool used to compare items"));
     d->page_lighttable->setIcon(QIcon::fromTheme(QLatin1String("lighttable")));
+
+    d->surveyPage      = new SetupSurvey();
+    d->page_survey = addPage(d->surveyPage, i18nc("@title: settings section", "Survey"));
+    d->page_survey->setHeader(i18nc("@title", "Survey Settings\nCustomize tool used to review items"));
+    d->page_survey->setIcon(QIcon::fromTheme(QLatin1String("preview")));
 
 #ifdef HAVE_GEOLOCATION
 
@@ -283,6 +291,7 @@ QSize Setup::sizeHint() const
             (page == AlbumViewPage)   ||
             (page == TemplatePage)    ||
             (page == LightTablePage)  ||
+            (page == SurveyPage)  ||
             (page == EditorPage)      ||
             (page == PluginsPage)     ||
             (page == MiscellaneousPage)
@@ -504,6 +513,7 @@ void Setup::slotOkClicked()
     d->metadataPage->applySettings();
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
+    d->surveyPage->applySettings();
 
 #ifdef HAVE_GEOLOCATION
 
@@ -615,6 +625,11 @@ Setup::Page Setup::activePageIndex() const
         return LightTablePage;
     }
 
+    if (cur == d->page_survey)
+    {
+        return SurveyPage;
+    }
+
 #ifdef HAVE_GEOLOCATION
 
     if (cur == d->page_geolocation)
@@ -689,6 +704,11 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         case Setup::LightTablePage:
         {
             return page_lighttable;
+        }
+
+        case Setup::SurveyPage:
+        {
+            return page_survey;
         }
 
 #ifdef HAVE_GEOLOCATION

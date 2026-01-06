@@ -448,6 +448,11 @@ QString ApplicationSettings::operationTypeTitle(OperationType type)
             return i18n("Light Table");
         }
 
+        case SurveyOps:
+        {
+            return i18n("Survey");
+        }
+
         case BQMOps:
         {
             return i18n("Batch Queue Manager");
@@ -493,6 +498,11 @@ QString ApplicationSettings::operationTypeExplanation(OperationType type)
         case LightTableOps:
         {
             return i18n("Adding items to the Light Table");
+        }
+
+        case SurveyOps:
+        {
+            return i18n("Adding items to the Survey");
         }
 
         case BQMOps:

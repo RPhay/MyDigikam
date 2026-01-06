@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="800" name="digikam" translationDomain="digikam" >
+<gui version="900" name="digikam" translationDomain="digikam" >
 
  <MenuBar>
 
@@ -53,6 +53,8 @@
    <Separator />
      <Action name="image_lighttable" />
      <Action name="image_add_to_lighttable" />
+     <Action name="image_survey" />
+     <Action name="image_add_to_survey" />
      <Action name="image_add_to_current_queue" />
      <Action name="image_add_to_new_queue" />
      <Action name="image_scan_for_faces" />
@@ -118,6 +120,7 @@
   <Menu name="Tools"><text>&amp;Tools</text>
         <Action name="imageeditor" />
         <Action name="light_table" />
+        <Action name="survey" />
         <Action name="queue_manager" />
       <Separator/>
         <Action name="search_quick" />
@@ -192,6 +195,7 @@
   <Separator/>-->
   <Action name="imageeditor" />
   <Action name="light_table" />
+  <Action name="survey" />
   <Action name="queue_manager" />
   <Action name="import_auto" />
   <Separator/>

@@ -37,7 +37,7 @@ public:
     {
         InvalidType   = -1,     ///< An invalid action category.
 
-        Generic       = 0,      ///< Generic action available everywhere (AlbumView, Editor, and LightTable).
+        Generic       = 0,      ///< Generic action available everywhere (AlbumView, Editor, LightTable, and Survey).
         Editor                  ///< Specific action for Image Editor and Showfoto.
     };
 

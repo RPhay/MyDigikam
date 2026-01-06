@@ -75,10 +75,13 @@ public Q_SLOTS:
     void slotImageEdit();
     void slotEditor();
     void slotLightTable();
+    void slotSurvey();
     void slotQueueMgr();
     void slotFileWithDefaultApplication();
     void slotImageLightTable();
     void slotImageAddToLightTable();
+    void slotImageSurvey();
+    void slotImageAddToSurvey();
     void slotImageAddToCurrentQueue();
     void slotImageAddToNewQueue();
     void slotImageAddToExistingQueue(int);

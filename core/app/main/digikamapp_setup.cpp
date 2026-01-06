@@ -429,6 +429,28 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
+    d->svAction = new QAction(QIcon::fromTheme(QLatin1String("preview")),
+                              i18nc("@action: setup", "Survey"), this);
+    connect(d->svAction, SIGNAL(triggered()), d->view, SLOT(slotSurvey()));
+    ac->addAction(QLatin1String("survey"), d->svAction);
+    ac->setDefaultShortcut(d->svAction, Qt::SHIFT | Qt::Key_S);
+
+    d->imageSurveyAction = new QAction(QIcon::fromTheme(QLatin1String("preview")),
+                                           i18nc("@action: setup", "Place onto Survey"), this);
+    d->imageSurveyAction->setWhatsThis(i18nc("@info: setup", "Place the selected items on the survey thumbbar."));
+    connect(d->imageSurveyAction, SIGNAL(triggered()), d->view, SLOT(slotImageSurvey()));
+    ac->addAction(QLatin1String("image_survey"), d->imageSurveyAction);
+    ac->setDefaultShortcut(d->imageSurveyAction, Qt::CTRL | Qt::Key_S);
+
+    d->imageAddSurveyAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
+                                              i18nc("@action: setup", "Add to Survey"), this);
+    d->imageAddSurveyAction->setWhatsThis(i18nc("@info: setup", "Add selected items to the survey thumbbar."));
+    connect(d->imageAddSurveyAction, SIGNAL(triggered()), d->view, SLOT(slotImageAddToSurvey()));
+    ac->addAction(QLatin1String("image_add_to_lighttable"), d->imageAddSurveyAction);
+    ac->setDefaultShortcut(d->imageAddSurveyAction, Qt::CTRL | Qt::SHIFT | Qt::Key_S);
+
+    // -----------------------------------------------------------
+
     d->bqmAction = new QAction(QIcon::fromTheme(QLatin1String("run-build")),
                                i18nc("@action: setup", "Batch Queue Manager"), this);
     connect(d->bqmAction, SIGNAL(triggered()), d->view, SLOT(slotQueueMgr()));

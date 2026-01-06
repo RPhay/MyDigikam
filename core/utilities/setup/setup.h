@@ -45,6 +45,7 @@ public:
         EditorPage,
         ICCPage,
         LightTablePage,
+        SurveyPage,
 
 #ifdef HAVE_GEOLOCATION
 

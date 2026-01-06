@@ -322,6 +322,7 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 
     cmHelper.addAction(QLatin1String("image_find_similar"));
     cmHelper.addStandardActionLightTable();
+    cmHelper.addStandardActionSurvey();
     cmHelper.addQueueManagerMenu();
     cmHelper.addSeparator();
 
