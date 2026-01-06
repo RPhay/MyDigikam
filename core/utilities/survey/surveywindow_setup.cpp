@@ -363,7 +363,7 @@ void SurveyWindow::setupUserArea()
     d->thumbView   = new LightTableThumbBar(d->barViewDock);
 
     d->barViewDock->setWidget(d->thumbView);
-    d->dockArea->addDockWidget(Qt::TopDockWidgetArea, d->barViewDock);
+    d->dockArea->addDockWidget(Qt::BottomDockWidgetArea, d->barViewDock);
     d->barViewDock->setFloating(false);
 
     connect(d->barViewDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),
