@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-05 00:40+0000\n"
-"PO-Revision-Date: 2026-01-03 18:09+0200\n"
+"PO-Revision-Date: 2026-01-05 12:54+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -17437,7 +17437,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
-msgstr ""
+msgstr "שיתוף עם DLNA…"
 
 #: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:143
 #, fuzzy, kde-format
@@ -17585,7 +17585,7 @@ msgstr "השהיה בין תמונות:"
 #, kde-format
 msgctxt "@label"
 msgid "Frames by Second:"
-msgstr ""
+msgstr "תמוניות לשנייה:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:171
 #, kde-format
@@ -17594,24 +17594,25 @@ msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
 "requires more network bandwidth"
 msgstr ""
+"מספר התמוניות לשנייה לתיצוג התזרים. אזהרה: קצב גבוה יותר דורש יותר נפח תעבורה"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
 #, kde-format
 msgctxt "@option:check"
 msgid "Stream in Loop"
-msgstr ""
+msgstr "הזרמה בלולאה"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:177
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG stream will be played in loop instead of playing once."
-msgstr ""
+msgstr "תזרים ה־MJPEG ינוגן בלולאה במקום פעם אחת."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:191
 #, kde-format
 msgctxt "@title"
 msgid "Stream"
-msgstr ""
+msgstr "תזרים"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:215
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
@@ -17661,7 +17662,7 @@ msgstr "חיווי על המסך"
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:53
 #, kde-format
 msgid "MJPEG Stream Server"
-msgstr ""
+msgstr "שרת תזרים MJPEG"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:68
 #, fuzzy, kde-format
@@ -17706,7 +17707,7 @@ msgstr "מפתח"
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
-msgstr ""
+msgstr "שיתוף כתזרים MJPEG…"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:35
 #, kde-format
@@ -18670,7 +18671,7 @@ msgstr "מפתח ראשי ומתאם פעילות"
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Creator Wizard"
-msgstr ""
+msgstr "אשף יצירת פנורמה"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintphoto.cpp:38
 #, fuzzy, kde-format
@@ -18808,7 +18809,7 @@ msgstr "לוח־שנה"
 #: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
 msgid "The GNU Image Manipulation Program."
-msgstr ""
+msgstr "תוכנית עריכת התמונות של גנו ‏(GIMP)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:57
@@ -18974,7 +18975,7 @@ msgstr "ב&חודש הבא"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:127
 #, kde-format
 msgid "Ne&xt >>"
-msgstr ""
+msgstr "ה&בא >>"
 
 #. i18n: ectx: property (text), widget (QLabel, LblCropPhoto)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:156
@@ -19526,7 +19527,7 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:661
 #, kde-format
 msgid "Starting \"%1\" program..."
-msgstr ""
+msgstr "התוכנית „%1” מופעלת…"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:665
 #, kde-format
@@ -20368,7 +20369,7 @@ msgstr "נקה הכל"
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:538
 #, kde-format
 msgid "Playlist (*.m3u)"
-msgstr ""
+msgstr "רשימת נגינה (‎*.m3u)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:537
 #, fuzzy, kde-format
@@ -20499,7 +20500,7 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgid "This file may not be playable."
-msgstr ""
+msgstr "יכול להיות שלא ניתן לנגן את הקובץ הזה."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
@@ -20647,7 +20648,7 @@ msgstr "בחירת גופן…"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:35
 #, kde-format
 msgid "Line length (in characters):"
-msgstr ""
+msgstr "אורך שורה (בתווים):"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:73
@@ -20690,13 +20691,13 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
-msgstr[0] "&תמונה"
-msgstr[1] "&תמונה"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "תמונה"
+msgstr[1] "שתי תמונות"
+msgstr[2] "%1 תמונות"
+msgstr[3] "%1 תמונות"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:383
 #, kde-format
@@ -36148,18 +36149,16 @@ msgid "Size: "
 msgstr "גודל: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:132
-#, fuzzy, kde-format
-#| msgid "Readable: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Readable: "
-msgstr "<b>ניתן לקריאה</b>:"
+msgstr "ניתן לקריאה: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:133
-#, fuzzy, kde-format
-#| msgid "Writable: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Writable: "
-msgstr "<b>ניתן לכתיבה</b>:"
+msgstr "ניתן לכתיבה: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:134
 #: core/libs/properties/itempropertiestab.cpp:88
@@ -36191,11 +36190,10 @@ msgid "New Name: "
 msgstr "שם חדש: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:138
-#, fuzzy, kde-format
-#| msgid "Downloaded: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Downloaded: "
-msgstr "הועתקו למחשב:"
+msgstr "הורד: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:179
 #, kde-format
@@ -36218,11 +36216,10 @@ msgid "Model: "
 msgstr "דגם: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#, fuzzy, kde-format
-#| msgid "Created: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
-msgstr "נוצר:"
+msgstr "יצירה: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
 #: core/libs/properties/itempropertiestab.cpp:134
@@ -36367,15 +36364,13 @@ msgid "RAW Image"
 msgstr "תמונה גולמית (RAW)"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:429
-#, fuzzy, kde-format
-#| msgid "%1x%2 (%3Mpx)"
+#, kde-format
 msgctxt "@info: item resolution"
 msgid "%1x%2 (%3Mpx)"
-msgstr "%1x%2 (%3Mpx)"
+msgstr "%1×%2 (%3 מגה פיקסלים)"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:495
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "@info: focal length"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -36603,11 +36598,10 @@ msgid "Unknown"
 msgstr "לא ידוע"
 
 #: core/libs/properties/itempropertiessidebar.cpp:261
-#, fuzzy, kde-format
-#| msgid "%1x%2 (%3Mpx)"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "%1x%2 (%3Mpx)"
-msgstr "%1x%2 (%3Mpx)"
+msgstr "%1×%2 (%3 מגה פיקסלים)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
 #: core/libs/properties/itempropertiessidebardb.cpp:746
@@ -36619,8 +36613,7 @@ msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
 #: core/libs/properties/itempropertiessidebardb.cpp:780
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -36934,10 +36927,9 @@ msgid "Exposure Mode"
 msgstr "מצב חשיפה"
 
 #: core/libs/properties/itempropertiestab.cpp:509
-#, fuzzy, kde-format
-#| msgid "Flash"
+#, kde-format
 msgid "Flash"
-msgstr "מבזק:"
+msgstr "מבזק"
 
 #: core/libs/properties/itempropertiestab.cpp:512
 #: core/utilities/setup/setuptooltip.cpp:256
@@ -37059,15 +37051,12 @@ msgid "Selected Item Properties"
 msgstr "מאפייני הקובץ"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:147
-#, fuzzy, kde-format
-#| msgid "Album Properties"
+#, kde-format
 msgid "All Item Properties"
-msgstr "מאפייני אלבום"
+msgstr "מאפייני כל הפריטים"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Remove From Group"
+#, kde-format
 msgid "Remove from Group"
 msgstr "הסרה מקבוצה"
 
@@ -37387,10 +37376,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:392
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Exposure Correction (E.V)"
-msgstr "זמן חשיפה"
+msgstr "תיקון חשיפה (E.V)"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:393
 #, kde-kuit-format
@@ -42199,9 +42188,9 @@ msgid "Flexible Image Transport System"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:152
-#, fuzzy, kde-format
+#, kde-format
 msgid "Free Lossless Audio Codec"
-msgstr "קבצי שמע"
+msgstr "מפענח שמע חופשי משמר איכות"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:156
 #, fuzzy, kde-format
@@ -42255,9 +42244,9 @@ msgid "GoPro Tags"
 msgstr "תגיות GoPro"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgid "H.264 Video Streams Information"
-msgstr "מידע קובץ/תמונה"
+msgstr "פרטי תזרימי וידאו H.264"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:200
 #, kde-format
@@ -42311,15 +42300,14 @@ msgid "Joint Photographic Experts Group 2000"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:240
-#, fuzzy, kde-format
-#| msgid "Microsoft Photo"
+#, kde-format
 msgid "Microsoft Shell Link"
-msgstr "Microsoft Photo"
+msgstr "קישור מעטפת של Microsoft"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgid "Creo Leaf Capture Information"
-msgstr "מידע"
+msgstr "פרטי לכידה של Creo Leaf"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:248
 #, kde-format
@@ -42327,9 +42315,9 @@ msgid "Lytro Light Field Picture Info"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:252
-#, fuzzy, kde-format
+#, kde-format
 msgid "MPEG-2 Transport Stream"
-msgstr "איכות JPEG-2000:"
+msgstr "תזרים תעבורת MPEG-2"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:256
 #, kde-format
@@ -42872,9 +42860,9 @@ msgid "Metadata Working Group Regions"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:160
-#, fuzzy, kde-format
+#, kde-format
 msgid "Darwin Core"
-msgstr "Dublin Core"
+msgstr "ליבת דרווין"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:164
 #, kde-format
@@ -46306,10 +46294,10 @@ msgid "Use custom definition"
 msgstr "להשתמש בהגדרה מותאמת אישית"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:152
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr ""
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:164
 #, fuzzy, kde-format
@@ -47567,10 +47555,10 @@ msgid "Open configure dialog with more settings options"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:227
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: folder-view"
 msgid "Stack Options"
-msgstr "אפשרויות ממשק"
+msgstr "אפשרויות ערמה"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:230
 #, kde-format
@@ -50740,17 +50728,16 @@ msgid "Prefer other than selected Album as reference"
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:134
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "כיתוב, הערה,כותרת"
+msgstr "להעדיף תאריך יצירה חדש יותר"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:137
-#, fuzzy, kde-format
-#| msgid "Modification"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "שינוי"
+msgstr "להעדיף תאריך שינוי חדש יותר"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, kde-format

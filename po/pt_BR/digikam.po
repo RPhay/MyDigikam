@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-05 00:40+0000\n"
-"PO-Revision-Date: 2026-01-03 14:43-0300\n"
+"PO-Revision-Date: 2026-01-05 09:49-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -34180,13 +34180,13 @@ msgstr "Compressão sem perdas"
 #: core/libs/dngwriter/dngsettings.cpp:79
 #, kde-format
 msgid "JPEG Preview:"
-msgstr "Visualização JPEG:"
+msgstr "Pré-visualização JPEG:"
 
 #: core/libs/dngwriter/dngsettings.cpp:81
 #, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "None"
-msgstr "Nenhum"
+msgstr "Nenhuma"
 
 #: core/libs/dngwriter/dngsettings.cpp:82
 #, kde-format
@@ -51048,26 +51048,23 @@ msgstr "Usar o tema de ícones do sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "Informações de data e hora"
+msgstr "Formato de data e hora (%1):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in whole application."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
-msgstr "Defina aqui a fonte usada para exibir o texto em todo o aplicativo."
+msgstr ""
+"Essa sequência de caracteres é usada como formato de data e hora em todo o "
+"aplicativo."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "Escreva a data e hora corrigidas para cada imagem"
+msgstr "Retorna ao formato local de data e hora abreviado"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -60874,7 +60871,7 @@ msgstr "Corrigir a data e hora interna"
 #, kde-format
 msgctxt "@option:check"
 msgid "Auto-rotate/flip image"
-msgstr "Girar automaticamente/virar a imagem"
+msgstr "Girar/inverter automaticamente a imagem"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:78
 #, kde-format
@@ -61191,7 +61188,7 @@ msgstr "Não foi possível exibir a visualização da câmera"
 #, kde-format
 msgctxt "@option:check"
 msgid "Convert RAW images to"
-msgstr "Converte imagens RAW para"
+msgstr "Converter imagens RAW para "
 
 #: core/utilities/import/widgets/dngconvertsettings.cpp:69
 #, kde-format
@@ -67716,12 +67713,7 @@ msgid "Grouping"
 msgstr "Grupo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='black'><i><b>⚠️Warning:</b> These settings make startup "
-#| "slower! Read the <a href=\"%1\">online documentation</a> carefully first."
-#| "</i></font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
@@ -67729,9 +67721,10 @@ msgid ""
 "have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
 "information.</i></font>"
 msgstr ""
-"<font color='black'><i><b>⚠️Aviso:</b> Essas configurações tornam a "
-"inicialização mais lenta! Leia a <a href=\"%1\">documentação online</a> "
-"atentamente primeiro.</i></font>"
+"<font color='black'><i><b>⚠️Aviso:</b> Todas as alterações nessas "
+"configurações só entrarão em vigor após a reinicialização. Algumas "
+"configurações dependem do hardware e podem ter efeitos colaterais. Leia a <a "
+"href=\"%1\">documentação online</a> para obter mais informações.</i></font>"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format

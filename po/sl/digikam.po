@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-05 00:40+0000\n"
-"PO-Revision-Date: 2026-01-03 10:19+0100\n"
+"PO-Revision-Date: 2026-01-05 07:13+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -50838,26 +50838,21 @@ msgstr "Uporabi temo ikon iz sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "Informacije o datumu in času"
+msgstr "Format datuma in časa (%1):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in whole application."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
-msgstr "Tukaj izberite pisavo za prikaz besedila v celotnem programu."
+msgstr "Ta niz se uporablja kot format datuma in časa v celotni aplikaciji."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "Za vsako sliko napiši popravljen datum in čas"
+msgstr "Povrne na lokalni kratki format zapisa datuma in časa"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -67389,12 +67384,7 @@ msgid "Grouping"
 msgstr "Združevanje"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='black'><i><b>⚠️Warning:</b> These settings make startup "
-#| "slower! Read the <a href=\"%1\">online documentation</a> carefully first."
-#| "</i></font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
@@ -67402,8 +67392,10 @@ msgid ""
 "have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
 "information.</i></font>"
 msgstr ""
-"<font color='red'><i><b>⚠️Opozorilo:</b> Te nastavitve upočasnijo zagon! "
-"Najprej preberite <a href=\"%1\">spletno dokumentacijo.</a></i></font>"
+"<font color='red'><i><b>⚠️Opozorilo:</b> Vse spremembe teh nastavitev začnejo "
+"veljati šele po ponovnem zagonu. Nekatere nastavitve so odvisne od strojne "
+"opreme in imajo lahko stranske učinke. Za več informacij preberite <a href="
+"\"%1\">spletno dokumentacijo</a>.</i></font>"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format

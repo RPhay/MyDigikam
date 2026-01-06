@@ -74,13 +74,18 @@ slots:
 parts:
   marble:
     source: https://invent.kde.org/education/marble.git
-    source-branch: release/25.12
+    source-branch: master
     plugin: cmake
     build-packages:
       - libpulse0
       - rsync
     stage-packages:
       - libpulse0
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
+      - hunspell-dictionaries
+      - ffmpeg-2404-sdk
     cmake-generator: Ninja
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
@@ -103,6 +108,11 @@ parts:
     source: https://github.com/opencv/opencv.git
     source-tag: 4.12.0
     plugin: cmake
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
+      - hunspell-dictionaries
+      - ffmpeg-2404-sdk
     build-packages:
       - zlib1g-dev
       - libtiff-dev
@@ -292,6 +302,11 @@ parts:
     plugin: cmake
     source: https://invent.kde.org/libraries/ksanecore.git
     source-branch: release/25.12
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
+      - hunspell-dictionaries
+      - ffmpeg-2404-sdk
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
@@ -305,6 +320,11 @@ parts:
     plugin: cmake
     source: https://invent.kde.org/graphics/libksane.git
     source-branch: release/25.12
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
+      - hunspell-dictionaries
+      - ffmpeg-2404-sdk
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release

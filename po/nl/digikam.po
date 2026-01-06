@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-05 00:40+0000\n"
-"PO-Revision-Date: 2026-01-04 14:07+0100\n"
+"PO-Revision-Date: 2026-01-05 11:31+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -51158,27 +51158,23 @@ msgstr "Pictogramthema van systeem gebruiken"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "Datum- en tijdinformatie"
+msgstr "Datum- en tijdformaat (%1):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in whole application."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
 msgstr ""
-"Stel hier het lettertype in dat u wilt gebruiken in de gehele toepassing."
+"Deze tekenreeks wordt gebruikt als het datum- en tijdformaat in de gehele "
+"toepassing."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "De gecorrigeerde datum en tijd voor elke afbeelding wegschrijven"
+msgstr "Keert terug naar het lokale datum- en tijdformaat"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -67834,12 +67830,7 @@ msgid "Grouping"
 msgstr "Groepering"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='black'><i><b>⚠️Warning:</b> These settings make startup "
-#| "slower! Read the <a href=\"%1\">online documentation</a> carefully first."
-#| "</i></font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
@@ -67847,9 +67838,10 @@ msgid ""
 "have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
 "information.</i></font>"
 msgstr ""
-"<font color='black'><i><b>⚠️Waarschuwing:</b> deze instellingen maken het "
-"opstarten langzamer! Lees eerste aandachtig de <a href=\"%1\">online "
-"documentatie</a>.</i></font>"
+"<font color='black'><i><b>⚠️Waarschuwing:</b> Alle wijzigingen aan deze "
+"instellingen Zijn alleen effectief na de herstart. Sommige instellingen zijn "
+"afhankelijk van de hardware en kunnen bijeffecten hebben. Lees de <a href="
+"\"%1\">online documentatie</a> voor meer informatie.</i></font>"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
