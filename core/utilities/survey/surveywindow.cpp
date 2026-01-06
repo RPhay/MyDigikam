@@ -227,6 +227,10 @@ void SurveyWindow::slotPreviewLoaded(bool b)
     d->zoomBar->setEnabled(b);
     d->fileName->setText(QString());
 
+    QFont fnt(d->fileName->font());
+    fnt.setBold(b);
+    d->fileName->setFont(fnt);
+
     if (b)
     {
         d->fileName->setText(d->previewView->itemInfo().name());
@@ -591,13 +595,6 @@ void SurveyWindow::slotSideBarActivateAssignedTags()
 {
     d->sideBar->setActiveTab(d->sideBar->imageDescEditTab());
     d->sideBar->imageDescEditTab()->activateAssignedTagsButton();
-}
-
-void SurveyWindow::slotPreviewSelected(bool b)
-{
-    QFont fnt(d->fileName->font());
-    fnt.setBold(b);
-    d->fileName->setFont(fnt);
 }
 
 void SurveyWindow::slotToggleColorManagedView()

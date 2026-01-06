@@ -102,7 +102,7 @@ void SurveyWindow::setupActions()
 
     // Panel Zoom Actions
 
-    d->zoomPlusAction  = buildStdAction(StdZoomInAction, d->previewView, SLOT(slotIncreaseRightZoom()), this);
+    d->zoomPlusAction  = buildStdAction(StdZoomInAction, d->previewView, SLOT(slotIncreaseZoom()), this);
     d->zoomPlusAction->setEnabled(false);
     ac->addAction(QLatin1String("survey_zoomplus"), d->zoomPlusAction);
 
@@ -116,7 +116,7 @@ void SurveyWindow::setupActions()
 
 #endif
 
-    d->zoomMinusAction  = buildStdAction(StdZoomOutAction, d->previewView, SLOT(slotDecreaseRightZoom()), this);
+    d->zoomMinusAction  = buildStdAction(StdZoomOutAction, d->previewView, SLOT(slotDecreaseZoom()), this);
     d->zoomMinusAction->setEnabled(false);
     ac->addAction(QLatin1String("survey_zoomminus"), d->zoomMinusAction);
 
@@ -131,12 +131,12 @@ void SurveyWindow::setupActions()
 #endif
 
     d->zoomTo100percents = new QAction(QIcon::fromTheme(QLatin1String("zoom-original")), i18n("Zoom to 100%"), this);
-    connect(d->zoomTo100percents, SIGNAL(triggered()), d->previewView, SLOT(slotRightZoomTo100()));
+    connect(d->zoomTo100percents, SIGNAL(triggered()), d->previewView, SLOT(slotZoomTo100()));
     ac->addAction(QLatin1String("survey_zoomto100percents"), d->zoomTo100percents);
     ac->setDefaultShortcut(d->zoomTo100percents, Qt::CTRL | Qt::SHIFT | Qt::Key_Period);
 
     d->zoomFitToWindowAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-fit-best")), i18n("Fit to &Window"), this);
-    connect(d->zoomFitToWindowAction, SIGNAL(triggered()), d->previewView, SLOT(slotRightFitToWindow()));
+    connect(d->zoomFitToWindowAction, SIGNAL(triggered()), d->previewView, SLOT(slotFitToWindow()));
     ac->addAction(QLatin1String("survey_zoomfit2window"), d->zoomFitToWindowAction);
     ac->setDefaultShortcut(d->zoomFitToWindowAction, Qt::CTRL | Qt::SHIFT | Qt::Key_E);
 
@@ -237,7 +237,7 @@ void SurveyWindow::setupConnections()
 
     // Thumbs bar connections ---------------------------------------
 
-    connect(d->thumbView, SIGNAL(signalSetItemOnPanel(ItemInfo)),
+    connect(d->thumbView, SIGNAL(signalSetItemOnRightPanel(ItemInfo)),
             this, SLOT(slotSetItemOnPanel(ItemInfo)));
 
     connect(d->thumbView, SIGNAL(signalRemoveItem(ItemInfo)),
@@ -261,15 +261,12 @@ void SurveyWindow::setupConnections()
     // Zoom bars connections -----------------------------------------
 
     connect(d->zoomBar, SIGNAL(signalZoomSliderChanged(int)),
-            d->previewView, SLOT(slotRightZoomSliderChanged(int)));
+            d->previewView, SLOT(slotZoomSliderChanged(int)));
 
     connect(d->zoomBar, SIGNAL(signalZoomValueEdited(double)),
-            d->previewView, SLOT(setRightZoomFactor(double)));
+            d->previewView, SLOT(setZoomFactor(double)));
 
     // View connections ---------------------------------------------
-
-    connect(d->previewView, SIGNAL(signalPreviewSelected(bool)),
-            this, SLOT(slotPreviewSelected(bool)));
 
     connect(d->previewView, SIGNAL(signalPopupTagsView()),
             d->sideBar, SLOT(slotPopupTagsView()));

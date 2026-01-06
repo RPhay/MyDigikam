@@ -61,6 +61,8 @@ Q_SIGNALS:
 
     void signalDroppedItems(const ItemInfoList&);
 
+    void signalPanelLeftButtonClicked();
+
     void signalPopupTagsView();
 
     void signalSlideShowCurrent();

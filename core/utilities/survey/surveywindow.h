@@ -94,7 +94,6 @@ private Q_SLOTS:
 
     void slotPanelLeftButtonClicked();
     void slotPreviewLoaded(bool);
-    void slotPreviewSelected(bool);
     void slotZoomFactorChanged(double);
 
     void slotDeleteItem();
