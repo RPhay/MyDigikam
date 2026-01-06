@@ -19,7 +19,7 @@ namespace Digikam
 
 SurveyWindow* SurveyWindow::m_instance = nullptr;
 
-SurveyWindow* SurveyWindow::lightTableWindow()
+SurveyWindow* SurveyWindow::surveyWindow()
 {
     if (!m_instance)
     {
@@ -29,7 +29,7 @@ SurveyWindow* SurveyWindow::lightTableWindow()
     return m_instance;
 }
 
-bool SurveyWindow::lightTableWindowCreated()
+bool SurveyWindow::surveyWindowCreated()
 {
     return m_instance;
 }
@@ -70,8 +70,7 @@ SurveyWindow::SurveyWindow()
 
     readSettings();
 
-    d->leftSideBar->populateTags();
-    d->rightSideBar->populateTags();
+    d->sideBar->populateTags();
 
     applySettings();
 
@@ -85,15 +84,13 @@ SurveyWindow::~SurveyWindow()
     m_instance = nullptr;
 
     delete d->thumbView;
-    delete d->rightSideBar;
-    delete d->leftSideBar;
+    delete d->sideBar;
     delete d;
 }
 
 void SurveyWindow::refreshView()
 {
-    d->leftSideBar->refreshTagsView();
-    d->rightSideBar->refreshTagsView();
+    d->sideBar->refreshTagsView();
 }
 
 void SurveyWindow::closeEvent(QCloseEvent* e)
@@ -210,90 +207,27 @@ void SurveyWindow::slotFileChanged(const QString& path)
 
     // NOTE: Thumbbar handle change through ItemCategorizedView
 
-    if (!d->previewView->leftItemInfo().isNull())
+    if (!d->previewView->itemInfo().isNull())
     {
-        if (d->previewView->leftItemInfo().fileUrl() == url)
+        if (d->previewView->itemInfo().fileUrl() == url)
         {
-            d->previewView->leftReload();
-            d->leftSideBar->itemChanged(d->previewView->leftItemInfo());
-        }
-    }
-
-    if (!d->previewView->rightItemInfo().isNull())
-    {
-        if (d->previewView->rightItemInfo().fileUrl() == url)
-        {
-            d->previewView->rightReload();
-            d->rightSideBar->itemChanged(d->previewView->rightItemInfo());
+            d->previewView->reload();
+            d->sideBar->itemChanged(d->previewView->itemInfo());
         }
     }
 }
 
-void SurveyWindow::slotLeftPanelLeftButtonClicked()
+void SurveyWindow::slotPreviewLoaded(bool b)
 {
-    if (d->navigateByPairAction->isChecked())
-    {
-        return;
-    }
-
-    d->thumbView->setCurrentInfo(d->previewView->leftItemInfo());
-}
-
-void SurveyWindow::slotRightPanelLeftButtonClicked()
-{
-    // With navigate by pair option, only the left panel can be selected.
-
-    if (d->navigateByPairAction->isChecked())
-    {
-        return;
-    }
-
-    d->thumbView->setCurrentInfo(d->previewView->rightItemInfo());
-}
-
-void SurveyWindow::slotLeftPreviewLoaded(bool b)
-{
-    d->leftZoomBar->setEnabled(b);
-    d->leftFileName->setText(QString());
+    d->zoomBar->setEnabled(b);
+    d->fileName->setText(QString());
 
     if (b)
     {
-        d->leftFileName->setText(d->previewView->leftItemInfo().name());
-        d->previewView->checkForSelection(d->thumbView->currentInfo());
-        d->thumbView->setOnLeftPanel(d->previewView->leftItemInfo());
+        d->fileName->setText(d->previewView->itemInfo().name());
+        d->thumbView->setOnRightPanel(d->previewView->itemInfo());
 
-        QModelIndex index = d->thumbView->findItemByInfo(d->previewView->leftItemInfo());
-
-        if (d->navigateByPairAction->isChecked() && index.isValid())
-        {
-            QModelIndex next = d->thumbView->nextIndex(index);
-
-            if (next.isValid())
-            {
-                d->thumbView->setOnRightPanel(d->thumbView->findItemByIndex(next));
-                slotSetItemOnRightPanel(d->thumbView->findItemByIndex(next));
-            }
-            else
-            {
-                QModelIndex first = d->thumbView->firstIndex();
-                slotSetItemOnRightPanel(first.isValid() ? d->thumbView->findItemByIndex(first) : ItemInfo());
-            }
-        }
-    }
-}
-
-void SurveyWindow::slotRightPreviewLoaded(bool b)
-{
-    d->rightZoomBar->setEnabled(b);
-    d->rightFileName->setText(QString());
-
-    if (b)
-    {
-        d->rightFileName->setText(d->previewView->rightItemInfo().name());
-        d->previewView->checkForSelection(d->thumbView->currentInfo());
-        d->thumbView->setOnRightPanel(d->previewView->rightItemInfo());
-
-        QModelIndex index = d->thumbView->findItemByInfo(d->previewView->rightItemInfo());
+        QModelIndex index = d->thumbView->findItemByInfo(d->previewView->itemInfo());
 
         if (index.isValid())
         {
@@ -306,8 +240,6 @@ void SurveyWindow::slotItemSelected(const ItemInfo& info)
 {
     bool hasInfo = !info.isNull();
 
-    d->setItemLeftAction->setEnabled(hasInfo);
-    d->setItemRightAction->setEnabled(hasInfo);
     d->editItemAction->setEnabled(hasInfo);
     d->removeItemAction->setEnabled(hasInfo);
     d->clearListAction->setEnabled(hasInfo);
@@ -317,8 +249,6 @@ void SurveyWindow::slotItemSelected(const ItemInfo& info)
     d->forwardAction->setEnabled(hasInfo);
     d->firstAction->setEnabled(hasInfo);
     d->lastAction->setEnabled(hasInfo);
-    d->syncPreviewAction->setEnabled(hasInfo);
-    d->navigateByPairAction->setEnabled(hasInfo);
 
     if (hasInfo)
     {
@@ -335,30 +265,14 @@ void SurveyWindow::slotItemSelected(const ItemInfo& info)
             {
                 d->lastAction->setEnabled(false);
             }
-
-            if      (d->navigateByPairAction->isChecked())
-            {
-                d->setItemLeftAction->setEnabled(false);
-                d->setItemRightAction->setEnabled(false);
-
-                d->thumbView->setOnLeftPanel(info);
-                slotSetItemOnLeftPanel(info);
-            }
-            else if (d->autoLoadOnRightPanel && !d->thumbView->isOnLeftPanel(info))
-            {
-                d->thumbView->setOnRightPanel(info);
-                slotSetItemOnRightPanel(info);
-            }
         }
     }
-
-    d->previewView->checkForSelection(info);
 }
 
 /**
- * Deal with one (or more) items dropped onto the left panel
+ * Deal with one (or more) items dropped onto the panel
  */
-void SurveyWindow::slotLeftDroppedItems(const ItemInfoList& list)
+void SurveyWindow::slotDroppedItems(const ItemInfoList& list)
 {
     ItemInfo info = list.first();
 
@@ -374,30 +288,7 @@ void SurveyWindow::slotLeftDroppedItems(const ItemInfoList& list)
 
     if (index.isValid())
     {
-        slotSetItemOnLeftPanel(info);
-    }
-}
-
-/**
- * Deal with one (or more) items dropped onto the right panel
- */
-void SurveyWindow::slotRightDroppedItems(const ItemInfoList& list)
-{
-    ItemInfo info = list.first();
-
-    // add the image to the existing images
-
-    loadItemInfos(list, info, true);
-
-    // We will check if first item from list is already stored in thumbbar
-    // Note that the thumbbar stores all ItemInfo reference
-    // in memory for preview object.
-
-    QModelIndex index = d->thumbView->findItemByInfo(info);
-
-    if (index.isValid())
-    {
-        slotSetItemOnRightPanel(info);
+        slotSetItemOnPanel(info);
 
         // Make this item the current one.
 
@@ -406,9 +297,9 @@ void SurveyWindow::slotRightDroppedItems(const ItemInfoList& list)
 }
 
 /**
- * Set the images for the left and right panel.
+ * Set the images for the panel.
  */
-void SurveyWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
+void SurveyWindow::setItems(const ItemInfoList& list, bool addTo)
 {
     ItemInfoList l = list;
 
@@ -422,10 +313,10 @@ void SurveyWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
 
     if ((l.count() == 1) && !addTo)
     {
-        // Just one item; this is used for the left panel.
+        // Just one item; this is used for the panel.
 
-        d->thumbView->setOnLeftPanel(info);
-        slotSetItemOnLeftPanel(info);
+        d->thumbView->setOnRightPanel(info);
+        slotSetItemOnPanel(info);
         d->thumbView->setCurrentInfo(info);
 
         return;
@@ -433,15 +324,7 @@ void SurveyWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
 
     if (index.isValid())
     {
-        // The first item is used for the left panel.
-
-        if (!addTo)
-        {
-            d->thumbView->setOnLeftPanel(info);
-            slotSetItemOnLeftPanel(info);
-        }
-
-        // The subsequent item is used for the right panel.
+        // The subsequent item is used for the panel.
 
         QModelIndex next = d->thumbView->nextIndex(index);
 
@@ -449,80 +332,39 @@ void SurveyWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
         {
             ItemInfo nextInf = d->thumbView->findItemByIndex(next);
             d->thumbView->setOnRightPanel(nextInf);
-            slotSetItemOnRightPanel(nextInf);
-
-            if (!d->navigateByPairAction->isChecked())
-            {
-                d->thumbView->setCurrentInfo(nextInf);
-            }
-        }
-
-        // If navigate by pairs is active, the left panel item is selected.
-        // (Fixes parts of bug #150296)
-
-        if (d->navigateByPairAction->isChecked())
-        {
-            d->thumbView->setCurrentInfo(info);
+            slotSetItemOnPanel(nextInf);
         }
     }
 }
 
-void SurveyWindow::slotSetItemLeft()
+void SurveyWindow::slotSetItem()
 {
     if (!d->thumbView->currentInfo().isNull())
     {
-        slotSetItemOnLeftPanel(d->thumbView->currentInfo());
+        slotSetItemOnPanel(d->thumbView->currentInfo());
     }
 }
 
-void SurveyWindow::slotSetItemRight()
+void SurveyWindow::slotSetItemOnPanel(const ItemInfo& info)
 {
-    if (!d->thumbView->currentInfo().isNull())
-    {
-        slotSetItemOnRightPanel(d->thumbView->currentInfo());
-    }
-}
-
-void SurveyWindow::slotSetItemOnLeftPanel(const ItemInfo& info)
-{
-    d->previewView->setLeftItemInfo(info);
+    d->previewView->setItemInfo(info);
 
     if (!info.isNull())
     {
-        d->leftSideBar->itemChanged(info);
+        d->sideBar->itemChanged(info);
     }
     else
     {
-        d->leftSideBar->slotNoCurrentItem();
-    }
-}
-
-void SurveyWindow::slotSetItemOnRightPanel(const ItemInfo& info)
-{
-    d->previewView->setRightItemInfo(info);
-
-    if (!info.isNull())
-    {
-        d->rightSideBar->itemChanged(info);
-    }
-    else
-    {
-        d->rightSideBar->slotNoCurrentItem();
+        d->sideBar->slotNoCurrentItem();
     }
 }
 
 void SurveyWindow::slotClearItemsList()
 {
-    if (!d->previewView->leftItemInfo().isNull())
+    if (!d->previewView->itemInfo().isNull())
     {
-        d->previewView->setLeftItemInfo();
-        d->leftSideBar->slotNoCurrentItem();
-    }
-
-    if (!d->previewView->rightItemInfo().isNull())
-    {
-        d->previewView->setRightItemInfo();
-        d->rightSideBar->slotNoCurrentItem();
+        d->previewView->setItemInfo();
+        d->sideBar->slotNoCurrentItem();
     }
 
     d->thumbView->clear();
@@ -597,321 +439,27 @@ void SurveyWindow::slotRemoveItem()
 
 void SurveyWindow::slotRemoveItem(const ItemInfo& info)
 {
-/*
-    if (!d->previewView->leftItemInfo().isNull())
+    if (!d->previewView->itemInfo().isNull())
     {
-        if (d->previewView->leftItemInfo() == info)
+        if (d->previewView->itemInfo() == info)
         {
-            d->previewView->setLeftItemInfo();
-            d->leftSideBar->slotNoCurrentItem();
-        }
-    }
-
-    if (!d->previewView->rightItemInfo().isNull())
-    {
-        if (d->previewView->rightItemInfo() == info)
-        {
-            d->previewView->setRightItemInfo();
-            d->rightSideBar->slotNoCurrentItem();
+            d->previewView->setItemInfo();
+            d->sideBar->slotNoCurrentItem();
         }
     }
 
     d->thumbView->removeItemByInfo(info);
-    d->thumbView->setSelected(d->thumbView->currentItem());
-*/
-
-    // When either the image from the left or right panel is removed,
-    // there are various situations to account for.
-    // To describe them, 4 images A B C D are used
-    // and the subscript _L and _ R  mark the currently
-    // active item on the left and right panel
-
-    ItemInfo new_linfo;
-    ItemInfo new_rinfo;
-    bool leftPanelActive = false;
-    ItemInfo curr_linfo = d->previewView->leftItemInfo();
-    ItemInfo curr_rinfo = d->previewView->rightItemInfo();
-    qint64 infoId        = info.id();
-
-    // First determine the next images to the current left and right image:
-
-    ItemInfo next_linfo;
-    ItemInfo next_rinfo;
-
-    if (!curr_linfo.isNull())
-    {
-        QModelIndex index = d->thumbView->findItemByInfo(curr_linfo);
-
-        if (index.isValid())
-        {
-            QModelIndex next = d->thumbView->nextIndex(index);
-
-            if (next.isValid())
-            {
-                next_linfo = d->thumbView->findItemByIndex(next);
-            }
-        }
-    }
-
-    if (!curr_rinfo.isNull())
-    {
-        QModelIndex index = d->thumbView->findItemByInfo(curr_rinfo);
-
-        if (index.isValid())
-        {
-            QModelIndex next = d->thumbView->nextIndex(index);
-
-            if (next.isValid())
-            {
-                next_rinfo = d->thumbView->findItemByIndex(next);
-            }
-        }
-    }
-
-    d->thumbView->removeItemByInfo(info);
-
-    // Make sure that next_linfo and next_rinfo are still available:
-
-    if (!d->thumbView->findItemByInfo(next_linfo).isValid())
-    {
-        next_linfo = ItemInfo();
-    }
-
-    if (!d->thumbView->findItemByInfo(next_rinfo).isValid())
-    {
-        next_rinfo = ItemInfo();
-    }
-
-    // removal of the left panel item?
-
-    if (!curr_linfo.isNull())
-    {
-        if (curr_linfo.id() == infoId)
-        {
-            leftPanelActive = true;
-
-            // Delete the item A_L of the left panel:
-            // 1)  A_L  B_R  C    D   ->   B_L  C_R  D
-            // 2)  A_L  B    C_R  D   ->   B    C_L  D_R
-            // 3)  A_L  B    C    D_R ->   B_R  C    D_L
-            // 4)  A_L  B_R           ->   A_L
-            // some more corner cases:
-            // 5)  A    B_L  C_R  D   ->   A    C_L  D_R
-            // 6)  A    B_L  C_R      ->   A_R  C_L
-            // 7)  A_LR B    C    D   ->   B_L    C_R  D  (does not yet work)
-            // I.e. in 3) we wrap around circularly.
-
-            // When removing the left panel image,
-            // put the right panel image into the left panel.
-            // Check if this one is not the same (i.e. also removed).
-
-            if (!curr_rinfo.isNull())
-            {
-                if (curr_rinfo.id() != infoId)
-                {
-                    new_linfo = curr_rinfo;
-
-                    // Set the right panel to the next image:
-
-                    new_rinfo = next_rinfo;
-
-                    // set the right panel active, but not in pair mode
-
-                    if (!d->navigateByPairAction->isChecked())
-                    {
-                        leftPanelActive = false;
-                    }
-                }
-            }
-        }
-    }
-
-    // removal of the right panel item?
-
-    if (!curr_rinfo.isNull())
-    {
-        if (curr_rinfo.id() == infoId)
-        {
-            // Leave the left panel as the current one
-
-            new_linfo = curr_linfo;
-
-            // Set the right panel to the next image
-
-            new_rinfo = next_rinfo;
-        }
-    }
-
-    // Now we deal with the corner cases, where no left or right item exists.
-    // If the right panel would be set, but not the left-one, then swap
-
-    if (new_linfo.isNull() && !new_rinfo.isNull())
-    {
-        new_linfo       = new_rinfo;
-        new_rinfo       = ItemInfo();
-        leftPanelActive = true;
-    }
-
-    if (new_linfo.isNull())
-    {
-        if (d->thumbView->countItems() > 0)
-        {
-            QModelIndex first = d->thumbView->firstIndex();
-            new_linfo         = d->thumbView->findItemByIndex(first);
-        }
-    }
-
-    // Make sure that new_linfo and new_rinfo exist.
-    // This addresses a crash occurring if the last image is removed
-    // in the navigate by pairs mode.
-
-    if (!d->thumbView->findItemByInfo(new_linfo).isValid())
-    {
-        new_linfo = ItemInfo();
-    }
-
-    if (!d->thumbView->findItemByInfo(new_rinfo).isValid())
-    {
-        new_rinfo = ItemInfo();
-    }
-
-    // no right item defined?
-
-    if (new_rinfo.isNull())
-    {
-        // If there are at least two items, we can find reasonable right image.
-
-        if (d->thumbView->countItems() > 1)
-        {
-            // See if there is an item next to the left one:
-
-            QModelIndex index = d->thumbView->findItemByInfo(new_linfo);
-            QModelIndex next;
-
-            if (index.isValid())
-            {
-                next = d->thumbView->nextIndex(index);
-            }
-
-            if (next.isValid())
-            {
-                new_rinfo = d->thumbView->findItemByIndex(next);
-            }
-            else
-            {
-                // If there is no item to the right of new_linfo
-                // then we can choose the first item for new_rinfo
-                // (as we made sure that there are at least two items)
-
-                QModelIndex first = d->thumbView->firstIndex();
-                new_rinfo         = d->thumbView->findItemByIndex(first);
-            }
-        }
-    }
-
-    // Check if left and right are set to the same
-
-    if (!new_linfo.isNull() && !new_rinfo.isNull())
-    {
-        if (new_linfo.id() == new_rinfo.id())
-        {
-            // Only keep the left one
-
-            new_rinfo = ItemInfo();
-        }
-    }
-
-    // If the right panel would be set, but not the left-one, then swap
-    // (note that this has to be done here again!)
-
-    if (new_linfo.isNull() && !new_rinfo.isNull())
-    {
-        new_linfo       = new_rinfo;
-        new_rinfo       = ItemInfo();
-        leftPanelActive = true;
-    }
-
-    // set the image for the left panel
-
-    if (!new_linfo.isNull())
-    {
-        d->thumbView->setOnLeftPanel(new_linfo);
-        slotSetItemOnLeftPanel(new_linfo);
-
-        //  make this the selected item if the left was active before
-
-        if (leftPanelActive)
-        {
-            d->thumbView->setCurrentInfo(new_linfo);
-        }
-    }
-    else
-    {
-        d->previewView->setLeftItemInfo();
-        d->leftSideBar->slotNoCurrentItem();
-    }
-
-    // set the image for the right panel
-
-    if (!new_rinfo.isNull())
-    {
-        d->thumbView->setOnRightPanel(new_rinfo);
-        slotSetItemOnRightPanel(new_rinfo);
-
-        //  make this the selected item if the left was active before
-
-        if (!leftPanelActive)
-        {
-            d->thumbView->setCurrentInfo(new_rinfo);
-        }
-    }
-    else
-    {
-        d->previewView->setRightItemInfo();
-        d->rightSideBar->slotNoCurrentItem();
-    }
+    d->thumbView->setSelectedItemInfos(QList<ItemInfo>() << d->thumbView->currentInfo());
 }
 
-void SurveyWindow::slotLeftZoomFactorChanged(double zoom)
+void SurveyWindow::slotZoomFactorChanged(double zoom)
 {
-    double zmin = d->previewView->leftZoomMin();
-    double zmax = d->previewView->leftZoomMax();
-    d->leftZoomBar->setZoom(zoom, zmin, zmax);
+    double zmin = d->previewView->zoomMin();
+    double zmax = d->previewView->zoomMax();
+    d->zoomBar->setZoom(zoom, zmin, zmax);
 
-    d->leftZoomPlusAction->setEnabled(!d->previewView->leftMaxZoom());
-    d->leftZoomMinusAction->setEnabled(!d->previewView->leftMinZoom());
-}
-
-void SurveyWindow::slotRightZoomFactorChanged(double zoom)
-{
-    double zmin = d->previewView->rightZoomMin();
-    double zmax = d->previewView->rightZoomMax();
-    d->rightZoomBar->setZoom(zoom, zmin, zmax);
-
-    d->rightZoomPlusAction->setEnabled(!d->previewView->rightMaxZoom());
-    d->rightZoomMinusAction->setEnabled(!d->previewView->rightMinZoom());
-}
-
-void SurveyWindow::slotToggleSyncPreview()
-{
-    d->previewView->setSyncPreview(d->syncPreviewAction->isChecked());
-}
-
-void SurveyWindow::slotToggleOnSyncPreview(bool t)
-{
-    d->syncPreviewAction->setEnabled(t);
-
-    if (!t)
-    {
-        d->syncPreviewAction->setChecked(false);
-    }
-    else
-    {
-        if (d->autoSyncPreview)
-        {
-            d->syncPreviewAction->setChecked(true);
-        }
-    }
+    d->zoomPlusAction->setEnabled(!d->previewView->maxZoom());
+    d->zoomMinusAction->setEnabled(!d->previewView->minZoom());
 }
 
 void SurveyWindow::slotBackward()
@@ -932,13 +480,6 @@ void SurveyWindow::slotFirst()
 void SurveyWindow::slotLast()
 {
     d->thumbView->toLastIndex();
-}
-
-void SurveyWindow::slotToggleNavigateByPair()
-{
-    d->thumbView->setNavigateByPair(d->navigateByPairAction->isChecked());
-    d->previewView->setNavigateByPair(d->navigateByPairAction->isChecked());
-    slotItemSelected(d->thumbView->currentInfo());
 }
 
 void SurveyWindow::slotComponentsInfo()
@@ -987,46 +528,28 @@ void SurveyWindow::showSideBars(bool visible)
 {
     if (visible)
     {
-        d->leftSideBar->restore();
-        d->rightSideBar->restore();
+        d->sideBar->restore();
     }
     else
     {
-        d->leftSideBar->backup();
-        d->rightSideBar->backup();
+        d->sideBar->backup();
     }
-}
-
-void SurveyWindow::slotToggleLeftSideBar()
-{
-    d->leftSideBar->isExpanded() ? d->leftSideBar->shrink()
-                                 : d->leftSideBar->expand();
 }
 
 void SurveyWindow::slotToggleRightSideBar()
 {
-    d->rightSideBar->isExpanded() ? d->rightSideBar->shrink()
-                                  : d->rightSideBar->expand();
-}
-
-void SurveyWindow::slotPreviousLeftSideBarTab()
-{
-    d->leftSideBar->activePreviousTab();
-}
-
-void SurveyWindow::slotNextLeftSideBarTab()
-{
-    d->leftSideBar->activeNextTab();
+    d->sideBar->isExpanded() ? d->sideBar->shrink()
+                             : d->sideBar->expand();
 }
 
 void SurveyWindow::slotPreviousRightSideBarTab()
 {
-    d->rightSideBar->activePreviousTab();
+    d->sideBar->activePreviousTab();
 }
 
 void SurveyWindow::slotNextRightSideBarTab()
 {
-    d->rightSideBar->activeNextTab();
+    d->sideBar->activeNextTab();
 }
 
 void SurveyWindow::customizedFullScreenMode(bool set)
@@ -1047,54 +570,29 @@ void SurveyWindow::slotFileWithDefaultApplication()
     }
 }
 
-void SurveyWindow::slotRightSideBarActivateTitles()
+void SurveyWindow::slotSideBarActivateTitles()
 {
-    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
-    d->rightSideBar->imageDescEditTab()->setFocusToTitlesEdit();
+    d->sideBar->setActiveTab(d->sideBar->imageDescEditTab());
+    d->sideBar->imageDescEditTab()->setFocusToTitlesEdit();
 }
 
-void SurveyWindow::slotRightSideBarActivateComments()
+void SurveyWindow::slotSideBarActivateComments()
 {
-    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
-    d->rightSideBar->imageDescEditTab()->setFocusToCommentsEdit();
+    d->sideBar->setActiveTab(d->sideBar->imageDescEditTab());
+    d->sideBar->imageDescEditTab()->setFocusToCommentsEdit();
 }
 
-void SurveyWindow::slotRightSideBarActivateAssignedTags()
+void SurveyWindow::slotSideBarActivateAssignedTags()
 {
-    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
-    d->rightSideBar->imageDescEditTab()->activateAssignedTagsButton();
+    d->sideBar->setActiveTab(d->sideBar->imageDescEditTab());
+    d->sideBar->imageDescEditTab()->activateAssignedTagsButton();
 }
 
-void SurveyWindow::slotLeftSideBarActivateTitles()
+void SurveyWindow::slotPreviewSelected(bool b)
 {
-    d->leftSideBar->setActiveTab(d->leftSideBar->imageDescEditTab());
-    d->leftSideBar->imageDescEditTab()->setFocusToTitlesEdit();
-}
-
-void SurveyWindow::slotLeftSideBarActivateComments()
-{
-    d->leftSideBar->setActiveTab(d->leftSideBar->imageDescEditTab());
-    d->leftSideBar->imageDescEditTab()->setFocusToCommentsEdit();
-}
-
-void SurveyWindow::slotLeftSideBarActivateAssignedTags()
-{
-    d->leftSideBar->setActiveTab(d->leftSideBar->imageDescEditTab());
-    d->leftSideBar->imageDescEditTab()->activateAssignedTagsButton();
-}
-
-void SurveyWindow::slotLeftPreviewSelected(bool b)
-{
-    QFont fnt(d->leftFileName->font());
+    QFont fnt(d->fileName->font());
     fnt.setBold(b);
-    d->leftFileName->setFont(fnt);
-}
-
-void SurveyWindow::slotRightPreviewSelected(bool b)
-{
-    QFont fnt(d->rightFileName->font());
-    fnt.setBold(b);
-    d->rightFileName->setFont(fnt);
+    d->fileName->setFont(fnt);
 }
 
 void SurveyWindow::slotToggleColorManagedView()

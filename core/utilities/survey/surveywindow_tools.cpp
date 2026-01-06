@@ -44,11 +44,10 @@ void SurveyWindow::slotEditItem(const ItemInfo& info)
     im->setFocus();
 }
 
-// FIXME
-void SurveyWindow::slotLeftSlideShowManualFromCurrent()
+void SurveyWindow::slotSlideShowManualFromCurrent()
 {
     QList<DPluginAction*> actions = DPluginLoader::instance()->
-                                        pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"), this);
+                                    pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"), this);
 
     if (actions.isEmpty())
     {
@@ -57,35 +56,14 @@ void SurveyWindow::slotLeftSlideShowManualFromCurrent()
 
     // set current image to SlideShow Plugin
 
-    actions[0]->setData(d->previewView->leftItemInfo().fileUrl());
-
+    actions[0]->setData(d->previewView->itemInfo().fileUrl());
     actions[0]->trigger();
-
-    d->fromLeftPreview = true;
-}
-
-void SurveyWindow::slotRightSlideShowManualFromCurrent()
-{
-    QList<DPluginAction*> actions = DPluginLoader::instance()->
-                                       pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"), this);
-
-    if (actions.isEmpty())
-    {
-        return;
-    }
-
-    // set current image to SlideShow Plugin
-
-    actions[0]->setData(d->previewView->rightItemInfo().fileUrl());
-    actions[0]->trigger();
-
-    d->fromLeftPreview = false;
 }
 
 void SurveyWindow::slotSlideShowLastItemUrl()
 {
     QList<DPluginAction*> actions = DPluginLoader::instance()->
-                                       pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"), this);
+                                    pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"), this);
 
     if (actions.isEmpty())
     {
@@ -95,18 +73,7 @@ void SurveyWindow::slotSlideShowLastItemUrl()
     // get last image to SlideShow Plugin
 
     QUrl url = actions[0]->data().toUrl();
-
-    if (d->fromLeftPreview && !d->navigateByPairAction->isChecked())
-    {
-        d->thumbView->blockSignals(true);
-        d->thumbView->setCurrentUrl(url);
-        d->thumbView->blockSignals(false);
-        slotSetItemLeft();
-    }
-    else
-    {
-        d->thumbView->setCurrentUrl(url);
-    }
+    d->thumbView->setCurrentUrl(url);
 }
 
 } // namespace Digikam

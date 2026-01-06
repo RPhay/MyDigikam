@@ -1,49 +1,36 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="800" name="surveytool" translationDomain="digikam" >
+<gui version="800" name="survey" translationDomain="digikam" >
 
 <MenuBar>
 
     <Menu name="File" ><text>&amp;File</text>
-        <Action name="lighttable_first" />
-        <Action name="lighttable_backward" />
-        <Action name="lighttable_forward" />
-        <Action name="lighttable_last" />
+        <Action name="survey_first" />
+        <Action name="survey_backward" />
+        <Action name="survey_forward" />
+        <Action name="survey_last" />
         <Separator/>
-        <Action name="lighttable_setitemleft" />
-        <Action name="lighttable_setitemright" />
-        <Action name="lighttable_edititem" />
+        <Action name="survey_edititem" />
         <Separator/>
         <Action name="open_with_default_application" />
         <Separator/>
-        <Action name="lighttable_removeitem" />
-        <Action name="lighttable_clearlist" />
+        <Action name="survey_removeitem" />
+        <Action name="survey_clearlist" />
         <Separator/>
-        <Action name="lighttable_filedelete" />
+        <Action name="survey_filedelete" />
         <Separator/>
-        <Action name="lighttable_close" />
+        <Action name="survey_close" />
     </Menu>
 
     <Menu name="View" ><text>&amp;View</text>
-        <Action name="lighttable_fullscreen" />
+        <Action name="survey_fullscreen" />
 
         <!-- _DPLUGINS_GENERIC_VIEW_ACTIONS_ -->
 
         <Separator/>
-        <Action name="lighttable_syncpreview" />
-        <Action name="lighttable_navigatebypair" />
-        <Separator/>
-        <Menu name="LeftPanel"><text>&amp;Left Panel</text>
-            <Action name="lighttable_zoomplus_left" />
-            <Action name="lighttable_zoomminus_left" />
-            <Action name="lighttable_zoomto100percents_left" />
-            <Action name="lighttable_zoomfit2window_left" />
-        </Menu>
-        <Menu name="RightPanel"><text>&amp;Right Panel</text>
-            <Action name="lighttable_zoomplus_right" />
-            <Action name="lighttable_zoomminus_right" />
-            <Action name="lighttable_zoomto100percents_right" />
-            <Action name="lighttable_zoomfit2window_right" />
-        </Menu>
+        <Action name="survey_zoomplus" />
+        <Action name="survey_zoomminus" />
+        <Action name="survey_zoomto100percents" />
+        <Action name="survey_zoomfit2window" />
         <Separator />
         <Action name="color_managed_view" />
     </Menu>
@@ -75,7 +62,7 @@
         <Action name="options_show_menubar" />
         <Action name="options_show_statusbar" />
         <Action name="options_show_toolbar" />
-        <Action name="lighttable_showthumbbar" />
+        <Action name="survey_showthumbbar" />
         <Separator/>
         <Action name="theme_menu" />
         <Action name="switch_application_language" />
@@ -103,22 +90,17 @@
 </MenuBar>
 
 <ToolBar name="mainToolBar" ><text>Main Toolbar</text>
-     <Action name="lighttable_first" />
-     <Action name="lighttable_backward" />
-     <Action name="lighttable_forward" />
-     <Action name="lighttable_last" />
+     <Action name="survey_first" />
+     <Action name="survey_backward" />
+     <Action name="survey_forward" />
+     <Action name="survey_last" />
      <Separator/>
-     <Action name="lighttable_zoomplus" />
-     <Action name="lighttable_zoomminus" />
-     <Action name="lighttable_zoomfit2window" />
-     <Separator/>
-     <Action name="lighttable_setitemleft" />
-     <Action name="lighttable_setitemright" />
-     <Action name="lighttable_syncpreview" />
-     <Action name="lighttable_navigatebypair" />
+     <Action name="survey_zoomplus" />
+     <Action name="survey_zoomminus" />
+     <Action name="survey_zoomfit2window" />
      <Separator/>
      <Action name="slideshow_plugin" />
-     <Action name="lighttable_fullscreen" />
+     <Action name="survey_fullscreen" />
      <Merge />
      <WeakSeparator/>
      <Action name="logo_action" />

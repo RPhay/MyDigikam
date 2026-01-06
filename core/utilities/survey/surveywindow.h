@@ -34,13 +34,13 @@ class SurveyWindow : public DXmlGuiWindow
 
 public:
 
-    ~SurveyWindow()                                 override;
+    ~SurveyWindow()                                     override;
 
-    static SurveyWindow* lightTableWindow();
-    static bool              lightTableWindowCreated();
+    static SurveyWindow* surveyWindow();
+    static bool          surveyWindowCreated();
 
     void loadItemInfos(const ItemInfoList& list, const ItemInfo& imageInfoCurrent, bool addTo);
-    void setLeftRightItems(const ItemInfoList& list, bool addTo);
+    void setItems(const ItemInfoList& list, bool addTo);
     void refreshView();
     bool isEmpty()                                const;
 
@@ -75,6 +75,8 @@ private:
     void deleteItem(bool permanently);
     void deleteItem(const ItemInfo& info, bool permanently);
 
+private:
+
     // Disable
     SurveyWindow();
     explicit SurveyWindow(QWidget*);
@@ -86,28 +88,14 @@ private Q_SLOTS:
     void slotFirst();
     void slotLast();
 
-    void slotSetItemLeft();
-    void slotSetItemRight();
-    void slotSetItemOnLeftPanel(const ItemInfo&);
-    void slotSetItemOnRightPanel(const ItemInfo&);
-    void slotLeftDroppedItems(const ItemInfoList&);
-    void slotRightDroppedItems(const ItemInfoList&);
+    void slotSetItem();
+    void slotSetItemOnPanel(const ItemInfo&);
+    void slotDroppedItems(const ItemInfoList&);
 
-    void slotLeftPanelLeftButtonClicked();
-    void slotRightPanelLeftButtonClicked();
-
-    void slotLeftPreviewLoaded(bool);
-    void slotRightPreviewLoaded(bool);
-
-    void slotLeftPreviewSelected(bool);
-    void slotRightPreviewSelected(bool);
-
-    void slotLeftZoomFactorChanged(double);
-    void slotRightZoomFactorChanged(double);
-
-    void slotToggleOnSyncPreview(bool);
-    void slotToggleSyncPreview();
-    void slotToggleNavigateByPair();
+    void slotPanelLeftButtonClicked();
+    void slotPreviewLoaded(bool);
+    void slotPreviewSelected(bool);
+    void slotZoomFactorChanged(double);
 
     void slotDeleteItem();
     void slotDeleteItem(const ItemInfo&);
@@ -132,19 +120,13 @@ private Q_SLOTS:
 
     void slotRefreshStatusBar();
 
-    void slotToggleLeftSideBar()                        override;
     void slotToggleRightSideBar()                       override;
-    void slotPreviousLeftSideBarTab()                   override;
-    void slotNextLeftSideBarTab()                       override;
     void slotPreviousRightSideBarTab()                  override;
     void slotNextRightSideBarTab()                      override;
 
-    void slotRightSideBarActivateTitles();
-    void slotRightSideBarActivateComments();
-    void slotRightSideBarActivateAssignedTags();
-    void slotLeftSideBarActivateTitles();
-    void slotLeftSideBarActivateComments();
-    void slotLeftSideBarActivateAssignedTags();
+    void slotSideBarActivateTitles();
+    void slotSideBarActivateComments();
+    void slotSideBarActivateAssignedTags();
 
 // --- Internal setup methods implemented in surveywindow_config.cpp
 
@@ -181,8 +163,7 @@ private Q_SLOTS:
     void slotEditItem();
     void slotEditItem(const ItemInfo&);
 
-    void slotLeftSlideShowManualFromCurrent();
-    void slotRightSlideShowManualFromCurrent();
+    void slotSlideShowManualFromCurrent();
     void slotSlideShowLastItemUrl();
 
 // --- Import tools methods implemented in surveywindow_import.cpp

@@ -117,21 +117,15 @@ public:
 
 public:
 
-    QAction*                  setItemLeftAction             = nullptr;
-    QAction*                  setItemRightAction            = nullptr;
     QAction*                  clearListAction               = nullptr;
     QAction*                  editItemAction                = nullptr;
     QAction*                  removeItemAction              = nullptr;
     QAction*                  fileDeleteAction              = nullptr;
     QAction*                  fileDeleteFinalAction         = nullptr;
-    QAction*                  leftZoomPlusAction            = nullptr;
-    QAction*                  leftZoomMinusAction           = nullptr;
-    QAction*                  leftZoomTo100percents         = nullptr;
-    QAction*                  leftZoomFitToWindowAction     = nullptr;
-    QAction*                  rightZoomPlusAction           = nullptr;
-    QAction*                  rightZoomMinusAction          = nullptr;
-    QAction*                  rightZoomTo100percents        = nullptr;
-    QAction*                  rightZoomFitToWindowAction    = nullptr;
+    QAction*                  zoomPlusAction                = nullptr;
+    QAction*                  zoomMinusAction               = nullptr;
+    QAction*                  zoomTo100percents             = nullptr;
+    QAction*                  zoomFitToWindowAction         = nullptr;
 
     QAction*                  forwardAction                 = nullptr;
     QAction*                  backwardAction                = nullptr;
@@ -146,7 +140,7 @@ public:
 
     QMainWindow*              dockArea                      = nullptr;
 
-    StatusProgressBar*        rightFileName                 = nullptr;     ///< File name loaded in right preview and show on status bar.
+    StatusProgressBar*        fileName                      = nullptr;     ///< File name loaded in right preview and show on status bar.
 
     SidebarSplitter*          hSplitter                     = nullptr;
     ThumbBarDock*             barViewDock                   = nullptr;
@@ -155,11 +149,11 @@ public:
 
     SurveyView*               previewView                   = nullptr;     ///< Central view including left and right panels.
 
-    DZoomBar*                 rightZoomBar                  = nullptr;     ///< Zoom bar to control the right preview and show on status bar.
+    DZoomBar*                 zoomBar                       = nullptr;     ///< Zoom bar to control the right preview and show on status bar.
 
     StatusProgressBar*        statusProgressBar             = nullptr;
 
-    ItemPropertiesSideBarDB*  rightSideBar                  = nullptr;     ///< Side bar to display properties of the right preview and show on the right side..
+    ItemPropertiesSideBarDB*  sideBar                       = nullptr;     ///< Side bar to display properties of the right preview and show on the right side..
 };
 
 } // namespace Digikam
