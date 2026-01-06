@@ -1221,6 +1221,7 @@ void DigikamApp::customizedTrashView(bool set)
     d->imagePreviewAction->setEnabled(set);
     d->bqmAction->setEnabled(set);
     d->ltAction->setEnabled(set);
+    d->svAction->setEnabled(set);
     d->ieAction->setEnabled(set);
 
     d->imageSeparationSortOrderAction->setEnabled(set);

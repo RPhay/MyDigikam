@@ -33,6 +33,7 @@ void DigikamApp::setupSelectToolsAction()
     actionModel->addAction(d->maintenanceAction,          mainCategory);
     actionModel->addAction(d->scanNewItemsAction,         mainCategory);
     actionModel->addAction(d->ltAction,                   mainCategory);
+    actionModel->addAction(d->svAction,                   mainCategory);
     actionModel->addAction(d->advSearchAction,            mainCategory);
 
     QString postCategory   = i18nc("@title Post Processing Tools", "Post-Processing");
