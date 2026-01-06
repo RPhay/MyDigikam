@@ -57,9 +57,11 @@ SurveyView::SurveyView(QWidget* const parent)
 
     d->preview              = new LightTablePreview(this);
 
-    d->grid->addWidget(d->preview,  0, 0, 1, 1);
+    d->grid->addWidget(d->preview, 0, 0, 1, 1);
     d->grid->setColumnStretch(0, 10);
     d->grid->setRowStretch(0, 10);
+    d->grid->setContentsMargins(0, 0, 0, 0);
+    d->grid->setSpacing(0);
 
     connect(d->preview, SIGNAL(signalPopupTagsView()),
             this, SIGNAL(signalPopupTagsView()));
