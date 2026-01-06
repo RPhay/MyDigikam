@@ -78,6 +78,7 @@
 #include "itemfiltermodel.h"
 #include "itemviewutilities.h"
 #include "lighttablewindow.h"
+#include "surveywindow.h"
 #include "queuemgrwindow.h"
 #include "metadataremover.h"
 #include "picklabelwidget.h"

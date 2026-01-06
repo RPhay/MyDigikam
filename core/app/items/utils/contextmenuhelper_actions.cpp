@@ -127,6 +127,26 @@ void ContextMenuHelper::addStandardActionLightTable()
     addAction(action);
 }
 
+void ContextMenuHelper::addStandardActionSurvey()
+{
+    QAction* action = nullptr;
+    QStringList ltActionNames;
+    ltActionNames << QLatin1String("image_add_to_survey")
+                  << QLatin1String("image_survey");
+
+    if (SurveyWindow::surveyWindowCreated() &&
+        !SurveyWindow::surveyWindow()->isEmpty())
+    {
+        action = d->stdActionCollection->action(ltActionNames.at(0));
+    }
+    else
+    {
+        action = d->stdActionCollection->action(ltActionNames.at(1));
+    }
+
+    addAction(action);
+}
+
 void ContextMenuHelper::addStandardActionThumbnail(const imageIds& ids, Album* const album)
 {
     if (d->setThumbnailAction)

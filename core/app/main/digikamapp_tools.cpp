@@ -150,6 +150,11 @@ void DigikamApp::slotMaintenanceDone()
         LightTableWindow::lightTableWindow()->refreshView();
     }
 
+    if (SurveyWindow::surveyWindowCreated())
+    {
+        SurveyWindow::surveyWindow()->refreshView();
+    }
+
     if (QueueMgrWindow::queueManagerWindowCreated())
     {
         QueueMgrWindow::queueManagerWindow()->refreshView();

@@ -67,6 +67,7 @@
 #include "itemiconview.h"
 #include "imagewindow.h"
 #include "lighttablewindow.h"
+#include "surveywindow.h"
 #include "picklabelwidget.h"
 #include "colorlabelwidget.h"
 #include "tagscache.h"

@@ -22,6 +22,7 @@ void TagsActionMngr::registerTagsActionCollections()
     d->actionCollectionList.append(DigikamApp::instance()->actionCollection());
     d->actionCollectionList.append(ImageWindow::imageWindow()->actionCollection());
     d->actionCollectionList.append(LightTableWindow::lightTableWindow()->actionCollection());
+    d->actionCollectionList.append(SurveyWindow::surveyWindow()->actionCollection());
 
     // Create Tags shortcuts.
 

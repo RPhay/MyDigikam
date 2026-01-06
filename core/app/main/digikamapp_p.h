@@ -114,6 +114,7 @@
 #include "iteminfo.h"
 #include "imagewindow.h"
 #include "lighttablewindow.h"
+#include "surveywindow.h"
 #include "queuemgrwindow.h"
 #include "loadingcache.h"
 #include "loadingcacheinterface.h"

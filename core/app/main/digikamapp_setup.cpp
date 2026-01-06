@@ -1193,6 +1193,7 @@ void DigikamApp::preloadWindows()
     ImageWindow::imageWindow();
     QueueMgrWindow::queueManagerWindow();
     LightTableWindow::lightTableWindow();
+    SurveyWindow::surveyWindow();
 
     d->tagsActionManager->registerTagsActionCollections();
 }

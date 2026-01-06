@@ -302,6 +302,15 @@ DigikamApp::~DigikamApp()
         qApp->processEvents();
     }
 
+    // Close and delete survey instance.
+
+    if (SurveyWindow::surveyWindowCreated())
+    {
+        SurveyWindow::surveyWindow()->setAttribute(Qt::WA_DeleteOnClose, true);
+        SurveyWindow::surveyWindow()->close();
+        qApp->processEvents();
+    }
+
     // Close and delete Batch Queue Manager instance.
 
     if (QueueMgrWindow::queueManagerWindowCreated())

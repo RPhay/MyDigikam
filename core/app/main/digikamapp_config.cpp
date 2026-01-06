@@ -72,6 +72,11 @@ void DigikamApp::slotSetupChanged()
         LightTableWindow::lightTableWindow()->applySettings();
     }
 
+    if (SurveyWindow::surveyWindowCreated())
+    {
+        SurveyWindow::surveyWindow()->applySettings();
+    }
+
     if (QueueMgrWindow::queueManagerWindowCreated())
     {
         QueueMgrWindow::queueManagerWindow()->applySettings();
