@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-05 00:40+0000\n"
-"PO-Revision-Date: 2026-01-03 02:59+0100\n"
+"PO-Revision-Date: 2026-01-05 09:40+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -48922,28 +48922,22 @@ msgstr "ხატულების თემის სისტემიდა�
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "თარიღისა და დროის ინფორმაცი"
+msgstr "თარიღისა და დროის ფორმატი (%1):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in whole application."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
 msgstr ""
-"აირჩიეთ აქ ფონტი, რომელიც მთელ აპლიკაციაში ტექსტის საჩვენებლად იქნება "
-"გამოყენებული."
+"ეს სტრიქონი მთელ აპლიკაციაში თარიღისა და დროის ფორმატისთვის გამოიყენება."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "ჩაწერეთ შესწორებული თარიღი და დრო თითოეული გამოსახულებისთვის"
+msgstr "გადაერთვება ლოკალურ მოკლე თარიღისა და დროის ფორმატზე"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -64684,12 +64678,7 @@ msgid "Grouping"
 msgstr "დაჯგუფება"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='black'><i><b>⚠️Warning:</b> These settings make startup "
-#| "slower! Read the <a href=\"%1\">online documentation</a> carefully first."
-#| "</i></font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "

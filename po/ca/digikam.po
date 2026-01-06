@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-05 00:40+0000\n"
-"PO-Revision-Date: 2026-01-03 08:20+0100\n"
+"PO-Revision-Date: 2026-01-05 08:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -51251,27 +51251,22 @@ msgstr "Usa el tema d'icones del sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "Informació de la data i hora"
+msgstr "Format de data i hora (%1):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in whole application."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
 msgstr ""
-"Establiu aquí la lletra emprada per a mostrar el text en tota l'aplicació."
+"Aquesta cadena s'utilitza com a format de data i hora en tota l'aplicació."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "Escriu la data i hora corregides de cada imatge"
+msgstr "Reverteix al format local curt de data i hora"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -67972,12 +67967,7 @@ msgid "Grouping"
 msgstr "Agrupament"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='black'><i><b>⚠️Warning:</b> These settings make startup "
-#| "slower! Read the <a href=\"%1\">online documentation</a> carefully first."
-#| "</i></font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
@@ -67985,9 +67975,10 @@ msgid ""
 "have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
 "information.</i></font>"
 msgstr ""
-"<font color='black'><i><b>⚠️Avís:</b> Aquestes opcions alentiran l'inici! "
-"Abans llegiu la <a href=\"%1\">documentació en línia</a> amb atenció.</i></"
-"font>"
+"<font color='black'><i><b>⚠️Avís:</b> Tots els canvis en aquests paràmetres "
+"només tindran efecte després del reinici. Alguns paràmetres depenen del "
+"maquinari i poden tenir efectes secundaris. Llegiu la <a href="
+"\"%1\">documentació en línia</a> per a més informació.</i></font>"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format

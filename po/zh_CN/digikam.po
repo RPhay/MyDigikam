@@ -2775,11 +2775,9 @@ msgid "format settings"
 msgstr "格式设置"
 
 #: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info: week properties"
-#| msgid "Start: "
+#, kde-format
 msgid "Support: "
-msgstr "开始："
+msgstr ""
 
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
@@ -2787,17 +2785,14 @@ msgid "Documentation: "
 msgstr "文档："
 
 #: core/app/utils/digikam_version.cpp:66
-#, fuzzy, kde-format
-#| msgid "Contribute..."
+#, kde-format
 msgid "Contribute: "
-msgstr "参与 digiKam 开发协作..."
+msgstr ""
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Date: "
+#, kde-format
 msgid "Donate: "
-msgstr "日期："
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:174
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
@@ -28110,7 +28105,7 @@ msgstr "数据库配置"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #, kde-format
 msgid "Type: "
-msgstr ""
+msgstr "类型："
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:55
 #, kde-format
@@ -28163,19 +28158,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Type</b>"
-msgstr ""
+msgstr "获取关于 <b>数据库类型</b> 的信息"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
 #, kde-format
 msgctxt "@label:database path"
 msgid "Path: "
-msgstr ""
+msgstr "路径："
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Path</b>"
-msgstr ""
+msgstr "获取关于 <b>数据库路径</b> 的信息"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, kde-format
@@ -28191,6 +28186,13 @@ msgid ""
 "system such as NFS, cannot be used here. For performance reasons, it is also "
 "recommended not to use network storage media.</p>"
 msgstr ""
+"<p>请在此设置数据库文件的存储位置。digiKam 会建立 4 个数据库：一个用于存储所"
+"有相册集合的属性、一个用于存储压缩后的缩略图、一个用于存储人脸识别元数据、一"
+"个用于存储文件相似度指纹数据。<br>注意：要编辑图像属性，必须具备写入权限。</"
+"p><p>数据库属于 digiKam 核心引擎的一部分，为了提高性能，请尽可能把数据库保存"
+"在高速存储设备上 (如 SSD 或者 NVMe 等)。为了保证缩略图数据库能正常工作，请预"
+"留足够的存储空间。</p><p>注意：为了避免性能低下，不可使用诸如 NFS 等远程文件"
+"系统来存储数据库，也不建议使用任何网络存储媒介。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
@@ -28209,7 +28211,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>WAL Mode</b>"
-msgstr ""
+msgstr "获取关于 <b>WAL 模式</b> 的信息"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
@@ -28590,7 +28592,7 @@ msgstr "相似性数据库名称为空"
 #, kde-format
 msgid ""
 "<p>This path was set as a command lineoption (--database-directory).</p>"
-msgstr ""
+msgstr "<p>此路径已被设置为命令行选项 (--database-directory)。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
@@ -42149,12 +42151,10 @@ msgstr[0] ""
 "“%1”张所选图像"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:405
-#, fuzzy, kde-format
-#| msgctxt "date of last image modification"
-#| msgid "Mod.: %1"
+#, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
-msgstr "修改于：%1"
+msgstr ""
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
 #: core/showfoto/main/showfoto.cpp:267
@@ -49236,26 +49236,21 @@ msgstr "使用系统图标主题"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "日期和时间信息"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in whole application."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
-msgstr "选择整个应用程序的文字信息使用的字体。"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "写入已校准日期和时间到每张图像"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -65069,16 +65064,12 @@ msgstr ""
 "要清理其他数据库，请使用工具菜单中的系统维护功能。"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
 "Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
-msgstr "<font color='red'><i>警告：这些设置会使启动速度变慢。</i></font>"
+msgstr ""
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
@@ -65242,18 +65233,14 @@ msgid "Grouping"
 msgstr "分组"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
 "take effect after the restart. Some settings are hardware dependent and may "
 "have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
 "information.</i></font>"
-msgstr "<font color='red'><i>警告：这些设置会使启动速度变慢。</i></font>"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
@@ -66424,16 +66411,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid ""
-#~ "<b>Note: All changes to these settings only take effect after the "
-#~ "restart. Some settings are hardware dependent and may have no effect.</b>"
-#~ msgstr ""
-#~ "<b>提示：所有这些设置必须在重新启动程序后生效。某些设置的生效与否取决于硬"
-#~ "件配置。</b>"
-
-#~ msgid "IRC: "
-#~ msgstr "IRC："
-
-#~ msgid "Feedback: "
-#~ msgstr "反馈："
