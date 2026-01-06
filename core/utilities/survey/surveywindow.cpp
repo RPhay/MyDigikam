@@ -217,6 +217,11 @@ void SurveyWindow::slotFileChanged(const QString& path)
     }
 }
 
+void SurveyWindow::slotPanelLeftButtonClicked()
+{
+    d->thumbView->setCurrentInfo(d->previewView->itemInfo());
+}
+
 void SurveyWindow::slotPreviewLoaded(bool b)
 {
     d->zoomBar->setEnabled(b);
