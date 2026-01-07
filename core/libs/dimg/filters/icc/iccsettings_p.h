@@ -117,6 +117,8 @@ public:
     QHash<int, IccProfile> screenProfiles;      ///< Hash-table of Color Profile by screen ID populated by @method profileFromWindowSystem().
 
     const QString          configGroup;         ///< The configuration group used to store the settings on disk.
+
+    int                    dirDepth      = 0;   ///< Depth of the current directory for searching for profiles.
 };
 
 } // namespace Digikam

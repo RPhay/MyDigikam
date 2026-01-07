@@ -27,6 +27,11 @@ IccSettings::Private::Private()
 
 void IccSettings::Private::scanDirectory(const QString& path, const QStringList& filter, QList<IccProfile>* const profiles)
 {
+    if ((path.count(QLatin1Char('/')) - dirDepth) > 2)
+    {
+        return;
+    }
+
     QDir          dir(path);
     QFileInfoList infos;
     infos << dir.entryInfoList(filter, QDir::Files | QDir::Readable);
@@ -74,6 +79,7 @@ QList<IccProfile> IccSettings::Private::scanDirectories(const QStringList& dirs)
             continue;
         }
 
+        dirDepth = dir.path().count(QLatin1Char('/'));
         scanDirectory(dir.path(), filters, &profiles);
     }
 
