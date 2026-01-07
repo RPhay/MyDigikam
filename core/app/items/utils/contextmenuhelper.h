@@ -171,15 +171,6 @@ public:
     void addStandardActionLightTable();
 
     /**
-     * Add the survey action to the menu.
-     *
-     * Do not use addAction() to add the survey action, because we need
-     * to handle special cases here. Depending on whether the survey window
-     * has already been created and filled with items, we set different actions.
-     */
-    void addStandardActionSurvey();
-
-    /**
      * Add the thumbnail action to the menu.
      *
      * Do not use addAction() to add the thumbnail action, because we need
