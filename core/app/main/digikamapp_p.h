@@ -268,8 +268,6 @@ public:
     QAction*                            imageIconViewAction                     = nullptr;
     QAction*                            imageLightTableAction                   = nullptr;
     QAction*                            imageAddLightTableAction                = nullptr;
-    QAction*                            imageSurveyAction                       = nullptr;
-    QAction*                            imageAddSurveyAction                    = nullptr;
     QAction*                            imageAddCurrentQueueAction              = nullptr;
     QAction*                            imageAddNewQueueAction                  = nullptr;
     QAction*                            imageViewAction                         = nullptr;

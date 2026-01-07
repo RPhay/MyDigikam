@@ -54,7 +54,6 @@
      <Action name="image_lighttable" />
      <Action name="image_add_to_lighttable" />
      <Action name="image_survey" />
-     <Action name="image_add_to_survey" />
      <Action name="image_add_to_current_queue" />
      <Action name="image_add_to_new_queue" />
      <Action name="image_scan_for_faces" />
