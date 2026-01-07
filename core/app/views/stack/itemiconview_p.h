@@ -80,6 +80,7 @@
 #include "newitemsfinder.h"
 #include "queuemgrwindow.h"
 #include "scancontroller.h"
+#include "surveywindow.h"
 #include "setup.h"
 #include "sidebar.h"
 #include "statusprogressbar.h"

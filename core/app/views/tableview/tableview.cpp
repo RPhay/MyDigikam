@@ -233,10 +233,6 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
         {
             d->imageViewUtilities->insertToLightTable(allItemInfos(), info, false);
         }
-        else if (leftClickAction == ApplicationSettings::ShowOnSurvey)
-        {
-            d->imageViewUtilities->insertToSurvey(allItemInfos(), info, false);
-        }
         else
         {
             d->imageViewUtilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);

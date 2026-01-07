@@ -8,7 +8,7 @@
 APPLY_COMMON_POLICIES()
 
 set(libsurvey_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/surveyview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/surveystack.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/surveywindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/surveywindow_config.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/surveywindow_setup.cpp

@@ -93,7 +93,7 @@ void SurveyWindow::setupActions()
     ac->addAction(QLatin1String("survey_clearonclose"), d->clearOnCloseAction);
     ac->setDefaultShortcut(d->clearOnCloseAction, Qt::CTRL | Qt::SHIFT | Qt::Key_C);
 
-    d->showBarAction = d->barViewDock->getToggleAction(this);
+    d->showBarAction = d->stack->thumbBarDock()->getToggleAction(this);
     ac->addAction(QLatin1String("survey_showthumbbar"), d->showBarAction);
     ac->setDefaultShortcut(d->showBarAction, Qt::CTRL | Qt::Key_T);
 
@@ -102,7 +102,7 @@ void SurveyWindow::setupActions()
 
     // Panel Zoom Actions
 
-    d->zoomPlusAction  = buildStdAction(StdZoomInAction, d->previewView, SLOT(slotIncreaseZoom()), this);
+    d->zoomPlusAction  = buildStdAction(StdZoomInAction, d->stack, SLOT(slotIncreaseZoom()), this);
     d->zoomPlusAction->setEnabled(false);
     ac->addAction(QLatin1String("survey_zoomplus"), d->zoomPlusAction);
 
@@ -116,7 +116,7 @@ void SurveyWindow::setupActions()
 
 #endif
 
-    d->zoomMinusAction  = buildStdAction(StdZoomOutAction, d->previewView, SLOT(slotDecreaseZoom()), this);
+    d->zoomMinusAction  = buildStdAction(StdZoomOutAction, d->stack, SLOT(slotDecreaseZoom()), this);
     d->zoomMinusAction->setEnabled(false);
     ac->addAction(QLatin1String("survey_zoomminus"), d->zoomMinusAction);
 
@@ -131,12 +131,12 @@ void SurveyWindow::setupActions()
 #endif
 
     d->zoomTo100percents = new QAction(QIcon::fromTheme(QLatin1String("zoom-original")), i18n("Zoom to 100%"), this);
-    connect(d->zoomTo100percents, SIGNAL(triggered()), d->previewView, SLOT(slotZoomTo100()));
+    connect(d->zoomTo100percents, SIGNAL(triggered()), d->stack, SLOT(slotZoomTo100()));
     ac->addAction(QLatin1String("survey_zoomto100percents"), d->zoomTo100percents);
     ac->setDefaultShortcut(d->zoomTo100percents, Qt::CTRL | Qt::SHIFT | Qt::Key_Period);
 
     d->zoomFitToWindowAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-fit-best")), i18n("Fit to &Window"), this);
-    connect(d->zoomFitToWindowAction, SIGNAL(triggered()), d->previewView, SLOT(slotFitToWindow()));
+    connect(d->zoomFitToWindowAction, SIGNAL(triggered()), d->stack, SLOT(slotFitToWindow()));
     ac->addAction(QLatin1String("survey_zoomfit2window"), d->zoomFitToWindowAction);
     ac->setDefaultShortcut(d->zoomFitToWindowAction, Qt::CTRL | Qt::SHIFT | Qt::Key_E);
 
@@ -235,83 +235,64 @@ void SurveyWindow::setupConnections()
     connect(IccSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotColorManagementOptionsChanged()));
 
-    // Thumbs bar connections ---------------------------------------
-
-    connect(d->thumbView, SIGNAL(itemSelectionChanged()),
-            this, SLOT(slotSetItem()));
-
-    connect(d->thumbView, SIGNAL(signalRemoveItem(ItemInfo)),
-            this, SLOT(slotRemoveItem(ItemInfo)));
-
-    connect(d->thumbView, SIGNAL(signalEditItem(ItemInfo)),
-            this, SLOT(slotEditItem(ItemInfo)));
-
-    connect(d->thumbView, SIGNAL(signalClearAll()),
-            this, SLOT(slotClearItemsList()));
-
-    connect(d->thumbView, SIGNAL(signalDroppedItems(QList<ItemInfo>)),
-            this, SLOT(slotThumbbarDroppedItems(QList<ItemInfo>)));
-
-    connect(d->thumbView, SIGNAL(currentInfoChanged(ItemInfo)),
-            this, SLOT(slotItemSelected(ItemInfo)));
-
-    connect(d->thumbView, SIGNAL(signalContentChanged()),
-            this, SLOT(slotRefreshStatusBar()));
-
     // Zoom bars connections -----------------------------------------
 
     connect(d->zoomBar, SIGNAL(signalZoomSliderChanged(int)),
-            d->previewView, SLOT(slotZoomSliderChanged(int)));
+            d->stack, SLOT(slotZoomSliderChanged(int)));
 
     connect(d->zoomBar, SIGNAL(signalZoomValueEdited(double)),
-            d->previewView, SLOT(setZoomFactor(double)));
+            d->stack, SLOT(setZoomFactor(double)));
 
     // View connections ---------------------------------------------
 
-    connect(d->previewView, SIGNAL(signalPopupTagsView()),
+    connect(d->stack->thumbBar(), SIGNAL(itemSelectionChanged()),
+            this, SLOT(slotItemSelected()));
+
+/*
+    connect(d->stack, SIGNAL(signalPopupTagsView()),
             d->sideBar, SLOT(slotPopupTagsView()));
 
-    connect(d->previewView, SIGNAL(signalZoomFactorChanged(double)),
+    connect(d->stack, SIGNAL(signalZoomFactorChanged(double)),
             this, SLOT(slotZoomFactorChanged(double)));
 
-    connect(d->previewView, SIGNAL(signalEditItem(ItemInfo)),
+    connect(d->stack, SIGNAL(signalEditItem(ItemInfo)),
             this, SLOT(slotEditItem(ItemInfo)));
 
-    connect(d->previewView, SIGNAL(signalDeleteItem(ItemInfo)),
+    connect(d->stack, SIGNAL(signalDeleteItem(ItemInfo)),
             this, SLOT(slotDeleteItem(ItemInfo)));
 
-    connect(d->previewView, SIGNAL(signalSlideShowCurrent()),
+    connect(d->stack, SIGNAL(signalSlideShowCurrent()),
             this, SLOT(slotSlideShowManualFromCurrent()));
 
-    connect(d->previewView, SIGNAL(signalDroppedItems(ItemInfoList)),
+    connect(d->stack, SIGNAL(signalDroppedItems(ItemInfoList)),
             this, SLOT(slotDroppedItems(ItemInfoList)));
 
-    connect(d->previewView, SIGNAL(signalPreviewLoaded(bool)),
+    connect(d->stack, SIGNAL(signalPreviewLoaded(bool)),
             this, SLOT(slotPreviewLoaded(bool)));
 
-    connect(d->previewView, SIGNAL(signalPanelLeftButtonClicked()),
+    connect(d->stack, SIGNAL(signalPanelLeftButtonClicked()),
             this, SLOT(slotPanelLeftButtonClicked()));
-
+*/
     connect(this, SIGNAL(signalWindowHasMoved()),
             d->zoomBar, SLOT(slotUpdateTrackerPos()));
 
     // ---
 
-    connect(d->previewView, &SurveyView::signalPreviewStartedLoading,
+    connect(d->stack->imagePreviewView(), &ItemPreviewView::signalStartedLoading,
             this, [this]()
        {
             d->fileName->setProgressBarMode(StatusProgressBar::ProgressBarMode, i18nc("@label", "Loading:"));
        }
     );
 
-    connect(d->previewView, &SurveyView::signalPreviewLoadingProgress,
+    connect(d->stack->imagePreviewView(), &ItemPreviewView::signalLoadingProgress,
             this, [this](float progress)
        {
             d->fileName->setProgressValue((int)(progress * 100.0));
        }
     );
 
-    connect(d->previewView, &SurveyView::signalPreviewLoadingComplete,
+    connect(d->stack->imagePreviewView(), &ItemPreviewView::signalLoadingComplete,
             this, [this]()
        {
             d->fileName->setProgressBarMode(StatusProgressBar::TextMode, d->fileName->text());
@@ -323,7 +304,7 @@ void SurveyWindow::setupConnections()
     LoadingCacheInterface::connectToSignalFileChanged(this, SLOT(slotFileChanged(QString)));
 }
 
-void SurveyWindow::setupUserArea()
+void SurveyWindow::setupUserArea(DigikamItemView* const iconView)
 {
     QWidget* const mainW    = new QWidget(this);
     d->hSplitter            = new SidebarSplitter(Qt::Horizontal, mainW);
@@ -336,12 +317,14 @@ void SurveyWindow::setupUserArea()
 
     d->hSplitter->addWidget(d->dockArea);
     d->hSplitter->setStretchFactor(d->hSplitter->indexOf(d->dockArea), 10);
-    d->previewView          = new SurveyView(d->dockArea);
-    d->dockArea->setCentralWidget(d->previewView);
+
+    d->stack          = new SurveyStack(iconView, this);
+    d->stack->setDockArea(d->dockArea);
+    d->dockArea->setCentralWidget(d->stack);
 
     // The right sidebar.
 
-    d->sideBar         = new ItemPropertiesSideBarDB(mainW, d->hSplitter, Qt::RightEdge, true);
+    d->sideBar              = new ItemPropertiesSideBarDB(mainW, d->hSplitter, Qt::RightEdge, true);
 
     hlay->addWidget(d->hSplitter);
     hlay->addWidget(d->sideBar);
@@ -355,23 +338,7 @@ void SurveyWindow::setupUserArea()
     d->hSplitter->setOpaqueResize(false);
     d->hSplitter->setStretchFactor(1, 10);      // set previewview+thumbbar container default size to max.
 
-    // The thumb bar is placed in a detachable/dockable widget.
-
-    d->barViewDock = new ThumbBarDock(d->dockArea, Qt::Tool);
-    d->barViewDock->setObjectName(QLatin1String("survey_thumbbar"));
-
-    d->thumbView   = new LightTableThumbBar(d->barViewDock);
-
-    d->barViewDock->setWidget(d->thumbView);
-    d->dockArea->addDockWidget(Qt::BottomDockWidgetArea, d->barViewDock);
-    d->barViewDock->setFloating(false);
-
-    connect(d->barViewDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),
-            d->thumbView, SLOT(slotDockLocationChanged(Qt::DockWidgetArea)));
-
-    d->barViewDock->reInitialize();
-
-    d->sideBar->setItemFilterModel(d->thumbView->itemFilterModel());
+    d->sideBar->setItemFilterModel(d->stack->thumbBar()->itemFilterModel());
 
     setCentralWidget(mainW);
 }

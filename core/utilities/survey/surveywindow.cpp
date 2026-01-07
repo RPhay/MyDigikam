@@ -55,11 +55,15 @@ SurveyWindow::SurveyWindow()
     // We don't want to be deleted on close
 
     setAttribute(Qt::WA_DeleteOnClose, false);
+}
+
+void SurveyWindow::init(DigikamItemView* const iconView)
+{
     setFullScreenOptions(FS_LIGHTTABLE);
 
     // -- Build the GUI -------------------------------
 
-    setupUserArea();
+    setupUserArea(iconView);
     setupActions();
     setupStatusBar();
 
@@ -83,7 +87,6 @@ SurveyWindow::~SurveyWindow()
 {
     m_instance = nullptr;
 
-    delete d->thumbView;
     delete d->sideBar;
     delete d;
 }
@@ -100,11 +103,12 @@ void SurveyWindow::closeEvent(QCloseEvent* e)
         return;
     }
 
+/*
     if (d->clearOnCloseAction->isChecked())
     {
         slotClearItemsList();
     }
-
+*/
     // There is one nasty habit with the thumbnail bar if it is floating: it
     // doesn't close when the parent window does, so it needs to be manually
     // closed. If the light table is opened again, its original state needs to
@@ -115,7 +119,7 @@ void SurveyWindow::closeEvent(QCloseEvent* e)
 
     if (isVisible())
     {
-        d->barViewDock->hide();
+        d->stack->thumbBarDock()->hide();
     }
 
     writeSettings();
@@ -127,7 +131,7 @@ void SurveyWindow::showEvent(QShowEvent* e)
 {
     // Restore the visibility of the thumbbar and start autosaving again.
 
-    d->barViewDock->restoreVisibility();
+    d->stack->thumbBarDock()->restoreVisibility();
 
     DXmlGuiWindow::showEvent(e);
 }
@@ -135,6 +139,7 @@ void SurveyWindow::showEvent(QShowEvent* e)
 /**
  * Deal with items dropped onto the thumbbar (e.g. from the Album view)
  */
+/*
 void SurveyWindow::slotThumbbarDroppedItems(const QList<ItemInfo>& list)
 {
     // Setting the third parameter of loadItemInfos to true
@@ -142,7 +147,7 @@ void SurveyWindow::slotThumbbarDroppedItems(const QList<ItemInfo>& list)
 
     loadItemInfos(ItemInfoList(list), ItemInfo(), true);
 }
-
+*/
 /**
  * We get here either
  * - via CTRL+L (from the albumview)
@@ -153,9 +158,10 @@ void SurveyWindow::slotThumbbarDroppedItems(const QList<ItemInfo>& list)
  *          calls ltview->loadItemInfos(list, current);
  * - via drag&drop, i.e. calls issued by the ...Dropped... routines
  */
+/*
 void SurveyWindow::loadItemInfos(const ItemInfoList& list,
-                                      const ItemInfo& givenItemInfoCurrent,
-                                      bool  addTo)
+                                 const ItemInfo& givenItemInfoCurrent,
+                                 bool  addTo)
 {
     // Clear all items before adding new images to the light table.
 
@@ -174,23 +180,24 @@ void SurveyWindow::loadItemInfos(const ItemInfoList& list,
         imageInfoCurrent = l.first();
     }
 
-    d->thumbView->setItems(l);
+    d->stack->thumbBar()->setItems(l);
 
-    QModelIndex index = d->thumbView->findItemByInfo(imageInfoCurrent);
+    QModelIndex index = d->stack->thumbBar()->findItemByInfo(imageInfoCurrent);
 
     if (index.isValid())
     {
-        d->thumbView->setCurrentIndex(index);
+        d->stack->thumbBar()->setCurrentIndex(index);
     }
     else
     {
-        d->thumbView->setCurrentWhenAvailable(imageInfoCurrent.id());
+        d->stack->thumbBar()->setCurrentWhenAvailable(imageInfoCurrent.id());
     }
 }
+*/
 
 bool SurveyWindow::isEmpty() const
 {
-    return (d->thumbView->countItems() == 0);
+    return (d->stack->thumbBar()->allItemInfos().count() == 0);
 }
 
 void SurveyWindow::slotRefreshStatusBar()
@@ -198,30 +205,32 @@ void SurveyWindow::slotRefreshStatusBar()
     d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
                                              i18np("%1 item on Survey",
                                                    "%1 items on Survey",
-                                             d->thumbView->countItems()));
+                                             d->stack->thumbBar()->allItemInfos().count()));
 }
-
-void SurveyWindow::slotFileChanged(const QString& path)
+/*
+void SurveyWindow::indexForInfo(const QString& path)
 {
     QUrl url = QUrl::fromLocalFile(path);
 
     // NOTE: Thumbbar handle change through ItemCategorizedView
 
-    if (!d->previewView->itemInfo().isNull())
+    if (!d->stack->thumbBar()->currentInfo().isNull())
     {
-        if (d->previewView->itemInfo().fileUrl() == url)
+        if (d->stack->thumbBar()->currentInfo().fileUrl() == url)
         {
-            d->previewView->reload();
-            d->sideBar->itemChanged(d->previewView->itemInfo());
+            d->stack->reload();
+            d->sideBar->itemChanged(d->stack->thumbBar()->currentInfo());
         }
     }
 }
-
+*/
+/*
 void SurveyWindow::slotPanelLeftButtonClicked()
 {
-    d->thumbView->setCurrentInfo(d->previewView->itemInfo());
+    d->stack->thumbBar()->setCurrentInfo(d->stack->thumbBar()->currentInfo());
 }
-
+*/
+/*
 void SurveyWindow::slotPreviewLoaded(bool b)
 {
     d->zoomBar->setEnabled(b);
@@ -233,20 +242,22 @@ void SurveyWindow::slotPreviewLoaded(bool b)
 
     if (b)
     {
-        d->fileName->setText(d->previewView->itemInfo().name());
-        d->thumbView->setOnRightPanel(d->previewView->itemInfo());
+        d->fileName->setText(d->stack->thumbBar()->currentInfo().name());
+        d->stack->thumbBar()->setOnRightPanel(d->stack->thumbBar()->currentInfo());
 
-        QModelIndex index = d->thumbView->findItemByInfo(d->previewView->itemInfo());
+        QModelIndex index = d->stack->thumbBar()->findItemByInfo(d->stack->thumbBar()->currentInfo());
 
         if (index.isValid())
         {
-            d->thumbView->setOnRightPanel(d->thumbView->findItemByIndex(index));
+            d->stack->thumbBar()->setOnRightPanel(d->stack->thumbBar()->findItemByIndex(index));
         }
     }
 }
-
-void SurveyWindow::slotItemSelected(const ItemInfo& info)
+*/
+void SurveyWindow::slotItemSelected()
 {
+    ItemInfo info = d->stack->thumbBar()->currentInfo();
+
     bool hasInfo = !info.isNull();
 
     d->editItemAction->setEnabled(hasInfo);
@@ -261,26 +272,29 @@ void SurveyWindow::slotItemSelected(const ItemInfo& info)
 
     if (hasInfo)
     {
-        QModelIndex curr = d->thumbView->findItemByInfo(info);
+        QModelIndex curr = d->stack->thumbBar()->indexForInfo(info);
 
         if (curr.isValid())
         {
-            if (!d->thumbView->previousIndex(curr).isValid())
+            if (!d->stack->thumbBar()->previousIndex(curr).isValid())
             {
                 d->firstAction->setEnabled(false);
             }
 
-            if (!d->thumbView->nextIndex(curr).isValid())
+            if (!d->stack->thumbBar()->nextIndex(curr).isValid())
             {
                 d->lastAction->setEnabled(false);
             }
         }
     }
+
+    d->sideBar->itemChanged(info);
 }
 
 /**
  * Deal with one (or more) items dropped onto the panel
  */
+/*
 void SurveyWindow::slotDroppedItems(const ItemInfoList& list)
 {
     ItemInfo info = list.first();
@@ -293,7 +307,7 @@ void SurveyWindow::slotDroppedItems(const ItemInfoList& list)
     // Note that the thumbbar stores all ItemInfo reference
     // in memory for preview object.
 
-    QModelIndex index = d->thumbView->findItemByInfo(info);
+    QModelIndex index = d->stack->thumbBar()->findItemByInfo(info);
 
     if (index.isValid())
     {
@@ -301,13 +315,14 @@ void SurveyWindow::slotDroppedItems(const ItemInfoList& list)
 
         // Make this item the current one.
 
-        d->thumbView->setCurrentInfo(info);
+        d->stack->thumbBar()->setCurrentInfo(info);
     }
 }
-
+*/
 /**
  * Set the images for the panel.
  */
+/*
 void SurveyWindow::setItems(const ItemInfoList& list, bool addTo)
 {
     ItemInfoList l = list;
@@ -318,15 +333,15 @@ void SurveyWindow::setItems(const ItemInfoList& list, bool addTo)
     }
 
     ItemInfo info     = l.first();
-    QModelIndex index = d->thumbView->findItemByInfo(info);
+    QModelIndex index = d->stack->thumbBar()->findItemByInfo(info);
 
     if ((l.count() == 1) && !addTo)
     {
         // Just one item; this is used for the panel.
 
-        d->thumbView->setOnRightPanel(info);
+        d->stack->thumbBar()->setOnRightPanel(info);
         slotSetItemOnPanel(info);
-        d->thumbView->setCurrentInfo(info);
+        d->stack->thumbBar()->setCurrentInfo(info);
 
         return;
     }
@@ -335,28 +350,29 @@ void SurveyWindow::setItems(const ItemInfoList& list, bool addTo)
     {
         // The subsequent item is used for the panel.
 
-        QModelIndex next = d->thumbView->nextIndex(index);
+        QModelIndex next = d->stack->thumbBar()->nextIndex(index);
 
         if (next.isValid() && !addTo)
         {
-            ItemInfo nextInf = d->thumbView->findItemByIndex(next);
-            d->thumbView->setOnRightPanel(nextInf);
+            ItemInfo nextInf = d->stack->thumbBar()->findItemByIndex(next);
+            d->stack->thumbBar()->setOnRightPanel(nextInf);
             slotSetItemOnPanel(nextInf);
         }
     }
 }
-
+*/
+/*
 void SurveyWindow::slotSetItem()
 {
-    if (!d->thumbView->currentInfo().isNull())
+    if (!d->stack->thumbBar()->currentInfo().isNull())
     {
-        slotSetItemOnPanel(d->thumbView->currentInfo());
+        slotSetItemOnPanel(d->stack->thumbBar()->currentInfo());
     }
 }
 
 void SurveyWindow::slotSetItemOnPanel(const ItemInfo& info)
 {
-    d->previewView->setItemInfo(info);
+    d->stack->setItemInfo(info);
 
     if (!info.isNull())
     {
@@ -367,18 +383,19 @@ void SurveyWindow::slotSetItemOnPanel(const ItemInfo& info)
         d->sideBar->slotNoCurrentItem();
     }
 }
-
+*/
+/*
 void SurveyWindow::slotClearItemsList()
 {
-    if (!d->previewView->itemInfo().isNull())
+    if (!d->stack->thumbBar()->currentInfo().isNull())
     {
-        d->previewView->setItemInfo();
+        d->stack->setItemInfo();
         d->sideBar->slotNoCurrentItem();
     }
 
-    d->thumbView->clear();
+    d->stack->thumbBar()->clear();
 }
-
+*/
 void SurveyWindow::slotDeleteItem()
 {
     deleteItem(false);
@@ -401,9 +418,9 @@ void SurveyWindow::slotDeleteFinalItem(const ItemInfo& info)
 
 void SurveyWindow::deleteItem(bool permanently)
 {
-    if (!d->thumbView->currentInfo().isNull())
+    if (!d->stack->thumbBar()->currentInfo().isNull())
     {
-        deleteItem(d->thumbView->currentInfo(), permanently);
+        deleteItem(d->stack->thumbBar()->currentInfo(), permanently);
     }
 }
 
@@ -437,58 +454,58 @@ void SurveyWindow::deleteItem(const ItemInfo& info, bool permanently)
 
     DIO::del(info, useTrash);
 }
-
+/*
 void SurveyWindow::slotRemoveItem()
 {
-    if (!d->thumbView->currentInfo().isNull())
+    if (!d->stack->thumbBar()->currentInfo().isNull())
     {
-        slotRemoveItem(d->thumbView->currentInfo());
+        slotRemoveItem(d->stack->thumbBar()->currentInfo());
     }
 }
 
 void SurveyWindow::slotRemoveItem(const ItemInfo& info)
 {
-    if (!d->previewView->itemInfo().isNull())
+    if (!d->stack->thumbBar()->currentInfo().isNull())
     {
-        if (d->previewView->itemInfo() == info)
+        if (d->stack->thumbBar()->currentInfo() == info)
         {
-            d->previewView->setItemInfo();
+            d->stack->setItemInfo();
             d->sideBar->slotNoCurrentItem();
         }
     }
 
-    d->thumbView->removeItemByInfo(info);
-    d->thumbView->setSelectedItemInfos(QList<ItemInfo>() << d->thumbView->currentInfo());
+    d->stack->thumbBar()->removeItemByInfo(info);
+    d->stack->thumbBar()->setSelectedItemInfos(QList<ItemInfo>() << d->stack->thumbBar()->currentInfo());
 }
-
+*/
 void SurveyWindow::slotZoomFactorChanged(double zoom)
 {
-    double zmin = d->previewView->zoomMin();
-    double zmax = d->previewView->zoomMax();
+    double zmin = d->stack->zoomMin();
+    double zmax = d->stack->zoomMax();
     d->zoomBar->setZoom(zoom, zmin, zmax);
 
-    d->zoomPlusAction->setEnabled(!d->previewView->maxZoom());
-    d->zoomMinusAction->setEnabled(!d->previewView->minZoom());
+    d->zoomPlusAction->setEnabled(!d->stack->maxZoom());
+    d->zoomMinusAction->setEnabled(!d->stack->minZoom());
 }
 
 void SurveyWindow::slotBackward()
 {
-    d->thumbView->toPreviousIndex();
+    d->stack->thumbBar()->toPreviousIndex();
 }
 
 void SurveyWindow::slotForward()
 {
-    d->thumbView->toNextIndex();
+    d->stack->thumbBar()->toNextIndex();
 }
 
 void SurveyWindow::slotFirst()
 {
-    d->thumbView->toFirstIndex();
+    d->stack->thumbBar()->toFirstIndex();
 }
 
 void SurveyWindow::slotLast()
 {
-    d->thumbView->toLastIndex();
+    d->stack->thumbBar()->toLastIndex();
 }
 
 void SurveyWindow::slotComponentsInfo()
@@ -511,26 +528,6 @@ void SurveyWindow::moveEvent(QMoveEvent* e)
     Q_UNUSED(e)
 
     Q_EMIT signalWindowHasMoved();
-}
-
-void SurveyWindow::toggleTag(int tagID)
-{
-    d->thumbView->toggleTag(tagID);
-}
-
-void SurveyWindow::slotAssignPickLabel(int pickId)
-{
-    d->thumbView->slotAssignPickLabel(pickId);
-}
-
-void SurveyWindow::slotAssignColorLabel(int colorId)
-{
-    d->thumbView->slotAssignColorLabel(colorId);
-}
-
-void SurveyWindow::slotAssignRating(int rating)
-{
-    d->thumbView->slotAssignRating(rating);
 }
 
 void SurveyWindow::showSideBars(bool visible)
@@ -568,14 +565,14 @@ void SurveyWindow::customizedFullScreenMode(bool set)
     showMenuBarAction()->setEnabled(!set);
     d->showBarAction->setEnabled(!set);
 
-    d->previewView->toggleFullScreen(set);
+//    d->stack->toggleFullScreen(set);
 }
 
 void SurveyWindow::slotFileWithDefaultApplication()
 {
-    if (!d->thumbView->currentInfo().isNull())
+    if (!d->stack->thumbBar()->currentInfo().isNull())
     {
-        DFileOperations::openFilesWithDefaultApplication(QList<QUrl>() << d->thumbView->currentInfo().fileUrl());
+        DFileOperations::openFilesWithDefaultApplication(QList<QUrl>() << d->stack->thumbBar()->currentInfo().fileUrl());
     }
 }
 
@@ -645,7 +642,7 @@ DInfoInterface* SurveyWindow::infoIface(DPluginAction* const ac)
         }
     }
 
-    DBInfoIface* const iface = new DBInfoIface(this, d->thumbView->allUrls(), aset);
+    DBInfoIface* const iface = new DBInfoIface(this, d->stack->thumbBar()->allUrls(), aset);
 
     connect(iface, SIGNAL(signalImportedImage(QUrl)),
             this, SLOT(slotImportedImagefromScanner(QUrl)));

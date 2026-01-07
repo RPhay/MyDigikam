@@ -60,18 +60,14 @@ void ItemIconView::slotLightTable()
 
 void ItemIconView::slotSurvey()
 {
-    bool grouping                    = selectedNeedGroupResolving(SurveyOps);
-    const ItemInfoList& selectedList = selectedInfoList(false, grouping);
+    SurveyWindow* const svview = SurveyWindow::surveyWindow();
 
-    if (selectedList.isEmpty())
+    if (svview->isHidden())
     {
-        grouping = allNeedGroupResolving(SurveyOps);
+        svview->show();
     }
 
-    const ItemInfoList& allInfoList = allInfo(grouping);
-    const ItemInfo currentItemInfo  = currentInfo();
-
-    d->utilities->insertToSurveyAuto(allInfoList, selectedList, currentItemInfo);
+    svview->unminimizeAndActivateWindow();
 }
 
 void ItemIconView::slotQueueMgr()
@@ -124,26 +120,6 @@ void ItemIconView::slotImageAddToLightTable()
     // add to images in light table
 
     d->utilities->insertToLightTable(selectedList, currentItemInfo, true);
-}
-
-void ItemIconView::slotImageSurvey()
-{
-    const ItemInfoList& selectedList = selectedInfoList(SurveyOps);
-    const ItemInfo currentItemInfo   = currentInfo();
-
-    // replace images in light table
-
-    d->utilities->insertToSurvey(selectedList, currentItemInfo, false);
-}
-
-void ItemIconView::slotImageAddToSurvey()
-{
-    const ItemInfoList& selectedList = selectedInfoList(SurveyOps);
-    const ItemInfo currentItemInfo   = currentInfo();
-
-    // add to images in light table
-
-    d->utilities->insertToSurvey(selectedList, currentItemInfo, true);
 }
 
 void ItemIconView::slotImageAddToCurrentQueue()

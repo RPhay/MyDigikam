@@ -56,9 +56,6 @@ public Q_SLOTS:
     void insertToLightTableAuto(const QList<ItemInfo>& all, const QList<ItemInfo>& selected, const ItemInfo& current);
     void insertToLightTable(const QList<ItemInfo>& list, const ItemInfo& current, bool addTo);
 
-    void insertToSurveyAuto(const QList<ItemInfo>& all, const QList<ItemInfo>& selected, const ItemInfo& current);
-    void insertToSurvey(const QList<ItemInfo>& list, const ItemInfo& current, bool addTo);
-
     void insertToQueueManager(const QList<ItemInfo>& list, const ItemInfo& currentInfo, bool newQueue);
     void insertSilentToQueueManager(const QList<ItemInfo>& list, const ItemInfo& currentInfo, int queueid);
 

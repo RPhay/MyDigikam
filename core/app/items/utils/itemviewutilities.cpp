@@ -286,46 +286,6 @@ void ItemViewUtilities::insertToLightTable(const QList<ItemInfo>& list,
     ltview->unminimizeAndActivateWindow();
 }
 
-void ItemViewUtilities::insertToSurveyAuto(const QList<ItemInfo>& all,
-                                           const QList<ItemInfo>& selected,
-                                           const ItemInfo& current)
-{
-    ItemInfoList list   = ItemInfoList(selected);
-    ItemInfo singleInfo = current;
-
-    if (list.isEmpty() || ((list.size() == 1) && SurveyWindow::surveyWindow()->isEmpty()))
-    {
-        list = ItemInfoList(all);
-    }
-
-    if (singleInfo.isNull() && !list.isEmpty())
-    {
-        singleInfo = list.first();
-    }
-
-    insertToSurvey(list, current, (list.size() <= 1));
-}
-
-void ItemViewUtilities::insertToSurvey(const QList<ItemInfo>& list,
-                                       const ItemInfo& current,
-                                       bool addTo)
-{
-    SurveyWindow* const svview = SurveyWindow::surveyWindow();
-
-    // If addTo is false, the light table will be emptied before adding
-    // the images.
-
-    svview->loadItemInfos(ItemInfoList(list), current, addTo);
-    svview->setItems(ItemInfoList(list), addTo);
-
-    if (svview->isHidden())
-    {
-        svview->show();
-    }
-
-    svview->unminimizeAndActivateWindow();
-}
-
 void ItemViewUtilities::insertToQueueManager(const QList<ItemInfo>& list, const ItemInfo& current, bool newQueue)
 {
     Q_UNUSED(current);

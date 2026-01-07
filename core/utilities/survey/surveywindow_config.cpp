@@ -42,8 +42,6 @@ void SurveyWindow::slotApplicationSettingsChanged()
 
     /// @todo Which part of the settings has to be reloaded?
     //d->sideBar->applySettings();
-
-    d->previewView->setPreviewSettings(ApplicationSettings::instance()->getPreviewSettings());
 }
 
 void SurveyWindow::readSettings()
@@ -52,7 +50,7 @@ void SurveyWindow::readSettings()
     KConfigGroup group        = config->group(configGroupName());
 
     d->hSplitter->restoreState(group, QLatin1String("Horizontal Splitter State"));
-    d->barViewDock->setShouldBeVisible(group.readEntry(QLatin1String("Show Thumbbar"), true));
+    d->stack->thumbBarDock()->setShouldBeVisible(group.readEntry(QLatin1String("Show Thumbbar"), true));
 
     QByteArray thumbbarState;
     thumbbarState = group.readEntry(QLatin1String("ThumbbarState"), thumbbarState);
@@ -69,7 +67,7 @@ void SurveyWindow::writeSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
     d->hSplitter->saveState(group, QLatin1String("Horizontal Splitter State"));
-    group.writeEntry(QLatin1String("Show Thumbbar"),    d->barViewDock->shouldBeVisible());
+    group.writeEntry(QLatin1String("Show Thumbbar"),    d->stack->thumbBarDock()->shouldBeVisible());
     group.writeEntry(QLatin1String("ThumbbarState"),    d->dockArea->saveState().toBase64());
     group.writeEntry(QLatin1String("Clear On Close"),   d->clearOnCloseAction->isChecked());
 

@@ -80,8 +80,6 @@ public Q_SLOTS:
     void slotFileWithDefaultApplication();
     void slotImageLightTable();
     void slotImageAddToLightTable();
-    void slotImageSurvey();
-    void slotImageAddToSurvey();
     void slotImageAddToCurrentQueue();
     void slotImageAddToNewQueue();
     void slotImageAddToExistingQueue(int);

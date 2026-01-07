@@ -58,11 +58,11 @@
 // Local includes
 
 #include "digikam_globals.h"
+#include "itemthumbnailbar.h"
 #include "itempropertiessidebardb.h"
 #include "statusprogressbar.h"
 #include "dzoombar.h"
-#include "surveyview.h"
-#include "lighttablethumbbar.h"
+#include "surveystack.h"
 #include "thumbbardock.h"
 #include "drawdecoder.h"
 #include "digikam_debug.h"
@@ -80,10 +80,10 @@
 #include "deletedialog.h"
 #include "iccsettings.h"
 #include "imagewindow.h"
+#include "itempreviewview.h"
 #include "itemdescedittab.h"
 #include "setup.h"
 #include "syncjob.h"
-#include "lighttablepreview.h"
 #include "albummodel.h"
 #include "albumfiltermodel.h"
 #include "coredbchangesets.h"
@@ -143,17 +143,14 @@ public:
     StatusProgressBar*        fileName                      = nullptr;     ///< File name loaded in right preview and show on status bar.
 
     SidebarSplitter*          hSplitter                     = nullptr;
-    ThumbBarDock*             barViewDock                   = nullptr;
 
-    LightTableThumbBar*       thumbView                     = nullptr;     ///< Top level view to host thumbar.
-
-    SurveyView*               previewView                   = nullptr;     ///< Central view including left and right panels.
+    SurveyStack*              stack                         = nullptr;     ///< Central view with thumbbar and preview stack.
 
     DZoomBar*                 zoomBar                       = nullptr;     ///< Zoom bar to control the right preview and show on status bar.
 
     StatusProgressBar*        statusProgressBar             = nullptr;
 
-    ItemPropertiesSideBarDB*  sideBar                       = nullptr;     ///< Side bar to display properties of the right preview and show on the right side..
+    ItemPropertiesSideBarDB*  sideBar                       = nullptr;     ///< Side bar to display properties of the preview and show on the right side.
 };
 
 } // namespace Digikam

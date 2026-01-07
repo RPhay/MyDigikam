@@ -20,7 +20,7 @@ namespace Digikam
 void SurveyWindow::slotImportedImagefromScanner(const QUrl& url)
 {
     ItemInfo info = ScanController::instance()->scannedInfo(url.toLocalFile());
-    loadItemInfos(ItemInfoList(QList<ItemInfo>() << info), info, true);
+//    loadItemInfos(ItemInfoList(QList<ItemInfo>() << info), info, true);
 }
 
 } // namespace Digikam

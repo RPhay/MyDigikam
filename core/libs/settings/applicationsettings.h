@@ -63,7 +63,6 @@ public:
         ShowPreview = 0,
         StartEditor,
         ShowOnTable,
-        ShowOnSurvey,
         OpenDefault,
     };
 

@@ -28,6 +28,8 @@
 namespace Digikam
 {
 
+class DigikamItemView;
+
 class SurveyWindow : public DXmlGuiWindow
 {
     Q_OBJECT
@@ -39,8 +41,11 @@ public:
     static SurveyWindow* surveyWindow();
     static bool          surveyWindowCreated();
 
+    void init(DigikamItemView* const iconView);
+/*
     void loadItemInfos(const ItemInfoList& list, const ItemInfo& imageInfoCurrent, bool addTo);
     void setItems(const ItemInfoList& list, bool addTo);
+*/
     void refreshView();
     bool isEmpty()                                const;
 
@@ -55,12 +60,9 @@ Q_SIGNALS:
     void signalWindowHasMoved();
 
 public Q_SLOTS:
-
+/*
     void slotFileChanged(const QString& filePath);
-    void slotAssignPickLabel(int pickId);
-    void slotAssignColorLabel(int colorId);
-    void slotAssignRating(int rating);
-
+*/
 protected:
 
     void moveEvent(QMoveEvent* e)                       override;
@@ -88,12 +90,6 @@ private Q_SLOTS:
     void slotFirst();
     void slotLast();
 
-    void slotSetItem();
-    void slotSetItemOnPanel(const ItemInfo&);
-    void slotDroppedItems(const ItemInfoList&);
-
-    void slotPanelLeftButtonClicked();
-    void slotPreviewLoaded(bool);
     void slotZoomFactorChanged(double);
 
     void slotDeleteItem();
@@ -101,14 +97,18 @@ private Q_SLOTS:
 
     void slotDeleteFinalItem();
     void slotDeleteFinalItem(const ItemInfo&);
-
+/*
+    void slotPanelLeftButtonClicked();
+    void slotSetItem();
+    void slotSetItemOnPanel(const ItemInfo&);
+    void slotPreviewLoaded(bool);
+    void slotDroppedItems(const ItemInfoList&);
     void slotRemoveItem();
     void slotRemoveItem(const ItemInfo&);
-
-    void slotItemSelected(const ItemInfo&);
     void slotClearItemsList();
-
     void slotThumbbarDroppedItems(const QList<ItemInfo>&);
+*/
+    void slotItemSelected();
 
     void slotToggleColorManagedView();
     void slotComponentsInfo()                           override;
@@ -152,7 +152,7 @@ private:
 
     void setupActions();
     void setupConnections();
-    void setupUserArea();
+    void setupUserArea(DigikamItemView* const iconView);
     void setupStatusBar();
 
 // --- Extra tool methods implemented in surveywindow_tools.cpp

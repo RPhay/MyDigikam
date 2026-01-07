@@ -4,8 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2006-06-13
- * Description : A widget stack to embedded album content view
- *               or the current image preview.
+ * Description : digiKam Survey tool - The stacked view.
  *
  * SPDX-FileCopyrightText: 2006-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
@@ -15,7 +14,7 @@
  *
  * ============================================================ */
 
-#include "stackedview.h"
+#include "surveystack.h"
 
 // Qt includes
 
@@ -30,33 +29,25 @@
 
 #include "digikam_debug.h"
 #include "applicationsettings.h"
-#include "welcomepageview.h"
 #include "digikamitemview.h"
 #include "itemiconview.h"
 #include "itemalbummodel.h"
 #include "itemalbumfiltermodel.h"
-#include "dtrashitemmodel.h"
 #include "itempreviewview.h"
+#include "itemcategorizedview.h"
 #include "itemthumbnailbar.h"
 #include "loadingcacheinterface.h"
 #include "singlephotopreviewlayout.h"
-#include "tableview.h"
-#include "trashview.h"
 #include "dimg.h"
-#include "surveywindow.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "itempreviewvideo.h"
 #endif // HAVE_MEDIAPLAYER
 
-#ifdef HAVE_GEOLOCATION
-#   include "mapwidgetview.h"
-#endif // HAVE_GEOLOCATION
-
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN StackedView::Private
+class Q_DECL_HIDDEN SurveyStack::Private
 {
 public:
 
@@ -73,7 +64,6 @@ public:
     ItemThumbnailBar* thumbBar          = nullptr;
     ItemPreviewView*  imagePreviewView  = nullptr;
     ThumbBarDock*     thumbBarDock      = nullptr;
-    WelcomePageView*  welcomePageView   = nullptr;
 
     QMap<int, int>    stackMap;
 
@@ -83,23 +73,13 @@ public:
 
 #endif // HAVE_MEDIAPLAYER
 
-#ifdef HAVE_GEOLOCATION
-
-    MapWidgetView*    mapWidgetView     = nullptr;
-
-#endif // HAVE_GEOLOCATION
-
-    TableView*        tableView         = nullptr;
-    TrashView*        trashView         = nullptr;
 };
 
-StackedView::StackedView(QWidget* const parent)
+SurveyStack::SurveyStack(DigikamItemView* const iconView, QWidget* const parent)
     : QStackedWidget(parent),
       d             (new Private)
 {
-    d->imageIconView    = new DigikamItemView(this);
-    SurveyWindow::surveyWindow()->init(d->imageIconView);
-
+    d->imageIconView    = iconView;
     d->imagePreviewView = new ItemPreviewView(this);
     d->thumbBarDock     = new ThumbBarDock();
     d->thumbBar         = new ItemThumbnailBar(d->thumbBarDock);
@@ -107,25 +87,7 @@ StackedView::StackedView(QWidget* const parent)
                                    d->imageIconView->itemFilterModel());
     d->thumbBar->installOverlays();
     d->thumbBarDock->setWidget(d->thumbBar);
-    d->thumbBarDock->setObjectName(QLatin1String("mainwindow_thumbbar"));
-
-    d->welcomePageView  = new WelcomePageView(this);
-
-    d->tableView        = new TableView(d->imageIconView->getSelectionModel(),
-                                        d->imageIconView->itemFilterModel(),
-                                        this);
-    d->tableView->setObjectName(QLatin1String("mainwindow_tableview"));
-
-    d->trashView        = new TrashView(this);
-
-#ifdef HAVE_GEOLOCATION
-
-    d->mapWidgetView    = new MapWidgetView(d->imageIconView->getSelectionModel(),
-                                            d->imageIconView->itemFilterModel(), this,
-                                            MapWidgetView::ApplicationDigikam);
-    d->mapWidgetView->setObjectName(QLatin1String("mainwindow_mapwidgetview"));
-
-#endif // HAVE_GEOLOCATION
+    d->thumbBarDock->setObjectName(QLatin1String("survey_thumbbar"));
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -133,17 +95,7 @@ StackedView::StackedView(QWidget* const parent)
 
 #endif // HAVE_MEDIAPLAYER
 
-    d->stackMap[addWidget(d->imageIconView)]    = IconViewMode;
     d->stackMap[addWidget(d->imagePreviewView)] = PreviewImageMode;
-    d->stackMap[addWidget(d->welcomePageView)]  = WelcomePageMode;
-    d->stackMap[addWidget(d->tableView)]        = TableViewMode;
-    d->stackMap[addWidget(d->trashView)]        = TrashViewMode;
-
-#ifdef HAVE_GEOLOCATION
-
-    d->stackMap[addWidget(d->mapWidgetView)]    = MapWidgetMode;
-
-#endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -151,9 +103,7 @@ StackedView::StackedView(QWidget* const parent)
 
 #endif // HAVE_MEDIAPLAYER
 
-    setViewMode(IconViewMode);
-
-    readSettings();
+    setViewMode(PreviewImageMode);
 
     // -----------------------------------------------------------------
 
@@ -193,9 +143,6 @@ StackedView::StackedView(QWidget* const parent)
     connect(d->imageIconView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotIconViewSelectionChanged()));
 
-    connect(d->imageIconView, SIGNAL(signalOpenGeolocationMap()),
-            this, SIGNAL(signalOpenGeolocationMap()));
-
     connect(d->thumbBarDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),
             d->thumbBar, SLOT(slotDockLocationChanged(Qt::DockWidgetArea)));
 
@@ -223,99 +170,47 @@ StackedView::StackedView(QWidget* const parent)
 
 }
 
-StackedView::~StackedView()
+SurveyStack::~SurveyStack()
 {
     delete d;
 }
 
-void StackedView::readSettings()
-{
-    ApplicationSettings* settings = ApplicationSettings::instance();
-    bool showThumbbar             = settings->getShowThumbbar();
-    d->thumbBarDock->setShouldBeVisible(showThumbbar);
-}
-
-void StackedView::setDockArea(QMainWindow* dockArea)
+void SurveyStack::setDockArea(QMainWindow* dockArea)
 {
     // Attach the thumbbar dock to the given dock area and place it initially on top.
 
     d->dockArea = dockArea;
     d->thumbBarDock->setParent(d->dockArea);
-    d->dockArea->addDockWidget(Qt::TopDockWidgetArea, d->thumbBarDock);
+    d->dockArea->addDockWidget(Qt::BottomDockWidgetArea, d->thumbBarDock);
     d->thumbBarDock->setFloating(false);
 }
 
-ThumbBarDock* StackedView::thumbBarDock() const
+ThumbBarDock* SurveyStack::thumbBarDock() const
 {
     return d->thumbBarDock;
 }
 
-ItemThumbnailBar* StackedView::thumbBar() const
+ItemThumbnailBar* SurveyStack::thumbBar() const
 {
     return d->thumbBar;
 }
 
-DigikamItemView* StackedView::imageIconView() const
-{
-    return d->imageIconView;
-}
-
-ItemPreviewView* StackedView::imagePreviewView() const
+ItemPreviewView* SurveyStack::imagePreviewView() const
 {
     return d->imagePreviewView;
 }
 
-#ifdef HAVE_GEOLOCATION
-
-MapWidgetView* StackedView::mapWidgetView() const
-{
-    return d->mapWidgetView;
-}
-
-#endif // HAVE_GEOLOCATION
-
-TableView* StackedView::tableView() const
-{
-    return d->tableView;
-}
-
-TrashView* StackedView::trashView() const
-{
-    return d->trashView;
-}
 
 #ifdef HAVE_MEDIAPLAYER
 
-ItemPreviewVideo* StackedView::mediaPlayerView() const
+ItemPreviewVideo* SurveyStack::mediaPlayerView() const
 {
     return d->mediaPlayerView;
 }
 
 #endif // HAVE_MEDIAPLAYER
 
-bool StackedView::isInSingleFileMode() const
-{
-    return (
-            (viewMode() == PreviewImageMode) ||
-            (viewMode() == MediaPlayerMode)
-           );
-}
-
-bool StackedView::isInMultipleFileMode() const
-{
-    return (
-            (viewMode() == IconViewMode)  ||
-            (viewMode() == MapWidgetMode) ||
-            (viewMode() == TableViewMode)
-           );
-}
-
-bool StackedView::isInAbstractMode() const
-{
-    return (viewMode() == WelcomePageMode);
-}
-
-void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
+void SurveyStack::setPreviewItem(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
 {
     if (info.isNull())
     {
@@ -388,14 +283,14 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
     }
 }
 
-StackedView::StackedViewMode StackedView::viewMode() const
+SurveyStack::SurveyStackMode SurveyStack::viewMode() const
 {
-    return StackedViewMode(d->stackMap.value(currentIndex()));
+    return SurveyStackMode(d->stackMap.value(currentIndex()));
 }
 
-void StackedView::setViewMode(const StackedViewMode mode, bool focus)
+void SurveyStack::setViewMode(const SurveyStackMode mode)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Stacked View Mode : " << mode;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Survey Stack View Mode : " << mode;
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -406,12 +301,7 @@ void StackedView::setViewMode(const StackedViewMode mode, bool focus)
 
 #endif // HAVE_MEDIAPLAYER
 
-    if ((viewMode() == TrashViewMode) && (mode != TrashViewMode))
-    {
-        d->trashView->model()->stopLoadingTrash();
-    }
-
-    if ((mode < StackedViewModeFirst) || (mode > StackedViewModeLast))
+    if ((mode < SurveyStackModeFirst) || (mode > SurveyStackModeLast))
     {
         return;
     }
@@ -421,60 +311,13 @@ void StackedView::setViewMode(const StackedViewMode mode, bool focus)
         d->thumbBarDock->restoreVisibility();
         syncSelection(d->imageIconView, d->thumbBar);
     }
-    else
-    {
-        d->thumbBarDock->hide();
-    }
 
-    if (
-        (mode == IconViewMode)    ||
-        (mode == WelcomePageMode) ||
-        (mode == MapWidgetMode)   ||
-        (mode == TableViewMode)
-       )
-    {
-        setPreviewItem();
-        setCurrentIndex(d->stackMap.key(mode));
-    }
-    else
-    {
-        setCurrentIndex(d->stackMap.key(mode));
-    }
-
-#ifdef HAVE_GEOLOCATION
-
-    d->mapWidgetView->setActive(mode == MapWidgetMode);
-
-#endif // HAVE_GEOLOCATION
-
-    d->tableView->slotSetActive(mode == TableViewMode);
-
-    if (focus)
-    {
-        if      (mode == IconViewMode)
-        {
-            d->imageIconView->setFocus();
-        }
-
-#ifdef HAVE_GEOLOCATION
-
-        else if (mode == MapWidgetMode)
-        {
-            d->mapWidgetView->setFocus();
-        }
-
-#endif // HAVE_GEOLOCATION
-
-        else if (mode == TableViewMode)
-        {
-            d->tableView->setFocus();
-        }
-    }
+    setCurrentIndex(d->stackMap.key(mode));
 
     Q_EMIT signalViewModeChanged();
 }
 
-void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorizedView* const to)
+void SurveyStack::syncSelection(ItemCategorizedView* const from, ItemCategorizedView* const to)
 {
     ImageSortFilterModel* const fromModel = from->itemSortFilterModel();
     ImageSortFilterModel* const toModel   = to->itemSortFilterModel();
@@ -505,7 +348,7 @@ void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorized
     d->syncingSelection = false;
 }
 
-void StackedView::slotThumbBarSelectionChanged()
+void SurveyStack::slotThumbBarSelectionChanged()
 {
     if (
         (viewMode() != MediaPlayerMode)  &&
@@ -521,12 +364,17 @@ void StackedView::slotThumbBarSelectionChanged()
     }
 
     syncSelection(d->thumbBar, d->imageIconView);
+
+    ItemInfo info = d->thumbBar->currentInfo();
+    ItemInfo prev = d->thumbBar->previousInfo(info);
+    ItemInfo next = d->thumbBar->nextInfo(info);
+
+    setPreviewItem(info, prev, next);
 }
 
-void StackedView::slotIconViewSelectionChanged()
+void SurveyStack::slotIconViewSelectionChanged()
 {
     if (
-        (viewMode() != IconViewMode)     &&
         (viewMode() != MediaPlayerMode)  &&
         (viewMode() != PreviewImageMode)
        )
@@ -540,14 +388,20 @@ void StackedView::slotIconViewSelectionChanged()
     }
 
     syncSelection(d->imageIconView, d->thumbBar);
+
+    ItemInfo info = d->thumbBar->currentInfo();
+    ItemInfo prev = d->thumbBar->previousInfo(info);
+    ItemInfo next = d->thumbBar->nextInfo(info);
+
+    setPreviewItem(info, prev, next);
 }
 
-void StackedView::previewLoaded()
+void SurveyStack::previewLoaded()
 {
     Q_EMIT signalViewModeChanged();
 }
 
-void StackedView::slotZoomFactorChanged(double z)
+void SurveyStack::slotZoomFactorChanged(double z)
 {
     if (viewMode() == PreviewImageMode)
     {
@@ -555,74 +409,74 @@ void StackedView::slotZoomFactorChanged(double z)
     }
 }
 
-void StackedView::increaseZoom()
+void SurveyStack::increaseZoom()
 {
     d->imagePreviewView->layout()->increaseZoom();
 }
 
-void StackedView::decreaseZoom()
+void SurveyStack::decreaseZoom()
 {
     d->imagePreviewView->layout()->decreaseZoom();
 }
 
-void StackedView::zoomTo100Percents()
+void SurveyStack::zoomTo100Percents()
 {
     d->imagePreviewView->layout()->setZoomFactor(1.0, QPoint());
 }
 
-void StackedView::fitToWindow()
+void SurveyStack::fitToWindow()
 {
     d->imagePreviewView->layout()->fitToWindow();
 }
 
-void StackedView::toggleFitToWindowOr100()
+void SurveyStack::toggleFitToWindowOr100()
 {
     d->imagePreviewView->layout()->toggleFitToWindowOr100();
 }
 
-bool StackedView::maxZoom()
+bool SurveyStack::maxZoom()
 {
     return d->imagePreviewView->layout()->atMaxZoom();
 }
 
-bool StackedView::minZoom()
+bool SurveyStack::minZoom()
 {
     return d->imagePreviewView->layout()->atMinZoom();
 }
 
-void StackedView::setZoomFactor(double z)
+void SurveyStack::setZoomFactor(double z)
 {
     // Giving a null anchor means to use the current view center
 
     d->imagePreviewView->layout()->setZoomFactor(z, QPoint());
 }
 
-void StackedView::setZoomFactorSnapped(double z)
+void SurveyStack::setZoomFactorSnapped(double z)
 {
     d->imagePreviewView->layout()->setZoomFactor(z, QPoint(), SinglePhotoPreviewLayout::SnapZoomFactor);
 }
 
-double StackedView::zoomFactor()
+double SurveyStack::zoomFactor()
 {
     return d->imagePreviewView->layout()->zoomFactor();
 }
 
-double StackedView::zoomMin()
+double SurveyStack::zoomMin()
 {
     return d->imagePreviewView->layout()->minZoomFactor();
 }
 
-double StackedView::zoomMax()
+double SurveyStack::zoomMax()
 {
     return d->imagePreviewView->layout()->maxZoomFactor();
 }
 
-void StackedView::slotPreviewLoaded(bool)
+void SurveyStack::slotPreviewLoaded(bool)
 {
-    setViewMode(StackedView::PreviewImageMode);
+    setViewMode(SurveyStack::PreviewImageMode);
     previewLoaded();
 }
 
 } // namespace Digikam
 
-#include "moc_stackedview.cpp"
+#include "moc_surveystack.cpp"

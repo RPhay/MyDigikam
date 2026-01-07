@@ -19,16 +19,16 @@ namespace Digikam
 
 void SurveyWindow::slotEditItem()
 {
-    if (!d->thumbView->currentInfo().isNull())
+    if (!d->stack->thumbBar()->currentInfo().isNull())
     {
-        slotEditItem(d->thumbView->currentInfo());
+        slotEditItem(d->stack->thumbBar()->currentInfo());
     }
 }
 
 void SurveyWindow::slotEditItem(const ItemInfo& info)
 {
     ImageWindow* const im = ImageWindow::imageWindow();
-    ItemInfoList list     = d->thumbView->allItemInfos();
+    ItemInfoList list     = d->stack->thumbBar()->allItemInfos();
 
     im->loadItemInfos(list, info, i18n("Light Table"));
 
@@ -56,7 +56,7 @@ void SurveyWindow::slotSlideShowManualFromCurrent()
 
     // set current image to SlideShow Plugin
 
-    actions[0]->setData(d->previewView->itemInfo().fileUrl());
+    actions[0]->setData(d->stack->thumbBar()->currentInfo().fileUrl());
     actions[0]->trigger();
 }
 
@@ -73,7 +73,7 @@ void SurveyWindow::slotSlideShowLastItemUrl()
     // get last image to SlideShow Plugin
 
     QUrl url = actions[0]->data().toUrl();
-    d->thumbView->setCurrentUrl(url);
+    d->stack->thumbBar()->setCurrentUrl(url);
 }
 
 } // namespace Digikam

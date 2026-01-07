@@ -197,7 +197,6 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->leftClickActionComboBox->addItem(i18n("Show Preview"),                  ApplicationSettings::ShowPreview);
     d->leftClickActionComboBox->addItem(i18n("Start Image Editor"),            ApplicationSettings::StartEditor);
     d->leftClickActionComboBox->addItem(i18n("Show on Light Table"),           ApplicationSettings::ShowOnTable);
-    d->leftClickActionComboBox->addItem(i18n("Show on Survey"),                ApplicationSettings::ShowOnSurvey);
     d->leftClickActionComboBox->addItem(i18n("Open with Default Application"), ApplicationSettings::OpenDefault);
     d->leftClickActionComboBox->setToolTip(i18n("Choose what should happen when you click on a thumbnail."));
 

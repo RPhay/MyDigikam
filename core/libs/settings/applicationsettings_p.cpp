@@ -26,7 +26,6 @@ ApplicationSettings::OperationStrings ApplicationSettings::Private::createConfig
     out.insert(ImportExportOps, QLatin1String("Do Import Export operations on all"));
     out.insert(BQMOps,          QLatin1String("Do BQM operations on all"));
     out.insert(LightTableOps,   QLatin1String("Do light table operations on all"));
-    out.insert(SurveyOps,       QLatin1String("Do Survey operations on all"));
     out.insert(SlideshowOps,    QLatin1String("Do slideshow operations on all"));
     out.insert(RenameOps,       QLatin1String("Rename all"));
     out.insert(ToolsOps,        QLatin1String("Operate tools on all"));

@@ -311,32 +311,6 @@ void TagsActionMngr::slotAssignFromShortcut()
         return;
     }
 
-    SurveyWindow* const svw = dynamic_cast<SurveyWindow*>(w);
-
-    if (svw)
-    {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by SurveyWindow";
-
-        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
-        {
-            svw->slotAssignRating(val);
-        }
-        else if (action->objectName().startsWith(d->pickShortcutPrefix))
-        {
-            svw->slotAssignPickLabel(val);
-        }
-        else if (action->objectName().startsWith(d->colorShortcutPrefix))
-        {
-            svw->slotAssignColorLabel(val);
-        }
-        else if (action->objectName().startsWith(d->tagShortcutPrefix))
-        {
-            svw->toggleTag(val);
-        }
-
-        return;
-    }
-
     // Emit signal to DInfoInterface to broadcast to another component:
 
     Q_EMIT signalShortcutPressed(action->objectName(), val);
