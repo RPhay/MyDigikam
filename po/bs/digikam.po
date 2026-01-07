@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-05 00:40+0000\n"
+"POT-Creation-Date: 2026-01-07 00:42+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -638,21 +638,21 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Odaberi stavku"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:143
+#: core/app/items/utils/contextmenuhelper_actions.cpp:163
 #, fuzzy, kde-format
 #| msgid "Set as Album Thumbnail"
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Postavi kao umanjeni prikaz albuma"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:147
+#: core/app/items/utils/contextmenuhelper_actions.cpp:167
 #, fuzzy, kde-format
 #| msgid "Set as Tag Thumbnail"
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Postavi za umanjeni prikaz oznake"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:184
+#: core/app/items/utils/contextmenuhelper_actions.cpp:204
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -661,7 +661,7 @@ msgstr[0] "Premjesti %1 datoteku u smeće"
 msgstr[1] "Premjesti %1 datoteke u smeće"
 msgstr[2] "Premjesti %1 datoteka u smeće"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:196
+#: core/app/items/utils/contextmenuhelper_actions.cpp:216
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
@@ -1119,14 +1119,14 @@ msgctxt "Month String - Year String"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/items/utils/itemviewutilities.cpp:202
+#: core/app/items/utils/itemviewutilities.cpp:203
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "Bez izbora"
 
-#: core/app/items/utils/itemviewutilities.cpp:228
+#: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
@@ -1135,7 +1135,7 @@ msgstr ""
 "<p>Molimo Vas označite odredišni album iz digiKam biblioteke  za "
 "premještanje odabranih slika u njega.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:353
+#: core/app/items/utils/itemviewutilities.cpp:394
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -1510,7 +1510,7 @@ msgstr "Čitanje baze podataka..."
 msgid "Loading albums..."
 msgstr "Učitavanje kamera..."
 
-#: core/app/main/digikamapp.cpp:392
+#: core/app/main/digikamapp.cpp:401
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1522,7 +1522,7 @@ msgstr ""
 "mogućnost \"Upravljanje bojama\" će biti onesposobljena sve dok ne riješite "
 "ovaj problem.</p>"
 
-#: core/app/main/digikamapp.cpp:448
+#: core/app/main/digikamapp.cpp:457
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1531,7 +1531,7 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:526
+#: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:526
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1539,7 +1539,7 @@ msgstr[0] "Nijedna stavka nije označena (%1 stavka)"
 msgstr[1] "Nijedna stavka nije označena (%1 stavki)"
 msgstr[2] "Nijedna stavka nije označena (%1 stavke)"
 
-#: core/app/main/digikamapp.cpp:743
+#: core/app/main/digikamapp.cpp:752
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1549,7 +1549,7 @@ msgstr[0] "Nijedna stavka nije označena (%1 stavka)"
 msgstr[1] "Nijedna stavka nije označena (%1 stavki)"
 msgstr[2] "Nijedna stavka nije označena (%1 stavke)"
 
-#: core/app/main/digikamapp.cpp:748
+#: core/app/main/digikamapp.cpp:757
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1559,7 +1559,7 @@ msgstr[0] "Nijedna stavka nije označena (%1 stavka)"
 msgstr[1] "Nijedna stavka nije označena (%1 stavki)"
 msgstr[2] "Nijedna stavka nije označena (%1 stavke)"
 
-#: core/app/main/digikamapp.cpp:759
+#: core/app/main/digikamapp.cpp:768
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1569,7 +1569,7 @@ msgstr[0] "%2/%1 stavka označena"
 msgstr[1] "%2/%1 stavka označena"
 msgstr[2] "%2/%1 stavka označena"
 
-#: core/app/main/digikamapp.cpp:772
+#: core/app/main/digikamapp.cpp:781
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1579,7 +1579,7 @@ msgstr[0] "%2/%1 stavka označena"
 msgstr[1] "%2/%1 stavka označena"
 msgstr[2] "%2/%1 stavka označena"
 
-#: core/app/main/digikamapp.cpp:780
+#: core/app/main/digikamapp.cpp:789
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1589,7 +1589,7 @@ msgstr[0] "Nijedna stavka nije označena (%1 stavka)"
 msgstr[1] "Nijedna stavka nije označena (%1 stavki)"
 msgstr[2] "Nijedna stavka nije označena (%1 stavke)"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:797
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1599,7 +1599,7 @@ msgstr[0] "%2/%1 stavka označena"
 msgstr[1] "%2/%1 stavka označena"
 msgstr[2] "%2/%1 stavka označena"
 
-#: core/app/main/digikamapp.cpp:797
+#: core/app/main/digikamapp.cpp:806
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1609,23 +1609,23 @@ msgstr[0] "Nijedna stavka nije označena (%1 stavka)"
 msgstr[1] "Nijedna stavka nije označena (%1 stavki)"
 msgstr[2] "Nijedna stavka nije označena (%1 stavke)"
 
-#: core/app/main/digikamapp.cpp:828
+#: core/app/main/digikamapp.cpp:837
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 od %2)"
 
-#: core/app/main/digikamapp.cpp:842
+#: core/app/main/digikamapp.cpp:851
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 od %2)"
 
-#: core/app/main/digikamapp.cpp:846
+#: core/app/main/digikamapp.cpp:855
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:857
+#: core/app/main/digikamapp.cpp:866
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1635,7 +1635,7 @@ msgstr[0] "%1 stavka"
 msgstr[1] "%1 stavke"
 msgstr[2] "%1 stavki"
 
-#: core/app/main/digikamapp.cpp:917
+#: core/app/main/digikamapp.cpp:926
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1645,7 +1645,7 @@ msgstr[0] "Upiši meta podatke na sliku"
 msgstr[1] "Upiši meta podatke na odabrane slike"
 msgstr[2] "Upiši meta podatke na odabrane slike"
 
-#: core/app/main/digikamapp.cpp:919
+#: core/app/main/digikamapp.cpp:928
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -1706,7 +1706,7 @@ msgstr "Dodaje nove direktorije u biblioteku albuma."
 msgid "Images found in %1"
 msgstr "Slike nađene u %1"
 
-#: core/app/main/digikamapp_config.cpp:117
+#: core/app/main/digikamapp_config.cpp:122
 #: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
@@ -1714,7 +1714,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:125
+#: core/app/main/digikamapp_config.cpp:130
 #: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
@@ -1763,6 +1763,7 @@ msgstr "Inicijaliziram glavni pregled..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
+#: core/utilities/survey/surveywindow_setup.cpp:303
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
@@ -1846,7 +1847,7 @@ msgid "Delete Album"
 msgstr "Obriši album"
 
 #: core/app/main/digikamapp_setup.cpp:268
-#: core/app/main/digikamapp_setup.cpp:508
+#: core/app/main/digikamapp_setup.cpp:530
 #, fuzzy, kde-format
 #| msgid "Rename..."
 msgctxt "@action: setup"
@@ -1876,7 +1877,7 @@ msgid "Write Metadata to Files"
 msgstr "Upiši  meta podatke  na slike"
 
 #: core/app/main/digikamapp_setup.cpp:286
-#: core/app/main/digikamapp_setup.cpp:462
+#: core/app/main/digikamapp_setup.cpp:484
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates metadata of images in the current album with the contents of "
@@ -1898,7 +1899,7 @@ msgid "Reread Metadata From Files"
 msgstr "Ponovo učitaj meta podatke iz slika"
 
 #: core/app/main/digikamapp_setup.cpp:297
-#: core/app/main/digikamapp_setup.cpp:473
+#: core/app/main/digikamapp_setup.cpp:495
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates the digiKam database from the metadata of the files in the "
@@ -2068,62 +2069,99 @@ msgstr ""
 "Dodajte odabrane stavke u traku umanjenih prikaza svjetlosnog pregleda."
 
 #: core/app/main/digikamapp_setup.cpp:433
+#, kde-format
+msgctxt "@action: setup"
+msgid "Survey"
+msgstr ""
+
+#: core/app/main/digikamapp_setup.cpp:439
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Polls & Surveys"
+msgctxt "@action: setup"
+msgid "Place onto Survey"
+msgstr "Ankete & Istraživanja"
+
+#: core/app/main/digikamapp_setup.cpp:440
+#, fuzzy, kde-format
+#| msgid "Place the selected items on the light table thumbbar."
+msgctxt "@info: setup"
+msgid "Place the selected items on the survey thumbbar."
+msgstr ""
+"Postavi  odabrane stavke u traku umanjenih prikaza svjetlosnog pregleda."
+
+#: core/app/main/digikamapp_setup.cpp:446
+#, fuzzy, kde-format
+#| msgid "Texture"
+msgctxt "@action: setup"
+msgid "Add to Survey"
+msgstr "Tekstura"
+
+#: core/app/main/digikamapp_setup.cpp:447
+#, fuzzy, kde-format
+#| msgid "Add selected items to the light table thumbbar."
+msgctxt "@info: setup"
+msgid "Add selected items to the survey thumbbar."
+msgstr ""
+"Dodajte odabrane stavke u traku umanjenih prikaza svjetlosnog pregleda."
+
+#: core/app/main/digikamapp_setup.cpp:455
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Upravljač redom procesa"
 
-#: core/app/main/digikamapp_setup.cpp:439
+#: core/app/main/digikamapp_setup.cpp:461
 #, fuzzy, kde-format
 #| msgid "Add to Current Queue"
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Dodaj u trenutni red"
 
-#: core/app/main/digikamapp_setup.cpp:440
+#: core/app/main/digikamapp_setup.cpp:462
 #, fuzzy, kde-format
 #| msgid "Add selected items to current queue from batch manager."
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "Dodaj odabrane stavke u trenutni red  iz batch upravljača."
 
-#: core/app/main/digikamapp_setup.cpp:446
+#: core/app/main/digikamapp_setup.cpp:468
 #, fuzzy, kde-format
 #| msgid "Add to New Queue"
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Dodajte u Novi red"
 
-#: core/app/main/digikamapp_setup.cpp:447
+#: core/app/main/digikamapp_setup.cpp:469
 #, fuzzy, kde-format
 #| msgid "Add selected items to a new queue from batch manager."
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Dodaj odabrane stavke u novi red  iz batch upravljača."
 
-#: core/app/main/digikamapp_setup.cpp:454
+#: core/app/main/digikamapp_setup.cpp:476
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Uvezi"
 
-#: core/app/main/digikamapp_setup.cpp:461
+#: core/app/main/digikamapp_setup.cpp:483
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Selected Images"
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Upišite metapodatke za odabrane slike"
 
-#: core/app/main/digikamapp_setup.cpp:472
+#: core/app/main/digikamapp_setup.cpp:494
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Selected Images"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Ponovo učitaj metapodatke iz odabranih slika"
 
-#: core/app/main/digikamapp_setup.cpp:483
+#: core/app/main/digikamapp_setup.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
@@ -2131,42 +2169,42 @@ msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Skeniranje lica"
 
-#: core/app/main/digikamapp_setup.cpp:488
+#: core/app/main/digikamapp_setup.cpp:510
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Uskladi"
 
-#: core/app/main/digikamapp_setup.cpp:493
+#: core/app/main/digikamapp_setup.cpp:515
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Ukloni oznaku"
 
-#: core/app/main/digikamapp_setup.cpp:500
+#: core/app/main/digikamapp_setup.cpp:522
 #, fuzzy, kde-format
 #| msgid "Find Similar..."
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Pronađi slične ..."
 
-#: core/app/main/digikamapp_setup.cpp:501
+#: core/app/main/digikamapp_setup.cpp:523
 #, fuzzy, kde-format
 #| msgid "Find similar images using selected item as reference."
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Pronađi slične slike koristeći odabrane stavke kao vezu."
 
-#: core/app/main/digikamapp_setup.cpp:509
+#: core/app/main/digikamapp_setup.cpp:531
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Promijenite naziv datoteke trenutno odabrane stavke."
 
-#: core/app/main/digikamapp_setup.cpp:519
+#: core/app/main/digikamapp_setup.cpp:541
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
@@ -2176,84 +2214,84 @@ msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Premjesti %1 datoteku u smeće"
 
-#: core/app/main/digikamapp_setup.cpp:533
+#: core/app/main/digikamapp_setup.cpp:555
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Trajno brisanje"
 
-#: core/app/main/digikamapp_setup.cpp:544
+#: core/app/main/digikamapp_setup.cpp:566
 #, fuzzy, kde-format
 #| msgid "Delete permanently without confirmation"
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Obriši trajno, bez potvrđivanja"
 
-#: core/app/main/digikamapp_setup.cpp:552
+#: core/app/main/digikamapp_setup.cpp:574
 #, fuzzy, kde-format
 #| msgid "Move to trash without confirmation"
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Pomjeri u smeće, bez potvrđivanja"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:581
 #, fuzzy, kde-format
 #| msgid "&Sort Albums"
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "&Sortiraj albume"
 
-#: core/app/main/digikamapp_setup.cpp:560
+#: core/app/main/digikamapp_setup.cpp:582
 #, fuzzy, kde-format
 #| msgid "Sort Albums in tree-view."
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Sortiraj albume u stablovni pregled."
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:601
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Po direktoriju"
 
-#: core/app/main/digikamapp_setup.cpp:580
+#: core/app/main/digikamapp_setup.cpp:602
 #, fuzzy, kde-format
 #| msgid "By Category"
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Po kategoriji"
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:603
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Po datumu"
 
-#: core/app/main/digikamapp_setup.cpp:586
+#: core/app/main/digikamapp_setup.cpp:608
 #, fuzzy, kde-format
 #| msgid "Include Album Sub-Tree"
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Uključi Podstablo Albuma"
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:610
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr "Uključi ovu opciju za prikaz svih podalbuma u trenutnom albumu."
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:615
 #, fuzzy, kde-format
 #| msgid "Include Tag Sub-Tree"
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Uključi Podstablo Etiketa"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:617
 #, fuzzy, kde-format
 #| msgid ""
 #| "Activate this option to show all images marked by the given tag and all "
@@ -2266,7 +2304,7 @@ msgstr ""
 "Uključi ovu opciju za prikaz svih slika označenih navedenom oznakom i svim "
 "njenim podoznakama."
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:622
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Show Grouped Images"
@@ -2274,14 +2312,14 @@ msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Prikazi grupirane slike"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:624
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr "Uključi ovu opciju za prikaz svih podalbuma u trenutnom albumu."
 
-#: core/app/main/digikamapp_setup.cpp:608
+#: core/app/main/digikamapp_setup.cpp:630
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "&Sort Items"
@@ -2289,7 +2327,7 @@ msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Sort stavke"
 
-#: core/app/main/digikamapp_setup.cpp:609
+#: core/app/main/digikamapp_setup.cpp:631
 #, fuzzy, kde-format
 #| msgid ""
 #| "The value by which the images in one album are sorted in the thumbnail "
@@ -2299,127 +2337,127 @@ msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "Vrijednost po kojoj su slike u albumu raspoređene  u umanjenom prikazu"
 
-#: core/app/main/digikamapp_setup.cpp:614
+#: core/app/main/digikamapp_setup.cpp:636
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Po imenu"
 
-#: core/app/main/digikamapp_setup.cpp:615
+#: core/app/main/digikamapp_setup.cpp:637
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Po putanji"
 
-#: core/app/main/digikamapp_setup.cpp:616
+#: core/app/main/digikamapp_setup.cpp:638
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Datum stvaranja"
 
-#: core/app/main/digikamapp_setup.cpp:617
+#: core/app/main/digikamapp_setup.cpp:639
 #, fuzzy, kde-format
 #| msgid "Modification"
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Izmjena"
 
-#: core/app/main/digikamapp_setup.cpp:618
+#: core/app/main/digikamapp_setup.cpp:640
 #, fuzzy, kde-format
 #| msgid "By File Size"
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Po veličini datoteke"
 
-#: core/app/main/digikamapp_setup.cpp:619
-#: core/app/main/digikamapp_setup.cpp:720
+#: core/app/main/digikamapp_setup.cpp:641
+#: core/app/main/digikamapp_setup.cpp:742
 #, fuzzy, kde-format
 #| msgid "By Format"
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Po formatu"
 
-#: core/app/main/digikamapp_setup.cpp:621
+#: core/app/main/digikamapp_setup.cpp:643
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Po ocjeni"
 
-#: core/app/main/digikamapp_setup.cpp:622
+#: core/app/main/digikamapp_setup.cpp:644
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgctxt "@action: setup"
 msgid "By Pick Label"
 msgstr "Oznaka Izbora:"
 
-#: core/app/main/digikamapp_setup.cpp:623
+#: core/app/main/digikamapp_setup.cpp:645
 #, fuzzy, kde-format
 #| msgid "Color Label:"
 msgctxt "@action: setup"
 msgid "By Color Label"
 msgstr "Oznaka Boje:"
 
-#: core/app/main/digikamapp_setup.cpp:625
+#: core/app/main/digikamapp_setup.cpp:647
 #, fuzzy, kde-format
 #| msgid "By Image Size"
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Po veličini slike"
 
-#: core/app/main/digikamapp_setup.cpp:626
+#: core/app/main/digikamapp_setup.cpp:648
 #, fuzzy, kde-format
 #| msgid "Any Orientation"
 msgctxt "@action: setup"
 msgid "By Orientation"
 msgstr "Bilo koja orijentacija"
 
-#: core/app/main/digikamapp_setup.cpp:627
+#: core/app/main/digikamapp_setup.cpp:649
 #, fuzzy, kde-format
 #| msgid "By Aspect Ratio"
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Po razmjeri"
 
-#: core/app/main/digikamapp_setup.cpp:628
+#: core/app/main/digikamapp_setup.cpp:650
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@action: setup"
 msgid "By Gps Position"
 msgstr "Položaj:"
 
-#: core/app/main/digikamapp_setup.cpp:630
+#: core/app/main/digikamapp_setup.cpp:652
 #, fuzzy, kde-format
 #| msgid "Show image type"
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Prikaži vrstu slike"
 
-#: core/app/main/digikamapp_setup.cpp:631
+#: core/app/main/digikamapp_setup.cpp:653
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Sličnost:"
 
-#: core/app/main/digikamapp_setup.cpp:632
+#: core/app/main/digikamapp_setup.cpp:654
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Ručno"
 
-#: core/app/main/digikamapp_setup.cpp:633
+#: core/app/main/digikamapp_setup.cpp:655
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Ručno"
 
-#: core/app/main/digikamapp_setup.cpp:695
+#: core/app/main/digikamapp_setup.cpp:717
 #, fuzzy, kde-format
 #| msgctxt "@title:inmenu"
 #| msgid "Item Sorting &Order"
@@ -2427,7 +2465,7 @@ msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Sortirnje stavki &Poredak"
 
-#: core/app/main/digikamapp_setup.cpp:696
+#: core/app/main/digikamapp_setup.cpp:718
 #, fuzzy, kde-format
 #| msgid "Defines whether images are sorted in ascending or descending manner."
 msgctxt "@info: setup"
@@ -2435,23 +2473,23 @@ msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr ""
 "Određuje da li su slike biti poredane po opadajućem ili po rastućem poretku."
 
-#: core/app/main/digikamapp_setup.cpp:700
-#: core/app/main/digikamapp_setup.cpp:759
+#: core/app/main/digikamapp_setup.cpp:722
+#: core/app/main/digikamapp_setup.cpp:781
 #, fuzzy, kde-format
 #| msgid "Ascending"
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Rastuće"
 
-#: core/app/main/digikamapp_setup.cpp:702
-#: core/app/main/digikamapp_setup.cpp:761
+#: core/app/main/digikamapp_setup.cpp:724
+#: core/app/main/digikamapp_setup.cpp:783
 #, fuzzy, kde-format
 #| msgid "Descending"
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Opadajuće"
 
-#: core/app/main/digikamapp_setup.cpp:712
+#: core/app/main/digikamapp_setup.cpp:734
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "&Sort Items"
@@ -2459,7 +2497,7 @@ msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "&Sort stavke"
 
-#: core/app/main/digikamapp_setup.cpp:713
+#: core/app/main/digikamapp_setup.cpp:735
 #, fuzzy, kde-format
 #| msgid ""
 #| "The categories in which the images in the thumbnail view are displayed"
@@ -2467,21 +2505,21 @@ msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Kategorije u kojima su slike u umanjenom prikazu prikazane"
 
-#: core/app/main/digikamapp_setup.cpp:718
+#: core/app/main/digikamapp_setup.cpp:740
 #, fuzzy, kde-format
 #| msgid "Flat List"
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Ravna lista"
 
-#: core/app/main/digikamapp_setup.cpp:719
+#: core/app/main/digikamapp_setup.cpp:741
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Po albumu"
 
-#: core/app/main/digikamapp_setup.cpp:721
+#: core/app/main/digikamapp_setup.cpp:743
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect faces"
@@ -2489,21 +2527,21 @@ msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Otkrij lica"
 
-#: core/app/main/digikamapp_setup.cpp:722
+#: core/app/main/digikamapp_setup.cpp:744
 #, fuzzy, kde-format
 #| msgid "Month"
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Mjesec"
 
-#: core/app/main/digikamapp_setup.cpp:723
+#: core/app/main/digikamapp_setup.cpp:745
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr "Po datumu"
 
-#: core/app/main/digikamapp_setup.cpp:754
+#: core/app/main/digikamapp_setup.cpp:776
 #, fuzzy, kde-format
 #| msgctxt "@title:inmenu"
 #| msgid "Item Sorting &Order"
@@ -2511,194 +2549,194 @@ msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Sortirnje stavki &Poredak"
 
-#: core/app/main/digikamapp_setup.cpp:755
+#: core/app/main/digikamapp_setup.cpp:777
 #, fuzzy, kde-format
 #| msgid "The sort order of images groups"
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Red sortiranja grupa slika."
 
-#: core/app/main/digikamapp_setup.cpp:776
+#: core/app/main/digikamapp_setup.cpp:798
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Izaberi sve"
 
-#: core/app/main/digikamapp_setup.cpp:783
+#: core/app/main/digikamapp_setup.cpp:805
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Bez izbora"
 
-#: core/app/main/digikamapp_setup.cpp:790
+#: core/app/main/digikamapp_setup.cpp:812
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Obrni izbor"
 
-#: core/app/main/digikamapp_setup.cpp:798
+#: core/app/main/digikamapp_setup.cpp:820
 #, fuzzy, kde-format
 #| msgid "Show Thumbbar"
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Prikaži umanjeni prikaz"
 
-#: core/app/main/digikamapp_setup.cpp:829
+#: core/app/main/digikamapp_setup.cpp:851
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Uvećaj na 100%"
 
-#: core/app/main/digikamapp_setup.cpp:837
+#: core/app/main/digikamapp_setup.cpp:859
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Uklopi u pro&zor"
 
-#: core/app/main/digikamapp_setup.cpp:850
+#: core/app/main/digikamapp_setup.cpp:872
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Pregled upravljanja bojama"
 
-#: core/app/main/digikamapp_setup.cpp:868
+#: core/app/main/digikamapp_setup.cpp:890
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Traži..."
 
-#: core/app/main/digikamapp_setup.cpp:876
+#: core/app/main/digikamapp_setup.cpp:898
 #, fuzzy, kde-format
 #| msgid "Advanced Search..."
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Napredno traženje..."
 
-#: core/app/main/digikamapp_setup.cpp:884
+#: core/app/main/digikamapp_setup.cpp:906
 #, fuzzy, kde-format
 #| msgid "Find Duplicates..."
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Nađi duplikate..."
 
-#: core/app/main/digikamapp_setup.cpp:894
+#: core/app/main/digikamapp_setup.cpp:916
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Prenošenje baze podataka..."
 
-#: core/app/main/digikamapp_setup.cpp:903
+#: core/app/main/digikamapp_setup.cpp:925
 #, fuzzy, kde-format
 #| msgid "Maintenance..."
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Održavanje..."
 
-#: core/app/main/digikamapp_setup.cpp:910
+#: core/app/main/digikamapp_setup.cpp:932
 #, fuzzy, kde-format
 #| msgid "Scan for new items"
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Skeniranje za nove stavke"
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:938
 #, fuzzy, kde-format
 #| msgid "Add Camera Manually..."
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Dodaj kameru ručno..."
 
-#: core/app/main/digikamapp_setup.cpp:927
+#: core/app/main/digikamapp_setup.cpp:949
 #, fuzzy, kde-format
 #| msgid "Loading cameras..."
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Učitavanje kamera..."
 
-#: core/app/main/digikamapp_setup.cpp:963
+#: core/app/main/digikamapp_setup.cpp:985
 #, fuzzy, kde-format
 #| msgid "Exit Preview Mode"
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Napusti pretpregled"
 
-#: core/app/main/digikamapp_setup.cpp:968
+#: core/app/main/digikamapp_setup.cpp:990
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Sljedeća slika"
 
-#: core/app/main/digikamapp_setup.cpp:974
+#: core/app/main/digikamapp_setup.cpp:996
 #, fuzzy, kde-format
 #| msgid "Previous Image"
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Prethodna slika"
 
-#: core/app/main/digikamapp_setup.cpp:980
+#: core/app/main/digikamapp_setup.cpp:1002
 #, fuzzy, kde-format
 #| msgid "First Image"
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Prva slika"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:1007
 #, fuzzy, kde-format
 #| msgid "Last Image"
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Posljednja slika"
 
-#: core/app/main/digikamapp_setup.cpp:990
+#: core/app/main/digikamapp_setup.cpp:1012
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:992
+#: core/app/main/digikamapp_setup.cpp:1014
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Kopiraj u Clipboard"
 
-#: core/app/main/digikamapp_setup.cpp:1011
+#: core/app/main/digikamapp_setup.cpp:1033
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Izmjeni naslove"
 
-#: core/app/main/digikamapp_setup.cpp:1016
+#: core/app/main/digikamapp_setup.cpp:1038
 #, fuzzy, kde-format
 #| msgid "Edit Comments"
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Izmjeni komentare"
 
-#: core/app/main/digikamapp_setup.cpp:1021
+#: core/app/main/digikamapp_setup.cpp:1043
 #, fuzzy, kde-format
 #| msgid "Show Assigned Tags"
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Prikaži dodijeljene oznake"
 
-#: core/app/main/digikamapp_setup.cpp:1030
+#: core/app/main/digikamapp_setup.cpp:1052
 #, fuzzy, kde-format
 #| msgid "Adjust Exif Orientation Tag"
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Oznaka prilagođenja Exif orijentacije"
 
-#: core/app/main/digikamapp_setup.cpp:1033
+#: core/app/main/digikamapp_setup.cpp:1055
 #, fuzzy, kde-format
 #| msgctxt "normal exif orientation"
 #| msgid "Normal"
@@ -2706,70 +2744,70 @@ msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normalna"
 
-#: core/app/main/digikamapp_setup.cpp:1035
+#: core/app/main/digikamapp_setup.cpp:1057
 #, fuzzy, kde-format
 #| msgid "Flipped Horizontally"
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Prevrnuta vodoravno"
 
-#: core/app/main/digikamapp_setup.cpp:1037
+#: core/app/main/digikamapp_setup.cpp:1059
 #, fuzzy, kde-format
 #| msgid "Rotated Upside Down"
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Rotirano odozgo nadolje"
 
-#: core/app/main/digikamapp_setup.cpp:1039
+#: core/app/main/digikamapp_setup.cpp:1061
 #, fuzzy, kde-format
 #| msgid "Flipped Vertically"
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Prevrnuta uspravno"
 
-#: core/app/main/digikamapp_setup.cpp:1041
+#: core/app/main/digikamapp_setup.cpp:1063
 #, fuzzy, kde-format
 #| msgid "Rotated Right / Horiz. Flipped"
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Rotirano desno / Horiz. Izvrnuto"
 
-#: core/app/main/digikamapp_setup.cpp:1043
+#: core/app/main/digikamapp_setup.cpp:1065
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Rotirano desno"
 
-#: core/app/main/digikamapp_setup.cpp:1045
+#: core/app/main/digikamapp_setup.cpp:1067
 #, fuzzy, kde-format
 #| msgid "Rotated Right / Vert. Flipped"
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Rotirano desno / Vert. Izvrnuto"
 
-#: core/app/main/digikamapp_setup.cpp:1047
+#: core/app/main/digikamapp_setup.cpp:1069
 #, fuzzy, kde-format
 #| msgid "Rotated Left"
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Rotirano lijevo"
 
-#: core/app/main/digikamapp_setup.cpp:1108
+#: core/app/main/digikamapp_setup.cpp:1130
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Rotiraj"
 
-#: core/app/main/digikamapp_setup.cpp:1114
+#: core/app/main/digikamapp_setup.cpp:1136
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Automatsko rotiranje"
 
-#: core/app/main/digikamapp_setup.cpp:1122
+#: core/app/main/digikamapp_setup.cpp:1144
 #, fuzzy, kde-format
 #| msgctxt "rotate image left"
 #| msgid "Left"
@@ -2777,7 +2815,7 @@ msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Lijevo"
 
-#: core/app/main/digikamapp_setup.cpp:1129
+#: core/app/main/digikamapp_setup.cpp:1151
 #, fuzzy, kde-format
 #| msgctxt "rotate image right"
 #| msgid "Right"
@@ -2785,49 +2823,49 @@ msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Desno"
 
-#: core/app/main/digikamapp_setup.cpp:1139
+#: core/app/main/digikamapp_setup.cpp:1161
 #, fuzzy, kde-format
 #| msgid "Flip"
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Prevrni"
 
-#: core/app/main/digikamapp_setup.cpp:1143
+#: core/app/main/digikamapp_setup.cpp:1165
 #, fuzzy, kde-format
 #| msgid "Horizontally"
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Vodoravno"
 
-#: core/app/main/digikamapp_setup.cpp:1150
+#: core/app/main/digikamapp_setup.cpp:1172
 #, fuzzy, kde-format
 #| msgid "Vertically"
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Uspravno"
 
-#: core/app/main/digikamapp_setup.cpp:1160
+#: core/app/main/digikamapp_setup.cpp:1182
 #, fuzzy, kde-format
 #| msgid "Auto Rotate/Flip Using Exif Information"
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Automatsko rotiranje/Prevrtanje pomoću Exif informacija"
 
-#: core/app/main/digikamapp_setup.cpp:1171
+#: core/app/main/digikamapp_setup.cpp:1193
 #, fuzzy, kde-format
 #| msgid "Loading themes..."
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Učitavanje tema..."
 
-#: core/app/main/digikamapp_setup.cpp:1174
+#: core/app/main/digikamapp_setup.cpp:1196
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Teme"
 
-#: core/app/main/digikamapp_setup.cpp:1190
+#: core/app/main/digikamapp_setup.cpp:1212
 #, fuzzy, kde-format
 #| msgid "Loading tools..."
 msgctxt "@info: setup"
@@ -2921,7 +2959,7 @@ msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "Glavna alatna traka"
 
-#: core/app/main/digikamapp_tools.cpp:38
+#: core/app/main/digikamapp_tools.cpp:39
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2667
 #, fuzzy, kde-format
 #| msgid "Post Processing"
@@ -2929,7 +2967,7 @@ msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Kasnije procesiranje"
 
-#: core/app/main/digikamapp_tools.cpp:58
+#: core/app/main/digikamapp_tools.cpp:59
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2696
 #, fuzzy, kde-format
 #| msgid "Export"
@@ -2937,7 +2975,7 @@ msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Izvezi"
 
-#: core/app/main/digikamapp_tools.cpp:69
+#: core/app/main/digikamapp_tools.cpp:70
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2707
 #, fuzzy, kde-format
 #| msgid "Import"
@@ -2970,7 +3008,7 @@ msgid "&Item"
 msgstr "Stavke"
 
 #. i18n: ectx: Menu (Edit)
-#: core/app/main/digikamui5.rc:75 core/showfoto/main/showfotoui5.rc:30
+#: core/app/main/digikamui5.rc:77 core/showfoto/main/showfotoui5.rc:30
 #: core/utilities/imageeditor/main/imageeditorui5.rc:30
 #: core/utilities/import/main/importui5.rc:15
 #, kde-format
@@ -2978,66 +3016,73 @@ msgid "&Edit"
 msgstr "&Izmijeni"
 
 #. i18n: ectx: Menu (View)
-#: core/app/main/digikamui5.rc:86 core/showfoto/main/showfotoui5.rc:40
+#: core/app/main/digikamui5.rc:88 core/showfoto/main/showfotoui5.rc:40
 #: core/utilities/imageeditor/main/imageeditorui5.rc:41
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:29
+#: core/utilities/survey/surveywindowui5.rc:24
 #, kde-format
 msgid "&View"
 msgstr "&Pogled"
 
 #. i18n: ectx: Menu (Tools)
-#: core/app/main/digikamui5.rc:118 core/showfoto/main/showfotoui5.rc:92
+#: core/app/main/digikamui5.rc:120 core/showfoto/main/showfotoui5.rc:92
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
+#: core/utilities/survey/surveywindowui5.rc:38
 #, kde-format
 msgid "&Tools"
 msgstr "&Alati"
 
 #. i18n: ectx: Menu (Import)
-#: core/app/main/digikamui5.rc:136 core/showfoto/main/showfotoui5.rc:102
+#: core/app/main/digikamui5.rc:139 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
+#: core/utilities/survey/surveywindowui5.rc:48
 #, kde-format
 msgid "I&mport"
 msgstr "U&vezi"
 
 #. i18n: ectx: Menu (Export)
-#: core/app/main/digikamui5.rc:149 core/showfoto/main/showfotoui5.rc:108
+#: core/app/main/digikamui5.rc:152 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
+#: core/utilities/survey/surveywindowui5.rc:54
 #, kde-format
 msgid "&Export"
 msgstr "&Izvezi"
 
 #. i18n: ectx: Menu (settings)
-#: core/app/main/digikamui5.rc:155 core/showfoto/main/showfotoui5.rc:114
+#: core/app/main/digikamui5.rc:158 core/showfoto/main/showfotoui5.rc:114
 #: core/utilities/imageeditor/main/imageeditorui5.rc:115
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:33
+#: core/utilities/survey/surveywindowui5.rc:60
 #, kde-format
 msgid "&Settings"
 msgstr "&Postavke"
 
 #. i18n: ectx: Menu (help)
-#: core/app/main/digikamui5.rc:171 core/showfoto/main/showfotoui5.rc:128
+#: core/app/main/digikamui5.rc:174 core/showfoto/main/showfotoui5.rc:128
 #: core/utilities/imageeditor/main/imageeditorui5.rc:130
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:47
+#: core/utilities/survey/surveywindowui5.rc:75
 #, kde-format
 msgid "&Help"
 msgstr "&Pomoć"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: core/app/main/digikamui5.rc:189 core/showfoto/main/showfotoui5.rc:144
+#: core/app/main/digikamui5.rc:192 core/showfoto/main/showfotoui5.rc:144
 #: core/utilities/imageeditor/main/imageeditorui5.rc:147
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:64
+#: core/utilities/survey/surveywindowui5.rc:92
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Glavna alatna traka"
@@ -4173,17 +4218,17 @@ msgstr "Fotoaparat"
 msgid "Lens:"
 msgstr "Objektiv:"
 
-#: core/app/views/tableview/tableview.cpp:369
+#: core/app/views/tableview/tableview.cpp:373
 #, kde-format
 msgid "Hide grouped items"
 msgstr "Sakrij grupisane stavke"
 
-#: core/app/views/tableview/tableview.cpp:379
+#: core/app/views/tableview/tableview.cpp:383
 #, kde-format
 msgid "Ignore grouping"
 msgstr "Zanemari grupiranje"
 
-#: core/app/views/tableview/tableview.cpp:389
+#: core/app/views/tableview/tableview.cpp:393
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "Prikaži grupiranje na stablu"
@@ -23933,7 +23978,7 @@ msgid "Slideshow"
 msgstr "Slajd-šou"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:458
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Slideshow"
 msgstr "Slajd-šou"
@@ -42527,125 +42572,138 @@ msgstr "Prekini ovu operaciju."
 #: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
+#: core/utilities/survey/surveywindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Svjetlosni Pregled"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/utilities/survey/surveywindow.cpp:51
+#, kde-format
+msgid "Survey"
+msgstr ""
+
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Upravljač redom procesa"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, fuzzy, kde-format
 #| msgid "File Renaming"
 msgid "Renaming"
 msgstr "Preimenovanje datoteke"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:468
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, fuzzy, kde-format
 msgid "Import/Export tools"
 msgstr "Borovina"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:478
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:490
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:495
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgid "Adding items to the Light Table"
 msgstr "Dodaj na Svjetlosni Pregled"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:500
+#: core/libs/settings/applicationsettings_miscs.cpp:505
+#, fuzzy, kde-format
+#| msgid "Add to Light Table"
+msgid "Adding items to the Survey"
+msgstr "Dodaj na Svjetlosni Pregled"
+
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, fuzzy, kde-format
 #| msgid "Add Crop tool to Batch Queue Manager;"
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Dodaj alatku za rezanje u Batch Queue Manager;"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:505
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:510
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgid "Renaming items"
 msgstr "Preimenovanje slika"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:515
+#: core/libs/settings/applicationsettings_miscs.cpp:525
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:530
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:49
+#: core/libs/settings/applicationsettings_p.cpp:50
 #, fuzzy, kde-format
 #| msgid "Category"
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Kategorija"
 
-#: core/libs/settings/applicationsettings_p.cpp:50
+#: core/libs/settings/applicationsettings_p.cpp:51
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Putovanja"
 
-#: core/libs/settings/applicationsettings_p.cpp:51
+#: core/libs/settings/applicationsettings_p.cpp:52
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Odmori"
 
-#: core/libs/settings/applicationsettings_p.cpp:52
+#: core/libs/settings/applicationsettings_p.cpp:53
 #, fuzzy, kde-format
 #| msgid "Friends"
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Prijatelji"
 
-#: core/libs/settings/applicationsettings_p.cpp:53
+#: core/libs/settings/applicationsettings_p.cpp:54
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Priroda"
 
-#: core/libs/settings/applicationsettings_p.cpp:54
+#: core/libs/settings/applicationsettings_p.cpp:55
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Žurke"
 
-#: core/libs/settings/applicationsettings_p.cpp:55
+#: core/libs/settings/applicationsettings_p.cpp:56
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Za uraditi"
 
-#: core/libs/settings/applicationsettings_p.cpp:56
+#: core/libs/settings/applicationsettings_p.cpp:57
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"
@@ -54413,6 +54471,7 @@ msgstr "Otvori direktorij"
 #: core/showfoto/main/showfotoui5.rc:6
 #: core/utilities/imageeditor/main/imageeditorui5.rc:6
 #: core/utilities/lighttable/lighttablewindowui5.rc:6
+#: core/utilities/survey/surveywindowui5.rc:6
 #, kde-format
 msgid "&File"
 msgstr "&Datoteka"
@@ -54452,7 +54511,7 @@ msgstr "&Dekoriši"
 msgid "Effec&ts"
 msgstr "Efek&ti"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:122
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -54550,14 +54609,14 @@ msgstr ""
 "<qt>Postavke za spremanje slikovnih datoteka<br/><i>Postavi podrazumijevanu "
 "konfiguraciju korištenu za spremanje slika</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokacija"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -60130,6 +60189,7 @@ msgstr "Novi Zeland"
 #: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
+#: core/utilities/survey/surveywindow_setup.cpp:47
 #, kde-format
 msgid "Edit"
 msgstr "Izmijeni"
@@ -64179,16 +64239,19 @@ msgid "Move to Trash without Confirmation"
 msgstr "Prebaci u smeće bez potvrđivanja"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
+#: core/utilities/survey/surveywindow_setup.cpp:184
 #, kde-format
 msgid "Edit Titles"
 msgstr "Izmjeni naslove"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:71
+#: core/utilities/survey/surveywindow_setup.cpp:189
 #, kde-format
 msgid "Edit Comments"
 msgstr "Izmjeni komentare"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
+#: core/utilities/survey/surveywindow_setup.cpp:194
 #, kde-format
 msgid "Show Assigned Tags"
 msgstr "Prikaži dodijeljene oznake"
@@ -66095,6 +66158,7 @@ msgstr[1] "%1 stavke na Svijetloj listi"
 msgstr[2] "%1 stavki na Svijetloj list"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:35
+#: core/utilities/survey/surveywindow_setup.cpp:35
 #, fuzzy, kde-format
 #| msgid "&First"
 msgctxt "@action: go to first item on list"
@@ -66102,6 +66166,7 @@ msgid "&First"
 msgstr "&Prvi"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:41
+#: core/utilities/survey/surveywindow_setup.cpp:41
 #, fuzzy, kde-format
 #| msgid "&Last"
 msgctxt "@action: go to last item on list"
@@ -66130,11 +66195,13 @@ msgstr "Prikaži stavku u desnom panelu"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
 #: core/utilities/setup/camera/setupcamera.cpp:467
+#: core/utilities/survey/surveywindow_setup.cpp:53
 #, kde-format
 msgid "Open With Default Application"
 msgstr "Otvori sa podrazumijevanom aplikacijom"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:68
+#: core/utilities/survey/surveywindow_setup.cpp:54
 #, kde-format
 msgid "Open the item with default assigned application."
 msgstr "Otvorite stavku sa podrazumijevano dodijeljenom aplikacijom."
@@ -66152,12 +66219,14 @@ msgid "Remove all items from Light Table"
 msgstr "Ukloni sve stavke sa SvjetlosnogPregleda"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
+#: core/utilities/survey/surveywindow_setup.cpp:71
 #, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
 msgstr "Premjesti u smeće"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
+#: core/utilities/survey/surveywindow_setup.cpp:77
 #, kde-format
 msgid "Delete immediately"
 msgstr "Izbrišite odmah"
@@ -66183,38 +66252,45 @@ msgid "Navigate by pairs with all items"
 msgstr "Kretanje po paru sa svim stavkama"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
+#: core/utilities/survey/surveywindow_setup.cpp:88
 #, kde-format
 msgid "Clear On Close"
 msgstr "Očistite izbliza"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
+#: core/utilities/survey/surveywindow_setup.cpp:91
 #, kde-format
 msgid "Clear light table when it is closed"
 msgstr "Očistite svijetlu listu kada je zatvorena"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
+#: core/utilities/survey/surveywindow_setup.cpp:92
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
 msgstr "Uklonite sve slike sa svijetle liste kada je zatvorena"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
+#: core/utilities/survey/surveywindow_setup.cpp:133
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Uvećaj na 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:188
+#: core/utilities/survey/surveywindow_setup.cpp:138
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Uklopi u pro&zor"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
+#: core/utilities/survey/surveywindow_setup.cpp:145
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Pregled upravljanja bojama"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
+#: core/utilities/survey/surveywindow_setup.cpp:175
 #, kde-format
 msgid "Previous Image"
 msgstr "Prethodna slika"
@@ -69113,23 +69189,30 @@ msgstr "Prikaži u desnom panelu"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
 #, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Polls & Surveys"
+msgid "Show on Survey"
+msgstr "Ankete & Istraživanja"
+
+#: core/utilities/setup/album/setupalbumview.cpp:201
+#, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgid "Open with Default Application"
 msgstr "Otvori sa podrazumijevanom aplikacijom"
 
-#: core/utilities/setup/album/setupalbumview.cpp:201
+#: core/utilities/setup/album/setupalbumview.cpp:202
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Odaberite ono što bi se trebalo dogoditi kada kliknete na ikonu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:203
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Font pregleda ikone:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:205
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Icon Views."
 msgid "Select here the font used to display text in icon views."
@@ -69137,12 +69220,12 @@ msgstr ""
 "Odaberite ovdje font koji će biti korišten za prikaz teksta u Pregledima "
 "ikone."
 
-#: core/utilities/setup/album/setupalbumview.cpp:206
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Koristi veliku veličinu sličice za visoku rezoluciju ekrana"
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:208
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -69165,20 +69248,20 @@ msgstr ""
 "ponovo pokrenuti opcije sličica iz alata održavanjacda bi bila obrađena "
 "cijela kolekcija."
 
-#: core/utilities/setup/album/setupalbumview.cpp:245
+#: core/utilities/setup/album/setupalbumview.cpp:246
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "&Ikona:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:252
+#: core/utilities/setup/album/setupalbumview.cpp:253
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "Tree View icon size:"
 msgstr "Veličina sličice u prikazu preko drveta:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:260
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -69190,13 +69273,13 @@ msgstr ""
 "Omogućite ovu opciju za konfiguraciju veličine u pikselima u modelu prikaza "
 "ikona u vidu stabla na digiKam-ovim bočnim trakama sa alatima."
 
-#: core/utilities/setup/album/setupalbumview.cpp:262
+#: core/utilities/setup/album/setupalbumview.cpp:263
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "People Tree View icon size:"
 msgstr "Veličina sličice u prikazu preko drveta:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:271
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -69208,24 +69291,24 @@ msgstr ""
 "Omogućite ovu opciju za konfiguraciju veličine u pikselima u modelu prikaza "
 "ikona u vidu stabla na digiKam-ovim bočnim trakama sa alatima."
 
-#: core/utilities/setup/album/setupalbumview.cpp:273
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, kde-format
 msgid "Tree View font:"
 msgstr "Font pregleda stabla:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
 "Postavite ovdje font koji će biti korišten za prikaz teksta u Pregledima "
 "stabla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:276
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Prikaži broj stavki u prikazu preko drveta"
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display album information when the mouse hovers over a "
@@ -69237,20 +69320,20 @@ msgstr ""
 "Postavite ovu opciju za prikaz informacija albuma, kada se kursorom miša "
 "pređe preko stavke u modelu prikaza preko foldera."
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Pogledi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:298
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:300
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Embedded view shows the full image"
@@ -69258,19 +69341,19 @@ msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Ugrađeni pregled prikazuje slike u punoj veličini"
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
+#: core/utilities/setup/album/setupalbumview.cpp:302
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Sirove slike:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
+#: core/utilities/setup/album/setupalbumview.cpp:305
 #, fuzzy, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automatski"
 
-#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/album/setupalbumview.cpp:307
 #, fuzzy, kde-format
 #| msgctxt "@option:inlistbox Embedded preview as RAW image preview source"
 #| msgid "Embedded preview"
@@ -69278,7 +69361,7 @@ msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Ugrađeni pregled"
 
-#: core/utilities/setup/album/setupalbumview.cpp:308
+#: core/utilities/setup/album/setupalbumview.cpp:309
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@option:inlistbox Original, half-size data as RAW image preview source"
@@ -69287,7 +69370,7 @@ msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Sirovi podaci u pola veličine"
 
-#: core/utilities/setup/album/setupalbumview.cpp:310
+#: core/utilities/setup/album/setupalbumview.cpp:311
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@option:inlistbox Original, half-size data as RAW image preview source"
@@ -69296,12 +69379,12 @@ msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Sirovi podaci u pola veličine"
 
-#: core/utilities/setup/album/setupalbumview.cpp:312
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:314
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -69309,12 +69392,12 @@ msgstr ""
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:316
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -69322,12 +69405,12 @@ msgstr ""
 msgid "Check this if you want to scale small images to fit to window."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:318
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:320
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -69335,13 +69418,13 @@ msgstr ""
 msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:321
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Prikažite ikone i tekst preko pregleda"
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:323
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -69349,14 +69432,14 @@ msgstr "Prikažite ikone i tekst preko pregleda"
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:324
+#: core/utilities/setup/album/setupalbumview.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
 msgid "Auto play of videos or animations"
 msgstr "Automatsko spremanje promjena"
 
-#: core/utilities/setup/album/setupalbumview.cpp:325
+#: core/utilities/setup/album/setupalbumview.cpp:326
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -69364,13 +69447,13 @@ msgstr "Automatsko spremanje promjena"
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:327
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, fuzzy, kde-format
 #| msgid "Show icons and text over preview"
 msgid "Show a text overlay over preview."
 msgstr "Prikažite ikone i tekst preko pregleda"
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:329
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -69380,35 +69463,35 @@ msgid ""
 "and properties."
 msgstr "Odznačite ovo ako ne želite da vidite ikone i tekst u prikazu slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:351
+#: core/utilities/setup/album/setupalbumview.cpp:352
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Pregled"
 
-#: core/utilities/setup/album/setupalbumview.cpp:366
+#: core/utilities/setup/album/setupalbumview.cpp:367
 #, fuzzy, kde-format
 #| msgid "Full-screen Options"
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Opcije prikaza preko cijelog ekrana"
 
-#: core/utilities/setup/album/setupalbumview.cpp:371
+#: core/utilities/setup/album/setupalbumview.cpp:372
 #, fuzzy, kde-format
 #| msgid "Select Mime Types"
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Izaberite MIME tipove"
 
-#: core/utilities/setup/album/setupalbumview.cpp:374
+#: core/utilities/setup/album/setupalbumview.cpp:375
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategorije"
 
-#: core/utilities/setup/album/setupalbumview.cpp:555
+#: core/utilities/setup/album/setupalbumview.cpp:556
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -70697,6 +70780,7 @@ msgstr "Postavke slike"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
+#: core/utilities/setup/setupsurvey.cpp:74
 #, kde-format
 msgid "Interface Options"
 msgstr "Opcije interfejsa"
@@ -72947,14 +73031,14 @@ msgstr "Darwin Core"
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:127
+#: core/utilities/setup/setup.cpp:130
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Baza podataka"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:131
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -72964,14 +73048,14 @@ msgid ""
 msgstr ""
 "<qt>Postavke baze podataka<br/><i>Prilagodi postavke baze podataka</i></qt>"
 
-#: core/utilities/setup/setup.cpp:132
+#: core/utilities/setup/setup.cpp:135
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Kolekcije"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:136
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -72984,14 +73068,14 @@ msgstr ""
 "<qt>Postavke kolekcije<br/><i>Postavi korijene albume i lokacije baze "
 "podataka</i></qt>"
 
-#: core/utilities/setup/setup.cpp:137
+#: core/utilities/setup/setup.cpp:140
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pogledi"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:141
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -73003,14 +73087,14 @@ msgid ""
 msgstr ""
 "<qt>Postavke pregleda albuma<br/><i>Prilagodite izgled albuma liste</i></qt>"
 
-#: core/utilities/setup/setup.cpp:142
+#: core/utilities/setup/setup.cpp:145
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Alati"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -73023,14 +73107,14 @@ msgstr ""
 "<qt>Opcije za opis alata stavki u albumu<br/><i>Prilagodite informacije u "
 "opisu alata</i></qt>"
 
-#: core/utilities/setup/setup.cpp:147
+#: core/utilities/setup/setup.cpp:150
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metapodaci"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -73043,14 +73127,14 @@ msgstr ""
 "<qt>Upravljanje informacijama ubačene slike<br/><i>Postavljanje odnosa "
 "između slike i metapodataka</i></qt>"
 
-#: core/utilities/setup/setup.cpp:152
+#: core/utilities/setup/setup.cpp:155
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Šabloni"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:156
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
@@ -73063,14 +73147,14 @@ msgstr ""
 "<qt>Predlošci metapodataka <br/><i>Upravljajte vašom kolekciju predložaka "
 "metapodataka</i></qt>"
 
-#: core/utilities/setup/setup.cpp:157
+#: core/utilities/setup/setup.cpp:160
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Uređivač slika"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:161
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -73082,14 +73166,14 @@ msgstr ""
 "<qt>Postavke uređivača slike<br/><i>Prilagodi ponašanje uređivača slike</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:162
+#: core/utilities/setup/setup.cpp:165
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Upravljanje bojama"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:166
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize the color management "
@@ -73102,14 +73186,14 @@ msgstr ""
 "<qt>Opcije za upravljanje bojama<br/><i>Prilagodite opcije za upravljanje "
 "bojama</i></qt>"
 
-#: core/utilities/setup/setup.cpp:167
+#: core/utilities/setup/setup.cpp:170
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Svjetlosni Pregled"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:171
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -73122,14 +73206,33 @@ msgstr ""
 "<qt>Opcije svjetlosne tablice<br/><i>Alatka za prilagodbu koja se koristi za "
 "poređenje slika</i></qt>"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:175
+#, kde-format
+msgctxt "@title: settings section"
+msgid "Survey"
+msgstr ""
+
+#: core/utilities/setup/setup.cpp:176
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
+#| "i></qt>"
+msgctxt "@title"
+msgid ""
+"Survey Settings\n"
+"Customize tool used to review items"
+msgstr ""
+"<qt>Opcije svjetlosne tablice<br/><i>Alatka za prilagodbu koja se koristi za "
+"poređenje slika</i></qt>"
+
+#: core/utilities/setup/setup.cpp:189
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Fotoaparati"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:190
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -73138,14 +73241,14 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>Postavke kamere<br/><i>Upravljaj svojim kamera uređajima</i></qt>"
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:197
 #, fuzzy, kde-format
 #| msgid "Kipi-Plugins"
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Kipi priključci"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:198
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -73158,14 +73261,14 @@ msgstr ""
 "<qt>Opcije glavnog dodatka za povezivanje<br/><i>Postavite koji će dodaci "
 "biti dostupni sa glavnog sučelja</i></qt>"
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:202
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
@@ -73730,6 +73833,25 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Datoteke slika"
 
+#: core/utilities/setup/setupsurvey.cpp:77
+#, fuzzy, kde-format
+#| msgid "Clear the light table on close"
+msgid "Clear the Survey on close"
+msgstr "Uklonite svijetlu tabelu za izlazu"
+
+#: core/utilities/setup/setupsurvey.cpp:78
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to remove all images from the light table when you close "
+#| "it, or unset it to preserve the images currently on the light table."
+msgid ""
+"Set this option to remove all images from the Survey when you close it, or "
+"unset it to preserve the images currently on the Survey."
+msgstr ""
+"Omogućite ovu opciju za uklanjanje svih slika sa lijeve table nakon "
+"zatvaranja, ili je onemogućite da biste sačuvali slike koje su trenutno na "
+"osvijetljenoj tabli."
+
 #: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid "Template Title:"
@@ -74186,6 +74308,27 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#: core/utilities/survey/surveywindow.cpp:199
+#, fuzzy, kde-format
+#| msgid "Custom process"
+msgid "%1 item on Survey"
+msgid_plural "%1 items on Survey"
+msgstr[0] "Prilagođeni proces"
+msgstr[1] "Prilagođeni proces"
+msgstr[2] "Prilagođeni proces"
+
+#: core/utilities/survey/surveywindow_setup.cpp:59
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Survey Tool"
+msgstr "Ukloni stavku sa SvjetlosnogPregleda"
+
+#: core/utilities/survey/surveywindow_setup.cpp:65
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Survey Tool"
+msgstr "Ukloni sve stavke sa SvjetlosnogPregleda"
 
 #, fuzzy
 #~| msgid "Authors"

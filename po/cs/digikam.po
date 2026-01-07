@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-05 00:40+0000\n"
+"POT-Creation-Date: 2026-01-07 00:42+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -548,19 +548,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Vybrat položku"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:143
+#: core/app/items/utils/contextmenuhelper_actions.cpp:163
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Nastavit jako náhled alba"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:147
+#: core/app/items/utils/contextmenuhelper_actions.cpp:167
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Nastavit jako náhled značky"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:184
+#: core/app/items/utils/contextmenuhelper_actions.cpp:204
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -569,7 +569,7 @@ msgstr[0] "Přesunout do koše"
 msgstr[1] "Přesunout %1 soubory do koše"
 msgstr[2] "Přesunout %1 souborů do koše"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:196
+#: core/app/items/utils/contextmenuhelper_actions.cpp:216
 #, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
@@ -982,13 +982,13 @@ msgctxt "Month String - Year String"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/items/utils/itemviewutilities.cpp:202
+#: core/app/items/utils/itemviewutilities.cpp:203
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "Vyberte cílovou složku"
 
-#: core/app/items/utils/itemviewutilities.cpp:228
+#: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
@@ -997,7 +997,7 @@ msgstr ""
 "<p>Vyberte prosím cílové album z knihovny digiKamu, do něhož se mají "
 "přesunout vybrané obrázky.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:353
+#: core/app/items/utils/itemviewutilities.cpp:394
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -1365,7 +1365,7 @@ msgstr "Vyčistit databázi..."
 msgid "Loading albums..."
 msgstr "Načítají se alba..."
 
-#: core/app/main/digikamapp.cpp:392
+#: core/app/main/digikamapp.cpp:401
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1376,7 +1376,7 @@ msgstr ""
 "určit znovu, zvolte zde \"Ano\", jinak zvolte \"Ne\" a funkce \"Správa barev"
 "\" bude vypnuta, dokud se tento problém nevyřeší.</p>"
 
-#: core/app/main/digikamapp.cpp:448
+#: core/app/main/digikamapp.cpp:457
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1385,7 +1385,7 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:737 core/app/views/stack/trashview.cpp:526
+#: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:526
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1393,7 +1393,7 @@ msgstr[0] "Není vybrána žádná položka (%1 položka)"
 msgstr[1] "Není vybrána žádná položka (%1 položky)"
 msgstr[2] "Není vybrána žádná položka (%1 položek)"
 
-#: core/app/main/digikamapp.cpp:743
+#: core/app/main/digikamapp.cpp:752
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1401,7 +1401,7 @@ msgstr[0] "Není vybrána žádná položka (%1 [%2] položka)"
 msgstr[1] "Není vybrána žádná položka (%1 [%2] položky)"
 msgstr[2] "Není vybrána žádná položka (%1 [%2] položek)"
 
-#: core/app/main/digikamapp.cpp:748
+#: core/app/main/digikamapp.cpp:757
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1412,7 +1412,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Není vybrána žádná položka (%1 položek. Se seskupenými položkami: %2)"
 
-#: core/app/main/digikamapp.cpp:759
+#: core/app/main/digikamapp.cpp:768
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1420,7 +1420,7 @@ msgstr[0] "Vybrána 1/%2 položek (%3/%4)"
 msgstr[1] "Vybrány %1/%2 položek (%3/%4)"
 msgstr[2] "Vybráno %1/%2 položek (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:772
+#: core/app/main/digikamapp.cpp:781
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1428,7 +1428,7 @@ msgstr[0] "Vybrána 1/%2 [%3] položek (%4/%5)"
 msgstr[1] "Vybrány %1/%2 [%3] položek (%4/%5)"
 msgstr[2] "Vybráno %1/%2 [%3] položek (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:780
+#: core/app/main/digikamapp.cpp:789
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1436,7 +1436,7 @@ msgstr[0] "1/%2 položka vybrána. Celkem se seskupenými položkami: %3"
 msgstr[1] "%1/%2 položky vybrány. Celkem se seskupenými položkami: %3"
 msgstr[2] "%1/%2 položek vybráno. Celkem se seskupenými položkami: %3"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:797
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1444,7 +1444,7 @@ msgstr[0] "Vybrána 1/%2 [%3/%4] položka (%5/%6)"
 msgstr[1] "Vybrány %1/%2 [%3/%4] položky (%5/%6)"
 msgstr[2] "Vybráno %1/%2 [%3/%4] položek (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:797
+#: core/app/main/digikamapp.cpp:806
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1452,22 +1452,22 @@ msgstr[0] "1/%2 položka vybrána. Se seskupenými položkami: %3/%4"
 msgstr[1] "%1/%2 položky vybrány. Se seskupenými položkami: %3/%4"
 msgstr[2] "%1/%2 položek vybráno. Se seskupenými položkami: %3/%4"
 
-#: core/app/main/digikamapp.cpp:828
+#: core/app/main/digikamapp.cpp:837
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 z %2)"
 
-#: core/app/main/digikamapp.cpp:842
+#: core/app/main/digikamapp.cpp:851
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 z %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:846
+#: core/app/main/digikamapp.cpp:855
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:857
+#: core/app/main/digikamapp.cpp:866
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1475,7 +1475,7 @@ msgstr[0] "%1 skrytá položka"
 msgstr[1] "%1 skryté položky"
 msgstr[2] "%1 skrytých položek"
 
-#: core/app/main/digikamapp.cpp:917
+#: core/app/main/digikamapp.cpp:926
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1483,7 +1483,7 @@ msgstr[0] "Zapsat metadata do souboru"
 msgstr[1] "Zapsat metadata do vybraných souborů"
 msgstr[2] "Zapsat metadata do vybraných souborů"
 
-#: core/app/main/digikamapp.cpp:919
+#: core/app/main/digikamapp.cpp:928
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1542,7 +1542,7 @@ msgstr "Přidat nové složky  do knihovny alb."
 msgid "Images found in %1"
 msgstr "Nalezeny obrázky v %1"
 
-#: core/app/main/digikamapp_config.cpp:117
+#: core/app/main/digikamapp_config.cpp:122
 #: core/showfoto/main/showfoto_config.cpp:196
 #, kde-format
 msgid ""
@@ -1550,7 +1550,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:125
+#: core/app/main/digikamapp_config.cpp:130
 #: core/showfoto/main/showfoto_config.cpp:204
 #, kde-format
 msgid ""
@@ -1595,6 +1595,7 @@ msgstr "Inicializace hlavního pohledu..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
+#: core/utilities/survey/surveywindow_setup.cpp:303
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1667,7 +1668,7 @@ msgid "Delete Album"
 msgstr "Smazat album"
 
 #: core/app/main/digikamapp_setup.cpp:268
-#: core/app/main/digikamapp_setup.cpp:508
+#: core/app/main/digikamapp_setup.cpp:530
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
@@ -1693,7 +1694,7 @@ msgid "Write Metadata to Files"
 msgstr "Zapsat metadata do souborů"
 
 #: core/app/main/digikamapp_setup.cpp:286
-#: core/app/main/digikamapp_setup.cpp:462
+#: core/app/main/digikamapp_setup.cpp:484
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1710,7 +1711,7 @@ msgid "Reread Metadata From Files"
 msgstr "Znovu načíst metadata ze souborů"
 
 #: core/app/main/digikamapp_setup.cpp:297
-#: core/app/main/digikamapp_setup.cpp:473
+#: core/app/main/digikamapp_setup.cpp:495
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1851,150 +1852,188 @@ msgstr "Přidat vybrané položky na panel náhledů prohlížecího stolku."
 #: core/app/main/digikamapp_setup.cpp:433
 #, kde-format
 msgctxt "@action: setup"
+msgid "Survey"
+msgstr ""
+
+#: core/app/main/digikamapp_setup.cpp:439
+#, fuzzy, kde-format
+#| msgctxt "@item: editorial content attribute"
+#| msgid "Polls & Surveys"
+msgctxt "@action: setup"
+msgid "Place onto Survey"
+msgstr "Hlasování & průzkum"
+
+#: core/app/main/digikamapp_setup.cpp:440
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Place the selected items on the light table thumbbar."
+msgctxt "@info: setup"
+msgid "Place the selected items on the survey thumbbar."
+msgstr "Umístit vybrané položky na panel náhledů prohlížecího stolku."
+
+#: core/app/main/digikamapp_setup.cpp:446
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Add Texture"
+msgctxt "@action: setup"
+msgid "Add to Survey"
+msgstr "Přidat texturu"
+
+#: core/app/main/digikamapp_setup.cpp:447
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Add selected items to the light table thumbbar."
+msgctxt "@info: setup"
+msgid "Add selected items to the survey thumbbar."
+msgstr "Přidat vybrané položky na panel náhledů prohlížecího stolku."
+
+#: core/app/main/digikamapp_setup.cpp:455
+#, kde-format
+msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Správce dávkového zpracování"
 
-#: core/app/main/digikamapp_setup.cpp:439
+#: core/app/main/digikamapp_setup.cpp:461
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Přidat do aktuální fronty"
 
-#: core/app/main/digikamapp_setup.cpp:440
+#: core/app/main/digikamapp_setup.cpp:462
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr ""
 "Přidat vybrané položky do aktuální fronty ze správce dávkového zpracování."
 
-#: core/app/main/digikamapp_setup.cpp:446
+#: core/app/main/digikamapp_setup.cpp:468
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Přidat do nové fronty"
 
-#: core/app/main/digikamapp_setup.cpp:447
+#: core/app/main/digikamapp_setup.cpp:469
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Přidat vybrané položky do nové fronty ze správce dávkového zpracování."
 
-#: core/app/main/digikamapp_setup.cpp:454
+#: core/app/main/digikamapp_setup.cpp:476
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Importovat"
 
-#: core/app/main/digikamapp_setup.cpp:461
+#: core/app/main/digikamapp_setup.cpp:483
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Zapsat metadata do vybraných souborů"
 
-#: core/app/main/digikamapp_setup.cpp:472
+#: core/app/main/digikamapp_setup.cpp:494
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Znovu načíst metadata z vybraných souborů"
 
-#: core/app/main/digikamapp_setup.cpp:483
+#: core/app/main/digikamapp_setup.cpp:505
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Vyhledat obličeje"
 
-#: core/app/main/digikamapp_setup.cpp:488
+#: core/app/main/digikamapp_setup.cpp:510
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Rozpoznávat obličeje"
 
-#: core/app/main/digikamapp_setup.cpp:493
+#: core/app/main/digikamapp_setup.cpp:515
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Odstranit všechny tváře"
 
-#: core/app/main/digikamapp_setup.cpp:500
+#: core/app/main/digikamapp_setup.cpp:522
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Najít podobné..."
 
-#: core/app/main/digikamapp_setup.cpp:501
+#: core/app/main/digikamapp_setup.cpp:523
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Najít podobné obrázky pomocí vybraného jako vzoru."
 
-#: core/app/main/digikamapp_setup.cpp:509
+#: core/app/main/digikamapp_setup.cpp:531
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Změnit název nyní vybraného souboru."
 
-#: core/app/main/digikamapp_setup.cpp:519
+#: core/app/main/digikamapp_setup.cpp:541
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Přesunout do koše"
 
-#: core/app/main/digikamapp_setup.cpp:533
+#: core/app/main/digikamapp_setup.cpp:555
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Navždy smazat"
 
-#: core/app/main/digikamapp_setup.cpp:544
+#: core/app/main/digikamapp_setup.cpp:566
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Navždy smazat bez potvrzení"
 
-#: core/app/main/digikamapp_setup.cpp:552
+#: core/app/main/digikamapp_setup.cpp:574
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Přesunout do koše bez potvrzení"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:581
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "&Seřadit alba"
 
-#: core/app/main/digikamapp_setup.cpp:560
+#: core/app/main/digikamapp_setup.cpp:582
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Seřadit alba ve stromovém pohledu."
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Podle složky"
 
-#: core/app/main/digikamapp_setup.cpp:580
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Podle kategorie"
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Podle data"
 
-#: core/app/main/digikamapp_setup.cpp:586
+#: core/app/main/digikamapp_setup.cpp:608
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Zahrnout stromovou strukturu alba"
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
@@ -2002,13 +2041,13 @@ msgstr ""
 "Zaškrtněte tento přepínač, přejete-li si zobrazit všechna podalba náležící "
 "pod současné album."
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:615
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Zahrnout stromovou strukturu značek"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:617
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2018,13 +2057,13 @@ msgstr ""
 "Zaškrtněte tento přepínač, přejete-li si zobrazit všechny obrázky označené "
 "danou značkou a všemi jejími podřazenými značkami."
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:622
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Zobrazit všechny seskupené obrázky jako otevřené"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:624
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
@@ -2032,471 +2071,471 @@ msgstr ""
 "Zaškrtněte tento přepínač pro zobrazení všech seskupených položek jako "
 "otevřených."
 
-#: core/app/main/digikamapp_setup.cpp:608
+#: core/app/main/digikamapp_setup.cpp:630
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Seřadit položky"
 
-#: core/app/main/digikamapp_setup.cpp:609
+#: core/app/main/digikamapp_setup.cpp:631
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "Hodnota, podle které jsou obrázky z alba v pohledu s náhledy seřazeny"
 
-#: core/app/main/digikamapp_setup.cpp:614
+#: core/app/main/digikamapp_setup.cpp:636
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Podle názvu"
 
-#: core/app/main/digikamapp_setup.cpp:615
+#: core/app/main/digikamapp_setup.cpp:637
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Podle umístění"
 
-#: core/app/main/digikamapp_setup.cpp:616
+#: core/app/main/digikamapp_setup.cpp:638
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Podle data vytvoření"
 
-#: core/app/main/digikamapp_setup.cpp:617
+#: core/app/main/digikamapp_setup.cpp:639
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Podle data úprav"
 
-#: core/app/main/digikamapp_setup.cpp:618
+#: core/app/main/digikamapp_setup.cpp:640
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Podle velikosti souboru"
 
-#: core/app/main/digikamapp_setup.cpp:619
-#: core/app/main/digikamapp_setup.cpp:720
+#: core/app/main/digikamapp_setup.cpp:641
+#: core/app/main/digikamapp_setup.cpp:742
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Podle formátu"
 
-#: core/app/main/digikamapp_setup.cpp:621
+#: core/app/main/digikamapp_setup.cpp:643
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Podle hodnocení"
 
-#: core/app/main/digikamapp_setup.cpp:622
+#: core/app/main/digikamapp_setup.cpp:644
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgctxt "@action: setup"
 msgid "By Pick Label"
 msgstr "Popisek výběru:"
 
-#: core/app/main/digikamapp_setup.cpp:623
+#: core/app/main/digikamapp_setup.cpp:645
 #, fuzzy, kde-format
 #| msgid "Color Label:"
 msgctxt "@action: setup"
 msgid "By Color Label"
 msgstr "Barevný popisek:"
 
-#: core/app/main/digikamapp_setup.cpp:625
+#: core/app/main/digikamapp_setup.cpp:647
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Podle velikosti obrázku"
 
-#: core/app/main/digikamapp_setup.cpp:626
+#: core/app/main/digikamapp_setup.cpp:648
 #, fuzzy, kde-format
 #| msgid "Any Orientation"
 msgctxt "@action: setup"
 msgid "By Orientation"
 msgstr "Libovolná orientace"
 
-#: core/app/main/digikamapp_setup.cpp:627
+#: core/app/main/digikamapp_setup.cpp:649
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Podle poměru stran"
 
-#: core/app/main/digikamapp_setup.cpp:628
+#: core/app/main/digikamapp_setup.cpp:650
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@action: setup"
 msgid "By Gps Position"
 msgstr "Pozice:"
 
-#: core/app/main/digikamapp_setup.cpp:630
+#: core/app/main/digikamapp_setup.cpp:652
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Podle typu tváře"
 
-#: core/app/main/digikamapp_setup.cpp:631
+#: core/app/main/digikamapp_setup.cpp:653
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Podle podobnosti"
 
-#: core/app/main/digikamapp_setup.cpp:632
+#: core/app/main/digikamapp_setup.cpp:654
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Podle manuálu a názvu"
 
-#: core/app/main/digikamapp_setup.cpp:633
+#: core/app/main/digikamapp_setup.cpp:655
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Podle manuálu a data"
 
-#: core/app/main/digikamapp_setup.cpp:695
+#: core/app/main/digikamapp_setup.cpp:717
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Způsob třídění p&oložek"
 
-#: core/app/main/digikamapp_setup.cpp:696
+#: core/app/main/digikamapp_setup.cpp:718
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Zvolte, zda mají být obrázky seřazeny vzestupně nebo sestupně."
 
-#: core/app/main/digikamapp_setup.cpp:700
-#: core/app/main/digikamapp_setup.cpp:759
+#: core/app/main/digikamapp_setup.cpp:722
+#: core/app/main/digikamapp_setup.cpp:781
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Vzestupně"
 
-#: core/app/main/digikamapp_setup.cpp:702
-#: core/app/main/digikamapp_setup.cpp:761
+#: core/app/main/digikamapp_setup.cpp:724
+#: core/app/main/digikamapp_setup.cpp:783
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Sestupně"
 
-#: core/app/main/digikamapp_setup.cpp:712
+#: core/app/main/digikamapp_setup.cpp:734
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Oddělit položky"
 
-#: core/app/main/digikamapp_setup.cpp:713
+#: core/app/main/digikamapp_setup.cpp:735
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Kategorie ve kterých jsou zobrazeny obrázky v zobrazení náhledů"
 
-#: core/app/main/digikamapp_setup.cpp:718
+#: core/app/main/digikamapp_setup.cpp:740
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Nesetříděný seznam"
 
-#: core/app/main/digikamapp_setup.cpp:719
+#: core/app/main/digikamapp_setup.cpp:741
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Podle alba"
 
-#: core/app/main/digikamapp_setup.cpp:721
+#: core/app/main/digikamapp_setup.cpp:743
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Podle obličejů"
 
-#: core/app/main/digikamapp_setup.cpp:722
+#: core/app/main/digikamapp_setup.cpp:744
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Podle měsíce"
 
-#: core/app/main/digikamapp_setup.cpp:723
+#: core/app/main/digikamapp_setup.cpp:745
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:754
+#: core/app/main/digikamapp_setup.cpp:776
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Pořadí třídění položek"
 
-#: core/app/main/digikamapp_setup.cpp:755
+#: core/app/main/digikamapp_setup.cpp:777
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Způsob řazení skupin oddělených položek"
 
-#: core/app/main/digikamapp_setup.cpp:776
+#: core/app/main/digikamapp_setup.cpp:798
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: core/app/main/digikamapp_setup.cpp:783
+#: core/app/main/digikamapp_setup.cpp:805
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Zrušit výběr"
 
-#: core/app/main/digikamapp_setup.cpp:790
+#: core/app/main/digikamapp_setup.cpp:812
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Obrátit výběr"
 
-#: core/app/main/digikamapp_setup.cpp:798
+#: core/app/main/digikamapp_setup.cpp:820
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Zobrazit panel náhledů"
 
-#: core/app/main/digikamapp_setup.cpp:829
+#: core/app/main/digikamapp_setup.cpp:851
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Zvětšení na 100%"
 
-#: core/app/main/digikamapp_setup.cpp:837
+#: core/app/main/digikamapp_setup.cpp:859
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Přizpůsobit &oknu"
 
-#: core/app/main/digikamapp_setup.cpp:850
+#: core/app/main/digikamapp_setup.cpp:872
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Zobrazení se správou barev"
 
-#: core/app/main/digikamapp_setup.cpp:868
+#: core/app/main/digikamapp_setup.cpp:890
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Hledat..."
 
-#: core/app/main/digikamapp_setup.cpp:876
+#: core/app/main/digikamapp_setup.cpp:898
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Pokročilé hledání..."
 
-#: core/app/main/digikamapp_setup.cpp:884
+#: core/app/main/digikamapp_setup.cpp:906
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Najít duplicity..."
 
-#: core/app/main/digikamapp_setup.cpp:894
+#: core/app/main/digikamapp_setup.cpp:916
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Převod databáze..."
 
-#: core/app/main/digikamapp_setup.cpp:903
+#: core/app/main/digikamapp_setup.cpp:925
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Správa"
 
-#: core/app/main/digikamapp_setup.cpp:910
+#: core/app/main/digikamapp_setup.cpp:932
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Vyhledat nové položky"
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:938
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Přidat fotoaparát ručně..."
 
-#: core/app/main/digikamapp_setup.cpp:927
+#: core/app/main/digikamapp_setup.cpp:949
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Načítání fotoaparátů..."
 
-#: core/app/main/digikamapp_setup.cpp:963
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Ukončit náhledový režim"
 
-#: core/app/main/digikamapp_setup.cpp:968
+#: core/app/main/digikamapp_setup.cpp:990
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Následující obrázek"
 
-#: core/app/main/digikamapp_setup.cpp:974
+#: core/app/main/digikamapp_setup.cpp:996
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Předchozí obrázek"
 
-#: core/app/main/digikamapp_setup.cpp:980
+#: core/app/main/digikamapp_setup.cpp:1002
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "První obrázek"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:1007
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Poslední obrázek"
 
-#: core/app/main/digikamapp_setup.cpp:990
+#: core/app/main/digikamapp_setup.cpp:1012
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Vyjmou&t"
 
-#: core/app/main/digikamapp_setup.cpp:992
+#: core/app/main/digikamapp_setup.cpp:1014
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Vyjmout výběr do schránky"
 
-#: core/app/main/digikamapp_setup.cpp:1011
+#: core/app/main/digikamapp_setup.cpp:1033
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Upravit titulky"
 
-#: core/app/main/digikamapp_setup.cpp:1016
+#: core/app/main/digikamapp_setup.cpp:1038
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Upravit komentáře"
 
-#: core/app/main/digikamapp_setup.cpp:1021
+#: core/app/main/digikamapp_setup.cpp:1043
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Zobrazit přiřazené značky"
 
-#: core/app/main/digikamapp_setup.cpp:1030
+#: core/app/main/digikamapp_setup.cpp:1052
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Nastavit Exif značku natočení obrázku"
 
-#: core/app/main/digikamapp_setup.cpp:1033
+#: core/app/main/digikamapp_setup.cpp:1055
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normální"
 
-#: core/app/main/digikamapp_setup.cpp:1035
+#: core/app/main/digikamapp_setup.cpp:1057
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Převráceno vodorovně"
 
-#: core/app/main/digikamapp_setup.cpp:1037
+#: core/app/main/digikamapp_setup.cpp:1059
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Otočeno vzhůru nohama"
 
-#: core/app/main/digikamapp_setup.cpp:1039
+#: core/app/main/digikamapp_setup.cpp:1061
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Převráceno svisle"
 
-#: core/app/main/digikamapp_setup.cpp:1041
+#: core/app/main/digikamapp_setup.cpp:1063
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Otočeno doprava / překlopeno vodorovně"
 
-#: core/app/main/digikamapp_setup.cpp:1043
+#: core/app/main/digikamapp_setup.cpp:1065
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Otočeno doprava"
 
-#: core/app/main/digikamapp_setup.cpp:1045
+#: core/app/main/digikamapp_setup.cpp:1067
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Otočeno doprava / překlopeno svisle"
 
-#: core/app/main/digikamapp_setup.cpp:1047
+#: core/app/main/digikamapp_setup.cpp:1069
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Otočeno doleva"
 
-#: core/app/main/digikamapp_setup.cpp:1108
+#: core/app/main/digikamapp_setup.cpp:1130
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Otočit"
 
-#: core/app/main/digikamapp_setup.cpp:1114
+#: core/app/main/digikamapp_setup.cpp:1136
 #, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1122
+#: core/app/main/digikamapp_setup.cpp:1144
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Vlevo"
 
-#: core/app/main/digikamapp_setup.cpp:1129
+#: core/app/main/digikamapp_setup.cpp:1151
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Vpravo"
 
-#: core/app/main/digikamapp_setup.cpp:1139
+#: core/app/main/digikamapp_setup.cpp:1161
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Převrátit"
 
-#: core/app/main/digikamapp_setup.cpp:1143
+#: core/app/main/digikamapp_setup.cpp:1165
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Vodorovně"
 
-#: core/app/main/digikamapp_setup.cpp:1150
+#: core/app/main/digikamapp_setup.cpp:1172
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Svisle"
 
-#: core/app/main/digikamapp_setup.cpp:1160
+#: core/app/main/digikamapp_setup.cpp:1182
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Automaticky otočit/převrátit podle EXIF informací"
 
-#: core/app/main/digikamapp_setup.cpp:1171
+#: core/app/main/digikamapp_setup.cpp:1193
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Načítají se motivy..."
 
-#: core/app/main/digikamapp_setup.cpp:1174
+#: core/app/main/digikamapp_setup.cpp:1196
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "Mo&tivy vzhledu"
 
-#: core/app/main/digikamapp_setup.cpp:1190
+#: core/app/main/digikamapp_setup.cpp:1212
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2588,21 +2627,21 @@ msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "Hlavní nástroje"
 
-#: core/app/main/digikamapp_tools.cpp:38
+#: core/app/main/digikamapp_tools.cpp:39
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2667
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Následné zpracování"
 
-#: core/app/main/digikamapp_tools.cpp:58
+#: core/app/main/digikamapp_tools.cpp:59
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2696
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Exportovat"
 
-#: core/app/main/digikamapp_tools.cpp:69
+#: core/app/main/digikamapp_tools.cpp:70
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2707
 #, kde-format
 msgctxt "@title Import Tools"
@@ -2634,7 +2673,7 @@ msgid "&Item"
 msgstr "&Položka"
 
 #. i18n: ectx: Menu (Edit)
-#: core/app/main/digikamui5.rc:75 core/showfoto/main/showfotoui5.rc:30
+#: core/app/main/digikamui5.rc:77 core/showfoto/main/showfotoui5.rc:30
 #: core/utilities/imageeditor/main/imageeditorui5.rc:30
 #: core/utilities/import/main/importui5.rc:15
 #, kde-format
@@ -2642,66 +2681,73 @@ msgid "&Edit"
 msgstr "&Upravit"
 
 #. i18n: ectx: Menu (View)
-#: core/app/main/digikamui5.rc:86 core/showfoto/main/showfotoui5.rc:40
+#: core/app/main/digikamui5.rc:88 core/showfoto/main/showfotoui5.rc:40
 #: core/utilities/imageeditor/main/imageeditorui5.rc:41
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:29
+#: core/utilities/survey/surveywindowui5.rc:24
 #, kde-format
 msgid "&View"
 msgstr "Po&hled"
 
 #. i18n: ectx: Menu (Tools)
-#: core/app/main/digikamui5.rc:118 core/showfoto/main/showfotoui5.rc:92
+#: core/app/main/digikamui5.rc:120 core/showfoto/main/showfotoui5.rc:92
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
+#: core/utilities/survey/surveywindowui5.rc:38
 #, kde-format
 msgid "&Tools"
 msgstr "Nás&troje"
 
 #. i18n: ectx: Menu (Import)
-#: core/app/main/digikamui5.rc:136 core/showfoto/main/showfotoui5.rc:102
+#: core/app/main/digikamui5.rc:139 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
+#: core/utilities/survey/surveywindowui5.rc:48
 #, kde-format
 msgid "I&mport"
 msgstr "I&mportovat"
 
 #. i18n: ectx: Menu (Export)
-#: core/app/main/digikamui5.rc:149 core/showfoto/main/showfotoui5.rc:108
+#: core/app/main/digikamui5.rc:152 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
+#: core/utilities/survey/surveywindowui5.rc:54
 #, kde-format
 msgid "&Export"
 msgstr "&Exportovat"
 
 #. i18n: ectx: Menu (settings)
-#: core/app/main/digikamui5.rc:155 core/showfoto/main/showfotoui5.rc:114
+#: core/app/main/digikamui5.rc:158 core/showfoto/main/showfotoui5.rc:114
 #: core/utilities/imageeditor/main/imageeditorui5.rc:115
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:33
+#: core/utilities/survey/surveywindowui5.rc:60
 #, kde-format
 msgid "&Settings"
 msgstr "Na&stavení"
 
 #. i18n: ectx: Menu (help)
-#: core/app/main/digikamui5.rc:171 core/showfoto/main/showfotoui5.rc:128
+#: core/app/main/digikamui5.rc:174 core/showfoto/main/showfotoui5.rc:128
 #: core/utilities/imageeditor/main/imageeditorui5.rc:130
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:47
+#: core/utilities/survey/surveywindowui5.rc:75
 #, kde-format
 msgid "&Help"
 msgstr "Nápo&věda"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: core/app/main/digikamui5.rc:189 core/showfoto/main/showfotoui5.rc:144
+#: core/app/main/digikamui5.rc:192 core/showfoto/main/showfotoui5.rc:144
 #: core/utilities/imageeditor/main/imageeditorui5.rc:147
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:64
+#: core/utilities/survey/surveywindowui5.rc:92
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Hlavní panel nástrojů"
@@ -3747,17 +3793,17 @@ msgstr "Fotoaparát:"
 msgid "Lens:"
 msgstr "Objektiv:"
 
-#: core/app/views/tableview/tableview.cpp:369
+#: core/app/views/tableview/tableview.cpp:373
 #, kde-format
 msgid "Hide grouped items"
 msgstr "Skrýt seskupené položky"
 
-#: core/app/views/tableview/tableview.cpp:379
+#: core/app/views/tableview/tableview.cpp:383
 #, kde-format
 msgid "Ignore grouping"
 msgstr "Ignorovat seskupení"
 
-#: core/app/views/tableview/tableview.cpp:389
+#: core/app/views/tableview/tableview.cpp:393
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "Nejdříve seskupení ve stromu"
@@ -21438,7 +21484,7 @@ msgid "Slideshow"
 msgstr "Promítání"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:458
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Slideshow"
 msgstr "Promítání"
@@ -38498,114 +38544,127 @@ msgstr "Zapamatovat si volbu pro tuto operaci"
 #: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
+#: core/utilities/survey/surveywindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Prohlížecí stolek"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/utilities/survey/surveywindow.cpp:51
+#, kde-format
+msgid "Survey"
+msgstr ""
+
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Správce dávkového zpracování"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, kde-format
 msgid "Renaming"
 msgstr "Přejmenovávám"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:468
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Nástroje pro import/export"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:478
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:490
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:495
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Přidávám položky na prohlížecí stolek"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:500
+#: core/libs/settings/applicationsettings_miscs.cpp:505
+#, fuzzy, kde-format
+#| msgid "Adding items to the Light Table"
+msgid "Adding items to the Survey"
+msgstr "Přidávám položky na prohlížecí stolek"
+
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Přidávám položky do Správce dávkového zpracování"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:505
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Otevírám položky v Promítání"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:510
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid "Renaming items"
 msgstr "Přejmenovávám položky"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:515
+#: core/libs/settings/applicationsettings_miscs.cpp:525
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr "Předávám položky do nástrojů pro import a export"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:530
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:49
+#: core/libs/settings/applicationsettings_p.cpp:50
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Kategorie"
 
-#: core/libs/settings/applicationsettings_p.cpp:50
+#: core/libs/settings/applicationsettings_p.cpp:51
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Cestování"
 
-#: core/libs/settings/applicationsettings_p.cpp:51
+#: core/libs/settings/applicationsettings_p.cpp:52
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Svátky"
 
-#: core/libs/settings/applicationsettings_p.cpp:52
+#: core/libs/settings/applicationsettings_p.cpp:53
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Přátelé"
 
-#: core/libs/settings/applicationsettings_p.cpp:53
+#: core/libs/settings/applicationsettings_p.cpp:54
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Příroda"
 
-#: core/libs/settings/applicationsettings_p.cpp:54
+#: core/libs/settings/applicationsettings_p.cpp:55
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Oslavy"
 
-#: core/libs/settings/applicationsettings_p.cpp:55
+#: core/libs/settings/applicationsettings_p.cpp:56
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Úlohy"
 
-#: core/libs/settings/applicationsettings_p.cpp:56
+#: core/libs/settings/applicationsettings_p.cpp:57
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -48735,6 +48794,7 @@ msgstr "Otevřít složku"
 #: core/showfoto/main/showfotoui5.rc:6
 #: core/utilities/imageeditor/main/imageeditorui5.rc:6
 #: core/utilities/lighttable/lighttablewindowui5.rc:6
+#: core/utilities/survey/surveywindowui5.rc:6
 #, kde-format
 msgid "&File"
 msgstr "&Soubor"
@@ -48774,7 +48834,7 @@ msgstr "&Ozdobit"
 msgid "Effec&ts"
 msgstr "Efek&ty"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:122
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -48841,13 +48901,13 @@ msgid ""
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokace"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:183
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -53965,6 +54025,7 @@ msgstr ""
 #: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
+#: core/utilities/survey/surveywindow_setup.cpp:47
 #, kde-format
 msgid "Edit"
 msgstr "Upravit"
@@ -57586,16 +57647,19 @@ msgid "Move to Trash without Confirmation"
 msgstr "Přesunout do koše bez potvrzení"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
+#: core/utilities/survey/surveywindow_setup.cpp:184
 #, kde-format
 msgid "Edit Titles"
 msgstr "Upravit titulky"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:71
+#: core/utilities/survey/surveywindow_setup.cpp:189
 #, kde-format
 msgid "Edit Comments"
 msgstr "Upravit komentáře"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
+#: core/utilities/survey/surveywindow_setup.cpp:194
 #, kde-format
 msgid "Show Assigned Tags"
 msgstr "Zobrazit přiřazené značky"
@@ -59293,12 +59357,14 @@ msgstr[1] "%1 položky na prohlížecím stolku"
 msgstr[2] "%1 položek na prohlížecím stolku"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:35
+#: core/utilities/survey/surveywindow_setup.cpp:35
 #, kde-format
 msgctxt "@action: go to first item on list"
 msgid "&First"
 msgstr "&První"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:41
+#: core/utilities/survey/surveywindow_setup.cpp:41
 #, kde-format
 msgctxt "@action: go to last item on list"
 msgid "&Last"
@@ -59326,11 +59392,13 @@ msgstr "Zobrazit položku na pravém panelu"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
 #: core/utilities/setup/camera/setupcamera.cpp:467
+#: core/utilities/survey/surveywindow_setup.cpp:53
 #, kde-format
 msgid "Open With Default Application"
 msgstr "Otevřít s výchozí aplikací"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:68
+#: core/utilities/survey/surveywindow_setup.cpp:54
 #, kde-format
 msgid "Open the item with default assigned application."
 msgstr "Otevřít položku s výchozí přiřazenou aplikací."
@@ -59346,12 +59414,14 @@ msgid "Remove all items from Light Table"
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
+#: core/utilities/survey/surveywindow_setup.cpp:71
 #, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
 msgstr "Přesunout do koše"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
+#: core/utilities/survey/surveywindow_setup.cpp:77
 #, kde-format
 msgid "Delete immediately"
 msgstr "Okamžitě smazat"
@@ -59377,38 +59447,45 @@ msgid "Navigate by pairs with all items"
 msgstr "Procházet po párech všechny položky "
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
+#: core/utilities/survey/surveywindow_setup.cpp:88
 #, kde-format
 msgid "Clear On Close"
 msgstr "Při ukončení vymazat"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
+#: core/utilities/survey/surveywindow_setup.cpp:91
 #, kde-format
 msgid "Clear light table when it is closed"
 msgstr "Při uzavření vyčistit prohlížecí stolek"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
+#: core/utilities/survey/surveywindow_setup.cpp:92
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
 msgstr "Při ukončení odstranit všechny položky z prohlížecího stolku"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
+#: core/utilities/survey/surveywindow_setup.cpp:133
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Zvětšení na 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:188
+#: core/utilities/survey/surveywindow_setup.cpp:138
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Přizpůsobit &oknu"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
+#: core/utilities/survey/surveywindow_setup.cpp:145
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Zobrazení se správou barev"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
+#: core/utilities/survey/surveywindow_setup.cpp:175
 #, kde-format
 msgid "Previous Image"
 msgstr "Předchozí obrázek"
@@ -62051,33 +62128,40 @@ msgid "Show on Light Table"
 msgstr "Zobrazit na prohlížecím stolku"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
+#, fuzzy, kde-format
+#| msgctxt "@item: editorial content attribute"
+#| msgid "Polls & Surveys"
+msgid "Show on Survey"
+msgstr "Hlasování & průzkum"
+
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Otevřít s výchozí aplikací"
 
-#: core/utilities/setup/album/setupalbumview.cpp:201
+#: core/utilities/setup/album/setupalbumview.cpp:202
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Zvolení události při kliknutí na náhled."
 
-#: core/utilities/setup/album/setupalbumview.cpp:203
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Písmo v ikonovém pohledu:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:205
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr "Zde zvolte písmo použité pro vypisování textu v ikonovém pohledu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:206
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Pro obrazovky s vysokým rozlišením použít velké náhledy"
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:208
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -62091,52 +62175,52 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:245
+#: core/utilities/setup/album/setupalbumview.cpp:246
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ikony"
 
-#: core/utilities/setup/album/setupalbumview.cpp:252
+#: core/utilities/setup/album/setupalbumview.cpp:253
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Velikost ikony ve stromovém pohledu:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:260
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's sidebars."
 msgstr "Zvolte velikost ikon stromového pohledu v bočních panelech digiKamu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:262
+#: core/utilities/setup/album/setupalbumview.cpp:263
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:271
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:273
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, kde-format
 msgid "Tree View font:"
 msgstr "Písmo stromového pohledu:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Zde zvolte písmo použité pro vypisování textu ve stromovém pohledu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:276
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Zobrazit počet položek ve stromovém pohledu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -62144,60 +62228,60 @@ msgid ""
 msgstr ""
 "Zaškrtněte tuto volbu, aby se vedle názvu alba zobrazil počet jeho položek."
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Stromové pohledy"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:298
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "Pokud možno, zobrazit vestavěný pohled (rychlejší)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:300
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Náhled zobrazí obrázek plné velikosti"
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
+#: core/utilities/setup/album/setupalbumview.cpp:302
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Obrázky RAW:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
+#: core/utilities/setup/album/setupalbumview.cpp:305
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automaticky"
 
-#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/album/setupalbumview.cpp:307
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Vložený náhled"
 
-#: core/utilities/setup/album/setupalbumview.cpp:308
+#: core/utilities/setup/album/setupalbumview.cpp:309
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Data RAW o poloviční velikosti"
 
-#: core/utilities/setup/album/setupalbumview.cpp:310
+#: core/utilities/setup/album/setupalbumview.cpp:311
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:312
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "Pro rychlejší zobrazení se náhledy převedou do 8bitové barevné hloubky"
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:314
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
@@ -62206,35 +62290,35 @@ msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 "Zrušte zaškrtnutí pokud si přejete převést 16bitový náhled obrázku na 8bitů."
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:316
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "Obrázek náhledu je vždy přizpůsoben velikosti okna"
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, fuzzy, kde-format
 #| msgid "Check this if you want a background fill behind the text."
 msgid "Check this if you want to scale small images to fit to window."
 msgstr "Zvolte, pokud si přejete vyplnit pozadí za textem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:318
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:320
 #, fuzzy, kde-format
 #| msgid "Check this if you want a background fill behind the text."
 msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr "Zvolte, pokud si přejete vyplnit pozadí za textem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:321
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Zobrazit ikony a text nad náhledem"
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:323
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -62244,24 +62328,24 @@ msgstr ""
 "Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
 "této volby."
 
-#: core/utilities/setup/album/setupalbumview.cpp:324
+#: core/utilities/setup/album/setupalbumview.cpp:325
 #, kde-format
 msgid "Auto play of videos or animations"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:325
+#: core/utilities/setup/album/setupalbumview.cpp:326
 #, fuzzy, kde-format
 #| msgid "Set this option to display the image captions."
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "Zaškrtněte tuto volbu, aby se zobrazily popisky obrázku."
 
-#: core/utilities/setup/album/setupalbumview.cpp:327
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, fuzzy, kde-format
 #| msgid "Show icons and text over preview"
 msgid "Show a text overlay over preview."
 msgstr "Zobrazit ikony a text nad náhledem"
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:329
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -62273,31 +62357,31 @@ msgstr ""
 "Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
 "této volby."
 
-#: core/utilities/setup/album/setupalbumview.cpp:351
+#: core/utilities/setup/album/setupalbumview.cpp:352
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Náhled"
 
-#: core/utilities/setup/album/setupalbumview.cpp:366
+#: core/utilities/setup/album/setupalbumview.cpp:367
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Celá obrazovka"
 
-#: core/utilities/setup/album/setupalbumview.cpp:371
+#: core/utilities/setup/album/setupalbumview.cpp:372
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Typy MIME"
 
-#: core/utilities/setup/album/setupalbumview.cpp:374
+#: core/utilities/setup/album/setupalbumview.cpp:375
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategorie"
 
-#: core/utilities/setup/album/setupalbumview.cpp:555
+#: core/utilities/setup/album/setupalbumview.cpp:556
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63467,6 +63551,7 @@ msgstr "Uložit nastavení"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
+#: core/utilities/setup/setupsurvey.cpp:74
 #, kde-format
 msgid "Interface Options"
 msgstr "Volby rozhraní"
@@ -65466,13 +65551,13 @@ msgstr ""
 msgid "Enable internal debug logging"
 msgstr "Povolit interní ladicí záznamy"
 
-#: core/utilities/setup/setup.cpp:127
+#: core/utilities/setup/setup.cpp:130
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Databáze"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:131
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65482,13 +65567,13 @@ msgstr ""
 "Nastavení databáze\n"
 "Přizpůsobení nastavení databáze"
 
-#: core/utilities/setup/setup.cpp:132
+#: core/utilities/setup/setup.cpp:135
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Sbírky"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:136
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65498,13 +65583,13 @@ msgstr ""
 "Nastavení sbírek\n"
 "Nastavte umístění kořenových alb"
 
-#: core/utilities/setup/setup.cpp:137
+#: core/utilities/setup/setup.cpp:140
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pohledy"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65514,13 +65599,13 @@ msgstr ""
 "Nastavení pohledů aplikace\n"
 "Přizpůsobení vzhledu pohledů"
 
-#: core/utilities/setup/setup.cpp:142
+#: core/utilities/setup/setup.cpp:145
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Nástrojové tipy"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:146
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65530,13 +65615,13 @@ msgstr ""
 "Nastavení nápovědy položek\n"
 "Přizpůsobení informací v nástrojových tipech"
 
-#: core/utilities/setup/setup.cpp:147
+#: core/utilities/setup/setup.cpp:150
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:151
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65546,13 +65631,13 @@ msgstr ""
 "Správa informací ukládaných do obrázku\n"
 "Nastavení vztahů mezi obrázky a metadaty"
 
-#: core/utilities/setup/setup.cpp:152
+#: core/utilities/setup/setup.cpp:155
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Šablony"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:156
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65560,13 +65645,13 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:157
+#: core/utilities/setup/setup.cpp:160
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor obrázků"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65576,13 +65661,13 @@ msgstr ""
 "Nastavení editoru obrázků\n"
 "Přizpůsobení nastavení editoru obrázků"
 
-#: core/utilities/setup/setup.cpp:162
+#: core/utilities/setup/setup.cpp:165
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Správa barev"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65592,13 +65677,13 @@ msgstr ""
 "Nastavení správy barev\n"
 "Přizpůsobení nastavení správy barev"
 
-#: core/utilities/setup/setup.cpp:167
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Prohlížecí stolek"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:171
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65608,13 +65693,33 @@ msgstr ""
 "Nastavení prohlížecího stolku\n"
 "Přizpůsobení nástroje k porovnávání položek"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:175
+#, kde-format
+msgctxt "@title: settings section"
+msgid "Survey"
+msgstr ""
+
+#: core/utilities/setup/setup.cpp:176
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid ""
+#| "Light Table Settings\n"
+#| "Customize tool used to compare items"
+msgctxt "@title"
+msgid ""
+"Survey Settings\n"
+"Customize tool used to review items"
+msgstr ""
+"Nastavení prohlížecího stolku\n"
+"Přizpůsobení nástroje k porovnávání položek"
+
+#: core/utilities/setup/setup.cpp:189
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Fotoaparáty"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:190
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65624,13 +65729,13 @@ msgstr ""
 "Nastavení fotoaparátu\n"
 "Spravujte své fotoaparáty"
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:197
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Moduly"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65638,13 +65743,13 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:202
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Různé"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66178,6 +66283,24 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Podpora formátů"
 
+#: core/utilities/setup/setupsurvey.cpp:77
+#, fuzzy, kde-format
+#| msgid "Clear the light table on close"
+msgid "Clear the Survey on close"
+msgstr "Při uzavření vyčistit prohlížecí stolek"
+
+#: core/utilities/setup/setupsurvey.cpp:78
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set this option to remove all images from the light table when you close "
+#| "it, or unset it to preserve the images currently on the light table."
+msgid ""
+"Set this option to remove all images from the Survey when you close it, or "
+"unset it to preserve the images currently on the Survey."
+msgstr ""
+"Zvolením této možnosti budou při uzavření všechny obrázky z prohlížecího "
+"stolku odstraněny, při zrušení volby budou aktuální obrázky zachovány."
+
 #: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid "Template Title:"
@@ -66588,6 +66711,27 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
+
+#: core/utilities/survey/surveywindow.cpp:199
+#, fuzzy, kde-format
+#| msgid "%1 items to process"
+msgid "%1 item on Survey"
+msgid_plural "%1 items on Survey"
+msgstr[0] "%1 položek ke zpracování"
+msgstr[1] "%1 položek ke zpracování"
+msgstr[2] "%1 položek ke zpracování"
+
+#: core/utilities/survey/surveywindow_setup.cpp:59
+#, fuzzy, kde-format
+#| msgid "Remove from Group"
+msgid "Remove item from Survey Tool"
+msgstr "Odstranit ze skupiny"
+
+#: core/utilities/survey/surveywindow_setup.cpp:65
+#, fuzzy, kde-format
+#| msgid "Remove all tags from image"
+msgid "Remove all items from Survey Tool"
+msgstr "Odstranit z obrázku všechny značky"
 
 #~ msgid "IRC: "
 #~ msgstr "IRC: "
