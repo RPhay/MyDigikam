@@ -237,8 +237,8 @@ void SurveyWindow::setupConnections()
 
     // Thumbs bar connections ---------------------------------------
 
-    connect(d->thumbView, SIGNAL(signalSetItemOnRightPanel(ItemInfo)),
-            this, SLOT(slotSetItemOnPanel(ItemInfo)));
+    connect(d->thumbView, SIGNAL(itemSelectionChanged()),
+            this, SLOT(slotSetItem()));
 
     connect(d->thumbView, SIGNAL(signalRemoveItem(ItemInfo)),
             this, SLOT(slotRemoveItem(ItemInfo)));
