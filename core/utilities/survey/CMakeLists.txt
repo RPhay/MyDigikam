@@ -13,7 +13,6 @@ set(libsurvey_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/surveywindow_config.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/surveywindow_setup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/surveywindow_tools.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/surveywindow_import.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::PrintSupport,INTERFACE_INCLUDE_DIRECTORIES>

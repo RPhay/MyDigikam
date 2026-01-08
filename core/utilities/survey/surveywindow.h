@@ -42,10 +42,7 @@ public:
     static bool          surveyWindowCreated();
 
     void init(DigikamItemView* const iconView);
-/*
-    void loadItemInfos(const ItemInfoList& list, const ItemInfo& imageInfoCurrent, bool addTo);
-    void setItems(const ItemInfoList& list, bool addTo);
-*/
+
     void refreshView();
     bool isEmpty()                                const;
 
@@ -59,10 +56,6 @@ Q_SIGNALS:
 
     void signalWindowHasMoved();
 
-public Q_SLOTS:
-/*
-    void slotFileChanged(const QString& filePath);
-*/
 protected:
 
     void moveEvent(QMoveEvent* e)                       override;
@@ -97,16 +90,7 @@ private Q_SLOTS:
 
     void slotDeleteFinalItem();
     void slotDeleteFinalItem(const ItemInfo&);
-/*
-    void slotPanelLeftButtonClicked();
-    void slotSetItem();
-    void slotSetItemOnPanel(const ItemInfo&);
-    void slotDroppedItems(const ItemInfoList&);
-    void slotRemoveItem();
-    void slotRemoveItem(const ItemInfo&);
-    void slotClearItemsList();
-    void slotThumbbarDroppedItems(const QList<ItemInfo>&);
-*/
+
     void slotItemSelected();
 
     void slotToggleColorManagedView();
@@ -163,12 +147,6 @@ private Q_SLOTS:
 
     void slotSlideShowManualFromCurrent();
     void slotSlideShowLastItemUrl();
-
-// --- Import tools methods implemented in surveywindow_import.cpp
-
-private Q_SLOTS:
-
-    void slotImportedImagefromScanner(const QUrl& url);
 
 // --- Internal private container
 
