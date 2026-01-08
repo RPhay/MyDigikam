@@ -91,7 +91,7 @@ void SurveyWindow::setupActions()
 
     // Panel Zoom Actions
 
-    d->zoomPlusAction  = buildStdAction(StdZoomInAction, d->stack, SLOT(slotIncreaseZoom()), this);
+    d->zoomPlusAction  = buildStdAction(StdZoomInAction, d->stack, SLOT(increaseZoom()), this);
     d->zoomPlusAction->setEnabled(false);
     ac->addAction(QLatin1String("survey_zoomplus"), d->zoomPlusAction);
 
@@ -105,7 +105,7 @@ void SurveyWindow::setupActions()
 
 #endif
 
-    d->zoomMinusAction  = buildStdAction(StdZoomOutAction, d->stack, SLOT(slotDecreaseZoom()), this);
+    d->zoomMinusAction  = buildStdAction(StdZoomOutAction, d->stack, SLOT(decreaseZoom()), this);
     d->zoomMinusAction->setEnabled(false);
     ac->addAction(QLatin1String("survey_zoomminus"), d->zoomMinusAction);
 
@@ -213,7 +213,7 @@ void SurveyWindow::setupStatusBar()
     d->zoomBar->setZoomPlusAction(d->zoomPlusAction);
     d->zoomBar->setZoomMinusAction(d->zoomMinusAction);
     d->zoomBar->setBarMode(DZoomBar::PreviewZoomCtrl);
-    d->zoomBar->setEnabled(false);
+    d->zoomBar->setEnabled(true);
     statusBar()->addWidget(d->zoomBar, 1);
 }
 

@@ -82,18 +82,22 @@ public:
     void setViewMode(const SurveyStackMode mode);
     void previewLoaded();
 
-    void   increaseZoom();
-    void   decreaseZoom();
-    void   fitToWindow();
-    void   toggleFitToWindowOr100();
-    void   zoomTo100Percents();
+
     bool   maxZoom();
     bool   minZoom();
-    void   setZoomFactor(double z);
-    void   setZoomFactorSnapped(double z);
     double zoomFactor();
     double zoomMin();
     double zoomMax();
+
+public Q_SLOTS:
+
+    void increaseZoom();
+    void decreaseZoom();
+    void fitToWindow();
+    void toggleFitToWindowOr100();
+    void zoomTo100Percents();
+    void setZoomFactor(double z);
+    void setZoomFactorSnapped(double z);
 
 Q_SIGNALS:
 
