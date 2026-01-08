@@ -120,12 +120,12 @@ void SurveyWindow::setupActions()
 #endif
 
     d->zoomTo100percents = new QAction(QIcon::fromTheme(QLatin1String("zoom-original")), i18n("Zoom to 100%"), this);
-    connect(d->zoomTo100percents, SIGNAL(triggered()), d->stack, SLOT(slotZoomTo100()));
+    connect(d->zoomTo100percents, SIGNAL(triggered()), d->stack, SLOT(zoomTo100Percents()));
     ac->addAction(QLatin1String("survey_zoomto100percents"), d->zoomTo100percents);
     ac->setDefaultShortcut(d->zoomTo100percents, Qt::CTRL | Qt::SHIFT | Qt::Key_Period);
 
     d->zoomFitToWindowAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-fit-best")), i18n("Fit to &Window"), this);
-    connect(d->zoomFitToWindowAction, SIGNAL(triggered()), d->stack, SLOT(slotFitToWindow()));
+    connect(d->zoomFitToWindowAction, SIGNAL(triggered()), d->stack, SLOT(fitToWindow()));
     ac->addAction(QLatin1String("survey_zoomfit2window"), d->zoomFitToWindowAction);
     ac->setDefaultShortcut(d->zoomFitToWindowAction, Qt::CTRL | Qt::SHIFT | Qt::Key_E);
 
@@ -230,8 +230,13 @@ void SurveyWindow::setupConnections()
 
     // Zoom bars connections -----------------------------------------
 
-    connect(d->zoomBar, SIGNAL(signalZoomSliderChanged(int)),
-            d->stack, SLOT(slotZoomSliderChanged(int)));
+    connect(d->zoomBar, &DZoomBar::signalZoomSliderChanged,
+            this, [this](int size)
+        {
+            double z = DZoomBar::zoomFromSize(size, d->stack->zoomMin(), d->stack->zoomMax());
+            d->stack->setZoomFactor(z);
+        }
+    );
 
     connect(d->zoomBar, SIGNAL(signalZoomValueEdited(double)),
             d->stack, SLOT(setZoomFactor(double)));
