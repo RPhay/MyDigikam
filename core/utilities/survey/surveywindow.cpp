@@ -261,8 +261,6 @@ void SurveyWindow::slotItemSelected()
     bool hasInfo = !info.isNull();
 
     d->editItemAction->setEnabled(hasInfo);
-    d->removeItemAction->setEnabled(hasInfo);
-    d->clearListAction->setEnabled(hasInfo);
     d->fileDeleteAction->setEnabled(hasInfo);
     d->fileDeleteFinalAction->setEnabled(hasInfo);
     d->backwardAction->setEnabled(hasInfo);

@@ -56,17 +56,6 @@ void SurveyWindow::setupActions()
     ac->addAction(QLatin1String("open_with_default_application"), openWithAction);
     ac->setDefaultShortcut(openWithAction, Qt::CTRL | Qt::Key_F4);
 
-    d->removeItemAction = new QAction(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove item from Survey Tool"), this);
-    d->removeItemAction->setEnabled(false);
-    connect(d->removeItemAction, SIGNAL(triggered()), this, SLOT(slotRemoveItem()));
-    ac->addAction(QLatin1String("survey_removeitem"), d->removeItemAction);
-    ac->setDefaultShortcut(d->removeItemAction, Qt::CTRL | Qt::Key_K);
-
-    d->clearListAction = new QAction(QIcon::fromTheme(QLatin1String("edit-clear")), i18n("Remove all items from Survey Tool"), this);
-    d->clearListAction->setEnabled(false);
-    connect(d->clearListAction, SIGNAL(triggered()), this, SLOT(slotClearItemsList()));
-    ac->addAction(QLatin1String("survey_clearlist"), d->clearListAction);
-    ac->setDefaultShortcut(d->clearListAction, Qt::CTRL | Qt::SHIFT | Qt::Key_K);
     d->fileDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("albumfolder-user-trash")),  // In red - bug 513774
                                       i18nc("Non-pluralized", "Move to Trash"), this);
     d->fileDeleteAction->setEnabled(false);
@@ -302,10 +291,6 @@ void SurveyWindow::setupConnections()
             d->fileName->setProgressBarMode(StatusProgressBar::TextMode, d->fileName->text());
        }
     );
-
-    // -- FileWatch connections ------------------------------
-
-    LoadingCacheInterface::connectToSignalFileChanged(this, SLOT(slotFileChanged(QString)));
 }
 
 void SurveyWindow::setupUserArea(DigikamItemView* const iconView)

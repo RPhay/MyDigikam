@@ -117,9 +117,7 @@ public:
 
 public:
 
-    QAction*                  clearListAction               = nullptr;
     QAction*                  editItemAction                = nullptr;
-    QAction*                  removeItemAction              = nullptr;
     QAction*                  fileDeleteAction              = nullptr;
     QAction*                  fileDeleteFinalAction         = nullptr;
     QAction*                  zoomPlusAction                = nullptr;

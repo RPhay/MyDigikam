@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="900" name="survey" translationDomain="digikam" >
+<gui version="901" name="survey" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -12,9 +12,6 @@
         <Action name="survey_edititem" />
         <Separator/>
         <Action name="open_with_default_application" />
-        <Separator/>
-        <Action name="survey_removeitem" />
-        <Action name="survey_clearlist" />
         <Separator/>
         <Action name="survey_filedelete" />
         <Separator/>
