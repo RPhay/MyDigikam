@@ -241,12 +241,12 @@ void SurveyWindow::setupConnections()
     connect(d->stack->thumbBar(), SIGNAL(itemSelectionChanged()),
             this, SLOT(slotItemSelected()));
 
+    connect(d->stack, SIGNAL(signalZoomFactorChanged(double)),
+            this, SLOT(slotZoomFactorChanged(double)));
+
 /*
     connect(d->stack, SIGNAL(signalPopupTagsView()),
             d->sideBar, SLOT(slotPopupTagsView()));
-
-    connect(d->stack, SIGNAL(signalZoomFactorChanged(double)),
-            this, SLOT(slotZoomFactorChanged(double)));
 
     connect(d->stack, SIGNAL(signalEditItem(ItemInfo)),
             this, SLOT(slotEditItem(ItemInfo)));
@@ -262,9 +262,6 @@ void SurveyWindow::setupConnections()
 
     connect(d->stack, SIGNAL(signalPreviewLoaded(bool)),
             this, SLOT(slotPreviewLoaded(bool)));
-
-    connect(d->stack, SIGNAL(signalPanelLeftButtonClicked()),
-            this, SLOT(slotPanelLeftButtonClicked()));
 */
     connect(this, SIGNAL(signalWindowHasMoved()),
             d->zoomBar, SLOT(slotUpdateTrackerPos()));
