@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:42+0000\n"
+"POT-Creation-Date: 2026-01-08 00:40+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -577,19 +577,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Pievienot atlasei"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:163
+#: core/app/items/utils/contextmenuhelper_actions.cpp:143
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Noteikt par albuma sīktēlu"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:167
+#: core/app/items/utils/contextmenuhelper_actions.cpp:147
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Noteikt par taga sīktēlu"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:204
+#: core/app/items/utils/contextmenuhelper_actions.cpp:184
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -598,7 +598,7 @@ msgstr[0] "Pārvietot %1 failu Atkritni"
 msgstr[1] "Pārvietot %1 failus uz Atkritni"
 msgstr[2] "Pārvietot %1 failu uz Atkritni"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:216
+#: core/app/items/utils/contextmenuhelper_actions.cpp:196
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
@@ -1029,7 +1029,7 @@ msgstr ""
 "<p>Lūdzu, izvēlieties no digiKam bibliotēkas mērķa albumu, uz kuru pārvietot "
 "izvēlētos attēlus.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:394
+#: core/app/items/utils/itemviewutilities.cpp:354
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -1636,7 +1636,7 @@ msgstr "Inicializē galveno skatu..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:303
+#: core/utilities/survey/surveywindow_setup.cpp:288
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1712,7 +1712,7 @@ msgid "Delete Album"
 msgstr "Dzēst albumu"
 
 #: core/app/main/digikamapp_setup.cpp:268
-#: core/app/main/digikamapp_setup.cpp:530
+#: core/app/main/digikamapp_setup.cpp:516
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
@@ -1739,7 +1739,7 @@ msgid "Write Metadata to Files"
 msgstr "Rakstīt metadatus attēlos"
 
 #: core/app/main/digikamapp_setup.cpp:286
-#: core/app/main/digikamapp_setup.cpp:484
+#: core/app/main/digikamapp_setup.cpp:470
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates metadata of images in the current album with the contents of "
@@ -1761,7 +1761,7 @@ msgid "Reread Metadata From Files"
 msgstr "Pārielasīt metadatus no attēliem"
 
 #: core/app/main/digikamapp_setup.cpp:297
-#: core/app/main/digikamapp_setup.cpp:495
+#: core/app/main/digikamapp_setup.cpp:481
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates the digiKam database from the metadata of the files in the "
@@ -1910,49 +1910,19 @@ msgctxt "@action: setup"
 msgid "Survey"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:439
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Place onto Light Table"
-msgctxt "@action: setup"
-msgid "Place onto Survey"
-msgstr "Uzlikt uz gaismas galda"
-
-#: core/app/main/digikamapp_setup.cpp:440
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Place the selected items on the light table thumbbar."
-msgctxt "@info: setup"
-msgid "Place the selected items on the survey thumbbar."
-msgstr "Uzlikt atlasītos attēlus uz gaismas galda sīktēlu joslas."
-
-#: core/app/main/digikamapp_setup.cpp:446
-#, fuzzy, kde-format
-#| msgid "Texture"
-msgctxt "@action: setup"
-msgid "Add to Survey"
-msgstr "Tekstūra"
-
-#: core/app/main/digikamapp_setup.cpp:447
-#, fuzzy, kde-format
-#| msgid "Add selected items to the light table thumbbar."
-msgctxt "@info: setup"
-msgid "Add selected items to the survey thumbbar."
-msgstr "Pievienot izvēlētos attēlus gaismas galda sīktēlu joslai."
-
-#: core/app/main/digikamapp_setup.cpp:455
+#: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Masveida rindas pārvaldnieks"
 
-#: core/app/main/digikamapp_setup.cpp:461
+#: core/app/main/digikamapp_setup.cpp:447
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Pievienot aktīvajā rindā"
 
-#: core/app/main/digikamapp_setup.cpp:462
+#: core/app/main/digikamapp_setup.cpp:448
 #, fuzzy, kde-format
 #| msgid "Add selected items to current queue from batch manager."
 msgctxt "@info: setup"
@@ -1960,13 +1930,13 @@ msgid "Add selected items to current queue from batch manager."
 msgstr ""
 "Pievienot izvēlētos attēlus esošajai rindai masveida apstrādes pārvaldniekā."
 
-#: core/app/main/digikamapp_setup.cpp:468
+#: core/app/main/digikamapp_setup.cpp:454
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Pievienot jaunā rindā"
 
-#: core/app/main/digikamapp_setup.cpp:469
+#: core/app/main/digikamapp_setup.cpp:455
 #, fuzzy, kde-format
 #| msgid "Add selected items to a new queue from batch manager."
 msgctxt "@info: setup"
@@ -1974,31 +1944,31 @@ msgid "Add selected items to a new queue from batch manager."
 msgstr ""
 "Pievienot izvēlētos attēlus jaunai rindai masveida apstrādes pārvaldniekā."
 
-#: core/app/main/digikamapp_setup.cpp:476
+#: core/app/main/digikamapp_setup.cpp:462
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Importēt"
 
-#: core/app/main/digikamapp_setup.cpp:483
+#: core/app/main/digikamapp_setup.cpp:469
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Ierakstīt metadatus atlasītajos attēlos"
 
-#: core/app/main/digikamapp_setup.cpp:494
+#: core/app/main/digikamapp_setup.cpp:480
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Pārielasīt metadatus no atlasītajiem failiem"
 
-#: core/app/main/digikamapp_setup.cpp:505
+#: core/app/main/digikamapp_setup.cpp:491
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Atrast sejas"
 
-#: core/app/main/digikamapp_setup.cpp:510
+#: core/app/main/digikamapp_setup.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Recognize faces"
@@ -2006,111 +1976,111 @@ msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Atpazīt sejas"
 
-#: core/app/main/digikamapp_setup.cpp:515
+#: core/app/main/digikamapp_setup.cpp:501
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Noņemt tagu"
 
-#: core/app/main/digikamapp_setup.cpp:522
+#: core/app/main/digikamapp_setup.cpp:508
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Atrast līdzīgus..."
 
-#: core/app/main/digikamapp_setup.cpp:523
+#: core/app/main/digikamapp_setup.cpp:509
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Atrast līdzīgus attēlus, izmantojot izvēlēto par paraugu."
 
-#: core/app/main/digikamapp_setup.cpp:531
+#: core/app/main/digikamapp_setup.cpp:517
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Pārdēvēt izvēlētās vienības faila nosaukumu."
 
-#: core/app/main/digikamapp_setup.cpp:541
+#: core/app/main/digikamapp_setup.cpp:527
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Pārvietot uz Atkritni"
 
-#: core/app/main/digikamapp_setup.cpp:555
+#: core/app/main/digikamapp_setup.cpp:541
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Neatgriezeniski dzēst"
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:552
 #, fuzzy, kde-format
 #| msgid "Delete permanently without confirmation"
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Neatgriezeniski izdzēst, bez apstiprināšanas"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:560
 #, fuzzy, kde-format
 #| msgid "Move to trash without confirmation"
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Pārvietot uz miskasti, bez apstiprināšanas"
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:567
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "&Kārtot albumus"
 
-#: core/app/main/digikamapp_setup.cpp:582
+#: core/app/main/digikamapp_setup.cpp:568
 #, fuzzy, kde-format
 #| msgid "Sort Albums in tree-view."
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Kārtot albumus koka skatā."
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:587
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Pēc mapes"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:588
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Pēc kategorijas"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:589
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Pēc datuma"
 
-#: core/app/main/digikamapp_setup.cpp:608
+#: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Iekļaut albumu apakšalbumus"
 
-#: core/app/main/digikamapp_setup.cpp:610
+#: core/app/main/digikamapp_setup.cpp:596
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr "Ieslēdzot šo iespēju, tiks parādīti visi šī albuma apakšalbumi."
 
-#: core/app/main/digikamapp_setup.cpp:615
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Iekļaut tagu apakštagus"
 
-#: core/app/main/digikamapp_setup.cpp:617
+#: core/app/main/digikamapp_setup.cpp:603
 #, fuzzy, kde-format
 #| msgid ""
 #| "Activate this option to show all images marked by the given tag and all "
@@ -2123,26 +2093,26 @@ msgstr ""
 "Ieslēdzot šo iespēju, tiks parādīti visi attēli, kam piešķirts šis tags vai "
 "kāds tā apakštags."
 
-#: core/app/main/digikamapp_setup.cpp:622
+#: core/app/main/digikamapp_setup.cpp:608
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "&Grupēt attēlus"
 
-#: core/app/main/digikamapp_setup.cpp:624
+#: core/app/main/digikamapp_setup.cpp:610
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr "Ieslēdzot šo iespēju, tiks parādīti visi šī albuma apakšalbumi."
 
-#: core/app/main/digikamapp_setup.cpp:630
+#: core/app/main/digikamapp_setup.cpp:616
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Kārtot attēlus"
 
-#: core/app/main/digikamapp_setup.cpp:631
+#: core/app/main/digikamapp_setup.cpp:617
 #, fuzzy, kde-format
 #| msgid ""
 #| "The value by which the images in one album are sorted in the thumbnail "
@@ -2153,147 +2123,147 @@ msgid ""
 msgstr ""
 "Vērtība, pēc kuras vienā albumā esošie attēli tiek kārtoti sīktēlu skatā"
 
-#: core/app/main/digikamapp_setup.cpp:636
+#: core/app/main/digikamapp_setup.cpp:622
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Pēc nosaukuma"
 
-#: core/app/main/digikamapp_setup.cpp:637
+#: core/app/main/digikamapp_setup.cpp:623
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Pēc faila ceļa"
 
-#: core/app/main/digikamapp_setup.cpp:638
+#: core/app/main/digikamapp_setup.cpp:624
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Pēc izveidošanas datuma"
 
-#: core/app/main/digikamapp_setup.cpp:639
+#: core/app/main/digikamapp_setup.cpp:625
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Pēc izmaiņu datuma"
 
-#: core/app/main/digikamapp_setup.cpp:640
+#: core/app/main/digikamapp_setup.cpp:626
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Pēc faila izmēra"
 
-#: core/app/main/digikamapp_setup.cpp:641
-#: core/app/main/digikamapp_setup.cpp:742
+#: core/app/main/digikamapp_setup.cpp:627
+#: core/app/main/digikamapp_setup.cpp:728
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Pēc formāta"
 
-#: core/app/main/digikamapp_setup.cpp:643
+#: core/app/main/digikamapp_setup.cpp:629
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Pēc vērtējuma"
 
-#: core/app/main/digikamapp_setup.cpp:644
+#: core/app/main/digikamapp_setup.cpp:630
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgctxt "@action: setup"
 msgid "By Pick Label"
 msgstr "Atlases iezīme:"
 
-#: core/app/main/digikamapp_setup.cpp:645
+#: core/app/main/digikamapp_setup.cpp:631
 #, fuzzy, kde-format
 #| msgid "Color Label:"
 msgctxt "@action: setup"
 msgid "By Color Label"
 msgstr "Krāsu iezīme:"
 
-#: core/app/main/digikamapp_setup.cpp:647
+#: core/app/main/digikamapp_setup.cpp:633
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Pēc faila izmēra"
 
-#: core/app/main/digikamapp_setup.cpp:648
+#: core/app/main/digikamapp_setup.cpp:634
 #, fuzzy, kde-format
 #| msgid "Any Orientation"
 msgctxt "@action: setup"
 msgid "By Orientation"
 msgstr "Jebkāda orientācija"
 
-#: core/app/main/digikamapp_setup.cpp:649
+#: core/app/main/digikamapp_setup.cpp:635
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Pēc malu attiecības"
 
-#: core/app/main/digikamapp_setup.cpp:650
+#: core/app/main/digikamapp_setup.cpp:636
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@action: setup"
 msgid "By Gps Position"
 msgstr "Novietojums:"
 
-#: core/app/main/digikamapp_setup.cpp:652
+#: core/app/main/digikamapp_setup.cpp:638
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Pēc seju tipa"
 
-#: core/app/main/digikamapp_setup.cpp:653
+#: core/app/main/digikamapp_setup.cpp:639
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Pēc līdzības"
 
-#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:640
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Rokasgrāmata"
 
-#: core/app/main/digikamapp_setup.cpp:655
+#: core/app/main/digikamapp_setup.cpp:641
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Rokasgrāmata"
 
-#: core/app/main/digikamapp_setup.cpp:717
+#: core/app/main/digikamapp_setup.cpp:703
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Attēlu kārt&ošanas secība"
 
-#: core/app/main/digikamapp_setup.cpp:718
+#: core/app/main/digikamapp_setup.cpp:704
 #, fuzzy, kde-format
 #| msgid "Defines whether images are sorted in ascending or descending manner."
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Nosaka, vai attēli tiek kārtoti augošā vai dilstošā secībā."
 
-#: core/app/main/digikamapp_setup.cpp:722
-#: core/app/main/digikamapp_setup.cpp:781
+#: core/app/main/digikamapp_setup.cpp:708
+#: core/app/main/digikamapp_setup.cpp:767
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Augoši"
 
-#: core/app/main/digikamapp_setup.cpp:724
-#: core/app/main/digikamapp_setup.cpp:783
+#: core/app/main/digikamapp_setup.cpp:710
+#: core/app/main/digikamapp_setup.cpp:769
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Dilstoši"
 
-#: core/app/main/digikamapp_setup.cpp:734
+#: core/app/main/digikamapp_setup.cpp:720
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Atdalīt attēlus"
 
-#: core/app/main/digikamapp_setup.cpp:735
+#: core/app/main/digikamapp_setup.cpp:721
 #, fuzzy, kde-format
 #| msgid ""
 #| "The categories in which the images in the thumbnail view are displayed"
@@ -2301,32 +2271,32 @@ msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Kategorijas, kādās tiek rādīti attēli sīktēlu skatā"
 
-#: core/app/main/digikamapp_setup.cpp:740
+#: core/app/main/digikamapp_setup.cpp:726
 #, fuzzy, kde-format
 #| msgid "Flat List"
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Plakans saraksts"
 
-#: core/app/main/digikamapp_setup.cpp:741
+#: core/app/main/digikamapp_setup.cpp:727
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Pēc albuma"
 
-#: core/app/main/digikamapp_setup.cpp:743
+#: core/app/main/digikamapp_setup.cpp:729
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Pēc sejām"
 
-#: core/app/main/digikamapp_setup.cpp:744
+#: core/app/main/digikamapp_setup.cpp:730
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Pēc mēneša"
 
-#: core/app/main/digikamapp_setup.cpp:745
+#: core/app/main/digikamapp_setup.cpp:731
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Date"
@@ -2334,291 +2304,291 @@ msgctxt "@action: setup"
 msgid "By Day"
 msgstr "Pēc datuma"
 
-#: core/app/main/digikamapp_setup.cpp:776
+#: core/app/main/digikamapp_setup.cpp:762
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Attēlu atdalīšanas secība"
 
-#: core/app/main/digikamapp_setup.cpp:777
+#: core/app/main/digikamapp_setup.cpp:763
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Attēlu kārtošanas kārtība"
 
-#: core/app/main/digikamapp_setup.cpp:798
+#: core/app/main/digikamapp_setup.cpp:784
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Atlasīt visus"
 
-#: core/app/main/digikamapp_setup.cpp:805
+#: core/app/main/digikamapp_setup.cpp:791
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Notīrīt atlasi"
 
-#: core/app/main/digikamapp_setup.cpp:812
+#: core/app/main/digikamapp_setup.cpp:798
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Atlasīt pretēji"
 
-#: core/app/main/digikamapp_setup.cpp:820
+#: core/app/main/digikamapp_setup.cpp:806
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Rādīt sīktēlu joslu"
 
-#: core/app/main/digikamapp_setup.cpp:851
+#: core/app/main/digikamapp_setup.cpp:837
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Tālummainīt uz 100%"
 
-#: core/app/main/digikamapp_setup.cpp:859
+#: core/app/main/digikamapp_setup.cpp:845
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Ietilpināt &logā"
 
-#: core/app/main/digikamapp_setup.cpp:872
+#: core/app/main/digikamapp_setup.cpp:858
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Krāsu pārvaldīts skats"
 
-#: core/app/main/digikamapp_setup.cpp:890
+#: core/app/main/digikamapp_setup.cpp:876
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Meklēt..."
 
-#: core/app/main/digikamapp_setup.cpp:898
+#: core/app/main/digikamapp_setup.cpp:884
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Izvērstā meklēšana..."
 
-#: core/app/main/digikamapp_setup.cpp:906
+#: core/app/main/digikamapp_setup.cpp:892
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Atrast dublikātus..."
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:902
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Datubāzes migrācija..."
 
-#: core/app/main/digikamapp_setup.cpp:925
+#: core/app/main/digikamapp_setup.cpp:911
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Apkope..."
 
-#: core/app/main/digikamapp_setup.cpp:932
+#: core/app/main/digikamapp_setup.cpp:918
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Meklēt jaunus failus"
 
-#: core/app/main/digikamapp_setup.cpp:938
+#: core/app/main/digikamapp_setup.cpp:924
 #, fuzzy, kde-format
 #| msgid "Add Camera Manually..."
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Pievienot fotoaparātu pašrocīgi..."
 
-#: core/app/main/digikamapp_setup.cpp:949
+#: core/app/main/digikamapp_setup.cpp:935
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Ielādē fotoaparātus..."
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:971
 #, fuzzy, kde-format
 #| msgid "Exit Preview Mode"
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Iziet no priekšapskates režīma"
 
-#: core/app/main/digikamapp_setup.cpp:990
+#: core/app/main/digikamapp_setup.cpp:976
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Nākamais attēls"
 
-#: core/app/main/digikamapp_setup.cpp:996
+#: core/app/main/digikamapp_setup.cpp:982
 #, fuzzy, kde-format
 #| msgid "Previous Image"
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Iepriekšējais attēls"
 
-#: core/app/main/digikamapp_setup.cpp:1002
+#: core/app/main/digikamapp_setup.cpp:988
 #, fuzzy, kde-format
 #| msgid "First Image"
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Pirmais attēls"
 
-#: core/app/main/digikamapp_setup.cpp:1007
+#: core/app/main/digikamapp_setup.cpp:993
 #, fuzzy, kde-format
 #| msgid "Last Image"
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Pēdējais attēls"
 
-#: core/app/main/digikamapp_setup.cpp:1012
+#: core/app/main/digikamapp_setup.cpp:998
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Iz&griezt"
 
-#: core/app/main/digikamapp_setup.cpp:1014
+#: core/app/main/digikamapp_setup.cpp:1000
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Kopēt metadatus uz starpliktuvi"
 
-#: core/app/main/digikamapp_setup.cpp:1033
+#: core/app/main/digikamapp_setup.cpp:1019
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Attēlu faili"
 
-#: core/app/main/digikamapp_setup.cpp:1038
+#: core/app/main/digikamapp_setup.cpp:1024
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Rediģēt komentārus"
 
-#: core/app/main/digikamapp_setup.cpp:1043
+#: core/app/main/digikamapp_setup.cpp:1029
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Rādīt piešķirtos tagus"
 
-#: core/app/main/digikamapp_setup.cpp:1052
+#: core/app/main/digikamapp_setup.cpp:1038
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Pielāgot EXIF orientācijas tagu"
 
-#: core/app/main/digikamapp_setup.cpp:1055
+#: core/app/main/digikamapp_setup.cpp:1041
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normāls"
 
-#: core/app/main/digikamapp_setup.cpp:1057
+#: core/app/main/digikamapp_setup.cpp:1043
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Apmests horizontāli"
 
-#: core/app/main/digikamapp_setup.cpp:1059
+#: core/app/main/digikamapp_setup.cpp:1045
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Pagriezts kājām gaisā"
 
-#: core/app/main/digikamapp_setup.cpp:1061
+#: core/app/main/digikamapp_setup.cpp:1047
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Apmests vertikāli"
 
-#: core/app/main/digikamapp_setup.cpp:1063
+#: core/app/main/digikamapp_setup.cpp:1049
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Pagriezts pa labi / Apmests horizontāli"
 
-#: core/app/main/digikamapp_setup.cpp:1065
+#: core/app/main/digikamapp_setup.cpp:1051
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Pagriezts pa labi"
 
-#: core/app/main/digikamapp_setup.cpp:1067
+#: core/app/main/digikamapp_setup.cpp:1053
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Pagriezts pa labi / Apmests vertikāli"
 
-#: core/app/main/digikamapp_setup.cpp:1069
+#: core/app/main/digikamapp_setup.cpp:1055
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Pagriezts pa kreisi"
 
-#: core/app/main/digikamapp_setup.cpp:1130
+#: core/app/main/digikamapp_setup.cpp:1116
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Pagriezt"
 
-#: core/app/main/digikamapp_setup.cpp:1136
+#: core/app/main/digikamapp_setup.cpp:1122
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Automātiski pagriezt"
 
-#: core/app/main/digikamapp_setup.cpp:1144
+#: core/app/main/digikamapp_setup.cpp:1130
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Pa kreisi"
 
-#: core/app/main/digikamapp_setup.cpp:1151
+#: core/app/main/digikamapp_setup.cpp:1137
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Pa labi"
 
-#: core/app/main/digikamapp_setup.cpp:1161
+#: core/app/main/digikamapp_setup.cpp:1147
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Apmest"
 
-#: core/app/main/digikamapp_setup.cpp:1165
+#: core/app/main/digikamapp_setup.cpp:1151
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horizontāli"
 
-#: core/app/main/digikamapp_setup.cpp:1172
+#: core/app/main/digikamapp_setup.cpp:1158
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Vertikāli"
 
-#: core/app/main/digikamapp_setup.cpp:1182
+#: core/app/main/digikamapp_setup.cpp:1168
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Automātiski pagriezt / apmest atbilstoši EXIF"
 
-#: core/app/main/digikamapp_setup.cpp:1193
+#: core/app/main/digikamapp_setup.cpp:1179
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Ielādē tēmas..."
 
-#: core/app/main/digikamapp_setup.cpp:1196
+#: core/app/main/digikamapp_setup.cpp:1182
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Tēmas"
 
-#: core/app/main/digikamapp_setup.cpp:1212
+#: core/app/main/digikamapp_setup.cpp:1198
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2758,7 +2728,7 @@ msgid "&Item"
 msgstr "&Attēls"
 
 #. i18n: ectx: Menu (Edit)
-#: core/app/main/digikamui5.rc:77 core/showfoto/main/showfotoui5.rc:30
+#: core/app/main/digikamui5.rc:76 core/showfoto/main/showfotoui5.rc:30
 #: core/utilities/imageeditor/main/imageeditorui5.rc:30
 #: core/utilities/import/main/importui5.rc:15
 #, kde-format
@@ -2766,7 +2736,7 @@ msgid "&Edit"
 msgstr "R&ediģēt"
 
 #. i18n: ectx: Menu (View)
-#: core/app/main/digikamui5.rc:88 core/showfoto/main/showfotoui5.rc:40
+#: core/app/main/digikamui5.rc:87 core/showfoto/main/showfotoui5.rc:40
 #: core/utilities/imageeditor/main/imageeditorui5.rc:41
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
@@ -2777,7 +2747,7 @@ msgid "&View"
 msgstr "S&kats"
 
 #. i18n: ectx: Menu (Tools)
-#: core/app/main/digikamui5.rc:120 core/showfoto/main/showfotoui5.rc:92
+#: core/app/main/digikamui5.rc:119 core/showfoto/main/showfotoui5.rc:92
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
@@ -2787,7 +2757,7 @@ msgid "&Tools"
 msgstr "&Rīki"
 
 #. i18n: ectx: Menu (Import)
-#: core/app/main/digikamui5.rc:139 core/showfoto/main/showfotoui5.rc:102
+#: core/app/main/digikamui5.rc:138 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
 #: core/utilities/survey/surveywindowui5.rc:48
@@ -2796,7 +2766,7 @@ msgid "I&mport"
 msgstr "I&mportēt"
 
 #. i18n: ectx: Menu (Export)
-#: core/app/main/digikamui5.rc:152 core/showfoto/main/showfotoui5.rc:108
+#: core/app/main/digikamui5.rc:151 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
 #: core/utilities/survey/surveywindowui5.rc:54
@@ -2805,7 +2775,7 @@ msgid "&Export"
 msgstr "&Eksportēt"
 
 #. i18n: ectx: Menu (settings)
-#: core/app/main/digikamui5.rc:158 core/showfoto/main/showfotoui5.rc:114
+#: core/app/main/digikamui5.rc:157 core/showfoto/main/showfotoui5.rc:114
 #: core/utilities/imageeditor/main/imageeditorui5.rc:115
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
@@ -2816,7 +2786,7 @@ msgid "&Settings"
 msgstr "Ie&statījumi"
 
 #. i18n: ectx: Menu (help)
-#: core/app/main/digikamui5.rc:174 core/showfoto/main/showfotoui5.rc:128
+#: core/app/main/digikamui5.rc:173 core/showfoto/main/showfotoui5.rc:128
 #: core/utilities/imageeditor/main/imageeditorui5.rc:130
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
@@ -2827,7 +2797,7 @@ msgid "&Help"
 msgstr "&Palīdzība"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: core/app/main/digikamui5.rc:192 core/showfoto/main/showfotoui5.rc:144
+#: core/app/main/digikamui5.rc:191 core/showfoto/main/showfotoui5.rc:144
 #: core/utilities/imageeditor/main/imageeditorui5.rc:147
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
@@ -3320,7 +3290,7 @@ msgstr ""
 "albumā, izmantojot kreisajā pusē norādīto nosaukumu."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:383
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:146
 #, kde-format
 msgid "Timeline"
 msgstr "Laika josla"
@@ -3358,22 +3328,22 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:127
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Aptuvena meklēšana no skices"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:131
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Aptuvena meklēšana no attēla"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:135
 #, kde-format
 msgid "Map Search"
 msgstr "Kartes meklēšana"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:142
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1186
 #, kde-format
 msgid "Last Search"
@@ -3903,17 +3873,17 @@ msgstr "Fotoaparāts"
 msgid "Lens:"
 msgstr "Lēcas:"
 
-#: core/app/views/tableview/tableview.cpp:373
+#: core/app/views/tableview/tableview.cpp:369
 #, fuzzy, kde-format
 msgid "Hide grouped items"
 msgstr "&Grupēt attēlus"
 
-#: core/app/views/tableview/tableview.cpp:383
+#: core/app/views/tableview/tableview.cpp:379
 #, fuzzy, kde-format
 msgid "Ignore grouping"
 msgstr "Piešķirt šo tagu"
 
-#: core/app/views/tableview/tableview.cpp:393
+#: core/app/views/tableview/tableview.cpp:389
 #, fuzzy, kde-format
 msgid "Show grouping in tree"
 msgstr "Rādīt jaunākos vispirms"
@@ -22082,7 +22052,7 @@ msgid "Slideshow"
 msgstr "Slaidrāde"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Slaidrāde"
@@ -39612,128 +39582,116 @@ msgid "Light Table"
 msgstr "Gaismas galds"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
-#: core/utilities/survey/surveywindow.cpp:51
-#, kde-format
-msgid "Survey"
-msgstr ""
-
-#: core/libs/settings/applicationsettings_miscs.cpp:458
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Masveida rindas pārvaldnieks"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:468
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, fuzzy, kde-format
 #| msgid "File Renaming"
 msgid "Renaming"
 msgstr "Failu pārdēvēšana"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Importa/Eksporta rīki"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:478
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:495
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:500
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Uzliek attēlus uz gaismas galda"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:505
-#, fuzzy, kde-format
-#| msgid "Adding items to the Light Table"
-msgid "Adding items to the Survey"
-msgstr "Uzliek attēlus uz gaismas galda"
-
-#: core/libs/settings/applicationsettings_miscs.cpp:510
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Masveida rindas pārvaldnieks"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:515
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, fuzzy, kde-format
 msgid "Renaming items"
 msgstr "Pārdēvēšanas opcijas"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:525
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:530
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:50
+#: core/libs/settings/applicationsettings_p.cpp:49
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Kategorija"
 
-#: core/libs/settings/applicationsettings_p.cpp:51
+#: core/libs/settings/applicationsettings_p.cpp:50
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Ceļojumi"
 
-#: core/libs/settings/applicationsettings_p.cpp:52
+#: core/libs/settings/applicationsettings_p.cpp:51
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Brīvdienas"
 
-#: core/libs/settings/applicationsettings_p.cpp:53
+#: core/libs/settings/applicationsettings_p.cpp:52
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Draugi"
 
-#: core/libs/settings/applicationsettings_p.cpp:54
+#: core/libs/settings/applicationsettings_p.cpp:53
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Daba"
 
-#: core/libs/settings/applicationsettings_p.cpp:55
+#: core/libs/settings/applicationsettings_p.cpp:54
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Tusiņi"
 
-#: core/libs/settings/applicationsettings_p.cpp:56
+#: core/libs/settings/applicationsettings_p.cpp:55
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Izdarīt"
 
-#: core/libs/settings/applicationsettings_p.cpp:57
+#: core/libs/settings/applicationsettings_p.cpp:56
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"
@@ -64889,40 +64847,34 @@ msgstr "Rādīt labajā panelī"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
 #, fuzzy, kde-format
-#| msgid "Show numbers"
-msgid "Show on Survey"
-msgstr "Rādīt numurus"
-
-#: core/utilities/setup/album/setupalbumview.cpp:201
-#, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgid "Open with Default Application"
 msgstr "Atvērt ar noklusējuma lietotni"
 
-#: core/utilities/setup/album/setupalbumview.cpp:202
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Izvēlieties, kas notiek, noklikšķinot uz sīktēla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Ikonu skata fonts:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:205
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Icon Views."
 msgid "Select here the font used to display text in icon views."
 msgstr "Šeit norādiet fontu, ar kādu attēlot tekstu ikonu skatos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:206
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:208
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -64936,19 +64888,19 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:246
+#: core/utilities/setup/album/setupalbumview.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ikonas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:253
+#: core/utilities/setup/album/setupalbumview.cpp:252
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "Tree View icon size:"
 msgstr "Koka skata sīktēla izmērs:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:260
+#: core/utilities/setup/album/setupalbumview.cpp:259
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -64959,13 +64911,13 @@ msgid ""
 msgstr ""
 "Šeit varat konfigurēt digiKam sānjoslu koku skatu sīktēlu izmēru, pikseļos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:263
+#: core/utilities/setup/album/setupalbumview.cpp:262
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "People Tree View icon size:"
 msgstr "Koka skata sīktēla izmērs:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:271
+#: core/utilities/setup/album/setupalbumview.cpp:270
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -64976,22 +64928,22 @@ msgid ""
 msgstr ""
 "Šeit varat konfigurēt digiKam sānjoslu koku skatu sīktēlu izmēru, pikseļos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:273
 #, kde-format
 msgid "Tree View font:"
 msgstr "Koka skata fonts:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:275
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Šeit varat norādīt koku skatu fontu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:276
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Koku skatos rādīt elementu skaitu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:278
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display album information when the mouse hovers over a "
@@ -65003,144 +64955,144 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai, paturot peli uz albuma, tiktu parādīts tā "
 "apraksts."
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:289
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Skats"
 
-#: core/utilities/setup/album/setupalbumview.cpp:298
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:299
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Iegultais priekšskatījums ielādē pilna izmēra attēlus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:302
+#: core/utilities/setup/album/setupalbumview.cpp:301
 #, fuzzy, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Par. attēli"
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:304
 #, fuzzy, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automātiska koriģēšana"
 
-#: core/utilities/setup/album/setupalbumview.cpp:307
+#: core/utilities/setup/album/setupalbumview.cpp:306
 #, fuzzy, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Parādīt iegulto priekšapskati"
 
-#: core/utilities/setup/album/setupalbumview.cpp:309
+#: core/utilities/setup/album/setupalbumview.cpp:308
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:311
+#: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:312
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:314
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:316
 #, kde-format
 msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:320
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:323
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:325
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgid "Auto play of videos or animations"
 msgstr "Automātiski pārrakstīt"
 
-#: core/utilities/setup/album/setupalbumview.cpp:326
+#: core/utilities/setup/album/setupalbumview.cpp:325
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "Automātiski pārrakstīt"
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:327
 #, kde-format
 msgid "Show a text overlay over preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:329
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:352
+#: core/utilities/setup/album/setupalbumview.cpp:351
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Priekšskatījums"
 
-#: core/utilities/setup/album/setupalbumview.cpp:367
+#: core/utilities/setup/album/setupalbumview.cpp:366
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Pilnekrāns"
 
-#: core/utilities/setup/album/setupalbumview.cpp:372
+#: core/utilities/setup/album/setupalbumview.cpp:371
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "MIME tipi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:375
+#: core/utilities/setup/album/setupalbumview.cpp:374
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategorijas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:556
+#: core/utilities/setup/album/setupalbumview.cpp:555
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -69344,7 +69296,12 @@ msgstr "Albumu vienības"
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
 
-#: core/utilities/survey/surveywindow.cpp:199
+#: core/utilities/survey/surveywindow.cpp:51
+#, kde-format
+msgid "Survey"
+msgstr ""
+
+#: core/utilities/survey/surveywindow.cpp:206
 #, fuzzy, kde-format
 msgid "%1 item on Survey"
 msgid_plural "%1 items on Survey"
@@ -69363,6 +69320,42 @@ msgstr "Noņemt no gaismas galda"
 #| msgid "Remove all items from LightTable"
 msgid "Remove all items from Survey Tool"
 msgstr "Noņemt visus attēlus no gaismas galda"
+
+#, fuzzy
+#~| msgctxt "@action: setup"
+#~| msgid "Place onto Light Table"
+#~ msgctxt "@action: setup"
+#~ msgid "Place onto Survey"
+#~ msgstr "Uzlikt uz gaismas galda"
+
+#, fuzzy
+#~| msgctxt "@info: setup"
+#~| msgid "Place the selected items on the light table thumbbar."
+#~ msgctxt "@info: setup"
+#~ msgid "Place the selected items on the survey thumbbar."
+#~ msgstr "Uzlikt atlasītos attēlus uz gaismas galda sīktēlu joslas."
+
+#, fuzzy
+#~| msgid "Texture"
+#~ msgctxt "@action: setup"
+#~ msgid "Add to Survey"
+#~ msgstr "Tekstūra"
+
+#, fuzzy
+#~| msgid "Add selected items to the light table thumbbar."
+#~ msgctxt "@info: setup"
+#~ msgid "Add selected items to the survey thumbbar."
+#~ msgstr "Pievienot izvēlētos attēlus gaismas galda sīktēlu joslai."
+
+#, fuzzy
+#~| msgid "Adding items to the Light Table"
+#~ msgid "Adding items to the Survey"
+#~ msgstr "Uzliek attēlus uz gaismas galda"
+
+#, fuzzy
+#~| msgid "Show numbers"
+#~ msgid "Show on Survey"
+#~ msgstr "Rādīt numurus"
 
 #~ msgctxt "@title: Dplugin property"
 #~ msgid "Authors"

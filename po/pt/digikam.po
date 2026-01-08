@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:42+0000\n"
+"POT-Creation-Date: 2026-01-08 00:40+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -700,19 +700,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Seleccionar o Item"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:163
+#: core/app/items/utils/contextmenuhelper_actions.cpp:143
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Escolher como Miniatura do Álbum"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:167
+#: core/app/items/utils/contextmenuhelper_actions.cpp:147
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Escolher como Miniatura da Marca"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:204
+#: core/app/items/utils/contextmenuhelper_actions.cpp:184
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -720,7 +720,7 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "Enviar para o Lixo"
 msgstr[1] "Enviar os %1 Ficheiros para o Lixo"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:216
+#: core/app/items/utils/contextmenuhelper_actions.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Image Quality Sort"
@@ -1148,7 +1148,7 @@ msgstr ""
 "<p>Por favor, seleccione o álbum de destino correcto, na biblioteca do "
 "digiKam, para onde mover as imagens.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:394
+#: core/app/items/utils/itemviewutilities.cpp:354
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -1739,7 +1739,7 @@ msgstr "A iniciar a janela principal..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:303
+#: core/utilities/survey/surveywindow_setup.cpp:288
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1812,7 +1812,7 @@ msgid "Delete Album"
 msgstr "Apagar o Álbum"
 
 #: core/app/main/digikamapp_setup.cpp:268
-#: core/app/main/digikamapp_setup.cpp:530
+#: core/app/main/digikamapp_setup.cpp:516
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
@@ -1838,7 +1838,7 @@ msgid "Write Metadata to Files"
 msgstr "Gravar os Meta-Dados nos Ficheiros"
 
 #: core/app/main/digikamapp_setup.cpp:286
-#: core/app/main/digikamapp_setup.cpp:484
+#: core/app/main/digikamapp_setup.cpp:470
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1856,7 +1856,7 @@ msgid "Reread Metadata From Files"
 msgstr "Ler de Novo os Meta-Dados das Imagens"
 
 #: core/app/main/digikamapp_setup.cpp:297
-#: core/app/main/digikamapp_setup.cpp:495
+#: core/app/main/digikamapp_setup.cpp:481
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2001,197 +2001,165 @@ msgctxt "@action: setup"
 msgid "Survey"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:439
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Polls & Surveys"
-msgctxt "@action: setup"
-msgid "Place onto Survey"
-msgstr "Questionários e Sondagens"
-
-#: core/app/main/digikamapp_setup.cpp:440
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Place the selected items on the light table thumbbar."
-msgctxt "@info: setup"
-msgid "Place the selected items on the survey thumbbar."
-msgstr "Colocar os itens seleccionados na barra da mesa de luz."
-
-#: core/app/main/digikamapp_setup.cpp:446
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Add Texture"
-msgctxt "@action: setup"
-msgid "Add to Survey"
-msgstr "Adicionar uma Textura"
-
-#: core/app/main/digikamapp_setup.cpp:447
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Add selected items to the light table thumbbar."
-msgctxt "@info: setup"
-msgid "Add selected items to the survey thumbbar."
-msgstr "Adicionar os itens seleccionados à barra da mesa de luz."
-
-#: core/app/main/digikamapp_setup.cpp:455
+#: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Gestor da Fila de Lote"
 
-#: core/app/main/digikamapp_setup.cpp:461
+#: core/app/main/digikamapp_setup.cpp:447
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Adicionar à Fila Actual"
 
-#: core/app/main/digikamapp_setup.cpp:462
+#: core/app/main/digikamapp_setup.cpp:448
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "Adicionar os itens seleccionados à fila actual do gestor de lotes."
 
-#: core/app/main/digikamapp_setup.cpp:468
+#: core/app/main/digikamapp_setup.cpp:454
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Adicionar a uma Fila Nova"
 
-#: core/app/main/digikamapp_setup.cpp:469
+#: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Adicionar os itens seleccionados a uma fila nova no gestor de lotes."
 
-#: core/app/main/digikamapp_setup.cpp:476
+#: core/app/main/digikamapp_setup.cpp:462
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Importar"
 
-#: core/app/main/digikamapp_setup.cpp:483
+#: core/app/main/digikamapp_setup.cpp:469
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Gravar os Meta-Dados nos Ficheiros Seleccionados"
 
-#: core/app/main/digikamapp_setup.cpp:494
+#: core/app/main/digikamapp_setup.cpp:480
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Ler de Novo os Meta-Dados dos Ficheiros Seleccionados"
 
-#: core/app/main/digikamapp_setup.cpp:505
+#: core/app/main/digikamapp_setup.cpp:491
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Analisar as Caras"
 
-#: core/app/main/digikamapp_setup.cpp:510
+#: core/app/main/digikamapp_setup.cpp:496
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Reconhecer as Caras"
 
-#: core/app/main/digikamapp_setup.cpp:515
+#: core/app/main/digikamapp_setup.cpp:501
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Remover Todas as Caras"
 
-#: core/app/main/digikamapp_setup.cpp:522
+#: core/app/main/digikamapp_setup.cpp:508
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Descobrir Semelhantes..."
 
-#: core/app/main/digikamapp_setup.cpp:523
+#: core/app/main/digikamapp_setup.cpp:509
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr ""
 "Descobrir imagens semelhantes, usando o item seleccionado como referência."
 
-#: core/app/main/digikamapp_setup.cpp:531
+#: core/app/main/digikamapp_setup.cpp:517
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Muda o nome do ficheiro do item seleccionado de momento."
 
-#: core/app/main/digikamapp_setup.cpp:541
+#: core/app/main/digikamapp_setup.cpp:527
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Enviar para o Lixo"
 
-#: core/app/main/digikamapp_setup.cpp:555
+#: core/app/main/digikamapp_setup.cpp:541
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Apagar Permanentemente"
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:552
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Remover permanentemente sem confirmação"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:560
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Mover para o lixo sem confirmação"
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:567
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "Ordenar Álbun&s"
 
-#: core/app/main/digikamapp_setup.cpp:582
+#: core/app/main/digikamapp_setup.cpp:568
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Ordenar os álbuns na árvore."
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:587
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Por Pasta"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:588
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Por Categoria"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:589
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Pela Data"
 
-#: core/app/main/digikamapp_setup.cpp:608
+#: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Incluir a Sub-Árvore do Álbum"
 
-#: core/app/main/digikamapp_setup.cpp:610
+#: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr "Active esta opção para mostrar todos os sub-álbuns abaixo do actual."
 
-#: core/app/main/digikamapp_setup.cpp:615
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Incluir a Sub-Árvore da Marca"
 
-#: core/app/main/digikamapp_setup.cpp:617
+#: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2201,25 +2169,25 @@ msgstr ""
 "Active esta opção para mostrar todas as imagens identificadas pela marca "
 "indicada e pelas suas sub-marcas."
 
-#: core/app/main/digikamapp_setup.cpp:622
+#: core/app/main/digikamapp_setup.cpp:608
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Mostrar Todos os Itens Agrupados como Abertos"
 
-#: core/app/main/digikamapp_setup.cpp:624
+#: core/app/main/digikamapp_setup.cpp:610
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr "Active esta opção para mostrar todos os itens agrupados como abertos."
 
-#: core/app/main/digikamapp_setup.cpp:630
+#: core/app/main/digikamapp_setup.cpp:616
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Ordenar os Itens"
 
-#: core/app/main/digikamapp_setup.cpp:631
+#: core/app/main/digikamapp_setup.cpp:617
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2227,177 +2195,177 @@ msgid ""
 msgstr ""
 "O valor pelo qual são ordenadas as imagens de um álbum na área de miniaturas"
 
-#: core/app/main/digikamapp_setup.cpp:636
+#: core/app/main/digikamapp_setup.cpp:622
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Pelo Nome"
 
-#: core/app/main/digikamapp_setup.cpp:637
+#: core/app/main/digikamapp_setup.cpp:623
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Pela Localização"
 
-#: core/app/main/digikamapp_setup.cpp:638
+#: core/app/main/digikamapp_setup.cpp:624
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Pela Data de Criação"
 
-#: core/app/main/digikamapp_setup.cpp:639
+#: core/app/main/digikamapp_setup.cpp:625
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Pela Data de Modificação"
 
-#: core/app/main/digikamapp_setup.cpp:640
+#: core/app/main/digikamapp_setup.cpp:626
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Pelo Tamanho do Ficheiro"
 
-#: core/app/main/digikamapp_setup.cpp:641
-#: core/app/main/digikamapp_setup.cpp:742
+#: core/app/main/digikamapp_setup.cpp:627
+#: core/app/main/digikamapp_setup.cpp:728
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Por Formato"
 
-#: core/app/main/digikamapp_setup.cpp:643
+#: core/app/main/digikamapp_setup.cpp:629
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Pela Classificação"
 
-#: core/app/main/digikamapp_setup.cpp:644
+#: core/app/main/digikamapp_setup.cpp:630
 #, fuzzy, kde-format
 #| msgid "Pick Label:"
 msgctxt "@action: setup"
 msgid "By Pick Label"
 msgstr "Legenda Recolhida:"
 
-#: core/app/main/digikamapp_setup.cpp:645
+#: core/app/main/digikamapp_setup.cpp:631
 #, fuzzy, kde-format
 #| msgid "Color Label:"
 msgctxt "@action: setup"
 msgid "By Color Label"
 msgstr "Legenda de Cores:"
 
-#: core/app/main/digikamapp_setup.cpp:647
+#: core/app/main/digikamapp_setup.cpp:633
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Pelo Tamanho da Imagem"
 
-#: core/app/main/digikamapp_setup.cpp:648
+#: core/app/main/digikamapp_setup.cpp:634
 #, fuzzy, kde-format
 #| msgid "Any Orientation"
 msgctxt "@action: setup"
 msgid "By Orientation"
 msgstr "Qualquer Orientação"
 
-#: core/app/main/digikamapp_setup.cpp:649
+#: core/app/main/digikamapp_setup.cpp:635
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Pelas Proporções"
 
-#: core/app/main/digikamapp_setup.cpp:650
+#: core/app/main/digikamapp_setup.cpp:636
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@action: setup"
 msgid "By Gps Position"
 msgstr "Posição:"
 
-#: core/app/main/digikamapp_setup.cpp:652
+#: core/app/main/digikamapp_setup.cpp:638
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Pelo Tipo de Cara"
 
-#: core/app/main/digikamapp_setup.cpp:653
+#: core/app/main/digikamapp_setup.cpp:639
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Pela Semelhança"
 
-#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:640
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Pelo Manual e Nome"
 
-#: core/app/main/digikamapp_setup.cpp:655
+#: core/app/main/digikamapp_setup.cpp:641
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Pelo Manual e Data"
 
-#: core/app/main/digikamapp_setup.cpp:717
+#: core/app/main/digikamapp_setup.cpp:703
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Sentido de &Ordenação dos Itens"
 
-#: core/app/main/digikamapp_setup.cpp:718
+#: core/app/main/digikamapp_setup.cpp:704
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr ""
 "Define se as imagens são ordenadas no sentido ascendente ou descendente."
 
-#: core/app/main/digikamapp_setup.cpp:722
-#: core/app/main/digikamapp_setup.cpp:781
+#: core/app/main/digikamapp_setup.cpp:708
+#: core/app/main/digikamapp_setup.cpp:767
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Ascendente"
 
-#: core/app/main/digikamapp_setup.cpp:724
-#: core/app/main/digikamapp_setup.cpp:783
+#: core/app/main/digikamapp_setup.cpp:710
+#: core/app/main/digikamapp_setup.cpp:769
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Descendente"
 
-#: core/app/main/digikamapp_setup.cpp:734
+#: core/app/main/digikamapp_setup.cpp:720
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Separar os Itens"
 
-#: core/app/main/digikamapp_setup.cpp:735
+#: core/app/main/digikamapp_setup.cpp:721
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "As categorias das imagens na área de miniaturas que são apresentadas"
 
-#: core/app/main/digikamapp_setup.cpp:740
+#: core/app/main/digikamapp_setup.cpp:726
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Lista Plana"
 
-#: core/app/main/digikamapp_setup.cpp:741
+#: core/app/main/digikamapp_setup.cpp:727
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Por Álbum"
 
-#: core/app/main/digikamapp_setup.cpp:743
+#: core/app/main/digikamapp_setup.cpp:729
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Pelas Caras"
 
-#: core/app/main/digikamapp_setup.cpp:744
+#: core/app/main/digikamapp_setup.cpp:730
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Pelo Mês"
 
-#: core/app/main/digikamapp_setup.cpp:745
+#: core/app/main/digikamapp_setup.cpp:731
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Date"
@@ -2405,284 +2373,284 @@ msgctxt "@action: setup"
 msgid "By Day"
 msgstr "Pela Data"
 
-#: core/app/main/digikamapp_setup.cpp:776
+#: core/app/main/digikamapp_setup.cpp:762
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Ordem de Separação dos Itens"
 
-#: core/app/main/digikamapp_setup.cpp:777
+#: core/app/main/digikamapp_setup.cpp:763
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "O critério de ordenação dos grupos de itens separados"
 
-#: core/app/main/digikamapp_setup.cpp:798
+#: core/app/main/digikamapp_setup.cpp:784
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Seleccionar Tudo"
 
-#: core/app/main/digikamapp_setup.cpp:805
+#: core/app/main/digikamapp_setup.cpp:791
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Deseleccionar Tudo"
 
-#: core/app/main/digikamapp_setup.cpp:812
+#: core/app/main/digikamapp_setup.cpp:798
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Inverter a Selecção"
 
-#: core/app/main/digikamapp_setup.cpp:820
+#: core/app/main/digikamapp_setup.cpp:806
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Mostrar a Barra de Miniaturas"
 
-#: core/app/main/digikamapp_setup.cpp:851
+#: core/app/main/digikamapp_setup.cpp:837
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Ampliar a 100%"
 
-#: core/app/main/digikamapp_setup.cpp:859
+#: core/app/main/digikamapp_setup.cpp:845
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Ajustar à &Janela"
 
-#: core/app/main/digikamapp_setup.cpp:872
+#: core/app/main/digikamapp_setup.cpp:858
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Vista de Gestão de Cores"
 
-#: core/app/main/digikamapp_setup.cpp:890
+#: core/app/main/digikamapp_setup.cpp:876
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Procurar..."
 
-#: core/app/main/digikamapp_setup.cpp:898
+#: core/app/main/digikamapp_setup.cpp:884
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Procura Avançada..."
 
-#: core/app/main/digikamapp_setup.cpp:906
+#: core/app/main/digikamapp_setup.cpp:892
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Procurar os Duplicados..."
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:902
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Migração da Base de Dados..."
 
-#: core/app/main/digikamapp_setup.cpp:925
+#: core/app/main/digikamapp_setup.cpp:911
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Manutenção..."
 
-#: core/app/main/digikamapp_setup.cpp:932
+#: core/app/main/digikamapp_setup.cpp:918
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Procurar por Itens Novos"
 
-#: core/app/main/digikamapp_setup.cpp:938
+#: core/app/main/digikamapp_setup.cpp:924
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Adicionar uma Máquina Fotográfica Manualmente..."
 
-#: core/app/main/digikamapp_setup.cpp:949
+#: core/app/main/digikamapp_setup.cpp:935
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "A carregar as máquinas fotográficas..."
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:971
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Sair do Modo de Antevisão"
 
-#: core/app/main/digikamapp_setup.cpp:990
+#: core/app/main/digikamapp_setup.cpp:976
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Imagem Seguinte"
 
-#: core/app/main/digikamapp_setup.cpp:996
+#: core/app/main/digikamapp_setup.cpp:982
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Imagem Anterior"
 
-#: core/app/main/digikamapp_setup.cpp:1002
+#: core/app/main/digikamapp_setup.cpp:988
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Primeira Imagem"
 
-#: core/app/main/digikamapp_setup.cpp:1007
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Última Imagem"
 
-#: core/app/main/digikamapp_setup.cpp:1012
+#: core/app/main/digikamapp_setup.cpp:998
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Cor&tar"
 
-#: core/app/main/digikamapp_setup.cpp:1014
+#: core/app/main/digikamapp_setup.cpp:1000
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Cortar a selecção para a área de transferência"
 
-#: core/app/main/digikamapp_setup.cpp:1033
+#: core/app/main/digikamapp_setup.cpp:1019
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Editar os Títulos"
 
-#: core/app/main/digikamapp_setup.cpp:1038
+#: core/app/main/digikamapp_setup.cpp:1024
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Editar os Comentários"
 
-#: core/app/main/digikamapp_setup.cpp:1043
+#: core/app/main/digikamapp_setup.cpp:1029
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Mostrar as Marcas Atribuídas"
 
-#: core/app/main/digikamapp_setup.cpp:1052
+#: core/app/main/digikamapp_setup.cpp:1038
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Ajustar a Marca de Orientação EXIF"
 
-#: core/app/main/digikamapp_setup.cpp:1055
+#: core/app/main/digikamapp_setup.cpp:1041
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:1057
+#: core/app/main/digikamapp_setup.cpp:1043
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Invertida Horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1059
+#: core/app/main/digikamapp_setup.cpp:1045
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Rodada de Baixo para Cima"
 
-#: core/app/main/digikamapp_setup.cpp:1061
+#: core/app/main/digikamapp_setup.cpp:1047
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Invertida Verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1063
+#: core/app/main/digikamapp_setup.cpp:1049
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Rodada à Direita / Invertida Horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1065
+#: core/app/main/digikamapp_setup.cpp:1051
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Rodada à Direita"
 
-#: core/app/main/digikamapp_setup.cpp:1067
+#: core/app/main/digikamapp_setup.cpp:1053
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Rodada à Direita / Invertida Verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1069
+#: core/app/main/digikamapp_setup.cpp:1055
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Rodada à Esquerda"
 
-#: core/app/main/digikamapp_setup.cpp:1130
+#: core/app/main/digikamapp_setup.cpp:1116
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Rodar"
 
-#: core/app/main/digikamapp_setup.cpp:1136
+#: core/app/main/digikamapp_setup.cpp:1122
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Rodar automaticamente"
 
-#: core/app/main/digikamapp_setup.cpp:1144
+#: core/app/main/digikamapp_setup.cpp:1130
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Esquerda"
 
-#: core/app/main/digikamapp_setup.cpp:1151
+#: core/app/main/digikamapp_setup.cpp:1137
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Direita"
 
-#: core/app/main/digikamapp_setup.cpp:1161
+#: core/app/main/digikamapp_setup.cpp:1147
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Inverter"
 
-#: core/app/main/digikamapp_setup.cpp:1165
+#: core/app/main/digikamapp_setup.cpp:1151
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1172
+#: core/app/main/digikamapp_setup.cpp:1158
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1182
+#: core/app/main/digikamapp_setup.cpp:1168
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Auto Rodar/Inverter Utilizando Informações EXIF"
 
-#: core/app/main/digikamapp_setup.cpp:1193
+#: core/app/main/digikamapp_setup.cpp:1179
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "A carregar os temas..."
 
-#: core/app/main/digikamapp_setup.cpp:1196
+#: core/app/main/digikamapp_setup.cpp:1182
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Temas"
 
-#: core/app/main/digikamapp_setup.cpp:1212
+#: core/app/main/digikamapp_setup.cpp:1198
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2820,7 +2788,7 @@ msgid "&Item"
 msgstr "&Item"
 
 #. i18n: ectx: Menu (Edit)
-#: core/app/main/digikamui5.rc:77 core/showfoto/main/showfotoui5.rc:30
+#: core/app/main/digikamui5.rc:76 core/showfoto/main/showfotoui5.rc:30
 #: core/utilities/imageeditor/main/imageeditorui5.rc:30
 #: core/utilities/import/main/importui5.rc:15
 #, kde-format
@@ -2828,7 +2796,7 @@ msgid "&Edit"
 msgstr "&Editar"
 
 #. i18n: ectx: Menu (View)
-#: core/app/main/digikamui5.rc:88 core/showfoto/main/showfotoui5.rc:40
+#: core/app/main/digikamui5.rc:87 core/showfoto/main/showfotoui5.rc:40
 #: core/utilities/imageeditor/main/imageeditorui5.rc:41
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
@@ -2839,7 +2807,7 @@ msgid "&View"
 msgstr "&Ver"
 
 #. i18n: ectx: Menu (Tools)
-#: core/app/main/digikamui5.rc:120 core/showfoto/main/showfotoui5.rc:92
+#: core/app/main/digikamui5.rc:119 core/showfoto/main/showfotoui5.rc:92
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
@@ -2849,7 +2817,7 @@ msgid "&Tools"
 msgstr "Ferramen&tas"
 
 #. i18n: ectx: Menu (Import)
-#: core/app/main/digikamui5.rc:139 core/showfoto/main/showfotoui5.rc:102
+#: core/app/main/digikamui5.rc:138 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
 #: core/utilities/survey/surveywindowui5.rc:48
@@ -2858,7 +2826,7 @@ msgid "I&mport"
 msgstr "I&mportar"
 
 #. i18n: ectx: Menu (Export)
-#: core/app/main/digikamui5.rc:152 core/showfoto/main/showfotoui5.rc:108
+#: core/app/main/digikamui5.rc:151 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
 #: core/utilities/survey/surveywindowui5.rc:54
@@ -2867,7 +2835,7 @@ msgid "&Export"
 msgstr "&Exportar"
 
 #. i18n: ectx: Menu (settings)
-#: core/app/main/digikamui5.rc:158 core/showfoto/main/showfotoui5.rc:114
+#: core/app/main/digikamui5.rc:157 core/showfoto/main/showfotoui5.rc:114
 #: core/utilities/imageeditor/main/imageeditorui5.rc:115
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
@@ -2878,7 +2846,7 @@ msgid "&Settings"
 msgstr "&Configuração"
 
 #. i18n: ectx: Menu (help)
-#: core/app/main/digikamui5.rc:174 core/showfoto/main/showfotoui5.rc:128
+#: core/app/main/digikamui5.rc:173 core/showfoto/main/showfotoui5.rc:128
 #: core/utilities/imageeditor/main/imageeditorui5.rc:130
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
@@ -2889,7 +2857,7 @@ msgid "&Help"
 msgstr "A&juda"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: core/app/main/digikamui5.rc:192 core/showfoto/main/showfotoui5.rc:144
+#: core/app/main/digikamui5.rc:191 core/showfoto/main/showfotoui5.rc:144
 #: core/utilities/imageeditor/main/imageeditorui5.rc:147
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
@@ -3399,7 +3367,7 @@ msgstr ""
 "guardada num novo álbum virtual de pesquisa no lado esquerdo."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:383
-#: core/app/views/stack/itemiconview_p.h:145
+#: core/app/views/stack/itemiconview_p.h:146
 #, kde-format
 msgid "Timeline"
 msgstr "Linha Temporal"
@@ -3438,22 +3406,22 @@ msgstr ""
 "A pesquisa actual da base de dados não devolveu resultados. Mude a "
 "configuração da pesquisa ou seleccione um álbum com conteúdo."
 
-#: core/app/views/stack/itemiconview_p.h:126
+#: core/app/views/stack/itemiconview_p.h:127
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Procura Difusa por Desenho"
 
-#: core/app/views/stack/itemiconview_p.h:130
+#: core/app/views/stack/itemiconview_p.h:131
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Procura Difusa por Imagens"
 
-#: core/app/views/stack/itemiconview_p.h:134
+#: core/app/views/stack/itemiconview_p.h:135
 #, kde-format
 msgid "Map Search"
 msgstr "Procura no Mapa"
 
-#: core/app/views/stack/itemiconview_p.h:141
+#: core/app/views/stack/itemiconview_p.h:142
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1186
 #, kde-format
 msgid "Last Search"
@@ -4073,17 +4041,17 @@ msgstr "Câmara:"
 msgid "Lens:"
 msgstr "Lente:"
 
-#: core/app/views/tableview/tableview.cpp:373
+#: core/app/views/tableview/tableview.cpp:369
 #, kde-format
 msgid "Hide grouped items"
 msgstr "Esconder os itens agrupados"
 
-#: core/app/views/tableview/tableview.cpp:383
+#: core/app/views/tableview/tableview.cpp:379
 #, kde-format
 msgid "Ignore grouping"
 msgstr "Ignorar o agrupamento"
 
-#: core/app/views/tableview/tableview.cpp:393
+#: core/app/views/tableview/tableview.cpp:389
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "Mostrar o agrupamento na árvore"
@@ -23290,7 +23258,7 @@ msgid "Slideshow"
 msgstr "Apresentação"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Apresentação"
@@ -41392,36 +41360,30 @@ msgid "Light Table"
 msgstr "Mesa de Luz"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
-#: core/utilities/survey/surveywindow.cpp:51
-#, kde-format
-msgid "Survey"
-msgstr ""
-
-#: core/libs/settings/applicationsettings_miscs.cpp:458
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Gestor da Fila de Lote"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:468
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Renaming"
 msgstr "Mudança de Nomes"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Ferramentas de importação/exportação"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:478
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 "Ferramentas (editor, panorama, mistura em pilha, calendário, programa "
 "externo)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:495
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -41430,38 +41392,32 @@ msgstr ""
 "Operações relacionadas com os meta-dados, legendas, classificações, marcas, "
 "geo-localização e rotação"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:500
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "A adicionar os itens à Mesa de Luz"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:505
-#, fuzzy, kde-format
-#| msgid "Adding items to the Light Table"
-msgid "Adding items to the Survey"
-msgstr "A adicionar os itens à Mesa de Luz"
-
-#: core/libs/settings/applicationsettings_miscs.cpp:510
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "A adicionar os itens ao Gestor da Fila de Lote"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:515
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "A abrir os itens na apresentação"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, kde-format
 msgid "Renaming items"
 msgstr "A mudar os nomes dos itens"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:525
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr "A passar os itens para as ferramentas de importação/exportação"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:530
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -41470,49 +41426,49 @@ msgstr ""
 "Diversas ferramentas que incluem o editor, o modo de panorama, a mistura em "
 "pilha, o calendário, a galeria em HTML e a abertura com programas externos"
 
-#: core/libs/settings/applicationsettings_p.cpp:50
+#: core/libs/settings/applicationsettings_p.cpp:49
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Categoria"
 
-#: core/libs/settings/applicationsettings_p.cpp:51
+#: core/libs/settings/applicationsettings_p.cpp:50
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Viagem"
 
-#: core/libs/settings/applicationsettings_p.cpp:52
+#: core/libs/settings/applicationsettings_p.cpp:51
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Férias"
 
-#: core/libs/settings/applicationsettings_p.cpp:53
+#: core/libs/settings/applicationsettings_p.cpp:52
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Amigos"
 
-#: core/libs/settings/applicationsettings_p.cpp:54
+#: core/libs/settings/applicationsettings_p.cpp:53
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Natureza"
 
-#: core/libs/settings/applicationsettings_p.cpp:55
+#: core/libs/settings/applicationsettings_p.cpp:54
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Festa"
 
-#: core/libs/settings/applicationsettings_p.cpp:56
+#: core/libs/settings/applicationsettings_p.cpp:55
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Por fazer"
 
-#: core/libs/settings/applicationsettings_p.cpp:57
+#: core/libs/settings/applicationsettings_p.cpp:56
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -66241,42 +66197,35 @@ msgid "Show on Light Table"
 msgstr "Mostrar na Mesa da Luz"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Polls & Surveys"
-msgid "Show on Survey"
-msgstr "Questionários e Sondagens"
-
-#: core/utilities/setup/album/setupalbumview.cpp:201
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Abrir com a Aplicação Predefinida"
 
-#: core/utilities/setup/album/setupalbumview.cpp:202
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Escolha o que deve acontecer ao carregar sobre uma miniatura."
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Tipo de letra dos ícones:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:205
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 "Seleccione aqui o tipo de letra usado para mostrar o texto nas áreas de "
 "ícones."
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:206
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Usar um tamanho de miniaturas maiores para resoluções mais altas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:208
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -66299,18 +66248,18 @@ msgstr ""
 "para fazer efeito, sendo que a opção 'Reconstruir as Miniaturas' da "
 "ferramenta de Manutenção terá de ser processada sobre as colecções inteiras."
 
-#: core/utilities/setup/album/setupalbumview.cpp:246
+#: core/utilities/setup/album/setupalbumview.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ícones"
 
-#: core/utilities/setup/album/setupalbumview.cpp:253
+#: core/utilities/setup/album/setupalbumview.cpp:252
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Tamanho dos ícones da Área da Árvore:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:260
+#: core/utilities/setup/album/setupalbumview.cpp:259
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -66319,12 +66268,12 @@ msgstr ""
 "Configure esta opção para definir o tamanho em pixels dos ícones da Árvore "
 "nas barras laterais do digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:263
+#: core/utilities/setup/album/setupalbumview.cpp:262
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "Tamanho dos ícones da Área da Árvore de Pessoas:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:271
+#: core/utilities/setup/album/setupalbumview.cpp:270
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -66333,22 +66282,22 @@ msgstr ""
 "Configure esta opção para definir o tamanho em pixels dos ícones da Árvore "
 "de Pessoas nas barras laterais do digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:273
 #, kde-format
 msgid "Tree View font:"
 msgstr "Tipo de letra da árvore:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:275
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Defina aqui o tipo de letra usado para apresentar o texto na árvore."
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:276
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Mostrar a quantidade de itens nas árvores"
 
-#: core/utilities/setup/album/setupalbumview.cpp:278
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -66357,62 +66306,62 @@ msgstr ""
 "Configure esta opção para mostrar, em conjunto com o nome do álbum, o número "
 "de itens na área de ícones dentro dele."
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:289
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Vistas em Árvore"
 
-#: core/utilities/setup/album/setupalbumview.cpp:298
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "A antevisão mostra a área incorporada se disponível (mais rápido)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:299
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "A antevisão mostra a imagem completa"
 
-#: core/utilities/setup/album/setupalbumview.cpp:302
+#: core/utilities/setup/album/setupalbumview.cpp:301
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Imagens RAW:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:304
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automática"
 
-#: core/utilities/setup/album/setupalbumview.cpp:307
+#: core/utilities/setup/album/setupalbumview.cpp:306
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Antevisão incorporada"
 
-#: core/utilities/setup/album/setupalbumview.cpp:309
+#: core/utilities/setup/album/setupalbumview.cpp:308
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Dados RAW em metade do tamanho"
 
-#: core/utilities/setup/album/setupalbumview.cpp:311
+#: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Dados RAW no tamanho total (alta qualidade)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:312
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 "A imagem de antevisão é convertida para 8 bits para uma visualização mais "
 "rápida"
 
-#: core/utilities/setup/album/setupalbumview.cpp:314
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
@@ -66422,12 +66371,12 @@ msgstr ""
 "Desligue isto se não quiser converter uma imagem de antevisão a 16 'bits' "
 "para 8 'bits'."
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "A imagem de antevisão é sempre dimensionada para caber na janela"
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:316
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to scale small images to fit to window."
@@ -66436,13 +66385,13 @@ msgstr ""
 "Desligue isto se não quiser ajustar a escala das imagens pequenas para "
 "caberem na janela."
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:318
 #, fuzzy, kde-format
 #| msgid "Preview image is always scaled to fit to window"
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr "A imagem de antevisão é sempre dimensionada para caber na janela"
 
-#: core/utilities/setup/album/setupalbumview.cpp:320
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to scale small images to fit to window."
@@ -66451,13 +66400,13 @@ msgstr ""
 "Desligue isto se não quiser ajustar a escala das imagens pequenas para "
 "caberem na janela."
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Mostrar os ícones e o texto sobre a antevisão"
 
-#: core/utilities/setup/album/setupalbumview.cpp:323
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -66466,14 +66415,14 @@ msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 "Desligue isto se não quiser ver os ícones e o texto na antevisão da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:325
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
 msgid "Auto play of videos or animations"
 msgstr "Gravar as alterações automaticamente"
 
-#: core/utilities/setup/album/setupalbumview.cpp:326
+#: core/utilities/setup/album/setupalbumview.cpp:325
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to scale small images to fit to window."
@@ -66482,13 +66431,13 @@ msgstr ""
 "Desligue isto se não quiser ajustar a escala das imagens pequenas para "
 "caberem na janela."
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:327
 #, fuzzy, kde-format
 #| msgid "Show icons and text over preview"
 msgid "Show a text overlay over preview."
 msgstr "Mostrar os ícones e o texto sobre a antevisão"
 
-#: core/utilities/setup/album/setupalbumview.cpp:329
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to see icons and text in the image "
@@ -66499,31 +66448,31 @@ msgid ""
 msgstr ""
 "Desligue isto se não quiser ver os ícones e o texto na antevisão da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:352
+#: core/utilities/setup/album/setupalbumview.cpp:351
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Antevisão"
 
-#: core/utilities/setup/album/setupalbumview.cpp:367
+#: core/utilities/setup/album/setupalbumview.cpp:366
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Ecrã Completo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:372
+#: core/utilities/setup/album/setupalbumview.cpp:371
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Tipos MIME"
 
-#: core/utilities/setup/album/setupalbumview.cpp:375
+#: core/utilities/setup/album/setupalbumview.cpp:374
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Categorias"
 
-#: core/utilities/setup/album/setupalbumview.cpp:556
+#: core/utilities/setup/album/setupalbumview.cpp:555
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -71352,7 +71301,12 @@ msgstr "Itens do Álbum"
 msgid "Import Items"
 msgstr "Importar os Itens"
 
-#: core/utilities/survey/surveywindow.cpp:199
+#: core/utilities/survey/surveywindow.cpp:51
+#, kde-format
+msgid "Survey"
+msgstr ""
+
+#: core/utilities/survey/surveywindow.cpp:206
 #, fuzzy, kde-format
 #| msgid "%1 items to process"
 msgid "%1 item on Survey"
@@ -71371,6 +71325,45 @@ msgstr "Remover o Item da Mesa de Luz"
 #| msgid "Remove all items from Light Table"
 msgid "Remove all items from Survey Tool"
 msgstr "Remover todos os itens da Mesa de Luz"
+
+#, fuzzy
+#~| msgctxt "Content type"
+#~| msgid "Polls & Surveys"
+#~ msgctxt "@action: setup"
+#~ msgid "Place onto Survey"
+#~ msgstr "Questionários e Sondagens"
+
+#, fuzzy
+#~| msgctxt "@info: setup"
+#~| msgid "Place the selected items on the light table thumbbar."
+#~ msgctxt "@info: setup"
+#~ msgid "Place the selected items on the survey thumbbar."
+#~ msgstr "Colocar os itens seleccionados na barra da mesa de luz."
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Add Texture"
+#~ msgctxt "@action: setup"
+#~ msgid "Add to Survey"
+#~ msgstr "Adicionar uma Textura"
+
+#, fuzzy
+#~| msgctxt "@info: setup"
+#~| msgid "Add selected items to the light table thumbbar."
+#~ msgctxt "@info: setup"
+#~ msgid "Add selected items to the survey thumbbar."
+#~ msgstr "Adicionar os itens seleccionados à barra da mesa de luz."
+
+#, fuzzy
+#~| msgid "Adding items to the Light Table"
+#~ msgid "Adding items to the Survey"
+#~ msgstr "A adicionar os itens à Mesa de Luz"
+
+#, fuzzy
+#~| msgctxt "Content type"
+#~| msgid "Polls & Surveys"
+#~ msgid "Show on Survey"
+#~ msgstr "Questionários e Sondagens"
 
 #~ msgctxt "@title: Dplugin property"
 #~ msgid "Authors"
