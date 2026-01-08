@@ -230,30 +230,7 @@ void SurveyWindow::slotPanelLeftButtonClicked()
     d->stack->thumbBar()->setCurrentInfo(d->stack->thumbBar()->currentInfo());
 }
 */
-/*
-void SurveyWindow::slotPreviewLoaded(bool b)
-{
-    d->zoomBar->setEnabled(b);
-    d->fileName->setText(QString());
 
-    QFont fnt(d->fileName->font());
-    fnt.setBold(b);
-    d->fileName->setFont(fnt);
-
-    if (b)
-    {
-        d->fileName->setText(d->stack->thumbBar()->currentInfo().name());
-        d->stack->thumbBar()->setOnRightPanel(d->stack->thumbBar()->currentInfo());
-
-        QModelIndex index = d->stack->thumbBar()->findItemByInfo(d->stack->thumbBar()->currentInfo());
-
-        if (index.isValid())
-        {
-            d->stack->thumbBar()->setOnRightPanel(d->stack->thumbBar()->findItemByIndex(index));
-        }
-    }
-}
-*/
 void SurveyWindow::slotItemSelected()
 {
     ItemInfo info = d->stack->thumbBar()->currentInfo();

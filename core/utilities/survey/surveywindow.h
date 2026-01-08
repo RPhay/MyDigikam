@@ -101,7 +101,6 @@ private Q_SLOTS:
     void slotPanelLeftButtonClicked();
     void slotSetItem();
     void slotSetItemOnPanel(const ItemInfo&);
-    void slotPreviewLoaded(bool);
     void slotDroppedItems(const ItemInfoList&);
     void slotRemoveItem();
     void slotRemoveItem(const ItemInfo&);
