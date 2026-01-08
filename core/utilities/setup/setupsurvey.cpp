@@ -16,9 +16,7 @@
 
 // Qt includes
 
-#include <QCheckBox>
 #include <QColor>
-#include <QGroupBox>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QApplication>
@@ -47,12 +45,9 @@ public:
 
 public:
 
-    const QString configGroupName               = QLatin1String("Survey Settings");
-    const QString configClearOnCloseEntry       = QLatin1String("Clear On Close");
+    const QString configGroupName          = QLatin1String("Survey Settings");
 
-    QCheckBox*           clearOnClose           = nullptr;
-
-    FullScreenSettings*  fullScreenSettings     = nullptr;
+    FullScreenSettings* fullScreenSettings = nullptr;
 };
 
 // --------------------------------------------------------
@@ -67,30 +62,9 @@ SetupSurvey::SetupSurvey(QWidget* const parent)
     setWidget(panel);
     setWidgetResizable(true);
 
+    d->fullScreenSettings     = new FullScreenSettings(FS_SURVEY, panel);
+
     QVBoxLayout* const layout = new QVBoxLayout(panel);
-
-    // --------------------------------------------------------
-
-    QGroupBox* const interfaceOptionsGroup = new QGroupBox(i18n("Interface Options"), panel);
-    QVBoxLayout* const gLayout             = new QVBoxLayout(interfaceOptionsGroup);
-
-    d->clearOnClose = new QCheckBox(i18n("Clear the Survey on close"));
-    d->clearOnClose->setWhatsThis(i18n("Set this option to remove all images "
-                                       "from the Survey when you close it, "
-                                       "or unset it to preserve the images "
-                                       "currently on the Survey."));
-
-    gLayout->addWidget(d->clearOnClose);
-    gLayout->setContentsMargins(spacing, spacing, spacing, spacing);
-    gLayout->setSpacing(0);
-
-    // --------------------------------------------------------
-
-    d->fullScreenSettings = new FullScreenSettings(FS_SURVEY, panel);
-
-    // --------------------------------------------------------
-
-    layout->addWidget(interfaceOptionsGroup);
     layout->addWidget(d->fullScreenSettings);
     layout->setContentsMargins(QMargins());
     layout->setSpacing(spacing);
@@ -112,7 +86,6 @@ void SetupSurvey::readSettings()
     KConfigGroup group        = config->group(d->configGroupName);
 
     d->fullScreenSettings->readSettings(group);
-    d->clearOnClose->setChecked(group.readEntry(d->configClearOnCloseEntry, false));
 }
 
 void SetupSurvey::applySettings()
@@ -120,7 +93,6 @@ void SetupSurvey::applySettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
     d->fullScreenSettings->saveSettings(group);
-    group.writeEntry(d->configClearOnCloseEntry, d->clearOnClose->isChecked());
     config->sync();
 }
 
