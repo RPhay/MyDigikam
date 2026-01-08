@@ -249,10 +249,9 @@ void SurveyWindow::setupConnections()
     connect(d->stack, SIGNAL(signalZoomFactorChanged(double)),
             this, SLOT(slotZoomFactorChanged(double)));
 
-/*
     connect(d->stack, SIGNAL(signalPopupTagsView()),
             d->sideBar, SLOT(slotPopupTagsView()));
-
+/*
     connect(d->stack, SIGNAL(signalSlideShowCurrent()),
             this, SLOT(slotSlideShowManualFromCurrent()));
 

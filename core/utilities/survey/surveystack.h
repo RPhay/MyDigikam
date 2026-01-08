@@ -82,7 +82,6 @@ public:
     void setViewMode(const SurveyStackMode mode);
     void previewLoaded();
 
-
     bool   maxZoom();
     bool   minZoom();
     double zoomFactor();
