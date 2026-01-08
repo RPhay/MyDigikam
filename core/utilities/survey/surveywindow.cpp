@@ -103,12 +103,6 @@ void SurveyWindow::closeEvent(QCloseEvent* e)
         return;
     }
 
-/*
-    if (d->clearOnCloseAction->isChecked())
-    {
-        slotClearItemsList();
-    }
-*/
     // There is one nasty habit with the thumbnail bar if it is floating: it
     // doesn't close when the parent window does, so it needs to be manually
     // closed. If the light table is opened again, its original state needs to

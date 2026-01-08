@@ -132,9 +132,7 @@ public:
 
     QAction*                  showBarAction                 = nullptr;
     QAction*                  viewCMViewAction              = nullptr;
-    QAction*                  syncPreviewAction             = nullptr;
-    QAction*                  navigateByPairAction          = nullptr;
-    QAction*                  clearOnCloseAction            = nullptr;
+
 
     QMainWindow*              dockArea                      = nullptr;
 

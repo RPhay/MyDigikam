@@ -69,7 +69,6 @@ void SurveyWindow::writeSettings()
     d->hSplitter->saveState(group, QLatin1String("Horizontal Splitter State"));
     group.writeEntry(QLatin1String("Show Thumbbar"),    d->stack->thumbBarDock()->shouldBeVisible());
     group.writeEntry(QLatin1String("ThumbbarState"),    d->dockArea->saveState().toBase64());
-    group.writeEntry(QLatin1String("Clear On Close"),   d->clearOnCloseAction->isChecked());
 
     d->sideBar->setConfigGroup(KConfigGroup(&group, QLatin1String("Sidebar")));
     d->sideBar->saveState();
@@ -81,7 +80,6 @@ void SurveyWindow::applySettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
-    d->clearOnCloseAction->setChecked(group.readEntry(QLatin1String("Clear On Close"), false));
     slotApplicationSettingsChanged();
 
     // Restore full screen Mode

@@ -74,14 +74,6 @@ void SurveyWindow::setupActions()
 
     // -- Standard 'View' menu actions ---------------------------------------------
 
-    d->clearOnCloseAction = new QAction(QIcon::fromTheme(QLatin1String("edit-clear")), i18n("Clear On Close"), this);
-    d->clearOnCloseAction->setEnabled(true);
-    d->clearOnCloseAction->setCheckable(true);
-    d->clearOnCloseAction->setToolTip(i18n("Clear light table when it is closed"));
-    d->clearOnCloseAction->setWhatsThis(i18n("Remove all images from the light table when it is closed"));
-    ac->addAction(QLatin1String("survey_clearonclose"), d->clearOnCloseAction);
-    ac->setDefaultShortcut(d->clearOnCloseAction, Qt::CTRL | Qt::SHIFT | Qt::Key_C);
-
     d->showBarAction = d->stack->thumbBarDock()->getToggleAction(this);
     ac->addAction(QLatin1String("survey_showthumbbar"), d->showBarAction);
     ac->setDefaultShortcut(d->showBarAction, Qt::CTRL | Qt::Key_T);
