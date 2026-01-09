@@ -57,6 +57,14 @@ public Q_SLOTS:
     void assignRating(const QList<QModelIndex>& index, int rating);
     void slotDockLocationChanged(Qt::DockWidgetArea area);
 
+Q_SIGNALS:
+
+    void signalOpenGeolocationMap();
+
+protected Q_SLOTS:
+
+    void slotOpenGeolocationMap(const QModelIndex& index);
+
 protected:
 
     bool event(QEvent*)                                       override;

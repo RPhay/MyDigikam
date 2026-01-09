@@ -104,7 +104,24 @@ void ItemThumbnailBar::installOverlays()
     connect(ratingOverlay, SIGNAL(ratingEdited(QList<QModelIndex>,int)),
             this, SLOT(assignRating(QList<QModelIndex>,int)));
 
-    addOverlay(new ItemCoordinatesOverlay(this));
+    ItemCoordinatesOverlay* const geoOverlay = new ItemCoordinatesOverlay(this);
+    addOverlay(geoOverlay);
+
+    connect(geoOverlay, SIGNAL(signalOpenGeolocationMap(QModelIndex)),
+            this, SLOT(slotOpenGeolocationMap(QModelIndex)));
+}
+
+void ItemThumbnailBar::slotOpenGeolocationMap(const QModelIndex& index)
+{
+    ItemInfo info              = itemFilterModel()->imageInfo(index);
+    ItemInfoList imageInfoList = selectedItemInfos();
+
+    if (!imageInfoList.contains(info))
+    {
+        setCurrentIndex(index);
+    }
+
+    Q_EMIT signalOpenGeolocationMap();
 }
 
 void ItemThumbnailBar::slotDockLocationChanged(Qt::DockWidgetArea area)

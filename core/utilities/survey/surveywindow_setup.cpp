@@ -238,6 +238,9 @@ void SurveyWindow::setupConnections()
     connect(d->stack->thumbBar(), SIGNAL(itemSelectionChanged()),
             this, SLOT(slotItemSelected()));
 
+    connect(d->stack->thumbBar(), SIGNAL(signalOpenGeolocationMap()),
+            d->sideBar, SLOT(slotOpenGeolocationMap()));
+
     connect(d->stack, SIGNAL(signalZoomFactorChanged(double)),
             this, SLOT(slotZoomFactorChanged(double)));
 
