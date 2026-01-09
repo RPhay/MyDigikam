@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2026-01-07 09:26+0100\n"
+"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"PO-Revision-Date: 2026-01-08 07:27+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1650,7 +1650,7 @@ msgstr "Začenjanje glavnega pogleda..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:288
+#: core/utilities/survey/surveywindow_setup.cpp:255
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -2701,7 +2701,7 @@ msgstr "Ur&edi"
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:29
-#: core/utilities/survey/surveywindowui5.rc:24
+#: core/utilities/survey/surveywindowui5.rc:21
 #, kde-format
 msgid "&View"
 msgstr "Pogled"
@@ -2711,7 +2711,7 @@ msgstr "Pogled"
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
-#: core/utilities/survey/surveywindowui5.rc:38
+#: core/utilities/survey/surveywindowui5.rc:35
 #, kde-format
 msgid "&Tools"
 msgstr "Orodja"
@@ -2720,7 +2720,7 @@ msgstr "Orodja"
 #: core/app/main/digikamui5.rc:138 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
-#: core/utilities/survey/surveywindowui5.rc:48
+#: core/utilities/survey/surveywindowui5.rc:45
 #, kde-format
 msgid "I&mport"
 msgstr "Uvozi"
@@ -2729,7 +2729,7 @@ msgstr "Uvozi"
 #: core/app/main/digikamui5.rc:151 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
-#: core/utilities/survey/surveywindowui5.rc:54
+#: core/utilities/survey/surveywindowui5.rc:51
 #, kde-format
 msgid "&Export"
 msgstr "Izvozi"
@@ -2740,7 +2740,7 @@ msgstr "Izvozi"
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:33
-#: core/utilities/survey/surveywindowui5.rc:60
+#: core/utilities/survey/surveywindowui5.rc:57
 #, kde-format
 msgid "&Settings"
 msgstr "Na&stavitve"
@@ -2751,7 +2751,7 @@ msgstr "Na&stavitve"
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:47
-#: core/utilities/survey/surveywindowui5.rc:75
+#: core/utilities/survey/surveywindowui5.rc:72
 #, kde-format
 msgid "&Help"
 msgstr "Pomoč"
@@ -2762,7 +2762,7 @@ msgstr "Pomoč"
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:64
-#: core/utilities/survey/surveywindowui5.rc:92
+#: core/utilities/survey/surveywindowui5.rc:89
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Glavna orodna vrstica"
@@ -59416,19 +59416,19 @@ msgid "Move to Trash without Confirmation"
 msgstr "Premakni v Smeti brez potrditve"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
-#: core/utilities/survey/surveywindow_setup.cpp:184
+#: core/utilities/survey/surveywindow_setup.cpp:165
 #, kde-format
 msgid "Edit Titles"
 msgstr "Uredi naslove"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:71
-#: core/utilities/survey/surveywindow_setup.cpp:189
+#: core/utilities/survey/surveywindow_setup.cpp:170
 #, kde-format
 msgid "Edit Comments"
 msgstr "Uredi opombe"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
-#: core/utilities/survey/surveywindow_setup.cpp:194
+#: core/utilities/survey/surveywindow_setup.cpp:175
 #, kde-format
 msgid "Show Assigned Tags"
 msgstr "Pokaži dodeljene značke"
@@ -61228,14 +61228,14 @@ msgid "Remove all items from Light Table"
 msgstr "Odstrani vse predmete z osvetlitvene mize"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
-#: core/utilities/survey/surveywindow_setup.cpp:71
+#: core/utilities/survey/surveywindow_setup.cpp:60
 #, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
 msgstr "Premakni v Smeti"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
-#: core/utilities/survey/surveywindow_setup.cpp:77
+#: core/utilities/survey/surveywindow_setup.cpp:66
 #, kde-format
 msgid "Delete immediately"
 msgstr "Izbriši takoj"
@@ -61261,45 +61261,42 @@ msgid "Navigate by pairs with all items"
 msgstr "Krmari po parih z vsemi predmeti"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
-#: core/utilities/survey/surveywindow_setup.cpp:88
 #, kde-format
 msgid "Clear On Close"
 msgstr "Počisti ob zaprtju"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
-#: core/utilities/survey/surveywindow_setup.cpp:91
 #, kde-format
 msgid "Clear light table when it is closed"
 msgstr "Počisti osvetlitveno mizo ob zaprtju"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
-#: core/utilities/survey/surveywindow_setup.cpp:92
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
 msgstr "Odstrani vse slike iz osvetlitvene mize ob zaprtju"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
-#: core/utilities/survey/surveywindow_setup.cpp:133
+#: core/utilities/survey/surveywindow_setup.cpp:114
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Približaj na 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:188
-#: core/utilities/survey/surveywindow_setup.cpp:138
+#: core/utilities/survey/surveywindow_setup.cpp:119
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Prilagodi oknu"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
-#: core/utilities/survey/surveywindow_setup.cpp:145
+#: core/utilities/survey/surveywindow_setup.cpp:126
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Upravljan pregled barv"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
-#: core/utilities/survey/surveywindow_setup.cpp:175
+#: core/utilities/survey/surveywindow_setup.cpp:156
 #, kde-format
 msgid "Previous Image"
 msgstr "Predhodna slika"
@@ -65364,7 +65361,6 @@ msgstr "Shrani nastavitve"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
-#: core/utilities/setup/setupsurvey.cpp:74
 #, kde-format
 msgid "Interface Options"
 msgstr "Možnosti vmesnika"
@@ -67682,21 +67678,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr ""
+msgstr "Raziskava"
 
 #: core/utilities/setup/setup.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare items"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
 msgstr ""
-"Nastavitve osvetlitvene mize\n"
-"Prilagodi orodje za primerjavo predmetov"
+"Nastavitve raziskave\n"
+"Prilagodi orodje, ki se uporablja za pregledovanje elementov"
 
 #: core/utilities/setup/setup.cpp:189
 #, kde-format
@@ -68277,24 +68269,6 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Nalagalniki slik"
 
-#: core/utilities/setup/setupsurvey.cpp:77
-#, fuzzy, kde-format
-#| msgid "Clear the light table on close"
-msgid "Clear the Survey on close"
-msgstr "Počisti osvetlitveno mizo ob zaprtju"
-
-#: core/utilities/setup/setupsurvey.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to remove all images from the light table when you close "
-#| "it, or unset it to preserve the images currently on the light table."
-msgid ""
-"Set this option to remove all images from the Survey when you close it, or "
-"unset it to preserve the images currently on the Survey."
-msgstr ""
-"Nastavite to možnost, da odstranite vse slike iz osvetlitvene mize, ko jo "
-"zaprete v nasprotnem primeru bodo slike, ki so trenutno na njej, ohranjene."
-
 #: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid "Template Title:"
@@ -68708,29 +68682,33 @@ msgstr "Predmeti uvoza"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr ""
+msgstr "Raziskava"
 
-#: core/utilities/survey/surveywindow.cpp:206
-#, fuzzy, kde-format
-#| msgid "%1 items to process"
+#: core/utilities/survey/surveywindow.cpp:141
+#, kde-format
 msgid "%1 item on Survey"
 msgid_plural "%1 items on Survey"
-msgstr[0] "%1 predmetov za obdelavo"
-msgstr[1] "%1 predmetov za obdelavo"
-msgstr[2] "%1 predmetov za obdelavo"
-msgstr[3] "%1 predmetov za obdelavo"
+msgstr[0] "%1 predmetov v raziskavi"
+msgstr[1] "%1 predmetov v raziskavi"
+msgstr[2] "%1 predmetov v raziskavi"
+msgstr[3] "%1 predmetov v raziskavi"
 
-#: core/utilities/survey/surveywindow_setup.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove item from Light Table"
-msgid "Remove item from Survey Tool"
-msgstr "Odstrani predmet z osvetlitvene mize"
+#~ msgid "Clear the Survey on close"
+#~ msgstr "Počisti raziskavo ob zaprtju"
 
-#: core/utilities/survey/surveywindow_setup.cpp:65
-#, fuzzy, kde-format
-#| msgid "Remove all items from Light Table"
-msgid "Remove all items from Survey Tool"
-msgstr "Odstrani vse predmete z osvetlitvene mize"
+#~ msgid ""
+#~ "Set this option to remove all images from the Survey when you close it, "
+#~ "or unset it to preserve the images currently on the Survey."
+#~ msgstr ""
+#~ "Nastavite to možnost, če želite odstraniti vse slike iz ankete, ko jo "
+#~ "zaprete, ali pa izklopite nastavitev, če želite ohraniti slike, ki so "
+#~ "trenutno v raziskavi."
+
+#~ msgid "Remove item from Survey Tool"
+#~ msgstr "Odstrani predmet iz orodja za raziskave"
+
+#~ msgid "Remove all items from Survey Tool"
+#~ msgstr "Odstrani vse predmete iz orodja za raziskave"
 
 #~ msgctxt "@action: setup"
 #~ msgid "Place onto Survey"

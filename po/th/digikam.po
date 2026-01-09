@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-08 00:40+0000\n"
+"POT-Creation-Date: 2026-01-09 00:41+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1627,7 +1627,7 @@ msgstr "กำลังเริ่มการทำงานของพื้
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:288
+#: core/utilities/survey/surveywindow_setup.cpp:255
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
@@ -2803,7 +2803,7 @@ msgstr "แ&ก้ไข"
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:29
-#: core/utilities/survey/surveywindowui5.rc:24
+#: core/utilities/survey/surveywindowui5.rc:21
 #, kde-format
 msgid "&View"
 msgstr "&มุมมอง"
@@ -2813,7 +2813,7 @@ msgstr "&มุมมอง"
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
-#: core/utilities/survey/surveywindowui5.rc:38
+#: core/utilities/survey/surveywindowui5.rc:35
 #, kde-format
 msgid "&Tools"
 msgstr "เ&ครื่องมือ"
@@ -2822,7 +2822,7 @@ msgstr "เ&ครื่องมือ"
 #: core/app/main/digikamui5.rc:138 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
-#: core/utilities/survey/surveywindowui5.rc:48
+#: core/utilities/survey/surveywindowui5.rc:45
 #, kde-format
 msgid "I&mport"
 msgstr "&นำเข้า"
@@ -2831,7 +2831,7 @@ msgstr "&นำเข้า"
 #: core/app/main/digikamui5.rc:151 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
-#: core/utilities/survey/surveywindowui5.rc:54
+#: core/utilities/survey/surveywindowui5.rc:51
 #, kde-format
 msgid "&Export"
 msgstr "&ส่งออก"
@@ -2842,7 +2842,7 @@ msgstr "&ส่งออก"
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:33
-#: core/utilities/survey/surveywindowui5.rc:60
+#: core/utilities/survey/surveywindowui5.rc:57
 #, kde-format
 msgid "&Settings"
 msgstr "&ตั้งค่า"
@@ -2853,7 +2853,7 @@ msgstr "&ตั้งค่า"
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:47
-#: core/utilities/survey/surveywindowui5.rc:75
+#: core/utilities/survey/surveywindowui5.rc:72
 #, kde-format
 msgid "&Help"
 msgstr "&ช่วยเหลือ"
@@ -2864,7 +2864,7 @@ msgstr "&ช่วยเหลือ"
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:64
-#: core/utilities/survey/surveywindowui5.rc:92
+#: core/utilities/survey/surveywindowui5.rc:89
 #, kde-format
 msgid "Main Toolbar"
 msgstr "แถบเครื่องมือหลัก"
@@ -61030,19 +61030,19 @@ msgid "Move to Trash without Confirmation"
 msgstr "ทิ้งลงถังขยะโดยไม่ถามยืนยัน"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
-#: core/utilities/survey/surveywindow_setup.cpp:184
+#: core/utilities/survey/surveywindow_setup.cpp:165
 #, fuzzy, kde-format
 msgid "Edit Titles"
 msgstr "แฟ้มภาพ"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:71
-#: core/utilities/survey/surveywindow_setup.cpp:189
+#: core/utilities/survey/surveywindow_setup.cpp:170
 #, fuzzy, kde-format
 msgid "Edit Comments"
 msgstr "การจัดการสี..."
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
-#: core/utilities/survey/surveywindow_setup.cpp:194
+#: core/utilities/survey/surveywindow_setup.cpp:175
 #, fuzzy, kde-format
 msgid "Show Assigned Tags"
 msgstr "ป้ายกำกับที่กำหนดไว้"
@@ -62866,14 +62866,14 @@ msgid "Remove all items from Light Table"
 msgstr "เอารายการทั้งหมดออกจากโต๊ะฉายแสง"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
-#: core/utilities/survey/surveywindow_setup.cpp:71
+#: core/utilities/survey/surveywindow_setup.cpp:60
 #, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
 msgstr "ทิ้งลงถังขยะ"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
-#: core/utilities/survey/surveywindow_setup.cpp:77
+#: core/utilities/survey/surveywindow_setup.cpp:66
 #, kde-format
 msgid "Delete immediately"
 msgstr "ลบออกทันที"
@@ -62899,45 +62899,42 @@ msgid "Navigate by pairs with all items"
 msgstr "ดูรายการทั้งหมดทีละคู่"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
-#: core/utilities/survey/surveywindow_setup.cpp:88
 #, kde-format
 msgid "Clear On Close"
 msgstr "ล้างเมื่อปิด"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
-#: core/utilities/survey/surveywindow_setup.cpp:91
 #, kde-format
 msgid "Clear light table when it is closed"
 msgstr "ล้างโต๊ะฉายแสงเมื่อมันถูกปิด"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
-#: core/utilities/survey/surveywindow_setup.cpp:92
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
 msgstr "เอารูปภาพทั้งหมดออกจากโต๊ะฉายแสงเมื่อมันถูกปิด"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
-#: core/utilities/survey/surveywindow_setup.cpp:133
+#: core/utilities/survey/surveywindow_setup.cpp:114
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "ปรับขนาดการดูเป็น 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:188
-#: core/utilities/survey/surveywindow_setup.cpp:138
+#: core/utilities/survey/surveywindow_setup.cpp:119
 #, kde-format
 msgid "Fit to &Window"
 msgstr "พอดีกับหน้าต่าง"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
-#: core/utilities/survey/surveywindow_setup.cpp:145
+#: core/utilities/survey/surveywindow_setup.cpp:126
 #, kde-format
 msgid "Color-Managed View"
 msgstr "แสดงผลร่วมกับการจัดการระบบสี"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
-#: core/utilities/survey/surveywindow_setup.cpp:175
+#: core/utilities/survey/surveywindow_setup.cpp:156
 #, kde-format
 msgid "Previous Image"
 msgstr "ภาพก่อน"
@@ -67120,7 +67117,6 @@ msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
-#: core/utilities/setup/setupsurvey.cpp:74
 #, kde-format
 msgid "Interface Options"
 msgstr "ตัวเลือกส่วนติดต่อ"
@@ -69828,19 +69824,6 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "แฟ้มภาพ"
 
-#: core/utilities/setup/setupsurvey.cpp:77
-#, fuzzy, kde-format
-#| msgid "Clear the light table on close"
-msgid "Clear the Survey on close"
-msgstr "ล้างโต๊ะฉายแสงเมื่อปิด"
-
-#: core/utilities/setup/setupsurvey.cpp:78
-#, kde-format
-msgid ""
-"Set this option to remove all images from the Survey when you close it, or "
-"unset it to preserve the images currently on the Survey."
-msgstr ""
-
 #: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid "Template Title:"
@@ -70278,24 +70261,27 @@ msgstr "จัดเ&รียงรูปภาพ"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:206
+#: core/utilities/survey/surveywindow.cpp:141
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 item on Survey"
 msgid_plural "%1 items on Survey"
 msgstr[0] "กำหนดการประมวลผลเอง"
 
-#: core/utilities/survey/surveywindow_setup.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
-msgid "Remove item from Survey Tool"
-msgstr "เอารายการออกจากโต๊ะฉายแสง"
+#, fuzzy
+#~| msgid "Clear the light table on close"
+#~ msgid "Clear the Survey on close"
+#~ msgstr "ล้างโต๊ะฉายแสงเมื่อปิด"
 
-#: core/utilities/survey/surveywindow_setup.cpp:65
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
-msgid "Remove all items from Survey Tool"
-msgstr "เอารายการทั้งหมดออกจากโต๊ะฉายแสง"
+#, fuzzy
+#~| msgid "Remove item from LightTable"
+#~ msgid "Remove item from Survey Tool"
+#~ msgstr "เอารายการออกจากโต๊ะฉายแสง"
+
+#, fuzzy
+#~| msgid "Remove all items from LightTable"
+#~ msgid "Remove all items from Survey Tool"
+#~ msgstr "เอารายการทั้งหมดออกจากโต๊ะฉายแสง"
 
 #, fuzzy
 #~| msgctxt "Content type"

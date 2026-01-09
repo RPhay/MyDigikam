@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-08 00:40+0000\n"
+"POT-Creation-Date: 2026-01-09 00:41+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1647,7 +1647,7 @@ msgstr "Αρχικοποίηση της Κύριας προβολής..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:288
+#: core/utilities/survey/surveywindow_setup.cpp:255
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
@@ -2726,7 +2726,7 @@ msgstr "&Επεξεργασία"
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:29
-#: core/utilities/survey/surveywindowui5.rc:24
+#: core/utilities/survey/surveywindowui5.rc:21
 #, kde-format
 msgid "&View"
 msgstr "Π&ροβολή"
@@ -2736,7 +2736,7 @@ msgstr "Π&ροβολή"
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
-#: core/utilities/survey/surveywindowui5.rc:38
+#: core/utilities/survey/surveywindowui5.rc:35
 #, kde-format
 msgid "&Tools"
 msgstr "Ερ&γαλεία"
@@ -2745,7 +2745,7 @@ msgstr "Ερ&γαλεία"
 #: core/app/main/digikamui5.rc:138 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
-#: core/utilities/survey/surveywindowui5.rc:48
+#: core/utilities/survey/surveywindowui5.rc:45
 #, kde-format
 msgid "I&mport"
 msgstr "Εισα&γωγή"
@@ -2754,7 +2754,7 @@ msgstr "Εισα&γωγή"
 #: core/app/main/digikamui5.rc:151 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
-#: core/utilities/survey/surveywindowui5.rc:54
+#: core/utilities/survey/surveywindowui5.rc:51
 #, kde-format
 msgid "&Export"
 msgstr "&Εξαγωγή"
@@ -2765,7 +2765,7 @@ msgstr "&Εξαγωγή"
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:33
-#: core/utilities/survey/surveywindowui5.rc:60
+#: core/utilities/survey/surveywindowui5.rc:57
 #, kde-format
 msgid "&Settings"
 msgstr "Ρ&υθμίσεις"
@@ -2776,7 +2776,7 @@ msgstr "Ρ&υθμίσεις"
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:47
-#: core/utilities/survey/surveywindowui5.rc:75
+#: core/utilities/survey/surveywindowui5.rc:72
 #, kde-format
 msgid "&Help"
 msgstr "&Βοήθεια"
@@ -2787,7 +2787,7 @@ msgstr "&Βοήθεια"
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:64
-#: core/utilities/survey/surveywindowui5.rc:92
+#: core/utilities/survey/surveywindowui5.rc:89
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Κύρια γραμμή εργαλείων"
@@ -64020,19 +64020,19 @@ msgid "Move to Trash without Confirmation"
 msgstr "Μετακίνηση στα απορρίμματα χωρίς επιβεβαίωση"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
-#: core/utilities/survey/surveywindow_setup.cpp:184
+#: core/utilities/survey/surveywindow_setup.cpp:165
 #, kde-format
 msgid "Edit Titles"
 msgstr "Επεξεργασία τίτλων"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:71
-#: core/utilities/survey/surveywindow_setup.cpp:189
+#: core/utilities/survey/surveywindow_setup.cpp:170
 #, kde-format
 msgid "Edit Comments"
 msgstr "Επεξεργασία σχολίων"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
-#: core/utilities/survey/surveywindow_setup.cpp:194
+#: core/utilities/survey/surveywindow_setup.cpp:175
 #, kde-format
 msgid "Show Assigned Tags"
 msgstr "Εμφάνιση αντιστοιχισμένων ετικετών"
@@ -65958,14 +65958,14 @@ msgid "Remove all items from Light Table"
 msgstr "Αφαίρεση όλων των αντικειμένων από τον φωτεινό πίνακα"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
-#: core/utilities/survey/surveywindow_setup.cpp:71
+#: core/utilities/survey/surveywindow_setup.cpp:60
 #, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
 msgstr "Μετακίνηση στα απορρίμματα"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
-#: core/utilities/survey/surveywindow_setup.cpp:77
+#: core/utilities/survey/surveywindow_setup.cpp:66
 #, kde-format
 msgid "Delete immediately"
 msgstr "Άμεση διαγραφή"
@@ -65991,19 +65991,16 @@ msgid "Navigate by pairs with all items"
 msgstr "Πλοήγηση ανά ζεύγη με όλα τα αντικείμενα"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
-#: core/utilities/survey/surveywindow_setup.cpp:88
 #, kde-format
 msgid "Clear On Close"
 msgstr "Καθαρισμός στο κλείσιμο"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
-#: core/utilities/survey/surveywindow_setup.cpp:91
 #, kde-format
 msgid "Clear light table when it is closed"
 msgstr "Καθαρισμός φωτεινού πίνακα όταν είναι κλειστός"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
-#: core/utilities/survey/surveywindow_setup.cpp:92
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
 msgstr ""
@@ -66011,26 +66008,26 @@ msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
-#: core/utilities/survey/surveywindow_setup.cpp:133
+#: core/utilities/survey/surveywindow_setup.cpp:114
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Εστίαση στο 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:188
-#: core/utilities/survey/surveywindow_setup.cpp:138
+#: core/utilities/survey/surveywindow_setup.cpp:119
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Προσαρμογή στο &παράθυρο"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
-#: core/utilities/survey/surveywindow_setup.cpp:145
+#: core/utilities/survey/surveywindow_setup.cpp:126
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Προβολή με διαχείριση χρωμάτων"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
-#: core/utilities/survey/surveywindow_setup.cpp:175
+#: core/utilities/survey/surveywindow_setup.cpp:156
 #, kde-format
 msgid "Previous Image"
 msgstr "Προηγούμενη εικόνα"
@@ -70515,7 +70512,6 @@ msgstr "Ρυθμίσεις εικόνας"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
-#: core/utilities/setup/setupsurvey.cpp:74
 #, kde-format
 msgid "Interface Options"
 msgstr "Επιλογές περιβάλλοντος"
@@ -73529,25 +73525,6 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Αρχεία εικόνας"
 
-#: core/utilities/setup/setupsurvey.cpp:77
-#, fuzzy, kde-format
-#| msgid "Clear the light table on close"
-msgid "Clear the Survey on close"
-msgstr "Καθαρισμός φωτεινού πίνακα στο κλείσιμο"
-
-#: core/utilities/setup/setupsurvey.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to remove all images from the light table when you close "
-#| "it, or unset it to preserve the images currently on the light table."
-msgid ""
-"Set this option to remove all images from the Survey when you close it, or "
-"unset it to preserve the images currently on the Survey."
-msgstr ""
-"Ενεργοποιήστε αυτήν την επιλογή για την αφαίρεση όλων των εικόνων από τον "
-"φωτεινό πίνακα κατά το κλείσιμο ή απενεργοποιήστε την για να διατηρήσετε τις "
-"εικόνες στον φωτεινό πίνακα."
-
 #: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid "Template Title:"
@@ -74000,7 +73977,7 @@ msgstr "Εισαγωγή αντικειμένων"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:206
+#: core/utilities/survey/surveywindow.cpp:141
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 item on Survey"
@@ -74008,17 +73985,32 @@ msgid_plural "%1 items on Survey"
 msgstr[0] "Προσαρμοσμένη επεξεργασία"
 msgstr[1] "Προσαρμοσμένη επεξεργασία"
 
-#: core/utilities/survey/surveywindow_setup.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
-msgid "Remove item from Survey Tool"
-msgstr "Αφαίρεση αντικειμένου από τον φωτεινό πίνακα"
+#, fuzzy
+#~| msgid "Clear the light table on close"
+#~ msgid "Clear the Survey on close"
+#~ msgstr "Καθαρισμός φωτεινού πίνακα στο κλείσιμο"
 
-#: core/utilities/survey/surveywindow_setup.cpp:65
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
-msgid "Remove all items from Survey Tool"
-msgstr "Αφαίρεση όλων των αντικειμένων από τον φωτεινό πίνακα"
+#, fuzzy
+#~| msgid ""
+#~| "Set this option to remove all images from the light table when you close "
+#~| "it, or unset it to preserve the images currently on the light table."
+#~ msgid ""
+#~ "Set this option to remove all images from the Survey when you close it, "
+#~ "or unset it to preserve the images currently on the Survey."
+#~ msgstr ""
+#~ "Ενεργοποιήστε αυτήν την επιλογή για την αφαίρεση όλων των εικόνων από τον "
+#~ "φωτεινό πίνακα κατά το κλείσιμο ή απενεργοποιήστε την για να διατηρήσετε "
+#~ "τις εικόνες στον φωτεινό πίνακα."
+
+#, fuzzy
+#~| msgid "Remove item from LightTable"
+#~ msgid "Remove item from Survey Tool"
+#~ msgstr "Αφαίρεση αντικειμένου από τον φωτεινό πίνακα"
+
+#, fuzzy
+#~| msgid "Remove all items from LightTable"
+#~ msgid "Remove all items from Survey Tool"
+#~ msgstr "Αφαίρεση όλων των αντικειμένων από τον φωτεινό πίνακα"
 
 #, fuzzy
 #~| msgctxt "Content type"

@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2026-01-06 01:56+0100\n"
+"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"PO-Revision-Date: 2026-01-09 01:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1589,7 +1589,7 @@ msgstr "Inicializando la vista principal…"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:288
+#: core/utilities/survey/surveywindow_setup.cpp:255
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1853,7 +1853,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr ""
+msgstr "Sondeo"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -2655,7 +2655,7 @@ msgstr "&Editar"
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:29
-#: core/utilities/survey/surveywindowui5.rc:24
+#: core/utilities/survey/surveywindowui5.rc:21
 #, kde-format
 msgid "&View"
 msgstr "&Ver"
@@ -2665,7 +2665,7 @@ msgstr "&Ver"
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
-#: core/utilities/survey/surveywindowui5.rc:38
+#: core/utilities/survey/surveywindowui5.rc:35
 #, kde-format
 msgid "&Tools"
 msgstr "&Herramientas"
@@ -2674,7 +2674,7 @@ msgstr "&Herramientas"
 #: core/app/main/digikamui5.rc:138 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
-#: core/utilities/survey/surveywindowui5.rc:48
+#: core/utilities/survey/surveywindowui5.rc:45
 #, kde-format
 msgid "I&mport"
 msgstr "I&mportar"
@@ -2683,7 +2683,7 @@ msgstr "I&mportar"
 #: core/app/main/digikamui5.rc:151 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
-#: core/utilities/survey/surveywindowui5.rc:54
+#: core/utilities/survey/surveywindowui5.rc:51
 #, kde-format
 msgid "&Export"
 msgstr "&Exportar"
@@ -2694,7 +2694,7 @@ msgstr "&Exportar"
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:33
-#: core/utilities/survey/surveywindowui5.rc:60
+#: core/utilities/survey/surveywindowui5.rc:57
 #, kde-format
 msgid "&Settings"
 msgstr "&Preferencias"
@@ -2705,7 +2705,7 @@ msgstr "&Preferencias"
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:47
-#: core/utilities/survey/surveywindowui5.rc:75
+#: core/utilities/survey/surveywindowui5.rc:72
 #, kde-format
 msgid "&Help"
 msgstr "&Ayuda"
@@ -2716,7 +2716,7 @@ msgstr "&Ayuda"
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:64
-#: core/utilities/survey/surveywindowui5.rc:92
+#: core/utilities/survey/surveywindowui5.rc:89
 #, kde-format
 msgid "Main Toolbar"
 msgstr "Barra de herramientas principal"
@@ -12733,7 +12733,7 @@ msgstr "Opinión"
 #, kde-format
 msgctxt "Content type"
 msgid "Polls and Surveys"
-msgstr "Encuestas e investigación"
+msgstr "Sondeos e investigación"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
@@ -16071,7 +16071,7 @@ msgstr "Opinión"
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Polls & Surveys"
-msgstr "Encuestas y sondeos"
+msgstr "Sondeos e investigación"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
 #, kde-format
@@ -59875,19 +59875,19 @@ msgid "Move to Trash without Confirmation"
 msgstr "Mover a la papelera sin confirmación"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
-#: core/utilities/survey/surveywindow_setup.cpp:184
+#: core/utilities/survey/surveywindow_setup.cpp:165
 #, kde-format
 msgid "Edit Titles"
 msgstr "Editar títulos"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:71
-#: core/utilities/survey/surveywindow_setup.cpp:189
+#: core/utilities/survey/surveywindow_setup.cpp:170
 #, kde-format
 msgid "Edit Comments"
 msgstr "Editar comentarios"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
-#: core/utilities/survey/surveywindow_setup.cpp:194
+#: core/utilities/survey/surveywindow_setup.cpp:175
 #, kde-format
 msgid "Show Assigned Tags"
 msgstr "Mostrar las etiquetas asignadas"
@@ -61687,14 +61687,14 @@ msgid "Remove all items from Light Table"
 msgstr "Eliminar todos los elementos de la mesa de luz"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
-#: core/utilities/survey/surveywindow_setup.cpp:71
+#: core/utilities/survey/surveywindow_setup.cpp:60
 #, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
 msgstr "Mover a la papelera"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
-#: core/utilities/survey/surveywindow_setup.cpp:77
+#: core/utilities/survey/surveywindow_setup.cpp:66
 #, kde-format
 msgid "Delete immediately"
 msgstr "Eliminar inmediatamente"
@@ -61720,45 +61720,42 @@ msgid "Navigate by pairs with all items"
 msgstr "Navegar por pares con todos los elementos"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
-#: core/utilities/survey/surveywindow_setup.cpp:88
 #, kde-format
 msgid "Clear On Close"
 msgstr "Limpiar al cerrar"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
-#: core/utilities/survey/surveywindow_setup.cpp:91
 #, kde-format
 msgid "Clear light table when it is closed"
 msgstr "Limpiar la mesa de luz cuando se cierre"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
-#: core/utilities/survey/surveywindow_setup.cpp:92
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
 msgstr "Eliminar todas las imágenes de la mesa de luz cuando se cierre"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
-#: core/utilities/survey/surveywindow_setup.cpp:133
+#: core/utilities/survey/surveywindow_setup.cpp:114
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Zoom al 100 %"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:188
-#: core/utilities/survey/surveywindow_setup.cpp:138
+#: core/utilities/survey/surveywindow_setup.cpp:119
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Ajustar a la &ventana"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
-#: core/utilities/survey/surveywindow_setup.cpp:145
+#: core/utilities/survey/surveywindow_setup.cpp:126
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Vista gestionada por color"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
-#: core/utilities/survey/surveywindow_setup.cpp:175
+#: core/utilities/survey/surveywindow_setup.cpp:156
 #, kde-format
 msgid "Previous Image"
 msgstr "Imagen anterior"
@@ -65878,7 +65875,6 @@ msgstr "Guardar preferencias"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
-#: core/utilities/setup/setupsurvey.cpp:74
 #, kde-format
 msgid "Interface Options"
 msgstr "Opciones de la interfaz"
@@ -68230,21 +68226,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr ""
+msgstr "Sondeo"
 
 #: core/utilities/setup/setup.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare items"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
 msgstr ""
-"Preferencias de la mesa de luz\n"
-"Personalizar la herramienta de comparación de elementos"
+"Preferencias del sondeo\n"
+"Personalizar la herramienta que se usa para revisar elementos"
 
 #: core/utilities/setup/setup.cpp:189
 #, kde-format
@@ -68841,24 +68833,6 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Cargadores de imágenes"
 
-#: core/utilities/setup/setupsurvey.cpp:77
-#, fuzzy, kde-format
-#| msgid "Clear the light table on close"
-msgid "Clear the Survey on close"
-msgstr "Limpiar la mesa de luz al cerrar"
-
-#: core/utilities/setup/setupsurvey.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to remove all images from the light table when you close "
-#| "it, or unset it to preserve the images currently on the light table."
-msgid ""
-"Set this option to remove all images from the Survey when you close it, or "
-"unset it to preserve the images currently on the Survey."
-msgstr ""
-"Use esta opción para quitar todas las imágenes de la mesa de luz cuando la "
-"cierre, o si no la usa, preservará las imágenes en la mesa de luz."
-
 #: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid "Template Title:"
@@ -69274,67 +69248,33 @@ msgstr "Elementos importados"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr ""
+msgstr "Sondeo"
 
-#: core/utilities/survey/surveywindow.cpp:206
-#, fuzzy, kde-format
-#| msgid "%1 items to process"
+#: core/utilities/survey/surveywindow.cpp:141
+#, kde-format
 msgid "%1 item on Survey"
 msgid_plural "%1 items on Survey"
-msgstr[0] "%1 elementos a procesar"
-msgstr[1] "%1 elementos a procesar"
+msgstr[0] "%1 elemento en el sondeo"
+msgstr[1] "%1 elementos en el sondeo"
 
-#: core/utilities/survey/surveywindow_setup.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove item from Light Table"
-msgid "Remove item from Survey Tool"
-msgstr "Eliminar elemento de la mesa de luz"
+#~| msgid "Clear the light table on close"
+#~ msgid "Clear the Survey on close"
+#~ msgstr "Limpiar el sondeo al cerrar"
 
-#: core/utilities/survey/surveywindow_setup.cpp:65
-#, fuzzy, kde-format
-#| msgid "Remove all items from Light Table"
-msgid "Remove all items from Survey Tool"
-msgstr "Eliminar todos los elementos de la mesa de luz"
-
-#, fuzzy
-#~| msgctxt "Content type"
-#~| msgid "Polls and Surveys"
-#~ msgctxt "@action: setup"
-#~ msgid "Place onto Survey"
-#~ msgstr "Encuestas e investigación"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Place the selected items on the light table thumbbar."
-#~ msgctxt "@info: setup"
-#~ msgid "Place the selected items on the survey thumbbar."
+#~| msgid ""
+#~| "Set this option to remove all images from the light table when you close "
+#~| "it, or unset it to preserve the images currently on the light table."
+#~ msgid ""
+#~ "Set this option to remove all images from the Survey when you close it, "
+#~ "or unset it to preserve the images currently on the Survey."
 #~ msgstr ""
-#~ "Colocar los elementos seleccionados en la barra de miniaturas de la mesa "
-#~ "de luz."
+#~ "Marque esta opción para quitar todas las imágenes del sondeo cuando lo "
+#~ "cierre, o desmárquela para preservar las imágenes en el sondeo."
 
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Add Texture"
-#~ msgctxt "@action: setup"
-#~ msgid "Add to Survey"
-#~ msgstr "Añadir textura"
+#~| msgid "Remove item from Light Table"
+#~ msgid "Remove item from Survey Tool"
+#~ msgstr "Eliminar elemento de la herramienta de sondeo"
 
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Add selected items to the light table thumbbar."
-#~ msgctxt "@info: setup"
-#~ msgid "Add selected items to the survey thumbbar."
-#~ msgstr ""
-#~ "Añadir los elementos seleccionados a la barra de miniaturas de la mesa de "
-#~ "luz."
-
-#, fuzzy
-#~| msgid "Adding items to the Light Table"
-#~ msgid "Adding items to the Survey"
-#~ msgstr "Añadir elementos a la mesa de luz"
-
-#, fuzzy
-#~| msgctxt "Content type"
-#~| msgid "Polls and Surveys"
-#~ msgid "Show on Survey"
-#~ msgstr "Encuestas e investigación"
+#~| msgid "Remove all items from Light Table"
+#~ msgid "Remove all items from Survey Tool"
+#~ msgstr "Eliminar todos los elementos de la herramienta de sondeo"

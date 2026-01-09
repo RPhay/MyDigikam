@@ -6,14 +6,14 @@
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # Abdalrahim G. Fakhouri <abdilra7eem@yahoo.com>, 2014.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2017, 2018.
-# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-08 00:40+0000\n"
-"PO-Revision-Date: 2025-12-27 10:38+0400\n"
+"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"PO-Revision-Date: 2026-01-08 14:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1670,7 +1670,7 @@ msgstr "يمهّد النّافذة الرّئيسيّة..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:288
+#: core/utilities/survey/surveywindow_setup.cpp:255
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1928,7 +1928,7 @@ msgstr "أضف العناصر المحدّدة إلى شريط مصغّرات ا
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr ""
+msgstr "الاستقصاء"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -2718,7 +2718,7 @@ msgstr "ت&حرير"
 #: core/utilities/import/main/importui5.rc:43
 #: core/utilities/lighttable/lighttablewindowui5.rc:26
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:29
-#: core/utilities/survey/surveywindowui5.rc:24
+#: core/utilities/survey/surveywindowui5.rc:21
 #, kde-format
 msgid "&View"
 msgstr "من&ظور"
@@ -2728,7 +2728,7 @@ msgstr "من&ظور"
 #: core/utilities/imageeditor/main/imageeditorui5.rc:93
 #: core/utilities/lighttable/lighttablewindowui5.rc:51
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:22
-#: core/utilities/survey/surveywindowui5.rc:38
+#: core/utilities/survey/surveywindowui5.rc:35
 #, kde-format
 msgid "&Tools"
 msgstr "أ&دوات"
@@ -2737,7 +2737,7 @@ msgstr "أ&دوات"
 #: core/app/main/digikamui5.rc:138 core/showfoto/main/showfotoui5.rc:102
 #: core/utilities/imageeditor/main/imageeditorui5.rc:103
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
-#: core/utilities/survey/surveywindowui5.rc:48
+#: core/utilities/survey/surveywindowui5.rc:45
 #, kde-format
 msgid "I&mport"
 msgstr "اس&تيراد"
@@ -2746,7 +2746,7 @@ msgstr "اس&تيراد"
 #: core/app/main/digikamui5.rc:151 core/showfoto/main/showfotoui5.rc:108
 #: core/utilities/imageeditor/main/imageeditorui5.rc:109
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
-#: core/utilities/survey/surveywindowui5.rc:54
+#: core/utilities/survey/surveywindowui5.rc:51
 #, kde-format
 msgid "&Export"
 msgstr "ت&صدير"
@@ -2757,7 +2757,7 @@ msgstr "ت&صدير"
 #: core/utilities/import/main/importui5.rc:63
 #: core/utilities/lighttable/lighttablewindowui5.rc:73
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:33
-#: core/utilities/survey/surveywindowui5.rc:60
+#: core/utilities/survey/surveywindowui5.rc:57
 #, kde-format
 msgid "&Settings"
 msgstr "إ&عدادات"
@@ -2768,7 +2768,7 @@ msgstr "إ&عدادات"
 #: core/utilities/import/main/importui5.rc:78
 #: core/utilities/lighttable/lighttablewindowui5.rc:88
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:47
-#: core/utilities/survey/surveywindowui5.rc:75
+#: core/utilities/survey/surveywindowui5.rc:72
 #, kde-format
 msgid "&Help"
 msgstr "مساع&دة"
@@ -2779,10 +2779,10 @@ msgstr "مساع&دة"
 #: core/utilities/import/main/importui5.rc:94
 #: core/utilities/lighttable/lighttablewindowui5.rc:105
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:64
-#: core/utilities/survey/surveywindowui5.rc:92
+#: core/utilities/survey/surveywindowui5.rc:89
 #, kde-format
 msgid "Main Toolbar"
-msgstr "شريط الأدوات الرّئيسيّ"
+msgstr "شريط الأدوات الرّئيس"
 
 #: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
@@ -2914,11 +2914,9 @@ msgid "format settings"
 msgstr "إعدادات الصيغة"
 
 #: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info: week properties"
-#| msgid "Start: "
+#, kde-format
 msgid "Support: "
-msgstr "البداية: "
+msgstr "الدعم: "
 
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
@@ -2926,17 +2924,14 @@ msgid "Documentation: "
 msgstr "التّوثيق: "
 
 #: core/app/utils/digikam_version.cpp:66
-#, fuzzy, kde-format
-#| msgid "Contribute..."
+#, kde-format
 msgid "Contribute: "
-msgstr "ساهم..."
+msgstr "ساهم: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Date: "
+#, kde-format
 msgid "Donate: "
-msgstr "التّاريخ: "
+msgstr "تبرّع: "
 
 #: core/app/views/preview/itempreviewview.cpp:174
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
@@ -6470,12 +6465,10 @@ msgstr ""
 "العميق.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Template"
-msgstr "تطبيق قالب البيانات الوصفية"
+msgstr "طبّق قالبًا"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -6753,12 +6746,10 @@ msgid "Auto-Rotate"
 msgstr "تدوير آليّ"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "AI tool to automatically rotate images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically rotate images"
-msgstr "أداة ذكاء اصطناعي لتدوير الصور آليًا"
+msgstr "أداة لتدوير الصور آليًا"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
 #, kde-kuit-format
@@ -21926,33 +21917,27 @@ msgid "Behavior"
 msgstr "السّلوك"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
-#, fuzzy, kde-format
-#| msgid "Delay between images:"
+#, kde-format
 msgid "Delay between items: "
-msgstr "التّأخير بين الصّور:"
+msgstr "التّأخير بين العناصر: "
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgid "The delay, in seconds, between items."
-msgstr "التأخير، بالثواني، بين الصور."
+msgstr "التأخير، بالثواني، بين العناصر."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "Start with current image"
+#, kde-format
 msgid "Start with current item"
-msgstr "ابدأ بالصّورة الحاليّة"
+msgstr "ابدأ بالعنصر الحالي"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
-#, fuzzy, kde-format
-#| msgid ""
-#| "If this option is enabled, the Slideshow will be started with the current "
-#| "image selected in the images list."
+#, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
 msgstr ""
-"إن فُعّل هذا الخيار، سيبدأ عرض الشّرائح بالصّورة المحدّدة حاليًّا في قائمة الصّور."
+"إن فُعّل هذا الخيار، يبدأ عرض الشّرائح بالعنصر المحدّد حاليًّا في قائمة العناصر."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
@@ -21965,10 +21950,9 @@ msgid "Run the slideshow in a loop."
 msgstr "شغل عرض الشرائح في حلقة."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Shuffle images"
+#, kde-format
 msgid "Shuffle items"
-msgstr "اخلط الصّور"
+msgstr "اخلط العناصر"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
@@ -21987,44 +21971,36 @@ msgid ""
 msgstr "أظهر مؤشر تقدم مع العناصر المعلقة للعرض وتقدم الوقت."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Show labels editor"
-msgstr "اعرض مؤشر التقدم"
+msgstr "أظهر محرر اللصائق"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the digiKam image color label and pick label at the bottom of the "
-#| "screen."
+#, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
-msgstr "اعرض ملصق لون صورة دجيكام واختر الملصق في أسفل الشاشة."
+msgstr "أظهر محررات لصائق ألوان ولصائق اختيار عناصر دجي كام في أسفل الشاشة."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Show rating editor"
-msgstr "أظهر مؤشر تحديد الموقع الجغرافي"
+msgstr "أظهر محرر التقييم"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image rating at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
-msgstr "أظهر تقييم صورة دجيكام في أسفل الشاشة."
+msgstr "أظهر محرر تقييم عناصر دجي كام في أسفل الشاشة."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Use background color for images:"
+#, kde-format
 msgid "Use background color for items:"
-msgstr "ا&ستخدم لون خلفيّة للصور:"
+msgstr "استخدم لون خلفيّة للعناصر:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "Define a color to use as background to render images on screen."
+#, kde-format
 msgid "Define a color to use as background to render items on screen."
-msgstr "عيّن لون ليستخدم خلفيّة لعرض الصور على الشاشة."
+msgstr "حدد لونًا ليُستخدم كخلفية لعرض العناصر على الشاشة."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
@@ -22056,16 +22032,13 @@ msgid "Screen %1"
 msgstr "الشاشة %1"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
-#| "time with the F2 key.</b>"
+#, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the Alt+P key.</b>"
 msgstr ""
-"<b>ملاحظة: حوار إعدادات عرض الشرائح هذا تستطيع تفعيله في أي وقت باستخدام "
-"مفتاح F2.</b>"
+"<b>ملاحظة: حوار إعدادات عرض الشرائح هذا يمكن تفعيله في أي وقت باستخدام مفتاح "
+"Alt+P.</b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
 #, kde-format
@@ -28781,9 +28754,7 @@ msgid "Database Configuration"
 msgstr "ضبط قاعدة البيانات"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Type: "
+#, kde-format
 msgid "Type: "
 msgstr "النّوع: "
 
@@ -28838,41 +28809,25 @@ msgstr ""
 "الضخمة التي بها أكثر من 100 ألف عنصر.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Type</b>"
-msgstr "احصل على معلومات حول <b>حدّث تلبيدات الملف</b>"
+msgstr "احصل على معلومات حول <b>نوع قاعدة البيانات</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Path: %1"
+#, kde-format
 msgctxt "@label:database path"
 msgid "Path: "
-msgstr "المسار: %1"
+msgstr "المسار: "
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Path</b>"
-msgstr "احصل على معلومات حول <b>حدّث تلبيدات الملف</b>"
+msgstr "احصل على معلومات حول <b>مسار قاعدة البيانات</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
-#| "NVMe) with enough free space especially for thumbnails database.</"
-#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
-#| "performance reasons, it is also recommended not to use network storage "
-#| "media.</p><p></p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
@@ -28893,7 +28848,7 @@ msgstr ""
 "جهاز سريع (مثل إس إس دي أو إن في إم إي) مع مساحة حرة كافية خاصة لقاعدة "
 "بيانات الصور المصغرة.</p><p>ملاحظة: نظام ملفات بعيد مثل إن إف إس، لا أقدر "
 "على استخدامه هنا. لأسباب تتعلق بالأداء، يوصى أيضًا بعدم استخدام وسائط تخزين "
-"الشبكة.</p><p></p>"
+"الشبكة.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
@@ -28910,12 +28865,10 @@ msgstr ""
 "المدعومة."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>WAL Mode</b>"
-msgstr "احصل على معلومات حول <b>حدّث تلبيدات الملف</b>"
+msgstr "احصل على معلومات حول <b>وضع WAL</b>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
@@ -29300,11 +29253,10 @@ msgid "The similarity database name is empty"
 msgstr "اسم قاعدة بيانات التشابه فارغ"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
-#, fuzzy, kde-format
-#| msgid "This path was set as a command lineoption (--database-directory)."
+#, kde-format
 msgid ""
 "<p>This path was set as a command lineoption (--database-directory).</p>"
-msgstr "هذا المسار ضبط كخيار سطر أوامر (--database-directory)."
+msgstr "<p>هذا المسار ضُبط كخيار سطر أوامر (--database-directory).</p"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
@@ -41093,28 +41045,24 @@ msgid "Usages:"
 msgstr "الاستخدامات:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Show image file name"
+#, kde-format
 msgid "Show item file name"
-msgstr "أظهر اسم ملفّ الصّورة"
+msgstr "أظهر اسم ملف العنصر"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
+#, kde-format
 msgid "Show the item file name at the bottom of the screen."
-msgstr "أظهر اسم ملفّ الصّورة أسفل الشّاشة."
+msgstr "أظهر اسم ملف العنصر في أسفل الشاشة."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgid "Show item creation date"
-msgstr "أظهر تاريخ إنشاء الصّورة"
+msgstr "أظهر تاريخ إنشاء العنصر"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
+#, kde-format
 msgid "Show the item creation time/date at the bottom of the screen."
-msgstr "أظهر تاريخ/وقت إنشاء الصّورة أسفل الشّاشة."
+msgstr "أظهر وقت/تاريخ إنشاء العنصر في أسفل الشاشة."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:78
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
@@ -41160,65 +41108,54 @@ msgid "Show the camera lens model at the bottom of the screen."
 msgstr "أظهر طراز عدسة الكاميرا في أسفل الشاشة."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show item caption"
-msgstr "أظهر واصفة الصّورة"
+msgstr "أظهر واصفة العنصر"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen."
-msgstr "أظهر واصفة الصّورة أسفل الشّاشة."
+msgstr "أظهر واصفة العنصر في أسفل الشاشة."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show item title"
-msgstr "أظهر عنوان الصّورة"
+msgstr "أظهر عنوان العنصر"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgid "Show the item title at the bottom of the screen."
-msgstr "أظهر عنوان الصّورة أسفل الشّاشة."
+msgstr "أظهر عنوان العنصر في أسفل الشاشة."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
+#, kde-format
 msgid "Show item caption if it has not title"
-msgstr "أظهر تعليق الصورة إذا لم يكن لها عنوان"
+msgstr "أظهر واصفة العنصر إذا لم يكن له عنوان"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen if no titles existed."
-msgstr "أظهر واصفة الصّورة أسفل الشّاشة إن لم توجد عناوين."
+msgstr "أظهر واصفة العنصر في أسفل الشاشة إن لم توجد عناوين."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgid "Show item tags"
-msgstr "أظهر وسوم الصّورة"
+msgstr "أظهر وسوم العنصر"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item tag names at the bottom of the screen."
-msgstr "أظهر أسماء وسوم الصّورة ل‍«دِجي‌كام» أسفل الشّاشة."
+msgstr "أظهر أسماء وسوم عناصر دجي كام في أسفل الشاشة."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "الشّهر القادم"
+msgstr "خطّ النّصّ:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#, kde-format
 msgid "Select here the font used to display OSD text over the slideshow."
-msgstr "اختر هنا الخط المستخدم لعرض النص في عرض الشرائح."
+msgstr "اختر هنا الخط المستخدم لعرض نص OSD فوق عرض الشرائح."
 
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
@@ -43279,9 +43216,7 @@ msgstr[5] ""
 "%1 صورة محددة"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:405
-#, fuzzy, kde-format
-#| msgctxt "date of last image modification"
-#| msgid "Mod.: %1"
+#, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
 msgstr "عُدّلت: %1"
@@ -50392,26 +50327,21 @@ msgstr "استخدم سمة الأيقونات من النّظام"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "معلومات التاريخ والوقت"
+msgstr "تنسيق التاريخ والوقت (%1):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in whole application."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
-msgstr "اختر هنا الخط المستخدم لعرض النص في كل التطبيق."
+msgstr "تُستخدم هذه السلسلة كتنسيق للتاريخ والوقت في كامل التطبيق."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "اكتب التاريخ والوقت الصحيحين لكل صورة"
+msgstr "يعود إلى تنسيق التاريخ والوقت المحلي القصير"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -58888,19 +58818,19 @@ msgid "Move to Trash without Confirmation"
 msgstr "انقل إلى المهملات دون تأكيد"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
-#: core/utilities/survey/surveywindow_setup.cpp:184
+#: core/utilities/survey/surveywindow_setup.cpp:165
 #, kde-format
 msgid "Edit Titles"
 msgstr "حرّر العناوين"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:71
-#: core/utilities/survey/surveywindow_setup.cpp:189
+#: core/utilities/survey/surveywindow_setup.cpp:170
 #, kde-format
 msgid "Edit Comments"
 msgstr "حرّر التّعليقات"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
-#: core/utilities/survey/surveywindow_setup.cpp:194
+#: core/utilities/survey/surveywindow_setup.cpp:175
 #, kde-format
 msgid "Show Assigned Tags"
 msgstr "أظهر الوسوم المسندة"
@@ -60681,14 +60611,14 @@ msgid "Remove all items from Light Table"
 msgstr "أزل جميع العناصر من جدول الإضاءة"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
-#: core/utilities/survey/surveywindow_setup.cpp:71
+#: core/utilities/survey/surveywindow_setup.cpp:60
 #, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
 msgstr "انقل إلى المهملات"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
-#: core/utilities/survey/surveywindow_setup.cpp:77
+#: core/utilities/survey/surveywindow_setup.cpp:66
 #, kde-format
 msgid "Delete immediately"
 msgstr "احذف مباشرة"
@@ -60714,45 +60644,42 @@ msgid "Navigate by pairs with all items"
 msgstr "تصفح بالأزواج مع جميع العناصر"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:118
-#: core/utilities/survey/surveywindow_setup.cpp:88
 #, kde-format
 msgid "Clear On Close"
 msgstr "امحُ عند الإغلاق"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
-#: core/utilities/survey/surveywindow_setup.cpp:91
 #, kde-format
 msgid "Clear light table when it is closed"
 msgstr "امحُ ما على الطّاولة الضّوئيّة إن أُغلقت"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
-#: core/utilities/survey/surveywindow_setup.cpp:92
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
 msgstr "أزل كلّ الصّور من على الطّاولة الضّوئيّة إن أُغلقت"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
-#: core/utilities/survey/surveywindow_setup.cpp:133
+#: core/utilities/survey/surveywindow_setup.cpp:114
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "اجعل مستوى التّقريب 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:188
-#: core/utilities/survey/surveywindow_setup.cpp:138
+#: core/utilities/survey/surveywindow_setup.cpp:119
 #, kde-format
 msgid "Fit to &Window"
 msgstr "لائم إلى النّا&فذة"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
-#: core/utilities/survey/surveywindow_setup.cpp:145
+#: core/utilities/survey/surveywindow_setup.cpp:126
 #, kde-format
 msgid "Color-Managed View"
 msgstr "عرض إدارة الألوان"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
-#: core/utilities/survey/surveywindow_setup.cpp:175
+#: core/utilities/survey/surveywindow_setup.cpp:156
 #, kde-format
 msgid "Previous Image"
 msgstr "الصّورة السّابقة"
@@ -63155,10 +63082,9 @@ msgid "Show file&name"
 msgstr "أظهر ا&سم الملفّ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:130
-#, fuzzy, kde-format
-#| msgid "Set this option to show the filename below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the filename below the thumbnail."
-msgstr "اضبط هذا الخيار لعرض اسم الملفّ مع مصغّرة الصّورة."
+msgstr "اضبط هذا الخيار لعرض اسم الملف أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:132
 #: core/utilities/setup/camera/setupcamera.cpp:432
@@ -63167,10 +63093,9 @@ msgid "Show file si&ze"
 msgstr "أظهر ح&جم الملفّ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:133
-#, fuzzy, kde-format
-#| msgid "Set this option to show the file size below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the file size below the thumbnail."
-msgstr "اضبط هذا الخيار لعرض حجم الملفّ مع مصغّرة الصّورة."
+msgstr "اضبط هذا الخيار لعرض حجم الملف أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:135
 #: core/utilities/setup/camera/setupcamera.cpp:435
@@ -63179,10 +63104,7 @@ msgid "Show camera creation &date"
 msgstr "أظهر تاريخ إنشاء الكاميرا (&d)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the camera creation date below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr "اضبط هذا الخيار لإظهار تاريخ إنشاء الكاميرا أسفل الصورة المصغرة."
 
@@ -63192,57 +63114,44 @@ msgid "Show file &modification date"
 msgstr "أظهر تاريخ ت&عديل الملفّ"
 
 #: core/utilities/setup/album/setupalbumview.cpp:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the file modification date below the image "
-#| "thumbnail if it is different than camera creation date. This option is "
-#| "useful to identify quickly which items have been modified."
+#, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
 "is different than camera creation date. This option is useful to identify "
 "quickly which items have been modified."
 msgstr ""
 "اضبط هذا الخيار لإظهار تاريخ تعديل الملف أسفل الصورة المصغرة إن كان مختلفًا "
-"عن تاريخ إنشاء الكاميرا. هذا الخيار مفيد للتعرف آليًّا على العناصر التي عدّلت."
+"عن تاريخ إنشاء الكاميرا. هذا الخيار مفيد للتعرف سريعًا على العناصر التي عُدّلت."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Show image dimensions"
+#, kde-format
 msgid "Show item dimensions"
-msgstr "أظهر أبعاد الصّورة"
+msgstr "أظهر أبعاد العنصر"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image size in pixels below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the item size in pixels below the thumbnail."
-msgstr "اضبط هذا الخيار لعرض حجم الصّورة (بالبكسل) مع مصغّرة الصّورة."
+msgstr "اضبط هذا الخيار لعرض حجم العنصر بالبكسل أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
-#, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#, kde-format
 msgid "Show item aspect ratio"
-msgstr "أظهر نسبة الصّورة الباعيّة"
+msgstr "أظهر النسبة الباعية للعنصر"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image aspect ratio below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the item aspect ratio below the thumbnail."
-msgstr "اضبط هذا الخيار لعرض نسبة الصّورة الباعيّة مع مصغّرة الصّورة."
+msgstr "اضبط هذا الخيار لعرض النسبة الباعية للعنصر أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Show image format"
+#, kde-format
 msgid "Show item format"
-msgstr "أظهر نسق الصّورة"
+msgstr "أظهر تنسيق العنصر"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Set this option to show image mime type over image thumbnail."
+#, kde-format
 msgid "Set this option to show item mime type over thumbnail."
-msgstr "اضبط هذا الخيار لإظهار نوع MIME للصورة فوق الصورة المصغرة."
+msgstr "اضبط هذا الخيار لإظهار نوع MIME للعنصر فوق الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
 #, kde-format
@@ -63250,10 +63159,9 @@ msgid "Show digiKam tit&le"
 msgstr "أظهر &عنوان «دِجي‌كام»"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam title below the thumbnail."
-msgstr "اضبط هذا الخيار لعرض عنوان «دِجي‌كام» مع مصغّرة الصّورة."
+msgstr "اضبط هذا الخيار لعرض عنوان دجي كام أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
@@ -63261,11 +63169,9 @@ msgid "Show digiKam &captions"
 msgstr "أظهر وا&صفات «دِجي‌كام»"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam captions below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam captions below the thumbnail."
-msgstr "اضبط هذا الخيار لعرض واصفات «دِجي‌كام» مع مصغّرة الصّورة."
+msgstr "اضبط هذا الخيار لعرض واصفات دجي كام أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
 #: core/utilities/setup/camera/setupcamera.cpp:451
@@ -63274,11 +63180,9 @@ msgid "Show digiKam &tags"
 msgstr "أظهر و&سوم «دِجي‌كام»"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam tags list below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam tags list below the thumbnail."
-msgstr "اضبط هذا الخيار لعرض قائمة وسوم «دِجي‌كام» مع مصغّرة الصّورة."
+msgstr "اضبط هذا الخيار لعرض قائمة وسوم دجي كام أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
@@ -63286,11 +63190,9 @@ msgid "Show digiKam &rating"
 msgstr "أظهر ت&قييم «دِجي‌كام»"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam rating below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam rating below the thumbnail."
-msgstr "اضبط هذا الخيار لعرض تقييم «دِجي‌كام» مع مصغّرة الصّورة."
+msgstr "اضبط هذا الخيار لعرض تقييم دجي كام أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
 #, kde-format
@@ -63298,11 +63200,9 @@ msgid "Show digiKam &pick label"
 msgstr "أظهر لصائق اختيار دجيكام (&p)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam pick label below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam pick label below the thumbnail."
-msgstr "اضبط هذا الخيار لإظهار لصائق اختيار دجيكام أسفل الصورة المصغرة."
+msgstr "اضبط هذا الخيار لإظهار لصائق اختيار دجي كام أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
@@ -63310,14 +63210,11 @@ msgid "Show digiKam color &label"
 msgstr "أظهر لصائق لون دجيكام (&l)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam color label as a border around the "
-#| "thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a line below the "
 "thumbnail."
-msgstr "اضبط هذا الخيار لإظهار لصائق لون دجيكام كحدود حول الصورة المصغرة."
+msgstr "اضبط هذا الخيار لإظهار لصيقة لون دجي كام كخط أسفل الصورة المصغرة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:181
 #: core/utilities/setup/camera/setupcamera.cpp:459
@@ -63326,16 +63223,13 @@ msgid "Show rotation overlay buttons"
 msgstr "أظهر أزرار تراكب التدوير"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show overlay buttons over the image thumbnail to be "
-#| "able to process left or right image rotation."
+#, kde-format
 msgid ""
 "Set this option to show the transformation overlay buttons over the "
 "thumbnail to process left or right rotation."
 msgstr ""
-"اضبط هذا الخيار لإظهار أزرار تراكب فوق الصورة المصغرة لكي تتمكن من معالجة "
-"تدوير الصورة لليسار أو اليمين."
+"اضبط هذا الخيار لإظهار أزرار تراكب التحويل فوق الصورة المصغرة لمعالجة "
+"التدوير لليسار أو اليمين."
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
@@ -63343,10 +63237,7 @@ msgid "Show fullscreen overlay button"
 msgstr "أظهر زر تراكب ملء الشاشة"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
 "fullscreen mode."
@@ -63354,21 +63245,18 @@ msgstr ""
 "اضبط هذا الخيار لإظهار زر تراكب فوق الصورة المصغرة لفتحها في وضع ملء الشاشة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:189
-#, fuzzy, kde-format
-#| msgid "Show rotation overlay buttons"
+#, kde-format
 msgid "Show geolocation overlay button"
-msgstr "أظهر أزرار تراكب التدوير"
+msgstr "أظهر زر تراكب الموقع الجغرافي"
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
 msgstr ""
-"اضبط هذا الخيار لإظهار زر تراكب فوق الصورة المصغرة لفتحها في وضع ملء الشاشة."
+"اضبط هذا الخيار لإظهار زر تراكب فوق الصورة المصغرة لتمييز العناصر ذات الموقع "
+"الجغرافي وفتح لسان الخريطة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -63549,12 +63437,9 @@ msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "تحويل الصورة للمعاينة إلى 8 بت لمشاهدة أسرع"
 
 #: core/utilities/setup/album/setupalbumview.cpp:313
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
-msgstr "ألغِ تحديد هذا إن لم تكن تريد تحويل صورة معاينة 16 بت إلى 8 بت."
+msgstr "حدد هذا إذا كنت تريد تحويل صورة معاينة 16 بت إلى 8 بت."
 
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
@@ -63562,11 +63447,9 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "توسيع صورة المعاينة آليًّا لتناسب النافذة"
 
 #: core/utilities/setup/album/setupalbumview.cpp:316
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Check this if you want to scale small images to fit to window."
-msgstr "ألغِ تحديد هذا إن لم تكن تريد توسيع الصور الصغيرة لتناسب النافذة."
+msgstr "حدد هذا إذا كنت تريد توسيع الصور الصغيرة لتناسب النافذة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
@@ -63574,10 +63457,9 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "صورة المعاينة تستخدم ضد التعرّج للتوسيع"
 
 #: core/utilities/setup/album/setupalbumview.cpp:319
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
-msgstr "ألغِ تحديد هذا إن لم تكن تريد استخدام ضد التعرّج للتوسيع."
+msgstr "حدد هذا إذا كنت تريد استخدام ضد التعرج للتوسيع."
 
 #: core/utilities/setup/album/setupalbumview.cpp:321
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -63586,12 +63468,9 @@ msgid "Show icons and text over preview"
 msgstr "أظهر الأيقونات والنص فوق المعاينة"
 
 #: core/utilities/setup/album/setupalbumview.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
-msgstr "ألغِ تحديد هذا إن لم تكن تريد رؤية الأيقونات والنص في معاينة الصورة."
+msgstr "حدد هذا إذا كنت تريد رؤية الأيقونات والنص في معاينة الصورة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
@@ -63599,29 +63478,22 @@ msgid "Auto play of videos or animations"
 msgstr "تشغيل آلي لمقاطع الفيديو أو الرسوم المتحركة"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to auto play of videos or animations."
+#, kde-format
 msgid "Check this if you want to auto play the videos or animations."
-msgstr ""
-"ألغِ تحديد هذا الخيار إذا كنت لا ترغب في التشغيل التلقائي لمقاطع الفيديو أو "
-"الرسوم المتحركة."
+msgstr "حدد هذا إذا كنت تريد التشغيل الآلي لمقاطع الفيديو أو الرسوم المتحركة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:327
-#, fuzzy, kde-format
-#| msgid "Show icons and text over preview"
+#, kde-format
 msgid "Show a text overlay over preview."
-msgstr "أظهر الأيقونات والنص فوق المعاينة"
+msgstr "أظهر نصًا متراكبًا فوق المعاينة."
 
 #: core/utilities/setup/album/setupalbumview.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
-msgstr "ألغِ تحديد هذا إن لم تكن تريد رؤية الأيقونات والنص في معاينة الصورة."
+msgstr ""
+"حدد هذا إذا كنت تريد إظهار تراكب لوحة مع إعدادات وخصائص اللقطة التقنية."
 
 #: core/utilities/setup/album/setupalbumview.cpp:351
 #, kde-format
@@ -64799,7 +64671,6 @@ msgstr "إعدادات الحفظ"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
-#: core/utilities/setup/setupsurvey.cpp:74
 #, kde-format
 msgid "Interface Options"
 msgstr "خيارات الواجهة"
@@ -66606,17 +66477,14 @@ msgstr ""
 "لروتينات التنظيف لقواعد البيانات الأخرى، يرجى استخدام الصيانة."
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
 "Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
-"<font color='red'><i>تحذير: هذه الإعدادات تجعل بدء التشغيل أبطأ!</i></font>"
+"<font color='black'><i><b>⚠️تحذير:</b> هذه الإعدادات تجعل بدء التشغيل أبطأ! "
+"اقرأ <a href=\"%1\">التوثيق عبر الإنترنت</a> بعناية أولاً.</i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
@@ -66783,11 +66651,7 @@ msgid "Grouping"
 msgstr "يجمّع"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
@@ -66795,7 +66659,10 @@ msgid ""
 "have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
 "information.</i></font>"
 msgstr ""
-"<font color='red'><i>تحذير: هذه الإعدادات تجعل بدء التشغيل أبطأ!</i></font>"
+"<font color='black'><i><b>⚠️تحذير:</b> كل التغييرات على هذه الإعدادات لا تأخذ "
+"مفعولها إلا بعد إعادة التشغيل. بعض الإعدادات تعتمد على العتاد وقد يكون لها "
+"آثار جانبية. اقرأ <a href=\"%1\">التوثيق عبر الإنترنت</a> لمزيد من المعلومات."
+"</i></font>"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
@@ -67046,20 +66913,16 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr ""
+msgstr "الاستقصاء"
 
 #: core/utilities/setup/setup.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare items"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
 msgstr ""
-"إعدادات منضدة الإضاءة\n"
+"إعدادات الاستقصاء\n"
 "خصص الأداة المستخدمة لمقارنة العناصر"
 
 #: core/utilities/setup/setup.cpp:189
@@ -67631,24 +67494,6 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "محملات الصور"
 
-#: core/utilities/setup/setupsurvey.cpp:77
-#, fuzzy, kde-format
-#| msgid "Clear the light table on close"
-msgid "Clear the Survey on close"
-msgstr "امحُ ما على الطّاولة الضّوئيّة إن أُغلقت"
-
-#: core/utilities/setup/setupsurvey.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to remove all images from the light table when you close "
-#| "it, or unset it to preserve the images currently on the light table."
-msgid ""
-"Set this option to remove all images from the Survey when you close it, or "
-"unset it to preserve the images currently on the Survey."
-msgstr ""
-"اضبط هذا الخيار لإزالة كلّ الصّور من على الطّاولة الضّوئيّة عندما تغلقها، أو أزل "
-"ضبطه لإبقاء الصّور الموجودة حاليًّا على الطّاولة الضّوئيّة."
-
 #: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid "Template Title:"
@@ -68058,31 +67903,34 @@ msgstr "استورد عناصر"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr ""
+msgstr "الاستقصاء"
 
-#: core/utilities/survey/surveywindow.cpp:206
-#, fuzzy, kde-format
-#| msgid "%1 items to process"
+#: core/utilities/survey/surveywindow.cpp:141
+#, kde-format
 msgid "%1 item on Survey"
 msgid_plural "%1 items on Survey"
-msgstr[0] "%1 عنصرًا للمعالجة"
-msgstr[1] "%1 عنصرًا للمعالجة"
-msgstr[2] "%1 عنصرًا للمعالجة"
-msgstr[3] "%1 عنصرًا للمعالجة"
-msgstr[4] "%1 عنصرًا للمعالجة"
-msgstr[5] "%1 عنصرًا للمعالجة"
+msgstr[0] "%1 عنصرًا في الاستقصاء"
+msgstr[1] "عنصر واحد في الاستقصاء"
+msgstr[2] "عنصران في الاستقصاء"
+msgstr[3] "%1 عنصرًا في الاستقصاء"
+msgstr[4] "%1 عنصرًا في الاستقصاء"
+msgstr[5] "%1 عنصرًا في الاستقصاء"
 
-#: core/utilities/survey/surveywindow_setup.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove item from Light Table"
-msgid "Remove item from Survey Tool"
-msgstr "أزل العنصر من جدول الإضاءة"
+#~ msgid "Clear the Survey on close"
+#~ msgstr "امحُ الاستقصاء عند الإغلاق"
 
-#: core/utilities/survey/surveywindow_setup.cpp:65
-#, fuzzy, kde-format
-#| msgid "Remove all items from Light Table"
-msgid "Remove all items from Survey Tool"
-msgstr "أزل جميع العناصر من جدول الإضاءة"
+#~ msgid ""
+#~ "Set this option to remove all images from the Survey when you close it, "
+#~ "or unset it to preserve the images currently on the Survey."
+#~ msgstr ""
+#~ "اضبط هذا الخيار لإزالة كلّ الصّور من الاستقصاء عند الإغلاق، أو أزل ضبطه "
+#~ "لإبقاء الصّور الموجودة حاليًّا في الاستقصاء."
+
+#~ msgid "Remove item from Survey Tool"
+#~ msgstr "أزل عنصر من الاستقصاء"
+
+#~ msgid "Remove all items from Survey Tool"
+#~ msgstr "أزل جميع العناصر من الاستقصاء"
 
 #, fuzzy
 #~| msgctxt "Content type"
