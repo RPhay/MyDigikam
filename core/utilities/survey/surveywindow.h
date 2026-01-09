@@ -100,8 +100,6 @@ private Q_SLOTS:
 
     void slotFileWithDefaultApplication();
 
-    void slotRefreshStatusBar();
-
     void slotToggleRightSideBar()                       override;
     void slotPreviousRightSideBarTab()                  override;
     void slotNextRightSideBarTab()                      override;

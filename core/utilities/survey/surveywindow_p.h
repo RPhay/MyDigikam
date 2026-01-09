@@ -136,15 +136,13 @@ public:
 
     QMainWindow*              dockArea                      = nullptr;
 
-    StatusProgressBar*        fileName                      = nullptr;     ///< File name loaded in right preview and show on status bar.
+    StatusProgressBar*        fileName                      = nullptr;     ///< File name loaded in preview and show on status bar.
 
     SidebarSplitter*          hSplitter                     = nullptr;
 
     SurveyStack*              stack                         = nullptr;     ///< Central view with thumbbar and preview stack.
 
-    DZoomBar*                 zoomBar                       = nullptr;     ///< Zoom bar to control the right preview and show on status bar.
-
-    StatusProgressBar*        statusProgressBar             = nullptr;
+    DZoomBar*                 zoomBar                       = nullptr;     ///< Zoom bar to control the preview and show on status bar.
 
     ItemPropertiesSideBarDB*  sideBar                       = nullptr;     ///< Side bar to display properties of the preview and show on the right side.
 };

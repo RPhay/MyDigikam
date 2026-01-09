@@ -187,14 +187,6 @@ void SurveyWindow::setupActions()
 
 void SurveyWindow::setupStatusBar()
 {
-    QToolButton* const hamburgerBtn = new QToolButton(statusBar());
-    hamburgerBtn->setDefaultAction(actionCollection()->action(QLatin1String("hamburger_menu")));
-    statusBar()->addWidget(hamburgerBtn, 1);
-
-    d->statusProgressBar = new StatusProgressBar(statusBar());
-    d->statusProgressBar->setAlignment(Qt::AlignCenter);
-    statusBar()->addWidget(d->statusProgressBar, 10);
-
     d->fileName = new StatusProgressBar(statusBar());
     d->fileName->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     statusBar()->addWidget(d->fileName, 10);

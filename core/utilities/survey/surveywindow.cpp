@@ -135,31 +135,6 @@ bool SurveyWindow::isEmpty() const
     return (d->stack->thumbBar()->allItemInfos().count() == 0);
 }
 
-void SurveyWindow::slotRefreshStatusBar()
-{
-    d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
-                                             i18np("%1 item on Survey",
-                                                   "%1 items on Survey",
-                                             d->stack->thumbBar()->allItemInfos().count()));
-}
-/*
-void SurveyWindow::indexForInfo(const QString& path)
-{
-    QUrl url = QUrl::fromLocalFile(path);
-
-    // NOTE: Thumbbar handle change through ItemCategorizedView
-
-    if (!d->stack->thumbBar()->currentInfo().isNull())
-    {
-        if (d->stack->thumbBar()->currentInfo().fileUrl() == url)
-        {
-            d->stack->reload();
-            d->sideBar->itemChanged(d->stack->thumbBar()->currentInfo());
-        }
-    }
-}
-*/
-
 void SurveyWindow::slotItemSelected()
 {
     ItemInfo info = d->stack->thumbBar()->currentInfo();
