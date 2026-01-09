@@ -28,6 +28,7 @@
 #include "itemdragdrop.h"
 #include "itemratingoverlay.h"
 #include "itemcoordinatesoverlay.h"
+#include "groupindicatoroverlay.h"
 #include "itemthumbnaildelegate.h"
 #include "fileactionmngr.h"
 
@@ -98,11 +99,20 @@ void ItemThumbnailBar::setModelsFiltered(ItemModel* model, ImageSortFilterModel*
 
 void ItemThumbnailBar::installOverlays()
 {
+    // Rating overlay
+
     ItemRatingOverlay* const ratingOverlay = new ItemRatingOverlay(this);
     addOverlay(ratingOverlay);
 
     connect(ratingOverlay, SIGNAL(ratingEdited(QList<QModelIndex>,int)),
             this, SLOT(assignRating(QList<QModelIndex>,int)));
+
+    // Group overlay
+
+    GroupIndicatorOverlay* const groupOverlay = new GroupIndicatorOverlay(this);
+    addOverlay(groupOverlay);
+
+    // Geolocation overlay
 
     ItemCoordinatesOverlay* const geoOverlay = new ItemCoordinatesOverlay(this);
     addOverlay(geoOverlay);
