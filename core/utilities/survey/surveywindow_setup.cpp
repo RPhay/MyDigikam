@@ -188,7 +188,7 @@ void SurveyWindow::setupActions()
 void SurveyWindow::setupStatusBar()
 {
     d->fileName = new StatusProgressBar(statusBar());
-    d->fileName->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    d->fileName->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     statusBar()->addWidget(d->fileName, 10);
 
     d->zoomBar = new DZoomBar(statusBar());

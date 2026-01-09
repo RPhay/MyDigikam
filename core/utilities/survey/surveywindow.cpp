@@ -148,6 +148,7 @@ void SurveyWindow::slotItemSelected()
     d->forwardAction->setEnabled(hasInfo);
     d->firstAction->setEnabled(hasInfo);
     d->lastAction->setEnabled(hasInfo);
+    d->fileName->setText(info.name());
 
     if (hasInfo)
     {
