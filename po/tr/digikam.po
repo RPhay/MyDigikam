@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2026-01-07 19:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1616,7 +1616,7 @@ msgstr "Ana görünüm başlatılıyor…"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -68596,12 +68596,10 @@ msgstr "İçe Aktarılan Ögeler"
 msgid "Survey"
 msgstr "Araştırma"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "Araştırmada %1 öge"
-msgstr[1] "Araştırmada %1 öge"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "Araştırmada %1 öge"
+#~ msgstr[1] "Araştırmada %1 öge"
 
 #~ msgid "Clear the Survey on close"
 #~ msgstr "Kapatırken araştırmayı temizle"

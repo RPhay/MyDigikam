@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2026-01-07 18:06+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1581,7 +1581,7 @@ msgstr "S'està inicialitzant la vista principal..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -69289,12 +69289,10 @@ msgstr "Importa els elements"
 msgid "Survey"
 msgstr "Estudi"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 element a l'estudi"
-msgstr[1] "%1 elements a l'estudi"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 element a l'estudi"
+#~ msgstr[1] "%1 elements a l'estudi"
 
 #~ msgid "Clear the Survey on close"
 #~ msgstr "Buida l'estudi en tancar"

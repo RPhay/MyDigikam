@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2026-01-07 12:44+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1631,7 +1631,7 @@ msgstr "Bezig met klaar maken van de hoofdpagina..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -69140,12 +69140,10 @@ msgstr "Items importeren"
 msgid "Survey"
 msgstr "Overzicht"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 item op overzicht"
-msgstr[1] "%1 items op overzicht"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 item op overzicht"
+#~ msgstr[1] "%1 items op overzicht"
 
 #~ msgid "Clear the Survey on close"
 #~ msgstr "Het overzicht wissen bij afsluiten"

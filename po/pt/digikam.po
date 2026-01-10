@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -1739,7 +1739,7 @@ msgstr "A iniciar a janela principal..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -71284,13 +71284,12 @@ msgstr "Importar os Itens"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-#| msgid "%1 items to process"
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 itens para processar"
-msgstr[1] "%1 itens para processar"
+#, fuzzy
+#~| msgid "%1 items to process"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 itens para processar"
+#~ msgstr[1] "%1 itens para processar"
 
 #, fuzzy
 #~| msgid "Clear the light table on close"

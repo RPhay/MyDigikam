@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2025-10-19 01:27+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -1682,7 +1682,7 @@ msgstr "Se inițializează fereastra principală"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
@@ -69359,13 +69359,12 @@ msgstr "&Sortează imaginile"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "Nici un filtru activ"
-msgstr[1] "Nici un filtru activ"
-msgstr[2] "Nici un filtru activ"
+#, fuzzy
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "Nici un filtru activ"
+#~ msgstr[1] "Nici un filtru activ"
+#~ msgstr[2] "Nici un filtru activ"
 
 #, fuzzy
 #~| msgid "Clear the light table on close"

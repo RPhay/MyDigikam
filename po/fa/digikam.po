@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -1980,7 +1980,7 @@ msgstr "مقداردهی اولیه نمای اصلی"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
@@ -67797,12 +67797,11 @@ msgstr "&مرتب‌سازی تصاویر‌"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "سفارشی"
-msgstr[1] "سفارشی"
+#, fuzzy
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "سفارشی"
+#~ msgstr[1] "سفارشی"
 
 #, fuzzy
 #~ msgid "Clear the Survey on close"

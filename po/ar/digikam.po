@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2026-01-08 14:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1670,7 +1670,7 @@ msgstr "يمهّد النّافذة الرّئيسيّة..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -67905,16 +67905,14 @@ msgstr "استورد عناصر"
 msgid "Survey"
 msgstr "الاستقصاء"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 عنصرًا في الاستقصاء"
-msgstr[1] "عنصر واحد في الاستقصاء"
-msgstr[2] "عنصران في الاستقصاء"
-msgstr[3] "%1 عنصرًا في الاستقصاء"
-msgstr[4] "%1 عنصرًا في الاستقصاء"
-msgstr[5] "%1 عنصرًا في الاستقصاء"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 عنصرًا في الاستقصاء"
+#~ msgstr[1] "عنصر واحد في الاستقصاء"
+#~ msgstr[2] "عنصران في الاستقصاء"
+#~ msgstr[3] "%1 عنصرًا في الاستقصاء"
+#~ msgstr[4] "%1 عنصرًا في الاستقصاء"
+#~ msgstr[5] "%1 عنصرًا في الاستقصاء"
 
 #~ msgid "Clear the Survey on close"
 #~ msgstr "امحُ الاستقصاء عند الإغلاق"

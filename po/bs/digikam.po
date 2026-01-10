@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1763,7 +1763,7 @@ msgstr "Inicijaliziram glavni pregled..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
@@ -74241,14 +74241,13 @@ msgstr "Uvozni predmeti"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-#| msgid "Custom process"
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "Prilagođeni proces"
-msgstr[1] "Prilagođeni proces"
-msgstr[2] "Prilagođeni proces"
+#, fuzzy
+#~| msgid "Custom process"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "Prilagođeni proces"
+#~ msgstr[1] "Prilagođeni proces"
+#~ msgstr[2] "Prilagođeni proces"
 
 #, fuzzy
 #~| msgid "Clear the light table on close"

@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
-"PO-Revision-Date: 2026-01-06 13:47+0100\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
+"PO-Revision-Date: 2026-01-08 09:49+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -1646,7 +1646,7 @@ msgstr "Initialisation de la vue principale…"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1912,7 +1912,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr ""
+msgstr "Survey"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -68774,21 +68774,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr ""
+msgstr "Survey"
 
 #: core/utilities/setup/setup.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare items"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
 msgstr ""
-"Configuration de la table lumineuse\n"
-"Personnalisez l'outil utilisé pour la comparaison des éléments."
+"Configuration de Survey.\n"
+"Personnalisez l'outil utilisé pour consulter les éléments."
 
 #: core/utilities/setup/setup.cpp:189
 #, kde-format
@@ -69820,15 +69816,12 @@ msgstr "Importer des éléments"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr ""
+msgstr "Survey"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-#| msgid "%1 items to process"
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 éléments à traiter"
-msgstr[1] "%1 éléments à traiter"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 éléments  dans Survey"
+#~ msgstr[1] "%1 éléments dans Survey"
 
 #, fuzzy
 #~| msgid "Clear the light table on close"

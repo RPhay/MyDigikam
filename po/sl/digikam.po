@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2026-01-08 07:27+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1650,7 +1650,7 @@ msgstr "Začenjanje glavnega pogleda..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -68684,14 +68684,12 @@ msgstr "Predmeti uvoza"
 msgid "Survey"
 msgstr "Raziskava"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 predmetov v raziskavi"
-msgstr[1] "%1 predmetov v raziskavi"
-msgstr[2] "%1 predmetov v raziskavi"
-msgstr[3] "%1 predmetov v raziskavi"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 predmetov v raziskavi"
+#~ msgstr[1] "%1 predmetov v raziskavi"
+#~ msgstr[2] "%1 predmetov v raziskavi"
+#~ msgstr[3] "%1 predmetov v raziskavi"
 
 #~ msgid "Clear the Survey on close"
 #~ msgstr "Počisti raziskavo ob zaprtju"
