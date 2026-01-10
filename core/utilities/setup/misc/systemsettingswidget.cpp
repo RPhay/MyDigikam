@@ -160,7 +160,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->enableHWVideoCheck     = new QCheckBox(i18n("Use video hardware acceleration"), this);
     d->enableHWTConvCheck     = new QCheckBox(i18n("Use video textures conversion"), this);
 
-    QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render video:"), this);
+    QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render media:"), this);
 
     d->videoBackendCBox       = new QComboBox(this);
     d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"),      QLatin1String("ffmpeg"));
