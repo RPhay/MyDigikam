@@ -851,9 +851,10 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 ThumbsDbAccess().db()->renameByFilePath(oldPath, newPath);
 
-                // Remove old thumbnails and images from the cache
+                // Remove old and new thumbnails and images from the cache
 
                 LoadingCacheInterface::fileChanged(oldPath, false);
+                LoadingCacheInterface::fileChanged(newPath, false);
 
                 // Rename in ItemInfo and database
 
