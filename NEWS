@@ -402,7 +402,7 @@ BUGFIXES:
 333 --> 514127 - New action preview bar not updating rating when changing rating with rating hotkeys instantly.
 334 --> 514156 - Face Tags are not unique (Problem with unique assignment to image tags).
 335 --> 514272 - digiKam very long at start.
-336 --> 
+336 --> 514387 - Old thumbnails are used after deletion.
 337 --> 
 338 --> 
 339 --> 

@@ -318,6 +318,18 @@ BdEngineBackend::QueryState ThumbsDb::insertThumbnail(const ThumbsDbInfo& info, 
 
 BdEngineBackend::QueryState ThumbsDb::renameByFilePath(const QString& oldPath, const QString& newPath)
 {
+    QVariantList values;
+
+    d->db->execSql(QLatin1String("SELECT id FROM Thumbnails "
+                                 " INNER JOIN FilePaths ON id = thumbId "
+                                 "  WHERE path=?;"),
+                   newPath, &values);
+
+    if (!values.isEmpty())
+    {
+        removeByFilePath(newPath);
+    }
+
     return d->db->execSql(QLatin1String("UPDATE FilePaths SET path=? WHERE path=?;"),
                           newPath, oldPath);
 }
