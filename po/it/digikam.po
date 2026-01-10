@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2026-01-04 01:47+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1592,7 +1592,7 @@ msgstr "Inizializzazione della vista principale..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -69294,13 +69294,12 @@ msgstr "Elementi importati"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-#| msgid "%1 items to process"
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 elementi da elaborare"
-msgstr[1] "%1 elementi da elaborare"
+#, fuzzy
+#~| msgid "%1 items to process"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 elementi da elaborare"
+#~ msgstr[1] "%1 elementi da elaborare"
 
 #, fuzzy
 #~| msgid "Clear the light table on close"

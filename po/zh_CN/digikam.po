@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1538,7 +1538,7 @@ msgstr "正在初始化主视图..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1796,7 +1796,7 @@ msgstr "将所选项目添加到多图对比工具的缩略图栏。"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr ""
+msgstr "评审工具"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -65506,7 +65506,7 @@ msgstr "多图对比设置"
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr ""
+msgstr "评审工具"
 
 #: core/utilities/setup/setup.cpp:176
 #, kde-format
@@ -65514,7 +65514,7 @@ msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
-msgstr ""
+msgstr "评审工具设置"
 
 #: core/utilities/setup/setup.cpp:189
 #, kde-format
@@ -66464,10 +66464,8 @@ msgstr "导入视图项目"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr ""
+msgstr "评审工具"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] ""
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "评审工具中有 %1 个项目"

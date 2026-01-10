@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2024-03-09 12:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1566,7 +1566,7 @@ msgstr ""
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -65655,55 +65655,10 @@ msgstr "Importer elementer"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-#| msgid "%1 item on Light Table"
-#| msgid_plural "%1 items on Light Table"
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 bilde på lysbordet"
-msgstr[1] "%1 bilder på lysbordet"
-
 #, fuzzy
-#~| msgid "Clear the light table on close"
-#~ msgid "Clear the Survey on close"
-#~ msgstr "Tøm lysbordet når det lukkes"
-
-#, fuzzy
-#~| msgid ""
-#~| "Set this option to remove all images from the light table when you close "
-#~| "it, or unset it to preserve the images currently on the light table."
-#~ msgid ""
-#~ "Set this option to remove all images from the Survey when you close it, "
-#~ "or unset it to preserve the images currently on the Survey."
-#~ msgstr ""
-#~ "Velg dette for å fjerne alle bilder fra lysbordet når du lukker det, "
-#~ "eller ta bort valget for å beholde de bildene som nå ligger på lysbordet."
-
-#, fuzzy
-#~| msgctxt "@action:inmenu"
-#~| msgid "Remove From Group"
-#~ msgid "Remove item from Survey Tool"
-#~ msgstr "Fjern fra gruppe"
-
-#, fuzzy
-#~| msgid "XMP File to Save"
-#~ msgctxt "@action: setup"
-#~ msgid "Place onto Survey"
-#~ msgstr "XMP-fil å lagre"
-
-#, fuzzy
-#~| msgid "Adjust Curve"
-#~ msgctxt "@action: setup"
-#~ msgid "Add to Survey"
-#~ msgstr "Juster kurve"
-
-#, fuzzy
-#~| msgid "Align text to the left"
-#~ msgid "Adding items to the Survey"
-#~ msgstr "Venstrestill teksten"
-
-#, fuzzy
-#~| msgid "Show numbers"
-#~ msgid "Show on Survey"
-#~ msgstr "Vis tall"
+#~| msgid "%1 item on Light Table"
+#~| msgid_plural "%1 items on Light Table"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 bilde på lysbordet"
+#~ msgstr[1] "%1 bilder på lysbordet"

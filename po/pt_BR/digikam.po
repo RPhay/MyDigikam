@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
-"PO-Revision-Date: 2026-01-08 11:20-0300\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
+"PO-Revision-Date: 2026-01-09 11:08-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -1585,7 +1585,7 @@ msgstr "Inicializando a janela principal..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -22115,7 +22115,7 @@ msgstr "Desaparecer"
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
-msgstr "Vibração"
+msgstr "Agitação"
 
 #: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, kde-format
@@ -31415,7 +31415,7 @@ msgstr "Defina aqui o ajuste da cor amarelo/azul da imagem."
 #: core/libs/dimg/filters/curves/curvesbox.cpp:127
 #, kde-format
 msgid "Curve free mode"
-msgstr "Modo livre de curva"
+msgstr "Modo de curva livre"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:128
 #, kde-format
@@ -31425,7 +31425,7 @@ msgstr "Com este botão, pode desenhar a sua curva à vontade com o mouse."
 #: core/libs/dimg/filters/curves/curvesbox.cpp:134
 #, kde-format
 msgid "Curve smooth mode"
-msgstr "Modo suavização de curva"
+msgstr "Modo de curva suavizada"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:135
 #, kde-format
@@ -32632,7 +32632,7 @@ msgstr "Defina aqui o ajuste de saturação da imagem."
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:95
 #, kde-format
 msgid "Vibrance:"
-msgstr "Vibrância:"
+msgstr "Vibração:"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:100
 #, kde-format
@@ -32640,8 +32640,8 @@ msgid ""
 "Set here the vibrance adjustment of the image.Vibrance performs selective "
 "saturation on less saturated colors and avoiding skin tones."
 msgstr ""
-"Defina aqui o ajuste da vibrância da imagem. A vibrância aplica uma "
-"saturação seletiva nas cores menos saturadas, evitando os tons de pele."
+"Defina aqui o ajuste da vibração da imagem. A vibração aplica uma saturação "
+"seletiva nas cores menos saturadas, evitando os tons de pele."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:103
 #, kde-format
@@ -34112,7 +34112,7 @@ msgstr "Principal:"
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Auto exposure adjustments"
-msgstr "Ajuste de exposição automática"
+msgstr "Ajuste automático de exposição"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:254
 #, kde-format
@@ -69026,12 +69026,10 @@ msgstr "Itens importados"
 msgid "Survey"
 msgstr "Pesquisa"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 item na pesquisa"
-msgstr[1] "%1 itens na pesquisa"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 item na pesquisa"
+#~ msgstr[1] "%1 itens na pesquisa"
 
 #~ msgid "Clear the Survey on close"
 #~ msgstr "Limpar a pesquisa ao fechar"

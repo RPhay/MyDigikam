@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2026-01-07 18:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1626,7 +1626,7 @@ msgstr "Започаткування головного вікна…"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -69485,14 +69485,12 @@ msgstr "Імпортовані пункти"
 msgid "Survey"
 msgstr "Огляд"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, kde-format
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 запис в «Огляді»"
-msgstr[1] "%1 записи в «Огляді»"
-msgstr[2] "%1 записів в «Огляді»"
-msgstr[3] "%1 запис в «Огляді»"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 запис в «Огляді»"
+#~ msgstr[1] "%1 записи в «Огляді»"
+#~ msgstr[2] "%1 записів в «Огляді»"
+#~ msgstr[3] "%1 запис в «Огляді»"
 
 #~ msgid "Clear the Survey on close"
 #~ msgstr "Спорожняти «Огляд» при виході"

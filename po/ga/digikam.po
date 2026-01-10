@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1768,7 +1768,7 @@ msgstr "Príomhamharc á Thúsú..."
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
@@ -70697,16 +70697,15 @@ msgstr "Iompórtáil Íomhánna"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-#| msgid "Custom process"
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "Próiseas saincheaptha"
-msgstr[1] "Próiseas saincheaptha"
-msgstr[2] "Próiseas saincheaptha"
-msgstr[3] "Próiseas saincheaptha"
-msgstr[4] "Próiseas saincheaptha"
+#, fuzzy
+#~| msgid "Custom process"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "Próiseas saincheaptha"
+#~ msgstr[1] "Próiseas saincheaptha"
+#~ msgstr[2] "Próiseas saincheaptha"
+#~ msgstr[3] "Próiseas saincheaptha"
+#~ msgstr[4] "Próiseas saincheaptha"
 
 #, fuzzy
 #~| msgid "Remove coordinates"

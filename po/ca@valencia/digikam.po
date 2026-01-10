@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
-"PO-Revision-Date: 2026-01-05 08:46+0100\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
+"PO-Revision-Date: 2026-01-07 18:06+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -1581,7 +1581,7 @@ msgstr "S'està inicialitzant la vista principal…"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1844,7 +1844,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr ""
+msgstr "Estudi"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -4939,7 +4939,7 @@ msgstr "Canal:"
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Luminosity"
-msgstr "Brillantor"
+msgstr "Lluminositat"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:60
 #, kde-format
@@ -17684,7 +17684,7 @@ msgstr "S'estan baixant els fitxers remots per a «%1»"
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
-msgstr "No s'ha pogut obrir el fitxer temporal"
+msgstr "No s'ha pogut obrir un fitxer temporal"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:450
 #, kde-format
@@ -25333,7 +25333,7 @@ msgstr "Latitud:"
 #, kde-format
 msgctxt "@label: properties"
 msgid "Longitude:"
-msgstr "Longitud:"
+msgstr "Llargària:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
 #, kde-format
@@ -26146,7 +26146,7 @@ msgstr "S'està pujant el fitxer %1"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:639
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
-msgstr "Ha fallat mentre es pujava el suport a Piwigo remot. "
+msgstr "Ha fallat mentre es pujava l'element multimèdia a Piwigo remot. "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:640
 #, kde-format
@@ -68243,21 +68243,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr ""
+msgstr "Estudi"
 
 #: core/utilities/setup/setup.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare items"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
 msgstr ""
-"Configureu la taula de llum\n"
-"Personalitza l'eina emprada en comparar els elements"
+"Configureu l'estudi\n"
+"Personalitza l'eina emprada per a revisar els elements"
 
 #: core/utilities/setup/setup.cpp:189
 #, kde-format
@@ -69271,82 +69267,9 @@ msgstr "Importa els elements"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr ""
+msgstr "Estudi"
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-#| msgid "%1 items to process"
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 elements que s'han de processar"
-msgstr[1] "%1 elements que s'han de processar"
-
-#, fuzzy
-#~| msgid "Clear the light table on close"
-#~ msgid "Clear the Survey on close"
-#~ msgstr "Buida la taula de llum en tancar"
-
-#, fuzzy
-#~| msgid ""
-#~| "Set this option to remove all images from the light table when you close "
-#~| "it, or unset it to preserve the images currently on the light table."
-#~ msgid ""
-#~ "Set this option to remove all images from the Survey when you close it, "
-#~ "or unset it to preserve the images currently on the Survey."
-#~ msgstr ""
-#~ "Establiu esta opció per a traure totes les imatges de la taula de llum "
-#~ "quan la tanqueu, o desseleccioneu-la per a conservar les imatges que hi "
-#~ "haja."
-
-#, fuzzy
-#~| msgid "Remove item from Light Table"
-#~ msgid "Remove item from Survey Tool"
-#~ msgstr "Elimina un element de la taula de llum"
-
-#, fuzzy
-#~| msgid "Remove all items from Light Table"
-#~ msgid "Remove all items from Survey Tool"
-#~ msgstr "Elimina tots els elements de la taula de llum"
-
-#, fuzzy
-#~| msgctxt "Content type"
-#~| msgid "Polls and Surveys"
-#~ msgctxt "@action: setup"
-#~ msgid "Place onto Survey"
-#~ msgstr "Enquestes i sondeigs"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Place the selected items on the light table thumbbar."
-#~ msgctxt "@info: setup"
-#~ msgid "Place the selected items on the survey thumbbar."
-#~ msgstr ""
-#~ "Posa els elements seleccionats sobre la barra de miniatures de la taula "
-#~ "de llum."
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Add Texture"
-#~ msgctxt "@action: setup"
-#~ msgid "Add to Survey"
-#~ msgstr "Afig una textura"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Add selected items to the light table thumbbar."
-#~ msgctxt "@info: setup"
-#~ msgid "Add selected items to the survey thumbbar."
-#~ msgstr ""
-#~ "Afig els elements seleccionats a la barra de miniatures de la taula de "
-#~ "llum."
-
-#, fuzzy
-#~| msgid "Adding items to the Light Table"
-#~ msgid "Adding items to the Survey"
-#~ msgstr "Afegir elements a la taula de llum"
-
-#, fuzzy
-#~| msgctxt "Content type"
-#~| msgid "Polls and Surveys"
-#~ msgid "Show on Survey"
-#~ msgstr "Enquestes i sondeigs"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 element a l'estudi"
+#~ msgstr[1] "%1 elements a l'estudi"

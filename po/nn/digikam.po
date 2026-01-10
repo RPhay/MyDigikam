@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"POT-Creation-Date: 2026-01-10 00:40+0000\n"
 "PO-Revision-Date: 2025-05-03 11:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1580,7 +1580,7 @@ msgstr "Startar hovudvising …"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:420
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:255
+#: core/utilities/survey/surveywindow_setup.cpp:250
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -65238,54 +65238,10 @@ msgstr "Importer element"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/survey/surveywindow.cpp:141
-#, fuzzy, kde-format
-#| msgid "%1 item on Light Table"
-#| msgid_plural "%1 items on Light Table"
-msgid "%1 item on Survey"
-msgid_plural "%1 items on Survey"
-msgstr[0] "%1 element på lysbordet"
-msgstr[1] "%1 element på lysbordet"
-
 #, fuzzy
-#~| msgctxt "@action:inmenu"
-#~| msgid "Remove From Group"
-#~ msgid "Remove item from Survey Tool"
-#~ msgstr "Fjern frå gruppe"
-
-#, fuzzy
-#~| msgid "XMP File to Save"
-#~ msgctxt "@action: setup"
-#~ msgid "Place onto Survey"
-#~ msgstr "XMP-fil å lagra"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Place the selected items on the light table thumbbar."
-#~ msgctxt "@info: setup"
-#~ msgid "Place the selected items on the survey thumbbar."
-#~ msgstr "Legg dei merkte elementa på lysbordet."
-
-#, fuzzy
-#~| msgid "Adjust Curve"
-#~ msgctxt "@action: setup"
-#~ msgid "Add to Survey"
-#~ msgstr "Juster kurver"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Add selected items to the light table thumbbar."
-#~ msgctxt "@info: setup"
-#~ msgid "Add selected items to the survey thumbbar."
-#~ msgstr "Legg dei merkte elementa på lysbordet."
-
-#, fuzzy
-#~| msgid "Adding items to the Light Table"
-#~ msgid "Adding items to the Survey"
-#~ msgstr "Legg bilete på lysbordet"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Show History"
-#~ msgid "Show on Survey"
-#~ msgstr "Vis historikk"
+#~| msgid "%1 item on Light Table"
+#~| msgid_plural "%1 items on Light Table"
+#~ msgid "%1 item on Survey"
+#~ msgid_plural "%1 items on Survey"
+#~ msgstr[0] "%1 element på lysbordet"
+#~ msgstr[1] "%1 element på lysbordet"
