@@ -781,6 +781,8 @@ void MediaPlayerView::slotPausePlay()
 {
     if (!d->player->isPlaying())
     {
+        setPreviewMode(Private::PlayerView);
+
         d->player->play();
 
         return;
