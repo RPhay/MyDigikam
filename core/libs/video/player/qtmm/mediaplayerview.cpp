@@ -650,7 +650,7 @@ void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus
 void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const QString& errStr)
 {
     setPreviewMode(Private::MessageView);
-    d->msgLabel->setText(d->errorMsg);
+    d->msgLabel->setText(i18n("%1\n\nError: \"%2\"", d->errorMsg, errStr));
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << errStr;
 }

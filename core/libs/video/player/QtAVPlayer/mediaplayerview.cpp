@@ -792,11 +792,12 @@ void MediaPlayerView::slotPosition(int position)
     }
 }
 
-void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error /*err*/, const QString& message)
+void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error /*err*/, const QString& errStr)
 {
     setPreviewMode(Private::MessageView);
-    d->msgLabel->setText(d->errorMsg);
-    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << message;
+    d->msgLabel->setText(i18n("%1\n\nError: \"%2\"", d->errorMsg, errStr));
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << errStr;
 }
 
 void MediaPlayerView::slotPlayingStateChanged()

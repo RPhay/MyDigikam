@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     DInfoInterface*      iface            = nullptr;
 
     QUrl                 currentUrl;
