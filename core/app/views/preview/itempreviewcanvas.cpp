@@ -34,6 +34,8 @@ public:
 
     Private() = default;
 
+public:
+
     FaceGroup* group = nullptr;
     ItemInfo   info;
 };

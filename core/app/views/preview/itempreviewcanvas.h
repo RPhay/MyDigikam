@@ -40,7 +40,7 @@ public:
     ~ItemPreviewCanvas()                                      override;
 
     void setItemInfo(const ItemInfo& info);
-    ItemInfo imageInfo()                            const;
+    ItemInfo imageInfo()                                const;
 
     void setFaceGroup(FaceGroup* const group);
 
