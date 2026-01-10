@@ -145,7 +145,7 @@ public:
 
     enum MediaPlayerViewMode
     {
-        ErrorView = 0,
+        MessageView = 0,
         PlayerView
     };
 
@@ -155,7 +155,8 @@ public:
 
 public:
 
-    QFrame*              errorView          = nullptr;
+    QFrame*              messageView        = nullptr;
+    QLabel*              msgLabel           = nullptr;
     QFrame*              playerView         = nullptr;
 
     QAction*             prevAction         = nullptr;
@@ -196,6 +197,9 @@ public:
                                                   QStandardPaths::locate(
                                                       QStandardPaths::GenericDataLocation,
                                                       QLatin1String("digikam/data/video-digikam.mp4")));
+
+    const QString        errorMsg           = i18n("An error has occurred with the media player...");
+    const QString        endMsg             = i18n("End of media.");
 
 public:
 
@@ -359,21 +363,23 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     rateMenu->addAction(rate50);
     d->rateButton->setMenu(rateMenu);
 
-    d->errorView           = new QFrame(this);
-    QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
+    // ---
 
-    errorMsg->setAlignment(Qt::AlignCenter);
-    d->errorView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
-    d->errorView->setLineWidth(1);
+    d->messageView = new QFrame(this);
+    d->msgLabel    = new QLabel(this);
 
-    QVBoxLayout* const vbox1 = new QVBoxLayout(d->errorView);
-    vbox1->addWidget(errorMsg, 10);
+    d->msgLabel->setAlignment(Qt::AlignCenter);
+    d->messageView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
+    d->messageView->setLineWidth(1);
+
+    QVBoxLayout* const vbox1 = new QVBoxLayout(d->messageView);
+    vbox1->addWidget(d->msgLabel, 10);
     vbox1->setContentsMargins(QMargins());
     vbox1->setSpacing(spacing);
 
-    insertWidget(Private::ErrorView, d->errorView);
+    insertWidget(Private::MessageView, d->messageView);
 
-    // --------------------------------------------------------------------------
+    // ---
 
     d->playerView = new QFrame(this);
     d->videoScene = new QGraphicsScene(this);
@@ -464,7 +470,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     setPreviewMode(Private::PlayerView);
 
-    d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
+    d->messageView->installEventFilter(new MediaPlayerMouseClickFilter(this));
     d->videoView->installEventFilter(new MediaPlayerMouseClickFilter(this));
     d->playerView->installEventFilter(this);
 
@@ -610,10 +616,15 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
            )
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Play video with QtMultimedia completed:" << d->player->source();
+            setPreviewMode(Private::MessageView);
 
             if (d->player->error() != QMediaPlayer::NoError)
             {
-                setPreviewMode(Private::ErrorView);
+                d->msgLabel->setText(d->errorMsg);
+            }
+            else
+            {
+                d->msgLabel->setText(d->endMsg);
             }
 
             d->backAction->setEnabled(false);
@@ -624,15 +635,22 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
 
 void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus)
 {
-    if (newStatus == QMediaPlayer::InvalidMedia)
+    if      (newStatus == QMediaPlayer::InvalidMedia)
     {
-        setPreviewMode(Private::ErrorView);
+        setPreviewMode(Private::MessageView);
+        d->msgLabel->setText(d->errorMsg);
+    }
+    else if (newStatus == QMediaPlayer::EndOfMedia)
+    {
+        setPreviewMode(Private::MessageView);
+        d->msgLabel->setText(d->endMsg);
     }
 }
 
 void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const QString& errStr)
 {
-    setPreviewMode(Private::ErrorView);
+    setPreviewMode(Private::MessageView);
+    d->msgLabel->setText(d->errorMsg);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << errStr;
 }
@@ -666,8 +684,8 @@ void MediaPlayerView::slotMetaDataChanged()
 void MediaPlayerView::slotThemeChanged()
 {
     QPalette palette;
-    palette.setColor(d->errorView->backgroundRole(), qApp->palette().color(QPalette::Base));
-    d->errorView->setPalette(palette);
+    palette.setColor(d->messageView->backgroundRole(), qApp->palette().color(QPalette::Base));
+    d->messageView->setPalette(palette);
 
     QPalette palette2;
     palette2.setColor(d->playerView->backgroundRole(), qApp->palette().color(QPalette::Base));
@@ -904,7 +922,7 @@ int MediaPlayerView::previewMode()
 
 void MediaPlayerView::setPreviewMode(int mode)
 {
-    if ((mode != Private::ErrorView) && (mode != Private::PlayerView))
+    if ((mode != Private::MessageView) && (mode != Private::PlayerView))
     {
         return;
     }

@@ -131,7 +131,7 @@ public:
 
     enum MediaPlayerViewMode
     {
-        ErrorView = 0,
+        MessageView = 0,
         PlayerView
     };
 
@@ -156,7 +156,8 @@ public:
 
 public:
 
-    QFrame*              errorView          = nullptr;
+    QFrame*              messageView        = nullptr;
+    QLabel*              msgLabel           = nullptr;
     QFrame*              playerView         = nullptr;
 
     QAction*             prevAction         = nullptr;
@@ -185,6 +186,9 @@ public:
     qint64               sliderTime         = 0;
 
     bool                 playLoop           = false;
+
+    const QString        errorMsg           = i18n("An error has occurred with the media player...");
+    const QString        endMsg             = i18n("End of media.");
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
@@ -214,19 +218,19 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
                                          i18nc("rotate video in clockwize", "Rotate Right"),       this);
     d->rotrAction->setObjectName(QLatin1String("rotr"));
 
-    d->errorView           = new QFrame(this);
-    QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
+    d->messageView = new QFrame(this);
+    d->msgLabel    = new QLabel(this);
 
-    errorMsg->setAlignment(Qt::AlignCenter);
-    d->errorView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
-    d->errorView->setLineWidth(1);
+    d->msgLabel->setAlignment(Qt::AlignCenter);
+    d->messageView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
+    d->messageView->setLineWidth(1);
 
-    QVBoxLayout* const vbox1 = new QVBoxLayout(d->errorView);
-    vbox1->addWidget(errorMsg, 10);
+    QVBoxLayout* const vbox1 = new QVBoxLayout(d->messageView);
+    vbox1->addWidget(d->msgLabel, 10);
     vbox1->setContentsMargins(QMargins());
     vbox1->setSpacing(spacing);
 
-    insertWidget(Private::ErrorView, d->errorView);
+    insertWidget(Private::MessageView, d->messageView);
 
     // --------------------------------------------------------------------------
 
@@ -279,7 +283,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     setPreviewMode(Private::PlayerView);
 
-    d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
+    d->messageView->installEventFilter(new MediaPlayerMouseClickFilter(this));
     d->videoWidget->view()->installEventFilter(new MediaPlayerMouseClickFilter(this));
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -416,7 +420,13 @@ void MediaPlayerView::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
     }
     else if (newStatus == QAVPlayer::InvalidMedia)
     {
-        setPreviewMode(Private::ErrorView);
+        setPreviewMode(Private::MessageView);
+        d->msgLabel->setText(d->errorMsg);
+    }
+    else if (newStatus == QAVPlayer::EndOfMedia)
+    {
+        setPreviewMode(Private::MessageView);
+        d->msgLabel->setText(d->endMsg);
     }
 }
 
@@ -429,8 +439,8 @@ void MediaPlayerView::escapePreview()
 void MediaPlayerView::slotThemeChanged()
 {
     QPalette palette;
-    palette.setColor(d->errorView->backgroundRole(), qApp->palette().color(QPalette::Base));
-    d->errorView->setPalette(palette);
+    palette.setColor(d->messageView->backgroundRole(), qApp->palette().color(QPalette::Base));
+    d->messageView->setPalette(palette);
 
     QPalette palette2;
     palette2.setColor(d->playerView->backgroundRole(), qApp->palette().color(QPalette::Base));
@@ -625,7 +635,7 @@ int MediaPlayerView::previewMode()
 
 void MediaPlayerView::setPreviewMode(int mode)
 {
-    if ((mode != Private::ErrorView) && (mode != Private::PlayerView))
+    if ((mode != Private::MessageView) && (mode != Private::PlayerView))
     {
         return;
     }
@@ -784,7 +794,8 @@ void MediaPlayerView::slotPosition(int position)
 
 void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error /*err*/, const QString& message)
 {
-    setPreviewMode(Private::ErrorView);
+    setPreviewMode(Private::MessageView);
+    d->msgLabel->setText(d->errorMsg);
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << message;
 }
 
