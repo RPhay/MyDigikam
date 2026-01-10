@@ -534,7 +534,10 @@ void MediaPlayerView::slotPausePlay()
 {
     if (d->videoWidget->player()->state() != QAVPlayer::PlayingState)
     {
+        setPreviewMode(Private::PlayerView);
+
         d->videoWidget->player()->play();
+
         return;
     }
 
