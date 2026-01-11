@@ -63,7 +63,7 @@ public:
     bool                      showText          = true;
 
     MagnifierItem*            magnifier         = nullptr;
-    bool                      magnifierEnabled  = true;
+    bool                      magnifierEnabled  = false;
 };
 
 

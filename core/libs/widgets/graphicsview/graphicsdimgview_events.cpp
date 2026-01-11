@@ -26,7 +26,10 @@ bool GraphicsDImgView::viewportEvent(QEvent* event)
     }
     else if (event->type() == QEvent::Enter)
     {
-        d->magnifier->setVisible(true);
+        if (d->magnifierEnabled)
+        {
+            d->magnifier->setVisible(true);
+        }
     }
 
     return QGraphicsView::viewportEvent(event);

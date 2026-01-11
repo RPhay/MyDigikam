@@ -80,6 +80,9 @@ public:
     void  fitToWindow();
     void  toggleFullScreen(bool set);
 
+    void setMagnifierVisible(bool b);
+    bool isMagnifierVisible() const;
+
 Q_SIGNALS:
 
     void contentsMoving(int, int);

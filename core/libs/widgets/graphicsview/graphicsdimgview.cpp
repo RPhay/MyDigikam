@@ -49,7 +49,6 @@ GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
     d->magnifier->setZoomFactor(2.0);
     d->magnifier->setMagnifierSize(150);
     d->scene->addItem(d->magnifier);
-    d->magnifier->setVisible(d->magnifierEnabled);      // FIXME: to hack.
 
     connect(d->layout, &SinglePhotoPreviewLayout::zoomFactorChanged,
             this, &GraphicsDImgView::slotZoomFactorChanged);
@@ -72,6 +71,17 @@ GraphicsDImgView::~GraphicsDImgView()
     }
 
     delete d;
+}
+
+void GraphicsDImgView::setMagnifierVisible(bool b)
+{
+    d->magnifierEnabled = b;
+    d->magnifier->setVisible(d->magnifierEnabled);
+}
+
+bool GraphicsDImgView::isMagnifierVisible() const
+{
+    return d->magnifierEnabled;
 }
 
 int GraphicsDImgView::contentsX() const

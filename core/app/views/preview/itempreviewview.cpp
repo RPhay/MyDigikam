@@ -105,6 +105,8 @@ public:
 
     QAction*               fullscreenAction     = nullptr;
 
+    QAction*               magnifierAction      = nullptr;
+
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
     PickLabelSelector*     plWidget             = nullptr;
@@ -211,6 +213,10 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->peopleToggleAction->setCheckable(true);
     d->showFocusPointAction->setCheckable(true);
 
+    d->magnifierAction          = new QAction(QIcon::fromTheme(QLatin1String("document-edit-verify")),
+                                              i18n("Show Magnifier"),                this);
+    d->magnifierAction->setCheckable(true);
+
     d->fullscreenAction         = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                               i18n("Show Fullscreen"),                this);
 
@@ -256,6 +262,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->toolBar->addAction(d->peopleToggleAction);
     d->toolBar->addAction(d->addPersonAction);
     d->toolBar->addAction(d->fullscreenAction);
+    d->toolBar->addAction(d->magnifierAction);
 
     d->toolBar->addWidget(labelsBox);
 
@@ -320,6 +327,13 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
             d->focusPointGroup->setVisible(checked);
             d->addFocusPointAction->setEnabled(add);
+        }
+    );
+
+    connect(d->magnifierAction, &QAction::toggled,
+            this, [this](bool checked)
+        {
+            setMagnifierVisible(checked);
         }
     );
 
@@ -393,6 +407,7 @@ void ItemPreviewView::slotItemLoaded()
     }
 
     d->addFocusPointAction->setEnabled(add);
+    d->magnifierAction->setEnabled(true);
 }
 
 void ItemPreviewView::slotItemLoadingFailed()
@@ -406,6 +421,7 @@ void ItemPreviewView::slotItemLoadingFailed()
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
     d->addFocusPointAction->setEnabled(false);
+    d->magnifierAction->setEnabled(false);
 
     d->faceGroup->setInfo(ItemInfo());
     d->focusPointGroup->setInfo(ItemInfo());
@@ -662,7 +678,7 @@ void ItemPreviewView::slotSlideShowCurrent()
         return;
     }
 
-    //Trigger SlideShow manual
+    // Trigger SlideShow manually
 
     actions[0]->setData(getItemInfo().fileUrl());
 
