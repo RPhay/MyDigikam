@@ -36,13 +36,15 @@ public:
 
 public:
 
-    FaceGroup* group = nullptr;
-    ItemInfo   info;
+    ItemPreviewView* view  = nullptr;
+    FaceGroup*       group = nullptr;
+    ItemInfo         info;
 };
 
-ItemPreviewCanvas::ItemPreviewCanvas()
+ItemPreviewCanvas::ItemPreviewCanvas(ItemPreviewView* const view)
     : d(new Private)
 {
+    d->view = view;
     setAcceptHoverEvents(true);
 }
 
@@ -69,17 +71,26 @@ ItemInfo ItemPreviewCanvas::imageInfo() const
 
 void ItemPreviewCanvas::hoverEnterEvent(QGraphicsSceneHoverEvent* e)
 {
-    d->group->itemHoverEnterEvent(e);
+    if (!d->view->isMagnifierVisible())
+    {
+        d->group->itemHoverEnterEvent(e);
+    }
 }
 
 void ItemPreviewCanvas::hoverLeaveEvent(QGraphicsSceneHoverEvent* e)
 {
-    d->group->itemHoverLeaveEvent(e);
+    if (!d->view->isMagnifierVisible())
+    {
+        d->group->itemHoverLeaveEvent(e);
+    }
 }
 
 void ItemPreviewCanvas::hoverMoveEvent(QGraphicsSceneHoverEvent* e)
 {
-    d->group->itemHoverMoveEvent(e);
+    if (!d->view->isMagnifierVisible())
+    {
+        d->group->itemHoverMoveEvent(e);
+    }
 }
 
 } // namespace Digikam

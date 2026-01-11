@@ -121,7 +121,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
       d               (new Private)
 {
     d->mode      = mode;
-    d->item      = new ItemPreviewCanvas();
+    d->item      = new ItemPreviewCanvas(this);
     d->currAlbum = currAlbum;
     setItem(d->item);
 
