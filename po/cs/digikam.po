@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-10 00:40+0000\n"
+"POT-Creation-Date: 2026-01-11 00:40+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2873,16 +2873,16 @@ msgid "Donate: "
 msgstr "Datum: "
 
 #: core/app/views/preview/itempreviewview.cpp:174
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Zpět"
 
 #: core/app/views/preview/itempreviewview.cpp:176
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -25929,7 +25929,7 @@ msgid "Skipped"
 msgstr "Přeskočeno"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:959
+#: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr "Koš"
@@ -26489,7 +26489,7 @@ msgid "Context menu"
 msgstr "Místní nabídka"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
-#: core/libs/database/utils/ifaces/dio.cpp:969
+#: core/libs/database/utils/ifaces/dio.cpp:970
 #, kde-format
 msgid "Empty Trash"
 msgstr "Vyprázdnit koš"
@@ -27830,44 +27830,44 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automaticky přeskočit"
 
-#: core/libs/database/utils/ifaces/dio.cpp:923
+#: core/libs/database/utils/ifaces/dio.cpp:924
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopírovat album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:928
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopírovat obrázky"
 
-#: core/libs/database/utils/ifaces/dio.cpp:934
+#: core/libs/database/utils/ifaces/dio.cpp:935
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopírovat soubory"
 
-#: core/libs/database/utils/ifaces/dio.cpp:939
+#: core/libs/database/utils/ifaces/dio.cpp:940
 #, kde-format
 msgid "Move Album"
 msgstr "Přesunout album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:944
+#: core/libs/database/utils/ifaces/dio.cpp:945
 #, kde-format
 msgid "Move Images"
 msgstr "Přesunout obrázky"
 
-#: core/libs/database/utils/ifaces/dio.cpp:949
+#: core/libs/database/utils/ifaces/dio.cpp:950
 #, kde-format
 msgid "Move Files"
 msgstr "Přesunout soubory"
 
-#: core/libs/database/utils/ifaces/dio.cpp:954
+#: core/libs/database/utils/ifaces/dio.cpp:955
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, kde-format
 msgid "Delete"
 msgstr "Smazat"
 
-#: core/libs/database/utils/ifaces/dio.cpp:964
+#: core/libs/database/utils/ifaces/dio.cpp:965
 #, kde-format
 msgid "Restore Trash"
 msgstr "Obnovit koš"
@@ -27987,11 +27987,9 @@ msgid "Database Configuration"
 msgstr "Nastavení databáze"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Type: "
+#, kde-format
 msgid "Type: "
-msgstr "Typ: "
+msgstr "Typ:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:55
 #, kde-format
@@ -40125,10 +40123,9 @@ msgid "Show the digiKam item tag names at the bottom of the screen."
 msgstr "Zobrazit názvy značek obrázku digiKam ve spodní části obrazovky."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "Příští měsíc"
+msgstr "Písmo textu:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
 #, fuzzy, kde-format
@@ -41244,116 +41241,130 @@ msgstr ""
 msgid "An error has occurred while playing: %1"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:205
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:201
+#, kde-format
+msgid "An error has occurred with the media player..."
+msgstr "Vyskytla se chyba s přehrávačem médií..."
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:202
+#, kde-format
+msgid "End of media."
+msgstr ""
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:209
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pozastavit/Přehrát"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:208
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:212
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Zachytávat"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:215
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Rotovat vlevo"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Rotovat vpravo"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:363
-#, kde-format
-msgid "An error has occurred with the media player..."
-msgstr "Vyskytla se chyba s přehrávačem médií..."
-
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:249
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:407
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:253
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:413
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Přehrávání ve smyčce"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:801
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:653
+#, fuzzy, kde-format
+#| msgid "Error: %1"
+msgid ""
+"%1\n"
+"\n"
+"Error: \"%2\""
+msgstr "Chyba: %1"
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:301
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "O snímek zpět"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:303
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "O snímek vpřed"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "Změnit rychlost přehrávání videa"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info: download status"
-#| msgid "Rate:"
-msgid "Rate"
-msgstr "Tok:"
-
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#, kde-format
+msgid "Rate"
+msgstr "Míra"
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:332
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:335
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:334
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:338
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:337
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:341
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:340
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:344
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:343
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:347
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:350
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -61879,10 +61890,9 @@ msgstr ""
 "možnost je užitečná pro rychlé nalezení upravených obrázků."
 
 #: core/utilities/setup/album/setupalbumview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Show image dimensions"
+#, kde-format
 msgid "Show item dimensions"
-msgstr "Zobrazit velikost obrázku"
+msgstr "Zobrazit rozměry položky"
 
 #: core/utilities/setup/album/setupalbumview.cpp:145
 #, fuzzy, kde-format
@@ -65468,7 +65478,7 @@ msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
-msgid "Decoding backend to render video:"
+msgid "Decoding backend to render media:"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166

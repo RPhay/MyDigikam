@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-10 00:40+0000\n"
+"POT-Creation-Date: 2026-01-11 00:40+0000\n"
 "PO-Revision-Date: 2026-01-07 18:06+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2868,16 +2868,16 @@ msgid "Donate: "
 msgstr "Donació: "
 
 #: core/app/views/preview/itempreviewview.cpp:174
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Enrere"
 
 #: core/app/views/preview/itempreviewview.cpp:176
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -27237,7 +27237,7 @@ msgid "Skipped"
 msgstr "S'ha omès"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:959
+#: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr "Paperera"
@@ -27830,7 +27830,7 @@ msgid "Context menu"
 msgstr "Menú contextual"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
-#: core/libs/database/utils/ifaces/dio.cpp:969
+#: core/libs/database/utils/ifaces/dio.cpp:970
 #, kde-format
 msgid "Empty Trash"
 msgstr "Buida la paperera"
@@ -29222,44 +29222,44 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Omet automàticament"
 
-#: core/libs/database/utils/ifaces/dio.cpp:923
+#: core/libs/database/utils/ifaces/dio.cpp:924
 #, kde-format
 msgid "Copy Album"
 msgstr "Copia àlbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:928
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, kde-format
 msgid "Copy Images"
 msgstr "Copia imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:934
+#: core/libs/database/utils/ifaces/dio.cpp:935
 #, kde-format
 msgid "Copy Files"
 msgstr "Copia fitxers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:939
+#: core/libs/database/utils/ifaces/dio.cpp:940
 #, kde-format
 msgid "Move Album"
 msgstr "Mou àlbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:944
+#: core/libs/database/utils/ifaces/dio.cpp:945
 #, kde-format
 msgid "Move Images"
 msgstr "Mou imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:949
+#: core/libs/database/utils/ifaces/dio.cpp:950
 #, kde-format
 msgid "Move Files"
 msgstr "Mou fitxers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:954
+#: core/libs/database/utils/ifaces/dio.cpp:955
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, kde-format
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: core/libs/database/utils/ifaces/dio.cpp:964
+#: core/libs/database/utils/ifaces/dio.cpp:965
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restaura la paperera"
@@ -43132,112 +43132,128 @@ msgstr "Hi ha hagut un error en reproduir: l'element multimèdia no és vàlid"
 msgid "An error has occurred while playing: %1"
 msgstr "Hi ha hagut un error en reproduir: %1"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:205
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:201
+#, kde-format
+msgid "An error has occurred with the media player..."
+msgstr "Hi ha hagut un error amb el reproductor multimèdia..."
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:202
+#, kde-format
+msgid "End of media."
+msgstr ""
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:209
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pausa/Reproducció"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:208
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:212
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Captura"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:215
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Gira a l'esquerra"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Gira a la dreta"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:363
-#, kde-format
-msgid "An error has occurred with the media player..."
-msgstr "Hi ha hagut un error amb el reproductor multimèdia..."
-
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:249
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:407
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:253
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:413
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Commuta la reproducció en bucle"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:801
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:653
+#, fuzzy, kde-format
+#| msgid "Error: %1"
+msgid ""
+"%1\n"
+"\n"
+"Error: \"%2\""
+msgstr "Error: %1"
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:301
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Fotograma enrere"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:303
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Fotograma endavant"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "Canvia la velocitat de reproducció del vídeo"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgid "Rate"
 msgstr "Velocitat"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:332
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:335
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:334
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:338
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:337
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:341
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2,5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:340
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:344
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:343
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:347
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4,0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:350
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -68084,8 +68100,9 @@ msgid "Use video textures conversion"
 msgstr "Usa la conversió de textures de vídeo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
-#, kde-format
-msgid "Decoding backend to render video:"
+#, fuzzy, kde-format
+#| msgid "Decoding backend to render video:"
+msgid "Decoding backend to render media:"
 msgstr "Dorsal de descodificació per a renderitzar vídeo:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166

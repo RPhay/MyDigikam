@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-10 00:40+0000\n"
+"POT-Creation-Date: 2026-01-11 00:40+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -3149,16 +3149,16 @@ msgid "Donate: "
 msgstr "Dáta: "
 
 #: core/app/views/preview/itempreviewview.cpp:174
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Ar Ais"
 
 #: core/app/views/preview/itempreviewview.cpp:176
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:294
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -27527,7 +27527,7 @@ msgid "Skipped"
 msgstr ""
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:959
+#: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -28073,7 +28073,7 @@ msgid "Context menu"
 msgstr "Roghchlár comhthéacs"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1108
-#: core/libs/database/utils/ifaces/dio.cpp:969
+#: core/libs/database/utils/ifaces/dio.cpp:970
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -29390,50 +29390,50 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Forscríobh go huathoibríoch"
 
-#: core/libs/database/utils/ifaces/dio.cpp:923
+#: core/libs/database/utils/ifaces/dio.cpp:924
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "De Réir Albaim"
 
-#: core/libs/database/utils/ifaces/dio.cpp:928
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "&Grúpáil Íomhánna"
 
-#: core/libs/database/utils/ifaces/dio.cpp:934
+#: core/libs/database/utils/ifaces/dio.cpp:935
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "&Cóipeáil Anseo"
 
-#: core/libs/database/utils/ifaces/dio.cpp:939
+#: core/libs/database/utils/ifaces/dio.cpp:940
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgid "Move Album"
 msgstr "Albam Nua"
 
-#: core/libs/database/utils/ifaces/dio.cpp:944
+#: core/libs/database/utils/ifaces/dio.cpp:945
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Sábháil Íomhánna"
 
-#: core/libs/database/utils/ifaces/dio.cpp:949
+#: core/libs/database/utils/ifaces/dio.cpp:950
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Comhaid Scannáin"
 
-#: core/libs/database/utils/ifaces/dio.cpp:954
+#: core/libs/database/utils/ifaces/dio.cpp:955
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, kde-format
 msgid "Delete"
 msgstr "Scrios"
 
-#: core/libs/database/utils/ifaces/dio.cpp:964
+#: core/libs/database/utils/ifaces/dio.cpp:965
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "Athchóiriú"
@@ -43215,117 +43215,133 @@ msgstr "Tharla earráid agus clib á cruthú:"
 msgid "An error has occurred while playing: %1"
 msgstr "Tharla earráid agus clib á cruthú:"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:205
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:300
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:201
+#, kde-format
+msgid "An error has occurred with the media player..."
+msgstr ""
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:202
+#, kde-format
+msgid "End of media."
+msgstr ""
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:209
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:208
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:306
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:212
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Gabh"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:211
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:309
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:215
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Rothlaigh go Tuathalach"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:214
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:312
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Rothlaigh go Deisealach"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:363
-#, kde-format
-msgid "An error has occurred with the media player..."
-msgstr ""
-
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:249
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:407
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:253
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:413
 #, fuzzy, kde-format
 #| msgid "Display in loop"
 msgid "Toggle playing in a loop"
 msgstr "Taispeáin i lúb"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:297
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:801
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:653
+#, fuzzy, kde-format
+#| msgid "Error"
+msgid ""
+"%1\n"
+"\n"
+"Error: \"%2\""
+msgstr "Earráid"
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:301
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:303
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Ar Aghaidh"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, fuzzy, kde-format
 #| msgid "Date:"
 msgid "Rate"
 msgstr "Dáta:"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:328
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:332
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:335
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:334
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:338
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:337
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:341
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:340
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:344
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:343
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:347
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:346
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:350
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -69590,7 +69606,7 @@ msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
-msgid "Decoding backend to render video:"
+msgid "Decoding backend to render media:"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166
