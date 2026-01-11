@@ -750,6 +750,7 @@ void ItemPreviewView::slotSetupChanged()
     d->toolBar->setVisible(ApplicationSettings::instance()->getPreviewShowIcons());
     setScaleFitToWindow(ApplicationSettings::instance()->getScaleFitToWindow());
     setShowText(ApplicationSettings::instance()->getPreviewShowIcons());
+    setMagnifierZoomLevel(ApplicationSettings::instance()->getMagnifierZoomLevel());
 
     d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
     d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));

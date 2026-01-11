@@ -73,16 +73,6 @@ GraphicsDImgView::~GraphicsDImgView()
     delete d;
 }
 
-void GraphicsDImgView::setMagnifierVisible(bool b)
-{
-    d->magnifierEnabled = b;
-    d->magnifier->setVisible(d->magnifierEnabled);
-}
-
-bool GraphicsDImgView::isMagnifierVisible() const
-{
-    return d->magnifierEnabled;
-}
 
 int GraphicsDImgView::contentsX() const
 {
@@ -223,48 +213,6 @@ void GraphicsDImgView::slotZoomFactorChanged()
     if (d->magnifierEnabled && d->item)
     {
         updateMagnifier();
-    }
-}
-
-void GraphicsDImgView::updateMagnifier()
-{
-    QPointF position = mapToScene(mapFromGlobal(QCursor::pos()));
-
-    d->magnifier->setPos(position);
-
-    QPointF imagePos = d->item->zoomSettings()->mapZoomToImage(position);
-
-    // Compute the source zone depending of zoom
-
-    qreal zoomFactor = d->item->zoomSettings()->zoomFactor();
-    int halfSize     = d->magnifier->magnifierSize() / (2 * zoomFactor);
-
-    QRectF sourceRect(
-        imagePos.x() - halfSize,
-        imagePos.y() - halfSize,
-        d->magnifier->magnifierSize() / zoomFactor,
-        d->magnifier->magnifierSize() / zoomFactor
-    );
-
-    // Clipping at image borders
-
-    QRectF imageBounds;
-    QSize size = d->item->image().size();
-    imageBounds.setSize(size);
-    sourceRect = sourceRect.intersected(imageBounds);
-
-    // Check if the source rectangle is valid
-    // Update magnifier with the source pixmap
-
-    if (sourceRect.isEmpty())
-    {
-        d->magnifier->setVisible(false);
-    }
-    else
-    {
-        d->magnifier->setVisible(true);
-        QPixmap currentPixmap = d->item->image().convertToPixmap();
-        d->magnifier->setSourcePixmap(currentPixmap, sourceRect);
     }
 }
 
