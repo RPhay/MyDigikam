@@ -50,7 +50,6 @@ void GraphicsDImgView::updateMagnifier()
     // Use the zoom factor from the magnifier to adjust the source size area
 
     qreal magnifierZoomFactor = d->magnifier->zoomFactor();
-    qreal imageZoomFactor = d->item->zoomSettings()->zoomFactor();
 
     // Compute the size of the source area accordingly with the magnifier zoom factor
 

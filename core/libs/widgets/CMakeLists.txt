@@ -118,6 +118,7 @@ set(libgraphicsviewwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/magnifieritem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview_draw.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview_pan.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview_scroll.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview_events.cpp
