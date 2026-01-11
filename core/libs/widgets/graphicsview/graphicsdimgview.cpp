@@ -659,11 +659,7 @@ void GraphicsDImgView::mouseMoveEvent(QMouseEvent* e)
 
     if (d->magnifierEnabled && d->item)
     {
-        QPointF scenePos = mapToScene(e->pos());
-
-        updateMagnifier(scenePos);
-
-        d->magnifier->setPos(scenePos);
+        updateMagnifier();
     }
 
     if (
@@ -693,10 +689,7 @@ void GraphicsDImgView::slotContentsMoved()
 
     if (d->magnifierEnabled && d->item)
     {
-        // 1. Récupérer la position actuelle de la loupe (en coordonnées de la scène)
-        QPointF magnifierScenePos = d->magnifier->pos();
-
-        updateMagnifier(magnifierScenePos);
+        updateMagnifier();
     }
 
     viewport()->update();
@@ -706,21 +699,16 @@ void GraphicsDImgView::slotZoomFactorChanged()
 {
     if (d->magnifierEnabled && d->item)
     {
-//                QPointF scenePos = mapToScene(mapFromGlobal(QCursor::pos()));
-
-        QPoint globalPos = QCursor::pos(); // Position globale de la souris
-        QPoint viewPos   = viewport()->mapFromGlobal(globalPos); // Position dans la vue
-        QPointF scenePos = mapToScene(viewPos); // Position dans la scène
-
-        // Mettre à jour la position de la loupe
-        d->magnifier->setPos(scenePos);
-
-        updateMagnifier(scenePos);
+        updateMagnifier();
     }
 }
 
-void GraphicsDImgView::updateMagnifier(const QPointF& position)
+void GraphicsDImgView::updateMagnifier()
 {
+    QPointF position = mapToScene(mapFromGlobal(QCursor::pos()));
+
+    d->magnifier->setPos(position);
+
     QPointF imagePos = d->item->zoomSettings()->mapZoomToImage(position);
 
     // Compute the source zone depending of zoom

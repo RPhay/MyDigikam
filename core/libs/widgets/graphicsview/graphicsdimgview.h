@@ -132,7 +132,7 @@ protected Q_SLOTS:
 private:
 
     void gestureEvent(QGestureEvent*);
-    void updateMagnifier(const QPointF& position);
+    void updateMagnifier();
 
 private:
 
