@@ -122,6 +122,7 @@ protected:
 
 protected Q_SLOTS:
 
+    void         slotZoomFactorChanged();
     void         slotContentsMoved();
     void         slotCornerButtonPressed();
     void         slotPanIconHidden();
@@ -131,6 +132,7 @@ protected Q_SLOTS:
 private:
 
     void gestureEvent(QGestureEvent*);
+    void updateMagnifier(const QPointF& position);
 
 private:
 

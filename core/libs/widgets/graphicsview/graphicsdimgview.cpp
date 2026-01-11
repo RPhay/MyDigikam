@@ -31,6 +31,7 @@
 
 #include "digikam_debug.h"
 #include "dimgpreviewitem.h"
+#include "magnifieritem.h"
 #include "imagezoomsettings.h"
 #include "paniconwidget.h"
 #include "singlephotopreviewlayout.h"
@@ -58,6 +59,9 @@ public:
     QPoint                    panningScrollPos;
     bool                      movingInProgress  = false;
     bool                      showText          = true;
+
+    MagnifierItem*            magnifier         = nullptr;
+    bool                      magnifierEnabled  = true;
 };
 
 GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
@@ -84,6 +88,20 @@ GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
     grabGesture(Qt::PanGesture);
     grabGesture(Qt::SwipeGesture);
 
+    // ---
+
+    d->magnifier = new MagnifierItem();
+    d->magnifier->setVisible(false);
+    d->magnifier->setZoomFactor(2.0);
+    d->magnifier->setMagnifierSize(150);
+    d->scene->addItem(d->magnifier);
+    d->magnifier->setVisible(d->magnifierEnabled);      // FIXME: to hack.
+
+    connect(d->layout, &SinglePhotoPreviewLayout::zoomFactorChanged,
+            this, &GraphicsDImgView::slotZoomFactorChanged);
+
+    // ---
+
     connect(horizontalScrollBar(), SIGNAL(valueChanged(int)),
             this, SLOT(slotContentsMoved()));
 
@@ -93,6 +111,12 @@ GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
 
 GraphicsDImgView::~GraphicsDImgView()
 {
+    if (d->magnifier)
+    {
+        d->scene->removeItem(d->magnifier);
+        delete d->magnifier;
+    }
+
     delete d;
 }
 
@@ -246,30 +270,6 @@ void GraphicsDImgView::mousePressEvent(QMouseEvent* e)
     if (e->button() == Qt::RightButton)
     {
         Q_EMIT rightButtonClicked();
-    }
-}
-
-void GraphicsDImgView::mouseMoveEvent(QMouseEvent* e)
-{
-    QGraphicsView::mouseMoveEvent(e);
-
-    if (
-        ((e->buttons() & Qt::LeftButton) || (e->buttons() & Qt::MiddleButton)) &&
-        !d->mousePressPos.isNull()
-       )
-    {
-        if (!d->movingInProgress && (e->buttons() & Qt::LeftButton))
-        {
-            if ((d->mousePressPos - e->pos()).manhattanLength() > QApplication::startDragDistance())
-            {
-                startPanning(d->mousePressPos);
-            }
-        }
-
-        if (d->movingInProgress)
-        {
-            continuePanning(e->pos());
-        }
     }
 }
 
@@ -506,14 +506,6 @@ void GraphicsDImgView::slotPanIconSelectionMoved(const QRect& imageRect, bool b)
     }
 }
 
-void GraphicsDImgView::slotContentsMoved()
-{
-    Q_EMIT contentsMoving(horizontalScrollBar()->value(),
-                          verticalScrollBar()->value());
-
-    viewport()->update();
-}
-
 int GraphicsDImgView::contentsX() const
 {
     return horizontalScrollBar()->value();
@@ -659,6 +651,110 @@ bool GraphicsDImgView::event(QEvent* event)
     }
 
     return QGraphicsView::event(event);
+}
+
+void GraphicsDImgView::mouseMoveEvent(QMouseEvent* e)
+{
+    QGraphicsView::mouseMoveEvent(e);
+
+    if (d->magnifierEnabled && d->item)
+    {
+        QPointF scenePos = mapToScene(e->pos());
+
+        updateMagnifier(scenePos);
+
+        d->magnifier->setPos(scenePos);
+    }
+
+    if (
+        ((e->buttons() & Qt::LeftButton) || (e->buttons() & Qt::MiddleButton)) &&
+        !d->mousePressPos.isNull()
+       )
+    {
+        if (!d->movingInProgress && (e->buttons() & Qt::LeftButton))
+        {
+            if ((d->mousePressPos - e->pos()).manhattanLength() > QApplication::startDragDistance())
+            {
+                startPanning(d->mousePressPos);
+            }
+        }
+
+        if (d->movingInProgress)
+        {
+            continuePanning(e->pos());
+        }
+    }
+}
+
+void GraphicsDImgView::slotContentsMoved()
+{
+    Q_EMIT contentsMoving(horizontalScrollBar()->value(),
+                          verticalScrollBar()->value());
+
+    if (d->magnifierEnabled && d->item)
+    {
+        // 1. Récupérer la position actuelle de la loupe (en coordonnées de la scène)
+        QPointF magnifierScenePos = d->magnifier->pos();
+
+        updateMagnifier(magnifierScenePos);
+    }
+
+    viewport()->update();
+}
+
+void GraphicsDImgView::slotZoomFactorChanged()
+{
+    if (d->magnifierEnabled && d->item)
+    {
+//                QPointF scenePos = mapToScene(mapFromGlobal(QCursor::pos()));
+
+        QPoint globalPos = QCursor::pos(); // Position globale de la souris
+        QPoint viewPos   = viewport()->mapFromGlobal(globalPos); // Position dans la vue
+        QPointF scenePos = mapToScene(viewPos); // Position dans la scène
+
+        // Mettre à jour la position de la loupe
+        d->magnifier->setPos(scenePos);
+
+        updateMagnifier(scenePos);
+    }
+}
+
+void GraphicsDImgView::updateMagnifier(const QPointF& position)
+{
+    QPointF imagePos = d->item->zoomSettings()->mapZoomToImage(position);
+
+    // Compute the source zone depending of zoom
+
+    qreal zoomFactor = d->item->zoomSettings()->zoomFactor();
+    int halfSize     = d->magnifier->magnifierSize() / (2 * zoomFactor);
+
+    QRectF sourceRect(
+        imagePos.x() - halfSize,
+        imagePos.y() - halfSize,
+        d->magnifier->magnifierSize() / zoomFactor,
+        d->magnifier->magnifierSize() / zoomFactor
+    );
+
+    // Clipping at image borders
+
+    QRectF imageBounds;
+    QSize size = d->item->image().size();
+    imageBounds.setSize(size);
+    sourceRect = sourceRect.intersected(imageBounds);
+
+    // Check if the source rectangle is valid
+    // Update magnifier with the source pixmap
+
+    if (sourceRect.isEmpty())
+    {
+        d->magnifier->setVisible(false);
+    }
+    else
+    {
+        d->magnifier->setVisible(true);
+        QPixmap currentPixmap = d->item->image().convertToPixmap();
+        d->magnifier->setSourcePixmap(currentPixmap, sourceRect);
+    }
 }
 
 } // namespace Digikam
