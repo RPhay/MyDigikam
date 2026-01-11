@@ -236,16 +236,16 @@ void ItemIconView::slotGotoDateAndItem(const ItemInfo& imageInfo)
 
     Q_EMIT signalNoCurrentItem();
 
+    // Set the activate item url to find in the Album View after
+    // all items have be reloaded.
+
+    slotSetCurrentWhenAvailable(imageInfo.id());
+
     // Change to Date Album view.
     // Note, that this also opens the side bar if it is closed; this is
     // considered as a feature, because it highlights that the view was changed.
 
     slotLeftSideBarActivate(d->dateViewSideBar);
-
-    // Set the activate item url to find in the Album View after
-    // all items have be reloaded.
-
-    slotSetCurrentWhenAvailable(imageInfo.id());
 
     // Change the year and month of the iconItem (day is unused).
 
