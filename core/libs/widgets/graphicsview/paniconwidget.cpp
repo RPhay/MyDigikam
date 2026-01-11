@@ -95,7 +95,7 @@ public:
         // To catch outside clicks, it is sufficient to check for
         // hide events on Qt::Popup type widgets
 
-        if (event->type() == QEvent::Hide && m_popup)
+        if ((event->type() == QEvent::Hide) && m_popup)
         {
             // do not set d->result here, because the popup
             // hides itself after leaving the event loop.
@@ -163,7 +163,8 @@ void PanIconFrame::setMainWidget(QWidget* const main)
 
     if (d->main)
     {
-        resize(d->main->width() + 2 * frameWidth(), d->main->height() + 2 * frameWidth());
+        resize(d->main->width()  + 2 * frameWidth(),
+               d->main->height() + 2 * frameWidth());
     }
 }
 
@@ -173,8 +174,10 @@ void PanIconFrame::resizeEvent(QResizeEvent* e)
 
     if (d->main)
     {
-        d->main->setGeometry(frameWidth(), frameWidth(),
-                             width() - 2 * frameWidth(), height() - 2 * frameWidth());
+        d->main->setGeometry(frameWidth(),
+                             frameWidth(),
+                             width()  - 2 * frameWidth(),
+                             height() - 2 * frameWidth());
     }
 }
 
@@ -256,6 +259,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool    moveSelection       = false;
     bool    flicker             = false;
 
@@ -334,7 +339,10 @@ void PanIconWidget::setImage(const QImage& scaledPreviewImage, const QSize& full
 
     setFixedSize(d->width, d->height);
 
-    d->rect = QRect(width() / 2 - d->width / 2, height() / 2 - d->height / 2, d->width, d->height);
+    d->rect = QRect(width()  / 2 - d->width  / 2,
+                    height() / 2 - d->height / 2,
+                    d->width,
+                    d->height);
     update();
 }
 
