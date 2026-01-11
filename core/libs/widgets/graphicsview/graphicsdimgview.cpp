@@ -46,7 +46,6 @@ GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
 
     d->magnifier = new MagnifierItem();
     d->magnifier->setVisible(false);
-    d->magnifier->setZoomFactor(2.0);
     d->magnifier->setMagnifierSize(150);
     d->scene->addItem(d->magnifier);
 
@@ -73,7 +72,6 @@ GraphicsDImgView::~GraphicsDImgView()
     delete d;
 }
 
-
 int GraphicsDImgView::contentsX() const
 {
     return horizontalScrollBar()->value();
@@ -95,34 +93,10 @@ void GraphicsDImgView::setShowText(bool val)
     d->showText = val;
 }
 
-void GraphicsDImgView::setScaleFitToWindow(bool value)
-{
-    d->layout->setScaleFitToWindow(value);
-}
 
 QRect GraphicsDImgView::visibleArea() const
 {
     return (mapToScene(viewport()->geometry()).boundingRect().toRect());
-}
-
-void GraphicsDImgView::fitToWindow()
-{
-    d->layout->fitToWindow();
-    update();
-}
-
-void GraphicsDImgView::toggleFullScreen(bool set)
-{
-    if (set)
-    {
-        d->scene->setBackgroundBrush(Qt::black);
-        setFrameShape(QFrame::NoFrame);
-    }
-    else
-    {
-        d->scene->setBackgroundBrush(Qt::NoBrush);
-        setFrameShape(QFrame::StyledPanel);
-    }
 }
 
 void GraphicsDImgView::setItem(GraphicsDImgItem* const item)
@@ -147,6 +121,31 @@ DImgPreviewItem* GraphicsDImgView::previewItem() const
 SinglePhotoPreviewLayout* GraphicsDImgView::layout() const
 {
     return d->layout;
+}
+
+void GraphicsDImgView::setScaleFitToWindow(bool value)
+{
+    d->layout->setScaleFitToWindow(value);
+}
+
+void GraphicsDImgView::fitToWindow()
+{
+    d->layout->fitToWindow();
+    update();
+}
+
+void GraphicsDImgView::toggleFullScreen(bool set)
+{
+    if (set)
+    {
+        d->scene->setBackgroundBrush(Qt::black);
+        setFrameShape(QFrame::NoFrame);
+    }
+    else
+    {
+        d->scene->setBackgroundBrush(Qt::NoBrush);
+        setFrameShape(QFrame::StyledPanel);
+    }
 }
 
 void GraphicsDImgView::drawForeground(QPainter* p, const QRectF& rect)

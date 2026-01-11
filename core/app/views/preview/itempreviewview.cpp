@@ -214,7 +214,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->showFocusPointAction->setCheckable(true);
 
     d->magnifierAction          = new QAction(QIcon::fromTheme(QLatin1String("document-edit-verify")),
-                                              i18n("Show Magnifier"),                this);
+                                              i18n("Show Magnifier"),                 this);
     d->magnifierAction->setCheckable(true);
 
     d->fullscreenAction         = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
@@ -751,6 +751,7 @@ void ItemPreviewView::slotSetupChanged()
     setScaleFitToWindow(ApplicationSettings::instance()->getScaleFitToWindow());
     setShowText(ApplicationSettings::instance()->getPreviewShowIcons());
     setMagnifierZoomLevel(ApplicationSettings::instance()->getMagnifierZoomLevel());
+    d->magnifierAction->setText(i18n("Show Magnifier (x%1)", magnifierZoomLevel()));
 
     d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
     d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));
