@@ -18,6 +18,20 @@
 namespace Digikam
 {
 
+bool GraphicsDImgView::viewportEvent(QEvent* event)
+{
+    if      (event->type() == QEvent::Leave)
+    {
+        d->magnifier->setVisible(false);
+    }
+    else if (event->type() == QEvent::Enter)
+    {
+        d->magnifier->setVisible(true);
+    }
+
+    return QGraphicsView::viewportEvent(event);
+}
+
 void GraphicsDImgView::mouseDoubleClickEvent(QMouseEvent* e)
 {
     QGraphicsView::mouseDoubleClickEvent(e);
@@ -182,7 +196,6 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
         QGraphicsView::wheelEvent(e);
     }
 }
-
 
 void GraphicsDImgView::gestureEvent(QGestureEvent* event)
 {
