@@ -27,7 +27,7 @@ class MagnifierItem : public QGraphicsItem
 public:
 
     explicit MagnifierItem(QGraphicsItem* const parent = nullptr);
-    ~MagnifierItem()                                                          override = default;
+    ~MagnifierItem()                                                          override;
 
     void setSourcePixmap(const QPixmap& pixmap, const QRectF& rect);
     void setZoomFactor(qreal factor);
@@ -43,10 +43,8 @@ protected:
 
 private:
 
-    QPixmap m_sourcePixmap;
-    QRectF  m_sourceRect;
-    qreal   m_zoomFactor   = 2.0;
-    int     m_size         = 150;
+    class Private;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

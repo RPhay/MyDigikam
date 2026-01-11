@@ -22,44 +22,65 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN MagnifierItem::Private
+{
+public:
+
+    Private() = default;
+
+public:
+
+    QPixmap sourcePixmap;
+    QRectF  sourceRect;
+    qreal   zoomFactor   = 2.0;
+    int     size         = 150;
+};
+
 MagnifierItem::MagnifierItem(QGraphicsItem* const parent)
-    : QGraphicsItem(parent)
+    : QGraphicsItem(parent),
+      d            (new Private)
+
 {
     setZValue(10); // Be sure that the loop is always behind the image
 }
 
+MagnifierItem::~MagnifierItem()
+{
+    delete d;
+}
+
 void MagnifierItem::setSourcePixmap(const QPixmap& pixmap, const QRectF& rect)
 {
-    m_sourcePixmap = pixmap;
-    m_sourceRect   = rect;
+    d->sourcePixmap = pixmap;
+    d->sourceRect   = rect;
     update();
 }
 
 void MagnifierItem::setZoomFactor(qreal factor)
 {
-    m_zoomFactor = factor;
+    d->zoomFactor = factor;
     update();
 }
 
 void MagnifierItem::setMagnifierSize(int magnifierSize)
 {
-    m_size = magnifierSize;
+    d->size = magnifierSize;
     update();
 }
 
 int MagnifierItem::magnifierSize() const
 {
-    return m_size;
+    return d->size;
 }
 
 QRectF MagnifierItem::boundingRect() const
 {
-    return QRectF(-m_size / 2, -m_size / 2, m_size, m_size);
+    return QRectF(-d->size / 2, -d->size / 2, d->size, d->size);
 }
 
 void MagnifierItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
 {
-    if (m_sourcePixmap.isNull())
+    if (d->sourcePixmap.isNull())
     {
         return;
     }
@@ -76,16 +97,16 @@ void MagnifierItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QW
 
     // Draw the ellipsis.
 
-    QRadialGradient gradient(0, 0, m_size / 2);
+    QRadialGradient gradient(0, 0, d->size / 2);
     gradient.setColorAt(0, QColor(255, 255, 255, 220)); // blur center
     gradient.setColorAt(1, QColor(255, 255, 255, 100)); // surround transparency
     painter->setBrush(gradient);
     painter->drawEllipse(boundingRect());
 
-    QPixmap zoomed = m_sourcePixmap.copy(m_sourceRect.toRect())
-                                   .scaled(m_size, m_size, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    QPixmap zoomed = d->sourcePixmap.copy(d->sourceRect.toRect())
+                                   .scaled(d->size, d->size, Qt::KeepAspectRatio, Qt::SmoothTransformation);
 
-    painter->drawPixmap(QRectF(-m_size / 2, -m_size / 2, m_size, m_size),
+    painter->drawPixmap(QRectF(-d->size / 2, -d->size / 2, d->size, d->size),
                         zoomed,
                         zoomed.rect());
 
