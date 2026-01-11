@@ -62,6 +62,11 @@ void MagnifierItem::setZoomFactor(qreal factor)
     update();
 }
 
+qreal MagnifierItem::zoomFactor() const
+{
+    return d->zoomFactor;
+}
+
 void MagnifierItem::setMagnifierSize(int magnifierSize)
 {
     d->size = magnifierSize;

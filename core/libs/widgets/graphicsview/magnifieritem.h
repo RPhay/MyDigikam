@@ -30,7 +30,10 @@ public:
     ~MagnifierItem()                                                          override;
 
     void setSourcePixmap(const QPixmap& pixmap, const QRectF& rect);
+
     void setZoomFactor(qreal factor);
+    qreal zoomFactor()                                                  const;
+
     void setMagnifierSize(int magnifierSize);
     int  magnifierSize()                                                const;
 
