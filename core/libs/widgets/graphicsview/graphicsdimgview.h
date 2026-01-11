@@ -80,6 +80,12 @@ public:
     void  fitToWindow();
     void  toggleFullScreen(bool set);
 
+    void setMagnifierZoomLevel(qreal level);
+    qreal magnifierZoomLevel()              const;
+
+    void setMagnifierVisible(bool b);
+    bool isMagnifierVisible()               const;
+
 Q_SIGNALS:
 
     void contentsMoving(int, int);
@@ -102,6 +108,7 @@ protected:
 
     void installPanIcon();
 
+    bool viewportEvent(QEvent*)                                 override;
     void mouseDoubleClickEvent(QMouseEvent*)                    override;
     void mousePressEvent(QMouseEvent*)                          override;
     void mouseMoveEvent(QMouseEvent*)                           override;
@@ -122,6 +129,7 @@ protected:
 
 protected Q_SLOTS:
 
+    void         slotZoomFactorChanged();
     void         slotContentsMoved();
     void         slotCornerButtonPressed();
     void         slotPanIconHidden();
@@ -131,6 +139,7 @@ protected Q_SLOTS:
 private:
 
     void gestureEvent(QGestureEvent*);
+    void updateMagnifier();
 
 private:
 

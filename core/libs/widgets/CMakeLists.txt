@@ -115,8 +115,13 @@ set(libgraphicsviewwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/dimgchilditem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/dimgpreviewitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/regionframeitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/magnifieritem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview_pan.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview_scroll.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview_events.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview_magnifier.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/imagezoomsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/singlephotopreviewlayout.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/paniconwidget.cpp

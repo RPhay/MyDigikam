@@ -105,6 +105,8 @@ public:
 
     QAction*               fullscreenAction     = nullptr;
 
+    QAction*               magnifierAction      = nullptr;
+
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
     PickLabelSelector*     plWidget             = nullptr;
@@ -119,7 +121,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
       d               (new Private)
 {
     d->mode      = mode;
-    d->item      = new ItemPreviewCanvas();
+    d->item      = new ItemPreviewCanvas(this);
     d->currAlbum = currAlbum;
     setItem(d->item);
 
@@ -211,6 +213,10 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->peopleToggleAction->setCheckable(true);
     d->showFocusPointAction->setCheckable(true);
 
+    d->magnifierAction          = new QAction(QIcon::fromTheme(QLatin1String("document-edit-verify")),
+                                              i18n("Show Magnifier"),                this);
+    d->magnifierAction->setCheckable(true);
+
     d->fullscreenAction         = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                               i18n("Show Fullscreen"),                this);
 
@@ -256,6 +262,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->toolBar->addAction(d->peopleToggleAction);
     d->toolBar->addAction(d->addPersonAction);
     d->toolBar->addAction(d->fullscreenAction);
+    d->toolBar->addAction(d->magnifierAction);
 
     d->toolBar->addWidget(labelsBox);
 
@@ -281,12 +288,19 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->rotRightAction, SIGNAL(triggered()),
             this, SLOT(slotRotateRight()));
 
-    connect(d->peopleToggleAction, SIGNAL(toggled(bool)),
-            d->faceGroup, SLOT(setVisible(bool)));
+    connect(d->peopleToggleAction, &QAction::toggled,
+            this, [this](bool checked)
+        {
+            d->magnifierAction->setChecked(false);
+            d->faceGroup->setVisible(checked);
+        }
+    );
 
     connect(d->addPersonAction, &QAction::triggered,
             this, [this]()
         {
+            d->magnifierAction->setChecked(false);
+
             if (isVisible() && hasFocus())
             {
                 d->faceGroup->addFace();
@@ -294,18 +308,35 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
         }
     );
 
-    connect(d->forgetFacesAction, SIGNAL(triggered()),
-            d->faceGroup, SLOT(rejectAll()));
+    connect(d->forgetFacesAction, &QAction::triggered,
+            this, [this]()
+        {
+            d->magnifierAction->setChecked(false);
+            d->faceGroup->rejectAll();
+        }
+    );
 
-    connect(d->markAsIgnoredAction, SIGNAL(triggered()),
-            d->faceGroup, SLOT(markAllAsIgnored()));
+    connect(d->markAsIgnoredAction, &QAction::triggered,
+            this, [this]()
+        {
+            d->magnifierAction->setChecked(false);
+            d->faceGroup->markAllAsIgnored();
+        }
+    );
 
-    connect(d->addFocusPointAction, SIGNAL(triggered()),
-            d->focusPointGroup, SLOT(addPoint()));
+    connect(d->addFocusPointAction, &QAction::triggered,
+            this, [this]()
+        {
+            d->magnifierAction->setChecked(false);
+            d->focusPointGroup->addPoint();
+        }
+    );
 
     connect(d->showFocusPointAction, &QAction::toggled,
             this, [this](bool checked)
         {
+            d->magnifierAction->setChecked(false);
+
             bool add = false;
 
             if (checked)
@@ -320,6 +351,15 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
             d->focusPointGroup->setVisible(checked);
             d->addFocusPointAction->setEnabled(add);
+        }
+    );
+
+    connect(d->magnifierAction, &QAction::toggled,
+            this, [this](bool checked)
+        {
+            d->peopleToggleAction->setChecked(false);
+            d->showFocusPointAction->setChecked(false);
+            setMagnifierVisible(checked);
         }
     );
 
@@ -393,6 +433,7 @@ void ItemPreviewView::slotItemLoaded()
     }
 
     d->addFocusPointAction->setEnabled(add);
+    d->magnifierAction->setEnabled(true);
 }
 
 void ItemPreviewView::slotItemLoadingFailed()
@@ -406,6 +447,7 @@ void ItemPreviewView::slotItemLoadingFailed()
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
     d->addFocusPointAction->setEnabled(false);
+    d->magnifierAction->setEnabled(false);
 
     d->faceGroup->setInfo(ItemInfo());
     d->focusPointGroup->setInfo(ItemInfo());
@@ -662,7 +704,7 @@ void ItemPreviewView::slotSlideShowCurrent()
         return;
     }
 
-    //Trigger SlideShow manual
+    // Trigger SlideShow manually
 
     actions[0]->setData(getItemInfo().fileUrl());
 
@@ -708,6 +750,7 @@ void ItemPreviewView::slotSetupChanged()
     d->toolBar->setVisible(ApplicationSettings::instance()->getPreviewShowIcons());
     setScaleFitToWindow(ApplicationSettings::instance()->getScaleFitToWindow());
     setShowText(ApplicationSettings::instance()->getPreviewShowIcons());
+    setMagnifierZoomLevel(ApplicationSettings::instance()->getMagnifierZoomLevel());
 
     d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
     d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));

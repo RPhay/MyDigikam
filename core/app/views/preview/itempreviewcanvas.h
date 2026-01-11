@@ -20,6 +20,7 @@
 
 #include "digikam_config.h"
 #include "dimgpreviewitem.h"
+#include "itempreviewview.h"
 #include "iteminfo.h"
 
 class QGraphicsSceneContextMenuEvent;
@@ -36,7 +37,7 @@ class ItemPreviewCanvas : public DImgPreviewItem
 
 public:
 
-    explicit ItemPreviewCanvas();
+    explicit ItemPreviewCanvas(ItemPreviewView* const view);
     ~ItemPreviewCanvas()                                      override;
 
     void setItemInfo(const ItemInfo& info);
