@@ -288,12 +288,19 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->rotRightAction, SIGNAL(triggered()),
             this, SLOT(slotRotateRight()));
 
-    connect(d->peopleToggleAction, SIGNAL(toggled(bool)),
-            d->faceGroup, SLOT(setVisible(bool)));
+    connect(d->peopleToggleAction, &QAction::toggled,
+            this, [this](bool checked)
+        {
+            d->magnifierAction->setChecked(false);
+            d->faceGroup->setVisible(checked);
+        }
+    );
 
     connect(d->addPersonAction, &QAction::triggered,
             this, [this]()
         {
+            d->magnifierAction->setChecked(false);
+
             if (isVisible() && hasFocus())
             {
                 d->faceGroup->addFace();
@@ -301,18 +308,35 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
         }
     );
 
-    connect(d->forgetFacesAction, SIGNAL(triggered()),
-            d->faceGroup, SLOT(rejectAll()));
+    connect(d->forgetFacesAction, &QAction::triggered,
+            this, [this]()
+        {
+            d->magnifierAction->setChecked(false);
+            d->faceGroup->rejectAll();
+        }
+    );
 
-    connect(d->markAsIgnoredAction, SIGNAL(triggered()),
-            d->faceGroup, SLOT(markAllAsIgnored()));
+    connect(d->markAsIgnoredAction, &QAction::triggered,
+            this, [this]()
+        {
+            d->magnifierAction->setChecked(false);
+            d->faceGroup->markAllAsIgnored();
+        }
+    );
 
-    connect(d->addFocusPointAction, SIGNAL(triggered()),
-            d->focusPointGroup, SLOT(addPoint()));
+    connect(d->addFocusPointAction, &QAction::triggered,
+            this, [this]()
+        {
+            d->magnifierAction->setChecked(false);
+            d->focusPointGroup->addPoint();
+        }
+    );
 
     connect(d->showFocusPointAction, &QAction::toggled,
             this, [this](bool checked)
         {
+            d->magnifierAction->setChecked(false);
+
             bool add = false;
 
             if (checked)
@@ -333,6 +357,8 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->magnifierAction, &QAction::toggled,
             this, [this](bool checked)
         {
+            d->peopleToggleAction->setChecked(false);
+            d->showFocusPointAction->setChecked(false);
             setMagnifierVisible(checked);
         }
     );
