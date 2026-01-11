@@ -403,7 +403,7 @@ BUGFIXES:
 334 --> 514156 - Face Tags are not unique (Problem with unique assignment to image tags).
 335 --> 514272 - digiKam very long at start.
 336 --> 514387 - Old thumbnails are used after deletion.
-337 --> 
+337 --> 514446 - Go to Album and select photo automatically.
 338 --> 
 339 --> 
 340 --> 

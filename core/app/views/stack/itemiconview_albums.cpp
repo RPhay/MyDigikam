@@ -216,13 +216,13 @@ void ItemIconView::slotGotoAlbumAndItem(const ItemInfo& imageInfo)
 
     PAlbum* const album = AlbumManager::instance()->findPAlbum(imageInfo.albumId());
 
-    d->albumFolderSideBar->setCurrentAlbum(album);
-    slotLeftSideBarActivate(d->albumFolderSideBar);
-
     // Set the activate item url to find in the Album View after
     // all items have be reloaded.
 
     slotSetCurrentWhenAvailable(imageInfo.id());
+
+    d->albumFolderSideBar->setCurrentAlbum(album);
+    slotLeftSideBarActivate(d->albumFolderSideBar);
 
     // And finally toggle album manager to handle album history and
     // reload all items.

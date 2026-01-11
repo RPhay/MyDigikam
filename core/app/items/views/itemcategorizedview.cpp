@@ -443,7 +443,10 @@ void ItemCategorizedView::setThumbnailSize(const ThumbnailSize& s)
 
 void ItemCategorizedView::setCurrentWhenAvailable(qlonglong imageId)
 {
-    d->scrollToItemId = imageId;
+    if (!d->scrollToItemId)
+    {
+        d->scrollToItemId = imageId;
+    }
 }
 
 void ItemCategorizedView::setCurrentUrlWhenAvailable(const QUrl& url)
