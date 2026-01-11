@@ -13,56 +13,10 @@
  *
  * ============================================================ */
 
-#include "graphicsdimgview.h"
-
-// Qt includes
-
-#include <QApplication>
-#include <QGraphicsScene>
-#include <QScrollBar>
-#include <QToolButton>
-#include <QStyle>
-#include <QGesture>
-#include <QPinchGesture>
-#include <QPanGesture>
-#include <QSwipeGesture>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "dimgpreviewitem.h"
-#include "magnifieritem.h"
-#include "imagezoomsettings.h"
-#include "paniconwidget.h"
-#include "singlephotopreviewlayout.h"
-#include "dimgchilditem.h"
+#include "graphicsdimgview_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN GraphicsDImgView::Private
-{
-public:
-
-    Private() = default;
-
-public:
-
-    QGraphicsScene*           scene             = nullptr;
-    GraphicsDImgItem*         item              = nullptr;
-    SinglePhotoPreviewLayout* layout            = nullptr;
-
-    QToolButton*              cornerButton      = nullptr;
-    PanIconFrame*             panIconPopup      = nullptr;
-
-    QPoint                    mousePressPos;
-    QPoint                    panningScrollPos;
-    bool                      movingInProgress  = false;
-    bool                      showText          = true;
-
-    MagnifierItem*            magnifier         = nullptr;
-    bool                      magnifierEnabled  = true;
-};
 
 GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
     : QGraphicsView(parent),
@@ -120,6 +74,57 @@ GraphicsDImgView::~GraphicsDImgView()
     delete d;
 }
 
+int GraphicsDImgView::contentsX() const
+{
+    return horizontalScrollBar()->value();
+}
+
+int GraphicsDImgView::contentsY() const
+{
+    return verticalScrollBar()->value();
+}
+
+void GraphicsDImgView::setContentsPos(int x, int y)
+{
+    horizontalScrollBar()->setValue(x);
+    verticalScrollBar()->setValue(y);
+}
+
+void GraphicsDImgView::setShowText(bool val)
+{
+    d->showText = val;
+}
+
+void GraphicsDImgView::setScaleFitToWindow(bool value)
+{
+    d->layout->setScaleFitToWindow(value);
+}
+
+QRect GraphicsDImgView::visibleArea() const
+{
+    return (mapToScene(viewport()->geometry()).boundingRect().toRect());
+}
+
+void GraphicsDImgView::fitToWindow()
+{
+    d->layout->fitToWindow();
+    update();
+}
+
+void GraphicsDImgView::toggleFullScreen(bool set)
+{
+    if (set)
+    {
+        d->scene->setBackgroundBrush(Qt::black);
+        setFrameShape(QFrame::NoFrame);
+    }
+    else
+    {
+        d->scene->setBackgroundBrush(Qt::NoBrush);
+        setFrameShape(QFrame::StyledPanel);
+    }
+}
+
 void GraphicsDImgView::setItem(GraphicsDImgItem* const item)
 {
     d->item = item;
@@ -142,15 +147,6 @@ DImgPreviewItem* GraphicsDImgView::previewItem() const
 SinglePhotoPreviewLayout* GraphicsDImgView::layout() const
 {
     return d->layout;
-}
-
-void GraphicsDImgView::installPanIcon()
-{
-    d->cornerButton = PanIconWidget::button();
-    setCornerWidget(d->cornerButton);
-
-    connect(d->cornerButton, SIGNAL(pressed()),
-            this, SLOT(slotCornerButtonPressed()));
 }
 
 void GraphicsDImgView::drawForeground(QPainter* p, const QRectF& rect)
@@ -210,489 +206,6 @@ void GraphicsDImgView::drawText(QPainter* p, const QRectF& rect, const QString& 
     p->drawText(textRect.translated(2, 0), text);
 
     p->restore();
-}
-
-void GraphicsDImgView::mouseDoubleClickEvent(QMouseEvent* e)
-{
-    QGraphicsView::mouseDoubleClickEvent(e);
-
-    if (!acceptsMouseClick(e))
-    {
-        return;
-    }
-
-    if (e->button() == Qt::LeftButton)
-    {
-        Q_EMIT leftButtonDoubleClicked();
-
-        if (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick))
-        {
-            Q_EMIT activated();
-        }
-    }
-}
-
-void GraphicsDImgView::mousePressEvent(QMouseEvent* e)
-{
-    QGraphicsView::mousePressEvent(e);
-
-    d->mousePressPos    = QPoint();
-    d->movingInProgress = false;
-
-    if (!acceptsMouseClick(e))
-    {
-        return;
-    }
-
-    if (e->button() == Qt::LeftButton)
-    {
-        Q_EMIT leftButtonClicked();
-    }
-
-    if (
-        (e->button() == Qt::LeftButton)   ||
-        (e->button() == Qt::MiddleButton)
-       )
-    {
-        d->mousePressPos = e->pos();
-
-        if (
-            !qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) ||
-            (e->button() == Qt::MiddleButton)
-           )
-        {
-            startPanning(e->pos());
-        }
-
-        return;
-    }
-
-    if (e->button() == Qt::RightButton)
-    {
-        Q_EMIT rightButtonClicked();
-    }
-}
-
-void GraphicsDImgView::mouseReleaseEvent(QMouseEvent* e)
-{
-    QGraphicsView::mouseReleaseEvent(e);
-
-    // Do not call acceptsMouseClick() here, only on press. Seems that release event are accepted per default.
-
-    if (
-        ((e->button() == Qt::LeftButton) || (e->button() == Qt::MiddleButton)) &&
-        !d->mousePressPos.isNull()
-       )
-    {
-        if (!d->movingInProgress && (e->button() == Qt::LeftButton))
-        {
-            if (qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick))
-            {
-                Q_EMIT activated();
-            }
-        }
-        else
-        {
-            finishPanning();
-        }
-    }
-
-    d->movingInProgress = false;
-    d->mousePressPos    = QPoint();
-}
-
-bool GraphicsDImgView::acceptsMouseClick(QMouseEvent* e)
-{
-    // the basic condition is that now item ate the event
-
-    if (e->isAccepted())
-    {
-        return false;
-    }
-
-    return true;
-}
-
-void GraphicsDImgView::resizeEvent(QResizeEvent* e)
-{
-    QGraphicsView::resizeEvent(e);
-    d->layout->updateZoomAndSize();
-
-    Q_EMIT resized();
-    Q_EMIT viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
-}
-
-void GraphicsDImgView::scrollContentsBy(int dx, int dy)
-{
-    QGraphicsView::scrollContentsBy(dx, dy);
-
-    Q_EMIT viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
-}
-
-void GraphicsDImgView::startPanning(const QPoint& pos)
-{
-    if (horizontalScrollBar()->maximum() || verticalScrollBar()->maximum())
-    {
-        d->movingInProgress = true;
-        d->mousePressPos    = pos;
-        d->panningScrollPos = QPoint(horizontalScrollBar()->value(),
-                                     verticalScrollBar()->value());
-        viewport()->setCursor(Qt::SizeAllCursor);
-    }
-}
-
-void GraphicsDImgView::continuePanning(const QPoint& pos)
-{
-    QPoint delta = pos - d->mousePressPos;
-    horizontalScrollBar()->setValue(d->panningScrollPos.x() + (isRightToLeft() ? delta.x() : -delta.x()));
-    verticalScrollBar()->setValue(d->panningScrollPos.y() - delta.y());
-
-    Q_EMIT contentsMoved(false);
-
-    viewport()->update();
-}
-
-void GraphicsDImgView::finishPanning()
-{
-    Q_EMIT contentsMoved(true);
-
-    viewport()->unsetCursor();
-}
-
-void GraphicsDImgView::scrollPointOnPoint(const QPointF& scenePos, const QPoint& viewportPos)
-{
-    // This is inspired from QGraphicsView's centerOn()
-
-    QPointF viewPoint = transform().map(scenePos);
-
-    if (horizontalScrollBar()->maximum())
-    {
-        if (isRightToLeft())
-        {
-            qint64 horizontal = 0;
-            horizontal       += horizontalScrollBar()->minimum();
-            horizontal       += horizontalScrollBar()->maximum();
-            horizontal       -= int(viewPoint.x() - viewportPos.x());
-            horizontalScrollBar()->setValue(horizontal);
-        }
-        else
-        {
-            horizontalScrollBar()->setValue(int(viewPoint.x() - viewportPos.x()));
-        }
-    }
-
-    if (verticalScrollBar()->maximum())
-    {
-        verticalScrollBar()->setValue(int(viewPoint.y() - viewportPos.y()));
-    }
-
-    viewport()->update();
-}
-
-void GraphicsDImgView::wheelEvent(QWheelEvent* e)
-{
-    int p = this->verticalScrollBar()->sliderPosition();
-
-    if      (e->modifiers() & Qt::ShiftModifier)
-    {
-        e->accept();
-
-        if      (e->angleDelta().y() < 0)
-        {
-            Q_EMIT toNextImage();
-        }
-        else if (e->angleDelta().y() > 0)
-        {
-            Q_EMIT toPreviousImage();
-        }
-
-        return;
-    }
-    else if (e->modifiers() & Qt::ControlModifier)
-    {
-        // When zooming with the mouse-wheel, the image center is kept fixed.
-
-        QPoint point = e->position().toPoint();
-
-        if      (e->angleDelta().y() < 0)
-        {
-            d->layout->decreaseZoom(point);
-        }
-        else if (e->angleDelta().y() > 0)
-        {
-            d->layout->increaseZoom(point);
-        }
-
-        return;
-    }
-
-    else if (
-             ((p == this->verticalScrollBar()->maximum()) && (e->angleDelta().y() < 0)) ||
-             ((p == this->verticalScrollBar()->minimum()) && (e->angleDelta().y() > 0))
-            )
-    {
-        // I had to add this condition for "ImageBrushGuideWidget" that subclasses ImageRegionWidget, used
-        // in the healingclone tool.
-        // If I remove that condition, this event handler gets called recursively and the program
-        // crashes.T I couldn't figure out the reason. [Ahmed Fathy]
-
-        return;
-    }
-    else
-    {
-        QGraphicsView::wheelEvent(e);
-    }
-}
-
-void GraphicsDImgView::slotCornerButtonPressed()
-{
-    if (d->panIconPopup)
-    {
-        d->panIconPopup->hide();
-        d->panIconPopup->deleteLater();
-        d->panIconPopup = nullptr;
-    }
-
-    d->panIconPopup          = new PanIconFrame(this);
-    PanIconWidget* const pan = new PanIconWidget(d->panIconPopup);
-/*
-    connect(pan, SIGNAL(signalSelectionTakeFocus()),
-            this, SIGNAL(signalContentTakeFocus()));
-*/
-    connect(pan, SIGNAL(signalSelectionMoved(QRect,bool)),
-            this, SLOT(slotPanIconSelectionMoved(QRect,bool)));
-
-    connect(pan, SIGNAL(signalHidden()),
-            this, SLOT(slotPanIconHidden()));
-
-    pan->setImage(180, 120, item()->image());
-    QRectF sceneRect(mapToScene(viewport()->rect().topLeft()), mapToScene(viewport()->rect().bottomRight()));
-    pan->setRegionSelection(item()->zoomSettings()->sourceRect(sceneRect).toRect());
-    pan->setMouseFocus();
-    d->panIconPopup->setMainWidget(pan);
-/*
-    slotContentTakeFocus();
-*/
-    QPoint g = mapToGlobal(viewport()->pos());
-    g.setX(g.x()+ viewport()->size().width());
-    g.setY(g.y()+ viewport()->size().height());
-    d->panIconPopup->popup(QPoint(g.x() - d->panIconPopup->width(),
-                                  g.y() - d->panIconPopup->height()));
-
-    pan->setCursorToLocalRegionSelectionCenter();
-}
-
-void GraphicsDImgView::slotPanIconHidden()
-{
-    d->cornerButton->blockSignals(true);
-    d->cornerButton->animateClick();
-    d->cornerButton->blockSignals(false);
-}
-
-void GraphicsDImgView::slotPanIconSelectionMoved(const QRect& imageRect, bool b)
-{
-    QRectF zoomRect = item()->zoomSettings()->mapImageToZoom(imageRect);
-    qCDebug(DIGIKAM_WIDGETS_LOG) << imageRect << zoomRect;
-    centerOn(item()->mapToScene(zoomRect.center()));
-    viewport()->update();
-
-    if (b)
-    {
-        d->panIconPopup->hide();
-        d->panIconPopup->deleteLater();
-        d->panIconPopup = nullptr;
-        slotPanIconHidden();
-        //slotContentLeaveFocus();
-    }
-}
-
-int GraphicsDImgView::contentsX() const
-{
-    return horizontalScrollBar()->value();
-}
-
-int GraphicsDImgView::contentsY() const
-{
-    return verticalScrollBar()->value();
-}
-
-void GraphicsDImgView::setContentsPos(int x, int y)
-{
-    horizontalScrollBar()->setValue(x);
-    verticalScrollBar()->setValue(y);
-}
-
-void GraphicsDImgView::setShowText(bool val)
-{
-    d->showText = val;
-}
-
-void GraphicsDImgView::setScaleFitToWindow(bool value)
-{
-    d->layout->setScaleFitToWindow(value);
-}
-
-QRect GraphicsDImgView::visibleArea() const
-{
-    return (mapToScene(viewport()->geometry()).boundingRect().toRect());
-}
-
-void GraphicsDImgView::fitToWindow()
-{
-    d->layout->fitToWindow();
-    update();
-}
-
-void GraphicsDImgView::toggleFullScreen(bool set)
-{
-    if (set)
-    {
-        d->scene->setBackgroundBrush(Qt::black);
-        setFrameShape(QFrame::NoFrame);
-    }
-    else
-    {
-        d->scene->setBackgroundBrush(Qt::NoBrush);
-        setFrameShape(QFrame::StyledPanel);
-    }
-}
-
-void GraphicsDImgView::gestureEvent(QGestureEvent* event)
-{
-    // Handle pinch gesture event to zoom in/out centered on mouse position.
-
-    if (QGesture* const pinch = event->gesture(Qt::PinchGesture))
-    {
-        QPinchGesture* const pinchGesture = dynamic_cast<QPinchGesture*>(pinch);
-
-        if (pinchGesture && (pinchGesture->changeFlags() & QPinchGesture::ScaleFactorChanged))
-        {
-            QPointF center    = pinchGesture->centerPoint();
-            qreal scaleFactor = pinchGesture->scaleFactor();
-            d->layout->zoomByFactor(scaleFactor, center.toPoint());
-            event->accept();
-
-            return;
-        }
-    }
-
-    // Handle pan gesture event to move contents.
-
-    if (QGesture* const pan = event->gesture(Qt::PanGesture))
-    {
-        QPanGesture* const panGesture = dynamic_cast<QPanGesture*>(pan);
-
-        if (panGesture)
-        {
-            if      (panGesture->state() == Qt::GestureStarted)
-            {
-                d->panningScrollPos = QPoint(horizontalScrollBar()->value(), verticalScrollBar()->value());
-                d->mousePressPos    = panGesture->hotSpot().toPoint();
-                viewport()->setCursor(Qt::SizeAllCursor);
-                d->movingInProgress = true;
-                event->accept();
-
-                return;
-            }
-            else if (panGesture->state() == Qt::GestureUpdated)
-            {
-                QPointF delta = panGesture->lastOffset();
-                horizontalScrollBar()->setValue(d->panningScrollPos.x() - static_cast<int>(delta.x()));
-                verticalScrollBar()->setValue(d->panningScrollPos.y() - static_cast<int>(delta.y()));
-                viewport()->update();
-                event->accept();
-
-                return;
-            }
-            else if (panGesture->state() == Qt::GestureFinished)
-            {
-                viewport()->unsetCursor();
-                d->movingInProgress = false;
-                event->accept();
-
-                return;
-            }
-        }
-    }
-
-    // Handle swipe gesture event to change current item.
-
-    if (QGesture* const swipe = event->gesture(Qt::SwipeGesture))
-    {
-        QSwipeGesture* const swipeGesture = dynamic_cast<QSwipeGesture*>(swipe);
-
-        if (swipeGesture && (swipeGesture->state() == Qt::GestureFinished))
-        {
-            if      (swipeGesture->horizontalDirection() == QSwipeGesture::Left)
-            {
-                Q_EMIT toNextImage();
-            }
-            else if (swipeGesture->horizontalDirection() == QSwipeGesture::Right)
-            {
-                Q_EMIT toPreviousImage();
-            }
-
-            event->accept();
-
-            return;
-        }
-    }
-
-    event->ignore();
-}
-
-bool GraphicsDImgView::event(QEvent* event)
-{
-    if (event->type() == QEvent::Gesture)
-    {
-        gestureEvent(static_cast<QGestureEvent*>(event));
-
-        return true;
-    }
-
-    return QGraphicsView::event(event);
-}
-
-void GraphicsDImgView::mouseMoveEvent(QMouseEvent* e)
-{
-    QGraphicsView::mouseMoveEvent(e);
-
-    if (d->magnifierEnabled && d->item)
-    {
-        updateMagnifier();
-    }
-
-    if (
-        ((e->buttons() & Qt::LeftButton) || (e->buttons() & Qt::MiddleButton)) &&
-        !d->mousePressPos.isNull()
-       )
-    {
-        if (!d->movingInProgress && (e->buttons() & Qt::LeftButton))
-        {
-            if ((d->mousePressPos - e->pos()).manhattanLength() > QApplication::startDragDistance())
-            {
-                startPanning(d->mousePressPos);
-            }
-        }
-
-        if (d->movingInProgress)
-        {
-            continuePanning(e->pos());
-        }
-    }
-}
-
-void GraphicsDImgView::slotContentsMoved()
-{
-    Q_EMIT contentsMoving(horizontalScrollBar()->value(),
-                          verticalScrollBar()->value());
-
-    if (d->magnifierEnabled && d->item)
-    {
-        updateMagnifier();
-    }
-
-    viewport()->update();
 }
 
 void GraphicsDImgView::slotZoomFactorChanged()
