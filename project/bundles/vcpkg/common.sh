@@ -113,6 +113,7 @@ export PATH="\
 $PATH:\
 /c/bison:\
 /c/icoutils/bin:\
+$VCPKG_INSTALL_PREFIX/tools/gettext/bin:\
 $VCPKG_INSTALL_PREFIX/tools/gperf:\
 $VCPKG_INSTALL_PREFIX/tools/curl:\
 $VCPKG_INSTALL_PREFIX/tools/python3:\
