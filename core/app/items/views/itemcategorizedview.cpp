@@ -617,6 +617,7 @@ void ItemCategorizedView::scrollToStoredItem()
         if (d->model->hasImage(d->scrollToItemId))
         {
             QModelIndex index = d->filterModel->indexForImageId(d->scrollToItemId);
+            clearSelection();
             setCurrentIndex(index);
             scrollToRelaxed(index, QAbstractItemView::PositionAtCenter);
             d->scrollToItemId = 0;
