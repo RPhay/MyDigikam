@@ -319,14 +319,15 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewSmoothScaled        = new QCheckBox(i18n("Preview image use Anti-aliasing to scale up"), pwpanel);
     d->previewSmoothScaled->setWhatsThis(i18n("Check this if you want to use Anti-aliasing to scale up."));
 
-    QLabel* const magnifierLabel  = new QLabel(i18nc("@label:listbox Magnifier zoom levels",
-                                                     "Magnifier Zoom Level:"));
+    QLabel* const magnifierLabel  = new QLabel(i18nc("@label:listbox Preview magnifier tool zoom factor",
+                                                     "Magnifier Zoom Factor:"));
     d->magnifierZoomLevel         = new QComboBox;
-    d->magnifierZoomLevel->addItem(QLatin1String("x2"), 2.0);
-    d->magnifierZoomLevel->addItem(QLatin1String("x3"), 3.0);
-    d->magnifierZoomLevel->addItem(QLatin1String("x4"), 4.0);
-    d->magnifierZoomLevel->addItem(QLatin1String("x5"), 5.0);
-    d->magnifierZoomLevel->addItem(QLatin1String("x6"), 6.0);
+    d->magnifierZoomLevel->addItem(QLatin1String("x1.5"), 1.5);
+    d->magnifierZoomLevel->addItem(QLatin1String("x2.0"), 2.0);
+    d->magnifierZoomLevel->addItem(QLatin1String("x2.5"), 2.5);
+    d->magnifierZoomLevel->addItem(QLatin1String("x3.0"), 3.0);
+    d->magnifierZoomLevel->addItem(QLatin1String("x3.5"), 3.5);
+    d->magnifierZoomLevel->addItem(QLatin1String("x4.0"), 4.0);
 
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
     d->previewShowIcons->setWhatsThis(i18n("Check this if you want to see icons and text in the image preview."));

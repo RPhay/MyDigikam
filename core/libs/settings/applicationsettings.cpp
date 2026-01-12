@@ -199,7 +199,7 @@ void ApplicationSettings::readSettings()
     setPreviewSmoothScaled(d->imageSmoothScaled);
 
     d->scaleFitToWindow                  = group.readEntry(d->configPreviewScaleFitToWindowEntry,      false);
-    d->magnifierZoomLevel                = group.readEntry(d->configPreviewMagnifierZoomLevelEntry,    2.0);
+    d->magnifierZoomLevel                = group.readEntry(d->configPreviewMagnifierZoomLevelEntry,    1.5);
     d->previewShowIcons                  = group.readEntry(d->configPreviewShowIconsEntry,             true);
     d->previewAutoPlay                   = group.readEntry(d->configPreviewAutoPlayEntry,              true);
     d->previewOverlay                    = group.readEntry(d->configPreviewOverlayEntry,               false);

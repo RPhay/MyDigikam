@@ -283,7 +283,7 @@ public:
 
     /// preview settings
     PreviewSettings                              previewSettings;
-    qreal                                        magnifierZoomLevel                                 = 2.0;
+    qreal                                        magnifierZoomLevel                                 = 1.5;
     bool                                         imageSmoothScaled                                  = true;
     bool                                         scaleFitToWindow                                   = false;
     bool                                         previewShowIcons                                   = true;

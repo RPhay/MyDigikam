@@ -32,7 +32,7 @@ public:
 
     QPixmap sourcePixmap;
     QRectF  sourceRect;
-    qreal   zoomFactor   = 2.0;
+    qreal   zoomFactor   = 1.5;
     int     size         = 150;
 };
 
