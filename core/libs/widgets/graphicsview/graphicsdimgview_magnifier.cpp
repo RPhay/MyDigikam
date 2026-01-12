@@ -48,49 +48,65 @@ int GraphicsDImgView::magnifierSize() const
 {
     return d->magnifier->magnifierSize();
 }
-
 void GraphicsDImgView::updateMagnifier()
 {
-    QPointF position = mapToScene(mapFromGlobal(QCursor::pos()));
+    QPoint globalPos = QCursor::pos();
+    QPoint viewPos = viewport()->mapFromGlobal(globalPos);
 
-    d->magnifier->setPos(position);
-
-    QPointF imagePos = d->item->zoomSettings()->mapZoomToImage(position);
-
-    // Use the zoom factor from the magnifier to adjust the source size area
-
-    qreal magnifierZoomFactor = d->magnifier->zoomFactor();
-
-    // Compute the size of the source area accordingly with the magnifier zoom factor
-
-    int halfSize = (d->magnifier->magnifierSize() / 2) / magnifierZoomFactor;
-
-    QRectF sourceRect(
-        imagePos.x() - halfSize,
-        imagePos.y() - halfSize,
-        d->magnifier->magnifierSize() / magnifierZoomFactor,
-        d->magnifier->magnifierSize() / magnifierZoomFactor
-    );
-
-    // Clipping at image borders
-
-    QRectF imageBounds;
-    QSize size = d->item->image().size();
-    imageBounds.setSize(size);
-    sourceRect = sourceRect.intersected(imageBounds);
-
-    // Check if the source rectangle is valid
-    // Update magnifier with the source pixmap
-
-    if (sourceRect.isEmpty())
+    if (viewport()->rect().contains(viewPos))
     {
-        d->magnifier->setVisible(false);
+        QPointF scenePos = mapToScene(viewPos);
+
+        // Vérifier si scenePos est dans les limites de l'image
+        QRectF imageSceneRect = d->item->sceneBoundingRect();
+        if (imageSceneRect.contains(scenePos))
+        {
+            // Positionner la loupe en bas à droite du curseur
+            QPointF magnifierPos = scenePos + QPointF(d->magnifier->magnifierSize() / 2, d->magnifier->magnifierSize() / 2);
+            d->magnifier->setPos(magnifierPos);
+            d->magnifier->setVisible(true);
+
+            // Convertir cette position en coordonnées de l'image source
+            QPointF imagePos = d->item->zoomSettings()->mapZoomToImage(scenePos);
+
+            // Obtenir le zoomFactor de la loupe
+            qreal magnifierZoomFactor = d->magnifier->zoomFactor();
+
+            // Calculer la taille de la zone source en fonction du zoom de la loupe
+            int halfSize = (d->magnifier->magnifierSize() / 2) / magnifierZoomFactor;
+
+            QRectF sourceRect(
+                imagePos.x() - halfSize,
+                imagePos.y() - halfSize,
+                d->magnifier->magnifierSize() / magnifierZoomFactor,
+                d->magnifier->magnifierSize() / magnifierZoomFactor
+            );
+
+            // Clipping aux bords de l'image
+            QRectF imageBounds;
+            QSize size = d->item->image().size();
+            imageBounds.setSize(size);
+            sourceRect = sourceRect.intersected(imageBounds);
+
+            // Vérifier si le rectangle source est valide
+            if (sourceRect.isEmpty())
+            {
+                d->magnifier->setVisible(false);
+            }
+            else
+            {
+                QPixmap currentPixmap = d->item->image().convertToPixmap();
+                d->magnifier->setSourcePixmap(currentPixmap, sourceRect);
+            }
+        }
+        else
+        {
+            d->magnifier->setVisible(false);
+        }
     }
     else
     {
-        d->magnifier->setVisible(true);
-        QPixmap currentPixmap = d->item->image().convertToPixmap();
-        d->magnifier->setSourcePixmap(currentPixmap, sourceRect);
+        d->magnifier->setVisible(false);
     }
 }
 

@@ -42,7 +42,8 @@ public:
 };
 
 ItemPreviewCanvas::ItemPreviewCanvas(ItemPreviewView* const view)
-    : d(new Private)
+    : DImgPreviewItem(),
+      d              (new Private)
 {
     d->view = view;
     setAcceptHoverEvents(true);
