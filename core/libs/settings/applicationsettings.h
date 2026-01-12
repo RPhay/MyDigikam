@@ -256,8 +256,11 @@ public:
     void setPreviewSettings(const PreviewSettings& settings);
     PreviewSettings getPreviewSettings() const;
 
-    void setMagnifierZoomFactor(qreal level);
+    void setMagnifierZoomFactor(qreal factor);
     qreal getMagnifierZoomFactor() const;
+
+    void setMagnifierSize(int size);
+    int getMagnifierSize() const;
 
     void setPreviewShowIcons(bool val);
     bool getPreviewShowIcons() const;

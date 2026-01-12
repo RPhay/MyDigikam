@@ -751,6 +751,7 @@ void ItemPreviewView::slotSetupChanged()
     setScaleFitToWindow(ApplicationSettings::instance()->getScaleFitToWindow());
     setShowText(ApplicationSettings::instance()->getPreviewShowIcons());
     setMagnifierZoomFactor(ApplicationSettings::instance()->getMagnifierZoomFactor());
+    setMagnifierSize(ApplicationSettings::instance()->getMagnifierSize());
     d->magnifierAction->setText(i18n("Show Magnifier (x%1)", magnifierZoomFactor()));
 
     d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());

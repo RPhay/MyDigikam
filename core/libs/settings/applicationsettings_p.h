@@ -162,6 +162,7 @@ public:
     const QString configPreviewImageSmoothScaledEntry               = QLatin1String("Preview Image Smooth Scaled");
     const QString configPreviewScaleFitToWindowEntry                = QLatin1String("Preview Scale Fit To Window");
     const QString configPreviewMagnifierZoomFactorEntry             = QLatin1String("Preview Magnifier Zoom Factor");
+    const QString configPreviewMagnifierSizeEntry                   = QLatin1String("Preview Magnifier Size");
     const QString configPreviewShowIconsEntry                       = QLatin1String("Preview Show Icons");
     const QString configPreviewAutoPlayEntry                        = QLatin1String("Preview Auto Play");
     const QString configPreviewOverlayEntry                         = QLatin1String("Preview Overlay");
@@ -283,7 +284,8 @@ public:
 
     /// preview settings
     PreviewSettings                              previewSettings;
-    qreal                                        magnifierZoomFactor                                 = 1.5;
+    qreal                                        magnifierZoomFactor                                = 1.5;
+    int                                          magnifierSize                                      = 150;
     bool                                         imageSmoothScaled                                  = true;
     bool                                         scaleFitToWindow                                   = false;
     bool                                         previewShowIcons                                   = true;

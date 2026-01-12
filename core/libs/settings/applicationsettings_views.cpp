@@ -261,14 +261,24 @@ PreviewSettings ApplicationSettings::getPreviewSettings() const
     return d->previewSettings;
 }
 
-void ApplicationSettings::setMagnifierZoomFactor(qreal level)
+void ApplicationSettings::setMagnifierZoomFactor(qreal factor)
 {
-    d->magnifierZoomFactor = level;
+    d->magnifierZoomFactor = factor;
 }
 
 qreal ApplicationSettings::getMagnifierZoomFactor() const
 {
     return d->magnifierZoomFactor;
+}
+
+void ApplicationSettings::setMagnifierSize(int size)
+{
+    d->magnifierSize = size;
+}
+
+int ApplicationSettings::getMagnifierSize() const
+{
+    return d->magnifierSize;
 }
 
 void ApplicationSettings::setPreviewShowIcons(bool val)
