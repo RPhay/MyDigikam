@@ -281,7 +281,7 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
         d->cachedPixmaps.insert(scaledDrawRect, pix);
         painter->drawPixmap(drawRect, pix);
     }
-
+/* TODO
     // Show the Over/Under exposure pixels indicators
 
     ExposureSettingsContainer* const expoSettings = EditorCore::defaultInstance()->getExposureSettings();
@@ -309,6 +309,7 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
             painter->drawPixmap(drawRect, pixMask);
         }
     }
+*/
 }
 
 void GraphicsDImgItem::contextMenuEvent(QGraphicsSceneContextMenuEvent* e)
