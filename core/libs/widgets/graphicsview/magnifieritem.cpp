@@ -90,28 +90,51 @@ void MagnifierItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QW
         return;
     }
 
+    // First draw the border.
+
+    QPainterPath borderPath;
+    borderPath.addEllipse(boundingRect());
+
+    // Define a gradient for the border.
+
+    QRadialGradient borderGradient(0, 0, d->size / 2);
+    borderGradient.setColorAt(0,   QColor(50, 50, 50, 255));            // Darkness inside surround.
+    borderGradient.setColorAt(0.7, QColor(200, 200, 200, 255));         // Lightness outside surround.
+
+    // Draw a border with a large pencil.
+
+    painter->setPen(QPen(QBrush(borderGradient), 4));                   // Border of 4 pixels.
+    painter->setBrush(Qt::NoBrush);
+    painter->drawPath(borderPath);
+
     // Create a ellipsis path for the clipping.
 
     QPainterPath clipPath;
-    clipPath.addEllipse(boundingRect());
+    clipPath.addEllipse(boundingRect().adjusted(2, 2, -2, -2));         // Ajustement to highlight border.
 
     // Apply clipping.
 
     painter->setClipPath(clipPath);
     painter->setRenderHint(QPainter::Antialiasing, true);
 
-    // Draw the ellipsis.
+    // Draw the background of the magnifier with a gradient
 
-    QRadialGradient gradient(0, 0, d->size / 2);
-    gradient.setColorAt(0, QColor(255, 255, 255, 220)); // blur center
-    gradient.setColorAt(1, QColor(255, 255, 255, 100)); // surround transparency
-    painter->setBrush(gradient);
-    painter->drawEllipse(boundingRect());
+    QRadialGradient fillGradient(0, 0, (d->size / 2) - 2);              // Preserve the border.
+    fillGradient.setColorAt(0, QColor(255, 255, 255, 220));             // Center semi-transparent using white.
+    fillGradient.setColorAt(1, QColor(255, 255, 255, 100));             // Border more transparent.
+
+    painter->setBrush(fillGradient);
+    painter->setPen(Qt::NoPen);
+    painter->drawEllipse(boundingRect().adjusted(4, 4, -4, -4));        // Draw a little bit inside the border.
+
+    // Draw the zommed pixmap.
 
     QPixmap zoomed = d->sourcePixmap.copy(d->sourceRect.toRect())
-                                   .scaled(d->size, d->size, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+                                   .scaled(d->size - 2, d->size - 2,
+                                           Qt::KeepAspectRatio,
+                                           Qt::SmoothTransformation);   // Ajust to preserve the border.
 
-    painter->drawPixmap(QRectF(-d->size / 2, -d->size / 2, d->size, d->size),
+    painter->drawPixmap(QRectF(-(d->size / 2) + 2, -(d->size / 2) + 2, d->size - 4, d->size - 4),
                         zoomed,
                         zoomed.rect());
 
