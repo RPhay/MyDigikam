@@ -95,6 +95,10 @@
 #include "dexpanderbox.h"
 #include "dbinfoiface.h"
 
+#ifdef HAVE_MEDIAPLAYER
+#   include "itempreviewvideo.h"
+#endif // HAVE_MEDIAPLAYER
+
 namespace Digikam
 {
 

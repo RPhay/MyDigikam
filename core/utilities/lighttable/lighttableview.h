@@ -17,6 +17,7 @@
 
 // Qt includes
 
+#include <QAction>
 #include <QFrame>
 #include <QString>
 
@@ -47,6 +48,7 @@ public:
     ItemInfo leftItemInfo()  const;
     ItemInfo rightItemInfo() const;
 
+    void   setHostWindowActions(QAction* const fullscreen, QAction* const showmenu);
     void   setPreviewSettings(const PreviewSettings& settings);
 
     void   checkForSelection(const ItemInfo& info);

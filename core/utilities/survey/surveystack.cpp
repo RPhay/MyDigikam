@@ -81,6 +81,7 @@ SurveyStack::SurveyStack(DigikamItemView* const iconView, QWidget* const parent)
 {
     d->imageIconView    = iconView;
     d->imagePreviewView = new ItemPreviewView(this);
+
     d->thumbBarDock     = new ThumbBarDock();
     d->thumbBar         = new ItemThumbnailBar(d->thumbBarDock);
     d->thumbBar->setModelsFiltered(d->imageIconView->itemModel(),

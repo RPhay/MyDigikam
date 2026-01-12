@@ -170,6 +170,12 @@ void LightTableView::setPreviewSettings(const PreviewSettings& settings)
     d->rightPreview->previewItem()->setPreviewSettings(settings);
 }
 
+void LightTableView::setHostWindowActions(QAction* const fullscreen, QAction* const showmenu)
+{
+    d->leftPreview->setHostWindowActions(fullscreen, showmenu);
+    d->rightPreview->setHostWindowActions(fullscreen, showmenu);
+}
+
 void LightTableView::setSyncPreview(bool sync)
 {
     d->syncPreview = sync;

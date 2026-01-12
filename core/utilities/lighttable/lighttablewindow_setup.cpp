@@ -267,6 +267,9 @@ void LightTableWindow::setupActions()
     registerPluginsActions();
 
     cleanupActions();
+
+    d->previewView->setHostWindowActions(actionCollection()->action(QLatin1String("lighttable_fullscreen")),
+                                         actionCollection()->action(QLatin1String("options_show_menubar")));
 }
 
 void LightTableWindow::setupStatusBar()

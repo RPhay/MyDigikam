@@ -139,7 +139,7 @@ void SurveyWindow::slotItemSelected()
 {
     ItemInfo info = d->stack->thumbBar()->currentInfo();
 
-    bool hasInfo = !info.isNull();
+    bool hasInfo  = !info.isNull();
 
     d->editItemAction->setEnabled(hasInfo);
     d->fileDeleteAction->setEnabled(hasInfo);

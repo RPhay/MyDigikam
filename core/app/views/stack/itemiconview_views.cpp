@@ -23,6 +23,18 @@
 namespace Digikam
 {
 
+void ItemIconView::setHostWindowActions(QAction* const fullscreen, QAction* const showmenu)
+{
+    d->stackedView->imagePreviewView()->setHostWindowActions(fullscreen, showmenu);
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->stackedView->mediaPlayerView()->setHostWindowActions(fullscreen, showmenu);
+
+#endif // HAVE_MEDIAPLAYER
+
+}
+
 void ItemIconView::connectIconViewFilter(FilterStatusBar* const filterbar)
 {
     ItemAlbumFilterModel* const model = d->iconView->itemAlbumFilterModel();

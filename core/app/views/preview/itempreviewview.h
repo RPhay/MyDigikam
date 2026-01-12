@@ -55,6 +55,7 @@ public:
     void reload();
     void setImagePath(const QString& path = QString());
     void setPreviousNextPaths(const QString& previous, const QString& next);
+    void setHostWindowActions(QAction* const fullScreen, QAction* const showMenu);
 
 Q_SIGNALS:
 

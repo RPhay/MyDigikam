@@ -183,6 +183,17 @@ void SurveyWindow::setupActions()
     registerPluginsActions();
 
     cleanupActions();
+
+    d->stack->imagePreviewView()->setHostWindowActions(actionCollection()->action(QLatin1String("survey_fullscreen")),
+                                                       actionCollection()->action(QLatin1String("options_show_menubar")));
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->stack->mediaPlayerView()->setHostWindowActions(actionCollection()->action(QLatin1String("survey_fullscreen")),
+                                                      actionCollection()->action(QLatin1String("options_show_menubar")));
+
+#endif // HAVE_MEDIAPLAYER
+
 }
 
 void SurveyWindow::setupStatusBar()

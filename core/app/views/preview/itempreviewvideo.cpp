@@ -24,7 +24,6 @@
 #include <QDropEvent>
 #include <QDragEnterEvent>
 #include <QMenu>
-#include <QAction>
 #include <QIcon>
 #include <QLayout>
 
@@ -61,6 +60,9 @@ public:
     Private() = default;
 
 public:
+
+    QAction*               winFullScreenAction  = nullptr;
+    QAction*               winShowMenuAction    = nullptr;
 
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
@@ -140,6 +142,12 @@ ItemPreviewVideo::~ItemPreviewVideo()
     delete d;
 }
 
+void ItemPreviewVideo::setHostWindowActions(QAction* const fullScreen, QAction* const showMenu)
+{
+    d->winFullScreenAction  = fullScreen;
+    d->winShowMenuAction    = showMenu;
+}
+
 void ItemPreviewVideo::slotContextMenu()
 {
     if (d->info.isNull())
@@ -153,8 +161,8 @@ void ItemPreviewVideo::slotContextMenu()
     QMenu popmenu(this);
     ContextMenuHelper cmHelper(&popmenu);
 
-    cmHelper.addAction(QLatin1String("full_screen"));
-    cmHelper.addAction(QLatin1String("options_show_menubar"));
+    cmHelper.addAction(d->winFullScreenAction);
+    cmHelper.addAction(d->winShowMenuAction);
     cmHelper.addSeparator();
 
     // --------------------------------------------------------

@@ -86,6 +86,9 @@ public:
 
     ItemPreviewCanvas*     item                 = nullptr;
 
+    QAction*               winFullScreenAction  = nullptr;
+    QAction*               winShowMenuAction    = nullptr;
+
     QAction*               prevAction           = nullptr;
     QAction*               nextAction           = nullptr;
     QAction*               rotLeftAction        = nullptr;
@@ -407,6 +410,12 @@ void ItemPreviewView::reload()
     previewItem()->reload();
 }
 
+void ItemPreviewView::setHostWindowActions(QAction* const fullScreen, QAction* const showMenu)
+{
+    d->winFullScreenAction  = fullScreen;
+    d->winShowMenuAction    = showMenu;
+}
+
 void ItemPreviewView::slotItemLoaded()
 {
     Q_EMIT signalPreviewLoaded(true);
@@ -541,8 +550,8 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     QMenu popmenu(this);
     ContextMenuHelper cmHelper(&popmenu);
 
-    cmHelper.addAction(QLatin1String("full_screen"));
-    cmHelper.addAction(QLatin1String("options_show_menubar"));
+    cmHelper.addAction(d->winFullScreenAction);
+    cmHelper.addAction(d->winShowMenuAction);
     cmHelper.addSeparator();
 
     // --------------------------------------------------------

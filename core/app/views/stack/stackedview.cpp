@@ -25,6 +25,7 @@
 
 #include <klocalizedstring.h>
 #include <kconfiggroup.h>
+#include <kactioncollection.h>
 
 // Local includes
 
@@ -44,6 +45,7 @@
 #include "trashview.h"
 #include "dimg.h"
 #include "surveywindow.h"
+#include "digikamapp.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "itempreviewvideo.h"
@@ -101,6 +103,7 @@ StackedView::StackedView(QWidget* const parent)
     SurveyWindow::surveyWindow()->init(d->imageIconView);
 
     d->imagePreviewView = new ItemPreviewView(this);
+
     d->thumbBarDock     = new ThumbBarDock();
     d->thumbBar         = new ItemThumbnailBar(d->thumbBarDock);
     d->thumbBar->setModelsFiltered(d->imageIconView->itemModel(),

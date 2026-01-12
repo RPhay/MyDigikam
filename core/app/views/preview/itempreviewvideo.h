@@ -16,6 +16,10 @@
 
 #pragma once
 
+// Qt includes
+
+#include <QAction>
+
 // Local includes
 
 #include "mediaplayerview.h"
@@ -37,6 +41,7 @@ public:
     ~ItemPreviewVideo() override;
 
     void setItemInfo(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next);
+    void setHostWindowActions(QAction* const fullScreen, QAction* const showMenu);
 
 Q_SIGNALS:
 
