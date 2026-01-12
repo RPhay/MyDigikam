@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-11 00:40+0000\n"
+"POT-Creation-Date: 2026-01-12 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -269,7 +269,7 @@ msgstr "更改人脸标签"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:815
+#: core/app/views/preview/itempreviewview.cpp:859
 #, kde-format
 msgid "&Cancel"
 msgstr "取消(&C)"
@@ -280,7 +280,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "分配标签到所选项目(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:813
+#: core/app/views/preview/itempreviewview.cpp:857
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "分配标签到此项目(&T)"
@@ -501,7 +501,7 @@ msgid "Show Fullscreen"
 msgstr "全屏显示"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:178
+#: core/app/views/preview/itempreviewview.cpp:180
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -509,7 +509,7 @@ msgid "Rotate Left"
 msgstr "旋转 (向左)"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:180
+#: core/app/views/preview/itempreviewview.cpp:182
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2808,7 +2808,7 @@ msgstr "贡献："
 msgid "Donate: "
 msgstr "捐款："
 
-#: core/app/views/preview/itempreviewview.cpp:174
+#: core/app/views/preview/itempreviewview.cpp:176
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, kde-format
@@ -2816,7 +2816,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "后退"
 
-#: core/app/views/preview/itempreviewview.cpp:176
+#: core/app/views/preview/itempreviewview.cpp:178
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:298
 #, kde-format
@@ -2824,47 +2824,58 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "前进"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:189
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "添加人脸标签..."
 
-#: core/app/views/preview/itempreviewview.cpp:192
+#: core/app/views/preview/itempreviewview.cpp:194
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "清除此图像的所有人脸标签"
 
-#: core/app/views/preview/itempreviewview.cpp:195
+#: core/app/views/preview/itempreviewview.cpp:197
 #, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "标记所有未确认人脸为已忽略"
 
-#: core/app/views/preview/itempreviewview.cpp:202
+#: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
 msgid "Show Face Tags"
 msgstr "显示人脸标签"
 
-#: core/app/views/preview/itempreviewview.cpp:207
+#: core/app/views/preview/itempreviewview.cpp:209
 #, kde-format
 msgid "Add a focus point"
 msgstr "添加焦点"
 
-#: core/app/views/preview/itempreviewview.cpp:209
+#: core/app/views/preview/itempreviewview.cpp:211
 #, kde-format
 msgid "Show focus points"
 msgstr "显示焦点"
 
-#: core/app/views/preview/itempreviewview.cpp:215
+#: core/app/views/preview/itempreviewview.cpp:217
+#, fuzzy, kde-format
+#| msgid "Show numbers"
+msgid "Show Magnifier"
+msgstr "显示数字"
+
+#: core/app/views/preview/itempreviewview.cpp:221
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "全屏显示"
 
-#: core/app/views/preview/itempreviewview.cpp:517
+#: core/app/views/preview/itempreviewview.cpp:559
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "人脸"
+
+#: core/app/views/preview/itempreviewview.cpp:754
+#, kde-format
+msgid "Show Magnifier (x%1)"
+msgstr ""
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -41711,7 +41722,7 @@ msgstr "缩小尺寸预览"
 msgid "Failed to load image"
 msgstr "无法加载图像"
 
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:307
+#: core/libs/widgets/graphicsview/paniconwidget.cpp:312
 #, kde-format
 msgid "Pan the image to a region"
 msgstr "平移图像到区域"
@@ -61788,45 +61799,45 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "高级搜索"
 
-#: core/utilities/setup/album/setupalbumview.cpp:129
+#: core/utilities/setup/album/setupalbumview.cpp:130
 #: core/utilities/setup/camera/setupcamera.cpp:429
 #, kde-format
 msgid "Show file&name"
 msgstr "显示文件名(&N)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:130
+#: core/utilities/setup/album/setupalbumview.cpp:131
 #, kde-format
 msgid "Set this option to show the filename below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示文件名。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:132
+#: core/utilities/setup/album/setupalbumview.cpp:133
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "显示文件体积(&Z)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:133
+#: core/utilities/setup/album/setupalbumview.cpp:134
 #, kde-format
 msgid "Set this option to show the file size below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示文件体积。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:135
+#: core/utilities/setup/album/setupalbumview.cpp:136
 #: core/utilities/setup/camera/setupcamera.cpp:435
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "显示相机拍摄日期(&D)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:136
+#: core/utilities/setup/album/setupalbumview.cpp:137
 #, kde-format
 msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示相机拍摄日期。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:139
+#: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid "Show file &modification date"
 msgstr "显示文件修改日期"
 
-#: core/utilities/setup/album/setupalbumview.cpp:140
+#: core/utilities/setup/album/setupalbumview.cpp:141
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
@@ -61836,130 +61847,130 @@ msgstr ""
 "勾选此项以在缩略图下方显示文件修改日期。这有助于快速判断哪些项目曾在相机外被"
 "修改过。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:144
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, kde-format
 msgid "Show item dimensions"
 msgstr "显示项目尺寸"
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:146
 #, kde-format
 msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目尺寸，单位为像素。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:148
+#: core/utilities/setup/album/setupalbumview.cpp:149
 #, kde-format
 msgid "Show item aspect ratio"
 msgstr "显示项目宽高比"
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:150
 #, kde-format
 msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目的宽高比。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:152
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #, kde-format
 msgid "Show item format"
 msgstr "显示项目格式"
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:154
 #, kde-format
 msgid "Set this option to show item mime type over thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目的 MIME 类型。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:155
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "显示 digiKam 标题(&L)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
 msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目的 digiKam 标题。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:159
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "显示 digiKam 说明(&C)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #, kde-format
 msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目的 digiKam 说明。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:163
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "显示 digiKam 标签(&T)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #, kde-format
 msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目的 digiKam 标签列表。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:167
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "显示 digiKam 评分(&R)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #, kde-format
 msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目的 digiKam 评分。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:171
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, kde-format
 msgid "Show digiKam &pick label"
 msgstr "显示 digiKam 挑选标记 (&P)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, kde-format
 msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目的 digiKam 挑选标记。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:175
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
 msgid "Show digiKam color &label"
 msgstr "显示 digiKam 颜色标记 (&L)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr "勾选此项以在缩略图下方显示项目的 digiKam 颜色标记示意线。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:181
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "显示旋转按钮"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #, kde-format
 msgid ""
 "Set this option to show the transformation overlay buttons over the "
 "thumbnail to process left or right rotation."
 msgstr "勾选此项以在缩略图之上悬停时显示变形叠加按钮，用于进行向左或向右旋转。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "显示全屏按钮"
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
 "fullscreen mode."
 msgstr "勾选此项以在缩略图之上悬停时显示用于切换全屏模式的按钮。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:189
+#: core/utilities/setup/album/setupalbumview.cpp:190
 #, kde-format
 msgid "Show geolocation overlay button"
 msgstr "显示地理位置按钮"
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
@@ -61968,55 +61979,55 @@ msgstr ""
 "勾选此项以在缩略图之上悬停时显示地理位置叠加按钮，用于标识带有地理位置信息的"
 "项目和打开地图标签页。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:195
+#: core/utilities/setup/album/setupalbumview.cpp:196
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "缩略图点击操作："
 
-#: core/utilities/setup/album/setupalbumview.cpp:197
+#: core/utilities/setup/album/setupalbumview.cpp:198
 #, kde-format
 msgid "Show Preview"
 msgstr "显示预览"
 
-#: core/utilities/setup/album/setupalbumview.cpp:198
+#: core/utilities/setup/album/setupalbumview.cpp:199
 #, kde-format
 msgid "Start Image Editor"
 msgstr "启动图像编辑器"
 
-#: core/utilities/setup/album/setupalbumview.cpp:199
+#: core/utilities/setup/album/setupalbumview.cpp:200
 #, kde-format
 msgid "Show on Light Table"
 msgstr "显示到多图对比"
 
-#: core/utilities/setup/album/setupalbumview.cpp:200
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #, kde-format
 msgid "Open with Default Application"
 msgstr "使用默认应用程序打开"
 
-#: core/utilities/setup/album/setupalbumview.cpp:201
+#: core/utilities/setup/album/setupalbumview.cpp:202
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "选择点击缩略图时进行的操作。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:203
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "图标视图字体："
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:205
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr "选择图标视图的文字信息使用的字体。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:206
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "使用高分辨率缩略图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:208
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -62034,194 +62045,202 @@ msgstr ""
 "勾选此项后缩略图数据库将存储更多数据，内存使用也会相应增加。修改此选项后需要"
 "重新启动 digiKam，并在工具菜单的系统维护对话框重建缩略图。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:245
+#: core/utilities/setup/album/setupalbumview.cpp:246
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "图标视图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:252
+#: core/utilities/setup/album/setupalbumview.cpp:253
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "树形视图图标大小："
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:260
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's sidebars."
 msgstr "选择 digiKam 侧栏树形视图的图标大小。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:262
+#: core/utilities/setup/album/setupalbumview.cpp:263
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "人物树形视图图标大小："
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:271
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr "选择 digiKam 侧栏人物标签页树形视图的图标大小。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:273
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, kde-format
 msgid "Tree View font:"
 msgstr "树形视图字体："
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "选择树形视图的文字信息使用的字体。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:276
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "树形视图显示所含项目数量"
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
 "items inside."
 msgstr "勾选此项以在树形视图的名称后面显示包含的项目数量。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "树形视图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:298
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "预览时显示图像内嵌的预览图 (如果可用/更快)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:300
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "预览时显示完整图像"
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
-#, kde-format
-msgctxt "@label:listbox Mode of RAW preview decoding:"
+#: core/utilities/setup/album/setupalbumview.cpp:302
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Mode of RAW preview decoding:"
+#| msgid "Raw images:"
+msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
 msgstr "RAW 图像预览方式："
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
+#: core/utilities/setup/album/setupalbumview.cpp:305
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "自动"
 
-#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/album/setupalbumview.cpp:307
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "使用 RAW 图像内嵌预览图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:308
+#: core/utilities/setup/album/setupalbumview.cpp:309
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "使用 RAW 图像数据的一半大小"
 
-#: core/utilities/setup/album/setupalbumview.cpp:310
+#: core/utilities/setup/album/setupalbumview.cpp:311
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "完整大小的 RAW 数据 (高画质)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:312
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "预览时将图像转换为 8 位以提高打开速度"
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:314
 #, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr "如果您想要将 16 位的预览图像转换为 8 位，请勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:316
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "预览图像总是缩放至适合窗口"
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, kde-format
 msgid "Check this if you want to scale small images to fit to window."
 msgstr "如果您想要缩放较小图像以适合窗口，请勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:318
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr "预览图像使用抗锯齿插值放大"
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:320
 #, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr "如果您想要使用抗锯齿插值来放大图像，请勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:321
+#: core/utilities/setup/album/setupalbumview.cpp:323
+#, kde-format
+msgctxt "@label:listbox Magnifier zoom levels"
+msgid "Magnifier Zoom Level:"
+msgstr ""
+
+#: core/utilities/setup/album/setupalbumview.cpp:331
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "预览视图显示悬浮图标和文字"
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:332
 #, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr "如果您想要在图像预览视图中看到悬浮的图标和文字，请勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:324
+#: core/utilities/setup/album/setupalbumview.cpp:334
 #, kde-format
 msgid "Auto play of videos or animations"
 msgstr "自动播放视频或动画"
 
-#: core/utilities/setup/album/setupalbumview.cpp:325
+#: core/utilities/setup/album/setupalbumview.cpp:335
 #, kde-format
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "如果您想要自动播放视频或动画，请勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:327
+#: core/utilities/setup/album/setupalbumview.cpp:337
 #, kde-format
 msgid "Show a text overlay over preview."
 msgstr "预览视图叠加显示额外文本信息"
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:338
 #, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
 msgstr "如果您想要显示带有拍摄技术设置和属性的画布叠加层，请勾选此项。"
 
-#: core/utilities/setup/album/setupalbumview.cpp:351
+#: core/utilities/setup/album/setupalbumview.cpp:363
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "预览视图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:366
+#: core/utilities/setup/album/setupalbumview.cpp:378
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "全屏视图"
 
-#: core/utilities/setup/album/setupalbumview.cpp:371
+#: core/utilities/setup/album/setupalbumview.cpp:383
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "MIME 类型"
 
-#: core/utilities/setup/album/setupalbumview.cpp:374
+#: core/utilities/setup/album/setupalbumview.cpp:386
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "相册分类"
 
-#: core/utilities/setup/album/setupalbumview.cpp:555
+#: core/utilities/setup/album/setupalbumview.cpp:569
 #, kde-format
 msgctxt "@info"
 msgid ""
