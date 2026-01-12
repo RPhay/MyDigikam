@@ -84,10 +84,6 @@ ActionThreadBase::~ActionThreadBase()
 
     wait();
 
-    // Wait for the jobs to finish
-
-    d->pool->waitForDone();
-
     // Cleanup all jobs from memory
 
     const auto keys = d->processed.keys();
@@ -185,6 +181,10 @@ void ActionThreadBase::cancel(bool isCancel)
     d->todo.clear();
     d->pending.clear();
     d->running = false;
+
+    // Wait for the jobs to finish
+
+    d->pool->waitForDone();
 
     d->condVarJobs.wakeAll();
 }
