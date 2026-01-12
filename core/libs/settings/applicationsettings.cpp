@@ -199,7 +199,7 @@ void ApplicationSettings::readSettings()
     setPreviewSmoothScaled(d->imageSmoothScaled);
 
     d->scaleFitToWindow                  = group.readEntry(d->configPreviewScaleFitToWindowEntry,      false);
-    d->magnifierZoomLevel                = group.readEntry(d->configPreviewMagnifierZoomLevelEntry,    1.5);
+    d->magnifierZoomFactor               = group.readEntry(d->configPreviewMagnifierZoomFactorEntry,    1.5);
     d->previewShowIcons                  = group.readEntry(d->configPreviewShowIconsEntry,             true);
     d->previewAutoPlay                   = group.readEntry(d->configPreviewAutoPlayEntry,              true);
     d->previewOverlay                    = group.readEntry(d->configPreviewOverlayEntry,               false);
@@ -422,7 +422,7 @@ void ApplicationSettings::saveSettings()
 
     group.writeEntry(d->configPreviewConvertToEightBitEntry,            d->previewSettings.convertToEightBit);
     group.writeEntry(d->configPreviewImageSmoothScaledEntry,            d->imageSmoothScaled);
-    group.writeEntry(d->configPreviewMagnifierZoomLevelEntry,           d->magnifierZoomLevel);
+    group.writeEntry(d->configPreviewMagnifierZoomFactorEntry,          d->magnifierZoomFactor);
     group.writeEntry(d->configPreviewScaleFitToWindowEntry,             d->scaleFitToWindow);
     group.writeEntry(d->configPreviewShowIconsEntry,                    d->previewShowIcons);
     group.writeEntry(d->configPreviewAutoPlayEntry,                     d->previewAutoPlay);

@@ -80,8 +80,8 @@ public:
     void  fitToWindow();
     void  toggleFullScreen(bool set);
 
-    void setMagnifierZoomLevel(qreal level);
-    qreal magnifierZoomLevel()              const;
+    void setMagnifierZoomFactor(qreal level);
+    qreal magnifierZoomFactor()              const;
 
     void setMagnifierVisible(bool b);
     bool isMagnifierVisible()               const;

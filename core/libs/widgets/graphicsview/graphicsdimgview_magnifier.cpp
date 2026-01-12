@@ -29,12 +29,12 @@ bool GraphicsDImgView::isMagnifierVisible() const
     return d->magnifierEnabled;
 }
 
-void GraphicsDImgView::setMagnifierZoomLevel(qreal level)
+void GraphicsDImgView::setMagnifierZoomFactor(qreal level)
 {
     d->magnifier->setZoomFactor(level);
 }
 
-qreal GraphicsDImgView::magnifierZoomLevel() const
+qreal GraphicsDImgView::magnifierZoomFactor() const
 {
     return d->magnifier->zoomFactor();
 }

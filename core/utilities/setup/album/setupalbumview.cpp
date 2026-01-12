@@ -84,7 +84,7 @@ public:
     QRadioButton*       previewFastPreview              = nullptr;
     QRadioButton*       previewFullView                 = nullptr;
     QComboBox*          previewRawMode                  = nullptr;
-    QComboBox*          magnifierZoomLevel              = nullptr;
+    QComboBox*          magnifierZoomFactor             = nullptr;
     QCheckBox*          previewConvertToEightBit        = nullptr;
     QCheckBox*          previewScaleFitToWindow         = nullptr;
     QCheckBox*          previewSmoothScaled             = nullptr;
@@ -321,13 +321,13 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     QLabel* const magnifierLabel  = new QLabel(i18nc("@label:listbox Preview magnifier tool zoom factor",
                                                      "Magnifier Zoom Factor:"));
-    d->magnifierZoomLevel         = new QComboBox;
-    d->magnifierZoomLevel->addItem(QLatin1String("x1.5"), 1.5);
-    d->magnifierZoomLevel->addItem(QLatin1String("x2.0"), 2.0);
-    d->magnifierZoomLevel->addItem(QLatin1String("x2.5"), 2.5);
-    d->magnifierZoomLevel->addItem(QLatin1String("x3.0"), 3.0);
-    d->magnifierZoomLevel->addItem(QLatin1String("x3.5"), 3.5);
-    d->magnifierZoomLevel->addItem(QLatin1String("x4.0"), 4.0);
+    d->magnifierZoomFactor        = new QComboBox;
+    d->magnifierZoomFactor->addItem(QLatin1String("x1.5"), 1.5);
+    d->magnifierZoomFactor->addItem(QLatin1String("x2.0"), 2.0);
+    d->magnifierZoomFactor->addItem(QLatin1String("x2.5"), 2.5);
+    d->magnifierZoomFactor->addItem(QLatin1String("x3.0"), 3.0);
+    d->magnifierZoomFactor->addItem(QLatin1String("x3.5"), 3.5);
+    d->magnifierZoomFactor->addItem(QLatin1String("x4.0"), 4.0);
 
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
     d->previewShowIcons->setWhatsThis(i18n("Check this if you want to see icons and text in the image preview."));
@@ -350,7 +350,7 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     grid3->addWidget(d->previewScaleFitToWindow,  4, 0, 1, 2);
     grid3->addWidget(d->previewSmoothScaled,      5, 0, 1, 2);
     grid3->addWidget(magnifierLabel,              6, 0, 1, 1);
-    grid3->addWidget(d->magnifierZoomLevel,       6, 1, 1, 1);
+    grid3->addWidget(d->magnifierZoomFactor,      6, 1, 1, 1);
     grid3->addWidget(d->previewShowIcons,         7, 0, 1, 2);
     grid3->addWidget(d->previewAutoPlay,          8, 0, 1, 2);
     grid3->addWidget(d->previewOverlay,           9, 0, 1, 2);
@@ -462,7 +462,7 @@ void SetupAlbumView::applySettings()
     settings->setPreviewShowIcons(d->previewShowIcons->isChecked());
     settings->setPreviewSmoothScaled(d->previewSmoothScaled->isChecked());
     settings->setScaleFitToWindow(d->previewScaleFitToWindow->isChecked());
-    settings->setMagnifierZoomLevel(d->magnifierZoomLevel->currentData().toReal());
+    settings->setMagnifierZoomFactor(d->magnifierZoomFactor->currentData().toReal());
     settings->setShowFolderTreeViewItemsCount(d->showFolderTreeViewItemsCount->isChecked());
     settings->saveSettings();
 
@@ -535,7 +535,7 @@ void SetupAlbumView::readSettings()
     d->previewShowIcons->setChecked(settings->getPreviewShowIcons());
     d->previewSmoothScaled->setChecked(settings->getPreviewSmoothScaled());
     d->previewScaleFitToWindow->setChecked(settings->getScaleFitToWindow());
-    d->magnifierZoomLevel->setCurrentIndex(d->magnifierZoomLevel->findData(settings->getMagnifierZoomLevel()));
+    d->magnifierZoomFactor->setCurrentIndex(d->magnifierZoomFactor->findData(settings->getMagnifierZoomFactor()));
     d->previewConvertToEightBit->setChecked(previewSettings.convertToEightBit);
     d->showFolderTreeViewItemsCount->setChecked(settings->getShowFolderTreeViewItemsCount());
 
