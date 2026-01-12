@@ -57,23 +57,25 @@ void GraphicsDImgView::updateMagnifier()
     {
         QPointF scenePos = mapToScene(viewPos);
 
-        // Vérifier si scenePos est dans les limites de l'image
+        // Check if scenePos is inside the image.
+
         QRectF imageSceneRect = d->item->sceneBoundingRect();
+
         if (imageSceneRect.contains(scenePos))
         {
-            // Positionner la loupe en bas à droite du curseur
+            // Move the magnifier to the bottom right of the cursor.
+
             QPointF magnifierPos = scenePos + QPointF(d->magnifier->magnifierSize() / 2, d->magnifier->magnifierSize() / 2);
             d->magnifier->setPos(magnifierPos);
             d->magnifier->setVisible(true);
 
-            // Convertir cette position en coordonnées de l'image source
-            QPointF imagePos = d->item->zoomSettings()->mapZoomToImage(scenePos);
+            // Convert this position to the source image coordinates.
 
-            // Obtenir le zoomFactor de la loupe
+            QPointF imagePos          = d->item->zoomSettings()->mapZoomToImage(scenePos);
+
+            // Compute the source area size accordingly to the magnifier zoom factor.
             qreal magnifierZoomFactor = d->magnifier->zoomFactor();
-
-            // Calculer la taille de la zone source en fonction du zoom de la loupe
-            int halfSize = (d->magnifier->magnifierSize() / 2) / magnifierZoomFactor;
+            int halfSize              = (d->magnifier->magnifierSize() / 2) / magnifierZoomFactor;
 
             QRectF sourceRect(
                 imagePos.x() - halfSize,
@@ -82,13 +84,15 @@ void GraphicsDImgView::updateMagnifier()
                 d->magnifier->magnifierSize() / magnifierZoomFactor
             );
 
-            // Clipping aux bords de l'image
+            // Clipping to the image borders.
+
             QRectF imageBounds;
             QSize size = d->item->image().size();
             imageBounds.setSize(size);
             sourceRect = sourceRect.intersected(imageBounds);
 
-            // Vérifier si le rectangle source est valide
+            // Check if the rectangle source is valid.
+
             if (sourceRect.isEmpty())
             {
                 d->magnifier->setVisible(false);
