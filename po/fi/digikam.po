@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-11 00:40+0000\n"
+"POT-Creation-Date: 2026-01-12 00:41+0000\n"
 "PO-Revision-Date: 2025-10-22 17:39+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -309,7 +309,7 @@ msgstr "Lisää kasvotunniste"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:815
+#: core/app/views/preview/itempreviewview.cpp:859
 #, kde-format
 msgid "&Cancel"
 msgstr "&Peru"
@@ -320,7 +320,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Lisää tunnisteet &valittuihin kuviin"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:813
+#: core/app/views/preview/itempreviewview.cpp:857
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Lisää tunnisteet &tähän kuvaan"
@@ -561,7 +561,7 @@ msgid "Show Fullscreen"
 msgstr "Näytä koko näytöllä"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:178
+#: core/app/views/preview/itempreviewview.cpp:180
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -569,7 +569,7 @@ msgid "Rotate Left"
 msgstr "Käännä vasemmalle"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:180
+#: core/app/views/preview/itempreviewview.cpp:182
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2965,7 +2965,7 @@ msgstr "Osallistu projektiin…"
 msgid "Donate: "
 msgstr "Päiväys: "
 
-#: core/app/views/preview/itempreviewview.cpp:174
+#: core/app/views/preview/itempreviewview.cpp:176
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:295
 #, kde-format
@@ -2973,7 +2973,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "Edellinen"
 
-#: core/app/views/preview/itempreviewview.cpp:176
+#: core/app/views/preview/itempreviewview.cpp:178
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:298
 #, kde-format
@@ -2981,51 +2981,62 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "Seuraava"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:189
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "Lisää kasvotunniste"
 
-#: core/app/views/preview/itempreviewview.cpp:192
+#: core/app/views/preview/itempreviewview.cpp:194
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "Poista kaikki kuvan kasvotunnisteet"
 
-#: core/app/views/preview/itempreviewview.cpp:195
+#: core/app/views/preview/itempreviewview.cpp:197
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Mark this face as Ignored"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Merkitse nämä kasvot sivuutettaviksi"
 
-#: core/app/views/preview/itempreviewview.cpp:202
+#: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
 msgid "Show Face Tags"
 msgstr "Näytä kasvotunnisteet"
 
-#: core/app/views/preview/itempreviewview.cpp:207
+#: core/app/views/preview/itempreviewview.cpp:209
 #, kde-format
 msgid "Add a focus point"
 msgstr "Lisää kohdistuspiste"
 
-#: core/app/views/preview/itempreviewview.cpp:209
+#: core/app/views/preview/itempreviewview.cpp:211
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgid "Show focus points"
 msgstr "Näytä uusin ensin"
 
-#: core/app/views/preview/itempreviewview.cpp:215
+#: core/app/views/preview/itempreviewview.cpp:217
+#, fuzzy, kde-format
+#| msgid "Show numbers"
+msgid "Show Magnifier"
+msgstr "Näytä numerot"
+
+#: core/app/views/preview/itempreviewview.cpp:221
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "Näytä koko näytöllä"
 
-#: core/app/views/preview/itempreviewview.cpp:517
+#: core/app/views/preview/itempreviewview.cpp:559
 #: core/app/views/stack/itemiconview_views.cpp:313
 #, fuzzy, kde-format
 #| msgid "Faces"
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Kasvot"
+
+#: core/app/views/preview/itempreviewview.cpp:754
+#, kde-format
+msgid "Show Magnifier (x%1)"
+msgstr ""
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -44110,7 +44121,7 @@ msgstr "Pienennettu esikatselukuva"
 msgid "Failed to load image"
 msgstr "Kuvan lataus epäonnistui"
 
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:307
+#: core/libs/widgets/graphicsview/paniconwidget.cpp:312
 #, kde-format
 msgid "Pan the image to a region"
 msgstr "Sovita kuva alueelle"
@@ -64617,37 +64628,37 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Tarkka haku"
 
-#: core/utilities/setup/album/setupalbumview.cpp:129
+#: core/utilities/setup/album/setupalbumview.cpp:130
 #: core/utilities/setup/camera/setupcamera.cpp:429
 #, kde-format
 msgid "Show file&name"
 msgstr "Näytä tiedosto&nimi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:130
+#: core/utilities/setup/album/setupalbumview.cpp:131
 #, fuzzy, kde-format
 #| msgid "Set this option to show the filename below the image thumbnail."
 msgid "Set this option to show the filename below the thumbnail."
 msgstr "Näytä tiedostonimi pienoiskuvan alla valitsemalla tämä asetus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:132
+#: core/utilities/setup/album/setupalbumview.cpp:133
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Näytä tiedoston k&oko"
 
-#: core/utilities/setup/album/setupalbumview.cpp:133
+#: core/utilities/setup/album/setupalbumview.cpp:134
 #, fuzzy, kde-format
 #| msgid "Set this option to show the file size below the image thumbnail."
 msgid "Set this option to show the file size below the thumbnail."
 msgstr "Näytä tiedoston koko pienoiskuvan alla valitsemalla tämä asetus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:135
+#: core/utilities/setup/album/setupalbumview.cpp:136
 #: core/utilities/setup/camera/setupcamera.cpp:435
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Näytä kameran lisäämä &luontiaika"
 
-#: core/utilities/setup/album/setupalbumview.cpp:136
+#: core/utilities/setup/album/setupalbumview.cpp:137
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the camera creation date below the image "
@@ -64657,12 +64668,12 @@ msgstr ""
 "Näytä kameran asettama luontipäiväys pienoiskuvan alla valitsemalla tämä "
 "asetus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:139
+#: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid "Show file &modification date"
 msgstr "Näytä kuvan muokkausaika"
 
-#: core/utilities/setup/album/setupalbumview.cpp:140
+#: core/utilities/setup/album/setupalbumview.cpp:141
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
@@ -64670,13 +64681,13 @@ msgid ""
 "quickly which items have been modified."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:144
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, fuzzy, kde-format
 #| msgid "Show image dimensions"
 msgid "Show item dimensions"
 msgstr "Näytä kuvan mitat"
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the image size in pixels below the image "
@@ -64684,94 +64695,94 @@ msgstr "Näytä kuvan mitat"
 msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr "Näyt' kuvan tarkkuuden pienoiskuvan alla valitsemalla tämä asetus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:148
+#: core/utilities/setup/album/setupalbumview.cpp:149
 #, fuzzy, kde-format
 #| msgid "Show image aspect ratio"
 msgid "Show item aspect ratio"
 msgstr "Näytä kuvasuhde"
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:150
 #, fuzzy, kde-format
 msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr "Valitse tämä nähdäksesi arvion näytekuvan alla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:152
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #, fuzzy, kde-format
 #| msgid "Show image format"
 msgid "Show item format"
 msgstr "Näytä kuvamuoto"
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:154
 #, fuzzy, kde-format
 #| msgid "Set this option to show image mime type over image thumbnail."
 msgid "Set this option to show item mime type over thumbnail."
 msgstr "Näytä kuvan MIME-tyyppi pienoiskuvan yllä valitsemalla tämä asetus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:155
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Näytä &digiKamin otsikko"
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #, fuzzy, kde-format
 msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr "Valitse tämä nähdäksesi arvion näytekuvan alla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:159
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Näytä &kuvatekstit"
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the digiKam captions below the image thumbnail."
 msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr "Näytä digiKam-kuvatekstit pienoiskuvien alla valitsemalla tämä asetus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:163
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Näytä &tunnisteet"
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the digiKam tags list below the image thumbnail."
 msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr "Valitse, näytetäänkö pienoiskuvan alla digiKamin luokitukset."
 
-#: core/utilities/setup/album/setupalbumview.cpp:167
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Näytä a&rvio"
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the digiKam rating below the image thumbnail."
 msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr "Näytä digiKam-arvostelut pienoiskuvien alla valitsemalla tämä asetus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:171
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, fuzzy, kde-format
 #| msgid "Show digiKam tit&le"
 msgid "Show digiKam &pick label"
 msgstr "Näytä &digiKamin otsikko"
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, fuzzy, kde-format
 msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr "Valitse tämä nähdäksesi arvion näytekuvan alla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:175
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, fuzzy, kde-format
 #| msgid "Show digiKam tit&le"
 msgid "Show digiKam color &label"
 msgstr "Näytä &digiKamin otsikko"
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
@@ -64779,13 +64790,13 @@ msgid ""
 "thumbnail."
 msgstr "Näytä digiKam-luokitukset pienoiskuvien alla valitsemalla tämä asetus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:181
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Näytä kääntöpainikkeet"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show overlay buttons over the image thumbnail to be "
@@ -64797,12 +64808,12 @@ msgstr ""
 "Aseta tämä valinta, niin pienoiskuvan yllä näytetään painikkeet, joilla "
 "kuvaa voi kääntää myötä- tai vastapäivään."
 
-#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, fuzzy, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Näytä kääntöpainikkeet"
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show an overlay button over the image thumbnail to "
@@ -64814,13 +64825,13 @@ msgstr ""
 "Aseta tämä valinta, niin pienoiskuvan yllä näytetään painike, jolla kuvan "
 "voi avata koko näytölle."
 
-#: core/utilities/setup/album/setupalbumview.cpp:189
+#: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 #| msgid "Show rotation overlay buttons"
 msgid "Show geolocation overlay button"
 msgstr "Näytä kääntöpainikkeet"
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show an overlay button over the image thumbnail to "
@@ -64832,55 +64843,55 @@ msgstr ""
 "Aseta tämä valinta, niin pienoiskuvan yllä näytetään painike, jolla kuvan "
 "voi avata koko näytölle."
 
-#: core/utilities/setup/album/setupalbumview.cpp:195
+#: core/utilities/setup/album/setupalbumview.cpp:196
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Toiminta pienoiskuvaa napsautettaessa:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:197
+#: core/utilities/setup/album/setupalbumview.cpp:198
 #, kde-format
 msgid "Show Preview"
 msgstr "Näytä esikatselu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:198
+#: core/utilities/setup/album/setupalbumview.cpp:199
 #, kde-format
 msgid "Start Image Editor"
 msgstr "Käynnistä kuvamuokkain"
 
-#: core/utilities/setup/album/setupalbumview.cpp:199
+#: core/utilities/setup/album/setupalbumview.cpp:200
 #, kde-format
 msgid "Show on Light Table"
 msgstr "Näytä valotaululla"
 
-#: core/utilities/setup/album/setupalbumview.cpp:200
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Avaa oletussovellukseen"
 
-#: core/utilities/setup/album/setupalbumview.cpp:201
+#: core/utilities/setup/album/setupalbumview.cpp:202
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Valitse mitä tapahtuu esikatselukuvaa napsautettaessa."
 
-#: core/utilities/setup/album/setupalbumview.cpp:203
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Kuvakenäkymän fontti:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:205
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr "Valitse kuvakenäkymän teksteissä käytettävä fontti."
 
-#: core/utilities/setup/album/setupalbumview.cpp:206
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:208
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -64894,18 +64905,18 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:245
+#: core/utilities/setup/album/setupalbumview.cpp:246
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Kuvakkeet"
 
-#: core/utilities/setup/album/setupalbumview.cpp:252
+#: core/utilities/setup/album/setupalbumview.cpp:253
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Puunäkymän kuvakekoko:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:260
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the image size in pixels below the image "
@@ -64915,12 +64926,12 @@ msgid ""
 "digiKam's sidebars."
 msgstr "Valitse tämä nähdäksesi kuvan resoluution näytekuvan alla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:262
+#: core/utilities/setup/album/setupalbumview.cpp:263
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "Puunäkymän kuvakekoko:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:271
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -64929,22 +64940,22 @@ msgstr ""
 "Aseta tällä valinnalla digiKamin henkilösivupaneelin puunäkymän kuvakekoko "
 "(kuvapisteinä)."
 
-#: core/utilities/setup/album/setupalbumview.cpp:273
+#: core/utilities/setup/album/setupalbumview.cpp:274
 #, kde-format
 msgid "Tree View font:"
 msgstr "Puunäkymän fontti:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:276
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Näytä puunäkymässä kohteiden määrä"
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -64953,121 +64964,129 @@ msgstr ""
 "Valitse, näytetäänkö albumin nimen ohella sisällä olevien kuvakekohteiden "
 "lukumäärä."
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Puunäkymät"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:298
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "Esikatselut näyttävät upotetun näkymän, jos sellainen on (nopeampaa)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:300
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Esikatselu näyttää koko kuvan"
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
-#, kde-format
-msgctxt "@label:listbox Mode of RAW preview decoding:"
+#: core/utilities/setup/album/setupalbumview.cpp:302
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Mode of RAW preview decoding:"
+#| msgid "Raw images:"
+msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
 msgstr "RAW-kuvat:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
+#: core/utilities/setup/album/setupalbumview.cpp:305
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automaattinen"
 
-#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/album/setupalbumview.cpp:307
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Upotettu esikatselu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:308
+#: core/utilities/setup/album/setupalbumview.cpp:309
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Puolikokoinen RAW-data"
 
-#: core/utilities/setup/album/setupalbumview.cpp:310
+#: core/utilities/setup/album/setupalbumview.cpp:311
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Täyskokoinen RAW-data (hyvä laatu)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:312
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "Esikatselukuva muunnetaan 8-bittiseksi nopeampaa katselua varten"
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:314
 #, fuzzy, kde-format
 #| msgid "Check this if you want watermark to be transparent."
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr "Valitse tämä, jos haluat vesileimasta läpikuultavan."
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:316
 #, fuzzy, kde-format
 #| msgid "Preview image is converted to 8 bits for a faster viewing"
 msgid "Preview image is always scaled to fit to window"
 msgstr "Esikatselukuva muunnetaan 8-bittiseksi nopeampaa katselua varten"
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, fuzzy, kde-format
 #| msgid "Check this if you want watermark to be transparent."
 msgid "Check this if you want to scale small images to fit to window."
 msgstr "Valitse tämä, jos haluat vesileimasta läpikuultavan."
 
-#: core/utilities/setup/album/setupalbumview.cpp:318
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, fuzzy, kde-format
 #| msgid "Preview image is converted to 8 bits for a faster viewing"
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr "Esikatselukuva muunnetaan 8-bittiseksi nopeampaa katselua varten"
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:320
 #, fuzzy, kde-format
 #| msgid "Preview image is converted to 8 bits for a faster viewing"
 msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr "Esikatselukuva muunnetaan 8-bittiseksi nopeampaa katselua varten"
 
-#: core/utilities/setup/album/setupalbumview.cpp:321
+#: core/utilities/setup/album/setupalbumview.cpp:323
+#, kde-format
+msgctxt "@label:listbox Magnifier zoom levels"
+msgid "Magnifier Zoom Level:"
+msgstr ""
+
+#: core/utilities/setup/album/setupalbumview.cpp:331
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Näytä kuvakkeet ja teksti esikatselun päällä"
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:332
 #, fuzzy, kde-format
 #| msgid "Check this if you want a background fill behind the text."
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr "Valitse tämä, jos haluat tekstin taakse taustatäytön."
 
-#: core/utilities/setup/album/setupalbumview.cpp:324
+#: core/utilities/setup/album/setupalbumview.cpp:334
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
 msgid "Auto play of videos or animations"
 msgstr "Tallenna muutokset automaattisesti"
 
-#: core/utilities/setup/album/setupalbumview.cpp:325
+#: core/utilities/setup/album/setupalbumview.cpp:335
 #, fuzzy, kde-format
 #| msgid "Check this if you want watermark to be transparent."
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "Valitse tämä, jos haluat vesileimasta läpikuultavan."
 
-#: core/utilities/setup/album/setupalbumview.cpp:327
+#: core/utilities/setup/album/setupalbumview.cpp:337
 #, fuzzy, kde-format
 #| msgid "Show icons and text over preview"
 msgid "Show a text overlay over preview."
 msgstr "Näytä kuvakkeet ja teksti esikatselun päällä"
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:338
 #, fuzzy, kde-format
 #| msgid "Check this if you want watermark to be transparent."
 msgid ""
@@ -65075,31 +65094,31 @@ msgid ""
 "and properties."
 msgstr "Valitse tämä, jos haluat vesileimasta läpikuultavan."
 
-#: core/utilities/setup/album/setupalbumview.cpp:351
+#: core/utilities/setup/album/setupalbumview.cpp:363
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Esikatselu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:366
+#: core/utilities/setup/album/setupalbumview.cpp:378
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Koko näyttö"
 
-#: core/utilities/setup/album/setupalbumview.cpp:371
+#: core/utilities/setup/album/setupalbumview.cpp:383
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "MIME-tyypit"
 
-#: core/utilities/setup/album/setupalbumview.cpp:374
+#: core/utilities/setup/album/setupalbumview.cpp:386
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Luokat"
 
-#: core/utilities/setup/album/setupalbumview.cpp:555
+#: core/utilities/setup/album/setupalbumview.cpp:569
 #, kde-format
 msgctxt "@info"
 msgid ""
