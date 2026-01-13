@@ -49,6 +49,13 @@ private Q_SLOTS:
 
 private:
 
+    /**
+     * Generate one animate frame with the lightening.
+     */
+    QPixmap renderAnimationFrame(int beamPosition);
+
+private:
+
     class Private;
     Private* const d = nullptr;
 };
