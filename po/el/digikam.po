@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:41+0000\n"
+"POT-Creation-Date: 2026-01-13 08:39+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -315,7 +315,7 @@ msgstr "Αλλαγή ετικετών προσώπου"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:859
+#: core/app/views/preview/itempreviewview.cpp:894
 #, kde-format
 msgid "&Cancel"
 msgstr "&Ακύρωση"
@@ -326,7 +326,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:857
+#: core/app/views/preview/itempreviewview.cpp:892
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Ορισμός ετικετών σε αυ&τό το αντικείμενο"
@@ -558,13 +558,14 @@ msgid "This item has geolocation information."
 msgstr "Το αντικείμενο αυτό περιέχει πληροφορίες γεωγραφικής θέσης."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
+#: core/app/views/preview/itempreviewview.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr "Έμφάνιση πλήρους οθόνης"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:180
+#: core/app/views/preview/itempreviewview.cpp:184
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -572,7 +573,7 @@ msgid "Rotate Left"
 msgstr "Περιστροφή αριστερά"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:182
+#: core/app/views/preview/itempreviewview.cpp:186
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1645,9 +1646,9 @@ msgstr "Αρχικοποίηση της Κύριας προβολής..."
 
 #: core/app/main/digikamapp_setup.cpp:64
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:420
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:250
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:423
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:446
+#: core/utilities/survey/surveywindow_setup.cpp:261
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
@@ -1820,7 +1821,7 @@ msgid "Thumbnails"
 msgstr "Μικρογραφίες"
 
 #: core/app/main/digikamapp_setup.cpp:361
-#: core/app/views/stack/itemiconview_views.cpp:303
+#: core/app/views/stack/itemiconview_views.cpp:315
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -2400,182 +2401,182 @@ msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Φόρτωση φωτογραφικών μηχανών..."
 
-#: core/app/main/digikamapp_setup.cpp:971
+#: core/app/main/digikamapp_setup.cpp:974
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Έξοδος από λειτουργία προεπισκόπησης"
 
-#: core/app/main/digikamapp_setup.cpp:976
+#: core/app/main/digikamapp_setup.cpp:979
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Επόμενη εικόνα"
 
-#: core/app/main/digikamapp_setup.cpp:982
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Προηγούμενη εικόνα"
 
-#: core/app/main/digikamapp_setup.cpp:988
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Πρώτη εικόνα"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:996
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Τελευταία εικόνα"
 
-#: core/app/main/digikamapp_setup.cpp:998
+#: core/app/main/digikamapp_setup.cpp:1001
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Αποκο&πή"
 
-#: core/app/main/digikamapp_setup.cpp:1000
+#: core/app/main/digikamapp_setup.cpp:1003
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Αποκοπή επιλογής στο πρόχειρο"
 
-#: core/app/main/digikamapp_setup.cpp:1019
+#: core/app/main/digikamapp_setup.cpp:1022
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Επεξεργασία τίτλων"
 
-#: core/app/main/digikamapp_setup.cpp:1024
+#: core/app/main/digikamapp_setup.cpp:1027
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Επεξεργασία σχολίων"
 
-#: core/app/main/digikamapp_setup.cpp:1029
+#: core/app/main/digikamapp_setup.cpp:1032
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Εμφάνιση αντιστοιχισμένων ετικετών"
 
-#: core/app/main/digikamapp_setup.cpp:1038
+#: core/app/main/digikamapp_setup.cpp:1041
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Προσαρμογή ετικέτας προσανατολισμού Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1041
+#: core/app/main/digikamapp_setup.cpp:1044
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Κανονικό"
 
-#: core/app/main/digikamapp_setup.cpp:1043
+#: core/app/main/digikamapp_setup.cpp:1046
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Αναστροφή οριζόντια"
 
-#: core/app/main/digikamapp_setup.cpp:1045
+#: core/app/main/digikamapp_setup.cpp:1048
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Περιστραμμένο ανάποδα"
 
-#: core/app/main/digikamapp_setup.cpp:1047
+#: core/app/main/digikamapp_setup.cpp:1050
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Ανεστραμμένο Κάθετα"
 
-#: core/app/main/digikamapp_setup.cpp:1049
+#: core/app/main/digikamapp_setup.cpp:1052
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Περιεστρεμμένο δεξιά / οριζ. αναστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:1051
+#: core/app/main/digikamapp_setup.cpp:1054
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Περιεστρεμμένο δεξιά"
 
-#: core/app/main/digikamapp_setup.cpp:1053
+#: core/app/main/digikamapp_setup.cpp:1056
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Περιεστρεμμένο δεξιά / κατακ. αναστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:1055
+#: core/app/main/digikamapp_setup.cpp:1058
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Περιεστρεμμένο αριστερά"
 
-#: core/app/main/digikamapp_setup.cpp:1116
+#: core/app/main/digikamapp_setup.cpp:1119
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Περιστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:1122
+#: core/app/main/digikamapp_setup.cpp:1125
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Αυτόματη περιστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:1130
+#: core/app/main/digikamapp_setup.cpp:1133
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Αριστερά"
 
-#: core/app/main/digikamapp_setup.cpp:1137
+#: core/app/main/digikamapp_setup.cpp:1140
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Δεξιά"
 
-#: core/app/main/digikamapp_setup.cpp:1147
+#: core/app/main/digikamapp_setup.cpp:1150
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Αναστροφή"
 
-#: core/app/main/digikamapp_setup.cpp:1151
+#: core/app/main/digikamapp_setup.cpp:1154
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Οριζόντια"
 
-#: core/app/main/digikamapp_setup.cpp:1158
+#: core/app/main/digikamapp_setup.cpp:1161
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Κατακόρυφα"
 
-#: core/app/main/digikamapp_setup.cpp:1168
+#: core/app/main/digikamapp_setup.cpp:1171
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Αυτόματη περιστροφή/αναστροφή με χρήση πληροφοριών Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1179
+#: core/app/main/digikamapp_setup.cpp:1182
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Φόρτωση θεμάτων..."
 
-#: core/app/main/digikamapp_setup.cpp:1182
+#: core/app/main/digikamapp_setup.cpp:1185
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Θέματα"
 
-#: core/app/main/digikamapp_setup.cpp:1198
+#: core/app/main/digikamapp_setup.cpp:1201
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2954,70 +2955,92 @@ msgstr "Συνεισφορά..."
 msgid "Donate: "
 msgstr "Ημερομηνία: "
 
-#: core/app/views/preview/itempreviewview.cpp:176
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
-#, kde-format
-msgctxt "go to previous image"
+#: core/app/views/preview/itempreviewview.cpp:180
+#, fuzzy, kde-format
+#| msgctxt "go to previous image"
+#| msgid "Back"
+msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Πίσω"
 
-#: core/app/views/preview/itempreviewview.cpp:178
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
-#, kde-format
-msgctxt "go to next image"
+#: core/app/views/preview/itempreviewview.cpp:182
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Forward"
+msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Μπροστά"
 
-#: core/app/views/preview/itempreviewview.cpp:189
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:193
+#, fuzzy, kde-format
+#| msgid "Add a Face Tag"
+msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Προσθήκη ετικέτας προσώπου..."
 
-#: core/app/views/preview/itempreviewview.cpp:194
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:198
+#, fuzzy, kde-format
+#| msgid "Clear all faces on this image"
+msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Καθαρισμός όλων των προσώπων σε αυτήν την εικόνα"
 
-#: core/app/views/preview/itempreviewview.cpp:197
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:201
+#, fuzzy, kde-format
+#| msgid "Mark all unconfirmed faces as ignored"
+msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Σημειώστε όλα τα ανεπιβεβαίωτα πρόσωπα ως αγνοημένα"
 
-#: core/app/views/preview/itempreviewview.cpp:204
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:208
+#, fuzzy, kde-format
+#| msgid "Show Face Tags"
+msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "Εμφάνιση ετικετών προσώπων"
 
-#: core/app/views/preview/itempreviewview.cpp:209
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:213
+#, fuzzy, kde-format
+#| msgid "Add a focus point"
+msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "Προσθήκη σημείου εστίασης"
 
-#: core/app/views/preview/itempreviewview.cpp:211
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:215
+#, fuzzy, kde-format
+#| msgid "Show focus points"
+msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "Εμφάνιση σημείων εστίασης"
 
-#: core/app/views/preview/itempreviewview.cpp:217
+#: core/app/views/preview/itempreviewview.cpp:221
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "Εμφάνιση εικόνων επισκόπησης"
 
-#: core/app/views/preview/itempreviewview.cpp:221
-#, kde-format
-msgid "Show Fullscreen"
-msgstr "Έμφάνιση πλήρους οθόνης"
+#: core/app/views/preview/itempreviewview.cpp:225
+#, fuzzy, kde-format
+#| msgid "Under-Exposure Indicator"
+msgctxt "@info:tooltip"
+msgid "Under-Exposure Indicator"
+msgstr "Ένδειξη υποέκθεσης"
 
-#: core/app/views/preview/itempreviewview.cpp:559
-#: core/app/views/stack/itemiconview_views.cpp:313
+#: core/app/views/preview/itempreviewview.cpp:229
+#, fuzzy, kde-format
+#| msgid "Over-Exposure Indicator"
+msgctxt "@info:tooltip"
+msgid "Over-Exposure Indicator"
+msgstr "Ένδειξη υπερέκθεσης"
+
+#: core/app/views/preview/itempreviewview.cpp:593
+#: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Χωρίς επιλογή"
 
-#: core/app/views/preview/itempreviewview.cpp:754
+#: core/app/views/preview/itempreviewview.cpp:789
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -3363,7 +3386,7 @@ msgstr "Αναζήτηση χάρτη"
 msgid "Last Search"
 msgstr "Τελευταία αναζήτηση"
 
-#: core/app/views/stack/itemiconview_views.cpp:127
+#: core/app/views/stack/itemiconview_views.cpp:139
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3373,7 +3396,7 @@ msgstr ""
 "Η θέση αποθήκευσης αυτής της εικόνας\n"
 "δεν είναι προς το παρόν διαθέσιμη"
 
-#: core/app/views/stack/itemiconview_views.cpp:243
+#: core/app/views/stack/itemiconview_views.cpp:255
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -45527,6 +45550,20 @@ msgstr "Συνέβη ένα σφάλμα με τον αναπαραγωγέα μ
 msgid "End of media."
 msgstr ""
 
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
+#, kde-format
+msgctxt "go to previous image"
+msgid "Back"
+msgstr "Πίσω"
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
+#, kde-format
+msgctxt "go to next image"
+msgid "Forward"
+msgstr "Μπροστά"
+
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:209
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
@@ -68694,13 +68731,13 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Προχωρημένη αναζήτηση"
 
-#: core/utilities/setup/album/setupalbumview.cpp:130
+#: core/utilities/setup/album/setupalbumview.cpp:131
 #: core/utilities/setup/camera/setupcamera.cpp:429
 #, kde-format
 msgid "Show file&name"
 msgstr "Εμφάνιση ο&νόματος αρχείου"
 
-#: core/utilities/setup/album/setupalbumview.cpp:131
+#: core/utilities/setup/album/setupalbumview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Set this option to show the filename below the image thumbnail."
 msgid "Set this option to show the filename below the thumbnail."
@@ -68708,13 +68745,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζεται το όνομα του αρχείου κάτω "
 "από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:133
+#: core/utilities/setup/album/setupalbumview.cpp:134
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Εμφάνιση με&γέθους αρχείου"
 
-#: core/utilities/setup/album/setupalbumview.cpp:134
+#: core/utilities/setup/album/setupalbumview.cpp:135
 #, fuzzy, kde-format
 #| msgid "Set this option to show the file size below the image thumbnail."
 msgid "Set this option to show the file size below the thumbnail."
@@ -68722,13 +68759,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζεται το μέγεθος του αρχείου "
 "κάτω από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:136
+#: core/utilities/setup/album/setupalbumview.cpp:137
 #: core/utilities/setup/camera/setupcamera.cpp:435
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Εμφάνιση &ημερομηνίας δημιουργίας φωτογραφικής"
 
-#: core/utilities/setup/album/setupalbumview.cpp:137
+#: core/utilities/setup/album/setupalbumview.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the camera creation date below the image "
@@ -68738,13 +68775,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζεται η ημερομηνία δημιουργίας "
 "της φωτογραφικής κάτω από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:140
+#: core/utilities/setup/album/setupalbumview.cpp:141
 #, fuzzy, kde-format
 #| msgid "Show image creation date"
 msgid "Show file &modification date"
 msgstr "Εμφάνιση ημερομηνίας δημιουργίας εικόνας"
 
-#: core/utilities/setup/album/setupalbumview.cpp:141
+#: core/utilities/setup/album/setupalbumview.cpp:142
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
@@ -68752,13 +68789,13 @@ msgid ""
 "quickly which items have been modified."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:146
 #, fuzzy, kde-format
 #| msgid "Show image dimensions"
 msgid "Show item dimensions"
 msgstr "Εμφάνιση διαστάσεων εικόνας"
 
-#: core/utilities/setup/album/setupalbumview.cpp:146
+#: core/utilities/setup/album/setupalbumview.cpp:147
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the image size in pixels below the image "
@@ -68768,13 +68805,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζεται το μέγεθος εικόνας σε "
 "εικονοστοιχεία κάτω από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:150
 #, fuzzy, kde-format
 #| msgid "Show image aspect ratio"
 msgid "Show item aspect ratio"
 msgstr "Εμφάνιση αναλογίας διαστάσεων εικόνας"
 
-#: core/utilities/setup/album/setupalbumview.cpp:150
+#: core/utilities/setup/album/setupalbumview.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the image aspect ratio below the image thumbnail."
@@ -68783,13 +68820,13 @@ msgstr ""
 "Ενεργοποιήστε αυτήν την επιλογή για να εμφανίζεται η αναλογία διαστάσεων "
 "κάτω από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:154
 #, fuzzy, kde-format
 #| msgid "Show image Format"
 msgid "Show item format"
 msgstr "Εμφάνιση τύπου αρχειοθέτησης εικόνας"
 
-#: core/utilities/setup/album/setupalbumview.cpp:154
+#: core/utilities/setup/album/setupalbumview.cpp:155
 #, fuzzy, kde-format
 #| msgid "Set this option to show image format over image thumbnail."
 msgid "Set this option to show item mime type over thumbnail."
@@ -68797,12 +68834,12 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζεται ο τύπος αρχειοθέτησης πάνω "
 "από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Εμφάνιση τίτ&λου του digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:158
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam title below the image thumbnail."
 msgid "Set this option to show the digiKam title below the thumbnail."
@@ -68810,12 +68847,12 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζεται ο τίτλος του digiKam κάτω "
 "από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Εμφάνιση επι&γραφών του digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
+#: core/utilities/setup/album/setupalbumview.cpp:162
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the digiKam captions below the image thumbnail."
@@ -68824,13 +68861,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζονται οι επιγραφές digiKam κάτω "
 "από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Εμφάνιση ετικετών &digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:166
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid "Set this option to show the digiKam tags list below the thumbnail."
@@ -68838,12 +68875,12 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζονται οι ετικέτες του digiKam "
 "κάτω από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Εμφάνιση &αξιολόγησης του digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the digiKam rating below the image thumbnail."
@@ -68852,13 +68889,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζεται η αξιολόγηση του digiKam "
 "κάτω από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, fuzzy, kde-format
 #| msgid "Show digiKam tit&le"
 msgid "Show digiKam &pick label"
 msgstr "Εμφάνιση τίτ&λου του digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:174
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam title below the image thumbnail."
 msgid "Set this option to show the digiKam pick label below the thumbnail."
@@ -68866,13 +68903,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζεται ο τίτλος του digiKam κάτω "
 "από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #, fuzzy, kde-format
 #| msgid "Show digiKam tit&le"
 msgid "Show digiKam color &label"
 msgstr "Εμφάνιση τίτ&λου του digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
+#: core/utilities/setup/album/setupalbumview.cpp:178
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
@@ -68882,13 +68919,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζονται οι ετικέτες του digiKam "
 "κάτω από την εικόνα επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Εμφάνιση κουμπιών επικάλυψης περιστροφής"
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show overlay buttons on the image thumbnail for image "
@@ -68900,12 +68937,12 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζονται τα κουμπιά επικάλυψης "
 "στην εικόνα επισκόπησης για την περιστροφή εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #, fuzzy, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Εμφάνιση κουμπιών επικάλυψης περιστροφής"
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:188
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
@@ -68914,13 +68951,13 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζονται τα κουμπιά επικάλυψης "
 "στην εικόνα επισκόπησης για την περιστροφή εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, fuzzy, kde-format
 #| msgid "Show rotation overlay buttons"
 msgid "Show geolocation overlay button"
 msgstr "Εμφάνιση κουμπιών επικάλυψης περιστροφής"
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:192
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
@@ -68929,36 +68966,36 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για να εμφανίζονται τα κουμπιά επικάλυψης "
 "στην εικόνα επισκόπησης για την περιστροφή εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:196
+#: core/utilities/setup/album/setupalbumview.cpp:197
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Ενέργεια του κλικ στην εικόνα επισκόπησης:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:198
+#: core/utilities/setup/album/setupalbumview.cpp:199
 #, fuzzy, kde-format
 msgid "Show Preview"
 msgstr "Εμφάνιση ονόματος λευκώματος"
 
-#: core/utilities/setup/album/setupalbumview.cpp:199
+#: core/utilities/setup/album/setupalbumview.cpp:200
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "Start Image Editor"
 msgstr "Εκκίνηση επεξεργαστή εικόνας"
 
-#: core/utilities/setup/album/setupalbumview.cpp:200
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #, fuzzy, kde-format
 #| msgid "Show on right panel"
 msgid "Show on Light Table"
 msgstr "Εμφάνιση στον δεξί πίνακα"
 
-#: core/utilities/setup/album/setupalbumview.cpp:201
+#: core/utilities/setup/album/setupalbumview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgid "Open with Default Application"
 msgstr "Άνοιγμα με την προκαθορισμένη εφαρμογή"
 
-#: core/utilities/setup/album/setupalbumview.cpp:202
+#: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
@@ -68966,13 +69003,13 @@ msgstr ""
 "Επιλέξτε την ενέργεια που θα εκτελείται όταν κάνετε κλικ πάνω στην εικόνα "
 "επισκόπησης."
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:205
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Γραμματοσειρά προβολής εικονιδίων:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:205
+#: core/utilities/setup/album/setupalbumview.cpp:206
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Icon Views."
 msgid "Select here the font used to display text in icon views."
@@ -68980,12 +69017,12 @@ msgstr ""
 "Επιλέξτε εδώ τη γραμματοσειρά που θα χρησιμοποιηθεί για την εμφάνιση του "
 "κειμένου στην προβολή εικονιδίων."
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:208
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:208
+#: core/utilities/setup/album/setupalbumview.cpp:209
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -68999,20 +69036,20 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:246
+#: core/utilities/setup/album/setupalbumview.cpp:247
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ε&ικονίδιο:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:253
+#: core/utilities/setup/album/setupalbumview.cpp:254
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "Tree View icon size:"
 msgstr "Μέγεθος επισκόπησης προβολής δέντρου:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:260
+#: core/utilities/setup/album/setupalbumview.cpp:261
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -69024,13 +69061,13 @@ msgstr ""
 "Εδώ μπορείτε να καθορίσετε το μέγεθος των εικόνων επισκόπησης στις πλευρικές "
 "μπάρες του digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:263
+#: core/utilities/setup/album/setupalbumview.cpp:264
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "People Tree View icon size:"
 msgstr "Μέγεθος επισκόπησης προβολής δέντρου:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:271
+#: core/utilities/setup/album/setupalbumview.cpp:272
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -69042,24 +69079,24 @@ msgstr ""
 "Εδώ μπορείτε να καθορίσετε το μέγεθος των εικόνων επισκόπησης στις πλευρικές "
 "μπάρες του digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
 msgid "Tree View font:"
 msgstr "Γραμματοσειρά προβολής δέντρου:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:275
+#: core/utilities/setup/album/setupalbumview.cpp:276
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
 "Επιλέξτε εδώ την γραμματοσειρά που θα χρησιμοποιηθεί για την εμφάνιση του "
 "κειμένου στην προβολή δέντρου."
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Εμφάνιση αριθμού αντικειμένων στη προβολή δένδρου"
 
-#: core/utilities/setup/album/setupalbumview.cpp:278
+#: core/utilities/setup/album/setupalbumview.cpp:279
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display album information when the mouse hovers over a "
@@ -69071,32 +69108,32 @@ msgstr ""
 "Ενεργοποιήστε αυτή την επιλογή για την εμφάνιση πληροφοριών λευκώματος όταν "
 "το ποντίκι βρεθεί πάνω σε ένα αντικείμενο της προβολής φακέλου."
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:291
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Προβολές"
 
-#: core/utilities/setup/album/setupalbumview.cpp:298
+#: core/utilities/setup/album/setupalbumview.cpp:299
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:301
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Η ενσωματωμένη προεπισκόπηση φορτώνει το πλήρες μέγεθος των εικόνων"
 
-#: core/utilities/setup/album/setupalbumview.cpp:302
+#: core/utilities/setup/album/setupalbumview.cpp:303
 #, fuzzy, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
 msgstr "Αναφ. εικόνων"
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:306
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox set while balance automatically"
 #| msgid "Automatic"
@@ -69104,100 +69141,135 @@ msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Αυτόματα"
 
-#: core/utilities/setup/album/setupalbumview.cpp:307
+#: core/utilities/setup/album/setupalbumview.cpp:308
 #, fuzzy, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Εμφάνιση ενσωματωμένης επισκόπησης"
 
-#: core/utilities/setup/album/setupalbumview.cpp:309
+#: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:311
+#: core/utilities/setup/album/setupalbumview.cpp:312
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:314
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:314
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, fuzzy, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 "Αναιρέστε την επιλογή αυτή αν δεν θέλετε να βλέπετε εικονίδια και κείμενο "
 "στην προεπισκόπηση εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:318
 #, fuzzy, kde-format
 msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 "Αναιρέστε την επιλογή αυτή αν δεν θέλετε να βλέπετε εικονίδια και κείμενο "
 "στην προεπισκόπηση εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:320
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:320
+#: core/utilities/setup/album/setupalbumview.cpp:321
 #, fuzzy, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
 "Αναιρέστε την επιλογή αυτή αν δεν θέλετε να βλέπετε εικονίδια και κείμενο "
 "στην προεπισκόπηση εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:323
-#, kde-format
-msgctxt "@label:listbox Magnifier zoom levels"
-msgid "Magnifier Zoom Level:"
-msgstr ""
+#: core/utilities/setup/album/setupalbumview.cpp:325
+#, fuzzy, kde-format
+msgid "Magnifier"
+msgstr "Εμφάνιση εικόνων επισκόπησης"
 
-#: core/utilities/setup/album/setupalbumview.cpp:331
+#: core/utilities/setup/album/setupalbumview.cpp:329
+#, fuzzy, kde-format
+#| msgid "Zoom to 1:1"
+msgctxt "@label:listbox Preview magnifier tool zoom factor"
+msgid "Zoom Factor:"
+msgstr "Εστίαση 1:1"
+
+#: core/utilities/setup/album/setupalbumview.cpp:339
+#, fuzzy, kde-format
+msgctxt "@label:listbox Preview magnifier tool size"
+msgid "Tool Size:"
+msgstr "Σύνολο: %1 (%)"
+
+#: core/utilities/setup/album/setupalbumview.cpp:341
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Image tags"
+msgctxt "@item Magnifier tool size"
+msgid "Small"
+msgstr "Ετικέτες εικόνας"
+
+#: core/utilities/setup/album/setupalbumview.cpp:342
+#, fuzzy, kde-format
+#| msgctxt "embedded preview type in dng file"
+#| msgid "Medium"
+msgctxt "@item Magnifier tool size"
+msgid "Medium"
+msgstr "Μεσαίο μέγεθος"
+
+#: core/utilities/setup/album/setupalbumview.cpp:343
+#, fuzzy, kde-format
+#| msgid "Target"
+msgctxt "@item Magnifier tool size"
+msgid "Large"
+msgstr "Προορισμός"
+
+#: core/utilities/setup/album/setupalbumview.cpp:354
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Εμφάνιση εικονιδίων και κειμένου πάνω από την προεπισκόπηση"
 
-#: core/utilities/setup/album/setupalbumview.cpp:332
+#: core/utilities/setup/album/setupalbumview.cpp:355
 #, fuzzy, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 "Αναιρέστε την επιλογή αυτή αν δεν θέλετε να βλέπετε εικονίδια και κείμενο "
 "στην προεπισκόπηση εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:334
+#: core/utilities/setup/album/setupalbumview.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
 msgid "Auto play of videos or animations"
 msgstr "Αυτόματη αποθήκευση αλλαγών"
 
-#: core/utilities/setup/album/setupalbumview.cpp:335
+#: core/utilities/setup/album/setupalbumview.cpp:358
 #, fuzzy, kde-format
 msgid "Check this if you want to auto play the videos or animations."
 msgstr ""
 "Αναιρέστε την επιλογή αυτή αν δεν θέλετε να βλέπετε εικονίδια και κείμενο "
 "στην προεπισκόπηση εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:337
+#: core/utilities/setup/album/setupalbumview.cpp:360
 #, fuzzy, kde-format
 #| msgid "Show icons and text over preview"
 msgid "Show a text overlay over preview."
 msgstr "Εμφάνιση εικονιδίων και κειμένου πάνω από την προεπισκόπηση"
 
-#: core/utilities/setup/album/setupalbumview.cpp:338
+#: core/utilities/setup/album/setupalbumview.cpp:361
 #, fuzzy, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
@@ -69206,34 +69278,34 @@ msgstr ""
 "Αναιρέστε την επιλογή αυτή αν δεν θέλετε να βλέπετε εικονίδια και κείμενο "
 "στην προεπισκόπηση εικόνας."
 
-#: core/utilities/setup/album/setupalbumview.cpp:363
+#: core/utilities/setup/album/setupalbumview.cpp:385
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: core/utilities/setup/album/setupalbumview.cpp:378
+#: core/utilities/setup/album/setupalbumview.cpp:400
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Έξοδος από λειτουργία πλήρους οθόνης"
 
-#: core/utilities/setup/album/setupalbumview.cpp:383
+#: core/utilities/setup/album/setupalbumview.cpp:405
 #, fuzzy, kde-format
 #| msgid "Select Mime Types"
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Επιλογή τύπων mime"
 
-#: core/utilities/setup/album/setupalbumview.cpp:386
+#: core/utilities/setup/album/setupalbumview.cpp:408
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: core/utilities/setup/album/setupalbumview.cpp:569
+#: core/utilities/setup/album/setupalbumview.cpp:593
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -74009,6 +74081,9 @@ msgstr "Εισαγωγή αντικειμένων"
 msgid "Survey"
 msgstr ""
 
+#~ msgid "Show Fullscreen"
+#~ msgstr "Έμφάνιση πλήρους οθόνης"
+
 #, fuzzy
 #~| msgid "Custom process"
 #~ msgid "%1 item on Survey"
@@ -74126,10 +74201,6 @@ msgstr ""
 #~| msgid "Count: "
 #~ msgid "Total Count: "
 #~ msgstr "Αριθμός: "
-
-#, fuzzy
-#~ msgid "Total Size: "
-#~ msgstr "Σύνολο: %1 (%)"
 
 #, fuzzy
 #~| msgid "No Pick"
@@ -86571,9 +86642,6 @@ msgstr ""
 #~ "σφάλματος. Αν θέλετε να δοκιμάσετε να εκτελέσετε το digiKam με μία κενή "
 #~ "βάση δεδομένων,διαγράψτε τα αρχεία της υπάρχουσας βάσης δεδομένων (\"%1\" "
 #~ "και \"%2\" στο \"%3\")."
-
-#~ msgid "Zoom to 1:1"
-#~ msgstr "Εστίαση 1:1"
 
 #~ msgid "<b>Configure First Local Root Album and Database File Paths</b>"
 #~ msgstr ""
