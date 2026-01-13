@@ -291,6 +291,17 @@ void TagsManager::Private::setupActions()
     laBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     mainToolbar->addWidget(laBtn);
 
+    laBtn->setStyleSheet(QLatin1String(
+        "QToolButton {"
+        "    border: none;"
+        "    background: transparent;"
+        "}"
+        "QToolButton:hover {"
+        "    background: transparent;"
+        "    border: none;"
+        "}")
+    );
+
     dd->addToolBar(mainToolbar);
 
     rootDisabledOptions.append(delAction);

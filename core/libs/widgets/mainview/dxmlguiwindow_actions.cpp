@@ -128,6 +128,23 @@ void DXmlGuiWindow::cleanupActions()
         qCDebug(DIGIKAM_WIDGETS_LOG) << "action: " << act->objectName();
     }
 */
+    // Fix the animation logo action style.
+
+    QWidget* const widget = mainToolBar()->widgetForAction(m_animLogo);
+
+    if (QToolButton* const button = qobject_cast<QToolButton*>(widget))
+    {
+        button->setStyleSheet(QLatin1String(
+            "QToolButton {"
+            "    border: none;"
+            "    background: transparent;"
+            "}"
+            "QToolButton:hover {"
+            "    background: transparent;"
+            "    border: none;"
+            "}")
+        );
+    }
 }
 
 void DXmlGuiWindow::createSidebarActions()
