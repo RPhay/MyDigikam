@@ -281,7 +281,16 @@ void TagsManager::Private::setupActions()
     );
 
     mainToolbar->addWidget(helpButton);
-    mainToolbar->addAction(new DLogoAction(dd));
+
+    QWidget* const spacer = new QWidget(dd);
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    mainToolbar->addWidget(spacer);
+
+    QToolButton* const laBtn = new QToolButton(dd);
+    laBtn->setDefaultAction(new DLogoAction(dd));
+    laBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    mainToolbar->addWidget(laBtn);
+
     dd->addToolBar(mainToolbar);
 
     rootDisabledOptions.append(delAction);
