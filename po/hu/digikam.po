@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-12 00:41+0000\n"
+"POT-Creation-Date: 2026-01-13 08:39+0000\n"
 "PO-Revision-Date: 2025-10-19 21:02+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -302,7 +302,7 @@ msgstr "Arccímke módosítása"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:859
+#: core/app/views/preview/itempreviewview.cpp:894
 #, kde-format
 msgid "&Cancel"
 msgstr "&Mégse"
@@ -313,7 +313,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Címkék hozzárendelé&se a kiválasztott elemekhez"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:857
+#: core/app/views/preview/itempreviewview.cpp:892
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Címkék hozzárendelése &ehhez az elemhez"
@@ -543,13 +543,14 @@ msgid "This item has geolocation information."
 msgstr "Ez az elem földrajzi információkat tartalmaz."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
+#: core/app/views/preview/itempreviewview.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr "Teljes képernyős megjelenítés"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:180
+#: core/app/views/preview/itempreviewview.cpp:184
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -557,7 +558,7 @@ msgid "Rotate Left"
 msgstr "Forgatás balra"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:182
+#: core/app/views/preview/itempreviewview.cpp:186
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1622,9 +1623,9 @@ msgstr "A fő nézet inicializálása ..."
 
 #: core/app/main/digikamapp_setup.cpp:64
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:420
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:443
-#: core/utilities/survey/surveywindow_setup.cpp:250
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:423
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:446
+#: core/utilities/survey/surveywindow_setup.cpp:261
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1795,7 +1796,7 @@ msgid "Thumbnails"
 msgstr "Bélyegképek"
 
 #: core/app/main/digikamapp_setup.cpp:361
-#: core/app/views/stack/itemiconview_views.cpp:303
+#: core/app/views/stack/itemiconview_views.cpp:315
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -2358,127 +2359,127 @@ msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:971
+#: core/app/main/digikamapp_setup.cpp:974
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Kilépés az előnézeti módból"
 
-#: core/app/main/digikamapp_setup.cpp:976
+#: core/app/main/digikamapp_setup.cpp:979
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Új kép"
 
-#: core/app/main/digikamapp_setup.cpp:982
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Előző kép"
 
-#: core/app/main/digikamapp_setup.cpp:988
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Első kép"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:996
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Utolsó kép"
 
-#: core/app/main/digikamapp_setup.cpp:998
+#: core/app/main/digikamapp_setup.cpp:1001
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Kivágás"
 
-#: core/app/main/digikamapp_setup.cpp:1000
+#: core/app/main/digikamapp_setup.cpp:1003
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Kivágás vágólapra"
 
-#: core/app/main/digikamapp_setup.cpp:1019
+#: core/app/main/digikamapp_setup.cpp:1022
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Címek szerkesztése"
 
-#: core/app/main/digikamapp_setup.cpp:1024
+#: core/app/main/digikamapp_setup.cpp:1027
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Megjegyzések szerkesztése"
 
-#: core/app/main/digikamapp_setup.cpp:1029
+#: core/app/main/digikamapp_setup.cpp:1032
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Hozzárendelt címkék megjelenítése"
 
-#: core/app/main/digikamapp_setup.cpp:1038
+#: core/app/main/digikamapp_setup.cpp:1041
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Állítsa be az Exif orientációs címkét"
 
-#: core/app/main/digikamapp_setup.cpp:1041
+#: core/app/main/digikamapp_setup.cpp:1044
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normál"
 
-#: core/app/main/digikamapp_setup.cpp:1043
+#: core/app/main/digikamapp_setup.cpp:1046
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Vízszintesen tükrözve"
 
-#: core/app/main/digikamapp_setup.cpp:1045
+#: core/app/main/digikamapp_setup.cpp:1048
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Forgatott fejjel lefelé"
 
-#: core/app/main/digikamapp_setup.cpp:1047
+#: core/app/main/digikamapp_setup.cpp:1050
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Függőlegesen tükrözve"
 
-#: core/app/main/digikamapp_setup.cpp:1049
+#: core/app/main/digikamapp_setup.cpp:1052
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Jobbra / vízszintesen elforgatva / megfordítva"
 
-#: core/app/main/digikamapp_setup.cpp:1051
+#: core/app/main/digikamapp_setup.cpp:1054
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Jobbra forgatva"
 
-#: core/app/main/digikamapp_setup.cpp:1053
+#: core/app/main/digikamapp_setup.cpp:1056
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Jobbra / Függőlegesen elforgatva / megfordítva"
 
-#: core/app/main/digikamapp_setup.cpp:1055
+#: core/app/main/digikamapp_setup.cpp:1058
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Balra forgatva"
 
-#: core/app/main/digikamapp_setup.cpp:1116
+#: core/app/main/digikamapp_setup.cpp:1119
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Forgatás"
 
-#: core/app/main/digikamapp_setup.cpp:1122
+#: core/app/main/digikamapp_setup.cpp:1125
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Rotate"
@@ -2486,55 +2487,55 @@ msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Forgatás"
 
-#: core/app/main/digikamapp_setup.cpp:1130
+#: core/app/main/digikamapp_setup.cpp:1133
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Bal"
 
-#: core/app/main/digikamapp_setup.cpp:1137
+#: core/app/main/digikamapp_setup.cpp:1140
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Jobb"
 
-#: core/app/main/digikamapp_setup.cpp:1147
+#: core/app/main/digikamapp_setup.cpp:1150
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Tükrözés"
 
-#: core/app/main/digikamapp_setup.cpp:1151
+#: core/app/main/digikamapp_setup.cpp:1154
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Vízszintesen"
 
-#: core/app/main/digikamapp_setup.cpp:1158
+#: core/app/main/digikamapp_setup.cpp:1161
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Függőlegesen"
 
-#: core/app/main/digikamapp_setup.cpp:1168
+#: core/app/main/digikamapp_setup.cpp:1171
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Automatikus elforgatás / átfordítás az Exif információk használatával"
 
-#: core/app/main/digikamapp_setup.cpp:1179
+#: core/app/main/digikamapp_setup.cpp:1182
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Témák betöltése…"
 
-#: core/app/main/digikamapp_setup.cpp:1182
+#: core/app/main/digikamapp_setup.cpp:1185
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Témák"
 
-#: core/app/main/digikamapp_setup.cpp:1198
+#: core/app/main/digikamapp_setup.cpp:1201
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2902,67 +2903,89 @@ msgstr "Közreműködés..."
 msgid "Donate: "
 msgstr "Dátum: "
 
-#: core/app/views/preview/itempreviewview.cpp:176
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
-#, kde-format
-msgctxt "go to previous image"
+#: core/app/views/preview/itempreviewview.cpp:180
+#, fuzzy, kde-format
+#| msgctxt "go to previous image"
+#| msgid "Back"
+msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Vissza"
 
-#: core/app/views/preview/itempreviewview.cpp:178
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
-#, kde-format
-msgctxt "go to next image"
+#: core/app/views/preview/itempreviewview.cpp:182
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Forward"
+msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Előre"
 
-#: core/app/views/preview/itempreviewview.cpp:189
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:193
+#, fuzzy, kde-format
+#| msgid "Add a Face Tag"
+msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Arc címke hozzáadása"
 
-#: core/app/views/preview/itempreviewview.cpp:194
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:198
+#, fuzzy, kde-format
+#| msgid "Clear all faces on this image"
+msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Minden arc törlése ezen a képen"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:201
 #, fuzzy, kde-format
 #| msgid "Clear unconfirmed results and rescan"
+msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "A meg nem erősített találatok törlése és vizsgálat újra"
 
-#: core/app/views/preview/itempreviewview.cpp:204
-#, kde-format
+#: core/app/views/preview/itempreviewview.cpp:208
+#, fuzzy, kde-format
+#| msgid "Show Face Tags"
+msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "Arc címkék megjelenítése"
 
-#: core/app/views/preview/itempreviewview.cpp:209
-#, kde-format
-msgid "Add a focus point"
-msgstr ""
-
-#: core/app/views/preview/itempreviewview.cpp:211
+#: core/app/views/preview/itempreviewview.cpp:213
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
+msgctxt "@info:tooltip"
+msgid "Add a focus point"
+msgstr "Legújabb először"
+
+#: core/app/views/preview/itempreviewview.cpp:215
+#, fuzzy, kde-format
+#| msgid "Show youngest first"
+msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "Legújabb először"
 
-#: core/app/views/preview/itempreviewview.cpp:217
+#: core/app/views/preview/itempreviewview.cpp:221
 #, fuzzy, kde-format
 #| msgid "Show numbers"
+msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "Számok megjelenítése"
 
-#: core/app/views/preview/itempreviewview.cpp:221
-#, kde-format
-msgid "Show Fullscreen"
-msgstr "Teljes képernyős megjelenítés"
+#: core/app/views/preview/itempreviewview.cpp:225
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Under-Exposure Indicator"
+msgctxt "@info:tooltip"
+msgid "Under-Exposure Indicator"
+msgstr "Alulexponálás indikátor"
 
-#: core/app/views/preview/itempreviewview.cpp:559
-#: core/app/views/stack/itemiconview_views.cpp:313
+#: core/app/views/preview/itempreviewview.cpp:229
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Over-Exposure Indicator"
+msgctxt "@info:tooltip"
+msgid "Over-Exposure Indicator"
+msgstr "Túlexponálás indikátor"
+
+#: core/app/views/preview/itempreviewview.cpp:593
+#: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Faces"
@@ -2970,7 +2993,7 @@ msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Arcok szerint"
 
-#: core/app/views/preview/itempreviewview.cpp:754
+#: core/app/views/preview/itempreviewview.cpp:789
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -3283,7 +3306,7 @@ msgstr "Térképes keresés"
 msgid "Last Search"
 msgstr "Utolsó keresés"
 
-#: core/app/views/stack/itemiconview_views.cpp:127
+#: core/app/views/stack/itemiconview_views.cpp:139
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3291,7 +3314,7 @@ msgid ""
 "is currently not available"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:243
+#: core/app/views/stack/itemiconview_views.cpp:255
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -41820,6 +41843,20 @@ msgstr ""
 msgid "End of media."
 msgstr ""
 
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:295
+#, kde-format
+msgctxt "go to previous image"
+msgid "Back"
+msgstr "Vissza"
+
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:298
+#, kde-format
+msgctxt "go to next image"
+msgid "Forward"
+msgstr "Előre"
+
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:209
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
@@ -63631,13 +63668,13 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Részletes keresés"
 
-#: core/utilities/setup/album/setupalbumview.cpp:130
+#: core/utilities/setup/album/setupalbumview.cpp:131
 #: core/utilities/setup/camera/setupcamera.cpp:429
 #, kde-format
 msgid "Show file&name"
 msgstr "Fájl&név megjelenítése"
 
-#: core/utilities/setup/album/setupalbumview.cpp:131
+#: core/utilities/setup/album/setupalbumview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Set this option to show the filename below the image thumbnail."
 msgid "Set this option to show the filename below the thumbnail."
@@ -63645,13 +63682,13 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl neve a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:133
+#: core/utilities/setup/album/setupalbumview.cpp:134
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Fájl&méret megjelenítése"
 
-#: core/utilities/setup/album/setupalbumview.cpp:134
+#: core/utilities/setup/album/setupalbumview.cpp:135
 #, fuzzy, kde-format
 #| msgid "Set this option to show the file size below the image thumbnail."
 msgid "Set this option to show the file size below the thumbnail."
@@ -63659,13 +63696,13 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl mérete a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:136
+#: core/utilities/setup/album/setupalbumview.cpp:137
 #: core/utilities/setup/camera/setupcamera.cpp:435
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Mutassa a kamera létrehozási &dátumot"
 
-#: core/utilities/setup/album/setupalbumview.cpp:137
+#: core/utilities/setup/album/setupalbumview.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the camera creation date below the image "
@@ -63675,12 +63712,12 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a készítés ideje a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:140
+#: core/utilities/setup/album/setupalbumview.cpp:141
 #, kde-format
 msgid "Show file &modification date"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:141
+#: core/utilities/setup/album/setupalbumview.cpp:142
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
@@ -63688,13 +63725,13 @@ msgid ""
 "quickly which items have been modified."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:146
 #, fuzzy, kde-format
 #| msgid "Show image dimensions"
 msgid "Show item dimensions"
 msgstr "Képméretek megjelenítése"
 
-#: core/utilities/setup/album/setupalbumview.cpp:146
+#: core/utilities/setup/album/setupalbumview.cpp:147
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the image size in pixels below the image "
@@ -63704,13 +63741,13 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl pixelmérete a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:150
 #, fuzzy, kde-format
 #| msgid "Show image aspect ratio"
 msgid "Show item aspect ratio"
 msgstr "Kép méretarányának megjelenítése"
 
-#: core/utilities/setup/album/setupalbumview.cpp:150
+#: core/utilities/setup/album/setupalbumview.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the image aspect ratio below the image thumbnail."
@@ -63719,13 +63756,13 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a kép méretaránya a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:154
 #, fuzzy, kde-format
 #| msgid "Show item date"
 msgid "Show item format"
 msgstr "Elem dátumának megjelenítése"
 
-#: core/utilities/setup/album/setupalbumview.cpp:154
+#: core/utilities/setup/album/setupalbumview.cpp:155
 #, fuzzy, kde-format
 #| msgid "Set this option to show image format over image thumbnail."
 msgid "Set this option to show item mime type over thumbnail."
@@ -63733,12 +63770,12 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl formátuma a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Mutassa a digiKam érté&kelést"
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:158
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam title below the image thumbnail."
 msgid "Set this option to show the digiKam title below the thumbnail."
@@ -63746,12 +63783,12 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a digiKam cím a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Mutassa a digiKam &feliratokat"
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
+#: core/utilities/setup/album/setupalbumview.cpp:162
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the digiKam captions below the image thumbnail."
@@ -63760,13 +63797,13 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjenek a digiKam feliratok a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Mutassa a digiKam &cimkéket"
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:166
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid "Set this option to show the digiKam tags list below the thumbnail."
@@ -63774,12 +63811,12 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjenek a címkék a fotó bélyegképe "
 "alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Mutassa a &digiKam értékelést"
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the digiKam rating below the image thumbnail."
@@ -63788,13 +63825,13 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen az értékelés a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, fuzzy, kde-format
 #| msgid "Show digiKam tit&le"
 msgid "Show digiKam &pick label"
 msgstr "Mutassa a digiKam érté&kelést"
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:174
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam title below the image thumbnail."
 msgid "Set this option to show the digiKam pick label below the thumbnail."
@@ -63802,13 +63839,13 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a digiKam cím a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #, fuzzy, kde-format
 #| msgid "Show digiKam tit&le"
 msgid "Show digiKam color &label"
 msgstr "Mutassa a digiKam érté&kelést"
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
+#: core/utilities/setup/album/setupalbumview.cpp:178
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
@@ -63818,13 +63855,13 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjenek a címkék a fotó bélyegképe "
 "alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, fuzzy, kde-format
 #| msgid "Set this option to show image format over image thumbnail."
 msgid ""
@@ -63834,12 +63871,12 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl formátuma a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Set this option to show image format over image thumbnail."
 msgid ""
@@ -63849,12 +63886,12 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl formátuma a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Show geolocation overlay button"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:192
 #, fuzzy, kde-format
 #| msgid "Set this option to show image format over image thumbnail."
 msgid ""
@@ -63864,59 +63901,59 @@ msgstr ""
 "Válassza ki ezt a lehetőséget, hogy megjelenjen a fájl formátuma a fotó "
 "bélyegképe alatt."
 
-#: core/utilities/setup/album/setupalbumview.cpp:196
+#: core/utilities/setup/album/setupalbumview.cpp:197
 #: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Bélyegképre kattintás eseménye:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:198
+#: core/utilities/setup/album/setupalbumview.cpp:199
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgid "Show Preview"
 msgstr "Előnézet"
 
-#: core/utilities/setup/album/setupalbumview.cpp:199
+#: core/utilities/setup/album/setupalbumview.cpp:200
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "Start Image Editor"
 msgstr "Kép szerkesztő indítása"
 
-#: core/utilities/setup/album/setupalbumview.cpp:200
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #, fuzzy, kde-format
 #| msgid "Show on right panel"
 msgid "Show on Light Table"
 msgstr "Megjelenítés a jobb panelen"
 
-#: core/utilities/setup/album/setupalbumview.cpp:201
+#: core/utilities/setup/album/setupalbumview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgid "Open with Default Application"
 msgstr "Megnyitás alapértelmezett alkalmazással"
 
-#: core/utilities/setup/album/setupalbumview.cpp:202
+#: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Válassza ki, hogy mi történjen a bélyegképre kattintáskor."
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:205
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Ikon nézet betűtípus:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:205
+#: core/utilities/setup/album/setupalbumview.cpp:206
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:208
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:208
+#: core/utilities/setup/album/setupalbumview.cpp:209
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -63930,77 +63967,77 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:246
+#: core/utilities/setup/album/setupalbumview.cpp:247
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ikonok"
 
-#: core/utilities/setup/album/setupalbumview.cpp:253
+#: core/utilities/setup/album/setupalbumview.cpp:254
 #, kde-format
 msgid "Tree View icon size:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:260
+#: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's sidebars."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:263
+#: core/utilities/setup/album/setupalbumview.cpp:264
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:271
+#: core/utilities/setup/album/setupalbumview.cpp:272
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
 msgid "Tree View font:"
 msgstr "Fa nézet betűkészlet:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:275
+#: core/utilities/setup/album/setupalbumview.cpp:276
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Fa nézet esetén mutassa az elemek számát"
 
-#: core/utilities/setup/album/setupalbumview.cpp:278
+#: core/utilities/setup/album/setupalbumview.cpp:279
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
 "items inside."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:291
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:298
+#: core/utilities/setup/album/setupalbumview.cpp:299
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:301
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:302
+#: core/utilities/setup/album/setupalbumview.cpp:303
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "RAW Image"
@@ -64008,25 +64045,25 @@ msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
 msgstr "RAW kép"
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:306
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automatikus"
 
-#: core/utilities/setup/album/setupalbumview.cpp:307
+#: core/utilities/setup/album/setupalbumview.cpp:308
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Beágyazott előnézet"
 
-#: core/utilities/setup/album/setupalbumview.cpp:309
+#: core/utilities/setup/album/setupalbumview.cpp:310
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Nyers adatok fél méretben"
 
-#: core/utilities/setup/album/setupalbumview.cpp:311
+#: core/utilities/setup/album/setupalbumview.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "@item Original, half-size data as RAW image preview source"
 #| msgid "Raw data in half size"
@@ -64034,105 +64071,141 @@ msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Nyers adatok fél méretben"
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:314
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:314
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:318
 #, kde-format
 msgid "Check this if you want to scale small images to fit to window."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:320
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:320
+#: core/utilities/setup/album/setupalbumview.cpp:321
 #, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:323
+#: core/utilities/setup/album/setupalbumview.cpp:325
+#, fuzzy, kde-format
+#| msgid "Show numbers"
+msgid "Magnifier"
+msgstr "Számok megjelenítése"
+
+#: core/utilities/setup/album/setupalbumview.cpp:329
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Zoom to Fit"
+msgctxt "@label:listbox Preview magnifier tool zoom factor"
+msgid "Zoom Factor:"
+msgstr "&Ablakhoz igazítás"
+
+#: core/utilities/setup/album/setupalbumview.cpp:339
+#, fuzzy, kde-format
+#| msgid "Icon Size:"
+msgctxt "@label:listbox Preview magnifier tool size"
+msgid "Tool Size:"
+msgstr "Ikon mérete:"
+
+#: core/utilities/setup/album/setupalbumview.cpp:341
 #, kde-format
-msgctxt "@label:listbox Magnifier zoom levels"
-msgid "Magnifier Zoom Level:"
+msgctxt "@item Magnifier tool size"
+msgid "Small"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:331
+#: core/utilities/setup/album/setupalbumview.cpp:342
+#, fuzzy, kde-format
+#| msgctxt "embedded preview type in dng file"
+#| msgid "Medium"
+msgctxt "@item Magnifier tool size"
+msgid "Medium"
+msgstr "Közepes"
+
+#: core/utilities/setup/album/setupalbumview.cpp:343
+#, fuzzy, kde-format
+#| msgid "Target"
+msgctxt "@item Magnifier tool size"
+msgid "Large"
+msgstr "Cél"
+
+#: core/utilities/setup/album/setupalbumview.cpp:354
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Ikonok és szövegek megjelenítése az előnézet felett"
 
-#: core/utilities/setup/album/setupalbumview.cpp:332
+#: core/utilities/setup/album/setupalbumview.cpp:355
 #, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:334
+#: core/utilities/setup/album/setupalbumview.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
 msgid "Auto play of videos or animations"
 msgstr "Változások automatikus mentése"
 
-#: core/utilities/setup/album/setupalbumview.cpp:335
+#: core/utilities/setup/album/setupalbumview.cpp:358
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "Változások automatikus mentése"
 
-#: core/utilities/setup/album/setupalbumview.cpp:337
+#: core/utilities/setup/album/setupalbumview.cpp:360
 #, fuzzy, kde-format
 #| msgid "Show icons and text over preview"
 msgid "Show a text overlay over preview."
 msgstr "Ikonok és szövegek megjelenítése az előnézet felett"
 
-#: core/utilities/setup/album/setupalbumview.cpp:338
+#: core/utilities/setup/album/setupalbumview.cpp:361
 #, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:363
+#: core/utilities/setup/album/setupalbumview.cpp:385
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Előnézet"
 
-#: core/utilities/setup/album/setupalbumview.cpp:378
+#: core/utilities/setup/album/setupalbumview.cpp:400
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:383
+#: core/utilities/setup/album/setupalbumview.cpp:405
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:386
+#: core/utilities/setup/album/setupalbumview.cpp:408
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategóriák"
 
-#: core/utilities/setup/album/setupalbumview.cpp:569
+#: core/utilities/setup/album/setupalbumview.cpp:593
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -68287,6 +68360,9 @@ msgstr "Elemek importálása"
 #, kde-format
 msgid "Survey"
 msgstr ""
+
+#~ msgid "Show Fullscreen"
+#~ msgstr "Teljes képernyős megjelenítés"
 
 #, fuzzy
 #~| msgid "%1 item on Light Table"
