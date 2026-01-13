@@ -370,14 +370,14 @@ void ItemPropertiesTab::setVideoDuration(const QString& str)
     // duration is given as a string in milliseconds
     // use string given as parameter by default because it contains the value for "unavailable" if needed
 
-    QString durationString = str;
-    bool ok                = false;
-    const int durationVal  = str.toInt(&ok);
+    QString durationString          = str;
+    bool ok                         = false;
+    const unsigned int durationVal  = str.toUInt(&ok);
 
     if (ok)
     {
         unsigned int rr, dd, hh, mm, ss, ff;
-        rr = qAbs(durationVal);
+        rr = durationVal;
         dd = rr / 86400000;
         rr = rr % 86400000;
         hh = rr / 3600000;
@@ -388,6 +388,10 @@ void ItemPropertiesTab::setVideoDuration(const QString& str)
         ff = rr % 1000;
 
         durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", dd, hh, mm, ss, ff);
+    }
+    else
+    {
+        durationString = i18n("unavailable");
     }
 
     d->labelVideoDuration->setAdjustedText(durationString);

@@ -340,12 +340,12 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
             {
                 QString durationString;
                 bool ok                = false;
-                const int durationVal  = videoInfo.duration.toInt(&ok);
+                const unsigned int durationVal  = videoInfo.duration.toUInt(&ok);
 
                 if (ok)
                 {
                     unsigned int r, d, h, m, s, f;
-                    r = qAbs(durationVal);
+                    r = durationVal;
                     d = r / 86400000;
                     r = r % 86400000;
                     h = r / 3600000;
@@ -358,7 +358,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
                     durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
                 }
 
-                str = videoInfo.duration.isEmpty() ? cnt.unavailable : durationString;
+                str = (videoInfo.duration.isEmpty() || !ok) ? cnt.unavailable : durationString;
 
                 if (str.length() > cnt.maxStringLength)
                 {
