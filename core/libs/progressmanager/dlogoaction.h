@@ -16,7 +16,7 @@
 
 // Qt includes
 
-#include <QWidgetAction>
+#include <QAction>
 
 // Local includes
 
@@ -25,23 +25,18 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DLogoAction : public QWidgetAction
+class DIGIKAM_EXPORT DLogoAction : public QAction
 {
     Q_OBJECT
 
 public:
 
-    explicit DLogoAction(QObject* const parent, bool alignOnright = true);
+    explicit DLogoAction(QObject* const parent);
     ~DLogoAction()                          override;
 
     void start();
     void stop();
     bool running()                    const;
-
-protected:
-
-    QWidget* createWidget(QWidget* parent) override;
-    void     deleteWidget(QWidget* widget) override;
 
 private Q_SLOTS:
 

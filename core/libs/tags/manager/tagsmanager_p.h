@@ -28,6 +28,7 @@
 #include <QQueue>
 #include <QTreeView>
 #include <QLabel>
+#include <QWidgetAction>
 #include <QHBoxLayout>
 #include <QSplitter>
 #include <QApplication>

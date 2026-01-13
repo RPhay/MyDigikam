@@ -300,32 +300,35 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
 
     // Show the Over/Under exposure pixels indicators
 
-    ExposureSettingsContainer* const expoSettings = EditorCore::defaultInstance()->getExposureSettings();
-
-    if (expoSettings)
+    if (EditorCore::defaultInstance())
     {
-        expoSettings->underExposureIndicator = d->underExposure;
-        expoSettings->overExposureIndicator  = d->overExposure;
+        ExposureSettingsContainer* const expoSettings = EditorCore::defaultInstance()->getExposureSettings();
 
-        if (expoSettings->underExposureIndicator || expoSettings->overExposureIndicator)
+        if (expoSettings)
         {
-            QSize scaledCompleteSize(
-                                     floor(dpr * completeSize.width()),
-                                     floor(dpr * completeSize.height())
-                                    );
-            DImg scaledImage = d->image.smoothScaleClipped(
-                                                           scaledCompleteSize.width(),
-                                                           scaledCompleteSize.height(),
-                                                           scaledDrawRect.x(),
-                                                           scaledDrawRect.y(),
-                                                           scaledDrawRect.width(),
-                                                           scaledDrawRect.height(),
-                                                           d->zoomSettings.getImageSmoothScale()
-                                                          );
+            expoSettings->underExposureIndicator = d->underExposure;
+            expoSettings->overExposureIndicator  = d->overExposure;
 
-            QImage pureColorMask = scaledImage.pureColorMask(expoSettings);
-            QPixmap pixMask      = QPixmap::fromImage(pureColorMask);
-            painter->drawPixmap(drawRect, pixMask);
+            if (expoSettings->underExposureIndicator || expoSettings->overExposureIndicator)
+            {
+                QSize scaledCompleteSize(
+                                         floor(dpr * completeSize.width()),
+                                         floor(dpr * completeSize.height())
+                                        );
+                DImg scaledImage = d->image.smoothScaleClipped(
+                                                               scaledCompleteSize.width(),
+                                                               scaledCompleteSize.height(),
+                                                               scaledDrawRect.x(),
+                                                               scaledDrawRect.y(),
+                                                               scaledDrawRect.width(),
+                                                               scaledDrawRect.height(),
+                                                               d->zoomSettings.getImageSmoothScale()
+                                                              );
+
+                QImage pureColorMask = scaledImage.pureColorMask(expoSettings);
+                QPixmap pixMask      = QPixmap::fromImage(pureColorMask);
+                painter->drawPixmap(drawRect, pixMask);
+            }
         }
     }
 }

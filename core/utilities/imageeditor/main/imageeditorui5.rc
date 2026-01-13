@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="900" name="imageeditor" translationDomain="digikam" >
+<gui version="901" name="imageeditor" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -167,7 +167,7 @@
      <Action name="editorwindow_transform_crop" />
      -->
      <Merge />
-     <WeakSeparator/>
+     <Spacer />
      <Action name="logo_action" />
      <Action name="hamburger_menu"/>
 </ToolBar>

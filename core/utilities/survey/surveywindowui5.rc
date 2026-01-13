@@ -99,7 +99,7 @@
      <Action name="slideshow_plugin" />
      <Action name="survey_fullscreen" />
      <Merge />
-     <WeakSeparator/>
+     <Spacer />
      <Action name="logo_action" />
      <Action name="hamburger_menu"/>
  </ToolBar>
