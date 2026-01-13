@@ -86,6 +86,8 @@ public:
     DImg                  image;
     ImageZoomSettings     zoomSettings;
     mutable CachedPixmaps cachedPixmaps;
+    bool                  underExposure    = false;
+    bool                  overExposure     = false;
 };
 
 // -------------------------------------------------------------------------------

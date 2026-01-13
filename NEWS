@@ -53,7 +53,8 @@ Preview         : Extend Image and Video preview toolbar overlay with Labels edi
 Preview         : Add context-menu to the video player.
 Preview         : Add load progress indicator on the status bar (Icon-view and LightTable).
 Preview         : Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.
-Preview         : Add a magnier glass tool to zoom and explore a small area of the preview canvas. Tool Size and zoom factor are customizable.
+Preview         : Add a magnifier glass tool to zoom and explore a small area of the preview canvas. Tool Size and zoom factor are customizable.
+Preview         : Add under and over exposure indicators for the preview canvas.
 Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
 Table-View      : Add customizable columns to show "Grouped" and "Versioned" properties.
 Advanced Rename : New modifier "Date Format".
@@ -406,7 +407,7 @@ BUGFIXES:
 336 --> 514387 - Old thumbnails are used after deletion.
 337 --> 514446 - Go to Album and select photo automatically.
 338 --> 445349 - Add a zoom magnifier glass widget over the preview canvas.
-339 --> 
+339 --> 338894 - Add over and under exposure indicator feature in preview mode.
 340 --> 
 341 --> 
 342 --> 

@@ -107,8 +107,9 @@ public:
     QAction*               showFocusPointAction = nullptr;
 
     QAction*               fullscreenAction     = nullptr;
-
     QAction*               magnifierAction      = nullptr;
+    QAction*               underExposureAction  = nullptr;
+    QAction*               overExposureAction   = nullptr;
 
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
@@ -176,52 +177,60 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     KActionCollection* const ac = DigikamApp::instance()->actionCollection();
 
     d->prevAction               = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
-                                              i18nc("go to previous image", "Back"),  this);
+                                              i18nc("@info:tooltip Go to previous image", "Back"),              this);
     d->nextAction               = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
-                                              i18nc("go to next image", "Forward"),   this);
+                                              i18nc("@info:tooltip Go to next image", "Forward"),               this);
     d->rotLeftAction            = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),
-                                              i18nc("@info:tooltip", "Rotate Left"),  this);
+                                              i18nc("@info:tooltip", "Rotate Left"),                            this);
     d->rotRightAction           = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),
-                                              i18nc("@info:tooltip", "Rotate Right"), this);
+                                              i18nc("@info:tooltip", "Rotate Right"),                           this);
 
     d->addPersonAction          = ac->action(QLatin1String("add_face_tag_manually"));
 
     if (!d->addPersonAction)
     {
         d->addPersonAction      = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
-                                              i18n("Add a Face Tag"),                 this);
+                                              i18nc("@info:tooltip", "Add a Face Tag"),                         this);
         ac->addAction(QLatin1String("add_face_tag_manually"), d->addPersonAction);
     }
 
     d->forgetFacesAction        = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),
-                                              i18n("Clear all faces on this image"),  this);
+                                              i18nc("@info:tooltip", "Clear all faces on this image"),          this);
 
     d->markAsIgnoredAction      = new QAction(QIcon::fromTheme(QLatin1String("dialog-cancel")),
-                                              i18n("Mark all unconfirmed faces as ignored"),  this);
+                                              i18nc("@info:tooltip", "Mark all unconfirmed faces as ignored"),  this);
 
     d->peopleToggleAction       = ac->action(QLatin1String("toggle_show_face_tags"));
 
     if (!d->peopleToggleAction)
     {
         d->peopleToggleAction   = new QAction(QIcon::fromTheme(QLatin1String("im-user")),
-                                              i18n("Show Face Tags"),                 this);
+                                              i18nc("@info:tooltip", "Show Face Tags"),                         this);
         ac->addAction(QLatin1String("toggle_show_face_tags"), d->peopleToggleAction);
     }
 
     d->addFocusPointAction      = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
-                                              i18n("Add a focus point"),              this);
+                                              i18nc("@info:tooltip", "Add a focus point"),                      this);
     d->showFocusPointAction     = new QAction(QIcon::fromTheme(QLatin1String("im-user")),
-                                              i18n("Show focus points"),              this);
+                                              i18nc("@info:tooltip", "Show focus points"),                      this);
 
     d->peopleToggleAction->setCheckable(true);
     d->showFocusPointAction->setCheckable(true);
 
     d->magnifierAction          = new QAction(QIcon::fromTheme(QLatin1String("document-edit-verify")),
-                                              i18n("Show Magnifier"),                 this);
+                                              i18nc("@info:tooltip", "Show Magnifier"),                         this);
     d->magnifierAction->setCheckable(true);
 
+    d->underExposureAction      = new QAction(QIcon::fromTheme(QLatin1String("underexposure")),
+                                              i18nc("@info:tooltip", "Under-Exposure Indicator"),               this);
+    d->underExposureAction->setCheckable(true);
+
+    d->overExposureAction       = new QAction(QIcon::fromTheme(QLatin1String("overexposure")),
+                                              i18nc("@info:tooltip", "Over-Exposure Indicator"),                this);
+    d->overExposureAction->setCheckable(true);
+
     d->fullscreenAction         = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
-                                              i18n("Show Fullscreen"),                this);
+                                              i18nc("@info:tooltip", "Show Fullscreen"),                        this);
 
     QString btnStyleSheet       = QLatin1String("%1 { padding: 1px; background-color: "
                                                 "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
@@ -266,6 +275,8 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->toolBar->addAction(d->addPersonAction);
     d->toolBar->addAction(d->fullscreenAction);
     d->toolBar->addAction(d->magnifierAction);
+    d->toolBar->addAction(d->underExposureAction);
+    d->toolBar->addAction(d->overExposureAction);
 
     d->toolBar->addWidget(labelsBox);
 
@@ -308,6 +319,20 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             {
                 d->faceGroup->addFace();
             }
+        }
+    );
+
+    connect(d->underExposureAction, &QAction::triggered,
+            this, [this]()
+        {
+            d->item->setEnableUnderExposure(d->underExposureAction->isChecked());
+        }
+    );
+
+    connect(d->overExposureAction, &QAction::triggered,
+            this, [this]()
+        {
+            d->item->setEnableOverExposure(d->overExposureAction->isChecked());
         }
     );
 

@@ -50,6 +50,9 @@ public:
     const ImageZoomSettings* zoomSettings()                     const;
     ImageZoomSettings*       zoomSettings();
 
+    void setEnableUnderExposure(bool b);
+    void setEnableOverExposure(bool b);
+
     void setDisplayWidget(QWidget* const widget);
 
     void sizeHasChanged();

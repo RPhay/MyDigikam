@@ -164,6 +164,22 @@ DImg GraphicsDImgItem::image() const
     return d->image;
 }
 
+void GraphicsDImgItem::setEnableUnderExposure(bool b)
+{
+    Q_D(GraphicsDImgItem);
+
+    d->underExposure = b;
+    update();
+}
+
+void GraphicsDImgItem::setEnableOverExposure(bool b)
+{
+    Q_D(GraphicsDImgItem);
+
+    d->overExposure = b;
+    update();
+}
+
 void GraphicsDImgItem::sizeHasChanged()
 {
     Q_D(GraphicsDImgItem);
@@ -281,13 +297,16 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
         d->cachedPixmaps.insert(scaledDrawRect, pix);
         painter->drawPixmap(drawRect, pix);
     }
-/* TODO
+
     // Show the Over/Under exposure pixels indicators
 
     ExposureSettingsContainer* const expoSettings = EditorCore::defaultInstance()->getExposureSettings();
 
     if (expoSettings)
     {
+        expoSettings->underExposureIndicator = d->underExposure;
+        expoSettings->overExposureIndicator  = d->overExposure;
+
         if (expoSettings->underExposureIndicator || expoSettings->overExposureIndicator)
         {
             QSize scaledCompleteSize(
@@ -309,7 +328,6 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
             painter->drawPixmap(drawRect, pixMask);
         }
     }
-*/
 }
 
 void GraphicsDImgItem::contextMenuEvent(QGraphicsSceneContextMenuEvent* e)
