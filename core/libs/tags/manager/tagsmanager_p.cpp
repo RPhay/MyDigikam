@@ -291,6 +291,7 @@ void TagsManager::Private::setupActions()
     laBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     mainToolbar->addWidget(laBtn);
 
+    laBtn->setCursor(Qt::PointingHandCursor);
     laBtn->setStyleSheet(QLatin1String(
         "QToolButton {"
         "    border: none;"
