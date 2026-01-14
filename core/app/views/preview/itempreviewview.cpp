@@ -209,9 +209,9 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
         ac->addAction(QLatin1String("toggle_show_face_tags"), d->peopleToggleAction);
     }
 
-    d->addFocusPointAction      = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
+    d->addFocusPointAction      = new QAction(QIcon::fromTheme(QLatin1String("node-add")),
                                               i18nc("@info:tooltip", "Add a focus point"),                      this);
-    d->showFocusPointAction     = new QAction(QIcon::fromTheme(QLatin1String("im-user")),
+    d->showFocusPointAction     = new QAction(QIcon::fromTheme(QLatin1String("node-transform")),
                                               i18nc("@info:tooltip", "Show focus points"),                      this);
 
     d->peopleToggleAction->setCheckable(true);
@@ -415,6 +415,8 @@ void ItemPreviewView::setupOverlays()
     d->toolBar->addAction(d->magnifierAction);
     d->toolBar->addAction(d->underExposureAction);
     d->toolBar->addAction(d->overExposureAction);
+    d->toolBar->addAction(d->showFocusPointAction);
+    d->toolBar->addAction(d->addFocusPointAction);
     d->toolBar->addAction(d->hostActions.value(QLatin1String("ColorManaged")));
 
     d->toolBar->addWidget(d->labelsBox);
