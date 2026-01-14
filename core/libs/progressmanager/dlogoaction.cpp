@@ -206,8 +206,21 @@ void DLogoAction::slotProgressTimerDone()
     d->progressTimer->start(100);
 }
 
-void DLogoAction::noToolButtonUnderline(QToolButton* const btn)
+void DLogoAction::applyStyleForToolBarButton(QToolButton* const btn)
 {
+    btn->setCursor(Qt::PointingHandCursor);
+    btn->setAutoRaise(false);
+    btn->setStyleSheet(QLatin1String(
+        "QToolButton {"
+        "    border: none;"
+        "    background: transparent;"
+        "}"
+        "QToolButton:hover {"
+        "    background: transparent;"
+        "    border: none;"
+        "}")
+    );
+
     btn->setProperty("noUnderline", true);         // Mark the button for the underline removing.
     btn->setStyle(new NoUnderlineToolButtonStyle); // Apply the personalised style to remove it.
 }

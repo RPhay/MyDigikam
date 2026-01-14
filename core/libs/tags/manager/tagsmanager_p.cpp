@@ -290,20 +290,7 @@ void TagsManager::Private::setupActions()
     laBtn->setDefaultAction(new DLogoAction(dd));
     laBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     mainToolbar->addWidget(laBtn);
-
-    laBtn->setCursor(Qt::PointingHandCursor);
-    laBtn->setAutoRaise(false);
-    laBtn->setStyleSheet(QLatin1String(
-        "QToolButton {"
-        "    border: none;"
-        "    background: transparent;"
-        "}"
-        "QToolButton:hover {"
-        "    background: transparent;"
-        "    border: none;"
-        "}")
-    );
-    DLogoAction::noToolButtonUnderline(laBtn);
+    DLogoAction::applyStyleForToolBarButton(laBtn);
 
     dd->addToolBar(mainToolbar);
 

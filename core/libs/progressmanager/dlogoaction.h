@@ -40,11 +40,11 @@ public:
     bool running()                    const;
 
     /**
-     * @brief Method to apply a personalized proxy style to remove the automatic
-     * keyboard shortcut underline in the text from an action hosted in a toolbar.
+     * @brief Method to apply a personalized style to the button hosting the DLogoAction instance in a toolbar.
+     * This remove the automatic keyboard shortcut underline in the action text.
      * @arg btn is the button instance used to host the action in the toolbar.
      */
-    static void noToolButtonUnderline(QToolButton* const btn);
+    static void applyStyleForToolBarButton(QToolButton* const btn);
 
 private Q_SLOTS:
 

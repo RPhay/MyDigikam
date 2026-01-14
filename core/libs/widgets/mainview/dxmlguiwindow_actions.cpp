@@ -134,19 +134,7 @@ void DXmlGuiWindow::cleanupActions()
 
     if (QToolButton* const button = qobject_cast<QToolButton*>(widget))
     {
-        button->setCursor(Qt::PointingHandCursor);
-        button->setAutoRaise(false);
-        button->setStyleSheet(QLatin1String(
-            "QToolButton {"
-            "    border: none;"
-            "    background: transparent;"
-            "}"
-            "QToolButton:hover {"
-            "    background: transparent;"
-            "    border: none;"
-            "}")
-        );
-        DLogoAction::noToolButtonUnderline(button);
+        DLogoAction::applyStyleForToolBarButton(button);
     }
 }
 
