@@ -409,7 +409,7 @@ BUGFIXES:
 338 --> 445349 - Add a zoom magnifier glass widget over the preview canvas.
 339 --> 338894 - Add over and under exposure indicator feature in preview mode.
 340 --> 514530 - Add a convenient way to hide row of thumbnails in Preview mode.
-341 --> 
+341 --> 514480 - Application crash when trying to cancel ongoing FindDuplicate.
 342 --> 
 343 --> 
 344 --> 
