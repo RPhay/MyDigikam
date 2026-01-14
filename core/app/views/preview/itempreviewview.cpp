@@ -86,8 +86,7 @@ public:
 
     ItemPreviewCanvas*     item                 = nullptr;
 
-    QAction*               winFullScreenAction  = nullptr;
-    QAction*               winShowMenuAction    = nullptr;
+    HostActionsMap         hostActions;
 
     QAction*               prevAction           = nullptr;
     QAction*               nextAction           = nullptr;
@@ -435,10 +434,9 @@ void ItemPreviewView::reload()
     previewItem()->reload();
 }
 
-void ItemPreviewView::setHostWindowActions(QAction* const fullScreen, QAction* const showMenu)
+void ItemPreviewView::setHostWindowActions(const HostActionsMap& actions)
 {
-    d->winFullScreenAction  = fullScreen;
-    d->winShowMenuAction    = showMenu;
+    d->hostActions  = actions;
 }
 
 void ItemPreviewView::slotItemLoaded()
@@ -575,8 +573,8 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     QMenu popmenu(this);
     ContextMenuHelper cmHelper(&popmenu);
 
-    cmHelper.addAction(d->winFullScreenAction);
-    cmHelper.addAction(d->winShowMenuAction);
+    cmHelper.addAction(d->hostActions.value(QLatin1String("FullScreen")));
+    cmHelper.addAction(d->hostActions.value(QLatin1String("ShowMenu")));
     cmHelper.addSeparator();
 
     // --------------------------------------------------------

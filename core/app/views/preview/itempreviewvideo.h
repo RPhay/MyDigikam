@@ -24,6 +24,7 @@
 
 #include "mediaplayerview.h"
 #include "iteminfo.h"
+#include "itempreviewview.h"
 
 namespace Digikam
 {
@@ -41,7 +42,7 @@ public:
     ~ItemPreviewVideo() override;
 
     void setItemInfo(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next);
-    void setHostWindowActions(QAction* const fullScreen, QAction* const showMenu);
+    void setHostWindowActions(const HostActionsMap& actions);
 
 Q_SIGNALS:
 

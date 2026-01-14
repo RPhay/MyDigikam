@@ -949,8 +949,10 @@ void DigikamApp::setupActions()
 
     cleanupActions();
 
-    d->view->setHostWindowActions(actionCollection()->action(QLatin1String("full_screen")),
-                                  actionCollection()->action(QLatin1String("options_show_menubar")));
+    HostActionsMap actions;
+    actions.insert(QLatin1String("FullScreen"), actionCollection()->action(QLatin1String("full_screen")));
+    actions.insert(QLatin1String("ShowMenu"),   actionCollection()->action(QLatin1String("options_show_menubar")));
+    d->view->setHostWindowActions(actions);
 
     // NOTE: see bug #252130 and #283281 : we need to disable these actions when BQM is running.
     // These connections must be done after loading color theme else theme menu cannot be plugged to Settings menu,

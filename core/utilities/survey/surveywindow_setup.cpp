@@ -184,13 +184,15 @@ void SurveyWindow::setupActions()
 
     cleanupActions();
 
-    d->stack->imagePreviewView()->setHostWindowActions(actionCollection()->action(QLatin1String("survey_fullscreen")),
-                                                       actionCollection()->action(QLatin1String("options_show_menubar")));
+    HostActionsMap actions;
+    actions.insert(QLatin1String("FullScreen"), actionCollection()->action(QLatin1String("survey_fullscreen")));
+    actions.insert(QLatin1String("ShowMenu"),   actionCollection()->action(QLatin1String("options_show_menubar")));
+
+    d->stack->imagePreviewView()->setHostWindowActions(actions);
 
 #ifdef HAVE_MEDIAPLAYER
 
-    d->stack->mediaPlayerView()->setHostWindowActions(actionCollection()->action(QLatin1String("survey_fullscreen")),
-                                                      actionCollection()->action(QLatin1String("options_show_menubar")));
+    d->stack->mediaPlayerView()->setHostWindowActions(actions);
 
 #endif // HAVE_MEDIAPLAYER
 

@@ -24,6 +24,7 @@
 // Local includes
 
 #include "iteminfo.h"
+#include "lighttablepreview.h"
 
 namespace Digikam
 {
@@ -48,7 +49,7 @@ public:
     ItemInfo leftItemInfo()  const;
     ItemInfo rightItemInfo() const;
 
-    void   setHostWindowActions(QAction* const fullscreen, QAction* const showmenu);
+    void   setHostWindowActions(const HostActionsMap& actions);
     void   setPreviewSettings(const PreviewSettings& settings);
 
     void   checkForSelection(const ItemInfo& info);

@@ -401,7 +401,7 @@ private Q_SLOTS:
 
 public:
 
-    void setHostWindowActions(QAction* const fullscreen, QAction* const showmenu);
+    void setHostWindowActions(const HostActionsMap& actions);
     void setToolsIconView(DCategorizedView* const view);
     void toggleShowBar(bool);
     void toggleFullScreen(bool set);

@@ -14,8 +14,15 @@
 
 #pragma once
 
+// Qt includes
+
+#include <QAction>
+#include <QMap>
+#include <QString>
+
 // Local includes
 
+#include "digikam_globals.h"
 #include "graphicsdimgview.h"
 #include "iteminfo.h"
 
@@ -55,7 +62,7 @@ public:
     void reload();
     void setImagePath(const QString& path = QString());
     void setPreviousNextPaths(const QString& previous, const QString& next);
-    void setHostWindowActions(QAction* const fullScreen, QAction* const showMenu);
+    void setHostWindowActions(const HostActionsMap& actions);
 
 Q_SIGNALS:
 

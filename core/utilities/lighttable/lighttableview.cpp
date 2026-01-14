@@ -27,7 +27,6 @@
 #include "dimg.h"
 #include "dzoombar.h"
 #include "thumbnailsize.h"
-#include "lighttablepreview.h"
 #include "singlephotopreviewlayout.h"
 #include "dimgpreviewitem.h"
 
@@ -170,10 +169,10 @@ void LightTableView::setPreviewSettings(const PreviewSettings& settings)
     d->rightPreview->previewItem()->setPreviewSettings(settings);
 }
 
-void LightTableView::setHostWindowActions(QAction* const fullscreen, QAction* const showmenu)
+void LightTableView::setHostWindowActions(const HostActionsMap& actions)
 {
-    d->leftPreview->setHostWindowActions(fullscreen, showmenu);
-    d->rightPreview->setHostWindowActions(fullscreen, showmenu);
+    d->leftPreview->setHostWindowActions(actions);
+    d->rightPreview->setHostWindowActions(actions);
 }
 
 void LightTableView::setSyncPreview(bool sync)

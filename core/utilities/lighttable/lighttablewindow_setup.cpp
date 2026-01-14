@@ -268,8 +268,10 @@ void LightTableWindow::setupActions()
 
     cleanupActions();
 
-    d->previewView->setHostWindowActions(actionCollection()->action(QLatin1String("lighttable_fullscreen")),
-                                         actionCollection()->action(QLatin1String("options_show_menubar")));
+    HostActionsMap actions;
+    actions.insert(QLatin1String("FullScreen"), actionCollection()->action(QLatin1String("lighttable_fullscreen")));
+    actions.insert(QLatin1String("ShowMenu"),   actionCollection()->action(QLatin1String("options_show_menubar")));
+    d->previewView->setHostWindowActions(actions);
 }
 
 void LightTableWindow::setupStatusBar()

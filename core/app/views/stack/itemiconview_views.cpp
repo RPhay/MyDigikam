@@ -23,13 +23,13 @@
 namespace Digikam
 {
 
-void ItemIconView::setHostWindowActions(QAction* const fullscreen, QAction* const showmenu)
+void ItemIconView::setHostWindowActions(const HostActionsMap& actions)
 {
-    d->stackedView->imagePreviewView()->setHostWindowActions(fullscreen, showmenu);
+    d->stackedView->imagePreviewView()->setHostWindowActions(actions);
 
 #ifdef HAVE_MEDIAPLAYER
 
-    d->stackedView->mediaPlayerView()->setHostWindowActions(fullscreen, showmenu);
+    d->stackedView->mediaPlayerView()->setHostWindowActions(actions);
 
 #endif // HAVE_MEDIAPLAYER
 

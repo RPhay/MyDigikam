@@ -61,8 +61,7 @@ public:
 
 public:
 
-    QAction*               winFullScreenAction  = nullptr;
-    QAction*               winShowMenuAction    = nullptr;
+    HostActionsMap         hostActions;
 
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
@@ -142,10 +141,9 @@ ItemPreviewVideo::~ItemPreviewVideo()
     delete d;
 }
 
-void ItemPreviewVideo::setHostWindowActions(QAction* const fullScreen, QAction* const showMenu)
+void ItemPreviewVideo::setHostWindowActions(const HostActionsMap& actions)
 {
-    d->winFullScreenAction  = fullScreen;
-    d->winShowMenuAction    = showMenu;
+    d->hostActions  = actions;
 }
 
 void ItemPreviewVideo::slotContextMenu()
@@ -161,8 +159,8 @@ void ItemPreviewVideo::slotContextMenu()
     QMenu popmenu(this);
     ContextMenuHelper cmHelper(&popmenu);
 
-    cmHelper.addAction(d->winFullScreenAction);
-    cmHelper.addAction(d->winShowMenuAction);
+    cmHelper.addAction(d->hostActions.value(QLatin1String("FullScreen")));
+    cmHelper.addAction(d->hostActions.value(QLatin1String("ShowMenu")));
     cmHelper.addSeparator();
 
     // --------------------------------------------------------

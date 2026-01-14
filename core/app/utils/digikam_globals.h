@@ -33,6 +33,7 @@ class QDialog;
 class QShortcut;
 class QKeySequence;
 class QApplication;
+class QAction;
 
 /**
  * Macros for image filters.
@@ -194,6 +195,21 @@ enum OperationType
     ToolsOps,
     UnspecifiedOps ///< This element must always come last
 };
+
+// --------------------------------------------------------
+
+/**
+ * Map of [name, action instance] from the managed by the parent window
+ * to be hosted the toolbar or the context menu from the preview view (image or video).
+ * See ItemPreviewView and ItemPreviewVideo classes for the usage.
+ *
+ * Know action names:
+ *
+ *  "FullScreen"  : Switch the window in fullscreen mode.
+ *  "ShowMenu"    : Turn on/off the window main menu visibility.
+ *  "ColorManaged": Turn on/off Color Managed view to render the content.
+  */
+typedef QMap<QString, QAction*> HostActionsMap;
 
 // --------------------------------------------------------
 
