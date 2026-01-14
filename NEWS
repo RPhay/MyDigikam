@@ -415,7 +415,7 @@ BUGFIXES:
 344 --> 280133 - Add SlideShow new features : thumb-bar, rotation, and delete items.
 345 --> 501292 - Feature Request - Preview Image - Fullscreen on second Monitor.
 346 --> 380334 - Customizable toolbar location with Navigation buttons and other buttons in Preview Mode.
-347 --> 
+347 --> 514614 - digiKam claims that ExifTool createdate is invalid.
 348 --> 
 349 --> 
 350 --> 
