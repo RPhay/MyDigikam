@@ -412,7 +412,7 @@ BUGFIXES:
 341 --> 514480 - Application crash when trying to cancel ongoing FindDuplicate.
 342 --> 513611 - Use scroll wheel to zoom in and out when in full screen view.
 343 --> 276480 - Add zoom support in SlideShow tool.
-344 --> 
+344 --> 280133 - Add SlideShow new features : thumb-bar, rotation, and delete items.
 345 --> 
 346 --> 
 347 --> 
