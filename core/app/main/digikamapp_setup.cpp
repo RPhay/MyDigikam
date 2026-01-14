@@ -950,8 +950,9 @@ void DigikamApp::setupActions()
     cleanupActions();
 
     HostActionsMap actions;
-    actions.insert(QLatin1String("FullScreen"), actionCollection()->action(QLatin1String("full_screen")));
-    actions.insert(QLatin1String("ShowMenu"),   actionCollection()->action(QLatin1String("options_show_menubar")));
+    actions.insert(QLatin1String("FullScreen"),   actionCollection()->action(QLatin1String("full_screen")));
+    actions.insert(QLatin1String("ShowMenu"),     actionCollection()->action(QLatin1String("options_show_menubar")));
+    actions.insert(QLatin1String("ColorManaged"), actionCollection()->action(QLatin1String("color_managed_view")));
     d->view->setHostWindowActions(actions);
 
     // NOTE: see bug #252130 and #283281 : we need to disable these actions when BQM is running.

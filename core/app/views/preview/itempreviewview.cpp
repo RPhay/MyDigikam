@@ -415,6 +415,7 @@ void ItemPreviewView::setupOverlays()
     d->toolBar->addAction(d->magnifierAction);
     d->toolBar->addAction(d->underExposureAction);
     d->toolBar->addAction(d->overExposureAction);
+    d->toolBar->addAction(d->hostActions.value(QLatin1String("ColorManaged")));
 
     d->toolBar->addWidget(d->labelsBox);
 
