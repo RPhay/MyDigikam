@@ -410,7 +410,7 @@ BUGFIXES:
 339 --> 338894 - Add over and under exposure indicator feature in preview mode.
 340 --> 514530 - Add a convenient way to hide row of thumbnails in Preview mode.
 341 --> 514480 - Application crash when trying to cancel ongoing FindDuplicate.
-342 --> 
+342 --> 513611 - Use scroll wheel to zoom in and out when in full screen view.
 343 --> 
 344 --> 
 345 --> 
