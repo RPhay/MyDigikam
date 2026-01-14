@@ -417,7 +417,7 @@ BUGFIXES:
 346 --> 380334 - Customizable toolbar location with Navigation buttons and other buttons in Preview Mode.
 347 --> 514614 - digiKam claims that ExifTool createdate is invalid.
 348 --> 477277 - Allow horizontal scrolling in preview mode with shift-scroll.
-349 --> 
+349 --> 359087 - Preview image scroll position should be smarter when changing between images with different resolutions.
 350 --> 
 351 --> 
 352 --> 
