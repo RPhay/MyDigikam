@@ -66,6 +66,7 @@ public:
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
     PickLabelSelector*     plWidget             = nullptr;
+    DHBox*                 labelsBox            = nullptr;
 
     ItemPreviewOsd*        osd                  = nullptr;
     PreviewOsdSettings     osdSettings;
@@ -87,28 +88,22 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
                                                 "  stop: 1 rgba(170, 170, 170, 70%)); "
                                                 "border: 1px solid rgba(170, 170, 170, 10%); } ");
 
-    DHBox* const labelsBox      = new DHBox(this);
-    labelsBox->setStyleSheet(btnStyleSheet.arg(QLatin1String("QFrame")));
+    d->labelsBox                = new DHBox(this);
+    d->labelsBox->setStyleSheet(btnStyleSheet.arg(QLatin1String("QFrame")));
 
-    d->clWidget                 = new ColorLabelSelector(labelsBox);
+    d->clWidget                 = new ColorLabelSelector(d->labelsBox);
     d->clWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
     d->clWidget->setFocusPolicy(Qt::NoFocus);
 
-    d->plWidget                 = new PickLabelSelector(labelsBox);
+    d->plWidget                 = new PickLabelSelector(d->labelsBox);
     d->plWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
     d->plWidget->setFocusPolicy(Qt::NoFocus);
 
-    d->ratingWidget             = new RatingWidget(labelsBox);
+    d->ratingWidget             = new RatingWidget(d->labelsBox);
     d->ratingWidget->setTracking(false);
     d->ratingWidget->setFading(false);
     d->ratingWidget->setFocusPolicy(Qt::NoFocus);
-    labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
-
-    setToolbarExtraWidget(labelsBox);
-
-    d->osd                      = new ItemPreviewOsd(&d->osdSettings, this);
-
-    setOsdWidget(d->osd);
+    d->labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
 
     // ---
 
@@ -132,8 +127,6 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
 
     connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
             this, SLOT(slotImageTagChange(ImageTagChangeset)));
-
-    slotSetupChanged();
 }
 
 ItemPreviewVideo::~ItemPreviewVideo()
@@ -141,9 +134,20 @@ ItemPreviewVideo::~ItemPreviewVideo()
     delete d;
 }
 
+void ItemPreviewVideo::setupOverlays()
+{
+    setToolbarExtraWidget(d->labelsBox);
+
+    d->osd = new ItemPreviewOsd(&d->osdSettings, this);
+
+    setOsdWidget(d->osd);
+}
+
 void ItemPreviewVideo::setHostWindowActions(const HostActionsMap& actions)
 {
-    d->hostActions  = actions;
+    d->hostActions = actions;
+    setupOverlays();
+    slotSetupChanged();
 }
 
 void ItemPreviewVideo::slotContextMenu()

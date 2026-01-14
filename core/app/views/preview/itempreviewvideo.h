@@ -65,6 +65,10 @@ private Q_SLOTS:
 
 private:
 
+    void setupOverlays();
+
+private:
+
     class Private;
     Private* const d = nullptr;
 };

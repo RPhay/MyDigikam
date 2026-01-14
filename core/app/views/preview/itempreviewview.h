@@ -103,6 +103,9 @@ protected:
 
 #endif
 
+private:
+
+    void setupOverlays();
 
 private Q_SLOTS:
 

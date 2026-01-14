@@ -113,6 +113,7 @@ public:
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
     PickLabelSelector*     plWidget             = nullptr;
+    DHBox*                 labelsBox            = nullptr;
 
     ItemPreviewOsd*        osd                  = nullptr;
     PreviewOsdSettings     osdSettings;
@@ -237,55 +238,22 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
                                                 "  stop: 1 rgba(170, 170, 170, 70%)); "
                                                 "border: 1px solid rgba(170, 170, 170, 10%); } ");
 
-    const int spacing           = layoutSpacing();
+    d->labelsBox                = new DHBox(this);
+    d->labelsBox->setStyleSheet(btnStyleSheet.arg(QLatin1String("QFrame")));
 
-    DHBox* const labelsBox      = new DHBox(this);
-    labelsBox->setStyleSheet(btnStyleSheet.arg(QLatin1String("QFrame")));
-
-    d->clWidget                 = new ColorLabelSelector(labelsBox);
+    d->clWidget                 = new ColorLabelSelector(d->labelsBox);
     d->clWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
     d->clWidget->setFocusPolicy(Qt::NoFocus);
 
-    d->plWidget                 = new PickLabelSelector(labelsBox);
+    d->plWidget                 = new PickLabelSelector(d->labelsBox);
     d->plWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
     d->plWidget->setFocusPolicy(Qt::NoFocus);
 
-    d->ratingWidget             = new RatingWidget(labelsBox);
+    d->ratingWidget             = new RatingWidget(d->labelsBox);
     d->ratingWidget->setTracking(false);
     d->ratingWidget->setFading(false);
     d->ratingWidget->setFocusPolicy(Qt::NoFocus);
-    labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
-
-    // ---
-
-    d->toolBar                  = new QToolBar(this);
-    d->toolBar->setStyleSheet(toolButtonStyleSheet());
-
-    if (mode == IconViewPreview)
-    {
-        d->toolBar->addAction(d->prevAction);
-        d->toolBar->addAction(d->nextAction);
-    }
-
-    d->toolBar->addAction(d->rotLeftAction);
-    d->toolBar->addAction(d->rotRightAction);
-
-    d->toolBar->addAction(d->peopleToggleAction);
-    d->toolBar->addAction(d->addPersonAction);
-    d->toolBar->addAction(d->fullscreenAction);
-    d->toolBar->addAction(d->magnifierAction);
-    d->toolBar->addAction(d->underExposureAction);
-    d->toolBar->addAction(d->overExposureAction);
-
-    d->toolBar->addWidget(labelsBox);
-
-    d->osd                  = new ItemPreviewOsd(&d->osdSettings, this);
-
-    QVBoxLayout* const vlay = new QVBoxLayout(this);
-    vlay->addWidget(d->toolBar);
-    vlay->addWidget(d->osd);
-    vlay->setContentsMargins(QMargins());
-    vlay->setSpacing(spacing);
+    d->labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
 
     // ---
 
@@ -418,8 +386,6 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSetupChanged()));
-
-    slotSetupChanged();
 }
 
 ItemPreviewView::~ItemPreviewView()
@@ -429,15 +395,50 @@ ItemPreviewView::~ItemPreviewView()
     delete d;
 }
 
-void ItemPreviewView::reload()
+void ItemPreviewView::setupOverlays()
 {
-    previewItem()->reload();
+    d->toolBar                  = new QToolBar(this);
+    d->toolBar->setStyleSheet(toolButtonStyleSheet());
+
+    if (d->mode == IconViewPreview)
+    {
+        d->toolBar->addAction(d->prevAction);
+        d->toolBar->addAction(d->nextAction);
+    }
+
+    d->toolBar->addAction(d->rotLeftAction);
+    d->toolBar->addAction(d->rotRightAction);
+
+    d->toolBar->addAction(d->peopleToggleAction);
+    d->toolBar->addAction(d->addPersonAction);
+    d->toolBar->addAction(d->fullscreenAction);
+    d->toolBar->addAction(d->magnifierAction);
+    d->toolBar->addAction(d->underExposureAction);
+    d->toolBar->addAction(d->overExposureAction);
+
+    d->toolBar->addWidget(d->labelsBox);
+
+    d->osd                  = new ItemPreviewOsd(&d->osdSettings, this);
+
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
+    vlay->addWidget(d->toolBar);
+    vlay->addWidget(d->osd);
+    vlay->setContentsMargins(QMargins());
+    vlay->setSpacing(layoutSpacing());
 }
 
 void ItemPreviewView::setHostWindowActions(const HostActionsMap& actions)
 {
     d->hostActions  = actions;
+    setupOverlays();
+    slotSetupChanged();
 }
+
+void ItemPreviewView::reload()
+{
+    previewItem()->reload();
+}
+
 
 void ItemPreviewView::slotItemLoaded()
 {
