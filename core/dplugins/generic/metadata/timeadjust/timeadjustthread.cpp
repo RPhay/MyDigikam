@@ -206,6 +206,11 @@ QDateTime TimeAdjustThread::readFileTimestamp(const QUrl& url) const
 {
     QFileInfo fileInfo(url.toLocalFile());
 
+    if (d->settings.fileDateSource == TimeAdjustContainer::FILECREATED)
+    {
+        return fileInfo.birthTime();
+    }
+
     return fileInfo.lastModified();
 }
 

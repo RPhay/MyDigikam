@@ -149,10 +149,12 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     d->useFileDateTypeChooser   = new QComboBox(d->useSettingsBox);
     d->useFileDateTypeChooser->insertItem(TimeAdjustContainer::FILELASTMOD, i18n("File last modified"));
 
-/*
+#ifdef Q_OS_WIN
+
     // NOTE: not supported by Linux, although supported by Qt (read-only)
     d->useFileDateTypeChooser->insertItem(TimeAdjustContainer::FILECREATED, i18n("File created"));
-*/
+
+#endif
 
     d->useMetaDateBtn         = new QRadioButton(QString(), d->useSettingsBox);
     d->useMetaDateTypeChooser = new QComboBox(d->useSettingsBox);
