@@ -135,6 +135,7 @@ void DXmlGuiWindow::cleanupActions()
     if (QToolButton* const button = qobject_cast<QToolButton*>(widget))
     {
         button->setCursor(Qt::PointingHandCursor);
+        button->setAutoRaise(false);
         button->setStyleSheet(QLatin1String(
             "QToolButton {"
             "    border: none;"
