@@ -411,7 +411,7 @@ BUGFIXES:
 340 --> 514530 - Add a convenient way to hide row of thumbnails in Preview mode.
 341 --> 514480 - Application crash when trying to cancel ongoing FindDuplicate.
 342 --> 513611 - Use scroll wheel to zoom in and out when in full screen view.
-343 --> 
+343 --> 276480 - Add zoom support in SlideShow tool.
 344 --> 
 345 --> 
 346 --> 
