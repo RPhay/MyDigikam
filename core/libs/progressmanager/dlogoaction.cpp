@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-27-08
- * Description : a tool bar action object to display animated logo
+ * Description : a tool bar action object to display animated logo during long operations
  *
  * SPDX-FileCopyrightText: 2007-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -19,6 +19,7 @@
 #include <QPalette>
 #include <QPainter>
 #include <QTimer>
+#include <QProxyStyle>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QDesktopServices>
@@ -33,6 +34,30 @@
 
 namespace Digikam
 {
+
+class Q_DECL_HIDDEN NoUnderlineToolButtonStyle : public QProxyStyle
+{
+public:
+
+    int styleHint(StyleHint hint,
+                  const QStyleOption* option = nullptr,
+                  const QWidget* widget = nullptr,
+                  QStyleHintReturn* returnData = nullptr) const override
+    {
+        if (
+            widget &&
+            widget->property("noUnderline").toBool() &&
+            (hint == QStyle::SH_UnderlineShortcut)
+           )
+        {
+            return 0; // Disable the underline for the keyboard shortcuts.
+        }
+
+        return QProxyStyle::styleHint(hint, option, widget, returnData);
+    }
+};
+
+// ---
 
 class Q_DECL_HIDDEN DLogoAction::Private
 {
@@ -179,6 +204,12 @@ void DLogoAction::slotProgressTimerDone()
 
     d->progressCount = (d->progressCount + 1) % 36;
     d->progressTimer->start(100);
+}
+
+void DLogoAction::noToolButtonUnderline(QToolButton* const btn)
+{
+    btn->setProperty("noUnderline", true);         // Mark the button for the underline removing.
+    btn->setStyle(new NoUnderlineToolButtonStyle); // Apply the personalised style to remove it.
 }
 
 } // namespace Digikam

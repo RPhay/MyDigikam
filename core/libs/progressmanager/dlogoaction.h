@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-27-08
- * Description : a tool bar action object to display animated logo
+ * Description : a tool bar action object to display animated logo during long operations
  *
  * SPDX-FileCopyrightText: 2007-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QAction>
+#include <QToolButton>
 
 // Local includes
 
@@ -38,6 +39,13 @@ public:
     void stop();
     bool running()                    const;
 
+    /**
+     * @brief Method to apply a personalized proxy style to remove the automatic
+     * keyboard shortcut underline in the text from an action hosted in a toolbar.
+     * @arg btn is the button instance used to host the action in the toolbar.
+     */
+    static void noToolButtonUnderline(QToolButton* const btn);
+
 private Q_SLOTS:
 
     void slotProgressTimerDone();
@@ -45,7 +53,7 @@ private Q_SLOTS:
 private:
 
     /**
-     * Generate one animate frame with the lightening.
+     * @brief Generate one animate frame with the lightening.
      */
     QPixmap renderAnimationFrame(int beamPosition);
 

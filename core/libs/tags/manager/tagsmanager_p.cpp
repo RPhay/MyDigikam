@@ -155,7 +155,7 @@ void TagsManager::Private::setupActions()
                                     "Also work with multiple items, "
                                     "but will not delete the root tag."));
 
-    setHelpText(titleEdit,  i18n("Edit title from selected tag."));
+    setHelpText(titleEdit,     i18n("Edit title from selected tag."));
 
     setHelpText(resetIcon,     i18n("Reset icon to selected tags. "
                                     "Works with multiple selection."));
@@ -303,6 +303,7 @@ void TagsManager::Private::setupActions()
         "    border: none;"
         "}")
     );
+    DLogoAction::noToolButtonUnderline(laBtn);
 
     dd->addToolBar(mainToolbar);
 

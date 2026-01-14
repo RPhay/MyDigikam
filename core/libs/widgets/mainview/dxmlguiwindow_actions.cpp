@@ -146,6 +146,7 @@ void DXmlGuiWindow::cleanupActions()
             "    border: none;"
             "}")
         );
+        DLogoAction::noToolButtonUnderline(button);
     }
 }
 
