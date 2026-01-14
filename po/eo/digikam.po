@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:39+0000\n"
+"POT-Creation-Date: 2026-01-14 00:41+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -17689,6 +17689,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Ne eblis konservi bildeton por bildo '%1' al '%2'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/libs/properties/itempropertiestab_setters.cpp:394
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -38207,7 +38208,7 @@ msgstr "Eraro de kontrolsumoj."
 msgid "Cannot open target file."
 msgstr "Ne povas malfermi celdosieron."
 
-#: core/libs/progressmanager/dlogoaction.cpp:138
+#: core/libs/progressmanager/dlogoaction.cpp:56
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Viziti retejon de la projekto digiKam"
@@ -39618,7 +39619,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:406
+#: core/libs/properties/itempropertiestab_setters.cpp:410
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -44871,37 +44872,37 @@ msgstr "Kontroli Disponeblon de Nova Versio..."
 msgid "Database Statistics"
 msgstr "Statistikoj de Datumbazo"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Baskuligi Maldekstran Flankbreton"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Baskuligi Dekstran Flankbreton"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Antaŭa Maldekstra Flankbreto Tab"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Sekva Maldekstra Flankbreto Tab"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Antaŭa Dekstra Flankbreto Tab"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:179
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Sekva Dekstra Flankbreto Tab"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:203
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Montru Statusbreton"

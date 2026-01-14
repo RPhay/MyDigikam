@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:39+0000\n"
-"PO-Revision-Date: 2026-01-12 16:01+0300\n"
+"POT-Creation-Date: 2026-01-14 00:41+0000\n"
+"PO-Revision-Date: 2026-01-13 18:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2889,85 +2889,70 @@ msgid "Donate: "
 msgstr "Bağış yap: "
 
 #: core/app/views/preview/itempreviewview.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "go to previous image"
-#| msgid "Back"
+#, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Geri"
 
 #: core/app/views/preview/itempreviewview.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "İleri"
 
 #: core/app/views/preview/itempreviewview.cpp:193
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
-msgstr "Yüz Künyesi Ekle"
+msgstr "Yüz künyesi ekle"
 
 #: core/app/views/preview/itempreviewview.cpp:198
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
-msgstr "Bu Görseldeki Tüm Yüzleri Temizle"
+msgstr "Bu görseldeki tüm yüzleri temizle"
 
 #: core/app/views/preview/itempreviewview.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mark all unconfirmed faces as ignored"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Doğrulanmamış Tüm Yüzleri Yok Sayıldı Olarak İmle"
+msgstr "Doğrulanmamış tüm yüzleri yok sayıldı olarak imle"
 
 #: core/app/views/preview/itempreviewview.cpp:208
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
-msgstr "Yüz Künyelerini Göster"
+msgstr "Yüz künyelerini göster"
 
 #: core/app/views/preview/itempreviewview.cpp:213
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
-msgstr "Bir Odak Noktası Ekle"
+msgstr "Odak noktası ekle"
 
 #: core/app/views/preview/itempreviewview.cpp:215
-#, fuzzy, kde-format
-#| msgid "Show focus points"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
-msgstr "Odak Noktalarını Göster"
+msgstr "Odak noktalarını göster"
 
 #: core/app/views/preview/itempreviewview.cpp:221
-#, fuzzy, kde-format
-#| msgid "Show Magnifier"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
-msgstr "Büyüteci Göster"
+msgstr "Büyüteci göster"
 
 #: core/app/views/preview/itempreviewview.cpp:225
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Under-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
-msgstr "Yetersiz Pozlama Göstergesi"
+msgstr "Yetersiz pozlama göstergesi"
 
 #: core/app/views/preview/itempreviewview.cpp:229
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Over-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
-msgstr "Fazla Pozlama Göstergesi"
+msgstr "Fazla pozlama göstergesi"
 
 #: core/app/views/preview/itempreviewview.cpp:593
 #: core/app/views/stack/itemiconview_views.cpp:325
@@ -17509,6 +17494,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "“%1” görselinin küçük görseli “%2” konumuna kaydedilemedi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/libs/properties/itempropertiestab_setters.cpp:394
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -32081,7 +32067,7 @@ msgstr "Ortak Ayarlar"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:281
 #, kde-format
 msgid "Luminance Noise"
-msgstr "Parlaklık Gürültüsü"
+msgstr "Aydınlık Gürültüsü"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:284
 #, kde-format
@@ -33287,7 +33273,7 @@ msgstr "Yumuşaklık:"
 #: core/libs/dimg/filters/nr/nrsettings.cpp:187
 #, kde-format
 msgid "Luminance"
-msgstr "Parlaklık"
+msgstr "Aydınlık"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:191
 #, kde-format
@@ -37577,7 +37563,7 @@ msgstr "Sağlama toplamları hatası."
 msgid "Cannot open target file."
 msgstr "Hedef dosya açılamıyor."
 
-#: core/libs/progressmanager/dlogoaction.cpp:138
+#: core/libs/progressmanager/dlogoaction.cpp:56
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "digiKam projesi web sitesini ziyaret et"
@@ -38934,7 +38920,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:406
+#: core/libs/properties/itempropertiestab_setters.cpp:410
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -44087,37 +44073,37 @@ msgstr "Yeni Sürümü Denetle…"
 msgid "Database Statistics"
 msgstr "Veri Tabanı İstatistikleri"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Sol Kenar Çubuğunu Aç/Kapat"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Sağ Kenar Çubuğunu Aç/Kapat"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Önceki Sol Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Sonraki Sol Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Önceki Sağ Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:179
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Sonraki Sağ Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:203
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Durum Çubuğunu Göster"
@@ -64065,46 +64051,36 @@ msgstr ""
 "Ölçeklendirme için kenar yumuşatma kullanmak istiyorsanız bunu işaretleyin."
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid "Show Magnifier"
+#, kde-format
 msgid "Magnifier"
-msgstr "Büyüteci Göster"
+msgstr "Büyüteç"
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Zoom to Fit"
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool zoom factor"
 msgid "Zoom Factor:"
-msgstr "Ekrana Sığdır"
+msgstr "Yakınlaştırma çarpanı:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:339
-#, fuzzy, kde-format
-#| msgid "Total Size: "
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool size"
 msgid "Tool Size:"
-msgstr "Toplam boyut: "
+msgstr "Araç boyutu:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Small"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Small"
 msgstr "Küçük"
 
 #: core/utilities/setup/album/setupalbumview.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Medium"
 msgstr "Orta"
 
 #: core/utilities/setup/album/setupalbumview.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "Büyük"

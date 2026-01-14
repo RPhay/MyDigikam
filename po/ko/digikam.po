@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:39+0000\n"
+"POT-Creation-Date: 2026-01-14 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17925,6 +17925,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "이미지 '%1'의 섬네일을 '%2'(으)로 저장할 수 없습니다."
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/libs/properties/itempropertiestab_setters.cpp:394
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -38236,7 +38237,7 @@ msgstr "세션 오류"
 msgid "Cannot open target file."
 msgstr "파일을 열 수 없음"
 
-#: core/libs/progressmanager/dlogoaction.cpp:138
+#: core/libs/progressmanager/dlogoaction.cpp:56
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "digiKam 프로젝트 웹사이트 방문"
@@ -39720,7 +39721,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:406
+#: core/libs/properties/itempropertiestab_setters.cpp:410
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -44856,37 +44857,37 @@ msgstr "선택 반전"
 msgid "Database Statistics"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "왼쪽 사이드바 전환"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "오른쪽 사이드바 전환"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "이전 왼쪽 사이드바 탭"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "다음 왼쪽 사이드바 탭"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "이전 오른쪽 사이드바 탭"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:179
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "다음 오른쪽 사이드바 탭"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:203
 #, kde-format
 msgid "Show Statusbar"
 msgstr "상태 표시줄 표시"

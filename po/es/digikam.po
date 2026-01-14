@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:39+0000\n"
+"POT-Creation-Date: 2026-01-14 00:41+0000\n"
 "PO-Revision-Date: 2026-01-13 00:27+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -17661,6 +17661,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "No se ha podido guardar la miniatura de la imagen «%1» en «%2»"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/libs/properties/itempropertiestab_setters.cpp:394
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -37948,7 +37949,7 @@ msgstr "Error de suma de verificación."
 msgid "Cannot open target file."
 msgstr "No se ha podido abrir el archivo de destino."
 
-#: core/libs/progressmanager/dlogoaction.cpp:138
+#: core/libs/progressmanager/dlogoaction.cpp:56
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Visitar el sitio web del proyecto digiKam"
@@ -39308,7 +39309,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:406
+#: core/libs/properties/itempropertiestab_setters.cpp:410
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -44564,37 +44565,37 @@ msgstr "Comprobar nueva versión…"
 msgid "Database Statistics"
 msgstr "Estadísticas de la base de datos"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Conmutar la barra lateral izquierda"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Conmutar la barra lateral derecha"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Anterior pestaña lateral izquierda"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Siguiente pestaña lateral izquierda"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Anterior pestaña lateral derecha"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:179
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Siguiente pestaña lateral derecha"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:203
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Mostrar la barra de estado"

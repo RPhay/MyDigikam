@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:39+0000\n"
-"PO-Revision-Date: 2026-01-12 11:17-0300\n"
+"POT-Creation-Date: 2026-01-14 00:41+0000\n"
+"PO-Revision-Date: 2026-01-13 17:42-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2862,82 +2862,67 @@ msgid "Donate: "
 msgstr "Doar: "
 
 #: core/app/views/preview/itempreviewview.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "go to previous image"
-#| msgid "Back"
+#, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Voltar"
 
 #: core/app/views/preview/itempreviewview.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Avançar"
 
 #: core/app/views/preview/itempreviewview.cpp:193
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
-msgstr "Adicionar uma etiqueta de rosto"
+msgstr "Adiciona uma etiqueta de rosto"
 
 #: core/app/views/preview/itempreviewview.cpp:198
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
-msgstr "Limpar todos os rostos desta imagem"
+msgstr "Limpa todos os rostos desta imagem"
 
 #: core/app/views/preview/itempreviewview.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mark all unconfirmed faces as ignored"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Marcar todos os rostos não confirmados como ignorados"
+msgstr "Marca todos os rostos não confirmados como ignorados"
 
 #: core/app/views/preview/itempreviewview.cpp:208
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
-msgstr "Exibir etiquetas de rosto"
+msgstr "Mostra as etiquetas de rosto"
 
 #: core/app/views/preview/itempreviewview.cpp:213
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
-msgstr "Adicionar um ponto de foco"
+msgstr "Adiciona um ponto de foco"
 
 #: core/app/views/preview/itempreviewview.cpp:215
-#, fuzzy, kde-format
-#| msgid "Show focus points"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
-msgstr "Exibir pontos de foco"
+msgstr "Mostra os pontos de foco"
 
 #: core/app/views/preview/itempreviewview.cpp:221
-#, fuzzy, kde-format
-#| msgid "Show Magnifier"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
-msgstr "Mostrar lupa"
+msgstr "Mostra a lupa"
 
 #: core/app/views/preview/itempreviewview.cpp:225
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Under-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "Indicador de subexposição"
 
 #: core/app/views/preview/itempreviewview.cpp:229
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Over-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Indicador de superexposição"
@@ -17592,6 +17577,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Não foi possível salvar a miniatura da imagem '%1' em '%2'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/libs/properties/itempropertiestab_setters.cpp:394
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -37827,7 +37813,7 @@ msgstr "Erro de verificação de soma."
 msgid "Cannot open target file."
 msgstr "Não foi possível abrir o arquivo de destino."
 
-#: core/libs/progressmanager/dlogoaction.cpp:138
+#: core/libs/progressmanager/dlogoaction.cpp:56
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Visite o site do projeto digiKam"
@@ -39186,7 +39172,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:406
+#: core/libs/properties/itempropertiestab_setters.cpp:410
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -44380,37 +44366,37 @@ msgstr "Verificar por nova versão..."
 msgid "Database Statistics"
 msgstr "Estatísticas do banco de dados"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:136
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Alternar a barra lateral esquerda"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:141
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Alternar a barra lateral direita"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:146
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Barra lateral esquerda anterior"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:151
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Barra lateral esquerda seguinte"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:156
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Barra lateral direita anterior"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:161
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:179
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Barra lateral direita seguinte"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:185
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:203
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Mostrar barra de status"
@@ -64442,46 +64428,36 @@ msgstr ""
 "Habilite esta opção se quiser usar o Anti-aliasing para aumentar a escala."
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid "Show Magnifier"
+#, kde-format
 msgid "Magnifier"
-msgstr "Mostrar lupa"
+msgstr "Lupa"
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Zoom to Fit"
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool zoom factor"
 msgid "Zoom Factor:"
-msgstr "Zoom para ajustar"
+msgstr "Fator de zoom:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:339
-#, fuzzy, kde-format
-#| msgid "Total Size: "
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool size"
 msgid "Tool Size:"
-msgstr "Tamanho total: "
+msgstr "Tamanho da ferramenta:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Small"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Small"
 msgstr "Pequeno"
 
 #: core/utilities/setup/album/setupalbumview.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Medium"
 msgstr "Médio"
 
 #: core/utilities/setup/album/setupalbumview.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "Grande"
@@ -65832,7 +65808,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:140
 #, kde-format
 msgid "Under-exposure percents: "
-msgstr "Porcentagens de subexposição: "
+msgstr "Porcentagem de subexposição: "
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:146
 #, kde-format
@@ -65840,8 +65816,8 @@ msgid ""
 "Adjust the percents of the bottom of image histogram which will be used to "
 "check under exposed pixels."
 msgstr ""
-"Ajustar as porcentagens no histograma ao fundo da imagem, que será usado "
-"para verificar os pixels subexpostos."
+"Ajusta a porcentagem inferior do histograma da imagem, que será usada para "
+"considerar os pixels subexpostos."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:149
 #, kde-format
@@ -65858,7 +65834,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:155
 #, kde-format
 msgid "Over-exposure percents: "
-msgstr "Porcentagens de superexposição: "
+msgstr "Porcentagem de superexposição: "
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:161
 #, kde-format
@@ -65866,8 +65842,8 @@ msgid ""
 "Adjust the percents of the top of image histogram which will be used to "
 "check over exposed pixels."
 msgstr ""
-"Ajustar as porcentagens no histograma no topo da imagem, que será usado para "
-"verificar os pixels superexpostos."
+"Ajusta a porcentagem superior do histograma da imagem, que será usada para "
+"considerar os pixels superexpostos."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:164
 #, kde-format
@@ -65916,7 +65892,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupiofiles.cpp:183
 #, kde-format
 msgid "Show Settings Dialog when Saving Image Files"
-msgstr "Exibir diálogo de configurações ao salvar arquivos de imagem"
+msgstr "Exibir diálogo de configuração ao salvar arquivos de imagem"
 
 #: core/utilities/setup/editor/setupiofiles.cpp:184
 #, kde-format
@@ -65946,7 +65922,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
-msgstr "Abrir os arquivos RAW no editor de imagem"
+msgstr "Abrir os arquivos RAW no Editor de Imagem"
 
 #: core/utilities/setup/editor/setupraw.cpp:109
 #, kde-format
@@ -68532,8 +68508,8 @@ msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
 "locations</a>. You can specify an additional folder:"
 msgstr ""
-"O digiKam procura pelos perfis ICC em uma quantidade padrão de <a "
-"href='default'>locais</a>. Você pode indicar uma pasta adicional:"
+"O digiKam procura pelos perfis ICC em uma quantidade de <a "
+"href='default'>locais padrão</a>. Você pode indicar uma pasta adicional:"
 
 #: core/utilities/setup/setupicc.cpp:422
 #, kde-format
