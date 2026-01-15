@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-14 00:41+0000\n"
-"PO-Revision-Date: 2026-01-13 17:42-0300\n"
+"POT-Creation-Date: 2026-01-15 00:40+0000\n"
+"PO-Revision-Date: 2026-01-14 13:01-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -279,7 +279,7 @@ msgstr "Alterar etiqueta de rosto"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:896
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancelar"
@@ -290,7 +290,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Atribuir etiquetas aos itens &selecionados"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:892
+#: core/app/views/preview/itempreviewview.cpp:894
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "A&tribuir etiquetas a este item"
@@ -1584,9 +1584,9 @@ msgstr "Inicializando a janela principal..."
 
 #: core/app/main/digikamapp_setup.cpp:64
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:423
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:446
-#: core/utilities/survey/surveywindow_setup.cpp:261
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:426
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:449
+#: core/utilities/survey/surveywindow_setup.cpp:264
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -1810,7 +1810,7 @@ msgstr "Editor de Imagem"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
-msgstr "Abrir o editor de imagem."
+msgstr "Abrir o Editor de Imagem."
 
 #: core/app/main/digikamapp_setup.cpp:411
 #, kde-format
@@ -1828,7 +1828,7 @@ msgstr "Colocar na Mesa de Luz"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
-msgstr "Colocar os itens selecionados na barra de miniaturas da mesa de luz."
+msgstr "Colocar os itens selecionados na barra de miniaturas da Mesa de Luz."
 
 #: core/app/main/digikamapp_setup.cpp:424
 #, kde-format
@@ -1840,7 +1840,7 @@ msgstr "Adicionar à Mesa de Luz"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
-msgstr "Adicionar os itens selecionados na barra de miniaturas da mesa de luz."
+msgstr "Adicionar os itens selecionados na barra de miniaturas da Mesa de Luz."
 
 #: core/app/main/digikamapp_setup.cpp:433
 #, kde-format
@@ -2316,181 +2316,181 @@ msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Carregando câmeras..."
 
-#: core/app/main/digikamapp_setup.cpp:974
+#: core/app/main/digikamapp_setup.cpp:977
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Sair do modo de visualização"
 
-#: core/app/main/digikamapp_setup.cpp:979
+#: core/app/main/digikamapp_setup.cpp:982
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Próxima imagem"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:988
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Imagem anterior"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:994
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Primeira imagem"
 
-#: core/app/main/digikamapp_setup.cpp:996
+#: core/app/main/digikamapp_setup.cpp:999
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Última imagem"
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:1004
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Recor&tar"
 
-#: core/app/main/digikamapp_setup.cpp:1003
+#: core/app/main/digikamapp_setup.cpp:1006
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Recorta a seleção para a área de transferência"
 
-#: core/app/main/digikamapp_setup.cpp:1022
+#: core/app/main/digikamapp_setup.cpp:1025
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Editar títulos"
 
-#: core/app/main/digikamapp_setup.cpp:1027
+#: core/app/main/digikamapp_setup.cpp:1030
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Editar comentários"
 
-#: core/app/main/digikamapp_setup.cpp:1032
+#: core/app/main/digikamapp_setup.cpp:1035
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Exibir as etiquetas atribuídas"
 
-#: core/app/main/digikamapp_setup.cpp:1041
+#: core/app/main/digikamapp_setup.cpp:1044
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Ajustar etiqueta de orientação EXIF"
 
-#: core/app/main/digikamapp_setup.cpp:1044
+#: core/app/main/digikamapp_setup.cpp:1047
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:1046
+#: core/app/main/digikamapp_setup.cpp:1049
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Invertida horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1048
+#: core/app/main/digikamapp_setup.cpp:1051
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Girada de baixo para cima"
 
-#: core/app/main/digikamapp_setup.cpp:1050
+#: core/app/main/digikamapp_setup.cpp:1053
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Invertida verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1052
+#: core/app/main/digikamapp_setup.cpp:1055
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Girada à direita / Invertida horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1054
+#: core/app/main/digikamapp_setup.cpp:1057
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Girada à direita"
 
-#: core/app/main/digikamapp_setup.cpp:1056
+#: core/app/main/digikamapp_setup.cpp:1059
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Girada à direita / Invertida verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1058
+#: core/app/main/digikamapp_setup.cpp:1061
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Girada à esquerda"
 
-#: core/app/main/digikamapp_setup.cpp:1119
+#: core/app/main/digikamapp_setup.cpp:1122
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Girar"
 
-#: core/app/main/digikamapp_setup.cpp:1125
+#: core/app/main/digikamapp_setup.cpp:1128
 #, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Girar automaticamente"
 
-#: core/app/main/digikamapp_setup.cpp:1133
+#: core/app/main/digikamapp_setup.cpp:1136
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Esquerda"
 
-#: core/app/main/digikamapp_setup.cpp:1140
+#: core/app/main/digikamapp_setup.cpp:1143
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Direita"
 
-#: core/app/main/digikamapp_setup.cpp:1150
+#: core/app/main/digikamapp_setup.cpp:1153
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Inverter"
 
-#: core/app/main/digikamapp_setup.cpp:1154
+#: core/app/main/digikamapp_setup.cpp:1157
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1161
+#: core/app/main/digikamapp_setup.cpp:1164
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1171
+#: core/app/main/digikamapp_setup.cpp:1174
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Girar/Inverter automaticamente usando informações Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1182
+#: core/app/main/digikamapp_setup.cpp:1185
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Carregando temas..."
 
-#: core/app/main/digikamapp_setup.cpp:1185
+#: core/app/main/digikamapp_setup.cpp:1188
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Temas"
 
-#: core/app/main/digikamapp_setup.cpp:1201
+#: core/app/main/digikamapp_setup.cpp:1204
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2927,14 +2927,14 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Indicador de superexposição"
 
-#: core/app/views/preview/itempreviewview.cpp:593
+#: core/app/views/preview/itempreviewview.cpp:595
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Rostos"
 
-#: core/app/views/preview/itempreviewview.cpp:789
+#: core/app/views/preview/itempreviewview.cpp:791
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr "Mostrar lupa (x%1)"
@@ -9244,7 +9244,7 @@ msgstr "Uma ferramenta para corrigir as distorções das lentes"
 msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
 msgstr ""
-"Esta ferramenta do editor de imagem pode corrigir distorções da lente em uma "
+"Esta ferramenta do Editor de Imagem pode corrigir distorções da lente em uma "
 "imagem."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:94
@@ -16288,13 +16288,13 @@ msgid "Close window"
 msgstr "Fechar janela"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:284
+#: core/libs/timeadjust/timeadjustsettings.cpp:286
 #, kde-format
 msgid "Timestamp Used"
 msgstr "Data e hora usados"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:286
+#: core/libs/timeadjust/timeadjustsettings.cpp:288
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "Data e hora atualizada"
@@ -37813,7 +37813,7 @@ msgstr "Erro de verificação de soma."
 msgid "Cannot open target file."
 msgstr "Não foi possível abrir o arquivo de destino."
 
-#: core/libs/progressmanager/dlogoaction.cpp:56
+#: core/libs/progressmanager/dlogoaction.cpp:81
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Visite o site do projeto digiKam"
@@ -38689,7 +38689,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:253
+#: core/libs/timeadjust/timeadjustsettings.cpp:255
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -41938,101 +41938,107 @@ msgid "File name timestamp"
 msgstr "Data e hora do nome do arquivo"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:150
-#: core/libs/timeadjust/timeadjustsettings.cpp:246
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, kde-format
 msgid "File last modified"
 msgstr "Última modificação do arquivo"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:159
+#: core/libs/timeadjust/timeadjustsettings.cpp:155
+#, fuzzy, kde-format
+#| msgid "File date"
+msgid "File created"
+msgstr "Data do arquivo"
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr "EXIF/IPTC/XMP"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:160
-#: core/libs/timeadjust/timeadjustsettings.cpp:247
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgid "EXIF: created"
 msgstr "EXIF: criado"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "EXIF: original"
 msgstr "EXIF: original"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "EXIF: digitalizado"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:163
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid "IPTC: created"
 msgstr "IPTC: criado"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
 #, kde-format
 msgid "XMP: created"
 msgstr "XMP: criado"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:167
 #, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "EXIF: criado (aproximado)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr "EXIF: original (aproximado)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:169
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr "EXIF: digitalizado (aproximado)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:177
+#: core/libs/timeadjust/timeadjustsettings.cpp:179
 #, kde-format
 msgid "Reset to current date"
 msgstr "Redefinir para a data atual"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:209
+#: core/libs/timeadjust/timeadjustsettings.cpp:211
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "Copiar valor"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:210
+#: core/libs/timeadjust/timeadjustsettings.cpp:212
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "Adicionar"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:211
+#: core/libs/timeadjust/timeadjustsettings.cpp:213
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Subtrair"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:215
+#: core/libs/timeadjust/timeadjustsettings.cpp:217
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Intervalo"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:221
+#: core/libs/timeadjust/timeadjustsettings.cpp:223
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "dias"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:224
+#: core/libs/timeadjust/timeadjustsettings.cpp:226
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr "Determinar a diferença em relação à data/hora da foto"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:225
+#: core/libs/timeadjust/timeadjustsettings.cpp:227
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
@@ -42040,32 +42046,32 @@ msgstr ""
 "Clique ou arraste e solte uma foto no botão para selecionar uma data/hora de "
 "foto a ser comparada"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:243
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr "Atualizar data e hora com o ExifTool"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:244
+#: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, kde-format
 msgid "Use this option primarily with video files"
 msgstr "Selecione esta opção principalmente com arquivos de vídeo"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "Atualizar somente data e hora existentes"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:250
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "EXIF: Miniatura"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:254
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: Vídeo"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:285
+#: core/libs/timeadjust/timeadjustsettings.cpp:287
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Ajustes de data e hora"
@@ -44123,7 +44129,7 @@ msgid ""
 msgstr ""
 "Ferramenta de exportação UPNP/DLNA e\n"
 "ferramenta de clonagem de recuperação\n"
-"para o editor de imagem"
+"para o Editor de Imagem"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:201
 #, kde-format
@@ -44147,7 +44153,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:219
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
-msgstr "Migração do modelo/vista da tela do editor de imagem"
+msgstr "Migração do modelo/vista da tela do Editor de Imagem"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
@@ -44366,37 +44372,37 @@ msgstr "Verificar por nova versão..."
 msgid "Database Statistics"
 msgstr "Estatísticas do banco de dados"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Alternar a barra lateral esquerda"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Alternar a barra lateral direita"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Barra lateral esquerda anterior"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Barra lateral esquerda seguinte"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Barra lateral direita anterior"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:179
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Barra lateral direita seguinte"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:203
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Mostrar barra de status"
@@ -49874,7 +49880,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
-msgstr "Idiomas de tradutor disponíveis (%1/%2)"
+msgstr "Idiomas do tradutor disponíveis (%1/%2)"
 
 #: core/libs/widgets/text/localizeselector.cpp:107
 #, kde-format
@@ -49940,10 +49946,10 @@ msgstr ""
 "segundo plano em legendas, títulos e outros widgets de edição de texto. A "
 "verificação ortográfica detecta automaticamente o idioma atual usado no "
 "texto e propõe alternativas em palavras com erros ortográficos.</"
-"para><para>Com entradas onde o idioma alternativo pode ser especificado, o "
-"idioma contextual será usado para analisar o texto. A verificação "
-"ortográfica depende de backends de código aberto, incluindo os dicionários "
-"necessários, para realizar a análise das frases nos idiomas desejados.</para>"
+"para><para>Com entradas onde um idioma alternativo pode ser especificado, o "
+"contexto será usado para analisar o texto. A verificação ortográfica depende "
+"de backends de código aberto, incluindo os dicionários necessários, para "
+"realizar a análise das frases nos idiomas desejados.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:113
 #, kde-format
@@ -50971,7 +50977,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
-msgstr "Usar versão  com símbolos de depuração"
+msgstr "Usar versão com símbolos de depuração"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:137
@@ -53293,7 +53299,7 @@ msgstr ""
 "do que no editor, principalmente quando quiser verificar uma série de fotos. "
 "Entretanto, você não pode alterar ou corrigir a imagem no modo de exibição. "
 "De qualquer forma, se quiser comparar imagens rapidamente, a melhor maneira "
-"é usar a mesa de luz. Nessa ferramenta, você pode exibir as imagens lado a "
+"é usar a Mesa de Luz. Nessa ferramenta, você pode exibir as imagens lado a "
 "lado e efetuar um deslocamento e ampliação sincronizados.</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:52
@@ -53308,7 +53314,7 @@ msgid ""
 "table:</p></qt>"
 msgstr ""
 "<qt><p>Indique aqui como deseja mostrar as imagens no modo de visualização e "
-"na mesa de luz:</p></qt>"
+"na Mesa de Luz:</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:69
 #, kde-format
@@ -59684,7 +59690,7 @@ msgid ""
 "The image editor will be closed."
 msgstr ""
 "Não existe uma imagem no álbum atual para ser exibida.\n"
-"O editor de imagem será fechado."
+"O Editor de Imagem será fechado."
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1220
 #, kde-format
@@ -61573,12 +61579,12 @@ msgstr "Limpar ao fechar"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
 #, kde-format
 msgid "Clear light table when it is closed"
-msgstr "Limpar a mesa de luz quando for fechada"
+msgstr "Limpar a Mesa de Luz quando for fechada"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
-msgstr "Remover todas as imagens da mesa de luz ao fechá-la"
+msgstr "Remover todas as imagens da Mesa de Luz ao fechá-la"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
@@ -65168,7 +65174,7 @@ msgstr "Exibir visualização embutida"
 #: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Start image editor"
-msgstr "Inicia o editor de imagem"
+msgstr "Iniciar o Editor de Imagem"
 
 #: core/utilities/setup/camera/setupcamera.cpp:471
 #, kde-format
@@ -65775,7 +65781,7 @@ msgid ""
 "area."
 msgstr ""
 "Habilite esta opção para usar a cor do plano de fundo do tema na área do "
-"editor de imagem."
+"Editor de Imagem."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:114
 #, kde-format
@@ -65802,7 +65808,7 @@ msgstr "Cor de s&ubexposição: "
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
-"Personalize a cor usada no editor de imagem para identificar os pixels "
+"Personalize a cor usada no Editor de Imagem para identificar os pixels "
 "subexpostos."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:140
@@ -65828,7 +65834,7 @@ msgstr "Cor de s&uperexposição: "
 #, kde-format
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
-"Personalize a cor usada no editor de imagem para identificar os pixels sobre-"
+"Personalize a cor usada no Editor de Imagem para identificar os pixels sobre-"
 "expostos."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:155
@@ -67135,7 +67141,7 @@ msgid ""
 "image editor always changes the image data during the rotation."
 msgstr ""
 "Observação: essas configurações afetam a visualização do álbum e não o "
-"editor de imagem. O editor de imagem sempre altera os dados da imagem "
+"Editor de Imagem. O Editor de Imagem sempre altera os dados da imagem "
 "durante a rotação."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:134
@@ -67892,7 +67898,7 @@ msgstr ""
 #: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Test GPU AI compatibility"
-msgstr "Testar compatibilidade de IA com a GPU"
+msgstr "Testar compatibilidade da IA com a GPU"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
@@ -67922,7 +67928,7 @@ msgstr "Usar conversão de texturas do vídeo"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
 msgid "Decoding backend to render media:"
-msgstr "Backend de decodificação para renderizar a mídia:"
+msgstr "Backend de decodificação para renderizar mídia:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format
@@ -68059,7 +68065,7 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 "Configurações do Editor de Imagem\n"
-"Personaliza as configurações do editor de imagem"
+"Personaliza as configurações do Editor de Imagem"
 
 #: core/utilities/setup/setup.cpp:165
 #, kde-format
@@ -68231,7 +68237,7 @@ msgstr ""
 "Para funcionar de forma amigável, o Google Maps requer uma chave de API que "
 "os usuários finais devem comprar online para obter credenciais. Sem essa "
 "chave, o Google Maps ainda pode ser usado, mas com uma sobreposição com a "
-"anotação \"Somente para Desenvolvimento\". Para mais informações, consulte "
+"anotação \"For development purposes only\". Para mais informações, consulte "
 "esta <a href='https://mapsplatform.google.com/pricing/'>página do Google</a> "
 "sobre usos, práticas e preços."
 
@@ -68663,7 +68669,7 @@ msgstr ""
 #: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
 msgid "Clear the light table on close"
-msgstr "Limpar a mesa de luz ao fechar"
+msgstr "Limpar a Mesa de Luz ao fechar"
 
 #: core/utilities/setup/setuplighttable.cpp:92
 #, kde-format
@@ -68671,8 +68677,8 @@ msgid ""
 "Set this option to remove all images from the light table when you close it, "
 "or unset it to preserve the images currently on the light table."
 msgstr ""
-"Marque esta opção para remover todas as imagens da mesa de luz ao fechá-la, "
-"ou desmarque-a para preservar as imagens atuais na mesa de luz."
+"Marque esta opção para remover todas as imagens da Mesa de Luz ao fechá-la, "
+"ou desmarque-a para preservar as imagens atuais na Mesa de Luz."
 
 #: core/utilities/setup/setupplugins.cpp:68
 #, kde-format

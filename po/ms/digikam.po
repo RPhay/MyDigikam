@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-14 00:41+0000\n"
+"POT-Creation-Date: 2026-01-15 00:40+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -267,7 +267,7 @@ msgstr "Buang Kumpulan"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:896
 #, fuzzy, kde-format
 msgid "&Cancel"
 msgstr "&Batal"
@@ -278,7 +278,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:892
+#: core/app/views/preview/itempreviewview.cpp:894
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr ""
@@ -1546,9 +1546,9 @@ msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:64
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:423
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:446
-#: core/utilities/survey/surveywindow_setup.cpp:261
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:426
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:449
+#: core/utilities/survey/surveywindow_setup.cpp:264
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -2267,181 +2267,181 @@ msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Muat Naik..."
 
-#: core/app/main/digikamapp_setup.cpp:974
+#: core/app/main/digikamapp_setup.cpp:977
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:979
+#: core/app/main/digikamapp_setup.cpp:982
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Imej"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:988
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:994
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Sharuzzaman Ahmat Raslan"
 
-#: core/app/main/digikamapp_setup.cpp:996
+#: core/app/main/digikamapp_setup.cpp:999
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Imej"
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:1004
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1003
+#: core/app/main/digikamapp_setup.cpp:1006
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Salin ke Klipbod"
 
-#: core/app/main/digikamapp_setup.cpp:1022
+#: core/app/main/digikamapp_setup.cpp:1025
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Nama Baru"
 
-#: core/app/main/digikamapp_setup.cpp:1027
+#: core/app/main/digikamapp_setup.cpp:1030
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Ciri Imej"
 
-#: core/app/main/digikamapp_setup.cpp:1032
+#: core/app/main/digikamapp_setup.cpp:1035
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Padam"
 
-#: core/app/main/digikamapp_setup.cpp:1041
+#: core/app/main/digikamapp_setup.cpp:1044
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Pembetulan Warna"
 
-#: core/app/main/digikamapp_setup.cpp:1044
+#: core/app/main/digikamapp_setup.cpp:1047
 #, fuzzy, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:1046
+#: core/app/main/digikamapp_setup.cpp:1049
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Balikkan Mengufuk"
 
-#: core/app/main/digikamapp_setup.cpp:1048
+#: core/app/main/digikamapp_setup.cpp:1051
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Putaran:"
 
-#: core/app/main/digikamapp_setup.cpp:1050
+#: core/app/main/digikamapp_setup.cpp:1053
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Balikkan Menegak"
 
-#: core/app/main/digikamapp_setup.cpp:1052
+#: core/app/main/digikamapp_setup.cpp:1055
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:1054
+#: core/app/main/digikamapp_setup.cpp:1057
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:1056
+#: core/app/main/digikamapp_setup.cpp:1059
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:1058
+#: core/app/main/digikamapp_setup.cpp:1061
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Putar"
 
-#: core/app/main/digikamapp_setup.cpp:1119
+#: core/app/main/digikamapp_setup.cpp:1122
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Putar"
 
-#: core/app/main/digikamapp_setup.cpp:1125
+#: core/app/main/digikamapp_setup.cpp:1128
 #, fuzzy, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Dinormalkan"
 
-#: core/app/main/digikamapp_setup.cpp:1133
+#: core/app/main/digikamapp_setup.cpp:1136
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1140
+#: core/app/main/digikamapp_setup.cpp:1143
 #, fuzzy, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Tinggi"
 
-#: core/app/main/digikamapp_setup.cpp:1150
+#: core/app/main/digikamapp_setup.cpp:1153
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Balikkan"
 
-#: core/app/main/digikamapp_setup.cpp:1154
+#: core/app/main/digikamapp_setup.cpp:1157
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Mengufuk"
 
-#: core/app/main/digikamapp_setup.cpp:1161
+#: core/app/main/digikamapp_setup.cpp:1164
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Menegak"
 
-#: core/app/main/digikamapp_setup.cpp:1171
+#: core/app/main/digikamapp_setup.cpp:1174
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1182
+#: core/app/main/digikamapp_setup.cpp:1185
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Muat Naik..."
 
-#: core/app/main/digikamapp_setup.cpp:1185
+#: core/app/main/digikamapp_setup.cpp:1188
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1201
+#: core/app/main/digikamapp_setup.cpp:1204
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2867,14 +2867,14 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Pembetulan Warna"
 
-#: core/app/views/preview/itempreviewview.cpp:593
+#: core/app/views/preview/itempreviewview.cpp:595
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Sejarah"
 
-#: core/app/views/preview/itempreviewview.cpp:789
+#: core/app/views/preview/itempreviewview.cpp:791
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -15142,13 +15142,13 @@ msgid "Close window"
 msgstr "&Tutup"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:284
+#: core/libs/timeadjust/timeadjustsettings.cpp:286
 #, kde-format
 msgid "Timestamp Used"
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:286
+#: core/libs/timeadjust/timeadjustsettings.cpp:288
 #, kde-format
 msgid "Timestamp Updated"
 msgstr ""
@@ -35007,7 +35007,7 @@ msgstr ""
 msgid "Cannot open target file."
 msgstr "Model Warna"
 
-#: core/libs/progressmanager/dlogoaction.cpp:56
+#: core/libs/progressmanager/dlogoaction.cpp:81
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr ""
@@ -35875,7 +35875,7 @@ msgid "IPTC"
 msgstr ""
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:253
+#: core/libs/timeadjust/timeadjustsettings.cpp:255
 #, kde-format
 msgid "XMP"
 msgstr ""
@@ -38782,132 +38782,137 @@ msgid "File name timestamp"
 msgstr "&Buang"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:150
-#: core/libs/timeadjust/timeadjustsettings.cpp:246
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, kde-format
 msgid "File last modified"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:159
+#: core/libs/timeadjust/timeadjustsettings.cpp:155
+#, fuzzy, kde-format
+msgid "File created"
+msgstr "Nama Fail"
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:160
-#: core/libs/timeadjust/timeadjustsettings.cpp:247
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, fuzzy, kde-format
 msgid "EXIF: created"
 msgstr "Pembetulan Warna"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "EXIF: original"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgid "EXIF: digitized"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:163
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, fuzzy, kde-format
 msgid "IPTC: created"
 msgstr "Dicipta:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
 #, fuzzy, kde-format
 msgid "XMP: created"
 msgstr "Dicipta:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:167
 #, fuzzy, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "Pembetulan Warna"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:169
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:177
+#: core/libs/timeadjust/timeadjustsettings.cpp:179
 #, fuzzy, kde-format
 msgid "Reset to current date"
 msgstr "&Buang"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:209
+#: core/libs/timeadjust/timeadjustsettings.cpp:211
 #, fuzzy, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "&Salin di Sini"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:210
+#: core/libs/timeadjust/timeadjustsettings.cpp:212
 #, fuzzy, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "&Tambah..."
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:211
+#: core/libs/timeadjust/timeadjustsettings.cpp:213
 #, fuzzy, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Abstrak"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:215
+#: core/libs/timeadjust/timeadjustsettings.cpp:217
 #, fuzzy, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Interpolasi:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:221
+#: core/libs/timeadjust/timeadjustsettings.cpp:223
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:224
+#: core/libs/timeadjust/timeadjustsettings.cpp:226
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:225
+#: core/libs/timeadjust/timeadjustsettings.cpp:227
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:243
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:244
+#: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, kde-format
 msgid "Use this option primarily with video files"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:250
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, fuzzy, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "Thumbnail"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:254
 #, fuzzy, kde-format
 msgid "XMP: Video"
 msgstr "Paparkan"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:285
+#: core/libs/timeadjust/timeadjustsettings.cpp:287
 #, fuzzy, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Selaras"
@@ -41110,37 +41115,37 @@ msgstr ""
 msgid "Database Statistics"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:179
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:203
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
 #, fuzzy, kde-format
 msgid "Show Statusbar"
 msgstr "Format Fail"

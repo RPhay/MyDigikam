@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-14 00:41+0000\n"
+"POT-Creation-Date: 2026-01-15 00:40+0000\n"
 "PO-Revision-Date: 2026-01-13 12:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -275,7 +275,7 @@ msgstr "Canvia l'etiqueta de la cara"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:896
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancel·la"
@@ -286,7 +286,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Assigna les etiquetes als elements &seleccionats"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:892
+#: core/app/views/preview/itempreviewview.cpp:894
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Assigna les etiquetes a aques&t element"
@@ -1580,9 +1580,9 @@ msgstr "S'està inicialitzant la vista principal..."
 
 #: core/app/main/digikamapp_setup.cpp:64
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1516
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:423
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:446
-#: core/utilities/survey/surveywindow_setup.cpp:261
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:426
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:449
+#: core/utilities/survey/surveywindow_setup.cpp:264
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
@@ -2319,183 +2319,183 @@ msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "S'estan carregant les càmeres..."
 
-#: core/app/main/digikamapp_setup.cpp:974
+#: core/app/main/digikamapp_setup.cpp:977
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Sortida del mode de vista prèvia"
 
-#: core/app/main/digikamapp_setup.cpp:979
+#: core/app/main/digikamapp_setup.cpp:982
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Imatge següent"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:988
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Imatge anterior"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:994
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Primera imatge"
 
-#: core/app/main/digikamapp_setup.cpp:996
+#: core/app/main/digikamapp_setup.cpp:999
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Darrera imatge"
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:1004
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Re&talla"
 
-#: core/app/main/digikamapp_setup.cpp:1003
+#: core/app/main/digikamapp_setup.cpp:1006
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Retalla la selecció al porta-retalls"
 
-#: core/app/main/digikamapp_setup.cpp:1022
+#: core/app/main/digikamapp_setup.cpp:1025
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Edita els títols"
 
-#: core/app/main/digikamapp_setup.cpp:1027
+#: core/app/main/digikamapp_setup.cpp:1030
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Edita els comentaris"
 
-#: core/app/main/digikamapp_setup.cpp:1032
+#: core/app/main/digikamapp_setup.cpp:1035
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Mostra les etiquetes assignades"
 
-#: core/app/main/digikamapp_setup.cpp:1041
+#: core/app/main/digikamapp_setup.cpp:1044
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Ajusta l'etiqueta Exif d'orientació"
 
-#: core/app/main/digikamapp_setup.cpp:1044
+#: core/app/main/digikamapp_setup.cpp:1047
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:1046
+#: core/app/main/digikamapp_setup.cpp:1049
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Invertida horitzontalment"
 
-#: core/app/main/digikamapp_setup.cpp:1048
+#: core/app/main/digikamapp_setup.cpp:1051
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Capgirada"
 
-#: core/app/main/digikamapp_setup.cpp:1050
+#: core/app/main/digikamapp_setup.cpp:1053
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Invertida verticalment"
 
 # skip-rule: punctuation-period-no
-#: core/app/main/digikamapp_setup.cpp:1052
+#: core/app/main/digikamapp_setup.cpp:1055
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Girada a la dreta / Invertida horitz."
 
-#: core/app/main/digikamapp_setup.cpp:1054
+#: core/app/main/digikamapp_setup.cpp:1057
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Girada a la dreta"
 
 # skip-rule: punctuation-period-no
-#: core/app/main/digikamapp_setup.cpp:1056
+#: core/app/main/digikamapp_setup.cpp:1059
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Girada a la dreta / Invertida vert."
 
-#: core/app/main/digikamapp_setup.cpp:1058
+#: core/app/main/digikamapp_setup.cpp:1061
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Girada a l'esquerra"
 
-#: core/app/main/digikamapp_setup.cpp:1119
+#: core/app/main/digikamapp_setup.cpp:1122
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Gira"
 
-#: core/app/main/digikamapp_setup.cpp:1125
+#: core/app/main/digikamapp_setup.cpp:1128
 #, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Gir automàtic"
 
-#: core/app/main/digikamapp_setup.cpp:1133
+#: core/app/main/digikamapp_setup.cpp:1136
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Esquerra"
 
-#: core/app/main/digikamapp_setup.cpp:1140
+#: core/app/main/digikamapp_setup.cpp:1143
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Dreta"
 
-#: core/app/main/digikamapp_setup.cpp:1150
+#: core/app/main/digikamapp_setup.cpp:1153
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Inverteix"
 
-#: core/app/main/digikamapp_setup.cpp:1154
+#: core/app/main/digikamapp_setup.cpp:1157
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horitzontalment"
 
-#: core/app/main/digikamapp_setup.cpp:1161
+#: core/app/main/digikamapp_setup.cpp:1164
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Verticalment"
 
-#: core/app/main/digikamapp_setup.cpp:1171
+#: core/app/main/digikamapp_setup.cpp:1174
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Gir/Inversió automàtics usant la informació Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1182
+#: core/app/main/digikamapp_setup.cpp:1185
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "S'estan carregant els temes..."
 
-#: core/app/main/digikamapp_setup.cpp:1185
+#: core/app/main/digikamapp_setup.cpp:1188
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Temes"
 
-#: core/app/main/digikamapp_setup.cpp:1201
+#: core/app/main/digikamapp_setup.cpp:1204
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2934,14 +2934,14 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Indicador de sobreexposició"
 
-#: core/app/views/preview/itempreviewview.cpp:593
+#: core/app/views/preview/itempreviewview.cpp:595
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Cares"
 
-#: core/app/views/preview/itempreviewview.cpp:789
+#: core/app/views/preview/itempreviewview.cpp:791
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr "Mostra la lupa (x%1)"
@@ -16351,13 +16351,13 @@ msgid "Close window"
 msgstr "Tanca la finestra"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:284
+#: core/libs/timeadjust/timeadjustsettings.cpp:286
 #, kde-format
 msgid "Timestamp Used"
 msgstr "Marca de temps emprada"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:286
+#: core/libs/timeadjust/timeadjustsettings.cpp:288
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "S'ha actualitzat la marca de temps"
@@ -37949,7 +37949,7 @@ msgstr "Error en la suma de verificació."
 msgid "Cannot open target file."
 msgstr "No s'ha pogut obrir el fitxer de destinació."
 
-#: core/libs/progressmanager/dlogoaction.cpp:56
+#: core/libs/progressmanager/dlogoaction.cpp:81
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Visiteu el lloc web del projecte digiKam"
@@ -38827,7 +38827,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:253
+#: core/libs/timeadjust/timeadjustsettings.cpp:255
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -42113,101 +42113,107 @@ msgid "File name timestamp"
 msgstr "Marca de temps del nom de fitxer"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:150
-#: core/libs/timeadjust/timeadjustsettings.cpp:246
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, kde-format
 msgid "File last modified"
 msgstr "Última modificació del fitxer"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:159
+#: core/libs/timeadjust/timeadjustsettings.cpp:155
+#, fuzzy, kde-format
+#| msgid "File date"
+msgid "File created"
+msgstr "Data del fitxer"
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr "Exif/IPTC/XMP"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:160
-#: core/libs/timeadjust/timeadjustsettings.cpp:247
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgid "EXIF: created"
 msgstr "Exif: creació"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "EXIF: original"
 msgstr "Exif: original"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "Exif: digitalització"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:163
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid "IPTC: created"
 msgstr "IPTC: creació"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
 #, kde-format
 msgid "XMP: created"
 msgstr "XMP: creació"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:167
 #, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "Exif: creació (aproximada)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr "Exif: original (aproximada)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:169
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr "Exif: digitalització (aproximada)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:177
+#: core/libs/timeadjust/timeadjustsettings.cpp:179
 #, kde-format
 msgid "Reset to current date"
 msgstr "Reinicialitza a la data actual"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:209
+#: core/libs/timeadjust/timeadjustsettings.cpp:211
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "Copia valor"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:210
+#: core/libs/timeadjust/timeadjustsettings.cpp:212
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "Afegeix"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:211
+#: core/libs/timeadjust/timeadjustsettings.cpp:213
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Resta"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:215
+#: core/libs/timeadjust/timeadjustsettings.cpp:217
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Interval"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:221
+#: core/libs/timeadjust/timeadjustsettings.cpp:223
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "dies"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:224
+#: core/libs/timeadjust/timeadjustsettings.cpp:226
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr "Determina la diferència des del rellotge d'una fotografia"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:225
+#: core/libs/timeadjust/timeadjustsettings.cpp:227
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
@@ -42215,32 +42221,32 @@ msgstr ""
 "Cliqueu o arrossegueu i deixeu anar una fotografia en el botó per a triar el "
 "rellotge d'una fotografia"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:243
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr "Actualitza les marques de temps amb l'ExifTool"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:244
+#: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, kde-format
 msgid "Use this option primarily with video files"
 msgstr "Utilitza aquesta opció principalment amb fitxers de vídeo"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "Actualitza només les marques de temps existents"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:250
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "Exif: Miniatura"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:254
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: Vídeo"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:285
+#: core/libs/timeadjust/timeadjustsettings.cpp:287
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Ajustos de la marca de temps"
@@ -44558,37 +44564,37 @@ msgstr "Comprova si hi ha una versió nova..."
 msgid "Database Statistics"
 msgstr "Estadístiques de la base de dades"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Commuta la barra lateral esquerra"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Commuta la barra lateral dreta"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Pestanya anterior de la barra lateral esquerra"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Pestanya següent de la barra lateral esquerra"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Pestanya anterior de la barra lateral dreta"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:179
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Pestanya següent de la barra lateral dreta"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:203
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Mostra la barra d'estat"
