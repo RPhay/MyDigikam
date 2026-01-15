@@ -305,6 +305,9 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelTags             = new QLabel(QString(), w6);
     d->labelTags->setWordWrap(true);
     d->labelTags->setAlignment(Qt::AlignRight);
+    QPalette pal             = d->labelTags->palette();
+    pal.setColor(QPalette::WindowText, qApp->palette().color(QPalette::Link));
+    d->labelTags->setPalette(pal);
 
     d->peoples               = new DTextLabelName(i18nc("@label: item properties", "People: "),      w6);
     d->labelPeoples          = new QLabel(QString(), w6);
