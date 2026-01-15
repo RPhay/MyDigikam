@@ -67,10 +67,10 @@ public:
 
 public:
 
-    int           progressCount   = 0;          ///< Animation position (0 à 35).
-    QTimer*       progressTimer   = nullptr;
+    int           progressCount   = 0;          ///< Animation position (0 to 35).
+    QTimer*       progressTimer   = nullptr;    ///< The timer to manage the animation.
     QIcon         logo;                         ///< Store the original icon.
-    int           logoHeight      = 48;
+    int           logoHeight      = 48;         ///< The max size of icon hosted in toolbar.
 };
 
 DLogoAction::DLogoAction(QObject* const parent)
@@ -155,8 +155,8 @@ QPixmap DLogoAction::renderAnimationFrame(int beamPosition)
 
     // Lightening settings.
 
-    int beamWidth     = frame.height(); // Lightening width (ajustable).
-    int halfBeamWidth = beamWidth / 2;  // half width for the symetrical gradient.
+    int beamWidth     = frame.height();     // Lightening width (ajustable).
+    int halfBeamWidth = beamWidth / 6;      // half width for the symetrical gradient.
 
     // Apply the lightening with a symetrical gradient.
 
@@ -164,7 +164,7 @@ QPixmap DLogoAction::renderAnimationFrame(int beamPosition)
     {
         for (int x = 0 ; x < frame.width() ; ++x)
         {
-            // Checl if the pixel is transparent.
+            // Check if the pixel is transparent.
 
             if (qAlpha(frameImage.pixel(x, y)) > 0)
             {
@@ -178,7 +178,7 @@ QPixmap DLogoAction::renderAnimationFrame(int beamPosition)
                 {
                     // Compute the intensity (symetrical gradient).
 
-                    float intensity = 1.0f - (static_cast<float>(distToCenter) / halfBeamWidth);
+                    float intensity = 1.0F - (static_cast<float>(distToCenter) / halfBeamWidth);
                     intensity       = qMin(intensity, 1.0f); // Limit to 1.0
 
                     // Apply the intensity to the pixel.
@@ -198,11 +198,17 @@ QPixmap DLogoAction::renderAnimationFrame(int beamPosition)
 
 void DLogoAction::slotProgressTimerDone()
 {
-    int beamPosition = (d->progressCount * (d->logoHeight * 4.5 - (d->logoHeight / 2))) / 36;
+    int beamPosition = d->progressCount * (d->logoHeight / 5);
     QPixmap frame    = renderAnimationFrame(beamPosition);
     setIcon(frame);
 
-    d->progressCount = (d->progressCount + 1) % 36;
+    d->progressCount++;
+
+    if (d->progressCount > d->logoHeight)
+    {
+        d->progressCount = 0;
+    }
+
     d->progressTimer->start(100);
 }
 
