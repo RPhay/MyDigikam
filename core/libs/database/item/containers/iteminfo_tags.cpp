@@ -82,42 +82,6 @@ QList<int> ItemInfo::tagIds() const
     return ids;
 }
 
-void ItemInfoList::loadTagIds() const
-{
-    ItemInfoList infoList;
-
-    for (const ItemInfo& info : std::as_const(*this))
-    {
-        if (info.m_data && !info.m_data->tagIdsCached)
-        {
-            infoList << info;
-        }
-    }
-
-    if (infoList.isEmpty())
-    {
-        return;
-    }
-
-    QVector<QList<int> > allTagIds = CoreDbAccess().db()->getItemsTagIDs(infoList.toImageIdList());
-
-    ItemInfoWriteLocker lock;
-
-    for (int i = 0 ; i < infoList.size() ; ++i)
-    {
-        const ItemInfo& info  = infoList.at(i);
-        const QList<int>& ids = allTagIds.at(i);
-
-        if (!info.m_data)
-        {
-            continue;
-        }
-
-        info.m_data.data()->tagIds       = ids;
-        info.m_data.data()->tagIdsCached = true;
-    }
-}
-
 ItemTagPair ItemInfo::imageTagPair(int tagId) const
 {
     if (!m_data)
