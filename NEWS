@@ -419,7 +419,7 @@ BUGFIXES:
 348 --> 477277 - Allow horizontal scrolling in preview mode with shift-scroll.
 349 --> 359087 - Preview image scroll position should be smarter when changing between images with different resolutions.
 350 --> 440787 - Add new tool to perform a Survey View as LR.
-351 --> 
+351 --> 484197 - High DPI support gone. Barely usable. Back to 8.2.0.
 352 --> 
 353 --> 
 354 --> 
