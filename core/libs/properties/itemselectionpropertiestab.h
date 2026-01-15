@@ -23,7 +23,7 @@
 
 // Local includes
 
-#include "dexpanderbox.h"
+#include "dlayoutbox.h"
 #include "iteminfo.h"
 #include "thumbnailloadthread.h"
 
@@ -32,7 +32,7 @@ namespace Digikam
 
 class ItemFilterModel;
 
-class ItemSelectionPropertiesTab : public DExpanderBox
+class ItemSelectionPropertiesTab : public DVBox
 {
     Q_OBJECT
 

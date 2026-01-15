@@ -19,6 +19,7 @@
 
 #include <QApplication>
 #include <QGridLayout>
+#include <QGroupBox>
 #include <QStyle>
 #include <QTreeWidget>
 #include <QHeaderView>
@@ -72,22 +73,21 @@ public:
     ItemsGroupedView* treeSelectionGroups  = nullptr;
     ItemsGroupedView* treeTotalGroups      = nullptr;
 
-    QWidget*          select               = nullptr;
-    QWidget*          total                = nullptr;
+    QGroupBox*        select               = nullptr;
+    QGroupBox*        total                = nullptr;
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
-    : DExpanderBox(parent),
-      d           (new Private)
+    : DVBox(parent),
+      d    (new Private)
 {
     setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
+    const int spacing                     = layoutSpacing();
 
     // --------------------------------------------------
 
-    const int spacing                     = layoutSpacing();
-
-    d->select                             = new QWidget(this);
+    d->select                             = new QGroupBox(i18n("Selected Item Properties"), this);
     QGridLayout* const grid1              = new QGridLayout(d->select);
 
     DTextLabelName* const selectionCount  = new DTextLabelName(i18n("Count: "),  d->select);
@@ -112,11 +112,9 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     grid1->setRowStretch(3, 10);
     grid1->setSpacing(0);
 
-    insertItem(ItemSelectionPropertiesTab::Private::SelectionItemProperties, d->select,
-               QIcon::fromTheme(QLatin1String("dialog-information")),
-               i18n("Selected Item Properties"), QLatin1String("Selection Properties"), true);
+    // ---
 
-    d->total                              = new QWidget(this);
+    d->total                              = new QGroupBox(i18n("All Item Properties"), this);
     QGridLayout* const grid2              = new QGridLayout(d->total);
 
     DTextLabelName* const totalCount      = new DTextLabelName(i18n("Count: "),  d->total);
@@ -141,10 +139,6 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     grid2->setColumnStretch(1, 25);
     grid2->setRowStretch(3, 10);
     grid2->setSpacing(0);
-
-    insertItem(ItemSelectionPropertiesTab::Private::AlbumItemProperties, d->total,
-               QIcon::fromTheme(QLatin1String("folder")),
-               i18n("All Item Properties"), QLatin1String("All Item Properties"), true);
 }
 
 ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
@@ -156,7 +150,8 @@ void ItemSelectionPropertiesTab::setSelectionCount(int count)
 {
     d->labelSelectionCount->setAdjustedText(QLocale().toString(count));
 
-    widget(ItemSelectionPropertiesTab::Private::SelectionItemProperties)->setVisible(count != 0);
+    d->select->setVisible(count != 0);
+    d->total->setVisible(count == 0);
 }
 
 void ItemSelectionPropertiesTab::setSelectionSize(const QString& str)
@@ -176,13 +171,14 @@ void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
 
 void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& totalGroup, const ItemInfoList& selectedGroup)
 {
+    d->labelSelectionGroups->setAdjustedText(QString::number(selectedGroup.count()));
+    d->treeSelectionGroups->setGroups(selectedGroup);
+
     d->labelTotalGroups->setAdjustedText(QString::number(totalGroup.count()));
     d->treeTotalGroups->setGroups(totalGroup);
-
+/*
     if (!selectedGroup.isEmpty())
     {
-        d->labelSelectionGroups->setAdjustedText(QString::number(selectedGroup.count()));
-        d->treeSelectionGroups->setGroups(selectedGroup);
         d->selectionGroups->setVisible(true);
         d->labelSelectionGroups->setVisible(true);
         d->treeSelectionGroups->setVisible(true);
@@ -193,6 +189,7 @@ void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& totalGroup, const
         d->labelSelectionGroups->setVisible(false);
         d->treeSelectionGroups->setVisible(false);
     }
+*/
 }
 
 void ItemSelectionPropertiesTab::setItemFilterModel(ItemFilterModel* const model)
