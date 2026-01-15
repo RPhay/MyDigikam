@@ -176,20 +176,6 @@ void ItemSelectionPropertiesTab::setGroups(const ItemInfoList& totalGroup, const
 
     d->labelTotalGroups->setAdjustedText(QString::number(totalGroup.count()));
     d->treeTotalGroups->setGroups(totalGroup);
-/*
-    if (!selectedGroup.isEmpty())
-    {
-        d->selectionGroups->setVisible(true);
-        d->labelSelectionGroups->setVisible(true);
-        d->treeSelectionGroups->setVisible(true);
-    }
-    else
-    {
-        d->selectionGroups->setVisible(false);
-        d->labelSelectionGroups->setVisible(false);
-        d->treeSelectionGroups->setVisible(false);
-    }
-*/
 }
 
 void ItemSelectionPropertiesTab::setItemFilterModel(ItemFilterModel* const model)
