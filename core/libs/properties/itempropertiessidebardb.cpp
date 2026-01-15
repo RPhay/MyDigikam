@@ -887,11 +887,13 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
     qint64 selectionFileSize   = 0;
     auto restInfos             = d->allInfos;
     ItemInfoList selectionGroups;
+    QHash<QString, int> selectionMimes;
 
     for (const ItemInfo& info : std::as_const(d->currentInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
+        selectionMimes.insert(info.format(), selectionMimes.value(info.format()) + 1);
 
         if (info.hasGroupedImages())
         {
@@ -902,18 +904,22 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
     }
 
     d->selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
+    d->selectionPropertiesTab->setSelectionMimes(selectionMimes);
+    d->selectionPropertiesTab->setSelectionGroups(selectionGroups);
 
     // -- Total Album Items Properties
 
     d->selectionPropertiesTab->setTotalCount(d->allInfos.count());
 
-    qint64 totalFileSize     = selectionFileSize;
-    ItemInfoList totalGroups = selectionGroups;
+    qint64 totalFileSize           = selectionFileSize;
+    ItemInfoList totalGroups       = selectionGroups;
+    QHash<QString, int> totalMimes = selectionMimes;
 
     for (const ItemInfo& info : std::as_const(restInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         totalFileSize += info.fileSize();
+        totalMimes.insert(info.format(), totalMimes.value(info.format()) + 1);
 
         if (info.hasGroupedImages())
         {
@@ -922,8 +928,9 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
     }
 
     d->selectionPropertiesTab->setTotalSize(ItemPropertiesTab::humanReadableBytesCount(totalFileSize));
+    d->selectionPropertiesTab->setTotalMimes(totalMimes);
 
-    d->selectionPropertiesTab->setGroups(totalGroups, selectionGroups);
+    d->selectionPropertiesTab->setTotalGroups(totalGroups);
 
     return;
 }

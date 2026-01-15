@@ -43,11 +43,13 @@ public:
 
     void setSelectionCount(int count);
     void setSelectionSize(const QString& str);
+    void setSelectionMimes(const QHash<QString, int>& mimes);
+    void setSelectionGroups(const ItemInfoList& groups);
+
     void setTotalCount(int count);
     void setTotalSize(const QString& str);
-
-    void setGroups(const ItemInfoList& totalGroup,
-                   const ItemInfoList& selectedGroup = ItemInfoList());
+    void setTotalMimes(const QHash<QString, int>& mimes);
+    void setTotalGroups(const ItemInfoList& groups);
 
     void setItemFilterModel(ItemFilterModel* const model);
 
