@@ -26,6 +26,20 @@ void SetupMisc::setupBehavior()
     QWidget* const behaviorPanel      = new QWidget(d->tab);
     QGridLayout* const layout         = new QGridLayout(behaviorPanel);
 
+    QLabel* const startupNote = new QLabel(i18nc("@info",
+                                                 "<font color='black'><i><b>⚠️Warning:</b> "
+                                                 "These settings make startup slower! Read the "
+                                                 "<a href=\"%1\">online documentation</a> carefully first.</i></font>",
+                                                 QString::fromUtf8("https://docs.digikam.org/en/setup_application/miscs_settings.html#behavior-settings")),
+                                           this);
+    startupNote->setOpenExternalLinks(true);
+    startupNote->setTextFormat(Qt::RichText);
+    startupNote->setFocusPolicy(Qt::NoFocus);
+    startupNote->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
+    startupNote->setWordWrap(true);
+    startupNote->setAlignment(Qt::AlignCenter);
+    startupNote->setStyleSheet(QLatin1String("QLabel { background-color: #ffcccc; border: none; padding: 5px; }"));
+
     d->scanAtStart                    = new QCheckBox(i18n("&Scan for new items at startup"), behaviorPanel);
     d->scanAtStart->setToolTip(i18n("Set this option to force digiKam to scan all collections for new items to\n"
                                     "register new elements in database. The scan is performed in the background through\n"
@@ -53,20 +67,6 @@ void SetupMisc::setupBehavior()
                                      "the database object wastes space.\n"
                                      "This option does not clean up other databases as the thumbnails or recognition db.\n"
                                      "For clean up routines for other databases, please use the maintenance."));
-
-    QLabel* const startupNote = new QLabel(i18nc("@info",
-                                                 "<font color='black'><i><b>⚠️Warning:</b> "
-                                                 "These settings make startup slower! Read the "
-                                                 "<a href=\"%1\">online documentation</a> carefully first.</i></font>",
-                                                 QString::fromUtf8("https://docs.digikam.org/en/setup_application/miscs_settings.html#behavior-settings")),
-                                           this);
-    startupNote->setOpenExternalLinks(true);
-    startupNote->setTextFormat(Qt::RichText);
-    startupNote->setFocusPolicy(Qt::NoFocus);
-    startupNote->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
-    startupNote->setWordWrap(true);
-    startupNote->setAlignment(Qt::AlignCenter);
-    startupNote->setStyleSheet(QLatin1String("QLabel { background-color: #ffcccc; border: none; padding: 5px; }"));
 
     // ---------------------------------------------------------
 
@@ -170,12 +170,12 @@ void SetupMisc::setupBehavior()
 
     layout->setContentsMargins(d->spacing, d->spacing, d->spacing, d->spacing);
     layout->setSpacing(d->spacing);
-    layout->addWidget(d->scanAtStart,                             0, 0, 1, 4);
-    layout->addWidget(d->useFastScan,                             1, 3, 1, 1);
-    layout->addWidget(d->detectFaces,                             2, 0, 1, 4);
-    layout->addWidget(d->faceRecognitionBackgroundScan,           3, 0, 1, 4);
-    layout->addWidget(d->cleanAtStart,                            4, 0, 1, 4);
-    layout->addWidget(startupNote,                                5, 0, 1, 4);
+    layout->addWidget(startupNote,                                0, 0, 1, 4);
+    layout->addWidget(d->scanAtStart,                             1, 0, 1, 4);
+    layout->addWidget(d->useFastScan,                             2, 3, 1, 1);
+    layout->addWidget(d->detectFaces,                             3, 0, 1, 4);
+    layout->addWidget(d->faceRecognitionBackgroundScan,           4, 0, 1, 4);
+    layout->addWidget(d->cleanAtStart,                            5, 0, 1, 4);
     layout->addWidget(new DLineWidget(Qt::Horizontal),            6, 0, 1, 4);
     layout->addWidget(d->showTrashDeleteDialogCheck,              7, 0, 1, 4);
     layout->addWidget(d->showPermanentDeleteDialogCheck,          8, 0, 1, 4);
