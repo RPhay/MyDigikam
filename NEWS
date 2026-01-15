@@ -420,7 +420,7 @@ BUGFIXES:
 349 --> 359087 - Preview image scroll position should be smarter when changing between images with different resolutions.
 350 --> 440787 - Add new tool to perform a Survey View as LR.
 351 --> 484197 - High DPI support gone. Barely usable. Back to 8.2.0.
-352 --> 
+352 --> 514294 - Language mix in UI.
 353 --> 
 354 --> 
 355 --> 
