@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool               paintExtras                  = true;
     bool               onMouseMovePreviewToggled    = true;
     int                renderingPreviewMode         = PreviewToolBar::PreviewBothImagesVertCont;
@@ -58,7 +60,8 @@ public:
 };
 
 ImageRegionItem::ImageRegionItem(ImageRegionWidget* const widget, bool paintExtras)
-    : dd(new Private)
+    : GraphicsDImgItem(),
+      dd              (new Private)
 {
     dd->view        = widget;
     dd->iface       = new ImageIface;
@@ -66,7 +69,6 @@ ImageRegionItem::ImageRegionItem(ImageRegionWidget* const widget, bool paintExtr
 
     setDisplayWidget(widget);
     setAcceptHoverEvents(true);
-    setImage(dd->iface->original() ? dd->iface->original()->copy() : DImg());
 }
 
 ImageRegionItem::~ImageRegionItem()
@@ -78,6 +80,11 @@ ImageRegionItem::~ImageRegionItem()
 QRect ImageRegionItem::getImageRegion() const
 {
     return dd->drawRect;
+}
+
+void ImageRegionItem::initOriginalImage()
+{
+    setImage(dd->iface->original() ? dd->iface->original()->copy() : DImg());
 }
 
 void ImageRegionItem::setTargetImage(const DImg& img)

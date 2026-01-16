@@ -54,8 +54,7 @@ public:
     GraphicsDImgItem*         item              = nullptr;
     SinglePhotoPreviewLayout* layout            = nullptr;
 
-    QToolButton*              cornerButton      = nullptr;
-    PanIconFrame*             panIconPopup      = nullptr;
+    PanIconWidget*            pan               = nullptr;
 
     QPoint                    mousePressPos;
     QPoint                    panningScrollPos;

@@ -24,6 +24,8 @@
 #include <QScrollBar>
 #include <QMimeData>
 #include <QApplication>
+#include <QGridLayout>
+#include <QStyle>
 
 // KDE includes
 
@@ -43,6 +45,7 @@
 #include "clickdragreleaseitem.h"
 #include "rubberitem.h"
 #include "autorotator.h"
+#include "paniconwidget.h"
 
 namespace Digikam
 {
@@ -74,7 +77,30 @@ Canvas::Canvas(QWidget* const parent)
     setFrameStyle(QFrame::NoFrame);
     addRubber();
     layout()->fitToWindow();
-    installPanIcon();
+
+    // ---
+
+    PanIconWidget* const pan = installPanIcon();
+
+    connect(d->canvasItem, &ImagePreviewItem::imageChanged,
+            this, [this]()
+        {
+            updatePanIconWidget();
+        }
+    );
+
+    // ---
+
+    QGridLayout* const grid = new QGridLayout(this);
+    grid->addWidget(pan, 2, 2, 1, 1);
+    grid->setContentsMargins(QMargins(0, 0,
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent),
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent)));
+    grid->setSpacing(layoutSpacing());
+    grid->setRowStretch(1, 1);
+    grid->setColumnStretch(1, 1);
+
+    // ---
 
     setAcceptDrops(true);
     viewport()->setAcceptDrops(true);

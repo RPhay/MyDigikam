@@ -24,6 +24,9 @@
 
 #include <QTimer>
 #include <QIcon>
+#include <QStyle>
+#include <QApplication>
+#include <QGridLayout>
 
 // KDE includes
 
@@ -36,6 +39,7 @@
 #include "previewtoolbar.h"
 #include "singlephotopreviewlayout.h"
 #include "dimgitems_p.h"
+#include "paniconwidget.h"
 
 namespace Digikam
 {
@@ -57,7 +61,7 @@ public:
     int              oldRenderingPreviewMode    = PreviewToolBar::PreviewBothImagesVertCont;
 
     QPolygon         hightlightPoints;
-
+    PanIconWidget*   pan                        = nullptr;
     QTimer*          delay                      = nullptr;
 
     ImageRegionItem* item                       = nullptr;
@@ -67,9 +71,6 @@ ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
     : GraphicsDImgView(parent),
       d_ptr           (new Private)
 {
-    d_ptr->item = new ImageRegionItem(this, paintExtras);
-    setItem(d_ptr->item);
-
     setAttribute(Qt::WA_DeleteOnClose);
     setFrameStyle(QFrame::NoFrame);
     setMinimumSize(480, 320);
@@ -77,6 +78,9 @@ ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
                       "which will be used for the preview computation.</p>"
                       "<p>Click and drag the mouse cursor in the "
                       "image to change the clip focus.</p>"));
+
+    d_ptr->item = new ImageRegionItem(this, paintExtras);
+    setItem(d_ptr->item);
 
     d_ptr->delay = new QTimer(this);
     d_ptr->delay->setInterval(500);
@@ -89,7 +93,30 @@ ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
             this, SLOT(slotOriginalImageRegionChangedDelayed()));
 
     layout()->fitToWindow();
-    installPanIcon();
+
+    // ---
+
+    d_ptr->pan = installPanIcon();
+
+    connect(d_ptr->item, &ImageRegionItem::imageChanged,
+            this, [this]()
+        {
+            updatePanIconWidget();
+        }
+    );
+
+    // ---
+
+    QGridLayout* const grid = new QGridLayout(this);
+    grid->addWidget(d_ptr->pan, 2, 2, 1, 1);
+    grid->setContentsMargins(QMargins(0, 0,
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent),
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent)));
+    grid->setSpacing(layoutSpacing());
+    grid->setRowStretch(1, 1);
+    grid->setColumnStretch(1, 1);
+
+    d_ptr->item->initOriginalImage();
 }
 
 ImageRegionWidget::~ImageRegionWidget()
@@ -136,6 +163,14 @@ void ImageRegionWidget::slotPreviewModeChanged(int mode)
     viewport()->update();
 }
 
+void ImageRegionWidget::slotPanIconSelectionMoved(const QRect& imageRect, bool b)
+{
+    if (b)
+    {
+        GraphicsDImgView::slotPanIconSelectionMoved(imageRect, b);
+    }
+}
+
 QRect ImageRegionWidget::getOriginalImageRegionToRender() const
 {
     QRect  r = d_ptr->item->getImageRegion();
@@ -147,6 +182,11 @@ QRect ImageRegionWidget::getOriginalImageRegionToRender() const
     int h    = qRound((double)r.height() / z);
 
     QRect rect(x, y, w, h);
+
+
+qDebug() <<"ImageRegionWidget::getOriginalImageRegionToRender()"<< r;
+qDebug() <<"ImageRegionWidget::getOriginalImageRegionToRender()"<< z;
+qDebug() <<"ImageRegionWidget::getOriginalImageRegionToRender()"<< rect;
 
     return (rect);
 }

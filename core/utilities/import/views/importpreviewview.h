@@ -52,6 +52,7 @@ public:
 
 private:
 
+    void setupOverlays();
     QString identifyCategoryforMime(const QString& mime);
 
 Q_SIGNALS:

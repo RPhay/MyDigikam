@@ -94,6 +94,7 @@ private:
 private Q_SLOTS:
 
     void slotOriginalImageRegionChangedDelayed();
+    void slotPanIconSelectionMoved(const QRect&, bool);
 
 private:
 

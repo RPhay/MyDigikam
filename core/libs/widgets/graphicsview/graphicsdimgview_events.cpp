@@ -141,6 +141,10 @@ void GraphicsDImgView::resizeEvent(QResizeEvent* e)
     QGraphicsView::resizeEvent(e);
     d->layout->updateZoomAndSize();
 
+    // Manage the visibility of the pan icon widget automatically if one scrollbar is visible.
+
+    d->pan->setVisible(verticalScrollBar()->isVisible() || horizontalScrollBar()->isVisible());
+
     Q_EMIT resized();
     Q_EMIT viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
 }

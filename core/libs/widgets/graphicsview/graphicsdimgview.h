@@ -30,6 +30,7 @@ namespace Digikam
 class GraphicsDImgItem;
 class DImgPreviewItem;
 class SinglePhotoPreviewLayout;
+class PanIconWidget;
 
 class DIGIKAM_EXPORT GraphicsDImgView : public QGraphicsView
 {
@@ -54,7 +55,7 @@ public:
 
     /**
      * @return a cast of item instance of item set by setItem() as DImgPreviewItem
-     * @note if you store a GraphicsDImgItem object using setItem(), this method will return 0.
+     * @note if you store a GraphicsDImgItem object using setItem(), this method will return nullptr.
      */
     DImgPreviewItem*          previewItem() const;
 
@@ -80,14 +81,14 @@ public:
     void  fitToWindow();
     void  toggleFullScreen(bool set);
 
-    void setMagnifierZoomFactor(qreal factor);
+    void  setMagnifierZoomFactor(qreal factor);
     qreal magnifierZoomFactor()             const;
 
-    void setMagnifierSize(int size);
-    int magnifierSize()                     const;
+    void  setMagnifierSize(int size);
+    int   magnifierSize()                   const;
 
-    void setMagnifierVisible(bool b);
-    bool isMagnifierVisible()               const;
+    void  setMagnifierVisible(bool b);
+    bool  isMagnifierVisible()              const;
 
 Q_SIGNALS:
 
@@ -100,16 +101,17 @@ Q_SIGNALS:
     void toPreviousImage();
     void contentsMoved(bool panningFinished);
     void resized();
-/*
-    void contentTakeFocus();
-*/
+
+    void signalZoomFactorChanged();
+
     void viewportRectChanged(const QRectF& viewportRect);
 
 protected:
 
     void drawForeground(QPainter* painter, const QRectF& rect)  override;
 
-    void installPanIcon();
+    PanIconWidget* installPanIcon();
+    void updatePanIconWidget();
 
     bool viewportEvent(QEvent*)                                 override;
     void mouseDoubleClickEvent(QMouseEvent*)                    override;
@@ -134,8 +136,7 @@ protected Q_SLOTS:
 
     void         slotZoomFactorChanged();
     void         slotContentsMoved();
-    void         slotCornerButtonPressed();
-    void         slotPanIconHidden();
+    void         slotRefreshPanIconSelection();
 
     virtual void slotPanIconSelectionMoved(const QRect&, bool);
 

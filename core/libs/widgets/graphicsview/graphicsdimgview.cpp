@@ -93,7 +93,6 @@ void GraphicsDImgView::setShowText(bool val)
     d->showText = val;
 }
 
-
 QRect GraphicsDImgView::visibleArea() const
 {
     return (mapToScene(viewport()->geometry()).boundingRect().toRect());
@@ -154,6 +153,8 @@ void GraphicsDImgView::slotZoomFactorChanged()
     {
         updateMagnifier();
     }
+
+    Q_EMIT signalZoomFactorChanged();
 }
 
 } // namespace Digikam

@@ -16,11 +16,13 @@
 
 // Qt includes
 
+#include <QStyle>
 #include <QString>
 #include <QPainter>
 #include <QFileInfo>
 #include <QFontMetrics>
 #include <QApplication>
+#include <QGridLayout>
 
 // KDE includes
 
@@ -33,6 +35,7 @@
 #include "editorcore.h"
 #include "singlephotopreviewlayout.h"
 #include "imagepreviewitem.h"
+#include "paniconwidget.h"
 
 namespace DigikamRawImportNativePlugin
 {
@@ -42,6 +45,8 @@ class Q_DECL_HIDDEN RawPreview::Private
 public:
 
     Private() = default;
+
+public:
 
     double                 currentFitWindowZoom = 0.0;
 
@@ -72,7 +77,29 @@ RawPreview::RawPreview(const QUrl& url, QWidget* const parent)
 
     layout()->fitToWindow();
 
-    installPanIcon();
+    // ---
+
+    PanIconWidget* const pan = installPanIcon();
+
+    connect(d->item, &ImagePreviewItem::imageChanged,
+            this, [this]()
+        {
+            updatePanIconWidget();
+        }
+    );
+
+    // ---
+
+    QGridLayout* const grid = new QGridLayout(this);
+    grid->addWidget(pan, 2, 2, 1, 1);
+    grid->setContentsMargins(QMargins(0, 0,
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent),
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent)));
+    grid->setSpacing(layoutSpacing());
+    grid->setRowStretch(1, 1);
+    grid->setColumnStretch(1, 1);
+
+    // ---
 
     setMinimumWidth(500);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);

@@ -22,6 +22,8 @@
 #include <QMenu>
 #include <QApplication>
 #include <QIcon>
+#include <QStyle>
+#include <QGridLayout>
 
 // KDE includes
 
@@ -36,6 +38,7 @@
 #include "thememanager.h"
 #include "importsettings.h"
 #include "previewsettings.h"
+#include "paniconwidget.h"
 
 namespace Digikam
 {
@@ -174,9 +177,9 @@ ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
 
     layout()->fitToWindow();
 
-    // ------------------------------------------------------------
+    setupOverlays();
 
-    installPanIcon();
+    // ------------------------------------------------------------
 
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -194,22 +197,7 @@ ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
     d->peopleToggleAction = new Qaction(QIcon::fromTheme(QLatin1String("im-user")),          i18n("Show Face Tags"),                 this);
     d->peopleToggleAction->setCheckable(true);
 */
-    d->toolBar = new QToolBar(this);
 
-    if (mode == IconViewPreview)
-    {
-        d->toolBar->addAction(d->prevAction);
-        d->toolBar->addAction(d->nextAction);
-        d->toolBar->addAction(d->escapePreviewAction);
-    }
-
-    d->toolBar->addAction(d->rotLeftAction);
-    d->toolBar->addAction(d->rotRightAction);
-/*
-    FIXME
-    d->toolBar->addAction(d->peopleToggleAction);
-    d->toolBar->addAction(d->addPersonAction);
-*/
     connect(d->prevAction, SIGNAL(triggered()),
             this, SIGNAL(toPreviousImage()));
 
@@ -259,6 +247,49 @@ ImportPreviewView::~ImportPreviewView()
 {
     delete d->item;
     delete d;
+}
+
+void ImportPreviewView::setupOverlays()
+{
+    d->toolBar = new QToolBar(this);
+
+    if (d->mode == IconViewPreview)
+    {
+        d->toolBar->addAction(d->prevAction);
+        d->toolBar->addAction(d->nextAction);
+        d->toolBar->addAction(d->escapePreviewAction);
+    }
+
+    d->toolBar->addAction(d->rotLeftAction);
+    d->toolBar->addAction(d->rotRightAction);
+/*
+    FIXME
+    d->toolBar->addAction(d->peopleToggleAction);
+    d->toolBar->addAction(d->addPersonAction);
+*/
+
+    // ---
+
+    PanIconWidget* const pan = installPanIcon();
+
+    connect(d->item, &DImgPreviewItem::stateChanged,
+            this, [this]()
+        {
+            updatePanIconWidget();
+        }
+    );
+
+    // ---
+
+    QGridLayout* const grid = new QGridLayout(this);
+    grid->addWidget(d->toolBar,   0, 0, 1, 1);
+    grid->addWidget(pan,          2, 2, 1, 1);
+    grid->setContentsMargins(QMargins(0, 0,
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent),
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent)));
+    grid->setSpacing(layoutSpacing());
+    grid->setRowStretch(1, 1);
+    grid->setColumnStretch(1, 1);
 }
 
 void ImportPreviewView::reload()

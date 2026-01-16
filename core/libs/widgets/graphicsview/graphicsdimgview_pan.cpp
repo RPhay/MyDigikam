@@ -18,75 +18,41 @@
 namespace Digikam
 {
 
-void GraphicsDImgView::installPanIcon()
+PanIconWidget* GraphicsDImgView::installPanIcon()
 {
-    d->cornerButton = PanIconWidget::button();
-    setCornerWidget(d->cornerButton);
+    d->pan                  = new PanIconWidget(this);
 
-    connect(d->cornerButton, SIGNAL(pressed()),
-            this, SLOT(slotCornerButtonPressed()));
+    connect(d->pan, &PanIconWidget::signalSelectionMoved,
+            this, &GraphicsDImgView::slotPanIconSelectionMoved);
+
+    connect(this, &GraphicsDImgView::contentsMoving,
+            this, &GraphicsDImgView::slotRefreshPanIconSelection);
+
+    connect(this, &GraphicsDImgView::signalZoomFactorChanged,
+            this, &GraphicsDImgView::slotRefreshPanIconSelection);
+
+    return d->pan;
 }
 
-void GraphicsDImgView::slotCornerButtonPressed()
+void GraphicsDImgView::updatePanIconWidget()
 {
-    if (d->panIconPopup)
-    {
-        d->panIconPopup->hide();
-        d->panIconPopup->deleteLater();
-        d->panIconPopup = nullptr;
-    }
-
-    d->panIconPopup          = new PanIconFrame(this);
-    PanIconWidget* const pan = new PanIconWidget(d->panIconPopup);
-/*
-    connect(pan, SIGNAL(signalSelectionTakeFocus()),
-            this, SIGNAL(signalContentTakeFocus()));
-*/
-    connect(pan, SIGNAL(signalSelectionMoved(QRect,bool)),
-            this, SLOT(slotPanIconSelectionMoved(QRect,bool)));
-
-    connect(pan, SIGNAL(signalHidden()),
-            this, SLOT(slotPanIconHidden()));
-
-    pan->setImage(180, 120, item()->image());
+    d->pan->setImage(180, 120, item()->image());
     QRectF sceneRect(mapToScene(viewport()->rect().topLeft()), mapToScene(viewport()->rect().bottomRight()));
-    pan->setRegionSelection(item()->zoomSettings()->sourceRect(sceneRect).toRect());
-    pan->setMouseFocus();
-    d->panIconPopup->setMainWidget(pan);
-/*
-    slotContentTakeFocus();
-*/
-    QPoint g = mapToGlobal(viewport()->pos());
-    g.setX(g.x()+ viewport()->size().width());
-    g.setY(g.y()+ viewport()->size().height());
-    d->panIconPopup->popup(QPoint(g.x() - d->panIconPopup->width(),
-                                  g.y() - d->panIconPopup->height()));
-
-    pan->setCursorToLocalRegionSelectionCenter();
+    d->pan->setRegionSelection(item()->zoomSettings()->sourceRect(sceneRect).toRect());
 }
 
-void GraphicsDImgView::slotPanIconHidden()
+void GraphicsDImgView::slotRefreshPanIconSelection()
 {
-    d->cornerButton->blockSignals(true);
-    d->cornerButton->animateClick();
-    d->cornerButton->blockSignals(false);
+    QRectF sceneRect(mapToScene(viewport()->rect().topLeft()), mapToScene(viewport()->rect().bottomRight()));
+    d->pan->setRegionSelection(item()->zoomSettings()->sourceRect(sceneRect).toRect());
 }
 
-void GraphicsDImgView::slotPanIconSelectionMoved(const QRect& imageRect, bool b)
+void GraphicsDImgView::slotPanIconSelectionMoved(const QRect& imageRect, bool /*b*/)
 {
     QRectF zoomRect = item()->zoomSettings()->mapImageToZoom(imageRect);
     qCDebug(DIGIKAM_WIDGETS_LOG) << imageRect << zoomRect;
     centerOn(item()->mapToScene(zoomRect.center()));
     viewport()->update();
-
-    if (b)
-    {
-        d->panIconPopup->hide();
-        d->panIconPopup->deleteLater();
-        d->panIconPopup = nullptr;
-        slotPanIconHidden();
-        //slotContentLeaveFocus();
-    }
 }
 
 void GraphicsDImgView::startPanning(const QPoint& pos)

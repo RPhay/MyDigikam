@@ -65,6 +65,8 @@
 #include "picklabelwidget.h"
 #include "coredbchangesets.h"
 #include "coredbwatch.h"
+#include "paniconwidget.h"
+#include "imagezoomsettings.h"
 
 namespace Digikam
 {
@@ -167,8 +169,6 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     layout()->fitToWindow();
 
     // ------------------------------------------------------------
-
-    installPanIcon();
 
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -423,11 +423,29 @@ void ItemPreviewView::setupOverlays()
 
     d->osd                  = new ItemPreviewOsd(&d->osdSettings, this);
 
-    QVBoxLayout* const vlay = new QVBoxLayout(this);
-    vlay->addWidget(d->toolBar);
-    vlay->addWidget(d->osd);
-    vlay->setContentsMargins(QMargins());
-    vlay->setSpacing(layoutSpacing());
+    // ---
+
+    PanIconWidget* const pan = installPanIcon();
+
+    connect(d->item, &DImgPreviewItem::stateChanged,
+            this, [this]()
+        {
+            updatePanIconWidget();
+        }
+    );
+
+    // ---
+
+    QGridLayout* const grid = new QGridLayout(this);
+    grid->addWidget(d->toolBar,   0, 0, 1, 1);
+    grid->addWidget(d->osd,       2, 0, 1, 1);
+    grid->addWidget(pan,          2, 2, 1, 1);
+    grid->setContentsMargins(QMargins(0, 0,
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent),
+                                      QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent)));
+    grid->setSpacing(layoutSpacing());
+    grid->setRowStretch(1, 1);
+    grid->setColumnStretch(1, 1);
 }
 
 void ItemPreviewView::setHostWindowActions(const HostActionsMap& actions)
@@ -441,7 +459,6 @@ void ItemPreviewView::reload()
 {
     previewItem()->reload();
 }
-
 
 void ItemPreviewView::slotItemLoaded()
 {
