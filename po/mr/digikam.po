@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:40+0000\n"
+"POT-Creation-Date: 2026-01-16 00:41+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -3182,7 +3182,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:522
+#: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4177,7 +4177,7 @@ msgstr "मार्ग"
 #: core/app/views/tableview/tableview_column_file.cpp:58
 #: core/app/views/tableview/tableview_column_file.cpp:91
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:489
 #, kde-format
 msgid "Size"
 msgstr "आकार"
@@ -4276,7 +4276,7 @@ msgstr "उंची"
 
 #: core/app/views/tableview/tableview_column_item.cpp:74
 #: core/app/views/tableview/tableview_column_item.cpp:103
-#: core/libs/properties/itempropertiestab.cpp:491
+#: core/libs/properties/itempropertiestab.cpp:494
 #, fuzzy, kde-format
 msgid "Dimensions"
 msgstr "परिमाणे"
@@ -8175,7 +8175,7 @@ msgstr "रंग पद्धत"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:510
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -23980,7 +23980,7 @@ msgid "Date"
 msgstr "दिनांक"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:524
+#: core/libs/properties/itempropertiestab.cpp:527
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, fuzzy, kde-format
@@ -37281,238 +37281,238 @@ msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "परवलीचे शब्द"
 
-#: core/libs/properties/itempropertiestab.cpp:309
+#: core/libs/properties/itempropertiestab.cpp:312
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "उदाहरण"
 
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:328
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "टॅग्स"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:347
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "स्थान"
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:369
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "उजवे"
 
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:485
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "फाईल"
 
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:486
 #, fuzzy, kde-format
 msgid "Folder"
 msgstr "संचयीका"
 
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
 msgid "Symlink"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:488
 #, fuzzy, kde-format
 #| msgid "Modified"
 msgid "Modified Date"
 msgstr "सुधारले"
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:490
 #, fuzzy, kde-format
 #| msgctxt "Owner of the file"
 #| msgid "Owner"
 msgid "Owner"
 msgstr "मालक"
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:491
 #, fuzzy, kde-format
 msgid "Permissions"
 msgstr "परवानगी"
 
-#: core/libs/properties/itempropertiestab.cpp:490
+#: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:495
 #, fuzzy, kde-format
 msgid "Ratio"
 msgstr "फिरवणे"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:496
 #, fuzzy, kde-format
 msgid "Bit Depth"
 msgstr "रंग खोली"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:497
 #, fuzzy, kde-format
 msgid "Color Mode"
 msgstr "रंग पद्धत"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:498
 #, kde-format
 msgid "Has Sidecar"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
 msgid "Has GPS"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:500
 #, fuzzy, kde-format
 msgid "Versioned"
 msgstr "विस्तारण:"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:501
 #, fuzzy, kde-format
 #| msgid "Group"
 msgid "Grouped"
 msgstr "समूह"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:503
 #, kde-format
 msgid "Make"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:504
 #, fuzzy, kde-format
 #| msgid "Model"
 msgid "Model"
 msgstr "मॉडेल"
 
-#: core/libs/properties/itempropertiestab.cpp:502
+#: core/libs/properties/itempropertiestab.cpp:505
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgid "Date Time"
 msgstr "दिनांक व वेळ"
 
-#: core/libs/properties/itempropertiestab.cpp:503
+#: core/libs/properties/itempropertiestab.cpp:506
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, fuzzy, kde-format
 msgid "Aperture"
 msgstr "एपेर्चर :"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:508
 #, fuzzy, kde-format
 msgid "Focal Length"
 msgstr "फोकल लांबी :"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:509
 #, fuzzy, kde-format
 msgid "Exposure Time"
 msgstr "एक्सपोजर वेळ :"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:511
 #, fuzzy, kde-format
 msgid "Exposure Mode"
 msgstr "एक्सपोजर वेळ :"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:512
 #, fuzzy, kde-format
 msgid "Flash"
 msgstr "सुधारले"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/utilities/setup/setuptooltip.cpp:256
 #, fuzzy, kde-format
 msgid "Video Aspect Ratio"
 msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
 
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:516
 #: core/utilities/setup/setuptooltip.cpp:268
 #, fuzzy, kde-format
 msgid "Video Duration"
 msgstr "कालावधी :"
 
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:517
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:518
 #, fuzzy, kde-format
 #| msgid "Audio Files"
 msgid "Video Video Codec"
 msgstr "ऑडिओ फाईल्स"
 
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:519
 #, fuzzy, kde-format
 msgid "Video Audio Bit Rate"
 msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:520
 #, kde-format
 msgid "Video Audio Channel Type"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:521
 #, fuzzy, kde-format
 #| msgid "Audio Files"
 msgid "Video Audio Codec"
 msgstr "ऑडिओ फाईल्स"
 
-#: core/libs/properties/itempropertiestab.cpp:520
+#: core/libs/properties/itempropertiestab.cpp:523
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgid "Caption"
 msgstr "कॅप्शन"
 
-#: core/libs/properties/itempropertiestab.cpp:521
+#: core/libs/properties/itempropertiestab.cpp:524
 #, fuzzy, kde-format
 #| msgid "Title"
 msgid "Title"
 msgstr "शिर्षक"
 
-#: core/libs/properties/itempropertiestab.cpp:523
+#: core/libs/properties/itempropertiestab.cpp:526
 #, fuzzy, kde-format
 msgid "Peoples"
 msgstr "उदाहरण"
 
-#: core/libs/properties/itempropertiestab.cpp:525
+#: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:526
+#: core/libs/properties/itempropertiestab.cpp:529
 #, kde-format
 msgid "Pick"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:527
+#: core/libs/properties/itempropertiestab.cpp:530
 #, fuzzy, kde-format
 #| msgid "Color"
 msgid "Color"
 msgstr "रंग"
 
-#: core/libs/properties/itempropertiestab.cpp:528
+#: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, fuzzy, kde-format
@@ -37538,30 +37538,30 @@ msgid " fps"
 msgstr ""
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:122
+#, fuzzy, kde-format
+msgid "Selected Item Properties"
+msgstr "गुणधर्म"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:96
+#: core/libs/properties/itemselectionpropertiestab.cpp:136
 #, kde-format
 msgid "Count: "
 msgstr "मोजणी : "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
+#: core/libs/properties/itemselectionpropertiestab.cpp:97
+#: core/libs/properties/itemselectionpropertiestab.cpp:137
 #, kde-format
 msgid "Size: "
 msgstr "आकार : "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:124
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
+#: core/libs/properties/itemselectionpropertiestab.cpp:138
 #, fuzzy, kde-format
 #| msgid "Group"
 msgid "Groups: "
 msgstr "समूह"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
-#, fuzzy, kde-format
-msgid "Selected Item Properties"
-msgstr "गुणधर्म"
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:147
+#: core/libs/properties/itemselectionpropertiestab.cpp:133
 #, fuzzy, kde-format
 msgid "All Item Properties"
 msgstr "गुणधर्म"
@@ -65699,12 +65699,20 @@ msgid ""
 "laptop computer."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, fuzzy, kde-format
 msgid "&Scan for new items at startup"
 msgstr "प्रतिमा"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:44
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -65721,12 +65729,12 @@ msgid ""
 "a manual scan through the maintenance tool at the right moment."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:52
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:53
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -65736,29 +65744,29 @@ msgid ""
 "option must be deactivated."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:59
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:60
 #, fuzzy, kde-format
 msgid "Enable background face recognition scan"
 msgstr "पार्श्वभूमी रंग :"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:61
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:64
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:65
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -65769,14 +65777,6 @@ msgid ""
 "This option does not clean up other databases as the thumbnails or "
 "recognition db.\n"
 "For clean up routines for other databases, please use the maintenance."
-msgstr ""
-
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, kde-format
-msgctxt "@info"
-msgid ""
-"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
-"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:40+0000\n"
+"POT-Creation-Date: 2026-01-16 00:41+0000\n"
 "PO-Revision-Date: 2026-01-06 14:27+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3140,7 +3140,7 @@ msgstr "Etiketarik gabeko albuma"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:522
+#: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4221,7 +4221,7 @@ msgstr "Bide-izena"
 #: core/app/views/tableview/tableview_column_file.cpp:58
 #: core/app/views/tableview/tableview_column_file.cpp:91
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:489
 #, kde-format
 msgid "Size"
 msgstr "Neurria"
@@ -4319,7 +4319,7 @@ msgstr "Altuera"
 
 #: core/app/views/tableview/tableview_column_item.cpp:74
 #: core/app/views/tableview/tableview_column_item.cpp:103
-#: core/libs/properties/itempropertiestab.cpp:491
+#: core/libs/properties/itempropertiestab.cpp:494
 #, kde-format
 msgid "Dimensions"
 msgstr "Dimentsioak"
@@ -8384,7 +8384,7 @@ msgstr "Kolore-kudeaketa ezgaituta dago..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:510
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -25142,7 +25142,7 @@ msgid "Date"
 msgstr "Data"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:524
+#: core/libs/properties/itempropertiestab.cpp:527
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -39732,7 +39732,7 @@ msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Gako-hitzak"
 
-#: core/libs/properties/itempropertiestab.cpp:309
+#: core/libs/properties/itempropertiestab.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
@@ -39740,261 +39740,261 @@ msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Jendartea"
 
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:328
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Etiketak"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:347
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Kokalekua"
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:369
 #, fuzzy, kde-format
 #| msgid "Rights"
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Eskubideak"
 
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:485
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "Fitxategia"
 
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:486
 #, fuzzy, kde-format
 #| msgid "Folder: "
 msgid "Folder"
 msgstr "Karpeta"
 
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
 msgid "Symlink"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:488
 #, fuzzy, kde-format
 #| msgid "Modified:"
 msgid "Modified Date"
 msgstr "Aldatutakoa:"
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:490
 #, fuzzy, kde-format
 #| msgctxt "Owner of the file"
 #| msgid "Owner"
 msgid "Owner"
 msgstr "Jabea"
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:491
 #, fuzzy, kde-format
 #| msgid "Permissions: "
 msgid "Permissions"
 msgstr "Baimenak"
 
-#: core/libs/properties/itempropertiestab.cpp:490
+#: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:495
 #, fuzzy, kde-format
 #| msgctxt "@info: tableview"
 #| msgid "Rational"
 msgid "Ratio"
 msgstr "Arrazionala"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:496
 #, fuzzy, kde-format
 #| msgid "Bit depth"
 msgid "Bit Depth"
 msgstr "Bit-sakonera"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:497
 #, fuzzy, kde-format
 #| msgid "Color Model"
 msgid "Color Mode"
 msgstr "Kolore-eredua"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:498
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Sidecars"
 msgid "Has Sidecar"
 msgstr "Sidekarrak"
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
 msgid "Has GPS"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:500
 #, fuzzy, kde-format
 msgid "Versioned"
 msgstr "Bertsioa"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:501
 #, fuzzy, kde-format
 #| msgctxt "@action: group items"
 #| msgid "Group"
 msgid "Grouped"
 msgstr "Taldea"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:503
 #, fuzzy, kde-format
 #| msgctxt "@info: xslt param"
 #| msgid "Make"
 msgid "Make"
 msgstr "Marka"
 
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:504
 #, fuzzy, kde-format
 #| msgctxt "@info: Camera Model"
 #| msgid "Model"
 msgid "Model"
 msgstr "Eredua"
 
-#: core/libs/properties/itempropertiestab.cpp:502
+#: core/libs/properties/itempropertiestab.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "@item: date properties"
 #| msgid "Date & Time"
 msgid "Date Time"
 msgstr "Data eta ordua"
 
-#: core/libs/properties/itempropertiestab.cpp:503
+#: core/libs/properties/itempropertiestab.cpp:506
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "Objektiboa"
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "Irekidura"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:508
 #, fuzzy, kde-format
 #| msgctxt "@info: xslt param"
 #| msgid "Focal Length"
 msgid "Focal Length"
 msgstr "Fokuaren luzera"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:509
 #, fuzzy, kde-format
 #| msgctxt "@info: xslt param"
 #| msgid "Exposure Time"
 msgid "Exposure Time"
 msgstr "Esposizio denbora"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sentikortasuna"
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:511
 #, fuzzy, kde-format
 #| msgid "Exposure mode"
 msgid "Exposure Mode"
 msgstr "Esposizioaren modua"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:512
 #, fuzzy, kde-format
 #| msgctxt "@title: tableview"
 #| msgid "Flash"
 msgid "Flash"
 msgstr "Flasha"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Bideoaren itxura-proportzioa"
 
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:516
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "Bideoaren iraupena"
 
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:517
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "Bideoaren fotograma-emaria"
 
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:518
 #, fuzzy, kde-format
 msgid "Video Video Codec"
 msgstr "Erakutsi fitxategien datak"
 
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:519
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Video Audio Bit Rate"
 msgstr "Audio bit-emaria"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:520
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgid "Video Audio Channel Type"
 msgstr "Audio kanal mota"
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:521
 #, fuzzy, kde-format
 #| msgid "Audio Codec"
 msgid "Video Audio Codec"
 msgstr "Audio kodeka"
 
-#: core/libs/properties/itempropertiestab.cpp:520
+#: core/libs/properties/itempropertiestab.cpp:523
 #, fuzzy, kde-format
 #| msgctxt "@title: tableview"
 #| msgid "Caption"
 msgid "Caption"
 msgstr "Epigrafea"
 
-#: core/libs/properties/itempropertiestab.cpp:521
+#: core/libs/properties/itempropertiestab.cpp:524
 #, fuzzy, kde-format
 #| msgctxt "@title: tableview"
 #| msgid "Title"
 msgid "Title"
 msgstr "Titulua"
 
-#: core/libs/properties/itempropertiestab.cpp:523
+#: core/libs/properties/itempropertiestab.cpp:526
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
 msgid "Peoples"
 msgstr "Jendartea"
 
-#: core/libs/properties/itempropertiestab.cpp:525
+#: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "Eskubideak"
 
-#: core/libs/properties/itempropertiestab.cpp:526
+#: core/libs/properties/itempropertiestab.cpp:529
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgid "Pick"
 msgstr "Aukeratu..."
 
-#: core/libs/properties/itempropertiestab.cpp:527
+#: core/libs/properties/itempropertiestab.cpp:530
 #, fuzzy, kde-format
 #| msgid "Color"
 msgid "Color"
 msgstr "Kolorea"
 
-#: core/libs/properties/itempropertiestab.cpp:528
+#: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -40021,32 +40021,32 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:122
+#, fuzzy, kde-format
+#| msgid "File Properties"
+msgid "Selected Item Properties"
+msgstr "Fitxategiaren propietateak"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:96
+#: core/libs/properties/itemselectionpropertiestab.cpp:136
 #, kde-format
 msgid "Count: "
 msgstr "Kopurua: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
+#: core/libs/properties/itemselectionpropertiestab.cpp:97
+#: core/libs/properties/itemselectionpropertiestab.cpp:137
 #, kde-format
 msgid "Size: "
 msgstr "Tamaina:"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:124
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
+#: core/libs/properties/itemselectionpropertiestab.cpp:138
 #, fuzzy, kde-format
 #| msgctxt "@action: group items"
 #| msgid "Group"
 msgid "Groups: "
 msgstr "Taldea"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
-#, fuzzy, kde-format
-#| msgid "File Properties"
-msgid "Selected Item Properties"
-msgstr "Fitxategiaren propietateak"
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:147
+#: core/libs/properties/itemselectionpropertiestab.cpp:133
 #, fuzzy, kde-format
 #| msgid "Album Properties"
 msgid "All Item Properties"
@@ -69064,13 +69064,26 @@ msgid ""
 "laptop computer."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
+#| "font>"
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
+msgstr ""
+"<font color='red'><i>Abisua: Ezarpen hauek abioa moteltzen dute!</i></font>"
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, fuzzy, kde-format
 #| msgid "Scan for new items"
 msgid "&Scan for new items at startup"
 msgstr "Miatu irudi berri bila"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:44
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -69087,12 +69100,12 @@ msgid ""
 "a manual scan through the maintenance tool at the right moment."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:52
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Miaketa azkarra (elementu berriak, ezabatuak eta berrizendatuak)"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:53
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -69102,30 +69115,30 @@ msgid ""
 "option must be deactivated."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:59
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Irudi erantsi berrietan aurkegiak antzematea"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:60
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "Gaitu atzeko planoko aurpegi-ezagutza azterketa"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:61
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:64
 #, fuzzy, kde-format
 #| msgid "Remove obsolete core database objects (makes startup slower)"
 msgid "Remove obsolete core database objects"
 msgstr "Kendu muin datu-baseko iraungitako objektuak (abioa moteltzen du)"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:65
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -69146,19 +69159,6 @@ msgstr ""
 "txikiena edo ezagutzarena.\n"
 "Beste datu-base batzuk garbitzeko errutinetarako, mesedez, erabili mantentze-"
 "lanak."
-
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
-msgctxt "@info"
-msgid ""
-"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
-"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
-msgstr ""
-"<font color='red'><i>Abisua: Ezarpen hauek abioa moteltzen dute!</i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format

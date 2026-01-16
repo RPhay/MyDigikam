@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:40+0000\n"
+"POT-Creation-Date: 2026-01-16 00:41+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2891,31 +2891,32 @@ msgstr "Vpřed"
 
 #: core/app/views/preview/itempreviewview.cpp:193
 #, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#| msgctxt "@title:window"
+#| msgid "Add New Tag"
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
-msgstr "Přidat značku obličeje"
+msgstr "Přidat novou značku"
 
 #: core/app/views/preview/itempreviewview.cpp:198
 #, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#| msgid "Remove all faces from image"
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
-msgstr "Smazat všechny obličeje na tomto obrázku"
+msgstr "Odstranit z obrázku všechny tváře"
 
 #: core/app/views/preview/itempreviewview.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mark all unconfirmed faces as ignored"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Označit nepotvrzené obličeje jako ignorované"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:208
 #, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#| msgctxt "@option:check"
+#| msgid "Show image tags"
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
-msgstr "Zobrazit značky obličejů"
+msgstr "Zobrazit značky obrázku"
 
 #: core/app/views/preview/itempreviewview.cpp:213
 #, fuzzy, kde-format
@@ -3115,7 +3116,7 @@ msgstr "Album bez značek"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:522
+#: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4114,7 +4115,7 @@ msgstr "Cesta"
 #: core/app/views/tableview/tableview_column_file.cpp:58
 #: core/app/views/tableview/tableview_column_file.cpp:91
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:489
 #, kde-format
 msgid "Size"
 msgstr "Velikost"
@@ -4212,7 +4213,7 @@ msgstr "Výška"
 
 #: core/app/views/tableview/tableview_column_item.cpp:74
 #: core/app/views/tableview/tableview_column_item.cpp:103
-#: core/libs/properties/itempropertiestab.cpp:491
+#: core/libs/properties/itempropertiestab.cpp:494
 #, kde-format
 msgid "Dimensions"
 msgstr "Rozměry"
@@ -6249,11 +6250,11 @@ msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#| msgctxt "new smug album dialog"
+#| msgid "Template:"
 msgctxt "@title"
 msgid "Apply Template"
-msgstr "Použít šablonu metadat"
+msgstr "Šablona:"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -8105,7 +8106,7 @@ msgstr "Správa barev je zakázána..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:510
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -21301,33 +21302,30 @@ msgstr "Chování"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
 #, fuzzy, kde-format
-#| msgid "Delay between images:"
+#| msgid "Delay between images (ms):"
 msgid "Delay between items: "
-msgstr "Prodleva mezi obrázky:"
+msgstr "Zpoždění mezi obrázky (ms):"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
 #, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#| msgctxt "@info"
+#| msgid "The delay in seconds between images."
 msgid "The delay, in seconds, between items."
 msgstr "Prodleva mezi obrázky v sekundách."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
 #, fuzzy, kde-format
-#| msgid "Start with current image"
+#| msgid "Reset to current date"
 msgid "Start with current item"
-msgstr "Zahájit aktuálním obrázkem"
+msgstr "Nastavit aktuální datum"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, fuzzy, kde-format
-#| msgid ""
-#| "If this option is enabled, the Slideshow will be started with the current "
-#| "image selected in the images list."
+#| msgid "If this option is enabled, the Slideshow will run in random order"
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
-msgstr ""
-"Pokud je tato volba zaškrtnuta, promítání obrázků začne současným obrázkem "
-"vybraným na jejich seznamu."
+msgstr "Pokud je tato volba zapnuta, promítání bude  v náhodném pořadí"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
@@ -21341,9 +21339,9 @@ msgstr "Promítat obrázky donekonečna ve smyčce."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, fuzzy, kde-format
-#| msgid "Shuffle images"
+#| msgid "&Shuffle images"
 msgid "Shuffle items"
-msgstr "Promíchat obrázky"
+msgstr "Ná&hodné obrázky"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
@@ -21370,14 +21368,12 @@ msgstr "Zobrazit ukazatel průběhu"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, fuzzy, kde-format
-#| msgid ""
-#| "Show the digiKam image color label and pick label at the bottom of the "
-#| "screen."
+#| msgctxt "@info"
+#| msgid "Show the digiKam image tag names at the bottom of the screen."
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
-msgstr ""
-"Zobrazit barevný popisek a popisek výběru digiKamu ve spodní části obrazovky."
+msgstr "Zobrazit názvy značek obrázku digiKam ve spodní části obrazovky."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #, fuzzy, kde-format
@@ -21387,6 +21383,7 @@ msgstr "Zobrazit ukazatel geolokace"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, fuzzy, kde-format
+#| msgctxt "@info"
 #| msgid "Show the digiKam image rating at the bottom of the screen."
 msgid "Show the digiKam item rating editor at the bottom of the screen."
 msgstr "Zobrazit hodnocení obrázku v digiKamu ve spodní části obrazovky."
@@ -21398,14 +21395,9 @@ msgid "Use background color for items:"
 msgstr "Po&užívat barvu pozadí motivu"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr ""
-"Zaškrtněte tuto volbu, aby byla použita barva pozadí z motivu vzhledu na "
-"plochu editoru obrázků."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
@@ -23847,7 +23839,7 @@ msgid "Date"
 msgstr "Datum"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:524
+#: core/libs/properties/itempropertiestab.cpp:527
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -37361,241 +37353,241 @@ msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Klíčová slova: "
 
-#: core/libs/properties/itempropertiestab.cpp:309
+#: core/libs/properties/itempropertiestab.cpp:312
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Značky"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:347
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Umístění"
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:369
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Práva"
 
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:485
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "Soubor"
 
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:486
 #, kde-format
 msgid "Folder"
 msgstr "Složka"
 
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:487
 #, fuzzy, kde-format
 #| msgctxt "@label: item properties"
 #| msgid "Symlink: "
 msgid "Symlink"
 msgstr "Symbol. odkaz: "
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Modified Date"
 msgstr "Pozměněné datum"
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:490
 #, kde-format
 msgid "Owner"
 msgstr "Vlastník"
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:491
 #, kde-format
 msgid "Permissions"
 msgstr "Oprávnění"
 
-#: core/libs/properties/itempropertiestab.cpp:490
+#: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
 msgstr "Mime"
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:495
 #, kde-format
 msgid "Ratio"
 msgstr "Poměr"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:496
 #, kde-format
 msgid "Bit Depth"
 msgstr "Bitová hloubka"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:497
 #, kde-format
 msgid "Color Mode"
 msgstr "Barevný režim"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:498
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Sidecars"
 msgid "Has Sidecar"
 msgstr "Pomocné soubory (Sidecar)"
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
 msgid "Has GPS"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Version"
 msgid "Versioned"
 msgstr "Verze"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:501
 #, kde-format
 msgid "Grouped"
 msgstr "Seskupeno"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:503
 #, kde-format
 msgid "Make"
 msgstr "Make"
 
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:504
 #, kde-format
 msgid "Model"
 msgstr "Model"
 
-#: core/libs/properties/itempropertiestab.cpp:502
+#: core/libs/properties/itempropertiestab.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "@item: date properties"
 #| msgid "Date & Time"
 msgid "Date Time"
 msgstr "Datum a čas"
 
-#: core/libs/properties/itempropertiestab.cpp:503
+#: core/libs/properties/itempropertiestab.cpp:506
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "Čočka"
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "Clona"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:508
 #, kde-format
 msgid "Focal Length"
 msgstr "Ohnisková vzdálenost"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:509
 #, kde-format
 msgid "Exposure Time"
 msgstr "Doba expozice"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "Citlivost"
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:511
 #, kde-format
 msgid "Exposure Mode"
 msgstr "Režim expozice"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:512
 #, kde-format
 msgid "Flash"
 msgstr "Blesk"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Poměr stran videa"
 
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:516
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "Délka videa"
 
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:517
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "Vzorkovací frekvence videa"
 
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:518
 #, fuzzy, kde-format
 #| msgid "Video Codec"
 msgid "Video Video Codec"
 msgstr "Video kodek"
 
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:519
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Video Audio Bit Rate"
 msgstr "Datový tok zvuku"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:520
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgid "Video Audio Channel Type"
 msgstr "Typ audio kanálu"
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:521
 #, fuzzy, kde-format
 #| msgid "Audio Codec"
 msgid "Video Audio Codec"
 msgstr "Kodek zvuku"
 
-#: core/libs/properties/itempropertiestab.cpp:520
+#: core/libs/properties/itempropertiestab.cpp:523
 #, kde-format
 msgid "Caption"
 msgstr "Titulek"
 
-#: core/libs/properties/itempropertiestab.cpp:521
+#: core/libs/properties/itempropertiestab.cpp:524
 #, kde-format
 msgid "Title"
 msgstr "Název"
 
-#: core/libs/properties/itempropertiestab.cpp:523
+#: core/libs/properties/itempropertiestab.cpp:526
 #, fuzzy, kde-format
 #| msgctxt "Browse images sorted by depicted people"
 #| msgid "People"
 msgid "Peoples"
 msgstr "Lidé"
 
-#: core/libs/properties/itempropertiestab.cpp:525
+#: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "Práva"
 
-#: core/libs/properties/itempropertiestab.cpp:526
+#: core/libs/properties/itempropertiestab.cpp:529
 #, kde-format
 msgid "Pick"
 msgstr "Výběr"
 
-#: core/libs/properties/itempropertiestab.cpp:527
+#: core/libs/properties/itempropertiestab.cpp:530
 #, kde-format
 msgid "Color"
 msgstr "Barva"
 
-#: core/libs/properties/itempropertiestab.cpp:528
+#: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -37621,32 +37613,32 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:122
+#, fuzzy, kde-format
+#| msgid "Item Properties"
+msgid "Selected Item Properties"
+msgstr "Vlastnosti položky"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:96
+#: core/libs/properties/itemselectionpropertiestab.cpp:136
 #, kde-format
 msgid "Count: "
 msgstr "Počet: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
+#: core/libs/properties/itemselectionpropertiestab.cpp:97
+#: core/libs/properties/itemselectionpropertiestab.cpp:137
 #, kde-format
 msgid "Size: "
 msgstr "Velikost: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:124
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
+#: core/libs/properties/itemselectionpropertiestab.cpp:138
 #, fuzzy, kde-format
 #| msgctxt "@label: item properties"
 #| msgid "Grouped: "
 msgid "Groups: "
 msgstr "Seskupeno: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
-#, fuzzy, kde-format
-#| msgid "Item Properties"
-msgid "Selected Item Properties"
-msgstr "Vlastnosti položky"
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:147
+#: core/libs/properties/itemselectionpropertiestab.cpp:133
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgid "All Item Properties"
@@ -40043,24 +40035,28 @@ msgstr "Použití:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
 #, fuzzy, kde-format
+#| msgctxt "@option:check"
 #| msgid "Show image file name"
 msgid "Show item file name"
 msgstr "Zobrazit název souboru s obrázkem"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
 #, fuzzy, kde-format
+#| msgctxt "@info"
 #| msgid "Show the image file name at the bottom of the screen."
 msgid "Show the item file name at the bottom of the screen."
 msgstr "Zobrazit název souboru s obrázkem ve spodní části obrazovky."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
 #, fuzzy, kde-format
+#| msgctxt "@option:check"
 #| msgid "Show image creation date"
 msgid "Show item creation date"
 msgstr "Zobrazit datum vytvoření obrázku"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
 #, fuzzy, kde-format
+#| msgctxt "@info"
 #| msgid "Show the image creation time/date at the bottom of the screen."
 msgid "Show the item creation time/date at the bottom of the screen."
 msgstr "Zobrazit datum a čas vytvoření obrázku ve spodní části obrazovky."
@@ -40111,36 +40107,42 @@ msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
 #, fuzzy, kde-format
+#| msgctxt "@option:check"
 #| msgid "Show image caption"
 msgid "Show item caption"
 msgstr "Zobrazit titulek obrázku"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
 #, fuzzy, kde-format
+#| msgctxt "@info"
 #| msgid "Show the image caption at the bottom of the screen."
 msgid "Show the item caption at the bottom of the screen."
 msgstr "Zobrazit popisek obrázku ve spodní části obrazovky."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
 #, fuzzy, kde-format
+#| msgctxt "@option:check"
 #| msgid "Show image title"
 msgid "Show item title"
 msgstr "Zobrazit název obrázku"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
 #, fuzzy, kde-format
+#| msgctxt "@info"
 #| msgid "Show the image title at the bottom of the screen."
 msgid "Show the item title at the bottom of the screen."
 msgstr "Zobrazit název fotografie ve spodní části obrazovky."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
 #, fuzzy, kde-format
+#| msgctxt "@option:check"
 #| msgid "Show image caption if it has not title"
 msgid "Show item caption if it has not title"
 msgstr "Zobrazit popisek obrázku, pokud nemá název"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
 #, fuzzy, kde-format
+#| msgctxt "@info"
 #| msgid ""
 #| "Show the image caption at the bottom of the screen if no titles existed."
 msgid "Show the item caption at the bottom of the screen if no titles existed."
@@ -40149,12 +40151,14 @@ msgstr ""
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
 #, fuzzy, kde-format
+#| msgctxt "@option:check"
 #| msgid "Show image tags"
 msgid "Show item tags"
 msgstr "Zobrazit značky obrázku"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
 #, fuzzy, kde-format
+#| msgctxt "@info"
 #| msgid "Show the digiKam image tag names at the bottom of the screen."
 msgid "Show the digiKam item tag names at the bottom of the screen."
 msgstr "Zobrazit názvy značek obrázku digiKam ve spodní části obrazovky."
@@ -40166,9 +40170,9 @@ msgstr "Písmo textu:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
 #, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#| msgid "Select here the font used to display text in Tree Views."
 msgid "Select here the font used to display OSD text over the slideshow."
-msgstr "Zde zvolte písmo použité pro vypisování textu v prezentaci."
+msgstr "Zde zvolte písmo použité pro vypisování textu ve stromovém pohledu."
 
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
@@ -42259,11 +42263,11 @@ msgstr[2] ""
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:405
 #, fuzzy, kde-format
-#| msgctxt "date of last image modification"
-#| msgid "Mod.: %1"
+#| msgctxt "@info Example of custom date format for album naming"
+#| msgid "Ex.: %1"
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
-msgstr "Změn.: %1"
+msgstr "Příklad.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
 #: core/showfoto/main/showfoto.cpp:267
@@ -61932,19 +61936,12 @@ msgid "Show file &modification date"
 msgstr "Zobrazit čas poslední &změny"
 
 #: core/utilities/setup/album/setupalbumview.cpp:142
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the file modification date below the image "
-#| "thumbnail if it is different than camera creation date. This option is "
-#| "useful to identify quickly which items have been modified."
+#, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
 "is different than camera creation date. This option is useful to identify "
 "quickly which items have been modified."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazilo datum "
-"poslední úpravy souboru, pokud se liší od data pořízení z fotoaparátu. Tato "
-"možnost je užitečná pro rychlé nalezení upravených obrázků."
 
 #: core/utilities/setup/album/setupalbumview.cpp:146
 #, kde-format
@@ -61953,42 +61950,38 @@ msgstr "Zobrazit rozměry položky"
 
 #: core/utilities/setup/album/setupalbumview.cpp:147
 #, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image size in pixels below the image "
-#| "thumbnail."
+#| msgid "Set this option to show the file size below the image thumbnail."
 msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily rozměry "
-"obrázku."
+"Zaškrtněte tuto volbu, aby byla zobrazena velikost souboru pod náhledem na "
+"obrázek."
 
 #: core/utilities/setup/album/setupalbumview.cpp:150
 #, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#| msgid "Show item &rating"
 msgid "Show item aspect ratio"
-msgstr "Zobrazit poměr stran obrázku"
+msgstr "Zob&razit hodnocení položky"
 
 #: core/utilities/setup/album/setupalbumview.cpp:151
 #, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image aspect ratio below the image thumbnail."
+#| msgid "Set this option to show the item rating below the image thumbnail."
 msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil poměr stran "
-"obrázku."
+"Zaškrtněte tuto volbu, aby se pod náhledem na položku zobrazilo hodnocení "
+"digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:154
 #, fuzzy, kde-format
-#| msgid "Show image format"
+#| msgid "Show item &rating"
 msgid "Show item format"
-msgstr "Zobrazit formát ob&rázku"
+msgstr "Zob&razit hodnocení položky"
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
 #, fuzzy, kde-format
-#| msgid "Set this option to show image mime type over image thumbnail."
+#| msgid "Set this option to show image format over image thumbnail."
 msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil MIME typ "
-"obrázku."
+"Zaškrtněte tuto volbu, aby byl zobrazen formát obrázku nad jeho náhledem."
 
 #: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
@@ -61997,10 +61990,11 @@ msgstr "Zobrazit &názvy digiKamu"
 
 #: core/utilities/setup/album/setupalbumview.cpp:158
 #, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil název digiKam."
+"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily značky "
+"digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:161
 #, kde-format
@@ -62009,11 +62003,10 @@ msgstr "Zobrazit p&opisky digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:162
 #, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam captions below the image thumbnail."
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily popisky "
+"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily značky "
 "digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:165
@@ -62024,12 +62017,11 @@ msgstr "Zobrazi&t značky digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:166
 #, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam tags list below the image thumbnail."
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil seznam značek "
-"digiKamu."
+"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily značky "
+"digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:169
 #, kde-format
@@ -62038,11 +62030,10 @@ msgstr "Zob&razit hodnocení digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:170
 #, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam rating below the image thumbnail."
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazilo hodnocení "
+"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily značky "
 "digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:173
@@ -62052,10 +62043,11 @@ msgstr "Zobrazit &popisek výběru digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:174
 #, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil název digiKam."
+"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily značky "
+"digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:177
 #, kde-format
@@ -62064,13 +62056,12 @@ msgstr "Zobrazit &popisek barvy digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:178
 #, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam rating below the image thumbnail."
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
 "Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazilo hodnocení "
+"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily značky "
 "digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:183
@@ -62082,14 +62073,14 @@ msgstr "Zobrazit tlačítka pro otáčení"
 #: core/utilities/setup/album/setupalbumview.cpp:184
 #, fuzzy, kde-format
 #| msgid ""
-#| "Set this option to show overlay buttons over the image thumbnail to be "
-#| "able to process left or right image rotation."
+#| "Set this option to show overlay buttons on the image thumbnail for image "
+#| "rotation."
 msgid ""
 "Set this option to show the transformation overlay buttons over the "
 "thumbnail to process left or right rotation."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se na náhledu obrázku zobrazila tlačítka pro "
-"otáčení obrázku."
+"Zaškrtněte tuto volbu, aby se na náhledu obrázku zobrazilo tlačítko pro "
+"otáčení."
 
 #: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
@@ -62099,14 +62090,14 @@ msgstr "Zobrazit tlačítko pro přepnutí do celoobrazovkového režimu"
 #: core/utilities/setup/album/setupalbumview.cpp:188
 #, fuzzy, kde-format
 #| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#| "Set this option to show overlay buttons on the image thumbnail for image "
+#| "rotation."
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
 "fullscreen mode."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se na náhledu obrázku zobrazilo tlačítko pro "
-"otevření obrázku v režimu celé obrazovky."
+"otáčení."
 
 #: core/utilities/setup/album/setupalbumview.cpp:191
 #, fuzzy, kde-format
@@ -62117,14 +62108,14 @@ msgstr "Zobrazit tlačítka pro otáčení"
 #: core/utilities/setup/album/setupalbumview.cpp:192
 #, fuzzy, kde-format
 #| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#| "Set this option to show overlay buttons on the image thumbnail for image "
+#| "rotation."
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
 msgstr ""
 "Zaškrtněte tuto volbu, aby se na náhledu obrázku zobrazilo tlačítko pro "
-"otevření obrázku v režimu celé obrazovky."
+"otáčení."
 
 #: core/utilities/setup/album/setupalbumview.cpp:197
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -62261,11 +62252,11 @@ msgstr "Náhled zobrazí obrázek plné velikosti"
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #, fuzzy, kde-format
-#| msgctxt "@label:listbox Mode of RAW preview decoding:"
-#| msgid "Raw images:"
+#| msgctxt "@item: filter type mime"
+#| msgid "RAW images"
 msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
-msgstr "Obrázky RAW:"
+msgstr "Obrázky RAW"
 
 #: core/utilities/setup/album/setupalbumview.cpp:306
 #, kde-format
@@ -62299,11 +62290,12 @@ msgstr "Pro rychlejší zobrazení se náhledy převedou do 8bitové barevné hl
 #: core/utilities/setup/album/setupalbumview.cpp:315
 #, fuzzy, kde-format
 #| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#| "Uncheck this if you do not want to see icons and text in the image "
+#| "preview."
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
-"Zrušte zaškrtnutí pokud si přejete převést 16bitový náhled obrázku na 8bitů."
+"Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
+"této volby."
 
 #: core/utilities/setup/album/setupalbumview.cpp:317
 #, kde-format
@@ -62329,9 +62321,9 @@ msgstr "Zvolte, pokud si přejete vyplnit pozadí za textem."
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
 #, fuzzy, kde-format
-#| msgid "Show numbers"
+#| msgid "Modifiers"
 msgid "Magnifier"
-msgstr "Zobrazovat čísla"
+msgstr "Modifikátory"
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, fuzzy, kde-format
@@ -62403,16 +62395,11 @@ msgid "Show a text overlay over preview."
 msgstr "Zobrazit ikony a text nad náhledem"
 
 #: core/utilities/setup/album/setupalbumview.cpp:361
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
 msgstr ""
-"Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
-"této volby."
 
 #: core/utilities/setup/album/setupalbumview.cpp:385
 #, kde-format
@@ -63205,16 +63192,7 @@ msgid "Root Album Folders"
 msgstr "Složky kořenových alb"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set the names of directories that you want to ignore from your photo "
-#| "collections. The names are case sensitive and should be separated by a "
-#| "semicolon.</p><p>This is for example useful when you store your photos on "
-#| "a Synology NAS (Network Attached Storage). In every directory the system "
-#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
-#| "inserting the original photo and its corresponding thumbnail twice, "
-#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
-#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
+#, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -63226,14 +63204,6 @@ msgid ""
 "supported.</p><p>To re-include directories that are ignored by default "
 "prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
-"<p>Zadejte názvy adresářů, které mají být ignorovány při vytváření sbírek "
-"fotek. Je rozlišována velikost písma a měly by být odděleny středníkem.</p> "
-"<p> Toto je užitečné například když ukládáte své fotky na Synology NAS "
-"(Network Attached Storage). Ten v každém adresáři vytvoří podadresář @eaDir "
-"pro ukládání náhledů. digiKam ve výchozím stavu adresář @eaDir ignoruje, aby "
-"zamezil duplicitnímu ukládání fotek a jejich náhledů.</p> <p>Chcete-li "
-"zahrnout adresáře, které jsou ve výchozím stavu ignorovány, zadejte zde před "
-"jejich název znak mínus, např. -@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
@@ -65244,12 +65214,20 @@ msgstr ""
 "máte monitor s nižším rozlišením, jako například notebook, zvolte možnost "
 "\"Jen pro aktivní kartu\"."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:44
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -65278,12 +65256,12 @@ msgstr ""
 "zakázat tuto možnost a naplánovat si ruční prohledání sbírek prostřednictvím "
 "nástroje správy."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:52
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Rychlá kontrola (zjišťuje nové, smazané a přejmenované položky)"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:53
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -65293,29 +65271,29 @@ msgid ""
 "option must be deactivated."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:59
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Rozpoznat obličeje v nově přidaných obrázcích"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:60
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:61
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:64
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:65
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -65334,14 +65312,6 @@ msgstr ""
 "Tato volba nezpůsobuje pročištění dalších databází digiKamu, jako je "
 "databáze náhledů\n"
 "nebo obličejů. Pročištění těchto databázi naleznete v nabídce Správa."
-
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, kde-format
-msgctxt "@info"
-msgid ""
-"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
-"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
-msgstr ""
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
@@ -66754,108 +66724,3 @@ msgstr "Importovat položky"
 #, kde-format
 msgid "Survey"
 msgstr ""
-
-#~ msgid "Show Fullscreen"
-#~ msgstr "Zobrazit na celou obrazovku"
-
-#, fuzzy
-#~| msgid "%1 items to process"
-#~ msgid "%1 item on Survey"
-#~ msgid_plural "%1 items on Survey"
-#~ msgstr[0] "%1 položek ke zpracování"
-#~ msgstr[1] "%1 položek ke zpracování"
-#~ msgstr[2] "%1 položek ke zpracování"
-
-#, fuzzy
-#~| msgid "Clear the light table on close"
-#~ msgid "Clear the Survey on close"
-#~ msgstr "Při uzavření vyčistit prohlížecí stolek"
-
-#, fuzzy
-#~| msgid ""
-#~| "Set this option to remove all images from the light table when you close "
-#~| "it, or unset it to preserve the images currently on the light table."
-#~ msgid ""
-#~ "Set this option to remove all images from the Survey when you close it, "
-#~ "or unset it to preserve the images currently on the Survey."
-#~ msgstr ""
-#~ "Zvolením této možnosti budou při uzavření všechny obrázky z prohlížecího "
-#~ "stolku odstraněny, při zrušení volby budou aktuální obrázky zachovány."
-
-#, fuzzy
-#~| msgid "Remove from Group"
-#~ msgid "Remove item from Survey Tool"
-#~ msgstr "Odstranit ze skupiny"
-
-#, fuzzy
-#~| msgid "Remove all tags from image"
-#~ msgid "Remove all items from Survey Tool"
-#~ msgstr "Odstranit z obrázku všechny značky"
-
-#, fuzzy
-#~| msgctxt "@item: editorial content attribute"
-#~| msgid "Polls & Surveys"
-#~ msgctxt "@action: setup"
-#~ msgid "Place onto Survey"
-#~ msgstr "Hlasování & průzkum"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Place the selected items on the light table thumbbar."
-#~ msgctxt "@info: setup"
-#~ msgid "Place the selected items on the survey thumbbar."
-#~ msgstr "Umístit vybrané položky na panel náhledů prohlížecího stolku."
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Add Texture"
-#~ msgctxt "@action: setup"
-#~ msgid "Add to Survey"
-#~ msgstr "Přidat texturu"
-
-#, fuzzy
-#~| msgctxt "@info: setup"
-#~| msgid "Add selected items to the light table thumbbar."
-#~ msgctxt "@info: setup"
-#~ msgid "Add selected items to the survey thumbbar."
-#~ msgstr "Přidat vybrané položky na panel náhledů prohlížecího stolku."
-
-#, fuzzy
-#~| msgid "Adding items to the Light Table"
-#~ msgid "Adding items to the Survey"
-#~ msgstr "Přidávám položky na prohlížecí stolek"
-
-#, fuzzy
-#~| msgctxt "@item: editorial content attribute"
-#~| msgid "Polls & Surveys"
-#~ msgid "Show on Survey"
-#~ msgstr "Hlasování & průzkum"
-
-#~ msgid "IRC: "
-#~ msgstr "IRC: "
-
-#~ msgid "Feedback: "
-#~ msgstr "Zpětná vazba: "
-
-#~ msgctxt "@title: Dplugin property"
-#~ msgid "Authors"
-#~ msgstr "Autoři"
-
-#~ msgid "Show ima&ge dimensions"
-#~ msgstr "Zobrazit &rozměry obrázku"
-
-#~ msgid "Show image labels"
-#~ msgstr "Zobrazit popisky obrázku"
-
-#~ msgid "Show image rating"
-#~ msgstr "Zobrazit hodnocení obrázku"
-
-#~ msgid "Caption font:"
-#~ msgstr "Písmo pro titulek:"
-
-#~ msgid ""
-#~ "Set this option to show an icon over the image thumbnail if item has "
-#~ "geolocation information."
-#~ msgstr ""
-#~ "Zaškrtněte tuto volbu, aby se na náhledu obrázku zobrazila ikonka, pokud "
-#~ "položka obsahuje geolokační informace."

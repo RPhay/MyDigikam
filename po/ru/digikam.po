@@ -56,7 +56,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:40+0000\n"
+"POT-Creation-Date: 2026-01-16 00:41+0000\n"
 "PO-Revision-Date: 2026-01-13 10:38+0300\n"
 "Last-Translator: Alevtina <alevkarash@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -3220,7 +3220,7 @@ msgstr "Без меток"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:522
+#: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4319,7 +4319,7 @@ msgstr "Путь"
 #: core/app/views/tableview/tableview_column_file.cpp:58
 #: core/app/views/tableview/tableview_column_file.cpp:91
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:489
 #, kde-format
 msgid "Size"
 msgstr "Размер"
@@ -4417,7 +4417,7 @@ msgstr "Высота"
 
 #: core/app/views/tableview/tableview_column_item.cpp:74
 #: core/app/views/tableview/tableview_column_item.cpp:103
-#: core/libs/properties/itempropertiestab.cpp:491
+#: core/libs/properties/itempropertiestab.cpp:494
 #, kde-format
 msgid "Dimensions"
 msgstr "Размеры"
@@ -8687,7 +8687,7 @@ msgstr "Управление цветом отключено..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:510
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -25104,7 +25104,7 @@ msgid "Date"
 msgstr "Дата"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:524
+#: core/libs/properties/itempropertiestab.cpp:527
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -39078,210 +39078,210 @@ msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Ключевые слова: "
 
-#: core/libs/properties/itempropertiestab.cpp:309
+#: core/libs/properties/itempropertiestab.cpp:312
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Люди: "
 
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Метки"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:347
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Местоположение"
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:369
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Права"
 
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:485
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "Файл"
 
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:486
 #, kde-format
 msgid "Folder"
 msgstr "Папка"
 
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
 msgid "Symlink"
 msgstr "Символическая ссылка"
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Modified Date"
 msgstr "Дата изменения"
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:490
 #, kde-format
 msgid "Owner"
 msgstr "Владелец"
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:491
 #, kde-format
 msgid "Permissions"
 msgstr "Права доступа"
 
-#: core/libs/properties/itempropertiestab.cpp:490
+#: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
 msgstr "MIME"
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:495
 #, kde-format
 msgid "Ratio"
 msgstr "Пропорции"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:496
 #, kde-format
 msgid "Bit Depth"
 msgstr "Глубина цвета"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:497
 #, kde-format
 msgid "Color Mode"
 msgstr "Цветовая модель"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:498
 #, kde-format
 msgid "Has Sidecar"
 msgstr "Имеет дополнительные файлы"
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
 msgid "Has GPS"
 msgstr "Содержит GPS"
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:500
 #, kde-format
 msgid "Versioned"
 msgstr "Версия"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:501
 #, kde-format
 msgid "Grouped"
 msgstr "Группа"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:503
 #, kde-format
 msgid "Make"
 msgstr "Производитель"
 
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:504
 #, kde-format
 msgid "Model"
 msgstr "Модель"
 
-#: core/libs/properties/itempropertiestab.cpp:502
+#: core/libs/properties/itempropertiestab.cpp:505
 #, kde-format
 msgid "Date Time"
 msgstr "Дата и время"
 
-#: core/libs/properties/itempropertiestab.cpp:503
+#: core/libs/properties/itempropertiestab.cpp:506
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "Объектив"
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "Диафрагма"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:508
 #, kde-format
 msgid "Focal Length"
 msgstr "Фокусное расстояние"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:509
 #, kde-format
 msgid "Exposure Time"
 msgstr "Длительность выдержки"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "Чувствительность"
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:511
 #, kde-format
 msgid "Exposure Mode"
 msgstr "Режим экспозиции"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:512
 #, kde-format
 msgid "Flash"
 msgstr "Вспышка"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Соотношение сторон видеозаписи"
 
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:516
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "Длительность видеозаписи"
 
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:517
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "Частота кадров видеозаписи"
 
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:518
 #, kde-format
 msgid "Video Video Codec"
 msgstr "Видеокодек"
 
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:519
 #, kde-format
 msgid "Video Audio Bit Rate"
 msgstr "Битрейт аудио для видеозаписи"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:520
 #, kde-format
 msgid "Video Audio Channel Type"
 msgstr "Тип аудиоканала для видеозаписи"
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:521
 #, kde-format
 msgid "Video Audio Codec"
 msgstr "Аудиокодек для видеозаписи"
 
-#: core/libs/properties/itempropertiestab.cpp:520
+#: core/libs/properties/itempropertiestab.cpp:523
 #, kde-format
 msgid "Caption"
 msgstr "Название"
 
-#: core/libs/properties/itempropertiestab.cpp:521
+#: core/libs/properties/itempropertiestab.cpp:524
 #, kde-format
 msgid "Title"
 msgstr "Заголовок"
 
-#: core/libs/properties/itempropertiestab.cpp:523
+#: core/libs/properties/itempropertiestab.cpp:526
 #, kde-format
 msgid "Peoples"
 msgstr "Люди"
 
-#: core/libs/properties/itempropertiestab.cpp:525
+#: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
@@ -39289,17 +39289,17 @@ msgid "Rights"
 msgstr "Права"
 
 # app/album/albumlabelstreeview.cpp:368: поддерево "Pick" -- "Отбор" --aspotashev
-#: core/libs/properties/itempropertiestab.cpp:526
+#: core/libs/properties/itempropertiestab.cpp:529
 #, kde-format
 msgid "Pick"
 msgstr "Отбор"
 
-#: core/libs/properties/itempropertiestab.cpp:527
+#: core/libs/properties/itempropertiestab.cpp:530
 #, kde-format
 msgid "Color"
 msgstr "Цвет"
 
-#: core/libs/properties/itempropertiestab.cpp:528
+#: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -39325,29 +39325,29 @@ msgid " fps"
 msgstr " кадров/с"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:122
-#, kde-format
-msgid "Count: "
-msgstr "Количество: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
-#, kde-format
-msgid "Size: "
-msgstr "Размер: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:124
-#, kde-format
-msgid "Groups: "
-msgstr "Группы: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Selected Item Properties"
 msgstr "Свойства выделенного объекта"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:147
+#: core/libs/properties/itemselectionpropertiestab.cpp:96
+#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#, kde-format
+msgid "Count: "
+msgstr "Количество: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:97
+#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#, kde-format
+msgid "Size: "
+msgstr "Размер: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
+#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#, kde-format
+msgid "Groups: "
+msgstr "Группы: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:133
 #, kde-format
 msgid "All Item Properties"
 msgstr "Свойства всех объектов"
@@ -67752,12 +67752,23 @@ msgstr ""
 "боковых панелях. Используйте вариант «Только для активной вкладки», если у "
 "экрана небольшое разрешение (например, если работа выполняется на ноутбуке)."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
+msgstr ""
+"<font color='black'><i><b>⚠️Предупреждение:</b> эти параметры замедлят "
+"загрузку! Сначала внимательно прочтите <a href=\"%1\">онлайн-документацию</"
+"a>.</i></font>"
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr "&Поиск новых объектов при запуске"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:44
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -67784,13 +67795,13 @@ msgstr ""
 "объектов в подходящее время, используя пункт меню «Сервис -> "
 "Обслуживание...»."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:52
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr ""
 "Быстрое сканирование (распознаёт новые, удалённые и переименованные объекты)"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:53
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -67805,17 +67816,17 @@ msgstr ""
 "изменены,\n"
 "снимите этот флажок."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:59
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Искать лица на вновь добавленных изображениях"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:60
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "Включить фоновое распознавание лиц"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:61
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
@@ -67825,12 +67836,12 @@ msgstr ""
 "распознавания лиц, если установлен ярлык для нового лица. Это упростит "
 "процесс установки меток."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:64
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr "Удалять устаревшие объекты из главной базы данных"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:65
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -67852,17 +67863,6 @@ msgstr ""
 "распознавания лиц.\n"
 "Для оптимизации этих баз данных используйте пункт меню «Сервис -> "
 "Обслуживание...»."
-
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, kde-format
-msgctxt "@info"
-msgid ""
-"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
-"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
-msgstr ""
-"<font color='black'><i><b>⚠️Предупреждение:</b> эти параметры замедлят "
-"загрузку! Сначала внимательно прочтите <a href=\"%1\">онлайн-документацию</"
-"a>.</i></font>"
 
 # https://bugs.kde.org/show_bug.cgi?id=254397
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73

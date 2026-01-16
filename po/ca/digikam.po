@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:40+0000\n"
-"PO-Revision-Date: 2026-01-13 12:47+0100\n"
+"POT-Creation-Date: 2026-01-16 00:41+0000\n"
+"PO-Revision-Date: 2026-01-15 09:01+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3104,7 +3104,7 @@ msgstr "Sense etiquetes d'àlbum"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:522
+#: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4197,7 +4197,7 @@ msgstr "Camí"
 #: core/app/views/tableview/tableview_column_file.cpp:58
 #: core/app/views/tableview/tableview_column_file.cpp:91
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:489
 #, kde-format
 msgid "Size"
 msgstr "Mida"
@@ -4295,7 +4295,7 @@ msgstr "Alçada"
 
 #: core/app/views/tableview/tableview_column_item.cpp:74
 #: core/app/views/tableview/tableview_column_item.cpp:103
-#: core/libs/properties/itempropertiestab.cpp:491
+#: core/libs/properties/itempropertiestab.cpp:494
 #, kde-format
 msgid "Dimensions"
 msgstr "Dimensions"
@@ -8571,7 +8571,7 @@ msgstr "S'ha desactivat la gestió del color..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:510
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -25054,7 +25054,7 @@ msgid "Date"
 msgstr "Data"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:524
+#: core/libs/properties/itempropertiestab.cpp:527
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -39070,227 +39070,227 @@ msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Paraules clau: "
 
-#: core/libs/properties/itempropertiestab.cpp:309
+#: core/libs/properties/itempropertiestab.cpp:312
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Persones: "
 
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Etiquetes"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:347
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Ubicació"
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:369
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Drets"
 
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:485
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "Fitxer"
 
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:486
 #, kde-format
 msgid "Folder"
 msgstr "Carpeta"
 
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
 msgid "Symlink"
 msgstr "Enllaç simbòlic"
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Modified Date"
 msgstr "Data de modificació"
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:490
 #, kde-format
 msgid "Owner"
 msgstr "Propietari"
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:491
 #, kde-format
 msgid "Permissions"
 msgstr "Permisos"
 
-#: core/libs/properties/itempropertiestab.cpp:490
+#: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
 msgstr "MIME"
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:495
 #, kde-format
 msgid "Ratio"
 msgstr "Relació"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:496
 #, kde-format
 msgid "Bit Depth"
 msgstr "Profunditat de bits"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:497
 #, kde-format
 msgid "Color Mode"
 msgstr "Mode de color"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:498
 #, kde-format
 msgid "Has Sidecar"
 msgstr "Té lateral"
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
 msgid "Has GPS"
 msgstr "Té GPS"
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:500
 #, kde-format
 msgid "Versioned"
 msgstr "Versionat"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:501
 #, kde-format
 msgid "Grouped"
 msgstr "Agrupat"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:503
 #, kde-format
 msgid "Make"
 msgstr "Fabricant"
 
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:504
 #, kde-format
 msgid "Model"
 msgstr "Model"
 
-#: core/libs/properties/itempropertiestab.cpp:502
+#: core/libs/properties/itempropertiestab.cpp:505
 #, kde-format
 msgid "Date Time"
 msgstr "Data i hora"
 
-#: core/libs/properties/itempropertiestab.cpp:503
+#: core/libs/properties/itempropertiestab.cpp:506
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "Lent"
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "Obertura"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:508
 #, kde-format
 msgid "Focal Length"
 msgstr "Distància focal"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:509
 #, kde-format
 msgid "Exposure Time"
 msgstr "Temps d'exposició"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sensibilitat"
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:511
 #, kde-format
 msgid "Exposure Mode"
 msgstr "Mode d'exposició"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:512
 #, kde-format
 msgid "Flash"
 msgstr "Flaix"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Relació d'aspecte del vídeo"
 
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:516
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "Durada del vídeo"
 
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:517
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "Velocitat dels fotogrames del vídeo"
 
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:518
 #, kde-format
 msgid "Video Video Codec"
 msgstr "Còdec de vídeo del vídeo"
 
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:519
 #, kde-format
 msgid "Video Audio Bit Rate"
 msgstr "Taxa de bits d'àudio del vídeo"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:520
 #, kde-format
 msgid "Video Audio Channel Type"
 msgstr "Tipus de canal d'àudio del vídeo"
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:521
 #, kde-format
 msgid "Video Audio Codec"
 msgstr "Còdec d'àudio del vídeo"
 
-#: core/libs/properties/itempropertiestab.cpp:520
+#: core/libs/properties/itempropertiestab.cpp:523
 #, kde-format
 msgid "Caption"
 msgstr "Llegenda"
 
-#: core/libs/properties/itempropertiestab.cpp:521
+#: core/libs/properties/itempropertiestab.cpp:524
 #, kde-format
 msgid "Title"
 msgstr "Títol"
 
-#: core/libs/properties/itempropertiestab.cpp:523
+#: core/libs/properties/itempropertiestab.cpp:526
 #, kde-format
 msgid "Peoples"
 msgstr "Persones"
 
-#: core/libs/properties/itempropertiestab.cpp:525
+#: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "Drets"
 
-#: core/libs/properties/itempropertiestab.cpp:526
+#: core/libs/properties/itempropertiestab.cpp:529
 #, kde-format
 msgid "Pick"
 msgstr "Selecció"
 
-#: core/libs/properties/itempropertiestab.cpp:527
+#: core/libs/properties/itempropertiestab.cpp:530
 #, kde-format
 msgid "Color"
 msgstr "Color"
 
-#: core/libs/properties/itempropertiestab.cpp:528
+#: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -39316,29 +39316,29 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:122
-#, kde-format
-msgid "Count: "
-msgstr "Compte: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
-#, kde-format
-msgid "Size: "
-msgstr "Mida: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:124
-#, kde-format
-msgid "Groups: "
-msgstr "Grups: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Selected Item Properties"
 msgstr "Propietats seleccionades de l'element"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:147
+#: core/libs/properties/itemselectionpropertiestab.cpp:96
+#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#, kde-format
+msgid "Count: "
+msgstr "Compte: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:97
+#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#, kde-format
+msgid "Size: "
+msgstr "Mida: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
+#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#, kde-format
+msgid "Groups: "
+msgstr "Grups: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:133
 #, kde-format
 msgid "All Item Properties"
 msgstr "Totes les propietats de l'element"
@@ -42119,10 +42119,9 @@ msgid "File last modified"
 msgstr "Última modificació del fitxer"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:155
-#, fuzzy, kde-format
-#| msgid "File date"
+#, kde-format
 msgid "File created"
-msgstr "Data del fitxer"
+msgstr "Fitxer creat"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
@@ -67811,12 +67810,23 @@ msgstr ""
 "activa» si la resolució de la pantalla és petita com en un ordinador "
 "portàtil."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
+msgstr ""
+"<font color='black'><i><b>⚠️Avís:</b> Aquestes opcions alentiran l'inici! "
+"Abans llegiu la <a href=\"%1\">documentació en línia</a> amb atenció.</i></"
+"font>"
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr "&Explora cercant elements nous en iniciar"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:44
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -67843,12 +67853,12 @@ msgstr ""
 "planificar una exploració manual via l'eina de manteniment en el moment "
 "apropiat."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:52
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Exploració ràpida (detecta elements nous, suprimits i reanomenats)"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:53
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -67861,17 +67871,17 @@ msgstr ""
 "S'han trobat elements nous, suprimits així com reanomenats. Per a trobar\n"
 "els elements que hagin canviat, aquesta opció haurà d'estar desactivada."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:59
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Detecta les cares a les imatges afegides recentment"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:60
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "Activa l'exploració de reconeixement de cares en segon pla"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:61
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
@@ -67882,12 +67892,12 @@ msgstr ""
 "quan s'etiqueti una cara nova. Això farà que el procés d'etiquetatge sigui "
 "més fàcil."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:64
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr "Elimina objectes obsolets de la base de dades nucli"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:65
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -67907,17 +67917,6 @@ msgstr ""
 "Aquesta opció no neteja altres bases de dades com la de miniatures o de "
 "reconeixement.\n"
 "Per a les rutines de neteja d'altres bases de dades, useu el manteniment."
-
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, kde-format
-msgctxt "@info"
-msgid ""
-"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
-"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
-msgstr ""
-"<font color='black'><i><b>⚠️Avís:</b> Aquestes opcions alentiran l'inici! "
-"Abans llegiu la <a href=\"%1\">documentació en línia</a> amb atenció.</i></"
-"font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format

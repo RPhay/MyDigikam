@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:40+0000\n"
-"PO-Revision-Date: 2026-01-13 16:59+0100\n"
+"POT-Creation-Date: 2026-01-16 00:41+0000\n"
+"PO-Revision-Date: 2026-01-15 07:19+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3155,7 +3155,7 @@ msgstr "Album brez značk"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:522
+#: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4230,7 +4230,7 @@ msgstr "Pot"
 #: core/app/views/tableview/tableview_column_file.cpp:58
 #: core/app/views/tableview/tableview_column_file.cpp:91
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:489
 #, kde-format
 msgid "Size"
 msgstr "Velikost"
@@ -4328,7 +4328,7 @@ msgstr "Višina"
 
 #: core/app/views/tableview/tableview_column_item.cpp:74
 #: core/app/views/tableview/tableview_column_item.cpp:103
-#: core/libs/properties/itempropertiestab.cpp:491
+#: core/libs/properties/itempropertiestab.cpp:494
 #, kde-format
 msgid "Dimensions"
 msgstr "Mere"
@@ -8544,7 +8544,7 @@ msgstr "Upravljanje barv je onemogočeno..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:510
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -24829,7 +24829,7 @@ msgid "Date"
 msgstr "Datum"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:524
+#: core/libs/properties/itempropertiestab.cpp:527
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -38737,227 +38737,227 @@ msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "Ključne besede: "
 
-#: core/libs/properties/itempropertiestab.cpp:309
+#: core/libs/properties/itempropertiestab.cpp:312
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "Ljudje: "
 
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Značke"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:347
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Kraj"
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:369
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Pravice"
 
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:485
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "Datoteka"
 
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:486
 #, kde-format
 msgid "Folder"
 msgstr "Mapa"
 
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
 msgid "Symlink"
 msgstr "Simbolična povezava"
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Modified Date"
 msgstr "Spremenjen datum"
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:490
 #, kde-format
 msgid "Owner"
 msgstr "Lastnik"
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:491
 #, kde-format
 msgid "Permissions"
 msgstr "Dovoljenja"
 
-#: core/libs/properties/itempropertiestab.cpp:490
+#: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
 msgstr "Mime"
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:495
 #, kde-format
 msgid "Ratio"
 msgstr "Razmerje"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:496
 #, kde-format
 msgid "Bit Depth"
 msgstr "Bitna globina"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:497
 #, kde-format
 msgid "Color Mode"
 msgstr "Barvni način"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:498
 #, kde-format
 msgid "Has Sidecar"
 msgstr "Ima priklopno datoteko"
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
 msgid "Has GPS"
 msgstr "Ima GPS"
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:500
 #, kde-format
 msgid "Versioned"
 msgstr "Z različicami"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:501
 #, kde-format
 msgid "Grouped"
 msgstr "Združena"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:503
 #, kde-format
 msgid "Make"
 msgstr "Izdelava"
 
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:504
 #, kde-format
 msgid "Model"
 msgstr "Model"
 
-#: core/libs/properties/itempropertiestab.cpp:502
+#: core/libs/properties/itempropertiestab.cpp:505
 #, kde-format
 msgid "Date Time"
 msgstr "Datum in čas"
 
-#: core/libs/properties/itempropertiestab.cpp:503
+#: core/libs/properties/itempropertiestab.cpp:506
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "Objektiv"
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "Zaslonka"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:508
 #, kde-format
 msgid "Focal Length"
 msgstr "Goriščna razdalja"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:509
 #, kde-format
 msgid "Exposure Time"
 msgstr "Čas osvetlitve"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "Občutljivost"
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:511
 #, kde-format
 msgid "Exposure Mode"
 msgstr "Način osvetlitve"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:512
 #, kde-format
 msgid "Flash"
 msgstr "Bliskavica"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Razmerje stranic videa"
 
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:516
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "Trajanje videa"
 
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:517
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "Hitrost sličic videa"
 
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:518
 #, kde-format
 msgid "Video Video Codec"
 msgstr "Video video kodek"
 
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:519
 #, kde-format
 msgid "Video Audio Bit Rate"
 msgstr "Video bitna hitrost zvoka"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:520
 #, kde-format
 msgid "Video Audio Channel Type"
 msgstr "Video vrsta zvočnega kanala"
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:521
 #, kde-format
 msgid "Video Audio Codec"
 msgstr "Video avdio kodek"
 
-#: core/libs/properties/itempropertiestab.cpp:520
+#: core/libs/properties/itempropertiestab.cpp:523
 #, kde-format
 msgid "Caption"
 msgstr "Napis po sliko"
 
-#: core/libs/properties/itempropertiestab.cpp:521
+#: core/libs/properties/itempropertiestab.cpp:524
 #, kde-format
 msgid "Title"
 msgstr "Naslov"
 
-#: core/libs/properties/itempropertiestab.cpp:523
+#: core/libs/properties/itempropertiestab.cpp:526
 #, kde-format
 msgid "Peoples"
 msgstr "Ljudje"
 
-#: core/libs/properties/itempropertiestab.cpp:525
+#: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "Pravice"
 
-#: core/libs/properties/itempropertiestab.cpp:526
+#: core/libs/properties/itempropertiestab.cpp:529
 #, kde-format
 msgid "Pick"
 msgstr "Izbor"
 
-#: core/libs/properties/itempropertiestab.cpp:527
+#: core/libs/properties/itempropertiestab.cpp:530
 #, kde-format
 msgid "Color"
 msgstr "Barva"
 
-#: core/libs/properties/itempropertiestab.cpp:528
+#: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -38983,29 +38983,29 @@ msgid " fps"
 msgstr " sličic na sekundo"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:122
-#, kde-format
-msgid "Count: "
-msgstr "Število: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
-#, kde-format
-msgid "Size: "
-msgstr "Velikost: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:124
-#, kde-format
-msgid "Groups: "
-msgstr "Grupe: "
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Selected Item Properties"
 msgstr "Lastnosti izbranega predmeta"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:147
+#: core/libs/properties/itemselectionpropertiestab.cpp:96
+#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#, kde-format
+msgid "Count: "
+msgstr "Število: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:97
+#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#, kde-format
+msgid "Size: "
+msgstr "Velikost: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
+#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#, kde-format
+msgid "Groups: "
+msgstr "Grupe: "
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:133
 #, kde-format
 msgid "All Item Properties"
 msgstr "Vse lastnosti predmeta"
@@ -41762,10 +41762,9 @@ msgid "File last modified"
 msgstr "Datoteka nazadnje spremenjena"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:155
-#, fuzzy, kde-format
-#| msgid "File date"
+#, kde-format
 msgid "File created"
-msgstr "Datum datoteke"
+msgstr "Datoteka ustvarjena"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
@@ -67227,12 +67226,22 @@ msgstr ""
 "vrstice. Uporabite »Samo za aktivni zavihek\", če uporabljate ločljivost "
 "majhnega zaslona kot npr. pri prenosnem računalniku."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
+msgstr ""
+"<font color='red'><i><b>⚠️Opozorilo:</b> Te nastavitve upočasnijo zagon! "
+"Najprej preberite <a href=\"%1\">spletno dokumentacijo.</a></i></font>"
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr "Prečeši za novimi predmeti ob zagonu"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:44
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -67263,12 +67272,12 @@ msgstr ""
 "onemogočite in načrtujete ročni pregled v pravem trenutku skozi vzdrževalno "
 "orodje."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:52
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Hiter pregled (zazna nove, zbrisane in preimenovane predmete)"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:53
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -67281,17 +67290,17 @@ msgstr ""
 "bodo novi, zbrisani in preimenovani predmeti. Če želite najti tudi\n"
 "spremenjene predmete, morate to možnost deaktivirati."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:59
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Zaznaj obraze v na novo dodanih slikah"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:60
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "Omogoči skeniranje prepoznavanja obraza v ozadju"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:61
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
@@ -67301,12 +67310,12 @@ msgstr ""
 "ozadju\n"
 "ko je nov obraz označen. To bo olajšalo postopek označevanja."
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:64
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr "Odstrani zastarele osnovne objekte baze podatkov"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:65
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -67327,16 +67336,6 @@ msgstr ""
 "baze za\n"
 "prepoznavanje obrazov. Za čiščenje rutin za druge baze podatkov uporabite "
 "vzdrževanje."
-
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, kde-format
-msgctxt "@info"
-msgid ""
-"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
-"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
-msgstr ""
-"<font color='red'><i><b>⚠️Opozorilo:</b> Te nastavitve upočasnijo zagon! "
-"Najprej preberite <a href=\"%1\">spletno dokumentacijo.</a></i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format

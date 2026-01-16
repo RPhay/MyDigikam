@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:40+0000\n"
+"POT-Creation-Date: 2026-01-16 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2810,85 +2810,70 @@ msgid "Donate: "
 msgstr "捐款："
 
 #: core/app/views/preview/itempreviewview.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "go to previous image"
-#| msgid "Back"
+#, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
-msgstr "后退"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
-msgstr "前进"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:193
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
-msgstr "添加人脸标签..."
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:198
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
-msgstr "清除此图像的所有人脸标签"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mark all unconfirmed faces as ignored"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "标记所有未确认人脸为已忽略"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:208
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
-msgstr "显示人脸标签"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:213
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
-msgstr "添加焦点"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:215
-#, fuzzy, kde-format
-#| msgid "Show focus points"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
-msgstr "显示焦点"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:221
-#, fuzzy, kde-format
-#| msgid "Show numbers"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
-msgstr "显示数字"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:225
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Under-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
-msgstr "曝光不足指示色"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:229
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Over-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
-msgstr "曝光过度指示色"
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:595
 #: core/app/views/stack/itemiconview_views.cpp:325
@@ -2900,7 +2885,7 @@ msgstr "人脸"
 #: core/app/views/preview/itempreviewview.cpp:791
 #, kde-format
 msgid "Show Magnifier (x%1)"
-msgstr ""
+msgstr "显示放大镜 (x%1)"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -3052,7 +3037,7 @@ msgstr "无标签相册"
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/properties/itempropertiestab.cpp:522
+#: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4062,7 +4047,7 @@ msgstr "路径"
 #: core/app/views/tableview/tableview_column_file.cpp:58
 #: core/app/views/tableview/tableview_column_file.cpp:91
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:486
+#: core/libs/properties/itempropertiestab.cpp:489
 #, kde-format
 msgid "Size"
 msgstr "大小"
@@ -4160,7 +4145,7 @@ msgstr "高度"
 
 #: core/app/views/tableview/tableview_column_item.cpp:74
 #: core/app/views/tableview/tableview_column_item.cpp:103
-#: core/libs/properties/itempropertiestab.cpp:491
+#: core/libs/properties/itempropertiestab.cpp:494
 #, kde-format
 msgid "Dimensions"
 msgstr "尺寸"
@@ -8171,7 +8156,7 @@ msgstr "色彩管理功能已禁用..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/libs/properties/itempropertiestab.cpp:510
+#: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
 msgid "White Balance"
@@ -23968,7 +23953,7 @@ msgid "Date"
 msgstr "日期"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/properties/itempropertiestab.cpp:524
+#: core/libs/properties/itempropertiestab.cpp:527
 #: core/libs/template/templatepanel.cpp:275
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
@@ -37433,227 +37418,227 @@ msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "关键词："
 
-#: core/libs/properties/itempropertiestab.cpp:309
+#: core/libs/properties/itempropertiestab.cpp:312
 #, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "人物："
 
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "标签"
 
-#: core/libs/properties/itempropertiestab.cpp:344
+#: core/libs/properties/itempropertiestab.cpp:347
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "位置"
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:369
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "版权信息"
 
-#: core/libs/properties/itempropertiestab.cpp:482
+#: core/libs/properties/itempropertiestab.cpp:485
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
 msgid "File"
 msgstr "文件"
 
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiestab.cpp:486
 #, kde-format
 msgid "Folder"
 msgstr "文件夹"
 
-#: core/libs/properties/itempropertiestab.cpp:484
+#: core/libs/properties/itempropertiestab.cpp:487
 #, kde-format
 msgid "Symlink"
 msgstr "符号链接"
 
-#: core/libs/properties/itempropertiestab.cpp:485
+#: core/libs/properties/itempropertiestab.cpp:488
 #, kde-format
 msgid "Modified Date"
 msgstr "修改日期"
 
-#: core/libs/properties/itempropertiestab.cpp:487
+#: core/libs/properties/itempropertiestab.cpp:490
 #, kde-format
 msgid "Owner"
 msgstr "所有者"
 
-#: core/libs/properties/itempropertiestab.cpp:488
+#: core/libs/properties/itempropertiestab.cpp:491
 #, kde-format
 msgid "Permissions"
 msgstr "权限"
 
-#: core/libs/properties/itempropertiestab.cpp:490
+#: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
 msgstr "MIME"
 
-#: core/libs/properties/itempropertiestab.cpp:492
+#: core/libs/properties/itempropertiestab.cpp:495
 #, kde-format
 msgid "Ratio"
 msgstr "宽高比"
 
-#: core/libs/properties/itempropertiestab.cpp:493
+#: core/libs/properties/itempropertiestab.cpp:496
 #, kde-format
 msgid "Bit Depth"
 msgstr "位深度"
 
-#: core/libs/properties/itempropertiestab.cpp:494
+#: core/libs/properties/itempropertiestab.cpp:497
 #, kde-format
 msgid "Color Mode"
 msgstr "色彩模式"
 
-#: core/libs/properties/itempropertiestab.cpp:495
+#: core/libs/properties/itempropertiestab.cpp:498
 #, kde-format
 msgid "Has Sidecar"
 msgstr "有附带文件"
 
-#: core/libs/properties/itempropertiestab.cpp:496
+#: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
 msgid "Has GPS"
 msgstr "有 GPS 信息"
 
-#: core/libs/properties/itempropertiestab.cpp:497
+#: core/libs/properties/itempropertiestab.cpp:500
 #, kde-format
 msgid "Versioned"
 msgstr "已版本管理"
 
-#: core/libs/properties/itempropertiestab.cpp:498
+#: core/libs/properties/itempropertiestab.cpp:501
 #, kde-format
 msgid "Grouped"
 msgstr "已分组"
 
-#: core/libs/properties/itempropertiestab.cpp:500
+#: core/libs/properties/itempropertiestab.cpp:503
 #, kde-format
 msgid "Make"
 msgstr "制造商"
 
-#: core/libs/properties/itempropertiestab.cpp:501
+#: core/libs/properties/itempropertiestab.cpp:504
 #, kde-format
 msgid "Model"
 msgstr "型号"
 
-#: core/libs/properties/itempropertiestab.cpp:502
+#: core/libs/properties/itempropertiestab.cpp:505
 #, kde-format
 msgid "Date Time"
 msgstr "日期和时间"
 
-#: core/libs/properties/itempropertiestab.cpp:503
+#: core/libs/properties/itempropertiestab.cpp:506
 #: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgid "Lens"
 msgstr "镜头"
 
-#: core/libs/properties/itempropertiestab.cpp:504
+#: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgid "Aperture"
 msgstr "光圈"
 
-#: core/libs/properties/itempropertiestab.cpp:505
+#: core/libs/properties/itempropertiestab.cpp:508
 #, kde-format
 msgid "Focal Length"
 msgstr "焦距"
 
-#: core/libs/properties/itempropertiestab.cpp:506
+#: core/libs/properties/itempropertiestab.cpp:509
 #, kde-format
 msgid "Exposure Time"
 msgstr "曝光时间"
 
-#: core/libs/properties/itempropertiestab.cpp:507
+#: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
 #: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Sensitivity"
 msgstr "感光度"
 
-#: core/libs/properties/itempropertiestab.cpp:508
+#: core/libs/properties/itempropertiestab.cpp:511
 #, kde-format
 msgid "Exposure Mode"
 msgstr "曝光模式"
 
-#: core/libs/properties/itempropertiestab.cpp:509
+#: core/libs/properties/itempropertiestab.cpp:512
 #, kde-format
 msgid "Flash"
 msgstr "闪光灯"
 
-#: core/libs/properties/itempropertiestab.cpp:512
+#: core/libs/properties/itempropertiestab.cpp:515
 #: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "视频宽高比"
 
-#: core/libs/properties/itempropertiestab.cpp:513
+#: core/libs/properties/itempropertiestab.cpp:516
 #: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "视频时长"
 
-#: core/libs/properties/itempropertiestab.cpp:514
+#: core/libs/properties/itempropertiestab.cpp:517
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "视频帧速率"
 
-#: core/libs/properties/itempropertiestab.cpp:515
+#: core/libs/properties/itempropertiestab.cpp:518
 #, kde-format
 msgid "Video Video Codec"
 msgstr "视频视频解码器"
 
-#: core/libs/properties/itempropertiestab.cpp:516
+#: core/libs/properties/itempropertiestab.cpp:519
 #, kde-format
 msgid "Video Audio Bit Rate"
 msgstr "视频音频解码器"
 
-#: core/libs/properties/itempropertiestab.cpp:517
+#: core/libs/properties/itempropertiestab.cpp:520
 #, kde-format
 msgid "Video Audio Channel Type"
 msgstr "视频音频声道类型"
 
-#: core/libs/properties/itempropertiestab.cpp:518
+#: core/libs/properties/itempropertiestab.cpp:521
 #, kde-format
 msgid "Video Audio Codec"
 msgstr "视频音频编码"
 
-#: core/libs/properties/itempropertiestab.cpp:520
+#: core/libs/properties/itempropertiestab.cpp:523
 #, kde-format
 msgid "Caption"
 msgstr "说明文字"
 
-#: core/libs/properties/itempropertiestab.cpp:521
+#: core/libs/properties/itempropertiestab.cpp:524
 #, kde-format
 msgid "Title"
 msgstr "标题"
 
-#: core/libs/properties/itempropertiestab.cpp:523
+#: core/libs/properties/itempropertiestab.cpp:526
 #, kde-format
 msgid "Peoples"
 msgstr "人物"
 
-#: core/libs/properties/itempropertiestab.cpp:525
+#: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "版权信息"
 
-#: core/libs/properties/itempropertiestab.cpp:526
+#: core/libs/properties/itempropertiestab.cpp:529
 #, kde-format
 msgid "Pick"
 msgstr "挑选"
 
-#: core/libs/properties/itempropertiestab.cpp:527
+#: core/libs/properties/itempropertiestab.cpp:530
 #, kde-format
 msgid "Color"
 msgstr "颜色"
 
-#: core/libs/properties/itempropertiestab.cpp:528
+#: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
@@ -37679,29 +37664,29 @@ msgid " fps"
 msgstr " 帧/秒"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:93
-#: core/libs/properties/itemselectionpropertiestab.cpp:122
-#, kde-format
-msgid "Count: "
-msgstr "数量："
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:94
-#: core/libs/properties/itemselectionpropertiestab.cpp:123
-#, kde-format
-msgid "Size: "
-msgstr "体积："
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:95
-#: core/libs/properties/itemselectionpropertiestab.cpp:124
-#, kde-format
-msgid "Groups: "
-msgstr "分组："
-
-#: core/libs/properties/itemselectionpropertiestab.cpp:117
 #, kde-format
 msgid "Selected Item Properties"
 msgstr "选中项目属性"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:147
+#: core/libs/properties/itemselectionpropertiestab.cpp:96
+#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#, kde-format
+msgid "Count: "
+msgstr "数量："
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:97
+#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#, kde-format
+msgid "Size: "
+msgstr "体积："
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
+#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#, kde-format
+msgid "Groups: "
+msgstr "分组："
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:133
 #, kde-format
 msgid "All Item Properties"
 msgstr "所有项目属性"
@@ -40266,10 +40251,9 @@ msgid "File last modified"
 msgstr "文件最后修改时间"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:155
-#, fuzzy, kde-format
-#| msgid "File date"
+#, kde-format
 msgid "File created"
-msgstr "文件日期"
+msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
@@ -41296,7 +41280,7 @@ msgstr "媒体播放器发生错误..."
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:202
 #, kde-format
 msgid "End of media."
-msgstr ""
+msgstr "到达媒体结尾。"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:295
@@ -41354,6 +41338,9 @@ msgid ""
 "\n"
 "Error: \"%2\""
 msgstr ""
+"%1\n"
+"\n"
+"错误：“%2”"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:301
 #, kde-format
@@ -62164,7 +62151,7 @@ msgstr "预览时显示完整图像"
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
-msgstr ""
+msgstr "RAW 图像预览方式："
 
 #: core/utilities/setup/album/setupalbumview.cpp:306
 #, kde-format
@@ -62221,49 +62208,39 @@ msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr "如果您想要使用抗锯齿插值来放大图像，请勾选此项。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid "Modifiers"
+#, kde-format
 msgid "Magnifier"
-msgstr "参数"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Zoom to Fit"
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool zoom factor"
 msgid "Zoom Factor:"
-msgstr "缩放至适合大小"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:339
-#, fuzzy, kde-format
-#| msgid "Icon Size:"
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool size"
 msgid "Tool Size:"
-msgstr "图标尺寸："
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Small"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Small"
-msgstr "小"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Medium"
-msgstr "中等大小"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Large"
-msgstr "大"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:354
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -65124,12 +65101,22 @@ msgstr ""
 "选择侧边栏标签页标题文字的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动"
 "标签页显示”。"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:29
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
+"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
+msgstr ""
+"<font color='black'><i><b>⚠️警告：</b>这些设置会拖慢程序启动速度。请阅读<a "
+"href=\"%1\">在线文档</a>了解详情。</i></font>"
+
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, kde-format
 msgid "&Scan for new items at startup"
 msgstr "启动时扫描新项目(&S)"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:30
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:44
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -65151,12 +65138,12 @@ msgstr ""
 "如果您的相册集合很大，或者使用的是远程数据库，这可能造成拖慢。\n"
 "在这种情况下请禁用此选项，并安排合适的时间段进行手动扫描。"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:38
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:52
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "快速扫描 (仅检测新增/删除/重命名项目)"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:39
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:53
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -65168,17 +65155,17 @@ msgstr ""
 "勾选此项后，扫描的速度将得到明显提升。仅检测新增、删除、重命名项目。如需检测"
 "项目本身的更改，请不要勾选此项。"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:45
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:59
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "检测新增图像中的人脸"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:46
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:60
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "启用后台人脸识别扫描"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:47
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:61
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
@@ -65187,12 +65174,12 @@ msgstr ""
 "选择此项后，分配新的人脸标签时将自动启动后台人脸识别扫描，\n"
 "从而简化标签分配过程。"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:50
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:64
 #, kde-format
 msgid "Remove obsolete core database objects"
 msgstr "移除过时的核心数据库对象"
 
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:51
+#: core/utilities/setup/misc/setupmisc_behavior.cpp:65
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -65209,16 +65196,6 @@ msgstr ""
 "因为这些不存在的数据库条目既浪费空间，又拖慢速度。\n"
 "此选项不会清理缩略图和人脸识别等其他数据库。\n"
 "要清理其他数据库，请使用工具菜单中的系统维护功能。"
-
-#: core/utilities/setup/misc/setupmisc_behavior.cpp:58
-#, kde-format
-msgctxt "@info"
-msgid ""
-"<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
-"Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
-msgstr ""
-"<font color='black'><i><b>⚠️警告：</b>这些设置会拖慢程序启动速度。请阅读<a "
-"href=\"%1\">在线文档</a>了解详情。</i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:73
 #, kde-format
@@ -65466,7 +65443,7 @@ msgstr "使用显卡纹理转换"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
 msgid "Decoding backend to render media:"
-msgstr ""
+msgstr "渲染媒体使用的解码器后端程序："
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format
@@ -66582,6 +66559,3 @@ msgstr "导入视图项目"
 #, kde-format
 msgid "Survey"
 msgstr "评审工具"
-
-#~ msgid "Show Fullscreen"
-#~ msgstr "全屏显示"
