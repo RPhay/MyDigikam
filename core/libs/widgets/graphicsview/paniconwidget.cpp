@@ -163,19 +163,6 @@ QRect PanIconWidget::getRegionSelection() const
     return (d->regionSelection);
 }
 
-void PanIconWidget::setCursorToLocalRegionSelectionCenter()
-{
-    QCursor::setPos(mapToGlobal(d->localRegionSelection.center()));
-}
-
-void PanIconWidget::setCenterSelection()
-{
-    setRegionSelection(QRect((int)(((float)d->zoomedOrgWidth / 2.0) - ((float)d->regionSelection.width()  / 2.0)),
-                            (int)(((float)d->zoomedOrgHeight / 2.0) - ((float)d->regionSelection.height() / 2.0)),
-                            d->regionSelection.width(),
-                            d->regionSelection.height()));
-}
-
 void PanIconWidget::regionSelectionMoved(bool targetDone)
 {
     if (targetDone)

@@ -52,9 +52,6 @@ public:
 
     void  setRegionSelection(const QRect& regionSelection);
     QRect getRegionSelection() const;
-    void  setCenterSelection();
-
-    void  setCursorToLocalRegionSelectionCenter();
 
 Q_SIGNALS:
 
