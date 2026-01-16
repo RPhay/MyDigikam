@@ -438,7 +438,7 @@ void ItemPreviewView::setupOverlays()
 
     QGridLayout* const grid = new QGridLayout(this);
     grid->addWidget(d->toolBar,   0, 0, 1, 1);
-    grid->addWidget(d->osd,       2, 0, 1, 1);
+    grid->addWidget(d->osd,       1, 0, 2, 1);
     grid->addWidget(pan,          2, 2, 1, 1);
     grid->setContentsMargins(QMargins(0, 0,
                                       QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent),
