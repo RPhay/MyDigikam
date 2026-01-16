@@ -1,5 +1,5 @@
 
-# SPDX-FileCopyrightText: 2023-2025 Scarlett Moore <sgmoore@kde.org>
+# SPDX-FileCopyrightText: 2023-2026 Scarlett Moore <sgmoore@kde.org>
 # SPDX-FileCopyrightText: 2024 Sergio Schvezov <sergio.schvezov@ubuntu.com>
 #
 # SPDX-License-Identifier: CC0-1.0
@@ -362,6 +362,7 @@ parts:
       - marble
       - opencv
       - libksane
+      - libplasma
     parse-info:
       - usr/share/metainfo/org.kde.digikam.appdata.xml
     source: http://download.kde.org/stable/digikam/8.8.0/digiKam-8.8.0.tar.xz
