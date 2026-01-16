@@ -137,7 +137,7 @@ void PanIconWidget::slotZoomFactorChanged(double factor)
 
 void PanIconWidget::setRegionSelection(const QRect& regionSelection)
 {
-    if (d->zoomedOrgHeight == 0)
+    if ((d->zoomedOrgHeight == 0) || d->moveSelection)
     {
         return;
     }
