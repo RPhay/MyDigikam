@@ -23,17 +23,7 @@
 
 #include <QPainter>
 #include <QPen>
-#include <QToolButton>
-#include <QIcon>
 #include <QApplication>
-#include <QEventLoop>
-#include <QKeyEvent>
-#include <QScreen>
-#include <QWindow>
-
-// KDE includes
-
-#include <klocalizedstring.h>
 
 namespace Digikam
 {
@@ -69,12 +59,9 @@ public:
 };
 
 PanIconWidget::PanIconWidget(QWidget* const parent)
-    : QFrame(parent),
-      d     (new Private)
+    : QWidget(parent),
+      d      (new Private)
 {
-    setFrameStyle(QFrame::Box | QFrame::Raised);
-    setMidLineWidth(2);
-
     setMouseTracking(true);
     setAttribute(Qt::WA_DeleteOnClose);
 }
@@ -198,8 +185,6 @@ void PanIconWidget::paintEvent(QPaintEvent*)
 
     // Drawing selection border
 
-    p.setPen(QPen(Qt::red, 1, Qt::SolidLine));
-
     QRect r(d->localRegionSelection);
 
     // Clamp to widget size. Selection area must always be visible
@@ -224,11 +209,12 @@ void PanIconWidget::paintEvent(QPaintEvent*)
         r.setBottom(height() - 2);
     }
 
-    p.drawRect(r.x(), r.y(), r.width(), r.height());
+    p.fillRect(r, QColor(220, 220, 220, 128));
 
-    p.setPen(QPen(Qt::white, 1, Qt::DotLine));
+    p.setPen(QPen(QColor(255, 255, 255, 64), 1, Qt::SolidLine));
 
-    p.drawRect(r.x(), r.y(), r.width(), r.height());
+    p.drawRect(r);
+    p.drawRect(d->rect);
 }
 
 void PanIconWidget::mousePressEvent(QMouseEvent* e)

@@ -21,23 +21,18 @@
 #include <QRect>
 #include <QImage>
 #include <QPixmap>
-#include <QHideEvent>
 #include <QMouseEvent>
-#include <QTimerEvent>
 #include <QPaintEvent>
-#include <QFrame>
 
 // Local includes
 
 #include "digikam_export.h"
 #include "dimg.h"
 
-class QToolButton;
-
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT PanIconWidget : public QFrame
+class DIGIKAM_EXPORT PanIconWidget : public QWidget
 {
     Q_OBJECT
 
