@@ -18,7 +18,6 @@
 // Qt includes
 
 #include <QCheckBox>
-#include <QGroupBox>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QApplication>
