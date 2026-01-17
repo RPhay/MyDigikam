@@ -148,8 +148,8 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotLoadMetadataFilters()));
 
-    connect(TagsActionMngr::defaultManager(), SIGNAL(signalColorLabelNamesUpdated()),
-            this, SLOT(slotColorLabelNamesUpdated()));
+    connect(TagsActionMngr::defaultManager(), &TagsActionMngr::signalColorLabelNamesUpdated,
+            this, &ItemPropertiesSideBarDB::slotColorLabelNamesUpdated);
 }
 
 ItemPropertiesSideBarDB::~ItemPropertiesSideBarDB()
