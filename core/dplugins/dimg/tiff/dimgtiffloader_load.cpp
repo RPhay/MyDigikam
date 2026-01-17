@@ -634,7 +634,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 }
             }
 
-            double factor = (maxValue > 10.0) ? log10(maxValue) * 1.5 : 1.0;
+            double factor = (maxValue > 10.0) ? log10(maxValue) * 1.5 : 1.0;    // cppcheck-suppress invalidFunctionArg
             double scale  = (factor > 1.0)    ? 0.75                  : 1.0;
 
             if (factor > 1.0)
