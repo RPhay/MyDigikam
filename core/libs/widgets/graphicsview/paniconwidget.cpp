@@ -22,6 +22,7 @@
 // Qt includes
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QPen>
 #include <QApplication>
 
@@ -209,11 +210,25 @@ void PanIconWidget::paintEvent(QPaintEvent*)
         r.setBottom(height() - 2);
     }
 
-    p.fillRect(r, QColor(220, 220, 220, 128));
+    QPainterPath maskPath;
+    maskPath.addRect(d->rect);  // Full image area
+    maskPath.addRect(r);        // Exclude the selection rectangle
+
+    // Increase the contrast to decrease the luminosity outside the selection
+
+    p.save();
+    p.setClipPath(maskPath);
+    p.fillRect(d->rect, QColor(0, 0, 0, 128)); // Uses middle transparancy
+    p.restore();
+
+    // Draw the selection rectangle with a white border
+
+    p.setPen(QPen(QColor(255, 255, 255, 255), 2, Qt::SolidLine));
+    p.drawRect(r);
+
+    // Draw a rectangle around the whole image.
 
     p.setPen(QPen(QColor(255, 255, 255, 64), 1, Qt::SolidLine));
-
-    p.drawRect(r);
     p.drawRect(d->rect);
 }
 
