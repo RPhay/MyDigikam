@@ -117,6 +117,7 @@ ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
     grid->setColumnStretch(1, 1);
 
     d_ptr->item->initOriginalImage();
+    slotRefreshPanIconSelection();
 }
 
 ImageRegionWidget::~ImageRegionWidget()
