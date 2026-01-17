@@ -123,9 +123,21 @@ cv::Mat CompressionDetector::checkEdgesBlock(const cv::Mat& gray_image, int bloc
 
         for (int i = 2 ; i < blockSize - 1 ; ++i)
         {
-            cv::Mat a      = (accessGrayImageAt(i) - accessGrayImageAt(i + 1)) - (accessGrayImageAt(i - 1) - accessGrayImageAt(i));
-            cv::Mat b      = (accessGrayImageAt(i) - accessGrayImageAt(i + 1)) - (accessGrayImageAt(i + 1) - accessGrayImageAt(i - 2));
-            accessResAt(i) = (a >= d->threshold_edges_block) & (b >= d->threshold_edges_block);
+            cv::Mat a = (accessGrayImageAt(i) - accessGrayImageAt(i + 1)) - (accessGrayImageAt(i - 1) - accessGrayImageAt(i));
+            cv::Mat b = (accessGrayImageAt(i) - accessGrayImageAt(i + 1)) - (accessGrayImageAt(i + 1) - accessGrayImageAt(i - 2));
+
+            /**
+             * Fix reported by cppcheck: replace bitwise operator '&' with cv::bitwise_and for logical element-wise AND operation.
+             * The original code used the bitwise operator '&' on cv::Mat objects, which can lead to incorrect
+             * results if the matrix values are not strictly 0 or 1. cv::bitwise_and ensures a proper logical AND
+             * operation on a per-pixel basis, generating a binary mask where each pixel is 255 (true) if both
+             * input pixels meet the threshold condition, and 0 (false) otherwise.
+             * This change improves robustness and correctness, especially for edge detection in compression analysis.
+             */
+            cv::Mat maskA, maskB;
+            cv::compare(a, d->threshold_edges_block, maskA, cv::CMP_GE);
+            cv::compare(b, d->threshold_edges_block, maskB, cv::CMP_GE);
+            cv::bitwise_and(maskA, maskB, accessResAt(i));
         }
 
         return res;
