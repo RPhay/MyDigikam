@@ -53,7 +53,7 @@ private Q_SLOTS:
 private:
 
     /**
-     * @brief Generate one animate frame with the lightening.
+     * @brief Generate one animate frame with the lightning.
      */
     QPixmap renderAnimationFrame(int beamPosition);
 

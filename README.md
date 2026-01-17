@@ -80,7 +80,7 @@ A mail will automatically be sent to the digiKam development mailing list.
 There is no need to contact directly the digiKam mailing list for a bug report
 or a devel wish.
 
-The intructions to report bugs or wishes to the digiKam project can be seen at [this url](https://www.digikam.org/contribute/#reporting-bugs-and-submitting-feature-requests):
+The instructions to report bugs or wishes to the digiKam project can be seen at [this url](https://www.digikam.org/contribute/#reporting-bugs-and-submitting-feature-requests):
 
 See also the extra issue entries for the shared libraries used by digiKam:
 

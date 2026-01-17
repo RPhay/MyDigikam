@@ -8,7 +8,7 @@
 #
 
 # Check if run as root.
-# Necessary if the target processus runs with a different user or if SELinux/AppArmor restrictions are on.
+# Necessary if the target process runs with a different user or if SELinux/AppArmor restrictions are on.
 
 if [[ $EUID -ne 0 ]] ; then
     echo "This script should be run as root using sudo command."

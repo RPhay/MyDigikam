@@ -330,7 +330,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
     /**
      * Translation files have been verified with the DE i18n set located at:
      *
-     * macOS:    /Applications/digikam.org/digikam.app/Contents/Ressources/locale/de/LC_MESSAGES
+     * macOS:    /Applications/digikam.org/digikam.app/Contents/Resources/locale/de/LC_MESSAGES
      * AppImage: squashfs-root/usr/share/locale/de/LC_MESSAGES
      * Windows:  C:\Program Files\digiKam\data\locale\de\LC_MESSAGES
      *
@@ -368,7 +368,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
     /**
      * Translation files have been verified with the DE i18n set located at:
      *
-     * macOS:    /Applications/digikam.org/digikam.app/Contents/Ressources/locale/de/LC_MESSAGES
+     * macOS:    /Applications/digikam.org/digikam.app/Contents/Resources/locale/de/LC_MESSAGES
      * AppImage: squashfs-root/usr/share/locale/de/LC_MESSAGES
      * Windows:  C:\Program Files\digiKam\data\locale\de\LC_MESSAGES
      *
@@ -405,7 +405,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
     };
 
     /**
-     * NOTE: these files handled by this function are .qm Qt formated translation catalogs (Qt Compiled Translation Source File).
+     * NOTE: these files handled by this function are .qm Qt formatted translation catalogs (Qt Compiled Translation Source File).
      * At the same place in the bundles, the .mo translations catalogs (Machine Objects)
      * are also present and do not need a special rules to be loaded in memory at run time
      * as it's done automatically in another place by the KDE framework.

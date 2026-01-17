@@ -218,7 +218,7 @@ void PanIconWidget::paintEvent(QPaintEvent*)
 
     p.save();
     p.setClipPath(maskPath);
-    p.fillRect(d->rect, QColor(0, 0, 0, 128)); // Uses middle transparancy
+    p.fillRect(d->rect, QColor(0, 0, 0, 128)); // Uses middle transparency
     p.restore();
 
     // Draw the selection rectangle with a white border

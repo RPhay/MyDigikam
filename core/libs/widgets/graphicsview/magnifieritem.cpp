@@ -110,7 +110,7 @@ void MagnifierItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QW
     // Create a ellipsis path for the clipping.
 
     QPainterPath clipPath;
-    clipPath.addEllipse(boundingRect().adjusted(2, 2, -2, -2));         // Ajustement to highlight border.
+    clipPath.addEllipse(boundingRect().adjusted(2, 2, -2, -2));         // Adjustement to highlight border.
 
     // Apply clipping.
 
@@ -132,7 +132,7 @@ void MagnifierItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QW
     QPixmap zoomed = d->sourcePixmap.copy(d->sourceRect.toRect())
                                    .scaled(d->size - 2, d->size - 2,
                                            Qt::KeepAspectRatio,
-                                           Qt::SmoothTransformation);   // Ajust to preserve the border.
+                                           Qt::SmoothTransformation);   // Adjust to preserve the border.
 
     painter->drawPixmap(QRectF(-(d->size / 2) + 2, -(d->size / 2) + 2, d->size - 4, d->size - 4),
                         zoomed,

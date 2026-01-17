@@ -166,12 +166,12 @@ QPixmap DLogoAction::renderAnimationFrame(int beamPosition)
         maskPainter.drawPixmap(QPoint(0, 0), d->logo.pixmap(size));
     }
 
-    // Lightening settings.
+    // Lightning settings.
 
-    int beamWidth     = frame.height();     // Lightening width (ajustable).
-    int halfBeamWidth = beamWidth / 6;      // half width for the symetrical gradient.
+    int beamWidth     = frame.height();     // Lightning width (ajustable).
+    int halfBeamWidth = beamWidth / 6;      // half width for the symmetrical gradient.
 
-    // Apply the lightening with a symetrical gradient.
+    // Apply the lightning with a symmetrical gradient.
 
     for (int y = 0 ; y < frame.height() ; ++y)
     {
