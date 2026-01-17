@@ -158,7 +158,7 @@ bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
         *backend = usedBackend;
     }
 
-    return (hasLoaded | sidecarLoaded);
+    return (hasLoaded || sidecarLoaded);
 }
 
 bool DMetadata::save(const QString& filePath, bool setVersion) const
