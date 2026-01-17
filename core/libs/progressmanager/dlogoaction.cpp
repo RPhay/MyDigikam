@@ -35,9 +35,15 @@
 namespace Digikam
 {
 
+/**
+ * @brief class used to override the widget style to the DLogoAction hosted in a tool bar to prevent
+ *        the keyboard shortcut underline in the action text done by the style applied by the application.
+ */
 class Q_DECL_HIDDEN NoUnderlineToolButtonStyle : public QProxyStyle
 {
 public:
+
+    NoUnderlineToolButtonStyle() = default;
 
     int styleHint(StyleHint hint,
                   const QStyleOption* option = nullptr,
@@ -55,6 +61,11 @@ public:
 
         return QProxyStyle::styleHint(hint, option, widget, returnData);
     }
+
+private:
+
+    // Disable
+    NoUnderlineToolButtonStyle(QObject*);
 };
 
 // ---
