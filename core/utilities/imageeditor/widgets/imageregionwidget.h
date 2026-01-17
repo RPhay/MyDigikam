@@ -80,7 +80,7 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     void slotPreviewModeChanged(int mode);
-    void slotOriginalImageRegionChanged(bool targetDone=true);
+    void slotOriginalImageRegionChanged(bool targetDone = true);
 
 protected:
 
@@ -94,7 +94,7 @@ private:
 private Q_SLOTS:
 
     void slotOriginalImageRegionChangedDelayed();
-    void slotPanIconSelectionMoved(const QRect&, bool);
+    void slotPanIconSelectionMoved(const QRect&, bool)                    override;
 
 private:
 
