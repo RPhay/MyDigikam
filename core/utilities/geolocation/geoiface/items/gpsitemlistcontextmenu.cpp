@@ -170,7 +170,7 @@ bool GPSItemListContextMenu::eventFilter(QObject* watched, QEvent* event)
                 copyAvailable                   &= itemHasCoordinates;
                 removeCoordinatesAvailable      |= itemHasCoordinates;
                 removeAltitudeAvailable         |= gpsData.getCoordinates().hasAltitude();
-                removeUncertaintyAvailable      |= (int)gpsData.hasNSatellites() | (int)gpsData.hasDop() | (int)gpsData.hasFixType();
+                removeUncertaintyAvailable      |= gpsData.hasNSatellites() || gpsData.hasDop() || gpsData.hasFixType();
                 removeSpeedAvailable            |= gpsData.hasSpeed();
                 lookupMissingAltitudesAvailable |= itemHasCoordinates && !gpsData.getCoordinates().hasAltitude();
             }
