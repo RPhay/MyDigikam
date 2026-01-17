@@ -12,6 +12,8 @@
  *
  * ============================================================ */
 
+#pragma once
+
 #include "picklabelwidget.h"
 
 // Qt includes
