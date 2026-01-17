@@ -387,6 +387,7 @@ void ItemPropertiesTab::setVideoDuration(const QString& str)
         ss = rr / 1000;
         ff = rr % 1000;
 
+        // cppcheck-suppress redundantInitialization
         durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", dd, hh, mm, ss, ff);
     }
     else
