@@ -136,7 +136,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
 
 #elif KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
-// cppcheck-suppress constParameter
+// cppcheck-suppress constParameterCallback
 void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, int bytes_per_line, int ksaneformat)
 
 #else
