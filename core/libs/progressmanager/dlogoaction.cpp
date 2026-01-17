@@ -41,6 +41,8 @@ namespace Digikam
  */
 class Q_DECL_HIDDEN NoUnderlineToolButtonStyle : public QProxyStyle
 {
+    Q_OBJECT
+
 public:
 
     NoUnderlineToolButtonStyle() = default;
@@ -246,3 +248,4 @@ void DLogoAction::applyStyleForToolBarButton(QToolButton* const btn)
 
 #include "moc_dlogoaction.cpp"
 
+#include "dlogoaction.moc"
