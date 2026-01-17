@@ -117,7 +117,7 @@ void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
     d->itemModel = model;
 
     connect(d->itemModel, &ItemFilterModel::signalGroupIsOpen,
-            [this](qlonglong group, bool open)
+            this, [this](qlonglong group, bool open)
         {
             QTreeWidgetItemIterator it(this);
 
