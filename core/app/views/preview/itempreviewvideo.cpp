@@ -169,7 +169,9 @@ void ItemPreviewVideo::slotContextMenu()
 
     // --------------------------------------------------------
 
-    for (auto* const ac : actionsList())
+    const auto acl = actionsList();
+
+    for (auto* const ac : acl)
     {
         cmHelper.addAction(ac, true);
     }
