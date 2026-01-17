@@ -92,7 +92,17 @@ int ExposureDetector::count_by_condition(const cv::Mat& image, int minVal, int m
 {
     try
     {
-        cv::Mat mat = (image >= minVal) & (image < maxVal);
+        /**
+         * Note: The bitwise operator '&' is intentionally used here for element-wise logical AND between two cv::Mat masks.
+         * (image >= minVal) generates a binary mask where pixels >= minVal are set to 255 (true), and others to 0 (false).
+         * (image < maxVal) does the same for pixels < maxVal.
+         * The '&' operator performs a per-pixel bitwise AND, effectively combining the two conditions:
+         *   minVal <= pixel < maxVal.
+         * This is the idiomatic way to combine conditions on cv::Mat objects in OpenCV.
+         * cv::countNonZero then counts the number of pixels that satisfy both conditions.
+         */
+        cv::Mat mat = (image >= minVal) & (image < maxVal);         // cppcheck-suppress bitwiseOnBoolean
+
 
         return cv::countNonZero(mat);
     }
