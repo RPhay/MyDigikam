@@ -28,6 +28,9 @@ PanIconWidget* GraphicsDImgView::installPanIcon()
     connect(this, &GraphicsDImgView::contentsMoving,
             this, &GraphicsDImgView::slotRefreshPanIconSelection);
 
+    connect(this, &GraphicsDImgView::resized,
+            this, &GraphicsDImgView::slotRefreshPanIconSelection);
+
     connect(this, &GraphicsDImgView::signalZoomFactorChanged,
             this, &GraphicsDImgView::slotRefreshPanIconSelection);
 
