@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-16 00:41+0000\n"
+"POT-Creation-Date: 2026-01-17 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -269,7 +269,7 @@ msgstr "얼굴 태그 변경"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:896
+#: core/app/views/preview/itempreviewview.cpp:913
 #, kde-format
 msgid "&Cancel"
 msgstr "취소(&C)"
@@ -280,7 +280,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "선택한 항목에 태그 할당(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:911
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "이 항목에 태그 할당(&T)"
@@ -2930,7 +2930,7 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "노출 지수"
 
-#: core/app/views/preview/itempreviewview.cpp:595
+#: core/app/views/preview/itempreviewview.cpp:612
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
@@ -2939,7 +2939,7 @@ msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "얼굴별"
 
-#: core/app/views/preview/itempreviewview.cpp:791
+#: core/app/views/preview/itempreviewview.cpp:808
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -27627,7 +27627,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:166
+#: core/dplugins/rawimport/native/rawpreview.cpp:193
 #, fuzzy, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -43982,11 +43982,6 @@ msgstr ""
 #, kde-format
 msgid "Failed to load image"
 msgstr "이미지를 불러올 수 없음"
-
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:312
-#, kde-format
-msgid "Pan the image to a region"
-msgstr ""
 
 #: core/libs/widgets/history/filtershistorywidget.cpp:79
 #, kde-format
@@ -60906,14 +60901,14 @@ msgid "Flip Vertically"
 msgstr "좌우 반전"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:519
-#: core/utilities/import/views/importpreviewview.cpp:188
+#: core/utilities/import/views/importpreviewview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "왼쪽으로 회전"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:527
-#: core/utilities/import/views/importpreviewview.cpp:189
+#: core/utilities/import/views/importpreviewview.cpp:192
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
@@ -61301,7 +61296,7 @@ msgstr "태그 삭제"
 msgid "Assign Labels"
 msgstr "레이블 할당"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:165
+#: core/utilities/imageeditor/widgets/canvas.cpp:191
 #, fuzzy, kde-format
 msgid ""
 "Failed to load image\n"
@@ -61322,23 +61317,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "이후"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:262
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:299
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
 #, kde-format
 msgid "Before"
 msgstr "이전"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:191
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:228
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:266
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
 #, kde-format
 msgid "After"
 msgstr "이후"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -62448,14 +62443,14 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "자동 감지됨"
 
-#: core/utilities/import/views/importpreviewview.cpp:185
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Open a preview"
 msgctxt "@action"
 msgid "Escape preview"
 msgstr "미리 보기 열기"
 
-#: core/utilities/import/views/importpreviewview.cpp:186
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -62463,7 +62458,7 @@ msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "뒤로"
 
-#: core/utilities/import/views/importpreviewview.cpp:187
+#: core/utilities/import/views/importpreviewview.cpp:190
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: go to next image"

@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-16 00:41+0000\n"
-"PO-Revision-Date: 2026-01-15 06:03-0300\n"
+"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"PO-Revision-Date: 2026-01-16 14:59-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -279,7 +279,7 @@ msgstr "Alterar etiqueta de rosto"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:896
+#: core/app/views/preview/itempreviewview.cpp:913
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancelar"
@@ -290,7 +290,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Atribuir etiquetas aos itens &selecionados"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:911
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "A&tribuir etiquetas a este item"
@@ -2927,14 +2927,14 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Indicador de superexposição"
 
-#: core/app/views/preview/itempreviewview.cpp:595
+#: core/app/views/preview/itempreviewview.cpp:612
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Rostos"
 
-#: core/app/views/preview/itempreviewview.cpp:791
+#: core/app/views/preview/itempreviewview.cpp:808
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr "Mostrar lupa (x%1)"
@@ -13091,7 +13091,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Sync JFIF Comment section"
-msgstr "Sincronizar com a seção de comentário do JFIF"
+msgstr "Sincronizar com a seção de comentários do JFIF"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
@@ -13124,7 +13124,7 @@ msgstr "Data e hora de criação"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:91
 #, kde-format
 msgid "Creation sub-second"
-msgstr "Subsegundo da criação"
+msgstr "Subsegundo de criação"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
 #, kde-format
@@ -13288,7 +13288,7 @@ msgstr "Digitalizador por reflexão"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:121
 #, kde-format
 msgid "Digital still camera"
-msgstr "Câmera digital"
+msgstr "Câmera fotográfica digital"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:122
 #, kde-format
@@ -13511,7 +13511,7 @@ msgstr "Selecione aqui a velocidade ISO da câmera que tirou a foto."
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:254
 #, kde-format
 msgid "Sensing method:"
-msgstr "Método de detecção:"
+msgstr "Método de deteção:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:256
 #, kde-format
@@ -13546,7 +13546,7 @@ msgstr "Sensor trilinear"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:262
 #, kde-format
 msgid "Color sequential linear"
-msgstr "Sensor linear sequencial da cor"
+msgstr "Sensor linear sequencial de cor"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:263
 #, kde-format
@@ -13560,7 +13560,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Scene capture type:"
-msgstr "Tipo de captura da cena:"
+msgstr "Tipo de captura de cena:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:270
 #, kde-format
@@ -14225,7 +14225,7 @@ msgstr "Legenda:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:83
 #, kde-format
 msgid "Sync Exif Comment"
-msgstr "Sincronizar com o comentário do EXIF"
+msgstr "Sincronizar com os comentários do EXIF"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
 #, kde-format
@@ -15088,17 +15088,17 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
 #, kde-format
 msgid "Expiration date"
-msgstr "Data do vencimento"
+msgstr "Data de expiração"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
 #, kde-format
 msgid "Expiration time"
-msgstr "Hora do vencimento"
+msgstr "Hora de expiração"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
 #, kde-format
 msgid "Set expiration date to today"
-msgstr "Definir a data do vencimento para hoje"
+msgstr "Definir a data de expiração para hoje"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
 #, kde-format
@@ -15176,7 +15176,7 @@ msgstr "Tarde"
 #, kde-format
 msgctxt "@item: object cycle"
 msgid "Evening"
-msgstr "Fim de tarde"
+msgstr "Noite"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
 #, kde-format
@@ -15226,7 +15226,7 @@ msgstr "Referência:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:217
 #, kde-format
 msgid "Set here the content reference"
-msgstr "Digite aqui a referência de conteúdo"
+msgstr "Digite aqui a referência do conteúdo"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:219
 #, kde-format
@@ -15870,7 +15870,7 @@ msgstr "Tópico"
 #, kde-format
 msgctxt "@item: type code"
 msgid "Topic Set"
-msgstr "Definir tópico"
+msgstr "Conjunto de tópicos"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:135
 #, kde-format
@@ -26957,7 +26957,7 @@ msgstr ""
 "Libraw para mais detalhes: <a href='https://www.libraw.org/'>https://www."
 "libraw.org/</a></p>"
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:166
+#: core/dplugins/rawimport/native/rawpreview.cpp:193
 #, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -43461,11 +43461,6 @@ msgstr "Visualização em tamanho reduzido"
 msgid "Failed to load image"
 msgstr "Falha ao carregar a imagem"
 
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:312
-#, kde-format
-msgid "Pan the image to a region"
-msgstr "Deslocar a imagem para uma região"
-
 #: core/libs/widgets/history/filtershistorywidget.cpp:79
 #, kde-format
 msgid "Used filters"
@@ -48902,7 +48897,7 @@ msgctxt ""
 "@label: Information Provider Reference: A name, registered with the IPTC/"
 "NAA, identifying the provider that guarantees the uniqueness of the UNO"
 msgid "I.P.R:"
-msgstr "R.I.F:"
+msgstr "R.I.F.:"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:210
 #, kde-format
@@ -53518,7 +53513,7 @@ msgstr "Itens"
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:75
 #, kde-format
 msgid "This shows all found duplicate items."
-msgstr "Isto mostra todos os itens duplicados encontrados."
+msgstr "Isto mostra todos as duplicatas encontradas."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:119
 #, kde-format
@@ -53672,7 +53667,7 @@ msgid ""
 "limit search to the Album\n"
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
-"Use esta opção para restringir a pesquisa por itens duplicados com alguns "
+"Use esta opção para restringir a pesquisa por duplicatas com alguns "
 "critérios, como o limite da pesquisa ao álbum\n"
 "da imagem de referência ou para excluir o álbum da imagem de referência da "
 "pesquisa."
@@ -53701,8 +53696,7 @@ msgstr "Localizar duplicatas"
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
-"Use este botão para analisar os álbuns selecionados em busca de itens "
-"duplicados."
+"Use este botão para analisar os álbuns selecionados em busca de duplicatas."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:292
 #, kde-format
@@ -57571,7 +57565,7 @@ msgstr "Exibir bússola"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:378
 #, kde-format
 msgid "Show scale bar"
-msgstr "Mostrar barra de escala"
+msgstr "Exibir barra de escala"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:383
 #, kde-format
@@ -57963,8 +57957,8 @@ msgstr "Correlação concluída com sucesso"
 msgid ""
 "All images have been correlated. You can now check their position on the map."
 msgstr ""
-"Todas as imagens foram correlacionadas. Você pode verificar agora a sua "
-"posição no mapa."
+"Todas as imagens foram correlacionadas. Agora você pode verificar a posição "
+"delas no mapa."
 
 #. i18np.
 #. See bug #376438 for details.
@@ -57983,11 +57977,11 @@ msgid_plural ""
 "%1 out of %2 images have been correlated. Please check the offset and gap "
 "settings if you think that more images should have been correlated."
 msgstr[0] ""
-"Uma em %2 imagens foi correlacionada. Verifique o deslocamento e as "
+"Uma de %2 imagens foi correlacionada. Verifique o deslocamento e as "
 "configurações do intervalo se você acha que deveria ter correlacionado mais "
 "imagens."
 msgstr[1] ""
-"%1 em %2 imagens foram correlacionadas. Verifique o deslocamento e as "
+"%1 de %2 imagens foram correlacionadas. Verifique o deslocamento e as "
 "configurações do intervalo se você acha que deveria ter correlacionado mais "
 "imagens."
 
@@ -58101,7 +58095,7 @@ msgstr "Remover altitude"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:93
 #, kde-format
 msgid "Remove uncertainty"
-msgstr "Remover incerteza"
+msgstr "Remover incerteza (DOP)"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:705
@@ -59374,14 +59368,14 @@ msgid "Flip Vertically"
 msgstr "Inverter verticalmente"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:519
-#: core/utilities/import/views/importpreviewview.cpp:188
+#: core/utilities/import/views/importpreviewview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Girar à esquerda"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:527
-#: core/utilities/import/views/importpreviewview.cpp:189
+#: core/utilities/import/views/importpreviewview.cpp:192
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
@@ -59757,7 +59751,7 @@ msgstr "Remover etiqueta"
 msgid "Assign Labels"
 msgstr "Atribuir rótulos"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:165
+#: core/utilities/imageeditor/widgets/canvas.cpp:191
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -59778,23 +59772,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Depois"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:262
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:299
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
 #, kde-format
 msgid "Before"
 msgstr "Antes"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:191
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:228
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:266
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
 #, kde-format
 msgid "After"
 msgstr "Depois"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -60916,19 +60910,19 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "detecção automática"
 
-#: core/utilities/import/views/importpreviewview.cpp:185
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Escape preview"
 msgstr "Sair da visualização"
 
-#: core/utilities/import/views/importpreviewview.cpp:186
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "Voltar"
 
-#: core/utilities/import/views/importpreviewview.cpp:187
+#: core/utilities/import/views/importpreviewview.cpp:190
 #, kde-format
 msgctxt "@action: go to next image"
 msgid "Forward"
@@ -61675,7 +61669,7 @@ msgstr "Processar os itens de:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
-msgstr "Use as últimas ferramentas e configurações ativas salvas"
+msgstr "Usar as últimas ferramentas ativas e configurações salvas"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:63
 #, kde-format
@@ -61795,7 +61789,7 @@ msgstr "Excluir álbum de imagem de referência"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:196
 #, kde-format
 msgid "Find Duplicate Items"
-msgstr "Localizar itens duplicados"
+msgstr "Localizar duplicatas"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
@@ -62029,7 +62023,7 @@ msgstr "Item localizado para catálogo: %1"
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
 #, kde-format
 msgid "Find duplicates items"
-msgstr "Localizar os itens duplicados"
+msgstr "Localizar duplicatas"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
@@ -62045,8 +62039,8 @@ msgstr "Nenhum item duplicado"
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "1 item duplicado"
-msgstr[1] "%1 itens duplicados"
+msgstr[0] "1 duplicata"
+msgstr[1] "%1 duplicatas"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
 #, kde-format
@@ -69120,6 +69114,9 @@ msgstr "Itens importados"
 #, kde-format
 msgid "Survey"
 msgstr "Pesquisa"
+
+#~ msgid "Pan the image to a region"
+#~ msgstr "Deslocar a imagem para uma região"
 
 #~ msgid "Show Fullscreen"
 #~ msgstr "Exibir em tela cheia"

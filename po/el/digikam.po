@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-16 00:41+0000\n"
+"POT-Creation-Date: 2026-01-17 00:41+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -315,7 +315,7 @@ msgstr "Αλλαγή ετικετών προσώπου"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:896
+#: core/app/views/preview/itempreviewview.cpp:913
 #, kde-format
 msgid "&Cancel"
 msgstr "&Ακύρωση"
@@ -326,7 +326,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:911
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Ορισμός ετικετών σε αυ&τό το αντικείμενο"
@@ -3033,14 +3033,14 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Ένδειξη υπερέκθεσης"
 
-#: core/app/views/preview/itempreviewview.cpp:595
+#: core/app/views/preview/itempreviewview.cpp:612
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Χωρίς επιλογή"
 
-#: core/app/views/preview/itempreviewview.cpp:791
+#: core/app/views/preview/itempreviewview.cpp:808
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -28405,7 +28405,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:166
+#: core/dplugins/rawimport/native/rawpreview.cpp:193
 #, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -46070,11 +46070,6 @@ msgstr "Προεπισκόπηση μειωμένου μεγέθους"
 msgid "Failed to load image"
 msgstr "Αποτυχία φόρτωσης της εικόνας"
 
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:312
-#, kde-format
-msgid "Pan the image to a region"
-msgstr "Πανοραμική κίνηση εικόνας σε μια περιοχή"
-
 #: core/libs/widgets/history/filtershistorywidget.cpp:79
 #, kde-format
 msgid "Used filters"
@@ -63679,7 +63674,7 @@ msgid "Flip Vertically"
 msgstr "Αναστροφή κατακόρυφα"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:519
-#: core/utilities/import/views/importpreviewview.cpp:188
+#: core/utilities/import/views/importpreviewview.cpp:191
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "@action"
@@ -63687,7 +63682,7 @@ msgid "Rotate Left"
 msgstr "Περιστροφή αριστερά"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:527
-#: core/utilities/import/views/importpreviewview.cpp:189
+#: core/utilities/import/views/importpreviewview.cpp:192
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "@action"
@@ -64122,7 +64117,7 @@ msgstr "Αφαίρεση ετικέτας"
 msgid "Assign Labels"
 msgstr "Ορισμός τίτλων"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:165
+#: core/utilities/imageeditor/widgets/canvas.cpp:191
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -64143,23 +64138,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Μετά"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:262
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:299
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
 #, kde-format
 msgid "Before"
 msgstr "Πριν"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:191
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:228
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:266
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
 #, kde-format
 msgid "After"
 msgstr "Μετά"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -65353,14 +65348,14 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "εντοπίστηκαν αυτόματα"
 
-#: core/utilities/import/views/importpreviewview.cpp:185
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Escape preview"
 msgctxt "@action"
 msgid "Escape preview"
 msgstr "Τέλος προεπισκόπησης"
 
-#: core/utilities/import/views/importpreviewview.cpp:186
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -65368,7 +65363,7 @@ msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "Πίσω"
 
-#: core/utilities/import/views/importpreviewview.cpp:187
+#: core/utilities/import/views/importpreviewview.cpp:190
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: go to next image"
@@ -74087,6 +74082,9 @@ msgstr "Εισαγωγή αντικειμένων"
 #, kde-format
 msgid "Survey"
 msgstr ""
+
+#~ msgid "Pan the image to a region"
+#~ msgstr "Πανοραμική κίνηση εικόνας σε μια περιοχή"
 
 #~ msgid "Show Fullscreen"
 #~ msgstr "Έμφάνιση πλήρους οθόνης"

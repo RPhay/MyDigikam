@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-16 00:41+0000\n"
+"POT-Creation-Date: 2026-01-17 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -344,7 +344,7 @@ msgstr "Promjena u velika/mala slova"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:896
+#: core/app/views/preview/itempreviewview.cpp:913
 #, kde-format
 msgid "&Cancel"
 msgstr "&Odustani"
@@ -355,7 +355,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Dodjeli oznake &izabranim stavkama"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:911
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Dodjeli oznake &ovoj stavki"
@@ -3307,7 +3307,7 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Pokazivač Previše-Izloženog"
 
-#: core/app/views/preview/itempreviewview.cpp:595
+#: core/app/views/preview/itempreviewview.cpp:612
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
@@ -3316,7 +3316,7 @@ msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Otkrij lica"
 
-#: core/app/views/preview/itempreviewview.cpp:791
+#: core/app/views/preview/itempreviewview.cpp:808
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -28726,7 +28726,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:166
+#: core/dplugins/rawimport/native/rawpreview.cpp:193
 #, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -46153,11 +46153,6 @@ msgstr "Predpregled reducirane veličine"
 #, kde-format
 msgid "Failed to load image"
 msgstr "Neuspjelo učitavanje slike"
-
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:312
-#, kde-format
-msgid "Pan the image to a region"
-msgstr "Pomjeraj sliku u oblast"
 
 #: core/libs/widgets/history/filtershistorywidget.cpp:79
 #, kde-format
@@ -63859,7 +63854,7 @@ msgid "Flip Vertically"
 msgstr "Prevrni uspravno"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:519
-#: core/utilities/import/views/importpreviewview.cpp:188
+#: core/utilities/import/views/importpreviewview.cpp:191
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "@action"
@@ -63867,7 +63862,7 @@ msgid "Rotate Left"
 msgstr "Rotiraj lijevo"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:527
-#: core/utilities/import/views/importpreviewview.cpp:189
+#: core/utilities/import/views/importpreviewview.cpp:192
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "@action"
@@ -64296,7 +64291,7 @@ msgstr "Ukloni oznaku"
 msgid "Assign Labels"
 msgstr "Dodijeli labele"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:165
+#: core/utilities/imageeditor/widgets/canvas.cpp:191
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -64317,23 +64312,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Nakon"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:262
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:299
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
 #, kde-format
 msgid "Before"
 msgstr "Prije"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:191
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:228
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:266
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
 #, kde-format
 msgid "After"
 msgstr "Posle"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -65548,14 +65543,14 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "Sam &prepoznaj"
 
-#: core/utilities/import/views/importpreviewview.cpp:185
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Escape preview"
 msgctxt "@action"
 msgid "Escape preview"
 msgstr "Izađi iz pregleda"
 
-#: core/utilities/import/views/importpreviewview.cpp:186
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -65563,7 +65558,7 @@ msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "Nazad"
 
-#: core/utilities/import/views/importpreviewview.cpp:187
+#: core/utilities/import/views/importpreviewview.cpp:190
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: go to next image"
@@ -74352,6 +74347,9 @@ msgstr "Uvozni predmeti"
 #, kde-format
 msgid "Survey"
 msgstr ""
+
+#~ msgid "Pan the image to a region"
+#~ msgstr "Pomjeraj sliku u oblast"
 
 #, fuzzy
 #~| msgid "Custom process"

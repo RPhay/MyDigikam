@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-16 00:41+0000\n"
+"POT-Creation-Date: 2026-01-17 00:41+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -295,7 +295,7 @@ msgstr "顔タグを変更"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:896
+#: core/app/views/preview/itempreviewview.cpp:913
 #, kde-format
 msgid "&Cancel"
 msgstr "キャンセル(&C)"
@@ -306,7 +306,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "選択したアイテムにタグを付ける(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:911
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "このアイテムにタグを付ける(&T)"
@@ -2958,7 +2958,7 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "露出オーバーインジケータ"
 
-#: core/app/views/preview/itempreviewview.cpp:595
+#: core/app/views/preview/itempreviewview.cpp:612
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
@@ -2967,7 +2967,7 @@ msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "顔で"
 
-#: core/app/views/preview/itempreviewview.cpp:791
+#: core/app/views/preview/itempreviewview.cpp:808
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -27449,7 +27449,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:166
+#: core/dplugins/rawimport/native/rawpreview.cpp:193
 #, fuzzy, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -44215,11 +44215,6 @@ msgstr "縮小サイズプレビュー"
 #, kde-format
 msgid "Failed to load image"
 msgstr "画像の読み込みに失敗しました"
-
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:312
-#, kde-format
-msgid "Pan the image to a region"
-msgstr "画像をパン (表示領域を移動) します"
 
 #: core/libs/widgets/history/filtershistorywidget.cpp:79
 #, kde-format
@@ -61463,7 +61458,7 @@ msgid "Flip Vertically"
 msgstr "上下反転"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:519
-#: core/utilities/import/views/importpreviewview.cpp:188
+#: core/utilities/import/views/importpreviewview.cpp:191
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "@action"
@@ -61471,7 +61466,7 @@ msgid "Rotate Left"
 msgstr "左に回転"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:527
-#: core/utilities/import/views/importpreviewview.cpp:189
+#: core/utilities/import/views/importpreviewview.cpp:192
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "@action"
@@ -61884,7 +61879,7 @@ msgstr "タグを取り除く"
 msgid "Assign Labels"
 msgstr "ラベルを付ける"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:165
+#: core/utilities/imageeditor/widgets/canvas.cpp:191
 #, fuzzy, kde-format
 msgid ""
 "Failed to load image\n"
@@ -61903,23 +61898,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "処理後"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:262
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:299
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
 #, kde-format
 msgid "Before"
 msgstr "処理前"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:191
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:228
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:266
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
 #, kde-format
 msgid "After"
 msgstr "処理後"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -63074,14 +63069,14 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "自動検出(&T)"
 
-#: core/utilities/import/views/importpreviewview.cpp:185
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Escape preview"
 msgstr "プレビューを開く"
 
 # ACCELERATOR added by translator
-#: core/utilities/import/views/importpreviewview.cpp:186
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -63090,7 +63085,7 @@ msgid "Back"
 msgstr "戻る(&B)"
 
 # ACCELERATOR added by translator
-#: core/utilities/import/views/importpreviewview.cpp:187
+#: core/utilities/import/views/importpreviewview.cpp:190
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: go to next image"
@@ -71274,6 +71269,9 @@ msgstr "インポートされたアイテム"
 #, kde-format
 msgid "Survey"
 msgstr ""
+
+#~ msgid "Pan the image to a region"
+#~ msgstr "画像をパン (表示領域を移動) します"
 
 #~ msgid "Show Fullscreen"
 #~ msgstr "フルスクリーンで表示"

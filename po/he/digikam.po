@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-16 00:41+0000\n"
-"PO-Revision-Date: 2026-01-12 18:58+0200\n"
+"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"PO-Revision-Date: 2026-01-16 11:51+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -274,7 +274,7 @@ msgstr "החלפת תגית פרצוף"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:896
+#: core/app/views/preview/itempreviewview.cpp:913
 #, kde-format
 msgid "&Cancel"
 msgstr "&ביטול"
@@ -285,7 +285,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "הוספת תוויות לפריטים המסומנים"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:894
+#: core/app/views/preview/itempreviewview.cpp:911
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "הוספת תוויות לפריט זה"
@@ -2975,7 +2975,7 @@ msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "מחוון חשיפת יתר פעיל"
 
-#: core/app/views/preview/itempreviewview.cpp:595
+#: core/app/views/preview/itempreviewview.cpp:612
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 #| msgid "Faces"
@@ -2983,7 +2983,7 @@ msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "פרצופים"
 
-#: core/app/views/preview/itempreviewview.cpp:791
+#: core/app/views/preview/itempreviewview.cpp:808
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -18228,21 +18228,21 @@ msgid "Tiff image creation failed."
 msgstr "הצגת תאריך צילום תמונה"
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:229
-#, fuzzy, kde-format
+#, kde-format
 msgid "Raw file conversion failed."
-msgstr "מרחב צבע"
+msgstr "המרת קובץ גלם (Raw) נכשלה."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
-msgstr "%1 - בחירת תיקיית מצלמה"
+msgstr "ברוך בואך לכלי הפנורמה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
-msgstr "%1 - בחירת תיקיית מצלמה"
+msgstr "ברוך בואך לכלי הפנורמה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
@@ -18279,17 +18279,16 @@ msgid "Panorama Binaries"
 msgstr "אחזור תצוגה-מקדימה של תמונה..."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
-#, fuzzy, kde-format
-#| msgid "File Format"
+#, kde-format
 msgctxt "@title: group"
 msgid "File Format"
-msgstr "תצורת קובץ"
+msgstr "תסדיר קובץ"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
-msgstr "מאפייני TIFF"
+msgstr "פלט JPEG"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, no-c-format, kde-format
@@ -18309,10 +18308,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
-msgstr "מאפייני TIFF"
+msgstr "פלט TIFF"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, kde-format
@@ -18331,10 +18330,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:52
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Set Panorama Images"
-msgstr "בחירת תמונה"
+msgstr "הגדרת תמונות פנורמה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:66
 #, kde-format
@@ -18351,12 +18350,10 @@ msgid "Images are taken from the same point of view."
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Images are taken with the same camera (and lens)."
-msgstr ""
-"אוסף-תמונות בעל אותו שם קיים\n"
-"אנא בחרו שם חדש"
+msgstr "התמונות צולמו באותה המצלמה (והעדשה)."
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
 #, kde-format
@@ -18367,28 +18364,28 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Panorama Stitched"
-msgstr "<b>קו-רוחב</b>:"
+msgstr "הפנורמה הולחמה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group"
 msgid "Save Settings"
-msgstr "הגדרת מצלמה"
+msgstr "שמירת הגדרות"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:88
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
-msgstr "שם קובץ"
+msgstr "תבנית שם קובץ:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Name of the panorama file (without its extension)."
-msgstr "הזנת שם חדש (ללא סיומת):"
+msgstr "שם קובץ הפנורמה (ללא הסיומת)"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:93
 #, kde-format
@@ -18402,10 +18399,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Save project file"
-msgstr "קובצי תמונת"
+msgstr "שמירת קובץ מיזם"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
 #, kde-format
@@ -18425,17 +18422,16 @@ msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:217
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: dialog"
 msgid "Warning"
 msgstr "אזהרה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:209
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "This file already exists"
-msgstr "הקובץ קיים"
+msgstr "הקובץ כבר קיים"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:218
 #, kde-format
@@ -18446,10 +18442,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
-msgstr "<b>קו-רוחב</b>:"
+msgstr "הלחמת פנורמה נכשלה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:264
 #, kde-format
@@ -18479,23 +18475,22 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:297
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@label"
 msgid "Error"
 msgstr "שגיאה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
-msgstr "<b>מימדים</b>:"
+msgstr "מיטוב"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option: check"
 msgid "Level horizon"
-msgstr "הפוך אופקי"
+msgstr "איזון האופק"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
 #, kde-format
@@ -18512,10 +18507,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:171
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
-msgstr "בתהליך התנתקות ממצלמה, אנא המתינו..."
+msgstr "מתבצע מיטוב, נא להמתין."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:205
 #, kde-format
@@ -18545,22 +18540,22 @@ msgid "Press the \"Next\" button to run the optimization."
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:310
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Optimization has failed."
-msgstr "חיבור כשל"
+msgstr "המיטוב נכשל."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Images"
-msgstr "תמונה קודמת"
+msgstr "עיבוד קדם של תמונות"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option: check"
 msgid "Detect moving skies"
-msgstr "בחירה בכלום"
+msgstr "זיהוי שמיים זזים"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, kde-format
@@ -18611,15 +18606,15 @@ msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
-msgstr "עיבוד תמונה נוסף"
+msgstr "עיבוד פנורמה נוסף"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preview Processing Cancelled."
-msgstr "תמונה קודמת"
+msgstr "עיבוד תצוגה מקדימה נכשל."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, kde-format
@@ -18647,16 +18642,16 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
-msgstr "מפתח ראשי ומתאם פעילות"
+msgstr "תרכובת פנורמה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
-msgstr "מפתח ראשי ומתאם פעילות"
+msgstr "תרכובת פנורמה"
 
 #: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:57
 #, kde-format
@@ -18665,45 +18660,45 @@ msgid "Panorama Creator Wizard"
 msgstr "אשף יצירת פנורמה"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintphoto.cpp:38
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unsupported Paper Size"
-msgstr "לא ידוע"
+msgstr "גודל הנייר לא נתמך"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:107
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
-msgstr "הדפסת התמונה..."
+msgstr "הדפסה לקובץ תמונה"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Output: PDF"
 msgid "Print to PDF"
-msgstr "אפשרויות תצוגת תיקייה"
+msgstr "הדפסה ל־PDF"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
-msgstr "אפשרויות תצוגת תיקייה"
+msgstr "הדפסה עם Gimp"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:138
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
-msgstr "LibJPEG"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:139
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
-msgstr "LibPNG"
+msgstr "PNG"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
-msgstr "LibTIFF"
+msgstr "TIFF"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:149
 #, kde-format
@@ -18738,32 +18733,30 @@ msgstr "תבנית מותאמת אישית"
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:184
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:231
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:321
-#, fuzzy, kde-format
-#| msgid "Printing Cancelled"
+#, kde-format
 msgid "Printing canceled"
 msgstr "ההדפסה בוטלה"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:210
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:292
-#, fuzzy, kde-format
+#, kde-format
 msgid "Processing page %1"
-msgstr "קובצי תמונת"
+msgstr "העמוד %1 עובר עיבוד"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:304
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not save file %1"
-msgstr "כשל בעת הצגת קבצים ב %1"
+msgstr "לא ניתן לשמור את הקובץ %1"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:312
-#, fuzzy, kde-format
-#| msgid " (%1 of %2)"
+#, kde-format
 msgid "Page %1 saved as %2"
-msgstr " (%1 of %2)"
+msgstr "העמוד %1 נשמר בתור %2"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgid "Print Creator"
-msgstr "לוח־שנה"
+msgstr "יוצר הדפסות"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
@@ -18786,16 +18779,15 @@ msgid "Author"
 msgstr "צילום"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:92
-#, fuzzy, kde-format
-#| msgid "Contribute..."
+#, kde-format
 msgid "Contributor"
-msgstr "תרומה..."
+msgstr "מתנדב"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
-msgstr "לוח־שנה"
+msgstr "יוצר הדפסות…"
 
 #: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
@@ -18900,41 +18892,37 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_disableCrop)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:46
-#, fuzzy, kde-format
+#, kde-format
 msgid "Do not crop"
-msgstr "אל תעשה כלום"
+msgstr "לא לחתוך"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateLeft)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateLeft)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:66
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:69
-#, fuzzy, kde-format
-#| msgid "Align text to the right"
+#, kde-format
 msgid "Rotate photo to the left"
-msgstr "יישור מלל לימין"
+msgstr "סיבוב התמונה שמאלה"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateLeft)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:72
-#, fuzzy, kde-format
-#| msgid "Rotate Left"
+#, kde-format
 msgid "Rotate &left"
-msgstr "סובב שמאלה"
+msgstr "סיבוב &שמאלה"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateRight)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateRight)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:79
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:82
-#, fuzzy, kde-format
-#| msgid "Align text to the right"
+#, kde-format
 msgid "Rotate photo to the right"
-msgstr "יישור מלל לימין"
+msgstr "סיבוב התמונה ימינה"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateRight)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:85
-#, fuzzy, kde-format
-#| msgid "Rotate Right"
+#, kde-format
 msgid "Rotate &right"
-msgstr "סובב ימינה"
+msgstr "סיבוב י&מינה"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageDown)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageDown)
@@ -18944,23 +18932,23 @@ msgstr "סובב ימינה"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:111
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:268
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:271
-#, fuzzy, kde-format
+#, kde-format
 msgid "Previous photo"
-msgstr "תמונה קודמת"
+msgstr "התמונה הקודמת"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropPrev)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "<< Pr&evious"
-msgstr "תמונה קודמת"
+msgstr "<< ה&קודמת"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropNext)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropNext)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:121
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:124
-#, fuzzy, kde-format
+#, kde-format
 msgid "Next photo"
-msgstr "ב&חודש הבא"
+msgstr "התמונה הבאה"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropNext)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:127
@@ -18970,10 +18958,9 @@ msgstr "ה&בא >>"
 
 #. i18n: ectx: property (text), widget (QLabel, LblCropPhoto)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:156
-#, fuzzy, kde-format
-#| msgid " (%1 of %2)"
+#, kde-format
 msgid "Photo 0 of 0"
-msgstr " (%1 of %2)"
+msgstr "תמונה 0 מתוך 0"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, AdvPrintCustomLayout)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:26
@@ -18995,10 +18982,9 @@ msgstr "שורות"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:112
-#, fuzzy, kde-format
-#| msgid "Photo Flash"
+#, kde-format
 msgid "Photo size"
-msgstr "מבזק אור (פלאש)"
+msgstr "גודל תמונה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
@@ -19028,10 +19014,9 @@ msgstr "עמודות"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_photoGridCheck)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:279
-#, fuzzy, kde-format
-#| msgid "Show grid"
+#, kde-format
 msgid "Photo grid:"
-msgstr "הצגת רשת"
+msgstr "רשת תמונות:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_photosXPageCheck)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:304
@@ -19041,16 +19026,15 @@ msgstr "פריסה אוטומטית:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:316
-#, fuzzy, kde-format
+#, kde-format
 msgid "Photos per page"
-msgstr "מאפייני התצלום"
+msgstr "תמונות לעמוד"
 
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:47
-#, fuzzy, kde-format
-#| msgid "Photo Flash"
+#, kde-format
 msgid "Photos:"
-msgstr "מבזק אור (פלאש)"
+msgstr "תמונות:"
 
 #. i18n: ectx: property (text), widget (QLabel, LblPhotoCount)
 #. i18n: ectx: property (text), widget (QLabel, LblSheetsPrinted)
@@ -19076,16 +19060,15 @@ msgstr "חלונות ריקים:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pagesetup)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:184
-#, fuzzy, kde-format
+#, kde-format
 msgid "Page settings"
-msgstr "הגדרת מצלמה"
+msgstr "הגדרת עמוד"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:218
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Pages Preview"
-msgstr "תצוגה מקדימה"
+msgstr "תצוגת עמודים מקדימה"
 
 #. i18n: ectx: property (text), widget (QToolButton, BtnPreviewPageDown)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:274
@@ -19103,10 +19086,9 @@ msgstr "עמוד"
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageUp)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:312
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:315
-#, fuzzy, kde-format
-#| msgid "Next Image"
+#, kde-format
 msgid "Next page"
-msgstr "תמונה הבאה"
+msgstr "העמוד הבא"
 
 #. i18n: ectx: property (text), widget (QToolButton, BtnPreviewPageUp)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:318
@@ -19142,9 +19124,9 @@ msgid "Number of columns"
 msgstr "מספר העמודות"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 msgid "Insert number of columns"
-msgstr "הוספת מלל"
+msgstr "הוספת מספר העמודות"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:41
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:42
@@ -19153,21 +19135,19 @@ msgid "Choose to have a custom photo size album"
 msgstr "בחירה ליצור אלבום עם תמונות בגודל מותאם אישית"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgid "Photo height"
-msgstr "תחתון ימני:"
+msgstr "גובה תמונה"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:44
-#, fuzzy, kde-format
-#| msgid "Align text to the right"
+#, kde-format
 msgid "Insert photo height"
-msgstr "יישור מלל לימין"
+msgstr "הוספת גובה תמונה"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:45
-#, fuzzy, kde-format
-#| msgid "Photo Flash"
+#, kde-format
 msgid "Photo width"
-msgstr "מבזק אור (פלאש)"
+msgstr "רוחב תמונה"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:46
 #, kde-format
@@ -19182,29 +19162,29 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:133
-#, fuzzy, kde-format
+#, kde-format
 msgid "No page to print..."
-msgstr "הצגת תוויות התמונה"
+msgstr "אין עמוד להדפסה…"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgid "Starting to pre-process files..."
-msgstr "לכידת תמונה..."
+msgstr "מתחיל עיבוד קדם לקבצים…"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:179
-#, fuzzy, kde-format
+#, kde-format
 msgid "Printing process aborted..."
-msgstr "עיבוד קבוצת תמונות"
+msgstr "תהליך ההדפסה בוטל…"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:220
-#, fuzzy, kde-format
+#, kde-format
 msgid "Printing process is not completed"
-msgstr "מצגת-שקפים"
+msgstr "תהליך ההדפסה לא הושלם"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:225
-#, fuzzy, kde-format
+#, kde-format
 msgid "Printing process completed."
-msgstr "תמונה קודמת"
+msgstr "תהליך ההדפסה הושלם."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:233
 #, kde-format
@@ -19219,9 +19199,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not remove the GIMP's temporary files."
-msgstr "כישלון בעת מחיקת הקובץ \"%1\"."
+msgstr "לא ניתן להסיר את הקבצים הזמניים של GIMP."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:299
 #, kde-format
@@ -19232,10 +19212,10 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:347
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:89
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
-msgstr "לוח־שנה"
+msgstr "יוצר הדפסות"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:72
 #, kde-format
@@ -19247,18 +19227,18 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group"
 msgid "Optional Gimp Binaries"
-msgstr "אחזור תצוגה-מקדימה של תמונה..."
+msgstr "קבצים בינריים של GIMP כרשות"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image Format:"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "תסדיר תמונה:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:79
 #, fuzzy, kde-format
@@ -19267,16 +19247,16 @@ msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוי�
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:266
-#, fuzzy, kde-format
+#, kde-format
 msgid "Destination folder:"
-msgstr "תיאור"
+msgstr "תיקיית יעד:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:278
-#, fuzzy, kde-format
+#, kde-format
 msgid "Output Destination Path"
-msgstr "אמצעי פלט"
+msgstr "נתיב יעד פלט"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #, kde-format
@@ -19284,34 +19264,34 @@ msgid "The image output file name will be generated automatically."
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Open in File Browser"
-msgstr "פתיחה ב- Konqueror"
+msgstr "פתיחה במנהל קבצים"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info layout page"
 msgid "Custom"
-msgstr "מותאם אישית"
+msgstr "התאמה אישית"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "נא לבחור את פלט ההדפסה המועדף עליך."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:508
-#, fuzzy, kde-format
+#, kde-format
 msgid "Add again"
-msgstr "הוספת גרעיניות..."
+msgstr "הוספה שוב"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove"
-msgstr "הסרת תוויות"
+msgstr "הסרה"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1125
 #, kde-format
@@ -19334,22 +19314,22 @@ msgstr ""
 "מותאמת אישית"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgid "Welcome to Print Creator"
-msgstr "%1 - בחירת תיקיית מצלמה"
+msgstr "ברוך בואך ליוצר ההדפסות"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
-#, fuzzy, kde-format
+#, kde-format
 msgid "Albums Selection"
-msgstr "הצגת אגד אוספי-התמונות"
+msgstr "בחירת אלבומים"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Page Layout"
-msgstr "בחירה בכלום"
+msgstr "בחירת פריסת עמוד"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
@@ -19357,14 +19337,14 @@ msgid "Caption Settings"
 msgstr "הגדרות כיתוב"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
-#, fuzzy, kde-format
+#, kde-format
 msgid "Crop and Rotate Photos"
-msgstr "סיבוב/היפוך אוטומטי של תמונה"
+msgstr "חיתוך וסיבוב תמונות"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
-#, fuzzy, kde-format
+#, kde-format
 msgid "Images Output Settings"
-msgstr "הגדרות כלליות"
+msgstr "הגדרות פלט תמונות"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:106
 #, fuzzy, kde-format
@@ -19372,27 +19352,25 @@ msgid "Render Printing"
 msgstr "יעד תצוגה סופי:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:243
-#, fuzzy, kde-format
-#| msgid " (%1 of %2)"
+#, kde-format
 msgid "Photo %1 of %2"
-msgstr " (%1 of %2)"
+msgstr "תמונה %1 מתוך %2"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:342
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:354
-#, fuzzy, kde-format
-#| msgid " (%1 of %2)"
+#, kde-format
 msgid "Page %1 of %2"
-msgstr " (%1 of %2)"
+msgstr "עמוד %1 מתוך %2"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error opening input file"
-msgstr "שגיאה בעת שמירת הקובץ"
+msgstr "שגיאה בפתיחת קובץ קלט"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error opening temporary folder"
-msgstr "כישלון בעת מחיקת הקובץ \"%1\"."
+msgstr "שגיאה בפתיחת תיקייה זמנית"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:129
 #, kde-format
@@ -19410,9 +19388,9 @@ msgid "Cannot save resized image (PNG). Aborting."
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:109
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot create a temporary directory"
-msgstr "תקלה בעת יצירת ספרייה,"
+msgstr "לא ניתן ליצור תיקייה זמנית"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:170
 #, kde-format
@@ -19420,24 +19398,24 @@ msgid "Resizing %1"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:188
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 resized successfully"
-msgstr "מעתיק למחשב את הקובץ %1..."
+msgstr "הגודל של %1 השתנה בהצלחה"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:202
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to resize %1: %2"
-msgstr "כשל בעת הצגת קבצים ב %1"
+msgstr "שינוי הגודל של %1 נכשל: %2"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgid "There are no files to send"
-msgstr "לא קיימות תמונות בתיקייה זו."
+msgstr "אין קבצים לשליחה"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:263
-#, fuzzy, kde-format
+#, kde-format
 msgid "Build images properties file"
-msgstr "מאפייני הקובץ"
+msgstr "בניית קובץ מאפייני תמונות"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:279
 #, kde-format
@@ -19445,38 +19423,38 @@ msgid "no caption"
 msgstr "אין כיתוב"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgid "no keywords"
-msgstr "מידע-נוסף"
+msgstr "אין מילות מפתח"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "file \"%1\":\n"
 "Original images: %2\n"
-msgstr "תמונה מקורית:"
+msgstr ""
+"הקובץ „%1”:\n"
+"תמונות מקומיות: %2\n"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:289
-#, fuzzy, kde-format
+#, kde-format
 msgid "Comments: %1\n"
-msgstr "ניגוד:"
+msgstr "הערות: %1\n"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:291
-#, fuzzy, kde-format
-#| msgid "Tag: %1"
+#, kde-format
 msgid "Tags: %1\n"
-msgstr "תווית: %1"
+msgstr "תגיות: %1\n"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:293
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rating: %1\n"
-msgstr "דירוג:"
+msgstr "דירוג: %1\n"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:298
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgid "properties.txt"
-msgstr "מאפיינים"
+msgstr "properties.txt"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:313
 #, kde-format
@@ -19484,17 +19462,17 @@ msgid "Image properties file cannot be opened"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:325
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image properties file done"
-msgstr "מאפייני TIFF"
+msgstr "קובץ מאפייני תמונה הושלם"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:345
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:982
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:995
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
-msgstr "קובצי תמונת"
+msgstr "העיבוד נכשל"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:346
 #, kde-format
@@ -19543,16 +19521,16 @@ msgid "Clawsmail"
 msgstr "Clawsmail"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Mail client: EVOLUTION"
 msgid "Evolution"
-msgstr "שחזור"
+msgstr "Evolution"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Mail client: KMAIL"
 msgid "Kmail"
-msgstr "משפחה"
+msgstr "Kmail"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:101
 #, kde-format
@@ -19589,10 +19567,10 @@ msgstr "Jpeg"
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/libs/dplugins/webservices/wssettings.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Image format: PNG"
 msgid "Png"
-msgstr "דהייה:"
+msgstr "Png"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:44
 #, kde-format
@@ -19652,9 +19630,9 @@ msgid "Mozilla Foundation Mail Client."
 msgstr "לקוח דוא״ל מבית קרן Mozilla."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:124
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preparing file to export by mail..."
-msgstr "קבוצת אוספים"
+msgstr "הקובץ נערך לייצוא בדוא״ל…"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:135
@@ -19683,9 +19661,9 @@ msgid "Mail client application Binaries"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:88
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mail program:"
-msgstr "Dcraw יישום"
+msgstr "תוכנית דוא״ל:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:92
 #, kde-format
@@ -19693,9 +19671,9 @@ msgid "Select your preferred external mail client program here."
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:107
-#, fuzzy, kde-format
+#, kde-format
 msgid "Attach a file with items properties"
-msgstr "מאפייני הקובץ"
+msgstr "צירוף קובץ עם מאפייני פריטים"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:108
 #, kde-format
@@ -19718,9 +19696,9 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "Adjust image properties"
-msgstr "מאפייני הקובץ"
+msgstr "כיוון מאפייני תמונה"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:126
@@ -19733,9 +19711,9 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image Properties"
-msgstr "מאפיינים"
+msgstr "מאפייני תמונה"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
@@ -19749,16 +19727,16 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:139
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image Length:"
-msgstr "עורך תמונה"
+msgstr "אורך תמונה:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:150
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select your preferred format to convert image."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "נא לבחור את התסדיר המועדף עליך להמרת תמונה."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
@@ -19778,16 +19756,16 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:145
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image quality:"
-msgstr "עורך תמונה"
+msgstr "איכות תמונה:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:173
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove all metadata"
-msgstr "השתמשו במידע-נוסף"
+msgstr "הסרת כל נתוני־העל"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:174
@@ -19799,10 +19777,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
-msgstr "הדרוגים יובאו"
+msgstr "שליחה בדוא״ל"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #, kde-format
@@ -19812,29 +19790,29 @@ msgstr "ברוך בואך לכלי הדוא״ל"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "Images List"
-msgstr "עורך תמונה"
+msgstr "רשימ תמונות"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "Email Settings"
-msgstr "הגדרות"
+msgstr "הגדרות דוא״ל"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgid "Export by Email"
-msgstr "הדרוגים יובאו"
+msgstr "ייצוא בדוא״ל"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Slideshow"
-msgstr "הוספת תוויות זו"
+msgstr "מצגת וידאו"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgid "A tool to create video slideshow from images"
-msgstr "הוספת תוויות זו"
+msgstr "כלי ליצירת מצגת וידאו מתמונות"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:64
 #, kde-format
@@ -19846,15 +19824,15 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
-msgstr "הוספת תוויות זו"
+msgstr "יצירת מצגת וידאו…"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:130
-#, fuzzy, kde-format
+#, kde-format
 msgid "Starting to generate video slideshow..."
-msgstr "לכידת תמונה..."
+msgstr "מתחילה יצירת מצגת וידאו…"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:133
 #, kde-format
@@ -19862,9 +19840,9 @@ msgid "%1 input images to process"
 msgstr "%1 פריטי קלט לעיבוד"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:181
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Slideshow is not completed"
-msgstr "מצגת-שקפים"
+msgstr "מצגת וידאו לא הושלמה"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:186
 #, kde-format
@@ -19872,14 +19850,14 @@ msgid "See the video encoding trace below"
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Slideshow completed."
-msgstr "מצגת-שקפים"
+msgstr "מצגת וידאו הושלמה."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgid "Opening video stream in player..."
-msgstr "פתיחה ב- Konqueror"
+msgstr "תזרים הווידאו נפתח בנגן…"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideimagespage.cpp:64
 #, kde-format
@@ -19909,9 +19887,9 @@ msgid "FFmpeg Binary"
 msgstr "הקובץ הבינרי של FFmpeg"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Media Container Format:"
-msgstr "LibLCMS"
+msgstr "תסדיר מכולת מדיה:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
 #, kde-format
@@ -19921,15 +19899,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:122
-#, fuzzy, kde-format
-#| msgid "Open in File Manager"
+#, kde-format
 msgid "Open in Player:"
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "פתיחה בנגן:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:160
-#, fuzzy, kde-format
+#, kde-format
 msgid "Output"
-msgstr "אמצעי פלט"
+msgstr "פלט"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:168
 #, kde-format
@@ -19958,31 +19935,30 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:194
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "Frames Normalization"
-msgstr "מאפייני התמונה"
+msgstr "נרמול תמוניות"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:204
-#, fuzzy, kde-format
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "אחזור תצוגה-מקדימה של תמונה..."
+msgstr "קובץ רצועת שמע:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:210
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "קבצי שמע"
+msgstr "בחירת רצועת שמע"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:213
-#, fuzzy, kde-format
+#, kde-format
 msgid "Soundtrack Duration:"
-msgstr "אחזור תצוגה-מקדימה של תמונה..."
+msgstr "משך רצועת שמע:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:219
-#, fuzzy, kde-format
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "אחזור תצוגה-מקדימה של תמונה..."
+msgstr "השמעה מדגמית של רצועת שמע:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
 #, kde-format
@@ -19994,15 +19970,15 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio Track"
-msgstr "קבצי שמע"
+msgstr "רצועת שמע"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgid "On Screen Display"
-msgstr "אחוז:"
+msgstr "תצוגה על המסך (OSD)"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:276
 #, kde-format
@@ -20026,19 +20002,19 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Standard:"
-msgstr "תקני"
+msgstr "תקן וידאו:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Type:"
-msgstr "קבצי שמע"
+msgstr "סוג וידאו:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:141
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Bit Rate:"
-msgstr "קבצי שמע"
+msgstr "קצב סיביות וידאו:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:167
 #, kde-format
@@ -20055,9 +20031,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:203
-#, fuzzy, kde-format
+#, kde-format
 msgid "Transition Between Images"
-msgstr "השהיה בין תמונות:"
+msgstr "מעבר בין תמונות"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:223
 #, kde-format
@@ -20073,10 +20049,10 @@ msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
-msgstr "הוספת תוויות זו"
+msgstr "יצירת מצגת וידאו"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #, kde-format
@@ -20084,24 +20060,24 @@ msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgid "Video Settings"
-msgstr "הגדרת מצלמה"
+msgstr "הגדרות וידאו"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Generating Video Slideshow"
-msgstr "הוספת תוויות זו"
+msgstr "נוצרת מצגת וידאו"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgid "Export as wallpaper"
-msgstr "ייצא"
+msgstr "ייצוא כתמונת רקע"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgid "A tool to set image as wallpaper"
-msgstr "מרחב צבע"
+msgstr "כלי להגדרת תמונה כתמונת רקע"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:62
 #, kde-format
@@ -20112,18 +20088,18 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
-msgstr "ייצא"
+msgstr "הגדרה כתמונת רקע"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Error While to Set Image as Wallpaper"
-msgstr "מרחב צבע"
+msgstr "שגיאה בהגדרת התמונה כתמונת רקע"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:93
 #, kde-format
@@ -20144,9 +20120,9 @@ msgid ""
 msgstr "שגיאה בעת שמירת הקובץ"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown Error %1"
-msgstr "שגיאה לא מוכרת"
+msgstr "שגיאה %1 לא ידועה"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:69
 #, kde-format
@@ -20160,14 +20136,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot create desktop context."
-msgstr "תקלה בעת יצירת ספרייה,"
+msgstr "לא ניתן ליצור הקשר שולחן עבודה."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot set wall paper image path."
-msgstr "שגיאה בעת שמירת הקובץ"
+msgstr "לא ניתן להגדיר נתיב לתמונת רקע."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:139
 #, kde-format
@@ -20180,10 +20156,10 @@ msgid "Cannot apply changes to desktop wallpaper."
 msgstr ""
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
-msgstr "הגדרת מצלמה"
+msgstr "הגדרות תמונת רקע"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:71
 #, kde-format
@@ -20191,14 +20167,14 @@ msgid "Wallpaper Layout:"
 msgstr ""
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
-#, fuzzy, kde-format
+#, kde-format
 msgid "Adjusted"
-msgstr "כיוונון:"
+msgstr "מותאמת"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "Adjusted with Aspect ratio"
-msgstr "איחזור תמונות בעלות תצורת קובץ"
+msgstr "מותאמת "
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:78
 #, fuzzy, kde-format
@@ -20212,14 +20188,14 @@ msgid "Centered"
 msgstr "מסנני עדשה"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:41
-#, fuzzy, kde-format
+#, kde-format
 msgid "OpenGL Viewer"
-msgstr "פתיחת תיקייה"
+msgstr "מציג OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, fuzzy, kde-format
+#, kde-format
 msgid "A tool to preview items with OpenGL"
-msgstr "התאמה לבחירה"
+msgstr "כלי לתצוגה מקדימה של פריטים עם OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
 #, kde-format
@@ -20248,16 +20224,16 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "OpenGL Viewer"
-msgstr "פתיחת תיקייה"
+msgstr "מציג OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
-#, fuzzy, kde-format
+#, kde-format
 msgid "OpenGL Error"
-msgstr "פתיחת תיקייה"
+msgstr "שגיאת OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:192
 #, kde-format
@@ -20271,10 +20247,10 @@ msgid "No OpenGL context has been found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Soundtrack Preview"
-msgstr "אחזור תצוגה-מקדימה של תמונה..."
+msgstr "השמעה מדגמית של רצועת שמע"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:93
 #, kde-format
@@ -20284,24 +20260,24 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move the selected track up in the playlist."
-msgstr "למחוק מסומנים"
+msgstr "העלאת הרצועה במעלה רשימת הנגינה."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move the selected track down in the playlist."
-msgstr "למחוק מסומנים"
+msgstr "הורדת הרצועה במורד רשימת הנגינה."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
-#, fuzzy, kde-format
+#, kde-format
 msgid "Add new tracks to the playlist."
-msgstr "הוספת פריטים חדשים לאוסף-תמונות."
+msgstr "הוספת רצועות חדשות לרשימת הנגינה."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete the selected track from the playlist."
-msgstr "למחוק מסומנים"
+msgstr "מחיקת הרצועה הנבחרת מרשימת הנגינה."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
@@ -20309,14 +20285,14 @@ msgid "Load playlist from a file."
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgid "Save playlist to a file."
-msgstr "קובצי תמונת"
+msgstr "שמירת רשימת נגינה לקובץ."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
-#, fuzzy, kde-format
+#, kde-format
 msgid "Clear the playlist."
-msgstr "רשימת מצלמות"
+msgstr "פינוי רשימת הנגינה."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:253
 #, kde-format
@@ -20335,10 +20311,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:351
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
-msgstr "בחירה בכלום"
+msgstr "בחירת קובצי שמע"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:419
 #, kde-format
@@ -20351,10 +20327,10 @@ msgid "You can only move files down one at a time."
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:478
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
-msgstr "נקה הכל"
+msgstr "טעינת רשימת נגינה"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:479
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:538
@@ -20602,9 +20578,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:98
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Ken Burns effect"
-msgstr "אפקט טשטוש"
+msgstr "אפקט &קן ברנס"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_kbDisableFadeCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:110
@@ -24740,14 +24716,14 @@ msgid "The file %1 is not a supported image or video format"
 msgstr "הקובץ %1 אינו תסדיר תמונה או וידאו נתמך"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:615
-#, fuzzy, kde-format
+#, kde-format
 msgid "Uploading file %1"
-msgstr "קובצי תמונת"
+msgstr "הקובץ %1 נשלח"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:639
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to upload media into remote Piwigo. "
-msgstr "מידע קובץ/תמונה"
+msgstr "העלאת המדיה ל־Piwigo המרוחק נכשלה."
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:640
 #, kde-format
@@ -24789,12 +24765,14 @@ msgid "A tool to export to Rajce web-service"
 msgstr "ייצוא לשירות המקוון Rajve"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Rajce web-service.<br><br>See "
 "Rajce web site for details: %1"
-msgstr "הדרוגים יובאו"
+msgstr ""
+"הכלי הזה מאפשר למשתמשים לייצא פריטים לשירות Rajce המקוון.<br><br>יש פרטים "
+"נוספים באתר של Rajce‏: %1"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
 #, kde-format
@@ -25271,12 +25249,14 @@ msgid "A tool to export to x.com (aka Twitter) web-service"
 msgstr "כלי לייצוא לשירות המקוון x.com (לשעבר טוויטר)"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to x.com (aka Twitter) web-service."
 "<br><br>See Twitter web site for details: %1"
-msgstr "הדרוגים יובאו"
+msgstr ""
+"הכלי הזה מאפשר למשתמשים לייצא פריטים לשירות x.com (לשעבר טוויטר) המקוון."
+"<br><br>יש פרטים נוספים באתר של טוויטר: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, kde-format
@@ -25563,7 +25543,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:166
+#: core/dplugins/rawimport/native/rawpreview.cpp:193
 #, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -25732,10 +25712,9 @@ msgid "Unable to load image"
 msgstr "לא ניתן לטעון תמונה"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:472
-#, fuzzy, kde-format
-#| msgid "Post Processing"
+#, kde-format
 msgid "AI Tools Processing"
-msgstr "עיבוד תמונה נוסף"
+msgstr "עיבוד עם כלי בינה מלאכותית"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #, kde-format
@@ -25816,8 +25795,7 @@ msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:285
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
-#, fuzzy, kde-format
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "שינוי שם אלבום (%1)"
@@ -25836,9 +25814,9 @@ msgid "Enter new album name:"
 msgstr "מילוי שם חדש לאלבום:"
 
 #: core/libs/album/engine/albumparser.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Scanning albums"
-msgstr "חיפוש:"
+msgstr "האלבומים נסרקים"
 
 #: core/libs/album/manager/albummanager.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:181
@@ -25859,9 +25837,9 @@ msgid "The MySQL binary tools was not found."
 msgstr "הכלי הבינריים של MySQL לא נמצאו."
 
 #: core/libs/album/manager/albummanager_database.cpp:135
-#, fuzzy, kde-format
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "מסד נתוני הליבה מסוג SQLite לא נמצא."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
 #, kde-format
@@ -25872,10 +25850,10 @@ msgstr ""
 "<p>כדי להתחיל עם הגדרות חדשות ועם אשף פעם ראשונה יש למחוק את הקובץ:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:<br>%1</p>"
-msgstr "שגיאה בעת פתיחה של מסד הנתונים."
+msgstr "אירעה שגיאה במהלך הפעלת השרת הפנימי.<p>פרטים:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -26032,13 +26010,13 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:603
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Trying to upgrade old databases."
 msgstr ""
-"נכשלה פעולת העתקה של קובץ מסד הנתונים הישן (\"%1\") למיקומו החדש (\"%2\"). "
-"אנא התחילו עם מסד נתונים חדש."
+"העתקת קובץ מסד הנתונים הישן („%1”) למקומו החדש („%2”) נכשלה. מתבצע ניסיון "
+"לשדרג מסדי נתונים ישנים."
 
 #: core/libs/album/manager/albummanager_database.cpp:618
 #, kde-format
@@ -26064,13 +26042,13 @@ msgid "Use Existing File"
 msgstr "להשתמש בקובץ קיים"
 
 #: core/libs/album/manager/albummanager_database.cpp:715
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
 "file without backup, using the existing file."
 msgstr ""
-"נכשלה פעולת הגיבוי של מסד הנתונים (\"%1\"). לא ניתן להחליף את הקובץ הקיים "
-"ללא גיבוי."
+"גיבוי קובץ מסד הנתונים הקיים („%1”) נכשל. החלפת הקובץ ללא גיבוי סורבה, ייעשה "
+"שימוש בקובץ הקיים."
 
 #: core/libs/album/manager/albummanager_database.cpp:733
 #, kde-format
@@ -26163,13 +26141,13 @@ msgid "Album name cannot contain '/'"
 msgstr "שם האלבום לא יכול להכיל ‚/’"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:489
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Another album with the same name already exists.\n"
 "Please choose another name."
 msgstr ""
-"אוסף-תמונות בעל אותו שם קיים\n"
-"אנא בחרו שם חדש"
+"כבר קיים אלבום באותו השם.\n"
+"נא לבחור שם אחר."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:508
 #, kde-format
@@ -26209,10 +26187,9 @@ msgid "Failed to add tag to database"
 msgstr "הוספת התגית למסד הנתונים נכשלה"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:372
-#, fuzzy, kde-format
-#| msgid "Cannot delete Root Tag"
+#, kde-format
 msgid "Cannot delete root tag"
-msgstr "אין אפשרות למחוק את התוויות הראשית"
+msgstr "לא ניתן למחוק תגית על"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:381
 #, kde-format
@@ -26406,24 +26383,24 @@ msgstr "אין בחירה"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:251
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
-msgstr "אתחול"
+msgstr "נדחה"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:257
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
-msgstr "מקודד RAW"
+msgstr "בהמתנה"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:416
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:263
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
-msgstr "סף:"
+msgstr "התקבל"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:484
 #, kde-format
@@ -26453,9 +26430,9 @@ msgstr "הרחבת כל האלבומים"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
-#, fuzzy, kde-format
+#, kde-format
 msgid "Collapse Selected Recursively"
-msgstr "%1 אוספי-תמונות נבחרו"
+msgstr "צמצום הנבחרים רקורסיבית"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
@@ -26474,9 +26451,9 @@ msgid "Scan for Faces"
 msgstr "סריקה לאיתור פרצופים"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:218
-#, fuzzy, kde-format
+#, kde-format
 msgid "Repair hidden Items"
-msgstr "סידור תמונות"
+msgstr "תיקון פריטים נסתרים"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
@@ -26525,10 +26502,9 @@ msgid "Color"
 msgstr "צבע"
 
 #: core/libs/album/treeview/labelstreeview_p.cpp:52
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgid "Customize label name here..."
-msgstr "נא למלא כאן את שם התגית…"
+msgstr "התאמת שם התווית כאן"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:103
 #, kde-format
@@ -26752,10 +26728,10 @@ msgid "All albums"
 msgstr "כל האלבומים"
 
 #: core/libs/album/widgets/albumselectors.cpp:179
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
-msgstr "בחירה"
+msgstr "החלפת מצב בחירת אלבומים רקורסיבית."
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -26782,10 +26758,10 @@ msgid "All tags"
 msgstr "כל התגיות"
 
 #: core/libs/album/widgets/albumselectors.cpp:241
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
-msgstr "בחירה"
+msgstr "החלפת מצב בחירת תגיות רקורסיבית."
 
 #: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
@@ -26921,9 +26897,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/collection/collectionmanager_location.cpp:467
-#, fuzzy, kde-format
+#, kde-format
 msgid "There is already a collection for a network share with the same path."
-msgstr "קיים אוסף המכיל את הספרייה \"%1\""
+msgstr "יש כבר אוסף לשיתוף הרשת באותו הנתיב."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:480
 #, kde-format
@@ -26958,26 +26934,28 @@ msgstr ""
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:233
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
 #: core/libs/facesengine/facedb/facedbaccess.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Error opening database backend.\n"
 "%1"
-msgstr "שגיאה בעת פתיחה של מסד הנתונים."
+msgstr ""
+"שגיאה בפתיחת מנגנון מסד נתונים.\n"
+"%1"
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error while opening the source database."
-msgstr "שגיאה בעת פתיחה של מסד הנתונים."
+msgstr "שגיאה בפתיחת מסד נתוני המקור."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error while opening the target database."
-msgstr "שגיאה בעת פתיחה של מסד הנתונים."
+msgstr "שגיאה בפתיחת מסד נתוני היעד."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error while preparing the target database."
-msgstr "שגיאה בעת פתיחה של מסד הנתונים."
+msgstr "שגיאה בהכנת מסד נתוני היעד."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:126
 #, kde-format
@@ -26990,16 +26968,18 @@ msgid "Create Schema..."
 msgstr "לכידת תמונה..."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:144
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error while creating the database schema."
-msgstr "שגיאה בעת פתיחה של מסד הנתונים."
+msgstr "שגיאה ביצירת סכמת מסד הנתונים."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:307
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Error while converting the database.\n"
 " Details: %1"
-msgstr "שגיאה בעת פתיחה של מסד הנתונים."
+msgstr ""
+"שגיאה בהמרת מסד הנתונים.\n"
+" פרטים: %1"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:201
 #, kde-format
@@ -27030,11 +27010,13 @@ msgstr ""
 #: core/libs/database/coredb/coredbschemaupdater.cpp:328
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to create tables in database.\n"
 " "
-msgstr "שגיאה בעת יצירת טבלאות במסד הנתונים.\n"
+msgstr ""
+"יצירת טבלאות במסד הנתונים נכשלה.\n"
+" "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:349
 #, kde-format
@@ -27442,9 +27424,9 @@ msgstr ""
 "יצירת מסד נתונים נכשלה<p>שגיאת שאילתה: %1</p><p>שגיאת מסד נתונים: %2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:752
-#, fuzzy, kde-format
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "בתהליך התנתקות ממצלמה, אנא המתינו..."
+msgstr "מתבצע תהליך שדרוג מסד נתוני MySQL, נא להמתין…"
 
 #: core/libs/database/server/databaseserver.cpp:796
 #, kde-format
@@ -30138,9 +30120,9 @@ msgid "Blur Filter"
 msgstr "מסנן טשטוש"
 
 #: core/libs/dimg/filters/fx/blurfxfilter.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgid "Blur FX Filter"
-msgstr "מסנן אדום"
+msgstr "מסנן אפקט טשטוש"
 
 #: core/libs/dimg/filters/fx/charcoalfilter.cpp:87
 #, kde-format
@@ -30148,9 +30130,9 @@ msgid "Charcoal Effect"
 msgstr "אפקט פחם"
 
 #: core/libs/dimg/filters/fx/colorfxfilter.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "Color FX Filter"
-msgstr "מסנן אדום"
+msgstr "מסנן אפקט צבע"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:102
 #, kde-format
@@ -30247,10 +30229,10 @@ msgid "Blue Crush"
 msgstr ""
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:373
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: effect type"
 msgid "BW Contrast"
-msgstr "ניגוד:"
+msgstr "ניגודיות שחור לבן"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:377
 #, kde-format
@@ -30259,7 +30241,7 @@ msgid "Instant"
 msgstr ""
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:381
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: effect type"
 msgid "Original"
 msgstr "מקור"
@@ -31207,10 +31189,10 @@ msgid "enabled"
 msgstr "פעיל"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
-msgstr "תיקון-עדשה-אוטומטי"
+msgstr "תיקון CCA‏: %1"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:498
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:501
@@ -31222,22 +31204,22 @@ msgid "disabled"
 msgstr "כבוי"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:500
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
-msgstr "תיקון-עדשה-אוטומטי"
+msgstr "תיקון VIG‏: %1"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:503
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
-msgstr "תיקון-עדשה-אוטומטי"
+msgstr "תיקון DST‏: %1"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:506
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
-msgstr "תיקון-עדשה-אוטומטי"
+msgstr "תיקון GEO‏: %1"
 
 #: core/libs/dimg/filters/lens/lensfunsettings.cpp:64
 #, kde-format
@@ -31410,8 +31392,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/levels/histogrampainter.cpp:485
-#, fuzzy, kde-format
-#| msgid "x:%1"
+#, kde-format
 msgctxt "@info: guide position on histogram"
 msgid "x:%1"
 msgstr "x:%1"
@@ -31546,21 +31527,20 @@ msgid "Chrominance Red"
 msgstr ""
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:349
-#, fuzzy, kde-format
-#| msgid "Photograph Noise Reduction Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
-msgstr "פתיחת קובץ מאפייני צמצום רעש של תמונה"
+msgstr "קובץ הגדרות הפחתת רעש בתמונות לטעינה"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:367
-#, fuzzy, kde-format
+#, kde-format
 msgid "\"%1\" is not a Photograph Noise Reduction settings text file."
-msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
+msgstr "„%1” הוא לא קובץ הגדרות הפחתת רעש בתמונה."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:387
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot load settings from the Photograph Noise Reduction text file."
-msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
+msgstr "לא ניתן לטעון את ההגדרות מקובץ הטקסט להפחתת רעש בתמונות."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:395
 #, fuzzy, kde-format
@@ -31731,11 +31711,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:488
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
-msgstr "טעינה של קובץ הגדרות הגדלת תמונה"
+msgstr "קובץ הגדרות מיקוד מחדש של תמונות לטעינה"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:506
 #, kde-format
@@ -31748,10 +31727,10 @@ msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:537
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
-msgstr "שמירת קובץ מאפייני רעש של תמונה"
+msgstr "קובץ הגדרות מיקוד מחדש של תמונות לשמירה"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:567
 #, kde-format
@@ -31759,9 +31738,9 @@ msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
 
 #: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unsharp Mask Tool"
-msgstr "תבנית ביטול-חידוד"
+msgstr "כלי מסכת אי־חדות"
 
 #: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
@@ -31839,11 +31818,10 @@ msgid "Color Temperature"
 msgstr "טמפרטורת צבע"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:151
-#, fuzzy, kde-format
-#| msgid "Adjustment:"
+#, kde-format
 msgctxt "@label: WB settings"
 msgid "Adjustment:"
-msgstr "כיוונון:"
+msgstr "כוונון:"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:156
 #, fuzzy, kde-format
@@ -31925,11 +31903,10 @@ msgid "Sun"
 msgstr "שמש"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:171
-#, fuzzy, kde-format
-#| msgid "Xenon Lamp"
+#, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Xenon Lamp"
-msgstr "קסנון"
+msgstr "נורת קסנון"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:172
 #, fuzzy, kde-format
@@ -32174,23 +32151,22 @@ msgid "\"%1\" is not a White Color Balance settings text file."
 msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:526
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the White Color Balance text file."
-msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
+msgstr "לא ניתן לטעון את ההגדרות מקובץ הטקסט לאיזון צבע לבן."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:534
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
-msgstr "שמירת קובץ הגדרות שחור-לבן"
+msgstr "קובץ הגדרות איזון צבע לבן לשמירה"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:561
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the White Color Balance text file."
-msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
+msgstr "לא ניתן לשמור את ההגדרות לקובץ הטקסט לאיזון צבע לבן."
 
 #: core/libs/dngwriter/dngsettings.cpp:74
 #, kde-format
@@ -33079,10 +33055,10 @@ msgid "Search in"
 msgstr "חיפוש תחת"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:105
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label short translated text about the Face Workflow."
 msgid "Workflow:"
-msgstr "התאמת תצוגה לגודל החלון"
+msgstr "רצף עבודה:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:109
 #, kde-format
@@ -33277,14 +33253,14 @@ msgid "Assigning image pick label"
 msgstr "מוקצית תווית בחירת תמונה"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:186
-#, fuzzy, kde-format
+#, kde-format
 msgid "Assigning image color label"
-msgstr "מוסיף תוויות לתמונות. אנא המתינו..."
+msgstr "הקצאת תווית צבע תמונה"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:198
-#, fuzzy, kde-format
+#, kde-format
 msgid "Assigning image ratings"
-msgstr "מעדכן דירוג תמונות. אנא המתינו..."
+msgstr "הקצאת דירוגים לתמונות"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:205
 #: core/libs/fileactionmanager/fileactionmngr.cpp:217
@@ -36017,12 +35993,15 @@ msgid "No Recently Assigned Tags"
 msgstr "אין תגיות שהוקצו לאחרונה"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "No Geolocation\n"
 "Information\n"
 "Available"
-msgstr "מאפייני התצלום"
+msgstr ""
+"אין פרטי מקום\n"
+"גאוגרפי\n"
+"זמינים"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
 #, kde-format
@@ -37083,10 +37062,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:199
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Interpolate RGB as four colors"
-msgstr "צבע תת-חשיפה:"
+msgstr "ערבול RGB כארבעה צבעים"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:200
 #, kde-kuit-format
@@ -37102,10 +37081,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:214
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Visit LibRaw project website"
-msgstr "בקרו באתר מיזם digiKam"
+msgstr "ביקור באתר מיזם LibRaw"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:224
 #, kde-format
@@ -37131,10 +37110,10 @@ msgid "Quality:"
 msgstr "איכות:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "Bilinear"
-msgstr "קווי:"
+msgstr "ביליניארי"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:240
 #, kde-format
@@ -38017,14 +37996,14 @@ msgid "Error starting object detection."
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:201
-#, fuzzy, kde-format
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "חיפוש:"
+msgstr "פריטים שנסרקו לאיתור עצמים: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:205
-#, fuzzy, kde-format
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "חיפוש:"
+msgstr "פריט שנסרק לאיתור עצמים: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:233
 #, kde-format
@@ -38211,14 +38190,13 @@ msgid "Delete Tag"
 msgstr "מחיקת תגית"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:385
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
 "subtags.\n"
 "Do you want to continue?"
 msgstr ""
-"בנייה של תמונות ממוזערות עבור כל התמונות דורשת זמן רב.\n"
-"האם להמשיך?"
+"לתגיות ‚%1’ יש תת־תגית אחת או יותר. מחיקתן תמחק גם את תת־התגיות.להמשיך?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, fuzzy, kde-format
@@ -41002,11 +40980,6 @@ msgstr ""
 msgid "Failed to load image"
 msgstr "טעינת התמונה נכשלה"
 
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:312
-#, kde-format
-msgid "Pan the image to a region"
-msgstr "הזזת התמונה לאזור"
-
 #: core/libs/widgets/history/filtershistorywidget.cpp:79
 #, kde-format
 msgid "Used filters"
@@ -41918,9 +41891,9 @@ msgid "H&ide toolbars"
 msgstr "ה&סתרת סרגלי כלים"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
-msgstr "הסתרת סרגל-כלים במצב תצוגה מסך-מלא"
+msgstr "הסתרת כל סרגלי הכלים שהחלון מוגדל לכל המסך."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:64
 #, kde-format
@@ -41928,9 +41901,9 @@ msgid "Hide &thumbbar"
 msgstr "ה&סתרת סרגל תמוניות"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
-msgstr "הסתרת תמונות-ממוזערות במצב תצוגה מסך-מלא"
+msgstr "הסתרת תצוגת סרגל תמוניות כשהחלון מוגדל לכל המסך."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
@@ -41938,9 +41911,9 @@ msgid "Hide &sidebars"
 msgstr ""
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
-msgstr "הסתרת סרגל-כלים במצב תצוגה מסך-מלא"
+msgstr "הסתרת כל חלוניות הצד כשהחלון מוגדל לכל המסך."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, kde-format
@@ -41948,9 +41921,9 @@ msgid "Hide st&atusbar"
 msgstr "הסתרת &שורת מצב"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
-msgstr "הסתרת סרגל-כלים במצב תצוגה מסך-מלא"
+msgstr "הסתרת שורת מצב כשהחלון מוגדל לכל המסך."
 
 #: core/libs/widgets/mainview/thememanager_p.cpp:1323
 #, kde-format
@@ -47453,11 +47426,10 @@ msgid "Ignored Words"
 msgstr "התעלמות ממילים"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:180
-#, fuzzy, kde-format
-#| msgid "Set here the number of items to find using sketch."
+#, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
-msgstr "קבעו כאן את מספר הפריטים אשר ימצאו על ידי חיפוש בעזרת ציור"
+msgstr "אפשר להגדיר כאן מילה חדשה להתעלמות במהלך בדיקת איות"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
@@ -48296,15 +48268,15 @@ msgid "Thumbbar Items"
 msgstr "פריטי סרגל תמוניות"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:154
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Show image Format"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "הצגת &תסדיר תמונה"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:155
 #: core/utilities/setup/camera/setupcamera.cpp:446
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show image format over image thumbnail."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "הגדרת האפשרות הזאת תציג את תסדיר התמונה על גבי התמונה הממוזערת."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:156
 #, fuzzy, kde-format
@@ -48353,9 +48325,9 @@ msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:177
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:130
-#, fuzzy, kde-format
+#, kde-format
 msgid "Weekly Pre-Releases"
-msgstr "הסרת פריט"
+msgstr "מהדורות טרום הפצה שבועיות"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:131
@@ -48403,9 +48375,9 @@ msgid "&Show splash screen at startup"
 msgstr "הצגת חלון קבלת &פנים בהתחלה"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use native file dialogs from the system"
-msgstr "שמירת התמונות המסומנות לתיקייה וירטואלית חדשה"
+msgstr "להשתמש בחלוניות קבצים מובנות של המערכת"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:228
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:33
@@ -49378,9 +49350,9 @@ msgstr "הצגת רשימת כל האפשרויות הזמינות"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:342
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgid "Modifiers"
-msgstr "שונה:"
+msgstr "מחליפים"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:344
 #, kde-format
@@ -49406,9 +49378,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
-#, fuzzy, kde-format
+#, kde-format
 msgid "Modifiers can be applied to every renaming option."
-msgstr "אפשרויות שינוי שם קובץ"
+msgstr "אפשר להחיל מחליפים על כל אפשרות שינוי שם."
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
@@ -50026,11 +49998,10 @@ msgid "Fixed Date"
 msgstr "תאריך קבוע"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:138
-#, fuzzy, kde-format
-#| msgid "Custom ratio:"
+#, kde-format
 msgctxt "@info"
 msgid "Enter custom format"
-msgstr "יחס מותאם אישית:"
+msgstr "למלא תבנית בהתאמה אישית"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:245
 #, kde-format
@@ -50459,13 +50430,13 @@ msgid "Create Root Album Folder Failed"
 msgstr "יצירת תיקיית אלבום על נכשלה"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>digiKam could not create the folder to use as the root album.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"לא ניתן ליצור את התיקיית המקור לאוסף התמונות. אנא בחרו מיקום אחר.<p><b>%1</"
-"b></p>"
+"<p>digiKam לא הצליח ליצור את התיקייה שתשמש כאלבום העל.<br>נא לבחור מקום אחר."
+"</p><p><b>%1</b></p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:215
 #, kde-format
@@ -56386,14 +56357,14 @@ msgid "Flip Vertically"
 msgstr "היפוך אנכי"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:519
-#: core/utilities/import/views/importpreviewview.cpp:188
+#: core/utilities/import/views/importpreviewview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "סיבוב שמאלה"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:527
-#: core/utilities/import/views/importpreviewview.cpp:189
+#: core/utilities/import/views/importpreviewview.cpp:192
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
@@ -56760,7 +56731,7 @@ msgstr "הסרת תגית"
 msgid "Assign Labels"
 msgstr "הקצאת תוויות"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:165
+#: core/utilities/imageeditor/widgets/canvas.cpp:191
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -56781,23 +56752,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "אחרי"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:206
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:262
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:299
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
 #, kde-format
 msgid "Before"
 msgstr "לפני"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:191
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:228
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:266
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
 #, kde-format
 msgid "After"
 msgstr "אחרי"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -57874,19 +57845,19 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "זוהה אוטומטית"
 
-#: core/utilities/import/views/importpreviewview.cpp:185
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Escape preview"
 msgstr ""
 
-#: core/utilities/import/views/importpreviewview.cpp:186
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "אחורה"
 
-#: core/utilities/import/views/importpreviewview.cpp:187
+#: core/utilities/import/views/importpreviewview.cpp:190
 #, kde-format
 msgctxt "@action: go to next image"
 msgid "Forward"
@@ -61179,9 +61150,7 @@ msgid "Preview shows the full image"
 msgstr "תצוגה מקדימה מציגה את התמונה במלואה"
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Mode of RAW preview decoding:"
-#| msgid "Raw images:"
+#, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
 msgstr "תמונות גולמיות (raw):"
@@ -61241,45 +61210,36 @@ msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr "יש לסמן את זה כדי להשתמש בהחלקת קצוות כדי למתוח את התמונה."
 
 #: core/utilities/setup/album/setupalbumview.cpp:325
-#, fuzzy, kde-format
-#| msgid "Show numbers"
+#, kde-format
 msgid "Magnifier"
-msgstr "הצגת מספרים"
+msgstr "זכוכית מגדלת"
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Zoom to Fit"
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool zoom factor"
 msgid "Zoom Factor:"
-msgstr "תקריב לפי גודל המסך"
+msgstr "מקדם תקריב:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:339
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool size"
 msgid "Tool Size:"
-msgstr "%1 (%2)"
+msgstr "גודל כלי:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Small"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Small"
 msgstr "קטן"
 
 #: core/utilities/setup/album/setupalbumview.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Medium"
-msgstr "בינונית"
+msgstr "בינוני"
 
 #: core/utilities/setup/album/setupalbumview.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "גדול"
@@ -64254,10 +64214,9 @@ msgid "Use video textures conversion"
 msgstr "להשתמש בהמרת מרקמי וידאו"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
-#, fuzzy, kde-format
-#| msgid "Decoding backend to render video:"
+#, kde-format
 msgid "Decoding backend to render media:"
-msgstr "מנגנון פענוח לתיצוג הווידאו:"
+msgstr "מנגנון פענוח לתיצוג המדיה:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format
@@ -65339,6 +65298,9 @@ msgstr "ייבוא פריטים"
 #, kde-format
 msgid "Survey"
 msgstr ""
+
+#~ msgid "Pan the image to a region"
+#~ msgstr "הזזת התמונה לאזור"
 
 #~ msgid "Show Fullscreen"
 #~ msgstr "הצגת מסך מלא"
