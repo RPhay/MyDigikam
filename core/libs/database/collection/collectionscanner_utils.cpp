@@ -176,6 +176,31 @@ void CollectionScanner::itemsWereRemoved(const QList<qlonglong>& removedIds)
     }
 }
 
+void CollectionScanner::readDirectoryInCache(int& items, const QString& path)
+{
+    const auto dirList = QDir(path).entryInfoList(QDir::Dirs    |
+                                                  QDir::Files   |
+                                                  QDir::NoDotAndDotDot);
+
+    for (const auto& info : dirList)
+    {
+        if (info.isDir())
+        {
+            if (d->checkIgnoreDirectory(info.fileName()))
+            {
+                continue;
+            }
+
+            d->albumDateCache.insert(info.filePath(),
+                                     asDateTimeUTC(info.lastModified()));
+
+            readDirectoryInCache(items, info.filePath());
+        }
+
+        ++items;
+    }
+}
+
 int CollectionScanner::createAlbumDateCache(const CollectionLocation& location, const QString& album)
 {
     if (!location.isAvailable())
@@ -191,49 +216,12 @@ int CollectionScanner::createAlbumDateCache(const CollectionLocation& location, 
     }
 
     int items = 1;
-    QFileInfo dirInfo(dir.path());
-    d->albumDateCache.insert(dirInfo.absoluteFilePath(),
-                             asDateTimeUTC(dirInfo.lastModified()));
+    QFileInfo info(dir.path());
+    d->albumDateCache.insert(info.absoluteFilePath(),
+                             asDateTimeUTC(info.lastModified()));
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
 
-    using ItFlag = QDirListing::IteratorFlag;
-    const QTimeZone tz(QTimeZone::LocalTime);
-
-    for (const auto& entry : QDirListing(dir.path(), ItFlag::Recursive   |
-                                                     ItFlag::FollowDirSymlinks))
-    {
-        if (entry.isDir())
-        {
-            d->albumDateCache.insert(entry.filePath(),
-                                     asDateTimeUTC(entry.lastModified(tz)));
-        }
-
-        ++items;
-    }
-
-#else
-
-    QDirIterator it(dir.path(), QDir::Dirs    |
-                                QDir::Files   |
-                                QDir::NoDotAndDotDot,
-                                QDirIterator::Subdirectories |
-                                QDirIterator::FollowSymlinks);
-
-    while (it.hasNext())
-    {
-        it.next();
-
-        if (it.fileInfo().isDir())
-        {
-            d->albumDateCache.insert(it.fileInfo().filePath(),
-                                     asDateTimeUTC(it.fileInfo().lastModified()));
-        }
-
-        ++items;
-    }
-
-#endif
+    readDirectoryInCache(items, info.filePath());
 
     return items;
 }

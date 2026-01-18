@@ -517,10 +517,9 @@ void CollectionScanner::scanForStaleAlbums(const CollectionLocation& location, c
             url          = url.adjusted(QUrl::StripTrailingSlash);
             QString path = QFileInfo(url.toLocalFile()).filePath();
 
-            // let digikam think that ignored directories got deleted
-            // (if they already exist in the database, this will delete them)
+            // Delete entries in the database if they do not exist in the cache.
 
-            if (!d->albumDateCache.contains(path) || d->checkIgnoreDirectory(url.fileName()))
+            if (!d->albumDateCache.contains(path))
             {
                 // We have an ignored album, all sub-albums have to be ignored
 

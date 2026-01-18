@@ -242,6 +242,7 @@ protected:
 
     void markDatabaseAsScanned();
     void mainEntryPoint(bool complete);
+    void readDirectoryInCache(int& items, const QString& path);
     int  createAlbumDateCache(const CollectionLocation& location, const QString& album);
     int  checkAlbum(const CollectionLocation& location, const QString& album);
     void itemsWereRemoved(const QList<qlonglong>& removedIds);
