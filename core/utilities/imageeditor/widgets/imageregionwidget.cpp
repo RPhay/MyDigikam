@@ -184,11 +184,6 @@ QRect ImageRegionWidget::getOriginalImageRegionToRender() const
 
     QRect rect(x, y, w, h);
 
-
-qDebug() <<"ImageRegionWidget::getOriginalImageRegionToRender()"<< r;
-qDebug() <<"ImageRegionWidget::getOriginalImageRegionToRender()"<< z;
-qDebug() <<"ImageRegionWidget::getOriginalImageRegionToRender()"<< rect;
-
     return (rect);
 }
 
