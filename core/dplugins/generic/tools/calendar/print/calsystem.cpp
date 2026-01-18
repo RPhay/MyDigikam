@@ -566,20 +566,47 @@ int CalSystemPrivate::quarter(int month) const
 
 bool CalSystemPrivate::isLeapYear(int year) const
 {
-    year = year + yearOffset();
+    // Adjust the year with the offset
+
+    int64_t adjustedYear = static_cast<int64_t>(year) + yearOffset();
+
+    // Check if the year is valid
+
+    if (adjustedYear < 1)
+    {
+        if (!hasYearZero())
+        {
+            ++adjustedYear;
+        }
+
+        if (adjustedYear < 1)
+        {
+            return false;
+        }
+    }
+
+    // Uses the adjusted year for the next step.
+
+    year = static_cast<int>(adjustedYear);
 
     // Uses same rule as Gregorian and in same years as Gregorian to keep in sync
     // Can't use yearOffset() as this offset only applies for isLeapYear()
 
     if (calendarSystem() == CalSystem::IndianNationalCalendar)
     {
-        year = year + 78;
+        year += 78;
     }
 
-    if ((year < 1) && !hasYearZero())
+    // Function pto compute a positif modulo
+
+    auto positiveModulo = [](int value, int modulus)
     {
-        ++year;
-    }
+        int result = value % modulus;
+
+        return (result >= 0) ? result : result + modulus;
+    };
+
+    // Bisextiel years logic
 
     switch (calendarSystem())
     {
@@ -590,24 +617,28 @@ bool CalSystemPrivate::isLeapYear(int year) const
         case CalSystem::ROCCalendar:
         case CalSystem::ThaiCalendar:
         {
-            return ((((year % 4) == 0) && ((year % 100) != 0)) || ((year % 400) == 0));
+            bool isDivisibleBy4   = (positiveModulo(year, 4)   == 0);
+            bool isDivisibleBy100 = (positiveModulo(year, 100) == 0);
+            bool isDivisibleBy400 = (positiveModulo(year, 400) == 0);
+
+            return (isDivisibleBy4 && !isDivisibleBy100) || isDivisibleBy400;
         }
 
         case CalSystem::CopticCalendar:
         case CalSystem::EthiopicCalendar:
         case CalSystem::EthiopicAmeteAlemCalendar:
         {
-            return ((year % 4) == 3);
+            return (positiveModulo(year, 4) == 3);
         }
 
         case CalSystem::JulianCalendar:
         {
-            return ((year % 4) == 0);
+            return (positiveModulo(year, 4) == 0);
         }
 
         case CalSystem::IslamicCivilCalendar:
         {
-            return ((((11 * year) + 14) % 30) < 11);
+            return (positiveModulo((11 * year) + 14, 30) < 11);
         }
 
         default:
