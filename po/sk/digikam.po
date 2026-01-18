@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"POT-Creation-Date: 2026-01-18 00:40+0000\n"
 "PO-Revision-Date: 2026-01-04 22:32+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -17498,7 +17498,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Nemožno vytvoriť náhľad %1"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
-#: core/libs/properties/itempropertiestab_setters.cpp:394
+#: core/libs/properties/itempropertiestab_setters.cpp:395
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -22198,39 +22198,39 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Prebieha premietanie"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:99
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
 #, fuzzy, kde-format
 #| msgid "Slideshow Settings"
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Nastavenia premietania"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
 #: core/utilities/setup/camera/setupcamera.cpp:350
 #, kde-format
 msgid "Behavior"
 msgstr "Správanie"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
 #, fuzzy, kde-format
 #| msgid "Delay between images:"
 msgid "Delay between items: "
 msgstr "Oneskorenie medzi obrázkami:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:116
 #, fuzzy, kde-format
 #| msgid "The delay, in seconds, between images."
 msgid "The delay, in seconds, between items."
 msgstr "Oneskorenie medzi obrázkami v sekundách."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, fuzzy, kde-format
 #| msgid "Start with current image"
 msgid "Start with current item"
 msgstr "Začať s aktuálnym obrázkom"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "If this option is enabled, the Slideshow will be started with the current "
@@ -22242,83 +22242,83 @@ msgstr ""
 "Ak je táto voľba zapnutá, prezentácia začne aktuálnym obrázkom vybraným zo "
 "zoznamu obrázkov."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:122
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "Prezentácia beží dokola"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "Opakovať prezentáciu dokola."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:125
 #, fuzzy, kde-format
 #| msgid "Shuffle images"
 msgid "Shuffle items"
 msgstr "Pomiešať obrázky"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, fuzzy, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 "<p>Ak je táto voľba zapnutá, prezentácia začne aktuálnym obrázkom vybraným "
 "zo zoznamu obrázkov."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:128
 #, kde-format
 msgid "Show progress indicator"
 msgstr "Zobrazovať ukazovateľ priebehu"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 "Zobraziť ukazovateľ priebehu s položkami na spracovanie a časovým priebehom."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, fuzzy, kde-format
 #| msgid "Show progress indicator"
 msgid "Show labels editor"
 msgstr "Zobrazovať ukazovateľ priebehu"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #, fuzzy, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
 msgstr "Zobraziť hodnotenie obrázku na spodu obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
 #, fuzzy, kde-format
 msgid "Show rating editor"
 msgstr "Pridať filter"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #, fuzzy, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
 msgstr "Zobraziť meno súboru na spodu obrazovky."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
 #, fuzzy, kde-format
 #| msgid "&Use theme background color"
 msgid "Use background color for items:"
 msgstr "Použiť &farbu pozadia témy"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, fuzzy, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr ""
 "<p>Zapnutím tejto voľby použijete farbu pozadia témy pre oblasť editora "
 "obrázkov."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Screen placement:"
 msgstr "Umiestnenie obrazovky:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
@@ -22326,25 +22326,25 @@ msgstr ""
 "Ak máte viac monitorov, tu si vyberiete, na ktorom monitore sa bude "
 "premietať."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "Aktuálna obrazovka"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "Štandardná obrazovka"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:152
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "Obrazovka %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
@@ -38075,7 +38075,7 @@ msgstr "Chyba spracovania: %1"
 msgid "Cannot open target file."
 msgstr "Súbor sa nedá uložiť"
 
-#: core/libs/progressmanager/dlogoaction.cpp:81
+#: core/libs/progressmanager/dlogoaction.cpp:94
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Navštíviť web projektu digiKam"
@@ -39539,7 +39539,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:410
+#: core/libs/properties/itempropertiestab_setters.cpp:411
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"

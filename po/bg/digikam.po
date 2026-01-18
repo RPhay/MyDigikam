@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"POT-Creation-Date: 2026-01-18 00:40+0000\n"
 "PO-Revision-Date: 2026-01-10 22:18+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -17683,7 +17683,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Не може да се запази миниатюра за изображение \"%1\" в \"%2\""
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
-#: core/libs/properties/itempropertiestab_setters.cpp:394
+#: core/libs/properties/itempropertiestab_setters.cpp:395
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -22444,35 +22444,35 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Представяне на слайдшоу"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:99
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Настройки за слайдшоу"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
 #: core/utilities/setup/camera/setupcamera.cpp:350
 #, kde-format
 msgid "Behavior"
 msgstr "Поведение"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
 #, kde-format
 msgid "Delay between items: "
 msgstr "Забавяне между изображенията: "
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:116
 #, kde-format
 msgid "The delay, in seconds, between items."
 msgstr "Забавянето в секунди между изображенията."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, kde-format
 msgid "Start with current item"
 msgstr "Започване с текущата снимка"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
@@ -22481,33 +22481,33 @@ msgstr ""
 "Ако тази опция е активирана, слайдшоуто ще се стартира с текущото "
 "изображение, избрано в списъка с изображения."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:122
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "Слайдшоуто се изпълнява в цикъл"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "Изпълняване на слайдшоуто в цикъл."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:125
 #, kde-format
 msgid "Shuffle items"
 msgstr "Разбъркване на изображенията"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 "Ако тази опция е разрешена, слайдшоуто ще се изпълнява в произволен ред"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:128
 #, kde-format
 msgid "Show progress indicator"
 msgstr "Индикатор за прогрес"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
@@ -22515,12 +22515,12 @@ msgstr ""
 "Показване на индикатор за напредъка с чакащите елементи за показване и "
 "прогреса на времето."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, kde-format
 msgid "Show labels editor"
 msgstr "Показване на редактора на обозначение"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
@@ -22529,34 +22529,34 @@ msgstr ""
 "Показване на обозначенията за цвят и категория на изображенията на digiKam в "
 "долната част на екрана."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
 #, kde-format
 msgid "Show rating editor"
 msgstr "Показване на редактора на оценките"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
 msgstr ""
 "Показване на оценката на изображението digiKam в долната част на екрана."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
 #, kde-format
 msgid "Use background color for items:"
 msgstr "Използване на цветен фон за изображения:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr ""
 "Определете цвят, който да се използва като фон за рендиране на изображения."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Screen placement:"
 msgstr "Позиция на екрана:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
@@ -22564,25 +22564,25 @@ msgstr ""
 "В случай на компютър с няколко екрана, изберете тук монитора, на който да се "
 "плъзга съдържанието."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "Текущ екран"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "Стандартен екран"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:152
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "Екран %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -37951,7 +37951,7 @@ msgstr "Грешка в контролните суми."
 msgid "Cannot open target file."
 msgstr "Не може да се отвори целеви файл."
 
-#: core/libs/progressmanager/dlogoaction.cpp:81
+#: core/libs/progressmanager/dlogoaction.cpp:94
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Посещаване сайта на проекта digiKam"
@@ -39310,7 +39310,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:410
+#: core/libs/properties/itempropertiestab_setters.cpp:411
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"

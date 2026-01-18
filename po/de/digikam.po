@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"POT-Creation-Date: 2026-01-18 00:40+0000\n"
 "PO-Revision-Date: 2025-07-21 23:21+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -17944,7 +17944,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Die Vorschau für Bild „%1“ lässt sich nicht als „%2“ speichern"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
-#: core/libs/properties/itempropertiestab_setters.cpp:394
+#: core/libs/properties/itempropertiestab_setters.cpp:395
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -22843,38 +22843,38 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Eine Diaschau wird vorgeführt"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:99
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Einstellungen der Diaschau"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
 #: core/utilities/setup/camera/setupcamera.cpp:350
 #, kde-format
 msgid "Behavior"
 msgstr "Verhalten"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
 #, fuzzy, kde-format
 #| msgid "Delay between images:"
 msgid "Delay between items: "
 msgstr "Anzeigedauer der Bilder:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:116
 #, fuzzy, kde-format
 #| msgid "The delay, in seconds, between images."
 msgid "The delay, in seconds, between items."
 msgstr "Anzeigedauer eines Bildes in Sekunden."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, fuzzy, kde-format
 #| msgid "Start with current image"
 msgid "Start with current item"
 msgstr "Mit aktuellem Bild starten"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "If this option is enabled, the Slideshow will be started with the current "
@@ -22886,34 +22886,34 @@ msgstr ""
 "Wenn diese Einstellung aktiviert ist, startet die Diaschau mit dem aktuell "
 "ausgewählten Bild."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:122
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "Diaschau läuft in Endlosschleife"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "Die Diaschau in einer Endlosschleife laufen lassen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:125
 #, fuzzy, kde-format
 #| msgid "Shuffle images"
 msgid "Shuffle items"
 msgstr "Bilder zufällig wählen"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 "Mit dieser Einstellung wird die Reihenfolge der Bilder zufällig gewählt"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:128
 #, kde-format
 msgid "Show progress indicator"
 msgstr "Fortschritt anzeigen"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
@@ -22921,13 +22921,13 @@ msgstr ""
 "Zeigt eine Fortschrittsanzeige mit der Anzahl der verbleibenden Bilder und "
 "der Abspielzeit an."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, fuzzy, kde-format
 #| msgid "Show progress indicator"
 msgid "Show labels editor"
 msgstr "Fortschritt anzeigen"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #, fuzzy, kde-format
 #| msgid ""
 #| "Show the digiKam image color label and pick label at the bottom of the "
@@ -22939,25 +22939,25 @@ msgstr ""
 "Zeigt die digiKam-Farb- und -Auswahlmarkierungen am unteren Rand des "
 "Bildschirms an."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
 #, fuzzy, kde-format
 #| msgid "Show Geolocation Indicator"
 msgid "Show rating editor"
 msgstr "Geolokalisierungs-Anzeige einblenden"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #, fuzzy, kde-format
 #| msgid "Show the digiKam image rating at the bottom of the screen."
 msgid "Show the digiKam item rating editor at the bottom of the screen."
 msgstr "Zeigt die digikam-Bildbewertung am unteren Rand des Bildschirms an."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
 #, fuzzy, kde-format
 #| msgid "&Use theme background color"
 msgid "Use background color for items:"
 msgstr "Hintergrundfarbe des Designs &verwenden"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to use the background theme color in the image editor "
@@ -22967,12 +22967,12 @@ msgstr ""
 "Wählen Sie diese Einstellung, um die Farbe des Hintergrunddesigns im Bereich "
 "der Bildbearbeitung zu benutzen."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Screen placement:"
 msgstr "Bildschirmauswahl:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
@@ -22980,25 +22980,25 @@ msgstr ""
 "Für einen Rechner mit mehreren Bildschirmen wird der Bildschirm gewählt, auf "
 "dem die Diaschau erfolgen soll."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "Aktueller Bildschirm"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "Standard-Bildschirm"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:152
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "Bildschirm %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
@@ -38710,7 +38710,7 @@ msgstr "Prüfsummenfehler"
 msgid "Cannot open target file."
 msgstr "Zieldatei kann nicht geöffnet werden."
 
-#: core/libs/progressmanager/dlogoaction.cpp:81
+#: core/libs/progressmanager/dlogoaction.cpp:94
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Webseite des digiKam-Projektes besuchen"
@@ -40123,7 +40123,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:410
+#: core/libs/properties/itempropertiestab_setters.cpp:411
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"

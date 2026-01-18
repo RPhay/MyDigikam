@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"POT-Creation-Date: 2026-01-18 00:40+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -16820,7 +16820,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "%1 का लागि थम्बनेल सिर्जना गर्न सकिदैन"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
-#: core/libs/properties/itempropertiestab_setters.cpp:394
+#: core/libs/properties/itempropertiestab_setters.cpp:395
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -21337,38 +21337,38 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "स्लाइड प्रर्दशन तयार गर्नुहोस् । कृपया प्रतिक्षा गर्नुहोस्..."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:99
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
 #, fuzzy, kde-format
 #| msgid "Slide Show Settings"
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "स्लाइड प्रर्दशन सेटिङ"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
 #: core/utilities/setup/camera/setupcamera.cpp:350
 #, fuzzy, kde-format
 msgid "Behavior"
 msgstr "व्यवहार"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
 msgid "Delay between items: "
 msgstr "छविहरूबिच विलम्ब:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:116
 #, fuzzy, kde-format
 msgid "The delay, in seconds, between items."
 msgstr "<p>छविहरूबिचको विलम्ब, सेकेन्डमा"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, fuzzy, kde-format
 #| msgid "Start with current image"
 msgid "Start with current item"
 msgstr "हालको छविसँग सुरु गर्नुहोस्"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
 #, fuzzy, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
@@ -21377,103 +21377,103 @@ msgstr ""
 "<p>यो विकल्प सक्षम पारिएमा, छवि सूचीबाट चयन गरेको हालको छविसँग स्लाइड प्रर्दशन सुरु "
 "हुन्छ ।"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:122
 #, fuzzy, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "<p>लुपमा स्लाइड प्रर्दशन चलाउनुहोस् ।"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, fuzzy, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "<p>लुपमा स्लाइड प्रर्दशन चलाउनुहोस् ।"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:125
 #, fuzzy, kde-format
 msgid "Shuffle items"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>If you enable this option, the preview area will not be separated."
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr "<p>तपाईँले यो विकल्प सक्षम पार्नुभएमा, पूर्वावलोकन क्षेत्र विभाजन गरिदैन ।"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:128
 #, fuzzy, kde-format
 msgid "Show progress indicator"
 msgstr "प्रर्दशन सूचक"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, fuzzy, kde-format
 msgid "Show labels editor"
 msgstr "प्रर्दशन सूचक"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #, fuzzy, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
 msgstr "<p>स्क्रिनको तल छवि सिर्जना मुद्रण गर्नुहोस्"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
 #, fuzzy, kde-format
 msgid "Show rating editor"
 msgstr "हरियो फिल्टर"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #, fuzzy, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
 msgstr "<p>स्क्रिनको तल छवि फाइलनाम मुद्रण गर्नुहोस्"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
 #, fuzzy, kde-format
 #| msgid "&Use theme background color"
 msgid "Use background color for items:"
 msgstr "विषयवस्तु पृष्ठभूमि रङ प्रयोग गर्नुहोस्"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, fuzzy, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr ""
 "<p>पृष्ठभूमि विषयवस्तु रङ छवि सम्पादक क्षेत्रमा प्रयोग गर्नका लागि यो विकल्प सक्षम पार्नुहोस्"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, fuzzy, kde-format
 msgid "Screen placement:"
 msgstr "प्रतिशत:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
 #, fuzzy, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "खोजी मेट्नुहोस्"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, fuzzy, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "साधारण सेटिङ"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:152
 #, fuzzy, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "हरियो"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -36065,7 +36065,7 @@ msgstr ""
 msgid "Cannot open target file."
 msgstr "फाइल बचत गर्दा त्रुटि"
 
-#: core/libs/progressmanager/dlogoaction.cpp:81
+#: core/libs/progressmanager/dlogoaction.cpp:94
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "डिजिक्याम परियोजना वेबसाइट हेर्नुहोस्"
@@ -37497,7 +37497,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab_setters.cpp:410
+#: core/libs/properties/itempropertiestab_setters.cpp:411
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"

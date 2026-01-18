@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"POT-Creation-Date: 2026-01-18 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2813,67 +2813,67 @@ msgstr "捐款："
 #, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
-msgstr ""
+msgstr "后退"
 
 #: core/app/views/preview/itempreviewview.cpp:182
 #, kde-format
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
-msgstr ""
+msgstr "前进"
 
 #: core/app/views/preview/itempreviewview.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
-msgstr ""
+msgstr "添加人脸标签"
 
 #: core/app/views/preview/itempreviewview.cpp:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
-msgstr ""
+msgstr "清除此图像的所有人脸标签"
 
 #: core/app/views/preview/itempreviewview.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
-msgstr ""
+msgstr "标记所有未确认人脸为已忽略"
 
 #: core/app/views/preview/itempreviewview.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
-msgstr ""
+msgstr "显示人脸标签"
 
 #: core/app/views/preview/itempreviewview.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
-msgstr ""
+msgstr "添加焦点"
 
 #: core/app/views/preview/itempreviewview.cpp:215
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
-msgstr ""
+msgstr "显示焦点"
 
 #: core/app/views/preview/itempreviewview.cpp:221
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
-msgstr ""
+msgstr "显示放大镜"
 
 #: core/app/views/preview/itempreviewview.cpp:225
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
-msgstr ""
+msgstr "曝光不足指示色"
 
 #: core/app/views/preview/itempreviewview.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
-msgstr ""
+msgstr "曝光过度指示色"
 
 #: core/app/views/preview/itempreviewview.cpp:612
 #: core/app/views/stack/itemiconview_views.cpp:325
@@ -16814,7 +16814,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "无法保存图像“%1”的缩略图到“%2”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
-#: core/libs/properties/itempropertiestab_setters.cpp:394
+#: core/libs/properties/itempropertiestab_setters.cpp:395
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -21380,134 +21380,134 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "正在放映幻灯片"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:99
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "幻灯片设置"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
 #: core/utilities/setup/camera/setupcamera.cpp:350
 #, kde-format
 msgid "Behavior"
 msgstr "行为"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
 #, kde-format
 msgid "Delay between items: "
 msgstr "项目切换间隔时间："
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:116
 #, kde-format
 msgid "The delay, in seconds, between items."
 msgstr "切换到下一个项目之前的等待时间。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, kde-format
 msgid "Start with current item"
 msgstr "从当前项目开始放映"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
 msgstr "勾选此项后，幻灯片将以当前项目列表中选中的项目开始放映。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:122
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "循环放映幻灯片"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "循环播放幻灯片。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:125
 #, kde-format
 msgid "Shuffle items"
 msgstr "随机项目顺序"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr "勾选此项后，幻灯片将以随机顺序播放图像"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:128
 #, kde-format
 msgid "Show progress indicator"
 msgstr "显示进度条"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr "显示当前项目的已展示时间进度条，并显示当前张数和总张数。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, kde-format
 msgid "Show labels editor"
 msgstr "显示标记编辑器"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
 msgstr "在屏幕底部显示 digiKam 项目颜色标记和挑选标记编辑器。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
 #, kde-format
 msgid "Show rating editor"
 msgstr "显示评分编辑器"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
 msgstr "在屏幕底部显示 digiKam 项目评分编辑器。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
 #, kde-format
 msgid "Use background color for items:"
 msgstr "项目显示背景色："
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr "定义在屏幕上显示项目时使用的背景色。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Screen placement:"
 msgstr "放映屏幕："
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr "如果本机有多个屏幕，可在此选择播放幻灯片的屏幕。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "当前屏幕"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "默认屏幕"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:152
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "屏幕 %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -36312,7 +36312,7 @@ msgstr "校验和错误。"
 msgid "Cannot open target file."
 msgstr "无法打开目标文件。"
 
-#: core/libs/progressmanager/dlogoaction.cpp:81
+#: core/libs/progressmanager/dlogoaction.cpp:94
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "访问 digiKam 项目网站"
@@ -37657,7 +37657,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:410
+#: core/libs/properties/itempropertiestab_setters.cpp:411
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -40253,7 +40253,7 @@ msgstr "文件最后修改时间"
 #: core/libs/timeadjust/timeadjustsettings.cpp:155
 #, kde-format
 msgid "File created"
-msgstr ""
+msgstr "文件创建时间"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
@@ -62205,37 +62205,37 @@ msgstr "如果您想要使用抗锯齿插值来放大图像，请勾选此项。
 #: core/utilities/setup/album/setupalbumview.cpp:325
 #, kde-format
 msgid "Magnifier"
-msgstr ""
+msgstr "放大镜"
 
 #: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format
 msgctxt "@label:listbox Preview magnifier tool zoom factor"
 msgid "Zoom Factor:"
-msgstr ""
+msgstr "缩放倍数："
 
 #: core/utilities/setup/album/setupalbumview.cpp:339
 #, kde-format
 msgctxt "@label:listbox Preview magnifier tool size"
 msgid "Tool Size:"
-msgstr ""
+msgstr "工具大小："
 
 #: core/utilities/setup/album/setupalbumview.cpp:341
 #, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Small"
-msgstr ""
+msgstr "小"
 
 #: core/utilities/setup/album/setupalbumview.cpp:342
 #, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Medium"
-msgstr ""
+msgstr "中"
 
 #: core/utilities/setup/album/setupalbumview.cpp:343
 #, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Large"
-msgstr ""
+msgstr "大"
 
 #: core/utilities/setup/album/setupalbumview.cpp:354
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -66554,6 +66554,3 @@ msgstr "导入视图项目"
 #, kde-format
 msgid "Survey"
 msgstr "评审工具"
-
-#~ msgid "Pan the image to a region"
-#~ msgstr "平移图像到区域"

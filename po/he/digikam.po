@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
-"PO-Revision-Date: 2026-01-16 11:51+0200\n"
+"POT-Creation-Date: 2026-01-18 00:40+0000\n"
+"PO-Revision-Date: 2026-01-16 17:39+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1479,16 +1479,16 @@ msgstr " (%1 מתוך %2 [%3] )"
 #: core/app/main/digikamapp.cpp:855
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
-msgstr ""
+msgstr " (%1 מתוך %2. סך הכול עם פריטים מקובצים: %3)"
 
 #: core/app/main/digikamapp.cpp:866
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
-msgstr[0] "16 סיביות"
-msgstr[1] "16 סיביות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פריט מוסתר"
+msgstr[1] "שני פריטים נסתרים"
+msgstr[2] "%1 פריטים מוסתרים"
+msgstr[3] "%1 פריטים מוסתרים"
 
 #: core/app/main/digikamapp.cpp:926
 #, fuzzy, kde-format
@@ -2986,7 +2986,7 @@ msgstr "פרצופים"
 #: core/app/views/preview/itempreviewview.cpp:808
 #, kde-format
 msgid "Show Magnifier (x%1)"
-msgstr ""
+msgstr "הצגת זכוכית מגדלת (×%1)"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -3080,6 +3080,8 @@ msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
+"ברוך בואך לניהול הפרצופים של digiKam. אם זה השימוש הראשון שלך ביכולת הזא, נא "
+"לשקול להשתמש בתיבת העזרה בלוח הצד הימני התחתון."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:257
 #, kde-format
@@ -3087,6 +3089,7 @@ msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
+"סריקת הפרצופים בוטלה, כיוון שאין זהויות לזיהוי. נא להוסיף זהויות חדשות."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:277
 #, kde-format
@@ -3495,6 +3498,8 @@ msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
+"שינוי שם מתקדם: הוספת מונה קבצים גדל למספור רציף מתוך האפשרות [c] או [c,"
+"step]."
 
 #: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
@@ -3552,13 +3557,13 @@ msgstr "נוסף לוח הגדרות בדיקת איות בהגדרות/שונו
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
-msgstr ""
+msgstr "נוספה תמיכה בתרגומים מקוונים לווידג׳ט עורך טקסט השפה החלופית."
 
 #: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
-msgstr ""
+msgstr "נוסף לוח הגדרות תרגום בהגדרות/שונות ל־digiKam ול־Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
@@ -7873,7 +7878,7 @@ msgstr "המרה"
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
-msgstr ""
+msgstr "התמונה הזאת כבר משתמשת בעומק של 8 סיביות / צבע / פיקסל."
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:118
 #, fuzzy, kde-format
@@ -7901,7 +7906,7 @@ msgstr "המרה"
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
-msgstr ""
+msgstr "התמונה הזאת כבר משתמשת בעומק של 16 סיביות / צבע / פיקסל."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
@@ -7954,7 +7959,7 @@ msgstr "אתחול התוכן"
 #: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
-msgstr ""
+msgstr "לחיצה על הכפתור הזה תאפס את הנקודה הלבנה ללבן טהור."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:220
 #, fuzzy, kde-format
@@ -8223,7 +8228,7 @@ msgstr "270 מעלות"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:176
 #, kde-format
 msgid "Select the text rotation to use here."
-msgstr ""
+msgstr "נא לבחור כאן את סיבוב הטקסט לשימוש."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:180
 #, kde-format
@@ -8255,7 +8260,7 @@ msgstr "הוספת מסגרת"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:197
 #, kde-format
 msgid "Add a solid border around text using current text color"
-msgstr ""
+msgstr "הוספת מסגרת אחידה מסביב לטקסט עם צבע הטקסט הנוכחי"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:199
 #, kde-format
@@ -8265,7 +8270,7 @@ msgstr "שקוף למחצה"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:200
 #, kde-format
 msgid "Use semi-transparent text background under image"
-msgstr ""
+msgstr "להשתמש ברקע שקוף למחצה מתחת לתמונה"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:301
 #, kde-format
@@ -8549,6 +8554,10 @@ msgid ""
 "To Continue polygon, either press L or double click\n"
 "To Cancel, press ESC"
 msgstr ""
+"בחירת מצולעים עם פלצור.\n"
+"מקש קיצור: ך\n"
+"כדי להמשיך מצולע, יש ללחוץ על ך או לחיצה כפולה\n"
+"כדי לבטל יש ללחוץ על Esc"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:168
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:169
@@ -8557,6 +8566,8 @@ msgid ""
 "Move Image.\n"
 "Shortcut: M"
 msgstr ""
+"הזזת תמונה.\n"
+"מקש קיצור: צ"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:177
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:178
@@ -8565,6 +8576,8 @@ msgid ""
 "Undo clone operation.\n"
 "Shortcut: CTRL+Z"
 msgstr ""
+"הסגת פעולת שכפול.\n"
+"מקשי קיצור: CTRL+Z"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:186
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:187
@@ -8573,6 +8586,8 @@ msgid ""
 "Redo clone operation.\n"
 "Shortcut: CTRL+Y"
 msgstr ""
+"ביצוע פעולת שכפול מחדש.\n"
+"מקשי קיצור: CTRL+Y"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:191
 #, kde-format
@@ -16619,7 +16634,7 @@ msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "לא ניתן לייצר תצוגה-ממוזערת של תמונה עבור %1"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
-#: core/libs/properties/itempropertiestab_setters.cpp:394
+#: core/libs/properties/itempropertiestab_setters.cpp:395
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
@@ -21058,35 +21073,35 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "הצגת מצגת שקופיות"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:99
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "הגדרות מצגת שקופיות"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:110
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
 #: core/utilities/setup/camera/setupcamera.cpp:350
 #, kde-format
 msgid "Behavior"
 msgstr "התנהגות"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:113
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
 #, kde-format
 msgid "Delay between items: "
 msgstr "השהיה בין פריטים: "
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:116
 #, kde-format
 msgid "The delay, in seconds, between items."
 msgstr "השהיה, בשניות, בין פריטים."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, kde-format
 msgid "Start with current item"
 msgstr "התחלה מהפריט הנוכחי"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
@@ -21095,99 +21110,99 @@ msgstr ""
 "אם האפשרות הזאת פעילה, מצגת השקופיות תתחיל מהפריט הנוכחי שנבחר ברשימת "
 "הפריטים."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:122
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:125
 #, kde-format
 msgid "Shuffle items"
 msgstr "ערבוב פריטים"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr "אם האפשרות הזאת פעילה, מצגת השקופיות תרוץ בסדר אקראי."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:128
 #, kde-format
 msgid "Show progress indicator"
 msgstr "הצגת מחוון התקדמות"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, kde-format
 msgid "Show labels editor"
 msgstr "הצגת עורך תוויות"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
 msgstr "להציג את עורכי צבעי התוויות ותוויות הבחירה ב־digiKam בתחתית המסך."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
 #, kde-format
 msgid "Show rating editor"
 msgstr "הצגת עורך דירוג"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
 msgstr "להציג את עורך דירוג הפריטים ב־digiKam בתחתית המסך."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
 #, kde-format
 msgid "Use background color for items:"
 msgstr "להשתמש בצבע הרקע לפריטים:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr "להגדיר צבע לשימוש כרקע לתיצוג פריטים במסך."
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
 msgid "Screen placement:"
 msgstr "הצבה במסך:"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
 #, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "המסך הנוכחי"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "מסך ברירת המחדל"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:152
 #, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "מסך %1"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
@@ -35620,7 +35635,7 @@ msgstr "שגיאת סכומי ביקורת."
 msgid "Cannot open target file."
 msgstr "לא ניתן לפתוח את קובץ היעד."
 
-#: core/libs/progressmanager/dlogoaction.cpp:81
+#: core/libs/progressmanager/dlogoaction.cpp:94
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "ביקור באתר מיזם digiKam"
@@ -37003,7 +37018,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "ב׳"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:410
+#: core/libs/properties/itempropertiestab_setters.cpp:411
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -54563,7 +54578,7 @@ msgstr "הגדלת ניגודיות"
 #: core/utilities/setup/setupgeolocation.cpp:134
 #, kde-format
 msgid "Google Maps"
-msgstr ""
+msgstr "Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:370
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
@@ -54574,7 +54589,7 @@ msgstr "פריטים צפים"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:160
 #, kde-format
 msgid "Marble Virtual Globe"
-msgstr ""
+msgstr "הגלובוס הווירטואלי Marble"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
 #, kde-format
@@ -54584,17 +54599,17 @@ msgstr "מפת אטלס"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
 #, kde-format
 msgid "Satellite map"
-msgstr ""
+msgstr "מפת לוויין"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:293
 #, kde-format
 msgid "OpenStreetMap"
-msgstr ""
+msgstr "OpenStreetMap"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:294
 #, kde-format
 msgid "OpenStreetMap (Vector)"
-msgstr ""
+msgstr "OpenStreetMap (וקטורי)"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
 #, kde-format
@@ -54605,7 +54620,7 @@ msgstr "כדורי"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:362
 #, kde-format
 msgid "Equirectangular"
-msgstr ""
+msgstr "שווה מלבנים"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:373
 #, kde-format
@@ -54625,12 +54640,12 @@ msgstr "הצגת ניווט"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:388
 #, kde-format
 msgid "Show overview map"
-msgstr ""
+msgstr "הצגת מפת סקירה"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:401
 #, kde-format
 msgid "Other Marble Themes"
-msgstr ""
+msgstr "ערכות עיצוב נוספות של Marble"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:428
 #, kde-format
@@ -54651,12 +54666,12 @@ msgstr "תיקיית סימניות"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:189
 #, kde-format
 msgid "The file is not an XBEL version 1.0 file."
-msgstr ""
+msgstr "הקובץ אינו קובץ XBEL בגרסה 1.0."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
-msgstr ""
+msgstr "כותרת לא ידועה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:87
 #, kde-format
@@ -54668,17 +54683,17 @@ msgstr "הוספת סימנייה"
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
-msgstr ""
+msgstr "יש להקליד שם והערה לסימנייה ולבחור איפה לשמור אותה."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:99
 #, kde-format
 msgid "Bookmark title"
-msgstr ""
+msgstr "כותרת סימנייה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:104
 #, kde-format
 msgid "Bookmark comment"
-msgstr ""
+msgstr "הערת סימנייה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:201
 #, kde-format
@@ -54693,17 +54708,17 @@ msgstr "עריכת סימניות גאורפיות"
 #: core/utilities/setup/setuptemplate.cpp:114
 #, kde-format
 msgid "&Remove"
-msgstr ""
+msgstr "ה&סרה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:226
 #, kde-format
 msgid "Add Folder"
-msgstr ""
+msgstr "הוספת תיקייה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
 #, kde-format
 msgid "New Folder"
-msgstr ""
+msgstr "תיקייה חדשה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
 #, kde-format
@@ -54715,32 +54730,32 @@ msgstr "ניהול סימניות"
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
-msgstr ""
+msgstr "להסיר את „%1” מאוסף הסימניות שלך?"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:46
 #, kde-format
 msgid "Remove Bookmark"
-msgstr ""
+msgstr "הסרת סימנייה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:88
 #, kde-format
 msgid "Insert Bookmark"
-msgstr ""
+msgstr "הכנסת סימנייה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:134
 #, kde-format
 msgid "Title Change"
-msgstr ""
+msgstr "עריכת כותרת"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:141
 #, kde-format
 msgid "Comment Change"
-msgstr ""
+msgstr "עריכת הערה"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:148
 #, kde-format
 msgid "Address Change"
-msgstr ""
+msgstr "החלפת כתובת"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:325
 #, kde-format
@@ -54779,12 +54794,12 @@ msgstr "פתיחת קובץ"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
 #, kde-format
 msgid "XBEL (*.xbel *.xml)"
-msgstr ""
+msgstr "XBEL ‏(‎*.xbel‏ ‎*.xml)"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:955
 #, kde-format
 msgid "Imported %1"
-msgstr ""
+msgstr "%1 יובאו"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
 #, kde-format
@@ -54795,7 +54810,7 @@ msgstr "שמירת קובץ"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:962
 #, kde-format
 msgid "%1 Bookmarks.xbel"
-msgstr ""
+msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
 #, kde-format
@@ -54811,12 +54826,12 @@ msgstr "שגיאה בשמירת סימניות"
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:168
 #, kde-format
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "עריכת סימניות"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:174
 #, kde-format
 msgid "Add Bookmark..."
-msgstr ""
+msgstr "הוספת סימנייה…"
 
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
 #, kde-format
@@ -54855,7 +54870,7 @@ msgstr "טעינת קובצי GPX…"
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:137
 #, kde-format
 msgid "Show tracks on Map"
-msgstr ""
+msgstr "הצגת מסלולים על המפה"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:138
 #, kde-format
