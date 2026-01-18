@@ -228,17 +228,15 @@ void PanIconWidget::paintEvent(QPaintEvent*)
     p.fillRect(d->rect, QColor(0, 0, 0, 128)); // Uses middle transparency
     p.restore();
 
-    // Draw the selection rectangle with a white border
-
-    p.setPen(QPen(QColor(255, 255, 255, 255), 2, Qt::SolidLine));
-    p.drawRect(r);
-
-    // Draw the separator if necessary.
+    // Fill the non suitable area and draw the separator
+    // from the selection if necessary.
 
     switch (d->separator)
     {
         case Horizontal:
         {
+            p.fillRect(r.left(),  r.top() + r.height() / 2,
+                       r.width(), r.height() / 2, QColor(0, 0, 0, 128));
             p.drawLine(r.left(),  r.top() + r.height() / 2,
                        r.right(), r.top() + r.height() / 2);
             break;
@@ -246,6 +244,8 @@ void PanIconWidget::paintEvent(QPaintEvent*)
 
         case Vertical:
         {
+            p.fillRect(r.left() + r.width() / 2, r.top(),
+                       r.width() / 2, r.height(), QColor(0, 0, 0, 128));
             p.drawLine(r.left() + r.width() / 2, r.top(),
                        r.left() + r.width() / 2, r.bottom());
             break;
@@ -256,6 +256,11 @@ void PanIconWidget::paintEvent(QPaintEvent*)
             break;
         }
     }
+
+    // Draw the selection rectangle with a white border
+
+    p.setPen(QPen(QColor(255, 255, 255, 255), 2, Qt::SolidLine));
+    p.drawRect(r);
 
     // Draw a rectangle around the whole image.
 
