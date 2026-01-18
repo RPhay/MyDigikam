@@ -52,6 +52,9 @@ public:
 
 private:
 
+    void setupIconView();
+    void setupTreeView();
+    void setupPreView();
     void readSettings();
 
 private Q_SLOTS:

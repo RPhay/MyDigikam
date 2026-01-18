@@ -71,6 +71,10 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupversioning.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/album/setupalbumview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupalbumview_iconview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupalbumview_treeview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupalbumview_preview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupalbumview_settings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/album/setupcategory.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/album/setupmime.cpp
 
