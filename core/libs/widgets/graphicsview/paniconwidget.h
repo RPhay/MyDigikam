@@ -38,6 +38,19 @@ class DIGIKAM_EXPORT PanIconWidget : public QWidget
 
 public:
 
+    /**
+     * Separator used in the middle of the selection area.
+     * Used with the ImageRegionWidget in Image Editor.
+     */
+    enum Separator
+    {
+        None = 0,
+        Horizontal,
+        Vertical
+    };
+
+public:
+
     explicit PanIconWidget(QWidget* const parent = nullptr);
     ~PanIconWidget()                        override;
 
@@ -47,6 +60,8 @@ public:
 
     void  setRegionSelection(const QRect& regionSelection);
     QRect getRegionSelection() const;
+
+    void setSeparator(Separator sep);
 
 Q_SIGNALS:
 

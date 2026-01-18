@@ -38,25 +38,27 @@ public:
 
 public:
 
-    bool    moveSelection       = false;
+    bool      moveSelection       = false;
 
-    int     width               = 0;
-    int     height              = 0;
-    int     zoomedOrgWidth      = 0;
-    int     zoomedOrgHeight     = 0;
-    int     orgWidth            = 0;
-    int     orgHeight           = 0;
-    int     xpos                = 0;
-    int     ypos                = 0;
+    int       width               = 0;
+    int       height              = 0;
+    int       zoomedOrgWidth      = 0;
+    int       zoomedOrgHeight     = 0;
+    int       orgWidth            = 0;
+    int       orgHeight           = 0;
+    int       xpos                = 0;
+    int       ypos                = 0;
 
-    double  zoomFactor          = 1.0;
+    Separator separator           = None;
 
-    QRect   regionSelection;                ///< Original size image selection.
+    double    zoomFactor          = 1.0;
 
-    QRect   rect;
-    QRect   localRegionSelection;           ///< Thumbnail size selection.
+    QRect     regionSelection;                ///< Original size image selection.
 
-    QPixmap pixmap;
+    QRect     rect;
+    QRect     localRegionSelection;           ///< Thumbnail size selection.
+
+    QPixmap   pixmap;
 };
 
 PanIconWidget::PanIconWidget(QWidget* const parent)
@@ -70,6 +72,11 @@ PanIconWidget::PanIconWidget(QWidget* const parent)
 PanIconWidget::~PanIconWidget()
 {
     delete d;
+}
+
+void PanIconWidget::setSeparator(Separator sep)
+{
+    d->separator = sep;
 }
 
 void PanIconWidget::setImage(int previewWidth, int previewHeight, const QImage& image)
@@ -225,6 +232,30 @@ void PanIconWidget::paintEvent(QPaintEvent*)
 
     p.setPen(QPen(QColor(255, 255, 255, 255), 2, Qt::SolidLine));
     p.drawRect(r);
+
+    // Draw the separator if necessary.
+
+    switch (d->separator)
+    {
+        case Horizontal:
+        {
+            p.drawLine(r.left(),  r.top() + r.height() / 2,
+                       r.right(), r.top() + r.height() / 2);
+            break;
+        }
+
+        case Vertical:
+        {
+            p.drawLine(r.left() + r.width() / 2, r.top(),
+                       r.left() + r.width() / 2, r.bottom());
+            break;
+        }
+
+        default:    // None
+        {
+            break;
+        }
+    }
 
     // Draw a rectangle around the whole image.
 
