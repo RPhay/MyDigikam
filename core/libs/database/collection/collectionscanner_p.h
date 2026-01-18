@@ -31,7 +31,6 @@
 
 #include <QDir>
 #include <QFileInfo>
-#include <QDirIterator>
 #include <QWriteLocker>
 #include <QReadWriteLock>
 #include <QReadLocker>
@@ -39,10 +38,6 @@
 #include <QSet>
 #include <QElapsedTimer>
 #include <QScopedPointer>
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
-#   include <QDirListing>
-#endif
 
 // Local includes
 
