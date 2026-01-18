@@ -184,6 +184,11 @@ void CollectionScanner::readDirectoryInCache(int& items, const QString& path)
 
     for (const auto& info : dirList)
     {
+        if (!d->checkObserver())
+        {
+            return;
+        }
+
         if (info.isDir())
         {
             if (d->checkIgnoreDirectory(info.fileName()))
@@ -219,7 +224,6 @@ int CollectionScanner::createAlbumDateCache(const CollectionLocation& location, 
     QFileInfo info(dir.path());
     d->albumDateCache.insert(info.absoluteFilePath(),
                              asDateTimeUTC(info.lastModified()));
-
 
     readDirectoryInCache(items, info.filePath());
 

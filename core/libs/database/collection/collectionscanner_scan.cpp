@@ -559,6 +559,11 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
 
             for (it = pathDateMap.constBegin() ; it != pathDateMap.constEnd() ; ++it)
             {
+                if (!d->checkObserver())
+                {
+                    return;
+                }
+
                 QUrl url     = QUrl::fromLocalFile(location.albumRootPath() + it.key());
                 url          = url.adjusted(QUrl::StripTrailingSlash);
                 QString path = QFileInfo(url.toLocalFile()).filePath();
@@ -604,6 +609,11 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     // + Recursively scans subalbums of album.
     // + Adds files if they do not yet exist in the db.
     // + Marks stale files as removed
+
+    if (!d->checkObserver())
+    {
+        return;
+    }
 
     QDir dir(location.albumRootPath() + album);
 

@@ -117,13 +117,14 @@ void ScanController::shutDown()
         return;
     }
 
-    d->running                = false;
-    d->continueInitialization = false;
-    d->continueScan           = false;
-    d->continuePartialScan    = false;
-
     {
         QMutexLocker lock(&d->mutex);
+
+        d->running                = false;
+        d->continueInitialization = false;
+        d->continueScan           = false;
+        d->continuePartialScan    = false;
+
         d->condVar.wakeAll();
     }
 

@@ -425,7 +425,7 @@ BUGFIXES:
 353 --> 506646 - Flashing screen after installing digiKam.
 354 --> 495265 - Album summary.
 355 --> 514767 - [Performance] Ignored directories should not be scanned at all during "Find new items".
-356 --> 
+356 --> 514764 - "Find new items" background task is not stopped when closing digiKam.
 357 --> 
 358 --> 
 359 --> 
