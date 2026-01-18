@@ -56,12 +56,12 @@ void SetupAlbumView::setupPreView()
     QLabel* const magnifierLabel  = new QLabel(i18nc("@label:listbox Preview magnifier tool zoom factor",
                                                      "Zoom Factor:"), magnifierBox);
     d->magnifierZoomFactor        = new QComboBox(magnifierBox);
-    d->magnifierZoomFactor->addItem(QLatin1String("x1.5"), 1.5);
-    d->magnifierZoomFactor->addItem(QLatin1String("x2.0"), 2.0);
-    d->magnifierZoomFactor->addItem(QLatin1String("x2.5"), 2.5);
-    d->magnifierZoomFactor->addItem(QLatin1String("x3.0"), 3.0);
-    d->magnifierZoomFactor->addItem(QLatin1String("x3.5"), 3.5);
-    d->magnifierZoomFactor->addItem(QLatin1String("x4.0"), 4.0);
+    d->magnifierZoomFactor->addItem(QLatin1String("x1.5"), (float)MagnifierItem::Zoom15 / 10.0);
+    d->magnifierZoomFactor->addItem(QLatin1String("x2.0"), (float)MagnifierItem::Zoom20 / 10.0);
+    d->magnifierZoomFactor->addItem(QLatin1String("x2.5"), (float)MagnifierItem::Zoom25 / 10.0);
+    d->magnifierZoomFactor->addItem(QLatin1String("x3.0"), (float)MagnifierItem::Zoom30 / 10.0);
+    d->magnifierZoomFactor->addItem(QLatin1String("x3.5"), (float)MagnifierItem::Zoom35 / 10.0);
+    d->magnifierZoomFactor->addItem(QLatin1String("x4.0"), (float)MagnifierItem::Zoom40 / 10.0);
 
     QLabel* const magSizeLabel    = new QLabel(i18nc("@label:listbox Preview magnifier tool size",
                                                      "Tool Size:"), magnifierBox);
