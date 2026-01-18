@@ -425,7 +425,35 @@ void TableView::slotGoToRow(const int rowNumber, const bool relativeMove)
     {
         const QModelIndex currentTableViewIndex = s->tableViewSelectionModel->currentIndex();
         const int currentDeepRowNumber          = s->tableViewModel->indexToDeepRowNumber(currentTableViewIndex);
-        nextDeepRowNumber                      += currentDeepRowNumber;
+
+        // Check if currentDeepRowNumber is valid
+
+        if (currentDeepRowNumber < 0)
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid currentDeepRowNumber:" << currentDeepRowNumber;
+
+            return;
+        }
+
+        // Check if overflow in addition
+
+        if ((nextDeepRowNumber > 0) && (currentDeepRowNumber > INT_MAX - nextDeepRowNumber))
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Overflow detected in slotGoToRow";
+
+            return;
+        }
+
+        nextDeepRowNumber += currentDeepRowNumber;
+    }
+
+    // Check if nextDeepRowNumber is valid before usage
+
+    if (nextDeepRowNumber < 0)
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid nextDeepRowNumber:" << nextDeepRowNumber;
+
+        return;
     }
 
     const QModelIndex nextIndex = s->tableViewModel->deepRowIndex(nextDeepRowNumber);
@@ -446,16 +474,54 @@ ItemInfo TableView::deepRowItemInfo(const int rowNumber, const bool relative) co
     {
         const QModelIndex& currentTableViewIndex = s->tableViewSelectionModel->currentIndex();
 
+        // Check if current index is valid
+
         if (!currentTableViewIndex.isValid())
         {
             return ItemInfo();
         }
 
-        const int currentDeepRowNumber           = s->tableViewModel->indexToDeepRowNumber(currentTableViewIndex);
-        targetRowNumber                         += currentDeepRowNumber;
+        // Get the current line number
+
+        const int currentDeepRowNumber = s->tableViewModel->indexToDeepRowNumber(currentTableViewIndex);
+
+        // Check if currentDeepRowNumber is not negative
+
+        if (currentDeepRowNumber < 0)
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid currentDeepRowNumber:" << currentDeepRowNumber;
+
+            return ItemInfo();
+        }
+
+        // Check the overflow before addition
+
+        if (targetRowNumber > 0 && currentDeepRowNumber > INT_MAX - targetRowNumber)
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Overflow detected in deepRowItemInfo";
+
+            return ItemInfo();
+        }
+
+        // Complete the addition
+
+        targetRowNumber += currentDeepRowNumber;
     }
 
+    // Check if targetRowNumber is valid before usage
+
+    if (targetRowNumber < 0)
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid targetRowNumber:" << targetRowNumber;
+
+        return ItemInfo();
+    }
+
+    // Get the target index
+
     const QModelIndex targetIndex = s->tableViewModel->deepRowIndex(targetRowNumber);
+
+    // Get the information about element.
 
     return s->tableViewModel->imageInfo(targetIndex);
 }
