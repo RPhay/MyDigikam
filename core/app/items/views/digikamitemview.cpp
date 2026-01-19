@@ -99,7 +99,7 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
 
     itemModel()->setDragDropHandler(new ItemDragDropHandler(itemModel()));
     setDragEnabled(true);
-    setAcceptDrops(true);
+    //setAcceptDrops(true);
     setDropIndicatorShown(false);
 
     setToolTipEnabled(settings->showToolTipsIsValid());
