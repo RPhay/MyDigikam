@@ -240,7 +240,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     for (qreal z : zooms)
     {
-        QAction* const za = d->zoomGroup->addAction(QString::fromLatin1("x%1").arg(z, 'f', 1));
+        QAction* const za = d->zoomGroup->addAction(QString::fromLatin1("x%1").arg(QString::number(z, 'f', 1)));
         za->setCheckable(true);
         za->setData(z);
         zoomMenu->addAction(za);
