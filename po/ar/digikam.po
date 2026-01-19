@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-18 00:40+0000\n"
-"PO-Revision-Date: 2026-01-14 08:47+0400\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
+"PO-Revision-Date: 2026-01-18 18:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -41270,10 +41270,9 @@ msgid "File last modified"
 msgstr "آخر تعديل للملف"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:155
-#, fuzzy, kde-format
-#| msgid "File date"
+#, kde-format
 msgid "File created"
-msgstr "تاريخ الملفّ"
+msgstr "إنشاء الملفّ"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
@@ -52223,37 +52222,37 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "ألغِ"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:100
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:113
 #, kde-format
 msgid "Confirming face"
 msgstr "تأكيد الوجه"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:151
 #, kde-format
 msgid "Removing face"
 msgstr "إزالة الوجه"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:179
 #, kde-format
 msgid "Remove all faces"
 msgstr "أزل كلّ الوجوه"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:216
 #, kde-format
 msgid "Editing face tag"
 msgstr "تحرير علامة الوجه"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:260
 #, kde-format
 msgid "Editing face region"
 msgstr "تحرير منطقة الوجه"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:310
 #, kde-format
 msgid "Manually adding face"
 msgstr "إضافة وجه يدويًا"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:361
 #, kde-format
 msgid "Clearing rejected face tag list."
 msgstr "مسح قائمة علامات الوجه المرفوضة."

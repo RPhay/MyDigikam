@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-18 00:40+0000\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -51818,40 +51818,40 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "रद्द करा"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:100
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:113
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "(निवड नाही)"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:151
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgid "Removing face"
 msgstr "गाळणी काढून टाका"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:179
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Remove all faces"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:216
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:260
 #, fuzzy, kde-format
 msgid "Editing face region"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:310
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgid "Manually adding face"
 msgstr "स्वहस्ते"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:361
 #, kde-format
 msgid "Clearing rejected face tag list."
 msgstr ""

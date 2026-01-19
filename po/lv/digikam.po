@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-18 00:40+0000\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -53475,43 +53475,43 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Atcelt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:100
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:113
 #, fuzzy, kde-format
 #| msgid "Confirm Faces"
 msgid "Confirming face"
 msgstr "Apstiprināt sejas"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:151
 #, fuzzy, kde-format
 #| msgid "Remove face tag?"
 #| msgid_plural "Remove face tags?"
 msgid "Removing face"
 msgstr "Noņemt sejas tagu?"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:179
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Remove all faces"
 msgstr "Noņemt tagu"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:216
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "Seju datubāzes atjaunināšana."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:260
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Noņemt šo tagu"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:310
 #, fuzzy, kde-format
 msgid "Manually adding face"
 msgstr "Rokasgrāmata"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:361
 #, kde-format
 msgid "Clearing rejected face tag list."
 msgstr ""

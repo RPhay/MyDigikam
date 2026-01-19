@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-18 00:40+0000\n"
-"PO-Revision-Date: 2026-01-16 17:39+0200\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
+"PO-Revision-Date: 2026-01-18 22:38+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -30286,25 +30286,25 @@ msgid "Vintage"
 msgstr ""
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:401
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: effect type"
 msgid "Washout"
-msgstr "צבעים"
+msgstr "סחיפה"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:405
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: effect type"
 msgid "Washout Color"
-msgstr "צבעים"
+msgstr "צבע סחיפה"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:409
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: effect type"
 msgid "X Process"
-msgstr "עיבוד קבוצת תמונות"
+msgstr "תהליך X"
 
 #: core/libs/dimg/filters/fx/distortionfxfilter.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgid "Distortion Effect"
 msgstr "אפקט עיוות"
 
@@ -30441,9 +30441,9 @@ msgid "Rain Drops Effect"
 msgstr "אפקט טיפות גשם"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgid "Greycstoration Filter"
-msgstr "מסנן ירוק"
+msgstr "מסנן Greycstoration"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:96
 #, kde-format
@@ -30751,9 +30751,9 @@ msgid "Select the hue and saturation adjustments of the image."
 msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "You can see here a color preview of the hue and saturation adjustments."
-msgstr "<p>האחוז הנוכחי של השלמת המשימה."
+msgstr "כאן אפשר לראות תצוגת צבע מקדימה של כוונוני הגוון והרוויה."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:81
 #, kde-format
@@ -31558,11 +31558,10 @@ msgid "Cannot load settings from the Photograph Noise Reduction text file."
 msgstr "לא ניתן לטעון את ההגדרות מקובץ הטקסט להפחתת רעש בתמונות."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:395
-#, fuzzy, kde-format
-#| msgid "Photograph Noise Reduction Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
-msgstr "שמירת קובץ מאפייני רעש של תמונה"
+msgstr "קובץ הגדרות הפחתת רעש בתמונות לשמירה"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:420
 #, kde-format
@@ -31605,9 +31604,9 @@ msgid "Unsharp mask"
 msgstr "מסכת אי־חדות"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select the sharpening method to apply to the image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "בחירת שיטת החידו להחלה על התמונה."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:144
 #, kde-format
@@ -50284,37 +50283,37 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:100
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:113
 #, kde-format
 msgid "Confirming face"
 msgstr "אישור פרצוף"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:151
 #, kde-format
 msgid "Removing face"
 msgstr "הסרת פרצוף"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:179
 #, kde-format
 msgid "Remove all faces"
 msgstr "הסרת כל הפרצופים"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:216
 #, kde-format
 msgid "Editing face tag"
 msgstr "עריכת תגית פרצוף"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:260
 #, kde-format
 msgid "Editing face region"
 msgstr "עריכת אזור פרצוף"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:310
 #, kde-format
 msgid "Manually adding face"
 msgstr "הוספת פרצוף ידנית"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:361
 #, kde-format
 msgid "Clearing rejected face tag list."
 msgstr ""

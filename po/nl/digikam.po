@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-18 00:40+0000\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
 "PO-Revision-Date: 2026-01-15 12:26+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -53103,37 +53103,37 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:100
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:113
 #, kde-format
 msgid "Confirming face"
 msgstr "Gezicht bevestigen"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:151
 #, kde-format
 msgid "Removing face"
 msgstr "Gezichtstag wordt verwijderd"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:179
 #, kde-format
 msgid "Remove all faces"
 msgstr "Alle gezichten verwijderen"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:216
 #, kde-format
 msgid "Editing face tag"
 msgstr "Gezichten wordt bewerkt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:260
 #, kde-format
 msgid "Editing face region"
 msgstr "Gezichtsgebied wordt bewerkt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:310
 #, kde-format
 msgid "Manually adding face"
 msgstr "Handmatig wordt gezicht toegevoegd"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:361
 #, kde-format
 msgid "Clearing rejected face tag list."
 msgstr "Afgewezen overeenkomsten in gezichten worden gewist"
