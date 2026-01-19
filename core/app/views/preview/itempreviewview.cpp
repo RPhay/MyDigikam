@@ -229,7 +229,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     d->zoomButton               = new QToolButton(this);
     d->zoomButton->setText(QString::fromUtf8("⊕"));
-    d->zoomButton->setToolTip(i18n("@info", "Zoom Factor"));
+    d->zoomButton->setToolTip(i18nc("@info:tooltip", "Zoom Factor"));
     d->zoomButton->setPopupMode(QToolButton::InstantPopup);
     d->zoomButton->setArrowType(Qt::NoArrow);
     d->zoomButton->setEnabled(false);
@@ -240,7 +240,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     for (qreal z : zooms)
     {
-        QAction* const za = d->zoomGroup->addAction(QString::fromLatin1("x%1").arg(z));
+        QAction* const za = d->zoomGroup->addAction(QString::fromLatin1("x%1").arg(z, 'f', 1));
         za->setCheckable(true);
         za->setData(z);
         zoomMenu->addAction(za);
