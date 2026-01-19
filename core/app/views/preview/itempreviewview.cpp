@@ -229,6 +229,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     d->zoomButton               = new QToolButton(this);
     d->zoomButton->setText(QString::fromUtf8("⊕"));
+    d->zoomButton->setToolTip(i18n("@info", "Zoom Factor"));
     d->zoomButton->setPopupMode(QToolButton::InstantPopup);
     d->zoomButton->setArrowType(Qt::NoArrow);
     d->zoomButton->setEnabled(false);
