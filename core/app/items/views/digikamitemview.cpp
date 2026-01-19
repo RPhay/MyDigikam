@@ -98,9 +98,12 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     itemAlbumModel()->setPreloadThumbnails(true);
 
     itemModel()->setDragDropHandler(new ItemDragDropHandler(itemModel()));
+
+    setAutoScroll(true);
     setDragEnabled(true);
     //setAcceptDrops(true);
     setDropIndicatorShown(false);
+    setDragDropMode(QAbstractItemView::InternalMove);
 
     setToolTipEnabled(settings->showToolTipsIsValid());
     itemFilterModel()->setStringTypeNatural(settings->isStringTypeNatural());

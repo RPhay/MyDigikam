@@ -108,6 +108,7 @@ ItemViewCategorized::ItemViewCategorized(QWidget* const parent)
     // important optimization for layouting
 
     setBatchSize(100);
+    setMouseTracking(true);
     setUniformItemSizes(true);
     setLayoutMode(QListView::Batched);
 
@@ -115,12 +116,11 @@ ItemViewCategorized::ItemViewCategorized(QWidget* const parent)
 
     setDrawDraggedItems(false);
 
-    setSelectionMode(QAbstractItemView::ExtendedSelection);
-
     setDragEnabled(true);
-    setEditTriggers(QAbstractItemView::NoEditTriggers);
     viewport()->setAcceptDrops(true);
-    setMouseTracking(true);
+
+    setEditTriggers(QAbstractItemView::NoEditTriggers);
+    setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     connect(this, SIGNAL(clicked(QModelIndex)),
             this, SLOT(slotClicked(QModelIndex)));
