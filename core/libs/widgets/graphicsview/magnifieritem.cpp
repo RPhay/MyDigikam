@@ -32,7 +32,7 @@ public:
 
     QPixmap sourcePixmap;
     QRectF  sourceRect;
-    qreal   zoomFactor   = 1.5;
+    qreal   zoomFactor   = MagnifierItem::zoomFactors().first();
     int     size         = 150;
 };
 
@@ -47,6 +47,11 @@ MagnifierItem::MagnifierItem(QGraphicsItem* const parent)
 MagnifierItem::~MagnifierItem()
 {
     delete d;
+}
+
+QList<qreal> MagnifierItem::zoomFactors()
+{
+    return (QList<qreal>() << 1.5 << 2.0 << 2.5 << 3.0 << 3.5 << 4.0);
 }
 
 void MagnifierItem::setSourcePixmap(const QPixmap& pixmap, const QRectF& rect)

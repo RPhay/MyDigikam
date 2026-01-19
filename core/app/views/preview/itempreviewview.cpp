@@ -28,6 +28,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QIcon>
+#include <QActionGroup>
 
 // KDE includes
 
@@ -67,6 +68,7 @@
 #include "coredbwatch.h"
 #include "paniconwidget.h"
 #include "imagezoomsettings.h"
+#include "magnifieritem.h"
 
 namespace Digikam
 {
@@ -96,6 +98,8 @@ public:
     QAction*               rotRightAction       = nullptr;
 
     QToolBar*              toolBar              = nullptr;
+    QToolButton*           zoomButton           = nullptr;
+    QActionGroup*          zoomGroup            = nullptr;
 
     FaceGroup*             faceGroup            = nullptr;
     QAction*               peopleToggleAction   = nullptr;
@@ -217,9 +221,34 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->peopleToggleAction->setCheckable(true);
     d->showFocusPointAction->setCheckable(true);
 
+    // ---
+
     d->magnifierAction          = new QAction(QIcon::fromTheme(QLatin1String("document-edit-verify")),
                                               i18nc("@info:tooltip", "Show Magnifier"),                         this);
     d->magnifierAction->setCheckable(true);
+
+    d->zoomButton               = new QToolButton(this);
+    d->zoomButton->setText(QString::fromUtf8("⊕"));
+    d->zoomButton->setPopupMode(QToolButton::InstantPopup);
+    d->zoomButton->setArrowType(Qt::NoArrow);
+    d->zoomButton->setEnabled(false);
+
+    QMenu* const zoomMenu       = new QMenu(this);
+    d->zoomGroup                = new QActionGroup(this);
+    const QList<qreal> zooms    = MagnifierItem::zoomFactors();
+
+    for (qreal z : zooms)
+    {
+        QAction* const za = d->zoomGroup->addAction(QString::fromLatin1("x%1").arg(z));
+        za->setCheckable(true);
+        za->setData(z);
+        zoomMenu->addAction(za);
+    }
+
+    d->zoomGroup->setExclusive(true);
+    d->zoomButton->setMenu(zoomMenu);
+
+    // ---
 
     d->underExposureAction      = new QAction(QIcon::fromTheme(QLatin1String("underexposure")),
                                               i18nc("@info:tooltip", "Under-Exposure Indicator"),               this);
@@ -273,6 +302,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             this, [this](bool checked)
         {
             d->magnifierAction->setChecked(false);
+            d->zoomButton->setEnabled(false);
             d->faceGroup->setVisible(checked);
         }
     );
@@ -281,6 +311,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             this, [this]()
         {
             d->magnifierAction->setChecked(false);
+            d->zoomButton->setEnabled(false);
 
             if (isVisible() && hasFocus())
             {
@@ -307,6 +338,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             this, [this]()
         {
             d->magnifierAction->setChecked(false);
+            d->zoomButton->setEnabled(false);
             d->faceGroup->rejectAll();
         }
     );
@@ -315,6 +347,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             this, [this]()
         {
             d->magnifierAction->setChecked(false);
+            d->zoomButton->setEnabled(false);
             d->faceGroup->markAllAsIgnored();
         }
     );
@@ -323,6 +356,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             this, [this]()
         {
             d->magnifierAction->setChecked(false);
+            d->zoomButton->setEnabled(false);
             d->focusPointGroup->addPoint();
         }
     );
@@ -331,6 +365,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             this, [this](bool checked)
         {
             d->magnifierAction->setChecked(false);
+            d->zoomButton->setEnabled(false);
 
             bool add = false;
 
@@ -354,7 +389,19 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
         {
             d->peopleToggleAction->setChecked(false);
             d->showFocusPointAction->setChecked(false);
+            d->zoomButton->setEnabled(checked);
             setMagnifierVisible(checked);
+        }
+    );
+
+    connect(zoomMenu, &QMenu::triggered,
+            this, [this](QAction* ac)
+        {
+            d->peopleToggleAction->setChecked(false);
+            d->showFocusPointAction->setChecked(false);
+            setMagnifierVisible(ac->isChecked());
+            setMagnifierZoomFactor(ac->data().toReal());
+            ApplicationSettings::instance()->setMagnifierZoomFactor(magnifierZoomFactor());
         }
     );
 
@@ -413,6 +460,7 @@ void ItemPreviewView::setupOverlays()
     d->toolBar->addAction(d->addPersonAction);
     d->toolBar->addAction(d->fullscreenAction);
     d->toolBar->addAction(d->magnifierAction);
+    d->toolBar->addWidget(d->zoomButton);
     d->toolBar->addAction(d->underExposureAction);
     d->toolBar->addAction(d->overExposureAction);
     d->toolBar->addAction(d->showFocusPointAction);
@@ -501,6 +549,7 @@ void ItemPreviewView::slotItemLoadingFailed()
     d->rotRightAction->setEnabled(false);
     d->addFocusPointAction->setEnabled(false);
     d->magnifierAction->setEnabled(false);
+    d->zoomButton->setEnabled(false);
 
     d->faceGroup->setInfo(ItemInfo());
     d->focusPointGroup->setInfo(ItemInfo());
@@ -806,6 +855,14 @@ void ItemPreviewView::slotSetupChanged()
     setMagnifierZoomFactor(ApplicationSettings::instance()->getMagnifierZoomFactor());
     setMagnifierSize(ApplicationSettings::instance()->getMagnifierSize());
     d->magnifierAction->setText(i18n("Show Magnifier (x%1)", magnifierZoomFactor()));
+
+    for (QAction* const ac : d->zoomGroup->actions())
+    {
+        if (ac->data().toReal() == magnifierZoomFactor())
+        {
+            ac->setChecked(true);
+        }
+    }
 
     d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
     d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));

@@ -18,24 +18,17 @@
 
 #include <QGraphicsItem>
 #include <QPixmap>
+#include <QList>
+
+// Local includes
+
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class MagnifierItem : public QGraphicsItem
+class DIGIKAM_EXPORT MagnifierItem : public QGraphicsItem
 {
-
-public:
-
-    enum ZoomFactor
-    {
-        Zoom15 = 15,    // x1.5
-        Zoom20 = 20,    // x2.0
-        Zoom25 = 25,    // x2.5
-        Zoom30 = 30,    // x3.0
-        Zoom35 = 35,    // x3.5
-        Zoom40 = 40     // x4.0
-    };
 
 public:
 
@@ -49,6 +42,10 @@ public:
 
     void setMagnifierSize(int magnifierSize);
     int  magnifierSize()                                                const;
+
+public:
+
+    static QList<qreal> zoomFactors();
 
 protected:
 
