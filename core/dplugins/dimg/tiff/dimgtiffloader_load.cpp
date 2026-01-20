@@ -157,10 +157,10 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
          (photometric != PHOTOMETRIC_MINISWHITE)                          &&
          (photometric != PHOTOMETRIC_MINISBLACK)                          &&
          (
-          (photometric != PHOTOMETRIC_YCBCR) | (bits_per_sample != 8)
+          (photometric != PHOTOMETRIC_YCBCR) || (bits_per_sample != 8)
          ) &&
          (
-           (photometric != PHOTOMETRIC_SEPARATED) | (bits_per_sample != 8)
+           (photometric != PHOTOMETRIC_SEPARATED) || (bits_per_sample != 8)
          ) &&
          (m_loadFlags & LoadImageData)
        )
