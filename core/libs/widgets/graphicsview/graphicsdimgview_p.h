@@ -24,6 +24,7 @@
 #include <QScrollBar>
 #include <QToolButton>
 #include <QStyle>
+#include <QTimer>
 #include <QGesture>
 #include <QPinchGesture>
 #include <QPanGesture>

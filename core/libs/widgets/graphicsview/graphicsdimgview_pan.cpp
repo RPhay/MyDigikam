@@ -39,6 +39,7 @@ PanIconWidget* GraphicsDImgView::installPanIcon()
 
 void GraphicsDImgView::updatePanIconWidget()
 {
+    viewport()->update();
     d->pan->setImage(180, 120, item()->image());
     QRectF sceneRect(mapToScene(viewport()->rect().topLeft()), mapToScene(viewport()->rect().bottomRight()));
     d->pan->setRegionSelection(item()->zoomSettings()->sourceRect(sceneRect).toRect());
@@ -46,8 +47,18 @@ void GraphicsDImgView::updatePanIconWidget()
 
 void GraphicsDImgView::slotRefreshPanIconSelection()
 {
+    viewport()->update();
     QRectF sceneRect(mapToScene(viewport()->rect().topLeft()), mapToScene(viewport()->rect().bottomRight()));
     d->pan->setRegionSelection(item()->zoomSettings()->sourceRect(sceneRect).toRect());
+
+    // Manage the visibility of the pan icon widget automatically if one scrollbar is visible.
+
+    QTimer::singleShot(1000, this, [this]()
+        {
+            d->pan->setVisible(verticalScrollBar()->isVisible() || horizontalScrollBar()->isVisible());
+            viewport()->update();
+        }
+    );
 }
 
 void GraphicsDImgView::slotPanIconSelectionMoved(const QRect& imageRect, bool /*b*/)
