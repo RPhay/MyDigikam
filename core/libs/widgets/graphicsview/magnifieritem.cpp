@@ -32,7 +32,7 @@ public:
 
     QPixmap sourcePixmap;
     QRectF  sourceRect;
-    qreal   zoomFactor   = MagnifierItem::zoomFactors().first();
+    qreal   zoomFactor   = MagnifierItem::zoomFactors().constFirst();
     int     size         = 150;
 };
 
