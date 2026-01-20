@@ -20,7 +20,8 @@ namespace Digikam
 
 PanIconWidget* GraphicsDImgView::installPanIcon()
 {
-    d->pan                  = new PanIconWidget(this);
+    d->pan = new PanIconWidget(this);
+    d->pan->setVisible(false);
 
     connect(d->pan, &PanIconWidget::signalSelectionMoved,
             this, &GraphicsDImgView::slotPanIconSelectionMoved);
