@@ -228,7 +228,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->magnifierAction->setCheckable(true);
 
     d->zoomButton               = new QToolButton(this);
-    d->zoomButton->setText(QString::fromUtf8("⊕"));
+    d->zoomButton->setIcon(QIcon::fromTheme(QLatin1String("draw-circle")));
     d->zoomButton->setToolTip(i18nc("@info:tooltip", "Zoom Factor"));
     d->zoomButton->setPopupMode(QToolButton::InstantPopup);
     d->zoomButton->setArrowType(Qt::NoArrow);
