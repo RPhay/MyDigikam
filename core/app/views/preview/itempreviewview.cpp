@@ -857,7 +857,9 @@ void ItemPreviewView::slotSetupChanged()
     setMagnifierSize(ApplicationSettings::instance()->getMagnifierSize());
     d->magnifierAction->setText(i18n("Show Magnifier (x%1)", magnifierZoomFactor()));
 
-    for (QAction* const ac : d->zoomGroup->actions())
+    const auto zac = d->zoomGroup->actions();
+
+    for (QAction* const ac : zac)
     {
         if (ac->data().toReal() == magnifierZoomFactor())
         {
