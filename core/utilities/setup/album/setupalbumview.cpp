@@ -30,6 +30,8 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     setupTreeView();
     setupPreView();
 
+    // ---
+
     QWidget* const fspanel    = new QWidget(d->tab);
     QVBoxLayout* const layout = new QVBoxLayout(fspanel);
     d->fullScreenSettings     = new FullScreenSettings(FS_ALBUMGUI, d->tab);
@@ -43,13 +45,17 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     d->tab->insertTab(FullScreen, fspanel, i18nc("@title:tab", "Full-Screen"));
 
+    // ---
+
     d->mimetype = new SetupMime();
     d->tab->insertTab(MimeType, d->mimetype, i18nc("@title:tab", "Mime Types"));
+
+    // ---
 
     d->category = new SetupCategory(d->tab);
     d->tab->insertTab(Category, d->category, i18nc("@title:tab", "Categories"));
 
-    // --------------------------------------------------------
+    // ---
 
     readSettings();
     adjustSize();

@@ -77,6 +77,8 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/album/setupalbumview_settings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/album/setupcategory.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/album/setupmime.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupmime_setup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupmime_settings.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/setupmetadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/setupmetadata_p.cpp

@@ -41,6 +41,10 @@ private Q_SLOTS:
 
 private:
 
+    void setupMime();
+
+private:
+
     class Private;
     Private* const d = nullptr;
 };
