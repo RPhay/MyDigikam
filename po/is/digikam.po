@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:40+0000\n"
-"PO-Revision-Date: 2026-01-15 11:14+0000\n"
+"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"PO-Revision-Date: 2026-01-20 10:54+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -292,7 +292,7 @@ msgstr "Breyta andlitsmerki"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:973
 #, kde-format
 msgid "&Cancel"
 msgstr "Hæ&tta við"
@@ -303,7 +303,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Úthluta merkjum á &völdu atriðin"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:969
+#: core/app/views/preview/itempreviewview.cpp:971
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Úthlu&ta merkjum á þetta atriði"
@@ -2922,12 +2922,10 @@ msgid "Show Magnifier"
 msgstr "Sýna stækkunargler"
 
 #: core/app/views/preview/itempreviewview.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Preview magnifier tool zoom factor"
-#| msgid "Zoom Factor:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
-msgstr "Aðdráttarstig:"
+msgstr "Aðdráttarstig"
 
 #: core/app/views/preview/itempreviewview.cpp:255
 #, kde-format

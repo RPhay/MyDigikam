@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:40+0000\n"
+"POT-Creation-Date: 2026-01-21 00:42+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -295,7 +295,7 @@ msgstr "顔タグを変更"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:973
 #, kde-format
 msgid "&Cancel"
 msgstr "キャンセル(&C)"
@@ -306,7 +306,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "選択したアイテムにタグを付ける(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:969
+#: core/app/views/preview/itempreviewview.cpp:971
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "このアイテムにタグを付ける(&T)"

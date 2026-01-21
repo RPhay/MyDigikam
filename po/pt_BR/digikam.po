@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:40+0000\n"
-"PO-Revision-Date: 2026-01-19 11:05-0300\n"
+"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"PO-Revision-Date: 2026-01-20 12:05-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -279,7 +279,7 @@ msgstr "Alterar etiqueta de rosto"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:973
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancelar"
@@ -290,7 +290,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Atribuir etiquetas aos itens &selecionados"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:969
+#: core/app/views/preview/itempreviewview.cpp:971
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "A&tribuir etiquetas a este item"
@@ -2218,7 +2218,7 @@ msgstr "Por dia"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
-msgstr "Ordem de separação dos itens"
+msgstr "Ordem dos itens separados"
 
 #: core/app/main/digikamapp_setup.cpp:763
 #, kde-format
@@ -2916,12 +2916,10 @@ msgid "Show Magnifier"
 msgstr "Mostra a lupa"
 
 #: core/app/views/preview/itempreviewview.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Preview magnifier tool zoom factor"
-#| msgid "Zoom Factor:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
-msgstr "Fator de zoom:"
+msgstr "Fator de zoom"
 
 #: core/app/views/preview/itempreviewview.cpp:255
 #, kde-format
@@ -21680,7 +21678,7 @@ msgstr "Move a imagem atual para baixo na lista do portfólio."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:302
 #, kde-format
 msgid "Preview..."
-msgstr "Visualização..."
+msgstr "Prévia..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
@@ -22043,7 +22041,7 @@ msgstr "Usar transições do Open&GL"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:217
 #, kde-format
 msgid "Content Rendering"
-msgstr "Renderizando o conteúdo"
+msgstr "Renderização do conteúdo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:223
@@ -24425,7 +24423,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imageshack..."
-msgstr "Exportar para o &Imageshack..."
+msgstr "Exportar para o &ImageShack..."
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:222
 #, kde-format
@@ -24592,7 +24590,7 @@ msgstr "Não foi possível abrir o arquivo"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:104
 #, kde-format
 msgid "Logged in as:"
-msgstr "Autenticado como:"
+msgstr "Conectado como:"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:114
 #, kde-format
@@ -24602,7 +24600,7 @@ msgstr "Esquecer"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:125
 #, kde-format
 msgid "Upload Anonymously"
-msgstr "Enviar como anônimo"
+msgstr "Enviar anonimamente"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:145
 #, kde-format
@@ -24619,7 +24617,7 @@ msgstr "Iniciar o envio para o Imgur"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:235
 #, kde-format
 msgid "<i>Not logged in</i>"
-msgstr "<i>Não autenticado</i>"
+msgstr "<i>Não conectado</i>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:242
 #, kde-format
@@ -25461,13 +25459,13 @@ msgstr "Informações da conta"
 #, kde-format
 msgctxt "@label: name of the wiki the user is currently logged on"
 msgid "Logged on: "
-msgstr "Autenticado em: "
+msgstr "Conectado em: "
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:328
 #, kde-format
 msgctxt "@label: username which is used to connect to the wiki"
 msgid "Logged as: "
-msgstr "Autenticado como: "
+msgstr "Conectado como: "
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:332
 #, kde-format
@@ -26173,7 +26171,7 @@ msgstr "Exportar para o &Rajce..."
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:162
 #, kde-format
 msgid "Not logged in"
-msgstr "Não autenticado"
+msgstr "Não conectado"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
 #, kde-format
@@ -41809,7 +41807,7 @@ msgstr "Exibe o modelo da lente da câmera na parte inferior da tela."
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
 #, kde-format
 msgid "Show item caption"
-msgstr "Exibe legenda do item"
+msgstr "Exibir a legenda do item"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
 #, kde-format

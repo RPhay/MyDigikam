@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:40+0000\n"
-"PO-Revision-Date: 2026-01-15 12:26+0100\n"
+"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"PO-Revision-Date: 2026-01-20 14:03+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -324,7 +324,7 @@ msgstr "Gezichtstag wijzigen"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:973
 #, kde-format
 msgid "&Cancel"
 msgstr "&Annuleren"
@@ -335,7 +335,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Tags toewijzen aan ge&selecteerde items"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:969
+#: core/app/views/preview/itempreviewview.cpp:971
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Tags toewijzen aan di&t item"
@@ -2968,12 +2968,10 @@ msgid "Show Magnifier"
 msgstr "Vergrootglas tonen"
 
 #: core/app/views/preview/itempreviewview.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Preview magnifier tool zoom factor"
-#| msgid "Zoom Factor:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
-msgstr "Zoomfactor:"
+msgstr "Zoomfactor"
 
 #: core/app/views/preview/itempreviewview.cpp:255
 #, kde-format

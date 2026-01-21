@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:40+0000\n"
+"POT-Creation-Date: 2026-01-21 00:42+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -329,7 +329,7 @@ msgstr "Athraigh an Cás"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:973
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cealaigh"
@@ -340,7 +340,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Cuir Clibeanna ar na Míreanna &Roghnaithe"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:969
+#: core/app/views/preview/itempreviewview.cpp:971
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Cuir Clibeanna ar an Mír &Seo"

@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:40+0000\n"
-"PO-Revision-Date: 2026-01-15 16:47+0300\n"
+"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"PO-Revision-Date: 2026-01-20 11:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -313,7 +313,7 @@ msgstr "Yüz Künyesini Değiştir"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:973
 #, kde-format
 msgid "&Cancel"
 msgstr "İ&ptal"
@@ -324,7 +324,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "&Seçili Ögelere Künyeler Ata"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:969
+#: core/app/views/preview/itempreviewview.cpp:971
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Bu Ögeye &Künyeler Ata"
@@ -2943,12 +2943,10 @@ msgid "Show Magnifier"
 msgstr "Büyüteci göster"
 
 #: core/app/views/preview/itempreviewview.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Preview magnifier tool zoom factor"
-#| msgid "Zoom Factor:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
-msgstr "Yakınlaştırma çarpanı:"
+msgstr "Yakınlaştırma çarpanı"
 
 #: core/app/views/preview/itempreviewview.cpp:255
 #, kde-format

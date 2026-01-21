@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:40+0000\n"
-"PO-Revision-Date: 2026-01-18 22:38+0200\n"
+"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"PO-Revision-Date: 2026-01-20 08:00+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -274,7 +274,7 @@ msgstr "החלפת תגית פרצוף"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:973
 #, kde-format
 msgid "&Cancel"
 msgstr "&ביטול"
@@ -285,7 +285,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "הוספת תוויות לפריטים המסומנים"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:969
+#: core/app/views/preview/itempreviewview.cpp:971
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "הוספת תוויות לפריט זה"
@@ -6778,10 +6778,9 @@ msgid "Use Custom Length"
 msgstr "להשתמש באורך מותאם אישית"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:176
-#, fuzzy, kde-format
-#| msgid "Percent:"
+#, kde-format
 msgid "Use Percentage"
-msgstr "אחוז:"
+msgstr "להשתמש באחוזים"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:178
 #: core/dplugins/bqm/transform/resize/resize.cpp:258
@@ -6808,10 +6807,10 @@ msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr "זוהי רשימת הפריטים שאמורים להימחק."
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
-msgstr "עדכון תווית עימוד-תמונה EXIF"
+msgstr "להשתמש בכיוון Exif"
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
@@ -6862,9 +6861,9 @@ msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr "זוהי רשימת הפריטים שאמורים להימחק."
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgid "Lossless HEIF files"
-msgstr "קבצים דחוסים מסוג JPEG-2000 שאינם מאבדים מידע"
+msgstr "קובצי HEIF ללא אובדן נתונים"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
 #, kde-format
@@ -6874,9 +6873,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "HEIF quality:"
-msgstr "איכות JPEG:"
+msgstr "איכות HEIF:"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
 #, kde-format
@@ -6889,11 +6888,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "TIFF Files"
+#, kde-format
 msgctxt "@title"
 msgid "HEIF loader"
-msgstr "קבצי TIFF"
+msgstr "טוען HEIF"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:58
 #, kde-format
@@ -6944,10 +6942,10 @@ msgstr ""
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:129
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "קידוד תמונה ביעילות גבוהה"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:146
@@ -6967,8 +6965,7 @@ msgstr "תצורה חדשה לתמונה:"
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
 #: core/libs/dplugins/core/dplugindimg.cpp:55
 #: core/libs/dplugins/core/dplugindimg.cpp:67
-#, fuzzy, kde-format
-#| msgid "yes"
+#, kde-format
 msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "כן"
@@ -6990,8 +6987,7 @@ msgstr "כן"
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
 #: core/libs/dplugins/core/dplugindimg.cpp:58
 #: core/libs/dplugins/core/dplugindimg.cpp:70
-#, fuzzy, kde-format
-#| msgid "yes"
+#, kde-format
 msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "כן"
@@ -7001,8 +6997,7 @@ msgstr "כן"
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
-#, fuzzy, kde-format
-#| msgid "no"
+#, kde-format
 msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "לא"
@@ -7072,11 +7067,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "JPEG Files"
+#, kde-format
 msgctxt "@title"
 msgid "JPEG loader"
-msgstr "קבצי JPEG"
+msgstr "טוען JPEG"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:58
 #, kde-format
@@ -7100,10 +7094,10 @@ msgstr ""
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:118
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "JPEG image"
-msgstr "איכות JPEG-2000:"
+msgstr "תמונת JPEG"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:62
 #, kde-format
@@ -7133,10 +7127,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
-msgstr "איכות JPEG-2000:"
+msgstr "טוען JPEG-2000"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:96
 #, kde-format
@@ -7160,23 +7154,23 @@ msgstr ""
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:143
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
-msgstr "איכות JPEG-2000:"
+msgstr "תמונת JPEG-2000"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:151
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
-msgstr "איכות JPEG-2000:"
+msgstr "תזרים JPEG-2000"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
-msgstr "איכות JPEG-2000:"
+msgstr "דגם אימות JPEG-2000"
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:82
 #, kde-format
@@ -7210,9 +7204,9 @@ msgid "no"
 msgstr "לא"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgid "Lossless PGF files"
-msgstr "קבצים דחוסים מסוג JPEG-2000 שאינם מאבדים מידע"
+msgstr "קובצי PGF ללא אובדן איכות"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:66
 #, kde-format
@@ -7222,9 +7216,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
-#, fuzzy, kde-format
+#, kde-format
 msgid "PGF quality:"
-msgstr "איכות JPEG:"
+msgstr "איכות PGF:"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
 #, kde-format
@@ -7237,11 +7231,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@title"
 msgid "PGF loader"
-msgstr "קבצי PNG"
+msgstr "טוען PGF"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:58
 #, kde-format
@@ -7285,11 +7278,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@title"
 msgid "PNG loader"
-msgstr "קבצי PNG"
+msgstr "טוען PNG"
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:58
 #, kde-format
@@ -7316,9 +7308,9 @@ msgid "Portable Network Graphic"
 msgstr "גרפיקת אינטרנט ניידת - PNG"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgid "Lossless AVIF files"
-msgstr "קבצים דחוסים מסוג JPEG-2000 שאינם מאבדים מידע"
+msgstr "קובצי AVIF ללא אובדן איכות"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:64
 #, kde-format

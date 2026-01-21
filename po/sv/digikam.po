@@ -29,7 +29,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2023, 2024, 2025, 2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 # Stefan Asserhall <stefan.asserhall@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015.
 # Arve Eriksson <031299870@telia.com>, 2011.
 # Stefan Asserhäll <stefan.asserhall@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
@@ -43,15 +43,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:40+0000\n"
-"PO-Revision-Date: 2025-10-27 22:19+0100\n"
+"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -305,7 +305,7 @@ msgstr "Ändra ansiktsetiketter"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:973
 #, kde-format
 msgid "&Cancel"
 msgstr "&Avbryt"
@@ -316,7 +316,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Tilldela etiketter till &markerade objekt"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:969
+#: core/app/views/preview/itempreviewview.cpp:971
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Tilldela etiketter till &detta objekt"
@@ -1876,7 +1876,7 @@ msgstr "Infoga markerade objekt i ljusbordets miniatyrbildsrad."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr ""
+msgstr "Undersökning"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -2996,7 +2996,7 @@ msgstr "Ansikten"
 #: core/app/views/preview/itempreviewview.cpp:858
 #, kde-format
 msgid "Show Magnifier (x%1)"
-msgstr ""
+msgstr "Visa förstoringsglas (x%1)"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -4206,7 +4206,7 @@ msgstr "Ja"
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
-msgstr ""
+msgstr "Ja (stapla)"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:510
 #: core/libs/properties/import/importitempropertiestab.cpp:349
@@ -26565,7 +26565,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "xdotcom"
-msgstr ""
+msgstr "xdotcom"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
@@ -38566,17 +38566,14 @@ msgid "XMP"
 msgstr "XMP"
 
 #: core/libs/properties/itempropertiessidebar.cpp:76
-#, fuzzy, kde-format
-#| msgid "Copy GPS coordinates to clipboard"
+#, kde-format
 msgid "Copy the all properties in clipboard"
-msgstr "Kopiera GPS-koordinater till klippbordet"
+msgstr "Kopiera alla egenskaper på klippbordet"
 
 #: core/libs/properties/itempropertiessidebar.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "Open in File Manager"
+#, kde-format
 msgid "Open item in the file manager"
-msgstr "Öppna i filhanterare"
+msgstr "Öppna objekt i filhanteraren"
 
 #: core/libs/properties/itempropertiessidebar.cpp:82
 #, kde-format
@@ -38665,23 +38662,20 @@ msgid "Versions"
 msgstr "Versioner"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:105
-#, fuzzy, kde-format
-#| msgid "BitTorrent Description Information"
+#, kde-format
 msgid "Open the Description tab for editing"
-msgstr "BitTorrent-beskrivningsinformation"
+msgstr "Öppna beskrivningsfliken för redigering"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Open the image editor."
+#, kde-format
 msgid "Open the Tags tab for editing"
-msgstr "Öppna bildeditorn."
+msgstr "Öppna etikettfliken för redigering"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:113
 #: core/libs/properties/itempropertiessidebardb.cpp:117
 #, kde-format
 msgid "Open the Information tab for editing"
-msgstr ""
+msgstr "Öppna informationsfliken för redigering"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:729
 #, kde-format
@@ -38840,43 +38834,34 @@ msgid "File"
 msgstr "Fil"
 
 #: core/libs/properties/itempropertiestab.cpp:486
-#, fuzzy, kde-format
-#| msgctxt "@title: file system tree"
-#| msgid "Folders"
+#, kde-format
 msgid "Folder"
-msgstr "Kataloger"
+msgstr "Katalog"
 
 #: core/libs/properties/itempropertiestab.cpp:487
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Symlink: "
+#, kde-format
 msgid "Symlink"
-msgstr "(symbolisk länk: "
+msgstr "Symbolisk länk"
 
 #: core/libs/properties/itempropertiestab.cpp:488
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgid "Modified Date"
-msgstr "Ändrad"
+msgstr "Ändringsdatum"
 
 #: core/libs/properties/itempropertiestab.cpp:490
-#, fuzzy, kde-format
-#| msgctxt "Owner of the file"
-#| msgid "Owner"
+#, kde-format
 msgid "Owner"
 msgstr "Ägare"
 
 #: core/libs/properties/itempropertiestab.cpp:491
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
+#, kde-format
 msgid "Permissions"
-msgstr "Rättigheter: "
+msgstr "Rättigheter"
 
 #: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
-msgstr ""
+msgstr "Mime"
 
 #: core/libs/properties/itempropertiestab.cpp:495
 #, fuzzy, kde-format
@@ -38907,7 +38892,7 @@ msgstr "Associerade filer"
 #: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
 msgid "Has GPS"
-msgstr ""
+msgstr "Har GPS"
 
 #: core/libs/properties/itempropertiestab.cpp:500
 #, fuzzy, kde-format
@@ -67251,28 +67236,24 @@ msgid "OpenCL is not available on this system."
 msgstr "OpenCL är inte tillgängligt på systemet."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, fuzzy, kde-format
-#| msgid "Loading test image..."
+#, kde-format
 msgid "Loading DNN Model test image..."
-msgstr "Läser in testbild..."
+msgstr "Läser in DNN-modelltestbild..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
-#, fuzzy, kde-format
-#| msgid "Test image not found."
+#, kde-format
 msgid "DNN model test image not found."
-msgstr "Testbild hittades inte."
+msgstr "DNN-modelltestbild hittades inte."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, fuzzy, kde-format
-#| msgid "Failed to load test image from %1"
+#, kde-format
 msgid "Failed to load DNN model test image from %1"
-msgstr "Misslyckades läsa in testbild från %1"
+msgstr "Misslyckades läsa in DNN-modelltestbild från %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
-#, fuzzy, kde-format
-#| msgid "Preparing the image for processing..."
+#, kde-format
 msgid "Preparing the DNN Model image for processing..."
-msgstr "Förbereder bilden för behandling..."
+msgstr "Förbereder DNN-modellbilden för behandling..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
@@ -67419,18 +67400,15 @@ msgstr ""
 "skärmupplösning används, såsom för en bärbar dator."
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
 "Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
-"<font color='red'><i>Varning: Inställningarna gör start långsammare.</i></"
-"font>"
+"<font color='black'><i><b>⚠️Warning:</b> Inställningarna gör start "
+"långsammare. Läs <a href=\"%1\">dokumentationen på nätet</a> noggrant först."
+"</i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, kde-format
@@ -67698,11 +67676,7 @@ msgid "Grouping"
 msgstr "Gruppering"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<font color='red'><i>Warning: These settings makes startup slower!</i></"
-#| "font>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
@@ -67710,8 +67684,10 @@ msgid ""
 "have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
 "information.</i></font>"
 msgstr ""
-"<font color='red'><i>Varning: Inställningarna gör start långsammare.</i></"
-"font>"
+"<font color='black'><i><b>⚠️Warning:</b> Alla ändringar av inställningarna "
+"träder endast i kraft efter omstart. Vissa inställningar är "
+"maskinvaruberoende och kan ha sidoeffekter. Läs <a href="
+"\"%1\">dokumentationen på nätet</a> för mer information.</i></font>"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
@@ -67787,10 +67763,9 @@ msgid "Use video textures conversion"
 msgstr "Använd video-strukturkonversion"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
-#, fuzzy, kde-format
-#| msgid "Decoding backend to render video:"
+#, kde-format
 msgid "Decoding backend to render media:"
-msgstr "Avkodningsgränssnitt för att återge video:"
+msgstr "Avkodningsgränssnitt för att återge media:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format
@@ -67965,21 +67940,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr ""
+msgstr "Undersökning"
 
 #: core/utilities/setup/setup.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare items"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
 msgstr ""
-"Inställningar av ljusbord\n"
-"Anpassa verktyg använt för att jämföra objekt"
+"Undersökningsinställningar\n"
+"Anpassa verktyg använt för att granska objekt"
 
 #: core/utilities/setup/setup.cpp:189
 #, kde-format
@@ -68584,11 +68555,9 @@ msgstr ""
 "identifiera en mall i samlingen.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "Mall:"
+msgstr "Hantera mall"
 
 #: core/utilities/setup/setuptemplate.cpp:97
 #, kde-format
@@ -68979,7 +68948,7 @@ msgstr "Importera objekt"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr ""
+msgstr "Undersökning"
 
 #~ msgid "Pan the image to a region"
 #~ msgstr "Panorera bilden till ett område"
