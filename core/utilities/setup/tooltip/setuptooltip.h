@@ -54,6 +54,10 @@ private Q_SLOTS:
 
 private:
 
+    void setupIcon();
+    void setupAlbum();
+    void setupImport();
+
     void readSettings();
     void refreshCameraOptions();
 
