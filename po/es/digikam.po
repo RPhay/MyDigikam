@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"POT-Creation-Date: 2026-01-22 00:55+0000\n"
 "PO-Revision-Date: 2026-01-21 00:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3948,7 +3948,7 @@ msgstr "Tipo de canal de audio"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:998
-#: core/utilities/setup/setuptooltip.cpp:265
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
 msgstr "Códec de sonido"
@@ -35689,7 +35689,7 @@ msgid "All Files"
 msgstr "Todos los archivos"
 
 #: core/libs/filters/mimefilter.cpp:28
-#: core/utilities/setup/album/setupmime.cpp:91
+#: core/utilities/setup/album/setupmime_setup.cpp:41
 #, kde-format
 msgid "Image Files"
 msgstr "Archivos de imagen"
@@ -35755,13 +35755,13 @@ msgid "AVIF Files"
 msgstr "Archivos AVIF"
 
 #: core/libs/filters/mimefilter.cpp:41
-#: core/utilities/setup/album/setupmime.cpp:123
+#: core/utilities/setup/album/setupmime_setup.cpp:73
 #, kde-format
 msgid "Video Files"
 msgstr "Archivos de vídeo"
 
 #: core/libs/filters/mimefilter.cpp:42
-#: core/utilities/setup/album/setupmime.cpp:158
+#: core/utilities/setup/album/setupmime_setup.cpp:108
 #, kde-format
 msgid "Audio Files"
 msgstr "Archivos de audio"
@@ -39212,19 +39212,19 @@ msgid "Flash"
 msgstr "Flash"
 
 #: core/libs/properties/itempropertiestab.cpp:515
-#: core/utilities/setup/setuptooltip.cpp:256
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:138
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Proporciones del vídeo"
 
 #: core/libs/properties/itempropertiestab.cpp:516
-#: core/utilities/setup/setuptooltip.cpp:268
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:150
 #, kde-format
 msgid "Video Duration"
 msgstr "Duración del vídeo"
 
 #: core/libs/properties/itempropertiestab.cpp:517
-#: core/utilities/setup/setuptooltip.cpp:271
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:153
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "Imágenes por segundo del vídeo"
@@ -45499,7 +45499,7 @@ msgstr "Información de la imagen"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
-#: core/utilities/setup/setuptooltip.cpp:178
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:60
 #, kde-format
 msgid "Photograph Information"
 msgstr "Información de la fotografía"
@@ -51446,7 +51446,7 @@ msgid "Show file name"
 msgstr "Mostrar el nombre del archivo"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:95
-#: core/utilities/setup/setuptooltip.cpp:150
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:32
 #, kde-format
 msgid "Set this option to display the image file name."
 msgstr "Marque esta opción para mostrar el nombre del archivo de la imagen."
@@ -51457,7 +51457,7 @@ msgid "Show file date"
 msgstr "Mostrar la fecha del archivo"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:98
-#: core/utilities/setup/setuptooltip.cpp:153
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:35
 #, kde-format
 msgid "Set this option to display the image file date."
 msgstr "Marque esta opción para mostrar la fecha del archivo de la imagen."
@@ -51468,7 +51468,7 @@ msgid "Show file size"
 msgstr "Mostrar el tamaño del archivo"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:101
-#: core/utilities/setup/setuptooltip.cpp:156
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:38
 #, kde-format
 msgid "Set this option to display the image file size."
 msgstr "Marque esta opción para mostrar el tamaño del archivo de la imagen."
@@ -51479,7 +51479,7 @@ msgid "Show image type"
 msgstr "Mostrar el tipo de la imagen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:104
-#: core/utilities/setup/setuptooltip.cpp:159
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:41
 #, kde-format
 msgid "Set this option to display the image type."
 msgstr "Marque esta opción para mostrar el tipo de la imagen."
@@ -51490,14 +51490,14 @@ msgid "Show image dimensions"
 msgstr "Mostrar las dimensiones de la imagen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:107
-#: core/utilities/setup/setuptooltip.cpp:162
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:44
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "Marque esta opción para mostrar el tamaño de la imagen en píxeles."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:123
-#: core/utilities/setup/setuptooltip.cpp:182
-#: core/utilities/setup/setuptooltip.cpp:362
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:64
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:49
 #, kde-format
 msgid ""
 "Set this option to display the make and model of the camera with which the "
@@ -51507,15 +51507,15 @@ msgstr ""
 "la que se ha tomado la fotografía."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:126
-#: core/utilities/setup/setuptooltip.cpp:185
-#: core/utilities/setup/setuptooltip.cpp:365
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:67
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:52
 #, kde-format
 msgid "Camera lens model"
 msgstr "Modelo de la lente de la cámara"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:127
-#: core/utilities/setup/setuptooltip.cpp:186
-#: core/utilities/setup/setuptooltip.cpp:366
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:68
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:53
 #, kde-format
 msgid ""
 "Set this option to display the lens model with which the image was taken."
@@ -51529,14 +51529,14 @@ msgid "Show camera date"
 msgstr "Mostrar la fecha de la cámara"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:131
-#: core/utilities/setup/setuptooltip.cpp:190
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:72
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr "Marque esta opción para mostrar la fecha en que se tomó la fotografía."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:134
-#: core/utilities/setup/setuptooltip.cpp:193
-#: core/utilities/setup/setuptooltip.cpp:370
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:75
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:57
 #, kde-format
 msgid ""
 "Set this option to display the camera aperture and focal settings used to "
@@ -51546,8 +51546,8 @@ msgstr ""
 "fotografía."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:138
-#: core/utilities/setup/setuptooltip.cpp:197
-#: core/utilities/setup/setuptooltip.cpp:374
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:79
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:61
 #, kde-format
 msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
@@ -51562,7 +51562,7 @@ msgid "Show camera mode and program"
 msgstr "Mostrar el modo y el programa de la cámara"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:142
-#: core/utilities/setup/setuptooltip.cpp:201
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:83
 #, kde-format
 msgid ""
 "Set this option to display the camera mode and program used to take the "
@@ -51577,8 +51577,8 @@ msgid "Show camera flash settings"
 msgstr "Mostrar la configuración del flash de la cámara"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
-#: core/utilities/setup/setuptooltip.cpp:205
-#: core/utilities/setup/setuptooltip.cpp:378
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:87
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:65
 #, kde-format
 msgid ""
 "Set this option to display the camera flash settings used to take the image."
@@ -51592,8 +51592,8 @@ msgid "Show camera white balance settings"
 msgstr "Mostrar la configuración del balance de blancos de la cámara"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
-#: core/utilities/setup/setuptooltip.cpp:209
-#: core/utilities/setup/setuptooltip.cpp:382
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:91
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:69
 #, kde-format
 msgid ""
 "Set this option to display the camera white balance settings used to take "
@@ -52764,14 +52764,14 @@ msgstr "Mostrar proporción"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:961
-#: core/utilities/setup/setuptooltip.cpp:259
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Tasa de bits de audio"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
 #: core/utilities/searchwindow/searchfields_createfield.cpp:979
-#: core/utilities/setup/setuptooltip.cpp:262
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
 msgstr "Tipo de canal de audio"
@@ -52792,7 +52792,7 @@ msgid "Frame Rate of Video"
 msgstr "Imágenes por segundo del vídeo"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:85
-#: core/utilities/setup/setuptooltip.cpp:274
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:156
 #, kde-format
 msgid "Video Codec"
 msgstr "Códec de vídeo"
@@ -64221,19 +64221,19 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Búsqueda avanzada"
 
-#: core/utilities/setup/album/setupalbumview.cpp:44
+#: core/utilities/setup/album/setupalbumview.cpp:46
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Pantalla completa"
 
-#: core/utilities/setup/album/setupalbumview.cpp:47
+#: core/utilities/setup/album/setupalbumview.cpp:51
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Tipos MIME"
 
-#: core/utilities/setup/album/setupalbumview.cpp:50
+#: core/utilities/setup/album/setupalbumview.cpp:56
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
@@ -64785,7 +64785,51 @@ msgstr ""
 msgid "&Add..."
 msgstr "&Añadir…"
 
-#: core/utilities/setup/album/setupmime.cpp:79
+#: core/utilities/setup/album/setupmime.cpp:39
+#, kde-format
+msgid ""
+"<p>Files with these extensions will be recognized as images and included "
+"into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Los archivos con las extensiones siguientes serán reconocidos como "
+"imágenes y se incluirán en la base de datos:<br> <code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime.cpp:49
+#, kde-format
+msgid ""
+"<p>Files with these extensions will be recognized as video files and "
+"included into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Los archivos con las extensiones siguientes serán reconocidos como "
+"archivos de vídeo y se incluirán en la base de datos:<br> <code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime.cpp:59
+#, kde-format
+msgid ""
+"<p>Files with these extensions will be recognized as audio files and "
+"included into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Los archivos con las extensiones siguientes serán reconocidos como "
+"archivos de audio y se incluirán en la base de datos:<br> <code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime_settings.cpp:45
+#, kde-format
+msgid ""
+"<p>You have chosen to remove the following image formats from the list of "
+"supported formats: <b>%1</b>.</p><p>These are very common formats. If you "
+"have images in your collection with these formats, they will be removed from "
+"the database and you will lose all information about them, including rating "
+"and tags.</p><p>Are you sure you want to apply your changes and lose the "
+"support for these formats?</p>"
+msgstr ""
+"<p>Ha elegido eliminar los siguientes formatos de imagen de la lista de "
+"formatos permitidos: <b>%1</b>.</p><p>Estos formatos son muy comunes. Si "
+"tuviera imágenes en su colección con estos formatos, estas se eliminarían de "
+"la base de datos y perdería toda la información sobre ellas, incluidas sus "
+"puntuaciones y sus etiquetas.</p><p>¿Seguro que desea aplicar los cambios y "
+"perder la compatibilidad con estos formatos?</p>"
+
+#: core/utilities/setup/album/setupmime_setup.cpp:29
 #, kde-format
 msgid ""
 "<p>Add new file types to show as album items.</p><p>digiKam attempts to "
@@ -64805,7 +64849,7 @@ msgstr ""
 "p><p><b><u>Nota:</u> todos los cambios realizados en esta vista ocasionarán "
 "que la base de datos se vuelva a explorar en segundo plano.</b></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:97
+#: core/utilities/setup/album/setupmime_setup.cpp:47
 #, kde-format
 msgid ""
 "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -64814,7 +64858,7 @@ msgstr ""
 "Extensiones de archivos de &imagen adicionales (<a href='image'>tipos "
 "permitidos</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:101
+#: core/utilities/setup/album/setupmime_setup.cpp:51
 #, kde-format
 msgid ""
 "<p>Here you can add the extensions of image files (including RAW files) to "
@@ -64835,12 +64879,12 @@ msgstr ""
 "p><p><b>Atención:</b> la eliminación de los archivos de la base de datos "
 "implica la perdida de todas sus etiquetas y puntuaciones.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:111
+#: core/utilities/setup/album/setupmime_setup.cpp:61
 #, kde-format
 msgid "Enter additional image file extensions."
 msgstr "Introduzca extensiones de archivos de imagen adicionales."
 
-#: core/utilities/setup/album/setupmime.cpp:130
+#: core/utilities/setup/album/setupmime_setup.cpp:80
 #, kde-format
 msgid ""
 "Additional &video file extensions (<a href='video'>Currently-supported "
@@ -64849,7 +64893,7 @@ msgstr ""
 "Extensiones de archivos de &vídeo adicionales (<a href='video'>tipos "
 "permitidos</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:134
+#: core/utilities/setup/album/setupmime_setup.cpp:84
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of video files to be displayed in your "
@@ -64873,12 +64917,12 @@ msgstr ""
 "la eliminación de los archivos de la base de datos implica la pérdida de "
 "todas sus etiquetas y puntuaciones.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:146
+#: core/utilities/setup/album/setupmime_setup.cpp:96
 #, kde-format
 msgid "Enter additional video file extensions."
 msgstr "Introduzca extensiones adicionales de archivos de vídeo."
 
-#: core/utilities/setup/album/setupmime.cpp:165
+#: core/utilities/setup/album/setupmime_setup.cpp:115
 #, kde-format
 msgid ""
 "Additional &audio file extensions (<a href='audio'>Currently-supported "
@@ -64887,7 +64931,7 @@ msgstr ""
 "Extensiones de archivos de &audio adicionales (<a href='audio'>tipos "
 "permitidos</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:169
+#: core/utilities/setup/album/setupmime_setup.cpp:119
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of audio files to be displayed in your "
@@ -64911,54 +64955,10 @@ msgstr ""
 "p><p><b>Atención:</b> la eliminación de los archivos de la base de datos "
 "implica la pérdida de todas sus etiquetas y puntuaciones.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:181
+#: core/utilities/setup/album/setupmime_setup.cpp:131
 #, kde-format
 msgid "Enter additional audio file extensions."
 msgstr "Introduzca extensiones adicionales de archivos de sonido."
-
-#: core/utilities/setup/album/setupmime.cpp:247
-#, kde-format
-msgid ""
-"<p>You have chosen to remove the following image formats from the list of "
-"supported formats: <b>%1</b>.</p><p>These are very common formats. If you "
-"have images in your collection with these formats, they will be removed from "
-"the database and you will lose all information about them, including rating "
-"and tags.</p><p>Are you sure you want to apply your changes and lose the "
-"support for these formats?</p>"
-msgstr ""
-"<p>Ha elegido eliminar los siguientes formatos de imagen de la lista de "
-"formatos permitidos: <b>%1</b>.</p><p>Estos formatos son muy comunes. Si "
-"tuviera imágenes en su colección con estos formatos, estas se eliminarían de "
-"la base de datos y perdería toda la información sobre ellas, incluidas sus "
-"puntuaciones y sus etiquetas.</p><p>¿Seguro que desea aplicar los cambios y "
-"perder la compatibilidad con estos formatos?</p>"
-
-#: core/utilities/setup/album/setupmime.cpp:302
-#, kde-format
-msgid ""
-"<p>Files with these extensions will be recognized as images and included "
-"into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Los archivos con las extensiones siguientes serán reconocidos como "
-"imágenes y se incluirán en la base de datos:<br> <code>%1</code></p>"
-
-#: core/utilities/setup/album/setupmime.cpp:312
-#, kde-format
-msgid ""
-"<p>Files with these extensions will be recognized as video files and "
-"included into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Los archivos con las extensiones siguientes serán reconocidos como "
-"archivos de vídeo y se incluirán en la base de datos:<br> <code>%1</code></p>"
-
-#: core/utilities/setup/album/setupmime.cpp:322
-#, kde-format
-msgid ""
-"<p>Files with these extensions will be recognized as audio files and "
-"included into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Los archivos con las extensiones siguientes serán reconocidos como "
-"archivos de audio y se incluirán en la base de datos:<br> <code>%1</code></p>"
 
 #: core/utilities/setup/camera/cameralist.cpp:288
 #, kde-format
@@ -68983,221 +68983,30 @@ msgstr "No se puede registrar una nueva plantilla de metadatos sin título."
 msgid "A metadata template named '%1' already exists."
 msgstr "Ya existe una plantilla de metadatos llamada «%1»."
 
-#: core/utilities/setup/setuptooltip.cpp:133
+#: core/utilities/setup/tooltip/setuptooltip.cpp:28
 #, kde-format
 msgid "Tool-Tips Font:"
 msgstr "Letra de las descripciones emergentes:"
 
-#: core/utilities/setup/setuptooltip.cpp:134
+#: core/utilities/setup/tooltip/setuptooltip.cpp:29
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
 msgstr ""
 "Seleccione la letra con la que mostrar el texto de las descripciones "
 "emergentes."
 
-#: core/utilities/setup/setuptooltip.cpp:142
-#, kde-format
-msgid "Show icon-view and thumb-bar items' tool-tips"
-msgstr ""
-"Mostrar descripciones emergentes en la vista de iconos y en los elementos de "
-"la barra de miniaturas"
-
-#: core/utilities/setup/setuptooltip.cpp:143
-#, kde-format
-msgid ""
-"Set this option to display image information when the mouse hovers over an "
-"icon-view or thumb-bar item."
-msgstr ""
-"Configure esta opción para mostrar la información de la imagen al pasar el "
-"ratón sobre los elementos de la barra de miniaturas o de iconos."
-
-#: core/utilities/setup/setuptooltip.cpp:146
-#, kde-format
-msgid "File/Item Information"
-msgstr "Información del elemento/archivo"
-
-#: core/utilities/setup/setuptooltip.cpp:149
-#, kde-format
-msgid "File name"
-msgstr "Nombre del archivo"
-
-#: core/utilities/setup/setuptooltip.cpp:152
-#, kde-format
-msgid "File date"
-msgstr "Fecha del archivo"
-
-#: core/utilities/setup/setuptooltip.cpp:155
-#, kde-format
-msgid "File size"
-msgstr "Tamaño del archivo"
-
-#: core/utilities/setup/setuptooltip.cpp:158
-#, kde-format
-msgid "Image type"
-msgstr "Tipo de imagen"
-
-#: core/utilities/setup/setuptooltip.cpp:161
-#, kde-format
-msgid "Image dimensions"
-msgstr "Dimensiones de la imagen"
-
-#: core/utilities/setup/setuptooltip.cpp:164
-#, kde-format
-msgid "Image aspect ratio"
-msgstr "Proporciones de la imagen"
-
-#: core/utilities/setup/setuptooltip.cpp:165
-#, kde-format
-msgid "Set this option to display the image aspect ratio."
-msgstr "Active esta opción para mostrar la proporción de la imagen."
-
-#: core/utilities/setup/setuptooltip.cpp:181
-#: core/utilities/setup/setuptooltip.cpp:361
-#, kde-format
-msgid "Camera make and model"
-msgstr "Fabricante y modelo de la cámara"
-
-#: core/utilities/setup/setuptooltip.cpp:189
-#, kde-format
-msgid "Camera date"
-msgstr "Fecha de la cámara"
-
-#: core/utilities/setup/setuptooltip.cpp:192
-#: core/utilities/setup/setuptooltip.cpp:369
-#, kde-format
-msgid "Camera aperture and focal length"
-msgstr "Apertura y distancia focal de la cámara"
-
-#: core/utilities/setup/setuptooltip.cpp:196
-#: core/utilities/setup/setuptooltip.cpp:373
-#, kde-format
-msgid "Camera exposure and sensitivity"
-msgstr "Exposición y sensibilidad de la cámara"
-
-#: core/utilities/setup/setuptooltip.cpp:200
-#, kde-format
-msgid "Camera mode and program"
-msgstr "Modo y programa de la cámara"
-
-#: core/utilities/setup/setuptooltip.cpp:204
-#: core/utilities/setup/setuptooltip.cpp:377
-#, kde-format
-msgid "Camera flash settings"
-msgstr "Configuración del flash de la cámara"
-
-#: core/utilities/setup/setuptooltip.cpp:208
-#: core/utilities/setup/setuptooltip.cpp:381
-#, kde-format
-msgid "Camera white balance settings"
-msgstr "Configuración del balance de blancos de la cámara"
-
-#: core/utilities/setup/setuptooltip.cpp:225
-#, kde-format
-msgid "digiKam Information"
-msgstr "Información de digiKam"
-
-#: core/utilities/setup/setuptooltip.cpp:228
-#: core/utilities/setup/setuptooltip.cpp:301
-#, kde-format
-msgid "Album name"
-msgstr "Nombre del álbum"
-
-#: core/utilities/setup/setuptooltip.cpp:229
-#: core/utilities/setup/setuptooltip.cpp:302
-#, kde-format
-msgid "Set this option to display the album name."
-msgstr "Marque esta opción para mostrar el nombre del álbum."
-
-#: core/utilities/setup/setuptooltip.cpp:231
-#, kde-format
-msgid "Image title"
-msgstr "Título de la imagen"
-
-#: core/utilities/setup/setuptooltip.cpp:232
-#, kde-format
-msgid "Set this option to display the image title."
-msgstr "Marque esta opción para mostrar el título de la imagen."
-
-#: core/utilities/setup/setuptooltip.cpp:234
-#, kde-format
-msgid "Image caption"
-msgstr "Pie de foto de la imagen"
-
-#: core/utilities/setup/setuptooltip.cpp:235
-#, kde-format
-msgid "Set this option to display the image captions."
-msgstr "Marque esta opción para mostrar los pies de foto de las imágenes."
-
-#: core/utilities/setup/setuptooltip.cpp:237
-#, kde-format
-msgid "Image tags"
-msgstr "Etiquetas de la imagen"
-
-#: core/utilities/setup/setuptooltip.cpp:238
-#, kde-format
-msgid "Set this option to display the image tags."
-msgstr "Marque esta opción para mostrar las etiquetas de la imagen."
-
-#: core/utilities/setup/setuptooltip.cpp:240
-#, kde-format
-msgid "Image labels"
-msgstr "Emblemas de las imágenes"
-
-#: core/utilities/setup/setuptooltip.cpp:241
-#, kde-format
-msgid "Set this option to display the image pick, color, rating labels."
-msgstr ""
-"Marque esta opción para mostrar los emblemas de elección, de color y de "
-"puntuación de la imagen."
-
-#: core/utilities/setup/setuptooltip.cpp:253
-#, kde-format
-msgid "Audio/Video Information"
-msgstr "Información de audio/vídeo"
-
-#: core/utilities/setup/setuptooltip.cpp:257
-#: core/utilities/setup/setuptooltip.cpp:272
-#, kde-format
-msgid "Set this option to display the Aspect Ratio of the Video."
-msgstr "Marque esta opción para mostrar la proporción del vídeo."
-
-#: core/utilities/setup/setuptooltip.cpp:260
-#, kde-format
-msgid "Set this option to display the Audio Bit Rate of the Video."
-msgstr "Marque esta opción para mostrar la tasa de bits de audio del vídeo."
-
-#: core/utilities/setup/setuptooltip.cpp:263
-#, kde-format
-msgid "Set this option to display the Audio Channel Type of the Video."
-msgstr "Marque esta opción para mostrar el tipo de canal de audio del vídeo."
-
-#: core/utilities/setup/setuptooltip.cpp:266
-#, kde-format
-msgid "Set this option to display the Audio Codec of the Video."
-msgstr "Marque esta opción para mostrar el códec de sonido del vídeo."
-
-#: core/utilities/setup/setuptooltip.cpp:269
-#, kde-format
-msgid "Set this option to display the Duration of the Video."
-msgstr "Marque esta opción para mostrar la duración del vídeo."
-
-#: core/utilities/setup/setuptooltip.cpp:275
-#, kde-format
-msgid "Set this option to display the Codec of the Video."
-msgstr "Marque esta opción para mostrar el códec del vídeo."
-
-#: core/utilities/setup/setuptooltip.cpp:295
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:23
 #, kde-format
 msgid "Show album items' tool-tips"
 msgstr "Mostrar descripciones emergentes en los elementos del álbum"
 
-#: core/utilities/setup/setuptooltip.cpp:296
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:24
 #, kde-format
 msgid "Album Information"
 msgstr "Información del álbum"
 
-#: core/utilities/setup/setuptooltip.cpp:298
-#: core/utilities/setup/setuptooltip.cpp:339
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:26
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:26
 #, kde-format
 msgid ""
 "Set this option to display album information when the mouse hovers over a "
@@ -69206,117 +69015,318 @@ msgstr ""
 "Defina esta opción para mostrar información sobre el álbum al situar el "
 "ratón sobre un elemento de la carpeta."
 
-#: core/utilities/setup/setuptooltip.cpp:304
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:29
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:110
+#, kde-format
+msgid "Album name"
+msgstr "Nombre del álbum"
+
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:30
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:111
+#, kde-format
+msgid "Set this option to display the album name."
+msgstr "Marque esta opción para mostrar el nombre del álbum."
+
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:32
 #, kde-format
 msgid "Album date"
 msgstr "Fecha del álbum"
 
-#: core/utilities/setup/setuptooltip.cpp:305
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:33
 #, kde-format
 msgid "Set this option to display the album date."
 msgstr "Marque esta opción para mostrar la fecha del álbum."
 
-#: core/utilities/setup/setuptooltip.cpp:307
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:35
 #, kde-format
 msgid "Album collection"
 msgstr "Colección del álbum"
 
-#: core/utilities/setup/setuptooltip.cpp:308
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:36
 #, kde-format
 msgid "Set this option to display the album collection."
 msgstr "Marque esta opción para mostrar la colección del álbum."
 
-#: core/utilities/setup/setuptooltip.cpp:310
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:38
 #, kde-format
 msgid "Album category"
 msgstr "Categoría del álbum"
 
-#: core/utilities/setup/setuptooltip.cpp:311
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:39
 #, kde-format
 msgid "Set this option to display the album category."
 msgstr "Marque esta opción para mostrar la categoría del álbum."
 
-#: core/utilities/setup/setuptooltip.cpp:313
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:41
 #, kde-format
 msgid "Album caption"
 msgstr "Pie de foto del álbum"
 
-#: core/utilities/setup/setuptooltip.cpp:314
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:42
 #, kde-format
 msgid "Set this option to display the album caption."
 msgstr "Marque esta opción para mostrar el pie de foto del álbum."
 
-#: core/utilities/setup/setuptooltip.cpp:316
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:44
 #, kde-format
 msgid "Album preview"
 msgstr "Vista previa del álbum"
 
-#: core/utilities/setup/setuptooltip.cpp:317
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:45
 #, kde-format
 msgid "Set this option to display the album preview."
 msgstr "Marque esta opción para mostrar la vista previa del álbum."
 
-#: core/utilities/setup/setuptooltip.cpp:336
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:61
+#, kde-format
+msgid "Album Items"
+msgstr "Elementos del álbum"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:24
+#, kde-format
+msgid "Show icon-view and thumb-bar items' tool-tips"
+msgstr ""
+"Mostrar descripciones emergentes en la vista de iconos y en los elementos de "
+"la barra de miniaturas"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:25
+#, kde-format
+msgid ""
+"Set this option to display image information when the mouse hovers over an "
+"icon-view or thumb-bar item."
+msgstr ""
+"Configure esta opción para mostrar la información de la imagen al pasar el "
+"ratón sobre los elementos de la barra de miniaturas o de iconos."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:28
+#, kde-format
+msgid "File/Item Information"
+msgstr "Información del elemento/archivo"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:31
+#, kde-format
+msgid "File name"
+msgstr "Nombre del archivo"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:34
+#, kde-format
+msgid "File date"
+msgstr "Fecha del archivo"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:37
+#, kde-format
+msgid "File size"
+msgstr "Tamaño del archivo"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:40
+#, kde-format
+msgid "Image type"
+msgstr "Tipo de imagen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:43
+#, kde-format
+msgid "Image dimensions"
+msgstr "Dimensiones de la imagen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:46
+#, kde-format
+msgid "Image aspect ratio"
+msgstr "Proporciones de la imagen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:47
+#, kde-format
+msgid "Set this option to display the image aspect ratio."
+msgstr "Active esta opción para mostrar la proporción de la imagen."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:63
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:48
+#, kde-format
+msgid "Camera make and model"
+msgstr "Fabricante y modelo de la cámara"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:71
+#, kde-format
+msgid "Camera date"
+msgstr "Fecha de la cámara"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:74
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:56
+#, kde-format
+msgid "Camera aperture and focal length"
+msgstr "Apertura y distancia focal de la cámara"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:78
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:60
+#, kde-format
+msgid "Camera exposure and sensitivity"
+msgstr "Exposición y sensibilidad de la cámara"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:82
+#, kde-format
+msgid "Camera mode and program"
+msgstr "Modo y programa de la cámara"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:86
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:64
+#, kde-format
+msgid "Camera flash settings"
+msgstr "Configuración del flash de la cámara"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:90
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:68
+#, kde-format
+msgid "Camera white balance settings"
+msgstr "Configuración del balance de blancos de la cámara"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:107
+#, kde-format
+msgid "digiKam Information"
+msgstr "Información de digiKam"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:113
+#, kde-format
+msgid "Image title"
+msgstr "Título de la imagen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:114
+#, kde-format
+msgid "Set this option to display the image title."
+msgstr "Marque esta opción para mostrar el título de la imagen."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:116
+#, kde-format
+msgid "Image caption"
+msgstr "Pie de foto de la imagen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:117
+#, kde-format
+msgid "Set this option to display the image captions."
+msgstr "Marque esta opción para mostrar los pies de foto de las imágenes."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:119
+#, kde-format
+msgid "Image tags"
+msgstr "Etiquetas de la imagen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:120
+#, kde-format
+msgid "Set this option to display the image tags."
+msgstr "Marque esta opción para mostrar las etiquetas de la imagen."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:122
+#, kde-format
+msgid "Image labels"
+msgstr "Emblemas de las imágenes"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:123
+#, kde-format
+msgid "Set this option to display the image pick, color, rating labels."
+msgstr ""
+"Marque esta opción para mostrar los emblemas de elección, de color y de "
+"puntuación de la imagen."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:135
+#, kde-format
+msgid "Audio/Video Information"
+msgstr "Información de audio/vídeo"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:139
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:154
+#, kde-format
+msgid "Set this option to display the Aspect Ratio of the Video."
+msgstr "Marque esta opción para mostrar la proporción del vídeo."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:142
+#, kde-format
+msgid "Set this option to display the Audio Bit Rate of the Video."
+msgstr "Marque esta opción para mostrar la tasa de bits de audio del vídeo."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:145
+#, kde-format
+msgid "Set this option to display the Audio Channel Type of the Video."
+msgstr "Marque esta opción para mostrar el tipo de canal de audio del vídeo."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:148
+#, kde-format
+msgid "Set this option to display the Audio Codec of the Video."
+msgstr "Marque esta opción para mostrar el códec de sonido del vídeo."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:151
+#, kde-format
+msgid "Set this option to display the Duration of the Video."
+msgstr "Marque esta opción para mostrar la duración del vídeo."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:157
+#, kde-format
+msgid "Set this option to display the Codec of the Video."
+msgstr "Marque esta opción para mostrar el códec del vídeo."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:174
+#, kde-format
+msgid "Icon Items"
+msgstr "Elementos de iconos"
+
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:23
 #, kde-format
 msgid "Show import items' tool-tips"
 msgstr "Mostrar descripciones emergentes en los elementos importados"
 
-#: core/utilities/setup/setuptooltip.cpp:337
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:24
 #, kde-format
 msgid "Import Information"
 msgstr "Importar información"
 
-#: core/utilities/setup/setuptooltip.cpp:342
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:29
 #, kde-format
 msgid "Item name"
 msgstr "Nombre del elemento"
 
-#: core/utilities/setup/setuptooltip.cpp:343
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:30
 #, kde-format
 msgid "Set this option to display the item name."
 msgstr "Marque esta opción para mostrar el nombre del elemento."
 
-#: core/utilities/setup/setuptooltip.cpp:345
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:32
 #, kde-format
 msgid "Item date"
 msgstr "Fecha del elemento"
 
-#: core/utilities/setup/setuptooltip.cpp:346
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:33
 #, kde-format
 msgid "Set this option to display the item date."
 msgstr "Marque esta opción para mostrar la fecha del elemento."
 
-#: core/utilities/setup/setuptooltip.cpp:348
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:35
 #, kde-format
 msgid "Item size"
 msgstr "Tamaño del elemento"
 
-#: core/utilities/setup/setuptooltip.cpp:349
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:36
 #, kde-format
 msgid "Set this option to display the item size."
 msgstr "Marque esta opción para mostrar el tamaño del elemento."
 
-#: core/utilities/setup/setuptooltip.cpp:351
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:38
 #, kde-format
 msgid "Item type"
 msgstr "Tipo del elemento"
 
-#: core/utilities/setup/setuptooltip.cpp:352
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:39
 #, kde-format
 msgid "Set this option to display the item type."
 msgstr "Marque esta opción para mostrar el tipo del elemento."
 
-#: core/utilities/setup/setuptooltip.cpp:354
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:41
 #, kde-format
 msgid "Item dimensions"
 msgstr "Dimensiones del elemento"
 
-#: core/utilities/setup/setuptooltip.cpp:355
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:42
 #, kde-format
 msgid "Set this option to display the item dimensions."
 msgstr "Marque esta opción para mostrar el tamaño del elemento."
 
-#: core/utilities/setup/setuptooltip.cpp:358
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:45
 #, kde-format
 msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
@@ -69325,17 +69335,7 @@ msgstr ""
 "Nota: estos ajustes requieren la opción «Usar los metadatos del archivo» de "
 "la página de la configuración del comportamiento de la cámara."
 
-#: core/utilities/setup/setuptooltip.cpp:408
-#, kde-format
-msgid "Icon Items"
-msgstr "Elementos de iconos"
-
-#: core/utilities/setup/setuptooltip.cpp:409
-#, kde-format
-msgid "Album Items"
-msgstr "Elementos del álbum"
-
-#: core/utilities/setup/setuptooltip.cpp:410
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:93
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"

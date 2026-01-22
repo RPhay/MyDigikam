@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"POT-Creation-Date: 2026-01-22 00:55+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -4065,7 +4065,7 @@ msgstr "Alpha-Kanaal: "
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:998
-#: core/utilities/setup/setuptooltip.cpp:265
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, fuzzy, kde-format
 msgid "Audio Codec"
 msgstr "Klangdateien"
@@ -36432,7 +36432,7 @@ msgid "All Files"
 msgstr "All Dateien"
 
 #: core/libs/filters/mimefilter.cpp:28
-#: core/utilities/setup/album/setupmime.cpp:91
+#: core/utilities/setup/album/setupmime_setup.cpp:41
 #, kde-format
 msgid "Image Files"
 msgstr "Bild-Dateien"
@@ -36504,13 +36504,13 @@ msgid "AVIF Files"
 msgstr "TIFF-Dateien"
 
 #: core/libs/filters/mimefilter.cpp:41
-#: core/utilities/setup/album/setupmime.cpp:123
+#: core/utilities/setup/album/setupmime_setup.cpp:73
 #, fuzzy, kde-format
 msgid "Video Files"
 msgstr "Klangdateien"
 
 #: core/libs/filters/mimefilter.cpp:42
-#: core/utilities/setup/album/setupmime.cpp:158
+#: core/utilities/setup/album/setupmime_setup.cpp:108
 #, kde-format
 msgid "Audio Files"
 msgstr "Klangdateien"
@@ -40074,19 +40074,19 @@ msgid "Flash"
 msgstr "Blix"
 
 #: core/libs/properties/itempropertiestab.cpp:515
-#: core/utilities/setup/setuptooltip.cpp:256
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:138
 #, fuzzy, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Bildproportschoon wohren"
 
 #: core/libs/properties/itempropertiestab.cpp:516
-#: core/utilities/setup/setuptooltip.cpp:268
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:150
 #, fuzzy, kde-format
 msgid "Video Duration"
 msgstr "DigiKam-Be&weerten wiesen"
 
 #: core/libs/properties/itempropertiestab.cpp:517
-#: core/utilities/setup/setuptooltip.cpp:271
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:153
 #, fuzzy, kde-format
 msgid "Video Frame Rate"
 msgstr "Bildbeweerten wiesen"
@@ -46351,7 +46351,7 @@ msgstr "Bild-Informatschonen"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
-#: core/utilities/setup/setuptooltip.cpp:178
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:60
 #, kde-format
 msgid "Photograph Information"
 msgstr "Foto-Informatschonen"
@@ -53364,7 +53364,7 @@ msgid "Show file name"
 msgstr "Dateinaam wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:95
-#: core/utilities/setup/setuptooltip.cpp:150
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:32
 #, kde-format
 msgid "Set this option to display the image file name."
 msgstr "Maak dit an, wenn Du den Naam vun de Bilddatei wiesen wullt."
@@ -53375,7 +53375,7 @@ msgid "Show file date"
 msgstr "Dateidatum wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:98
-#: core/utilities/setup/setuptooltip.cpp:153
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:35
 #, kde-format
 msgid "Set this option to display the image file date."
 msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
@@ -53386,7 +53386,7 @@ msgid "Show file size"
 msgstr "Dateigrött wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:101
-#: core/utilities/setup/setuptooltip.cpp:156
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:38
 #, kde-format
 msgid "Set this option to display the image file size."
 msgstr "Maak dit an, wenn Du de Grött vun de Bilddatei wiesen wullt."
@@ -53397,7 +53397,7 @@ msgid "Show image type"
 msgstr "Bildtyp wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:104
-#: core/utilities/setup/setuptooltip.cpp:159
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:41
 #, kde-format
 msgid "Set this option to display the image type."
 msgstr "Maak dit an, wenn Du den Typ vun dat Bild wiesen wullt."
@@ -53408,14 +53408,14 @@ msgid "Show image dimensions"
 msgstr "Bildafmeten wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:107
-#: core/utilities/setup/setuptooltip.cpp:162
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:44
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "Maak dit an, wenn Du de Afmeten vun dat Bild in Pixels wiesen wullt."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:123
-#: core/utilities/setup/setuptooltip.cpp:182
-#: core/utilities/setup/setuptooltip.cpp:362
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:64
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:49
 #, kde-format
 msgid ""
 "Set this option to display the make and model of the camera with which the "
@@ -53425,15 +53425,15 @@ msgstr ""
 "de dat Bild maakt wöör."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:126
-#: core/utilities/setup/setuptooltip.cpp:185
-#: core/utilities/setup/setuptooltip.cpp:365
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:67
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:52
 #, fuzzy, kde-format
 msgid "Camera lens model"
 msgstr "Kameranaam"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:127
-#: core/utilities/setup/setuptooltip.cpp:186
-#: core/utilities/setup/setuptooltip.cpp:366
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:68
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:53
 #, fuzzy, kde-format
 #| msgid "Set this option to display the date when the image was taken."
 msgid ""
@@ -53447,15 +53447,15 @@ msgid "Show camera date"
 msgstr "Bilddatum wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:131
-#: core/utilities/setup/setuptooltip.cpp:190
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:72
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr ""
 "Maak dit an, wenn Du dat Datum wiesen wullt, op dat dit Bild maakt wöör."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:134
-#: core/utilities/setup/setuptooltip.cpp:193
-#: core/utilities/setup/setuptooltip.cpp:370
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:75
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:57
 #, kde-format
 msgid ""
 "Set this option to display the camera aperture and focal settings used to "
@@ -53465,8 +53465,8 @@ msgstr ""
 "maakt wöör."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:138
-#: core/utilities/setup/setuptooltip.cpp:197
-#: core/utilities/setup/setuptooltip.cpp:374
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:79
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:61
 #, kde-format
 msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
@@ -53481,7 +53481,7 @@ msgid "Show camera mode and program"
 msgstr "Kamera-Bedriefoort un -Programm wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:142
-#: core/utilities/setup/setuptooltip.cpp:201
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:83
 #, kde-format
 msgid ""
 "Set this option to display the camera mode and program used to take the "
@@ -53496,8 +53496,8 @@ msgid "Show camera flash settings"
 msgstr "Blix-Instellen wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
-#: core/utilities/setup/setuptooltip.cpp:205
-#: core/utilities/setup/setuptooltip.cpp:378
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:87
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:65
 #, kde-format
 msgid ""
 "Set this option to display the camera flash settings used to take the image."
@@ -53511,8 +53511,8 @@ msgid "Show camera white balance settings"
 msgstr "Wittbalangs-Instellen wiesen"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
-#: core/utilities/setup/setuptooltip.cpp:209
-#: core/utilities/setup/setuptooltip.cpp:382
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:91
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:69
 #, kde-format
 msgid ""
 "Set this option to display the camera white balance settings used to take "
@@ -54696,14 +54696,14 @@ msgstr "Bildproportschoon wohren"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:961
-#: core/utilities/setup/setuptooltip.cpp:259
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "Klangdateien"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
 #: core/utilities/searchwindow/searchfields_createfield.cpp:979
-#: core/utilities/setup/setuptooltip.cpp:262
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, fuzzy, kde-format
 msgid "Audio Channel Type"
 msgstr "Alpha-Kanaal: "
@@ -54724,7 +54724,7 @@ msgid "Frame Rate of Video"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:85
-#: core/utilities/setup/setuptooltip.cpp:274
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:156
 #, fuzzy, kde-format
 msgid "Video Codec"
 msgstr "Klangdateien"
@@ -66481,19 +66481,19 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Verwiedert Söök"
 
-#: core/utilities/setup/album/setupalbumview.cpp:44
+#: core/utilities/setup/album/setupalbumview.cpp:46
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Heelschirmbedrief verlaten"
 
-#: core/utilities/setup/album/setupalbumview.cpp:47
+#: core/utilities/setup/album/setupalbumview.cpp:51
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Biller utsöken"
 
-#: core/utilities/setup/album/setupalbumview.cpp:50
+#: core/utilities/setup/album/setupalbumview.cpp:56
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title:tab"
@@ -67055,7 +67055,60 @@ msgstr ""
 msgid "&Add..."
 msgstr "&Tofögen..."
 
-#: core/utilities/setup/album/setupmime.cpp:79
+#: core/utilities/setup/album/setupmime.cpp:39
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as images and included "
+#| "into the database:<br/> <code>%1</code></p>"
+msgid ""
+"<p>Files with these extensions will be recognized as images and included "
+"into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Dateien mit disse Verwiedern warrt as Biller kennt un na de Datenbank "
+"opnahmen:<br/> <code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime.cpp:49
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as movie files and "
+#| "included into the database:<br/> <code>%1</code></p>"
+msgid ""
+"<p>Files with these extensions will be recognized as video files and "
+"included into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Dateien mit disse Verwiedern warrt as Videodateien kennt un na de "
+"Datenbank opnahmen:<br/> <code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime.cpp:59
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as audio files and "
+#| "included into the database:<br/> <code>%1</code></p>"
+msgid ""
+"<p>Files with these extensions will be recognized as audio files and "
+"included into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Dateien mit disse Verwiedern warrt as Klangdateien kennt un na de "
+"Datenbank opnahmen:<br/><code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime_settings.cpp:45
+#, kde-format
+msgid ""
+"<p>You have chosen to remove the following image formats from the list of "
+"supported formats: <b>%1</b>.</p><p>These are very common formats. If you "
+"have images in your collection with these formats, they will be removed from "
+"the database and you will lose all information about them, including rating "
+"and tags.</p><p>Are you sure you want to apply your changes and lose the "
+"support for these formats?</p>"
+msgstr ""
+"<p>Du wullt de nakamen Bildformaten ut de List vun ünnerstütt Formaten "
+"wegdoon: <b>%1</b>.</p><p>Disse Formaten sünd bannig begäng. Wenn Dien "
+"Sammeln Biller mit disse Formaten bargt, warrt se tosamen mit all ehr "
+"Informatschonen ut de Datenbank wegdaan. Ok ehr Beweerten un Slötelwöör "
+"kaamt weg.</p><p> Wullt Du Dien Ännern för ünnerstütt Dateiformaten redig "
+"bruken?</p>"
+
+#: core/utilities/setup/album/setupmime_setup.cpp:29
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>digiKam attempts to support all of the image formats that digital "
@@ -67079,7 +67132,7 @@ msgstr ""
 "Verwiedern för den Dateityp angiffst. Mehr as een Verwiedern laat sik mit "
 "Freetekens dor twischen ingeven.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:97
+#: core/utilities/setup/album/setupmime_setup.cpp:47
 #, kde-format
 msgid ""
 "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -67087,7 +67140,7 @@ msgid ""
 msgstr ""
 "&Bilddatei-Verwiedern bito (<a href='image'>Opstunns ünnerstütt Typen</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:101
+#: core/utilities/setup/album/setupmime_setup.cpp:51
 #, kde-format
 msgid ""
 "<p>Here you can add the extensions of image files (including RAW files) to "
@@ -67107,13 +67160,13 @@ msgstr ""
 "Wenn Dateien ut de Datenbank wegdaan warrt, kaamt ok all ehr Slötelwöör un "
 "Beweerten weg!</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:111
+#: core/utilities/setup/album/setupmime_setup.cpp:61
 #, fuzzy, kde-format
 #| msgid "Enter the editorial usage instructions."
 msgid "Enter additional image file extensions."
 msgstr "Hier kannst Du de redaktschonell Bruukanwiesen ingeven."
 
-#: core/utilities/setup/album/setupmime.cpp:130
+#: core/utilities/setup/album/setupmime_setup.cpp:80
 #, fuzzy, kde-format
 #| msgid ""
 #| "Additional &movie file extensions (<a href='video'>Currently-supported "
@@ -67124,7 +67177,7 @@ msgid ""
 msgstr ""
 "&Filmdatei-Verwiedern bito (<a href='video'>Opstunns ünnerstütt Typen</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:134
+#: core/utilities/setup/album/setupmime_setup.cpp:84
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Here you can add extra extensions of video files to be displayed in "
@@ -67156,13 +67209,13 @@ msgstr ""
 "Wenn Dateien ut de Datenbank wegdaan warrt, kaamt ok all ehr Slötelwöör un "
 "Beweerten weg!</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:146
+#: core/utilities/setup/album/setupmime_setup.cpp:96
 #, fuzzy, kde-format
 #| msgid "Show only &movie files with extensions:"
 msgid "Enter additional video file extensions."
 msgstr "Bloots &Videodateien mit disse Verwiedern wiesen:"
 
-#: core/utilities/setup/album/setupmime.cpp:165
+#: core/utilities/setup/album/setupmime_setup.cpp:115
 #, kde-format
 msgid ""
 "Additional &audio file extensions (<a href='audio'>Currently-supported "
@@ -67170,7 +67223,7 @@ msgid ""
 msgstr ""
 "&Klangdatei-Verwiedern bito (<a href='audio'>Opstunns ünnerstütt Typen</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:169
+#: core/utilities/setup/album/setupmime_setup.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Here you can add extra extensions of video files to be displayed in "
@@ -67202,64 +67255,11 @@ msgstr ""
 "Wenn Dateien ut de Datenbank wegdaan warrt, kaamt ok all ehr Slötelwöör un "
 "Beweerten weg!</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:181
+#: core/utilities/setup/album/setupmime_setup.cpp:131
 #, fuzzy, kde-format
 #| msgid "Show only &audio files with extensions:"
 msgid "Enter additional audio file extensions."
 msgstr "Bloots &Klangdateien mit disse Verwiedern wiesen:"
-
-#: core/utilities/setup/album/setupmime.cpp:247
-#, kde-format
-msgid ""
-"<p>You have chosen to remove the following image formats from the list of "
-"supported formats: <b>%1</b>.</p><p>These are very common formats. If you "
-"have images in your collection with these formats, they will be removed from "
-"the database and you will lose all information about them, including rating "
-"and tags.</p><p>Are you sure you want to apply your changes and lose the "
-"support for these formats?</p>"
-msgstr ""
-"<p>Du wullt de nakamen Bildformaten ut de List vun ünnerstütt Formaten "
-"wegdoon: <b>%1</b>.</p><p>Disse Formaten sünd bannig begäng. Wenn Dien "
-"Sammeln Biller mit disse Formaten bargt, warrt se tosamen mit all ehr "
-"Informatschonen ut de Datenbank wegdaan. Ok ehr Beweerten un Slötelwöör "
-"kaamt weg.</p><p> Wullt Du Dien Ännern för ünnerstütt Dateiformaten redig "
-"bruken?</p>"
-
-#: core/utilities/setup/album/setupmime.cpp:302
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as images and included "
-#| "into the database:<br/> <code>%1</code></p>"
-msgid ""
-"<p>Files with these extensions will be recognized as images and included "
-"into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Dateien mit disse Verwiedern warrt as Biller kennt un na de Datenbank "
-"opnahmen:<br/> <code>%1</code></p>"
-
-#: core/utilities/setup/album/setupmime.cpp:312
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as movie files and "
-#| "included into the database:<br/> <code>%1</code></p>"
-msgid ""
-"<p>Files with these extensions will be recognized as video files and "
-"included into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Dateien mit disse Verwiedern warrt as Videodateien kennt un na de "
-"Datenbank opnahmen:<br/> <code>%1</code></p>"
-
-#: core/utilities/setup/album/setupmime.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as audio files and "
-#| "included into the database:<br/> <code>%1</code></p>"
-msgid ""
-"<p>Files with these extensions will be recognized as audio files and "
-"included into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Dateien mit disse Verwiedern warrt as Klangdateien kennt un na de "
-"Datenbank opnahmen:<br/><code>%1</code></p>"
 
 #: core/utilities/setup/camera/cameralist.cpp:288
 #, kde-format
@@ -71061,229 +71061,28 @@ msgstr "Nieg Metadatenvörlaag lett sik ahn Titel nich inmellen."
 msgid "A metadata template named '%1' already exists."
 msgstr "Dat gifft al en Metadatenvörlaag mit den Naam \"%1\"."
 
-#: core/utilities/setup/setuptooltip.cpp:133
+#: core/utilities/setup/tooltip/setuptooltip.cpp:28
 #, kde-format
 msgid "Tool-Tips Font:"
 msgstr "Schriftoort för Kortinformatschoon:"
 
-#: core/utilities/setup/setuptooltip.cpp:134
+#: core/utilities/setup/tooltip/setuptooltip.cpp:29
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
 msgstr "Hier kannst Du de Schriftoort för de Kortinfo-Texten fastleggen."
 
-#: core/utilities/setup/setuptooltip.cpp:142
-#, kde-format
-msgid "Show icon-view and thumb-bar items' tool-tips"
-msgstr "Kortinformatschonen för Vöransichtbalken/Lüttbildansicht wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:143
-#, kde-format
-msgid ""
-"Set this option to display image information when the mouse hovers over an "
-"icon-view or thumb-bar item."
-msgstr ""
-"Maak dit an, wenn Du de Bildinformatschonen wiest hebben wullt, bides de "
-"Muuswieser över en Lüttbildansicht oder Vöransichtbalken-Bild steiht."
-
-#: core/utilities/setup/setuptooltip.cpp:146
-#, fuzzy, kde-format
-msgid "File/Item Information"
-msgstr "Datei-/Bildinformatschonen"
-
-#: core/utilities/setup/setuptooltip.cpp:149
-#, fuzzy, kde-format
-#| msgid "Filename"
-msgid "File name"
-msgstr "Dateinaam"
-
-#: core/utilities/setup/setuptooltip.cpp:152
-#, fuzzy, kde-format
-#| msgid "File Name"
-msgid "File date"
-msgstr "Dateinaam"
-
-#: core/utilities/setup/setuptooltip.cpp:155
-#, kde-format
-msgid "File size"
-msgstr "Dateigrött"
-
-#: core/utilities/setup/setuptooltip.cpp:158
-#, fuzzy, kde-format
-#| msgid "Show image type"
-msgid "Image type"
-msgstr "Bildtyp wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:161
-#, fuzzy, kde-format
-#| msgid "Image dimension"
-msgid "Image dimensions"
-msgstr "Bildafmeten"
-
-#: core/utilities/setup/setuptooltip.cpp:164
-#, fuzzy, kde-format
-msgid "Image aspect ratio"
-msgstr "Bildproportschoon wohren"
-
-#: core/utilities/setup/setuptooltip.cpp:165
-#, fuzzy, kde-format
-msgid "Set this option to display the image aspect ratio."
-msgstr "Maak dit an, wenn Du de Bildtiteln wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:181
-#: core/utilities/setup/setuptooltip.cpp:361
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
-msgid "Camera make and model"
-msgstr "Kameramaker un -Modell wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:189
-#, fuzzy, kde-format
-#| msgid "Camera name"
-msgid "Camera date"
-msgstr "Kameranaam"
-
-#: core/utilities/setup/setuptooltip.cpp:192
-#: core/utilities/setup/setuptooltip.cpp:369
-#, fuzzy, kde-format
-#| msgid "Show camera aperture and focal length"
-msgid "Camera aperture and focal length"
-msgstr "Blenn un Brennwiet wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:196
-#: core/utilities/setup/setuptooltip.cpp:373
-#, fuzzy, kde-format
-#| msgid "Show camera exposure and sensitivity"
-msgid "Camera exposure and sensitivity"
-msgstr "Belichten un Föhlsamkeit"
-
-#: core/utilities/setup/setuptooltip.cpp:200
-#, fuzzy, kde-format
-#| msgid "Show camera mode and program"
-msgid "Camera mode and program"
-msgstr "Kamera-Bedriefoort un -Programm wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:204
-#: core/utilities/setup/setuptooltip.cpp:377
-#, fuzzy, kde-format
-#| msgid "Show camera flash settings"
-msgid "Camera flash settings"
-msgstr "Blix-Instellen wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:208
-#: core/utilities/setup/setuptooltip.cpp:381
-#, fuzzy, kde-format
-#| msgid "Show camera white balance settings"
-msgid "Camera white balance settings"
-msgstr "Wittbalangs-Instellen wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:225
-#, kde-format
-msgid "digiKam Information"
-msgstr "digiKam-Informatschonen"
-
-#: core/utilities/setup/setuptooltip.cpp:228
-#: core/utilities/setup/setuptooltip.cpp:301
-#, fuzzy, kde-format
-#| msgid "Album Name"
-msgid "Album name"
-msgstr "Albumnaam"
-
-#: core/utilities/setup/setuptooltip.cpp:229
-#: core/utilities/setup/setuptooltip.cpp:302
-#, kde-format
-msgid "Set this option to display the album name."
-msgstr "Maak dit an, wenn Du den Naam vun dat Album wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:231
-#, fuzzy, kde-format
-msgid "Image title"
-msgstr "Bildtyp wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:232
-#, fuzzy, kde-format
-msgid "Set this option to display the image title."
-msgstr "Maak dit an, wenn Du den Typ vun dat Bild wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:234
-#, fuzzy, kde-format
-#| msgid "Show image caption"
-msgid "Image caption"
-msgstr "Bildtitel wiesen"
-
-#: core/utilities/setup/setuptooltip.cpp:235
-#, kde-format
-msgid "Set this option to display the image captions."
-msgstr "Maak dit an, wenn Du de Bildtiteln wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:237
-#, fuzzy, kde-format
-msgid "Image tags"
-msgstr "Bildinstellen"
-
-#: core/utilities/setup/setuptooltip.cpp:238
-#, kde-format
-msgid "Set this option to display the image tags."
-msgstr "Maak dit an, wenn Du de Bild-Slötelwöör wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:240
-#, fuzzy, kde-format
-#| msgid "Image Files"
-msgid "Image labels"
-msgstr "Bild-Dateien"
-
-#: core/utilities/setup/setuptooltip.cpp:241
-#, fuzzy, kde-format
-msgid "Set this option to display the image pick, color, rating labels."
-msgstr "Maak dit an, wenn Du de Beweerten vun dat Bild wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:253
-#, fuzzy, kde-format
-msgid "Audio/Video Information"
-msgstr "Reedschap-Informatschonen"
-
-#: core/utilities/setup/setuptooltip.cpp:257
-#: core/utilities/setup/setuptooltip.cpp:272
-#, fuzzy, kde-format
-msgid "Set this option to display the Aspect Ratio of the Video."
-msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:260
-#, fuzzy, kde-format
-msgid "Set this option to display the Audio Bit Rate of the Video."
-msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:263
-#, fuzzy, kde-format
-msgid "Set this option to display the Audio Channel Type of the Video."
-msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:266
-#, fuzzy, kde-format
-msgid "Set this option to display the Audio Codec of the Video."
-msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:269
-#, fuzzy, kde-format
-msgid "Set this option to display the Duration of the Video."
-msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:275
-#, fuzzy, kde-format
-msgid "Set this option to display the Codec of the Video."
-msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
-
-#: core/utilities/setup/setuptooltip.cpp:295
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:23
 #, kde-format
 msgid "Show album items' tool-tips"
 msgstr "Kortinformatschonen för Albumindrääg wiesen"
 
-#: core/utilities/setup/setuptooltip.cpp:296
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:24
 #, kde-format
 msgid "Album Information"
 msgstr "Album-Informatschonen"
 
-#: core/utilities/setup/setuptooltip.cpp:298
-#: core/utilities/setup/setuptooltip.cpp:339
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:26
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:26
 #, kde-format
 msgid ""
 "Set this option to display album information when the mouse hovers over a "
@@ -71292,139 +71091,340 @@ msgstr ""
 "Maak dit an, wenn Du Albuminformatschonen wiest hebben wullt, bides de "
 "Muuswieser över en Orneransicht-Indrag steiht."
 
-#: core/utilities/setup/setuptooltip.cpp:304
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:29
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:110
+#, fuzzy, kde-format
+#| msgid "Album Name"
+msgid "Album name"
+msgstr "Albumnaam"
+
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:30
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:111
+#, kde-format
+msgid "Set this option to display the album name."
+msgstr "Maak dit an, wenn Du den Naam vun dat Album wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:32
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgid "Album date"
 msgstr "Album-&Datum:"
 
-#: core/utilities/setup/setuptooltip.cpp:305
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:33
 #, kde-format
 msgid "Set this option to display the album date."
 msgstr "Maak dit an, wenn Du dat Datum vun't Album wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:307
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:35
 #, fuzzy, kde-format
 #| msgid "Show album collection"
 msgid "Album collection"
 msgstr "Album-Sammeln wiesen"
 
-#: core/utilities/setup/setuptooltip.cpp:308
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:36
 #, kde-format
 msgid "Set this option to display the album collection."
 msgstr "Maak dit an, wenn Du de Albumsammeln wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:310
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:38
 #, fuzzy, kde-format
 #| msgid "Album Category"
 msgid "Album category"
 msgstr "Album-Kategorie"
 
-#: core/utilities/setup/setuptooltip.cpp:311
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:39
 #, kde-format
 msgid "Set this option to display the album category."
 msgstr "Maak dit an, wenn Du de Albumkategorie wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:313
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:41
 #, fuzzy, kde-format
 #| msgid "Show album caption"
 msgid "Album caption"
 msgstr "Albumtitel wiesen"
 
-#: core/utilities/setup/setuptooltip.cpp:314
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:42
 #, kde-format
 msgid "Set this option to display the album caption."
 msgstr "Maak dit an, wenn Du den Albumtitel wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:316
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:44
 #, fuzzy, kde-format
 #| msgid "Album View"
 msgid "Album preview"
 msgstr "Albumansicht"
 
-#: core/utilities/setup/setuptooltip.cpp:317
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:45
 #, fuzzy, kde-format
 msgid "Set this option to display the album preview."
 msgstr "Maak dit an, wenn Du den Naam vun dat Album wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:336
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:61
+#, kde-format
+msgid "Album Items"
+msgstr "Albenindrääg"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:24
+#, kde-format
+msgid "Show icon-view and thumb-bar items' tool-tips"
+msgstr "Kortinformatschonen för Vöransichtbalken/Lüttbildansicht wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:25
+#, kde-format
+msgid ""
+"Set this option to display image information when the mouse hovers over an "
+"icon-view or thumb-bar item."
+msgstr ""
+"Maak dit an, wenn Du de Bildinformatschonen wiest hebben wullt, bides de "
+"Muuswieser över en Lüttbildansicht oder Vöransichtbalken-Bild steiht."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:28
+#, fuzzy, kde-format
+msgid "File/Item Information"
+msgstr "Datei-/Bildinformatschonen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:31
+#, fuzzy, kde-format
+#| msgid "Filename"
+msgid "File name"
+msgstr "Dateinaam"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:34
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgid "File date"
+msgstr "Dateinaam"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:37
+#, kde-format
+msgid "File size"
+msgstr "Dateigrött"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:40
+#, fuzzy, kde-format
+#| msgid "Show image type"
+msgid "Image type"
+msgstr "Bildtyp wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:43
+#, fuzzy, kde-format
+#| msgid "Image dimension"
+msgid "Image dimensions"
+msgstr "Bildafmeten"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:46
+#, fuzzy, kde-format
+msgid "Image aspect ratio"
+msgstr "Bildproportschoon wohren"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:47
+#, fuzzy, kde-format
+msgid "Set this option to display the image aspect ratio."
+msgstr "Maak dit an, wenn Du de Bildtiteln wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:63
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:48
+#, fuzzy, kde-format
+#| msgid "Show camera make and model"
+msgid "Camera make and model"
+msgstr "Kameramaker un -Modell wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:71
+#, fuzzy, kde-format
+#| msgid "Camera name"
+msgid "Camera date"
+msgstr "Kameranaam"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:74
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:56
+#, fuzzy, kde-format
+#| msgid "Show camera aperture and focal length"
+msgid "Camera aperture and focal length"
+msgstr "Blenn un Brennwiet wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:78
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:60
+#, fuzzy, kde-format
+#| msgid "Show camera exposure and sensitivity"
+msgid "Camera exposure and sensitivity"
+msgstr "Belichten un Föhlsamkeit"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:82
+#, fuzzy, kde-format
+#| msgid "Show camera mode and program"
+msgid "Camera mode and program"
+msgstr "Kamera-Bedriefoort un -Programm wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:86
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:64
+#, fuzzy, kde-format
+#| msgid "Show camera flash settings"
+msgid "Camera flash settings"
+msgstr "Blix-Instellen wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:90
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:68
+#, fuzzy, kde-format
+#| msgid "Show camera white balance settings"
+msgid "Camera white balance settings"
+msgstr "Wittbalangs-Instellen wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:107
+#, kde-format
+msgid "digiKam Information"
+msgstr "digiKam-Informatschonen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:113
+#, fuzzy, kde-format
+msgid "Image title"
+msgstr "Bildtyp wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:114
+#, fuzzy, kde-format
+msgid "Set this option to display the image title."
+msgstr "Maak dit an, wenn Du den Typ vun dat Bild wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:116
+#, fuzzy, kde-format
+#| msgid "Show image caption"
+msgid "Image caption"
+msgstr "Bildtitel wiesen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:117
+#, kde-format
+msgid "Set this option to display the image captions."
+msgstr "Maak dit an, wenn Du de Bildtiteln wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:119
+#, fuzzy, kde-format
+msgid "Image tags"
+msgstr "Bildinstellen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:120
+#, kde-format
+msgid "Set this option to display the image tags."
+msgstr "Maak dit an, wenn Du de Bild-Slötelwöör wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:122
+#, fuzzy, kde-format
+#| msgid "Image Files"
+msgid "Image labels"
+msgstr "Bild-Dateien"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:123
+#, fuzzy, kde-format
+msgid "Set this option to display the image pick, color, rating labels."
+msgstr "Maak dit an, wenn Du de Beweerten vun dat Bild wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:135
+#, fuzzy, kde-format
+msgid "Audio/Video Information"
+msgstr "Reedschap-Informatschonen"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:139
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:154
+#, fuzzy, kde-format
+msgid "Set this option to display the Aspect Ratio of the Video."
+msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:142
+#, fuzzy, kde-format
+msgid "Set this option to display the Audio Bit Rate of the Video."
+msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:145
+#, fuzzy, kde-format
+msgid "Set this option to display the Audio Channel Type of the Video."
+msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:148
+#, fuzzy, kde-format
+msgid "Set this option to display the Audio Codec of the Video."
+msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:151
+#, fuzzy, kde-format
+msgid "Set this option to display the Duration of the Video."
+msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:157
+#, fuzzy, kde-format
+msgid "Set this option to display the Codec of the Video."
+msgstr "Maak dit an, wenn Du dat Datum vun de Bilddatei wiesen wullt."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:174
+#, kde-format
+msgid "Icon Items"
+msgstr "Lüttbiller"
+
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:23
 #, fuzzy, kde-format
 msgid "Show import items' tool-tips"
 msgstr "Kortinformatschonen för Albumindrääg wiesen"
 
-#: core/utilities/setup/setuptooltip.cpp:337
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:24
 #, fuzzy, kde-format
 msgid "Import Information"
 msgstr "Komponenten-Info"
 
-#: core/utilities/setup/setuptooltip.cpp:342
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:29
 #, fuzzy, kde-format
 msgid "Item name"
 msgstr "Bildnaam"
 
-#: core/utilities/setup/setuptooltip.cpp:343
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:30
 #, fuzzy, kde-format
 msgid "Set this option to display the item name."
 msgstr "Maak dit an, wenn Du den Naam vun dat Album wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:345
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:32
 #, fuzzy, kde-format
 msgid "Item date"
 msgstr "Bildnaam"
 
-#: core/utilities/setup/setuptooltip.cpp:346
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:33
 #, fuzzy, kde-format
 msgid "Set this option to display the item date."
 msgstr "Maak dit an, wenn Du dat Datum vun't Album wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:348
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:35
 #, fuzzy, kde-format
 msgid "Item size"
 msgstr "Bildtitel"
 
-#: core/utilities/setup/setuptooltip.cpp:349
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:36
 #, fuzzy, kde-format
 msgid "Set this option to display the item size."
 msgstr "Maak dit an, wenn Du de Grött vun de Bilddatei wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:351
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:38
 #, fuzzy, kde-format
 msgid "Item type"
 msgstr "Bildtitel"
 
-#: core/utilities/setup/setuptooltip.cpp:352
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:39
 #, fuzzy, kde-format
 msgid "Set this option to display the item type."
 msgstr "Maak dit an, wenn Du den Typ vun dat Bild wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:354
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:41
 #, fuzzy, kde-format
 msgid "Item dimensions"
 msgstr "Bildafmeten wiesen"
 
-#: core/utilities/setup/setuptooltip.cpp:355
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:42
 #, fuzzy, kde-format
 msgid "Set this option to display the item dimensions."
 msgstr "Maak dit an, wenn Du de Afmeten vun dat Bild in Pixels wiesen wullt."
 
-#: core/utilities/setup/setuptooltip.cpp:358
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:45
 #, kde-format
 msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
 "Behavior page."
 msgstr ""
 
-#: core/utilities/setup/setuptooltip.cpp:408
-#, kde-format
-msgid "Icon Items"
-msgstr "Lüttbiller"
-
-#: core/utilities/setup/setuptooltip.cpp:409
-#, kde-format
-msgid "Album Items"
-msgstr "Albenindrääg"
-
-#: core/utilities/setup/setuptooltip.cpp:410
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:93
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "Biller &sorteren"

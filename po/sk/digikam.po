@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-21 00:42+0000\n"
+"POT-Creation-Date: 2026-01-22 00:55+0000\n"
 "PO-Revision-Date: 2026-01-04 22:32+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -3923,7 +3923,7 @@ msgstr "Typ zvukového kanála"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:998
-#: core/utilities/setup/setuptooltip.cpp:265
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
 msgstr "Zvukový kodek"
@@ -35609,7 +35609,7 @@ msgid "All Files"
 msgstr "Všetky súbory"
 
 #: core/libs/filters/mimefilter.cpp:28
-#: core/utilities/setup/album/setupmime.cpp:91
+#: core/utilities/setup/album/setupmime_setup.cpp:41
 #, kde-format
 msgid "Image Files"
 msgstr "Súbory obrázkov"
@@ -35681,13 +35681,13 @@ msgid "AVIF Files"
 msgstr "TIFF súbory"
 
 #: core/libs/filters/mimefilter.cpp:41
-#: core/utilities/setup/album/setupmime.cpp:123
+#: core/utilities/setup/album/setupmime_setup.cpp:73
 #, kde-format
 msgid "Video Files"
 msgstr "Video súbory"
 
 #: core/libs/filters/mimefilter.cpp:42
-#: core/utilities/setup/album/setupmime.cpp:158
+#: core/utilities/setup/album/setupmime_setup.cpp:108
 #, kde-format
 msgid "Audio Files"
 msgstr "Audio súbory"
@@ -39446,19 +39446,19 @@ msgid "Flash"
 msgstr "Blesk"
 
 #: core/libs/properties/itempropertiestab.cpp:515
-#: core/utilities/setup/setuptooltip.cpp:256
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:138
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Pomer strán videa"
 
 #: core/libs/properties/itempropertiestab.cpp:516
-#: core/utilities/setup/setuptooltip.cpp:268
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:150
 #, kde-format
 msgid "Video Duration"
 msgstr "Trvanie videa"
 
 #: core/libs/properties/itempropertiestab.cpp:517
-#: core/utilities/setup/setuptooltip.cpp:271
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:153
 #, fuzzy, kde-format
 msgid "Video Frame Rate"
 msgstr "Nový formát obrázka"
@@ -45840,7 +45840,7 @@ msgstr "Informácie o obrázku"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
-#: core/utilities/setup/setuptooltip.cpp:178
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:60
 #, kde-format
 msgid "Photograph Information"
 msgstr "Informácie o fotografii"
@@ -52598,7 +52598,7 @@ msgid "Show file name"
 msgstr "Zobraziť názov súboru"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:95
-#: core/utilities/setup/setuptooltip.cpp:150
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:32
 #, fuzzy, kde-format
 msgid "Set this option to display the image file name."
 msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
@@ -52609,7 +52609,7 @@ msgid "Show file date"
 msgstr "Zobraziť dátum súboru"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:98
-#: core/utilities/setup/setuptooltip.cpp:153
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:35
 #, fuzzy, kde-format
 msgid "Set this option to display the image file date."
 msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
@@ -52620,7 +52620,7 @@ msgid "Show file size"
 msgstr "Zobraziť veľkosť obrázka"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:101
-#: core/utilities/setup/setuptooltip.cpp:156
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:38
 #, fuzzy, kde-format
 msgid "Set this option to display the image file size."
 msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
@@ -52631,7 +52631,7 @@ msgid "Show image type"
 msgstr "Zobraziť typ obrázka"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:104
-#: core/utilities/setup/setuptooltip.cpp:159
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:41
 #, fuzzy, kde-format
 msgid "Set this option to display the image type."
 msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
@@ -52642,14 +52642,14 @@ msgid "Show image dimensions"
 msgstr "Zobraziť rozmery obrázka"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:107
-#: core/utilities/setup/setuptooltip.cpp:162
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:44
 #, fuzzy, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "<p>Zapnutím tejto voľby zobrazíte rozmery obrázka v pixeloch."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:123
-#: core/utilities/setup/setuptooltip.cpp:182
-#: core/utilities/setup/setuptooltip.cpp:362
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:64
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:49
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display the make and model of the camera with which the "
@@ -52659,16 +52659,16 @@ msgstr ""
 "s ktorým bol obrázok odfotený."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:126
-#: core/utilities/setup/setuptooltip.cpp:185
-#: core/utilities/setup/setuptooltip.cpp:365
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:67
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:52
 #, fuzzy, kde-format
 #| msgid "Camera model"
 msgid "Camera lens model"
 msgstr "Model fotoaparátu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:127
-#: core/utilities/setup/setuptooltip.cpp:186
-#: core/utilities/setup/setuptooltip.cpp:366
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:68
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:53
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display the lens model with which the image was taken."
@@ -52682,7 +52682,7 @@ msgid "Show camera date"
 msgstr "Zobrazovať dátum fotoaparátu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:131
-#: core/utilities/setup/setuptooltip.cpp:190
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:72
 #, fuzzy, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr ""
@@ -52690,8 +52690,8 @@ msgstr ""
 "odfotený."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:134
-#: core/utilities/setup/setuptooltip.cpp:193
-#: core/utilities/setup/setuptooltip.cpp:370
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:75
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:57
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display the camera aperture and focal settings used to "
@@ -52701,8 +52701,8 @@ msgstr ""
 "s ktorým bol obrázok odfotený."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:138
-#: core/utilities/setup/setuptooltip.cpp:197
-#: core/utilities/setup/setuptooltip.cpp:374
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:79
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:61
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
@@ -52717,7 +52717,7 @@ msgid "Show camera mode and program"
 msgstr "Zobrazovať režim a program fotoaparátu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:142
-#: core/utilities/setup/setuptooltip.cpp:201
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:83
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display the camera mode and program used to take the "
@@ -52732,8 +52732,8 @@ msgid "Show camera flash settings"
 msgstr "Zobrazovať nastavenia blesku fotoaparátu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
-#: core/utilities/setup/setuptooltip.cpp:205
-#: core/utilities/setup/setuptooltip.cpp:378
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:87
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:65
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display the camera flash settings used to take the image."
@@ -52747,8 +52747,8 @@ msgid "Show camera white balance settings"
 msgstr "Zobrazovať vyváženie bielej fotoaparátu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
-#: core/utilities/setup/setuptooltip.cpp:209
-#: core/utilities/setup/setuptooltip.cpp:382
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:91
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:69
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display the camera white balance settings used to take "
@@ -53984,14 +53984,14 @@ msgstr "Pomer strán obrazovky"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:961
-#: core/utilities/setup/setuptooltip.cpp:259
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Bitový tok audia"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
 #: core/utilities/searchwindow/searchfields_createfield.cpp:979
-#: core/utilities/setup/setuptooltip.cpp:262
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
 msgstr "Typ audio kanála"
@@ -54012,7 +54012,7 @@ msgid "Frame Rate of Video"
 msgstr "Vzorkovacia frekvencia videa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:85
-#: core/utilities/setup/setuptooltip.cpp:274
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:156
 #, kde-format
 msgid "Video Codec"
 msgstr "Video kodek"
@@ -65998,19 +65998,19 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Rozšírené hľadanie"
 
-#: core/utilities/setup/album/setupalbumview.cpp:44
+#: core/utilities/setup/album/setupalbumview.cpp:46
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Celá obrazovka"
 
-#: core/utilities/setup/album/setupalbumview.cpp:47
+#: core/utilities/setup/album/setupalbumview.cpp:51
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Typy MIME"
 
-#: core/utilities/setup/album/setupalbumview.cpp:50
+#: core/utilities/setup/album/setupalbumview.cpp:56
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
@@ -66580,7 +66580,60 @@ msgstr ""
 msgid "&Add..."
 msgstr "&Pridať..."
 
-#: core/utilities/setup/album/setupmime.cpp:79
+#: core/utilities/setup/album/setupmime.cpp:39
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as images and included "
+#| "into the database:<br/> <code>%1</code></p>"
+msgid ""
+"<p>Files with these extensions will be recognized as images and included "
+"into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Súbory s týmito príponami budú vnímané ako obrázky a zaradia sa do "
+"databázy:<br/> <code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime.cpp:49
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as video files and "
+#| "included into the database:<br/> <code>%1</code></p>"
+msgid ""
+"<p>Files with these extensions will be recognized as video files and "
+"included into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Súbory s týmito príponami budú vnímané ako súbory videa a zaradia sa do "
+"databázy:<br/> <code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime.cpp:59
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as audio files and "
+#| "included into the database:<br/> <code>%1</code></p>"
+msgid ""
+"<p>Files with these extensions will be recognized as audio files and "
+"included into the database:<br> <code>%1</code></p>"
+msgstr ""
+"<p>Súbory s týmito príponami budú vnímané ako súbory zvuku a zaradia sa do "
+"databázy:<br/> <code>%1</code></p>"
+
+#: core/utilities/setup/album/setupmime_settings.cpp:45
+#, kde-format
+msgid ""
+"<p>You have chosen to remove the following image formats from the list of "
+"supported formats: <b>%1</b>.</p><p>These are very common formats. If you "
+"have images in your collection with these formats, they will be removed from "
+"the database and you will lose all information about them, including rating "
+"and tags.</p><p>Are you sure you want to apply your changes and lose the "
+"support for these formats?</p>"
+msgstr ""
+"<p>Rozhodli ste sa odstrániť tieto formáty obrázkov zo zoznamu podporovaných "
+"formátov:<b>%1</b>.</p><p>Tieto formáty patria medzi najpoužívanejšie. Ak "
+"máte vo svojej zbierke súbory v týchto formátoch, budú odstránené z databázy "
+"a vy prídete o všetky informácie o nich, vrátane hodnotení a štítkov. </"
+"p><p>Naozaj si želáte použiť tieto zmeny a odstrániť podporu týchto formátov?"
+"</p>"
+
+#: core/utilities/setup/album/setupmime_setup.cpp:29
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>digiKam attempts to support all of the image formats that digital "
@@ -66603,7 +66656,7 @@ msgstr ""
 "formátov, ktoré digiKam podporuje môžete pridať typ, ktorý chcete, určením "
 "jeho prípony. Viaceré prípony musíte oddeliť medzerou.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:97
+#: core/utilities/setup/album/setupmime_setup.cpp:47
 #, kde-format
 msgid ""
 "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -66612,7 +66665,7 @@ msgstr ""
 "Ďalšie prípony súborov obrázkov (<a href='image'>aktuáln&epodporované "
 "prípony</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:101
+#: core/utilities/setup/album/setupmime_setup.cpp:51
 #, kde-format
 msgid ""
 "<p>Here you can add the extensions of image files (including RAW files) to "
@@ -66633,12 +66686,12 @@ msgstr ""
 "neodstránia, iba nebudú zobrazené v digiKame. </p><p><b>Pozor:</b> Ak "
 "odstránite súbory z databázy, stratia sa všetky ich štítky a hodnotenia.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:111
+#: core/utilities/setup/album/setupmime_setup.cpp:61
 #, kde-format
 msgid "Enter additional image file extensions."
 msgstr "Zadajte ďalšie prípony súborov s obrázkami."
 
-#: core/utilities/setup/album/setupmime.cpp:130
+#: core/utilities/setup/album/setupmime_setup.cpp:80
 #, kde-format
 msgid ""
 "Additional &video file extensions (<a href='video'>Currently-supported "
@@ -66647,7 +66700,7 @@ msgstr ""
 "Ďalšie prípony súborov &videa (<a href='video'>aktuálne podporované prípony</"
 "a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:134
+#: core/utilities/setup/album/setupmime_setup.cpp:84
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of video files to be displayed in your "
@@ -66670,12 +66723,12 @@ msgstr ""
 "digiKame.</p><p><b>Pozor:</b> Ak odstránite súbory z databázy, zmiznú aj "
 "všetky ich štítky a hodnotenia.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:146
+#: core/utilities/setup/album/setupmime_setup.cpp:96
 #, kde-format
 msgid "Enter additional video file extensions."
 msgstr "Zadajte ďalšie prípony súborov videa."
 
-#: core/utilities/setup/album/setupmime.cpp:165
+#: core/utilities/setup/album/setupmime_setup.cpp:115
 #, kde-format
 msgid ""
 "Additional &audio file extensions (<a href='audio'>Currently-supported "
@@ -66684,7 +66737,7 @@ msgstr ""
 "Ďalšie prípony súborov &zvuku (<a href='audio'>aktuálne podporované prípony</"
 "a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:169
+#: core/utilities/setup/album/setupmime_setup.cpp:119
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of audio files to be displayed in your "
@@ -66707,63 +66760,10 @@ msgstr ""
 "zobrazené v digiKame.</p><p><b>Pozor:</b> Ak odstránite súbory z databázy, "
 "zmiznú aj všetky ich štítky a hodnotenia.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:181
+#: core/utilities/setup/album/setupmime_setup.cpp:131
 #, kde-format
 msgid "Enter additional audio file extensions."
 msgstr "Zadajte ďalšie prípony zvukových súborov."
-
-#: core/utilities/setup/album/setupmime.cpp:247
-#, kde-format
-msgid ""
-"<p>You have chosen to remove the following image formats from the list of "
-"supported formats: <b>%1</b>.</p><p>These are very common formats. If you "
-"have images in your collection with these formats, they will be removed from "
-"the database and you will lose all information about them, including rating "
-"and tags.</p><p>Are you sure you want to apply your changes and lose the "
-"support for these formats?</p>"
-msgstr ""
-"<p>Rozhodli ste sa odstrániť tieto formáty obrázkov zo zoznamu podporovaných "
-"formátov:<b>%1</b>.</p><p>Tieto formáty patria medzi najpoužívanejšie. Ak "
-"máte vo svojej zbierke súbory v týchto formátoch, budú odstránené z databázy "
-"a vy prídete o všetky informácie o nich, vrátane hodnotení a štítkov. </"
-"p><p>Naozaj si želáte použiť tieto zmeny a odstrániť podporu týchto formátov?"
-"</p>"
-
-#: core/utilities/setup/album/setupmime.cpp:302
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as images and included "
-#| "into the database:<br/> <code>%1</code></p>"
-msgid ""
-"<p>Files with these extensions will be recognized as images and included "
-"into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Súbory s týmito príponami budú vnímané ako obrázky a zaradia sa do "
-"databázy:<br/> <code>%1</code></p>"
-
-#: core/utilities/setup/album/setupmime.cpp:312
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as video files and "
-#| "included into the database:<br/> <code>%1</code></p>"
-msgid ""
-"<p>Files with these extensions will be recognized as video files and "
-"included into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Súbory s týmito príponami budú vnímané ako súbory videa a zaradia sa do "
-"databázy:<br/> <code>%1</code></p>"
-
-#: core/utilities/setup/album/setupmime.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as audio files and "
-#| "included into the database:<br/> <code>%1</code></p>"
-msgid ""
-"<p>Files with these extensions will be recognized as audio files and "
-"included into the database:<br> <code>%1</code></p>"
-msgstr ""
-"<p>Súbory s týmito príponami budú vnímané ako súbory zvuku a zaradia sa do "
-"databázy:<br/> <code>%1</code></p>"
 
 #: core/utilities/setup/camera/cameralist.cpp:288
 #, kde-format
@@ -70834,215 +70834,28 @@ msgstr "Tu nastavte otočenie textu, ktoré chcete použiť."
 msgid "A metadata template named '%1' already exists."
 msgstr "Starší súbor s menom '%1' už existuje.\n"
 
-#: core/utilities/setup/setuptooltip.cpp:133
+#: core/utilities/setup/tooltip/setuptooltip.cpp:28
 #, kde-format
 msgid "Tool-Tips Font:"
 msgstr "Písmo v bublinách:"
 
-#: core/utilities/setup/setuptooltip.cpp:134
+#: core/utilities/setup/tooltip/setuptooltip.cpp:29
 #, fuzzy, kde-format
 msgid "Select here the font used to display text in tool-tips."
 msgstr "<p>Tu nastavíte farbu vykresľovania kompozičných vodítok."
 
-#: core/utilities/setup/setuptooltip.cpp:142
-#, fuzzy, kde-format
-msgid "Show icon-view and thumb-bar items' tool-tips"
-msgstr "Zobrazovať bublinové ti&py položiek albunu"
-
-#: core/utilities/setup/setuptooltip.cpp:143
-#, fuzzy, kde-format
-msgid ""
-"Set this option to display image information when the mouse hovers over an "
-"icon-view or thumb-bar item."
-msgstr ""
-"<p>Ak je táto voľba zapnutá, budú sa zobrazovať informácie o obrázku keď "
-"podržíte kurzor myši nad položkou albumu."
-
-#: core/utilities/setup/setuptooltip.cpp:146
-#, kde-format
-msgid "File/Item Information"
-msgstr "Informácie o súbore/položke"
-
-#: core/utilities/setup/setuptooltip.cpp:149
-#, kde-format
-msgid "File name"
-msgstr "Názov súboru"
-
-#: core/utilities/setup/setuptooltip.cpp:152
-#, kde-format
-msgid "File date"
-msgstr "Dátum súboru"
-
-#: core/utilities/setup/setuptooltip.cpp:155
-#, kde-format
-msgid "File size"
-msgstr "Veľkosť súboru"
-
-#: core/utilities/setup/setuptooltip.cpp:158
-#, kde-format
-msgid "Image type"
-msgstr "Typ obrázka"
-
-#: core/utilities/setup/setuptooltip.cpp:161
-#, kde-format
-msgid "Image dimensions"
-msgstr "Rozmery obrázka"
-
-#: core/utilities/setup/setuptooltip.cpp:164
-#, kde-format
-msgid "Image aspect ratio"
-msgstr "Pomer strán obrázka"
-
-#: core/utilities/setup/setuptooltip.cpp:165
-#, fuzzy, kde-format
-msgid "Set this option to display the image aspect ratio."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:181
-#: core/utilities/setup/setuptooltip.cpp:361
-#, kde-format
-msgid "Camera make and model"
-msgstr "Výrobca a model fotoaparátu"
-
-#: core/utilities/setup/setuptooltip.cpp:189
-#, kde-format
-msgid "Camera date"
-msgstr "Dátum z fotoaparátu"
-
-#: core/utilities/setup/setuptooltip.cpp:192
-#: core/utilities/setup/setuptooltip.cpp:369
-#, kde-format
-msgid "Camera aperture and focal length"
-msgstr "Clona a ohnisková vzdialenosť fotoaparátu"
-
-#: core/utilities/setup/setuptooltip.cpp:196
-#: core/utilities/setup/setuptooltip.cpp:373
-#, kde-format
-msgid "Camera exposure and sensitivity"
-msgstr "Expozícia a citlivosť fotoaparátu"
-
-#: core/utilities/setup/setuptooltip.cpp:200
-#, kde-format
-msgid "Camera mode and program"
-msgstr "Režim a program fotoaparátu"
-
-#: core/utilities/setup/setuptooltip.cpp:204
-#: core/utilities/setup/setuptooltip.cpp:377
-#, kde-format
-msgid "Camera flash settings"
-msgstr "Nastavenie blesku"
-
-#: core/utilities/setup/setuptooltip.cpp:208
-#: core/utilities/setup/setuptooltip.cpp:381
-#, kde-format
-msgid "Camera white balance settings"
-msgstr "Vyváženie bielej fotoaparátu"
-
-#: core/utilities/setup/setuptooltip.cpp:225
-#, kde-format
-msgid "digiKam Information"
-msgstr "Informácie digiKam"
-
-#: core/utilities/setup/setuptooltip.cpp:228
-#: core/utilities/setup/setuptooltip.cpp:301
-#, kde-format
-msgid "Album name"
-msgstr "Názov albumu"
-
-#: core/utilities/setup/setuptooltip.cpp:229
-#: core/utilities/setup/setuptooltip.cpp:302
-#, fuzzy, kde-format
-msgid "Set this option to display the album name."
-msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
-
-#: core/utilities/setup/setuptooltip.cpp:231
-#, kde-format
-msgid "Image title"
-msgstr "Názov obrázka"
-
-#: core/utilities/setup/setuptooltip.cpp:232
-#, fuzzy, kde-format
-msgid "Set this option to display the image title."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:234
-#, kde-format
-msgid "Image caption"
-msgstr "Titulok obrázka"
-
-#: core/utilities/setup/setuptooltip.cpp:235
-#, fuzzy, kde-format
-msgid "Set this option to display the image captions."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:237
-#, kde-format
-msgid "Image tags"
-msgstr "Štítky obrázka"
-
-#: core/utilities/setup/setuptooltip.cpp:238
-#, fuzzy, kde-format
-msgid "Set this option to display the image tags."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:240
-#, kde-format
-msgid "Image labels"
-msgstr "Štítky obrázkov"
-
-#: core/utilities/setup/setuptooltip.cpp:241
-#, fuzzy, kde-format
-msgid "Set this option to display the image pick, color, rating labels."
-msgstr "<p>Zapnite túto voľbu pre zobrazenie hodnotenia obrázka."
-
-#: core/utilities/setup/setuptooltip.cpp:253
-#, kde-format
-msgid "Audio/Video Information"
-msgstr "Informácie o audiu/videu"
-
-#: core/utilities/setup/setuptooltip.cpp:257
-#: core/utilities/setup/setuptooltip.cpp:272
-#, fuzzy, kde-format
-msgid "Set this option to display the Aspect Ratio of the Video."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:260
-#, fuzzy, kde-format
-msgid "Set this option to display the Audio Bit Rate of the Video."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:263
-#, fuzzy, kde-format
-msgid "Set this option to display the Audio Channel Type of the Video."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:266
-#, fuzzy, kde-format
-msgid "Set this option to display the Audio Codec of the Video."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:269
-#, fuzzy, kde-format
-msgid "Set this option to display the Duration of the Video."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:275
-#, fuzzy, kde-format
-msgid "Set this option to display the Codec of the Video."
-msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
-
-#: core/utilities/setup/setuptooltip.cpp:295
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:23
 #, fuzzy, kde-format
 msgid "Show album items' tool-tips"
 msgstr "Zobrazovať bublinové ti&py položiek albunu"
 
-#: core/utilities/setup/setuptooltip.cpp:296
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:24
 #, fuzzy, kde-format
 msgid "Album Information"
 msgstr "Nekompletné informácie o albume"
 
-#: core/utilities/setup/setuptooltip.cpp:298
-#: core/utilities/setup/setuptooltip.cpp:339
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:26
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:26
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display album information when the mouse hovers over a "
@@ -71051,120 +70864,317 @@ msgstr ""
 "<p>Ak je táto voľba zapnutá, budú sa zobrazovať informácie o obrázku keď "
 "podržíte kurzor myši nad položkou albumu."
 
-#: core/utilities/setup/setuptooltip.cpp:304
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:29
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:110
+#, kde-format
+msgid "Album name"
+msgstr "Názov albumu"
+
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:30
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:111
+#, fuzzy, kde-format
+msgid "Set this option to display the album name."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
+
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:32
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgid "Album date"
 msgstr "&Dátum albumu:"
 
-#: core/utilities/setup/setuptooltip.cpp:305
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:33
 #, fuzzy, kde-format
 msgid "Set this option to display the album date."
 msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
 
-#: core/utilities/setup/setuptooltip.cpp:307
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:35
 #, fuzzy, kde-format
 msgid "Album collection"
 msgstr "Kolekcia albumov obsahuje"
 
-#: core/utilities/setup/setuptooltip.cpp:308
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:36
 #, fuzzy, kde-format
 msgid "Set this option to display the album collection."
 msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
 
-#: core/utilities/setup/setuptooltip.cpp:310
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:38
 #, fuzzy, kde-format
 msgid "Album category"
 msgstr "KInfoCenter kategória"
 
-#: core/utilities/setup/setuptooltip.cpp:311
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:39
 #, fuzzy, kde-format
 msgid "Set this option to display the album category."
 msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
 
-#: core/utilities/setup/setuptooltip.cpp:313
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:41
 #, fuzzy, kde-format
 msgid "Album caption"
 msgstr "Názov albumu obsahuje"
 
-#: core/utilities/setup/setuptooltip.cpp:314
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:42
 #, fuzzy, kde-format
 msgid "Set this option to display the album caption."
 msgstr "<p>Zapnite túto voľbu pre zobrazenie hodnotenia obrázka."
 
-#: core/utilities/setup/setuptooltip.cpp:316
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:44
 #, fuzzy, kde-format
 msgid "Album preview"
 msgstr "Zobraziť položku"
 
-#: core/utilities/setup/setuptooltip.cpp:317
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:45
 #, fuzzy, kde-format
 msgid "Set this option to display the album preview."
 msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
 
-#: core/utilities/setup/setuptooltip.cpp:336
+#: core/utilities/setup/tooltip/setuptooltip_album.cpp:61
+#, fuzzy, kde-format
+msgid "Album Items"
+msgstr "Nastavenie albumu spracovaných položiek"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:24
+#, fuzzy, kde-format
+msgid "Show icon-view and thumb-bar items' tool-tips"
+msgstr "Zobrazovať bublinové ti&py položiek albunu"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:25
+#, fuzzy, kde-format
+msgid ""
+"Set this option to display image information when the mouse hovers over an "
+"icon-view or thumb-bar item."
+msgstr ""
+"<p>Ak je táto voľba zapnutá, budú sa zobrazovať informácie o obrázku keď "
+"podržíte kurzor myši nad položkou albumu."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:28
+#, kde-format
+msgid "File/Item Information"
+msgstr "Informácie o súbore/položke"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:31
+#, kde-format
+msgid "File name"
+msgstr "Názov súboru"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:34
+#, kde-format
+msgid "File date"
+msgstr "Dátum súboru"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:37
+#, kde-format
+msgid "File size"
+msgstr "Veľkosť súboru"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:40
+#, kde-format
+msgid "Image type"
+msgstr "Typ obrázka"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:43
+#, kde-format
+msgid "Image dimensions"
+msgstr "Rozmery obrázka"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:46
+#, kde-format
+msgid "Image aspect ratio"
+msgstr "Pomer strán obrázka"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:47
+#, fuzzy, kde-format
+msgid "Set this option to display the image aspect ratio."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:63
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:48
+#, kde-format
+msgid "Camera make and model"
+msgstr "Výrobca a model fotoaparátu"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:71
+#, kde-format
+msgid "Camera date"
+msgstr "Dátum z fotoaparátu"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:74
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:56
+#, kde-format
+msgid "Camera aperture and focal length"
+msgstr "Clona a ohnisková vzdialenosť fotoaparátu"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:78
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:60
+#, kde-format
+msgid "Camera exposure and sensitivity"
+msgstr "Expozícia a citlivosť fotoaparátu"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:82
+#, kde-format
+msgid "Camera mode and program"
+msgstr "Režim a program fotoaparátu"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:86
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:64
+#, kde-format
+msgid "Camera flash settings"
+msgstr "Nastavenie blesku"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:90
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:68
+#, kde-format
+msgid "Camera white balance settings"
+msgstr "Vyváženie bielej fotoaparátu"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:107
+#, kde-format
+msgid "digiKam Information"
+msgstr "Informácie digiKam"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:113
+#, kde-format
+msgid "Image title"
+msgstr "Názov obrázka"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:114
+#, fuzzy, kde-format
+msgid "Set this option to display the image title."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:116
+#, kde-format
+msgid "Image caption"
+msgstr "Titulok obrázka"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:117
+#, fuzzy, kde-format
+msgid "Set this option to display the image captions."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:119
+#, kde-format
+msgid "Image tags"
+msgstr "Štítky obrázka"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:120
+#, fuzzy, kde-format
+msgid "Set this option to display the image tags."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:122
+#, kde-format
+msgid "Image labels"
+msgstr "Štítky obrázkov"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:123
+#, fuzzy, kde-format
+msgid "Set this option to display the image pick, color, rating labels."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie hodnotenia obrázka."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:135
+#, kde-format
+msgid "Audio/Video Information"
+msgstr "Informácie o audiu/videu"
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:139
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:154
+#, fuzzy, kde-format
+msgid "Set this option to display the Aspect Ratio of the Video."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:142
+#, fuzzy, kde-format
+msgid "Set this option to display the Audio Bit Rate of the Video."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:145
+#, fuzzy, kde-format
+msgid "Set this option to display the Audio Channel Type of the Video."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:148
+#, fuzzy, kde-format
+msgid "Set this option to display the Audio Codec of the Video."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:151
+#, fuzzy, kde-format
+msgid "Set this option to display the Duration of the Video."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:157
+#, fuzzy, kde-format
+msgid "Set this option to display the Codec of the Video."
+msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
+
+#: core/utilities/setup/tooltip/setuptooltip_icon.cpp:174
+#, kde-format
+msgid "Icon Items"
+msgstr "Položky ikon"
+
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:23
 #, fuzzy, kde-format
 msgid "Show import items' tool-tips"
 msgstr "Zobrazovať bublinové ti&py položiek albunu"
 
-#: core/utilities/setup/setuptooltip.cpp:337
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:24
 #, fuzzy, kde-format
 msgid "Import Information"
 msgstr "Informácie o komponentoch"
 
-#: core/utilities/setup/setuptooltip.cpp:342
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:29
 #, fuzzy, kde-format
 #| msgid "Item Name"
 msgid "Item name"
 msgstr "Názov položky"
 
-#: core/utilities/setup/setuptooltip.cpp:343
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:30
 #, fuzzy, kde-format
 msgid "Set this option to display the item name."
 msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
 
-#: core/utilities/setup/setuptooltip.cpp:345
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:32
 #, fuzzy, kde-format
 #| msgid "Item Name"
 msgid "Item date"
 msgstr "Názov položky"
 
-#: core/utilities/setup/setuptooltip.cpp:346
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:33
 #, fuzzy, kde-format
 msgid "Set this option to display the item date."
 msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
 
-#: core/utilities/setup/setuptooltip.cpp:348
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:35
 #, fuzzy, kde-format
 msgid "Item size"
 msgstr "Titulok obrázka"
 
-#: core/utilities/setup/setuptooltip.cpp:349
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:36
 #, fuzzy, kde-format
 msgid "Set this option to display the item size."
 msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
 
-#: core/utilities/setup/setuptooltip.cpp:351
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:38
 #, fuzzy, kde-format
 msgid "Item type"
 msgstr "Titulok obrázka"
 
-#: core/utilities/setup/setuptooltip.cpp:352
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:39
 #, fuzzy, kde-format
 msgid "Set this option to display the item type."
 msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka názov súboru."
 
-#: core/utilities/setup/setuptooltip.cpp:354
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:41
 #, fuzzy, kde-format
 msgid "Item dimensions"
 msgstr "Zobraziť rozmery obrázka"
 
-#: core/utilities/setup/setuptooltip.cpp:355
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:42
 #, fuzzy, kde-format
 msgid "Set this option to display the item dimensions."
 msgstr "<p>Zapnutím tejto voľby zobrazíte rozmery obrázka v pixeloch."
 
-#: core/utilities/setup/setuptooltip.cpp:358
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:45
 #, kde-format
 msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
@@ -71173,17 +71183,7 @@ msgstr ""
 "Poznámka: Tieto nastavenia vyžadujú povolenie možnosti \"Použiť metadáta "
 "súboru\" z karty \"Správanie\" nastavení fotoaparátu."
 
-#: core/utilities/setup/setuptooltip.cpp:408
-#, kde-format
-msgid "Icon Items"
-msgstr "Položky ikon"
-
-#: core/utilities/setup/setuptooltip.cpp:409
-#, fuzzy, kde-format
-msgid "Album Items"
-msgstr "Nastavenie albumu spracovaných položiek"
-
-#: core/utilities/setup/setuptooltip.cpp:410
+#: core/utilities/setup/tooltip/setuptooltip_import.cpp:93
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
