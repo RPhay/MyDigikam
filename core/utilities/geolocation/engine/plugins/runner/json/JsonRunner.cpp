@@ -41,30 +41,42 @@ JsonRunner::~JsonRunner()
 GeoDataDocument* JsonRunner::parseFile(const QString& fileName, DocumentRole role, QString& error)
 {
     // Check that the file exists
+
     QFile file(fileName);
 
-    if (! file.exists())
+    if (!file.exists())
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
-        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << error;
+
         return nullptr;
     }
 
     // Open file in the correct mode
-    file.open(QIODevice::ReadOnly);
 
-    // Create parser
-    JsonParser parser;
-
-    // Start parsing
-    if (! parser.read(&file))
+    if (!file.open(QIODevice::ReadOnly))
     {
-        error = QStringLiteral("Could not parse GeoJSON from %1").arg(fileName);
-        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
+        error = QStringLiteral("File %1 cannot be open").arg(fileName);
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << error;
+
         return nullptr;
     }
 
-    GeoDataDocument* document = parser.releaseDocument();
+    // Create parser
+
+    JsonParser parser;
+
+    // Start parsing
+
+    if (!parser.read(&file))
+    {
+        error = QStringLiteral("Could not parse GeoJSON from %1").arg(fileName);
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << error;
+
+        return nullptr;
+    }
+
+    GeoDataDocument* const document = parser.releaseDocument();
     file.close();
 
     document->setDocumentRole(role);
