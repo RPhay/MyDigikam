@@ -51,19 +51,31 @@ GeoDataDocument* CacheRunner::parseFile(const QString& fileName, DocumentRole ro
     if (!file.exists())
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
-        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << error;
+
         return nullptr;
     }
 
-    file.open(QIODevice::ReadOnly);
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        error = QStringLiteral("File %1 cannot be open").arg(fileName);
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << error;
+
+        return nullptr;
+    }
+
     QDataStream in(&file);
 
     // Read and check the header
+
     quint32 magic;
     in >> magic;
 
     if (magic != MarbleMagicNumber)
     {
+        error = QStringLiteral("File %1 is not a recognized format").arg(fileName);
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << error;
+
         return nullptr;
     }
 
@@ -74,7 +86,8 @@ GeoDataDocument* CacheRunner::parseFile(const QString& fileName, DocumentRole ro
     if (version < 015)
     {
         error = QStringLiteral("Bad cache file %1: Version %2 is too old, need 15 or later").arg(fileName).arg(version);
-        qCDebug(DIGIKAM_GEOENGINE_LOG) << error;
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << error;
+
         return nullptr;
     }
 
@@ -85,7 +98,7 @@ GeoDataDocument* CacheRunner::parseFile(const QString& fileName, DocumentRole ro
       }
     */
 
-    GeoDataDocument* document = new GeoDataDocument();
+    GeoDataDocument* const document = new GeoDataDocument();
     document->setDocumentRole(role);
 
     in.setVersion(QDataStream::Qt_4_2);
