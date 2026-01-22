@@ -56,6 +56,7 @@ public:
     inline uchar head() const
     {
         // return least significant byte as head of queue
+
         return data & 0x000000FF;
     }
 
@@ -63,12 +64,14 @@ public:
     {
         // drop current head by shifting by one byte
         // and append new value as most significant byte to queue
+
         data = ((data >> 8) & 0x00FFFFFF) | (value << 24);
     }
 
 private:
 
     // 4 byte long queue
+
     quint32 data;
 };
 
@@ -86,25 +89,29 @@ TextureColorizer::TextureColorizer(const QString& seafile,
     gradientPainter.begin(&gradientImage);
     gradientPainter.setPen(Qt::NoPen);
 
-
     int shadingStart = 120;
     QImage    shadingImage(16, 1, QImage::Format_RGB32);
     QPainter  shadingPainter;
     shadingPainter.begin(&shadingImage);
     shadingPainter.setPen(Qt::NoPen);
 
-    int offset = 0;
+    int offset       = 0;
 
     QStringList  filelist;
     filelist << seafile << landfile;
 
     for (const QString& filename : filelist)
     {
-
         QLinearGradient  gradient(0, 0, 256, 0);
 
         QFile  file(filename);
-        file.open(QIODevice::ReadOnly);
+
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Cannot load" << filename;
+            continue;
+        }
+
         QTextStream  stream(&file);    // read the data from the file
 
         QString      evalstrg;
@@ -115,7 +122,7 @@ TextureColorizer::TextureColorizer(const QString& seafile,
 
             if (!evalstrg.isEmpty() && evalstrg.contains(QLatin1Char('=')))
             {
-                QString  colorValue = evalstrg.left(evalstrg.indexOf(QLatin1Char('=')));
+                QString  colorValue    = evalstrg.left(evalstrg.indexOf(QLatin1Char('=')));
                 QString  colorPosition = evalstrg.mid(evalstrg.indexOf(QLatin1Char('=')) + 1);
                 gradient.setColorAt(colorPosition.toDouble(),
                                     QColor(colorValue));
@@ -135,7 +142,7 @@ TextureColorizer::TextureColorizer(const QString& seafile,
         const QRgb* gradientScanLine  = reinterpret_cast<QRgb*>(gradientImage.scanLine(0));
         const QRgb* shadingScanLine   = reinterpret_cast<QRgb*>(shadingImage.scanLine(0));
 
-        for (int i = 0; i < 256; ++i)
+        for (int i = 0 ; i < 256 ; ++i)
         {
 
             QRgb shadeColor = *(gradientScanLine + i);
@@ -145,7 +152,8 @@ TextureColorizer::TextureColorizer(const QString& seafile,
             shadingPainter.drawRect(0, 0, 16, 1);
 
             // populate texturepalette[][]
-            for (int j = 0; j < 16; ++j)
+
+            for (int j = 0 ; j < 16 ; ++j)
             {
                 texturepalette[j][offset + i] = *(shadingScanLine + j);
             }
@@ -194,10 +202,10 @@ void TextureColorizer::setShowRelief(bool show)
 
 void TextureColorizer::drawIndividualDocument(GeoPainter* painter, const GeoDataDocument* document)
 {
-    QVector<GeoDataFeature*>::ConstIterator i = document->constBegin();
+    QVector<GeoDataFeature*>::ConstIterator i   = document->constBegin();
     QVector<GeoDataFeature*>::ConstIterator end = document->constEnd();
 
-    for (; i != end; ++i)
+    for ( ; i != end ; ++i)
     {
         if (const GeoDataPlacemark* placemark = geodata_cast<GeoDataPlacemark>(*i))
         {
@@ -247,32 +255,36 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
         m_coastImage = QImage(viewport->size(), QImage::Format_RGB32);
     }
 
-    // update coast image
+    // update coast image.
+
     m_coastImage.fill(QColor(0, 0, 255, 0).rgb());
 
-    const bool antialiased =    mapQuality == HighQuality
-                                || mapQuality == PrintQuality;
+    const bool antialiased = (mapQuality == HighQuality) || (mapQuality == PrintQuality);
 
     GeoPainter painter(&m_coastImage, viewport, mapQuality);
     painter.setRenderHint(QPainter::Antialiasing, antialiased);
 
     drawTextureMap(&painter);
 
-    const qint64 radius = viewport->radius() * viewport->currentProjection()->clippingRadius();
+    const qint64 radius  = viewport->radius() * viewport->currentProjection()->clippingRadius();
 
     const int  imgheight = origimg->height();
     const int  imgwidth  = origimg->width();
     const int  imgrx     = imgwidth / 2;
     const int  imgry     = imgheight / 2;
-    // This variable is not used anywhere..
+
+    // This variable is not used anywhere.
+
     const int  imgradius = imgrx * imgrx + imgry * imgry;
 
     int     bump = 8;
 
-    if (radius * radius > imgradius
-        || !viewport->currentProjection()->isClippedToSphere())
+    if (
+        ((radius * radius) > imgradius) ||
+        !viewport->currentProjection()->isClippedToSphere()
+       )
     {
-        int yTop = 0;
+        int yTop    = 0;
         int yBottom = imgheight;
 
         if (!viewport->currentProjection()->isClippedToSphere() && !viewport->currentProjection()->traversablePoles())
@@ -282,15 +294,14 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
             GeoDataCoordinates ySouth(0, viewport->currentProjection()->minLat(), 0);
             viewport->screenCoordinates(yNorth, dummyX, realYTop);
             viewport->screenCoordinates(ySouth, dummyX, realYBottom);
-            yTop = qBound(qreal(0.0), realYTop, qreal(imgheight));
+            yTop    = qBound(qreal(0.0), realYTop, qreal(imgheight));
             yBottom = qBound(qreal(0.0), realYBottom, qreal(imgheight));
         }
 
         const int itEnd = yBottom;
 
-        for (int y = yTop; y < itEnd; ++y)
+        for (int y = yTop ; y < itEnd ; ++y)
         {
-
             QRgb*  writeData         = reinterpret_cast<QRgb*>(origimg->scanLine(y));
             const QRgb*  coastData   = reinterpret_cast<QRgb*>(m_coastImage.scanLine(y));
 
@@ -303,8 +314,8 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
                  readData < readDataEnd;
                  readData += 4, ++writeData, ++coastData)
             {
-
                 // Cheap Emboss / Bumpmapping
+
                 uchar&  grey = *readData; // qBlue(*data);
 
                 if (m_showRelief)
@@ -330,17 +341,17 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
 
     else
     {
-        int yTop    = (imgry - radius < 0) ? 0 : imgry - radius;
+        int yTop          = (imgry - radius < 0) ? 0 : imgry - radius;
         const int yBottom = (yTop == 0) ? imgheight : imgry + radius;
 
         EmbossFifo  emboss;
 
-        for (int y = yTop; y < yBottom; ++y)
+        for (int y = yTop ; y < yBottom ; ++y)
         {
             const int  dy = imgry - y;
-            int  rx = (int)sqrt((qreal)(radius * radius - dy * dy));
-            int  xLeft  = 0;
-            int  xRight = imgwidth;
+            int  rx       = (int)sqrt((qreal)(radius * radius - dy * dy));
+            int  xLeft    = 0;
+            int  xRight   = imgwidth;
 
             if (imgrx - rx > 0)
             {
