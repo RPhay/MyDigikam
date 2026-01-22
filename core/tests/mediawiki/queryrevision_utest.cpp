@@ -71,7 +71,14 @@ Revision constructRevision(int i, int p, int s, bool m,
 QString QStringFromFile(const QString& fileName)
 {
     QFile file( fileName );
-    file.open( QFile::ReadOnly );
+
+    if (!file.open( QFile::ReadOnly ))
+    {
+        qWarning() << "file" << fileName << "cannot be open";
+
+        return QString();
+    }
+
     QTextStream in(&file);
     QString scenario;
 
