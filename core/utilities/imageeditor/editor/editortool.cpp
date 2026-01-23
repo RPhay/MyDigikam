@@ -270,6 +270,20 @@ QString EditorTool::toolHelp() const
 void EditorTool::setBusy(bool state)
 {
     d->settings->setBusy(state);
+
+    ImageGuideWidget* const view = dynamic_cast<ImageGuideWidget*>(d->view);
+
+    if (view)
+    {
+        view->setBusy(state);
+    }
+
+    ImageRegionWidget* const view2 = dynamic_cast<ImageRegionWidget*>(d->view);
+
+    if (view2)
+    {
+        view2->setBusy(state);
+    }
 }
 
 void EditorTool::readSettings()
@@ -289,12 +303,14 @@ void EditorTool::slotResetSettings()
 
 void EditorTool::slotTimer()
 {
+    setBusy(true);
     d->timer->setSingleShot(true);
     d->timer->start(500);
 }
 
 void EditorTool::slotOk()
 {
+    setBusy(true);
     writeSettings();
     finalRendering();
 
@@ -303,6 +319,7 @@ void EditorTool::slotOk()
 
 void EditorTool::slotCancel()
 {
+    setBusy(false);
     writeSettings();
 
     Q_EMIT cancelClicked();
@@ -310,6 +327,7 @@ void EditorTool::slotCancel()
 
 void EditorTool::slotCloseTool()
 {
+    setBusy(false);
     slotCancel();
 }
 
@@ -547,6 +565,7 @@ void EditorToolThreaded::slotAbort()
     toolSettings()->enableButton(EditorToolSettings::Try,     true);
     toolSettings()->enableButton(EditorToolSettings::Default, true);
     toolView()->setEnabled(true);
+    setBusy(false);
 
     qApp->restoreOverrideCursor();
 

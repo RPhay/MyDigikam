@@ -48,6 +48,7 @@ public:
 
 public:
 
+    bool        busy                      = false;      //< Flag about busy state while filter is rendering in a separated thread.
     bool        sixteenBit                = false;
     bool        focus                     = false;
     bool        spotVisible               = false;
@@ -150,6 +151,16 @@ ImageGuideWidget::~ImageGuideWidget()
     delete d->maskPixmap;
     delete d->previewPixmap;
     delete d;
+}
+
+void ImageGuideWidget::setBusy(bool b)
+{
+    d->busy = b;
+}
+
+bool ImageGuideWidget::isBusy() const
+{
+    return d->busy;
 }
 
 ImageIface* ImageGuideWidget::imageIface() const

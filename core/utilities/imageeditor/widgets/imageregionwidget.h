@@ -72,6 +72,16 @@ public:
     void   ICCSettingsChanged();
     void   exposureSettingsChanged();
 
+    /**
+     * @brief: set an internal flag to prevent glitch in the canvas when preview filter render a region.
+     *         The canvas update can be processed only when the filter complete the job.
+     *         Typical case of dysfunction: zoom out the canvas with a preview redending an half of the image.
+     *         Due to a race condition, an older area is flush on the part of the image to render and still present while
+     *         the filter is done.
+     */
+    void   setBusy(bool b);
+    bool   isBusy()                                                 const;
+
 Q_SIGNALS:
 
     void signalOriginalClipFocusChanged();

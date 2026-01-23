@@ -171,7 +171,7 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
         painter->drawPixmap(dd->drawRect.topLeft(), pix);
     }
 
-    if (dd->paintExtras)
+    if (dd->paintExtras && !dd->view->isBusy())
     {
         paintExtraData(painter);
     }

@@ -90,6 +90,9 @@ public:
     void   ICCSettingsChanged();
     void   exposureSettingsChanged();
 
+    void   setBusy(bool b);
+    bool   isBusy()                            const;
+
 public Q_SLOTS:
 
     void slotChangeGuideColor(const QColor& color);

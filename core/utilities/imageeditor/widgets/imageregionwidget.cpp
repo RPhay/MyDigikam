@@ -53,6 +53,8 @@ public:
 
 public:
 
+    bool             busy                       = false;      //< Flag about busy state while filter is rendering in a separated thread.
+
     DImg             targetImage;
 
     bool             capturePtMode              = false;
@@ -89,8 +91,6 @@ ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
     connect(d_ptr->delay, SIGNAL(timeout()),
             this, SLOT(slotOriginalImageRegionChanged()));
 
-    connect(this, SIGNAL(viewportRectChanged(QRectF)),
-            this, SLOT(slotOriginalImageRegionChangedDelayed()));
 
     layout()->fitToWindow();
 
@@ -102,6 +102,16 @@ ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
             this, [this]()
         {
             updatePanIconWidget();
+        }
+    );
+
+    connect(this, &GraphicsDImgView::viewportRectChanged,
+            this, &ImageRegionWidget::slotOriginalImageRegionChangedDelayed);
+
+    connect(this, &GraphicsDImgView::signalZoomFactorChanged,
+            this, [this]()
+        {
+            setBusy(true);
         }
     );
 
@@ -124,6 +134,16 @@ ImageRegionWidget::~ImageRegionWidget()
 {
     delete d_ptr->item;
     delete d_ptr;
+}
+
+void ImageRegionWidget::setBusy(bool b)
+{
+    d_ptr->busy = b;
+}
+
+bool ImageRegionWidget::isBusy() const
+{
+    return d_ptr->busy;
 }
 
 void ImageRegionWidget::setHighLightPoints(const QPolygon& pointsList)
