@@ -56,12 +56,15 @@ target_compile_definitions(core_setupcommon_obj
 
 set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setuptemplate.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setupplugins.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuplighttable.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setupplugins.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupsurvey.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupdatabase.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuputils.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/template/setuptemplate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/template/setuptemplate_settings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/template/setuptemplate_slots.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/tooltip/setuptooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tooltip/setuptooltip_settings.cpp

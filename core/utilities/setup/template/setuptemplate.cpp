@@ -12,56 +12,10 @@
  *
  * ============================================================ */
 
-#include "setuptemplate.h"
-
-// Qt includes
-
-#include <QFrame>
-#include <QGridLayout>
-#include <QLabel>
-#include <QCheckBox>
-#include <QPushButton>
-#include <QApplication>
-#include <QStyle>
-#include <QIcon>
-#include <QMessageBox>
-
-// KDE includes
-
-#include <kconfiggroup.h>
-#include <ksharedconfig.h>
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "digikam_globals.h"
-#include "templatelist.h"
-#include "templatepanel.h"
-#include "altlangstredit.h"
-#include "dtextedit.h"
+#include "setuptemplate_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN SetupTemplate::Private
-{
-public:
-
-    Private() = default;
-
-public:
-
-    QPushButton*   addButton    = nullptr;
-    QPushButton*   delButton    = nullptr;
-    QPushButton*   repButton    = nullptr;
-    QCheckBox*     mergeCBox    = nullptr;
-
-    DTextEdit*     titleEdit    = nullptr;
-
-    TemplateList*  listView     = nullptr;
-
-    TemplatePanel* tview        = nullptr;
-};
 
 SetupTemplate::SetupTemplate(QWidget* const parent)
     : QScrollArea(parent),
@@ -171,42 +125,6 @@ SetupTemplate::~SetupTemplate()
     delete d;
 }
 
-void SetupTemplate::applySettings()
-{
-    QString title = d->titleEdit->text();
-
-    if (!title.isEmpty())
-    {
-        TemplateListItem* const item = dynamic_cast<TemplateListItem*>(d->listView->currentItem());
-
-        if (item)
-        {
-            d->tview->apply();
-
-            Template t = d->tview->getTemplate();
-            t.setTemplateTitle(title);
-            t.setTemplateMerge(d->mergeCBox->isChecked());
-            item->setTemplate(t);
-        }
-    }
-
-    d->listView->applySettings();
-
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
-    group.writeEntry(QLatin1String("Template Tab"), (int)(d->tview->currentIndex()));
-    config->sync();
-}
-
-void SetupTemplate::readSettings()
-{
-    d->listView->readSettings();
-
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
-    d->tview->setCurrentIndex((TemplatePanel::TemplateTab)group.readEntry(QLatin1String("Template Tab"), (int)TemplatePanel::RIGHTS));
-}
-
 void SetupTemplate::setTemplate(const Template& t)
 {
     if (!t.isNull())
@@ -220,90 +138,12 @@ void SetupTemplate::setTemplate(const Template& t)
     populateTemplate(t);
 }
 
-void SetupTemplate::slotSelectionChanged()
-{
-    TemplateListItem* const item = dynamic_cast<TemplateListItem*>(d->listView->currentItem());
-
-    if (!item)
-    {
-        d->delButton->setEnabled(false);
-        d->repButton->setEnabled(false);
-
-        return;
-    }
-
-    d->delButton->setEnabled(true);
-    d->repButton->setEnabled(true);
-    populateTemplate(item->getTemplate());
-}
-
 void SetupTemplate::populateTemplate(const Template& t)
 {
     d->tview->setTemplate(t);
     d->titleEdit->setText(t.templateTitle());
     d->mergeCBox->setChecked(t.templateMerge());
     d->titleEdit->setFocus();
-}
-
-void SetupTemplate::slotAddTemplate()
-{
-    QString title = d->titleEdit->text();
-    bool merge    = d->mergeCBox->isChecked();
-
-    if (title.isEmpty())
-    {
-        QMessageBox::critical(this, qApp->applicationName(), i18n("Cannot register new metadata template without title."));
-
-        return;
-    }
-
-    if (d->listView->find(title))
-    {
-        QMessageBox::critical(this, qApp->applicationName(), i18n("A metadata template named '%1' already exists.", title));
-
-        return;
-    }
-
-    d->tview->apply();
-
-    Template t = d->tview->getTemplate();
-    t.setTemplateTitle(title);
-    t.setTemplateMerge(merge);
-    TemplateListItem* const item = new TemplateListItem(d->listView, t);
-    d->listView->setCurrentItem(item);
-}
-
-void SetupTemplate::slotDelTemplate()
-{
-    TemplateListItem* const item = dynamic_cast<TemplateListItem*>(d->listView->currentItem());
-    delete item;
-}
-
-void SetupTemplate::slotRepTemplate()
-{
-    QString title = d->titleEdit->text();
-    bool merge    = d->mergeCBox->isChecked();
-
-    if (title.isEmpty())
-    {
-        QMessageBox::critical(this, qApp->applicationName(), i18n("Cannot register new metadata template without title."));
-
-        return;
-    }
-
-    TemplateListItem* const item = dynamic_cast<TemplateListItem*>(d->listView->currentItem());
-
-    if (!item)
-    {
-        return;
-    }
-
-    d->tview->apply();
-
-    Template t = d->tview->getTemplate();
-    t.setTemplateTitle(title);
-    t.setTemplateMerge(merge);
-    item->setTemplate(t);
 }
 
 } // namespace Digikam
