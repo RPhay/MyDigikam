@@ -22,50 +22,12 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "downloadinfo.h"
 
 class QNetworkReply;
 
 namespace Digikam
 {
-
-// ----------------------------------------------------------------------------
-
-class DIGIKAM_EXPORT DownloadInfo
-{
-public:
-
-    DownloadInfo()  = default;
-    DownloadInfo(const QString& _path,
-                 const QString& _name,
-                 const QString& _hash,
-                 const qint64&  _size);
-    DownloadInfo(const DownloadInfo& other);
-    ~DownloadInfo() = default;
-
-    DownloadInfo& operator=(const DownloadInfo& other);
-
-    /**
-     * The file path on the server.
-     */
-    QString path;
-
-    /**
-     * The file name on the server.
-     */
-    QString name;
-
-    /**
-     * The file hash as SHA256.
-     */
-    QString hash;
-
-    /**
-     * The file size.
-     */
-    qint64  size = 0;
-};
-
-// ----------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT FilesDownloader : public QDialog
 {
@@ -74,7 +36,7 @@ class DIGIKAM_EXPORT FilesDownloader : public QDialog
 public:
 
     explicit FilesDownloader(QWidget* const parent = nullptr);
-    ~FilesDownloader()  override;
+    ~FilesDownloader()                                  override;
 
     bool checkDownloadFiles() const;
     void startDownload();
@@ -94,7 +56,7 @@ private:
 
 private Q_SLOTS:
 
-    void reject()       override;
+    void reject()                                       override;
     void slotDownload();
     void slotHelp();
     void slotUpdateDownloadInfo();

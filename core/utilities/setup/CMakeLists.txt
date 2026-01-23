@@ -28,6 +28,9 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/icc/setupicc_slots.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader_helpers.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader_slots.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/downloader/downloadinfo.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettingswidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettings.cpp
