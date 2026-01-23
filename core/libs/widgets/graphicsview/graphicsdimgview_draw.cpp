@@ -65,7 +65,7 @@ void GraphicsDImgView::drawText(QPainter* p, const QRectF& rect, const QString& 
 /*
     p->translate(0.5, 0.5);
 */
-    p->drawRoundedRect(textRect, 10.0, 10.0);
+    p->drawRoundedRect(textRect, 3.0, 3.0);
 
     // Draw shadow and text
 

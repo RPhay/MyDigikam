@@ -317,7 +317,6 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
         QPoint pt;
         QRectF hpArea;
 
-
         for (int i = 0 ; i < dd->hightlightPoints.count() ; ++i)
         {
             pt                = dd->hightlightPoints.point(i);
