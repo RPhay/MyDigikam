@@ -33,6 +33,7 @@ ExifToolParser::Private::~Private()
 
 void ExifToolParser::Private::prepareProcess()
 {
+    error = false;
     currentPath.clear();
     errorString.clear();
     exifToolData.clear();
@@ -85,7 +86,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs,
 
     jumpToResultCommand(result, cmdId);
 
-    return true;
+    return !error;
 }
 
 void ExifToolParser::Private::prepareFileAndSidecar(QByteArrayList& cmdArgs, const QFileInfo& fi)

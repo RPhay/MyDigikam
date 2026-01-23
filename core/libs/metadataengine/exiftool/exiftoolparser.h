@@ -106,6 +106,11 @@ public:
      */
     bool exifToolAvailable()          const;
 
+    /**
+     * Check if ExifTool has reported an error.
+     */
+    bool hasError()                   const;
+
     //@}
 
 public:

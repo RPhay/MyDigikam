@@ -87,6 +87,11 @@ bool ExifToolParser::exifToolAvailable() const
     return ret;
 }
 
+bool ExifToolParser::hasError() const
+{
+    return d->error;
+}
+
 MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsDb)
 {
     QString name;

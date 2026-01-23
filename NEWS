@@ -426,7 +426,7 @@ BUGFIXES:
 354 --> 495265 - Album summary.
 355 --> 514767 - [Performance] Ignored directories should not be scanned at all during "Find new items".
 356 --> 514764 - "Find new items" background task is not stopped when closing digiKam.
-357 --> 
+357 --> 514972 - Exiftool does not create sidecar files for readonly elements.
 358 --> 
 359 --> 
 360 --> 

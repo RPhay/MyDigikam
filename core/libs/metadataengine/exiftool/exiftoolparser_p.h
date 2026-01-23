@@ -80,6 +80,7 @@ public:
 
     QMutex                         mutex;
 
+    bool                           error        = false;
     bool                           async        = false;
     QList<int>                     asyncRunning;
 };
