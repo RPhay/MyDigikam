@@ -26,6 +26,10 @@
 #include <QPen>
 #include <QApplication>
 
+// Local includes
+
+#include "previewtoolbar.h"
+
 namespace Digikam
 {
 
@@ -49,7 +53,7 @@ public:
     int       xpos                = 0;
     int       ypos                = 0;
 
-    Separator separator           = None;
+    int       previewMode         = PreviewToolBar::PreviewOriginalImage;
 
     double    zoomFactor          = 1.0;
 
@@ -74,9 +78,9 @@ PanIconWidget::~PanIconWidget()
     delete d;
 }
 
-void PanIconWidget::setSeparator(Separator sep)
+void PanIconWidget::setPreviewMode(int previewMode)
 {
-    d->separator = sep;
+    d->previewMode = previewMode;
 }
 
 void PanIconWidget::setImage(int previewWidth, int previewHeight, const QImage& image)
@@ -229,11 +233,11 @@ void PanIconWidget::paintEvent(QPaintEvent*)
     p.restore();
 
     // Fill the non suitable area and draw the separator
-    // from the selection if necessary.
+    // from the selection if necessary depending of the preview mode.
 
-    switch (d->separator)
+    switch (d->previewMode)
     {
-        case Horizontal:
+        case PreviewToolBar::PreviewBothImagesHorz:
         {
             p.fillRect(r.left(),  r.top() + r.height() / 2,
                        r.width(), r.height() / 2, QColor(0, 0, 0, 128));
@@ -242,10 +246,24 @@ void PanIconWidget::paintEvent(QPaintEvent*)
             break;
         }
 
-        case Vertical:
+        case PreviewToolBar::PreviewBothImagesHorzCont:
+        {
+            p.drawLine(r.left(),  r.top() + r.height() / 2,
+                       r.right(), r.top() + r.height() / 2);
+            break;
+        }
+
+        case PreviewToolBar::PreviewBothImagesVert:
         {
             p.fillRect(r.left() + r.width() / 2, r.top(),
                        r.width() / 2, r.height(), QColor(0, 0, 0, 128));
+            p.drawLine(r.left() + r.width() / 2, r.top(),
+                       r.left() + r.width() / 2, r.bottom());
+            break;
+        }
+
+        case PreviewToolBar::PreviewBothImagesVertCont:
+        {
             p.drawLine(r.left() + r.width() / 2, r.top(),
                        r.left() + r.width() / 2, r.bottom());
             break;

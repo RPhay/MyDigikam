@@ -180,27 +180,7 @@ void ImageRegionWidget::slotPreviewModeChanged(int mode)
 {
     d_ptr->renderingPreviewMode  = mode;
     d_ptr->item->setRenderingPreviewMode(mode);
-
-    PanIconWidget::Separator sep = PanIconWidget::None;
-
-    switch (mode)
-    {
-        case PreviewToolBar::PreviewBothImagesHorz:
-        case PreviewToolBar::PreviewBothImagesHorzCont:
-        {
-            sep = PanIconWidget::Horizontal;
-            break;
-        }
-
-        case PreviewToolBar::PreviewBothImagesVert:
-        case PreviewToolBar::PreviewBothImagesVertCont:
-        {
-            sep = PanIconWidget::Vertical;
-            break;
-        }
-    }
-
-    d_ptr->pan->setSeparator(sep);
+    d_ptr->pan->setPreviewMode(mode);
     slotOriginalImageRegionChanged();
     viewport()->update();
 }
