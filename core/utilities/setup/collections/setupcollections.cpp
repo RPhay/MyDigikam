@@ -38,7 +38,7 @@
 #include "applicationsettings.h"
 #include "setupcollectionview.h"
 #include "scancontroller.h"
-#include "setuputils.h"
+#include "setup.h"
 
 namespace Digikam
 {
@@ -215,7 +215,7 @@ void SetupCollections::applySettings()
     if (d->ignoreEdit->text() != ignoreDirectory)
     {
         CoreDbAccess().db()->setUserIgnoreDirectoryFilterSettings(
-            cleanUserFilterString(d->ignoreEdit->text(), true, true));
+            Setup::cleanUserFilterString(d->ignoreEdit->text(), true, true));
 
         ScanController::instance()->completeCollectionScanInBackground(false, false);
     }

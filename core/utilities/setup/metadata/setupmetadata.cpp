@@ -186,7 +186,7 @@ void SetupMetadata::applySettings()
     set.updateFileTimeStamp   = d->updateFileTimeStampBox->isChecked();
     set.rescanImageIfModified = d->rescanImageIfModifiedBox->isChecked();
 
-    set.sidecarExtensions     = cleanUserFilterString(d->extensionsEdit->text(), true);
+    set.sidecarExtensions     = Setup::cleanUserFilterString(d->extensionsEdit->text(), true);
     set.sidecarExtensions.removeAll(QLatin1String("xmp"));
     set.sidecarExtensions.removeDuplicates();
 
@@ -328,7 +328,7 @@ void SetupMetadata::slotExtensionsEdited(const QString& text)
     if (!text.isEmpty())
     {
         QList<QString> rawList   = s_rawFileExtensionsdWithDesc().keys();
-        QStringList extensions   = cleanUserFilterString(text, true);
+        QStringList extensions   = Setup::cleanUserFilterString(text, true);
         QStringList::iterator it = extensions.begin();
 
         for ( ; it != extensions.end() ; )

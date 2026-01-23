@@ -41,7 +41,7 @@
 #include "coredbaccess.h"
 #include "dlayoutbox.h"
 #include "scancontroller.h"
-#include "setuputils.h"
+#include "setup.h"
 
 namespace Digikam
 {

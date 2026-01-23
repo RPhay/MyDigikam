@@ -73,9 +73,9 @@ void SetupMime::applySettings()
         (d->audioFileFilterEdit->text() != audioFilterString)
        )
     {
-        CoreDbAccess().db()->setUserFilterSettings(cleanUserFilterString(d->imageFileFilterEdit->text()),
-                                                   cleanUserFilterString(d->movieFileFilterEdit->text()),
-                                                   cleanUserFilterString(d->audioFileFilterEdit->text()));
+        CoreDbAccess().db()->setUserFilterSettings(Setup::cleanUserFilterString(d->imageFileFilterEdit->text()),
+                                                   Setup::cleanUserFilterString(d->movieFileFilterEdit->text()),
+                                                   Setup::cleanUserFilterString(d->audioFileFilterEdit->text()));
         ScanController::instance()->completeCollectionScanInBackground(false, false);
     }
 }

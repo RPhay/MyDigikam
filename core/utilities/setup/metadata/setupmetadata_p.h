@@ -55,11 +55,11 @@
 #include "metaengine.h"
 #include "metadatapanel.h"
 #include "metaenginesettings.h"
-#include "setuputils.h"
 #include "exiftoolconfpanel.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
 #include "drawfiles.h"
+#include "setup.h"
 
 namespace Digikam
 {

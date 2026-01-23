@@ -12,12 +12,12 @@
  *
  * ============================================================ */
 
-#include "setuputils.h"
+#include "setup_p.h"
 
 namespace Digikam
 {
 
-QStringList cleanUserFilterString(const QString& filter,
+QStringList Setup::cleanUserFilterString(const QString& filter,
                                   const bool caseSensitive,
                                   const bool useSemicolon)
 {
