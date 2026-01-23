@@ -22,7 +22,10 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupeditoriface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupiofiles.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupraw.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setupicc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/icc/setupicc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/icc/setupicc_helpers.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/icc/setupicc_settings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/icc/setupicc_slots.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader.cpp
 
