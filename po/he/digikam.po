@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-22 00:55+0000\n"
-"PO-Revision-Date: 2026-01-21 18:41+0200\n"
+"PO-Revision-Date: 2026-01-22 09:04+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -15908,41 +15908,41 @@ msgid "Failed to save image."
 msgstr "כשל בעת הצגת קבצים ב %1"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:499
-#, fuzzy, kde-format
+#, kde-format
 msgid "Process failed"
-msgstr "קובצי תמונת"
+msgstr "התהליך נכשל"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:505
-#, fuzzy, kde-format
+#, kde-format
 msgid "Process Canceled"
-msgstr "קובצי תמונת"
+msgstr "התהליך בוטל"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:511
-#, fuzzy, kde-format
+#, kde-format
 msgid "File not supported"
-msgstr "LibLCMS"
+msgstr "הקובץ לא נתמך"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:517
-#, fuzzy, kde-format
+#, kde-format
 msgid "Internal error"
-msgstr "צעד אינטגרלי:"
+msgstr "שגיאה פנימית"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:540
-#, fuzzy, kde-format
+#, kde-format
 msgid "Processing %1"
-msgstr "קובצי תמונת"
+msgstr "%1 עובר עיבוד"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:37
-#, fuzzy, kde-format
+#, kde-format
 msgid "Raw File"
-msgstr "קבצי RAW"
+msgstr "קובץ גולמי (Raw)"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:286
-#, fuzzy, kde-format
+#, kde-format
 msgid "Target File"
-msgstr "אגד:"
+msgstr "קובץ יעד"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
@@ -15954,10 +15954,10 @@ msgid "Camera"
 msgstr "מצלמה"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "DNG Converter"
-msgstr "המרה"
+msgstr "ממיר DNG"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
 #, fuzzy, kde-format
@@ -15975,10 +15975,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
-msgstr "מרחב צבע"
+msgstr "ממיר DNG…"
 
 #: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:107
 #, fuzzy, kde-format
@@ -15994,16 +15994,16 @@ msgid "Include for Enfuse"
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:column Input file name"
 msgid "File Name"
 msgstr "שם קובץ"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:column Input image exposure"
 msgid "Exposure (EV)"
-msgstr "חשיפה"
+msgstr "חשיפה (EV)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:44
 #, fuzzy, kde-format
@@ -16036,28 +16036,28 @@ msgid "Levels: auto"
 msgstr "עדכון רמות צבע..."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Levels: <numid>%1</numid>"
-msgstr "מוקד/מיפתח:"
+msgstr "רמות: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:50
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Exposure: <numid>%1</numid>"
-msgstr "חשיפה:"
+msgstr "חשיפה: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:52
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Saturation: <numid>%1</numid>"
-msgstr "רוויה:"
+msgstr "רוויה: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Contrast: <numid>%1</numid>"
-msgstr "ניגוד:"
+msgstr "ניגודיות: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:109
 #, kde-format
@@ -16457,11 +16457,10 @@ msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
-#, fuzzy, kde-format
-#| msgid "Next Image"
+#, kde-format
 msgctxt "@info"
 msgid "this page"
-msgstr "תמונה הבאה"
+msgstr "העמוד הזה"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
 #, fuzzy, kde-format
@@ -16503,10 +16502,10 @@ msgid "All images must have the same dimensions."
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
-msgstr "חשיפה"
+msgstr "חשיפה (EV)"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:50
 #, fuzzy, kde-format
@@ -16597,36 +16596,36 @@ msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
-msgstr "קובצי תמונת"
+msgstr "קדם העיבוד נכשל."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:207
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Please check your bracketed images stack..."
-msgstr "כישלון בעת העתקת קובץ %1 מהמצלמה..."
+msgstr "נא לבדוק את ערמת התמונות שלך בסוגריים מרובעים…"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:291
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
-msgstr "תמונה קודמת"
+msgstr "נא לקרוא את הודעות העיבוד להלן."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
-msgstr "&כלים"
+msgstr "כלי תמונות בערמה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:125
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:156
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr "כשל בעת הצגת קבצים ב %1"
+msgstr "לא ניתן להעתיק את התמונה לקובץ ‚%1’"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:173
 #, fuzzy, kde-format
@@ -16641,124 +16640,124 @@ msgid "unavailable"
 msgstr "לא זמין"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
-msgstr "תצורת צבע:"
+msgstr "לא ניתן למצוא את ערכת העיצוב תחת ‚%1’"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Create directories"
-msgstr "הוספת תוויות זו"
+msgstr "יצירת תיקיות"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
-msgstr "תצורת צבע:"
+msgstr "לא ניתן ליצור את התיקייה ‚%1’"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Copying theme"
-msgstr "טעינת ערכות-תצוגה"
+msgstr "ערכת העיצוב מועתקת"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:138
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
-msgstr "תצורת צבע:"
+msgstr "לא ניתן להעתיק את ערכת העיצוב"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
-msgstr "מעמד את התמונה %1..."
+msgstr "יצירת תמונות וקובצי XML"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:160
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
-msgstr "חישוב הממוצע נכשל"
+msgstr "לא ניתן ליצור את gallery.xml"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:285
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
-msgstr "מוחק את הקובץ %1..."
+msgstr "נוצרים קבצים עבור „%1”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:327
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
-msgstr "מעמד את התמונה %1..."
+msgstr "נוצרים קובצי HTML"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:335
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
-msgstr "תצורת צבע:"
+msgstr "לא ניתן לטעון את קובץ ה־XSL‏ ‚%1’"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:344
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
-msgstr "תצורת צבע:"
+msgstr "לא ניתן לטעון את קובץ ה־XML‏ ‚%1’’"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:381
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
-msgstr "שגיאה בעת שמירת הקובץ"
+msgstr "שגיאה בעיבוד קובץ XML"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:390
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
-msgstr "כשל בעת הצגת קבצים ב %1"
+msgstr "לא ניתן לפתוח את ‚%1’ לכתיבה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
-msgstr "מעתיק למחשב את הקובץ %1..."
+msgstr "קבצים מרוחקים עבור „%1” יורדים"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:435
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
-msgstr "כישלון בעת מחיקת הקובץ \"%1\"."
+msgstr "לא ניתן לפתוח קובץ זמני"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:450
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
-msgstr "תצורת צבע:"
+msgstr "לא ניתן להוריד את %1"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
-msgstr "תמונה קודמת"
+msgstr "הקודם"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
-msgstr "בשבוע &הבא"
+msgstr "הבא"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
-msgstr "אוספי-תמונות"
+msgstr "רשימת אלבומים"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
-msgstr "תמונה מקורית:"
+msgstr "תמונה מקורית"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
@@ -16767,71 +16766,70 @@ msgid "Go Up"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
-msgstr "דגם/יצרן:"
+msgstr "יצרן"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "דגם"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
-msgstr "כותרת תמונה"
+msgstr "כיוון תמונה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
-msgstr "הצגת ממדיי התמונה"
+msgstr "רזולוציית X של התמונה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
-msgstr "הצגת ממדיי התמונה"
+msgstr "רזולוציית Y של התמונה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
-msgstr "הצגת ממדיי התמונה"
+msgstr "יחידת רזולוציית התמונה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
-msgstr "הוספת תאריך וזמן"
+msgstr "תאריך ושעה של התמונה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
-msgstr "דהייה:"
+msgstr "הצבת YCBCR"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "זמן חשיפה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
-msgstr "מספר:"
+msgstr "מספר F"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
-msgstr "זמן חשיפה"
+msgstr "מפתח חשיפה"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
 #, fuzzy, kde-format
@@ -17879,7 +17877,7 @@ msgstr "%1 עובר עיבוד"
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
-msgstr "התהליךנכשל"
+msgstr "התהליך נכשל"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:443
 #, kde-format

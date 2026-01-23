@@ -2864,12 +2864,10 @@ msgid "Show Magnifier"
 msgstr "显示放大镜"
 
 #: core/app/views/preview/itempreviewview.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Preview magnifier tool zoom factor"
-#| msgid "Zoom Factor:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
-msgstr "缩放倍数："
+msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:255
 #, kde-format
