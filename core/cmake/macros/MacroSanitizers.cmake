@@ -9,11 +9,16 @@ macro(ENABLE_COMPILER_SANITIZERS)
 
     if(ENABLE_SANITIZERS)
 
-        find_library(ASAN_LIBRARIES NAMES asan)
+        # NOTE: just one sanitizer can be used at configuration time, else compilation fail.
 
-        if (ASAN_LIBRARIES)
+        include(FindASan)
+#        include(FindUBSan)
+#        include(FindMSan)
+#        include(FindTSan)
 
-            message(STATUS "Found AddressSanitizer library: ${ASAN_LIBRARIES}")
+        if (HAVE_ADDRESS_SANITIZER)
+
+            message(STATUS "Found AddressSanitizer library: ${CMAKE_CXX_FLAGS_ASAN}")
             set(ASAN_FOUND TRUE CACHE INTERNAL "")
             set(ECM_ENABLE_SANITIZERS ${ECM_ENABLE_SANITIZERS} "address")
 
@@ -25,27 +30,9 @@ macro(ENABLE_COMPILER_SANITIZERS)
 
         ###
 
-        find_library(LSAN_LIBRARIES NAMES lsan)
+        if (HAVE_UNDEFINED_BEHAVIOR_SANITIZER)
 
-        if (LSAN_LIBRARIES)
-
-            message(STATUS "Found LeakSanitizer library: ${LSAN_LIBRARIES}")
-            set(LSAN_FOUND TRUE CACHE INTERNAL "")
-            set(ECM_ENABLE_SANITIZERS ${ECM_ENABLE_SANITIZERS} "leak")
-
-        else()
-
-            message(STATUS "Could not find LeakSanitizer library. Please install liblsan...")
-
-        endif()
-
-        ###
-
-        find_library(UBSAN_LIBRARIES NAMES ubsan)
-
-        if (UBSAN_LIBRARIES)
-
-            message(STATUS "Found UndefinedBehaviorSanitizer library: ${UBSAN_LIBRARIES}")
+            message(STATUS "Found UndefinedBehaviorSanitizer library: ${CMAKE_CXX_FLAGS_UBSAN}")
             set(UBSAN_FOUND TRUE CACHE INTERNAL "")
             set(ECM_ENABLE_SANITIZERS ${ECM_ENABLE_SANITIZERS} "undefined")
 
@@ -57,11 +44,9 @@ macro(ENABLE_COMPILER_SANITIZERS)
 
         ###
 
-        find_library(MSAN_LIBRARIES NAMES msan)
+        if (HAVE_MEMORY_SANITIZER)
 
-        if (MSAN_LIBRARIES)
-
-            message(STATUS "Found MemorySanitizer library: ${MSAN_LIBRARIES}")
+            message(STATUS "Found MemorySanitizer library: ${CMAKE_CXX_FLAGS_MSAN}")
             set(MSAN_FOUND TRUE CACHE INTERNAL "")
             set(ECM_ENABLE_SANITIZERS ${ECM_ENABLE_SANITIZERS} "memory")
 
@@ -73,11 +58,9 @@ macro(ENABLE_COMPILER_SANITIZERS)
 
         ###
 
-        find_library(MSAN_LIBRARIES NAMES tsan)
+        if (HAVE_THREAD_SANITIZER)
 
-        if (TSAN_LIBRARIES)
-
-            message(STATUS "Found ThreadSanitizer library: ${TSAN_LIBRARIES}")
+            message(STATUS "Found ThreadSanitizer library: ${CMAKE_CXX_FLAGS_TSAN}")
             set(TSAN_FOUND TRUE CACHE INTERNAL "")
             set(ECM_ENABLE_SANITIZERS ${ECM_ENABLE_SANITIZERS} "thread")
 
