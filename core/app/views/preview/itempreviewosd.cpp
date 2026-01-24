@@ -75,6 +75,8 @@ void ItemPreviewOsd::setItemInfo(const ItemInfo& inf)
 void ItemPreviewOsd::setOsdEnabled(bool val)
 {
     d->enabled = val;
+
+    update();
 }
 
 void ItemPreviewOsd::paintEvent(QPaintEvent*)

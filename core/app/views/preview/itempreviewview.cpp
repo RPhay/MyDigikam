@@ -115,6 +115,7 @@ public:
     QAction*               magnifierAction      = nullptr;
     QAction*               underExposureAction  = nullptr;
     QAction*               overExposureAction   = nullptr;
+    QAction*               showPropertiesAction = nullptr;
 
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
@@ -258,6 +259,10 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->overExposureAction       = new QAction(QIcon::fromTheme(QLatin1String("overexposure")),
                                               i18nc("@info:tooltip", "Over-Exposure Indicator"),                this);
     d->overExposureAction->setCheckable(true);
+
+    d->showPropertiesAction     = new QAction(QIcon::fromTheme(QLatin1String("description")),
+                                              i18nc("@info:tooltip", "Show OSD Information"),                   this);
+    d->showPropertiesAction->setCheckable(true);
 
     d->fullscreenAction         = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                               i18nc("@info:tooltip", "Show Fullscreen"),                        this);
@@ -406,6 +411,14 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
         }
     );
 
+    connect(d->showPropertiesAction, &QAction::toggled,
+            this, [this](bool checked)
+        {
+            d->osd->setOsdEnabled(checked);
+            ApplicationSettings::instance()->setPreviewOverlay(checked);
+        }
+    );
+
     connect(d->fullscreenAction, SIGNAL(triggered()),
             this, SLOT(slotSlideShowCurrent()));
 
@@ -466,6 +479,7 @@ void ItemPreviewView::setupOverlays()
     d->toolBar->addAction(d->overExposureAction);
     d->toolBar->addAction(d->showFocusPointAction);
     d->toolBar->addAction(d->addFocusPointAction);
+    d->toolBar->addAction(d->showPropertiesAction);
     d->toolBar->addAction(d->hostActions.value(QLatin1String("ColorManaged")));
 
     d->toolBar->addWidget(d->labelsBox);
@@ -623,6 +637,8 @@ void ItemPreviewView::showEvent(QShowEvent* e)
     GraphicsDImgView::showEvent(e);
     d->faceGroup->setVisible(d->peopleToggleAction->isChecked());
     d->focusPointGroup->setVisible(d->showFocusPointAction->isChecked());
+    d->showPropertiesAction->setChecked(ApplicationSettings::instance()->getPreviewOverlay());
+    d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
 }
 
 void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
@@ -867,6 +883,7 @@ void ItemPreviewView::slotSetupChanged()
         }
     }
 
+    d->showPropertiesAction->setChecked(ApplicationSettings::instance()->getPreviewOverlay());
     d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
     d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));
 

@@ -63,6 +63,8 @@ public:
 
     HostActionsMap         hostActions;
 
+    QAction*               showPropertiesAction = nullptr;
+
     RatingWidget*          ratingWidget         = nullptr;
     ColorLabelSelector*    clWidget             = nullptr;
     PickLabelSelector*     plWidget             = nullptr;
@@ -88,24 +90,39 @@ ItemPreviewVideo::ItemPreviewVideo(QWidget* const parent)
                                                 "  stop: 1 rgba(170, 170, 170, 70%)); "
                                                 "border: 1px solid rgba(170, 170, 170, 10%); } ");
 
-    d->labelsBox                = new DHBox(this);
+    d->labelsBox                  = new DHBox(this);
     d->labelsBox->setStyleSheet(btnStyleSheet.arg(QLatin1String("QFrame")));
 
-    d->clWidget                 = new ColorLabelSelector(d->labelsBox);
+    QToolButton* const showOsdBtn = new QToolButton(d->labelsBox);
+    d->showPropertiesAction       = new QAction(QIcon::fromTheme(QLatin1String("description")),
+                                              i18nc("@info:tooltip", "Show OSD Information"), showOsdBtn);
+    d->showPropertiesAction->setCheckable(true);
+    showOsdBtn->setDefaultAction(d->showPropertiesAction);
+    showOsdBtn->setStyleSheet(btnStyleSheet.arg(QLatin1String("QToolButton")));
+
+    d->clWidget                   = new ColorLabelSelector(d->labelsBox);
     d->clWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
     d->clWidget->setFocusPolicy(Qt::NoFocus);
 
-    d->plWidget                 = new PickLabelSelector(d->labelsBox);
+    d->plWidget                   = new PickLabelSelector(d->labelsBox);
     d->plWidget->setStyleSheet(btnStyleSheet.arg(QLatin1String("QPushButton")));
     d->plWidget->setFocusPolicy(Qt::NoFocus);
 
-    d->ratingWidget             = new RatingWidget(d->labelsBox);
+    d->ratingWidget               = new RatingWidget(d->labelsBox);
     d->ratingWidget->setTracking(false);
     d->ratingWidget->setFading(false);
     d->ratingWidget->setFocusPolicy(Qt::NoFocus);
     d->labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
 
     // ---
+
+    connect(d->showPropertiesAction, &QAction::toggled,
+            this, [this](bool checked)
+        {
+            d->osd->setOsdEnabled(checked);
+            ApplicationSettings::instance()->setPreviewOverlay(checked);
+        }
+    );
 
     connect(d->ratingWidget, SIGNAL(signalRatingChanged(int)),
             this, SLOT(slotAssignRating(int)));
@@ -225,7 +242,8 @@ void ItemPreviewVideo::setItemInfo(const ItemInfo& info, const ItemInfo& previou
     d->info = info;
     setCurrentItem(info.fileUrl(), !previous.isNull(), !next.isNull());
     d->osd->setItemInfo(info);
-    d->osd->setOsdEnabled(ApplicationSettings::instance()->getPreviewOverlay());
+    d->showPropertiesAction->setChecked(ApplicationSettings::instance()->getPreviewOverlay());
+    d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
 
     d->clWidget->setColorLabel((ColorLabel)info.colorLabel());
     d->plWidget->setPickLabel((PickLabel)info.pickLabel());
@@ -266,6 +284,7 @@ void ItemPreviewVideo::slotSetupChanged()
 {
     setToolbarVisible(ApplicationSettings::instance()->getPreviewShowIcons());
     d->osdSettings.readFromConfig(QLatin1String("Preview OSD Settings"));
+    d->showPropertiesAction->setChecked(ApplicationSettings::instance()->getPreviewOverlay());
     d->osd->setVisible(ApplicationSettings::instance()->getPreviewOverlay());
 }
 
