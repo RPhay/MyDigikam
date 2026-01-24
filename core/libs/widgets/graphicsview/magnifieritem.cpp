@@ -115,7 +115,7 @@ void MagnifierItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QW
     // Create a ellipsis path for the clipping.
 
     QPainterPath clipPath;
-    clipPath.addEllipse(boundingRect().adjusted(2, 2, -2, -2));         // Adjustement to highlight border.
+    clipPath.addEllipse(boundingRect().adjusted(2, 2, -2, -2));         // Adjustment to highlight border.
 
     // Apply clipping.
 

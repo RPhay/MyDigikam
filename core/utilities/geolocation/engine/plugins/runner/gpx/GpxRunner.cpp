@@ -54,7 +54,7 @@ GeoDataDocument* GpxRunner::parseFile(const QString& fileName, DocumentRole role
 
     if (!file.open(QIODevice::ReadOnly))
     {
-        error = QStringLiteral("File %1 cannt be open").arg(fileName);
+        error = QStringLiteral("File %1 cannot be open").arg(fileName);
         qCWarning(DIGIKAM_GEOENGINE_LOG) << error;
 
         return nullptr;

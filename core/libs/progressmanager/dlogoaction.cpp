@@ -181,15 +181,15 @@ QPixmap DLogoAction::renderAnimationFrame(int beamPosition)
 
             if (qAlpha(frameImage.pixel(x, y)) > 0)
             {
-                // Compute the distance with the center of the lightening.
+                // Compute the distance with the center of the lightning.
 
                 int distToCenter = abs(x - beamPosition);
 
-                // If the pixel is inside the lightening.
+                // If the pixel is inside the lightning.
 
                 if (distToCenter < halfBeamWidth)
                 {
-                    // Compute the intensity (symetrical gradient).
+                    // Compute the intensity (symmetrical gradient).
 
                     float intensity = 1.0F - (static_cast<float>(distToCenter) / halfBeamWidth);
                     intensity       = qMin(intensity, 1.0f); // Limit to 1.0
