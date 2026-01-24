@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 00:55+0000\n"
+"POT-Creation-Date: 2026-01-24 00:41+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -10234,7 +10234,7 @@ msgid "Energy function"
 msgstr ""
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/icc/setupicc.cpp:344
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Thiết lập cấp cao"
@@ -29117,7 +29117,7 @@ msgstr "Đừng &hỏi lại"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:180
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -36337,7 +36337,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:154
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:57
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "Tải về"
@@ -49375,7 +49375,7 @@ msgstr "T&rang trí"
 msgid "Effec&ts"
 msgstr "Hiệu ứng che mờ"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:122
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -49443,13 +49443,13 @@ msgid ""
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Vùng chọn"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -56132,7 +56132,7 @@ msgstr "Vùng chọn"
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
-#: core/utilities/setup/setuptemplate.cpp:114
+#: core/utilities/setup/template/setuptemplate.cpp:68
 #, kde-format
 msgid "&Remove"
 msgstr "&Xoá"
@@ -57242,7 +57242,7 @@ msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:717
+#: core/utilities/setup/icc/setupicc_helpers.cpp:60
 #, fuzzy, kde-format
 msgid "No Profile Available"
 msgstr "Không có sẵn hồ sơ..."
@@ -57290,7 +57290,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:719
+#: core/utilities/setup/icc/setupicc_helpers.cpp:62
 #, fuzzy, kde-format
 msgid "No Input Profile Available"
 msgstr "Không có sẵn hồ sơ..."
@@ -57342,7 +57342,7 @@ msgid "Profile of the output device to simulate:"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:392
+#: core/utilities/setup/icc/setupicc.cpp:295
 #, fuzzy, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -57378,7 +57378,7 @@ msgid "Highlighting color:"
 msgstr "Độ đều đặn:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, fuzzy, kde-format
 #| msgid "Profile Error"
 msgctxt "@title:window"
@@ -57386,7 +57386,7 @@ msgid "Profile Error"
 msgstr "Lỗi hồ sơ"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, fuzzy, kde-format
 msgid "No profile is selected."
 msgstr "Chưa chọn mục"
@@ -57446,7 +57446,7 @@ msgstr ""
 "Ảnh « %1 » đã bị sửa đổi.\n"
 "Bạn có muốn lưu nó không?"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:388
+#: core/utilities/imageeditor/editor/editortool.cpp:406
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
@@ -58248,13 +58248,13 @@ msgid ""
 "\"%1\""
 msgstr "Lỗi nạp ảnh « %1 »"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:91
 #, fuzzy, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Trước"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:93
 #, fuzzy, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -58276,7 +58276,7 @@ msgstr "Trước"
 msgid "After"
 msgstr "Sau"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
 #, fuzzy, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -62970,7 +62970,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:94
 #: core/utilities/setup/camera/setupcamera.cpp:273
 #: core/utilities/setup/camera/setupcamera.cpp:396
-#: core/utilities/setup/setuptemplate.cpp:112
+#: core/utilities/setup/template/setuptemplate.cpp:66
 #, kde-format
 msgid "&Add..."
 msgstr "&Thêm..."
@@ -63886,67 +63886,72 @@ msgstr "Chọ&n mục mới"
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:141
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:44
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Đang tải về tệp %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:60
 #: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:66
 #, kde-format
 msgid "Location of the face management model files:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:74
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:75
 #, fuzzy, kde-format
 msgid "Sets the target address to download the face management model files to."
 msgstr "<p>Bật tuỳ chọn này để hiển thị tên của tập ảnh."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:77
 #, fuzzy, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Điều chỉnh:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:78
 #, fuzzy, kde-format
 msgid "Use Face Management feature"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:79
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:80
 #, fuzzy, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Điều chỉnh:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:278
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:279
+#, kde-format
+msgid "Clean up unused AI/DNN model files..."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:45
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:287
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:54
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Tải về"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:288
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:55
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -63958,33 +63963,33 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:296
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:63
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Thêm hạt mảng thuốc..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:135
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:458
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:159
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:166
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "Xuất"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:480
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:181
 #, fuzzy, kde-format
 msgid "File on the server is too large."
 msgstr "Lỗi in tệp: « %1 »"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:591
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:256
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -63994,7 +63999,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:596
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:261
 #, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -64004,20 +64009,15 @@ msgid ""
 "downloading the files.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:268
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:629
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:294
 #, kde-format
 msgid "All files for the selected features were found."
-msgstr ""
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:657
-#, kde-format
-msgid "Clean up unused AI/DNN model files..."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
@@ -64458,6 +64458,356 @@ msgid ""
 "specification for storing images in the ISOBMFF container (as HEIF) "
 "compressed with AOMedia Video 1 (AV1) codec, an open and royalty-free "
 "encoding format. </item>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:42
+#, kde-format
+msgid "Enable Color Management"
+msgstr "Bật khả năng quản lí màu"
+
+#: core/utilities/setup/icc/setupicc.cpp:43
+#, kde-format
+msgid ""
+"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
+"Management is disabled</li></ul>"
+msgstr ""
+"<ul><li>Chọn: khả năng quản lí màu đã được bật</li><li>Không chọn: khả năng "
+"quản lí màu đã bị tắt</li></ul>"
+
+#: core/utilities/setup/icc/setupicc.cpp:50
+#, kde-format
+msgid "Visit Little CMS project website"
+msgstr "Thăm nơi Mạng của dự án Little CMS"
+
+#: core/utilities/setup/icc/setupicc.cpp:60
+#, fuzzy, kde-format
+msgid "Working Color Space"
+msgstr "Miền màu"
+
+#: core/utilities/setup/icc/setupicc.cpp:66
+#, kde-format
+msgid ""
+"<p>This is the color space all the images will be converted to when opened "
+"(if you choose to convert) and the profile that will be embedded when "
+"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
+"IEC61966-2.1</b></p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:72
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected workspace profile.</p>"
+msgstr ""
+"<p>Bạn có thể bấm cái nút này để xem thông tin chi tiết hơn về hồ sơ vùng "
+"làm việc đã chọn.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:86
+#, kde-format
+msgid "When the profile of an image does not match the working color space"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:94
+#: core/utilities/setup/icc/setupicc.cpp:125
+#, fuzzy, kde-format
+msgid "Ask when opening the image"
+msgstr "Hỏi khi mở ảnh trong bộ sửa ảnh"
+
+#: core/utilities/setup/icc/setupicc.cpp:95
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will ask if you want to convert to the working space, keep "
+"the embedded profile or discard the embedded profile and assign a different "
+"one.</p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:101
+#, kde-format
+msgid "Convert the image to the working color space"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:102
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will convert the image's color information to the working "
+"color space. This changes the pixel data, but not the appearance of the "
+"image.</p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:118
+#, fuzzy, kde-format
+msgid "When an image has no color profile information"
+msgstr "Thông tin hồ sơ màu ICC"
+
+#: core/utilities/setup/icc/setupicc.cpp:126
+#, kde-format
+msgid ""
+"<p>If an image has no embedded color profile, digiKam will ask which color "
+"space shall be used to interpret the image and to which color space it shall "
+"be transformed for editing.</p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:130
+#, kde-format
+msgid "Assume it is using the sRGB color space (Internet standard)"
+msgstr ""
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:136
+#, kde-format
+msgid "and convert it to the working color space"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:149
+#, kde-format
+msgid "Assume it is using the working color space"
+msgstr ""
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:155
+#, kde-format
+msgid "Convert it from default input color space to working space"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:174
+#, kde-format
+msgid "When loading a RAW file with uncalibrated colors"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:181
+#, fuzzy, kde-format
+msgid "Ask for the input profile"
+msgstr "Gán hồ sơ"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:187
+#, fuzzy, kde-format
+msgid "Automatic color correction"
+msgstr "Sửa chữa tự động..."
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:193
+#, kde-format
+msgid "Convert it from the default input profile"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:217
+#, fuzzy, kde-format
+msgid "Color Managed View"
+msgstr "Ô xem đã Quản lí Màu"
+
+#: core/utilities/setup/icc/setupicc.cpp:222
+#, fuzzy, kde-format
+msgid "Monitor profile:"
+msgstr "Bộ trình bày:"
+
+#: core/utilities/setup/icc/setupicc.cpp:226
+#, kde-format
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:234
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected monitor profile.</p>"
+msgstr ""
+"<p>Bạn có thể bấm cái nút này để xem thông tin chi tiết hơn về hồ sơ bộ "
+"trình bày đã chọn.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:238
+#, fuzzy, kde-format
+msgid "Use color managed view in editor"
+msgstr "Dùng ô xem có màu được quản lí (cảnh báo : chậm)"
+
+#: core/utilities/setup/icc/setupicc.cpp:239
+#, fuzzy, kde-format
+msgid ""
+"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
+"to show your pictures in the Image Editor window with a color correction "
+"adapted to your monitor. You can at any time toggle this option from the "
+"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
+"depending on the speed of your computer.</p>"
+msgstr ""
+"<p>Bật tuỳ chọn này nếu bạn muốn dùng <b>Hồ sơ màu bộ trình bày</b> để hiển "
+"thị ảnh trong cửa sổ của bộ sửa ảnh với độ sửa chữa màu thích hợp với bộ "
+"trình bày đó. Cảnh báo : tuỳ chọn này có thể vẽ chậm ảnh trên màn hình, đặc "
+"biệt trên máy tính chạy chậm.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:246
+#, fuzzy, kde-format
+msgid "Use color managed view for previews and thumbnails"
+msgstr "Dùng ô xem có màu được quản lí (cảnh báo : chậm)"
+
+#: core/utilities/setup/icc/setupicc.cpp:262
+#, fuzzy, kde-format
+msgid "Camera and Scanner"
+msgstr "Sổ tay máy ảnh"
+
+#: core/utilities/setup/icc/setupicc.cpp:267
+#, fuzzy, kde-format
+msgid "Default input color profile:"
+msgstr "Dùng hồ sơ kiểm lỗi mặc định"
+
+#: core/utilities/setup/icc/setupicc.cpp:269
+#, kde-format
+msgid ""
+"<p>This is the default color profile for your input device (that is your "
+"camera - or your scanner). A camera input profile is recommended for correct "
+"conversion of RAW images in 16bit. Some of the options about loading "
+"behavior above refer to this profile.</p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:276
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected input profile.</p>"
+msgstr ""
+"<p>Bạn có thể bấm cái nút này để xem thông tin chi tiết hơn về hồ sơ nhập đã "
+"chọn.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:287
+#, fuzzy, kde-format
+msgid "Printing and Proofing"
+msgstr "Hiện ngày tạo ảnh"
+
+#: core/utilities/setup/icc/setupicc.cpp:292
+#, fuzzy, kde-format
+msgid "Output device profile:"
+msgstr "Thiết bị xuất"
+
+#: core/utilities/setup/icc/setupicc.cpp:301
+#, fuzzy, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected proofing profile.</p>"
+msgstr ""
+"<p>Bạn có thể bấm cái nút này để xem thông tin chi tiết hơn về hồ sơ kiểm "
+"lỗi mềm đã chọn.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:312
+#, fuzzy, kde-format
+msgid "Color Profiles Repository"
+msgstr "Thư mục hồ sơ màu"
+
+#: core/utilities/setup/icc/setupicc.cpp:317
+#, kde-format
+msgid ""
+"digiKam looks for ICC profiles in a number of <a href='default'>default "
+"locations</a>. You can specify an additional folder:"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:325
+#, kde-format
+msgid ""
+"<p>digiKam searches ICC profiles in default system folders and ships itself "
+"a few selected profiles. Store all your additional color profiles in the "
+"directory set here.</p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:348
+#, kde-format
+msgid "Use black point compensation"
+msgstr "Dùng bù điểm đen"
+
+#: core/utilities/setup/icc/setupicc.cpp:349
+#, kde-format
+msgid ""
+"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
+"maximum black levels of digital files and the black capabilities of various "
+"digital devices.</p>"
+msgstr ""
+"<p><b>Bù điểm đen</b> là cách điều chỉnh giữa những cấp màu đen tối đa của "
+"tệp điện số và khả năng màu đen của thiết bị điện số khác nhau.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:355
+#, kde-format
+msgid "Rendering Intents:"
+msgstr "Ý định vẽ:"
+
+#: core/utilities/setup/icc/setupicc.cpp:370
+#, fuzzy, kde-format
+#| msgid "Behavior"
+msgctxt "@title: icc panel tab"
+msgid "Behavior"
+msgstr "Ứng xử"
+
+#: core/utilities/setup/icc/setupicc.cpp:371
+#, fuzzy, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Profiles"
+msgstr "ID hồ sơ :"
+
+#: core/utilities/setup/icc/setupicc.cpp:372
+#, fuzzy, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Advanced"
+msgstr "Cấp cao"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:45
+#, fuzzy, kde-format
+msgid "No ICC profiles files found."
+msgstr "<p>Tiếc là không có tệp hồ sơ ICC nằm trong "
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:61
+#, fuzzy, kde-format
+msgid "No Display Profile Available"
+msgstr "Không có sẵn hồ sơ..."
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:63
+#, fuzzy, kde-format
+msgid "No Output Profile Available"
+msgstr "Không có sẵn hồ sơ..."
+
+#: core/utilities/setup/icc/setupicc_settings.cpp:160
+#, fuzzy, kde-format
+msgid "Monitor Profile From System Settings"
+msgstr "Thiết lập hồ sơ ICC"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:116
+#, fuzzy, kde-format
+msgctxt "none of the paths"
+msgid "none"
+msgstr "Không có"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:125
+#, kde-format
+msgid ""
+"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
+"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
+"Windows/Color/</li></ul>On your system, currently these paths exist and are "
+"scanned:<ul><li>%3</li></ul>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:141
+#, kde-format
+msgid ""
+"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
+"exist and are scanned:<ul><li>%2</li></ul>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:160
+#, kde-format
+msgid ""
+"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
+"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
+"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
+"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:128
@@ -65953,13 +66303,13 @@ msgstr ""
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:130
+#: core/utilities/setup/setup.cpp:39
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Tạo thư mục ?"
 
-#: core/utilities/setup/setup.cpp:131
+#: core/utilities/setup/setup.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65967,14 +66317,14 @@ msgid ""
 "Customize database settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:135
+#: core/utilities/setup/setup.cpp:44
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Tập hợp"
 
-#: core/utilities/setup/setup.cpp:136
+#: core/utilities/setup/setup.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65982,13 +66332,13 @@ msgid ""
 "Set root albums locations"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:140
+#: core/utilities/setup/setup.cpp:49
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "&Xem"
 
-#: core/utilities/setup/setup.cpp:141
+#: core/utilities/setup/setup.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -65996,13 +66346,13 @@ msgid ""
 "Customize the look of the views"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:145
+#: core/utilities/setup/setup.cpp:54
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Mẹo công cụ"
 
-#: core/utilities/setup/setup.cpp:146
+#: core/utilities/setup/setup.cpp:55
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66010,14 +66360,14 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:59
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Siêu dữ liệu"
 
-#: core/utilities/setup/setup.cpp:151
+#: core/utilities/setup/setup.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66025,13 +66375,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:64
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Tương đối"
 
-#: core/utilities/setup/setup.cpp:156
+#: core/utilities/setup/setup.cpp:65
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66039,14 +66389,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:69
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Bộ sửa ảnh"
 
-#: core/utilities/setup/setup.cpp:161
+#: core/utilities/setup/setup.cpp:70
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66054,14 +66404,14 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:74
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Quản lí màu"
 
-#: core/utilities/setup/setup.cpp:166
+#: core/utilities/setup/setup.cpp:75
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66069,14 +66419,14 @@ msgid ""
 "Customize the color management settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:79
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Bảng ánh sáng"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66084,13 +66434,13 @@ msgid ""
 "Customize tool used to compare items"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:84
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:85
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66098,14 +66448,14 @@ msgid ""
 "Customize tool used to review items"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:98
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Máy ảnh"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66113,13 +66463,13 @@ msgid ""
 "Manage your camera devices"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:106
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Phần bổ sung Kipi"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66127,14 +66477,14 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:111
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Lặt vặt"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66199,355 +66549,6 @@ msgid ""
 "but with an overlay frame annotated \"For Development Only\". For more "
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:139
-#, kde-format
-msgid "Enable Color Management"
-msgstr "Bật khả năng quản lí màu"
-
-#: core/utilities/setup/setupicc.cpp:140
-#, kde-format
-msgid ""
-"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
-"Management is disabled</li></ul>"
-msgstr ""
-"<ul><li>Chọn: khả năng quản lí màu đã được bật</li><li>Không chọn: khả năng "
-"quản lí màu đã bị tắt</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:147
-#, kde-format
-msgid "Visit Little CMS project website"
-msgstr "Thăm nơi Mạng của dự án Little CMS"
-
-#: core/utilities/setup/setupicc.cpp:157
-#, fuzzy, kde-format
-msgid "Working Color Space"
-msgstr "Miền màu"
-
-#: core/utilities/setup/setupicc.cpp:163
-#, kde-format
-msgid ""
-"<p>This is the color space all the images will be converted to when opened "
-"(if you choose to convert) and the profile that will be embedded when "
-"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
-"IEC61966-2.1</b></p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:169
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected workspace profile.</p>"
-msgstr ""
-"<p>Bạn có thể bấm cái nút này để xem thông tin chi tiết hơn về hồ sơ vùng "
-"làm việc đã chọn.</p>"
-
-#: core/utilities/setup/setupicc.cpp:183
-#, kde-format
-msgid "When the profile of an image does not match the working color space"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:191 core/utilities/setup/setupicc.cpp:222
-#, fuzzy, kde-format
-msgid "Ask when opening the image"
-msgstr "Hỏi khi mở ảnh trong bộ sửa ảnh"
-
-#: core/utilities/setup/setupicc.cpp:192
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will ask if you want to convert to the working space, keep "
-"the embedded profile or discard the embedded profile and assign a different "
-"one.</p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:198
-#, kde-format
-msgid "Convert the image to the working color space"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:199
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will convert the image's color information to the working "
-"color space. This changes the pixel data, but not the appearance of the "
-"image.</p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:215
-#, fuzzy, kde-format
-msgid "When an image has no color profile information"
-msgstr "Thông tin hồ sơ màu ICC"
-
-#: core/utilities/setup/setupicc.cpp:223
-#, kde-format
-msgid ""
-"<p>If an image has no embedded color profile, digiKam will ask which color "
-"space shall be used to interpret the image and to which color space it shall "
-"be transformed for editing.</p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:227
-#, kde-format
-msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr ""
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:233
-#, kde-format
-msgid "and convert it to the working color space"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:246
-#, kde-format
-msgid "Assume it is using the working color space"
-msgstr ""
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:252
-#, kde-format
-msgid "Convert it from default input color space to working space"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:271
-#, kde-format
-msgid "When loading a RAW file with uncalibrated colors"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:278
-#, fuzzy, kde-format
-msgid "Ask for the input profile"
-msgstr "Gán hồ sơ"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:284
-#, fuzzy, kde-format
-msgid "Automatic color correction"
-msgstr "Sửa chữa tự động..."
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:290
-#, kde-format
-msgid "Convert it from the default input profile"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:314
-#, fuzzy, kde-format
-msgid "Color Managed View"
-msgstr "Ô xem đã Quản lí Màu"
-
-#: core/utilities/setup/setupicc.cpp:319
-#, fuzzy, kde-format
-msgid "Monitor profile:"
-msgstr "Bộ trình bày:"
-
-#: core/utilities/setup/setupicc.cpp:323
-#, kde-format
-msgid ""
-"<p>If your desktop do not provide a color profile for your screen, select "
-"here the default one. If no profile is set, sRGB will be used as fail-back. "
-"In all cases, the color management workflow will try to get in first the "
-"profile set for your monitor in your the desktop</p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:331
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected monitor profile.</p>"
-msgstr ""
-"<p>Bạn có thể bấm cái nút này để xem thông tin chi tiết hơn về hồ sơ bộ "
-"trình bày đã chọn.</p>"
-
-#: core/utilities/setup/setupicc.cpp:335
-#, fuzzy, kde-format
-msgid "Use color managed view in editor"
-msgstr "Dùng ô xem có màu được quản lí (cảnh báo : chậm)"
-
-#: core/utilities/setup/setupicc.cpp:336
-#, fuzzy, kde-format
-msgid ""
-"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
-"to show your pictures in the Image Editor window with a color correction "
-"adapted to your monitor. You can at any time toggle this option from the "
-"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
-"depending on the speed of your computer.</p>"
-msgstr ""
-"<p>Bật tuỳ chọn này nếu bạn muốn dùng <b>Hồ sơ màu bộ trình bày</b> để hiển "
-"thị ảnh trong cửa sổ của bộ sửa ảnh với độ sửa chữa màu thích hợp với bộ "
-"trình bày đó. Cảnh báo : tuỳ chọn này có thể vẽ chậm ảnh trên màn hình, đặc "
-"biệt trên máy tính chạy chậm.</p>"
-
-#: core/utilities/setup/setupicc.cpp:343
-#, fuzzy, kde-format
-msgid "Use color managed view for previews and thumbnails"
-msgstr "Dùng ô xem có màu được quản lí (cảnh báo : chậm)"
-
-#: core/utilities/setup/setupicc.cpp:359
-#, fuzzy, kde-format
-msgid "Camera and Scanner"
-msgstr "Sổ tay máy ảnh"
-
-#: core/utilities/setup/setupicc.cpp:364
-#, fuzzy, kde-format
-msgid "Default input color profile:"
-msgstr "Dùng hồ sơ kiểm lỗi mặc định"
-
-#: core/utilities/setup/setupicc.cpp:366
-#, kde-format
-msgid ""
-"<p>This is the default color profile for your input device (that is your "
-"camera - or your scanner). A camera input profile is recommended for correct "
-"conversion of RAW images in 16bit. Some of the options about loading "
-"behavior above refer to this profile.</p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:373
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected input profile.</p>"
-msgstr ""
-"<p>Bạn có thể bấm cái nút này để xem thông tin chi tiết hơn về hồ sơ nhập đã "
-"chọn.</p>"
-
-#: core/utilities/setup/setupicc.cpp:384
-#, fuzzy, kde-format
-msgid "Printing and Proofing"
-msgstr "Hiện ngày tạo ảnh"
-
-#: core/utilities/setup/setupicc.cpp:389
-#, fuzzy, kde-format
-msgid "Output device profile:"
-msgstr "Thiết bị xuất"
-
-#: core/utilities/setup/setupicc.cpp:398
-#, fuzzy, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected proofing profile.</p>"
-msgstr ""
-"<p>Bạn có thể bấm cái nút này để xem thông tin chi tiết hơn về hồ sơ kiểm "
-"lỗi mềm đã chọn.</p>"
-
-#: core/utilities/setup/setupicc.cpp:409
-#, fuzzy, kde-format
-msgid "Color Profiles Repository"
-msgstr "Thư mục hồ sơ màu"
-
-#: core/utilities/setup/setupicc.cpp:414
-#, kde-format
-msgid ""
-"digiKam looks for ICC profiles in a number of <a href='default'>default "
-"locations</a>. You can specify an additional folder:"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:422
-#, kde-format
-msgid ""
-"<p>digiKam searches ICC profiles in default system folders and ships itself "
-"a few selected profiles. Store all your additional color profiles in the "
-"directory set here.</p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:445
-#, kde-format
-msgid "Use black point compensation"
-msgstr "Dùng bù điểm đen"
-
-#: core/utilities/setup/setupicc.cpp:446
-#, kde-format
-msgid ""
-"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
-"maximum black levels of digital files and the black capabilities of various "
-"digital devices.</p>"
-msgstr ""
-"<p><b>Bù điểm đen</b> là cách điều chỉnh giữa những cấp màu đen tối đa của "
-"tệp điện số và khả năng màu đen của thiết bị điện số khác nhau.</p>"
-
-#: core/utilities/setup/setupicc.cpp:452
-#, kde-format
-msgid "Rendering Intents:"
-msgstr "Ý định vẽ:"
-
-#: core/utilities/setup/setupicc.cpp:467
-#, fuzzy, kde-format
-#| msgid "Behavior"
-msgctxt "@title: icc panel tab"
-msgid "Behavior"
-msgstr "Ứng xử"
-
-#: core/utilities/setup/setupicc.cpp:468
-#, fuzzy, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Profiles"
-msgstr "ID hồ sơ :"
-
-#: core/utilities/setup/setupicc.cpp:469
-#, fuzzy, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Advanced"
-msgstr "Cấp cao"
-
-#: core/utilities/setup/setupicc.cpp:670
-#, fuzzy, kde-format
-msgid "Monitor Profile From System Settings"
-msgstr "Thiết lập hồ sơ ICC"
-
-#: core/utilities/setup/setupicc.cpp:702
-#, fuzzy, kde-format
-msgid "No ICC profiles files found."
-msgstr "<p>Tiếc là không có tệp hồ sơ ICC nằm trong "
-
-#: core/utilities/setup/setupicc.cpp:718
-#, fuzzy, kde-format
-msgid "No Display Profile Available"
-msgstr "Không có sẵn hồ sơ..."
-
-#: core/utilities/setup/setupicc.cpp:720
-#, fuzzy, kde-format
-msgid "No Output Profile Available"
-msgstr "Không có sẵn hồ sơ..."
-
-#: core/utilities/setup/setupicc.cpp:854
-#, fuzzy, kde-format
-msgctxt "none of the paths"
-msgid "none"
-msgstr "Không có"
-
-#: core/utilities/setup/setupicc.cpp:863
-#, kde-format
-msgid ""
-"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
-"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
-"Windows/Color/</li></ul>On your system, currently these paths exist and are "
-"scanned:<ul><li>%3</li></ul>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:879
-#, kde-format
-msgid ""
-"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
-"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
-"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
-"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
-"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
-"exist and are scanned:<ul><li>%2</li></ul>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:898
-#, kde-format
-msgid ""
-"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
-"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
 msgstr ""
 
 #: core/utilities/setup/setuplighttable.cpp:81
@@ -66616,29 +66617,29 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Tệp ảnh"
 
-#: core/utilities/setup/setuptemplate.cpp:81
+#: core/utilities/setup/template/setuptemplate.cpp:35
 #, fuzzy, kde-format
 msgid "Template Title:"
 msgstr "Tương đối"
 
-#: core/utilities/setup/setuptemplate.cpp:84
+#: core/utilities/setup/template/setuptemplate.cpp:38
 #, fuzzy, kde-format
 msgid "Enter the metadata template title here."
 msgstr "<p>Ở đây hãy chọn độ xoay đoạn cần dùng."
 
-#: core/utilities/setup/setuptemplate.cpp:85
+#: core/utilities/setup/template/setuptemplate.cpp:39
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
 "identify a template in your collection.</p>"
 msgstr ""
 
-#: core/utilities/setup/setuptemplate.cpp:89
+#: core/utilities/setup/template/setuptemplate.cpp:43
 #, fuzzy, kde-format
 msgid "Merge Template"
 msgstr "Tương đối"
 
-#: core/utilities/setup/setuptemplate.cpp:97
+#: core/utilities/setup/template/setuptemplate.cpp:51
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -66648,18 +66649,18 @@ msgid ""
 "contextual help for details.</b>"
 msgstr ""
 
-#: core/utilities/setup/setuptemplate.cpp:116
+#: core/utilities/setup/template/setuptemplate.cpp:70
 #, fuzzy, kde-format
 msgid "&Replace..."
 msgstr "Tương đối"
 
-#: core/utilities/setup/setuptemplate.cpp:255
-#: core/utilities/setup/setuptemplate.cpp:289
+#: core/utilities/setup/template/setuptemplate_slots.cpp:44
+#: core/utilities/setup/template/setuptemplate_slots.cpp:78
 #, fuzzy, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "<p>Ở đây hãy chọn độ xoay đoạn cần dùng."
 
-#: core/utilities/setup/setuptemplate.cpp:262
+#: core/utilities/setup/template/setuptemplate_slots.cpp:51
 #, fuzzy, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "Tên thẻ đã có."

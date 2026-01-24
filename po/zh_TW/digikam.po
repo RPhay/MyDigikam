@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 00:55+0000\n"
+"POT-Creation-Date: 2026-01-24 00:41+0000\n"
 "PO-Revision-Date: 2025-10-01 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -10339,7 +10339,7 @@ msgid "Energy function"
 msgstr "能量函數"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/icc/setupicc.cpp:344
 #, kde-format
 msgid "Advanced Settings"
 msgstr "進階設定"
@@ -30076,7 +30076,7 @@ msgstr "不要再詢問"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:180
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37422,7 +37422,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:154
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:57
 #, kde-format
 msgid "Download"
 msgstr "下載"
@@ -50661,7 +50661,7 @@ msgstr "裝飾(&D)"
 msgid "Effec&ts"
 msgstr "效果(&T)"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:122
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -50746,13 +50746,13 @@ msgid ""
 "save images</i></qt>"
 msgstr "<qt>儲存影像檔設定值<br/><i>設定影像儲存的預設組態設定</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "地理位置"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -57544,7 +57544,7 @@ msgstr "地理位置"
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
-#: core/utilities/setup/setuptemplate.cpp:114
+#: core/utilities/setup/template/setuptemplate.cpp:68
 #, kde-format
 msgid "&Remove"
 msgstr "移除(&R)"
@@ -58701,7 +58701,7 @@ msgstr "然後轉換為正在使用的色彩空間"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:717
+#: core/utilities/setup/icc/setupicc_helpers.cpp:60
 #, kde-format
 msgid "No Profile Available"
 msgstr "沒有可用的描述檔"
@@ -58749,7 +58749,7 @@ msgid ""
 msgstr "請選擇用來建立這張影像的裝置 (相機) 輸入色彩描述檔："
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:719
+#: core/utilities/setup/icc/setupicc_helpers.cpp:62
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "沒有可用的輸入描述檔"
@@ -58801,7 +58801,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "要模擬的輸出裝置描述檔："
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:392
+#: core/utilities/setup/icc/setupicc.cpp:295
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -58834,14 +58834,14 @@ msgid "Highlighting color:"
 msgstr "高亮度標示顏色："
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "描述檔錯誤"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, kde-format
 msgid "No profile is selected."
 msgstr "沒有選擇描述檔。"
@@ -58901,7 +58901,7 @@ msgstr ""
 "目前的影像已經修改。\n"
 "您要儲存您的變更嗎？"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:388
+#: core/utilities/imageeditor/editor/editortool.cpp:406
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
@@ -59644,13 +59644,13 @@ msgid ""
 "\"%1\""
 msgstr "載入影像「%1」失敗"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:91
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "之前："
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:93
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -59672,7 +59672,7 @@ msgstr "之前："
 msgid "After"
 msgstr "之後："
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -64536,7 +64536,7 @@ msgstr "您可以在這裡加入或移除相簿的類別類型，以便加強 di
 #: core/utilities/setup/album/setupcategory.cpp:94
 #: core/utilities/setup/camera/setupcamera.cpp:273
 #: core/utilities/setup/camera/setupcamera.cpp:396
-#: core/utilities/setup/setuptemplate.cpp:112
+#: core/utilities/setup/template/setuptemplate.cpp:66
 #, kde-format
 msgid "&Add..."
 msgstr "新增(&A)..."
@@ -65539,7 +65539,7 @@ msgstr "選擇分類"
 msgid "Your collection will use this category:"
 msgstr "以這個名稱建立您的新收藏："
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:141
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Download Required Files"
@@ -65547,66 +65547,71 @@ msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "下載需要的檔案"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:60
 #: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:66
 #, kde-format
 msgid "Location of the face management model files:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:74
 #, fuzzy, kde-format
 #| msgid "Use Face Detection feature"
 msgctxt "@title:window"
 msgid "Face Management Model Target"
 msgstr "使用臉孔偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:75
 #, fuzzy, kde-format
 #| msgid "Set this option to display the item date."
 msgid "Sets the target address to download the face management model files to."
 msgstr "設定此選項會顯示項目日期。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:77
 #, fuzzy, kde-format
 #| msgid "Use Auto Tags Assignment feature"
 msgid "Use AI Auto-Tools features"
 msgstr "使用自動標籤指定功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:78
 #, fuzzy, kde-format
 #| msgid "Use Face Detection feature"
 msgid "Use Face Management feature"
 msgstr "使用臉孔偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:79
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "使用美感偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:80
 #, fuzzy, kde-format
 #| msgid "Use Auto Tags Assignment feature"
 msgid "Use AutoTags Assignment feature"
 msgstr "使用自動標籤指定功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:278
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:279
+#, kde-format
+msgid "Clean up unused AI/DNN model files..."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:45
 #, fuzzy, kde-format
 #| msgid "All files were downloaded successfully."
 msgid "All model files were downloaded successfully."
 msgstr "已成功下載所有檔案。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:287
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下載錯誤"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:288
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:55
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65618,34 +65623,34 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:296
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:63
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "加入膠片顆粒"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:135
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:458
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:159
 #, kde-format
 msgid "File write error."
 msgstr "檔案寫入錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:166
 #, kde-format
 msgid "File open error."
 msgstr "檔案開啟錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:480
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:181
 #, kde-format
 msgid "File on the server is too large."
 msgstr "伺服器上的檔案太大了。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:591
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:256
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65655,7 +65660,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:596
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:261
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path"
 #| msgid ""
@@ -65682,22 +65687,17 @@ msgstr ""
 "法正常運作。</p><p>這些檔案會下載到 %1。</p><p><b>下載成功後您將會需要重新啟"
 "動 digiKam。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:268
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:629
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:294
 #, fuzzy, kde-format
 #| msgid "All files of the selected features were found."
 msgid "All files for the selected features were found."
 msgstr "所選功能的所有檔案皆已找到。"
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:657
-#, kde-format
-msgid "Clean up unused AI/DNN model files..."
-msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
@@ -66174,6 +66174,376 @@ msgid ""
 "compressed with AOMedia Video 1 (AV1) codec, an open and royalty-free "
 "encoding format. </item>"
 msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:42
+#, kde-format
+msgid "Enable Color Management"
+msgstr "啟用色彩管理"
+
+#: core/utilities/setup/icc/setupicc.cpp:43
+#, kde-format
+msgid ""
+"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
+"Management is disabled</li></ul>"
+msgstr "<ul><li>勾選：啟用色彩管理</li><li>未勾選：停用色彩管理</li></ul>"
+
+#: core/utilities/setup/icc/setupicc.cpp:50
+#, kde-format
+msgid "Visit Little CMS project website"
+msgstr "造訪 Little CMS 專案網站"
+
+#: core/utilities/setup/icc/setupicc.cpp:60
+#, kde-format
+msgid "Working Color Space"
+msgstr "使用的色彩空間"
+
+#: core/utilities/setup/icc/setupicc.cpp:66
+#, kde-format
+msgid ""
+"<p>This is the color space all the images will be converted to when opened "
+"(if you choose to convert) and the profile that will be embedded when "
+"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
+"IEC61966-2.1</b></p>"
+msgstr ""
+"<p>這是所有影像開啟時會轉換成的色彩空間 (如果您選擇轉換) 而且此描述檔會在儲存"
+"時內嵌到影像。比較安全、適合的選擇是 <b>Adobe RGB (1998)</b> 和 <b>sRGB "
+"IEC61966-2.1</b></p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:72
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected workspace profile.</p>"
+msgstr ""
+"<p>您可以使用這個按鈕來取得更多關於選擇的工作色域描述檔的詳細資訊。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:86
+#, kde-format
+msgid "When the profile of an image does not match the working color space"
+msgstr "當影像的描述檔與正在使用的色彩空間不符合時"
+
+#: core/utilities/setup/icc/setupicc.cpp:94
+#: core/utilities/setup/icc/setupicc.cpp:125
+#, kde-format
+msgid "Ask when opening the image"
+msgstr "當開啟影像時詢問"
+
+#: core/utilities/setup/icc/setupicc.cpp:95
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will ask if you want to convert to the working space, keep "
+"the embedded profile or discard the embedded profile and assign a different "
+"one.</p>"
+msgstr ""
+"<p>如果影像內嵌的色彩描述檔不符合正在使用的色彩空間描述檔，digiKam 會詢問是否"
+"您要轉換成正在使用的色彩空間、維持內嵌的描述檔還是要捨棄內嵌的描述檔並指定其"
+"他描述檔。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:101
+#, kde-format
+msgid "Convert the image to the working color space"
+msgstr "將影像轉換成正在使用的色彩空間"
+
+#: core/utilities/setup/icc/setupicc.cpp:102
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will convert the image's color information to the working "
+"color space. This changes the pixel data, but not the appearance of the "
+"image.</p>"
+msgstr ""
+"<p>如果影像內嵌的色彩描述檔不符合正在使用的色彩空間描述檔，digiKam 會將影像的"
+"色彩資訊轉換成正在使用的色彩空間。這會改變像素資料，但是不會改變影像的外觀。"
+"</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:118
+#, kde-format
+msgid "When an image has no color profile information"
+msgstr "當影像沒有色彩描述檔資訊時"
+
+#: core/utilities/setup/icc/setupicc.cpp:126
+#, kde-format
+msgid ""
+"<p>If an image has no embedded color profile, digiKam will ask which color "
+"space shall be used to interpret the image and to which color space it shall "
+"be transformed for editing.</p>"
+msgstr ""
+"<p>如果影像沒有內嵌的色彩描，digiKam 會詢問應該使用哪一個色彩描述檔來詮釋影像"
+"以及編輯時應該轉換成何種色彩空間。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:130
+#, kde-format
+msgid "Assume it is using the sRGB color space (Internet standard)"
+msgstr "假設它正在使用 sRGB 色彩空間 (網際網路標準)"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:136
+#, kde-format
+msgid "and convert it to the working color space"
+msgstr "並將它換成正在使用的色彩空間"
+
+#: core/utilities/setup/icc/setupicc.cpp:149
+#, kde-format
+msgid "Assume it is using the working color space"
+msgstr "假設它正在使用目前使用中的色彩空間"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:155
+#, kde-format
+msgid "Convert it from default input color space to working space"
+msgstr "將它從預設輸入色彩空間轉換成正在使用的色彩空間"
+
+#: core/utilities/setup/icc/setupicc.cpp:174
+#, kde-format
+msgid "When loading a RAW file with uncalibrated colors"
+msgstr "當載入未經校準顏色的 RAW 檔時"
+
+#: core/utilities/setup/icc/setupicc.cpp:181
+#, kde-format
+msgid "Ask for the input profile"
+msgstr "要求輸入描述檔"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:187
+#, kde-format
+msgid "Automatic color correction"
+msgstr "自動顏色校正"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:193
+#, kde-format
+msgid "Convert it from the default input profile"
+msgstr "從預設的輸入描述檔轉換它"
+
+#: core/utilities/setup/icc/setupicc.cpp:217
+#, kde-format
+msgid "Color Managed View"
+msgstr "色彩管理檢視"
+
+#: core/utilities/setup/icc/setupicc.cpp:222
+#, kde-format
+msgid "Monitor profile:"
+msgstr "螢幕描述檔："
+
+#: core/utilities/setup/icc/setupicc.cpp:226
+#, kde-format
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:234
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected monitor profile.</p>"
+msgstr "<p>您可以使用這個按鈕來取得更多關於選擇的螢幕描述檔的詳細資訊。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:238
+#, kde-format
+msgid "Use color managed view in editor"
+msgstr "在編輯器中使用的色彩管理"
+
+#: core/utilities/setup/icc/setupicc.cpp:239
+#, kde-format
+msgid ""
+"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
+"to show your pictures in the Image Editor window with a color correction "
+"adapted to your monitor. You can at any time toggle this option from the "
+"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
+"depending on the speed of your computer.</p>"
+msgstr ""
+"<p>如果您想要使用您的<b>螢幕色彩描述檔</b>來顯示在影像編輯器視窗的圖片並適當"
+"地校正螢幕的顏色，請啟用這個選項。<i>警告</i>：這會使影像演算變慢，取決於您的"
+"電腦速度。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:246
+#, kde-format
+msgid "Use color managed view for previews and thumbnails"
+msgstr "預覽和縮圖使用的色彩管理"
+
+#: core/utilities/setup/icc/setupicc.cpp:262
+#, kde-format
+msgid "Camera and Scanner"
+msgstr "相機和掃描器"
+
+#: core/utilities/setup/icc/setupicc.cpp:267
+#, kde-format
+msgid "Default input color profile:"
+msgstr "預設輸入色彩描述檔："
+
+#: core/utilities/setup/icc/setupicc.cpp:269
+#, kde-format
+msgid ""
+"<p>This is the default color profile for your input device (that is your "
+"camera - or your scanner). A camera input profile is recommended for correct "
+"conversion of RAW images in 16bit. Some of the options about loading "
+"behavior above refer to this profile.</p>"
+msgstr ""
+"<p>這是輸入裝置的預設色彩描述檔 (您的相機 - 或您的掃描機)。為了正確轉換 16 位"
+"元 RAW 影像所推薦的相機輸入描述檔。下面有關於這個描述擋載入行為的一些選項。</"
+"p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:276
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected input profile.</p>"
+msgstr "<p>您可以使用這個按鈕來取得更多關於選擇的輸入描述檔的詳細資訊。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:287
+#, kde-format
+msgid "Printing and Proofing"
+msgstr "列印和校樣"
+
+#: core/utilities/setup/icc/setupicc.cpp:292
+#, kde-format
+msgid "Output device profile:"
+msgstr "輸出裝置描述檔："
+
+#: core/utilities/setup/icc/setupicc.cpp:301
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected proofing profile.</p>"
+msgstr "<p>您可以使用這個按鈕來取得更多關於選擇的校樣描述檔的詳細資訊。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:312
+#, kde-format
+msgid "Color Profiles Repository"
+msgstr "色彩描述檔儲存庫"
+
+#: core/utilities/setup/icc/setupicc.cpp:317
+#, kde-format
+msgid ""
+"digiKam looks for ICC profiles in a number of <a href='default'>default "
+"locations</a>. You can specify an additional folder:"
+msgstr ""
+"digiKam 會在一些<a href='default'>預設位置</a>中尋找 ICC 描述檔。您可以指定一"
+"個額外的資料夾："
+
+#: core/utilities/setup/icc/setupicc.cpp:325
+#, kde-format
+msgid ""
+"<p>digiKam searches ICC profiles in default system folders and ships itself "
+"a few selected profiles. Store all your additional color profiles in the "
+"directory set here.</p>"
+msgstr ""
+"<p>digiKam 會在預設的系統資料夾內搜尋 ICC 描述檔並運送所選擇的幾個描述檔。在"
+"這裡設定儲存在資料夾中所有附加的描述檔。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:348
+#, kde-format
+msgid "Use black point compensation"
+msgstr "使用黑點補償"
+
+#: core/utilities/setup/icc/setupicc.cpp:349
+#, kde-format
+msgid ""
+"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
+"maximum black levels of digital files and the black capabilities of various "
+"digital devices.</p>"
+msgstr ""
+"<p><b>黑點補償</b>是在數位檔案的最大黑階和各種數位裝置的黑色能力之間作調整的"
+"方法。</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:355
+#, kde-format
+msgid "Rendering Intents:"
+msgstr "色彩演算比對方式："
+
+#: core/utilities/setup/icc/setupicc.cpp:370
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Behavior"
+msgstr "行為"
+
+#: core/utilities/setup/icc/setupicc.cpp:371
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Profiles"
+msgstr "描述檔"
+
+#: core/utilities/setup/icc/setupicc.cpp:372
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Advanced"
+msgstr "進階"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:45
+#, kde-format
+msgid "No ICC profiles files found."
+msgstr "沒有找到任何 ICC 描述檔。"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:61
+#, kde-format
+msgid "No Display Profile Available"
+msgstr "沒有可用的顯示描述檔"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:63
+#, kde-format
+msgid "No Output Profile Available"
+msgstr "沒有可用的輸出描述檔"
+
+#: core/utilities/setup/icc/setupicc_settings.cpp:160
+#, kde-format
+msgid "Monitor Profile From System Settings"
+msgstr "來自系統設定的螢幕描述檔"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:116
+#, kde-format
+msgctxt "none of the paths"
+msgid "none"
+msgstr "無"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:125
+#, kde-format
+msgid ""
+"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
+"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
+"Windows/Color/</li></ul>On your system, currently these paths exist and are "
+"scanned:<ul><li>%3</li></ul>"
+msgstr ""
+"在 Windows 上，預設搜尋路徑包含<ul><li>%1/Windows/System32/spool/drivers/"
+"color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/Windows/Color/</"
+"li></ul>在您的系統上，這些路徑目前存在而會被掃描：<ul><li>%3</li></ul>"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:141
+#, kde-format
+msgid ""
+"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
+"exist and are scanned:<ul><li>%2</li></ul>"
+msgstr ""
+"在 macOS 上，預設搜尋路徑包含<ul><li>/System/Library/ColorSync/Profiles</"
+"li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/Profiles</"
+"li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/digikam/"
+"profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
+"li><li>~/.color/icc/</li></ul>在您的系統上，這些路徑目前存在而會被掃描："
+"<ul><li>%2</li></ul>"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:160
+#, kde-format
+msgid ""
+"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
+"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
+"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
+"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
+msgstr ""
+"在 Linux 上，預設搜尋路徑包含<ul><li>/usr/share/color/icc</li><li>/usr/local/"
+"share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/"
+"</li><li>~/.color/icc/</li></ul>在您的系統上，這些路徑目前存在而會被掃描："
+"<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:128
 #, kde-format
@@ -67775,13 +68145,13 @@ msgstr "都柏林核心集"
 msgid "Enable internal debug logging"
 msgstr "啟用內部除錯紀錄"
 
-#: core/utilities/setup/setup.cpp:130
+#: core/utilities/setup/setup.cpp:39
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "資料庫"
 
-#: core/utilities/setup/setup.cpp:131
+#: core/utilities/setup/setup.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67791,13 +68161,13 @@ msgstr ""
 "資料庫設定\n"
 "自訂資料庫設定值"
 
-#: core/utilities/setup/setup.cpp:135
+#: core/utilities/setup/setup.cpp:44
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "收藏"
 
-#: core/utilities/setup/setup.cpp:136
+#: core/utilities/setup/setup.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67807,13 +68177,13 @@ msgstr ""
 "收藏設定\n"
 "設定根相簿的位置"
 
-#: core/utilities/setup/setup.cpp:140
+#: core/utilities/setup/setup.cpp:49
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "檢視"
 
-#: core/utilities/setup/setup.cpp:141
+#: core/utilities/setup/setup.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67823,13 +68193,13 @@ msgstr ""
 "應用程式檢視設定值\n"
 "自訂各個檢視的外觀"
 
-#: core/utilities/setup/setup.cpp:145
+#: core/utilities/setup/setup.cpp:54
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "工具提示"
 
-#: core/utilities/setup/setup.cpp:146
+#: core/utilities/setup/setup.cpp:55
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67839,13 +68209,13 @@ msgstr ""
 "項目工具提示設定\n"
 "自訂項目工具提示中的資訊"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:59
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/utilities/setup/setup.cpp:151
+#: core/utilities/setup/setup.cpp:60
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -67858,13 +68228,13 @@ msgstr ""
 "內嵌的影像資訊管理\n"
 "設定影像和中繼資料之間的關聯"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:64
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "範本"
 
-#: core/utilities/setup/setup.cpp:156
+#: core/utilities/setup/setup.cpp:65
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67874,13 +68244,13 @@ msgstr ""
 "中繼資料範本\n"
 "管理您的中繼資料範本收藏"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:69
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "影像編輯器"
 
-#: core/utilities/setup/setup.cpp:161
+#: core/utilities/setup/setup.cpp:70
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67890,13 +68260,13 @@ msgstr ""
 "影像編輯器設定\n"
 "自訂影像編輯器設定值"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:74
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "色彩管理"
 
-#: core/utilities/setup/setup.cpp:166
+#: core/utilities/setup/setup.cpp:75
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67906,13 +68276,13 @@ msgstr ""
 "色彩管理設定\n"
 "自訂色彩管理設定值"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:79
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "數位光桌"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67922,13 +68292,13 @@ msgstr ""
 "數位光桌設定\n"
 "調整用於比較項目的工具的設定"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:84
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -67942,13 +68312,13 @@ msgstr ""
 "數位光桌設定\n"
 "調整用於比較項目的工具的設定"
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:98
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "相機"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67958,13 +68328,13 @@ msgstr ""
 "相機設定\n"
 "管理您的相機裝置"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:106
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "外掛程式"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67974,13 +68344,13 @@ msgstr ""
 "外掛程式設定\n"
 "設定哪些外掛程式會可以從應用程式中使用"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:111
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68057,375 +68427,6 @@ msgid ""
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:139
-#, kde-format
-msgid "Enable Color Management"
-msgstr "啟用色彩管理"
-
-#: core/utilities/setup/setupicc.cpp:140
-#, kde-format
-msgid ""
-"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
-"Management is disabled</li></ul>"
-msgstr "<ul><li>勾選：啟用色彩管理</li><li>未勾選：停用色彩管理</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:147
-#, kde-format
-msgid "Visit Little CMS project website"
-msgstr "造訪 Little CMS 專案網站"
-
-#: core/utilities/setup/setupicc.cpp:157
-#, kde-format
-msgid "Working Color Space"
-msgstr "使用的色彩空間"
-
-#: core/utilities/setup/setupicc.cpp:163
-#, kde-format
-msgid ""
-"<p>This is the color space all the images will be converted to when opened "
-"(if you choose to convert) and the profile that will be embedded when "
-"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
-"IEC61966-2.1</b></p>"
-msgstr ""
-"<p>這是所有影像開啟時會轉換成的色彩空間 (如果您選擇轉換) 而且此描述檔會在儲存"
-"時內嵌到影像。比較安全、適合的選擇是 <b>Adobe RGB (1998)</b> 和 <b>sRGB "
-"IEC61966-2.1</b></p>"
-
-#: core/utilities/setup/setupicc.cpp:169
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected workspace profile.</p>"
-msgstr ""
-"<p>您可以使用這個按鈕來取得更多關於選擇的工作色域描述檔的詳細資訊。</p>"
-
-#: core/utilities/setup/setupicc.cpp:183
-#, kde-format
-msgid "When the profile of an image does not match the working color space"
-msgstr "當影像的描述檔與正在使用的色彩空間不符合時"
-
-#: core/utilities/setup/setupicc.cpp:191 core/utilities/setup/setupicc.cpp:222
-#, kde-format
-msgid "Ask when opening the image"
-msgstr "當開啟影像時詢問"
-
-#: core/utilities/setup/setupicc.cpp:192
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will ask if you want to convert to the working space, keep "
-"the embedded profile or discard the embedded profile and assign a different "
-"one.</p>"
-msgstr ""
-"<p>如果影像內嵌的色彩描述檔不符合正在使用的色彩空間描述檔，digiKam 會詢問是否"
-"您要轉換成正在使用的色彩空間、維持內嵌的描述檔還是要捨棄內嵌的描述檔並指定其"
-"他描述檔。</p>"
-
-#: core/utilities/setup/setupicc.cpp:198
-#, kde-format
-msgid "Convert the image to the working color space"
-msgstr "將影像轉換成正在使用的色彩空間"
-
-#: core/utilities/setup/setupicc.cpp:199
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will convert the image's color information to the working "
-"color space. This changes the pixel data, but not the appearance of the "
-"image.</p>"
-msgstr ""
-"<p>如果影像內嵌的色彩描述檔不符合正在使用的色彩空間描述檔，digiKam 會將影像的"
-"色彩資訊轉換成正在使用的色彩空間。這會改變像素資料，但是不會改變影像的外觀。"
-"</p>"
-
-#: core/utilities/setup/setupicc.cpp:215
-#, kde-format
-msgid "When an image has no color profile information"
-msgstr "當影像沒有色彩描述檔資訊時"
-
-#: core/utilities/setup/setupicc.cpp:223
-#, kde-format
-msgid ""
-"<p>If an image has no embedded color profile, digiKam will ask which color "
-"space shall be used to interpret the image and to which color space it shall "
-"be transformed for editing.</p>"
-msgstr ""
-"<p>如果影像沒有內嵌的色彩描，digiKam 會詢問應該使用哪一個色彩描述檔來詮釋影像"
-"以及編輯時應該轉換成何種色彩空間。</p>"
-
-#: core/utilities/setup/setupicc.cpp:227
-#, kde-format
-msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr "假設它正在使用 sRGB 色彩空間 (網際網路標準)"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:233
-#, kde-format
-msgid "and convert it to the working color space"
-msgstr "並將它換成正在使用的色彩空間"
-
-#: core/utilities/setup/setupicc.cpp:246
-#, kde-format
-msgid "Assume it is using the working color space"
-msgstr "假設它正在使用目前使用中的色彩空間"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:252
-#, kde-format
-msgid "Convert it from default input color space to working space"
-msgstr "將它從預設輸入色彩空間轉換成正在使用的色彩空間"
-
-#: core/utilities/setup/setupicc.cpp:271
-#, kde-format
-msgid "When loading a RAW file with uncalibrated colors"
-msgstr "當載入未經校準顏色的 RAW 檔時"
-
-#: core/utilities/setup/setupicc.cpp:278
-#, kde-format
-msgid "Ask for the input profile"
-msgstr "要求輸入描述檔"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:284
-#, kde-format
-msgid "Automatic color correction"
-msgstr "自動顏色校正"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:290
-#, kde-format
-msgid "Convert it from the default input profile"
-msgstr "從預設的輸入描述檔轉換它"
-
-#: core/utilities/setup/setupicc.cpp:314
-#, kde-format
-msgid "Color Managed View"
-msgstr "色彩管理檢視"
-
-#: core/utilities/setup/setupicc.cpp:319
-#, kde-format
-msgid "Monitor profile:"
-msgstr "螢幕描述檔："
-
-#: core/utilities/setup/setupicc.cpp:323
-#, kde-format
-msgid ""
-"<p>If your desktop do not provide a color profile for your screen, select "
-"here the default one. If no profile is set, sRGB will be used as fail-back. "
-"In all cases, the color management workflow will try to get in first the "
-"profile set for your monitor in your the desktop</p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:331
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected monitor profile.</p>"
-msgstr "<p>您可以使用這個按鈕來取得更多關於選擇的螢幕描述檔的詳細資訊。</p>"
-
-#: core/utilities/setup/setupicc.cpp:335
-#, kde-format
-msgid "Use color managed view in editor"
-msgstr "在編輯器中使用的色彩管理"
-
-#: core/utilities/setup/setupicc.cpp:336
-#, kde-format
-msgid ""
-"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
-"to show your pictures in the Image Editor window with a color correction "
-"adapted to your monitor. You can at any time toggle this option from the "
-"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
-"depending on the speed of your computer.</p>"
-msgstr ""
-"<p>如果您想要使用您的<b>螢幕色彩描述檔</b>來顯示在影像編輯器視窗的圖片並適當"
-"地校正螢幕的顏色，請啟用這個選項。<i>警告</i>：這會使影像演算變慢，取決於您的"
-"電腦速度。</p>"
-
-#: core/utilities/setup/setupicc.cpp:343
-#, kde-format
-msgid "Use color managed view for previews and thumbnails"
-msgstr "預覽和縮圖使用的色彩管理"
-
-#: core/utilities/setup/setupicc.cpp:359
-#, kde-format
-msgid "Camera and Scanner"
-msgstr "相機和掃描器"
-
-#: core/utilities/setup/setupicc.cpp:364
-#, kde-format
-msgid "Default input color profile:"
-msgstr "預設輸入色彩描述檔："
-
-#: core/utilities/setup/setupicc.cpp:366
-#, kde-format
-msgid ""
-"<p>This is the default color profile for your input device (that is your "
-"camera - or your scanner). A camera input profile is recommended for correct "
-"conversion of RAW images in 16bit. Some of the options about loading "
-"behavior above refer to this profile.</p>"
-msgstr ""
-"<p>這是輸入裝置的預設色彩描述檔 (您的相機 - 或您的掃描機)。為了正確轉換 16 位"
-"元 RAW 影像所推薦的相機輸入描述檔。下面有關於這個描述擋載入行為的一些選項。</"
-"p>"
-
-#: core/utilities/setup/setupicc.cpp:373
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected input profile.</p>"
-msgstr "<p>您可以使用這個按鈕來取得更多關於選擇的輸入描述檔的詳細資訊。</p>"
-
-#: core/utilities/setup/setupicc.cpp:384
-#, kde-format
-msgid "Printing and Proofing"
-msgstr "列印和校樣"
-
-#: core/utilities/setup/setupicc.cpp:389
-#, kde-format
-msgid "Output device profile:"
-msgstr "輸出裝置描述檔："
-
-#: core/utilities/setup/setupicc.cpp:398
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected proofing profile.</p>"
-msgstr "<p>您可以使用這個按鈕來取得更多關於選擇的校樣描述檔的詳細資訊。</p>"
-
-#: core/utilities/setup/setupicc.cpp:409
-#, kde-format
-msgid "Color Profiles Repository"
-msgstr "色彩描述檔儲存庫"
-
-#: core/utilities/setup/setupicc.cpp:414
-#, kde-format
-msgid ""
-"digiKam looks for ICC profiles in a number of <a href='default'>default "
-"locations</a>. You can specify an additional folder:"
-msgstr ""
-"digiKam 會在一些<a href='default'>預設位置</a>中尋找 ICC 描述檔。您可以指定一"
-"個額外的資料夾："
-
-#: core/utilities/setup/setupicc.cpp:422
-#, kde-format
-msgid ""
-"<p>digiKam searches ICC profiles in default system folders and ships itself "
-"a few selected profiles. Store all your additional color profiles in the "
-"directory set here.</p>"
-msgstr ""
-"<p>digiKam 會在預設的系統資料夾內搜尋 ICC 描述檔並運送所選擇的幾個描述檔。在"
-"這裡設定儲存在資料夾中所有附加的描述檔。</p>"
-
-#: core/utilities/setup/setupicc.cpp:445
-#, kde-format
-msgid "Use black point compensation"
-msgstr "使用黑點補償"
-
-#: core/utilities/setup/setupicc.cpp:446
-#, kde-format
-msgid ""
-"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
-"maximum black levels of digital files and the black capabilities of various "
-"digital devices.</p>"
-msgstr ""
-"<p><b>黑點補償</b>是在數位檔案的最大黑階和各種數位裝置的黑色能力之間作調整的"
-"方法。</p>"
-
-#: core/utilities/setup/setupicc.cpp:452
-#, kde-format
-msgid "Rendering Intents:"
-msgstr "色彩演算比對方式："
-
-#: core/utilities/setup/setupicc.cpp:467
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Behavior"
-msgstr "行為"
-
-#: core/utilities/setup/setupicc.cpp:468
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Profiles"
-msgstr "描述檔"
-
-#: core/utilities/setup/setupicc.cpp:469
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Advanced"
-msgstr "進階"
-
-#: core/utilities/setup/setupicc.cpp:670
-#, kde-format
-msgid "Monitor Profile From System Settings"
-msgstr "來自系統設定的螢幕描述檔"
-
-#: core/utilities/setup/setupicc.cpp:702
-#, kde-format
-msgid "No ICC profiles files found."
-msgstr "沒有找到任何 ICC 描述檔。"
-
-#: core/utilities/setup/setupicc.cpp:718
-#, kde-format
-msgid "No Display Profile Available"
-msgstr "沒有可用的顯示描述檔"
-
-#: core/utilities/setup/setupicc.cpp:720
-#, kde-format
-msgid "No Output Profile Available"
-msgstr "沒有可用的輸出描述檔"
-
-#: core/utilities/setup/setupicc.cpp:854
-#, kde-format
-msgctxt "none of the paths"
-msgid "none"
-msgstr "無"
-
-#: core/utilities/setup/setupicc.cpp:863
-#, kde-format
-msgid ""
-"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
-"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
-"Windows/Color/</li></ul>On your system, currently these paths exist and are "
-"scanned:<ul><li>%3</li></ul>"
-msgstr ""
-"在 Windows 上，預設搜尋路徑包含<ul><li>%1/Windows/System32/spool/drivers/"
-"color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/Windows/Color/</"
-"li></ul>在您的系統上，這些路徑目前存在而會被掃描：<ul><li>%3</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:879
-#, kde-format
-msgid ""
-"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
-"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
-"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
-"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
-"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
-"exist and are scanned:<ul><li>%2</li></ul>"
-msgstr ""
-"在 macOS 上，預設搜尋路徑包含<ul><li>/System/Library/ColorSync/Profiles</"
-"li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/Profiles</"
-"li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/digikam/"
-"profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
-"li><li>~/.color/icc/</li></ul>在您的系統上，這些路徑目前存在而會被掃描："
-"<ul><li>%2</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:898
-#, kde-format
-msgid ""
-"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
-"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
-msgstr ""
-"在 Linux 上，預設搜尋路徑包含<ul><li>/usr/share/color/icc</li><li>/usr/local/"
-"share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/"
-"</li><li>~/.color/icc/</li></ul>在您的系統上，這些路徑目前存在而會被掃描："
-"<ul><li>%1</li></ul>"
-
 #: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
 msgid "Synchronize panels automatically"
@@ -68488,17 +68489,17 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "影像載入器"
 
-#: core/utilities/setup/setuptemplate.cpp:81
+#: core/utilities/setup/template/setuptemplate.cpp:35
 #, kde-format
 msgid "Template Title:"
 msgstr "範本標題："
 
-#: core/utilities/setup/setuptemplate.cpp:84
+#: core/utilities/setup/template/setuptemplate.cpp:38
 #, kde-format
 msgid "Enter the metadata template title here."
 msgstr "在這裡輸入中繼資料範本的標題。"
 
-#: core/utilities/setup/setuptemplate.cpp:85
+#: core/utilities/setup/template/setuptemplate.cpp:39
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
@@ -68506,13 +68507,13 @@ msgid ""
 msgstr ""
 "<p>在這裡輸入中繼資料範本的標題。這個標題會用來辨識在您的收藏中的範本。</p>"
 
-#: core/utilities/setup/setuptemplate.cpp:89
+#: core/utilities/setup/template/setuptemplate.cpp:43
 #, fuzzy, kde-format
 #| msgid "Template: "
 msgid "Merge Template"
 msgstr "範本："
 
-#: core/utilities/setup/setuptemplate.cpp:97
+#: core/utilities/setup/template/setuptemplate.cpp:51
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Note: These information are used to set <b><a href='http://en."
@@ -68535,18 +68536,18 @@ msgstr ""
 "籤只支援可列印的 <b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></"
 "b> 字元集，而且有限制標籤大小。使用內容說明來取得詳細資訊。</b>"
 
-#: core/utilities/setup/setuptemplate.cpp:116
+#: core/utilities/setup/template/setuptemplate.cpp:70
 #, kde-format
 msgid "&Replace..."
 msgstr "取代(&R)..."
 
-#: core/utilities/setup/setuptemplate.cpp:255
-#: core/utilities/setup/setuptemplate.cpp:289
+#: core/utilities/setup/template/setuptemplate_slots.cpp:44
+#: core/utilities/setup/template/setuptemplate_slots.cpp:78
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "不能登記註冊沒有標題的中繼資料範本。"
 
-#: core/utilities/setup/setuptemplate.cpp:262
+#: core/utilities/setup/template/setuptemplate_slots.cpp:51
 #, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "已存在一個名為 '%1' 的中繼資料範本。"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 00:55+0000\n"
+"POT-Creation-Date: 2026-01-24 00:41+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -11061,7 +11061,7 @@ msgid "Energy function"
 msgstr "Função de energia"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/icc/setupicc.cpp:344
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Configuração Avançada"
@@ -31255,7 +31255,7 @@ msgstr "Não voltar a perguntar"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:180
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -38670,7 +38670,7 @@ msgstr ""
 "actualizações."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:154
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:57
 #, kde-format
 msgid "Download"
 msgstr "Obter"
@@ -51982,7 +51982,7 @@ msgstr "&Decorar"
 msgid "Effec&ts"
 msgstr "Efei&tos"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:122
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -52079,14 +52079,14 @@ msgstr ""
 "<qt>Configuração da Gravação de Ficheiros de Imagem<br/><i>Modifica a "
 "configuração predefinida que é usada na gravação das imagens</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Localização geográfica"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -59449,7 +59449,7 @@ msgstr "Editar os Favoritos de Localização Geográfica"
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
-#: core/utilities/setup/setuptemplate.cpp:114
+#: core/utilities/setup/template/setuptemplate.cpp:68
 #, kde-format
 msgid "&Remove"
 msgstr "&Remover"
@@ -60609,7 +60609,7 @@ msgstr "e converter depois para o espaço de trabalho"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:717
+#: core/utilities/setup/icc/setupicc_helpers.cpp:60
 #, kde-format
 msgid "No Profile Available"
 msgstr "Sem Perfis Disponíveis"
@@ -60661,7 +60661,7 @@ msgstr ""
 "usado para criar esta imagem:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:719
+#: core/utilities/setup/icc/setupicc_helpers.cpp:62
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Sem Perfis de Entrada Disponíveis"
@@ -60713,7 +60713,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Perfil do dispositivo de saída a simular:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:392
+#: core/utilities/setup/icc/setupicc.cpp:295
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -60750,14 +60750,14 @@ msgid "Highlighting color:"
 msgstr "Realce da cor:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Erro do Perfil"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, kde-format
 msgid "No profile is selected."
 msgstr "Nenhum perfil seleccionado."
@@ -60820,7 +60820,7 @@ msgstr ""
 "<qt>A imagem actual foi modificada.\n"
 "Deseja gravar as suas alterações?"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:388
+#: core/utilities/imageeditor/editor/editortool.cpp:406
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
@@ -61586,13 +61586,13 @@ msgstr ""
 "Não foi possível carregar a imagem\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:91
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Antes"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:93
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -61614,7 +61614,7 @@ msgstr "Antes"
 msgid "After"
 msgstr "Depois"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -66626,7 +66626,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:94
 #: core/utilities/setup/camera/setupcamera.cpp:273
 #: core/utilities/setup/camera/setupcamera.cpp:396
-#: core/utilities/setup/setuptemplate.cpp:112
+#: core/utilities/setup/template/setuptemplate.cpp:66
 #, kde-format
 msgid "&Add..."
 msgstr "&Adicionar..."
@@ -67683,7 +67683,7 @@ msgstr "Seleccionar a Categoria"
 msgid "Your collection will use this category:"
 msgstr "A sua colecção irá usar esta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:141
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Download Required Files"
@@ -67691,66 +67691,71 @@ msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Transferir os Ficheiros Necessários"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:60
 #: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:66
 #, kde-format
 msgid "Location of the face management model files:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:74
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgctxt "@title:window"
 msgid "Face Management Model Target"
 msgstr "Detecção de Caras"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:75
 #, fuzzy, kde-format
 #| msgid "Sets the target address to copy the items to."
 msgid "Sets the target address to download the face management model files to."
 msgstr "Define o endereço de destino para onde copiar os itens."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:77
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AI Auto-Tools features"
 msgstr "Ajuste Automático"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:78
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Management feature"
 msgstr "Detecção de Caras"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:79
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:80
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AutoTags Assignment feature"
 msgstr "Ajuste Automático"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:278
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:279
+#, kde-format
+msgid "Clean up unused AI/DNN model files..."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:45
 #, fuzzy, kde-format
 #| msgid "All files were downloaded successfully."
 msgid "All model files were downloaded successfully."
 msgstr "Todos os ficheiros foram transferidos com sucesso."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:287
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Erro de Transferência"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:288
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:55
 #, fuzzy, kde-format
 #| msgid ""
 #| "An error occurred during the download.\n"
@@ -67777,33 +67782,33 @@ msgstr ""
 "\n"
 "Poderá tentar de novo ou prosseguir a transferência no próximo início."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:296
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Tentar de Novo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:135
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "O código de validação é incorrecto."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:458
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:159
 #, kde-format
 msgid "File write error."
 msgstr "Erro de escrita no ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:166
 #, kde-format
 msgid "File open error."
 msgstr "Erro de acesso ao ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:480
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:181
 #, kde-format
 msgid "File on the server is too large."
 msgstr "O ficheiro no servidor é demasiado grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:591
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:256
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -67813,7 +67818,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:596
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:261
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path, %2: disk size with unit"
 #| msgid ""
@@ -67840,20 +67845,15 @@ msgstr ""
 "se que tem cerca de %2 disponíveis. <b>Após a transferência terminar com "
 "sucesso, terá de reiniciar o digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:268
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:629
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:294
 #, kde-format
 msgid "All files for the selected features were found."
-msgstr ""
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:657
-#, kde-format
-msgid "Clean up unused AI/DNN model files..."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
@@ -68416,6 +68416,399 @@ msgstr ""
 "uma especificação para gravar imagens no contentor ISOBMFF (como HEIF), "
 "comprimido com o formato AOMedia Video 1 (AV1), um formato de codificação "
 "aberto e livre de patentes. </item>"
+
+#: core/utilities/setup/icc/setupicc.cpp:42
+#, kde-format
+msgid "Enable Color Management"
+msgstr "Activa a Gestão de Cores"
+
+#: core/utilities/setup/icc/setupicc.cpp:43
+#, kde-format
+msgid ""
+"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
+"Management is disabled</li></ul>"
+msgstr ""
+"<ul><li>Assinalado: A Gestão de Cores está activada</li><li>Desligado: A "
+"Gestão de Cores está desactivada</li></ul>"
+
+#: core/utilities/setup/icc/setupicc.cpp:50
+#, kde-format
+msgid "Visit Little CMS project website"
+msgstr "Visite a página Web do projecto Little CMS"
+
+#: core/utilities/setup/icc/setupicc.cpp:60
+#, kde-format
+msgid "Working Color Space"
+msgstr "Espaço de Cores de Trabalho"
+
+#: core/utilities/setup/icc/setupicc.cpp:66
+#, kde-format
+msgid ""
+"<p>This is the color space all the images will be converted to when opened "
+"(if you choose to convert) and the profile that will be embedded when "
+"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
+"IEC61966-2.1</b></p>"
+msgstr ""
+"<p>Este é o espaço de cores para o qual serão convertidas todas as imagens "
+"quando forem abertas (se optar por convertê-las) e o perfil que será "
+"incorporado quando as gravar. As boas e seguras escolhas são o <b>Adobe RGB "
+"(1998)</b> e o <b>sRGB IEC61966-2.1</b></p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:72
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected workspace profile.</p>"
+msgstr ""
+"<p>Você poderá usar este botão para obter informações mais detalhadas sobre "
+"o perfil seleccionado do espaço de trabalho.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:86
+#, kde-format
+msgid "When the profile of an image does not match the working color space"
+msgstr ""
+"Quando o perfil de uma imagem não corresponder ao espaço de cores de trabalho"
+
+#: core/utilities/setup/icc/setupicc.cpp:94
+#: core/utilities/setup/icc/setupicc.cpp:125
+#, kde-format
+msgid "Ask when opening the image"
+msgstr "Perguntar ao abrir a imagem"
+
+#: core/utilities/setup/icc/setupicc.cpp:95
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will ask if you want to convert to the working space, keep "
+"the embedded profile or discard the embedded profile and assign a different "
+"one.</p>"
+msgstr ""
+"<p>Se uma imagem tiver um perfil de cores incorporado que não corresponda ao "
+"espaço de trabalho, o digiKam irá perguntar se deseja converter para o "
+"espaço de trabalho, manter o perfil incorporado ou remover o perfil "
+"incorporado e atribuir um diferente.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:101
+#, kde-format
+msgid "Convert the image to the working color space"
+msgstr "Converter a imagem para o espaço de cores de trabalho"
+
+#: core/utilities/setup/icc/setupicc.cpp:102
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will convert the image's color information to the working "
+"color space. This changes the pixel data, but not the appearance of the "
+"image.</p>"
+msgstr ""
+"<p>Se uma imagem tiver um perfil de cores incorporado que não corresponda ao "
+"espaço de trabalho, o digiKam irá converter a informação de cores da imagem "
+"para o espaço de trabalho. Isto altera os dados dos pixels, mas não a "
+"aparência da imagem.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:118
+#, kde-format
+msgid "When an image has no color profile information"
+msgstr "Quando uma imagem não tiver informações do perfil de cores"
+
+#: core/utilities/setup/icc/setupicc.cpp:126
+#, kde-format
+msgid ""
+"<p>If an image has no embedded color profile, digiKam will ask which color "
+"space shall be used to interpret the image and to which color space it shall "
+"be transformed for editing.</p>"
+msgstr ""
+"<p>Se uma imagem não tiver um perfil de cores incorporado, o digiKam irá "
+"perguntar qual o espaço de cores a usar para interpretar a imagem, bem como "
+"o espaço de cores para o qual deverá ser transformado na edição.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:130
+#, kde-format
+msgid "Assume it is using the sRGB color space (Internet standard)"
+msgstr "Assumir que usa o espaço de cores sRGB (norma da Internet)"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:136
+#, kde-format
+msgid "and convert it to the working color space"
+msgstr "e convertê-la para o espaço de cores de trabalho"
+
+#: core/utilities/setup/icc/setupicc.cpp:149
+#, kde-format
+msgid "Assume it is using the working color space"
+msgstr "Assumir que está a usar o espaço de cores de trabalho"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:155
+#, kde-format
+msgid "Convert it from default input color space to working space"
+msgstr "Convertê-la do espaço de cores de entrada para o espaço de trabalho"
+
+#: core/utilities/setup/icc/setupicc.cpp:174
+#, kde-format
+msgid "When loading a RAW file with uncalibrated colors"
+msgstr "Ao carregar um ficheiro RAW com cores não-calibradas"
+
+#: core/utilities/setup/icc/setupicc.cpp:181
+#, kde-format
+msgid "Ask for the input profile"
+msgstr "Pedir o perfil de entrada"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:187
+#, kde-format
+msgid "Automatic color correction"
+msgstr "Correcção automática das cores"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:193
+#, kde-format
+msgid "Convert it from the default input profile"
+msgstr "Convertê-la a partir do perfil de entrada predefinido"
+
+#: core/utilities/setup/icc/setupicc.cpp:217
+#, kde-format
+msgid "Color Managed View"
+msgstr "Vista de Gestão de Cores"
+
+#: core/utilities/setup/icc/setupicc.cpp:222
+#, kde-format
+msgid "Monitor profile:"
+msgstr "Perfil do monitor:"
+
+#: core/utilities/setup/icc/setupicc.cpp:226
+#, kde-format
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
+
+#: core/utilities/setup/icc/setupicc.cpp:234
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected monitor profile.</p>"
+msgstr ""
+"<p>Você poderá usar este botão para obter informações mais detalhadas sobre "
+"o perfil do monitor seleccionado.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:238
+#, kde-format
+msgid "Use color managed view in editor"
+msgstr "Usar a área de gestão de cores no editor"
+
+#: core/utilities/setup/icc/setupicc.cpp:239
+#, kde-format
+msgid ""
+"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
+"to show your pictures in the Image Editor window with a color correction "
+"adapted to your monitor. You can at any time toggle this option from the "
+"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
+"depending on the speed of your computer.</p>"
+msgstr ""
+"<p>Poderá usar esta opção se quiser usar o seu <b>Perfil de Cores do "
+"Monitor</b> para mostrar as suas imagens na janela do Editor de Imagens com "
+"uma correcção de cores adaptada ao seu monitor. <i>Atenção</i>: esta opção "
+"poderá levar algum tempo a desenhar as imagens no ecrã, especialmente em "
+"computadores lentos.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:246
+#, kde-format
+msgid "Use color managed view for previews and thumbnails"
+msgstr ""
+"Usar a área de gestão de cores no editor para as antevisões e miniaturas"
+
+#: core/utilities/setup/icc/setupicc.cpp:262
+#, kde-format
+msgid "Camera and Scanner"
+msgstr "Máquina e 'Scanner'"
+
+#: core/utilities/setup/icc/setupicc.cpp:267
+#, kde-format
+msgid "Default input color profile:"
+msgstr "Perfil de entrada predefinido:"
+
+#: core/utilities/setup/icc/setupicc.cpp:269
+#, kde-format
+msgid ""
+"<p>This is the default color profile for your input device (that is your "
+"camera - or your scanner). A camera input profile is recommended for correct "
+"conversion of RAW images in 16bit. Some of the options about loading "
+"behavior above refer to this profile.</p>"
+msgstr ""
+"<p>Este é o perfil de cores por omissão para o seu dispositivo de entrada (a "
+"sua máquina fotográfica ou o seu 'scanner'). Recomenda-se a utilização de um "
+"perfil de entrada para a conversão correcta das imagens RAW a 16 bits. "
+"Algumas das opções acima de comportamento do carregamento referem-se a este "
+"perfil.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:276
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected input profile.</p>"
+msgstr ""
+"<p>Você poderá usar este botão para obter informações mais detalhadas sobre "
+"o perfil de entrada seleccionado.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:287
+#, kde-format
+msgid "Printing and Proofing"
+msgstr "Impressão e Prova"
+
+#: core/utilities/setup/icc/setupicc.cpp:292
+#, kde-format
+msgid "Output device profile:"
+msgstr "Perfil do dispositivo de saída:"
+
+#: core/utilities/setup/icc/setupicc.cpp:301
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected proofing profile.</p>"
+msgstr ""
+"<p>Você poderá usar este botão para obter informações mais detalhadas sobre "
+"o perfil de prova seleccionado.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:312
+#, kde-format
+msgid "Color Profiles Repository"
+msgstr "Repositório de Perfis de Cores"
+
+#: core/utilities/setup/icc/setupicc.cpp:317
+#, kde-format
+msgid ""
+"digiKam looks for ICC profiles in a number of <a href='default'>default "
+"locations</a>. You can specify an additional folder:"
+msgstr ""
+"O digiKam procura pelos perfis ICC num conjunto de <a "
+"href='default'>localizações predefinidas</a>. Poderá indicar uma pasta "
+"adicional:"
+
+#: core/utilities/setup/icc/setupicc.cpp:325
+#, kde-format
+msgid ""
+"<p>digiKam searches ICC profiles in default system folders and ships itself "
+"a few selected profiles. Store all your additional color profiles in the "
+"directory set here.</p>"
+msgstr ""
+"<p>O digiKam procura os perfis ICC nas pastas predefinidas do sistema e "
+"contém ele próprio alguns perfis seleccionados. Guarde todos os seus perfis "
+"de cores adicionais na pasta que indicar aqui.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:348
+#, kde-format
+msgid "Use black point compensation"
+msgstr "Usar a compensação do ponto preto"
+
+#: core/utilities/setup/icc/setupicc.cpp:349
+#, kde-format
+msgid ""
+"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
+"maximum black levels of digital files and the black capabilities of various "
+"digital devices.</p>"
+msgstr ""
+"<p>A <b>Compensação do Ponto Preto</b> é uma forma de fazer ajustes entre os "
+"níveis máximos de preto nos ficheiros digitais e as capacidades de preto de "
+"vários dispositivos digitais.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:355
+#, kde-format
+msgid "Rendering Intents:"
+msgstr "Tentativas de Desenho:"
+
+#: core/utilities/setup/icc/setupicc.cpp:370
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Behavior"
+msgstr "Comportamento"
+
+#: core/utilities/setup/icc/setupicc.cpp:371
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Profiles"
+msgstr "Perfis"
+
+#: core/utilities/setup/icc/setupicc.cpp:372
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Advanced"
+msgstr "Avançado"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:45
+#, kde-format
+msgid "No ICC profiles files found."
+msgstr "Não foram encontrados ficheiros de perfis ICC."
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:61
+#, kde-format
+msgid "No Display Profile Available"
+msgstr "Sem Perfis de Visualização Disponíveis"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:63
+#, kde-format
+msgid "No Output Profile Available"
+msgstr "Sem Perfis de Saída Disponíveis"
+
+#: core/utilities/setup/icc/setupicc_settings.cpp:160
+#, kde-format
+msgid "Monitor Profile From System Settings"
+msgstr "Perfil do Monitor na Configuração do Sistema"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:116
+#, kde-format
+msgctxt "none of the paths"
+msgid "none"
+msgstr "nenhum"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:125
+#, kde-format
+msgid ""
+"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
+"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
+"Windows/Color/</li></ul>On your system, currently these paths exist and are "
+"scanned:<ul><li>%3</li></ul>"
+msgstr ""
+"No Windows, os locais de pesquisa por omissão incluem o <ul><li>%1/Windows/"
+"System32/spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</"
+"li><li>%2/Windows/Color/</li></ul>No seu sistema, de momento estes locais "
+"existem e são sondados:<ul><li>%3</li></ul>"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:141
+#, kde-format
+msgid ""
+"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
+"exist and are scanned:<ul><li>%2</li></ul>"
+msgstr ""
+"No macOS, os locais de pesquisa por omissão incluem <ul><li>/System/Library/"
+"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/"
+"icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</li><li>~/."
+"color/icc</li><li>~/.color/icc/</li></ul>No seu sistema, de momento estes "
+"locais existem e são sondados:<ul><li>%2</li></ul>"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:160
+#, kde-format
+msgid ""
+"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
+"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
+"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
+"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
+msgstr ""
+"No Linux, os locais de pesquisa predefinidos incluem o <ul><li>/usr/share/"
+"color/icc</li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/"
+"icc/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>No seu "
+"sistema, estes locais existem e são pesquisados:<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:128
 #, kde-format
@@ -70218,13 +70611,13 @@ msgstr "Apenas no Windows"
 msgid "Enable internal debug logging"
 msgstr "Activar o registo de depuração interno"
 
-#: core/utilities/setup/setup.cpp:130
+#: core/utilities/setup/setup.cpp:39
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Base de Dados"
 
-#: core/utilities/setup/setup.cpp:131
+#: core/utilities/setup/setup.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70234,13 +70627,13 @@ msgstr ""
 "Configuração da Base de Dados\n"
 "Personaliza a configuração das bases de dados"
 
-#: core/utilities/setup/setup.cpp:135
+#: core/utilities/setup/setup.cpp:44
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Colecções"
 
-#: core/utilities/setup/setup.cpp:136
+#: core/utilities/setup/setup.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70250,13 +70643,13 @@ msgstr ""
 "Configuração das Colecções\n"
 "Define as localizações de base dos álbuns"
 
-#: core/utilities/setup/setup.cpp:140
+#: core/utilities/setup/setup.cpp:49
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Vistas"
 
-#: core/utilities/setup/setup.cpp:141
+#: core/utilities/setup/setup.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70266,13 +70659,13 @@ msgstr ""
 "Configuração das Vistas da Aplicação\n"
 "Personaliza a aparência das janelas"
 
-#: core/utilities/setup/setup.cpp:145
+#: core/utilities/setup/setup.cpp:54
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Dica"
 
-#: core/utilities/setup/setup.cpp:146
+#: core/utilities/setup/setup.cpp:55
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70282,13 +70675,13 @@ msgstr ""
 "Configuração das Dicas dos Itens\n"
 "Personaliza a informação nas dicas dos itens"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:59
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Meta-dados"
 
-#: core/utilities/setup/setup.cpp:151
+#: core/utilities/setup/setup.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70298,13 +70691,13 @@ msgstr ""
 "Gestão da Informação Incorporada na Imagem\n"
 "Configura as relações entre as imagens e os meta-dados"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:64
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Modelos"
 
-#: core/utilities/setup/setup.cpp:156
+#: core/utilities/setup/setup.cpp:65
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70314,13 +70707,13 @@ msgstr ""
 "Modelos de meta-dados\n"
 "Faça a gestão da sua colecção de modelos de meta-dados"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:69
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor de Imagem"
 
-#: core/utilities/setup/setup.cpp:161
+#: core/utilities/setup/setup.cpp:70
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70330,13 +70723,13 @@ msgstr ""
 "Configuração do Editor de Imagens\n"
 "Personaliza o comportamento do editor de imagens"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:74
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Gestão de Cores"
 
-#: core/utilities/setup/setup.cpp:166
+#: core/utilities/setup/setup.cpp:75
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70346,13 +70739,13 @@ msgstr ""
 "Configuração da Gestão de Cores\n"
 "Personaliza a configuração da gestão de cores"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:79
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Mesa de Luz"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -70366,13 +70759,13 @@ msgstr ""
 "Configuração da Mesa de Luz\n"
 "Personaliza a ferramenta de comparação de imagens"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:84
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -70386,13 +70779,13 @@ msgstr ""
 "Configuração da Mesa de Luz\n"
 "Personaliza a ferramenta de comparação de imagens"
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:98
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Máquinas Fotográficas"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70402,13 +70795,13 @@ msgstr ""
 "Configuração da Máquina\n"
 "Faz a gestão dos dispositivos de máquinas fotográficas e câmaras"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:106
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "'Plugins'"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70418,13 +70811,13 @@ msgstr ""
 "Configuração dos 'Plugins'\n"
 "Define quais os 'plugins' que ficarão acessíveis na aplicação"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:111
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Diversos"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -70527,398 +70920,6 @@ msgid ""
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:139
-#, kde-format
-msgid "Enable Color Management"
-msgstr "Activa a Gestão de Cores"
-
-#: core/utilities/setup/setupicc.cpp:140
-#, kde-format
-msgid ""
-"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
-"Management is disabled</li></ul>"
-msgstr ""
-"<ul><li>Assinalado: A Gestão de Cores está activada</li><li>Desligado: A "
-"Gestão de Cores está desactivada</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:147
-#, kde-format
-msgid "Visit Little CMS project website"
-msgstr "Visite a página Web do projecto Little CMS"
-
-#: core/utilities/setup/setupicc.cpp:157
-#, kde-format
-msgid "Working Color Space"
-msgstr "Espaço de Cores de Trabalho"
-
-#: core/utilities/setup/setupicc.cpp:163
-#, kde-format
-msgid ""
-"<p>This is the color space all the images will be converted to when opened "
-"(if you choose to convert) and the profile that will be embedded when "
-"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
-"IEC61966-2.1</b></p>"
-msgstr ""
-"<p>Este é o espaço de cores para o qual serão convertidas todas as imagens "
-"quando forem abertas (se optar por convertê-las) e o perfil que será "
-"incorporado quando as gravar. As boas e seguras escolhas são o <b>Adobe RGB "
-"(1998)</b> e o <b>sRGB IEC61966-2.1</b></p>"
-
-#: core/utilities/setup/setupicc.cpp:169
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected workspace profile.</p>"
-msgstr ""
-"<p>Você poderá usar este botão para obter informações mais detalhadas sobre "
-"o perfil seleccionado do espaço de trabalho.</p>"
-
-#: core/utilities/setup/setupicc.cpp:183
-#, kde-format
-msgid "When the profile of an image does not match the working color space"
-msgstr ""
-"Quando o perfil de uma imagem não corresponder ao espaço de cores de trabalho"
-
-#: core/utilities/setup/setupicc.cpp:191 core/utilities/setup/setupicc.cpp:222
-#, kde-format
-msgid "Ask when opening the image"
-msgstr "Perguntar ao abrir a imagem"
-
-#: core/utilities/setup/setupicc.cpp:192
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will ask if you want to convert to the working space, keep "
-"the embedded profile or discard the embedded profile and assign a different "
-"one.</p>"
-msgstr ""
-"<p>Se uma imagem tiver um perfil de cores incorporado que não corresponda ao "
-"espaço de trabalho, o digiKam irá perguntar se deseja converter para o "
-"espaço de trabalho, manter o perfil incorporado ou remover o perfil "
-"incorporado e atribuir um diferente.</p>"
-
-#: core/utilities/setup/setupicc.cpp:198
-#, kde-format
-msgid "Convert the image to the working color space"
-msgstr "Converter a imagem para o espaço de cores de trabalho"
-
-#: core/utilities/setup/setupicc.cpp:199
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will convert the image's color information to the working "
-"color space. This changes the pixel data, but not the appearance of the "
-"image.</p>"
-msgstr ""
-"<p>Se uma imagem tiver um perfil de cores incorporado que não corresponda ao "
-"espaço de trabalho, o digiKam irá converter a informação de cores da imagem "
-"para o espaço de trabalho. Isto altera os dados dos pixels, mas não a "
-"aparência da imagem.</p>"
-
-#: core/utilities/setup/setupicc.cpp:215
-#, kde-format
-msgid "When an image has no color profile information"
-msgstr "Quando uma imagem não tiver informações do perfil de cores"
-
-#: core/utilities/setup/setupicc.cpp:223
-#, kde-format
-msgid ""
-"<p>If an image has no embedded color profile, digiKam will ask which color "
-"space shall be used to interpret the image and to which color space it shall "
-"be transformed for editing.</p>"
-msgstr ""
-"<p>Se uma imagem não tiver um perfil de cores incorporado, o digiKam irá "
-"perguntar qual o espaço de cores a usar para interpretar a imagem, bem como "
-"o espaço de cores para o qual deverá ser transformado na edição.</p>"
-
-#: core/utilities/setup/setupicc.cpp:227
-#, kde-format
-msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr "Assumir que usa o espaço de cores sRGB (norma da Internet)"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:233
-#, kde-format
-msgid "and convert it to the working color space"
-msgstr "e convertê-la para o espaço de cores de trabalho"
-
-#: core/utilities/setup/setupicc.cpp:246
-#, kde-format
-msgid "Assume it is using the working color space"
-msgstr "Assumir que está a usar o espaço de cores de trabalho"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:252
-#, kde-format
-msgid "Convert it from default input color space to working space"
-msgstr "Convertê-la do espaço de cores de entrada para o espaço de trabalho"
-
-#: core/utilities/setup/setupicc.cpp:271
-#, kde-format
-msgid "When loading a RAW file with uncalibrated colors"
-msgstr "Ao carregar um ficheiro RAW com cores não-calibradas"
-
-#: core/utilities/setup/setupicc.cpp:278
-#, kde-format
-msgid "Ask for the input profile"
-msgstr "Pedir o perfil de entrada"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:284
-#, kde-format
-msgid "Automatic color correction"
-msgstr "Correcção automática das cores"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:290
-#, kde-format
-msgid "Convert it from the default input profile"
-msgstr "Convertê-la a partir do perfil de entrada predefinido"
-
-#: core/utilities/setup/setupicc.cpp:314
-#, kde-format
-msgid "Color Managed View"
-msgstr "Vista de Gestão de Cores"
-
-#: core/utilities/setup/setupicc.cpp:319
-#, kde-format
-msgid "Monitor profile:"
-msgstr "Perfil do monitor:"
-
-#: core/utilities/setup/setupicc.cpp:323
-#, kde-format
-msgid ""
-"<p>If your desktop do not provide a color profile for your screen, select "
-"here the default one. If no profile is set, sRGB will be used as fail-back. "
-"In all cases, the color management workflow will try to get in first the "
-"profile set for your monitor in your the desktop</p>"
-msgstr ""
-
-#: core/utilities/setup/setupicc.cpp:331
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected monitor profile.</p>"
-msgstr ""
-"<p>Você poderá usar este botão para obter informações mais detalhadas sobre "
-"o perfil do monitor seleccionado.</p>"
-
-#: core/utilities/setup/setupicc.cpp:335
-#, kde-format
-msgid "Use color managed view in editor"
-msgstr "Usar a área de gestão de cores no editor"
-
-#: core/utilities/setup/setupicc.cpp:336
-#, kde-format
-msgid ""
-"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
-"to show your pictures in the Image Editor window with a color correction "
-"adapted to your monitor. You can at any time toggle this option from the "
-"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
-"depending on the speed of your computer.</p>"
-msgstr ""
-"<p>Poderá usar esta opção se quiser usar o seu <b>Perfil de Cores do "
-"Monitor</b> para mostrar as suas imagens na janela do Editor de Imagens com "
-"uma correcção de cores adaptada ao seu monitor. <i>Atenção</i>: esta opção "
-"poderá levar algum tempo a desenhar as imagens no ecrã, especialmente em "
-"computadores lentos.</p>"
-
-#: core/utilities/setup/setupicc.cpp:343
-#, kde-format
-msgid "Use color managed view for previews and thumbnails"
-msgstr ""
-"Usar a área de gestão de cores no editor para as antevisões e miniaturas"
-
-#: core/utilities/setup/setupicc.cpp:359
-#, kde-format
-msgid "Camera and Scanner"
-msgstr "Máquina e 'Scanner'"
-
-#: core/utilities/setup/setupicc.cpp:364
-#, kde-format
-msgid "Default input color profile:"
-msgstr "Perfil de entrada predefinido:"
-
-#: core/utilities/setup/setupicc.cpp:366
-#, kde-format
-msgid ""
-"<p>This is the default color profile for your input device (that is your "
-"camera - or your scanner). A camera input profile is recommended for correct "
-"conversion of RAW images in 16bit. Some of the options about loading "
-"behavior above refer to this profile.</p>"
-msgstr ""
-"<p>Este é o perfil de cores por omissão para o seu dispositivo de entrada (a "
-"sua máquina fotográfica ou o seu 'scanner'). Recomenda-se a utilização de um "
-"perfil de entrada para a conversão correcta das imagens RAW a 16 bits. "
-"Algumas das opções acima de comportamento do carregamento referem-se a este "
-"perfil.</p>"
-
-#: core/utilities/setup/setupicc.cpp:373
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected input profile.</p>"
-msgstr ""
-"<p>Você poderá usar este botão para obter informações mais detalhadas sobre "
-"o perfil de entrada seleccionado.</p>"
-
-#: core/utilities/setup/setupicc.cpp:384
-#, kde-format
-msgid "Printing and Proofing"
-msgstr "Impressão e Prova"
-
-#: core/utilities/setup/setupicc.cpp:389
-#, kde-format
-msgid "Output device profile:"
-msgstr "Perfil do dispositivo de saída:"
-
-#: core/utilities/setup/setupicc.cpp:398
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected proofing profile.</p>"
-msgstr ""
-"<p>Você poderá usar este botão para obter informações mais detalhadas sobre "
-"o perfil de prova seleccionado.</p>"
-
-#: core/utilities/setup/setupicc.cpp:409
-#, kde-format
-msgid "Color Profiles Repository"
-msgstr "Repositório de Perfis de Cores"
-
-#: core/utilities/setup/setupicc.cpp:414
-#, kde-format
-msgid ""
-"digiKam looks for ICC profiles in a number of <a href='default'>default "
-"locations</a>. You can specify an additional folder:"
-msgstr ""
-"O digiKam procura pelos perfis ICC num conjunto de <a "
-"href='default'>localizações predefinidas</a>. Poderá indicar uma pasta "
-"adicional:"
-
-#: core/utilities/setup/setupicc.cpp:422
-#, kde-format
-msgid ""
-"<p>digiKam searches ICC profiles in default system folders and ships itself "
-"a few selected profiles. Store all your additional color profiles in the "
-"directory set here.</p>"
-msgstr ""
-"<p>O digiKam procura os perfis ICC nas pastas predefinidas do sistema e "
-"contém ele próprio alguns perfis seleccionados. Guarde todos os seus perfis "
-"de cores adicionais na pasta que indicar aqui.</p>"
-
-#: core/utilities/setup/setupicc.cpp:445
-#, kde-format
-msgid "Use black point compensation"
-msgstr "Usar a compensação do ponto preto"
-
-#: core/utilities/setup/setupicc.cpp:446
-#, kde-format
-msgid ""
-"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
-"maximum black levels of digital files and the black capabilities of various "
-"digital devices.</p>"
-msgstr ""
-"<p>A <b>Compensação do Ponto Preto</b> é uma forma de fazer ajustes entre os "
-"níveis máximos de preto nos ficheiros digitais e as capacidades de preto de "
-"vários dispositivos digitais.</p>"
-
-#: core/utilities/setup/setupicc.cpp:452
-#, kde-format
-msgid "Rendering Intents:"
-msgstr "Tentativas de Desenho:"
-
-#: core/utilities/setup/setupicc.cpp:467
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Behavior"
-msgstr "Comportamento"
-
-#: core/utilities/setup/setupicc.cpp:468
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Profiles"
-msgstr "Perfis"
-
-#: core/utilities/setup/setupicc.cpp:469
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Advanced"
-msgstr "Avançado"
-
-#: core/utilities/setup/setupicc.cpp:670
-#, kde-format
-msgid "Monitor Profile From System Settings"
-msgstr "Perfil do Monitor na Configuração do Sistema"
-
-#: core/utilities/setup/setupicc.cpp:702
-#, kde-format
-msgid "No ICC profiles files found."
-msgstr "Não foram encontrados ficheiros de perfis ICC."
-
-#: core/utilities/setup/setupicc.cpp:718
-#, kde-format
-msgid "No Display Profile Available"
-msgstr "Sem Perfis de Visualização Disponíveis"
-
-#: core/utilities/setup/setupicc.cpp:720
-#, kde-format
-msgid "No Output Profile Available"
-msgstr "Sem Perfis de Saída Disponíveis"
-
-#: core/utilities/setup/setupicc.cpp:854
-#, kde-format
-msgctxt "none of the paths"
-msgid "none"
-msgstr "nenhum"
-
-#: core/utilities/setup/setupicc.cpp:863
-#, kde-format
-msgid ""
-"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
-"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
-"Windows/Color/</li></ul>On your system, currently these paths exist and are "
-"scanned:<ul><li>%3</li></ul>"
-msgstr ""
-"No Windows, os locais de pesquisa por omissão incluem o <ul><li>%1/Windows/"
-"System32/spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</"
-"li><li>%2/Windows/Color/</li></ul>No seu sistema, de momento estes locais "
-"existem e são sondados:<ul><li>%3</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:879
-#, kde-format
-msgid ""
-"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
-"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
-"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
-"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
-"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
-"exist and are scanned:<ul><li>%2</li></ul>"
-msgstr ""
-"No macOS, os locais de pesquisa por omissão incluem <ul><li>/System/Library/"
-"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/"
-"icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</li><li>~/."
-"color/icc</li><li>~/.color/icc/</li></ul>No seu sistema, de momento estes "
-"locais existem e são sondados:<ul><li>%2</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:898
-#, kde-format
-msgid ""
-"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
-"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
-msgstr ""
-"No Linux, os locais de pesquisa predefinidos incluem o <ul><li>/usr/share/"
-"color/icc</li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/"
-"icc/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>No seu "
-"sistema, estes locais existem e são pesquisados:<ul><li>%1</li></ul>"
-
 #: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
 msgid "Synchronize panels automatically"
@@ -70989,17 +70990,17 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Módulos de Carregamento de Imagens"
 
-#: core/utilities/setup/setuptemplate.cpp:81
+#: core/utilities/setup/template/setuptemplate.cpp:35
 #, kde-format
 msgid "Template Title:"
 msgstr "Título do Modelo:"
 
-#: core/utilities/setup/setuptemplate.cpp:84
+#: core/utilities/setup/template/setuptemplate.cpp:38
 #, kde-format
 msgid "Enter the metadata template title here."
 msgstr "Indique aqui o título do modelo de meta-dados."
 
-#: core/utilities/setup/setuptemplate.cpp:85
+#: core/utilities/setup/template/setuptemplate.cpp:39
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
@@ -71008,14 +71009,14 @@ msgstr ""
 "<p>Indique aqui o título do modelo de meta-dados. Este título será usado "
 "para identificar um modelo na sua colecção.</p>"
 
-#: core/utilities/setup/setuptemplate.cpp:89
+#: core/utilities/setup/template/setuptemplate.cpp:43
 #, fuzzy, kde-format
 #| msgctxt "new smug album dialog"
 #| msgid "Template:"
 msgid "Merge Template"
 msgstr "Modelo:"
 
-#: core/utilities/setup/setuptemplate.cpp:97
+#: core/utilities/setup/template/setuptemplate.cpp:51
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -71031,18 +71032,18 @@ msgstr ""
 "IPTC limitam o tamanho dos textos. Use a ajuda de contexto para mais "
 "detalhes.</b>"
 
-#: core/utilities/setup/setuptemplate.cpp:116
+#: core/utilities/setup/template/setuptemplate.cpp:70
 #, kde-format
 msgid "&Replace..."
 msgstr "Substitui&r..."
 
-#: core/utilities/setup/setuptemplate.cpp:255
-#: core/utilities/setup/setuptemplate.cpp:289
+#: core/utilities/setup/template/setuptemplate_slots.cpp:44
+#: core/utilities/setup/template/setuptemplate_slots.cpp:78
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "Não é possível registar o novo modelo de meta-dados sem um título."
 
-#: core/utilities/setup/setuptemplate.cpp:262
+#: core/utilities/setup/template/setuptemplate_slots.cpp:51
 #, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "Já existe um modelo de meta-dados chamado '%1'."

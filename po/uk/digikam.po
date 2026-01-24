@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 00:55+0000\n"
+"POT-Creation-Date: 2026-01-24 00:41+0000\n"
 "PO-Revision-Date: 2026-01-20 06:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -10732,7 +10732,7 @@ msgid "Energy function"
 msgstr "Функція енергії"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/icc/setupicc.cpp:344
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Додаткові параметри"
@@ -30465,7 +30465,7 @@ msgstr "Більше не питати"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:180
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37810,7 +37810,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Відкрити сторінку вікна налаштовування для налаштовування оновлень."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:154
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:57
 #, kde-format
 msgid "Download"
 msgstr "Отримати"
@@ -50978,7 +50978,7 @@ msgstr "Дек&орування"
 msgid "Effec&ts"
 msgstr "Е&фекти"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:122
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -51060,13 +51060,13 @@ msgstr ""
 "зможете вказати типові параметри, які буде використано для збереження "
 "зображень</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Геопозиціювання"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -58031,7 +58031,7 @@ msgstr "Зміна закладки геопозиціювання"
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
-#: core/utilities/setup/setuptemplate.cpp:114
+#: core/utilities/setup/template/setuptemplate.cpp:68
 #, kde-format
 msgid "&Remove"
 msgstr "Ви&лучити"
@@ -59194,7 +59194,7 @@ msgstr "а потім перетворити у робочий простір к
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:717
+#: core/utilities/setup/icc/setupicc_helpers.cpp:60
 #, kde-format
 msgid "No Profile Available"
 msgstr "Не знайдено профілю"
@@ -59246,7 +59246,7 @@ msgstr ""
 "використаний для створення цього зображення:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:719
+#: core/utilities/setup/icc/setupicc_helpers.cpp:62
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Не знайдено жодного вхідного профілю"
@@ -59298,7 +59298,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Імітувати за профілем вихідного пристрою:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:392
+#: core/utilities/setup/icc/setupicc.cpp:295
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -59334,14 +59334,14 @@ msgid "Highlighting color:"
 msgstr "Колір підсвічування:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Помилка профілю"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, kde-format
 msgid "No profile is selected."
 msgstr "Не вибрано жодного профілю."
@@ -59406,7 +59406,7 @@ msgstr ""
 "Поточне зображення було змінено.\n"
 "Бажаєте зберегти внесені зміни?"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:388
+#: core/utilities/imageeditor/editor/editortool.cpp:406
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
@@ -60167,13 +60167,13 @@ msgstr ""
 "Не вдалось завантажити зображення\n"
 "«%1»"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:91
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "До"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:93
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -60195,7 +60195,7 @@ msgstr "До"
 msgid "After"
 msgstr "Після"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -64998,7 +64998,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:94
 #: core/utilities/setup/camera/setupcamera.cpp:273
 #: core/utilities/setup/camera/setupcamera.cpp:396
-#: core/utilities/setup/setuptemplate.cpp:112
+#: core/utilities/setup/template/setuptemplate.cpp:66
 #, kde-format
 msgid "&Add..."
 msgstr "&Додати…"
@@ -66014,13 +66014,13 @@ msgstr "Виберіть категорію"
 msgid "Your collection will use this category:"
 msgstr "Для вашої збірки буде використано таку категорію:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:141
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Отримання потрібних файлів моделей"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:60
 #: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "Open local directory used for the data files storage."
@@ -66028,56 +66028,61 @@ msgstr ""
 "Відкрити локальний каталог, який використовується для зберігання файлів "
 "даних."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:66
 #, kde-format
 msgid "Location of the face management model files:"
 msgstr "Розташування файлів моделі розпізнавання облич:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
 msgstr "Ціль моделі керування обличчями"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:75
 #, kde-format
 msgid "Sets the target address to download the face management model files to."
 msgstr ""
 "Встановлює адресу призначення для отримання файлів моделі керування "
 "обличчями."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:77
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Використати можливості автоматизації ШІ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:78
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Використати можливість керування обличчями"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:79
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Використати можливість визначення естетичності"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:80
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Використати можливість автоматичного призначення міток"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:278
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:279
+#, kde-format
+msgid "Clean up unused AI/DNN model files..."
+msgstr "Вилучення невикористаних файлів моделей ШІ/РНМ..."
+
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:45
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Усі файли моделей було успішно отримано."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:287
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Помилка під час отримання"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:288
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:55
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -66097,33 +66102,33 @@ msgstr ""
 "Ви можете повторити спробу або продовжити отримання даних під час наступного "
 "запуску."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:296
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Спробувати ще раз"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:135
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Неправильна контрольна сума."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:458
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:159
 #, kde-format
 msgid "File write error."
 msgstr "Помилка запису до файла."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:166
 #, kde-format
 msgid "File open error."
 msgstr "Помилка під час спроби відкрити файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:480
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:181
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файл на сервері є надто великим."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:591
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:256
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -66140,7 +66145,7 @@ msgstr ""
 "ефекту «червоних» очей, потрібні будуть файли моделей керування записами "
 "облич.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:596
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:261
 #, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -66156,21 +66161,16 @@ msgstr ""
 "файлів.</p><p><b>Вам доведеться перезапустити digiKam після успішного "
 "отримання цих файлів.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:268
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Для отримання даних потрібні дані %1 файлів розміром %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:629
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:294
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Знайдено усі файли для реалізації вибраних можливостей."
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:657
-#, kde-format
-msgid "Clean up unused AI/DNN model files..."
-msgstr "Вилучення невикористаних файлів моделей ШІ/РНМ..."
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
@@ -66698,6 +66698,406 @@ msgstr ""
 "специфікацією для зберігання зображень у контейнері ISOBMFF (як HEIF) зі "
 "стисканням за допомогою кодеку AOMedia Video 1 (AV1). Це відкритий формат "
 "кодування — сплачувати за використання патентів не потрібно. </item>"
+
+#: core/utilities/setup/icc/setupicc.cpp:42
+#, kde-format
+msgid "Enable Color Management"
+msgstr "Ввімкнути керування кольорами"
+
+#: core/utilities/setup/icc/setupicc.cpp:43
+#, kde-format
+msgid ""
+"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
+"Management is disabled</li></ul>"
+msgstr ""
+"<ul><li>Позначено: керування кольорами активовано</li><li>Не позначено: "
+"керування кольорами деактивовано</li></ul>"
+
+#: core/utilities/setup/icc/setupicc.cpp:50
+#, kde-format
+msgid "Visit Little CMS project website"
+msgstr "Відвідайте сторінку проєкту Little CMS"
+
+#: core/utilities/setup/icc/setupicc.cpp:60
+#, kde-format
+msgid "Working Color Space"
+msgstr "Робочий простір кольорів"
+
+#: core/utilities/setup/icc/setupicc.cpp:66
+#, kde-format
+msgid ""
+"<p>This is the color space all the images will be converted to when opened "
+"(if you choose to convert) and the profile that will be embedded when "
+"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
+"IEC61966-2.1</b></p>"
+msgstr ""
+"<p>Це простір кольорів, у який буде перетворено всі відкриті зображення "
+"(якщо ви накажете програмі виконувати перетворення) та профіль, який буде "
+"вбудовано до файла зображення під час збереження. Хороші і безпечні варіанти "
+"вибору: <b>Adobe RGB (1998)</b> і <b>sRGB IEC61966-2.1</b></p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:72
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected workspace profile.</p>"
+msgstr ""
+"<p>Ви можете скористатися цією кнопкою, щоб отримати докладнішу інформацію "
+"про вибраний профіль робочого простору.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:86
+#, kde-format
+msgid "When the profile of an image does not match the working color space"
+msgstr ""
+"Якщо профіль зображення не збігається з профілем кольорів робочого простору"
+
+#: core/utilities/setup/icc/setupicc.cpp:94
+#: core/utilities/setup/icc/setupicc.cpp:125
+#, kde-format
+msgid "Ask when opening the image"
+msgstr "Запитати під час відкриття зображення"
+
+#: core/utilities/setup/icc/setupicc.cpp:95
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will ask if you want to convert to the working space, keep "
+"the embedded profile or discard the embedded profile and assign a different "
+"one.</p>"
+msgstr ""
+"<p>Якщо до файла зображення вбудовано профіль кольорів, що не збігається з "
+"профілем кольорів робочого простору, digiKam запитає вас про те, бажаєте ви "
+"перетворити робочий простір, зберегти вбудований профіль чи відкинути його і "
+"призначити інший профіль кольорів.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:101
+#, kde-format
+msgid "Convert the image to the working color space"
+msgstr "Перетворювати зображення у робочий простір кольорів"
+
+#: core/utilities/setup/icc/setupicc.cpp:102
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will convert the image's color information to the working "
+"color space. This changes the pixel data, but not the appearance of the "
+"image.</p>"
+msgstr ""
+"<p>Якщо до файла зображення вбудовано профіль кольорів, що не збігається з "
+"профілем кольорів робочого простору, digiKam перетворить кольори зображення "
+"на кольори робочого простору кольорів. Таким чином, буде змінено дані "
+"пікселів, але не вигляд зображення.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:118
+#, kde-format
+msgid "When an image has no color profile information"
+msgstr "Якщо файл зображення не містить даних щодо профілю кольорів"
+
+#: core/utilities/setup/icc/setupicc.cpp:126
+#, kde-format
+msgid ""
+"<p>If an image has no embedded color profile, digiKam will ask which color "
+"space shall be used to interpret the image and to which color space it shall "
+"be transformed for editing.</p>"
+msgstr ""
+"<p>Якщо до файла зображення не було вбудовано профіль кольорів, digiKam "
+"запитає вас про те, який простір кольорів слід використовувати для показу "
+"зображення і у який простір кольорів слід перетворити кольори зображення для "
+"редагування.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:130
+#, kde-format
+msgid "Assume it is using the sRGB color space (Internet standard)"
+msgstr "Припускати, що простором кольорів є sRGB (типовий простір у інтернеті)"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:136
+#, kde-format
+msgid "and convert it to the working color space"
+msgstr "і перетворити його на робочий простір кольорів"
+
+#: core/utilities/setup/icc/setupicc.cpp:149
+#, kde-format
+msgid "Assume it is using the working color space"
+msgstr "Припускати, що використано робочий простір кольорів"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:155
+#, kde-format
+msgid "Convert it from default input color space to working space"
+msgstr ""
+"Перетворювати його з типового вхідного простору кольорів у робочий простір"
+
+#: core/utilities/setup/icc/setupicc.cpp:174
+#, kde-format
+msgid "When loading a RAW file with uncalibrated colors"
+msgstr ""
+"Під час завантаження файла цифрового негатива без калібрування кольорів"
+
+#: core/utilities/setup/icc/setupicc.cpp:181
+#, kde-format
+msgid "Ask for the input profile"
+msgstr "Запитати про вхідний профіль"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:187
+#, kde-format
+msgid "Automatic color correction"
+msgstr "Автоматичне виправлення кольорів"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:193
+#, kde-format
+msgid "Convert it from the default input profile"
+msgstr "Перетворити його з типового вхідного профілю"
+
+#: core/utilities/setup/icc/setupicc.cpp:217
+#, kde-format
+msgid "Color Managed View"
+msgstr "Перегляд з керуванням кольорами"
+
+#: core/utilities/setup/icc/setupicc.cpp:222
+#, kde-format
+msgid "Monitor profile:"
+msgstr "Профіль монітора: "
+
+#: core/utilities/setup/icc/setupicc.cpp:226
+#, kde-format
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
+"<p>Якщо ваше стільничне середовище не надає профілю кольорів для вашого "
+"екрана, тут ви можете вибрати типовий профіль. Якщо профіль не встановлено, "
+"буде використано резервний профіль sRGB. В усіх випадках процедура керування "
+"кольорами спробує отримати профіль, який встановлено для вашого монітора "
+"вашим стільничним середовищем.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:234
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected monitor profile.</p>"
+msgstr ""
+"<p>Можете скористатись цією кнопкою для отримання докладнішої інформації про "
+"вибраний профіль монітора.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:238
+#, kde-format
+msgid "Use color managed view in editor"
+msgstr "Перегляд з керуванням кольорами у редакторі"
+
+#: core/utilities/setup/icc/setupicc.cpp:239
+#, kde-format
+msgid ""
+"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
+"to show your pictures in the Image Editor window with a color correction "
+"adapted to your monitor. You can at any time toggle this option from the "
+"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
+"depending on the speed of your computer.</p>"
+msgstr ""
+"<p>Позначте цей пункт, якщо ви бажаєте скористатися вашим <b>Профілем "
+"кольору дисплея</b>, щоб показувати зображення у вікні редактора зображень з "
+"корекцією кольорів, що відповідає вашому дисплею. Ви можете будь-коли "
+"увімкнути чи вимкнути використання цього профілю у вікні редактора. "
+"<i>Попередження</i>: використання профілю може сповільнити відображення "
+"зображення, якщо ваш комп'ютер не достатньо потужний.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:246
+#, kde-format
+msgid "Use color managed view for previews and thumbnails"
+msgstr "Керування кольорами у попередньому перегляді і мініатюрах"
+
+#: core/utilities/setup/icc/setupicc.cpp:262
+#, kde-format
+msgid "Camera and Scanner"
+msgstr "Фотоапарат і сканер"
+
+#: core/utilities/setup/icc/setupicc.cpp:267
+#, kde-format
+msgid "Default input color profile:"
+msgstr "Типовий вхідний профіль кольорів:"
+
+#: core/utilities/setup/icc/setupicc.cpp:269
+#, kde-format
+msgid ""
+"<p>This is the default color profile for your input device (that is your "
+"camera - or your scanner). A camera input profile is recommended for correct "
+"conversion of RAW images in 16bit. Some of the options about loading "
+"behavior above refer to this profile.</p>"
+msgstr ""
+"<p>Це типовий профіль кольорів для вашого пристрою вхідних даних (цим "
+"пристроєм може бути ваш фотоапарат або ваш сканер). Рекомендуємо вам "
+"використовувати профіль фотоапарата для виправлення перетворення файлів "
+"цифрових негативів з 16-бітовою глибиною кольорів. Деякі з параметрів "
+"профілю пов'язано з параметрами завантаження, наведеними вище.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:276
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected input profile.</p>"
+msgstr ""
+"<p>Ви можете скористатися цією кнопкою, щоб отримати детальнішу інформацію "
+"про вибраний профіль вхідних даних.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:287
+#, kde-format
+msgid "Printing and Proofing"
+msgstr "Друк та проба"
+
+#: core/utilities/setup/icc/setupicc.cpp:292
+#, kde-format
+msgid "Output device profile:"
+msgstr "Профіль пристрою виведення даних:"
+
+#: core/utilities/setup/icc/setupicc.cpp:301
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected proofing profile.</p>"
+msgstr ""
+"<p>Ви можете скористатися цією кнопкою, щоб отримати докладну інформацію про "
+"вибраний профіль проби.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:312
+#, kde-format
+msgid "Color Profiles Repository"
+msgstr "Сховище профілів кольорів"
+
+#: core/utilities/setup/icc/setupicc.cpp:317
+#, kde-format
+msgid ""
+"digiKam looks for ICC profiles in a number of <a href='default'>default "
+"locations</a>. You can specify an additional folder:"
+msgstr ""
+"digiKam шукає файли профілів ICC за декількома <a href='default'>типовими "
+"адресами</a>. Ви можете вказати додаткову теку для пошуку:"
+
+#: core/utilities/setup/icc/setupicc.cpp:325
+#, kde-format
+msgid ""
+"<p>digiKam searches ICC profiles in default system folders and ships itself "
+"a few selected profiles. Store all your additional color profiles in the "
+"directory set here.</p>"
+msgstr ""
+"<p>digiKam шукає профілі ICC у типових системних теках, також у програмі "
+"передбачено декілька вбудованих профілів. Всі ваші додаткові профілі "
+"кольорів мають зберігатися у каталозі, адресу якого вказано у цьому полі.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:348
+#, kde-format
+msgid "Use black point compensation"
+msgstr "Використовувати компенсацію чорної точки"
+
+#: core/utilities/setup/icc/setupicc.cpp:349
+#, kde-format
+msgid ""
+"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
+"maximum black levels of digital files and the black capabilities of various "
+"digital devices.</p>"
+msgstr ""
+"<p><b>Компенсація чорної точки</b> це спосіб налаштування між максимальними "
+"рівнями чорного цифрових файлів і можливостями у відтворенні кольорів "
+"різноманітних цифрових пристроїв.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:355
+#, kde-format
+msgid "Rendering Intents:"
+msgstr "Відтворення кольорів:"
+
+#: core/utilities/setup/icc/setupicc.cpp:370
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Behavior"
+msgstr "Поведінка"
+
+#: core/utilities/setup/icc/setupicc.cpp:371
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Profiles"
+msgstr "Профілі"
+
+#: core/utilities/setup/icc/setupicc.cpp:372
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Advanced"
+msgstr "Додатково"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:45
+#, kde-format
+msgid "No ICC profiles files found."
+msgstr "Не знайдено жодного файла профілю ICC."
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:61
+#, kde-format
+msgid "No Display Profile Available"
+msgstr "Не знайдено жодного профілю показу"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:63
+#, kde-format
+msgid "No Output Profile Available"
+msgstr "Не знайдено жодного вихідного профілю"
+
+#: core/utilities/setup/icc/setupicc_settings.cpp:160
+#, kde-format
+msgid "Monitor Profile From System Settings"
+msgstr "Стежити за профілем з «Системних параметрів»"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:116
+#, kde-format
+msgctxt "none of the paths"
+msgid "none"
+msgstr "немає"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:125
+#, kde-format
+msgid ""
+"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
+"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
+"Windows/Color/</li></ul>On your system, currently these paths exist and are "
+"scanned:<ul><li>%3</li></ul>"
+msgstr ""
+"У Linux типовими шляхами для пошуку є <ul><li>%1/Windows/System32/spool/"
+"drivers/color/</li><li>%2/Windows/Color/</li></ul>У вашій системі виявлено "
+"такі шляхи, за якими відбуватиметься пошук:<ul><li>%3</li></ul>"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:141
+#, kde-format
+msgid ""
+"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
+"exist and are scanned:<ul><li>%2</li></ul>"
+msgstr ""
+"Для macOS типовими шляхами пошуку є <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/icc</"
+"li><li>/opt/digikam/share/color/icc</li><li>%1/Contents/Resources/digikam/"
+"profiles/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>У вашій "
+"системі зараз існують такі шляхи, пошук у яких здійснює програма:<ul><li>%2</"
+"li></ul>"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:160
+#, kde-format
+msgid ""
+"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
+"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
+"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
+"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
+msgstr ""
+"У Linux типовими шляхами для пошуку є <ul><li>/usr/share/color/icc</li><li>/"
+"usr/local/share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/"
+"share/icc/</li><li>~/.color/icc/</li></ul>У вашій системі вже вказано такі "
+"шляхи для пошуку:<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:128
 #, kde-format
@@ -68397,13 +68797,13 @@ msgstr "AVFoundation (системний)"
 msgid "Enable internal debug logging"
 msgstr "Увімкнути внутрішнє діагностичне ведення журналу"
 
-#: core/utilities/setup/setup.cpp:130
+#: core/utilities/setup/setup.cpp:39
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "База даних"
 
-#: core/utilities/setup/setup.cpp:131
+#: core/utilities/setup/setup.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68413,13 +68813,13 @@ msgstr ""
 "Параметри бази даних\n"
 "Налаштуйте параметри бази даних"
 
-#: core/utilities/setup/setup.cpp:135
+#: core/utilities/setup/setup.cpp:44
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Збірки"
 
-#: core/utilities/setup/setup.cpp:136
+#: core/utilities/setup/setup.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68429,13 +68829,13 @@ msgstr ""
 "Параметри збірки\n"
 "За допомогою цієї панелі ви зможете налаштувати шляхи до кореневих альбомів"
 
-#: core/utilities/setup/setup.cpp:140
+#: core/utilities/setup/setup.cpp:49
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Режими перегляду"
 
-#: core/utilities/setup/setup.cpp:141
+#: core/utilities/setup/setup.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68445,13 +68845,13 @@ msgstr ""
 "Параметри панелей перегляду програми\n"
 "За допомогою цієї панелі ви зможете налаштувати компоненти панелей перегляду"
 
-#: core/utilities/setup/setup.cpp:145
+#: core/utilities/setup/setup.cpp:54
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Підказки"
 
-#: core/utilities/setup/setup.cpp:146
+#: core/utilities/setup/setup.cpp:55
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68461,13 +68861,13 @@ msgstr ""
 "Параметри підказок записів\n"
 "За допомогою цієї панелі ви зможете налаштувати вміст підказок записів"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:59
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Метадані"
 
-#: core/utilities/setup/setup.cpp:151
+#: core/utilities/setup/setup.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68478,13 +68878,13 @@ msgstr ""
 "За допомогою цієї панелі ви можете вказати дії, які буде виконано з "
 "метаданими зображень"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:64
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Шаблони"
 
-#: core/utilities/setup/setup.cpp:156
+#: core/utilities/setup/setup.cpp:65
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68494,13 +68894,13 @@ msgstr ""
 "Шаблони метаданих\n"
 "Керуйте вашою збіркою шаблонів метаданих"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:69
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Редактор зображень"
 
-#: core/utilities/setup/setup.cpp:161
+#: core/utilities/setup/setup.cpp:70
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68510,13 +68910,13 @@ msgstr ""
 "Параметри редактора зображень\n"
 "За допомогою цієї панелі ви зможете налаштувати поведінку редактора зображень"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:74
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Керування кольорами"
 
-#: core/utilities/setup/setup.cpp:166
+#: core/utilities/setup/setup.cpp:75
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68526,13 +68926,13 @@ msgstr ""
 "Параметри керування кольорами\n"
 "За допомогою цієї панелі ви зможете налаштувати параметри керування кольорами"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:79
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Стіл з підсвічуванням"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68543,13 +68943,13 @@ msgstr ""
 "За допомогою цієї панелі ви зможете налаштувати інструмент для порівняння "
 "зображень"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:84
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
 msgstr "Огляд"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:85
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68560,13 +68960,13 @@ msgstr ""
 "За допомогою цієї панелі ви зможете налаштувати інструмент для оцінювання "
 "зображень"
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:98
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Фотоапарати"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68576,13 +68976,13 @@ msgstr ""
 "Параметри фотоапаратів\n"
 "За допомогою цієї панелі ви зможете вказати нові пристрої цифрових фотокамер"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:106
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Додатки"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68592,13 +68992,13 @@ msgstr ""
 "Параметри додатків\n"
 "Встановлення переліку доступних для програми додатків"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:111
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Різне"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -68685,405 +69085,6 @@ msgstr ""
 "href='https://mapsplatform.google.com/pricing/'>сторінкою Google</a> щодо "
 "користування, методів роботи та цін."
 
-#: core/utilities/setup/setupicc.cpp:139
-#, kde-format
-msgid "Enable Color Management"
-msgstr "Ввімкнути керування кольорами"
-
-#: core/utilities/setup/setupicc.cpp:140
-#, kde-format
-msgid ""
-"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
-"Management is disabled</li></ul>"
-msgstr ""
-"<ul><li>Позначено: керування кольорами активовано</li><li>Не позначено: "
-"керування кольорами деактивовано</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:147
-#, kde-format
-msgid "Visit Little CMS project website"
-msgstr "Відвідайте сторінку проєкту Little CMS"
-
-#: core/utilities/setup/setupicc.cpp:157
-#, kde-format
-msgid "Working Color Space"
-msgstr "Робочий простір кольорів"
-
-#: core/utilities/setup/setupicc.cpp:163
-#, kde-format
-msgid ""
-"<p>This is the color space all the images will be converted to when opened "
-"(if you choose to convert) and the profile that will be embedded when "
-"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
-"IEC61966-2.1</b></p>"
-msgstr ""
-"<p>Це простір кольорів, у який буде перетворено всі відкриті зображення "
-"(якщо ви накажете програмі виконувати перетворення) та профіль, який буде "
-"вбудовано до файла зображення під час збереження. Хороші і безпечні варіанти "
-"вибору: <b>Adobe RGB (1998)</b> і <b>sRGB IEC61966-2.1</b></p>"
-
-#: core/utilities/setup/setupicc.cpp:169
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected workspace profile.</p>"
-msgstr ""
-"<p>Ви можете скористатися цією кнопкою, щоб отримати докладнішу інформацію "
-"про вибраний профіль робочого простору.</p>"
-
-#: core/utilities/setup/setupicc.cpp:183
-#, kde-format
-msgid "When the profile of an image does not match the working color space"
-msgstr ""
-"Якщо профіль зображення не збігається з профілем кольорів робочого простору"
-
-#: core/utilities/setup/setupicc.cpp:191 core/utilities/setup/setupicc.cpp:222
-#, kde-format
-msgid "Ask when opening the image"
-msgstr "Запитати під час відкриття зображення"
-
-#: core/utilities/setup/setupicc.cpp:192
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will ask if you want to convert to the working space, keep "
-"the embedded profile or discard the embedded profile and assign a different "
-"one.</p>"
-msgstr ""
-"<p>Якщо до файла зображення вбудовано профіль кольорів, що не збігається з "
-"профілем кольорів робочого простору, digiKam запитає вас про те, бажаєте ви "
-"перетворити робочий простір, зберегти вбудований профіль чи відкинути його і "
-"призначити інший профіль кольорів.</p>"
-
-#: core/utilities/setup/setupicc.cpp:198
-#, kde-format
-msgid "Convert the image to the working color space"
-msgstr "Перетворювати зображення у робочий простір кольорів"
-
-#: core/utilities/setup/setupicc.cpp:199
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will convert the image's color information to the working "
-"color space. This changes the pixel data, but not the appearance of the "
-"image.</p>"
-msgstr ""
-"<p>Якщо до файла зображення вбудовано профіль кольорів, що не збігається з "
-"профілем кольорів робочого простору, digiKam перетворить кольори зображення "
-"на кольори робочого простору кольорів. Таким чином, буде змінено дані "
-"пікселів, але не вигляд зображення.</p>"
-
-#: core/utilities/setup/setupicc.cpp:215
-#, kde-format
-msgid "When an image has no color profile information"
-msgstr "Якщо файл зображення не містить даних щодо профілю кольорів"
-
-#: core/utilities/setup/setupicc.cpp:223
-#, kde-format
-msgid ""
-"<p>If an image has no embedded color profile, digiKam will ask which color "
-"space shall be used to interpret the image and to which color space it shall "
-"be transformed for editing.</p>"
-msgstr ""
-"<p>Якщо до файла зображення не було вбудовано профіль кольорів, digiKam "
-"запитає вас про те, який простір кольорів слід використовувати для показу "
-"зображення і у який простір кольорів слід перетворити кольори зображення для "
-"редагування.</p>"
-
-#: core/utilities/setup/setupicc.cpp:227
-#, kde-format
-msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr "Припускати, що простором кольорів є sRGB (типовий простір у інтернеті)"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:233
-#, kde-format
-msgid "and convert it to the working color space"
-msgstr "і перетворити його на робочий простір кольорів"
-
-#: core/utilities/setup/setupicc.cpp:246
-#, kde-format
-msgid "Assume it is using the working color space"
-msgstr "Припускати, що використано робочий простір кольорів"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:252
-#, kde-format
-msgid "Convert it from default input color space to working space"
-msgstr ""
-"Перетворювати його з типового вхідного простору кольорів у робочий простір"
-
-#: core/utilities/setup/setupicc.cpp:271
-#, kde-format
-msgid "When loading a RAW file with uncalibrated colors"
-msgstr ""
-"Під час завантаження файла цифрового негатива без калібрування кольорів"
-
-#: core/utilities/setup/setupicc.cpp:278
-#, kde-format
-msgid "Ask for the input profile"
-msgstr "Запитати про вхідний профіль"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:284
-#, kde-format
-msgid "Automatic color correction"
-msgstr "Автоматичне виправлення кольорів"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:290
-#, kde-format
-msgid "Convert it from the default input profile"
-msgstr "Перетворити його з типового вхідного профілю"
-
-#: core/utilities/setup/setupicc.cpp:314
-#, kde-format
-msgid "Color Managed View"
-msgstr "Перегляд з керуванням кольорами"
-
-#: core/utilities/setup/setupicc.cpp:319
-#, kde-format
-msgid "Monitor profile:"
-msgstr "Профіль монітора: "
-
-#: core/utilities/setup/setupicc.cpp:323
-#, kde-format
-msgid ""
-"<p>If your desktop do not provide a color profile for your screen, select "
-"here the default one. If no profile is set, sRGB will be used as fail-back. "
-"In all cases, the color management workflow will try to get in first the "
-"profile set for your monitor in your the desktop</p>"
-msgstr ""
-"<p>Якщо ваше стільничне середовище не надає профілю кольорів для вашого "
-"екрана, тут ви можете вибрати типовий профіль. Якщо профіль не встановлено, "
-"буде використано резервний профіль sRGB. В усіх випадках процедура керування "
-"кольорами спробує отримати профіль, який встановлено для вашого монітора "
-"вашим стільничним середовищем.</p>"
-
-#: core/utilities/setup/setupicc.cpp:331
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected monitor profile.</p>"
-msgstr ""
-"<p>Можете скористатись цією кнопкою для отримання докладнішої інформації про "
-"вибраний профіль монітора.</p>"
-
-#: core/utilities/setup/setupicc.cpp:335
-#, kde-format
-msgid "Use color managed view in editor"
-msgstr "Перегляд з керуванням кольорами у редакторі"
-
-#: core/utilities/setup/setupicc.cpp:336
-#, kde-format
-msgid ""
-"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
-"to show your pictures in the Image Editor window with a color correction "
-"adapted to your monitor. You can at any time toggle this option from the "
-"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
-"depending on the speed of your computer.</p>"
-msgstr ""
-"<p>Позначте цей пункт, якщо ви бажаєте скористатися вашим <b>Профілем "
-"кольору дисплея</b>, щоб показувати зображення у вікні редактора зображень з "
-"корекцією кольорів, що відповідає вашому дисплею. Ви можете будь-коли "
-"увімкнути чи вимкнути використання цього профілю у вікні редактора. "
-"<i>Попередження</i>: використання профілю може сповільнити відображення "
-"зображення, якщо ваш комп'ютер не достатньо потужний.</p>"
-
-#: core/utilities/setup/setupicc.cpp:343
-#, kde-format
-msgid "Use color managed view for previews and thumbnails"
-msgstr "Керування кольорами у попередньому перегляді і мініатюрах"
-
-#: core/utilities/setup/setupicc.cpp:359
-#, kde-format
-msgid "Camera and Scanner"
-msgstr "Фотоапарат і сканер"
-
-#: core/utilities/setup/setupicc.cpp:364
-#, kde-format
-msgid "Default input color profile:"
-msgstr "Типовий вхідний профіль кольорів:"
-
-#: core/utilities/setup/setupicc.cpp:366
-#, kde-format
-msgid ""
-"<p>This is the default color profile for your input device (that is your "
-"camera - or your scanner). A camera input profile is recommended for correct "
-"conversion of RAW images in 16bit. Some of the options about loading "
-"behavior above refer to this profile.</p>"
-msgstr ""
-"<p>Це типовий профіль кольорів для вашого пристрою вхідних даних (цим "
-"пристроєм може бути ваш фотоапарат або ваш сканер). Рекомендуємо вам "
-"використовувати профіль фотоапарата для виправлення перетворення файлів "
-"цифрових негативів з 16-бітовою глибиною кольорів. Деякі з параметрів "
-"профілю пов'язано з параметрами завантаження, наведеними вище.</p>"
-
-#: core/utilities/setup/setupicc.cpp:373
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected input profile.</p>"
-msgstr ""
-"<p>Ви можете скористатися цією кнопкою, щоб отримати детальнішу інформацію "
-"про вибраний профіль вхідних даних.</p>"
-
-#: core/utilities/setup/setupicc.cpp:384
-#, kde-format
-msgid "Printing and Proofing"
-msgstr "Друк та проба"
-
-#: core/utilities/setup/setupicc.cpp:389
-#, kde-format
-msgid "Output device profile:"
-msgstr "Профіль пристрою виведення даних:"
-
-#: core/utilities/setup/setupicc.cpp:398
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected proofing profile.</p>"
-msgstr ""
-"<p>Ви можете скористатися цією кнопкою, щоб отримати докладну інформацію про "
-"вибраний профіль проби.</p>"
-
-#: core/utilities/setup/setupicc.cpp:409
-#, kde-format
-msgid "Color Profiles Repository"
-msgstr "Сховище профілів кольорів"
-
-#: core/utilities/setup/setupicc.cpp:414
-#, kde-format
-msgid ""
-"digiKam looks for ICC profiles in a number of <a href='default'>default "
-"locations</a>. You can specify an additional folder:"
-msgstr ""
-"digiKam шукає файли профілів ICC за декількома <a href='default'>типовими "
-"адресами</a>. Ви можете вказати додаткову теку для пошуку:"
-
-#: core/utilities/setup/setupicc.cpp:422
-#, kde-format
-msgid ""
-"<p>digiKam searches ICC profiles in default system folders and ships itself "
-"a few selected profiles. Store all your additional color profiles in the "
-"directory set here.</p>"
-msgstr ""
-"<p>digiKam шукає профілі ICC у типових системних теках, також у програмі "
-"передбачено декілька вбудованих профілів. Всі ваші додаткові профілі "
-"кольорів мають зберігатися у каталозі, адресу якого вказано у цьому полі.</p>"
-
-#: core/utilities/setup/setupicc.cpp:445
-#, kde-format
-msgid "Use black point compensation"
-msgstr "Використовувати компенсацію чорної точки"
-
-#: core/utilities/setup/setupicc.cpp:446
-#, kde-format
-msgid ""
-"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
-"maximum black levels of digital files and the black capabilities of various "
-"digital devices.</p>"
-msgstr ""
-"<p><b>Компенсація чорної точки</b> це спосіб налаштування між максимальними "
-"рівнями чорного цифрових файлів і можливостями у відтворенні кольорів "
-"різноманітних цифрових пристроїв.</p>"
-
-#: core/utilities/setup/setupicc.cpp:452
-#, kde-format
-msgid "Rendering Intents:"
-msgstr "Відтворення кольорів:"
-
-#: core/utilities/setup/setupicc.cpp:467
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Behavior"
-msgstr "Поведінка"
-
-#: core/utilities/setup/setupicc.cpp:468
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Profiles"
-msgstr "Профілі"
-
-#: core/utilities/setup/setupicc.cpp:469
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Advanced"
-msgstr "Додатково"
-
-#: core/utilities/setup/setupicc.cpp:670
-#, kde-format
-msgid "Monitor Profile From System Settings"
-msgstr "Стежити за профілем з «Системних параметрів»"
-
-#: core/utilities/setup/setupicc.cpp:702
-#, kde-format
-msgid "No ICC profiles files found."
-msgstr "Не знайдено жодного файла профілю ICC."
-
-#: core/utilities/setup/setupicc.cpp:718
-#, kde-format
-msgid "No Display Profile Available"
-msgstr "Не знайдено жодного профілю показу"
-
-#: core/utilities/setup/setupicc.cpp:720
-#, kde-format
-msgid "No Output Profile Available"
-msgstr "Не знайдено жодного вихідного профілю"
-
-#: core/utilities/setup/setupicc.cpp:854
-#, kde-format
-msgctxt "none of the paths"
-msgid "none"
-msgstr "немає"
-
-#: core/utilities/setup/setupicc.cpp:863
-#, kde-format
-msgid ""
-"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
-"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
-"Windows/Color/</li></ul>On your system, currently these paths exist and are "
-"scanned:<ul><li>%3</li></ul>"
-msgstr ""
-"У Linux типовими шляхами для пошуку є <ul><li>%1/Windows/System32/spool/"
-"drivers/color/</li><li>%2/Windows/Color/</li></ul>У вашій системі виявлено "
-"такі шляхи, за якими відбуватиметься пошук:<ul><li>%3</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:879
-#, kde-format
-msgid ""
-"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
-"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
-"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
-"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
-"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
-"exist and are scanned:<ul><li>%2</li></ul>"
-msgstr ""
-"Для macOS типовими шляхами пошуку є <ul><li>/System/Library/ColorSync/"
-"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
-"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/icc</"
-"li><li>/opt/digikam/share/color/icc</li><li>%1/Contents/Resources/digikam/"
-"profiles/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>У вашій "
-"системі зараз існують такі шляхи, пошук у яких здійснює програма:<ul><li>%2</"
-"li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:898
-#, kde-format
-msgid ""
-"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
-"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
-msgstr ""
-"У Linux типовими шляхами для пошуку є <ul><li>/usr/share/color/icc</li><li>/"
-"usr/local/share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/"
-"share/icc/</li><li>~/.color/icc/</li></ul>У вашій системі вже вказано такі "
-"шляхи для пошуку:<ul><li>%1</li></ul>"
-
 #: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
 msgid "Synchronize panels automatically"
@@ -69152,17 +69153,17 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Завантажувачі зображень"
 
-#: core/utilities/setup/setuptemplate.cpp:81
+#: core/utilities/setup/template/setuptemplate.cpp:35
 #, kde-format
 msgid "Template Title:"
 msgstr "Назва шаблону:"
 
-#: core/utilities/setup/setuptemplate.cpp:84
+#: core/utilities/setup/template/setuptemplate.cpp:38
 #, kde-format
 msgid "Enter the metadata template title here."
 msgstr "Введіть назву шаблону метаданих."
 
-#: core/utilities/setup/setuptemplate.cpp:85
+#: core/utilities/setup/template/setuptemplate.cpp:39
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
@@ -69171,12 +69172,12 @@ msgstr ""
 "<p>У це поле вам слід ввести назву шаблону метаданих. За допомогою назви ви "
 "зможете орієнтуватися серед шаблонів у вашій збірці.</p>"
 
-#: core/utilities/setup/setuptemplate.cpp:89
+#: core/utilities/setup/template/setuptemplate.cpp:43
 #, kde-format
 msgid "Merge Template"
 msgstr "Шаблон об'єднання"
 
-#: core/utilities/setup/setuptemplate.cpp:97
+#: core/utilities/setup/template/setuptemplate.cpp:51
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -69192,18 +69193,18 @@ msgstr ""
 "обмеження на довжину рядка. Щоб дізнатися більше, скористайтеся контекстною "
 "довідкою.</b>"
 
-#: core/utilities/setup/setuptemplate.cpp:116
+#: core/utilities/setup/template/setuptemplate.cpp:70
 #, kde-format
 msgid "&Replace..."
 msgstr "&Замінити…"
 
-#: core/utilities/setup/setuptemplate.cpp:255
-#: core/utilities/setup/setuptemplate.cpp:289
+#: core/utilities/setup/template/setuptemplate_slots.cpp:44
+#: core/utilities/setup/template/setuptemplate_slots.cpp:78
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "Неможливо зареєструвати новий шаблон метаданих без заголовка."
 
-#: core/utilities/setup/setuptemplate.cpp:262
+#: core/utilities/setup/template/setuptemplate_slots.cpp:51
 #, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "Шаблон метаданих з назвою «%1» вже існує."

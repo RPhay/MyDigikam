@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 00:55+0000\n"
+"POT-Creation-Date: 2026-01-24 00:41+0000\n"
 "PO-Revision-Date: 2026-01-20 07:10+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -10565,7 +10565,7 @@ msgid "Energy function"
 msgstr "Energijska funkcija"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/icc/setupicc.cpp:344
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Napredne nastavitve"
@@ -30058,7 +30058,7 @@ msgstr "Ne vprašaj več"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:180
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37323,7 +37323,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Odpri pogovorno okno nastavitev za nastavljanje posodobitev."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:154
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:57
 #, kde-format
 msgid "Download"
 msgstr "Prenesi sem"
@@ -50436,7 +50436,7 @@ msgstr "Okrasi"
 msgid "Effec&ts"
 msgstr "Učinki"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:122
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -50515,13 +50515,13 @@ msgstr ""
 "<qt>Nastavitve za shranjevanje slikovnih datotek<br><i>Nastavite privzete "
 "nastavitve za shranjevanje slik</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokacija"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -57394,7 +57394,7 @@ msgstr "Uredi zaznamke zemljepisne lege"
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
-#: core/utilities/setup/setuptemplate.cpp:114
+#: core/utilities/setup/template/setuptemplate.cpp:68
 #, kde-format
 msgid "&Remove"
 msgstr "Odst&rani"
@@ -58548,7 +58548,7 @@ msgstr "in potem pretvori v delovni prostor"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:717
+#: core/utilities/setup/icc/setupicc_helpers.cpp:60
 #, kde-format
 msgid "No Profile Available"
 msgstr "Na voljo ni nobenih profilov"
@@ -58598,7 +58598,7 @@ msgstr ""
 "ustvaritvi te slike:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:719
+#: core/utilities/setup/icc/setupicc_helpers.cpp:62
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Na voljo ni nobenih vhodnih profilov"
@@ -58650,7 +58650,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Profil na izhodni napravi, ki bo simuliran:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:392
+#: core/utilities/setup/icc/setupicc.cpp:295
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -58686,14 +58686,14 @@ msgid "Highlighting color:"
 msgstr "Datoteka poudarjanja:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Napaka profila"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:829
+#: core/utilities/setup/icc/setupicc_helpers.cpp:107
 #, kde-format
 msgid "No profile is selected."
 msgstr "Izbran ni noben profil."
@@ -58756,7 +58756,7 @@ msgstr ""
 "Trenutna slika je bila spremenjena.\n"
 "Ali želite shraniti vaše spremembe?"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:388
+#: core/utilities/imageeditor/editor/editortool.cpp:406
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
@@ -59517,13 +59517,13 @@ msgstr ""
 "Ni bilo mogoče naložiti slike\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:91
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Pred"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:92
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:93
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
@@ -59545,7 +59545,7 @@ msgstr "Pred"
 msgid "After"
 msgstr "Po"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:77
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -64293,7 +64293,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:94
 #: core/utilities/setup/camera/setupcamera.cpp:273
 #: core/utilities/setup/camera/setupcamera.cpp:396
-#: core/utilities/setup/setuptemplate.cpp:112
+#: core/utilities/setup/template/setuptemplate.cpp:66
 #, kde-format
 msgid "&Add..."
 msgstr "Dod&aj..."
@@ -65284,67 +65284,72 @@ msgstr "Izberite kategorijo"
 msgid "Your collection will use this category:"
 msgstr "Vaša nova zbirka bo uporabljala to kategorijo:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:141
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Prejmi zahtevane datoteke modela"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:60
 #: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
 "Odpri lokalni imenik, ki se uporablja za shranjevanje podatkovnih datotek."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:66
 #, kde-format
 msgid "Location of the face management model files:"
 msgstr "Lokacija datotek modela upravljanja obrazov:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
 msgstr "Cilj modela upravljanja obrazov"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:75
 #, kde-format
 msgid "Sets the target address to download the face management model files to."
 msgstr "Nastavi ciljni naslov za prenos datotek modela upravljanja obrazov."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:77
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Uporabi zmožnosti samodejnih orodij umetne inteligence"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:78
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Uporabi zmožnost upravljanja obrazov"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:79
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Uporabi zmožnost estetske zaznave"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:177
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:80
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Uporabi zmožnosti dodeljevanja samodejnih oznak"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:278
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:279
+#, kde-format
+msgid "Clean up unused AI/DNN model files..."
+msgstr "Počisti neuporabljene datoteke modela AI/DNN..."
+
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:45
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Vse datoteke modela so bile uspešno prenesene."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:287
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Napaka prenosa"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:288
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:55
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65363,33 +65368,33 @@ msgstr ""
 "\n"
 "Lahko ponovite ali nadaljujete prenos po novem zagonu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:296
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Poskusite znova"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:135
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Kontrolna vsota ni pravilna."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:458
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:159
 #, kde-format
 msgid "File write error."
 msgstr "Napaka pri pisanju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:166
 #, kde-format
 msgid "File open error."
 msgstr "Napaka pri odpiranju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:480
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:181
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Datoteka na strežniku je prevelika."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:591
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:256
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65405,7 +65410,7 @@ msgstr ""
 "ki jih želite omogočiti.</p><p><b>Opomba:</b> Orodje za odstranjevanje "
 "rdečih oči zahteva datoteke modela upravljanja obraza.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:596
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:261
 #, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -65420,21 +65425,16 @@ msgstr ""
 "delovale brez teh datotek.</p><p><b>Po uspešnem prenosu datotek morate znova "
 "zagnati digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:268
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Prenos zahteva %1 datotek z velikostjo %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:629
+#: core/utilities/setup/downloader/filesdownloader_slots.cpp:294
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Vse datoteke za izbrane zmožnosti so bile najdene."
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:657
-#, kde-format
-msgid "Clean up unused AI/DNN model files..."
-msgstr "Počisti neuporabljene datoteke modela AI/DNN..."
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
@@ -65951,6 +65951,397 @@ msgstr ""
 "specifikacija za shranjevanje slik v vsebniku ISOBMFF (kot HEIF) stisnjen s "
 "kodekom AOMedia Video 1 (AV1) v odprtem in brez-licenčnem formatu kodiranja."
 "</item>"
+
+#: core/utilities/setup/icc/setupicc.cpp:42
+#, kde-format
+msgid "Enable Color Management"
+msgstr "Omogoči upravljanje barv"
+
+#: core/utilities/setup/icc/setupicc.cpp:43
+#, kde-format
+msgid ""
+"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
+"Management is disabled</li></ul>"
+msgstr ""
+"<ul><li>Označeno: upravljanje barv je omogočeno</li><li>Brez oznake: "
+"upravljanje barv je onemogočeno</li></ul>"
+
+#: core/utilities/setup/icc/setupicc.cpp:50
+#, kde-format
+msgid "Visit Little CMS project website"
+msgstr "Obiščite spletišče projekta Little CMS"
+
+#: core/utilities/setup/icc/setupicc.cpp:60
+#, kde-format
+msgid "Working Color Space"
+msgstr "Delovni barvni prostor"
+
+#: core/utilities/setup/icc/setupicc.cpp:66
+#, kde-format
+msgid ""
+"<p>This is the color space all the images will be converted to when opened "
+"(if you choose to convert) and the profile that will be embedded when "
+"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
+"IEC61966-2.1</b></p>"
+msgstr ""
+"<p>V ta barvni prostor bodo pretvorjene vse slike, ko bodo odprte (če boste "
+"želeli, da bodo pretvorjene) in profil, ki bo vgrajen med shranjevanjem. "
+"Dobre in varne izbire so <b>Adobe RGB (1998)</b> in <b>sRGB IEC61966-2.1</"
+"b></p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:72
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected workspace profile.</p>"
+msgstr ""
+"<p>Da dobite več podrobnosti o izbranem profilu delovnega prostora, lahko "
+"kliknete ta gumb.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:86
+#, kde-format
+msgid "When the profile of an image does not match the working color space"
+msgstr "Ko se profil slike ne ujema z delovnim barvnim prostorom"
+
+#: core/utilities/setup/icc/setupicc.cpp:94
+#: core/utilities/setup/icc/setupicc.cpp:125
+#, kde-format
+msgid "Ask when opening the image"
+msgstr "Vprašaj ob odprtju slike"
+
+#: core/utilities/setup/icc/setupicc.cpp:95
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will ask if you want to convert to the working space, keep "
+"the embedded profile or discard the embedded profile and assign a different "
+"one.</p>"
+msgstr ""
+"<p>Če ima slika vgrajen barvni profil, ki se ne ujema z barvnim profilom "
+"delovnega prostora, bo digiKam vprašal, če ga želite pretvoriti v delovni "
+"prostor, ga ohraniti ali dodeliti novega.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:101
+#, kde-format
+msgid "Convert the image to the working color space"
+msgstr "Pretvori sliko v delovni barvni prostor"
+
+#: core/utilities/setup/icc/setupicc.cpp:102
+#, kde-format
+msgid ""
+"<p>If an image has an embedded color profile not matching the working space "
+"profile, digiKam will convert the image's color information to the working "
+"color space. This changes the pixel data, but not the appearance of the "
+"image.</p>"
+msgstr ""
+"<p>Če ima slika vgrajen barvni profil, ki se ne ujema z barvnim profilom "
+"delovnega prostora, bo digiKam pretvoril podatke o barvah slike v delovni "
+"barvni prostor. To spremeni podatke slikovnih točk, ne pa videza slike.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:118
+#, kde-format
+msgid "When an image has no color profile information"
+msgstr "Ko slika nima podatkov o barvnem profilu"
+
+#: core/utilities/setup/icc/setupicc.cpp:126
+#, kde-format
+msgid ""
+"<p>If an image has no embedded color profile, digiKam will ask which color "
+"space shall be used to interpret the image and to which color space it shall "
+"be transformed for editing.</p>"
+msgstr ""
+"<p>Če slika nima vgrajenega barvnega profila, bo digiKam vprašal kateri "
+"barvni prostor naj bo uporabljen za razlago slike in v kateri barvni prostor "
+"naj bo pretvorjena za urejanje.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:130
+#, kde-format
+msgid "Assume it is using the sRGB color space (Internet standard)"
+msgstr "Predpostavi, da uporablja barvni prostor sRGB (internetni standard)"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:136
+#, kde-format
+msgid "and convert it to the working color space"
+msgstr "in ga pretvori v delovni barvni prostor"
+
+#: core/utilities/setup/icc/setupicc.cpp:149
+#, kde-format
+msgid "Assume it is using the working color space"
+msgstr "Predpostavi, da uporablja delovni barvni prostor"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:155
+#, kde-format
+msgid "Convert it from default input color space to working space"
+msgstr "Pretvori iz privzetega vhodnega barvnega prostora v delovni prostor"
+
+#: core/utilities/setup/icc/setupicc.cpp:174
+#, kde-format
+msgid "When loading a RAW file with uncalibrated colors"
+msgstr "Med nalaganjem datoteke RAW z barvami, ki niso umerjene"
+
+#: core/utilities/setup/icc/setupicc.cpp:181
+#, kde-format
+msgid "Ask for the input profile"
+msgstr "Vprašaj za vhodni profil"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:187
+#, kde-format
+msgid "Automatic color correction"
+msgstr "Samodejno popravljanje barv"
+
+#. i18n("<p></p>"));
+#.
+#: core/utilities/setup/icc/setupicc.cpp:193
+#, kde-format
+msgid "Convert it from the default input profile"
+msgstr "Pretvori ga iz privzetega vhodnega profila"
+
+#: core/utilities/setup/icc/setupicc.cpp:217
+#, kde-format
+msgid "Color Managed View"
+msgstr "Upravljan pregled barv"
+
+#: core/utilities/setup/icc/setupicc.cpp:222
+#, kde-format
+msgid "Monitor profile:"
+msgstr "Profil zaslona:"
+
+#: core/utilities/setup/icc/setupicc.cpp:226
+#, kde-format
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
+"<p>Če vaše namizje ne ponuja barvnega profila za zaslon, tukaj izberite "
+"privzetega. Če profil ni nastavljen, bo kot rezervni način uporabljen sRGB. "
+"V vseh primerih bo delovni tok upravljanja barv najprej poskušal namestiti "
+"profil, nastavljen za vaš monitor na namizju.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:234
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected monitor profile.</p>"
+msgstr ""
+"<p>Da dobite več podrobnosti o izbranem profilu zaslona, lahko kliknete ta "
+"gumb.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:238
+#, kde-format
+msgid "Use color managed view in editor"
+msgstr "Uporabi upravljan pregled barv v urejevalniku"
+
+#: core/utilities/setup/icc/setupicc.cpp:239
+#, kde-format
+msgid ""
+"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
+"to show your pictures in the Image Editor window with a color correction "
+"adapted to your monitor. You can at any time toggle this option from the "
+"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
+"depending on the speed of your computer.</p>"
+msgstr ""
+"<p>Vklopite to možnost, če želite uporabiti <b>Barvni profil zaslona</b> za "
+"prikaz vaših slik v urejevalniku slik z uveljavljenimi popravki "
+"prilagojenimi za vaš zaslon. Kadarkoli lahko preklopite to možnost v "
+"urejevalniku. <i>Opozorilo</i>: to lahko upočasni izrisovanje slike, odvisno "
+"od hitrosti vašega računalnika.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:246
+#, kde-format
+msgid "Use color managed view for previews and thumbnails"
+msgstr "Uporabi upravljan pregled barv za predoglede in sličice"
+
+#: core/utilities/setup/icc/setupicc.cpp:262
+#, kde-format
+msgid "Camera and Scanner"
+msgstr "Fotoaparat in optični bralnik"
+
+#: core/utilities/setup/icc/setupicc.cpp:267
+#, kde-format
+msgid "Default input color profile:"
+msgstr "Privzet vhodni barvni profil:"
+
+#: core/utilities/setup/icc/setupicc.cpp:269
+#, kde-format
+msgid ""
+"<p>This is the default color profile for your input device (that is your "
+"camera - or your scanner). A camera input profile is recommended for correct "
+"conversion of RAW images in 16bit. Some of the options about loading "
+"behavior above refer to this profile.</p>"
+msgstr ""
+"<p>To je privzet barvni profil za vašo vhodno napravo (to je vaš fotoaparat "
+"ali optični bralnik). Vhodni profil fotoaparata je priporočen za pravilno "
+"pretvorbo slik RAW v 16 bit. Nekatere izmed možnosti o obnašanju ob "
+"nalaganju se nanašajo na ta profil.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:276
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected input profile.</p>"
+msgstr ""
+"<p>Da dobite več podrobnosti o izbranem vhodnem profilu, lahko kliknete ta "
+"gumb.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:287
+#, kde-format
+msgid "Printing and Proofing"
+msgstr "Tiskanje in preverjanje"
+
+#: core/utilities/setup/icc/setupicc.cpp:292
+#, kde-format
+msgid "Output device profile:"
+msgstr "Profil izhodne naprave:"
+
+#: core/utilities/setup/icc/setupicc.cpp:301
+#, kde-format
+msgid ""
+"<p>You can use this button to get more detailed information about the "
+"selected proofing profile.</p>"
+msgstr ""
+"<p>Da dobite več podrobnosti o izbranem profilu za preverjanje, lahko "
+"kliknete ta gumb.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:312
+#, kde-format
+msgid "Color Profiles Repository"
+msgstr "Skladišče barvnih profilov"
+
+#: core/utilities/setup/icc/setupicc.cpp:317
+#, kde-format
+msgid ""
+"digiKam looks for ICC profiles in a number of <a href='default'>default "
+"locations</a>. You can specify an additional folder:"
+msgstr ""
+"digiKam išče profile ICC v številnih <a href='default'>privzetih mestih</a>. "
+"Navedete lahko dodatno mapo:"
+
+#: core/utilities/setup/icc/setupicc.cpp:325
+#, kde-format
+msgid ""
+"<p>digiKam searches ICC profiles in default system folders and ships itself "
+"a few selected profiles. Store all your additional color profiles in the "
+"directory set here.</p>"
+msgstr ""
+"<p>digiKam išče profile ICC v privzetih sistemskih mapah, nekaj pa jih ima "
+"vgrajenih. V mapo, ki je nastavljena tukaj, shranite vse vaše dodatne "
+"profile.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:348
+#, kde-format
+msgid "Use black point compensation"
+msgstr "Uporabi kompenzacijo črne točke"
+
+#: core/utilities/setup/icc/setupicc.cpp:349
+#, kde-format
+msgid ""
+"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
+"maximum black levels of digital files and the black capabilities of various "
+"digital devices.</p>"
+msgstr ""
+"<p><b>Kompenzacija črne točke</b> je način za izvajanje prilagoditev med "
+"najvišjimi ravnmi črne digitalnih datotek in najvišjimi ravnmi različnih "
+"digitalnih naprav.</p>"
+
+#: core/utilities/setup/icc/setupicc.cpp:355
+#, kde-format
+msgid "Rendering Intents:"
+msgstr "Nameni upodobitve:"
+
+#: core/utilities/setup/icc/setupicc.cpp:370
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Behavior"
+msgstr "Obnašanje"
+
+#: core/utilities/setup/icc/setupicc.cpp:371
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Profiles"
+msgstr "Profili"
+
+#: core/utilities/setup/icc/setupicc.cpp:372
+#, kde-format
+msgctxt "@title: icc panel tab"
+msgid "Advanced"
+msgstr "Napredno"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:45
+#, kde-format
+msgid "No ICC profiles files found."
+msgstr "Ni bilo najdenih profilov ICC."
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:61
+#, kde-format
+msgid "No Display Profile Available"
+msgstr "Ni razpoložljivega profila zaslona"
+
+#: core/utilities/setup/icc/setupicc_helpers.cpp:63
+#, kde-format
+msgid "No Output Profile Available"
+msgstr "Ni razpoložljivega izhodnega profila"
+
+#: core/utilities/setup/icc/setupicc_settings.cpp:160
+#, kde-format
+msgid "Monitor Profile From System Settings"
+msgstr "Profil zaslona iz sistemskih nastavitev"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:116
+#, kde-format
+msgctxt "none of the paths"
+msgid "none"
+msgstr "brez"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:125
+#, kde-format
+msgid ""
+"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
+"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
+"Windows/Color/</li></ul>On your system, currently these paths exist and are "
+"scanned:<ul><li>%3</li></ul>"
+msgstr ""
+"Na Windows privzete iskalne poti vključujejo <ul><li>%1/Windows/System32/"
+"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
+"Windows/Color/</li></ul>Na vašem sistemu trenutno obstajajo in bodo "
+"preiskane te poti:<ul><li>%3</li></ul>"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:141
+#, kde-format
+msgid ""
+"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
+"exist and are scanned:<ul><li>%2</li></ul>"
+msgstr ""
+"Na Mac OS X privzete iskalne poti vključujejo <ul><li>/System/Library/"
+"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
+"Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
+"local/share/icc/</li><li>~/.color/icc/</li></ul>Na vašem sistemu trenutno "
+"obstajajo te poti in so preiskane:<ul><li>%2</li></ul>"
+
+#: core/utilities/setup/icc/setupicc_slots.cpp:160
+#, kde-format
+msgid ""
+"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
+"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
+"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
+"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
+msgstr ""
+"Na Linuxu privzete iskalne poti vključujejo <ul><li>/usr/share/color/icc</"
+"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
+"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Na vašem sistemu "
+"trenutno obstajajo in bodo preiskane te poti:<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:128
 #, kde-format
@@ -67625,13 +68016,13 @@ msgstr "AVFoundation (Sistem)"
 msgid "Enable internal debug logging"
 msgstr "Omogoči notranje beleženje napak"
 
-#: core/utilities/setup/setup.cpp:130
+#: core/utilities/setup/setup.cpp:39
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Podatkovna zbirka"
 
-#: core/utilities/setup/setup.cpp:131
+#: core/utilities/setup/setup.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67641,13 +68032,13 @@ msgstr ""
 "Nastavitve podatkovne zbirke\n"
 "Prilagodi nastavitve podatkovne zbirke"
 
-#: core/utilities/setup/setup.cpp:135
+#: core/utilities/setup/setup.cpp:44
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Zbirke"
 
-#: core/utilities/setup/setup.cpp:136
+#: core/utilities/setup/setup.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67657,13 +68048,13 @@ msgstr ""
 "Nastavitve zbirk\n"
 "Nastavite mesta korenskih albumov"
 
-#: core/utilities/setup/setup.cpp:140
+#: core/utilities/setup/setup.cpp:49
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pogledi"
 
-#: core/utilities/setup/setup.cpp:141
+#: core/utilities/setup/setup.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67673,13 +68064,13 @@ msgstr ""
 "Nastavitve pogledov aplikacije\n"
 "Prilagodite izgled pogledov"
 
-#: core/utilities/setup/setup.cpp:145
+#: core/utilities/setup/setup.cpp:54
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Orodni namig"
 
-#: core/utilities/setup/setup.cpp:146
+#: core/utilities/setup/setup.cpp:55
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67689,13 +68080,13 @@ msgstr ""
 "Nastavitve orodnih namigov\n"
 "Prilagodi informacije v orodnih namigih"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:59
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metapodatki"
 
-#: core/utilities/setup/setup.cpp:151
+#: core/utilities/setup/setup.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67705,13 +68096,13 @@ msgstr ""
 "Upravljanje podatkov vgrajenih v sliko\n"
 "Nastavite povezave med slikami in metapodatki"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:64
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Predloge"
 
-#: core/utilities/setup/setup.cpp:156
+#: core/utilities/setup/setup.cpp:65
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67721,13 +68112,13 @@ msgstr ""
 "Predloge metapodatkov\n"
 "Upravljajte z vašo zbirko predlog metapodatkov"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:69
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Urejevalnik slik"
 
-#: core/utilities/setup/setup.cpp:161
+#: core/utilities/setup/setup.cpp:70
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67737,13 +68128,13 @@ msgstr ""
 "Nastavitve urejevalnika slik\n"
 "Prilagodi nastavitve urejevalnika slik"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:74
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Upravljanje barv"
 
-#: core/utilities/setup/setup.cpp:166
+#: core/utilities/setup/setup.cpp:75
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67753,13 +68144,13 @@ msgstr ""
 "Nastavitve za upravljanje barv\n"
 "Prilagodi nastavitve upravljanja barv"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:79
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Osvetlitvena miza"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67769,13 +68160,13 @@ msgstr ""
 "Nastavitve osvetlitvene mize\n"
 "Prilagodi orodje za primerjavo predmetov"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:84
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
 msgstr "Raziskava"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:85
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67785,13 +68176,13 @@ msgstr ""
 "Nastavitve raziskave\n"
 "Prilagodi orodje, ki se uporablja za pregledovanje elementov"
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:98
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamere"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67801,13 +68192,13 @@ msgstr ""
 "Nastavitve kamere\n"
 "Upravljaj vaše kamere"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:106
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Vtičniki"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67817,13 +68208,13 @@ msgstr ""
 "Nastavitve vstavkov\n"
 "Nastavi kateri vtičniki bodo dostopni iz aplikacije"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:111
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67908,396 +68299,6 @@ msgstr ""
 "na <a href='https://mapsplatform.google.com/pricing/'>Googlovo stran</a> o "
 "uporabah, praksah in cenah."
 
-#: core/utilities/setup/setupicc.cpp:139
-#, kde-format
-msgid "Enable Color Management"
-msgstr "Omogoči upravljanje barv"
-
-#: core/utilities/setup/setupicc.cpp:140
-#, kde-format
-msgid ""
-"<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
-"Management is disabled</li></ul>"
-msgstr ""
-"<ul><li>Označeno: upravljanje barv je omogočeno</li><li>Brez oznake: "
-"upravljanje barv je onemogočeno</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:147
-#, kde-format
-msgid "Visit Little CMS project website"
-msgstr "Obiščite spletišče projekta Little CMS"
-
-#: core/utilities/setup/setupicc.cpp:157
-#, kde-format
-msgid "Working Color Space"
-msgstr "Delovni barvni prostor"
-
-#: core/utilities/setup/setupicc.cpp:163
-#, kde-format
-msgid ""
-"<p>This is the color space all the images will be converted to when opened "
-"(if you choose to convert) and the profile that will be embedded when "
-"saving. Good and safe choices are <b>Adobe RGB (1998)</b> and <b>sRGB "
-"IEC61966-2.1</b></p>"
-msgstr ""
-"<p>V ta barvni prostor bodo pretvorjene vse slike, ko bodo odprte (če boste "
-"želeli, da bodo pretvorjene) in profil, ki bo vgrajen med shranjevanjem. "
-"Dobre in varne izbire so <b>Adobe RGB (1998)</b> in <b>sRGB IEC61966-2.1</"
-"b></p>"
-
-#: core/utilities/setup/setupicc.cpp:169
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected workspace profile.</p>"
-msgstr ""
-"<p>Da dobite več podrobnosti o izbranem profilu delovnega prostora, lahko "
-"kliknete ta gumb.</p>"
-
-#: core/utilities/setup/setupicc.cpp:183
-#, kde-format
-msgid "When the profile of an image does not match the working color space"
-msgstr "Ko se profil slike ne ujema z delovnim barvnim prostorom"
-
-#: core/utilities/setup/setupicc.cpp:191 core/utilities/setup/setupicc.cpp:222
-#, kde-format
-msgid "Ask when opening the image"
-msgstr "Vprašaj ob odprtju slike"
-
-#: core/utilities/setup/setupicc.cpp:192
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will ask if you want to convert to the working space, keep "
-"the embedded profile or discard the embedded profile and assign a different "
-"one.</p>"
-msgstr ""
-"<p>Če ima slika vgrajen barvni profil, ki se ne ujema z barvnim profilom "
-"delovnega prostora, bo digiKam vprašal, če ga želite pretvoriti v delovni "
-"prostor, ga ohraniti ali dodeliti novega.</p>"
-
-#: core/utilities/setup/setupicc.cpp:198
-#, kde-format
-msgid "Convert the image to the working color space"
-msgstr "Pretvori sliko v delovni barvni prostor"
-
-#: core/utilities/setup/setupicc.cpp:199
-#, kde-format
-msgid ""
-"<p>If an image has an embedded color profile not matching the working space "
-"profile, digiKam will convert the image's color information to the working "
-"color space. This changes the pixel data, but not the appearance of the "
-"image.</p>"
-msgstr ""
-"<p>Če ima slika vgrajen barvni profil, ki se ne ujema z barvnim profilom "
-"delovnega prostora, bo digiKam pretvoril podatke o barvah slike v delovni "
-"barvni prostor. To spremeni podatke slikovnih točk, ne pa videza slike.</p>"
-
-#: core/utilities/setup/setupicc.cpp:215
-#, kde-format
-msgid "When an image has no color profile information"
-msgstr "Ko slika nima podatkov o barvnem profilu"
-
-#: core/utilities/setup/setupicc.cpp:223
-#, kde-format
-msgid ""
-"<p>If an image has no embedded color profile, digiKam will ask which color "
-"space shall be used to interpret the image and to which color space it shall "
-"be transformed for editing.</p>"
-msgstr ""
-"<p>Če slika nima vgrajenega barvnega profila, bo digiKam vprašal kateri "
-"barvni prostor naj bo uporabljen za razlago slike in v kateri barvni prostor "
-"naj bo pretvorjena za urejanje.</p>"
-
-#: core/utilities/setup/setupicc.cpp:227
-#, kde-format
-msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr "Predpostavi, da uporablja barvni prostor sRGB (internetni standard)"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:233
-#, kde-format
-msgid "and convert it to the working color space"
-msgstr "in ga pretvori v delovni barvni prostor"
-
-#: core/utilities/setup/setupicc.cpp:246
-#, kde-format
-msgid "Assume it is using the working color space"
-msgstr "Predpostavi, da uporablja delovni barvni prostor"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:252
-#, kde-format
-msgid "Convert it from default input color space to working space"
-msgstr "Pretvori iz privzetega vhodnega barvnega prostora v delovni prostor"
-
-#: core/utilities/setup/setupicc.cpp:271
-#, kde-format
-msgid "When loading a RAW file with uncalibrated colors"
-msgstr "Med nalaganjem datoteke RAW z barvami, ki niso umerjene"
-
-#: core/utilities/setup/setupicc.cpp:278
-#, kde-format
-msgid "Ask for the input profile"
-msgstr "Vprašaj za vhodni profil"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:284
-#, kde-format
-msgid "Automatic color correction"
-msgstr "Samodejno popravljanje barv"
-
-#. i18n("<p></p>"));
-#.
-#: core/utilities/setup/setupicc.cpp:290
-#, kde-format
-msgid "Convert it from the default input profile"
-msgstr "Pretvori ga iz privzetega vhodnega profila"
-
-#: core/utilities/setup/setupicc.cpp:314
-#, kde-format
-msgid "Color Managed View"
-msgstr "Upravljan pregled barv"
-
-#: core/utilities/setup/setupicc.cpp:319
-#, kde-format
-msgid "Monitor profile:"
-msgstr "Profil zaslona:"
-
-#: core/utilities/setup/setupicc.cpp:323
-#, kde-format
-msgid ""
-"<p>If your desktop do not provide a color profile for your screen, select "
-"here the default one. If no profile is set, sRGB will be used as fail-back. "
-"In all cases, the color management workflow will try to get in first the "
-"profile set for your monitor in your the desktop</p>"
-msgstr ""
-"<p>Če vaše namizje ne ponuja barvnega profila za zaslon, tukaj izberite "
-"privzetega. Če profil ni nastavljen, bo kot rezervni način uporabljen sRGB. "
-"V vseh primerih bo delovni tok upravljanja barv najprej poskušal namestiti "
-"profil, nastavljen za vaš monitor na namizju.</p>"
-
-#: core/utilities/setup/setupicc.cpp:331
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected monitor profile.</p>"
-msgstr ""
-"<p>Da dobite več podrobnosti o izbranem profilu zaslona, lahko kliknete ta "
-"gumb.</p>"
-
-#: core/utilities/setup/setupicc.cpp:335
-#, kde-format
-msgid "Use color managed view in editor"
-msgstr "Uporabi upravljan pregled barv v urejevalniku"
-
-#: core/utilities/setup/setupicc.cpp:336
-#, kde-format
-msgid ""
-"<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
-"to show your pictures in the Image Editor window with a color correction "
-"adapted to your monitor. You can at any time toggle this option from the "
-"Editor window. <i>Warning</i>: This can slow down rendering of the image, "
-"depending on the speed of your computer.</p>"
-msgstr ""
-"<p>Vklopite to možnost, če želite uporabiti <b>Barvni profil zaslona</b> za "
-"prikaz vaših slik v urejevalniku slik z uveljavljenimi popravki "
-"prilagojenimi za vaš zaslon. Kadarkoli lahko preklopite to možnost v "
-"urejevalniku. <i>Opozorilo</i>: to lahko upočasni izrisovanje slike, odvisno "
-"od hitrosti vašega računalnika.</p>"
-
-#: core/utilities/setup/setupicc.cpp:343
-#, kde-format
-msgid "Use color managed view for previews and thumbnails"
-msgstr "Uporabi upravljan pregled barv za predoglede in sličice"
-
-#: core/utilities/setup/setupicc.cpp:359
-#, kde-format
-msgid "Camera and Scanner"
-msgstr "Fotoaparat in optični bralnik"
-
-#: core/utilities/setup/setupicc.cpp:364
-#, kde-format
-msgid "Default input color profile:"
-msgstr "Privzet vhodni barvni profil:"
-
-#: core/utilities/setup/setupicc.cpp:366
-#, kde-format
-msgid ""
-"<p>This is the default color profile for your input device (that is your "
-"camera - or your scanner). A camera input profile is recommended for correct "
-"conversion of RAW images in 16bit. Some of the options about loading "
-"behavior above refer to this profile.</p>"
-msgstr ""
-"<p>To je privzet barvni profil za vašo vhodno napravo (to je vaš fotoaparat "
-"ali optični bralnik). Vhodni profil fotoaparata je priporočen za pravilno "
-"pretvorbo slik RAW v 16 bit. Nekatere izmed možnosti o obnašanju ob "
-"nalaganju se nanašajo na ta profil.</p>"
-
-#: core/utilities/setup/setupicc.cpp:373
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected input profile.</p>"
-msgstr ""
-"<p>Da dobite več podrobnosti o izbranem vhodnem profilu, lahko kliknete ta "
-"gumb.</p>"
-
-#: core/utilities/setup/setupicc.cpp:384
-#, kde-format
-msgid "Printing and Proofing"
-msgstr "Tiskanje in preverjanje"
-
-#: core/utilities/setup/setupicc.cpp:389
-#, kde-format
-msgid "Output device profile:"
-msgstr "Profil izhodne naprave:"
-
-#: core/utilities/setup/setupicc.cpp:398
-#, kde-format
-msgid ""
-"<p>You can use this button to get more detailed information about the "
-"selected proofing profile.</p>"
-msgstr ""
-"<p>Da dobite več podrobnosti o izbranem profilu za preverjanje, lahko "
-"kliknete ta gumb.</p>"
-
-#: core/utilities/setup/setupicc.cpp:409
-#, kde-format
-msgid "Color Profiles Repository"
-msgstr "Skladišče barvnih profilov"
-
-#: core/utilities/setup/setupicc.cpp:414
-#, kde-format
-msgid ""
-"digiKam looks for ICC profiles in a number of <a href='default'>default "
-"locations</a>. You can specify an additional folder:"
-msgstr ""
-"digiKam išče profile ICC v številnih <a href='default'>privzetih mestih</a>. "
-"Navedete lahko dodatno mapo:"
-
-#: core/utilities/setup/setupicc.cpp:422
-#, kde-format
-msgid ""
-"<p>digiKam searches ICC profiles in default system folders and ships itself "
-"a few selected profiles. Store all your additional color profiles in the "
-"directory set here.</p>"
-msgstr ""
-"<p>digiKam išče profile ICC v privzetih sistemskih mapah, nekaj pa jih ima "
-"vgrajenih. V mapo, ki je nastavljena tukaj, shranite vse vaše dodatne "
-"profile.</p>"
-
-#: core/utilities/setup/setupicc.cpp:445
-#, kde-format
-msgid "Use black point compensation"
-msgstr "Uporabi kompenzacijo črne točke"
-
-#: core/utilities/setup/setupicc.cpp:446
-#, kde-format
-msgid ""
-"<p><b>Black Point Compensation</b> is a way to make adjustments between the "
-"maximum black levels of digital files and the black capabilities of various "
-"digital devices.</p>"
-msgstr ""
-"<p><b>Kompenzacija črne točke</b> je način za izvajanje prilagoditev med "
-"najvišjimi ravnmi črne digitalnih datotek in najvišjimi ravnmi različnih "
-"digitalnih naprav.</p>"
-
-#: core/utilities/setup/setupicc.cpp:452
-#, kde-format
-msgid "Rendering Intents:"
-msgstr "Nameni upodobitve:"
-
-#: core/utilities/setup/setupicc.cpp:467
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Behavior"
-msgstr "Obnašanje"
-
-#: core/utilities/setup/setupicc.cpp:468
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Profiles"
-msgstr "Profili"
-
-#: core/utilities/setup/setupicc.cpp:469
-#, kde-format
-msgctxt "@title: icc panel tab"
-msgid "Advanced"
-msgstr "Napredno"
-
-#: core/utilities/setup/setupicc.cpp:670
-#, kde-format
-msgid "Monitor Profile From System Settings"
-msgstr "Profil zaslona iz sistemskih nastavitev"
-
-#: core/utilities/setup/setupicc.cpp:702
-#, kde-format
-msgid "No ICC profiles files found."
-msgstr "Ni bilo najdenih profilov ICC."
-
-#: core/utilities/setup/setupicc.cpp:718
-#, kde-format
-msgid "No Display Profile Available"
-msgstr "Ni razpoložljivega profila zaslona"
-
-#: core/utilities/setup/setupicc.cpp:720
-#, kde-format
-msgid "No Output Profile Available"
-msgstr "Ni razpoložljivega izhodnega profila"
-
-#: core/utilities/setup/setupicc.cpp:854
-#, kde-format
-msgctxt "none of the paths"
-msgid "none"
-msgstr "brez"
-
-#: core/utilities/setup/setupicc.cpp:863
-#, kde-format
-msgid ""
-"On Windows, the default search paths include <ul><li>%1/Windows/System32/"
-"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
-"Windows/Color/</li></ul>On your system, currently these paths exist and are "
-"scanned:<ul><li>%3</li></ul>"
-msgstr ""
-"Na Windows privzete iskalne poti vključujejo <ul><li>%1/Windows/System32/"
-"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
-"Windows/Color/</li></ul>Na vašem sistemu trenutno obstajajo in bodo "
-"preiskane te poti:<ul><li>%3</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:879
-#, kde-format
-msgid ""
-"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
-"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
-"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
-"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
-"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
-"exist and are scanned:<ul><li>%2</li></ul>"
-msgstr ""
-"Na Mac OS X privzete iskalne poti vključujejo <ul><li>/System/Library/"
-"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
-"Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
-"local/share/icc/</li><li>~/.color/icc/</li></ul>Na vašem sistemu trenutno "
-"obstajajo te poti in so preiskane:<ul><li>%2</li></ul>"
-
-#: core/utilities/setup/setupicc.cpp:898
-#, kde-format
-msgid ""
-"On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
-"currently these paths exist and are scanned:<ul><li>%1</li></ul>"
-msgstr ""
-"Na Linuxu privzete iskalne poti vključujejo <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Na vašem sistemu "
-"trenutno obstajajo in bodo preiskane te poti:<ul><li>%1</li></ul>"
-
 #: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
 msgid "Synchronize panels automatically"
@@ -68364,17 +68365,17 @@ msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Nalagalniki slik"
 
-#: core/utilities/setup/setuptemplate.cpp:81
+#: core/utilities/setup/template/setuptemplate.cpp:35
 #, kde-format
 msgid "Template Title:"
 msgstr "Naslov predloge:"
 
-#: core/utilities/setup/setuptemplate.cpp:84
+#: core/utilities/setup/template/setuptemplate.cpp:38
 #, kde-format
 msgid "Enter the metadata template title here."
 msgstr "Tukaj vnesite naslov predloge metapodatkov."
 
-#: core/utilities/setup/setuptemplate.cpp:85
+#: core/utilities/setup/template/setuptemplate.cpp:39
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
@@ -68383,12 +68384,12 @@ msgstr ""
 "<p>Sem vnesite naslov predloge metapodatkov. Ta naslov bo uporabljen za "
 "identifikacijo predloge v vaši zbirki.</p>"
 
-#: core/utilities/setup/setuptemplate.cpp:89
+#: core/utilities/setup/template/setuptemplate.cpp:43
 #, kde-format
 msgid "Merge Template"
 msgstr "Združi predlogo"
 
-#: core/utilities/setup/setuptemplate.cpp:97
+#: core/utilities/setup/template/setuptemplate.cpp:51
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -68403,18 +68404,18 @@ msgstr ""
 "so pa besedilne oznake IPTC omejene na dolžino oznak. Za podrobnosti "
 "uporabite vsebinsko pomoč.</b>"
 
-#: core/utilities/setup/setuptemplate.cpp:116
+#: core/utilities/setup/template/setuptemplate.cpp:70
 #, kde-format
 msgid "&Replace..."
 msgstr "Zamenjaj..."
 
-#: core/utilities/setup/setuptemplate.cpp:255
-#: core/utilities/setup/setuptemplate.cpp:289
+#: core/utilities/setup/template/setuptemplate_slots.cpp:44
+#: core/utilities/setup/template/setuptemplate_slots.cpp:78
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "Ni mogoče vpisati nove predloge metapodatkov brez naslova."
 
-#: core/utilities/setup/setuptemplate.cpp:262
+#: core/utilities/setup/template/setuptemplate_slots.cpp:51
 #, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "Predloga metapodatkov imenovana '%1' že obstaja."
