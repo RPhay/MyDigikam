@@ -1,2 +1,2 @@
-+LIBRAW Snapshot 2026-01-04
-libraw:0339685891bd485c3568309aaba369afd29bbacd
++LIBRAW Snapshot 2026-01-24
+libraw:d20315b6e7b0162d3b0d7820dcbaf4de716b3e77
