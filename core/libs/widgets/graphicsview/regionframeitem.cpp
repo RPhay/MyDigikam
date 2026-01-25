@@ -116,12 +116,14 @@ public:
 
     const int              HUD_TIMER_MAX_PIXELS_PER_UPDATE  = 20;
     const int              HUD_TIMER_ANIMATION_INTERVAL     = 20;
+
+    QTimer*                marchingAntsTimer                = nullptr;
+    int                    marchingAntsOffset               = 0;
 };
 
 RegionFrameItem::Private::Private(RegionFrameItem* const qq)
     : q(qq)
 {
-
     cropHandleList << CH_Left       << CH_Right
                    << CH_Top        << CH_Bottom
                    << CH_TopLeft    << CH_TopRight
@@ -406,6 +408,21 @@ RegionFrameItem::RegionFrameItem(QGraphicsItem* const item)
     setFlags(GeometryEditable);
 
     d->updateHudWidgetPosition();
+
+    // ---
+
+    d->marchingAntsTimer = new QTimer(this);
+    d->marchingAntsTimer->setInterval(400); // Interval in ms for the animation
+
+    connect(d->marchingAntsTimer, &QTimer::timeout,
+            this, [this]()
+        {
+            d->marchingAntsOffset = (d->marchingAntsOffset + 1) % 8; // 8 step of a complet cycle.
+            update();
+        }
+    );
+
+    d->marchingAntsTimer->start();
 }
 
 RegionFrameItem::~RegionFrameItem()
@@ -418,6 +435,7 @@ RegionFrameItem::~RegionFrameItem()
         delete d->hudWidget;
     }
 
+    delete d->marchingAntsTimer;
     delete d;
 }
 
@@ -571,6 +589,23 @@ void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, 
 
     painter->setPen(borderColor);
     painter->drawRect(drawRect);
+
+    if (d->marchingAntsTimer->isActive())
+    {
+        QPen antsPen(Qt::black, 1);
+        antsPen.setStyle(Qt::CustomDashLine);
+        QVector<qreal> dashes;
+
+        for (int i = 0; i < 8; ++i)
+        {
+            dashes << (i <= d->marchingAntsOffset ? 2 : 0);
+            dashes << 2;
+        }
+
+        antsPen.setDashPattern(dashes);
+        painter->setPen(antsPen);
+        painter->drawRect(drawRect);
+    }
 
     if (d->resizeHandleVisibility->isVisible())
     {
