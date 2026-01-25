@@ -288,8 +288,6 @@ void ImageRegionWidget::mousePressEvent(QMouseEvent* e)
 
 void ImageRegionWidget::mouseMoveEvent(QMouseEvent* e)
 {
-qDebug() << "ImageRegionWidget::mouseMoveEvent";
-
     if (d_ptr->capturePtMode)
     {
         QPointF imgPt = mapToScene(e->pos());
