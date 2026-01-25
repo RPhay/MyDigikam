@@ -307,10 +307,10 @@ AdjustLevelsTool::AdjustLevelsTool(QObject* const parent)
 
     connect(d->previewWidget, SIGNAL(signalCapturedPointFromOriginal(Digikam::DColor,QPoint)),
             this, SLOT(slotSpotColorChanged(Digikam::DColor)));
-/*
-    connect(d->previewWidget, SIGNAL(spotPositionChangedFromTarget(Digikam::DColor,QPoint)),
-            this, SLOT(slotColorSelectedFromTarget(Digikam::DColor)));
-*/
+
+    connect(d->previewWidget, SIGNAL(signalSpotPositionChangedFromOriginal(Digikam::DColor,QPoint)),
+            this, SLOT(slotColorSelectedFromOriginal(Digikam::DColor)));
+
     // -------------------------------------------------------------
     // Color sliders and spinbox slots.
 
@@ -523,9 +523,9 @@ void AdjustLevelsTool::slotSpotColorChanged(const DColor& color)
     slotPreview();
 }
 
-void AdjustLevelsTool::slotColorSelectedFromTarget(const DColor& color)
+void AdjustLevelsTool::slotColorSelectedFromOriginal(const DColor& color)
 {
-    d->gboxSettings->histogramBox()->histogram()->setHistogramGuideByColor(color);
+    d->levelsHistogramWidget->setHistogramGuideByColor(color);
 }
 
 void AdjustLevelsTool::slotGammaInputchanged(double val)
