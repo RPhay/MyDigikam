@@ -431,7 +431,7 @@ BUGFIXES:
 358 --> 258717 - RGB values Missing.
 359 --> 266335 - Curve Adjust Histogram is missing value indicator.
 360 --> 150544 - Picking level does not work in "switch original/target by mouse mode".
-361 --> 
+361 --> 127573 - Histogram spot not updated in mouse-toggle original/target mode with BW tool.
 362 --> 
 363 --> 
 364 --> 

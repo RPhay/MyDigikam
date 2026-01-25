@@ -39,6 +39,9 @@ private Q_SLOTS:
     void slotSaveAsSettings()   override;
     void slotLoadSettings()     override;
     void slotResetSettings()    override;
+    void slotPickerColorButtonActived(int);
+    void slotSpotColorChanged(const Digikam::DColor&);
+    void slotColorSelectedFromOriginal(const Digikam::DColor&);
 
 private:
 

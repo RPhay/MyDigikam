@@ -29,6 +29,8 @@ class KConfigGroup;
 namespace Digikam
 {
 
+class CurvesBox;
+
 class DIGIKAM_EXPORT BWSepiaSettings : public QWidget
 {
     Q_OBJECT
@@ -53,6 +55,8 @@ public:
     void setScaleType(HistogramScale scale);
 
     void startPreviewFilters();
+
+    CurvesBox* curvesBox() const;
 
 Q_SIGNALS:
 

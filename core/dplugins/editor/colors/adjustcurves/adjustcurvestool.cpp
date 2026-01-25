@@ -116,14 +116,14 @@ AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
     connect(d->gboxSettings, SIGNAL(signalScaleChanged()),
             this, SLOT(slotScaleChanged()));
 
-    connect(d->settingsView, SIGNAL(signalSpotColorChanged()),
-            this, SLOT(slotSpotColorChanged()));
-
     connect(d->settingsView, SIGNAL(signalChannelReset(int)),
             this, SLOT(slotResetCurrentChannel()));
 
     connect(d->settingsView, SIGNAL(signalPickerChanged(int)),
             this, SLOT(slotPickerColorButtonActived(int)));
+
+    connect(d->settingsView, SIGNAL(signalSpotColorChanged()),
+            this, SLOT(slotSpotColorChanged()));
 
     connect(d->previewWidget, SIGNAL(signalSpotPositionChangedFromOriginal(Digikam::DColor,QPoint)),
             this, SLOT(slotColorSelectedFromOriginal(Digikam::DColor)));

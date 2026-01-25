@@ -319,10 +319,15 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
     if (!img->isNull())
     {
         d->curvesBox = new CurvesBox(256, 192, *img, lumBox);
+        d->curvesBox->enablePickers(true);
     }
     else
     {
-        d->curvesBox = new CurvesBox(256, 192, DImg(1, 1, true, false, reinterpret_cast<unsigned char*>(const_cast<char*>("\x00\x00\x00\x00\x00\x00\x00\x00"))), lumBox);
+        d->curvesBox = new CurvesBox(256, 192,
+                                     DImg(1, 1, true, false,
+                                          reinterpret_cast<unsigned char*>(const_cast<char*>("\x00\x00\x00\x00\x00\x00\x00\x00"))),
+                                     lumBox);
+        d->curvesBox->enablePickers(false);
     }
 
     d->curvesBox->enableCurveTypes(true);
@@ -393,6 +398,11 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
 BWSepiaSettings::~BWSepiaSettings()
 {
     delete d;
+}
+
+CurvesBox* BWSepiaSettings::curvesBox() const
+{
+    return d->curvesBox;
 }
 
 void BWSepiaSettings::startPreviewFilters()

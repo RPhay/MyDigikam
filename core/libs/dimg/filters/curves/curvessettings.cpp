@@ -99,7 +99,7 @@ CurvesSettings::CurvesSettings(QWidget* const parent, DImg* const img)
 
     // -------------------------------------------------------------
 
-    // NOTE: no need to Q_EMIT signalSettingsChanged() at CurveBox::signalChannelReset()
+    // NOTE: no need to emit signalSettingsChanged() at CurveBox::signalChannelReset()
     // and CurveBox::signalCurveTypeChanged(), it's managed with CurveBox::signalCurvesChanged()
 
     connect(d->curvesBox, SIGNAL(signalCurvesChanged()),
