@@ -22,6 +22,8 @@ GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
     : QGraphicsView(parent),
       d            (new Private)
 {
+    setMouseTracking(true);
+
     d->scene  = new QGraphicsScene(this);
     d->scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 

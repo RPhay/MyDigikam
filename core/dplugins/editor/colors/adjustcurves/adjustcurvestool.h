@@ -40,7 +40,7 @@ private Q_SLOTS:
     void slotResetSettings()    override;
     void slotPickerColorButtonActived(int);
     void slotSpotColorChanged();
-    void slotColorSelectedFromTarget(const Digikam::DColor&);
+    void slotColorSelectedFromOriginal(const Digikam::DColor&);
     void slotResetCurrentChannel();
     void slotChannelChanged()   override;                       // cppcheck-suppress virtualCallInConstructor
     void slotScaleChanged()     override;                       // cppcheck-suppress virtualCallInConstructor

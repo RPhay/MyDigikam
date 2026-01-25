@@ -57,6 +57,8 @@ public:
 
     int curvesLeftOffset() const;
 
+    void setCurveGuide(const DColor& color);
+
 Q_SIGNALS:
 
     void signalSettingsChanged();

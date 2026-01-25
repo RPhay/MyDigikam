@@ -127,6 +127,11 @@ void CurvesSettings::setScale(HistogramScale type)
     d->curvesBox->setScale(type);
 }
 
+void CurvesSettings::setCurveGuide(const DColor& color)
+{
+    d->curvesBox->setCurveGuide(color);
+}
+
 void CurvesSettings::slotSpotColorChanged(const DColor& color)
 {
     int maxColor = qMax(qMax(color.red(), color.green()), color.blue());

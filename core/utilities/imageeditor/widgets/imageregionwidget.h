@@ -85,6 +85,7 @@ public:
 Q_SIGNALS:
 
     void signalOriginalClipFocusChanged();
+    void signalSpotPositionChangedFromOriginal(const Digikam::DColor&, const QPoint&);
     void signalCapturedPointFromOriginal(const Digikam::DColor&, const QPoint&);
 
 public Q_SLOTS:
@@ -95,11 +96,12 @@ public Q_SLOTS:
 protected:
 
     void mousePressEvent(QMouseEvent*)                                    override;
+    void mouseMoveEvent(QMouseEvent*)                                     override;
     void mouseReleaseEvent(QMouseEvent*)                                  override;
 
 private:
 
-    void emitCapturedPointFromOriginal(const QPointF&);
+    DColor capturedPointFromOriginal(const QPointF&);
 
 private Q_SLOTS:
 

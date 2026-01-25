@@ -285,11 +285,10 @@ public:
 
         if ((xMouseOver != -1) && (yMouseOver != -1))
         {
-            QString string = i18n("x:%1\ny:%2", xMouseOver, yMouseOver);
+            QString string = i18n("x:%1\ny:%2\n", xMouseOver, yMouseOver);
             QFontMetrics fontMt(string);
             QRect rect     = fontMt.boundingRect(0, 0, wWidth, wHeight, 0, string);
-            rect.moveRight(wWidth);
-            rect.moveBottom(wHeight);
+            rect.moveLeft(10);
             p1.drawText(rect, Qt::AlignLeft | Qt::AlignTop, string);
         }
     }

@@ -160,7 +160,6 @@ void ImageRegionWidget::setCapturePointMode(bool b)
     }
 
     d_ptr->capturePtMode = b;
-    viewport()->setMouseTracking(!b);
 
     if (b)
     {
@@ -275,12 +274,33 @@ void ImageRegionWidget::mousePressEvent(QMouseEvent* e)
 {
     if (d_ptr->capturePtMode)
     {
-        emitCapturedPointFromOriginal(mapToScene(e->pos()));
+        QPointF imgPt = mapToScene(e->pos());
+        DColor  color = capturedPointFromOriginal(imgPt);
+
+        Q_EMIT signalCapturedPointFromOriginal(color, imgPt.toPoint());
+
         QGraphicsView::mousePressEvent(e);
         return;
     }
 
     GraphicsDImgView::mousePressEvent(e);
+}
+
+void ImageRegionWidget::mouseMoveEvent(QMouseEvent* e)
+{
+qDebug() << "ImageRegionWidget::mouseMoveEvent";
+
+    if (d_ptr->capturePtMode)
+    {
+        QPointF imgPt = mapToScene(e->pos());
+        DColor  color = capturedPointFromOriginal(imgPt);
+
+        Q_EMIT signalSpotPositionChangedFromOriginal(color, imgPt.toPoint());
+
+        QGraphicsView::mouseMoveEvent(e);
+    }
+
+    GraphicsDImgView::mouseMoveEvent(e);
 }
 
 void ImageRegionWidget::mouseReleaseEvent(QMouseEvent* e)
@@ -296,7 +316,7 @@ void ImageRegionWidget::mouseReleaseEvent(QMouseEvent* e)
     GraphicsDImgView::mouseReleaseEvent(e);
 }
 
-void ImageRegionWidget::emitCapturedPointFromOriginal(const QPointF& pt)
+DColor ImageRegionWidget::capturedPointFromOriginal(const QPointF& pt)
 {
     int x        = (int)(pt.x() / layout()->realZoomFactor());
     int y        = (int)(pt.y() / layout()->realZoomFactor());
@@ -305,7 +325,7 @@ void ImageRegionWidget::emitCapturedPointFromOriginal(const QPointF& pt)
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Captured point from image : " << imgPt;
 
-    Q_EMIT signalCapturedPointFromOriginal(color, imgPt);
+    return color;
 }
 
 void ImageRegionWidget::updateImage(const DImg& img)

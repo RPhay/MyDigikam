@@ -116,9 +116,6 @@ AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
     connect(d->gboxSettings, SIGNAL(signalScaleChanged()),
             this, SLOT(slotScaleChanged()));
 
-    connect(d->previewWidget, SIGNAL(signalCapturedPointFromOriginal(Digikam::DColor,QPoint)),
-            d->settingsView, SLOT(slotSpotColorChanged(Digikam::DColor)));
-
     connect(d->settingsView, SIGNAL(signalSpotColorChanged()),
             this, SLOT(slotSpotColorChanged()));
 
@@ -127,10 +124,12 @@ AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
 
     connect(d->settingsView, SIGNAL(signalPickerChanged(int)),
             this, SLOT(slotPickerColorButtonActived(int)));
-/*
-    connect(d->previewWidget, SIGNAL(spotPositionChangedFromTarget(Digikam::DColor,QPoint)),
-            this, SLOT(slotColorSelectedFromTarget(Digikam::DColor)));
-*/
+
+    connect(d->previewWidget, SIGNAL(signalSpotPositionChangedFromOriginal(Digikam::DColor,QPoint)),
+            this, SLOT(slotColorSelectedFromOriginal(Digikam::DColor)));
+
+    connect(d->previewWidget, SIGNAL(signalCapturedPointFromOriginal(Digikam::DColor,QPoint)),
+            d->settingsView, SLOT(slotSpotColorChanged(Digikam::DColor)));
 }
 
 AdjustCurvesTool::~AdjustCurvesTool()
@@ -154,9 +153,9 @@ void AdjustCurvesTool::slotSpotColorChanged()
     slotPreview();
 }
 
-void AdjustCurvesTool::slotColorSelectedFromTarget(const DColor& color)
+void AdjustCurvesTool::slotColorSelectedFromOriginal(const DColor& color)
 {
-    d->gboxSettings->histogramBox()->histogram()->setHistogramGuideByColor(color);
+    d->settingsView->setCurveGuide(color);
 }
 
 void AdjustCurvesTool::slotResetCurrentChannel()
