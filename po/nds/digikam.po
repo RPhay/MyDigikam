@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-24 00:41+0000\n"
+"POT-Creation-Date: 2026-01-25 00:42+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -327,7 +327,7 @@ msgstr "Groot-/Lüttschrieven ännern"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:973
+#: core/app/views/preview/itempreviewview.cpp:990
 #, kde-format
 msgid "&Cancel"
 msgstr "&Afbreken"
@@ -338,7 +338,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Slötelwöör na &utsöcht Biller towiesen"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:988
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Slötelwöör na &dit Bild towiesen"
@@ -571,14 +571,14 @@ msgid "This item has geolocation information."
 msgstr "Albumegenschappen un Sammelninformatschonen bewerken"
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
-#: core/app/views/preview/itempreviewview.cpp:263
+#: core/app/views/preview/itempreviewview.cpp:268
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr "Heelschirmbedrief verlaten"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:188
+#: core/app/views/preview/itempreviewview.cpp:189
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -586,7 +586,7 @@ msgid "Rotate Left"
 msgstr "Na links dreihen"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:190
+#: core/app/views/preview/itempreviewview.cpp:191
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1218,7 +1218,7 @@ msgid "Aperture/Focal:"
 msgstr "Blenn/Brennwiet:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:204
+#: core/app/views/preview/itempreviewosd.cpp:206
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -3081,7 +3081,14 @@ msgstr "Mitmaken..."
 msgid "Donate: "
 msgstr "Datum: "
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewvideo.cpp:98
+#: core/app/views/preview/itempreviewview.cpp:264
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid "Show OSD Information"
+msgstr "Informatschoon"
+
+#: core/app/views/preview/itempreviewview.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -3089,86 +3096,86 @@ msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Torüch"
 
-#: core/app/views/preview/itempreviewview.cpp:186
+#: core/app/views/preview/itempreviewview.cpp:187
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Wieder"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:198
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Nieg Slötelwoort tofögen..."
 
-#: core/app/views/preview/itempreviewview.cpp:202
+#: core/app/views/preview/itempreviewview.cpp:203
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "All Ännern för de Biller bruken"
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:206
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Nieg Slötelwoort tofögen..."
 
-#: core/app/views/preview/itempreviewview.cpp:212
+#: core/app/views/preview/itempreviewview.cpp:213
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "Bildslötelwöör wiesen"
 
-#: core/app/views/preview/itempreviewview.cpp:217
+#: core/app/views/preview/itempreviewview.cpp:218
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "Niegst toeerst wiesen"
 
-#: core/app/views/preview/itempreviewview.cpp:219
+#: core/app/views/preview/itempreviewview.cpp:220
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "Niegst toeerst wiesen"
 
-#: core/app/views/preview/itempreviewview.cpp:227
+#: core/app/views/preview/itempreviewview.cpp:228
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "Vöransichten wiesen"
 
-#: core/app/views/preview/itempreviewview.cpp:232
+#: core/app/views/preview/itempreviewview.cpp:233
 #, fuzzy, kde-format
 #| msgid "Zoom to 1:1"
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
 msgstr "Orginaalgrött"
 
-#: core/app/views/preview/itempreviewview.cpp:255
+#: core/app/views/preview/itempreviewview.cpp:256
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "Ünnerbelichten-Wieser"
 
-#: core/app/views/preview/itempreviewview.cpp:259
+#: core/app/views/preview/itempreviewview.cpp:260
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Överbelichten-Wieser"
 
-#: core/app/views/preview/itempreviewview.cpp:662
+#: core/app/views/preview/itempreviewview.cpp:678
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Köör torüchnehmen"
 
-#: core/app/views/preview/itempreviewview.cpp:858
+#: core/app/views/preview/itempreviewview.cpp:874
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""

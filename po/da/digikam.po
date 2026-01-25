@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-24 00:41+0000\n"
+"POT-Creation-Date: 2026-01-25 00:42+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -334,7 +334,7 @@ msgstr "Skift versaltype"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:973
+#: core/app/views/preview/itempreviewview.cpp:990
 #, kde-format
 msgid "&Cancel"
 msgstr "&Annullér"
@@ -345,7 +345,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Tildel mærker til &valgte elementer"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:988
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Tildel mærker til &dette element"
@@ -590,14 +590,14 @@ msgid "This item has geolocation information."
 msgstr "Dette element har geo-lokaliseringsinformation."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
-#: core/app/views/preview/itempreviewview.cpp:263
+#: core/app/views/preview/itempreviewview.cpp:268
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr "Forlad fuldskærmstilstand"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:188
+#: core/app/views/preview/itempreviewview.cpp:189
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -605,7 +605,7 @@ msgid "Rotate Left"
 msgstr "Rotér mod venstre"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:190
+#: core/app/views/preview/itempreviewview.cpp:191
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1250,7 +1250,7 @@ msgid "Aperture/Focal:"
 msgstr "Blænde/Fokal:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:204
+#: core/app/views/preview/itempreviewosd.cpp:206
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -3174,7 +3174,15 @@ msgstr "Bidrag..."
 msgid "Donate: "
 msgstr "Dato: "
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewvideo.cpp:98
+#: core/app/views/preview/itempreviewview.cpp:264
+#, fuzzy, kde-format
+#| msgid "Crop Information"
+msgctxt "@info:tooltip"
+msgid "Show OSD Information"
+msgstr "Information om beskæring"
+
+#: core/app/views/preview/itempreviewview.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -3182,84 +3190,84 @@ msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Tilbage"
 
-#: core/app/views/preview/itempreviewview.cpp:186
+#: core/app/views/preview/itempreviewview.cpp:187
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Fremad"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:198
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Tilføj et ansigtsmærke"
 
-#: core/app/views/preview/itempreviewview.cpp:202
+#: core/app/views/preview/itempreviewview.cpp:203
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Ryd alle ansigter i dette billede"
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:206
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Tilføj et ansigtsmærke"
 
-#: core/app/views/preview/itempreviewview.cpp:212
+#: core/app/views/preview/itempreviewview.cpp:213
 #, fuzzy, kde-format
 #| msgid "Show Face Tags"
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "Vis ansigtsmærker"
 
-#: core/app/views/preview/itempreviewview.cpp:217
+#: core/app/views/preview/itempreviewview.cpp:218
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "Vis nyeste først"
 
-#: core/app/views/preview/itempreviewview.cpp:219
+#: core/app/views/preview/itempreviewview.cpp:220
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "Vis nyeste først"
 
-#: core/app/views/preview/itempreviewview.cpp:227
+#: core/app/views/preview/itempreviewview.cpp:228
 #, fuzzy, kde-format
 #| msgid "Show numbers"
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "Vis numre"
 
-#: core/app/views/preview/itempreviewview.cpp:232
+#: core/app/views/preview/itempreviewview.cpp:233
 #, fuzzy, kde-format
 #| msgid "Zoom to Fit"
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
 msgstr "Zoom så det passer"
 
-#: core/app/views/preview/itempreviewview.cpp:255
+#: core/app/views/preview/itempreviewview.cpp:256
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "Undereksponerings-indikator"
 
-#: core/app/views/preview/itempreviewview.cpp:259
+#: core/app/views/preview/itempreviewview.cpp:260
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Overeksponerings-indikator"
 
-#: core/app/views/preview/itempreviewview.cpp:662
+#: core/app/views/preview/itempreviewview.cpp:678
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
@@ -3268,7 +3276,7 @@ msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Detektér ansigter"
 
-#: core/app/views/preview/itempreviewview.cpp:858
+#: core/app/views/preview/itempreviewview.cpp:874
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-24 00:41+0000\n"
+"POT-Creation-Date: 2026-01-25 00:42+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -278,7 +278,7 @@ msgstr "Đổi chữ sang:"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:973
+#: core/app/views/preview/itempreviewview.cpp:990
 #, kde-format
 msgid "&Cancel"
 msgstr "T&hôi"
@@ -289,7 +289,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "&Gán thẻ cho các mục đã chọn"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:988
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Gán thẻ cho mục nà&y"
@@ -508,14 +508,14 @@ msgid "This item has geolocation information."
 msgstr "Hiệu chỉnh thuộc tính tập ảnh và thông tin tập hợp."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
-#: core/app/views/preview/itempreviewview.cpp:263
+#: core/app/views/preview/itempreviewview.cpp:268
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr "Thoát khỏi chế độ toàn màn hình"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:188
+#: core/app/views/preview/itempreviewview.cpp:189
 #: core/utilities/import/items/importoverlays.cpp:434
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
@@ -523,7 +523,7 @@ msgid "Rotate Left"
 msgstr "Xoay trái"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:190
+#: core/app/views/preview/itempreviewview.cpp:191
 #: core/utilities/import/items/importoverlays.cpp:438
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
@@ -1135,7 +1135,7 @@ msgid "Aperture/Focal:"
 msgstr "Độ mở/Tiêu :"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:204
+#: core/app/views/preview/itempreviewosd.cpp:206
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -2873,90 +2873,97 @@ msgstr "chứa"
 msgid "Donate: "
 msgstr "Ngày:"
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewvideo.cpp:98
+#: core/app/views/preview/itempreviewview.cpp:264
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid "Show OSD Information"
+msgstr "Thông tin"
+
+#: core/app/views/preview/itempreviewview.cpp:185
 #, fuzzy, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Lùi"
 
-#: core/app/views/preview/itempreviewview.cpp:186
+#: core/app/views/preview/itempreviewview.cpp:187
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Tới"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:198
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Thêm thẻ mới..."
 
-#: core/app/views/preview/itempreviewview.cpp:202
+#: core/app/views/preview/itempreviewview.cpp:203
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Áp dụng mọi thay đổi cho các ảnh"
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:206
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Thêm thẻ mới..."
 
-#: core/app/views/preview/itempreviewview.cpp:212
+#: core/app/views/preview/itempreviewview.cpp:213
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "Hiện kiểu ảnh"
 
-#: core/app/views/preview/itempreviewview.cpp:217
+#: core/app/views/preview/itempreviewview.cpp:218
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "Hiện trên bảng trái"
 
-#: core/app/views/preview/itempreviewview.cpp:219
+#: core/app/views/preview/itempreviewview.cpp:220
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "Hiện trên bảng trái"
 
-#: core/app/views/preview/itempreviewview.cpp:227
+#: core/app/views/preview/itempreviewview.cpp:228
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/app/views/preview/itempreviewview.cpp:232
+#: core/app/views/preview/itempreviewview.cpp:233
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
 msgstr "Thu nhỏ"
 
-#: core/app/views/preview/itempreviewview.cpp:255
+#: core/app/views/preview/itempreviewview.cpp:256
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "Cái chỉ chụp non"
 
-#: core/app/views/preview/itempreviewview.cpp:259
+#: core/app/views/preview/itempreviewview.cpp:260
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Cái chỉ phơi quá lâu"
 
-#: core/app/views/preview/itempreviewview.cpp:662
+#: core/app/views/preview/itempreviewview.cpp:678
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Chọn Không gì"
 
-#: core/app/views/preview/itempreviewview.cpp:858
+#: core/app/views/preview/itempreviewview.cpp:874
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""

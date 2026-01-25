@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-24 00:41+0000\n"
+"POT-Creation-Date: 2026-01-25 00:42+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -315,7 +315,7 @@ msgstr "Αλλαγή ετικετών προσώπου"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:973
+#: core/app/views/preview/itempreviewview.cpp:990
 #, kde-format
 msgid "&Cancel"
 msgstr "&Ακύρωση"
@@ -326,7 +326,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:988
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Ορισμός ετικετών σε αυ&τό το αντικείμενο"
@@ -558,14 +558,14 @@ msgid "This item has geolocation information."
 msgstr "Το αντικείμενο αυτό περιέχει πληροφορίες γεωγραφικής θέσης."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
-#: core/app/views/preview/itempreviewview.cpp:263
+#: core/app/views/preview/itempreviewview.cpp:268
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr "Έμφάνιση πλήρους οθόνης"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:188
+#: core/app/views/preview/itempreviewview.cpp:189
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -573,7 +573,7 @@ msgid "Rotate Left"
 msgstr "Περιστροφή αριστερά"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:190
+#: core/app/views/preview/itempreviewview.cpp:191
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1192,7 +1192,7 @@ msgid "Aperture/Focal:"
 msgstr "Διάφραγμα/Εστιακή:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:204
+#: core/app/views/preview/itempreviewosd.cpp:206
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -2955,7 +2955,15 @@ msgstr "Συνεισφορά..."
 msgid "Donate: "
 msgstr "Ημερομηνία: "
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewvideo.cpp:98
+#: core/app/views/preview/itempreviewview.cpp:264
+#, fuzzy, kde-format
+#| msgid "Crop Information"
+msgctxt "@info:tooltip"
+msgid "Show OSD Information"
+msgstr "Αποκοπή πληροφοριών"
+
+#: core/app/views/preview/itempreviewview.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -2963,7 +2971,7 @@ msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Πίσω"
 
-#: core/app/views/preview/itempreviewview.cpp:186
+#: core/app/views/preview/itempreviewview.cpp:187
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
@@ -2971,83 +2979,83 @@ msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Μπροστά"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:198
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Προσθήκη ετικέτας προσώπου..."
 
-#: core/app/views/preview/itempreviewview.cpp:202
+#: core/app/views/preview/itempreviewview.cpp:203
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Καθαρισμός όλων των προσώπων σε αυτήν την εικόνα"
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:206
 #, fuzzy, kde-format
 #| msgid "Mark all unconfirmed faces as ignored"
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Σημειώστε όλα τα ανεπιβεβαίωτα πρόσωπα ως αγνοημένα"
 
-#: core/app/views/preview/itempreviewview.cpp:212
+#: core/app/views/preview/itempreviewview.cpp:213
 #, fuzzy, kde-format
 #| msgid "Show Face Tags"
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "Εμφάνιση ετικετών προσώπων"
 
-#: core/app/views/preview/itempreviewview.cpp:217
+#: core/app/views/preview/itempreviewview.cpp:218
 #, fuzzy, kde-format
 #| msgid "Add a focus point"
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "Προσθήκη σημείου εστίασης"
 
-#: core/app/views/preview/itempreviewview.cpp:219
+#: core/app/views/preview/itempreviewview.cpp:220
 #, fuzzy, kde-format
 #| msgid "Show focus points"
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "Εμφάνιση σημείων εστίασης"
 
-#: core/app/views/preview/itempreviewview.cpp:227
+#: core/app/views/preview/itempreviewview.cpp:228
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "Εμφάνιση εικόνων επισκόπησης"
 
-#: core/app/views/preview/itempreviewview.cpp:232
+#: core/app/views/preview/itempreviewview.cpp:233
 #, fuzzy, kde-format
 #| msgid "Zoom to 1:1"
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
 msgstr "Εστίαση 1:1"
 
-#: core/app/views/preview/itempreviewview.cpp:255
+#: core/app/views/preview/itempreviewview.cpp:256
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "Ένδειξη υποέκθεσης"
 
-#: core/app/views/preview/itempreviewview.cpp:259
+#: core/app/views/preview/itempreviewview.cpp:260
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Ένδειξη υπερέκθεσης"
 
-#: core/app/views/preview/itempreviewview.cpp:662
+#: core/app/views/preview/itempreviewview.cpp:678
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Χωρίς επιλογή"
 
-#: core/app/views/preview/itempreviewview.cpp:858
+#: core/app/views/preview/itempreviewview.cpp:874
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""

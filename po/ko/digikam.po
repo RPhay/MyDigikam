@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-24 00:41+0000\n"
+"POT-Creation-Date: 2026-01-25 00:42+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -269,7 +269,7 @@ msgstr "얼굴 태그 변경"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:973
+#: core/app/views/preview/itempreviewview.cpp:990
 #, kde-format
 msgid "&Cancel"
 msgstr "취소(&C)"
@@ -280,7 +280,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "선택한 항목에 태그 할당(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:971
+#: core/app/views/preview/itempreviewview.cpp:988
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "이 항목에 태그 할당(&T)"
@@ -506,14 +506,14 @@ msgid "This item has geolocation information."
 msgstr "이 항목에는 지리적 위치 정보가 있습니다."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
-#: core/app/views/preview/itempreviewview.cpp:263
+#: core/app/views/preview/itempreviewview.cpp:268
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr "전체 화면 표시"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:188
+#: core/app/views/preview/itempreviewview.cpp:189
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -521,7 +521,7 @@ msgid "Rotate Left"
 msgstr "왼쪽으로 회전"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:190
+#: core/app/views/preview/itempreviewview.cpp:191
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1123,7 +1123,7 @@ msgid "Aperture/Focal:"
 msgstr "조리개/초점:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:204
+#: core/app/views/preview/itempreviewosd.cpp:206
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -2850,7 +2850,15 @@ msgstr "기여..."
 msgid "Donate: "
 msgstr "날짜: "
 
-#: core/app/views/preview/itempreviewview.cpp:184
+#: core/app/views/preview/itempreviewvideo.cpp:98
+#: core/app/views/preview/itempreviewview.cpp:264
+#, fuzzy, kde-format
+#| msgid "Crop Information"
+msgctxt "@info:tooltip"
+msgid "Show OSD Information"
+msgstr "자르기 정보"
+
+#: core/app/views/preview/itempreviewview.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -2858,7 +2866,7 @@ msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "뒤로"
 
-#: core/app/views/preview/itempreviewview.cpp:186
+#: core/app/views/preview/itempreviewview.cpp:187
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
@@ -2866,21 +2874,21 @@ msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "앞으로"
 
-#: core/app/views/preview/itempreviewview.cpp:197
+#: core/app/views/preview/itempreviewview.cpp:198
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "얼굴 태그 추가"
 
-#: core/app/views/preview/itempreviewview.cpp:202
+#: core/app/views/preview/itempreviewview.cpp:203
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "이 이미지의 모든 얼굴 지우기"
 
-#: core/app/views/preview/itempreviewview.cpp:205
+#: core/app/views/preview/itempreviewview.cpp:206
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Mark this face as Ignored"
@@ -2888,35 +2896,35 @@ msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "이 얼굴을 무시함으로 표시"
 
-#: core/app/views/preview/itempreviewview.cpp:212
+#: core/app/views/preview/itempreviewview.cpp:213
 #, fuzzy, kde-format
 #| msgid "Show Face Tags"
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "얼굴 태그 표시"
 
-#: core/app/views/preview/itempreviewview.cpp:217
+#: core/app/views/preview/itempreviewview.cpp:218
 #, fuzzy, kde-format
 #| msgid "Add a focus point"
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "초점 지점 추가"
 
-#: core/app/views/preview/itempreviewview.cpp:219
+#: core/app/views/preview/itempreviewview.cpp:220
 #, fuzzy, kde-format
 #| msgid "Show focus points"
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "초점 지점 표시"
 
-#: core/app/views/preview/itempreviewview.cpp:227
+#: core/app/views/preview/itempreviewview.cpp:228
 #, fuzzy, kde-format
 #| msgid "Show numbers"
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "숫자 표시"
 
-#: core/app/views/preview/itempreviewview.cpp:232
+#: core/app/views/preview/itempreviewview.cpp:233
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Zoom to Fit"
@@ -2924,21 +2932,21 @@ msgctxt "@info:tooltip"
 msgid "Zoom Factor"
 msgstr "맞추기"
 
-#: core/app/views/preview/itempreviewview.cpp:255
+#: core/app/views/preview/itempreviewview.cpp:256
 #, fuzzy, kde-format
 #| msgid "Exposure Index"
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "노출 지수"
 
-#: core/app/views/preview/itempreviewview.cpp:259
+#: core/app/views/preview/itempreviewview.cpp:260
 #, fuzzy, kde-format
 #| msgid "Exposure Index"
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "노출 지수"
 
-#: core/app/views/preview/itempreviewview.cpp:662
+#: core/app/views/preview/itempreviewview.cpp:678
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
@@ -2947,7 +2955,7 @@ msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "얼굴별"
 
-#: core/app/views/preview/itempreviewview.cpp:858
+#: core/app/views/preview/itempreviewview.cpp:874
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
