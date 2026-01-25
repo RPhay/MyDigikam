@@ -41,8 +41,8 @@ private Q_SLOTS:
     void slotLoadSettings()     override;
     void slotResetSettings()    override;
     void slotPickerColorButtonActived();
+    void slotSpotPositionChangedFromOriginal(const Digikam::DColor&, const QPoint&);
     void slotColorSelectedFromOriginal(const Digikam::DColor&);
-    void slotColorSelectedFromTarget(const Digikam::DColor&);
     void slotAutoAdjustExposure();
 
 private:

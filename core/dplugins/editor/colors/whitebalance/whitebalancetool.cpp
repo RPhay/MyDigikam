@@ -20,6 +20,7 @@
 
 #include <QString>
 #include <QIcon>
+#include <QToolTip>
 #include <QApplication>
 
 // KDE includes
@@ -50,6 +51,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName              = QLatin1String("whitebalance Tool");
     const QString configHistogramChannelEntry  = QLatin1String("Histogram Channel");
     const QString configHistogramScaleEntry    = QLatin1String("Histogram Scale");
@@ -59,6 +62,9 @@ public:
     ImageRegionWidget*   previewWidget         = nullptr;
 
     EditorToolSettings*  gboxSettings          = nullptr;
+
+    double               temperature           = 6500.0;        ///< Backup before to capture with pick color tool.
+    double               green                 = 1.0;           ///< Backup before to capture with pick color tool.
 };
 
 // --------------------------------------------------------
@@ -105,12 +111,11 @@ WhiteBalanceTool::WhiteBalanceTool(QObject* const parent)
     connect(d->settingsView, SIGNAL(signalPickerColorButtonActived()),
             this, SLOT(slotPickerColorButtonActived()));
 
+    connect(d->previewWidget, SIGNAL(signalSpotPositionChangedFromOriginal(Digikam::DColor,QPoint)),
+            this, SLOT(slotSpotPositionChangedFromOriginal(Digikam::DColor,QPoint)));
+
     connect(d->previewWidget, SIGNAL(signalCapturedPointFromOriginal(Digikam::DColor,QPoint)),
             this, SLOT(slotColorSelectedFromOriginal(Digikam::DColor)));
-/*
-    connect(d->previewWidget, SIGNAL(spotPositionChangedFromTarget(Digikam::DColor,QPoint)),
-            this, SLOT(slotColorSelectedFromTarget(Digikam::DColor)));
-*/
 }
 
 WhiteBalanceTool::~WhiteBalanceTool()
@@ -120,20 +125,64 @@ WhiteBalanceTool::~WhiteBalanceTool()
 
 void WhiteBalanceTool::slotPickerColorButtonActived()
 {
-    d->previewWidget->setCapturePointMode(true);
+    if (d->settingsView->pickTemperatureIsChecked())
+    {
+        WBContainer settings = d->settingsView->settings();
+        d->temperature       = settings.temperature;
+        d->green             = settings.green;
+        d->previewWidget->setCapturePointMode(true);
+    }
+    else
+    {
+        // Restore previous values.
+
+        WBContainer settings = d->settingsView->settings();
+        settings.temperature = d->temperature;
+        settings.green       = d->green;
+        d->settingsView->setSettings(settings);
+        d->previewWidget->setCapturePointMode(false);
+    }
+}
+
+void WhiteBalanceTool::slotSpotPositionChangedFromOriginal(const DColor& color, const QPoint& pos)
+{
+    double temperature   = 6500.0;
+    double green         = 1.0;
+    WBFilter::autoWBAdjustementFromColor(color.getQColor(), temperature, green);
+
+    WBContainer settings = d->settingsView->settings();
+    settings.temperature = temperature;
+    settings.green       = green;
+    d->settingsView->setSettings(settings);
+
+    QString colorHex = QString::fromLatin1("#%1%2%3")
+        .arg(color.red(),   2, 16, QLatin1Char('0'))
+        .arg(color.green(), 2, 16, QLatin1Char('0'))
+        .arg(color.blue(),  2, 16, QLatin1Char('0'));
+
+    QString tooltipText = QString::fromUtf8(
+        "<table>"
+        "  <tr>"
+        "    <td bgcolor='%1' width='40' height='40' style='border:1px solid black;'></td>"
+        "    <td><font color='white'>Pos: (%2, %3)<br>RGB: (%4, %5, %6)</font></td>"
+        "  </tr>"
+        "</table>"
+        ).arg(colorHex)
+         .arg(pos.x()).arg(pos.y())
+         .arg(color.red()).arg(color.green()).arg(color.blue());
+
+    QWidget* const tooltipHost = d->gboxSettings->histogramBox()->histogram();
+    QPoint globalPos           = tooltipHost->mapToGlobal(QPoint(0, 0));
+    QToolTip::showText(globalPos, tooltipText, tooltipHost);
 }
 
 void WhiteBalanceTool::slotColorSelectedFromOriginal(const DColor& color)
 {
-    if ( d->settingsView->pickTemperatureIsChecked() )
+    if (d->settingsView->pickTemperatureIsChecked())
     {
         WBContainer settings = d->settingsView->settings();
-        DColor dc            = color;
-        QColor tc            = dc.getQColor();
-
-        WBFilter::autoWBAdjustementFromColor(tc, settings.temperature, settings.green);
+        WBFilter::autoWBAdjustementFromColor(color.getQColor(), settings.temperature, settings.green);
         d->settingsView->setSettings(settings);
-
         d->settingsView->setCheckedPickTemperature(false);
     }
     else
@@ -143,11 +192,6 @@ void WhiteBalanceTool::slotColorSelectedFromOriginal(const DColor& color)
 
     d->previewWidget->setCapturePointMode(false);
     slotTimer();
-}
-
-void WhiteBalanceTool::slotColorSelectedFromTarget(const DColor& color)
-{
-    d->gboxSettings->histogramBox()->histogram()->setHistogramGuideByColor(color);
 }
 
 void WhiteBalanceTool::slotAutoAdjustExposure()

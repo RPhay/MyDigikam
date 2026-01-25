@@ -55,10 +55,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN EditorToolSettings::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QButtonGroup*        scaleBG            = nullptr;
 
