@@ -428,8 +428,8 @@ BUGFIXES:
 355 --> 514767 - [Performance] Ignored directories should not be scanned at all during "Find new items".
 356 --> 514764 - "Find new items" background task is not stopped when closing digiKam.
 357 --> 514972 - Exiftool does not create sidecar files for readonly elements.
-358 --> 
-359 --> 
+358 --> 258717 - RGB values Missing.
+359 --> 266335 - Curve Adjust Histogram is missing value indicator.
 360 --> 
 361 --> 
 362 --> 
