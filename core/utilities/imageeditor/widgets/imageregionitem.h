@@ -38,13 +38,16 @@ public:
     explicit ImageRegionItem(ImageRegionWidget* const view, bool paintExtras = true);
     ~ImageRegionItem()                                                                     override;
 
+    QSize imageSize();
+    DColor getPixelColor(const QPoint&);
+
     void initOriginalImage();
     void setTargetImage(const DImg& img);
     void setHighLightPoints(const QPolygon& pointsList);
     void setRenderingPreviewMode(int mode);
 
     void  paintExtraData(QPainter* const painter);
-    QRect getImageRegion() const;
+    QRect getImageRegion()                                                           const;
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
     void hoverEnterEvent(QGraphicsSceneHoverEvent*)                                        override;

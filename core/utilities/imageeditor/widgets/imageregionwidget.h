@@ -101,10 +101,11 @@ protected:
 
 private:
 
-    bool capturedPointFromOriginal(const QPointF&, DColor&) const;
+    bool capturedPointFromOriginal(QPointF&, DColor&)               const;
 
 private Q_SLOTS:
 
+    void slotSendSpotPositionFromOrginalDelayed();
     void slotOriginalImageRegionChangedDelayed();
     void slotPanIconSelectionMoved(const QRect&, bool)                    override;
 

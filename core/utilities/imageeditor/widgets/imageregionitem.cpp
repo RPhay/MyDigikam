@@ -77,6 +77,20 @@ ImageRegionItem::~ImageRegionItem()
     delete dd;
 }
 
+QSize ImageRegionItem::imageSize()
+{
+    Q_D(GraphicsDImgItem);
+
+    return d->image.size();
+}
+
+DColor ImageRegionItem::getPixelColor(const QPoint& pt)
+{
+    Q_D(GraphicsDImgItem);
+
+    return d->image.getPixelColor(pt.x(), pt.y());
+}
+
 QRect ImageRegionItem::getImageRegion() const
 {
     return dd->drawRect;

@@ -66,6 +66,10 @@ public:
     PanIconWidget*   pan                        = nullptr;
     QTimer*          delay                      = nullptr;
 
+    QTimer*          spotTimer                  = nullptr;
+    DColor           spotColor;
+    QPointF          spotPos;
+
     ImageRegionItem* item                       = nullptr;
 };
 
@@ -91,6 +95,16 @@ ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
     connect(d_ptr->delay, SIGNAL(timeout()),
             this, SLOT(slotOriginalImageRegionChanged()));
 
+    // ---
+
+    d_ptr->spotTimer = new QTimer(this);
+    d_ptr->spotTimer->setInterval(200);
+    d_ptr->spotTimer->setSingleShot(true);
+
+    connect(d_ptr->spotTimer, SIGNAL(timeout()),
+            this, SLOT(slotSendSpotPositionFromOrginalDelayed()));
+
+    // ---
 
     layout()->fitToWindow();
 
@@ -296,11 +310,13 @@ void ImageRegionWidget::mouseMoveEvent(QMouseEvent* e)
     {
         QPointF imgPt = mapToScene(e->pos());
         DColor  color;
-        bool b = capturedPointFromOriginal(imgPt, color);
+        bool b        = capturedPointFromOriginal(imgPt, color);
 
         if (b)
         {
-            Q_EMIT signalSpotPositionChangedFromOriginal(color, imgPt.toPoint());
+            d_ptr->spotPos   = imgPt;
+            d_ptr->spotColor = color;
+            d_ptr->spotTimer->start();
 
             QGraphicsView::mouseMoveEvent(e);
             return;
@@ -308,6 +324,11 @@ void ImageRegionWidget::mouseMoveEvent(QMouseEvent* e)
     }
 
     GraphicsDImgView::mouseMoveEvent(e);
+}
+
+void ImageRegionWidget::slotSendSpotPositionFromOrginalDelayed()
+{
+    Q_EMIT signalSpotPositionChangedFromOriginal(d_ptr->spotColor, d_ptr->spotPos.toPoint());
 }
 
 void ImageRegionWidget::mouseReleaseEvent(QMouseEvent* e)
@@ -323,19 +344,18 @@ void ImageRegionWidget::mouseReleaseEvent(QMouseEvent* e)
     GraphicsDImgView::mouseReleaseEvent(e);
 }
 
-bool ImageRegionWidget::capturedPointFromOriginal(const QPointF& pt, DColor& color) const
+bool ImageRegionWidget::capturedPointFromOriginal(QPointF& pt, DColor& color) const
 {
-    int x        = (int)(pt.x() / layout()->realZoomFactor());
-    int y        = (int)(pt.y() / layout()->realZoomFactor());
+    int x          = (int)(pt.x() / layout()->realZoomFactor());
+    int y          = (int)(pt.y() / layout()->realZoomFactor());
     QPoint imgPt(x, y);
-    DImg img     = d_ptr->item->image();
-    QRect imgRect(0, 0, img.width(), img.height());
+    QSize  imgSize = d_ptr->item->imageSize();
+    QRect  imgRect(0, 0, imgSize.width(), imgSize.height());
 
     if (imgRect.contains(imgPt))
     {
-        color = d_ptr->item->image().getPixelColor(x, y);
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Captured point from image : " << imgPt;
+        color = d_ptr->item->getPixelColor(imgPt);
+        pt    = imgPt.toPointF();
 
         return true;
     }
