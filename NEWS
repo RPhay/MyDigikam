@@ -50,7 +50,7 @@ Grouped Items   : Usability improvements of the grouped icon-view items overlay.
 Filter Items    : Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.
 Trash View      : load and save column states between sessions.
 Preview         : Extend Image and Video preview toolbar overlay with Labels editor.
-Preview         : Add new toolbar buttons: exposure indicators, color managment, OSD, magnifier.
+Preview         : Add new toolbar buttons: exposure indicators, color management, OSD, magnifier.
 Preview         : Add context-menu to the video player.
 Preview         : Add load progress indicator on the status bar (Icon-view and LightTable).
 Preview         : Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.

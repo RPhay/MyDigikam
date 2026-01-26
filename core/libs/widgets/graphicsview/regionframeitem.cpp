@@ -417,7 +417,7 @@ RegionFrameItem::RegionFrameItem(QGraphicsItem* const item)
     connect(d->marchingAntsTimer, &QTimer::timeout,
             this, [this]()
         {
-            d->marchingAntsOffset = (d->marchingAntsOffset + 1) % 8; // 8 step of a complet cycle.
+            d->marchingAntsOffset = (d->marchingAntsOffset + 1) % 8; // 8 step of a complete cycle.
             update();
         }
     );
