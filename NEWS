@@ -439,7 +439,7 @@ BUGFIXES:
 364 --> 449082 - Active selection outline is white, which is not visible on a white background.
 365 --> 398659 - Marching Ants Selection Option.
 366 --> 412445 - Adjust Levels: histogram is not the same when Default settings are restored.
-367 --> 
+367 --> 128377 - Histograms don't match with bad "auto level" function into Adjust levels tool.
 368 --> 
 369 --> 
 370 --> 
