@@ -155,12 +155,12 @@ void WhiteBalanceTool::slotSpotPositionChangedFromOriginal(const DColor& color, 
     settings.green       = green;
     d->settingsView->setSettings(settings);
 
-    QString colorHex = QString::fromLatin1("#%1%2%3")
+    QString colorHex     = QString::fromLatin1("#%1%2%3")
         .arg(color.red(),   2, 16, QLatin1Char('0'))
         .arg(color.green(), 2, 16, QLatin1Char('0'))
         .arg(color.blue(),  2, 16, QLatin1Char('0'));
 
-    QString tooltipText = QString::fromUtf8(
+    QString tooltipText  = QString::fromUtf8(
         "<table>"
         "  <tr>"
         "    <td bgcolor='%1' width='40' height='40' style='border:1px solid black;'></td>"
@@ -171,9 +171,8 @@ void WhiteBalanceTool::slotSpotPositionChangedFromOriginal(const DColor& color, 
          .arg(pos.x()).arg(pos.y())
          .arg(color.red()).arg(color.green()).arg(color.blue());
 
-    QWidget* const tooltipHost = d->gboxSettings->histogramBox()->histogram();
-    QPoint globalPos           = tooltipHost->mapToGlobal(QPoint(0, 0));
-    QToolTip::showText(globalPos, tooltipText, tooltipHost);
+    QPoint globalPos     = QCursor::pos();
+    QToolTip::showText(globalPos, tooltipText, d->previewWidget);
 }
 
 void WhiteBalanceTool::slotColorSelectedFromOriginal(const DColor& color)

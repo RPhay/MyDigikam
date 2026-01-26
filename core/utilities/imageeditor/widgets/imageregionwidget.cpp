@@ -275,12 +275,16 @@ void ImageRegionWidget::mousePressEvent(QMouseEvent* e)
     if (d_ptr->capturePtMode)
     {
         QPointF imgPt = mapToScene(e->pos());
-        DColor  color = capturedPointFromOriginal(imgPt);
+        DColor  color;
+        bool b        = capturedPointFromOriginal(imgPt, color);
 
-        Q_EMIT signalCapturedPointFromOriginal(color, imgPt.toPoint());
+        if (b)
+        {
+            Q_EMIT signalCapturedPointFromOriginal(color, imgPt.toPoint());
 
-        QGraphicsView::mousePressEvent(e);
-        return;
+            QGraphicsView::mousePressEvent(e);
+            return;
+        }
     }
 
     GraphicsDImgView::mousePressEvent(e);
@@ -291,11 +295,16 @@ void ImageRegionWidget::mouseMoveEvent(QMouseEvent* e)
     if (d_ptr->capturePtMode)
     {
         QPointF imgPt = mapToScene(e->pos());
-        DColor  color = capturedPointFromOriginal(imgPt);
+        DColor  color;
+        bool b = capturedPointFromOriginal(imgPt, color);
 
-        Q_EMIT signalSpotPositionChangedFromOriginal(color, imgPt.toPoint());
+        if (b)
+        {
+            Q_EMIT signalSpotPositionChangedFromOriginal(color, imgPt.toPoint());
 
-        QGraphicsView::mouseMoveEvent(e);
+            QGraphicsView::mouseMoveEvent(e);
+            return;
+        }
     }
 
     GraphicsDImgView::mouseMoveEvent(e);
@@ -314,16 +323,24 @@ void ImageRegionWidget::mouseReleaseEvent(QMouseEvent* e)
     GraphicsDImgView::mouseReleaseEvent(e);
 }
 
-DColor ImageRegionWidget::capturedPointFromOriginal(const QPointF& pt)
+bool ImageRegionWidget::capturedPointFromOriginal(const QPointF& pt, DColor& color) const
 {
     int x        = (int)(pt.x() / layout()->realZoomFactor());
     int y        = (int)(pt.y() / layout()->realZoomFactor());
     QPoint imgPt(x, y);
-    DColor color = d_ptr->item->image().getPixelColor(x, y);
+    DImg img     = d_ptr->item->image();
+    QRect imgRect(0, 0, img.width(), img.height());
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Captured point from image : " << imgPt;
+    if (imgRect.contains(imgPt))
+    {
+        color = d_ptr->item->image().getPixelColor(x, y);
 
-    return color;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Captured point from image : " << imgPt;
+
+        return true;
+    }
+
+    return false;
 }
 
 void ImageRegionWidget::updateImage(const DImg& img)

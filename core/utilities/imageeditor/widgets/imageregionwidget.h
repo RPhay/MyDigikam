@@ -101,7 +101,7 @@ protected:
 
 private:
 
-    DColor capturedPointFromOriginal(const QPointF&);
+    bool capturedPointFromOriginal(const QPointF&, DColor&) const;
 
 private Q_SLOTS:
 
