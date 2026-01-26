@@ -33,6 +33,7 @@
 #include <QIcon>
 #include <QStandardPaths>
 #include <QMessageBox>
+#include <QToolTip>
 
 // KDE includes
 
@@ -309,7 +310,7 @@ AdjustLevelsTool::AdjustLevelsTool(QObject* const parent)
             this, SLOT(slotSpotColorChanged(Digikam::DColor)));
 
     connect(d->previewWidget, SIGNAL(signalSpotPositionChangedFromOriginal(Digikam::DColor,QPoint)),
-            this, SLOT(slotColorSelectedFromOriginal(Digikam::DColor)));
+            this, SLOT(slotColorSelectedFromOriginal(Digikam::DColor,QPoint)));
 
     // -------------------------------------------------------------
     // Color sliders and spinbox slots.
@@ -523,8 +524,27 @@ void AdjustLevelsTool::slotSpotColorChanged(const DColor& color)
     slotPreview();
 }
 
-void AdjustLevelsTool::slotColorSelectedFromOriginal(const DColor& color)
+void AdjustLevelsTool::slotColorSelectedFromOriginal(const DColor& color, const QPoint& pos)
 {
+    QString colorHex     = QString::fromLatin1("#%1%2%3")
+        .arg(color.red(),   2, 16, QLatin1Char('0'))
+        .arg(color.green(), 2, 16, QLatin1Char('0'))
+        .arg(color.blue(),  2, 16, QLatin1Char('0'));
+
+    QString tooltipText  = QString::fromUtf8(
+        "<table>"
+        "  <tr>"
+        "    <td bgcolor='%1' width='40' height='40' style='border:1px solid black;'></td>"
+        "    <td><font color='white'>Pos: (%2, %3)<br>RGB: (%4, %5, %6)</font></td>"
+        "  </tr>"
+        "</table>"
+        ).arg(colorHex)
+         .arg(pos.x()).arg(pos.y())
+         .arg(color.red()).arg(color.green()).arg(color.blue());
+
+    QPoint globalPos     = QCursor::pos();
+    QToolTip::showText(globalPos, tooltipText, d->previewWidget);
+
     d->levelsHistogramWidget->setHistogramGuideByColor(color);
 }
 

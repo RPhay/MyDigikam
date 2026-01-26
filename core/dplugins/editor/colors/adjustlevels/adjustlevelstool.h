@@ -48,8 +48,8 @@ private Q_SLOTS:
     void slotAdjustMaxInputSpinBox(double val);
     void slotAdjustMinOutputSpinBox(double val);
     void slotAdjustMaxOutputSpinBox(double val);
-    void slotSpotColorChanged(const Digikam::DColor& color);
-    void slotColorSelectedFromOriginal(const Digikam::DColor& color);
+    void slotSpotColorChanged(const Digikam::DColor&);
+    void slotColorSelectedFromOriginal(const Digikam::DColor&, const QPoint&);
     void slotPickerColorButtonActived(int);
     void slotShowInputHistogramGuide(double v);
     void slotShowOutputHistogramGuide(double v);

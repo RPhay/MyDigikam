@@ -24,6 +24,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QIcon>
+#include <QToolTip>
 
 // KDE includes
 
@@ -126,7 +127,7 @@ AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
             this, SLOT(slotSpotColorChanged()));
 
     connect(d->previewWidget, SIGNAL(signalSpotPositionChangedFromOriginal(Digikam::DColor,QPoint)),
-            this, SLOT(slotColorSelectedFromOriginal(Digikam::DColor)));
+            this, SLOT(slotColorSelectedFromOriginal(Digikam::DColor,QPoint)));
 
     connect(d->previewWidget, SIGNAL(signalCapturedPointFromOriginal(Digikam::DColor,QPoint)),
             d->settingsView, SLOT(slotSpotColorChanged(Digikam::DColor)));
@@ -153,8 +154,27 @@ void AdjustCurvesTool::slotSpotColorChanged()
     slotPreview();
 }
 
-void AdjustCurvesTool::slotColorSelectedFromOriginal(const DColor& color)
+void AdjustCurvesTool::slotColorSelectedFromOriginal(const DColor& color, const QPoint& pos)
 {
+    QString colorHex     = QString::fromLatin1("#%1%2%3")
+        .arg(color.red(),   2, 16, QLatin1Char('0'))
+        .arg(color.green(), 2, 16, QLatin1Char('0'))
+        .arg(color.blue(),  2, 16, QLatin1Char('0'));
+
+    QString tooltipText  = QString::fromUtf8(
+        "<table>"
+        "  <tr>"
+        "    <td bgcolor='%1' width='40' height='40' style='border:1px solid black;'></td>"
+        "    <td><font color='white'>Pos: (%2, %3)<br>RGB: (%4, %5, %6)</font></td>"
+        "  </tr>"
+        "</table>"
+        ).arg(colorHex)
+         .arg(pos.x()).arg(pos.y())
+         .arg(color.red()).arg(color.green()).arg(color.blue());
+
+    QPoint globalPos     = QCursor::pos();
+    QToolTip::showText(globalPos, tooltipText, d->previewWidget);
+
     d->settingsView->setCurveGuide(color);
 }
 
