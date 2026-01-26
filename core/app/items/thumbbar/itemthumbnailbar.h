@@ -64,6 +64,7 @@ Q_SIGNALS:
 protected Q_SLOTS:
 
     void slotOpenGeolocationMap(const QModelIndex& index);
+    void slotGroupIndicatorClicked(const QModelIndex& index);
 
 protected:
 

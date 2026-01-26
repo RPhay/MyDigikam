@@ -112,6 +112,9 @@ void ItemThumbnailBar::installOverlays()
     GroupIndicatorOverlay* const groupOverlay = new GroupIndicatorOverlay(this);
     addOverlay(groupOverlay);
 
+    connect(groupOverlay, SIGNAL(toggleGroupOpen(QModelIndex)),
+            this, SLOT(slotGroupIndicatorClicked(QModelIndex)));
+
     // Geolocation overlay
 
     ItemCoordinatesOverlay* const geoOverlay = new ItemCoordinatesOverlay(this);
@@ -119,6 +122,20 @@ void ItemThumbnailBar::installOverlays()
 
     connect(geoOverlay, SIGNAL(signalOpenGeolocationMap(QModelIndex)),
             this, SLOT(slotOpenGeolocationMap(QModelIndex)));
+}
+
+void ItemThumbnailBar::slotGroupIndicatorClicked(const QModelIndex& index)
+{
+    ItemInfo info = ItemModel::retrieveItemInfo(index);
+
+    if (info.isNull())
+    {
+        return;
+    }
+
+    setCurrentIndex(index);
+    itemFilterModel()->toggleGroupOpen(info.id());
+    itemAlbumModel()->ensureHasGroupedImages(info);
 }
 
 void ItemThumbnailBar::slotOpenGeolocationMap(const QModelIndex& index)
