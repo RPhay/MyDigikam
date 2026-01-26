@@ -438,7 +438,7 @@ BUGFIXES:
 363 --> 139681 - Function for semi-automatic white-balance based on 3x3 image area taken with a pipette.
 364 --> 449082 - Active selection outline is white, which is not visible on a white background.
 365 --> 398659 - Marching Ants Selection Option.
-366 --> 
+366 --> 412445 - Adjust Levels: histogram is not the same when Default settings are restored.
 367 --> 
 368 --> 
 369 --> 
