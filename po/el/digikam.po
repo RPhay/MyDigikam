@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-25 00:42+0000\n"
+"POT-Creation-Date: 2026-01-26 00:40+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -8168,7 +8168,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "Τύπος αρχειοθέτησης χώρου εργασίας"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:248
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:247
 #, kde-format
 msgid "Adjust Curve"
 msgstr "Προσαρμογή καμπύλης"
@@ -8520,7 +8520,7 @@ msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
 msgstr "Λαμπρότητα/Αντίθεση/Γάμμα..."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:179
+#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:275
 #, kde-format
 msgid "Convert to Black and White"
 msgstr "Μετατροπή σε Μαύρο και Λευκό"
@@ -8747,7 +8747,7 @@ msgstr ""
 "γάμμα. Τυπικές τιμές είναι 1.8 ή 2.2."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:649
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:360
 #, kde-format
 msgid "Film"
 msgstr "Φιλμ"
@@ -8884,8 +8884,8 @@ msgctxt "@action"
 msgid "Color Management is disabled..."
 msgstr "Η διαχείριση χρώματος είναι ανενεργή..."
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:242
 #: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
@@ -10212,35 +10212,35 @@ msgctxt "@info"
 msgid "This is the color effects preview"
 msgstr "Αυτή είναι η προεπισκόπηση των χρωματικών εφέ"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:201
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:198
 #, fuzzy, kde-format
 #| msgid "Solarize"
 msgctxt "@title: filter"
 msgid "Solarize"
 msgstr "Ηλιακή έκθεση"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:207
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:204
 #, fuzzy, kde-format
 #| msgid "Vivid"
 msgctxt "@title: filter"
 msgid "Vivid"
 msgstr "Vivid"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:213
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:210
 #, fuzzy, kde-format
 #| msgid "Neon"
 msgctxt "@title: filter"
 msgid "Neon"
 msgstr "Νέον"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:219
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:216
 #, fuzzy, kde-format
 #| msgid "Find Edges"
 msgctxt "@title: filter"
 msgid "Find Edges"
 msgstr "Εύρεση άκρων"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:225
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:222
 #, fuzzy, kde-format
 #| msgid "Lut3D"
 msgctxt "@title: filter"
@@ -12266,7 +12266,7 @@ msgstr "Δύο χάρτες - οριζόντια"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:180
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:181
 #: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
@@ -13389,7 +13389,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:94
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:335
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:340
 #, kde-format
 msgid "Contrast:"
 msgstr "Αντίθεση:"
@@ -28465,7 +28465,7 @@ msgstr "Ρυθμίστε εδώ την προσαρμογή λαμπρότητα
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:346
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Ρυθμίστε εδώ την προσαρμογή αντίθεσης της εικόνας."
@@ -28501,7 +28501,7 @@ msgstr ""
 "της εικόνας."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:330
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:335
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Αυτή είναι η προσαρμογή καμπύλης της φωτεινότητας της εικόνας"
@@ -30898,7 +30898,7 @@ msgstr "Μετάβαση ->"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:185
 #, kde-format
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -32953,46 +32953,46 @@ msgstr ""
 "<b>Μαύρο & λευκό με πράσινη απόχρωση</b>:<p>Αυτό το φίλτρο είναι γνωστό και "
 "ως Verdante.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:362
 #, kde-format
 msgid "Lens Filters"
 msgstr "Φίλτρα φακών"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:364
 #, kde-format
 msgid "Tone"
 msgstr "Τόνος"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:366
 #, kde-format
 msgid "Luminosity"
 msgstr "Φωτεινότητα"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:514
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:524
 #, fuzzy, kde-format
 #| msgid "Black & White Settings File to Load"
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Αρχείο ρυθμίσεων ασπρόμαυρης μετατροπής για φόρτωση"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:532
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:542
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
 msgstr "Το \"%1\" δεν είναι αρχείο ρυθμίσεων ασπρόμαυρης μετατροπής."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:578
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:588
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
 msgstr "Αδυναμία φόρτωσης των ρυθμίσεων από το αρχείο ασπρόμαυρης μετατροπής."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:586
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:596
 #, fuzzy, kde-format
 #| msgid "Black & White Settings File to Save"
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "Αρχείο ρυθμίσεων ασπρόμαυρης μετατροπής για αποθήκευση"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:625
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:635
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
 msgstr "Αδυναμία αποθήκευσης των ρυθμίσεων στο αρχείο ασπρόμαυρης μετατροπής."
@@ -33354,26 +33354,26 @@ msgstr "Επαναφορά"
 msgid "Adjust Curves"
 msgstr "Προσαρμογή καμπυλών"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:238
+#: core/libs/dimg/filters/curves/curvessettings.cpp:243
 #, fuzzy, kde-format
 #| msgid "Select Gimp Curves File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Επιλέξτε αρχείο καμπυλών του Gimp για φόρτωση"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:250
+#: core/libs/dimg/filters/curves/curvessettings.cpp:255
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "Αδυναμία φόρτωσης αρχείου καμπυλών του Gimp."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:259
+#: core/libs/dimg/filters/curves/curvessettings.cpp:264
 #, fuzzy, kde-format
 #| msgid "Gimp Curves File to Save"
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Αρχείο καμπυλών Gimp για αποθήκευση"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:271
+#: core/libs/dimg/filters/curves/curvessettings.cpp:276
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Αδυναμία αποθήκευσης στο αρχείο καμπυλών Gimp."
@@ -33401,10 +33401,13 @@ msgstr ""
 "απέτυχε."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "x:%1\n"
+#| "y:%2"
 msgid ""
 "x:%1\n"
-"y:%2"
+"y:%2\n"
 msgstr ""
 "x:%1\n"
 "y:%2"
@@ -63295,79 +63298,79 @@ msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
 msgid "Tools"
 msgstr "Εργαλεία"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:123
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:124
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:107
 #, kde-format
 msgid "About this tool..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:127
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:128
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:103
 #, fuzzy, kde-format
 #| msgid "Kipi Plugins Handbook"
 msgid "Tool online handbook..."
 msgstr "Εγχειρίδιο πρόσθετων Kipi"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:159
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:160
 #, kde-format
 msgid "Guide:"
 msgstr "Οδηγός:"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:163
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:164
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr ""
 "Καθορίστε εδώ το χρώμα που θα χρησιμοποιηθεί για τη σχεδίαση των οδηγών "
 "διακεκομμένης γραμμής."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:168
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:169
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr ""
 "Καθορίστε εδώ το πλάτος σε εικονοστοιχεία που θα χρησιμοποιηθεί για τη "
 "σχεδίαση των οδηγών διακεκομμένης γραμμής."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:176
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:177
 #, fuzzy, kde-format
 msgid "Defaults"
 msgstr "Προκαθορισμένο"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr "Επαναφορά όλων των ρυθμίσεων στις προκαθορισμένες τιμές τους."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:196
 #, fuzzy, kde-format
 #| msgid "Load..."
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "Φόρτωση..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:197
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "Φόρτωση όλων των παραμέτρων από αρχείο ρυθμίσεων."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
 #, fuzzy, kde-format
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "Αποθήκευση νέας έκδοσης ως..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:201
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr "Αποθήκευση όλων των παραμέτρων σε αρχείο ρυθμίσεων."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:203
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
 #, fuzzy, kde-format
 #| msgid "Try"
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "Δοκιμή"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:205
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Try all settings."
 msgstr "Δοκιμή όλων των ρυθμίσεων."

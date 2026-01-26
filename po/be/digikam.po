@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-25 00:42+0000\n"
+"POT-Creation-Date: 2026-01-26 00:40+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -7778,7 +7778,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:248
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:247
 #, kde-format
 msgid "Adjust Curve"
 msgstr "Падладжванне крывой"
@@ -8080,7 +8080,7 @@ msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
 msgstr ""
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:179
+#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:275
 #, kde-format
 msgid "Convert to Black and White"
 msgstr ""
@@ -8267,7 +8267,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:649
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:355
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:360
 #, kde-format
 msgid "Film"
 msgstr "Плёнка"
@@ -8391,8 +8391,8 @@ msgctxt "@action"
 msgid "Color Management is disabled..."
 msgstr ""
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:242
 #: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
@@ -9568,31 +9568,31 @@ msgctxt "@info"
 msgid "This is the color effects preview"
 msgstr ""
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:201
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:198
 #, kde-format
 msgctxt "@title: filter"
 msgid "Solarize"
 msgstr "Салярызацыя"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:207
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:204
 #, kde-format
 msgctxt "@title: filter"
 msgid "Vivid"
 msgstr "Яркі"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:213
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:210
 #, kde-format
 msgctxt "@title: filter"
 msgid "Neon"
 msgstr "Неон"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:219
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:216
 #, kde-format
 msgctxt "@title: filter"
 msgid "Find Edges"
 msgstr "Знайсці краі"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:225
+#: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:222
 #, kde-format
 msgctxt "@title: filter"
 msgid "Lut3D"
@@ -11362,7 +11362,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:180
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:181
 #: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
@@ -12423,7 +12423,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:94
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:335
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:340
 #, kde-format
 msgid "Contrast:"
 msgstr "Кантраснасць:"
@@ -25794,7 +25794,7 @@ msgstr "Увядзіце значэнне карэкцыі для яркасці
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:346
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Увядзіце значэнне карэкцыі для кантраснасці выявы."
@@ -25828,7 +25828,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:330
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:335
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Гэта крывая для наладжвання агульнай асветленасці выявы"
@@ -27932,7 +27932,7 @@ msgstr "Перанесці ->"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:185
 #, kde-format
 msgid "Cancel"
 msgstr "Скасаваць"
@@ -29757,44 +29757,44 @@ msgid ""
 "Verdante.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:362
 #, kde-format
 msgid "Lens Filters"
 msgstr "Светлавы фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:364
 #, kde-format
 msgid "Tone"
 msgstr "Замалёўка"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:366
 #, kde-format
 msgid "Luminosity"
 msgstr "Асветленасць"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:514
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:524
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Загрузка налад чорна-белага фільтра"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:532
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:542
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
 msgstr "\"%1\" не ёсць тэкставым файлам з наладамі чорна-белага фільтра."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:578
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:588
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
 msgstr "Не атрымалася загрузіць налады з тэкставага файла."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:586
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:596
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "Захаванне налад чорна-белага фільтра"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:625
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:635
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
 msgstr "Не атрымалася захаваць налады чорна-белага фільтра ў тэкставы файл."
@@ -30085,24 +30085,24 @@ msgstr "Скінуць &усё"
 msgid "Adjust Curves"
 msgstr "Падладжванне крывых"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:238
+#: core/libs/dimg/filters/curves/curvessettings.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:250
+#: core/libs/dimg/filters/curves/curvessettings.cpp:255
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:259
+#: core/libs/dimg/filters/curves/curvessettings.cpp:264
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:271
+#: core/libs/dimg/filters/curves/curvessettings.cpp:276
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr ""
@@ -30127,10 +30127,13 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "x:%1\n"
+#| "y:%2"
 msgid ""
 "x:%1\n"
-"y:%2"
+"y:%2\n"
 msgstr ""
 "x:%1\n"
 "y:%2"
@@ -56485,72 +56488,72 @@ msgstr ""
 msgid "Tools"
 msgstr "Інструменты"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:123
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:124
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:107
 #, kde-format
 msgid "About this tool..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:127
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:128
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:103
 #, kde-format
 msgid "Tool online handbook..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:159
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:160
 #, kde-format
 msgid "Guide:"
 msgstr "Лінія:"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:163
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:164
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:168
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:169
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:176
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:177
 #, kde-format
 msgid "Defaults"
 msgstr "Прадвызначана"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:196
 #, kde-format
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "Загрузка..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:197
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "Загрузіць усе параметры з файла."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
 #, kde-format
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "Захаваць як..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:201
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:203
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
 #, kde-format
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "Паспрабаваць"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:205
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Try all settings."
 msgstr "Паспрабаваць усе налады."
