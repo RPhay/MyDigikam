@@ -77,12 +77,11 @@ void DigikamItemDelegate::updateRects()
 
     if (albumSettings->getIconShowPickLabel())
     {
-        const int pickIconSize               = qBound(16, iconSize, 28);
-        d->pickLabelRect                     = QRect(d->margin, y - d->margin, pickIconSize, pickIconSize);
+        d->pickLabelRect                     = QRect(d->margin, y - iconSize, iconSize, iconSize);
     }
 
     d->coordinatesRect                       = QRect(d->contentWidth - iconSize + 2, d->pixmapRect.top(), iconSize, iconSize);
-    d->groupRect                             = QRect(d->contentWidth - iconSize + d->margin, y - d->margin, iconSize, iconSize);
+    d->groupRect                             = QRect(d->contentWidth - iconSize + d->margin, y - iconSize, iconSize, iconSize);
     const bool showInfos                     = ((d->contentWidth - 2 * d->radius) > ThumbnailSize::Small);
 
     if (albumSettings->getIconShowRating())

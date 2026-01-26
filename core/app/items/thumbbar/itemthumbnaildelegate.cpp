@@ -113,8 +113,7 @@ void ItemThumbnailDelegate::updateRects()
     const int iconSize    = qBound(16, (d->contentWidth + 2*d->margin) / 8 - 2, 48);
     d->coordinatesRect    = QRect(d->contentWidth - iconSize+2, d->pixmapRect.top(), iconSize, iconSize);
 
-
-    d->pickLabelRect      = QRect(d->margin+2, d->rect.bottom() - d->margin - 18, 16, 16);
+    d->pickLabelRect      = QRect(d->margin + 2, d->rect.bottom() - iconSize, iconSize, iconSize);
     d->drawCoordinates    = ApplicationSettings::instance()->getIconShowCoordinates();
     d->drawImageFormat    = ApplicationSettings::instance()->getIconShowImageFormat();
     d->drawImageFormatTop = true;
@@ -125,7 +124,7 @@ void ItemThumbnailDelegate::updateRects()
         d->ratingRect = QRect(d->margin, top, d->contentWidth, d->starPolygonSize.height());
     }
 
-    d->groupRect          = QRect(d->contentWidth - iconSize + d->margin, top, iconSize, iconSize);
+    d->groupRect          = QRect(d->contentWidth - iconSize + d->margin, d->rect.bottom() - iconSize, iconSize, iconSize);
 
     if (d->flow == QListView::LeftToRight)
     {
