@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 00:40+0000\n"
+"POT-Creation-Date: 2026-01-27 00:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -7555,7 +7555,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "छवि मिति"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:247
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:267
 #, kde-format
 msgid "Adjust Curve"
 msgstr ""
@@ -7580,7 +7580,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "HSL समायोजन"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:164
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, fuzzy, kde-format
 msgid ""
@@ -7588,84 +7588,84 @@ msgid ""
 "image."
 msgstr "<p>यो चयन गरेको छवि च्यानलको हिस्टोग्राम रेखाचित्र हो"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, fuzzy, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "<p>यहाँ हिस्टोग्राम चयनको न्यूनतम घनत्व मान चयन गर्नुहोस् ।"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:173
 #, kde-format
 msgid "Input intensity."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, fuzzy, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "<p>यहाँ हिस्टोग्राम चयनको न्यूनतम घनत्व मान चयन गर्नुहोस् ।"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:181
 #, fuzzy, kde-format
 msgid "Output intensity."
 msgstr "निर्गत यन्त्र"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, fuzzy, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "<p>यहाँ हिस्टोग्राम चयनको न्यूनतम घनत्व मान चयन गर्नुहोस् ।"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:188
 #, kde-format
 msgid "Minimal input intensity."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:195
 #, fuzzy, kde-format
 msgid "Select the gamma input value here."
 msgstr "<p>यहाँ छविको गामा समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Maximal input intensity."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
 #, fuzzy, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "<p>यहाँ हिस्टोग्राम चयनको अधिकतम घनत्व मान चयन गर्नुहोस् ।"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, kde-format
 msgid "Minimal output intensity."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:207
 #, fuzzy, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "<p>यहाँ हिस्टोग्राम चयनको न्यूनतम घनत्व मान चयन गर्नुहोस् ।"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, kde-format
 msgid "Maximal output intensity."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:213
 #, fuzzy, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "<p>यहाँ हिस्टोग्राम चयनको अधिकतम घनत्व मान चयन गर्नुहोस् ।"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:223
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7673,13 +7673,13 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:231
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7687,13 +7687,13 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:239
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7701,18 +7701,18 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -7720,41 +7720,41 @@ msgstr ""
 msgid "&Reset"
 msgstr "रिसेट गर्नुहोस्"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:269
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
 "channel will be reset to the default values."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:904
 #, fuzzy, kde-format
 msgid "Adjust Levels"
 msgstr "स्वत: तह"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:911
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "लोड गर्ने श्यामश्वेत सेटिङ फाइल"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:923
 #, fuzzy, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "श्यामश्वेत पाठ फाइलबाट सेटिङ लोड गर्न सकिदैन ।"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:938
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "बचत गर्नका लागि EXIF फाइल"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:950
 #, fuzzy, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "श्यामश्वेत पाठ फाइलमा सेटिङ बचत गर्न सकिदैन ।"
@@ -7883,7 +7883,7 @@ msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
 msgstr "चम्किलोपन/व्यतिरेक/गामा..."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:275
+#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:295
 #, fuzzy, kde-format
 msgid "Convert to Black and White"
 msgstr "श्यामश्वेतमा रूपान्तरण गर्नुहोस्"
@@ -8217,7 +8217,7 @@ msgid "Color Management is disabled..."
 msgstr "रङ सन्तुलन दृश्य अक्षम गरियो"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:242
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, fuzzy, kde-format
@@ -57761,23 +57761,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "पछि"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:211
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:283
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:320
 #, kde-format
 msgid "Before"
 msgstr "पहिला"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:212
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:287
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:324
 #, kde-format
 msgid "After"
 msgstr "पछि"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:83
 #, fuzzy, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "

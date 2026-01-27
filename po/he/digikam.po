@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 00:40+0000\n"
+"POT-Creation-Date: 2026-01-27 00:41+0000\n"
 "PO-Revision-Date: 2026-01-25 09:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -7502,7 +7502,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "תצורת קובץ"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:247
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:267
 #, kde-format
 msgid "Adjust Curve"
 msgstr "שינוי עקומה"
@@ -7526,7 +7526,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "עדכון רמות צבע..."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:164
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
@@ -7534,84 +7534,84 @@ msgid ""
 "image."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, fuzzy, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "<p>סמנו את הערכי העצמה הנמוכים ביותר להיסתוגרמה שנבחרה"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:173
 #, fuzzy, kde-format
 msgid "Input intensity."
 msgstr "ערך מרבי של עוצמת קלט."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, fuzzy, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "<p>סמנו את הערכי העצמה הנמוכים ביותר להיסתוגרמה שנבחרה"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:181
 #, fuzzy, kde-format
 msgid "Output intensity."
 msgstr "אמצעי פלט"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, fuzzy, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "<p>סמנו את הערכי העצמה הנמוכים ביותר להיסתוגרמה שנבחרה"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:188
 #, fuzzy, kde-format
 msgid "Minimal input intensity."
 msgstr "ערך עוצמת פלט מזערי"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "ערך קלט גאמה."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:195
 #, fuzzy, kde-format
 msgid "Select the gamma input value here."
 msgstr "ערך קלט גאמה."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, fuzzy, kde-format
 msgid "Maximal input intensity."
 msgstr "ערך מרבי של עוצמת קלט."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
 #, fuzzy, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "<p>סמנו את הערכי העצמה הגבוהים ביותר להיסתוגרמה שנבחרה"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, fuzzy, kde-format
 msgid "Minimal output intensity."
 msgstr "ערך עוצמת פלט מזערי"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:207
 #, fuzzy, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "<p>סמנו את הערכי העצמה הנמוכים ביותר להיסתוגרמה שנבחרה"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, fuzzy, kde-format
 msgid "Maximal output intensity."
 msgstr "ערך מרבי של עוצמת קלט."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:213
 #, fuzzy, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "<p>סמנו את הערכי העצמה הגבוהים ביותר להיסתוגרמה שנבחרה"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "בורר גוון צבע צללים עבור כל הערוצים"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:223
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7619,13 +7619,13 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:231
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7633,13 +7633,13 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:239
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7647,18 +7647,18 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "כיוון אוטומטי של כל ערוצי הצבע."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -7666,43 +7666,43 @@ msgstr ""
 msgid "&Reset"
 msgstr "&איפוס"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "איפוס ערכי ערוץ הצבע הנוכחי."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:269
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
 "channel will be reset to the default values."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:904
 #, fuzzy, kde-format
 msgid "Adjust Levels"
 msgstr "עדכון רמת צבע"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:911
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "בחירת קובץ רמות-צבע-של-גימפ לטעינה"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:923
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:938
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "בחירת קובץ רמות-צבע-של-גימפ לטעינה"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:950
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr ""
@@ -7809,7 +7809,7 @@ msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
 msgstr "בהירות/חדות/גאמה..."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:275
+#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:295
 #, fuzzy, kde-format
 msgid "Convert to Black and White"
 msgstr "המרה לשחור לבן"
@@ -8127,7 +8127,7 @@ msgid "Color Management is disabled..."
 msgstr "ניהול צבע מושבת…"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:242
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
@@ -56753,23 +56753,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "אחרי"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:211
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:283
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:320
 #, kde-format
 msgid "Before"
 msgstr "לפני"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:212
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:287
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:324
 #, kde-format
 msgid "After"
 msgstr "אחרי"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:83
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "

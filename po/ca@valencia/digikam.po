@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 00:40+0000\n"
-"PO-Revision-Date: 2026-01-20 19:54+0100\n"
+"POT-Creation-Date: 2026-01-27 00:41+0000\n"
+"PO-Revision-Date: 2026-01-26 10:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2869,11 +2869,10 @@ msgstr "Donació: "
 
 #: core/app/views/preview/itempreviewvideo.cpp:98
 #: core/app/views/preview/itempreviewview.cpp:264
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show OSD Information"
-msgstr "Informació d'escapçat"
+msgstr "Mostra la informació OSD"
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #, kde-format
@@ -7887,7 +7886,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "Format d'imatge amb etiquetes"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:247
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:267
 #, kde-format
 msgid "Adjust Curve"
 msgstr "Ajusta la corba"
@@ -7911,7 +7910,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "Ajust de les corbes…"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:164
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
@@ -7921,84 +7920,84 @@ msgstr ""
 "Este és el dibuix de l'histograma del canal seleccionat de la imatge "
 "original."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "Trieu ací la intensitat de l'entrada de l'histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:173
 #, kde-format
 msgid "Input intensity."
 msgstr "Intensitat d'entrada."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "Trieu ací la intensitat de l'eixida de l'histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:181
 #, kde-format
 msgid "Output intensity."
 msgstr "Intensitat d'eixida."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "Trieu ací el valor d'intensitat d'entrada mínim de l'histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:188
 #, kde-format
 msgid "Minimal input intensity."
 msgstr "Intensitat d'entrada mínima."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Valor d'entrada de la gamma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:195
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "Trieu ací el valor d'entrada de la gamma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Maximal input intensity."
 msgstr "Intensitat d'entrada màxima."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "Trieu ací el valor d'intensitat d'entrada màxim de l'histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, kde-format
 msgid "Minimal output intensity."
 msgstr "Intensitat d'eixida mínima."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:207
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "Trieu ací el valor d'intensitat d'eixida mínim de l'histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, kde-format
 msgid "Maximal output intensity."
 msgstr "Intensitat d'eixida màxima."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:213
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Trieu ací el valor d'intensitat d'eixida màxim de l'histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Selector de color del to d'ombra de tots els canals"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:223
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8009,13 +8008,13 @@ msgstr ""
 "per a establir el <b>to d'ombra</b> dels nivells de l'entrada dels canals "
 "roig, verd, blau i lluminositat."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Selector de color del to mitjà de tots els canals"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:231
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8026,13 +8025,13 @@ msgstr ""
 "per a establir el <b>to mitjà</b> dels nivells de l'entrada dels canals "
 "roig, verd, blau i lluminositat."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Selector de color del to més lluminós de tots els canals"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:239
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8043,19 +8042,19 @@ msgstr ""
 "per a establir el <b>to més lluminós</b> dels nivells de l'entrada dels "
 "canals roig, verd, blau i lluminositat."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "Ajust automàtic de tots els nivells."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
 msgstr ""
 "Si premeu este botó, tots els nivells de canal s'ajustaran automàticament."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -8063,12 +8062,12 @@ msgstr ""
 msgid "&Reset"
 msgstr "&Restablix"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "Reinicia els valors actuals de nivell de canal."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:269
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
@@ -8077,29 +8076,29 @@ msgstr ""
 "Si premeu este botó, es reiniciaran tots els valors de nivells del canal "
 "actualment seleccionat als valors predeterminats."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:904
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Ajusta els nivells"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:911
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Trieu el fitxer de nivells de Gimp que es carregarà"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:923
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "No s'ha pogut carregar el fitxer de text de nivells de Gimp."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:938
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Fitxer de nivells de Gimp que s'ha de guardar"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:950
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "No s'ha pogut guardar el fitxer de text de nivells de Gimp."
@@ -8232,7 +8231,7 @@ msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
 msgstr "Brillantor/Contrast/Gamma…"
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:275
+#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:295
 #, kde-format
 msgid "Convert to Black and White"
 msgstr "Convertix a blanc i negre"
@@ -8576,7 +8575,7 @@ msgid "Color Management is disabled..."
 msgstr "S'ha desactivat la gestió del color…"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:242
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
@@ -31668,16 +31667,13 @@ msgstr ""
 "l'histograma."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:288
-#, fuzzy, kde-format
-#| msgid ""
-#| "x:%1\n"
-#| "y:%2"
+#, kde-format
 msgid ""
 "x:%1\n"
 "y:%2\n"
 msgstr ""
 "x:%1\n"
-"y:%2"
+"y:%2\n"
 
 #: core/libs/dimg/filters/decorate/borderfilter.cpp:117
 #, kde-format
@@ -60020,23 +60016,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Després"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:211
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:283
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:320
 #, kde-format
 msgid "Before"
 msgstr "Abans"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:212
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:287
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:324
 #, kde-format
 msgid "After"
 msgstr "Després"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:83
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -68586,17 +68582,17 @@ msgstr "FFmpeg (predeterminat)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:170
 #, kde-format
 msgid "GStreamer (System)"
-msgstr "GStreamer (Sistema)"
+msgstr "GStreamer (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:174
 #, kde-format
 msgid "WMF (System)"
-msgstr "WMF (Sistema)"
+msgstr "WMF (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:178
 #, kde-format
 msgid "AVFoundation (System)"
-msgstr "AVFoundation (Sistema)"
+msgstr "AVFoundation (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:186
 #, kde-format

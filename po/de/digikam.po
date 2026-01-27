@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 00:40+0000\n"
+"POT-Creation-Date: 2026-01-27 00:41+0000\n"
 "PO-Revision-Date: 2025-07-21 23:21+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -8066,7 +8066,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "Tagged Image Format"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:247
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:267
 #, kde-format
 msgid "Adjust Curve"
 msgstr "Farbkurve anpassen"
@@ -8091,7 +8091,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "Farbkurven anpassen ..."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:164
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
@@ -8099,84 +8099,84 @@ msgid ""
 "image."
 msgstr "Dies ist das Histogramm des ausgewählten Kanals des Originalbildes."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "Wählen Sie hier den Eingabeintensitätswert des Histogramms."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:173
 #, kde-format
 msgid "Input intensity."
 msgstr "Eingabeintensität."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "Wählen Sie hier den Ausgabeintensitätswert des Histogramms."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:181
 #, kde-format
 msgid "Output intensity."
 msgstr "Ausgabeintensität."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "Wählen Sie hier den minimalen Eingabeintensitätswert des Histogramms."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:188
 #, kde-format
 msgid "Minimal input intensity."
 msgstr "Minimale Eingabeintensität."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Gamma-Eingabewert."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:195
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "Wählen Sie hier den Gamma-Eingabewert."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Maximal input intensity."
 msgstr "Maximale Eingabeintensität."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "Wählen Sie hier den maximalen Eingabeintensitätswert des Histogramms."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, kde-format
 msgid "Minimal output intensity."
 msgstr "Minimale Ausgabeintensität."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:207
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "Wählen Sie hier den minimalen Ausgabeintensitätswert des Histogramms."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, kde-format
 msgid "Maximal output intensity."
 msgstr "Maximale Ausgabeintensität."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:213
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Wählen Sie hier den maximalen Ausgabeintensitätswert des Histogramms."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Pipette zum Festlegen des dunkelsten Farbtons für alle Kanäle"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:223
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8187,13 +8187,13 @@ msgstr ""
 "dadurch für alle Tonwerte den <b>Schattenton</b> in Rot, Grün, Blau und der "
 "Leuchtkraft festzulegen."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Pipette zum Festlegen des Mittelwert-Farbtons für alle Kanäle"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:231
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8204,13 +8204,13 @@ msgstr ""
 "dadurch für alle Tonwerte den <b>Mittelwert-Farbton</b> in Rot, Grün, Blau "
 "und der Leuchtkraft festzulegen."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Pipette zum Festlegen des hellsten Farbtons für alle Kanäle"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:239
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8221,19 +8221,19 @@ msgstr ""
 "dadurch für alle Tonwerte den <b>hellsten Farbton</b> in Rot, Grün, Blau und "
 "der Leuchtkraft festzulegen."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "Legt die Tonwerte automatisch fest."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
 msgstr ""
 "Wenn Sie diesen Knopf drücken, werden alle Tonwerte automatisch festgelegt."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -8241,12 +8241,12 @@ msgstr ""
 msgid "&Reset"
 msgstr "Zu&rücksetzen"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "Setzt die Werte des aktuellen Kanals zurück."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:269
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
@@ -8255,29 +8255,29 @@ msgstr ""
 "Wenn Sie diesen Knopf drücken, werden alle Werte des aktuell ausgewählten "
 "Kanals zurückgesetzt."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:904
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Tonwertkorrektur"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:911
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Wählen Sie die zu ladende GIMP-Kurven-Datei"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:923
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Die GIMP-Level-Textdatei lässt sich nicht laden."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:938
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Zu speichernde GIMP-Kurven-Datei"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:950
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Die GIMP-Level-Textdatei lässt sich nicht speichern."
@@ -8410,7 +8410,7 @@ msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
 msgstr "Helligkeit/Kontrast/Gamma ..."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:275
+#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:295
 #, kde-format
 msgid "Convert to Black and White"
 msgstr "In Schwarz-Weiß-Bild umwandeln"
@@ -8754,7 +8754,7 @@ msgid "Color Management is disabled..."
 msgstr "Die Farbverwaltung ist deaktiviert ..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:242
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
 #: core/utilities/searchwindow/searchfields_createfield.cpp:593
 #, kde-format
@@ -61025,23 +61025,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Nachher"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:197
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:213
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:269
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:306
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:211
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:283
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:320
 #, kde-format
 msgid "Before"
 msgstr "Vor"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:198
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:235
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:273
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:310
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:212
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:287
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:324
 #, kde-format
 msgid "After"
 msgstr "Nach"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:79
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:83
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
