@@ -442,9 +442,9 @@ BUGFIXES:
 366 --> 412445 - Adjust Levels: histogram is not the same when Default settings are restored.
 367 --> 128377 - Histograms don't match with bad "auto level" function into Adjust levels tool.
 368 --> 401205 - Identify grouped images in Preview mode.
-369 --> 
-370 --> 
-371 --> 
+369 --> 427312 - Add right click menu to thumbnails in Preview.
+370 --> 437592 - Unable to open Grouped items in Preview window.
+371 --> 423993 - Allow rightclick on thumbnails in preview mode.
 372 --> 
 373 --> 
 374 --> 
