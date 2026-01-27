@@ -446,7 +446,7 @@ BUGFIXES:
 370 --> 437592 - Unable to open Grouped items in Preview window.
 371 --> 423993 - Allow rightclick on thumbnails in preview mode.
 372 --> 513505 - digiKam thumbnail view capture time does not display seconds.
-373 --> 
+373 --> 494302 - Add a new thumbnails creation option not based based on embedded Exif preview but on the full image data.
 374 --> 
 375 --> 
 376 --> 
