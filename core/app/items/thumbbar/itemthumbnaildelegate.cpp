@@ -31,18 +31,18 @@
 namespace Digikam
 {
 
-void ItemThumbnailDelegatePrivate::init(ItemThumbnailDelegate* const q)
-{
-    QObject::connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
-                     q, SLOT(slotSetupChanged()));
-}
-
 ItemThumbnailDelegate::ItemThumbnailDelegate(ItemCategorizedView* parent)
     : ItemDelegate(*new ItemThumbnailDelegatePrivate, parent)
 {
     Q_D(ItemThumbnailDelegate);
 
     d->init(this);
+}
+
+void ItemThumbnailDelegatePrivate::init(ItemThumbnailDelegate* const q)
+{
+    QObject::connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
+                     q, SLOT(slotSetupChanged()));
 }
 
 void ItemThumbnailDelegate::setFlow(QListView::Flow flow)
