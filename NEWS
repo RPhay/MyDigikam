@@ -45,8 +45,9 @@ Setup Collection: Add regular expression wildcard support for ignored directorie
 Image Properties: Add new button to copy all properties as text in clipboard.
 Image Properties: Add new button to open current item is file manager.
 Image Properties: If no icon-view item selected, show current album statistics.
-Grouped Items   : Show items from an open group highlighted for a better usability.
+Grouped Items   : Show items from an open group highlighted for a better usability with Icon-View.
 Grouped Items   : Usability improvements of the grouped icon-view items overlay.
+Grouped Items   : Thumbbar improvements to support grouped items visibility as with Icon-View.
 Filter Items    : Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.
 Trash View      : load and save column states between sessions.
 Preview         : Extend Image and Video preview toolbar overlay with Labels editor.
@@ -440,7 +441,7 @@ BUGFIXES:
 365 --> 398659 - Marching Ants Selection Option.
 366 --> 412445 - Adjust Levels: histogram is not the same when Default settings are restored.
 367 --> 128377 - Histograms don't match with bad "auto level" function into Adjust levels tool.
-368 --> 
+368 --> 401205 - Identify grouped images in Preview mode.
 369 --> 
 370 --> 
 371 --> 
