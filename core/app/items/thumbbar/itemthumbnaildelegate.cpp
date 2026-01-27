@@ -125,6 +125,7 @@ void ItemThumbnailDelegate::updateRects()
     }
 
     d->groupRect          = QRect(d->contentWidth - iconSize + d->margin, d->rect.bottom() - iconSize, iconSize, iconSize);
+    d->groupedItemRect    = d->pixmapRect;
 
     if (d->flow == QListView::LeftToRight)
     {

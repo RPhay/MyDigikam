@@ -407,27 +407,55 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
      * The idea is to use the mouse over rectangle highlightment to surround all items from a group.
      */
 
+    qlonglong gid                     = -1;
     bool groupOpen                    = false;
     bool grouped                      = info.isGrouped();
     QAbstractItemModel* const model   = const_cast<QAbstractItemModel*>(index.model());
-    ItemFilterModel* fmodel           = dynamic_cast<ItemFilterModel*>(model);
+    ItemFilterModel* const fmodel     = dynamic_cast<ItemFilterModel*>(model);
 
     if (fmodel)
     {
-        qlonglong gid      = info.groupImageId();
+        // Icon-view case.
+
+        gid = info.groupImageId();
 
         if (gid > 0)
         {
             QModelIndex gindex = fmodel->indexForImageId(gid);
             groupOpen          = gindex.data(ItemFilterModel::GroupIsOpenRole).toBool();
         }
+
+        bool isGroupedItem  = (grouped && groupOpen);
+
+        if (d->drawMouseOverFrame && isGroupedItem)
+        {
+            drawGroupedRect(p, option);
+        }
     }
-
-    bool isGroupedItem  = (grouped && groupOpen);
-
-    if (d->drawMouseOverFrame && isGroupedItem)
+    else
     {
-        drawGroupedRect(p, option);
+        ImageSortFilterModel* const imodel = dynamic_cast<ImageSortFilterModel*>(model);
+
+        if (imodel)
+        {
+            // Thumbbar-view case
+
+            gid = info.groupImageId();
+
+            if (gid > 0)
+            {
+                QModelIndex gindex = imodel->indexForImageId(gid);
+                groupOpen          = gindex.data(ItemFilterModel::GroupIsOpenRole).toBool();
+
+            }
+        }
+
+        bool isGroupedItem  = (grouped && groupOpen);
+
+        if (isGroupedItem)
+        {
+            drawGroupedRect(p, option);
+        }
     }
 
     p->restore();

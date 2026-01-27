@@ -146,8 +146,9 @@ void DigikamItemDelegate::updateRects()
 
     d->imageInformationRect.setBottom(y);
 
-    d->rect     = QRect(0, 0, d->contentWidth + 2 * d->margin, y + d->margin + d->radius);
-    d->gridSize = QSize(d->rect.width() + d->spacing, d->rect.height() + d->spacing);
+    d->rect            = QRect(0, 0, d->contentWidth + 2 * d->margin, y + d->margin + d->radius);
+    d->gridSize        = QSize(d->rect.width() + d->spacing, d->rect.height() + d->spacing);
+    d->groupedItemRect = QRect(1, 1, d->rect.width() - 3, d->rect.height() - 3);
 }
 
 } // namespace Digikam

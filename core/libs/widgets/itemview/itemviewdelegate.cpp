@@ -58,9 +58,10 @@ void ItemViewDelegatePrivate::init(ItemViewDelegate* const _q, QWidget* const _w
 
 void ItemViewDelegatePrivate::clearRects()
 {
-    gridSize   = QSize(0, 0);
-    rect       = QRect(0, 0, 0, 0);
-    ratingRect = QRect(0, 0, 0, 0);
+    gridSize        = QSize(0, 0);
+    rect            = QRect(0, 0, 0, 0);
+    ratingRect      = QRect(0, 0, 0, 0);
+    groupedItemRect = QRect(0, 0, 0, 0);
 }
 
 void ItemViewDelegatePrivate::makeStarPolygon()
@@ -672,7 +673,7 @@ void ItemViewDelegate::drawGroupedRect(QPainter* p, const QStyleOptionViewItem& 
     Q_D(const ItemViewDelegate);
 
     p->setPen(QPen(option.palette.color(QPalette::Highlight), 3, Qt::SolidLine));
-    p->drawRect(1, 1, d->rect.width() - 3, d->rect.height() - 3);
+    p->drawRect(d->groupedItemRect);
 }
 
 void ItemViewDelegate::prepareFonts()
