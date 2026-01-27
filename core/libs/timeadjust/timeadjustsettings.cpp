@@ -336,7 +336,7 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
             this, SIGNAL(signalSrcTimestampChanged()));
 
     connect(d->useCustDateInput, SIGNAL(dateChanged(QDate)),
-            this, SIGNAL(signalSettingsChangedTool()));
+            this, SIGNAL(signalSettingsChanged()));
 
     connect(d->useCustTimeInput, SIGNAL(editingFinished()),
             this, SIGNAL(signalSrcTimestampChanged()));
@@ -348,7 +348,7 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
             this, SIGNAL(signalSrcTimestampChanged()));
 
     connect(d->useCustTimeInput, SIGNAL(timeChanged(QTime)),
-            this, SIGNAL(signalSettingsChangedTool()));
+            this, SIGNAL(signalSettingsChanged()));
 
     connect(d->adjDaysInput, SIGNAL(valueChanged(int)),
             this, SIGNAL(signalSettingsChanged()));
@@ -357,7 +357,7 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
             this, SIGNAL(signalSettingsChanged()));
 
     connect(d->adjTimeInput, SIGNAL(timeChanged(QTime)),
-            this, SIGNAL(signalSettingsChangedTool()));
+            this, SIGNAL(signalSettingsChanged()));
 
     connect(d->updEXIFModDateCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalSettingsChanged()));

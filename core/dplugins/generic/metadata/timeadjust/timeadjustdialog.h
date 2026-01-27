@@ -51,7 +51,6 @@ private Q_SLOTS:
     void slotPreviewReady(const QUrl&, const QDateTime&, const QDateTime&);
     void slotProcessEnded(const QUrl&, const QDateTime&, const QDateTime&, int);
 
-    void slotPreviewTimestamps();
     void slotUpdateTimestamps();
     void slotOkExitTimestamps();
 

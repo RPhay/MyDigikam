@@ -187,11 +187,8 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     connect(d->settingsView, SIGNAL(signalSrcTimestampChanged()),
             d->thread, SLOT(slotSrcTimestampChanged()));
 
-    connect(d->settingsView, SIGNAL(signalSettingsChangedTool()),
-            this, SLOT(slotPreviewTimestamps()));
-
     connect(d->settingsView, SIGNAL(signalSettingsChanged()),
-            this, SLOT(slotPreviewTimestamps()));
+            d->previewTimer, SLOT(start()));
 
     connect(this, SIGNAL(finished(int)),
             this, SLOT(slotDialogFinished()));
@@ -220,7 +217,7 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
         ++index;
     }
 
-    slotPreviewTimestamps();
+    d->previewTimer->start();
 }
 
 TimeAdjustDialog::~TimeAdjustDialog()
@@ -320,25 +317,8 @@ void TimeAdjustDialog::saveSettings()
     group.writeEntry(QLatin1String("File Timestamp Type"),             prm.fileDateSource);
 }
 
-void TimeAdjustDialog::slotPreviewTimestamps()
-{
-    if (d->thread->isRunning())
-    {
-        d->thread->cancel();
-        d->thread->wait();
-    }
-
-    d->previewTimer->start();
-}
-
 void TimeAdjustDialog::slotUpdateTimestamps()
 {
-    if (d->thread->isRunning())
-    {
-        d->thread->cancel();
-        d->thread->wait();
-    }
-
     d->isProcessed = true;
     d->updateTimer->start();
 }
@@ -358,6 +338,12 @@ void TimeAdjustDialog::slotOkExitTimestamps()
 
 void TimeAdjustDialog::slotPreviewTimer()
 {
+    if (d->thread->isRunning())
+    {
+        d->thread->cancel();
+        d->thread->wait();
+    }
+
     d->listView->setWaitStatus();
 
     d->thread->setSettings(d->settingsView->settings());
@@ -367,6 +353,12 @@ void TimeAdjustDialog::slotPreviewTimer()
 
 void TimeAdjustDialog::slotUpdateTimer()
 {
+    if (d->thread->isRunning())
+    {
+        d->thread->cancel();
+        d->thread->wait();
+    }
+
     d->listView->setWaitStatus();
 
     d->progressBar->show();
