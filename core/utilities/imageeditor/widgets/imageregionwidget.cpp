@@ -355,7 +355,16 @@ bool ImageRegionWidget::capturedPointFromOriginal(QPointF& pt, DColor& color) co
     if (imgRect.contains(imgPt))
     {
         color = d_ptr->item->getPixelColor(imgPt);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         pt    = imgPt.toPointF();
+
+#else
+
+        pt    = QPointF(imgPt);
+
+#endif
 
         return true;
     }
