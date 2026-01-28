@@ -571,34 +571,75 @@ void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, 
     const QColor borderColor = QColor::fromHsvF(0, 0, 1.0, 0.66 + 0.34 * d->hoverAnimationOpacity);
     const QColor fillColor   = QColor::fromHsvF(0, 0, 0.75, 0.66);
 
-    // will paint to the left and bottom of logical coordinates
+    QRectF drawRect = boundingRect();
 
-    QRectF drawRect          = boundingRect();
-
+    // Dessiner le rectangle de base
     painter->setPen(borderColor);
     painter->drawRect(drawRect);
 
+    // Dessiner les "marching ants" manuellement si le timer est actif
     if (d->marchingAntsTimer->isActive())
     {
         QPen antsPen(Qt::black, 1);
-        antsPen.setStyle(Qt::CustomDashLine);
-        QVector<qreal> dashes;
+        painter->setPen(antsPen);
 
-        for (int i = 0; i < 8; ++i)
+        int dashSize = 2; // Taille d'un tiret
+        int gapSize = 2;  // Taille de l'espace entre les tirets
+        int patternLength = dashSize + gapSize;
+
+        // Calculer la position de départ en fonction de l'offset
+        int startOffset = d->marchingAntsOffset;
+
+        // Dessiner les tirets sur les 4 bords du rectangle
+
+        // Bord supérieur
+        for (int x = 0; x < drawRect.width(); x += patternLength)
         {
-            dashes << (i <= d->marchingAntsOffset ? 2 : 0);
-            dashes << 2;
+            int xStart = x + startOffset;
+            if (xStart < drawRect.width())
+            {
+                int xEnd = std::min(xStart + dashSize, static_cast<int>(drawRect.width()));
+                painter->drawLine(xStart, drawRect.top(), xEnd, drawRect.top());
+            }
         }
 
-        antsPen.setDashPattern(dashes);
-        painter->setPen(antsPen);
-        painter->drawRect(drawRect);
+        // Bord inférieur
+        for (int x = 0; x < drawRect.width(); x += patternLength)
+        {
+            int xStart = x + startOffset;
+            if (xStart < drawRect.width())
+            {
+                int xEnd = std::min(xStart + dashSize, static_cast<int>(drawRect.width()));
+                painter->drawLine(xStart, drawRect.bottom(), xEnd, drawRect.bottom());
+            }
+        }
+
+        // Bord gauche
+        for (int y = 0; y < drawRect.height(); y += patternLength)
+        {
+            int yStart = y + startOffset;
+            if (yStart < drawRect.height())
+            {
+                int yEnd = std::min(yStart + dashSize, static_cast<int>(drawRect.height()));
+                painter->drawLine(drawRect.left(), yStart, drawRect.left(), yEnd);
+            }
+        }
+
+        // Bord droit
+        for (int y = 0; y < drawRect.height(); y += patternLength)
+        {
+            int yStart = y + startOffset;
+            if (yStart < drawRect.height())
+            {
+                int yEnd = std::min(yStart + dashSize, static_cast<int>(drawRect.height()));
+                painter->drawLine(drawRect.right(), yStart, drawRect.right(), yEnd);
+            }
+        }
     }
 
+    // Dessiner les poignées de redimensionnement si nécessaire
     if (d->resizeHandleVisibility->isVisible())
     {
-        // Only draw handles when user is not resizing
-
         if (d->movingHandle == CH_None)
         {
             painter->setOpacity(d->resizeHandleVisibility->opacity());
