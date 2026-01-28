@@ -95,63 +95,55 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 1700 user-reports closed on bugzilla.");
-    newFeatures << i18n("Port code to Qt6 framework (code still compatible with Qt5 API).");
-    newFeatures << i18n("Windows Installer is now compiled natively with Microsoft VCPKG tool-chain and use Qt6 and KF6 frameworks.");
-    newFeatures << i18n("Add JPEG-XL, WEBP, and AVIF export settings everywhere.");
-    newFeatures << i18n("Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.");
-    newFeatures << i18n("Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.");
-    newFeatures << i18n("Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versioned images in editor.");
-    newFeatures << i18n("Usability: add hamburger menu to tool-bar if main menu is hidden.");
-    newFeatures << i18n("Metadata: add new option to write metadata to files with ExifTool backend.");
-    newFeatures << i18n("Metadata: optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.");
-    newFeatures << i18n("Metadata: optimize layout of Metadata Edit plugin for a better usability.");
-    newFeatures << i18n("Metadata: add new options to save and load configuration profiles in Advanced Metadata Settings Panel.");
-    newFeatures << i18n("Advanced Rename: add increment file counter to sequence numbering from with option [c] or [c,step].");
-    newFeatures << i18n("Advanced Rename: add random text sequence numbering with option [r].");
-    newFeatures << i18n("Advanced Rename: add configurable first character for the unique modifier with {unique:n,c}.");
-    newFeatures << i18n("Advanced Search: add search for items by number of face regions.");
-    newFeatures << i18n("Advanced Search: add search for items without face regions.");
-    newFeatures << i18n("Collections: add support for cross-platform network paths.");
-    newFeatures << i18n("Database: add support for SQLite WAL (Write-Ahead-Logging) mode.");
-    newFeatures << i18n("Add spell-checking support in caption text widget using KDE framework Sonnet component.");
-    newFeatures << i18n("Add Spellcheck config panel in Settings/Miscellaneous for digiKam and Showfoto.");
-    newFeatures << i18n("Add online translations support to Alternative Language text editor widget.");
-    newFeatures << i18n("Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto.");
-    newFeatures << i18n("Add settings to list preferred alternative/translated languages in text edit widget.");
-    newFeatures << i18n("Allow to use Global or Customized Image Quality Scanning settings everywhere.");
-    newFeatures << i18n("Add Icon-View settings to customize Labels visibility over thumbnails.");
-    newFeatures << i18n("Add support for float16 (half float) images in the TIFF Loader.");
-    newFeatures << i18n("Add new maintenance tool to perform <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning model</a>.");
-    newFeatures << i18n("Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran\">to perform OCR over scanned text</a>.");
-    newFeatures << i18n("Queue Manager: add new tool to assign pick label automatically by parsing image quality.");
-    newFeatures << i18n("Queue Manager: add new tool to assign rating, pick, and color labels in batch.");
-    newFeatures << i18n("Queue Manager: add new tool to assign titles and captions in batch.");
-    newFeatures << i18n("Queue Manager: add new tool to run G'MIC filters in batch.");
-    newFeatures << i18n("Queue Manager: add new tool to perform auto-rotation based on content analysis using DNN.");
-    newFeatures << i18n("Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework.");
-    newFeatures << i18n("Add new maintenance and Queue manager tools to assign tag automatically to images using deep learning neural network engine."
-                        "<a href=\"https://community.kde.org/GSoc/2023/StatusReports/QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam\">See this GoSC-2023 report for details.</a>");
-    newFeatures << i18n("Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and improve stability of plugin.");
-    newFeatures << i18n("New G'MIC generic plugin working as layer mode from a stack of images.");
-    newFeatures << i18n("Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.");
-    newFeatures << i18n("More compact icon-view thumbnails by using a simple horizontal line instead a frame "
-                        "to render Color Labels.");
-    newFeatures << i18n("Adding YuNet DNN model to process faces detection and replace older SSD model. "
-                        "Adding Sface DNN model to process face recognition and replace older OpenFace model. "
-                        "Both are faster and requires less memory at run-time with better faces-management results.");
-    newFeatures << i18n("New option to scan image for recognize faces at startup.");
-    newFeatures << i18n("New option to turn on/off OpenCL support with face management.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2025-05-12.");
+    newFeatures << i18n("More than 350 user-reports closed on bugzilla.");
+    newFeatures << i18n("Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which brings with it a variety of bug fixes and performance improvements (Qt5 only).");
+    newFeatures << i18n("Add support of customizable date format to show everywhere in the program.");
+    newFeatures << i18n("Color label names are now customizable in the Labels tab from left sidebar by double clicking on text. Label strings size are limited to 32 characters.");
+    newFeatures << i18n("Add support of Album Icon-View sort items by Pick and Color Labels.");
+    newFeatures << i18n("Add support of Import Icon-View sort items by Pick and Color Labels.");
+    newFeatures << i18n("Add support of Album Icon-View sort items by Orientation.");
+    newFeatures << i18n("Add support of Album Icon-View sort items by GPS location.");
+    newFeatures << i18n("Add support of Album Icon-View sort items by File Format.");
+    newFeatures << i18n("Add support of Import Icon-View sort items by File Format.");
+    newFeatures << i18n("Add regular expression wildcard support for ignored directories settings.");
+    newFeatures << i18n("Add new button to copy all properties as text in clipboard.");
+    newFeatures << i18n("Add new button to open current item is file manager.");
+    newFeatures << i18n("If no icon-view item selected, show current album statistics.");
+    newFeatures << i18n("Show items from an open group highlighted for a better usability with Icon-View.");
+    newFeatures << i18n("Usability improvements of the grouped icon-view items overlay.");
+    newFeatures << i18n("Thumbbar improvements to support grouped items visibility as with Icon-View.");
+    newFeatures << i18n("Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.");
+    newFeatures << i18n("Load and save Trash-view column states between sessions.");
+    newFeatures << i18n("Extend Image and Video preview toolbar overlay with Labels editor.");
+    newFeatures << i18n("Add new Preview toolbar buttons: exposure indicators, color management, OSD, magnifier.");
+    newFeatures << i18n("Add context-menu to the video player.");
+    newFeatures << i18n("Add load progress indicator on the status bar (Icon-view and LightTable).");
+    newFeatures << i18n("Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.");
+    newFeatures << i18n("Add a magnifier glass tool to zoom and explore a small area of the preview canvas. Tool Size and zoom factor are customizable.");
+    newFeatures << i18n("Add under and over exposure indicators for the preview canvas.");
+    newFeatures << i18n("Railway over the canvas is displayed as an overlay when the scrollbar are visible.");
+    newFeatures << i18n("Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.");
+    newFeatures << i18n("Add customizable columns to show Grouped and Versioned properties.");
+    newFeatures << i18n("New Advanced Rename modifier Date Format.");
+    newFeatures << i18n("Add support to merge existing template entries assigned in items with a new template.");
+    newFeatures << i18n("Add new Slideshow option to customize the color background instead pure black in case of images transparency usage.");
+    newFeatures << i18n("Add new Presentation option to customize the color background instead pure black in case of images transparency usage.");
+    newFeatures << i18n("Complete rewrite the File-Tranfert tool GUI for a better usability.");
+    newFeatures << i18n("Complete rewrite the File-Copy tool GUI for a better usability.");
+    newFeatures << i18n("Add marching-ants effect to the canvas selection rubber band.");
+    newFeatures << i18n("Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.");
+    newFeatures << i18n("Huge web site update about contents and design eg. screenshots, description, history, features, support, download, etc.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-01-24.");
     newFeatures << i18n("New RAW camera supported: "
-                        "Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-                        "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
-                        "Hasselblad X2D-100c."
-                        "Leica Q3, M11 Monochrom."
-                        "Nikon Z30, Z8."
-                        "OM Digital OM-5."
-                        "Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6."
-                        "Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+                        "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
+                        "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S."
+                        "Hasselblad  CFV-50c, CFV-100c, X2D-100c."
+                        "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom."
+                        "Nikon (standard compression only): Z6-III, Z f, Z30, Z8."
+                        "Olympus/OM System OM-1 Mark II, TG-7, OM-5."
+                        "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6."
+                        "Pentax KF, K III Monochrome."
+                        "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1."
                         "Multiple DJI and Skydio drones."
                         "Multiple smartphones with DNG format recorded."
                        );
@@ -170,7 +162,7 @@ QStringList WelcomePageView::featuresTabContent() const
     QString tabHeader  = i18n("New Features");
     QString tabContent =
         i18n("<h3>%1</h3><ul>%2</ul>",
-             i18n("Some of the new features in this release of digiKam include (compared to digiKam 7):"),
+             i18n("Some of the new features in this release of digiKam include (compared to digiKam 8):"),
              featureItems);
 
     return QStringList() << tabHeader << tabContent;
