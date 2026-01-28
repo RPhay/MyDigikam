@@ -134,17 +134,17 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.");
     newFeatures << i18n("Huge web site update about contents and design eg. screenshots, description, history, features, support, download, etc.");
     newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-01-24.");
-    newFeatures << i18n("New RAW camera supported: "
-                        "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
-                        "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S."
-                        "Hasselblad  CFV-50c, CFV-100c, X2D-100c."
-                        "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom."
-                        "Nikon (standard compression only): Z6-III, Z f, Z30, Z8."
-                        "Olympus/OM System OM-1 Mark II, TG-7, OM-5."
-                        "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6."
-                        "Pentax KF, K III Monochrome."
-                        "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1."
-                        "Multiple DJI and Skydio drones."
+    newFeatures << i18n("New RAW camera supported:\n"
+                        "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra.\n"
+                        "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
+                        "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
+                        "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
+                        "Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+                        "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
+                        "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.\n"
+                        "Pentax KF, K III Monochrome.\n"
+                        "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
+                        "Multiple DJI and Skydio drones.\n"
                         "Multiple smartphones with DNG format recorded."
                        );
 
