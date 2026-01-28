@@ -567,19 +567,7 @@ void RegionFrameItem::setViewportRect(const QRectF& rect)
 
 void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
 {
-/*
-    QRect rect                      = d->viewportCropRect();
-    QRect imageRect                 = imageView()->rect();
-    static const QColor outerColor  = QColor::fromHsvF(0, 0, 0, 0.5);
-    QRegion outerRegion             = QRegion(imageRect) - QRegion(rect);
-    const auto rects                = outerRegion.rects();
-
-    for (const QRect& outerRect : rects)
-    {
-        painter->fillRect(outerRect, outerColor);
-    }
-*/
-
+    painter->setRenderHint(QPainter::Antialiasing, true);
     const QColor borderColor = QColor::fromHsvF(0, 0, 1.0, 0.66 + 0.34 * d->hoverAnimationOpacity);
     const QColor fillColor   = QColor::fromHsvF(0, 0, 0.75, 0.66);
 
