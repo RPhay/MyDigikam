@@ -115,6 +115,10 @@ set(libgraphicsviewwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/dimgchilditem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/dimgpreviewitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/regionframeitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/regionframeitem_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/regionframeitem_events.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/regionframeitem_hud.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/regionframeitem_properties.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/magnifieritem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/graphicsview/graphicsdimgview.cpp
