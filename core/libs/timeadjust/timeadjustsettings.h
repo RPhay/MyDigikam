@@ -48,7 +48,6 @@ public:
 Q_SIGNALS:
 
     void signalSettingsChanged();
-    void signalSettingsChangedTool();
     void signalSrcTimestampChanged();
 
 private Q_SLOTS:
