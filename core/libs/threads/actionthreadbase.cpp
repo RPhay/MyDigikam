@@ -53,7 +53,8 @@ public:
 
 public:
 
-    volatile bool       running = false;
+    volatile bool       running   = false;
+    volatile bool       cancelled = false;
 
     QWaitCondition      condVarJobs;
     QMutex              mutex;
@@ -161,6 +162,13 @@ void ActionThreadBase::cancel(bool isCancel)
         qCDebug(DIGIKAM_GENERAL_LOG) << "Finish Main Thread";
     }
 
+    if (d->cancelled)
+    {
+        return;
+    }
+
+    d->cancelled = true;
+
     QMutexLocker lock(&d->mutex);
 
     const auto keys  = d->todo.keys();
@@ -213,7 +221,8 @@ void ActionThreadBase::appendJobs(const ActionJobCollection& jobs)
 
 void ActionThreadBase::run()
 {
-    d->running = true;
+    d->running   = true;
+    d->cancelled = false;
 
     while (d->running)
     {
