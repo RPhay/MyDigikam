@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:41+0000\n"
+"POT-Creation-Date: 2026-01-28 00:42+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -16406,14 +16406,14 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "เขียนข้อมูลกำกับภาพไปยังแต่ละแฟ้ม"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:374
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "ปรับแก้:"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #, fuzzy, kde-format
@@ -16422,14 +16422,14 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "ข้อมูลกล้อง"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, fuzzy, kde-format
 #| msgid "&Close"
@@ -16437,7 +16437,7 @@ msgctxt "@action"
 msgid "Close"
 msgstr "ปิ&ด"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:413
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, fuzzy, kde-format
 #| msgid "Close view"
@@ -44065,13 +44065,13 @@ msgid_plural ""
 "\"%1\" selected pictures"
 msgstr[0] "เปิดรายการที่เลือกในเครื่องมือแก้ไขภาพ"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, fuzzy, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
 msgstr "รุ่น: %1\n"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
@@ -44080,8 +44080,8 @@ msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 ล้านพิกเซล)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
 #: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format

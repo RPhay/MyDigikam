@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:41+0000\n"
-"PO-Revision-Date: 2026-01-25 09:07+0200\n"
+"POT-Creation-Date: 2026-01-28 00:42+0000\n"
+"PO-Revision-Date: 2026-01-27 22:46+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -13371,7 +13371,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:77
 #, kde-format
 msgid "Supplemental categories:"
-msgstr ""
+msgstr "קטגוריות משלימות:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:81
@@ -13410,7 +13410,7 @@ msgstr "מ&חיקה"
 #: core/utilities/setup/album/setupcategory.cpp:96
 #, kde-format
 msgid "&Replace"
-msgstr ""
+msgstr "ה&חלפה"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:100
@@ -13791,22 +13791,22 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:63
 #, kde-format
 msgid "Illustrator"
-msgstr ""
+msgstr "Illustrator"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:64
 #, kde-format
 msgid "AppleSingle"
-msgstr ""
+msgstr "AppleSingle"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:65
 #, kde-format
 msgid "NAA 89-3 (ANPA 1312)"
-msgstr ""
+msgstr "NAA 89-3 (ANPA 1312)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:66
 #, kde-format
 msgid "MacBinary II"
-msgstr ""
+msgstr "MacBinary II"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:67
 #, kde-format
@@ -14308,7 +14308,7 @@ msgstr "שעת תפוגת התוקף"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
 #, kde-format
 msgid "Set expiration date to today"
-msgstr ""
+msgstr "הגדרת תאריך תפוגת התוקף להיום"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
 #, kde-format
@@ -15401,13 +15401,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:374
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "התאמת שעה ותאריך"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #, kde-format
@@ -15415,21 +15415,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "ביטול הפעולה הנוכחית"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "סגירה"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:413
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
@@ -15440,13 +15440,13 @@ msgstr "סגירת חלון"
 #: core/libs/timeadjust/timeadjustsettings.cpp:286
 #, kde-format
 msgid "Timestamp Used"
-msgstr ""
+msgstr "חותמת זמן בשימוש"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
 #: core/libs/timeadjust/timeadjustsettings.cpp:288
 #, kde-format
 msgid "Timestamp Updated"
-msgstr ""
+msgstr "חותמת זמן התעדכנה"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
@@ -15486,7 +15486,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
 #, kde-format
 msgid "Please wait ..."
-msgstr ""
+msgstr "נא להמתין…"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
@@ -15519,7 +15519,7 @@ msgstr "יצירת לוח שנה"
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
 #, kde-format
 msgid "A tool to create calendar from images"
-msgstr ""
+msgstr "כלי ליצירת לוח שנה מתמונות"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:64
 #, kde-format
@@ -41442,13 +41442,13 @@ msgstr[3] ""
 "הפעולות חלות על\n"
 "„%1” התמונות הנבחרות"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
 msgstr "שינוי: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
@@ -41457,8 +41457,8 @@ msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3 מגה פיקסלים)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
 #: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
@@ -53100,7 +53100,7 @@ msgstr "לא צוין שם"
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:100
 #, kde-format
 msgid "Please specify a name for this relation."
-msgstr ""
+msgstr "נא לציין שם לקשר הזה."
 
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:106
 #, kde-format
@@ -53110,7 +53110,7 @@ msgstr "לא צוינה תגית סוג"
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:107
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "נא להוסיף תגית סוג לקשר הזה."
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:86
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:98
@@ -53164,7 +53164,7 @@ msgstr "תגיות נוכחיות"
 #: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.ui:93
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "ערך"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_addTagButton)
 #: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.ui:56
@@ -53197,17 +53197,17 @@ msgstr "הגדרה"
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:73
 #, kde-format
 msgid "Atmosphere"
-msgstr ""
+msgstr "אטמוספרה"
 
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:78
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "א&טמוספרה"
 
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:93
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
-msgstr ""
+msgstr "תוסף הצגת האטמוספרה מסביב לכדור הארץ."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CompassConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:14
@@ -53245,7 +53245,7 @@ msgstr "אטום"
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:70
 #, kde-format
 msgid "Magnet"
-msgstr ""
+msgstr "מגנט"
 
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:74
 #, kde-format
@@ -53272,19 +53272,19 @@ msgstr "הגדרת תוסף סמן צלב"
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
 #, kde-format
 msgid "Gun 1"
-msgstr ""
+msgstr "אקדח 1"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
 #, kde-format
 msgid "Gun 2"
-msgstr ""
+msgstr "אקדח 2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
 #, kde-format
 msgid "Circled"
-msgstr ""
+msgstr "עגול"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:79
@@ -53295,17 +53295,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:88
 #, kde-format
 msgid "Crosshairs"
-msgstr ""
+msgstr "סמני צלב"
 
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
 #, kde-format
 msgid "Cross&hairs"
-msgstr ""
+msgstr "סמני &צלב"
 
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
-msgstr ""
+msgstr "תוסף שמציג סמני צלב על גבי המפה."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:14
@@ -53325,7 +53325,7 @@ msgstr "&צבעים"
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:444
 #, kde-format
 msgid "&Grid:"
-msgstr ""
+msgstr "&רשת:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:497
@@ -53349,7 +53349,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1363
 #, kde-format
 msgid "&Equator:"
-msgstr ""
+msgstr "קו המ&שווה:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1379
@@ -53394,7 +53394,7 @@ msgstr "רשת נקודות ציון"
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:105
 #, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
-msgstr ""
+msgstr "תוסף שמציג רשת נקודות ציון על גבי המפה."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
 #, kde-format
@@ -53439,7 +53439,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
 #, kde-format
 msgid "Arctic Circle"
-msgstr ""
+msgstr "החוג הארקטי"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
 #, kde-format
@@ -53521,7 +53521,7 @@ msgstr "הגדרת כלי מדידה"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:20
 #, kde-format
 msgid "Ruler Type"
-msgstr ""
+msgstr "סוג סרגל"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
@@ -53529,7 +53529,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:45
 #, kde-format
 msgid "Polygon"
-msgstr ""
+msgstr "מצולע"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
@@ -53537,7 +53537,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:127
 #, kde-format
 msgid "Circle"
-msgstr ""
+msgstr "עיגול"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:51
@@ -53602,7 +53602,7 @@ msgstr "&כלי מדידה"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:118
 #, kde-format
 msgid "Measure distances between two or more points."
-msgstr ""
+msgstr "מדידת מרחקים בין שתי נקודות או יותר."
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:427
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:562
@@ -53611,6 +53611,8 @@ msgid ""
 "Area:\n"
 "%1"
 msgstr ""
+"שטח:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:446
 #, kde-format
@@ -53618,6 +53620,8 @@ msgid ""
 "Circumference:\n"
 "%1"
 msgstr ""
+"היקף:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:581
 #, kde-format
@@ -53631,12 +53635,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:647
 #, kde-format
 msgid "Polygon Ruler"
-msgstr ""
+msgstr "סרגל מצולע"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:652
 #, kde-format
 msgid "Circle Ruler"
-msgstr ""
+msgstr "סרגל עיגול"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:657
 #, kde-format
@@ -53704,17 +53708,17 @@ msgstr "כפתור מקום נוכחי"
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:273
 #, kde-format
 msgid "Home Button"
-msgstr ""
+msgstr "כפתור בית"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:89
 #, kde-format
 msgid "Overview Map"
-msgstr ""
+msgstr "מפת סקירה"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:94
 #, kde-format
 msgid "&Overview Map"
-msgstr ""
+msgstr "מפת &סקירה"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:109
 #, kde-format
@@ -53735,7 +53739,7 @@ msgstr "נא לבחור צבע למחוון המקום"
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
 #, kde-format
 msgid "Configure Overview Map"
-msgstr ""
+msgstr "הגדרת מפת סקירה"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
@@ -53842,7 +53846,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:69
 #, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
@@ -55134,7 +55138,7 @@ msgstr "הסרת מהירות"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:95
 #, kde-format
 msgid "Look up missing altitude values"
-msgstr ""
+msgstr "חיפוש ערכי גובה חסרים"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
 #, kde-format
@@ -55151,7 +55155,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:535
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
-msgstr ""
+msgstr "לא ניתן למצוא נקודות ציון בלוח הגזירים."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
 #, kde-format
@@ -55181,7 +55185,7 @@ msgstr "הסרת פרטי אי־ודאות"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:761
 #, kde-format
 msgid "Looking up altitudes"
-msgstr ""
+msgstr "חיפוש גבהים"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:812
 #, kde-format
@@ -55189,11 +55193,13 @@ msgid ""
 "Altitude lookup failed:\n"
 "%1"
 msgstr ""
+"איתור גובה נכשל:\n"
+"%1"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:820
 #, kde-format
 msgid "Altitude looked up"
-msgstr ""
+msgstr "התבצע חיפוש אחר גובה"
 
 #: core/utilities/geolocation/geoiface/lookup/lookupaltitudegeonames.cpp:104
 #, kde-format
@@ -55580,7 +55586,7 @@ msgstr "נעילת מקום המפה"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:574
 #, kde-format
 msgid "Load tracks from albums"
-msgstr ""
+msgstr "טעינת רצועות מאלבומים"
 
 #: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:46
 #, kde-format
@@ -59274,7 +59280,7 @@ msgstr "מתבצע עיבוד מאחורי הקלעים"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
-msgstr ""
+msgstr "מנהל תור ריכוזי רץ. לבטל את המשימה הנוכחית?"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:645
 #, kde-format
@@ -59815,19 +59821,19 @@ msgstr "אלבום כלשהו"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In All"
-msgstr ""
+msgstr "בהכול"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:49
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In One of"
-msgstr ""
+msgstr "באחד מתוך"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:50
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In Tree"
-msgstr ""
+msgstr "בעץ"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:54
 #, kde-format
@@ -59959,7 +59965,7 @@ msgstr "חודש/יום"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
 msgid "Return items from a month or a day of the month"
-msgstr ""
+msgstr "החזרת פריטים מחודש או יום בחודש"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
 #, kde-format
@@ -63531,7 +63537,7 @@ msgstr "הפעלת האפשרות הזאת תגרום לאחסון תווית צ
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
-msgstr ""
+msgstr "חותמות זמן"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
@@ -63563,7 +63569,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
-msgstr ""
+msgstr "תגיות פרצופים (כולל אזורי פרצופים)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
