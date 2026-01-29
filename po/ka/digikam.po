@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-28 00:42+0000\n"
+"POT-Creation-Date: 2026-01-29 00:41+0000\n"
 "PO-Revision-Date: 2026-01-26 06:23+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1005,7 +1005,7 @@ msgstr "სახელი:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:251
+#: core/app/views/stack/welcomepageview.cpp:243
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2699,7 +2699,7 @@ msgstr "&დახმარება"
 msgid "Main Toolbar"
 msgstr "ხელსაწყოთა მთავარი ზოლი"
 
-#: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:227
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3386,362 +3386,272 @@ msgid "%1/%2 items selected"
 msgstr "მონიშნულია ჩანაწერი %1/%2"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, kde-format
-msgid "More than 1700 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 1700 user-reports closed on bugzilla."
+msgid "More than 350 user-reports closed on bugzilla."
 msgstr "1700-ზე მეტი დახურული მომხმარებლის მიერ გახსნილი ანგარიში bugzilla-ზე."
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
-msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
+msgid ""
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
+"brings with it a variety of bug fixes and performance improvements (Qt5 "
+"only)."
 msgstr ""
-"კოდის პორტი Qt6 ბიბლიოთეკაზე (კოდი ჯერ კიდევ თავსებადია Qt5 API-ისთან)."
 
 #: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
 msgid ""
-"Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
-"and use Qt6 and KF6 frameworks."
+"Add support of customizable date format to show everywhere in the program."
 msgstr ""
-"Windows-ზე დაყენების პროგრამის აგება ახლა Microsoft VCPKG-ით ხდება და "
-"იყენებს Qt6 და KF6 ბიბლიოთეკებს."
 
 #: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
-msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
-msgstr "ყველგან დაემატა JPEG-XL, WEBP და AVIF გატანის პარამეტრები."
+msgid ""
+"Color label names are now customizable in the Labels tab from left sidebar "
+"by double clicking on text. Label strings size are limited to 32 characters."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:102
 #, kde-format
-msgid ""
-"Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
+msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
-"დაემატა კარგვის გარეშე გადაყვანა JPEG-XL-ში, WEBP-ში და AVIF-ში კამერიდან "
-"შემოტანისას."
 
 #: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
-msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
-msgstr "დაემატა JPEG-XL, WEBP და AVIF გადამყვანები პაკეტური რიგის მმართველში."
+msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
-msgid ""
-"Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
-"format to store versioned images in editor."
+msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
-"ვერსიები: დაემატა JPEG-XL, HEIF, WEBP და AVIF ფორმატების მხარდაჭერა კარგვის "
-"გარეშე გამოსახულების ფორმატის სახით ერთზე მეტი ვერსიის მქონე გამოსახულებების "
-"შესანახად რედაქტორში."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
-msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
+msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
-"გამოყენებადობა: დაემატა ჰამბურგერი მენიუ ხელსაწყოთა ზოლში, თუ მთავარი მენიუ "
-"დამალულია."
 
 #: core/app/views/stack/welcomepageview.cpp:106
 #, kde-format
-msgid ""
-"Metadata: add new option to write metadata to files with ExifTool backend."
+msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
-"მეტამონაცემები: დაემატა ფაილებში მეტამონაცემების ExifTool-ით ჩაწერის "
-"შესაძლებლობა."
 
 #: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
-msgid ""
-"Metadata: optional write metadata operations to DNG and RAW files are now "
-"always delegated to ExifTool Backend."
+msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
-"მეტამონაცემები: არასავალდებულო მეტამონაცემების ჩაწერის ოპერაციები DNG და RAW "
-"ფაილებში ახლა ყოველთვის გადამისამართდება პროგრამაზე ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
 msgid ""
-"Metadata: optimize layout of Metadata Edit plugin for a better usability."
+"Add regular expression wildcard support for ignored directories settings."
 msgstr ""
-"მეტამონაცემები: მოხდა მეტამონაცემების ჩასწორების დამატების განლაგების "
-"ოპტიმიზაცია მისი გამოყენების გასაადვილებლად."
 
 #: core/app/views/stack/welcomepageview.cpp:109
-#, kde-format
-msgid ""
-"Metadata: add new options to save and load configuration profiles in "
-"Advanced Metadata Settings Panel."
-msgstr ""
-"მეტამონაცემები: დამატებითი მეტამონაცემების მორგების პანელში დაემატა ახალი "
-"პარამეტრები კონფიგურაციის პროფილების ჩასატვირთად და შესანახად."
+#, fuzzy, kde-format
+#| msgid "Copy the all properties in clipboard"
+msgid "Add new button to copy all properties as text in clipboard."
+msgstr "ყველა თვისების კოპირება ბუფერში"
 
 #: core/app/views/stack/welcomepageview.cpp:110
-#, kde-format
-msgid ""
-"Advanced Rename: add increment file counter to sequence numbering from with "
-"option [c] or [c,step]."
+#, fuzzy, kde-format
+#| msgid "Add new tag to current tag. Current tag is last clicked tag."
+msgid "Add new button to open current item is file manager."
 msgstr ""
-"სახელის გადარქმევის გაფართოებული ფუნქცია: ზრდადი ფაილის ნომრის დამატება "
-"პარამეტრით [c] ან [c,step]."
+"ახალი ჭდის დამატება მიმდინარე ჭდისთვის. მიმდინარე ჭდე ისაა, რომელზეც ბოლოს "
+"დააწკაპუნეთ."
 
 #: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
-msgid "Advanced Rename: add random text sequence numbering with option [r]."
+msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
-"განვითარებული სახელის გადარქმევა: დაემატა შემთხვევითი ტექსტის მიმდევრობის "
-"დანომვრა პარამეტრისთვის [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:112
 #, kde-format
 msgid ""
-"Advanced Rename: add configurable first character for the unique modifier "
-"with {unique:n,c}."
+"Show items from an open group highlighted for a better usability with Icon-"
+"View."
 msgstr ""
-"სახელის გადარქმევის გაფართოებული ფუნქცია: მორგებადი პირველი სიმბოლოს "
-"დამატება უნიკალური მოდიფიკატორისთვის {unique:n,c}-ით."
 
 #: core/app/views/stack/welcomepageview.cpp:113
 #, kde-format
-msgid "Advanced Search: add search for items by number of face regions."
+msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
-"დამატებითი ძებნა: დაამატეთ ჩანაწერების ძებნა სახის რეგიონების რაოდენობის "
-"მიხედვით."
 
 #: core/app/views/stack/welcomepageview.cpp:114
 #, kde-format
-msgid "Advanced Search: add search for items without face regions."
+msgid ""
+"Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr ""
-"დამატებითი ძებნა: დაამატეთ ჩანაწერების ძებნა სახის რეგიონების არმქონე "
-"ჩანაწერებში."
 
 #: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
-msgid "Collections: add support for cross-platform network paths."
-msgstr "კოლექციები: დაემატა პლატფორმათაშორისი ქსელური ბილიკების მხარდაჭერა."
+msgid ""
+"Split filters view into 3 separated tabs for better usabilty: Properties, "
+"Tags, and People."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:116
 #, kde-format
-msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgid "Load and save Trash-view column states between sessions."
 msgstr ""
-"მონაცემთა ბაზა: დაემატა SQLite WAL (წინასწარ-ჩაწერადი-ჟურნალის) რეჟიმი."
 
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
-msgid ""
-"Add spell-checking support in caption text widget using KDE framework Sonnet "
-"component."
+msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
-"დაემატა მართლწერის შემოწმების მხარდაჭერა წარწერის ტექსტებში KDE-ის "
-"ბიბლიოთეკის Sonnet კომპონენტის გამოყენებით."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
 msgid ""
-"Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
-"Showfoto."
+"Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
+"magnifier."
 msgstr ""
-"დაემატა მართლწერის შემოწმების კონფიგურაციის პანელი მენიუში მორგება-"
-">სხვადასხვა digiKam-ისთვის და showfoto-ისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
-msgid ""
-"Add online translations support to Alternative Language text editor widget."
+msgid "Add context-menu to the video player."
 msgstr ""
-"დაემატა ინტერნეტში თარგმანის მხარდაჭერა ალტერნატიული ენის ტექსტური "
-"რედაქტორის ვიჯეტს."
 
 #: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
 msgid ""
-"Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
+"Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
-"დაემატა ლოკალიზაციის კონფიგურაციის პანელი მენიუში მორგება->სხვადასხვა "
-"digiKam-ისთვის და showfoto-ისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
 msgid ""
-"Add settings to list preferred alternative/translated languages in text edit "
-"widget."
+"Add trackpad gesture events support to zoom the contents, pan the canvas, "
+"and change to previous/next items."
 msgstr ""
-"დაემატა პარამეტრები სასურველი ალტერნატიული/ნათარგმნი ენების სიას ტექსტური "
-"რედაქტორის ვიჯეტში."
 
 #: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
 msgid ""
-"Allow to use Global or Customized Image Quality Scanning settings everywhere."
+"Add a magnifier glass tool to zoom and explore a small area of the preview "
+"canvas. Tool Size and zoom factor are customizable."
 msgstr ""
-"საშუალება გამოიყენოთ გლობალური ან მორგებული გამოსახულების ხარისხის "
-"სკანირების პარამეტრები ყველგან."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
-msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
+msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
-"დაემატა ხატულას ხედის პარამეტრები მინიატურებზე ჭდეების ხილვადობის მოსარგებად."
 
 #: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
-msgid "Add support for float16 (half float) images in the TIFF Loader."
+msgid ""
+"Railway over the canvas is displayed as an overlay when the scrollbar are "
+"visible."
 msgstr ""
-"დაემატა float16 (ნახევარი float) გამოსახულებების მხარდაჭერა TIFF-ის "
-"ჩამტვირთავში."
 
 #: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
 msgid ""
-"Add new maintenance tool to perform <a href=\"https://community.kde.org/"
-"GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
-"images using deep learning model</a>."
+"Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
 msgstr ""
-"დაემატა ახალი შეკეთების ხელსაწყო <a href=\"https://community.kde.org/"
-"GSoc/2022/StatusReports/PhuocKhanhLe\">გამოსახულებების კლასიფიკაციის "
-"ესთეტიკური დადგენა ღრმა სწავლის მოდელით</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:126
 #, kde-format
-msgid ""
-"Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
-"QuocHungTran\">to perform OCR over scanned text</a>."
+msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
-"დაემატა ახალი ხელსაწყო <a href=\"https://community.kde.org/GSoC/2022/"
-"StatusReports/QuocHungTran\">დასკანერებული ტექსტის ამოსაცნობად</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
-msgid ""
-"Queue Manager: add new tool to assign pick label automatically by parsing "
-"image quality."
+msgid "New Advanced Rename modifier Date Format."
 msgstr ""
-"რიგის მმართველი: დაემატა ახალი ხელსაწყო არჩევის ჭდის ავტომატურად "
-"მისანიჭებლად გამოსახულების ხარისხის დამუშავებით."
 
 #: core/app/views/stack/welcomepageview.cpp:128
 #, kde-format
 msgid ""
-"Queue Manager: add new tool to assign rating, pick, and color labels in "
-"batch."
+"Add support to merge existing template entries assigned in items with a new "
+"template."
 msgstr ""
-"რიგების მმართველი: დაემატა ახალი ხელსაწყო რეიტინგის, არჩევის და ფერის "
-"ჭდეების ერთდროულად დასამატებლად."
 
 #: core/app/views/stack/welcomepageview.cpp:129
-#, kde-format
-msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to use the background theme color in the image editor "
+#| "area."
+msgid ""
+"Add new Slideshow option to customize the color background instead pure "
+"black in case of images transparency usage."
 msgstr ""
-"რიგების მმართველი: დაემატა ახალი ხელსაწყო სათაურებისა და წარწერების "
-"ერთდროულად მისანიჭებლად."
+"ჩართეთ ეს ფონის თემის ფერის გამოსაყენებლად გამოსახულების რედაქტორის ადგილში."
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, kde-format
-msgid "Queue Manager: add new tool to run G'MIC filters in batch."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to use the background theme color in the image editor "
+#| "area."
+msgid ""
+"Add new Presentation option to customize the color background instead pure "
+"black in case of images transparency usage."
 msgstr ""
-"რიგების მმართველი: დაემატა ახალი ხელსაწყო G'MIC ფილტრების ერტად გასაშვებად."
+"ჩართეთ ეს ფონის თემის ფერის გამოსაყენებლად გამოსახულების რედაქტორის ადგილში."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
-msgid ""
-"Queue Manager: add new tool to perform auto-rotation based on content "
-"analysis using DNN."
+msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
-"რიგის მმართველი: დაემატა ახალი ხელსაწყო DNN-ის გამოყენებით შემცველობის "
-"ანალიზის საფუძველზე ავტომობრუნებისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
-msgid ""
-"Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
-"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
-"დოკუმენტაცია: <a href=\"https://docs.digikam.org/en/index.html"
-"\">სახელმძღვანელო გადაიწერა</a> DocBook-დან Sphinx/ReStructuredText-ში."
 
 #: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
-msgid ""
-"Add new maintenance and Queue manager tools to assign tag automatically to "
-"images using deep learning neural network engine.<a href=\"https://community."
-"kde.org/GSoc/2023/StatusReports/"
-"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
-"\">See this GoSC-2023 report for details.</a>"
+msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
-"დაემატა ახალი რემონტის და რიგის მართვის ხელსაწყოები ჭდეების ავტომატურად "
-"მისანიჭებლად გამოსახულებებზე ღრმა სწავლის ნერვული ქსელის ძრავის გამოყენებით."
-"<a href=\"https://community.kde.org/GSoc/2023/StatusReports/"
-"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
-"\">დეტალებისთვის იხილეთ ეს GoSC-2023-ის ანგარიში.</a>"
+
+#: core/app/views/stack/welcomepageview.cpp:134
+#, kde-format
+msgid ""
+"Add pick color histogram indicators for the Curves, Levels, White Balance, "
+"and Black & White Sepia tools."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid ""
-"Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
-"improve stability of plugin."
+"Huge web site update about contents and design eg. screenshots, description, "
+"history, features, support, download, etc."
 msgstr ""
-"განახლდა G'MIC-Qt პროგრამა ბოლო, 3.5.0 ვერსიამდე, დასრულდა MacOS-ზე გადატანა "
-"და გაუმჯობესდა დამატების სტაბილურობა."
 
 #: core/app/views/stack/welcomepageview.cpp:136
-#, kde-format
-msgid "New G'MIC generic plugin working as layer mode from a stack of images."
-msgstr ""
-"ახალი G'MIC ზოგადი დამატება, რომელიც გამოსახულებების ნაკრებზე ფენის რეჟიმის "
-"სახით მიშაობს."
-
-#: core/app/views/stack/welcomepageview.cpp:137
-#, kde-format
-msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
-msgstr ""
-"განახლდა Adobe DNG SDK უკანასკნელ ვერსიაზე 1.7.1 JPEG-XL შეკუმშვის "
-"მხარდაჭერით."
-
-#: core/app/views/stack/welcomepageview.cpp:138
-#, kde-format
-msgid ""
-"More compact icon-view thumbnails by using a simple horizontal line instead "
-"a frame to render Color Labels."
-msgstr ""
-"უფრო კომპაქტური ხატულების ხედის მინიატურები ფერის ჭდეების რენდერისთვის "
-"ჩარჩოს მაგიერ მარტივი ჰორიზონტალური ხაზის გამოყენების საშუალებით."
-
-#: core/app/views/stack/welcomepageview.cpp:140
-#, kde-format
-msgid ""
-"Adding YuNet DNN model to process faces detection and replace older SSD "
-"model. Adding Sface DNN model to process face recognition and replace older "
-"OpenFace model. Both are faster and requires less memory at run-time with "
-"better faces-management results."
-msgstr ""
-"დაემატ YuNet DNN მოდელი სახეების აღმოჩენის დასამუშავებლად და ძველი SSD "
-"მოდელის ჩასანაცვლებლად. დაემატა Sface DNN მოდელი სახეების აღმოჩენის "
-"დასამუშავებლად და ძველი OpenFace მოდელის ჩასანაცვლებლად. ორივე უფრო სწრაფია "
-"და სჭირდება ნაკლები დრო დამუშავებისთვის უკეთესი სახეების მართვის შედეგებით."
-
-#: core/app/views/stack/welcomepageview.cpp:143
-#, kde-format
-msgid "New option to scan image for recognize faces at startup."
-msgstr "ახალი პარამეტრი გაშვებისას გამოსახულებებზე სახეების საძებნელად."
-
-#: core/app/views/stack/welcomepageview.cpp:144
-#, kde-format
-msgid "New option to turn on/off OpenCL support with face management."
-msgstr ""
-"ახალი პარამეტრი სახეების ამოცნობისას OpenCL-ის ჩასართავად/გამოსართავად."
-
-#: core/app/views/stack/welcomepageview.cpp:145
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
 msgstr "განახლდა შიდა RAW ძრავა უკანასკნელ Libraw-ის ვერსიამდე 2025-05-12."
 
-#: core/app/views/stack/welcomepageview.cpp:146
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:137
+#, fuzzy, kde-format
+#| msgid ""
+#| "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
+#| "R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
+#| "X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic "
+#| "DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
+#| "GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-"
+#| "FX30, DSC-HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones "
+#| "with DNG format recorded."
 msgid ""
-"New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
-"EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
-"Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
-"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, "
-"A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
-"Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
+"New RAW camera supported:\n"
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra.\n"
+"Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
+"Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
+"Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
+"Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+"Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6.\n"
+"Pentax KF, K III Monochrome.\n"
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
+"Multiple DJI and Skydio drones.\n"
+"Multiple smartphones with DNG format recorded."
 msgstr ""
 "მხარდაჭერილია ახალი RAW კამერები: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
@@ -3750,47 +3660,50 @@ msgstr ""
 "Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, "
 "DSC-HX95, A1.მრავალი DJI-ის და Skydio-ის დრონი. ბევრი ტელეფონი DNG ფორმატში."
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid "...and much more."
 msgstr "...და ბევრი სხვა."
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid "<li>%1</li><br>"
 msgstr "<li>%1</li><br>"
 
-#: core/app/views/stack/welcomepageview.cpp:170
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid "New Features"
 msgstr "ახალი ფუნქციები"
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:173
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:165
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some of the new features in this release of digiKam include (compared to "
+#| "digiKam 7):"
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
-"digiKam 7):"
+"digiKam 8):"
 msgstr ""
 "ზოგიერთი ახალი ფუნქცია digiKam-ის ამ რელიზში. მათ შორის (digiKam 7-თან "
 "შედარებით):"
 
-#: core/app/views/stack/welcomepageview.cpp:181
+#: core/app/views/stack/welcomepageview.cpp:173
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
 
-#: core/app/views/stack/welcomepageview.cpp:183
+#: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:184
+#: core/app/views/stack/welcomepageview.cpp:176
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3801,7 +3714,7 @@ msgstr ""
 "სურათების კომპიუტერიდან და კომპიუტერში შემოსატანად, ორგანიზაციისთვის, "
 "გასაუმჯობესებლად და გასატანად."
 
-#: core/app/views/stack/welcomepageview.cpp:185
+#: core/app/views/stack/welcomepageview.cpp:177
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3812,12 +3725,12 @@ msgstr ""
 "თქვენი ფაილებია დამახსოვრებული და იგივეა, რაც საქაღალდეები თქვენს მყარ "
 "დისკზე."
 
-#: core/app/views/stack/welcomepageview.cpp:186
+#: core/app/views/stack/welcomepageview.cpp:178
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:187
+#: core/app/views/stack/welcomepageview.cpp:179
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3826,7 +3739,7 @@ msgstr ""
 "digiKam-ს აქვს ბევრი მძლავრი ფუნქცია, რომელიც აღწერილია <a href=\"https://"
 "docs.digikam.org/en/index.html\">დოკუმენტაციაში</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:188
+#: core/app/views/stack/welcomepageview.cpp:180
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3835,34 +3748,34 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">digiKam-ის საწყისი გვერდი homepage</a> "
 "digiKam-ის ახალი ვერსიის შესახებ ინფორმაციას მოგაწვდით."
 
-#: core/app/views/stack/welcomepageview.cpp:243
+#: core/app/views/stack/welcomepageview.cpp:235
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "მოგესალმებათ digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:246
+#: core/app/views/stack/welcomepageview.cpp:238
 #, kde-format
 msgid "Background Image Credits"
 msgstr "ფონის სურათის საავტორო უფლებები"
 
-#: core/app/views/stack/welcomepageview.cpp:249
+#: core/app/views/stack/welcomepageview.cpp:241
 #, kde-format
 msgid "Author:"
 msgstr "ავტორი:"
 
-#: core/app/views/stack/welcomepageview.cpp:250
+#: core/app/views/stack/welcomepageview.cpp:242
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "მდებარეობა:"
 
-#: core/app/views/stack/welcomepageview.cpp:252
+#: core/app/views/stack/welcomepageview.cpp:244
 #, kde-format
 msgid "Camera:"
 msgstr "კამერა:"
 
-#: core/app/views/stack/welcomepageview.cpp:253
+#: core/app/views/stack/welcomepageview.cpp:245
 #, kde-format
 msgid "Lens:"
 msgstr "ლინზა:"
@@ -66158,6 +66071,270 @@ msgstr "ელემენტების შემოტანა"
 #, kde-format
 msgid "Survey"
 msgstr "მიმოხილვა"
+
+#~ msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
+#~ msgstr ""
+#~ "კოდის პორტი Qt6 ბიბლიოთეკაზე (კოდი ჯერ კიდევ თავსებადია Qt5 API-ისთან)."
+
+#~ msgid ""
+#~ "Windows Installer is now compiled natively with Microsoft VCPKG tool-"
+#~ "chain and use Qt6 and KF6 frameworks."
+#~ msgstr ""
+#~ "Windows-ზე დაყენების პროგრამის აგება ახლა Microsoft VCPKG-ით ხდება და "
+#~ "იყენებს Qt6 და KF6 ბიბლიოთეკებს."
+
+#~ msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
+#~ msgstr "ყველგან დაემატა JPEG-XL, WEBP და AVIF გატანის პარამეტრები."
+
+#~ msgid ""
+#~ "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from "
+#~ "camera."
+#~ msgstr ""
+#~ "დაემატა კარგვის გარეშე გადაყვანა JPEG-XL-ში, WEBP-ში და AVIF-ში კამერიდან "
+#~ "შემოტანისას."
+
+#~ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
+#~ msgstr ""
+#~ "დაემატა JPEG-XL, WEBP და AVIF გადამყვანები პაკეტური რიგის მმართველში."
+
+#~ msgid ""
+#~ "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
+#~ "image format to store versioned images in editor."
+#~ msgstr ""
+#~ "ვერსიები: დაემატა JPEG-XL, HEIF, WEBP და AVIF ფორმატების მხარდაჭერა "
+#~ "კარგვის გარეშე გამოსახულების ფორმატის სახით ერთზე მეტი ვერსიის მქონე "
+#~ "გამოსახულებების შესანახად რედაქტორში."
+
+#~ msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
+#~ msgstr ""
+#~ "გამოყენებადობა: დაემატა ჰამბურგერი მენიუ ხელსაწყოთა ზოლში, თუ მთავარი "
+#~ "მენიუ დამალულია."
+
+#~ msgid ""
+#~ "Metadata: add new option to write metadata to files with ExifTool backend."
+#~ msgstr ""
+#~ "მეტამონაცემები: დაემატა ფაილებში მეტამონაცემების ExifTool-ით ჩაწერის "
+#~ "შესაძლებლობა."
+
+#~ msgid ""
+#~ "Metadata: optional write metadata operations to DNG and RAW files are now "
+#~ "always delegated to ExifTool Backend."
+#~ msgstr ""
+#~ "მეტამონაცემები: არასავალდებულო მეტამონაცემების ჩაწერის ოპერაციები DNG და "
+#~ "RAW ფაილებში ახლა ყოველთვის გადამისამართდება პროგრამაზე ExifTool."
+
+#~ msgid ""
+#~ "Metadata: optimize layout of Metadata Edit plugin for a better usability."
+#~ msgstr ""
+#~ "მეტამონაცემები: მოხდა მეტამონაცემების ჩასწორების დამატების განლაგების "
+#~ "ოპტიმიზაცია მისი გამოყენების გასაადვილებლად."
+
+#~ msgid ""
+#~ "Metadata: add new options to save and load configuration profiles in "
+#~ "Advanced Metadata Settings Panel."
+#~ msgstr ""
+#~ "მეტამონაცემები: დამატებითი მეტამონაცემების მორგების პანელში დაემატა ახალი "
+#~ "პარამეტრები კონფიგურაციის პროფილების ჩასატვირთად და შესანახად."
+
+#~ msgid ""
+#~ "Advanced Rename: add increment file counter to sequence numbering from "
+#~ "with option [c] or [c,step]."
+#~ msgstr ""
+#~ "სახელის გადარქმევის გაფართოებული ფუნქცია: ზრდადი ფაილის ნომრის დამატება "
+#~ "პარამეტრით [c] ან [c,step]."
+
+#~ msgid "Advanced Rename: add random text sequence numbering with option [r]."
+#~ msgstr ""
+#~ "განვითარებული სახელის გადარქმევა: დაემატა შემთხვევითი ტექსტის მიმდევრობის "
+#~ "დანომვრა პარამეტრისთვის [r]."
+
+#~ msgid ""
+#~ "Advanced Rename: add configurable first character for the unique modifier "
+#~ "with {unique:n,c}."
+#~ msgstr ""
+#~ "სახელის გადარქმევის გაფართოებული ფუნქცია: მორგებადი პირველი სიმბოლოს "
+#~ "დამატება უნიკალური მოდიფიკატორისთვის {unique:n,c}-ით."
+
+#~ msgid "Advanced Search: add search for items by number of face regions."
+#~ msgstr ""
+#~ "დამატებითი ძებნა: დაამატეთ ჩანაწერების ძებნა სახის რეგიონების რაოდენობის "
+#~ "მიხედვით."
+
+#~ msgid "Advanced Search: add search for items without face regions."
+#~ msgstr ""
+#~ "დამატებითი ძებნა: დაამატეთ ჩანაწერების ძებნა სახის რეგიონების არმქონე "
+#~ "ჩანაწერებში."
+
+#~ msgid "Collections: add support for cross-platform network paths."
+#~ msgstr "კოლექციები: დაემატა პლატფორმათაშორისი ქსელური ბილიკების მხარდაჭერა."
+
+#~ msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
+#~ msgstr ""
+#~ "მონაცემთა ბაზა: დაემატა SQLite WAL (წინასწარ-ჩაწერადი-ჟურნალის) რეჟიმი."
+
+#~ msgid ""
+#~ "Add spell-checking support in caption text widget using KDE framework "
+#~ "Sonnet component."
+#~ msgstr ""
+#~ "დაემატა მართლწერის შემოწმების მხარდაჭერა წარწერის ტექსტებში KDE-ის "
+#~ "ბიბლიოთეკის Sonnet კომპონენტის გამოყენებით."
+
+#~ msgid ""
+#~ "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
+#~ "Showfoto."
+#~ msgstr ""
+#~ "დაემატა მართლწერის შემოწმების კონფიგურაციის პანელი მენიუში მორგება-"
+#~ ">სხვადასხვა digiKam-ისთვის და showfoto-ისთვის."
+
+#~ msgid ""
+#~ "Add online translations support to Alternative Language text editor "
+#~ "widget."
+#~ msgstr ""
+#~ "დაემატა ინტერნეტში თარგმანის მხარდაჭერა ალტერნატიული ენის ტექსტური "
+#~ "რედაქტორის ვიჯეტს."
+
+#~ msgid ""
+#~ "Add Localize config panel in Settings/Miscellaneous for digiKam and "
+#~ "Showfoto."
+#~ msgstr ""
+#~ "დაემატა ლოკალიზაციის კონფიგურაციის პანელი მენიუში მორგება->სხვადასხვა "
+#~ "digiKam-ისთვის და showfoto-ისთვის."
+
+#~ msgid ""
+#~ "Add settings to list preferred alternative/translated languages in text "
+#~ "edit widget."
+#~ msgstr ""
+#~ "დაემატა პარამეტრები სასურველი ალტერნატიული/ნათარგმნი ენების სიას ტექსტური "
+#~ "რედაქტორის ვიჯეტში."
+
+#~ msgid ""
+#~ "Allow to use Global or Customized Image Quality Scanning settings "
+#~ "everywhere."
+#~ msgstr ""
+#~ "საშუალება გამოიყენოთ გლობალური ან მორგებული გამოსახულების ხარისხის "
+#~ "სკანირების პარამეტრები ყველგან."
+
+#~ msgid ""
+#~ "Add Icon-View settings to customize Labels visibility over thumbnails."
+#~ msgstr ""
+#~ "დაემატა ხატულას ხედის პარამეტრები მინიატურებზე ჭდეების ხილვადობის "
+#~ "მოსარგებად."
+
+#~ msgid "Add support for float16 (half float) images in the TIFF Loader."
+#~ msgstr ""
+#~ "დაემატა float16 (ნახევარი float) გამოსახულებების მხარდაჭერა TIFF-ის "
+#~ "ჩამტვირთავში."
+
+#~ msgid ""
+#~ "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
+#~ "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
+#~ "images using deep learning model</a>."
+#~ msgstr ""
+#~ "დაემატა ახალი შეკეთების ხელსაწყო <a href=\"https://community.kde.org/"
+#~ "GSoc/2022/StatusReports/PhuocKhanhLe\">გამოსახულებების კლასიფიკაციის "
+#~ "ესთეტიკური დადგენა ღრმა სწავლის მოდელით</a>."
+
+#~ msgid ""
+#~ "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
+#~ "QuocHungTran\">to perform OCR over scanned text</a>."
+#~ msgstr ""
+#~ "დაემატა ახალი ხელსაწყო <a href=\"https://community.kde.org/GSoC/2022/"
+#~ "StatusReports/QuocHungTran\">დასკანერებული ტექსტის ამოსაცნობად</a>."
+
+#~ msgid ""
+#~ "Queue Manager: add new tool to assign pick label automatically by parsing "
+#~ "image quality."
+#~ msgstr ""
+#~ "რიგის მმართველი: დაემატა ახალი ხელსაწყო არჩევის ჭდის ავტომატურად "
+#~ "მისანიჭებლად გამოსახულების ხარისხის დამუშავებით."
+
+#~ msgid ""
+#~ "Queue Manager: add new tool to assign rating, pick, and color labels in "
+#~ "batch."
+#~ msgstr ""
+#~ "რიგების მმართველი: დაემატა ახალი ხელსაწყო რეიტინგის, არჩევის და ფერის "
+#~ "ჭდეების ერთდროულად დასამატებლად."
+
+#~ msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#~ msgstr ""
+#~ "რიგების მმართველი: დაემატა ახალი ხელსაწყო სათაურებისა და წარწერების "
+#~ "ერთდროულად მისანიჭებლად."
+
+#~ msgid "Queue Manager: add new tool to run G'MIC filters in batch."
+#~ msgstr ""
+#~ "რიგების მმართველი: დაემატა ახალი ხელსაწყო G'MIC ფილტრების ერტად "
+#~ "გასაშვებად."
+
+#~ msgid ""
+#~ "Queue Manager: add new tool to perform auto-rotation based on content "
+#~ "analysis using DNN."
+#~ msgstr ""
+#~ "რიგის მმართველი: დაემატა ახალი ხელსაწყო DNN-ის გამოყენებით შემცველობის "
+#~ "ანალიზის საფუძველზე ავტომობრუნებისთვის."
+
+#~ msgid ""
+#~ "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
+#~ "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#~ msgstr ""
+#~ "დოკუმენტაცია: <a href=\"https://docs.digikam.org/en/index.html"
+#~ "\">სახელმძღვანელო გადაიწერა</a> DocBook-დან Sphinx/ReStructuredText-ში."
+
+#~ msgid ""
+#~ "Add new maintenance and Queue manager tools to assign tag automatically "
+#~ "to images using deep learning neural network engine.<a href=\"https://"
+#~ "community.kde.org/GSoc/2023/StatusReports/"
+#~ "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+#~ "\">See this GoSC-2023 report for details.</a>"
+#~ msgstr ""
+#~ "დაემატა ახალი რემონტის და რიგის მართვის ხელსაწყოები ჭდეების ავტომატურად "
+#~ "მისანიჭებლად გამოსახულებებზე ღრმა სწავლის ნერვული ქსელის ძრავის "
+#~ "გამოყენებით.<a href=\"https://community.kde.org/GSoc/2023/StatusReports/"
+#~ "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+#~ "\">დეტალებისთვის იხილეთ ეს GoSC-2023-ის ანგარიში.</a>"
+
+#~ msgid ""
+#~ "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
+#~ "improve stability of plugin."
+#~ msgstr ""
+#~ "განახლდა G'MIC-Qt პროგრამა ბოლო, 3.5.0 ვერსიამდე, დასრულდა MacOS-ზე "
+#~ "გადატანა და გაუმჯობესდა დამატების სტაბილურობა."
+
+#~ msgid ""
+#~ "New G'MIC generic plugin working as layer mode from a stack of images."
+#~ msgstr ""
+#~ "ახალი G'MIC ზოგადი დამატება, რომელიც გამოსახულებების ნაკრებზე ფენის "
+#~ "რეჟიმის სახით მიშაობს."
+
+#~ msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
+#~ msgstr ""
+#~ "განახლდა Adobe DNG SDK უკანასკნელ ვერსიაზე 1.7.1 JPEG-XL შეკუმშვის "
+#~ "მხარდაჭერით."
+
+#~ msgid ""
+#~ "More compact icon-view thumbnails by using a simple horizontal line "
+#~ "instead a frame to render Color Labels."
+#~ msgstr ""
+#~ "უფრო კომპაქტური ხატულების ხედის მინიატურები ფერის ჭდეების რენდერისთვის "
+#~ "ჩარჩოს მაგიერ მარტივი ჰორიზონტალური ხაზის გამოყენების საშუალებით."
+
+#~ msgid ""
+#~ "Adding YuNet DNN model to process faces detection and replace older SSD "
+#~ "model. Adding Sface DNN model to process face recognition and replace "
+#~ "older OpenFace model. Both are faster and requires less memory at run-"
+#~ "time with better faces-management results."
+#~ msgstr ""
+#~ "დაემატ YuNet DNN მოდელი სახეების აღმოჩენის დასამუშავებლად და ძველი SSD "
+#~ "მოდელის ჩასანაცვლებლად. დაემატა Sface DNN მოდელი სახეების აღმოჩენის "
+#~ "დასამუშავებლად და ძველი OpenFace მოდელის ჩასანაცვლებლად. ორივე უფრო "
+#~ "სწრაფია და სჭირდება ნაკლები დრო დამუშავებისთვის უკეთესი სახეების მართვის "
+#~ "შედეგებით."
+
+#~ msgid "New option to scan image for recognize faces at startup."
+#~ msgstr "ახალი პარამეტრი გაშვებისას გამოსახულებებზე სახეების საძებნელად."
+
+#~ msgid "New option to turn on/off OpenCL support with face management."
+#~ msgstr ""
+#~ "ახალი პარამეტრი სახეების ამოცნობისას OpenCL-ის ჩასართავად/გამოსართავად."
 
 #~ msgid "Pan the image to a region"
 #~ msgstr "გამოსახულების პანინგი რეგიონამდე"
