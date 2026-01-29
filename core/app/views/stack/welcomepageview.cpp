@@ -95,7 +95,7 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 350 user-reports closed on bugzilla.");
+    newFeatures << i18n("More than <a href=\"https://bugs.kde.org/buglist.cgi?f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1=%1\">350 user-reports</a> closed on bugzilla.", QLatin1String(digikam_version_short));
     newFeatures << i18n("Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which brings with it a variety of bug fixes and performance improvements (Qt5 only).");
     newFeatures << i18n("Add support of customizable date format to show everywhere in the program.");
     newFeatures << i18n("Color label names are now customizable in the Labels tab from left sidebar by double clicking on text. Label strings size are limited to 32 characters.");
