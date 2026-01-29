@@ -10,6 +10,7 @@ APPLY_COMMON_POLICIES()
 set(liblighttable_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/lighttablepreview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/lighttableview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttableitemlistmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/lighttablethumbbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindow_config.cpp

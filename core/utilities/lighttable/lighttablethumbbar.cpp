@@ -37,116 +37,12 @@
 #include "contextmenuhelper.h"
 #include "itemfiltermodel.h"
 #include "itemdragdrop.h"
+#include "lighttableitemlistmodel.h"
 #include "fileactionmngr.h"
 #include "thumbnailloadthread.h"
 
 namespace Digikam
 {
-
-template <typename T, class Container>
-void removeAnyInInterval(Container& list, const T& begin, const T& end)
-{
-    typename Container::iterator it;
-
-    for (it = list.begin() ; it != list.end() ; )
-    {
-        if (((*it) >= begin) && ((*it) <= end))
-        {
-            it = list.erase(it);
-        }
-        else
-        {
-            ++it;
-        }
-    }
-}
-
-class Q_DECL_HIDDEN LightTableItemListModel : public ItemListModel
-{
-    Q_OBJECT
-
-public:
-
-    explicit LightTableItemListModel(QWidget* const parent)
-        : ItemListModel(parent)
-    {
-    }
-
-    void clearLightTableState()
-    {
-        m_leftIndexes.clear();
-        m_rightIndexes.clear();
-    }
-
-    void setExclusiveLightTableState(bool exclusive)
-    {
-        m_exclusive = exclusive;
-    }
-
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override
-    {
-        if      (role == LTLeftPanelRole)
-        {
-            return m_leftIndexes.contains(index.row());
-        }
-        else if (role == LTRightPanelRole)
-        {
-            return m_rightIndexes.contains(index.row());
-        }
-
-        return ItemListModel::data(index, role);
-    }
-
-    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::DisplayRole) override
-    {
-        if (!index.isValid())
-        {
-            return false;
-        }
-
-        if      (role == LTLeftPanelRole)
-        {
-            if (m_exclusive)
-            {
-                m_leftIndexes.clear();
-            }
-
-            m_leftIndexes << index.row();
-
-            return true;
-        }
-        else if (role == LTRightPanelRole)
-        {
-            if (m_exclusive)
-            {
-                m_rightIndexes.clear();
-            }
-
-            m_rightIndexes << index.row();
-
-            return true;
-        }
-
-        return ItemListModel::setData(index, value, role);
-    }
-
-    void prepareImageInfosAboutToBeRemoved(int begin, int end) override
-    {
-        removeAnyInInterval(m_leftIndexes, begin, end);
-        removeAnyInInterval(m_rightIndexes, begin, end);
-    }
-
-    void imageInfosCleared() override
-    {
-        clearLightTableState();
-    }
-
-protected:
-
-    QSet<int> m_leftIndexes;
-    QSet<int> m_rightIndexes;
-    bool      m_exclusive    = false;
-};
 
 class Q_DECL_HIDDEN LightTableThumbBar::Private
 {
@@ -471,7 +367,5 @@ ItemFilterModel* LightTableThumbBar::itemFilterModel() const
 }
 
 } // namespace Digikam
-
-#include "lighttablethumbbar.moc"
 
 #include "moc_lighttablethumbbar.cpp"
