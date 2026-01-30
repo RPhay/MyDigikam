@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:41+0000\n"
-"PO-Revision-Date: 2026-01-27 00:42+0100\n"
+"POT-Creation-Date: 2026-01-30 00:42+0000\n"
+"PO-Revision-Date: 2026-01-30 01:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3418,10 +3418,12 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elementos seleccionados"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1700 user-reports closed on bugzilla."
-msgid "More than 350 user-reports closed on bugzilla."
-msgstr "Se han cerrado más de 1700 informes de usuario en bugzilla."
+#, kde-format
+msgid ""
+"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 user-reports</a> closed on bugzilla."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3430,12 +3432,16 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"El QtAVPlayer interno se ha actualizado a la versión más reciente "
+"2026-01-24, que contiene diversas correcciones de fallos y mejoras de "
+"rendimiento (solo Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
+"Se ha añadido el uso de formato de fecha personalizable en todo el programa."
 
 #: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
@@ -3443,61 +3449,81 @@ msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
+"Los nombres de los emblemas de colores se puede personalizar ahora en la "
+"pestaña «Emblemas» de la barra lateral izquierda haciendo doble clic en el "
+"texto. El tamaño de los nombres de los emblemas está limitado a 32 "
+"caracteres."
 
 #: core/app/views/stack/welcomepageview.cpp:102
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"Se ha añadido la posibilidad de ordenar los elementos de la vista de iconos "
+"del álbum por los emblemas de «Selección» y de «Color»."
 
 #: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"Se ha añadido la posibilidad de ordenar los elementos de la vista de iconos "
+"de importación por los emblemas de «Selección» y de «Color»."
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
+"Se ha añadido la posibilidad de ordenar los elementos de los elementos de la "
+"vista de iconos del álbum por la «Orientación»."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
+"Se ha añadido la posibilidad de ordenar los elementos de los elementos de la "
+"vista de iconos del álbum por la ubicación GPS."
 
 #: core/app/views/stack/welcomepageview.cpp:106
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
+"Se ha añadido la posibilidad de ordenar los elementos de los elementos de la "
+"vista de iconos del álbum por el formato de archivo."
 
 #: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
+"Se ha añadido la posibilidad de ordenar los elementos de los elementos de la "
+"vista de iconos de importación por el formato de archivo."
 
 #: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
+"Se ha añadido compatibilidad con comodines de expresiones regulares para las "
+"preferencias de directorios ignorados."
 
 #: core/app/views/stack/welcomepageview.cpp:109
-#, fuzzy, kde-format
-#| msgid "Copy the all properties in clipboard"
+#, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
-msgstr "Copiar todas las propiedades en el portapapeles"
+msgstr ""
+"Se ha añadido un nuevo botón para copiar todas las propiedades como texto en "
+"el portapapeles."
 
 #: core/app/views/stack/welcomepageview.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add new tag to current tag. Current tag is last clicked tag."
+#, kde-format
 msgid "Add new button to open current item is file manager."
 msgstr ""
-"Añadir nueva etiqueta a la etiqueta actual. La etiqueta actual es la última "
-"sobre la que ha pulsado."
+"Se ha añadido un nuevo botón para abrir los elementos actuales en el gestor "
+"de archivos."
 
 #: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
+"Si no hay ningún elemento seleccionado en la vista de iconos, se muestran "
+"las estadísticas del álbum actual."
 
 #: core/app/views/stack/welcomepageview.cpp:112
 #, kde-format
@@ -3505,17 +3531,23 @@ msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr ""
+"Mostrar los elementos de un grupo abierto resaltado para una mejor "
+"usabilidad en la vista de iconos."
 
 #: core/app/views/stack/welcomepageview.cpp:113
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
+"Mejoras de usabilidad de la capa de elementos agrupados de la vista de "
+"iconos."
 
 #: core/app/views/stack/welcomepageview.cpp:114
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr ""
+"Mejoras en la barra de miniaturas para permitir la visibilidad de elementos "
+"agrupados al igual que en la vista de iconos."
 
 #: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
@@ -3523,16 +3555,22 @@ msgid ""
 "Split filters view into 3 separated tabs for better usabilty: Properties, "
 "Tags, and People."
 msgstr ""
+"Se ha dividido la vista de filtros en 3 pestañas separadas para una mejor "
+"usabilidad: Propiedades, Etiquetas y Personas."
 
 #: core/app/views/stack/welcomepageview.cpp:116
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
+"Cargar y guardar los estados de las columnas en la vista de la Papelera "
+"entre sesiones."
 
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
+"Se ha extendido la superposición de la barra de vista previa de imágenes y "
+"vídeos con el editor de emblemas."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3540,17 +3578,21 @@ msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
 "magnifier."
 msgstr ""
+"Se han añadido botones a la barra de herramientas de vista previa: "
+"indicadores de exposición, gestión del color, OSD y lupa."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
 msgid "Add context-menu to the video player."
-msgstr ""
+msgstr "Se ha añadido un menú de contexto al reproductor de vídeo."
 
 #: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
+"Se ha añadido un indicador del avance de la carga en la barra de estado "
+"(vista de iconos y mesa de luz)."
 
 #: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
@@ -3558,6 +3600,9 @@ msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr ""
+"Se ha añadido compatibilidad con los eventos de gestos en el panel táctil "
+"para ampliar el contenido, desplazar el lienzo y cambiar a los elementos "
+"anterior o siguiente."
 
 #: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
@@ -3565,11 +3610,16 @@ msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
 "canvas. Tool Size and zoom factor are customizable."
 msgstr ""
+"Se ha añadido una herramienta de lupa para ampliar y explorar un área "
+"pequeña del lienzo de vista previa. El tamaño de la herramienta y el factor "
+"de ampliación se pueden configurar."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
+"Se han añadido indicadores de subexposición y de sobreexposición en el "
+"lienzo de vista previa."
 
 #: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
@@ -3577,22 +3627,28 @@ msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr ""
+"Las líneas de ferrocarril se muestran superpuestas sobre el lienzo cuando la "
+"barra de desplazamiento está visible."
 
 #: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
 msgstr ""
+"Al pulsar sobre un icono de GPS superpuesto se abre la pestaña de "
+"geolocalización en la barra lateral izquierda."
 
 #: core/app/views/stack/welcomepageview.cpp:126
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
+"Se han añadido columnas personalizables para mostrar las propiedades de "
+"Agrupado y Versionado."
 
 #: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
-msgstr ""
+msgstr "Nuevo formato de fecha del modificador de cambio de nombre avanzado."
 
 #: core/app/views/stack/welcomepageview.cpp:128
 #, kde-format
@@ -3600,45 +3656,49 @@ msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr ""
+"Se ha añadido compatibilidad para fusionar entradas de plantillas existentes "
+"asignadas en elementos con una nueva plantilla."
 
 #: core/app/views/stack/welcomepageview.cpp:129
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"Seleccione aquí el color de fondo del tema que se usará para el área del "
-"editor de imágenes."
+"Se ha añadido una nueva opción a la presentación para personalizar el fondo "
+"del color en lugar de usar negro puro cuando se usa transparencia de las "
+"imágenes."
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"Seleccione aquí el color de fondo del tema que se usará para el área del "
-"editor de imágenes."
+"Se ha añadido una nueva opción a la presentación para personalizar el fondo "
+"del color en lugar de usar negro puro cuando se usa transparencia de las "
+"imágenes."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
+"Se ha completado la reescritura de la interfaz de la herramienta de "
+"transferencia de archivos para una mejor usabilidad."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
+"Se ha completado la reescritura de la interfaz de la herramienta de copia de "
+"archivos para una mejor usabilidad."
 
 #: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
+"Se ha añadido el efecto de hormigas caminando a la banda elástica de "
+"selección del lienzo."
 
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
@@ -3646,6 +3706,8 @@ msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
+"Se han añadido indicadores de histograma de selección de color para las "
+"herramientas Curvas, Niveles, Balance de blancos y Blanco y negro Sepia."
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
@@ -3653,49 +3715,63 @@ msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
 "history, features, support, download, etc."
 msgstr ""
+"Gran actualización del sitio web sobre contenido y diseño. Por ejemplo: "
+"capturas de pantalla, descripción, historial, funciones, soporte, descarga, "
+"etc."
 
 #: core/app/views/stack/welcomepageview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
 msgstr ""
 "Se ha actualizado el motor RAW interno a la última copia disponible de "
-"Libraw 2025-05-12."
+"Libraw 2026-01-24."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, fuzzy, kde-format
 #| msgid ""
-#| "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-#| "R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
-#| "X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic "
-#| "DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
-#| "GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-"
-#| "FX30, DSC-HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones "
-#| "with DNG format recorded."
+#| "New RAW camera supported:\n"
+#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+#| "EOS R100, EOS Ra.\n"
+#| "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
+#| "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
+#| "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
+#| "Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+#| "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
+#| "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+#| "TZ220D, DC-S5-II, DC-GH6.\n"
+#| "Pentax KF, K III Monochrome.\n"
+#| "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  "
+#| "ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
+#| "Multiple DJI and Skydio drones.\n"
+#| "Multiple smartphones with DNG format recorded."
 msgid ""
 "New RAW camera supported:\n"
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-"
+"H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-Lux8, SL3, "
+"Q3, M11 Monochrom ; Nikon (standard compression only): Z6-III, Z f, Z30, "
+"Z8 ; Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; Panasonic GH7, S9, DC-G9 "
+"II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; "
+"Pentax KF, K III Monochrome ; Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-"
+"II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; "
+"Multiple DJI and Skydio drones ; Multiple smartphones with DNG format "
+"recorded."
+msgstr ""
+"Nuevas cámaras RAW compatibles:\n"
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra.\n"
 "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
-"Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
+"Hasselblad CFV-50c, CFV-100c, X2D-100c.\n"
 "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-"Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+"Nikon (solo compresión estándar): Z6-III, Z f, Z30, Z8.\n"
 "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6.\n"
 "Pentax KF, K III Monochrome.\n"
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-"Multiple DJI and Skydio drones.\n"
-"Multiple smartphones with DNG format recorded."
-msgstr ""
-"Nuevas cámaras RAW compatibles: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra; Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S; Hasselblad "
-"X2D-100c; Leica Q3, M11 Monochrom; Nikon Z30, Z8; OM Digital OM-5; Panasonic "
-"DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6; "
-"Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, "
-"DSC-HX95, A1; múltiples drones DJI y Skydio; múltiples teléfonos "
-"inteligentes que usan el formato DNG."
+"Múltiples drones DJI y Skydio.\n"
+"Múltiples teléfonos inteligentes que usan el formato DNG."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
@@ -3718,16 +3794,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 7):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 8):"
 msgstr ""
 "Entre las nuevas funcionalidades de esta versión de digiKam se incluyen "
-"(comparado con digiKam 7):"
+"(comparado con digiKam 8):"
 
 #: core/app/views/stack/welcomepageview.cpp:173
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
@@ -56077,7 +56150,7 @@ msgstr "Nueva relación"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:245
+#: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #: core/utilities/survey/surveywindow_setup.cpp:47
@@ -61561,27 +61634,27 @@ msgstr ""
 msgid "Drag and drop an image here"
 msgstr "Arrastre y suelte aquí una imagen"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:243
+#: core/utilities/lighttable/lighttablethumbbar.cpp:139
 #, kde-format
 msgid "Show on left panel"
 msgstr "Mostrar en el panel izquierdo"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:244
+#: core/utilities/lighttable/lighttablethumbbar.cpp:140
 #, kde-format
 msgid "Show on right panel"
 msgstr "Mostrar en el panel derecho"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:246
+#: core/utilities/lighttable/lighttablethumbbar.cpp:142
 #, kde-format
 msgid "Remove item"
 msgstr "Eliminar el elemento"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:247
+#: core/utilities/lighttable/lighttablethumbbar.cpp:143
 #, kde-format
 msgid "Clear all"
 msgstr "Limpiar todo"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:450
+#: core/utilities/lighttable/lighttablethumbbar.cpp:346
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Arrastre y suelte aquí las imágenes"
@@ -69250,282 +69323,6 @@ msgstr "Elementos importados"
 msgid "Survey"
 msgstr "Sondeo"
 
-#~ msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
-#~ msgstr ""
-#~ "Adaptación del código a la infraestructura Qt6 (el código sigue siendo "
-#~ "compatible con la API de Qt5)."
-
-#~ msgid ""
-#~ "Windows Installer is now compiled natively with Microsoft VCPKG tool-"
-#~ "chain and use Qt6 and KF6 frameworks."
-#~ msgstr ""
-#~ "El instalador para Windows está compilado ahora de forma nativa con la "
-#~ "cadena de herramientas Microsoft VCPKG y usa las infraestructuras de Qt6 "
-#~ "y KF6."
-
-#~ msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
-#~ msgstr ""
-#~ "Se han añadido preferencias de exportación JPEG-XL, WEBP y AVIF por todas "
-#~ "partes."
-
-#~ msgid ""
-#~ "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from "
-#~ "camera."
-#~ msgstr ""
-#~ "Se ha añadido la conversión a JPEG-XL, WEBP y AVIF sin pérdidas al "
-#~ "importar de la cámara."
-
-#~ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
-#~ msgstr ""
-#~ "Se han añadido conversores JPEG-XL, WEBP y AVIF en el gestor de la cola "
-#~ "por lotes."
-
-#~ msgid ""
-#~ "Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless "
-#~ "image format to store versioned images in editor."
-#~ msgstr ""
-#~ "Sistema de versiones: permitir el uso de JPEG-XL, HEIF, WEBP y AVIF como "
-#~ "formatos de imagen sin pérdidas para guardar versiones de imágenes en el "
-#~ "editor."
-
-#~ msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
-#~ msgstr ""
-#~ "Usabilidad: se ha añadido el menú hamburguesa a la barra de herramientas "
-#~ "cuando se oculta el menú principal."
-
-#~ msgid ""
-#~ "Metadata: add new option to write metadata to files with ExifTool backend."
-#~ msgstr ""
-#~ "Metadatos: se ha añadido una nueva opción para escribir metadatos en los "
-#~ "archivos con el motor ExifTool."
-
-#~ msgid ""
-#~ "Metadata: optional write metadata operations to DNG and RAW files are now "
-#~ "always delegated to ExifTool Backend."
-#~ msgstr ""
-#~ "Metadatos: las operaciones opcionales de escritura de metadatos en "
-#~ "archivos DNG y RAW se delegan ahora siempre en el motor ExifTool."
-
-#~ msgid ""
-#~ "Metadata: optimize layout of Metadata Edit plugin for a better usability."
-#~ msgstr ""
-#~ "Metadatos: se ha optimizado el diseño del complemento de edición de "
-#~ "metadatos para que tenga una mejor usabilidad."
-
-#~ msgid ""
-#~ "Metadata: add new options to save and load configuration profiles in "
-#~ "Advanced Metadata Settings Panel."
-#~ msgstr ""
-#~ "Metadatos: se han añadido nuevas opciones para guardar y cargar perfiles "
-#~ "de configuración en el panel de preferencias avanzadas de metadatos."
-
-#~ msgid ""
-#~ "Advanced Rename: add increment file counter to sequence numbering from "
-#~ "with option [c] or [c,step]."
-#~ msgstr ""
-#~ "Cambio de nombre avanzado: se ha añadido un contador de archivos "
-#~ "incremental a la numeración secuencial con la opción [c] o [c,step]."
-
-#~ msgid "Advanced Rename: add random text sequence numbering with option [r]."
-#~ msgstr ""
-#~ "Cambio de nombre avanzado: se ha añadido numeración secuencial de texto "
-#~ "aleatorio con la opción [r]."
-
-#~ msgid ""
-#~ "Advanced Rename: add configurable first character for the unique modifier "
-#~ "with {unique:n,c}."
-#~ msgstr ""
-#~ "Cambio de nombre avanzado: se ha añadido configuración del primer "
-#~ "carácter para el modificador único con {unique:n,c}."
-
-#~ msgid "Advanced Search: add search for items by number of face regions."
-#~ msgstr ""
-#~ "Búsqueda avanzada: se ha añadido búsqueda de elementos por número de "
-#~ "regiones de cara."
-
-#~ msgid "Advanced Search: add search for items without face regions."
-#~ msgstr ""
-#~ "Búsqueda avanzada: se ha añadido búsqueda de elementos sin regiones de "
-#~ "cara."
-
-#~ msgid "Collections: add support for cross-platform network paths."
-#~ msgstr ""
-#~ "Colecciones: se ha añadido compatibilidad con rutas de red "
-#~ "multiplataforma."
-
-#~ msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-#~ msgstr ""
-#~ "Base de datos: se ha añadido compatibilidad con el modo WAL (registro de "
-#~ "escritura anticipada) de SQLite."
-
-#~ msgid ""
-#~ "Add spell-checking support in caption text widget using KDE framework "
-#~ "Sonnet component."
-#~ msgstr ""
-#~ "Se ha añadido compatibilidad con la comprobación ortográfica en el widget "
-#~ "de texto del pie de foto mediante la infraestructura de KDE Sonnet."
-
-#~ msgid ""
-#~ "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
-#~ "Showfoto."
-#~ msgstr ""
-#~ "Se ha añadido un panel de configuración de la comprobación ortográfica en "
-#~ "Preferencias/Varios para digiKam y Showfoto."
-
-#~ msgid ""
-#~ "Add online translations support to Alternative Language text editor "
-#~ "widget."
-#~ msgstr ""
-#~ "Se han añadido traducciones en línea al widget de edición de texto del "
-#~ "idioma alternativo."
-
-#~ msgid ""
-#~ "Add Localize config panel in Settings/Miscellaneous for digiKam and "
-#~ "Showfoto."
-#~ msgstr ""
-#~ "Se ha añadido un panel de configuración de la localización en "
-#~ "Preferencias/Varios para digiKam y Showfoto."
-
-#~ msgid ""
-#~ "Add settings to list preferred alternative/translated languages in text "
-#~ "edit widget."
-#~ msgstr ""
-#~ "Se han añadido preferencias para listar los idiomas alternativos/"
-#~ "traducidos preferidos en el widget de edición de texto."
-
-#~ msgid ""
-#~ "Allow to use Global or Customized Image Quality Scanning settings "
-#~ "everywhere."
-#~ msgstr ""
-#~ "Permitir el uso de preferencias de escaneo de calidad de imagen globales "
-#~ "o personalizadas en todas partes."
-
-#~ msgid ""
-#~ "Add Icon-View settings to customize Labels visibility over thumbnails."
-#~ msgstr ""
-#~ "Se han añadido preferencias a la vista de iconos para personalizar la "
-#~ "visibilidad de etiquetas sobre las miniaturas."
-
-#~ msgid "Add support for float16 (half float) images in the TIFF Loader."
-#~ msgstr ""
-#~ "Se ha añadido compatibilidad para imágenes float16 (coma flotante de "
-#~ "media precisión) en el cargador de TIFF."
-
-#~ msgid ""
-#~ "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
-#~ "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
-#~ "images using deep learning model</a>."
-#~ msgstr ""
-#~ "Se ha añadido una nueva herramienta de mantenimiento para realizar <a "
-#~ "href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
-#~ "\">detección estética para clasificar las imágenes usando un modelo de "
-#~ "aprendizaje profundo</a>."
-
-#~ msgid ""
-#~ "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
-#~ "QuocHungTran\">to perform OCR over scanned text</a>."
-#~ msgstr ""
-#~ "Se ha añadido una nueva herramienta <a href=\"https://community.kde.org/"
-#~ "GSoC/2022/StatusReports/QuocHungTran\">para realizar OCR sobre un texto "
-#~ "escaneado</a>."
-
-#~ msgid ""
-#~ "Queue Manager: add new tool to assign pick label automatically by parsing "
-#~ "image quality."
-#~ msgstr ""
-#~ "Gestor de colas: se ha añadido una nueva herramienta para asignar un "
-#~ "emblema de recogida automáticamente analizando la calidad de la imagen."
-
-#~ msgid ""
-#~ "Queue Manager: add new tool to assign rating, pick, and color labels in "
-#~ "batch."
-#~ msgstr ""
-#~ "Gestor de colas: se ha añadido una nueva herramienta para asignar "
-#~ "puntuaciones y emblemas de recogida y de color en el modo por lotes."
-
-#~ msgid "Queue Manager: add new tool to assign titles and captions in batch."
-#~ msgstr ""
-#~ "Gestor de colas: se ha añadido una nueva herramienta para asignar títulos "
-#~ "y pies de foto por lotes."
-
-#~ msgid "Queue Manager: add new tool to run G'MIC filters in batch."
-#~ msgstr ""
-#~ "Gestor de colas: se ha añadido una nueva herramienta para ejecutar "
-#~ "filtros de G'MIC por lotes."
-
-#~ msgid ""
-#~ "Queue Manager: add new tool to perform auto-rotation based on content "
-#~ "analysis using DNN."
-#~ msgstr ""
-#~ "Gestor de colas: se ha añadido una nueva herramienta para realizar "
-#~ "rotación automática basada en el análisis del contenido mediante DNN."
-
-#~ msgid ""
-#~ "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
-#~ "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
-#~ msgstr ""
-#~ "Documentación: se ha <a href=\"https://docs.digikam.org/en/index.html"
-#~ "\">reescrito el manual</a> para migrarlo de DocBook a la infraestructura "
-#~ "Sphinx/ReStructuredText."
-
-#~ msgid ""
-#~ "Add new maintenance and Queue manager tools to assign tag automatically "
-#~ "to images using deep learning neural network engine.<a href=\"https://"
-#~ "community.kde.org/GSoc/2023/StatusReports/"
-#~ "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
-#~ "\">See this GoSC-2023 report for details.</a>"
-#~ msgstr ""
-#~ "Se han añadido nuevas herramientas de mantenimiento y de gestión de colas "
-#~ "para asignar etiquetas automáticamente a las imágenes usando un motor de "
-#~ "red neuronal de aprendizaje profundo . <a href=\"https://community.kde."
-#~ "org/GSoc/2023/StatusReports/"
-#~ "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
-#~ "\">Consulte este informe de GoSC-2023 para más detalles</a>."
-
-#~ msgid ""
-#~ "Update G'MIC-Qt tool to last version 3.5.0 and finalize macOS port and "
-#~ "improve stability of plugin."
-#~ msgstr ""
-#~ "Se ha actualizado la herramienta G'MIC-Qt a la última versión 3.5.0, se "
-#~ "ha finalizado la adaptación a macOS y se ha mejorado la estabilidad del "
-#~ "complemento."
-
-#~ msgid ""
-#~ "New G'MIC generic plugin working as layer mode from a stack of images."
-#~ msgstr ""
-#~ "Nuevo complemento G'MIC genérico que funciona en modo de capa a partir de "
-#~ "una pila de imágenes."
-
-#~ msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
-#~ msgstr ""
-#~ "Se ha actualizado Adobe DNG SDK a la última versión 1.7.1, que permite "
-#~ "compresión en JPEG-XL."
-
-#~ msgid ""
-#~ "More compact icon-view thumbnails by using a simple horizontal line "
-#~ "instead a frame to render Color Labels."
-#~ msgstr ""
-#~ "Miniaturas de vista de iconos más compactas al usar una simple línea "
-#~ "horizontal en lugar de un marco para representar etiquetas de color."
-
-#~ msgid ""
-#~ "Adding YuNet DNN model to process faces detection and replace older SSD "
-#~ "model. Adding Sface DNN model to process face recognition and replace "
-#~ "older OpenFace model. Both are faster and requires less memory at run-"
-#~ "time with better faces-management results."
-#~ msgstr ""
-#~ "Se ha añadido el modelo YuNet DNN para procesar la detección de caras y "
-#~ "sustituir al modelo SSD anterior. Se ha añadido el modelo Sface DNN para "
-#~ "procesar el reconocimiento de caras y sustituir al modelo OpenFace "
-#~ "anterior. Ambos son más rápidos y requieren menos memoria en tiempo de "
-#~ "ejecución, con mejores resultados de gestión de caras."
-
-#~ msgid "New option to scan image for recognize faces at startup."
-#~ msgstr ""
-#~ "Nueva opción para explorar imágenes para reconocimiento de caras durante "
-#~ "el inicio."
-
-#~ msgid "New option to turn on/off OpenCL support with face management."
-#~ msgstr ""
-#~ "Nueva opción para activar/desactivar la compatibilidad con OpenCL en la "
-#~ "gestión de caras."
+#~| msgid "More than 1700 user-reports closed on bugzilla."
+#~ msgid "More than 350 user-reports closed on bugzilla."
+#~ msgstr "Se han cerrado más de 350 informes de usuario en bugzilla."

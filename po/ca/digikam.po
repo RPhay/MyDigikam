@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:41+0000\n"
-"PO-Revision-Date: 2026-01-26 10:14+0100\n"
+"POT-Creation-Date: 2026-01-30 00:42+0000\n"
+"PO-Revision-Date: 2026-01-29 14:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3407,10 +3407,12 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elements seleccionats"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1700 user-reports closed on bugzilla."
-msgid "More than 350 user-reports closed on bugzilla."
-msgstr "Més de 1700 informes d'usuari tancats al Bugzilla."
+#, kde-format
+msgid ""
+"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 user-reports</a> closed on bugzilla."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3419,12 +3421,17 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"El QtAVPlayer intern s'ha actualitzat a l'última branca principal 2026-01-24 "
+"que porta amb si una diversitat de correccions d'errors i millores de "
+"rendiment (només les Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
+"Afegeix la implementació del format de data personalitzable per a mostrar-se "
+"a tot arreu del programa."
 
 #: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
@@ -3432,61 +3439,78 @@ msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
+"Els noms dels rètols de color ara es poden personalitzar a la pestanya "
+"Rètols de la barra lateral esquerra fent doble clic sobre el text. La mida "
+"de les cadenes dels rètols està limitada a 32 caràcters."
 
 #: core/app/views/stack/welcomepageview.cpp:102
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"Afegeix la implementació d'ordenació d'elements de la vista d'icones d'àlbum "
+"dels rètols de selecció i de color."
 
 #: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"Afegeix la implementació d'ordenació d'elements de la vista d'icona "
+"d'importació dels rètols de selecció i de color."
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
+"Afegeix la implementació d'ordenació d'elements de la vista d'icones d'àlbum "
+"per orientació."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
+"Afegeix la implementació d'ordenació d'elements de la vista d'icones d'àlbum "
+"per ubicació GPS."
 
 #: core/app/views/stack/welcomepageview.cpp:106
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
+"Afegeix la implementació d'ordenació d'elements de la vista d'icones d'àlbum "
+"per format de fitxer."
 
 #: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
+"Afegeix la implementació d'ordenació d'elements de la vista d'icona "
+"d'importació per format de fitxer."
 
 #: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
+"Afegeix la implementació de comodins d'expressió regular per a la "
+"configuració de directoris ignorats."
 
 #: core/app/views/stack/welcomepageview.cpp:109
-#, fuzzy, kde-format
-#| msgid "Copy the all properties in clipboard"
+#, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
-msgstr "Copia totes les propietats del porta-retalls"
+msgstr ""
+"Afegeix un botó nou per a copiar totes les propietats com a text al porta-"
+"retalls."
 
 #: core/app/views/stack/welcomepageview.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add new tag to current tag. Current tag is last clicked tag."
+#, kde-format
 msgid "Add new button to open current item is file manager."
-msgstr ""
-"Afegeix una etiqueta nova a l'etiqueta actual. L'etiqueta actual és la "
-"darrera etiqueta clicada."
+msgstr "Afegeix un botó nou per a obrir l'element actual al gestor de fitxers."
 
 #: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
+"Si no s'ha seleccionat cap element de vista d'icona, mostra les "
+"estadístiques de l'àlbum actual."
 
 #: core/app/views/stack/welcomepageview.cpp:112
 #, kde-format
@@ -3494,17 +3518,23 @@ msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr ""
+"Mostra els elements d'un grup obert ressaltat per a una millor usabilitat "
+"amb la vista d'icones."
 
 #: core/app/views/stack/welcomepageview.cpp:113
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
+"Millores d'usabilitat de la superposició d'elements agrupats de la vista "
+"d'icones."
 
 #: core/app/views/stack/welcomepageview.cpp:114
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr ""
+"Millores de la barra de miniatures per a donar suport a la visibilitat dels "
+"elements agrupats com amb la vista d'icones."
 
 #: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
@@ -3512,16 +3542,22 @@ msgid ""
 "Split filters view into 3 separated tabs for better usabilty: Properties, "
 "Tags, and People."
 msgstr ""
+"Divideix la vista dels filtres en 3 pestanyes separades per a una usabilitat "
+"millor: Propietats, Etiquetes i Persones."
 
 #: core/app/views/stack/welcomepageview.cpp:116
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
+"Carrega i desa els estats de la columna de la vista de la paperera entre "
+"sessions."
 
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
+"Amplia la barra d'eines de vista prèvia d'imatges i vídeos amb l'editor de "
+"rètols."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3529,17 +3565,21 @@ msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
 "magnifier."
 msgstr ""
+"Afegeix els botons nous de la barra d'eines de vista prèvia: indicadors "
+"d'exposició, gestió del color, OSD, lupa."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
 msgid "Add context-menu to the video player."
-msgstr ""
+msgstr "Afegeix un menú contextual al reproductor de vídeo."
 
 #: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
+"Afegeix un indicador de progrés de càrrega a la barra d'estat (vista "
+"d'icones i taula de llum)."
 
 #: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
@@ -3547,6 +3587,9 @@ msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr ""
+"Afegeix la implementació d'esdeveniments gestuals del ratolí tàctil per a "
+"ampliar el contingut, desplaçar el llenç i canviar als elements anteriors/"
+"següents."
 
 #: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
@@ -3554,11 +3597,15 @@ msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
 "canvas. Tool Size and zoom factor are customizable."
 msgstr ""
+"Afegeix una eina de vidre lupa per a ampliar i explorar una àrea petita del "
+"llenç de vista prèvia. La mida de l'eina i el factor de zoom són "
+"personalitzables."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
+"Afegeix indicadors de subexposició i sobreexposició al llenç de vista prèvia."
 
 #: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
@@ -3566,22 +3613,28 @@ msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr ""
+"El ferrocarril sobre el llenç es mostra com una superposició quan la barra "
+"de desplaçament és visible."
 
 #: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
 msgstr ""
+"En fer clic a la superposició de la icona GPS, obre la pestanya de "
+"Geolocalització de la barra lateral esquerra."
 
 #: core/app/views/stack/welcomepageview.cpp:126
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
+"Afegeix columnes personalitzables per a mostrar les propietats agrupades i "
+"versionades."
 
 #: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
-msgstr ""
+msgstr "Format nou de data del modificador avançat de canvi de nom."
 
 #: core/app/views/stack/welcomepageview.cpp:128
 #, kde-format
@@ -3589,45 +3642,48 @@ msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr ""
+"Afegeix la implementació per a fusionar entrades de plantilla existents "
+"assignades als elements amb una plantilla nova."
 
 #: core/app/views/stack/welcomepageview.cpp:129
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"Establiu aquesta opció per a usar el color del fons del tema en l'àrea de "
-"l'editor d'imatges."
+"Afegeix una opció nova de presentació de diapositives per a personalitzar el "
+"fons de color en lloc de negre pur en cas d'ús de transparència de les "
+"imatges."
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"Establiu aquesta opció per a usar el color del fons del tema en l'àrea de "
-"l'editor d'imatges."
+"Afegeix una opció nova de presentació per a personalitzar el fons de color "
+"en lloc de negre pur en cas d'ús de transparència de les imatges."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
+"Reescriptura completa de la IGU de l'eina de transferència de fitxers per a "
+"una usabilitat millor."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
+"Reescriptura completa de la IGU de l'eina de còpia de fitxers per a una "
+"usabilitat millor."
 
 #: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
+"Afegeix un efecte de formigues caminant a la banda de goma de la selecció "
+"del llenç."
 
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
@@ -3635,6 +3691,8 @@ msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
+"Afegeix indicadors d'histograma de color de selecció per a les eines Corbes, "
+"Nivells, Balanç de blanc i Sèpia de blanc i negre."
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
@@ -3642,50 +3700,64 @@ msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
 "history, features, support, download, etc."
 msgstr ""
+"Actualització grossa del lloc web del contingut i el disseny, p. ex. "
+"captures de pantalla, descripció, historial, característiques, suport, "
+"descàrrega, etc."
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
 msgstr ""
 "Actualitzar el motor RAW intern a la darrera instantània de la Libraw "
-"2025-05-12."
+"2026-01-24."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, fuzzy, kde-format
 #| msgid ""
-#| "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-#| "R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
-#| "X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic "
-#| "DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
-#| "GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-"
-#| "FX30, DSC-HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones "
-#| "with DNG format recorded."
+#| "New RAW camera supported:\n"
+#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+#| "EOS R100, EOS Ra.\n"
+#| "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
+#| "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
+#| "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
+#| "Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+#| "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
+#| "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+#| "TZ220D, DC-S5-II, DC-GH6.\n"
+#| "Pentax KF, K III Monochrome.\n"
+#| "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  "
+#| "ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
+#| "Multiple DJI and Skydio drones.\n"
+#| "Multiple smartphones with DNG format recorded."
 msgid ""
 "New RAW camera supported:\n"
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-"
+"H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-Lux8, SL3, "
+"Q3, M11 Monochrom ; Nikon (standard compression only): Z6-III, Z f, Z30, "
+"Z8 ; Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; Panasonic GH7, S9, DC-G9 "
+"II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; "
+"Pentax KF, K III Monochrome ; Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-"
+"II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; "
+"Multiple DJI and Skydio drones ; Multiple smartphones with DNG format "
+"recorded."
+msgstr ""
+"Càmeres RAW noves implementades:\n"
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra.\n"
 "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
 "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
 "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-"Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+"Nikon (només compressió estàndard): Z6-III, Z f, Z30, Z8.\n"
 "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6.\n"
 "Pentax KF, K III Monochrome.\n"
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-"Multiple DJI and Skydio drones.\n"
-"Multiple smartphones with DNG format recorded."
-msgstr ""
-"Càmeres RAW noves implementades: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra. Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S. Hasselblad "
-"X2D-100c. Leica Q3, M11 Monochrom. Nikon Z30, Z8. OM Digital OM-5. Panasonic "
-"DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6. "
-"Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, "
-"DSC-HX95, A1. Drons diversos de DJI i Skydio. Diversos telèfons "
-"intel·ligents amb format d'enregistrament DNG."
+"Drons diversos de DJI i Skydio.\n"
+"Diversos telèfons intel·ligents amb format d'enregistrament DNG."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
@@ -3708,16 +3780,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 7):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 8):"
 msgstr ""
 "Algunes de les noves característiques d'aquest llançament del digiKam "
-"inclouen (comparades amb el digiKam 7):"
+"inclouen (comparades amb el digiKam 8):"
 
 #: core/app/views/stack/welcomepageview.cpp:173
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
@@ -56105,7 +56174,7 @@ msgstr "Relació nova"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:245
+#: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #: core/utilities/survey/surveywindow_setup.cpp:47
@@ -61596,27 +61665,27 @@ msgstr ""
 msgid "Drag and drop an image here"
 msgstr "Arrossegueu i deixeu anar aquí una imatge"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:243
+#: core/utilities/lighttable/lighttablethumbbar.cpp:139
 #, kde-format
 msgid "Show on left panel"
 msgstr "Mostra en el plafó esquerre"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:244
+#: core/utilities/lighttable/lighttablethumbbar.cpp:140
 #, kde-format
 msgid "Show on right panel"
 msgstr "Mostra en el plafó dret"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:246
+#: core/utilities/lighttable/lighttablethumbbar.cpp:142
 #, kde-format
 msgid "Remove item"
 msgstr "Elimina l'element"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:247
+#: core/utilities/lighttable/lighttablethumbbar.cpp:143
 #, kde-format
 msgid "Clear all"
 msgstr "Neteja-ho tot"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:450
+#: core/utilities/lighttable/lighttablethumbbar.cpp:346
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Arrossegueu i deixeu anar aquí les imatges"
@@ -69300,6 +69369,10 @@ msgstr "Importa els elements"
 msgid "Survey"
 msgstr "Estudi"
 
+#~| msgid "More than 1700 user-reports closed on bugzilla."
+#~ msgid "More than 350 user-reports closed on bugzilla."
+#~ msgstr "Més de 350 informes d'usuari tancats al Bugzilla."
+
 #~ msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 #~ msgstr ""
 #~ "Adaptar el codi a l'entorn de treball de les Qt6 (codi encara compatible "
@@ -69601,38 +69674,27 @@ msgstr "Estudi"
 #~ msgid "Remove all items from Survey Tool"
 #~ msgstr "Elimina tots els elements de l'eina estudi"
 
-#~| msgctxt "Content type"
-#~| msgid "Polls and Surveys"
 #~ msgctxt "@action: setup"
 #~ msgid "Place onto Survey"
 #~ msgstr "Situa a l'estudi"
 
-#~| msgctxt "@info: setup"
-#~| msgid "Place the selected items on the light table thumbbar."
 #~ msgctxt "@info: setup"
 #~ msgid "Place the selected items on the survey thumbbar."
 #~ msgstr ""
 #~ "Situa els elements seleccionats sobre la barra de miniatures de l'estudi."
 
-#~| msgctxt "@title"
-#~| msgid "Add Texture"
 #~ msgctxt "@action: setup"
 #~ msgid "Add to Survey"
 #~ msgstr "Afegeix a l'estudi"
 
-#~| msgctxt "@info: setup"
-#~| msgid "Add selected items to the light table thumbbar."
 #~ msgctxt "@info: setup"
 #~ msgid "Add selected items to the survey thumbbar."
 #~ msgstr ""
 #~ "Afegeix els elements seleccionats a la barra de miniatures de l'estudi."
 
-#~| msgid "Adding items to the Light Table"
 #~ msgid "Adding items to the Survey"
 #~ msgstr "Afegir elements a l'estudi"
 
-#~| msgctxt "Content type"
-#~| msgid "Polls and Surveys"
 #~ msgid "Show on Survey"
 #~ msgstr "Mostra a l'estudi"
 
@@ -69750,21 +69812,15 @@ msgstr "Estudi"
 #~ msgid "Color Label: %1"
 #~ msgstr "Rètol de color: %1"
 
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera maker"
 #~ msgid "No Camera Make"
 #~ msgstr "Sense fabricant de càmera"
 
-#~| msgid "Return items without face regions"
 #~ msgid "Return items without a camera model"
 #~ msgstr "Retorna els elements sense model de càmera"
 
-#~| msgctxt "@title: tableview"
-#~| msgid "Camera model"
 #~ msgid "No Camera Model"
 #~ msgstr "Sense model de càmera"
 
-#~| msgid "Return items without tags"
 #~ msgid "Return items without a lens type"
 #~ msgstr "Retorna els elements sense tipus de lent"
 
@@ -69829,8 +69885,6 @@ msgstr "Estudi"
 #~ msgid "Pick Label: %1"
 #~ msgstr "Rètol de selecció: %1"
 
-#~| msgctxt "@label"
-#~| msgid "Segmentation mode:"
 #~ msgid "Segmentation Iterations:"
 #~ msgstr "Iteracions de segmentació:"
 
