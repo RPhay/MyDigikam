@@ -17,66 +17,33 @@
 
 #pragma once
 
-#include "digikam_config.h"
-
 // Qt includes
 
-#include <QByteArray>
 #include <QString>
-#include <QUrl>
 #include <QWidget>
-#include <QLabel>
-
-#include <QWebEngineView>
-#include <QWebEnginePage>
-#include <QWebEngineSettings>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
 
-class WelcomePageViewPage : public QWebEnginePage
-{
-    Q_OBJECT
-
-public:
-
-    explicit WelcomePageViewPage(QObject* const parent = nullptr);
-    ~WelcomePageViewPage()                                          override = default;
-
-    bool acceptNavigationRequest(const QUrl&,
-                                 QWebEnginePage::NavigationType,
-                                 bool)                              override;
-
-Q_SIGNALS:
-
-    void linkClicked(const QUrl&);
-};
-
-// -------------------------------------------------------------------
-
-class WelcomePageView : public QWebEngineView
+class WelcomePageView : public QWidget
 {
     Q_OBJECT
 
 public:
 
     explicit WelcomePageView(QWidget* const parent);
-    ~WelcomePageView()                                       override = default;
+    ~WelcomePageView()                               override = default;
 
 private:
 
-    QByteArray  fileToString(const QString& aFileName) const;
-    QStringList featuresTabContent()                   const;
-    QStringList aboutTabContent()                      const;
-
-private Q_SLOTS:
-
-    void slotUrlOpen(const QUrl&);
-    void slotThemeChanged();
+    QString featuresTabContent() const;
+    QString aboutTabContent()    const;
+    QString creditsTabContent()  const;
 };
 
 } // namespace Digikam

@@ -21,11 +21,18 @@
 
 #include <QFile>
 #include <QFileInfo>
-#include <QTimer>
+#include <QPushButton>
+#include <QButtonGroup>
 #include <QApplication>
 #include <QStandardPaths>
-
-#include <QtWebEngineWidgetsVersion>
+#include <QScrollArea>
+#include <QGridLayout>
+#include <QLabel>
+#include <QGraphicsDropShadowEffect>
+#include <QPainter>
+#include <QStackedWidget>
+#include <QStylePainter>
+#include <QStyleOptionTab>
 
 // KDE includes
 
@@ -42,57 +49,253 @@
 namespace Digikam
 {
 
-WelcomePageViewPage::WelcomePageViewPage(QObject* const parent)
-    : QWebEnginePage(parent)
+class Q_DECL_HIDDEN GradientWidget : public QWidget
 {
-}
+public:
 
-bool WelcomePageViewPage::acceptNavigationRequest(const QUrl& url, QWebEnginePage::NavigationType type, bool)
-{
-    if (type == QWebEnginePage::NavigationTypeLinkClicked)
+    GradientWidget(QWidget* const parent = nullptr)
+        : QWidget(parent)
     {
-        Q_EMIT linkClicked(url);
-
-        return false;
     }
 
-    return true;
-}
+protected:
 
-// ----------------------------------------------------------------------------
+    void paintEvent(QPaintEvent*) override
+    {
+        QPainter painter(this);
+        QLinearGradient gradient(0, 0, 0, height());
+        gradient.setColorAt(0,    QColor("#223c54"));
+        gradient.setColorAt(0.55, QColor("#01080F"));
+        painter.fillRect(rect(), gradient);
+    }
+};
+
+// ---
+
+class Q_DECL_HIDDEN ResizableBackgroundWidget : public QWidget
+{
+    Q_OBJECT
+
+public:
+
+    ResizableBackgroundWidget(QWidget* const parent = nullptr)
+        : QWidget(parent),
+          backgroundLabel(new QLabel(this))
+    {
+        backgroundLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+        backgroundLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+
+        QVBoxLayout* const layout = new QVBoxLayout(this);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(0);
+        layout->addWidget(backgroundLabel);
+    }
+
+    void setBackgroundPixmap(const QPixmap& pixmap)
+    {
+        backgroundPixmap = pixmap;
+        updateBackground();
+    }
+
+protected:
+
+    void resizeEvent(QResizeEvent* event) override
+    {
+        QWidget::resizeEvent(event);
+        updateBackground();
+    }
+
+private:
+
+    void updateBackground()
+    {
+        if (!backgroundPixmap.isNull())
+        {
+            QPixmap scaledPixmap = backgroundPixmap.scaledToWidth(width(), Qt::SmoothTransformation);
+            backgroundLabel->setPixmap(scaledPixmap);
+        }
+    }
+
+    QLabel* backgroundLabel = nullptr;
+    QPixmap backgroundPixmap;
+};
+
+// ---
 
 WelcomePageView::WelcomePageView(QWidget* const parent)
-    : QWebEngineView(parent)
+    : QWidget(parent)
 {
-    setFocusPolicy(Qt::WheelFocus);
+    QScrollArea* const sv = new QScrollArea(this);
+    sv->setFrameStyle(QFrame::NoFrame);
+    sv->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    sv->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    sv->setWidgetResizable(true);
 
-    setContextMenuPolicy(Qt::NoContextMenu);
-    setContentsMargins(QMargins());
+    QWidget* const plain = new QWidget(sv->viewport());
+    plain->setMinimumWidth(sv->width());
 
-    WelcomePageViewPage* const wpage = new WelcomePageViewPage(this);
-    setPage(wpage);
+    ResizableBackgroundWidget* const background = new ResizableBackgroundWidget(plain);
+    QPixmap backgroundPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                    QLatin1String("digikam/about/images/body-background.webp")));
+    background->setBackgroundPixmap(backgroundPixmap);
 
-    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
+    GradientWidget* const grad  = new GradientWidget(plain);
 
-    // ------------------------------------------------------------
+    QWidget* const headerWidget = new QWidget(plain);
+    QLabel* const logo          = new QLabel(headerWidget);
+    logo->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                   QLatin1String("digikam/data/logo-digikam.webp")))
+                    .scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
-    connect(wpage, SIGNAL(linkClicked(QUrl)),
-            this, SLOT(slotUrlOpen(QUrl)));
+    QLabel* const title         = new QLabel(QLatin1String("<qt><h1>digiKam</h1></qt>"), headerWidget);
+    title->setObjectName(QLatin1String("app-name"));
+    title->setStyleSheet(QLatin1String(
+        "#app-name {"
+        "   color: rgba(255, 255, 255, 0.67);"
+        "   margin-top: 11px;"
+        "}"
+    ));
 
-    connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
-            this, SLOT(slotThemeChanged()));
+    QGraphicsDropShadowEffect* const effect = new QGraphicsDropShadowEffect;
+    effect->setColor(Qt::white);
+    effect->setBlurRadius(35);
+    effect->setOffset(0, 0);
+    title->setGraphicsEffect(effect);
 
-    QTimer::singleShot(0, this, SLOT(slotThemeChanged()));
+    QHBoxLayout* const headerLayout         = new QHBoxLayout(headerWidget);
+    headerLayout->setContentsMargins(10, 10, 10, 10);
+    headerLayout->addWidget(logo);
+    headerLayout->addStretch();
+    headerLayout->addWidget(title);
+
+    QWidget* const titleWidget              = new QWidget(plain);
+
+    QLabel* const smallTitle                = new QLabel(DAboutData::digiKamSlogan(), titleWidget);
+    smallTitle->setAlignment(Qt::AlignCenter);
+    smallTitle->setStyleSheet(QLatin1String("color: black; font-size: 14px;"));
+
+    QLabel* const bigTitle                  = new QLabel(i18n("Welcome to digiKam %1", QLatin1String(digikam_version)), titleWidget);
+    bigTitle->setAlignment(Qt::AlignCenter);
+    bigTitle->setStyleSheet(QLatin1String("color: black; font-size: 24px; font-weight: bold;"));
+
+    QVBoxLayout* const titleLayout          = new QVBoxLayout(titleWidget);
+    titleLayout->setContentsMargins(0, 0, 0, 20);
+    titleLayout->addWidget(smallTitle);
+    titleLayout->addWidget(bigTitle);
+
+    // ---
+
+    QWidget* const tabButtonsWidget      = new QWidget(plain);
+    QHBoxLayout* const tabButtonsLayout  = new QHBoxLayout(tabButtonsWidget);
+    tabButtonsLayout->setContentsMargins(0, 0, 0, 0);
+    tabButtonsLayout->setSpacing(10);
+
+    QPushButton* const newFeaturesButton = new QPushButton(i18n("New Features"), tabButtonsWidget);
+    QPushButton* const aboutButton       = new QPushButton(i18n("About"), tabButtonsWidget);
+    QPushButton* const creditsButton     = new QPushButton(i18n("Background Image Credits"), tabButtonsWidget);
+
+    QString buttonStyle                  = QLatin1String("QPushButton { background-color: rgba(200, 200, 200, 200); border: none; padding: 8px; }"
+                                                         "QPushButton:checked { background-color: rgba(150, 150, 150, 200); }");
+    newFeaturesButton->setStyleSheet(buttonStyle);
+    aboutButton->setStyleSheet(buttonStyle);
+    creditsButton->setStyleSheet(buttonStyle);
+
+    // ---
+
+    tabButtonsLayout->addStretch();
+    tabButtonsLayout->addWidget(newFeaturesButton);
+    tabButtonsLayout->addWidget(aboutButton);
+    tabButtonsLayout->addWidget(creditsButton);
+    tabButtonsLayout->addStretch();
+
+    // ---
+
+    QButtonGroup* const tabButtonGroup = new QButtonGroup(plain);
+    tabButtonGroup->addButton(newFeaturesButton);
+    tabButtonGroup->addButton(aboutButton);
+    tabButtonGroup->addButton(creditsButton);
+    newFeaturesButton->setCheckable(true);
+    aboutButton->setCheckable(true);
+    creditsButton->setCheckable(true);
+    newFeaturesButton->setChecked(true);
+
+    // ---
+
+    QStackedWidget* const stackedWidget = new QStackedWidget(plain);
+
+    QWidget* const newFeaturesTab       = new QWidget(stackedWidget);
+    newFeaturesTab->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
+    QLabel* const newFeatures           = new QLabel(featuresTabContent(), stackedWidget);
+    newFeatures->setOpenExternalLinks(true);
+    QVBoxLayout* const vlay1            = new QVBoxLayout(newFeaturesTab);
+    vlay1->addWidget(newFeatures);
+    vlay1->addStretch();
+    vlay1->setContentsMargins(10, 10, 10, 10);
+    stackedWidget->addWidget(newFeaturesTab);
+
+    QWidget* const aboutTab             = new QWidget(stackedWidget);
+    aboutTab->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
+    QLabel* const about                 = new QLabel(aboutTabContent(), stackedWidget);
+    about->setOpenExternalLinks(true);
+    QVBoxLayout* const vlay2            = new QVBoxLayout(aboutTab);
+    vlay2->addWidget(about);
+    vlay2->addStretch();
+    vlay2->setContentsMargins(10, 10, 10, 10);
+    stackedWidget->addWidget(aboutTab);
+
+    QWidget* const creditsTab           = new QWidget(stackedWidget);
+    creditsTab->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
+    QLabel* const credits               = new QLabel(creditsTabContent(), stackedWidget);
+    credits->setOpenExternalLinks(true);
+    QVBoxLayout* const vlay3            = new QVBoxLayout(creditsTab);
+    vlay3->addWidget(credits);
+    vlay3->addStretch();
+    vlay3->setContentsMargins(10, 10, 10, 10);
+    stackedWidget->addWidget(creditsTab);
+
+    connect(newFeaturesButton, &QPushButton::clicked,
+            [stackedWidget]()
+        {
+            stackedWidget->setCurrentIndex(0);
+        }
+    );
+
+    connect(aboutButton, &QPushButton::clicked,
+            [stackedWidget]()
+        {
+            stackedWidget->setCurrentIndex(1);
+
+        }
+    );
+
+    connect(creditsButton, &QPushButton::clicked,
+            [stackedWidget]()
+        {
+            stackedWidget->setCurrentIndex(2);
+        }
+    );
+
+    QGridLayout* const grid = new QGridLayout(plain);
+    grid->addWidget(grad,             0, 0, 1, 3);
+    grid->addWidget(headerWidget,     0, 0, 1, 3);
+    grid->addWidget(background,       1, 0, 3, 3);
+    grid->addWidget(titleWidget,      1, 0, 1, 3, Qt::AlignCenter);
+    grid->addWidget(tabButtonsWidget, 2, 0, 1, 3, Qt::AlignCenter);
+    grid->addWidget(stackedWidget,    3, 0, 1, 3);
+    grid->setContentsMargins(0, 0, 0, 0);
+    grid->setSpacing(0);
+    grid->setColumnStretch(1, 10);
+    grid->setRowStretch(3, 10);
+
+    sv->setWidget(plain);
+
+    QVBoxLayout* mainLayout = new QVBoxLayout(this);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setSpacing(0);
+    mainLayout->addWidget(sv);
 }
 
-void WelcomePageView::slotUrlOpen(const QUrl& url)
-{
-    WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
-    browser->show();
-}
-
-QStringList WelcomePageView::featuresTabContent() const
+QString WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
     newFeatures << i18n("More than <a href=\"https://bugs.kde.org/buglist.cgi?f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1=%1\">350 user-reports</a> closed on bugzilla.", QLatin1String(digikam_version_short));
@@ -134,18 +337,18 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.");
     newFeatures << i18n("Huge web site update about contents and design eg. screenshots, description, history, features, support, download, etc.");
     newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-01-24.");
-    newFeatures << i18n("New RAW camera supported:\n"
-                        "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; "
-                        "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; "
-                        "Hasselblad  CFV-50c, CFV-100c, X2D-100c ; "
-                        "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ; "
-                        "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ; "
-                        "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; "
-                        "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; "
-                        "Pentax KF, K III Monochrome ; "
-                        "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; "
-                        "Multiple DJI and Skydio drones ; "
-                        "Multiple smartphones with DNG format recorded."
+    newFeatures << i18n("New RAW camera supported:"
+                        "<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul>"
+                        "<ul>Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul>"
+                        "<ul>Hasselblad  CFV-50c, CFV-100c, X2D-100c ; </ul>"
+                        "<ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ; </ul>"
+                        "<ul>Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ; </ul>"
+                        "<ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </ul>"
+                        "<ul>Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; </ul>"
+                        "<ul>Pentax KF, K III Monochrome ; </ul>"
+                        "<ul>Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; </ul>"
+                        "<ul>Multiple DJI and Skydio drones ; </ul>"
+                        "<ul>Multiple smartphones with DNG format recorded.</ul>"
                        );
 
     // Add new features here...
@@ -156,21 +359,17 @@ QStringList WelcomePageView::featuresTabContent() const
 
     for (int i = 0 ; i < newFeatures.count() ; ++i)
     {
-        featureItems += i18n("<li>%1</li><br>", newFeatures.at(i));
+        featureItems += i18n("<li>%1</li>", newFeatures.at(i));
     }
 
-    QString tabHeader  = i18n("New Features");
-    QString tabContent =
-        i18n("<h3>%1</h3><ul>%2</ul>",
-             i18n("Some of the new features in this release of digiKam include (compared to digiKam 8):"),
-             featureItems);
+    QString tabContent = i18n("<h3>Some of the new features in this release of digiKam include (compared to digiKam 8):</h3><ul>%1</ul>",
+                         featureItems);
 
-    return QStringList() << tabHeader << tabContent;
+    return tabContent;
 }
 
-QStringList WelcomePageView::aboutTabContent() const
+QString WelcomePageView::aboutTabContent() const
 {
-    QString tabHeader  = i18n("About");
     QString tabContent =
         i18n("<h3>%1</h3><h3>%2</h3><ul>%3</ul>",
              i18n("digiKam is an open source photo management program designed to import, organize, enhance, search and export your digital images to and from your computer."),
@@ -179,77 +378,47 @@ QStringList WelcomePageView::aboutTabContent() const
                   i18n("digiKam has many powerful features which are described in the <a href=\"https://docs.digikam.org/en/index.html\">documentation</a>"),
                   i18n("The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides information about new versions of digiKam.")));
 
-    return QStringList() << tabHeader << tabContent;
+    return tabContent;
 }
 
-QByteArray WelcomePageView::fileToString(const QString& aFileName) const
+QString WelcomePageView::creditsTabContent()  const
 {
-    QByteArray   result;
-    QFileInfo    info(aFileName);
-    unsigned int readLen;
-    unsigned int len = info.size();
-    QFile        file(aFileName);
-
-    if (
-        aFileName.isEmpty() ||
-        (len == 0)          ||
-        !info.exists()      ||
-        info.isDir()        ||
-        !info.isReadable() ||
-        !file.open(QIODevice::Unbuffered|QIODevice::ReadOnly)
-       )
-    {
-        return QByteArray();
-    }
-
-    result.resize(len + 2);
-    readLen = file.read(result.data(), len);
-    file.close();
-
-    if (result[len-1] != '\n')
-    {
-        result[len++] = '\n';
-        ++readLen;
-    }
-
-    result[len] = '\0';
-
-    if (readLen < len)
-    {
-        return QByteArray();
-    }
-
-    return result;
-}
-
-void WelcomePageView::slotThemeChanged()
-{
-    QString appTitle         = i18n("digiKam");
-    QString slogan           = DAboutData::digiKamSlogan();
-    QString locationHtml     = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/about/main.html"));
-    QString content          = QString::fromUtf8(fileToString(locationHtml));
-
-    content                  = content.arg((layoutDirection() == Qt::RightToLeft) ? QLatin1String("rtl") : QLatin1String("ltr")) // For RTL issue. See bug #376438
-                                      .arg(appTitle)
-                                      .arg(slogan)
-                                      .arg(i18n("Welcome to digiKam %1", QLatin1String(digikam_version)))
-                                      .arg(featuresTabContent().value(0))
-                                      .arg(aboutTabContent().value(0))
-                                      .arg(i18n("Background Image Credits"))
-                                      .arg(featuresTabContent().value(1))
-                                      .arg(aboutTabContent().value(1))
-                                      .arg(i18n("Author:"))
-                                      .arg(i18n("Location:"))
-                                      .arg(i18n("Date:"))
-                                      .arg(i18n("Camera:"))
-                                      .arg(i18n("Lens:"))
+    QString creditsTab =
+        QString::fromUtf8(
+                "<table>"
+                  "<tr>"
+                    "<td width=\"10%\"><h4>%1</h4></td>"
+                    "<td><h4>%2</h4></td>"
+                  "</tr>"
+                  "<tr>"
+                    "<td width=\"10%\"><h4>%3</h4></td>"
+                    "<td><h4>%4</h4></td>"
+                  "</tr>"
+                  "<tr>"
+                    "<td width=\"10%\"><h4>%5</h4></td>"
+                    "<td><h4>%6</h4></td>"
+                  "</tr>"
+                  "<tr>"
+                    "<td width=\"10%\"><h4>%7</h4></td>"
+                    "<td><h4>%8</h4></td>"
+                  "</tr>"
+                  "<tr>"
+                    "<td width=\"10%\"><h4>%9</h4></td>"
+                    "<td><h4>%10</h4></td>"
+                  "</tr>"
+                "</table>"
+        ).arg(i18n("Author:"))  .arg(QString::fromUtf8("Andreas K. Huettel"))
+         .arg(i18n("Location:")).arg(QString::fromUtf8("<a href=\"https://en.wikipedia.org/wiki/Kjem%C3%A5vatnet\">Kjemåvatnet - Nordland county - Norway.</a>"))
+         .arg(i18n("Date:"))    .arg(QString::fromUtf8("August 2020"))
+         .arg(i18n("Camera:"))  .arg(QString::fromUtf8("Canon EOS 7D Mark II"))
+         .arg(i18n("Lens:"))    .arg(QString::fromUtf8("Sigma 18-250mm f/3.5-6.3 DC OS HSM"))
     ;
 
-    //qCDebug(DIGIKAM_GENERAL_LOG) << content;
-
-    setHtml(content, QUrl::fromLocalFile(locationHtml));
+    return creditsTab;
 }
 
 } // namespace Digikam
+
+#include "welcomepageview.moc"
 
 #include "moc_welcomepageview.cpp"
