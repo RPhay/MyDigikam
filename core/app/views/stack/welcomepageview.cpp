@@ -229,10 +229,11 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     newFeatures->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     newFeatures->setOpenExternalLinks(true);
     newFeatures->setWordWrap(true);
+    newFeatures->setMargin(10);
     QVBoxLayout* const vlay1            = new QVBoxLayout(newFeaturesTab);
     vlay1->addWidget(newFeatures);
     vlay1->addStretch();
-    vlay1->setContentsMargins(10, 10, 10, 10);
+    vlay1->setContentsMargins(80, 10, 80, 10);
     stackedWidget->addWidget(newFeaturesTab);
 
     QWidget* const aboutTab             = new QWidget(stackedWidget);
@@ -240,10 +241,11 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     about->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     about->setOpenExternalLinks(true);
     about->setWordWrap(true);
+    about->setMargin(10);
     QVBoxLayout* const vlay2            = new QVBoxLayout(aboutTab);
     vlay2->addWidget(about);
     vlay2->addStretch();
-    vlay2->setContentsMargins(10, 10, 10, 10);
+    vlay2->setContentsMargins(80, 10, 80, 10);
     stackedWidget->addWidget(aboutTab);
 
     QWidget* const creditsTab           = new QWidget(stackedWidget);
@@ -251,10 +253,11 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     credits->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     credits->setOpenExternalLinks(true);
     credits->setWordWrap(true);
+    credits->setMargin(10);
     QVBoxLayout* const vlay3            = new QVBoxLayout(creditsTab);
     vlay3->addWidget(credits);
     vlay3->addStretch();
-    vlay3->setContentsMargins(10, 10, 10, 10);
+    vlay3->setContentsMargins(80, 10, 80, 10);
     stackedWidget->addWidget(creditsTab);
 
     connect(newFeaturesButton, &QPushButton::clicked,
