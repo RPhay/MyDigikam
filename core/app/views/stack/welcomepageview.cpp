@@ -51,6 +51,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN GradientWidget : public QWidget
 {
+    Q_OBJECT
+
 public:
 
     GradientWidget(QWidget* const parent = nullptr)
@@ -149,12 +151,10 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QLabel* const title         = new QLabel(QLatin1String("<qt><h1>digiKam</h1></qt>"), headerWidget);
     title->setObjectName(QLatin1String("app-name"));
-    title->setStyleSheet(QLatin1String(
-        "#app-name {"
-        "   color: rgba(255, 255, 255, 0.67);"
-        "   margin-top: 11px;"
-        "}"
-    ));
+    title->setStyleSheet(QLatin1String("#app-name {"
+                                       "   color: rgba(255, 255, 255, 0.67);"
+                                       "   margin-top: 11px;"
+                                       "}"));
 
     QGraphicsDropShadowEffect* const effect = new QGraphicsDropShadowEffect;
     effect->setColor(Qt::white);
@@ -174,7 +174,8 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     smallTitle->setAlignment(Qt::AlignCenter);
     smallTitle->setStyleSheet(QLatin1String("color: black; font-size: 14px;"));
 
-    QLabel* const bigTitle                  = new QLabel(i18n("Welcome to digiKam %1", QLatin1String(digikam_version)), titleWidget);
+    QLabel* const bigTitle                  = new QLabel(i18n("Welcome to digiKam %1",
+                                                         QLatin1String(digikam_version)), titleWidget);
     bigTitle->setAlignment(Qt::AlignCenter);
     bigTitle->setStyleSheet(QLatin1String("color: black; font-size: 24px; font-weight: bold;"));
 
@@ -194,7 +195,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     QPushButton* const aboutButton       = new QPushButton(i18n("About"), tabButtonsWidget);
     QPushButton* const creditsButton     = new QPushButton(i18n("Background Image Credits"), tabButtonsWidget);
 
-    QString buttonStyle                  = QLatin1String("QPushButton { background-color: rgba(200, 200, 200, 200); border: none; padding: 8px; }"
+    QString buttonStyle                  = QLatin1String("QPushButton { background-color: rgba(220, 220, 220, 128); border: none; padding: 8px; }"
                                                          "QPushButton:checked { background-color: rgba(150, 150, 150, 200); }");
     newFeaturesButton->setStyleSheet(buttonStyle);
     aboutButton->setStyleSheet(buttonStyle);
@@ -225,8 +226,9 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const newFeaturesTab       = new QWidget(stackedWidget);
     QLabel* const newFeatures           = new QLabel(featuresTabContent(), stackedWidget);
-    newFeatures->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
+    newFeatures->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     newFeatures->setOpenExternalLinks(true);
+    newFeatures->setWordWrap(true);
     QVBoxLayout* const vlay1            = new QVBoxLayout(newFeaturesTab);
     vlay1->addWidget(newFeatures);
     vlay1->addStretch();
@@ -235,8 +237,9 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const aboutTab             = new QWidget(stackedWidget);
     QLabel* const about                 = new QLabel(aboutTabContent(), stackedWidget);
-    about->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
+    about->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     about->setOpenExternalLinks(true);
+    about->setWordWrap(true);
     QVBoxLayout* const vlay2            = new QVBoxLayout(aboutTab);
     vlay2->addWidget(about);
     vlay2->addStretch();
@@ -245,8 +248,9 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const creditsTab           = new QWidget(stackedWidget);
     QLabel* const credits               = new QLabel(creditsTabContent(), stackedWidget);
-    credits->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
+    credits->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     credits->setOpenExternalLinks(true);
+    credits->setWordWrap(true);
     QVBoxLayout* const vlay3            = new QVBoxLayout(creditsTab);
     vlay3->addWidget(credits);
     vlay3->addStretch();
@@ -372,14 +376,12 @@ QString WelcomePageView::aboutTabContent() const
 {
     QString tabContent =
        i18n("<h3>"
-            "digiKam is an open source photo management program designed to process your digital images on your computer. "
-            "With digiKam you can:"
-            "<li>import,</li>"
-            "<li>organize,</li>"
-            "<li>enhance,</li>"
-            "<li>search,</li>"
-            "<li>export,<li>"
-            "<li>and more...<li>"
+            "digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. "
+            "The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. "
+            "You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera "
+            "and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules "
+            "that process and organize imported items on-the-fly."
+            "With digiKam you can import, organize, enhance, search, export, and more..."
             "</h3>"
             "<h3>Currently, you are in the Album view mode of digiKam.</h3>"
             "<h3>Albums are the places where your files are stored, and are identical to the folders on your hard disk.</h3>"
