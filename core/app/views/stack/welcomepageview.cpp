@@ -224,8 +224,8 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     QStackedWidget* const stackedWidget = new QStackedWidget(plain);
 
     QWidget* const newFeaturesTab       = new QWidget(stackedWidget);
-    newFeaturesTab->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
     QLabel* const newFeatures           = new QLabel(featuresTabContent(), stackedWidget);
+    newFeatures->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
     newFeatures->setOpenExternalLinks(true);
     QVBoxLayout* const vlay1            = new QVBoxLayout(newFeaturesTab);
     vlay1->addWidget(newFeatures);
@@ -234,8 +234,8 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     stackedWidget->addWidget(newFeaturesTab);
 
     QWidget* const aboutTab             = new QWidget(stackedWidget);
-    aboutTab->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
     QLabel* const about                 = new QLabel(aboutTabContent(), stackedWidget);
+    about->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
     about->setOpenExternalLinks(true);
     QVBoxLayout* const vlay2            = new QVBoxLayout(aboutTab);
     vlay2->addWidget(about);
@@ -244,8 +244,8 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     stackedWidget->addWidget(aboutTab);
 
     QWidget* const creditsTab           = new QWidget(stackedWidget);
-    creditsTab->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
     QLabel* const credits               = new QLabel(creditsTabContent(), stackedWidget);
+    credits->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 220); color: black;"));
     credits->setOpenExternalLinks(true);
     QVBoxLayout* const vlay3            = new QVBoxLayout(creditsTab);
     vlay3->addWidget(credits);
@@ -371,12 +371,20 @@ QString WelcomePageView::featuresTabContent() const
 QString WelcomePageView::aboutTabContent() const
 {
     QString tabContent =
-        i18n("<h3>%1</h3><h3>%2</h3><ul>%3</ul>",
-             i18n("digiKam is an open source photo management program designed to import, organize, enhance, search and export your digital images to and from your computer."),
-             i18n("Currently, you are in the Album view mode of digiKam. Albums are the places where your files are stored, and are identical to the folders on your hard disk."),
-             i18n("<li>%1</li><li>%2</li>",
-                  i18n("digiKam has many powerful features which are described in the <a href=\"https://docs.digikam.org/en/index.html\">documentation</a>"),
-                  i18n("The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides information about new versions of digiKam.")));
+       i18n("<h3>"
+            "digiKam is an open source photo management program designed to process your digital images on your computer. "
+            "With digiKam you can:"
+            "<li>import,</li>"
+            "<li>organize,</li>"
+            "<li>enhance,</li>"
+            "<li>search,</li>"
+            "<li>export,<li>"
+            "<li>and more...<li>"
+            "</h3>"
+            "<h3>Currently, you are in the Album view mode of digiKam.</h3>"
+            "<h3>Albums are the places where your files are stored, and are identical to the folders on your hard disk.</h3>"
+            "<li>digiKam has many powerful features which are described in the <a href=\"https://docs.digikam.org/en/index.html\">documentation</a></li>"
+            "<li>The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides information about new versions of digiKam.</li>");
 
     return tabContent;
 }
