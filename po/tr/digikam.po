@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:41+0000\n"
-"PO-Revision-Date: 2026-01-26 17:10+0300\n"
+"POT-Creation-Date: 2026-01-30 00:42+0000\n"
+"PO-Revision-Date: 2026-01-29 16:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1876,7 +1876,7 @@ msgstr "Seçili ögeleri ışık tablası küçük görsel çubuğuna ekleyin."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr "Araştırma"
+msgstr "İnceleme"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -3418,10 +3418,12 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 öge seçili"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1700 user-reports closed on bugzilla."
-msgid "More than 350 user-reports closed on bugzilla."
-msgstr "Bugzilla’da 1700’den fazla kullanıcı raporu kapatıldı."
+#, kde-format
+msgid ""
+"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 user-reports</a> closed on bugzilla."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3430,12 +3432,17 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"İçsel QtAVPlayer, 2026‒01‒24 tarihinde en son sürüme güncellendi. Bu "
+"güncelleme, bir dizi hata düzeltmesi ve başarım iyileştirmesi (yalnızca Qt5 "
+"için) getirdi."
 
 #: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
+"Programda her yerde gösterilmesi için özelleştirilebilir tarih biçimi "
+"desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
@@ -3443,60 +3450,74 @@ msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
+"Renk etiketlerinin adları artık sol kenar çubuğundaki Etiketler sekmesinden, "
+"metne çift tıklayarak özelleştirilebiliyor. Etiket metni boyutu 32 "
+"karakterle sınırlıdır."
 
 #: core/app/views/stack/welcomepageview.cpp:102
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"Albüm simgesi görünümünde, ögeleri Seçim ve Renk Etiketlerine göre sıralama "
+"desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"İçe Aktarma simge görünümünde, ögeleri Seçim ve Renk Etiketlerine göre "
+"sıralama desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
+"Albüm simge görünümünde, ögeleri yönelime göre sıralama desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
+"Albüm simge görünümünde, ögeleri GPS konumuna göre sıralama desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:106
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
+"Albüm simge görünümünde, ögeleri dosya biçimine göre sıralama desteği "
+"eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
+"İçe Aktarma simge görünümünde, ögeleri dosya biçimine göre sıralama desteği "
+"eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
+"Yok sayılan dizin ayarları için düzenli ifade joker karakter desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:109
-#, fuzzy, kde-format
-#| msgid "Copy the all properties in clipboard"
+#, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
-msgstr "Tüm Özellikleri Panoya Kopyala"
+msgstr ""
+"Tüm özellikleri panoya metin olarak kopyalamak için yeni bir düğme eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add new tag to current tag. Current tag is last clicked tag."
+#, kde-format
 msgid "Add new button to open current item is file manager."
-msgstr ""
-"Geçerli künyeye yeni künye ekleyin. Geçerli künye, son tıklanan künyedir."
+msgstr "Geçerli ögeyi dosya yöneticisinde açmak için yeni bir düğme eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
+"Eğer hiçbir simge görünümü ögesi seçilmemişse geçerli albüm istatistikleri "
+"gösterilir."
 
 #: core/app/views/stack/welcomepageview.cpp:112
 #, kde-format
@@ -3504,17 +3525,23 @@ msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr ""
+"Simge görünümünde daha iyi kullanılabilirlik için açık bir gruptaki ögeler "
+"vurgulanır."
 
 #: core/app/views/stack/welcomepageview.cpp:113
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
+"Gruplanmış simge görünümü kaplaması için kullanılabilirlik iyileştirmeleri "
+"yapıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:114
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr ""
+"Simge görünümünde gruplanmış ögelerin görünürlüğünü artırmak için küçük "
+"görsel iyileştirmeleri yapıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
@@ -3522,16 +3549,19 @@ msgid ""
 "Split filters view into 3 separated tabs for better usabilty: Properties, "
 "Tags, and People."
 msgstr ""
+"Süzgeçler görünümü, daha iyi kullanılabilirlik için üç sekmeye ayrıldı: "
+"Özellikler, Künyeler ve Kişiler."
 
 #: core/app/views/stack/welcomepageview.cpp:116
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
-msgstr ""
+msgstr "Oturumlar arasında çöp kutusunun sütun durumları artık kaydediliyor."
 
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
+"Etiket düzenleyicisinde, görsel ve video önizleme araç çubuğu genişletildi."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3539,17 +3569,21 @@ msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
 "magnifier."
 msgstr ""
+"Yeni önizleme araç çubuğu düğmeleri eklendi: Pozlama göstergeleri, renk "
+"yönetimi, ekran üzeri görüntü büyüteci."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
 msgid "Add context-menu to the video player."
-msgstr ""
+msgstr "Video oynatıcısına bağlam menüsü eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
+"Durum çubuğuna yükleme durumu göstergesi eklendi (simge görünümü ve ışık "
+"tablası)."
 
 #: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
@@ -3557,6 +3591,8 @@ msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr ""
+"İçeriğe yakınlaştırmak, tuvali kaydırmak ve önceki/sonraki ögeye geçmek için "
+"dokunmatik yüzey hareketleri desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
@@ -3564,11 +3600,13 @@ msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
 "canvas. Tool Size and zoom factor are customizable."
 msgstr ""
+"Önizleme tuvalinin küçük bir alanında yakınlaştırmak ve keşif için büyüteç "
+"aracı eklendi. Araç boyutu ve yakınlaştırma çarpanı özelleştirilebilirdir."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
-msgstr ""
+msgstr "Önizleme tuvali için fazla ve az pozlama göstergeleri eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
@@ -3576,22 +3614,27 @@ msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr ""
+"Tuval üzerindeki kızak, sarma çubuğu görünürken bir kaplama olarak "
+"gösterilir."
 
 #: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
 msgstr ""
+"GPS simgesine tıklamak, sol kenar çubuğundaki coğrafî konum sekmesini açar."
 
 #: core/app/views/stack/welcomepageview.cpp:126
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
+"Gruplanmış ve sürümlendirilmiş özellikleri göstermek üzere "
+"özelleştirilebilir sütunlar eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
-msgstr ""
+msgstr "Tarih biçimini değiştirmek için gelişmiş yeniden adlandırıcı desteği."
 
 #: core/app/views/stack/welcomepageview.cpp:128
 #, kde-format
@@ -3599,45 +3642,44 @@ msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr ""
+"Ögelere atanmış var olan şablon girdilerini yeni bir şablonla birleştirme "
+"desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:129
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"Görsel düzenleyicisi alanında arka plan tema rengini kullanmak için bu "
-"seçeneği etkinleştirin."
+"Görseller saydamlık kullanıyorsa arka planı düz siyah olarak göstermek "
+"yerine özelleştirmek adına yeni bir slayt gösterisi seçeneği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"Görsel düzenleyicisi alanında arka plan tema rengini kullanmak için bu "
-"seçeneği etkinleştirin."
+"Görseller saydamlık kullanıyorsa arka planı düz siyah olarak göstermek "
+"yerine özelleştirmek adına yeni bir sunu seçeneği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
+"Daha iyi kullanılabilirlik için dosya aktarım aracı tümüyle yeniden yazıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
+"Daha iyi kullanılabilirlik için dosya kopyalama aracı tümüyle yeniden "
+"yazıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
-msgstr ""
+msgstr "Tuval seçimi lastik bandına yürüyen karıncalar efekti eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
@@ -3645,6 +3687,8 @@ msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
+"Eğriler, düzeyler, beyaz dengesi ve siyah–beyaz sepya araçları için seçim "
+"rengi histogram göstergeleri eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
@@ -3652,47 +3696,60 @@ msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
 "history, features, support, download, etc."
 msgstr ""
+"Web sitesinde büyük güncellemeler yapıldı: Ekran görüntüleri, açıklamalar, "
+"geçmiş, özellikler, destek, indirme vb."
 
 #: core/app/views/stack/welcomepageview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
-msgstr "İçsel RAW işletkesi, güncel 2025‒05‒12 anlık görüntüsüne güncellendi."
+msgstr "İçsel RAW işletkesi, güncel 2026‒01‒24 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, fuzzy, kde-format
 #| msgid ""
-#| "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-#| "R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
-#| "X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic "
-#| "DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
-#| "GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-"
-#| "FX30, DSC-HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones "
-#| "with DNG format recorded."
+#| "New RAW camera supported:\n"
+#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+#| "EOS R100, EOS Ra.\n"
+#| "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
+#| "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
+#| "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
+#| "Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+#| "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
+#| "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+#| "TZ220D, DC-S5-II, DC-GH6.\n"
+#| "Pentax KF, K III Monochrome.\n"
+#| "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  "
+#| "ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
+#| "Multiple DJI and Skydio drones.\n"
+#| "Multiple smartphones with DNG format recorded."
 msgid ""
 "New RAW camera supported:\n"
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-"
+"H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-Lux8, SL3, "
+"Q3, M11 Monochrom ; Nikon (standard compression only): Z6-III, Z f, Z30, "
+"Z8 ; Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; Panasonic GH7, S9, DC-G9 "
+"II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; "
+"Pentax KF, K III Monochrome ; Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-"
+"II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; "
+"Multiple DJI and Skydio drones ; Multiple smartphones with DNG format "
+"recorded."
+msgstr ""
+"Desteklenen yeni RAW kameralar:\n"
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra.\n"
 "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
 "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
 "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-"Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+"Nikon (yalnızca standart sıkıştırma): Z6-III, Z f, Z30, Z8.\n"
 "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6.\n"
 "Pentax KF, K III Monochrome.\n"
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-"Multiple DJI and Skydio drones.\n"
-"Multiple smartphones with DNG format recorded."
-msgstr ""
-"Desteklenen yeni RAW kameralar: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
-"X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-"
-"G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6."
-"Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, "
-"DSC-HX95, A1.Multiple DJI ve Skydio uçargözleri. DNG biçimini içeren birden "
-"çok sayıda akıllı telefon."
+"Birden çok DJI ve Skydio uçargözleri.\n"
+"DNG biçimiyle kayıt yapan birden çok akıllı telefon."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
@@ -3715,15 +3772,12 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 7):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 8):"
 msgstr ""
-"digiKam’ın bu sürümündeki yeni özelliklerden bazıları şunlardır (digiKam 7 "
+"digiKam’ın bu sürümündeki yeni özelliklerden bazıları şunlardır (digiKam 8 "
 "ile karşılaştırıldığında):"
 
 #: core/app/views/stack/welcomepageview.cpp:173
@@ -12582,7 +12636,7 @@ msgstr "Düşünce"
 #, kde-format
 msgctxt "Content type"
 msgid "Polls and Surveys"
-msgstr "Anketler ve Araştırmalar"
+msgstr "Anketler ve İncelemeler"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
@@ -15894,7 +15948,7 @@ msgstr "Düşünce"
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Polls & Surveys"
-msgstr "Anketler ve araştırmalar"
+msgstr "Anketler ve incelemeler"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
 #, kde-format
@@ -20899,7 +20953,7 @@ msgstr ""
 "denetlenen</p><p>bir tripod üzerine takılı kamera ile <a href='https://en."
 "wikipedia.org/wiki/Time-lapse_photography'>zaman atlamalı</a> filmler "
 "üretebilirsiniz.</p><p></p><p>Ayrıca TV ekranında gösterilecek geçiş "
-"efektleri ve</p><p>ses parçaları içeren bir video sunumu da "
+"efektleri ve</p><p>ses parçaları içeren bir video sunusu da "
 "oluşturabilirsiniz.</p></qt>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:102
@@ -21871,7 +21925,7 @@ msgstr "Alt yazıları &yazdır "
 #, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
-msgstr "Sunum"
+msgstr "Sunu"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:77
 #, kde-format
@@ -21883,7 +21937,7 @@ msgstr "Başlat"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
-msgstr "Sunumu Başlat"
+msgstr "Sunuyu Başlat"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:89
 #, kde-format
@@ -22003,13 +22057,13 @@ msgstr "Sisteminizde OpenGL desteği kullanılabilir durumda değil."
 #, kde-format
 msgctxt "@title"
 msgid "Presentation"
-msgstr "Sunum"
+msgstr "Sunu"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to render presentation"
-msgstr "Sunumu oluşturmak için bir araç"
+msgstr "Sunuyu oluşturmak için bir araç"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:64
 #, kde-format
@@ -22022,14 +22076,14 @@ msgid ""
 msgstr ""
 "Bu araç, bir dizi ögeyi gelişmiş bir slayt gösterisi olarak sunar."
 "<br><br>OpenGL ve ünlü Ken Burns efektini temel alan çok sayıda geçiş efekti "
-"kullanılabilirdir.<br><br>Sunumunuz sırasında arka plana bir ses parçası "
+"kullanılabilirdir.<br><br>Sununuz sırasında arka plana bir ses parçası "
 "ekleyebilirsiniz."
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Presentation..."
-msgstr "Sunum…"
+msgstr "Sunu…"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
@@ -43402,9 +43456,9 @@ msgid ""
 "amount that each point is corrected by the profile, and the\n"
 "direction of this correction."
 msgstr ""
-"Bu alan bir CIE veya renklilik diyagramını\n"
-"içerir. CIE diyagramı normal görüşe sahip bir\n"
-"kişinin görebileceği tüm renklerin temsilidir.\n"
+"Bu alan bir CIE veya renklilik diyagramını içerir.\n"
+"CIE diyagramı normal görüşe sahip bir kişinin\n"
+"görebileceği tüm renklerin temsilidir.\n"
 "Bu, renkli yelken şeklindeki alanla temsil edilir.\n"
 "Ek olarak, beyaz çerçeveli diyagramın üzerine\n"
 "yerleştirilmiş bir üçgen göreceksiniz. Bu üçgen,\n"
@@ -43731,7 +43785,7 @@ msgstr ""
 "Fotoğraf Odak Bilgisi Çıkarma bileşenlerini yeniden\n"
 "yazma, derin öğrenme modelini kullanıp görselleri\n"
 "sınıflandırmak için Estetik Algılama ve Slayt\n"
-"Gösterisi/Sunum araçları iyileştirmeleri"
+"Gösterisi/Sunu araçları iyileştirmeleri"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:173
 #, kde-format
@@ -55564,7 +55618,7 @@ msgstr "Yeni İlişki"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:245
+#: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #: core/utilities/survey/surveywindow_setup.cpp:47
@@ -61007,27 +61061,27 @@ msgstr "Her içe aktarılan görsel için yürütülecek betiği burada seçin."
 msgid "Drag and drop an image here"
 msgstr "Buraya bir görsel sürükleyip bırakın"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:243
+#: core/utilities/lighttable/lighttablethumbbar.cpp:139
 #, kde-format
 msgid "Show on left panel"
 msgstr "Sol Panelde Göster"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:244
+#: core/utilities/lighttable/lighttablethumbbar.cpp:140
 #, kde-format
 msgid "Show on right panel"
 msgstr "Sağ Panelde Göster"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:246
+#: core/utilities/lighttable/lighttablethumbbar.cpp:142
 #, kde-format
 msgid "Remove item"
 msgstr "Ögeyi Kaldır"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:247
+#: core/utilities/lighttable/lighttablethumbbar.cpp:143
 #, kde-format
 msgid "Clear all"
 msgstr "Tümünü Temizle"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:450
+#: core/utilities/lighttable/lighttablethumbbar.cpp:346
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Buraya görseller sürükleyip bırakın"
@@ -68003,7 +68057,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr "Araştırma"
+msgstr "İnceleme"
 
 #: core/utilities/setup/setup.cpp:85
 #, kde-format
@@ -68012,7 +68066,7 @@ msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
 msgstr ""
-"Araştırma Ayarları\n"
+"İnceleme Ayarları\n"
 "Ögeleri incelemek için kullanılan aracı özelleştirin"
 
 #: core/utilities/setup/setup.cpp:98
@@ -68620,7 +68674,11 @@ msgstr "İçe Aktarılan Ögeler"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr "Araştırma"
+msgstr "İnceleme"
+
+#~| msgid "More than 1700 user-reports closed on bugzilla."
+#~ msgid "More than 350 user-reports closed on bugzilla."
+#~ msgstr "Bugzilla’da 350’den fazla kullanıcı raporu kapatıldı."
 
 #~ msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 #~ msgstr "Kod Qt6 çatısına aktarıldı (halen Qt5 API’si ile uyumlu)."

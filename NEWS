@@ -448,7 +448,7 @@ BUGFIXES:
 372 --> 513505 - digiKam thumbnail view capture time does not display seconds.
 373 --> 494302 - Add a new thumbnails creation option not based based on embedded Exif preview but on the full image data.
 374 --> 515135 - Setting date and time, crash.
-375 --> 
+375 --> 515275 - Cannot change metadata.
 376 --> 
 377 --> 
 378 --> 

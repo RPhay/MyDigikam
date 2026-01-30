@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:41+0000\n"
-"PO-Revision-Date: 2026-01-26 06:23+0100\n"
+"POT-Creation-Date: 2026-01-30 00:42+0000\n"
+"PO-Revision-Date: 2026-01-29 03:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3386,10 +3386,12 @@ msgid "%1/%2 items selected"
 msgstr "მონიშნულია ჩანაწერი %1/%2"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1700 user-reports closed on bugzilla."
-msgid "More than 350 user-reports closed on bugzilla."
-msgstr "1700-ზე მეტი დახურული მომხმარებლის მიერ გახსნილი ანგარიში bugzilla-ზე."
+#, kde-format
+msgid ""
+"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 user-reports</a> closed on bugzilla."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3398,12 +3400,15 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"შიდა QtAVPlayer განახლდა ვერსიამდე 2026-01-24, რომელშიც ბევრი შეცდომა "
+"გასწორდა და გაუმჯობესდა წარმადობა (მხოლოდ Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
+"დაემატა მორგებადი თარიღის ფორმატის პროგრამაში ყველგან ჩვენების მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
@@ -3411,61 +3416,78 @@ msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
+"ფერადი ჭდის სახელები ახლა მორგებადია ჭდეების ჩანართში მარცხენა გვერდითი "
+"პანელიდან ტექსტზე ორჯერ დაწკაპუნებით. ჭდის სტრიქონების ზომა შეზღუდულია 32 "
+"სიმბოლოზე."
 
 #: core/app/views/stack/welcomepageview.cpp:102
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"დაემატა ალბომის ხატულების ხედის ელემენტების აღების და ფერის ჭდეების მიხედვით "
+"დალაგების მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"დაემატა შემოტანის ხატულების ხედის ელემენტების აღების და ფერის ჭდეების "
+"მიხედვით დალაგების მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
+"დაემატა ალბომის ხატულების ხედში ელემენტების ორიენტაციის მიხედვით დალაგების "
+"მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
+"დაემატა ალბომის ხატულების ხედში ელემენტების GPS მდებარეობის მიხედვით "
+"დალაგების მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:106
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
+"დაემატა ალბომის ხატულების ხედში ელემენტების ფაილის ფორმატის მიხედვით "
+"დალაგების მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
+"დაემატა შემოტანისას ხატულების ხედში ელემენტების ფაილის ფორმატის მიხედვით "
+"დალაგების მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
+"დაემატა რეგულარული გამოსახულების ვაილდკარდის მხარდაჭერა გამოტოვებული "
+"საქაღალდეების პარამეტრებისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:109
-#, fuzzy, kde-format
-#| msgid "Copy the all properties in clipboard"
+#, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
-msgstr "ყველა თვისების კოპირება ბუფერში"
+msgstr ""
+"დაემატა ახალი ღილაკი ყველა თვისების ტექსტის სახით ბუფერში დასაკოპირებლად."
 
 #: core/app/views/stack/welcomepageview.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add new tag to current tag. Current tag is last clicked tag."
+#, kde-format
 msgid "Add new button to open current item is file manager."
 msgstr ""
-"ახალი ჭდის დამატება მიმდინარე ჭდისთვის. მიმდინარე ჭდე ისაა, რომელზეც ბოლოს "
-"დააწკაპუნეთ."
+"დაემატა ახალი ღილაკი მიმდინარე ელემენტის ფაილების მმართველში გასახსნელად."
 
 #: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
+"თუ ხატულების ხედის ელემენტი არჩეული არაა, მიმდინარე ალბომის სტატისტიკის "
+"ჩვენება."
 
 #: core/app/views/stack/welcomepageview.cpp:112
 #, kde-format
@@ -3473,17 +3495,23 @@ msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr ""
+"ღია ჯგუფიდან გამოკვეთილი ელემენტების ჩვენება უკეთესად გამოსაყენებლად "
+"ხატულების ხედში."
 
 #: core/app/views/stack/welcomepageview.cpp:113
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
+"გაუმჯობესდა დაჯგუფებული ხატულების ხედის ელემენტების განლაგების "
+"გამოყენებადობა."
 
 #: core/app/views/stack/welcomepageview.cpp:114
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr ""
+"გაუმჯობესდა მინიატურების პანელი ხატულების ხედში დაჯგუფებული ელემენტების "
+"ხილვადობის მხარდაჭერით."
 
 #: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
@@ -3491,16 +3519,21 @@ msgid ""
 "Split filters view into 3 separated tabs for better usabilty: Properties, "
 "Tags, and People."
 msgstr ""
+"ფილტრები გაიყო 3 ცალკე ჩანართად უკეთესი გამოყენებადობისთვის: თვისებები, "
+"ჭდეები და ხალხი."
 
 #: core/app/views/stack/welcomepageview.cpp:116
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
+"ნაგვის ყუთის ხედის სვეტის მდგომარეობის შენახვა და ჩატვირთვა სესიებს შორის."
 
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
+"გაფართოვდა გამოსახულებისა და ვიდეოს მინიატურის პანელის განლაგება ჭდეების "
+"რედაქტორით."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3508,17 +3541,21 @@ msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
 "magnifier."
 msgstr ""
+"დაემატა ახალი მინიატურის პანელის ღილაკები: ექსპოზიციის მაჩვენებლები, ფერების "
+"მართვა, OSD, გამადიდებელი."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
 msgid "Add context-menu to the video player."
-msgstr ""
+msgstr "დაემატა კონტექსტური მენიუ ვიდეოდამკვრელისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
+"დაემატა ჩატვირთვის მიმდინარეობის მაჩვენებელი სტატუსის ველზე (ხატულის ხედები "
+"და სინათლის მაგიდა)."
 
 #: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
@@ -3526,6 +3563,8 @@ msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr ""
+"დაემატა ტრეკპედის ჟესტის მოვლენების მხარდაჭერა შემცველობის გასადიდებლად, "
+"ტილოს ჩასატევად და წინა/შემდეგ ელემენტზე გადასართავად."
 
 #: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
@@ -3533,11 +3572,15 @@ msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
 "canvas. Tool Size and zoom factor are customizable."
 msgstr ""
+"დაემატა გამადიდებელი შუშის ხელსაწყო პატარა მინიატურის ტილოს პატარა ადგილების "
+"გასადიდებლად და დასათვალიერებლად. ხელსაწყოს ზომა და გადიდების კოეფიციენტი "
+"მორგებადია."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
+"მინიატურის ტილოს დაემატა ზედმეტი და არასაკმარისი ექსპოზიციის მაჩვენებლები."
 
 #: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
@@ -3545,22 +3588,27 @@ msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr ""
+"რკინიგზა ტილოზე ნაჩვენებია როგორც გადაფარვა, როცა გადახვევის ზოლი ხილულია."
 
 #: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
 msgstr ""
+"GPS-ის ხატულაზე დაწკაპუნებით გაიხსნება გეოლოკაციის ჩანართი მარცხენა გვერდითი "
+"პანელიდან."
 
 #: core/app/views/stack/welcomepageview.cpp:126
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
+"დაემატა მორგებადი სვეტები დაჯგუფებული და ვერსიების მქონე თვისებების "
+"საჩვენებლად."
 
 #: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
-msgstr ""
+msgstr "ახალი დამატებითი სახელის გადარქმევის მოდიფიკატორის თარიღირის ფორმატი."
 
 #: core/app/views/stack/welcomepageview.cpp:128
 #, kde-format
@@ -3568,43 +3616,45 @@ msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr ""
+"დაემატა ელემენტებზე მინიშებული არსებული ნიმუშის ჩანაწერების ახალ ნიმუშთან "
+"შერწყმის მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:129
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"ჩართეთ ეს ფონის თემის ფერის გამოსაყენებლად გამოსახულების რედაქტორის ადგილში."
+"დაემატა ახალი სლაიდშოუს პარამეტრი ფონის ფერის მოსარგებად შავის მაგიერ, თუ "
+"გამოიყენება გამოსახულებების გამჭვირვალობა."
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"ჩართეთ ეს ფონის თემის ფერის გამოსაყენებლად გამოსახულების რედაქტორის ადგილში."
+"დაემატა ახალი პრეზენტაციის პარამეტრი ფონის ფერის მოსარგებად შავის მაგიერ, თუ "
+"გამოიყენება გამოსახულებების გამჭვირვალობა."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
+"თავიდან გადაიწერა ფაილის გადაცემის ხელსაწყოს ინტერფეისი უკეთესი "
+"გამოყენებადობისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
+"თავიდან გადაიწერა ფაილების კოპირების ხელსაწყოს ინტერფეისი უკეთესი "
+"გამოყენებადობისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
-msgstr ""
+msgstr "ტილოს მონიშვნის რეზინის ზოლს დაემატა ჭიანჭველების მსვლელობის ეფექტი."
 
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
@@ -3612,6 +3662,8 @@ msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
+"დაემატა ფერის არჩევის ჰისტოგრამის მაჩვენებელი მრუდეებისთვის, დონეებისთვის, "
+"თეთრის ბალანსისთვის და შავთეთრი სეპიას ხელსაწყოებისთვის."
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
@@ -3619,46 +3671,60 @@ msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
 "history, features, support, download, etc."
 msgstr ""
+"ვებგვერდის დიდი განახლება შემცველობისა და დიზანის შესახებ. მაგ: ეკრანის "
+"ანაბეჭდები, აღწერა, ისტორია, თვისებები, მხარდაჭერა, გადმოწერა და ა.შ."
 
 #: core/app/views/stack/welcomepageview.cpp:136
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
-msgstr "განახლდა შიდა RAW ძრავა უკანასკნელ Libraw-ის ვერსიამდე 2025-05-12."
+msgstr "განახლდა შიდა RAW ძრავა უკანასკნელ Libraw-ის ვერსიამდე 2026-01-24."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, fuzzy, kde-format
 #| msgid ""
-#| "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-#| "R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
-#| "X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic "
-#| "DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
-#| "GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-"
-#| "FX30, DSC-HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones "
-#| "with DNG format recorded."
+#| "New RAW camera supported:\n"
+#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+#| "EOS R100, EOS Ra.\n"
+#| "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
+#| "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
+#| "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
+#| "Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+#| "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
+#| "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+#| "TZ220D, DC-S5-II, DC-GH6.\n"
+#| "Pentax KF, K III Monochrome.\n"
+#| "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  "
+#| "ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
+#| "Multiple DJI and Skydio drones.\n"
+#| "Multiple smartphones with DNG format recorded."
 msgid ""
 "New RAW camera supported:\n"
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-"
+"H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-Lux8, SL3, "
+"Q3, M11 Monochrom ; Nikon (standard compression only): Z6-III, Z f, Z30, "
+"Z8 ; Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; Panasonic GH7, S9, DC-G9 "
+"II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; "
+"Pentax KF, K III Monochrome ; Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-"
+"II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; "
+"Multiple DJI and Skydio drones ; Multiple smartphones with DNG format "
+"recorded."
+msgstr ""
+"მხარდაჭერილია ახალი RAW კამერები:\n"
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra.\n"
 "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
 "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
 "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-"Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
+"Nikon (მხოლოდ სტანდარტული შეკუმშვით): Z6-III, Z f, Z30, Z8.\n"
 "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6.\n"
 "Pentax KF, K III Monochrome.\n"
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-"Multiple DJI and Skydio drones.\n"
-"Multiple smartphones with DNG format recorded."
-msgstr ""
-"მხარდაჭერილია ახალი RAW კამერები: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
-"X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-"
-"G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6."
-"Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, "
-"DSC-HX95, A1.მრავალი DJI-ის და Skydio-ის დრონი. ბევრი ტელეფონი DNG ფორმატში."
+"მრავალი DJI და Skydio დრონები.\n"
+"ბევრი ტელეფონი DNG ფორმატის ჩანაწერით."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
@@ -3681,15 +3747,12 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 7):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 8):"
 msgstr ""
-"ზოგიერთი ახალი ფუნქცია digiKam-ის ამ რელიზში. მათ შორის (digiKam 7-თან "
+"ზოგიერთი ახალი ფუნქცია digiKam-ის ამ რელიზში. მათ შორის (digiKam 8-თან "
 "შედარებით):"
 
 #: core/app/views/stack/welcomepageview.cpp:173
@@ -30074,7 +30137,7 @@ msgstr "გლუვი რეჟიმი"
 msgid ""
 "With this button, the curve type is constrained to be a smooth line with "
 "tension."
-msgstr ""
+msgstr "ამ ღილაკით მრუდის ტიპი შეზღუდულია, რომ იყოს გლუვი ხაზი დაძაბულობით."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:160
 #, kde-format
@@ -32274,6 +32337,8 @@ msgid ""
 "This value in degrees will be added to main angle value to set fine target "
 "angle."
 msgstr ""
+"ეს მნიშვნელობა გრადუსებში დაემატება მთავარი კუთხის მნიშვნელობას ზუსტი "
+"სამიზნე კუთხის დასაყენებლად."
 
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:94
 #, kde-format
@@ -32281,6 +32346,9 @@ msgid ""
 "Enable this option to apply the anti-aliasing filter to the rotated image. "
 "In order to smooth the target image, it will be blurred a little."
 msgstr ""
+"ჩართეთ ეს პარამეტრი მობრუნებულ გამოსახულებაზე მოგლუვების ფილტრის "
+"გადასატარებლად. იმისათვის რომ სამიზნე გამოსახულება გლუვი იყოს, ის ოდნავ "
+"გაბუნდოვნდება."
 
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:98
 #, kde-format
@@ -42090,6 +42158,8 @@ msgid ""
 "UPNP/DLNA export tool\n"
 "and Healing clone tool for image editor"
 msgstr ""
+"UPNP/DLNA-ით გატანის ხელსაწყო\n"
+"და აღმდგენი კლონის ხელსაწყო გამოსახულებების რედაქტორისთვის"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:201
 #, kde-format
@@ -53670,7 +53740,7 @@ msgstr "ახალი ურთიერთობა"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:245
+#: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #: core/utilities/survey/surveywindow_setup.cpp:47
@@ -58915,27 +58985,27 @@ msgstr ""
 msgid "Drag and drop an image here"
 msgstr "გადმოათრიეთ და დააგდეთ გამოსახულება აქ"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:243
+#: core/utilities/lighttable/lighttablethumbbar.cpp:139
 #, kde-format
 msgid "Show on left panel"
 msgstr "ჩვენება მარცხენა პანელზე"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:244
+#: core/utilities/lighttable/lighttablethumbbar.cpp:140
 #, kde-format
 msgid "Show on right panel"
 msgstr "ჩვენება მარჯვენა პანელზე"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:246
+#: core/utilities/lighttable/lighttablethumbbar.cpp:142
 #, kde-format
 msgid "Remove item"
 msgstr "ელემენტის წაშლა"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:247
+#: core/utilities/lighttable/lighttablethumbbar.cpp:143
 #, kde-format
 msgid "Clear all"
 msgstr "ყველას გასუფთავება"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:450
+#: core/utilities/lighttable/lighttablethumbbar.cpp:346
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "გადმოათრიეთ და დაყარეთ სურათები აქ"
@@ -61950,7 +62020,7 @@ msgstr "ხის ხედები"
 #: core/utilities/setup/album/setupcategory.cpp:78
 #, kde-format
 msgid "Manage categories to sort and re-arrange album tree-view."
-msgstr ""
+msgstr "მართეთ კატეგორიები ალბომის ხის ხედის დასალაგებლად და გადასალაგებლად."
 
 #: core/utilities/setup/album/setupcategory.cpp:85
 #, kde-format
@@ -63065,6 +63135,8 @@ msgstr "არასაკმარისი ექსპო&ზიციის 
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
+"მოირგეთ ფერი, რომელის გამოსახულების რედაქტორში არასაკმარისი ექსპოზიციის "
+"პიქსელების ამოსაცნობად იქნება გამოყენებული."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:140
 #, kde-format
@@ -66071,6 +66143,10 @@ msgstr "ელემენტების შემოტანა"
 #, kde-format
 msgid "Survey"
 msgstr "მიმოხილვა"
+
+#~ msgid "More than 350 user-reports closed on bugzilla."
+#~ msgstr ""
+#~ "350-ზე მეტი დახურული მომხმარებლის მიერ გახსნილი ანგარიში bugzilla-ზე."
 
 #~ msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 #~ msgstr ""

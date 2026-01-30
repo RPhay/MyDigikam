@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:41+0000\n"
+"POT-Creation-Date: 2026-01-30 00:42+0000\n"
 "PO-Revision-Date: 2025-10-19 21:02+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3448,7 +3448,10 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:98
 #, kde-format
-msgid "More than 350 user-reports closed on bugzilla."
+msgid ""
+"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 user-reports</a> closed on bugzilla."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:99
@@ -3682,19 +3685,15 @@ msgstr ""
 msgid ""
 "New RAW camera supported:\n"
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra.\n"
-"Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
-"Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
-"Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-"Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
-"Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
-"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
-"TZ220D, DC-S5-II, DC-GH6.\n"
-"Pentax KF, K III Monochrome.\n"
-"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
-"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-"Multiple DJI and Skydio drones.\n"
-"Multiple smartphones with DNG format recorded."
+"R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-"
+"H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-Lux8, SL3, "
+"Q3, M11 Monochrom ; Nikon (standard compression only): Z6-III, Z f, Z30, "
+"Z8 ; Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; Panasonic GH7, S9, DC-G9 "
+"II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; "
+"Pentax KF, K III Monochrome ; Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-"
+"II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; "
+"Multiple DJI and Skydio drones ; Multiple smartphones with DNG format "
+"recorded."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:153
@@ -55650,7 +55649,7 @@ msgstr "Új-Zéland"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
-#: core/utilities/lighttable/lighttablethumbbar.cpp:245
+#: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #: core/utilities/survey/surveywindow_setup.cpp:47
@@ -61033,27 +61032,27 @@ msgstr "Adja meg azt a szkriptet, ami minden importált képre lefut."
 msgid "Drag and drop an image here"
 msgstr "Húzzon egy képet ide"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:243
+#: core/utilities/lighttable/lighttablethumbbar.cpp:139
 #, kde-format
 msgid "Show on left panel"
 msgstr "Megjelenítés a bal panelen"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:244
+#: core/utilities/lighttable/lighttablethumbbar.cpp:140
 #, kde-format
 msgid "Show on right panel"
 msgstr "Megjelenítés a jobb panelen"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:246
+#: core/utilities/lighttable/lighttablethumbbar.cpp:142
 #, kde-format
 msgid "Remove item"
 msgstr "Elem eltávolítása"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:247
+#: core/utilities/lighttable/lighttablethumbbar.cpp:143
 #, kde-format
 msgid "Clear all"
 msgstr "Minden törlése"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:450
+#: core/utilities/lighttable/lighttablethumbbar.cpp:346
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Húzzon képeket ide"
