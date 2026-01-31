@@ -56,7 +56,7 @@ class Q_DECL_HIDDEN GradientWidget : public QWidget
 public:
 
     GradientWidget(QWidget* const parent = nullptr)
-        : QWidget(parent)
+        : QWidget (parent)
     {
     }
 
@@ -66,8 +66,8 @@ protected:
     {
         QPainter painter(this);
         QLinearGradient gradient(0, 0, 0, height());
-        gradient.setColorAt(0,    QColor("#223c54"));
-        gradient.setColorAt(0.55, QColor("#01080F"));
+        gradient.setColorAt(0,    QColor("#01080F"));
+        gradient.setColorAt(0.55, QColor("#223c54"));
         painter.fillRect(rect(), gradient);
     }
 };
@@ -168,6 +168,16 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     headerLayout->addStretch();
     headerLayout->addWidget(title);
 
+    // ---
+
+    GradientWidget* const grad2       = new GradientWidget(plain);
+    QWidget* const footerWidget       = new QWidget(plain);
+    QHBoxLayout* const footerLayout   = new QHBoxLayout(footerWidget);
+    footerLayout->setContentsMargins(10, 10, 10, 10);
+    footerLayout->addStretch();
+
+    // ---
+
     QWidget* const titleWidget              = new QWidget(plain);
 
     QLabel* const smallTitle                = new QLabel(DAboutData::digiKamSlogan(), titleWidget);
@@ -260,39 +270,47 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     vlay3->setContentsMargins(80, 10, 80, 10);
     stackedWidget->addWidget(creditsTab);
 
+    // ---
+
     connect(newFeaturesButton, &QPushButton::clicked,
-            [stackedWidget]()
+            this, [stackedWidget, newFeaturesTab]()
         {
-            stackedWidget->setCurrentIndex(0);
+            stackedWidget->setCurrentWidget(newFeaturesTab);
         }
     );
 
     connect(aboutButton, &QPushButton::clicked,
-            [stackedWidget]()
+            this, [stackedWidget, aboutTab]()
         {
-            stackedWidget->setCurrentIndex(1);
-
+            stackedWidget->setCurrentWidget(aboutTab);
         }
     );
 
     connect(creditsButton, &QPushButton::clicked,
-            [stackedWidget]()
+            this, [stackedWidget, creditsTab]()
         {
-            stackedWidget->setCurrentIndex(2);
+            stackedWidget->setCurrentWidget(creditsTab);
         }
     );
+
+    // ---
 
     QGridLayout* const grid = new QGridLayout(plain);
     grid->addWidget(grad,             0, 0, 1, 3);
     grid->addWidget(headerWidget,     0, 0, 1, 3);
     grid->addWidget(background,       1, 0, 3, 3);
+    grid->addWidget(grad2,            4, 0, 9, 3);
+    grid->addWidget(footerWidget,     4, 0, 9, 3);
     grid->addWidget(titleWidget,      1, 0, 1, 3, Qt::AlignCenter);
     grid->addWidget(tabButtonsWidget, 2, 0, 1, 3, Qt::AlignCenter);
-    grid->addWidget(stackedWidget,    3, 0, 1, 3);
+    grid->addWidget(stackedWidget,    3, 0, 9, 3);
     grid->setContentsMargins(0, 0, 0, 0);
     grid->setSpacing(0);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(3, 10);
+    grid->setRowStretch(4, 10);
+
+    // ---
 
     sv->setWidget(plain);
 
@@ -378,14 +396,12 @@ QString WelcomePageView::featuresTabContent() const
 QString WelcomePageView::aboutTabContent() const
 {
     QString tabContent =
-       i18n("<h3>"
-            "digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. "
+       i18n("<h3>digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. "
             "The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. "
             "You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera "
             "and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules "
-            "that process and organize imported items on-the-fly."
-            "With digiKam you can import, organize, enhance, search, export, and more..."
-            "</h3>"
+            "that process and organize imported items on-the-fly.</h3>"
+            "<h3>With digiKam you can import, organize, enhance, search, export, and more...</h3>"
             "<h3>Currently, you are in the Album view mode of digiKam.</h3>"
             "<h3>Albums are the places where your files are stored, and are identical to the folders on your hard disk.</h3>"
             "<li>digiKam has many powerful features which are described in the <a href=\"https://docs.digikam.org/en/index.html\">documentation</a></li>"
