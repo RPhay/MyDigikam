@@ -55,7 +55,7 @@ class Q_DECL_HIDDEN GradientWidget : public QWidget
 
 public:
 
-    GradientWidget(QWidget* const parent = nullptr)
+    explicit GradientWidget(QWidget* const parent = nullptr)
         : QWidget (parent)
     {
     }
@@ -80,7 +80,7 @@ class Q_DECL_HIDDEN ResizableBackgroundWidget : public QWidget
 
 public:
 
-    ResizableBackgroundWidget(QWidget* const parent = nullptr)
+    explicit ResizableBackgroundWidget(QWidget* const parent = nullptr)
         : QWidget(parent),
           backgroundLabel(new QLabel(this))
     {
