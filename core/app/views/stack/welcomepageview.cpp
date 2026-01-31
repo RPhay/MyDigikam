@@ -162,7 +162,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     effect->setOffset(0, 0);
     title->setGraphicsEffect(effect);
 
-    QHBoxLayout* const headerLayout         = new QHBoxLayout(headerWidget);
+    QHBoxLayout* const headerLayout      = new QHBoxLayout(headerWidget);
     headerLayout->setContentsMargins(10, 10, 10, 10);
     headerLayout->addWidget(logo);
     headerLayout->addStretch();
@@ -170,26 +170,26 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     // ---
 
-    GradientWidget* const grad2       = new GradientWidget(plain);
-    QWidget* const footerWidget       = new QWidget(plain);
-    QHBoxLayout* const footerLayout   = new QHBoxLayout(footerWidget);
+    GradientWidget* const grad2          = new GradientWidget(plain);
+    QWidget* const footerWidget          = new QWidget(plain);
+    QHBoxLayout* const footerLayout      = new QHBoxLayout(footerWidget);
     footerLayout->setContentsMargins(10, 10, 10, 10);
     footerLayout->addStretch();
 
     // ---
 
-    QWidget* const titleWidget              = new QWidget(plain);
+    QWidget* const titleWidget           = new QWidget(plain);
 
-    QLabel* const smallTitle                = new QLabel(DAboutData::digiKamSlogan(), titleWidget);
+    QLabel* const smallTitle             = new QLabel(DAboutData::digiKamSlogan(), titleWidget);
     smallTitle->setAlignment(Qt::AlignCenter);
     smallTitle->setStyleSheet(QLatin1String("color: black; font-size: 14px;"));
 
-    QLabel* const bigTitle                  = new QLabel(i18n("Welcome to digiKam %1",
-                                                         QLatin1String(digikam_version)), titleWidget);
+    QLabel* const bigTitle               = new QLabel(i18n("Welcome to digiKam %1",
+                                                      QLatin1String(digikam_version)), titleWidget);
     bigTitle->setAlignment(Qt::AlignCenter);
     bigTitle->setStyleSheet(QLatin1String("color: black; font-size: 24px; font-weight: bold;"));
 
-    QVBoxLayout* const titleLayout          = new QVBoxLayout(titleWidget);
+    QVBoxLayout* const titleLayout       = new QVBoxLayout(titleWidget);
     titleLayout->setContentsMargins(0, 0, 0, 20);
     titleLayout->addWidget(smallTitle);
     titleLayout->addWidget(bigTitle);
@@ -221,7 +221,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     // ---
 
-    QButtonGroup* const tabButtonGroup = new QButtonGroup(plain);
+    QButtonGroup* const tabButtonGroup   = new QButtonGroup(plain);
     tabButtonGroup->addButton(newFeaturesButton);
     tabButtonGroup->addButton(aboutButton);
     tabButtonGroup->addButton(creditsButton);
@@ -232,39 +232,39 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     // ---
 
-    QStackedWidget* const stackedWidget = new QStackedWidget(plain);
+    QStackedWidget* const stackedWidget  = new QStackedWidget(plain);
 
-    QWidget* const newFeaturesTab       = new QWidget(stackedWidget);
-    QLabel* const newFeatures           = new QLabel(featuresTabContent(), stackedWidget);
+    QWidget* const newFeaturesTab        = new QWidget(stackedWidget);
+    QLabel* const newFeatures            = new QLabel(featuresTabContent(), stackedWidget);
     newFeatures->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     newFeatures->setOpenExternalLinks(true);
     newFeatures->setWordWrap(true);
     newFeatures->setMargin(10);
-    QVBoxLayout* const vlay1            = new QVBoxLayout(newFeaturesTab);
+    QVBoxLayout* const vlay1             = new QVBoxLayout(newFeaturesTab);
     vlay1->addWidget(newFeatures);
     vlay1->addStretch();
     vlay1->setContentsMargins(80, 10, 80, 10);
     stackedWidget->addWidget(newFeaturesTab);
 
-    QWidget* const aboutTab             = new QWidget(stackedWidget);
-    QLabel* const about                 = new QLabel(aboutTabContent(), stackedWidget);
+    QWidget* const aboutTab              = new QWidget(stackedWidget);
+    QLabel* const about                  = new QLabel(aboutTabContent(), stackedWidget);
     about->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     about->setOpenExternalLinks(true);
     about->setWordWrap(true);
     about->setMargin(10);
-    QVBoxLayout* const vlay2            = new QVBoxLayout(aboutTab);
+    QVBoxLayout* const vlay2             = new QVBoxLayout(aboutTab);
     vlay2->addWidget(about);
     vlay2->addStretch();
     vlay2->setContentsMargins(80, 10, 80, 10);
     stackedWidget->addWidget(aboutTab);
 
-    QWidget* const creditsTab           = new QWidget(stackedWidget);
-    QLabel* const credits               = new QLabel(creditsTabContent(), stackedWidget);
+    QWidget* const creditsTab            = new QWidget(stackedWidget);
+    QLabel* const credits                = new QLabel(creditsTabContent(), stackedWidget);
     credits->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
     credits->setOpenExternalLinks(true);
     credits->setWordWrap(true);
     credits->setMargin(10);
-    QVBoxLayout* const vlay3            = new QVBoxLayout(creditsTab);
+    QVBoxLayout* const vlay3             = new QVBoxLayout(creditsTab);
     vlay3->addWidget(credits);
     vlay3->addStretch();
     vlay3->setContentsMargins(80, 10, 80, 10);
@@ -314,7 +314,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     sv->setWidget(plain);
 
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
+    QVBoxLayout* const mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->setSpacing(0);
     mainLayout->addWidget(sv);
