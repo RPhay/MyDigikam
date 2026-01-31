@@ -66,8 +66,8 @@ protected:
     {
         QPainter painter(this);
         QLinearGradient gradient(0, 0, 0, height());
-        gradient.setColorAt(0,    QColor("#01080F"));
-        gradient.setColorAt(0.55, QColor("#223c54"));
+        gradient.setColorAt(0,    QColor(qRgb(0x01, 0x08, 0x0F)));
+        gradient.setColorAt(0.55, QColor(qRgb(0x22, 0x3c, 0x54)));
         painter.fillRect(rect(), gradient);
     }
 };
