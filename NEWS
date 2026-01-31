@@ -69,6 +69,7 @@ File Transfer   : Complete rewrite the GUI for a better usability.
 Image Editor    : Add marching-ants effect to the canvas selection rubber band.
 Editor Plugins  : Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.
 Web Site        : Huge update of the contents and design eg. screenshots, description, history, features, support, download, etc.
+Advanced Search : New options to search empty properties registered in the database.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -449,7 +450,7 @@ BUGFIXES:
 373 --> 494302 - Add a new thumbnails creation option not based based on embedded Exif preview but on the full image data.
 374 --> 515135 - Setting date and time, crash.
 375 --> 515275 - Cannot change metadata.
-376 --> 
+376 --> 479133 - Add a new option to search for empty/zero length metadata property fields.
 377 --> 
 378 --> 
 379 --> 
