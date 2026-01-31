@@ -362,19 +362,20 @@ QString WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.");
     newFeatures << i18n("Huge web site update about contents and design eg. screenshots, description, history, features, support, download, etc.");
     newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-01-24.");
-    newFeatures << i18n("New RAW camera supported:"
-                        "<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul>"
-                        "<ul>Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul>"
-                        "<ul>Hasselblad  CFV-50c, CFV-100c, X2D-100c ; </ul>"
-                        "<ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ; </ul>"
-                        "<ul>Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ; </ul>"
-                        "<ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </ul>"
-                        "<ul>Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; </ul>"
-                        "<ul>Pentax KF, K III Monochrome ; </ul>"
-                        "<ul>Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; </ul>"
-                        "<ul>Multiple DJI and Skydio drones ; </ul>"
-                        "<ul>Multiple smartphones with DNG format recorded.</ul>"
-                       );
+    newFeatures << i18n("New RAW camera supported:")
+                + appendSubList(QStringList()
+                     << i18n("Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ;")
+                     << i18n("Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;")
+                     << i18n("Hasselblad  CFV-50c, CFV-100c, X2D-100c ;")
+                     << i18n("Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;")
+                     << i18n("Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;")
+                     << i18n("Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;")
+                     << i18n("Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ;")
+                     << i18n("Pentax KF, K III Monochrome ;")
+                     << i18n("Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;")
+                     << i18n("Multiple DJI and Skydio drones ;")
+                     << i18n("Multiple smartphones with DNG format recorded.")
+                );
 
     // Add new features here...
 
@@ -391,6 +392,18 @@ QString WelcomePageView::featuresTabContent() const
                          featureItems);
 
     return tabContent;
+}
+
+QString WelcomePageView::appendSubList(const QStringList& list) const
+{
+    QString sub;
+
+    for (const QString& str : list)
+    {
+        sub.append(QLatin1String("<ul>") + str + QLatin1String("</ul>"));
+    }
+
+    return sub;
 }
 
 QString WelcomePageView::aboutTabContent() const

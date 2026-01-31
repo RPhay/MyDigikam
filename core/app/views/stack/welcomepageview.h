@@ -20,6 +20,7 @@
 // Qt includes
 
 #include <QString>
+#include <QStringList>
 #include <QWidget>
 
 // Local includes
@@ -41,9 +42,10 @@ public:
 
 private:
 
-    QString featuresTabContent() const;
-    QString aboutTabContent()    const;
-    QString creditsTabContent()  const;
+    QString appendSubList(const QStringList& list) const;
+    QString featuresTabContent()                   const;
+    QString aboutTabContent()                      const;
+    QString creditsTabContent()                    const;
 };
 
 } // namespace Digikam
