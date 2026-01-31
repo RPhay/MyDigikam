@@ -369,6 +369,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         }
 
         make.clear();
+        
         QMap<QString, QString>::const_iterator it;
 
         for (it = makeMap.constBegin() ; it != makeMap.constEnd() ; ++it)
@@ -404,6 +405,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         }
 
         model.clear();
+
         QMap<QString, QString>::const_iterator it;
 
         for (it = modelMap.constBegin() ; it != modelMap.constEnd() ; ++it)
@@ -645,6 +647,34 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
+    else if (name == QLatin1String("nocapturesettings"))
+    {
+        SearchFieldChoice* const field = new SearchFieldChoice(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Capture Settings"), i18n("Return items without selected capture settings ..."));
+
+        QStringList noCaptureSettings;
+        noCaptureSettings
+        << QLatin1String("aperture")   << i18n("Aperture")
+        << QLatin1String("focallength")<< i18n("Focal length")
+        << QLatin1String("focallength35") << i18n("35mm equivalent focal length")
+        << QLatin1String("exposuretime")  << i18n("Exposure time")
+        << QLatin1String("exposureprogram") << i18n("Automatic exposure program")
+        << QLatin1String("exposuremode")    << i18n("Automatic or manual exposure")
+        << QLatin1String("sensitivity")     << i18n("ISO film speed")
+        << QLatin1String("meteringmode")    << i18n("Metering mode")
+        << QLatin1String("flashmode")       << i18nc("@label: flash mode used", "Flash mode")
+        << QLatin1String("whitebalance")    << i18n("White balance")
+        << QLatin1String("whitebalancecolortemperature") << i18n("White balance color temperature")
+        << QLatin1String("subjectdistance") << i18n("Subject Distance")
+        << QLatin1String("subjectdistancecategory") << i18n("Subject Distance Category");
+
+
+        field->setChoice(noCaptureSettings);
+
+        return field;
+    }
+
 
     else if (name == QLatin1String("latitude"))
     {
@@ -745,6 +775,24 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         locations.sort();
 
         field->setChoice(locations);
+
+        return field;
+    }
+    else if (name == QLatin1String("noplaces"))
+    {
+        SearchFieldChoice* const field = new SearchFieldChoice(parent);
+        field->setFieldName(name);
+
+        field->setText(i18n("Place"), i18n("Return items without selected place information ..."));
+
+        QStringList noPlaceFields;
+        noPlaceFields
+            << QLatin1String("country")       << i18n("Country")
+            << QLatin1String("provinceState") << i18n("State/Province")
+            << QLatin1String("city")          << i18n("City")
+            << QLatin1String("location")      << i18n("Sublocation");
+
+        field->setChoice(noPlaceFields);
 
         return field;
     }

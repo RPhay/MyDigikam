@@ -814,6 +814,106 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         fieldQuery.addChoiceIntField(QLatin1String("ImageMetadata.subjectDistanceCategory"));
     }
+    else if (name == QLatin1String("nocapturesettings"))
+    {
+        QStringList values;
+
+        if (relation == SearchXml::OneOf)
+        {
+            values = reader.valueToStringList();
+
+            if (values.isEmpty())
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "List for OneOf is empty";
+                return false;
+            }
+        }
+        else
+        {
+            values << reader.value();
+        }
+
+        bool firstCondition = true;
+        sql                += QLatin1String(" (");
+
+        for (const QString& value : std::as_const(values))
+        {
+            ItemQueryBuilder::addSqlOperator(sql, SearchXml::Or, firstCondition);
+            firstCondition = false;
+
+            if      (value == QLatin1String("aperture"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.aperture IS NULL OR "
+                                        "ImageMetadata.aperture = 0) ");
+            }
+            else if (value == QLatin1String("focallength"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.focalLength IS NULL OR "
+                                        "ImageMetadata.focalLength = 0) ");
+            }
+            else if (value == QLatin1String("focallength35"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.focalLength35 IS NULL OR "
+                                        "ImageMetadata.focalLength35 = 0) ");
+            }
+            else if (value == QLatin1String("exposuretime"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.exposureTime IS NULL OR "
+                                        "ImageMetadata.exposureTime = 0) ");
+            }
+            else if (value == QLatin1String("exposureprogram"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.exposureProgram IS NULL OR "
+                                        "ImageMetadata.exposureProgram = 0) ");
+            }
+            else if (value == QLatin1String("exposuremode"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.exposureMode IS NULL OR "
+                                        "ImageMetadata.exposureMode = 0) ");
+            }
+            else if (value == QLatin1String("sensitivity"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.sensitivity IS NULL OR "
+                                        "ImageMetadata.sensitivity = 0) ");
+            }
+            else if (value == QLatin1String("flashmode"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.flashMode IS NULL OR "
+                                        "ImageMetadata.flashMode = 0) ");
+            }
+            else if (value == QLatin1String("whitebalance"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.whiteBalance IS NULL OR "
+                                        "ImageMetadata.whiteBalance = 0) ");
+            }
+            else if (value == QLatin1String("whitebalancecolortemperature"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.whiteBalanceColorTemperature IS NULL OR "
+                                        "ImageMetadata.whiteBalanceColorTemperature = 0) ");
+            }
+            else if (value == QLatin1String("meteringmode"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.meteringMode IS NULL OR "
+                                        "ImageMetadata.meteringMode = 0) ");
+            }
+            else if (value == QLatin1String("subjectdistance"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.subjectDistance IS NULL OR "
+                                        "ImageMetadata.subjectDistance = 0) ");
+            }
+            else if (value == QLatin1String("subjectdistancecategory"))
+            {
+                sql += QString::fromUtf8(" (ImageMetadata.subjectDistanceCategory IS NULL OR "
+                                        "ImageMetadata.subjectDistanceCategory = 0) ");
+            }
+            else
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Unknown nocapturesettings key:" << value;
+            }
+        }
+
+        sql += QLatin1String(" ) ");
+    }
     else if (name == QLatin1String("position"))
     {
         fieldQuery.addPosition();
@@ -886,6 +986,59 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             sql          += QLatin1String("WHERE ImageProperties.property = ? AND ImageProperties.value = ?) ) ");
             *boundValues << name << value;
         }
+    }
+    else if (name == QLatin1String("noplaces"))
+    {
+        QStringList values;
+
+        if (relation == SearchXml::OneOf)
+        {
+            values = reader.valueToStringList();
+
+            if (values.isEmpty())
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "List for OneOf is empty";
+                return false;
+            }
+        }
+        else
+        {
+            values << reader.value();
+        }
+
+        bool firstCondition = true;
+        sql                += QLatin1String(" (");
+
+        for (const QString& value : std::as_const(values))
+        {
+            ItemQueryBuilder::addSqlOperator(sql, SearchXml::Or, firstCondition);
+            firstCondition = false;
+
+            if (
+                (value == QLatin1String("provinceState")) ||
+                (value == QLatin1String("location"))      ||
+                (value == QLatin1String("country"))       ||
+                (value == QLatin1String("city"))
+            )
+            {
+                sql += QLatin1String(
+                    " (Images.id NOT IN ("
+                    "   SELECT imageid FROM ImageProperties "
+                    "   WHERE ImageProperties.property = ? "
+                    "     AND ImageProperties.value IS NOT NULL "
+                    "     AND ImageProperties.value <> ''"
+                    " )) "
+                );
+
+                *boundValues << value;   
+            }
+            else
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Unknown noplaces key:" << value;
+            }
+        }
+
+        sql += QLatin1String(" ) ");
     }
     else if (name == QLatin1String("creator"))
     {

@@ -171,6 +171,7 @@ void SearchGroup::setup(Type type)
     group->addField(SearchField::createField(QLatin1String("meteringmode"),                 group));
     group->addField(SearchField::createField(QLatin1String("subjectdistance"),              group));
     group->addField(SearchField::createField(QLatin1String("subjectdistancecategory"),      group));
+    group->addField(SearchField::createField(QLatin1String("nocapturesettings"),                     group));
 
     m_fieldLabels << label;
     m_fieldGroups << group;
@@ -194,6 +195,7 @@ void SearchGroup::setup(Type type)
     group->addField(SearchField::createField(QLatin1String("provinceState"), group));
     group->addField(SearchField::createField(QLatin1String("city"),          group));
     group->addField(SearchField::createField(QLatin1String("location"),      group));
+    group->addField(SearchField::createField(QLatin1String("noplaces"),      group));
 
     m_fieldLabels << label;
     m_fieldGroups << group;
