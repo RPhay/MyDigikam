@@ -394,7 +394,7 @@ QString WelcomePageView::featuresTabContent() const
         featureItems += i18n("<li>%1</li>", newFeatures.at(i));
     }
 
-    QString tabContent = i18n("<h3>Some of the new features in this release of digiKam include (compared to digiKam 8):</h3><ul>%1</ul>",
+    QString tabContent = i18n("<h3>Some of the new features in this release of digiKam include (compared to digiKam version 8):</h3><ul>%1</ul>",
                          featureItems);
 
     return tabContent;
@@ -435,23 +435,23 @@ QString WelcomePageView::creditsTabContent()  const
         QString::fromUtf8(
                 "<table>"
                   "<tr>"
-                    "<td width=\"10%\"><h4>%1</h4></td>"
+                    "<td width=\"10%\">%1</td>"
                     "<td><h4>%2</h4></td>"
                   "</tr>"
                   "<tr>"
-                    "<td width=\"10%\"><h4>%3</h4></td>"
+                    "<td width=\"10%\">%3</td>"
                     "<td><h4>%4</h4></td>"
                   "</tr>"
                   "<tr>"
-                    "<td width=\"10%\"><h4>%5</h4></td>"
+                    "<td width=\"10%\">%5</td>"
                     "<td><h4>%6</h4></td>"
                   "</tr>"
                   "<tr>"
-                    "<td width=\"10%\"><h4>%7</h4></td>"
+                    "<td width=\"10%\">%7</td>"
                     "<td><h4>%8</h4></td>"
                   "</tr>"
                   "<tr>"
-                    "<td width=\"10%\"><h4>%9</h4></td>"
+                    "<td width=\"10%\">%9</td>"
                     "<td><h4>%10</h4></td>"
                   "</tr>"
                 "</table>"
