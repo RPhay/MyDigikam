@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-30 00:42+0000\n"
-"PO-Revision-Date: 2026-01-29 15:12+0100\n"
+"POT-Creation-Date: 2026-01-31 00:41+0000\n"
+"PO-Revision-Date: 2026-01-30 12:56+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1061,7 +1061,7 @@ msgstr "Naam:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:243
+#: core/app/views/stack/welcomepageview.cpp:425
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2759,7 +2759,7 @@ msgstr "&Help"
 msgid "Main Toolbar"
 msgstr "Hoofdwerkbalk"
 
-#: core/app/main/main.cpp:237 core/app/views/stack/welcomepageview.cpp:227
+#: core/app/main/main.cpp:237
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3451,15 +3451,40 @@ msgstr "Verwijderen"
 msgid "%1/%2 items selected"
 msgstr "%1/%2 items geselecteerd"
 
-#: core/app/views/stack/welcomepageview.cpp:98
+#: core/app/views/stack/welcomepageview.cpp:177
+#: core/utilities/firstrun/welcomepage.cpp:34
+#, kde-format
+msgid "Welcome to digiKam %1"
+msgstr "Welkom bij digiKam %1"
+
+#: core/app/views/stack/welcomepageview.cpp:194
+#, kde-format
+msgid "New Features"
+msgstr "Nieuwe mogelijkheden"
+
+#: core/app/views/stack/welcomepageview.cpp:195
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
+#, kde-format
+msgid "About"
+msgstr "Info over"
+
+#: core/app/views/stack/welcomepageview.cpp:196
+#, kde-format
+msgid "Background Image Credits"
+msgstr "Dankbetuiging achtergrondafbeelding"
+
+#: core/app/views/stack/welcomepageview.cpp:308
 #, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">350 user-reports</a> closed on bugzilla."
 msgstr ""
+"Meer dan <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 gebruikersrapporten</a> gesloten in bugzilla."
 
-#: core/app/views/stack/welcomepageview.cpp:99
+#: core/app/views/stack/welcomepageview.cpp:309
 #, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
@@ -3469,7 +3494,7 @@ msgstr ""
 "Interne QtAVPlayer is bijgewerkt tot de laatste upstream 2026-01-24 die een "
 "aantal reparaties van bugs en prestatie verbeteringen meebrengt (alleen Qt5)."
 
-#: core/app/views/stack/welcomepageview.cpp:100
+#: core/app/views/stack/welcomepageview.cpp:310
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
@@ -3477,7 +3502,7 @@ msgstr ""
 "Ondersteuning toegevoegd van aanpasbaar datumopmaak om alles in het "
 "programma te tonen."
 
-#: core/app/views/stack/welcomepageview.cpp:101
+#: core/app/views/stack/welcomepageview.cpp:311
 #, kde-format
 msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
@@ -3487,49 +3512,49 @@ msgstr ""
 "zijbalk door dubbel te klikken op de tekst. Grootte van labelteksten zijn "
 "beperkt tot 32 tekens."
 
-#: core/app/views/stack/welcomepageview.cpp:102
+#: core/app/views/stack/welcomepageview.cpp:312
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
 "Ondersteuning van sorteren van items in Album pictogramweergave door keuze- "
 "en kleurlabels toegevoegd."
 
-#: core/app/views/stack/welcomepageview.cpp:103
+#: core/app/views/stack/welcomepageview.cpp:313
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
 "Ondersteuning van sorteren van items in Import pictogramweergave door keuze- "
 "en kleurlabels."
 
-#: core/app/views/stack/welcomepageview.cpp:104
+#: core/app/views/stack/welcomepageview.cpp:314
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
 "Ondersteuning van sorteren van items in Album pictogramweergave op "
 "oriëntatie toegevoegd."
 
-#: core/app/views/stack/welcomepageview.cpp:105
+#: core/app/views/stack/welcomepageview.cpp:315
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
 "Ondersteuning van sorteren van items in Album pictogramweergave op GPS "
 "locatie toegevoegd."
 
-#: core/app/views/stack/welcomepageview.cpp:106
+#: core/app/views/stack/welcomepageview.cpp:316
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
 "Ondersteuning van sorteren van items in Album pictogramweergave op "
 "bestandsformaat toegevoegd."
 
-#: core/app/views/stack/welcomepageview.cpp:107
+#: core/app/views/stack/welcomepageview.cpp:317
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
 "Ondersteuning van sorteren van items in Import pictogramweergave op "
 "bestandsformaat toegevoegd."
 
-#: core/app/views/stack/welcomepageview.cpp:108
+#: core/app/views/stack/welcomepageview.cpp:318
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
@@ -3537,26 +3562,26 @@ msgstr ""
 "Ondersteuning van reguliere expressie met jokertekens toegevoegd voor "
 "negeren van instellingen voor mappen."
 
-#: core/app/views/stack/welcomepageview.cpp:109
+#: core/app/views/stack/welcomepageview.cpp:319
 #, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
 msgstr ""
 "Nieuwe knop toegevoegd om alle eigenschappen als tekst naar het klembord te "
 "kopiëren."
 
-#: core/app/views/stack/welcomepageview.cpp:110
+#: core/app/views/stack/welcomepageview.cpp:320
 #, kde-format
 msgid "Add new button to open current item is file manager."
 msgstr "Nieuwe knop toegevoegd om huidig item in bestandsbeheerder te openen."
 
-#: core/app/views/stack/welcomepageview.cpp:111
+#: core/app/views/stack/welcomepageview.cpp:321
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
 "Als geen item in pictogramweergave is geselecteerd, toon de huidige "
 "albumstatistieken."
 
-#: core/app/views/stack/welcomepageview.cpp:112
+#: core/app/views/stack/welcomepageview.cpp:322
 #, kde-format
 msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
@@ -3565,14 +3590,14 @@ msgstr ""
 "Items tonen uit een open groep geaccentueerd voor een betere bruikbaarheid "
 "met pictogramweergave."
 
-#: core/app/views/stack/welcomepageview.cpp:113
+#: core/app/views/stack/welcomepageview.cpp:323
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
 "Bruikbaarheidsverbeteringen van de gegroepeerde overlay van items in "
 "pictogramweergave."
 
-#: core/app/views/stack/welcomepageview.cpp:114
+#: core/app/views/stack/welcomepageview.cpp:324
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
@@ -3580,7 +3605,7 @@ msgstr ""
 "Verbeteringen van miniaturenbalk om zichtbaarheid van gegroepeerde items te "
 "ondersteunen zoals met pictogramweergave."
 
-#: core/app/views/stack/welcomepageview.cpp:115
+#: core/app/views/stack/welcomepageview.cpp:325
 #, kde-format
 msgid ""
 "Split filters view into 3 separated tabs for better usabilty: Properties, "
@@ -3589,19 +3614,19 @@ msgstr ""
 "Filtersweergave gesplitst in 3 gescheiden tabbladen voor betere "
 "bruikbaarheid: Eigenschappen, Tags en Mensen."
 
-#: core/app/views/stack/welcomepageview.cpp:116
+#: core/app/views/stack/welcomepageview.cpp:326
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr "Kolomstatussen van prullenbakweergave laden en opslaan tussen sessies."
 
-#: core/app/views/stack/welcomepageview.cpp:117
+#: core/app/views/stack/welcomepageview.cpp:327
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
 "De overlay van werkbalk met afbeeldings- en videovoorbeelden uitbreiden met "
 "bewerker van labels."
 
-#: core/app/views/stack/welcomepageview.cpp:118
+#: core/app/views/stack/welcomepageview.cpp:328
 #, kde-format
 msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
@@ -3610,12 +3635,12 @@ msgstr ""
 "Nieuwe knoppen op voorbeeldwerkbalk toegevoegd: indicatoren voor belichting, "
 "kleurbeheer, OSD, vergrootglas."
 
-#: core/app/views/stack/welcomepageview.cpp:119
+#: core/app/views/stack/welcomepageview.cpp:329
 #, kde-format
 msgid "Add context-menu to the video player."
 msgstr "Context-menu toevoegen aan de videospeler."
 
-#: core/app/views/stack/welcomepageview.cpp:120
+#: core/app/views/stack/welcomepageview.cpp:330
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
@@ -3623,7 +3648,7 @@ msgstr ""
 "Indicator voor voortgang van laden toegevoegd aan de statusbalk "
 "(Pictogramweergave en Lichttafel)."
 
-#: core/app/views/stack/welcomepageview.cpp:121
+#: core/app/views/stack/welcomepageview.cpp:331
 #, kde-format
 msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
@@ -3632,7 +3657,7 @@ msgstr ""
 "Ondersteuning van gebaren op aanraakpad toegevoegd om de inhoud te zoomen, "
 "het werkveld te verschuiven en naar vorige/volgende items te gaan."
 
-#: core/app/views/stack/welcomepageview.cpp:122
+#: core/app/views/stack/welcomepageview.cpp:332
 #, kde-format
 msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
@@ -3642,13 +3667,13 @@ msgstr ""
 "voorbeeldwerkveld in te zoomen en te onderzoeken. Grootte van hulpmiddel en "
 "zoomfactor zijn aan te passen."
 
-#: core/app/views/stack/welcomepageview.cpp:123
+#: core/app/views/stack/welcomepageview.cpp:333
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
 "Over- en onderbelichtingsindicatoren toegevoegd voor het voorbeeldwerkveld."
 
-#: core/app/views/stack/welcomepageview.cpp:124
+#: core/app/views/stack/welcomepageview.cpp:334
 #, kde-format
 msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
@@ -3657,7 +3682,7 @@ msgstr ""
 "Spoor over het werkveld wordt getoond als aan overlay wanneer de schuifbalk "
 "zichtbaar is."
 
-#: core/app/views/stack/welcomepageview.cpp:125
+#: core/app/views/stack/welcomepageview.cpp:335
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
@@ -3665,19 +3690,19 @@ msgstr ""
 "Klikken op het GPS-pictogramoverlay opent het tabblad Geolocatie uit de "
 "linker zijbalk."
 
-#: core/app/views/stack/welcomepageview.cpp:126
+#: core/app/views/stack/welcomepageview.cpp:336
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
 "Aanpasbare kolommen toegevoegd om gegroepeerde en van versie voorziene "
 "eigenschappen te tonen."
 
-#: core/app/views/stack/welcomepageview.cpp:127
+#: core/app/views/stack/welcomepageview.cpp:337
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
 msgstr "Nieuwe datumopmaak voor geavanceerd programma voor hernoemen "
 
-#: core/app/views/stack/welcomepageview.cpp:128
+#: core/app/views/stack/welcomepageview.cpp:338
 #, kde-format
 msgid ""
 "Add support to merge existing template entries assigned in items with a new "
@@ -3686,7 +3711,7 @@ msgstr ""
 "Ondersteuning toegevoegd om bestaande sjabloonitems toegekend in items met "
 "een nieuw sjabloon te mengen."
 
-#: core/app/views/stack/welcomepageview.cpp:129
+#: core/app/views/stack/welcomepageview.cpp:339
 #, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
@@ -3695,7 +3720,7 @@ msgstr ""
 "Nieuwe optie voor diashow om de kleurachtergrond aan te passen in plaats van "
 "puur zwart in geval van gebruik van transparantie in afbeeldingen."
 
-#: core/app/views/stack/welcomepageview.cpp:130
+#: core/app/views/stack/welcomepageview.cpp:340
 #, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
@@ -3704,28 +3729,28 @@ msgstr ""
 "Nieuwe optie voor presentatie om de kleurachtergrond aan te passen in plaats "
 "van puur zwart in geval van gebruik van transparantie in afbeeldingen."
 
-#: core/app/views/stack/welcomepageview.cpp:131
+#: core/app/views/stack/welcomepageview.cpp:341
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
 "Compleet herschreven het hulpmiddel voor GUI van bestandsoverdracht voor een "
 "betere bruikbaarheid."
 
-#: core/app/views/stack/welcomepageview.cpp:132
+#: core/app/views/stack/welcomepageview.cpp:342
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
 "Compleet herschreven het hulpmiddel voor GUI van bestanden kopiëren voor een "
 "betere bruikbaarheid."
 
-#: core/app/views/stack/welcomepageview.cpp:133
+#: core/app/views/stack/welcomepageview.cpp:343
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
 "Marcherende-mieren-effect toegevoegd op het selectie-elastiek van het "
 "werkveld."
 
-#: core/app/views/stack/welcomepageview.cpp:134
+#: core/app/views/stack/welcomepageview.cpp:344
 #, kde-format
 msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
@@ -3734,7 +3759,7 @@ msgstr ""
 "Indicatoren van het keuzekleurhistogram voor de krommen, niveaus, witbalans "
 "en Sepia hulpmiddelen zwart & wit."
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:345
 #, kde-format
 msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
@@ -3743,32 +3768,40 @@ msgstr ""
 "Enorm bijgewerkte website over inhoud en ontwerp bijv. schermafdrukken, "
 "beschrijving, geschiedenis, mogelijkheden, ondersteuning, downloaden, etc."
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:346
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
 msgstr ""
 "Interne RAW-engine bijgewerkt tot laatste Libraw momentopname 2026-01-24."
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:347
 #, fuzzy, kde-format
 #| msgid ""
 #| "New RAW camera supported:\n"
 #| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
-#| "EOS R100, EOS Ra.\n"
-#| "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
-#| "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
-#| "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-#| "Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
-#| "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
-#| "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
-#| "TZ220D, DC-S5-II, DC-GH6.\n"
-#| "Pentax KF, K III Monochrome.\n"
-#| "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  "
-#| "ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-#| "Multiple DJI and Skydio drones.\n"
-#| "Multiple smartphones with DNG format recorded."
+#| "EOS R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-"
+#| "H2, X-H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-"
+#| "Lux8, SL3, Q3, M11 Monochrom ; Nikon (standard compression only): Z6-III, "
+#| "Z f, Z30, Z8 ; Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; Panasonic "
+#| "GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
+#| "II, DC-GH6 ; Pentax KF, K III Monochrome ; Sony ZV-E10M2, UMC-R10C, A9-"
+#| "III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
+#| "ILME-FX30, A1 ; Multiple DJI and Skydio drones ; Multiple smartphones "
+#| "with DNG format recorded."
 msgid ""
-"New RAW camera supported:\n"
+"New RAW camera supported:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 "
+"Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul><ul>Fujifilm X-T50, GFX "
+"100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul><ul>Hasselblad  CFV-50c, "
+"CFV-100c, X2D-100c ; </ul><ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ; "
+"</ul><ul>Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ; </"
+"ul><ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </ul><ul>Panasonic GH7, "
+"S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
+"GH6 ; </ul><ul>Pentax KF, K III Monochrome ; </ul><ul>Sony ZV-E10M2, UMC-"
+"R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 "
+"(A7R-V), ILME-FX30, A1 ; </ul><ul>Multiple DJI and Skydio drones ; </"
+"ul><ul>Multiple smartphones with DNG format recorded.</ul>"
+msgstr ""
+"Nieuwe ondersteunde RAW camera's:\n"
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-"
 "H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-Lux8, SL3, "
@@ -3777,138 +3810,69 @@ msgid ""
 "II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6 ; "
 "Pentax KF, K III Monochrome ; Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-"
 "II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; "
-"Multiple DJI and Skydio drones ; Multiple smartphones with DNG format "
-"recorded."
-msgstr ""
-"Nieuwe ondersteunde RAW camera's:\n"
-"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra.\n"
-"Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
-"Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
-"Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-"Nikon (alleen standaard compressie): Z6-III, Z f, Z30, Z8.\n"
-"Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
-"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
-"TZ220D, DC-S5-II, DC-GH6.\n"
-"Pentax KF, K III Monochrome.\n"
-"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
-"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-"Multiple DJI and Skydio drones.\n"
-"Meerdere smartphones met in DNG-formaat opgenomen.formaat opgenomen."
+"Multiple DJI and Skydio drones ; Meerdere smartphones met in DNG-formaat "
+"opgenomen."
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:363
 #, kde-format
 msgid "...and much more."
 msgstr "...en nog veel meer."
 
-#: core/app/views/stack/welcomepageview.cpp:159
-#, kde-format
-msgid "<li>%1</li><br>"
+#: core/app/views/stack/welcomepageview.cpp:369
+#, fuzzy, kde-format
+#| msgid "<li>%1</li><br>"
+msgid "<li>%1</li>"
 msgstr "<li>%1</li><br>"
 
-#: core/app/views/stack/welcomepageview.cpp:162
-#, kde-format
-msgid "New Features"
-msgstr "Nieuwe mogelijkheden"
-
-#: core/app/views/stack/welcomepageview.cpp:164
-#, kde-format
-msgid "<h3>%1</h3><ul>%2</ul>"
-msgstr "<h3>%1</h3><ul>%2</ul>"
-
-#: core/app/views/stack/welcomepageview.cpp:165
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:372
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some of the new features in this release of digiKam include (compared to "
+#| "digiKam 8):"
 msgid ""
-"Some of the new features in this release of digiKam include (compared to "
-"digiKam 8):"
+"<h3>Some of the new features in this release of digiKam include (compared to "
+"digiKam 8):</h3><ul>%1</ul>"
 msgstr ""
 "Enige van de nieuwe mogelijkheden in deze uitgave van digiKam omvatten "
 "(vergeleken met digiKam 8):"
 
-#: core/app/views/stack/welcomepageview.cpp:173
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
-#, kde-format
-msgid "About"
-msgstr "Info over"
-
-#: core/app/views/stack/welcomepageview.cpp:175
-#, kde-format
-msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
-msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
-
-#: core/app/views/stack/welcomepageview.cpp:176
+#: core/app/views/stack/welcomepageview.cpp:381
 #, kde-format
 msgid ""
-"digiKam is an open source photo management program designed to import, "
-"organize, enhance, search and export your digital images to and from your "
-"computer."
+"<h3>digiKam is an advanced open-source digital photo management application "
+"that runs on Linux, Windows, and MacOS. The application provides a "
+"comprehensive set of tools for importing, managing, editing, and sharing "
+"photos and raw files. You can use digiKam’s import capabilities to easily "
+"transfer photos, raw files, and videos directly from your camera and "
+"external storage devices (SD cards, USB disks, etc.). The application allows "
+"you to configure import settings and rules that process and organize "
+"imported items on-the-fly.With digiKam you can import, organize, enhance, "
+"search, export, and more...</h3><h3>Currently, you are in the Album view "
+"mode of digiKam.</h3><h3>Albums are the places where your files are stored, "
+"and are identical to the folders on your hard disk.</h3><li>digiKam has many "
+"powerful features which are described in the <a href=\"https://docs.digikam."
+"org/en/index.html\">documentation</a></li><li>The <a href=\"https://www."
+"digikam.org\">digiKam homepage</a> provides information about new versions "
+"of digiKam.</li>"
 msgstr ""
-"digiKam is een open-source fotobeheerprogramma ontworpen om digitale "
-"afbeeldingen te importeren, te organiseren, te verbeteren, te zoeken en te "
-"exporteren naar en van uw computer."
 
-#: core/app/views/stack/welcomepageview.cpp:177
-#, kde-format
-msgid ""
-"Currently, you are in the Album view mode of digiKam. Albums are the places "
-"where your files are stored, and are identical to the folders on your hard "
-"disk."
-msgstr ""
-"U bent nu in de modus Albumweergave van digiKam. Albums zijn de plaatsen "
-"waar uw bestanden zijn opgeslagen en zijn gelijk aan de mappen op uw harde "
-"schijf."
-
-#: core/app/views/stack/welcomepageview.cpp:178
-#, kde-format
-msgid "<li>%1</li><li>%2</li>"
-msgstr "<li>%1</li><li>%2</li>"
-
-#: core/app/views/stack/welcomepageview.cpp:179
-#, kde-format
-msgid ""
-"digiKam has many powerful features which are described in the <a href="
-"\"https://docs.digikam.org/en/index.html\">documentation</a>"
-msgstr ""
-"digiKam heeft vele krachtige mogelijkheden die beschreven zijn in de <a href="
-"\"https://docs.digikam.org/en/index.html\">documentatie</a>"
-
-#: core/app/views/stack/welcomepageview.cpp:180
-#, kde-format
-msgid ""
-"The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
-"information about new versions of digiKam."
-msgstr ""
-"De <a href=\"https://www.digikam.org\">Homepagina van digiKam</a> biedt "
-"informatie over nieuwe versies van digiKam."
-
-#: core/app/views/stack/welcomepageview.cpp:235
-#: core/utilities/firstrun/welcomepage.cpp:34
-#, kde-format
-msgid "Welcome to digiKam %1"
-msgstr "Welkom bij digiKam %1"
-
-#: core/app/views/stack/welcomepageview.cpp:238
-#, kde-format
-msgid "Background Image Credits"
-msgstr "Dankbetuiging achtergrondafbeelding"
-
-#: core/app/views/stack/welcomepageview.cpp:241
+#: core/app/views/stack/welcomepageview.cpp:423
 #, kde-format
 msgid "Author:"
 msgstr "Auteur:"
 
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:424
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Locatie:"
 
-#: core/app/views/stack/welcomepageview.cpp:244
+#: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
 msgid "Camera:"
 msgstr "Camera:"
 
-#: core/app/views/stack/welcomepageview.cpp:245
+#: core/app/views/stack/welcomepageview.cpp:427
 #, kde-format
 msgid "Lens:"
 msgstr "Lens:"
@@ -69212,6 +69176,47 @@ msgstr "Items importeren"
 #, kde-format
 msgid "Survey"
 msgstr "Overzicht"
+
+#~ msgid "<h3>%1</h3><ul>%2</ul>"
+#~ msgstr "<h3>%1</h3><ul>%2</ul>"
+
+#~ msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
+#~ msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
+
+#~ msgid ""
+#~ "digiKam is an open source photo management program designed to import, "
+#~ "organize, enhance, search and export your digital images to and from your "
+#~ "computer."
+#~ msgstr ""
+#~ "digiKam is een open-source fotobeheerprogramma ontworpen om digitale "
+#~ "afbeeldingen te importeren, te organiseren, te verbeteren, te zoeken en "
+#~ "te exporteren naar en van uw computer."
+
+#~ msgid ""
+#~ "Currently, you are in the Album view mode of digiKam. Albums are the "
+#~ "places where your files are stored, and are identical to the folders on "
+#~ "your hard disk."
+#~ msgstr ""
+#~ "U bent nu in de modus Albumweergave van digiKam. Albums zijn de plaatsen "
+#~ "waar uw bestanden zijn opgeslagen en zijn gelijk aan de mappen op uw "
+#~ "harde schijf."
+
+#~ msgid "<li>%1</li><li>%2</li>"
+#~ msgstr "<li>%1</li><li>%2</li>"
+
+#~ msgid ""
+#~ "digiKam has many powerful features which are described in the <a href="
+#~ "\"https://docs.digikam.org/en/index.html\">documentation</a>"
+#~ msgstr ""
+#~ "digiKam heeft vele krachtige mogelijkheden die beschreven zijn in de <a "
+#~ "href=\"https://docs.digikam.org/en/index.html\">documentatie</a>"
+
+#~ msgid ""
+#~ "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
+#~ "information about new versions of digiKam."
+#~ msgstr ""
+#~ "De <a href=\"https://www.digikam.org\">Homepagina van digiKam</a> biedt "
+#~ "informatie over nieuwe versies van digiKam."
 
 #~| msgid "More than 1700 user-reports closed on bugzilla."
 #~ msgid "More than 350 user-reports closed on bugzilla."
