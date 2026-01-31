@@ -29,7 +29,7 @@ class LightTableItemListModel : public ItemListModel
 public:
 
     explicit LightTableItemListModel(QWidget* const parent);
-    ~LightTableItemListModel();
+    ~LightTableItemListModel()                                                                        override;
 
     void clearLightTableState();
 
