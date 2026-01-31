@@ -277,10 +277,13 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QStackedWidget* const stackedWidget  = new QStackedWidget(plain);
     stackedWidget->setContentsMargins(0, 0, 0, 0);
+    QString labelsStyle                  = QLatin1String("background: rgba(240, 240, 240, 128); "
+                                                         "color: black; border-radius: 15px; "
+                                                         "padding: 10px;");
 
     QWidget* const newFeaturesTab        = new QWidget(stackedWidget);
     QLabel* const newFeatures            = new QLabel(featuresTabContent(), stackedWidget);
-    newFeatures->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black; border-radius: 15px; padding: 10px;"));
+    newFeatures->setStyleSheet(labelsStyle);
     newFeatures->setOpenExternalLinks(true);
     newFeatures->setWordWrap(true);
     newFeatures->setMargin(10);
@@ -292,7 +295,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const aboutTab              = new QWidget(stackedWidget);
     QLabel* const about                  = new QLabel(aboutTabContent(), stackedWidget);
-    about->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black; border-radius: 15px; padding: 10px;"));
+    about->setStyleSheet(labelsStyle);
     about->setOpenExternalLinks(true);
     about->setWordWrap(true);
     about->setMargin(10);
@@ -304,7 +307,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const creditsTab            = new QWidget(stackedWidget);
     QLabel* const credits                = new QLabel(creditsTabContent(), stackedWidget);
-    credits->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black; border-radius: 15px; padding: 10px;"));
+    credits->setStyleSheet(labelsStyle);
     credits->setOpenExternalLinks(true);
     credits->setWordWrap(true);
     credits->setMargin(10);
