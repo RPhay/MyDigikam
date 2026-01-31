@@ -56,7 +56,6 @@
 |. . . modules                                                | Cmake scripts to find extra dependencies                                |
 |. . . templates                                              | Cmake template files used at configuration time                         |
 |. . data                                                     | Application data files will be hosted here                              |
-|. . . about                                                  | Welcome page files (HTML + CSS)                                         |
 |. . . colorschemes                                           | GUI Color scheme files                                                  |
 |. . . database                                               | Database XML configuration files                                        |
 |. . . facesengine                                            | Face detection and recognition data files                               |
