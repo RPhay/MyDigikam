@@ -451,7 +451,7 @@ BUGFIXES:
 374 --> 515135 - Setting date and time, crash.
 375 --> 515275 - Cannot change metadata.
 376 --> 479133 - Add a new option to search for empty/zero length metadata property fields.
-377 --> 
+377 --> 467715 - No option for searching for empty/zero length location fields.
 378 --> 
 379 --> 
 380 --> 
