@@ -210,12 +210,18 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     newFeaturesButton->setStyleSheet(buttonStyle);
     newFeaturesButton->setAutoDefault(false);
     newFeaturesButton->setShortcutEnabled(false);
+    newFeaturesButton->setFocusPolicy(Qt::NoFocus);
+    newFeaturesButton->setShortcut(QKeySequence());
     aboutButton->setStyleSheet(buttonStyle);
     aboutButton->setAutoDefault(false);
     aboutButton->setShortcutEnabled(false);
+    aboutButton->setFocusPolicy(Qt::NoFocus);
+    aboutButton->setShortcut(QKeySequence());
     creditsButton->setStyleSheet(buttonStyle);
     creditsButton->setAutoDefault(false);
     creditsButton->setShortcutEnabled(false);
+    creditsButton->setFocusPolicy(Qt::NoFocus);
+    creditsButton->setShortcut(QKeySequence());
 
     // ---
 
