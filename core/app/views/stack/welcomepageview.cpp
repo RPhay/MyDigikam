@@ -86,6 +86,7 @@ public:
     {
         backgroundLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
         backgroundLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+        backgroundLabel->setMargin(0);
 
         QVBoxLayout* const layout = new QVBoxLayout(this);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -141,7 +142,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
                                                     QLatin1String("digikam/about/images/body-background.webp")));
     background->setBackgroundPixmap(backgroundPixmap);
 
-    GradientWidget* const grad  = new GradientWidget(plain);
+    GradientWidget* const gradHeader            = new GradientWidget(plain);
 
     QWidget* const headerWidget = new QWidget(plain);
     QLabel* const logo          = new QLabel(headerWidget);
@@ -162,7 +163,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     effect->setOffset(0, 0);
     title->setGraphicsEffect(effect);
 
-    QHBoxLayout* const headerLayout      = new QHBoxLayout(headerWidget);
+    QHBoxLayout* const headerLayout         = new QHBoxLayout(headerWidget);
     headerLayout->setContentsMargins(10, 10, 10, 10);
     headerLayout->addWidget(logo);
     headerLayout->addStretch();
@@ -170,7 +171,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     // ---
 
-    GradientWidget* const grad2          = new GradientWidget(plain);
+    GradientWidget* const gradFooter     = new GradientWidget(plain);
     QWidget* const footerWidget          = new QWidget(plain);
     QHBoxLayout* const footerLayout      = new QHBoxLayout(footerWidget);
     footerLayout->setContentsMargins(10, 10, 10, 10);
@@ -308,10 +309,10 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     // ---
 
     QGridLayout* const grid = new QGridLayout(plain);
-    grid->addWidget(grad,             0, 0, 1, 3);
+    grid->addWidget(gradHeader,       0, 0, 1, 3);
     grid->addWidget(headerWidget,     0, 0, 1, 3);
     grid->addWidget(background,       1, 0, 3, 3);
-    grid->addWidget(grad2,            4, 0, 9, 3);
+    grid->addWidget(gradFooter,       4, 0, 9, 3);
     grid->addWidget(footerWidget,     4, 0, 9, 3);
     grid->addWidget(titleWidget,      1, 0, 1, 3, Qt::AlignCenter);
     grid->addWidget(tabButtonsWidget, 2, 0, 1, 3, Qt::AlignCenter);
