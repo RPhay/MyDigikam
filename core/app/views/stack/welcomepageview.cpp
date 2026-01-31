@@ -165,6 +165,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QHBoxLayout* const headerLayout         = new QHBoxLayout(headerWidget);
     headerLayout->setContentsMargins(10, 10, 10, 10);
+    headerLayout->setSpacing(0);
     headerLayout->addWidget(logo);
     headerLayout->addStretch();
     headerLayout->addWidget(title);
@@ -174,7 +175,8 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     GradientWidget* const gradFooter     = new GradientWidget(plain);
     QWidget* const footerWidget          = new QWidget(plain);
     QHBoxLayout* const footerLayout      = new QHBoxLayout(footerWidget);
-    footerLayout->setContentsMargins(10, 10, 10, 10);
+    footerLayout->setContentsMargins(0, 0, 0, 0);
+    footerLayout->setSpacing(0);
     footerLayout->addStretch();
 
     // ---
@@ -192,15 +194,13 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QVBoxLayout* const titleLayout       = new QVBoxLayout(titleWidget);
     titleLayout->setContentsMargins(0, 0, 0, 20);
+    titleLayout->setSpacing(0);
     titleLayout->addWidget(smallTitle);
     titleLayout->addWidget(bigTitle);
 
     // ---
 
     QWidget* const tabButtonsWidget      = new QWidget(plain);
-    QHBoxLayout* const tabButtonsLayout  = new QHBoxLayout(tabButtonsWidget);
-    tabButtonsLayout->setContentsMargins(0, 0, 0, 0);
-    tabButtonsLayout->setSpacing(10);
 
     QPushButton* const newFeaturesButton = new QPushButton(i18n("New Features"), tabButtonsWidget);
     QPushButton* const aboutButton       = new QPushButton(i18n("About"), tabButtonsWidget);
@@ -226,6 +226,9 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     // ---
 
+    QHBoxLayout* const tabButtonsLayout  = new QHBoxLayout(tabButtonsWidget);
+    tabButtonsLayout->setContentsMargins(0, 0, 0, 0);
+    tabButtonsLayout->setSpacing(10);
     tabButtonsLayout->addStretch();
     tabButtonsLayout->addWidget(newFeaturesButton);
     tabButtonsLayout->addWidget(aboutButton);
