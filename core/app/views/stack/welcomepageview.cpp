@@ -139,7 +139,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     ResizableBackgroundWidget* const background = new ResizableBackgroundWidget(plain);
     QPixmap backgroundPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                    QLatin1String("digikam/about/images/body-background.webp")));
+                                                    QLatin1String("digikam/data/body-background.webp")));
     background->setBackgroundPixmap(backgroundPixmap);
 
     GradientWidget* const gradHeader            = new GradientWidget(plain);

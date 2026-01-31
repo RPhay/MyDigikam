@@ -6,7 +6,6 @@
 
 add_subdirectory(icons)
 add_subdirectory(pics)
-add_subdirectory(about)
 add_subdirectory(colorschemes)
 add_subdirectory(database)
 add_subdirectory(geolocation)
