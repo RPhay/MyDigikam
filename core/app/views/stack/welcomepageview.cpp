@@ -205,11 +205,17 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     QPushButton* const aboutButton       = new QPushButton(i18n("About"), tabButtonsWidget);
     QPushButton* const creditsButton     = new QPushButton(i18n("Background Image Credits"), tabButtonsWidget);
 
-    QString buttonStyle                  = QLatin1String("QPushButton { background-color: rgba(220, 220, 220, 128); border: none; padding: 8px; }"
+    QString buttonStyle                  = QLatin1String("QPushButton { background-color: rgba(220, 220, 220, 128); border: none; border-radius: 8px; padding: 8px; }"
                                                          "QPushButton:checked { background-color: rgba(150, 150, 150, 200); }");
     newFeaturesButton->setStyleSheet(buttonStyle);
+    newFeaturesButton->setAutoDefault(false);
+    newFeaturesButton->setShortcutEnabled(false);
     aboutButton->setStyleSheet(buttonStyle);
+    aboutButton->setAutoDefault(false);
+    aboutButton->setShortcutEnabled(false);
     creditsButton->setStyleSheet(buttonStyle);
+    creditsButton->setAutoDefault(false);
+    creditsButton->setShortcutEnabled(false);
 
     // ---
 
@@ -236,7 +242,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const newFeaturesTab        = new QWidget(stackedWidget);
     QLabel* const newFeatures            = new QLabel(featuresTabContent(), stackedWidget);
-    newFeatures->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
+    newFeatures->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black; border-radius: 15px; padding: 10px;"));
     newFeatures->setOpenExternalLinks(true);
     newFeatures->setWordWrap(true);
     newFeatures->setMargin(10);
@@ -248,7 +254,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const aboutTab              = new QWidget(stackedWidget);
     QLabel* const about                  = new QLabel(aboutTabContent(), stackedWidget);
-    about->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
+    about->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black; border-radius: 15px; padding: 10px;"));
     about->setOpenExternalLinks(true);
     about->setWordWrap(true);
     about->setMargin(10);
@@ -260,7 +266,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const creditsTab            = new QWidget(stackedWidget);
     QLabel* const credits                = new QLabel(creditsTabContent(), stackedWidget);
-    credits->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black;"));
+    credits->setStyleSheet(QLatin1String("background: rgba(240, 240, 240, 128); color: black; border-radius: 15px; padding: 10px;"));
     credits->setOpenExternalLinks(true);
     credits->setWordWrap(true);
     credits->setMargin(10);
