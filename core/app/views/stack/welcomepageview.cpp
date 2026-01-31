@@ -58,6 +58,7 @@ public:
     explicit GradientWidget(QWidget* const parent = nullptr)
         : QWidget (parent)
     {
+        setContentsMargins(0, 0, 0, 0);
     }
 
 protected:
@@ -86,7 +87,8 @@ public:
     {
         backgroundLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
         backgroundLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
-        backgroundLabel->setMargin(0);
+        backgroundLabel->setContentsMargins(0, 0, 0, 0);
+        setContentsMargins(0, 0, 0, 0);
 
         QVBoxLayout* const layout = new QVBoxLayout(this);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -136,6 +138,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     QWidget* const plain = new QWidget(sv->viewport());
     plain->setMinimumWidth(sv->width());
+    plain->setContentsMargins(0, 0, 0, 0);
 
     ResizableBackgroundWidget* const background = new ResizableBackgroundWidget(plain);
     QPixmap backgroundPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
@@ -174,6 +177,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     GradientWidget* const gradFooter     = new GradientWidget(plain);
     QWidget* const footerWidget          = new QWidget(plain);
+    footerWidget->setContentsMargins(0, 0, 0, 0);
     QHBoxLayout* const footerLayout      = new QHBoxLayout(footerWidget);
     footerLayout->setContentsMargins(0, 0, 0, 0);
     footerLayout->setSpacing(0);
@@ -249,6 +253,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     // ---
 
     QStackedWidget* const stackedWidget  = new QStackedWidget(plain);
+    stackedWidget->setContentsMargins(0, 0, 0, 0);
 
     QWidget* const newFeaturesTab        = new QWidget(stackedWidget);
     QLabel* const newFeatures            = new QLabel(featuresTabContent(), stackedWidget);
