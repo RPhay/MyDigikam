@@ -75,6 +75,29 @@ protected:
 
 // ---
 
+class Q_DECL_HIDDEN InvertedGradientWidget : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit InvertedGradientWidget(QWidget* const parent = nullptr)
+        : QWidget(parent)
+    {
+        setContentsMargins(0, 0, 0, 0);
+    }
+
+protected:
+    void paintEvent(QPaintEvent*) override
+    {
+        QPainter painter(this);
+        QLinearGradient gradient(0, 0, 0, height());
+        gradient.setColorAt(0,    QColor(qRgb(0x22, 0x3c, 0x54)));
+        gradient.setColorAt(0.55, QColor(qRgb(0x01, 0x08, 0x0F)));
+        painter.fillRect(rect(), gradient);
+    }
+};
+// ---
+
 class Q_DECL_HIDDEN ResizableBackgroundWidget : public QWidget
 {
     Q_OBJECT
@@ -175,10 +198,10 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
 
     // ---
 
-    GradientWidget* const gradFooter     = new GradientWidget(plain);
-    QWidget* const footerWidget          = new QWidget(plain);
+    InvertedGradientWidget* const gradFooter = new InvertedGradientWidget(plain);
+    QWidget* const footerWidget              = new QWidget(plain);
     footerWidget->setContentsMargins(0, 0, 0, 0);
-    QHBoxLayout* const footerLayout      = new QHBoxLayout(footerWidget);
+    QHBoxLayout* const footerLayout          = new QHBoxLayout(footerWidget);
     footerLayout->setContentsMargins(0, 0, 0, 0);
     footerLayout->setSpacing(0);
     footerLayout->addStretch();
