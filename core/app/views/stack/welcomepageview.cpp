@@ -49,6 +49,23 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN TitleEffect : public QGraphicsDropShadowEffect
+{
+    Q_OBJECT
+
+public:
+
+    TitleEffect()
+        : QGraphicsDropShadowEffect()
+    {
+        setColor(Qt::white);
+        setBlurRadius(35);
+        setOffset(0, 0);
+    }
+};
+
+// ---
+
 class Q_DECL_HIDDEN GradientWidget : public QWidget
 {
     Q_OBJECT
@@ -186,11 +203,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
                                        "   color: rgba(255, 255, 255, 0.67);"
                                        "   margin-top: 11px;"
                                        "}"));
-    QGraphicsDropShadowEffect* const effect1 = new QGraphicsDropShadowEffect;
-    effect1->setColor(Qt::white);
-    effect1->setBlurRadius(35);
-    effect1->setOffset(0, 0);
-    title->setGraphicsEffect(effect1);
+    title->setGraphicsEffect(new TitleEffect);
 
     QWidget* const titleWidget           = new QWidget(plain);
 
@@ -201,11 +214,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
                                             "   color: rgba(255, 255, 255, 0.67);"
                                             "   font-size: 14px;"
                                             "}"));
-    QGraphicsDropShadowEffect* const effect2 = new QGraphicsDropShadowEffect;
-    effect2->setColor(Qt::white);
-    effect2->setBlurRadius(35);
-    effect2->setOffset(0, 0);
-    smallTitle->setGraphicsEffect(effect2);
+    smallTitle->setGraphicsEffect(new TitleEffect);
 
     QLabel* const bigTitle               = new QLabel(i18n("Welcome to digiKam %1",
                                                       QLatin1String(digikam_version)), titleWidget);
@@ -216,11 +225,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
                                             "   font-size: 24px;"
                                             "   font-weight: bold;"
                                             "}"));
-    QGraphicsDropShadowEffect* const effect3 = new QGraphicsDropShadowEffect;
-    effect3->setColor(Qt::white);
-    effect3->setBlurRadius(35);
-    effect3->setOffset(0, 0);
-    bigTitle->setGraphicsEffect(effect3);
+    bigTitle->setGraphicsEffect(new TitleEffect);
 
     QVBoxLayout* const titleLayout       = new QVBoxLayout(titleWidget);
     titleLayout->setContentsMargins(0, 0, 0, 20);
@@ -228,7 +233,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     titleLayout->addWidget(smallTitle);
     titleLayout->addWidget(bigTitle);
 
-    QHBoxLayout* const headerLayout         = new QHBoxLayout(headerWidget);
+    QHBoxLayout* const headerLayout      = new QHBoxLayout(headerWidget);
     headerLayout->setContentsMargins(10, 10, 10, 10);
     headerLayout->setSpacing(0);
     headerLayout->addWidget(logo);
