@@ -340,19 +340,20 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     // ---
 
     QGridLayout* const grid = new QGridLayout(plain);
-    grid->addWidget(gradHeader,       0, 0, 1, 3);
-    grid->addWidget(headerWidget,     0, 0, 1, 3);
-    grid->addWidget(background,       1, 0, 3, 3);
-    grid->addWidget(gradFooter,       4, 0, 9, 3);
-    grid->addWidget(footerWidget,     4, 0, 9, 3);
-    grid->addWidget(titleWidget,      1, 0, 1, 3, Qt::AlignCenter);
-    grid->addWidget(tabButtonsWidget, 2, 0, 1, 3, Qt::AlignCenter);
-    grid->addWidget(stackedWidget,    3, 0, 9, 3);
+    grid->addWidget(gradHeader,       0, 0, 1,   3);
+    grid->addWidget(headerWidget,     0, 0, 1,   3);
+    grid->addWidget(background,       1, 0, 3,   3);
+    grid->addWidget(gradFooter,       4, 0, 100, 3);
+    grid->addWidget(footerWidget,     4, 0, 100, 3);
+    grid->addWidget(titleWidget,      1, 0, 1,   3, Qt::AlignCenter);
+    grid->addWidget(tabButtonsWidget, 2, 0, 1,   3, Qt::AlignCenter);
+    grid->addWidget(stackedWidget,    3, 0, 9,   3);
     grid->setContentsMargins(0, 0, 0, 0);
     grid->setSpacing(0);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(3, 10);
     grid->setRowStretch(4, 10);
+    grid->setRowStretch(5, 10);
 
     // ---
 
