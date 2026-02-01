@@ -163,12 +163,16 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     plain->setMinimumWidth(sv->width());
     plain->setContentsMargins(0, 0, 0, 0);
 
+    // ---
+
     ResizableBackgroundWidget* const background = new ResizableBackgroundWidget(plain);
     QPixmap backgroundPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                     QLatin1String("digikam/data/body-background.webp")));
     background->setBackgroundPixmap(backgroundPixmap);
 
     GradientWidget* const gradHeader            = new GradientWidget(plain);
+
+    // ---
 
     QWidget* const headerWidget = new QWidget(plain);
     QLabel* const logo          = new QLabel(headerWidget);
@@ -182,18 +186,55 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
                                        "   color: rgba(255, 255, 255, 0.67);"
                                        "   margin-top: 11px;"
                                        "}"));
+    QGraphicsDropShadowEffect* const effect1 = new QGraphicsDropShadowEffect;
+    effect1->setColor(Qt::white);
+    effect1->setBlurRadius(35);
+    effect1->setOffset(0, 0);
+    title->setGraphicsEffect(effect1);
 
-    QGraphicsDropShadowEffect* const effect = new QGraphicsDropShadowEffect;
-    effect->setColor(Qt::white);
-    effect->setBlurRadius(35);
-    effect->setOffset(0, 0);
-    title->setGraphicsEffect(effect);
+    QWidget* const titleWidget           = new QWidget(plain);
+
+    QLabel* const smallTitle             = new QLabel(DAboutData::digiKamSlogan(), titleWidget);
+    smallTitle->setAlignment(Qt::AlignCenter);
+    smallTitle->setObjectName(QLatin1String("small-title"));
+    smallTitle->setStyleSheet(QLatin1String("#small-title {"
+                                            "   color: rgba(255, 255, 255, 0.67);"
+                                            "   font-size: 14px;"
+                                            "}"));
+    QGraphicsDropShadowEffect* const effect2 = new QGraphicsDropShadowEffect;
+    effect2->setColor(Qt::white);
+    effect2->setBlurRadius(35);
+    effect2->setOffset(0, 0);
+    smallTitle->setGraphicsEffect(effect2);
+
+    QLabel* const bigTitle               = new QLabel(i18n("Welcome to digiKam %1",
+                                                      QLatin1String(digikam_version)), titleWidget);
+    bigTitle->setAlignment(Qt::AlignCenter);
+    bigTitle->setObjectName(QLatin1String("big-title"));
+    smallTitle->setStyleSheet(QLatin1String("#big-title {"
+                                            "   color: rgba(255, 255, 255, 0.67);"
+                                            "   font-size: 24px;"
+                                            "   font-weight: bold;"
+                                            "}"));
+    QGraphicsDropShadowEffect* const effect3 = new QGraphicsDropShadowEffect;
+    effect3->setColor(Qt::white);
+    effect3->setBlurRadius(35);
+    effect3->setOffset(0, 0);
+    bigTitle->setGraphicsEffect(effect3);
+
+    QVBoxLayout* const titleLayout       = new QVBoxLayout(titleWidget);
+    titleLayout->setContentsMargins(0, 0, 0, 20);
+    titleLayout->setSpacing(0);
+    titleLayout->addWidget(smallTitle);
+    titleLayout->addWidget(bigTitle);
 
     QHBoxLayout* const headerLayout         = new QHBoxLayout(headerWidget);
     headerLayout->setContentsMargins(10, 10, 10, 10);
     headerLayout->setSpacing(0);
     headerLayout->addWidget(logo);
-    headerLayout->addStretch();
+    headerLayout->addStretch(10);
+    headerLayout->addWidget(titleWidget, Qt::AlignCenter);
+    headerLayout->addStretch(10);
     headerLayout->addWidget(title);
 
     // ---
@@ -202,25 +243,6 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     QWidget* const footerWidget              = new QWidget(plain);
     footerWidget->setContentsMargins(0, 0, 0, 0);
     footerWidget->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
-
-    // ---
-
-    QWidget* const titleWidget           = new QWidget(plain);
-
-    QLabel* const smallTitle             = new QLabel(DAboutData::digiKamSlogan(), titleWidget);
-    smallTitle->setAlignment(Qt::AlignCenter);
-    smallTitle->setStyleSheet(QLatin1String("color: black; font-size: 14px;"));
-
-    QLabel* const bigTitle               = new QLabel(i18n("Welcome to digiKam %1",
-                                                      QLatin1String(digikam_version)), titleWidget);
-    bigTitle->setAlignment(Qt::AlignCenter);
-    bigTitle->setStyleSheet(QLatin1String("color: black; font-size: 24px; font-weight: bold;"));
-
-    QVBoxLayout* const titleLayout       = new QVBoxLayout(titleWidget);
-    titleLayout->setContentsMargins(0, 0, 0, 20);
-    titleLayout->setSpacing(0);
-    titleLayout->addWidget(smallTitle);
-    titleLayout->addWidget(bigTitle);
 
     // ---
 
@@ -268,7 +290,6 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     newFeaturesButton->setCheckable(true);
     aboutButton->setCheckable(true);
     creditsButton->setCheckable(true);
-    newFeaturesButton->setChecked(true);
 
     // ---
 
@@ -337,23 +358,23 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
         }
     );
 
+    aboutButton->click();
+
     // ---
 
     QGridLayout* const grid = new QGridLayout(plain);
     grid->addWidget(gradHeader,       0, 0, 1,   3);
     grid->addWidget(headerWidget,     0, 0, 1,   3);
     grid->addWidget(background,       1, 0, 3,   3);
-    grid->addWidget(gradFooter,       4, 0, 100, 3);
-    grid->addWidget(footerWidget,     4, 0, 100, 3);
-    grid->addWidget(titleWidget,      1, 0, 1,   3, Qt::AlignCenter);
-    grid->addWidget(tabButtonsWidget, 2, 0, 1,   3, Qt::AlignCenter);
-    grid->addWidget(stackedWidget,    3, 0, 9,   3);
+    grid->addWidget(gradFooter,       6, 0, 100, 3);
+    grid->addWidget(footerWidget,     6, 0, 100, 3);
+    grid->addWidget(tabButtonsWidget, 1, 0, 1,   3, Qt::AlignCenter);
+    grid->addWidget(stackedWidget,    2, 0, 9,   3);
     grid->setContentsMargins(0, 0, 0, 0);
     grid->setSpacing(0);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(3, 10);
-    grid->setRowStretch(4, 10);
-    grid->setRowStretch(5, 10);
+    grid->setRowStretch(6, 10);
 
     // ---
 
