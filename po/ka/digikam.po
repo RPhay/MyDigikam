@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-31 00:41+0000\n"
-"PO-Revision-Date: 2026-01-30 04:33+0100\n"
+"POT-Creation-Date: 2026-02-01 00:41+0000\n"
+"PO-Revision-Date: 2026-01-31 05:30+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1005,7 +1005,7 @@ msgstr "სახელი:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:425
+#: core/app/views/stack/welcomepageview.cpp:502
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -3385,29 +3385,29 @@ msgstr "წაშლა"
 msgid "%1/%2 items selected"
 msgstr "მონიშნულია ჩანაწერი %1/%2"
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:217
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "მოგესალმებათ digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:232
 #, kde-format
 msgid "New Features"
 msgstr "ახალი ფუნქციები"
 
-#: core/app/views/stack/welcomepageview.cpp:195
+#: core/app/views/stack/welcomepageview.cpp:233
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
 
-#: core/app/views/stack/welcomepageview.cpp:196
+#: core/app/views/stack/welcomepageview.cpp:234
 #, kde-format
 msgid "Background Image Credits"
 msgstr "ფონის სურათის საავტორო უფლებები"
 
-#: core/app/views/stack/welcomepageview.cpp:308
+#: core/app/views/stack/welcomepageview.cpp:373
 #, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
@@ -3418,7 +3418,7 @@ msgstr ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">350-ზე მეტი მომხმარებლის ანგარიში</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:309
+#: core/app/views/stack/welcomepageview.cpp:374
 #, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
@@ -3428,14 +3428,14 @@ msgstr ""
 "შიდა QtAVPlayer განახლდა ვერსიამდე 2026-01-24, რომელშიც ბევრი შეცდომა "
 "გასწორდა და გაუმჯობესდა წარმადობა (მხოლოდ Qt5)."
 
-#: core/app/views/stack/welcomepageview.cpp:310
+#: core/app/views/stack/welcomepageview.cpp:375
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
 "დაემატა მორგებადი თარიღის ფორმატის პროგრამაში ყველგან ჩვენების მხარდაჭერა."
 
-#: core/app/views/stack/welcomepageview.cpp:311
+#: core/app/views/stack/welcomepageview.cpp:376
 #, kde-format
 msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
@@ -3445,49 +3445,49 @@ msgstr ""
 "პანელიდან ტექსტზე ორჯერ დაწკაპუნებით. ჭდის სტრიქონების ზომა შეზღუდულია 32 "
 "სიმბოლოზე."
 
-#: core/app/views/stack/welcomepageview.cpp:312
+#: core/app/views/stack/welcomepageview.cpp:377
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
 "დაემატა ალბომის ხატულების ხედის ელემენტების აღების და ფერის ჭდეების მიხედვით "
 "დალაგების მხარდაჭერა."
 
-#: core/app/views/stack/welcomepageview.cpp:313
+#: core/app/views/stack/welcomepageview.cpp:378
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
 "დაემატა შემოტანის ხატულების ხედის ელემენტების აღების და ფერის ჭდეების "
 "მიხედვით დალაგების მხარდაჭერა."
 
-#: core/app/views/stack/welcomepageview.cpp:314
+#: core/app/views/stack/welcomepageview.cpp:379
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
 "დაემატა ალბომის ხატულების ხედში ელემენტების ორიენტაციის მიხედვით დალაგების "
 "მხარდაჭერა."
 
-#: core/app/views/stack/welcomepageview.cpp:315
+#: core/app/views/stack/welcomepageview.cpp:380
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
 "დაემატა ალბომის ხატულების ხედში ელემენტების GPS მდებარეობის მიხედვით "
 "დალაგების მხარდაჭერა."
 
-#: core/app/views/stack/welcomepageview.cpp:316
+#: core/app/views/stack/welcomepageview.cpp:381
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
 "დაემატა ალბომის ხატულების ხედში ელემენტების ფაილის ფორმატის მიხედვით "
 "დალაგების მხარდაჭერა."
 
-#: core/app/views/stack/welcomepageview.cpp:317
+#: core/app/views/stack/welcomepageview.cpp:382
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
 "დაემატა შემოტანისას ხატულების ხედში ელემენტების ფაილის ფორმატის მიხედვით "
 "დალაგების მხარდაჭერა."
 
-#: core/app/views/stack/welcomepageview.cpp:318
+#: core/app/views/stack/welcomepageview.cpp:383
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
@@ -3495,26 +3495,26 @@ msgstr ""
 "დაემატა რეგულარული გამოსახულების ვაილდკარდის მხარდაჭერა გამოტოვებული "
 "საქაღალდეების პარამეტრებისთვის."
 
-#: core/app/views/stack/welcomepageview.cpp:319
+#: core/app/views/stack/welcomepageview.cpp:384
 #, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
 msgstr ""
 "დაემატა ახალი ღილაკი ყველა თვისების ტექსტის სახით ბუფერში დასაკოპირებლად."
 
-#: core/app/views/stack/welcomepageview.cpp:320
+#: core/app/views/stack/welcomepageview.cpp:385
 #, kde-format
 msgid "Add new button to open current item is file manager."
 msgstr ""
 "დაემატა ახალი ღილაკი მიმდინარე ელემენტის ფაილების მმართველში გასახსნელად."
 
-#: core/app/views/stack/welcomepageview.cpp:321
+#: core/app/views/stack/welcomepageview.cpp:386
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
 "თუ ხატულების ხედის ელემენტი არჩეული არაა, მიმდინარე ალბომის სტატისტიკის "
 "ჩვენება."
 
-#: core/app/views/stack/welcomepageview.cpp:322
+#: core/app/views/stack/welcomepageview.cpp:387
 #, kde-format
 msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
@@ -3523,14 +3523,14 @@ msgstr ""
 "ღია ჯგუფიდან გამოკვეთილი ელემენტების ჩვენება უკეთესად გამოსაყენებლად "
 "ხატულების ხედში."
 
-#: core/app/views/stack/welcomepageview.cpp:323
+#: core/app/views/stack/welcomepageview.cpp:388
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
 "გაუმჯობესდა დაჯგუფებული ხატულების ხედის ელემენტების განლაგების "
 "გამოყენებადობა."
 
-#: core/app/views/stack/welcomepageview.cpp:324
+#: core/app/views/stack/welcomepageview.cpp:389
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
@@ -3538,7 +3538,7 @@ msgstr ""
 "გაუმჯობესდა მინიატურების პანელი ხატულების ხედში დაჯგუფებული ელემენტების "
 "ხილვადობის მხარდაჭერით."
 
-#: core/app/views/stack/welcomepageview.cpp:325
+#: core/app/views/stack/welcomepageview.cpp:390
 #, kde-format
 msgid ""
 "Split filters view into 3 separated tabs for better usabilty: Properties, "
@@ -3547,20 +3547,20 @@ msgstr ""
 "ფილტრები გაიყო 3 ცალკე ჩანართად უკეთესი გამოყენებადობისთვის: თვისებები, "
 "ჭდეები და ხალხი."
 
-#: core/app/views/stack/welcomepageview.cpp:326
+#: core/app/views/stack/welcomepageview.cpp:391
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
 "ნაგვის ყუთის ხედის სვეტის მდგომარეობის შენახვა და ჩატვირთვა სესიებს შორის."
 
-#: core/app/views/stack/welcomepageview.cpp:327
+#: core/app/views/stack/welcomepageview.cpp:392
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
 "გაფართოვდა გამოსახულებისა და ვიდეოს მინიატურის პანელის განლაგება ჭდეების "
 "რედაქტორით."
 
-#: core/app/views/stack/welcomepageview.cpp:328
+#: core/app/views/stack/welcomepageview.cpp:393
 #, kde-format
 msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
@@ -3569,12 +3569,12 @@ msgstr ""
 "დაემატა ახალი მინიატურის პანელის ღილაკები: ექსპოზიციის მაჩვენებლები, ფერების "
 "მართვა, OSD, გამადიდებელი."
 
-#: core/app/views/stack/welcomepageview.cpp:329
+#: core/app/views/stack/welcomepageview.cpp:394
 #, kde-format
 msgid "Add context-menu to the video player."
 msgstr "დაემატა კონტექსტური მენიუ ვიდეოდამკვრელისთვის."
 
-#: core/app/views/stack/welcomepageview.cpp:330
+#: core/app/views/stack/welcomepageview.cpp:395
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
@@ -3582,7 +3582,7 @@ msgstr ""
 "დაემატა ჩატვირთვის მიმდინარეობის მაჩვენებელი სტატუსის ველზე (ხატულის ხედები "
 "და სინათლის მაგიდა)."
 
-#: core/app/views/stack/welcomepageview.cpp:331
+#: core/app/views/stack/welcomepageview.cpp:396
 #, kde-format
 msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
@@ -3591,7 +3591,7 @@ msgstr ""
 "დაემატა ტრეკპედის ჟესტის მოვლენების მხარდაჭერა შემცველობის გასადიდებლად, "
 "ტილოს ჩასატევად და წინა/შემდეგ ელემენტზე გადასართავად."
 
-#: core/app/views/stack/welcomepageview.cpp:332
+#: core/app/views/stack/welcomepageview.cpp:397
 #, kde-format
 msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
@@ -3601,13 +3601,13 @@ msgstr ""
 "გასადიდებლად და დასათვალიერებლად. ხელსაწყოს ზომა და გადიდების კოეფიციენტი "
 "მორგებადია."
 
-#: core/app/views/stack/welcomepageview.cpp:333
+#: core/app/views/stack/welcomepageview.cpp:398
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
 "მინიატურის ტილოს დაემატა ზედმეტი და არასაკმარისი ექსპოზიციის მაჩვენებლები."
 
-#: core/app/views/stack/welcomepageview.cpp:334
+#: core/app/views/stack/welcomepageview.cpp:399
 #, kde-format
 msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
@@ -3615,7 +3615,7 @@ msgid ""
 msgstr ""
 "რკინიგზა ტილოზე ნაჩვენებია როგორც გადაფარვა, როცა გადახვევის ზოლი ხილულია."
 
-#: core/app/views/stack/welcomepageview.cpp:335
+#: core/app/views/stack/welcomepageview.cpp:400
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
@@ -3623,19 +3623,19 @@ msgstr ""
 "GPS-ის ხატულაზე დაწკაპუნებით გაიხსნება გეოლოკაციის ჩანართი მარცხენა გვერდითი "
 "პანელიდან."
 
-#: core/app/views/stack/welcomepageview.cpp:336
+#: core/app/views/stack/welcomepageview.cpp:401
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
 "დაემატა მორგებადი სვეტები დაჯგუფებული და ვერსიების მქონე თვისებების "
 "საჩვენებლად."
 
-#: core/app/views/stack/welcomepageview.cpp:337
+#: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
 msgstr "ახალი დამატებითი სახელის გადარქმევის მოდიფიკატორის თარიღირის ფორმატი."
 
-#: core/app/views/stack/welcomepageview.cpp:338
+#: core/app/views/stack/welcomepageview.cpp:403
 #, kde-format
 msgid ""
 "Add support to merge existing template entries assigned in items with a new "
@@ -3644,7 +3644,7 @@ msgstr ""
 "დაემატა ელემენტებზე მინიშებული არსებული ნიმუშის ჩანაწერების ახალ ნიმუშთან "
 "შერწყმის მხარდაჭერა."
 
-#: core/app/views/stack/welcomepageview.cpp:339
+#: core/app/views/stack/welcomepageview.cpp:404
 #, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
@@ -3653,7 +3653,7 @@ msgstr ""
 "დაემატა ახალი სლაიდშოუს პარამეტრი ფონის ფერის მოსარგებად შავის მაგიერ, თუ "
 "გამოიყენება გამოსახულებების გამჭვირვალობა."
 
-#: core/app/views/stack/welcomepageview.cpp:340
+#: core/app/views/stack/welcomepageview.cpp:405
 #, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
@@ -3662,26 +3662,26 @@ msgstr ""
 "დაემატა ახალი პრეზენტაციის პარამეტრი ფონის ფერის მოსარგებად შავის მაგიერ, თუ "
 "გამოიყენება გამოსახულებების გამჭვირვალობა."
 
-#: core/app/views/stack/welcomepageview.cpp:341
+#: core/app/views/stack/welcomepageview.cpp:406
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
 "თავიდან გადაიწერა ფაილის გადაცემის ხელსაწყოს ინტერფეისი უკეთესი "
 "გამოყენებადობისთვის."
 
-#: core/app/views/stack/welcomepageview.cpp:342
+#: core/app/views/stack/welcomepageview.cpp:407
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
 "თავიდან გადაიწერა ფაილების კოპირების ხელსაწყოს ინტერფეისი უკეთესი "
 "გამოყენებადობისთვის."
 
-#: core/app/views/stack/welcomepageview.cpp:343
+#: core/app/views/stack/welcomepageview.cpp:408
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr "ტილოს მონიშვნის რეზინის ზოლს დაემატა ჭიანჭველების მსვლელობის ეფექტი."
 
-#: core/app/views/stack/welcomepageview.cpp:344
+#: core/app/views/stack/welcomepageview.cpp:409
 #, kde-format
 msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
@@ -3690,7 +3690,7 @@ msgstr ""
 "დაემატა ფერის არჩევის ჰისტოგრამის მაჩვენებელი მრუდეებისთვის, დონეებისთვის, "
 "თეთრის ბალანსისთვის და შავთეთრი სეპიას ხელსაწყოებისთვის."
 
-#: core/app/views/stack/welcomepageview.cpp:345
+#: core/app/views/stack/welcomepageview.cpp:410
 #, kde-format
 msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
@@ -3699,82 +3699,107 @@ msgstr ""
 "ვებგვერდის დიდი განახლება შემცველობისა და დიზანის შესახებ. მაგ: ეკრანის "
 "ანაბეჭდები, აღწერა, ისტორია, თვისებები, მხარდაჭერა, გადმოწერა და ა.შ."
 
-#: core/app/views/stack/welcomepageview.cpp:346
+#: core/app/views/stack/welcomepageview.cpp:411
+#, kde-format
+msgid ""
+"New Advanced Search options to find empty properties registered in the "
+"database."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
 msgstr "განახლდა შიდა RAW ძრავა უკანასკნელ Libraw-ის ვერსიამდე 2026-01-24."
 
-#: core/app/views/stack/welcomepageview.cpp:347
-#, fuzzy, kde-format
-#| msgid ""
-#| "New RAW camera supported:\n"
-#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
-#| "EOS R100, EOS Ra.\n"
-#| "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
-#| "Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
-#| "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-#| "Nikon (standard compression only): Z6-III, Z f, Z30, Z8.\n"
-#| "Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
-#| "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
-#| "TZ220D, DC-S5-II, DC-GH6.\n"
-#| "Pentax KF, K III Monochrome.\n"
-#| "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  "
-#| "ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-#| "Multiple DJI and Skydio drones.\n"
-#| "Multiple smartphones with DNG format recorded."
-msgid ""
-"New RAW camera supported:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 "
-"Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul><ul>Fujifilm X-T50, GFX "
-"100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul><ul>Hasselblad  CFV-50c, "
-"CFV-100c, X2D-100c ; </ul><ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ; "
-"</ul><ul>Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ; </"
-"ul><ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </ul><ul>Panasonic GH7, "
-"S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
-"GH6 ; </ul><ul>Pentax KF, K III Monochrome ; </ul><ul>Sony ZV-E10M2, UMC-"
-"R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 "
-"(A7R-V), ILME-FX30, A1 ; </ul><ul>Multiple DJI and Skydio drones ; </"
-"ul><ul>Multiple smartphones with DNG format recorded.</ul>"
+#: core/app/views/stack/welcomepageview.cpp:413
+#, kde-format
+msgid "New RAW camera supported:"
 msgstr ""
-"მხარდაჭერილია ახალი RAW კამერები:\n"
-"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra.\n"
-"Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S.\n"
-"Hasselblad  CFV-50c, CFV-100c, X2D-100c.\n"
-"Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom.\n"
-"Nikon (მხოლოდ სტანდარტული შეკუმშვით): Z6-III, Z f, Z30, Z8.\n"
-"Olympus/OM System OM-1 Mark II, TG-7, OM-5.\n"
-"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
-"TZ220D, DC-S5-II, DC-GH6.\n"
-"Pentax KF, K III Monochrome.\n"
-"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
-"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1.\n"
-"მრავალი DJI და Skydio დრონები.\n"
-"ბევრი ტელეფონი DNG ფორმატის ჩანაწერით."
 
-#: core/app/views/stack/welcomepageview.cpp:363
+#: core/app/views/stack/welcomepageview.cpp:415
+#, kde-format
+msgid ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:416
+#, kde-format
+msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:417
+#, kde-format
+msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:418
+#, kde-format
+msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:419
+#, kde-format
+msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:420
+#, kde-format
+msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:421
+#, kde-format
+msgid ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:422
+#, kde-format
+msgid "Pentax KF, K III Monochrome ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:423
+#, kde-format
+msgid ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:424
+#, kde-format
+msgid "Multiple DJI and Skydio drones ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:425
+#, kde-format
+msgid "Multiple smartphones with DNG format recorded."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:430
 #, kde-format
 msgid "...and much more."
 msgstr "...და ბევრი სხვა."
 
-#: core/app/views/stack/welcomepageview.cpp:369
-#, fuzzy, kde-format
-#| msgid "<li>%1</li><br>"
+#: core/app/views/stack/welcomepageview.cpp:436
+#, kde-format
 msgid "<li>%1</li>"
-msgstr "<li>%1</li><br>"
+msgstr "<li>%1</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:372
+#: core/app/views/stack/welcomepageview.cpp:439
 #, fuzzy, kde-format
 #| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 8):"
+#| "<h3>Some of the new features in this release of digiKam include (compared "
+#| "to digiKam 8):</h3><ul>%1</ul>"
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
-"digiKam 8):</h3><ul>%1</ul>"
+"digiKam version 8):</h3><ul>%1</ul>"
 msgstr ""
-"ზოგიერთი ახალი ფუნქცია digiKam-ის ამ რელიზში. მათ შორის (digiKam 8-თან "
-"შედარებით):"
+"<h3>ზოგიერთი ახალი ფუნქცია digiKam-ის ამ რელიზში. მათ შორის (digiKam 8-ისთან "
+"შედარებით):</h3><ul>%1</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:381
+#: core/app/views/stack/welcomepageview.cpp:460
 #, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
@@ -3784,33 +3809,33 @@ msgid ""
 "transfer photos, raw files, and videos directly from your camera and "
 "external storage devices (SD cards, USB disks, etc.). The application allows "
 "you to configure import settings and rules that process and organize "
-"imported items on-the-fly.With digiKam you can import, organize, enhance, "
-"search, export, and more...</h3><h3>Currently, you are in the Album view "
-"mode of digiKam.</h3><h3>Albums are the places where your files are stored, "
-"and are identical to the folders on your hard disk.</h3><li>digiKam has many "
-"powerful features which are described in the <a href=\"https://docs.digikam."
-"org/en/index.html\">documentation</a></li><li>The <a href=\"https://www."
-"digikam.org\">digiKam homepage</a> provides information about new versions "
-"of digiKam.</li>"
+"imported items on-the-fly.</h3><h3>With digiKam you can import, organize, "
+"enhance, search, export, and more...</h3><h3>Currently, you are in the Album "
+"view mode of digiKam.</h3><h3>Albums are the places where your files are "
+"stored, and are identical to the folders on your hard disk.</h3><li>digiKam "
+"has many powerful features which are described in the <a href=\"https://docs."
+"digikam.org/en/index.html\">documentation</a></li><li>The <a href=\"https://"
+"www.digikam.org\">digiKam homepage</a> provides information about new "
+"versions of digiKam.</li>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:423
+#: core/app/views/stack/welcomepageview.cpp:500
 #, kde-format
 msgid "Author:"
 msgstr "ავტორი:"
 
-#: core/app/views/stack/welcomepageview.cpp:424
+#: core/app/views/stack/welcomepageview.cpp:501
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "მდებარეობა:"
 
-#: core/app/views/stack/welcomepageview.cpp:426
+#: core/app/views/stack/welcomepageview.cpp:503
 #, kde-format
 msgid "Camera:"
 msgstr "კამერა:"
 
-#: core/app/views/stack/welcomepageview.cpp:427
+#: core/app/views/stack/welcomepageview.cpp:504
 #, kde-format
 msgid "Lens:"
 msgstr "ლინზა:"
@@ -3849,7 +3874,7 @@ msgstr "აუდიო არხის ტიპი"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:998
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
@@ -3857,7 +3882,7 @@ msgstr "აუდიო კოდეკი"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:903
 #, kde-format
 msgid "Duration"
 msgstr "ხანგრძლოვობა"
@@ -8236,7 +8261,7 @@ msgstr "ფერების მართვა გამორთულია.
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:593
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "White Balance"
 msgstr "თეთრის ბალანსი"
@@ -16215,8 +16240,8 @@ msgstr "სამიზნე ფაილი"
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
-#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#: core/utilities/searchwindow/searchfields_createfield.cpp:390
+#: core/utilities/searchwindow/searchfields_createfield.cpp:440
 #, kde-format
 msgid "Camera"
 msgstr "კამერა"
@@ -19094,7 +19119,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
 #, kde-format
 msgid "Author"
 msgstr "ავტორი"
@@ -26049,9 +26074,9 @@ msgid "Reset curve to linear"
 msgstr "მრუდის ჩამოყრა წრფივზე"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:534
-#: core/utilities/searchwindow/searchfields_createfield.cpp:546
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Exposure"
 msgstr "ექსპოზიცია"
@@ -37392,14 +37417,15 @@ msgid "Date Time"
 msgstr "დრო თარიღი"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:426
 #, kde-format
 msgid "Lens"
 msgstr "ლინზა"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:658
 #, kde-format
 msgid "Aperture"
 msgstr "დიაფრაგმის მნიშვნელობა"
@@ -37416,7 +37442,7 @@ msgstr "ექსპოზიციის დრო"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "Sensitivity"
 msgstr "მგრძნობიარობა"
@@ -50374,8 +50400,9 @@ msgid "Lens of the camera"
 msgstr "კამერის ლინზა"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:475
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
 #, kde-format
 msgid "Focal length"
 msgstr "ფოკუსური მანძილი"
@@ -50386,7 +50413,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "ფოკალური სიგრძე (35 მმ ლენტის ექვივალენტი)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:513
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, kde-format
 msgid "Exposure time"
 msgstr "ექსპოზიციის დრო"
@@ -50407,7 +50435,8 @@ msgid "Flash mode"
 msgstr "განათების რეჟიმი"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, kde-format
 msgid "White balance"
 msgstr "თეთრის ბალანსი"
@@ -50418,6 +50447,7 @@ msgid "White balance (color temperature)"
 msgstr "თეთრის ბალანსი (ფერის ტემპერატურა)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
+#: core/utilities/searchwindow/searchfields_createfield.cpp:665
 #, kde-format
 msgid "Metering mode"
 msgstr "გაზომვის რეჟიმი"
@@ -50438,14 +50468,14 @@ msgid "Display Aspect Ratio"
 msgstr "პროპორციის ჩვენება"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "აუდიოს ბიტური სიჩქარე"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:979
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -51824,7 +51854,8 @@ msgstr "დედაქალაქი"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:725
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:792
 #, kde-format
 msgid "City"
 msgstr "ქალაქი"
@@ -60798,481 +60829,536 @@ msgstr "%1 [ვიდეო]"
 msgid "The make of the camera"
 msgstr "კამერის მწარმოებელი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:390
 #, kde-format
 msgid "The model of the camera"
 msgstr "კამერის მოდელი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:426
 #, kde-format
 msgid "The type of the lens"
 msgstr "ლინზის ტიპი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#: core/utilities/searchwindow/searchfields_createfield.cpp:440
 #, kde-format
 msgid "Return items without a camera ..."
 msgstr "ელემენტების დაბრუნება კამერის გარეშე..."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:443
 #, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "მწარმოებელი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:444
 #, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "მოდელი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:445
 #, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
 msgstr "ლინზის ტიპი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Lens aperture as f-number"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:456
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:475
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "ლინზის ფოკალური სიგრძე"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:476
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:660
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35 მმ-ის ეკვივალენტი ფოკალური მანძილი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:495
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:514
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:534
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "ავტომატური ექსპოზიციის პროგრამა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:546
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "ავტომატური ან ხელით ექსპოზიცია"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO ლენტის სიჩქარე (წრფივი მასშტაბი, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:558
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:581
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "განათება"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:581
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:666
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "განათების რეჟიმი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:593
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "ავტომატური ან ხელით თეთრის ბალანსი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "თეთრის ბალანსისთვის გამოყენებული ფერის ტემპერატურა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:605
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Metering Mode"
 msgstr "გაზომვის რეჟიმი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "ექსპოზიციის დადგენის მეთოდი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:629
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, kde-format
 msgid "Subject Distance"
 msgstr "სუბიექტის დაშორება"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:629
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "სუბიექტის დაშორება ლინზიდან"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "მაკრო, ახლო ან შორი ხედი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
-#: core/utilities/searchwindow/searchfields_createfield.cpp:682
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Capture Device Settings"
+msgid "Capture Settings"
+msgstr "გადამღები მოწყობილობის მორგება"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#, fuzzy, kde-format
+#| msgid "Return items without a camera ..."
+msgid "Return items without selected capture settings ..."
+msgstr "ელემენტების დაბრუნება კამერის გარეშე..."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#, kde-format
+msgid "ISO film speed"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#, fuzzy, kde-format
+#| msgid "White balance (color temperature)"
+msgid "White balance color temperature"
+msgstr "თეთრის ბალანსი (ფერის ტემპერატურა)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#, fuzzy, kde-format
+#| msgid "Subject distance (category)"
+msgid "Subject Distance Category"
+msgstr "სუბიექტის დაშორება (კატეგორია)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:712
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
 #, kde-format
 msgid "Altitude range"
 msgstr "სიმაღლის დიაპაზონი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:682
+#: core/utilities/searchwindow/searchfields_createfield.cpp:712
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "ელემენტს GPS ინფორმაცია არ აქვს"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:683
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, kde-format
 msgid "Not Geo-located"
 msgstr "გეოლოკაციის არმქონე"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:693
+#: core/utilities/searchwindow/searchfields_createfield.cpp:723
+#: core/utilities/searchwindow/searchfields_createfield.cpp:790
 #, kde-format
 msgid "Country"
 msgstr "ქვეყანა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:693
+#: core/utilities/searchwindow/searchfields_createfield.cpp:723
 #, kde-format
 msgid "Country shown in the item"
 msgstr "ელემენტში ნაჩვენები ქვეყანა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:709
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Province"
 msgstr "პროვინცია"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:709
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Province shown in the item"
 msgstr "ელემენტში ნაჩვენები პროვინცია"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:725
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgid "City shown in the item"
 msgstr "ელემენტში ნაჩვენები ქალაქი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:741
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:793
 #, kde-format
 msgid "Sublocation"
 msgstr "ქვემდებარეობა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:741
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "ელემენტში ნაჩვენები ქვემდებარეობა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#, fuzzy, kde-format
+#| msgid "Place:"
+msgid "Place"
+msgstr "ადგილი:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#, fuzzy, kde-format
+#| msgid "Return items without a camera ..."
+msgid "Return items without selected place information ..."
+msgstr "ელემენტების დაბრუნება კამერის გარეშე..."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#, fuzzy, kde-format
+#| msgid "State/Province:"
+msgid "State/Province"
+msgstr "რეგიონი/მხარე:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "შემქმნელი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgid "Return items created by"
 msgstr "ელემენტების დაბრუნება, რომლის ავტორია"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:763
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "წარწერა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:763
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "ელემენტების დაბრუნება, რომლების კომენტარი შეიცავს"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
 #, kde-format
 msgid "Return items commented by"
 msgstr "ელემენტების დაბრუნება, რომლის კომენტარიც დაწერილია"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:779
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Headline"
 msgstr "სათაური"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:779
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "ელემენტების დაბრუნება IPTC-ის სათაურის ხაზით"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "სათაური"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "ელემენტების დაბრუნება IPTC-ის სათაურით"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:795
+#: core/utilities/searchwindow/searchfields_createfield.cpp:843
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "ელემენტების ძებნა, რომლებიც ასოცირდება ყველა ამ სიტყვასთან:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:851
 #, kde-format
 msgid "Empty Text"
 msgstr "ცარიელი ტექსტი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:851
 #, kde-format
 msgid "Return items without text in"
 msgstr "ელემენტების დაბრუნება ტექსტის გარეშე"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:853
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "შემქმნელი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:806
+#: core/utilities/searchwindow/searchfields_createfield.cpp:854
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "წარწერა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:807
+#: core/utilities/searchwindow/searchfields_createfield.cpp:855
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "ავტორი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:808
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "სათაური"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:809
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "სათაური"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:886
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "თანაფარდობა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "ელემენტების დაბრუნება, რომლის პროპორციაცაა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Pixel Size"
 msgstr "პიქსელის ზომა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "მნიშვნელობა (სიგანე * სიმაღლე) არის შუალედში"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:828
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "და"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:886
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "ვიდეოს დაბრუნება, რომლის კადრის პროპორციაცაა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:903
 #, kde-format
 msgid "Length of the video"
 msgstr "ვიდეოს სიგრძე"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:904
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "და"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:873
+#: core/utilities/searchwindow/searchfields_createfield.cpp:921
 #, kde-format
 msgid "Frame Rate"
 msgstr "კადრების სიხშირე"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:873
+#: core/utilities/searchwindow/searchfields_createfield.cpp:921
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "ვიდეოს დაბრუნება, რომლის კადრების სიხშირეა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:874
+#: core/utilities/searchwindow/searchfields_createfield.cpp:922
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "და"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "კადრი/წმ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:891
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgid "Codec"
 msgstr "კოდეკი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:891
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgid "Return video codec"
 msgstr "ვიდეოს კოდეკის დაბრუნება"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "აუდიოს ბიტური სიჩქარის დაბრუნება"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:962
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1010
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "და"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:963
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1011
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "ბწმ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:979
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "აუდიოს არხის ტიპის დაბრუნება"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:981
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1029
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "მონო"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:982
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "სტერეო"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:983
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 სივრცითი ხმა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:984
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 სივრცითი ხმა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:985
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1033
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 არხების მიმდევრობა"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1034
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "სხვა არხის ტიპი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:998
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "აუდიოკოდეკის დაბრუნება"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
 #, kde-format
 msgid "Faces"
 msgstr "სახეები"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "ელემენტების დაბრუნება სახის რეგიონების რაოდენობის მიხედვით"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1098
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1146
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "და"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
 #, kde-format
 msgid "Return items without face regions"
 msgstr "სახის რეგიონების არმქონე ელემენტების დაბრუნება"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1108
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1156
 #, kde-format
 msgid "No Face Regions"
 msgstr "სახის რეგიონების გარეშე"
@@ -61340,12 +61426,12 @@ msgstr "ელემენტის თვისებები"
 msgid "Caption, Comment, Title"
 msgstr "წარწერა, კომენტარი, სათაური"
 
-#: core/utilities/searchwindow/searchgroup.cpp:183
+#: core/utilities/searchwindow/searchgroup.cpp:184
 #, kde-format
 msgid "Geographic position"
 msgstr "გეოგრაფიული მდებარეობა"
 
-#: core/utilities/searchwindow/searchgroup.cpp:206
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, kde-format
 msgid "Face regions"
 msgstr "სახის რეგიონები"
@@ -66115,6 +66201,33 @@ msgstr "ელემენტების შემოტანა"
 #, kde-format
 msgid "Survey"
 msgstr "მიმოხილვა"
+
+#~ msgid ""
+#~ "New RAW camera supported:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS "
+#~ "R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul><ul>Fujifilm X-T50, "
+#~ "GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul><ul>Hasselblad  "
+#~ "CFV-50c, CFV-100c, X2D-100c ; </ul><ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 "
+#~ "Monochrom ; </ul><ul>Nikon (standard compression only): Z6-III, Z f, Z30, "
+#~ "Z8 ; </ul><ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </"
+#~ "ul><ul>Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / "
+#~ "TZ202D / TZ220D, DC-S5-II, DC-GH6 ; </ul><ul>Pentax KF, K III "
+#~ "Monochrome ; </ul><ul>Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, "
+#~ "A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; </"
+#~ "ul><ul>Multiple DJI and Skydio drones ; </ul><ul>Multiple smartphones "
+#~ "with DNG format recorded.</ul>"
+#~ msgstr ""
+#~ "მხარდაჭერილია ახალი RAW კამერები:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 "
+#~ "C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra. </ul><ul>Fujifilm X-"
+#~ "T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S. </ul><ul>  "
+#~ "Hasselblad  CFV-50c, CFV-100c, X2D-100c. </ul><ul>Leica Q3 43, D-Lux8, "
+#~ "SL3, Q3, M11 Monochrom. </ul><ul>Nikon (მხოლოდ სტანდარტული შეკუმშვით): Z6-"
+#~ "III, Z f, Z30, Z8. </ul><ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5. </"
+#~ "ul><ul>Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / "
+#~ "TZ202D / TZ220D, DC-S5-II, DC-GH6. </ul><ul>Pentax KF, K III Monochrome. "
+#~ "</ul><ul>Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, "
+#~ "ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1. </"
+#~ "ul><ul>მრავალი DJI და Skydio დრონები. </ul><ul>  ბევრი ტელეფონი DNG "
+#~ "ფორმატის ჩანაწერით.</ul>"
 
 #~ msgid "<h3>%1</h3><ul>%2</ul>"
 #~ msgstr "<h3>%1</h3><ul>%2</ul>"

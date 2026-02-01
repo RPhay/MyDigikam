@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-31 00:41+0000\n"
+"POT-Creation-Date: 2026-02-01 00:41+0000\n"
 "PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1050,7 +1050,7 @@ msgstr "Namn:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:425
+#: core/app/views/stack/welcomepageview.cpp:502
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -3449,29 +3449,29 @@ msgstr "Ta bort"
 msgid "%1/%2 items selected"
 msgstr "%1/%2 objekt markerade"
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:217
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Välkommen till Digikam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:232
 #, kde-format
 msgid "New Features"
 msgstr "Nya funktioner"
 
-#: core/app/views/stack/welcomepageview.cpp:195
+#: core/app/views/stack/welcomepageview.cpp:233
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Om"
 
-#: core/app/views/stack/welcomepageview.cpp:196
+#: core/app/views/stack/welcomepageview.cpp:234
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Erkännanden för bakgrundsbild"
 
-#: core/app/views/stack/welcomepageview.cpp:308
+#: core/app/views/stack/welcomepageview.cpp:373
 #, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
@@ -3479,7 +3479,7 @@ msgid ""
 "%1\">350 user-reports</a> closed on bugzilla."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:309
+#: core/app/views/stack/welcomepageview.cpp:374
 #, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
@@ -3487,62 +3487,62 @@ msgid ""
 "only)."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:310
+#: core/app/views/stack/welcomepageview.cpp:375
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:311
+#: core/app/views/stack/welcomepageview.cpp:376
 #, kde-format
 msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:312
+#: core/app/views/stack/welcomepageview.cpp:377
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:313
+#: core/app/views/stack/welcomepageview.cpp:378
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:314
+#: core/app/views/stack/welcomepageview.cpp:379
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:315
+#: core/app/views/stack/welcomepageview.cpp:380
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:316
+#: core/app/views/stack/welcomepageview.cpp:381
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:317
+#: core/app/views/stack/welcomepageview.cpp:382
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:318
+#: core/app/views/stack/welcomepageview.cpp:383
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:319
+#: core/app/views/stack/welcomepageview.cpp:384
 #, fuzzy, kde-format
 #| msgid "Copy the all properties in clipboard"
 msgid "Add new button to copy all properties as text in clipboard."
 msgstr "Kopiera alla egenskaper på klippbordet"
 
-#: core/app/views/stack/welcomepageview.cpp:320
+#: core/app/views/stack/welcomepageview.cpp:385
 #, fuzzy, kde-format
 #| msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgid "Add new button to open current item is file manager."
@@ -3550,114 +3550,114 @@ msgstr ""
 "Lägg till ny etikett i nuvarande etikett. Nuvarande etikett är den senast "
 "klickade etiketten."
 
-#: core/app/views/stack/welcomepageview.cpp:321
+#: core/app/views/stack/welcomepageview.cpp:386
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:322
+#: core/app/views/stack/welcomepageview.cpp:387
 #, kde-format
 msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:323
+#: core/app/views/stack/welcomepageview.cpp:388
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:324
+#: core/app/views/stack/welcomepageview.cpp:389
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:325
+#: core/app/views/stack/welcomepageview.cpp:390
 #, kde-format
 msgid ""
 "Split filters view into 3 separated tabs for better usabilty: Properties, "
 "Tags, and People."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:326
+#: core/app/views/stack/welcomepageview.cpp:391
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:327
+#: core/app/views/stack/welcomepageview.cpp:392
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:328
+#: core/app/views/stack/welcomepageview.cpp:393
 #, kde-format
 msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
 "magnifier."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:329
+#: core/app/views/stack/welcomepageview.cpp:394
 #, kde-format
 msgid "Add context-menu to the video player."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:330
+#: core/app/views/stack/welcomepageview.cpp:395
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:331
+#: core/app/views/stack/welcomepageview.cpp:396
 #, kde-format
 msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:332
+#: core/app/views/stack/welcomepageview.cpp:397
 #, kde-format
 msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
 "canvas. Tool Size and zoom factor are customizable."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:333
+#: core/app/views/stack/welcomepageview.cpp:398
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:334
+#: core/app/views/stack/welcomepageview.cpp:399
 #, kde-format
 msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:335
+#: core/app/views/stack/welcomepageview.cpp:400
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:336
+#: core/app/views/stack/welcomepageview.cpp:401
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:337
+#: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:338
+#: core/app/views/stack/welcomepageview.cpp:403
 #, kde-format
 msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:339
+#: core/app/views/stack/welcomepageview.cpp:404
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to use the background theme color in the image editor "
@@ -3669,7 +3669,7 @@ msgstr ""
 "Aktivera alternativet för att använda bakgrundsfärgen från temat i "
 "bildredigeringsområdet."
 
-#: core/app/views/stack/welcomepageview.cpp:340
+#: core/app/views/stack/welcomepageview.cpp:405
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to use the background theme color in the image editor "
@@ -3681,36 +3681,48 @@ msgstr ""
 "Aktivera alternativet för att använda bakgrundsfärgen från temat i "
 "bildredigeringsområdet."
 
-#: core/app/views/stack/welcomepageview.cpp:341
+#: core/app/views/stack/welcomepageview.cpp:406
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:342
+#: core/app/views/stack/welcomepageview.cpp:407
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:343
+#: core/app/views/stack/welcomepageview.cpp:408
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:344
+#: core/app/views/stack/welcomepageview.cpp:409
 #, kde-format
 msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:345
+#: core/app/views/stack/welcomepageview.cpp:410
 #, kde-format
 msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
 "history, features, support, download, etc."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:346
+#: core/app/views/stack/welcomepageview.cpp:411
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add video support to find files based on properties registered on "
+#| "database."
+msgid ""
+"New Advanced Search options to find empty properties registered in the "
+"database."
+msgstr ""
+"Lägg till videostöd för att hitta filer baserat på egenskaper registrerade i "
+"databasen."
+
+#: core/app/views/stack/welcomepageview.cpp:412
 #, fuzzy, kde-format
 #| msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
@@ -3718,61 +3730,96 @@ msgstr ""
 "Uppdatering av internt gränssnitt för obehandlade bilder till senaste Libraw "
 "avbilden 2025-05-12."
 
-#: core/app/views/stack/welcomepageview.cpp:347
-#, fuzzy, kde-format
-#| msgid ""
-#| "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
-#| "R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
-#| "X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic "
-#| "DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
-#| "GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-"
-#| "FX30, DSC-HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones "
-#| "with DNG format recorded."
-msgid ""
-"New RAW camera supported:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 "
-"Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul><ul>Fujifilm X-T50, GFX "
-"100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul><ul>Hasselblad  CFV-50c, "
-"CFV-100c, X2D-100c ; </ul><ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ; "
-"</ul><ul>Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ; </"
-"ul><ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </ul><ul>Panasonic GH7, "
-"S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
-"GH6 ; </ul><ul>Pentax KF, K III Monochrome ; </ul><ul>Sony ZV-E10M2, UMC-"
-"R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 "
-"(A7R-V), ILME-FX30, A1 ; </ul><ul>Multiple DJI and Skydio drones ; </"
-"ul><ul>Multiple smartphones with DNG format recorded.</ul>"
+#: core/app/views/stack/welcomepageview.cpp:413
+#, kde-format
+msgid "New RAW camera supported:"
 msgstr ""
-"Nya kameror med stöd för obehandlade bilder: Canon EOS R6 Mark II, EOS R8, "
-"EOS R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
-"Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5."
-"Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
-"II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
-"ILME-FX30, DSC-HX95, A1.Multiple DJI och Skydio drönare.Flera smarta "
-"telefoner med DNG-format inkluderade."
 
-#: core/app/views/stack/welcomepageview.cpp:363
+#: core/app/views/stack/welcomepageview.cpp:415
+#, kde-format
+msgid ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:416
+#, kde-format
+msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:417
+#, kde-format
+msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:418
+#, kde-format
+msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:419
+#, kde-format
+msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:420
+#, kde-format
+msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:421
+#, kde-format
+msgid ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:422
+#, kde-format
+msgid "Pentax KF, K III Monochrome ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:423
+#, kde-format
+msgid ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:424
+#, kde-format
+msgid "Multiple DJI and Skydio drones ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:425
+#, kde-format
+msgid "Multiple smartphones with DNG format recorded."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:430
 #, kde-format
 msgid "...and much more."
 msgstr "... och mycket mer."
 
-#: core/app/views/stack/welcomepageview.cpp:369
+#: core/app/views/stack/welcomepageview.cpp:436
 #, fuzzy, kde-format
 #| msgid "<li>%1</li><br>"
 msgid "<li>%1</li>"
 msgstr "<li>%1</li><br>"
 
-#: core/app/views/stack/welcomepageview.cpp:372
+#: core/app/views/stack/welcomepageview.cpp:439
 #, fuzzy, kde-format
 #| msgid ""
 #| "Some of the new features in this release of digiKam include (compared to "
 #| "digiKam 7):"
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
-"digiKam 8):</h3><ul>%1</ul>"
+"digiKam version 8):</h3><ul>%1</ul>"
 msgstr ""
 "Vissa av de nya funktionerna i den här utgåvan av Digikam omfattar (jämfört "
 "med Digikam 7):"
 
-#: core/app/views/stack/welcomepageview.cpp:381
+#: core/app/views/stack/welcomepageview.cpp:460
 #, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
@@ -3782,33 +3829,33 @@ msgid ""
 "transfer photos, raw files, and videos directly from your camera and "
 "external storage devices (SD cards, USB disks, etc.). The application allows "
 "you to configure import settings and rules that process and organize "
-"imported items on-the-fly.With digiKam you can import, organize, enhance, "
-"search, export, and more...</h3><h3>Currently, you are in the Album view "
-"mode of digiKam.</h3><h3>Albums are the places where your files are stored, "
-"and are identical to the folders on your hard disk.</h3><li>digiKam has many "
-"powerful features which are described in the <a href=\"https://docs.digikam."
-"org/en/index.html\">documentation</a></li><li>The <a href=\"https://www."
-"digikam.org\">digiKam homepage</a> provides information about new versions "
-"of digiKam.</li>"
+"imported items on-the-fly.</h3><h3>With digiKam you can import, organize, "
+"enhance, search, export, and more...</h3><h3>Currently, you are in the Album "
+"view mode of digiKam.</h3><h3>Albums are the places where your files are "
+"stored, and are identical to the folders on your hard disk.</h3><li>digiKam "
+"has many powerful features which are described in the <a href=\"https://docs."
+"digikam.org/en/index.html\">documentation</a></li><li>The <a href=\"https://"
+"www.digikam.org\">digiKam homepage</a> provides information about new "
+"versions of digiKam.</li>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:423
+#: core/app/views/stack/welcomepageview.cpp:500
 #, kde-format
 msgid "Author:"
 msgstr "Upphovsman:"
 
-#: core/app/views/stack/welcomepageview.cpp:424
+#: core/app/views/stack/welcomepageview.cpp:501
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Plats:"
 
-#: core/app/views/stack/welcomepageview.cpp:426
+#: core/app/views/stack/welcomepageview.cpp:503
 #, kde-format
 msgid "Camera:"
 msgstr "Kamera:"
 
-#: core/app/views/stack/welcomepageview.cpp:427
+#: core/app/views/stack/welcomepageview.cpp:504
 #, kde-format
 msgid "Lens:"
 msgstr "Lins:"
@@ -3847,7 +3894,7 @@ msgstr "Ljudkanaltyp"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:998
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
@@ -3855,7 +3902,7 @@ msgstr "Ljudkodare"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:903
 #, kde-format
 msgid "Duration"
 msgstr "Längd"
@@ -8441,7 +8488,7 @@ msgstr "Färghantering är inaktiverad..."
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:593
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "White Balance"
 msgstr "Vitbalans"
@@ -16640,8 +16687,8 @@ msgstr "Målfil"
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
-#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#: core/utilities/searchwindow/searchfields_createfield.cpp:390
+#: core/utilities/searchwindow/searchfields_createfield.cpp:440
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
@@ -19683,7 +19730,7 @@ msgstr ""
 "pappersstorlekar och utläggningar kan användas för att behandla filer.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
 #, kde-format
 msgid "Author"
 msgstr "Upphovsman"
@@ -26885,9 +26932,9 @@ msgid "Reset curve to linear"
 msgstr "Återställ kurvan till linjär"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:534
-#: core/utilities/searchwindow/searchfields_createfield.cpp:546
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Exposure"
 msgstr "Exponering"
@@ -38815,14 +38862,15 @@ msgid "Date Time"
 msgstr "Datum och tid"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:426
 #, kde-format
 msgid "Lens"
 msgstr "Lins"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:658
 #, kde-format
 msgid "Aperture"
 msgstr "Bländare"
@@ -38843,7 +38891,7 @@ msgstr "Exponeringstid"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "Sensitivity"
 msgstr "Känslighet"
@@ -52243,8 +52291,9 @@ msgid "Lens of the camera"
 msgstr "Kamerans lins"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:475
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
 #, kde-format
 msgid "Focal length"
 msgstr "Fokallängd"
@@ -52255,7 +52304,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Fokallängd (35 mm ekvivalens)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:513
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, kde-format
 msgid "Exposure time"
 msgstr "Exponeringstid"
@@ -52276,7 +52326,8 @@ msgid "Flash mode"
 msgstr "Blixtläge"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, kde-format
 msgid "White balance"
 msgstr "Vitbalans"
@@ -52287,6 +52338,7 @@ msgid "White balance (color temperature)"
 msgstr "Vitbalans (färgtemperatur)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
+#: core/utilities/searchwindow/searchfields_createfield.cpp:665
 #, kde-format
 msgid "Metering mode"
 msgstr "Mätarläge"
@@ -52307,14 +52359,14 @@ msgid "Display Aspect Ratio"
 msgstr "Visa proportion"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Ljudbithastighet"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:979
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -53816,7 +53868,8 @@ msgstr "Nationshuvudstad"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:725
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:792
 #, kde-format
 msgid "City"
 msgstr "Stad"
@@ -63005,23 +63058,23 @@ msgstr "%1 [video]"
 msgid "The make of the camera"
 msgstr "Kamerans tillverkare"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:390
 #, kde-format
 msgid "The model of the camera"
 msgstr "Kamerans modell"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:426
 #, kde-format
 msgid "The type of the lens"
 msgstr "Linsens typ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#: core/utilities/searchwindow/searchfields_createfield.cpp:440
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without a camera ..."
 msgstr "Returnera objekt utan ansiktsområden"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:443
 #, fuzzy, kde-format
 #| msgctxt "@info: xslt param"
 #| msgid "Make"
@@ -63029,7 +63082,7 @@ msgctxt "Camera"
 msgid "Make"
 msgstr "Tillverkare"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:444
 #, fuzzy, kde-format
 #| msgctxt "@info: Camera Model"
 #| msgid "Model"
@@ -63037,455 +63090,509 @@ msgctxt "Camera"
 msgid "Model"
 msgstr "Modell"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:445
 #, fuzzy, kde-format
 #| msgid "No Lens Filter"
 msgctxt "Camera"
 msgid "Lens Type"
 msgstr "Inget linsfilter"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Linsens bländare som f-nummer"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:456
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:475
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Linsens fokallängd"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:476
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:660
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "Ekvivalent 35-mm fokallängd"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:495
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:514
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:534
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Automatiskt exponeringsprogram"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:546
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Automatisk eller manuell exponeringstid"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO-filmkänslighet (linjär skala, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:558
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:581
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Blixt"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:581
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:666
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Blixtläge"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:593
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Automatisk eller manuell vitbalans"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Färgtemperatur använd för vitbalansen"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:605
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Metering Mode"
 msgstr "Mätarläge"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Metod att bestämma exponeringstiden"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:629
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, kde-format
 msgid "Subject Distance"
 msgstr "Motivets avstånd"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:629
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Motivets avstånd från linsen"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Makro, närbild eller avståndsbild"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
-#: core/utilities/searchwindow/searchfields_createfield.cpp:682
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#, fuzzy, kde-format
+#| msgid "Capture One Settings"
+msgid "Capture Settings"
+msgstr "Capture One-inställningar"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Return items without selected capture settings ..."
+msgstr "Returnera objekt utan ansiktsområden"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#, kde-format
+msgid "ISO film speed"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#, fuzzy, kde-format
+#| msgid "White balance (color temperature)"
+msgid "White balance color temperature"
+msgstr "Vitbalans (färgtemperatur)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#, fuzzy, kde-format
+#| msgid "Subject distance (category)"
+msgid "Subject Distance Category"
+msgstr "Motivets avstånd (kategori)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:712
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
 #, kde-format
 msgid "Altitude range"
 msgstr "Höjdintervall"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:682
+#: core/utilities/searchwindow/searchfields_createfield.cpp:712
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "Objektet har ingen GPS-information"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:683
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Utan geografisk lokalisering"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:693
+#: core/utilities/searchwindow/searchfields_createfield.cpp:723
+#: core/utilities/searchwindow/searchfields_createfield.cpp:790
 #, kde-format
 msgid "Country"
 msgstr "Land"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:693
+#: core/utilities/searchwindow/searchfields_createfield.cpp:723
 #, kde-format
 msgid "Country shown in the item"
 msgstr "Land visad i objektet"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:709
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Province"
 msgstr "Region"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:709
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Provins visad i objektet"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:725
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgid "City shown in the item"
 msgstr "Stad visad i objektet"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:741
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:793
 #, kde-format
 msgid "Sublocation"
 msgstr "Delplats"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:741
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Delplats visad i objektet"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#, fuzzy, kde-format
+#| msgid "Place:"
+msgid "Place"
+msgstr "Plats:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Return items without selected place information ..."
+msgstr "Returnera objekt utan ansiktsområden"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#, fuzzy, kde-format
+#| msgid "State/Province:"
+msgid "State/Province"
+msgstr "Stat/Provins:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Skapare"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgid "Return items created by"
 msgstr "Returnera objekt skapade av"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:763
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Rubrik"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:763
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Returnera objekt vars kommentar innehåller"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
 #, kde-format
 msgid "Return items commented by"
 msgstr "Returnera objekt kommenterade av"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:779
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Headline"
 msgstr "Rubrik"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:779
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Returnera objekt med IPTC-rubrik"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Titel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Returnera objekt med IPTC-titeln"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:795
+#: core/utilities/searchwindow/searchfields_createfield.cpp:843
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Sök efter objekt som är associerade med alla dessa ord:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:851
 #, kde-format
 msgid "Empty Text"
 msgstr "Ta bort text"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:851
 #, kde-format
 msgid "Return items without text in"
 msgstr "Returnera objekt utan text"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:853
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Skapare"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:806
+#: core/utilities/searchwindow/searchfields_createfield.cpp:854
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Rubrik"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:807
+#: core/utilities/searchwindow/searchfields_createfield.cpp:855
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Upphovsman"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:808
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Rubrik"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:809
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Titel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:886
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Proportion"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Returnera objekt med proportion"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Pixel Size"
 msgstr "Bildpunktsstorlek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Värdet av (bredd * höjd) mellan"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:828
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "och"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:886
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Returnera video med proportion"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:903
 #, kde-format
 msgid "Length of the video"
 msgstr "Videons längd"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:904
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "och"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:873
+#: core/utilities/searchwindow/searchfields_createfield.cpp:921
 #, kde-format
 msgid "Frame Rate"
 msgstr "Bildfrekvens"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:873
+#: core/utilities/searchwindow/searchfields_createfield.cpp:921
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Returnera video med bildfrekvensen"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:874
+#: core/utilities/searchwindow/searchfields_createfield.cpp:922
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "och"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "bilder/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:891
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgid "Codec"
 msgstr "Kodare"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:891
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgid "Return video codec"
 msgstr "Returnera videokodare"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Returnera ljudbithastighet"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:962
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1010
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "och"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:963
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1011
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bilder/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:979
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Returnera ljudkanaltyp"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:981
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1029
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:982
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:983
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 surroundljud"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:984
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 surroundljud"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:985
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1033
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16-kanalers sekvens"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1034
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Annan kanaltyp"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:998
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Returnera ljudkodare"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
 #, kde-format
 msgid "Faces"
 msgstr "Ansikten"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Returnera objekt enligt antal ansiktsområden"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1098
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1146
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "och"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Returnera objekt utan ansiktsområden"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1108
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1156
 #, kde-format
 msgid "No Face Regions"
 msgstr "Inga ansiktsområden"
@@ -63553,12 +63660,12 @@ msgstr "Objektegenskaper"
 msgid "Caption, Comment, Title"
 msgstr "Rubrik, kommentar, titel"
 
-#: core/utilities/searchwindow/searchgroup.cpp:183
+#: core/utilities/searchwindow/searchgroup.cpp:184
 #, kde-format
 msgid "Geographic position"
 msgstr "Geografisk plats"
 
-#: core/utilities/searchwindow/searchgroup.cpp:206
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, kde-format
 msgid "Face regions"
 msgstr "Ansiktsområden"
@@ -68835,6 +68942,37 @@ msgstr "Importera objekt"
 #, kde-format
 msgid "Survey"
 msgstr "Undersökning"
+
+#, fuzzy
+#~| msgid ""
+#~| "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
+#~| "R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
+#~| "X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic "
+#~| "DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
+#~| "GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-"
+#~| "FX30, DSC-HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones "
+#~| "with DNG format recorded."
+#~ msgid ""
+#~ "New RAW camera supported:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS "
+#~ "R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul><ul>Fujifilm X-T50, "
+#~ "GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul><ul>Hasselblad  "
+#~ "CFV-50c, CFV-100c, X2D-100c ; </ul><ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 "
+#~ "Monochrom ; </ul><ul>Nikon (standard compression only): Z6-III, Z f, Z30, "
+#~ "Z8 ; </ul><ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </"
+#~ "ul><ul>Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / "
+#~ "TZ202D / TZ220D, DC-S5-II, DC-GH6 ; </ul><ul>Pentax KF, K III "
+#~ "Monochrome ; </ul><ul>Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, "
+#~ "A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; </"
+#~ "ul><ul>Multiple DJI and Skydio drones ; </ul><ul>Multiple smartphones "
+#~ "with DNG format recorded.</ul>"
+#~ msgstr ""
+#~ "Nya kameror med stöd för obehandlade bilder: Canon EOS R6 Mark II, EOS "
+#~ "R8, EOS R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-"
+#~ "H2S.Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital "
+#~ "OM-5.Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, "
+#~ "DC-S5-II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 "
+#~ "(A7R-V), ILME-FX30, DSC-HX95, A1.Multiple DJI och Skydio drönare.Flera "
+#~ "smarta telefoner med DNG-format inkluderade."
 
 #~ msgid "<h3>%1</h3><ul>%2</ul>"
 #~ msgstr "<h3>%1</h3><ul>%2</ul>"
@@ -75333,11 +75471,6 @@ msgstr "Undersökning"
 #~ msgid "Microsoft Compiled HTML format"
 #~ msgstr "Microsoft kompilerat HTML-format"
 
-#~| msgctxt "@info"
-#~| msgid "Capture Device Settings"
-#~ msgid "Capture One Settings"
-#~ msgstr "Capture One-inställningar"
-
 #~ msgid "Canon RAW 2"
 #~ msgstr "Canon obehandlat 2"
 
@@ -77263,13 +77396,6 @@ msgstr "Undersökning"
 #~ msgid "New video metadata parser based on ffmpeg to populate database;"
 #~ msgstr ""
 #~ "Ny tolk av videometadata för att fylla i databasen baserad på ffmpeg,"
-
-#~ msgid ""
-#~ "Add video support to find files based on properties registered on "
-#~ "database."
-#~ msgstr ""
-#~ "Lägg till videostöd för att hitta filer baserat på egenskaper "
-#~ "registrerade i databasen."
 
 #~ msgid ""
 #~ "Similarity database has been moved to a dedicated file to not bloat core "

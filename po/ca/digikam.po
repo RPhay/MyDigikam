@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-31 00:41+0000\n"
-"PO-Revision-Date: 2026-01-30 12:46+0100\n"
+"POT-Creation-Date: 2026-02-01 00:41+0000\n"
+"PO-Revision-Date: 2026-01-31 13:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -1012,7 +1012,7 @@ msgstr "Nom:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:425
+#: core/app/views/stack/welcomepageview.cpp:502
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -3406,29 +3406,29 @@ msgstr "Suprimeix"
 msgid "%1/%2 items selected"
 msgstr "%1/%2 elements seleccionats"
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:217
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Us donem la benvinguda al digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:232
 #, kde-format
 msgid "New Features"
 msgstr "Característiques noves"
 
-#: core/app/views/stack/welcomepageview.cpp:195
+#: core/app/views/stack/welcomepageview.cpp:233
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Quant al"
 
-#: core/app/views/stack/welcomepageview.cpp:196
+#: core/app/views/stack/welcomepageview.cpp:234
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Atribució de la imatge de fons"
 
-#: core/app/views/stack/welcomepageview.cpp:308
+#: core/app/views/stack/welcomepageview.cpp:373
 #, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
@@ -3439,7 +3439,7 @@ msgstr ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">350 informes d'usuari</a> al Bugzilla."
 
-#: core/app/views/stack/welcomepageview.cpp:309
+#: core/app/views/stack/welcomepageview.cpp:374
 #, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
@@ -3450,7 +3450,7 @@ msgstr ""
 "que porta amb si una diversitat de correccions d'errors i millores de "
 "rendiment (només les Qt5)."
 
-#: core/app/views/stack/welcomepageview.cpp:310
+#: core/app/views/stack/welcomepageview.cpp:375
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
@@ -3458,7 +3458,7 @@ msgstr ""
 "Afegeix la implementació del format de data personalitzable per a mostrar-se "
 "a tot arreu del programa."
 
-#: core/app/views/stack/welcomepageview.cpp:311
+#: core/app/views/stack/welcomepageview.cpp:376
 #, kde-format
 msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
@@ -3468,49 +3468,49 @@ msgstr ""
 "Rètols de la barra lateral esquerra fent doble clic sobre el text. La mida "
 "de les cadenes dels rètols està limitada a 32 caràcters."
 
-#: core/app/views/stack/welcomepageview.cpp:312
+#: core/app/views/stack/welcomepageview.cpp:377
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
 "Afegeix la implementació d'ordenació d'elements de la vista d'icones d'àlbum "
 "dels rètols de selecció i de color."
 
-#: core/app/views/stack/welcomepageview.cpp:313
+#: core/app/views/stack/welcomepageview.cpp:378
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
 "Afegeix la implementació d'ordenació d'elements de la vista d'icona "
 "d'importació dels rètols de selecció i de color."
 
-#: core/app/views/stack/welcomepageview.cpp:314
+#: core/app/views/stack/welcomepageview.cpp:379
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
 "Afegeix la implementació d'ordenació d'elements de la vista d'icones d'àlbum "
 "per orientació."
 
-#: core/app/views/stack/welcomepageview.cpp:315
+#: core/app/views/stack/welcomepageview.cpp:380
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
 "Afegeix la implementació d'ordenació d'elements de la vista d'icones d'àlbum "
 "per ubicació GPS."
 
-#: core/app/views/stack/welcomepageview.cpp:316
+#: core/app/views/stack/welcomepageview.cpp:381
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
 "Afegeix la implementació d'ordenació d'elements de la vista d'icones d'àlbum "
 "per format de fitxer."
 
-#: core/app/views/stack/welcomepageview.cpp:317
+#: core/app/views/stack/welcomepageview.cpp:382
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
 "Afegeix la implementació d'ordenació d'elements de la vista d'icona "
 "d'importació per format de fitxer."
 
-#: core/app/views/stack/welcomepageview.cpp:318
+#: core/app/views/stack/welcomepageview.cpp:383
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
@@ -3518,26 +3518,26 @@ msgstr ""
 "Afegeix la implementació de comodins d'expressió regular per a la "
 "configuració de directoris ignorats."
 
-#: core/app/views/stack/welcomepageview.cpp:319
+#: core/app/views/stack/welcomepageview.cpp:384
 #, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
 msgstr ""
 "Afegeix un botó nou per a copiar totes les propietats com a text al porta-"
 "retalls."
 
-#: core/app/views/stack/welcomepageview.cpp:320
+#: core/app/views/stack/welcomepageview.cpp:385
 #, kde-format
 msgid "Add new button to open current item is file manager."
 msgstr "Afegeix un botó nou per a obrir l'element actual al gestor de fitxers."
 
-#: core/app/views/stack/welcomepageview.cpp:321
+#: core/app/views/stack/welcomepageview.cpp:386
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
 "Si no s'ha seleccionat cap element de vista d'icona, mostra les "
 "estadístiques de l'àlbum actual."
 
-#: core/app/views/stack/welcomepageview.cpp:322
+#: core/app/views/stack/welcomepageview.cpp:387
 #, kde-format
 msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
@@ -3546,14 +3546,14 @@ msgstr ""
 "Mostra els elements d'un grup obert ressaltat per a una millor usabilitat "
 "amb la vista d'icones."
 
-#: core/app/views/stack/welcomepageview.cpp:323
+#: core/app/views/stack/welcomepageview.cpp:388
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
 "Millores d'usabilitat de la superposició d'elements agrupats de la vista "
 "d'icones."
 
-#: core/app/views/stack/welcomepageview.cpp:324
+#: core/app/views/stack/welcomepageview.cpp:389
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
@@ -3561,7 +3561,7 @@ msgstr ""
 "Millores de la barra de miniatures per a donar suport a la visibilitat dels "
 "elements agrupats com amb la vista d'icones."
 
-#: core/app/views/stack/welcomepageview.cpp:325
+#: core/app/views/stack/welcomepageview.cpp:390
 #, kde-format
 msgid ""
 "Split filters view into 3 separated tabs for better usabilty: Properties, "
@@ -3570,21 +3570,21 @@ msgstr ""
 "Divideix la vista dels filtres en 3 pestanyes separades per a una usabilitat "
 "millor: Propietats, Etiquetes i Persones."
 
-#: core/app/views/stack/welcomepageview.cpp:326
+#: core/app/views/stack/welcomepageview.cpp:391
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
 "Carrega i desa els estats de la columna de la vista de la paperera entre "
 "sessions."
 
-#: core/app/views/stack/welcomepageview.cpp:327
+#: core/app/views/stack/welcomepageview.cpp:392
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
 "Amplia la barra d'eines de vista prèvia d'imatges i vídeos amb l'editor de "
 "rètols."
 
-#: core/app/views/stack/welcomepageview.cpp:328
+#: core/app/views/stack/welcomepageview.cpp:393
 #, kde-format
 msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
@@ -3593,12 +3593,12 @@ msgstr ""
 "Afegeix els botons nous de la barra d'eines de vista prèvia: indicadors "
 "d'exposició, gestió del color, OSD, lupa."
 
-#: core/app/views/stack/welcomepageview.cpp:329
+#: core/app/views/stack/welcomepageview.cpp:394
 #, kde-format
 msgid "Add context-menu to the video player."
 msgstr "Afegeix un menú contextual al reproductor de vídeo."
 
-#: core/app/views/stack/welcomepageview.cpp:330
+#: core/app/views/stack/welcomepageview.cpp:395
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
@@ -3606,7 +3606,7 @@ msgstr ""
 "Afegeix un indicador de progrés de càrrega a la barra d'estat (vista "
 "d'icones i taula de llum)."
 
-#: core/app/views/stack/welcomepageview.cpp:331
+#: core/app/views/stack/welcomepageview.cpp:396
 #, kde-format
 msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
@@ -3616,7 +3616,7 @@ msgstr ""
 "ampliar el contingut, desplaçar el llenç i canviar als elements anteriors/"
 "següents."
 
-#: core/app/views/stack/welcomepageview.cpp:332
+#: core/app/views/stack/welcomepageview.cpp:397
 #, kde-format
 msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
@@ -3626,13 +3626,13 @@ msgstr ""
 "llenç de vista prèvia. La mida de l'eina i el factor de zoom són "
 "personalitzables."
 
-#: core/app/views/stack/welcomepageview.cpp:333
+#: core/app/views/stack/welcomepageview.cpp:398
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
 "Afegeix indicadors de subexposició i sobreexposició al llenç de vista prèvia."
 
-#: core/app/views/stack/welcomepageview.cpp:334
+#: core/app/views/stack/welcomepageview.cpp:399
 #, kde-format
 msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
@@ -3641,7 +3641,7 @@ msgstr ""
 "El ferrocarril sobre el llenç es mostra com una superposició quan la barra "
 "de desplaçament és visible."
 
-#: core/app/views/stack/welcomepageview.cpp:335
+#: core/app/views/stack/welcomepageview.cpp:400
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
@@ -3649,19 +3649,19 @@ msgstr ""
 "En fer clic a la superposició de la icona GPS, obre la pestanya de "
 "Geolocalització de la barra lateral esquerra."
 
-#: core/app/views/stack/welcomepageview.cpp:336
+#: core/app/views/stack/welcomepageview.cpp:401
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
 "Afegeix columnes personalitzables per a mostrar les propietats agrupades i "
 "versionades."
 
-#: core/app/views/stack/welcomepageview.cpp:337
+#: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
 msgstr "Format nou de data del modificador avançat de canvi de nom."
 
-#: core/app/views/stack/welcomepageview.cpp:338
+#: core/app/views/stack/welcomepageview.cpp:403
 #, kde-format
 msgid ""
 "Add support to merge existing template entries assigned in items with a new "
@@ -3670,7 +3670,7 @@ msgstr ""
 "Afegeix la implementació per a fusionar entrades de plantilla existents "
 "assignades als elements amb una plantilla nova."
 
-#: core/app/views/stack/welcomepageview.cpp:339
+#: core/app/views/stack/welcomepageview.cpp:404
 #, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
@@ -3680,7 +3680,7 @@ msgstr ""
 "fons de color en lloc de negre pur en cas d'ús de transparència de les "
 "imatges."
 
-#: core/app/views/stack/welcomepageview.cpp:340
+#: core/app/views/stack/welcomepageview.cpp:405
 #, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
@@ -3689,28 +3689,28 @@ msgstr ""
 "Afegeix una opció nova de presentació per a personalitzar el fons de color "
 "en lloc de negre pur en cas d'ús de transparència de les imatges."
 
-#: core/app/views/stack/welcomepageview.cpp:341
+#: core/app/views/stack/welcomepageview.cpp:406
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
 "Reescriptura completa de la IGU de l'eina de transferència de fitxers per a "
 "una usabilitat millor."
 
-#: core/app/views/stack/welcomepageview.cpp:342
+#: core/app/views/stack/welcomepageview.cpp:407
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
 "Reescriptura completa de la IGU de l'eina de còpia de fitxers per a una "
 "usabilitat millor."
 
-#: core/app/views/stack/welcomepageview.cpp:343
+#: core/app/views/stack/welcomepageview.cpp:408
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
 "Afegeix un efecte de formigues caminant a la banda de goma de la selecció "
 "del llenç."
 
-#: core/app/views/stack/welcomepageview.cpp:344
+#: core/app/views/stack/welcomepageview.cpp:409
 #, kde-format
 msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
@@ -3719,7 +3719,7 @@ msgstr ""
 "Afegeix indicadors d'histograma de color de selecció per a les eines Corbes, "
 "Nivells, Balanç de blanc i Sèpia de blanc i negre."
 
-#: core/app/views/stack/welcomepageview.cpp:345
+#: core/app/views/stack/welcomepageview.cpp:410
 #, kde-format
 msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
@@ -3729,78 +3729,127 @@ msgstr ""
 "captures de pantalla, descripció, historial, característiques, suport, "
 "descàrrega, etc."
 
+#: core/app/views/stack/welcomepageview.cpp:411
+#, kde-format
+msgid ""
+"New Advanced Search options to find empty properties registered in the "
+"database."
+msgstr ""
+
 # skip-rule: kct-snapshot
-#: core/app/views/stack/welcomepageview.cpp:346
+#: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
 msgstr ""
 "Actualitzar el motor RAW intern a la darrera instantània de la Libraw "
 "2026-01-24."
 
-#: core/app/views/stack/welcomepageview.cpp:347
-#, fuzzy, kde-format
-#| msgid ""
-#| "New RAW camera supported:\n"
-#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
-#| "EOS R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-"
-#| "H2, X-H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-"
-#| "Lux8, SL3, Q3, M11 Monochrom ; Nikon (standard compression only): Z6-III, "
-#| "Z f, Z30, Z8 ; Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; Panasonic "
-#| "GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
-#| "II, DC-GH6 ; Pentax KF, K III Monochrome ; Sony ZV-E10M2, UMC-R10C, A9-"
-#| "III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
-#| "ILME-FX30, A1 ; Multiple DJI and Skydio drones ; Multiple smartphones "
-#| "with DNG format recorded."
-msgid ""
-"New RAW camera supported:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 "
-"Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul><ul>Fujifilm X-T50, GFX "
-"100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul><ul>Hasselblad  CFV-50c, "
-"CFV-100c, X2D-100c ; </ul><ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ; "
-"</ul><ul>Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ; </"
-"ul><ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </ul><ul>Panasonic GH7, "
-"S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
-"GH6 ; </ul><ul>Pentax KF, K III Monochrome ; </ul><ul>Sony ZV-E10M2, UMC-"
-"R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 "
-"(A7R-V), ILME-FX30, A1 ; </ul><ul>Multiple DJI and Skydio drones ; </"
-"ul><ul>Multiple smartphones with DNG format recorded.</ul>"
+#: core/app/views/stack/welcomepageview.cpp:413
+#, kde-format
+msgid "New RAW camera supported:"
 msgstr ""
-"Càmeres RAW noves implementades:\n"
-"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-"
-"H2S; Hasselblad  CFV-50c, CFV-100c, X2D-100c; Leica Q3 43, D-Lux8, SL3, Q3, "
-"M11 Monochrom; Nikon (només compressió estàndard): Z6-III, Z f, Z30, Z8; "
-"Olympus/OM System OM-1 Mark II, TG-7, OM-5; Panasonic GH7, S9, DC-G9 II, DC-"
-"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6; Pentax KF, K "
-"III Monochrome; Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, "
-"ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1; Drons diversos "
-"de DJI i Skydio. Diversos telèfons intel·ligents amb format d'enregistrament "
-"DNG."
 
-#: core/app/views/stack/welcomepageview.cpp:363
+#: core/app/views/stack/welcomepageview.cpp:415
+#, kde-format
+msgid ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:416
+#, kde-format
+msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:417
+#, kde-format
+msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:418
+#, kde-format
+msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:419
+#, kde-format
+msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:420
+#, kde-format
+msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:421
+#, kde-format
+msgid ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:422
+#, kde-format
+msgid "Pentax KF, K III Monochrome ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:423
+#, kde-format
+msgid ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:424
+#, kde-format
+msgid "Multiple DJI and Skydio drones ;"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:425
+#, kde-format
+msgid "Multiple smartphones with DNG format recorded."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:430
 #, kde-format
 msgid "...and much more."
 msgstr "... i molt més."
 
-#: core/app/views/stack/welcomepageview.cpp:369
-#, fuzzy, kde-format
-#| msgid "<li>%1</li><br>"
+#: core/app/views/stack/welcomepageview.cpp:436
+#, kde-format
 msgid "<li>%1</li>"
-msgstr "<li>%1</li><br>"
+msgstr "<li>%1</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:372
+#: core/app/views/stack/welcomepageview.cpp:439
 #, fuzzy, kde-format
 #| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 8):"
+#| "<h3>Some of the new features in this release of digiKam include (compared "
+#| "to digiKam 8):</h3><ul>%1</ul>"
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
-"digiKam 8):</h3><ul>%1</ul>"
+"digiKam version 8):</h3><ul>%1</ul>"
 msgstr ""
-"Algunes de les noves característiques d'aquest llançament del digiKam "
-"inclouen (comparades amb el digiKam 8):"
+"<h3>Algunes de les noves característiques d'aquest llançament del digiKam "
+"inclouen (comparades amb el digiKam 8):</h3><ul>%1</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:381
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:460
+#, fuzzy, kde-format
+#| msgid ""
+#| "<h3>digiKam is an advanced open-source digital photo management "
+#| "application that runs on Linux, Windows, and MacOS. The application "
+#| "provides a comprehensive set of tools for importing, managing, editing, "
+#| "and sharing photos and raw files. You can use digiKam’s import "
+#| "capabilities to easily transfer photos, raw files, and videos directly "
+#| "from your camera and external storage devices (SD cards, USB disks, "
+#| "etc.). The application allows you to configure import settings and rules "
+#| "that process and organize imported items on-the-fly.With digiKam you can "
+#| "import, organize, enhance, search, export, and more...</h3><h3>Currently, "
+#| "you are in the Album view mode of digiKam.</h3><h3>Albums are the places "
+#| "where your files are stored, and are identical to the folders on your "
+#| "hard disk.</h3><li>digiKam has many powerful features which are described "
+#| "in the <a href=\"https://docs.digikam.org/en/index.html\">documentation</"
+#| "a></li><li>The <a href=\"https://www.digikam.org\">digiKam homepage</a> "
+#| "provides information about new versions of digiKam.</li>"
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
 "that runs on Linux, Windows, and MacOS. The application provides a "
@@ -3809,33 +3858,49 @@ msgid ""
 "transfer photos, raw files, and videos directly from your camera and "
 "external storage devices (SD cards, USB disks, etc.). The application allows "
 "you to configure import settings and rules that process and organize "
-"imported items on-the-fly.With digiKam you can import, organize, enhance, "
-"search, export, and more...</h3><h3>Currently, you are in the Album view "
-"mode of digiKam.</h3><h3>Albums are the places where your files are stored, "
-"and are identical to the folders on your hard disk.</h3><li>digiKam has many "
-"powerful features which are described in the <a href=\"https://docs.digikam."
-"org/en/index.html\">documentation</a></li><li>The <a href=\"https://www."
-"digikam.org\">digiKam homepage</a> provides information about new versions "
-"of digiKam.</li>"
+"imported items on-the-fly.</h3><h3>With digiKam you can import, organize, "
+"enhance, search, export, and more...</h3><h3>Currently, you are in the Album "
+"view mode of digiKam.</h3><h3>Albums are the places where your files are "
+"stored, and are identical to the folders on your hard disk.</h3><li>digiKam "
+"has many powerful features which are described in the <a href=\"https://docs."
+"digikam.org/en/index.html\">documentation</a></li><li>The <a href=\"https://"
+"www.digikam.org\">digiKam homepage</a> provides information about new "
+"versions of digiKam.</li>"
 msgstr ""
+"<h3>El digiKam és una aplicació avançada de gestió de fotografia digital de "
+"codi obert que s'executa al Linux, Windows i MacOS. L'aplicació proporciona "
+"un conjunt complet d'eines per a importar, gestionar, editar i compartir "
+"fotos i fitxers RAW. Podeu utilitzar les capacitats d'importació del digiKam "
+"per a transferir fàcilment fotos, fitxers RAW i vídeos directament des de la "
+"càmera i dispositius d'emmagatzematge externs (targetes SD, discs USB, "
+"etc.). L'aplicació permet configurar els paràmetres i les regles "
+"d'importació que processen i organitzen els elements importats al vol. Amb "
+"el digiKam podeu importar, organitzar, millorar, cercar, exportar i més...</"
+"h3><h3>Actualment, esteu en el mode de vista d'Àlbum del digiKam.</"
+"h3><h3>Els àlbums són els llocs on s'emmagatzemen els vostres fitxers, i són "
+"idèntics a les carpetes del vostre disc dur.</h3><li>El digiKam té moltes "
+"funcionalitats potents que es descriuen a la <a href=\"https://docs.digikam."
+"org/en/index.html\">documentació</a></li><li>La <a href=\"https://www."
+"digikam.org\">pàgina d'inici del digiKam</a> proporciona informació sobre "
+"les versions noves del digiKam.</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:423
+#: core/app/views/stack/welcomepageview.cpp:500
 #, kde-format
 msgid "Author:"
 msgstr "Autor:"
 
-#: core/app/views/stack/welcomepageview.cpp:424
+#: core/app/views/stack/welcomepageview.cpp:501
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Localització:"
 
-#: core/app/views/stack/welcomepageview.cpp:426
+#: core/app/views/stack/welcomepageview.cpp:503
 #, kde-format
 msgid "Camera:"
 msgstr "Càmera:"
 
-#: core/app/views/stack/welcomepageview.cpp:427
+#: core/app/views/stack/welcomepageview.cpp:504
 #, kde-format
 msgid "Lens:"
 msgstr "Lent:"
@@ -3874,7 +3939,7 @@ msgstr "Tipus del canal de l'àudio"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:998
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
@@ -3882,7 +3947,7 @@ msgstr "Còdec d'àudio"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:903
 #, kde-format
 msgid "Duration"
 msgstr "Durada"
@@ -8526,7 +8591,7 @@ msgstr "S'ha desactivat la gestió del color..."
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:593
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "White Balance"
 msgstr "Balanç de blancs"
@@ -16843,8 +16908,8 @@ msgstr "Fitxer de destinació"
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:354
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
-#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#: core/utilities/searchwindow/searchfields_createfield.cpp:390
+#: core/utilities/searchwindow/searchfields_createfield.cpp:440
 #, kde-format
 msgid "Camera"
 msgstr "Càmera"
@@ -19902,7 +19967,7 @@ msgstr ""
 "processar els fitxers.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
 #, kde-format
 msgid "Author"
 msgstr "Autor"
@@ -27101,9 +27166,9 @@ msgid "Reset curve to linear"
 msgstr "Reinicia la corba a lineal"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:534
-#: core/utilities/searchwindow/searchfields_createfield.cpp:546
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
 #, kde-format
 msgid "Exposure"
 msgstr "Exposició"
@@ -39135,14 +39200,15 @@ msgid "Date Time"
 msgstr "Data i hora"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:426
 #, kde-format
 msgid "Lens"
 msgstr "Lent"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:658
 #, kde-format
 msgid "Aperture"
 msgstr "Obertura"
@@ -39159,7 +39225,7 @@ msgstr "Temps d'exposició"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sensibilitat"
@@ -52655,8 +52721,9 @@ msgid "Lens of the camera"
 msgstr "Lent de la càmera"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:475
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
 #, kde-format
 msgid "Focal length"
 msgstr "Distància focal"
@@ -52667,7 +52734,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Distància focal (equivalent a 35 mm)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:513
+#: core/utilities/searchwindow/searchfields_createfield.cpp:515
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, kde-format
 msgid "Exposure time"
 msgstr "Temps d'exposició"
@@ -52688,7 +52756,8 @@ msgid "Flash mode"
 msgstr "Mode de flaix"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, kde-format
 msgid "White balance"
 msgstr "Balanç de blancs"
@@ -52699,6 +52768,7 @@ msgid "White balance (color temperature)"
 msgstr "Balanç de blancs (temperatura de color)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
+#: core/utilities/searchwindow/searchfields_createfield.cpp:665
 #, kde-format
 msgid "Metering mode"
 msgstr "Mode de mesura"
@@ -52719,14 +52789,14 @@ msgid "Display Aspect Ratio"
 msgstr "Relació d'aspecte de la pantalla"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Taxa de bits de l'àudio"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:979
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -54244,7 +54314,8 @@ msgstr "Capital nacional"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:725
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:792
 #, kde-format
 msgid "City"
 msgstr "Ciutat"
@@ -63502,481 +63573,536 @@ msgstr "%1 [vídeo]"
 msgid "The make of the camera"
 msgstr "El fabricant de la càmera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:389
+#: core/utilities/searchwindow/searchfields_createfield.cpp:390
 #, kde-format
 msgid "The model of the camera"
 msgstr "El model de la càmera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:424
+#: core/utilities/searchwindow/searchfields_createfield.cpp:426
 #, kde-format
 msgid "The type of the lens"
 msgstr "El tipus de lent"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:438
+#: core/utilities/searchwindow/searchfields_createfield.cpp:440
 #, kde-format
 msgid "Return items without a camera ..."
 msgstr "Retorna elements sense una càmera..."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:443
 #, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "Fabricant"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:444
 #, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Model"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:445
 #, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
 msgstr "Tipus de lent"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#: core/utilities/searchwindow/searchfields_createfield.cpp:457
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Obertura de la lent com a nombre f"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:456
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:475
+#: core/utilities/searchwindow/searchfields_createfield.cpp:477
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Distància focal de la lent"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:476
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:496
+#: core/utilities/searchwindow/searchfields_createfield.cpp:660
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "Distància focal equivalent a 35mm"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:495
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:514
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:534
+#: core/utilities/searchwindow/searchfields_createfield.cpp:536
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Programa automàtic d'exposició"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:546
+#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Exposició automàtica o manual"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:559
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "Velocitat ISO de la pel·lícula (escala lineal, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:558
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:581
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Flaix"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:581
+#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:666
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Mode de flaix"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:593
+#: core/utilities/searchwindow/searchfields_createfield.cpp:595
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Balanç de blancs automàtic o manual"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Temperatura de color emprada pel balanç de blancs"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:605
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Metering Mode"
 msgstr "Mode de mesura"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:617
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Mètode per a determinar l'exposició"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:629
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, kde-format
 msgid "Subject Distance"
 msgstr "Distància del motiu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:629
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Distància al motiu des de la lent"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:644
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Macro, a prop o vista distant"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
-#: core/utilities/searchwindow/searchfields_createfield.cpp:682
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Capture Device Settings"
+msgid "Capture Settings"
+msgstr "Configuració del dispositiu de captura"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#, fuzzy, kde-format
+#| msgid "Return items without a camera ..."
+msgid "Return items without selected capture settings ..."
+msgstr "Retorna elements sense una càmera..."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#, kde-format
+msgid "ISO film speed"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#, fuzzy, kde-format
+#| msgid "White balance (color temperature)"
+msgid "White balance color temperature"
+msgstr "Balanç de blancs (temperatura de color)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#, fuzzy, kde-format
+#| msgid "Subject distance (category)"
+msgid "Subject Distance Category"
+msgstr "Distància del motiu (categoria)"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:712
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
 #, kde-format
 msgid "Altitude range"
 msgstr "Abast de l'altitud"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:682
+#: core/utilities/searchwindow/searchfields_createfield.cpp:712
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "L'element no conté informació del GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:683
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Sense geolocalització"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:693
+#: core/utilities/searchwindow/searchfields_createfield.cpp:723
+#: core/utilities/searchwindow/searchfields_createfield.cpp:790
 #, kde-format
 msgid "Country"
 msgstr "País"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:693
+#: core/utilities/searchwindow/searchfields_createfield.cpp:723
 #, kde-format
 msgid "Country shown in the item"
 msgstr "País mostrat en l'element"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:709
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Province"
 msgstr "Província"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:709
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Província mostrada en l'element"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:725
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgid "City shown in the item"
 msgstr "Ciutat mostrada en l'element"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:741
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:793
 #, kde-format
 msgid "Sublocation"
 msgstr "Sublocalització"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:741
+#: core/utilities/searchwindow/searchfields_createfield.cpp:771
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Sublocalització mostrada en l'element"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#, fuzzy, kde-format
+#| msgid "Place:"
+msgid "Place"
+msgstr "Lloc:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#, fuzzy, kde-format
+#| msgid "Return items without a camera ..."
+msgid "Return items without selected place information ..."
+msgstr "Retorna elements sense una càmera..."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#, fuzzy, kde-format
+#| msgid "State/Province:"
+msgid "State/Province"
+msgstr "Estat/província:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Creador"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgid "Return items created by"
 msgstr "Retorna els elements creats per"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:763
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Llegenda"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:763
+#: core/utilities/searchwindow/searchfields_createfield.cpp:811
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Retorna els elements en què el comentari conté"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:819
 #, kde-format
 msgid "Return items commented by"
 msgstr "Retorna els elements comentats per"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:779
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Headline"
 msgstr "Titular"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:779
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Retorna els elements amb el titular IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Títol"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Retorna els elements amb el títol IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:795
+#: core/utilities/searchwindow/searchfields_createfield.cpp:843
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Cerca els elements que tenen associades totes aquestes paraules:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:851
 #, kde-format
 msgid "Empty Text"
 msgstr "Text buit"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:851
 #, kde-format
 msgid "Return items without text in"
 msgstr "Retorna els elements sense text a"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:853
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Creador"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:806
+#: core/utilities/searchwindow/searchfields_createfield.cpp:854
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Llegenda"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:807
+#: core/utilities/searchwindow/searchfields_createfield.cpp:855
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Autor"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:808
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Titular"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:809
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Títol"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:886
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Relació d'aspecte"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Retorna els elements amb la relació d'aspecte"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Pixel Size"
 msgstr "Mida del píxel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Valor de (amplada * alçada) entre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:828
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:886
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Retorna els vídeos amb la relació d'aspecte dels fotogrames"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:903
 #, kde-format
 msgid "Length of the video"
 msgstr "Durada del vídeo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:904
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:873
+#: core/utilities/searchwindow/searchfields_createfield.cpp:921
 #, kde-format
 msgid "Frame Rate"
 msgstr "Velocitat dels fotogrames"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:873
+#: core/utilities/searchwindow/searchfields_createfield.cpp:921
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Retorna els vídeos amb la velocitat dels fotogrames"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:874
+#: core/utilities/searchwindow/searchfields_createfield.cpp:922
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:891
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgid "Codec"
 msgstr "Còdec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:891
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgid "Return video codec"
 msgstr "Retorna els vídeos amb el còdec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:961
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Retorna la taxa de bits de l'àudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:962
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1010
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:963
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1011
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:979
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Retorna els tipus de canal d'àudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:981
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1029
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:982
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Estèreo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:983
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "So envoltant 5.1"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:984
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "So envoltant 7.1"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:985
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1033
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "Seqüència de 16 canals"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1034
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Altres tipus de canal"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:998
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Retorna el còdec d'àudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
 #, kde-format
 msgid "Faces"
 msgstr "Cares"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1097
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Retorna els elements per nombre de regions de cares"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1098
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1146
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1107
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Retorna els elements sense regions de cares"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1108
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1156
 #, kde-format
 msgid "No Face Regions"
 msgstr "Sense regions de cares"
@@ -64044,12 +64170,12 @@ msgstr "Propietats de l'element"
 msgid "Caption, Comment, Title"
 msgstr "Llegenda, comentari, títol"
 
-#: core/utilities/searchwindow/searchgroup.cpp:183
+#: core/utilities/searchwindow/searchgroup.cpp:184
 #, kde-format
 msgid "Geographic position"
 msgstr "Ubicació geogràfica"
 
-#: core/utilities/searchwindow/searchgroup.cpp:206
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, kde-format
 msgid "Face regions"
 msgstr "Regions de cares"
@@ -69332,6 +69458,45 @@ msgstr "Importa els elements"
 #, kde-format
 msgid "Survey"
 msgstr "Estudi"
+
+#~| msgid ""
+#~| "New RAW camera supported:\n"
+#~| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+#~| "EOS R100, EOS Ra ; Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, "
+#~| "X-H2, X-H2S ; Hasselblad  CFV-50c, CFV-100c, X2D-100c ; Leica Q3 43, D-"
+#~| "Lux8, SL3, Q3, M11 Monochrom ; Nikon (standard compression only): Z6-"
+#~| "III, Z f, Z30, Z8 ; Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; "
+#~| "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+#~| "TZ220D, DC-S5-II, DC-GH6 ; Pentax KF, K III Monochrome ; Sony ZV-E10M2, "
+#~| "UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, "
+#~| "ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; Multiple DJI and Skydio drones ; "
+#~| "Multiple smartphones with DNG format recorded."
+#~ msgid ""
+#~ "New RAW camera supported:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS "
+#~ "R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ; </ul><ul>Fujifilm X-T50, "
+#~ "GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ; </ul><ul>Hasselblad  "
+#~ "CFV-50c, CFV-100c, X2D-100c ; </ul><ul>Leica Q3 43, D-Lux8, SL3, Q3, M11 "
+#~ "Monochrom ; </ul><ul>Nikon (standard compression only): Z6-III, Z f, Z30, "
+#~ "Z8 ; </ul><ul>Olympus/OM System OM-1 Mark II, TG-7, OM-5 ; </"
+#~ "ul><ul>Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / "
+#~ "TZ202D / TZ220D, DC-S5-II, DC-GH6 ; </ul><ul>Pentax KF, K III "
+#~ "Monochrome ; </ul><ul>Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, "
+#~ "A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ; </"
+#~ "ul><ul>Multiple DJI and Skydio drones ; </ul><ul>Multiple smartphones "
+#~ "with DNG format recorded.</ul>"
+#~ msgstr ""
+#~ "Càmeres RAW noves implementades:<ul>Canon EOS R1, EOS R5 Mark II, EOS R5 "
+#~ "C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra; </ul><ul>Fujifilm X-"
+#~ "T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S; </"
+#~ "ul><ul>Hasselblad CFV-50c, CFV-100c, X2D-100c; </ul><ul>Leica Q3 43, D-"
+#~ "Lux8, SL3, Q3, M11 Monochrom; </ul><ul>Nikon (només compressió "
+#~ "estàndard): Z6-III, Z f, Z30, Z8; </ul><ul>Olympus/OM System OM-1 Mark "
+#~ "II, TG-7, OM-5; </ul><ul>Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, "
+#~ "DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6; </ul><ul>Pentax KF, K III "
+#~ "Monochrome; </ul><ul>Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, "
+#~ "A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1; </"
+#~ "ul><ul>Drons diversos de DJI i Skydio; </ul><ul>Diversos telèfons "
+#~ "intel·ligents amb format d'enregistrament DNG.</ul>"
 
 #~ msgid "<h3>%1</h3><ul>%2</ul>"
 #~ msgstr "<h3>%1</h3><ul>%2</ul>"
