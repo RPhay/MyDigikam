@@ -202,11 +202,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     QWidget* const footerWidget              = new QWidget(plain);
     footerWidget->setContentsMargins(0, 0, 0, 0);
     footerWidget->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
-/*    QHBoxLayout* const footerLayout          = new QHBoxLayout(footerWidget);
-    footerLayout->setContentsMargins(0, 0, 0, 0);
-    footerLayout->setSpacing(0);
-    footerLayout->addStretch(100);
-*/
+
     // ---
 
     QWidget* const titleWidget           = new QWidget(plain);
