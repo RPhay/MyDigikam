@@ -201,11 +201,12 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     InvertedGradientWidget* const gradFooter = new InvertedGradientWidget(plain);
     QWidget* const footerWidget              = new QWidget(plain);
     footerWidget->setContentsMargins(0, 0, 0, 0);
-    QHBoxLayout* const footerLayout          = new QHBoxLayout(footerWidget);
+    footerWidget->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
+/*    QHBoxLayout* const footerLayout          = new QHBoxLayout(footerWidget);
     footerLayout->setContentsMargins(0, 0, 0, 0);
     footerLayout->setSpacing(0);
-    footerLayout->addStretch();
-
+    footerLayout->addStretch(100);
+*/
     // ---
 
     QWidget* const titleWidget           = new QWidget(plain);
