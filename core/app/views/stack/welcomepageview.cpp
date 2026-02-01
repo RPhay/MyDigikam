@@ -55,8 +55,8 @@ class Q_DECL_HIDDEN TitleEffect : public QGraphicsDropShadowEffect
 
 public:
 
-    TitleEffect()
-        : QGraphicsDropShadowEffect()
+    TitleEffect(QWidget* const parent = nullptr)
+        : QGraphicsDropShadowEffect(parent)
     {
         setColor(Qt::white);
         setBlurRadius(35);
