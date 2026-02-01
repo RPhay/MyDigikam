@@ -31,15 +31,15 @@ void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, 
     painter->setPen(borderColor);
     painter->drawRect(drawRect);
 
-    // Draw the "marching ants" manualy if the timer is on
+    // Draw the "marching ants" manually if the timer is on
 
     if (d->marchingAntsTimer->isActive())
     {
         QPen antsPen(Qt::black, 1);
         painter->setPen(antsPen);
 
-        int dashSize = 2; // Size of a chunck
-        int gapSize = 2;  // Size of the space between chuncks
+        int dashSize = 2; // Size of a chunk
+        int gapSize = 2;  // Size of the space between chunks
         int patternLength = dashSize + gapSize;
 
         // Compute the start position depending of the offset

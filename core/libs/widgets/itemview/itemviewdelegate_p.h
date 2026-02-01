@@ -58,7 +58,7 @@ public:
     int                       spacing           = 0;
     QSize                     gridSize;
 
-    QRect                     rect;                                     ///< Define the rectangle represneting whole icon-view item.
+    QRect                     rect;                                     ///< Define the rectangle representing whole icon-view item.
     QRect                     ratingRect;                               ///< Used to host the rating widget.
     QRect                     groupedItemRect;                          ///< Used to draw a frame when grouped items are expanded.
 
