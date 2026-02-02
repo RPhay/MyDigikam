@@ -97,6 +97,7 @@ class Q_DECL_HIDDEN InvertedGradientWidget : public QWidget
     Q_OBJECT
 
 public:
+
     explicit InvertedGradientWidget(QWidget* const parent = nullptr)
         : QWidget(parent)
     {
@@ -104,6 +105,7 @@ public:
     }
 
 protected:
+
     void paintEvent(QPaintEvent*) override
     {
         QPainter painter(this);
@@ -113,6 +115,7 @@ protected:
         painter.fillRect(rect(), gradient);
     }
 };
+
 // ---
 
 class Q_DECL_HIDDEN ResizableBackgroundWidget : public QWidget
@@ -122,24 +125,15 @@ class Q_DECL_HIDDEN ResizableBackgroundWidget : public QWidget
 public:
 
     explicit ResizableBackgroundWidget(QWidget* const parent = nullptr)
-        : QWidget(parent),
-          backgroundLabel(new QLabel(this))
+        : QWidget(parent)
     {
-        backgroundLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-        backgroundLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
-        backgroundLabel->setContentsMargins(0, 0, 0, 0);
         setContentsMargins(0, 0, 0, 0);
-
-        QVBoxLayout* const layout = new QVBoxLayout(this);
-        layout->setContentsMargins(0, 0, 0, 0);
-        layout->setSpacing(0);
-        layout->addWidget(backgroundLabel);
     }
 
     void setBackgroundPixmap(const QPixmap& pixmap)
     {
         backgroundPixmap = pixmap;
-        updateBackground();
+        update();
     }
 
 protected:
@@ -147,21 +141,22 @@ protected:
     void resizeEvent(QResizeEvent* event) override
     {
         QWidget::resizeEvent(event);
-        updateBackground();
+        update();
+    }
+
+    void paintEvent(QPaintEvent*) override
+    {
+        QPainter painter(this);
+        painter.fillRect(rect(), QColor(qRgb(0x22, 0x3c, 0x54)));
+
+        QPixmap scaledPixmap = backgroundPixmap.scaledToWidth(width(), Qt::SmoothTransformation);
+        QPoint topLeft(0, (rect().height() - scaledPixmap.height()) / 2);
+
+        painter.drawPixmap(topLeft, scaledPixmap);
     }
 
 private:
 
-    void updateBackground()
-    {
-        if (!backgroundPixmap.isNull())
-        {
-            QPixmap scaledPixmap = backgroundPixmap.scaledToWidth(width(), Qt::SmoothTransformation);
-            backgroundLabel->setPixmap(scaledPixmap);
-        }
-    }
-
-    QLabel* backgroundLabel = nullptr;
     QPixmap backgroundPixmap;
 };
 
@@ -243,6 +238,7 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     headerLayout->addWidget(title);
 
     // ---
+
 
     InvertedGradientWidget* const gradFooter = new InvertedGradientWidget(plain);
     QWidget* const footerWidget              = new QWidget(plain);
@@ -368,18 +364,18 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     // ---
 
     QGridLayout* const grid = new QGridLayout(plain);
-    grid->addWidget(gradHeader,       0, 0, 1,   3);
-    grid->addWidget(headerWidget,     0, 0, 1,   3);
-    grid->addWidget(background,       1, 0, 3,   3);
-    grid->addWidget(gradFooter,       6, 0, 100, 3);
-    grid->addWidget(footerWidget,     6, 0, 100, 3);
-    grid->addWidget(tabButtonsWidget, 1, 0, 1,   3, Qt::AlignCenter);
-    grid->addWidget(stackedWidget,    2, 0, 9,   3);
+    grid->addWidget(gradHeader,       0, 0, 1, 3);
+    grid->addWidget(headerWidget,     0, 0, 1, 3);
+    grid->addWidget(background,       1, 0, 2, 3);
+    grid->addWidget(tabButtonsWidget, 1, 0, 1, 3, Qt::AlignCenter);
+    grid->addWidget(gradFooter,       3, 0, 1, 3);
+    grid->addWidget(footerWidget,     3, 0, 1, 3);
+    grid->addWidget(stackedWidget,    2, 0, 2, 3);
     grid->setContentsMargins(0, 0, 0, 0);
     grid->setSpacing(0);
     grid->setColumnStretch(1, 10);
+    grid->setRowStretch(2, 10);
     grid->setRowStretch(3, 10);
-    grid->setRowStretch(6, 10);
 
     // ---
 
