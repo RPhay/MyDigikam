@@ -454,7 +454,7 @@ BUGFIXES:
 377 --> 467715 - No option for searching for empty/zero length location fields.
 378 --> 514028 - Crash on Startup.
 379 --> 511429 - libmysql.dll Crash in Windows 10.
-380 --> 
+380 --> 513837 - AppImage crash few seconds after starting digiKam.
 381 --> 
 382 --> 
 383 --> 
