@@ -453,7 +453,7 @@ BUGFIXES:
 376 --> 479133 - Add a new option to search for empty/zero length metadata property fields.
 377 --> 467715 - No option for searching for empty/zero length location fields.
 378 --> 514028 - Crash on Startup.
-379 --> 
+379 --> 511429 - libmysql.dll Crash in Windows 10.
 380 --> 
 381 --> 
 382 --> 
