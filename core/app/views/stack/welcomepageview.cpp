@@ -407,7 +407,7 @@ QString WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Show items from an open group highlighted for a better usability with Icon-View.");
     newFeatures << i18n("Usability improvements of the grouped icon-view items overlay.");
     newFeatures << i18n("Thumbbar improvements to support grouped items visibility as with Icon-View.");
-    newFeatures << i18n("Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.");
+    newFeatures << i18n("Split filters view into 3 separated tabs for better usability: Properties, Tags, and People.");
     newFeatures << i18n("Load and save Trash-view column states between sessions.");
     newFeatures << i18n("Extend Image and Video preview toolbar overlay with Labels editor.");
     newFeatures << i18n("Add new Preview toolbar buttons: exposure indicators, color management, OSD, magnifier.");
