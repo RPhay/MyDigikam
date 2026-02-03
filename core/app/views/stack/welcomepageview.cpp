@@ -130,12 +130,6 @@ public:
         setContentsMargins(0, 0, 0, 0);
     }
 
-    void setBackgroundPixmap(const QPixmap& pixmap)
-    {
-        backgroundPixmap = pixmap;
-        update();
-    }
-
 protected:
 
     void resizeEvent(QResizeEvent* event) override
@@ -149,15 +143,14 @@ protected:
         QPainter painter(this);
         painter.fillRect(rect(), QColor(qRgb(0x22, 0x3c, 0x54)));
 
-        QPixmap scaledPixmap = backgroundPixmap.scaledToWidth(width(), Qt::SmoothTransformation);
-        QPoint topLeft(0, (rect().height() - scaledPixmap.height()) / 2);
-
-        painter.drawPixmap(topLeft, scaledPixmap);
+        QPixmap scaledPixmap = m_backgroundPixmap.scaledToWidth(width(), Qt::SmoothTransformation);
+        painter.drawPixmap(0, 0, scaledPixmap);
     }
 
 private:
 
-    QPixmap backgroundPixmap;
+    QPixmap m_backgroundPixmap = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                        QLatin1String("digikam/data/body-background.webp"));
 };
 
 // ---
@@ -178,10 +171,6 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     // ---
 
     ResizableBackgroundWidget* const background = new ResizableBackgroundWidget(plain);
-    QPixmap backgroundPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                    QLatin1String("digikam/data/body-background.webp")));
-    background->setBackgroundPixmap(backgroundPixmap);
-
     GradientWidget* const gradHeader            = new GradientWidget(plain);
 
     // ---
@@ -238,7 +227,6 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     headerLayout->addWidget(title);
 
     // ---
-
 
     InvertedGradientWidget* const gradFooter = new InvertedGradientWidget(plain);
     QWidget* const footerWidget              = new QWidget(plain);
