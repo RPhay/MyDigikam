@@ -402,7 +402,7 @@ QString WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add support of Import Icon-View sort items by File Format.");
     newFeatures << i18n("Add regular expression wildcard support for ignored directories settings.");
     newFeatures << i18n("Add new button to copy all properties as text in clipboard.");
-    newFeatures << i18n("Add new button to open current item is file manager.");
+    newFeatures << i18n("Add new button to open current item in file manager.");
     newFeatures << i18n("If no icon-view item selected, show current album statistics.");
     newFeatures << i18n("Show items from an open group highlighted for a better usability with Icon-View.");
     newFeatures << i18n("Usability improvements of the grouped icon-view items overlay.");
@@ -417,13 +417,13 @@ QString WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add a magnifier glass tool to zoom and explore a small area of the preview canvas. Tool Size and zoom factor are customizable.");
     newFeatures << i18n("Add under and over exposure indicators for the preview canvas.");
     newFeatures << i18n("Railway over the canvas is displayed as an overlay when the scrollbar are visible.");
-    newFeatures << i18n("Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.");
+    newFeatures << i18n("Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar.");
     newFeatures << i18n("Add customizable columns to show Grouped and Versioned properties.");
     newFeatures << i18n("New Advanced Rename modifier Date Format.");
     newFeatures << i18n("Add support to merge existing template entries assigned in items with a new template.");
     newFeatures << i18n("Add new Slideshow option to customize the color background instead pure black in case of images transparency usage.");
     newFeatures << i18n("Add new Presentation option to customize the color background instead pure black in case of images transparency usage.");
-    newFeatures << i18n("Complete rewrite the File-Tranfert tool GUI for a better usability.");
+    newFeatures << i18n("Complete rewrite the File-Transfert tool GUI for a better usability.");
     newFeatures << i18n("Complete rewrite the File-Copy tool GUI for a better usability.");
     newFeatures << i18n("Add marching-ants effect to the canvas selection rubber band.");
     newFeatures << i18n("Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.");
