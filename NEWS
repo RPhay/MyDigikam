@@ -455,7 +455,7 @@ BUGFIXES:
 378 --> 514028 - Crash on Startup.
 379 --> 511429 - libmysql.dll Crash in Windows 10.
 380 --> 513837 - AppImage crash few seconds after starting digiKam.
-381 --> 
+381 --> 513885 - digiKam crashed when confirming a picture frame as a person.
 382 --> 
 383 --> 
 384 --> 
