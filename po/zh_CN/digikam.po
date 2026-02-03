@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-02 00:41+0000\n"
+"POT-Creation-Date: 2026-02-03 00:43+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -987,7 +987,7 @@ msgstr "名称："
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:526
+#: core/app/views/stack/welcomepageview.cpp:522
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -3324,29 +3324,29 @@ msgstr "删除"
 msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
 
-#: core/app/views/stack/welcomepageview.cpp:219
+#: core/app/views/stack/welcomepageview.cpp:214
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "欢迎使用 digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:256
+#: core/app/views/stack/welcomepageview.cpp:252
 #, kde-format
 msgid "New Features"
 msgstr "新版特性"
 
-#: core/app/views/stack/welcomepageview.cpp:257
+#: core/app/views/stack/welcomepageview.cpp:253
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "软件简介"
 
-#: core/app/views/stack/welcomepageview.cpp:258
+#: core/app/views/stack/welcomepageview.cpp:254
 #, kde-format
 msgid "Background Image Credits"
 msgstr "背景作者"
 
-#: core/app/views/stack/welcomepageview.cpp:397
+#: core/app/views/stack/welcomepageview.cpp:393
 #, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
@@ -3357,7 +3357,7 @@ msgstr ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">350 个用户报告的程序缺陷</a>。"
 
-#: core/app/views/stack/welcomepageview.cpp:398
+#: core/app/views/stack/welcomepageview.cpp:394
 #, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
@@ -3367,13 +3367,13 @@ msgstr ""
 "内建的 QtAVPlayer 已升级到最新的上游版本 2026-01-24，这将带来大量程序缺陷修复"
 "和性能增强 (仅限 Qt5)。"
 
-#: core/app/views/stack/welcomepageview.cpp:399
+#: core/app/views/stack/welcomepageview.cpp:395
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr "新增自定义日期格式，可应用于程序中的各种日期显示。"
 
-#: core/app/views/stack/welcomepageview.cpp:400
+#: core/app/views/stack/welcomepageview.cpp:396
 #, kde-format
 msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
@@ -3382,118 +3382,121 @@ msgstr ""
 "颜色标记名称现在可在左侧边栏的“标记”标签页中通过双击自定义。标记字符串大小限"
 "制在 32 个字符。"
 
-#: core/app/views/stack/welcomepageview.cpp:401
+#: core/app/views/stack/welcomepageview.cpp:397
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr "新增按照挑选标记和颜色标记对相册的图标视图进行项目排序。"
 
-#: core/app/views/stack/welcomepageview.cpp:402
+#: core/app/views/stack/welcomepageview.cpp:398
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr "新增按照挑选标记和颜色标记对导入项目的图标视图进行项目排序。"
 
-#: core/app/views/stack/welcomepageview.cpp:403
+#: core/app/views/stack/welcomepageview.cpp:399
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr "新增按照方向对相册的图标视图进行项目排序。"
 
-#: core/app/views/stack/welcomepageview.cpp:404
+#: core/app/views/stack/welcomepageview.cpp:400
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr "新增按照 GPS 位置对相册的图标视图进行项目排序。"
 
-#: core/app/views/stack/welcomepageview.cpp:405
+#: core/app/views/stack/welcomepageview.cpp:401
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr "新增按照文件格式对相册的图标视图进行项目排序。"
 
-#: core/app/views/stack/welcomepageview.cpp:406
+#: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr "新增按照文件格式对导入项目的图标视图进行项目排序。"
 
-#: core/app/views/stack/welcomepageview.cpp:407
+#: core/app/views/stack/welcomepageview.cpp:403
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr "新增忽略目录设置中的正则表达式通配符支持。"
 
-#: core/app/views/stack/welcomepageview.cpp:408
+#: core/app/views/stack/welcomepageview.cpp:404
 #, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
 msgstr "新增用于将所有属性作为文本复制到剪贴板的按钮。"
 
-#: core/app/views/stack/welcomepageview.cpp:409
+#: core/app/views/stack/welcomepageview.cpp:405
 #, kde-format
 msgid "Add new button to open current item is file manager."
 msgstr "新增用于在文件管理器中打开当前项目的按钮。"
 
-#: core/app/views/stack/welcomepageview.cpp:410
+#: core/app/views/stack/welcomepageview.cpp:406
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr "如果没有在图标视图中选择项目，则显示当前相册的统计信息。"
 
-#: core/app/views/stack/welcomepageview.cpp:411
+#: core/app/views/stack/welcomepageview.cpp:407
 #, kde-format
 msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr "在图标视图中高亮显示展开的项目分组中的项目以提高易用性。"
 
-#: core/app/views/stack/welcomepageview.cpp:412
+#: core/app/views/stack/welcomepageview.cpp:408
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr "改善了图标视图中分组项目叠加层的易用性。"
 
-#: core/app/views/stack/welcomepageview.cpp:413
+#: core/app/views/stack/welcomepageview.cpp:409
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr "缩略图栏支持分组项目并得到与图标视图同样的显示易用性改进。"
 
-#: core/app/views/stack/welcomepageview.cpp:414
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:410
+#, fuzzy, kde-format
+#| msgid ""
+#| "Split filters view into 3 separated tabs for better usabilty: Properties, "
+#| "Tags, and People."
 msgid ""
-"Split filters view into 3 separated tabs for better usabilty: Properties, "
+"Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
 msgstr "将过滤器视图拆分为 3 个独立的标签页：属性、标签和人物，以改善易用性。"
 
-#: core/app/views/stack/welcomepageview.cpp:415
+#: core/app/views/stack/welcomepageview.cpp:411
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr "跨会话加载和保存回收站视图的列状态。"
 
-#: core/app/views/stack/welcomepageview.cpp:416
+#: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr "扩展标记编辑器的图像和视频预览工具栏叠加层。"
 
-#: core/app/views/stack/welcomepageview.cpp:417
+#: core/app/views/stack/welcomepageview.cpp:413
 #, kde-format
 msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
 "magnifier."
 msgstr "新增预览工具栏按钮：曝光指示色、色彩管理、OSD、放大镜等。"
 
-#: core/app/views/stack/welcomepageview.cpp:418
+#: core/app/views/stack/welcomepageview.cpp:414
 #, kde-format
 msgid "Add context-menu to the video player."
 msgstr "视频播放器新增右键菜单。"
 
-#: core/app/views/stack/welcomepageview.cpp:419
+#: core/app/views/stack/welcomepageview.cpp:415
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr "状态栏新增加载进度指示器 (图标视图和多图对比视图)。"
 
-#: core/app/views/stack/welcomepageview.cpp:420
+#: core/app/views/stack/welcomepageview.cpp:416
 #, kde-format
 msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr "新增触摸板手势支持以缩放内容、平移画布视图和切换上一个/下一个项目。"
 
-#: core/app/views/stack/welcomepageview.cpp:421
+#: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
@@ -3502,71 +3505,71 @@ msgstr ""
 "新增放大镜工具以缩放浏览预览画布视图的局部区域。放大镜的大小和缩放倍率可自定"
 "义。"
 
-#: core/app/views/stack/welcomepageview.cpp:422
+#: core/app/views/stack/welcomepageview.cpp:418
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr "新增预览画布的欠曝和过曝指示色显示。"
 
-#: core/app/views/stack/welcomepageview.cpp:423
+#: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
 msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr "当滚动条可见时，画布上的轨迹将显示为叠加层。"
 
-#: core/app/views/stack/welcomepageview.cpp:424
+#: core/app/views/stack/welcomepageview.cpp:420
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
 msgstr "点击 GPS 图标叠加显示层打开左侧边栏的地理位置标签页。"
 
-#: core/app/views/stack/welcomepageview.cpp:425
+#: core/app/views/stack/welcomepageview.cpp:421
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr "新增可自定义的列以显示分组和版本管理属性。"
 
-#: core/app/views/stack/welcomepageview.cpp:426
+#: core/app/views/stack/welcomepageview.cpp:422
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
 msgstr "新增高级重命名修饰符日期格式。"
 
-#: core/app/views/stack/welcomepageview.cpp:427
+#: core/app/views/stack/welcomepageview.cpp:423
 #, kde-format
 msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr "新增将已有模板项目与新模板项目合并的支持。"
 
-#: core/app/views/stack/welcomepageview.cpp:428
+#: core/app/views/stack/welcomepageview.cpp:424
 #, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr "新增幻灯片选项，用于自定义在图像有透明度的情况下背景色，而不是纯黑。"
 
-#: core/app/views/stack/welcomepageview.cpp:429
+#: core/app/views/stack/welcomepageview.cpp:425
 #, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr "新增演示文稿选项，用于自定义在图像有透明度的情况下背景色，而不是纯黑。"
 
-#: core/app/views/stack/welcomepageview.cpp:430
+#: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr "完全重写文件传输工具的图形化界面以改善易用性。"
 
-#: core/app/views/stack/welcomepageview.cpp:431
+#: core/app/views/stack/welcomepageview.cpp:427
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr "完全重写文件复制工具的图形化界面以改善易用性。"
 
-#: core/app/views/stack/welcomepageview.cpp:432
+#: core/app/views/stack/welcomepageview.cpp:428
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr "新增画布选区轨迹的动态虚线效果。"
 
-#: core/app/views/stack/welcomepageview.cpp:433
+#: core/app/views/stack/welcomepageview.cpp:429
 #, kde-format
 msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
@@ -3575,7 +3578,7 @@ msgstr ""
 "新增选择颜色直方图指示色功能到曲线、色阶、白平衡和黑白照片 (乌贼墨色调) 工"
 "具。"
 
-#: core/app/views/stack/welcomepageview.cpp:434
+#: core/app/views/stack/welcomepageview.cpp:430
 #, kde-format
 msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
@@ -3584,102 +3587,108 @@ msgstr ""
 "大幅更新网站的设计和内容，包括屏幕截图、描述、开发历史、功能介绍、支持、下载"
 "等栏目。"
 
-#: core/app/views/stack/welcomepageview.cpp:435
+#: core/app/views/stack/welcomepageview.cpp:431
 #, kde-format
 msgid ""
 "New Advanced Search options to find empty properties registered in the "
 "database."
-msgstr ""
+msgstr "新增高级搜索选项以查找已在数据库中注册的空属性。"
 
-#: core/app/views/stack/welcomepageview.cpp:436
+#: core/app/views/stack/welcomepageview.cpp:432
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
 msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-01-24。"
 
-#: core/app/views/stack/welcomepageview.cpp:437
+#: core/app/views/stack/welcomepageview.cpp:433
 #, kde-format
 msgid "New RAW camera supported:"
-msgstr ""
+msgstr "新增数码相机 RAW 格式支持："
 
-#: core/app/views/stack/welcomepageview.cpp:439
+#: core/app/views/stack/welcomepageview.cpp:435
 #, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra ;"
 msgstr ""
+"佳能 EOS R1、EOS R5 Mark II、EOS R5 C、EOS R6 Mark II、EOS R8、EOS R50、EOS "
+"R100、EOS Ra；"
+
+#: core/app/views/stack/welcomepageview.cpp:436
+#, kde-format
+msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
+msgstr "富士 X-T50、GFX 100S II、GFX100-II、X-T5、X-S20、X-H2、X-H2S；"
+
+#: core/app/views/stack/welcomepageview.cpp:437
+#, kde-format
+msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
+msgstr "哈苏 CFV-50c、CFV-100c、X2D-100c；"
+
+#: core/app/views/stack/welcomepageview.cpp:438
+#, kde-format
+msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
+msgstr "徕卡 Q3 43、D-Lux8、SL3、Q3、M11 Monochrom；"
+
+#: core/app/views/stack/welcomepageview.cpp:439
+#, kde-format
+msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
+msgstr "尼康 (仅限标准压缩)：Z6-III、Z f、Z30、Z8；"
 
 #: core/app/views/stack/welcomepageview.cpp:440
 #, kde-format
-msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
-msgstr ""
+msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
+msgstr "奥林巴斯/OM System OM-1 Mark II、TG-7、OM-5；"
 
 #: core/app/views/stack/welcomepageview.cpp:441
-#, kde-format
-msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:442
-#, kde-format
-msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:443
-#, kde-format
-msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:444
-#, kde-format
-msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:445
 #, kde-format
 msgid ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6 ;"
 msgstr ""
+"松下 GH7、S9、DC-G9 II、DC-ZS200D / ZS220D、DC-TZ200D / TZ202D / TZ220D、DC-"
+"S5-II、DC-GH6；"
 
-#: core/app/views/stack/welcomepageview.cpp:446
+#: core/app/views/stack/welcomepageview.cpp:442
 #, kde-format
 msgid "Pentax KF, K III Monochrome ;"
-msgstr ""
+msgstr "宾得 KF、K III Monochrome；"
 
-#: core/app/views/stack/welcomepageview.cpp:447
+#: core/app/views/stack/welcomepageview.cpp:443
 #, kde-format
 msgid ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
 msgstr ""
+"索尼 ZV-E10M2、UMC-R10C、A9-III、ILX-LR1、A7C-II、A7CR、ILCE-6700、 ZV-1M2、"
+"ZV-E1、ILCE-7RM5 (A7R-V)、ILME-FX30、A1；"
 
-#: core/app/views/stack/welcomepageview.cpp:448
+#: core/app/views/stack/welcomepageview.cpp:444
 #, kde-format
 msgid "Multiple DJI and Skydio drones ;"
-msgstr ""
+msgstr "多款 DJI 和 Skydio 无人机；"
 
-#: core/app/views/stack/welcomepageview.cpp:449
+#: core/app/views/stack/welcomepageview.cpp:445
 #, kde-format
 msgid "Multiple smartphones with DNG format recorded."
-msgstr ""
+msgstr "多款智能手机保存的 DNG 格式。"
 
-#: core/app/views/stack/welcomepageview.cpp:454
+#: core/app/views/stack/welcomepageview.cpp:450
 #, kde-format
 msgid "...and much more."
 msgstr "...更多详情请访问 digiKam 官方网站查看。"
 
-#: core/app/views/stack/welcomepageview.cpp:460
+#: core/app/views/stack/welcomepageview.cpp:456
 #, kde-format
 msgid "<li>%1</li>"
 msgstr "<li>%1</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:463
+#: core/app/views/stack/welcomepageview.cpp:459
 #, kde-format
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
 "digiKam version 8):</h3><ul>%1</ul>"
-msgstr ""
+msgstr "<h3>这一版 digiKam 的新特性包括 (与 digiKam 8 对比)：</h3><ul>%1</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:484
+#: core/app/views/stack/welcomepageview.cpp:480
 #, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
@@ -3698,24 +3707,33 @@ msgid ""
 "www.digikam.org\">digiKam homepage</a> provides information about new "
 "versions of digiKam.</li>"
 msgstr ""
+"<h3>digiKam 是一款功能齐全的自由开源数码照片管理工具，支持 Linux、Windows 和 "
+"macOS，可以导入、管理、编辑、分享照片和 RAW 文件。您可以使用 digiKam 的导入工"
+"具轻松传输数码相机和外接存储设备 (SD 卡、U 盘等) 中的照片、RAW 文件和视频，还"
+"可以通过配置导入设置和规则来自动处理导入的项目。除此之外，digiKam 还提供了用"
+"于整理、修饰、搜索和导出照片的各种工具。</h3><h3>目前 digiKam 处在相册视图模"
+"式。</h3><h3>相册是您的文件存储的位置，与硬盘中的文件夹相同。</h3><li>请通过"
+"<a href=\"https://docs.digikam.org/en/index.html\">在线文档</a>了解 digiKam "
+"的各项功能。</li><li>请通过 <a href=\"https://www.digikam.org\">digiKam 官方"
+"网站</a>获取版本更新信息。</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:524
+#: core/app/views/stack/welcomepageview.cpp:520
 #, kde-format
 msgid "Author:"
 msgstr "作者："
 
-#: core/app/views/stack/welcomepageview.cpp:525
+#: core/app/views/stack/welcomepageview.cpp:521
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "位置："
 
-#: core/app/views/stack/welcomepageview.cpp:527
+#: core/app/views/stack/welcomepageview.cpp:523
 #, kde-format
 msgid "Camera:"
 msgstr "相机："
 
-#: core/app/views/stack/welcomepageview.cpp:528
+#: core/app/views/stack/welcomepageview.cpp:524
 #, kde-format
 msgid "Lens:"
 msgstr "镜头："
@@ -61286,27 +61304,27 @@ msgstr "微距/近景/远景"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgid "Capture Settings"
-msgstr ""
+msgstr "拍摄设置"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgid "Return items without selected capture settings ..."
-msgstr ""
+msgstr "返回没有选择拍摄设置的项目..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:664
 #, kde-format
 msgid "ISO film speed"
-msgstr ""
+msgstr "ISO 速度"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "White balance color temperature"
-msgstr ""
+msgstr "白平衡色温"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Subject Distance Category"
-msgstr ""
+msgstr "主体距离类别"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:712
@@ -61375,17 +61393,17 @@ msgstr "项目中显示的次级位置"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Place"
-msgstr ""
+msgstr "地点"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Return items without selected place information ..."
-msgstr ""
+msgstr "返回没有选择地点信息的项目..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:791
 #, kde-format
 msgid "State/Province"
-msgstr ""
+msgstr "州/省"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format

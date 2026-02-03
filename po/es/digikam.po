@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-02 00:41+0000\n"
+"POT-Creation-Date: 2026-02-03 00:43+0000\n"
 "PO-Revision-Date: 2026-02-02 00:54+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1016,7 +1016,7 @@ msgstr "Nombre:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:526
+#: core/app/views/stack/welcomepageview.cpp:522
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -3417,29 +3417,29 @@ msgstr "Borrar"
 msgid "%1/%2 items selected"
 msgstr "%1/%2 elementos seleccionados"
 
-#: core/app/views/stack/welcomepageview.cpp:219
+#: core/app/views/stack/welcomepageview.cpp:214
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Bienvenido a digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:256
+#: core/app/views/stack/welcomepageview.cpp:252
 #, kde-format
 msgid "New Features"
 msgstr "Nuevas funciones"
 
-#: core/app/views/stack/welcomepageview.cpp:257
+#: core/app/views/stack/welcomepageview.cpp:253
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Acerca de"
 
-#: core/app/views/stack/welcomepageview.cpp:258
+#: core/app/views/stack/welcomepageview.cpp:254
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Créditos de la imagen de fondo"
 
-#: core/app/views/stack/welcomepageview.cpp:397
+#: core/app/views/stack/welcomepageview.cpp:393
 #, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
@@ -3450,7 +3450,7 @@ msgstr ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">350 informes de usuarios</a> cerrados en Bugzilla."
 
-#: core/app/views/stack/welcomepageview.cpp:398
+#: core/app/views/stack/welcomepageview.cpp:394
 #, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
@@ -3461,14 +3461,14 @@ msgstr ""
 "2026-01-24, que contiene diversas correcciones de fallos y mejoras de "
 "rendimiento (solo Qt5)."
 
-#: core/app/views/stack/welcomepageview.cpp:399
+#: core/app/views/stack/welcomepageview.cpp:395
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
 "Se ha añadido el uso de formato de fecha personalizable en todo el programa."
 
-#: core/app/views/stack/welcomepageview.cpp:400
+#: core/app/views/stack/welcomepageview.cpp:396
 #, kde-format
 msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
@@ -3479,49 +3479,49 @@ msgstr ""
 "texto. El tamaño de los nombres de los emblemas está limitado a 32 "
 "caracteres."
 
-#: core/app/views/stack/welcomepageview.cpp:401
+#: core/app/views/stack/welcomepageview.cpp:397
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
 "Se ha añadido la posibilidad de ordenar los elementos de la vista de iconos "
 "del álbum por los emblemas de «Selección» y de «Color»."
 
-#: core/app/views/stack/welcomepageview.cpp:402
+#: core/app/views/stack/welcomepageview.cpp:398
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
 "Se ha añadido la posibilidad de ordenar los elementos de la vista de iconos "
 "de importación por los emblemas de «Selección» y de «Color»."
 
-#: core/app/views/stack/welcomepageview.cpp:403
+#: core/app/views/stack/welcomepageview.cpp:399
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
 "Se ha añadido la posibilidad de ordenar los elementos de los elementos de la "
 "vista de iconos del álbum por la «Orientación»."
 
-#: core/app/views/stack/welcomepageview.cpp:404
+#: core/app/views/stack/welcomepageview.cpp:400
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
 "Se ha añadido la posibilidad de ordenar los elementos de los elementos de la "
 "vista de iconos del álbum por la ubicación GPS."
 
-#: core/app/views/stack/welcomepageview.cpp:405
+#: core/app/views/stack/welcomepageview.cpp:401
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
 "Se ha añadido la posibilidad de ordenar los elementos de los elementos de la "
 "vista de iconos del álbum por el formato de archivo."
 
-#: core/app/views/stack/welcomepageview.cpp:406
+#: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
 "Se ha añadido la posibilidad de ordenar los elementos de los elementos de la "
 "vista de iconos de importación por el formato de archivo."
 
-#: core/app/views/stack/welcomepageview.cpp:407
+#: core/app/views/stack/welcomepageview.cpp:403
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
@@ -3529,28 +3529,28 @@ msgstr ""
 "Se ha añadido compatibilidad con comodines de expresiones regulares para las "
 "preferencias de directorios ignorados."
 
-#: core/app/views/stack/welcomepageview.cpp:408
+#: core/app/views/stack/welcomepageview.cpp:404
 #, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
 msgstr ""
 "Se ha añadido un nuevo botón para copiar todas las propiedades como texto en "
 "el portapapeles."
 
-#: core/app/views/stack/welcomepageview.cpp:409
+#: core/app/views/stack/welcomepageview.cpp:405
 #, kde-format
 msgid "Add new button to open current item is file manager."
 msgstr ""
 "Se ha añadido un nuevo botón para abrir los elementos actuales en el gestor "
 "de archivos."
 
-#: core/app/views/stack/welcomepageview.cpp:410
+#: core/app/views/stack/welcomepageview.cpp:406
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
 "Si no hay ningún elemento seleccionado en la vista de iconos, se muestran "
 "las estadísticas del álbum actual."
 
-#: core/app/views/stack/welcomepageview.cpp:411
+#: core/app/views/stack/welcomepageview.cpp:407
 #, kde-format
 msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
@@ -3559,14 +3559,14 @@ msgstr ""
 "Mostrar los elementos de un grupo abierto resaltado para una mejor "
 "usabilidad en la vista de iconos."
 
-#: core/app/views/stack/welcomepageview.cpp:412
+#: core/app/views/stack/welcomepageview.cpp:408
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
 "Mejoras de usabilidad de la capa de elementos agrupados de la vista de "
 "iconos."
 
-#: core/app/views/stack/welcomepageview.cpp:413
+#: core/app/views/stack/welcomepageview.cpp:409
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
@@ -3574,30 +3574,33 @@ msgstr ""
 "Mejoras en la barra de miniaturas para permitir la visibilidad de elementos "
 "agrupados al igual que en la vista de iconos."
 
-#: core/app/views/stack/welcomepageview.cpp:414
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:410
+#, fuzzy, kde-format
+#| msgid ""
+#| "Split filters view into 3 separated tabs for better usabilty: Properties, "
+#| "Tags, and People."
 msgid ""
-"Split filters view into 3 separated tabs for better usabilty: Properties, "
+"Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
 msgstr ""
 "Se ha dividido la vista de filtros en 3 pestañas separadas para una mejor "
 "usabilidad: Propiedades, Etiquetas y Personas."
 
-#: core/app/views/stack/welcomepageview.cpp:415
+#: core/app/views/stack/welcomepageview.cpp:411
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
 "Cargar y guardar los estados de las columnas en la vista de la Papelera "
 "entre sesiones."
 
-#: core/app/views/stack/welcomepageview.cpp:416
+#: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
 "Se ha extendido la superposición de la barra de vista previa de imágenes y "
 "vídeos con el editor de emblemas."
 
-#: core/app/views/stack/welcomepageview.cpp:417
+#: core/app/views/stack/welcomepageview.cpp:413
 #, kde-format
 msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
@@ -3606,12 +3609,12 @@ msgstr ""
 "Se han añadido botones a la barra de herramientas de vista previa: "
 "indicadores de exposición, gestión del color, OSD y lupa."
 
-#: core/app/views/stack/welcomepageview.cpp:418
+#: core/app/views/stack/welcomepageview.cpp:414
 #, kde-format
 msgid "Add context-menu to the video player."
 msgstr "Se ha añadido un menú de contexto al reproductor de vídeo."
 
-#: core/app/views/stack/welcomepageview.cpp:419
+#: core/app/views/stack/welcomepageview.cpp:415
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
@@ -3619,7 +3622,7 @@ msgstr ""
 "Se ha añadido un indicador del avance de la carga en la barra de estado "
 "(vista de iconos y mesa de luz)."
 
-#: core/app/views/stack/welcomepageview.cpp:420
+#: core/app/views/stack/welcomepageview.cpp:416
 #, kde-format
 msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
@@ -3629,7 +3632,7 @@ msgstr ""
 "para ampliar el contenido, desplazar el lienzo y cambiar a los elementos "
 "anterior o siguiente."
 
-#: core/app/views/stack/welcomepageview.cpp:421
+#: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
@@ -3639,14 +3642,14 @@ msgstr ""
 "pequeña del lienzo de vista previa. El tamaño de la herramienta y el factor "
 "de ampliación se pueden configurar."
 
-#: core/app/views/stack/welcomepageview.cpp:422
+#: core/app/views/stack/welcomepageview.cpp:418
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
 "Se han añadido indicadores de subexposición y de sobreexposición en el "
 "lienzo de vista previa."
 
-#: core/app/views/stack/welcomepageview.cpp:423
+#: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
 msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
@@ -3655,7 +3658,7 @@ msgstr ""
 "Las líneas de ferrocarril se muestran superpuestas sobre el lienzo cuando la "
 "barra de desplazamiento está visible."
 
-#: core/app/views/stack/welcomepageview.cpp:424
+#: core/app/views/stack/welcomepageview.cpp:420
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay open the Geolocation tab from the left sidebar."
@@ -3663,19 +3666,19 @@ msgstr ""
 "Al pulsar sobre un icono de GPS superpuesto se abre la pestaña de "
 "geolocalización en la barra lateral izquierda."
 
-#: core/app/views/stack/welcomepageview.cpp:425
+#: core/app/views/stack/welcomepageview.cpp:421
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
 "Se han añadido columnas personalizables para mostrar las propiedades de "
 "Agrupado y Versionado."
 
-#: core/app/views/stack/welcomepageview.cpp:426
+#: core/app/views/stack/welcomepageview.cpp:422
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
 msgstr "Nuevo formato de fecha del modificador de cambio de nombre avanzado."
 
-#: core/app/views/stack/welcomepageview.cpp:427
+#: core/app/views/stack/welcomepageview.cpp:423
 #, kde-format
 msgid ""
 "Add support to merge existing template entries assigned in items with a new "
@@ -3684,7 +3687,7 @@ msgstr ""
 "Se ha añadido compatibilidad para fusionar entradas de plantillas existentes "
 "asignadas en elementos con una nueva plantilla."
 
-#: core/app/views/stack/welcomepageview.cpp:428
+#: core/app/views/stack/welcomepageview.cpp:424
 #, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
@@ -3694,7 +3697,7 @@ msgstr ""
 "del color en lugar de usar negro puro cuando se usa transparencia de las "
 "imágenes."
 
-#: core/app/views/stack/welcomepageview.cpp:429
+#: core/app/views/stack/welcomepageview.cpp:425
 #, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
@@ -3704,28 +3707,28 @@ msgstr ""
 "del color en lugar de usar negro puro cuando se usa transparencia de las "
 "imágenes."
 
-#: core/app/views/stack/welcomepageview.cpp:430
+#: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
 msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
 msgstr ""
 "Se ha completado la reescritura de la interfaz de la herramienta de "
 "transferencia de archivos para una mejor usabilidad."
 
-#: core/app/views/stack/welcomepageview.cpp:431
+#: core/app/views/stack/welcomepageview.cpp:427
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
 "Se ha completado la reescritura de la interfaz de la herramienta de copia de "
 "archivos para una mejor usabilidad."
 
-#: core/app/views/stack/welcomepageview.cpp:432
+#: core/app/views/stack/welcomepageview.cpp:428
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
 "Se ha añadido el efecto de hormigas caminando a la banda elástica de "
 "selección del lienzo."
 
-#: core/app/views/stack/welcomepageview.cpp:433
+#: core/app/views/stack/welcomepageview.cpp:429
 #, kde-format
 msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
@@ -3734,7 +3737,7 @@ msgstr ""
 "Se han añadido indicadores de histograma de selección de color para las "
 "herramientas Curvas, Niveles, Balance de blancos y Blanco y negro Sepia."
 
-#: core/app/views/stack/welcomepageview.cpp:434
+#: core/app/views/stack/welcomepageview.cpp:430
 #, kde-format
 msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
@@ -3744,7 +3747,7 @@ msgstr ""
 "capturas de pantalla, descripción, historial, funciones, soporte, descarga, "
 "etc."
 
-#: core/app/views/stack/welcomepageview.cpp:435
+#: core/app/views/stack/welcomepageview.cpp:431
 #, kde-format
 msgid ""
 "New Advanced Search options to find empty properties registered in the "
@@ -3753,19 +3756,19 @@ msgstr ""
 "Nuevas opciones de búsqueda avanzada para encontrar propiedades vacías "
 "registradas en la base de datos."
 
-#: core/app/views/stack/welcomepageview.cpp:436
+#: core/app/views/stack/welcomepageview.cpp:432
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
 msgstr ""
 "Se ha actualizado el motor RAW interno a la última copia disponible de "
 "Libraw 2026-01-24."
 
-#: core/app/views/stack/welcomepageview.cpp:437
+#: core/app/views/stack/welcomepageview.cpp:433
 #, kde-format
 msgid "New RAW camera supported:"
 msgstr "Nuevas cámaras RAW admitidas:"
 
-#: core/app/views/stack/welcomepageview.cpp:439
+#: core/app/views/stack/welcomepageview.cpp:435
 #, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
@@ -3774,32 +3777,32 @@ msgstr ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra;"
 
-#: core/app/views/stack/welcomepageview.cpp:440
+#: core/app/views/stack/welcomepageview.cpp:436
 #, kde-format
 msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
 msgstr "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S;"
 
-#: core/app/views/stack/welcomepageview.cpp:441
+#: core/app/views/stack/welcomepageview.cpp:437
 #, kde-format
 msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
 msgstr "Hasselblad CFV-50c, CFV-100c, X2D-100c;"
 
-#: core/app/views/stack/welcomepageview.cpp:442
+#: core/app/views/stack/welcomepageview.cpp:438
 #, kde-format
 msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
 msgstr "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom;"
 
-#: core/app/views/stack/welcomepageview.cpp:443
+#: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
 msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
 msgstr "Nikon (solo compresión estándar): Z6-III, Z f, Z30, Z8;"
 
-#: core/app/views/stack/welcomepageview.cpp:444
+#: core/app/views/stack/welcomepageview.cpp:440
 #, kde-format
 msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
 msgstr "Olympus/OM System OM-1 Mark II, TG-7, OM-5;"
 
-#: core/app/views/stack/welcomepageview.cpp:445
+#: core/app/views/stack/welcomepageview.cpp:441
 #, kde-format
 msgid ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
@@ -3808,12 +3811,12 @@ msgstr ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6;"
 
-#: core/app/views/stack/welcomepageview.cpp:446
+#: core/app/views/stack/welcomepageview.cpp:442
 #, kde-format
 msgid "Pentax KF, K III Monochrome ;"
 msgstr "Pentax KF, K III Monochrome;"
 
-#: core/app/views/stack/welcomepageview.cpp:447
+#: core/app/views/stack/welcomepageview.cpp:443
 #, kde-format
 msgid ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
@@ -3822,27 +3825,27 @@ msgstr ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1;"
 
-#: core/app/views/stack/welcomepageview.cpp:448
+#: core/app/views/stack/welcomepageview.cpp:444
 #, kde-format
 msgid "Multiple DJI and Skydio drones ;"
 msgstr "Múltiples drones DJI y Skydio;"
 
-#: core/app/views/stack/welcomepageview.cpp:449
+#: core/app/views/stack/welcomepageview.cpp:445
 #, kde-format
 msgid "Multiple smartphones with DNG format recorded."
 msgstr "Múltiples teléfonos inteligentes que usan formato DNG."
 
-#: core/app/views/stack/welcomepageview.cpp:454
+#: core/app/views/stack/welcomepageview.cpp:450
 #, kde-format
 msgid "...and much more."
 msgstr "…y mucho más."
 
-#: core/app/views/stack/welcomepageview.cpp:460
+#: core/app/views/stack/welcomepageview.cpp:456
 #, kde-format
 msgid "<li>%1</li>"
 msgstr "<li>%1</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:463
+#: core/app/views/stack/welcomepageview.cpp:459
 #, kde-format
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
@@ -3851,7 +3854,7 @@ msgstr ""
 "<h3>Entre las nuevas funcionalidades de esta versión de digiKam se incluyen "
 "(comparado con digiKam 8):</h3><ul>%1</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:484
+#: core/app/views/stack/welcomepageview.cpp:480
 #, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
@@ -3887,23 +3890,23 @@ msgstr ""
 "li><li>La <a href=\"https://www.digikam.org\">página web de digiKam</a> "
 "proporciona información sobre las nuevas versiones de digiKam.</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:524
+#: core/app/views/stack/welcomepageview.cpp:520
 #, kde-format
 msgid "Author:"
 msgstr "Autor:"
 
-#: core/app/views/stack/welcomepageview.cpp:525
+#: core/app/views/stack/welcomepageview.cpp:521
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Ubicación:"
 
-#: core/app/views/stack/welcomepageview.cpp:527
+#: core/app/views/stack/welcomepageview.cpp:523
 #, kde-format
 msgid "Camera:"
 msgstr "Cámara:"
 
-#: core/app/views/stack/welcomepageview.cpp:528
+#: core/app/views/stack/welcomepageview.cpp:524
 #, kde-format
 msgid "Lens:"
 msgstr "Objetivo:"
