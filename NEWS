@@ -457,7 +457,7 @@ BUGFIXES:
 380 --> 513837 - AppImage crash few seconds after starting digiKam.
 381 --> 513885 - digiKam crashed when confirming a picture frame as a person.
 382 --> 515541 - Tags not showing.
-383 --> 
+383 --> 507341 - Rebuilding face recognition database is very slow on 8.7.0.
 384 --> 
 385 --> 
 386 --> 
