@@ -1042,12 +1042,36 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("creator"))
     {
-        sql += QString::fromUtf8(" (Images.id IN "
-               " (SELECT imageid FROM ImageCopyright "
-               "  WHERE property='creator' AND value ");
-        ItemQueryBuilder::addSqlRelation(sql, relation);
-        sql += QString::fromUtf8(" ?)) ");
-        *boundValues << fieldQuery.prepareForLike(reader.value());
+        if (relation == SearchXml::OneOf)
+        {
+            QStringList values = reader.valueToStringList();
+
+            if (values.isEmpty())
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "List for OneOf is empty";
+                return false;
+            }
+
+            sql += QLatin1String(" (Images.id IN (SELECT imageid FROM ImageCopyright "
+                                "WHERE property='creator' AND value IN (");
+            CoreDB::addBoundValuePlaceholders(sql, values.size());
+
+            for (const QString& v : std::as_const(values))
+            {
+                *boundValues << v;
+            }
+
+            sql += QLatin1String(") )) ");
+        }
+        else
+        {
+            sql += QString::fromUtf8(" (Images.id IN "
+                " (SELECT imageid FROM ImageCopyright "
+                "  WHERE property='creator' AND value ");
+            ItemQueryBuilder::addSqlRelation(sql, relation);
+            sql += QString::fromUtf8(" ?)) ");
+            *boundValues << fieldQuery.prepareForLike(reader.value());
+        }
     }
     else if (name == QLatin1String("comment"))
     {
@@ -1060,12 +1084,37 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("commentauthor"))
     {
-        sql += QString::fromUtf8(" (Images.id IN "
-               " (SELECT imageid FROM ImageComments "
-               "  WHERE type=? AND author ");
-        ItemQueryBuilder::addSqlRelation(sql, relation);
-        sql += QString::fromUtf8(" ?)) ");
-        *boundValues << DatabaseComment::Comment << fieldQuery.prepareForLike(reader.value());
+        if (relation == SearchXml::OneOf)
+        {
+            QStringList values = reader.valueToStringList();
+
+            if (values.isEmpty())
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "List for OneOf is empty";
+                return false;
+            }
+
+            sql += QLatin1String(" (Images.id IN (SELECT imageid FROM ImageComments "
+                                "WHERE type=? AND author IN (");
+            CoreDB::addBoundValuePlaceholders(sql, values.size());
+            *boundValues << DatabaseComment::Comment;
+
+            for (const QString& v : std::as_const(values))
+            {
+                *boundValues << v;
+            }
+
+            sql += QLatin1String(") )) ");
+        }
+        else
+        {
+            sql += QString::fromUtf8(" (Images.id IN "
+                " (SELECT imageid FROM ImageComments "
+                "  WHERE type=? AND author ");
+            ItemQueryBuilder::addSqlRelation(sql, relation);
+            sql += QString::fromUtf8(" ?)) ");
+            *boundValues << DatabaseComment::Comment << fieldQuery.prepareForLike(reader.value());
+        }
     }
     else if (name == QLatin1String("headline"))
     {

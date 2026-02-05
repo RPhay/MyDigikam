@@ -2137,6 +2137,60 @@ QStringList CoreDB::getAllImagePropertiesByName(const QString& property) const
     return imageProperties;
 }
 
+QStringList CoreDB::getAllImageCopyrightValues(const QString& property) const
+{
+    QVariantList values;
+    QStringList  out;
+
+    d->db->execSql(QString::fromUtf8(
+        "SELECT DISTINCT value FROM ImageCopyright "
+        "LEFT JOIN Images ON Images.id=ImageCopyright.imageid "
+        "WHERE Images.status=1 AND ImageCopyright.property=?;"
+    ),
+    property, &values);
+
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
+    {
+        const QString str = (*it).toString();
+
+        if (!str.isEmpty())
+        {
+            out << str;
+        }
+    }
+
+    out.sort();
+    return out;
+}
+
+QStringList CoreDB::getAllCommentAuthors(int type) const
+{
+    QVariantList values;
+    QStringList  out;
+
+    d->db->execSql(QString::fromUtf8(
+        "SELECT DISTINCT author FROM ImageComments "
+        "LEFT JOIN Images ON Images.id=ImageComments.imageid "
+        "WHERE Images.status=1 AND ImageComments.type=?;"
+    ),
+    type, &values);
+
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
+    {
+        const QString str = (*it).toString();
+
+        if (!str.isEmpty())
+        {
+            out << str;
+        }
+    }
+
+    out.sort();
+    return out;
+}
+
+
+
 QList<CopyrightInfo> CoreDB::getItemCopyright(qlonglong imageID, const QString& property) const
 {
     QList<CopyrightInfo> list;

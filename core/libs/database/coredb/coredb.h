@@ -1110,6 +1110,9 @@ public:
     void removeAllImageProperties(qlonglong imageID);
 
     QStringList getAllImagePropertiesByName(const QString& property)                                                const;
+    QStringList getAllImageCopyrightValues(const QString& property) const;
+    QStringList getAllCommentAuthors(int type) const;
+
 
     /**
      * Returns the copyright properties of the specified image.
