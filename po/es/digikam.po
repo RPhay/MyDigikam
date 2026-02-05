@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 00:42+0000\n"
-"PO-Revision-Date: 2026-02-03 22:55+0100\n"
+"PO-Revision-Date: 2026-02-04 11:43+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3537,8 +3537,7 @@ msgstr ""
 "el portapapeles."
 
 #: core/app/views/stack/welcomepageview.cpp:393
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr ""
 "Se ha añadido un nuevo botón para abrir los elementos actuales en el gestor "
@@ -3657,10 +3656,7 @@ msgstr ""
 "barra de desplazamiento está visible."
 
 #: core/app/views/stack/welcomepageview.cpp:408
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
@@ -3709,8 +3705,7 @@ msgstr ""
 "imágenes."
 
 #: core/app/views/stack/welcomepageview.cpp:414
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "Se ha completado la reescritura de la interfaz de la herramienta de "

@@ -11,9 +11,9 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 00:42+0000\n"
-"PO-Revision-Date: 2026-02-03 03:36+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"PO-Revision-Date: 2026-02-04 11:58+0200\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3568,8 +3568,7 @@ msgstr ""
 "обміну даними."
 
 #: core/app/views/stack/welcomepageview.cpp:393
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr ""
 "Додано кнопку для відкриття поточного запису у програмі для керування "
@@ -3686,10 +3685,7 @@ msgstr ""
 "Доріжку над полотном показано як накладку, якщо видимою є смужка гортання."
 
 #: core/app/views/stack/welcomepageview.cpp:408
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
@@ -3735,8 +3731,7 @@ msgstr ""
 "замість суцільного чорного у випадку використання напівпрозорості зображень."
 
 #: core/app/views/stack/welcomepageview.cpp:414
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "Повністю переписано графічний інтерфейс інструменту «Файл - Передати» з "

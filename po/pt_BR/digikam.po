@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 00:42+0000\n"
-"PO-Revision-Date: 2026-02-03 00:48-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"PO-Revision-Date: 2026-02-04 08:27-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -3517,12 +3517,10 @@ msgstr ""
 "área de transferência."
 
 #: core/app/views/stack/welcomepageview.cpp:393
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr ""
-"O botão \"Adicionar novo\" permite abrir o item atual no gerenciador de "
-"arquivos."
+"Adiciona novo botão para abrir o item atual no gerenciador de arquivos."
 
 #: core/app/views/stack/welcomepageview.cpp:394
 #, kde-format
@@ -3633,10 +3631,7 @@ msgstr ""
 "Ferrovia sobreposta à tela é exibida quando a barra de rolagem está visível."
 
 #: core/app/views/stack/welcomepageview.cpp:408
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
@@ -3683,8 +3678,7 @@ msgstr ""
 "vez de preto puro, no caso de uso de transparência nas imagens."
 
 #: core/app/views/stack/welcomepageview.cpp:414
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "Reescrita completa da interface gráfica da ferramenta de transferência de "

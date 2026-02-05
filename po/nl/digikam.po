@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 00:42+0000\n"
-"PO-Revision-Date: 2026-02-03 10:37+0100\n"
+"PO-Revision-Date: 2026-02-04 16:17+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3570,8 +3570,7 @@ msgstr ""
 "kopiëren."
 
 #: core/app/views/stack/welcomepageview.cpp:393
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr "Nieuwe knop toegevoegd om huidig item in bestandsbeheerder te openen."
 
@@ -3684,10 +3683,7 @@ msgstr ""
 "zichtbaar is."
 
 #: core/app/views/stack/welcomepageview.cpp:408
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
@@ -3734,8 +3730,7 @@ msgstr ""
 "van puur zwart in geval van gebruik van transparantie in afbeeldingen."
 
 #: core/app/views/stack/welcomepageview.cpp:414
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "Compleet herschreven het hulpmiddel voor GUI van bestandsoverdracht voor een "

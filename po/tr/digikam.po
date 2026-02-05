@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 00:42+0000\n"
-"PO-Revision-Date: 2026-02-03 19:27+0300\n"
+"PO-Revision-Date: 2026-02-04 20:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3533,8 +3533,7 @@ msgstr ""
 "Tüm özellikleri panoya metin olarak kopyalamak için yeni bir düğme eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:393
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr "Geçerli ögeyi dosya yöneticisinde açmak için yeni bir düğme eklendi."
 
@@ -3644,10 +3643,7 @@ msgstr ""
 "gösterilir."
 
 #: core/app/views/stack/welcomepageview.cpp:408
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
@@ -3693,8 +3689,7 @@ msgstr ""
 "yerine özelleştirmek adına yeni bir sunu seçeneği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:414
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "Daha iyi kullanılabilirlik için dosya aktarım aracı tümüyle yeniden yazıldı."

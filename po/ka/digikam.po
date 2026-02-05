@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 00:42+0000\n"
-"PO-Revision-Date: 2026-02-03 05:28+0100\n"
+"PO-Revision-Date: 2026-02-04 04:50+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3502,8 +3502,7 @@ msgstr ""
 "დაემატა ახალი ღილაკი ყველა თვისების ტექსტის სახით ბუფერში დასაკოპირებლად."
 
 #: core/app/views/stack/welcomepageview.cpp:393
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr ""
 "დაემატა ახალი ღილაკი მიმდინარე ელემენტის ფაილების მმართველში გასახსნელად."
@@ -3617,10 +3616,7 @@ msgstr ""
 "რკინიგზა ტილოზე ნაჩვენებია როგორც გადაფარვა, როცა გადახვევის ზოლი ხილულია."
 
 #: core/app/views/stack/welcomepageview.cpp:408
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
@@ -3667,8 +3663,7 @@ msgstr ""
 "გამოიყენება გამოსახულებების გამჭვირვალობა."
 
 #: core/app/views/stack/welcomepageview.cpp:414
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "თავიდან გადაიწერა ფაილის გადაცემის ხელსაწყოს ინტერფეისი უკეთესი "

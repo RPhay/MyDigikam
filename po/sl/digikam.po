@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 00:42+0000\n"
-"PO-Revision-Date: 2026-02-03 07:15+0100\n"
+"PO-Revision-Date: 2026-02-04 07:08+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3575,8 +3575,7 @@ msgid "Add new button to copy all properties as text in clipboard."
 msgstr "Doda nov gumb za kopiranje vseh lastnosti kot besedila v odložišče."
 
 #: core/app/views/stack/welcomepageview.cpp:393
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr ""
 "Doda nov gumb za odpiranje trenutnega elementa v upravljalniku datotek."
@@ -3688,14 +3687,12 @@ msgstr ""
 "Železnica čez platno je prikazana kot prekrivna plast, ko je drsnik viden."
 
 #: core/app/views/stack/welcomepageview.cpp:408
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
-"S klikom na ikono GPS se v levi stranski vrstici odpre zavihek Geolokacija."
+"S klikom na prekrivno ikono GPS odpre zavihek Geolokacija v levi stranski "
+"vrstici."
 
 #: core/app/views/stack/welcomepageview.cpp:409
 #, kde-format
@@ -3737,12 +3734,11 @@ msgstr ""
 "čisto črne v primeru uporabe prosojnosti slik."
 
 #: core/app/views/stack/welcomepageview.cpp:414
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
-"Popolnoma na novo napisan grafični uporabniški vmesnik orodja za prenos "
-"datotek za boljšo uporabnost."
+"Popolna prenova grafičnega uporabniškega vmesnika orodja za prenos datotek "
+"za boljšo uporabnost."
 
 #: core/app/views/stack/welcomepageview.cpp:415
 #, kde-format
