@@ -65416,33 +65416,3 @@ msgstr "Importer element"
 #, kde-format
 msgid "Survey"
 msgstr ""
-
-#~ msgid "<h3>%1</h3><ul>%2</ul>"
-#~ msgstr "<h3>%1</h3><ul>%2</ul>"
-
-#~ msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
-#~ msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
-
-#~ msgid ""
-#~ "digiKam is an open source photo management program designed to import, "
-#~ "organize, enhance, search and export your digital images to and from your "
-#~ "computer."
-#~ msgstr ""
-#~ "digiKam er fri programvare for handsaming av fotografi, med støtte for "
-#~ "importering, organisering, forbetring, søk og eksportering av digitale "
-#~ "bilete."
-
-#~ msgid ""
-#~ "Currently, you are in the Album view mode of digiKam. Albums are the "
-#~ "places where your files are stored, and are identical to the folders on "
-#~ "your hard disk."
-#~ msgstr ""
-#~ "Du er no i albumvisinga. Album er der biletfilene dine vert lagra, og "
-#~ "svarar til mapper på harddisken."
-
-#~ msgid ""
-#~ "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
-#~ "information about new versions of digiKam."
-#~ msgstr ""
-#~ "<a href=\"https://www.digikam.org\">Heimesida</a> inneheld informasjon om "
-#~ "nye versjonar av programmet."

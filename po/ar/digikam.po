@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 00:42+0000\n"
-"PO-Revision-Date: 2026-01-29 17:30+0400\n"
+"PO-Revision-Date: 2026-02-05 12:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3504,6 +3504,9 @@ msgid ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">350 user-reports</a> closed on bugzilla."
 msgstr ""
+"أكثر من href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 تقرير مستخدم أغلقت على bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:382
 #, kde-format
@@ -3575,8 +3578,7 @@ msgid "Add new button to copy all properties as text in clipboard."
 msgstr "إضافة زر جديد لنسخ جميع الخصائص كنص في الحافظة."
 
 #: core/app/views/stack/welcomepageview.cpp:393
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr "إضافة زر جديد لفتح العنصر الحالي في مدير الملفات."
 
@@ -3606,10 +3608,7 @@ msgid ""
 msgstr "تحسينات شريط المصغرات لدعم ظهور العناصر المجمعة كما في عرض الأيقونات."
 
 #: core/app/views/stack/welcomepageview.cpp:398
-#, fuzzy, kde-format
-#| msgid ""
-#| "Split filters view into 3 separated tabs for better usabilty: Properties, "
-#| "Tags, and People."
+#, kde-format
 msgid ""
 "Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
@@ -3679,15 +3678,12 @@ msgid ""
 msgstr "عرض مسار السكة فوق اللوحة كطبقة عند ظهور أشرطة التمرير."
 
 #: core/app/views/stack/welcomepageview.cpp:408
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
-"فتح لسان الموقع الجغرافي من الشريط الجانبي الأيسر عند النقر على طبقة أيقونة "
-"GPS."
+"يؤدي النقر على أيقونة الموقع الجغرافي إلى فتح لسان ”الموقع الجغرافي“ من "
+"الشريط الجانبي الأيسر."
 
 #: core/app/views/stack/welcomepageview.cpp:409
 #, kde-format
@@ -3725,8 +3721,7 @@ msgstr ""
 "استخدام شفافية الصور."
 
 #: core/app/views/stack/welcomepageview.cpp:414
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "إعادة كتابة كاملة لواجهة أداة نقل الملفات الرسومية لتحسين قابلية الاستخدام."
@@ -3766,6 +3761,7 @@ msgid ""
 "New Advanced Search options to find empty properties registered in the "
 "database."
 msgstr ""
+"خيارات بحث متقدمة جديدة للعثور على الخصائص الفارغة المسجلة في قاعدة البيانات."
 
 #: core/app/views/stack/welcomepageview.cpp:420
 #, kde-format
@@ -3775,7 +3771,7 @@ msgstr "حدث محرك RAW الداخلي إلى آخر لقطة Libraw 2026-0-
 #: core/app/views/stack/welcomepageview.cpp:421
 #, kde-format
 msgid "New RAW camera supported:"
-msgstr ""
+msgstr "دعم كاميرا RAW جديدة:"
 
 #: core/app/views/stack/welcomepageview.cpp:423
 #, kde-format
@@ -3783,31 +3779,33 @@ msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra ;"
 msgstr ""
+"كانون EOS R1، EOS R5 Mark II، EOS R5 C، EOS R6 Mark II، EOS R8، EOS R50، EOS "
+"R100، EOS Ra؛"
 
 #: core/app/views/stack/welcomepageview.cpp:424
 #, kde-format
 msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
-msgstr ""
+msgstr "فوجي فيلم X-T50، GFX 100S II، GFX100-II، X-T5، X-S20، X-H2، X-H2S؛"
 
 #: core/app/views/stack/welcomepageview.cpp:425
 #, kde-format
 msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
-msgstr ""
+msgstr "هاسلبلاد CFV-50c، CFV-100c، X2D-100c؛"
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
 msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
-msgstr ""
+msgstr "ليكا Q3 43، D-Lux8، SL3، Q3، M11 Monochrom؛"
 
 #: core/app/views/stack/welcomepageview.cpp:427
 #, kde-format
 msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
-msgstr ""
+msgstr "نيكون (ضغط قياسي فقط): Z6-III، Z f، Z30، Z8؛"
 
 #: core/app/views/stack/welcomepageview.cpp:428
 #, kde-format
 msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
-msgstr ""
+msgstr "أوليمبوس/نظام OM OM-1 Mark II، TG-7، OM-5؛"
 
 #: core/app/views/stack/welcomepageview.cpp:429
 #, kde-format
@@ -3815,11 +3813,13 @@ msgid ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6 ;"
 msgstr ""
+"باناسونيك GH7، S9، DC-G9 II، DC-ZS200D / ZS220D، DC-TZ200D / TZ202D / "
+"TZ220D، DC-S5-II، DC-GH6؛"
 
 #: core/app/views/stack/welcomepageview.cpp:430
 #, kde-format
 msgid "Pentax KF, K III Monochrome ;"
-msgstr ""
+msgstr "بنتاكس KF، K III أحادي اللون؛"
 
 #: core/app/views/stack/welcomepageview.cpp:431
 #, kde-format
@@ -3827,16 +3827,18 @@ msgid ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
 msgstr ""
+"سوني ZV-E10M2، UMC-R10C، A9-III، ILX-LR1، A7C-II، A7CR، ILCE-6700،  ZV-1M2، "
+"ZV-E1، ILCE-7RM5 (A7R-V)، ILME-FX30، A1 ؛"
 
 #: core/app/views/stack/welcomepageview.cpp:432
 #, kde-format
 msgid "Multiple DJI and Skydio drones ;"
-msgstr ""
+msgstr "عدة طائرات بدون طيار من طراز DJI و Skydio ؛"
 
 #: core/app/views/stack/welcomepageview.cpp:433
 #, kde-format
 msgid "Multiple smartphones with DNG format recorded."
-msgstr ""
+msgstr "العديد من الهواتف الذكية التي تسجل بتنسيق DNG."
 
 #: core/app/views/stack/welcomepageview.cpp:438
 #, kde-format
@@ -3844,21 +3846,18 @@ msgid "...and much more."
 msgstr "... وغيرها الكثير."
 
 #: core/app/views/stack/welcomepageview.cpp:444
-#, fuzzy, kde-format
-#| msgid "<li>%1</li><br>"
+#, kde-format
 msgid "<li>%1</li>"
-msgstr "<li>%1</li><br>"
+msgstr "<li>%1</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:447
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 8):"
+#, kde-format
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
 "digiKam version 8):</h3><ul>%1</ul>"
 msgstr ""
-"تشمل بعض الميزات الجديدة في هذا الإصدار من دجيكام (مقارنة بـ دجيكام 8):"
+"<h3>تتضمن بعض الميزات الجديدة في هذا الإصدار من دجيكام (مقارنة بإصدار دجيكام "
+"8):</h3><ul>%1</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:468
 #, kde-format
@@ -3879,6 +3878,19 @@ msgid ""
 "www.digikam.org\">digiKam homepage</a> provides information about new "
 "versions of digiKam.</li>"
 msgstr ""
+"<h3>دجيكام هو تطبيق متقدم مفتوح المصدر لإدارة الصور الرقمية يعمل على أنظمة "
+"لينكس و ويندوز و ماك أوس. يوفر التطبيق مجموعة شاملة من الأدوات لاستيراد "
+"الصور والملفات الخام وإدارتها وتحريرها ومشاركتها. يمكنك استخدام إمكانات "
+"الاستيراد في دجيكام لنقل الصور والملفات الخام ومقاطع الفيديو بسهولة مباشرة "
+"من الكاميرا وأجهزة التخزين الخارجية (بطاقات SD وأقراص USB وما إلى ذلك). يتيح "
+"لك التطبيق تكوين إعدادات وقواعد الاستيراد التي تعالج وتنظم العناصر المستوردة "
+"على الفور.<h3>باستخدام دجيكام يمكنك الاستيراد والتنظيم والتحسين والبحث "
+"والتصدير والمزيد...<h3>أنت حاليًا في وضع عرض الألبوم في دجيكام.<h3>الألبومات "
+"هي الأماكن التي يتم تخزين ملفاتك فيها، وهي مطابقة للمجلدات الموجودة على "
+"القرص الصلب الخاص بك. </h3><li>يحتوي دجيكام على العديد من الميزات القوية "
+"الموضحة في <a href=\"https://docs.digikam.org/en/index.html\">الوثائق</a></"
+"li><li>توفر <a href=\"https://www.digikam.org\">الصفحة الرئيسة لـ دجيكام</a> "
+"معلومات حول الإصدارات الجديدة من digiKam.</li"
 
 #: core/app/views/stack/welcomepageview.cpp:508
 #, kde-format
@@ -29184,7 +29196,7 @@ msgid ""
 "</p><p>The databases must be created previously on the remote server by the "
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
-"<p>استخدم عرض الاضبط هذا لضبط كل المعلومات للاتصال بخادم قاعدة بيانات ماي إس "
+"<p>استخدم عرض الضبط هذا لضبط كل المعلومات للاتصال بخادم قاعدة بيانات ماي إس "
 "كيو إل (أو ماريا دي بي) بعيد من خلال شبكة. كما هو الحال مع إس كيو لايت أو "
 "خادم ماي إس كيو إل الداخلي، ستخزن 3 قواعد بيانات على الخادم البعيد: واحدة "
 "لجميع خصائص المجموعات، وواحدة لتخزين الصور المصغرة المضغوطة، وواحدة لتخزين "
@@ -29234,7 +29246,7 @@ msgstr "اسم مضيف الخادم فارغ"
 #: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:56
 #, kde-format
 msgid "The server user name is empty"
-msgstr "اسم مسخدم الخادم فارغ"
+msgstr "اسم مستخدم الخادم فارغ"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_mysql.cpp:67
 #, kde-format
@@ -29260,7 +29272,7 @@ msgstr "اسم قاعدة بيانات التشابه فارغ"
 #, kde-format
 msgid ""
 "<p>This path was set as a command lineoption (--database-directory).</p>"
-msgstr "<p>هذا المسار ضُبط كخيار سطر أوامر (--database-directory).</p"
+msgstr "<p>هذا المسار ضُبط كخيار سطر أوامر (--database-directory).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
@@ -62583,33 +62595,29 @@ msgid "Macro, close or distant view"
 msgstr "عرض كبير، قريب، أو بعيد"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
-#, fuzzy, kde-format
-#| msgid "Remote Server Settings"
+#, kde-format
 msgid "Capture Settings"
-msgstr "إعدادات الخادوم البعيد"
+msgstr "إعدادات الالتقاط"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
-#, fuzzy, kde-format
-#| msgid "Return items without a camera ..."
+#, kde-format
 msgid "Return items without selected capture settings ..."
-msgstr "أعد العناصر بلا كاميرا …"
+msgstr "تعيد العناصر التي بلا إعدادات التقاط محددة ..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:664
 #, kde-format
 msgid "ISO film speed"
-msgstr ""
+msgstr "سرعة فلم ISO"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:668
-#, fuzzy, kde-format
-#| msgid "White balance (color temperature)"
+#, kde-format
 msgid "White balance color temperature"
-msgstr "توازن الأبيض (حرارة اللون)"
+msgstr "درجة حرارة لون توازن اللون الأبيض"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:670
-#, fuzzy, kde-format
-#| msgid "Subject distance (category)"
+#, kde-format
 msgid "Subject Distance Category"
-msgstr "مسافة الموضوع (فئة)"
+msgstr "فئة بعد الكائن"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:712
@@ -62676,22 +62684,19 @@ msgid "Sublocation shown in the item"
 msgstr "الموقع الفرعي الموضح في العنصر"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:786
-#, fuzzy, kde-format
-#| msgid "Place:"
+#, kde-format
 msgid "Place"
-msgstr "المكان:"
+msgstr "المكان"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:786
-#, fuzzy, kde-format
-#| msgid "Return items without a camera ..."
+#, kde-format
 msgid "Return items without selected place information ..."
-msgstr "أعد العناصر بلا كاميرا …"
+msgstr "تعيد العناصر التي بلا معلومات المكان المحددة ..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:791
-#, fuzzy, kde-format
-#| msgid "State/Province:"
+#, kde-format
 msgid "State/Province"
-msgstr "الولاية/المحافظة:"
+msgstr "الولاية/المحافظة"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
