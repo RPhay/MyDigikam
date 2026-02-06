@@ -371,10 +371,9 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
         QFile actualFile(d->actualConfig);
 
         // Update actualconf only if either global or local is newer than actual
-        // If actual does not yet exist it was initialised with datetime 0
-        // so it will get updated too
 
         if (
+            !actualFile.exists() ||
             (QFileInfo(d->globalConfig).lastModified() > QFileInfo(actualFile).lastModified()) ||
             (QFileInfo(localConfig).lastModified()     > QFileInfo(actualFile).lastModified())
            )
