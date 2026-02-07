@@ -462,7 +462,7 @@ BUGFIXES:
 384 --> 515564 - Reverse geolocation process gets stuck or is extremely slow when fetching address data.
 385 --> 467706 - Add support for “Creator” and “Author” search fields as drop-down lists populated from existing database entries.
 386 --> 515615 - Face recognition has stopped working.
-387 --> 
+387 --> 515538 - Occasional Random Color Distortion in All Views since 8.8.0.
 388 --> 
 389 --> 
 390 --> 
