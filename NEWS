@@ -460,7 +460,7 @@ BUGFIXES:
 383 --> 507341 - Rebuilding face recognition database is very slow on 8.7.0.
 384 --> 515564 - Reverse geolocation process gets stuck or is extremely slow when fetching address data.
 385 --> 467706 - Add support for “Creator” and “Author” search fields as drop-down lists populated from existing database entries.
-386 --> 
+386 --> 515615 - Face recognition has stopped working.
 387 --> 
 388 --> 
 389 --> 
