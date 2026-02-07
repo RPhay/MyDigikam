@@ -390,7 +390,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoView->setFrameShape(QFrame::NoFrame);
     d->videoItem  = new QGraphicsVideoItem();
     d->player     = new QMediaPlayer(this);
-    d->audio      = new QAudioOutput;
+    d->audio      = new QAudioOutput(this);
     d->player->setAudioOutput(d->audio);
     d->player->setVideoOutput(d->videoItem);
     d->videoScene->addItem(d->videoItem);
