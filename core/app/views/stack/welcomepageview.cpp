@@ -417,6 +417,8 @@ QString WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.");
     newFeatures << i18n("Huge web site update about contents and design eg. screenshots, description, history, features, support, download, etc.");
     newFeatures << i18n("New Advanced Search options to find empty properties registered in the database.");
+    newFeatures << i18n("Add support for search Creator and Author fields from the Advanced Search tool to be drop down lists populated with the values already presents in the database.");
+
     newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-01-24.");
     newFeatures << i18n("New RAW camera supported:")
                 + appendSubList(QStringList()

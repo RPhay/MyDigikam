@@ -70,6 +70,7 @@ Image Editor    : Add marching-ants effect to the canvas selection rubber band.
 Editor Plugins  : Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.
 Web Site        : Huge update of the contents and design eg. screenshots, description, history, features, support, download, etc.
 Advanced Search : New options to search empty properties registered in the database.
+Advanced Search : Add support for search Creator and Author fields to be drop down lists with values already presents in the database.
 
 *****************************************************************************************************
 BUGFIXES:
