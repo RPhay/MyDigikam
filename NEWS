@@ -35,29 +35,9 @@ Video           : Internal QtAVPlayer has been updated to the latest upstream 20
 
 General         : Add support of customizable date format to show everywhere in the program. Seconds can be displayed with the shot time-stamp, and more.
 Color Labels    : Color label names are now customizable in the Labels tab from left sidebar by double clicking on text. Label strings size are limited to 32 characters.
-Sort Items      : Add support of Album Icon-View sort items by Pick and Color Labels.
-Sort Items      : Add support of Import Icon-View sort items by Pick and Color Labels.
-Sort Items      : Add support of Album Icon-View sort items by Orientation.
-Sort Items      : Add support of Album Icon-View sort items by GPS location.
-Sort Items      : Add support of Album Icon-View sort items by File Format.
-Sort Items      : Add support of Import Icon-View sort items by File Format.
 Setup Collection: Add regular expression wildcard support for ignored directories settings.
-Image Properties: Add new button to copy all properties as text in clipboard.
-Image Properties: Add new button to open current item is file manager.
-Image Properties: If no icon-view item selected, show current album statistics.
-Grouped Items   : Show items from an open group highlighted for a better usability with Icon-View.
-Grouped Items   : Usability improvements of the grouped icon-view items overlay.
-Grouped Items   : Thumbbar improvements to support grouped items visibility as with Icon-View.
 Filter Items    : Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.
 Trash View      : load and save column states between sessions.
-Preview         : Extend Image and Video preview toolbar overlay with Labels editor.
-Preview         : Add new toolbar buttons: exposure indicators, color management, OSD, magnifier.
-Preview         : Add context-menu to the video player.
-Preview         : Add load progress indicator on the status bar (Icon-view and LightTable).
-Preview         : Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.
-Preview         : Add a magnifier glass tool to zoom and explore a small area of the preview canvas. Tool Size and zoom factor are customizable.
-Preview         : Add under and over exposure indicators for the preview canvas.
-Preview         : Railway over the canvas is displayed as an overlay when the scrollbar are visible.
 Icon-View       : Clicking on GPS icon overlay open the Geolocation tab from the left sidebar.
 Table-View      : Add customizable columns to show "Grouped" and "Versioned" properties.
 Advanced Rename : New modifier "Date Format".
@@ -69,6 +49,31 @@ File Transfer   : Complete rewrite the GUI for a better usability.
 Image Editor    : Add marching-ants effect to the canvas selection rubber band.
 Editor Plugins  : Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.
 Web Site        : Huge update of the contents and design eg. screenshots, description, history, features, support, download, etc.
+
+Sort Items      : Add support of Album Icon-View sort items by Pick and Color Labels.
+Sort Items      : Add support of Import Icon-View sort items by Pick and Color Labels.
+Sort Items      : Add support of Album Icon-View sort items by Orientation.
+Sort Items      : Add support of Album Icon-View sort items by GPS location.
+Sort Items      : Add support of Album Icon-View sort items by File Format.
+Sort Items      : Add support of Import Icon-View sort items by File Format.
+
+Item Properties : Add new button to copy all properties as text in clipboard.
+Item Properties : Add new button to open current item is file manager.
+Item Properties : If no icon-view item selected, show current album statistics.
+
+Grouped Items   : Show items from an open group highlighted for a better usability with Icon-View.
+Grouped Items   : Usability improvements of the grouped icon-view items overlay.
+Grouped Items   : Thumbbar improvements to support grouped items visibility as with Icon-View.
+
+Preview         : Extend Image and Video preview toolbar overlay with Labels editor.
+Preview         : Add new toolbar buttons: exposure indicators, color management, OSD, magnifier.
+Preview         : Add context-menu to the video player.
+Preview         : Add load progress indicator on the status bar (Icon-view and LightTable).
+Preview         : Add trackpad gesture events support to zoom the contents, pan the canvas, and change to previous/next items.
+Preview         : Add a magnifier glass tool to zoom and explore a small area of the preview canvas. Tool Size and zoom factor are customizable.
+Preview         : Add under and over exposure indicators for the preview canvas.
+Preview         : Railway over the canvas is displayed as an overlay when the scrollbar are visible.
+
 Advanced Search : New options to search empty properties registered in the database.
 Advanced Search : Add support for search Creator and Author fields to be drop down lists with values already presents in the database.
 
