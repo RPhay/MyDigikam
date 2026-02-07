@@ -24,6 +24,7 @@
 #include <QPushButton>
 #include <QToolButton>
 #include <QFileInfo>
+#include <QPointer>
 #include <QToolBar>
 #include <QSlider>
 #include <QLabel>
@@ -401,13 +402,14 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);
     d->videoView->setMouseTracking(true);
 
-    DHBox* const hbox = new DHBox(this);
-    d->slider         = new QSlider(Qt::Horizontal, hbox);
-    d->slider->setStyle(new PlayerVideoStyle());
+    DHBox* const hbox              = new DHBox(this);
+    d->slider                      = new QSlider(Qt::Horizontal, hbox);
+    QPointer<PlayerVideoStyle> ptr = new PlayerVideoStyle;
+    d->slider->setStyle(ptr);
     d->slider->setRange(0, 0);
-    d->tlabel         = new QLabel(hbox);
+    d->tlabel                      = new QLabel(hbox);
     d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
-    d->loopPlay       = new QPushButton(hbox);
+    d->loopPlay                    = new QPushButton(hbox);
     d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     d->loopPlay->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     d->loopPlay->setToolTip(i18n("Toggle playing in a loop"));
