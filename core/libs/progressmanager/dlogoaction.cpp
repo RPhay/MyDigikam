@@ -18,6 +18,7 @@
 
 #include <QPalette>
 #include <QPainter>
+#include <QPointer>
 #include <QTimer>
 #include <QProxyStyle>
 #include <QApplication>
@@ -241,7 +242,8 @@ void DLogoAction::applyStyleForToolBarButton(QToolButton* const btn)
     );
 
     btn->setProperty("noUnderline", true);         // Mark the button for the underline removing.
-    btn->setStyle(new NoUnderlineToolButtonStyle); // Apply the personalised style to remove it.
+    QPointer<NoUnderlineToolButtonStyle> ptr = new NoUnderlineToolButtonStyle;
+    btn->setStyle(ptr);                            // Apply the personalised style to remove it.
 }
 
 } // namespace Digikam
