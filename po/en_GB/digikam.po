@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:42+0000\n"
+"POT-Creation-Date: 2026-02-07 00:41+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -3071,7 +3071,7 @@ msgstr "Help"
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
-#: core/utilities/searchwindow/searchfields_createfield.cpp:152
+#: core/utilities/searchwindow/searchfields_createfield.cpp:153
 #, kde-format
 msgid "Labels"
 msgstr "Labels"
@@ -3175,9 +3175,9 @@ msgstr "No Tags Album"
 #: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
-#: core/utilities/searchwindow/searchfields_createfield.cpp:74
-#: core/utilities/searchwindow/searchfields_createfield.cpp:82
-#: core/utilities/searchwindow/searchfields_createfield.cpp:95
+#: core/utilities/searchwindow/searchfields_createfield.cpp:75
+#: core/utilities/searchwindow/searchfields_createfield.cpp:83
+#: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
 msgid "Tags"
 msgstr "Tags"
@@ -3900,7 +3900,7 @@ msgstr "Audio channel type"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
@@ -3908,7 +3908,7 @@ msgstr "Audio Codec"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:903
+#: core/utilities/searchwindow/searchfields_createfield.cpp:916
 #, kde-format
 msgid "Duration"
 msgstr "Duration"
@@ -4269,14 +4269,14 @@ msgstr "Item properties"
 
 #: core/app/views/tableview/tableview_column_item.cpp:72
 #: core/app/views/tableview/tableview_column_item.cpp:93
-#: core/utilities/searchwindow/searchfields_createfield.cpp:212
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, kde-format
 msgid "Width"
 msgstr "Width"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:98
-#: core/utilities/searchwindow/searchfields_createfield.cpp:230
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
 msgid "Height"
 msgstr "Height"
@@ -8622,7 +8622,7 @@ msgstr "Colour Management is disabled..."
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:596
 #, kde-format
 msgid "White Balance"
 msgstr "White Balance"
@@ -11455,8 +11455,8 @@ msgstr ""
 "process can take some time."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
-#: core/utilities/searchwindow/searchfields_createfield.cpp:214
-#: core/utilities/searchwindow/searchfields_createfield.cpp:232
+#: core/utilities/searchwindow/searchfields_createfield.cpp:215
+#: core/utilities/searchwindow/searchfields_createfield.cpp:233
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -16869,9 +16869,9 @@ msgstr "Target File"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:354
-#: core/utilities/searchwindow/searchfields_createfield.cpp:390
-#: core/utilities/searchwindow/searchfields_createfield.cpp:440
+#: core/utilities/searchwindow/searchfields_createfield.cpp:355
+#: core/utilities/searchwindow/searchfields_createfield.cpp:391
+#: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, kde-format
 msgid "Camera"
 msgstr "Camera"
@@ -20013,7 +20013,7 @@ msgstr ""
 "can be used to process files.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgid "Author"
 msgstr "Author"
@@ -25236,7 +25236,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "This is the list of images to upload to an iNaturalist observation."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, kde-format
 msgid "Date"
 msgstr "Date"
@@ -26376,10 +26376,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
 #: core/libs/models/abstractalbummodel.cpp:478
-#: core/utilities/searchwindow/searchfields_createfield.cpp:27
-#: core/utilities/searchwindow/searchfields_createfield.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:43
-#: core/utilities/searchwindow/searchfields_createfield.cpp:51
+#: core/utilities/searchwindow/searchfields_createfield.cpp:28
+#: core/utilities/searchwindow/searchfields_createfield.cpp:36
+#: core/utilities/searchwindow/searchfields_createfield.cpp:44
+#: core/utilities/searchwindow/searchfields_createfield.cpp:52
 #, kde-format
 msgid "Album"
 msgstr "Album"
@@ -27376,9 +27376,9 @@ msgid "Reset curve to linear"
 msgstr "Reset curve to linear"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:537
+#: core/utilities/searchwindow/searchfields_createfield.cpp:549
 #, kde-format
 msgid "Exposure"
 msgstr "Exposure"
@@ -29277,7 +29277,7 @@ msgstr "No path to mysql initialization command set in configuration file."
 msgid "Cannot create directory %1"
 msgstr "Cannot create directory %1"
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:436
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -29288,59 +29288,59 @@ msgstr ""
 "the default configuration file</p><p>%1</p><p>was not readable or the target "
 "file</p><p>%2</p><p>could not be written.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:459
+#: core/libs/database/server/databaseserver.cpp:458
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Cannot find MySQL server default configuration (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:506
+#: core/libs/database/server/databaseserver.cpp:505
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "The internal MySQL database is initialising, please wait..."
 
-#: core/libs/database/server/databaseserver.cpp:554
+#: core/libs/database/server/databaseserver.cpp:553
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Could not start database initialiser."
 
-#: core/libs/database/server/databaseserver.cpp:617
+#: core/libs/database/server/databaseserver.cpp:616
 #, kde-format
 msgid "Could not start database server."
 msgstr "Could not start database server."
 
-#: core/libs/database/server/databaseserver.cpp:659
+#: core/libs/database/server/databaseserver.cpp:658
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Invalid database object during database server startup"
 
-#: core/libs/database/server/databaseserver.cpp:689
+#: core/libs/database/server/databaseserver.cpp:688
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Database process exited unexpectedly during initial connection."
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:694
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Could not connect to Database after trying for 60 seconds."
 
-#: core/libs/database/server/databaseserver.cpp:728
+#: core/libs/database/server/databaseserver.cpp:727
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:752
+#: core/libs/database/server/databaseserver.cpp:751
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "A MySQL database upgrade is in progress, please wait..."
 
-#: core/libs/database/server/databaseserver.cpp:796
+#: core/libs/database/server/databaseserver.cpp:795
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Could not upgrade database."
 
-#: core/libs/database/server/databaseserver.cpp:832
+#: core/libs/database/server/databaseserver.cpp:831
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
@@ -39511,15 +39511,15 @@ msgid "Date Time"
 msgstr "Date & Time"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:426
+#: core/utilities/searchwindow/searchfields_createfield.cpp:427
 #, kde-format
 msgid "Lens"
 msgstr "Lens"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
-#: core/utilities/searchwindow/searchfields_createfield.cpp:658
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
 #, kde-format
 msgid "Aperture"
 msgstr "Aperture"
@@ -39540,7 +39540,7 @@ msgstr "Exposure Time"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sensitivity"
@@ -39644,7 +39644,7 @@ msgstr "Colour"
 
 #: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, kde-format
 msgid "Rating"
 msgstr "Rating"
@@ -53067,9 +53067,9 @@ msgid "Lens of the camera"
 msgstr "Lens of the camera"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:660
 #, kde-format
 msgid "Focal length"
 msgstr "Focal length"
@@ -53080,8 +53080,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Focal length (35mm equivalent)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgid "Exposure time"
 msgstr "Exposure time"
@@ -53102,8 +53102,8 @@ msgid "Flash mode"
 msgstr "Flash mode"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
-#: core/utilities/searchwindow/searchfields_createfield.cpp:667
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "White balance"
 msgstr "White balance"
@@ -53114,7 +53114,7 @@ msgid "White balance (color temperature)"
 msgstr "White balance (colour temperature)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
-#: core/utilities/searchwindow/searchfields_createfield.cpp:665
+#: core/utilities/searchwindow/searchfields_createfield.cpp:666
 #, kde-format
 msgid "Metering mode"
 msgstr "Metering mode"
@@ -53135,14 +53135,14 @@ msgid "Display Aspect Ratio"
 msgstr "Display Aspect Ratio"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Audio Bit Rate"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -53215,7 +53215,7 @@ msgid "Altitude in a human readable form"
 msgstr "Altitude in a human readable form"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
-#: core/utilities/searchwindow/searchfields_createfield.cpp:248
+#: core/utilities/searchwindow/searchfields_createfield.cpp:249
 #, kde-format
 msgid "Orientation"
 msgstr "Orientation"
@@ -54695,8 +54695,8 @@ msgstr "National Capital"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
-#: core/utilities/searchwindow/searchfields_createfield.cpp:792
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:793
 #, kde-format
 msgid "City"
 msgstr "City"
@@ -63737,252 +63737,251 @@ msgstr "8 bits per channel"
 msgid "16 bits per channel"
 msgstr "16 bits per channel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:27
+#: core/utilities/searchwindow/searchfields_createfield.cpp:28
 #, kde-format
 msgid "Search items located in"
 msgstr "Search items located in"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:35
+#: core/utilities/searchwindow/searchfields_createfield.cpp:36
 #, kde-format
 msgid "The album name contains"
 msgstr "The album name contains"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:43
+#: core/utilities/searchwindow/searchfields_createfield.cpp:44
 #, kde-format
 msgid "The album caption contains"
 msgstr "The album caption contains"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:51
+#: core/utilities/searchwindow/searchfields_createfield.cpp:52
 #, kde-format
 msgid "The album category is"
 msgstr "The album category is"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:74
+#: core/utilities/searchwindow/searchfields_createfield.cpp:75
 #, kde-format
 msgid "Return items with tag"
 msgstr "Return items with tag"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:82
+#: core/utilities/searchwindow/searchfields_createfield.cpp:83
 #, kde-format
 msgid "A tag of the item contains"
 msgstr "A tag of the item contains"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:95
+#: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
 msgid "Return items without tags"
 msgstr "Return items without tags"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:96
+#: core/utilities/searchwindow/searchfields_createfield.cpp:97
 #, kde-format
 msgid "Not Tagged"
 msgstr "Not Tagged"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:104
+#: core/utilities/searchwindow/searchfields_createfield.cpp:105
 #, kde-format
 msgid "File Name"
 msgstr "File Name"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:104
+#: core/utilities/searchwindow/searchfields_createfield.cpp:105
 #, kde-format
 msgid "Return items whose file name contains"
 msgstr "Return items whose file name contains"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:112
+#: core/utilities/searchwindow/searchfields_createfield.cpp:113
 #, kde-format
 msgid "Modification"
 msgstr "Modification"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:112
+#: core/utilities/searchwindow/searchfields_createfield.cpp:113
 #, kde-format
 msgid "Return items modified between"
 msgstr "Return items modified between"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:113
+#: core/utilities/searchwindow/searchfields_createfield.cpp:114
 #, kde-format
 msgctxt "'Return items modified between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgid "File Size"
 msgstr "File Size"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #, kde-format
 msgid "Size of the file in megabytes"
 msgstr "Size of the file in megabytes"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:122
-#: core/utilities/searchwindow/searchfields_createfield.cpp:134
+#: core/utilities/searchwindow/searchfields_createfield.cpp:123
+#: core/utilities/searchwindow/searchfields_createfield.cpp:135
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgid "Size of the file in bytes"
 msgstr "Size of the file in bytes"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#: core/utilities/searchwindow/searchfields_createfield.cpp:145
 #, kde-format
 msgid "Month/Day"
 msgstr "Month/Day"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#: core/utilities/searchwindow/searchfields_createfield.cpp:145
 #, kde-format
 msgid "Return items from a month or a day of the month"
 msgstr "Return items from a month or a day of the month"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:152
+#: core/utilities/searchwindow/searchfields_createfield.cpp:153
 #, kde-format
 msgid "Return items with labels"
 msgstr "Return items with labels"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, kde-format
 msgid "Return items rated at least"
 msgstr "Return items rated at least"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:161
+#: core/utilities/searchwindow/searchfields_createfield.cpp:162
 #, kde-format
 msgctxt "Return items rated at least...at most..."
 msgid "at most"
 msgstr "at most"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, kde-format
 msgid "Return items created between"
 msgstr "Return items created between"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:170
+#: core/utilities/searchwindow/searchfields_createfield.cpp:171
 #, kde-format
 msgctxt "'Return items created between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:178
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, kde-format
 msgid "Digitization"
 msgstr "Digitisation"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:178
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, kde-format
 msgid "Return items digitized between"
 msgstr "Return items digitised between"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:179
+#: core/utilities/searchwindow/searchfields_createfield.cpp:180
 #, kde-format
 msgctxt "'Return items digitized between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, kde-format
 msgid "Time"
 msgstr "Time"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, kde-format
 msgid "Return items with created time between"
 msgstr "Return items with created time between"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#: core/utilities/searchwindow/searchfields_createfield.cpp:189
 #, kde-format
 msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:198
+#: core/utilities/searchwindow/searchfields_createfield.cpp:199
 #, kde-format
 msgid "Exif Orientation"
 msgstr "Exif Orientation"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:198
+#: core/utilities/searchwindow/searchfields_createfield.cpp:199
 #, kde-format
 msgid "Find items with orientation flag"
 msgstr "Find items with orientation flag"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:212
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, kde-format
 msgid "Find items with a width between"
 msgstr "Find items with a width between"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:214
 #, kde-format
 msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:230
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
 msgid "Find items with a height between"
 msgstr "Find items with a height between"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:232
 #, kde-format
 msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:249
+#: core/utilities/searchwindow/searchfields_createfield.cpp:250
 #, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Find items with"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:258
+#: core/utilities/searchwindow/searchfields_createfield.cpp:259
 #, kde-format
 msgid "File Format"
 msgstr "File Format"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:258
+#: core/utilities/searchwindow/searchfields_createfield.cpp:259
 #, kde-format
 msgid "Return items with the file format"
 msgstr "Return items with the file format"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:266
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 [Image]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:275
+#: core/utilities/searchwindow/searchfields_createfield.cpp:276
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "%1 [Video]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:284
+#: core/utilities/searchwindow/searchfields_createfield.cpp:285
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "%1 [Audio]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
 #, kde-format
 msgid "Color Depth"
 msgstr "Colour Depth"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Find items with"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:323
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
 #, kde-format
 msgid "Color Model"
 msgstr "Colour Model"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:323
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
 #, kde-format
 msgid "Find items with the color model"
 msgstr "Find items with the colour model"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:328
 #: core/utilities/searchwindow/searchfields_createfield.cpp:329
 #: core/utilities/searchwindow/searchfields_createfield.cpp:330
 #: core/utilities/searchwindow/searchfields_createfield.cpp:331
@@ -63991,42 +63990,43 @@ msgstr "Find items with the colour model"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:334
 #: core/utilities/searchwindow/searchfields_createfield.cpp:335
 #: core/utilities/searchwindow/searchfields_createfield.cpp:336
+#: core/utilities/searchwindow/searchfields_createfield.cpp:337
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 [Image]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:340
 #: core/utilities/searchwindow/searchfields_createfield.cpp:341
 #: core/utilities/searchwindow/searchfields_createfield.cpp:342
 #: core/utilities/searchwindow/searchfields_createfield.cpp:343
+#: core/utilities/searchwindow/searchfields_createfield.cpp:344
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "%1 [Video]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:354
+#: core/utilities/searchwindow/searchfields_createfield.cpp:355
 #, kde-format
 msgid "The make of the camera"
 msgstr "The make of the camera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:390
+#: core/utilities/searchwindow/searchfields_createfield.cpp:391
 #, kde-format
 msgid "The model of the camera"
 msgstr "The model of the camera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:426
+#: core/utilities/searchwindow/searchfields_createfield.cpp:427
 #, kde-format
 msgid "The type of the lens"
 msgstr "The type of the lens"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:440
+#: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without a camera ..."
 msgstr "Return items without face regions"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:444
 #, fuzzy, kde-format
 #| msgctxt "@info: xslt param"
 #| msgid "Make"
@@ -64034,7 +64034,7 @@ msgctxt "Camera"
 msgid "Make"
 msgstr "Make"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:444
+#: core/utilities/searchwindow/searchfields_createfield.cpp:445
 #, fuzzy, kde-format
 #| msgctxt "@info: Camera Model"
 #| msgid "Model"
@@ -64042,511 +64042,511 @@ msgctxt "Camera"
 msgid "Model"
 msgstr "Model"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:445
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
 #, fuzzy, kde-format
 #| msgid "No Lens Filter"
 msgctxt "Camera"
 msgid "Lens Type"
 msgstr "No Lens Filter"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Lens aperture as f-number"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:459
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Focal length of the lens"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:479
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35mm equivalent focal length"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:498
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:537
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Automatic exposure program"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
-#: core/utilities/searchwindow/searchfields_createfield.cpp:663
+#: core/utilities/searchwindow/searchfields_createfield.cpp:549
+#: core/utilities/searchwindow/searchfields_createfield.cpp:664
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Automatic or manual exposure"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO film speed (linear scale, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:561
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:584
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Flash"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
-#: core/utilities/searchwindow/searchfields_createfield.cpp:666
+#: core/utilities/searchwindow/searchfields_createfield.cpp:584
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Flash mode"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:596
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Automatic or manual white balance"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Colour temperature used for white balance"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:608
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:620
 #, kde-format
 msgid "Metering Mode"
 msgstr "Metering Mode"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:620
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Method to determine the exposure"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
-#: core/utilities/searchwindow/searchfields_createfield.cpp:669
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:645
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Subject Distance"
 msgstr "Subject Distance"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Distance of the subject from the lens"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:633
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:645
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Macro, close or distant view"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:655
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Capture Device Settings"
 msgid "Capture Settings"
 msgstr "Capture Device Settings"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:655
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without selected capture settings ..."
 msgstr "Return items without face regions"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#: core/utilities/searchwindow/searchfields_createfield.cpp:665
 #, kde-format
 msgid "ISO film speed"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, fuzzy, kde-format
 #| msgid "White balance (color temperature)"
 msgid "White balance color temperature"
 msgstr "White balance (colour temperature)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:671
 #, fuzzy, kde-format
 #| msgid "Subject distance (category)"
 msgid "Subject Distance Category"
 msgstr "Subject distance (category)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
-#: core/utilities/searchwindow/searchfields_createfield.cpp:712
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
 #, kde-format
 msgid "Altitude range"
 msgstr "Altitude range"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:691
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:712
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "Item has no GPS info"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Not Geo-located"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:723
-#: core/utilities/searchwindow/searchfields_createfield.cpp:790
+#: core/utilities/searchwindow/searchfields_createfield.cpp:724
+#: core/utilities/searchwindow/searchfields_createfield.cpp:791
 #, kde-format
 msgid "Country"
 msgstr "Country"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:723
+#: core/utilities/searchwindow/searchfields_createfield.cpp:724
 #, kde-format
 msgid "Country shown in the item"
 msgstr "Country shown in the item"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:740
 #, kde-format
 msgid "Province"
 msgstr "Province"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:740
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Province shown in the item"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, kde-format
 msgid "City shown in the item"
 msgstr "City shown in the item"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
-#: core/utilities/searchwindow/searchfields_createfield.cpp:793
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:794
 #, kde-format
 msgid "Sublocation"
 msgstr "Sublocation"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Sublocation shown in the item"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 #| msgid "Place:"
 msgid "Place"
 msgstr "Place:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without selected place information ..."
 msgstr "Return items without face regions"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#: core/utilities/searchwindow/searchfields_createfield.cpp:792
 #, fuzzy, kde-format
 #| msgid "State/Province:"
 msgid "State/Province"
 msgstr "State/Province:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Creator"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, kde-format
 msgid "Return items created by"
 msgstr "Return items created by"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:811
+#: core/utilities/searchwindow/searchfields_createfield.cpp:818
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Caption"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:811
+#: core/utilities/searchwindow/searchfields_createfield.cpp:818
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Return items whose comment contains"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Return items commented by"
 msgstr "Return items commented by"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Headline"
 msgstr "Headline"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Return items with the IPTC headline"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:835
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Title"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:835
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Return items with the IPTC title"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:843
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Find items that have associated all these words:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:851
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, kde-format
 msgid "Empty Text"
 msgstr "Empty Text"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:851
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, fuzzy, kde-format
 #| msgid "Return items without text in:"
 msgid "Return items without text in"
 msgstr "Return items without text in:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:853
+#: core/utilities/searchwindow/searchfields_createfield.cpp:866
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Creator"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:854
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Caption"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:868
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Author"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:869
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Headline"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:870
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Title"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
-#: core/utilities/searchwindow/searchfields_createfield.cpp:886
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:899
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Aspect Ratio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Return items with the aspect ratio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, kde-format
 msgid "Pixel Size"
 msgstr "Pixel Size"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Value of (Width * Height) between"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:876
+#: core/utilities/searchwindow/searchfields_createfield.cpp:889
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:886
+#: core/utilities/searchwindow/searchfields_createfield.cpp:899
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Return video with the frame aspect ratio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:903
+#: core/utilities/searchwindow/searchfields_createfield.cpp:916
 #, kde-format
 msgid "Length of the video"
 msgstr "Length of the video"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:904
+#: core/utilities/searchwindow/searchfields_createfield.cpp:917
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:905
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:921
+#: core/utilities/searchwindow/searchfields_createfield.cpp:934
 #, kde-format
 msgid "Frame Rate"
 msgstr "Frame Rate"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:921
+#: core/utilities/searchwindow/searchfields_createfield.cpp:934
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Return video with the frame rate"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:922
+#: core/utilities/searchwindow/searchfields_createfield.cpp:935
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:923
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:952
 #, kde-format
 msgid "Codec"
 msgstr "Codec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:952
 #, kde-format
 msgid "Return video codec"
 msgstr "Return video codec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Return Audio Bits Rate"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1010
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1023
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1011
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1024
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Return Audio Channel Type"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1029
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1044
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1045
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1033
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 Channels Sequence"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1034
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1047
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Other Channel Type"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Return Audio Codec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
 #, kde-format
 msgid "Faces"
 msgstr "Faces"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Return items by number of face regions"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1146
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1159
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "and"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Return items without face regions"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1156
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1169
 #, kde-format
 msgid "No Face Regions"
 msgstr "No Face Regions"

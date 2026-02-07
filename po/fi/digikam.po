@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:42+0000\n"
+"POT-Creation-Date: 2026-02-07 00:41+0000\n"
 "PO-Revision-Date: 2025-10-22 17:39+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3140,7 +3140,7 @@ msgstr "Ohje"
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
-#: core/utilities/searchwindow/searchfields_createfield.cpp:152
+#: core/utilities/searchwindow/searchfields_createfield.cpp:153
 #, kde-format
 msgid "Labels"
 msgstr "Merkit"
@@ -3247,9 +3247,9 @@ msgstr "Luokittelematon albumi"
 #: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
-#: core/utilities/searchwindow/searchfields_createfield.cpp:74
-#: core/utilities/searchwindow/searchfields_createfield.cpp:82
-#: core/utilities/searchwindow/searchfields_createfield.cpp:95
+#: core/utilities/searchwindow/searchfields_createfield.cpp:75
+#: core/utilities/searchwindow/searchfields_createfield.cpp:83
+#: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
 msgid "Tags"
 msgstr "Tunnisteet"
@@ -3978,7 +3978,7 @@ msgstr "Äänen kanavatyyppi"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
@@ -3986,7 +3986,7 @@ msgstr "Äänikoodekki"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:903
+#: core/utilities/searchwindow/searchfields_createfield.cpp:916
 #, kde-format
 msgid "Duration"
 msgstr "Kesto"
@@ -4351,14 +4351,14 @@ msgstr "Kohteen ominaisuudet"
 
 #: core/app/views/tableview/tableview_column_item.cpp:72
 #: core/app/views/tableview/tableview_column_item.cpp:93
-#: core/utilities/searchwindow/searchfields_createfield.cpp:212
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, kde-format
 msgid "Width"
 msgstr "Leveys"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:98
-#: core/utilities/searchwindow/searchfields_createfield.cpp:230
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
 msgid "Height"
 msgstr "Korkeus"
@@ -8902,7 +8902,7 @@ msgstr "Värinhallinta on poissa käytöstä…"
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:596
 #, kde-format
 msgid "White Balance"
 msgstr "Valkotasapaino"
@@ -11737,8 +11737,8 @@ msgstr ""
 "kauan."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
-#: core/utilities/searchwindow/searchfields_createfield.cpp:214
-#: core/utilities/searchwindow/searchfields_createfield.cpp:232
+#: core/utilities/searchwindow/searchfields_createfield.cpp:215
+#: core/utilities/searchwindow/searchfields_createfield.cpp:233
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -17313,9 +17313,9 @@ msgstr "Kohdetiedosto"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:354
-#: core/utilities/searchwindow/searchfields_createfield.cpp:390
-#: core/utilities/searchwindow/searchfields_createfield.cpp:440
+#: core/utilities/searchwindow/searchfields_createfield.cpp:355
+#: core/utilities/searchwindow/searchfields_createfield.cpp:391
+#: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
@@ -20404,7 +20404,7 @@ msgstr ""
 "TV:t jne. tukevat DLNA:ta.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgid "Author"
 msgstr "Kuvaaja"
@@ -25541,7 +25541,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "Nämä ovat iNaturalist-havaintona lähetettävät kuvat."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, kde-format
 msgid "Date"
 msgstr "Kalenteri"
@@ -26701,10 +26701,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
 #: core/libs/models/abstractalbummodel.cpp:478
-#: core/utilities/searchwindow/searchfields_createfield.cpp:27
-#: core/utilities/searchwindow/searchfields_createfield.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:43
-#: core/utilities/searchwindow/searchfields_createfield.cpp:51
+#: core/utilities/searchwindow/searchfields_createfield.cpp:28
+#: core/utilities/searchwindow/searchfields_createfield.cpp:36
+#: core/utilities/searchwindow/searchfields_createfield.cpp:44
+#: core/utilities/searchwindow/searchfields_createfield.cpp:52
 #, kde-format
 msgid "Album"
 msgstr "Albumi"
@@ -27698,9 +27698,9 @@ msgid "Reset curve to linear"
 msgstr "Palauta käyrä lineaariseksi"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:537
+#: core/utilities/searchwindow/searchfields_createfield.cpp:549
 #, kde-format
 msgid "Exposure"
 msgstr "Valotus"
@@ -29611,7 +29611,7 @@ msgstr "mysqld-sovelluksen polkua ei asetettuna palvelimen asetuksissa."
 msgid "Cannot create directory %1"
 msgstr "Kansion %1 luonti epäonnistui"
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:436
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -29622,42 +29622,42 @@ msgstr ""
 "joko oletusasetustiedostoa</p><p>%1</p><p>ei voitu lukea tai että "
 "kohdetiedostoon</p><p>%2</p><p>ei voitu kirjoittaa.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:459
+#: core/libs/database/server/databaseserver.cpp:458
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "MySQL-palvelimen oletusasetustiedostoa (mysql-global.conf) ei löydy."
 
-#: core/libs/database/server/databaseserver.cpp:506
+#: core/libs/database/server/databaseserver.cpp:505
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Sisäistä MySQL-tietokantaa valmistellaan, odota…"
 
-#: core/libs/database/server/databaseserver.cpp:554
+#: core/libs/database/server/databaseserver.cpp:553
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Tietokannan alustusta ei voitu käynnistää."
 
-#: core/libs/database/server/databaseserver.cpp:617
+#: core/libs/database/server/databaseserver.cpp:616
 #, kde-format
 msgid "Could not start database server."
 msgstr "Tietokantapalvelinta ei voitu käynnistää."
 
-#: core/libs/database/server/databaseserver.cpp:659
+#: core/libs/database/server/databaseserver.cpp:658
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Virheellinen tietokantaolio tietokantapalvelinta käynnistettäessä"
 
-#: core/libs/database/server/databaseserver.cpp:689
+#: core/libs/database/server/databaseserver.cpp:688
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Tietokantaprosessi sulkeutui odottamattomasti aloitusyhteyden aikana."
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:694
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Tietokantaan ei saatu yhdistettyä 60 s yrittämisen jälkeen."
 
-#: core/libs/database/server/databaseserver.cpp:728
+#: core/libs/database/server/databaseserver.cpp:727
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -29665,19 +29665,19 @@ msgstr ""
 "Tietokannan luonti epäonnistui<p>Kyselyvirhe: %1</p> <p>Tietokantavirhe: %2</"
 "p>"
 
-#: core/libs/database/server/databaseserver.cpp:752
+#: core/libs/database/server/databaseserver.cpp:751
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pre-processing is in progress, please wait."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Esikäsittely on meneillään, odota."
 
-#: core/libs/database/server/databaseserver.cpp:796
+#: core/libs/database/server/databaseserver.cpp:795
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Tietokantaa ei voitu päivittää."
 
-#: core/libs/database/server/databaseserver.cpp:832
+#: core/libs/database/server/databaseserver.cpp:831
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -39652,15 +39652,15 @@ msgid "Date Time"
 msgstr "Päivä ja aika"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:426
+#: core/utilities/searchwindow/searchfields_createfield.cpp:427
 #, kde-format
 msgid "Lens"
 msgstr "Linssi"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
-#: core/utilities/searchwindow/searchfields_createfield.cpp:658
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
 #, kde-format
 msgid "Aperture"
 msgstr "Aukko"
@@ -39681,7 +39681,7 @@ msgstr "Valotusaika"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgid "Sensitivity"
 msgstr "Valotusherkkyys"
@@ -39784,7 +39784,7 @@ msgstr "Väri"
 
 #: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, kde-format
 msgid "Rating"
 msgstr "Arvio"
@@ -53040,9 +53040,9 @@ msgid "Lens of the camera"
 msgstr "Kameran linssi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:660
 #, kde-format
 msgid "Focal length"
 msgstr "Polttoväli"
@@ -53053,8 +53053,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Polttoväli (35mm-vastine)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgid "Exposure time"
 msgstr "Valotusaika"
@@ -53075,8 +53075,8 @@ msgid "Flash mode"
 msgstr "Salaman tila"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
-#: core/utilities/searchwindow/searchfields_createfield.cpp:667
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "White balance"
 msgstr "Valkotasapaino"
@@ -53087,7 +53087,7 @@ msgid "White balance (color temperature)"
 msgstr "Valkotasapaino (värilämpötila)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
-#: core/utilities/searchwindow/searchfields_createfield.cpp:665
+#: core/utilities/searchwindow/searchfields_createfield.cpp:666
 #, kde-format
 msgid "Metering mode"
 msgstr "Mittaustapa"
@@ -53108,14 +53108,14 @@ msgid "Display Aspect Ratio"
 msgstr "Näytä kuvasuhde"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Äänen bittinopeus"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -53189,7 +53189,7 @@ msgid "Altitude in a human readable form"
 msgstr "Pinnankorkeus ihmisen luettavassa muodossa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
-#: core/utilities/searchwindow/searchfields_createfield.cpp:248
+#: core/utilities/searchwindow/searchfields_createfield.cpp:249
 #, kde-format
 msgid "Orientation"
 msgstr "Suunta"
@@ -54688,8 +54688,8 @@ msgstr "Maan pääkaupunki"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
-#: core/utilities/searchwindow/searchfields_createfield.cpp:792
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:793
 #, kde-format
 msgid "City"
 msgstr "Kaupunki"
@@ -63627,252 +63627,251 @@ msgstr "8 bittiä/kanava"
 msgid "16 bits per channel"
 msgstr "16 bittiä/kanava"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:27
+#: core/utilities/searchwindow/searchfields_createfield.cpp:28
 #, kde-format
 msgid "Search items located in"
 msgstr "Etsi kuvat, joiden sijainti on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:35
+#: core/utilities/searchwindow/searchfields_createfield.cpp:36
 #, kde-format
 msgid "The album name contains"
 msgstr "Albumin nimi sisältää"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:43
+#: core/utilities/searchwindow/searchfields_createfield.cpp:44
 #, kde-format
 msgid "The album caption contains"
 msgstr "Albumin otsikko sisältää"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:51
+#: core/utilities/searchwindow/searchfields_createfield.cpp:52
 #, kde-format
 msgid "The album category is"
 msgstr "Albumin ryhmä on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:74
+#: core/utilities/searchwindow/searchfields_createfield.cpp:75
 #, kde-format
 msgid "Return items with tag"
 msgstr "Etsi kuvat, joilla on luokitus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:82
+#: core/utilities/searchwindow/searchfields_createfield.cpp:83
 #, kde-format
 msgid "A tag of the item contains"
 msgstr "Kuvan luokitus sisältää"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:95
+#: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
 msgid "Return items without tags"
 msgstr "Palauta kohteet, joilla ei ole luokituksia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:96
+#: core/utilities/searchwindow/searchfields_createfield.cpp:97
 #, kde-format
 msgid "Not Tagged"
 msgstr "Ei tunnistetta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:104
+#: core/utilities/searchwindow/searchfields_createfield.cpp:105
 #, kde-format
 msgid "File Name"
 msgstr "Tiedostonimi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:104
+#: core/utilities/searchwindow/searchfields_createfield.cpp:105
 #, kde-format
 msgid "Return items whose file name contains"
 msgstr "Etsi kuvat, joiden tiedostonimi sisältää"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:112
+#: core/utilities/searchwindow/searchfields_createfield.cpp:113
 #, kde-format
 msgid "Modification"
 msgstr "Muutospäivämäärä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:112
+#: core/utilities/searchwindow/searchfields_createfield.cpp:113
 #, kde-format
 msgid "Return items modified between"
 msgstr "Etsi kuvat, joita on muutettu välillä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:113
+#: core/utilities/searchwindow/searchfields_createfield.cpp:114
 #, kde-format
 msgctxt "'Return items modified between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgid "File Size"
 msgstr "Tiedostokoko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #, kde-format
 msgid "Size of the file in megabytes"
 msgstr "Tiedoston koko megatavuina"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:122
-#: core/utilities/searchwindow/searchfields_createfield.cpp:134
+#: core/utilities/searchwindow/searchfields_createfield.cpp:123
+#: core/utilities/searchwindow/searchfields_createfield.cpp:135
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgid "Size of the file in bytes"
 msgstr "Tiedoston koko tavuina"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#: core/utilities/searchwindow/searchfields_createfield.cpp:145
 #, kde-format
 msgid "Month/Day"
 msgstr "Kuukausi/päivä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#: core/utilities/searchwindow/searchfields_createfield.cpp:145
 #, kde-format
 msgid "Return items from a month or a day of the month"
 msgstr "Palauta kohteet kuukaudelta tai kuukaudenpäivältä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:152
+#: core/utilities/searchwindow/searchfields_createfield.cpp:153
 #, kde-format
 msgid "Return items with labels"
 msgstr "Palauta kohteet, joilla on nimiöitä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, kde-format
 msgid "Return items rated at least"
 msgstr "Etsi kuvat, joiden arvio on vähintään"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:161
+#: core/utilities/searchwindow/searchfields_createfield.cpp:162
 #, kde-format
 msgctxt "Return items rated at least...at most..."
 msgid "at most"
 msgstr "enintään"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, kde-format
 msgid "Return items created between"
 msgstr "Etsi kuvat, jotka on otettu välillä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:170
+#: core/utilities/searchwindow/searchfields_createfield.cpp:171
 #, kde-format
 msgctxt "'Return items created between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:178
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, kde-format
 msgid "Digitization"
 msgstr "Digitointi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:178
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, kde-format
 msgid "Return items digitized between"
 msgstr "Etsi kuvat, jotka on digitoitu välillä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:179
+#: core/utilities/searchwindow/searchfields_createfield.cpp:180
 #, kde-format
 msgctxt "'Return items digitized between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, kde-format
 msgid "Time"
 msgstr "Aika"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, kde-format
 msgid "Return items with created time between"
 msgstr "Palauta kohteet, joiden luontiaika on välillä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#: core/utilities/searchwindow/searchfields_createfield.cpp:189
 #, kde-format
 msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:198
+#: core/utilities/searchwindow/searchfields_createfield.cpp:199
 #, kde-format
 msgid "Exif Orientation"
 msgstr "Exif-suunta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:198
+#: core/utilities/searchwindow/searchfields_createfield.cpp:199
 #, kde-format
 msgid "Find items with orientation flag"
 msgstr "Etsi kuvat, joissa on suuntatieto"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:212
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, kde-format
 msgid "Find items with a width between"
 msgstr "Etsi kuvat, joiden leveys on väliltä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:214
 #, kde-format
 msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:230
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
 msgid "Find items with a height between"
 msgstr "Etsi kuvat, joiden korkeus on väliltä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:232
 #, kde-format
 msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:249
+#: core/utilities/searchwindow/searchfields_createfield.cpp:250
 #, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Etsi kohteet, joilla"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:258
+#: core/utilities/searchwindow/searchfields_createfield.cpp:259
 #, kde-format
 msgid "File Format"
 msgstr "Tiedostomuoto"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:258
+#: core/utilities/searchwindow/searchfields_createfield.cpp:259
 #, kde-format
 msgid "Return items with the file format"
 msgstr "Etsi kuvat, joiden tiedostomuoto on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:266
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 [kuva]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:275
+#: core/utilities/searchwindow/searchfields_createfield.cpp:276
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "%1 [video]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:284
+#: core/utilities/searchwindow/searchfields_createfield.cpp:285
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "%1 [ääni]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
 #, kde-format
 msgid "Color Depth"
 msgstr "Värisyvyys"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Etsi kohteen, joilla"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:323
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
 #, kde-format
 msgid "Color Model"
 msgstr "Värimalli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:323
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
 #, kde-format
 msgid "Find items with the color model"
 msgstr "Etsi kuvat, joiden värimalli on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:328
 #: core/utilities/searchwindow/searchfields_createfield.cpp:329
 #: core/utilities/searchwindow/searchfields_createfield.cpp:330
 #: core/utilities/searchwindow/searchfields_createfield.cpp:331
@@ -63881,42 +63880,43 @@ msgstr "Etsi kuvat, joiden värimalli on"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:334
 #: core/utilities/searchwindow/searchfields_createfield.cpp:335
 #: core/utilities/searchwindow/searchfields_createfield.cpp:336
+#: core/utilities/searchwindow/searchfields_createfield.cpp:337
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 [kuva]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:340
 #: core/utilities/searchwindow/searchfields_createfield.cpp:341
 #: core/utilities/searchwindow/searchfields_createfield.cpp:342
 #: core/utilities/searchwindow/searchfields_createfield.cpp:343
+#: core/utilities/searchwindow/searchfields_createfield.cpp:344
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "%1 [video]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:354
+#: core/utilities/searchwindow/searchfields_createfield.cpp:355
 #, kde-format
 msgid "The make of the camera"
 msgstr "Kameran merkki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:390
+#: core/utilities/searchwindow/searchfields_createfield.cpp:391
 #, kde-format
 msgid "The model of the camera"
 msgstr "Kameran malli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:426
+#: core/utilities/searchwindow/searchfields_createfield.cpp:427
 #, kde-format
 msgid "The type of the lens"
 msgstr "Linssin tyyppi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:440
+#: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without a camera ..."
 msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:444
 #, fuzzy, kde-format
 #| msgctxt "camera make"
 #| msgid "Make:"
@@ -63924,7 +63924,7 @@ msgctxt "Camera"
 msgid "Make"
 msgstr "Merkki:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:444
+#: core/utilities/searchwindow/searchfields_createfield.cpp:445
 #, fuzzy, kde-format
 #| msgctxt "@info: Camera Model"
 #| msgid "Model"
@@ -63932,510 +63932,510 @@ msgctxt "Camera"
 msgid "Model"
 msgstr "Malli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:445
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
 #, fuzzy, kde-format
 #| msgid "No Lens Filter"
 msgctxt "Camera"
 msgid "Lens Type"
 msgstr "Ei linssisuodatusta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Linssin aukko f-lukuna"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:459
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Linssin polttoväli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:479
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35 mm vastaava polttoväliä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:498
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:537
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Automaattivalotusohjelma"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
-#: core/utilities/searchwindow/searchfields_createfield.cpp:663
+#: core/utilities/searchwindow/searchfields_createfield.cpp:549
+#: core/utilities/searchwindow/searchfields_createfield.cpp:664
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Automaattinen tai käyttäjän valotus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO-filminopeus (lineaarinen asteikko, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:561
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:584
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Salama"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
-#: core/utilities/searchwindow/searchfields_createfield.cpp:666
+#: core/utilities/searchwindow/searchfields_createfield.cpp:584
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Salaman tila"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:596
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Automaattinen tai käyttäjän valkotasapaino"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Valkotasapainoon käytetty värilämpötila"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:608
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:620
 #, kde-format
 msgid "Metering Mode"
 msgstr "Kuvaustila"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:620
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Valotuksen tunnistustapa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
-#: core/utilities/searchwindow/searchfields_createfield.cpp:669
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:645
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Subject Distance"
 msgstr "Kohteen etäisyys"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Kohteen etäisyys linssistä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:633
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:645
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:655
 #, fuzzy, kde-format
 #| msgid "Capture Device Settings"
 msgid "Capture Settings"
 msgstr "Kaappauslaitteen asetukset"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:655
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without selected capture settings ..."
 msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#: core/utilities/searchwindow/searchfields_createfield.cpp:665
 #, kde-format
 msgid "ISO film speed"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, fuzzy, kde-format
 #| msgid "White balance (color temperature)"
 msgid "White balance color temperature"
 msgstr "Valkotasapaino (värilämpötila)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:671
 #, fuzzy, kde-format
 #| msgid "Subject distance (category)"
 msgid "Subject Distance Category"
 msgstr "Kohteen etäisyys (luokka)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
-#: core/utilities/searchwindow/searchfields_createfield.cpp:712
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
 #, kde-format
 msgid "Altitude range"
 msgstr "Korkeusalue"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:691
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:712
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "Kuvalla ei ole GPS-tietoa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Ei geopaikannettu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:723
-#: core/utilities/searchwindow/searchfields_createfield.cpp:790
+#: core/utilities/searchwindow/searchfields_createfield.cpp:724
+#: core/utilities/searchwindow/searchfields_createfield.cpp:791
 #, kde-format
 msgid "Country"
 msgstr "Maa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:723
+#: core/utilities/searchwindow/searchfields_createfield.cpp:724
 #, kde-format
 msgid "Country shown in the item"
 msgstr "Kohteessa näytetty maa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:740
 #, kde-format
 msgid "Province"
 msgstr "Provinssi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:740
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Kohteessa näytetty alue"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, kde-format
 msgid "City shown in the item"
 msgstr "Kohteessa näytetty kaupunki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
-#: core/utilities/searchwindow/searchfields_createfield.cpp:793
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:794
 #, kde-format
 msgid "Sublocation"
 msgstr "Alisijainti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Kohteessa näytetty pienempi alue"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 #| msgid "Place:"
 msgid "Place"
 msgstr "Paikka:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without selected place information ..."
 msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#: core/utilities/searchwindow/searchfields_createfield.cpp:792
 #, fuzzy, kde-format
 #| msgid "State/Province:"
 msgid "State/Province"
 msgstr "Osavaltio tai provinssi:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Luoja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, kde-format
 msgid "Return items created by"
 msgstr "Etsi kuvat, jotka on luonut"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:811
+#: core/utilities/searchwindow/searchfields_createfield.cpp:818
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Kuvateksti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:811
+#: core/utilities/searchwindow/searchfields_createfield.cpp:818
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Etsi kuvat, joiden kommentti sisältää"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, kde-format
 msgid "Return items commented by"
 msgstr "Etsi kuvat, joita on kommentoinut"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Headline"
 msgstr "IPTC-”headline”"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Etsi kuvat, joiden IPTC-otsake on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:835
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Otsikko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:835
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Etsi kuvat, joiden IPTC-otsikko on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:843
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Etsi kuvat, jotka ovat yhdistetty kaikkiin seuraaviin sanoihin:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:851
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, kde-format
 msgid "Empty Text"
 msgstr "Tyhjä teksti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:851
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, fuzzy, kde-format
 #| msgid "Return items without text in:"
 msgid "Return items without text in"
 msgstr "Etsi tekstittömiä kohteita:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:853
+#: core/utilities/searchwindow/searchfields_createfield.cpp:866
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Luoja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:854
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Kuvateksti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:868
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Tekijä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:869
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Otsakerivi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:870
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Otsikko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
-#: core/utilities/searchwindow/searchfields_createfield.cpp:886
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:899
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Kuvasuhde"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Etsi kuvat, joiden kuvasuhde on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, kde-format
 msgid "Pixel Size"
 msgstr "Kuvakoko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Etsi kuvat, joiden korkeus × leveys on välillä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:876
+#: core/utilities/searchwindow/searchfields_createfield.cpp:889
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:886
+#: core/utilities/searchwindow/searchfields_createfield.cpp:899
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Etsi videot, joiden kuvasuhde on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:903
+#: core/utilities/searchwindow/searchfields_createfield.cpp:916
 #, kde-format
 msgid "Length of the video"
 msgstr "Videon kesto"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:904
+#: core/utilities/searchwindow/searchfields_createfield.cpp:917
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:905
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr " s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:921
+#: core/utilities/searchwindow/searchfields_createfield.cpp:934
 #, kde-format
 msgid "Frame Rate"
 msgstr "Kuvataajuus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:921
+#: core/utilities/searchwindow/searchfields_createfield.cpp:934
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Etsi videot, joiden kuvataajuus on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:922
+#: core/utilities/searchwindow/searchfields_createfield.cpp:935
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:923
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr " fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:952
 #, kde-format
 msgid "Codec"
 msgstr "Koodekki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:952
 #, kde-format
 msgid "Return video codec"
 msgstr "Etsi videot videokoodekilla"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Palauta äänen bittinopeus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1010
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1023
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1011
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1024
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr " bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Palauta äänikanavan tyyppi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1029
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1044
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1045
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1033
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 kanavan sekvenssi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1034
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1047
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Muu kanavatyyppi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Palauta äänikoodekki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
 #, kde-format
 msgid "Faces"
 msgstr "Kasvot"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Etsi kohteita kasvojen alueiden määrän mukaan"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1146
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1159
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1156
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1169
 #, kde-format
 msgid "No Face Regions"
 msgstr "Ei kasvojen alueita"

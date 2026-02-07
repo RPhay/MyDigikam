@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:42+0000\n"
+"POT-Creation-Date: 2026-02-07 00:41+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3314,7 +3314,7 @@ msgstr "&Pagalba"
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
-#: core/utilities/searchwindow/searchfields_createfield.cpp:152
+#: core/utilities/searchwindow/searchfields_createfield.cpp:153
 #, kde-format
 msgid "Labels"
 msgstr "Etiketės"
@@ -3409,9 +3409,9 @@ msgstr "Eiti į albumus"
 #: core/libs/properties/itempropertiestab.cpp:525
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
-#: core/utilities/searchwindow/searchfields_createfield.cpp:74
-#: core/utilities/searchwindow/searchfields_createfield.cpp:82
-#: core/utilities/searchwindow/searchfields_createfield.cpp:95
+#: core/utilities/searchwindow/searchfields_createfield.cpp:75
+#: core/utilities/searchwindow/searchfields_createfield.cpp:83
+#: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
 msgid "Tags"
 msgstr "Žymos"
@@ -4127,7 +4127,7 @@ msgstr "Audio kanalo tipas"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, fuzzy, kde-format
 #| msgid "Video Codec"
@@ -4136,7 +4136,7 @@ msgstr "Video kodekas"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:903
+#: core/utilities/searchwindow/searchfields_createfield.cpp:916
 #, kde-format
 msgid "Duration"
 msgstr "Trukmė"
@@ -4524,14 +4524,14 @@ msgstr "Elemento savybės"
 
 #: core/app/views/tableview/tableview_column_item.cpp:72
 #: core/app/views/tableview/tableview_column_item.cpp:93
-#: core/utilities/searchwindow/searchfields_createfield.cpp:212
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, kde-format
 msgid "Width"
 msgstr "Plotis"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:98
-#: core/utilities/searchwindow/searchfields_createfield.cpp:230
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
 msgid "Height"
 msgstr "Aukštis"
@@ -8676,7 +8676,7 @@ msgstr "Spalvų valdymas išjungtas...7 val"
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:596
 #, kde-format
 msgid "White Balance"
 msgstr "Baltos spalvos balansas"
@@ -11419,8 +11419,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
-#: core/utilities/searchwindow/searchfields_createfield.cpp:214
-#: core/utilities/searchwindow/searchfields_createfield.cpp:232
+#: core/utilities/searchwindow/searchfields_createfield.cpp:215
+#: core/utilities/searchwindow/searchfields_createfield.cpp:233
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -16953,9 +16953,9 @@ msgstr "Pagal aplanką"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:354
-#: core/utilities/searchwindow/searchfields_createfield.cpp:390
-#: core/utilities/searchwindow/searchfields_createfield.cpp:440
+#: core/utilities/searchwindow/searchfields_createfield.cpp:355
+#: core/utilities/searchwindow/searchfields_createfield.cpp:391
+#: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, kde-format
 msgid "Camera"
 msgstr "Fotoaparatas"
@@ -20124,7 +20124,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgid "Author"
 msgstr "Autorius"
@@ -25327,7 +25327,7 @@ msgid "This is the list of images to upload to an iNaturalist observation."
 msgstr "Tai sąrašas paketiškai apdorosimų paveikslėlių"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, kde-format
 msgid "Date"
 msgstr "Data"
@@ -26492,10 +26492,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
 #: core/libs/models/abstractalbummodel.cpp:478
-#: core/utilities/searchwindow/searchfields_createfield.cpp:27
-#: core/utilities/searchwindow/searchfields_createfield.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:43
-#: core/utilities/searchwindow/searchfields_createfield.cpp:51
+#: core/utilities/searchwindow/searchfields_createfield.cpp:28
+#: core/utilities/searchwindow/searchfields_createfield.cpp:36
+#: core/utilities/searchwindow/searchfields_createfield.cpp:44
+#: core/utilities/searchwindow/searchfields_createfield.cpp:52
 #, kde-format
 msgid "Album"
 msgstr "Albumas"
@@ -27492,9 +27492,9 @@ msgid "Reset curve to linear"
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:537
+#: core/utilities/searchwindow/searchfields_createfield.cpp:549
 #, kde-format
 msgid "Exposure"
 msgstr "Išlaikymas"
@@ -29302,7 +29302,7 @@ msgstr "Duomenų bazės nustatymuose nenurodytas kelias iki mysqld."
 msgid "Cannot create directory %1"
 msgstr "Nepavyko sukurti aplanko,"
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:436
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to create MySQL server configuration file.\n"
@@ -29319,34 +29319,34 @@ msgstr ""
 "(mysql-global.conf),\n"
 "arba nepavyko įrašyti failo (mysql.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:459
+#: core/libs/database/server/databaseserver.cpp:458
 #, fuzzy, kde-format
 #| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Nerasta MySQL numatytoji konfigūracija (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:506
+#: core/libs/database/server/databaseserver.cpp:505
 #, fuzzy, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Ieškoma naujų failų. Prašome palaukti..."
 
-#: core/libs/database/server/databaseserver.cpp:554
+#: core/libs/database/server/databaseserver.cpp:553
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not start database initializer."
 msgstr "Nepavyko paleisti duomenų bazės."
 
-#: core/libs/database/server/databaseserver.cpp:617
+#: core/libs/database/server/databaseserver.cpp:616
 #, kde-format
 msgid "Could not start database server."
 msgstr "Nepavyko paleisti duomenų bazės."
 
-#: core/libs/database/server/databaseserver.cpp:659
+#: core/libs/database/server/databaseserver.cpp:658
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:689
+#: core/libs/database/server/databaseserver.cpp:688
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -29356,12 +29356,12 @@ msgstr ""
 "Duomenų bazės procesas netikėtai nutrūko pradinio prisijungimo metu."
 "<p>Paleidžiamas failas: %1</p><p>Proceso klaida: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:694
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:728
+#: core/libs/database/server/databaseserver.cpp:727
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -29369,18 +29369,18 @@ msgstr ""
 "Nepavyko sukurti duomenų bazės<p>Užklausos klaida: %1</p><p>Duombazės "
 "klaida: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:752
+#: core/libs/database/server/databaseserver.cpp:751
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Ieškoma naujų failų. Prašome palaukti..."
 
-#: core/libs/database/server/databaseserver.cpp:796
+#: core/libs/database/server/databaseserver.cpp:795
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "Nepavyko paleisti duomenų bazės."
 
-#: core/libs/database/server/databaseserver.cpp:832
+#: core/libs/database/server/databaseserver.cpp:831
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -39465,15 +39465,15 @@ msgid "Date Time"
 msgstr "Data ir Laikas"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:426
+#: core/utilities/searchwindow/searchfields_createfield.cpp:427
 #, kde-format
 msgid "Lens"
 msgstr "Lęšiai"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
-#: core/utilities/searchwindow/searchfields_createfield.cpp:658
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:659
 #, kde-format
 msgid "Aperture"
 msgstr "Diafragma"
@@ -39492,7 +39492,7 @@ msgstr "Išlaikymo trukmė"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgid "Sensitivity"
 msgstr "Jautrumas"
@@ -39591,7 +39591,7 @@ msgstr "Spalva"
 
 #: core/libs/properties/itempropertiestab.cpp:531
 #: core/libs/widgets/metadata/labels/ratingwidget_menu.cpp:24
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, kde-format
 msgid "Rating"
 msgstr "Įvertinimas"
@@ -53970,9 +53970,9 @@ msgid "Lens of the camera"
 msgstr "Fotoaparato linzė"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:660
 #, kde-format
 msgid "Focal length"
 msgstr "Židinio nuotolis"
@@ -53983,8 +53983,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Lęšių židinio nuotolis"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:515
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgid "Exposure time"
 msgstr "Išlaikymo trukmė"
@@ -54005,8 +54005,8 @@ msgid "Flash mode"
 msgstr "Blykstės režimas"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
-#: core/utilities/searchwindow/searchfields_createfield.cpp:667
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "White balance"
 msgstr "Baltos balansas"
@@ -54017,7 +54017,7 @@ msgid "White balance (color temperature)"
 msgstr "Baltos spalvos balansas (spalvos temperatūra)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
-#: core/utilities/searchwindow/searchfields_createfield.cpp:665
+#: core/utilities/searchwindow/searchfields_createfield.cpp:666
 #, kde-format
 msgid "Metering mode"
 msgstr "Matavimo veiksena"
@@ -54038,14 +54038,14 @@ msgid "Display Aspect Ratio"
 msgstr "Ekrano proporcija"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Garso bitų dažnis"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -54118,7 +54118,7 @@ msgid "Altitude in a human readable form"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
-#: core/utilities/searchwindow/searchfields_createfield.cpp:248
+#: core/utilities/searchwindow/searchfields_createfield.cpp:249
 #, kde-format
 msgid "Orientation"
 msgstr "Orientacija"
@@ -55548,8 +55548,8 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
-#: core/utilities/searchwindow/searchfields_createfield.cpp:792
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:793
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
@@ -64804,73 +64804,73 @@ msgstr "8 bitai kanalui"
 msgid "16 bits per channel"
 msgstr "16 bitų kanalui"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:27
+#: core/utilities/searchwindow/searchfields_createfield.cpp:28
 #, fuzzy, kde-format
 #| msgid "Search pictures located in"
 msgid "Search items located in"
 msgstr "Ieškoti paveikslėlių esančių"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:35
+#: core/utilities/searchwindow/searchfields_createfield.cpp:36
 #, kde-format
 msgid "The album name contains"
 msgstr "Albumo pavadinimas turi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:43
+#: core/utilities/searchwindow/searchfields_createfield.cpp:44
 #, kde-format
 msgid "The album caption contains"
 msgstr "Albumo antraštėje yra"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:51
+#: core/utilities/searchwindow/searchfields_createfield.cpp:52
 #, fuzzy, kde-format
 msgid "The album category is"
 msgstr "Rodyti albumo kategoriją"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:74
+#: core/utilities/searchwindow/searchfields_createfield.cpp:75
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items with tag"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:82
+#: core/utilities/searchwindow/searchfields_createfield.cpp:83
 #, fuzzy, kde-format
 #| msgid "A tag of the picture contains"
 msgid "A tag of the item contains"
 msgstr "Paveikslėlio žymoje yra"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:95
+#: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without tags"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:96
+#: core/utilities/searchwindow/searchfields_createfield.cpp:97
 #, kde-format
 msgid "Not Tagged"
 msgstr "Nepažymėti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:104
+#: core/utilities/searchwindow/searchfields_createfield.cpp:105
 #, kde-format
 msgid "File Name"
 msgstr "Failo pavadinimas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:104
+#: core/utilities/searchwindow/searchfields_createfield.cpp:105
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items whose file name contains"
 msgstr "Rodyti paveikslėlius, kurių failo pavadinimas turi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:112
+#: core/utilities/searchwindow/searchfields_createfield.cpp:113
 #, kde-format
 msgid "Modification"
 msgstr "Pakeitimas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:112
+#: core/utilities/searchwindow/searchfields_createfield.cpp:113
 #, fuzzy, kde-format
 #| msgid "Return pictures modified between"
 msgid "Return items modified between"
 msgstr "Rasti nuotraukas, pakeistas tarp"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:113
+#: core/utilities/searchwindow/searchfields_createfield.cpp:114
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -64878,55 +64878,55 @@ msgctxt "'Return items modified between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:122
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, kde-format
 msgid "File Size"
 msgstr "Failo dydis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:121
+#: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #, fuzzy, kde-format
 #| msgid "Size of the file"
 msgid "Size of the file in megabytes"
 msgstr "Failo dydis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:122
-#: core/utilities/searchwindow/searchfields_createfield.cpp:134
+#: core/utilities/searchwindow/searchfields_createfield.cpp:123
+#: core/utilities/searchwindow/searchfields_createfield.cpp:135
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:133
+#: core/utilities/searchwindow/searchfields_createfield.cpp:134
 #, fuzzy, kde-format
 #| msgid "Size of the file"
 msgid "Size of the file in bytes"
 msgstr "Failo dydis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#: core/utilities/searchwindow/searchfields_createfield.cpp:145
 #, fuzzy, kde-format
 #| msgid "Month"
 msgid "Month/Day"
 msgstr "Mėnuo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:144
+#: core/utilities/searchwindow/searchfields_createfield.cpp:145
 #, kde-format
 msgid "Return items from a month or a day of the month"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:152
+#: core/utilities/searchwindow/searchfields_createfield.cpp:153
 #, fuzzy, kde-format
 #| msgid "Return pictures with labels"
 msgid "Return items with labels"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:160
+#: core/utilities/searchwindow/searchfields_createfield.cpp:161
 #, fuzzy, kde-format
 #| msgid "Return pictures rated at least"
 msgid "Return items rated at least"
 msgstr "Rodyti paveikslėlius, kurie įvertinti bent jau"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:161
+#: core/utilities/searchwindow/searchfields_createfield.cpp:162
 #, fuzzy, kde-format
 #| msgctxt "Return pictures rated at least...at most..."
 #| msgid "at most"
@@ -64934,13 +64934,13 @@ msgctxt "Return items rated at least...at most..."
 msgid "at most"
 msgstr "daugiausiai"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:170
 #, fuzzy, kde-format
 #| msgid "Return pictures created between"
 msgid "Return items created between"
 msgstr "Rasti nuotraukas sukurtas tarp"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:170
+#: core/utilities/searchwindow/searchfields_createfield.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -64948,18 +64948,18 @@ msgctxt "'Return items created between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:178
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, fuzzy, kde-format
 msgid "Digitization"
 msgstr "Aprašymas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:178
+#: core/utilities/searchwindow/searchfields_createfield.cpp:179
 #, fuzzy, kde-format
 #| msgid "Return pictures digitized between"
 msgid "Return items digitized between"
 msgstr "Rodyti paveikslėlius, kurie suskaitmeninti tarp"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:179
+#: core/utilities/searchwindow/searchfields_createfield.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -64967,19 +64967,19 @@ msgctxt "'Return items digitized between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgid "Time"
 msgstr "Laikas:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:187
+#: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, fuzzy, kde-format
 #| msgid "Return pictures created between"
 msgid "Return items with created time between"
 msgstr "Rasti nuotraukas sukurtas tarp"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#: core/utilities/searchwindow/searchfields_createfield.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -64987,22 +64987,22 @@ msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:198
+#: core/utilities/searchwindow/searchfields_createfield.cpp:199
 #, fuzzy, kde-format
 msgid "Exif Orientation"
 msgstr "Orientacija"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:198
+#: core/utilities/searchwindow/searchfields_createfield.cpp:199
 #, fuzzy, kde-format
 msgid "Find items with orientation flag"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:212
+#: core/utilities/searchwindow/searchfields_createfield.cpp:213
 #, fuzzy, kde-format
 msgid "Find items with a width between"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -65010,12 +65010,12 @@ msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:230
+#: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, fuzzy, kde-format
 msgid "Find items with a height between"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:232
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -65023,7 +65023,7 @@ msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:249
+#: core/utilities/searchwindow/searchfields_createfield.cpp:250
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Find pictures with any orientation / landscape / portrait orientation..."
@@ -65032,18 +65032,18 @@ msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Rasti nuotraukas su"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:258
+#: core/utilities/searchwindow/searchfields_createfield.cpp:259
 #, kde-format
 msgid "File Format"
 msgstr "Failo formatas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:258
+#: core/utilities/searchwindow/searchfields_createfield.cpp:259
 #, fuzzy, kde-format
 #| msgid "Return pictures with the image file format"
 msgid "Return items with the file format"
 msgstr "Rodyti paveikslėlius, kurių failo formatas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:266
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -65051,26 +65051,26 @@ msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 paveikslėlis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:275
+#: core/utilities/searchwindow/searchfields_createfield.cpp:276
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "Video"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:284
+#: core/utilities/searchwindow/searchfields_createfield.cpp:285
 #, fuzzy, kde-format
 #| msgid "Audio"
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "Audio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
 #, kde-format
 msgid "Color Depth"
 msgstr "Spalvos gylis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
+#: core/utilities/searchwindow/searchfields_createfield.cpp:314
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Find pictures with any orientation / landscape / portrait orientation..."
@@ -65079,18 +65079,17 @@ msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Rasti nuotraukas su"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:323
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
 #, kde-format
 msgid "Color Model"
 msgstr "Spalvos modelis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:323
+#: core/utilities/searchwindow/searchfields_createfield.cpp:324
 #, fuzzy, kde-format
 #| msgid "Find pictures with the color model"
 msgid "Find items with the color model"
 msgstr "Rasti nuotraukas su spalvų modeliu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:328
 #: core/utilities/searchwindow/searchfields_createfield.cpp:329
 #: core/utilities/searchwindow/searchfields_createfield.cpp:330
 #: core/utilities/searchwindow/searchfields_createfield.cpp:331
@@ -65099,6 +65098,7 @@ msgstr "Rasti nuotraukas su spalvų modeliu"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:334
 #: core/utilities/searchwindow/searchfields_createfield.cpp:335
 #: core/utilities/searchwindow/searchfields_createfield.cpp:336
+#: core/utilities/searchwindow/searchfields_createfield.cpp:337
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -65106,39 +65106,39 @@ msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 paveikslėlis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:340
 #: core/utilities/searchwindow/searchfields_createfield.cpp:341
 #: core/utilities/searchwindow/searchfields_createfield.cpp:342
 #: core/utilities/searchwindow/searchfields_createfield.cpp:343
+#: core/utilities/searchwindow/searchfields_createfield.cpp:344
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "Video"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:354
+#: core/utilities/searchwindow/searchfields_createfield.cpp:355
 #, kde-format
 msgid "The make of the camera"
 msgstr "Fotoaparato gamintojas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:390
+#: core/utilities/searchwindow/searchfields_createfield.cpp:391
 #, kde-format
 msgid "The model of the camera"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:426
+#: core/utilities/searchwindow/searchfields_createfield.cpp:427
 #, fuzzy, kde-format
 #| msgid "Type of the media file"
 msgid "The type of the lens"
 msgstr "Media formato failo tipas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:440
+#: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without a camera ..."
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:443
+#: core/utilities/searchwindow/searchfields_createfield.cpp:444
 #, fuzzy, kde-format
 #| msgctxt "camera make"
 #| msgid "Make:"
@@ -65146,352 +65146,352 @@ msgctxt "Camera"
 msgid "Make"
 msgstr "Gaminys:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:444
+#: core/utilities/searchwindow/searchfields_createfield.cpp:445
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "Camera"
 msgid "Model"
 msgstr "Modelis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:445
+#: core/utilities/searchwindow/searchfields_createfield.cpp:446
 #, fuzzy, kde-format
 #| msgid "Lens: "
 msgctxt "Camera"
 msgid "Lens Type"
 msgstr "Lęšiai: "
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:457
+#: core/utilities/searchwindow/searchfields_createfield.cpp:458
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:459
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:477
+#: core/utilities/searchwindow/searchfields_createfield.cpp:478
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Lęšių židinio nuotolis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:479
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:496
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:661
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35mm ekvivalentinis židinio nuotolis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
+#: core/utilities/searchwindow/searchfields_createfield.cpp:498
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:536
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:537
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Automatic exposure program"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:548
-#: core/utilities/searchwindow/searchfields_createfield.cpp:663
+#: core/utilities/searchwindow/searchfields_createfield.cpp:549
+#: core/utilities/searchwindow/searchfields_createfield.cpp:664
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Automatinis ar rankinis išlaikymas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:559
+#: core/utilities/searchwindow/searchfields_createfield.cpp:560
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO juostelės greitis (tiesinė skalė, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:561
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
+#: core/utilities/searchwindow/searchfields_createfield.cpp:584
 #, fuzzy, kde-format
 #| msgid "Flash"
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Blykstė"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:583
-#: core/utilities/searchwindow/searchfields_createfield.cpp:666
+#: core/utilities/searchwindow/searchfields_createfield.cpp:584
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, fuzzy, kde-format
 #| msgid "Flash mode"
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Blykstės režimas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:595
+#: core/utilities/searchwindow/searchfields_createfield.cpp:596
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Automatinis ar rankinis baltos spalvos balansas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:608
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:620
 #, kde-format
 msgid "Metering Mode"
 msgstr "Matavimo veiksena"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:620
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
-#: core/utilities/searchwindow/searchfields_createfield.cpp:669
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:645
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Subject Distance"
 msgstr "Objekto atstumas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:631
+#: core/utilities/searchwindow/searchfields_createfield.cpp:632
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:633
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:644
+#: core/utilities/searchwindow/searchfields_createfield.cpp:645
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:655
 #, fuzzy, kde-format
 #| msgid "Image Settings"
 msgid "Capture Settings"
 msgstr "Paveikslėlio nuostatos"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:655
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without selected capture settings ..."
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#: core/utilities/searchwindow/searchfields_createfield.cpp:665
 #, kde-format
 msgid "ISO film speed"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, fuzzy, kde-format
 #| msgid "White balance (color temperature)"
 msgid "White balance color temperature"
 msgstr "Baltos spalvos balansas (spalvos temperatūra)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:671
 #, fuzzy, kde-format
 #| msgid "Subject distance (category)"
 msgid "Subject Distance Category"
 msgstr "Atstumas (kategorija)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
-#: core/utilities/searchwindow/searchfields_createfield.cpp:712
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, kde-format
 msgid "GPS"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:690
 #, fuzzy, kde-format
 msgid "Altitude range"
 msgstr "Aukštis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:691
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:712
+#: core/utilities/searchwindow/searchfields_createfield.cpp:713
 #, fuzzy, kde-format
 msgid "Item has no GPS info"
 msgstr "Nuotrauka neturi žymų"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:714
 #, fuzzy, kde-format
 msgid "Not Geo-located"
 msgstr "Rasti dublikatus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:723
-#: core/utilities/searchwindow/searchfields_createfield.cpp:790
+#: core/utilities/searchwindow/searchfields_createfield.cpp:724
+#: core/utilities/searchwindow/searchfields_createfield.cpp:791
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "Šalis:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:723
+#: core/utilities/searchwindow/searchfields_createfield.cpp:724
 #, kde-format
 msgid "Country shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:740
 #, fuzzy, kde-format
 #| msgid "Province:"
 msgid "Province"
 msgstr "Provincija:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:740
 #, fuzzy, kde-format
 #| msgid "Preview single items"
 msgid "Province shown in the item"
 msgstr "Peržiūrėti pavienius elementus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, kde-format
 msgid "City shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
-#: core/utilities/searchwindow/searchfields_createfield.cpp:793
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:794
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Sublocation"
 msgstr "Tikslesnė vieta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:771
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 #| msgctxt "Replace string"
 #| msgid "Replace:"
 msgid "Place"
 msgstr "Pakeisti:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without selected place information ..."
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#: core/utilities/searchwindow/searchfields_createfield.cpp:792
 #, fuzzy, kde-format
 #| msgid "Province:"
 msgid "State/Province"
 msgstr "Provincija:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Kalendorius"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Rodyti paveikslėlius pakomentuotus asmens"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:811
+#: core/utilities/searchwindow/searchfields_createfield.cpp:818
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Antraštė"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:811
+#: core/utilities/searchwindow/searchfields_createfield.cpp:818
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Rodyti paveikslėlius, kurių komentarai turi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:819
+#: core/utilities/searchwindow/searchfields_createfield.cpp:827
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Rodyti paveikslėlius pakomentuotus asmens"
 
 # (pofilter) compendiumconflicts: checks for Gettext compendium conflicts (#-#-#-#-#)
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, kde-format
 msgid "Headline"
 msgstr "Antraštė"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:840
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "Rodyti paveikslėlius su IPTC antrašte"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:835
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:835
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "Rodyti paveikslėlius su IPTC pavadinimu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:843
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Rasti paveikslėlius, kurie turi susietus visus šiuos žodžius:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:851
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, kde-format
 msgid "Empty Text"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:851
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:853
+#: core/utilities/searchwindow/searchfields_createfield.cpp:866
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Kalendorius"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:854
+#: core/utilities/searchwindow/searchfields_createfield.cpp:867
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Antraštė"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:855
+#: core/utilities/searchwindow/searchfields_createfield.cpp:868
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
@@ -65499,108 +65499,108 @@ msgid "Author"
 msgstr "Autorius"
 
 # (pofilter) compendiumconflicts: checks for Gettext compendium conflicts (#-#-#-#-#)
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:869
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Antraštė"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:870
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
-#: core/utilities/searchwindow/searchfields_createfield.cpp:886
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:899
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Proporcijos"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Rodyti paveikslėlius, kurių failo formatas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "Dydis pikseliais"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, fuzzy, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:876
+#: core/utilities/searchwindow/searchfields_createfield.cpp:889
 #, fuzzy, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:886
+#: core/utilities/searchwindow/searchfields_createfield.cpp:899
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Rodyti paveikslėlius, kurių failo formatas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:903
+#: core/utilities/searchwindow/searchfields_createfield.cpp:916
 #, fuzzy, kde-format
 msgid "Length of the video"
 msgstr "Media failo aukštis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:904
+#: core/utilities/searchwindow/searchfields_createfield.cpp:917
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:905
+#: core/utilities/searchwindow/searchfields_createfield.cpp:918
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:921
+#: core/utilities/searchwindow/searchfields_createfield.cpp:934
 #, kde-format
 msgid "Frame Rate"
 msgstr "Kadrų dažnis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:921
+#: core/utilities/searchwindow/searchfields_createfield.cpp:934
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "Rodyti paveikslėlius, kurių failo formatas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:922
+#: core/utilities/searchwindow/searchfields_createfield.cpp:935
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:923
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:952
 #, kde-format
 msgid "Codec"
 msgstr "Kodekas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:952
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "Video kodekas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1009
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Return Audio Bits Rate"
 msgstr "Garso bitų dažnis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1010
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1023
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -65608,74 +65608,74 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1011
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1024
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1027
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Rodyti paveikslėlio tipą"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1029
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, fuzzy, kde-format
 #| msgid "Mono"
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
 #, fuzzy, kde-format
 #| msgid "Stereo"
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1044
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1045
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1033
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1034
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1047
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Audio kanalo tipas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "Video kodekas"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "Pasirinkti nieko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1145
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Rodyti paveikslėlius, kurių failo pavadinimas turi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1146
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1159
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -65683,13 +65683,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "ir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1155
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Rodyti paveikslėlius su žymomis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1156
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1169
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "Veidų atpažinimo palaikymas;"
