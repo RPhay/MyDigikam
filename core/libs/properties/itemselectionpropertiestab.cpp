@@ -174,6 +174,18 @@ ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
     delete d;
 }
 
+void ItemSelectionPropertiesTab::clear()
+{
+    d->treeSelectionGroups->clear();
+    d->treeTotalGroups->clear();
+    d->selectionMimes->clear();
+    d->totalMimes->clear();
+    setSelectionCount(0);
+    setSelectionSize(QString());
+    setTotalCount(0);
+    setTotalSize(QString());
+}
+
 void ItemSelectionPropertiesTab::setSelectionCount(int count)
 {
     d->labelSelectionCount->setAdjustedText(QLocale().toString(count));

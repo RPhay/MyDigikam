@@ -41,6 +41,8 @@ public:
     explicit ItemSelectionPropertiesTab(QWidget* const parent);
     ~ItemSelectionPropertiesTab() override;
 
+    void clear();
+
     void setSelectionCount(int count);
     void setSelectionSize(const QString& str);
     void setSelectionMimes(const QHash<QString, int>& mimes);
