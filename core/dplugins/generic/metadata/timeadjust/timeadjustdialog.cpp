@@ -319,6 +319,12 @@ void TimeAdjustDialog::saveSettings()
 
 void TimeAdjustDialog::slotUpdateTimestamps()
 {
+    if (d->thread->isRunning())
+    {
+        d->thread->cancel();
+        d->thread->wait();
+    }
+
     d->isProcessed = true;
     d->updateTimer->start();
 }
@@ -353,12 +359,6 @@ void TimeAdjustDialog::slotPreviewTimer()
 
 void TimeAdjustDialog::slotUpdateTimer()
 {
-    if (d->thread->isRunning())
-    {
-        d->thread->cancel();
-        d->thread->wait();
-    }
-
     d->listView->setWaitStatus();
 
     d->progressBar->show();

@@ -468,7 +468,7 @@ BUGFIXES:
 385 --> 467706 - Add support for “Creator” and “Author” search fields as drop-down lists populated from existing database entries.
 386 --> 515615 - Face recognition has stopped working.
 387 --> 515538 - Occasional Random Color Distortion in All Views since 8.8.0.
-388 --> 
+388 --> 515679 - Not all photos have their metadata updated.
 389 --> 
 390 --> 
 391 --> 
