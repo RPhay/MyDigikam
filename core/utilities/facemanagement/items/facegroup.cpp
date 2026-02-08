@@ -299,6 +299,12 @@ bool FaceGroup::hasUnconfirmed()
 
 void FaceGroup::load()
 {
+    if (d->state == FacesLoad)
+    {
+        return;
+    }
+
+    d->state      = FacesLoad;
     d->exifRotate = (
                         MetaEngineSettings::instance()->settings().exifRotate            ||
                         (
@@ -315,14 +321,27 @@ void FaceGroup::load()
     }
 
     const QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
-    clear();
+
+    if (faces.isEmpty())
+    {
+        clear();
+
+        return;
+    }
+
+    d->visibilityController->clear();
+
+    for (FaceItem* const item : std::as_const(d->items))
+    {
+        delete item;
+    }
+
+    d->items.clear();
 
     for (const FaceTagsIface& face : faces)
     {
         d->addItem(face);
     }
-
-    d->state = FacesLoaded;
 
     if (d->view->previewItem()->isLoaded())
     {
@@ -335,6 +354,8 @@ void FaceGroup::load()
     {
         d->view->setFocus();
     }
+
+    d->state = FacesLoaded;
 }
 
 void FaceGroup::clear()

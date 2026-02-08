@@ -51,6 +51,7 @@ namespace Digikam
 enum FaceGroupState
 {
     NoFaces,
+    FacesLoad,
     FacesLoaded
 };
 

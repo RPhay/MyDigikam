@@ -104,7 +104,6 @@ void FocusPointGroup::setVisible(bool visible)
 
     if (visible)
     {
-        clear();
         load();
     }
 
@@ -128,7 +127,6 @@ void FocusPointGroup::setInfo(const ItemInfo& info)
 
     if (d->visibilityController->shallBeShown())
     {
-        clear();
         load();
     }
 }
@@ -153,49 +151,61 @@ void FocusPointGroup::leaveEvent(QEvent*)
 
 void FocusPointGroup::load()
 {
-    if (d->state != NoPoints)
+    if (d->state == PointsLoad)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsGroup: no Point to show";
         return;
     }
 
-    d->state      = LoadingPoints;
+    d->state      = PointsLoad;
     d->exifRotate = (
-                     MetaEngineSettings::instance()->settings().exifRotate            ||
-                     (
-                      (d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
-                      !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()
-                     )
+                        MetaEngineSettings::instance()->settings().exifRotate            ||
+                        (
+                         (d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
+                         !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()
+                        )
                     );
 
     if (d->info.isNull())
     {
-        d->state = PointsLoaded;
         qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsGroup: no Point to load";
+
+        clear();
 
         return;
     }
 
     QList<FocusPoint> points = FocusPointsExtractor(this, d->info.filePath()).get_af_points();
 
+    if (points.isEmpty())
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsGroup: no Point to load";
+
+        clear();
+
+        return;
+    }
+
     d->visibilityController->clear();
 
-    if (!points.isEmpty())
+    for (RegionFrameItem* const item : std::as_const(d->items))
     {
-        d->view->setFocus();
+        delete item;
     }
+
+    d->items.clear();
+    d->view->setFocus();
 
     for (const auto& point : std::as_const(points))
     {
         d->addItem(point);
     }
 
-    d->state = PointsLoaded;
-
     if (d->view->previewItem()->isLoaded())
     {
         d->visibilityController->show();
     }
+
+    d->state = PointsLoaded;
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointGroup: points to show:" << points;
 }
@@ -226,7 +236,6 @@ void FocusPointGroup::slotAlbumsUpdated(int type)
         return;
     }
 
-    clear();
     load();
 }
 

@@ -469,7 +469,7 @@ BUGFIXES:
 386 --> 515615 - Face recognition has stopped working.
 387 --> 515538 - Occasional Random Color Distortion in All Views since 8.8.0.
 388 --> 515679 - Not all photos have their metadata updated.
-389 --> 
+389 --> 515078 - Mouse-over does not display last entered face tag.
 390 --> 
 391 --> 
 392 --> 

@@ -28,7 +28,7 @@ namespace Digikam
 enum FocusPointGroupState
 {
     NoPoints,
-    LoadingPoints,
+    PointsLoad,
     PointsLoaded
 };
 
