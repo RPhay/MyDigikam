@@ -35,7 +35,6 @@
 #include "faceutils.h"
 #include "jpegutils.h"
 #include "dimg.h"
-#include "autorotator.h"
 
 namespace Digikam
 {
