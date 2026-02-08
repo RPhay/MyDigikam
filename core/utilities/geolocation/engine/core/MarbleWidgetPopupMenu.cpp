@@ -901,7 +901,7 @@ void MarbleWidgetPopupMenu::slotCopyCoordinates()
                                               "</gpx>\n"
                                           ).arg(latitude_degrees, 0, 'f', 10).arg(longitude_degrees, 0, 'f', 10);
 
-        QString  positionString = coordinates.toString();
+        QString  positionString = coordinates.toString(GeoDataCoordinates::Simply);
 
         QMimeData* const myMimeData = new QMimeData();
         myMimeData->setText(positionString);
