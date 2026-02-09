@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-08 00:40+0000\n"
-"PO-Revision-Date: 2026-02-06 12:40+0000\n"
+"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"PO-Revision-Date: 2026-02-08 14:28+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3545,11 +3545,9 @@ msgstr ""
 "skjámyndir, lýsingar, saga, eiginleikar, aðstoð, niðurhal og fleira."
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "Athugasemdir atriðis"
+msgstr "Endurbætur á röðun atriða:"
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3588,10 +3586,9 @@ msgstr ""
 "Bætt við stuðningi við að raða eftir skráasniðum í táknmyndasýn innflutnings."
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "Eiginleikar atriðis"
+msgstr "Endurbætur á eiginleikum atriða:"
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3614,7 +3611,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "Endurbætur á hópuðum atriðum:"
 
 #: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
@@ -3635,10 +3632,9 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "Forskoða hópuð atriði"
+msgstr "Endurbætur á forskoðunarham:"
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3691,19 +3687,15 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:436
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
-msgstr "Endurbætur á ítarlegri leit"
+msgstr "Endurbætur á ítarlegri leit:"
 
 #: core/app/views/stack/welcomepageview.cpp:438
-#, fuzzy, kde-format
-#| msgid ""
-#| "New Advanced Search options to find empty properties registered in the "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
-"Bætt við stuðningi við að finna tóma eiginleika sem skráðir eru í gagnagrunn."
+"Bætt við valkostum við að finna tóma eiginleika sem skráðir eru í gagnagrunn."
 
 #: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
@@ -35061,12 +35053,12 @@ msgstr "Afrita eigindi"
 msgid "Process Items"
 msgstr "Vinna með atriði"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:76
+#: core/libs/fileactionmanager/fileworkeriface.cpp:75
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Mistókst að endurgera EXIF stefnu fyrir þessar skrár:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:370
+#: core/libs/fileactionmanager/fileworkeriface.cpp:369
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Mistókst að umbreyta þessum skrám:"
@@ -53704,23 +53696,23 @@ msgstr "Upplýs&ingareitir"
 msgid "Address Details"
 msgstr "Nánar um heimilisfang"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
 msgstr "V"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "E"
 msgstr "A"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "N"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"

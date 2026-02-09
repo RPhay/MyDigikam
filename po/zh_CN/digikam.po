@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-08 00:40+0000\n"
+"POT-Creation-Date: 2026-02-09 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3393,7 +3393,7 @@ msgstr "新增忽略目录设置中的正则表达式通配符支持。"
 msgid ""
 "Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
-msgstr ""
+msgstr "将过滤器视图拆分为 3 个独立的标签页：属性、标签和人物，以改善易用性。"
 
 #: core/app/views/stack/welcomepageview.cpp:387
 #, kde-format
@@ -3404,7 +3404,7 @@ msgstr "跨会话加载和保存回收站视图的列状态。"
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
-msgstr ""
+msgstr "点击 GPS 图标叠加显示层打开左侧边栏的地理位置标签页。"
 
 #: core/app/views/stack/welcomepageview.cpp:389
 #, kde-format
@@ -3440,7 +3440,7 @@ msgstr "新增演示文稿选项，用于自定义在图像有透明度的情况
 #: core/app/views/stack/welcomepageview.cpp:394
 #, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
-msgstr ""
+msgstr "完全重写文件传输工具的图形化界面以改善易用性。"
 
 #: core/app/views/stack/welcomepageview.cpp:395
 #, kde-format
@@ -3471,11 +3471,9 @@ msgstr ""
 "等栏目。"
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "项目注释"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3508,10 +3506,9 @@ msgid "Add support of Import Icon-View sort items by File Format."
 msgstr "新增按照文件格式对导入项目的图标视图进行项目排序。"
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "项目属性"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3521,7 +3518,7 @@ msgstr "新增用于将所有属性作为文本复制到剪贴板的按钮。"
 #: core/app/views/stack/welcomepageview.cpp:413
 #, kde-format
 msgid "Add new button to open current item in file manager."
-msgstr ""
+msgstr "新增用于在文件管理器中打开当前项目的按钮。"
 
 #: core/app/views/stack/welcomepageview.cpp:414
 #, kde-format
@@ -3552,10 +3549,9 @@ msgid ""
 msgstr "缩略图栏支持分组项目并得到与图标视图同样的显示易用性改进。"
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "预览分组项目"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3609,18 +3605,14 @@ msgid ""
 msgstr "当滚动条可见时，画布上的轨迹将显示为叠加层。"
 
 #: core/app/views/stack/welcomepageview.cpp:436
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
-msgstr "高级搜索工具改进"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:438
-#, fuzzy, kde-format
-#| msgid ""
-#| "New Advanced Search options to find empty properties registered in the "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
-msgstr "新增高级搜索选项以查找已在数据库中注册的空属性。"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
@@ -33977,12 +33969,12 @@ msgstr "正在复制属性"
 msgid "Process Items"
 msgstr "正在处理项目"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:76
+#: core/libs/fileactionmanager/fileworkeriface.cpp:75
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "无法修改这些文件的 EXIF 方向标签："
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:370
+#: core/libs/fileactionmanager/fileworkeriface.cpp:369
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "无法对这些文件进行变形："
@@ -52224,23 +52216,23 @@ msgstr "信息框(&I)"
 msgid "Address Details"
 msgstr "地址详情"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
 msgstr "西"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "E"
 msgstr "东"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "北"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"

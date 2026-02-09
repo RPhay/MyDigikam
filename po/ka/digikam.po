@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-08 00:40+0000\n"
-"PO-Revision-Date: 2026-02-04 04:50+0100\n"
+"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"PO-Revision-Date: 2026-02-08 06:21+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3553,11 +3553,9 @@ msgstr ""
 "ანაბეჭდები, აღწერა, ისტორია, თვისებები, მხარდაჭერა, გადმოწერა და ა.შ."
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "ელემენტის კომენტარები"
+msgstr "ელემენტის დალაგების გაუმჯობესებები:"
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3602,10 +3600,9 @@ msgstr ""
 "დალაგების მხარდაჭერა."
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "ელემენტის თვისებები"
+msgstr "ელემენტის თვისების გაუმჯობესებები:"
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3629,7 +3626,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "დაჯგუფებული ელემენტის გაუმჯობესებები:"
 
 #: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
@@ -3656,10 +3653,9 @@ msgstr ""
 "ხილვადობის მხარდაჭერით."
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "დაჯგუფებული ელემენტების მინიატურა"
+msgstr "მინიატურის რეჟიმის გაუმჯობესებები:"
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3724,20 +3720,16 @@ msgstr ""
 "რკინიგზა ტილოზე ნაჩვენებია როგორც გადაფარვა, როცა გადახვევის ზოლი ხილულია."
 
 #: core/app/views/stack/welcomepageview.cpp:436
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
-msgstr "დამატებითი პარამეტრების მქონე ძებნის გაუმჯობესება"
+msgstr "დამატებითი პარამეტრების მქონე ძებნის გაუმჯობესება:"
 
 #: core/app/views/stack/welcomepageview.cpp:438
-#, fuzzy, kde-format
-#| msgid ""
-#| "New Advanced Search options to find empty properties registered in the "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
-"ახალი დამატებითი ძებნის პარამეტრები მონაცემთა ბაზაში დარეგისტრირებული "
-"ცარიელი თვისებების მოსაძებნად."
+"ახალი ძებნის პარამეტრები მონაცემთა ბაზაში დარეგისტრირებული ცარიელი "
+"თვისებების მოსაძებნად."
 
 #: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
@@ -3745,6 +3737,8 @@ msgid ""
 "Add support for search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"დაემატა შემქმნელისა და ავტორის ველების ძებნის მხარდაჭერა ჩამოსაშლელ სიაში, "
+"რომელიც მონაცემთა ბაზაში უკვე არსებული მონაცემებით ივსება."
 
 #: core/app/views/stack/welcomepageview.cpp:442
 #, kde-format
@@ -33914,12 +33908,12 @@ msgstr "ატრიბუტების კოპირება"
 msgid "Process Items"
 msgstr "ელემენტების დამუშავება"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:76
+#: core/libs/fileactionmanager/fileworkeriface.cpp:75
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Exif-ის ორიენტაციის გადამოწმების შეცდომა შემდეგ ფაილებში:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:370
+#: core/libs/fileactionmanager/fileworkeriface.cpp:369
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "გადაყვანის შეცდომა ამ ფაილებისთვის:"
@@ -51942,23 +51936,23 @@ msgstr "ინფორმაციული ველები"
 msgid "Address Details"
 msgstr "მისამართის დეტალები"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
 msgstr "დას"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "E"
 msgstr "ა"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "არა"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"

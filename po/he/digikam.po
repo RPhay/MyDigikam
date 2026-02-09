@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-08 00:40+0000\n"
-"PO-Revision-Date: 2026-02-06 11:15+0200\n"
+"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"PO-Revision-Date: 2026-02-08 08:32+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -8717,10 +8717,10 @@ msgid "A tool to adjust lens distortions"
 msgstr "כלי לכיוון עיוותי העדשה"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לכוון עיוותי עדשה מתמונה."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:94
 #, kde-format
@@ -8734,10 +8734,10 @@ msgid "Local Contrast"
 msgstr "ניגודיות מקומית"
 
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emulate tone mapping over an image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לדמות מיפוי גוונים כלפי תמונה."
 
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:94
 #, kde-format
@@ -8752,10 +8752,10 @@ msgid "Noise Reduction"
 msgstr "הפחתת רעשים"
 
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "כלי עריכת התמונות הזה יכול להפחית רעש בתמונה."
 
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:91
 #, kde-format
@@ -8781,10 +8781,10 @@ msgid "Red Eye"
 msgstr "עיניים אדומות"
 
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "כלי עריכת התמונות הזה יכול להפחית אפקט עיניים אדומות בתמונה."
 
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:99
 #, kde-format
@@ -32083,11 +32083,10 @@ msgid "White Color Balance Settings File to Load"
 msgstr "קובץ הגדרות איזון צבע לבן לטעינה"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:505
-#, fuzzy, kde-format
-#| msgid "\"%1\" is not a Photograph Resizing settings text file."
+#, kde-format
 msgctxt "@info"
 msgid "\"%1\" is not a White Color Balance settings text file."
-msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
+msgstr "„%1” הוא לא קובץ טקסט להגדרות איזון צבע לבן."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:526
 #, kde-format
@@ -33166,9 +33165,9 @@ msgid "Writing metadata to files"
 msgstr "כתיבת נתוני על לקבצים"
 
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:322
-#, fuzzy, kde-format
+#, kde-format
 msgid "Revising Exif Orientation tags"
-msgstr "מעדכן מאפייני עימוד תמונה בנתוני EXIF. אנא המתינו..."
+msgstr "תגיות הכיווניות ב־Exif נבחנות מחדש"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:90
 #, kde-format
@@ -33234,12 +33233,12 @@ msgstr "התכונות מועתקות"
 msgid "Process Items"
 msgstr "עיבוד פריטים"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:76
+#: core/libs/fileactionmanager/fileworkeriface.cpp:75
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "תקלה בעת שינוי כיוון תמונה בנתוני EXIF של הקבצים:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:370
+#: core/libs/fileactionmanager/fileworkeriface.cpp:369
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "התמרת הקבצים האלה נכשלה:"
@@ -51233,23 +51232,23 @@ msgstr "&תיבות מידע"
 msgid "Address Details"
 msgstr "פרטי כתובת"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
 msgstr "מע׳"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "E"
 msgstr "מז׳"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "צפ׳"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"
@@ -64879,7 +64878,7 @@ msgstr ""
 #: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
 msgid "Clear the light table on close"
-msgstr ""
+msgstr "פינוי שולחן האור בעת הסגירה"
 
 #: core/utilities/setup/setuplighttable.cpp:92
 #, kde-format
@@ -64887,6 +64886,8 @@ msgid ""
 "Set this option to remove all images from the light table when you close it, "
 "or unset it to preserve the images currently on the light table."
 msgstr ""
+"יש להגדיר את האפשרות הזאת כדי להסיר את כל התמונות משולחן האור כשהוא נסגר או "
+"לבטל אותה כדי לשמור את התמונות שנמצאות כרגע בשולחן האור."
 
 #: core/utilities/setup/setupplugins.cpp:68
 #, kde-format
