@@ -3473,7 +3473,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:400
 #, kde-format
 msgid "Sort Item improvements:"
-msgstr ""
+msgstr "项目排序改进："
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3508,7 +3508,7 @@ msgstr "新增按照文件格式对导入项目的图标视图进行项目排序
 #: core/app/views/stack/welcomepageview.cpp:410
 #, kde-format
 msgid "Item Property improvements:"
-msgstr ""
+msgstr "项目属性改进："
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3528,7 +3528,7 @@ msgstr "如果没有在图标视图中选择项目，则显示当前相册的统
 #: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "项目分组改进："
 
 #: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
@@ -3551,7 +3551,7 @@ msgstr "缩略图栏支持分组项目并得到与图标视图同样的显示易
 #: core/app/views/stack/welcomepageview.cpp:424
 #, kde-format
 msgid "Preview Mode improvements:"
-msgstr ""
+msgstr "预览模式改进："
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3607,12 +3607,12 @@ msgstr "当滚动条可见时，画布上的轨迹将显示为叠加层。"
 #: core/app/views/stack/welcomepageview.cpp:436
 #, kde-format
 msgid "Advanced Search improvements:"
-msgstr ""
+msgstr "高级搜索改进："
 
 #: core/app/views/stack/welcomepageview.cpp:438
 #, kde-format
 msgid "New options to find empty properties registered in the database."
-msgstr ""
+msgstr "新增选项以查找已在数据库中注册的空属性。"
 
 #: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
@@ -3620,6 +3620,7 @@ msgid ""
 "Add support for search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"新增对搜索创建者和作者字段的支持，以下拉列表形式呈现数据库中已存在的值。"
 
 #: core/app/views/stack/welcomepageview.cpp:442
 #, kde-format
