@@ -40,7 +40,19 @@ bool TagsActionMngr::createRatingActionShortcut(KActionCollection* const ac, int
                                                   .arg(d->ratingShortcutPrefix).arg(rating));
 
         action->setText(i18n("Assign Rating \"%1 Star\"", rating));
+
+#ifdef Q_OS_MACOS
+
+        // NOTE: Force to use Control Key under macOS, not the CMD translated by Qt map.
+
+        ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("CTRL+%1").arg(rating), QKeySequence::PortableText));
+
+#else
+
         ac->setDefaultShortcut(action, QKeySequence(QString::fromUtf8("CTRL+%1").arg(rating)));
+
+#endif
+
         action->setIcon(RatingWidget::buildIcon(rating, 32));
         action->setData(rating);
 
