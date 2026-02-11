@@ -249,6 +249,11 @@ void ItemInfoCache::slotImageChanged(const ImageChangeset& changeset)
 
             DatabaseFields::Set changes = changeset.changes();
 
+            if (changes & DatabaseFields::Status)
+            {
+                (*it)->statusChanged = true;
+            }
+
             if (changes & DatabaseFields::ItemCommentsAll)
             {
                 (*it)->defaultCommentCached = false;

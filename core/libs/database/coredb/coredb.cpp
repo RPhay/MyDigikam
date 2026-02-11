@@ -4498,6 +4498,7 @@ void CoreDB::removeItemsFromAlbum(int albumID, const QList<qlonglong>& ids_forIn
     d->db->execSql(QString::fromUtf8("UPDATE Images SET status=?, album=NULL WHERE album=?;"),
                    (int)DatabaseItem::Trashed, albumID);
 
+    d->db->recordChangeset(ImageChangeset(ids_forInformation, DatabaseFields::Set(DatabaseFields::Status)));
     d->db->recordChangeset(CollectionImageChangeset(ids_forInformation, albumID, CollectionImageChangeset::RemovedAll));
 }
 
@@ -4518,6 +4519,7 @@ void CoreDB::removeItems(const QList<qlonglong>& itemIDs, const QList<int>& albu
     query.addBindValue(imageIds);
     d->db->execBatch(query);
 
+    d->db->recordChangeset(ImageChangeset(itemIDs, DatabaseFields::Set(DatabaseFields::Status)));
     d->db->recordChangeset(CollectionImageChangeset(itemIDs, albumIDs, CollectionImageChangeset::Removed));
 }
 
@@ -4538,6 +4540,7 @@ void CoreDB::removeItemsPermanently(const QList<qlonglong>& itemIDs, const QList
     query.addBindValue(imageIds);
     d->db->execBatch(query);
 
+    d->db->recordChangeset(ImageChangeset(itemIDs, DatabaseFields::Set(DatabaseFields::Status)));
     d->db->recordChangeset(CollectionImageChangeset(itemIDs, albumIDs, CollectionImageChangeset::Removed));
 }
 

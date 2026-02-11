@@ -195,6 +195,11 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
     // Cached ?
     info.m_data = ItemInfoStatic::cache()->infoForPath(locationId, album, name);
 
+    if (info.m_data && info.m_data->statusChanged)
+    {
+        info = ItemInfo();
+    }
+
     if (!info.m_data)
     {
 

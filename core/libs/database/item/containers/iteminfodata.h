@@ -146,6 +146,7 @@ public:
     bool                                     faceCountCached            = false;
 
     bool                                     invalid                    = false;
+    bool                                     statusChanged              = false;
 
     // These two are initially true because we assume the data is there.
     // Once we query the data and find out it is missing, we set them to false.
