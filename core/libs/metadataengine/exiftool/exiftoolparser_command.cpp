@@ -193,8 +193,6 @@ bool ExifToolParser::applyChanges(const QString& path,
 
     if (hasExif)
     {
-        cmdArgs << QByteArray("--makernotes");
-
         cmdArgs << QByteArray("-gps:all=");
         cmdArgs << QByteArray("-ifd0:xptitle=");
         cmdArgs << QByteArray("-ifd0:xpcomment=");

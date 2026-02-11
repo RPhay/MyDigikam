@@ -81,7 +81,8 @@ public:
         DMS,     ///< "Sexagesimal DMS" notation (base-60)
         DM,      ///< "Sexagesimal DM" notation (base-60)
         UTM,
-        Astro    /// < "RA and DEC" notation (used for astronomical sky coordinates)
+        Astro,   ///< "RA and DEC" notation (used for astronomical sky coordinates)
+        Simply   ///< "Decimal" notation (base-10) with dot as separator
     };
 
     /**

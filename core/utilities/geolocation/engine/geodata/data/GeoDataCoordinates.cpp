@@ -521,6 +521,13 @@ QString GeoDataCoordinates::toString(GeoDataCoordinates::Notation notation, int 
         return QString::fromUtf8("%1%2 %3 m E, %4 m N").arg(zoneString, bandString, eastingString, northingString);
     }
 
+    else if (notation == GeoDataCoordinates::Simply)
+    {
+        coordString = latToString(d->m_lat, notation, Radian, precision)
+                      + QLatin1String(", ")
+                      + lonToString(d->m_lon, notation, Radian, precision);
+    }
+
     else
     {
         coordString = lonToString(d->m_lon, notation, Radian, precision)
@@ -733,6 +740,12 @@ QString GeoDataCoordinates::lonToString(qreal lon, GeoDataCoordinates::Notation 
         return lonString;
     }
 
+    else // notation = GeoDataCoordinates::Simply
+    {
+        lonString = QString::fromUtf8("%1").arg(lon * RAD2DEG, 4 + precision, format, precision, QLatin1Char(' '));
+        return lonString;
+    }
+
     return lonString + weString;
 }
 
@@ -875,9 +888,15 @@ QString GeoDataCoordinates::latToString(qreal lat, GeoDataCoordinates::Notation 
         }
     }
 
-    else // notation = GeoDataCoordinates::Decimal
+    else if (notation == Decimal)
     {
         latString = QString::fromUtf8("%L1\xc2\xb0").arg(latDegF, 4 + precision, format, precision, QLatin1Char(' '));
+    }
+
+    else // notation = GeoDataCoordinates::Simply
+    {
+        latString = QString::fromUtf8("%1").arg(lat * RAD2DEG, 4 + precision, format, precision, QLatin1Char(' '));
+        return latString;
     }
 
     return pmString + latString + nsString;

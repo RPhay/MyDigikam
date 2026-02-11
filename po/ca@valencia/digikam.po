@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-08 00:40+0000\n"
-"PO-Revision-Date: 2026-02-04 10:42+0100\n"
+"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"PO-Revision-Date: 2026-02-08 11:21+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3581,11 +3581,9 @@ msgstr ""
 "descàrrega, etc."
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "Comentaris d'element"
+msgstr "Millores a l'ordenació d'elements:"
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3630,10 +3628,9 @@ msgstr ""
 "d'importació per format de fitxer."
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "Propietats de l'element"
+msgstr "Millores propietats d'elements:"
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3657,7 +3654,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "Millores a l'agrupació d'elements:"
 
 #: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
@@ -3684,10 +3681,9 @@ msgstr ""
 "elements agrupats com amb la vista d'icones."
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "Vista prèvia dels elements per grups"
+msgstr "Millores del mode de vista prèvia:"
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3754,20 +3750,15 @@ msgstr ""
 "de desplaçament és visible."
 
 #: core/app/views/stack/welcomepageview.cpp:436
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
-msgstr "Millores en l'eina de busques avançades"
+msgstr "Millores a la busca avançada:"
 
 #: core/app/views/stack/welcomepageview.cpp:438
-#, fuzzy, kde-format
-#| msgid ""
-#| "New Advanced Search options to find empty properties registered in the "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
-"Noves opcions de busca avançada per a trobar propietats buides registrades "
-"en la base de dades."
+"Opcions noves per a trobar propietats buides registrades en la base de dades."
 
 #: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
@@ -3775,6 +3766,9 @@ msgid ""
 "Add support for search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"Afig la implementació per a buscar els camps «Creador» i «Autoria» que seran "
+"llistes desplegables emplenades amb els valors ja presents a la base de "
+"dades."
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview.cpp:442
@@ -35557,12 +35551,12 @@ msgstr "S'estan copiant els atributs"
 msgid "Process Items"
 msgstr "Elements processats"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:76
+#: core/libs/fileactionmanager/fileworkeriface.cpp:75
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "No s'ha pogut revisar l'orientació Exif d'estos fitxers:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:370
+#: core/libs/fileactionmanager/fileworkeriface.cpp:369
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "No s'ha pogut transformar estos fitxers:"
@@ -54386,23 +54380,23 @@ msgstr "Rètols &informatius"
 msgid "Address Details"
 msgstr "Detalls de l'adreça"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
 msgstr "O"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "E"
 msgstr "E"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "N"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"

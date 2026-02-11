@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-08 00:40+0000\n"
+"POT-Creation-Date: 2026-02-09 00:40+0000\n"
 "PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -35241,12 +35241,12 @@ msgstr "Kopierar egenskaper"
 msgid "Process Items"
 msgstr "Behandla objekt"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:76
+#: core/libs/fileactionmanager/fileworkeriface.cpp:75
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Misslyckades med att revidera EXIF-orientering för dessa filer:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:370
+#: core/libs/fileactionmanager/fileworkeriface.cpp:369
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Misslyckades omvandla följande filer:"
@@ -53948,23 +53948,23 @@ msgstr "&Informationsrutor"
 msgid "Address Details"
 msgstr "Adressinformation"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
 msgstr "V"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "E"
 msgstr "Ö"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "N"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"

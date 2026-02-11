@@ -51,16 +51,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-08 00:40+0000\n"
-"PO-Revision-Date: 2026-02-04 20:09+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"PO-Revision-Date: 2026-02-09 19:44+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3583,11 +3583,9 @@ msgstr ""
 "geçmiş, özellikler, destek, indirme vb."
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "Öge yorumları"
+msgstr "Öge sıralama iyileştirmeleri:"
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3630,10 +3628,9 @@ msgstr ""
 "eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "Öge Özellikleri"
+msgstr "Öge özellikleri iyileştirmeleri:"
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3656,7 +3653,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "Öge gruplama iyileştirmeleri:"
 
 #: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
@@ -3683,10 +3680,9 @@ msgstr ""
 "görsel iyileştirmeleri yapıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "Gruplandırılmış Nesneleri Önizle"
+msgstr "Önizleme kipi iyileştirmeleri:"
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3749,20 +3745,15 @@ msgstr ""
 "gösterilir."
 
 #: core/app/views/stack/welcomepageview.cpp:436
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
-msgstr "Gelişmiş aramalar aracı iyileştirmeleri"
+msgstr "Gelişmiş arama iyileştirmeleri:"
 
 #: core/app/views/stack/welcomepageview.cpp:438
-#, fuzzy, kde-format
-#| msgid ""
-#| "New Advanced Search options to find empty properties registered in the "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
-"Veri tabanında kayıtlı boş özellikleri bulmak için yeni gelişmiş arama "
-"seçenekleri"
+"Veri tabanında kayıtlı boş özellikleri bulmak için yeni seçenekler eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
@@ -3770,6 +3761,9 @@ msgid ""
 "Add support for search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"Arama işlevinde Oluşturucu ve Yazar alanlarının, veri tabanında halihazırda "
+"var olan değerlerle doldurulmuş açılır listeler olarak gösterilmesine "
+"desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:442
 #, kde-format
@@ -35201,12 +35195,12 @@ msgstr "Öznitelikler kopyalanıyor…"
 msgid "Process Items"
 msgstr "Ögeleri İşle"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:76
+#: core/libs/fileactionmanager/fileworkeriface.cpp:75
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Şu dosyaların Exif yönelimi gözden geçirilemedi:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:370
+#: core/libs/fileactionmanager/fileworkeriface.cpp:369
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Şu dosyalar dönüştürülemedi:"
@@ -53839,23 +53833,23 @@ msgstr "&Bilgi Kutuları"
 msgid "Address Details"
 msgstr "Adres Ayrıntıları"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
 msgstr "B"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "E"
 msgstr "D"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "K"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"

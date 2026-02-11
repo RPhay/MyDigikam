@@ -56,15 +56,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-08 00:40+0000\n"
-"PO-Revision-Date: 2026-02-03 13:48+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"PO-Revision-Date: 2026-02-10 19:55+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -3599,10 +3599,7 @@ msgstr ""
 "сеансами;"
 
 #: core/app/views/stack/welcomepageview.cpp:388
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
@@ -3648,8 +3645,7 @@ msgstr ""
 "фона вместо чисто чёрного в случае использования прозрачности изображений;"
 
 #: core/app/views/stack/welcomepageview.cpp:394
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "Полностью переписан графический интерфейс инструмента передачи файлов для "
@@ -3687,11 +3683,9 @@ msgstr ""
 "скриншоты, описание, история, функции, поддержка, загрузка и т.д.;"
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "Комментарии к объекту"
+msgstr "Улучшения сортировки объектов:"
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3736,10 +3730,9 @@ msgstr ""
 "по формату файла;"
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "Свойства объекта"
+msgstr "Улучшения просмотра свойств объектов:"
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3749,8 +3742,7 @@ msgstr ""
 "обмена;"
 
 #: core/app/views/stack/welcomepageview.cpp:413
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr ""
 "Добавлена новая кнопка для открытия текущего элемента в диспетчере файлов;"
@@ -3765,7 +3757,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "Улучшения группировки объектов:"
 
 #: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
@@ -3791,10 +3783,9 @@ msgstr ""
 "Улучшена панель миниатюр для поддержки отображения сгруппированных элементов;"
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "Предпросмотр сгруппированных объектов"
+msgstr "Улучшения режима предварительного просмотра:"
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3862,16 +3853,12 @@ msgstr ""
 "оверлея;"
 
 #: core/app/views/stack/welcomepageview.cpp:436
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
 msgstr "Улучшения инструмента расширенного поиска"
 
 #: core/app/views/stack/welcomepageview.cpp:438
-#, fuzzy, kde-format
-#| msgid ""
-#| "New Advanced Search options to find empty properties registered in the "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
 "Новые расширенные параметры поиска позволяют находить пустые объекты "
@@ -3883,6 +3870,9 @@ msgid ""
 "Add support for search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"Добавлена поддержка преобразования полей поиска «Создатель» и «Автор» в "
+"раскрывающиеся списки, заполняемые значениями, уже присутствующими в базе "
+"данных;"
 
 #: core/app/views/stack/welcomepageview.cpp:442
 #, kde-format
@@ -35550,12 +35540,12 @@ msgstr "Копирование атрибутов"
 msgid "Process Items"
 msgstr "Обработка объектов"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:76
+#: core/libs/fileactionmanager/fileworkeriface.cpp:75
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Не удалось исправить данные EXIF по ориентации следующих снимков:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:370
+#: core/libs/fileactionmanager/fileworkeriface.cpp:369
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Не удалось преобразовать следующие файлы:"
@@ -54329,23 +54319,23 @@ msgstr "&Информация"
 msgid "Address Details"
 msgstr "Подробные сведения об адресе"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
 msgstr "З"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "E"
 msgstr "В"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "С"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"
