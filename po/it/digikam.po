@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-09 00:40+0000\n"
-"PO-Revision-Date: 2026-01-31 12:03+0100\n"
+"PO-Revision-Date: 2026-02-08 13:33+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3491,10 +3491,7 @@ msgstr ""
 "impostazioni delle cartelle ignorate."
 
 #: core/app/views/stack/welcomepageview.cpp:386
-#, fuzzy, kde-format
-#| msgid ""
-#| "Split filters view into 3 separated tabs for better usabilty: Properties, "
-#| "Tags, and People."
+#, kde-format
 msgid ""
 "Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
@@ -3508,10 +3505,7 @@ msgid "Load and save Trash-view column states between sessions."
 msgstr "Carica e salva gli stati della colonna vista Cestino tra le sessioni."
 
 #: core/app/views/stack/welcomepageview.cpp:388
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clicking on GPS icon overlay open the Geolocation tab from the left "
-#| "sidebar."
+#, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
@@ -3560,8 +3554,7 @@ msgstr ""
 "trasparenza."
 
 #: core/app/views/stack/welcomepageview.cpp:394
-#, fuzzy, kde-format
-#| msgid "Complete rewrite the File-Tranfert tool GUI for a better usability."
+#, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 "Riscrittura completa dell'interfaccia dello strumento Trasferimento file per "
@@ -3599,11 +3592,9 @@ msgstr ""
 "schermate, descrizione, cronologia funzionalità, supporto, scaricamento, ecc."
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "Commenti sull'elemento"
+msgstr "Miglioramenti dell'ordinamento degli elementi:"
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3648,10 +3639,9 @@ msgstr ""
 "importazione in base al formato dei file."
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "Proprietà dell'elemento"
+msgstr "Miglioramenti delle proprietà degli elementi:"
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3661,8 +3651,7 @@ msgstr ""
 "appunti."
 
 #: core/app/views/stack/welcomepageview.cpp:413
-#, fuzzy, kde-format
-#| msgid "Add new button to open current item is file manager."
+#, kde-format
 msgid "Add new button to open current item in file manager."
 msgstr "Aggiungi nuovo pulsante per aprire l'elemento attivo nel gestore file."
 
@@ -3676,7 +3665,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "Miglioramenti degli elementi raggruppati:"
 
 #: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
@@ -3703,10 +3692,9 @@ msgstr ""
 "degli elementi raggruppati, come con la vista a icone."
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "Anteprima di elementi raggruppati"
+msgstr "Miglioramenti dell'anteprima degli elementi:"
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3772,20 +3760,15 @@ msgstr ""
 "barra di scorrimento è visibile."
 
 #: core/app/views/stack/welcomepageview.cpp:436
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
-msgstr "Migliorie allo strumento di ricerca avanzata"
+msgstr "Miglioramenti della ricerca avanzata:"
 
 #: core/app/views/stack/welcomepageview.cpp:438
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add video support to find files based on properties registered on "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
-"Aggiungi il supporto video per trovare i file basati sulle proprietà "
-"registrate nella banca dati."
+"Nuove opzioni per trovare le proprietà vuote registrate nella banca dati."
 
 #: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
@@ -3793,6 +3776,8 @@ msgid ""
 "Add support for search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"Aggiunto supporto per la ricerca nei campi Creatore e Autore in modo da "
+"creare elenchi a discesa popolati con i valori già presenti nella banca dati."
 
 #: core/app/views/stack/welcomepageview.cpp:442
 #, kde-format
@@ -3804,7 +3789,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:443
 #, kde-format
 msgid "New RAW camera supported:"
-msgstr ""
+msgstr "Nuove fotocamere RAW supportate:"
 
 #: core/app/views/stack/welcomepageview.cpp:445
 #, kde-format
@@ -3812,31 +3797,33 @@ msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra ;"
 msgstr ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra;"
 
 #: core/app/views/stack/welcomepageview.cpp:446
 #, kde-format
 msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
-msgstr ""
+msgstr "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S;"
 
 #: core/app/views/stack/welcomepageview.cpp:447
 #, kde-format
 msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
-msgstr ""
+msgstr "Hasselblad  CFV-50c, CFV-100c, X2D-100c;"
 
 #: core/app/views/stack/welcomepageview.cpp:448
 #, kde-format
 msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
-msgstr ""
+msgstr "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom;"
 
 #: core/app/views/stack/welcomepageview.cpp:449
 #, kde-format
 msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
-msgstr ""
+msgstr "Nikon (solo compressione standard): Z6-III, Z f, Z30, Z8;"
 
 #: core/app/views/stack/welcomepageview.cpp:450
 #, kde-format
 msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
-msgstr ""
+msgstr "Olympus/OM System OM-1 Mark II, TG-7, OM-5;"
 
 #: core/app/views/stack/welcomepageview.cpp:451
 #, kde-format
@@ -3844,11 +3831,13 @@ msgid ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6 ;"
 msgstr ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6;"
 
 #: core/app/views/stack/welcomepageview.cpp:452
 #, kde-format
 msgid "Pentax KF, K III Monochrome ;"
-msgstr ""
+msgstr "Pentax KF, K III Monochrome;"
 
 #: core/app/views/stack/welcomepageview.cpp:453
 #, kde-format
@@ -3856,16 +3845,18 @@ msgid ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
 msgstr ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1;"
 
 #: core/app/views/stack/welcomepageview.cpp:454
 #, kde-format
 msgid "Multiple DJI and Skydio drones ;"
-msgstr ""
+msgstr "svariati droni DJI e Skydio;"
 
 #: core/app/views/stack/welcomepageview.cpp:455
 #, kde-format
 msgid "Multiple smartphones with DNG format recorded."
-msgstr ""
+msgstr "svariati smartphone con formato DNG registrato."
 
 #: core/app/views/stack/welcomepageview.cpp:460
 #, kde-format
@@ -3873,22 +3864,18 @@ msgid "...and much more."
 msgstr "... e molto altro."
 
 #: core/app/views/stack/welcomepageview.cpp:466
-#, fuzzy, kde-format
-#| msgid "<li>%1</li><br>"
+#, kde-format
 msgid "<li>%1</li>"
-msgstr "<li>%1</li><br>"
+msgstr "<li>%1</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:469
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 7):"
+#, kde-format
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
 "digiKam version 8):</h3><ul>%1</ul>"
 msgstr ""
-"Alcune nuove funzionalità di questo rilascio di digiKam includono (rispetto "
-"a digiKam 7):"
+"<h3>Alcune nuove funzionalità di questo rilascio di digiKam includono "
+"(rispetto a digiKam versione 8):</h3><ul>%1</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:490
 #, kde-format
@@ -3909,6 +3896,24 @@ msgid ""
 "www.digikam.org\">digiKam homepage</a> provides information about new "
 "versions of digiKam.</li>"
 msgstr ""
+"<h3>digiKam è un'applicazione avanzata e open source di gestione delle "
+"fotografie digitali che funziona su Linux, Windows e MacOS. L'applicazione "
+"fornisce un set completo di strumenti per l'importazione, la gestione, la "
+"modifica e la condivisione di fotografie e file RAW. Puoi utilizzare le "
+"capacità di importazione di digiKam per trasferire in modo semplice "
+"fotografie, file RAW e filmati direttamente dalla tua fotocamera e dai "
+"supporti di memorizzazione digitale, quali schede SD, chiavette e dischi "
+"USB, e via discorrendo. L'applicazione ti permette di configurare al volo le "
+"impostazioni di importazione e le regole che  elaborano e organizzano gli "
+"elementi importati.</h3><h3>Con digiKam puoi importare, organizzare, "
+"migliorare, ricercare, esportare, e altro ancora...</h3><h3>Attualmente ti "
+"trovi nella modalità Vista Album di digiKam.</h3><h3>Gli Album sono i luoghi "
+"in cui sono memorizzati i tuoi file e sono identici alle cartelle presenti "
+"nel disco del tuo computer.</h3><li>digiKam contiene tante funzionalità "
+"avanzate, descritte nella sua <a href=\"https://docs.digikam.org/en/index."
+"html\">documentazione</a></li><li>La <a href=\"https://www.digikam.org"
+"\">pagina internet di digiKam</a> fornisce informazioni sulle nuove versioni "
+"del programma.</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:530
 #, kde-format
@@ -63725,34 +63730,30 @@ msgid "Macro, close or distant view"
 msgstr "Vista macro, vicina o distante"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:655
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Capture Device Settings"
+#, kde-format
 msgid "Capture Settings"
-msgstr "Impostazioni del dispositivo di acquisizione"
+msgstr "Impostazioni di acquisizione"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:655
-#, fuzzy, kde-format
-#| msgid "Return items without a camera ..."
+#, kde-format
 msgid "Return items without selected capture settings ..."
-msgstr "Restituisci elementi senza una fotocamera..."
+msgstr ""
+"Restituisci elementi senza le impostazioni di acquisizione selezionate..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:665
 #, kde-format
 msgid "ISO film speed"
-msgstr ""
+msgstr "Velocità della pellicola ISO"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:669
-#, fuzzy, kde-format
-#| msgid "White balance (color temperature)"
+#, kde-format
 msgid "White balance color temperature"
-msgstr "Bilanciamento del bianco (temperatura del colore)"
+msgstr "Temperatura colore del bilanciamento del bianco"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:671
-#, fuzzy, kde-format
-#| msgid "Subject distance (category)"
+#, kde-format
 msgid "Subject Distance Category"
-msgstr "Distanza del soggetto (categoria)"
+msgstr "Categoria distanza del soggetto"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:690
 #: core/utilities/searchwindow/searchfields_createfield.cpp:713
@@ -63819,22 +63820,19 @@ msgid "Sublocation shown in the item"
 msgstr "Posto mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:787
-#, fuzzy, kde-format
-#| msgid "Place:"
+#, kde-format
 msgid "Place"
-msgstr "Luogo:"
+msgstr "Luogo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:787
-#, fuzzy, kde-format
-#| msgid "Return items without a camera ..."
+#, kde-format
 msgid "Return items without selected place information ..."
-msgstr "Restituisci elementi senza una fotocamera..."
+msgstr "Restituisci elementi senza informazioni sul luogo selezionato..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:792
-#, fuzzy, kde-format
-#| msgid "State/Province:"
+#, kde-format
 msgid "State/Province"
-msgstr "Regione o provincia:"
+msgstr "Regione o provincia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, kde-format
