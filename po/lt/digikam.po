@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"POT-Creation-Date: 2026-02-12 00:40+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -40973,18 +40973,18 @@ msgstr "Priskirti spalvotą etiketę „%1“"
 msgid "Assign Rating \"%1 Star\""
 msgstr "Priskirti reitingą „%1 žvaigždučių“"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:58
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:70
 #, fuzzy, kde-format
 #| msgid "Assign Rating \"%1 Star\""
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "Priskirti reitingą „%1 žvaigždučių“"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:79
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:91
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Priskirti rinktinę etiketę „%1“"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:128
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:140
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Priskirti žymą „%1“"

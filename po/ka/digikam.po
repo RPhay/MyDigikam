@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"POT-Creation-Date: 2026-02-12 00:40+0000\n"
 "PO-Revision-Date: 2026-02-08 06:21+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -38854,17 +38854,17 @@ msgstr "ფერის ჭდის \"%1\" მინიჭება"
 msgid "Assign Rating \"%1 Star\""
 msgstr "\"%1\" ვარსკვლავი\" რეიტინგის მინიჭება"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:58
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:70
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "\"%1\" ვარსკვლავი\" რეიტინგის მინიჭება (გადართვის გარეშე)"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:79
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:91
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "არჩევის ჭდის \"%1\" მინიჭება"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:128
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:140
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "ჭდის \"%1\" მინიჭება"

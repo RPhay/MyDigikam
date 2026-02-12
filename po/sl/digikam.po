@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"POT-Creation-Date: 2026-02-12 00:40+0000\n"
 "PO-Revision-Date: 2026-02-08 08:36+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -40481,17 +40481,17 @@ msgstr "Dodeli barvno oznako \"%1\""
 msgid "Assign Rating \"%1 Star\""
 msgstr "Dodeli oceno \"%1 zvezdic\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:58
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:70
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "Dodeli oceno \"%1 zvezdic\" (ni preklopa)"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:79
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:91
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Dodeli izbor oznake \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:128
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:140
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Dodeli značko \"%1\""

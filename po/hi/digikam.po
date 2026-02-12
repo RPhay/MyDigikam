@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"POT-Creation-Date: 2026-02-12 00:40+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -38954,17 +38954,17 @@ msgstr "आबंटित टैग"
 msgid "Assign Rating \"%1 Star\""
 msgstr "दर्जा दें \"No Star\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:58
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:70
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "दर्जा दें \"No Star\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:79
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:91
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:128
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:140
 #, fuzzy, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "टैग आवंटित करें"

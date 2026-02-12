@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"POT-Creation-Date: 2026-02-12 00:40+0000\n"
 "PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -40480,17 +40480,17 @@ msgstr "Ange färgbeteckning \"%1\""
 msgid "Assign Rating \"%1 Star\""
 msgstr "Tilldela betyget \"%1 stjärna\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:58
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:70
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "Tilldela betyget \"%1 stjärna\" (ingen växling)"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:79
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:91
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Tilldela urvalsbeteckning \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:128
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:140
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Tilldela etikett \"%1\""

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:40+0000\n"
+"POT-Creation-Date: 2026-02-12 00:40+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -41041,17 +41041,17 @@ msgstr "Atribui Koloran Etikedon \"%1\""
 msgid "Assign Rating \"%1 Star\""
 msgstr "Asigni Takson \"%1 Stelo\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:58
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:70
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "Asigni Takson \"%1 Stelo\" (neniu baskulo)"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:79
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:91
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Atribui Elekt-Etikedon \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:128
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:140
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Atribui Etikedon \"%1\""

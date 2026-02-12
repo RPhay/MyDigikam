@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:40+0000\n"
-"PO-Revision-Date: 2026-02-05 12:24+0400\n"
+"POT-Creation-Date: 2026-02-12 00:40+0000\n"
+"PO-Revision-Date: 2026-02-11 20:43+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3633,11 +3633,9 @@ msgstr ""
 "والتاريخ، والميزات، والدعم، والتنزيل، وغيرها."
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "تعليقات العنصر"
+msgstr "تحسينات فرز العناصر:"
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3672,10 +3670,9 @@ msgid "Add support of Import Icon-View sort items by File Format."
 msgstr "إضافة دعم فرز العناصر في عرض أيقونات الاستيراد حسب تنسيق الملف."
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "خصائص العنصر"
+msgstr "تحسينات خصائص العناصر:"
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, kde-format
@@ -3696,7 +3693,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:417
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "تحسينات العناصر المجمعة:"
 
 #: core/app/views/stack/welcomepageview.cpp:419
 #, kde-format
@@ -3718,10 +3715,9 @@ msgid ""
 msgstr "تحسينات شريط المصغرات لدعم ظهور العناصر المجمعة كما في عرض الأيقونات."
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "عاين العناصر المجمعة"
+msgstr "تحسينات وضع المعاينة:"
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3780,19 +3776,14 @@ msgid ""
 msgstr "عرض مسار السكة فوق اللوحة كطبقة عند ظهور أشرطة التمرير."
 
 #: core/app/views/stack/welcomepageview.cpp:436
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
-msgstr "تحسينات على أداة البحث المتقدّمة"
+msgstr "تحسينات البحث المتقدّم:"
 
 #: core/app/views/stack/welcomepageview.cpp:438
-#, fuzzy, kde-format
-#| msgid ""
-#| "New Advanced Search options to find empty properties registered in the "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
-msgstr ""
-"خيارات بحث متقدمة جديدة للعثور على الخصائص الفارغة المسجلة في قاعدة البيانات."
+msgstr "خيارات جديدة للعثور على الخصائص الفارغة المسجلة في قاعدة البيانات."
 
 #: core/app/views/stack/welcomepageview.cpp:439
 #, kde-format
@@ -3800,6 +3791,8 @@ msgid ""
 "Add support for search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"إضافة دعم لحقول البحث عن المُبدع والمؤلف لتكون قوائم منسدلة مملوءة بالقيم "
+"الموجودة بالفعل في قاعدة البيانات."
 
 #: core/app/views/stack/welcomepageview.cpp:442
 #, kde-format
@@ -39987,17 +39980,17 @@ msgstr "عيّن لصيقة اللون \"%1\""
 msgid "Assign Rating \"%1 Star\""
 msgstr "عيّن التقييم \"%1 نجمة\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:58
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:70
 #, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
 msgstr "عيّن التقييم \"%1 نجمة\" (بلا تبديل)"
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:79
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:91
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "عيّن لصيقة الاختيار \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:128
+#: core/libs/tags/engine/tagsactionmngr_shortcuts.cpp:140
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "أسند الوسم ”%1“"
