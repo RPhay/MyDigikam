@@ -28,13 +28,13 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2008, 2009, 2010.
 # pan93412 <pan93412@gmail.com>, 2019, 2020.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-12 00:40+0000\n"
-"PO-Revision-Date: 2025-10-01 22:30+0900\n"
+"PO-Revision-Date: 2026-02-12 16:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -934,10 +934,9 @@ msgstr[0] "%1 個項目"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:297
 #: core/app/items/utils/itemcategorydrawer.cpp:306
-#, fuzzy, kde-format
-#| msgid "Invalid signature"
+#, kde-format
 msgid "Invalid date"
-msgstr "無效簽章"
+msgstr "無效的日期"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:337
 #, kde-format
@@ -2070,18 +2069,16 @@ msgid "By Rating"
 msgstr "依評等"
 
 #: core/app/main/digikamapp_setup.cpp:630
-#, fuzzy, kde-format
-#| msgid "Pick Label:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Pick Label"
-msgstr "挑選旗標："
+msgstr "依挑選旗標"
 
 #: core/app/main/digikamapp_setup.cpp:631
-#, fuzzy, kde-format
-#| msgid "Color Label:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Color Label"
-msgstr "色彩旗標："
+msgstr "依色彩旗標"
 
 #: core/app/main/digikamapp_setup.cpp:633
 #, kde-format
@@ -2090,11 +2087,10 @@ msgid "By Image Size"
 msgstr "依影像大小"
 
 #: core/app/main/digikamapp_setup.cpp:634
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "任何方向"
+msgstr "依方向"
 
 #: core/app/main/digikamapp_setup.cpp:635
 #, kde-format
@@ -2103,17 +2099,16 @@ msgid "By Aspect Ratio"
 msgstr "依外觀比例"
 
 #: core/app/main/digikamapp_setup.cpp:636
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "位置："
+msgstr "依 GPS 位置"
 
 #: core/app/main/digikamapp_setup.cpp:638
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
-msgstr "顯示臉孔類型"
+msgstr "依臉孔類型"
 
 #: core/app/main/digikamapp_setup.cpp:639
 #, kde-format
@@ -2196,9 +2191,7 @@ msgid "By Month"
 msgstr "依月份"
 
 #: core/app/main/digikamapp_setup.cpp:731
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr "依日期"
@@ -2426,12 +2419,10 @@ msgid "Rotate"
 msgstr "已旋轉"
 
 #: core/app/main/digikamapp_setup.cpp:1128
-#, fuzzy, kde-format
-#| msgctxt "exposure mode"
-#| msgid "Auto bracket"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
-msgstr "自動包圍"
+msgstr "自動旋轉"
 
 #: core/app/main/digikamapp_setup.cpp:1136
 #, kde-format
@@ -2832,133 +2823,107 @@ msgid "format settings"
 msgstr "格式設定值"
 
 #: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info: week properties"
-#| msgid "Start: "
+#, kde-format
 msgid "Support: "
-msgstr "開始："
+msgstr "支援："
 
 #: core/app/utils/digikam_version.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "type is a document"
-#| msgid "Document"
+#, kde-format
 msgid "Documentation: "
-msgstr "文件"
+msgstr "說明文件："
 
 #: core/app/utils/digikam_version.cpp:66
-#, fuzzy, kde-format
-#| msgid "Contribute..."
+#, kde-format
 msgid "Contribute: "
-msgstr "捐助..."
+msgstr "貢獻："
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Date: "
+#, kde-format
 msgid "Donate: "
-msgstr "日期："
+msgstr "捐助："
 
 #: core/app/views/preview/itempreviewvideo.cpp:98
 #: core/app/views/preview/itempreviewview.cpp:264
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show OSD Information"
-msgstr "剪裁資訊"
+msgstr "顯示 OSD 資訊"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "go to previous image"
-#| msgid "Back"
+#, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
-msgstr "向後"
+msgstr "上一張"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
-msgstr "向前"
+msgstr "下一張"
 
 #: core/app/views/preview/itempreviewview.cpp:198
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "新增臉孔標籤"
 
 #: core/app/views/preview/itempreviewview.cpp:203
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "清除此影像中的所有臉孔"
 
 #: core/app/views/preview/itempreviewview.cpp:206
-#, fuzzy, kde-format
-#| msgid "Mark all unconfirmed faces as ignored"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "將所有未確認的臉孔標記為忽略"
 
 #: core/app/views/preview/itempreviewview.cpp:213
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "顯示臉孔標籤"
 
 #: core/app/views/preview/itempreviewview.cpp:218
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "新增對焦點"
 
 #: core/app/views/preview/itempreviewview.cpp:220
-#, fuzzy, kde-format
-#| msgid "Show focus points"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "顯示對焦點"
 
 #: core/app/views/preview/itempreviewview.cpp:228
-#, fuzzy, kde-format
-#| msgid "Show numbers"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
-msgstr "顯示編號"
+msgstr "顯示放大鏡"
 
 #: core/app/views/preview/itempreviewview.cpp:233
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Zoom to Fit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
-msgstr "縮放到適合"
+msgstr "縮放係數"
 
 #: core/app/views/preview/itempreviewview.cpp:256
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Under-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "曝光不足指示功能"
 
 #: core/app/views/preview/itempreviewview.cpp:260
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Over-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "曝光過度指示功能"
 
 #: core/app/views/preview/itempreviewview.cpp:678
 #: core/app/views/stack/itemiconview_views.cpp:325
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "臉孔"
@@ -2966,7 +2931,7 @@ msgstr "臉孔"
 #: core/app/views/preview/itempreviewview.cpp:874
 #, kde-format
 msgid "Show Magnifier (x%1)"
-msgstr ""
+msgstr "顯示放大鏡 (x%1)"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -3004,20 +2969,15 @@ msgstr "地圖"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:80
 #: core/app/views/sidebar/labelssidebarwidget.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scan"
-msgstr "依影像品質排序"
+msgstr "影像品質掃描"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
-msgstr "使用這個按鈕來掃描所選相簿中的重複項目。"
+msgstr "使用這個按鈕來掃描所選相簿以進行影像品質剖析"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
@@ -3040,28 +3000,23 @@ msgstr "旗標"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@label short translated text about the scan for faces"
 msgid "Scan for Faces"
 msgstr "掃描臉孔"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
-msgstr "使用這個按鈕來掃描所選相簿中的重複項目。"
+msgstr "使用這個按鈕來掃描所選相簿中的臉孔"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "色彩管理檢視已停用。"
+msgstr "臉孔引擎已停用"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
@@ -3077,7 +3032,7 @@ msgstr ""
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
-msgstr ""
+msgstr "臉孔掃描因為沒有可以辨別的身份而已中止。請先新增身份。"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:277
 #, kde-format
@@ -3108,18 +3063,15 @@ msgstr "既存的標籤"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:133
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag Scan"
-msgstr "自動指定標籤"
+msgstr "自動標籤掃描"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
-msgstr "使用這個按鈕來掃描所選相簿中的重複項目。"
+msgstr "使用這個按鈕來掃描所選相簿中要自動加標籤的物件"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
 #, kde-format
@@ -3315,7 +3267,7 @@ msgstr "說明"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "關於垃圾桶的線上說明"
 
 #: core/app/views/stack/trashview.cpp:122
 #, kde-format
@@ -3325,7 +3277,7 @@ msgstr "復原"
 #: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "只還原垃圾桶中最後一個項目。"
 
 #: core/app/views/stack/trashview.cpp:128
 #, kde-format
@@ -3345,7 +3297,7 @@ msgstr "刪除..."
 #: core/app/views/stack/trashview.cpp:136
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
-msgstr ""
+msgstr "從垃圾桶永久刪除所選項目或所有項目。"
 
 #: core/app/views/stack/trashview.cpp:140
 #, kde-format
@@ -3392,15 +3344,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "您確定要永久刪除所有項目嗎？"
 
 #: core/app/views/stack/trashview.cpp:464
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
-msgstr "選擇區域"
+msgstr "所選項目"
 
 #: core/app/views/stack/trashview.cpp:466
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "刪除"
@@ -3552,11 +3502,9 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "項目註解"
+msgstr "項目排序改進："
 
 #: core/app/views/stack/welcomepageview.cpp:402
 #, kde-format
@@ -3589,10 +3537,9 @@ msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "項目屬性"
+msgstr "項目屬性改進："
 
 #: core/app/views/stack/welcomepageview.cpp:412
 #, fuzzy, kde-format
@@ -3635,10 +3582,9 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:424
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "預覽群組項目"
+msgstr "預覽模式改進："
 
 #: core/app/views/stack/welcomepageview.cpp:426
 #, kde-format
@@ -3784,20 +3730,16 @@ msgid "...and much more."
 msgstr "...以及更多。"
 
 #: core/app/views/stack/welcomepageview.cpp:466
-#, fuzzy, kde-format
-#| msgid "<li>%1</li>\n"
+#, kde-format
 msgid "<li>%1</li>"
-msgstr "<li>%1</li>\n"
+msgstr "<li>%1</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:469
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 7):"
+#, kde-format
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
 "digiKam version 8):</h3><ul>%1</ul>"
-msgstr "此版本某些新功能包含（相對與 digiKam 7）："
+msgstr "<h3>此版本某些新功能包含（相對於 digiKam 8）：</h3><ul>%1</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:490
 #, kde-format
@@ -3947,18 +3889,16 @@ msgid "Tags"
 msgstr "標籤"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:82
-#, fuzzy, kde-format
-#| msgid "Group"
+#, kde-format
 msgctxt "@title: grouped"
 msgid "Grouped"
-msgstr "群組"
+msgstr "已分組"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
-#, fuzzy, kde-format
-#| msgid "Versions"
+#, kde-format
 msgctxt "@title: versioned"
 msgid "Versioned"
-msgstr "版本"
+msgstr "有版本"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, kde-format
@@ -3997,18 +3937,16 @@ msgid "Tags"
 msgstr "標籤"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:124
-#, fuzzy, kde-format
-#| msgid "Group"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Grouped"
-msgstr "群組"
+msgstr "已分組"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:129
-#, fuzzy, kde-format
-#| msgid "Versions"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Versioned"
-msgstr "版本"
+msgstr "有版本"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:348
 #: core/app/views/tableview/tableview_column_digikam.cpp:388
@@ -6498,7 +6436,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
-msgstr ""
+msgstr "註解與描述"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, kde-format
@@ -21311,7 +21249,7 @@ msgstr "OpenGL 錯誤"
 #, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
-msgstr ""
+msgstr "您的系統不支援 GL_ARB_texture_rectangle OpenGL 延伸"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:201
 #, kde-format
@@ -28868,10 +28806,9 @@ msgid "This is the original image"
 msgstr "這是原始影像"
 
 #: core/libs/database/server/databaseserver.cpp:155
-#, fuzzy, kde-format
-#| msgid "Filter identifier or version is not supported"
+#, kde-format
 msgid "Database type is not supported."
-msgstr "濾鏡的識別子或版號不被支援"
+msgstr "資料庫型態不被支援。"
 
 #: core/libs/database/server/databaseserver.cpp:296
 #, fuzzy, kde-format
@@ -50598,10 +50535,9 @@ msgid "Failed to save file: %1"
 msgstr "儲存檔案失敗：%1"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:80
-#, fuzzy, kde-format
-#| msgid "Filter identifier or version is not supported"
+#, kde-format
 msgid "Remote file handling is not supported"
-msgstr "濾鏡的識別子或版號不被支援"
+msgstr "不支援遠端檔案處理"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
 #: core/utilities/imageeditor/main/imagewindow.cpp:586
@@ -50642,12 +50578,13 @@ msgid "Error Loading File"
 msgstr "載入檔案時發生錯誤"
 
 #: core/showfoto/main/showfoto_open.cpp:325
-#, fuzzy, kde-format
-#| msgid "Filter identifier or version is not supported"
+#, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
 "Remote file handling is not supported"
-msgstr "濾鏡的識別子或版號不被支援"
+msgstr ""
+"載入檔案失敗：「%1」\n"
+"不支援遠端檔案處理"
 
 #: core/showfoto/main/showfoto_setup.cpp:22
 #, kde-format
@@ -50685,10 +50622,9 @@ msgstr "增強(&A)"
 #. i18n: ectx: Menu (Transform)
 #: core/showfoto/main/showfotoui5.rc:74
 #: core/utilities/imageeditor/main/imageeditorui5.rc:75
-#, fuzzy, kde-format
-#| msgid "Transform"
+#, kde-format
 msgid "Tra&nsform"
-msgstr "變形"
+msgstr "變形(&N)"
 
 #. i18n: ectx: Menu (Decorate)
 #: core/showfoto/main/showfotoui5.rc:80
@@ -50998,17 +50934,17 @@ msgstr "啟用這個選項會顯示影像外觀比例。"
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:79
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
-msgstr ""
+msgstr "將目前項目捲動至縮圖列中央"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:159
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "將縮圖儲存於磁碟以加速重複利用"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:160
-#, fuzzy, kde-format
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
-msgstr "若取消勾選此選項，在影像預覽時您看不到圖示與文字。"
+msgstr "如果您不希望縮圖快取儲存於磁碟，請停用此選項。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:170
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:123
@@ -51044,12 +50980,16 @@ msgid ""
 "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
 "and are not recommended to use in production as bugs can remain."
 msgstr ""
+"設定此選項來調整要檢查哪種版本的更新。\n"
+"「穩定」版本是適合正式工作的官方版本。\n"
+"「預覽」版本每週釋出，用來快速測試新功能，但可能留有更多錯誤，因此不建議在正"
+"式環境下使用。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
-msgstr ""
+msgstr "使用包含除錯符號的版本"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:137
@@ -51060,12 +51000,14 @@ msgid ""
 "This version is more heavy but can help developers to trace dysfunctions in "
 "debugger."
 msgstr ""
+"啟用此選項時，更新時會使用包含除錯符號的版本。\n"
+"這個版本會更佔空間，但能夠幫助開發者用除錯器追蹤問題出處。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:189
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:142
 #, kde-format
 msgid "Last check: %1"
-msgstr ""
+msgstr "上次檢查：%1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:190
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:143
@@ -51100,7 +51042,7 @@ msgstr "僅作用中的分頁"
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:36
 #, kde-format
 msgid "For All Tabs"
-msgstr "全部標籤"
+msgstr "全部分頁"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:232
 #, kde-format
@@ -51127,10 +51069,9 @@ msgstr "圖示主題（重啟後生效）："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:262
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:67
-#, fuzzy, kde-format
-#| msgid "Set this option to choose the default window decoration and looks."
+#, kde-format
 msgid "Set this option to choose the default icon theme."
-msgstr "設定此選項以選擇預設視窗裝飾與外觀。"
+msgstr "設定此選項以選擇預設圖示主題。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:266
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:71
@@ -51189,26 +51130,21 @@ msgstr "使用系統圖示主題"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "日期與時間資訊"
+msgstr "日期與時間格式（%1）："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in tooltips."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
-msgstr "選擇在工具提示上顯示文字使用的字型"
+msgstr "這個字串會用來決定整個應用程式內的日期與時間格式。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "將校正後的日期與時間寫入各個影像"
+msgstr "回復成本地的簡短日期與時間格式"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -51218,10 +51154,9 @@ msgstr "應用程式字型："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:317
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:122
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in tooltips."
+#, kde-format
 msgid "Select here the font used to display text in whole application."
-msgstr "選擇在工具提示上顯示文字使用的字型"
+msgstr "選擇整個應用程式當中用來顯示文字的字型。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:337
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:143
