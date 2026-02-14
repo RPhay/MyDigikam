@@ -37,6 +37,7 @@
 #include "dmetadata.h"
 #include "dpluginbqm.h"
 #include "altlangstredit.h"
+#include "dexpanderbox.h"
 #include "dlayoutbox.h"
 #include "captionvalues.h"
 #include "captionedit.h"
@@ -60,6 +61,7 @@ public:
 
     QCheckBox*          cleanupCB       = nullptr;
 
+    DLineWidget*        lineWidget      = nullptr;
     QLabel*             infoLabel       = nullptr;
 
     bool                changeSettings  = true;
@@ -110,9 +112,10 @@ void AssignCaptions::registerSettingsWidget()
                                    "will be cleaned and replaced by the new values,\nelse "
                                    "old values will be merged with new values."));
 
-    d->infoLabel          = new QLabel(i18nc("@label", "Use the variable $ORGTEXT to insert "
-                                                       "the existing title or caption into the "
-                                                       "new title or caption."), vbox);
+    d->lineWidget         = new DLineWidget(Qt::Horizontal, vbox),
+
+    d->infoLabel          = new QLabel(i18nc("@label", "Use the variable $ORGTEXT to insert the "
+                                                       "existing text into the new text."), vbox);
     d->infoLabel->setWordWrap(true);
 
     m_settingsWidget      = vbox;
