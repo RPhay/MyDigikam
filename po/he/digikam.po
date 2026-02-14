@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-12 00:40+0000\n"
-"PO-Revision-Date: 2026-02-08 08:32+0200\n"
+"PO-Revision-Date: 2026-02-13 18:03+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -32149,7 +32149,7 @@ msgstr ""
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
 #, kde-format
 msgid "YOLOv11 Nano"
-msgstr ""
+msgstr "YOLOv11 Nano"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
@@ -32164,7 +32164,7 @@ msgstr ""
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
 #, kde-format
 msgid "YOLOv11 XLarge"
-msgstr ""
+msgstr "YOLOv11 XLarge"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
@@ -32179,7 +32179,7 @@ msgstr ""
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
 #, kde-format
 msgid "EfficientNet B7"
-msgstr ""
+msgstr "EfficientNet B7"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
@@ -35114,7 +35114,7 @@ msgstr "תווית צבע"
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
-msgstr ""
+msgstr "%1 בתים של נתונים בינריים"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
 #, kde-format
@@ -38459,7 +38459,7 @@ msgstr ""
 #: core/libs/tags/manager/tagsmanager_io.cpp:181
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
-msgstr ""
+msgstr "התגית הנבחרת איננה תגית בסיס בראש ההיררכיה."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:189
 #, fuzzy, kde-format
@@ -38476,12 +38476,12 @@ msgstr "קובץ טקסט (‎*.txt)"
 #: core/libs/tags/manager/tagsmanager_io.cpp:288
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
-msgstr ""
+msgstr "נא לבחור תגית אליה לייבא את התגיות."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:298
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
-msgstr ""
+msgstr "לא ניתן לייבא תגיות לתגית הפרצוף הנבחרת."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:307
 #, kde-format
@@ -38559,7 +38559,7 @@ msgstr "סימון כל התגיות שלא מוקצות לתמונות."
 #: core/libs/tags/manager/tagsmanager_p.cpp:165
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
-msgstr ""
+msgstr "היפוך הבחירה. רק פריטים גלויים ייבחרו"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:168
 #, kde-format
@@ -38614,7 +38614,7 @@ msgstr "כתיבת תגיות נתוני־על לתמונה."
 #: core/libs/tags/manager/tagsmanager_p.cpp:234
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
-msgstr ""
+msgstr "קריאת תגיות מתמונות למסד הנתונים. תגיות נוכחיות לא תושפענה"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:237
 #, kde-format
@@ -38714,6 +38714,8 @@ msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
 "</p>"
 msgstr ""
+"<p><b>לתשומת ליבך</b>: אפשר להשתמש במקשי הקיצור האלה כדי להקצות או לבטל "
+"הקצאה של תגיות לפריטים.</p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:335
 #, kde-format
@@ -40632,7 +40634,7 @@ msgstr "הבינרי לא נמצא."
 #: core/libs/widgets/files/dbinarysearch.cpp:99
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
-msgstr ""
+msgstr "מספר הגרסה המזערי הנחוץ לבינרי הזה הוא %1"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
@@ -40642,7 +40644,7 @@ msgstr "איתור"
 #: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
-msgstr ""
+msgstr " או <a href=\"%1\">להוריד</a>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:132
 #, kde-format
@@ -40658,7 +40660,7 @@ msgstr ""
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
 "of this binary."
-msgstr ""
+msgstr "זוהתה גרסת פיתוח. אין ערובה להתנהגות הבינרי הזה."
 
 #: core/libs/widgets/files/dbinarysearch.cpp:181
 #, kde-format
@@ -40668,7 +40670,7 @@ msgstr "לשנות"
 #: core/libs/widgets/files/dbinarysearch.cpp:187
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "הקובץ הבינרי שנמצא לא מתפקד כמצופה."
 
 #: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
@@ -40684,7 +40686,7 @@ msgstr "אם קובץ היעד קיים:"
 #: core/utilities/setup/camera/setupcamera.cpp:331
 #, kde-format
 msgid "Store as a different name"
-msgstr ""
+msgstr "אחסון כשם אחר"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:68
 #: core/utilities/setup/camera/setupcamera.cpp:332
@@ -40707,7 +40709,7 @@ msgstr "אין אפשרויות זמינות"
 #, kde-format
 msgctxt "@title: font properties"
 msgid "Here you can choose the font to be used."
-msgstr ""
+msgstr "כאן אפשר לבחור את הגופן לשימוש."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:241
 #, kde-format
@@ -40791,13 +40793,13 @@ msgstr "גודל:"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font family to be used."
-msgstr ""
+msgstr "כאן אפשר לבחור את משפחת הגופנים לשימוש."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:366
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font style to be used."
-msgstr ""
+msgstr "כאן אפשר לבחור את סגנון הגופן לשימוש."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:380
 #, kde-format
@@ -40839,7 +40841,7 @@ msgstr "יחסי"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Font size \"fixed\" or \"relative\" to environment"
-msgstr ""
+msgstr "גודל גופן „קבוע” או „יחסי” לסביבה"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:406
 #, kde-format
@@ -40849,18 +40851,20 @@ msgid ""
 "dynamically and adjusted to changing environment (e.g. widget dimensions, "
 "paper size)."
 msgstr ""
+"כאן אפשר להחליף בין גודל גופן קבוע וגודל גופן לחישוב דינמי והתאמה לסביבה "
+"המשתנה (למשל: ממדי וידג׳טים, גודל נייר)."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:431
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font size to be used."
-msgstr ""
+msgstr "כאן אפשר לבחור את גודל הגופן לשימוש."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:472
 #, kde-format
 msgctxt "@info: font properties"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr ""
+msgstr "דג סקרן שט לו בים זך ולפתע מצא חבורה נחמדה."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:474
 #, kde-format
@@ -40869,6 +40873,8 @@ msgid ""
 "This sample text illustrates the current settings. You may edit it to test "
 "special characters."
 msgstr ""
+"טקסט דוגמה זה מציג את ההגדרות הנוכחיות. אפשר לערוך אותו כדי לבדוק תווים "
+"מיוחדים."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:720
 #: core/libs/widgets/fonts/dfontproperties.cpp:771
@@ -40927,7 +40933,7 @@ msgstr ""
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:222
 #, kde-format
 msgid "Reduced Size Preview"
-msgstr ""
+msgstr "תצוגה מקדימה מוקטנת"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:235
 #, kde-format
@@ -40947,12 +40953,12 @@ msgstr "הסרת מסנן"
 #: core/libs/widgets/history/versionswidget.cpp:80
 #, kde-format
 msgid "Show available versions in a list"
-msgstr ""
+msgstr "הצגת הגרסאות הזמינות ברשימה"
 
 #: core/libs/widgets/history/versionswidget.cpp:86
 #, kde-format
 msgid "Show available versions as a tree"
-msgstr ""
+msgstr "הצגת הגרסאות הזמינות כעץ"
 
 #: core/libs/widgets/history/versionswidget.cpp:92
 #, kde-format
@@ -41440,7 +41446,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
 msgid "Professional Photo Management with the Power of Open Source"
-msgstr ""
+msgstr "ניהול תמונות מקצועי בגיבוי הכוח של הקוד הפתוח"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:56
 #, kde-format
@@ -41561,6 +41567,8 @@ msgid ""
 "Face-engine improvements\n"
 "and manual icon-view sort"
 msgstr ""
+"שיפורים במנוע הפרצופים\n"
+"ומיון תצוגת סמלים ידני"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:219
 #, kde-format
@@ -41858,7 +41866,7 @@ msgstr "הסתרת תצוגת סרגל תמוניות כשהחלון מוגדל 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
 msgid "Hide &sidebars"
-msgstr ""
+msgstr "ה&סתרת סרגלי צד"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:68
 #, kde-format
@@ -41942,6 +41950,8 @@ msgid ""
 "ExifTool is a platform-independent command-line application for reading, "
 "writing and editing meta information in a wide variety of files."
 msgstr ""
+"ExifTool הוא יישום שורת פקודה שאינו תלוי פלטפורמה לקריאת, כתיבת ועריכת נתוני "
+"על במגוון רחב של קבצים."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:67
 #, kde-format
@@ -42028,7 +42038,7 @@ msgstr "תסדיר קובץ לחלופת שמע"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:52
 #, kde-format
 msgid "Monkey's Audio"
-msgstr ""
+msgstr "Monkey's Audio"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:56
 #, fuzzy, kde-format
@@ -43445,7 +43455,7 @@ msgstr "אנגלית (מאוריציוס)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:144
 msgctxt "@info: country code"
 msgid "English (Malawi)"
-msgstr ""
+msgstr "אנגלית מלאווית"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:145
 msgctxt "@info: country code"
@@ -43585,7 +43595,7 @@ msgstr "אנגלית (ארצות הברית)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:172
 msgctxt "@info: country code"
 msgid "English (St. Vincent and the Grenadi)"
-msgstr ""
+msgstr "אנגלית של סנט וינסנט והגרנדינים"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:173
 msgctxt "@info: country code"
@@ -43770,7 +43780,7 @@ msgstr "פיג׳ית (פיג׳י)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:209
 msgctxt "@info: country code"
 msgid "Faeroese (Faero Islands)"
-msgstr ""
+msgstr "פארואזית של איי פארו"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:210
 msgctxt "@info: country code"
@@ -44010,7 +44020,7 @@ msgstr "האוסה (צ׳אד)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
-msgstr ""
+msgstr "האווית (המדינות האמריקאיות של הוואי)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
 msgctxt "@info: country code"
@@ -44060,7 +44070,7 @@ msgstr "ארמנית (ארמניה)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:267
 msgctxt "@info: country code"
 msgid "Indonesian (Bahasa Indonesia)"
-msgstr ""
+msgstr "אינדונזית (בהאסה אינדונזיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:268
 msgctxt "@info: country code"
@@ -44115,7 +44125,7 @@ msgstr "יפנית (יפן)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:278
 msgctxt "@info: country code"
 msgid "Modern Javanese (Indonesia)"
-msgstr ""
+msgstr "ג׳אווה מודרנית (אינדונזיה)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:279
 msgctxt "@info: country code"
