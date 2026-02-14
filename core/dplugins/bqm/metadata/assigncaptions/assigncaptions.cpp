@@ -60,6 +60,8 @@ public:
 
     QCheckBox*          cleanupCB       = nullptr;
 
+    QLabel*             infoLabel       = nullptr;
+
     bool                changeSettings  = true;
 };
 
@@ -107,6 +109,11 @@ void AssignCaptions::registerSettingsWidget()
     d->cleanupCB->setToolTip(i18nc("@info", "If you turn on this options, titles and captions "
                                    "will be cleaned and replaced by the new values,\nelse "
                                    "old values will be merged with new values."));
+
+    d->infoLabel          = new QLabel(i18nc("@label", "Use the variable $ORGTEXT to insert "
+                                                       "the existing title or caption into the "
+                                                       "new title or caption."), vbox);
+    d->infoLabel->setWordWrap(true);
 
     m_settingsWidget      = vbox;
 
@@ -237,7 +244,10 @@ bool AssignCaptions::toolOperations()
 
         for (it = titles.constBegin() ; it != titles.constEnd() ; ++it)
         {
-            orgTitles.insert(it.key(), it.value());
+            QString value = it.value();
+            value.replace(QLatin1String("$ORGTEXT"),
+                          orgTitles.value(it.key()));
+            orgTitles.insert(it.key(), value);
         }
 
         CaptionsMap newTitlesMap;
@@ -259,7 +269,10 @@ bool AssignCaptions::toolOperations()
 
         for (it = captions.constBegin() ; it != captions.constEnd() ; ++it)
         {
-            orgCaptionsMap.insert(it.key(), it.value());
+            CaptionValues value = it.value();
+            value.caption.replace(QLatin1String("$ORGTEXT"),
+                                  orgCaptionsMap.value(it.key()).caption);
+            orgCaptionsMap.insert(it.key(), value);
         }
 
         meta->setItemComments(orgCaptionsMap);
