@@ -232,6 +232,7 @@ bool AssignCaptions::toolOperations()
     bool setCaptions              = settings().value(QLatin1String("SetCaptions")).toBool();
     CaptionsMap captions          = qvariant_cast<CaptionsMap>(settings().value(QLatin1String("CaptionValues")));
     bool cleanup                  = settings().value(QLatin1String("CleanUp")).toBool();
+    const QString variableOrgText(QLatin1String("$ORGTEXT"));
 
     if (setTitles)
     {
@@ -248,7 +249,7 @@ bool AssignCaptions::toolOperations()
         for (it = titles.constBegin() ; it != titles.constEnd() ; ++it)
         {
             QString value = it.value();
-            value.replace(QLatin1String("$ORGTEXT"),
+            value.replace(variableOrgText,
                           orgTitles.value(it.key()));
             orgTitles.insert(it.key(), value);
         }
@@ -273,8 +274,10 @@ bool AssignCaptions::toolOperations()
         for (it = captions.constBegin() ; it != captions.constEnd() ; ++it)
         {
             CaptionValues value = it.value();
-            value.caption.replace(QLatin1String("$ORGTEXT"),
+            value.caption.replace(variableOrgText,
                                   orgCaptionsMap.value(it.key()).caption);
+            value.author.replace(variableOrgText,
+                                 orgCaptionsMap.value(it.key()).author);
             orgCaptionsMap.insert(it.key(), value);
         }
 
