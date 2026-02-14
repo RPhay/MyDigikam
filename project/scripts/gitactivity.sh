@@ -6,7 +6,7 @@
 # https://www.digikam.org
 #
 # Date:        2026-02-14
-# Description: Script to generate a video of the git activity for one contributor.
+# Description: Script to generate a video of the git activity.
 #              Dependencies: gource and ffmpeg.
 #              Arguments: the git user name (if null, whole team is displayed).
 #              Exemple: ./gitactivity.sh Maik Qualmann
