@@ -22,40 +22,52 @@ USER_NAME=$1
 if [[ $USER_NAME == "" ]] ; then
 
     gource --highlight-colour FF0000 \
-           --seconds-per-day 0.01 \
+           --seconds-per-day 0.1 \
            --git-branch master \
            --hide filenames \
            --file-extensions \
            --highlight-users \
            --max-file-lag 0.5 \
            --auto-skip-seconds 1 \
-           --title "digiKam Activity" \
+           --title "digiKam Git Repository Activity" \
+           --logo "../../core/data/icons/apps/64-apps-digikam.png" \
            --output-framerate 25 \
            -o - | \
-           ffmpeg -y -r 25 -f image2pipe \
-                  -vcodec ppm -i - -vcodec libx264 \
-                  -preset ultrafast -pix_fmt yuv420p \
-                  -crf 20 -threads 0 -bf 0 \
+           ffmpeg -y -r 25 \
+                  -f image2pipe \
+                  -vcodec ppm \
+                  -i - -vcodec libx265 \
+                  -preset ultrafast \
+                  -pix_fmt yuv420p \
+                  -crf 20 \
+                  -threads 0 \
+                  -bf 0 \
                   "digiKam_activity.mp4"
 
 else
 
     gource --user-show-filter $USER_NAME \
            --highlight-colour FF0000 \
-           --seconds-per-day 0.01 \
+           --seconds-per-day 0.1 \
            --git-branch master \
            --hide filenames \
            --file-extensions \
            --highlight-users \
            --max-file-lag 0.5 \
            --auto-skip-seconds 1 \
-           --title "digiKam Activity for $USER_NAME" \
+           --title "digiKam Git Repository Activity for $USER_NAME" \
+           --logo "../../core/data/icons/apps/64-apps-digikam.png" \
            --output-framerate 25 \
            -o - | \
-           ffmpeg -y -r 25 -f image2pipe \
-                  -vcodec ppm -i - -vcodec libx264 \
-                  -preset ultrafast -pix_fmt yuv420p \
-                  -crf 20 -threads 0 -bf 0 \
+           ffmpeg -y -r 25 \
+                  -f image2pipe \
+                  -vcodec ppm \
+                  -i - -vcodec libx265 \
+                  -preset ultrafast \
+                  -pix_fmt yuv420p \
+                  -crf 20 \
+                  -threads 0 \
+                  -bf 0 \
                   "digiKam_$USER_NAME_activity.mp4"
 
 fi
