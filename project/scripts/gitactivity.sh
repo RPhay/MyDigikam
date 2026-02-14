@@ -17,7 +17,7 @@
 #
 # ============================================================
 
-USER_NAME=$1
+USER_NAME=$*
 
 if [[ $USER_NAME == "" ]] ; then
 
@@ -46,7 +46,7 @@ if [[ $USER_NAME == "" ]] ; then
 
 else
 
-    gource --user-show-filter $USER_NAME \
+    gource --user-show-filter "${USER_NAME}" \
            --highlight-colour FF0000 \
            --seconds-per-day 0.1 \
            --git-branch master \
@@ -55,7 +55,7 @@ else
            --highlight-users \
            --max-file-lag 0.5 \
            --auto-skip-seconds 1 \
-           --title "digiKam Git Repository Activity for $USER_NAME" \
+           --title "digiKam Git Repository Activity for ${USER_NAME}" \
            --logo "../../core/data/icons/apps/64-apps-digikam.png" \
            --output-framerate 25 \
            -o - | \
@@ -68,6 +68,6 @@ else
                   -crf 20 \
                   -threads 0 \
                   -bf 0 \
-                  "digiKam_$USER_NAME_activity.mp4"
+                  "digiKam_${USER_NAME}_activity.mp4"
 
 fi
