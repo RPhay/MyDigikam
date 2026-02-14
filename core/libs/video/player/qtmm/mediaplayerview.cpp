@@ -698,6 +698,7 @@ void MediaPlayerView::escapePreview()
 {
     d->player->stop();
     d->player->setSource(d->dummyVideo);
+    qDebug() << "Angeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
 }
 
 void MediaPlayerView::slotEscapePressed()

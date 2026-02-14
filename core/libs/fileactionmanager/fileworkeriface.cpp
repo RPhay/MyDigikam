@@ -42,6 +42,10 @@ namespace Digikam
 
 void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoList& infos, int orientation)
 {
+    MetaEngineSettingsContainer msettings = MetaEngineSettings::instance()->settings();
+    MetaEngineSettingsContainer::RotationBehaviorFlags behavior;
+    behavior                              = msettings.rotationBehavior;
+
     QStringList failedItems;
 
     for (const ItemInfo& info : std::as_const(infos))
@@ -55,6 +59,14 @@ void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoL
         QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
         DMetadata::ImageOrientation o = (DMetadata::ImageOrientation)orientation;
         metadata->setItemOrientation(o);
+
+        if (
+            (behavior & MetaEngineSettingsContainer::RotateByMetadataFlag)   &&
+            (msettings.metadataWritingMode == DMetadata::WRITE_TO_SIDECAR_ONLY)
+           )
+        {
+            metadata->setMetadataWritingMode(DMetadata::WRITE_TO_SIDECAR_AND_FILE);
+        }
 
         if (!metadata->applyChanges())
         {
@@ -198,8 +210,9 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             bool rotateAsJpeg                               = false;
             bool rotateLossy                                = false;
 
+            MetaEngineSettingsContainer msettings           = MetaEngineSettings::instance()->settings();
             MetaEngineSettingsContainer::RotationBehaviorFlags behavior;
-            behavior              = MetaEngineSettings::instance()->settings().rotationBehavior;
+            behavior              = msettings.rotationBehavior;
             bool rotateByMetadata = (behavior & MetaEngineSettingsContainer::RotateByMetadataFlag);
 
             // Check if rotation by content, as desired, is feasible
@@ -320,6 +333,15 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             {
                 QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
                 metadata->setItemOrientation(metaOrientation);
+
+                if (
+                    (behavior & MetaEngineSettingsContainer::RotateByMetadataFlag)   &&
+                    (msettings.metadataWritingMode == DMetadata::WRITE_TO_SIDECAR_ONLY)
+                   )
+                {
+                    metadata->setMetadataWritingMode(DMetadata::WRITE_TO_SIDECAR_AND_FILE);
+                }
+
                 metadata->applyChanges();
             }
 
