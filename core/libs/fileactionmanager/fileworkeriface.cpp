@@ -32,6 +32,7 @@
 #include "iteminfotasksplitter.h"
 #include "filereadwritelock.h"
 #include "scancontroller.h"
+#include "autorotator.h"
 #include "faceutils.h"
 #include "jpegutils.h"
 #include "dimg.h"
