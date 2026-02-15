@@ -474,7 +474,7 @@ BUGFIXES:
 391 --> 180268 - Search by specific metadata as Artist, Byline, Location, City, Country, etc... [patch].
 392 --> 351987 - Allow to search by Country, City, Town when appropriate geo-location tags exist in database.
 393 --> 515664 - Wrong Exif orientation in stored image files when auto rotating.
-394 --> 
+394 --> 516049 - digiKam fails to start.
 395 --> 
 396 --> 
 397 --> 
