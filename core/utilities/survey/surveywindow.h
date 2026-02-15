@@ -44,6 +44,7 @@ public:
     void init(DigikamItemView* const iconView);
 
     void refreshView();
+    bool isSleeping()                             const;
     bool isEmpty()                                const;
 
     void toggleTag(int tagID);

@@ -97,6 +97,7 @@ public Q_SLOTS:
     void zoomTo100Percents();
     void setZoomFactor(double z);
     void setZoomFactorSnapped(double z);
+    void slotThumbBarSelectionChanged();
 
 Q_SIGNALS:
 
@@ -117,7 +118,6 @@ private Q_SLOTS:
 
     void slotPreviewLoaded(bool);
     void slotZoomFactorChanged(double);
-    void slotThumbBarSelectionChanged();
     void slotIconViewSelectionChanged();
 
 private:

@@ -128,6 +128,18 @@ void SurveyWindow::showEvent(QShowEvent* e)
     d->stack->thumbBarDock()->restoreVisibility();
 
     DXmlGuiWindow::showEvent(e);
+
+    QTimer::singleShot(100, this, [this]()
+        {
+            slotItemSelected();
+            d->stack->slotThumbBarSelectionChanged();
+        }
+    );
+}
+
+bool SurveyWindow::isSleeping() const
+{
+    return (isMinimized() || isHidden());
 }
 
 bool SurveyWindow::isEmpty() const
@@ -137,6 +149,11 @@ bool SurveyWindow::isEmpty() const
 
 void SurveyWindow::slotItemSelected()
 {
+    if (isSleeping())
+    {
+        return;
+    }
+
     ItemInfo info = d->stack->thumbBar()->currentInfo();
 
     bool hasInfo  = !info.isNull();

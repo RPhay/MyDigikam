@@ -27,6 +27,7 @@
 #include <QStatusBar>
 #include <QMenu>
 #include <QSplitter>
+#include <QTimer>
 
 // KDE includes
 

@@ -31,6 +31,7 @@
 #include "applicationsettings.h"
 #include "digikamitemview.h"
 #include "itemiconview.h"
+#include "surveywindow.h"
 #include "itemalbummodel.h"
 #include "itemalbumfiltermodel.h"
 #include "itempreviewview.h"
@@ -213,6 +214,11 @@ ItemPreviewVideo* SurveyStack::mediaPlayerView() const
 
 void SurveyStack::setPreviewItem(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
 {
+    if (SurveyWindow::surveyWindow()->isSleeping())
+    {
+        return;
+    }
+
     if (info.isNull())
     {
         if      (viewMode() == MediaPlayerMode)
