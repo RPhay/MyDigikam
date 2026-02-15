@@ -439,7 +439,7 @@ QString WelcomePageView::featuresTabContent() const
                     << i18n("Add support for search Creator and Author fields to be drop down lists populated with the values already presents in the database.")
                 );
 
-    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-01-24.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-02-16.");
     newFeatures << i18n("New RAW camera supported:")
                 + appendSubList(QStringList()
                     << i18n("Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ;")
