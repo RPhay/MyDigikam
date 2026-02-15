@@ -475,7 +475,7 @@ BUGFIXES:
 392 --> 351987 - Allow to search by Country, City, Town when appropriate geo-location tags exist in database.
 393 --> 515664 - Wrong Exif orientation in stored image files when auto rotating.
 394 --> 516049 - digiKam fails to start.
-395 --> 
+395 --> 514323 - In the Album view, Im unable to drag/move any file that is non-static (i.e. mp4s, gifs etc).
 396 --> 
 397 --> 
 398 --> 
