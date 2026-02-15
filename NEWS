@@ -476,7 +476,7 @@ BUGFIXES:
 393 --> 515664 - Wrong Exif orientation in stored image files when auto rotating.
 394 --> 516049 - digiKam fails to start.
 395 --> 514323 - In the Album view, Im unable to drag/move any file that is non-static (i.e. mp4s, gifs etc).
-396 --> 
+396 --> 516031 - Overlapping video sound in thumbnails/preview mode.
 397 --> 
 398 --> 
 399 --> 
