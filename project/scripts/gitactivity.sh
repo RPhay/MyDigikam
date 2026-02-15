@@ -21,9 +21,13 @@ USER_NAME=$*
 
 if [[ $USER_NAME == "" ]] ; then
 
-    gource --highlight-colour FF0000 \
+    gource --highlight-colour FFB0B0 \
+           --user-font-size 30 \
            --seconds-per-day 0.1 \
+           -f --high-dpi \
            --git-branch master \
+           --user-filter "Script Kiddy" \
+           --user-filter "l10n daemon script" \
            --hide filenames \
            --file-extensions \
            --highlight-users \
@@ -47,8 +51,10 @@ if [[ $USER_NAME == "" ]] ; then
 else
 
     gource --user-show-filter "${USER_NAME}" \
-           --highlight-colour FF0000 \
+           --highlight-colour FFB0B0 \
+           --user-font-size 30 \
            --seconds-per-day 0.1 \
+           -f --high-dpi \
            --git-branch master \
            --hide filenames \
            --file-extensions \
