@@ -116,6 +116,15 @@ void SurveyWindow::closeEvent(QCloseEvent* e)
         d->stack->thumbBarDock()->hide();
     }
 
+#ifdef HAVE_MEDIAPLAYER
+
+    if (d->stack->viewMode() == SurveyStack::MediaPlayerMode)
+    {
+        d->stack->mediaPlayerView()->escapePreview();
+    }
+
+#endif // HAVE_MEDIAPLAYER
+
     writeSettings();
 
     DXmlGuiWindow::closeEvent(e);
