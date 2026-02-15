@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-12 00:40+0000\n"
+"POT-Creation-Date: 2026-02-15 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -6153,36 +6153,36 @@ msgstr ""
 "<para>用于通过 ExifTool 应用来自图像或者 JSON 文件的元数据的批处理工具。</"
 "para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
 #, kde-format
 msgid "Titles:"
 msgstr "标题："
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "在此输入标题文字。"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
 #, kde-format
 msgid "Captions:"
 msgstr "说明："
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "在此输入说明文字。"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "清理和覆盖元数据"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6192,6 +6192,13 @@ msgid ""
 msgstr ""
 "如果启用此选项，标题和说明文字将被清空并替换为新值，\n"
 "如果不启用，则旧值将与新值合并。"
+
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Use the variable $ORGTEXT to insert the existing text into the new text."
+msgstr ""
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
@@ -33970,12 +33977,12 @@ msgstr "正在复制属性"
 msgid "Process Items"
 msgstr "正在处理项目"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:75
+#: core/libs/fileactionmanager/fileworkeriface.cpp:88
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "无法修改这些文件的 EXIF 方向标签："
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:369
+#: core/libs/fileactionmanager/fileworkeriface.cpp:392
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "无法对这些文件进行变形："

@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-12 00:40+0000\n"
+"POT-Creation-Date: 2026-02-15 00:41+0000\n"
 "PO-Revision-Date: 2026-02-09 19:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -6399,36 +6399,36 @@ msgstr ""
 "<para>Bu Toplu Kuyruk Yöneticisi aracı, ExifTool ile bir görselden veya JSON "
 "dosyasından üst veri uygulayabilir.</para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
 #, kde-format
 msgid "Titles:"
 msgstr "Başlıklar:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Başlık metnini buraya gir…"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
 #, kde-format
 msgid "Captions:"
 msgstr "Alt yazılar:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Alt yazı metnini buraya gir…"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Üst veriyi temizle ve üzerine yaz"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6439,6 +6439,13 @@ msgstr ""
 "Bu seçeneği açarsanız alt yazılar temizlenecek ve yeni değerlerle "
 "değiştirilir,\n"
 "aksi takdirde eski değerler yeni değerlerle birleştirilir."
+
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Use the variable $ORGTEXT to insert the existing text into the new text."
+msgstr ""
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
@@ -35195,12 +35202,12 @@ msgstr "Öznitelikler kopyalanıyor…"
 msgid "Process Items"
 msgstr "Ögeleri İşle"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:75
+#: core/libs/fileactionmanager/fileworkeriface.cpp:88
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Şu dosyaların Exif yönelimi gözden geçirilemedi:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:369
+#: core/libs/fileactionmanager/fileworkeriface.cpp:392
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Şu dosyalar dönüştürülemedi:"

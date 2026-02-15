@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-12 00:40+0000\n"
+"POT-Creation-Date: 2026-02-15 00:41+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -6756,14 +6756,14 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
 #, fuzzy, kde-format
 #| msgctxt "title of the file"
 #| msgid "Title:"
 msgid "Titles:"
 msgstr "Titel:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, fuzzy, kde-format
 #| msgid "Enter title here."
@@ -6771,13 +6771,13 @@ msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Angiv titel her."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
 #, fuzzy, kde-format
 #| msgid "Captions: "
 msgid "Captions:"
 msgstr "Billedtekster: "
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, fuzzy, kde-format
 #| msgid "Enter caption text here."
@@ -6785,19 +6785,26 @@ msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Angiv billedtekst her."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, fuzzy, kde-format
 #| msgid "Clean all and re-scan"
 msgid "Clean up and overwrite metadata"
 msgstr "Ryd alle scan igen"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid ""
 "If you turn on this options, titles and captions will be cleaned and "
 "replaced by the new values,\n"
 "else old values will be merged with new values."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Use the variable $ORGTEXT to insert the existing text into the new text."
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
@@ -37328,12 +37335,12 @@ msgstr "Kopierer attributter"
 msgid "Process Items"
 msgstr "Behandl elementer"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:75
+#: core/libs/fileactionmanager/fileworkeriface.cpp:88
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Mislykkedes at revidere EXIF-orientering for disse filer:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:369
+#: core/libs/fileactionmanager/fileworkeriface.cpp:392
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Kunne ikke transformere disse filer:"

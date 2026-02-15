@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-12 00:40+0000\n"
+"POT-Creation-Date: 2026-02-15 00:41+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -6683,42 +6683,49 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr "فاصله رنگ"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
 #, fuzzy, kde-format
 msgid "Titles:"
 msgstr "عنوان:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "متن خود را در اینجا وارد کنید!"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
 #, fuzzy, kde-format
 msgid "Captions:"
 msgstr "چرخش:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "متن خود را در اینجا وارد کنید!"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, fuzzy, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "پاک کردن همه فقره‌ها"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid ""
 "If you turn on this options, titles and captions will be cleaned and "
 "replaced by the new values,\n"
 "else old values will be merged with new values."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Use the variable $ORGTEXT to insert the existing text into the new text."
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
@@ -34837,12 +34844,12 @@ msgstr ""
 msgid "Process Items"
 msgstr "پردازش ریزنقشهای کوچک"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:75
+#: core/libs/fileactionmanager/fileworkeriface.cpp:88
 #, fuzzy, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "خرابی در باربینی جهت Exif برای پرونده %1."
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:369
+#: core/libs/fileactionmanager/fileworkeriface.cpp:392
 #, fuzzy, kde-format
 msgid "Failed to transform these files:"
 msgstr "خرابی در باربینی جهت Exif برای پرونده %1."
