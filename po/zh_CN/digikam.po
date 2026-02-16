@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-16 00:42+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3623,8 +3623,9 @@ msgstr ""
 "新增对搜索创建者和作者字段的支持，以下拉列表形式呈现数据库中已存在的值。"
 
 #: core/app/views/stack/welcomepageview.cpp:442
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
 msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-01-24。"
 
 #: core/app/views/stack/welcomepageview.cpp:443

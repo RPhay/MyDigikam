@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
-"PO-Revision-Date: 2026-02-08 08:08+0200\n"
+"POT-Creation-Date: 2026-02-16 00:42+0000\n"
+"PO-Revision-Date: 2026-02-15 08:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3808,8 +3808,9 @@ msgstr ""
 "заповнено значеннями, які вже є у базі даних."
 
 #: core/app/views/stack/welcomepageview.cpp:442
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
 msgstr ""
 "Оновлено внутрішній рушій обробки RAW до знімка Libraw версії 2026-01-24."
 
@@ -6512,6 +6513,8 @@ msgctxt "@label"
 msgid ""
 "Use the variable $ORGTEXT to insert the existing text into the new text."
 msgstr ""
+"Скористайтеся змінною $ORGTEXT для вставлення наявного тексту до нового "
+"тексту."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format

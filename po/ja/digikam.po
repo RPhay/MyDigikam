@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-16 00:42+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -3738,7 +3738,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:442
 #, fuzzy, kde-format
 #| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
 msgstr ""
 "内部 RAW エンジンを最新の Libraw スナップショット 2023-11-21 に更新しました。"
 

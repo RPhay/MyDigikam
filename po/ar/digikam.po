@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
-"PO-Revision-Date: 2026-02-11 20:43+0400\n"
+"POT-Creation-Date: 2026-02-16 00:42+0000\n"
+"PO-Revision-Date: 2026-02-15 19:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3795,8 +3795,9 @@ msgstr ""
 "الموجودة بالفعل في قاعدة البيانات."
 
 #: core/app/views/stack/welcomepageview.cpp:442
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
 msgstr "حدث محرك RAW الداخلي إلى آخر لقطة Libraw 2026-0-1-24."
 
 #: core/app/views/stack/welcomepageview.cpp:443
@@ -6433,7 +6434,7 @@ msgstr ""
 msgctxt "@label"
 msgid ""
 "Use the variable $ORGTEXT to insert the existing text into the new text."
-msgstr ""
+msgstr "استخدم المتغير $ORGTEXT لإدراج النص الموجود في النص الجديد."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
