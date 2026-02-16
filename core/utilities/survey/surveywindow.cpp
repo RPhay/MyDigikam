@@ -116,6 +116,15 @@ void SurveyWindow::closeEvent(QCloseEvent* e)
         d->stack->thumbBarDock()->hide();
     }
 
+#ifdef HAVE_MEDIAPLAYER
+
+    if (d->stack->viewMode() == SurveyStack::MediaPlayerMode)
+    {
+        d->stack->mediaPlayerView()->escapePreview();
+    }
+
+#endif // HAVE_MEDIAPLAYER
+
     writeSettings();
 
     DXmlGuiWindow::closeEvent(e);
@@ -137,19 +146,22 @@ void SurveyWindow::showEvent(QShowEvent* e)
     );
 }
 
-void SurveyWindow::hideEvent(QHideEvent* e)
+void SurveyWindow::changeEvent(QEvent* e)
 {
 
 #ifdef HAVE_MEDIAPLAYER
 
-    if (d->stack->viewMode() == SurveyStack::MediaPlayerMode)
+    if (windowState() == Qt::WindowMinimized)
     {
-        d->stack->mediaPlayerView()->escapePreview();
+        if (d->stack->viewMode() == SurveyStack::MediaPlayerMode)
+        {
+            d->stack->mediaPlayerView()->escapePreview();
+        }
     }
 
 #endif // HAVE_MEDIAPLAYER
 
-    DXmlGuiWindow::hideEvent(e);
+    DXmlGuiWindow::changeEvent(e);
 }
 
 bool SurveyWindow::isSleeping() const
