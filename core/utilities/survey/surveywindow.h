@@ -67,6 +67,7 @@ private:
     void showSideBars(bool visible)                     override;
     void closeEvent(QCloseEvent* e)                     override;
     void showEvent(QShowEvent* e)                       override;
+    void hideEvent(QHideEvent* e)                       override;
 
     void deleteItem(bool permanently);
     void deleteItem(const ItemInfo& info, bool permanently);

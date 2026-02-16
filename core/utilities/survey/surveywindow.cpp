@@ -116,15 +116,6 @@ void SurveyWindow::closeEvent(QCloseEvent* e)
         d->stack->thumbBarDock()->hide();
     }
 
-#ifdef HAVE_MEDIAPLAYER
-
-    if (d->stack->viewMode() == SurveyStack::MediaPlayerMode)
-    {
-        d->stack->mediaPlayerView()->escapePreview();
-    }
-
-#endif // HAVE_MEDIAPLAYER
-
     writeSettings();
 
     DXmlGuiWindow::closeEvent(e);
@@ -144,6 +135,21 @@ void SurveyWindow::showEvent(QShowEvent* e)
             d->stack->slotThumbBarSelectionChanged();
         }
     );
+}
+
+void SurveyWindow::hideEvent(QHideEvent* e)
+{
+
+#ifdef HAVE_MEDIAPLAYER
+
+    if (d->stack->viewMode() == SurveyStack::MediaPlayerMode)
+    {
+        d->stack->mediaPlayerView()->escapePreview();
+    }
+
+#endif // HAVE_MEDIAPLAYER
+
+    DXmlGuiWindow::hideEvent(e);
 }
 
 bool SurveyWindow::isSleeping() const
