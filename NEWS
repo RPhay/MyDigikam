@@ -477,7 +477,7 @@ BUGFIXES:
 394 --> 516049 - digiKam fails to start.
 395 --> 514323 - In the Album view, Im unable to drag/move any file that is non-static (i.e. mp4s, gifs etc).
 396 --> 516031 - Overlapping video sound in thumbnails/preview mode.
-397 --> 
+397 --> 515606 - Unable to rename video file after playing.
 398 --> 
 399 --> 
 400 --> 
