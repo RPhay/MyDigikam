@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:42+0000\n"
-"PO-Revision-Date: 2026-02-09 19:44+0300\n"
+"PO-Revision-Date: 2026-02-16 16:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Language: tr\n"
@@ -3766,10 +3766,9 @@ msgstr ""
 "desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:442
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr "İçsel RAW işletkesi, güncel 2026‒01‒24 anlık görüntüsüne güncellendi."
+msgstr "İçsel RAW işletkesi, güncel 2026‒02‒16 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview.cpp:443
 #, kde-format
@@ -6447,6 +6446,7 @@ msgctxt "@label"
 msgid ""
 "Use the variable $ORGTEXT to insert the existing text into the new text."
 msgstr ""
+"Var olan metni yeni bir metne girmek için $ORGTEXT değişkenini kullanın."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format

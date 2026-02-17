@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:42+0000\n"
-"PO-Revision-Date: 2026-02-15 07:08-0300\n"
+"PO-Revision-Date: 2026-02-16 08:54-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3757,11 +3757,10 @@ msgstr ""
 "listas suspensas preenchidas com os valores já presentes no banco de dados."
 
 #: core/app/views/stack/welcomepageview.cpp:442
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
 msgstr ""
-"Atualiza o motor RAW interno para o último snapshot do Libraw de 24/01/2026."
+"Atualiza o motor RAW interno para o último snapshot do Libraw de 16/02/2026."
 
 #: core/app/views/stack/welcomepageview.cpp:443
 #, kde-format

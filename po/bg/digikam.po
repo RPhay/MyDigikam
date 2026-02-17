@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:42+0000\n"
-"PO-Revision-Date: 2026-02-13 21:50+0100\n"
+"PO-Revision-Date: 2026-02-16 15:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3786,12 +3786,11 @@ msgstr ""
 "данни."
 
 #: core/app/views/stack/welcomepageview.cpp:442
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
 msgstr ""
-"Актуализиране на вътрешния RAW енджин до последния Libraw snapshot "
-"2026-01-24."
+"Актуализирайте вътрешния RAW енджин до последната Libraw снимка от "
+"16.02.2026 г."
 
 #: core/app/views/stack/welcomepageview.cpp:443
 #, kde-format
@@ -6482,6 +6481,8 @@ msgctxt "@label"
 msgid ""
 "Use the variable $ORGTEXT to insert the existing text into the new text."
 msgstr ""
+"Използвайте променливата $ORGTEXT, за да вмъкнете съществуващия текст в "
+"новия текст."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format

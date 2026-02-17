@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:42+0000\n"
-"PO-Revision-Date: 2026-02-15 14:36+0100\n"
+"PO-Revision-Date: 2026-02-16 10:12+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3810,11 +3810,10 @@ msgstr ""
 "uitvouwlijsten te zijn voorzien van de waarden al aanwezig in de database."
 
 #: core/app/views/stack/welcomepageview.cpp:442
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
 msgstr ""
-"Interne RAW-engine bijgewerkt tot laatste Libraw momentopname 2026-01-24."
+"Interne RAW-engine bijgewerkt tot laatste Libraw momentopname 2026-02-16."
 
 #: core/app/views/stack/welcomepageview.cpp:443
 #, kde-format

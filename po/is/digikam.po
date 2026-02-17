@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:42+0000\n"
-"PO-Revision-Date: 2026-02-15 13:20+0000\n"
+"PO-Revision-Date: 2026-02-16 09:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3440,12 +3440,17 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"Innra QtAVPlayer hefur verið uppfært í nýjustu frumútgáfuna 2026-01-24 sem "
+"tekur með ýmsar villuleiðréttingar og bætingar á afköstum (einungis fyrir "
+"Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:383
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
+"Bætt við stuðningi við sérsniðin dagsetningasnið til birtingar út um allt í "
+"forritinu."
 
 #: core/app/views/stack/welcomepageview.cpp:384
 #, kde-format
@@ -3705,10 +3710,9 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:442
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-01-24."
+msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-02-16."
 
 #: core/app/views/stack/welcomepageview.cpp:443
 #, kde-format
