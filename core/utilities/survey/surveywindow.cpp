@@ -148,11 +148,10 @@ void SurveyWindow::showEvent(QShowEvent* e)
 
 void SurveyWindow::changeEvent(QEvent* e)
 {
-    qDebug() << "Survey before:" << e << windowState();
 
 #ifdef HAVE_MEDIAPLAYER
 
-    if (windowState() == Qt::WindowMinimized)
+    if (windowState() & Qt::WindowMinimized)
     {
         if (d->stack->viewMode() == SurveyStack::MediaPlayerMode)
         {
@@ -163,8 +162,6 @@ void SurveyWindow::changeEvent(QEvent* e)
 #endif // HAVE_MEDIAPLAYER
 
     DXmlGuiWindow::changeEvent(e);
-
-    qDebug() << "Survey after:" << windowState();
 }
 
 bool SurveyWindow::isSleeping() const
