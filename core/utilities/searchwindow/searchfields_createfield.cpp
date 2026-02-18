@@ -181,6 +181,14 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
+    else if (name == QLatin1String("modifiedrecent"))
+    {
+        SearchFieldRecentModified* const field = new SearchFieldRecentModified(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Modified last"),
+                    i18n("Return items modified within the last"));
+        return field;
+    }
     else if (name == QLatin1String("creationtime"))
     {
         SearchFieldRangeTime* const field = new SearchFieldRangeTime(parent);

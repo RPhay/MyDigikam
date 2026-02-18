@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2011-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2026 by Srirupa Datta <srirupa dot sps at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -345,6 +346,42 @@ private:
     SearchFieldRangeTime(const SearchFieldRangeTime&)            = delete;
     SearchFieldRangeTime& operator=(const SearchFieldRangeTime&) = delete;
 };
+
+//-----------------------------------------------------------------------------
+
+class SearchFieldRecentModified : public SearchField
+{
+    Q_OBJECT
+
+public:
+
+    explicit SearchFieldRecentModified(QObject* const parent);
+
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+
+    void reset() override;
+
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
+
+    qint64 deltaSeconds() const;
+
+private Q_SLOTS:
+
+    void unitChanged();
+
+private:
+
+    QSpinBox*                m_amountBox   = nullptr;
+    QComboBox*               m_unitCombo   = nullptr;
+    int                      m_pendingSeconds = -1;
+    void                     applySeconds(int seconds);
+
+};
+
 
 //-----------------------------------------------------------------------------
 

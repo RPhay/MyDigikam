@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2026 by Srirupa Datta <srirupa dot sps at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -56,6 +57,7 @@ public:
     void addDoubleField(const QString& name);
     void addStringField(const QString& name);
     void addDateField(const QString& name);
+    void addRecentDateField(const QString& name, int seconds);
     void addChoiceIntField(const QString& name);
     void addLongListField(const QString& name);
     void addIntBitmaskField(const QString& name);

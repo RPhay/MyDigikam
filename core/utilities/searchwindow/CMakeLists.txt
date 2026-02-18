@@ -24,6 +24,7 @@ set(libsearchwindow_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_combobox.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_labels.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_rangedate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_recentmodified.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_rating.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_choice.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_createfield.cpp

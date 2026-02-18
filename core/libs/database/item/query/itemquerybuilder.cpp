@@ -401,6 +401,11 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         fieldQuery.addDateField(QLatin1String("ImageInformation.digitizationDate"));
     }
+    else if (name == QLatin1String("modifiedrecent"))
+    {
+        const int seconds = reader.valueToInt();
+        fieldQuery.addRecentDateField(QLatin1String("Images.modificationDate"), seconds);
+    }
     else if (name == QLatin1String("orientation"))
     {
         fieldQuery.addChoiceIntField(QLatin1String("ImageInformation.orientation"));

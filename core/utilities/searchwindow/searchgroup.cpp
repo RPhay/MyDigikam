@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2011-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2026 by Srirupa Datta <srirupa dot sps at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -98,6 +99,7 @@ void SearchGroup::setup(Type type)
     group->addField(SearchField::createField(QLatin1String("colormodel"),       group));
     group->addField(SearchField::createField(QLatin1String("modificationdate"), group));
     group->addField(SearchField::createField(QLatin1String("digitizationdate"), group));
+    group->addField(SearchField::createField(QLatin1String("modifiedrecent"), group));
     group->addField(SearchField::createField(QLatin1String("filesize"),         group));
     group->addField(SearchField::createField(QLatin1String("bytesize"),         group));
     group->addField(SearchField::createField(QLatin1String("monthday"),         group));
