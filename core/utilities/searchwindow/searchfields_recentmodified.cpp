@@ -35,7 +35,7 @@ SearchFieldRecentModified::SearchFieldRecentModified(QObject* const parent)
 
 void SearchFieldRecentModified::setupValueWidgets(QGridLayout* layout, int row, int column)
 {
-    m_amountBox = new QSpinBox;
+    m_amountBox = new QSpinBox;                 // cppcheck-suppress publicAllocationError
     m_amountBox->setObjectName(QLatin1String("SearchFieldRecentModified_Amount"));
     m_amountBox->setRange(0, 999999);
     m_amountBox->setValue(0);
@@ -85,10 +85,10 @@ void SearchFieldRecentModified::applySeconds(int seconds)
     struct Unit { int mult; };
     const Unit units[] =
     {
-        {86400},
-        {3600},
-        {60},
-        {1}
+        { 86400 },
+        { 3600  },
+        { 60    },
+        { 1     }
     };
 
     for (const Unit& u : units)
@@ -114,9 +114,9 @@ void SearchFieldRecentModified::applySeconds(int seconds)
 
     m_amountBox->setValue(seconds);
     m_unitCombo->setCurrentIndex(0);
+
     setValidValueState(deltaSeconds() > 0);
 }
-
 
 void SearchFieldRecentModified::unitChanged()
 {

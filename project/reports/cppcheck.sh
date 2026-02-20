@@ -77,7 +77,7 @@ for INCLUDE_PATH in $HDIRS ; do
 done
 
 /opt/cppcheck/bin/cppcheck \
-         -j$CPU_CORES \
+         -j1 \
          $CPPCHECK_DEFINES \
          $CPPCHECK_OPTIONS \
          --enable=all \
