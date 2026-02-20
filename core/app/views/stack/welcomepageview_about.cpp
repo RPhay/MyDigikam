@@ -23,16 +23,30 @@ namespace Digikam
 QString WelcomePageView::aboutTabContent() const
 {
     QString tabContent =
-       i18n("<h3>digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. "
+       i18n(
+       "<h3>"
+            "digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. "
             "The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. "
             "You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera "
             "and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules "
-            "that process and organize imported items on-the-fly.</h3>"
-            "<h3>With digiKam you can import, organize, enhance, search, export, and more...</h3>"
-            "<h3>Currently, you are in the Album view mode of digiKam.</h3>"
-            "<h3>Albums are the places where your files are stored, and are identical to the folders on your hard disk.</h3>"
-            "<li>digiKam has many powerful features which are described in the <a href=\"https://docs.digikam.org/en/index.html\">documentation</a></li>"
-            "<li>The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides information about new versions of digiKam.</li>");
+            "that process and organize imported items on-the-fly."
+       "</h3>"
+       "<h3>"
+            "With digiKam you can import, organize, enhance, search, export, and more..."
+       "</h3>"
+       "<h3>"
+            "Currently, you are in the Album view mode of digiKam."
+       "</h3>"
+       "<h3>"
+            "Albums are the places where your files are stored, and are identical to the folders on your hard disk."
+       "</h3>"
+       "<li>"
+            "digiKam has many powerful features which are described in the <a href=\"https://docs.digikam.org/en/index.html\">documentation</a>"
+       "</li>"
+       "<li>"
+            "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides information about new versions of digiKam."
+       "</li>"
+    );
 
     return tabContent;
 }
