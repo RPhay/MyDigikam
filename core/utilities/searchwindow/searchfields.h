@@ -153,6 +153,12 @@ protected Q_SLOTS:
 protected:
 
     QLineEdit* m_edit = nullptr;
+
+private:
+
+    // Disable
+    SearchFieldText(const SearchFieldText&)            = delete;
+    SearchFieldText& operator=(const SearchFieldText&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -169,6 +175,12 @@ public:
 
     void read(SearchXmlCachingReader& reader) override;
     void write(SearchXmlWriter& writer)       override;
+
+private:
+
+    // Disable
+    SearchFieldKeyword(const SearchFieldKeyword&)            = delete;
+    SearchFieldKeyword& operator=(const SearchFieldKeyword&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -508,12 +520,18 @@ protected Q_SLOTS:
 
 protected:
 
-    QWidget*                             m_wrapperBox       = nullptr;
-    AlbumTreeViewSelectComboBox*         m_albumComboBox    = nullptr;
-    TagTreeViewSelectComboBox*           m_tagComboBox      = nullptr;
-    SqueezedComboBox*                    m_operation        = nullptr;
-    Type                                 m_type             = TypeAlbum;
-    AbstractCheckableAlbumModel*         m_model            = nullptr;
+    QWidget*                     m_wrapperBox    = nullptr;
+    AlbumTreeViewSelectComboBox* m_albumComboBox = nullptr;
+    TagTreeViewSelectComboBox*   m_tagComboBox   = nullptr;
+    SqueezedComboBox*            m_operation     = nullptr;
+    Type                         m_type          = TypeAlbum;
+    AbstractCheckableAlbumModel* m_model         = nullptr;
+
+private:
+
+    // Disable
+    SearchFieldAlbum(const SearchFieldAlbum&)            = delete;
+    SearchFieldAlbum& operator=(const SearchFieldAlbum&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -580,6 +598,12 @@ protected Q_SLOTS:
 protected:
 
     QComboBox* m_comboBox = nullptr;
+
+private:
+
+    // Disable
+    SearchFieldComboBox(const SearchFieldComboBox&)            = delete;
+    SearchFieldComboBox& operator=(const SearchFieldComboBox&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -611,6 +635,12 @@ protected:
 
     QCheckBox* m_checkBox = nullptr;
     QString    m_text;
+
+private:
+
+    // Disable
+    SearchFieldCheckBox(const SearchFieldCheckBox&)            = delete;
+    SearchFieldCheckBox& operator=(const SearchFieldCheckBox&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -627,6 +657,12 @@ public:
 
     void setupValueWidgets(QGridLayout* layout, int row, int column) override;
     void read(SearchXmlCachingReader& reader)                        override;
+
+private:
+
+    // Disable
+    SearchFieldColorDepth(const SearchFieldColorDepth&)            = delete;
+    SearchFieldColorDepth& operator=(const SearchFieldColorDepth&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -643,6 +679,12 @@ public:
 
     void setupValueWidgets(QGridLayout* layout, int row, int column) override;
     void read(SearchXmlCachingReader& reader)                        override;
+
+private:
+
+    // Disable
+    SearchFieldPageOrientation(const SearchFieldPageOrientation&)            = delete;
+    SearchFieldPageOrientation& operator=(const SearchFieldPageOrientation&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -672,6 +714,12 @@ protected:
 
     PickLabelFilter*  m_pickLabelFilter  = nullptr;
     ColorLabelFilter* m_colorLabelFilter = nullptr;
+
+private:
+
+    // Disable
+    SearchFieldLabels(const SearchFieldLabels&)            = delete;
+    SearchFieldLabels& operator=(const SearchFieldLabels&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -702,6 +750,12 @@ protected:
     QLabel*    m_dayLabel   = nullptr;
     QComboBox* m_monthBox   = nullptr;
     QComboBox* m_dayBox     = nullptr;
+
+private:
+
+    // Disable
+    SearchFieldMonthDay(const SearchFieldMonthDay&)            = delete;
+    SearchFieldMonthDay& operator=(const SearchFieldMonthDay&) = delete;
 };
 
 } // namespace Digikam
