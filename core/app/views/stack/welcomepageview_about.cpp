@@ -25,27 +25,37 @@ QString WelcomePageView::aboutTabContent() const
     QString tabContent =
        i18n(
        "<h3>"
-            "digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. "
-            "The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. "
+            "digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS."
+       "</h3>"
+
+       "<h3>"
+            "The application provides A comprehensive set of tools for importing, managing, editing, and sharing media taken with your camera. "
             "You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera "
             "and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules "
             "that process and organize imported items on-the-fly."
        "</h3>"
+
        "<h3>"
-            "With digiKam you can import, organize, enhance, search, export, and more..."
+            "To resume, with digiKam you can import, organize, enhance, search, export your collections of photo and video, and much more..."
        "</h3>"
+
        "<h3>"
-            "Currently, you are in the Album view mode of digiKam."
-       "</h3>"
-       "<h3>"
+            "Currently, you are in the Album view mode of digiKam. "
             "Albums are the places where your files are stored, and are identical to the folders on your hard disk."
        "</h3>"
-       "<li>"
+
+       "<h3>"
             "digiKam has many powerful features which are described in the <a href=\"https://docs.digikam.org/en/index.html\">documentation</a>"
-       "</li>"
-       "<li>"
+       "</h3>"
+
+       "<h3>"
             "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides information about new versions of digiKam."
-       "</li>"
+       "</h3>"
+
+       "<h3>"
+            "To contact the digiKam users community or to support the development team, follow the links provided in the application Help menu entry. "
+            "Thanks to support and use the digiKam project."
+       "</h3>"
     );
 
     return tabContent;
