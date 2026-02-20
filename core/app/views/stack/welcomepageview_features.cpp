@@ -40,6 +40,7 @@ QString WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Complete rewrite the File-Copy tool GUI for a better usability.");
     newFeatures << i18n("Add marching-ants effect to the canvas selection rubber band.");
     newFeatures << i18n("Add pick color histogram indicators for the Curves, Levels, White Balance, and Black & White Sepia tools.");
+    newFeatures << i18n("Rewrite the welcome page in more modern style.");
     newFeatures << i18n("Huge web site update about contents and design eg. screenshots, description, history, features, support, download, etc.");
 
     newFeatures << i18n("Sort Item improvements:")
