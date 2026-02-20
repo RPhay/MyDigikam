@@ -75,7 +75,8 @@ Preview         : Add under and over exposure indicators for the preview canvas.
 Preview         : Railway over the canvas is displayed as an overlay when the scrollbar are visible.
 
 Advanced Search : New options to search empty properties registered in the database.
-Advanced Search : Add support for search Creator and Author fields to be drop down lists with values already presents in the database.
+Advanced Search : Add support to search Creator and Author fields to be drop down lists with values already presents in the database.
+Advanced Search : Add support to search recently modified items in the database.
 
 *****************************************************************************************************
 BUGFIXES:

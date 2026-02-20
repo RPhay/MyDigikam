@@ -436,7 +436,8 @@ QString WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Advanced Search improvements:")
                 + appendSubList(QStringList()
                     << i18n("New options to find empty properties registered in the database.")
-                    << i18n("Add support for search Creator and Author fields to be drop down lists populated with the values already presents in the database.")
+                    << i18n("Add support to search Creator and Author fields to be drop down lists populated with the values already presents in the database.")
+                    << i18n("Add support to search recently modified items in the database.")
                 );
 
     newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-02-16.");
