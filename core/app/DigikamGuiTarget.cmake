@@ -102,6 +102,9 @@ set(libdigikamgui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_zoom.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_iqs.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/welcomepageview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/welcomepageview_about.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/welcomepageview_features.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/welcomepageview_credits.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/trashview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/stackedview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/preview/itempreviewcanvas.cpp
