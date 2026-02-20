@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:42+0000\n"
-"PO-Revision-Date: 2026-02-18 17:45+0400\n"
+"PO-Revision-Date: 2026-02-19 08:19+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -33808,7 +33808,7 @@ msgstr "التفاصيل"
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
-msgstr "المؤلفين"
+msgstr "المؤلفون"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
@@ -40674,7 +40674,7 @@ msgstr "العنوان"
 #, kde-format
 msgctxt "@title: template properties"
 msgid "Authors"
-msgstr "المؤلفين"
+msgstr "المؤلفون"
 
 #: core/libs/template/templatepanel.cpp:89
 #, kde-format
